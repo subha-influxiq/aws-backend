@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'RalewayBold';
+  src: url('../fonts/Raleway-Bold.woff2') format('woff2'),
+      url('../fonts/Raleway-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RalewayMedium';
+  src: url('../fonts/Raleway-Medium.woff2') format('woff2'),
+      url('../fonts/Raleway-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RalewayRegular';
+  src: url('../fonts/Raleway-Regular.woff2') format('woff2'),
+      url('../fonts/Raleway-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --my-cool-background: #feca00;
+  --my-cool-background2: #1dbce9;
+  }
+
+  /* background-image: linear-gradient(40deg, #feca00, #1dbce9); */
+
+
+.main_wrapper{
+   display: flex;
+   height: 100%;
+   justify-content: flex-start;
+   align-items: center;
+   /* background-image: linear-gradient(145deg, #f0b800, #3ebff4); */
+   /* background-image: linear-gradient(145deg, #f9e7b0, #b3e1f5); */
+   background: url(../images/doctorImage.png) no-repeat;
+   background-position: left bottom;
+   background-size: 835px;
+   background-color: #fdfaee;
+   padding-left: 800px;
+
+  }
+.main_wrapper .login_wrapper{ width: 500px; background: #fff; }
+.main_wrapper  .img_wrapper{ background: url("../images/doctorImage.png") no-repeat; background-position: left bottom;}
+
+.login_container > * {
+  width: 100%;
+}
+ .login_wrapper .loginBtn{
+    font-family: "RalewayBold"; text-transform: uppercase; font-size: 28px; padding: 8px 16px; margin: auto;
+  display: block;
+  background-image: linear-gradient(40deg, var(--my-cool-background), var(--my-cool-background2))!important;
+}
+
+.logo_section{ width: 400px; margin: auto; display: block; margin-bottom: 25px;}
+.logo_section img{ max-width: 100%; }
+.main_wrapper .login_wrapper .forget_wrapper { display: flex; margin-top: 15px; }
+.main_wrapper .login_wrapper .forget_wrapper a{ margin-left: auto; color: #545454; font-size: 16px; font-family: "RalewayMedium"; }
+.main_wrapper .login_wrapper .login_container .mat-form-field { margin-bottom: 20px; }
+.main_wrapper .login_wrapper .login_container input .mat-input-element:focus { border-bottom: 1px solid red!important;}
+.main_wrapper .login_wrapper .login_container input .mat-input-element {
+  font-size: 20px;
+}
+
+.main_wrapper .login_wrapper .login_container h2{ text-align: center; color: #1dbce9; margin-top: 0; }
+.main_wrapper .login_wrapper .login_container .paragraph{ font-family: "Ralewaymedium";
+  font-size: 16px;
+  color: #777776;
+  line-height: 23px;
+  margin-bottom: 22px; }
