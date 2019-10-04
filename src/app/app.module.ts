@@ -13,12 +13,16 @@ import { LoginComponent } from './components/login/login.component';
 import {DemoMaterialModule } from '../app/modules/materialModule';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TechdashboardComponent } from './components/techdashboard/techdashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ForgetpasswordComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    DashboardComponent,
+    TechdashboardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

@@ -71,3 +71,5 @@
   color: #777776;
   line-height: 23px;
   margin-bottom: 22px; }
+.tech_image{  display: block; }
+.tech_image img{ max-width: 100%; }
