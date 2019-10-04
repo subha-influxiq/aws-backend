@@ -43,17 +43,14 @@
    padding-left: 800px;
 
   }
+  .main_wrapper .login_wrapper { padding: 0;}
 .main_wrapper .login_wrapper{ width: 500px; background: #fff; }
 .main_wrapper  .img_wrapper{ background: url("../images/doctorImage.png") no-repeat; background-position: left bottom;}
 
 .login_container > * {
   width: 100%;
 }
- .login_wrapper .loginBtn{
-    font-family: "RalewayBold"; text-transform: uppercase; font-size: 28px; padding: 8px 16px; margin: auto;
-  display: block;
-  background-image: linear-gradient(40deg, var(--my-cool-background), var(--my-cool-background2))!important;
-}
+  
 
 .logo_section{ width: 400px; margin: auto; display: block; margin-bottom: 25px;}
 .logo_section img{ max-width: 100%; }
@@ -70,6 +67,27 @@
   font-size: 16px;
   color: #777776;
   line-height: 23px;
+<<<<<<< HEAD
   margin-bottom: 22px; }
 .tech_image{  display: block; }
 .tech_image img{ max-width: 100%; }
+=======
+  margin-bottom: 22px; padding: 0 16px;
+  box-sizing: border-box; }
+  .main_wrapper .login_wrapper .login_container .main-div{ height: auto; }
+
+  .main_wrapper .login_wrapper .login_container .main-div .from  {
+    width: 100%;
+    margin: 0 auto;
+}
+.main_wrapper .login_wrapper .login_container .main-div .from .logowrapper img{ max-width: 100%;}
+
+.main_wrapper .login_wrapper .login_container .main-div .from  h2 { background: none; color: #39bbe9;
+  padding: 0px; }
+
+  .main_wrapper .login_wrapper .login_container .main-div .from button{
+    font-family: "RalewayBold"; text-transform: uppercase; font-size: 28px; padding: 8px 16px; margin: auto;
+  display: block;
+  background-image: linear-gradient(40deg, var(--my-cool-background), var(--my-cool-background2))!important;
+  }
+>>>>>>> 356b51e305272eac2fe4e8fa7eaa591a424d2aa1
