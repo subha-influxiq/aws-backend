@@ -24,19 +24,18 @@
 @media screen and (max-width: 480px){
 .main_wrapper .login_wrapper { width: 360px; }
 .login_wrapper .loginBtn { font-size: 22px; }
+.main_wrapper .login_wrapper .login_container .main-div .from .signupfooter a { font-size: 12px; padding: 10px 0;}
+.main_wrapper .login_wrapper .login_container .main-div .from button { font-size: 20px; padding: 4px 16px 2px; }
 }
 @media screen and (max-width: 440px){
 .main_wrapper .login_wrapper { width: 320px; }
 }
 @media screen and (max-width: 390px){
-.main_wrapper .login_wrapper {
-    width: 280px;
-}
+.main_wrapper .login_wrapper { width: 280px; }
 }
 
 @media screen and (max-width: 350px){
-  .main_wrapper .login_wrapper {
-      width: 250px;
-  }
+  .main_wrapper .login_wrapper { width: 265px; }
+  .main_wrapper .login_wrapper .login_container .main-div .from button { font-size: 18px; }
   }
 
