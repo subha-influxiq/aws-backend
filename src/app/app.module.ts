@@ -14,8 +14,10 @@ import { CookieService } from 'ngx-cookie-service';
 import {DemoMaterialModule } from '../app/modules/materialModule';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TechdashboardComponent } from './components/techdashboard/techdashboard.component';
+
 
 /**testing purpose start here**/
 import { TestComponent } from './components/test/test.component';
@@ -23,15 +25,16 @@ import { TestforgetPasswordComponent } from './components/testforget-password/te
 import { TestresetPasswordComponent } from './components/testreset-password/testreset-password.component';
 import { TestsignupComponent } from './components/testsignup/testsignup.component';
 /**end here**/
-
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ForgetpasswordComponent,
     ResetpasswordComponent,
+
     DashboardComponent,
     TechdashboardComponent,
+
     TestComponent,
     TestforgetPasswordComponent,
     TestresetPasswordComponent,

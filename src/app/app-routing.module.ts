@@ -4,8 +4,8 @@ import { LoginComponent } from './components/login/login.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { TechdashboardComponent } from './components/techdashboard/techdashboard.component';
+
 import { TestComponent } from './components/test/test.component';
-//  import { TestforgetPasswordComponent } from './components/';
 import { TestresetPasswordComponent } from './components/testreset-password/testreset-password.component';
 import { TestforgetPasswordComponent } from './components/testforget-password/testforget-password.component';
 import { TestsignupComponent } from './components/testsignup/testsignup.component';
@@ -16,7 +16,6 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   { path: 'forgetpassword', component: ForgetpasswordComponent},
   { path: 'resetpassword', component: ResetpasswordComponent},
-  { path: 'techdashboard', component: TechdashboardComponent},
   { path: 'login', component: LoginComponent },
   { path: 'forgetpassword', component: ForgetpasswordComponent },
   { path: 'resetpassword', component: ResetpasswordComponent },
