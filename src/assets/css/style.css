@@ -70,3 +70,22 @@
   margin-bottom: 22px; }
 .tech_image{  display: block; }
 .tech_image img{ max-width: 100%; }
+.tech_image img{ max-width: 100%;
+  margin-bottom: 22px; padding: 0 16px;
+  box-sizing: border-box; }
+  .main_wrapper .login_wrapper .login_container .main-div{ height: auto; }
+
+  .main_wrapper .login_wrapper .login_container .main-div .from  {
+    width: 100%;
+    margin: 0 auto;
+}
+.main_wrapper .login_wrapper .login_container .main-div .from .logowrapper img{ max-width: 100%;}
+
+.main_wrapper .login_wrapper .login_container .main-div .from  h2 { background: none; color: #39bbe9;
+  padding: 0px; }
+
+  .main_wrapper .login_wrapper .login_container .main-div .from button{
+    font-family: "RalewayBold"; text-transform: uppercase; font-size: 28px; padding: 8px 16px; margin: auto;
+  display: block;
+  background-image: linear-gradient(40deg, var(--my-cool-background), var(--my-cool-background2))!important;
+  }
