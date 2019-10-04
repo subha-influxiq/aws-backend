@@ -14,6 +14,7 @@ import { CookieService } from 'ngx-cookie-service';
 import {DemoMaterialModule } from '../app/modules/materialModule';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+
 /**testing purpose start here**/
 import { TestComponent } from './components/test/test.component';
 import { TestforgetPasswordComponent } from './components/testforget-password/testforget-password.component';
@@ -26,6 +27,7 @@ import { TestsignupComponent } from './components/testsignup/testsignup.componen
     LoginComponent,
     ForgetpasswordComponent,
     ResetpasswordComponent,
+
     TestComponent,
     TestforgetPasswordComponent,
     TestresetPasswordComponent,

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+
 import { TestComponent } from './components/test/test.component';
 import { TestresetPasswordComponent } from './components/testreset-password/testreset-password.component';
 import { TestforgetPasswordComponent } from './components/testforget-password/testforget-password.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'reset-password', component: TestresetPasswordComponent },
   { path: 'Signup', component: TestsignupComponent }
   /**test component route end here**/
+
 ];
 
 @NgModule({

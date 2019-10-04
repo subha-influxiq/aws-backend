@@ -67,6 +67,11 @@
   font-size: 16px;
   color: #777776;
   line-height: 23px;
+<<<<<<< HEAD
+  margin-bottom: 22px; }
+.tech_image{  display: block; }
+.tech_image img{ max-width: 100%; }
+=======
   margin-bottom: 22px; padding: 0 16px;
   box-sizing: border-box; }
   .main_wrapper .login_wrapper .login_container .main-div{ height: auto; }
@@ -85,3 +90,4 @@
   display: block;
   background-image: linear-gradient(40deg, var(--my-cool-background), var(--my-cool-background2))!important;
   }
+>>>>>>> 356b51e305272eac2fe4e8fa7eaa591a424d2aa1
