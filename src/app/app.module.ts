@@ -14,32 +14,28 @@ import { CookieService } from 'ngx-cookie-service';
 import {DemoMaterialModule } from '../app/modules/materialModule';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
-<<<<<<< HEAD
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TechdashboardComponent } from './components/techdashboard/techdashboard.component';
-=======
+
 /**testing purpose start here**/
 import { TestComponent } from './components/test/test.component';
 import { TestforgetPasswordComponent } from './components/testforget-password/testforget-password.component';
 import { TestresetPasswordComponent } from './components/testreset-password/testreset-password.component';
 import { TestsignupComponent } from './components/testsignup/testsignup.component';
 /**end here**/
->>>>>>> 356b51e305272eac2fe4e8fa7eaa591a424d2aa1
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ForgetpasswordComponent,
     ResetpasswordComponent,
-<<<<<<< HEAD
     DashboardComponent,
-    TechdashboardComponent
-=======
+    TechdashboardComponent,
     TestComponent,
     TestforgetPasswordComponent,
     TestresetPasswordComponent,
     TestsignupComponent
->>>>>>> 356b51e305272eac2fe4e8fa7eaa591a424d2aa1
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -50,7 +46,7 @@ import { TestsignupComponent } from './components/testsignup/testsignup.componen
     NgtUniversalModule,
     DemoMaterialModule,
     LoginModule,
-    
+
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
