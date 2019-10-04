@@ -4,7 +4,6 @@ import { LoginComponent } from './components/login/login.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { TestComponent } from './components/test/test.component';
-//  import { TestforgetPasswordComponent } from './components/';
 import { TestresetPasswordComponent } from './components/testreset-password/testreset-password.component';
 import { TestforgetPasswordComponent } from './components/testforget-password/testforget-password.component';
 import { TestsignupComponent } from './components/testsignup/testsignup.component';
@@ -20,6 +19,7 @@ const routes: Routes = [
   { path: 'forget-password', component: TestforgetPasswordComponent },
   { path: 'reset-password', component: TestresetPasswordComponent },
   { path: 'Signup', component: TestsignupComponent }
+  /**test component route end here**/
 ];
 
 @NgModule({
