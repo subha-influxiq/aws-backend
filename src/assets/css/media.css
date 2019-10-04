@@ -1,15 +1,42 @@
-@media screen and (max-width: 1366px){
-  .main_wrapper {
-    display: flex;
-    height: 100%;
-    justify-content: flex-start;
-    align-items: center;
-    /* background-image: linear-gradient(145deg, #f0b800, #3ebff4); */
-    /* background-image: linear-gradient(145deg, #f9e7b0, #b3e1f5); */
-    background: url(../images/doctorImage.png) no-repeat;
-    background-position: left bottom;
-    background-size: 716px;
-    background-color: #fdfaee;
-    padding-left: 686px;
+@media screen and (max-width: 1400px){
+  .main_wrapper { background-size: 680px; padding-left: 727px; }
+}
+
+@media screen and (max-width: 1300px){
+.main_wrapper { background-size: 680px; padding-left: 665px; }
+}
+@media screen and (max-width: 1240px){
+.main_wrapper .login_wrapper { width: 450px; }
+}
+
+@media screen and (max-width: 1199px){
+.main_wrapper { background-size: 0; padding-left: 0; justify-content: center; align-items: center; }
+.main_wrapper .login_wrapper { width: 500px; }
+.main_wrapper .img_wrapper { background: none; }
+}
+@media screen and (max-width: 668px){
+  .main_wrapper .login_wrapper { width: 450px; }
+}
+@media screen and (max-width: 540px){
+.main_wrapper .login_wrapper { width: 400px; }
+.logo_section { width: 100%; }
+}
+@media screen and (max-width: 480px){
+.main_wrapper .login_wrapper { width: 360px; }
+.login_wrapper .loginBtn { font-size: 22px; }
+}
+@media screen and (max-width: 440px){
+.main_wrapper .login_wrapper { width: 320px; }
+}
+@media screen and (max-width: 390px){
+.main_wrapper .login_wrapper {
+    width: 280px;
 }
 }
+
+@media screen and (max-width: 350px){
+  .main_wrapper .login_wrapper {
+      width: 250px;
+  }
+  }
+
