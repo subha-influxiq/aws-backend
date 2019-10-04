@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths" :{
+      "login": [                   //login library 
+        "dist/login"
+      ],
+      "login/*": [
+        "dist/login/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

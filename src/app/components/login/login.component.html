@@ -4,11 +4,11 @@
 
   <mat-card-content>
     <div class="login_container">
-        <span class="logo_section">
+        <!-- <span class="logo_section">
           <img src="assets/images/logo.png">
         </span>
-        <h2>LOGIN</h2>
-      <mat-form-field appearance="fill">
+        <h2>LOGIN</h2> -->
+      <!-- <mat-form-field appearance="fill">
           <mat-label>Email Address</mat-label>
         <input matInput   type="email">
       </mat-form-field>
@@ -19,12 +19,20 @@
       </mat-form-field>
 
 
-      <button mat-flat-button color="primary" class="loginBtn">Login</button>
+      <button mat-flat-button color="primary" class="loginBtn">Login</button> -->
 
-
-      <span class="forget_wrapper">
+      <lib-login 
+      [fromTitle]="fromTitle"
+      [fullUrl]="fullUrl" 
+      [forgetRouteingUrl]="forgetRouteingUrl"
+      [signUpRouteingUrl]='signUpRouteingUrl' 
+      [routerStatus]="routerStatus" 
+      [endpoint]="endpoint" 
+      [logo]="logo"> 
+          </lib-login>
+      <!-- <span class="forget_wrapper">
         <a routerLink="/forgetpassword">Forget Password</a>
-      </span>
+      </span> -->
     </div>
 
   </mat-card-content>
