@@ -7,19 +7,37 @@ import { CommonModule } from '@angular/common';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { LoginModule } from 'login'; //login library
+import { CookieService } from 'ngx-cookie-service';
 
 // modules
 import { DemoMaterialModule } from '../app/modules/materialModule';
-import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
-import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+import { ForgetpasswordComponent } from './components/auth/forgetpassword/forgetpassword.component';
+import { ResetpasswordComponent } from './components/auth/resetpassword/resetpassword.component';
+
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TechdashboardComponent } from './components/techdashboard/techdashboard.component';
+
+/**testing purpose start here**/
+import { TestComponent } from './components/test/test.component';
+/**end here**/
 
 @NgModule({
   declarations: [
     AppComponent,
+
+    // Auth
     LoginComponent,
     ForgetpasswordComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+
+    // dashboard
+    DashboardComponent,
+    TechdashboardComponent,
+
+    // Test
+    TestComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -28,9 +46,11 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
     TransferHttpCacheModule,
     HttpClientModule,
     NgtUniversalModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    LoginModule,
+
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
