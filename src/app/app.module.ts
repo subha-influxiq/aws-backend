@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './modules/app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { TransferHttpCacheModule } from '@nguniversal/common';
@@ -10,9 +10,10 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { LoginComponent } from './components/login/login.component';
 
 // modules
-import {DemoMaterialModule } from '../app/modules/materialModule';
+import { DemoMaterialModule } from '../app/modules/materialModule';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+
 @NgModule({
   declarations: [
     AppComponent,
