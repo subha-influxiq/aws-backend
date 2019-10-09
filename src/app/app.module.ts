@@ -1,44 +1,50 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './modules/app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/auth/login/login.component';
 import { LoginModule } from 'login'; //login library
 import { CookieService } from 'ngx-cookie-service';
+
 // modules
-import {DemoMaterialModule } from '../app/modules/materialModule';
-import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
-import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
-
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DemoMaterialModule } from '../app/modules/materialModule';
+import { ForgetpasswordComponent } from './components/auth/forgetpassword/forgetpassword.component';
+import { ResetpasswordComponent } from './components/auth/resetpassword/resetpassword.component';
+//dashboards
 import { TechdashboardComponent } from './components/techdashboard/techdashboard.component';
-
-
+import { TechDashboardComponent } from './components/dashboard/tech-dashboard/tech-dashboard.component';
+import { AdminDashboardComponent } from './components/dashboard/admin-dashboard/admin-dashboard.component';
+import { BillerDashboardComponent } from './components/dashboard/biller-dashboard/biller-dashboard.component';
+import { DoctorDashboardComponent } from './components/dashboard/doctor-dashboard/doctor-dashboard.component';
 /**testing purpose start here**/
 import { TestComponent } from './components/test/test.component';
-import { TestforgetPasswordComponent } from './components/testforget-password/testforget-password.component';
-import { TestresetPasswordComponent } from './components/testreset-password/testreset-password.component';
-import { TestsignupComponent } from './components/testsignup/testsignup.component';
+
 /**end here**/
+
 @NgModule({
   declarations: [
     AppComponent,
+
+    // Auth
     LoginComponent,
     ForgetpasswordComponent,
     ResetpasswordComponent,
 
-    DashboardComponent,
+    // dashboard
     TechdashboardComponent,
-
+    TechDashboardComponent,
+    AdminDashboardComponent,
+    BillerDashboardComponent,
+    DoctorDashboardComponent,
+    // Test
     TestComponent,
-    TestforgetPasswordComponent,
-    TestresetPasswordComponent,
-    TestsignupComponent
+
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

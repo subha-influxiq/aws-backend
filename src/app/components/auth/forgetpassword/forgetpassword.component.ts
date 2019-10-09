@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgetpasswordComponent implements OnInit {
   public logo: any = '../../assets/favicon.ico';
-  public signUpRouteingUrl: any = 'Signup';
+  public signUpRouteingUrl: any = 'sign-up';
   public serverUrl:any = 'http://166.62.39.137:5050/';
   public addEndpoint: any = {
     endpoint:'forgetpassword'
