@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'forgetpassword', component: ForgetpasswordComponent },
   { path: 'resetpassword', component: ResetpasswordComponent },
-  { path: 'techdashboard', component: TechdashboardComponent},
+  { path: 'tech-dashboard', component: TechdashboardComponent},
   /**test component route start here**/
   { path: 'test', component: TestComponent },
   { path: 'forget-password', component: TestforgetPasswordComponent },
