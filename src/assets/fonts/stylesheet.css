@@ -1,8 +1,8 @@
 @font-face {
-    font-family: 'Raleway';
-    src: url('Raleway-Regular.woff2') format('woff2'),
-        url('Raleway-Regular.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Roboto Bk';
+    src: url('Roboto-Black.woff2') format('woff2'),
+        url('Roboto-Black.woff') format('woff');
+    font-weight: 900;
     font-style: normal;
 }
 
