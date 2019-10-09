@@ -15,12 +15,15 @@ import { CookieService } from 'ngx-cookie-service';
 import { DemoMaterialModule } from '../app/modules/materialModule';
 import { ForgetpasswordComponent } from './components/auth/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './components/auth/resetpassword/resetpassword.component';
-
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+//dashboards
 import { TechdashboardComponent } from './components/techdashboard/techdashboard.component';
-
+import { TechDashboardComponent } from './components/dashboard/tech-dashboard/tech-dashboard.component';
+import { AdminDashboardComponent } from './components/dashboard/admin-dashboard/admin-dashboard.component';
+import { BillerDashboardComponent } from './components/dashboard/biller-dashboard/biller-dashboard.component';
+import { DoctorDashboardComponent } from './components/dashboard/doctor-dashboard/doctor-dashboard.component';
 /**testing purpose start here**/
 import { TestComponent } from './components/test/test.component';
+
 /**end here**/
 
 @NgModule({
@@ -33,11 +36,15 @@ import { TestComponent } from './components/test/test.component';
     ResetpasswordComponent,
 
     // dashboard
-    DashboardComponent,
     TechdashboardComponent,
-
+    TechDashboardComponent,
+    AdminDashboardComponent,
+    BillerDashboardComponent,
+    DoctorDashboardComponent,
     // Test
     TestComponent,
+
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
