@@ -31,7 +31,7 @@
 .content_wrapper .itemsection p{ line-height: 28px; font-family: "RobotoBlack"; font-size: 30px; color: #fff; text-transform: uppercase; width: 320px; margin: 20px auto; margin-top: 15px;}
 .doctor_content_wrapper{
   background: url("../../../../assets/images/doctorcontentbg.jpg") no-repeat center center;
-  background-size: cover; display: block; padding: 50px 40px;
+  background-size: cover; display: block; padding: 50px 40px; margin: 0 16px;
 }
 
 .doctor_content_wrapper .mat-card-title{  font-size: 40px; font-family: "RobotoBlack"; text-transform: uppercase; color: #fff; margin-bottom: 30px;
@@ -88,7 +88,34 @@
   .patient_report_section .button_action{
   display: flex;
     justify-content: space-between;
-    width: 55%;
+    width: 1050px;
     margin: auto;
 
+}
+
+.footer_section{display: block; border-top: 1px solid #c7c7c7; margin-top: 30px; }
+.footer_section .footer_content{ width: 600px;
+  margin: 0 auto;
+  display: block;
+  text-align: center; }
+
+  .footer_section .footer_content .link{ margin-top: 10px; display: block;  }
+
+  .footer_section .footer_content .link a:nth-of-type(1){ border-right: 1px solid #2b2b2b; padding-right: 5px; }
+  .footer_section .footer_content .link a, .footer_section .footer_content .link p{ font-size: 16px; font-family: "RobotoRegular"; color: #2b2b2b; text-decoration: none;}
+@media screen and (max-width: 1680px){
+  .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; }
+}
+@media screen and (max-width: 1500px){
+  .techdashboard_header .mat-toolbar-row .quotation p { font-size: 22px; }
+}
+@media screen and (max-width: 1440px){
+  .content_wrapper .itemsection p { line-height: 26px; font-size: 24px;}
+  .content_wrapper .itemsection { padding-bottom: 36px; }
+}
+
+@media screen and (max-width: 1400px){
+.techdashboard_header .mat-toolbar-row .quotation p { font-size: 20px; text-align: center;
+  line-height: 22px; white-space: normal;
+}
 }
