@@ -12,10 +12,11 @@ public user_data:any = {};
     let allData:any = {};
     allData = cookie.getAll()
     this.user_data = JSON.parse(allData.user_details);
-    console.log(this.user_data)
+    // console.log(this.user_data);
    }
 
   ngOnInit() {
   }
 
+  
 }
