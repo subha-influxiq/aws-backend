@@ -8,13 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
-    
+
     AppRoutingModule,
-    
+
     AppModule,
-    
+
     BrowserTransferStateModule,
-    
+
     BrowserAnimationsModule
   ],
   providers: [],
