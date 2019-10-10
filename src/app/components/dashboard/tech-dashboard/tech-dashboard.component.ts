@@ -9,7 +9,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TechDashboardComponent implements OnInit {
   public user_data: any = {};
+
   /**lib-listing start here**/
+
   public allUserData: any = [];
   public allUserData_skip: any = ["_id","created_at"];
   public allUserData_modify_header: any = {"firstname":"First Name","lastname":"Last Name",
@@ -30,7 +32,9 @@ export class TechDashboardComponent implements OnInit {
       textsearch: [{ label: "Search By Firstname", field: 'firstname' }],
 
     };
+
   /**lib listing end here**/
+
   public user_cookie: any;
   constructor(public cookie: CookieService, public http: HttpClient) {
     let allData: any = {};
