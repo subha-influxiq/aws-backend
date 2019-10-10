@@ -5,7 +5,8 @@ import { Router } from '@angular/router';
 import { MatDialogRef, MatDialog } from '@angular/material';
 import { ApiService } from '../api.service';
 export interface DialogData {
-    name: string;
+    value: string;
+    Url: any;
 }
 export declare class SignUpComponent implements OnInit {
     fb: FormBuilder;
@@ -13,6 +14,9 @@ export declare class SignUpComponent implements OnInit {
     router: Router;
     dialog: MatDialog;
     apiService: ApiService;
+    value: any;
+    link: any;
+    Url: any;
     message: any;
     formDirective: FormGroupDirective;
     formTitleValue: any;
@@ -21,9 +25,12 @@ export declare class SignUpComponent implements OnInit {
     loginRouteingUrlValue: any;
     addEndpointValue: any;
     logoValue: any;
+    typevalue: any;
     formTitle: any;
     serverUrl: any;
     logo: any;
+    modaleLogo: any;
+    userType: any;
     addEndpoint: any;
     forgetRouteingUrl: any;
     loginRouteingUrl: any;
@@ -37,9 +44,9 @@ export declare class SignUpComponent implements OnInit {
     login(): void;
     inputUntouched(val: any): void;
 }
-export declare class commonModalComponent {
-    dialogRef: MatDialogRef<commonModalComponent>;
+export declare class successModalComponent {
+    dialogRef: MatDialogRef<successModalComponent>;
     data: DialogData;
-    constructor(dialogRef: MatDialogRef<commonModalComponent>, data: DialogData);
+    constructor(dialogRef: MatDialogRef<successModalComponent>, data: DialogData);
     onNoClick(): void;
 }

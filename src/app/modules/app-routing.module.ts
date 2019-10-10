@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthguardService } from '../services/authguard.service'
 
 /* Auth Component */
 import { LoginComponent } from '../components/auth/login/login.component';
 import { ForgetpasswordComponent } from '../components/auth/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from '../components/auth/resetpassword/resetpassword.component';
+
 /**dashboards**/
 import { TechDashboardComponent } from '../components/dashboard/tech-dashboard/tech-dashboard.component';
 import { AdminDashboardComponent } from '../components/dashboard/admin-dashboard/admin-dashboard.component';
 import { BillerDashboardComponent } from '../components/dashboard/biller-dashboard/biller-dashboard.component';
 import { DoctorDashboardComponent } from '../components/dashboard/doctor-dashboard/doctor-dashboard.component';
+
 /* Test Component */
 import { TestComponent } from '../components/test/test.component';
 import { from } from 'rxjs';
@@ -23,10 +26,26 @@ const routes: Routes = [
   { path: 'sign-up', redirectTo: '/login', pathMatch: 'full' },
 
   //dashboards
-  { path: 'tech-dashboard', component: TechDashboardComponent },
-  { path: 'admin-dashboard', component: AdminDashboardComponent },
-  { path: 'biller-dashboard', component: BillerDashboardComponent },
-  { path: 'doctor-dashboard', component: DoctorDashboardComponent },
+  { 
+    path: 'dashboard/tech',
+    component: TechDashboardComponent,
+    canActivate: [ AuthguardService ] 
+  },
+  { 
+    path: 'dashboard/admin',
+    component: AdminDashboardComponent,
+    canActivate: [ AuthguardService ] 
+  },
+  { 
+    path: 'dashboard/biller', 
+    component: BillerDashboardComponent,
+    canActivate: [ AuthguardService ]
+   },
+  { 
+    path: 'dashboard/doctor', 
+    component: DoctorDashboardComponent,
+    canActivate: [ AuthguardService ]
+   },
 
   /**test component route start here**/
   { path: 'test', component: TestComponent }

@@ -18,13 +18,19 @@
       "es2018",
       "dom"
     ],
-    "paths" :{
-      "login": [                   //login library 
+    "paths": {
+      "login": [ //login library 
         "dist/login"
       ],
       "login/*": [
         "dist/login/*"
-      ]
+      ],
+      "lib-listing": [
+        "dist/listing"
+      ],
+      "listing/*": [
+        "dist/listing/*"
+      ],
     }
   },
   "angularCompilerOptions": {

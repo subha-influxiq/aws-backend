@@ -44,7 +44,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog, MatSnackBar } from '@angular/material';
 import { Injectable, NgModule, Component, Input, ViewChild, Inject, CUSTOM_ELEMENTS_SCHEMA, defineInjectable, inject } from '@angular/core';
 import { FormBuilder, Validators, FormGroupDirective, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
@@ -440,7 +440,7 @@ var ApiService = /** @class */ (function () {
                 'Authorization': this.accesstoken //hard code written access-token(temp)
             })
         };
-        console.log('httpoptions', httpOptions, this.serverUrl, requestdata);
+        // console.log('httpoptions',httpOptions,this.serverUrl,requestdata);
         /** @type {?} */
         var result = this._http.post(this.serverUrl + this.addendpointUrl, JSON.stringify(requestdata), httpOptions).pipe(map((/**
          * @param {?} res
@@ -547,7 +547,7 @@ var ApiService = /** @class */ (function () {
                 // 'Authorization': this.accesstoken          //hard code written access-token(temp)
             })
         };
-        console.log(this.serverUrl, requestdata);
+        // console.log(this.serverUrl,requestdata);
         /** @type {?} */
         var result = this._http.post(this.serverUrl + this.addendpointUrl, JSON.stringify(requestdata), httpOptions).pipe(map((/**
          * @param {?} res
@@ -579,7 +579,7 @@ var ApiService = /** @class */ (function () {
                 // 'Authorization': this.accesstoken          //hard code written access-token(temp)
             })
         };
-        console.log(this.serverUrl, requestdata);
+        // console.log(this.serverUrl,requestdata);
         /** @type {?} */
         var result = this._http.post(this.serverUrl + this.addendpointUrl, JSON.stringify(requestdata), httpOptions).pipe(map((/**
          * @param {?} res
@@ -747,6 +747,7 @@ var LoginComponent = /** @class */ (function () {
         this.routerStatusValue = '';
         this.logoValue = '';
         this.cookieSetValue = '';
+        this.buttonNameValue = '';
         this.project_name = '';
         this.loginForm = this.fb.group({
             email: ['', Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
@@ -772,6 +773,18 @@ var LoginComponent = /** @class */ (function () {
          */
         function (logoVal) {
             this.logoValue = logoVal;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(LoginComponent.prototype, "buttonName", {
+        set: /**
+         * @param {?} buttonNameVal
+         * @return {?}
+         */
+        function (buttonNameVal) {
+            this.buttonNameValue = (buttonNameVal) || '<no name set>';
+            this.buttonNameValue = buttonNameVal;
         },
         enumerable: true,
         configurable: true
@@ -806,7 +819,7 @@ var LoginComponent = /** @class */ (function () {
          */
         function (v) {
             this.cookieSetValue = v;
-            console.log(this.cookieSetValue.cookie);
+            // console.log(this.cookieSetValue.cookie);
             // for (const key in this.cookieSetValue.cookie) {
             //   console.log(this.cookieSetValue.cookie[key]);
             // }
@@ -822,6 +835,7 @@ var LoginComponent = /** @class */ (function () {
         function (routeingUrlval) {
             this.signUpRouteingUrlValue = (routeingUrlval) || '<no name set>';
             this.signUpRouteingUrlValue = routeingUrlval;
+            console.log(this.signUpRouteingUrlValue);
         },
         enumerable: true,
         configurable: true
@@ -834,6 +848,7 @@ var LoginComponent = /** @class */ (function () {
         function (routeingUrlval) {
             this.forgetRouteingUrlValue = (routeingUrlval) || '<no name set>';
             this.forgetRouteingUrlValue = routeingUrlval;
+            console.log(this.forgetRouteingUrlValue);
         },
         enumerable: true,
         configurable: true
@@ -846,8 +861,8 @@ var LoginComponent = /** @class */ (function () {
         function (routerStatusval) {
             this.routerStatusValue = (routerStatusval) || '<no name set>';
             this.routerStatusValue = routerStatusval;
-            console.log(this.routerStatusValue);
-            console.log(this.routerStatusValue.data.length);
+            // console.log(this.routerStatusValue);
+            // console.log(this.routerStatusValue.data.length);
         },
         enumerable: true,
         configurable: true
@@ -947,16 +962,19 @@ var LoginComponent = /** @class */ (function () {
                      * @return {?}
                      */
                     function () {
-                        console.log(_this.cookieService.getAll());
+                        // console.log(this.cookieService.getAll());
                     }), 1000);
+                    // console.log('result')
+                    // console.log(result.item[0].type)
                     for (var key in _this.routerStatusValue.data) {
                         // console.log(this.routerStatusValue.data[key].type);
-                        if (result.type === _this.routerStatusValue.data[key].type) {
+                        if (result.item[0].type === _this.routerStatusValue.data[key].type) {
                             _this.router.navigateByUrl('/' + _this.routerStatusValue.data[key].routerNav); // navigate to dashboard url 
                         }
                     }
                     // this is use for reset the from
                     _this.formDirective.resetForm();
+                    _this.message = '';
                 }
                 else {
                     // display error message on html
@@ -987,7 +1005,7 @@ var LoginComponent = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        this.router.navigateByUrl('/' + this.forgetRouteingUrlValue);
+        this.router.navigateByUrl('/' + this.forgetRouteingUrlValue.path);
     };
     // This is use for navigate this component to sign-Up component 
     // This is use for navigate this component to sign-Up component 
@@ -1000,12 +1018,23 @@ var LoginComponent = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        this.router.navigateByUrl('/' + this.signUpRouteingUrlValue);
+        this.router.navigateByUrl('/' + this.signUpRouteingUrlValue.path);
+    };
+    /**
+     * @param {?} link
+     * @return {?}
+     */
+    LoginComponent.prototype.customFunction = /**
+     * @param {?} link
+     * @return {?}
+     */
+    function (link) {
+        this.router.navigateByUrl('/' + link);
     };
     LoginComponent.decorators = [
         { type: Component, args: [{
                     selector: 'lib-login',
-                    template: "<div class=\"main-div\">\n\n    <mat-card class=\"from\">\n            <span class=\"logowrapper\" *ngIf=\"logoValue != ''\" >\n                    <img  [src]=\"logoValue\">\n                </span>\n\n        <h2 *ngIf=\"fromTitleValue != ''\"> {{fromTitleValue}}</h2>\n\n        <form class=\"example-container\" [formGroup]=\"loginForm\" (ngSubmit)=\"loginFormSubmit()\" novalidate>\n<mat-error class=\"error\" *ngIf=\"message !=''\">{{message}}</mat-error>\n\n            <mat-form-field>\n                <input matInput type=\"text\" placeholder=\"Username\" formControlName=\"email\" (blur)=\"inputUntouched('email')\">\n                <mat-error\n                    *ngIf=\"!loginForm.controls['email'].valid && loginForm.controls['email'].errors.required && loginForm.controls['email'].touched\">\n                    Username field can not be blank</mat-error>\n            </mat-form-field>\n\n\n            <mat-form-field>\n                <input matInput placeholder=\"Password\" type=\"password\" formControlName=\"password\" (blur)=\"inputUntouched('password')\">\n                <mat-error\n                    *ngIf=\"!loginForm.controls['password'].valid && loginForm.controls['password'].errors.required && loginForm.controls['password'].touched\">\n                    Password field can not be blank</mat-error>\n            </mat-form-field>\n\n\n            <button mat-raised-button color=\"primary\">Login</button>\n            <span class=\"signupfooter\">\n                <a (click)=\"forgetpassword()\">Forgot password</a>\n                <a (click)=\"signup()\">Sign Up</a>\n            </span>\n        </form>\n\n    </mat-card>\n\n</div>",
+                    template: "<div class=\"main-div\">\n\n    <mat-card class=\"from\">\n            <span class=\"logowrapper\" *ngIf=\"logoValue != ''\" >\n                    <img  [src]=\"logoValue\">\n                </span>\n\n        <h2 *ngIf=\"fromTitleValue != ''\"> {{fromTitleValue}}</h2>\n\n        <form class=\"example-container\" [formGroup]=\"loginForm\" (ngSubmit)=\"loginFormSubmit()\" novalidate>\n<mat-error class=\"error\" *ngIf=\"message !=''\">{{message}}</mat-error>\n\n            <mat-form-field>\n                <input matInput type=\"text\" placeholder=\"Username\" formControlName=\"email\" (blur)=\"inputUntouched('email')\">\n                <mat-error\n                    *ngIf=\"!loginForm.controls['email'].valid && loginForm.controls['email'].errors.required && loginForm.controls['email'].touched\">\n                    Username field can not be blank</mat-error>\n            </mat-form-field>\n\n\n            <mat-form-field>\n                <input matInput placeholder=\"Password\" type=\"password\" formControlName=\"password\" (blur)=\"inputUntouched('password')\">\n                <mat-error\n                    *ngIf=\"!loginForm.controls['password'].valid && loginForm.controls['password'].errors.required && loginForm.controls['password'].touched\">\n                    Password field can not be blank</mat-error>\n            </mat-form-field>\n\n\n   \n            <button mat-raised-button *ngIf=\"buttonNameValue != ''\" color=\"primary\">{{buttonNameValue}}</button>\n            <button mat-raised-button *ngIf=\"buttonNameValue == ''\" color=\"primary\">Login</button>\n            \n            \n            \n            <span class=\"signupfooter\">\n  <a *ngIf=\"signUpRouteingUrlValue.buttonName !='' && signUpRouteingUrlValue.customLink =='' && signUpRouteingUrlValue.customURl =='' \" (click)=\"signup()\">{{signUpRouteingUrlValue.buttonName}}</a>\n\n                <a *ngIf=\"signUpRouteingUrlValue.buttonName !='' && signUpRouteingUrlValue.customLink !='' && signUpRouteingUrlValue.path =='' \" (click)=\"customFunction(signUpRouteingUrlValue.customLink)\">{{signUpRouteingUrlValue.buttonName}}</a>\n\n<a *ngIf=\"signUpRouteingUrlValue.customURl !='' && signUpRouteingUrlValue.buttonName !='' && signUpRouteingUrlValue.customLink ==''  && signUpRouteingUrlValue.path ==''\" [attr.href]=\"signUpRouteingUrlValue.customURl\">{{signUpRouteingUrlValue.buttonName}}</a>\n\n                <a *ngIf=\"signUpRouteingUrlValue.buttonName =='' && signUpRouteingUrlValue.customLink ==''\" (click)=\"signup()\">Sign Up</a>\n\n                    <a *ngIf=\"forgetRouteingUrlValue.buttonName !='' && forgetRouteingUrlValue.customLink =='' && forgetRouteingUrlValue.customURl ==''\" (click)=\"forgetpassword()\">{{forgetRouteingUrlValue.buttonName}}</a>\n\n                <a *ngIf=\"forgetRouteingUrlValue.buttonName !='' && forgetRouteingUrlValue.customLink !='' && forgetRouteingUrlValue.path =='' \" (click)=\"customFunction(forgetRouteingUrlValue.customLink)\">{{forgetRouteingUrlValue.buttonName}}</a>\n\n                <a *ngIf=\"forgetRouteingUrlValue.customURl !='' && forgetRouteingUrlValue.customLink =='' && forgetRouteingUrlValue.path ==''\" [href]=\"forgetRouteingUrlValue.customURl\">{{forgetRouteingUrlValue.buttonName}}</a>\n\n\n                <a *ngIf=\"forgetRouteingUrlValue.buttonName =='' && forgetRouteingUrlValue.customLink ==''\" (click)=\"forgetpassword()\">Forget Password</a> \n\n            </span>\n        </form>\n\n    </mat-card>\n\n</div>",
                     styles: [".example-container{display:flex;flex-direction:column}.example-container>*{width:100%}.from{width:30%;margin:0 auto}.from h2{text-align:center;background-color:#00f;color:#fff;padding:15px}.from a{padding-right:30px}.main-div{height:100vh;display:flex;justify-content:center;align-items:center}.signupfooter{margin-top:12px;display:flex;justify-content:space-between;align-items:center}.signupfooter a{cursor:pointer}.error{text-align:center}.logowrapper{margin:0 auto;display:block;text-align:center}"]
                 }] }
     ];
@@ -1021,6 +1050,7 @@ var LoginComponent = /** @class */ (function () {
         formDirective: [{ type: ViewChild, args: [FormGroupDirective,] }],
         fromTitle: [{ type: Input }],
         logo: [{ type: Input }],
+        buttonName: [{ type: Input }],
         fullUrl: [{ type: Input }],
         endpoint: [{ type: Input }],
         cookieSet: [{ type: Input }],
@@ -1100,6 +1130,9 @@ var SignUpComponent = /** @class */ (function () {
         this.router = router;
         this.dialog = dialog;
         this.apiService = apiService;
+        this.value = '';
+        this.link = '';
+        this.Url = '';
         this.message = '';
         this.formTitleValue = '';
         this.serverUrlValue = '';
@@ -1107,6 +1140,7 @@ var SignUpComponent = /** @class */ (function () {
         this.loginRouteingUrlValue = '';
         this.addEndpointValue = '';
         this.logoValue = '';
+        this.typevalue = '';
         this.signUpForm = this.fb.group({
             email: ['', Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
             firstname: ['', Validators.required],
@@ -1147,6 +1181,28 @@ var SignUpComponent = /** @class */ (function () {
          */
         function (logoVal) {
             this.logoValue = logoVal;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SignUpComponent.prototype, "modaleLogo", {
+        set: /**
+         * @param {?} modaleLogoVal
+         * @return {?}
+         */
+        function (modaleLogoVal) {
+            this.link = modaleLogoVal;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SignUpComponent.prototype, "userType", {
+        set: /**
+         * @param {?} typeval
+         * @return {?}
+         */
+        function (typeval) {
+            this.typevalue = typeval;
         },
         enumerable: true,
         configurable: true
@@ -1231,8 +1287,12 @@ var SignUpComponent = /** @class */ (function () {
         if (this.signUpForm.valid) {
             // let link: any = this.fullUrlValue;
             /** @type {?} */
+            var allData = this.signUpForm.value;
+            allData.type = this.typevalue;
+            console.log(allData);
+            /** @type {?} */
             var data = {
-                'data': this.signUpForm.value,
+                'data': allData,
                 "source": this.addEndpointValue.source
             };
             console.log(data);
@@ -1246,6 +1306,11 @@ var SignUpComponent = /** @class */ (function () {
                 result = response;
                 console.log(result);
                 if (result.status == "success") {
+                    /** @type {?} */
+                    var dialogRef = _this.dialog.open(successModalComponent, {
+                        width: '250px',
+                        data: { value: result.status, Url: _this.link }
+                    });
                     // this.router.navigateByUrl('/' + )     // navigate to dashboard url 
                     // this is use for reset the from
                     _this.formDirective.resetForm();
@@ -1316,38 +1381,41 @@ var SignUpComponent = /** @class */ (function () {
         formTitle: [{ type: Input }],
         serverUrl: [{ type: Input }],
         logo: [{ type: Input }],
+        modaleLogo: [{ type: Input }],
+        userType: [{ type: Input }],
         addEndpoint: [{ type: Input }],
         forgetRouteingUrl: [{ type: Input }],
         loginRouteingUrl: [{ type: Input }]
     };
     return SignUpComponent;
 }());
-var commonModalComponent = /** @class */ (function () {
-    function commonModalComponent(dialogRef, data) {
+var successModalComponent = /** @class */ (function () {
+    function successModalComponent(dialogRef, data) {
         this.dialogRef = dialogRef;
         this.data = data;
+        console.log(data);
     }
     /**
      * @return {?}
      */
-    commonModalComponent.prototype.onNoClick = /**
+    successModalComponent.prototype.onNoClick = /**
      * @return {?}
      */
     function () {
         this.dialogRef.close();
     };
-    commonModalComponent.decorators = [
+    successModalComponent.decorators = [
         { type: Component, args: [{
-                    selector: 'commonModal',
-                    template: "<!-- <h1 mat-dialog-title>Hi {{data.name}}</h1> -->\n<div mat-dialog-content>\n  <h2>{{data.name}}</h2>\n \n</div>\n<div mat-dialog-actions>\n  <button mat-button (click)=\"onNoClick()\">No Thanks</button>\n  <button mat-button >Ok</button>\n</div>"
+                    selector: 'successModal',
+                    template: "\n<span style=\"text-align: center\"  *ngIf=\"data.Url != ''\" >\n  <img style=\"max-width: 100%; text-align: center\" [src]=\"data.Url\">\n</span>\n\n<div mat-dialog-content>\n  <p *ngIf=\"data.value.length <= 7\">Thanks! your account has been successfully created</p>\n  <p *ngIf=\"data.value.length >= 8\">{{data.value}}</p>\n  \n</div>\n<div mat-dialog-actions>\n  <button mat-button [mat-dialog-close]=\"\" cdkFocusInitial>Ok</button>\n</div>"
                 }] }
     ];
     /** @nocollapse */
-    commonModalComponent.ctorParameters = function () { return [
+    successModalComponent.ctorParameters = function () { return [
         { type: MatDialogRef },
         { type: undefined, decorators: [{ type: Inject, args: [MAT_DIALOG_DATA,] }] }
     ]; };
-    return commonModalComponent;
+    return successModalComponent;
 }());
 
 /**
@@ -1355,22 +1423,46 @@ var commonModalComponent = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var ForgetPasswordComponent = /** @class */ (function () {
-    function ForgetPasswordComponent(fb, http, router, apiService) {
+    function ForgetPasswordComponent(fb, router, apiService, snackBar) {
         this.fb = fb;
-        this.http = http;
         this.router = router;
         this.apiService = apiService;
+        this.snackBar = snackBar;
         this.message = '';
-        this.formTitleValue = '';
-        this.serverUrlValue = '';
-        this.signUpRouteingUrlValue = '';
-        this.domanUrlValue = '';
-        this.addEndpointValue = '';
-        this.logoValue = '';
+        this.buttonNameValue = '';
+        this.formTitleValue = ''; // This is From title
+        // This is From title
+        this.serverUrlValue = ''; //  This is Server url
+        //  This is Server url
+        this.signUpRouteingUrlValue = ''; // setting the navigate By Sign Up Url from project
+        // setting the navigate By Sign Up Url from project
+        this.loginRouteingUrlValue = ''; // setting the navigate By login Url from project
+        // setting the navigate By login Url from project
+        this.domanUrlValue = ''; // This is reset password url
+        // This is reset password url
+        this.addEndpointValue = ''; // This is endpoint url
+        // This is endpoint url
+        this.logoValue = ''; // This is from logo url
+        // This is from logo url
+        this.durationInSeconds = 5; // This is SnackBar set time
         this.forgetPasswordForm = this.fb.group({
             email: ['', Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
         });
     }
+    Object.defineProperty(ForgetPasswordComponent.prototype, "buttonName", {
+        set: 
+        // This is SnackBar set time
+        /**
+         * @param {?} buttonNameVal
+         * @return {?}
+         */
+        function (buttonNameVal) {
+            this.buttonNameValue = (buttonNameVal) || '<no name set>';
+            this.buttonNameValue = buttonNameVal;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(ForgetPasswordComponent.prototype, "domanUrl", {
         set: /**
          * @param {?} domanUrlVal
@@ -1379,7 +1471,7 @@ var ForgetPasswordComponent = /** @class */ (function () {
         function (domanUrlVal) {
             this.domanUrlValue = (domanUrlVal) || '<no name set>';
             this.domanUrlValue = domanUrlVal;
-            console.log(this.domanUrlValue);
+            // console.log(this.domanUrlValue);
         },
         enumerable: true,
         configurable: true
@@ -1438,6 +1530,20 @@ var ForgetPasswordComponent = /** @class */ (function () {
         function (routeingUrlval) {
             this.signUpRouteingUrlValue = (routeingUrlval) || '<no name set>';
             this.signUpRouteingUrlValue = routeingUrlval;
+            // console.log(this.signUpRouteingUrlValue)
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ForgetPasswordComponent.prototype, "loginRouteingUrl", {
+        set: /**
+         * @param {?} routeingUrlval
+         * @return {?}
+         */
+        function (routeingUrlval) {
+            this.loginRouteingUrlValue = (routeingUrlval) || '<no name set>';
+            this.loginRouteingUrlValue = routeingUrlval;
+            // console.log(this.loginRouteingUrlValue)
         },
         enumerable: true,
         configurable: true
@@ -1479,10 +1585,13 @@ var ForgetPasswordComponent = /** @class */ (function () {
         var _this = this;
         /** @type {?} */
         var x;
+        //  This for-loop use for from blank or properly validated checking  
         for (x in this.forgetPasswordForm.controls) {
             this.forgetPasswordForm.controls[x].markAsTouched();
         }
-        if (this.forgetPasswordForm.valid) {
+        if (this.forgetPasswordForm.valid) { //    validation checking
+            this.openSnackBar(); // open snack-bar function
+            // open snack-bar function
             /** @type {?} */
             var link = this.serverUrlValue;
             /** @type {?} */
@@ -1493,35 +1602,67 @@ var ForgetPasswordComponent = /** @class */ (function () {
              * @return {?}
              */
             function (response) {
-                console.log(response);
+                // console.log(response);
                 /** @type {?} */
                 var result = {};
                 result = response;
                 if (result.status == "success") {
+                    _this.openSnackBar(); // open snack-bar function
                     // this is use for reset the from
                     _this.formDirective.resetForm();
+                    _this.message = ''; // clear the from
                 }
                 else {
                     // display error message on html
-                    _this.message = result.msg;
+                    _this.message = result.msg; // show the error message
                 }
             }));
         }
     };
     /********* Forget password  Form Submit end here*********/
+    /********* openSnackBar function open start here*********/
+    /********* Forget password  Form Submit end here*********/
+    /**
+     * ****** openSnackBar function open start here********
+     * @return {?}
+     */
+    ForgetPasswordComponent.prototype.openSnackBar = /********* Forget password  Form Submit end here*********/
+    /**
+     * ****** openSnackBar function open start here********
+     * @return {?}
+     */
+    function () {
+        this.snackBar.openFromComponent(snackBarComponent, {
+            duration: this.durationInSeconds * 1000,
+        });
+    };
+    /********* openSnackBar function open end here*********/
     // This is use for navigate this component to sign-Up component 
     /**
-     * ****** Forget password  Form Submit end here********
+     * ****** openSnackBar function open end here********
      * @return {?}
      */
     // This is use for navigate this component to sign-Up component 
     ForgetPasswordComponent.prototype.signup = /**
-     * ****** Forget password  Form Submit end here********
+     * ****** openSnackBar function open end here********
      * @return {?}
      */
     // This is use for navigate this component to sign-Up component 
     function () {
         this.router.navigateByUrl('/' + this.signUpRouteingUrlValue);
+    };
+    // This is use for navigate this component to login component 
+    // This is use for navigate this component to login component 
+    /**
+     * @return {?}
+     */
+    ForgetPasswordComponent.prototype.login = 
+    // This is use for navigate this component to login component 
+    /**
+     * @return {?}
+     */
+    function () {
+        this.router.navigateByUrl('/' + this.loginRouteingUrlValue);
     };
     /**
      * @param {?} val
@@ -1534,30 +1675,55 @@ var ForgetPasswordComponent = /** @class */ (function () {
     function (val) {
         this.forgetPasswordForm.controls[val].markAsUntouched();
     };
+    /**
+     * @param {?} link
+     * @return {?}
+     */
+    ForgetPasswordComponent.prototype.customFunction = /**
+     * @param {?} link
+     * @return {?}
+     */
+    function (link) {
+        this.router.navigateByUrl('/' + link);
+    };
     ForgetPasswordComponent.decorators = [
         { type: Component, args: [{
                     selector: 'lib-forget-password',
-                    template: "<div class=\"main-div\">\n\n  <mat-card class=\"from\">\n      <span class=\"logowrapper\" *ngIf=\"logoValue != ''\" >\n          <img  [src]=\"logoValue\">\n      </span>\n\n    <h2 *ngIf=\"formTitleValue != ''\"> {{formTitleValue}}</h2>\n\n\n    <form class=\"example-container\" [formGroup]=\"forgetPasswordForm\" (ngSubmit)=\"forgetPasswordSubmit()\" novalidate>\n<mat-error class=\"error\" *ngIf=\"message !=''\">{{message}}</mat-error>\n\n      <mat-form-field>\n        <input matInput type=\"text\" placeholder=\"Email\"  formControlName=\"email\" (blur)=\"inputUntouched('email')\">\n        <mat-error\n          *ngIf=\"!forgetPasswordForm.controls['email'].valid && forgetPasswordForm.controls['email'].errors.required && forgetPasswordForm.controls['email'].touched\">\n          Email field can not be blank</mat-error>\n        <mat-error\n          *ngIf=\"!forgetPasswordForm.controls['email'].valid && !forgetPasswordForm.controls['email'].errors.required\">\n          Email is not valid</mat-error>\n      </mat-form-field>\n\n      <button mat-raised-button color=\"primary\">Forget Password</button>\n      <span class=\"signupfooter\">\n        <a (click)=\"signup()\">Sign Up</a>\n      </span>\n    </form>\n  </mat-card>\n</div>",
+                    template: "<div class=\"main-div\">\n\n  <mat-card class=\"from\">\n      <span class=\"logowrapper\" *ngIf=\"logoValue != ''\" >\n          <img  [src]=\"logoValue\">\n      </span>\n\n    <h2 *ngIf=\"formTitleValue != ''\"> {{formTitleValue}}</h2>\n\n\n    <form class=\"example-container\" [formGroup]=\"forgetPasswordForm\" (ngSubmit)=\"forgetPasswordSubmit()\" novalidate>\n<mat-error class=\"error\" *ngIf=\"message !=''\">{{message}}</mat-error>\n\n      <mat-form-field>\n        <input matInput type=\"text\" placeholder=\"Email\"  formControlName=\"email\" (blur)=\"inputUntouched('email')\">\n        <mat-error\n          *ngIf=\"!forgetPasswordForm.controls['email'].valid && forgetPasswordForm.controls['email'].errors.required && forgetPasswordForm.controls['email'].touched\">\n          Email field can not be blank</mat-error>\n        <mat-error\n          *ngIf=\"!forgetPasswordForm.controls['email'].valid && !forgetPasswordForm.controls['email'].errors.required\">\n          Email is not valid</mat-error>\n      </mat-form-field>\n<button mat-raised-button *ngIf=\"buttonNameValue != ''\" color=\"primary\">{{buttonNameValue}}</button>\n            <button mat-raised-button *ngIf=\"buttonNameValue == ''\" color=\"primary\">Login</button>\n      <span class=\"signupfooter\">\n      <a *ngIf=\"loginRouteingUrlValue.buttonName !='' && loginRouteingUrlValue.customLink =='' && loginRouteingUrlValue.customURl ==''\" (click)=\"login()\">{{loginRouteingUrlValue.buttonName}}</a>\n\n      <a *ngIf=\"loginRouteingUrlValue.customURl !='' && loginRouteingUrlValue.customLink =='' && loginRouteingUrlValue.path ==''\" [href]=\"loginRouteingUrlValue.customURl\">{{loginRouteingUrlValue.buttonName}}</a>\n\n                <a *ngIf=\"loginRouteingUrlValue.buttonName !='' && loginRouteingUrlValue.customLink !='' && loginRouteingUrlValue.path =='' \" (click)=\"customFunction(loginRouteingUrlValue.customLink)\">{{loginRouteingUrlValue.buttonName}}</a>\n\n <a *ngIf=\"loginRouteingUrlValue.buttonName =='' && loginRouteingUrlValue.customLink ==''\" (click)=\"login()\">Login</a>\n\n  <a *ngIf=\"signUpRouteingUrlValue.buttonName !='' && signUpRouteingUrlValue.customLink =='' && signUpRouteingUrlValue.customURl ==''\" (click)=\"signup()\">{{signUpRouteingUrlValue.buttonName}}</a>\n\n                <a *ngIf=\"signUpRouteingUrlValue.buttonName !='' && signUpRouteingUrlValue.customLink !='' && signUpRouteingUrlValue.path =='' \" (click)=\"customFunction(signUpRouteingUrlValue.customLink)\">{{signUpRouteingUrlValue.buttonName}}</a>\n\n                <a *ngIf=\"signUpRouteingUrlValue.customURl !='' && signUpRouteingUrlValue.customLink =='' && signUpRouteingUrlValue.path ==''\" [href]=\"signUpRouteingUrlValue.customURl\">{{signUpRouteingUrlValue.buttonName}}</a>\n\n\n                <a *ngIf=\"signUpRouteingUrlValue.buttonName =='' && signUpRouteingUrlValue.customLink ==''\" (click)=\"signup()\">Sign Up</a>\n\n\n\n\n                \n      </span>\n    </form>\n  </mat-card>\n</div>",
                     styles: [".example-container{display:flex;flex-direction:column}.example-container>*{width:100%}.from{width:30%;margin:0 auto}.from h2{text-align:center;background-color:#00f;color:#fff;padding:15px}.from a{padding-right:30px}.main-div{height:100vh;display:flex;justify-content:center;align-items:center}.signupfooter{margin-top:12px;display:flex;justify-content:space-between;align-items:center}.signupfooter a{cursor:pointer}.error{text-align:center}.logowrapper{margin:0 auto;display:block;text-align:center}"]
                 }] }
     ];
     /** @nocollapse */
     ForgetPasswordComponent.ctorParameters = function () { return [
         { type: FormBuilder },
-        { type: HttpClient },
         { type: Router },
-        { type: ApiService }
+        { type: ApiService },
+        { type: MatSnackBar }
     ]; };
     ForgetPasswordComponent.propDecorators = {
         formDirective: [{ type: ViewChild, args: [FormGroupDirective,] }],
+        buttonName: [{ type: Input }],
         domanUrl: [{ type: Input }],
         formTitle: [{ type: Input }],
         serverUrl: [{ type: Input }],
         logo: [{ type: Input }],
         addEndpoint: [{ type: Input }],
-        signUpRouteingUrl: [{ type: Input }]
+        signUpRouteingUrl: [{ type: Input }],
+        loginRouteingUrl: [{ type: Input }]
     };
     return ForgetPasswordComponent;
+}());
+var snackBarComponent = /** @class */ (function () {
+    function snackBarComponent() {
+    }
+    snackBarComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'snack-bar-modale',
+                    template: "<span class=\"example\">\n    We have e-mailed your password reset link!\n  </span>",
+                    styles: ["\n    .example {\n      color: aliceblue;\n      background-color: yellowgreen;\n    }\n  "]
+                }] }
+    ];
+    return snackBarComponent;
 }());
 
 /**
@@ -1795,7 +1961,14 @@ var LoginModule = /** @class */ (function () {
     }
     LoginModule.decorators = [
         { type: NgModule, args: [{
-                    declarations: [LoginComponent, SignUpComponent, ForgetPasswordComponent, ResetPasswordComponent, commonModalComponent],
+                    declarations: [
+                        LoginComponent,
+                        SignUpComponent,
+                        ForgetPasswordComponent,
+                        ResetPasswordComponent,
+                        successModalComponent,
+                        snackBarComponent,
+                    ],
                     imports: [
                         DemoMaterialModule,
                         FormsModule,
@@ -1808,7 +1981,7 @@ var LoginModule = /** @class */ (function () {
                     providers: [ApiService],
                     bootstrap: [],
                     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-                    entryComponents: [commonModalComponent]
+                    entryComponents: [successModalComponent, snackBarComponent]
                 },] }
     ];
     return LoginModule;
@@ -1824,6 +1997,6 @@ var LoginModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { LoginService, LoginComponent, LoginModule, ApiService as ɵa, ForgetPasswordComponent as ɵd, DemoMaterialModule as ɵf, ResetPasswordComponent as ɵe, SignUpComponent as ɵb, commonModalComponent as ɵc };
+export { LoginService, LoginComponent, LoginModule, ApiService as ɵa, ForgetPasswordComponent as ɵd, snackBarComponent as ɵe, DemoMaterialModule as ɵg, ResetPasswordComponent as ɵf, SignUpComponent as ɵb, successModalComponent as ɵc };
 
 //# sourceMappingURL=login.js.map

@@ -123,7 +123,22 @@
     </mat-card-content>
 
   <!-- table -->
-
+  <lib-listing class="formfilterdiv formfilterdivnew" *ngIf="allUserData.length>0" 
+    [datasource]="allUserData"
+    [skip]="allUserData_skip" 
+    [modify_header_array]="allUserData_modify_header" 
+    [apiurl]="apiUrl" 
+    [sourcedata]="tableName"
+    [jwttoken]="token" 
+    [statusarr]="status"
+    [updateendpoint]="UpdateEndpoint"
+    [deleteendpoint]="deleteEndpoint"
+    [date_search_endpoint]="SearchingEndpoint"
+    [date_search_source]="tableName"
+    [search_settings]="search_settings"
+   >
+</lib-listing>
+<h2 *ngIf="allUserData.length == 0">No record found.</h2>
   <!-- end table -->
 
 
