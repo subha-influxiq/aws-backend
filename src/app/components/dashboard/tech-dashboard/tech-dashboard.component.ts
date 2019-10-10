@@ -22,7 +22,7 @@ export class TechDashboardComponent implements OnInit {
   public apiUrl:any="https://jzvztvn4z8.execute-api.us-east-2.amazonaws.com/dev/api/";
   public tableName:any="usermanagement";
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
-  public SearchingEndpoint:"datalist";
+  public SearchingEndpoint:any="datalist";
   public SearchingSourceName :"usermanagement";
   public search_settings: any =
     {
