@@ -25,6 +25,8 @@ import { AdminDashboardComponent } from './components/dashboard/admin-dashboard/
 import { BillerDashboardComponent } from './components/dashboard/biller-dashboard/biller-dashboard.component';
 import { DoctorDashboardComponent } from './components/dashboard/doctor-dashboard/doctor-dashboard.component';
 
+//user-management
+import { UserAddEditComponent } from './components/user-management/user-add-edit/user-add-edit.component';
 /**testing purpose start here**/
 import { TestComponent } from './components/test/test.component';
 
@@ -44,10 +46,10 @@ import { TestComponent } from './components/test/test.component';
     AdminDashboardComponent,
     BillerDashboardComponent,
     DoctorDashboardComponent,
+    //user-management
+    UserAddEditComponent,
     // Test
     TestComponent,
-
-
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

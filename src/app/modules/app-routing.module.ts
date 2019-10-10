@@ -13,6 +13,8 @@ import { AdminDashboardComponent } from '../components/dashboard/admin-dashboard
 import { BillerDashboardComponent } from '../components/dashboard/biller-dashboard/biller-dashboard.component';
 import { DoctorDashboardComponent } from '../components/dashboard/doctor-dashboard/doctor-dashboard.component';
 
+/**User-Mnagement**/
+import { UserAddEditComponent } from '../components/user-management/user-add-edit/user-add-edit.component'
 /* Test Component */
 import { TestComponent } from '../components/test/test.component';
 import { from } from 'rxjs';
@@ -45,6 +47,11 @@ const routes: Routes = [
     path: 'dashboard/doctor', 
     component: DoctorDashboardComponent,
     canActivate: [ AuthguardService ]
+   },
+   /**user-management**/
+   {
+     path: 'user-management/add',
+     component : UserAddEditComponent
    },
 
   /**test component route start here**/
