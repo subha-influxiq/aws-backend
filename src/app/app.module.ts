@@ -16,7 +16,6 @@ import { DemoMaterialModule } from '../app/modules/materialModule';
 import { ForgetpasswordComponent } from './components/auth/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './components/auth/resetpassword/resetpassword.component';
 //dashboards
-import { TechdashboardComponent } from './components/techdashboard/techdashboard.component';
 import { TechDashboardComponent } from './components/dashboard/tech-dashboard/tech-dashboard.component';
 import { AdminDashboardComponent } from './components/dashboard/admin-dashboard/admin-dashboard.component';
 import { BillerDashboardComponent } from './components/dashboard/biller-dashboard/biller-dashboard.component';
@@ -36,7 +35,6 @@ import { TestComponent } from './components/test/test.component';
     ResetpasswordComponent,
 
     // dashboard
-    TechdashboardComponent,
     TechDashboardComponent,
     AdminDashboardComponent,
     BillerDashboardComponent,

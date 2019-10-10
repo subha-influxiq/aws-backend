@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from '../components/auth/login/login.component';
 import { ForgetpasswordComponent } from '../components/auth/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from '../components/auth/resetpassword/resetpassword.component';
-import { TechdashboardComponent } from '../components/techdashboard/techdashboard.component';
 /**dashboards**/
 import { TechDashboardComponent } from '../components/dashboard/tech-dashboard/tech-dashboard.component';
 import { AdminDashboardComponent } from '../components/dashboard/admin-dashboard/admin-dashboard.component';
