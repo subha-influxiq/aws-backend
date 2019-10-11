@@ -98,11 +98,11 @@
   <mat-card-content class="patient_report_section">
     <mat-card-content class="patient_top_search">
       <h1>Patient record report</h1>
-      <span class="search_bar">
+      <!-- <span class="search_bar">
         <span class="form_wrapper">
           <mat-form-field appearance="outline">
             <input matInput [matDatepicker]="picker" (focus)="picker.open()" placeholder="Search By Date">
-            <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> -->
+
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
           <button><i class="material-icons"> search </i></button>
@@ -119,17 +119,17 @@
           </mat-form-field>
           <button><i class="material-icons"> search </i></button>
         </span>
-      </span>
+      </span> -->
     </mat-card-content>
 
   <!-- table -->
-  <lib-listing class="formfilterdiv formfilterdivnew" *ngIf="allUserData.length>0" 
+  <lib-listing class="DataTable" *ngIf="allUserData.length>0"
     [datasource]="allUserData"
-    [skip]="allUserData_skip" 
-    [modify_header_array]="allUserData_modify_header" 
-    [apiurl]="apiUrl" 
+    [skip]="allUserData_skip"
+    [modify_header_array]="allUserData_modify_header"
+    [apiurl]="apiUrl"
     [sourcedata]="tableName"
-    [jwttoken]="token" 
+    [jwttoken]="token"
     [statusarr]="status"
     [updateendpoint]="UpdateEndpoint"
     [deleteendpoint]="deleteEndpoint"
@@ -145,7 +145,7 @@
 
   <span class="button_action">
     <button mat-flat-button>upload bulk report</button>
-    <button mat-flat-button>add a new patient records manually</button>
+    <button mat-flat-button routerLink="/user-management/add">add a new patient records manually</button>
   </span>
   </mat-card-content>
 

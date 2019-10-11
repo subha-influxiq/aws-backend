@@ -20,8 +20,8 @@ export class TechDashboardComponent implements OnInit {
   };
   public UpdateEndpoint:any="addorupdatedata";
   public deleteEndpoint:any="deletesingledata";
-  public token:any="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzA3ODg4NTEsImlhdCI6MTU3MDcwMjQ1MX0.NBnhZY0WK0mf2TqnbFJXSHiUJbwQAp_6i41RTUevPuw";
-  public apiUrl:any="https://jzvztvn4z8.execute-api.us-east-2.amazonaws.com/dev/api/";
+  public token:any="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzA4NjQxODUsImlhdCI6MTU3MDc3Nzc4NX0.jfiN4pHviHFa_uMPgX6CfZfsfAC22ocB_jvCa7g6GlY";
+  public apiUrl:any="https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";
   public tableName:any="usermanagement";
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint:any="datalist";
@@ -49,10 +49,10 @@ export class TechDashboardComponent implements OnInit {
   }
 
   getallUserData() {
-    let link = "https://jzvztvn4z8.execute-api.us-east-2.amazonaws.com/dev/api/datalist";
+    let link = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/datalist";
     var data = {
       "source": "usermanagement",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzA3ODg4NTEsImlhdCI6MTU3MDcwMjQ1MX0.NBnhZY0WK0mf2TqnbFJXSHiUJbwQAp_6i41RTUevPuw"
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzA4NjQxODUsImlhdCI6MTU3MDc3Nzc4NX0.jfiN4pHviHFa_uMPgX6CfZfsfAC22ocB_jvCa7g6GlY"
     }
     this.http.post(link, data)
       .subscribe(res => {
