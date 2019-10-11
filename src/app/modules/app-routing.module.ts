@@ -54,6 +54,11 @@ const routes: Routes = [
      component : UserAddEditComponent,
      canActivate: [ AuthguardService ]
    },
+   {
+    path: 'user-management/edit/:_id',
+    component : UserAddEditComponent,
+    canActivate: [ AuthguardService ]
+  },
 
   /**test component route start here**/
   { path: 'test', component: TestComponent }

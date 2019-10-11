@@ -10,10 +10,12 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { LoginComponent } from './components/auth/login/login.component';
 import { LoginModule } from 'login'; //login library
 import { ListingModule } from 'lib-listing';
+import { DatePipe } from '@angular/common';
 
 import { CookieService } from 'ngx-cookie-service';
 import { AuthguardService} from './services/authguard.service';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpServiceService } from './services/http-service.service';
 // modules
 import { DemoMaterialModule } from '../app/modules/materialModule';
 import { ForgetpasswordComponent } from './components/auth/forgetpassword/forgetpassword.component';
@@ -61,10 +63,13 @@ import { TestComponent } from './components/test/test.component';
     DemoMaterialModule,
     LoginModule,
     ListingModule,
+    FormsModule,
+    ReactiveFormsModule,
+
     
 
   ],
-  providers: [CookieService,AuthguardService],
+  providers: [CookieService,AuthguardService,HttpServiceService,    DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
