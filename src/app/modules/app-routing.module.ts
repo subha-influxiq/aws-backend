@@ -51,7 +51,8 @@ const routes: Routes = [
    /**user-management**/
    {
      path: 'user-management/add',
-     component : UserAddEditComponent
+     component : UserAddEditComponent,
+     canActivate: [ AuthguardService ]
    },
 
   /**test component route start here**/
