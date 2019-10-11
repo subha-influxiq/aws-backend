@@ -1,0 +1,37 @@
+/* header css */
+.techdashboard_header .mat-toolbar-row{ height: auto; }
+.techdashboard_header .mat-toolbar-row .logo_wrapper{ max-width: 200px; display: block; }
+.techdashboard_header .mat-toolbar-row .logo_wrapper img{ max-width: 100%; vertical-align: middle; }
+.techdashboard_header .mat-toolbar-row{ justify-content: space-between; padding: 0 40px;}
+.techdashboard_header .mat-toolbar-row .quotation { margin-bottom: 0px;}
+.techdashboard_header .mat-toolbar-row .quotation p{ font-family: "RobotoMedium"; font-size: 30px; color: #002035; text-transform: uppercase; margin: 0; }
+.techdashboard_header .mat-toolbar-row .profile_section { display: flex; border-left: 1px solid #e2dede; padding-left: 20px; }
+.techdashboard_header .mat-toolbar-row .profile_section .username{ padding-right: 20px; display: block; }
+/*End header css */
+.content_wrapper{ display: flex; justify-content: space-between;  align-items: center; width: 99%; margin: auto;
+  text-align: center; }
+.content_wrapper .itemsection{width: 33%; margin: 14px 7px; padding: 15px; box-sizing: border-box; display: flex; flex-direction: column; min-height: 200px; align-items: center;
+  justify-content: center; position: relative;}
+.one{ background: url("../../../../assets/images/techdashcontentbg1.jpg") no-repeat center center; background-size: cover; }
+.two{ background: url("../../../../assets/images/techdashcontentbg2.jpg") no-repeat center center; background-size: cover; }
+.three{ background: url("../../../../assets/images/techdashcontentbg3.jpg") no-repeat center center; background-size: cover; }
+.content_wrapper .itemsection button{ position: absolute;
+  right: 0; bottom: 0; background: rgba(0,0,0, 0.4); color: #fff; font-family: "RobotoRegular"; font-size: 15px;  border-radius: 0; text-transform: uppercase; }
+.content_wrapper .itemsection .counteer{ width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0,0,0, 0.2);
+  box-shadow: 2px 2px 2px 2px transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-family: "RobotoBlack";
+}
+.content_wrapper .itemsection p{   line-height: 28px; font-family: "RobotoBlack"; font-size: 30px; color: #fff; text-transform: uppercase; width: 320px; margin: 20px auto; margin-top: 15px;}
+.content_wrapper .itemsection .uploadsign{ width: 100%; height: 120px;}
+.content_wrapper .itemsection:nth-of-type(1){ padding: 0;}
+.content_wrapper .itemsection .section_title{ width: 90px; height: 90px; border-radius: 50%; background: #fff; margin-top: -35px; display: flex;
+  align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; box-shadow: 0px 2px 4px -2px #e27d2c; }
+.content_wrapper .itemsection .section_title img{ max-width: 100%; }

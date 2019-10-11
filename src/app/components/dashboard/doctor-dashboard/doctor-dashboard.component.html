@@ -1,1 +1,77 @@
-<p>doctor-dashboard works!</p>
+<mat-toolbar class="techdashboard_header">
+  <mat-toolbar-row>
+    <span class="logo_wrapper">
+      <img src="../../../assets/images/logo.png">
+    </span>
+
+
+    <mat-card-content class="quotation">
+      <p>ADVANCED ANS TECHNOLOGY – BETTER PATIENT CARE – INCREASE PRACTICE REVENUE</p>
+    </mat-card-content>
+
+
+    <mat-card-content class="profile_section">
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>account_circle</mat-icon> Account
+        </button>
+        <button mat-menu-item>
+          <mat-icon>build</mat-icon> Settings
+        </button>
+        <button mat-menu-item>
+          <mat-icon>edit</mat-icon> Edit Profile
+        </button>
+      </mat-menu>
+      <span class="username">Adam Coury</span>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <span class="user_profile">
+          <mat-icon>account_circle</mat-icon>
+          <i class="material-icons">
+            keyboard_arrow_down
+          </i>
+        </span>
+      </button>
+
+    </mat-card-content>
+
+
+  </mat-toolbar-row>
+</mat-toolbar>
+<!-- end header -->
+
+
+<mat-card-content class="content_wrapper">
+  <mat-card-content class="itemsection ">
+    <mat-card-content class="one uploadsign">
+      <p>Upload Your Signature Here</p>
+    </mat-card-content>
+
+    <span class="section_title">
+      <img src="../../../../assets/images/editicon.png">
+    </span>
+    <mat-card-content class="sign_uploader">
+
+
+      <span class="signature_form">
+          <mat-form-field appearance="fill">
+              <mat-label>Fill form field</mat-label>
+              <input matInput placeholder="Placeholder">
+            </mat-form-field>
+        <button mat-flat-button>Upload</button>
+      </span>
+    </mat-card-content>
+  </mat-card-content>
+
+
+
+  <mat-card-content class="itemsection two">
+    <span class="counteer"> 16</span>
+    <p>Signed Records</p>
+    <button mat-flat-button>View Details</button>
+  </mat-card-content>
+  <mat-card-content class="itemsection three">
+    <span class="counteer"> 12</span>
+    <p>Pending Signature</p>
+    <button mat-flat-button>View Details</button>
+  </mat-card-content>
+</mat-card-content>

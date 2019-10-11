@@ -42,6 +42,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'RobotoBold';
+  src: url('../fonts/Roboto-Bold.woff2') format('woff2'),
+      url('../fonts/Roboto-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
 
 
 
@@ -92,16 +100,15 @@
   font-family: "RalewayBold"; text-transform: uppercase; font-size: 28px; padding: 8px 16px; margin: auto;
   display: block; background-image: linear-gradient(40deg, var(--my-cool-background), var(--my-cool-background2))!important;
 }
-  .main_wrapper .login_wrapper .login_container .main-div .from .signupfooter a{ padding: 0; cursor: pointer; font-family: "RalewayMedium"; text-transform: uppercase; font-size: 14px; }
+.main_wrapper .login_wrapper .login_container .main-div .from .signupfooter a{ padding: 0; cursor: pointer; font-family: "RalewayMedium"; text-transform: uppercase; font-size: 14px; }
+.table_structure .mat-list-item .mat-list-item-content { display: flex; flex-direction: column!important; }
+.patient_report_section  .mat-form-field-appearance-outline .mat-form-field-wrapper { margin: 0!important; padding-bottom: 0; }
+.patient_report_section  .mat-form-field-appearance-outline .mat-form-field-infix { padding: 1em 0 1em 0; margin: 0; border: 0;}
+.DataTable table thead tr.mat-header-row { height: 56px; background: linear-gradient(180deg, #fac855, #e47e2a)!important; }
+.DataTable table th.mat-header-cell { text-align: left; color: #fff; font-family: "RobotoBold"; font-weight: normal; font-size: 16px; }
+.DataTable table tr.mat-row:nth-child(even) {  background: #f1f1f1; }
+.DataTable table tr.mat-row:hover {  background: #fcecb2; }
+.DataTable table td span .cursor{ color: #fff; background: #cd9300; margin-right: 5px; vertical-align: middle; display: table-cell; border-right: 3px solid #fff; }
+.DataTable table td span .cursor i{ vertical-align: middle; }
+.DataTable table td span .cursor:nth-last-child(1){ border-right: none; }
 
-
-
-  .table_structure .mat-list-item .mat-list-item-content { display: flex; flex-direction: column!important; }
-  .patient_report_section  .mat-form-field-appearance-outline .mat-form-field-wrapper {
-    margin: 0!important; padding-bottom: 0;
-  }
-  .patient_report_section  .mat-form-field-appearance-outline .mat-form-field-infix {
-    padding: 1em 0 1em 0;
-    margin: 0;
-    border: 0;
-}
