@@ -1,15 +1,11 @@
-<mat-card>
-    <mat-toolbar color="primary" style="justify-content: center; align-items: center;">
-      <h2 class="headerSpan">Testing</h2>
-    </mat-toolbar>
-    </mat-card>
+<h1> This one is for list </h1>
 
-    <lib-login 
-    [fromTitle]="fromTitle"
-    [fullUrl]="fullUrl" 
-    [forgetRouteingUrl]="forgetRouteingUrl"
-    [signUpRouteingUrl]='signUpRouteingUrl' 
-    [routerStatus]="routerStatus" 
-    [endpoint]="endpoint" 
-    [logo]="logo"> 
-        </lib-login>
+<table>
+  <tr>
+    <td>Name</td>
+  </tr>
+
+  <tr *ngFor="let userData of usersData">
+    <td>{{ userData.firstname }}</td>
+  </tr>
+</table>
