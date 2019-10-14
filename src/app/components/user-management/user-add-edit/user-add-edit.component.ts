@@ -26,7 +26,7 @@ export class UserAddEditComponent implements OnInit {
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe) {
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
     var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
-    this.allStateData();
+    this.allStateCityData();
     this.UserManagementAddEditForm = this.fb.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
@@ -58,19 +58,17 @@ export class UserAddEditComponent implements OnInit {
   }
   /**resetting the form start here **/
 
-  /**for getting all states function start here**/
-  allStateData() {
+  /**for getting all states & cities function start here**/
+  allStateCityData() {
     this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
       this.states = response;
-      console.log("State => ", response);
     });
 
     this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(response => {
       this.allCities = response;
-      console.log("City => ", response);
     });
   }
-  /**for getting all states function end here**/
+  /**for getting all states & cities  function end here**/
 
   getCity(event) {
     console.log(event);
@@ -93,7 +91,7 @@ export class UserAddEditComponent implements OnInit {
     var data = {
       "source": "user_management",
       "data": this.UserManagementAddEditForm.value,
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzA4NjQxODUsImlhdCI6MTU3MDc3Nzc4NX0.jfiN4pHviHFa_uMPgX6CfZfsfAC22ocB_jvCa7g6GlY"
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzExMTYzNDMsImlhdCI6MTU3MTAyOTk0M30.m7kRTmIwvk-G0qYmr0zJ9qXoFJea8fBwnIOt8d7n3bc"
     }
 
     if (this.UserManagementAddEditForm.valid) {
