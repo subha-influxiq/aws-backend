@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthguardService } from '../services/authguard.service'
+import { AuthguardService } from '../services/authguard.service';
+import { ResolveService } from '../services/resolve.service';
 
 /* Auth Component */
 import { LoginComponent } from '../components/auth/login/login.component';
@@ -32,33 +33,53 @@ const routes: Routes = [
   {
     path: 'dashboard/tech',
     component: TechDashboardComponent,
-    canActivate: [ AuthguardService ]
+
+    canActivate: [AuthguardService],
+    resolve :{techDashboardData :ResolveService},
+    data: {
+      requestcondition: {
+        source: 'user_management',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
   },
+
+
   {
     path: 'dashboard/admin',
     component: AdminDashboardComponent,
-    canActivate: [ AuthguardService ]
+    canActivate: [AuthguardService]
   },
   {
     path: 'dashboard/biller',
     component: BillerDashboardComponent,
     canActivate: [ AuthguardService ]
    },
+
   {
     path: 'dashboard/doctor',
     component: DoctorDashboardComponent,
-    canActivate: [ AuthguardService ]
-   },
-   /**user-management**/
-   {
-     path: 'user-management/add',
-     component : UserAddEditComponent,
-     canActivate: [ AuthguardService ]
-   },
-   {
+    canActivate: [AuthguardService]
+  },
+  /**user-management**/
+  {
+    path: 'user-management/add',
+    component: UserAddEditComponent,
+    canActivate: [AuthguardService]
+  },
+  {
     path: 'user-management/edit/:_id',
-    component : UserAddEditComponent,
-    canActivate: [ AuthguardService ]
+    component: UserAddEditComponent,
+    resolve :{UserData :ResolveService},
+    data: {
+      requestcondition: {
+        source: 'user_management',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+    canActivate: [AuthguardService]
   },
   /**admin  management*/
   {
@@ -68,12 +89,24 @@ const routes: Routes = [
   },
 
   /**test component route start here**/
-  { path: 'test', component: TestComponent },
+  {
+    path: 'test', component: TestComponent,
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'user_management',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+    canActivate: [AuthguardService]
+  }
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [ResolveService]
 })
 export class AppRoutingModule { }

@@ -11,22 +11,21 @@ export class LoginComponent implements OnInit {
   public fullUrl: any = "https://63zzhpnoti.execute-api.us-east-1.amazonaws.com/production/api/";  // server url
   public endpoint: any = "login";
   public buttonName:any= 'Login Button';
+
   public signUpRouteingUrl: any = {
-    // "path":"sign-up",
-    "path":"",
-    "buttonName":"Sign-Up",
-    "customLink":"",
-    "customURl":"https://advancedwellness.pro/"
+    "path": "",
+    "buttonName": "Sign-Up",
+    "customLink": "",
+    "customURl": "https://advancedwellness.pro/"
   };
- public forgetRouteingUrl: any = {
-   // "path":"forget-password",
-   "path":"",
-   "buttonName":"Forget Password",
-   "customLink":"/forget-password",
-  //  "customURl":"http://www.fjhj.lkj/cx"
- };
+  public forgetRouteingUrl: any = {
+    "path": "",
+    "buttonName": "Forget Password",
+    "customLink": "/forget-password",
+  };
 
   public routerStatus: any;
+
   constructor() {
     this.routerStatus = {           // this is use for if login succcess then navigate which page
       "data": [
@@ -36,7 +35,7 @@ export class LoginComponent implements OnInit {
         },
         {
           "type": "user",
-          "routerNav": "userDashbord"
+          "routerNav": "dashboard/tech"
         },
         {
           "type": "model",
@@ -47,6 +46,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+
 
   }
 

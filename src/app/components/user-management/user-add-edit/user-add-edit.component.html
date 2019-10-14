@@ -17,6 +17,7 @@
 
 
 <mat-card class="add_form">
+
   <h2>add a new patient records manually</h2>
 
 
@@ -108,20 +109,14 @@
           <mat-datepicker #myPicker></mat-datepicker>
       </mat-form-field>
 
-
       <mat-checkbox [formControl]="UserManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
-
-
-
       <span class="submit_form">
         <button mat-flat-button (click)="ResetAddForm()">Reset </button>
-        <button mat-flat-button type="submit">Submit </button>
+        <button mat-flat-button type="submit"> {{ buttonText }} </button>
       </span>
-
-
-
     </form>
   </mat-card-content>
+
 
 
 
