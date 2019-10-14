@@ -20,6 +20,7 @@ import { UserAddEditComponent } from '../components/user-management/user-add-edi
 import { TestComponent } from '../components/test/test.component';
 import { from } from 'rxjs';
 import { AddEditComponent } from '../components/admin-management/add-edit/add-edit.component';
+import { ManageAdminListComponent } from '../components/admin-management/manage-admin-list/manage-admin-list.component';
 
 const routes: Routes = [
   // Auth Route
@@ -85,6 +86,24 @@ const routes: Routes = [
   {
     path: 'admin-management/add',
     component : AddEditComponent,
+    canActivate: [ AuthguardService ]
+  },
+  {
+    path: 'admin-management/edit/:_id',
+    component : AddEditComponent,
+    canActivate: [ AuthguardService ]
+  },
+  {
+    path: 'admin-management/list',
+    component : ManageAdminListComponent,
+    resolve: { adminManagementdData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'user_management',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
     canActivate: [ AuthguardService ]
   },
 

@@ -1,0 +1,85 @@
+<mat-toolbar class="techdashboard_header">
+    <mat-toolbar-row>
+      <span class="logo_wrapper">
+        <img src="../../../assets/images/logo.png">
+      </span>
+
+      <button mat-flat-button id="menu_button" (click)="myFunction()"><i class="material-icons"> menu </i></button>
+      <mat-card-content class="quotation" id="myDIV">
+          <mat-nav-list >
+              <a mat-list-item routerLinkActive="active" [routerLink]="'/Dashboard/admin'" > Dashboard </a>
+              <a mat-list-item [routerLink]="'/manage-biller'" routerLinkActive="active"> Manage Biller </a>
+              <a mat-list-item [routerLink]="'/manage-doctor'" routerLinkActive="active"> Manage Doctor </a>
+              <a mat-list-item [routerLink]="'/manage-tech'" routerLinkActive="active"> Manage Tech </a>
+              <a mat-list-item [routerLink]="'/admin-management/list'" routerLinkActive="active"> Manage admin </a>
+              <a mat-list-item [routerLink]="'/patient-record-report'" routerLinkActive="active"> Patient record report</a>
+
+
+            </mat-nav-list>
+      </mat-card-content>
+
+
+      <mat-card-content class="profile_section">
+        <mat-menu #appMenu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>account_circle</mat-icon> Account
+          </button>
+          <button mat-menu-item>
+            <mat-icon>build</mat-icon> Settings
+          </button>
+          <button mat-menu-item>
+            <mat-icon>edit</mat-icon> Edit Profile
+          </button>
+        </mat-menu>
+        <span class="username">Adam Coury</span>
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+          <span class="user_profile">
+            <mat-icon>account_circle</mat-icon>
+            <i class="material-icons">
+              keyboard_arrow_down
+            </i>
+          </span>
+        </button>
+
+      </mat-card-content>
+
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <!-- end header -->
+
+ <span class="add_header">
+  <button mat-flat-button [routerLink]="[ '/admin-management/add']">Add Admin</button>
+</span>
+    <!-- table -->
+    <lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0"
+    [datasource]="TechDashboardAllData"
+    [skip]="allUserData_skip"
+    [modify_header_array]="allUserData_modify_header"
+    [apiurl]="apiUrl"
+    [sourcedata]="tableName"
+    [editroute]="editUrl"
+    [jwttoken]="user_cookie"
+    [statusarr]="status"
+    [updateendpoint]="UpdateEndpoint"
+    [deleteendpoint]="deleteEndpoint"
+    [date_search_endpoint]="SearchingEndpoint"
+    [date_search_source]="tableName"
+    [search_settings]="search_settings"
+   >
+  </lib-listing>
+  <h2 *ngIf="TechDashboardAllData.length == 0">No record found.</h2>
+    <!-- end table -->
+
+
+
+  <mat-card-content class="footer_section">
+    <span class="footer_content">
+
+      <mat-card-content class="link">
+        <a href="">Privacy Policy</a>
+        <a href=""> Terms & conditions</a>
+      </mat-card-content>
+      <p>© Copyright 2018 Advanced Wellness Solutions- All Rights Reserved</p>
+    </span>
+  </mat-card-content>

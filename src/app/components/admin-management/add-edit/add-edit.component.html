@@ -116,6 +116,31 @@
               && adminManagementAddEditForm.controls['role'].errors.required">
                    role field can not be blank</mat-error>
           </mat-form-field>
+
+          <br>
+          <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" placeholder="Password" [formControl]="adminManagementAddEditForm.controls['password']"
+                (blur)="inputUntouch(adminManagementAddEditForm,'password')">
+                <mat-error *ngIf="adminManagementAddEditForm.controls['role'].touched && !adminManagementAddEditForm.controls['password'].valid
+                && adminManagementAddEditForm.controls['password'].errors.required">
+                     password field can not be blank</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput type="password" placeholder="Confirm Password" [formControl]="adminManagementAddEditForm.controls['confirmPassword']"
+                  (blur)="inputUntouch(adminManagementAddEditForm,'confirmPassword')">
+                  <mat-error *ngIf="adminManagementAddEditForm.controls['confirmPassword'].touched && !adminManagementAddEditForm.controls['confirmPassword'].valid
+                  && adminManagementAddEditForm.controls['confirmPassword'].errors.required">
+                       confirmPassword field can not be blank</mat-error>
+              </mat-form-field>
+
+
+
+
+
+
         <mat-checkbox [formControl]="adminManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
 
 

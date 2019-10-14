@@ -12,8 +12,11 @@ export class AddEditComponent implements OnInit {
   public ddmmyy: any;
   serializedDate = new FormControl((new Date()).toISOString());
   public adminManagementAddEditForm:FormGroup;
+
   constructor( public fb: FormBuilder, private datePipe: DatePipe) {
+
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
+
     var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
         this.adminManagementAddEditForm = fb.group({
           firstname: ['', Validators.required],
@@ -26,6 +29,8 @@ export class AddEditComponent implements OnInit {
           zip: ['', Validators.required],
           date: ['', Validators.required],
           status: ['', Validators.required],
+          password: ['', Validators.required],
+          confirmPassword: ['', Validators.required],
           role: ['', Validators.required],
         })
   }
