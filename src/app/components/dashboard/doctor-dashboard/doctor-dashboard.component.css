@@ -12,7 +12,7 @@
   text-align: center; }
 .content_wrapper .itemsection{width: 33%; margin: 14px 7px; padding: 15px; box-sizing: border-box; display: flex; flex-direction: column; min-height: 200px; align-items: center;
   justify-content: center; position: relative;}
-.one{ background: url("../../../../assets/images/techdashcontentbg1.jpg") no-repeat center center; background-size: cover; }
+.one{ background: url("../../../../assets/images/doctordashone.jpg") no-repeat center center; background-size: cover; }
 .two{ background: url("../../../../assets/images/techdashcontentbg2.jpg") no-repeat center center; background-size: cover; }
 .three{ background: url("../../../../assets/images/techdashcontentbg3.jpg") no-repeat center center; background-size: cover; }
 .content_wrapper .itemsection button{ position: absolute;
@@ -30,8 +30,12 @@
   font-family: "RobotoBlack";
 }
 .content_wrapper .itemsection p{   line-height: 28px; font-family: "RobotoBlack"; font-size: 30px; color: #fff; text-transform: uppercase; width: 320px; margin: 20px auto; margin-top: 15px;}
-.content_wrapper .itemsection .uploadsign{ width: 100%; height: 120px;}
+.content_wrapper .itemsection .uploadsign{ width: 100%; height: 103px;}
+.content_wrapper .itemsection .uploadsign p{ width: 100%; margin-bottom: 0; margin-top: 25px; }
 .content_wrapper .itemsection:nth-of-type(1){ padding: 0;}
-.content_wrapper .itemsection .section_title{ width: 90px; height: 90px; border-radius: 50%; background: #fff; margin-top: -35px; display: flex;
-  align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; box-shadow: 0px 2px 4px -2px #e27d2c; }
+.content_wrapper .itemsection .section_title{ width: 90px; height: 90px; border-radius: 50%; background: #fff; margin-top: -45px; display: flex;
+  align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; box-shadow: 0px 2px 4px -2px #e27d2c; margin-bottom: 13px;}
 .content_wrapper .itemsection .section_title img{ max-width: 100%; }
+.content_wrapper .itemsection .sign_uploader { display: flex; width: 100%;}
+.content_wrapper .itemsection .sign_uploader input{ width: 100%; padding: 9px; box-sizing: border-box; border: 1px solid #dcdddf; }
+.content_wrapper .itemsection .sign_uploader .signature_upload{ position: inherit; top: 0; right: 0; background: #dd671d; color:#fff; }
