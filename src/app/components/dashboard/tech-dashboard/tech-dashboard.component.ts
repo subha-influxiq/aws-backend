@@ -21,19 +21,12 @@ export class TechDashboardComponent implements OnInit {
     "email": "E-Mail", "city": "City", "address": "Address", "state": "State", "phone": "Phone", "zip": "Zip",
     "status": "Status"
   };
-<<<<<<< HEAD
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public token: any = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzA4NjQxODUsImlhdCI6MTU3MDc3Nzc4NX0.jfiN4pHviHFa_uMPgX6CfZfsfAC22ocB_jvCa7g6GlY";
+  public token: any = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzExMTYzNDMsImlhdCI6MTU3MTAyOTk0M30.m7kRTmIwvk-G0qYmr0zJ9qXoFJea8fBwnIOt8d7n3bc";
   public apiUrl: any = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";
   public tableName: any = "user_management";
-=======
-  public UpdateEndpoint:any="addorupdatedata";
-  public deleteEndpoint:any="deletesingledata";
-  public token:any="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzA4NjQxODUsImlhdCI6MTU3MDc3Nzc4NX0.jfiN4pHviHFa_uMPgX6CfZfsfAC22ocB_jvCa7g6GlY";
-  public apiUrl:any="https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";
-  public tableName:any="usermanagement";
->>>>>>> d12d4397a418c75cc452c345934364d1e2f90b0e
+
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
   public SearchingSourceName: "user_management";
@@ -60,22 +53,16 @@ export class TechDashboardComponent implements OnInit {
   }
 
   getallUserData() {
-<<<<<<< HEAD
     var data = {
       "source": "user_management",
-=======
-    let link = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/datalist";
-    var data = {
-      "source": "usermanagement",
->>>>>>> d12d4397a418c75cc452c345934364d1e2f90b0e
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzA4NjQxODUsImlhdCI6MTU3MDc3Nzc4NX0.jfiN4pHviHFa_uMPgX6CfZfsfAC22ocB_jvCa7g6GlY"
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzExMTYzNDMsImlhdCI6MTU3MTAyOTk0M30.m7kRTmIwvk-G0qYmr0zJ9qXoFJea8fBwnIOt8d7n3bc"
     }
     this.httpService.httpViaPost("datalist", data)
       .subscribe(res => {
         let result: any;
         result = res;
         this.allUserData = result.res;
-     
+
       })
   }
 }

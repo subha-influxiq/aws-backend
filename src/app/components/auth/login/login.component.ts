@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   public logo: any = './assets/images/logo.png';
-  public fromTitle: any = "Login Form";    // This is a From Title 
-  public fullUrl: any = "https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/";  // server url
+  public fromTitle: any = "Login Form";    // This is a From Title
+  public fullUrl: any = "https://63zzhpnoti.execute-api.us-east-1.amazonaws.com/production/api/";  // server url
   public endpoint: any = "login";
   public buttonName:any= 'Login Button';
   public signUpRouteingUrl: any = {
@@ -26,9 +26,9 @@ export class LoginComponent implements OnInit {
   //  "customURl":"http://www.fjhj.lkj/cx"
  };
 
-  public routerStatus: any; 
-  constructor() { 
-    this.routerStatus = {           // this is use for if login succcess then navigate which page 
+  public routerStatus: any;
+  constructor() {
+    this.routerStatus = {           // this is use for if login succcess then navigate which page
       "data": [
         {
           "type": "admin",
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-   
+
   }
 
 }

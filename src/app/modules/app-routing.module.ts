@@ -18,6 +18,7 @@ import { UserAddEditComponent } from '../components/user-management/user-add-edi
 /* Test Component */
 import { TestComponent } from '../components/test/test.component';
 import { from } from 'rxjs';
+import { AddEditComponent } from '../components/admin-management/add-edit/add-edit.component';
 
 const routes: Routes = [
   // Auth Route
@@ -28,23 +29,23 @@ const routes: Routes = [
   { path: 'sign-up', redirectTo: '/login', pathMatch: 'full' },
 
   //dashboards
-  { 
+  {
     path: 'dashboard/tech',
     component: TechDashboardComponent,
-    canActivate: [ AuthguardService ] 
+    canActivate: [ AuthguardService ]
   },
-  { 
+  {
     path: 'dashboard/admin',
     component: AdminDashboardComponent,
-    canActivate: [ AuthguardService ] 
+    canActivate: [ AuthguardService ]
   },
-  { 
-    path: 'dashboard/biller', 
+  {
+    path: 'dashboard/biller',
     component: BillerDashboardComponent,
     canActivate: [ AuthguardService ]
    },
-  { 
-    path: 'dashboard/doctor', 
+  {
+    path: 'dashboard/doctor',
     component: DoctorDashboardComponent,
     canActivate: [ AuthguardService ]
    },
@@ -59,9 +60,16 @@ const routes: Routes = [
     component : UserAddEditComponent,
     canActivate: [ AuthguardService ]
   },
+  /**admin  management*/
+  {
+    path: 'admin-management/add',
+    component : AddEditComponent,
+    canActivate: [ AuthguardService ]
+  },
 
   /**test component route start here**/
-  { path: 'test', component: TestComponent }
+  { path: 'test', component: TestComponent },
+
 ];
 
 @NgModule({

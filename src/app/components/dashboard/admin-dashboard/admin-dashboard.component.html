@@ -1,1 +1,206 @@
-<p>admin-dashboard works!</p>
+<mat-toolbar class="techdashboard_header">
+  <mat-toolbar-row>
+    <span class="logo_wrapper">
+      <img src="../../../assets/images/logo.png">
+    </span>
+
+    <button mat-flat-button id="menu_button" (click)="myFunction()"><i class="material-icons"> menu </i></button>
+    <mat-card-content class="quotation" id="myDIV">
+        <mat-nav-list >
+            <a mat-list-item routerLinkActive="active" [routerLink]="'/Dashboard/admin'" > Dashboard </a>
+            <a mat-list-item [routerLink]="'/manage-biller'" routerLinkActive="active"> Manage Biller </a>
+            <a mat-list-item [routerLink]="'/manage-doctor'" routerLinkActive="active"> Manage Doctor </a>
+            <a mat-list-item [routerLink]="'/manage-tech'" routerLinkActive="active"> Manage Tech </a>
+            <a mat-list-item [routerLink]="'/patient-record-report'" routerLinkActive="active"> Patient record report</a>
+
+
+          </mat-nav-list>
+    </mat-card-content>
+
+
+    <mat-card-content class="profile_section">
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>account_circle</mat-icon> Account
+        </button>
+        <button mat-menu-item>
+          <mat-icon>build</mat-icon> Settings
+        </button>
+        <button mat-menu-item>
+          <mat-icon>edit</mat-icon> Edit Profile
+        </button>
+      </mat-menu>
+      <span class="username">Adam Coury</span>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <span class="user_profile">
+          <mat-icon>account_circle</mat-icon>
+          <i class="material-icons">
+            keyboard_arrow_down
+          </i>
+        </span>
+      </button>
+
+    </mat-card-content>
+
+
+  </mat-toolbar-row>
+</mat-toolbar>
+<!-- end header -->
+
+
+<mat-card-content class="content_wrapper">
+  <mat-card-content class="itemsection one">
+    <span class="counteer"> 5</span>
+    <p>Total Number of Doctors</p>
+    <button mat-flat-button>View Details</button>
+  </mat-card-content>
+  <mat-card-content class="itemsection two">
+    <span class="counteer"> 5</span>
+    <p>Total Number of Billers</p>
+    <button mat-flat-button>View Details</button>
+  </mat-card-content>
+  <mat-card-content class="itemsection three">
+    <span class="counteer"> 5</span>
+    <p>Total Number of Techs</p>
+    <button mat-flat-button>View Details</button>
+  </mat-card-content>
+</mat-card-content>
+
+
+
+<mat-card-content class="admin_superbillsection">
+  <h1>Physician Report and Super Bills</h1>
+  <mat-card-content class="biller_wrapper">
+    <mat-card-content class="super_bill_item sp_one">
+      <span class="border_wrapper">
+        <mat-card-content class="circle">
+            <img src="../../../../assets/images/admincircle_icon1.png">
+        </mat-card-content>
+      </span>
+      <span>
+        <h2>75</h2>
+        <p>Total No of <br>
+          Reports Uploaded
+        </p>
+        <button mat-flat-button>view all</button>
+      </span>
+
+    </mat-card-content>
+    <mat-card-content class="super_bill_item sp_two">
+      <span class="border_wrapper">
+        <mat-card-content class="circle">
+            <img src="../../../../assets/images/admincircle_icon2.png">
+        </mat-card-content>
+      </span>
+      <span>
+        <h2>75</h2>
+        <p>Total No of <br>
+          Report Processed
+        </p>
+        <button mat-flat-button>view all</button>
+      </span>
+
+    </mat-card-content>
+    <mat-card-content class="super_bill_item sp_three">
+      <span class="border_wrapper">
+        <mat-card-content class="circle">
+         <img src="../../../../assets/images/admincircle_icon3.png">
+        </mat-card-content>
+      </span>
+      <span>
+        <h2>75</h2>
+        <p>Total No of <br>
+          Report Signed
+        </p>
+        <button mat-flat-button>view all</button>
+      </span>
+
+    </mat-card-content>
+    <mat-card-content class="super_bill_item sp_four">
+      <span class="border_wrapper">
+        <mat-card-content class="circle">
+            <img src="../../../../assets/images/admincircle_icon4.png">
+        </mat-card-content>
+      </span>
+      <span>
+        <h2>75</h2>
+        <p> Sent to <br>
+          Super Bill
+        </p>
+        <button mat-flat-button>view all</button>
+      </span>
+
+    </mat-card-content>
+  </mat-card-content>
+</mat-card-content>
+
+
+<!-- patainet report section -->
+<mat-card-content class="patient_report_section">
+  <mat-card-content class="patient_top_search">
+    <h1>Patient record report</h1>
+    <!-- <span class="search_bar">
+      <span class="form_wrapper">
+        <mat-form-field appearance="outline">
+          <input matInput [matDatepicker]="picker" (focus)="picker.open()" placeholder="Search By Date">
+
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <button><i class="material-icons"> search </i></button>
+      </span>
+      <span class="form_wrapper">
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Search By Status">
+        </mat-form-field>
+        <button><i class="material-icons"> search </i></button>
+      </span>
+      <span class="form_wrapper">
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Search By Patient">
+        </mat-form-field>
+        <button><i class="material-icons"> search </i></button>
+      </span>
+    </span> -->
+  </mat-card-content>
+
+  <!-- table -->
+  <!-- <lib-listing class="DataTable" *ngIf="allUserData.length>0"
+  [datasource]="allUserData"
+  [skip]="allUserData_skip"
+  [modify_header_array]="allUserData_modify_header"
+  [apiurl]="apiUrl"
+  [sourcedata]="tableName"
+  [editroute]="editUrl"
+  [jwttoken]="token"
+  [statusarr]="status"
+  [updateendpoint]="UpdateEndpoint"
+  [deleteendpoint]="deleteEndpoint"
+  [date_search_endpoint]="SearchingEndpoint"
+  [date_search_source]="tableName"
+  [search_settings]="search_settings"
+ >
+</lib-listing>
+<h2 *ngIf="allUserData.length == 0">No record found.</h2> -->
+  <!-- end table -->
+
+
+
+  <span class="button_action">
+    <button mat-flat-button>upload bulk report</button>
+    <button mat-flat-button routerLink="/user-management/add">add a new patient records manually</button>
+  </span>
+</mat-card-content>
+
+
+
+
+<mat-card-content class="footer_section">
+  <span class="footer_content">
+
+    <mat-card-content class="link">
+      <a href="">Privacy Policy</a>
+      <a href=""> Terms & conditions</a>
+    </mat-card-content>
+    <p>© Copyright 2018 Advanced Wellness Solutions- All Rights Reserved</p>
+  </span>
+</mat-card-content>

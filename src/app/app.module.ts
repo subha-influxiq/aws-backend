@@ -31,6 +31,7 @@ import { DoctorDashboardComponent } from './components/dashboard/doctor-dashboar
 import { UserAddEditComponent } from './components/user-management/user-add-edit/user-add-edit.component';
 /**testing purpose start here**/
 import { TestComponent } from './components/test/test.component';
+import { AddEditComponent } from './components/admin-management/add-edit/add-edit.component';
 
 /**end here**/
 
@@ -52,6 +53,7 @@ import { TestComponent } from './components/test/test.component';
     UserAddEditComponent,
     // Test
     TestComponent,
+    AddEditComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
