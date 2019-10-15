@@ -99,7 +99,7 @@ const routes: Routes = [
     resolve: { adminManagementdData: ResolveService },
     data: {
       requestcondition: {
-        source: 'user_management',
+        source: 'admin_management',
         condition: {}
       },
       endpoint: 'datalist'

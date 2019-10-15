@@ -10,11 +10,11 @@ import { CookieService } from 'ngx-cookie-service';
 export class ManageAdminListComponent implements OnInit {
 public TechDashboardAllData:any=[];
 
-public allUserData_skip: any = ["_id", "created_at"];
+public allUserData_skip: any = ["confirmpassword", "password","created_at","_id"];
   public editUrl: any = "admin-management/edit";
   public allUserData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name",
-    "email": "E-Mail", "city": "City", "address": "Address", "state": "State", "phone": "Phone", "zip": "Zip",
+    "email": "E-Mail", "phoneno": "Phone Number","date":"Date",
     "status": "Status"
   };
 
