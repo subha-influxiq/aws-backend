@@ -33,6 +33,7 @@ import { UserAddEditComponent } from './components/user-management/user-add-edit
 import { TestComponent } from './components/test/test.component';
 import { AddEditComponent } from './components/admin-management/add-edit/add-edit.component';
 import { ManageAdminListComponent } from './components/admin-management/manage-admin-list/manage-admin-list.component';
+import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
 
 /**end here**/
 
@@ -56,6 +57,7 @@ import { ManageAdminListComponent } from './components/admin-management/manage-a
     TestComponent,
     AddEditComponent,
     ManageAdminListComponent,
+    AdminHeaderComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

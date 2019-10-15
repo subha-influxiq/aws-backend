@@ -112,3 +112,17 @@
 .DataTable table td span .cursor i{ vertical-align: middle; }
 .DataTable table td span .cursor:nth-last-child(1){ border-right: none; }
 
+.loader{ width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
+.loader img{ max-width: 100%; }
+
+
+
+/* Styling modal */
+.custom-modalbox{ width: 700px;}
+.custom-modalbox .mat-dialog-container { border: 4px solid #ffbc36; background: linear-gradient(0deg, #ffdfab, #99dfff); }
+.custom-modalbox .mat-dialog-container .mat-card  { background: rgba(0,0,0, 0.1); margin: 10px 0; }
+.custom-modalbox .mat-dialog-container .mat-card  .mat-card-header-text { margin: 0; text-transform: capitalize; color: #000; font-family: "Robotomedium";}
+.custom-modalbox .mat-dialog-container .mat-button-base { background: rgb(35, 201, 255); color: #fff; text-transform: uppercase;}
+@media screen and (max-width: 991px){
+  .custom-modalbox{ width: 90%;}
+}
