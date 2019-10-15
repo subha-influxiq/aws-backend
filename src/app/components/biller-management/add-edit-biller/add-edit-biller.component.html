@@ -1,0 +1,136 @@
+<app-admin-header></app-admin-header>
+
+
+
+<mat-card class="add_form">
+  <h2>{{headerText}}</h2>
+
+
+  <mat-card-content class="form_wrapper">
+    <form class="example-form" autocomplete="off" name="billerManagementAddEditForm"
+      [formGroup]="billerManagementAddEditForm" (ngSubmit)="BillerManagementAddFormSubmit()">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter First Name</mat-label>
+        <input matInput placeholder="First Name" [formControl]="billerManagementAddEditForm.controls['firstname']"
+          (blur)="inputUntouch(billerManagementAddEditForm,'firstname')">
+        <mat-error *ngIf="billerManagementAddEditForm.controls['firstname'].touched && !billerManagementAddEditForm.controls['firstname'].valid
+           && billerManagementAddEditForm.controls['firstname'].errors.required">
+          First Name field can not be blank</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter Last Name</mat-label>
+        <input matInput placeholder="Last Name" [formControl]="billerManagementAddEditForm.controls['lastname']"
+          (blur)="inputUntouch(billerManagementAddEditForm,'lastname')">
+        <mat-error *ngIf="billerManagementAddEditForm.controls['lastname'].touched && !billerManagementAddEditForm.controls['lastname'].valid
+           && billerManagementAddEditForm.controls['lastname'].errors.required">
+          Last Name field can not be blank</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email Address</mat-label>
+        <input matInput placeholder="Email Address" [formControl]="billerManagementAddEditForm.controls['email']"
+          (blur)="inputUntouch(billerManagementAddEditForm,'email')">
+        <mat-error *ngIf="billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid
+            && billerManagementAddEditForm.controls['email'].errors.required">
+          E-Mail field can not be blank</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Phone </mat-label>
+        <input type="number" matInput placeholder="Phone"
+          [formControl]="billerManagementAddEditForm.controls['phoneno']"
+          (blur)="inputUntouch(billerManagementAddEditForm,'phoneno')">
+        <mat-error *ngIf="billerManagementAddEditForm.controls['phoneno'].touched && !billerManagementAddEditForm.controls['phoneno'].valid
+            && billerManagementAddEditForm.controls['phoneno'].errors.required">
+          Phone Number field can not be blank</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Company Name </mat-label>
+        <input matInput placeholder="Company Name" [formControl]="billerManagementAddEditForm.controls['companyname']"
+          (blur)="inputUntouch(billerManagementAddEditForm,'companyname')">
+        <mat-error *ngIf="billerManagementAddEditForm.controls['companyname'].touched && !billerManagementAddEditForm.controls['companyname'].valid
+            && billerManagementAddEditForm.controls['companyname'].errors.required">
+          Company Name field can not be blank</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Address" [formControl]="billerManagementAddEditForm.controls['address']"
+          (blur)="inputUntouch(billerManagementAddEditForm,'address')">
+        <mat-error *ngIf="billerManagementAddEditForm.controls['address'].touched && !billerManagementAddEditForm.controls['address'].valid
+            && billerManagementAddEditForm.controls['address'].errors.required">
+          Address field can not be blank</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="parent_cat" appearance="fill">
+        <mat-label>City</mat-label>
+        <mat-select formControlName="city">
+          <mat-option value=0>Select a category</mat-option>
+          <mat-option *ngFor="let city of cities;" value="{{ city }}">{{ city }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="parent_cat" appearance="fill">
+        <mat-label>State</mat-label>
+        <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
+          <mat-option [value]=0>Select a category</mat-option>
+          <mat-option *ngFor="let state of states;" value="{{ state.name }}">{{ state.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Zip</mat-label>
+        <input type="number" matInput placeholder="ZIP" [formControl]="billerManagementAddEditForm.controls['zip']"
+          (blur)="inputUntouch(billerManagementAddEditForm,'zip')">
+        <mat-error *ngIf="billerManagementAddEditForm.controls['zip'].touched && !billerManagementAddEditForm.controls['zip'].valid
+          && billerManagementAddEditForm.controls['zip'].errors.required">
+          Zip field can not be blank</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Date</mat-label>
+        <input [value]="date.value" matInput [matDatepicker]="myPicker" placeholder="date">
+        <mat-datepicker-toggle matSuffix [for]="myPicker" disabled></mat-datepicker-toggle>
+        <mat-datepicker #myPicker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="form-group">
+        <input matInput placeholder="Password" type="password"
+          [formControl]="billerManagementAddEditForm.controls['password']">
+        <mat-error
+          *ngIf="!billerManagementAddEditForm.controls['password'].valid && billerManagementAddEditForm.controls['password'].touched">
+          Password field can not be blank</mat-error>
+
+      </mat-form-field>
+      <mat-form-field class="form-group">
+        <input matInput placeholder="Confirm Password" type="password"
+          [formControl]="billerManagementAddEditForm.controls['confirmpassword']">
+        <mat-error
+          *ngIf="!billerManagementAddEditForm.controls['confirmpassword'].valid && billerManagementAddEditForm.controls['confirmpassword'].touched">
+          Password does not match </mat-error>
+
+      </mat-form-field>
+
+
+      <mat-checkbox [formControl]="billerManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
+      <mat-error *ngIf="billerManagementAddEditForm.controls['status'].touched && !billerManagementAddEditForm.controls['status'].valid
+      && billerManagementAddEditForm.controls['status'].errors.required">
+        Status field can not be blank</mat-error>
+
+
+      <span class="submit_form">
+        <button mat-flat-button (click)="ResetAddEditForm()">Reset </button>
+        <button mat-flat-button type="submit"> {{ buttonText }} </button>
+      </span>
+
+
+
+    </form>
+  </mat-card-content>
+
+
+
+
+</mat-card>

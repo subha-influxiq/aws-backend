@@ -31,11 +31,11 @@ export class LoginComponent implements OnInit {
       "data": [
         {
           "type": "admin",
-          "routerNav": "forget-password"
+          "routerNav": "dashboard/admin"
         },
         {
           "type": "user",
-          "routerNav": "dashboard/tech"
+          "routerNav": "dashboard/user"
         },
         {
           "type": "model",
