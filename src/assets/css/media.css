@@ -162,5 +162,19 @@
       .mat-table .mat-cell:first-child {
       margin-top: 4%;
     }
-    .DataTable .searchbar { display: flex!important; flex-direction: column; height: auto; }
+    .DataTable .searchbar { display: flex!important;   height: auto; }
   }
+  @media screen and (max-width: 668px) {
+    .DataTable .searchbar { display: flex!important; flex-direction: column; }
+  }
+  .searchbar .mat-form-field .mat-form-field-flex {
+    display: inline-flex;
+    align-items: baseline;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1.5px solid #424242;
+    border-radius: 4px;
+    padding: 0px 10px;
+}
+
+
