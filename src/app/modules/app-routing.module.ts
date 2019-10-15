@@ -27,6 +27,8 @@ import { ListingBillerComponent } from '../components/biller-management/listing-
 /**tech-management**/
 import { AddEditTechComponent } from '../components/tech-management/add-edit-tech/add-edit-tech.component';
 import { ListingTechComponent } from '../components/tech-management/listing-tech/listing-tech.component';
+/**account-settings**/
+import { AccountSettingsComponent} from '../components/account-settings/account-settings.component';
 const routes: Routes = [
   // Auth Route
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -185,6 +187,12 @@ const routes: Routes = [
     },
     canActivate: [AuthguardService]
   },
+  {
+    path : 'account-settings',
+    component : AccountSettingsComponent,
+    canActivate: [AuthguardService]
+  },
+  
 
   /**test component route start here**/
   {

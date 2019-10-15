@@ -38,6 +38,7 @@ import { AddEditBillerComponent } from './components/biller-management/add-edit-
 import { ListingBillerComponent } from './components/biller-management/listing-biller/listing-biller.component';
 import { ListingTechComponent } from './components/tech-management/listing-tech/listing-tech.component';
 import { AddEditTechComponent } from './components/tech-management/add-edit-tech/add-edit-tech.component';
+import { AccountSettingsComponent } from './components/account-settings/account-settings.component';
 
 /**end here**/
 
@@ -66,6 +67,7 @@ import { AddEditTechComponent } from './components/tech-management/add-edit-tech
     ListingBillerComponent,
     ListingTechComponent,
     AddEditTechComponent,
+    AccountSettingsComponent,
 
   ],
   imports: [

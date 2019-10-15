@@ -21,8 +21,8 @@
 
       <mat-card-content class="profile_section">
         <mat-menu #appMenu="matMenu">
-          <button mat-menu-item>
-            <mat-icon>account_circle</mat-icon> Account Settings
+          <button mat-menu-item [routerLink]="'/account-settings'">
+            <mat-icon   >account_circle</mat-icon> Account Settings
           </button>
 
           <button mat-menu-item> <mat-icon>power_settings_new</mat-icon> Logout </button>
