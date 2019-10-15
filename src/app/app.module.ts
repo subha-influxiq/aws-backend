@@ -34,6 +34,10 @@ import { TestComponent } from './components/test/test.component';
 import { AddEditComponent } from './components/admin-management/add-edit/add-edit.component';
 import { ManageAdminListComponent } from './components/admin-management/manage-admin-list/manage-admin-list.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
+import { AddEditBillerComponent } from './components/biller-management/add-edit-biller/add-edit-biller.component';
+import { ListingBillerComponent } from './components/biller-management/listing-biller/listing-biller.component';
+import { ListingTechComponent } from './components/tech-management/listing-tech/listing-tech.component';
+import { AddEditTechComponent } from './components/tech-management/add-edit-tech/add-edit-tech.component';
 
 /**end here**/
 
@@ -58,6 +62,11 @@ import { AdminHeaderComponent } from './components/admin-header/admin-header.com
     AddEditComponent,
     ManageAdminListComponent,
     AdminHeaderComponent,
+    AddEditBillerComponent,
+    ListingBillerComponent,
+    ListingTechComponent,
+    AddEditTechComponent,
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

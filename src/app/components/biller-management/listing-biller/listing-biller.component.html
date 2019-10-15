@@ -1,0 +1,37 @@
+<app-admin-header></app-admin-header>
+<span class="add_header">
+    <button mat-flat-button [routerLink]="[ '/biller-management/add']">Add Biller</button>
+</span>
+
+
+ <!-- table -->
+ <lib-listing class="DataTable" *ngIf="allBillerData.length>0"
+    [datasource]="allBillerData"
+    [skip]="allUserData_skip"
+    [modify_header_array]="allUserData_modify_header"
+    [apiurl]="apiUrl"
+    [sourcedata]="tableName"
+    [editroute]="editUrl"
+    [jwttoken]="user_cookie"
+    [statusarr]="status"
+    [updateendpoint]="UpdateEndpoint"
+    [deleteendpoint]="deleteEndpoint"
+    [date_search_endpoint]="SearchingEndpoint"
+    [date_search_source]="tableName"
+    [search_settings]="search_settings"
+   >
+  </lib-listing>
+  <h2 *ngIf="allBillerData.length == 0">No record found.</h2>
+    <!-- end table -->
+
+    <mat-card-content class="footer_section">
+        <span class="footer_content">
+    
+          <mat-card-content class="link">
+            <a href="">Privacy Policy</a>
+            <a href=""> Terms & conditions</a>
+          </mat-card-content>
+          <p>© Copyright 2018 Advanced Wellness Solutions- All Rights Reserved</p>
+        </span>
+      </mat-card-content>
+    

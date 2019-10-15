@@ -17,8 +17,11 @@ export class AddEditComponent implements OnInit {
   serializedDate = new FormControl((new Date()).toISOString());
   public adminManagementAddEditForm: FormGroup;
   public user_token: any;
+  public params_id: any;
+  public buttonText :any="Submit";
+  public message : any="Submitted Successfully";
   constructor(public fb: FormBuilder, private datePipe: DatePipe,
-    public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar) {
+    public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute) {
     this.user_token = cookie.get('jwtToken');
 
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
@@ -27,19 +30,24 @@ export class AddEditComponent implements OnInit {
     this.adminManagementAddEditForm = fb.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
-      email: ['', Validators.required],
+      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
       phoneno: ['', Validators.required],
       date: [dateformat],
       status: ['', Validators.required],
-      // password: ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       password: [],
-      confirmpassword: ['', Validators.required],
-
+      confirmpassword: [],
     }, { validator: this.machpassword('password', 'confirmpassword') })
   }
 
 
   ngOnInit() {
+    if (this.activeRoute.snapshot.params._id) {
+      this.buttonText = "Update";
+      this.message = "Updated Successfully";
+      this.params_id = this.activeRoute.snapshot.params._id;
+      this.getSingleResolveData();
+
+    }
 
   }
 
@@ -55,7 +63,20 @@ export class AddEditComponent implements OnInit {
       }
     };
   }
-
+  /**Resolve data for edit */
+  getSingleResolveData() {
+    this.activeRoute.data.forEach((data) => {
+      let AdminSingleData: any
+      AdminSingleData = data.adminsingleData.res;
+      this.adminManagementAddEditForm.controls['firstname'].patchValue(AdminSingleData[0].firstname);
+      this.adminManagementAddEditForm.controls['lastname'].patchValue(AdminSingleData[0].lastname);
+      this.adminManagementAddEditForm.controls['email'].patchValue(AdminSingleData[0].email);
+      this.adminManagementAddEditForm.controls['phoneno'].patchValue(AdminSingleData[0].phoneno);
+      this.adminManagementAddEditForm.controls['status'].patchValue(AdminSingleData[0].status);
+      this.adminManagementAddEditForm.controls['password'].patchValue(AdminSingleData[0].password);
+    }
+    )
+  }
   /**for validation purpose**/
   inputUntouch(form: any, val: any) {
 
@@ -76,18 +97,41 @@ export class AddEditComponent implements OnInit {
         this.adminManagementAddEditForm.value.status = parseInt("1");
       else
         this.adminManagementAddEditForm.value.status = parseInt("0");
-      var data = {
-        "source": "admin_management",
-        "data": this.adminManagementAddEditForm.value,
-        "token": this.user_token
+      /**delete confirmpassword  field before submitted the form */
+      delete this.adminManagementAddEditForm.value.confirmpassword;
+      /**end */
+      var data
+      if (this.params_id) {
+        data = {
+          "source": "admin_management",
+          "data": {
+            id: this.params_id,
+            firstname: this.adminManagementAddEditForm.value.firstname,
+            lastname: this.adminManagementAddEditForm.value.lastname,
+            phoneno: this.adminManagementAddEditForm.value.phoneno,
+            email: this.adminManagementAddEditForm.value.email,
+            date: this.adminManagementAddEditForm.value.data,
+            password: this.adminManagementAddEditForm.value.password,
+            status: this.adminManagementAddEditForm.value.status,
+          },
+          "token": this.user_token
+        }
+
+      } else {
+        data = {
+          "source": "admin_management",
+          "data": this.adminManagementAddEditForm.value,
+          "token": this.user_token
+        }
       }
+
       this.httpService.httpViaPost("addorupdatedata", data)
         .subscribe(response => {
-          let message = "Submitted Successfully";
           let action = "Ok";
-          this.snackBar.open(message, action, {
+          this.snackBar.open(this.message, action, {
             duration: 2000,
           });
+          this.ResetAddEditForm();
           setTimeout(() => {
             this.router.navigateByUrl('/admin-management/list');
           }, 2200);

@@ -21,7 +21,12 @@ import { TestComponent } from '../components/test/test.component';
 import { from } from 'rxjs';
 import { AddEditComponent } from '../components/admin-management/add-edit/add-edit.component';
 import { ManageAdminListComponent } from '../components/admin-management/manage-admin-list/manage-admin-list.component';
-
+/**biller-management**/
+import { AddEditBillerComponent } from '../components/biller-management/add-edit-biller/add-edit-biller.component';
+import { ListingBillerComponent } from '../components/biller-management/listing-biller/listing-biller.component';
+/**tech-management**/
+import { AddEditTechComponent } from '../components/tech-management/add-edit-tech/add-edit-tech.component';
+import { ListingTechComponent } from '../components/tech-management/listing-tech/listing-tech.component';
 const routes: Routes = [
   // Auth Route
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -91,6 +96,14 @@ const routes: Routes = [
   {
     path: 'admin-management/edit/:_id',
     component : AddEditComponent,
+    resolve: { adminsingleData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'admin_management',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
     canActivate: [ AuthguardService ]
   },
   {
@@ -105,6 +118,72 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
     canActivate: [ AuthguardService ]
+  },
+  /**Biller Management**/
+   {
+     path : 'biller-management/add',
+     component :  AddEditBillerComponent,
+     canActivate: [AuthguardService]
+   },
+   {
+    path : 'biller-management/edit/:_id',
+    component :  AddEditBillerComponent,
+    resolve: { billersingleData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'biller_management',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+    canActivate: [AuthguardService]
+  },
+  
+   {
+    path : 'biller-management/list',
+    component : ListingBillerComponent,
+    resolve: { Billerdata: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'biller_management',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+    canActivate: [AuthguardService]
+   },
+  /**tech-management**/
+  {
+    path : 'tech-management/add',
+    component :  AddEditTechComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path : 'tech-management/edit/:_id',
+    component :  AddEditTechComponent,
+    resolve :{techData :ResolveService},
+    data: {
+      requestcondition: {
+        source: 'tech_management',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+    canActivate: [AuthguardService]
+   
+  },
+  {
+    path : 'tech-management/list',
+    component :  ListingTechComponent,
+    resolve :{techDashboardData :ResolveService},
+    data: {
+      requestcondition: {
+        source: 'tech_management',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+    canActivate: [AuthguardService]
   },
 
   /**test component route start here**/
