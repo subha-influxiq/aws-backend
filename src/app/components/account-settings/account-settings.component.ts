@@ -17,15 +17,21 @@ export class AccountSettingsComponent implements OnInit {
   public AccountSettingsForm: FormGroup;
   public user_token: any;
   public params_id: any;
-  public buttonText: any = "Save";
-  public message: any = "Submitted Successfully";
+  public message: any = "Updated Successfully";
   public states: any;
   public allCities: any;
   public cities: any;
+  public cookiesData: any;
+  public cookies_id: any;
 
   constructor(public fb: FormBuilder, private datePipe: DatePipe,
     public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute) {
     this.user_token = cookie.get('jwtToken');
+    let allcookies: any;
+    allcookies = cookie.getAll();
+    this.cookiesData = JSON.parse(allcookies.user_details);
+    this.cookies_id = this.cookiesData._id;
+
     this.allStateCityData();
 
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
@@ -41,30 +47,36 @@ export class AccountSettingsComponent implements OnInit {
       city: ['', Validators.required],
       state: ['', Validators.required],
       date: [dateformat],
-      status: ['', Validators.required],
-      type:['',Validators.required],
-      password: [],
-      confirmpassword: [],
-    }, { validator: this.machpassword('password', 'confirmpassword') })
+      type: ['', Validators.required],
+
+    })
   }
 
   ngOnInit() {
+    this.SetValueForm();
+  }
+  /**for validation purpose**/
+  inputUntouch(form: any, val: any) {
+
+    form.controls[val].markAsUntouched();
+  }
+  /**for validation purpose**/
+
+  SetValueForm() {
+    this.AccountSettingsForm.controls['firstname'].patchValue(this.cookiesData.firstname);
+    this.AccountSettingsForm.controls['lastname'].patchValue(this.cookiesData.lastname);
+    this.AccountSettingsForm.controls['email'].patchValue(this.cookiesData.email);
+    this.AccountSettingsForm.controls['phoneno'].patchValue(this.cookiesData.phone);
+    this.AccountSettingsForm.controls['zip'].patchValue(this.cookiesData.zip);
+    this.AccountSettingsForm.controls['address'].patchValue(this.cookiesData.address);
+    this.AccountSettingsForm.controls['type'].patchValue(this.cookiesData.type);
+    this.AccountSettingsForm.controls['state'].patchValue(this.cookiesData.state);
+    this.AccountSettingsForm.controls['city'].patchValue(this.cookiesData.city);
+
   }
 
-  machpassword(passwordkye: string, confirmpasswordkye: string) {
-    return (group: FormGroup) => {
-      let passwordInput = group.controls[passwordkye],
-        confirmpasswordInput = group.controls[confirmpasswordkye];
-      if (passwordInput.value !== confirmpasswordInput.value) {
-        return confirmpasswordInput.setErrors({ notEquivalent: true });
-      }
-      else {
-        return confirmpasswordInput.setErrors(null);
-      }
-    };
-  }
-   /**for getting all states & cities function start here**/
-   allStateCityData() {
+  /**for getting all states & cities function start here**/
+  allStateCityData() {
     this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
       this.states = response;
     });
@@ -73,15 +85,52 @@ export class AccountSettingsComponent implements OnInit {
       this.allCities = response;
     });
   }
+
   /**for getting all states & cities  function end here**/
   getCity(event) {
     var val = event;
     this.cities = this.allCities[val];
   }
-  ResetForm() {
 
+  CancelRedirectToDashboard() {
+    this.router.navigateByUrl('/dashboard/admin');
   }
   AccountSettingsFormSubmit() {
+    let x: any;
+    for (x in this.AccountSettingsForm.controls) {
+      this.AccountSettingsForm.controls[x].markAsTouched();
+    }
+    if (this.AccountSettingsForm.valid) {
+      var data: any;
+      data = {
+        "source": "user",
+        "data": {
+          id: this.cookies_id,
+          firstname: this.AccountSettingsForm.value.firstname,
+          lastname: this.AccountSettingsForm.value.lastname,
+          phoneno: this.AccountSettingsForm.value.phoneno,
+          email: this.AccountSettingsForm.value.email,
+          date: this.AccountSettingsForm.value.data,
+          zip: this.AccountSettingsForm.value.zip,
+          address: this.AccountSettingsForm.value.address,
+          city: this.AccountSettingsForm.value.city,
+          state: this.AccountSettingsForm.value.state,
+          type: this.AccountSettingsForm.value.type,
+        },
+        "token": this.user_token
+      }
+      this.httpService.httpViaPost('addorupdatedata', data)
+        .subscribe(response => {
+          let action: any = "Ok"
+          this.snackBar.open(this.message, action, {
+            duration: 1000,
+          })
+          setTimeout(() => {
+            this.CancelRedirectToDashboard();
+          }, 1200);
+
+        })
+    }
 
   }
 

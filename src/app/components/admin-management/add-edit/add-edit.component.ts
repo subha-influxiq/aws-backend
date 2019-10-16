@@ -35,7 +35,7 @@ export class AddEditComponent implements OnInit {
       phoneno: ['', Validators.required],
       date: [dateformat],
       status: ['', Validators.required],
-      password: [],
+      password: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
     }, { validator: this.machpassword('password', 'confirmpassword') })
   }
@@ -88,7 +88,6 @@ export class AddEditComponent implements OnInit {
     this.adminManagementAddEditForm.reset();
   }
   AdminManagementAddFormSubmit() {
-    console.log(this.adminManagementAddEditForm.value);
     let x: any;
     for (x in this.adminManagementAddEditForm.controls) {
       this.adminManagementAddEditForm.controls[x].markAsTouched();

@@ -39,6 +39,7 @@ import { ListingBillerComponent } from './components/biller-management/listing-b
 import { ListingTechComponent } from './components/tech-management/listing-tech/listing-tech.component';
 import { AddEditTechComponent } from './components/tech-management/add-edit-tech/add-edit-tech.component';
 import { AccountSettingsComponent } from './components/account-settings/account-settings.component';
+import { ChangePasswordComponent } from './components/account-settings/change-password/change-password.component';
 
 /**end here**/
 
@@ -68,6 +69,7 @@ import { AccountSettingsComponent } from './components/account-settings/account-
     ListingTechComponent,
     AddEditTechComponent,
     AccountSettingsComponent,
+    ChangePasswordComponent,
 
   ],
   imports: [
@@ -81,7 +83,7 @@ import { AccountSettingsComponent } from './components/account-settings/account-
     LoginModule,
     ListingModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
 
     
 

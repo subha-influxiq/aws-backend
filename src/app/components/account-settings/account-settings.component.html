@@ -17,10 +17,10 @@
 
             <mat-form-field appearance="fill">
                 <mat-label>Enter Last Name</mat-label>
-                <input matInput placeholder="Last Name" [formControl]="AccountSettingsForm.controls['type']"
-                    (blur)="inputUntouch(AccountSettingsForm,'type')">
-                <mat-error *ngIf="AccountSettingsForm.controls['type'].touched && !AccountSettingsForm.controls['type'].valid
-           && AccountSettingsForm.controls['type'].errors.required">
+                <input matInput placeholder="Last Name" [formControl]="AccountSettingsForm.controls['lastname']"
+                    (blur)="inputUntouch(AccountSettingsForm,'lastname')">
+                <mat-error *ngIf="AccountSettingsForm.controls['lastname'].touched && !AccountSettingsForm.controls['lastname'].valid
+           && AccountSettingsForm.controls['lastname'].errors.required">
                     Last Name field can not be blank</mat-error>
             </mat-form-field>
 
@@ -50,20 +50,6 @@
                 <mat-datepicker #myPicker></mat-datepicker>
             </mat-form-field>
 
-            <mat-form-field class="form-group">
-                <input matInput placeholder="Password" type="password"
-                    [formControl]="AccountSettingsForm.controls['password']">
-                <mat-error
-                    *ngIf="!AccountSettingsForm.controls['password'].valid && AccountSettingsForm.controls['password'].touched">
-                    Password field can not be blank</mat-error>
-            </mat-form-field>
-            <mat-form-field class="form-group">
-                <input matInput placeholder="Confirm Password" type="password"
-                    [formControl]="AccountSettingsForm.controls['confirmpassword']">
-                <mat-error
-                    *ngIf="!AccountSettingsForm.controls['confirmpassword'].valid && AccountSettingsForm.controls['confirmpassword'].touched">
-                    Password does not match </mat-error>
-            </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Zip</mat-label>
                 <input type="number" matInput placeholder="ZIP" [formControl]="AccountSettingsForm.controls['zip']"
@@ -105,16 +91,10 @@
             </mat-form-field>
 
             <span class="submit_form">
-                <button mat-flat-button (click)="ResetForm()">Cancel </button>
-                <button mat-flat-button type="submit">{{ buttonText }} </button>
+                <button mat-flat-button (click)="CancelRedirectToDashboard()"> Cancel </button>
+                <button mat-flat-button type="submit"> Update </button>
             </span>
-
-
-
         </form>
     </mat-card-content>
-
-
-
 
 </mat-card>

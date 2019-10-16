@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthguardService } from '../services/authguard.service';
+import { from } from 'rxjs';
+
+/* Resolve Service */
 import { ResolveService } from '../services/resolve.service';
 
 /* Auth Component */
@@ -8,27 +11,31 @@ import { LoginComponent } from '../components/auth/login/login.component';
 import { ForgetpasswordComponent } from '../components/auth/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from '../components/auth/resetpassword/resetpassword.component';
 
-/**dashboards**/
+/* All Dashboards */
 import { TechDashboardComponent } from '../components/dashboard/tech-dashboard/tech-dashboard.component';
 import { AdminDashboardComponent } from '../components/dashboard/admin-dashboard/admin-dashboard.component';
 import { BillerDashboardComponent } from '../components/dashboard/biller-dashboard/biller-dashboard.component';
 import { DoctorDashboardComponent } from '../components/dashboard/doctor-dashboard/doctor-dashboard.component';
 
-/**User-Mnagement**/
+/* User Mnagement */
 import { UserAddEditComponent } from '../components/user-management/user-add-edit/user-add-edit.component'
-/* Test Component */
-import { TestComponent } from '../components/test/test.component';
-import { from } from 'rxjs';
 import { AddEditComponent } from '../components/admin-management/add-edit/add-edit.component';
 import { ManageAdminListComponent } from '../components/admin-management/manage-admin-list/manage-admin-list.component';
-/**biller-management**/
+
+/* Biller Management */
 import { AddEditBillerComponent } from '../components/biller-management/add-edit-biller/add-edit-biller.component';
 import { ListingBillerComponent } from '../components/biller-management/listing-biller/listing-biller.component';
-/**tech-management**/
+
+/* Tech Management */
 import { AddEditTechComponent } from '../components/tech-management/add-edit-tech/add-edit-tech.component';
 import { ListingTechComponent } from '../components/tech-management/listing-tech/listing-tech.component';
-/**account-settings**/
+
+/* Account Settings */
 import { AccountSettingsComponent} from '../components/account-settings/account-settings.component';
+import { ChangePasswordComponent } from '../components/account-settings/change-password/change-password.component';
+/* Test Component */
+import { TestComponent } from '../components/test/test.component';
+
 const routes: Routes = [
   // Auth Route
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -41,7 +48,6 @@ const routes: Routes = [
   {
     path: 'dashboard/tech',
     component: TechDashboardComponent,
-
     canActivate: [AuthguardService],
     resolve :{techDashboardData :ResolveService},
     data: {
@@ -52,8 +58,6 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-
-
   {
     path: 'dashboard/admin',
     component: AdminDashboardComponent,
@@ -63,8 +67,7 @@ const routes: Routes = [
     path: 'dashboard/biller',
     component: BillerDashboardComponent,
     canActivate: [ AuthguardService ]
-   },
-
+  },
   {
     path: 'dashboard/doctor',
     component: DoctorDashboardComponent,
@@ -187,9 +190,15 @@ const routes: Routes = [
     },
     canActivate: [AuthguardService]
   },
+  /**Account-Settings**/
   {
-    path : 'account-settings',
+    path : 'admin/account-settings',
     component : AccountSettingsComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path : 'admin/account-settings/change-password',
+    component : ChangePasswordComponent,
     canActivate: [AuthguardService]
   },
   

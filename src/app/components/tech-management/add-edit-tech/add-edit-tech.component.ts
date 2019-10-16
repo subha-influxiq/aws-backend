@@ -46,7 +46,7 @@ export class AddEditTechComponent implements OnInit {
       zip: ['', Validators.required],
       date: [dateformat],
       status: ['', Validators.required],
-      password: [],
+      password: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
     }, { validators: this.matchpassword('password', 'confirmpassword') })
   }
