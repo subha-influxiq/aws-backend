@@ -62,19 +62,27 @@ width: 390px; border: 3px solid #d59d01; }
 }
 .add_form .mat-card-content label , .add_form .patient_diagnotes label{ font-family: "RobotoMedium"; color: #01090c; font-size: 16px; margin: 0 5px}
 .add_form .mat-card-content label , 
-.add_form .patient_diagnotes label{ font-family: "RobotoMedium"; color: #01090c; font-size: 16px; margin:10px;line-height: 20px;}
-
+.add_form .patient_diagnotes label{ font-family: "RobotoMedium"; color: #01090c; font-size: 15px; margin:10px;line-height: 20px;} 
 
 .add_form .mat-card-content .mat-checkbox { margin: 0 5px; font-family: "RobotoRegular";}
 .add_form .mat-card-content ,
-.add_form .patient_diagnotes .mat-form-field {
-   
-  position: relative;
-  text-align: left;
-  margin: 0 10px;
-}
-.add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0 8px; border: 2px solid #43cef5; background: #fff;
-  box-sizing: border-box;}
+.add_form .patient_diagnotes .mat-form-field { position: relative; text-align: left; margin: 0 10px; }
+.add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0 8px; border: 2px solid #43cef5; background: #fff; box-sizing: border-box;}
 .add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0 20px;}
 .add_form .patient_diagnotes .example-full-width textarea{ resize: none; }
  
+@media screen and (max-width: 1024px){
+  .add_form .submit_form button { width: 46%; }
+}
+
+@media screen and (max-width: 668px){
+.add_form .test_date_wrapper  .mat-card-actions , .add_form  .test_date_wrapper  .mat-card-content , .add_form .test_date_wrapper
+ .mat-card-subtitle { display: block; }
+ .add_form  .mat-form-field {  width: 100%; }
+ .add_form .mat-card-content, .add_form .patient_diagnotes .mat-form-field { width: auto; }
+
+}
+@media screen and (max-width: 576px){
+  .add_form .submit_form button { width: 100%; }
+  .add_form .patient_diagnotes { margin: 0; }
+}
