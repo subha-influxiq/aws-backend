@@ -16,10 +16,11 @@ export class AdminHeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-
+/**logout function start here**/
   logout(){
     this.cookies.deleteAll();
     this.router.navigateByUrl('/login');
   }
+  /**logout function end here**/
 
 }

@@ -17,7 +17,6 @@ export class ChangePasswordComponent implements OnInit {
   public ChangePasswordForm: FormGroup;
   public user_token: any;
   public params_id: any;
-  // public message: any = "Updated Successfully";
   public states: any;
   public allCities: any;
   public cities: any;
@@ -85,6 +84,7 @@ export class ChangePasswordComponent implements OnInit {
           this.ResetForm();
           this.loader = false;
           if (response.status == true) {
+            
             this.snackBar.open(response.message, "OK", {
               duration: 1500
             });

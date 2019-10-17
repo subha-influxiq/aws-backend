@@ -16,7 +16,8 @@ import { TechDashboardComponent } from '../components/dashboard/tech-dashboard/t
 import { AdminDashboardComponent } from '../components/dashboard/admin-dashboard/admin-dashboard.component';
 import { BillerDashboardComponent } from '../components/dashboard/biller-dashboard/biller-dashboard.component';
 import { DoctorDashboardComponent } from '../components/dashboard/doctor-dashboard/doctor-dashboard.component';
-
+/**patient-management under yech-dashboard**/
+import { AddEditPatientComponent } from '../components/dashboard/tech-dashboard/patient-management/add-edit-patient/add-edit-patient.component';
 /* User Mnagement */
 import { UserAddEditComponent } from '../components/user-management/user-add-edit/user-add-edit.component'
 import { AddEditComponent } from '../components/admin-management/add-edit/add-edit.component';
@@ -57,6 +58,11 @@ const routes: Routes = [
       },
       endpoint: 'datalist'
     },
+  },
+  {
+     path : 'tech/patient-management/add',
+     component : AddEditPatientComponent,
+     canActivate: [AuthguardService]
   },
   {
     path: 'dashboard/admin',
