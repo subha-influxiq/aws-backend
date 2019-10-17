@@ -23,6 +23,7 @@ export class AddEditBillerComponent implements OnInit {
   public params_id: any;
   public message:any="Submitted Successfully";
   serializedDate = new FormControl((new Date()).toISOString());
+  
   constructor(public fb: FormBuilder, private datePipe: DatePipe,
     public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute) {
     this.params_id = this.activeRoute.snapshot.params._id;
@@ -42,7 +43,7 @@ export class AddEditBillerComponent implements OnInit {
       state: ['', Validators.required],
       date: [dateformat],
       status: ['', Validators.required],
-      password: [],
+      password: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
     }, { validators: this.matchpassword('password', 'confirmpassword') })
   }

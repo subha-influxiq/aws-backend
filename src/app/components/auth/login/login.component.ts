@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   public logo: any = './assets/images/logo.png';
   public fromTitle: any = "Login Form";    // This is a From Title
-  public fullUrl: any = "https://63zzhpnoti.execute-api.us-east-1.amazonaws.com/production/api/";  // server url
+  public fullUrl: any = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";  // server url
   public endpoint: any = "login";
   public buttonName:any= 'Login Button';
 
