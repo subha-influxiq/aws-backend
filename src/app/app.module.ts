@@ -40,7 +40,10 @@ import { ListingTechComponent } from './components/tech-management/listing-tech/
 import { AddEditTechComponent } from './components/tech-management/add-edit-tech/add-edit-tech.component';
 import { AccountSettingsComponent } from './components/account-settings/account-settings.component';
 import { ChangePasswordComponent } from './components/account-settings/change-password/change-password.component';
-import { AddEditPatientComponent } from './components/dashboard/tech-dashboard/patient-management/add-edit-patient/add-edit-patient.component';
+import { AddEditPatientComponent  } from './components/dashboard/tech-dashboard/patient-management/add-edit-patient/add-edit-patient.component';
+import { DialogBoxComponent } from './components/common/dialog-box/dialog-box.component';
+import { BulkUploadComponent } from './components/dashboard/tech-dashboard/patient-management/bulk-upload/bulk-upload.component';
+import { FileUploadModule } from 'file-upload';
 
 /**end here**/
 
@@ -72,6 +75,8 @@ import { AddEditPatientComponent } from './components/dashboard/tech-dashboard/p
     AccountSettingsComponent,
     ChangePasswordComponent,
     AddEditPatientComponent,
+    DialogBoxComponent,
+    BulkUploadComponent
 
   ],
   imports: [
@@ -85,12 +90,11 @@ import { AddEditPatientComponent } from './components/dashboard/tech-dashboard/p
     LoginModule,
     ListingModule,
     FormsModule,
-    ReactiveFormsModule
-
-    
-
+    ReactiveFormsModule,
+    FileUploadModule
   ],
   providers: [CookieService,AuthguardService,HttpServiceService,    DatePipe],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ DialogBoxComponent],
 })
 export class AppModule { }

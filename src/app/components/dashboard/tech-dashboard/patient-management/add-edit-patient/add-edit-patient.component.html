@@ -21,7 +21,8 @@
   <h2>add report manually</h2>
 
   <mat-card-content>
-    <form class="example-form" autocomplete="off" name="patientAddEditForm" [formGroup]="patientAddEditForm" (ngSubmit)="patientAddEditFormSubmit()">
+    <form class="example-form" autocomplete="off" name="patientAddEditForm" [formGroup]="patientAddEditForm"
+      (ngSubmit)="patientAddEditFormSubmit()">
 
 
 
@@ -46,8 +47,7 @@
       <mat-card-content>
         <label> DOB</label>
         <mat-form-field>
-          <input matInput [matDatepicker]="picker" [(ngModel)]="dateofbirth"
-          [ngModelOptions]="{standalone: true}">
+          <input matInput [matDatepicker]="picker" [(ngModel)]="dateofbirth" [ngModelOptions]="{standalone: true}">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
@@ -84,6 +84,15 @@
             <input matInput [matDatepicker]="picker3" [(ngModel)]="enddate" [ngModelOptions]="{standalone: true}">
             <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
             <mat-datepicker #picker3></mat-datepicker>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-content>
+          <label>Date</label>
+          <mat-form-field>
+
+            <input [value]="date.value" matInput [matDatepicker]="myPicker">
+            <mat-datepicker-toggle matSuffix [for]="myPicker" disabled></mat-datepicker-toggle>
+            <mat-datepicker #myPicker></mat-datepicker>
           </mat-form-field>
         </mat-card-content>
         <br>
@@ -330,7 +339,7 @@
         </mat-form-field>
       </span>
       <span class="submit_form">
-        <button mat-flat-button (click)="resetAddEditForm()">Reset </button>
+        <button mat-flat-button (click)="resetAddEditForm()" type="button">Reset </button>
         <button mat-flat-button type="submit"> {{ buttonText }} </button>
       </span>
     </form>

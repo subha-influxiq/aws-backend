@@ -62,7 +62,9 @@ export class AddEditTechComponent implements OnInit {
       this.usersData = data.techData.res;
       let techDetails: any;
       techDetails = data.techData.res;
-      console.log(techDetails);
+      setTimeout(() => {
+        this.getCityByName(techDetails[0].state);
+      }, 400);
       this.TechManagementAddEditForm.controls['firstname'].patchValue(techDetails[0].firstname);
       this.TechManagementAddEditForm.controls['lastname'].patchValue(techDetails[0].lastname);
       this.TechManagementAddEditForm.controls['email'].patchValue(techDetails[0].email);
@@ -116,8 +118,11 @@ export class AddEditTechComponent implements OnInit {
     var val = event;
     this.cities = this.allCities[val];
   }
+  getCityByName(stateName) {
+    this.cities = this.allCities[stateName];
+  }
   TechManagementAddFormFormSubmit() {
-    console.log(this.TechManagementAddEditForm.value);
+    
     let x: any;
     for (x in this.TechManagementAddEditForm.controls) {
       this.TechManagementAddEditForm.controls[x].markAsTouched();

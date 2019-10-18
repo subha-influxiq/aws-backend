@@ -63,6 +63,9 @@ export class AccountSettingsComponent implements OnInit {
   /**for validation purpose**/
 
   SetValueForm() {
+    setTimeout(() => {
+      this.getCityByName(this.cookiesData.state);
+    }, 400);
     this.AccountSettingsForm.controls['firstname'].patchValue(this.cookiesData.firstname);
     this.AccountSettingsForm.controls['lastname'].patchValue(this.cookiesData.lastname);
     this.AccountSettingsForm.controls['email'].patchValue(this.cookiesData.email);
@@ -91,7 +94,9 @@ export class AccountSettingsComponent implements OnInit {
     var val = event;
     this.cities = this.allCities[val];
   }
-
+  getCityByName(stateName) {
+    this.cities = this.allCities[stateName];
+  }
   CancelRedirectToDashboard() {
     this.router.navigateByUrl('/dashboard/admin');
   }

@@ -1,0 +1,25 @@
+{
+  "name": "file-upload",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0",
+    "@angular/animations": "^7.2.15",
+    "@angular/cdk": "^7.3.7",
+    "@angular/material": "^7.3.7",
+    "listing-angular7": "0.0.90"
+  },
+  "main": "bundles/file-upload.umd.js",
+  "module": "fesm5/file-upload.js",
+  "es2015": "fesm2015/file-upload.js",
+  "esm5": "esm5/file-upload.js",
+  "esm2015": "esm2015/file-upload.js",
+  "fesm5": "fesm5/file-upload.js",
+  "fesm2015": "fesm2015/file-upload.js",
+  "typings": "file-upload.d.ts",
+  "metadata": "file-upload.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

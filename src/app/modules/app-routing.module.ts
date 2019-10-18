@@ -16,9 +16,15 @@ import { TechDashboardComponent } from '../components/dashboard/tech-dashboard/t
 import { AdminDashboardComponent } from '../components/dashboard/admin-dashboard/admin-dashboard.component';
 import { BillerDashboardComponent } from '../components/dashboard/biller-dashboard/biller-dashboard.component';
 import { DoctorDashboardComponent } from '../components/dashboard/doctor-dashboard/doctor-dashboard.component';
-/**patient-management under yech-dashboard**/
-import { AddEditPatientComponent } from '../components/dashboard/tech-dashboard/patient-management/add-edit-patient/add-edit-patient.component';
+/**patient-management under tech-dashboard**/
+import { AddEditPatientComponent  } from '../components/dashboard/tech-dashboard/patient-management/add-edit-patient/add-edit-patient.component';
+
+/**bulk upload**/
+
+import { BulkUploadComponent } from '../components/dashboard/tech-dashboard/patient-management/bulk-upload/bulk-upload.component';
+
 /* User Mnagement */
+
 import { UserAddEditComponent } from '../components/user-management/user-add-edit/user-add-edit.component'
 import { AddEditComponent } from '../components/admin-management/add-edit/add-edit.component';
 import { ManageAdminListComponent } from '../components/admin-management/manage-admin-list/manage-admin-list.component';
@@ -59,10 +65,17 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+  /**patient management**/
   {
      path : 'tech/patient-management/add',
      component : AddEditPatientComponent,
      canActivate: [AuthguardService]
+  },
+  /**bulk upload**/
+  {
+    path        : 'tech/patient-management/bulk-upload',
+    component   : BulkUploadComponent,
+    canActivate : [AuthguardService]
   },
   {
     path: 'dashboard/admin',
@@ -123,7 +136,7 @@ const routes: Routes = [
     resolve: { adminManagementdData: ResolveService },
     data: {
       requestcondition: {
-        source: 'admin_management',
+        source: 'admin_management_view',
         condition: {}
       },
       endpoint: 'datalist'
@@ -156,7 +169,7 @@ const routes: Routes = [
     resolve: { Billerdata: ResolveService },
     data: {
       requestcondition: {
-        source: 'biller_management',
+        source: 'biller_management_view',
         condition: {}
       },
       endpoint: 'datalist'
@@ -189,7 +202,7 @@ const routes: Routes = [
     resolve :{techDashboardData :ResolveService},
     data: {
       requestcondition: {
-        source: 'tech_management',
+        source: 'tech_management_view',
         condition: {}
       },
       endpoint: 'datalist'

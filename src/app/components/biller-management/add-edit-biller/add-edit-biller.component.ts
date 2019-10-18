@@ -62,7 +62,9 @@ export class AddEditBillerComponent implements OnInit {
     this.activeRoute.data.forEach((data) => {
       let billerDetails :any;
       billerDetails = data.billersingleData.res;
-      console.log(billerDetails);
+      setTimeout(() => {
+        this.getCityByName(billerDetails[0].state);
+      }, 400);
       this.billerManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
       this.billerManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
       this.billerManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
@@ -71,6 +73,7 @@ export class AddEditBillerComponent implements OnInit {
       this.billerManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address);
       this.billerManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
       this.billerManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
+ 
       this.billerManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
       this.billerManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
 
@@ -108,6 +111,9 @@ export class AddEditBillerComponent implements OnInit {
   getCity(event) {
     var val = event;
     this.cities = this.allCities[val];
+  }
+  getCityByName(stateName) {
+    this.cities = this.allCities[stateName];
   }
   ResetAddEditForm() {
     this.billerManagementAddEditForm.reset();
