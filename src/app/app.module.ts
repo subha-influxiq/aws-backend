@@ -34,6 +34,8 @@ import { TestComponent } from './components/test/test.component';
 import { AddEditComponent } from './components/admin-management/add-edit/add-edit.component';
 import { ManageAdminListComponent } from './components/admin-management/manage-admin-list/manage-admin-list.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
+import { AddeditDoctorComponent,Modal } from './components/doctor-management/addedit-doctor/addedit-doctor.component';
+import { ListDoctorComponent } from './components/doctor-management/list-doctor/list-doctor.component';
 
 /**end here**/
 
@@ -58,6 +60,9 @@ import { AdminHeaderComponent } from './components/admin-header/admin-header.com
     AddEditComponent,
     ManageAdminListComponent,
     AdminHeaderComponent,
+    AddeditDoctorComponent,
+    ListDoctorComponent,
+    Modal
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -75,7 +80,8 @@ import { AdminHeaderComponent } from './components/admin-header/admin-header.com
     
 
   ],
-  providers: [CookieService,AuthguardService,HttpServiceService,    DatePipe],
-  bootstrap: [AppComponent]
+  providers: [CookieService,AuthguardService,HttpServiceService,DatePipe],
+  bootstrap: [AppComponent],
+  entryComponents:[Modal]
 })
 export class AppModule { }

@@ -76,6 +76,7 @@ export class AddEditComponent implements OnInit {
         this.adminManagementAddEditForm.value.status = parseInt("1");
       else
         this.adminManagementAddEditForm.value.status = parseInt("0");
+        
       var data = {
         "source": "admin_management",
         "data": this.adminManagementAddEditForm.value,

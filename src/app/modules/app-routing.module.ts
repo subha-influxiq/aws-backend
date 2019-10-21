@@ -21,6 +21,8 @@ import { TestComponent } from '../components/test/test.component';
 import { from } from 'rxjs';
 import { AddEditComponent } from '../components/admin-management/add-edit/add-edit.component';
 import { ManageAdminListComponent } from '../components/admin-management/manage-admin-list/manage-admin-list.component';
+import { AddeditDoctorComponent } from '../components/doctor-management/addedit-doctor/addedit-doctor.component';
+import { ListDoctorComponent } from '../components/doctor-management/list-doctor/list-doctor.component';
 
 const routes: Routes = [
   // Auth Route
@@ -48,8 +50,15 @@ const routes: Routes = [
 
 
   {
-    path: 'dashboard/admin',
-    component: AdminDashboardComponent,
+    path: 'dashboard/admin', component: AdminDashboardComponent,
+    resolve: { dataCount: ResolveService },
+    data: {
+      requestcondition: {
+        source: ['doctors', 'biller', 'tech'],
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
     canActivate: [AuthguardService]
   },
   {
@@ -72,7 +81,7 @@ const routes: Routes = [
   {
     path: 'user-management/edit/:_id',
     component: UserAddEditComponent,
-    resolve :{UserData :ResolveService},
+    resolve :{UserData: ResolveService},
     data: {
       requestcondition: {
         source: 'user_management',
@@ -119,8 +128,49 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
     canActivate: [AuthguardService]
-  }
+  },
 
+
+  // _____________________________DOCTOR MANAGEMENT___________________________
+  
+   {path:'doctor-management/add', component:AddeditDoctorComponent},
+
+   {
+    path: 'doctor-management/list', component: ListDoctorComponent,
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'doctors',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'doctor-management/edit/:_id', component: AddeditDoctorComponent,
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'doctors',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'dashboard/admin', component:  AdminDashboardComponent,
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'doctors',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+    canActivate: [AuthguardService]
+  },
 ];
 
 @NgModule({
