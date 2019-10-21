@@ -1,0 +1,10 @@
+<div class="modal">
+    <h1 mat-dialog-title>Success</h1>
+    <div mat-dialog-content>
+        <p>{{ data.message }}</p>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button (click)="redirectToSamePage()" cdkFocusInitial>Add Next</button>
+</div>

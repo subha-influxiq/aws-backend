@@ -32,11 +32,11 @@ export class HttpServiceService {
         'Authorization': this.CookieService.get('jwtToken')
       })
     };
-
     return this.http.post(this.baseUrl + endpoint, jsonData);
   }
 
   /* call api via get method */
+
   httpViaGet(endpoint, jsonData): Observable<any> {
     /* set common header */
     const httpOptions = {
@@ -45,7 +45,6 @@ export class HttpServiceService {
         'Authorization': this.CookieService.get('jwtToken')
       })
     };
-
     return this.http.get(this.baseUrl + endpoint, jsonData);
   }
 
