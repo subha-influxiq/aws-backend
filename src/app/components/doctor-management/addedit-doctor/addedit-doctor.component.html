@@ -1,0 +1,229 @@
+<app-admin-header></app-admin-header>
+
+
+<mat-card class="add_form">
+  <h2>{{form_heading }} </h2>
+
+
+  <mat-card-content class="form_wrapper">
+    <form class="example-form" autocomplete="off" [formGroup]="docManageForm" (ngSubmit)="onSubmit()">
+
+
+      <!-- First Name  -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="James" formControlName="firstname">
+        <mat-error *ngIf="!docManageForm.controls['firstname'].valid
+          && docManageForm.controls['firstname'].errors.required">First Name is required.</mat-error>
+          <mat-error *ngIf="!docManageForm.controls['firstname'].valid && !docManageForm.controls['firstname'].errors.required">
+            Name is not valid</mat-error>
+      </mat-form-field>
+
+
+
+
+
+      <!-- Last Name  -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Anderson" formControlName="lastname">
+        <mat-error *ngIf="!docManageForm.controls['lastname'].valid && docManageForm.controls['lastname'].errors.required">Last Name is required.</mat-error>
+        <mat-error *ngIf="!docManageForm.controls['lastname'].valid && !docManageForm.controls['lastname'].errors.required">
+          Name is not valid</mat-error>
+      </mat-form-field>
+
+
+
+
+
+      <!-- Email  -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="jamesanderson@gmail.com" formControlName="email">
+        <mat-error *ngIf="!docManageForm.controls['email'].valid && docManageForm.controls['email'].errors.required">Email is required.</mat-error>
+        <mat-error *ngIf="!docManageForm.controls['email'].valid && !docManageForm.controls['email'].errors.required">
+          Email
+          is not valid</mat-error>
+      </mat-form-field>
+
+
+
+
+      <!-- Password  -->
+
+      <mat-form-field appearance="fill" *ngIf="action=='add'">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="*********" formControlName="password">
+        <mat-error *ngIf="docManageForm.controls['password']?.touched || docManageForm.controls['password'].errors 
+        && docManageForm.controls['password'].errors.required">Password is required.</mat-error>
+      </mat-form-field>
+
+
+
+
+      <!-- Confirm Password  -->
+
+      <mat-form-field appearance="fill" *ngIf="action=='add'">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput placeholder="**********" formControlName="confirmpassword">
+        <mat-error *ngIf="docManageForm.controls['confirmpassword']?.touched || docManageForm.controls['confirmpassword'].errors 
+        && docManageForm.controls['confirmpassword'].errors.required">Password do not match</mat-error>
+      </mat-form-field>
+
+
+
+
+
+      <!-- Phone  -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>Phone</mat-label>
+        <input matInput placeholder="9845711225" formControlName="phone">
+        <mat-error *ngIf="!docManageForm.controls['phone'].valid && docManageForm.controls['phone'].errors.required">Phone is required.</mat-error>
+        <mat-error *ngIf="!docManageForm.controls['phone'].valid && !docManageForm.controls['phone'].errors.required">Phone must be only 10 digit integers</mat-error>
+
+      </mat-form-field>
+
+
+
+
+
+      <!-- Practice Name  -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>Practice name</mat-label>
+        <input matInput placeholder="James101" formControlName="practicename">
+        <mat-error *ngIf="!docManageForm.controls['practicename'].valid && docManageForm.controls['practicename'].errors.required">Practice Name is required.</mat-error>
+        <mat-error *ngIf="!docManageForm.controls['practicename'].valid && !docManageForm.controls['practicename'].errors.required">
+          Practice name is not valid</mat-error>
+      </mat-form-field>
+
+
+
+
+      <mat-card-content class="checkbox_w">
+        <!-- Taxonomies  -->
+
+
+
+        <h3>Taxonomies</h3>
+        <div formArrayName="taxonomies"
+          *ngFor="let j of checkboxArray,let loop of docManageForm.controls.taxonomies?.value; let i = index; trackBy: trackByFn">
+          <ng-container [formGroupName]="i">
+
+            <mat-checkbox formControlName="taxo" (click)="selectTaxo(j)">{{j}}</mat-checkbox>
+
+          </ng-container>
+        </div>
+
+        <!--         
+        <mat-checkbox>Family Practice</mat-checkbox>
+        <mat-checkbox>General Practitioner</mat-checkbox>
+        <mat-checkbox>Primary Care</mat-checkbox>
+        <mat-checkbox>Cardiology</mat-checkbox>
+        <mat-checkbox>Neurology</mat-checkbox>
+        <mat-checkbox>Internal Medicine</mat-checkbox>
+        <mat-checkbox>Endocrinology</mat-checkbox>
+        <mat-checkbox>Pain Management</mat-checkbox>
+        <mat-checkbox>Integrated</mat-checkbox>
+        <mat-checkbox>Others</mat-checkbox> -->
+
+      </mat-card-content>
+
+
+
+
+      <!-- NPI#  -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>practicename#</mat-label>
+        <input matInput placeholder="1880101700" formControlName="npm">
+          <mat-error *ngIf="!docManageForm.controls['npm'].valid && docManageForm.controls['npm'].errors.required ">NPI# is required.</mat-error>
+          <mat-error *ngIf="!docManageForm.controls['npm'].valid && !docManageForm.controls['npm'].errors.required"> NPM# is not valid</mat-error>
+      </mat-form-field>
+
+
+
+
+
+
+      <!-- Address  -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <textarea matInput placeholder="76 E. Mayfield Drive" formControlName="address"></textarea>
+        <mat-error *ngIf="docManageForm.controls['address']?.touched || docManageForm.controls['address'].errors 
+        && docManageForm.controls['address'].errors.required">Address is required.</mat-error>
+      </mat-form-field>
+
+
+
+
+
+
+
+
+      <!-- State  -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>State</mat-label>
+        <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
+          <mat-option [value]=0>Select a category</mat-option>
+          <mat-option *ngFor="let state of states;" value="{{ state.name }}">{{ state.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+
+
+      <!-- City  -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>City</mat-label>
+        <mat-select formControlName="city">
+          <mat-option [value]=0>Select a category</mat-option>
+          <mat-option *ngFor="let city of cities;" value="{{ city }}">{{ city }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+
+
+
+
+
+
+
+      <!-- ZIP  -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>ZIP</mat-label>
+        <input matInput placeholder="917844" formControlName="zip">
+
+        <mat-error *ngIf="!docManageForm.controls['zip'].valid && docManageForm.controls['zip'].errors.required">ZIP is required.</mat-error>
+        <mat-error *ngIf="!docManageForm.controls['zip'].valid && !docManageForm.controls['zip'].errors.required">ZIP must be only 6 digit integers</mat-error>
+      </mat-form-field>
+
+
+
+
+
+      <!-- Status -->
+
+      <h3>Status</h3>
+      <mat-checkbox formControlName="status">Active</mat-checkbox>
+
+
+
+
+      <!-- Button  -->
+
+      <span class="submit_form">
+        <button mat-flat-button type="reset">Reset</button>
+        <button mat-flat-button type="submit">{{btn_text}} </button>
+      </span>
+    </form>
+  </mat-card-content>

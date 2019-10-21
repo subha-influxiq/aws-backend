@@ -23,7 +23,7 @@ export class HttpServiceService {
     return this.http.get(url);
   }
 
-  /* call api via post methord */
+  /* call api via post method */
   httpViaPost(endpoint, jsonData): Observable<any> {
     /* set common header */
     const httpOptions = {
@@ -34,7 +34,8 @@ export class HttpServiceService {
     };
     return this.http.post(this.baseUrl + endpoint, jsonData);
   }
-  /* call api via get methord */
+
+  /* call api via get method */
   httpViaGet(endpoint, jsonData): Observable<any> {
     /* set common header */
     const httpOptions = {

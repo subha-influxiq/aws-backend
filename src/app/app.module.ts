@@ -34,6 +34,8 @@ import { TestComponent } from './components/test/test.component';
 import { AddEditComponent } from './components/admin-management/add-edit/add-edit.component';
 import { ManageAdminListComponent } from './components/admin-management/manage-admin-list/manage-admin-list.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
+import { AddeditDoctorComponent,Modal } from './components/doctor-management/addedit-doctor/addedit-doctor.component';
+import { ListDoctorComponent } from './components/doctor-management/list-doctor/list-doctor.component';
 import { AddEditBillerComponent } from './components/biller-management/add-edit-biller/add-edit-biller.component';
 import { ListingBillerComponent } from './components/biller-management/listing-biller/listing-biller.component';
 import { ListingTechComponent } from './components/tech-management/listing-tech/listing-tech.component';
@@ -68,6 +70,9 @@ import { FileUploadModule } from 'file-upload';
     AddEditComponent,
     ManageAdminListComponent,
     AdminHeaderComponent,
+    AddeditDoctorComponent,
+    ListDoctorComponent,
+    Modal,
     AddEditBillerComponent,
     ListingBillerComponent,
     ListingTechComponent,
@@ -76,7 +81,8 @@ import { FileUploadModule } from 'file-upload';
     ChangePasswordComponent,
     AddEditPatientComponent,
     DialogBoxComponent,
-    BulkUploadComponent
+    BulkUploadComponent,
+    
 
   ],
   imports: [
@@ -93,8 +99,10 @@ import { FileUploadModule } from 'file-upload';
     ReactiveFormsModule,
     FileUploadModule
   ],
-  providers: [CookieService,AuthguardService,HttpServiceService,    DatePipe],
+
+  providers: [CookieService,AuthguardService,HttpServiceService,DatePipe],
   bootstrap: [AppComponent],
-  entryComponents: [ DialogBoxComponent],
+  entryComponents:[Modal,DialogBoxComponent]
+
 })
 export class AppModule { }

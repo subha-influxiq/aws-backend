@@ -2,9 +2,9 @@
 
 <mat-card-content class="content_wrapper">
   <mat-card-content class="itemsection one">
-    <span class="counteer"> 5</span>
+    <span class="counteer"> </span>
     <p>Total Number of Doctors</p>
-    <button mat-flat-button>View Details</button>
+    <button mat-flat-button type="button" (click)="toDocList()">View Details</button>
   </mat-card-content>
   <mat-card-content class="itemsection two">
     <span class="counteer"> 5</span>
@@ -85,27 +85,6 @@
     </mat-card-content>
   </mat-card-content>
 </mat-card-content>
-
-
-  <!-- table -->
-  <!-- <lib-listing class="DataTable" *ngIf="allUserData.length>0"
-  [datasource]="allUserData"
-  [skip]="allUserData_skip"
-  [modify_header_array]="allUserData_modify_header"
-  [apiurl]="apiUrl"
-  [sourcedata]="tableName"
-  [editroute]="editUrl"
-  [jwttoken]="token"
-  [statusarr]="status"
-  [updateendpoint]="UpdateEndpoint"
-  [deleteendpoint]="deleteEndpoint"
-  [date_search_endpoint]="SearchingEndpoint"
-  [date_search_source]="tableName"
-  [search_settings]="search_settings"
- >
-</lib-listing>
-<h2 *ngIf="allUserData.length == 0">No record found.</h2> -->
-  <!-- end table -->
 
 
 

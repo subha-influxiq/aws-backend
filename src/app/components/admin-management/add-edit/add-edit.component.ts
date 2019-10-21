@@ -97,6 +97,7 @@ export class AddEditComponent implements OnInit {
         this.adminManagementAddEditForm.value.status = parseInt("1");
       else
         this.adminManagementAddEditForm.value.status = parseInt("0");
+
       /**delete confirmpassword  field before submitted the form */
       delete this.adminManagementAddEditForm.value.confirmpassword;
       /**end */
@@ -123,6 +124,7 @@ export class AddEditComponent implements OnInit {
           "data": this.adminManagementAddEditForm.value,
           "token": this.user_token
         }
+
       }
 
       this.httpService.httpViaPost("addorupdatedata", data)
