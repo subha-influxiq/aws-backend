@@ -36,6 +36,16 @@ import { ManageAdminListComponent } from './components/admin-management/manage-a
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
 import { AddeditDoctorComponent,Modal } from './components/doctor-management/addedit-doctor/addedit-doctor.component';
 import { ListDoctorComponent } from './components/doctor-management/list-doctor/list-doctor.component';
+import { AddEditBillerComponent } from './components/biller-management/add-edit-biller/add-edit-biller.component';
+import { ListingBillerComponent } from './components/biller-management/listing-biller/listing-biller.component';
+import { ListingTechComponent } from './components/tech-management/listing-tech/listing-tech.component';
+import { AddEditTechComponent } from './components/tech-management/add-edit-tech/add-edit-tech.component';
+import { AccountSettingsComponent } from './components/account-settings/account-settings.component';
+import { ChangePasswordComponent } from './components/account-settings/change-password/change-password.component';
+import { AddEditPatientComponent  } from './components/dashboard/tech-dashboard/patient-management/add-edit-patient/add-edit-patient.component';
+import { DialogBoxComponent } from './components/common/dialog-box/dialog-box.component';
+import { BulkUploadComponent } from './components/dashboard/tech-dashboard/patient-management/bulk-upload/bulk-upload.component';
+import { FileUploadModule } from 'file-upload';
 
 /**end here**/
 
@@ -62,7 +72,18 @@ import { ListDoctorComponent } from './components/doctor-management/list-doctor/
     AdminHeaderComponent,
     AddeditDoctorComponent,
     ListDoctorComponent,
-    Modal
+    Modal,
+    AddEditBillerComponent,
+    ListingBillerComponent,
+    ListingTechComponent,
+    AddEditTechComponent,
+    AccountSettingsComponent,
+    ChangePasswordComponent,
+    AddEditPatientComponent,
+    DialogBoxComponent,
+    BulkUploadComponent,
+    
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -76,12 +97,12 @@ import { ListDoctorComponent } from './components/doctor-management/list-doctor/
     ListingModule,
     FormsModule,
     ReactiveFormsModule,
-
-    
-
+    FileUploadModule
   ],
+
   providers: [CookieService,AuthguardService,HttpServiceService,DatePipe],
   bootstrap: [AppComponent],
-  entryComponents:[Modal]
+  entryComponents:[Modal,DialogBoxComponent]
+
 })
 export class AppModule { }

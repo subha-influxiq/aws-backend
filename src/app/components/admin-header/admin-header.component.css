@@ -19,18 +19,18 @@
   background: #1c1c1c;
   display: inline-block;
   position: absolute;
-  top: 55px;}
+  top: 35%;}
 
   .techdashboard_header .quotation .mat-list-base .mat-list-item:nth-child(1):before{ content: "";  width: 2px;
     height: 0px;
     background: #1c1c1c;
     display: inline-block;
     position: absolute;
-    top: 55px;}
+    top: 35%;}
 
 
 .active{ color: #c18500!important; }
-.techdashboard_header  .quotation .mat-nav-list .mat-list-item { margin: 0 16px; }
+.techdashboard_header  .quotation .mat-nav-list .mat-list-item { margin: 0 16px; position: relative; }
 
 /*End header css */
 

@@ -18,10 +18,10 @@
 
 <mat-card class="add_form">
 
-  <h2>add a new patient records manually</h2>
+  <h2>add report manually</h2>
 
 
-  <mat-card-content class="form_wrapper">
+  <!-- <mat-card-content class="form_wrapper">
     <form class="example-form" autocomplete="off" name="UserManagementAddEditForm" [formGroup]="UserManagementAddEditForm"
       (ngSubmit)="UserManagementAddFormFormSubmit()">
 
@@ -72,11 +72,6 @@
 
       <mat-form-field class="parent_cat" appearance="fill">
         <mat-label>City</mat-label>
-        <!-- <input matInput placeholder="City" [formControl]="UserManagementAddEditForm.controls['city']"
-          (blur)="inputUntouch(UserManagementAddEditForm,'city')">
-          <mat-error *ngIf="UserManagementAddEditForm.controls['city'].touched && !UserManagementAddEditForm.controls['city'].valid
-          && UserManagementAddEditForm.controls['city'].errors.required">
-               City field can not be blank</mat-error> -->
         <mat-select formControlName="city">
           <mat-option [value]=0>Select a category</mat-option>
           <mat-option *ngFor="let city of cities;" value="{{ city }}">{{ city }}</mat-option>
@@ -110,16 +105,225 @@
       </mat-form-field>
 
       <mat-checkbox [formControl]="UserManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
+      <mat-error *ngIf="UserManagementAddEditForm.controls['status'].touched && !UserManagementAddEditForm.controls['status'].valid
+      && UserManagementAddEditForm.controls['status'].errors.required">
+      Status field can not be blank</mat-error>
+ 
       <span class="submit_form">
         <button mat-flat-button (click)="ResetAddForm()">Reset </button>
         <button mat-flat-button type="submit"> {{ buttonText }} </button>
       </span>
     </form>
+  </mat-card-content> -->
+    <mat-card-content>
+      <label>Patient Name</label>
+      <mat-form-field >
+        <input matInput>
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-content>
+      <label>Patient Gender</label>
+      <mat-checkbox>Male</mat-checkbox>
+      <mat-checkbox>Female</mat-checkbox>
+    </mat-card-content>
+
+    <mat-card-content>
+      <label> DOB</label>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker"  >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-content>
+      <label>Ordering Physicial</label>
+      <mat-form-field >
+        <input matInput>
+      </mat-form-field>
+    </mat-card-content>
+
+
+<span class="test_date_wrapper">
+  
+  <mat-card-content>
+    <label> Test Date</label>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker2"  >
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+  </mat-card-content>
+  
+  <mat-card-content>
+    <label> Test Completed</label>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker3"  >
+      <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+      <mat-datepicker #picker3></mat-datepicker>
+    </mat-form-field>
+  </mat-card-content>
+  <br>
+  <hr>
+  <mat-card-content>
+    <label> PTGPT </label>
+    <mat-form-field>
+      <input matInput>
+       
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-content>
+    <label> PTGVLFI </label>
+    <mat-form-field>
+      <input matInput >
+      
+    </mat-form-field>
+  </mat-card-content>
+
+  <mat-card-content>
+    <label> IR </label>
+    <mat-form-field>
+      <input matInput > 
+    </mat-form-field>
+  </mat-card-content>
+
+  <mat-card-content>
+    <label> ESRNO<br> (Baseline) </label>
+    <mat-form-field>
+      <input matInput > 
+    </mat-form-field>
+  </mat-card-content>
+
+  <mat-card-content>
+    <label> ESR L<br> (Latency) </label>
+    <mat-form-field>
+      <input matInput > 
+    </mat-form-field>
+  </mat-card-content>
+
+  <mat-card-content>
+    <label> Peak C  <br> (Amplitude) </label>
+    <mat-form-field>
+      <input matInput > 
+    </mat-form-field>
+  </mat-card-content>
+
+  <mat-card-content>
+    <label> PTG Type  <br> (Enter
+      Type 1-5) </label>
+    <mat-form-field>
+      <input matInput > 
+    </mat-form-field>
   </mat-card-content>
 
 
+<mat-card-content>
+  <label> PTG CVD </label>
+  <mat-form-field>
+    <input matInput > 
+  </mat-form-field>
+</mat-card-content>
+<mat-card-content>
+  <label> Stress I  <br> (Stress Index) </label>
+  <mat-form-field>
+    <input matInput > 
+  </mat-form-field>
+</mat-card-content>
+<mat-card-content>
+  <label> RI </label>
+  <mat-form-field>
+    <input matInput > 
+  </mat-form-field>
+</mat-card-content>
 
 
+<mat-card-content>
+  <label> AIPTG<br> (IPTG) </label>
+  <mat-form-field>
+    <input matInput > 
+  </mat-form-field>
+</mat-card-content>
 
+<mat-card-content>
+  <label> CIs (CI) </label>
+  <mat-form-field>
+    <input matInput > 
+  </mat-form-field>
+</mat-card-content>
+
+<mat-card-content>
+  <label> pNN50 </label>
+  <mat-form-field>
+    <input matInput > 
+  </mat-form-field>
+</mat-card-content>
+
+
+<mat-card-content>
+  <label> RMSSD </label>
+  <mat-form-field>
+    <input matInput > 
+  </mat-form-field>
+</mat-card-content>
+
+<mat-card-content>
+  <label> SD ba - </label>
+  <mat-form-field>
+    <input matInput > 
+  </mat-form-field>
+</mat-card-content>
+
+<mat-card-content>
+  <label> SD da </label>
+  <mat-form-field>
+    <input matInput > 
+  </mat-form-field>
+</mat-card-content>
+
+ 
+<mat-card-content>
+  <label>DPRS </label>
+  <mat-form-field>
+    <input matInput > 
+  </mat-form-field>
+</mat-card-content>
+
+<mat-card-content>
+  <label>ValsR. </label>
+  <mat-form-field>
+    <input matInput > 
+  </mat-form-field>
+</mat-card-content>
+
+<mat-card-content>
+  <label>BMI<br> Enter BMI Score 
+    (I.E. 29.1)  </label>
+  <mat-form-field>
+    <input matInput > 
+  </mat-form-field>
+</mat-card-content>
+
+<mat-card-content>
+  <label>Blood
+    Pressure<br> Systolic &
+    Diastolic
+    (120/80) </label>
+  <mat-form-field>
+    <input matInput > 
+  </mat-form-field>
+</mat-card-content>
+</span>
+
+ <span class="patient_diagnotes">
+    <label>Patient Diagnoses & Notes:</label>
+    <mat-form-field class="example-full-width" > 
+        <textarea matInput placeholder="Leave a comment"></textarea>
+      </mat-form-field>
+ </span>
+ <span class="submit_form">
+    <button mat-flat-button (click)="ResetAddForm()">Reset </button>
+    <button mat-flat-button type="submit"> {{ buttonText }} </button>
+  </span>
 </mat-card>
 

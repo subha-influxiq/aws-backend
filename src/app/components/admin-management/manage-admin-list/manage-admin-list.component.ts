@@ -8,13 +8,12 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./manage-admin-list.component.css']
 })
 export class ManageAdminListComponent implements OnInit {
-public TechDashboardAllData:any=[];
-
-public allUserData_skip: any = ["confirmpassword", "password","created_at","_id"];
+  public TechDashboardAllData: any = [];
+  public allUserData_skip: any = ["confirmpassword", "password", "created_at", "_id","id","updated_at"];
   public editUrl: any = "admin-management/edit";
   public allUserData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name",
-    "email": "E-Mail", "phoneno": "Phone Number","date":"Date",
+    "email": "E-Mail", "phoneno": "Phone Number", "date": "Date",
     "status": "Status"
   };
 
@@ -33,8 +32,8 @@ public allUserData_skip: any = ["confirmpassword", "password","created_at","_id"
       textsearch: [{ label: "Search By Firstname", field: 'firstname' }],
 
     };
-    public user_cookie: any;
-  constructor(public activatedRoute : ActivatedRoute,public cookie: CookieService) {
+  public user_cookie: any;
+  constructor(public activatedRoute: ActivatedRoute, public cookie: CookieService) {
     this.user_cookie = cookie.get('jwtToken');
   }
 

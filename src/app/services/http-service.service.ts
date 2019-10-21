@@ -34,13 +34,8 @@ export class HttpServiceService {
     };
     return this.http.post(this.baseUrl + endpoint, jsonData);
   }
-<<<<<<< HEAD
 
   /* call api via get method */
-
-=======
-  /* call api via get methord */
->>>>>>> dd9a8f932113e53681991b20f316f5c40f6044cd
   httpViaGet(endpoint, jsonData): Observable<any> {
     /* set common header */
     const httpOptions = {

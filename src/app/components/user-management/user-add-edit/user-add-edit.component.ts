@@ -22,9 +22,7 @@ export class UserAddEditComponent implements OnInit {
   public params_id: any;
   public buttonText: any = "Submit";
   public user_token: any;;
-  /**set data for edit start here**/
 
-  /**set data for edit start here**/
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService) {
@@ -144,7 +142,7 @@ export class UserAddEditComponent implements OnInit {
     }
     this.httpService.httpViaPost("addorupdatedata", data)
       .subscribe(res => {
-        console.log(res);
+        this.ResetAddForm();
         setTimeout(() => {
           this.router.navigateByUrl('/dashboard/tech');
         }, 100);
