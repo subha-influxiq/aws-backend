@@ -40,7 +40,6 @@ export class BulkUploadComponent implements OnInit {
     form.controls[val].markAsUntouched();
   }
   techBulkUploadFormSubmit() {
-    console.log(this.configData.files[0]);
     if (this.configData) {
       for (const loop in this.configData.files) {
         this.images_array =
@@ -52,12 +51,16 @@ export class BulkUploadComponent implements OnInit {
             "type": this.configData.files[loop].type
           });
       }
-      this.techBulkUploadForm.value.uploadFile = this.images_array;
+      // this.techBulkUploadForm.value.uploadFile = 
+      this.techBulkUploadForm.controls['uploadFile'].patchValue(this.images_array);
+
 
     } else {
       this.techBulkUploadForm.value.uploadFile = false;
     }
-    console.log("total data",this.techBulkUploadForm.value);
+    //   for(let b in this.techBulkUploadForm.controls){
+    //   console.log(b,'---',this.techBulkUploadForm.controls[b].valid);
+    // }
     if(this.techBulkUploadForm.valid){
       var data = {
         "source"  : "patient_bulk_upload",
@@ -68,6 +71,8 @@ export class BulkUploadComponent implements OnInit {
          .subscribe(response=>{
            console.log("responseeee",response);
          })
+    }else{
+      alert("error occured");
     }
   }
 

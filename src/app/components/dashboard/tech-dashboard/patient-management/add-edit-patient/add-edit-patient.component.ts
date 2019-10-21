@@ -127,10 +127,7 @@ export class AddEditPatientComponent implements OnInit {
 
   openDialog(data) {
     this.dialogRef = this.dialog.open(DialogBoxComponent, data);
-
     this.dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log(result);
       switch(result) {
         case "Cancel":
           this.router.navigateByUrl('/dashboard/tech');
