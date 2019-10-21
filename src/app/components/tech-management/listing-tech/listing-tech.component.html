@@ -1,7 +1,18 @@
 <app-admin-header></app-admin-header>
-<span class="add_header">
-    <button mat-flat-button [routerLink]="[ '/tech-management/add']">Add Technician</button>
-</span>
+<!-- header with add button -->
+<mat-card-content class="title_wrapper">
+        manage Technician
+      </mat-card-content>
+      
+      
+      <span class="add_header">
+      
+       <span class="bradcrumb"><a routerLink="/dashboard/tech">Dashboard &nbsp;/</a> &nbsp; manage technician</span> 
+          <button mat-flat-button [routerLink]="[ '/tech-management/add']">Add Technician</button>
+      </span>
+      <!-- End header with add button -->
+
+
 <lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0" [datasource]="TechDashboardAllData"
     [skip]="allUserData_skip" [modify_header_array]="allUserData_modify_header" [apiurl]="apiUrl"
     [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="user_cookie" [statusarr]="status"

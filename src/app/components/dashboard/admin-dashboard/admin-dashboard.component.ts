@@ -16,9 +16,13 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.data.subscribe(resolveData => {
-      this.docCount = resolveData;
-      console.log('doc count: ', this.docCount);
+      this.docCount = resolveData.dataCount;
+      console.log(this.docCount);
+      // console.log(Object.keys(this.docCount));
     });
+    
+  
+    
   }
 
   myFunction() {

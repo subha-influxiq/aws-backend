@@ -19,7 +19,7 @@ export class AddEditBillerComponent implements OnInit {
   public allCities: any;
   public cities: any;
   public buttonText: any = "Submit";
-  public headerText:any = "add a new patient records manually";
+  public headerText:any = "add biller";
   public params_id: any;
   public message:any="Submitted Successfully";
   serializedDate = new FormControl((new Date()).toISOString());
@@ -35,13 +35,14 @@ export class AddEditBillerComponent implements OnInit {
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
       email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phoneno: ['', Validators.required],
+      phone: ['', Validators.required],
       companyname: ['', Validators.required],
       address: ['', Validators.required],
       zip: ['', Validators.required],
       city: ['', Validators.required],
       state: ['', Validators.required],
       date: [dateformat],
+      type : ['biller'],
       status: ['', Validators.required],
       password: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
@@ -68,7 +69,7 @@ export class AddEditBillerComponent implements OnInit {
       this.billerManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
       this.billerManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
       this.billerManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
-      this.billerManagementAddEditForm.controls['phoneno'].patchValue(billerDetails[0].phoneno);
+      this.billerManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
       this.billerManagementAddEditForm.controls['companyname'].patchValue(billerDetails[0].companyname);
       this.billerManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address);
       this.billerManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
@@ -136,7 +137,7 @@ export class AddEditBillerComponent implements OnInit {
             id: this.params_id,
             firstname: this.billerManagementAddEditForm.value.firstname,
             lastname: this.billerManagementAddEditForm.value.lastname,
-            phoneno: this.billerManagementAddEditForm.value.phoneno,
+            phone: this.billerManagementAddEditForm.value.phone,
             email: this.billerManagementAddEditForm.value.email,
             companyname: this.billerManagementAddEditForm.value.companyname,
             address: this.billerManagementAddEditForm.value.address,
@@ -147,13 +148,13 @@ export class AddEditBillerComponent implements OnInit {
             status: this.billerManagementAddEditForm.value.status,
             password: this.billerManagementAddEditForm.value.password,
           },
-          "source" : "biller_management",
+          "source" : "users",
           "token"  : this.user_token
         }
       }else{
         data = {
           "data": this.billerManagementAddEditForm.value,
-          "source": "biller_management",
+          "source": "users",
           "token": this.user_token
         }
 

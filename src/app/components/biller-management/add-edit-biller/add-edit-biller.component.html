@@ -39,11 +39,11 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Phone </mat-label>
-        <input type="number" matInput placeholder="Phone"
-          [formControl]="billerManagementAddEditForm.controls['phoneno']"
-          (blur)="inputUntouch(billerManagementAddEditForm,'phoneno')">
-        <mat-error *ngIf="billerManagementAddEditForm.controls['phoneno'].touched && !billerManagementAddEditForm.controls['phoneno'].valid
-            && billerManagementAddEditForm.controls['phoneno'].errors.required">
+        <input  matInput placeholder="Phone"
+          [formControl]="billerManagementAddEditForm.controls['phone']"
+          (blur)="inputUntouch(billerManagementAddEditForm,'phone')">
+        <mat-error *ngIf="billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid
+            && billerManagementAddEditForm.controls['phone'].errors.required">
           Phone Number field can not be blank</mat-error>
       </mat-form-field>
       <mat-form-field appearance="fill">

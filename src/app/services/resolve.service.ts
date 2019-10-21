@@ -24,7 +24,7 @@ export class ResolveService implements Resolve<any> {
 
     return new Promise((resolve) => {
       if(typeof route.data.requestcondition.source != 'string') {
-        let returnData: any = {};
+        var returnData: any = {};
 
         for(let i = 0; i <= route.data.requestcondition.source.length - 1; i++) {
           let data: any = {
@@ -41,7 +41,9 @@ export class ResolveService implements Resolve<any> {
           });
         }
 
-        return resolve(returnData);
+        setTimeout(() => {
+          return resolve(returnData);
+        }, 3000);
       } else {
         console.log("-------------");
         this._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(api_object => {

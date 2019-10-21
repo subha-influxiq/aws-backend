@@ -10,23 +10,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ListingTechComponent implements OnInit {
   public allUserData: any = [];
-  public allUserData_skip: any = ["_id", "created_at","password","id","updated_at"];
+  public allUserData_skip: any = ["_id", "created_at","password","id","updated_at","type","phoneno"];
   public editUrl: any = "tech-management/edit";
   public allUserData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name",
-    "email": "E-Mail", "city": "City", "address": "Address", "state": "State", "phone": "Phone", "zip": "Zip",
-    "status": "Status","phoneno":"Phone Number","date":"Data Added"
+    "email": "E-Mail", "city": "City", "address": "Address", "state": "State", "zip": "Zip",
+    "status": "Status","phone":"Phone Number","date":"Data Added"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
   public token: any = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzExMTYzNDMsImlhdCI6MTU3MTAyOTk0M30.m7kRTmIwvk-G0qYmr0zJ9qXoFJea8fBwnIOt8d7n3bc";
   public apiUrl: any = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";
-  public tableName: any = "tech_management";
+  public tableName: any = "users";
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
-  public SearchingSourceName: "tech_management";
+  public SearchingSourceName: "users";
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
@@ -44,7 +44,6 @@ export class ListingTechComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.data.forEach((data) => {
       this.TechDashboardAllData = data.techDashboardData.res;
-      console.log(this.TechDashboardAllData);
     })
   }
 

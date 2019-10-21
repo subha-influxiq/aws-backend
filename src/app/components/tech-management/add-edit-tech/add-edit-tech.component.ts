@@ -39,12 +39,13 @@ export class AddEditTechComponent implements OnInit {
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
       email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phoneno: ['', Validators.required],
+      phone: ['', Validators.required],
       address: ['', Validators.required],
       city: ['', Validators.required],
       state: ['', Validators.required],
       zip: ['', Validators.required],
       date: [dateformat],
+      type:['tech'],
       status: ['', Validators.required],
       password: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
@@ -68,7 +69,7 @@ export class AddEditTechComponent implements OnInit {
       this.TechManagementAddEditForm.controls['firstname'].patchValue(techDetails[0].firstname);
       this.TechManagementAddEditForm.controls['lastname'].patchValue(techDetails[0].lastname);
       this.TechManagementAddEditForm.controls['email'].patchValue(techDetails[0].email);
-      this.TechManagementAddEditForm.controls['phoneno'].patchValue(techDetails[0].phoneno);
+      this.TechManagementAddEditForm.controls['phone'].patchValue(techDetails[0].phone);
       this.TechManagementAddEditForm.controls['address'].patchValue(techDetails[0].address);
       this.TechManagementAddEditForm.controls['city'].patchValue(techDetails[0].city);
       this.TechManagementAddEditForm.controls['state'].patchValue(techDetails[0].state);
@@ -136,12 +137,12 @@ export class AddEditTechComponent implements OnInit {
       var data: any;
       if(this.params_id){
         data = {
-          "source": "tech_management",
+          "source": "users",
           "data": {
             id: this.params_id,
             firstname: this.TechManagementAddEditForm.value.firstname,
             lastname: this.TechManagementAddEditForm.value.lastname,
-            phoneno: this.TechManagementAddEditForm.value.phoneno,
+            phone: this.TechManagementAddEditForm.value.phone,
             email: this.TechManagementAddEditForm.value.email,
             address: this.TechManagementAddEditForm.value.address,
             city: this.TechManagementAddEditForm.value.city,
@@ -156,7 +157,7 @@ export class AddEditTechComponent implements OnInit {
 
       }else{
         data = {
-          "source": "tech_management",
+          "source": "users",
           "data": this.TechManagementAddEditForm.value,
           "token": this.user_token
         }

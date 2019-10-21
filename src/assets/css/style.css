@@ -126,3 +126,13 @@
 @media screen and (max-width: 991px){
   .custom-modalbox{ width: 90%;}
 }
+.title_wrapper{ background: linear-gradient(45deg, #efa03f, #32a9f5);
+  color: #fff;
+  text-transform: uppercase;
+  padding: 16px;
+  font-family: 'RobotoBold';
+  font-size: 30px!important;
+  text-align: center;
+}
+.bradcrumb{  display: block;}
+.bradcrumb a{ color: #32a9f5; text-decoration: none; }

@@ -9,12 +9,12 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class ManageAdminListComponent implements OnInit {
   public TechDashboardAllData: any = [];
-  public allUserData_skip: any = ["confirmpassword", "password", "created_at", "_id","id","updated_at"];
+  public allUserData_skip: any = ["confirmpassword", "password", "created_at", "_id","id","updated_at","phoneno","type"];
   public editUrl: any = "admin-management/edit";
   public allUserData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name",
-    "email": "E-Mail", "phoneno": "Phone Number", "date": "Date",
-    "status": "Status"
+    "email": "E-Mail", "phone": "Phone Number", "date": "Date",
+    "status": "Status","zip":"Zip","city":"City","state":"State"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";
@@ -40,6 +40,7 @@ export class ManageAdminListComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.data.forEach((data) => {
       this.TechDashboardAllData = data.adminManagementdData.res;
+      console.log("this.admin",this.TechDashboardAllData);
     })
 
 

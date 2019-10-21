@@ -26,7 +26,7 @@ export class AddeditDoctorComponent implements OnInit {
   successMessage: any = "Data Submitted Successfully!!!";
   taxo_array: any = [];
   btn_text = "SUBMIT"
-  form_heading: any = "Add a doctor";
+  form_heading: any = "Add doctor";
   action: any;
   defaultData: any;
   condition:any;
@@ -129,6 +129,7 @@ export class AddeditDoctorComponent implements OnInit {
       address: ['',Validators.required],
       city: ['',Validators.required],
       state: ['',Validators.required],
+      type:['doctor'],
       zip: ['',[Validators.required,zipValidator]],
       status: ['',],
       taxo_list: [],
@@ -219,7 +220,7 @@ export class AddeditDoctorComponent implements OnInit {
 
     /* start process to submited data */
     let postData: any = {
-      "source": 'doctors',      
+      "source": 'users',      
       "data": Object.assign(this.docManageForm.value, this.condition),
      "token": this.cookieService.get('jwtToken')
       

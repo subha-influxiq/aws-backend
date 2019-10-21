@@ -44,7 +44,6 @@ import { AccountSettingsComponent} from '../components/account-settings/account-
 import { ChangePasswordComponent } from '../components/account-settings/change-password/change-password.component';
 /* Test Component */
 import { TestComponent } from '../components/test/test.component';
-
 const routes: Routes = [
   // Auth Route
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -132,7 +131,7 @@ const routes: Routes = [
     resolve: { adminsingleData: ResolveService },
     data: {
       requestcondition: {
-        source: 'admin_management',
+        source: 'users',
         condition: {}
       },
       endpoint: 'datalist'
@@ -145,8 +144,8 @@ const routes: Routes = [
     resolve: { adminManagementdData: ResolveService },
     data: {
       requestcondition: {
-        source: 'admin_management_view',
-        condition: {}
+        source: 'users',
+        condition: {'type':'admin'}
       },
       endpoint: 'datalist'
     },
@@ -164,7 +163,7 @@ const routes: Routes = [
     resolve: { billersingleData: ResolveService },
     data: {
       requestcondition: {
-        source: 'biller_management',
+        source: 'users',
         condition: {}
       },
       endpoint: 'datalist'
@@ -178,8 +177,8 @@ const routes: Routes = [
     resolve: { Billerdata: ResolveService },
     data: {
       requestcondition: {
-        source: 'biller_management_view',
-        condition: {}
+        source: 'users',
+        condition: {'type':'biller'}
       },
       endpoint: 'datalist'
     },
@@ -197,7 +196,7 @@ const routes: Routes = [
     resolve :{techData :ResolveService},
     data: {
       requestcondition: {
-        source: 'tech_management',
+        source: 'users',
         condition: {}
       },
       endpoint: 'datalist'
@@ -211,8 +210,8 @@ const routes: Routes = [
     resolve :{techDashboardData :ResolveService},
     data: {
       requestcondition: {
-        source: 'tech_management_view',
-        condition: {}
+        source: 'users',
+        condition: {'type':'tech'}
       },
       endpoint: 'datalist'
     },
@@ -255,8 +254,8 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'doctors',
-        condition: {}
+        source: 'users',
+        condition: {'type':'doctor'}
       },
       endpoint: 'datalist'
     },
@@ -267,7 +266,7 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'doctors',
+        source: 'users',
         condition: {}
       },
       endpoint: 'datalist'

@@ -30,7 +30,7 @@ import { DoctorDashboardComponent } from './components/dashboard/doctor-dashboar
 //user-management
 import { UserAddEditComponent } from './components/user-management/user-add-edit/user-add-edit.component';
 /**testing purpose start here**/
-import { TestComponent } from './components/test/test.component';
+import { TestComponent ,DialogContentExampleDialog} from './components/test/test.component';
 import { AddEditComponent } from './components/admin-management/add-edit/add-edit.component';
 import { ManageAdminListComponent } from './components/admin-management/manage-admin-list/manage-admin-list.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
@@ -46,6 +46,7 @@ import { AddEditPatientComponent  } from './components/dashboard/tech-dashboard/
 import { DialogBoxComponent } from './components/common/dialog-box/dialog-box.component';
 import { BulkUploadComponent } from './components/dashboard/tech-dashboard/patient-management/bulk-upload/bulk-upload.component';
 import { FileUploadModule } from 'file-upload';
+import { UploadDialogBoxComponent } from './components/common/upload-dialog-box/upload-dialog-box.component';
 
 /**end here**/
 
@@ -67,6 +68,7 @@ import { FileUploadModule } from 'file-upload';
     UserAddEditComponent,
     // Test
     TestComponent,
+    DialogContentExampleDialog,
     AddEditComponent,
     ManageAdminListComponent,
     AdminHeaderComponent,
@@ -82,6 +84,7 @@ import { FileUploadModule } from 'file-upload';
     AddEditPatientComponent,
     DialogBoxComponent,
     BulkUploadComponent,
+    UploadDialogBoxComponent,
     
 
   ],
@@ -102,7 +105,7 @@ import { FileUploadModule } from 'file-upload';
 
   providers: [CookieService,AuthguardService,HttpServiceService,DatePipe],
   bootstrap: [AppComponent],
-  entryComponents:[Modal,DialogBoxComponent]
+  entryComponents:[Modal,DialogBoxComponent,UploadDialogBoxComponent,DialogContentExampleDialog,TestComponent]
 
 })
 export class AppModule { }

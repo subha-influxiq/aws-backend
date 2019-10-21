@@ -26,7 +26,7 @@
 
 #menu_button{ display: none;}
 
-.add_header{ display: flex; margin: 016px;}
+.add_header{ display: flex; margin: 0 16px;}
 .add_header button{ margin-left: auto;
   background: linear-gradient(180deg, #fac855, #e47e2a)!important;
   text-transform: uppercase;

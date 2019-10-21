@@ -32,8 +32,9 @@ export class AddEditComponent implements OnInit {
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
       email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phoneno: ['', Validators.required],
+      phone: ['', Validators.required],
       date: [dateformat],
+      type:['admin'],
       status: ['', Validators.required],
       password: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
@@ -72,7 +73,7 @@ export class AddEditComponent implements OnInit {
       this.adminManagementAddEditForm.controls['firstname'].patchValue(AdminSingleData[0].firstname);
       this.adminManagementAddEditForm.controls['lastname'].patchValue(AdminSingleData[0].lastname);
       this.adminManagementAddEditForm.controls['email'].patchValue(AdminSingleData[0].email);
-      this.adminManagementAddEditForm.controls['phoneno'].patchValue(AdminSingleData[0].phoneno);
+      this.adminManagementAddEditForm.controls['phone'].patchValue(AdminSingleData[0].phone);
       this.adminManagementAddEditForm.controls['status'].patchValue(AdminSingleData[0].status);
       this.adminManagementAddEditForm.controls['password'].patchValue(AdminSingleData[0].password);
     }
@@ -104,12 +105,12 @@ export class AddEditComponent implements OnInit {
       var data
       if (this.params_id) {
         data = {
-          "source": "admin_management",
+          "source": "users",
           "data": {
             id: this.params_id,
             firstname: this.adminManagementAddEditForm.value.firstname,
             lastname: this.adminManagementAddEditForm.value.lastname,
-            phoneno: this.adminManagementAddEditForm.value.phoneno,
+            phone: this.adminManagementAddEditForm.value.phone,
             email: this.adminManagementAddEditForm.value.email,
             date: this.adminManagementAddEditForm.value.data,
             password: this.adminManagementAddEditForm.value.password,
@@ -120,7 +121,7 @@ export class AddEditComponent implements OnInit {
 
       } else {
         data = {
-          "source": "admin_management",
+          "source": "users",
           "data": this.adminManagementAddEditForm.value,
           "token": this.user_token
         }

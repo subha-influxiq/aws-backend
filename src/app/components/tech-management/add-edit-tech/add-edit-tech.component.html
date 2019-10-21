@@ -18,7 +18,7 @@
   
   <mat-card class="add_form">
   
-    <h2>add a new patient records manually</h2>
+    <h2>add technician</h2>
   
   
     <mat-card-content class="form_wrapper">
@@ -54,10 +54,10 @@
   
         <mat-form-field appearance="fill">
           <mat-label>Phone </mat-label>
-          <input type="number" matInput placeholder="Phone" [formControl]="TechManagementAddEditForm.controls['phoneno']"
-            (blur)="inputUntouch(TechManagementAddEditForm,'phoneno')">
-            <mat-error *ngIf="TechManagementAddEditForm.controls['phoneno'].touched && !TechManagementAddEditForm.controls['phoneno'].valid
-            && TechManagementAddEditForm.controls['phoneno'].errors.required">
+          <input  matInput placeholder="Phone" [formControl]="TechManagementAddEditForm.controls['phone']"
+            (blur)="inputUntouch(TechManagementAddEditForm,'phone')">
+            <mat-error *ngIf="TechManagementAddEditForm.controls['phone'].touched && !TechManagementAddEditForm.controls['phone'].valid
+            && TechManagementAddEditForm.controls['phone'].errors.required">
                  Phone Number field can not be blank</mat-error>
         </mat-form-field>
   
