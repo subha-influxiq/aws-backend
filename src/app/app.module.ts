@@ -11,6 +11,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { LoginModule } from 'login'; //login library
 import { ListingModule } from 'lib-listing';
 import { DatePipe } from '@angular/common';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 import { CookieService } from 'ngx-cookie-service';
 import { AuthguardService} from './services/authguard.service';
@@ -21,34 +22,47 @@ import { DemoMaterialModule } from '../app/modules/materialModule';
 import { ForgetpasswordComponent } from './components/auth/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './components/auth/resetpassword/resetpassword.component';
 
-//dashboards
-import { TechDashboardComponent } from './components/dashboard/tech-dashboard/tech-dashboard.component';
-import { AdminDashboardComponent } from './components/dashboard/admin-dashboard/admin-dashboard.component';
-import { BillerDashboardComponent } from './components/dashboard/biller-dashboard/biller-dashboard.component';
-import { DoctorDashboardComponent } from './components/dashboard/doctor-dashboard/doctor-dashboard.component';
-
-//user-management
-import { UserAddEditComponent } from './components/user-management/user-add-edit/user-add-edit.component';
-/**testing purpose start here**/
-import { TestComponent ,DialogContentExampleDialog} from './components/test/test.component';
-import { AddEditComponent } from './components/admin-management/add-edit/add-edit.component';
-import { ManageAdminListComponent } from './components/admin-management/manage-admin-list/manage-admin-list.component';
-import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
-import { AddeditDoctorComponent,Modal } from './components/doctor-management/addedit-doctor/addedit-doctor.component';
-import { ListDoctorComponent } from './components/doctor-management/list-doctor/list-doctor.component';
-import { AddEditBillerComponent } from './components/biller-management/add-edit-biller/add-edit-biller.component';
-import { ListingBillerComponent } from './components/biller-management/listing-biller/listing-biller.component';
-import { ListingTechComponent } from './components/tech-management/listing-tech/listing-tech.component';
-import { AddEditTechComponent } from './components/tech-management/add-edit-tech/add-edit-tech.component';
-import { AccountSettingsComponent } from './components/account-settings/account-settings.component';
-import { ChangePasswordComponent } from './components/account-settings/change-password/change-password.component';
-import { AddEditPatientComponent  } from './components/dashboard/tech-dashboard/patient-management/add-edit-patient/add-edit-patient.component';
+/* Component (Common uses) Start Here */
 import { DialogBoxComponent } from './components/common/dialog-box/dialog-box.component';
-import { BulkUploadComponent } from './components/dashboard/tech-dashboard/patient-management/bulk-upload/bulk-upload.component';
-import { FileUploadModule } from 'file-upload';
 import { UploadDialogBoxComponent } from './components/common/upload-dialog-box/upload-dialog-box.component';
+/* Component (Common uses) End Here */
 
-/**end here**/
+/* Components (Pages) Start Here */
+/* >>>>------> Admin <------<<<< */
+import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
+import { AddEditComponent } from './components/admin/admin-management/add-edit/add-edit.component';
+import { ManageAdminListComponent } from './components/admin/admin-management/manage-admin-list/manage-admin-list.component';
+import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
+import { AddeditDoctorComponent, Modal } from './components/admin/doctor-management/addedit-doctor/addedit-doctor.component';
+import { ListDoctorComponent } from './components/admin/doctor-management/list-doctor/list-doctor.component';
+import { AddEditBillerComponent } from './components/admin/biller-management/add-edit-biller/add-edit-biller.component';
+import { ListingBillerComponent } from './components/admin/biller-management/listing-biller/listing-biller.component';
+import { ListingTechComponent } from './components/admin/tech-management/listing-tech/listing-tech.component';
+import { AddEditTechComponent } from './components/admin/tech-management/add-edit-tech/add-edit-tech.component';
+import { AccountSettingsComponent } from './components/common/account-settings/account-settings.component';
+import { ChangePasswordComponent } from './components/common/account-settings/change-password/change-password.component';
+import { UserAddEditComponent } from './components/admin/user-management/user-add-edit/user-add-edit.component';
+
+/* >>>>------> Tech <------<<<< */
+import { TechDashboardComponent } from './components/tech/tech-dashboard/tech-dashboard.component';
+import { TechHeaderComponent } from './components/tech/tech-header/tech-header.component';
+import { AddEditPatientComponent  } from './components/tech/patient-management/add-edit-patient/add-edit-patient.component';
+import { BulkUploadComponent } from './components/tech/patient-management/bulk-upload/bulk-upload.component';
+
+/* >>>>------> Doctor <------<<<< */
+import { DoctorDashboardComponent } from './components/doctor/doctor-dashboard/doctor-dashboard.component';
+import { DoctorHeaderComponent } from './components/doctor/doctor-header/doctor-header.component';
+
+/* >>>>------> Biller <------<<<< */
+import { BillerDashboardComponent } from './components/biller/biller-dashboard/biller-dashboard.component';
+import { BillerHeaderComponent } from './components/biller/biller-header/biller-header.component';
+
+/* Components (Pages) End Here */
+
+/* testing purpose start here */
+import { TestComponent, DialogContentExampleDialog } from './components/test/test.component';
+import { FileUploadModule } from 'file-upload';
+
 
 @NgModule({
   declarations: [
@@ -85,8 +99,9 @@ import { UploadDialogBoxComponent } from './components/common/upload-dialog-box/
     DialogBoxComponent,
     BulkUploadComponent,
     UploadDialogBoxComponent,
-    
-
+    BillerHeaderComponent,
+    DoctorHeaderComponent,
+    TechHeaderComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

@@ -11,7 +11,7 @@ import {
 
 @Component({
   selector: 'app-root',
-  template: '<router-outlet></router-outlet>',
+  template: '<div *ngIf="loading" class="mainOverlayLoader"><mat-card class="mat_card_content"><mat-spinner color="warn"></mat-spinner> Please wait...</mat-card></div><router-outlet></router-outlet>',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
@@ -26,6 +26,7 @@ export class AppComponent {
       switch (true) {
         case event instanceof NavigationStart: {
           this.loading = true;
+          console.log('loading start');
           break;
         }
 
@@ -33,6 +34,7 @@ export class AppComponent {
         case event instanceof NavigationCancel:
         case event instanceof NavigationError: {
           this.loading = false;
+          console.log('loading end');
           break;
         }
         default: {

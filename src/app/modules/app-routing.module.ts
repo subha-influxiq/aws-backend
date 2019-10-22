@@ -10,36 +10,34 @@ import { LoginComponent } from '../components/auth/login/login.component';
 import { ForgetpasswordComponent } from '../components/auth/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from '../components/auth/resetpassword/resetpassword.component';
 
-/* All Dashboards */
-import { TechDashboardComponent } from '../components/dashboard/tech-dashboard/tech-dashboard.component';
-import { AdminDashboardComponent } from '../components/dashboard/admin-dashboard/admin-dashboard.component';
-import { BillerDashboardComponent } from '../components/dashboard/biller-dashboard/biller-dashboard.component';
-import { DoctorDashboardComponent } from '../components/dashboard/doctor-dashboard/doctor-dashboard.component';
-
-/**patient-management under tech-dashboard**/
-import { AddEditPatientComponent } from '../components/dashboard/tech-dashboard/patient-management/add-edit-patient/add-edit-patient.component';
-
-/**bulk upload**/
-import { BulkUploadComponent } from '../components/dashboard/tech-dashboard/patient-management/bulk-upload/bulk-upload.component';
-
+/****************** Admin *****************/
+import { AdminDashboardComponent } from '../components/admin/admin-dashboard/admin-dashboard.component';
 /* User Mnagement */
-import { UserAddEditComponent } from '../components/user-management/user-add-edit/user-add-edit.component'
-import { AddEditComponent } from '../components/admin-management/add-edit/add-edit.component';
-import { ManageAdminListComponent } from '../components/admin-management/manage-admin-list/manage-admin-list.component';
-import { AddeditDoctorComponent } from '../components/doctor-management/addedit-doctor/addedit-doctor.component';
-import { ListDoctorComponent } from '../components/doctor-management/list-doctor/list-doctor.component';
-
+import { UserAddEditComponent } from '../components/admin/user-management/user-add-edit/user-add-edit.component'
+import { AddEditComponent } from '../components/admin/admin-management/add-edit/add-edit.component';
+import { ManageAdminListComponent } from '../components/admin/admin-management/manage-admin-list/manage-admin-list.component';
+import { AddeditDoctorComponent } from '../components/admin/doctor-management/addedit-doctor/addedit-doctor.component';
+import { ListDoctorComponent } from '../components/admin/doctor-management/list-doctor/list-doctor.component';
 /* Biller Management */
-import { AddEditBillerComponent } from '../components/biller-management/add-edit-biller/add-edit-biller.component';
-import { ListingBillerComponent } from '../components/biller-management/listing-biller/listing-biller.component';
-
+import { AddEditBillerComponent } from '../components/admin/biller-management/add-edit-biller/add-edit-biller.component';
+import { ListingBillerComponent } from '../components/admin/biller-management/listing-biller/listing-biller.component';
 /* Tech Management */
-import { AddEditTechComponent } from '../components/tech-management/add-edit-tech/add-edit-tech.component';
-import { ListingTechComponent } from '../components/tech-management/listing-tech/listing-tech.component';
-
+import { AddEditTechComponent } from '../components/admin/tech-management/add-edit-tech/add-edit-tech.component';
+import { ListingTechComponent } from '../components/admin/tech-management/listing-tech/listing-tech.component';
 /* Account Settings */
-import { AccountSettingsComponent } from '../components/account-settings/account-settings.component';
-import { ChangePasswordComponent } from '../components/account-settings/change-password/change-password.component';
+import { AccountSettingsComponent } from '../components/common/account-settings/account-settings.component';
+import { ChangePasswordComponent } from '../components/common/account-settings/change-password/change-password.component';
+
+
+/***************** Tech Dashboard ****************/
+import { TechDashboardComponent } from '../components/tech/tech-dashboard/tech-dashboard.component';
+/* Patient Management */
+import { AddEditPatientComponent } from '../components/tech/patient-management/add-edit-patient/add-edit-patient.component';
+/* Bulk Upload**/
+import { BulkUploadComponent } from '../components/tech/patient-management/bulk-upload/bulk-upload.component';
+
+import { BillerDashboardComponent } from '../components/biller/biller-dashboard/biller-dashboard.component';
+import { DoctorDashboardComponent } from '../components/doctor/doctor-dashboard/doctor-dashboard.component';
 
 /* Test Component */
 import { TestComponent } from '../components/test/test.component';
@@ -136,6 +134,26 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+  /* Doctor Management */
+  { path: 'admin/doctor-management/add', component: AddeditDoctorComponent },
+  { path: 'admin/doctor-management/edit/:_id', component: AddeditDoctorComponent, canActivate: [AuthguardService], resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'users',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+  { path: 'admin/doctor-management/list', component: ListDoctorComponent, canActivate: [AuthguardService], resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'users',
+        condition: { 'type': 'doctor' }
+      },
+      endpoint: 'datalist'
+    },
+  },
 
   /* Tech Dashboard */
   { path: 'tech/dashboard', component: TechDashboardComponent, canActivate: [AuthguardService],
@@ -148,31 +166,28 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+  /* Account-Settings */
+  { path: 'tech/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
+  { path: 'tech/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
   { path: 'tech/patient-management/add', component: AddEditPatientComponent, canActivate: [AuthguardService] },
-  /**bulk upload**/
-  {
-    path: 'tech/patient-management/bulk-upload',
-    component: BulkUploadComponent,
-    canActivate: [AuthguardService]
-  },
-  {
-    path: 'biller/dashboard',
-    component: BillerDashboardComponent,
-    canActivate: [AuthguardService]
-  },
-  {
-    path: 'doctor/dashboard',
-    component: DoctorDashboardComponent,
-    canActivate: [AuthguardService]
-  },
-  /**user-management**/
+  /* Bulk Upload */
+  { path: 'tech/patient-management/bulk-upload', component: BulkUploadComponent, canActivate: [AuthguardService] },
+
+  /* Biller Route */
+  { path: 'biller/dashboard', component: BillerDashboardComponent, canActivate: [AuthguardService] },
+  /* Account-Settings */
+  { path: 'biller/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
+  { path: 'biller/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
   
-
-
-  /**test component route start here**/
-  {
-    path: 'test', component: TestComponent,
-    resolve: { data: ResolveService },
+  /* Doctor Route */
+  { path: 'doctor/dashboard', component: DoctorDashboardComponent, canActivate: [AuthguardService] },
+  /* Account-Settings */
+  { path: 'doctor/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
+  { path: 'doctor/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
+  
+ 
+  /* test component route start here */
+  { path: 'test', component: TestComponent, canActivate: [AuthguardService], resolve: { data: ResolveService },
     data: {
       requestcondition: {
         source: 'user_management',
@@ -180,49 +195,6 @@ const routes: Routes = [
       },
       endpoint: 'datalist'
     },
-    canActivate: [AuthguardService]
-  },
-
-
-  // _____________________________DOCTOR MANAGEMENT___________________________
-
-  { path: 'admin/doctor-management/add', component: AddeditDoctorComponent },
-
-  {
-    path: 'admin/doctor-management/list', component: ListDoctorComponent,
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'users',
-        condition: { 'type': 'doctor' }
-      },
-      endpoint: 'datalist'
-    },
-    canActivate: [AuthguardService]
-  },
-  {
-    path: 'admin/doctor-management/edit/:_id', component: AddeditDoctorComponent,
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'users',
-        condition: {}
-      },
-      endpoint: 'datalist'
-    },
-    canActivate: [AuthguardService]
-  },
-  {
-    path: 'admin/dashboard', component: AdminDashboardComponent,
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'doctors',
-        condition: {}
-      },
-      endpoint: 'datalist'
-    },
-    canActivate: [AuthguardService]
   },
 ];
 

@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
   public fromTitle: any = "Login Here";    // This is a From Title
   public fullUrl: any = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";  // server url
   public endpoint: any = "login";
-  public buttonName:any= 'Login Button';
+  public buttonName: any = 'Login Button';
 
   public signUpRouteingUrl: any = {
     "path": "",
@@ -31,27 +31,25 @@ export class LoginComponent implements OnInit {
       "data": [
         {
           "type": "admin",
-          "routerNav": "dashboard/admin"
+          "routerNav": "admin/dashboard"
         },
         {
           "type": "doctor",
-          "routerNav": "dashboard/doctor"
+          "routerNav": "doctor/dashboard"
         },
         {
           "type": "tech",
-          "routerNav": "dashboard/tech"
+          "routerNav": "tech/dashboard"
         },
         {
           "type": "biller",
-          "routerNav": "dashboard/biller"
+          "routerNav": "biller/dashboard"
         }
       ]
     }
   }
 
   ngOnInit() {
-
-
   }
 
 }
