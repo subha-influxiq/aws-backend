@@ -5,20 +5,23 @@
     <form class="example-form" autocomplete="off" name="techBulkUploadForm" [formGroup]="techBulkUploadForm"
       (ngSubmit)="techBulkUploadFormSubmit()">
       <mat-card-content>
-          <label>Batch Name</label>
-          <mat-form-field>
-            <input  placeholder="Batch Name"  matInput [formControl]="techBulkUploadForm.controls['batchName']"
-              (blur)="inputUntouch(techBulkUploadForm,'batchName')">
-            <mat-error *ngIf="techBulkUploadForm.controls['batchName'].touched && !techBulkUploadForm.controls['batchName'].valid
+        <label>Batch Name</label>
+        <mat-form-field>
+          <input placeholder="Batch Name" matInput [formControl]="techBulkUploadForm.controls['batchName']"
+            (blur)="inputUntouch(techBulkUploadForm,'batchName')">
+          <mat-error *ngIf="techBulkUploadForm.controls['batchName'].touched && !techBulkUploadForm.controls['batchName'].valid
             && techBulkUploadForm.controls['batchName'].errors.required">
             Batch Name field can not be blank</mat-error>
-          </mat-form-field>
-        </mat-card-content>
+        </mat-form-field>
+      </mat-card-content>
       <!-- image upload library -->
       <lib-file-upload [config]="configData"></lib-file-upload>
       <span class="submit_form">
+        <button mat-flat-button (click)="cancelButton()"> Cancel </button>
         <button mat-flat-button type="submit"> Submit </button>
       </span>
+
+
     </form>
   </mat-card-content>
 </mat-card>

@@ -20,7 +20,7 @@
         </button>
         <button mat-menu-item (click)="logout()"> <mat-icon>power_settings_new</mat-icon> Logout </button>
       </mat-menu>
-      <span class="username">Adam Coury</span>
+      <span class="username">{{user_data.firstname}} {{user_data.lastname}}</span>
       <button mat-icon-button [matMenuTriggerFor]="appMenu">
         <span class="user_profile">
           <mat-icon>account_circle</mat-icon>

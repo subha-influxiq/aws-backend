@@ -12,7 +12,7 @@
   
       <mat-card-content class="profile_section">
         <mat-menu #appMenu="matMenu">
-          <button mat-menu-item [routerLink]="['/tech/account-setting']">
+          <button mat-menu-item [routerLink]="['/tech/account-settings']">
             <mat-icon>account_circle</mat-icon> Account Settings
           </button>
           <button mat-menu-item [routerLink]="['/tech/account-settings/change-password']">
@@ -20,7 +20,7 @@
           </button>
           <button mat-menu-item (click)="logout()"> <mat-icon>power_settings_new</mat-icon> Logout </button>
         </mat-menu>
-        <span class="username">Adam Coury</span>
+        <span class="username">{{user_data.firstname}} {{user_data.lastname}}</span>
         <button mat-icon-button [matMenuTriggerFor]="appMenu">
           <span class="user_profile">
             <mat-icon>account_circle</mat-icon>

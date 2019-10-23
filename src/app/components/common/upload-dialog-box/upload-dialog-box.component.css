@@ -1,0 +1,301 @@
+/* header css */
+.techdashboard_header .mat-toolbar-row{ height: auto; }
+.techdashboard_header .mat-toolbar-row .logo_wrapper{ max-width: 200px; display: block; }
+.techdashboard_header .mat-toolbar-row .logo_wrapper img{ max-width: 100%; vertical-align: middle; }
+.techdashboard_header .mat-toolbar-row{ justify-content: space-between; padding: 0 40px;}
+.techdashboard_header .mat-toolbar-row .quotation { margin-bottom: 0px;}
+.techdashboard_header .mat-toolbar-row .quotation p{ font-family: "RobotoMedium"; font-size: 30px; color: #002035; text-transform: uppercase; margin: 0; }
+.techdashboard_header .mat-toolbar-row .profile_section { display: flex; border-left: 1px solid #e2dede; padding-left: 20px; }
+.techdashboard_header .mat-toolbar-row .profile_section .username{ padding-right: 20px; display: block; }
+
+
+.techdashboard_header .mat-toolbar-row .quotation .mat-list-base{ display: flex;}
+.techdashboard_header .mat-toolbar-row .quotation .mat-list-base .mat-list-item:after{ content:""; width:2px; height: 80px; background: red;}
+.active{ color: #c18500!important; }
+.techdashboard_header .mat-toolbar-row .quotation .mat-nav-list .mat-list-item { margin: 0 16px; }
+
+
+.add_form{ width: 40%; margin: 20px auto; background: #f3f3f3; padding: 16px 10px; padding-bottom: 50px; border: 1px solid #91e7ff; }
+.add_form .form_wrapper .mat-form-field{ width: 100%;  }
+.add_form .form_wrapper textarea{ resize: none;}
+.add_form h2{ font-family: "RobotoBlack"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }
+.add_form .submit_form { display: block; width: 100%; text-align: center; margin-top: 30px; }
+.add_form .submit_form button{ border-radius: 5px; background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: "RobotoBlack"; font-size: 25px; padding: 2px;
+width: 240px; border: 3px solid #d59d01; }
+.add_form .submit_form button:nth-child(1){ background: linear-gradient(180deg, #f2be00, #a52a08); color: #f3f3f3; border: 2px solid #bb3c0d; margin-right: 16px; }
+.add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;}
+
+
+
+
+@media screen and (max-width: 1460px){
+  .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; line-height: 26px;}
+}
+
+@media screen and (max-width: 1000px){
+  .add_form .submit_form button { width: 48%; }
+}
+@media screen and (max-width: 991px){
+.techdashboard_header .mat-toolbar-row { flex-direction: column; padding: 20px;}
+.techdashboard_header .mat-toolbar-row .quotation p { margin-top: 16px; }
+}
+@media screen and (max-width: 768px){
+  .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0; }
+}
+@media screen and (max-width: 576px){
+.add_form .submit_form button { font-size: 22px; padding: 2px; }
+
+.add_form .submit_form button { width: 100%; margin: 0; margin-top: 20px; }
+.add_form .submit_form { display: flex; flex-direction: column-reverse; text-align: center; margin-top: 0px; }
+.add_form .submit_form button:nth-child(1) { margin-right: 0; margin-top: 20px; }
+}
+
+@media screen and (max-width: 360px){
+.techdashboard_header .mat-toolbar-row .quotation p { font-size: 16px; line-height: 22px; }
+.add_form h2 { font-size: 22px; line-height: 24px; text-align: center; }
+}
+
+
+/* header css */
+.techdashboard_header .mat-toolbar-row{ height: auto; }
+.techdashboard_header .mat-toolbar-row .logo_wrapper{ max-width: 200px; display: block; }
+.techdashboard_header .mat-toolbar-row .logo_wrapper img{ max-width: 100%; vertical-align: middle; }
+.techdashboard_header .mat-toolbar-row{ justify-content: space-between; padding: 0 40px;}
+.techdashboard_header .mat-toolbar-row .quotation { margin-bottom: 0px;}
+.techdashboard_header .mat-toolbar-row .quotation p{ font-family: "RobotoMedium"; font-size: 30px; color: #002035; text-transform: uppercase; margin: 0; }
+.techdashboard_header .mat-toolbar-row .profile_section { display: flex; border-left: 1px solid #e2dede; padding-left: 20px; }
+.techdashboard_header .mat-toolbar-row .profile_section .username{ padding-right: 20px; display: block; }
+
+
+.techdashboard_header .mat-toolbar-row .quotation .mat-list-base{ display: flex;}
+.techdashboard_header .mat-toolbar-row .quotation .mat-list-base .mat-list-item:after{ content:""; width:2px; height: 80px; background: red;}
+.active{ color: #c18500!important; }
+.techdashboard_header .mat-toolbar-row .quotation .mat-nav-list .mat-list-item { margin: 0 16px; }
+
+/*End header css */
+
+
+.footer_section{display: block; border-top: 1px solid #c7c7c7; margin-top: 30px; }
+.footer_section .footer_content{ width: 600px; padding: 0 16px; margin: 0 auto; display: block; text-align: center; }
+.footer_section .footer_content .link{ margin-top: 10px; display: block;  }
+.footer_section .footer_content .link a:nth-of-type(1){ border-right: 1px solid #2b2b2b; padding-right: 5px; }
+.footer_section .footer_content .link a, .footer_section .footer_content .link p{ font-size: 16px; font-family: "RobotoRegular"; color: #2b2b2b; text-decoration: none;}
+
+
+#menu_button{ display: none;}
+
+.add_header{ display: flex; margin: 016px;}
+.add_header button{ margin-left: auto;
+  background: linear-gradient(180deg, #fac855, #e47e2a)!important;
+  text-transform: uppercase;
+  font-family: "RobotoBlack"; padding-top: 4px;
+}
+
+
+
+@media screen and (max-width: 1700px){
+  .content_wrapper .itemsection p { font-size: 26px; }
+  .one, .two, .three { background-position: 100% center; }
+}
+@media screen and (max-width: 1680px){
+  .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; }
+}
+@media screen and (max-width: 1500px){
+  .techdashboard_header .mat-toolbar-row .quotation p { font-size: 22px; }
+  .content_wrapper .itemsection { padding-bottom: 36px; }
+}
+@media screen and (max-width: 1440px){
+  .content_wrapper .itemsection p { line-height: 26px; font-size: 24px;}
+
+}
+
+@media screen and (max-width: 1400px){
+.techdashboard_header .mat-toolbar-row .quotation p { font-size: 20px; text-align: center; line-height: 22px; white-space: normal; }
+.techdashboard_header .mat-toolbar-row { padding: 0 20px; }
+}
+
+@media screen and (max-width: 1240px){
+  .doctor_content_wrapper{ background: #012035; }
+}
+@media screen and (max-width: 1199px){
+.doctor_content_wrapper .table_structure { width: 100%;  }
+.patient_report_section .button_action { width: 970px; }
+.patient_report_section .button_action button { width: 475px; font-size: 20px; padding: 8px; }
+.content_wrapper { display: flex; justify-content: center; align-items: center; text-align: center; flex-wrap: wrap; }
+.content_wrapper .itemsection { width: 31%; margin: 15px 12px; }
+.doctor_content_wrapper { padding: 40px 30px; }
+.doctor_content_wrapper .mat-card-title { font-size: 36px; margin-bottom: 20px; }
+
+.table_structure .mat-list-item .title_n { font-size: 26px; }
+.table_structure .mat-list-item .title_a { font-size: 22px; }
+.content_wrapper .itemsection p{ width: 100%; font-size: 22px; }
+.techdashboard_header .mat-toolbar-row { height: auto; flex-direction: column; }
+}
+
+@media screen and (max-width: 1080px){
+.doctor_content_wrapper {
+    padding: 40px 20px;
+}
+.doctor_content_wrapper .mat-card-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.table_structure .mat-list-item .title_n {
+  font-size: 22px;
+}
+.table_structure .mat-list-item .title_a {
+  font-size: 20px;
+}
+}
+@media screen and (max-width: 1038px){
+.content_wrapper .itemsection { width: 30.9%;  }
+}
+
+@media screen and (max-width: 991px){
+.doctor_content_wrapper { text-align: center; }
+.patient_report_section .patient_top_search { display: flex; align-items: center; flex-direction: column; }
+.patient_report_section .patient_top_search .search_bar { margin-bottom: 20px; }
+.patient_report_section .button_action button { padding: 8px 30px; margin: 0 10px; width: 100%;}
+.patient_report_section .button_action { width: auto; margin: 0 5px; display: flex; justify-content: center; }
+.content_wrapper .itemsection { width: 30.8%; }
+.table_structure .mat-list-item .title_a { font-size: 16px; }
+#menu_button{ display: block;}
+.techdashboard_header .mat-toolbar-row .quotation { display: none; }
+
+.techdashboard_header .mat-toolbar-row .quotation .mat-list-base {
+  display: block;
+}
+}
+@media screen and (max-width: 970px){
+.patient_report_section .button_action button { width: auto; }
+.table_structure .mat-list-item .title_n { font-size: 18px; }
+
+.one { background: linear-gradient(100deg, #f9c856, #dd671d); }
+.two { background: linear-gradient(100deg, #0973d1, #05335a); }
+.three { background: linear-gradient(100deg, #44cf80, #26a555); }
+}
+@media screen and (max-width: 950px){
+  .content_wrapper .itemsection {
+    width: 30.8%;
+}
+  .content_wrapper .itemsection p { font-size: 20px; }
+  .table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {  margin-bottom: 16px; }
+}
+
+
+@media screen and (max-width: 850px){
+.content_wrapper .itemsection { width: 30.2%; }
+/* hiding searchbar */
+.patient_report_section .patient_top_search .search_bar {
+  margin-bottom: 20px;
+  display: none;
+}
+
+.techdashboard_header .mat-toolbar-row {
+  padding: 0 16px;
+  flex-direction: column;
+}
+
+
+}
+@media screen and (max-width: 768px){
+.content_wrapper .itemsection { width: 100%; margin: 16px; margin-bottom: 0; }
+.content_wrapper .itemsection:nth-last-child(1) {margin-bottom: 16px; }
+.patient_report_section .button_action { display: flex; justify-content: center; flex-direction: column; }
+.patient_report_section .button_action button { margin-bottom: 16px; word-break: break-word; white-space: normal; line-height: 22px; }
+.techdashboard_header .mat-toolbar-row { padding: 0 16px; }
+.techdashboard_header .mat-toolbar-row .quotation p { margin: 16px 0; }
+.doctor_content_wrapper { padding: 20px 0px; }
+.table_structure .mat-list-item .title_a { font-size: 14px; }
+.doctor_content_wrapper .mat-card-title { font-size: 28px; margin-bottom: 5px; text-align: left; padding: 0 16px; }
+
+.table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option { margin-bottom: 16px; }
+.footer_section .footer_content { width: auto; }
+
+.table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option { display: flex; text-align: left; }
+}
+
+@media screen and (max-width: 480px){
+.doctor_content_wrapper .mat-card-title { font-size: 24px; }
+.patient_report_section .patient_top_search h1 { font-size: 24px; }
+}
+/* header css */
+.techdashboard_header .mat-toolbar-row{ height: auto; }
+.techdashboard_header .mat-toolbar-row .logo_wrapper{ max-width: 200px; display: block; }
+.techdashboard_header .mat-toolbar-row .logo_wrapper img{ max-width: 100%; vertical-align: middle; }
+.techdashboard_header .mat-toolbar-row{ justify-content: space-evenly; padding: 0 40px;}
+.techdashboard_header .mat-toolbar-row .quotation { margin-bottom: 0px;}
+.techdashboard_header .mat-toolbar-row .quotation p{ font-family: "RobotoMedium"; font-size: 30px; color: #002035; text-transform: uppercase; margin: 0; white-space: normal;
+  text-align: center;}
+.techdashboard_header .mat-toolbar-row .profile_section { display: flex; border-left: 1px solid #e2dede; padding-left: 20px; }
+.techdashboard_header .mat-toolbar-row .profile_section .username{ padding-right: 20px; display: block; }
+/*End header css */
+
+
+.add_form{ width: 80%; margin: 20px auto; background: #f3f3f3; padding: 16px 10px; padding-bottom: 25px; border: 1px solid #91e7ff;}
+.add_form .form_wrapper .mat-form-field{ width: 49%; margin: 0.5%; }
+.add_form .form_wrapper textarea{ resize: none;}
+.add_form h2{ font-family: "RobotoBlack"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }
+.add_form .submit_form { display: block; width: 100%; text-align: center; margin-top: 30px; }
+.add_form .submit_form button{ border-radius: 5px; background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: "RobotoBlack"; font-size: 25px; padding: 8px;
+width: 390px; border: 3px solid #d59d01; }
+.add_form .submit_form button:nth-child(1){ background: linear-gradient(180deg, #f2be00, #a52a08); color: #f3f3f3; border: 2px solid #bb3c0d; margin-right: 16px; }
+.add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;}
+
+
+
+
+@media screen and (max-width: 1460px){
+  .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; line-height: 26px;}
+}
+
+@media screen and (max-width: 1000px){
+  .add_form .submit_form button { width: 48%; }
+}
+@media screen and (max-width: 991px){
+.techdashboard_header .mat-toolbar-row { flex-direction: column; padding: 20px;}
+.techdashboard_header .mat-toolbar-row .quotation p { margin-top: 16px; }
+}
+@media screen and (max-width: 768px){
+  .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0; }
+}
+@media screen and (max-width: 576px){
+.add_form .submit_form button { font-size: 22px; padding: 2px; }
+
+.add_form .submit_form button { width: 100%; margin: 0; margin-top: 20px; }
+.add_form .submit_form { display: flex; flex-direction: column-reverse; text-align: center; margin-top: 0px; }
+.add_form .submit_form button:nth-child(1) { margin-right: 0; margin-top: 20px; }
+}
+
+@media screen and (max-width: 360px){
+.techdashboard_header .mat-toolbar-row .quotation p { font-size: 16px; line-height: 22px; }
+.add_form h2 { font-size: 22px; line-height: 24px; text-align: center; }
+}
+
+
+/* .add_form .test_date_wrapper{ display: inline-block; } */
+.add_form .test_date_wrapper .mat-card-actions, .add_form .test_date_wrapper .mat-card-content, .add_form .test_date_wrapper .mat-card-subtitle {
+  display: inline-flex;
+  margin-bottom: 16px;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+}
+.add_form .mat-card-content label , .add_form .patient_diagnotes label{ font-family: "RobotoMedium"; color: #01090c; font-size: 16px; margin: 0 5px}
+.add_form .mat-card-content label , 
+.add_form .patient_diagnotes label{ font-family: "RobotoMedium"; color: #01090c; font-size: 16px; margin:10px;line-height: 20px;}
+
+
+.add_form .mat-card-content .mat-checkbox { margin: 0 5px; }
+.add_form .mat-card-content ,
+.add_form .patient_diagnotes .mat-form-field {
+   
+  position: relative;
+  text-align: left;
+  margin: 0 10px;
+}
+.add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0 8px; border: 2px solid #43cef5; background: #fff;
+  box-sizing: border-box;}
+.add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0 20px;}
+.add_form .patient_diagnotes .example-full-width textarea{ resize: none; }
+

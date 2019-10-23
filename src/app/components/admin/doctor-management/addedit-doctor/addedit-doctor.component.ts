@@ -34,10 +34,15 @@ export class AddeditDoctorComponent implements OnInit {
   allCities: any;
   cities: any;
   // =================================================================
-
+  public user_token:any;
+  public techData : any = [];
+  public billerData : any = [];
   constructor(private formBuilder: FormBuilder, private http: HttpServiceService,
     private cookieService: CookieService, public dialog: MatDialog, private router: Router,
     public acivatedRoute: ActivatedRoute) {
+      this.user_token = cookieService.get('jwtToken');
+      this.getAllTechData();
+      this.getAllBillerData();
     this.acivatedRoute.params.subscribe(params => {
       if (params['_id'] != null) {
         this.action = "edit";
@@ -100,9 +105,12 @@ export class AddeditDoctorComponent implements OnInit {
       practicename: defaultValue.practicename,
       taxonomies: defaultValue.taxonomies,
       npm: defaultValue.npm,
+      fax : defaultValue.fax,
       address: defaultValue.address,
       city: defaultValue.city,
       state: defaultValue.state,
+      tech:defaultValue.tech,
+      biller:defaultValue.biller,
       zip: defaultValue.zip,
       status: defaultValue.status
 
@@ -127,11 +135,14 @@ export class AddeditDoctorComponent implements OnInit {
       practicename: ['',[Validators.required,nameValidator]],
       npm: ['',[Validators.required,npmValidator]],
       address: ['',Validators.required],
+      fax : ['',Validators.required],
       city: ['',Validators.required],
       state: ['',Validators.required],
       type:['doctor'],
       zip: ['',[Validators.required,zipValidator]],
       status: ['',],
+      tech : ['',Validators.required],
+      biller : ['',Validators.required],
       taxo_list: [],
       taxonomies: this.formBuilder.array([]),
     });
@@ -191,6 +202,35 @@ export class AddeditDoctorComponent implements OnInit {
   getCityByName(stateName) {
     this.cities = this.allCities[stateName];
   }
+   /**getting all the technician data**/
+   getAllTechData(){
+    var data={
+      "source": "users",
+      "condition": {
+        "type": "tech"
+    },
+    "token": this.user_token
+    }
+    this.http.httpViaPost('datalist',data)
+    .subscribe(response=>{
+      this.techData =response.res; 
+
+    })
+  }
+  /**getting all the biller data**/
+  getAllBillerData(){
+    var data={
+      "source": "users",
+      "condition": {
+        "type": "biller"
+    },
+    "token": this.user_token
+    }
+    this.http.httpViaPost('datalist',data)
+    .subscribe(response=>{
+      this.billerData =response.res; 
+    })
+  }
 
 
 
@@ -222,7 +262,8 @@ export class AddeditDoctorComponent implements OnInit {
     let postData: any = {
       "source": 'users',      
       "data": Object.assign(this.docManageForm.value, this.condition),
-     "token": this.cookieService.get('jwtToken')
+      "sourceobj": ["tech","biller"],
+      "token": this.cookieService.get('jwtToken')
       
     };
     this.http.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
@@ -234,7 +275,7 @@ export class AddeditDoctorComponent implements OnInit {
         }, 2000);
 
 
-        this.router.navigateByUrl('doctor-management/list');;
+        this.router.navigateByUrl('admin/doctor-management/list');;
       } else {
         alert("Some error occurred. Please try again.");
       }

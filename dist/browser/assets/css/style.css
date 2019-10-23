@@ -1,0 +1,138 @@
+@font-face {
+  font-family: 'RalewayBold';
+  src: url('../fonts/Raleway-Bold.woff2') format('woff2'),
+      url('../fonts/Raleway-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RalewayMedium';
+  src: url('../fonts/Raleway-Medium.woff2') format('woff2'),
+      url('../fonts/Raleway-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RalewayRegular';
+  src: url('../fonts/Raleway-Regular.woff2') format('woff2'),
+      url('../fonts/Raleway-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RobotoMedium';
+  src: url('../fonts/Roboto-Medium.woff2') format('woff2'),
+      url('../fonts/Roboto-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RobotoRegular';
+  src: url('../fonts/Roboto-Regular.woff2') format('woff2'),
+      url('../fonts/Roboto-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RobotoBlack';
+  src: url('../fonts/Roboto-Black.woff2') format('woff2'),
+      url('../fonts/Roboto-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RobotoBold';
+  src: url('../fonts/Roboto-Bold.woff2') format('woff2'),
+      url('../fonts/Roboto-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
+
+:root {
+  --my-cool-background: #feca00;
+  --my-cool-background2: #1dbce9;
+  }
+
+  /* background-image: linear-gradient(40deg, #feca00, #1dbce9); */
+
+
+.main_wrapper{
+   display: flex;
+   height: 100%;
+   justify-content: flex-start;
+   align-items: center;
+   /* background-image: linear-gradient(145deg, #f0b800, #3ebff4); */
+   /* background-image: linear-gradient(145deg, #f9e7b0, #b3e1f5); */
+   background: url(../images/doctorImage.png) no-repeat;
+   background-position: left bottom;
+   background-size: 835px;
+   background-color: #fdfaee;
+   padding-left: 800px;
+
+  }
+.main_wrapper .login_wrapper { padding: 0;}
+.main_wrapper .login_wrapper{ width: 580px; background: #fff; }
+.main_wrapper  .img_wrapper{ background: url("../images/doctorImage.png") no-repeat; background-position: left bottom;}
+.login_container > * { width: 100%; }
+.logo_section{ width: 400px; margin: auto; display: block; margin-bottom: 25px;}
+.logo_section img{ max-width: 100%; }
+.main_wrapper .login_wrapper .forget_wrapper { display: flex; margin-top: 15px; }
+.main_wrapper .login_wrapper .forget_wrapper a{ margin-left: auto; color: #545454; font-size: 16px; font-family: "RalewayMedium"; }
+.main_wrapper .login_wrapper .login_container .mat-form-field { margin-bottom: 20px; }
+.main_wrapper .login_wrapper .login_container input .mat-input-element:focus { border-bottom: 1px solid red!important;}
+.main_wrapper .login_wrapper .login_container input .mat-input-element { font-size: 20px; }
+.main_wrapper .login_wrapper .login_container h2{ text-align: center; color: #1dbce9; margin-top: 0; }
+.main_wrapper .login_wrapper .login_container .paragraph{ font-family: "Ralewaymedium"; font-size: 16px; color: #777776; line-height: 23px; margin: 0px; padding: 0 16px;
+  box-sizing: border-box;}
+.tech_image{  display: block; }
+.tech_image img{ max-width: 100%; }
+.tech_image img{ max-width: 100%; margin-bottom: 22px; padding: 0 16px; box-sizing: border-box; }
+.main_wrapper .login_wrapper .login_container .main-div{ height: auto; }
+.main_wrapper .login_wrapper .login_container .main-div .from  { width: 100%; margin: 0 auto; }
+.main_wrapper .login_wrapper .login_container .main-div .from .logowrapper img{ max-width: 100%;}
+.main_wrapper .login_wrapper .login_container .main-div .from  h2 { background: none; color: #39bbe9; padding: 0px; }
+.main_wrapper .login_wrapper .login_container .main-div .from button{
+  font-family: "RalewayBold"; text-transform: uppercase; font-size: 28px; padding: 8px 16px; margin: auto;
+  display: block; background-image: linear-gradient(40deg, var(--my-cool-background), var(--my-cool-background2))!important;
+}
+.main_wrapper .login_wrapper .login_container .main-div .from .signupfooter a{ padding: 0; cursor: pointer; font-family: "RalewayMedium"; text-transform: uppercase; font-size: 14px; }
+.table_structure .mat-list-item .mat-list-item-content { display: flex; flex-direction: column!important; }
+.patient_report_section  .mat-form-field-appearance-outline .mat-form-field-wrapper { margin: 0!important; padding-bottom: 0; }
+.patient_report_section  .mat-form-field-appearance-outline .mat-form-field-infix { padding: 1em 0 1em 0; margin: 0; border: 0;}
+.DataTable table thead tr.mat-header-row { height: 56px; background: linear-gradient(180deg, #fac855, #e47e2a)!important; }
+.DataTable table th.mat-header-cell { text-align: left; color: #fff; font-family: "RobotoBold"; font-weight: normal; font-size: 16px; }
+.DataTable table tr.mat-row:nth-child(even) {  background: #f1f1f1; }
+.DataTable table tr.mat-row:hover {  background: #fcecb2; }
+.DataTable table td span .cursor{ color: #fff; background: #cd9300; margin-right: 5px; vertical-align: middle; display: table-cell; border-right: 3px solid #fff; }
+.DataTable table td span .cursor i{ vertical-align: middle; }
+.DataTable table td span .cursor:nth-last-child(1){ border-right: none; }
+
+.loader{ width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
+.loader img{ max-width: 100%; }
+
+
+
+/* Styling modal */
+.custom-modalbox{ width: 700px;}
+.custom-modalbox .mat-dialog-container { border: 4px solid #ffbc36; background: linear-gradient(0deg, #ffdfab, #99dfff); }
+.custom-modalbox .mat-dialog-container .mat-card  { background: rgba(0,0,0, 0.1); margin: 10px 0; }
+.custom-modalbox .mat-dialog-container .mat-card  .mat-card-header-text { margin: 0; text-transform: capitalize; color: #000; font-family: "Robotomedium";}
+.custom-modalbox .mat-dialog-container .mat-button-base { background: rgb(35, 201, 255); color: #fff; text-transform: uppercase;}
+@media screen and (max-width: 991px){
+  .custom-modalbox{ width: 90%;}
+}
+.title_wrapper{ background: linear-gradient(45deg, #efa03f, #32a9f5);
+  color: #fff;
+  text-transform: uppercase;
+  padding: 16px;
+  font-family: 'RobotoBold';
+  font-size: 30px!important;
+  text-align: center;
+}
+.bradcrumb{  display: block;}
+.bradcrumb a{ color: #32a9f5; text-decoration: none; }

@@ -1,1 +1,23 @@
-<button mat-button (click)="openDialog()">Open dialog</button>
+<mat-card class="add_form">
+    <form class="example-form" autocomplete="off" name="techBulkUploadForm" [formGroup]="techUploadForm"
+        (ngSubmit)="techUploadFormSubmit()">
+        <mat-dialog-content class="mat-typography">
+            <lib-file-upload [config]="configData"></lib-file-upload>
+            <mat-error *ngIf="ErrCode==true">Please add just one image.</mat-error>
+
+            <span class="submit_form">
+                <button mat-flat-button mat-dialog-close> Cancel </button>
+                <button mat-flat-button type="submit" [mat-dialog-close]="true" cdkFocusInitial> Submit </button>
+              </span>
+        </mat-dialog-content>
+        </form>
+        </mat-card>
+        <!-- <mat-dialog-actions align="end">
+            <button mat-button mat-dialog-close>Cancel</button>
+            <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+        </mat-dialog-actions> -->
+
+
+        <!-- Copyright 2019 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

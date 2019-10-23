@@ -172,7 +172,7 @@ export class AddEditTechComponent implements OnInit {
           });
           this.ResetAddForm();
           setTimeout(() => {
-            this.router.navigateByUrl("/tech-management/list")
+            this.router.navigateByUrl("admin/tech-management/list")
           }, 2200);
 
         })

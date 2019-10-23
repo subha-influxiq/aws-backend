@@ -14,9 +14,9 @@ export class LoginComponent implements OnInit {
 
   public signUpRouteingUrl: any = {
     "path": "",
-    "buttonName": "Sign-Up",
+    // "buttonName": "",
     "customLink": "",
-    "customURl": "https://advancedwellness.pro/"
+    // "customURl": ""
   };
   public forgetRouteingUrl: any = {
     "path": "",

@@ -142,7 +142,7 @@ export class AddEditComponent implements OnInit {
           });
           this.ResetAddEditForm();
           setTimeout(() => {
-            this.router.navigateByUrl('/admin-management/list');
+            this.router.navigateByUrl('admin/admin-management/list');
           }, 2200);
 
         })

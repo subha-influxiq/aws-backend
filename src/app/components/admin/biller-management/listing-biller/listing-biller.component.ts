@@ -30,7 +30,8 @@ public allUserData_skip: any = ["confirmpassword", "password", "created_at", "_i
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
-      textsearch: [{ label: "Search By Firstname", field: 'firstname' }],
+      textsearch: [{ label: "Search By Name", field: 'fullname' },
+      { label: "Search By E-Mail", field: 'email' }],
 
     };
 public user_cookie:any;

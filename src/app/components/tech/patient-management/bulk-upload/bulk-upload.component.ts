@@ -15,7 +15,7 @@ export class BulkUploadComponent implements OnInit {
     baseUrl: "http://3.15.236.141:5005/",
     endpoint: "uploads",
     size: "51200", // kb
-    format: ["jpg", "jpeg", "png", "bmp", "zip", 'html'], // use all small font
+    format: ["pdf"], // use all small font
     type: "patient-file",
     path: "patientFile",
     prefix: "patient-file"
@@ -36,9 +36,16 @@ export class BulkUploadComponent implements OnInit {
 
   ngOnInit() {
   }
+  cancelButton(){
+    this.router.navigateByUrl('/tech/dashboard');
+  }
+
   inputUntouch(form: any, val: any) {
     form.controls[val].markAsUntouched();
   }
+
+  
+
   techBulkUploadFormSubmit() {
     if (this.configData) {
       for (const loop in this.configData.files) {
@@ -51,7 +58,6 @@ export class BulkUploadComponent implements OnInit {
             "type": this.configData.files[loop].type
           });
       }
-      // this.techBulkUploadForm.value.uploadFile = 
       this.techBulkUploadForm.controls['uploadFile'].patchValue(this.images_array);
 
 
@@ -63,14 +69,20 @@ export class BulkUploadComponent implements OnInit {
     // }
     if(this.techBulkUploadForm.valid){
       var data = {
-        "source"  : "patient_bulk_upload",
+        "source"  : "patient_management",
         "data"    : this.techBulkUploadForm.value,
         "token"   :  this.user_token
       }
       this.httpService.httpViaPost("addorupdatedata",data)
          .subscribe(response=>{
-           console.log("responseeee",response);
-         })
+          if(response.status="success"){
+            let message :any="Successfully Submitted";
+            let action:any="OK";
+            this.snakBar.open(message,action,{
+                duration : 2000
+            })
+            this.router.navigateByUrl('/tech/dashboard');
+          }         })
     }else{
       alert("error occured");
     }

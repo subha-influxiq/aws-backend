@@ -68,7 +68,7 @@
 
       <mat-form-field appearance="fill" *ngIf="action=='add'">
         <mat-label>Confirm Password</mat-label>
-        <input matInput placeholder="**********" formControlName="confirmpassword">
+        <input  type="password" matInput placeholder="**********" formControlName="confirmpassword">
         <mat-error *ngIf="docManageForm.controls['confirmpassword']?.touched || docManageForm.controls['confirmpassword'].errors 
         && docManageForm.controls['confirmpassword'].errors.required">Password do not match</mat-error>
       </mat-form-field>
@@ -85,6 +85,14 @@
         <mat-error *ngIf="!docManageForm.controls['phone'].valid && docManageForm.controls['phone'].errors.required">Phone is required.</mat-error>
         <mat-error *ngIf="!docManageForm.controls['phone'].valid && !docManageForm.controls['phone'].errors.required">Phone must be only 10 digit integers</mat-error>
 
+      </mat-form-field>
+      <!-- FAX -->
+      <mat-form-field appearance="fill">
+        <mat-label>Fax</mat-label>
+        <input matInput placeholder="323 555 1234" formControlName="fax">
+        <mat-error *ngIf="!docManageForm.controls['fax'].valid && docManageForm.controls['fax'].errors.required">Fax is required.</mat-error>
+        <!-- <mat-error *ngIf="!docManageForm.controls['fax'].valid && !docManageForm.controls['fax'].errors.required">
+          Fax is not valid</mat-error> -->
       </mat-form-field>
 
 
@@ -139,7 +147,7 @@
       <!-- NPI#  -->
 
       <mat-form-field appearance="fill">
-        <mat-label>practicename#</mat-label>
+        <mat-label>#NPI</mat-label>
         <input matInput placeholder="1880101700" formControlName="npm">
           <mat-error *ngIf="!docManageForm.controls['npm'].valid && docManageForm.controls['npm'].errors.required ">NPI# is required.</mat-error>
           <mat-error *ngIf="!docManageForm.controls['npm'].valid && !docManageForm.controls['npm'].errors.required"> NPM# is not valid</mat-error>
@@ -189,7 +197,25 @@
         </mat-select>
       </mat-form-field>
 
+ <!-- select tech name-->
 
+ <mat-form-field appearance="fill">
+  <mat-label>Select Technician</mat-label>
+  <mat-select formControlName="tech">
+    <mat-option [value]=0>Select a tech</mat-option>
+    <mat-option *ngFor="let tech of techData;" value="{{ tech._id }}">{{ tech.firstname }} {{tech.lastname}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- select biller name -->
+
+<mat-form-field appearance="fill">
+  <mat-label>Select Biiler</mat-label>
+  <mat-select formControlName="biller">
+    <mat-option [value]=0>Select a biiler</mat-option>
+    <mat-option *ngFor="let biller of billerData;" value="{{ biller._id }}">{{ biller.firstname }} {{ biller.lastname }}</mat-option>
+  </mat-select>
+</mat-form-field>
 
 
 
@@ -204,7 +230,7 @@
         <input matInput placeholder="917844" formControlName="zip">
 
         <mat-error *ngIf="!docManageForm.controls['zip'].valid && docManageForm.controls['zip'].errors.required">ZIP is required.</mat-error>
-        <mat-error *ngIf="!docManageForm.controls['zip'].valid && !docManageForm.controls['zip'].errors.required">ZIP must be only 6 digit integers</mat-error>
+        <!-- <mat-error *ngIf="!docManageForm.controls['zip'].valid && !docManageForm.controls['zip'].errors.required">ZIP must be only 6 digit integers</mat-error> -->
       </mat-form-field>
 
 

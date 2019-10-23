@@ -1,5 +1,6 @@
-import { Component, OnInit,Inject } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit,Inject,ViewChild } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators ,FormGroupDirective
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpServiceService } from '../../../../services/http-service.service'
 import { DatePipe } from '@angular/common';
@@ -18,6 +19,7 @@ export interface DialogData {
   styleUrls: ['./add-edit-patient.component.css']
 })
 export class AddEditPatientComponent implements OnInit {
+  @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
 
   public buttonText : any="Submit";
   public patientAddEditForm : FormGroup;
@@ -76,13 +78,14 @@ export class AddEditPatientComponent implements OnInit {
 
   /**modal end here */
   resetAddEditForm(){
-    this.patientAddEditForm.reset();
+    this.formDirective.resetForm();
   }
 
   patientAddEditFormSubmit(){
+  
     let x: any;
     for (x in this.patientAddEditForm.controls) {
-      this.patientAddEditForm.controls[x].markAsUntouched();
+      this.patientAddEditForm.controls[x].markAsTouched();
     }
     var startDate = this.datePipe.transform(this.startdate, "dd-MM-yyyy");
     var endDate = this.datePipe.transform(this.enddate, "dd-MM-yyyy");

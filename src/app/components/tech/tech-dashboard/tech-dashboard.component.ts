@@ -41,15 +41,20 @@ export class TechDashboardComponent implements OnInit {
     };
 
   /**lib listing end here**/
-
-  public user_cookie: any;
+  public user_id :any;
+  public user_token: any;
   public TechDashboardAllData: any = [];
+  public techSingleData : any=[];
+  public userSingleData : any={};
   constructor(public cookie: CookieService, public http: HttpClient,
     public httpService: HttpServiceService, public activatedRoute: ActivatedRoute) {
     let allData: any = {};
     allData = cookie.getAll()
     this.user_data = JSON.parse(allData.user_details);
-    this.user_cookie = cookie.get('jwtToken');
+    this.user_id = this.user_data.id;
+    this.user_token = cookie.get('jwtToken');
+    this.getTechData();
+
   }
 
   ngOnInit() {
@@ -58,6 +63,25 @@ export class TechDashboardComponent implements OnInit {
       this.TechDashboardAllData = data.techDashboardData.res;
     })
 
+  }
+  getTechData(){
+    var data={
+      "source": "users",
+      "condition": {
+        "tech_object": this.user_id 
+      },
+    "token": this.user_token
+    }
+    this.httpService.httpViaPost('datalist',data)
+    .subscribe(response=>{
+      let result:any={};
+      result =response.res; 
+      this.userSingleData =result[0];
+      console.log("soureshhhhhh",this.userSingleData.firstname);
+      console.log("soureshhhhhh123456",this.userSingleData);
+
+
+    })
   }
 
 }

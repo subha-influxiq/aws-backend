@@ -1,0 +1,180 @@
+@media screen and (max-width: 1400px){
+  .main_wrapper { background-size: 680px; padding-left: 727px; }
+}
+
+@media screen and (max-width: 1300px){
+.main_wrapper { background-size: 680px; padding-left: 665px; }
+}
+@media screen and (max-width: 1240px){
+.main_wrapper .login_wrapper { width: 450px; }
+}
+
+@media screen and (max-width: 1199px){
+.main_wrapper { background-size: 580px; padding-left: 500px; justify-content: center; align-items: center; }
+.main_wrapper .login_wrapper { width: 500px; }
+.main_wrapper .img_wrapper { background: none; }
+
+/* table responsive */
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.mobile-label {
+  display: none;
+}
+
+@media(max-width: 600px) {
+  .mobile-label {
+    width: 80px;
+    display: inline-block;
+        font-weight: bold;
+  }
+
+  .mat-header-row {
+    display: none;
+  }
+
+  .mat-row {
+    flex-direction: column;
+    align-items: start;
+    padding: 8px 24px;
+  }
+}
+
+
+
+
+
+
+
+}
+@media screen and (max-width: 1040px){
+  .main_wrapper { background-size: 0; padding-left: 0; }
+}
+
+@media screen and (max-width: 668px){
+  .main_wrapper .login_wrapper { width: 450px; }
+}
+@media screen and (max-width: 540px){
+.main_wrapper .login_wrapper { width: 400px; }
+.logo_section { width: 100%; }
+}
+@media screen and (max-width: 480px){
+.main_wrapper .login_wrapper { width: 360px; }
+.login_wrapper .loginBtn { font-size: 22px; }
+.main_wrapper .login_wrapper .login_container .main-div .from .signupfooter a { font-size: 12px; padding: 10px 0;}
+.main_wrapper .login_wrapper .login_container .main-div .from button { font-size: 20px; padding: 4px 16px 2px; }
+}
+@media screen and (max-width: 440px){
+.main_wrapper .login_wrapper { width: 320px; }
+}
+@media screen and (max-width: 390px){
+.main_wrapper .login_wrapper { width: 280px; }
+}
+
+@media screen and (max-width: 350px){
+  .main_wrapper .login_wrapper { width: 265px; }
+  .main_wrapper .login_wrapper .login_container .main-div .from button { font-size: 18px; }
+  }
+
+
+  @media screen and (max-width: 991px) {
+    .mat-table {
+      border: 0;
+      vertical-align: middle
+    }
+
+    .mat-table caption {
+      font-size: 1em;
+    }
+
+     /* Enable this to hide header */
+    .mat-table .mat-header-cell {
+
+      border: 10px solid;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    .mat-table .mat-row {
+      border-bottom: 5px solid #ddd;
+      /* display: block; */
+    }
+    /*
+    .mat-table .mat-row:nth-child(even) {background: #CCC}
+    .mat-table .mat-row:nth-child(odd) {background: #FFF}
+    */
+    .mat-table .mat-cell {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 1em;
+      text-align: right;
+      font-weight: bold;
+      height:30px;
+      margin-bottom: 2%;
+      padding: 0 20px;
+      position: relative;
+    }
+    .mat-table .mat-cell:before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      text-transform: uppercase;
+      font-weight: normal;
+      position: absolute;
+      left: 0;
+      font-size: .85em;
+    }
+
+    .mat-table .mat-cell:after {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-title);
+      float: left;
+      text-transform: uppercase;
+      font-weight: normal;
+      position: absolute;
+      left: 0;
+      font-size: .85em;
+    }
+
+
+    .mat-table .mat-cell:last-child {
+      border-bottom: 0;
+    }
+      .mat-table .mat-cell:first-child {
+      margin-top: 4%;
+    }
+    .DataTable .searchbar { display: flex!important;   height: auto; }
+  }
+  @media screen and (max-width: 668px) {
+    .DataTable .searchbar { display: flex!important; flex-direction: column; }
+  }
+  .searchbar .mat-form-field .mat-form-field-flex {
+    display: inline-flex;
+    align-items: baseline;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1.5px solid #424242;
+    border-radius: 4px;
+    padding: 0px 10px;
+}
+
+

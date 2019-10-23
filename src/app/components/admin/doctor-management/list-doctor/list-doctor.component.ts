@@ -18,24 +18,25 @@ export class ListDoctorComponent implements OnInit {
   // ===============================Declarations=========================
   docData: any = [];
   docData_skip: any = ["_id", "created_at", "password", "confirmpassword",
-   "taxonomies","password","confirmpassword","practicename","address"];
+   "taxonomies","password","confirmpassword","practicename","address","type"];
   docData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name", "email": "Email", "phone": "Phone",
     "practicename": "Practice name", "npm": "NPM#", "address": "Address", "city": "City", "state": "State",
-    "zip": "ZIP", "status": "Status", "taxo list": "Taxonomies","fullname":"Fullname"
+    "zip": "ZIP", "status": "Status", "taxo list": "Taxonomies","fullname":"Name"
   };
-  tableName: any = 'doctors_view';
+  tableName: any = 'users';
   UpdateEndpoint: any = "addorupdatedata";
   deleteEndpoint: any = "deletesingledata";
   user_cookie: any;
   searchingEndpoint:any="datalist";
-  editUrl:any = 'doctor-management/edit';
+  editUrl:any = 'admin/doctor-management/edit';
   apiUrl: any = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";
   status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
-      textsearch: [{ label: "Search By Fullname", field: 'fullname' },{label:"Search by taxonomy",field:'taxo_list'}]
+      textsearch: [{ label: "Search By Name", field: 'fullname' },{label:"Search by Taxonomy",field:'taxo_list'},
+      { label: "Search By E-Mail", field: 'email' }]
     };
   // ====================================================================
 

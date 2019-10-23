@@ -1,4 +1,4 @@
-
+<!-- 
 <mat-toolbar class="techdashboard_header">
     <mat-toolbar-row>
       <span class="logo_wrapper">
@@ -35,10 +35,10 @@
 
 
     </mat-toolbar-row>
-  </mat-toolbar>
+  </mat-toolbar> -->
   <!-- end header -->
 
-
+<app-tech-header></app-tech-header>
   <mat-card-content class="content_wrapper">
     <mat-card-content class="itemsection one">
       <span class="counteer"> 10</span>
@@ -68,23 +68,23 @@
       <mat-list>
         <mat-list-item>
           <p class="title_n">Name</p>
-          <p class="title_a">John Doe</p>
+          <p class="title_a">{{ userSingleData.firstname }}</p>
         </mat-list-item>
         <mat-list-item>
-          <p class="title_n">Specialization</p>
+          <p class="title_n">Taxonomies</p>
           <p class="title_a">Cardiologist</p>
         </mat-list-item>
         <mat-list-item>
           <p class="title_n">Email</p>
-          <p class="title_a">johndoe@gmail.com</p>
+          <p class="title_a">{{ userSingleData.email }}</p>
         </mat-list-item>
         <mat-list-item>
           <p class="title_n">Phone</p>
-          <p class="title_a">707-070-7070</p>
+          <p class="title_a">{{ userSingleData.phone }}</p>
         </mat-list-item>
         <mat-list-item>
           <p class="title_n">FAX</p>
-          <p class="title_a">707-070-7070</p>
+          <p class="title_a">{{ userSingleData.fax }}</p>
         </mat-list-item>
       </mat-list>
     </mat-card-content>

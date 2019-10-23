@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Component, OnInit ,ViewChild} from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl,FormGroupDirective } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { HttpServiceService } from '../../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
@@ -13,6 +13,7 @@ import { MatSnackBar } from '@angular/material';
 })
 
 export class AddEditBillerComponent implements OnInit {
+  @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
 
   public billerManagementAddEditForm: FormGroup;
   date = new FormControl(new Date());
@@ -125,7 +126,7 @@ export class AddEditBillerComponent implements OnInit {
   }
 
   ResetAddEditForm() {
-    this.billerManagementAddEditForm.reset();
+    this.formDirective.resetForm()
   }
   
   BillerManagementAddFormSubmit() {
@@ -177,7 +178,7 @@ export class AddEditBillerComponent implements OnInit {
           });
           this.ResetAddEditForm();
           setTimeout(() => {
-            this.router.navigateByUrl("/biller-management/list")
+            this.router.navigateByUrl("admin/biller-management/list")
           }, 2200);
 
         })

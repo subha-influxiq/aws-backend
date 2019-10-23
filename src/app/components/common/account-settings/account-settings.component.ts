@@ -32,7 +32,6 @@ export class AccountSettingsComponent implements OnInit {
   constructor(public fb: FormBuilder, private datePipe: DatePipe,
     public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute) {
       /* Set header */
-      console.log('>>>>---->', this.activeRoute.snapshot.url[0].path);
       this.headerFlag = this.activeRoute.snapshot.url[0].path;
 
     this.user_token = cookie.get('jwtToken');
