@@ -70,6 +70,7 @@ export class TechDashboardComponent implements OnInit {
     })
 
   }
+
   getTechData(){
     var data={
       "source": "users",
@@ -81,12 +82,8 @@ export class TechDashboardComponent implements OnInit {
     this.httpService.httpViaPost('datalist',data)
     .subscribe(response=>{
       let result:any={};
-      result =response.res; 
+      result = response.res; 
       this.userSingleData =result[0];
-      console.log("soureshhhhhh",this.userSingleData.firstname);
-      console.log("soureshhhhhh123456",this.userSingleData);
-
-
     })
   }
 

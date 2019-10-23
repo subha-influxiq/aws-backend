@@ -24,6 +24,9 @@ export class AdminHeaderComponent implements OnInit {
 
   ngOnInit() {
   }
+  myFunction(){
+    
+  }
   
   /**logout function start here**/
   logout() {

@@ -72,7 +72,14 @@
         </mat-list-item>
         <mat-list-item>
           <p class="title_n">Taxonomies</p>
-          <p class="title_a">Cardiologist</p>
+          <p class="title_a">
+            <ng-container *ngFor="let n of userSingleData.taxo_list; let i = index;">
+              {{ n }}
+              <ng-container *ngIf="i + 1 < userSingleData.taxo_list.length">
+                ,
+              </ng-container>
+            </ng-container>
+          </p>
         </mat-list-item>
         <mat-list-item>
           <p class="title_n">Email</p>

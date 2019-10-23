@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Component, OnInit ,ViewChild} from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl,FormGroupDirective } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { HttpServiceService } from '../../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
@@ -14,6 +14,7 @@ import { CommonFunction } from '../../../../class/common/common-function';
 })
 
 export class AddEditComponent implements OnInit {
+  @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
 
   date = new FormControl(new Date());
   public ddmmyy: any;
@@ -96,7 +97,7 @@ export class AddEditComponent implements OnInit {
 
   /**for validation purpose**/
   ResetAddEditForm() {
-    this.adminManagementAddEditForm.reset();
+    this.formDirective.resetForm();
   }
 
   AdminManagementAddFormSubmit() {

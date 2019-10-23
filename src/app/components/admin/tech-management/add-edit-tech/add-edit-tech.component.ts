@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit,ViewChild } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators,FormGroupDirective } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpServiceService } from '../../../../services/http-service.service';
 import { DatePipe } from '@angular/common';
@@ -14,6 +14,8 @@ import { CommonFunction } from '../../../../class/common/common-function';
 })
 
 export class AddEditTechComponent implements OnInit {
+  @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
+
   public TechManagementAddEditForm: FormGroup;
   public message: any = "Submitted Successfully";
 
@@ -30,6 +32,7 @@ export class AddEditTechComponent implements OnInit {
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
+
     public cookie: CookieService, public snackBar: MatSnackBar, public commonFunction: CommonFunction) {
 
       /* Set Meta Data */
@@ -105,8 +108,7 @@ export class AddEditTechComponent implements OnInit {
 
   /**resetting the form start here **/
   ResetAddForm() {
-
-    this.TechManagementAddEditForm.reset();
+    this.formDirective.resetForm();
   }
   /**resetting the form start here **/
   /**for getting all states & cities function start here**/
