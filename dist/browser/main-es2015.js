@@ -5840,15 +5840,33 @@ let CommonFunction = class CommonFunction {
         for (let loop = 1; loop < urlArr.length; loop++) {
             urlArr[loop] = urlArr[loop].replace("-", " ");
             urlArr[loop] = this.titleCase(urlArr[loop]);
-            if (urlArr[loop] != 'Admin' && urlArr[loop] != 'Tech' && urlArr[loop] != 'Doctor' && urlArr[loop] != 'List') {
-                title += urlArr[loop] + ' ';
+            switch (urlArr[loop]) {
+                case 'Admin':
+                    break;
+                case 'Tech':
+                    break;
+                case 'Doctor':
+                    break;
+                case 'List':
+                    break;
+                case 'Add':
+                    title = title + ' - Create New ';
+                    break;
+                case 'Bulk Upload':
+                    title = title + ' - Bulk Report Upload ';
+                    break;
+                default:
+                    title += urlArr[loop] + ' ';
+                    break;
             }
         }
-        let getToken = this.cookie.get('jwtToken');
+        let getToken = this.cookie.check('jwtToken');
+        console.log('=======', getToken);
+        console.log('-------', this.cookie.get('jwtToken'));
         if (getToken) {
             let allcookies = this.cookie.getAll();
             let userData = JSON.parse(allcookies.user_details);
-            title = title + '| ' + userData.firstname + ' ' + userData.lastname + ' | AWS Backend';
+            title = title + '| ' + userData.firstname + ' ' + userData.lastname + ' - AWS Backend';
         }
         else {
             title = 'Welcome to AWS Backend | ' + title;
@@ -6017,10 +6035,11 @@ let AdminHeaderComponent = class AdminHeaderComponent {
     }
     /**logout function start here**/
     logout() {
+        this.cookies.delete('jwtToken');
         this.cookies.deleteAll();
         setTimeout(() => {
             this.router.navigateByUrl('/login');
-        }, 1000);
+        }, 3000);
     }
     /**logout function end here**/
     menuFunction() {
