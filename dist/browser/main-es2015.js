@@ -5855,6 +5855,9 @@ let CommonFunction = class CommonFunction {
                 case 'Bulk Upload':
                     title = title + ' - Bulk Report Upload ';
                     break;
+                case 'Change Password':
+                    title = title + ' - Change Password ';
+                    break;
                 default:
                     title += urlArr[loop] + ' ';
                     break;
