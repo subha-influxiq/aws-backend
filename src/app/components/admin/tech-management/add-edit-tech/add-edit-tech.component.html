@@ -1,20 +1,16 @@
-<mat-toolbar class="techdashboard_header">
-    <mat-toolbar-row>
-      <span class="logo_wrapper">
-        <img src="../../../assets/images/logo.png">
-      </span>
+<app-admin-header></app-admin-header>
   
-  
-      <mat-card-content class="quotation">
-        <p>ADVANCED ANS TECHNOLOGY – BETTER PATIENT CARE – INCREASE PRACTICE REVENUE</p>
-      </mat-card-content>
-  
-  
-  
-    </mat-toolbar-row>
-  </mat-toolbar>
-  <!-- end header -->
-  
+<!-- header with add button -->
+<mat-card-content class="title_wrapper">
+  Add New Technician
+</mat-card-content>
+
+
+<span class="add_header">
+
+  <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Add Technician</span>
+</span>
+<!-- End header with add button -->
   
   <mat-card class="add_form">
   

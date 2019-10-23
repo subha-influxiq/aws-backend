@@ -50,3 +50,14 @@ width: 390px; border: 3px solid #d59d01; }
 .techdashboard_header .mat-toolbar-row .quotation p { font-size: 16px; line-height: 22px; }
 .add_form h2 { font-size: 22px; line-height: 24px; text-align: center; }
 }
+
+
+
+#menu_button{ display: none;}
+
+.add_header{ display: flex; margin: 0 16px;}
+.add_header button{ margin-left: auto;
+  background: linear-gradient(180deg, #fac855, #e47e2a)!important;
+  text-transform: uppercase;
+  font-family: "RobotoBlack"; padding-top: 4px;
+}

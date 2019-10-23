@@ -86,7 +86,7 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  { path: 'admin/admin-management/list', component: ManageAdminListComponent, canActivate: [AuthguardService], resolve: { adminManagementdData: ResolveService },
+  { path: 'admin/admin-management', component: ManageAdminListComponent, canActivate: [AuthguardService], resolve: { adminManagementdData: ResolveService },
     data: {
       requestcondition: {
         source: 'users',
@@ -106,7 +106,7 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  { path: 'admin/biller-management/list', component: ListingBillerComponent, canActivate: [AuthguardService], resolve: { Billerdata: ResolveService },
+  { path: 'admin/biller-management', component: ListingBillerComponent, canActivate: [AuthguardService], resolve: { Billerdata: ResolveService },
     data: {
       requestcondition: {
         source: 'users',
@@ -126,7 +126,7 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  { path: 'admin/tech-management/list', component: ListingTechComponent, canActivate: [AuthguardService], resolve: { techDashboardData: ResolveService },
+  { path: 'admin/tech-management', component: ListingTechComponent, canActivate: [AuthguardService], resolve: { techDashboardData: ResolveService },
     data: {
       requestcondition: {
         source: 'users',
@@ -146,7 +146,7 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  { path: 'admin/doctor-management/list', component: ListDoctorComponent, canActivate: [AuthguardService], resolve: { data: ResolveService },
+  { path: 'admin/doctor-management', component: ListDoctorComponent, canActivate: [AuthguardService], resolve: { data: ResolveService },
     data: {
       requestcondition: {
         source: 'users',

@@ -280,7 +280,7 @@ export class AddeditDoctorComponent implements OnInit {
         }, 2000);
 
 
-        this.router.navigateByUrl('admin/doctor-management/list');;
+        this.router.navigateByUrl('admin/doctor-management');;
       } else {
         alert("Some error occurred. Please try again.");
       }

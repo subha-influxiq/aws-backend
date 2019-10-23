@@ -1,10 +1,18 @@
 <app-admin-header></app-admin-header>
 
+<!-- header with add button -->
+<mat-card-content class="title_wrapper">
+  Add New admin
+</mat-card-content>
 
+
+<span class="add_header">
+
+  <span class="bradcrumb"><a [routerLink]="['/dashboard/admin']">Dashboard &nbsp;/</a> &nbsp; Add Admin</span>
+</span>
 
 <mat-card class="add_form">
-  <h2>add admin</h2>
-
+  <h2>Add Admin</h2>
 
   <mat-card-content class="form_wrapper">
     <form class="example-form" autocomplete="off" name="adminManagementAddEditForm"
@@ -39,7 +47,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Phone </mat-label>
-        <input  matInput placeholder="Phone" [formControl]="adminManagementAddEditForm.controls['phone']"
+        <input matInput placeholder="Phone" [formControl]="adminManagementAddEditForm.controls['phone']"
           (blur)="inputUntouch(adminManagementAddEditForm,'phone')">
         <mat-error *ngIf="adminManagementAddEditForm.controls['phone'].touched && !adminManagementAddEditForm.controls['phone'].valid
             && adminManagementAddEditForm.controls['phone'].errors.required">
@@ -54,12 +62,18 @@
       </mat-form-field>
 
       <mat-form-field class="form-group">
-        <input matInput placeholder="Password" type="password" [formControl]="adminManagementAddEditForm.controls['password']">
-        <mat-error  *ngIf="!adminManagementAddEditForm.controls['password'].valid && adminManagementAddEditForm.controls['password'].touched">Password field can not be blank</mat-error>
+        <input matInput placeholder="Password" type="password"
+          [formControl]="adminManagementAddEditForm.controls['password']">
+        <mat-error
+          *ngIf="!adminManagementAddEditForm.controls['password'].valid && adminManagementAddEditForm.controls['password'].touched">
+          Password field can not be blank</mat-error>
       </mat-form-field>
       <mat-form-field class="form-group">
-        <input matInput placeholder="Confirm Password" type="password" [formControl]="adminManagementAddEditForm.controls['confirmpassword']" >
-        <mat-error *ngIf="!adminManagementAddEditForm.controls['confirmpassword'].valid && adminManagementAddEditForm.controls['confirmpassword'].touched">Password does not match </mat-error>
+        <input matInput placeholder="Confirm Password" type="password"
+          [formControl]="adminManagementAddEditForm.controls['confirmpassword']">
+        <mat-error
+          *ngIf="!adminManagementAddEditForm.controls['confirmpassword'].valid && adminManagementAddEditForm.controls['confirmpassword'].touched">
+          Password does not match </mat-error>
 
       </mat-form-field>
 
@@ -67,7 +81,7 @@
       <mat-checkbox [formControl]="adminManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
       <mat-error *ngIf="adminManagementAddEditForm.controls['status'].touched && !adminManagementAddEditForm.controls['status'].valid
       && adminManagementAddEditForm.controls['status'].errors.required">
-      Status field can not be blank</mat-error>
+        Status field can not be blank</mat-error>
 
 
       <span class="submit_form">
