@@ -63,6 +63,14 @@
             && billerManagementAddEditForm.controls['address'].errors.required">
           Address field can not be blank</mat-error>
       </mat-form-field>
+      
+      <mat-form-field class="parent_cat" appearance="fill">
+        <mat-label>State</mat-label>
+        <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
+          <mat-option [value]=0>Select a category</mat-option>
+          <mat-option *ngFor="let state of states;" value="{{ state.name }}">{{ state.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
 
       <mat-form-field class="parent_cat" appearance="fill">
         <mat-label>City</mat-label>
@@ -72,13 +80,7 @@
         </mat-select>
       </mat-form-field>
 
-      <mat-form-field class="parent_cat" appearance="fill">
-        <mat-label>State</mat-label>
-        <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
-          <mat-option [value]=0>Select a category</mat-option>
-          <mat-option *ngFor="let state of states;" value="{{ state.name }}">{{ state.name }}</mat-option>
-        </mat-select>
-      </mat-form-field>
+    
 
       <mat-form-field appearance="fill">
         <mat-label>Zip</mat-label>
@@ -115,9 +117,9 @@
 
 
       <mat-checkbox [formControl]="billerManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
-      <mat-error *ngIf="billerManagementAddEditForm.controls['status'].touched && !billerManagementAddEditForm.controls['status'].valid
+      <!-- <mat-error *ngIf="billerManagementAddEditForm.controls['status'].touched && !billerManagementAddEditForm.controls['status'].valid
       && billerManagementAddEditForm.controls['status'].errors.required">
-        Status field can not be blank</mat-error>
+        Status field can not be blank</mat-error> -->
 
 
       <span class="submit_form">

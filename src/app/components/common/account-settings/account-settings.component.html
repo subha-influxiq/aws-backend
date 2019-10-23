@@ -89,6 +89,13 @@
                     Address field can not be blank</mat-error>
             </mat-form-field>
             <mat-form-field class="parent_cat" appearance="fill">
+                <mat-label>State</mat-label>
+                <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
+                    <mat-option [value]=0>Select a category</mat-option>
+                    <mat-option *ngFor="let state of states;" value="{{ state.name }}">{{ state.name }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="parent_cat" appearance="fill">
                 <mat-label>City</mat-label>
                 <mat-select formControlName="city">
                     <mat-option value=0>Select a category</mat-option>
@@ -96,13 +103,7 @@
                 </mat-select>
             </mat-form-field>
 
-            <mat-form-field class="parent_cat" appearance="fill">
-                <mat-label>State</mat-label>
-                <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
-                    <mat-option [value]=0>Select a category</mat-option>
-                    <mat-option *ngFor="let state of states;" value="{{ state.name }}">{{ state.name }}</mat-option>
-                </mat-select>
-            </mat-form-field>
+            
             <mat-form-field appearance="fill">
                 <mat-label>Type</mat-label>
                 <input matInput placeholder="type" [formControl]="AccountSettingsForm.controls['type']"

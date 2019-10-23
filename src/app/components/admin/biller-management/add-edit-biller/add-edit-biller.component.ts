@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material';
 })
 
 export class AddEditBillerComponent implements OnInit {
-  @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
+  @ViewChild(FormGroupDirective,{static: true}) formDirective: FormGroupDirective;
 
   public billerManagementAddEditForm: FormGroup;
   date = new FormControl(new Date());
@@ -126,7 +126,12 @@ export class AddEditBillerComponent implements OnInit {
   }
 
   ResetAddEditForm() {
-    this.formDirective.resetForm()
+    this.formDirective.resetForm();
+    // this.billerManagementAddEditForm.markAsPristine();
+    // this.billerManagementAddEditForm.markAsUntouched();
+
+
+
   }
   
   BillerManagementAddFormSubmit() {
@@ -176,7 +181,8 @@ export class AddEditBillerComponent implements OnInit {
           this.snackBar.open(this.message, action, {
             duration: 2000,
           });
-          this.ResetAddEditForm();
+          // this.ResetAddEditForm();
+          this.formDirective.resetForm();
           setTimeout(() => {
             this.router.navigateByUrl("admin/biller-management/list")
           }, 2200);
