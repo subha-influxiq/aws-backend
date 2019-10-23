@@ -12,11 +12,16 @@ import { LoginModule } from 'login'; //login library
 import { ListingModule } from 'lib-listing';
 import { DatePipe } from '@angular/common';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { MetaModule } from '@ngx-meta/core';
 
 import { CookieService } from 'ngx-cookie-service';
 import { AuthguardService} from './services/authguard.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpServiceService } from './services/http-service.service';
+
+/* Common Function */
+import { CommonFunction } from './class/common/common-function';
+
 // modules
 import { DemoMaterialModule } from '../app/modules/materialModule';
 import { ForgetpasswordComponent } from './components/auth/forgetpassword/forgetpassword.component';
@@ -105,6 +110,7 @@ import { FileUploadModule } from 'file-upload';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    MetaModule.forRoot(),
     AppRoutingModule,
     CommonModule,
     TransferHttpCacheModule,
@@ -118,7 +124,7 @@ import { FileUploadModule } from 'file-upload';
     FileUploadModule
   ],
 
-  providers: [CookieService,AuthguardService,HttpServiceService,DatePipe],
+  providers: [CookieService, AuthguardService, HttpServiceService, DatePipe, CommonFunction],
   bootstrap: [AppComponent],
   entryComponents:[Modal,DialogBoxComponent,UploadDialogBoxComponent,DialogContentExampleDialog,TestComponent]
 
