@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { CommonFunction } from '../../../../class/common/common-function';
 
 @Component({
   selector: 'app-listing-biller',
@@ -35,8 +36,11 @@ public allUserData_skip: any = ["confirmpassword", "password", "created_at", "_i
 
     };
 public user_cookie:any;
-  constructor(public activeRoute :ActivatedRoute,public cookie :CookieService) {
+  constructor(public activeRoute :ActivatedRoute, public cookie :CookieService, public commonFunction: CommonFunction) {
     this.user_cookie = cookie.get('jwtToken');
+
+    /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
 
    }
 

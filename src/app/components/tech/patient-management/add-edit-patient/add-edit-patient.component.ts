@@ -8,6 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
+import { CommonFunction } from '../../../../class/common/common-function';
 
 export interface DialogData {
   message: string;
@@ -18,6 +19,7 @@ export interface DialogData {
   templateUrl: './add-edit-patient.component.html',
   styleUrls: ['./add-edit-patient.component.css']
 })
+
 export class AddEditPatientComponent implements OnInit {
   @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
 
@@ -33,7 +35,11 @@ export class AddEditPatientComponent implements OnInit {
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
-    public cookie: CookieService,public snakBar : MatSnackBar,public dialog: MatDialog) {
+    public cookie: CookieService,public snakBar : MatSnackBar,public dialog: MatDialog, public commonFunction: CommonFunction) {
+
+      /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
+
       this.user_token = cookie.get('jwtToken');
       this.patientAddEditForm = this.fb.group({
         patientName        :  ['', [Validators.required, Validators.maxLength(30)]],

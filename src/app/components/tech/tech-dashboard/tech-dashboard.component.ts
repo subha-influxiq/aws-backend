@@ -3,13 +3,14 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { CommonFunction } from '../../../class/common/common-function';
 
 @Component({
   selector: 'app-tech-dashboard',
   templateUrl: './tech-dashboard.component.html',
   styleUrls: ['./tech-dashboard.component.css']
 })
+
 export class TechDashboardComponent implements OnInit {
   public user_data: any = {};
 
@@ -46,8 +47,13 @@ export class TechDashboardComponent implements OnInit {
   public TechDashboardAllData: any = [];
   public techSingleData : any=[];
   public userSingleData : any={};
+
   constructor(public cookie: CookieService, public http: HttpClient,
-    public httpService: HttpServiceService, public activatedRoute: ActivatedRoute) {
+    public httpService: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
+
+       /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
+    
     let allData: any = {};
     allData = cookie.getAll()
     this.user_data = JSON.parse(allData.user_details);

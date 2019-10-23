@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CommonFunction } from '../../../class/common/common-function';
 
 @Component({
   selector: 'app-biller-dashboard',
@@ -8,7 +9,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BillerDashboardComponent implements OnInit {
 
-  constructor(public http:HttpClient) { }
+  constructor(public http:HttpClient, public commonFunction: CommonFunction) {
+    /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
+  }
 
   ngOnInit() {
   }

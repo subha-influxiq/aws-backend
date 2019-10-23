@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CommonFunction } from '../../../class/common/common-function';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -12,7 +13,11 @@ export class AdminDashboardComponent implements OnInit {
 
   docCount: any = [];
   constructor(private router: Router, public cookieService: CookieService,
-    private http: HttpServiceService, public activatedRoute: ActivatedRoute) { }
+    private http: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
+    
+    /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
+  }
 
   ngOnInit() {
     this.activatedRoute.data.subscribe(resolveData => {

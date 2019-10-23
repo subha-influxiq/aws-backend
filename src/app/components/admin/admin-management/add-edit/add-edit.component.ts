@@ -5,6 +5,7 @@ import { HttpServiceService } from '../../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
+import { CommonFunction } from '../../../../class/common/common-function';
 
 @Component({
   selector: 'app-add-edit',
@@ -25,7 +26,11 @@ export class AddEditComponent implements OnInit {
   public message: any = "Submitted Successfully";
 
   constructor(public fb: FormBuilder, private datePipe: DatePipe,
-    public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute) {
+    public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, public commonFunction: CommonFunction) {
+
+    /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
+
     this.user_token = cookie.get('jwtToken');
 
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
@@ -94,7 +99,7 @@ export class AddEditComponent implements OnInit {
   ResetAddEditForm() {
     this.formDirective.resetForm();
   }
-  
+
   AdminManagementAddFormSubmit() {
     let x: any;
     for (x in this.adminManagementAddEditForm.controls) {

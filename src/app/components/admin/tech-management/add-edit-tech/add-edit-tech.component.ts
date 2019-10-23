@@ -5,12 +5,14 @@ import { HttpServiceService } from '../../../../services/http-service.service';
 import { DatePipe } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material';
+import { CommonFunction } from '../../../../class/common/common-function';
 
 @Component({
   selector: 'app-add-edit-tech',
   templateUrl: './add-edit-tech.component.html',
   styleUrls: ['./add-edit-tech.component.css']
 })
+
 export class AddEditTechComponent implements OnInit {
   @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
 
@@ -30,7 +32,11 @@ export class AddEditTechComponent implements OnInit {
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
-    public cookie: CookieService, public snackBar: MatSnackBar) {
+
+    public cookie: CookieService, public snackBar: MatSnackBar, public commonFunction: CommonFunction) {
+
+      /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
 
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
     var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");

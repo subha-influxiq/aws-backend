@@ -4,13 +4,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpServiceService } from '../../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material';
+import { CommonFunction } from '../../../../class/common/common-function';
 
 @Component({
   selector: 'app-bulk-upload',
   templateUrl: './bulk-upload.component.html',
   styleUrls: ['./bulk-upload.component.css']
 })
+
 export class BulkUploadComponent implements OnInit {
+
   public configData: any = {
     baseUrl: "http://3.15.236.141:5005/",
     endpoint: "uploads",
@@ -25,7 +28,10 @@ export class BulkUploadComponent implements OnInit {
   public images_array: any = [];
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService,
-    public cookie: CookieService, public snakBar: MatSnackBar) {
+    public cookie: CookieService, public snakBar: MatSnackBar, public commonFunction: CommonFunction) {
+
+      /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
 
     this.techBulkUploadForm = this.fb.group({
       batchName: ['', [Validators.required, Validators.maxLength(40)]],

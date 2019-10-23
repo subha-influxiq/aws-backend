@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { CommonFunction } from '../../../../class/common/common-function';
 
 @Component({
   selector: 'app-manage-admin-list',
@@ -8,6 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./manage-admin-list.component.css']
 })
 export class ManageAdminListComponent implements OnInit {
+  
   public TechDashboardAllData: any = [];
   public allUserData_skip: any = ["confirmpassword", "password", "created_at", "_id","id","updated_at","phoneno","type"];
   public editUrl: any = "admin/admin-management/edit";
@@ -34,7 +36,10 @@ export class ManageAdminListComponent implements OnInit {
 
     };
   public user_cookie: any;
-  constructor(public activatedRoute: ActivatedRoute, public cookie: CookieService) {
+  constructor(public activatedRoute: ActivatedRoute, public cookie: CookieService, public commonFunction: CommonFunction) {
+    
+    /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
     this.user_cookie = cookie.get('jwtToken');
   }
 

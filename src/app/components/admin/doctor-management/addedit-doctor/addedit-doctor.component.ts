@@ -5,6 +5,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
 import {nameValidator,npmValidator,zipValidator,phoneValidator,matchpwd} from './validators';
+import { CommonFunction } from '../../../../class/common/common-function';
 export interface DialogData {
   msg: string;
 }
@@ -39,7 +40,11 @@ export class AddeditDoctorComponent implements OnInit {
   public billerData : any = [];
   constructor(private formBuilder: FormBuilder, private http: HttpServiceService,
     private cookieService: CookieService, public dialog: MatDialog, private router: Router,
-    public acivatedRoute: ActivatedRoute) {
+    public acivatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
+
+      /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
+
       this.user_token = cookieService.get('jwtToken');
       this.getAllTechData();
       this.getAllBillerData();

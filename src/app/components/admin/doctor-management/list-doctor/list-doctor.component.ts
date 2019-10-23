@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpServiceService } from '../../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router,ActivatedRoute } from '@angular/router';
-
+import { CommonFunction } from '../../../../class/common/common-function';
 
 
 
@@ -41,7 +41,11 @@ export class ListDoctorComponent implements OnInit {
   // ====================================================================
 
   constructor(private http: HttpServiceService, private cookieService: CookieService, 
-    private router: Router,public activatedRoute : ActivatedRoute) {
+    private router: Router,public activatedRoute : ActivatedRoute, public commonFunction: CommonFunction) {
+
+      /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
+
     this.user_cookie = cookieService.get('jwtToken');
   }
 
