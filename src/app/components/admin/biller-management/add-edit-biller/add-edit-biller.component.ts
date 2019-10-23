@@ -5,6 +5,7 @@ import { HttpServiceService } from '../../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
+import { CommonFunction } from '../../../../class/common/common-function';
 
 @Component({
   selector: 'app-add-edit-biller',
@@ -29,7 +30,11 @@ export class AddEditBillerComponent implements OnInit {
   serializedDate = new FormControl((new Date()).toISOString());
   
   constructor(public fb: FormBuilder, private datePipe: DatePipe,
-    public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute) {
+    public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, public commonFunction: CommonFunction) {
+
+      /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
+
     this.params_id = this.activeRoute.snapshot.params._id;
     this.user_token = cookie.get('jwtToken');
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');

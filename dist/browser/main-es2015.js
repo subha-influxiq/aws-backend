@@ -4924,7 +4924,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar class=\"techdashboard_header\">\n\n      <span class=\"logo_wrapper\" [routerLink]=\"[ '/dashboard/admin' ]\">\n        <img src=\"../../../assets/images/logo.png\">\n      </span>\n\n      <button mat-flat-button id=\"menu_button\" (click)=\"myFunction()\"><i class=\"material-icons\"> menu </i></button>\n      <mat-card-content class=\"quotation\" id=\"myDIV\">\n          <mat-nav-list >\n              <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/admin/dashboard']\"> Dashboard </a>\n              <a mat-list-item [routerLink]=\"['/admin/doctor-management/list']\" routerLinkActive=\"active\"> Manage Doctor </a>\n              <a mat-list-item [routerLink]=\"['/admin/biller-management/list']\" routerLinkActive=\"active\"> Manage Biller </a>\n              <a mat-list-item [routerLink]=\"['/admin/tech-management/list']\" routerLinkActive=\"active\"> Manage Tech </a>\n              <a mat-list-item [routerLink]=\"['/admin/admin-management/list']\" routerLinkActive=\"active\"> Manage admin </a>\n              <a mat-list-item [routerLink]=\"['/admin/patient-record-report']\" routerLinkActive=\"active\"> Patient record report</a>\n            </mat-nav-list>\n      </mat-card-content>\n\n\n      <mat-card-content class=\"profile_section\">\n        <mat-menu #appMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/admin/account-settings']\">\n            <mat-icon>account_circle</mat-icon> Account Settings\n          </button>\n\n          <button mat-menu-item [routerLink]=\"['/admin/account-settings/change-password']\">\n            <mat-icon>vpn_key</mat-icon> Change Password\n          </button>\n\n          <button mat-menu-item (click)=\"logout()\"> <mat-icon>power_settings_new</mat-icon> Logout </button>\n        </mat-menu>\n        <span class=\"username\">{{user_data.firstname}} {{user_data.lastname}}</span>\n        <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n          <span class=\"user_profile\">\n            <mat-icon>account_circle</mat-icon>\n            <i class=\"material-icons\">\n              keyboard_arrow_down\n            </i>\n          </span>\n        </button>\n      </mat-card-content>\n  </mat-toolbar>\n  <!-- end header -->\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar class=\"techdashboard_header\">\n\n      <span class=\"logo_wrapper\" [routerLink]=\"[ '/dashboard/admin' ]\">\n        <img src=\"../../../assets/images/logo.png\">\n      </span>\n\n      <button mat-flat-button id=\"menu_button\" (click)=\"menuFunction()\"><i class=\"material-icons\"> menu </i></button>\n      <mat-card-content class=\"quotation\" id=\"myDIV\">\n          <mat-nav-list >\n              <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/admin/dashboard']\"> Dashboard </a>\n              <a mat-list-item [routerLink]=\"['/admin/doctor-management/list']\" routerLinkActive=\"active\"> Manage Doctor </a>\n              <a mat-list-item [routerLink]=\"['/admin/biller-management/list']\" routerLinkActive=\"active\"> Manage Biller </a>\n              <a mat-list-item [routerLink]=\"['/admin/tech-management/list']\" routerLinkActive=\"active\"> Manage Tech </a>\n              <a mat-list-item [routerLink]=\"['/admin/admin-management/list']\" routerLinkActive=\"active\"> Manage admin </a>\n              <a mat-list-item [routerLink]=\"['/admin/patient-record-report']\" routerLinkActive=\"active\"> Patient record report</a>\n            </mat-nav-list>\n      </mat-card-content>\n\n\n      <mat-card-content class=\"profile_section\">\n        <mat-menu #appMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/admin/account-settings']\">\n            <mat-icon>account_circle</mat-icon> Account Settings\n          </button>\n\n          <button mat-menu-item [routerLink]=\"['/admin/account-settings/change-password']\">\n            <mat-icon>vpn_key</mat-icon> Change Password\n          </button>\n\n          <button mat-menu-item (click)=\"logout()\"> <mat-icon>power_settings_new</mat-icon> Logout </button>\n        </mat-menu>\n        <span class=\"username\">{{user_data.firstname}} {{user_data.lastname}}</span>\n        <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n          <span class=\"user_profile\">\n            <mat-icon>account_circle</mat-icon>\n            <i class=\"material-icons\">\n              keyboard_arrow_down\n            </i>\n          </span>\n        </button>\n      </mat-card-content>\n  </mat-toolbar>\n  <!-- end header -->\n");
 
 /***/ }),
 
@@ -4989,7 +4989,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-admin-header></app-admin-header>\n\n\n<mat-card class=\"add_form\">\n  <h2>{{form_heading }} </h2>\n\n\n  <mat-card-content class=\"form_wrapper\">\n    <form class=\"example-form\" autocomplete=\"off\" [formGroup]=\"docManageForm\" (ngSubmit)=\"onSubmit()\">\n\n\n      <!-- First Name  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>First Name</mat-label>\n        <input matInput placeholder=\"James\" formControlName=\"firstname\">\n        <mat-error *ngIf=\"!docManageForm.controls['firstname'].valid\n          && docManageForm.controls['firstname'].errors.required\">First Name is required.</mat-error>\n          <mat-error *ngIf=\"!docManageForm.controls['firstname'].valid && !docManageForm.controls['firstname'].errors.required\">\n            Name is not valid</mat-error>\n      </mat-form-field>\n\n\n\n\n\n      <!-- Last Name  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Last Name</mat-label>\n        <input matInput placeholder=\"Anderson\" formControlName=\"lastname\">\n        <mat-error *ngIf=\"!docManageForm.controls['lastname'].valid && docManageForm.controls['lastname'].errors.required\">Last Name is required.</mat-error>\n        <mat-error *ngIf=\"!docManageForm.controls['lastname'].valid && !docManageForm.controls['lastname'].errors.required\">\n          Name is not valid</mat-error>\n      </mat-form-field>\n\n\n\n\n\n      <!-- Email  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Email</mat-label>\n        <input matInput type=\"email\" placeholder=\"jamesanderson@gmail.com\" formControlName=\"email\">\n        <mat-error *ngIf=\"!docManageForm.controls['email'].valid && docManageForm.controls['email'].errors.required\">Email is required.</mat-error>\n        <mat-error *ngIf=\"!docManageForm.controls['email'].valid && !docManageForm.controls['email'].errors.required\">\n          Email\n          is not valid</mat-error>\n      </mat-form-field>\n\n\n\n\n      <!-- Password  -->\n\n      <mat-form-field appearance=\"fill\" *ngIf=\"action=='add'\">\n        <mat-label>Password</mat-label>\n        <input matInput type=\"password\" placeholder=\"*********\" formControlName=\"password\">\n        <mat-error *ngIf=\"docManageForm.controls['password']?.touched || docManageForm.controls['password'].errors \n        && docManageForm.controls['password'].errors.required\">Password is required.</mat-error>\n      </mat-form-field>\n\n\n\n\n      <!-- Confirm Password  -->\n\n      <mat-form-field appearance=\"fill\" *ngIf=\"action=='add'\">\n        <mat-label>Confirm Password</mat-label>\n        <input matInput placeholder=\"**********\" formControlName=\"confirmpassword\">\n        <mat-error *ngIf=\"docManageForm.controls['confirmpassword']?.touched || docManageForm.controls['confirmpassword'].errors \n        && docManageForm.controls['confirmpassword'].errors.required\">Password do not match</mat-error>\n      </mat-form-field>\n\n\n\n\n\n      <!-- Phone  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Phone</mat-label>\n        <input matInput placeholder=\"9845711225\" formControlName=\"phone\">\n        <mat-error *ngIf=\"!docManageForm.controls['phone'].valid && docManageForm.controls['phone'].errors.required\">Phone is required.</mat-error>\n        <mat-error *ngIf=\"!docManageForm.controls['phone'].valid && !docManageForm.controls['phone'].errors.required\">Phone must be only 10 digit integers</mat-error>\n\n      </mat-form-field>\n\n\n\n\n\n      <!-- Practice Name  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Practice name</mat-label>\n        <input matInput placeholder=\"James101\" formControlName=\"practicename\">\n        <mat-error *ngIf=\"!docManageForm.controls['practicename'].valid && docManageForm.controls['practicename'].errors.required\">Practice Name is required.</mat-error>\n        <mat-error *ngIf=\"!docManageForm.controls['practicename'].valid && !docManageForm.controls['practicename'].errors.required\">\n          Practice name is not valid</mat-error>\n      </mat-form-field>\n\n\n\n\n      <mat-card-content class=\"checkbox_w\">\n        <!-- Taxonomies  -->\n\n\n\n        <h3>Taxonomies</h3>\n        <div formArrayName=\"taxonomies\"\n          *ngFor=\"let j of checkboxArray,let loop of docManageForm.controls.taxonomies?.value; let i = index; trackBy: trackByFn\">\n          <ng-container [formGroupName]=\"i\">\n\n            <mat-checkbox formControlName=\"taxo\" (click)=\"selectTaxo(j)\">{{j}}</mat-checkbox>\n\n          </ng-container>\n        </div>\n\n        <!--         \n        <mat-checkbox>Family Practice</mat-checkbox>\n        <mat-checkbox>General Practitioner</mat-checkbox>\n        <mat-checkbox>Primary Care</mat-checkbox>\n        <mat-checkbox>Cardiology</mat-checkbox>\n        <mat-checkbox>Neurology</mat-checkbox>\n        <mat-checkbox>Internal Medicine</mat-checkbox>\n        <mat-checkbox>Endocrinology</mat-checkbox>\n        <mat-checkbox>Pain Management</mat-checkbox>\n        <mat-checkbox>Integrated</mat-checkbox>\n        <mat-checkbox>Others</mat-checkbox> -->\n\n      </mat-card-content>\n\n\n\n\n      <!-- NPI#  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>practicename#</mat-label>\n        <input matInput placeholder=\"1880101700\" formControlName=\"npm\">\n          <mat-error *ngIf=\"!docManageForm.controls['npm'].valid && docManageForm.controls['npm'].errors.required \">NPI# is required.</mat-error>\n          <mat-error *ngIf=\"!docManageForm.controls['npm'].valid && !docManageForm.controls['npm'].errors.required\"> NPM# is not valid</mat-error>\n      </mat-form-field>\n\n\n\n\n\n\n      <!-- Address  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Address</mat-label>\n        <textarea matInput placeholder=\"76 E. Mayfield Drive\" formControlName=\"address\"></textarea>\n        <mat-error *ngIf=\"docManageForm.controls['address']?.touched || docManageForm.controls['address'].errors \n        && docManageForm.controls['address'].errors.required\">Address is required.</mat-error>\n      </mat-form-field>\n\n\n\n\n\n\n\n\n      <!-- State  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>State</mat-label>\n        <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n          <mat-option [value]=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n\n\n\n      <!-- City  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>City</mat-label>\n        <mat-select formControlName=\"city\">\n          <mat-option [value]=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n <!-- select tech name-->\n\n <mat-form-field appearance=\"fill\">\n  <mat-label>Select Technician</mat-label>\n  <mat-select formControlName=\"tech\">\n    <mat-option [value]=0>Select a tech</mat-option>\n    <mat-option *ngFor=\"let tech of techData;\" value=\"{{ tech.firstname }} {{tech.lastname}}\">{{ tech.firstname }} {{tech.lastname}}</mat-option>\n  </mat-select>\n</mat-form-field>\n\n<!-- select biller name -->\n\n<mat-form-field appearance=\"fill\">\n  <mat-label>Select Biiler</mat-label>\n  <mat-select formControlName=\"biller\">\n    <mat-option [value]=0>Select a biiler</mat-option>\n    <mat-option *ngFor=\"let biller of billerData;\" value=\"{{ biller.firstname }} {{ biller.lastname }}\">{{ biller.firstname }} {{ biller.lastname }}</mat-option>\n  </mat-select>\n</mat-form-field>\n\n\n\n\n\n\n\n      <!-- ZIP  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>ZIP</mat-label>\n        <input matInput placeholder=\"917844\" formControlName=\"zip\">\n\n        <mat-error *ngIf=\"!docManageForm.controls['zip'].valid && docManageForm.controls['zip'].errors.required\">ZIP is required.</mat-error>\n        <mat-error *ngIf=\"!docManageForm.controls['zip'].valid && !docManageForm.controls['zip'].errors.required\">ZIP must be only 6 digit integers</mat-error>\n      </mat-form-field>\n\n\n\n\n\n      <!-- Status -->\n\n      <h3>Status</h3>\n      <mat-checkbox formControlName=\"status\">Active</mat-checkbox>\n\n\n\n\n      <!-- Button  -->\n\n      <span class=\"submit_form\">\n        <button mat-flat-button type=\"reset\">Reset</button>\n        <button mat-flat-button type=\"submit\">{{btn_text}} </button>\n      </span>\n    </form>\n  </mat-card-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-admin-header></app-admin-header>\n\n\n<mat-card class=\"add_form\">\n  <h2>{{form_heading }} </h2>\n\n\n  <mat-card-content class=\"form_wrapper\">\n    <form class=\"example-form\" autocomplete=\"off\" [formGroup]=\"docManageForm\" (ngSubmit)=\"onSubmit()\">\n\n\n      <!-- First Name  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>First Name</mat-label>\n        <input matInput placeholder=\"James\" formControlName=\"firstname\">\n        <mat-error *ngIf=\"!docManageForm.controls['firstname'].valid\n          && docManageForm.controls['firstname'].errors.required\">First Name is required.</mat-error>\n          <mat-error *ngIf=\"!docManageForm.controls['firstname'].valid && !docManageForm.controls['firstname'].errors.required\">\n            Name is not valid</mat-error>\n      </mat-form-field>\n\n\n\n\n\n      <!-- Last Name  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Last Name</mat-label>\n        <input matInput placeholder=\"Anderson\" formControlName=\"lastname\">\n        <mat-error *ngIf=\"!docManageForm.controls['lastname'].valid && docManageForm.controls['lastname'].errors.required\">Last Name is required.</mat-error>\n        <mat-error *ngIf=\"!docManageForm.controls['lastname'].valid && !docManageForm.controls['lastname'].errors.required\">\n          Name is not valid</mat-error>\n      </mat-form-field>\n\n\n\n\n\n      <!-- Email  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Email</mat-label>\n        <input matInput type=\"email\" placeholder=\"jamesanderson@gmail.com\" formControlName=\"email\">\n        <mat-error *ngIf=\"!docManageForm.controls['email'].valid && docManageForm.controls['email'].errors.required\">Email is required.</mat-error>\n        <mat-error *ngIf=\"!docManageForm.controls['email'].valid && !docManageForm.controls['email'].errors.required\">\n          Email\n          is not valid</mat-error>\n      </mat-form-field>\n\n\n\n\n      <!-- Password  -->\n\n      <mat-form-field appearance=\"fill\" *ngIf=\"action=='add'\">\n        <mat-label>Password</mat-label>\n        <input matInput type=\"password\" placeholder=\"*********\" formControlName=\"password\">\n        <mat-error *ngIf=\"docManageForm.controls['password']?.touched || docManageForm.controls['password'].errors \n        && docManageForm.controls['password'].errors.required\">Password is required.</mat-error>\n      </mat-form-field>\n\n\n\n\n      <!-- Confirm Password  -->\n\n      <mat-form-field appearance=\"fill\" *ngIf=\"action=='add'\">\n        <mat-label>Confirm Password</mat-label>\n        <input  type=\"password\" matInput placeholder=\"**********\" formControlName=\"confirmpassword\">\n        <mat-error *ngIf=\"docManageForm.controls['confirmpassword']?.touched || docManageForm.controls['confirmpassword'].errors \n        && docManageForm.controls['confirmpassword'].errors.required\">Password do not match</mat-error>\n      </mat-form-field>\n\n\n\n\n\n      <!-- Phone  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Phone</mat-label>\n        <input matInput placeholder=\"9845711225\" formControlName=\"phone\">\n        <mat-error *ngIf=\"!docManageForm.controls['phone'].valid && docManageForm.controls['phone'].errors.required\">Phone is required.</mat-error>\n        <mat-error *ngIf=\"!docManageForm.controls['phone'].valid && !docManageForm.controls['phone'].errors.required\">Phone must be only 10 digit integers</mat-error>\n\n      </mat-form-field>\n      <!-- FAX -->\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Fax</mat-label>\n        <input matInput placeholder=\"323 555 1234\" formControlName=\"fax\">\n        <mat-error *ngIf=\"!docManageForm.controls['fax'].valid && docManageForm.controls['fax'].errors.required\">Fax is required.</mat-error>\n        <!-- <mat-error *ngIf=\"!docManageForm.controls['fax'].valid && !docManageForm.controls['fax'].errors.required\">\n          Fax is not valid</mat-error> -->\n      </mat-form-field>\n\n\n\n\n\n      <!-- Practice Name  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Practice name</mat-label>\n        <input matInput placeholder=\"James101\" formControlName=\"practicename\">\n        <mat-error *ngIf=\"!docManageForm.controls['practicename'].valid && docManageForm.controls['practicename'].errors.required\">Practice Name is required.</mat-error>\n        <mat-error *ngIf=\"!docManageForm.controls['practicename'].valid && !docManageForm.controls['practicename'].errors.required\">\n          Practice name is not valid</mat-error>\n      </mat-form-field>\n\n\n\n\n      <mat-card-content class=\"checkbox_w\">\n        <!-- Taxonomies  -->\n\n\n\n        <h3>Taxonomies</h3>\n        <div formArrayName=\"taxonomies\"\n          *ngFor=\"let j of checkboxArray,let loop of docManageForm.controls.taxonomies?.value; let i = index; trackBy: trackByFn\">\n          <ng-container [formGroupName]=\"i\">\n\n            <mat-checkbox formControlName=\"taxo\" (click)=\"selectTaxo(j)\">{{j}}</mat-checkbox>\n\n          </ng-container>\n        </div>\n\n        <!--         \n        <mat-checkbox>Family Practice</mat-checkbox>\n        <mat-checkbox>General Practitioner</mat-checkbox>\n        <mat-checkbox>Primary Care</mat-checkbox>\n        <mat-checkbox>Cardiology</mat-checkbox>\n        <mat-checkbox>Neurology</mat-checkbox>\n        <mat-checkbox>Internal Medicine</mat-checkbox>\n        <mat-checkbox>Endocrinology</mat-checkbox>\n        <mat-checkbox>Pain Management</mat-checkbox>\n        <mat-checkbox>Integrated</mat-checkbox>\n        <mat-checkbox>Others</mat-checkbox> -->\n\n      </mat-card-content>\n\n\n\n\n      <!-- NPI#  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>#NPI</mat-label>\n        <input matInput placeholder=\"1880101700\" formControlName=\"npm\">\n          <mat-error *ngIf=\"!docManageForm.controls['npm'].valid && docManageForm.controls['npm'].errors.required \">NPI# is required.</mat-error>\n          <mat-error *ngIf=\"!docManageForm.controls['npm'].valid && !docManageForm.controls['npm'].errors.required\"> NPM# is not valid</mat-error>\n      </mat-form-field>\n\n\n\n\n\n\n      <!-- Address  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Address</mat-label>\n        <textarea matInput placeholder=\"76 E. Mayfield Drive\" formControlName=\"address\"></textarea>\n        <mat-error *ngIf=\"docManageForm.controls['address']?.touched || docManageForm.controls['address'].errors \n        && docManageForm.controls['address'].errors.required\">Address is required.</mat-error>\n      </mat-form-field>\n\n\n\n\n\n\n\n\n      <!-- State  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>State</mat-label>\n        <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n          <mat-option [value]=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n\n\n\n      <!-- City  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>City</mat-label>\n        <mat-select formControlName=\"city\">\n          <mat-option [value]=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n <!-- select tech name-->\n\n <mat-form-field appearance=\"fill\">\n  <mat-label>Select Technician</mat-label>\n  <mat-select formControlName=\"tech\">\n    <mat-option [value]=0>Select a tech</mat-option>\n    <mat-option *ngFor=\"let tech of techData;\" value=\"{{ tech._id }}\">{{ tech.firstname }} {{tech.lastname}}</mat-option>\n  </mat-select>\n</mat-form-field>\n\n<!-- select biller name -->\n\n<mat-form-field appearance=\"fill\">\n  <mat-label>Select Biiler</mat-label>\n  <mat-select formControlName=\"biller\">\n    <mat-option [value]=0>Select a biiler</mat-option>\n    <mat-option *ngFor=\"let biller of billerData;\" value=\"{{ biller._id }}\">{{ biller.firstname }} {{ biller.lastname }}</mat-option>\n  </mat-select>\n</mat-form-field>\n\n\n\n\n\n\n\n      <!-- ZIP  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>ZIP</mat-label>\n        <input matInput placeholder=\"917844\" formControlName=\"zip\">\n\n        <mat-error *ngIf=\"!docManageForm.controls['zip'].valid && docManageForm.controls['zip'].errors.required\">ZIP is required.</mat-error>\n        <!-- <mat-error *ngIf=\"!docManageForm.controls['zip'].valid && !docManageForm.controls['zip'].errors.required\">ZIP must be only 6 digit integers</mat-error> -->\n      </mat-form-field>\n\n\n\n\n\n      <!-- Status -->\n\n      <h3>Status</h3>\n      <mat-checkbox formControlName=\"status\">Active</mat-checkbox>\n\n\n\n\n      <!-- Button  -->\n\n      <span class=\"submit_form\">\n        <button mat-flat-button type=\"reset\">Reset</button>\n        <button mat-flat-button type=\"submit\">{{btn_text}} </button>\n      </span>\n    </form>\n  </mat-card-content>");
 
 /***/ }),
 
@@ -5171,20 +5171,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<button mat-button (click)=\"openDialog()\">Open dialog</button>\n");
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/common/upload-dialog-box/upload-dialog-content.html":
-/*!**********************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/common/upload-dialog-box/upload-dialog-content.html ***!
-  \**********************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2 mat-dialog-title>Install Angular</h2>\n<mat-dialog-content class=\"mat-typography\">\n  <h3>Develop across all platforms</h3>\n  <p>Learn one way to build applications with Angular and reuse your code and abilities to build\n    apps for any deployment target. For web, mobile web, native mobile and native desktop.</p>\n\n  <h3>Speed &amp; Performance</h3>\n  <p>Achieve the maximum speed possible on the Web Platform today, and take it further, via Web\n    Workers and server-side rendering. Angular puts you in control over scalability. Meet huge\n    data requirements by building data models on RxJS, Immutable.js or another push-model.</p>\n\n  <h3>Incredible tooling</h3>\n  <p>Build features quickly with simple, declarative templates. Extend the template language with\n    your own components and use a wide array of existing components. Get immediate Angular-specific\n    help and feedback with nearly every IDE and editor. All this comes together so you can focus\n    on building amazing apps rather than trying to make the code work.</p>\n\n  <h3>Loved by millions</h3>\n  <p>From prototype through global deployment, Angular delivers the productivity and scalable\n    infrastructure that supports Google's largest applications.</p>\n\n  <h3>What is Angular?</h3>\n\n  <p>Angular is a platform that makes it easy to build applications with the web. Angular\n    combines declarative templates, dependency injection, end to end tooling, and integrated\n    best practices to solve development challenges. Angular empowers developers to build\n    applications that live on the web, mobile, or the desktop</p>\n\n  <h3>Architecture overview</h3>\n\n  <p>Angular is a platform and framework for building client applications in HTML and TypeScript.\n  Angular is itself written in TypeScript. It implements core and optional functionality as a\n  set of TypeScript libraries that you import into your apps.</p>\n\n  <p>The basic building blocks of an Angular application are NgModules, which provide a compilation\n  context for components. NgModules collect related code into functional sets; an Angular app is\n  defined by a set of NgModules. An app always has at least a root module that enables\n  bootstrapping, and typically has many more feature modules.</p>\n\n  <p>Components define views, which are sets of screen elements that Angular can choose among and\n  modify according to your program logic and data. Every app has at least a root component.</p>\n\n  <p>Components use services, which provide specific functionality not directly related to views.\n  Service providers can be injected into components as dependencies, making your code modular,\n  reusable, and efficient.</p>\n\n  <p>Both components and services are simply classes, with decorators that mark their type and\n  provide metadata that tells Angular how to use them.</p>\n\n  <p>The metadata for a component class associates it with a template that defines a view. A\n  template combines ordinary HTML with Angular directives and binding markup that allow Angular\n  to modify the HTML before rendering it for display.</p>\n\n  <p>The metadata for a service class provides the information Angular needs to make it available\n  to components through Dependency Injection (DI).</p>\n\n  <p>An app's components typically define many views, arranged hierarchically. Angular provides\n  the Router service to help you define navigation paths among views. The router provides\n  sophisticated in-browser navigational capabilities.</p>\n</mat-dialog-content>\n<mat-dialog-actions align=\"end\">\n  <button mat-button mat-dialog-close>Cancel</button>\n  <button mat-button [mat-dialog-close]=\"true\" cdkFocusInitial>Install</button>\n</mat-dialog-actions>\n\n\n<!-- Copyright 2019 Google Inc. All Rights Reserved.\n    Use of this source code is governed by an MIT-style license that\n    can be found in the LICENSE file at http://angular.io/license -->");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-card class=\"add_form\">\n    <form class=\"example-form\" autocomplete=\"off\" name=\"techBulkUploadForm\" [formGroup]=\"techUploadForm\"\n        (ngSubmit)=\"techUploadFormSubmit()\">\n        <mat-dialog-content class=\"mat-typography\">\n            <lib-file-upload [config]=\"configData\"></lib-file-upload>\n            <mat-error *ngIf=\"ErrCode==true\">Please add just one image.</mat-error>\n\n            <span class=\"submit_form\">\n                <button mat-flat-button mat-dialog-close> Cancel </button>\n                <button mat-flat-button type=\"submit\" [mat-dialog-close]=\"true\" cdkFocusInitial> Submit </button>\n              </span>\n        </mat-dialog-content>\n        </form>\n        </mat-card>\n        <!-- <mat-dialog-actions align=\"end\">\n            <button mat-button mat-dialog-close>Cancel</button>\n            <button mat-button [mat-dialog-close]=\"true\" cdkFocusInitial>Submit</button>\n        </mat-dialog-actions> -->\n\n\n        <!-- Copyright 2019 Google Inc. All Rights Reserved.\n    Use of this source code is governed by an MIT-style license that\n    can be found in the LICENSE file at http://angular.io/license -->");
 
 /***/ }),
 
@@ -5197,7 +5184,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-doctor-header></app-doctor-header>\n\n\n<mat-card-content class=\"content_wrapper\">\n  <mat-card-content class=\"itemsection \">\n    <mat-card-content class=\"one uploadsign\">\n      <p>Upload Your Signature Here</p>\n    </mat-card-content>\n\n    <span class=\"section_title\">\n      <img src=\"../../../../assets/images/editicon.png\">\n    </span>\n    <mat-card-content class=\"sign_uploader\">\n      <input type=\"text\">\n      <button class=\"signature_upload\" mat-flat-button>Upload</button>\n\n    </mat-card-content>\n  </mat-card-content>\n\n\n\n  <mat-card-content class=\"itemsection two\">\n    <span class=\"counteer\"> 16</span>\n    <p>Signed Records</p>\n    <button mat-flat-button>View Details</button>\n  </mat-card-content>\n  <mat-card-content class=\"itemsection three\">\n    <span class=\"counteer\"> 12</span>\n    <p>Pending Signature</p>\n    <button mat-flat-button>View Details</button>\n  </mat-card-content>\n</mat-card-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-doctor-header></app-doctor-header>\n\n\n<mat-card-content class=\"content_wrapper\">\n  <mat-card-content class=\"itemsection \">\n    <mat-card-content class=\"one uploadsign\">\n      <p>Upload Your Signature Here</p>\n    </mat-card-content>\n\n    <span class=\"section_title\">\n      <img src=\"../../../../assets/images/editicon.png\">\n    </span>\n    <mat-card-content class=\"sign_uploader\">\n      <input type=\"text\">\n      <button class=\"signature_upload\" (click)=\"openDialog()\" mat-flat-button>Upload</button>\n\n    </mat-card-content>\n  </mat-card-content>\n\n\n\n  <mat-card-content class=\"itemsection two\">\n    <span class=\"counteer\"> 16</span>\n    <p>Signed Records</p>\n    <button mat-flat-button>View Details</button>\n  </mat-card-content>\n  <mat-card-content class=\"itemsection three\">\n    <span class=\"counteer\"> 12</span>\n    <p>Pending Signature</p>\n    <button mat-flat-button>View Details</button>\n  </mat-card-content>\n</mat-card-content>\n");
 
 /***/ }),
 
@@ -5249,7 +5236,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- \n<mat-toolbar class=\"techdashboard_header\">\n    <mat-toolbar-row>\n      <span class=\"logo_wrapper\">\n        <img src=\"../../../assets/images/logo.png\">\n      </span>\n\n\n      <mat-card-content class=\"quotation\">\n        <p>ADVANCED ANS TECHNOLOGY – BETTER PATIENT CARE – INCREASE PRACTICE REVENUE</p>\n      </mat-card-content>\n\n\n      <mat-card-content class=\"profile_section\">\n        <mat-menu #appMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/tech/account-settings']\">\n            <mat-icon>account_circle</mat-icon> Account Settings\n          </button>\n          <button mat-menu-item [routerLink]=\"['/tech/account-settings/change-password']\">\n            <mat-icon>vpn_key</mat-icon> Change Password\n          </button>\n          <button mat-menu-item (click)=\"logout()\"> <mat-icon>power_settings_new</mat-icon> Logout </button>\n        </mat-menu>\n        <span class=\"username\">Adam Coury</span>\n        <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n          <span class=\"user_profile\">\n            <mat-icon>account_circle</mat-icon>\n            <i class=\"material-icons\">\n              keyboard_arrow_down\n            </i>\n          </span>\n        </button>\n\n      </mat-card-content>\n\n\n    </mat-toolbar-row>\n  </mat-toolbar> -->\n  <!-- end header -->\n\n<app-tech-header></app-tech-header>\n  <mat-card-content class=\"content_wrapper\">\n    <mat-card-content class=\"itemsection one\">\n      <span class=\"counteer\"> 10</span>\n      <p>Total Number of Reports uploaded</p>\n      <button mat-flat-button>View Details</button>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection two\">\n      <span class=\"counteer\"> 10</span>\n      <p>Total Number of Reports uploaded</p>\n      <button mat-flat-button>View Details</button>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection three\">\n      <span class=\"counteer\"> 10</span>\n      <p>Total Number of Reports uploaded</p>\n      <button mat-flat-button>View Details</button>\n    </mat-card-content>\n  </mat-card-content>\n\n\n\n\n  <mat-card-content class=\"doctor_content_wrapper\">\n    <mat-card-title>Doctor Office You Are Working With</mat-card-title>\n    <mat-card-content class=\"table_structure\">\n\n\n      <mat-list>\n        <mat-list-item>\n          <p class=\"title_n\">Name</p>\n          <p class=\"title_a\">John Doe</p>\n        </mat-list-item>\n        <mat-list-item>\n          <p class=\"title_n\">Specialization</p>\n          <p class=\"title_a\">Cardiologist</p>\n        </mat-list-item>\n        <mat-list-item>\n          <p class=\"title_n\">Email</p>\n          <p class=\"title_a\">johndoe@gmail.com</p>\n        </mat-list-item>\n        <mat-list-item>\n          <p class=\"title_n\">Phone</p>\n          <p class=\"title_a\">707-070-7070</p>\n        </mat-list-item>\n        <mat-list-item>\n          <p class=\"title_n\">FAX</p>\n          <p class=\"title_a\">707-070-7070</p>\n        </mat-list-item>\n      </mat-list>\n    </mat-card-content>\n  </mat-card-content>\n\n\n\n  <!-- patainet report section -->\n  <mat-card-content class=\"patient_report_section\">\n    <mat-card-content class=\"patient_top_search\">\n      <h1>Patient record report</h1>\n      <!-- <span class=\"search_bar\">\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput [matDatepicker]=\"picker\" (focus)=\"picker.open()\" placeholder=\"Search By Date\">\n\n            <mat-datepicker #picker></mat-datepicker>\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput placeholder=\"Search By Status\">\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput placeholder=\"Search By Patient\">\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n      </span> -->\n    </mat-card-content>\n\n  <!-- table -->\n  <lib-listing class=\"DataTable\" *ngIf=\"TechDashboardAllData.length>0\"\n    [datasource]=\"TechDashboardAllData\"\n    [skip]=\"allUserData_skip\"\n    [modify_header_array]=\"allUserData_modify_header\"\n    [apiurl]=\"apiUrl\"\n    [sourcedata]=\"tableName\"\n    [editroute]=\"editUrl\"\n    [jwttoken]=\"user_cookie\"\n    [statusarr]=\"status\"\n    [updateendpoint]=\"UpdateEndpoint\"\n    [deleteendpoint]=\"deleteEndpoint\"\n    [date_search_endpoint]=\"SearchingEndpoint\"\n    [date_search_source]=\"tableName\"\n    [search_settings]=\"search_settings\"\n   >\n</lib-listing>\n<h2 *ngIf=\"TechDashboardAllData.length == 0\">No record found.</h2>\n  <!-- end table -->\n\n\n\n  <span class=\"button_action\">\n    <button mat-flat-button routerLink = \"/tech/patient-management/bulk-upload\">upload bulk report</button>\n    <button mat-flat-button routerLink = \"/tech/patient-management/add\">add a new patient records manually</button>\n  </span>\n  </mat-card-content>\n\n\n\n\n  <mat-card-content class=\"footer_section\">\n          <span class=\"footer_content\">\n\n            <mat-card-content class=\"link\">\n            <a href=\"\">Privacy Policy</a>\n            <a href=\"\"> Terms & conditions</a>\n          </mat-card-content>\n          <p>© Copyright 2018 Advanced Wellness Solutions- All Rights Reserved</p>\n          </span>\n  </mat-card-content>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- \n<mat-toolbar class=\"techdashboard_header\">\n    <mat-toolbar-row>\n      <span class=\"logo_wrapper\">\n        <img src=\"../../../assets/images/logo.png\">\n      </span>\n\n\n      <mat-card-content class=\"quotation\">\n        <p>ADVANCED ANS TECHNOLOGY – BETTER PATIENT CARE – INCREASE PRACTICE REVENUE</p>\n      </mat-card-content>\n\n\n      <mat-card-content class=\"profile_section\">\n        <mat-menu #appMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/tech/account-settings']\">\n            <mat-icon>account_circle</mat-icon> Account Settings\n          </button>\n          <button mat-menu-item [routerLink]=\"['/tech/account-settings/change-password']\">\n            <mat-icon>vpn_key</mat-icon> Change Password\n          </button>\n          <button mat-menu-item (click)=\"logout()\"> <mat-icon>power_settings_new</mat-icon> Logout </button>\n        </mat-menu>\n        <span class=\"username\">Adam Coury</span>\n        <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n          <span class=\"user_profile\">\n            <mat-icon>account_circle</mat-icon>\n            <i class=\"material-icons\">\n              keyboard_arrow_down\n            </i>\n          </span>\n        </button>\n\n      </mat-card-content>\n\n\n    </mat-toolbar-row>\n  </mat-toolbar> -->\n  <!-- end header -->\n\n<app-tech-header></app-tech-header>\n  <mat-card-content class=\"content_wrapper\">\n    <mat-card-content class=\"itemsection one\">\n      <span class=\"counteer\"> 10</span>\n      <p>Total Number of Reports uploaded</p>\n      <button mat-flat-button>View Details</button>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection two\">\n      <span class=\"counteer\"> 10</span>\n      <p>Total Number of Reports uploaded</p>\n      <button mat-flat-button>View Details</button>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection three\">\n      <span class=\"counteer\"> 10</span>\n      <p>Total Number of Reports uploaded</p>\n      <button mat-flat-button>View Details</button>\n    </mat-card-content>\n  </mat-card-content>\n\n\n\n\n  <mat-card-content class=\"doctor_content_wrapper\">\n    <mat-card-title>Doctor Office You Are Working With</mat-card-title>\n    <mat-card-content class=\"table_structure\">\n\n\n      <mat-list>\n        <mat-list-item>\n          <p class=\"title_n\">Name</p>\n          <p class=\"title_a\">{{ userSingleData.firstname }}</p>\n        </mat-list-item>\n        <mat-list-item>\n          <p class=\"title_n\">Taxonomies</p>\n          <p class=\"title_a\">Cardiologist</p>\n        </mat-list-item>\n        <mat-list-item>\n          <p class=\"title_n\">Email</p>\n          <p class=\"title_a\">{{ userSingleData.email }}</p>\n        </mat-list-item>\n        <mat-list-item>\n          <p class=\"title_n\">Phone</p>\n          <p class=\"title_a\">{{ userSingleData.phone }}</p>\n        </mat-list-item>\n        <mat-list-item>\n          <p class=\"title_n\">FAX</p>\n          <p class=\"title_a\">{{ userSingleData.fax }}</p>\n        </mat-list-item>\n      </mat-list>\n    </mat-card-content>\n  </mat-card-content>\n\n\n\n  <!-- patainet report section -->\n  <mat-card-content class=\"patient_report_section\">\n    <mat-card-content class=\"patient_top_search\">\n      <h1>Patient record report</h1>\n      <!-- <span class=\"search_bar\">\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput [matDatepicker]=\"picker\" (focus)=\"picker.open()\" placeholder=\"Search By Date\">\n\n            <mat-datepicker #picker></mat-datepicker>\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput placeholder=\"Search By Status\">\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput placeholder=\"Search By Patient\">\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n      </span> -->\n    </mat-card-content>\n\n  <!-- table -->\n  <lib-listing class=\"DataTable\" *ngIf=\"TechDashboardAllData.length>0\"\n    [datasource]=\"TechDashboardAllData\"\n    [skip]=\"allUserData_skip\"\n    [modify_header_array]=\"allUserData_modify_header\"\n    [apiurl]=\"apiUrl\"\n    [sourcedata]=\"tableName\"\n    [editroute]=\"editUrl\"\n    [jwttoken]=\"user_token\"\n    [statusarr]=\"status\"\n    [updateendpoint]=\"UpdateEndpoint\"\n    [deleteendpoint]=\"deleteEndpoint\"\n    [date_search_endpoint]=\"SearchingEndpoint\"\n    [date_search_source]=\"tableName\"\n    [search_settings]=\"search_settings\"\n   >\n</lib-listing>\n<h2 *ngIf=\"TechDashboardAllData.length == 0\">No record found.</h2>\n  <!-- end table -->\n\n\n\n  <span class=\"button_action\">\n    <button mat-flat-button routerLink = \"/tech/patient-management/bulk-upload\">upload bulk report</button>\n    <button mat-flat-button routerLink = \"/tech/patient-management/add\">add a new patient records manually</button>\n  </span>\n  </mat-card-content>\n\n\n\n\n  <mat-card-content class=\"footer_section\">\n          <span class=\"footer_content\">\n\n            <mat-card-content class=\"link\">\n            <a href=\"\">Privacy Policy</a>\n            <a href=\"\"> Terms & conditions</a>\n          </mat-card-content>\n          <p>© Copyright 2018 Advanced Wellness Solutions- All Rights Reserved</p>\n          </span>\n  </mat-card-content>\n\n");
 
 /***/ }),
 
@@ -5662,38 +5649,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_auth_login_login_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/auth/login/login.component */ "./src/app/components/auth/login/login.component.ts");
 /* harmony import */ var login__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! login */ "./dist/login/fesm2015/login.js");
 /* harmony import */ var lib_listing__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! lib-listing */ "./dist/listing/fesm2015/listing-angular7.js");
-/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
-/* harmony import */ var _services_authguard_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./services/authguard.service */ "./src/app/services/authguard.service.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var _services_http_service_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./services/http-service.service */ "./src/app/services/http-service.service.ts");
-/* harmony import */ var _app_modules_materialModule__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../app/modules/materialModule */ "./src/app/modules/materialModule.ts");
-/* harmony import */ var _components_auth_forgetpassword_forgetpassword_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/auth/forgetpassword/forgetpassword.component */ "./src/app/components/auth/forgetpassword/forgetpassword.component.ts");
-/* harmony import */ var _components_auth_resetpassword_resetpassword_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/auth/resetpassword/resetpassword.component */ "./src/app/components/auth/resetpassword/resetpassword.component.ts");
-/* harmony import */ var _components_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/common/dialog-box/dialog-box.component */ "./src/app/components/common/dialog-box/dialog-box.component.ts");
-/* harmony import */ var _components_common_upload_dialog_box_upload_dialog_box_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/common/upload-dialog-box/upload-dialog-box.component */ "./src/app/components/common/upload-dialog-box/upload-dialog-box.component.ts");
-/* harmony import */ var _components_admin_admin_dashboard_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/admin/admin-dashboard/admin-dashboard.component */ "./src/app/components/admin/admin-dashboard/admin-dashboard.component.ts");
-/* harmony import */ var _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/admin/admin-management/add-edit/add-edit.component */ "./src/app/components/admin/admin-management/add-edit/add-edit.component.ts");
-/* harmony import */ var _components_admin_admin_management_manage_admin_list_manage_admin_list_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/admin/admin-management/manage-admin-list/manage-admin-list.component */ "./src/app/components/admin/admin-management/manage-admin-list/manage-admin-list.component.ts");
-/* harmony import */ var _components_admin_admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/admin/admin-header/admin-header.component */ "./src/app/components/admin/admin-header/admin-header.component.ts");
-/* harmony import */ var _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/admin/doctor-management/addedit-doctor/addedit-doctor.component */ "./src/app/components/admin/doctor-management/addedit-doctor/addedit-doctor.component.ts");
-/* harmony import */ var _components_admin_doctor_management_list_doctor_list_doctor_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/admin/doctor-management/list-doctor/list-doctor.component */ "./src/app/components/admin/doctor-management/list-doctor/list-doctor.component.ts");
-/* harmony import */ var _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/admin/biller-management/add-edit-biller/add-edit-biller.component */ "./src/app/components/admin/biller-management/add-edit-biller/add-edit-biller.component.ts");
-/* harmony import */ var _components_admin_biller_management_listing_biller_listing_biller_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/admin/biller-management/listing-biller/listing-biller.component */ "./src/app/components/admin/biller-management/listing-biller/listing-biller.component.ts");
-/* harmony import */ var _components_admin_tech_management_listing_tech_listing_tech_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/admin/tech-management/listing-tech/listing-tech.component */ "./src/app/components/admin/tech-management/listing-tech/listing-tech.component.ts");
-/* harmony import */ var _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/admin/tech-management/add-edit-tech/add-edit-tech.component */ "./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.ts");
-/* harmony import */ var _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/common/account-settings/account-settings.component */ "./src/app/components/common/account-settings/account-settings.component.ts");
-/* harmony import */ var _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/common/account-settings/change-password/change-password.component */ "./src/app/components/common/account-settings/change-password/change-password.component.ts");
-/* harmony import */ var _components_admin_user_management_user_add_edit_user_add_edit_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/admin/user-management/user-add-edit/user-add-edit.component */ "./src/app/components/admin/user-management/user-add-edit/user-add-edit.component.ts");
-/* harmony import */ var _components_tech_tech_dashboard_tech_dashboard_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/tech/tech-dashboard/tech-dashboard.component */ "./src/app/components/tech/tech-dashboard/tech-dashboard.component.ts");
-/* harmony import */ var _components_tech_tech_header_tech_header_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/tech/tech-header/tech-header.component */ "./src/app/components/tech/tech-header/tech-header.component.ts");
-/* harmony import */ var _components_tech_patient_management_add_edit_patient_add_edit_patient_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/tech/patient-management/add-edit-patient/add-edit-patient.component */ "./src/app/components/tech/patient-management/add-edit-patient/add-edit-patient.component.ts");
-/* harmony import */ var _components_tech_patient_management_bulk_upload_bulk_upload_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/tech/patient-management/bulk-upload/bulk-upload.component */ "./src/app/components/tech/patient-management/bulk-upload/bulk-upload.component.ts");
-/* harmony import */ var _components_doctor_doctor_dashboard_doctor_dashboard_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/doctor/doctor-dashboard/doctor-dashboard.component */ "./src/app/components/doctor/doctor-dashboard/doctor-dashboard.component.ts");
-/* harmony import */ var _components_doctor_doctor_header_doctor_header_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/doctor/doctor-header/doctor-header.component */ "./src/app/components/doctor/doctor-header/doctor-header.component.ts");
-/* harmony import */ var _components_biller_biller_dashboard_biller_dashboard_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/biller/biller-dashboard/biller-dashboard.component */ "./src/app/components/biller/biller-dashboard/biller-dashboard.component.ts");
-/* harmony import */ var _components_biller_biller_header_biller_header_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./components/biller/biller-header/biller-header.component */ "./src/app/components/biller/biller-header/biller-header.component.ts");
-/* harmony import */ var _components_test_test_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./components/test/test.component */ "./src/app/components/test/test.component.ts");
-/* harmony import */ var file_upload__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! file-upload */ "./dist/file-upload/fesm2015/file-upload.js");
+/* harmony import */ var _ngx_meta_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ngx-meta/core */ "./node_modules/@ngx-meta/core/fesm2015/ngx-meta-core.js");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+/* harmony import */ var _services_authguard_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/authguard.service */ "./src/app/services/authguard.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _services_http_service_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./services/http-service.service */ "./src/app/services/http-service.service.ts");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./class/common/common-function */ "./src/app/class/common/common-function.ts");
+/* harmony import */ var _app_modules_materialModule__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../app/modules/materialModule */ "./src/app/modules/materialModule.ts");
+/* harmony import */ var _components_auth_forgetpassword_forgetpassword_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/auth/forgetpassword/forgetpassword.component */ "./src/app/components/auth/forgetpassword/forgetpassword.component.ts");
+/* harmony import */ var _components_auth_resetpassword_resetpassword_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/auth/resetpassword/resetpassword.component */ "./src/app/components/auth/resetpassword/resetpassword.component.ts");
+/* harmony import */ var _components_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/common/dialog-box/dialog-box.component */ "./src/app/components/common/dialog-box/dialog-box.component.ts");
+/* harmony import */ var _components_common_upload_dialog_box_upload_dialog_box_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/common/upload-dialog-box/upload-dialog-box.component */ "./src/app/components/common/upload-dialog-box/upload-dialog-box.component.ts");
+/* harmony import */ var _components_admin_admin_dashboard_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/admin/admin-dashboard/admin-dashboard.component */ "./src/app/components/admin/admin-dashboard/admin-dashboard.component.ts");
+/* harmony import */ var _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/admin/admin-management/add-edit/add-edit.component */ "./src/app/components/admin/admin-management/add-edit/add-edit.component.ts");
+/* harmony import */ var _components_admin_admin_management_manage_admin_list_manage_admin_list_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/admin/admin-management/manage-admin-list/manage-admin-list.component */ "./src/app/components/admin/admin-management/manage-admin-list/manage-admin-list.component.ts");
+/* harmony import */ var _components_admin_admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/admin/admin-header/admin-header.component */ "./src/app/components/admin/admin-header/admin-header.component.ts");
+/* harmony import */ var _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/admin/doctor-management/addedit-doctor/addedit-doctor.component */ "./src/app/components/admin/doctor-management/addedit-doctor/addedit-doctor.component.ts");
+/* harmony import */ var _components_admin_doctor_management_list_doctor_list_doctor_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/admin/doctor-management/list-doctor/list-doctor.component */ "./src/app/components/admin/doctor-management/list-doctor/list-doctor.component.ts");
+/* harmony import */ var _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/admin/biller-management/add-edit-biller/add-edit-biller.component */ "./src/app/components/admin/biller-management/add-edit-biller/add-edit-biller.component.ts");
+/* harmony import */ var _components_admin_biller_management_listing_biller_listing_biller_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/admin/biller-management/listing-biller/listing-biller.component */ "./src/app/components/admin/biller-management/listing-biller/listing-biller.component.ts");
+/* harmony import */ var _components_admin_tech_management_listing_tech_listing_tech_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/admin/tech-management/listing-tech/listing-tech.component */ "./src/app/components/admin/tech-management/listing-tech/listing-tech.component.ts");
+/* harmony import */ var _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/admin/tech-management/add-edit-tech/add-edit-tech.component */ "./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.ts");
+/* harmony import */ var _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/common/account-settings/account-settings.component */ "./src/app/components/common/account-settings/account-settings.component.ts");
+/* harmony import */ var _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/common/account-settings/change-password/change-password.component */ "./src/app/components/common/account-settings/change-password/change-password.component.ts");
+/* harmony import */ var _components_admin_user_management_user_add_edit_user_add_edit_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/admin/user-management/user-add-edit/user-add-edit.component */ "./src/app/components/admin/user-management/user-add-edit/user-add-edit.component.ts");
+/* harmony import */ var _components_tech_tech_dashboard_tech_dashboard_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/tech/tech-dashboard/tech-dashboard.component */ "./src/app/components/tech/tech-dashboard/tech-dashboard.component.ts");
+/* harmony import */ var _components_tech_tech_header_tech_header_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/tech/tech-header/tech-header.component */ "./src/app/components/tech/tech-header/tech-header.component.ts");
+/* harmony import */ var _components_tech_patient_management_add_edit_patient_add_edit_patient_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/tech/patient-management/add-edit-patient/add-edit-patient.component */ "./src/app/components/tech/patient-management/add-edit-patient/add-edit-patient.component.ts");
+/* harmony import */ var _components_tech_patient_management_bulk_upload_bulk_upload_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/tech/patient-management/bulk-upload/bulk-upload.component */ "./src/app/components/tech/patient-management/bulk-upload/bulk-upload.component.ts");
+/* harmony import */ var _components_doctor_doctor_dashboard_doctor_dashboard_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/doctor/doctor-dashboard/doctor-dashboard.component */ "./src/app/components/doctor/doctor-dashboard/doctor-dashboard.component.ts");
+/* harmony import */ var _components_doctor_doctor_header_doctor_header_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./components/doctor/doctor-header/doctor-header.component */ "./src/app/components/doctor/doctor-header/doctor-header.component.ts");
+/* harmony import */ var _components_biller_biller_dashboard_biller_dashboard_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./components/biller/biller-dashboard/biller-dashboard.component */ "./src/app/components/biller/biller-dashboard/biller-dashboard.component.ts");
+/* harmony import */ var _components_biller_biller_header_biller_header_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./components/biller/biller-header/biller-header.component */ "./src/app/components/biller/biller-header/biller-header.component.ts");
+/* harmony import */ var _components_test_test_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./components/test/test.component */ "./src/app/components/test/test.component.ts");
+/* harmony import */ var file_upload__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! file-upload */ "./dist/file-upload/fesm2015/file-upload.js");
 
 
 
@@ -5710,6 +5699,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+/* Common Function */
 
 // modules
 
@@ -5757,57 +5749,137 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
             // Auth
             _components_auth_login_login_component__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"],
-            _components_auth_forgetpassword_forgetpassword_component__WEBPACK_IMPORTED_MODULE_17__["ForgetpasswordComponent"],
-            _components_auth_resetpassword_resetpassword_component__WEBPACK_IMPORTED_MODULE_18__["ResetpasswordComponent"],
+            _components_auth_forgetpassword_forgetpassword_component__WEBPACK_IMPORTED_MODULE_19__["ForgetpasswordComponent"],
+            _components_auth_resetpassword_resetpassword_component__WEBPACK_IMPORTED_MODULE_20__["ResetpasswordComponent"],
             // dashboard
-            _components_tech_tech_dashboard_tech_dashboard_component__WEBPACK_IMPORTED_MODULE_34__["TechDashboardComponent"],
-            _components_admin_admin_dashboard_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_21__["AdminDashboardComponent"],
-            _components_biller_biller_dashboard_biller_dashboard_component__WEBPACK_IMPORTED_MODULE_40__["BillerDashboardComponent"],
-            _components_doctor_doctor_dashboard_doctor_dashboard_component__WEBPACK_IMPORTED_MODULE_38__["DoctorDashboardComponent"],
+            _components_tech_tech_dashboard_tech_dashboard_component__WEBPACK_IMPORTED_MODULE_36__["TechDashboardComponent"],
+            _components_admin_admin_dashboard_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_23__["AdminDashboardComponent"],
+            _components_biller_biller_dashboard_biller_dashboard_component__WEBPACK_IMPORTED_MODULE_42__["BillerDashboardComponent"],
+            _components_doctor_doctor_dashboard_doctor_dashboard_component__WEBPACK_IMPORTED_MODULE_40__["DoctorDashboardComponent"],
             //user-management
-            _components_admin_user_management_user_add_edit_user_add_edit_component__WEBPACK_IMPORTED_MODULE_33__["UserAddEditComponent"],
+            _components_admin_user_management_user_add_edit_user_add_edit_component__WEBPACK_IMPORTED_MODULE_35__["UserAddEditComponent"],
             // Test
-            _components_test_test_component__WEBPACK_IMPORTED_MODULE_42__["TestComponent"],
-            _components_test_test_component__WEBPACK_IMPORTED_MODULE_42__["DialogContentExampleDialog"],
-            _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_22__["AddEditComponent"],
-            _components_admin_admin_management_manage_admin_list_manage_admin_list_component__WEBPACK_IMPORTED_MODULE_23__["ManageAdminListComponent"],
-            _components_admin_admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_24__["AdminHeaderComponent"],
-            _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_25__["AddeditDoctorComponent"],
-            _components_admin_doctor_management_list_doctor_list_doctor_component__WEBPACK_IMPORTED_MODULE_26__["ListDoctorComponent"],
-            _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_25__["Modal"],
-            _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_27__["AddEditBillerComponent"],
-            _components_admin_biller_management_listing_biller_listing_biller_component__WEBPACK_IMPORTED_MODULE_28__["ListingBillerComponent"],
-            _components_admin_tech_management_listing_tech_listing_tech_component__WEBPACK_IMPORTED_MODULE_29__["ListingTechComponent"],
-            _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_30__["AddEditTechComponent"],
-            _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_31__["AccountSettingsComponent"],
-            _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_32__["ChangePasswordComponent"],
-            _components_tech_patient_management_add_edit_patient_add_edit_patient_component__WEBPACK_IMPORTED_MODULE_36__["AddEditPatientComponent"],
-            _components_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_19__["DialogBoxComponent"],
-            _components_tech_patient_management_bulk_upload_bulk_upload_component__WEBPACK_IMPORTED_MODULE_37__["BulkUploadComponent"],
-            _components_common_upload_dialog_box_upload_dialog_box_component__WEBPACK_IMPORTED_MODULE_20__["UploadDialogBoxComponent"],
-            _components_biller_biller_header_biller_header_component__WEBPACK_IMPORTED_MODULE_41__["BillerHeaderComponent"],
-            _components_doctor_doctor_header_doctor_header_component__WEBPACK_IMPORTED_MODULE_39__["DoctorHeaderComponent"],
-            _components_tech_tech_header_tech_header_component__WEBPACK_IMPORTED_MODULE_35__["TechHeaderComponent"],
+            _components_test_test_component__WEBPACK_IMPORTED_MODULE_44__["TestComponent"],
+            _components_test_test_component__WEBPACK_IMPORTED_MODULE_44__["DialogContentExampleDialog"],
+            _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_24__["AddEditComponent"],
+            _components_admin_admin_management_manage_admin_list_manage_admin_list_component__WEBPACK_IMPORTED_MODULE_25__["ManageAdminListComponent"],
+            _components_admin_admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_26__["AdminHeaderComponent"],
+            _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_27__["AddeditDoctorComponent"],
+            _components_admin_doctor_management_list_doctor_list_doctor_component__WEBPACK_IMPORTED_MODULE_28__["ListDoctorComponent"],
+            _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_27__["Modal"],
+            _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_29__["AddEditBillerComponent"],
+            _components_admin_biller_management_listing_biller_listing_biller_component__WEBPACK_IMPORTED_MODULE_30__["ListingBillerComponent"],
+            _components_admin_tech_management_listing_tech_listing_tech_component__WEBPACK_IMPORTED_MODULE_31__["ListingTechComponent"],
+            _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_32__["AddEditTechComponent"],
+            _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_33__["AccountSettingsComponent"],
+            _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_34__["ChangePasswordComponent"],
+            _components_tech_patient_management_add_edit_patient_add_edit_patient_component__WEBPACK_IMPORTED_MODULE_38__["AddEditPatientComponent"],
+            _components_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_21__["DialogBoxComponent"],
+            _components_tech_patient_management_bulk_upload_bulk_upload_component__WEBPACK_IMPORTED_MODULE_39__["BulkUploadComponent"],
+            _components_common_upload_dialog_box_upload_dialog_box_component__WEBPACK_IMPORTED_MODULE_22__["UploadDialogBoxComponent"],
+            _components_biller_biller_header_biller_header_component__WEBPACK_IMPORTED_MODULE_43__["BillerHeaderComponent"],
+            _components_doctor_doctor_header_doctor_header_component__WEBPACK_IMPORTED_MODULE_41__["DoctorHeaderComponent"],
+            _components_tech_tech_header_tech_header_component__WEBPACK_IMPORTED_MODULE_37__["TechHeaderComponent"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"].withServerTransition({ appId: 'serverApp' }),
+            _ngx_meta_core__WEBPACK_IMPORTED_MODULE_12__["MetaModule"].forRoot(),
             _modules_app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_6__["CommonModule"],
             _nguniversal_common__WEBPACK_IMPORTED_MODULE_7__["TransferHttpCacheModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
             _ng_toolkit_universal__WEBPACK_IMPORTED_MODULE_8__["NgtUniversalModule"],
-            _app_modules_materialModule__WEBPACK_IMPORTED_MODULE_16__["DemoMaterialModule"],
+            _app_modules_materialModule__WEBPACK_IMPORTED_MODULE_18__["DemoMaterialModule"],
             login__WEBPACK_IMPORTED_MODULE_10__["LoginModule"],
             lib_listing__WEBPACK_IMPORTED_MODULE_11__["ListingModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_14__["FormsModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_14__["ReactiveFormsModule"],
-            file_upload__WEBPACK_IMPORTED_MODULE_43__["FileUploadModule"]
+            _angular_forms__WEBPACK_IMPORTED_MODULE_15__["FormsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_15__["ReactiveFormsModule"],
+            file_upload__WEBPACK_IMPORTED_MODULE_45__["FileUploadModule"]
         ],
-        providers: [ngx_cookie_service__WEBPACK_IMPORTED_MODULE_12__["CookieService"], _services_authguard_service__WEBPACK_IMPORTED_MODULE_13__["AuthguardService"], _services_http_service_service__WEBPACK_IMPORTED_MODULE_15__["HttpServiceService"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["DatePipe"]],
+        providers: [ngx_cookie_service__WEBPACK_IMPORTED_MODULE_13__["CookieService"], _services_authguard_service__WEBPACK_IMPORTED_MODULE_14__["AuthguardService"], _services_http_service_service__WEBPACK_IMPORTED_MODULE_16__["HttpServiceService"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["DatePipe"], _class_common_common_function__WEBPACK_IMPORTED_MODULE_17__["CommonFunction"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]],
-        entryComponents: [_components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_25__["Modal"], _components_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_19__["DialogBoxComponent"], _components_common_upload_dialog_box_upload_dialog_box_component__WEBPACK_IMPORTED_MODULE_20__["UploadDialogBoxComponent"], _components_test_test_component__WEBPACK_IMPORTED_MODULE_42__["DialogContentExampleDialog"], _components_test_test_component__WEBPACK_IMPORTED_MODULE_42__["TestComponent"]]
+        entryComponents: [_components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_27__["Modal"], _components_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_21__["DialogBoxComponent"], _components_common_upload_dialog_box_upload_dialog_box_component__WEBPACK_IMPORTED_MODULE_22__["UploadDialogBoxComponent"], _components_test_test_component__WEBPACK_IMPORTED_MODULE_44__["DialogContentExampleDialog"], _components_test_test_component__WEBPACK_IMPORTED_MODULE_44__["TestComponent"]]
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/class/common/common-function.ts":
+/*!*************************************************!*\
+  !*** ./src/app/class/common/common-function.ts ***!
+  \*************************************************/
+/*! exports provided: CommonFunction */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommonFunction", function() { return CommonFunction; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _ngx_meta_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-meta/core */ "./node_modules/@ngx-meta/core/fesm2015/ngx-meta-core.js");
+
+
+
+
+
+let CommonFunction = class CommonFunction {
+    constructor(meta, cookie, router, activeRoute) {
+        this.meta = meta;
+        this.cookie = cookie;
+        this.router = router;
+        this.activeRoute = activeRoute;
+    }
+    setTitleMetaTags() {
+        let url = this.router.url;
+        var urlArr = url.split("/");
+        var title = '';
+        for (let loop = 1; loop < urlArr.length; loop++) {
+            urlArr[loop] = urlArr[loop].replace("-", " ");
+            urlArr[loop] = this.titleCase(urlArr[loop]);
+            if (urlArr[loop] != 'Admin' && urlArr[loop] != 'Tech' && urlArr[loop] != 'Doctor' && urlArr[loop] != 'List') {
+                title += urlArr[loop] + ' ';
+            }
+        }
+        let getToken = this.cookie.get('jwtToken');
+        if (getToken) {
+            let allcookies = this.cookie.getAll();
+            let userData = JSON.parse(allcookies.user_details);
+            title = title + '| ' + userData.firstname + ' ' + userData.lastname + ' | AWS Backend';
+        }
+        else {
+            title = 'Welcome to AWS Backend | ' + title;
+        }
+        /* Set Meta Data */
+        this.meta.setTitle(title);
+        this.meta.setTag('og:description', 'Welcome to AWS Backend.');
+        this.meta.setTag('og:title', 'Welcome to AWS Backend.');
+        this.meta.setTag('og:type', 'website');
+        this.meta.setTag('og:image', 'favicon.ico');
+    }
+    titleCase(str) {
+        var splitStr = str.toLowerCase().split(' ');
+        for (var i = 0; i < splitStr.length; i++) {
+            // You do not need to check if i is larger than splitStr length, as your for does that for you
+            // Assign it back to the array
+            splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+        }
+        // Directly return the joined string
+        return splitStr.join(' ');
+    }
+};
+CommonFunction.ctorParameters = () => [
+    { type: _ngx_meta_core__WEBPACK_IMPORTED_MODULE_4__["MetaService"] },
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_2__["CookieService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
+];
+CommonFunction = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+], CommonFunction);
 
 
 
@@ -5841,18 +5913,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
 /* harmony import */ var _services_http_service_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/http-service.service */ "./src/app/services/http-service.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 
 
 
 let AdminDashboardComponent = class AdminDashboardComponent {
-    constructor(router, cookieService, http, activatedRoute) {
+    constructor(router, cookieService, http, activatedRoute, commonFunction) {
         this.router = router;
         this.cookieService = cookieService;
         this.http = http;
         this.activatedRoute = activatedRoute;
+        this.commonFunction = commonFunction;
         this.docCount = [];
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
     }
     ngOnInit() {
         this.activatedRoute.data.subscribe(resolveData => {
@@ -5879,7 +5956,8 @@ AdminDashboardComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_2__["CookieService"] },
     { type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_3__["HttpServiceService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_5__["CommonFunction"] }
 ];
 AdminDashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -5940,7 +6018,13 @@ let AdminHeaderComponent = class AdminHeaderComponent {
     /**logout function start here**/
     logout() {
         this.cookies.deleteAll();
-        this.router.navigateByUrl('/login');
+        setTimeout(() => {
+            this.router.navigateByUrl('/login');
+        }, 1000);
+    }
+    /**logout function end here**/
+    menuFunction() {
+        console.log('Working on it.');
     }
 };
 AdminHeaderComponent.ctorParameters = () => [
@@ -5990,6 +6074,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 
@@ -5999,7 +6085,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AddEditComponent = class AddEditComponent {
-    constructor(fb, datePipe, httpService, cookie, router, snackBar, activeRoute) {
+    constructor(fb, datePipe, httpService, cookie, router, snackBar, activeRoute, commonFunction) {
         this.fb = fb;
         this.datePipe = datePipe;
         this.httpService = httpService;
@@ -6007,10 +6093,13 @@ let AddEditComponent = class AddEditComponent {
         this.router = router;
         this.snackBar = snackBar;
         this.activeRoute = activeRoute;
+        this.commonFunction = commonFunction;
         this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](new Date());
         this.serializedDate = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]((new Date()).toISOString());
         this.buttonText = "Submit";
         this.message = "Submitted Successfully";
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
         this.user_token = cookie.get('jwtToken');
         this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
         var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
@@ -6124,7 +6213,8 @@ AddEditComponent.ctorParameters = () => [
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
     { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSnackBar"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__["CommonFunction"] }
 ];
 AddEditComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -6165,14 +6255,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 
 
 let ManageAdminListComponent = class ManageAdminListComponent {
-    constructor(activatedRoute, cookie) {
+    constructor(activatedRoute, cookie, commonFunction) {
         this.activatedRoute = activatedRoute;
         this.cookie = cookie;
+        this.commonFunction = commonFunction;
         this.TechDashboardAllData = [];
         this.allUserData_skip = ["confirmpassword", "password", "created_at", "_id", "id", "updated_at", "phoneno", "type"];
         this.editUrl = "admin/admin-management/edit";
@@ -6193,6 +6286,8 @@ let ManageAdminListComponent = class ManageAdminListComponent {
             textsearch: [{ label: "Search By Name", field: 'fullname' },
                 { label: "Search By E-Mail", field: 'email' }],
         };
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
         this.user_cookie = cookie.get('jwtToken');
     }
     ngOnInit() {
@@ -6203,7 +6298,8 @@ let ManageAdminListComponent = class ManageAdminListComponent {
 };
 ManageAdminListComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
-    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_4__["CommonFunction"] }
 ];
 ManageAdminListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -6248,6 +6344,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 
@@ -6257,7 +6355,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AddEditBillerComponent = class AddEditBillerComponent {
-    constructor(fb, datePipe, httpService, cookie, router, snackBar, activeRoute) {
+    constructor(fb, datePipe, httpService, cookie, router, snackBar, activeRoute, commonFunction) {
         this.fb = fb;
         this.datePipe = datePipe;
         this.httpService = httpService;
@@ -6265,11 +6363,14 @@ let AddEditBillerComponent = class AddEditBillerComponent {
         this.router = router;
         this.snackBar = snackBar;
         this.activeRoute = activeRoute;
+        this.commonFunction = commonFunction;
         this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](new Date());
         this.buttonText = "Submit";
         this.headerText = "add biller";
         this.message = "Submitted Successfully";
         this.serializedDate = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]((new Date()).toISOString());
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
         this.params_id = this.activeRoute.snapshot.params._id;
         this.user_token = cookie.get('jwtToken');
         this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
@@ -6353,7 +6454,7 @@ let AddEditBillerComponent = class AddEditBillerComponent {
         this.cities = this.allCities[stateName];
     }
     ResetAddEditForm() {
-        this.billerManagementAddEditForm.reset();
+        this.formDirective.resetForm();
     }
     BillerManagementAddFormSubmit() {
         let x;
@@ -6416,8 +6517,12 @@ AddEditBillerComponent.ctorParameters = () => [
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
     { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSnackBar"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__["CommonFunction"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], { static: false })
+], AddEditBillerComponent.prototype, "formDirective", void 0);
 AddEditBillerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-add-edit-biller',
@@ -6457,14 +6562,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 
 
 let ListingBillerComponent = class ListingBillerComponent {
-    constructor(activeRoute, cookie) {
+    constructor(activeRoute, cookie, commonFunction) {
         this.activeRoute = activeRoute;
         this.cookie = cookie;
+        this.commonFunction = commonFunction;
         this.allBillerData = [];
         this.allUserData_skip = ["confirmpassword", "password", "created_at", "_id", "type", "phoneno"];
         this.editUrl = "biller-management/edit";
@@ -6487,6 +6595,8 @@ let ListingBillerComponent = class ListingBillerComponent {
                 { label: "Search By E-Mail", field: 'email' }],
         };
         this.user_cookie = cookie.get('jwtToken');
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
     }
     ngOnInit() {
         this.getAllBillerData();
@@ -6500,7 +6610,8 @@ let ListingBillerComponent = class ListingBillerComponent {
 };
 ListingBillerComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
-    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_4__["CommonFunction"] }
 ];
 ListingBillerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -6546,6 +6657,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _validators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./validators */ "./src/app/components/admin/doctor-management/addedit-doctor/validators.ts");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 
@@ -6555,13 +6668,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AddeditDoctorComponent = class AddeditDoctorComponent {
-    constructor(formBuilder, http, cookieService, dialog, router, acivatedRoute) {
+    constructor(formBuilder, http, cookieService, dialog, router, acivatedRoute, commonFunction) {
         this.formBuilder = formBuilder;
         this.http = http;
         this.cookieService = cookieService;
         this.dialog = dialog;
         this.router = router;
         this.acivatedRoute = acivatedRoute;
+        this.commonFunction = commonFunction;
         this.checkboxArray = ['Family Practice', 'General Practitioner', 'Primary Care',
             'Cardiology', 'Neurology', 'Internal Medicine', 'Endocrinology', 'Pain Management', 'Integrated', 'Others'];
         this.successMessage = "Data Submitted Successfully!!!";
@@ -6570,6 +6684,8 @@ let AddeditDoctorComponent = class AddeditDoctorComponent {
         this.form_heading = "Add doctor";
         this.techData = [];
         this.billerData = [];
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
         this.user_token = cookieService.get('jwtToken');
         this.getAllTechData();
         this.getAllBillerData();
@@ -6621,6 +6737,7 @@ let AddeditDoctorComponent = class AddeditDoctorComponent {
             practicename: defaultValue.practicename,
             taxonomies: defaultValue.taxonomies,
             npm: defaultValue.npm,
+            fax: defaultValue.fax,
             address: defaultValue.address,
             city: defaultValue.city,
             state: defaultValue.state,
@@ -6644,6 +6761,7 @@ let AddeditDoctorComponent = class AddeditDoctorComponent {
             practicename: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _validators__WEBPACK_IMPORTED_MODULE_7__["nameValidator"]]],
             npm: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _validators__WEBPACK_IMPORTED_MODULE_7__["npmValidator"]]],
             address: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            fax: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             city: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             state: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             type: ['doctor'],
@@ -6744,6 +6862,7 @@ let AddeditDoctorComponent = class AddeditDoctorComponent {
         let postData = {
             "source": 'users',
             "data": Object.assign(this.docManageForm.value, this.condition),
+            "sourceobj": ["tech", "biller"],
             "token": this.cookieService.get('jwtToken')
         };
         this.http.httpViaPost('addorupdatedata', postData).subscribe((response) => {
@@ -6776,7 +6895,8 @@ AddeditDoctorComponent.ctorParameters = () => [
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"] },
     { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialog"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__["CommonFunction"] }
 ];
 AddeditDoctorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -6925,6 +7045,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_http_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../services/http-service.service */ "./src/app/services/http-service.service.ts");
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 
@@ -6932,11 +7054,12 @@ __webpack_require__.r(__webpack_exports__);
 
 let ListDoctorComponent = class ListDoctorComponent {
     // ====================================================================
-    constructor(http, cookieService, router, activatedRoute) {
+    constructor(http, cookieService, router, activatedRoute, commonFunction) {
         this.http = http;
         this.cookieService = cookieService;
         this.router = router;
         this.activatedRoute = activatedRoute;
+        this.commonFunction = commonFunction;
         // ===============================Declarations=========================
         this.docData = [];
         this.docData_skip = ["_id", "created_at", "password", "confirmpassword",
@@ -6958,6 +7081,8 @@ let ListDoctorComponent = class ListDoctorComponent {
             textsearch: [{ label: "Search By Name", field: 'fullname' }, { label: "Search by Taxonomy", field: 'taxo_list' },
                 { label: "Search By E-Mail", field: 'email' }]
         };
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
         this.user_cookie = cookieService.get('jwtToken');
     }
     ngOnInit() {
@@ -6970,7 +7095,8 @@ ListDoctorComponent.ctorParameters = () => [
     { type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_2__["HttpServiceService"] },
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_5__["CommonFunction"] }
 ];
 ListDoctorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -7015,6 +7141,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 
@@ -7024,7 +7152,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AddEditTechComponent = class AddEditTechComponent {
-    constructor(fb, activeRoute, router, httpService, datePipe, cookie, snackBar) {
+    constructor(fb, activeRoute, router, httpService, datePipe, cookie, snackBar, commonFunction) {
         this.fb = fb;
         this.activeRoute = activeRoute;
         this.router = router;
@@ -7032,11 +7160,14 @@ let AddEditTechComponent = class AddEditTechComponent {
         this.datePipe = datePipe;
         this.cookie = cookie;
         this.snackBar = snackBar;
+        this.commonFunction = commonFunction;
         this.message = "Submitted Successfully";
         this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](new Date());
         this.serializedDate = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]((new Date()).toISOString());
         this.usersData = [];
         this.buttonText = "Submit";
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
         this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
         var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
         this.allStateCityData();
@@ -7180,7 +7311,8 @@ AddEditTechComponent.ctorParameters = () => [
     { type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_4__["HttpServiceService"] },
     { type: _angular_common__WEBPACK_IMPORTED_MODULE_5__["DatePipe"] },
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_6__["CookieService"] },
-    { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSnackBar"] }
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSnackBar"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__["CommonFunction"] }
 ];
 AddEditTechComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -7223,6 +7355,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var _services_http_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../services/http-service.service */ "./src/app/services/http-service.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 
@@ -7230,11 +7364,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ListingTechComponent = class ListingTechComponent {
-    constructor(cookie, http, httpService, activatedRoute) {
+    constructor(cookie, http, httpService, activatedRoute, commonFunction) {
         this.cookie = cookie;
         this.http = http;
         this.httpService = httpService;
         this.activatedRoute = activatedRoute;
+        this.commonFunction = commonFunction;
         this.allUserData = [];
         this.allUserData_skip = ["_id", "created_at", "password", "id", "updated_at", "type", "phoneno"];
         this.editUrl = "tech-management/edit";
@@ -7256,6 +7391,8 @@ let ListingTechComponent = class ListingTechComponent {
                 { label: "Search By E-Mail", field: 'email' }],
         };
         this.TechDashboardAllData = [];
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
         this.user_cookie = cookie.get('jwtToken');
     }
     ngOnInit() {
@@ -7268,7 +7405,8 @@ ListingTechComponent.ctorParameters = () => [
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_2__["CookieService"] },
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] },
     { type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_4__["HttpServiceService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_6__["CommonFunction"] }
 ];
 ListingTechComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -7488,10 +7626,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ForgetpasswordComponent", function() { return ForgetpasswordComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 let ForgetpasswordComponent = class ForgetpasswordComponent {
-    constructor() {
+    constructor(commonFunction) {
+        this.commonFunction = commonFunction;
         this.logo = '../../assets/favicon.ico';
         // public signUpRouteingUrl: any = 'sign-up';
         this.serverUrl = 'http://166.62.39.137:5050/';
@@ -7514,10 +7655,15 @@ let ForgetpasswordComponent = class ForgetpasswordComponent {
         };
         this.buttonName = 'Update Password';
         this.domanUrl = 'http://localhost:4200/resetpassword';
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
     }
     ngOnInit() {
     }
 };
+ForgetpasswordComponent.ctorParameters = () => [
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_2__["CommonFunction"] }
+];
 ForgetpasswordComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-forgetpassword',
@@ -7555,10 +7701,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 let LoginComponent = class LoginComponent {
-    constructor() {
+    constructor(commonFunction) {
+        this.commonFunction = commonFunction;
         this.logo = './assets/images/logo.png';
         this.fromTitle = "Login Here"; // This is a From Title
         this.fullUrl = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/"; // server url
@@ -7574,6 +7723,8 @@ let LoginComponent = class LoginComponent {
             "buttonName": "Forget Password",
             "customLink": "/forget-password",
         };
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
         this.routerStatus = {
             "data": [
                 {
@@ -7598,6 +7749,9 @@ let LoginComponent = class LoginComponent {
     ngOnInit() {
     }
 };
+LoginComponent.ctorParameters = () => [
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_2__["CommonFunction"] }
+];
 LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-login',
@@ -7635,10 +7789,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResetpasswordComponent", function() { return ResetpasswordComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 let ResetpasswordComponent = class ResetpasswordComponent {
-    constructor() {
+    constructor(commonFunction) {
+        this.commonFunction = commonFunction;
         this.fromTitleName = 'Reset From';
         this.logo = './assets/images/logo.png';
         this.serverUrl = 'https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/';
@@ -7646,10 +7803,15 @@ let ResetpasswordComponent = class ResetpasswordComponent {
             endpoint: 'addorupdatedata',
             source: 'usermanagement'
         };
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
     }
     ngOnInit() {
     }
 };
+ResetpasswordComponent.ctorParameters = () => [
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_2__["CommonFunction"] }
+];
 ResetpasswordComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-resetpassword',
@@ -7688,18 +7850,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 
 let BillerDashboardComponent = class BillerDashboardComponent {
-    constructor(http) {
+    constructor(http, commonFunction) {
         this.http = http;
+        this.commonFunction = commonFunction;
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
     }
     ngOnInit() {
     }
 };
 BillerDashboardComponent.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_3__["CommonFunction"] }
 ];
 BillerDashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -7810,6 +7978,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 
@@ -7819,7 +7989,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AccountSettingsComponent = class AccountSettingsComponent {
-    constructor(fb, datePipe, httpService, cookie, router, snackBar, activeRoute) {
+    constructor(fb, datePipe, httpService, cookie, router, snackBar, activeRoute, commonFunction) {
         this.fb = fb;
         this.datePipe = datePipe;
         this.httpService = httpService;
@@ -7827,6 +7997,7 @@ let AccountSettingsComponent = class AccountSettingsComponent {
         this.router = router;
         this.snackBar = snackBar;
         this.activeRoute = activeRoute;
+        this.commonFunction = commonFunction;
         this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](new Date());
         this.serializedDate = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]((new Date()).toISOString());
         this.message = "Updated Successfully";
@@ -7839,6 +8010,8 @@ let AccountSettingsComponent = class AccountSettingsComponent {
         allcookies = cookie.getAll();
         this.cookiesData = JSON.parse(allcookies.user_details);
         this.cookies_id = this.cookiesData._id;
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
         this.allStateCityData();
         this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
         var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
@@ -7943,7 +8116,8 @@ AccountSettingsComponent.ctorParameters = () => [
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
     { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSnackBar"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__["CommonFunction"] }
 ];
 AccountSettingsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -7987,6 +8161,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 
@@ -7995,15 +8171,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ChangePasswordComponent = class ChangePasswordComponent {
-    constructor(fb, cookie, router, snackBar, activeRoute, httpService) {
+    constructor(fb, cookie, router, snackBar, activeRoute, httpService, commonFunction) {
         this.fb = fb;
         this.cookie = cookie;
         this.router = router;
         this.snackBar = snackBar;
         this.activeRoute = activeRoute;
         this.httpService = httpService;
+        this.commonFunction = commonFunction;
         this.loader = false;
         this.headerFlag = null;
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
         this.headerFlag = this.activeRoute.snapshot.url[0].path;
         this.user_token = cookie.get('jwtToken');
         let allcookies;
@@ -8076,7 +8255,8 @@ ChangePasswordComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
     { type: _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSnackBar"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] },
-    { type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_3__["HttpServiceService"] }
+    { type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_3__["HttpServiceService"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_7__["CommonFunction"] }
 ];
 ChangePasswordComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -8164,7 +8344,7 @@ DialogBoxComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvY29tbW9uL3VwbG9hZC1kaWFsb2ctYm94L3VwbG9hZC1kaWFsb2ctYm94LmNvbXBvbmVudC5jc3MifQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("/* header css */\n.techdashboard_header .mat-toolbar-row{ height: auto; }\n.techdashboard_header .mat-toolbar-row .logo_wrapper{ max-width: 200px; display: block; }\n.techdashboard_header .mat-toolbar-row .logo_wrapper img{ max-width: 100%; vertical-align: middle; }\n.techdashboard_header .mat-toolbar-row{ justify-content: space-between; padding: 0 40px;}\n.techdashboard_header .mat-toolbar-row .quotation { margin-bottom: 0px;}\n.techdashboard_header .mat-toolbar-row .quotation p{ font-family: \"RobotoMedium\"; font-size: 30px; color: #002035; text-transform: uppercase; margin: 0; }\n.techdashboard_header .mat-toolbar-row .profile_section { display: flex; border-left: 1px solid #e2dede; padding-left: 20px; }\n.techdashboard_header .mat-toolbar-row .profile_section .username{ padding-right: 20px; display: block; }\n.techdashboard_header .mat-toolbar-row .quotation .mat-list-base{ display: flex;}\n.techdashboard_header .mat-toolbar-row .quotation .mat-list-base .mat-list-item:after{ content:\"\"; width:2px; height: 80px; background: red;}\n.active{ color: #c18500!important; }\n.techdashboard_header .mat-toolbar-row .quotation .mat-nav-list .mat-list-item { margin: 0 16px; }\n.add_form{ width: 40%; margin: 20px auto; background: #f3f3f3; padding: 16px 10px; padding-bottom: 50px; border: 1px solid #91e7ff; }\n.add_form .form_wrapper .mat-form-field{ width: 100%;  }\n.add_form .form_wrapper textarea{ resize: none;}\n.add_form h2{ font-family: \"RobotoBlack\"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }\n.add_form .submit_form { display: block; width: 100%; text-align: center; margin-top: 30px; }\n.add_form .submit_form button{ border-radius: 5px; background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: \"RobotoBlack\"; font-size: 25px; padding: 2px;\nwidth: 240px; border: 3px solid #d59d01; }\n.add_form .submit_form button:nth-child(1){ background: linear-gradient(180deg, #f2be00, #a52a08); color: #f3f3f3; border: 2px solid #bb3c0d; margin-right: 16px; }\n.add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;}\n@media screen and (max-width: 1460px){\n  .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; line-height: 26px;}\n}\n@media screen and (max-width: 1000px){\n  .add_form .submit_form button { width: 48%; }\n}\n@media screen and (max-width: 991px){\n.techdashboard_header .mat-toolbar-row { flex-direction: column; padding: 20px;}\n.techdashboard_header .mat-toolbar-row .quotation p { margin-top: 16px; }\n}\n@media screen and (max-width: 768px){\n  .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0; }\n}\n@media screen and (max-width: 576px){\n.add_form .submit_form button { font-size: 22px; padding: 2px; }\n\n.add_form .submit_form button { width: 100%; margin: 0; margin-top: 20px; }\n.add_form .submit_form { display: flex; flex-direction: column-reverse; text-align: center; margin-top: 0px; }\n.add_form .submit_form button:nth-child(1) { margin-right: 0; margin-top: 20px; }\n}\n@media screen and (max-width: 360px){\n.techdashboard_header .mat-toolbar-row .quotation p { font-size: 16px; line-height: 22px; }\n.add_form h2 { font-size: 22px; line-height: 24px; text-align: center; }\n}\n/* header css */\n.techdashboard_header .mat-toolbar-row{ height: auto; }\n.techdashboard_header .mat-toolbar-row .logo_wrapper{ max-width: 200px; display: block; }\n.techdashboard_header .mat-toolbar-row .logo_wrapper img{ max-width: 100%; vertical-align: middle; }\n.techdashboard_header .mat-toolbar-row{ justify-content: space-between; padding: 0 40px;}\n.techdashboard_header .mat-toolbar-row .quotation { margin-bottom: 0px;}\n.techdashboard_header .mat-toolbar-row .quotation p{ font-family: \"RobotoMedium\"; font-size: 30px; color: #002035; text-transform: uppercase; margin: 0; }\n.techdashboard_header .mat-toolbar-row .profile_section { display: flex; border-left: 1px solid #e2dede; padding-left: 20px; }\n.techdashboard_header .mat-toolbar-row .profile_section .username{ padding-right: 20px; display: block; }\n.techdashboard_header .mat-toolbar-row .quotation .mat-list-base{ display: flex;}\n.techdashboard_header .mat-toolbar-row .quotation .mat-list-base .mat-list-item:after{ content:\"\"; width:2px; height: 80px; background: red;}\n.active{ color: #c18500!important; }\n.techdashboard_header .mat-toolbar-row .quotation .mat-nav-list .mat-list-item { margin: 0 16px; }\n/*End header css */\n.footer_section{display: block; border-top: 1px solid #c7c7c7; margin-top: 30px; }\n.footer_section .footer_content{ width: 600px; padding: 0 16px; margin: 0 auto; display: block; text-align: center; }\n.footer_section .footer_content .link{ margin-top: 10px; display: block;  }\n.footer_section .footer_content .link a:nth-of-type(1){ border-right: 1px solid #2b2b2b; padding-right: 5px; }\n.footer_section .footer_content .link a, .footer_section .footer_content .link p{ font-size: 16px; font-family: \"RobotoRegular\"; color: #2b2b2b; text-decoration: none;}\n#menu_button{ display: none;}\n.add_header{ display: flex; margin: 016px;}\n.add_header button{ margin-left: auto;\n  background: linear-gradient(180deg, #fac855, #e47e2a)!important;\n  text-transform: uppercase;\n  font-family: \"RobotoBlack\"; padding-top: 4px;\n}\n@media screen and (max-width: 1700px){\n  .content_wrapper .itemsection p { font-size: 26px; }\n  .one, .two, .three { background-position: 100% center; }\n}\n@media screen and (max-width: 1680px){\n  .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; }\n}\n@media screen and (max-width: 1500px){\n  .techdashboard_header .mat-toolbar-row .quotation p { font-size: 22px; }\n  .content_wrapper .itemsection { padding-bottom: 36px; }\n}\n@media screen and (max-width: 1440px){\n  .content_wrapper .itemsection p { line-height: 26px; font-size: 24px;}\n\n}\n@media screen and (max-width: 1400px){\n.techdashboard_header .mat-toolbar-row .quotation p { font-size: 20px; text-align: center; line-height: 22px; white-space: normal; }\n.techdashboard_header .mat-toolbar-row { padding: 0 20px; }\n}\n@media screen and (max-width: 1240px){\n  .doctor_content_wrapper{ background: #012035; }\n}\n@media screen and (max-width: 1199px){\n.doctor_content_wrapper .table_structure { width: 100%;  }\n.patient_report_section .button_action { width: 970px; }\n.patient_report_section .button_action button { width: 475px; font-size: 20px; padding: 8px; }\n.content_wrapper { display: flex; justify-content: center; align-items: center; text-align: center; flex-wrap: wrap; }\n.content_wrapper .itemsection { width: 31%; margin: 15px 12px; }\n.doctor_content_wrapper { padding: 40px 30px; }\n.doctor_content_wrapper .mat-card-title { font-size: 36px; margin-bottom: 20px; }\n\n.table_structure .mat-list-item .title_n { font-size: 26px; }\n.table_structure .mat-list-item .title_a { font-size: 22px; }\n.content_wrapper .itemsection p{ width: 100%; font-size: 22px; }\n.techdashboard_header .mat-toolbar-row { height: auto; flex-direction: column; }\n}\n@media screen and (max-width: 1080px){\n.doctor_content_wrapper {\n    padding: 40px 20px;\n}\n.doctor_content_wrapper .mat-card-title {\n  font-size: 32px;\n  margin-bottom: 20px;\n}\n.table_structure .mat-list-item .title_n {\n  font-size: 22px;\n}\n.table_structure .mat-list-item .title_a {\n  font-size: 20px;\n}\n}\n@media screen and (max-width: 1038px){\n.content_wrapper .itemsection { width: 30.9%;  }\n}\n@media screen and (max-width: 991px){\n.doctor_content_wrapper { text-align: center; }\n.patient_report_section .patient_top_search { display: flex; align-items: center; flex-direction: column; }\n.patient_report_section .patient_top_search .search_bar { margin-bottom: 20px; }\n.patient_report_section .button_action button { padding: 8px 30px; margin: 0 10px; width: 100%;}\n.patient_report_section .button_action { width: auto; margin: 0 5px; display: flex; justify-content: center; }\n.content_wrapper .itemsection { width: 30.8%; }\n.table_structure .mat-list-item .title_a { font-size: 16px; }\n#menu_button{ display: block;}\n.techdashboard_header .mat-toolbar-row .quotation { display: none; }\n\n.techdashboard_header .mat-toolbar-row .quotation .mat-list-base {\n  display: block;\n}\n}\n@media screen and (max-width: 970px){\n.patient_report_section .button_action button { width: auto; }\n.table_structure .mat-list-item .title_n { font-size: 18px; }\n\n.one { background: linear-gradient(100deg, #f9c856, #dd671d); }\n.two { background: linear-gradient(100deg, #0973d1, #05335a); }\n.three { background: linear-gradient(100deg, #44cf80, #26a555); }\n}\n@media screen and (max-width: 950px){\n  .content_wrapper .itemsection {\n    width: 30.8%;\n}\n  .content_wrapper .itemsection p { font-size: 20px; }\n  .table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {  margin-bottom: 16px; }\n}\n@media screen and (max-width: 850px){\n.content_wrapper .itemsection { width: 30.2%; }\n/* hiding searchbar */\n.patient_report_section .patient_top_search .search_bar {\n  margin-bottom: 20px;\n  display: none;\n}\n\n.techdashboard_header .mat-toolbar-row {\n  padding: 0 16px;\n  flex-direction: column;\n}\n\n\n}\n@media screen and (max-width: 768px){\n.content_wrapper .itemsection { width: 100%; margin: 16px; margin-bottom: 0; }\n.content_wrapper .itemsection:nth-last-child(1) {margin-bottom: 16px; }\n.patient_report_section .button_action { display: flex; justify-content: center; flex-direction: column; }\n.patient_report_section .button_action button { margin-bottom: 16px; word-break: break-word; white-space: normal; line-height: 22px; }\n.techdashboard_header .mat-toolbar-row { padding: 0 16px; }\n.techdashboard_header .mat-toolbar-row .quotation p { margin: 16px 0; }\n.doctor_content_wrapper { padding: 20px 0px; }\n.table_structure .mat-list-item .title_a { font-size: 14px; }\n.doctor_content_wrapper .mat-card-title { font-size: 28px; margin-bottom: 5px; text-align: left; padding: 0 16px; }\n\n.table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option { margin-bottom: 16px; }\n.footer_section .footer_content { width: auto; }\n\n.table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option { display: flex; text-align: left; }\n}\n@media screen and (max-width: 480px){\n.doctor_content_wrapper .mat-card-title { font-size: 24px; }\n.patient_report_section .patient_top_search h1 { font-size: 24px; }\n}\n/* header css */\n.techdashboard_header .mat-toolbar-row{ height: auto; }\n.techdashboard_header .mat-toolbar-row .logo_wrapper{ max-width: 200px; display: block; }\n.techdashboard_header .mat-toolbar-row .logo_wrapper img{ max-width: 100%; vertical-align: middle; }\n.techdashboard_header .mat-toolbar-row{ justify-content: space-evenly; padding: 0 40px;}\n.techdashboard_header .mat-toolbar-row .quotation { margin-bottom: 0px;}\n.techdashboard_header .mat-toolbar-row .quotation p{ font-family: \"RobotoMedium\"; font-size: 30px; color: #002035; text-transform: uppercase; margin: 0; white-space: normal;\n  text-align: center;}\n.techdashboard_header .mat-toolbar-row .profile_section { display: flex; border-left: 1px solid #e2dede; padding-left: 20px; }\n.techdashboard_header .mat-toolbar-row .profile_section .username{ padding-right: 20px; display: block; }\n/*End header css */\n.add_form{ width: 80%; margin: 20px auto; background: #f3f3f3; padding: 16px 10px; padding-bottom: 25px; border: 1px solid #91e7ff;}\n.add_form .form_wrapper .mat-form-field{ width: 49%; margin: 0.5%; }\n.add_form .form_wrapper textarea{ resize: none;}\n.add_form h2{ font-family: \"RobotoBlack\"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }\n.add_form .submit_form { display: block; width: 100%; text-align: center; margin-top: 30px; }\n.add_form .submit_form button{ border-radius: 5px; background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: \"RobotoBlack\"; font-size: 25px; padding: 8px;\nwidth: 390px; border: 3px solid #d59d01; }\n.add_form .submit_form button:nth-child(1){ background: linear-gradient(180deg, #f2be00, #a52a08); color: #f3f3f3; border: 2px solid #bb3c0d; margin-right: 16px; }\n.add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;}\n@media screen and (max-width: 1460px){\n  .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; line-height: 26px;}\n}\n@media screen and (max-width: 1000px){\n  .add_form .submit_form button { width: 48%; }\n}\n@media screen and (max-width: 991px){\n.techdashboard_header .mat-toolbar-row { flex-direction: column; padding: 20px;}\n.techdashboard_header .mat-toolbar-row .quotation p { margin-top: 16px; }\n}\n@media screen and (max-width: 768px){\n  .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0; }\n}\n@media screen and (max-width: 576px){\n.add_form .submit_form button { font-size: 22px; padding: 2px; }\n\n.add_form .submit_form button { width: 100%; margin: 0; margin-top: 20px; }\n.add_form .submit_form { display: flex; flex-direction: column-reverse; text-align: center; margin-top: 0px; }\n.add_form .submit_form button:nth-child(1) { margin-right: 0; margin-top: 20px; }\n}\n@media screen and (max-width: 360px){\n.techdashboard_header .mat-toolbar-row .quotation p { font-size: 16px; line-height: 22px; }\n.add_form h2 { font-size: 22px; line-height: 24px; text-align: center; }\n}\n/* .add_form .test_date_wrapper{ display: inline-block; } */\n.add_form .test_date_wrapper .mat-card-actions, .add_form .test_date_wrapper .mat-card-content, .add_form .test_date_wrapper .mat-card-subtitle {\n  display: inline-flex;\n  margin-bottom: 16px;\n  vertical-align: middle;\n  justify-content: center;\n  align-items: center;\n}\n.add_form .mat-card-content label , .add_form .patient_diagnotes label{ font-family: \"RobotoMedium\"; color: #01090c; font-size: 16px; margin: 0 5px}\n.add_form .mat-card-content label , \n.add_form .patient_diagnotes label{ font-family: \"RobotoMedium\"; color: #01090c; font-size: 16px; margin:10px;line-height: 20px;}\n.add_form .mat-card-content .mat-checkbox { margin: 0 5px; }\n.add_form .mat-card-content ,\n.add_form .patient_diagnotes .mat-form-field {\n   \n  position: relative;\n  text-align: left;\n  margin: 0 10px;\n}\n.add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0 8px; border: 2px solid #43cef5; background: #fff;\n  box-sizing: border-box;}\n.add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0 20px;}\n.add_form .patient_diagnotes .example-full-width textarea{ resize: none; }\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9jb21tb24vdXBsb2FkLWRpYWxvZy1ib3gvdXBsb2FkLWRpYWxvZy1ib3guY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxlQUFlO0FBQ2Ysd0NBQXdDLFlBQVksRUFBRTtBQUN0RCxzREFBc0QsZ0JBQWdCLEVBQUUsY0FBYyxFQUFFO0FBQ3hGLDBEQUEwRCxlQUFlLEVBQUUsc0JBQXNCLEVBQUU7QUFDbkcsd0NBQXdDLDhCQUE4QixFQUFFLGVBQWUsQ0FBQztBQUN4RixvREFBb0Qsa0JBQWtCLENBQUM7QUFDdkUscURBQXFELDJCQUEyQixFQUFFLGVBQWUsRUFBRSxjQUFjLEVBQUUseUJBQXlCLEVBQUUsU0FBUyxFQUFFO0FBQ3pKLDBEQUEwRCxhQUFhLEVBQUUsOEJBQThCLEVBQUUsa0JBQWtCLEVBQUU7QUFDN0gsbUVBQW1FLG1CQUFtQixFQUFFLGNBQWMsRUFBRTtBQUd4RyxrRUFBa0UsYUFBYSxDQUFDO0FBQ2hGLHVGQUF1RixVQUFVLEVBQUUsU0FBUyxFQUFFLFlBQVksRUFBRSxlQUFlLENBQUM7QUFDNUksU0FBUyx3QkFBd0IsRUFBRTtBQUNuQyxpRkFBaUYsY0FBYyxFQUFFO0FBR2pHLFdBQVcsVUFBVSxFQUFFLGlCQUFpQixFQUFFLG1CQUFtQixFQUFFLGtCQUFrQixFQUFFLG9CQUFvQixFQUFFLHlCQUF5QixFQUFFO0FBQ3BJLHlDQUF5QyxXQUFXLEdBQUc7QUFDdkQsa0NBQWtDLFlBQVksQ0FBQztBQUMvQyxjQUFjLDBCQUEwQixFQUFFLHlCQUF5QixFQUFFLGVBQWUsRUFBRSxjQUFjLEVBQUUsY0FBYyxFQUFFO0FBQ3RILHlCQUF5QixjQUFjLEVBQUUsV0FBVyxFQUFFLGtCQUFrQixFQUFFLGdCQUFnQixFQUFFO0FBQzVGLCtCQUErQixrQkFBa0IsRUFBRSxxREFBcUQsRUFBRSxjQUFjLEVBQUUseUJBQXlCLEVBQUUsMEJBQTBCLEVBQUUsZUFBZSxFQUFFLFlBQVk7QUFDOU0sWUFBWSxFQUFFLHlCQUF5QixFQUFFO0FBQ3pDLDRDQUE0QyxxREFBcUQsRUFBRSxjQUFjLEVBQUUseUJBQXlCLEVBQUUsa0JBQWtCLEVBQUU7QUFDbEssMkJBQTJCLG1CQUFtQixFQUFFLFdBQVcsRUFBRSxtQkFBbUIsQ0FBQztBQUtqRjtFQUNFLHNEQUFzRCxlQUFlLEVBQUUsaUJBQWlCLENBQUM7QUFDM0Y7QUFFQTtFQUNFLGdDQUFnQyxVQUFVLEVBQUU7QUFDOUM7QUFDQTtBQUNBLHlDQUF5QyxzQkFBc0IsRUFBRSxhQUFhLENBQUM7QUFDL0Usc0RBQXNELGdCQUFnQixFQUFFO0FBQ3hFO0FBQ0E7RUFDRSwwQ0FBMEMsV0FBVyxFQUFFLFNBQVMsRUFBRTtBQUNwRTtBQUNBO0FBQ0EsZ0NBQWdDLGVBQWUsRUFBRSxZQUFZLEVBQUU7O0FBRS9ELGdDQUFnQyxXQUFXLEVBQUUsU0FBUyxFQUFFLGdCQUFnQixFQUFFO0FBQzFFLHlCQUF5QixhQUFhLEVBQUUsOEJBQThCLEVBQUUsa0JBQWtCLEVBQUUsZUFBZSxFQUFFO0FBQzdHLDZDQUE2QyxlQUFlLEVBQUUsZ0JBQWdCLEVBQUU7QUFDaEY7QUFFQTtBQUNBLHNEQUFzRCxlQUFlLEVBQUUsaUJBQWlCLEVBQUU7QUFDMUYsZUFBZSxlQUFlLEVBQUUsaUJBQWlCLEVBQUUsa0JBQWtCLEVBQUU7QUFDdkU7QUFHQSxlQUFlO0FBQ2Ysd0NBQXdDLFlBQVksRUFBRTtBQUN0RCxzREFBc0QsZ0JBQWdCLEVBQUUsY0FBYyxFQUFFO0FBQ3hGLDBEQUEwRCxlQUFlLEVBQUUsc0JBQXNCLEVBQUU7QUFDbkcsd0NBQXdDLDhCQUE4QixFQUFFLGVBQWUsQ0FBQztBQUN4RixvREFBb0Qsa0JBQWtCLENBQUM7QUFDdkUscURBQXFELDJCQUEyQixFQUFFLGVBQWUsRUFBRSxjQUFjLEVBQUUseUJBQXlCLEVBQUUsU0FBUyxFQUFFO0FBQ3pKLDBEQUEwRCxhQUFhLEVBQUUsOEJBQThCLEVBQUUsa0JBQWtCLEVBQUU7QUFDN0gsbUVBQW1FLG1CQUFtQixFQUFFLGNBQWMsRUFBRTtBQUd4RyxrRUFBa0UsYUFBYSxDQUFDO0FBQ2hGLHVGQUF1RixVQUFVLEVBQUUsU0FBUyxFQUFFLFlBQVksRUFBRSxlQUFlLENBQUM7QUFDNUksU0FBUyx3QkFBd0IsRUFBRTtBQUNuQyxpRkFBaUYsY0FBYyxFQUFFO0FBRWpHLGtCQUFrQjtBQUdsQixnQkFBZ0IsY0FBYyxFQUFFLDZCQUE2QixFQUFFLGdCQUFnQixFQUFFO0FBQ2pGLGlDQUFpQyxZQUFZLEVBQUUsZUFBZSxFQUFFLGNBQWMsRUFBRSxjQUFjLEVBQUUsa0JBQWtCLEVBQUU7QUFDcEgsdUNBQXVDLGdCQUFnQixFQUFFLGNBQWMsR0FBRztBQUMxRSx3REFBd0QsK0JBQStCLEVBQUUsa0JBQWtCLEVBQUU7QUFDN0csa0ZBQWtGLGVBQWUsRUFBRSw0QkFBNEIsRUFBRSxjQUFjLEVBQUUscUJBQXFCLENBQUM7QUFHdkssY0FBYyxhQUFhLENBQUM7QUFFNUIsYUFBYSxhQUFhLEVBQUUsYUFBYSxDQUFDO0FBQzFDLG9CQUFvQixpQkFBaUI7RUFDbkMsK0RBQStEO0VBQy9ELHlCQUF5QjtFQUN6QiwwQkFBMEIsRUFBRSxnQkFBZ0I7QUFDOUM7QUFJQTtFQUNFLGtDQUFrQyxlQUFlLEVBQUU7RUFDbkQscUJBQXFCLGdDQUFnQyxFQUFFO0FBQ3pEO0FBQ0E7RUFDRSxzREFBc0QsZUFBZSxFQUFFO0FBQ3pFO0FBQ0E7RUFDRSxzREFBc0QsZUFBZSxFQUFFO0VBQ3ZFLGdDQUFnQyxvQkFBb0IsRUFBRTtBQUN4RDtBQUNBO0VBQ0Usa0NBQWtDLGlCQUFpQixFQUFFLGVBQWUsQ0FBQzs7QUFFdkU7QUFFQTtBQUNBLHNEQUFzRCxlQUFlLEVBQUUsa0JBQWtCLEVBQUUsaUJBQWlCLEVBQUUsbUJBQW1CLEVBQUU7QUFDbkkseUNBQXlDLGVBQWUsRUFBRTtBQUMxRDtBQUVBO0VBQ0UseUJBQXlCLG1CQUFtQixFQUFFO0FBQ2hEO0FBQ0E7QUFDQSwyQ0FBMkMsV0FBVyxHQUFHO0FBQ3pELHlDQUF5QyxZQUFZLEVBQUU7QUFDdkQsZ0RBQWdELFlBQVksRUFBRSxlQUFlLEVBQUUsWUFBWSxFQUFFO0FBQzdGLG1CQUFtQixhQUFhLEVBQUUsdUJBQXVCLEVBQUUsbUJBQW1CLEVBQUUsa0JBQWtCLEVBQUUsZUFBZSxFQUFFO0FBQ3JILGdDQUFnQyxVQUFVLEVBQUUsaUJBQWlCLEVBQUU7QUFDL0QsMEJBQTBCLGtCQUFrQixFQUFFO0FBQzlDLDBDQUEwQyxlQUFlLEVBQUUsbUJBQW1CLEVBQUU7O0FBRWhGLDJDQUEyQyxlQUFlLEVBQUU7QUFDNUQsMkNBQTJDLGVBQWUsRUFBRTtBQUM1RCxpQ0FBaUMsV0FBVyxFQUFFLGVBQWUsRUFBRTtBQUMvRCx5Q0FBeUMsWUFBWSxFQUFFLHNCQUFzQixFQUFFO0FBQy9FO0FBRUE7QUFDQTtJQUNJLGtCQUFrQjtBQUN0QjtBQUNBO0VBQ0UsZUFBZTtFQUNmLG1CQUFtQjtBQUNyQjtBQUNBO0VBQ0UsZUFBZTtBQUNqQjtBQUNBO0VBQ0UsZUFBZTtBQUNqQjtBQUNBO0FBQ0E7QUFDQSxnQ0FBZ0MsWUFBWSxHQUFHO0FBQy9DO0FBRUE7QUFDQSwwQkFBMEIsa0JBQWtCLEVBQUU7QUFDOUMsOENBQThDLGFBQWEsRUFBRSxtQkFBbUIsRUFBRSxzQkFBc0IsRUFBRTtBQUMxRywwREFBMEQsbUJBQW1CLEVBQUU7QUFDL0UsZ0RBQWdELGlCQUFpQixFQUFFLGNBQWMsRUFBRSxXQUFXLENBQUM7QUFDL0YseUNBQXlDLFdBQVcsRUFBRSxhQUFhLEVBQUUsYUFBYSxFQUFFLHVCQUF1QixFQUFFO0FBQzdHLGdDQUFnQyxZQUFZLEVBQUU7QUFDOUMsMkNBQTJDLGVBQWUsRUFBRTtBQUM1RCxjQUFjLGNBQWMsQ0FBQztBQUM3QixvREFBb0QsYUFBYSxFQUFFOztBQUVuRTtFQUNFLGNBQWM7QUFDaEI7QUFDQTtBQUNBO0FBQ0EsZ0RBQWdELFdBQVcsRUFBRTtBQUM3RCwyQ0FBMkMsZUFBZSxFQUFFOztBQUU1RCxPQUFPLHFEQUFxRCxFQUFFO0FBQzlELE9BQU8scURBQXFELEVBQUU7QUFDOUQsU0FBUyxxREFBcUQsRUFBRTtBQUNoRTtBQUNBO0VBQ0U7SUFDRSxZQUFZO0FBQ2hCO0VBQ0Usa0NBQWtDLGVBQWUsRUFBRTtFQUNuRCxtRkFBbUYsbUJBQW1CLEVBQUU7QUFDMUc7QUFHQTtBQUNBLGdDQUFnQyxZQUFZLEVBQUU7QUFDOUMscUJBQXFCO0FBQ3JCO0VBQ0UsbUJBQW1CO0VBQ25CLGFBQWE7QUFDZjs7QUFFQTtFQUNFLGVBQWU7RUFDZixzQkFBc0I7QUFDeEI7OztBQUdBO0FBQ0E7QUFDQSxnQ0FBZ0MsV0FBVyxFQUFFLFlBQVksRUFBRSxnQkFBZ0IsRUFBRTtBQUM3RSxpREFBaUQsbUJBQW1CLEVBQUU7QUFDdEUseUNBQXlDLGFBQWEsRUFBRSx1QkFBdUIsRUFBRSxzQkFBc0IsRUFBRTtBQUN6RyxnREFBZ0QsbUJBQW1CLEVBQUUsc0JBQXNCLEVBQUUsbUJBQW1CLEVBQUUsaUJBQWlCLEVBQUU7QUFDckkseUNBQXlDLGVBQWUsRUFBRTtBQUMxRCxzREFBc0QsY0FBYyxFQUFFO0FBQ3RFLDBCQUEwQixpQkFBaUIsRUFBRTtBQUM3QywyQ0FBMkMsZUFBZSxFQUFFO0FBQzVELDBDQUEwQyxlQUFlLEVBQUUsa0JBQWtCLEVBQUUsZ0JBQWdCLEVBQUUsZUFBZSxFQUFFOztBQUVsSCxrRkFBa0YsbUJBQW1CLEVBQUU7QUFDdkcsa0NBQWtDLFdBQVcsRUFBRTs7QUFFL0Msa0ZBQWtGLGFBQWEsRUFBRSxnQkFBZ0IsRUFBRTtBQUNuSDtBQUVBO0FBQ0EsMENBQTBDLGVBQWUsRUFBRTtBQUMzRCxpREFBaUQsZUFBZSxFQUFFO0FBQ2xFO0FBQ0EsZUFBZTtBQUNmLHdDQUF3QyxZQUFZLEVBQUU7QUFDdEQsc0RBQXNELGdCQUFnQixFQUFFLGNBQWMsRUFBRTtBQUN4RiwwREFBMEQsZUFBZSxFQUFFLHNCQUFzQixFQUFFO0FBQ25HLHdDQUF3Qyw2QkFBNkIsRUFBRSxlQUFlLENBQUM7QUFDdkYsb0RBQW9ELGtCQUFrQixDQUFDO0FBQ3ZFLHFEQUFxRCwyQkFBMkIsRUFBRSxlQUFlLEVBQUUsY0FBYyxFQUFFLHlCQUF5QixFQUFFLFNBQVMsRUFBRSxtQkFBbUI7RUFDMUssa0JBQWtCLENBQUM7QUFDckIsMERBQTBELGFBQWEsRUFBRSw4QkFBOEIsRUFBRSxrQkFBa0IsRUFBRTtBQUM3SCxtRUFBbUUsbUJBQW1CLEVBQUUsY0FBYyxFQUFFO0FBQ3hHLGtCQUFrQjtBQUdsQixXQUFXLFVBQVUsRUFBRSxpQkFBaUIsRUFBRSxtQkFBbUIsRUFBRSxrQkFBa0IsRUFBRSxvQkFBb0IsRUFBRSx5QkFBeUIsQ0FBQztBQUNuSSx5Q0FBeUMsVUFBVSxFQUFFLFlBQVksRUFBRTtBQUNuRSxrQ0FBa0MsWUFBWSxDQUFDO0FBQy9DLGNBQWMsMEJBQTBCLEVBQUUseUJBQXlCLEVBQUUsZUFBZSxFQUFFLGNBQWMsRUFBRSxjQUFjLEVBQUU7QUFDdEgseUJBQXlCLGNBQWMsRUFBRSxXQUFXLEVBQUUsa0JBQWtCLEVBQUUsZ0JBQWdCLEVBQUU7QUFDNUYsK0JBQStCLGtCQUFrQixFQUFFLHFEQUFxRCxFQUFFLGNBQWMsRUFBRSx5QkFBeUIsRUFBRSwwQkFBMEIsRUFBRSxlQUFlLEVBQUUsWUFBWTtBQUM5TSxZQUFZLEVBQUUseUJBQXlCLEVBQUU7QUFDekMsNENBQTRDLHFEQUFxRCxFQUFFLGNBQWMsRUFBRSx5QkFBeUIsRUFBRSxrQkFBa0IsRUFBRTtBQUNsSywyQkFBMkIsbUJBQW1CLEVBQUUsV0FBVyxFQUFFLG1CQUFtQixDQUFDO0FBS2pGO0VBQ0Usc0RBQXNELGVBQWUsRUFBRSxpQkFBaUIsQ0FBQztBQUMzRjtBQUVBO0VBQ0UsZ0NBQWdDLFVBQVUsRUFBRTtBQUM5QztBQUNBO0FBQ0EseUNBQXlDLHNCQUFzQixFQUFFLGFBQWEsQ0FBQztBQUMvRSxzREFBc0QsZ0JBQWdCLEVBQUU7QUFDeEU7QUFDQTtFQUNFLDBDQUEwQyxXQUFXLEVBQUUsU0FBUyxFQUFFO0FBQ3BFO0FBQ0E7QUFDQSxnQ0FBZ0MsZUFBZSxFQUFFLFlBQVksRUFBRTs7QUFFL0QsZ0NBQWdDLFdBQVcsRUFBRSxTQUFTLEVBQUUsZ0JBQWdCLEVBQUU7QUFDMUUseUJBQXlCLGFBQWEsRUFBRSw4QkFBOEIsRUFBRSxrQkFBa0IsRUFBRSxlQUFlLEVBQUU7QUFDN0csNkNBQTZDLGVBQWUsRUFBRSxnQkFBZ0IsRUFBRTtBQUNoRjtBQUVBO0FBQ0Esc0RBQXNELGVBQWUsRUFBRSxpQkFBaUIsRUFBRTtBQUMxRixlQUFlLGVBQWUsRUFBRSxpQkFBaUIsRUFBRSxrQkFBa0IsRUFBRTtBQUN2RTtBQUdBLDJEQUEyRDtBQUMzRDtFQUNFLG9CQUFvQjtFQUNwQixtQkFBbUI7RUFDbkIsc0JBQXNCO0VBQ3RCLHVCQUF1QjtFQUN2QixtQkFBbUI7QUFDckI7QUFDQSx3RUFBd0UsMkJBQTJCLEVBQUUsY0FBYyxFQUFFLGVBQWUsRUFBRSxhQUFhO0FBQ25KO29DQUNvQywyQkFBMkIsRUFBRSxjQUFjLEVBQUUsZUFBZSxFQUFFLFdBQVcsQ0FBQyxpQkFBaUIsQ0FBQztBQUdoSSw0Q0FBNEMsYUFBYSxFQUFFO0FBQzNEOzs7RUFHRSxrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGNBQWM7QUFDaEI7QUFDQSw4QkFBOEIsV0FBVyxFQUFFLHNCQUFzQixFQUFFLGFBQWEsRUFBRSxhQUFhLEVBQUUseUJBQXlCLEVBQUUsZ0JBQWdCO0VBQzFJLHNCQUFzQixDQUFDO0FBQ3pCLDhCQUE4QixXQUFXLEVBQUUsc0JBQXNCLEVBQUUsYUFBYSxFQUFFLGNBQWMsQ0FBQztBQUNqRywyREFBMkQsWUFBWSxFQUFFIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9jb21tb24vdXBsb2FkLWRpYWxvZy1ib3gvdXBsb2FkLWRpYWxvZy1ib3guY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIGhlYWRlciBjc3MgKi9cbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93eyBoZWlnaHQ6IGF1dG87IH1cbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IC5sb2dvX3dyYXBwZXJ7IG1heC13aWR0aDogMjAwcHg7IGRpc3BsYXk6IGJsb2NrOyB9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAubG9nb193cmFwcGVyIGltZ3sgbWF4LXdpZHRoOiAxMDAlOyB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlOyB9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvd3sganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuOyBwYWRkaW5nOiAwIDQwcHg7fVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnF1b3RhdGlvbiB7IG1hcmdpbi1ib3R0b206IDBweDt9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIHB7IGZvbnQtZmFtaWx5OiBcIlJvYm90b01lZGl1bVwiOyBmb250LXNpemU6IDMwcHg7IGNvbG9yOiAjMDAyMDM1OyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBtYXJnaW46IDA7IH1cbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IC5wcm9maWxlX3NlY3Rpb24geyBkaXNwbGF5OiBmbGV4OyBib3JkZXItbGVmdDogMXB4IHNvbGlkICNlMmRlZGU7IHBhZGRpbmctbGVmdDogMjBweDsgfVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnByb2ZpbGVfc2VjdGlvbiAudXNlcm5hbWV7IHBhZGRpbmctcmlnaHQ6IDIwcHg7IGRpc3BsYXk6IGJsb2NrOyB9XG5cblxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnF1b3RhdGlvbiAubWF0LWxpc3QtYmFzZXsgZGlzcGxheTogZmxleDt9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIC5tYXQtbGlzdC1iYXNlIC5tYXQtbGlzdC1pdGVtOmFmdGVyeyBjb250ZW50OlwiXCI7IHdpZHRoOjJweDsgaGVpZ2h0OiA4MHB4OyBiYWNrZ3JvdW5kOiByZWQ7fVxuLmFjdGl2ZXsgY29sb3I6ICNjMTg1MDAhaW1wb3J0YW50OyB9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIC5tYXQtbmF2LWxpc3QgLm1hdC1saXN0LWl0ZW0geyBtYXJnaW46IDAgMTZweDsgfVxuXG5cbi5hZGRfZm9ybXsgd2lkdGg6IDQwJTsgbWFyZ2luOiAyMHB4IGF1dG87IGJhY2tncm91bmQ6ICNmM2YzZjM7IHBhZGRpbmc6IDE2cHggMTBweDsgcGFkZGluZy1ib3R0b206IDUwcHg7IGJvcmRlcjogMXB4IHNvbGlkICM5MWU3ZmY7IH1cbi5hZGRfZm9ybSAuZm9ybV93cmFwcGVyIC5tYXQtZm9ybS1maWVsZHsgd2lkdGg6IDEwMCU7ICB9XG4uYWRkX2Zvcm0gLmZvcm1fd3JhcHBlciB0ZXh0YXJlYXsgcmVzaXplOiBub25lO31cbi5hZGRfZm9ybSBoMnsgZm9udC1mYW1pbHk6IFwiUm9ib3RvQmxhY2tcIjsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgZm9udC1zaXplOiAyNHB4OyBwYWRkaW5nOiAwIDZweDsgY29sb3I6ICMxZGJjZTk7IH1cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0geyBkaXNwbGF5OiBibG9jazsgd2lkdGg6IDEwMCU7IHRleHQtYWxpZ246IGNlbnRlcjsgbWFyZ2luLXRvcDogMzBweDsgfVxuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b257IGJvcmRlci1yYWRpdXM6IDVweDsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE4MGRlZywgI2Y5ZGMxOSwgI2RhYTUwNSk7IGNvbG9yOiAjNWUzNjE5OyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBmb250LWZhbWlseTogXCJSb2JvdG9CbGFja1wiOyBmb250LXNpemU6IDI1cHg7IHBhZGRpbmc6IDJweDtcbndpZHRoOiAyNDBweDsgYm9yZGVyOiAzcHggc29saWQgI2Q1OWQwMTsgfVxuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b246bnRoLWNoaWxkKDEpeyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjZjJiZTAwLCAjYTUyYTA4KTsgY29sb3I6ICNmM2YzZjM7IGJvcmRlcjogMnB4IHNvbGlkICNiYjNjMGQ7IG1hcmdpbi1yaWdodDogMTZweDsgfVxuLmFkZF9mb3JtIC5yZXR1cm5fYnV0dG9uIHsgYmFja2dyb3VuZDogIzFkYmNlOTsgY29sb3I6ICNmZmY7IG1hcmdpbi1ib3R0b206IDEycHg7fVxuXG5cblxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxNDYwcHgpe1xuICAudGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIHAgeyBmb250LXNpemU6IDI0cHg7IGxpbmUtaGVpZ2h0OiAyNnB4O31cbn1cblxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTAwMHB4KXtcbiAgLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b24geyB3aWR0aDogNDglOyB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA5OTFweCl7XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyB7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IHBhZGRpbmc6IDIwcHg7fVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnF1b3RhdGlvbiBwIHsgbWFyZ2luLXRvcDogMTZweDsgfVxufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzY4cHgpe1xuICAuYWRkX2Zvcm0gLmZvcm1fd3JhcHBlciAubWF0LWZvcm0tZmllbGQgeyB3aWR0aDogMTAwJTsgbWFyZ2luOiAwOyB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA1NzZweCl7XG4uYWRkX2Zvcm0gLnN1Ym1pdF9mb3JtIGJ1dHRvbiB7IGZvbnQtc2l6ZTogMjJweDsgcGFkZGluZzogMnB4OyB9XG5cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0gYnV0dG9uIHsgd2lkdGg6IDEwMCU7IG1hcmdpbjogMDsgbWFyZ2luLXRvcDogMjBweDsgfVxuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW4tcmV2ZXJzZTsgdGV4dC1hbGlnbjogY2VudGVyOyBtYXJnaW4tdG9wOiAwcHg7IH1cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0gYnV0dG9uOm50aC1jaGlsZCgxKSB7IG1hcmdpbi1yaWdodDogMDsgbWFyZ2luLXRvcDogMjBweDsgfVxufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzNjBweCl7XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIHAgeyBmb250LXNpemU6IDE2cHg7IGxpbmUtaGVpZ2h0OiAyMnB4OyB9XG4uYWRkX2Zvcm0gaDIgeyBmb250LXNpemU6IDIycHg7IGxpbmUtaGVpZ2h0OiAyNHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7IH1cbn1cblxuXG4vKiBoZWFkZXIgY3NzICovXG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvd3sgaGVpZ2h0OiBhdXRvOyB9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAubG9nb193cmFwcGVyeyBtYXgtd2lkdGg6IDIwMHB4OyBkaXNwbGF5OiBibG9jazsgfVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLmxvZ29fd3JhcHBlciBpbWd7IG1heC13aWR0aDogMTAwJTsgdmVydGljYWwtYWxpZ246IG1pZGRsZTsgfVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3d7IGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjsgcGFkZGluZzogMCA0MHB4O31cbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IC5xdW90YXRpb24geyBtYXJnaW4tYm90dG9tOiAwcHg7fVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnF1b3RhdGlvbiBweyBmb250LWZhbWlseTogXCJSb2JvdG9NZWRpdW1cIjsgZm9udC1zaXplOiAzMHB4OyBjb2xvcjogIzAwMjAzNTsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgbWFyZ2luOiAwOyB9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucHJvZmlsZV9zZWN0aW9uIHsgZGlzcGxheTogZmxleDsgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjZTJkZWRlOyBwYWRkaW5nLWxlZnQ6IDIwcHg7IH1cbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IC5wcm9maWxlX3NlY3Rpb24gLnVzZXJuYW1leyBwYWRkaW5nLXJpZ2h0OiAyMHB4OyBkaXNwbGF5OiBibG9jazsgfVxuXG5cbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IC5xdW90YXRpb24gLm1hdC1saXN0LWJhc2V7IGRpc3BsYXk6IGZsZXg7fVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnF1b3RhdGlvbiAubWF0LWxpc3QtYmFzZSAubWF0LWxpc3QtaXRlbTphZnRlcnsgY29udGVudDpcIlwiOyB3aWR0aDoycHg7IGhlaWdodDogODBweDsgYmFja2dyb3VuZDogcmVkO31cbi5hY3RpdmV7IGNvbG9yOiAjYzE4NTAwIWltcG9ydGFudDsgfVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnF1b3RhdGlvbiAubWF0LW5hdi1saXN0IC5tYXQtbGlzdC1pdGVtIHsgbWFyZ2luOiAwIDE2cHg7IH1cblxuLypFbmQgaGVhZGVyIGNzcyAqL1xuXG5cbi5mb290ZXJfc2VjdGlvbntkaXNwbGF5OiBibG9jazsgYm9yZGVyLXRvcDogMXB4IHNvbGlkICNjN2M3Yzc7IG1hcmdpbi10b3A6IDMwcHg7IH1cbi5mb290ZXJfc2VjdGlvbiAuZm9vdGVyX2NvbnRlbnR7IHdpZHRoOiA2MDBweDsgcGFkZGluZzogMCAxNnB4OyBtYXJnaW46IDAgYXV0bzsgZGlzcGxheTogYmxvY2s7IHRleHQtYWxpZ246IGNlbnRlcjsgfVxuLmZvb3Rlcl9zZWN0aW9uIC5mb290ZXJfY29udGVudCAubGlua3sgbWFyZ2luLXRvcDogMTBweDsgZGlzcGxheTogYmxvY2s7ICB9XG4uZm9vdGVyX3NlY3Rpb24gLmZvb3Rlcl9jb250ZW50IC5saW5rIGE6bnRoLW9mLXR5cGUoMSl7IGJvcmRlci1yaWdodDogMXB4IHNvbGlkICMyYjJiMmI7IHBhZGRpbmctcmlnaHQ6IDVweDsgfVxuLmZvb3Rlcl9zZWN0aW9uIC5mb290ZXJfY29udGVudCAubGluayBhLCAuZm9vdGVyX3NlY3Rpb24gLmZvb3Rlcl9jb250ZW50IC5saW5rIHB7IGZvbnQtc2l6ZTogMTZweDsgZm9udC1mYW1pbHk6IFwiUm9ib3RvUmVndWxhclwiOyBjb2xvcjogIzJiMmIyYjsgdGV4dC1kZWNvcmF0aW9uOiBub25lO31cblxuXG4jbWVudV9idXR0b257IGRpc3BsYXk6IG5vbmU7fVxuXG4uYWRkX2hlYWRlcnsgZGlzcGxheTogZmxleDsgbWFyZ2luOiAwMTZweDt9XG4uYWRkX2hlYWRlciBidXR0b257IG1hcmdpbi1sZWZ0OiBhdXRvO1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjZmFjODU1LCAjZTQ3ZTJhKSFpbXBvcnRhbnQ7XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gIGZvbnQtZmFtaWx5OiBcIlJvYm90b0JsYWNrXCI7IHBhZGRpbmctdG9wOiA0cHg7XG59XG5cblxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxNzAwcHgpe1xuICAuY29udGVudF93cmFwcGVyIC5pdGVtc2VjdGlvbiBwIHsgZm9udC1zaXplOiAyNnB4OyB9XG4gIC5vbmUsIC50d28sIC50aHJlZSB7IGJhY2tncm91bmQtcG9zaXRpb246IDEwMCUgY2VudGVyOyB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxNjgwcHgpe1xuICAudGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIHAgeyBmb250LXNpemU6IDI0cHg7IH1cbn1cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDE1MDBweCl7XG4gIC50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IC5xdW90YXRpb24gcCB7IGZvbnQtc2l6ZTogMjJweDsgfVxuICAuY29udGVudF93cmFwcGVyIC5pdGVtc2VjdGlvbiB7IHBhZGRpbmctYm90dG9tOiAzNnB4OyB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxNDQwcHgpe1xuICAuY29udGVudF93cmFwcGVyIC5pdGVtc2VjdGlvbiBwIHsgbGluZS1oZWlnaHQ6IDI2cHg7IGZvbnQtc2l6ZTogMjRweDt9XG5cbn1cblxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTQwMHB4KXtcbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IC5xdW90YXRpb24gcCB7IGZvbnQtc2l6ZTogMjBweDsgdGV4dC1hbGlnbjogY2VudGVyOyBsaW5lLWhlaWdodDogMjJweDsgd2hpdGUtc3BhY2U6IG5vcm1hbDsgfVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgeyBwYWRkaW5nOiAwIDIwcHg7IH1cbn1cblxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTI0MHB4KXtcbiAgLmRvY3Rvcl9jb250ZW50X3dyYXBwZXJ7IGJhY2tncm91bmQ6ICMwMTIwMzU7IH1cbn1cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDExOTlweCl7XG4uZG9jdG9yX2NvbnRlbnRfd3JhcHBlciAudGFibGVfc3RydWN0dXJlIHsgd2lkdGg6IDEwMCU7ICB9XG4ucGF0aWVudF9yZXBvcnRfc2VjdGlvbiAuYnV0dG9uX2FjdGlvbiB7IHdpZHRoOiA5NzBweDsgfVxuLnBhdGllbnRfcmVwb3J0X3NlY3Rpb24gLmJ1dHRvbl9hY3Rpb24gYnV0dG9uIHsgd2lkdGg6IDQ3NXB4OyBmb250LXNpemU6IDIwcHg7IHBhZGRpbmc6IDhweDsgfVxuLmNvbnRlbnRfd3JhcHBlciB7IGRpc3BsYXk6IGZsZXg7IGp1c3RpZnktY29udGVudDogY2VudGVyOyBhbGlnbi1pdGVtczogY2VudGVyOyB0ZXh0LWFsaWduOiBjZW50ZXI7IGZsZXgtd3JhcDogd3JhcDsgfVxuLmNvbnRlbnRfd3JhcHBlciAuaXRlbXNlY3Rpb24geyB3aWR0aDogMzElOyBtYXJnaW46IDE1cHggMTJweDsgfVxuLmRvY3Rvcl9jb250ZW50X3dyYXBwZXIgeyBwYWRkaW5nOiA0MHB4IDMwcHg7IH1cbi5kb2N0b3JfY29udGVudF93cmFwcGVyIC5tYXQtY2FyZC10aXRsZSB7IGZvbnQtc2l6ZTogMzZweDsgbWFyZ2luLWJvdHRvbTogMjBweDsgfVxuXG4udGFibGVfc3RydWN0dXJlIC5tYXQtbGlzdC1pdGVtIC50aXRsZV9uIHsgZm9udC1zaXplOiAyNnB4OyB9XG4udGFibGVfc3RydWN0dXJlIC5tYXQtbGlzdC1pdGVtIC50aXRsZV9hIHsgZm9udC1zaXplOiAyMnB4OyB9XG4uY29udGVudF93cmFwcGVyIC5pdGVtc2VjdGlvbiBweyB3aWR0aDogMTAwJTsgZm9udC1zaXplOiAyMnB4OyB9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyB7IGhlaWdodDogYXV0bzsgZmxleC1kaXJlY3Rpb246IGNvbHVtbjsgfVxufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxMDgwcHgpe1xuLmRvY3Rvcl9jb250ZW50X3dyYXBwZXIge1xuICAgIHBhZGRpbmc6IDQwcHggMjBweDtcbn1cbi5kb2N0b3JfY29udGVudF93cmFwcGVyIC5tYXQtY2FyZC10aXRsZSB7XG4gIGZvbnQtc2l6ZTogMzJweDtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbn1cbi50YWJsZV9zdHJ1Y3R1cmUgLm1hdC1saXN0LWl0ZW0gLnRpdGxlX24ge1xuICBmb250LXNpemU6IDIycHg7XG59XG4udGFibGVfc3RydWN0dXJlIC5tYXQtbGlzdC1pdGVtIC50aXRsZV9hIHtcbiAgZm9udC1zaXplOiAyMHB4O1xufVxufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTAzOHB4KXtcbi5jb250ZW50X3dyYXBwZXIgLml0ZW1zZWN0aW9uIHsgd2lkdGg6IDMwLjklOyAgfVxufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA5OTFweCl7XG4uZG9jdG9yX2NvbnRlbnRfd3JhcHBlciB7IHRleHQtYWxpZ246IGNlbnRlcjsgfVxuLnBhdGllbnRfcmVwb3J0X3NlY3Rpb24gLnBhdGllbnRfdG9wX3NlYXJjaCB7IGRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IH1cbi5wYXRpZW50X3JlcG9ydF9zZWN0aW9uIC5wYXRpZW50X3RvcF9zZWFyY2ggLnNlYXJjaF9iYXIgeyBtYXJnaW4tYm90dG9tOiAyMHB4OyB9XG4ucGF0aWVudF9yZXBvcnRfc2VjdGlvbiAuYnV0dG9uX2FjdGlvbiBidXR0b24geyBwYWRkaW5nOiA4cHggMzBweDsgbWFyZ2luOiAwIDEwcHg7IHdpZHRoOiAxMDAlO31cbi5wYXRpZW50X3JlcG9ydF9zZWN0aW9uIC5idXR0b25fYWN0aW9uIHsgd2lkdGg6IGF1dG87IG1hcmdpbjogMCA1cHg7IGRpc3BsYXk6IGZsZXg7IGp1c3RpZnktY29udGVudDogY2VudGVyOyB9XG4uY29udGVudF93cmFwcGVyIC5pdGVtc2VjdGlvbiB7IHdpZHRoOiAzMC44JTsgfVxuLnRhYmxlX3N0cnVjdHVyZSAubWF0LWxpc3QtaXRlbSAudGl0bGVfYSB7IGZvbnQtc2l6ZTogMTZweDsgfVxuI21lbnVfYnV0dG9ueyBkaXNwbGF5OiBibG9jazt9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIHsgZGlzcGxheTogbm9uZTsgfVxuXG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIC5tYXQtbGlzdC1iYXNlIHtcbiAgZGlzcGxheTogYmxvY2s7XG59XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA5NzBweCl7XG4ucGF0aWVudF9yZXBvcnRfc2VjdGlvbiAuYnV0dG9uX2FjdGlvbiBidXR0b24geyB3aWR0aDogYXV0bzsgfVxuLnRhYmxlX3N0cnVjdHVyZSAubWF0LWxpc3QtaXRlbSAudGl0bGVfbiB7IGZvbnQtc2l6ZTogMThweDsgfVxuXG4ub25lIHsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEwMGRlZywgI2Y5Yzg1NiwgI2RkNjcxZCk7IH1cbi50d28geyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTAwZGVnLCAjMDk3M2QxLCAjMDUzMzVhKTsgfVxuLnRocmVlIHsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEwMGRlZywgIzQ0Y2Y4MCwgIzI2YTU1NSk7IH1cbn1cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDk1MHB4KXtcbiAgLmNvbnRlbnRfd3JhcHBlciAuaXRlbXNlY3Rpb24ge1xuICAgIHdpZHRoOiAzMC44JTtcbn1cbiAgLmNvbnRlbnRfd3JhcHBlciAuaXRlbXNlY3Rpb24gcCB7IGZvbnQtc2l6ZTogMjBweDsgfVxuICAudGFibGVfc3RydWN0dXJlIC5tYXQtbGlzdC1iYXNlIC5tYXQtbGlzdC1pdGVtLCAubWF0LWxpc3QtYmFzZSAubWF0LWxpc3Qtb3B0aW9uIHsgIG1hcmdpbi1ib3R0b206IDE2cHg7IH1cbn1cblxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA4NTBweCl7XG4uY29udGVudF93cmFwcGVyIC5pdGVtc2VjdGlvbiB7IHdpZHRoOiAzMC4yJTsgfVxuLyogaGlkaW5nIHNlYXJjaGJhciAqL1xuLnBhdGllbnRfcmVwb3J0X3NlY3Rpb24gLnBhdGllbnRfdG9wX3NlYXJjaCAuc2VhcmNoX2JhciB7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IHtcbiAgcGFkZGluZzogMCAxNnB4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xufVxuXG5cbn1cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDc2OHB4KXtcbi5jb250ZW50X3dyYXBwZXIgLml0ZW1zZWN0aW9uIHsgd2lkdGg6IDEwMCU7IG1hcmdpbjogMTZweDsgbWFyZ2luLWJvdHRvbTogMDsgfVxuLmNvbnRlbnRfd3JhcHBlciAuaXRlbXNlY3Rpb246bnRoLWxhc3QtY2hpbGQoMSkge21hcmdpbi1ib3R0b206IDE2cHg7IH1cbi5wYXRpZW50X3JlcG9ydF9zZWN0aW9uIC5idXR0b25fYWN0aW9uIHsgZGlzcGxheTogZmxleDsganVzdGlmeS1jb250ZW50OiBjZW50ZXI7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IH1cbi5wYXRpZW50X3JlcG9ydF9zZWN0aW9uIC5idXR0b25fYWN0aW9uIGJ1dHRvbiB7IG1hcmdpbi1ib3R0b206IDE2cHg7IHdvcmQtYnJlYWs6IGJyZWFrLXdvcmQ7IHdoaXRlLXNwYWNlOiBub3JtYWw7IGxpbmUtaGVpZ2h0OiAyMnB4OyB9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyB7IHBhZGRpbmc6IDAgMTZweDsgfVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnF1b3RhdGlvbiBwIHsgbWFyZ2luOiAxNnB4IDA7IH1cbi5kb2N0b3JfY29udGVudF93cmFwcGVyIHsgcGFkZGluZzogMjBweCAwcHg7IH1cbi50YWJsZV9zdHJ1Y3R1cmUgLm1hdC1saXN0LWl0ZW0gLnRpdGxlX2EgeyBmb250LXNpemU6IDE0cHg7IH1cbi5kb2N0b3JfY29udGVudF93cmFwcGVyIC5tYXQtY2FyZC10aXRsZSB7IGZvbnQtc2l6ZTogMjhweDsgbWFyZ2luLWJvdHRvbTogNXB4OyB0ZXh0LWFsaWduOiBsZWZ0OyBwYWRkaW5nOiAwIDE2cHg7IH1cblxuLnRhYmxlX3N0cnVjdHVyZSAubWF0LWxpc3QtYmFzZSAubWF0LWxpc3QtaXRlbSwgLm1hdC1saXN0LWJhc2UgLm1hdC1saXN0LW9wdGlvbiB7IG1hcmdpbi1ib3R0b206IDE2cHg7IH1cbi5mb290ZXJfc2VjdGlvbiAuZm9vdGVyX2NvbnRlbnQgeyB3aWR0aDogYXV0bzsgfVxuXG4udGFibGVfc3RydWN0dXJlIC5tYXQtbGlzdC1iYXNlIC5tYXQtbGlzdC1pdGVtLCAubWF0LWxpc3QtYmFzZSAubWF0LWxpc3Qtb3B0aW9uIHsgZGlzcGxheTogZmxleDsgdGV4dC1hbGlnbjogbGVmdDsgfVxufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA0ODBweCl7XG4uZG9jdG9yX2NvbnRlbnRfd3JhcHBlciAubWF0LWNhcmQtdGl0bGUgeyBmb250LXNpemU6IDI0cHg7IH1cbi5wYXRpZW50X3JlcG9ydF9zZWN0aW9uIC5wYXRpZW50X3RvcF9zZWFyY2ggaDEgeyBmb250LXNpemU6IDI0cHg7IH1cbn1cbi8qIGhlYWRlciBjc3MgKi9cbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93eyBoZWlnaHQ6IGF1dG87IH1cbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IC5sb2dvX3dyYXBwZXJ7IG1heC13aWR0aDogMjAwcHg7IGRpc3BsYXk6IGJsb2NrOyB9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAubG9nb193cmFwcGVyIGltZ3sgbWF4LXdpZHRoOiAxMDAlOyB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlOyB9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvd3sganVzdGlmeS1jb250ZW50OiBzcGFjZS1ldmVubHk7IHBhZGRpbmc6IDAgNDBweDt9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIHsgbWFyZ2luLWJvdHRvbTogMHB4O31cbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IC5xdW90YXRpb24gcHsgZm9udC1mYW1pbHk6IFwiUm9ib3RvTWVkaXVtXCI7IGZvbnQtc2l6ZTogMzBweDsgY29sb3I6ICMwMDIwMzU7IHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7IG1hcmdpbjogMDsgd2hpdGUtc3BhY2U6IG5vcm1hbDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO31cbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IC5wcm9maWxlX3NlY3Rpb24geyBkaXNwbGF5OiBmbGV4OyBib3JkZXItbGVmdDogMXB4IHNvbGlkICNlMmRlZGU7IHBhZGRpbmctbGVmdDogMjBweDsgfVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnByb2ZpbGVfc2VjdGlvbiAudXNlcm5hbWV7IHBhZGRpbmctcmlnaHQ6IDIwcHg7IGRpc3BsYXk6IGJsb2NrOyB9XG4vKkVuZCBoZWFkZXIgY3NzICovXG5cblxuLmFkZF9mb3JteyB3aWR0aDogODAlOyBtYXJnaW46IDIwcHggYXV0bzsgYmFja2dyb3VuZDogI2YzZjNmMzsgcGFkZGluZzogMTZweCAxMHB4OyBwYWRkaW5nLWJvdHRvbTogMjVweDsgYm9yZGVyOiAxcHggc29saWQgIzkxZTdmZjt9XG4uYWRkX2Zvcm0gLmZvcm1fd3JhcHBlciAubWF0LWZvcm0tZmllbGR7IHdpZHRoOiA0OSU7IG1hcmdpbjogMC41JTsgfVxuLmFkZF9mb3JtIC5mb3JtX3dyYXBwZXIgdGV4dGFyZWF7IHJlc2l6ZTogbm9uZTt9XG4uYWRkX2Zvcm0gaDJ7IGZvbnQtZmFtaWx5OiBcIlJvYm90b0JsYWNrXCI7IHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7IGZvbnQtc2l6ZTogMjRweDsgcGFkZGluZzogMCA2cHg7IGNvbG9yOiAjMWRiY2U5OyB9XG4uYWRkX2Zvcm0gLnN1Ym1pdF9mb3JtIHsgZGlzcGxheTogYmxvY2s7IHdpZHRoOiAxMDAlOyB0ZXh0LWFsaWduOiBjZW50ZXI7IG1hcmdpbi10b3A6IDMwcHg7IH1cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0gYnV0dG9ueyBib3JkZXItcmFkaXVzOiA1cHg7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxODBkZWcsICNmOWRjMTksICNkYWE1MDUpOyBjb2xvcjogIzVlMzYxOTsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgZm9udC1mYW1pbHk6IFwiUm9ib3RvQmxhY2tcIjsgZm9udC1zaXplOiAyNXB4OyBwYWRkaW5nOiA4cHg7XG53aWR0aDogMzkwcHg7IGJvcmRlcjogM3B4IHNvbGlkICNkNTlkMDE7IH1cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0gYnV0dG9uOm50aC1jaGlsZCgxKXsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE4MGRlZywgI2YyYmUwMCwgI2E1MmEwOCk7IGNvbG9yOiAjZjNmM2YzOyBib3JkZXI6IDJweCBzb2xpZCAjYmIzYzBkOyBtYXJnaW4tcmlnaHQ6IDE2cHg7IH1cbi5hZGRfZm9ybSAucmV0dXJuX2J1dHRvbiB7IGJhY2tncm91bmQ6ICMxZGJjZTk7IGNvbG9yOiAjZmZmOyBtYXJnaW4tYm90dG9tOiAxMnB4O31cblxuXG5cblxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTQ2MHB4KXtcbiAgLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnF1b3RhdGlvbiBwIHsgZm9udC1zaXplOiAyNHB4OyBsaW5lLWhlaWdodDogMjZweDt9XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDEwMDBweCl7XG4gIC5hZGRfZm9ybSAuc3VibWl0X2Zvcm0gYnV0dG9uIHsgd2lkdGg6IDQ4JTsgfVxufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogOTkxcHgpe1xuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgeyBmbGV4LWRpcmVjdGlvbjogY29sdW1uOyBwYWRkaW5nOiAyMHB4O31cbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IC5xdW90YXRpb24gcCB7IG1hcmdpbi10b3A6IDE2cHg7IH1cbn1cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDc2OHB4KXtcbiAgLmFkZF9mb3JtIC5mb3JtX3dyYXBwZXIgLm1hdC1mb3JtLWZpZWxkIHsgd2lkdGg6IDEwMCU7IG1hcmdpbjogMDsgfVxufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNTc2cHgpe1xuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b24geyBmb250LXNpemU6IDIycHg7IHBhZGRpbmc6IDJweDsgfVxuXG4uYWRkX2Zvcm0gLnN1Ym1pdF9mb3JtIGJ1dHRvbiB7IHdpZHRoOiAxMDAlOyBtYXJnaW46IDA7IG1hcmdpbi10b3A6IDIwcHg7IH1cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0geyBkaXNwbGF5OiBmbGV4OyBmbGV4LWRpcmVjdGlvbjogY29sdW1uLXJldmVyc2U7IHRleHQtYWxpZ246IGNlbnRlcjsgbWFyZ2luLXRvcDogMHB4OyB9XG4uYWRkX2Zvcm0gLnN1Ym1pdF9mb3JtIGJ1dHRvbjpudGgtY2hpbGQoMSkgeyBtYXJnaW4tcmlnaHQ6IDA7IG1hcmdpbi10b3A6IDIwcHg7IH1cbn1cblxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMzYwcHgpe1xuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnF1b3RhdGlvbiBwIHsgZm9udC1zaXplOiAxNnB4OyBsaW5lLWhlaWdodDogMjJweDsgfVxuLmFkZF9mb3JtIGgyIHsgZm9udC1zaXplOiAyMnB4OyBsaW5lLWhlaWdodDogMjRweDsgdGV4dC1hbGlnbjogY2VudGVyOyB9XG59XG5cblxuLyogLmFkZF9mb3JtIC50ZXN0X2RhdGVfd3JhcHBlcnsgZGlzcGxheTogaW5saW5lLWJsb2NrOyB9ICovXG4uYWRkX2Zvcm0gLnRlc3RfZGF0ZV93cmFwcGVyIC5tYXQtY2FyZC1hY3Rpb25zLCAuYWRkX2Zvcm0gLnRlc3RfZGF0ZV93cmFwcGVyIC5tYXQtY2FyZC1jb250ZW50LCAuYWRkX2Zvcm0gLnRlc3RfZGF0ZV93cmFwcGVyIC5tYXQtY2FyZC1zdWJ0aXRsZSB7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBtYXJnaW4tYm90dG9tOiAxNnB4O1xuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbn1cbi5hZGRfZm9ybSAubWF0LWNhcmQtY29udGVudCBsYWJlbCAsIC5hZGRfZm9ybSAucGF0aWVudF9kaWFnbm90ZXMgbGFiZWx7IGZvbnQtZmFtaWx5OiBcIlJvYm90b01lZGl1bVwiOyBjb2xvcjogIzAxMDkwYzsgZm9udC1zaXplOiAxNnB4OyBtYXJnaW46IDAgNXB4fVxuLmFkZF9mb3JtIC5tYXQtY2FyZC1jb250ZW50IGxhYmVsICwgXG4uYWRkX2Zvcm0gLnBhdGllbnRfZGlhZ25vdGVzIGxhYmVseyBmb250LWZhbWlseTogXCJSb2JvdG9NZWRpdW1cIjsgY29sb3I6ICMwMTA5MGM7IGZvbnQtc2l6ZTogMTZweDsgbWFyZ2luOjEwcHg7bGluZS1oZWlnaHQ6IDIwcHg7fVxuXG5cbi5hZGRfZm9ybSAubWF0LWNhcmQtY29udGVudCAubWF0LWNoZWNrYm94IHsgbWFyZ2luOiAwIDVweDsgfVxuLmFkZF9mb3JtIC5tYXQtY2FyZC1jb250ZW50ICxcbi5hZGRfZm9ybSAucGF0aWVudF9kaWFnbm90ZXMgLm1hdC1mb3JtLWZpZWxkIHtcbiAgIFxuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIG1hcmdpbjogMCAxMHB4O1xufVxuLmFkZF9mb3JtIC5wYXRpZW50X2RpYWdub3Rlc3sgd2lkdGg6IGF1dG87IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IGRpc3BsYXk6IGZsZXg7IG1hcmdpbjogMCA4cHg7IGJvcmRlcjogMnB4IHNvbGlkICM0M2NlZjU7IGJhY2tncm91bmQ6ICNmZmY7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7fVxuLmFkZF9mb3JtIC5wYXRpZW50X2RpYWdub3Rlc3sgd2lkdGg6IGF1dG87IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IGRpc3BsYXk6IGZsZXg7IG1hcmdpbjogMCAyMHB4O31cbi5hZGRfZm9ybSAucGF0aWVudF9kaWFnbm90ZXMgLmV4YW1wbGUtZnVsbC13aWR0aCB0ZXh0YXJlYXsgcmVzaXplOiBub25lOyB9XG5cbiJdfQ== */");
 
 /***/ }),
 
@@ -8172,34 +8352,97 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************************************************************************!*\
   !*** ./src/app/components/common/upload-dialog-box/upload-dialog-box.component.ts ***!
   \************************************************************************************/
-/*! exports provided: UploadDialogBoxComponent, DialogContentExampleDialog */
+/*! exports provided: UploadDialogBoxComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UploadDialogBoxComponent", function() { return UploadDialogBoxComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogContentExampleDialog", function() { return DialogContentExampleDialog; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+/* harmony import */ var _services_http_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../services/http-service.service */ "./src/app/services/http-service.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+
+
+
+
 
 
 
 let UploadDialogBoxComponent = class UploadDialogBoxComponent {
-    constructor(dialog) {
+    constructor(dialog, fb, cookie, http, snackBar) {
         this.dialog = dialog;
-    }
-    openDialog() {
-        const dialogRef = this.dialog.open(DialogContentExampleDialog);
-        dialogRef.afterClosed().subscribe(result => {
-            console.log(`Dialog result: ${result}`);
+        this.fb = fb;
+        this.cookie = cookie;
+        this.http = http;
+        this.snackBar = snackBar;
+        this.signatureArray = [];
+        this.configData = {
+            baseUrl: "http://3.15.236.141:5005/",
+            endpoint: "uploads",
+            size: "51200",
+            format: ["jpg", "jpeg", "png", "bmp", "zip", 'html'],
+            type: "signature-file",
+            path: "signature-file",
+            prefix: "signature-file"
+        };
+        this.user_token = cookie.get('jwtToken');
+        this.techUploadForm = this.fb.group({
+            uploadfile: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
         });
     }
     ngOnInit() {
     }
+    techUploadFormSubmit() {
+        if (this.configData.files) {
+            if (this.configData.files.length > 1) {
+                this.ErrCode = true;
+                return;
+            }
+            this.techUploadForm.value.uploadfile =
+                {
+                    "basepath": this.configData.files[0].upload.data.basepath + '/'
+                        + this.configData.path + '/',
+                    "image": this.configData.files[0].upload.data.data.fileservername,
+                    "name": this.configData.files[0].name,
+                    "type": this.configData.files[0].type
+                };
+            this.signatureArray = this.techUploadForm.value.uploadfile;
+            console.log("array", this.signatureArray);
+        }
+        else {
+            this.techUploadForm.value.uploadfile = false;
+        }
+        this.techUploadForm.controls['uploadfile'].patchValue(this.signatureArray);
+        console.log("upload in tech dashboard", this.techUploadForm.value.uploadfile);
+        if (this.techUploadForm.valid) {
+            var data = {
+                "source": "doctor_signature",
+                "data": this.techUploadForm.value,
+                "token": this.user_token
+            };
+            this.http.httpViaPost("addorupdatedata", data)
+                .subscribe(response => {
+                if (response.status = "success") {
+                    setTimeout(() => {
+                    }, 1000);
+                }
+                else {
+                    alert("Error Occured");
+                }
+            });
+        }
+    }
 };
 UploadDialogBoxComponent.ctorParameters = () => [
-    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] }
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"] },
+    { type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_5__["HttpServiceService"] },
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSnackBar"] }
 ];
 UploadDialogBoxComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -8208,15 +8451,6 @@ UploadDialogBoxComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./upload-dialog-box.component.css */ "./src/app/components/common/upload-dialog-box/upload-dialog-box.component.css")).default]
     })
 ], UploadDialogBoxComponent);
-
-let DialogContentExampleDialog = class DialogContentExampleDialog {
-};
-DialogContentExampleDialog = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'upload-dialog-content',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./upload-dialog-content.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/common/upload-dialog-box/upload-dialog-content.html")).default,
-    })
-], DialogContentExampleDialog);
 
 
 
@@ -8247,13 +8481,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoctorDashboardComponent", function() { return DoctorDashboardComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+/* harmony import */ var _common_upload_dialog_box_upload_dialog_box_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../common/upload-dialog-box/upload-dialog-box.component */ "./src/app/components/common/upload-dialog-box/upload-dialog-box.component.ts");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
+
+
 
 
 let DoctorDashboardComponent = class DoctorDashboardComponent {
-    constructor() { }
+    constructor(dialog, commonFunction) {
+        this.dialog = dialog;
+        this.commonFunction = commonFunction;
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
+    }
     ngOnInit() {
     }
+    openDialog() {
+        const dialogRef = this.dialog.open(_common_upload_dialog_box_upload_dialog_box_component__WEBPACK_IMPORTED_MODULE_3__["UploadDialogBoxComponent"], {
+            width: '1000px',
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log(`Dialog result: ${result}`);
+        });
+    }
 };
+DoctorDashboardComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_4__["CommonFunction"] }
+];
 DoctorDashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-doctor-dashboard',
@@ -8364,6 +8621,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
 /* harmony import */ var _common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../common/dialog-box/dialog-box.component */ "./src/app/components/common/dialog-box/dialog-box.component.ts");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 
@@ -8375,7 +8634,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AddEditPatientComponent = class AddEditPatientComponent {
-    constructor(fb, activeRoute, router, httpService, datePipe, cookie, snakBar, dialog) {
+    constructor(fb, activeRoute, router, httpService, datePipe, cookie, snakBar, dialog, commonFunction) {
         this.fb = fb;
         this.activeRoute = activeRoute;
         this.router = router;
@@ -8384,8 +8643,11 @@ let AddEditPatientComponent = class AddEditPatientComponent {
         this.cookie = cookie;
         this.snakBar = snakBar;
         this.dialog = dialog;
+        this.commonFunction = commonFunction;
         this.buttonText = "Submit";
         this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](new Date());
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
         this.user_token = cookie.get('jwtToken');
         this.patientAddEditForm = this.fb.group({
             patientName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(30)]],
@@ -8427,7 +8689,7 @@ let AddEditPatientComponent = class AddEditPatientComponent {
     /**for validation purpose**/
     /**modal end here */
     resetAddEditForm() {
-        this.patientAddEditForm.reset();
+        this.formDirective.resetForm();
     }
     patientAddEditFormSubmit() {
         let x;
@@ -8491,8 +8753,12 @@ AddEditPatientComponent.ctorParameters = () => [
     { type: _angular_common__WEBPACK_IMPORTED_MODULE_5__["DatePipe"] },
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_6__["CookieService"] },
     { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSnackBar"] },
-    { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatDialog"] }
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatDialog"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_9__["CommonFunction"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], { static: false })
+], AddEditPatientComponent.prototype, "formDirective", void 0);
 AddEditPatientComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-add-edit-patient',
@@ -8535,6 +8801,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_http_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../services/http-service.service */ "./src/app/services/http-service.service.ts");
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 
@@ -8543,13 +8811,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let BulkUploadComponent = class BulkUploadComponent {
-    constructor(fb, activeRoute, router, httpService, cookie, snakBar) {
+    constructor(fb, activeRoute, router, httpService, cookie, snakBar, commonFunction) {
         this.fb = fb;
         this.activeRoute = activeRoute;
         this.router = router;
         this.httpService = httpService;
         this.cookie = cookie;
         this.snakBar = snakBar;
+        this.commonFunction = commonFunction;
         this.configData = {
             baseUrl: "http://3.15.236.141:5005/",
             endpoint: "uploads",
@@ -8560,6 +8829,8 @@ let BulkUploadComponent = class BulkUploadComponent {
             prefix: "patient-file"
         };
         this.images_array = [];
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
         this.techBulkUploadForm = this.fb.group({
             batchName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(40)]],
             uploadFile: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
@@ -8586,7 +8857,6 @@ let BulkUploadComponent = class BulkUploadComponent {
                         "type": this.configData.files[loop].type
                     });
             }
-            // this.techBulkUploadForm.value.uploadFile = 
             this.techBulkUploadForm.controls['uploadFile'].patchValue(this.images_array);
         }
         else {
@@ -8597,7 +8867,7 @@ let BulkUploadComponent = class BulkUploadComponent {
         // }
         if (this.techBulkUploadForm.valid) {
             var data = {
-                "source": "patient_bulk_upload",
+                "source": "patient_management",
                 "data": this.techBulkUploadForm.value,
                 "token": this.user_token
             };
@@ -8624,7 +8894,8 @@ BulkUploadComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
     { type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_4__["HttpServiceService"] },
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"] },
-    { type: _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSnackBar"] }
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSnackBar"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_7__["CommonFunction"] }
 ];
 BulkUploadComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -8667,6 +8938,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var _services_http_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/http-service.service */ "./src/app/services/http-service.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
 
 
 
@@ -8674,11 +8947,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let TechDashboardComponent = class TechDashboardComponent {
-    constructor(cookie, http, httpService, activatedRoute) {
+    constructor(cookie, http, httpService, activatedRoute, commonFunction) {
         this.cookie = cookie;
         this.http = http;
         this.httpService = httpService;
         this.activatedRoute = activatedRoute;
+        this.commonFunction = commonFunction;
         this.user_data = {};
         /**lib-listing start here**/
         this.allUserData = [];
@@ -8701,14 +8975,37 @@ let TechDashboardComponent = class TechDashboardComponent {
             textsearch: [{ label: "Search By Firstname", field: 'firstname' }],
         };
         this.TechDashboardAllData = [];
+        this.techSingleData = [];
+        this.userSingleData = {};
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
         let allData = {};
         allData = cookie.getAll();
         this.user_data = JSON.parse(allData.user_details);
-        this.user_cookie = cookie.get('jwtToken');
+        this.user_id = this.user_data.id;
+        this.user_token = cookie.get('jwtToken');
+        this.getTechData();
     }
     ngOnInit() {
         this.activatedRoute.data.forEach((data) => {
             this.TechDashboardAllData = data.techDashboardData.res;
+        });
+    }
+    getTechData() {
+        var data = {
+            "source": "users",
+            "condition": {
+                "tech_object": this.user_id
+            },
+            "token": this.user_token
+        };
+        this.httpService.httpViaPost('datalist', data)
+            .subscribe(response => {
+            let result = {};
+            result = response.res;
+            this.userSingleData = result[0];
+            console.log("soureshhhhhh", this.userSingleData.firstname);
+            console.log("soureshhhhhh123456", this.userSingleData);
         });
     }
 };
@@ -8716,7 +9013,8 @@ TechDashboardComponent.ctorParameters = () => [
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_2__["CookieService"] },
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] },
     { type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_4__["HttpServiceService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_6__["CommonFunction"] }
 ];
 TechDashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -9542,7 +9840,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/influxiq-4/Documents/Projects/aws-backend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /var/www/html/project/aws/aws-backend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

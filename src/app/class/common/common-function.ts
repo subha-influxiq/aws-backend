@@ -16,16 +16,36 @@ export class CommonFunction {
         for (let loop = 1; loop < urlArr.length; loop++) {
             urlArr[loop] = urlArr[loop].replace("-", " ");
             urlArr[loop] = this.titleCase(urlArr[loop]);
-            title = " | " + urlArr[loop].charAt(0).toUpperCase() + urlArr[loop].slice(1);
+            switch(urlArr[loop]) {
+                case 'Admin':
+                    break;
+                case 'Tech':
+                    break;
+                case 'Doctor':
+                    break;
+                case 'List':
+                    break;
+                case 'Add':
+                    title = title + ' - Create New ';
+                    break;
+                case 'Bulk Upload':
+                    title = title + ' - Bulk Report Upload ';
+                    break;
+                default:
+                    title += urlArr[loop] + ' ';
+                    break;
+            }
         }
 
-        let getToken = this.cookie.get('jwtToken');
+        let getToken: boolean = this.cookie.check('jwtToken');
+        console.log('=======', getToken);
+        console.log('-------', this.cookie.get('jwtToken'));
         if(getToken) {
             let allcookies: any = this.cookie.getAll();
             let userData = JSON.parse(allcookies.user_details);
-            title = userData.firstname + ' ' + userData.lastname + ' ' + title + ' | AWS Backend';
+            title = title + '| ' + userData.firstname + ' ' + userData.lastname + ' - AWS Backend';
         } else {
-            title = 'Welcome to AWS Backend ' + title;
+            title = 'Welcome to AWS Backend | ' + title;
         }
 
         /* Set Meta Data */

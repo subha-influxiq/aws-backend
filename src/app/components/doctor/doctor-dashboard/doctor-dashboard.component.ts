@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog} from '@angular/material/dialog';
 import { UploadDialogBoxComponent} from '../../common/upload-dialog-box/upload-dialog-box.component';
+import { CommonFunction } from '../../../class/common/common-function';
 
 @Component({
   selector: 'app-doctor-dashboard',
@@ -9,10 +10,14 @@ import { UploadDialogBoxComponent} from '../../common/upload-dialog-box/upload-d
 })
 export class DoctorDashboardComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public commonFunction: CommonFunction) {
+    /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
+  }
 
   ngOnInit() {
   }
+
   openDialog() {
     const dialogRef = this.dialog.open(UploadDialogBoxComponent,{
       width: '1000px',

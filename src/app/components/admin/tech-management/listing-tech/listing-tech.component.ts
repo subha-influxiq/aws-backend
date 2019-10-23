@@ -3,6 +3,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
 import { HttpServiceService } from '../../../../services/http-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CommonFunction } from '../../../../class/common/common-function';
+
 @Component({
   selector: 'app-listing-tech',
   templateUrl: './listing-tech.component.html',
@@ -37,7 +39,11 @@ export class ListingTechComponent implements OnInit {
     public user_cookie: any;
   public TechDashboardAllData: any = [];
   constructor(public cookie: CookieService, public http: HttpClient,
-    public httpService: HttpServiceService, public activatedRoute: ActivatedRoute) { 
+    public httpService: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
+      
+      /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
+
       this.user_cookie = cookie.get('jwtToken');
 
     }
