@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { MetaGuard } from '@ngx-meta/core';
 import { AuthguardService } from '../services/authguard.service';
 import { from } from 'rxjs';
 /* Resolve Service */

@@ -5,6 +5,7 @@ import { HttpServiceService } from '../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
+import { CommonFunction } from '../../../class/common/common-function';
 
 @Component({
   selector: 'app-account-settings',
@@ -30,15 +31,20 @@ export class AccountSettingsComponent implements OnInit {
   public headerFlag: string = null;
 
   constructor(public fb: FormBuilder, private datePipe: DatePipe,
-    public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute) {
-      /* Set header */
-      this.headerFlag = this.activeRoute.snapshot.url[0].path;
+    public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, public commonFunction: CommonFunction) {
+
+    /* Set header */
+    this.headerFlag = this.activeRoute.snapshot.url[0].path;
 
     this.user_token = cookie.get('jwtToken');
     let allcookies: any;
     allcookies = cookie.getAll();
+    
     this.cookiesData = JSON.parse(allcookies.user_details);
     this.cookies_id = this.cookiesData._id;
+
+    /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
 
     this.allStateCityData();
 

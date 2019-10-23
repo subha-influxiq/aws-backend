@@ -28,7 +28,9 @@ export class AdminHeaderComponent implements OnInit {
   /**logout function start here**/
   logout() {
     this.cookies.deleteAll();
-    this.router.navigateByUrl('/login');
+    setTimeout(() => {
+      this.router.navigateByUrl('/login');
+    }, 1000);
   }
   /**logout function end here**/
 

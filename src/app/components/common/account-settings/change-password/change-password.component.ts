@@ -5,6 +5,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
+import { CommonFunction } from '../../../../class/common/common-function';
 
 @Component({
   selector: 'app-change-password',
@@ -25,7 +26,11 @@ export class ChangePasswordComponent implements OnInit {
   public loader: any = false;
   public headerFlag: string = null;
 
-  constructor(public fb: FormBuilder, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, public httpService: HttpServiceService) {
+  constructor(public fb: FormBuilder, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, public httpService: HttpServiceService, public commonFunction: CommonFunction) {
+
+    /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
+
     this.headerFlag = this.activeRoute.snapshot.url[0].path;
     this.user_token = cookie.get('jwtToken');
     let allcookies: any;
