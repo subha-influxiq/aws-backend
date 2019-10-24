@@ -136,7 +136,16 @@
 }
 .bradcrumb{  display: block;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
-.container .searchbar span{  width: 60% ;
+.container .searchbar span{  width: 100% ;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}  
+.searchbar .mat-form-field .mat-form-field-flex {
+  display: inline-flex;
+  align-items: baseline;
+  box-sizing: border-box;
+  width: 100%;
+  border: .5px solid #424242;
+  border-radius: 4px;
+  padding: 0px 10px;
 }
