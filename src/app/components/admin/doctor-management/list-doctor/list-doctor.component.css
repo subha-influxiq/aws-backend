@@ -34,7 +34,6 @@
 }
 
 
-
 @media screen and (max-width: 1700px){
   .content_wrapper .itemsection p { font-size: 26px; }
   .one, .two, .three { background-position: 100% center; }
@@ -161,3 +160,15 @@
 .doctor_content_wrapper .mat-card-title { font-size: 24px; }
 .patient_report_section .patient_top_search h1 { font-size: 24px; }
 }
+
+
+  .container .searchbar span{  width: 60%!important;
+  display: flex!important;
+  justify-content: space-between!important;
+}
+/* .searchbar .mat-form-field,  .searchbar span>.mat-form-field{
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  MARGIN: 0 70px!important;
+} */

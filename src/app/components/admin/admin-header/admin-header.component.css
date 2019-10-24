@@ -13,8 +13,7 @@
 
 
 .techdashboard_header   .quotation .mat-list-base{ display: flex;}
-.techdashboard_header .quotation .mat-list-base .mat-list-item:before{ content: "";
-  width: 2px;
+.techdashboard_header .quotation .mat-list-base .mat-list-item:before{ content: ""; left: -15px;  width: 2px;
   height: 15px;
   background: #1c1c1c;
   display: inline-block;

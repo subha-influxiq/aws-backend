@@ -66,7 +66,10 @@ import { BillerHeaderComponent } from './components/biller/biller-header/biller-
 
 /* testing purpose start here */
 import { TestComponent, DialogContentExampleDialog } from './components/test/test.component';
-import { FileUploadModule } from 'file-upload';
+import { FileUploadModule } from 'file-upload'; 
+import { HealthriskSystemEncounterComponent } from './components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component';
+import { SystemSuperbillComponent } from './components/admin/tech-management/system-superbill/system-superbill.component';
+import { HealthRiskAnalysisComponent } from './components/admin/tech-management/health-risk-analysis/health-risk-analysis.component';
 
 
 @NgModule({
@@ -106,7 +109,9 @@ import { FileUploadModule } from 'file-upload';
     UploadDialogBoxComponent,
     BillerHeaderComponent,
     DoctorHeaderComponent,
-    TechHeaderComponent,
+    TechHeaderComponent, 
+    HealthriskSystemEncounterComponent, SystemSuperbillComponent,
+    HealthRiskAnalysisComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

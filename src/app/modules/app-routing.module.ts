@@ -42,6 +42,9 @@ import { DoctorDashboardComponent } from '../components/doctor/doctor-dashboard/
 
 /* Test Component */
 import { TestComponent } from '../components/test/test.component';
+import { HealthriskSystemEncounterComponent } from '../components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component';
+import { SystemSuperbillComponent } from '../components/admin/tech-management/system-superbill/system-superbill.component';
+import { HealthRiskAnalysisComponent } from '../components/admin/tech-management/health-risk-analysis/health-risk-analysis.component';
 
 const routes: Routes = [
   /* Auth Route */
@@ -197,6 +200,10 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+
+  {path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent},
+  {path: 'tech/system-superbill', component: SystemSuperbillComponent},
+  {path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent},
 ];
 
 @NgModule({
