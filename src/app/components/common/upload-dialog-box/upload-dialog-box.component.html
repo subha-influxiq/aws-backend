@@ -2,22 +2,30 @@
     <form class="example-form" autocomplete="off" name="techBulkUploadForm" [formGroup]="techUploadForm"
         (ngSubmit)="techUploadFormSubmit()">
         <mat-dialog-content class="mat-typography">
-            <lib-file-upload [config]="configData"></lib-file-upload>
-            <mat-error *ngIf="ErrCode==true">Please add just one image.</mat-error>
+            <!-- <lib-file-upload [config]="configData"></lib-file-upload>
+            <mat-error *ngIf="ErrCode==true">Please add just one image.</mat-error> -->
+            <label>Signature : </label>
+            <mat-form-field>
+                <input matInput [formControl]="techUploadForm.controls['sign']"
+                    (blur)="inputUntouch(techUploadForm,'sign')">
+                <mat-error *ngIf="techUploadForm.controls['sign'].touched && !techUploadForm.controls['sign'].valid
+          && techUploadForm.controls['sign'].errors.required">
+                    Signature field can not be blank</mat-error>
+            </mat-form-field>
 
             <span class="submit_form">
                 <button mat-flat-button mat-dialog-close> Cancel </button>
                 <button mat-flat-button type="submit" [mat-dialog-close]="true" cdkFocusInitial> Submit </button>
-              </span>
+            </span>
         </mat-dialog-content>
-        </form>
-        </mat-card>
-        <!-- <mat-dialog-actions align="end">
+    </form>
+</mat-card>
+<!-- <mat-dialog-actions align="end">
             <button mat-button mat-dialog-close>Cancel</button>
             <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
         </mat-dialog-actions> -->
 
 
-        <!-- Copyright 2019 Google Inc. All Rights Reserved.
+<!-- Copyright 2019 Google Inc. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
     can be found in the LICENSE file at http://angular.io/license -->

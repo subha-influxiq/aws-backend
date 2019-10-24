@@ -32,35 +32,42 @@ export class UploadDialogBoxComponent implements OnInit {
     public http: HttpServiceService, public snackBar: MatSnackBar) {
     this.user_token = cookie.get('jwtToken');
     this.techUploadForm = this.fb.group({
-      uploadfile: ['', Validators.required]
+      sign: ['', Validators.required]
     })
   }
 
   ngOnInit() {
   }
+  inputUntouch(form: any, val: any) {
 
+    form.controls[val].markAsUntouched();
+  }
   techUploadFormSubmit() {
-    if (this.configData.files) {
-      if (this.configData.files.length > 1) {
-        this.ErrCode = true;
-        return;
-      }
-      this.techUploadForm.value.uploadfile =
-        {
-          "basepath": this.configData.files[0].upload.data.basepath + '/'
-            + this.configData.path + '/',
-          "image": this.configData.files[0].upload.data.data.fileservername,
-          "name": this.configData.files[0].name,
-          "type": this.configData.files[0].type
-        };
-      this.signatureArray = this.techUploadForm.value.uploadfile;
-      console.log("array", this.signatureArray);
+    // if (this.configData.files) {
+    //   if (this.configData.files.length > 1) {
+    //     this.ErrCode = true;
+    //     return;
+    //   }
+    //   this.techUploadForm.value.uploadfile =
+    //     {
+    //       "basepath": this.configData.files[0].upload.data.basepath + '/'
+    //         + this.configData.path + '/',
+    //       "image": this.configData.files[0].upload.data.data.fileservername,
+    //       "name": this.configData.files[0].name,
+    //       "type": this.configData.files[0].type
+    //     };
+    //   this.signatureArray = this.techUploadForm.value.uploadfile;
+    //   console.log("array", this.signatureArray);
 
-    } else {
-      this.techUploadForm.value.uploadfile = false;
+    // } else {
+    //   this.techUploadForm.value.uploadfile = false;
+    // }
+    // this.techUploadForm.controls['uploadfile'].patchValue(this.signatureArray);
+    // console.log("upload in tech dashboard", this.techUploadForm.value.uploadfile);
+    let x: any;
+    for (x in this.techUploadForm.controls) {
+      this.techUploadForm.controls[x].markAsTouched();
     }
-    this.techUploadForm.controls['uploadfile'].patchValue(this.signatureArray);
-    console.log("upload in tech dashboard", this.techUploadForm.value.uploadfile);
     if (this.techUploadForm.valid) {
       var data = {
         "source": "doctor_signature",

@@ -146,7 +146,7 @@ export class AddEditComponent implements OnInit {
           this.snackBar.open(this.message, action, {
             duration: 2000,
           });
-          this.ResetAddEditForm();
+          this.adminManagementAddEditForm.reset();
           setTimeout(() => {
             this.router.navigateByUrl('admin/admin-management');
           }, 2200);

@@ -114,7 +114,9 @@ export class AddEditPatientComponent implements OnInit {
 
       this.httpService.httpViaPost("addorupdatedata",data).subscribe(response=>{
         if(response.status="success"){
-          this.resetAddEditForm();
+          this.patientAddEditForm.reset();
+
+          // this.resetAddEditForm();
 
           /* Open modal */
           let data: any = {
