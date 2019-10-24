@@ -11,10 +11,10 @@ export class ResetpasswordComponent implements OnInit {
 
   public fromTitleName: any = 'Reset From';
   public logo: any = './assets/images/logo.png';
-  public serverUrl: any = 'https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/';
+  public serverUrl: any = 'https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/';
   public addEndpoint: any = {
     endpoint:'addorupdatedata',
-    source:'usermanagement'
+    source:'users'
   };
 
   constructor(public commonFunction: CommonFunction) {
