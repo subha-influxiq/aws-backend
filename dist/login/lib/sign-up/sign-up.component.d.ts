@@ -26,7 +26,9 @@ export declare class SignUpComponent implements OnInit {
     addEndpointValue: any;
     logoValue: any;
     typevalue: any;
+    buttonNameValue: any;
     formTitle: any;
+    buttonName: any;
     serverUrl: any;
     logo: any;
     modaleLogo: any;
@@ -43,6 +45,7 @@ export declare class SignUpComponent implements OnInit {
     forgetpassword(): void;
     login(): void;
     inputUntouched(val: any): void;
+    customFunction(link: any): void;
 }
 export declare class successModalComponent {
     dialogRef: MatDialogRef<successModalComponent>;
