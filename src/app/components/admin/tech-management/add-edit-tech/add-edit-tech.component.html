@@ -46,6 +46,9 @@
             <mat-error *ngIf="TechManagementAddEditForm.controls['email'].touched && !TechManagementAddEditForm.controls['email'].valid
             && TechManagementAddEditForm.controls['email'].errors.required">
                  E-Mail field can not be blank</mat-error>
+                 <mat-error
+                 *ngIf="!TechManagementAddEditForm.controls['email'].valid && !TechManagementAddEditForm.controls['email'].errors.required">
+                 Email is not valid</mat-error>
         </mat-form-field>
   
         <mat-form-field appearance="fill">

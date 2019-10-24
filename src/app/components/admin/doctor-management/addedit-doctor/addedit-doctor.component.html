@@ -55,8 +55,7 @@
         <input matInput type="email" placeholder="jamesanderson@gmail.com" formControlName="email">
         <mat-error *ngIf="!docManageForm.controls['email'].valid && docManageForm.controls['email'].errors.required">Email is required.</mat-error>
         <mat-error *ngIf="!docManageForm.controls['email'].valid && !docManageForm.controls['email'].errors.required">
-          Email
-          is not valid</mat-error>
+          Email is not valid</mat-error>
       </mat-form-field>
 
 

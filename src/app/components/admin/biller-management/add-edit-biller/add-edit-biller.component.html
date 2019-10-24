@@ -46,7 +46,10 @@
           (blur)="inputUntouch(billerManagementAddEditForm,'email')">
         <mat-error *ngIf="billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid
             && billerManagementAddEditForm.controls['email'].errors.required">
-          E-Mail field can not be blank</mat-error>
+          E-Mail  can not be blank</mat-error>
+          <mat-error
+          *ngIf="!billerManagementAddEditForm.controls['email'].valid && !billerManagementAddEditForm.controls['email'].errors.required">
+          Email is not valid</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
