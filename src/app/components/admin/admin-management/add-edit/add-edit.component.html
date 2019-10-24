@@ -8,7 +8,7 @@
 
 <span class="add_header">
 
-  <span class="bradcrumb"><a [routerLink]="['/dashboard/admin']">Dashboard &nbsp;/</a> &nbsp; Add Admin</span>
+  <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Add Admin</span>
 </span>
 
 <mat-card class="add_form">
@@ -33,7 +33,7 @@
           (blur)="inputUntouch(adminManagementAddEditForm,'lastname')">
         <mat-error *ngIf="adminManagementAddEditForm.controls['lastname'].touched && !adminManagementAddEditForm.controls['lastname'].valid
            && adminManagementAddEditForm.controls['lastname'].errors.required">
-          Last Name field can not be blank</mat-error>
+          Last Name can not be blank</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
@@ -42,7 +42,10 @@
           (blur)="inputUntouch(adminManagementAddEditForm,'email')">
         <mat-error *ngIf="adminManagementAddEditForm.controls['email'].touched && !adminManagementAddEditForm.controls['email'].valid
             && adminManagementAddEditForm.controls['email'].errors.required">
-          E-Mail field can not be blank</mat-error>
+          E-Mail can not be blank</mat-error>
+          <mat-error
+          *ngIf="!adminManagementAddEditForm.controls['email'].valid && !adminManagementAddEditForm.controls['email'].errors.required">
+          Email is not valid</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill">

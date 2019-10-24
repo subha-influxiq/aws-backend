@@ -51,7 +51,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'forget-password', component: ForgetpasswordComponent },
-  { path: 'reset-password', component: ResetpasswordComponent },
+  { path: 'reset-password/:_id', component: ResetpasswordComponent },
   { path: 'sign-up', redirectTo: '/login', pathMatch: 'full' },
 
   /* Admin Route */

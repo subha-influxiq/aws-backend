@@ -11,7 +11,7 @@ import { CommonFunction } from '../../../../class/common/common-function';
 export class ManageAdminListComponent implements OnInit {
   
   public TechDashboardAllData: any = [];
-  public allUserData_skip: any = ["confirmpassword", "password", "created_at", "_id","id","updated_at","phoneno","type"];
+  public allUserData_skip: any = ["confirmpassword","accesscode", "password", "created_at", "_id","id","updated_at","phoneno","type"];
   public editUrl: any = "admin/admin-management/edit";
   public allUserData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name",

@@ -52,7 +52,11 @@
                     (blur)="inputUntouch(AccountSettingsForm,'email')">
                 <mat-error *ngIf="AccountSettingsForm.controls['email'].touched && !AccountSettingsForm.controls['email'].valid
             && AccountSettingsForm.controls['email'].errors.required">
-                    E-Mail field can not be blank</mat-error>
+                    E-Mail  can not be blank</mat-error>
+                    <mat-error
+                    *ngIf="!AccountSettingsForm.controls['email'].valid && !AccountSettingsForm.controls['email'].errors.required">
+                    Email is not valid</mat-error>
+                    
             </mat-form-field>
 
             <mat-form-field appearance="fill">

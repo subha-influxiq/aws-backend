@@ -10,7 +10,7 @@ export class ForgetpasswordComponent implements OnInit {
 
   public logo: any = '../../assets/favicon.ico';
   // public signUpRouteingUrl: any = 'sign-up';
-  public serverUrl:any = 'http://166.62.39.137:5050/';
+  public serverUrl:any = 'https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/';
   public addEndpoint: any = {
     endpoint:'forgetpassword'
   };
@@ -33,7 +33,7 @@ export class ForgetpasswordComponent implements OnInit {
 
   public buttonName: any = 'Update Password';
 
-  public domanUrl: any = 'http://localhost:4200/resetpassword';
+  public domanUrl: any = 'http://localhost:4201/reset-password';
 
   constructor(public commonFunction: CommonFunction) {
 
