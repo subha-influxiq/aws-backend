@@ -136,3 +136,7 @@
 }
 .bradcrumb{  display: block;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
+.container .searchbar span{  width: 60% ;
+  display: flex;
+  justify-content: space-between;
+}

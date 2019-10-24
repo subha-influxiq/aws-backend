@@ -7,6 +7,7 @@
 }
 @media screen and (max-width: 1240px){
 .main_wrapper .login_wrapper { width: 450px; }
+.DataTable .container .searchbar span { width: 62%; }
 }
 
 @media screen and (max-width: 1199px){
