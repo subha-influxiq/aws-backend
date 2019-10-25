@@ -69,7 +69,7 @@ export class AddEditPatientComponent implements OnInit {
         ValsR              :  ['',Validators.required],
         BMI                :  ['',Validators.required],
         bloodPressure      :  ['',Validators.required],
-        leaveNotes         :  ['',Validators.required]
+        leaveNotes         :  ['',Validators.required],
       })
     }
 
@@ -114,7 +114,7 @@ export class AddEditPatientComponent implements OnInit {
 
       this.httpService.httpViaPost("addorupdatedata",data).subscribe(response=>{
         if(response.status="success"){
-          this.patientAddEditForm.reset();
+          this.formDirective.resetForm();
 
           // this.resetAddEditForm();
 

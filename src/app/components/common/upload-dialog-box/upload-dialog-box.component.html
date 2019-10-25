@@ -4,15 +4,16 @@
         <mat-dialog-content class="mat-typography">
             <!-- <lib-file-upload [config]="configData"></lib-file-upload>
             <mat-error *ngIf="ErrCode==true">Please add just one image.</mat-error> -->
+            <p class="signaturefont">{{ sign }}</p>
             <label>Signature : </label>
             <mat-form-field>
-                <input matInput [formControl]="techUploadForm.controls['sign']"
+                <input name="sign" matInput [formControl]="techUploadForm.controls['sign']" [(ngModel)]="sign"
                     (blur)="inputUntouch(techUploadForm,'sign')">
                 <mat-error *ngIf="techUploadForm.controls['sign'].touched && !techUploadForm.controls['sign'].valid
           && techUploadForm.controls['sign'].errors.required">
                     Signature field can not be blank</mat-error>
             </mat-form-field>
-
+            
             <span class="submit_form">
                 <button mat-flat-button mat-dialog-close> Cancel </button>
                 <button mat-flat-button type="submit" [mat-dialog-close]="true" cdkFocusInitial> Submit </button>

@@ -132,11 +132,6 @@ export class AddEditBillerComponent implements OnInit {
 
   ResetAddEditForm() {
     this.formDirective.resetForm();
-    // this.billerManagementAddEditForm.markAsPristine();
-    // this.billerManagementAddEditForm.markAsUntouched();
-
-
-
   }
   
   BillerManagementAddFormSubmit() {
@@ -187,7 +182,7 @@ export class AddEditBillerComponent implements OnInit {
             duration: 2000,
           });
           // this.ResetAddEditForm();
-          this.billerManagementAddEditForm.reset();
+          this.formDirective.resetForm();
           setTimeout(() => {
             this.router.navigateByUrl("admin/biller-management")
           }, 2200);

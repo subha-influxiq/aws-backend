@@ -296,6 +296,13 @@ width: 390px; border: 3px solid #d59d01; }
 }
 .add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0 8px; border: 2px solid #43cef5; background: #fff;
   box-sizing: border-box;}
-.add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0 20px;}
+.add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0;}
 .add_form .patient_diagnotes .example-full-width textarea{ resize: none; }
 
+
+.add_form  .status_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly; margin: 0;
+}
+.add_form  .status_wrapper .mat-form-field { width: 35%; }

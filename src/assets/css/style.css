@@ -49,6 +49,13 @@
   font-weight: bold;
   font-style: normal;
 }
+@font-face {
+  font-family: 'AmandaSignature';
+  src: url('../fonts/AmandaSignatureRegular.woff2') format('woff2'),
+      url('../fonts/AmandaSignatureRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 
@@ -149,3 +156,4 @@
   border-radius: 4px;
   padding: 0px 10px;
 }
+.add_form .file_upload .uploadfilecontainer { width: 100%;}

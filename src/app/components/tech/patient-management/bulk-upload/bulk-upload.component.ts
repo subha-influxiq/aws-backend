@@ -34,8 +34,10 @@ export class BulkUploadComponent implements OnInit {
     this.commonFunction.setTitleMetaTags();
 
     this.techBulkUploadForm = this.fb.group({
-      batchName: ['', [Validators.required, Validators.maxLength(40)]],
-      uploadFile: ['', Validators.required]
+      batchName    : ['', [Validators.required, Validators.maxLength(40)]],
+      uploadFile   : ['', Validators.required],
+      status       : [''],
+      note         : ['',Validators.required],
     })
     this.user_token = cookie.get('jwtToken');
   }
@@ -53,6 +55,7 @@ export class BulkUploadComponent implements OnInit {
   
 
   techBulkUploadFormSubmit() {
+    console.log(this.techBulkUploadForm.value)
     if (this.configData) {
       for (const loop in this.configData.files) {
         this.images_array =

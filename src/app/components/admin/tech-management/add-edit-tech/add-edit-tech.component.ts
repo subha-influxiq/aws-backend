@@ -178,7 +178,9 @@ export class AddEditTechComponent implements OnInit {
           this.snackBar.open(this.message, action, {
             duration: 2000,
           });
-          this.TechManagementAddEditForm.reset();
+          // this.TechManagementAddEditForm.reset();
+          this.formDirective.resetForm();
+
 
           setTimeout(() => {
             this.router.navigateByUrl("admin/tech-management")

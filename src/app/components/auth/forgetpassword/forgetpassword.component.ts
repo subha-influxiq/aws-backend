@@ -33,7 +33,7 @@ export class ForgetpasswordComponent implements OnInit {
 
   public buttonName: any = 'Update Password';
 
-  public domanUrl: any = 'http://localhost:4201/reset-password';
+  public domanUrl: any = 'http://testbedpece.influxiq.com/reset-password';  
 
   constructor(public commonFunction: CommonFunction) {
 

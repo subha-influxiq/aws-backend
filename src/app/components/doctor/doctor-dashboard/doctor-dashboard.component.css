@@ -8,7 +8,7 @@
 .techdashboard_header .mat-toolbar-row .profile_section { display: flex; border-left: 1px solid #e2dede; padding-left: 20px; }
 .techdashboard_header .mat-toolbar-row .profile_section .username{ padding-right: 20px; display: block; }
 /*End header css */
-.content_wrapper{ display: flex; justify-content: space-between;  align-items: center; width: 99%; margin: auto;
+.content_wrapper{ display: flex; justify-content: center;  align-items: center; width: 99%; margin: auto;
   text-align: center; }
 .content_wrapper .itemsection{width: 33%; margin: 14px 7px; padding: 15px; box-sizing: border-box; display: flex; flex-direction: column; min-height: 200px; align-items: center;
   justify-content: center; position: relative;}
@@ -36,6 +36,7 @@
 .content_wrapper .itemsection .section_title{ width: 90px; height: 90px; border-radius: 50%; background: #fff; margin-top: -45px; display: flex;
   align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; box-shadow: 0px 2px 4px -2px #e27d2c; margin-bottom: 13px;}
 .content_wrapper .itemsection .section_title img{ max-width: 100%; }
-.content_wrapper .itemsection .sign_uploader { display: flex; width: 100%;}
+.content_wrapper .itemsection .sign_uploader { display: flex; width: 100%; align-items: center;}
+.content_wrapper .itemsection .sign_uploader .message{ margin: 0 15px;}
 .content_wrapper .itemsection .sign_uploader input{ width: 100%; padding: 9px; box-sizing: border-box; border: 1px solid #dcdddf; }
 .content_wrapper .itemsection .sign_uploader .signature_upload{ position: inherit; top: 0; right: 0; background: #dd671d; color:#fff; }

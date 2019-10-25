@@ -18,6 +18,7 @@ export class UploadDialogBoxComponent implements OnInit {
   public ErrCode: boolean;
   public user_token: any;
   public signatureArray: any = [];
+  public cookies_data:any;
   public configData: any = {
     baseUrl: "http://3.15.236.141:5005/",
     endpoint: "uploads",
@@ -27,12 +28,21 @@ export class UploadDialogBoxComponent implements OnInit {
     path: "signature-file",
     prefix: "signature-file"
   }
-
+public cookiesData:any;
+public cookies_id:any;
   constructor(public dialog: MatDialog, public fb: FormBuilder, public cookie: CookieService,
     public http: HttpServiceService, public snackBar: MatSnackBar) {
+      let allcookies: any;
+      allcookies = cookie.getAll();
+      this.cookiesData = JSON.parse(allcookies.user_details);
+      this.cookies_id = this.cookiesData._id;
+  
+      console.log(this.cookiesData);
+      console.log(this.cookies_id);
     this.user_token = cookie.get('jwtToken');
     this.techUploadForm = this.fb.group({
-      sign: ['', Validators.required]
+      sign: ['', Validators.required],
+      user_id:['']
     })
   }
 
@@ -43,6 +53,7 @@ export class UploadDialogBoxComponent implements OnInit {
     form.controls[val].markAsUntouched();
   }
   techUploadFormSubmit() {
+
     // if (this.configData.files) {
     //   if (this.configData.files.length > 1) {
     //     this.ErrCode = true;
@@ -68,10 +79,13 @@ export class UploadDialogBoxComponent implements OnInit {
     for (x in this.techUploadForm.controls) {
       this.techUploadForm.controls[x].markAsTouched();
     }
+    this.techUploadForm.controls['user_id'].patchValue(this.cookies_id);
+
     if (this.techUploadForm.valid) {
       var data = {
         "source": "doctor_signature",
         "data": this.techUploadForm.value,
+        "sourceobj": ["user_id"],
         "token": this.user_token
       }
       this.http.httpViaPost("addorupdatedata", data)
