@@ -3,13 +3,16 @@
 
 <!-- header with add button -->
 <mat-card-content class="title_wrapper">
-  Add New biller
+  {{ this.textTitle.header }}
 </mat-card-content>
 
 
 <span class="add_header">
-
- <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Add Biller</span> 
+  <span class="bradcrumb">
+    <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; 
+    <a [routerLink]="['/admin/biller-management']">Manage Biller &nbsp;/</a> &nbsp;
+    {{ textTitle.nav }}
+  </span>
 </span>
 <!-- End header with add button -->
 
@@ -46,16 +49,15 @@
           (blur)="inputUntouch(billerManagementAddEditForm,'email')">
         <mat-error *ngIf="billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid
             && billerManagementAddEditForm.controls['email'].errors.required">
-          E-Mail  can not be blank</mat-error>
-          <mat-error
+          E-Mail can not be blank</mat-error>
+        <mat-error
           *ngIf="!billerManagementAddEditForm.controls['email'].valid && !billerManagementAddEditForm.controls['email'].errors.required">
           Email is not valid</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Phone </mat-label>
-        <input  matInput placeholder="Phone"
-          [formControl]="billerManagementAddEditForm.controls['phone']"
+        <input matInput placeholder="Phone" [formControl]="billerManagementAddEditForm.controls['phone']"
           (blur)="inputUntouch(billerManagementAddEditForm,'phone')">
         <mat-error *ngIf="billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid
             && billerManagementAddEditForm.controls['phone'].errors.required">
@@ -78,7 +80,7 @@
             && billerManagementAddEditForm.controls['address'].errors.required">
           Address field can not be blank</mat-error>
       </mat-form-field>
-      
+
       <mat-form-field class="parent_cat" appearance="fill">
         <mat-label>State</mat-label>
         <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
@@ -95,7 +97,7 @@
         </mat-select>
       </mat-form-field>
 
-    
+
 
       <mat-form-field appearance="fill">
         <mat-label>Zip</mat-label>
@@ -139,7 +141,8 @@
 
       <span class="submit_form">
         <button mat-flat-button (click)="ResetAddEditForm()">Reset </button>
-        <button mat-flat-button type="submit" [disabled]="!billerManagementAddEditForm.valid"> {{ buttonText }} </button>
+        <button mat-flat-button type="submit" [disabled]="!billerManagementAddEditForm.valid"> {{ textTitle.buttonText }}
+        </button>
       </span>
 
 

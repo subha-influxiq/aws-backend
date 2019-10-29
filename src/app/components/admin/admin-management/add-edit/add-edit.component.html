@@ -2,17 +2,20 @@
 
 <!-- header with add button -->
 <mat-card-content class="title_wrapper">
-  Add New admin
+  {{ textTitle.header }}
 </mat-card-content>
 
 
 <span class="add_header">
-
-  <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Add Admin</span>
+  <span class="bradcrumb">
+    <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a>&nbsp;
+    <a [routerLink]="['/admin/admin-management']">Manage Admin &nbsp;/</a> &nbsp; 
+    {{ textTitle.nav }}
+  </span>
 </span>
 
 <mat-card class="add_form">
-  <h2>Add Admin</h2>
+  <h2>{{ textTitle.header }}</h2>
 
   <mat-card-content class="form_wrapper">
     <form class="example-form" autocomplete="off" name="adminManagementAddEditForm"
@@ -89,7 +92,7 @@
 
       <span class="submit_form">
         <button mat-flat-button (click)="ResetAddEditForm()">Reset </button>
-        <button mat-flat-button type="submit" [disabled]="!adminManagementAddEditForm.valid">{{ buttonText }} </button>
+        <button mat-flat-button type="submit" [disabled]="!adminManagementAddEditForm.valid">{{ textTitle.buttonText }} </button>
       </span>
 
     </form>

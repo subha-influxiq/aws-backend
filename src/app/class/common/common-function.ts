@@ -26,13 +26,17 @@ export class CommonFunction {
                 case 'List':
                     break;
                 case 'Add':
-                    title = title + ' - Create New ';
+                    title = title + '- Create New ';
                     break;
                 case 'Bulk Upload':
-                    title = title + ' - Bulk Report Upload ';
+                    title = title + '- Bulk Report Upload ';
                     break;
                 case 'Change Password':
-                    title = title + ' - Change Password ';
+                    title = title + '- Change Password ';
+                    break;
+                case 'Edit':
+                    title = title + '- Update Record ';
+                    loop = urlArr.length
                     break;
                 default:
                     title += urlArr[loop] + ' ';

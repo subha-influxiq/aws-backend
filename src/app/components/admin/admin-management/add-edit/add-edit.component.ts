@@ -22,7 +22,7 @@ export class AddEditComponent implements OnInit {
   public adminManagementAddEditForm: FormGroup;
   public user_token: any;
   public params_id: any;
-  public buttonText: any = "Submit";
+  public textTitle: any = { header: 'Add New admin', nav: 'Add Admin', buttonText: 'Submit' };
   public message: any = "Submitted Successfully";
 
   constructor(public fb: FormBuilder, private datePipe: DatePipe,
@@ -52,11 +52,12 @@ export class AddEditComponent implements OnInit {
 
   ngOnInit() {
     if (this.activeRoute.snapshot.params._id) {
-      this.buttonText = "Update";
       this.message = "Updated Successfully";
+      this.textTitle.header = 'Update admin record';
+      this.textTitle.nav = 'Update Admin';
+      this.textTitle.buttonText = 'Update';
       this.params_id = this.activeRoute.snapshot.params._id;
       this.getSingleResolveData();
-
     }
 
   }

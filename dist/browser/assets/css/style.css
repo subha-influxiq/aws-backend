@@ -49,6 +49,13 @@
   font-weight: bold;
   font-style: normal;
 }
+@font-face {
+  font-family: 'AmandaSignature';
+  src: url('../fonts/AmandaSignatureRegular.woff2') format('woff2'),
+      url('../fonts/AmandaSignatureRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 
@@ -149,3 +156,16 @@
   border-radius: 4px;
   padding: 0px 10px;
 }
+.add_form .file_upload .uploadfilecontainer { width: 100%;}
+.admin_table{ width: 95%; margin: 20px auto; }
+.admin_table table{ width: 100%; }
+
+.admin_table table tr td:nth-child(4) span{background: red;
+  background: #feca00;
+  text-align: center;
+  display: block;
+  padding: 5px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  border: 5px solid #fff; }
