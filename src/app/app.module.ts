@@ -70,6 +70,7 @@ import { FileUploadModule } from 'file-upload';
 import { HealthriskSystemEncounterComponent } from './components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component';
 import { SystemSuperbillComponent } from './components/admin/tech-management/system-superbill/system-superbill.component';
 import { HealthRiskAnalysisComponent } from './components/admin/tech-management/health-risk-analysis/health-risk-analysis.component';
+import { ReportDetailsComponent } from './components/tech/report-details/report-details.component';
 
 
 @NgModule({
@@ -111,7 +112,8 @@ import { HealthRiskAnalysisComponent } from './components/admin/tech-management/
     DoctorHeaderComponent,
     TechHeaderComponent, 
     HealthriskSystemEncounterComponent, SystemSuperbillComponent,
-    HealthRiskAnalysisComponent
+    HealthRiskAnalysisComponent,
+    ReportDetailsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

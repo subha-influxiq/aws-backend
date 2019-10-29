@@ -30,6 +30,7 @@ export class UploadDialogBoxComponent implements OnInit {
   }
 public cookiesData:any;
 public cookies_id:any;
+public result : any;
   constructor(public dialog: MatDialog, public fb: FormBuilder, public cookie: CookieService,
     public http: HttpServiceService, public snackBar: MatSnackBar) {
       let allcookies: any;
@@ -40,6 +41,8 @@ public cookies_id:any;
       console.log(this.cookiesData);
       console.log(this.cookies_id);
     this.user_token = cookie.get('jwtToken');
+    this.getSignatureData();
+
     this.techUploadForm = this.fb.group({
       sign: ['', Validators.required],
       user_id:['']
@@ -49,8 +52,23 @@ public cookies_id:any;
   ngOnInit() {
   }
   inputUntouch(form: any, val: any) {
-
     form.controls[val].markAsUntouched();
+  }
+  getSignatureData(){
+    var data = {
+      "source": "doctor_signature",
+      "condition": {
+        "user_id_object": this.cookies_id
+      },
+      "token": this.user_token
+    }
+    this.http.httpViaPost('datalist',data)
+      .subscribe(response=>{
+        this.result=response.res[0]._id;
+        console.log("response",this.result);
+
+
+      })
   }
   techUploadFormSubmit() {
 
@@ -82,12 +100,26 @@ public cookies_id:any;
     this.techUploadForm.controls['user_id'].patchValue(this.cookies_id);
 
     if (this.techUploadForm.valid) {
-      var data = {
-        "source": "doctor_signature",
-        "data": this.techUploadForm.value,
-        "sourceobj": ["user_id"],
-        "token": this.user_token
-      }
+      var data :any;
+       if(this.result){
+        data = {
+          "source": "doctor_signature",
+          "sourceobj": ["user_id"],
+          "data": {
+            id: this.result,
+            sign: this.techUploadForm.value.sign,
+            user_id: this.techUploadForm.value.user_id,
+          },
+          "token": this.user_token
+        }
+       }else{
+         data = {
+          "source": "doctor_signature",
+          "data": this.techUploadForm.value,
+          "sourceobj": ["user_id"],
+          "token": this.user_token
+        }
+       }
       this.http.httpViaPost("addorupdatedata", data)
         .subscribe(response => {
           if (response.status = "success") {

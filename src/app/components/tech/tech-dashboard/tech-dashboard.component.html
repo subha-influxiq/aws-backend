@@ -43,19 +43,19 @@
     <mat-card-content class="itemsection one">
       <span class="counteer"> 10</span>
       <p>Total Number of <br>Reports uploaded</p>
-      <button mat-flat-button>View Details</button>
+      <button mat-flat-button [routerLink]="['/tech/report/total-uploaded']">View Details</button> 
     </mat-card-content>
     <mat-card-content class="itemsection two">
       <span class="counteer"> 10</span>
       <p>Total Number of <br>Reports Processed</p>
-      <button mat-flat-button>View Details</button>
+      <button mat-flat-button [routerLink]="['/tech/report/total-processed']">View Details</button>
     </mat-card-content>
     <mat-card-content class="itemsection three">
       <span class="counteer"> 10</span>
       <p>Total Number of Reports <br>remain to process
       
       </p>
-      <button mat-flat-button>View Details</button>
+      <button mat-flat-button [routerLink]="['/tech/report/total-remained-processed']">View Details</button>
     </mat-card-content>
   </mat-card-content>
 

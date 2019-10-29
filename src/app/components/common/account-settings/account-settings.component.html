@@ -119,7 +119,7 @@
 
             <span class="submit_form">
                 <button mat-flat-button (click)="CancelRedirectToDashboard()"> Cancel </button>
-                <button mat-flat-button type="submit"> Update </button>
+                <button mat-flat-button type="submit" [disabled]="!AccountSettingsForm.valid"> Update </button>
             </span>
         </form>
     </mat-card-content>

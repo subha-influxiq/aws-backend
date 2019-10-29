@@ -20,10 +20,10 @@ export class DoctorDashboardComponent implements OnInit {
     let allcookies: any;
     allcookies = cookie.getAll();
     this.cookiesData = JSON.parse(allcookies.user_details);
+    console.log(this.cookiesData);
     this.cookies_id = this.cookiesData._id;
     this.user_token = cookie.get('jwtToken');
     this.getDoctorSignedData();
-    console.log("lengthconstractor",this.DoctorSignedData.length);
 
     
 
@@ -56,7 +56,7 @@ export class DoctorDashboardComponent implements OnInit {
     this.http.httpViaPost('datalist', data)
       .subscribe(response => {
         this.DoctorSignedData =response.res; 
-       
+        console.log(this.DoctorSignedData);
         if(this.DoctorSignedData.length ==1){
           this.buttonText = "Edit" ;
         }

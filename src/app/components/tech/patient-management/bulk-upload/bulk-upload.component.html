@@ -45,7 +45,7 @@
       </span>
       <span class="submit_form">
         <button mat-flat-button (click)="cancelButton()"> Cancel </button>
-        <button mat-flat-button type="submit"> Submit </button>
+        <button mat-flat-button type="submit" [disabled]="!techBulkUploadForm.valid"> Submit </button>
       </span>
 
 

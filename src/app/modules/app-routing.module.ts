@@ -39,7 +39,7 @@ import { BulkUploadComponent } from '../components/tech/patient-management/bulk-
 
 import { BillerDashboardComponent } from '../components/biller/biller-dashboard/biller-dashboard.component';
 import { DoctorDashboardComponent } from '../components/doctor/doctor-dashboard/doctor-dashboard.component';
-
+import { ReportDetailsComponent} from '../components/tech/report-details/report-details.component';
 /* Test Component */
 import { TestComponent } from '../components/test/test.component';
 import { HealthriskSystemEncounterComponent } from '../components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component';
@@ -170,6 +170,10 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+  { path: 'tech/report/total-uploaded', component: ReportDetailsComponent, canActivate: [AuthguardService],},
+  { path: 'tech/report/total-processed', component: ReportDetailsComponent, canActivate: [AuthguardService],},
+  { path: 'tech/report/total-remained-processed', component: ReportDetailsComponent, canActivate: [AuthguardService],},
+
   /* Account-Settings */
   { path: 'tech/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'tech/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },

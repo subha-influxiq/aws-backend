@@ -258,7 +258,7 @@
 
       <span class="submit_form">
         <button mat-flat-button type="reset">Reset</button>
-        <button mat-flat-button type="submit">{{btn_text}} </button>
+        <button mat-flat-button type="submit" [disabled]="!docManageForm.valid">{{btn_text}} </button>
       </span>
     </form>
   </mat-card-content>

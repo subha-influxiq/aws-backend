@@ -127,7 +127,7 @@
    
         <span class="submit_form">
           <button mat-flat-button (click)="ResetAddForm()">Reset </button>
-          <button mat-flat-button type="submit"> {{ buttonText }} </button>
+          <button mat-flat-button type="submit" [disabled]="!TechManagementAddEditForm.valid"> {{ buttonText }} </button>
         </span>
       </form>
     </mat-card-content>
