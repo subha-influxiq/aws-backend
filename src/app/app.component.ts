@@ -11,7 +11,7 @@ import {
 
 @Component({
   selector: 'app-root',
-  template: '<div *ngIf="loading" class="mainOverlayLoader"><mat-spinner color="warn"></mat-spinner> </div><router-outlet></router-outlet>',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {

@@ -1,3 +1,7 @@
+<div *ngIf="loading" class="mainOverlayLoader">
+    <mat-spinner color="warn"></mat-spinner>
+</div>
 
+<app-http-loader></app-http-loader>
 
 <router-outlet></router-outlet>

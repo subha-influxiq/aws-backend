@@ -19,6 +19,12 @@ import { AuthguardService} from './services/authguard.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpServiceService } from './services/http-service.service';
 
+/* Http Loader */
+import { HttpLoaderComponent } from './components/common/http-loader/http-loader.component';
+import { HttpLoaderService } from './services/http-loader.service';
+import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
+import { LoaderInterceptor } from './class/common/loader.interceptor';
+
 /* Common Function */
 import { CommonFunction } from './class/common/common-function';
 
@@ -113,7 +119,8 @@ import { ReportDetailsComponent } from './components/tech/report-details/report-
     TechHeaderComponent, 
     HealthriskSystemEncounterComponent, SystemSuperbillComponent,
     HealthRiskAnalysisComponent,
-    ReportDetailsComponent
+    ReportDetailsComponent,
+    HttpLoaderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -128,12 +135,22 @@ import { ReportDetailsComponent } from './components/tech/report-details/report-
     ListingModule,
     FormsModule,
     ReactiveFormsModule,
-    FileUploadModule
+    FileUploadModule,
+    HttpClientModule
   ],
 
-  providers: [CookieService, AuthguardService, HttpServiceService, DatePipe, CommonFunction],
+  providers: [HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }, CookieService, AuthguardService, HttpServiceService, DatePipe, CommonFunction],
   bootstrap: [AppComponent],
   entryComponents:[Modal,DialogBoxComponent,UploadDialogBoxComponent,DialogContentExampleDialog,TestComponent]
 
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(public http: HttpClient) {
+    // this.http.get('localhost/api/googleapiphp/powertag.php?q=car&count=3')
+    //   .subscribe((r) => {
+    //     console.log(r);
+    //   });
+  }
+
+}
