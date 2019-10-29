@@ -13,7 +13,7 @@ import { CommonFunction } from '../../../../class/common/common-function';
 export class ListingTechComponent implements OnInit {
   public allUserData: any = [];
   public allUserData_skip: any = ["_id", "created_at","password","id","updated_at","type","phoneno"];
-  public editUrl: any = "tech-management/edit";
+  public editUrl: any = "admin/tech-management/edit";
   public allUserData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name",
     "email": "E-Mail", "city": "City", "address": "Address", "state": "State", "zip": "Zip",

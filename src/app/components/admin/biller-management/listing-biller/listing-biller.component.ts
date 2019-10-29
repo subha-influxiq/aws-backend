@@ -11,7 +11,7 @@ import { CommonFunction } from '../../../../class/common/common-function';
 export class ListingBillerComponent implements OnInit {
 public allBillerData:any=[];
 public allUserData_skip: any = ["confirmpassword", "password", "created_at", "_id","type","phoneno"];
-  public editUrl: any = "biller-management/edit";
+  public editUrl: any = "admin/biller-management/edit";
   public allUserData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name",
     "email": "E-Mail", "phone": "Phone Number", "date": "Date Added",

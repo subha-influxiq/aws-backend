@@ -3,6 +3,29 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CommonFunction } from '../../../class/common/common-function';
+import { MatTableDataSource } from '@angular/material';
+
+
+
+export interface PeriodicElement {
+  PatientName: string;
+  DoctorsName: string;
+  TechName: string;
+  Record: string;
+  UploadDate: string;
+  BillGenerationDate: string;
+  BillSentDate: string;
+  SuperBill: string;
+  Status: string;
+  BillerName: string;
+  SenttoBiller: string; 
+}
+const ELEMENT_DATA: PeriodicElement[] = [
+  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate:'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv'  },
+  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate:'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv'  },
+  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate:'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv'  },
+  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate:'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv'  },
+];
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -10,13 +33,32 @@ import { CommonFunction } from '../../../class/common/common-function';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
+  public user_token: any;
+
+  displayedColumns: string[] = ['PatientName', 'DoctorsName', 'TechName', 'Record', 'UploadDate', 'BillGenerationDate', 'BillSentDate', 'SuperBill', 'Status', 'BillerName', 'SenttoBiller'];
+
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+
+
 
   docCount: any = [];
   constructor(private router: Router, public cookieService: CookieService,
     private http: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
+      this.getSignatureData();
+
+      this.user_token = cookieService.get('jwtToken');
     
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
+
+
+
+
   }
 
   ngOnInit() {
@@ -28,6 +70,41 @@ export class AdminDashboardComponent implements OnInit {
     
   
     
+  }
+  getSignatureData(){
+    var data = {
+      "condition": {
+        "condition": {
+          "type": "doctor"
+      },
+      "condition1": {
+          "type": "tech"
+      },
+      "condition2": {
+          "type": "biller"
+      }
+      }
+      //  "condition":
+      // {
+      //   "condition": {
+      //       "type": "doctor"
+      //   },
+      //   "condition1": {
+      //       "type": "tech"
+      //   },
+      //   "condition2": {
+      //       "type": "biller"
+      //   }
+    
+    }
+    this.http.httpViaPost('count',data)
+      .subscribe(response=>{
+        console.log(response);
+        // this.result=response.res[0]._id;
+        // console.log("response",this.result);
+
+
+      })
   }
 
   myFunction() {
