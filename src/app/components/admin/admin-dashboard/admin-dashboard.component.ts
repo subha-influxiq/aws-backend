@@ -18,13 +18,13 @@ export interface PeriodicElement {
   SuperBill: string;
   Status: string;
   BillerName: string;
-  SenttoBiller: string; 
+  SenttoBiller: string;
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate:'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv'  },
-  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate:'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv'  },
-  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate:'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv'  },
-  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate:'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv'  },
+  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate: 'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv' },
+  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate: 'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv' },
+  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate: 'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv' },
+  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate: 'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv' },
 ];
 
 @Component({
@@ -34,7 +34,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class AdminDashboardComponent implements OnInit {
   public user_token: any;
-
+  public billerCount:any;
+  public doctorCount:any;
+  public techCount:any;
   displayedColumns: string[] = ['PatientName', 'DoctorsName', 'TechName', 'Record', 'UploadDate', 'BillGenerationDate', 'BillSentDate', 'SuperBill', 'Status', 'BillerName', 'SenttoBiller'];
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -49,10 +51,10 @@ export class AdminDashboardComponent implements OnInit {
   docCount: any = [];
   constructor(private router: Router, public cookieService: CookieService,
     private http: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
-      this.getSignatureData();
 
-      this.user_token = cookieService.get('jwtToken');
-    
+    this.user_token = cookieService.get('jwtToken');
+    this.getAllCountData();
+
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
 
@@ -67,43 +69,29 @@ export class AdminDashboardComponent implements OnInit {
       console.log(this.docCount);
       // console.log(Object.keys(this.docCount));
     });
-    
-  
-    
+
+
+
   }
-  getSignatureData(){
+  getAllCountData() {
     var data = {
       "condition": {
-        "condition": {
-          "type": "doctor"
+        "type": "doctor"
       },
       "condition1": {
-          "type": "tech"
+        "type": "tech"
       },
       "condition2": {
-          "type": "biller"
+        "type": "biller"
       }
-      }
-      //  "condition":
-      // {
-      //   "condition": {
-      //       "type": "doctor"
-      //   },
-      //   "condition1": {
-      //       "type": "tech"
-      //   },
-      //   "condition2": {
-      //       "type": "biller"
-      //   }
-    
     }
-    this.http.httpViaPost('count',data)
-      .subscribe(response=>{
-        console.log(response);
-        // this.result=response.res[0]._id;
-        // console.log("response",this.result);
-
-
+    this.http.httpViaPost('count', data)
+      .subscribe(response => {
+        let result:any;
+        result = response;
+        this.billerCount    = result["biller-count"];
+        this.techCount      = result["tech-count"];
+        this.doctorCount    = result["doctor-count"];
       })
   }
 

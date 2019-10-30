@@ -126,7 +126,7 @@
         Status field can not be blank</mat-error> -->
    
         <span class="submit_form">
-          <button mat-flat-button (click)="ResetAddForm()">Reset </button>
+          <button mat-flat-button type="reset">Reset </button>
           <button mat-flat-button type="submit" [disabled]="!TechManagementAddEditForm.valid"> {{ buttonText }} </button>
         </span>
       </form>
