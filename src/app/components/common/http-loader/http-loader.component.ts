@@ -12,7 +12,6 @@ export class HttpLoaderComponent implements OnInit {
   loading: boolean;
   constructor(private loaderService: HttpLoaderService) {
     this.loaderService.isLoading.subscribe((v) => {
-      console.log('TTTTTTTTTTTTTTTTT', v);
       this.loading = v;
     });
   }

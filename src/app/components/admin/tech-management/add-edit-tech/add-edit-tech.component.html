@@ -8,7 +8,8 @@
 
 <span class="add_header">
 
-  <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Add Technician</span>
+  <span class="bradcrumb">
+    <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Add Technician</span>
 </span>
 <!-- End header with add button -->
   
@@ -121,9 +122,7 @@
           </mat-form-field>
   
         <mat-checkbox [formControl]="TechManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
-        <!-- <mat-error *ngIf="TechManagementAddEditForm.controls['status'].touched && !TechManagementAddEditForm.controls['status'].valid
-        && TechManagementAddEditForm.controls['status'].errors.required">
-        Status field can not be blank</mat-error> -->
+        
    
         <span class="submit_form">
           <button mat-flat-button type="reset">Reset </button>
