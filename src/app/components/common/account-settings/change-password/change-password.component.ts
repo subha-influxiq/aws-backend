@@ -61,7 +61,7 @@ export class ChangePasswordComponent implements OnInit {
     };
   }
 
-  ResetForm() {
+  resetForm() {
     this.ChangePasswordForm.reset();
   }
 
@@ -86,7 +86,7 @@ export class ChangePasswordComponent implements OnInit {
       }
       this.httpService.httpViaPost('changepassword', data)
         .subscribe((response) => {
-          this.ResetForm();
+          this.resetForm();
           this.loader = false;
           if (response.status == true) {
             this.snackBar.open(response.message, "OK", {

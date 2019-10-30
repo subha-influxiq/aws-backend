@@ -119,7 +119,6 @@ export class AccountSettingsComponent implements OnInit {
   
   AccountSettingsFormSubmit() {
     this.loader = true;
-
     let x: any;
     for (x in this.AccountSettingsForm.controls) {
       this.AccountSettingsForm.controls[x].markAsTouched();
@@ -153,7 +152,7 @@ export class AccountSettingsComponent implements OnInit {
             duration: 1000,
           })
           setTimeout(() => {
-            this.CancelRedirectToDashboard();
+            this.router.navigateByUrl('/admin/dashboard');
           }, 1200);
         })
     }

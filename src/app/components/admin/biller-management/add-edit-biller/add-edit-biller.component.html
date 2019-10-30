@@ -140,9 +140,8 @@
 
 
       <span class="submit_form">
-        <button mat-flat-button (click)="ResetAddEditForm()">Reset </button>
-        <button mat-flat-button type="submit" [disabled]="!billerManagementAddEditForm.valid"> {{ htmlText.buttonText }}
-        </button>
+        <button mat-flat-button type="reset">Reset </button>
+        <button mat-flat-button type="submit" [disabled]="!billerManagementAddEditForm.valid"> {{ textTitle.buttonText }} </button>
       </span>
 
 

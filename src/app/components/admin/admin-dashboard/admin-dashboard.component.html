@@ -2,17 +2,17 @@
 
 <mat-card-content class="content_wrapper">
   <mat-card-content class="itemsection one">
-    <span class="counteer"> {{ docCount.doctors.res.length }}</span>
+    <span class="counteer"> {{ doctorCount }} </span>
     <p>Total Number of Doctors</p>
     <button mat-flat-button type="button" [routerLink]="['/admin/doctor-management']">View Details</button>
   </mat-card-content>
   <mat-card-content class="itemsection two">
-    <span class="counteer"> {{ docCount.biller.res.length }}</span>
+    <span class="counteer"> {{ billerCount }}</span>
     <p>Total Number of Billers</p>
     <button mat-flat-button type="button" [routerLink]="['/admin/biller-management']">View Details</button>
   </mat-card-content>
   <mat-card-content class="itemsection three">
-    <span class="counteer"> {{ docCount.tech.res.length }}</span>
+    <span class="counteer"> {{ techCount }} </span>
     <p>Total Number of Techs</p>
     <button mat-flat-button type="button" [routerLink]="['/admin/tech-management']">View Details</button>
   </mat-card-content>
