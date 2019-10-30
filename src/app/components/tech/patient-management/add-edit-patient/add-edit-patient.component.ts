@@ -70,10 +70,13 @@ export class AddEditPatientComponent implements OnInit {
         BMI                :  ['',Validators.required],
         bloodPressure      :  ['',Validators.required],
         leaveNotes         :  ['',Validators.required],
+        systolic           :  [''],
+        diastolic          :  [''],
       })
     }
 
   ngOnInit() {
+    
   }
 
   /**for validation purpose**/
@@ -93,6 +96,10 @@ export class AddEditPatientComponent implements OnInit {
     for (x in this.patientAddEditForm.controls) {
       this.patientAddEditForm.controls[x].markAsTouched();
     }
+    const myString = this.patientAddEditForm.controls.bloodPressure.value;
+    const splits = myString.split('/');
+   console.log(splits[0])
+   console.log("souresh splittt",splits);
     var startDate = this.datePipe.transform(this.startdate, "dd-MM-yyyy");
     var endDate = this.datePipe.transform(this.enddate, "dd-MM-yyyy");
     var dateOfBirth = this.datePipe.transform(this.dateofbirth,"dd-MM-yyyy");
@@ -104,6 +111,9 @@ export class AddEditPatientComponent implements OnInit {
     this.patientAddEditForm.controls['testCompletedDate'].patchValue(endDate);
     this.patientAddEditForm.controls['birthDate'].patchValue(dateOfBirth);
     this.patientAddEditForm.controls['date'].patchValue(dateformat);
+    this.patientAddEditForm.controls['systolic'].patchValue(splits[0]);
+    this.patientAddEditForm.controls['diastolic'].patchValue(splits[1]);
+    delete this.patientAddEditForm.value.bloodPressure;
  
     if(this.patientAddEditForm.valid) {  
       var data :any = {

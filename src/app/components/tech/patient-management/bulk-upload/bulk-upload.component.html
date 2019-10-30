@@ -16,7 +16,7 @@
             Batch Name field can not be blank</mat-error>
         </mat-form-field>
       
-        <label>Status</label>
+        <!-- <label>Status</label>
       <mat-form-field   appearance="fill">
         
         <mat-select formControlName="status">
@@ -26,7 +26,7 @@
           <mat-option  value="Send To Biller">Send To Biller</mat-option>
           <mat-option  value="Error">Error</mat-option>
         </mat-select>
-      </mat-form-field>
+      </mat-form-field> -->
     </mat-card-content>
      
       <lib-file-upload [config]="configData" class="file_upload"></lib-file-upload>
@@ -44,7 +44,7 @@
         </mat-form-field>
       </span>
       <span class="submit_form">
-        <button mat-flat-button (click)="cancelButton()"> Cancel </button>
+        <button mat-flat-button type="button" (click)="cancelButton()"> Cancel </button>
         <button mat-flat-button type="submit" [disabled]="!techBulkUploadForm.valid"> Submit </button>
       </span>
 

@@ -35,7 +35,7 @@ export class BulkUploadComponent implements OnInit {
 
     this.techBulkUploadForm = this.fb.group({
       batchName    : ['', [Validators.required, Validators.maxLength(40)]],
-      uploadFile   : ['', Validators.required],
+      uploadFile   : [],
       status       : [''],
       note         : ['',Validators.required],
     })
