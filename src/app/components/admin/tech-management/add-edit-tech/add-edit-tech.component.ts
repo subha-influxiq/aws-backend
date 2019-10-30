@@ -27,8 +27,8 @@ export class AddEditTechComponent implements OnInit {
   public allCities: any;
   public cities: any;
   public params_id: any;
-  public buttonText: any = "Submit";
-  public user_token: any;;
+  public htmlText: any = { header: 'Add New Technician', nav: 'Add Technician', buttonText: 'Save' };
+  public user_token: any;
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
@@ -63,7 +63,9 @@ export class AddEditTechComponent implements OnInit {
 
   ngOnInit() {
     if (this.params_id) {
-      this.buttonText = "Update";
+      this.htmlText.header = 'Edit Technician Record';
+      this.htmlText.nav = 'Edit Technician';
+      this.htmlText.buttonText = 'Update';
       this.getResolveData();
     }
   }

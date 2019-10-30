@@ -45,8 +45,6 @@ export class CommonFunction {
         }
 
         let getToken: boolean = this.cookie.check('jwtToken');
-        console.log('=======', getToken);
-        console.log('-------', this.cookie.get('jwtToken'));
         if(getToken) {
             let allcookies: any = this.cookie.getAll();
             let userData = JSON.parse(allcookies.user_details);
