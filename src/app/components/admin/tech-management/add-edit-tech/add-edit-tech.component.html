@@ -1,140 +1,143 @@
 <app-admin-header></app-admin-header>
-  
+
 <!-- header with add button -->
 <mat-card-content class="title_wrapper">
-  Add New Technician
+  {{ htmlText.header }}
 </mat-card-content>
 
 
 <span class="add_header">
 
   <span class="bradcrumb">
-    <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Add Technician</span>
+    <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; 
+    <a [routerLink]="['/admin/tech-management']">Manage Tech &nbsp;/</a> &nbsp;
+    {{ htmlText.nav }}
+  </span>
 </span>
 <!-- End header with add button -->
-  
-  <mat-card class="add_form">
-  
-    <h2>add technician</h2>
-  
-  
-    <mat-card-content class="form_wrapper">
-      <form class="example-form" autocomplete="off" name="TechManagementAddEditForm" [formGroup]="TechManagementAddEditForm"
-        (ngSubmit)="TechManagementAddFormFormSubmit()">
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Enter First Name</mat-label>
-          <input matInput placeholder="First Name" [formControl]="TechManagementAddEditForm.controls['firstname']"
-            (blur)="inputUntouch(TechManagementAddEditForm,'firstname')">
-            <mat-error *ngIf="TechManagementAddEditForm.controls['firstname'].touched && !TechManagementAddEditForm.controls['firstname'].valid
+
+<mat-card class="add_form">
+
+  <h2>add technician</h2>
+
+
+  <mat-card-content class="form_wrapper">
+    <form class="example-form" autocomplete="off" name="TechManagementAddEditForm"
+      [formGroup]="TechManagementAddEditForm" (ngSubmit)="TechManagementAddFormFormSubmit()">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter First Name</mat-label>
+        <input matInput placeholder="First Name" [formControl]="TechManagementAddEditForm.controls['firstname']"
+          (blur)="inputUntouch(TechManagementAddEditForm,'firstname')">
+        <mat-error *ngIf="TechManagementAddEditForm.controls['firstname'].touched && !TechManagementAddEditForm.controls['firstname'].valid
            && TechManagementAddEditForm.controls['firstname'].errors.required">
-                First Name field can not be blank</mat-error>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Enter Last Name</mat-label>
-          <input matInput placeholder="Last Name" [formControl]="TechManagementAddEditForm.controls['lastname']"
-            (blur)="inputUntouch(TechManagementAddEditForm,'lastname')">
-            <mat-error *ngIf="TechManagementAddEditForm.controls['lastname'].touched && !TechManagementAddEditForm.controls['lastname'].valid
+          First Name field can not be blank</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter Last Name</mat-label>
+        <input matInput placeholder="Last Name" [formControl]="TechManagementAddEditForm.controls['lastname']"
+          (blur)="inputUntouch(TechManagementAddEditForm,'lastname')">
+        <mat-error *ngIf="TechManagementAddEditForm.controls['lastname'].touched && !TechManagementAddEditForm.controls['lastname'].valid
            && TechManagementAddEditForm.controls['lastname'].errors.required">
-                Last Name field can not be blank</mat-error>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Email Address</mat-label>
-          <input matInput placeholder="Email Address" [formControl]="TechManagementAddEditForm.controls['email']"
-            (blur)="inputUntouch(TechManagementAddEditForm,'email')">
-            <mat-error *ngIf="TechManagementAddEditForm.controls['email'].touched && !TechManagementAddEditForm.controls['email'].valid
+          Last Name field can not be blank</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email Address</mat-label>
+        <input matInput placeholder="Email Address" [formControl]="TechManagementAddEditForm.controls['email']"
+          (blur)="inputUntouch(TechManagementAddEditForm,'email')">
+        <mat-error *ngIf="TechManagementAddEditForm.controls['email'].touched && !TechManagementAddEditForm.controls['email'].valid
             && TechManagementAddEditForm.controls['email'].errors.required">
-                 E-Mail field can not be blank</mat-error>
-                 <mat-error
-                 *ngIf="!TechManagementAddEditForm.controls['email'].valid && !TechManagementAddEditForm.controls['email'].errors.required">
-                 Email is not valid</mat-error>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Phone </mat-label>
-          <input  matInput placeholder="Phone" [formControl]="TechManagementAddEditForm.controls['phone']"
-            (blur)="inputUntouch(TechManagementAddEditForm,'phone')">
-            <mat-error *ngIf="TechManagementAddEditForm.controls['phone'].touched && !TechManagementAddEditForm.controls['phone'].valid
+          E-Mail field can not be blank</mat-error>
+        <mat-error
+          *ngIf="!TechManagementAddEditForm.controls['email'].valid && !TechManagementAddEditForm.controls['email'].errors.required">
+          Email is not valid</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Phone </mat-label>
+        <input matInput placeholder="Phone" [formControl]="TechManagementAddEditForm.controls['phone']"
+          (blur)="inputUntouch(TechManagementAddEditForm,'phone')">
+        <mat-error *ngIf="TechManagementAddEditForm.controls['phone'].touched && !TechManagementAddEditForm.controls['phone'].valid
             && TechManagementAddEditForm.controls['phone'].errors.required">
-                 Phone Number field can not be blank</mat-error>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Address</mat-label>
-          <textarea matInput placeholder="Address" [formControl]="TechManagementAddEditForm.controls['address']"
-            (blur)="inputUntouch(TechManagementAddEditForm,'address')"></textarea>
-            <mat-error *ngIf="TechManagementAddEditForm.controls['address'].touched && !TechManagementAddEditForm.controls['address'].valid
+          Phone Number field can not be blank</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <textarea matInput placeholder="Address" [formControl]="TechManagementAddEditForm.controls['address']"
+          (blur)="inputUntouch(TechManagementAddEditForm,'address')"></textarea>
+        <mat-error *ngIf="TechManagementAddEditForm.controls['address'].touched && !TechManagementAddEditForm.controls['address'].valid
             && TechManagementAddEditForm.controls['address'].errors.required">
-                 Address field can not be blank</mat-error>
-        </mat-form-field>
-        <mat-form-field class="parent_cat" appearance="fill">
-          <mat-label>State</mat-label>
-          <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
-            <mat-option [value]=0>Select a category</mat-option>
-            <mat-option *ngFor="let state of states;" value="{{ state.name }}">{{ state.name }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-  
-        <mat-form-field class="parent_cat" appearance="fill">
-          <mat-label>City</mat-label>
-          <mat-select formControlName="city">
-            <mat-option [value]=0>Select a category</mat-option>
-            <mat-option *ngFor="let city of cities;" value="{{ city }}">{{ city }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-  
-       
-  
-        <mat-form-field appearance="fill">
-          <mat-label>ZIP</mat-label>
-          <input matInput placeholder="ZIP" [formControl]="TechManagementAddEditForm.controls['zip']"
-            (blur)="inputUntouch(TechManagementAddEditForm,'zip')">
-            <mat-error *ngIf="TechManagementAddEditForm.controls['zip'].touched && !TechManagementAddEditForm.controls['zip'].valid
+          Address field can not be blank</mat-error>
+      </mat-form-field>
+      <mat-form-field class="parent_cat" appearance="fill">
+        <mat-label>State</mat-label>
+        <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
+          <mat-option [value]=0>Select a category</mat-option>
+          <mat-option *ngFor="let state of states;" value="{{ state.name }}">{{ state.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="parent_cat" appearance="fill">
+        <mat-label>City</mat-label>
+        <mat-select formControlName="city">
+          <mat-option [value]=0>Select a category</mat-option>
+          <mat-option *ngFor="let city of cities;" value="{{ city }}">{{ city }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>ZIP</mat-label>
+        <input matInput placeholder="ZIP" [formControl]="TechManagementAddEditForm.controls['zip']"
+          (blur)="inputUntouch(TechManagementAddEditForm,'zip')">
+        <mat-error *ngIf="TechManagementAddEditForm.controls['zip'].touched && !TechManagementAddEditForm.controls['zip'].valid
             && TechManagementAddEditForm.controls['zip'].errors.required">
-                 Zip field can not be blank</mat-error>
-        </mat-form-field>
-  
-  
-        <mat-form-field>
-            <mat-label>Date</mat-label>
-            <input  [value]="date.value"
-            matInput [matDatepicker]="myPicker"  placeholder="date" >
-            <mat-datepicker-toggle  matSuffix [for]="myPicker" disabled></mat-datepicker-toggle>
-            <mat-datepicker #myPicker></mat-datepicker>
-        </mat-form-field>
-        <mat-form-field class="form-group">
-            <input matInput placeholder="Password" type="password"
-              [formControl]="TechManagementAddEditForm.controls['password']">
-            <mat-error
-              *ngIf="!TechManagementAddEditForm.controls['password'].valid && TechManagementAddEditForm.controls['password'].touched">
-              Password field can not be blank</mat-error>
-    
-          </mat-form-field>
-          <mat-form-field class="form-group">
-            <input matInput placeholder="Confirm Password" type="password"
-              [formControl]="TechManagementAddEditForm.controls['confirmpassword']">
-            <mat-error
-              *ngIf="!TechManagementAddEditForm.controls['confirmpassword'].valid && TechManagementAddEditForm.controls['confirmpassword'].touched">
-              Password does not match </mat-error>
-    
-          </mat-form-field>
-  
-        <mat-checkbox [formControl]="TechManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
-        
-   
-        <span class="submit_form">
-          <button mat-flat-button type="reset">Reset </button>
-          <button mat-flat-button type="submit" [disabled]="!TechManagementAddEditForm.valid"> {{ buttonText }} </button>
-        </span>
-      </form>
-    </mat-card-content>
-  
-  
-  
-  
-  
-  </mat-card>
-  
-  
+
+          Zip field can not be blank</mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <mat-label>Date</mat-label>
+        <input [value]="date.value" matInput [matDatepicker]="myPicker" placeholder="date">
+        <mat-datepicker-toggle matSuffix [for]="myPicker" disabled></mat-datepicker-toggle>
+        <mat-datepicker #myPicker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="form-group">
+        <input matInput placeholder="Password" type="password"
+          [formControl]="TechManagementAddEditForm.controls['password']">
+        <mat-error
+          *ngIf="!TechManagementAddEditForm.controls['password'].valid && TechManagementAddEditForm.controls['password'].touched">
+          Password field can not be blank</mat-error>
+
+      </mat-form-field>
+      <mat-form-field class="form-group">
+        <input matInput placeholder="Confirm Password" type="password"
+          [formControl]="TechManagementAddEditForm.controls['confirmpassword']">
+        <mat-error
+          *ngIf="!TechManagementAddEditForm.controls['confirmpassword'].valid && TechManagementAddEditForm.controls['confirmpassword'].touched">
+          Password does not match </mat-error>
+
+      </mat-form-field>
+
+      <mat-checkbox [formControl]="TechManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
+      <!-- <mat-error *ngIf="TechManagementAddEditForm.controls['status'].touched && !TechManagementAddEditForm.controls['status'].valid
+        && TechManagementAddEditForm.controls['status'].errors.required">
+        Status field can not be blank</mat-error> -->
+
+      <span class="submit_form">
+        <button mat-flat-button type="reset">Reset </button>
+        <button mat-flat-button type="submit" [disabled]="!TechManagementAddEditForm.valid"> {{ htmlText.buttonText }} </button>
+      </span>
+    </form>
+  </mat-card-content>
+
+
+
+
+
+</mat-card>
