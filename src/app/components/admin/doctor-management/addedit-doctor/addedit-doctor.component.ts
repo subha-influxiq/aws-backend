@@ -26,8 +26,7 @@ export class AddeditDoctorComponent implements OnInit {
   dialogRef: any;
   successMessage: any = "Data Submitted Successfully!!!";
   taxo_array: any = [];
-  btn_text = "SUBMIT"
-  form_heading: any = "Add doctor";
+  public htmlText: any = { header: 'Add New Biller', nav: 'Add Biller', buttonText: 'Save' };
   action: any;
   defaultData: any;
   condition:any;
@@ -79,18 +78,18 @@ export class AddeditDoctorComponent implements OnInit {
     switch (this.action) {
       case 'add':
         /* Button text */
-        this.btn_text = "SUBMIT";
         break;
       case 'edit':
         /* Button text */
-        this.btn_text = "UPDATE";
+        this.htmlText.header = 'Edit Doctor Record';
+        this.htmlText.nav = 'Edit Doctor';
+        this.htmlText.buttonText = 'Update';
         this.successMessage = "One row updated";
         this.setDefaultValue(this.defaultData);
 
         setTimeout(() => {
           this.getCityByName(this.defaultData.state);
         }, 2000);
-        this.form_heading = "Edit Doctor Information"
         break;
     }
   }
