@@ -24,7 +24,7 @@ export class AddEditComponent implements OnInit {
   public params_id: any;
   public htmlText: any = { header: 'Add New Admin', nav: 'Add Admin', buttonText: 'Save' };
   public message: any = "Submitted Successfully";
-
+  public taxo_array:any=[];
   constructor(public fb: FormBuilder, private datePipe: DatePipe,
     public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, public commonFunction: CommonFunction) {
 
@@ -43,6 +43,7 @@ export class AddEditComponent implements OnInit {
       phone: ['', Validators.required],
       date: [dateformat],
       type: ['admin'],
+      taxo_list : [],
       status: ['', Validators.required],
       password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
@@ -111,7 +112,7 @@ export class AddEditComponent implements OnInit {
         this.adminManagementAddEditForm.value.status = parseInt("1");
       else
         this.adminManagementAddEditForm.value.status = parseInt("0");
-
+        this.adminManagementAddEditForm.value.taxo_list=this.taxo_array;
       /**delete confirmpassword  field before submitted the form */
       delete this.adminManagementAddEditForm.value.confirmpassword;
       /**end */

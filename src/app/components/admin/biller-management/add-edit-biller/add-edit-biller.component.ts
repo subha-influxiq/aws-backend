@@ -27,7 +27,7 @@ export class AddEditBillerComponent implements OnInit {
   public params_id: any;
   public message:any="Submitted Successfully";
   serializedDate = new FormControl((new Date()).toISOString());
-  
+  public taxo_array :any=[];
   constructor(public fb: FormBuilder, private datePipe: DatePipe,
     public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, public commonFunction: CommonFunction) {
 
@@ -51,6 +51,7 @@ export class AddEditBillerComponent implements OnInit {
       state: ['', Validators.required],
       date: [dateformat],
       type : ['biller'],
+      taxo_list : [],
       status: ['', Validators.required],
       password: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
@@ -144,7 +145,9 @@ export class AddEditBillerComponent implements OnInit {
         this.billerManagementAddEditForm.value.status = parseInt("1");
       else
         this.billerManagementAddEditForm.value.status = parseInt("0");
+        this.billerManagementAddEditForm.value.taxo_list = this.taxo_array;
       delete this.billerManagementAddEditForm.value.confirmpassword;
+      
       var data: any;
       if(this.params_id){
         data={

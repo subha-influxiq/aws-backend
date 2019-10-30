@@ -26,7 +26,7 @@ export class AddeditDoctorComponent implements OnInit {
   dialogRef: any;
   successMessage: any = "Data Submitted Successfully!!!";
   taxo_array: any = [];
-  public htmlText: any = { header: 'Add New Biller', nav: 'Add Biller', buttonText: 'Save' };
+  public htmlText: any = { header: 'Add New Doctor', nav: 'Add Doctor', buttonText: 'Save' };
   action: any;
   defaultData: any;
   condition:any;

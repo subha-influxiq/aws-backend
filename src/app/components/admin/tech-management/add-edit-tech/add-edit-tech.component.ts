@@ -29,7 +29,7 @@ export class AddEditTechComponent implements OnInit {
   public params_id: any;
   public htmlText: any = { header: 'Add New Technician', nav: 'Add Technician', buttonText: 'Save' };
   public user_token: any;
-
+  public taxo_array:any=[];
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
 
@@ -55,6 +55,7 @@ export class AddEditTechComponent implements OnInit {
       zip: ['', Validators.required],
       date: [dateformat],
       type:['tech'],
+      taxo_list : [],
       status: ['', Validators.required],
       password: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
@@ -143,6 +144,7 @@ export class AddEditTechComponent implements OnInit {
         this.TechManagementAddEditForm.value.status = parseInt("1");
       else
         this.TechManagementAddEditForm.value.status = parseInt("0");
+        this.TechManagementAddEditForm.value.taxo_list=this.taxo_array;
       delete this.TechManagementAddEditForm.value.confirmpassword;
       var data: any;
       if(this.params_id){
