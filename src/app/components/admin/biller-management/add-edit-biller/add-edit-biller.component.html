@@ -3,7 +3,7 @@
 
 <!-- header with add button -->
 <mat-card-content class="title_wrapper">
-  {{ this.textTitle.header }}
+  {{ htmlText.header }}
 </mat-card-content>
 
 
@@ -11,14 +11,14 @@
   <span class="bradcrumb">
     <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; 
     <a [routerLink]="['/admin/biller-management']">Manage Biller &nbsp;/</a> &nbsp;
-    {{ textTitle.nav }}
+    {{ htmlText.nav }}
   </span>
 </span>
 <!-- End header with add button -->
 
 
 <mat-card class="add_form">
-  <h2>{{headerText}}</h2>
+  <h2> {{ htmlText.header }}</h2>
 
 
   <mat-card-content class="form_wrapper">
@@ -141,7 +141,7 @@
 
       <span class="submit_form">
         <button mat-flat-button (click)="ResetAddEditForm()">Reset </button>
-        <button mat-flat-button type="submit" [disabled]="!billerManagementAddEditForm.valid"> {{ textTitle.buttonText }}
+        <button mat-flat-button type="submit" [disabled]="!billerManagementAddEditForm.valid"> {{ htmlText.buttonText }}
         </button>
       </span>
 

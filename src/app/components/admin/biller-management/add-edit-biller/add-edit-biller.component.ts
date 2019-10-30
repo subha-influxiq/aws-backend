@@ -23,7 +23,7 @@ export class AddEditBillerComponent implements OnInit {
   public states: any;
   public allCities: any;
   public cities: any;
-  public textTitle: any = { header: 'Add New Biller', nav: 'Add Biller', buttonText: 'Submit' };
+  public htmlText: any = { header: 'Add New Biller', nav: 'Add Biller', buttonText: 'Save' };
   public params_id: any;
   public message:any="Submitted Successfully";
   serializedDate = new FormControl((new Date()).toISOString());
@@ -59,9 +59,9 @@ export class AddEditBillerComponent implements OnInit {
 
   ngOnInit() {
     if(this.params_id){
-      this.textTitle.header = 'Update biller record';
-      this.textTitle.nav = 'Update Biller';
-      this.textTitle.buttonText = 'Update';
+      this.htmlText.header = 'Edit Biller Record';
+      this.htmlText.nav = 'Edit Biller';
+      this.htmlText.buttonText = 'Update';
       this.message="Updated Successfully"
       this.getSingleData();
     }
