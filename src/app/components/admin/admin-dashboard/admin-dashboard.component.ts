@@ -37,10 +37,14 @@ export class AdminDashboardComponent implements OnInit {
   public billerCount: any;
   public doctorCount: any;
   public techCount: any;
-  public uploadedStatusCount : any;
-  public processedStatusCount:any;
-  public signedStatusCount:any;
-  public billerStatusCount:any;
+  public uploadedStatusCount: any;
+  public processedStatusCount: any;
+  public signedStatusCount: any;
+  public billerStatusCount: any;
+  public uploadedStatusArray:any=[];
+  public processedStatusArray:any=[];
+  public signedStatusArray:any=[];
+  public billerStatusArray:any=[];
   displayedColumns: string[] = ['PatientName', 'DoctorsName', 'TechName', 'Record', 'UploadDate', 'BillGenerationDate', 'BillSentDate', 'SuperBill', 'Status', 'BillerName', 'SenttoBiller'];
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -93,7 +97,7 @@ export class AdminDashboardComponent implements OnInit {
         let result: any;
         result = response;
         this.billerCount = result["biller-count"];
-        this.techCount   = result["tech-count"];
+        this.techCount = result["tech-count"];
         this.doctorCount = result["doctor-count"];
       })
   }
@@ -123,13 +127,35 @@ export class AdminDashboardComponent implements OnInit {
       .subscribe(response => {
         let result: any;
         result = response;
-        this.uploadedStatusCount  = result["status-count1"];
+        this.uploadedStatusCount = result["status-count1"];
         this.processedStatusCount = result["status-count2"];
-        this.signedStatusCount    = result["status-count3"];
-        this.billerStatusCount    = result["status-count5"];
+        this.signedStatusCount = result["status-count3"];
+        this.billerStatusCount = result["status-count5"];
+        this.uploadedStatusArray = result.data.status1;
+        this.processedStatusArray = result.data.status2;
+        this.signedStatusArray = result.data.status3;
+        this.billerStatusArray = result.data.status5;
+
       })
   }
-
+  allDashboardData(flag: any) {
+    switch (flag) {
+      case 1:
+        this.uploadedStatusArray;
+        break;
+      case 2:
+        this.processedStatusArray;
+        break;
+      case 3:
+        this.signedStatusArray;
+        break;
+      case 4:
+        this.billerStatusArray;
+         break;
+      default:
+        break;
+    }
+  }
   myFunction() {
     var x = document.getElementById("myDIV");
     if (x.style.display === "none") {
