@@ -34,9 +34,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class AdminDashboardComponent implements OnInit {
   public user_token: any;
-  public billerCount:any;
-  public doctorCount:any;
-  public techCount:any;
+  public billerCount: any;
+  public doctorCount: any;
+  public techCount: any;
+  public uploadedStatusCount : any;
+  public processedStatusCount:any;
+  public signedStatusCount:any;
+  public billerStatusCount:any;
   displayedColumns: string[] = ['PatientName', 'DoctorsName', 'TechName', 'Record', 'UploadDate', 'BillGenerationDate', 'BillSentDate', 'SuperBill', 'Status', 'BillerName', 'SenttoBiller'];
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -54,7 +58,7 @@ export class AdminDashboardComponent implements OnInit {
 
     this.user_token = cookieService.get('jwtToken');
     this.getAllCountData();
-
+    this.getStatusCountData();
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
 
@@ -67,7 +71,6 @@ export class AdminDashboardComponent implements OnInit {
     this.activatedRoute.data.subscribe(resolveData => {
       this.docCount = resolveData.dataCount;
       console.log(this.docCount);
-      // console.log(Object.keys(this.docCount));
     });
 
 
@@ -87,11 +90,43 @@ export class AdminDashboardComponent implements OnInit {
     }
     this.http.httpViaPost('count', data)
       .subscribe(response => {
-        let result:any;
+        let result: any;
         result = response;
-        this.billerCount    = result["biller-count"];
-        this.techCount      = result["tech-count"];
-        this.doctorCount    = result["doctor-count"];
+        this.billerCount = result["biller-count"];
+        this.techCount   = result["tech-count"];
+        this.doctorCount = result["doctor-count"];
+      })
+  }
+
+  getStatusCountData() {
+    var data = {
+      "condition": {
+        "status": "pending"
+      },
+      "condition1": {
+        "status": "waiting for doctor sign"
+      },
+      "condition2": {
+        "status": "doctor signed"
+      },
+      "condition3": {
+        "status": "error"
+      },
+      "condition4": {
+        "status": "send to biller"
+      },
+      "condition5": {
+        "record_type": "file"
+      }
+    }
+    this.http.httpViaPost('statuscount', data)
+      .subscribe(response => {
+        let result: any;
+        result = response;
+        this.uploadedStatusCount  = result["status-count1"];
+        this.processedStatusCount = result["status-count2"];
+        this.signedStatusCount    = result["status-count3"];
+        this.billerStatusCount    = result["status-count5"];
       })
   }
 
