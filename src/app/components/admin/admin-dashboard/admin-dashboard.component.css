@@ -116,7 +116,7 @@
 /* table section */
 
 .admin_superbillsection { margin: 0 16px; display: block; }
-.admin_superbillsection h1{ font-size: 40px; font-family: 'RobotoBlack'; color: #002035; text-transform: uppercase; margin-bottom: 10px; }
+.admin_superbillsection h1{ font-size: 40px; font-family: 'RobotoBlack'; color: #002035; text-transform: uppercase; margin-bottom: 10px; margin-top: 20px; }
 .admin_superbillsection .biller_wrapper  { display: flex; justify-content: center;}
 .admin_superbillsection .biller_wrapper .super_bill_item{ width: 24%; margin: .5%; padding:0px; display: flex; flex-direction: row-reverse;}
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(1){ background: #00c0ef;}
