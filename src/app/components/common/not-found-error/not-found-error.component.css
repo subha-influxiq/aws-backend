@@ -15,97 +15,7 @@
 .techdashboard_header .mat-toolbar-row .quotation .mat-nav-list .mat-list-item { margin: 0 16px; }
 
 /*End header css */
-.content_wrapper{ display: flex; justify-content: space-between;  align-items: center; width: 99%; margin: auto;
-  text-align: center; }
-.content_wrapper .itemsection{width: 33%; margin: 14px 7px; padding: 15px; box-sizing: border-box; display: flex; flex-direction: column; min-height: 200px; align-items: center;
-  justify-content: center; position: relative;}
-.one{ background: url("../../../../assets/images/admindashcontentbg1.jpg") no-repeat center center; background-size: cover; }
-.two{ background: url("../../../../assets/images/admindashcontentbg2.jpg") no-repeat center center; background-size: cover; }
-.three{ background: url("../../../../assets/images/admindashcontentbg3.jpg") no-repeat center center; background-size: cover; }
-.content_wrapper .itemsection button{ position: absolute;
-  right: 0; bottom: 0; background: rgba(0,0,0, 0.4); color: #fff; font-family: "RobotoRegular"; font-size: 15px;  border-radius: 0; text-transform: uppercase; }
-.content_wrapper .itemsection .counteer{ width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border: 1px solid rgba(0,0,0,0.1);
-  background: rgba(0,0,0, 0.2);
-  box-shadow: 2px 2px 2px 2px transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 50px;
-  font-family: "RobotoBlack";
-}
-.content_wrapper .itemsection p{   line-height: 28px; font-family: "RobotoBlack"; font-size: 30px; color: #fff; text-transform: uppercase; width: auto; margin: 20px auto; margin-top: 15px;}
 
-
-
-
-.doctor_content_wrapper{
-  background: url("../../../../assets/images/doctorcontentbg.jpg") no-repeat center center;
-  background-size: cover; display: block; padding: 50px 40px; margin: 0 16px;
-}
-
-.doctor_content_wrapper .mat-card-title{  font-size: 40px; font-family: "RobotoBlack"; text-transform: uppercase; color: #fff; margin-bottom: 30px;
-  display: block;}
-.doctor_content_wrapper .table_structure{ width: 1080px; display: block;}
-.doctor_content_wrapper table{ width: 100%;}
-/* .doctor_content_wrapper table tr th{ color: #5aa8ed; font-size: 30px; font-family: "RobotoMedium"; font-weight: normal; text-transform: uppercase; }
-.doctor_content_wrapper table tr td{ color: #fff; font-size: 24px; font-family: "RobotoRegular";  text-transform: uppercase; } */
-.table_structure .mat-list mat-list-base { display: flex; }
-.table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
-  display: inline-flex;
-  height: auto;
-  -webkit-tap-highlight-color: transparent;
-  width: auto;
-  padding: 0;color: #fff; border-right: 1px solid #044f82;
-}
-.table_structure .mat-list-base .mat-list-item:nth-last-child(1){ border: none;}
-
-.table_structure .mat-list-item p{ display: block; width: 100%; margin: 0; }
-
-.table_structure .mat-list-item .title_n{ color: #5aa8ed; font-size: 30px; font-family: "RobotoMedium"; font-weight: normal; text-transform: uppercase;  }
-.table_structure .mat-list-item .title_a{ color: #fff; font-size: 24px; font-family: "RobotoRegular";  text-transform: uppercase; }
-.mat-form-field-flex {
-  display: inline-flex;
-  align-items: baseline;
-  box-sizing: border-box;
-  width: 100%;
-  border: 1px solid #012035;
-}
-.patient_report_section  .form_wrapper{ display: flex; margin: 0 10px;}
-.patient_report_section  .form_wrapper .mat-form-field-flex{ border: 1px solid #000!important; }
-.patient_report_section  .mat-form-field-appearance-outline .mat-form-field-wrapper {
-  margin: 0!important;
-}
-.patient_report_section .patient_top_search { display: flex; align-items: center; justify-content: space-between; padding: 0 16px; margin-top: 20px; margin-bottom: 0;}
-.patient_report_section .patient_top_search .search_bar { display: flex;  }
-.patient_report_section .patient_top_search .search_bar button{
-  border: none;
-    background: #000;
-    color: #fff;
-    display: flex;
-    align-items: center; cursor: pointer;
-}
-
-.patient_report_section .patient_top_search h1{ font-size: 32px; text-transform: uppercase;  color: #002035; margin: auto;}
-.patient_report_section .patient_top_search .search_bar button:focus{ outline: none; }
-.patient_report_section .button_action button{  border-radius: 5px;
-  background: linear-gradient(180deg, #f9dc19, #daa505);
-  color: #5e3619;
-  text-transform: uppercase;
-  font-family: "RobotoBlack";
-  font-size: 25px;
-  padding: 10px;
-  width: 515px;    border: 3px solid #d59d01; }
-
-  .patient_report_section .button_action{
-  display: flex;
-    justify-content: space-between;
-    width: 1050px;
-    margin: auto;
-
-}
 
 .footer_section{display: block; border-top: 1px solid #c7c7c7; margin-top: 30px; }
 .footer_section .footer_content{ width: 600px; padding: 0 16px; margin: 0 auto; display: block; text-align: center; }
@@ -113,32 +23,33 @@
 .footer_section .footer_content .link a:nth-of-type(1){ border-right: 1px solid #2b2b2b; padding-right: 5px; }
 .footer_section .footer_content .link a, .footer_section .footer_content .link p{ font-size: 16px; font-family: "RobotoRegular"; color: #2b2b2b; text-decoration: none;}
 
-/* table section */
-
-.admin_superbillsection { margin: 0 16px; display: block; }
-.admin_superbillsection h1{ font-size: 40px; font-family: 'RobotoBlack'; color: #002035; text-transform: uppercase; margin-bottom: 10px; }
-.admin_superbillsection .biller_wrapper  { display: flex; justify-content: center;}
-.admin_superbillsection .biller_wrapper .super_bill_item{ width: 24%; margin: .5%; padding:0px; display: flex; flex-direction: row-reverse;}
-.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(1){ background: #00c0ef;}
-.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(2){ background: #de4b39;}
-.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(3){ background: #7a65f2;}
-.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(4){ background: #d73a87;}
-.admin_superbillsection .biller_wrapper .super_bill_item span{display: block; width: 83%; box-sizing: border-box; padding: 16px 5px; padding-right: 34px;}
-.admin_superbillsection .biller_wrapper .super_bill_item span h2{ color: #fff; font-size: 60px; text-transform: uppercase; font-family: 'RobotoBlack'; margin: 0;}
-.admin_superbillsection .biller_wrapper .super_bill_item span P{ line-height: 30px; color: #fff; font-size: 30px; text-transform: uppercase; font-family: 'RobotoBlack'; margin: 0;}
-.admin_superbillsection .biller_wrapper .super_bill_item span button{ color: #fff; font-size: 16px; text-transform: uppercase; font-family: 'RobotoRegular'; background: rgba(0,0,0,.3);
-  border-radius: 00; line-height: 32px; margin-top: 10px; }
-.admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper{ height: auto; border-left: 5px solid #fff; width: 15%; position: relative; padding: 0;}
-.admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle{ width: 70px; height: 70px; background: #fff; border-radius: 50%; display: flex; align-items: center;
-  justify-content: center; position: absolute; top: 35%; left: -37px; padding: 17px; box-sizing: border-box; }
-.admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle img{ max-width: 100%;}
-
-
-#menu_button{ display: none;}
-
-
-
-
+ .error_banner{
+  background: #ffeaaa;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+  padding: 70px 0;
+ }
+ .error_banner .error_page_content {width:100%; text-align: center; }
+ .error_banner .error_page_content h1{ font-size: 70px;
+  color: #563d3d;
+  margin-bottom: 0;}
+  .error_banner .error_page_content h3{
+    color: #ff6a00;
+    font-size: 30px;
+    margin: 10px;
+    text-transform: capitalize;
+  }
+  .error_banner img{ max-width: 100%; }
+  .error_banner .error_page_content .goto_home{background: #ffcd35;
+    width: 290px;
+    text-transform: capitalize;
+    font-size: 24px;
+    padding: 5px;
+    border-radius: 0;
+    margin-top: 30px;}
 
 @media screen and (max-width: 1700px){
   .content_wrapper .itemsection p { font-size: 26px; }
