@@ -11,12 +11,13 @@ import { CommonFunction } from '../../../../class/common/common-function';
 export class ManageAdminListComponent implements OnInit {
   
   public TechDashboardAllData: any = [];
-  public allUserData_skip: any = ["confirmpassword","accesscode", "password", "created_at", "_id","id","updated_at","phoneno","type"];
+  public allUserData_skip: any = ["confirmpassword","accesscode", "password", "created_at", "_id","id","updated_at","phoneno","type","taxo_list","state","city","zip","address"];
   public editUrl: any = "admin/admin-management/edit";
   public allUserData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name",
     "email": "E-Mail", "phone": "Phone Number", "date": "Date",
-    "status": "Status","zip":"Zip","city":"City","state":"State"
+    "status": "Status","zip":"Zip","city":"City","state":"State","address":"Address",
+    "fullName":"Name"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";

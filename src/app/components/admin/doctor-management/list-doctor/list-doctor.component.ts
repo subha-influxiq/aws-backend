@@ -22,7 +22,7 @@ export class ListDoctorComponent implements OnInit {
   docData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name", "email": "Email", "phone": "Phone",
     "practicename": "Practice name", "npm": "NPM#", "address": "Address", "city": "City", "state": "State",
-    "zip": "ZIP", "status": "Status", "taxo list": "Taxonomies","fullname":"Name"
+    "zip": "ZIP", "status": "Status", "taxo list": "Taxonomies","fullName":"Name"
   };
   tableName: any = 'users';
   UpdateEndpoint: any = "addorupdatedata";

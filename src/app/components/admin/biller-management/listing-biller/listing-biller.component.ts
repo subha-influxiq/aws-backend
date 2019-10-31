@@ -10,13 +10,14 @@ import { CommonFunction } from '../../../../class/common/common-function';
 })
 export class ListingBillerComponent implements OnInit {
 public allBillerData:any=[];
-public allUserData_skip: any = ["confirmpassword", "password", "created_at","id","updated_at", "_id","type","phoneno"];
+public allUserData_skip: any = ["confirmpassword", "password", 
+"created_at","id","updated_at", "_id","type","phoneno","taxo_list"];
   public editUrl: any = "admin/biller-management/edit";
   public allUserData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name",
     "email": "E-Mail", "phone": "Phone Number", "date": "Date Added",
     "status": "Status","address" : "Address","zip" : "Zip","companyname":"Company Name",
-    "city":"City","state" : "State"
+    "city":"City","state" : "State","fullName":"Name"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";
@@ -50,8 +51,6 @@ public user_cookie:any;
   getAllBillerData(){
     this.activeRoute.data.forEach((data) => {
       this.allBillerData = data.Billerdata.res;
-      console.log(this.allBillerData);
-
     })
   }
 }
