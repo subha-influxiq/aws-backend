@@ -72,6 +72,8 @@ export class AddEditPatientComponent implements OnInit {
         leaveNotes         :  ['',Validators.required],
         systolic           :  [''],
         diastolic          :  [''],
+        status             :  [1],
+
       })
     }
 

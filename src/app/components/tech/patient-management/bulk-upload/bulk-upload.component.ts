@@ -36,7 +36,7 @@ export class BulkUploadComponent implements OnInit {
     this.techBulkUploadForm = this.fb.group({
       batchName    : ['', [Validators.required, Validators.maxLength(40)]],
       uploadFile   : [],
-      status       : [''],
+      status       : [1],
       note         : ['',Validators.required],
     })
     this.user_token = cookie.get('jwtToken');
