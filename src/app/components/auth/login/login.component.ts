@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonFunction } from '../../../class/common/common-function';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   public routerStatus: any;
 
-  constructor(public commonFunction: CommonFunction) {
+  constructor(public cookies: CookieService, public commonFunction: CommonFunction) {
 
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();

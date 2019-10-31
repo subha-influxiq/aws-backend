@@ -14,12 +14,33 @@ export class AuthguardService implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-    let getToken = this.cookie.get('jwtToken');
+    var getToken = this.cookie.get('jwtToken');
 
     if (getToken) {
-      return true;
+      var allData: any = this.cookie.getAll();
+      var userData: any = JSON.parse(allData.user_details);
+      
+      /* Login User */
+      switch(next.url[0].path) {
+        case 'login':
+        case 'forget-password':
+          this._router.navigate([userData.type + '/dashboard']);
+          break;
+        default:
+          return true;
+          break;
+      }
     } else {
-      this._router.navigate(['/login']);
+      /* Login User */
+      switch(next.url[0].path) {
+        case 'login':
+        case 'forget-password':
+          return true;
+          break;
+        default:
+          this._router.navigate(['/login']);
+          break;
+      }
     }
   }
 }

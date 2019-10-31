@@ -17,15 +17,15 @@ export class AdminHeaderComponent implements OnInit {
   public user_cookie:any;
   constructor(public cookies: CookieService, public router: Router) { 
     let allData: any = {};
-    allData = cookies.getAll()
+    allData = this.cookies.getAll();
     this.user_data = JSON.parse(allData.user_details);
     this.user_cookie = cookies.get('jwtToken');
   }
 
   ngOnInit() {
   }
-  myFunction(){
-    
+
+  myFunction() {
   }
   
   /**logout function start here**/

@@ -77,6 +77,7 @@ import { HealthriskSystemEncounterComponent } from './components/admin/tech-mana
 import { SystemSuperbillComponent } from './components/admin/tech-management/system-superbill/system-superbill.component';
 import { HealthRiskAnalysisComponent } from './components/admin/tech-management/health-risk-analysis/health-risk-analysis.component';
 import { ReportDetailsComponent } from './components/tech/report-details/report-details.component';
+import { NotFoundErrorComponent } from './components/common/not-found-error/not-found-error.component';
 
 
 @NgModule({
@@ -120,7 +121,8 @@ import { ReportDetailsComponent } from './components/tech/report-details/report-
     HealthriskSystemEncounterComponent, SystemSuperbillComponent,
     HealthRiskAnalysisComponent,
     ReportDetailsComponent,
-    HttpLoaderComponent
+    HttpLoaderComponent,
+    NotFoundErrorComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

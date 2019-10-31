@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MetaGuard } from '@ngx-meta/core';
 import { AuthguardService } from '../services/authguard.service';
 import { from } from 'rxjs';
+
 /* Resolve Service */
 import { ResolveService } from '../services/resolve.service';
 
@@ -13,33 +14,42 @@ import { ResetpasswordComponent } from '../components/auth/resetpassword/resetpa
 
 /****************** Admin *****************/
 import { AdminDashboardComponent } from '../components/admin/admin-dashboard/admin-dashboard.component';
+
 /* User Mnagement */
 import { UserAddEditComponent } from '../components/admin/user-management/user-add-edit/user-add-edit.component'
 import { AddEditComponent } from '../components/admin/admin-management/add-edit/add-edit.component';
 import { ManageAdminListComponent } from '../components/admin/admin-management/manage-admin-list/manage-admin-list.component';
 import { AddeditDoctorComponent } from '../components/admin/doctor-management/addedit-doctor/addedit-doctor.component';
 import { ListDoctorComponent } from '../components/admin/doctor-management/list-doctor/list-doctor.component';
+
 /* Biller Management */
 import { AddEditBillerComponent } from '../components/admin/biller-management/add-edit-biller/add-edit-biller.component';
 import { ListingBillerComponent } from '../components/admin/biller-management/listing-biller/listing-biller.component';
+
 /* Tech Management */
 import { AddEditTechComponent } from '../components/admin/tech-management/add-edit-tech/add-edit-tech.component';
 import { ListingTechComponent } from '../components/admin/tech-management/listing-tech/listing-tech.component';
+
 /* Account Settings */
 import { AccountSettingsComponent } from '../components/common/account-settings/account-settings.component';
 import { ChangePasswordComponent } from '../components/common/account-settings/change-password/change-password.component';
 
-
 /***************** Tech Dashboard ****************/
 import { TechDashboardComponent } from '../components/tech/tech-dashboard/tech-dashboard.component';
+
 /* Patient Management */
 import { AddEditPatientComponent } from '../components/tech/patient-management/add-edit-patient/add-edit-patient.component';
+
 /* Bulk Upload**/
 import { BulkUploadComponent } from '../components/tech/patient-management/bulk-upload/bulk-upload.component';
 
 import { BillerDashboardComponent } from '../components/biller/biller-dashboard/biller-dashboard.component';
 import { DoctorDashboardComponent } from '../components/doctor/doctor-dashboard/doctor-dashboard.component';
 import { ReportDetailsComponent} from '../components/tech/report-details/report-details.component';
+
+/* Error Pages */
+import { NotFoundErrorComponent } from '../components/common/not-found-error/not-found-error.component';
+
 /* Test Component */
 import { TestComponent } from '../components/test/test.component';
 import { HealthriskSystemEncounterComponent } from '../components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component';
@@ -49,9 +59,9 @@ import { HealthRiskAnalysisComponent } from '../components/admin/tech-management
 const routes: Routes = [
   /* Auth Route */
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'forget-password', component: ForgetpasswordComponent },
-  { path: 'reset-password/:_id', component: ResetpasswordComponent },
+  { path: 'login', component: LoginComponent, canActivate: [AuthguardService] },
+  { path: 'forget-password', component: ForgetpasswordComponent, canActivate: [AuthguardService] },
+  { path: 'reset-password/:_id', component: ResetpasswordComponent, canActivate: [AuthguardService] },
   { path: 'sign-up', redirectTo: '/login', pathMatch: 'full' },
 
   /* Admin Route */
@@ -205,9 +215,10 @@ const routes: Routes = [
     },
   },
 
-  {path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent},
-  {path: 'tech/system-superbill', component: SystemSuperbillComponent},
-  {path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent},
+  { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent},
+  { path: 'tech/system-superbill', component: SystemSuperbillComponent},
+  { path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent},
+  { path: '**', component: NotFoundErrorComponent }
 ];
 
 @NgModule({
