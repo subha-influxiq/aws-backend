@@ -1,5 +1,5 @@
+<!-- Admin Header -->
 <app-admin-header></app-admin-header>
-
 
 <!-- header with add button -->
 <mat-card-content class="title_wrapper">
@@ -9,7 +9,7 @@
 
 <span class="add_header">
   <span class="bradcrumb">
-    <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; 
+    <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
     <a [routerLink]="['/admin/biller-management']">Manage Biller &nbsp;/</a> &nbsp;
     {{ htmlText.nav }}
   </span>
@@ -129,25 +129,20 @@
         <mat-error
           *ngIf="!billerManagementAddEditForm.controls['confirmpassword'].valid && billerManagementAddEditForm.controls['confirmpassword'].touched">
           Password does not match </mat-error>
-
       </mat-form-field>
 
-
       <mat-checkbox [formControl]="billerManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
-  
-
 
       <span class="submit_form">
         <button mat-flat-button type="reset">Reset </button>
-        <button mat-flat-button type="submit" [disabled]="!billerManagementAddEditForm.valid"> {{ htmlText.buttonText }} </button>
+        <button mat-flat-button type="submit" [disabled]="!billerManagementAddEditForm.valid"> {{ htmlText.buttonText }}
+        </button>
       </span>
-
-
 
     </form>
   </mat-card-content>
 
-
-
-
 </mat-card>
+
+<!-- Admin Footer -->
+<app-admin-footer></app-admin-footer>

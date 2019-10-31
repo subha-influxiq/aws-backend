@@ -78,6 +78,7 @@ import { SystemSuperbillComponent } from './components/admin/tech-management/sys
 import { HealthRiskAnalysisComponent } from './components/admin/tech-management/health-risk-analysis/health-risk-analysis.component';
 import { ReportDetailsComponent } from './components/tech/report-details/report-details.component';
 import { NotFoundErrorComponent } from './components/common/not-found-error/not-found-error.component';
+import { AdminFooterComponent } from './components/admin/admin-footer/admin-footer.component';
 
 
 @NgModule({
@@ -122,7 +123,8 @@ import { NotFoundErrorComponent } from './components/common/not-found-error/not-
     HealthRiskAnalysisComponent,
     ReportDetailsComponent,
     HttpLoaderComponent,
-    NotFoundErrorComponent
+    NotFoundErrorComponent,
+    AdminFooterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
