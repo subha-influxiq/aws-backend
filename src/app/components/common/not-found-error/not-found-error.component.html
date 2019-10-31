@@ -1,4 +1,18 @@
-<app-admin-header></app-admin-header>
+<ng-container *ngIf="cookiesData.type == 'admin'">
+  <app-admin-header></app-admin-header>
+</ng-container>
+
+<ng-container *ngIf="cookiesData.type == 'tech'">
+  <app-tech-header></app-tech-header>
+</ng-container>
+
+<ng-container *ngIf="cookiesData.type == 'biller'">
+  <app-biller-header></app-biller-header>
+</ng-container>
+
+<ng-container *ngIf="cookiesData.type == 'doctor'">
+  <app-doctor-header></app-doctor-header>
+</ng-container>
 
 <h1> 404 Error </h1>
 <h3> Page Not Found </h3>
