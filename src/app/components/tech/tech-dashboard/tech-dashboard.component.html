@@ -36,76 +36,76 @@
 
     </mat-toolbar-row>
   </mat-toolbar> -->
-  <!-- end header -->
+<!-- end header -->
 
 <app-tech-header></app-tech-header>
-  <mat-card-content class="content_wrapper">
-    <mat-card-content class="itemsection one">
-      <span class="counteer"> 10</span>
-      <p>Total Number of <br>Reports uploaded</p>
-      <button mat-flat-button [routerLink]="['/tech/report/total-uploaded']">View Details</button> 
-    </mat-card-content>
-    <mat-card-content class="itemsection two">
-      <span class="counteer"> 10</span>
-      <p>Total Number of <br>Reports Processed</p>
-      <button mat-flat-button [routerLink]="['/tech/report/total-processed']">View Details</button>
-    </mat-card-content>
-    <mat-card-content class="itemsection three">
-      <span class="counteer"> 10</span>
-      <p>Total Number of Reports <br>remain to process
-      
-      </p>
-      <button mat-flat-button [routerLink]="['/tech/report/total-remained-processed']">View Details</button>
-    </mat-card-content>
+<mat-card-content class="content_wrapper">
+  <mat-card-content class="itemsection one">
+    <span class="counteer"> 10</span>
+    <p>Total Number of <br>Reports uploaded</p>
+    <button mat-flat-button [routerLink]="['/tech/report/total-uploaded']">View Details</button>
   </mat-card-content>
+  <mat-card-content class="itemsection two">
+    <span class="counteer"> 10</span>
+    <p>Total Number of <br>Reports Processed</p>
+    <button mat-flat-button [routerLink]="['/tech/report/total-processed']">View Details</button>
+  </mat-card-content>
+  <mat-card-content class="itemsection three">
+    <span class="counteer"> 10</span>
+    <p>Total Number of Reports <br>remain to process
+
+    </p>
+    <button mat-flat-button [routerLink]="['/tech/report/total-remained-processed']">View Details</button>
+  </mat-card-content>
+</mat-card-content>
 
 
 
 
-  <mat-card-content class="doctor_content_wrapper">
-    <mat-card-title>Doctor Office You Are Working With</mat-card-title>
-    <mat-card-content class="table_structure">
+<mat-card-content class="doctor_content_wrapper">
+  <mat-card-title>Doctor Office You Are Working With</mat-card-title>
+  <mat-card-content class="table_structure">
 
 
-      <mat-list>
-        <mat-list-item>
-          <p class="title_n">Name</p>
-          <p class="title_a">{{ userSingleData.firstname }}</p>
-        </mat-list-item>
-        <mat-list-item>
-          <p class="title_n">Taxonomies</p>
-          <p class="title_a">
-            <ng-container *ngFor="let n of userSingleData.taxo_list; let i = index;">
-              {{ n }}
-              <ng-container *ngIf="i + 1 < userSingleData.taxo_list.length">
-                ,
-              </ng-container>
+    <mat-list>
+      <mat-list-item>
+        <p class="title_n">Name</p>
+        <p class="title_a">{{ userSingleData.firstname }}</p>
+      </mat-list-item>
+      <mat-list-item>
+        <p class="title_n">Taxonomies</p>
+        <p class="title_a">
+          <ng-container *ngFor="let n of userSingleData.taxo_list; let i = index;">
+            {{ n }}
+            <ng-container *ngIf="i + 1 < userSingleData.taxo_list.length">
+              ,
             </ng-container>
-          </p>
-        </mat-list-item>
-        <mat-list-item>
-          <p class="title_n">Email</p>
-          <p class="title_a">{{ userSingleData.email }}</p>
-        </mat-list-item>
-        <mat-list-item>
-          <p class="title_n">Phone</p>
-          <p class="title_a">{{ userSingleData.phone }}</p>
-        </mat-list-item>
-        <mat-list-item>
-          <p class="title_n">FAX</p>
-          <p class="title_a">{{ userSingleData.fax }}</p>
-        </mat-list-item>
-      </mat-list>
-    </mat-card-content>
+          </ng-container>
+        </p>
+      </mat-list-item>
+      <mat-list-item>
+        <p class="title_n">Email</p>
+        <p class="title_a">{{ userSingleData.email }}</p>
+      </mat-list-item>
+      <mat-list-item>
+        <p class="title_n">Phone</p>
+        <p class="title_a">{{ userSingleData.phone }}</p>
+      </mat-list-item>
+      <mat-list-item>
+        <p class="title_n">FAX</p>
+        <p class="title_a">{{ userSingleData.fax }}</p>
+      </mat-list-item>
+    </mat-list>
   </mat-card-content>
+</mat-card-content>
 
 
 
-  <!-- patainet report section -->
-  <mat-card-content class="patient_report_section">
-    <mat-card-content class="patient_top_search">
-      <h1>Patient record report</h1>
-      <!-- <span class="search_bar">
+<!-- patainet report section -->
+<mat-card-content class="patient_report_section">
+  <mat-card-content class="patient_top_search">
+    <h1>Patient record report</h1>
+    <!-- <span class="search_bar">
         <span class="form_wrapper">
           <mat-form-field appearance="outline">
             <input matInput [matDatepicker]="picker" (focus)="picker.open()" placeholder="Search By Date">
@@ -127,47 +127,28 @@
           <button><i class="material-icons"> search </i></button>
         </span>
       </span> -->
-    </mat-card-content>
+  </mat-card-content>
 
   <!-- table -->
-  <lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0"
-    [datasource]="TechDashboardAllData"
-    [skip]="allUserData_skip"
-    [modify_header_array]="allUserData_modify_header"
-    [apiurl]="apiUrl"
-    [sourcedata]="tableName"
-    [editroute]="editUrl"
-    [jwttoken]="user_token"
-    [statusarr]="status"
-    [updateendpoint]="UpdateEndpoint"
-    [deleteendpoint]="deleteEndpoint"
-    [date_search_endpoint]="SearchingEndpoint"
-    [date_search_source]="tableName"
-    [search_settings]="search_settings"
-   >
-</lib-listing>
-<h2 *ngIf="TechDashboardAllData.length == 0">No record found.</h2>
+  <lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0" [datasource]="TechDashboardAllData"
+    [skip]="allUserData_skip" [modify_header_array]="allUserData_modify_header" [apiurl]="apiUrl"
+    [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="user_token" [statusarr]="status"
+    [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
+    [date_search_source]="tableName" [search_settings]="search_settings">
+  </lib-listing>
+  <h2 *ngIf="TechDashboardAllData.length == 0">No record found.</h2>
   <!-- end table -->
 
 
 
   <span class="button_action">
-    <button mat-flat-button routerLink = "/tech/patient-management/bulk-upload">upload bulk report</button>
-    <button mat-flat-button routerLink = "/tech/patient-management/add">add a new patient records manually</button>
+    <button mat-flat-button routerLink="/tech/patient-management/bulk-upload">upload bulk report</button>
+    <button mat-flat-button routerLink="/tech/patient-management/add">add a new patient records manually</button>
   </span>
-  </mat-card-content>
+</mat-card-content>
 
 
 
 
-  <mat-card-content class="footer_section">
-          <span class="footer_content">
-
-            <mat-card-content class="link">
-            <a href="">Privacy Policy</a>
-            <a href=""> Terms & conditions</a>
-          </mat-card-content>
-          <p>© Copyright 2018 Advanced Wellness Solutions- All Rights Reserved</p>
-          </span>
-  </mat-card-content>
-
+<!-- Tech Footer -->
+<app-tech-footer></app-tech-footer>

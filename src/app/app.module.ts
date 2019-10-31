@@ -79,6 +79,9 @@ import { HealthRiskAnalysisComponent } from './components/admin/tech-management/
 import { ReportDetailsComponent } from './components/tech/report-details/report-details.component';
 import { NotFoundErrorComponent } from './components/common/not-found-error/not-found-error.component';
 import { AdminFooterComponent } from './components/admin/admin-footer/admin-footer.component';
+import { BillerFooterComponent } from './components/biller/biller-footer/biller-footer.component';
+import { TechFooterComponent } from './components/tech/tech-footer/tech-footer.component';
+import { DoctorFooterComponent } from './components/doctor/doctor-footer/doctor-footer.component';
 
 
 @NgModule({
@@ -124,7 +127,10 @@ import { AdminFooterComponent } from './components/admin/admin-footer/admin-foot
     ReportDetailsComponent,
     HttpLoaderComponent,
     NotFoundErrorComponent,
-    AdminFooterComponent
+    AdminFooterComponent,
+    BillerFooterComponent,
+    TechFooterComponent,
+    DoctorFooterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
