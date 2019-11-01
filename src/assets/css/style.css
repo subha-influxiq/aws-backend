@@ -146,7 +146,7 @@
 .container .searchbar span{  width: 100% ;
   display: flex;
   justify-content: space-evenly;
-}  
+}
 .searchbar .mat-form-field .mat-form-field-flex {
   display: inline-flex;
   align-items: baseline;
@@ -168,4 +168,5 @@
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  border: 5px solid #fff; }
+  border-right: 5px solid #fff;
+ }
