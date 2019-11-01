@@ -8,24 +8,11 @@ import { MatTableDataSource } from '@angular/material';
 
 
 export interface PeriodicElement {
-  PatientName: string;
-  DoctorsName: string;
-  TechName: string;
-  Record: string;
-  UploadDate: string;
-  BillGenerationDate: string;
-  BillSentDate: string;
-  SuperBill: string;
-  Status: string;
-  BillerName: string;
-  SenttoBiller: string;
+  patientName: string;
+  record_type: string;
+  date_added: string;
+  status: string;
 }
-const ELEMENT_DATA: PeriodicElement[] = [
-  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate: 'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv' },
-  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate: 'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv' },
-  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate: 'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv' },
-  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate: 'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv' },
-];
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -43,14 +30,14 @@ export class AdminDashboardComponent implements OnInit {
   public signedStatusCount: any;
   public billerStatusCount: any;
 
-  public commonArray: any = [];
+  public commonArray: PeriodicElement[] = [];
   public uploadedStatusArray:any = [];
   public processedStatusArray:any = [];
   public signedStatusArray:any = [];
   public billerStatusArray:any = [];
-  displayedColumns: string[] = ['PatientName', 'DoctorsName', 'TechName', 'Record', 'UploadDate', 'BillGenerationDate', 'BillSentDate', 'SuperBill', 'Status', 'BillerName', 'SenttoBiller'];
+  displayedColumns: string[] = ['patientName', 'record_type', 'date_added', 'status'];
 
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource = new MatTableDataSource(this.commonArray);
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -139,19 +126,24 @@ export class AdminDashboardComponent implements OnInit {
     switch (flag) {
       case 'Reports Uploaded':
         this.commonArray = this.uploadedStatusArray;
+        this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       case 'Report Processed':
         this.commonArray = this.processedStatusArray;
+        this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       case 'Report Signed':
         this.commonArray = this.signedStatusArray;
+        this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       case 'Super Bill':
         this.commonArray = this.billerStatusArray;
+        this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       default:
         break;
     }
+    console.log('=======>', this.commonArray);
   }
 
   myFunction() {
