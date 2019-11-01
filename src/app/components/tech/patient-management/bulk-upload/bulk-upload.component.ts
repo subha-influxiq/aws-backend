@@ -26,9 +26,17 @@ export class BulkUploadComponent implements OnInit {
   public techBulkUploadForm: FormGroup;
   public user_token: any;
   public images_array: any = [];
+  public cookiesData:any={};
+  public cookies_id :any;
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService,
     public cookie: CookieService, public snakBar: MatSnackBar, public commonFunction: CommonFunction) {
+      this.user_token = cookie.get('jwtToken');
+      let allcookies: any;
+      allcookies = cookie.getAll();
+      
+      this.cookiesData = JSON.parse(allcookies.user_details);
+      this.cookies_id = this.cookiesData._id;
 
       /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
@@ -38,6 +46,8 @@ export class BulkUploadComponent implements OnInit {
       uploadFile   : [],
       status       : [1],
       note         : ['',Validators.required],
+      user_id            :  []
+
     })
     this.user_token = cookie.get('jwtToken');
   }
@@ -68,6 +78,8 @@ export class BulkUploadComponent implements OnInit {
           });
       }
       this.techBulkUploadForm.controls['uploadFile'].patchValue(this.images_array);
+      this.techBulkUploadForm.controls['user_id'].patchValue(this.cookies_id);
+
 
 
     } else {
@@ -80,6 +92,7 @@ export class BulkUploadComponent implements OnInit {
       var data = {
         "source"  : "patient_management",
         "data"    : this.techBulkUploadForm.value,
+        "sourceobj": ["user_id"],
         "token"   :  this.user_token
       }
       this.httpService.httpViaPost("addorupdatedata",data)

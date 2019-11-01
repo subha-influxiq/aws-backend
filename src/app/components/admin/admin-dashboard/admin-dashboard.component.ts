@@ -47,7 +47,8 @@ export class AdminDashboardComponent implements OnInit {
   public docCount: any = [];
 
   constructor(private router: Router, public cookieService: CookieService,
-    private http: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
+    private http: HttpServiceService, public activatedRoute: ActivatedRoute, 
+    public commonFunction: CommonFunction) {
 
     this.user_token = cookieService.get('jwtToken');
     this.getAllCountData();
@@ -59,7 +60,6 @@ export class AdminDashboardComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.data.subscribe(resolveData => {
       this.docCount = resolveData.dataCount;
-      console.log(this.docCount);
     });
   }
 

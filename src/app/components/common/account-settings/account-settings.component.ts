@@ -42,6 +42,7 @@ export class AccountSettingsComponent implements OnInit {
     allcookies = cookie.getAll();
     
     this.cookiesData = JSON.parse(allcookies.user_details);
+    console.log("souresjhgfgfd",this.cookiesData.type);
     this.cookies_id = this.cookiesData._id;
 
     /* Set Meta Data */
