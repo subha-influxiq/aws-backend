@@ -142,15 +142,19 @@ export class AdminDashboardComponent implements OnInit {
     switch (flag) {
       case 1:
         this.uploadedStatusArray;
+        console.log(this.uploadedStatusArray);
         break;
       case 2:
         this.processedStatusArray;
+        console.log(this.processedStatusArray);
         break;
       case 3:
         this.signedStatusArray;
+        console.log(this.signedStatusArray);
         break;
       case 4:
         this.billerStatusArray;
+        console.log(this.billerStatusArray);
          break;
       default:
         break;
