@@ -175,7 +175,7 @@
 
 .table_structure .mat-list-item .title_n { font-size: 26px; }
 .table_structure .mat-list-item .title_a { font-size: 22px; }
-.content_wrapper .itemsection p{ width: 100%; font-size: 22px; }
+.content_wrapper .itemsection p{ width: 100%; font-size: 22px; padding: 0 20px; box-sizing: border-box; }
 .techdashboard_header .mat-toolbar-row { height: auto; flex-direction: column; }
 .admin_superbillsection .biller_wrapper{ display: flex; justify-content: center; flex-wrap: wrap; }
 .admin_superbillsection  .biller_wrapper .super_bill_item  { width: 49%; }
@@ -208,11 +208,16 @@
 .patient_report_section .button_action { width: auto; margin: 0 5px; display: flex; justify-content: center; }
 .content_wrapper .itemsection { width: 30.8%; }
 .table_structure .mat-list-item .title_a { font-size: 16px; }
-#menu_button{ display: block;}
 .techdashboard_header .mat-toolbar-row .quotation { display: none; }
-
-.techdashboard_header .mat-toolbar-row .quotation .mat-list-base {
-  display: block;
+.techdashboard_header .mat-toolbar-row .quotation .mat-list-base { display: block;}
+.content_wrapper .itemsection { margin: 15px 10px; }
+.admin_superbillsection h1 {
+  font-size: 30px;
+  font-family: 'RobotoBlack';
+  color: #002035;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 }
 @media screen and (max-width: 970px){
@@ -247,6 +252,7 @@
 
 
 }
+
 @media screen and (max-width: 768px){
 .content_wrapper .itemsection { width: 100%; margin: 16px; margin-bottom: 0; }
 .content_wrapper .itemsection:nth-last-child(1) {margin-bottom: 16px; }
@@ -257,13 +263,13 @@
 .doctor_content_wrapper { padding: 20px 0px; }
 .table_structure .mat-list-item .title_a { font-size: 14px; }
 .doctor_content_wrapper .mat-card-title { font-size: 28px; margin-bottom: 5px; text-align: left; padding: 0 16px; }
-
 .table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option { margin-bottom: 16px; }
 .footer_section .footer_content { width: auto; }
-
 .table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option { display: flex; text-align: left; }
-
-  .admin_superbillsection  .biller_wrapper .super_bill_item  { width: 100%; }
+.admin_superbillsection  .biller_wrapper .super_bill_item  { width: 100%; }
+.content_wrapper { width: 100%; }
+.admin_superbillsection h1 { text-align: center;}
+.admin_superbillsection .biller_wrapper .super_bill_item span P br{ display: none;}
 }
 @media screen and (max-width: 480px){
 .doctor_content_wrapper .mat-card-title { font-size: 24px; }
