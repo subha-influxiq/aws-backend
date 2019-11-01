@@ -32,9 +32,7 @@ export class AdminHeaderComponent implements OnInit {
   logout() {
     this.cookies.delete('jwtToken');
     this.cookies.deleteAll();
-    setTimeout(() => {
-      this.router.navigateByUrl('/login');
-    }, 3000);
+    this.router.navigateByUrl('login');
   }
   /**logout function end here**/
 

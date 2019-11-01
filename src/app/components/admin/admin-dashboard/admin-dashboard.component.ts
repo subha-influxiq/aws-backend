@@ -33,6 +33,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
+
   public user_token: any;
   public billerCount: any;
   public doctorCount: any;
@@ -41,10 +42,12 @@ export class AdminDashboardComponent implements OnInit {
   public processedStatusCount: any;
   public signedStatusCount: any;
   public billerStatusCount: any;
-  public uploadedStatusArray:any=[];
-  public processedStatusArray:any=[];
-  public signedStatusArray:any=[];
-  public billerStatusArray:any=[];
+
+  public commonArray: any = [];
+  public uploadedStatusArray:any = [];
+  public processedStatusArray:any = [];
+  public signedStatusArray:any = [];
+  public billerStatusArray:any = [];
   displayedColumns: string[] = ['PatientName', 'DoctorsName', 'TechName', 'Record', 'UploadDate', 'BillGenerationDate', 'BillSentDate', 'SuperBill', 'Status', 'BillerName', 'SenttoBiller'];
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -53,10 +56,8 @@ export class AdminDashboardComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  public docCount: any = [];
 
-
-
-  docCount: any = [];
   constructor(private router: Router, public cookieService: CookieService,
     private http: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
 
@@ -65,10 +66,6 @@ export class AdminDashboardComponent implements OnInit {
     this.getStatusCountData();
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
-
-
-
-
   }
 
   ngOnInit() {
@@ -76,10 +73,8 @@ export class AdminDashboardComponent implements OnInit {
       this.docCount = resolveData.dataCount;
       console.log(this.docCount);
     });
-
-
-
   }
+
   getAllCountData() {
     var data = {
       "condition": {
@@ -131,6 +126,7 @@ export class AdminDashboardComponent implements OnInit {
         this.processedStatusCount = result["status-count2"];
         this.signedStatusCount = result["status-count3"];
         this.billerStatusCount = result["status-count5"];
+
         this.uploadedStatusArray = result.data.status1;
         this.processedStatusArray = result.data.status2;
         this.signedStatusArray = result.data.status3;
@@ -138,24 +134,26 @@ export class AdminDashboardComponent implements OnInit {
 
       })
   }
-  allDashboardData(flag: any) {
+
+  viewReportProcessData(flag: string) {
     switch (flag) {
-      case 1:
-        this.uploadedStatusArray;
+      case 'Reports Uploaded':
+        this.commonArray = this.uploadedStatusArray;
         break;
-      case 2:
-        this.processedStatusArray;
+      case 'Report Processed':
+        this.commonArray = this.processedStatusArray;
         break;
-      case 3:
-        this.signedStatusArray;
+      case 'Report Signed':
+        this.commonArray = this.signedStatusArray;
         break;
-      case 4:
-        this.billerStatusArray;
-         break;
+      case 'Super Bill':
+        this.commonArray = this.billerStatusArray;
+        break;
       default:
         break;
     }
   }
+
   myFunction() {
     var x = document.getElementById("myDIV");
     if (x.style.display === "none") {
