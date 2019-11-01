@@ -10,7 +10,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 
 export class AdminHeaderComponent implements OnInit {
-
+    status: boolean = true;
   public user_data: any = {};
 
   public loader: boolean = true;
@@ -38,6 +38,8 @@ export class AdminHeaderComponent implements OnInit {
 
   menuFunction() {
     console.log('Working on it.');
+    this.status = !this.status;  
   }
-
+  
+  
 }
