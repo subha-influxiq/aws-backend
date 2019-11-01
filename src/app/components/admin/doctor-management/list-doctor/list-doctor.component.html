@@ -5,10 +5,10 @@
 <mat-card-content class="title_wrapper">
     manage doctor
   </mat-card-content>
-  
-  
+
+
   <span class="add_header">
-   <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Doctor</span> 
+   <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Doctor</span>
       <button mat-flat-button [routerLink]="['/admin/doctor-management/add']">Add Doctor</button>
   </span>
   <!-- End header with add button -->
@@ -16,12 +16,12 @@
 
 
 <!-- Listing goes here  -->
-<lib-listing  class="DataTable" *ngIf="docData != null && docData.length>0" 
-  [datasource]="docData" 
+<lib-listing  class="DataTable" *ngIf="docData != null && docData.length>0"
+  [datasource]="docData"
   [skip]="docData_skip"
-  [modify_header_array]="docData_modify_header" 
+  [modify_header_array]="docData_modify_header"
   [sourcedata]="tableName"
-  [apiurl]="apiUrl"  
+  [apiurl]="apiUrl"
   [editroute]="editUrl"
   [jwttoken]="user_cookie"
   [statusarr]="status"
@@ -29,7 +29,9 @@
   [deleteendpoint]="deleteEndpoint"
   [date_search_endpoint]="searchingEndpoint"
   [date_search_source]="tableName"
-  [search_settings]="search_settings">
+  [search_settings]="search_settings"
+  >
+
 </lib-listing>
 
 <h2 *ngIf="docData.length == 0">No record found.</h2>

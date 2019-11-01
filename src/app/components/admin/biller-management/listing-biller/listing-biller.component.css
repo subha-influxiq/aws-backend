@@ -24,7 +24,6 @@
 .footer_section .footer_content .link a, .footer_section .footer_content .link p{ font-size: 16px; font-family: "RobotoRegular"; color: #2b2b2b; text-decoration: none;}
 
 
-#menu_button{ display: none;}
 
 .add_header{ display: flex; margin: 0 16px;}
 .add_header button{ margin-left: auto;
@@ -160,4 +159,6 @@
 @media screen and (max-width: 480px){
 .doctor_content_wrapper .mat-card-title { font-size: 24px; }
 .patient_report_section .patient_top_search h1 { font-size: 24px; }
+.add_header { display: flex; margin: 0 16px;  align-items: center;  flex-direction: column; justify-content: center;}
+.add_header button { margin-left: 0; margin: 10px 0 0 0; }
 }
