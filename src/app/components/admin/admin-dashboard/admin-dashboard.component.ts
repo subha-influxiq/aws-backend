@@ -8,6 +8,7 @@ import { MatTableDataSource } from '@angular/material';
 
 
 export interface PeriodicElement {
+  no: number;
   patientName: string;
   record_type: string;
   date_added: string;
@@ -35,7 +36,7 @@ export class AdminDashboardComponent implements OnInit {
   public processedStatusArray:any = [];
   public signedStatusArray:any = [];
   public billerStatusArray:any = [];
-  displayedColumns: string[] = ['patientName', 'record_type', 'date_added', 'status'];
+  displayedColumns: string[] = ['no', 'patientName', 'record_type', 'date_added', 'status'];
 
   dataSource = new MatTableDataSource(this.commonArray);
 
@@ -46,7 +47,8 @@ export class AdminDashboardComponent implements OnInit {
   public docCount: any = [];
 
   constructor(private router: Router, public cookieService: CookieService,
-    private http: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
+    private http: HttpServiceService, public activatedRoute: ActivatedRoute, 
+    public commonFunction: CommonFunction) {
 
     this.user_token = cookieService.get('jwtToken');
     this.getAllCountData();
@@ -58,7 +60,6 @@ export class AdminDashboardComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.data.subscribe(resolveData => {
       this.docCount = resolveData.dataCount;
-      console.log(this.docCount);
     });
   }
 

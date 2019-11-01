@@ -17,8 +17,17 @@
 </mat-card-content>
 
 
-<span class="add_header">
+<span class="add_header" *ngIf="cookiesData.type == 'tech'">
+    <span class="bradcrumb"><a [routerLink]="['/tech/dashboard']">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>
+</span>
+<span class="add_header" *ngIf="cookiesData.type == 'admin'">
     <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>
+</span>
+<span class="add_header" *ngIf="cookiesData.type == 'biller'">
+    <span class="bradcrumb"><a [routerLink]="['/biller/dashboard']">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>
+</span>
+<span class="add_header" *ngIf="cookiesData.type == 'doctor'">
+    <span class="bradcrumb"><a [routerLink]="['/biller/dashboard']">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>
 </span>
 <!-- End header with add button -->
 

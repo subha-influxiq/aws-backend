@@ -32,11 +32,18 @@ export class AddEditPatientComponent implements OnInit {
   enddate :any;
   dateofbirth :any;
   public dialogRef: any;
+  public cookiesData : any={};
+  public cookies_id:any;
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService,public snakBar : MatSnackBar,public dialog: MatDialog, public commonFunction: CommonFunction) {
-
+      this.user_token = cookie.get('jwtToken');
+      let allcookies: any;
+      allcookies = cookie.getAll();
+      
+      this.cookiesData = JSON.parse(allcookies.user_details);
+      this.cookies_id = this.cookiesData._id;
       /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
 
@@ -73,6 +80,7 @@ export class AddEditPatientComponent implements OnInit {
         systolic           :  [''],
         diastolic          :  [''],
         status             :  [1],
+        user_id            :  []
 
       })
     }
@@ -113,12 +121,14 @@ export class AddEditPatientComponent implements OnInit {
     this.patientAddEditForm.controls['date'].patchValue(dateformat);
     this.patientAddEditForm.controls['systolic'].patchValue(splits[0]);
     this.patientAddEditForm.controls['diastolic'].patchValue(splits[1]);
+    this.patientAddEditForm.controls['user_id'].patchValue(this.cookies_id);
     delete this.patientAddEditForm.value.bloodPressure;
  
     if(this.patientAddEditForm.valid) {  
       var data :any = {
         "source" : "patient_management",
         "data" : this.patientAddEditForm.value,
+        "sourceobj": ["user_id"],
         "token" : this.user_token
       }
 
