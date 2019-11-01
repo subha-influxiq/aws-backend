@@ -27,7 +27,11 @@ export class AuthguardService implements CanActivate {
           this._router.navigate([userData.type + '/dashboard']);
           break;
         default:
-          return true;
+          if(next.url[0].path == userData.type) {
+            return true;
+          } else {
+            this._router.navigate([userData.type + '/dashboard']);
+          }
           break;
       }
     } else {

@@ -1,13 +1,4 @@
-/* header css */
-.techdashboard_header .mat-toolbar-row{ height: auto; }
-.techdashboard_header .mat-toolbar-row .logo_wrapper{ max-width: 200px; display: block; }
-.techdashboard_header .mat-toolbar-row .logo_wrapper img{ max-width: 100%; vertical-align: middle; }
-.techdashboard_header .mat-toolbar-row{ justify-content: space-between; padding: 0 40px;}
-.techdashboard_header .mat-toolbar-row .quotation { margin-bottom: 0px;}
-.techdashboard_header .mat-toolbar-row .quotation p{ font-family: "RobotoMedium"; font-size: 30px; color: #002035; text-transform: uppercase; margin: 0; }
-.techdashboard_header .mat-toolbar-row .profile_section { display: flex; border-left: 1px solid #e2dede; padding-left: 20px; }
-.techdashboard_header .mat-toolbar-row .profile_section .username{ padding-right: 20px; display: block; }
-/*End header css */
+
 .content_wrapper{ display: flex; justify-content: space-between;  align-items: center; width: 99%; margin: auto;
   text-align: center; }
 .content_wrapper .itemsection{width: 33%; margin: 14px 7px; padding: 15px; box-sizing: border-box; display: flex; flex-direction: column; min-height: 200px; align-items: center;
@@ -100,15 +91,26 @@
 
 }
 
-.footer_section{display: block; border-top: 1px solid #c7c7c7; margin-top: 30px; }
-.footer_section .footer_content{ width: 600px; padding: 0 16px; margin: 0 auto; display: block; text-align: center; }
-.footer_section .footer_content .link{ margin-top: 10px; display: block;  }
-.footer_section .footer_content .link a:nth-of-type(1){ border-right: 1px solid #2b2b2b; padding-right: 5px; }
-.footer_section .footer_content .link a, .footer_section .footer_content .link p{ font-size: 16px; font-family: "RobotoRegular"; color: #2b2b2b; text-decoration: none;}
 
-/* table section */
+@media screen and (max-width: 1240px){
 
+  .doctor_content_wrapper { padding: 30px; }
+  .doctor_content_wrapper .table_structure { width: 100%; display: block; }
+  .table_structure .mat-list-item .title_n { font-size: 24px; }
+  .table_structure .mat-list-item .title_a { font-size: 18px; }
+  .doctor_content_wrapper .mat-card-title { font-size: 34px; margin-bottom: 16px; }
 
+}
+.table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+  display: inline-flex;
+  height: auto;
+  -webkit-tap-highlight-color: transparent;
+  width: auto;
+  padding: 0;
+  color: #fff;
+  border-right: 1px solid #044f82;
+  width: 49%;
+}
 
 
 
@@ -156,6 +158,7 @@
 .table_structure .mat-list-item .title_n { font-size: 26px; }
 .table_structure .mat-list-item .title_a { font-size: 22px; }
 .content_wrapper .itemsection p{ width: 100%; }
+.content_wrapper .itemsection p { font-size: 20px; }
 }
 
 @media screen and (max-width: 1080px){
@@ -176,16 +179,20 @@
 @media screen and (max-width: 1038px){
 .content_wrapper .itemsection { width: 30.9%;  }
 }
-
+@media screen and (max-width: 996px){
+  .content_wrapper .itemsection { width: 30.8%; }
+  .content_wrapper .itemsection p br{ display: none;}
+  .content_wrapper .itemsection p { font-size: 18px; }
+}
 @media screen and (max-width: 991px){
 .doctor_content_wrapper { text-align: center; }
 .patient_report_section .patient_top_search { display: flex; align-items: center; flex-direction: column; }
 .patient_report_section .patient_top_search .search_bar { margin-bottom: 20px; }
 .patient_report_section .button_action button { padding: 8px 30px; margin: 0 10px; width: 100%;}
 .patient_report_section .button_action { width: auto; margin: 0 5px; display: flex; justify-content: center; }
-.content_wrapper .itemsection { width: 30.8%; }
-.table_structure .mat-list-item .title_a { font-size: 16px; }
 
+.table_structure .mat-list-item .title_a { font-size: 16px; }
+.table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option { width: 49%; margin-bottom: 10px; text-align: left; }
 }
 @media screen and (max-width: 970px){
 .patient_report_section .button_action button { width: auto; }
@@ -234,6 +241,8 @@
 .footer_section .footer_content { width: auto; }
 
 .table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option { display: flex; text-align: left; }
+
+.table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option { width: 100%; border:none;}
 }
 
 @media screen and (max-width: 480px){
