@@ -89,7 +89,6 @@ export class AccountSettingsComponent implements OnInit {
     this.AccountSettingsForm.controls['type'].patchValue(this.cookiesData.type);
     this.AccountSettingsForm.controls['state'].patchValue(this.cookiesData.state);
     this.AccountSettingsForm.controls['city'].patchValue(this.cookiesData.city);
-
   }
 
   /**for getting all states & cities function start here**/
@@ -147,7 +146,7 @@ export class AccountSettingsComponent implements OnInit {
           this.formDirective.resetForm();
 
           this.loader = false;
-          let action: any = "Ok"
+          let action: any = "Ok";
           this.snackBar.open(this.message, action, {
             duration: 1000,
           })

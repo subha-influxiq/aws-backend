@@ -18,7 +18,7 @@ export class BulkUploadComponent implements OnInit {
     baseUrl: "http://3.15.236.141:5005/",
     endpoint: "uploads",
     size: "51200", // kb
-    format: ["pdf"], // use all small font
+    format: ["pdf","jpeg"], // use all small font
     type: "patient-file",
     path: "patientFile",
     prefix: "patient-file"

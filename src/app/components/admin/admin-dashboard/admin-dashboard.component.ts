@@ -8,6 +8,7 @@ import { MatTableDataSource } from '@angular/material';
 
 
 export interface PeriodicElement {
+  no: number;
   patientName: string;
   record_type: string;
   date_added: string;
@@ -35,7 +36,7 @@ export class AdminDashboardComponent implements OnInit {
   public processedStatusArray:any = [];
   public signedStatusArray:any = [];
   public billerStatusArray:any = [];
-  displayedColumns: string[] = ['patientName', 'record_type', 'date_added', 'status'];
+  displayedColumns: string[] = ['no', 'patientName', 'record_type', 'date_added', 'status'];
 
   dataSource = new MatTableDataSource(this.commonArray);
 
