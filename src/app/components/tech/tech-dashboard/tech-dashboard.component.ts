@@ -42,24 +42,28 @@ export class TechDashboardComponent implements OnInit {
     };
 
   /**lib listing end here**/
-  public user_id :any;
+  public user_id: any;
   public user_token: any;
   public TechDashboardAllData: any = [];
-  public techSingleData : any=[];
-  public userSingleData : any={};
+  public techSingleData: any = [];
+  public userSingleData: any = {};
+  public uploadedStatusCount: any;
+  public processedStatusCount: any;
+  public signedStatusCount: any;
 
   constructor(public cookie: CookieService, public http: HttpClient,
     public httpService: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
 
-       /* Set Meta Data */
+    /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
-    
+
     let allData: any = {};
     allData = cookie.getAll()
     this.user_data = JSON.parse(allData.user_details);
     this.user_id = this.user_data.id;
     this.user_token = cookie.get('jwtToken');
     this.getTechData();
+    this.getTechCountData();
 
   }
 
@@ -71,20 +75,56 @@ export class TechDashboardComponent implements OnInit {
 
   }
 
-  getTechData(){
-    var data={
+  getTechData() {
+    var data = {
       "source": "users",
       "condition": {
-        "tech_object": this.user_id 
+        "tech_object": this.user_id
       },
-    "token": this.user_token
+      "token": this.user_token
     }
-    this.httpService.httpViaPost('datalist',data)
-    .subscribe(response=>{
-      let result:any={};
-      result = response.res; 
-      this.userSingleData =result[0];
-    })
+    this.httpService.httpViaPost('datalist', data)
+      .subscribe(response => {
+        let result: any = {};
+        result = response.res;
+        this.userSingleData = result[0];
+      })
+  }
+  getTechCountData() {
+    var data = {
+      "source": "users",
+      "condition": {
+        "status": "pending",
+        "type": "tech"
+      },
+      "condition1": {
+        "status": "waiting for doctor sign",
+        "type": "tech"
+      },
+      "condition2": {
+        "status": "doctor signed"
+      },
+      "condition3": {
+        "status": "error"
+      },
+      "condition4": {
+        "status": "send to biller"
+      },
+      "condition5": {
+        "record_type": "file"
+      },
+      "condition6": {
+        "type": "tech"
+      },
+      "token": this.user_token
+    }
+    this.httpService.httpViaPost('statuscount', data)
+      .subscribe(response => {
+        this.processedStatusCount = response["status-count1"];
+        this.signedStatusCount = response["status-count2"];
+        this.uploadedStatusCount = response["status-count7"]
+
+      })
   }
 
 }
