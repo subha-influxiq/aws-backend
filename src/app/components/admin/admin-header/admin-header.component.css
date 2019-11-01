@@ -193,10 +193,9 @@
   .content_wrapper .itemsection p {
     width: 100%;
     font-size: 22px;
-    padding: 0 20px!important;
+    padding: 0 20px;
     box-sizing: border-box;
-
-  }
+}
   .techdashboard_header {
     height: auto;
     flex-direction: column;
