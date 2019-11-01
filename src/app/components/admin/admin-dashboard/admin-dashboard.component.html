@@ -1,4 +1,4 @@
- <app-admin-header></app-admin-header>
+<app-admin-header></app-admin-header>
 
 <mat-card-content class="content_wrapper">
   <mat-card-content class="itemsection one">
@@ -26,7 +26,7 @@
     <mat-card-content class="super_bill_item sp_one">
       <span class="border_wrapper">
         <mat-card-content class="circle">
-            <img src="../../../../assets/images/admincircle_icon1.png">
+          <img src="../../../../assets/images/admincircle_icon1.png">
         </mat-card-content>
       </span>
       <span>
@@ -34,14 +34,14 @@
         <p>Total No of <br>
           Reports Uploaded
         </p>
-        <button mat-flat-button (click)="allDashboardData(1)">view all</button>
+        <button mat-flat-button (click)="viewReportProcessData('Reports Uploaded')">view all</button>
       </span>
 
     </mat-card-content>
     <mat-card-content class="super_bill_item sp_two">
       <span class="border_wrapper">
         <mat-card-content class="circle">
-            <img src="../../../../assets/images/admincircle_icon2.png">
+          <img src="../../../../assets/images/admincircle_icon2.png">
         </mat-card-content>
       </span>
       <span>
@@ -49,14 +49,14 @@
         <p>Total No of <br>
           Report Processed
         </p>
-        <button mat-flat-button (click)="allDashboardData(2)">view all</button>
+        <button mat-flat-button (click)="viewReportProcessData('Report Processed')">view all</button>
       </span>
 
     </mat-card-content>
     <mat-card-content class="super_bill_item sp_three">
       <span class="border_wrapper">
         <mat-card-content class="circle">
-         <img src="../../../../assets/images/admincircle_icon3.png">
+          <img src="../../../../assets/images/admincircle_icon3.png">
         </mat-card-content>
       </span>
       <span>
@@ -64,14 +64,14 @@
         <p>Total No of <br>
           Report Signed
         </p>
-        <button mat-flat-button (click)="allDashboardData(3)">view all</button>
+        <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
       </span>
 
     </mat-card-content>
     <mat-card-content class="super_bill_item sp_four">
       <span class="border_wrapper">
         <mat-card-content class="circle">
-            <img src="../../../../assets/images/admincircle_icon4.png">
+          <img src="../../../../assets/images/admincircle_icon4.png">
         </mat-card-content>
       </span>
       <span>
@@ -79,7 +79,7 @@
         <p> Sent to <br>
           Super Bill
         </p>
-        <button mat-flat-button (click)="allDashboardData(4)">view all</button>
+        <button mat-flat-button (click)="viewReportProcessData('Super Bill')">view all</button>
       </span>
 
     </mat-card-content>
@@ -91,73 +91,33 @@
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
-  
+
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  
+
     <!-- Position Column -->
-    <ng-container matColumnDef="PatientName">
+    <ng-container matColumnDef="patientName">
       <th mat-header-cell *matHeaderCellDef> Patient Name. </th>
-      <td mat-cell *matCellDef="let element"> {{element.PatientName}} </td>
+      <td mat-cell *matCellDef="let element"> {{ element.patientName }} </td>
     </ng-container>
-  
+
     <!-- Name Column -->
-    <ng-container matColumnDef="DoctorsName">
-      <th mat-header-cell *matHeaderCellDef> Doctor's Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.DoctorsName}} </td>
+    <ng-container matColumnDef="record_type">
+      <th mat-header-cell *matHeaderCellDef> Record Type </th>
+      <td mat-cell *matCellDef="let element"> {{ element.record_type }} </td>
     </ng-container>
-  
+
     <!-- Weight Column -->
-    <ng-container matColumnDef="TechName">
-      <th mat-header-cell *matHeaderCellDef> Tech Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.TechName}} </td>
+    <ng-container matColumnDef="date_added">
+      <th mat-header-cell *matHeaderCellDef> Date Added </th>
+      <td mat-cell *matCellDef="let element"> {{ element.date_added }} </td>
     </ng-container>
-   <!-- Symbol Column -->
-   <ng-container matColumnDef="Record"  >
-    <th mat-header-cell *matHeaderCellDef> Record </th>
-    <td mat-cell *matCellDef="let element"> <span>{{element.Record}} </span></td>
-  </ng-container>
+
     <!-- Symbol Column -->
-    <ng-container matColumnDef="UploadDate">
-      <th mat-header-cell *matHeaderCellDef> Upload Date </th>
-      <td mat-cell *matCellDef="let element"> {{element.UploadDate}} </td>
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> <span>{{ element.status }} </span></td>
     </ng-container>
-  
-<!-- Symbol Column -->
-<ng-container matColumnDef="BillGenerationDate">
-  <th mat-header-cell *matHeaderCellDef> BillGeneration Date </th>
-  <td mat-cell *matCellDef="let element"> {{element.BillGenerationDate}} </td>
-</ng-container>
 
-<!-- Symbol Column -->
-<ng-container matColumnDef="BillSentDate">
-  <th mat-header-cell *matHeaderCellDef> BillSent Date </th>
-  <td mat-cell *matCellDef="let element"> {{element.BillSentDate}} </td>
-</ng-container>
-
-<!-- Symbol Column -->
-<ng-container matColumnDef="Status">
-  <th mat-header-cell *matHeaderCellDef> Status </th>
-  <td mat-cell *matCellDef="let element"> {{element.Status}} </td>
-</ng-container>
-<!-- Symbol Column -->
-<ng-container matColumnDef="SuperBill">
-  <th mat-header-cell *matHeaderCellDef> SuperBill </th>
-  <td mat-cell *matCellDef="let element"> {{element.SuperBill}} </td>
-</ng-container>
-
-
-<!-- Symbol Column -->
-<ng-container matColumnDef="BillerName">
-  <th mat-header-cell *matHeaderCellDef> Biller Name </th>
-  <td mat-cell *matCellDef="let element"> {{element.BillerName}} </td>
-</ng-container>
-
-<!-- Symbol Column -->
-<ng-container matColumnDef="SenttoBiller">
-  <th mat-header-cell *matHeaderCellDef> SenttoBiller </th>
-  <td mat-cell *matCellDef="let element"> {{element.SenttoBiller}} </td>
-</ng-container>
- 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>

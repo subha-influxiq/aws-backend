@@ -8,24 +8,11 @@ import { MatTableDataSource } from '@angular/material';
 
 
 export interface PeriodicElement {
-  PatientName: string;
-  DoctorsName: string;
-  TechName: string;
-  Record: string;
-  UploadDate: string;
-  BillGenerationDate: string;
-  BillSentDate: string;
-  SuperBill: string;
-  Status: string;
-  BillerName: string;
-  SenttoBiller: string;
+  patientName: string;
+  record_type: string;
+  date_added: string;
+  status: string;
 }
-const ELEMENT_DATA: PeriodicElement[] = [
-  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate: 'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv' },
-  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate: 'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv' },
-  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate: 'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv' },
-  { PatientName: 'hd', DoctorsName: 'Hydrogen', TechName: '1.0079', Record: 'H', UploadDate: 'h', BillGenerationDate: '', BillSentDate: 'jh', SuperBill: 'hgf', Status: 'active', BillerName: 'jhv', SenttoBiller: 'shgv' },
-];
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -33,6 +20,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
+
   public user_token: any;
   public billerCount: any;
   public doctorCount: any;
@@ -41,22 +29,22 @@ export class AdminDashboardComponent implements OnInit {
   public processedStatusCount: any;
   public signedStatusCount: any;
   public billerStatusCount: any;
-  public uploadedStatusArray:any=[];
-  public processedStatusArray:any=[];
-  public signedStatusArray:any=[];
-  public billerStatusArray:any=[];
-  displayedColumns: string[] = ['PatientName', 'DoctorsName', 'TechName', 'Record', 'UploadDate', 'BillGenerationDate', 'BillSentDate', 'SuperBill', 'Status', 'BillerName', 'SenttoBiller'];
 
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  public commonArray: PeriodicElement[] = [];
+  public uploadedStatusArray:any = [];
+  public processedStatusArray:any = [];
+  public signedStatusArray:any = [];
+  public billerStatusArray:any = [];
+  displayedColumns: string[] = ['patientName', 'record_type', 'date_added', 'status'];
+
+  dataSource = new MatTableDataSource(this.commonArray);
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  public docCount: any = [];
 
-
-
-  docCount: any = [];
   constructor(private router: Router, public cookieService: CookieService,
     private http: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
 
@@ -65,10 +53,6 @@ export class AdminDashboardComponent implements OnInit {
     this.getStatusCountData();
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
-
-
-
-
   }
 
   ngOnInit() {
@@ -76,10 +60,8 @@ export class AdminDashboardComponent implements OnInit {
       this.docCount = resolveData.dataCount;
       console.log(this.docCount);
     });
-
-
-
   }
+
   getAllCountData() {
     var data = {
       "condition": {
@@ -131,6 +113,7 @@ export class AdminDashboardComponent implements OnInit {
         this.processedStatusCount = result["status-count2"];
         this.signedStatusCount = result["status-count3"];
         this.billerStatusCount = result["status-count5"];
+
         this.uploadedStatusArray = result.data.status1;
         this.processedStatusArray = result.data.status2;
         this.signedStatusArray = result.data.status3;
@@ -138,24 +121,31 @@ export class AdminDashboardComponent implements OnInit {
 
       })
   }
-  allDashboardData(flag: any) {
+
+  viewReportProcessData(flag: string) {
     switch (flag) {
-      case 1:
-        this.uploadedStatusArray;
+      case 'Reports Uploaded':
+        this.commonArray = this.uploadedStatusArray;
+        this.dataSource = new MatTableDataSource(this.commonArray);
         break;
-      case 2:
-        this.processedStatusArray;
+      case 'Report Processed':
+        this.commonArray = this.processedStatusArray;
+        this.dataSource = new MatTableDataSource(this.commonArray);
         break;
-      case 3:
-        this.signedStatusArray;
+      case 'Report Signed':
+        this.commonArray = this.signedStatusArray;
+        this.dataSource = new MatTableDataSource(this.commonArray);
         break;
-      case 4:
-        this.billerStatusArray;
-         break;
+      case 'Super Bill':
+        this.commonArray = this.billerStatusArray;
+        this.dataSource = new MatTableDataSource(this.commonArray);
+        break;
       default:
         break;
     }
+    console.log('=======>', this.commonArray);
   }
+
   myFunction() {
     var x = document.getElementById("myDIV");
     if (x.style.display === "none") {
