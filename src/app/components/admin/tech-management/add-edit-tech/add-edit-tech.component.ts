@@ -161,7 +161,7 @@ export class AddEditTechComponent implements OnInit {
             state: this.TechManagementAddEditForm.value.state,
             zip: this.TechManagementAddEditForm.value.zip,
             status: this.TechManagementAddEditForm.value.status,
-
+            password: this.TechManagementAddEditForm.value.password,
           },
           "token": this.user_token
         };

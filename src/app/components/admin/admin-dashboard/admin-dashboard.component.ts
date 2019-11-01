@@ -124,24 +124,7 @@ export class AdminDashboardComponent implements OnInit {
 
   viewReportProcessData(flag: string) {
     switch (flag) {
-<<<<<<< HEAD
-      case 1:
-        this.uploadedStatusArray;
-        console.log(this.uploadedStatusArray);
-        break;
-      case 2:
-        this.processedStatusArray;
-        console.log(this.processedStatusArray);
-        break;
-      case 3:
-        this.signedStatusArray;
-        console.log(this.signedStatusArray);
-        break;
-      case 4:
-        this.billerStatusArray;
-        console.log(this.billerStatusArray);
-         break;
-=======
+
       case 'Reports Uploaded':
         this.commonArray = this.uploadedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
@@ -158,11 +141,9 @@ export class AdminDashboardComponent implements OnInit {
         this.commonArray = this.billerStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         break;
->>>>>>> dee99b17baab29e3f0edf92f795af5f2cab711a7
       default:
         break;
     }
-    console.log('=======>', this.commonArray);
   }
 
   myFunction() {
@@ -178,22 +159,5 @@ export class AdminDashboardComponent implements OnInit {
   toDocList() {
     this.router.navigateByUrl('admin/doctor-management/list');
   }
-
-
-  // =======================Get Doctots Count=================
-  // onDocGetCount() {
-  //   let postData: any = {
-  //     source: 'doctors_count',
-  //     token: this.cookieService.get('jwtToken')
-  //   };
-  //   this.http.httpViaPost('datalist', postData).subscribe((response: any) => {
-
-  //     let result: any = response;
-  //     this.docCount = result.res[0].doctorcount;
-  //   }, (error) => {
-  //     alert("Some error occurred. Please try again.");
-  //   });
-  // }
-  // =========================================================
 
 }
