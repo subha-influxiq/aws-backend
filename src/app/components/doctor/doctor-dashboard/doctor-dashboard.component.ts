@@ -56,7 +56,6 @@ export class DoctorDashboardComponent implements OnInit {
     this.http.httpViaPost('datalist', data)
       .subscribe(response => {
         this.DoctorSignedData =response.res; 
-        console.log(this.DoctorSignedData);
         if(this.DoctorSignedData.length ==1){
           this.buttonText = "Edit" ;
         }

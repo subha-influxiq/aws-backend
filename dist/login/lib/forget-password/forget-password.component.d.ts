@@ -16,12 +16,12 @@ export declare class ForgetPasswordComponent implements OnInit {
     serverUrlValue: any;
     signUpRouteingUrlValue: any;
     loginRouteingUrlValue: any;
-    private domanUrlValue;
+    private domainUrlValue;
     addEndpointValue: any;
     logoValue: any;
     durationInSeconds: number;
     buttonName: any;
-    domanUrl: any;
+    domainUrl: any;
     formTitle: any;
     serverUrl: any;
     logo: any;

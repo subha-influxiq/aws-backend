@@ -65,7 +65,7 @@ public result : any;
     this.http.httpViaPost('datalist',data)
       .subscribe(response=>{
         this.result=response.res[0]._id;
-        console.log("response",this.result);
+        this.techUploadForm.controls['sign'].patchValue(response.res[0].sign);
 
 
       })

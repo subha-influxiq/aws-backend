@@ -78,4 +78,5 @@ export declare class ApiService {
     UpdateStatusForSingleData(requestdata: any): Observable<Object>;
     UpdateStatusForMultipleData(requestdata: any): Observable<Object>;
     CustomRequest(requestdata: any, endpoint: any): Observable<Object>;
+    jwtTokenGet(): Observable<Object>;
 }

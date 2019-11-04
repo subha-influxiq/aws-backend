@@ -61,7 +61,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate: [AuthguardService] },
   { path: 'forget-password', component: ForgetpasswordComponent, canActivate: [AuthguardService] },
-  { path: 'reset-password/:_id', component: ResetpasswordComponent, canActivate: [AuthguardService] },
+  { path: 'reset-password/:_id', component: ResetpasswordComponent },
   { path: 'sign-up', redirectTo: '/login', pathMatch: 'full' },
 
   /* Admin Route */

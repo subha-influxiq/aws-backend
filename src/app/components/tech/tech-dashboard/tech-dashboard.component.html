@@ -43,19 +43,19 @@
   <mat-card-content class="itemsection one">
     <span class="counteer">{{ uploadedStatusCount }}</span>
     <p>Total Number of <br>Reports uploaded</p>
-    <button mat-flat-button [routerLink]="['/tech/report/total-uploaded']">View Details</button>
+    <button mat-flat-button (click)="viewDetailsData('upload')">View Details</button>
   </mat-card-content>
   <mat-card-content class="itemsection two">
     <span class="counteer"> {{ processedStatusCount }} </span>
     <p>Total Number of <br>Reports Processed</p>
-    <button mat-flat-button [routerLink]="['/tech/report/total-processed']">View Details</button>
+    <button mat-flat-button (click)="viewDetailsData('processed')">View Details</button>
   </mat-card-content>
   <mat-card-content class="itemsection three">
     <span class="counteer">{{ signedStatusCount }}</span>
     <p>Total Number of Reports <br>remain to process
 
     </p>
-    <button mat-flat-button [routerLink]="['/tech/report/total-remained-processed']">View Details</button>
+    <button mat-flat-button (click)="viewDetailsData('remainProcess')">View Details</button>
   </mat-card-content>
 </mat-card-content>
 
@@ -130,13 +130,13 @@
   </mat-card-content>
 
   <!-- table -->
-  <lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0" [datasource]="TechDashboardAllData"
+  <!-- <lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0" [datasource]="TechDashboardAllData"
     [skip]="allUserData_skip" [modify_header_array]="allUserData_modify_header" [apiurl]="apiUrl"
     [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="user_token" [statusarr]="status"
     [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
     [date_search_source]="tableName" [search_settings]="search_settings">
   </lib-listing>
-  <h2 *ngIf="TechDashboardAllData.length == 0">No record found.</h2>
+  <h2 *ngIf="TechDashboardAllData.length == 0">No record found.</h2> -->
   <!-- end table -->
 
 
@@ -147,5 +147,49 @@
   </span>
 </mat-card-content>
 
+<!-- view details table start here -->
+
+<mat-card-content class="admin_table">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="no">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="patientName">
+      <th mat-header-cell *matHeaderCellDef> Patient Name. </th>
+      <td mat-cell *matCellDef="let element"  data-label="patient Name"> {{ element.patientName }} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="record_type">
+      <th mat-header-cell *matHeaderCellDef> Record Type </th>
+      <td mat-cell *matCellDef="let element" data-label="Record type"> {{ element.record_type }} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="date_added">
+      <th mat-header-cell *matHeaderCellDef> Date Added </th>
+      <td mat-cell *matCellDef="let element" data-label="Date Added"> {{ element.date_added }} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"  data-label="Status"> <span>{{ element.status }} </span></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index"></tr>
+  </table>
+</mat-card-content>
+<!-- view details table end here -->
 
 <app-admin-footer></app-admin-footer>
