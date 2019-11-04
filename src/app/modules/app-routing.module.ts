@@ -102,7 +102,7 @@ const routes: Routes = [
   { path: 'admin/admin-management', component: ManageAdminListComponent, canActivate: [AuthguardService], resolve: { adminManagementdData: ResolveService },
     data: {
       requestcondition: {
-        source: 'users_view',
+        source: 'users_view_admin',
         condition: { 'type': 'admin' }
       },
       endpoint: 'datalist'
@@ -122,8 +122,8 @@ const routes: Routes = [
   { path: 'admin/biller-management', component: ListingBillerComponent, canActivate: [AuthguardService], resolve: { Billerdata: ResolveService },
     data: {
       requestcondition: {
-        source: 'users_view',
-        condition: { 'type': 'biller' }
+        source: 'users_view_biller',
+        condition: {  }
       },
       endpoint: 'datalist'
     },
@@ -142,8 +142,8 @@ const routes: Routes = [
   { path: 'admin/tech-management', component: ListingTechComponent, canActivate: [AuthguardService], resolve: { techDashboardData: ResolveService },
     data: {
       requestcondition: {
-        source: 'users_view',
-        condition: { 'type': 'tech' }
+        source: 'users_view_tech',
+        condition: {  }
       },
       endpoint: 'datalist'
     },
@@ -162,8 +162,8 @@ const routes: Routes = [
   { path: 'admin/doctor-management', component: ListDoctorComponent, canActivate: [AuthguardService], resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'users_view',
-        condition: { 'type': 'doctor' }
+        source: 'users_view_doctor',
+        condition: {}
       },
       endpoint: 'datalist'
     },

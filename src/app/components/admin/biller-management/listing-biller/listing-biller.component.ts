@@ -28,11 +28,11 @@ public allUserData_skip: any = ["confirmpassword", "password",
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
-  public SearchingSourceName: "users";
+  public SearchingSourceName: any="users_view_biller";
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
-      textsearch: [{ label: "Search By Name", field: 'fullname' },
+      textsearch: [{ label: "Search By Name", field: 'fullName' },
       { label: "Search By E-Mail", field: 'email' }],
 
     };
