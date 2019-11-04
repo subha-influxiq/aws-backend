@@ -4,7 +4,14 @@ import { HttpClient } from '@angular/common/http';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonFunction } from '../../../class/common/common-function';
-
+import { MatTableDataSource } from '@angular/material';
+export interface PeriodicElement {
+  no: number;
+  patientName: string;
+  record_type: string;
+  date_added: string;
+  status: string;
+}
 @Component({
   selector: 'app-tech-dashboard',
   templateUrl: './tech-dashboard.component.html',
@@ -12,8 +19,12 @@ import { CommonFunction } from '../../../class/common/common-function';
 })
 
 export class TechDashboardComponent implements OnInit {
-  public user_data: any = {};
+  public commonArray: PeriodicElement[] = [];
 
+  public user_data: any = {};
+  displayedColumns: string[] = ['no', 'patientName', 'record_type', 'date_added', 'status'];
+
+  dataSource = new MatTableDataSource(this.commonArray);
   /**lib-listing start here**/
 
   public allUserData: any = [];
@@ -50,6 +61,9 @@ export class TechDashboardComponent implements OnInit {
   public uploadedStatusCount: any;
   public processedStatusCount: any;
   public signedStatusCount: any;
+  public reportUploadedArray: any = [];
+  public reportProcessedArray: any = [];
+  public reportRemainingArray: any = [];
 
   constructor(public cookie: CookieService, public http: HttpClient,
     public httpService: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
@@ -123,8 +137,28 @@ export class TechDashboardComponent implements OnInit {
         this.processedStatusCount = response["status-count1"];
         this.signedStatusCount = response["status-count2"];
         this.uploadedStatusCount = response["status-count7"]
+        this.reportUploadedArray = response.data.status7;
+        this.reportRemainingArray = response.data.status2;
+        this.reportProcessedArray = response.data.status1;
 
       })
   }
-
+  viewDetailsData(flag: any) {
+    switch (flag) {
+      case 'upload':
+        this.commonArray = this.reportUploadedArray;
+        this.dataSource = new MatTableDataSource(this.commonArray);
+        break;
+      case 'processed':
+          this.commonArray = this.reportProcessedArray;
+          this.dataSource = new MatTableDataSource(this.commonArray);
+        break;
+      case 'remainProcess':
+         this.commonArray = this.reportRemainingArray;
+         this.dataSource = new MatTableDataSource(this.commonArray);
+        break;
+      default:
+        break;
+    }
+  }
 }
