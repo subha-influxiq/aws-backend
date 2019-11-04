@@ -56,14 +56,12 @@ export class AccountSettingsComponent implements OnInit {
     this.AccountSettingsForm = fb.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
-      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
       phoneno: ['', Validators.required],
       address: ['', Validators.required],
       zip: ['', Validators.required],
       city: ['', Validators.required],
       state: ['', Validators.required],
-      date: [dateformat],
-      type: ['', Validators.required]
+      date: [dateformat]
     })
   }
 
@@ -72,7 +70,6 @@ export class AccountSettingsComponent implements OnInit {
   }
   /**for validation purpose**/
   inputUntouch(form: any, val: any) {
-
     form.controls[val].markAsUntouched();
   }
   /**for validation purpose**/
@@ -83,11 +80,9 @@ export class AccountSettingsComponent implements OnInit {
     }, 400);
     this.AccountSettingsForm.controls['firstname'].patchValue(this.cookiesData.firstname);
     this.AccountSettingsForm.controls['lastname'].patchValue(this.cookiesData.lastname);
-    this.AccountSettingsForm.controls['email'].patchValue(this.cookiesData.email);
     this.AccountSettingsForm.controls['phoneno'].patchValue(this.cookiesData.phone);
     this.AccountSettingsForm.controls['zip'].patchValue(this.cookiesData.zip);
     this.AccountSettingsForm.controls['address'].patchValue(this.cookiesData.address);
-    this.AccountSettingsForm.controls['type'].patchValue(this.cookiesData.type);
     this.AccountSettingsForm.controls['state'].patchValue(this.cookiesData.state);
     this.AccountSettingsForm.controls['city'].patchValue(this.cookiesData.city);
   }
@@ -132,28 +127,35 @@ export class AccountSettingsComponent implements OnInit {
           firstname: this.AccountSettingsForm.value.firstname,
           lastname: this.AccountSettingsForm.value.lastname,
           phoneno: this.AccountSettingsForm.value.phoneno,
-          email: this.AccountSettingsForm.value.email,
           date: this.AccountSettingsForm.value.data,
           zip: this.AccountSettingsForm.value.zip,
           address: this.AccountSettingsForm.value.address,
           city: this.AccountSettingsForm.value.city,
           state: this.AccountSettingsForm.value.state,
-          type: this.AccountSettingsForm.value.type,
         },
         "token": this.user_token
       }
-      this.httpService.httpViaPost('addorupdatedata', data)
-        .subscribe(response => {
-          this.formDirective.resetForm();
+      this.httpService.httpViaPost('addorupdatedata', data).subscribe(response => {
+          var userDetailsCookie: any = JSON.parse(this.cookie.get('user_details'));
+          var type: any = userDetailsCookie.type;
+          this.cookie.delete('user_details');
 
+          userDetailsCookie.firstname = this.AccountSettingsForm.value.firstname;
+          userDetailsCookie.lastname = this.AccountSettingsForm.value.lastname;
+          userDetailsCookie = JSON.stringify(userDetailsCookie);
           this.loader = false;
           let action: any = "Ok";
           this.snackBar.open(this.message, action, {
             duration: 1000,
-          })
+          });
+
           setTimeout(() => {
-            this.router.navigateByUrl('/admin/dashboard');
-          }, 1200);
+            this.cookie.set('user_details', userDetailsCookie);
+          }, 1000);
+
+          setTimeout(() => {
+            this.router.navigateByUrl(type + '/dashboard');
+          }, 3000);
         })
     }
 

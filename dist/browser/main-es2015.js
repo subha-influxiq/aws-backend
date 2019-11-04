@@ -3547,6 +3547,24 @@ class ApiService {
         res => res)));
         return result;
     }
+    /**
+     * @return {?}
+     */
+    jwtTokenGet() {
+        /** @type {?} */
+        const httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_49__["HttpHeaders"]({
+                'Content-Type': 'application/json'
+            })
+        };
+        /** @type {?} */
+        var result = this._http.get(this.serverUrl + 'gettemptoken').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["map"])((/**
+         * @param {?} res
+         * @return {?}
+         */
+        res => res)));
+        return result;
+    }
 }
 ApiService.decorators = [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_47__["Injectable"], args: [{
@@ -4178,7 +4196,7 @@ class ForgetPasswordComponent {
         // setting the navigate By Sign Up Url from project
         this.loginRouteingUrlValue = ''; // setting the navigate By login Url from project
         // setting the navigate By login Url from project
-        this.domanUrlValue = ''; // This is reset password url
+        this.domainUrlValue = ''; // This is reset password url
         // This is reset password url
         this.addEndpointValue = ''; // This is endpoint url
         // This is endpoint url
@@ -4199,12 +4217,12 @@ class ForgetPasswordComponent {
         this.buttonNameValue = buttonNameVal;
     }
     /**
-     * @param {?} domanUrlVal
+     * @param {?} domainUrlVal
      * @return {?}
      */
-    set domanUrl(domanUrlVal) {
-        this.domanUrlValue = (domanUrlVal) || '<no name set>';
-        this.domanUrlValue = domanUrlVal;
+    set domainUrl(domainUrlVal) {
+        this.domainUrlValue = (domainUrlVal) || '<no name set>';
+        this.domainUrlValue = domainUrlVal;
         // console.log(this.domanUrlValue);
     }
     /**
@@ -4287,13 +4305,13 @@ class ForgetPasswordComponent {
             this.forgetPasswordForm.controls[x].markAsTouched();
         }
         if (this.forgetPasswordForm.valid) { //    validation checking
-            this.openSnackBar(); // open snack-bar function
-            // open snack-bar function
+            //    validation checking
+            // this.openSnackBar();              // open snack-bar function
             /** @type {?} */
             let link = this.serverUrlValue;
             /** @type {?} */
             let data = this.forgetPasswordForm.value;
-            data.domanUrl = this.domanUrlValue;
+            data.domainUrl = this.domainUrlValue;
             this.apiService.forgetPassword(data).subscribe((/**
              * @param {?} response
              * @return {?}
@@ -4304,7 +4322,7 @@ class ForgetPasswordComponent {
                 let result = {};
                 result = response;
                 if (result.status == "success") {
-                    this.openSnackBar(); // open snack-bar function
+                    // this.openSnackBar();             // open snack-bar function
                     // this is use for reset the from
                     this.formDirective.resetForm();
                     this.message = ''; // clear the from
@@ -4373,7 +4391,7 @@ ForgetPasswordComponent.ctorParameters = () => [
 ForgetPasswordComponent.propDecorators = {
     formDirective: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_47__["ViewChild"], args: [_angular_forms__WEBPACK_IMPORTED_MODULE_48__["FormGroupDirective"],] }],
     buttonName: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_47__["Input"] }],
-    domanUrl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_47__["Input"] }],
+    domainUrl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_47__["Input"] }],
     formTitle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_47__["Input"] }],
     serverUrl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_47__["Input"] }],
     logo: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_47__["Input"] }],
@@ -5150,7 +5168,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<span class=\"main_wrapper\">\n\n  <mat-card class=\"login_wrapper\">\n\n    <mat-card-content>\n      <div class=\"login_container\">\n        <span class=\"logo_section\">\n          <img src=\"assets/images/logo.png\">\n        </span>\n        <h2>FORGOTTEN PASSWORD</h2>\n\n        <p class=\"paragraph\">Please enter your valid email address and you will be sent a link to reset your password.\n          You must use the same email id you have registered with us. If you no longer have the same email address then\n          you must contact us directly with proof of your identity.</p>\n        <!-- <mat-form-field appearance=\"fill\">\n              <mat-label>Email Address</mat-label>\n            <input matInput   type=\"email\">\n          </mat-form-field>\n\n          <button mat-flat-button color=\"primary\" class=\"loginBtn\">Reset Password</button> -->\n\n        <lib-forget-password \n        [serverUrl]=\"serverUrl\"\n        [signUpRouteingUrl]=\"signUpRouteingUrl\" \n        [domanUrl]=\"domanUrl\"\n        [addEndpoint]=\"addEndpoint\" \n        [loginRouteingUrl]=\"loginRouteingUrl\" \n        [buttonName]=\"buttonName\"\n          > </lib-forget-password>\n        <!-- <span class=\"forget_wrapper\">\n            <a routerLink=\"/login\">Login</a>\n          </span> -->\n      </div>\n\n    </mat-card-content>\n\n  </mat-card>\n\n</span>");
+/* harmony default export */ __webpack_exports__["default"] = ("<span class=\"main_wrapper\">\n\n  <mat-card class=\"login_wrapper\">\n\n    <mat-card-content>\n      <div class=\"login_container\">\n        <span class=\"logo_section\">\n          <img src=\"assets/images/logo.png\">\n        </span>\n        <h2>FORGOTTEN PASSWORD</h2>\n\n        <p class=\"paragraph\">Please enter your valid email address and you will be sent a link to reset your password.\n          You must use the same email id you have registered with us. If you no longer have the same email address then\n          you must contact us directly with proof of your identity.</p>\n        <!-- <mat-form-field appearance=\"fill\">\n              <mat-label>Email Address</mat-label>\n            <input matInput   type=\"email\">\n          </mat-form-field>\n\n          <button mat-flat-button color=\"primary\" class=\"loginBtn\">Reset Password</button> -->\n\n        <lib-forget-password \n        [serverUrl]=\"serverUrl\"\n        [signUpRouteingUrl]=\"signUpRouteingUrl\" \n        [domainUrl]=\"domainUrl\"\n        [addEndpoint]=\"addEndpoint\" \n        [loginRouteingUrl]=\"loginRouteingUrl\" \n        [buttonName]=\"buttonName\"\n          > </lib-forget-password>\n        <!-- <span class=\"forget_wrapper\">\n            <a routerLink=\"/login\">Login</a>\n          </span> -->\n      </div>\n\n    </mat-card-content>\n\n  </mat-card>\n\n</span>");
 
 /***/ }),
 
@@ -5384,7 +5402,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!--\n<mat-toolbar class=\"techdashboard_header\">\n    <mat-toolbar-row>\n      <span class=\"logo_wrapper\">\n        <img src=\"../../../assets/images/logo.png\">\n      </span>\n\n\n      <mat-card-content class=\"quotation\">\n        <p>ADVANCED ANS TECHNOLOGY – BETTER PATIENT CARE – INCREASE PRACTICE REVENUE</p>\n      </mat-card-content>\n\n\n      <mat-card-content class=\"profile_section\">\n        <mat-menu #appMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/tech/account-settings']\">\n            <mat-icon>account_circle</mat-icon> Account Settings\n          </button>\n          <button mat-menu-item [routerLink]=\"['/tech/account-settings/change-password']\">\n            <mat-icon>vpn_key</mat-icon> Change Password\n          </button>\n          <button mat-menu-item (click)=\"logout()\"> <mat-icon>power_settings_new</mat-icon> Logout </button>\n        </mat-menu>\n        <span class=\"username\">Adam Coury</span>\n        <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n          <span class=\"user_profile\">\n            <mat-icon>account_circle</mat-icon>\n            <i class=\"material-icons\">\n              keyboard_arrow_down\n            </i>\n          </span>\n        </button>\n\n      </mat-card-content>\n\n\n    </mat-toolbar-row>\n  </mat-toolbar> -->\n<!-- end header -->\n\n<app-tech-header></app-tech-header>\n<mat-card-content class=\"content_wrapper\">\n  <mat-card-content class=\"itemsection one\">\n    <span class=\"counteer\">{{ uploadedStatusCount }}</span>\n    <p>Total Number of <br>Reports uploaded</p>\n    <button mat-flat-button [routerLink]=\"['/tech/report/total-uploaded']\">View Details</button>\n  </mat-card-content>\n  <mat-card-content class=\"itemsection two\">\n    <span class=\"counteer\"> {{ processedStatusCount }} </span>\n    <p>Total Number of <br>Reports Processed</p>\n    <button mat-flat-button [routerLink]=\"['/tech/report/total-processed']\">View Details</button>\n  </mat-card-content>\n  <mat-card-content class=\"itemsection three\">\n    <span class=\"counteer\">{{ signedStatusCount }}</span>\n    <p>Total Number of Reports <br>remain to process\n\n    </p>\n    <button mat-flat-button [routerLink]=\"['/tech/report/total-remained-processed']\">View Details</button>\n  </mat-card-content>\n</mat-card-content>\n\n\n\n\n<mat-card-content class=\"doctor_content_wrapper\">\n  <mat-card-title>Doctor Office You Are Working With</mat-card-title>\n  <mat-card-content class=\"table_structure\">\n\n\n    <mat-list>\n      <mat-list-item>\n        <p class=\"title_n\">Name</p>\n        <p class=\"title_a\">{{ userSingleData.firstname }}</p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">Taxonomies</p>\n        <p class=\"title_a\">\n          <ng-container *ngFor=\"let n of userSingleData.taxo_list; let i = index;\">\n            {{ n }}\n            <ng-container *ngIf=\"i + 1 < userSingleData.taxo_list.length\">\n              ,\n            </ng-container>\n          </ng-container>\n        </p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">Email</p>\n        <p class=\"title_a\">{{ userSingleData.email }}</p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">Phone</p>\n        <p class=\"title_a\">{{ userSingleData.phone }}</p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">FAX</p>\n        <p class=\"title_a\">{{ userSingleData.fax }}</p>\n      </mat-list-item>\n    </mat-list>\n  </mat-card-content>\n</mat-card-content>\n\n\n\n<!-- patainet report section -->\n<mat-card-content class=\"patient_report_section\">\n  <mat-card-content class=\"patient_top_search\">\n    <h1>Patient record report</h1>\n    <!-- <span class=\"search_bar\">\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput [matDatepicker]=\"picker\" (focus)=\"picker.open()\" placeholder=\"Search By Date\">\n\n            <mat-datepicker #picker></mat-datepicker>\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput placeholder=\"Search By Status\">\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput placeholder=\"Search By Patient\">\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n      </span> -->\n  </mat-card-content>\n\n  <!-- table -->\n  <lib-listing class=\"DataTable\" *ngIf=\"TechDashboardAllData.length>0\" [datasource]=\"TechDashboardAllData\"\n    [skip]=\"allUserData_skip\" [modify_header_array]=\"allUserData_modify_header\" [apiurl]=\"apiUrl\"\n    [sourcedata]=\"tableName\" [editroute]=\"editUrl\" [jwttoken]=\"user_token\" [statusarr]=\"status\"\n    [updateendpoint]=\"UpdateEndpoint\" [deleteendpoint]=\"deleteEndpoint\" [date_search_endpoint]=\"SearchingEndpoint\"\n    [date_search_source]=\"tableName\" [search_settings]=\"search_settings\">\n  </lib-listing>\n  <h2 *ngIf=\"TechDashboardAllData.length == 0\">No record found.</h2>\n  <!-- end table -->\n\n\n\n  <span class=\"button_action\">\n    <button mat-flat-button routerLink=\"/tech/patient-management/bulk-upload\">upload bulk report</button>\n    <button mat-flat-button routerLink=\"/tech/patient-management/add\">add a new patient records manually</button>\n  </span>\n</mat-card-content>\n\n\n<app-admin-footer></app-admin-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!--\n<mat-toolbar class=\"techdashboard_header\">\n    <mat-toolbar-row>\n      <span class=\"logo_wrapper\">\n        <img src=\"../../../assets/images/logo.png\">\n      </span>\n\n\n      <mat-card-content class=\"quotation\">\n        <p>ADVANCED ANS TECHNOLOGY – BETTER PATIENT CARE – INCREASE PRACTICE REVENUE</p>\n      </mat-card-content>\n\n\n      <mat-card-content class=\"profile_section\">\n        <mat-menu #appMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/tech/account-settings']\">\n            <mat-icon>account_circle</mat-icon> Account Settings\n          </button>\n          <button mat-menu-item [routerLink]=\"['/tech/account-settings/change-password']\">\n            <mat-icon>vpn_key</mat-icon> Change Password\n          </button>\n          <button mat-menu-item (click)=\"logout()\"> <mat-icon>power_settings_new</mat-icon> Logout </button>\n        </mat-menu>\n        <span class=\"username\">Adam Coury</span>\n        <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n          <span class=\"user_profile\">\n            <mat-icon>account_circle</mat-icon>\n            <i class=\"material-icons\">\n              keyboard_arrow_down\n            </i>\n          </span>\n        </button>\n\n      </mat-card-content>\n\n\n    </mat-toolbar-row>\n  </mat-toolbar> -->\n<!-- end header -->\n\n<app-tech-header></app-tech-header>\n<mat-card-content class=\"content_wrapper\">\n  <mat-card-content class=\"itemsection one\">\n    <span class=\"counteer\">{{ uploadedStatusCount }}</span>\n    <p>Total Number of <br>Reports uploaded</p>\n    <button mat-flat-button (click)=\"viewDetailsData('upload')\">View Details</button>\n  </mat-card-content>\n  <mat-card-content class=\"itemsection two\">\n    <span class=\"counteer\"> {{ processedStatusCount }} </span>\n    <p>Total Number of <br>Reports Processed</p>\n    <button mat-flat-button (click)=\"viewDetailsData('processed')\">View Details</button>\n  </mat-card-content>\n  <mat-card-content class=\"itemsection three\">\n    <span class=\"counteer\">{{ signedStatusCount }}</span>\n    <p>Total Number of Reports <br>remain to process\n\n    </p>\n    <button mat-flat-button (click)=\"viewDetailsData('remainProcess')\">View Details</button>\n  </mat-card-content>\n</mat-card-content>\n\n\n\n\n<mat-card-content class=\"doctor_content_wrapper\">\n  <mat-card-title>Doctor Office You Are Working With</mat-card-title>\n  <mat-card-content class=\"table_structure\">\n\n\n    <mat-list>\n      <mat-list-item>\n        <p class=\"title_n\">Name</p>\n        <p class=\"title_a\">{{ userSingleData.firstname }}</p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">Taxonomies</p>\n        <p class=\"title_a\">\n          <ng-container *ngFor=\"let n of userSingleData.taxo_list; let i = index;\">\n            {{ n }}\n            <ng-container *ngIf=\"i + 1 < userSingleData.taxo_list.length\">\n              ,\n            </ng-container>\n          </ng-container>\n        </p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">Email</p>\n        <p class=\"title_a\">{{ userSingleData.email }}</p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">Phone</p>\n        <p class=\"title_a\">{{ userSingleData.phone }}</p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">FAX</p>\n        <p class=\"title_a\">{{ userSingleData.fax }}</p>\n      </mat-list-item>\n    </mat-list>\n  </mat-card-content>\n</mat-card-content>\n\n\n\n<!-- patainet report section -->\n<mat-card-content class=\"patient_report_section\">\n  <mat-card-content class=\"patient_top_search\">\n    <h1>Patient record report</h1>\n    <!-- <span class=\"search_bar\">\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput [matDatepicker]=\"picker\" (focus)=\"picker.open()\" placeholder=\"Search By Date\">\n\n            <mat-datepicker #picker></mat-datepicker>\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput placeholder=\"Search By Status\">\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput placeholder=\"Search By Patient\">\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n      </span> -->\n  </mat-card-content>\n\n  <!-- table -->\n  <!-- <lib-listing class=\"DataTable\" *ngIf=\"TechDashboardAllData.length>0\" [datasource]=\"TechDashboardAllData\"\n    [skip]=\"allUserData_skip\" [modify_header_array]=\"allUserData_modify_header\" [apiurl]=\"apiUrl\"\n    [sourcedata]=\"tableName\" [editroute]=\"editUrl\" [jwttoken]=\"user_token\" [statusarr]=\"status\"\n    [updateendpoint]=\"UpdateEndpoint\" [deleteendpoint]=\"deleteEndpoint\" [date_search_endpoint]=\"SearchingEndpoint\"\n    [date_search_source]=\"tableName\" [search_settings]=\"search_settings\">\n  </lib-listing>\n  <h2 *ngIf=\"TechDashboardAllData.length == 0\">No record found.</h2> -->\n  <!-- end table -->\n\n\n\n  <span class=\"button_action\">\n    <button mat-flat-button routerLink=\"/tech/patient-management/bulk-upload\">upload bulk report</button>\n    <button mat-flat-button routerLink=\"/tech/patient-management/add\">add a new patient records manually</button>\n  </span>\n</mat-card-content>\n\n<!-- view details table start here -->\n\n<mat-card-content class=\"admin_table\">\n  <mat-form-field>\n    <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n  </mat-form-field>\n\n  <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n\n    <!-- Position Column -->\n    <ng-container matColumnDef=\"no\">\n      <th mat-header-cell *matHeaderCellDef> No. </th>\n      <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n    </ng-container>\n\n    <!-- Position Column -->\n    <ng-container matColumnDef=\"patientName\">\n      <th mat-header-cell *matHeaderCellDef> Patient Name. </th>\n      <td mat-cell *matCellDef=\"let element\"  data-label=\"patient Name\"> {{ element.patientName }} </td>\n    </ng-container>\n\n    <!-- Name Column -->\n    <ng-container matColumnDef=\"record_type\">\n      <th mat-header-cell *matHeaderCellDef> Record Type </th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Record type\"> {{ element.record_type }} </td>\n    </ng-container>\n\n    <!-- Weight Column -->\n    <ng-container matColumnDef=\"date_added\">\n      <th mat-header-cell *matHeaderCellDef> Date Added </th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Date Added\"> {{ element.date_added }} </td>\n    </ng-container>\n\n    <!-- Symbol Column -->\n    <ng-container matColumnDef=\"status\">\n      <th mat-header-cell *matHeaderCellDef> Status </th>\n      <td mat-cell *matCellDef=\"let element\"  data-label=\"Status\"> <span>{{ element.status }} </span></td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;let i = index\"></tr>\n  </table>\n</mat-card-content>\n<!-- view details table end here -->\n\n<app-admin-footer></app-admin-footer>\n");
 
 /***/ }),
 
@@ -6453,6 +6471,7 @@ let AdminHeaderComponent = class AdminHeaderComponent {
     /**logout function start here**/
     logout() {
         this.cookies.delete('jwtToken');
+        this.cookies.delete('user_details');
         this.cookies.deleteAll();
         this.router.navigateByUrl('login');
     }
@@ -8563,8 +8582,10 @@ let BillerHeaderComponent = class BillerHeaderComponent {
     }
     /**logout function start here**/
     logout() {
+        this.cookies.delete('jwtToken');
+        this.cookies.delete('user_details');
         this.cookies.deleteAll();
-        this.router.navigateByUrl('/login');
+        this.router.navigateByUrl('login');
     }
 };
 BillerHeaderComponent.ctorParameters = () => [
@@ -9178,7 +9199,7 @@ let UploadDialogBoxComponent = class UploadDialogBoxComponent {
         this.http.httpViaPost('datalist', data)
             .subscribe(response => {
             this.result = response.res[0]._id;
-            console.log("response", this.result);
+            this.techUploadForm.controls['sign'].patchValue(response.res[0].sign);
         });
     }
     techUploadFormSubmit() {
@@ -9337,7 +9358,6 @@ let DoctorDashboardComponent = class DoctorDashboardComponent {
         this.http.httpViaPost('datalist', data)
             .subscribe(response => {
             this.DoctorSignedData = response.res;
-            console.log(this.DoctorSignedData);
             if (this.DoctorSignedData.length == 1) {
                 this.buttonText = "Edit";
             }
@@ -9452,8 +9472,10 @@ let DoctorHeaderComponent = class DoctorHeaderComponent {
     }
     /**logout function start here**/
     logout() {
+        this.cookies.delete('jwtToken');
+        this.cookies.delete('user_details');
         this.cookies.deleteAll();
-        this.router.navigateByUrl('/login');
+        this.router.navigateByUrl('login');
     }
 };
 DoctorHeaderComponent.ctorParameters = () => [
@@ -9904,6 +9926,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_http_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/http-service.service */ "./src/app/services/http-service.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+
 
 
 
@@ -9918,7 +9942,10 @@ let TechDashboardComponent = class TechDashboardComponent {
         this.httpService = httpService;
         this.activatedRoute = activatedRoute;
         this.commonFunction = commonFunction;
+        this.commonArray = [];
         this.user_data = {};
+        this.displayedColumns = ['no', 'patientName', 'record_type', 'date_added', 'status'];
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](this.commonArray);
         /**lib-listing start here**/
         this.allUserData = [];
         this.allUserData_skip = ["_id", "created_at"];
@@ -9942,6 +9969,9 @@ let TechDashboardComponent = class TechDashboardComponent {
         this.TechDashboardAllData = [];
         this.techSingleData = [];
         this.userSingleData = {};
+        this.reportUploadedArray = [];
+        this.reportProcessedArray = [];
+        this.reportRemainingArray = [];
         /* Set Meta Data */
         this.commonFunction.setTitleMetaTags();
         let allData = {};
@@ -10005,7 +10035,28 @@ let TechDashboardComponent = class TechDashboardComponent {
             this.processedStatusCount = response["status-count1"];
             this.signedStatusCount = response["status-count2"];
             this.uploadedStatusCount = response["status-count7"];
+            this.reportUploadedArray = response.data.status7;
+            this.reportRemainingArray = response.data.status2;
+            this.reportProcessedArray = response.data.status1;
         });
+    }
+    viewDetailsData(flag) {
+        switch (flag) {
+            case 'upload':
+                this.commonArray = this.reportUploadedArray;
+                this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](this.commonArray);
+                break;
+            case 'processed':
+                this.commonArray = this.reportProcessedArray;
+                this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](this.commonArray);
+                break;
+            case 'remainProcess':
+                this.commonArray = this.reportRemainingArray;
+                this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](this.commonArray);
+                break;
+            default:
+                break;
+        }
     }
 };
 TechDashboardComponent.ctorParameters = () => [
@@ -10118,8 +10169,10 @@ let TechHeaderComponent = class TechHeaderComponent {
     }
     /**logout function start here**/
     logout() {
+        this.cookies.delete('jwtToken');
+        this.cookies.delete('user_details');
         this.cookies.deleteAll();
-        this.router.navigateByUrl('/login');
+        this.router.navigateByUrl('login');
     }
 };
 TechHeaderComponent.ctorParameters = () => [
@@ -10307,7 +10360,7 @@ const routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'login', component: _components_auth_login_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
     { path: 'forget-password', component: _components_auth_forgetpassword_forgetpassword_component__WEBPACK_IMPORTED_MODULE_6__["ForgetpasswordComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
-    { path: 'reset-password/:_id', component: _components_auth_resetpassword_resetpassword_component__WEBPACK_IMPORTED_MODULE_7__["ResetpasswordComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'reset-password/:_id', component: _components_auth_resetpassword_resetpassword_component__WEBPACK_IMPORTED_MODULE_7__["ResetpasswordComponent"] },
     { path: 'sign-up', redirectTo: '/login', pathMatch: 'full' },
     /* Admin Route */
     { path: 'admin/dashboard', component: _components_admin_admin_dashboard_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_8__["AdminDashboardComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { dataCount: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"] },
