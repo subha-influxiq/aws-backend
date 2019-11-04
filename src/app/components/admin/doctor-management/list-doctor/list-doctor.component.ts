@@ -29,13 +29,15 @@ export class ListDoctorComponent implements OnInit {
   deleteEndpoint: any = "deletesingledata";
   user_cookie: any;
   searchingEndpoint:any="datalist";
+  searchSourceName:any="users_view_doctor"
   editUrl:any = 'admin/doctor-management/edit';
   apiUrl: any = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";
   status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
-      textsearch: [{ label: "Search By Name", field: 'fullname' },{label:"Search by Taxonomy",field:'taxo_list'},
+      textsearch: [{ label: "Search By Name", field: 'fullName' },
+      {label:"Search by Taxonomy",field:'taxo_list'},
       { label: "Search By E-Mail", field: 'email' }]
     };
   // ====================================================================

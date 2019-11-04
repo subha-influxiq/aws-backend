@@ -114,7 +114,8 @@
 .footer_section .footer_content .link a, .footer_section .footer_content .link p{ font-size: 16px; font-family: "RobotoRegular"; color: #2b2b2b; text-decoration: none;}
 
 /* table section */
-
+.top_header{ background: #f5ba4f; align-items: center; display: flex; justify-content: center; }
+.top_header h2{ margin: 0; font-size: 40px; color: #1f1f1f; font-family: "RobotoBold"; text-transform: uppercase; }
 .admin_superbillsection { margin: 0 16px; display: block; }
 .admin_superbillsection h1{ font-size: 40px; font-family: 'RobotoBlack'; color: #002035; text-transform: uppercase; margin-bottom: 10px; margin-top: 20px; }
 .admin_superbillsection .biller_wrapper  { display: flex; justify-content: center;}

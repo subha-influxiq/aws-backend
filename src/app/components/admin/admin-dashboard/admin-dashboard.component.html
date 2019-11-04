@@ -88,6 +88,10 @@
 
 
 <mat-card-content class="admin_table">
+<mat-toolbar class="top_header">
+  <h2>{{ headerText }}</h2>
+</mat-toolbar>
+
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
@@ -126,7 +130,13 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index"></tr>
+    <!-- <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator> -->
+<!-- <mat-paginator [length]="resultsLength" [pageSize]="30"></mat-paginator> -->
   </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </mat-card-content>
 
 

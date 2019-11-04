@@ -15,23 +15,32 @@
 <!-- End header with add button -->
 
 
-<lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0" [datasource]="TechDashboardAllData"
-  [skip]="allUserData_skip" [modify_header_array]="allUserData_modify_header" [apiurl]="apiUrl" [sourcedata]="tableName"
-  [editroute]="editUrl" [jwttoken]="user_cookie" [statusarr]="status" [updateendpoint]="UpdateEndpoint"
-  [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint" [date_search_source]="tableName"
+<lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0" 
+  [datasource]="TechDashboardAllData"
+  [skip]="allUserData_skip" 
+  [modify_header_array]="allUserData_modify_header" 
+  [apiurl]="apiUrl" 
+  [sourcedata]="tableName"
+  [editroute]="editUrl" 
+  [jwttoken]="user_cookie" 
+  [statusarr]="status" 
+  [updateendpoint]="UpdateEndpoint"
+  [deleteendpoint]="deleteEndpoint" 
+  [date_search_endpoint]="SearchingEndpoint"
+  [date_search_source]="SearchingSourceName"
   [search_settings]="search_settings">
 </lib-listing>
 <h2 *ngIf="TechDashboardAllData.length == 0">No record found.</h2>
 <mat-card-content class="footer_section">
   <span class="footer_content">
 
-    <mat-card-content class="link">
+    <!-- <mat-card-content class="link">
       <a href="">Privacy Policy</a>
       <a href=""> Terms & conditions</a>
     </mat-card-content>
     <p>© Copyright 2018 Advanced Wellness Solutions- All Rights Reserved</p>
   </span>
-</mat-card-content>
+</mat-card-content> -->
 
 <!-- Admin Footer -->
 <app-admin-footer></app-admin-footer>

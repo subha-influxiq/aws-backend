@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CommonFunction } from '../../../class/common/common-function';
 import { MatTableDataSource } from '@angular/material';
+import {MatPaginatorModule, MatPaginator} from '@angular/material/paginator';
 
 
 
@@ -30,7 +31,7 @@ export class AdminDashboardComponent implements OnInit {
   public processedStatusCount: any;
   public signedStatusCount: any;
   public billerStatusCount: any;
-
+  public headerText:any;
   public commonArray: PeriodicElement[] = [];
   public uploadedStatusArray:any = [];
   public processedStatusArray:any = [];
@@ -42,13 +43,19 @@ export class AdminDashboardComponent implements OnInit {
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
   public docCount: any = [];
+  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+
 
   constructor(private router: Router, public cookieService: CookieService,
     private http: HttpServiceService, public activatedRoute: ActivatedRoute, 
     public commonFunction: CommonFunction) {
+     
 
     this.user_token = cookieService.get('jwtToken');
     this.getAllCountData();
@@ -58,6 +65,7 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.dataSource.paginator = this.paginator;
     this.activatedRoute.data.subscribe(resolveData => {
       this.docCount = resolveData.dataCount;
     });
@@ -127,18 +135,22 @@ export class AdminDashboardComponent implements OnInit {
     switch (flag) {
 
       case 'Reports Uploaded':
+        this.headerText = "Reports Uploaded";
         this.commonArray = this.uploadedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       case 'Report Processed':
+        this.headerText  = "Reports Processed";
         this.commonArray = this.processedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       case 'Report Signed':
+        this.headerText = "Reports Signed";
         this.commonArray = this.signedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       case 'Super Bill':
+        this.headerText = "Sent to Super Bill";
         this.commonArray = this.billerStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         break;
