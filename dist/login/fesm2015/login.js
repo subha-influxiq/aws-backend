@@ -581,6 +581,24 @@ class ApiService {
         res => res)));
         return result;
     }
+    /**
+     * @return {?}
+     */
+    jwtTokenGet() {
+        /** @type {?} */
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        };
+        /** @type {?} */
+        var result = this._http.get(this.serverUrl + 'gettemptoken').pipe(map((/**
+         * @param {?} res
+         * @return {?}
+         */
+        res => res)));
+        return result;
+    }
 }
 ApiService.decorators = [
     { type: Injectable, args: [{
@@ -1212,7 +1230,7 @@ class ForgetPasswordComponent {
         // setting the navigate By Sign Up Url from project
         this.loginRouteingUrlValue = ''; // setting the navigate By login Url from project
         // setting the navigate By login Url from project
-        this.domanUrlValue = ''; // This is reset password url
+        this.domainUrlValue = ''; // This is reset password url
         // This is reset password url
         this.addEndpointValue = ''; // This is endpoint url
         // This is endpoint url
@@ -1233,12 +1251,12 @@ class ForgetPasswordComponent {
         this.buttonNameValue = buttonNameVal;
     }
     /**
-     * @param {?} domanUrlVal
+     * @param {?} domainUrlVal
      * @return {?}
      */
-    set domanUrl(domanUrlVal) {
-        this.domanUrlValue = (domanUrlVal) || '<no name set>';
-        this.domanUrlValue = domanUrlVal;
+    set domainUrl(domainUrlVal) {
+        this.domainUrlValue = (domainUrlVal) || '<no name set>';
+        this.domainUrlValue = domainUrlVal;
         // console.log(this.domanUrlValue);
     }
     /**
@@ -1321,13 +1339,13 @@ class ForgetPasswordComponent {
             this.forgetPasswordForm.controls[x].markAsTouched();
         }
         if (this.forgetPasswordForm.valid) { //    validation checking
-            this.openSnackBar(); // open snack-bar function
-            // open snack-bar function
+            //    validation checking
+            // this.openSnackBar();              // open snack-bar function
             /** @type {?} */
             let link = this.serverUrlValue;
             /** @type {?} */
             let data = this.forgetPasswordForm.value;
-            data.domanUrl = this.domanUrlValue;
+            data.domainUrl = this.domainUrlValue;
             this.apiService.forgetPassword(data).subscribe((/**
              * @param {?} response
              * @return {?}
@@ -1338,7 +1356,7 @@ class ForgetPasswordComponent {
                 let result = {};
                 result = response;
                 if (result.status == "success") {
-                    this.openSnackBar(); // open snack-bar function
+                    // this.openSnackBar();             // open snack-bar function
                     // this is use for reset the from
                     this.formDirective.resetForm();
                     this.message = ''; // clear the from
@@ -1407,7 +1425,7 @@ ForgetPasswordComponent.ctorParameters = () => [
 ForgetPasswordComponent.propDecorators = {
     formDirective: [{ type: ViewChild, args: [FormGroupDirective,] }],
     buttonName: [{ type: Input }],
-    domanUrl: [{ type: Input }],
+    domainUrl: [{ type: Input }],
     formTitle: [{ type: Input }],
     serverUrl: [{ type: Input }],
     logo: [{ type: Input }],
