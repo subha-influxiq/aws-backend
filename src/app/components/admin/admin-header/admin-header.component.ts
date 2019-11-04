@@ -31,6 +31,7 @@ export class AdminHeaderComponent implements OnInit {
   /**logout function start here**/
   logout() {
     this.cookies.delete('jwtToken');
+    this.cookies.delete('user_details');
     this.cookies.deleteAll();
     this.router.navigateByUrl('login');
   }

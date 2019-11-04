@@ -27,8 +27,10 @@ export class DoctorHeaderComponent implements OnInit {
   
   /**logout function start here**/
   logout() {
+    this.cookies.delete('jwtToken');
+    this.cookies.delete('user_details');
     this.cookies.deleteAll();
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('login');
   }
   /**logout function end here**/
 
