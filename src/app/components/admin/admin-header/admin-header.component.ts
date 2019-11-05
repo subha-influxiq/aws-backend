@@ -10,12 +10,14 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 
 export class AdminHeaderComponent implements OnInit {
-    status: boolean = true;
+  
+  status: boolean = true;
   public user_data: any = {};
-
   public loader: boolean = true;
   public user_cookie:any;
+
   constructor(public cookies: CookieService, public router: Router) { 
+    window.scroll(0, 0);
     let allData: any = {};
     allData = this.cookies.getAll();
     this.user_data = JSON.parse(allData.user_details);
