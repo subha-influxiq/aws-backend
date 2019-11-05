@@ -1,9 +1,19 @@
 <app-tech-header></app-tech-header>
 
+<mat-card-content class="title_wrapper">
+  {{ htmlText.header }}
+</mat-card-content>
 
+<span class="add_header">
+
+  <span class="bradcrumb">
+    <a [routerLink]="['/tech/dashboard']">Dashboard &nbsp;/</a> &nbsp; 
+    {{ htmlText.nav }}
+  </span>
+</span>
 <mat-card class="add_form">
 
-  <h2>add report manually</h2>
+  
 
   <mat-card-content>
     <form class="example-form" autocomplete="off" name="patientAddEditForm" [formGroup]="patientAddEditForm"

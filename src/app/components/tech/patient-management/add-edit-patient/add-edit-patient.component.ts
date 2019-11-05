@@ -22,7 +22,7 @@ export interface DialogData {
 
 export class AddEditPatientComponent implements OnInit {
   @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
-
+  public htmlText: any = { nav: 'Add Patient' ,header:"Add Report Manually"};
   public buttonText : any="Submit";
   public patientAddEditForm : FormGroup;
   public user_token : any;

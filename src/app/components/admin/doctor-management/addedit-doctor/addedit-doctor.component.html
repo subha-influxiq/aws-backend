@@ -124,13 +124,18 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Practice name</mat-label>
-        <input matInput placeholder="James101" formControlName="practicename">
-        <mat-error
+        <input matInput placeholder="James101" formControlName="practicename" 
+         (blur)="inputUntouch(docManageForm,'practicename')">
+         <mat-error *ngIf="docManageForm.controls['practicename'].touched && !docManageForm.controls['practicename'].valid
+        && docManageForm.controls['practicename'].errors.required">
+        Practice Name can not be blank</mat-error>
+
+        <!-- <mat-error
           *ngIf="!docManageForm.controls['practicename'].valid && docManageForm.controls['practicename'].errors.required">
           Practice Name is required.</mat-error>
         <mat-error
           *ngIf="!docManageForm.controls['practicename'].valid && !docManageForm.controls['practicename'].errors.required">
-          Practice name is not valid</mat-error>
+          Practice name is not valid</mat-error> -->
       </mat-form-field>
 
 
@@ -172,11 +177,15 @@
 
       <mat-form-field appearance="fill">
         <mat-label>#NPI</mat-label>
-        <input matInput placeholder="1880101700" formControlName="npm">
-        <mat-error *ngIf="!docManageForm.controls['npm'].valid && docManageForm.controls['npm'].errors.required ">NPI#
+        <input matInput placeholder="1880101700" formControlName="npm"
+        (blur)="inputUntouch(docManageForm,'npm')">
+        <mat-error *ngIf="docManageForm.controls['npm'].touched && !docManageForm.controls['npm'].valid
+        && docManageForm.controls['npm'].errors.required">
+        #NPI can not be blank</mat-error>
+        <!-- <mat-error *ngIf="!docManageForm.controls['npm'].valid && docManageForm.controls['npm'].errors.required ">NPI#
           is required.</mat-error>
         <mat-error *ngIf="!docManageForm.controls['npm'].valid && !docManageForm.controls['npm'].errors.required"> NPM#
-          is not valid</mat-error>
+          is not valid</mat-error> -->
       </mat-form-field>
 
 
@@ -255,10 +264,14 @@
 
       <mat-form-field appearance="fill">
         <mat-label>ZIP</mat-label>
-        <input matInput placeholder="917844" formControlName="zip">
+        <input matInput placeholder="917844" formControlName="zip" 
+        (blur)="inputUntouch(docManageForm,'zip')">
+        <mat-error *ngIf="docManageForm.controls['zip'].touched && !docManageForm.controls['zip'].valid
+        && docManageForm.controls['zip'].errors.required">
+        ZIP can not be blank</mat-error>
 
-        <mat-error *ngIf="!docManageForm.controls['zip'].valid && docManageForm.controls['zip'].errors.required">ZIP is
-          required.</mat-error>
+        <!-- <mat-error *ngIf="!docManageForm.controls['zip'].valid && docManageForm.controls['zip'].errors.required">ZIP is
+          required.</mat-error> -->
         <!-- <mat-error *ngIf="!docManageForm.controls['zip'].valid && !docManageForm.controls['zip'].errors.required">ZIP must be only 6 digit integers</mat-error> -->
       </mat-form-field>
 
