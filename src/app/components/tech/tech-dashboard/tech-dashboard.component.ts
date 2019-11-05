@@ -148,6 +148,8 @@ export class TechDashboardComponent implements OnInit {
       case 'upload':
         this.commonArray = this.reportUploadedArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
+        console.log("datasource",this.dataSource);
+
         break;
       case 'processed':
           this.commonArray = this.reportProcessedArray;
