@@ -175,3 +175,4 @@
     text-transform: uppercase;
     font-family: "RalewayBold";
  }
+ td.mat-cell br, td.mat-footer-cell br, th.mat-header-cell br{ display: none; }
