@@ -91,7 +91,8 @@
 
 }
 
-
+.top_header{ background: #f5ba4f; align-items: center; display: flex; justify-content: center; }
+.top_header h2{ margin: 0; font-size: 40px; color: #1f1f1f; font-family: "RobotoBold"; text-transform: uppercase; }
 @media screen and (max-width: 1240px){
 
   .doctor_content_wrapper { padding: 30px; }
