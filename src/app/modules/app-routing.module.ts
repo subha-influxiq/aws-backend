@@ -55,13 +55,14 @@ import { TestComponent } from '../components/test/test.component';
 import { HealthriskSystemEncounterComponent } from '../components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component';
 import { SystemSuperbillComponent } from '../components/admin/tech-management/system-superbill/system-superbill.component';
 import { HealthRiskAnalysisComponent } from '../components/admin/tech-management/health-risk-analysis/health-risk-analysis.component';
+import { SignatureManagementComponent } from '../components/doctor/signature-management/signature-management.component';
 
 const routes: Routes = [
   /* Auth Route */
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate: [AuthguardService] },
   { path: 'forget-password', component: ForgetpasswordComponent, canActivate: [AuthguardService] },
-  { path: 'reset-password/:_id', component: ResetpasswordComponent },
+  { path: 'reset-password/:token', component: ResetpasswordComponent},
   { path: 'sign-up', redirectTo: '/login', pathMatch: 'full' },
 
   /* Admin Route */
@@ -199,6 +200,8 @@ const routes: Routes = [
   
   /* Doctor Route */
   { path: 'doctor/dashboard', component: DoctorDashboardComponent, canActivate: [AuthguardService] },
+  { path: 'doctor/signature-management', component: SignatureManagementComponent ,canActivate: [AuthguardService]},
+
   /* Account-Settings */
   { path: 'doctor/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'doctor/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },

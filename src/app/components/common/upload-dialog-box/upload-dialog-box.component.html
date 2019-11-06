@@ -15,7 +15,7 @@
             </mat-form-field>
             
             <span class="submit_form">
-                <button mat-flat-button mat-dialog-close> Cancel </button>
+                <button mat-flat-button mat-dialog-close type="button" (click)="cancelButtonFunction()"> Cancel </button>
                 <button mat-flat-button type="submit" [mat-dialog-close]="true" cdkFocusInitial> Submit </button>
             </span>
         </mat-dialog-content>

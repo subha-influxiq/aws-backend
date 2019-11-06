@@ -49,13 +49,22 @@
 
       <mat-card-content>
         <label>Ordering Physician</label>
-        <mat-form-field>
+        <!-- <mat-form-field>
           <input matInput [formControl]="patientAddEditForm.controls['physicalOrdering']"
             (blur)="inputUntouch(patientAddEditForm,'physicalOrdering')">
           <mat-error *ngIf="patientAddEditForm.controls['physicalOrdering'].touched && !patientAddEditForm.controls['patientName'].valid
           && patientAddEditForm.controls['physicalOrdering'].errors.required">
             Ordering Physician field can not be blank</mat-error>
-        </mat-form-field>
+        </mat-form-field> -->
+        <!-- dropdown -->
+        <mat-form-field >
+          
+            <mat-select formControlName="physicalOrdering" >
+              <mat-option [value]=0>Select a Doctor</mat-option>
+              <mat-option *ngFor="let doc of allDoctorDataArray;" value="{{ doc._id }}">{{ doc.firstname }} {{ doc.lastname }}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
       </mat-card-content>
 
 

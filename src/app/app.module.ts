@@ -81,7 +81,8 @@ import { NotFoundErrorComponent } from './components/common/not-found-error/not-
 import { AdminFooterComponent } from './components/admin/admin-footer/admin-footer.component';
 import { BillerFooterComponent } from './components/biller/biller-footer/biller-footer.component';
 import { TechFooterComponent } from './components/tech/tech-footer/tech-footer.component';
-import { DoctorFooterComponent } from './components/doctor/doctor-footer/doctor-footer.component';
+import { DoctorFooterComponent } from './components/doctor/doctor-footer/doctor-footer.component'; 
+import { SignatureManagementComponent } from './components/doctor/signature-management/signature-management.component';
 
 
 @NgModule({
@@ -130,7 +131,8 @@ import { DoctorFooterComponent } from './components/doctor/doctor-footer/doctor-
     AdminFooterComponent,
     BillerFooterComponent,
     TechFooterComponent,
-    DoctorFooterComponent
+    DoctorFooterComponent,
+    SignatureManagementComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

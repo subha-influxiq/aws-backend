@@ -34,6 +34,9 @@ export class AddEditPatientComponent implements OnInit {
   public dialogRef: any;
   public cookiesData : any={};
   public cookies_id:any;
+  public allDoctorDataArray : any = [];
+  public tech_id:any;
+  
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
@@ -44,15 +47,18 @@ export class AddEditPatientComponent implements OnInit {
       
       this.cookiesData = JSON.parse(allcookies.user_details);
       this.cookies_id = this.cookiesData._id;
+     
       /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
 
-      this.user_token = cookie.get('jwtToken');
+      // this.user_token = cookie.get('jwtToken');
+      this.getAllDoctorData();
+
       this.patientAddEditForm = this.fb.group({
         patientName        :  ['', [Validators.required, Validators.maxLength(30)]],
         gender             :  ['', Validators.required],
         birthDate          :  ['',Validators.required],
-        physicalOrdering   :  ['',Validators.required ],
+        physicalOrdering   :  ['' ],
         testDate           :  ['',Validators.required],
         date               :  ['',Validators.required],
         testCompletedDate  :  ['',Validators.required],
@@ -87,6 +93,22 @@ export class AddEditPatientComponent implements OnInit {
 
   ngOnInit() {
     
+  }
+
+  getAllDoctorData(){
+    var data = {
+      "source": "users",
+      "condition": {
+        tech_object:this.cookies_id
+      },
+      "token": this.user_token
+    }
+    this.httpService.httpViaPost('datalist', data)
+      .subscribe(response => {
+        let result: any = {};
+        result = response.res;
+        this.allDoctorDataArray = result;        
+      })
   }
 
   /**for validation purpose**/
@@ -128,7 +150,7 @@ export class AddEditPatientComponent implements OnInit {
       var data :any = {
         "source" : "patient_management",
         "data" : this.patientAddEditForm.value,
-        "sourceobj": ["user_id"],
+        "sourceobj": ["user_id","physicalOrdering"],
         "token" : this.user_token
       }
 

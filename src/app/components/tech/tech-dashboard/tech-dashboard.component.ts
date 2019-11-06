@@ -64,6 +64,7 @@ export class TechDashboardComponent implements OnInit {
   public reportUploadedArray: any = [];
   public reportProcessedArray: any = [];
   public reportRemainingArray: any = [];
+  public headerText:any;
 
   constructor(public cookie: CookieService, public http: HttpClient,
     public httpService: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
@@ -85,7 +86,6 @@ export class TechDashboardComponent implements OnInit {
 
     this.activatedRoute.data.forEach((data) => {
       this.techDashboardAllData = data.techDashboardData.res;
-      console.log("soiureshhhhhh",this.techDashboardAllData);
     })
 
   }
@@ -151,14 +151,17 @@ export class TechDashboardComponent implements OnInit {
   viewDetailsData(flag: any) {
     switch (flag) {
       case 'upload':
+        this.headerText = "Reports Uploaded";
         this.commonArray = this.reportUploadedArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       case 'processed':
+          this.headerText = "Reports Processed";
           this.commonArray = this.reportProcessedArray;
           this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       case 'remainProcess':
+          this.headerText = "Reports Remain to Process";
          this.commonArray = this.reportRemainingArray;
          this.dataSource = new MatTableDataSource(this.commonArray);
         break;
