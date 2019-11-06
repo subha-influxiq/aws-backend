@@ -6,7 +6,7 @@
 
       <button mat-flat-button  (click)="menuFunction()" class="togle_menu"><i class="material-icons"> menu </i></button>
       <mat-card-content class="quotation"  [ngClass]="status ? 'success' : 'danger'">
-          <mat-nav-list >
+          <mat-nav-list>
               <a mat-list-item routerLinkActive="active" [routerLink]="['/admin/dashboard']"> Dashboard </a>
               <a mat-list-item [routerLink]="['/admin/doctor-management']" routerLinkActive="active"> Manage Doctor </a>
               <a mat-list-item [routerLink]="['/admin/biller-management']" routerLinkActive="active"> Manage Biller </a>
@@ -42,4 +42,4 @@
   </mat-toolbar>
   <!-- end header -->
 
-  
+
