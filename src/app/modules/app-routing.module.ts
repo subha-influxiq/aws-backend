@@ -62,7 +62,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate: [AuthguardService] },
   { path: 'forget-password', component: ForgetpasswordComponent, canActivate: [AuthguardService] },
-  { path: 'reset-password/:token', component: ResetpasswordComponent },
+  { path: 'reset-password/:token', component: ResetpasswordComponent},
   { path: 'sign-up', redirectTo: '/login', pathMatch: 'full' },
 
   /* Admin Route */
@@ -200,6 +200,8 @@ const routes: Routes = [
   
   /* Doctor Route */
   { path: 'doctor/dashboard', component: DoctorDashboardComponent, canActivate: [AuthguardService] },
+  { path: 'doctor/signature-management', component: SignatureManagementComponent ,canActivate: [AuthguardService]},
+
   /* Account-Settings */
   { path: 'doctor/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'doctor/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
@@ -219,7 +221,6 @@ const routes: Routes = [
   { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent},
   { path: 'tech/system-superbill', component: SystemSuperbillComponent},
   { path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent},
-  { path: 'signature-management', component: SignatureManagementComponent },
   { path: '**', component: NotFoundErrorComponent }
 ];
 

@@ -32,7 +32,7 @@ public cookiesData:any;
 public cookies_id:any;
 public result : any;
   constructor(public dialog: MatDialog, public fb: FormBuilder, public cookie: CookieService,
-    public http: HttpServiceService, public snackBar: MatSnackBar) {
+    public http: HttpServiceService, public snackBar: MatSnackBar,public router : Router) {
       let allcookies: any;
       allcookies = cookie.getAll();
       this.cookiesData = JSON.parse(allcookies.user_details);
@@ -53,6 +53,9 @@ public result : any;
   }
   inputUntouch(form: any, val: any) {
     form.controls[val].markAsUntouched();
+  }
+  cancelButtonFunction(){
+    this.router.navigateByUrl('/doctor/dashboard');
   }
   getSignatureData(){
     var data = {
