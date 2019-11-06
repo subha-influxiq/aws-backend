@@ -55,7 +55,7 @@ export class TechDashboardComponent implements OnInit {
   /**lib listing end here**/
   public user_id: any;
   public user_token: any;
-  public TechDashboardAllData: any = [];
+  public techDashboardAllData: any = [];
   public techSingleData: any = [];
   public userSingleData: any = {};
   public uploadedStatusCount: any;
@@ -84,8 +84,12 @@ export class TechDashboardComponent implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.data.forEach((data) => {
-      this.TechDashboardAllData = data.techDashboardData.res;
+      this.techDashboardAllData = data.techDashboardData.res;
+      console.log("soiureshhhhhh",this.techDashboardAllData);
     })
+
+  }
+  getAllDashboardData(){
 
   }
 
@@ -102,6 +106,7 @@ export class TechDashboardComponent implements OnInit {
         let result: any = {};
         result = response.res;
         this.userSingleData = result[0];
+        console.log(this.userSingleData);
       })
   }
   getTechCountData() {
@@ -164,3 +169,6 @@ export class TechDashboardComponent implements OnInit {
     }
   }
 }
+
+
+

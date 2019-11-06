@@ -16,6 +16,21 @@ export interface PeriodicElement {
   status: string;
 }
 
+export interface AllDataElement {
+  no: number;
+  patientName: string;
+  doctorName: string;
+  billerName: string;
+  record: string;
+  billGenerationDate: string;
+  techName:string;
+  billSentDate: string;
+  superBill: string;
+  date: string;
+  status: string;
+}
+
+
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -37,9 +52,11 @@ export class AdminDashboardComponent implements OnInit {
   public processedStatusArray:any = [];
   public signedStatusArray:any = [];
   public billerStatusArray:any = [];
-  displayedColumns: string[] = ['no', 'patientName', 'record_type', 'date_added', 'status'];
+  public displayedColumns: string[] = ['no', 'patientName', 'record_type', 'date_added', 'status'];
+  public allDataColumns: string[] = [ 'no', 'billGenerationDate', 'techName','billSentDate', 'billerName', 'doctorName', 'record', 'superBill', 'date', 'patientName', 'status'];
 
   dataSource = new MatTableDataSource(this.commonArray);
+  public allDataSource: any;
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -48,7 +65,7 @@ export class AdminDashboardComponent implements OnInit {
     }
   }
 
-  public docCount: any = [];
+  public allDataList: any = [];
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
 
 
@@ -67,7 +84,9 @@ export class AdminDashboardComponent implements OnInit {
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
     this.activatedRoute.data.subscribe(resolveData => {
-      this.docCount = resolveData.dataCount;
+      this.allDataList = resolveData.dataCount.res;
+      this.allDataSource = new MatTableDataSource(this.allDataList);
+      
     });
   }
 
@@ -137,6 +156,7 @@ export class AdminDashboardComponent implements OnInit {
       case 'Reports Uploaded':
         this.headerText = "Reports Uploaded";
         this.commonArray = this.uploadedStatusArray;
+        console.log(this.commonArray);
         this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       case 'Report Processed':

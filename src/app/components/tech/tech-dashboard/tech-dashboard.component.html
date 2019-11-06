@@ -70,7 +70,7 @@
     <mat-list>
       <mat-list-item>
         <p class="title_n">Name</p>
-        <p class="title_a">{{ userSingleData.firstname }}</p>
+        <p class="title_a">{{ userSingleData.firstname }} {{ userSingleData.lastname }} </p>
       </mat-list-item>
       <mat-list-item>
         <p class="title_n">Taxonomies</p>
@@ -149,7 +149,7 @@
 
 <!-- view details table start here -->
 
-<mat-card-content class="admin_table">
+<mat-card-content class="admin_table" *ngIf="commonArray.length > 0">
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
@@ -191,5 +191,7 @@
   </table>
 </mat-card-content>
 <!-- view details table end here -->
+
+
 
 <app-admin-footer></app-admin-footer>

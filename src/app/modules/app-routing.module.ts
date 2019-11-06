@@ -68,7 +68,7 @@ const routes: Routes = [
   { path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AuthguardService], resolve: { dataCount: ResolveService },
     data: {
       requestcondition: {
-        source: ['doctors', 'biller', 'tech'],
+        source: 'Patient-Record-Report_view',
         condition: {}
       },
       endpoint: 'datalist'
@@ -174,7 +174,7 @@ const routes: Routes = [
     resolve: { techDashboardData: ResolveService },
     data: { 
       requestcondition: {
-        source: 'user_management',
+        source: 'Patient-Record-Report_view',
         condition: {}
       },
       endpoint: 'datalist'
