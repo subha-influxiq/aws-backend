@@ -23,17 +23,16 @@ export class ListingTechComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public token: any = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzExMTYzNDMsImlhdCI6MTU3MTAyOTk0M30.m7kRTmIwvk-G0qYmr0zJ9qXoFJea8fBwnIOt8d7n3bc";
   public apiUrl: any = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";
   public tableName: any = "users";
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
-  public SearchingSourceName: "users";
+  SearchingSourceName:any = "users_view_tech";
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
-      textsearch: [{ label: "Search By Name", field: 'fullname' },
+      textsearch: [{ label: "Search By Name", field: 'fullName' },
       { label: "Search By E-Mail", field: 'email' }],
 
     };
@@ -52,6 +51,7 @@ export class ListingTechComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.data.forEach((data) => {
       this.TechDashboardAllData = data.techDashboardData.res;
+      console.log("listing data",this.TechDashboardAllData);
     })
   }
 

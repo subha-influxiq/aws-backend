@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Component, OnInit,ViewChild } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl, FormGroupDirective} from '@angular/forms';
 import { HttpServiceService } from '../../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,6 +14,7 @@ import { CommonFunction } from '../../../../class/common/common-function';
 })
 
 export class ChangePasswordComponent implements OnInit {
+  @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
 
   public ChangePasswordForm: FormGroup;
   public user_token: any;
@@ -66,7 +67,7 @@ export class ChangePasswordComponent implements OnInit {
   }
 
   CancelRedirectToDashboard() {
-    this.router.navigateByUrl('/dashboard/admin');
+    this.router.navigateByUrl('/admin/dashboard');
   }
 
   ChangePasswordFormSubmit() {
@@ -86,7 +87,7 @@ export class ChangePasswordComponent implements OnInit {
       }
       this.httpService.httpViaPost('changepassword', data)
         .subscribe((response) => {
-          this.resetForm();
+          this.formDirective.resetForm();
           this.loader = false;
           if (response.status == true) {
             this.snackBar.open(response.message, "OK", {

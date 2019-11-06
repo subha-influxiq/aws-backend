@@ -94,7 +94,10 @@ export class AddeditDoctorComponent implements OnInit {
     }
   }
 
+  inputUntouch(form: any, val: any) {
 
+    form.controls[val].markAsUntouched();
+  }
 
 
   // ===================================Setting the default Value========================
@@ -130,20 +133,20 @@ export class AddeditDoctorComponent implements OnInit {
   // =============================Form Generator=======================
   generateForm() {
     this.docManageForm = this.formBuilder.group({
-      firstname: ['',[Validators.required,nameValidator]],
-      lastname: ['',[Validators.required,nameValidator]],
+      firstname: ['',[Validators.required]],
+      lastname: ['',[Validators.required]],
       email: ['',[Validators.required,Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)]],
       password: ['',Validators.required],
       confirmpassword: ['',matchpwd],
-      phone: ["",[Validators.required,phoneValidator]],
-      practicename: ['',[Validators.required,nameValidator]],
-      npm: ['',[Validators.required,npmValidator]],
+      phone: ["",[Validators.required]],
+      practicename: ['',[Validators.required]],
+      npm: ['',[Validators.required]],
       address: ['',Validators.required],
       fax : ['',Validators.required],
       city: ['',Validators.required],
       state: ['',Validators.required],
       type:['doctor'],
-      zip: ['',[Validators.required,zipValidator]],
+      zip: ['',[Validators.required]],
       status: ['',],
       tech : ['',Validators.required],
       biller : ['',Validators.required],

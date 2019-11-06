@@ -1,9 +1,19 @@
 <app-tech-header></app-tech-header>
 
+<mat-card-content class="title_wrapper">
+  {{ htmlText.header }}
+</mat-card-content>
 
+<span class="add_header">
+
+  <span class="bradcrumb">
+    <a [routerLink]="['/tech/dashboard']">Dashboard &nbsp;/</a> &nbsp; 
+    {{ htmlText.nav }}
+  </span>
+</span>
 <mat-card class="add_form">
 
-  <h2>add report manually</h2>
+  
 
   <mat-card-content>
     <form class="example-form" autocomplete="off" name="patientAddEditForm" [formGroup]="patientAddEditForm"
@@ -38,13 +48,13 @@
       </mat-card-content>
 
       <mat-card-content>
-        <label>Ordering Physicial</label>
+        <label>Ordering Physician</label>
         <mat-form-field>
           <input matInput [formControl]="patientAddEditForm.controls['physicalOrdering']"
             (blur)="inputUntouch(patientAddEditForm,'physicalOrdering')">
           <mat-error *ngIf="patientAddEditForm.controls['physicalOrdering'].touched && !patientAddEditForm.controls['patientName'].valid
           && patientAddEditForm.controls['physicalOrdering'].errors.required">
-            Ordering Physicial field can not be blank</mat-error>
+            Ordering Physician field can not be blank</mat-error>
         </mat-form-field>
       </mat-card-content>
 
@@ -82,13 +92,13 @@
         <br>
         <hr>
         <mat-card-content>
-          <label> PTGPT </label>
+          <label>PTGTP</label>
           <mat-form-field>
             <input matInput [formControl]="patientAddEditForm.controls['PTGPT']"
               (blur)="inputUntouch(patientAddEditForm,'PTGPT')">
             <mat-error *ngIf="patientAddEditForm.controls['PTGPT'].touched && !patientAddEditForm.controls['PTGPT'].valid
             && patientAddEditForm.controls['PTGPT'].errors.required">
-              PTGPT field can not be blank</mat-error>
+            PTGTP field can not be blank</mat-error>
           </mat-form-field>
         </mat-card-content>
         <mat-card-content>

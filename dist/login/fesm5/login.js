@@ -713,6 +713,27 @@ var ApiService = /** @class */ (function () {
         function (res) { return res; })));
         return result;
     };
+    /**
+     * @return {?}
+     */
+    ApiService.prototype.jwtTokenGet = /**
+     * @return {?}
+     */
+    function () {
+        /** @type {?} */
+        var httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        };
+        /** @type {?} */
+        var result = this._http.get(this.serverUrl + 'gettemptoken').pipe(map((/**
+         * @param {?} res
+         * @return {?}
+         */
+        function (res) { return res; })));
+        return result;
+    };
     ApiService.decorators = [
         { type: Injectable, args: [{
                     providedIn: 'root'
@@ -1463,7 +1484,7 @@ var ForgetPasswordComponent = /** @class */ (function () {
         // setting the navigate By Sign Up Url from project
         this.loginRouteingUrlValue = ''; // setting the navigate By login Url from project
         // setting the navigate By login Url from project
-        this.domanUrlValue = ''; // This is reset password url
+        this.domainUrlValue = ''; // This is reset password url
         // This is reset password url
         this.addEndpointValue = ''; // This is endpoint url
         // This is endpoint url
@@ -1488,14 +1509,14 @@ var ForgetPasswordComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(ForgetPasswordComponent.prototype, "domanUrl", {
+    Object.defineProperty(ForgetPasswordComponent.prototype, "domainUrl", {
         set: /**
-         * @param {?} domanUrlVal
+         * @param {?} domainUrlVal
          * @return {?}
          */
-        function (domanUrlVal) {
-            this.domanUrlValue = (domanUrlVal) || '<no name set>';
-            this.domanUrlValue = domanUrlVal;
+        function (domainUrlVal) {
+            this.domainUrlValue = (domainUrlVal) || '<no name set>';
+            this.domainUrlValue = domainUrlVal;
             // console.log(this.domanUrlValue);
         },
         enumerable: true,
@@ -1615,13 +1636,13 @@ var ForgetPasswordComponent = /** @class */ (function () {
             this.forgetPasswordForm.controls[x].markAsTouched();
         }
         if (this.forgetPasswordForm.valid) { //    validation checking
-            this.openSnackBar(); // open snack-bar function
-            // open snack-bar function
+            //    validation checking
+            // this.openSnackBar();              // open snack-bar function
             /** @type {?} */
             var link = this.serverUrlValue;
             /** @type {?} */
             var data = this.forgetPasswordForm.value;
-            data.domanUrl = this.domanUrlValue;
+            data.domainUrl = this.domainUrlValue;
             this.apiService.forgetPassword(data).subscribe((/**
              * @param {?} response
              * @return {?}
@@ -1632,7 +1653,7 @@ var ForgetPasswordComponent = /** @class */ (function () {
                 var result = {};
                 result = response;
                 if (result.status == "success") {
-                    _this.openSnackBar(); // open snack-bar function
+                    // this.openSnackBar();             // open snack-bar function
                     // this is use for reset the from
                     _this.formDirective.resetForm();
                     _this.message = ''; // clear the from
@@ -1728,7 +1749,7 @@ var ForgetPasswordComponent = /** @class */ (function () {
     ForgetPasswordComponent.propDecorators = {
         formDirective: [{ type: ViewChild, args: [FormGroupDirective,] }],
         buttonName: [{ type: Input }],
-        domanUrl: [{ type: Input }],
+        domainUrl: [{ type: Input }],
         formTitle: [{ type: Input }],
         serverUrl: [{ type: Input }],
         logo: [{ type: Input }],

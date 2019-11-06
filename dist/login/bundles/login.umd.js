@@ -649,6 +649,26 @@
                  */function (res) { return res; })));
                 return result;
             };
+        /**
+         * @return {?}
+         */
+        ApiService.prototype.jwtTokenGet = /**
+         * @return {?}
+         */
+            function () {
+                /** @type {?} */
+                var httpOptions = {
+                    headers: new i1.HttpHeaders({
+                        'Content-Type': 'application/json'
+                    })
+                };
+                /** @type {?} */
+                var result = this._http.get(this.serverUrl + 'gettemptoken').pipe(operators.map(( /**
+                 * @param {?} res
+                 * @return {?}
+                 */function (res) { return res; })));
+                return result;
+            };
         ApiService.decorators = [
             { type: i0.Injectable, args: [{
                         providedIn: 'root'
@@ -1382,7 +1402,7 @@
             // setting the navigate By Sign Up Url from project
             this.loginRouteingUrlValue = ''; // setting the navigate By login Url from project
             // setting the navigate By login Url from project
-            this.domanUrlValue = ''; // This is reset password url
+            this.domainUrlValue = ''; // This is reset password url
             // This is reset password url
             this.addEndpointValue = ''; // This is endpoint url
             // This is endpoint url
@@ -1407,13 +1427,13 @@
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(ForgetPasswordComponent.prototype, "domanUrl", {
+        Object.defineProperty(ForgetPasswordComponent.prototype, "domainUrl", {
             set: /**
-             * @param {?} domanUrlVal
+             * @param {?} domainUrlVal
              * @return {?}
-             */ function (domanUrlVal) {
-                this.domanUrlValue = (domanUrlVal) || '<no name set>';
-                this.domanUrlValue = domanUrlVal;
+             */ function (domainUrlVal) {
+                this.domainUrlValue = (domainUrlVal) || '<no name set>';
+                this.domainUrlValue = domainUrlVal;
                 // console.log(this.domanUrlValue);
             },
             enumerable: true,
@@ -1525,13 +1545,13 @@
                     this.forgetPasswordForm.controls[x].markAsTouched();
                 }
                 if (this.forgetPasswordForm.valid) { //    validation checking
-                    this.openSnackBar(); // open snack-bar function
-                    // open snack-bar function
+                    //    validation checking
+                    // this.openSnackBar();              // open snack-bar function
                     /** @type {?} */
                     var link = this.serverUrlValue;
                     /** @type {?} */
                     var data = this.forgetPasswordForm.value;
-                    data.domanUrl = this.domanUrlValue;
+                    data.domainUrl = this.domainUrlValue;
                     this.apiService.forgetPassword(data).subscribe(( /**
                      * @param {?} response
                      * @return {?}
@@ -1541,7 +1561,7 @@
                         var result = {};
                         result = response;
                         if (result.status == "success") {
-                            _this.openSnackBar(); // open snack-bar function
+                            // this.openSnackBar();             // open snack-bar function
                             // this is use for reset the from
                             _this.formDirective.resetForm();
                             _this.message = ''; // clear the from
@@ -1639,7 +1659,7 @@
         ForgetPasswordComponent.propDecorators = {
             formDirective: [{ type: i0.ViewChild, args: [forms.FormGroupDirective,] }],
             buttonName: [{ type: i0.Input }],
-            domanUrl: [{ type: i0.Input }],
+            domainUrl: [{ type: i0.Input }],
             formTitle: [{ type: i0.Input }],
             serverUrl: [{ type: i0.Input }],
             logo: [{ type: i0.Input }],
