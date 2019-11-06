@@ -236,7 +236,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Select Technician</mat-label>
-        <mat-select formControlName="tech">
+        <mat-select formControlName="tech" multiple>
           <mat-option [value]=0>Select a tech</mat-option>
           <mat-option *ngFor="let tech of techData;" value="{{ tech._id }}">{{ tech.firstname }} {{tech.lastname}}
           </mat-option>
@@ -247,7 +247,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Select Biiler</mat-label>
-        <mat-select formControlName="biller">
+        <mat-select formControlName="biller" multiple>
           <mat-option [value]=0>Select a biiler</mat-option>
           <mat-option *ngFor="let biller of billerData;" value="{{ biller._id }}">{{ biller.firstname }}
             {{ biller.lastname }}</mat-option>

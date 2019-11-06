@@ -130,11 +130,7 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index"></tr>
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> af48a50a20c4ed57beedb6f8aa5e45a1d118d4f1
   </table>
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </mat-card-content>
@@ -142,6 +138,11 @@
 <!-- All Data listing start here -->
 
 <mat-card-content class="admin_table" *ngIf="commonArray.length == 0">
+
+    <mat-toolbar class="top_header">
+        <h2> Patient Record Report </h2>
+      </mat-toolbar>
+
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>

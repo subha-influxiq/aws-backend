@@ -48,7 +48,11 @@ export class ChangePasswordComponent implements OnInit {
 
   ngOnInit() {
   }
-
+/**for validation purpose**/
+inputUntouch(form: any, val: any) {
+  form.controls[val].markAsUntouched();
+}
+/**for validation purpose**/
   machpassword(newPasswordkye: string, confirmPasswordkye: string) {
     return (group: FormGroup) => {
       let passwordInput = group.controls[newPasswordkye],
@@ -62,9 +66,7 @@ export class ChangePasswordComponent implements OnInit {
     };
   }
 
-  resetForm() {
-    this.ChangePasswordForm.reset();
-  }
+ 
 
   CancelRedirectToDashboard() {
     this.router.navigateByUrl('/admin/dashboard');
@@ -93,8 +95,9 @@ export class ChangePasswordComponent implements OnInit {
             this.snackBar.open(response.message, "OK", {
               duration: 1500
             });
-
-            this.router.navigateByUrl('/admin/dashboard');
+            setTimeout(() => {
+              this.router.navigateByUrl('/admin/dashboard');
+            }, 1550);
           } else {
             this.snackBar.open(response.message, "OK", {
               duration: 1500
