@@ -150,7 +150,7 @@
   display: flex;
   justify-content: space-evenly;
 }
-.searchbar .mat-form-field .mat-form-field-flex {
+.searchbar .mat-form-field .mat-form-field-flex { 
   display: inline-flex;
   align-items: baseline;
   box-sizing: border-box;
@@ -175,3 +175,5 @@
     text-transform: uppercase;
     font-family: "RalewayBold";
  }
+
+ td.mat-cell br, td.mat-footer-cell br, th.mat-header-cell br{ display: none; }
