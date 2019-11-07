@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit,ViewChild,Inject} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators,FormGroupDirective } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpServiceService } from '../../../../services/http-service.service';
@@ -6,7 +6,12 @@ import { DatePipe } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material';
 import { CommonFunction } from '../../../../class/common/common-function';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 
+export interface DialogData {
+  message: string;
+  id:any;
+}
 @Component({
   selector: 'app-add-edit-tech',
   templateUrl: './add-edit-tech.component.html',
@@ -18,6 +23,7 @@ export class AddEditTechComponent implements OnInit {
 
   public TechManagementAddEditForm: FormGroup;
   public message: any = "Submitted Successfully";
+  public dialogRef: any;
 
   date = new FormControl(new Date());
   public ddmmyy: any;
@@ -32,9 +38,8 @@ export class AddEditTechComponent implements OnInit {
   public taxo_array:any=[];
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
-
-    public cookie: CookieService, public snackBar: MatSnackBar, public commonFunction: CommonFunction) {
-
+    public cookie: CookieService, public snackBar: MatSnackBar, public commonFunction: CommonFunction,
+    public dialog: MatDialog) {
       /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
 
@@ -101,6 +106,15 @@ export class AddEditTechComponent implements OnInit {
         return confirmpasswordInput.setErrors(null);
       }
     };
+  }
+
+  openDialog(x: any): void {
+    this.dialogRef = this.dialog.open(Dialogtest, {
+     
+      data: { message: x, 'id':this.params_id }
+    });
+    this.dialogRef.afterClosed().subscribe(result => {
+    });
   }
   /**for validation purpose**/
   inputUntouch(form: any, val: any) {
@@ -182,19 +196,77 @@ export class AddEditTechComponent implements OnInit {
           this.snackBar.open(this.message, action, {
             duration: 2000,
           });
-          // this.TechManagementAddEditForm.reset();
+        
           this.formDirective.resetForm();
 
 
           setTimeout(() => {
             this.router.navigateByUrl("admin/tech-management")
           }, 2200);
-
         })
-
-
     }
   }
 
+}
+/**this is only for the Change Password modal in the edit page**/
+@Component({
+  selector: 'dialogtest',
+  templateUrl: 'modal.html',
+})
 
+export class Dialogtest {
+  public is_error: any;
+  public changePwdForm:any=FormGroup;
+  public user_token:any;
+  public params_id:any;
+  public userData: any;
+
+  constructor(public dialogRef: MatDialogRef<Dialogtest>,
+    public fb: FormBuilder, public httpService: HttpServiceService,public cookie :CookieService,
+    public activeRoute: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+      this.params_id=data.id;
+      console.log("sssssssssss",this.params_id);
+
+      this.user_token = cookie.get('jwtToken');
+      this.changePwdForm= this.fb.group({
+        password: ['', Validators.required],
+        confirmpassword: [],
+      }, { validators: this.matchpassword('password', 'confirmpassword') })
+     
+  }
+  matchpassword(passwordkye: string, confirmpasswordkye: string) {
+    return (group: FormGroup) => {
+      let passwordInput = group.controls[passwordkye],
+        confirmpasswordInput = group.controls[confirmpasswordkye];
+      if (passwordInput.value !== confirmpasswordInput.value) {
+        return confirmpasswordInput.setErrors({ notEquivalent: true });
+      }
+      else {
+        return confirmpasswordInput.setErrors(null);
+      }
+    };
+  }
+  changePasswordFormSubmit(){
+    console.log("data",this.changePwdForm.value);
+    let x: any;
+    for (x in this.changePwdForm.controls) {
+      this.changePwdForm.controls[x].markAsTouched();
+    }
+    if(this.changePwdForm.valid){
+      delete this.changePwdForm.value.confirmpassword
+      var data = {
+        "source": "users",
+        "data": {
+          id: this.params_id,
+          password: this.changePwdForm.value.password,
+        },
+        "token": this.user_token
+      }
+      this.httpService.httpViaPost('changepassword',data)
+        .subscribe(response=>{
+          console.log(response);
+        })
+    }
+    
+  }
 }

@@ -1,0 +1,13 @@
+
+
+.add_header{ display: flex; margin: 0 16px;}
+.add_header button{ margin-left: auto;
+  background: linear-gradient(180deg, #fac855, #e47e2a)!important;
+  text-transform: uppercase;
+  font-family: "RobotoBlack"; padding-top: 4px;
+}
+
+@media screen and (max-width: 480px){
+  .add_header { display: flex;  margin: 0 16px; align-items: center; justify-content: center; flex-direction: column; }
+  .add_header button { margin-left: 0; }
+}

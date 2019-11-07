@@ -124,11 +124,11 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Practice name</mat-label>
-        <input matInput placeholder="James101" formControlName="practicename" 
-         (blur)="inputUntouch(docManageForm,'practicename')">
-         <mat-error *ngIf="docManageForm.controls['practicename'].touched && !docManageForm.controls['practicename'].valid
+        <input matInput placeholder="James101" formControlName="practicename"
+          (blur)="inputUntouch(docManageForm,'practicename')">
+        <mat-error *ngIf="docManageForm.controls['practicename'].touched && !docManageForm.controls['practicename'].valid
         && docManageForm.controls['practicename'].errors.required">
-        Practice Name can not be blank</mat-error>
+          Practice Name can not be blank</mat-error>
 
         <!-- <mat-error
           *ngIf="!docManageForm.controls['practicename'].valid && docManageForm.controls['practicename'].errors.required">
@@ -177,11 +177,10 @@
 
       <mat-form-field appearance="fill">
         <mat-label>#NPI</mat-label>
-        <input matInput placeholder="1880101700" formControlName="npm"
-        (blur)="inputUntouch(docManageForm,'npm')">
+        <input matInput placeholder="1880101700" formControlName="npm" (blur)="inputUntouch(docManageForm,'npm')">
         <mat-error *ngIf="docManageForm.controls['npm'].touched && !docManageForm.controls['npm'].valid
         && docManageForm.controls['npm'].errors.required">
-        #NPI can not be blank</mat-error>
+          #NPI can not be blank</mat-error>
         <!-- <mat-error *ngIf="!docManageForm.controls['npm'].valid && docManageForm.controls['npm'].errors.required ">NPI#
           is required.</mat-error>
         <mat-error *ngIf="!docManageForm.controls['npm'].valid && !docManageForm.controls['npm'].errors.required"> NPM#
@@ -254,21 +253,23 @@
         </mat-select>
       </mat-form-field>
 
-
-
-
-
-
+      <!-- select doctor office center name -->
+      <mat-form-field appearance="fill">
+        <mat-label>Select Doctor's Office Name</mat-label>
+        <mat-select formControlName="doctorsOfficeName">
+          <mat-option [value]=0>Select a Doctor's Office Name</mat-option>
+          <mat-option *ngFor="let val of doctorOfficeData;" value="{{ val.centerName }}">{{ val.centerName }}
+            </mat-option>
+        </mat-select>
+      </mat-form-field>
 
       <!-- ZIP  -->
-
       <mat-form-field appearance="fill">
         <mat-label>ZIP</mat-label>
-        <input matInput placeholder="917844" formControlName="zip" 
-        (blur)="inputUntouch(docManageForm,'zip')">
+        <input matInput placeholder="917844" formControlName="zip" (blur)="inputUntouch(docManageForm,'zip')">
         <mat-error *ngIf="docManageForm.controls['zip'].touched && !docManageForm.controls['zip'].valid
         && docManageForm.controls['zip'].errors.required">
-        ZIP can not be blank</mat-error>
+          ZIP can not be blank</mat-error>
 
         <!-- <mat-error *ngIf="!docManageForm.controls['zip'].valid && docManageForm.controls['zip'].errors.required">ZIP is
           required.</mat-error> -->

@@ -18,7 +18,7 @@ export class ListingTechComponent implements OnInit {
   public allUserData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name",
     "email": "E-Mail", "city": "City", "address": "Address", "state": "State", "zip": "Zip",
-    "status": "Status","phone":"Phone Number","date":"Data Added","fullName" : "Name"
+    "status": "Status","phone":"Phone Number","date":"Data Added","full Name" : "Name"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";
@@ -39,7 +39,8 @@ export class ListingTechComponent implements OnInit {
     public user_cookie: any;
   public TechDashboardAllData: any = [];
   constructor(public cookie: CookieService, public http: HttpClient,
-    public httpService: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
+    public httpService: HttpServiceService, public activatedRoute: ActivatedRoute,
+     public commonFunction: CommonFunction) {
       
       /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
@@ -51,7 +52,7 @@ export class ListingTechComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.data.forEach((data) => {
       this.TechDashboardAllData = data.techDashboardData.res;
-      console.log("listing data",this.TechDashboardAllData);
+     
     })
   }
 

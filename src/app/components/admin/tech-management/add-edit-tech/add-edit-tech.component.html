@@ -108,6 +108,9 @@
         <mat-datepicker-toggle matSuffix [for]="myPicker" disabled></mat-datepicker-toggle>
         <mat-datepicker #myPicker></mat-datepicker>
       </mat-form-field>
+
+
+      <ng-container *ngIf ="!params_id">
       <mat-form-field class="form-group">
         <input matInput placeholder="Password" type="password"
           [formControl]="TechManagementAddEditForm.controls['password']">
@@ -122,17 +125,18 @@
         <mat-error
           *ngIf="!TechManagementAddEditForm.controls['confirmpassword'].valid && TechManagementAddEditForm.controls['confirmpassword'].touched">
           Password does not match </mat-error>
-
       </mat-form-field>
+    </ng-container>
 
       <mat-checkbox [formControl]="TechManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
-      <!-- <mat-error *ngIf="TechManagementAddEditForm.controls['status'].touched && !TechManagementAddEditForm.controls['status'].valid
-        && TechManagementAddEditForm.controls['status'].errors.required">
-        Status field can not be blank</mat-error> -->
+     
+      <ng-container *ngIf ="params_id">
 
-      <span class="submit_form">
+        <button mat-flat-button type="button" (click)="openDialog(test)"  > Change Password </button>
+      </ng-container>
+        <span class="submit_form">
         <button mat-flat-button type="reset">Reset </button>
-        <button mat-flat-button type="submit" [disabled]="!TechManagementAddEditForm.valid"> {{ htmlText.buttonText }} </button>
+        <button mat-flat-button type="submit" > {{ htmlText.buttonText }} </button>
       </span>
     </form>
   </mat-card-content>

@@ -1,0 +1,135 @@
+<!-- Admin Header -->
+<app-admin-header></app-admin-header>
+
+<!-- header with add button -->
+<mat-card-content class="title_wrapper">
+    {{ htmlText.header }}
+</mat-card-content>
+<span class="add_header">
+
+    <span class="bradcrumb">
+        <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/admin/doctor-office-management']">Manage Doctor-Office &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+    </span>
+</span>
+
+<mat-card class="add_form">
+
+    <h2>add Doctors office</h2>
+
+
+    <mat-card-content class="form_wrapper">
+        <form class="example-form" autocomplete="off" name="doctorOfficeAddEditForm"
+            [formGroup]="doctorOfficeAddEditForm" (ngSubmit)="doctorOfficeAddEditFormFormSubmit()">
+
+            <mat-form-field appearance="fill">
+                <mat-label>Enter Center Name</mat-label>
+                <input matInput placeholder="First Name" [formControl]="doctorOfficeAddEditForm.controls['centerName']"
+                    (blur)="inputUntouch(doctorOfficeAddEditForm,'centerName')">
+                <mat-error *ngIf="doctorOfficeAddEditForm.controls['centerName'].touched && !doctorOfficeAddEditForm.controls['centerName'].valid
+                 && doctorOfficeAddEditForm.controls['centerName'].errors.required">
+                    Center Name field can not be blank</mat-error>
+            </mat-form-field>
+
+
+
+            <mat-form-field appearance="fill">
+                <mat-label>Email Address</mat-label>
+                <input matInput placeholder="Email Address" [formControl]="doctorOfficeAddEditForm.controls['email']"
+                    (blur)="inputUntouch(doctorOfficeAddEditForm,'email')">
+                <mat-error *ngIf="doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid
+                  && doctorOfficeAddEditForm.controls['email'].errors.required">
+                    E-Mail field can not be blank</mat-error>
+                <mat-error
+                    *ngIf="!doctorOfficeAddEditForm.controls['email'].valid && !doctorOfficeAddEditForm.controls['email'].errors.required">
+                    Email is not valid</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Phone </mat-label>
+                <input matInput placeholder="Phone" [formControl]="doctorOfficeAddEditForm.controls['phone']"
+                    (blur)="inputUntouch(doctorOfficeAddEditForm,'phone')">
+                <mat-error *ngIf="doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid
+                  && doctorOfficeAddEditForm.controls['phone'].errors.required">
+                    Phone Number field can not be blank</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Address</mat-label>
+                <textarea matInput placeholder="Address" [formControl]="doctorOfficeAddEditForm.controls['address']"
+                    (blur)="inputUntouch(doctorOfficeAddEditForm,'address')"></textarea>
+                <mat-error *ngIf="doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid
+                  && doctorOfficeAddEditForm.controls['address'].errors.required">
+                    Address field can not be blank</mat-error>
+            </mat-form-field>
+            <mat-form-field class="parent_cat" appearance="fill">
+                <mat-label>State</mat-label>
+                <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
+                    <mat-option [value]=0>Select a category</mat-option>
+                    <mat-option *ngFor="let state of states;" value="{{ state.name }}">{{ state.name }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="parent_cat" appearance="fill">
+                <mat-label>City</mat-label>
+                <mat-select formControlName="city">
+                    <mat-option [value]=0>Select a category</mat-option>
+                    <mat-option *ngFor="let city of cities;" value="{{ city }}">{{ city }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
+
+            <mat-form-field appearance="fill">
+                <mat-label>ZIP</mat-label>
+                <input matInput placeholder="ZIP" [formControl]="doctorOfficeAddEditForm.controls['zip']"
+                    (blur)="inputUntouch(doctorOfficeAddEditForm,'zip')">
+                <mat-error *ngIf="doctorOfficeAddEditForm.controls['zip'].touched && !doctorOfficeAddEditForm.controls['zip'].valid
+                  && doctorOfficeAddEditForm.controls['zip'].errors.required">
+
+                    Zip field can not be blank</mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field>
+                <mat-label>Date</mat-label>
+                <input [value]="date.value" matInput [matDatepicker]="myPicker" placeholder="date">
+                <mat-datepicker-toggle matSuffix [for]="myPicker" disabled></mat-datepicker-toggle>
+                <mat-datepicker #myPicker></mat-datepicker>
+            </mat-form-field>
+
+
+            <!-- <ng-container *ngIf="!params_id"> -->
+                <mat-form-field class="form-group">
+                    <input matInput placeholder="Password" type="password"
+                        [formControl]="doctorOfficeAddEditForm.controls['password']">
+                    <mat-error
+                        *ngIf="!doctorOfficeAddEditForm.controls['password'].valid && doctorOfficeAddEditForm.controls['password'].touched">
+                        Password field can not be blank</mat-error>
+
+                </mat-form-field>
+                <mat-form-field class="form-group">
+                    <input matInput placeholder="Confirm Password" type="password"
+                        [formControl]="doctorOfficeAddEditForm.controls['confirmpassword']">
+                    <mat-error
+                        *ngIf="!doctorOfficeAddEditForm.controls['confirmpassword'].valid && doctorOfficeAddEditForm.controls['confirmpassword'].touched">
+                        Password does not match </mat-error>
+                </mat-form-field>
+            <!-- </ng-container> -->
+
+            <mat-checkbox [formControl]="doctorOfficeAddEditForm.controls['status']" checked>Status</mat-checkbox>
+
+            <!-- <ng-container *ngIf="params_id">
+
+                <button mat-flat-button type="button" (click)="openDialog(test)"> Change Password </button>
+            </ng-container> -->
+            <span class="submit_form">
+                <button mat-flat-button type="reset">Reset </button>
+                <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
+            </span>
+        </form>
+    </mat-card-content>
+</mat-card>
+
+<app-admin-footer></app-admin-footer>

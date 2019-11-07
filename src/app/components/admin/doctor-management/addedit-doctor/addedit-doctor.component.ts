@@ -37,6 +37,9 @@ export class AddeditDoctorComponent implements OnInit {
   public user_token:any;
   public techData : any = [];
   public billerData : any = [];
+  public techArray:any=[];
+  public billerArray:any=[];
+  public doctorOfficeData:any=[];
   constructor(private formBuilder: FormBuilder, private http: HttpServiceService,
     private cookieService: CookieService, public dialog: MatDialog, private router: Router,
     public acivatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
@@ -47,6 +50,7 @@ export class AddeditDoctorComponent implements OnInit {
       this.user_token = cookieService.get('jwtToken');
       this.getAllTechData();
       this.getAllBillerData();
+      this.getAllDoctorOfficeData();
     this.acivatedRoute.params.subscribe(params => {
       if (params['_id'] != null) {
         this.action = "edit";
@@ -119,10 +123,12 @@ export class AddeditDoctorComponent implements OnInit {
       tech:defaultValue.tech,
       biller:defaultValue.biller,
       zip: defaultValue.zip,
-      status: defaultValue.status
+      status: defaultValue.status,
+      taxo_list:defaultValue.taxo_list
 
     })
-    // this.getCity("Washington");
+    
+    console.log("+++++++++++++++",this.defaultData.taxo_list);
   }
   // ======================================================================================
 
@@ -150,6 +156,7 @@ export class AddeditDoctorComponent implements OnInit {
       status: ['',],
       tech : ['',Validators.required],
       biller : ['',Validators.required],
+      doctorsOfficeName:[''],
       taxo_list: [],
       taxonomies: this.formBuilder.array([]),
     });
@@ -224,6 +231,19 @@ export class AddeditDoctorComponent implements OnInit {
 
     })
   }
+  getAllDoctorOfficeData(){
+    var data={
+      "source": "users",
+      "condition": {
+        "type": "doctor_office"
+    },
+    "token": this.user_token
+    }
+    this.http.httpViaPost('datalist',data)
+    .subscribe(response=>{
+      this.doctorOfficeData =response.res; 
+    })
+  }
   /**getting all the biller data**/
   getAllBillerData(){
     var data={
@@ -257,6 +277,7 @@ export class AddeditDoctorComponent implements OnInit {
       }, 2000);
       return;
     } else {
+    
       delete this.docManageForm.value.confirmpassword;
       if (this.docManageForm.value.status) {
         this.docManageForm.value.status = parseInt("1");
@@ -264,10 +285,9 @@ export class AddeditDoctorComponent implements OnInit {
         this.docManageForm.value.status = parseInt("0");;
       }
     }
-
     /* start process to submited data */
     let postData: any = {
-      "source": 'users',      
+      "source":"users",
       "data": Object.assign(this.docManageForm.value, this.condition),
       "sourceobj": ["tech","biller"],
       "token": this.cookieService.get('jwtToken')
@@ -275,16 +295,14 @@ export class AddeditDoctorComponent implements OnInit {
     };
     this.http.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
       if (response.status == "success") {
-       
+      
         this.openDialog(this.successMessage);
         setTimeout(() => {
           this.dialogRef.close();
         }, 2000);
-
-
         this.router.navigateByUrl('admin/doctor-management');;
       } else {
-        alert("Some error occurred. Please try again.");
+        alert("Some error occurred. Please try again");
       }
     }, (error) => {
       alert("Some error occurred. Please try again.");

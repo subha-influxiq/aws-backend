@@ -29,7 +29,9 @@ import { ListingBillerComponent } from '../components/admin/biller-management/li
 /* Tech Management */
 import { AddEditTechComponent } from '../components/admin/tech-management/add-edit-tech/add-edit-tech.component';
 import { ListingTechComponent } from '../components/admin/tech-management/listing-tech/listing-tech.component';
-
+/**Doctor Office Mnagement**/
+import { DoctorOfficeManagementComponent } from '../components/admin/doctor-office-management/doctor-office-management.component';
+import { AddEditDoctorOfcComponent } from '../components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component';
 /* Account Settings */
 import { AccountSettingsComponent } from '../components/common/account-settings/account-settings.component';
 import { ChangePasswordComponent } from '../components/common/account-settings/change-password/change-password.component';
@@ -151,7 +153,8 @@ const routes: Routes = [
   },
   /* Doctor Management */
   { path: 'admin/doctor-management/add', component: AddeditDoctorComponent },
-  { path: 'admin/doctor-management/edit/:_id', component: AddeditDoctorComponent, canActivate: [AuthguardService], resolve: { data: ResolveService },
+  { path: 'admin/doctor-management/edit/:_id', component: AddeditDoctorComponent, canActivate: [AuthguardService],
+   resolve: { data: ResolveService },
     data: {
       requestcondition: {
         source: 'users',
@@ -160,7 +163,8 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  { path: 'admin/doctor-management', component: ListDoctorComponent, canActivate: [AuthguardService], resolve: { data: ResolveService },
+  { path: 'admin/doctor-management', component: ListDoctorComponent, canActivate: [AuthguardService],
+   resolve: { data: ResolveService },
     data: {
       requestcondition: {
         source: 'users_view_doctor',
@@ -169,6 +173,32 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+  /**Doctor Office Management **/
+  {
+    path : 'admin/doctor-office-management',component : DoctorOfficeManagementComponent,canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'users_view_doctoroffice',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+  {
+   path :'admin/doctor-office-management/add' ,component : AddEditDoctorOfcComponent,canActivate : [AuthguardService]
+  },
+  {
+    path :'admin/doctor-office-management/edit/:_id' ,component : AddEditDoctorOfcComponent,canActivate : [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'users',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+   },
 
   /* Tech Dashboard */
   { path: 'tech/dashboard', component: TechDashboardComponent, canActivate: [AuthguardService],

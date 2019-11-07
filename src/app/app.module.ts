@@ -36,6 +36,8 @@ import { ResetpasswordComponent } from './components/auth/resetpassword/resetpas
 /* Component (Common uses) Start Here */
 import { DialogBoxComponent } from './components/common/dialog-box/dialog-box.component';
 import { UploadDialogBoxComponent } from './components/common/upload-dialog-box/upload-dialog-box.component';
+import { PasswordDialogBoxComponent } from './components/common/password-dialog-box/password-dialog-box.component';
+
 /* Component (Common uses) End Here */
 
 /* Components (Pages) Start Here */
@@ -49,7 +51,7 @@ import { ListDoctorComponent } from './components/admin/doctor-management/list-d
 import { AddEditBillerComponent } from './components/admin/biller-management/add-edit-biller/add-edit-biller.component';
 import { ListingBillerComponent } from './components/admin/biller-management/listing-biller/listing-biller.component';
 import { ListingTechComponent } from './components/admin/tech-management/listing-tech/listing-tech.component';
-import { AddEditTechComponent } from './components/admin/tech-management/add-edit-tech/add-edit-tech.component';
+import { AddEditTechComponent,Dialogtest } from './components/admin/tech-management/add-edit-tech/add-edit-tech.component';
 import { AccountSettingsComponent } from './components/common/account-settings/account-settings.component';
 import { ChangePasswordComponent } from './components/common/account-settings/change-password/change-password.component';
 import { UserAddEditComponent } from './components/admin/user-management/user-add-edit/user-add-edit.component';
@@ -83,6 +85,8 @@ import { BillerFooterComponent } from './components/biller/biller-footer/biller-
 import { TechFooterComponent } from './components/tech/tech-footer/tech-footer.component';
 import { DoctorFooterComponent } from './components/doctor/doctor-footer/doctor-footer.component'; 
 import { SignatureManagementComponent } from './components/doctor/signature-management/signature-management.component';
+import { DoctorOfficeManagementComponent } from './components/admin/doctor-office-management/doctor-office-management.component';
+import { AddEditDoctorOfcComponent } from './components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component';
 
 
 @NgModule({
@@ -114,6 +118,7 @@ import { SignatureManagementComponent } from './components/doctor/signature-mana
     ListingBillerComponent,
     ListingTechComponent,
     AddEditTechComponent,
+    Dialogtest,
     AccountSettingsComponent,
     ChangePasswordComponent,
     AddEditPatientComponent,
@@ -132,7 +137,10 @@ import { SignatureManagementComponent } from './components/doctor/signature-mana
     BillerFooterComponent,
     TechFooterComponent,
     DoctorFooterComponent,
-    SignatureManagementComponent
+    SignatureManagementComponent,
+    PasswordDialogBoxComponent,
+    DoctorOfficeManagementComponent,
+    AddEditDoctorOfcComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -153,7 +161,7 @@ import { SignatureManagementComponent } from './components/doctor/signature-mana
 
   providers: [HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }, CookieService, AuthguardService, HttpServiceService, DatePipe, CommonFunction],
   bootstrap: [AppComponent],
-  entryComponents:[Modal,DialogBoxComponent,UploadDialogBoxComponent,DialogContentExampleDialog,TestComponent]
+  entryComponents:[Modal,Dialogtest,DialogBoxComponent,PasswordDialogBoxComponent,UploadDialogBoxComponent,DialogContentExampleDialog,TestComponent]
 
 })
 export class AppModule {
