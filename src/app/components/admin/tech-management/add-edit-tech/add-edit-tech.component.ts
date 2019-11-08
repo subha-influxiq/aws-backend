@@ -36,6 +36,7 @@ export class AddEditTechComponent implements OnInit {
   public htmlText: any = { header: 'Add New Technician', nav: 'Add Technician', buttonText: 'Save' };
   public user_token: any;
   public taxo_array:any=[];
+  public headerText:any="add technician";
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService, public snackBar: MatSnackBar, public commonFunction: CommonFunction,
@@ -60,10 +61,10 @@ export class AddEditTechComponent implements OnInit {
       zip: ['', Validators.required],
       date: [dateformat],
       type:['tech'],
-      taxo_list : [],
+      // taxo_list : [],
       status: ['', Validators.required],
       password: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
-      confirmpassword: [],
+      confirmpassword: ['', Validators.required],
     }, { validators: this.matchpassword('password', 'confirmpassword') })
   }
 
@@ -71,6 +72,7 @@ export class AddEditTechComponent implements OnInit {
     if (this.params_id) {
       this.htmlText.header = 'Edit Technician Record';
       this.htmlText.nav = 'Edit Technician';
+      this.headerText="edit technician";
       this.htmlText.buttonText = 'Update';
       this.getResolveData();
     }
@@ -92,6 +94,7 @@ export class AddEditTechComponent implements OnInit {
       this.TechManagementAddEditForm.controls['state'].patchValue(techDetails[0].state);
       this.TechManagementAddEditForm.controls['zip'].patchValue(techDetails[0].zip);
       this.TechManagementAddEditForm.controls['status'].patchValue(techDetails[0].status);
+      // this.TechManagementAddEditForm.controls['password'].patchValue(techDetails[0].password);
 
     })
   }
@@ -148,18 +151,22 @@ export class AddEditTechComponent implements OnInit {
     this.cities = this.allCities[stateName];
   }
   TechManagementAddFormFormSubmit() {
-    
     let x: any;
     for (x in this.TechManagementAddEditForm.controls) {
       this.TechManagementAddEditForm.controls[x].markAsTouched();
     }
-    if (this.TechManagementAddEditForm.valid) {
+  //  if(this.params_id){
+  //   delete this.TechManagementAddEditForm.value.password;
+  //   delete this.TechManagementAddEditForm.value.confirmpassword;
+  //  }
+    if (this.TechManagementAddEditForm) {
       if (this.TechManagementAddEditForm.value.status)
         this.TechManagementAddEditForm.value.status = parseInt("1");
       else
         this.TechManagementAddEditForm.value.status = parseInt("0");
         this.TechManagementAddEditForm.value.taxo_list=this.taxo_array;
-      delete this.TechManagementAddEditForm.value.confirmpassword;
+       
+        delete this.TechManagementAddEditForm.value.confirmpassword;
       var data: any;
       if(this.params_id){
         data = {
@@ -175,11 +182,10 @@ export class AddEditTechComponent implements OnInit {
             state: this.TechManagementAddEditForm.value.state,
             zip: this.TechManagementAddEditForm.value.zip,
             status: this.TechManagementAddEditForm.value.status,
-            password: this.TechManagementAddEditForm.value.password,
+          
           },
           "token": this.user_token
         };
-
 
       }else{
         data = {
@@ -187,9 +193,7 @@ export class AddEditTechComponent implements OnInit {
           "data": this.TechManagementAddEditForm.value,
           "token": this.user_token
         }
-
       }
-     
       this.httpService.httpViaPost("addorupdatedata", data)
         .subscribe(response => {
           let action = "ok";
@@ -204,6 +208,8 @@ export class AddEditTechComponent implements OnInit {
             this.router.navigateByUrl("admin/tech-management")
           }, 2200);
         })
+    }else{
+     alert("error");
     }
   }
 
@@ -225,7 +231,6 @@ export class Dialogtest {
     public fb: FormBuilder, public httpService: HttpServiceService,public cookie :CookieService,
     public activeRoute: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: DialogData) {
       this.params_id=data.id;
-      console.log("sssssssssss",this.params_id);
 
       this.user_token = cookie.get('jwtToken');
       this.changePwdForm= this.fb.group({
@@ -247,7 +252,6 @@ export class Dialogtest {
     };
   }
   changePasswordFormSubmit(){
-    console.log("data",this.changePwdForm.value);
     let x: any;
     for (x in this.changePwdForm.controls) {
       this.changePwdForm.controls[x].markAsTouched();
@@ -255,12 +259,9 @@ export class Dialogtest {
     if(this.changePwdForm.valid){
       delete this.changePwdForm.value.confirmpassword
       var data = {
-        "source": "users",
-        "data": {
-          id: this.params_id,
-          password: this.changePwdForm.value.password,
-        },
-        "token": this.user_token
+         "_id": this.params_id,
+          "adminflag": 1,
+          "newPassword": this.changePwdForm.value.password,
       }
       this.httpService.httpViaPost('changepassword',data)
         .subscribe(response=>{

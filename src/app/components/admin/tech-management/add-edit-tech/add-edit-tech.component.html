@@ -19,7 +19,7 @@
 
 <mat-card class="add_form">
 
-  <h2>add technician</h2>
+  <h2>{{ headerText}}</h2>
 
 
   <mat-card-content class="form_wrapper">
@@ -109,8 +109,8 @@
         <mat-datepicker #myPicker></mat-datepicker>
       </mat-form-field>
 
-
-      <ng-container *ngIf ="!params_id">
+<!-- for modal to change password -->
+      <!-- <ng-container *ngIf ="!params_id"> -->
       <mat-form-field class="form-group">
         <input matInput placeholder="Password" type="password"
           [formControl]="TechManagementAddEditForm.controls['password']">
@@ -126,19 +126,21 @@
           *ngIf="!TechManagementAddEditForm.controls['confirmpassword'].valid && TechManagementAddEditForm.controls['confirmpassword'].touched">
           Password does not match </mat-error>
       </mat-form-field>
-    </ng-container>
+    <!-- </ng-container> -->
 
       <mat-checkbox [formControl]="TechManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
      
-      <ng-container *ngIf ="params_id">
-
-        <button mat-flat-button type="button" (click)="openDialog(test)"  > Change Password </button>
-      </ng-container>
+      
+      <!-- end here -->
         <span class="submit_form">
         <button mat-flat-button type="reset">Reset </button>
-        <button mat-flat-button type="submit" > {{ htmlText.buttonText }} </button>
+        <button mat-flat-button type="submit"  [disabled]="TechManagementAddEditForm.valid" > {{ htmlText.buttonText }} </button>
       </span>
     </form>
+    <!-- <ng-container *ngIf ="params_id">
+
+      <button mat-flat-button type="button" (click)="openDialog(test)"  > Change Password </button>
+    </ng-container> -->
   </mat-card-content>
 </mat-card>
 

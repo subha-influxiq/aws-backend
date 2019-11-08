@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-upload-dialog-box',
-  templateUrl: './upload-dialog-box.component.html',
+  templateUrl: './upload-dialog-box.component.html',                                                                                                                                                                                                                                                                  
   styleUrls: ['./upload-dialog-box.component.css']
 })
 

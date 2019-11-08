@@ -68,6 +68,7 @@ export class AddeditDoctorComponent implements OnInit {
 
 
   ngOnInit() {
+
     this.generateForm();
 
     //generating all the taxonomies
@@ -122,6 +123,7 @@ export class AddeditDoctorComponent implements OnInit {
       state: defaultValue.state,
       tech:defaultValue.tech,
       biller:defaultValue.biller,
+      doctorsOfficeName:defaultValue.doctorsOfficeName,
       zip: defaultValue.zip,
       status: defaultValue.status,
       taxo_list:defaultValue.taxo_list
@@ -149,13 +151,13 @@ export class AddeditDoctorComponent implements OnInit {
       npm: ['',[Validators.required]],
       address: ['',Validators.required],
       fax : ['',Validators.required],
-      city: ['',Validators.required],
-      state: ['',Validators.required],
+      city: [''],
+      state: [''],
       type:['doctor'],
       zip: ['',[Validators.required]],
       status: ['',],
-      tech : ['',Validators.required],
-      biller : ['',Validators.required],
+      tech : [''],
+      biller : [''],
       doctorsOfficeName:[''],
       taxo_list: [],
       taxonomies: this.formBuilder.array([]),
@@ -265,7 +267,10 @@ export class AddeditDoctorComponent implements OnInit {
 
   // ============================Submit Function=======================
   onSubmit() {
-
+    let x: any;
+    for (x in this.docManageForm.controls) {
+      this.docManageForm.controls[x].markAsTouched();
+    }
     this.docManageForm.value.taxo_list = this.taxo_array;
    
 

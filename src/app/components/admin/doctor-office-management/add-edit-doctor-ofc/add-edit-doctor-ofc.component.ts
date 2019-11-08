@@ -135,6 +135,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
       else
         this.doctorOfficeAddEditForm.value.status = parseInt("0");
         
+      delete this.doctorOfficeAddEditForm.value.confirmpassword;  
       
       var data: any;
       if (this.params_id) {

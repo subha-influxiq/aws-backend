@@ -36,7 +36,8 @@ export class AddEditPatientComponent implements OnInit {
   public cookies_id:any;
   public allDoctorDataArray : any = [];
   public tech_id:any;
-  
+  public cookies_name:any;
+  public cookies_lastname:any;
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
@@ -46,7 +47,10 @@ export class AddEditPatientComponent implements OnInit {
       allcookies = cookie.getAll();
       
       this.cookiesData = JSON.parse(allcookies.user_details);
+      console.log("cookies data",this.cookiesData);
       this.cookies_id = this.cookiesData._id;
+      this.cookies_name = this.cookiesData.firstname;
+      this.cookies_lastname = this.cookiesData.lastname;
      
       /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
@@ -97,17 +101,19 @@ export class AddEditPatientComponent implements OnInit {
 
   getAllDoctorData(){
     var data = {
-      "source": "users",
-      "condition": {
-        tech_object:this.cookies_id
+      "source": "users_view_doctor",
+      "condition":{
+         tech:this.cookies_name + " " +this.cookies_lastname
       },
       "token": this.user_token
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
+       
         let result: any = {};
         result = response.res;
-        this.allDoctorDataArray = result;        
+        this.allDoctorDataArray = result;   
+        console.log("shshdjghsjdskj",this.allDoctorDataArray);     
       })
   }
 

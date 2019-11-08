@@ -68,7 +68,8 @@ const routes: Routes = [
   { path: 'sign-up', redirectTo: '/login', pathMatch: 'full' },
 
   /* Admin Route */
-  { path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AuthguardService], resolve: { dataCount: ResolveService },
+  { path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AuthguardService],
+   resolve: { dataCount: ResolveService },
     data: {
       requestcondition: {
         source: 'Patient-Record-Report_view',
@@ -206,7 +207,9 @@ const routes: Routes = [
     data: { 
       requestcondition: {
         source: 'Patient-Record-Report_view',
-        condition: {}
+        condition: {
+          
+        },
       },
       endpoint: 'datalist'
     },
