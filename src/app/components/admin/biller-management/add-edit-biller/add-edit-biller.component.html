@@ -114,6 +114,7 @@
         <mat-datepicker-toggle matSuffix [for]="myPicker" disabled></mat-datepicker-toggle>
         <mat-datepicker #myPicker></mat-datepicker>
       </mat-form-field>
+      <!-- <ng-container *ngIf ="!params_id"> -->
 
       <mat-form-field class="form-group">
         <input matInput placeholder="Password" type="password"
@@ -130,12 +131,16 @@
           *ngIf="!billerManagementAddEditForm.controls['confirmpassword'].valid && billerManagementAddEditForm.controls['confirmpassword'].touched">
           Password does not match </mat-error>
       </mat-form-field>
-
+    <!-- </ng-container> -->
       <mat-checkbox [formControl]="billerManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
 
       <span class="submit_form">
+          <!-- <button mat-flat-button type="button" (click)="backToManagePage()">Back </button> -->
         <button mat-flat-button type="reset">Reset </button>
         <button mat-flat-button type="submit" [disabled]="!billerManagementAddEditForm.valid"> {{ htmlText.buttonText }}
+            <!-- <ng-container *ngIf ="params_id">
+                <button mat-flat-button type="button" (click)="openDialog(test)"  > Change Password </button>
+              </ng-container> -->
         </button>
       </span>
 

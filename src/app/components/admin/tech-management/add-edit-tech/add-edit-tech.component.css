@@ -15,10 +15,20 @@
 .add_form .form_wrapper .mat-form-field{ width: 49%; margin: 0.5%; }
 .add_form .form_wrapper textarea{ resize: none;}
 .add_form h2{ font-family: "RobotoBlack"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }
-.add_form .submit_form { display: block; width: 100%; text-align: center; margin-top: 30px; }
+/* .add_form .submit_form { display: block; width: 100%; text-align: center; margin-top: 30px; } */
+
+.add_form .submit_form{
+display: flex;
+width: 100%;
+text-align: center;
+margin-top: 30px;
+justify-content: space-between;
+margin: auto; }
+/* .add_form .submit_form button{ border-radius: 5px; background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: "RobotoBlack"; font-size: 25px; padding: 8px;
+  width: 390px; border: 3px solid #d59d01; } */
 .add_form .submit_form button{ border-radius: 5px; background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: "RobotoBlack"; font-size: 25px; padding: 8px;
-width: 390px; border: 3px solid #d59d01; }
-.add_form .submit_form button:nth-child(1){ background: linear-gradient(180deg, #f2be00, #a52a08); color: #f3f3f3; border: 2px solid #bb3c0d; margin-right: 16px; }
+width: 24%; border: 3px solid #d59d01; }
+.add_form .submit_form button:nth-child(1){ background: linear-gradient(180deg, #f2be00, #a52a08); color: #f3f3f3; border: 2px solid #bb3c0d;  }
 .add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;}
 
 
@@ -27,7 +37,9 @@ width: 390px; border: 3px solid #d59d01; }
 @media screen and (max-width: 1460px){
   .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; line-height: 26px;}
 }
-
+@media screen and (max-width: 1366px){
+.add_form .submit_form button {font-size: 22px;}
+}
 @media screen and (max-width: 1000px){
   .add_form .submit_form button { width: 48%; }
 }

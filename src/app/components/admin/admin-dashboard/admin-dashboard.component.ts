@@ -3,9 +3,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CommonFunction } from '../../../class/common/common-function';
-import { MatTableDataSource } from '@angular/material';
-import {MatPaginatorModule, MatPaginator} from '@angular/material/paginator';
-
+import { MatTableDataSource ,MatPaginator} from '@angular/material';
+// import { MatPaginator} from '@angular/material/paginator';
 
 
 export interface PeriodicElement {
@@ -17,6 +16,7 @@ export interface PeriodicElement {
 }
 
 export interface AllDataElement {
+
   no: number;
   patientName: string;
   doctorName: string;
@@ -58,16 +58,17 @@ export class AdminDashboardComponent implements OnInit {
   dataSource = new MatTableDataSource(this.commonArray);
   public allDataSource: any;
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
+  // applyFilter(filterValue: string) {
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
+  //   if (this.dataSource.paginator) {
+  //     this.dataSource.paginator.firstPage();
+  //   }
+  // }
 
   public allDataList: any = [];
-  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+  // @ViewChild(MatPaginator) paginator: MatPaginator;   
 
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   constructor(private router: Router, public cookieService: CookieService,
     private http: HttpServiceService, public activatedRoute: ActivatedRoute, 
@@ -81,14 +82,17 @@ export class AdminDashboardComponent implements OnInit {
     this.commonFunction.setTitleMetaTags();
   }
 
+
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
+this.dataSource.paginator=this.paginator; 
     this.activatedRoute.data.subscribe(resolveData => {
       this.allDataList = resolveData.dataCount.res;
       this.allDataSource = new MatTableDataSource(this.allDataList);
-      
+      this.allDataSource.paginator=this.paginator;
     });
+  
   }
+ 
 
   getAllCountData() {
     var data = {

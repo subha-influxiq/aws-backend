@@ -133,14 +133,15 @@
       
       <!-- end here -->
         <span class="submit_form">
+          <!-- <button mat-flat-button type="button" (click)="backToManagePage()">Back </button> -->
         <button mat-flat-button type="reset">Reset </button>
         <button mat-flat-button type="submit"  [disabled]="TechManagementAddEditForm.valid" > {{ htmlText.buttonText }} </button>
+        <ng-container *ngIf ="params_id">
+            <button mat-flat-button type="button" (click)="openDialog(test)"  > Change Password </button>
+          </ng-container>
       </span>
     </form>
-    <ng-container *ngIf ="params_id">
-
-      <button mat-flat-button type="button" (click)="openDialog(test)"  > Change Password </button>
-    </ng-container>
+    
   </mat-card-content>
 </mat-card>
 
