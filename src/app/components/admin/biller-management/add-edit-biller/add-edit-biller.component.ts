@@ -6,6 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { CommonFunction } from '../../../../class/common/common-function';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 
 @Component({
   selector: 'app-add-edit-biller',
@@ -15,6 +16,7 @@ import { CommonFunction } from '../../../../class/common/common-function';
 
 export class AddEditBillerComponent implements OnInit {
   @ViewChild(FormGroupDirective,{static: true}) formDirective: FormGroupDirective;
+  public dialogRef: any;
 
   public billerManagementAddEditForm: FormGroup;
   date = new FormControl(new Date());
@@ -29,7 +31,9 @@ export class AddEditBillerComponent implements OnInit {
   serializedDate = new FormControl((new Date()).toISOString());
   public taxo_array :any=[];
   constructor(public fb: FormBuilder, private datePipe: DatePipe,
-    public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, public commonFunction: CommonFunction) {
+    public httpService: HttpServiceService, public cookie: CookieService, public router: Router,
+     public snackBar: MatSnackBar, public activeRoute: ActivatedRoute,
+      public commonFunction: CommonFunction,public dialog: MatDialog) {
 
       /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
@@ -134,7 +138,9 @@ export class AddEditBillerComponent implements OnInit {
   ResetAddEditForm() {
     this.formDirective.resetForm();
   }
-  
+  backToManagePage(){
+    this.router.navigateByUrl("admin/biller-management");
+  }
   BillerManagementAddFormSubmit() {
     let x: any;
     for (x in this.billerManagementAddEditForm.controls) {
@@ -186,7 +192,8 @@ export class AddEditBillerComponent implements OnInit {
           });
           this.formDirective.resetForm();
           setTimeout(() => {
-            this.router.navigateByUrl("admin/biller-management")
+            this.router.navigateByUrl("admin/biller-management");
+
           }, 2200);
 
         })

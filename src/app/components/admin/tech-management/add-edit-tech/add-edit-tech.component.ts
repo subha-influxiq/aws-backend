@@ -183,18 +183,17 @@ export class AddEditTechComponent implements OnInit {
   getCityByName(stateName) {
     this.cities = this.allCities[stateName];
   }
+  backToManagePage(){
+    this.router.navigateByUrl("admin/tech-management");
+  }
 
   TechManagementAddFormFormSubmit() {
-    console.log('>>>--->', this.TechManagementAddEditForm);
 
     let x: any;
     for (x in this.TechManagementAddEditForm.controls) {
       this.TechManagementAddEditForm.controls[x].markAsTouched();
     }
-    //  if(this.params_id){
-    //   delete this.TechManagementAddEditForm.value.password;
-    //   delete this.TechManagementAddEditForm.value.confirmpassword;
-    //  }
+
     if (this.TechManagementAddEditForm) {
       if (this.TechManagementAddEditForm.value.status)
         this.TechManagementAddEditForm.value.status = parseInt("1");
@@ -238,9 +237,7 @@ export class AddEditTechComponent implements OnInit {
             duration: 2000,
           });
           this.formDirective.resetForm();
-          // setTimeout(() => {
-          //   this.router.navigateByUrl("admin/tech-management")
-          // }, 2200);
+
         })
     }else{
     }

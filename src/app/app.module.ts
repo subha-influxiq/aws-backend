@@ -87,7 +87,7 @@ import { DoctorFooterComponent } from './components/doctor/doctor-footer/doctor-
 import { SignatureManagementComponent } from './components/doctor/signature-management/signature-management.component';
 import { DoctorOfficeManagementComponent } from './components/admin/doctor-office-management/doctor-office-management.component';
 import { AddEditDoctorOfcComponent } from './components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component';
-
+import { MatPaginatorModule } from '@angular/material/paginator'; 
 
 @NgModule({
   declarations: [
@@ -156,8 +156,10 @@ import { AddEditDoctorOfcComponent } from './components/admin/doctor-office-mana
     FormsModule,
     ReactiveFormsModule,
     FileUploadModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
+  exports: [MatPaginatorModule],
 
   providers: [HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }, CookieService, AuthguardService, HttpServiceService, DatePipe, CommonFunction],
   bootstrap: [AppComponent],

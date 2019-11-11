@@ -84,6 +84,7 @@ inputUntouch(form: any, val: any) {
       delete this.ChangePasswordForm.value.confirmPassword;
       var data = {
         _id: this.cookies_id,
+        adminflag: 0,
         oldPassword: this.ChangePasswordForm.value.oldPassword,
         newPassword: this.ChangePasswordForm.value.newPassword
       }
