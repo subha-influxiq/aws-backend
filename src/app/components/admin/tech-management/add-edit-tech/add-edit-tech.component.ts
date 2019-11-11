@@ -298,16 +298,9 @@ export class Dialogtest {
         "adminflag": 1,
         "newPassword": this.changePwdForm.value.password,
       }
-<<<<<<< HEAD
-      this.httpService.httpViaPost('changepassword', data)
-        .subscribe(response => {
-          console.log(response);
-=======
-      this.httpService.httpViaPost('changepassword',data)
-        .subscribe(response=>{
-          console.log("response",response);  
->>>>>>> 0cbd65efa473271afee3744b71f2d7620228c9c6
-        })
+      this.httpService.httpViaPost('changepassword',data).subscribe(response=>{
+        console.log("response",response);
+      });
     }
 
   }
