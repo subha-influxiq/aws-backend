@@ -10,7 +10,7 @@
 <span class="add_header">
 
   <span class="bradcrumb">
-    <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; 
+    <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
     <a [routerLink]="['/admin/tech-management']">Manage Tech &nbsp;/</a> &nbsp;
     {{ htmlText.nav }}
   </span>
@@ -109,37 +109,37 @@
         <mat-datepicker #myPicker></mat-datepicker>
       </mat-form-field>
 
-<!-- for modal to change password -->
-      <ng-container *ngIf ="!params_id">
-      <mat-form-field class="form-group">
-        <input matInput placeholder="Password" type="password"
-          [formControl]="TechManagementAddEditForm.controls['password']">
-        <mat-error
-          *ngIf="!TechManagementAddEditForm.controls['password'].valid && TechManagementAddEditForm.controls['password'].touched">
-          Password field can not be blank</mat-error>
+      <!-- for modal to change password -->
+      <ng-container *ngIf="!params_id">
+        <mat-form-field class="form-group">
+          <input matInput placeholder="Password" type="password"
+            [formControl]="TechManagementAddEditForm.controls['password']">
+          <mat-error
+            *ngIf="!TechManagementAddEditForm.controls['password'].valid && TechManagementAddEditForm.controls['password'].touched">
+            Password field can not be blank</mat-error>
 
-      </mat-form-field>
-      <mat-form-field class="form-group">
-        <input matInput placeholder="Confirm Password" type="password"
-          [formControl]="TechManagementAddEditForm.controls['confirmpassword']">
-        <mat-error
-          *ngIf="!TechManagementAddEditForm.controls['confirmpassword'].valid && TechManagementAddEditForm.controls['confirmpassword'].touched">
-          Password does not match </mat-error>
-      </mat-form-field>
-    </ng-container>
+        </mat-form-field>
+        <mat-form-field class="form-group">
+          <input matInput placeholder="Confirm Password" type="password"
+            [formControl]="TechManagementAddEditForm.controls['confirmpassword']">
+          <mat-error
+            *ngIf="!TechManagementAddEditForm.controls['confirmpassword'].valid && TechManagementAddEditForm.controls['confirmpassword'].touched">
+            Password does not match </mat-error>
+        </mat-form-field>
+      </ng-container>
 
       <mat-checkbox [formControl]="TechManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
-     
-      
+
+
       <!-- end here -->
-        <span class="submit_form">
+      <span class="submit_form">
         <button mat-flat-button type="reset">Reset </button>
-        <button mat-flat-button type="submit"  [disabled]="TechManagementAddEditForm.valid" > {{ htmlText.buttonText }} </button>
+        <button mat-flat-button type="submit" [disabled]="!TechManagementAddEditForm.valid"> {{ htmlText.buttonText }}
+        </button>
       </span>
     </form>
-    <ng-container *ngIf ="params_id">
-
-      <button mat-flat-button type="button" (click)="openDialog(test)"  > Change Password </button>
+    <ng-container *ngIf="params_id">
+      <button mat-flat-button type="button" (click)="openDialog(test)"> Change Password </button>
     </ng-container>
   </mat-card-content>
 </mat-card>
