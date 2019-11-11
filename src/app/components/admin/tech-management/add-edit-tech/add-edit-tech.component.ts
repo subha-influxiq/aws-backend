@@ -1,5 +1,5 @@
-import { Component, OnInit,ViewChild,Inject} from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators,FormGroupDirective } from '@angular/forms';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators, FormGroupDirective } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpServiceService } from '../../../../services/http-service.service';
 import { DatePipe } from '@angular/common';
@@ -10,8 +10,9 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 
 export interface DialogData {
   message: string;
-  id:any;
+  id: any;
 }
+
 @Component({
   selector: 'app-add-edit-tech',
   templateUrl: './add-edit-tech.component.html',
@@ -19,7 +20,8 @@ export interface DialogData {
 })
 
 export class AddEditTechComponent implements OnInit {
-  @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
+
+  @ViewChild(FormGroupDirective, { static: false }) formDirective: FormGroupDirective;
 
   public TechManagementAddEditForm: FormGroup;
   public message: any = "Submitted Successfully";
@@ -35,20 +37,28 @@ export class AddEditTechComponent implements OnInit {
   public params_id: any;
   public htmlText: any = { header: 'Add New Technician', nav: 'Add Technician', buttonText: 'Save' };
   public user_token: any;
-  public taxo_array:any=[];
-  public headerText:any="add technician";
+  public taxo_array: any = [];
+  public headerText: any = "add technician";
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService, public snackBar: MatSnackBar, public commonFunction: CommonFunction,
     public dialog: MatDialog) {
-      /* Set Meta Data */
+    /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
 
-    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
     this.allStateCityData();
     this.user_token = cookie.get('jwtToken');
     this.params_id = this.activeRoute.snapshot.params._id;
+    if (this.params_id) {
+      this.generateEditForm();
+    } else {
+      this.generateAddForm();
+    }
+  }
+
+  generateAddForm() {
+    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
+    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
 
     this.TechManagementAddEditForm = this.fb.group({
       firstname: ['', Validators.required],
@@ -60,23 +70,44 @@ export class AddEditTechComponent implements OnInit {
       state: ['', Validators.required],
       zip: ['', Validators.required],
       date: [dateformat],
-      type:['tech'],
+      type: ['tech'],
       // taxo_list : [],
       status: ['', Validators.required],
-      password: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: ['', Validators.required],
-    }, { validators: this.matchpassword('password', 'confirmpassword') })
+    }, { validators: this.matchpassword('password', 'confirmpassword') });
+  }
+
+  generateEditForm() {
+    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
+    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+
+    this.TechManagementAddEditForm = this.fb.group({
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
+      phone: ['', Validators.required],
+      address: ['', Validators.required],
+      city: ['', Validators.required],
+      state: ['', Validators.required],
+      zip: ['', Validators.required],
+      date: [dateformat],
+      type: ['tech'],
+      // taxo_list : [],
+      status: ['', Validators.required],
+    });
   }
 
   ngOnInit() {
     if (this.params_id) {
       this.htmlText.header = 'Edit Technician Record';
       this.htmlText.nav = 'Edit Technician';
-      this.headerText="edit technician";
+      this.headerText = "edit technician";
       this.htmlText.buttonText = 'Update';
       this.getResolveData();
     }
   }
+
   getResolveData() {
     this.activeRoute.data.forEach((data) => {
       this.usersData = data.techData.res;
@@ -98,6 +129,7 @@ export class AddEditTechComponent implements OnInit {
 
     })
   }
+
   matchpassword(passwordkye: string, confirmpasswordkye: string) {
     return (group: FormGroup) => {
       let passwordInput = group.controls[passwordkye],
@@ -113,15 +145,15 @@ export class AddEditTechComponent implements OnInit {
 
   openDialog(x: any): void {
     this.dialogRef = this.dialog.open(Dialogtest, {
-     
-      data: { message: x, 'id':this.params_id }
+
+      data: { message: x, 'id': this.params_id }
     });
     this.dialogRef.afterClosed().subscribe(result => {
     });
   }
+
   /**for validation purpose**/
   inputUntouch(form: any, val: any) {
-
     form.controls[val].markAsUntouched();
   }
   /**for validation purpose**/
@@ -147,13 +179,16 @@ export class AddEditTechComponent implements OnInit {
     var val = event;
     this.cities = this.allCities[val];
   }
+
   getCityByName(stateName) {
     this.cities = this.allCities[stateName];
   }
   backToManagePage(){
     this.router.navigateByUrl("admin/tech-management");
   }
+
   TechManagementAddFormFormSubmit() {
+
     let x: any;
     for (x in this.TechManagementAddEditForm.controls) {
       this.TechManagementAddEditForm.controls[x].markAsTouched();
@@ -164,11 +199,11 @@ export class AddEditTechComponent implements OnInit {
         this.TechManagementAddEditForm.value.status = parseInt("1");
       else
         this.TechManagementAddEditForm.value.status = parseInt("0");
-        this.TechManagementAddEditForm.value.taxo_list=this.taxo_array;
-       
-        delete this.TechManagementAddEditForm.value.confirmpassword;
+      this.TechManagementAddEditForm.value.taxo_list = this.taxo_array;
+
+      delete this.TechManagementAddEditForm.value.confirmpassword;
       var data: any;
-      if(this.params_id){
+      if (this.params_id) {
         data = {
           "source": "users",
           "data": {
@@ -182,12 +217,12 @@ export class AddEditTechComponent implements OnInit {
             state: this.TechManagementAddEditForm.value.state,
             zip: this.TechManagementAddEditForm.value.zip,
             status: this.TechManagementAddEditForm.value.status,
-          
+
           },
           "token": this.user_token
         };
 
-      }else{
+      } else {
         data = {
           "source": "users",
           "data": this.TechManagementAddEditForm.value,
@@ -202,10 +237,9 @@ export class AddEditTechComponent implements OnInit {
             duration: 2000,
           });
           this.formDirective.resetForm();
-         
+
         })
     }else{
-    console.log("error occured")
     }
   }
 
@@ -218,23 +252,24 @@ export class AddEditTechComponent implements OnInit {
 
 export class Dialogtest {
   public is_error: any;
-  public changePwdForm:any=FormGroup;
-  public user_token:any;
-  public params_id:any;
+  public changePwdForm: any = FormGroup;
+  public user_token: any;
+  public params_id: any;
   public userData: any;
 
   constructor(public dialogRef: MatDialogRef<Dialogtest>,
-    public fb: FormBuilder, public httpService: HttpServiceService,public cookie :CookieService,
+    public fb: FormBuilder, public httpService: HttpServiceService, public cookie: CookieService,
     public activeRoute: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: DialogData) {
-      this.params_id=data.id;
+    this.params_id = data.id;
 
-      this.user_token = cookie.get('jwtToken');
-      this.changePwdForm= this.fb.group({
-        password: ['', Validators.required],
-        confirmpassword: [],
-      }, { validators: this.matchpassword('password', 'confirmpassword') })
-     
+    this.user_token = cookie.get('jwtToken');
+    this.changePwdForm = this.fb.group({
+      password: ['', Validators.required],
+      confirmpassword: [],
+    }, { validators: this.matchpassword('password', 'confirmpassword') })
+
   }
+
   matchpassword(passwordkye: string, confirmpasswordkye: string) {
     return (group: FormGroup) => {
       let passwordInput = group.controls[passwordkye],
@@ -247,23 +282,23 @@ export class Dialogtest {
       }
     };
   }
-  changePasswordFormSubmit(){
+
+  changePasswordFormSubmit() {
     let x: any;
     for (x in this.changePwdForm.controls) {
       this.changePwdForm.controls[x].markAsTouched();
     }
-    if(this.changePwdForm.valid){
+    if (this.changePwdForm.valid) {
       delete this.changePwdForm.value.confirmpassword
       var data = {
-         "_id": this.params_id,
-          "adminflag": 1,
-          "newPassword": this.changePwdForm.value.password,
+        "_id": this.params_id,
+        "adminflag": 1,
+        "newPassword": this.changePwdForm.value.password,
       }
-      this.httpService.httpViaPost('changepassword',data)
-        .subscribe(response=>{
-          console.log("response",response);  
-        })
+      this.httpService.httpViaPost('changepassword',data).subscribe(response=>{
+        console.log("response",response);
+      });
     }
-    
+
   }
 }
