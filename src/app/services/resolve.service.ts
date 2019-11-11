@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router, Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
+import { CookieService } from 'ngx-cookie-service';
 
 import { HttpServiceService } from './http-service.service';
 
@@ -14,13 +15,21 @@ export interface EndpointComponent {
 
 export class ResolveService implements Resolve<any> {
 
-  constructor(private _apiService: HttpServiceService, private router: Router) { }
+  constructor(public cookies: CookieService, private _apiService: HttpServiceService, private router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
 
-    / will come into play while editing otherwise no effect /
-    let requestData: any = route.data.requestcondition;
+    /* will come into play while editing otherwise no effect */
+    var requestData: any = route.data.requestcondition;
     requestData.condition = Object.assign(requestData.condition, route.params);
+
+    /* This one is for Tech Dashboard */
+    if(route.url[0].path == 'tech' && route.url[1].path == 'dashboard') {
+      var allData: any = this.cookies.getAll();
+      var userData = JSON.parse(allData.user_details);
+      requestData.condition['_id'] = userData._id;
+      console.log('Route Data >>--->', userData._id);
+    }
 
     return new Promise((resolve) => {
       if(typeof route.data.requestcondition.source != 'string') {
