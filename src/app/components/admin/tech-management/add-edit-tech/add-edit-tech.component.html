@@ -110,7 +110,7 @@
       </mat-form-field>
 
 <!-- for modal to change password -->
-      <!-- <ng-container *ngIf ="!params_id"> -->
+      <ng-container *ngIf ="!params_id">
       <mat-form-field class="form-group">
         <input matInput placeholder="Password" type="password"
           [formControl]="TechManagementAddEditForm.controls['password']">
@@ -126,7 +126,7 @@
           *ngIf="!TechManagementAddEditForm.controls['confirmpassword'].valid && TechManagementAddEditForm.controls['confirmpassword'].touched">
           Password does not match </mat-error>
       </mat-form-field>
-    <!-- </ng-container> -->
+    </ng-container>
 
       <mat-checkbox [formControl]="TechManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
      
@@ -137,10 +137,10 @@
         <button mat-flat-button type="submit"  [disabled]="TechManagementAddEditForm.valid" > {{ htmlText.buttonText }} </button>
       </span>
     </form>
-    <!-- <ng-container *ngIf ="params_id">
+    <ng-container *ngIf ="params_id">
 
       <button mat-flat-button type="button" (click)="openDialog(test)"  > Change Password </button>
-    </ng-container> -->
+    </ng-container>
   </mat-card-content>
 </mat-card>
 
