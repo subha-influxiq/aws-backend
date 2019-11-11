@@ -130,7 +130,6 @@ export class AddeditDoctorComponent implements OnInit {
 
     })
     
-    console.log("+++++++++++++++",this.defaultData.taxo_list);
   }
   // ======================================================================================
 

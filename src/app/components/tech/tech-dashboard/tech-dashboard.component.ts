@@ -57,7 +57,7 @@ export class TechDashboardComponent implements OnInit {
   public user_token: any;
   public techDashboardAllData: any = [];
   public techSingleData: any = [];
-  public userSingleData: any = {};
+  public userSingleData: any = [];
   public uploadedStatusCount: any;
   public processedStatusCount: any;
   public signedStatusCount: any;
@@ -95,18 +95,20 @@ export class TechDashboardComponent implements OnInit {
 
   getTechData() {
     var data = {
-      "source": "users",
+      "source": "users_view_doctor",
       "condition": {
-        "tech_object": this.user_id
+        tech : this.user_data.firstname + " " +this.user_data.lastname
       },
       "token": this.user_token
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
+       
         let result: any = {};
         result = response.res;
-        this.userSingleData = result[0];
-        console.log(this.userSingleData);
+        this.userSingleData = result;
+        console.log("tech dashboard", this.userSingleData);
+        
       })
   }
   getTechCountData() {
