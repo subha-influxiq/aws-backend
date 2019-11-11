@@ -194,22 +194,20 @@ export class AddEditTechComponent implements OnInit {
           "token": this.user_token
         }
       }
+
       this.httpService.httpViaPost("addorupdatedata", data)
         .subscribe(response => {
           let action = "ok";
           this.snackBar.open(this.message, action, {
             duration: 2000,
           });
-        
           this.formDirective.resetForm();
-
-
           setTimeout(() => {
             this.router.navigateByUrl("admin/tech-management")
           }, 2200);
         })
     }else{
-     alert("error");
+    console.log("error occured")
     }
   }
 
@@ -265,7 +263,7 @@ export class Dialogtest {
       }
       this.httpService.httpViaPost('changepassword',data)
         .subscribe(response=>{
-          console.log(response);
+          console.log("response",response);  
         })
     }
     

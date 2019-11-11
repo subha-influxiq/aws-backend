@@ -184,7 +184,6 @@ export class AddEditBillerComponent implements OnInit {
           this.snackBar.open(this.message, action, {
             duration: 2000,
           });
-          // this.ResetAddEditForm();
           this.formDirective.resetForm();
           setTimeout(() => {
             this.router.navigateByUrl("admin/biller-management")
