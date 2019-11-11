@@ -238,22 +238,11 @@ export class AddEditTechComponent implements OnInit {
             duration: 2000,
           });
           this.formDirective.resetForm();
-<<<<<<< HEAD
-
           // setTimeout(() => {
           //   this.router.navigateByUrl("admin/tech-management")
           // }, 2200);
         })
-    } else {
-      alert("error");
-=======
-          setTimeout(() => {
-            this.router.navigateByUrl("admin/tech-management")
-          }, 2200);
-        })
     }else{
-    console.log("error occured")
->>>>>>> 0cbd65efa473271afee3744b71f2d7620228c9c6
     }
   }
 
