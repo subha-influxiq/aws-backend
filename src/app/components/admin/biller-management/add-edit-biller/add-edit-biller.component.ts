@@ -64,7 +64,8 @@ export class AddEditBillerComponent implements OnInit {
       this.getSingleData();
     }
   }
-  generateAddForm(){
+
+  generateAddForm() {
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
     var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
     this.billerManagementAddEditForm = this.fb.group({
@@ -85,7 +86,8 @@ export class AddEditBillerComponent implements OnInit {
       confirmpassword: [],
     }, { validators: this.matchpassword('password', 'confirmpassword') })
   }
-  generateEditForm(){
+
+  generateEditForm() {
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
     var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
     this.billerManagementAddEditForm = this.fb.group({
@@ -119,11 +121,9 @@ export class AddEditBillerComponent implements OnInit {
       this.billerManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address);
       this.billerManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
       this.billerManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
- 
       this.billerManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
       this.billerManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
-
-    })
+    });
   }
 
   matchpassword(passwordkye: string, confirmpasswordkye: string) {
@@ -141,7 +141,6 @@ export class AddEditBillerComponent implements OnInit {
 
   /**for validation purpose**/
   inputUntouch(form: any, val: any) {
-
     form.controls[val].markAsUntouched();
   }
 
@@ -170,13 +169,13 @@ export class AddEditBillerComponent implements OnInit {
   ResetAddEditForm() {
     this.formDirective.resetForm();
   }
+
   backToManagePage(){
     this.router.navigateByUrl("admin/biller-management");
   }
 
   openDialog(x: any): void {
     this.dialogRef = this.dialog.open(ChangePasswordModal, {
-
       data: { message: x, 'id': this.params_id }
     });
     this.dialogRef.afterClosed().subscribe(result => {
@@ -189,7 +188,7 @@ export class AddEditBillerComponent implements OnInit {
     for (x in this.billerManagementAddEditForm.controls) {
       this.billerManagementAddEditForm.controls[x].markAsTouched();
     }
-    if (this.billerManagementAddEditForm) {
+    if (this.billerManagementAddEditForm.valid) {
       if (this.billerManagementAddEditForm.value.status)
         this.billerManagementAddEditForm.value.status = parseInt("1");
       else
@@ -198,8 +197,8 @@ export class AddEditBillerComponent implements OnInit {
       delete this.billerManagementAddEditForm.value.confirmpassword;
       
       var data: any;
-      if(this.params_id){
-        data={
+      if(this.params_id) {
+        data = {
           "data" : {
             id: this.params_id,
             firstname: this.billerManagementAddEditForm.value.firstname,
@@ -218,13 +217,12 @@ export class AddEditBillerComponent implements OnInit {
           "source" : "users",
           "token"  : this.user_token
         }
-      }else{
+      } else {
         data = {
           "data": this.billerManagementAddEditForm.value,
           "source": "users",
           "token": this.user_token
         }
-
       }
     
       this.httpService.httpViaPost("addorupdatedata", data)
@@ -234,11 +232,6 @@ export class AddEditBillerComponent implements OnInit {
             duration: 2000,
           });
           this.formDirective.resetForm();
-          setTimeout(() => {
-            this.router.navigateByUrl("admin/biller-management");
-
-          }, 2200);
-
         })
     }
   }
@@ -250,6 +243,7 @@ export class AddEditBillerComponent implements OnInit {
 })
 
 export class ChangePasswordModal {
+
   public is_error: any;
   public changePwdForm: any = FormGroup;
   public user_token: any;
@@ -259,13 +253,13 @@ export class ChangePasswordModal {
   constructor(public dialogRef: MatDialogRef<ChangePasswordModal>,
     public fb: FormBuilder, public httpService: HttpServiceService, public cookie: CookieService,
     public activeRoute: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    
     this.params_id = data.id;
-
     this.user_token = cookie.get('jwtToken');
     this.changePwdForm = this.fb.group({
       password: ['', Validators.required],
       confirmpassword: [],
-    }, { validators: this.matchpassword('password', 'confirmpassword') })
+    }, { validators: this.matchpassword('password', 'confirmpassword') });
 
   }
 
