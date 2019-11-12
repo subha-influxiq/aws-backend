@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MetaGuard } from '@ngx-meta/core';
 import { AuthguardService } from '../services/authguard.service';
 import { from } from 'rxjs';
+import { CookieService } from 'ngx-cookie-service';
 
 /* Resolve Service */
 import { ResolveService } from '../services/resolve.service';
@@ -207,9 +208,7 @@ const routes: Routes = [
     data: { 
       requestcondition: {
         source: 'Patient-Record-Report_view',
-        condition: {
-          
-        },
+        condition: {},
       },
       endpoint: 'datalist'
     },
@@ -254,6 +253,9 @@ const routes: Routes = [
   { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent},
   { path: 'tech/system-superbill', component: SystemSuperbillComponent},
   { path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent},
+
+  /* Error Page Route */
+  { path: 'error/404', component: NotFoundErrorComponent },
   { path: '**', component: NotFoundErrorComponent }
 ];
 
@@ -262,4 +264,14 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: [ResolveService]
 })
-export class AppRoutingModule { }
+
+export class AppRoutingModule {
+
+  constructor(public cookies: CookieService) {
+    var allData: any = this.cookies.getAll();
+    var userData = JSON.parse(allData.user_details);
+    console.log('Route Data >>--->', userData.type);
+    console.log('Route Array >>--->', routes);
+  }
+
+}
