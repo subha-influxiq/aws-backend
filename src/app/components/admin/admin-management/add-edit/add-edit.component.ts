@@ -146,7 +146,7 @@ export class AddEditComponent implements OnInit {
     for (x in this.adminManagementAddEditForm.controls) {
       this.adminManagementAddEditForm.controls[x].markAsTouched();
     }
-    if (this.adminManagementAddEditForm) {
+    if (this.adminManagementAddEditForm.valid) {
       if (this.adminManagementAddEditForm.value.status)
         this.adminManagementAddEditForm.value.status = parseInt("1");
       else
