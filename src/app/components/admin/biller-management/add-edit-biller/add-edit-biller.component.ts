@@ -1,4 +1,4 @@
-import { Component, OnInit ,ViewChild} from '@angular/core';
+import { Component, OnInit ,ViewChild,Inject} from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl,FormGroupDirective } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { HttpServiceService } from '../../../../services/http-service.service';
@@ -7,6 +7,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { CommonFunction } from '../../../../class/common/common-function';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
+
+export interface DialogData {
+  message: string;
+  id: any;
+}
 
 @Component({
   selector: 'app-add-edit-biller',
@@ -141,6 +146,16 @@ export class AddEditBillerComponent implements OnInit {
   backToManagePage(){
     this.router.navigateByUrl("admin/biller-management");
   }
+
+  openDialog(x: any): void {
+    this.dialogRef = this.dialog.open(Dialog, {
+
+      data: { message: x, 'id': this.params_id }
+    });
+    this.dialogRef.afterClosed().subscribe(result => {
+    });
+  }
+
   BillerManagementAddFormSubmit() {
     let x: any;
     for (x in this.billerManagementAddEditForm.controls) {
@@ -200,3 +215,62 @@ export class AddEditBillerComponent implements OnInit {
     }
   }
 }
+
+@Component({
+  selector: 'dialog',
+  templateUrl: 'pwdchangemodal.html',
+})
+
+export class Dialog {
+  public is_error: any;
+  public changePwdForm: any = FormGroup;
+  public user_token: any;
+  public params_id: any;
+  public userData: any;
+
+  constructor(public dialogRef: MatDialogRef<Dialog>,
+    public fb: FormBuilder, public httpService: HttpServiceService, public cookie: CookieService,
+    public activeRoute: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    this.params_id = data.id;
+
+    this.user_token = cookie.get('jwtToken');
+    this.changePwdForm = this.fb.group({
+      password: ['', Validators.required],
+      confirmpassword: [],
+    }, { validators: this.matchpassword('password', 'confirmpassword') })
+
+  }
+
+  matchpassword(passwordkye: string, confirmpasswordkye: string) {
+    return (group: FormGroup) => {
+      let passwordInput = group.controls[passwordkye],
+        confirmpasswordInput = group.controls[confirmpasswordkye];
+      if (passwordInput.value !== confirmpasswordInput.value) {
+        return confirmpasswordInput.setErrors({ notEquivalent: true });
+      }
+      else {
+        return confirmpasswordInput.setErrors(null);
+      }
+    };
+  }
+
+  changePasswordFormSubmit() {
+    let x: any;
+    for (x in this.changePwdForm.controls) {
+      this.changePwdForm.controls[x].markAsTouched();
+    }
+    if (this.changePwdForm.valid) {
+      delete this.changePwdForm.value.confirmpassword
+      var data = {
+        "_id": this.params_id,
+        "adminflag": 1,
+        "newPassword": this.changePwdForm.value.password,
+      }
+      this.httpService.httpViaPost('changepassword',data).subscribe(response=>{
+        console.log("response",response);
+      });
+    }
+
+  }
+}
+
