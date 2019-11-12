@@ -194,7 +194,7 @@ export class AddEditTechComponent implements OnInit {
       this.TechManagementAddEditForm.controls[x].markAsTouched();
     }
 
-    if (this.TechManagementAddEditForm) {
+    if (this.TechManagementAddEditForm.valid) {
       if (this.TechManagementAddEditForm.value.status)
         this.TechManagementAddEditForm.value.status = parseInt("1");
       else
@@ -217,7 +217,6 @@ export class AddEditTechComponent implements OnInit {
             state: this.TechManagementAddEditForm.value.state,
             zip: this.TechManagementAddEditForm.value.zip,
             status: this.TechManagementAddEditForm.value.status,
-
           },
           "token": this.user_token
         };
