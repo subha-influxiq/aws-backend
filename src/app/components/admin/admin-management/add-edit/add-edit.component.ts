@@ -47,7 +47,6 @@ export class AddEditComponent implements OnInit {
     
   }
 
-
   ngOnInit() {
     if (this.activeRoute.snapshot.params._id) {
       this.message = "Updated Successfully";
@@ -59,6 +58,7 @@ export class AddEditComponent implements OnInit {
     }
 
   }
+
   generateAddForm(){
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
     var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
@@ -75,6 +75,7 @@ export class AddEditComponent implements OnInit {
       confirmpassword: [],
     }, { validator: this.machpassword('password', 'confirmpassword') })
   }
+
   generateEditForm(){
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
     var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
@@ -121,7 +122,6 @@ export class AddEditComponent implements OnInit {
 
   /**for validation purpose**/
   inputUntouch(form: any, val: any) {
-
     form.controls[val].markAsUntouched();
   }
 
@@ -129,9 +129,11 @@ export class AddEditComponent implements OnInit {
   ResetAddEditForm() {
     this.formDirective.resetForm();
   }
+
   backToManagePage(){
     this.router.navigateByUrl('/admin/admin-management');
   }
+
   openDialog(x: any): void {
     this.dialogRef = this.dialog.open(ChangePasswordAdminModal, {
 
@@ -171,7 +173,6 @@ export class AddEditComponent implements OnInit {
           },
           "token": this.user_token
         }
-
       } else {
         data = {
           "source": "users",
@@ -188,13 +189,12 @@ export class AddEditComponent implements OnInit {
             duration: 2000,
           });
           this.formDirective.resetForm();
-         
-
         })
 
     }
   }
 }
+
 @Component({
   selector: 'dialogtest',
   templateUrl: 'modal.html',
@@ -245,11 +245,10 @@ export class ChangePasswordAdminModal {
         "adminflag": 1,
         "newPassword": this.changePwdForm.value.password,
       }
-      this.httpService.httpViaPost('changepassword',data).subscribe(response=>{
+      this.httpService.httpViaPost('changepassword',data).subscribe((response)=>{
         console.log("response",response);
       });
     }
-
   }
 }
 
