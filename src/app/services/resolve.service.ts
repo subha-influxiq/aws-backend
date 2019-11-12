@@ -23,13 +23,13 @@ export class ResolveService implements Resolve<any> {
     var requestData: any = route.data.requestcondition;
     requestData.condition = Object.assign(requestData.condition, route.params);
 
-    /* This one is for Tech Dashboard */
+    /* This one is for Tech Dashboard Start */
     if(route.url[0].path == 'tech' && route.url[1].path == 'dashboard') {
       var allData: any = this.cookies.getAll();
       var userData = JSON.parse(allData.user_details);
       requestData.condition['_id'] = userData._id;
-      console.log('Route Data >>--->', userData._id);
     }
+    /* This one is for Tech Dashboard End */
 
     return new Promise((resolve) => {
       if(typeof route.data.requestcondition.source != 'string') {
