@@ -3,8 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { MetaGuard } from '@ngx-meta/core';
 import { AuthguardService } from '../services/authguard.service';
 import { from } from 'rxjs';
-import { CookieService } from 'ngx-cookie-service';
-
 /* Resolve Service */
 import { ResolveService } from '../services/resolve.service';
 
@@ -267,11 +265,6 @@ const routes: Routes = [
 
 export class AppRoutingModule {
 
-  constructor(public cookies: CookieService) {
-    var allData: any = this.cookies.getAll();
-    var userData = JSON.parse(allData.user_details);
-    console.log('Route Data >>--->', userData.type);
-    console.log('Route Array >>--->', routes);
-  }
+  constructor() {}
 
 }

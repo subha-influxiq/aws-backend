@@ -4960,7 +4960,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-admin-header></app-admin-header>\n\n<mat-card-content class=\"content_wrapper\">\n  <mat-card-content class=\"itemsection one\">\n    <span class=\"counteer\"> {{ doctorCount }} </span>\n    <p>Total Number of Doctors</p>\n    <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n  </mat-card-content>\n  <mat-card-content class=\"itemsection two\">\n    <span class=\"counteer\"> {{ billerCount }}</span>\n    <p>Total Number of Billers</p>\n    <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/biller-management']\">View Details</button>\n  </mat-card-content>\n  <mat-card-content class=\"itemsection three\">\n    <span class=\"counteer\"> {{ techCount }} </span>\n    <p>Total Number of Techs</p>\n    <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/tech-management']\">View Details</button>\n  </mat-card-content>\n</mat-card-content>\n\n\n\n<mat-card-content class=\"admin_superbillsection\">\n  <h1>Physician Report and Super Bills</h1>\n  <mat-card-content class=\"biller_wrapper\">\n    <mat-card-content class=\"super_bill_item sp_one\">\n      <span class=\"border_wrapper\">\n        <mat-card-content class=\"circle\">\n          <img src=\"../../../../assets/images/admincircle_icon1.png\">\n        </mat-card-content>\n      </span>\n      <span>\n        <h2> {{ uploadedStatusCount }} </h2>\n        <p>Total No of <br>\n          Reports Uploaded\n        </p>\n        <button mat-flat-button (click)=\"viewReportProcessData('Reports Uploaded')\">view all</button>\n      </span>\n\n    </mat-card-content>\n    <mat-card-content class=\"super_bill_item sp_two\">\n      <span class=\"border_wrapper\">\n        <mat-card-content class=\"circle\">\n          <img src=\"../../../../assets/images/admincircle_icon2.png\">\n        </mat-card-content>\n      </span>\n      <span>\n        <h2> {{ processedStatusCount }} </h2>\n        <p>Total No of <br>\n          Report Processed\n        </p>\n        <button mat-flat-button (click)=\"viewReportProcessData('Report Processed')\">view all</button>\n      </span>\n\n    </mat-card-content>\n    <mat-card-content class=\"super_bill_item sp_three\">\n      <span class=\"border_wrapper\">\n        <mat-card-content class=\"circle\">\n          <img src=\"../../../../assets/images/admincircle_icon3.png\">\n        </mat-card-content>\n      </span>\n      <span>\n        <h2> {{ signedStatusCount }} </h2>\n        <p>Total No of <br>\n          Report Signed\n        </p>\n        <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n      </span>\n\n    </mat-card-content>\n    <mat-card-content class=\"super_bill_item sp_four\">\n      <span class=\"border_wrapper\">\n        <mat-card-content class=\"circle\">\n          <img src=\"../../../../assets/images/admincircle_icon4.png\">\n        </mat-card-content>\n      </span>\n      <span>\n        <h2> {{ billerStatusCount }} </h2>\n        <p> Sent to <br>\n          Super Bill\n        </p>\n        <button mat-flat-button (click)=\"viewReportProcessData('Super Bill')\">view all</button>\n      </span>\n\n    </mat-card-content>\n  </mat-card-content>\n</mat-card-content>\n\n\n<mat-card-content class=\"admin_table\" *ngIf=\"commonArray.length > 0\">\n<mat-toolbar class=\"top_header\">\n  <h2>{{ headerText }}</h2>\n</mat-toolbar>\n\n  <mat-form-field>\n    <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n  </mat-form-field>\n\n  <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\" >\n\n    <!-- Position Column -->\n    <ng-container matColumnDef=\"no\">\n      <th mat-header-cell *matHeaderCellDef> No. </th>\n      <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n    </ng-container>\n\n    <!-- Position Column -->\n    <ng-container matColumnDef=\"patientName\">\n      <th mat-header-cell *matHeaderCellDef> Patient Name. </th>\n      <td mat-cell *matCellDef=\"let element\"  data-label=\"patient Name\"> {{ element.patientName }} </td>\n    </ng-container>\n\n    <!-- Name Column -->\n    <ng-container matColumnDef=\"record_type\">\n      <th mat-header-cell *matHeaderCellDef> Record Type </th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Record type\"> {{ element.record_type }} </td>\n    </ng-container>\n\n    <!-- Weight Column -->\n    <ng-container matColumnDef=\"date_added\">\n      <th mat-header-cell *matHeaderCellDef> Date Added </th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Date Added\"> {{ element.date_added }} </td>\n    </ng-container>\n\n    <!-- Symbol Column -->\n    <ng-container matColumnDef=\"status\">\n      <th mat-header-cell *matHeaderCellDef> Status </th>\n      <td mat-cell *matCellDef=\"let element\"  data-label=\"Status\"> <span>{{ element.status }} </span></td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;let i = index\"></tr>\n\n  </table>\n  <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n</mat-card-content>\n\n<!-- All Data listing start here -->\n\n<mat-card-content class=\"admin_table\" *ngIf=\"commonArray.length == 0\">\n\n    <mat-toolbar class=\"top_header\">\n        <h2> Patient Record Report </h2>\n      </mat-toolbar>\n\n  <mat-form-field>\n    <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n  </mat-form-field>\n\n  <table mat-table [dataSource]=\"allDataSource\" class=\"mat-elevation-z8\">\n\n    \n    <ng-container matColumnDef=\"no\">\n      <th mat-header-cell *matHeaderCellDef> No. </th>\n      <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n    </ng-container>\n   \n    <ng-container matColumnDef=\"patientName\">\n      <th mat-header-cell *matHeaderCellDef> Patient Name. </th>\n      <td mat-cell *matCellDef=\"let element\"  data-label=\"Patient Name\"> {{ element.patientName }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"doctorName\">\n      <th mat-header-cell *matHeaderCellDef> Doctor Name</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Doctor Name\"> {{ element.doctorName }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"billerName\">\n      <th mat-header-cell *matHeaderCellDef> Biller Name</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Biller Name\"> {{ element.billerName }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"record\">\n      <th mat-header-cell *matHeaderCellDef> Record</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Record\"> {{ element.record }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"billGenerationDate\">\n      <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Generation Date\"> {{ element.billGenerationDate }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"techName\">\n      <th mat-header-cell *matHeaderCellDef> Tech Name</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Tech Name\"> {{ element.techName }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"billSentDate\">\n      <th mat-header-cell *matHeaderCellDef> Bill SentDate</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Sent Date\"> {{ element.billSentDate }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"superBill\">\n      <th mat-header-cell *matHeaderCellDef> Super Bill</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Super Bill\"> {{ element.superBill }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"date\">\n      <th mat-header-cell *matHeaderCellDef> Date</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Date\"> {{ element.date }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"status\">\n      <th mat-header-cell *matHeaderCellDef> Status</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Status\"> {{ element.status }} </td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"allDataColumns\"></tr>\n    <tr mat-row *matRowDef=\"let row; columns: allDataColumns;let i = index\"></tr>\n  </table>\n</mat-card-content>\n\n<!-- dashboard listing end here -->\n\n\n\n<app-admin-footer></app-admin-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-admin-header></app-admin-header>\n\n<mat-card-content class=\"content_wrapper\">\n  <mat-card-content class=\"itemsection one\">\n    <span class=\"counteer\"> {{ doctorCount }} </span>\n    <p>Total Number of Doctors</p>\n    <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n  </mat-card-content>\n  <mat-card-content class=\"itemsection two\">\n    <span class=\"counteer\"> {{ billerCount }}</span>\n    <p>Total Number of Billers</p>\n    <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/biller-management']\">View Details</button>\n  </mat-card-content>\n  <mat-card-content class=\"itemsection three\">\n    <span class=\"counteer\"> {{ techCount }} </span>\n    <p>Total Number of Techs</p>\n    <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/tech-management']\">View Details</button>\n  </mat-card-content>\n</mat-card-content>\n\n\n\n<mat-card-content class=\"admin_superbillsection\">\n  <h1>Physician Report and Super Bills</h1>\n  <mat-card-content class=\"biller_wrapper\">\n    <mat-card-content class=\"super_bill_item sp_one\">\n      <span class=\"border_wrapper\">\n        <mat-card-content class=\"circle\">\n          <img src=\"../../../../assets/images/admincircle_icon1.png\">\n        </mat-card-content>\n      </span>\n      <span>\n        <h2> {{ uploadedStatusCount }} </h2>\n        <p>Total No of <br>\n          Reports Uploaded\n        </p>\n        <button mat-flat-button (click)=\"viewReportProcessData('Reports Uploaded')\">view all</button>\n      </span>\n\n    </mat-card-content>\n    <mat-card-content class=\"super_bill_item sp_two\">\n      <span class=\"border_wrapper\">\n        <mat-card-content class=\"circle\">\n          <img src=\"../../../../assets/images/admincircle_icon2.png\">\n        </mat-card-content>\n      </span>\n      <span>\n        <h2> {{ processedStatusCount }} </h2>\n        <p>Total No of <br>\n          Report Processed\n        </p>\n        <button mat-flat-button (click)=\"viewReportProcessData('Report Processed')\">view all</button>\n      </span>\n\n    </mat-card-content>\n    <mat-card-content class=\"super_bill_item sp_three\">\n      <span class=\"border_wrapper\">\n        <mat-card-content class=\"circle\">\n          <img src=\"../../../../assets/images/admincircle_icon3.png\">\n        </mat-card-content>\n      </span>\n      <span>\n        <h2> {{ signedStatusCount }} </h2>\n        <p>Total No of <br>\n          Report Signed\n        </p>\n        <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n      </span>\n\n    </mat-card-content>\n    <mat-card-content class=\"super_bill_item sp_four\">\n      <span class=\"border_wrapper\">\n        <mat-card-content class=\"circle\">\n          <img src=\"../../../../assets/images/admincircle_icon4.png\">\n        </mat-card-content>\n      </span>\n      <span>\n        <h2> {{ billerStatusCount }} </h2>\n        <p> Sent to <br>\n          Super Bill\n        </p>\n        <button mat-flat-button (click)=\"viewReportProcessData('Super Bill')\">view all</button>\n      </span>\n\n    </mat-card-content>\n  </mat-card-content>\n</mat-card-content>\n\n\n<mat-card-content class=\"admin_table\" *ngIf=\"commonArray.length > 0\">\n<mat-toolbar class=\"top_header\">\n  <h2>{{ headerText }}</h2>\n</mat-toolbar>\n\n  <mat-form-field>\n    <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n  </mat-form-field>\n\n  <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\" >\n\n    <!-- Position Column -->\n    <ng-container matColumnDef=\"no\">\n      <th mat-header-cell *matHeaderCellDef> No. </th>\n      <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n    </ng-container>\n\n    <!-- Position Column -->\n    <ng-container matColumnDef=\"patientName\">\n      <th mat-header-cell *matHeaderCellDef> Patient Name. </th>\n      <td mat-cell *matCellDef=\"let element\"  data-label=\"patient Name\"> {{ element.patientName }} </td>\n    </ng-container>\n\n    <!-- Name Column -->\n    <ng-container matColumnDef=\"record_type\">\n      <th mat-header-cell *matHeaderCellDef> Record Type </th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Record type\"> {{ element.record_type }} </td>\n    </ng-container>\n\n    <!-- Weight Column -->\n    <ng-container matColumnDef=\"date_added\">\n      <th mat-header-cell *matHeaderCellDef> Date Added </th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Date Added\"> {{ element.date_added }} </td>\n    </ng-container>\n\n    <!-- Symbol Column -->\n    <ng-container matColumnDef=\"status\">\n      <th mat-header-cell *matHeaderCellDef> Status </th>\n      <td mat-cell *matCellDef=\"let element\"  data-label=\"Status\"> <span>{{ element.status }} </span></td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;let i = index\"></tr>\n\n  </table>\n  <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n</mat-card-content>\n\n<!-- All Data listing start here(default listing) -->\n\n<mat-card-content class=\"admin_table\" *ngIf=\"commonArray.length == 0\">\n\n    <mat-toolbar class=\"top_header\">\n        <h2> Patient Record Report </h2>\n      </mat-toolbar>\n\n  <mat-form-field>\n    <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n  </mat-form-field>\n\n  <table mat-table [dataSource]=\"allDataSource\" class=\"mat-elevation-z8\">\n\n    \n    <ng-container matColumnDef=\"no\">\n      <th mat-header-cell *matHeaderCellDef> No. </th>\n      <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n    </ng-container>\n   \n    <ng-container matColumnDef=\"patientName\">\n      <th mat-header-cell *matHeaderCellDef> Patient Name. </th>\n      <td mat-cell *matCellDef=\"let element\"  data-label=\"Patient Name\"> {{ element.patientName }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"doctorName\">\n      <th mat-header-cell *matHeaderCellDef> Doctor Name</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Doctor Name\"> {{ element.doctorName }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"billerName\">\n      <th mat-header-cell *matHeaderCellDef> Biller Name</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Biller Name\"> {{ element.billerName }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"record\">\n      <th mat-header-cell *matHeaderCellDef> Record</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Record\"> {{ element.record }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"billGenerationDate\">\n      <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Generation Date\"> {{ element.billGenerationDate }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"techName\">\n      <th mat-header-cell *matHeaderCellDef> Tech Name</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Tech Name\"> {{ element.techName }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"billSentDate\">\n      <th mat-header-cell *matHeaderCellDef> Bill SentDate</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Sent Date\"> {{ element.billSentDate }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"superBill\">\n      <th mat-header-cell *matHeaderCellDef> Super Bill</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Super Bill\"> {{ element.superBill }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"date\">\n      <th mat-header-cell *matHeaderCellDef> Date</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Date\"> {{ element.date }} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"status\">\n      <th mat-header-cell *matHeaderCellDef> Status</th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Status\"> {{ element.status }} </td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"allDataColumns\"></tr>\n    <tr mat-row *matRowDef=\"let row; columns: allDataColumns;let i = index\"></tr>\n  </table>\n  <mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons></mat-paginator>\n</mat-card-content>\n\n<!-- dashboard listing end here -->\n\n\n\n<app-admin-footer></app-admin-footer>\n");
 
 /***/ }),
 
@@ -4986,7 +4986,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar class=\"techdashboard_header\">\n\n      <span class=\"logo_wrapper\" [routerLink]=\"[ '/admin/dashboard' ]\">\n        <img src=\"../../../assets/images/logo.png\">\n      </span>\n\n      <button mat-flat-button  (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n      <mat-card-content class=\"quotation\"  [ngClass]=\"status ? 'success' : 'danger'\">\n          <mat-nav-list>\n              <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/admin/dashboard']\"> Dashboard </a>\n              <a mat-list-item [routerLink]=\"['/admin/doctor-management']\" routerLinkActive=\"active\"> Manage Doctor </a>\n              <a mat-list-item [routerLink]=\"['/admin/biller-management']\" routerLinkActive=\"active\"> Manage Biller </a>\n              <a mat-list-item [routerLink]=\"['/admin/tech-management']\" routerLinkActive=\"active\"> Manage Tech </a>\n              <a mat-list-item [routerLink]=\"['/admin/admin-management']\" routerLinkActive=\"active\"> Manage Admin </a>\n              <a mat-list-item [routerLink]=\"['/admin/patient-record-report']\" routerLinkActive=\"active\"> Patient Record Report</a>\n            </mat-nav-list>\n      </mat-card-content>\n\n\n      <mat-card-content class=\"profile_section\">\n        <mat-menu #appMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/admin/account-settings']\">\n            <mat-icon>account_circle</mat-icon> Account Settings\n          </button>\n\n          <button mat-menu-item [routerLink]=\"['/admin/account-settings/change-password']\">\n            <mat-icon>vpn_key</mat-icon> Change Password\n          </button>\n\n          <button mat-menu-item (click)=\"logout()\"> <mat-icon>power_settings_new</mat-icon> Logout </button>\n        </mat-menu>\n        <span class=\"username\">{{user_data.firstname}} {{user_data.lastname}}</span>\n        <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n          <span class=\"user_profile\">\n            <mat-icon>account_circle</mat-icon>\n            <i class=\"material-icons\">\n              keyboard_arrow_down\n            </i>\n          </span>\n        </button>\n      </mat-card-content>\n  </mat-toolbar>\n  <!-- end header -->\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar class=\"techdashboard_header\">\n\n      <span class=\"logo_wrapper\" [routerLink]=\"[ '/admin/dashboard' ]\">\n        <img src=\"../../../assets/images/logo.png\">\n      </span>\n\n      <button mat-flat-button  (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n      <mat-card-content class=\"quotation\"  [ngClass]=\"status ? 'success' : 'danger'\">\n          <mat-nav-list>\n              <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/admin/dashboard']\"> Dashboard </a>\n              <a mat-list-item [routerLink]=\"['/admin/doctor-management']\" routerLinkActive=\"active\"> Manage Doctor </a>\n              <a mat-list-item [routerLink]=\"['/admin/biller-management']\" routerLinkActive=\"active\"> Manage Biller </a>\n              <a mat-list-item [routerLink]=\"['/admin/tech-management']\" routerLinkActive=\"active\"> Manage Tech </a>\n              <a mat-list-item [routerLink]=\"['/admin/admin-management']\" routerLinkActive=\"active\"> Manage Admin </a>\n              <a mat-list-item [routerLink]=\"['/admin/doctor-office-management']\" routerLinkActive=\"active\"> Doctors Office </a>\n              <a mat-list-item [routerLink]=\"['/admin/patient-record-report']\" routerLinkActive=\"active\"> Patient Record Report</a>\n            </mat-nav-list>\n      </mat-card-content>\n\n\n      <mat-card-content class=\"profile_section\">\n        <mat-menu #appMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/admin/account-settings']\">\n            <mat-icon>account_circle</mat-icon> Account Settings\n          </button>\n\n          <button mat-menu-item [routerLink]=\"['/admin/account-settings/change-password']\">\n            <mat-icon>vpn_key</mat-icon> Change Password\n          </button>\n\n          <button mat-menu-item (click)=\"logout()\"> <mat-icon>power_settings_new</mat-icon> Logout </button>\n        </mat-menu>\n        <span class=\"username\">{{user_data.firstname}} {{user_data.lastname}}</span>\n        <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n          <span class=\"user_profile\">\n            <mat-icon>account_circle</mat-icon>\n            <i class=\"material-icons\">\n              keyboard_arrow_down\n            </i>\n          </span>\n        </button>\n      </mat-card-content>\n  </mat-toolbar>\n  <!-- end header -->\n\n\n");
 
 /***/ }),
 
@@ -5025,7 +5025,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Admin Header -->\n<app-admin-header></app-admin-header>\n\n<!-- header with add button -->\n<mat-card-content class=\"title_wrapper\">\n  {{ htmlText.header }}\n</mat-card-content>\n\n\n<span class=\"add_header\">\n  <span class=\"bradcrumb\">\n    <a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n    <a [routerLink]=\"['/admin/biller-management']\">Manage Biller &nbsp;/</a> &nbsp;\n    {{ htmlText.nav }}\n  </span>\n</span>\n<!-- End header with add button -->\n\n\n<mat-card class=\"add_form\">\n  <h2> {{ htmlText.header }}</h2>\n\n\n  <mat-card-content class=\"form_wrapper\">\n    <form class=\"example-form\" autocomplete=\"off\" name=\"billerManagementAddEditForm\"\n      [formGroup]=\"billerManagementAddEditForm\" (ngSubmit)=\"BillerManagementAddFormSubmit()\">\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Enter First Name</mat-label>\n        <input matInput placeholder=\"First Name\" [formControl]=\"billerManagementAddEditForm.controls['firstname']\"\n          (blur)=\"inputUntouch(billerManagementAddEditForm,'firstname')\">\n        <mat-error *ngIf=\"billerManagementAddEditForm.controls['firstname'].touched && !billerManagementAddEditForm.controls['firstname'].valid\n           && billerManagementAddEditForm.controls['firstname'].errors.required\">\n          First Name field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Enter Last Name</mat-label>\n        <input matInput placeholder=\"Last Name\" [formControl]=\"billerManagementAddEditForm.controls['lastname']\"\n          (blur)=\"inputUntouch(billerManagementAddEditForm,'lastname')\">\n        <mat-error *ngIf=\"billerManagementAddEditForm.controls['lastname'].touched && !billerManagementAddEditForm.controls['lastname'].valid\n           && billerManagementAddEditForm.controls['lastname'].errors.required\">\n          Last Name field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Email Address</mat-label>\n        <input matInput placeholder=\"Email Address\" [formControl]=\"billerManagementAddEditForm.controls['email']\"\n          (blur)=\"inputUntouch(billerManagementAddEditForm,'email')\">\n        <mat-error *ngIf=\"billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid\n            && billerManagementAddEditForm.controls['email'].errors.required\">\n          E-Mail can not be blank</mat-error>\n        <mat-error\n          *ngIf=\"!billerManagementAddEditForm.controls['email'].valid && !billerManagementAddEditForm.controls['email'].errors.required\">\n          Email is not valid</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Phone </mat-label>\n        <input matInput placeholder=\"Phone\" [formControl]=\"billerManagementAddEditForm.controls['phone']\"\n          (blur)=\"inputUntouch(billerManagementAddEditForm,'phone')\">\n        <mat-error *ngIf=\"billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid\n            && billerManagementAddEditForm.controls['phone'].errors.required\">\n          Phone Number field can not be blank</mat-error>\n      </mat-form-field>\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Company Name </mat-label>\n        <input matInput placeholder=\"Company Name\" [formControl]=\"billerManagementAddEditForm.controls['companyname']\"\n          (blur)=\"inputUntouch(billerManagementAddEditForm,'companyname')\">\n        <mat-error *ngIf=\"billerManagementAddEditForm.controls['companyname'].touched && !billerManagementAddEditForm.controls['companyname'].valid\n            && billerManagementAddEditForm.controls['companyname'].errors.required\">\n          Company Name field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Address</mat-label>\n        <input matInput placeholder=\"Address\" [formControl]=\"billerManagementAddEditForm.controls['address']\"\n          (blur)=\"inputUntouch(billerManagementAddEditForm,'address')\">\n        <mat-error *ngIf=\"billerManagementAddEditForm.controls['address'].touched && !billerManagementAddEditForm.controls['address'].valid\n            && billerManagementAddEditForm.controls['address'].errors.required\">\n          Address field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n        <mat-label>State</mat-label>\n        <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n          <mat-option [value]=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n        <mat-label>City</mat-label>\n        <mat-select formControlName=\"city\">\n          <mat-option value=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Zip</mat-label>\n        <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"billerManagementAddEditForm.controls['zip']\"\n          (blur)=\"inputUntouch(billerManagementAddEditForm,'zip')\">\n        <mat-error *ngIf=\"billerManagementAddEditForm.controls['zip'].touched && !billerManagementAddEditForm.controls['zip'].valid\n          && billerManagementAddEditForm.controls['zip'].errors.required\">\n          Zip field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field>\n        <mat-label>Date</mat-label>\n        <input [value]=\"date.value\" matInput [matDatepicker]=\"myPicker\" placeholder=\"date\">\n        <mat-datepicker-toggle matSuffix [for]=\"myPicker\" disabled></mat-datepicker-toggle>\n        <mat-datepicker #myPicker></mat-datepicker>\n      </mat-form-field>\n\n      <mat-form-field class=\"form-group\">\n        <input matInput placeholder=\"Password\" type=\"password\"\n          [formControl]=\"billerManagementAddEditForm.controls['password']\">\n        <mat-error\n          *ngIf=\"!billerManagementAddEditForm.controls['password'].valid && billerManagementAddEditForm.controls['password'].touched\">\n          Password field can not be blank</mat-error>\n\n      </mat-form-field>\n      <mat-form-field class=\"form-group\">\n        <input matInput placeholder=\"Confirm Password\" type=\"password\"\n          [formControl]=\"billerManagementAddEditForm.controls['confirmpassword']\">\n        <mat-error\n          *ngIf=\"!billerManagementAddEditForm.controls['confirmpassword'].valid && billerManagementAddEditForm.controls['confirmpassword'].touched\">\n          Password does not match </mat-error>\n      </mat-form-field>\n\n      <mat-checkbox [formControl]=\"billerManagementAddEditForm.controls['status']\" checked>Status</mat-checkbox>\n\n      <span class=\"submit_form\">\n        <button mat-flat-button type=\"reset\">Reset </button>\n        <button mat-flat-button type=\"submit\" [disabled]=\"!billerManagementAddEditForm.valid\"> {{ htmlText.buttonText }}\n        </button>\n      </span>\n\n    </form>\n  </mat-card-content>\n\n</mat-card>\n\n<!-- Admin Footer -->\n<app-admin-footer></app-admin-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Admin Header -->\n<app-admin-header></app-admin-header>\n\n<!-- header with add button -->\n<mat-card-content class=\"title_wrapper\">\n  {{ htmlText.header }}\n</mat-card-content>\n\n\n<span class=\"add_header\">\n  <span class=\"bradcrumb\">\n    <a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n    <a [routerLink]=\"['/admin/biller-management']\">Manage Biller &nbsp;/</a> &nbsp;\n    {{ htmlText.nav }}\n  </span>\n</span>\n<!-- End header with add button -->\n\n\n<mat-card class=\"add_form\">\n  <h2> {{ htmlText.header }}</h2>\n\n\n  <mat-card-content class=\"form_wrapper\">\n    <form class=\"example-form\" autocomplete=\"off\" name=\"billerManagementAddEditForm\"\n      [formGroup]=\"billerManagementAddEditForm\" (ngSubmit)=\"BillerManagementAddFormSubmit()\">\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Enter First Name</mat-label>\n        <input matInput placeholder=\"First Name\" [formControl]=\"billerManagementAddEditForm.controls['firstname']\"\n          (blur)=\"inputUntouch(billerManagementAddEditForm,'firstname')\">\n        <mat-error *ngIf=\"billerManagementAddEditForm.controls['firstname'].touched && !billerManagementAddEditForm.controls['firstname'].valid\n           && billerManagementAddEditForm.controls['firstname'].errors.required\">\n          First Name field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Enter Last Name</mat-label>\n        <input matInput placeholder=\"Last Name\" [formControl]=\"billerManagementAddEditForm.controls['lastname']\"\n          (blur)=\"inputUntouch(billerManagementAddEditForm,'lastname')\">\n        <mat-error *ngIf=\"billerManagementAddEditForm.controls['lastname'].touched && !billerManagementAddEditForm.controls['lastname'].valid\n           && billerManagementAddEditForm.controls['lastname'].errors.required\">\n          Last Name field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Email Address</mat-label>\n        <input matInput placeholder=\"Email Address\" [formControl]=\"billerManagementAddEditForm.controls['email']\"\n          (blur)=\"inputUntouch(billerManagementAddEditForm,'email')\">\n        <mat-error *ngIf=\"billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid\n            && billerManagementAddEditForm.controls['email'].errors.required\">\n          E-Mail can not be blank</mat-error>\n        <mat-error\n          *ngIf=\"!billerManagementAddEditForm.controls['email'].valid && !billerManagementAddEditForm.controls['email'].errors.required\">\n          Email is not valid</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Phone </mat-label>\n        <input matInput placeholder=\"Phone\" [formControl]=\"billerManagementAddEditForm.controls['phone']\"\n          (blur)=\"inputUntouch(billerManagementAddEditForm,'phone')\">\n        <mat-error *ngIf=\"billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid\n            && billerManagementAddEditForm.controls['phone'].errors.required\">\n          Phone Number field can not be blank</mat-error>\n      </mat-form-field>\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Company Name </mat-label>\n        <input matInput placeholder=\"Company Name\" [formControl]=\"billerManagementAddEditForm.controls['companyname']\"\n          (blur)=\"inputUntouch(billerManagementAddEditForm,'companyname')\">\n        <mat-error *ngIf=\"billerManagementAddEditForm.controls['companyname'].touched && !billerManagementAddEditForm.controls['companyname'].valid\n            && billerManagementAddEditForm.controls['companyname'].errors.required\">\n          Company Name field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Address</mat-label>\n        <input matInput placeholder=\"Address\" [formControl]=\"billerManagementAddEditForm.controls['address']\"\n          (blur)=\"inputUntouch(billerManagementAddEditForm,'address')\">\n        <mat-error *ngIf=\"billerManagementAddEditForm.controls['address'].touched && !billerManagementAddEditForm.controls['address'].valid\n            && billerManagementAddEditForm.controls['address'].errors.required\">\n          Address field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n        <mat-label>State</mat-label>\n        <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n          <mat-option [value]=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n        <mat-label>City</mat-label>\n        <mat-select formControlName=\"city\">\n          <mat-option value=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Zip</mat-label>\n        <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"billerManagementAddEditForm.controls['zip']\"\n          (blur)=\"inputUntouch(billerManagementAddEditForm,'zip')\">\n        <mat-error *ngIf=\"billerManagementAddEditForm.controls['zip'].touched && !billerManagementAddEditForm.controls['zip'].valid\n          && billerManagementAddEditForm.controls['zip'].errors.required\">\n          Zip field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field>\n        <mat-label>Date</mat-label>\n        <input [value]=\"date.value\" matInput [matDatepicker]=\"myPicker\" placeholder=\"date\">\n        <mat-datepicker-toggle matSuffix [for]=\"myPicker\" disabled></mat-datepicker-toggle>\n        <mat-datepicker #myPicker></mat-datepicker>\n      </mat-form-field>\n      <!-- <ng-container *ngIf =\"!params_id\"> -->\n\n      <mat-form-field class=\"form-group\">\n        <input matInput placeholder=\"Password\" type=\"password\"\n          [formControl]=\"billerManagementAddEditForm.controls['password']\">\n        <mat-error\n          *ngIf=\"!billerManagementAddEditForm.controls['password'].valid && billerManagementAddEditForm.controls['password'].touched\">\n          Password field can not be blank</mat-error>\n\n      </mat-form-field>\n      <mat-form-field class=\"form-group\">\n        <input matInput placeholder=\"Confirm Password\" type=\"password\"\n          [formControl]=\"billerManagementAddEditForm.controls['confirmpassword']\">\n        <mat-error\n          *ngIf=\"!billerManagementAddEditForm.controls['confirmpassword'].valid && billerManagementAddEditForm.controls['confirmpassword'].touched\">\n          Password does not match </mat-error>\n      </mat-form-field>\n    <!-- </ng-container> -->\n      <mat-checkbox [formControl]=\"billerManagementAddEditForm.controls['status']\" checked>Status</mat-checkbox>\n\n      <span class=\"submit_form\">\n          <!-- <button mat-flat-button type=\"button\" (click)=\"backToManagePage()\">Back </button> -->\n        <button mat-flat-button type=\"reset\">Reset </button>\n        <button mat-flat-button type=\"submit\" [disabled]=\"!billerManagementAddEditForm.valid\"> {{ htmlText.buttonText }}\n            <!-- <ng-container *ngIf =\"params_id\">\n                <button mat-flat-button type=\"button\" (click)=\"openDialog(test)\"  > Change Password </button>\n              </ng-container> -->\n        </button>\n      </span>\n\n    </form>\n  </mat-card-content>\n\n</mat-card>\n\n<!-- Admin Footer -->\n<app-admin-footer></app-admin-footer>");
 
 /***/ }),
 
@@ -5051,7 +5051,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-admin-header></app-admin-header>\n\n<!-- header with add button -->\n<mat-card-content class=\"title_wrapper\">\n  {{ htmlText.header }}\n</mat-card-content>\n\n\n<span class=\"add_header\">\n  <span class=\"bradcrumb\">\n    <a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n    <a [routerLink]=\"['/admin/doctor-management']\">Manage Doctor &nbsp;/</a> &nbsp;\n    {{ htmlText.nav }}\n  </span>\n</span>\n<!-- End header with add button -->\n\n<mat-card class=\"add_form\">\n  <h2>{{ htmlText.header }} </h2>\n\n\n  <mat-card-content class=\"form_wrapper\">\n    <form class=\"example-form\" autocomplete=\"off\" [formGroup]=\"docManageForm\" (ngSubmit)=\"onSubmit()\">\n\n\n      <!-- First Name  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>First Name</mat-label>\n        <input matInput placeholder=\"James\" formControlName=\"firstname\">\n        <mat-error *ngIf=\"!docManageForm.controls['firstname'].valid\n          && docManageForm.controls['firstname'].errors.required\">First Name is required.</mat-error>\n        <mat-error\n          *ngIf=\"!docManageForm.controls['firstname'].valid && !docManageForm.controls['firstname'].errors.required\">\n          Name is not valid</mat-error>\n      </mat-form-field>\n\n\n\n\n\n      <!-- Last Name  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Last Name</mat-label>\n        <input matInput placeholder=\"Anderson\" formControlName=\"lastname\">\n        <mat-error\n          *ngIf=\"!docManageForm.controls['lastname'].valid && docManageForm.controls['lastname'].errors.required\">Last\n          Name is required.</mat-error>\n        <mat-error\n          *ngIf=\"!docManageForm.controls['lastname'].valid && !docManageForm.controls['lastname'].errors.required\">\n          Name is not valid</mat-error>\n      </mat-form-field>\n\n\n\n\n\n      <!-- Email  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Email</mat-label>\n        <input matInput type=\"email\" placeholder=\"jamesanderson@gmail.com\" formControlName=\"email\">\n        <mat-error *ngIf=\"!docManageForm.controls['email'].valid && docManageForm.controls['email'].errors.required\">\n          Email is required.</mat-error>\n        <mat-error *ngIf=\"!docManageForm.controls['email'].valid && !docManageForm.controls['email'].errors.required\">\n          Email is not valid</mat-error>\n      </mat-form-field>\n\n\n\n\n      <!-- Password  -->\n\n      <mat-form-field appearance=\"fill\" *ngIf=\"action=='add'\">\n        <mat-label>Password</mat-label>\n        <input matInput type=\"password\" placeholder=\"*********\" formControlName=\"password\">\n        <mat-error *ngIf=\"docManageForm.controls['password']?.touched || docManageForm.controls['password'].errors \n        && docManageForm.controls['password'].errors.required\">Password is required.</mat-error>\n      </mat-form-field>\n\n\n\n\n      <!-- Confirm Password  -->\n\n      <mat-form-field appearance=\"fill\" *ngIf=\"action=='add'\">\n        <mat-label>Confirm Password</mat-label>\n        <input type=\"password\" matInput placeholder=\"**********\" formControlName=\"confirmpassword\">\n        <mat-error *ngIf=\"docManageForm.controls['confirmpassword']?.touched || docManageForm.controls['confirmpassword'].errors \n        && docManageForm.controls['confirmpassword'].errors.required\">Password do not match</mat-error>\n      </mat-form-field>\n\n\n\n\n\n      <!-- Phone  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Phone</mat-label>\n        <input matInput placeholder=\"9845711225\" formControlName=\"phone\">\n        <mat-error *ngIf=\"!docManageForm.controls['phone'].valid && docManageForm.controls['phone'].errors.required\">\n          Phone is required.</mat-error>\n        <mat-error *ngIf=\"!docManageForm.controls['phone'].valid && !docManageForm.controls['phone'].errors.required\">\n          Phone must be only 10 digit integers</mat-error>\n\n      </mat-form-field>\n      <!-- FAX -->\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Fax</mat-label>\n        <input matInput placeholder=\"323 555 1234\" formControlName=\"fax\">\n        <mat-error *ngIf=\"!docManageForm.controls['fax'].valid && docManageForm.controls['fax'].errors.required\">Fax is\n          required.</mat-error>\n        <!-- <mat-error *ngIf=\"!docManageForm.controls['fax'].valid && !docManageForm.controls['fax'].errors.required\">\n          Fax is not valid</mat-error> -->\n      </mat-form-field>\n\n\n\n\n\n      <!-- Practice Name  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Practice name</mat-label>\n        <input matInput placeholder=\"James101\" formControlName=\"practicename\" \n         (blur)=\"inputUntouch(docManageForm,'practicename')\">\n         <mat-error *ngIf=\"docManageForm.controls['practicename'].touched && !docManageForm.controls['practicename'].valid\n        && docManageForm.controls['practicename'].errors.required\">\n        Practice Name can not be blank</mat-error>\n\n        <!-- <mat-error\n          *ngIf=\"!docManageForm.controls['practicename'].valid && docManageForm.controls['practicename'].errors.required\">\n          Practice Name is required.</mat-error>\n        <mat-error\n          *ngIf=\"!docManageForm.controls['practicename'].valid && !docManageForm.controls['practicename'].errors.required\">\n          Practice name is not valid</mat-error> -->\n      </mat-form-field>\n\n\n\n\n      <mat-card-content class=\"checkbox_w\">\n        <!-- Taxonomies  -->\n\n\n\n        <h3>Taxonomies</h3>\n        <div formArrayName=\"taxonomies\"\n          *ngFor=\"let j of checkboxArray,let loop of docManageForm.controls.taxonomies?.value; let i = index; trackBy: trackByFn\">\n          <ng-container [formGroupName]=\"i\">\n\n            <mat-checkbox formControlName=\"taxo\" (click)=\"selectTaxo(j)\">{{j}}</mat-checkbox>\n\n          </ng-container>\n        </div>\n\n        <!--         \n        <mat-checkbox>Family Practice</mat-checkbox>\n        <mat-checkbox>General Practitioner</mat-checkbox>\n        <mat-checkbox>Primary Care</mat-checkbox>\n        <mat-checkbox>Cardiology</mat-checkbox>\n        <mat-checkbox>Neurology</mat-checkbox>\n        <mat-checkbox>Internal Medicine</mat-checkbox>\n        <mat-checkbox>Endocrinology</mat-checkbox>\n        <mat-checkbox>Pain Management</mat-checkbox>\n        <mat-checkbox>Integrated</mat-checkbox>\n        <mat-checkbox>Others</mat-checkbox> -->\n\n      </mat-card-content>\n\n\n\n\n      <!-- NPI#  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>#NPI</mat-label>\n        <input matInput placeholder=\"1880101700\" formControlName=\"npm\"\n        (blur)=\"inputUntouch(docManageForm,'npm')\">\n        <mat-error *ngIf=\"docManageForm.controls['npm'].touched && !docManageForm.controls['npm'].valid\n        && docManageForm.controls['npm'].errors.required\">\n        #NPI can not be blank</mat-error>\n        <!-- <mat-error *ngIf=\"!docManageForm.controls['npm'].valid && docManageForm.controls['npm'].errors.required \">NPI#\n          is required.</mat-error>\n        <mat-error *ngIf=\"!docManageForm.controls['npm'].valid && !docManageForm.controls['npm'].errors.required\"> NPM#\n          is not valid</mat-error> -->\n      </mat-form-field>\n\n\n\n\n\n\n      <!-- Address  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Address</mat-label>\n        <textarea matInput placeholder=\"76 E. Mayfield Drive\" formControlName=\"address\"></textarea>\n        <mat-error *ngIf=\"docManageForm.controls['address']?.touched || docManageForm.controls['address'].errors \n        && docManageForm.controls['address'].errors.required\">Address is required.</mat-error>\n      </mat-form-field>\n\n\n\n\n\n\n\n\n      <!-- State  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>State</mat-label>\n        <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n          <mat-option [value]=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n\n\n\n      <!-- City  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>City</mat-label>\n        <mat-select formControlName=\"city\">\n          <mat-option [value]=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <!-- select tech name-->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Select Technician</mat-label>\n        <mat-select formControlName=\"tech\" multiple>\n          <mat-option [value]=0>Select a tech</mat-option>\n          <mat-option *ngFor=\"let tech of techData;\" value=\"{{ tech._id }}\">{{ tech.firstname }} {{tech.lastname}}\n          </mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <!-- select biller name -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Select Biiler</mat-label>\n        <mat-select formControlName=\"biller\" multiple>\n          <mat-option [value]=0>Select a biiler</mat-option>\n          <mat-option *ngFor=\"let biller of billerData;\" value=\"{{ biller._id }}\">{{ biller.firstname }}\n            {{ biller.lastname }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n\n\n\n\n\n\n      <!-- ZIP  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>ZIP</mat-label>\n        <input matInput placeholder=\"917844\" formControlName=\"zip\" \n        (blur)=\"inputUntouch(docManageForm,'zip')\">\n        <mat-error *ngIf=\"docManageForm.controls['zip'].touched && !docManageForm.controls['zip'].valid\n        && docManageForm.controls['zip'].errors.required\">\n        ZIP can not be blank</mat-error>\n\n        <!-- <mat-error *ngIf=\"!docManageForm.controls['zip'].valid && docManageForm.controls['zip'].errors.required\">ZIP is\n          required.</mat-error> -->\n        <!-- <mat-error *ngIf=\"!docManageForm.controls['zip'].valid && !docManageForm.controls['zip'].errors.required\">ZIP must be only 6 digit integers</mat-error> -->\n      </mat-form-field>\n\n\n\n\n\n      <!-- Status -->\n\n      <h3>Status</h3>\n      <mat-checkbox formControlName=\"status\">Active</mat-checkbox>\n\n\n\n\n      <!-- Button  -->\n\n      <span class=\"submit_form\">\n        <button mat-flat-button type=\"reset\">Reset</button>\n        <button mat-flat-button type=\"submit\" [disabled]=\"!docManageForm.valid\"> {{ htmlText.buttonText }} </button>\n      </span>\n    </form>\n  </mat-card-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-admin-header></app-admin-header>\n\n<!-- header with add button -->\n<mat-card-content class=\"title_wrapper\">\n  {{ htmlText.header }}\n</mat-card-content>\n\n\n<span class=\"add_header\">\n  <span class=\"bradcrumb\">\n    <a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n    <a [routerLink]=\"['/admin/doctor-management']\">Manage Doctor &nbsp;/</a> &nbsp;\n    {{ htmlText.nav }}\n  </span>\n</span>\n<!-- End header with add button -->\n\n<mat-card class=\"add_form\">\n  <h2>{{ htmlText.header }} </h2>\n\n\n  <mat-card-content class=\"form_wrapper\">\n    <form class=\"example-form\" autocomplete=\"off\" [formGroup]=\"docManageForm\" (ngSubmit)=\"onSubmit()\">\n\n\n      <!-- First Name  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>First Name</mat-label>\n        <input matInput placeholder=\"James\" formControlName=\"firstname\"\n        (blur)=\"inputUntouch(docManageForm,'firstname')\">\n        \n        <mat-error *ngIf=\"docManageForm.controls['firstname'].touched && !docManageForm.controls['firstname'].valid\n        && docManageForm.controls['firstname'].errors.required\">\n        First Name can not be blank</mat-error>\n        <!-- <mat-error *ngIf=\"!docManageForm.controls['firstname'].valid\n          && docManageForm.controls['firstname'].errors.required\">First Name is required.</mat-error>\n        <mat-error\n          *ngIf=\"!docManageForm.controls['firstname'].valid && !docManageForm.controls['firstname'].errors.required\">\n          Name is not valid</mat-error> -->\n      </mat-form-field>\n\n\n\n\n\n      <!-- Last Name  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Last Name</mat-label>\n        <input matInput placeholder=\"Anderson\" formControlName=\"lastname\"\n        (blur)=\"inputUntouch(docManageForm,'lastname')\">\n        <mat-error *ngIf=\"docManageForm.controls['lastname'].touched && !docManageForm.controls['lastname'].valid\n        && docManageForm.controls['lastname'].errors.required\">\n        Last Name can not be blank</mat-error>\n        <!-- <mat-error\n          *ngIf=\"!docManageForm.controls['lastname'].valid && docManageForm.controls['lastname'].errors.required\">Last\n          Name is required.</mat-error>\n        <mat-error\n          *ngIf=\"!docManageForm.controls['lastname'].valid && !docManageForm.controls['lastname'].errors.required\">\n          Name is not valid</mat-error> -->\n      </mat-form-field>\n\n\n\n\n\n      <!-- Email  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Email</mat-label>\n        <input matInput type=\"email\" placeholder=\"jamesanderson@gmail.com\" formControlName=\"email\"\n        (blur)=\"inputUntouch(docManageForm,'email')\">\n        <mat-error *ngIf=\"!docManageForm.controls['email'].valid && docManageForm.controls['email'].errors.required\">\n          Email is required.</mat-error>\n        <mat-error *ngIf=\"!docManageForm.controls['email'].valid && !docManageForm.controls['email'].errors.required\">\n          Email is not valid</mat-error>\n      </mat-form-field>\n\n\n\n\n      <!-- Password  -->\n\n      <mat-form-field appearance=\"fill\" *ngIf=\"action=='add'\">\n        <mat-label>Password</mat-label>\n        <input matInput type=\"password\" placeholder=\"*********\" formControlName=\"password\">\n        <mat-error *ngIf=\"docManageForm.controls['password']?.touched || docManageForm.controls['password'].errors \n        && docManageForm.controls['password'].errors.required\">Password is required.</mat-error>\n      </mat-form-field>\n\n\n\n\n      <!-- Confirm Password  -->\n\n      <mat-form-field appearance=\"fill\" *ngIf=\"action=='add'\">\n        <mat-label>Confirm Password</mat-label>\n        <input type=\"password\" matInput placeholder=\"**********\" formControlName=\"confirmpassword\">\n        <mat-error *ngIf=\"docManageForm.controls['confirmpassword']?.touched || docManageForm.controls['confirmpassword'].errors \n        && docManageForm.controls['confirmpassword'].errors.required\">Password do not match</mat-error>\n        <mat-error\n        *ngIf=\"!docManageForm.controls['confirmpassword'].valid && docManageForm.controls['confirmpassword'].touched\">\n        Confirm Password field can not be blank</mat-error>\n      </mat-form-field>\n\n\n\n\n\n      <!-- Phone  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Phone</mat-label>\n        <input matInput placeholder=\"9845711225\" formControlName=\"phone\"\n        (blur)=\"inputUntouch(docManageForm,'phone')\">\n        <mat-error *ngIf=\"docManageForm.controls['phone'].touched && !docManageForm.controls['phone'].valid\n        && docManageForm.controls['phone'].errors.required\">\n        Phone can not be blank</mat-error>\n\n      </mat-form-field>\n      <!-- FAX -->\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Fax</mat-label>\n        <input matInput placeholder=\"323 555 1234\" formControlName=\"fax\"\n        (blur)=\"inputUntouch(docManageForm,'fax')\">\n        <mat-error *ngIf=\"docManageForm.controls['fax'].touched && !docManageForm.controls['fax'].valid\n        && docManageForm.controls['fax'].errors.required\">\n        Fax can not be blank</mat-error>\n        <!-- <mat-error *ngIf=\"!docManageForm.controls['fax'].valid && !docManageForm.controls['fax'].errors.required\">\n          Fax is not valid</mat-error> -->\n      </mat-form-field>\n\n\n\n\n\n      <!-- Practice Name  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Practice name</mat-label>\n        <input matInput placeholder=\"James101\" formControlName=\"practicename\"\n          (blur)=\"inputUntouch(docManageForm,'practicename')\">\n        <mat-error *ngIf=\"docManageForm.controls['practicename'].touched && !docManageForm.controls['practicename'].valid\n        && docManageForm.controls['practicename'].errors.required\">\n          Practice Name can not be blank</mat-error>\n\n        <!-- <mat-error\n          *ngIf=\"!docManageForm.controls['practicename'].valid && docManageForm.controls['practicename'].errors.required\">\n          Practice Name is required.</mat-error>\n        <mat-error\n          *ngIf=\"!docManageForm.controls['practicename'].valid && !docManageForm.controls['practicename'].errors.required\">\n          Practice name is not valid</mat-error> -->\n      </mat-form-field>\n\n\n\n\n      <mat-card-content class=\"checkbox_w\">\n        <!-- Taxonomies  -->\n\n\n\n        <h3>Taxonomies</h3>\n        <div formArrayName=\"taxonomies\"\n          *ngFor=\"let j of checkboxArray,let loop of docManageForm.controls.taxonomies?.value; let i = index; trackBy: trackByFn\">\n          <ng-container [formGroupName]=\"i\">\n\n            <mat-checkbox formControlName=\"taxo\" (click)=\"selectTaxo(j)\">{{j}}</mat-checkbox>\n\n          </ng-container>\n        </div>\n\n        <!--         \n        <mat-checkbox>Family Practice</mat-checkbox>\n        <mat-checkbox>General Practitioner</mat-checkbox>\n        <mat-checkbox>Primary Care</mat-checkbox>\n        <mat-checkbox>Cardiology</mat-checkbox>\n        <mat-checkbox>Neurology</mat-checkbox>\n        <mat-checkbox>Internal Medicine</mat-checkbox>\n        <mat-checkbox>Endocrinology</mat-checkbox>\n        <mat-checkbox>Pain Management</mat-checkbox>\n        <mat-checkbox>Integrated</mat-checkbox>\n        <mat-checkbox>Others</mat-checkbox> -->\n\n      </mat-card-content>\n\n\n\n\n      <!-- NPI#  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>#NPI</mat-label>\n        <input matInput placeholder=\"1880101700\" formControlName=\"npm\" \n        (blur)=\"inputUntouch(docManageForm,'npm')\">\n        <mat-error *ngIf=\"docManageForm.controls['npm'].touched && !docManageForm.controls['npm'].valid\n        && docManageForm.controls['npm'].errors.required\">\n          #NPI can not be blank</mat-error>\n        <!-- <mat-error *ngIf=\"!docManageForm.controls['npm'].valid && docManageForm.controls['npm'].errors.required \">NPI#\n          is required.</mat-error>\n        <mat-error *ngIf=\"!docManageForm.controls['npm'].valid && !docManageForm.controls['npm'].errors.required\"> NPM#\n          is not valid</mat-error> -->\n      </mat-form-field>\n\n\n\n\n\n\n      <!-- Address  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Address</mat-label>\n        <textarea matInput placeholder=\"76 E. Mayfield Drive\" formControlName=\"address\"\n        (blur)=\"inputUntouch(docManageForm,'address')\"></textarea>\n        <mat-error *ngIf=\"docManageForm.controls['address'].touched && !docManageForm.controls['address'].valid\n        && docManageForm.controls['address'].errors.required\">\n          Address can not be blank</mat-error>\n      </mat-form-field>\n\n\n\n\n\n\n\n\n      <!-- State  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>State</mat-label>\n        <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n          <mat-option [value]=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n\n\n\n      <!-- City  -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>City</mat-label>\n        <mat-select formControlName=\"city\">\n          <mat-option [value]=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <!-- select tech name-->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Select Technician</mat-label>\n        <mat-select formControlName=\"tech\" multiple>\n          <mat-option [value]=0>Select a tech</mat-option>\n          <mat-option *ngFor=\"let tech of techData;\" value=\"{{ tech._id }}\">{{ tech.firstname }} {{tech.lastname}}\n          </mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <!-- select biller name -->\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Select Biiler</mat-label>\n        <mat-select formControlName=\"biller\" multiple>\n          <mat-option [value]=0>Select a biiler</mat-option>\n          <mat-option *ngFor=\"let biller of billerData;\" value=\"{{ biller._id }}\">{{ biller.firstname }}\n            {{ biller.lastname }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <!-- select doctor office center name -->\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Select Doctor's Office</mat-label>\n        <mat-select formControlName=\"doctorsOfficeName\">\n          <mat-option [value]=0>Select a Doctor's Office</mat-option>\n          <mat-option *ngFor=\"let val of doctorOfficeData;\" value=\"{{ val.centerName }}\">{{ val.centerName }}\n            </mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <!-- ZIP  -->\n      <mat-form-field appearance=\"fill\">\n        <mat-label>ZIP</mat-label>\n        <input matInput placeholder=\"917844\" formControlName=\"zip\" (blur)=\"inputUntouch(docManageForm,'zip')\">\n        <mat-error *ngIf=\"docManageForm.controls['zip'].touched && !docManageForm.controls['zip'].valid\n        && docManageForm.controls['zip'].errors.required\">\n          ZIP can not be blank</mat-error>\n\n        <!-- <mat-error *ngIf=\"!docManageForm.controls['zip'].valid && docManageForm.controls['zip'].errors.required\">ZIP is\n          required.</mat-error> -->\n        <!-- <mat-error *ngIf=\"!docManageForm.controls['zip'].valid && !docManageForm.controls['zip'].errors.required\">ZIP must be only 6 digit integers</mat-error> -->\n      </mat-form-field>\n\n\n\n\n\n      <!-- Status -->\n\n      <h3>Status</h3>\n      <mat-checkbox formControlName=\"status\">Active</mat-checkbox>\n\n\n\n\n      <!-- Button  -->\n\n      <span class=\"submit_form\">\n        <button mat-flat-button type=\"reset\">Reset</button>\n        <button mat-flat-button type=\"submit\" > {{ htmlText.buttonText }} </button>\n      </span>\n    </form>\n  </mat-card-content>");
 
 /***/ }),
 
@@ -5081,6 +5081,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component.html":
+/*!********************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component.html ***!
+  \********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Admin Header -->\n<app-admin-header></app-admin-header>\n\n<!-- header with add button -->\n<mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n</mat-card-content>\n<span class=\"add_header\">\n\n    <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/admin/doctor-office-management']\">Manage Doctor-Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n    </span>\n</span>\n\n<mat-card class=\"add_form\">\n\n    <h2>add Doctors office</h2>\n\n\n    <mat-card-content class=\"form_wrapper\">\n        <form class=\"example-form\" autocomplete=\"off\" name=\"doctorOfficeAddEditForm\"\n            [formGroup]=\"doctorOfficeAddEditForm\" (ngSubmit)=\"doctorOfficeAddEditFormFormSubmit()\">\n\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Enter Center Name</mat-label>\n                <input matInput placeholder=\"First Name\" [formControl]=\"doctorOfficeAddEditForm.controls['centerName']\"\n                    (blur)=\"inputUntouch(doctorOfficeAddEditForm,'centerName')\">\n                <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['centerName'].touched && !doctorOfficeAddEditForm.controls['centerName'].valid\n                 && doctorOfficeAddEditForm.controls['centerName'].errors.required\">\n                    Center Name field can not be blank</mat-error>\n            </mat-form-field>\n\n\n\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Email Address</mat-label>\n                <input matInput placeholder=\"Email Address\" [formControl]=\"doctorOfficeAddEditForm.controls['email']\"\n                    (blur)=\"inputUntouch(doctorOfficeAddEditForm,'email')\">\n                <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid\n                  && doctorOfficeAddEditForm.controls['email'].errors.required\">\n                    E-Mail field can not be blank</mat-error>\n                <mat-error\n                    *ngIf=\"!doctorOfficeAddEditForm.controls['email'].valid && !doctorOfficeAddEditForm.controls['email'].errors.required\">\n                    Email is not valid</mat-error>\n            </mat-form-field>\n\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Phone </mat-label>\n                <input matInput placeholder=\"Phone\" [formControl]=\"doctorOfficeAddEditForm.controls['phone']\"\n                    (blur)=\"inputUntouch(doctorOfficeAddEditForm,'phone')\">\n                <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid\n                  && doctorOfficeAddEditForm.controls['phone'].errors.required\">\n                    Phone Number field can not be blank</mat-error>\n            </mat-form-field>\n\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Address</mat-label>\n                <textarea matInput placeholder=\"Address\" [formControl]=\"doctorOfficeAddEditForm.controls['address']\"\n                    (blur)=\"inputUntouch(doctorOfficeAddEditForm,'address')\"></textarea>\n                <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid\n                  && doctorOfficeAddEditForm.controls['address'].errors.required\">\n                    Address field can not be blank</mat-error>\n            </mat-form-field>\n            <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n                <mat-label>State</mat-label>\n                <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n                    <mat-option [value]=0>Select a category</mat-option>\n                    <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n                </mat-select>\n            </mat-form-field>\n\n            <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n                <mat-label>City</mat-label>\n                <mat-select formControlName=\"city\">\n                    <mat-option [value]=0>Select a category</mat-option>\n                    <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n                </mat-select>\n            </mat-form-field>\n\n\n\n            <mat-form-field appearance=\"fill\">\n                <mat-label>ZIP</mat-label>\n                <input matInput placeholder=\"ZIP\" [formControl]=\"doctorOfficeAddEditForm.controls['zip']\"\n                    (blur)=\"inputUntouch(doctorOfficeAddEditForm,'zip')\">\n                <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['zip'].touched && !doctorOfficeAddEditForm.controls['zip'].valid\n                  && doctorOfficeAddEditForm.controls['zip'].errors.required\">\n\n                    Zip field can not be blank</mat-error>\n            </mat-form-field>\n\n\n            <mat-form-field>\n                <mat-label>Date</mat-label>\n                <input [value]=\"date.value\" matInput [matDatepicker]=\"myPicker\" placeholder=\"date\">\n                <mat-datepicker-toggle matSuffix [for]=\"myPicker\" disabled></mat-datepicker-toggle>\n                <mat-datepicker #myPicker></mat-datepicker>\n            </mat-form-field>\n\n\n            <!-- <ng-container *ngIf=\"!params_id\"> -->\n                <mat-form-field class=\"form-group\">\n                    <input matInput placeholder=\"Password\" type=\"password\"\n                        [formControl]=\"doctorOfficeAddEditForm.controls['password']\">\n                    <mat-error\n                        *ngIf=\"!doctorOfficeAddEditForm.controls['password'].valid && doctorOfficeAddEditForm.controls['password'].touched\">\n                        Password field can not be blank</mat-error>\n\n                </mat-form-field>\n                <mat-form-field class=\"form-group\">\n                    <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                        [formControl]=\"doctorOfficeAddEditForm.controls['confirmpassword']\">\n                    <mat-error\n                        *ngIf=\"!doctorOfficeAddEditForm.controls['confirmpassword'].valid && doctorOfficeAddEditForm.controls['confirmpassword'].touched\">\n                        Password does not match </mat-error>\n                </mat-form-field>\n            <!-- </ng-container> -->\n\n            <mat-checkbox [formControl]=\"doctorOfficeAddEditForm.controls['status']\" checked>Status</mat-checkbox>\n\n            <!-- <ng-container *ngIf=\"params_id\">\n\n                <button mat-flat-button type=\"button\" (click)=\"openDialog(test)\"> Change Password </button>\n            </ng-container> -->\n            <span class=\"submit_form\">\n                <button mat-flat-button type=\"reset\">Reset </button>\n                <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }} </button>\n            </span>\n        </form>\n    </mat-card-content>\n</mat-card>\n\n<app-admin-footer></app-admin-footer>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/admin/doctor-office-management/doctor-office-management.component.html":
+/*!*****************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/admin/doctor-office-management/doctor-office-management.component.html ***!
+  \*****************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Admin Header -->\n<app-admin-header></app-admin-header>\n\n<!-- header with add button -->\n<mat-card-content class=\"title_wrapper\">\n    manage Doctor's Office\n</mat-card-content>\n\n<span class=\"add_header\">\n\n    <span class=\"bradcrumb\"><a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Manage Doctor's Office</span>\n    <button mat-flat-button [routerLink]=\"['/admin/doctor-office-management/add']\">Add Doctors Office</button>\n</span>\n\n<lib-listing class=\"DataTable\" *ngIf=\"doctorOfficeAllData.length>0\" \n        [datasource]=\"doctorOfficeAllData\"\n        [skip]=\"doctorOfficeAllData_skip\" \n        [modify_header_array]=\"doctorOfficeAllData_modify_header\" \n        [apiurl]=\"apiUrl\" \n        [sourcedata]=\"tableName\"\n        [editroute]=\"editUrl\" \n        [jwttoken]=\"user_cookie\" \n        [statusarr]=\"status\" \n        [updateendpoint]=\"UpdateEndpoint\"\n        [deleteendpoint]=\"deleteEndpoint\" \n        [date_search_endpoint]=\"SearchingEndpoint\"\n        [date_search_source]=\"SearchingSourceName\"\n        [search_settings]=\"search_settings\">\n      </lib-listing>\n      <h2 *ngIf=\"doctorOfficeAllData.length == 0\">No record found.</h2>\n\n<!-- Admin Footer -->\n<app-admin-footer></app-admin-footer>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.html":
 /*!***********************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.html ***!
@@ -5090,7 +5116,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Admin Header -->\n<app-admin-header></app-admin-header>\n\n<!-- header with add button -->\n<mat-card-content class=\"title_wrapper\">\n  {{ htmlText.header }}\n</mat-card-content>\n\n\n<span class=\"add_header\">\n\n  <span class=\"bradcrumb\">\n    <a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp; \n    <a [routerLink]=\"['/admin/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n    {{ htmlText.nav }}\n  </span>\n</span>\n<!-- End header with add button -->\n\n<mat-card class=\"add_form\">\n\n  <h2>add technician</h2>\n\n\n  <mat-card-content class=\"form_wrapper\">\n    <form class=\"example-form\" autocomplete=\"off\" name=\"TechManagementAddEditForm\"\n      [formGroup]=\"TechManagementAddEditForm\" (ngSubmit)=\"TechManagementAddFormFormSubmit()\">\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Enter First Name</mat-label>\n        <input matInput placeholder=\"First Name\" [formControl]=\"TechManagementAddEditForm.controls['firstname']\"\n          (blur)=\"inputUntouch(TechManagementAddEditForm,'firstname')\">\n        <mat-error *ngIf=\"TechManagementAddEditForm.controls['firstname'].touched && !TechManagementAddEditForm.controls['firstname'].valid\n           && TechManagementAddEditForm.controls['firstname'].errors.required\">\n          First Name field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Enter Last Name</mat-label>\n        <input matInput placeholder=\"Last Name\" [formControl]=\"TechManagementAddEditForm.controls['lastname']\"\n          (blur)=\"inputUntouch(TechManagementAddEditForm,'lastname')\">\n        <mat-error *ngIf=\"TechManagementAddEditForm.controls['lastname'].touched && !TechManagementAddEditForm.controls['lastname'].valid\n           && TechManagementAddEditForm.controls['lastname'].errors.required\">\n          Last Name field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Email Address</mat-label>\n        <input matInput placeholder=\"Email Address\" [formControl]=\"TechManagementAddEditForm.controls['email']\"\n          (blur)=\"inputUntouch(TechManagementAddEditForm,'email')\">\n        <mat-error *ngIf=\"TechManagementAddEditForm.controls['email'].touched && !TechManagementAddEditForm.controls['email'].valid\n            && TechManagementAddEditForm.controls['email'].errors.required\">\n          E-Mail field can not be blank</mat-error>\n        <mat-error\n          *ngIf=\"!TechManagementAddEditForm.controls['email'].valid && !TechManagementAddEditForm.controls['email'].errors.required\">\n          Email is not valid</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Phone </mat-label>\n        <input matInput placeholder=\"Phone\" [formControl]=\"TechManagementAddEditForm.controls['phone']\"\n          (blur)=\"inputUntouch(TechManagementAddEditForm,'phone')\">\n        <mat-error *ngIf=\"TechManagementAddEditForm.controls['phone'].touched && !TechManagementAddEditForm.controls['phone'].valid\n            && TechManagementAddEditForm.controls['phone'].errors.required\">\n          Phone Number field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Address</mat-label>\n        <textarea matInput placeholder=\"Address\" [formControl]=\"TechManagementAddEditForm.controls['address']\"\n          (blur)=\"inputUntouch(TechManagementAddEditForm,'address')\"></textarea>\n        <mat-error *ngIf=\"TechManagementAddEditForm.controls['address'].touched && !TechManagementAddEditForm.controls['address'].valid\n            && TechManagementAddEditForm.controls['address'].errors.required\">\n          Address field can not be blank</mat-error>\n      </mat-form-field>\n      <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n        <mat-label>State</mat-label>\n        <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n          <mat-option [value]=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n        <mat-label>City</mat-label>\n        <mat-select formControlName=\"city\">\n          <mat-option [value]=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>ZIP</mat-label>\n        <input matInput placeholder=\"ZIP\" [formControl]=\"TechManagementAddEditForm.controls['zip']\"\n          (blur)=\"inputUntouch(TechManagementAddEditForm,'zip')\">\n        <mat-error *ngIf=\"TechManagementAddEditForm.controls['zip'].touched && !TechManagementAddEditForm.controls['zip'].valid\n            && TechManagementAddEditForm.controls['zip'].errors.required\">\n\n          Zip field can not be blank</mat-error>\n      </mat-form-field>\n\n\n      <mat-form-field>\n        <mat-label>Date</mat-label>\n        <input [value]=\"date.value\" matInput [matDatepicker]=\"myPicker\" placeholder=\"date\">\n        <mat-datepicker-toggle matSuffix [for]=\"myPicker\" disabled></mat-datepicker-toggle>\n        <mat-datepicker #myPicker></mat-datepicker>\n      </mat-form-field>\n      <mat-form-field class=\"form-group\">\n        <input matInput placeholder=\"Password\" type=\"password\"\n          [formControl]=\"TechManagementAddEditForm.controls['password']\">\n        <mat-error\n          *ngIf=\"!TechManagementAddEditForm.controls['password'].valid && TechManagementAddEditForm.controls['password'].touched\">\n          Password field can not be blank</mat-error>\n\n      </mat-form-field>\n      <mat-form-field class=\"form-group\">\n        <input matInput placeholder=\"Confirm Password\" type=\"password\"\n          [formControl]=\"TechManagementAddEditForm.controls['confirmpassword']\">\n        <mat-error\n          *ngIf=\"!TechManagementAddEditForm.controls['confirmpassword'].valid && TechManagementAddEditForm.controls['confirmpassword'].touched\">\n          Password does not match </mat-error>\n\n      </mat-form-field>\n\n      <mat-checkbox [formControl]=\"TechManagementAddEditForm.controls['status']\" checked>Status</mat-checkbox>\n      <!-- <mat-error *ngIf=\"TechManagementAddEditForm.controls['status'].touched && !TechManagementAddEditForm.controls['status'].valid\n        && TechManagementAddEditForm.controls['status'].errors.required\">\n        Status field can not be blank</mat-error> -->\n\n      <span class=\"submit_form\">\n        <button mat-flat-button type=\"reset\">Reset </button>\n        <button mat-flat-button type=\"submit\" [disabled]=\"!TechManagementAddEditForm.valid\"> {{ htmlText.buttonText }} </button>\n      </span>\n    </form>\n  </mat-card-content>\n</mat-card>\n\n\n<!-- Admin Footer -->\n<app-admin-footer></app-admin-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Admin Header -->\n<app-admin-header></app-admin-header>\n\n<!-- header with add button -->\n<mat-card-content class=\"title_wrapper\">\n  {{ htmlText.header }}\n</mat-card-content>\n\n\n<span class=\"add_header\">\n\n  <span class=\"bradcrumb\">\n    <a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n    <a [routerLink]=\"['/admin/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n    {{ htmlText.nav }}\n  </span>\n</span>\n<!-- End header with add button -->\n\n<mat-card class=\"add_form\">\n\n  <h2>{{ headerText}}</h2>\n\n\n  <mat-card-content class=\"form_wrapper\">\n    <form class=\"example-form\" autocomplete=\"off\" name=\"TechManagementAddEditForm\"\n      [formGroup]=\"TechManagementAddEditForm\" (ngSubmit)=\"TechManagementAddFormFormSubmit()\">\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Enter First Name</mat-label>\n        <input matInput placeholder=\"First Name\" [formControl]=\"TechManagementAddEditForm.controls['firstname']\"\n          (blur)=\"inputUntouch(TechManagementAddEditForm,'firstname')\">\n        <mat-error *ngIf=\"TechManagementAddEditForm.controls['firstname'].touched && !TechManagementAddEditForm.controls['firstname'].valid\n           && TechManagementAddEditForm.controls['firstname'].errors.required\">\n          First Name field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Enter Last Name</mat-label>\n        <input matInput placeholder=\"Last Name\" [formControl]=\"TechManagementAddEditForm.controls['lastname']\"\n          (blur)=\"inputUntouch(TechManagementAddEditForm,'lastname')\">\n        <mat-error *ngIf=\"TechManagementAddEditForm.controls['lastname'].touched && !TechManagementAddEditForm.controls['lastname'].valid\n           && TechManagementAddEditForm.controls['lastname'].errors.required\">\n          Last Name field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Email Address</mat-label>\n        <input matInput placeholder=\"Email Address\" [formControl]=\"TechManagementAddEditForm.controls['email']\"\n          (blur)=\"inputUntouch(TechManagementAddEditForm,'email')\">\n        <mat-error *ngIf=\"TechManagementAddEditForm.controls['email'].touched && !TechManagementAddEditForm.controls['email'].valid\n            && TechManagementAddEditForm.controls['email'].errors.required\">\n          E-Mail field can not be blank</mat-error>\n        <mat-error\n          *ngIf=\"!TechManagementAddEditForm.controls['email'].valid && !TechManagementAddEditForm.controls['email'].errors.required\">\n          Email is not valid</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Phone </mat-label>\n        <input matInput placeholder=\"Phone\" [formControl]=\"TechManagementAddEditForm.controls['phone']\"\n          (blur)=\"inputUntouch(TechManagementAddEditForm,'phone')\">\n        <mat-error *ngIf=\"TechManagementAddEditForm.controls['phone'].touched && !TechManagementAddEditForm.controls['phone'].valid\n            && TechManagementAddEditForm.controls['phone'].errors.required\">\n          Phone Number field can not be blank</mat-error>\n      </mat-form-field>\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Address</mat-label>\n        <textarea matInput placeholder=\"Address\" [formControl]=\"TechManagementAddEditForm.controls['address']\"\n          (blur)=\"inputUntouch(TechManagementAddEditForm,'address')\"></textarea>\n        <mat-error *ngIf=\"TechManagementAddEditForm.controls['address'].touched && !TechManagementAddEditForm.controls['address'].valid\n            && TechManagementAddEditForm.controls['address'].errors.required\">\n          Address field can not be blank</mat-error>\n      </mat-form-field>\n      <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n        <mat-label>State</mat-label>\n        <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n          <mat-option [value]=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n        <mat-label>City</mat-label>\n        <mat-select formControlName=\"city\">\n          <mat-option [value]=0>Select a category</mat-option>\n          <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n\n\n      <mat-form-field appearance=\"fill\">\n        <mat-label>ZIP</mat-label>\n        <input matInput placeholder=\"ZIP\" [formControl]=\"TechManagementAddEditForm.controls['zip']\"\n          (blur)=\"inputUntouch(TechManagementAddEditForm,'zip')\">\n        <mat-error *ngIf=\"TechManagementAddEditForm.controls['zip'].touched && !TechManagementAddEditForm.controls['zip'].valid\n            && TechManagementAddEditForm.controls['zip'].errors.required\">\n\n          Zip field can not be blank</mat-error>\n      </mat-form-field>\n\n\n      <mat-form-field>\n        <mat-label>Date</mat-label>\n        <input [value]=\"date.value\" matInput [matDatepicker]=\"myPicker\" placeholder=\"date\">\n        <mat-datepicker-toggle matSuffix [for]=\"myPicker\" disabled></mat-datepicker-toggle>\n        <mat-datepicker #myPicker></mat-datepicker>\n      </mat-form-field>\n\n      <!-- for modal to change password -->\n      <ng-container *ngIf=\"!params_id\">\n        <mat-form-field class=\"form-group\">\n          <input matInput placeholder=\"Password\" type=\"password\"\n            [formControl]=\"TechManagementAddEditForm.controls['password']\">\n          <mat-error\n            *ngIf=\"!TechManagementAddEditForm.controls['password'].valid && TechManagementAddEditForm.controls['password'].touched\">\n            Password field can not be blank</mat-error>\n\n        </mat-form-field>\n        <mat-form-field class=\"form-group\">\n          <input matInput placeholder=\"Confirm Password\" type=\"password\"\n            [formControl]=\"TechManagementAddEditForm.controls['confirmpassword']\">\n          <mat-error\n            *ngIf=\"!TechManagementAddEditForm.controls['confirmpassword'].valid && TechManagementAddEditForm.controls['confirmpassword'].touched\">\n            Password does not match </mat-error>\n        </mat-form-field>\n      </ng-container>\n\n      <mat-checkbox [formControl]=\"TechManagementAddEditForm.controls['status']\" checked>Status</mat-checkbox>\n\n\n      <!-- end here -->\n        <span class=\"submit_form\">\n          <button mat-flat-button type=\"button\" (click)=\"backToManagePage()\">Back </button>\n        <button mat-flat-button type=\"reset\">Reset </button>\n        <button mat-flat-button type=\"submit\"  [disabled]=\"TechManagementAddEditForm.valid\" > {{ htmlText.buttonText }} </button>\n        <ng-container *ngIf =\"params_id\">\n            <button mat-flat-button type=\"button\" (click)=\"openDialog(test)\"  > Change Password </button>\n          </ng-container>\n      </span>\n    </form>\n    \n\n  </mat-card-content>\n</mat-card>\n\n\n<!-- Admin Footer -->\n<app-admin-footer></app-admin-footer>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/admin/tech-management/add-edit-tech/modal.html":
+/*!*****************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/admin/tech-management/add-edit-tech/modal.html ***!
+  \*****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n<mat-card class=\"add_form\">\n    <h1 mat-dialog-title>Change Password</h1>\n\n    <form class=\"example-form\" autocomplete=\"off\" name=\"changePwdForm\" [formGroup]=\"changePwdForm\"\n        (ngSubmit)=\"changePasswordFormSubmit()\">\n        <mat-dialog-content class=\"mat-typography\">\n\n\n            <mat-form-field>\n                <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"changePwdForm.controls['password']\">\n                <mat-error *ngIf=\"changePwdForm.controls['password'].touched && !changePwdForm.controls['password'].valid\n          && changePwdForm.controls['password'].errors.required\">\n                    Password can not be blank</mat-error>\n            </mat-form-field> <br>\n            <mat-form-field>\n                <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"changePwdForm.controls['confirmpassword']\">\n                <mat-error\n                    *ngIf=\"!changePwdForm.controls['confirmpassword'].valid && changePwdForm.controls['confirmpassword'].touched\">\n                    Password does not match </mat-error>\n                \n            </mat-form-field><br>   \n\n            <span class=\"submit_form\">\n                <button mat-flat-button mat-dialog-close type=\"button\" > Cancel </button>\n                <button mat-flat-button type=\"submit\" [mat-dialog-close]=\"true\" cdkFocusInitial> Submit </button>\n            </span>\n        </mat-dialog-content>\n    </form>\n</mat-card>");
 
 /***/ }),
 
@@ -5129,7 +5168,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Admin Header -->\n<app-admin-header></app-admin-header>\n\n<!-- header with add button -->\n<mat-card-content class=\"title_wrapper\">\n  manage Technician\n</mat-card-content>\n\n\n<span class=\"add_header\">\n\n  <span class=\"bradcrumb\"><a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Manage Technician</span>\n  <button mat-flat-button [routerLink]=\"['/admin/tech-management/add']\">Add Technician</button>\n</span>\n<!-- End header with add button -->\n\n\n<lib-listing class=\"DataTable\" *ngIf=\"TechDashboardAllData.length>0\" \n  [datasource]=\"TechDashboardAllData\"\n  [skip]=\"allUserData_skip\" \n  [modify_header_array]=\"allUserData_modify_header\" \n  [apiurl]=\"apiUrl\" \n  [sourcedata]=\"tableName\"\n  [editroute]=\"editUrl\" \n  [jwttoken]=\"user_cookie\" \n  [statusarr]=\"status\" \n  [updateendpoint]=\"UpdateEndpoint\"\n  [deleteendpoint]=\"deleteEndpoint\" \n  [date_search_endpoint]=\"SearchingEndpoint\"\n  [date_search_source]=\"SearchingSourceName\"\n  [search_settings]=\"search_settings\">\n</lib-listing>\n<h2 *ngIf=\"TechDashboardAllData.length == 0\">No record found.</h2>\n<mat-card-content class=\"footer_section\">\n  <span class=\"footer_content\">\n\n    <!-- <mat-card-content class=\"link\">\n      <a href=\"\">Privacy Policy</a>\n      <a href=\"\"> Terms & conditions</a>\n    </mat-card-content>\n    <p>© Copyright 2018 Advanced Wellness Solutions- All Rights Reserved</p>\n  </span>\n</mat-card-content> -->\n\n<!-- Admin Footer -->\n<app-admin-footer></app-admin-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Admin Header -->\n<app-admin-header></app-admin-header>\n\n<!-- header with add button -->\n<mat-card-content class=\"title_wrapper\">\n  manage Technician\n</mat-card-content>\n\n\n<span class=\"add_header\">\n\n  <span class=\"bradcrumb\"><a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Manage Technician</span>\n  <button mat-flat-button [routerLink]=\"['/admin/tech-management/add']\">Add Technician</button>\n</span>\n<!-- End header with add button -->\n\n\n<lib-listing class=\"DataTable\" *ngIf=\"TechDashboardAllData.length>0\" \n  [datasource]=\"TechDashboardAllData\"\n  [skip]=\"allUserData_skip\" \n  [modify_header_array]=\"allUserData_modify_header\" \n  [apiurl]=\"apiUrl\" \n  [sourcedata]=\"tableName\"\n  [editroute]=\"editUrl\" \n  [jwttoken]=\"user_cookie\" \n  [statusarr]=\"status\" \n  [updateendpoint]=\"UpdateEndpoint\"\n  [deleteendpoint]=\"deleteEndpoint\" \n  [date_search_endpoint]=\"SearchingEndpoint\"\n  [date_search_source]=\"SearchingSourceName\"\n  [search_settings]=\"search_settings\">\n</lib-listing>\n<h2 *ngIf=\"TechDashboardAllData.length == 0\">No record found.</h2>\n<!-- <mat-card-content class=\"footer_section\">\n  <span class=\"footer_content\"> -->\n\n    <!-- <mat-card-content class=\"link\">\n      <a href=\"\">Privacy Policy</a>\n      <a href=\"\"> Terms & conditions</a>\n    </mat-card-content>\n    <p>© Copyright 2018 Advanced Wellness Solutions- All Rights Reserved</p>\n  </span>\n</mat-card-content> -->\n\n<!-- Admin Footer -->\n<app-admin-footer></app-admin-footer>\n");
 
 /***/ }),
 
@@ -5181,7 +5220,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<span class=\"main_wrapper\">\n  <span class=\"img_wrapper\">\n    <mat-card class=\"login_wrapper\">\n\n      <mat-card-content>\n        <div class=\"login_container\">\n\n          <lib-login \n            [fromTitle]=\"fromTitle\"\n            [fullUrl]=\"fullUrl\"\n            [forgetRouteingUrl]=\"forgetRouteingUrl\"\n            [signUpRouteingUrl]='signUpRouteingUrl'\n            [routerStatus]=\"routerStatus\" \n            [endpoint]=\"endpoint\" \n            [logo]=\"logo\">\n          </lib-login>\n        </div>\n\n      </mat-card-content>\n\n    </mat-card>\n  </span>\n</span>");
+/* harmony default export */ __webpack_exports__["default"] = ("<span class=\"main_wrapper\">\n  <span class=\"img_wrapper\">\n    <mat-card class=\"login_wrapper\">\n\n      <mat-card-content>\n        <div class=\"login_container\">\n\n          <lib-login \n            [fromTitle]=\"fromTitle\"\n            [fullUrl]=\"fullUrl\"\n            [forgetRouteingUrl]=\"forgetRouteingUrl\"\n            [signUpRouteingUrl]='signUpRouteingUrl'\n            [routerStatus]=\"routerStatus\" \n            [endpoint]=\"endpoint\" \n            [logo]=\"logo\">\n          </lib-login>\n        </div>\n\n      </mat-card-content>\n\n    </mat-card>\n  </span>\n</span>\n");
 
 /***/ }),
 
@@ -5302,6 +5341,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/common/password-dialog-box/password-dialog-box.component.html":
+/*!********************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/common/password-dialog-box/password-dialog-box.component.html ***!
+  \********************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>password-dialog-box works!</p>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/common/upload-dialog-box/upload-dialog-box.component.html":
 /*!****************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/common/upload-dialog-box/upload-dialog-box.component.html ***!
@@ -5376,7 +5428,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-tech-header></app-tech-header>\n\n<mat-card-content class=\"title_wrapper\">\n  {{ htmlText.header }}\n</mat-card-content>\n\n<span class=\"add_header\">\n\n  <span class=\"bradcrumb\">\n    <a [routerLink]=\"['/tech/dashboard']\">Dashboard &nbsp;/</a> &nbsp; \n    {{ htmlText.nav }}\n  </span>\n</span>\n<mat-card class=\"add_form\">\n\n  \n\n  <mat-card-content>\n    <form class=\"example-form\" autocomplete=\"off\" name=\"patientAddEditForm\" [formGroup]=\"patientAddEditForm\"\n      (ngSubmit)=\"patientAddEditFormSubmit()\">\n\n\n\n      <mat-card-content>\n        <label>Patient Name</label>\n        <mat-form-field>\n          <input matInput [formControl]=\"patientAddEditForm.controls['patientName']\"\n            (blur)=\"inputUntouch(patientAddEditForm,'patientName')\">\n          <mat-error *ngIf=\"patientAddEditForm.controls['patientName'].touched && !patientAddEditForm.controls['patientName'].valid\n          && patientAddEditForm.controls['patientName'].errors.required\">\n            Patient Name can not be blank</mat-error>\n        </mat-form-field>\n      </mat-card-content>\n\n      <mat-card-content>\n        <label>Patient Gender</label>\n        <input type=\"radio\" value='Male' formControlName=\"gender\">Male\n        <input type=\"radio\" value='Female' formControlName=\"gender\">Female\n      </mat-card-content>\n\n      <mat-card-content>\n        <label> DOB</label>\n        <mat-form-field>\n          <input matInput [matDatepicker]=\"picker\" [(ngModel)]=\"dateofbirth\" [ngModelOptions]=\"{standalone: true}\">\n          <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n          <mat-datepicker #picker></mat-datepicker>\n        </mat-form-field>\n      </mat-card-content>\n\n      <mat-card-content>\n        <label>Ordering Physician</label>\n        <!-- <mat-form-field>\n          <input matInput [formControl]=\"patientAddEditForm.controls['physicalOrdering']\"\n            (blur)=\"inputUntouch(patientAddEditForm,'physicalOrdering')\">\n          <mat-error *ngIf=\"patientAddEditForm.controls['physicalOrdering'].touched && !patientAddEditForm.controls['patientName'].valid\n          && patientAddEditForm.controls['physicalOrdering'].errors.required\">\n            Ordering Physician field can not be blank</mat-error>\n        </mat-form-field> -->\n        <!-- dropdown -->\n        <mat-form-field >\n          \n            <mat-select formControlName=\"physicalOrdering\" >\n              <mat-option [value]=0>Select a Doctor</mat-option>\n              <mat-option *ngFor=\"let doc of allDoctorDataArray;\" value=\"{{ doc._id }}\">{{ doc.firstname }} {{ doc.lastname }}\n                </mat-option>\n            </mat-select>\n          </mat-form-field>\n      </mat-card-content>\n\n\n      <span class=\"test_date_wrapper\">\n\n        <mat-card-content>\n          <label> Test Date</label>\n          <mat-form-field>\n            <input matInput [matDatepicker]=\"picker4\" placeholder=\"\" [(ngModel)]=\"startdate\"\n              [ngModelOptions]=\"{standalone: true}\">\n            <mat-datepicker-toggle matSuffix [for]=\"picker4\"></mat-datepicker-toggle>\n            <mat-datepicker #picker4></mat-datepicker>\n          </mat-form-field>\n\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> Test Completed</label>\n          <mat-form-field>\n            <input matInput [matDatepicker]=\"picker3\" [(ngModel)]=\"enddate\" [ngModelOptions]=\"{standalone: true}\">\n            <mat-datepicker-toggle matSuffix [for]=\"picker3\"></mat-datepicker-toggle>\n            <mat-datepicker #picker3></mat-datepicker>\n          </mat-form-field>\n        </mat-card-content>\n        <mat-card-content>\n          <label>Date</label>\n          <mat-form-field>\n\n            <input [value]=\"date.value\" matInput [matDatepicker]=\"myPicker\">\n            <mat-datepicker-toggle matSuffix [for]=\"myPicker\" disabled></mat-datepicker-toggle>\n            <mat-datepicker #myPicker></mat-datepicker>\n          </mat-form-field>\n        </mat-card-content>\n        <br>\n        <hr>\n        <mat-card-content>\n          <label>PTGTP</label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['PTGPT']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'PTGPT')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['PTGPT'].touched && !patientAddEditForm.controls['PTGPT'].valid\n            && patientAddEditForm.controls['PTGPT'].errors.required\">\n            PTGTP field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n        <mat-card-content>\n          <label> PTGVLFI </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['PTGVLFI']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'PTGVLFI')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['PTGVLFI'].touched && !patientAddEditForm.controls['PTGVLFI'].valid\n              && patientAddEditForm.controls['PTGVLFI'].errors.required\">\n              PTGVLFI field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> IR </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['IR']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'IR')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['IR'].touched && !patientAddEditForm.controls['IR'].valid\n              && patientAddEditForm.controls['IR'].errors.required\">\n              IR field can not be blank</mat-error>\n\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> ESRNO<br> (Baseline) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['ESRNO']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'ESRNO')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['ESRNO'].touched && !patientAddEditForm.controls['ESRNO'].valid\n              && patientAddEditForm.controls['ESRNO'].errors.required\">\n              ESRNO field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> ESR L<br> (Latency) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['ESRL']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'ESRL')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['ESRL'].touched && !patientAddEditForm.controls['ESRL'].valid\n              && patientAddEditForm.controls['ESRL'].errors.required\">\n              ESR L field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> Peak C <br> (Amplitude) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['peakC']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'peakC')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['peakC'].touched && !patientAddEditForm.controls['peakC'].valid\n              && patientAddEditForm.controls['peakC'].errors.required\">\n              Peak C field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> PTG Type <br> (Enter\n            Type 1-5) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['PTGtype']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'PTGtype')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['PTGtype'].touched && !patientAddEditForm.controls['PTGtype'].valid\n              && patientAddEditForm.controls['PTGtype'].errors.required\">\n              PTG Type field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n\n        <mat-card-content>\n          <label> PTG CVD </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['PTGCVD']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'PTGCVD')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['PTGCVD'].touched && !patientAddEditForm.controls['PTGCVD'].valid\n              && patientAddEditForm.controls['PTGCVD'].errors.required\">\n              PTG CVD field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n        <mat-card-content>\n          <label> Stress I <br> (Stress Index) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['stressI']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'stressI')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['stressI'].touched && !patientAddEditForm.controls['stressI'].valid\n              && patientAddEditForm.controls['stressI'].errors.required\">\n              Stress I field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n        <mat-card-content>\n          <label> RI </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['RI']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'RI')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['RI'].touched && !patientAddEditForm.controls['RI'].valid\n              && patientAddEditForm.controls['RI'].errors.required\">\n              RI can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n\n        <mat-card-content>\n          <label> AIPTG<br> (IPTG) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['AIPTG']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'AIPTG')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['AIPTG'].touched && !patientAddEditForm.controls['AIPTG'].valid\n              && patientAddEditForm.controls['AIPTG'].errors.required\">\n              AIPTG can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> CIs (CI) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['CIsCI']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'CIsCI')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['CIsCI'].touched && !patientAddEditForm.controls['CIsCI'].valid\n              && patientAddEditForm.controls['CIsCI'].errors.required\">\n              CIs (CI) can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> pNN50 </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['pNN50']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'pNN50')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['pNN50'].touched && !patientAddEditForm.controls['pNN50'].valid\n              && patientAddEditForm.controls['pNN50'].errors.required\">\n              pNN50 can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n\n        <mat-card-content>\n          <label> RMSSD </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['RMSSD']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'RMSSD')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['RMSSD'].touched && !patientAddEditForm.controls['RMSSD'].valid\n              && patientAddEditForm.controls['RMSSD'].errors.required\">\n              RMSSD can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> SD ba - </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['SDba']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'SDba')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['SDba'].touched && !patientAddEditForm.controls['SDba'].valid\n              && patientAddEditForm.controls['SDba'].errors.required\">\n              SD ba - can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> SD da </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['SDda']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'SDda')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['SDda'].touched && !patientAddEditForm.controls['SDda'].valid\n              && patientAddEditForm.controls['SDda'].errors.required\">\n              SD da can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n\n        <mat-card-content>\n          <label>DPRS </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['DPRS']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'DPRS')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['DPRS'].touched && !patientAddEditForm.controls['DPRS'].valid\n              && patientAddEditForm.controls['DPRS'].errors.required\">\n              DPRS can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label>ValsR. </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['ValsR']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'ValsR')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['ValsR'].touched && !patientAddEditForm.controls['ValsR'].valid\n              && patientAddEditForm.controls['ValsR'].errors.required\">\n              ValsR can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label>BMI<br> Enter BMI Score\n            (I.E. 29.1) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['BMI']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'BMI')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['BMI'].touched && !patientAddEditForm.controls['BMI'].valid\n              && patientAddEditForm.controls['BMI'].errors.required\">\n              BMI can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label>Blood\n            Pressure<br> Systolic &\n            Diastolic\n            (120/80) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['bloodPressure']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'bloodPressure')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['bloodPressure'].touched && !patientAddEditForm.controls['bloodPressure'].valid\n              && patientAddEditForm.controls['bloodPressure'].errors.required\">\n              Blood Pressure can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n      </span>\n\n      <span class=\"patient_diagnotes\">\n        <label>Patient Diagnoses & Notes:</label>\n        <mat-form-field class=\"example-full-width\">\n\n          <textarea matInput placeholder=\"Leave a comment\" [formControl]=\"patientAddEditForm.controls['leaveNotes']\"\n            (blur)=\"inputUntouch(patientAddEditForm,'leaveNotes')\">\n         </textarea>\n          <mat-error *ngIf=\"patientAddEditForm.controls['leaveNotes'].touched && !patientAddEditForm.controls['leaveNotes'].valid\n         && patientAddEditForm.controls['leaveNotes'].errors.required\">\n            Patient Diagnoses & Notes can not be blank</mat-error>\n        </mat-form-field>\n      </span>\n      <span class=\"submit_form\">\n        <button mat-flat-button type=\"reset\">Reset </button>\n        <button mat-flat-button type=\"submit\" > {{ buttonText }} </button>\n      </span>\n    </form>\n  </mat-card-content>\n</mat-card>\n\n\n<!-- Tech Footer -->\n<app-tech-footer></app-tech-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-tech-header></app-tech-header>\n\n<mat-card-content class=\"title_wrapper\">\n  {{ htmlText.header }}\n</mat-card-content>\n\n<span class=\"add_header\">\n\n  <span class=\"bradcrumb\">\n    <a [routerLink]=\"['/tech/dashboard']\">Dashboard &nbsp;/</a> &nbsp; \n    {{ htmlText.nav }}\n  </span>\n</span>\n<mat-card class=\"add_form\">\n\n  \n\n  <mat-card-content>\n    <form class=\"example-form\" autocomplete=\"off\" name=\"patientAddEditForm\" [formGroup]=\"patientAddEditForm\"\n      (ngSubmit)=\"patientAddEditFormSubmit()\">\n\n\n\n      <mat-card-content>\n        <label>Patient Name</label>\n        <mat-form-field>\n          <input matInput [formControl]=\"patientAddEditForm.controls['patientName']\"\n            (blur)=\"inputUntouch(patientAddEditForm,'patientName')\">\n          <mat-error *ngIf=\"patientAddEditForm.controls['patientName'].touched && !patientAddEditForm.controls['patientName'].valid\n          && patientAddEditForm.controls['patientName'].errors.required\">\n            Patient Name can not be blank</mat-error>\n        </mat-form-field>\n      </mat-card-content>\n\n      <mat-card-content>\n        <label>Patient Gender</label>\n        <input type=\"radio\" value='Male' formControlName=\"gender\">Male\n        <input type=\"radio\" value='Female' formControlName=\"gender\">Female\n      </mat-card-content>\n\n      <mat-card-content>\n        <label> DOB</label>\n        <mat-form-field>\n          <input matInput [matDatepicker]=\"picker\" [(ngModel)]=\"dateofbirth\" [ngModelOptions]=\"{standalone: true}\">\n          <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n          <mat-datepicker #picker></mat-datepicker>\n        </mat-form-field>\n      </mat-card-content>\n\n      <mat-card-content>\n        <label>Ordering Physician</label>\n        <!-- <mat-form-field>\n          <input matInput [formControl]=\"patientAddEditForm.controls['physicalOrdering']\"\n            (blur)=\"inputUntouch(patientAddEditForm,'physicalOrdering')\">\n          <mat-error *ngIf=\"patientAddEditForm.controls['physicalOrdering'].touched && !patientAddEditForm.controls['patientName'].valid\n          && patientAddEditForm.controls['physicalOrdering'].errors.required\">\n            Ordering Physician field can not be blank</mat-error>\n        </mat-form-field> -->\n        <!-- dropdown -->\n        <mat-form-field >\n          \n            <mat-select formControlName=\"physicalOrdering\" placeholder=\"Select a Doctor\" >\n              <mat-option [value]=0>Select a Doctor</mat-option>\n              <mat-option *ngFor=\"let doc of allDoctorDataArray;\" value=\"{{ doc._id }}\"> {{ doc.Full_Name }}\n                </mat-option>\n            </mat-select>\n          </mat-form-field>\n      </mat-card-content>\n\n\n      <span class=\"test_date_wrapper\">\n\n        <mat-card-content>\n          <label> Test Date</label>\n          <mat-form-field>\n            <input matInput [matDatepicker]=\"picker4\" placeholder=\"\" [(ngModel)]=\"startdate\"\n              [ngModelOptions]=\"{standalone: true}\">\n            <mat-datepicker-toggle matSuffix [for]=\"picker4\"></mat-datepicker-toggle>\n            <mat-datepicker #picker4></mat-datepicker>\n          </mat-form-field>\n\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> Test Completed</label>\n          <mat-form-field>\n            <input matInput [matDatepicker]=\"picker3\" [(ngModel)]=\"enddate\" [ngModelOptions]=\"{standalone: true}\">\n            <mat-datepicker-toggle matSuffix [for]=\"picker3\"></mat-datepicker-toggle>\n            <mat-datepicker #picker3></mat-datepicker>\n          </mat-form-field>\n        </mat-card-content>\n        <!-- <mat-card-content>\n          <label>Date</label>\n          <mat-form-field>\n            <input [value]=\"date.value\" matInput [matDatepicker]=\"myPicker\">\n            <mat-datepicker-toggle matSuffix [for]=\"myPicker\" disabled></mat-datepicker-toggle>\n            <mat-datepicker #myPicker></mat-datepicker>\n          </mat-form-field>\n        </mat-card-content> -->\n        <br>\n        <hr>\n        <mat-card-content>\n          <label>PTGTP</label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['PTGPT']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'PTGPT')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['PTGPT'].touched && !patientAddEditForm.controls['PTGPT'].valid\n            && patientAddEditForm.controls['PTGPT'].errors.required\">\n            PTGTP field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n        <mat-card-content>\n          <label> PTGVLFI </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['PTGVLFI']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'PTGVLFI')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['PTGVLFI'].touched && !patientAddEditForm.controls['PTGVLFI'].valid\n              && patientAddEditForm.controls['PTGVLFI'].errors.required\">\n              PTGVLFI field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> IR </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['IR']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'IR')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['IR'].touched && !patientAddEditForm.controls['IR'].valid\n              && patientAddEditForm.controls['IR'].errors.required\">\n              IR field can not be blank</mat-error>\n\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> ESRNO<br> (Baseline) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['ESRNO']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'ESRNO')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['ESRNO'].touched && !patientAddEditForm.controls['ESRNO'].valid\n              && patientAddEditForm.controls['ESRNO'].errors.required\">\n              ESRNO field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> ESR L<br> (Latency) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['ESRL']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'ESRL')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['ESRL'].touched && !patientAddEditForm.controls['ESRL'].valid\n              && patientAddEditForm.controls['ESRL'].errors.required\">\n              ESR L field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> Peak C <br> (Amplitude) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['peakC']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'peakC')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['peakC'].touched && !patientAddEditForm.controls['peakC'].valid\n              && patientAddEditForm.controls['peakC'].errors.required\">\n              Peak C field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> PTG Type <br> (Enter\n            Type 1-5) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['PTGtype']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'PTGtype')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['PTGtype'].touched && !patientAddEditForm.controls['PTGtype'].valid\n              && patientAddEditForm.controls['PTGtype'].errors.required\">\n              PTG Type field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n\n        <mat-card-content>\n          <label> PTG CVD </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['PTGCVD']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'PTGCVD')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['PTGCVD'].touched && !patientAddEditForm.controls['PTGCVD'].valid\n              && patientAddEditForm.controls['PTGCVD'].errors.required\">\n              PTG CVD field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n        <mat-card-content>\n          <label> Stress I <br> (Stress Index) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['stressI']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'stressI')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['stressI'].touched && !patientAddEditForm.controls['stressI'].valid\n              && patientAddEditForm.controls['stressI'].errors.required\">\n              Stress I field can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n        <mat-card-content>\n          <label> RI </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['RI']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'RI')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['RI'].touched && !patientAddEditForm.controls['RI'].valid\n              && patientAddEditForm.controls['RI'].errors.required\">\n              RI can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n\n        <mat-card-content>\n          <label> AIPTG<br> (IPTG) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['AIPTG']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'AIPTG')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['AIPTG'].touched && !patientAddEditForm.controls['AIPTG'].valid\n              && patientAddEditForm.controls['AIPTG'].errors.required\">\n              AIPTG can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> CIs (CI) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['CIsCI']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'CIsCI')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['CIsCI'].touched && !patientAddEditForm.controls['CIsCI'].valid\n              && patientAddEditForm.controls['CIsCI'].errors.required\">\n              CIs (CI) can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> pNN50 </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['pNN50']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'pNN50')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['pNN50'].touched && !patientAddEditForm.controls['pNN50'].valid\n              && patientAddEditForm.controls['pNN50'].errors.required\">\n              pNN50 can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n\n        <mat-card-content>\n          <label> RMSSD </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['RMSSD']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'RMSSD')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['RMSSD'].touched && !patientAddEditForm.controls['RMSSD'].valid\n              && patientAddEditForm.controls['RMSSD'].errors.required\">\n              RMSSD can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> SD ba - </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['SDba']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'SDba')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['SDba'].touched && !patientAddEditForm.controls['SDba'].valid\n              && patientAddEditForm.controls['SDba'].errors.required\">\n              SD ba - can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label> SD da </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['SDda']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'SDda')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['SDda'].touched && !patientAddEditForm.controls['SDda'].valid\n              && patientAddEditForm.controls['SDda'].errors.required\">\n              SD da can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n\n        <mat-card-content>\n          <label>DPRS </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['DPRS']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'DPRS')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['DPRS'].touched && !patientAddEditForm.controls['DPRS'].valid\n              && patientAddEditForm.controls['DPRS'].errors.required\">\n              DPRS can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label>ValsR. </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['ValsR']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'ValsR')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['ValsR'].touched && !patientAddEditForm.controls['ValsR'].valid\n              && patientAddEditForm.controls['ValsR'].errors.required\">\n              ValsR can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label>BMI<br> Enter BMI Score\n            (I.E. 29.1) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['BMI']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'BMI')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['BMI'].touched && !patientAddEditForm.controls['BMI'].valid\n              && patientAddEditForm.controls['BMI'].errors.required\">\n              BMI can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n        <mat-card-content>\n          <label>Blood\n            Pressure<br> Systolic &\n            Diastolic\n            (120/80) </label>\n          <mat-form-field>\n            <input matInput [formControl]=\"patientAddEditForm.controls['bloodPressure']\"\n              (blur)=\"inputUntouch(patientAddEditForm,'bloodPressure')\">\n            <mat-error *ngIf=\"patientAddEditForm.controls['bloodPressure'].touched && !patientAddEditForm.controls['bloodPressure'].valid\n              && patientAddEditForm.controls['bloodPressure'].errors.required\">\n              Blood Pressure can not be blank</mat-error>\n          </mat-form-field>\n        </mat-card-content>\n\n      </span>\n\n      <span class=\"patient_diagnotes\">\n        <label>Patient Diagnoses & Notes:</label>\n        <mat-form-field class=\"example-full-width\">\n\n          <textarea matInput placeholder=\"Leave a comment\" [formControl]=\"patientAddEditForm.controls['leaveNotes']\"\n            (blur)=\"inputUntouch(patientAddEditForm,'leaveNotes')\">\n         </textarea>\n          <mat-error *ngIf=\"patientAddEditForm.controls['leaveNotes'].touched && !patientAddEditForm.controls['leaveNotes'].valid\n         && patientAddEditForm.controls['leaveNotes'].errors.required\">\n            Patient Diagnoses & Notes can not be blank</mat-error>\n        </mat-form-field>\n      </span>\n      <span class=\"submit_form\">\n        <button mat-flat-button type=\"reset\">Reset </button>\n        <button mat-flat-button type=\"submit\" > {{ buttonText }} </button>\n      </span>\n    </form>\n  </mat-card-content>\n</mat-card>\n\n\n<!-- Tech Footer -->\n<app-tech-footer></app-tech-footer>\n");
 
 /***/ }),
 
@@ -5415,7 +5467,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!--\n<mat-toolbar class=\"techdashboard_header\">\n    <mat-toolbar-row>\n      <span class=\"logo_wrapper\">\n        <img src=\"../../../assets/images/logo.png\">\n      </span>\n\n\n      <mat-card-content class=\"quotation\">\n        <p>ADVANCED ANS TECHNOLOGY – BETTER PATIENT CARE – INCREASE PRACTICE REVENUE</p>\n      </mat-card-content>\n\n\n      <mat-card-content class=\"profile_section\">\n        <mat-menu #appMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/tech/account-settings']\">\n            <mat-icon>account_circle</mat-icon> Account Settings\n          </button>\n          <button mat-menu-item [routerLink]=\"['/tech/account-settings/change-password']\">\n            <mat-icon>vpn_key</mat-icon> Change Password\n          </button>\n          <button mat-menu-item (click)=\"logout()\"> <mat-icon>power_settings_new</mat-icon> Logout </button>\n        </mat-menu>\n        <span class=\"username\">Adam Coury</span>\n        <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n          <span class=\"user_profile\">\n            <mat-icon>account_circle</mat-icon>\n            <i class=\"material-icons\">\n              keyboard_arrow_down\n            </i>\n          </span>\n        </button>\n\n      </mat-card-content>\n\n\n    </mat-toolbar-row>\n  </mat-toolbar> -->\n<!-- end header -->\n\n<app-tech-header></app-tech-header>\n<mat-card-content class=\"content_wrapper\">\n  <mat-card-content class=\"itemsection one\">\n    <span class=\"counteer\">{{ uploadedStatusCount }}</span>\n    <p>Total Number of <br>Reports uploaded</p>\n    <button mat-flat-button (click)=\"viewDetailsData('upload')\">View Details</button>\n  </mat-card-content>\n  <mat-card-content class=\"itemsection two\">\n    <span class=\"counteer\"> {{ processedStatusCount }} </span>\n    <p>Total Number of <br>Reports Processed</p>\n    <button mat-flat-button (click)=\"viewDetailsData('processed')\">View Details</button>\n  </mat-card-content>\n  <mat-card-content class=\"itemsection three\">\n    <span class=\"counteer\">{{ signedStatusCount }}</span>\n    <p>Total Number of Reports <br>remain to process\n\n    </p>\n    <button mat-flat-button (click)=\"viewDetailsData('remainProcess')\">View Details</button>\n  </mat-card-content>\n</mat-card-content>\n\n\n\n\n<mat-card-content class=\"doctor_content_wrapper\">\n  <mat-card-title>Doctor Office You Are Working With</mat-card-title>\n  <mat-card-content class=\"table_structure\">\n\n\n    <mat-list>\n      <mat-list-item>\n        <p class=\"title_n\">Name</p>\n        <p class=\"title_a\">{{ userSingleData.firstname }} {{ userSingleData.lastname }} </p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">Taxonomies</p>\n        <p class=\"title_a\">\n          <ng-container *ngFor=\"let n of userSingleData.taxo_list; let i = index;\">\n            {{ n }}\n            <ng-container *ngIf=\"i + 1 < userSingleData.taxo_list.length\">\n              ,\n            </ng-container>\n          </ng-container>\n        </p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">Email</p>\n        <p class=\"title_a\">{{ userSingleData.email }}</p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">Phone</p>\n        <p class=\"title_a\">{{ userSingleData.phone }}</p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">FAX</p>\n        <p class=\"title_a\">{{ userSingleData.fax }}</p>\n      </mat-list-item>\n    </mat-list>\n  </mat-card-content>\n</mat-card-content>\n\n\n\n<!-- patainet report section -->\n<mat-card-content class=\"patient_report_section\">\n  <mat-card-content class=\"patient_top_search\">\n    <h1>Patient record report</h1>\n    <!-- <span class=\"search_bar\">\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput [matDatepicker]=\"picker\" (focus)=\"picker.open()\" placeholder=\"Search By Date\">\n\n            <mat-datepicker #picker></mat-datepicker>\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput placeholder=\"Search By Status\">\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput placeholder=\"Search By Patient\">\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n      </span> -->\n  </mat-card-content>\n\n  <!-- table -->\n  <!-- <lib-listing class=\"DataTable\" *ngIf=\"TechDashboardAllData.length>0\" [datasource]=\"TechDashboardAllData\"\n    [skip]=\"allUserData_skip\" [modify_header_array]=\"allUserData_modify_header\" [apiurl]=\"apiUrl\"\n    [sourcedata]=\"tableName\" [editroute]=\"editUrl\" [jwttoken]=\"user_token\" [statusarr]=\"status\"\n    [updateendpoint]=\"UpdateEndpoint\" [deleteendpoint]=\"deleteEndpoint\" [date_search_endpoint]=\"SearchingEndpoint\"\n    [date_search_source]=\"tableName\" [search_settings]=\"search_settings\">\n  </lib-listing>\n  <h2 *ngIf=\"TechDashboardAllData.length == 0\">No record found.</h2> -->\n  <!-- end table -->\n\n\n\n  <span class=\"button_action\">\n    <button mat-flat-button routerLink=\"/tech/patient-management/bulk-upload\">upload bulk report</button>\n    <button mat-flat-button routerLink=\"/tech/patient-management/add\">add a new patient records manually</button>\n  </span>\n</mat-card-content>\n\n<!-- view details table start here -->\n\n<mat-card-content class=\"admin_table\" *ngIf=\"commonArray.length > 0\">\n\n  <mat-toolbar class=\"top_header\">\n    <h2>{{ headerText }}</h2>\n  </mat-toolbar>\n\n  <mat-form-field>\n    <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n  </mat-form-field>\n\n  <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n\n    <!-- Position Column -->\n    <ng-container matColumnDef=\"no\">\n      <th mat-header-cell *matHeaderCellDef> No. </th>\n      <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n    </ng-container>\n\n    <!-- Position Column -->\n    <ng-container matColumnDef=\"patientName\">\n      <th mat-header-cell *matHeaderCellDef> Patient Name. </th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"patient Name\"> {{ element.patientName }} </td>\n    </ng-container>\n\n    <!-- Name Column -->\n    <ng-container matColumnDef=\"record_type\">\n      <th mat-header-cell *matHeaderCellDef> Record Type </th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Record type\"> {{ element.record_type }} </td>\n    </ng-container>\n\n    <!-- Weight Column -->\n    <ng-container matColumnDef=\"date_added\">\n      <th mat-header-cell *matHeaderCellDef> Date Added </th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Date Added\"> {{ element.date_added }} </td>\n    </ng-container>\n\n    <!-- Symbol Column -->\n    <ng-container matColumnDef=\"status\">\n      <th mat-header-cell *matHeaderCellDef> Status </th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Status\"> <span>{{ element.status }} </span></td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;let i = index\"></tr>\n  </table>\n</mat-card-content>\n<!-- view details table end here -->\n\n\n\n<app-admin-footer></app-admin-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!--\n<mat-toolbar class=\"techdashboard_header\">\n    <mat-toolbar-row>\n      <span class=\"logo_wrapper\">\n        <img src=\"../../../assets/images/logo.png\">\n      </span>\n\n\n      <mat-card-content class=\"quotation\">\n        <p>ADVANCED ANS TECHNOLOGY – BETTER PATIENT CARE – INCREASE PRACTICE REVENUE</p>\n      </mat-card-content>\n\n\n      <mat-card-content class=\"profile_section\">\n        <mat-menu #appMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/tech/account-settings']\">\n            <mat-icon>account_circle</mat-icon> Account Settings\n          </button>\n          <button mat-menu-item [routerLink]=\"['/tech/account-settings/change-password']\">\n            <mat-icon>vpn_key</mat-icon> Change Password\n          </button>\n          <button mat-menu-item (click)=\"logout()\"> <mat-icon>power_settings_new</mat-icon> Logout </button>\n        </mat-menu>\n        <span class=\"username\">Adam Coury</span>\n        <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n          <span class=\"user_profile\">\n            <mat-icon>account_circle</mat-icon>\n            <i class=\"material-icons\">\n              keyboard_arrow_down\n            </i>\n          </span>\n        </button>\n\n      </mat-card-content>\n\n\n    </mat-toolbar-row>\n  </mat-toolbar> -->\n<!-- end header -->\n\n<app-tech-header></app-tech-header>\n<mat-card-content class=\"content_wrapper\">\n  <mat-card-content class=\"itemsection one\">\n    <span class=\"counteer\">{{ uploadedStatusCount }}</span>\n    <p>Total Number of <br>Reports uploaded</p>\n    <button mat-flat-button (click)=\"viewDetailsData('upload')\">View Details</button>\n  </mat-card-content>\n  <mat-card-content class=\"itemsection two\">\n    <span class=\"counteer\"> {{ processedStatusCount }} </span>\n    <p>Total Number of <br>Reports Processed</p>\n    <button mat-flat-button (click)=\"viewDetailsData('processed')\">View Details</button>\n  </mat-card-content>\n  <mat-card-content class=\"itemsection three\">\n    <span class=\"counteer\">{{ signedStatusCount }}</span>\n    <p>Total Number of Reports <br>remain to process\n\n    </p>\n    <button mat-flat-button (click)=\"viewDetailsData('remainProcess')\">View Details</button>\n  </mat-card-content>\n</mat-card-content>\n\n\n\n\n<mat-card-content class=\"doctor_content_wrapper\">\n  <mat-card-title>Doctor Office You Are Working With</mat-card-title>\n  <mat-card-content class=\"table_structure\">\n\n\n    <mat-list>\n      <mat-list-item>\n        <p class=\"title_n\">Name</p>\n        <p class=\"title_a\">\n          <ng-container *ngFor=\"let val of userSingleData; let i =index\">\n            {{ val.Full_Name}}\n            <ng-container *ngIf=\"i+1 < userSingleData.length\">\n                ,\n              </ng-container>\n          </ng-container>\n        </p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">Taxonomies</p>\n        <p class=\"title_a\">\n          <ng-container *ngFor=\"let n of userSingleData; let i = index;\">\n            {{ n.taxo_list}}\n            <ng-container *ngIf=\"i + 1 < userSingleData.length\">\n              ,\n            </ng-container>\n          </ng-container>\n        </p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">Email</p>\n        <p class=\"title_a\">\n          <ng-container *ngFor=\"let val of userSingleData; let i =index\">\n            {{ val.email}}\n          <ng-container *ngIf=\" i + 1 < userSingleData.length\">\n            ,\n          </ng-container>\n          </ng-container>\n        </p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">Phone</p>\n        <p class=\"title_a\">\n          <ng-container *ngFor=\"let val of userSingleData; let i =index\">\n            {{ val.phone}}\n            <ng-container *ngIf=\"i+1 < userSingleData.length\">\n                ,\n              </ng-container>\n          </ng-container>\n        </p>\n      </mat-list-item>\n      <mat-list-item>\n        <p class=\"title_n\">FAX</p>\n        <p class=\"title_a\">\n          <ng-container *ngFor=\"let val of userSingleData; let i =index\">\n            {{ val.fax}}\n               <ng-container *ngIf=\"i+1 < userSingleData.length\">\n            ,\n          </ng-container>\n          </ng-container>\n        </p>\n      </mat-list-item>\n    </mat-list>\n  </mat-card-content>\n</mat-card-content>\n\n\n\n<!-- patainet report section -->\n<mat-card-content class=\"patient_report_section\">\n  <mat-card-content class=\"patient_top_search\">\n    <h1>Patient record report</h1>\n    <!-- <span class=\"search_bar\">\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput [matDatepicker]=\"picker\" (focus)=\"picker.open()\" placeholder=\"Search By Date\">\n\n            <mat-datepicker #picker></mat-datepicker>\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput placeholder=\"Search By Status\">\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n        <span class=\"form_wrapper\">\n          <mat-form-field appearance=\"outline\">\n            <input matInput placeholder=\"Search By Patient\">\n          </mat-form-field>\n          <button><i class=\"material-icons\"> search </i></button>\n        </span>\n      </span> -->\n  </mat-card-content>\n\n  <!-- table -->\n  <!-- <lib-listing class=\"DataTable\" *ngIf=\"TechDashboardAllData.length>0\" [datasource]=\"TechDashboardAllData\"\n    [skip]=\"allUserData_skip\" [modify_header_array]=\"allUserData_modify_header\" [apiurl]=\"apiUrl\"\n    [sourcedata]=\"tableName\" [editroute]=\"editUrl\" [jwttoken]=\"user_token\" [statusarr]=\"status\"\n    [updateendpoint]=\"UpdateEndpoint\" [deleteendpoint]=\"deleteEndpoint\" [date_search_endpoint]=\"SearchingEndpoint\"\n    [date_search_source]=\"tableName\" [search_settings]=\"search_settings\">\n  </lib-listing>\n  <h2 *ngIf=\"TechDashboardAllData.length == 0\">No record found.</h2> -->\n  <!-- end table -->\n\n\n\n  <span class=\"button_action\">\n    <button mat-flat-button routerLink=\"/tech/patient-management/bulk-upload\">upload bulk report</button>\n    <button mat-flat-button routerLink=\"/tech/patient-management/add\">add a new patient records manually</button>\n  </span>\n</mat-card-content>\n\n<!-- view details table start here -->\n\n<mat-card-content class=\"admin_table\" *ngIf=\"commonArray.length > 0\">\n\n  <mat-toolbar class=\"top_header\">\n    <h2>{{ headerText }}</h2>\n  </mat-toolbar>\n\n  <mat-form-field>\n    <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n  </mat-form-field>\n\n  <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n\n    <!-- Position Column -->\n    <ng-container matColumnDef=\"no\">\n      <th mat-header-cell *matHeaderCellDef> No. </th>\n      <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n    </ng-container>\n\n    <!-- Position Column -->\n    <ng-container matColumnDef=\"patientName\">\n      <th mat-header-cell *matHeaderCellDef> Patient Name. </th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"patient Name\"> {{ element.patientName }} </td>\n    </ng-container>\n\n    <!-- Name Column -->\n    <ng-container matColumnDef=\"record_type\">\n      <th mat-header-cell *matHeaderCellDef> Record Type </th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Record type\"> {{ element.record_type }} </td>\n    </ng-container>\n\n    <!-- Weight Column -->\n    <ng-container matColumnDef=\"date_added\">\n      <th mat-header-cell *matHeaderCellDef> Date Added </th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Date Added\"> {{ element.date_added }} </td>\n    </ng-container>\n\n    <!-- Symbol Column -->\n    <ng-container matColumnDef=\"status\">\n      <th mat-header-cell *matHeaderCellDef> Status </th>\n      <td mat-cell *matCellDef=\"let element\" data-label=\"Status\"> <span>{{ element.status }} </span></td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;let i = index\"></tr>\n  </table>\n</mat-card-content>\n<!-- view details table end here -->\n\n\n\n<app-admin-footer></app-admin-footer>");
 
 /***/ }),
 
@@ -5853,39 +5905,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_auth_resetpassword_resetpassword_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/auth/resetpassword/resetpassword.component */ "./src/app/components/auth/resetpassword/resetpassword.component.ts");
 /* harmony import */ var _components_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/common/dialog-box/dialog-box.component */ "./src/app/components/common/dialog-box/dialog-box.component.ts");
 /* harmony import */ var _components_common_upload_dialog_box_upload_dialog_box_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/common/upload-dialog-box/upload-dialog-box.component */ "./src/app/components/common/upload-dialog-box/upload-dialog-box.component.ts");
-/* harmony import */ var _components_admin_admin_dashboard_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/admin/admin-dashboard/admin-dashboard.component */ "./src/app/components/admin/admin-dashboard/admin-dashboard.component.ts");
-/* harmony import */ var _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/admin/admin-management/add-edit/add-edit.component */ "./src/app/components/admin/admin-management/add-edit/add-edit.component.ts");
-/* harmony import */ var _components_admin_admin_management_manage_admin_list_manage_admin_list_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/admin/admin-management/manage-admin-list/manage-admin-list.component */ "./src/app/components/admin/admin-management/manage-admin-list/manage-admin-list.component.ts");
-/* harmony import */ var _components_admin_admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/admin/admin-header/admin-header.component */ "./src/app/components/admin/admin-header/admin-header.component.ts");
-/* harmony import */ var _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/admin/doctor-management/addedit-doctor/addedit-doctor.component */ "./src/app/components/admin/doctor-management/addedit-doctor/addedit-doctor.component.ts");
-/* harmony import */ var _components_admin_doctor_management_list_doctor_list_doctor_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/admin/doctor-management/list-doctor/list-doctor.component */ "./src/app/components/admin/doctor-management/list-doctor/list-doctor.component.ts");
-/* harmony import */ var _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/admin/biller-management/add-edit-biller/add-edit-biller.component */ "./src/app/components/admin/biller-management/add-edit-biller/add-edit-biller.component.ts");
-/* harmony import */ var _components_admin_biller_management_listing_biller_listing_biller_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/admin/biller-management/listing-biller/listing-biller.component */ "./src/app/components/admin/biller-management/listing-biller/listing-biller.component.ts");
-/* harmony import */ var _components_admin_tech_management_listing_tech_listing_tech_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/admin/tech-management/listing-tech/listing-tech.component */ "./src/app/components/admin/tech-management/listing-tech/listing-tech.component.ts");
-/* harmony import */ var _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/admin/tech-management/add-edit-tech/add-edit-tech.component */ "./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.ts");
-/* harmony import */ var _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/common/account-settings/account-settings.component */ "./src/app/components/common/account-settings/account-settings.component.ts");
-/* harmony import */ var _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/common/account-settings/change-password/change-password.component */ "./src/app/components/common/account-settings/change-password/change-password.component.ts");
-/* harmony import */ var _components_admin_user_management_user_add_edit_user_add_edit_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/admin/user-management/user-add-edit/user-add-edit.component */ "./src/app/components/admin/user-management/user-add-edit/user-add-edit.component.ts");
-/* harmony import */ var _components_tech_tech_dashboard_tech_dashboard_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/tech/tech-dashboard/tech-dashboard.component */ "./src/app/components/tech/tech-dashboard/tech-dashboard.component.ts");
-/* harmony import */ var _components_tech_tech_header_tech_header_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/tech/tech-header/tech-header.component */ "./src/app/components/tech/tech-header/tech-header.component.ts");
-/* harmony import */ var _components_tech_patient_management_add_edit_patient_add_edit_patient_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./components/tech/patient-management/add-edit-patient/add-edit-patient.component */ "./src/app/components/tech/patient-management/add-edit-patient/add-edit-patient.component.ts");
-/* harmony import */ var _components_tech_patient_management_bulk_upload_bulk_upload_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./components/tech/patient-management/bulk-upload/bulk-upload.component */ "./src/app/components/tech/patient-management/bulk-upload/bulk-upload.component.ts");
-/* harmony import */ var _components_doctor_doctor_dashboard_doctor_dashboard_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./components/doctor/doctor-dashboard/doctor-dashboard.component */ "./src/app/components/doctor/doctor-dashboard/doctor-dashboard.component.ts");
-/* harmony import */ var _components_doctor_doctor_header_doctor_header_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./components/doctor/doctor-header/doctor-header.component */ "./src/app/components/doctor/doctor-header/doctor-header.component.ts");
-/* harmony import */ var _components_biller_biller_dashboard_biller_dashboard_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./components/biller/biller-dashboard/biller-dashboard.component */ "./src/app/components/biller/biller-dashboard/biller-dashboard.component.ts");
-/* harmony import */ var _components_biller_biller_header_biller_header_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./components/biller/biller-header/biller-header.component */ "./src/app/components/biller/biller-header/biller-header.component.ts");
-/* harmony import */ var _components_test_test_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./components/test/test.component */ "./src/app/components/test/test.component.ts");
-/* harmony import */ var file_upload__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! file-upload */ "./dist/file-upload/fesm2015/file-upload.js");
-/* harmony import */ var _components_admin_tech_management_healthrisk_system_encounter_healthrisk_system_encounter_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component */ "./src/app/components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component.ts");
-/* harmony import */ var _components_admin_tech_management_system_superbill_system_superbill_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./components/admin/tech-management/system-superbill/system-superbill.component */ "./src/app/components/admin/tech-management/system-superbill/system-superbill.component.ts");
-/* harmony import */ var _components_admin_tech_management_health_risk_analysis_health_risk_analysis_component__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./components/admin/tech-management/health-risk-analysis/health-risk-analysis.component */ "./src/app/components/admin/tech-management/health-risk-analysis/health-risk-analysis.component.ts");
-/* harmony import */ var _components_tech_report_details_report_details_component__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./components/tech/report-details/report-details.component */ "./src/app/components/tech/report-details/report-details.component.ts");
-/* harmony import */ var _components_common_not_found_error_not_found_error_component__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./components/common/not-found-error/not-found-error.component */ "./src/app/components/common/not-found-error/not-found-error.component.ts");
-/* harmony import */ var _components_admin_admin_footer_admin_footer_component__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./components/admin/admin-footer/admin-footer.component */ "./src/app/components/admin/admin-footer/admin-footer.component.ts");
-/* harmony import */ var _components_biller_biller_footer_biller_footer_component__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./components/biller/biller-footer/biller-footer.component */ "./src/app/components/biller/biller-footer/biller-footer.component.ts");
-/* harmony import */ var _components_tech_tech_footer_tech_footer_component__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./components/tech/tech-footer/tech-footer.component */ "./src/app/components/tech/tech-footer/tech-footer.component.ts");
-/* harmony import */ var _components_doctor_doctor_footer_doctor_footer_component__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./components/doctor/doctor-footer/doctor-footer.component */ "./src/app/components/doctor/doctor-footer/doctor-footer.component.ts");
-/* harmony import */ var _components_doctor_signature_management_signature_management_component__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ./components/doctor/signature-management/signature-management.component */ "./src/app/components/doctor/signature-management/signature-management.component.ts");
+/* harmony import */ var _components_common_password_dialog_box_password_dialog_box_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/common/password-dialog-box/password-dialog-box.component */ "./src/app/components/common/password-dialog-box/password-dialog-box.component.ts");
+/* harmony import */ var _components_admin_admin_dashboard_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/admin/admin-dashboard/admin-dashboard.component */ "./src/app/components/admin/admin-dashboard/admin-dashboard.component.ts");
+/* harmony import */ var _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/admin/admin-management/add-edit/add-edit.component */ "./src/app/components/admin/admin-management/add-edit/add-edit.component.ts");
+/* harmony import */ var _components_admin_admin_management_manage_admin_list_manage_admin_list_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/admin/admin-management/manage-admin-list/manage-admin-list.component */ "./src/app/components/admin/admin-management/manage-admin-list/manage-admin-list.component.ts");
+/* harmony import */ var _components_admin_admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/admin/admin-header/admin-header.component */ "./src/app/components/admin/admin-header/admin-header.component.ts");
+/* harmony import */ var _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/admin/doctor-management/addedit-doctor/addedit-doctor.component */ "./src/app/components/admin/doctor-management/addedit-doctor/addedit-doctor.component.ts");
+/* harmony import */ var _components_admin_doctor_management_list_doctor_list_doctor_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/admin/doctor-management/list-doctor/list-doctor.component */ "./src/app/components/admin/doctor-management/list-doctor/list-doctor.component.ts");
+/* harmony import */ var _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/admin/biller-management/add-edit-biller/add-edit-biller.component */ "./src/app/components/admin/biller-management/add-edit-biller/add-edit-biller.component.ts");
+/* harmony import */ var _components_admin_biller_management_listing_biller_listing_biller_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/admin/biller-management/listing-biller/listing-biller.component */ "./src/app/components/admin/biller-management/listing-biller/listing-biller.component.ts");
+/* harmony import */ var _components_admin_tech_management_listing_tech_listing_tech_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/admin/tech-management/listing-tech/listing-tech.component */ "./src/app/components/admin/tech-management/listing-tech/listing-tech.component.ts");
+/* harmony import */ var _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/admin/tech-management/add-edit-tech/add-edit-tech.component */ "./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.ts");
+/* harmony import */ var _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/common/account-settings/account-settings.component */ "./src/app/components/common/account-settings/account-settings.component.ts");
+/* harmony import */ var _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/common/account-settings/change-password/change-password.component */ "./src/app/components/common/account-settings/change-password/change-password.component.ts");
+/* harmony import */ var _components_admin_user_management_user_add_edit_user_add_edit_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/admin/user-management/user-add-edit/user-add-edit.component */ "./src/app/components/admin/user-management/user-add-edit/user-add-edit.component.ts");
+/* harmony import */ var _components_tech_tech_dashboard_tech_dashboard_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/tech/tech-dashboard/tech-dashboard.component */ "./src/app/components/tech/tech-dashboard/tech-dashboard.component.ts");
+/* harmony import */ var _components_tech_tech_header_tech_header_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./components/tech/tech-header/tech-header.component */ "./src/app/components/tech/tech-header/tech-header.component.ts");
+/* harmony import */ var _components_tech_patient_management_add_edit_patient_add_edit_patient_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./components/tech/patient-management/add-edit-patient/add-edit-patient.component */ "./src/app/components/tech/patient-management/add-edit-patient/add-edit-patient.component.ts");
+/* harmony import */ var _components_tech_patient_management_bulk_upload_bulk_upload_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./components/tech/patient-management/bulk-upload/bulk-upload.component */ "./src/app/components/tech/patient-management/bulk-upload/bulk-upload.component.ts");
+/* harmony import */ var _components_doctor_doctor_dashboard_doctor_dashboard_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./components/doctor/doctor-dashboard/doctor-dashboard.component */ "./src/app/components/doctor/doctor-dashboard/doctor-dashboard.component.ts");
+/* harmony import */ var _components_doctor_doctor_header_doctor_header_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./components/doctor/doctor-header/doctor-header.component */ "./src/app/components/doctor/doctor-header/doctor-header.component.ts");
+/* harmony import */ var _components_biller_biller_dashboard_biller_dashboard_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./components/biller/biller-dashboard/biller-dashboard.component */ "./src/app/components/biller/biller-dashboard/biller-dashboard.component.ts");
+/* harmony import */ var _components_biller_biller_header_biller_header_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./components/biller/biller-header/biller-header.component */ "./src/app/components/biller/biller-header/biller-header.component.ts");
+/* harmony import */ var _components_test_test_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./components/test/test.component */ "./src/app/components/test/test.component.ts");
+/* harmony import */ var file_upload__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! file-upload */ "./dist/file-upload/fesm2015/file-upload.js");
+/* harmony import */ var _components_admin_tech_management_healthrisk_system_encounter_healthrisk_system_encounter_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component */ "./src/app/components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component.ts");
+/* harmony import */ var _components_admin_tech_management_system_superbill_system_superbill_component__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./components/admin/tech-management/system-superbill/system-superbill.component */ "./src/app/components/admin/tech-management/system-superbill/system-superbill.component.ts");
+/* harmony import */ var _components_admin_tech_management_health_risk_analysis_health_risk_analysis_component__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./components/admin/tech-management/health-risk-analysis/health-risk-analysis.component */ "./src/app/components/admin/tech-management/health-risk-analysis/health-risk-analysis.component.ts");
+/* harmony import */ var _components_tech_report_details_report_details_component__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./components/tech/report-details/report-details.component */ "./src/app/components/tech/report-details/report-details.component.ts");
+/* harmony import */ var _components_common_not_found_error_not_found_error_component__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./components/common/not-found-error/not-found-error.component */ "./src/app/components/common/not-found-error/not-found-error.component.ts");
+/* harmony import */ var _components_admin_admin_footer_admin_footer_component__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./components/admin/admin-footer/admin-footer.component */ "./src/app/components/admin/admin-footer/admin-footer.component.ts");
+/* harmony import */ var _components_biller_biller_footer_biller_footer_component__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./components/biller/biller-footer/biller-footer.component */ "./src/app/components/biller/biller-footer/biller-footer.component.ts");
+/* harmony import */ var _components_tech_tech_footer_tech_footer_component__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./components/tech/tech-footer/tech-footer.component */ "./src/app/components/tech/tech-footer/tech-footer.component.ts");
+/* harmony import */ var _components_doctor_doctor_footer_doctor_footer_component__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ./components/doctor/doctor-footer/doctor-footer.component */ "./src/app/components/doctor/doctor-footer/doctor-footer.component.ts");
+/* harmony import */ var _components_doctor_signature_management_signature_management_component__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! ./components/doctor/signature-management/signature-management.component */ "./src/app/components/doctor/signature-management/signature-management.component.ts");
+/* harmony import */ var _components_admin_doctor_office_management_doctor_office_management_component__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! ./components/admin/doctor-office-management/doctor-office-management.component */ "./src/app/components/admin/doctor-office-management/doctor-office-management.component.ts");
+/* harmony import */ var _components_admin_doctor_office_management_add_edit_doctor_ofc_add_edit_doctor_ofc_component__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! ./components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component */ "./src/app/components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component.ts");
+/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! @angular/material/paginator */ "./node_modules/@angular/material/esm2015/paginator.js");
 
 
 
@@ -5916,6 +5972,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* Component (Common uses) Start Here */
+
 
 
 /* Component (Common uses) End Here */
@@ -5959,6 +6016,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 let AppModule = class AppModule {
     constructor(http) {
         this.http = http;
@@ -5980,44 +6040,48 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _components_auth_forgetpassword_forgetpassword_component__WEBPACK_IMPORTED_MODULE_22__["ForgetpasswordComponent"],
             _components_auth_resetpassword_resetpassword_component__WEBPACK_IMPORTED_MODULE_23__["ResetpasswordComponent"],
             // dashboard
-            _components_tech_tech_dashboard_tech_dashboard_component__WEBPACK_IMPORTED_MODULE_39__["TechDashboardComponent"],
-            _components_admin_admin_dashboard_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_26__["AdminDashboardComponent"],
-            _components_biller_biller_dashboard_biller_dashboard_component__WEBPACK_IMPORTED_MODULE_45__["BillerDashboardComponent"],
-            _components_doctor_doctor_dashboard_doctor_dashboard_component__WEBPACK_IMPORTED_MODULE_43__["DoctorDashboardComponent"],
+            _components_tech_tech_dashboard_tech_dashboard_component__WEBPACK_IMPORTED_MODULE_40__["TechDashboardComponent"],
+            _components_admin_admin_dashboard_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_27__["AdminDashboardComponent"],
+            _components_biller_biller_dashboard_biller_dashboard_component__WEBPACK_IMPORTED_MODULE_46__["BillerDashboardComponent"],
+            _components_doctor_doctor_dashboard_doctor_dashboard_component__WEBPACK_IMPORTED_MODULE_44__["DoctorDashboardComponent"],
             //user-management
-            _components_admin_user_management_user_add_edit_user_add_edit_component__WEBPACK_IMPORTED_MODULE_38__["UserAddEditComponent"],
+            _components_admin_user_management_user_add_edit_user_add_edit_component__WEBPACK_IMPORTED_MODULE_39__["UserAddEditComponent"],
             // Test
-            _components_test_test_component__WEBPACK_IMPORTED_MODULE_47__["TestComponent"],
-            _components_test_test_component__WEBPACK_IMPORTED_MODULE_47__["DialogContentExampleDialog"],
-            _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_27__["AddEditComponent"],
-            _components_admin_admin_management_manage_admin_list_manage_admin_list_component__WEBPACK_IMPORTED_MODULE_28__["ManageAdminListComponent"],
-            _components_admin_admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_29__["AdminHeaderComponent"],
-            _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_30__["AddeditDoctorComponent"],
-            _components_admin_doctor_management_list_doctor_list_doctor_component__WEBPACK_IMPORTED_MODULE_31__["ListDoctorComponent"],
-            _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_30__["Modal"],
-            _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_32__["AddEditBillerComponent"],
-            _components_admin_biller_management_listing_biller_listing_biller_component__WEBPACK_IMPORTED_MODULE_33__["ListingBillerComponent"],
-            _components_admin_tech_management_listing_tech_listing_tech_component__WEBPACK_IMPORTED_MODULE_34__["ListingTechComponent"],
-            _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_35__["AddEditTechComponent"],
-            _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_36__["AccountSettingsComponent"],
-            _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_37__["ChangePasswordComponent"],
-            _components_tech_patient_management_add_edit_patient_add_edit_patient_component__WEBPACK_IMPORTED_MODULE_41__["AddEditPatientComponent"],
+            _components_test_test_component__WEBPACK_IMPORTED_MODULE_48__["TestComponent"],
+            _components_test_test_component__WEBPACK_IMPORTED_MODULE_48__["DialogContentExampleDialog"],
+            _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_28__["AddEditComponent"],
+            _components_admin_admin_management_manage_admin_list_manage_admin_list_component__WEBPACK_IMPORTED_MODULE_29__["ManageAdminListComponent"],
+            _components_admin_admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_30__["AdminHeaderComponent"],
+            _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_31__["AddeditDoctorComponent"],
+            _components_admin_doctor_management_list_doctor_list_doctor_component__WEBPACK_IMPORTED_MODULE_32__["ListDoctorComponent"],
+            _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_31__["Modal"],
+            _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_33__["AddEditBillerComponent"],
+            _components_admin_biller_management_listing_biller_listing_biller_component__WEBPACK_IMPORTED_MODULE_34__["ListingBillerComponent"],
+            _components_admin_tech_management_listing_tech_listing_tech_component__WEBPACK_IMPORTED_MODULE_35__["ListingTechComponent"],
+            _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_36__["AddEditTechComponent"],
+            _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_36__["Dialogtest"],
+            _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_37__["AccountSettingsComponent"],
+            _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_38__["ChangePasswordComponent"],
+            _components_tech_patient_management_add_edit_patient_add_edit_patient_component__WEBPACK_IMPORTED_MODULE_42__["AddEditPatientComponent"],
             _components_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_24__["DialogBoxComponent"],
-            _components_tech_patient_management_bulk_upload_bulk_upload_component__WEBPACK_IMPORTED_MODULE_42__["BulkUploadComponent"],
+            _components_tech_patient_management_bulk_upload_bulk_upload_component__WEBPACK_IMPORTED_MODULE_43__["BulkUploadComponent"],
             _components_common_upload_dialog_box_upload_dialog_box_component__WEBPACK_IMPORTED_MODULE_25__["UploadDialogBoxComponent"],
-            _components_biller_biller_header_biller_header_component__WEBPACK_IMPORTED_MODULE_46__["BillerHeaderComponent"],
-            _components_doctor_doctor_header_doctor_header_component__WEBPACK_IMPORTED_MODULE_44__["DoctorHeaderComponent"],
-            _components_tech_tech_header_tech_header_component__WEBPACK_IMPORTED_MODULE_40__["TechHeaderComponent"],
-            _components_admin_tech_management_healthrisk_system_encounter_healthrisk_system_encounter_component__WEBPACK_IMPORTED_MODULE_49__["HealthriskSystemEncounterComponent"], _components_admin_tech_management_system_superbill_system_superbill_component__WEBPACK_IMPORTED_MODULE_50__["SystemSuperbillComponent"],
-            _components_admin_tech_management_health_risk_analysis_health_risk_analysis_component__WEBPACK_IMPORTED_MODULE_51__["HealthRiskAnalysisComponent"],
-            _components_tech_report_details_report_details_component__WEBPACK_IMPORTED_MODULE_52__["ReportDetailsComponent"],
+            _components_biller_biller_header_biller_header_component__WEBPACK_IMPORTED_MODULE_47__["BillerHeaderComponent"],
+            _components_doctor_doctor_header_doctor_header_component__WEBPACK_IMPORTED_MODULE_45__["DoctorHeaderComponent"],
+            _components_tech_tech_header_tech_header_component__WEBPACK_IMPORTED_MODULE_41__["TechHeaderComponent"],
+            _components_admin_tech_management_healthrisk_system_encounter_healthrisk_system_encounter_component__WEBPACK_IMPORTED_MODULE_50__["HealthriskSystemEncounterComponent"], _components_admin_tech_management_system_superbill_system_superbill_component__WEBPACK_IMPORTED_MODULE_51__["SystemSuperbillComponent"],
+            _components_admin_tech_management_health_risk_analysis_health_risk_analysis_component__WEBPACK_IMPORTED_MODULE_52__["HealthRiskAnalysisComponent"],
+            _components_tech_report_details_report_details_component__WEBPACK_IMPORTED_MODULE_53__["ReportDetailsComponent"],
             _components_common_http_loader_http_loader_component__WEBPACK_IMPORTED_MODULE_17__["HttpLoaderComponent"],
-            _components_common_not_found_error_not_found_error_component__WEBPACK_IMPORTED_MODULE_53__["NotFoundErrorComponent"],
-            _components_admin_admin_footer_admin_footer_component__WEBPACK_IMPORTED_MODULE_54__["AdminFooterComponent"],
-            _components_biller_biller_footer_biller_footer_component__WEBPACK_IMPORTED_MODULE_55__["BillerFooterComponent"],
-            _components_tech_tech_footer_tech_footer_component__WEBPACK_IMPORTED_MODULE_56__["TechFooterComponent"],
-            _components_doctor_doctor_footer_doctor_footer_component__WEBPACK_IMPORTED_MODULE_57__["DoctorFooterComponent"],
-            _components_doctor_signature_management_signature_management_component__WEBPACK_IMPORTED_MODULE_58__["SignatureManagementComponent"]
+            _components_common_not_found_error_not_found_error_component__WEBPACK_IMPORTED_MODULE_54__["NotFoundErrorComponent"],
+            _components_admin_admin_footer_admin_footer_component__WEBPACK_IMPORTED_MODULE_55__["AdminFooterComponent"],
+            _components_biller_biller_footer_biller_footer_component__WEBPACK_IMPORTED_MODULE_56__["BillerFooterComponent"],
+            _components_tech_tech_footer_tech_footer_component__WEBPACK_IMPORTED_MODULE_57__["TechFooterComponent"],
+            _components_doctor_doctor_footer_doctor_footer_component__WEBPACK_IMPORTED_MODULE_58__["DoctorFooterComponent"],
+            _components_doctor_signature_management_signature_management_component__WEBPACK_IMPORTED_MODULE_59__["SignatureManagementComponent"],
+            _components_common_password_dialog_box_password_dialog_box_component__WEBPACK_IMPORTED_MODULE_26__["PasswordDialogBoxComponent"],
+            _components_admin_doctor_office_management_doctor_office_management_component__WEBPACK_IMPORTED_MODULE_60__["DoctorOfficeManagementComponent"],
+            _components_admin_doctor_office_management_add_edit_doctor_ofc_add_edit_doctor_ofc_component__WEBPACK_IMPORTED_MODULE_61__["AddEditDoctorOfcComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"].withServerTransition({ appId: 'serverApp' }),
@@ -6032,12 +6096,13 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             lib_listing__WEBPACK_IMPORTED_MODULE_11__["ListingModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_15__["FormsModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_15__["ReactiveFormsModule"],
-            file_upload__WEBPACK_IMPORTED_MODULE_48__["FileUploadModule"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"]
+            file_upload__WEBPACK_IMPORTED_MODULE_49__["FileUploadModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
         ],
+        exports: [_angular_material_paginator__WEBPACK_IMPORTED_MODULE_62__["MatPaginatorModule"]],
         providers: [_services_http_loader_service__WEBPACK_IMPORTED_MODULE_18__["HttpLoaderService"], { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HTTP_INTERCEPTORS"], useClass: _class_common_loader_interceptor__WEBPACK_IMPORTED_MODULE_19__["LoaderInterceptor"], multi: true }, ngx_cookie_service__WEBPACK_IMPORTED_MODULE_13__["CookieService"], _services_authguard_service__WEBPACK_IMPORTED_MODULE_14__["AuthguardService"], _services_http_service_service__WEBPACK_IMPORTED_MODULE_16__["HttpServiceService"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["DatePipe"], _class_common_common_function__WEBPACK_IMPORTED_MODULE_20__["CommonFunction"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]],
-        entryComponents: [_components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_30__["Modal"], _components_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_24__["DialogBoxComponent"], _components_common_upload_dialog_box_upload_dialog_box_component__WEBPACK_IMPORTED_MODULE_25__["UploadDialogBoxComponent"], _components_test_test_component__WEBPACK_IMPORTED_MODULE_47__["DialogContentExampleDialog"], _components_test_test_component__WEBPACK_IMPORTED_MODULE_47__["TestComponent"]]
+        entryComponents: [_components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_31__["Modal"], _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_36__["Dialogtest"], _components_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_24__["DialogBoxComponent"], _components_common_password_dialog_box_password_dialog_box_component__WEBPACK_IMPORTED_MODULE_26__["PasswordDialogBoxComponent"], _components_common_upload_dialog_box_upload_dialog_box_component__WEBPACK_IMPORTED_MODULE_25__["UploadDialogBoxComponent"], _components_test_test_component__WEBPACK_IMPORTED_MODULE_48__["DialogContentExampleDialog"], _components_test_test_component__WEBPACK_IMPORTED_MODULE_48__["TestComponent"]]
     })
 ], AppModule);
 
@@ -6246,8 +6311,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
-/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/paginator */ "./node_modules/@angular/material/esm2015/paginator.js");
-
 
 
 
@@ -6270,6 +6333,12 @@ let AdminDashboardComponent = class AdminDashboardComponent {
         this.displayedColumns = ['no', 'patientName', 'record_type', 'date_added', 'status'];
         this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'doctorName', 'record', 'superBill', 'date', 'patientName', 'status'];
         this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](this.commonArray);
+        // applyFilter(filterValue: string) {
+        //   this.dataSource.filter = filterValue.trim().toLowerCase();
+        //   if (this.dataSource.paginator) {
+        //     this.dataSource.paginator.firstPage();
+        //   }
+        // }
         this.allDataList = [];
         this.user_token = cookieService.get('jwtToken');
         this.getAllCountData();
@@ -6277,17 +6346,12 @@ let AdminDashboardComponent = class AdminDashboardComponent {
         /* Set Meta Data */
         this.commonFunction.setTitleMetaTags();
     }
-    applyFilter(filterValue) {
-        this.dataSource.filter = filterValue.trim().toLowerCase();
-        if (this.dataSource.paginator) {
-            this.dataSource.paginator.firstPage();
-        }
-    }
     ngOnInit() {
         this.dataSource.paginator = this.paginator;
         this.activatedRoute.data.subscribe(resolveData => {
             this.allDataList = resolveData.dataCount.res;
             this.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](this.allDataList);
+            this.allDataSource.paginator = this.paginator;
         });
     }
     getAllCountData() {
@@ -6395,7 +6459,7 @@ AdminDashboardComponent.ctorParameters = () => [
     { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_5__["CommonFunction"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material_paginator__WEBPACK_IMPORTED_MODULE_7__["MatPaginator"], { static: false })
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_6__["MatPaginator"], { static: true })
 ], AdminDashboardComponent.prototype, "paginator", void 0);
 AdminDashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -6851,8 +6915,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 let AddEditBillerComponent = class AddEditBillerComponent {
-    constructor(fb, datePipe, httpService, cookie, router, snackBar, activeRoute, commonFunction) {
+    constructor(fb, datePipe, httpService, cookie, router, snackBar, activeRoute, commonFunction, dialog) {
         this.fb = fb;
         this.datePipe = datePipe;
         this.httpService = httpService;
@@ -6861,6 +6926,7 @@ let AddEditBillerComponent = class AddEditBillerComponent {
         this.snackBar = snackBar;
         this.activeRoute = activeRoute;
         this.commonFunction = commonFunction;
+        this.dialog = dialog;
         this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](new Date());
         this.htmlText = { header: 'Add New Biller', nav: 'Add Biller', buttonText: 'Save' };
         this.message = "Submitted Successfully";
@@ -6955,6 +7021,9 @@ let AddEditBillerComponent = class AddEditBillerComponent {
     ResetAddEditForm() {
         this.formDirective.resetForm();
     }
+    backToManagePage() {
+        this.router.navigateByUrl("admin/biller-management");
+    }
     BillerManagementAddFormSubmit() {
         let x;
         for (x in this.billerManagementAddEditForm.controls) {
@@ -7002,7 +7071,6 @@ let AddEditBillerComponent = class AddEditBillerComponent {
                 this.snackBar.open(this.message, action, {
                     duration: 2000,
                 });
-                // this.ResetAddEditForm();
                 this.formDirective.resetForm();
                 setTimeout(() => {
                     this.router.navigateByUrl("admin/biller-management");
@@ -7019,7 +7087,8 @@ AddEditBillerComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
     { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSnackBar"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"] },
-    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__["CommonFunction"] }
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__["CommonFunction"] },
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatDialog"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], { static: true })
@@ -7185,11 +7254,15 @@ let AddeditDoctorComponent = class AddeditDoctorComponent {
         this.htmlText = { header: 'Add New Doctor', nav: 'Add Doctor', buttonText: 'Save' };
         this.techData = [];
         this.billerData = [];
+        this.techArray = [];
+        this.billerArray = [];
+        this.doctorOfficeData = [];
         /* Set Meta Data */
         this.commonFunction.setTitleMetaTags();
         this.user_token = cookieService.get('jwtToken');
         this.getAllTechData();
         this.getAllBillerData();
+        this.getAllDoctorOfficeData();
         this.acivatedRoute.params.subscribe(params => {
             if (params['_id'] != null) {
                 this.action = "edit";
@@ -7247,10 +7320,11 @@ let AddeditDoctorComponent = class AddeditDoctorComponent {
             state: defaultValue.state,
             tech: defaultValue.tech,
             biller: defaultValue.biller,
+            doctorsOfficeName: defaultValue.doctorsOfficeName,
             zip: defaultValue.zip,
-            status: defaultValue.status
+            status: defaultValue.status,
+            taxo_list: defaultValue.taxo_list
         });
-        // this.getCity("Washington");
     }
     // ======================================================================================
     // =============================Form Generator=======================
@@ -7266,13 +7340,14 @@ let AddeditDoctorComponent = class AddeditDoctorComponent {
             npm: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             address: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             fax: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            city: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            state: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            city: [''],
+            state: [''],
             type: ['doctor'],
             zip: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             status: ['',],
-            tech: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            biller: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            tech: [''],
+            biller: [''],
+            doctorsOfficeName: [''],
             taxo_list: [],
             taxonomies: this.formBuilder.array([]),
         });
@@ -7327,6 +7402,19 @@ let AddeditDoctorComponent = class AddeditDoctorComponent {
             this.techData = response.res;
         });
     }
+    getAllDoctorOfficeData() {
+        var data = {
+            "source": "users",
+            "condition": {
+                "type": "doctor_office"
+            },
+            "token": this.user_token
+        };
+        this.http.httpViaPost('datalist', data)
+            .subscribe(response => {
+            this.doctorOfficeData = response.res;
+        });
+    }
     /**getting all the biller data**/
     getAllBillerData() {
         var data = {
@@ -7343,6 +7431,10 @@ let AddeditDoctorComponent = class AddeditDoctorComponent {
     }
     // ============================Submit Function=======================
     onSubmit() {
+        let x;
+        for (x in this.docManageForm.controls) {
+            this.docManageForm.controls[x].markAsTouched();
+        }
         this.docManageForm.value.taxo_list = this.taxo_array;
         /* stop here if form is invalid */
         if (this.docManageForm.invalid) {
@@ -7364,7 +7456,7 @@ let AddeditDoctorComponent = class AddeditDoctorComponent {
         }
         /* start process to submited data */
         let postData = {
-            "source": 'users',
+            "source": "users",
             "data": Object.assign(this.docManageForm.value, this.condition),
             "sourceobj": ["tech", "biller"],
             "token": this.cookieService.get('jwtToken')
@@ -7379,7 +7471,7 @@ let AddeditDoctorComponent = class AddeditDoctorComponent {
                 ;
             }
             else {
-                alert("Some error occurred. Please try again.");
+                alert("Some error occurred. Please try again");
             }
         }, (error) => {
             alert("Some error occurred. Please try again.");
@@ -7616,29 +7708,29 @@ ListDoctorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.css":
-/*!********************************************************************************************!*\
-  !*** ./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.css ***!
-  \********************************************************************************************/
+/***/ "./src/app/components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component.css":
+/*!*****************************************************************************************************************!*\
+  !*** ./src/app/components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component.css ***!
+  \*****************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("/* header css */\n.techdashboard_header .mat-toolbar-row{ height: auto; }\n.techdashboard_header .mat-toolbar-row .logo_wrapper{ max-width: 200px; display: block; }\n.techdashboard_header .mat-toolbar-row .logo_wrapper img{ max-width: 100%; vertical-align: middle; }\n.techdashboard_header .mat-toolbar-row{ justify-content: space-evenly; padding: 0 40px;}\n.techdashboard_header .mat-toolbar-row .quotation { margin-bottom: 0px;}\n.techdashboard_header .mat-toolbar-row .quotation p{ font-family: \"RobotoMedium\"; font-size: 30px; color: #002035; text-transform: uppercase; margin: 0; white-space: normal;\n  text-align: center;}\n.techdashboard_header .mat-toolbar-row .profile_section { display: flex; border-left: 1px solid #e2dede; padding-left: 20px; }\n.techdashboard_header .mat-toolbar-row .profile_section .username{ padding-right: 20px; display: block; }\n/*End header css */\n.add_form{ width: 80%; margin: 20px auto; background: #f3f3f3; padding: 16px 10px; padding-bottom: 50px; border: 1px solid #91e7ff; }\n.add_form .form_wrapper .mat-form-field{ width: 49%; margin: 0.5%; }\n.add_form .form_wrapper textarea{ resize: none;}\n.add_form h2{ font-family: \"RobotoBlack\"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }\n.add_form .submit_form { display: block; width: 100%; text-align: center; margin-top: 30px; }\n.add_form .submit_form button{ border-radius: 5px; background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: \"RobotoBlack\"; font-size: 25px; padding: 8px;\nwidth: 390px; border: 3px solid #d59d01; }\n.add_form .submit_form button:nth-child(1){ background: linear-gradient(180deg, #f2be00, #a52a08); color: #f3f3f3; border: 2px solid #bb3c0d; margin-right: 16px; }\n.add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;}\n@media screen and (max-width: 1460px){\n  .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; line-height: 26px;}\n}\n@media screen and (max-width: 1000px){\n  .add_form .submit_form button { width: 48%; }\n}\n@media screen and (max-width: 991px){\n.techdashboard_header .mat-toolbar-row { flex-direction: column; padding: 20px;}\n.techdashboard_header .mat-toolbar-row .quotation p { margin-top: 16px; }\n}\n@media screen and (max-width: 768px){\n  .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0; }\n}\n@media screen and (max-width: 576px){\n.add_form .submit_form button { font-size: 22px; padding: 2px; }\n\n.add_form .submit_form button { width: 100%; margin: 0; margin-top: 20px; }\n.add_form .submit_form { display: flex; flex-direction: column-reverse; text-align: center; margin-top: 0px; }\n.add_form .submit_form button:nth-child(1) { margin-right: 0; margin-top: 20px; }\n}\n@media screen and (max-width: 360px){\n.techdashboard_header .mat-toolbar-row .quotation p { font-size: 16px; line-height: 22px; }\n.add_form h2 { font-size: 22px; line-height: 24px; text-align: center; }\n}\n#menu_button{ display: none;}\n.add_header{ display: flex; margin: 0 16px;}\n.add_header button{ margin-left: auto;\n  background: linear-gradient(180deg, #fac855, #e47e2a)!important;\n  text-transform: uppercase;\n  font-family: \"RobotoBlack\"; padding-top: 4px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9hZG1pbi90ZWNoLW1hbmFnZW1lbnQvYWRkLWVkaXQtdGVjaC9hZGQtZWRpdC10ZWNoLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsZUFBZTtBQUNmLHdDQUF3QyxZQUFZLEVBQUU7QUFDdEQsc0RBQXNELGdCQUFnQixFQUFFLGNBQWMsRUFBRTtBQUN4RiwwREFBMEQsZUFBZSxFQUFFLHNCQUFzQixFQUFFO0FBQ25HLHdDQUF3Qyw2QkFBNkIsRUFBRSxlQUFlLENBQUM7QUFDdkYsb0RBQW9ELGtCQUFrQixDQUFDO0FBQ3ZFLHFEQUFxRCwyQkFBMkIsRUFBRSxlQUFlLEVBQUUsY0FBYyxFQUFFLHlCQUF5QixFQUFFLFNBQVMsRUFBRSxtQkFBbUI7RUFDMUssa0JBQWtCLENBQUM7QUFDckIsMERBQTBELGFBQWEsRUFBRSw4QkFBOEIsRUFBRSxrQkFBa0IsRUFBRTtBQUM3SCxtRUFBbUUsbUJBQW1CLEVBQUUsY0FBYyxFQUFFO0FBQ3hHLGtCQUFrQjtBQUdsQixXQUFXLFVBQVUsRUFBRSxpQkFBaUIsRUFBRSxtQkFBbUIsRUFBRSxrQkFBa0IsRUFBRSxvQkFBb0IsRUFBRSx5QkFBeUIsRUFBRTtBQUNwSSx5Q0FBeUMsVUFBVSxFQUFFLFlBQVksRUFBRTtBQUNuRSxrQ0FBa0MsWUFBWSxDQUFDO0FBQy9DLGNBQWMsMEJBQTBCLEVBQUUseUJBQXlCLEVBQUUsZUFBZSxFQUFFLGNBQWMsRUFBRSxjQUFjLEVBQUU7QUFDdEgseUJBQXlCLGNBQWMsRUFBRSxXQUFXLEVBQUUsa0JBQWtCLEVBQUUsZ0JBQWdCLEVBQUU7QUFDNUYsK0JBQStCLGtCQUFrQixFQUFFLHFEQUFxRCxFQUFFLGNBQWMsRUFBRSx5QkFBeUIsRUFBRSwwQkFBMEIsRUFBRSxlQUFlLEVBQUUsWUFBWTtBQUM5TSxZQUFZLEVBQUUseUJBQXlCLEVBQUU7QUFDekMsNENBQTRDLHFEQUFxRCxFQUFFLGNBQWMsRUFBRSx5QkFBeUIsRUFBRSxrQkFBa0IsRUFBRTtBQUNsSywyQkFBMkIsbUJBQW1CLEVBQUUsV0FBVyxFQUFFLG1CQUFtQixDQUFDO0FBS2pGO0VBQ0Usc0RBQXNELGVBQWUsRUFBRSxpQkFBaUIsQ0FBQztBQUMzRjtBQUVBO0VBQ0UsZ0NBQWdDLFVBQVUsRUFBRTtBQUM5QztBQUNBO0FBQ0EseUNBQXlDLHNCQUFzQixFQUFFLGFBQWEsQ0FBQztBQUMvRSxzREFBc0QsZ0JBQWdCLEVBQUU7QUFDeEU7QUFDQTtFQUNFLDBDQUEwQyxXQUFXLEVBQUUsU0FBUyxFQUFFO0FBQ3BFO0FBQ0E7QUFDQSxnQ0FBZ0MsZUFBZSxFQUFFLFlBQVksRUFBRTs7QUFFL0QsZ0NBQWdDLFdBQVcsRUFBRSxTQUFTLEVBQUUsZ0JBQWdCLEVBQUU7QUFDMUUseUJBQXlCLGFBQWEsRUFBRSw4QkFBOEIsRUFBRSxrQkFBa0IsRUFBRSxlQUFlLEVBQUU7QUFDN0csNkNBQTZDLGVBQWUsRUFBRSxnQkFBZ0IsRUFBRTtBQUNoRjtBQUVBO0FBQ0Esc0RBQXNELGVBQWUsRUFBRSxpQkFBaUIsRUFBRTtBQUMxRixlQUFlLGVBQWUsRUFBRSxpQkFBaUIsRUFBRSxrQkFBa0IsRUFBRTtBQUN2RTtBQUlBLGNBQWMsYUFBYSxDQUFDO0FBRTVCLGFBQWEsYUFBYSxFQUFFLGNBQWMsQ0FBQztBQUMzQyxvQkFBb0IsaUJBQWlCO0VBQ25DLCtEQUErRDtFQUMvRCx5QkFBeUI7RUFDekIsMEJBQTBCLEVBQUUsZ0JBQWdCO0FBQzlDIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9hZG1pbi90ZWNoLW1hbmFnZW1lbnQvYWRkLWVkaXQtdGVjaC9hZGQtZWRpdC10ZWNoLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBoZWFkZXIgY3NzICovXG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvd3sgaGVpZ2h0OiBhdXRvOyB9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAubG9nb193cmFwcGVyeyBtYXgtd2lkdGg6IDIwMHB4OyBkaXNwbGF5OiBibG9jazsgfVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLmxvZ29fd3JhcHBlciBpbWd7IG1heC13aWR0aDogMTAwJTsgdmVydGljYWwtYWxpZ246IG1pZGRsZTsgfVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3d7IGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5OyBwYWRkaW5nOiAwIDQwcHg7fVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnF1b3RhdGlvbiB7IG1hcmdpbi1ib3R0b206IDBweDt9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIHB7IGZvbnQtZmFtaWx5OiBcIlJvYm90b01lZGl1bVwiOyBmb250LXNpemU6IDMwcHg7IGNvbG9yOiAjMDAyMDM1OyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBtYXJnaW46IDA7IHdoaXRlLXNwYWNlOiBub3JtYWw7XG4gIHRleHQtYWxpZ246IGNlbnRlcjt9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucHJvZmlsZV9zZWN0aW9uIHsgZGlzcGxheTogZmxleDsgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjZTJkZWRlOyBwYWRkaW5nLWxlZnQ6IDIwcHg7IH1cbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IC5wcm9maWxlX3NlY3Rpb24gLnVzZXJuYW1leyBwYWRkaW5nLXJpZ2h0OiAyMHB4OyBkaXNwbGF5OiBibG9jazsgfVxuLypFbmQgaGVhZGVyIGNzcyAqL1xuXG5cbi5hZGRfZm9ybXsgd2lkdGg6IDgwJTsgbWFyZ2luOiAyMHB4IGF1dG87IGJhY2tncm91bmQ6ICNmM2YzZjM7IHBhZGRpbmc6IDE2cHggMTBweDsgcGFkZGluZy1ib3R0b206IDUwcHg7IGJvcmRlcjogMXB4IHNvbGlkICM5MWU3ZmY7IH1cbi5hZGRfZm9ybSAuZm9ybV93cmFwcGVyIC5tYXQtZm9ybS1maWVsZHsgd2lkdGg6IDQ5JTsgbWFyZ2luOiAwLjUlOyB9XG4uYWRkX2Zvcm0gLmZvcm1fd3JhcHBlciB0ZXh0YXJlYXsgcmVzaXplOiBub25lO31cbi5hZGRfZm9ybSBoMnsgZm9udC1mYW1pbHk6IFwiUm9ib3RvQmxhY2tcIjsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgZm9udC1zaXplOiAyNHB4OyBwYWRkaW5nOiAwIDZweDsgY29sb3I6ICMxZGJjZTk7IH1cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0geyBkaXNwbGF5OiBibG9jazsgd2lkdGg6IDEwMCU7IHRleHQtYWxpZ246IGNlbnRlcjsgbWFyZ2luLXRvcDogMzBweDsgfVxuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b257IGJvcmRlci1yYWRpdXM6IDVweDsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE4MGRlZywgI2Y5ZGMxOSwgI2RhYTUwNSk7IGNvbG9yOiAjNWUzNjE5OyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBmb250LWZhbWlseTogXCJSb2JvdG9CbGFja1wiOyBmb250LXNpemU6IDI1cHg7IHBhZGRpbmc6IDhweDtcbndpZHRoOiAzOTBweDsgYm9yZGVyOiAzcHggc29saWQgI2Q1OWQwMTsgfVxuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b246bnRoLWNoaWxkKDEpeyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjZjJiZTAwLCAjYTUyYTA4KTsgY29sb3I6ICNmM2YzZjM7IGJvcmRlcjogMnB4IHNvbGlkICNiYjNjMGQ7IG1hcmdpbi1yaWdodDogMTZweDsgfVxuLmFkZF9mb3JtIC5yZXR1cm5fYnV0dG9uIHsgYmFja2dyb3VuZDogIzFkYmNlOTsgY29sb3I6ICNmZmY7IG1hcmdpbi1ib3R0b206IDEycHg7fVxuXG5cblxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxNDYwcHgpe1xuICAudGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIHAgeyBmb250LXNpemU6IDI0cHg7IGxpbmUtaGVpZ2h0OiAyNnB4O31cbn1cblxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTAwMHB4KXtcbiAgLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b24geyB3aWR0aDogNDglOyB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA5OTFweCl7XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyB7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IHBhZGRpbmc6IDIwcHg7fVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnF1b3RhdGlvbiBwIHsgbWFyZ2luLXRvcDogMTZweDsgfVxufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzY4cHgpe1xuICAuYWRkX2Zvcm0gLmZvcm1fd3JhcHBlciAubWF0LWZvcm0tZmllbGQgeyB3aWR0aDogMTAwJTsgbWFyZ2luOiAwOyB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA1NzZweCl7XG4uYWRkX2Zvcm0gLnN1Ym1pdF9mb3JtIGJ1dHRvbiB7IGZvbnQtc2l6ZTogMjJweDsgcGFkZGluZzogMnB4OyB9XG5cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0gYnV0dG9uIHsgd2lkdGg6IDEwMCU7IG1hcmdpbjogMDsgbWFyZ2luLXRvcDogMjBweDsgfVxuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW4tcmV2ZXJzZTsgdGV4dC1hbGlnbjogY2VudGVyOyBtYXJnaW4tdG9wOiAwcHg7IH1cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0gYnV0dG9uOm50aC1jaGlsZCgxKSB7IG1hcmdpbi1yaWdodDogMDsgbWFyZ2luLXRvcDogMjBweDsgfVxufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzNjBweCl7XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIHAgeyBmb250LXNpemU6IDE2cHg7IGxpbmUtaGVpZ2h0OiAyMnB4OyB9XG4uYWRkX2Zvcm0gaDIgeyBmb250LXNpemU6IDIycHg7IGxpbmUtaGVpZ2h0OiAyNHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7IH1cbn1cblxuXG5cbiNtZW51X2J1dHRvbnsgZGlzcGxheTogbm9uZTt9XG5cbi5hZGRfaGVhZGVyeyBkaXNwbGF5OiBmbGV4OyBtYXJnaW46IDAgMTZweDt9XG4uYWRkX2hlYWRlciBidXR0b257IG1hcmdpbi1sZWZ0OiBhdXRvO1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjZmFjODU1LCAjZTQ3ZTJhKSFpbXBvcnRhbnQ7XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gIGZvbnQtZmFtaWx5OiBcIlJvYm90b0JsYWNrXCI7IHBhZGRpbmctdG9wOiA0cHg7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("/* header css */\n.techdashboard_header .mat-toolbar-row{ height: auto; }\n.techdashboard_header .mat-toolbar-row .logo_wrapper{ max-width: 200px; display: block; }\n.techdashboard_header .mat-toolbar-row .logo_wrapper img{ max-width: 100%; vertical-align: middle; }\n.techdashboard_header .mat-toolbar-row{ justify-content: space-evenly; padding: 0 40px;}\n.techdashboard_header .mat-toolbar-row .quotation { margin-bottom: 0px;}\n.techdashboard_header .mat-toolbar-row .quotation p{ font-family: \"RobotoMedium\"; font-size: 30px; color: #002035; text-transform: uppercase; margin: 0; white-space: normal;\n  text-align: center;}\n.techdashboard_header .mat-toolbar-row .profile_section { display: flex; border-left: 1px solid #e2dede; padding-left: 20px; }\n.techdashboard_header .mat-toolbar-row .profile_section .username{ padding-right: 20px; display: block; }\n/*End header css */\n.add_form{ width: 80%; margin: 20px auto; background: #f3f3f3; padding: 16px 10px; padding-bottom: 50px; border: 1px solid #91e7ff; }\n.add_form .form_wrapper .mat-form-field{ width: 49%; margin: 0.5%; }\n.add_form .form_wrapper textarea{ resize: none;}\n.add_form h2{ font-family: \"RobotoBlack\"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }\n.add_form .submit_form { display: block; width: 100%; text-align: center; margin-top: 30px; }\n.add_form .submit_form button{ border-radius: 5px; background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: \"RobotoBlack\"; font-size: 25px; padding: 8px;\nwidth: 390px; border: 3px solid #d59d01; }\n.add_form .submit_form button:nth-child(1){ background: linear-gradient(180deg, #f2be00, #a52a08); color: #f3f3f3; border: 2px solid #bb3c0d; margin-right: 16px; }\n.add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;}\n@media screen and (max-width: 1460px){\n  .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; line-height: 26px;}\n}\n@media screen and (max-width: 1000px){\n  .add_form .submit_form button { width: 48%; }\n}\n@media screen and (max-width: 991px){\n.techdashboard_header .mat-toolbar-row { flex-direction: column; padding: 20px;}\n.techdashboard_header .mat-toolbar-row .quotation p { margin-top: 16px; }\n}\n@media screen and (max-width: 768px){\n  .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0; }\n}\n@media screen and (max-width: 576px){\n.add_form .submit_form button { font-size: 22px; padding: 2px; }\n\n.add_form .submit_form button { width: 100%; margin: 0; margin-top: 20px; }\n.add_form .submit_form { display: flex; flex-direction: column-reverse; text-align: center; margin-top: 0px; }\n.add_form .submit_form button:nth-child(1) { margin-right: 0; margin-top: 20px; }\n}\n@media screen and (max-width: 360px){\n.techdashboard_header .mat-toolbar-row .quotation p { font-size: 16px; line-height: 22px; }\n.add_form h2 { font-size: 22px; line-height: 24px; text-align: center; }\n}\n#menu_button{ display: none;}\n.add_header{ display: flex; margin: 0 16px;}\n.add_header button{ margin-left: auto;\n  background: linear-gradient(180deg, #fac855, #e47e2a)!important;\n  text-transform: uppercase;\n  font-family: \"RobotoBlack\"; padding-top: 4px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9hZG1pbi9kb2N0b3Itb2ZmaWNlLW1hbmFnZW1lbnQvYWRkLWVkaXQtZG9jdG9yLW9mYy9hZGQtZWRpdC1kb2N0b3Itb2ZjLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsZUFBZTtBQUNmLHdDQUF3QyxZQUFZLEVBQUU7QUFDdEQsc0RBQXNELGdCQUFnQixFQUFFLGNBQWMsRUFBRTtBQUN4RiwwREFBMEQsZUFBZSxFQUFFLHNCQUFzQixFQUFFO0FBQ25HLHdDQUF3Qyw2QkFBNkIsRUFBRSxlQUFlLENBQUM7QUFDdkYsb0RBQW9ELGtCQUFrQixDQUFDO0FBQ3ZFLHFEQUFxRCwyQkFBMkIsRUFBRSxlQUFlLEVBQUUsY0FBYyxFQUFFLHlCQUF5QixFQUFFLFNBQVMsRUFBRSxtQkFBbUI7RUFDMUssa0JBQWtCLENBQUM7QUFDckIsMERBQTBELGFBQWEsRUFBRSw4QkFBOEIsRUFBRSxrQkFBa0IsRUFBRTtBQUM3SCxtRUFBbUUsbUJBQW1CLEVBQUUsY0FBYyxFQUFFO0FBQ3hHLGtCQUFrQjtBQUdsQixXQUFXLFVBQVUsRUFBRSxpQkFBaUIsRUFBRSxtQkFBbUIsRUFBRSxrQkFBa0IsRUFBRSxvQkFBb0IsRUFBRSx5QkFBeUIsRUFBRTtBQUNwSSx5Q0FBeUMsVUFBVSxFQUFFLFlBQVksRUFBRTtBQUNuRSxrQ0FBa0MsWUFBWSxDQUFDO0FBQy9DLGNBQWMsMEJBQTBCLEVBQUUseUJBQXlCLEVBQUUsZUFBZSxFQUFFLGNBQWMsRUFBRSxjQUFjLEVBQUU7QUFDdEgseUJBQXlCLGNBQWMsRUFBRSxXQUFXLEVBQUUsa0JBQWtCLEVBQUUsZ0JBQWdCLEVBQUU7QUFDNUYsK0JBQStCLGtCQUFrQixFQUFFLHFEQUFxRCxFQUFFLGNBQWMsRUFBRSx5QkFBeUIsRUFBRSwwQkFBMEIsRUFBRSxlQUFlLEVBQUUsWUFBWTtBQUM5TSxZQUFZLEVBQUUseUJBQXlCLEVBQUU7QUFDekMsNENBQTRDLHFEQUFxRCxFQUFFLGNBQWMsRUFBRSx5QkFBeUIsRUFBRSxrQkFBa0IsRUFBRTtBQUNsSywyQkFBMkIsbUJBQW1CLEVBQUUsV0FBVyxFQUFFLG1CQUFtQixDQUFDO0FBS2pGO0VBQ0Usc0RBQXNELGVBQWUsRUFBRSxpQkFBaUIsQ0FBQztBQUMzRjtBQUVBO0VBQ0UsZ0NBQWdDLFVBQVUsRUFBRTtBQUM5QztBQUNBO0FBQ0EseUNBQXlDLHNCQUFzQixFQUFFLGFBQWEsQ0FBQztBQUMvRSxzREFBc0QsZ0JBQWdCLEVBQUU7QUFDeEU7QUFDQTtFQUNFLDBDQUEwQyxXQUFXLEVBQUUsU0FBUyxFQUFFO0FBQ3BFO0FBQ0E7QUFDQSxnQ0FBZ0MsZUFBZSxFQUFFLFlBQVksRUFBRTs7QUFFL0QsZ0NBQWdDLFdBQVcsRUFBRSxTQUFTLEVBQUUsZ0JBQWdCLEVBQUU7QUFDMUUseUJBQXlCLGFBQWEsRUFBRSw4QkFBOEIsRUFBRSxrQkFBa0IsRUFBRSxlQUFlLEVBQUU7QUFDN0csNkNBQTZDLGVBQWUsRUFBRSxnQkFBZ0IsRUFBRTtBQUNoRjtBQUVBO0FBQ0Esc0RBQXNELGVBQWUsRUFBRSxpQkFBaUIsRUFBRTtBQUMxRixlQUFlLGVBQWUsRUFBRSxpQkFBaUIsRUFBRSxrQkFBa0IsRUFBRTtBQUN2RTtBQUlBLGNBQWMsYUFBYSxDQUFDO0FBRTVCLGFBQWEsYUFBYSxFQUFFLGNBQWMsQ0FBQztBQUMzQyxvQkFBb0IsaUJBQWlCO0VBQ25DLCtEQUErRDtFQUMvRCx5QkFBeUI7RUFDekIsMEJBQTBCLEVBQUUsZ0JBQWdCO0FBQzlDIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9hZG1pbi9kb2N0b3Itb2ZmaWNlLW1hbmFnZW1lbnQvYWRkLWVkaXQtZG9jdG9yLW9mYy9hZGQtZWRpdC1kb2N0b3Itb2ZjLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBoZWFkZXIgY3NzICovXG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvd3sgaGVpZ2h0OiBhdXRvOyB9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAubG9nb193cmFwcGVyeyBtYXgtd2lkdGg6IDIwMHB4OyBkaXNwbGF5OiBibG9jazsgfVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLmxvZ29fd3JhcHBlciBpbWd7IG1heC13aWR0aDogMTAwJTsgdmVydGljYWwtYWxpZ246IG1pZGRsZTsgfVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3d7IGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5OyBwYWRkaW5nOiAwIDQwcHg7fVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnF1b3RhdGlvbiB7IG1hcmdpbi1ib3R0b206IDBweDt9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIHB7IGZvbnQtZmFtaWx5OiBcIlJvYm90b01lZGl1bVwiOyBmb250LXNpemU6IDMwcHg7IGNvbG9yOiAjMDAyMDM1OyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBtYXJnaW46IDA7IHdoaXRlLXNwYWNlOiBub3JtYWw7XG4gIHRleHQtYWxpZ246IGNlbnRlcjt9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucHJvZmlsZV9zZWN0aW9uIHsgZGlzcGxheTogZmxleDsgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjZTJkZWRlOyBwYWRkaW5nLWxlZnQ6IDIwcHg7IH1cbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IC5wcm9maWxlX3NlY3Rpb24gLnVzZXJuYW1leyBwYWRkaW5nLXJpZ2h0OiAyMHB4OyBkaXNwbGF5OiBibG9jazsgfVxuLypFbmQgaGVhZGVyIGNzcyAqL1xuXG5cbi5hZGRfZm9ybXsgd2lkdGg6IDgwJTsgbWFyZ2luOiAyMHB4IGF1dG87IGJhY2tncm91bmQ6ICNmM2YzZjM7IHBhZGRpbmc6IDE2cHggMTBweDsgcGFkZGluZy1ib3R0b206IDUwcHg7IGJvcmRlcjogMXB4IHNvbGlkICM5MWU3ZmY7IH1cbi5hZGRfZm9ybSAuZm9ybV93cmFwcGVyIC5tYXQtZm9ybS1maWVsZHsgd2lkdGg6IDQ5JTsgbWFyZ2luOiAwLjUlOyB9XG4uYWRkX2Zvcm0gLmZvcm1fd3JhcHBlciB0ZXh0YXJlYXsgcmVzaXplOiBub25lO31cbi5hZGRfZm9ybSBoMnsgZm9udC1mYW1pbHk6IFwiUm9ib3RvQmxhY2tcIjsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgZm9udC1zaXplOiAyNHB4OyBwYWRkaW5nOiAwIDZweDsgY29sb3I6ICMxZGJjZTk7IH1cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0geyBkaXNwbGF5OiBibG9jazsgd2lkdGg6IDEwMCU7IHRleHQtYWxpZ246IGNlbnRlcjsgbWFyZ2luLXRvcDogMzBweDsgfVxuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b257IGJvcmRlci1yYWRpdXM6IDVweDsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE4MGRlZywgI2Y5ZGMxOSwgI2RhYTUwNSk7IGNvbG9yOiAjNWUzNjE5OyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBmb250LWZhbWlseTogXCJSb2JvdG9CbGFja1wiOyBmb250LXNpemU6IDI1cHg7IHBhZGRpbmc6IDhweDtcbndpZHRoOiAzOTBweDsgYm9yZGVyOiAzcHggc29saWQgI2Q1OWQwMTsgfVxuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b246bnRoLWNoaWxkKDEpeyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjZjJiZTAwLCAjYTUyYTA4KTsgY29sb3I6ICNmM2YzZjM7IGJvcmRlcjogMnB4IHNvbGlkICNiYjNjMGQ7IG1hcmdpbi1yaWdodDogMTZweDsgfVxuLmFkZF9mb3JtIC5yZXR1cm5fYnV0dG9uIHsgYmFja2dyb3VuZDogIzFkYmNlOTsgY29sb3I6ICNmZmY7IG1hcmdpbi1ib3R0b206IDEycHg7fVxuXG5cblxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxNDYwcHgpe1xuICAudGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIHAgeyBmb250LXNpemU6IDI0cHg7IGxpbmUtaGVpZ2h0OiAyNnB4O31cbn1cblxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTAwMHB4KXtcbiAgLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b24geyB3aWR0aDogNDglOyB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA5OTFweCl7XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyB7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IHBhZGRpbmc6IDIwcHg7fVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnF1b3RhdGlvbiBwIHsgbWFyZ2luLXRvcDogMTZweDsgfVxufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzY4cHgpe1xuICAuYWRkX2Zvcm0gLmZvcm1fd3JhcHBlciAubWF0LWZvcm0tZmllbGQgeyB3aWR0aDogMTAwJTsgbWFyZ2luOiAwOyB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA1NzZweCl7XG4uYWRkX2Zvcm0gLnN1Ym1pdF9mb3JtIGJ1dHRvbiB7IGZvbnQtc2l6ZTogMjJweDsgcGFkZGluZzogMnB4OyB9XG5cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0gYnV0dG9uIHsgd2lkdGg6IDEwMCU7IG1hcmdpbjogMDsgbWFyZ2luLXRvcDogMjBweDsgfVxuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW4tcmV2ZXJzZTsgdGV4dC1hbGlnbjogY2VudGVyOyBtYXJnaW4tdG9wOiAwcHg7IH1cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0gYnV0dG9uOm50aC1jaGlsZCgxKSB7IG1hcmdpbi1yaWdodDogMDsgbWFyZ2luLXRvcDogMjBweDsgfVxufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzNjBweCl7XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIHAgeyBmb250LXNpemU6IDE2cHg7IGxpbmUtaGVpZ2h0OiAyMnB4OyB9XG4uYWRkX2Zvcm0gaDIgeyBmb250LXNpemU6IDIycHg7IGxpbmUtaGVpZ2h0OiAyNHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7IH1cbn1cblxuXG5cbiNtZW51X2J1dHRvbnsgZGlzcGxheTogbm9uZTt9XG5cbi5hZGRfaGVhZGVyeyBkaXNwbGF5OiBmbGV4OyBtYXJnaW46IDAgMTZweDt9XG4uYWRkX2hlYWRlciBidXR0b257IG1hcmdpbi1sZWZ0OiBhdXRvO1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjZmFjODU1LCAjZTQ3ZTJhKSFpbXBvcnRhbnQ7XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gIGZvbnQtZmFtaWx5OiBcIlJvYm90b0JsYWNrXCI7IHBhZGRpbmctdG9wOiA0cHg7XG59Il19 */");
 
 /***/ }),
 
-/***/ "./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.ts":
-/*!*******************************************************************************************!*\
-  !*** ./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.ts ***!
-  \*******************************************************************************************/
-/*! exports provided: AddEditTechComponent */
+/***/ "./src/app/components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component.ts":
+/*!****************************************************************************************************************!*\
+  !*** ./src/app/components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component.ts ***!
+  \****************************************************************************************************************/
+/*! exports provided: AddEditDoctorOfcComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddEditTechComponent", function() { return AddEditTechComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddEditDoctorOfcComponent", function() { return AddEditDoctorOfcComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
@@ -7657,8 +7749,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let AddEditTechComponent = class AddEditTechComponent {
-    constructor(fb, activeRoute, router, httpService, datePipe, cookie, snackBar, commonFunction) {
+
+let AddEditDoctorOfcComponent = class AddEditDoctorOfcComponent {
+    constructor(fb, activeRoute, router, httpService, datePipe, cookie, snackBar, commonFunction, dialog) {
         this.fb = fb;
         this.activeRoute = activeRoute;
         this.router = router;
@@ -7667,12 +7760,12 @@ let AddEditTechComponent = class AddEditTechComponent {
         this.cookie = cookie;
         this.snackBar = snackBar;
         this.commonFunction = commonFunction;
+        this.dialog = dialog;
         this.message = "Submitted Successfully";
+        this.htmlText = { header: 'Add Doctor office', nav: 'Add Doctor office', buttonText: 'Save' };
         this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](new Date());
         this.serializedDate = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]((new Date()).toISOString());
         this.usersData = [];
-        this.htmlText = { header: 'Add New Technician', nav: 'Add Technician', buttonText: 'Save' };
-        this.taxo_array = [];
         /* Set Meta Data */
         this.commonFunction.setTitleMetaTags();
         this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
@@ -7680,6 +7773,331 @@ let AddEditTechComponent = class AddEditTechComponent {
         this.allStateCityData();
         this.user_token = cookie.get('jwtToken');
         this.params_id = this.activeRoute.snapshot.params._id;
+        this.doctorOfficeAddEditForm = this.fb.group({
+            centerName: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            email: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(100)]],
+            phone: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            address: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            city: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            state: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            zip: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            date: [dateformat],
+            status: [''],
+            type: ['doctor_office'],
+            password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(16), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(6)]],
+            confirmpassword: [],
+        }, { validators: this.matchpassword('password', 'confirmpassword') });
+    }
+    ngOnInit() {
+        if (this.params_id) {
+            this.htmlText.header = 'Edit Doctors Office Record';
+            this.htmlText.nav = 'Edit Doctors Office';
+            this.htmlText.buttonText = 'Update';
+            this.getResolveData();
+        }
+    }
+    getResolveData() {
+        this.activeRoute.data.forEach((data) => {
+            this.usersData = data.data.res;
+            let techDetails;
+            techDetails = data.data.res;
+            setTimeout(() => {
+                this.getCityByName(techDetails[0].state);
+            }, 400);
+            this.doctorOfficeAddEditForm.controls['centerName'].patchValue(techDetails[0].centerName);
+            this.doctorOfficeAddEditForm.controls['email'].patchValue(techDetails[0].email);
+            this.doctorOfficeAddEditForm.controls['phone'].patchValue(techDetails[0].phone);
+            this.doctorOfficeAddEditForm.controls['address'].patchValue(techDetails[0].address);
+            this.doctorOfficeAddEditForm.controls['city'].patchValue(techDetails[0].city);
+            this.doctorOfficeAddEditForm.controls['state'].patchValue(techDetails[0].state);
+            this.doctorOfficeAddEditForm.controls['zip'].patchValue(techDetails[0].zip);
+            this.doctorOfficeAddEditForm.controls['status'].patchValue(techDetails[0].status);
+        });
+    }
+    matchpassword(passwordkye, confirmpasswordkye) {
+        return (group) => {
+            let passwordInput = group.controls[passwordkye], confirmpasswordInput = group.controls[confirmpasswordkye];
+            if (passwordInput.value !== confirmpasswordInput.value) {
+                return confirmpasswordInput.setErrors({ notEquivalent: true });
+            }
+            else {
+                return confirmpasswordInput.setErrors(null);
+            }
+        };
+    }
+    /**for validation purpose**/
+    inputUntouch(form, val) {
+        form.controls[val].markAsUntouched();
+    }
+    /**for validation purpose**/
+    /**for getting all states & cities function start here**/
+    allStateCityData() {
+        this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
+            this.states = response;
+        });
+        this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(response => {
+            this.allCities = response;
+        });
+    }
+    /**for getting all states & cities  function end here**/
+    getCity(event) {
+        var val = event;
+        this.cities = this.allCities[val];
+    }
+    getCityByName(stateName) {
+        this.cities = this.allCities[stateName];
+    }
+    doctorOfficeAddEditFormFormSubmit() {
+        let x;
+        for (x in this.doctorOfficeAddEditForm.controls) {
+            this.doctorOfficeAddEditForm.controls[x].markAsTouched();
+        }
+        if (this.params_id) {
+            delete this.doctorOfficeAddEditForm.value.password;
+            delete this.doctorOfficeAddEditForm.value.confirmpassword;
+        }
+        if (this.doctorOfficeAddEditForm.valid) {
+            if (this.doctorOfficeAddEditForm.value.status)
+                this.doctorOfficeAddEditForm.value.status = parseInt("1");
+            else
+                this.doctorOfficeAddEditForm.value.status = parseInt("0");
+            delete this.doctorOfficeAddEditForm.value.confirmpassword;
+            var data;
+            if (this.params_id) {
+                data = {
+                    "source": "users",
+                    "data": {
+                        id: this.params_id,
+                        centerName: this.doctorOfficeAddEditForm.value.centerName,
+                        phone: this.doctorOfficeAddEditForm.value.phone,
+                        email: this.doctorOfficeAddEditForm.value.email,
+                        address: this.doctorOfficeAddEditForm.value.address,
+                        city: this.doctorOfficeAddEditForm.value.city,
+                        state: this.doctorOfficeAddEditForm.value.state,
+                        zip: this.doctorOfficeAddEditForm.value.zip,
+                        status: this.doctorOfficeAddEditForm.value.status,
+                    },
+                    "token": this.user_token
+                };
+            }
+            else {
+                data = {
+                    "source": "users",
+                    "data": this.doctorOfficeAddEditForm.value,
+                    "token": this.user_token
+                };
+            }
+            this.httpService.httpViaPost("addorupdatedata", data)
+                .subscribe(response => {
+                let action = "ok";
+                this.snackBar.open(this.message, action, {
+                    duration: 2000,
+                });
+                this.formDirective.resetForm();
+                setTimeout(() => {
+                    this.router.navigateByUrl("/admin/doctor-office-management");
+                }, 2200);
+            });
+        }
+        else {
+            alert("error");
+        }
+    }
+};
+AddEditDoctorOfcComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_4__["HttpServiceService"] },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_5__["DatePipe"] },
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_6__["CookieService"] },
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSnackBar"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__["CommonFunction"] },
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatDialog"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], { static: false })
+], AddEditDoctorOfcComponent.prototype, "formDirective", void 0);
+AddEditDoctorOfcComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-add-edit-doctor-ofc',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./add-edit-doctor-ofc.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./add-edit-doctor-ofc.component.css */ "./src/app/components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component.css")).default]
+    })
+], AddEditDoctorOfcComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/admin/doctor-office-management/doctor-office-management.component.css":
+/*!**************************************************************************************************!*\
+  !*** ./src/app/components/admin/doctor-office-management/doctor-office-management.component.css ***!
+  \**************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n.add_header{ display: flex; margin: 0 16px;}\n.add_header button{ margin-left: auto;\n  background: linear-gradient(180deg, #fac855, #e47e2a)!important;\n  text-transform: uppercase;\n  font-family: \"RobotoBlack\"; padding-top: 4px;\n}\n@media screen and (max-width: 480px){\n  .add_header { display: flex;  margin: 0 16px; align-items: center; justify-content: center; flex-direction: column; }\n  .add_header button { margin-left: 0; }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9hZG1pbi9kb2N0b3Itb2ZmaWNlLW1hbmFnZW1lbnQvZG9jdG9yLW9mZmljZS1tYW5hZ2VtZW50LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFFQSxhQUFhLGFBQWEsRUFBRSxjQUFjLENBQUM7QUFDM0Msb0JBQW9CLGlCQUFpQjtFQUNuQywrREFBK0Q7RUFDL0QseUJBQXlCO0VBQ3pCLDBCQUEwQixFQUFFLGdCQUFnQjtBQUM5QztBQUVBO0VBQ0UsY0FBYyxhQUFhLEdBQUcsY0FBYyxFQUFFLG1CQUFtQixFQUFFLHVCQUF1QixFQUFFLHNCQUFzQixFQUFFO0VBQ3BILHFCQUFxQixjQUFjLEVBQUU7QUFDdkMiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2FkbWluL2RvY3Rvci1vZmZpY2UtbWFuYWdlbWVudC9kb2N0b3Itb2ZmaWNlLW1hbmFnZW1lbnQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxuXG4uYWRkX2hlYWRlcnsgZGlzcGxheTogZmxleDsgbWFyZ2luOiAwIDE2cHg7fVxuLmFkZF9oZWFkZXIgYnV0dG9ueyBtYXJnaW4tbGVmdDogYXV0bztcbiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE4MGRlZywgI2ZhYzg1NSwgI2U0N2UyYSkhaW1wb3J0YW50O1xuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICBmb250LWZhbWlseTogXCJSb2JvdG9CbGFja1wiOyBwYWRkaW5nLXRvcDogNHB4O1xufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA0ODBweCl7XG4gIC5hZGRfaGVhZGVyIHsgZGlzcGxheTogZmxleDsgIG1hcmdpbjogMCAxNnB4OyBhbGlnbi1pdGVtczogY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgZmxleC1kaXJlY3Rpb246IGNvbHVtbjsgfVxuICAuYWRkX2hlYWRlciBidXR0b24geyBtYXJnaW4tbGVmdDogMDsgfVxufVxuIl19 */");
+
+/***/ }),
+
+/***/ "./src/app/components/admin/doctor-office-management/doctor-office-management.component.ts":
+/*!*************************************************************************************************!*\
+  !*** ./src/app/components/admin/doctor-office-management/doctor-office-management.component.ts ***!
+  \*************************************************************************************************/
+/*! exports provided: DoctorOfficeManagementComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoctorOfficeManagementComponent", function() { return DoctorOfficeManagementComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _services_http_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../services/http-service.service */ "./src/app/services/http-service.service.ts");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
+
+
+
+
+
+
+let DoctorOfficeManagementComponent = class DoctorOfficeManagementComponent {
+    constructor(activatedRoute, cookie, http, httpService, commonFunction) {
+        this.activatedRoute = activatedRoute;
+        this.cookie = cookie;
+        this.http = http;
+        this.httpService = httpService;
+        this.commonFunction = commonFunction;
+        this.doctorOfficeAllData = [];
+        this.doctorOfficeAllData_skip = ["password", "_id", "type"];
+        this.editUrl = "admin/doctor-office-management/edit";
+        this.doctorOfficeAllData_modify_header = {
+            "centerName": "Center Name", "email": "E-Mail", "phone": "Phone", "address": "Address", "city": "City",
+            "state": "State", "date": "Date Added", "status": "Status"
+        };
+        this.UpdateEndpoint = "addorupdatedata";
+        this.deleteEndpoint = "deletesingledata";
+        this.apiUrl = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";
+        this.tableName = "users";
+        this.status = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
+        this.SearchingEndpoint = "datalist";
+        this.SearchingSourceName = "users_view_doctoroffice";
+        this.search_settings = {
+            selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
+            textsearch: [{ label: "Search By Center Name", field: 'centerName' },
+                { label: "Search By E-Mail", field: 'email' }],
+        };
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
+        this.user_cookie = cookie.get('jwtToken');
+    }
+    ngOnInit() {
+        this.activatedRoute.data.forEach((data) => {
+            this.doctorOfficeAllData = data.data.res;
+        });
+    }
+};
+DoctorOfficeManagementComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
+    { type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_5__["HttpServiceService"] },
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_6__["CommonFunction"] }
+];
+DoctorOfficeManagementComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-doctor-office-management',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./doctor-office-management.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/admin/doctor-office-management/doctor-office-management.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./doctor-office-management.component.css */ "./src/app/components/admin/doctor-office-management/doctor-office-management.component.css")).default]
+    })
+], DoctorOfficeManagementComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.css":
+/*!********************************************************************************************!*\
+  !*** ./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.css ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("/* header css */\n.techdashboard_header .mat-toolbar-row{ height: auto; }\n.techdashboard_header .mat-toolbar-row .logo_wrapper{ max-width: 200px; display: block; }\n.techdashboard_header .mat-toolbar-row .logo_wrapper img{ max-width: 100%; vertical-align: middle; }\n.techdashboard_header .mat-toolbar-row{ justify-content: space-evenly; padding: 0 40px;}\n.techdashboard_header .mat-toolbar-row .quotation { margin-bottom: 0px;}\n.techdashboard_header .mat-toolbar-row .quotation p{ font-family: \"RobotoMedium\"; font-size: 30px; color: #002035; text-transform: uppercase; margin: 0; white-space: normal;\n  text-align: center;}\n.techdashboard_header .mat-toolbar-row .profile_section { display: flex; border-left: 1px solid #e2dede; padding-left: 20px; }\n.techdashboard_header .mat-toolbar-row .profile_section .username{ padding-right: 20px; display: block; }\n/*End header css */\n.add_form{ width: 80%; margin: 20px auto; background: #f3f3f3; padding: 16px 10px; padding-bottom: 50px; border: 1px solid #91e7ff; }\n.add_form .form_wrapper .mat-form-field{ width: 49%; margin: 0.5%; }\n.add_form .form_wrapper textarea{ resize: none;}\n.add_form h2{ font-family: \"RobotoBlack\"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }\n/* .add_form .submit_form { display: block; width: 100%; text-align: center; margin-top: 30px; } */\n.add_form .submit_form{\ndisplay: flex;\nwidth: 100%;\ntext-align: center;\nmargin-top: 30px;\njustify-content: space-between;\nmargin: auto; }\n/* .add_form .submit_form button{ border-radius: 5px; background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: \"RobotoBlack\"; font-size: 25px; padding: 8px;\n  width: 390px; border: 3px solid #d59d01; } */\n.add_form .submit_form button{ border-radius: 5px; background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: \"RobotoBlack\"; font-size: 25px; padding: 8px;\nwidth: 24%; border: 3px solid #d59d01; }\n.add_form .submit_form button:nth-child(1){ background: linear-gradient(180deg, #f2be00, #a52a08); color: #f3f3f3; border: 2px solid #bb3c0d;  }\n.add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;}\n@media screen and (max-width: 1460px){\n  .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; line-height: 26px;}\n}\n@media screen and (max-width: 1366px){\n.add_form .submit_form button {font-size: 22px;}\n}\n@media screen and (max-width: 1000px){\n  .add_form .submit_form button { width: 48%; }\n}\n@media screen and (max-width: 991px){\n.techdashboard_header .mat-toolbar-row { flex-direction: column; padding: 20px;}\n.techdashboard_header .mat-toolbar-row .quotation p { margin-top: 16px; }\n}\n@media screen and (max-width: 768px){\n  .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0; }\n}\n@media screen and (max-width: 576px){\n.add_form .submit_form button { font-size: 22px; padding: 2px; }\n\n.add_form .submit_form button { width: 100%; margin: 0; margin-top: 20px; }\n.add_form .submit_form { display: flex; flex-direction: column-reverse; text-align: center; margin-top: 0px; }\n.add_form .submit_form button:nth-child(1) { margin-right: 0; margin-top: 20px; }\n}\n@media screen and (max-width: 360px){\n.techdashboard_header .mat-toolbar-row .quotation p { font-size: 16px; line-height: 22px; }\n.add_form h2 { font-size: 22px; line-height: 24px; text-align: center; }\n}\n#menu_button{ display: none;}\n.add_header{ display: flex; margin: 0 16px;}\n.add_header button{ margin-left: auto;\n  background: linear-gradient(180deg, #fac855, #e47e2a)!important;\n  text-transform: uppercase;\n  font-family: \"RobotoBlack\"; padding-top: 4px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9hZG1pbi90ZWNoLW1hbmFnZW1lbnQvYWRkLWVkaXQtdGVjaC9hZGQtZWRpdC10ZWNoLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsZUFBZTtBQUNmLHdDQUF3QyxZQUFZLEVBQUU7QUFDdEQsc0RBQXNELGdCQUFnQixFQUFFLGNBQWMsRUFBRTtBQUN4RiwwREFBMEQsZUFBZSxFQUFFLHNCQUFzQixFQUFFO0FBQ25HLHdDQUF3Qyw2QkFBNkIsRUFBRSxlQUFlLENBQUM7QUFDdkYsb0RBQW9ELGtCQUFrQixDQUFDO0FBQ3ZFLHFEQUFxRCwyQkFBMkIsRUFBRSxlQUFlLEVBQUUsY0FBYyxFQUFFLHlCQUF5QixFQUFFLFNBQVMsRUFBRSxtQkFBbUI7RUFDMUssa0JBQWtCLENBQUM7QUFDckIsMERBQTBELGFBQWEsRUFBRSw4QkFBOEIsRUFBRSxrQkFBa0IsRUFBRTtBQUM3SCxtRUFBbUUsbUJBQW1CLEVBQUUsY0FBYyxFQUFFO0FBQ3hHLGtCQUFrQjtBQUdsQixXQUFXLFVBQVUsRUFBRSxpQkFBaUIsRUFBRSxtQkFBbUIsRUFBRSxrQkFBa0IsRUFBRSxvQkFBb0IsRUFBRSx5QkFBeUIsRUFBRTtBQUNwSSx5Q0FBeUMsVUFBVSxFQUFFLFlBQVksRUFBRTtBQUNuRSxrQ0FBa0MsWUFBWSxDQUFDO0FBQy9DLGNBQWMsMEJBQTBCLEVBQUUseUJBQXlCLEVBQUUsZUFBZSxFQUFFLGNBQWMsRUFBRSxjQUFjLEVBQUU7QUFDdEgsa0dBQWtHO0FBRWxHO0FBQ0EsYUFBYTtBQUNiLFdBQVc7QUFDWCxrQkFBa0I7QUFDbEIsZ0JBQWdCO0FBQ2hCLDhCQUE4QjtBQUM5QixZQUFZLEVBQUU7QUFDZDs4Q0FDOEM7QUFDOUMsK0JBQStCLGtCQUFrQixFQUFFLHFEQUFxRCxFQUFFLGNBQWMsRUFBRSx5QkFBeUIsRUFBRSwwQkFBMEIsRUFBRSxlQUFlLEVBQUUsWUFBWTtBQUM5TSxVQUFVLEVBQUUseUJBQXlCLEVBQUU7QUFDdkMsNENBQTRDLHFEQUFxRCxFQUFFLGNBQWMsRUFBRSx5QkFBeUIsR0FBRztBQUMvSSwyQkFBMkIsbUJBQW1CLEVBQUUsV0FBVyxFQUFFLG1CQUFtQixDQUFDO0FBS2pGO0VBQ0Usc0RBQXNELGVBQWUsRUFBRSxpQkFBaUIsQ0FBQztBQUMzRjtBQUNBO0FBQ0EsK0JBQStCLGVBQWUsQ0FBQztBQUMvQztBQUNBO0VBQ0UsZ0NBQWdDLFVBQVUsRUFBRTtBQUM5QztBQUNBO0FBQ0EseUNBQXlDLHNCQUFzQixFQUFFLGFBQWEsQ0FBQztBQUMvRSxzREFBc0QsZ0JBQWdCLEVBQUU7QUFDeEU7QUFDQTtFQUNFLDBDQUEwQyxXQUFXLEVBQUUsU0FBUyxFQUFFO0FBQ3BFO0FBQ0E7QUFDQSxnQ0FBZ0MsZUFBZSxFQUFFLFlBQVksRUFBRTs7QUFFL0QsZ0NBQWdDLFdBQVcsRUFBRSxTQUFTLEVBQUUsZ0JBQWdCLEVBQUU7QUFDMUUseUJBQXlCLGFBQWEsRUFBRSw4QkFBOEIsRUFBRSxrQkFBa0IsRUFBRSxlQUFlLEVBQUU7QUFDN0csNkNBQTZDLGVBQWUsRUFBRSxnQkFBZ0IsRUFBRTtBQUNoRjtBQUVBO0FBQ0Esc0RBQXNELGVBQWUsRUFBRSxpQkFBaUIsRUFBRTtBQUMxRixlQUFlLGVBQWUsRUFBRSxpQkFBaUIsRUFBRSxrQkFBa0IsRUFBRTtBQUN2RTtBQUlBLGNBQWMsYUFBYSxDQUFDO0FBRTVCLGFBQWEsYUFBYSxFQUFFLGNBQWMsQ0FBQztBQUMzQyxvQkFBb0IsaUJBQWlCO0VBQ25DLCtEQUErRDtFQUMvRCx5QkFBeUI7RUFDekIsMEJBQTBCLEVBQUUsZ0JBQWdCO0FBQzlDIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9hZG1pbi90ZWNoLW1hbmFnZW1lbnQvYWRkLWVkaXQtdGVjaC9hZGQtZWRpdC10ZWNoLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBoZWFkZXIgY3NzICovXG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvd3sgaGVpZ2h0OiBhdXRvOyB9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAubG9nb193cmFwcGVyeyBtYXgtd2lkdGg6IDIwMHB4OyBkaXNwbGF5OiBibG9jazsgfVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLmxvZ29fd3JhcHBlciBpbWd7IG1heC13aWR0aDogMTAwJTsgdmVydGljYWwtYWxpZ246IG1pZGRsZTsgfVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3d7IGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5OyBwYWRkaW5nOiAwIDQwcHg7fVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnF1b3RhdGlvbiB7IG1hcmdpbi1ib3R0b206IDBweDt9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIHB7IGZvbnQtZmFtaWx5OiBcIlJvYm90b01lZGl1bVwiOyBmb250LXNpemU6IDMwcHg7IGNvbG9yOiAjMDAyMDM1OyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBtYXJnaW46IDA7IHdoaXRlLXNwYWNlOiBub3JtYWw7XG4gIHRleHQtYWxpZ246IGNlbnRlcjt9XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucHJvZmlsZV9zZWN0aW9uIHsgZGlzcGxheTogZmxleDsgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjZTJkZWRlOyBwYWRkaW5nLWxlZnQ6IDIwcHg7IH1cbi50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IC5wcm9maWxlX3NlY3Rpb24gLnVzZXJuYW1leyBwYWRkaW5nLXJpZ2h0OiAyMHB4OyBkaXNwbGF5OiBibG9jazsgfVxuLypFbmQgaGVhZGVyIGNzcyAqL1xuXG5cbi5hZGRfZm9ybXsgd2lkdGg6IDgwJTsgbWFyZ2luOiAyMHB4IGF1dG87IGJhY2tncm91bmQ6ICNmM2YzZjM7IHBhZGRpbmc6IDE2cHggMTBweDsgcGFkZGluZy1ib3R0b206IDUwcHg7IGJvcmRlcjogMXB4IHNvbGlkICM5MWU3ZmY7IH1cbi5hZGRfZm9ybSAuZm9ybV93cmFwcGVyIC5tYXQtZm9ybS1maWVsZHsgd2lkdGg6IDQ5JTsgbWFyZ2luOiAwLjUlOyB9XG4uYWRkX2Zvcm0gLmZvcm1fd3JhcHBlciB0ZXh0YXJlYXsgcmVzaXplOiBub25lO31cbi5hZGRfZm9ybSBoMnsgZm9udC1mYW1pbHk6IFwiUm9ib3RvQmxhY2tcIjsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgZm9udC1zaXplOiAyNHB4OyBwYWRkaW5nOiAwIDZweDsgY29sb3I6ICMxZGJjZTk7IH1cbi8qIC5hZGRfZm9ybSAuc3VibWl0X2Zvcm0geyBkaXNwbGF5OiBibG9jazsgd2lkdGg6IDEwMCU7IHRleHQtYWxpZ246IGNlbnRlcjsgbWFyZ2luLXRvcDogMzBweDsgfSAqL1xuXG4uYWRkX2Zvcm0gLnN1Ym1pdF9mb3Jte1xuZGlzcGxheTogZmxleDtcbndpZHRoOiAxMDAlO1xudGV4dC1hbGlnbjogY2VudGVyO1xubWFyZ2luLXRvcDogMzBweDtcbmp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbm1hcmdpbjogYXV0bzsgfVxuLyogLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b257IGJvcmRlci1yYWRpdXM6IDVweDsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE4MGRlZywgI2Y5ZGMxOSwgI2RhYTUwNSk7IGNvbG9yOiAjNWUzNjE5OyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBmb250LWZhbWlseTogXCJSb2JvdG9CbGFja1wiOyBmb250LXNpemU6IDI1cHg7IHBhZGRpbmc6IDhweDtcbiAgd2lkdGg6IDM5MHB4OyBib3JkZXI6IDNweCBzb2xpZCAjZDU5ZDAxOyB9ICovXG4uYWRkX2Zvcm0gLnN1Ym1pdF9mb3JtIGJ1dHRvbnsgYm9yZGVyLXJhZGl1czogNXB4OyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjZjlkYzE5LCAjZGFhNTA1KTsgY29sb3I6ICM1ZTM2MTk7IHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7IGZvbnQtZmFtaWx5OiBcIlJvYm90b0JsYWNrXCI7IGZvbnQtc2l6ZTogMjVweDsgcGFkZGluZzogOHB4O1xud2lkdGg6IDI0JTsgYm9yZGVyOiAzcHggc29saWQgI2Q1OWQwMTsgfVxuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b246bnRoLWNoaWxkKDEpeyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjZjJiZTAwLCAjYTUyYTA4KTsgY29sb3I6ICNmM2YzZjM7IGJvcmRlcjogMnB4IHNvbGlkICNiYjNjMGQ7ICB9XG4uYWRkX2Zvcm0gLnJldHVybl9idXR0b24geyBiYWNrZ3JvdW5kOiAjMWRiY2U5OyBjb2xvcjogI2ZmZjsgbWFyZ2luLWJvdHRvbTogMTJweDt9XG5cblxuXG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDE0NjBweCl7XG4gIC50ZWNoZGFzaGJvYXJkX2hlYWRlciAubWF0LXRvb2xiYXItcm93IC5xdW90YXRpb24gcCB7IGZvbnQtc2l6ZTogMjRweDsgbGluZS1oZWlnaHQ6IDI2cHg7fVxufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTM2NnB4KXtcbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0gYnV0dG9uIHtmb250LXNpemU6IDIycHg7fVxufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTAwMHB4KXtcbiAgLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b24geyB3aWR0aDogNDglOyB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA5OTFweCl7XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyB7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IHBhZGRpbmc6IDIwcHg7fVxuLnRlY2hkYXNoYm9hcmRfaGVhZGVyIC5tYXQtdG9vbGJhci1yb3cgLnF1b3RhdGlvbiBwIHsgbWFyZ2luLXRvcDogMTZweDsgfVxufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzY4cHgpe1xuICAuYWRkX2Zvcm0gLmZvcm1fd3JhcHBlciAubWF0LWZvcm0tZmllbGQgeyB3aWR0aDogMTAwJTsgbWFyZ2luOiAwOyB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA1NzZweCl7XG4uYWRkX2Zvcm0gLnN1Ym1pdF9mb3JtIGJ1dHRvbiB7IGZvbnQtc2l6ZTogMjJweDsgcGFkZGluZzogMnB4OyB9XG5cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0gYnV0dG9uIHsgd2lkdGg6IDEwMCU7IG1hcmdpbjogMDsgbWFyZ2luLXRvcDogMjBweDsgfVxuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW4tcmV2ZXJzZTsgdGV4dC1hbGlnbjogY2VudGVyOyBtYXJnaW4tdG9wOiAwcHg7IH1cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0gYnV0dG9uOm50aC1jaGlsZCgxKSB7IG1hcmdpbi1yaWdodDogMDsgbWFyZ2luLXRvcDogMjBweDsgfVxufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzNjBweCl7XG4udGVjaGRhc2hib2FyZF9oZWFkZXIgLm1hdC10b29sYmFyLXJvdyAucXVvdGF0aW9uIHAgeyBmb250LXNpemU6IDE2cHg7IGxpbmUtaGVpZ2h0OiAyMnB4OyB9XG4uYWRkX2Zvcm0gaDIgeyBmb250LXNpemU6IDIycHg7IGxpbmUtaGVpZ2h0OiAyNHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7IH1cbn1cblxuXG5cbiNtZW51X2J1dHRvbnsgZGlzcGxheTogbm9uZTt9XG5cbi5hZGRfaGVhZGVyeyBkaXNwbGF5OiBmbGV4OyBtYXJnaW46IDAgMTZweDt9XG4uYWRkX2hlYWRlciBidXR0b257IG1hcmdpbi1sZWZ0OiBhdXRvO1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjZmFjODU1LCAjZTQ3ZTJhKSFpbXBvcnRhbnQ7XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gIGZvbnQtZmFtaWx5OiBcIlJvYm90b0JsYWNrXCI7IHBhZGRpbmctdG9wOiA0cHg7XG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.ts":
+/*!*******************************************************************************************!*\
+  !*** ./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.ts ***!
+  \*******************************************************************************************/
+/*! exports provided: AddEditTechComponent, Dialogtest */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddEditTechComponent", function() { return AddEditTechComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Dialogtest", function() { return Dialogtest; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _services_http_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../services/http-service.service */ "./src/app/services/http-service.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../class/common/common-function */ "./src/app/class/common/common-function.ts");
+
+
+
+
+
+
+
+
+
+
+let AddEditTechComponent = class AddEditTechComponent {
+    constructor(fb, activeRoute, router, httpService, datePipe, cookie, snackBar, commonFunction, dialog) {
+        this.fb = fb;
+        this.activeRoute = activeRoute;
+        this.router = router;
+        this.httpService = httpService;
+        this.datePipe = datePipe;
+        this.cookie = cookie;
+        this.snackBar = snackBar;
+        this.commonFunction = commonFunction;
+        this.dialog = dialog;
+        this.message = "Submitted Successfully";
+        this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](new Date());
+        this.serializedDate = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]((new Date()).toISOString());
+        this.usersData = [];
+        this.htmlText = { header: 'Add New Technician', nav: 'Add Technician', buttonText: 'Save' };
+        this.taxo_array = [];
+        this.headerText = "add technician";
+        /* Set Meta Data */
+        this.commonFunction.setTitleMetaTags();
+        this.allStateCityData();
+        this.user_token = cookie.get('jwtToken');
+        this.params_id = this.activeRoute.snapshot.params._id;
+        if (this.params_id) {
+            this.generateEditForm();
+        }
+        else {
+            this.generateAddForm();
+        }
+    }
+    generateAddForm() {
+        this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
+        var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
         this.TechManagementAddEditForm = this.fb.group({
             firstname: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             lastname: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
@@ -7691,16 +8109,35 @@ let AddEditTechComponent = class AddEditTechComponent {
             zip: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             date: [dateformat],
             type: ['tech'],
-            taxo_list: [],
+            // taxo_list : [],
             status: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(16), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(6)]],
-            confirmpassword: [],
+            confirmpassword: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
         }, { validators: this.matchpassword('password', 'confirmpassword') });
+    }
+    generateEditForm() {
+        this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
+        var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+        this.TechManagementAddEditForm = this.fb.group({
+            firstname: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            lastname: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            email: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(100)]],
+            phone: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            address: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            city: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            state: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            zip: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            date: [dateformat],
+            type: ['tech'],
+            // taxo_list : [],
+            status: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+        });
     }
     ngOnInit() {
         if (this.params_id) {
             this.htmlText.header = 'Edit Technician Record';
             this.htmlText.nav = 'Edit Technician';
+            this.headerText = "edit technician";
             this.htmlText.buttonText = 'Update';
             this.getResolveData();
         }
@@ -7722,6 +8159,7 @@ let AddEditTechComponent = class AddEditTechComponent {
             this.TechManagementAddEditForm.controls['state'].patchValue(techDetails[0].state);
             this.TechManagementAddEditForm.controls['zip'].patchValue(techDetails[0].zip);
             this.TechManagementAddEditForm.controls['status'].patchValue(techDetails[0].status);
+            // this.TechManagementAddEditForm.controls['password'].patchValue(techDetails[0].password);
         });
     }
     matchpassword(passwordkye, confirmpasswordkye) {
@@ -7734,6 +8172,13 @@ let AddEditTechComponent = class AddEditTechComponent {
                 return confirmpasswordInput.setErrors(null);
             }
         };
+    }
+    openDialog(x) {
+        this.dialogRef = this.dialog.open(Dialogtest, {
+            data: { message: x, 'id': this.params_id }
+        });
+        this.dialogRef.afterClosed().subscribe(result => {
+        });
     }
     /**for validation purpose**/
     inputUntouch(form, val) {
@@ -7762,12 +8207,15 @@ let AddEditTechComponent = class AddEditTechComponent {
     getCityByName(stateName) {
         this.cities = this.allCities[stateName];
     }
+    backToManagePage() {
+        this.router.navigateByUrl("admin/tech-management");
+    }
     TechManagementAddFormFormSubmit() {
         let x;
         for (x in this.TechManagementAddEditForm.controls) {
             this.TechManagementAddEditForm.controls[x].markAsTouched();
         }
-        if (this.TechManagementAddEditForm.valid) {
+        if (this.TechManagementAddEditForm) {
             if (this.TechManagementAddEditForm.value.status)
                 this.TechManagementAddEditForm.value.status = parseInt("1");
             else
@@ -7789,7 +8237,6 @@ let AddEditTechComponent = class AddEditTechComponent {
                         state: this.TechManagementAddEditForm.value.state,
                         zip: this.TechManagementAddEditForm.value.zip,
                         status: this.TechManagementAddEditForm.value.status,
-                        password: this.TechManagementAddEditForm.value.password,
                     },
                     "token": this.user_token
                 };
@@ -7807,12 +8254,10 @@ let AddEditTechComponent = class AddEditTechComponent {
                 this.snackBar.open(this.message, action, {
                     duration: 2000,
                 });
-                // this.TechManagementAddEditForm.reset();
                 this.formDirective.resetForm();
-                setTimeout(() => {
-                    this.router.navigateByUrl("admin/tech-management");
-                }, 2200);
             });
+        }
+        else {
         }
     }
 };
@@ -7824,7 +8269,8 @@ AddEditTechComponent.ctorParameters = () => [
     { type: _angular_common__WEBPACK_IMPORTED_MODULE_5__["DatePipe"] },
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_6__["CookieService"] },
     { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSnackBar"] },
-    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__["CommonFunction"] }
+    { type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__["CommonFunction"] },
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatDialog"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], { static: false })
@@ -7836,6 +8282,68 @@ AddEditTechComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./add-edit-tech.component.css */ "./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.css")).default]
     })
 ], AddEditTechComponent);
+
+/**this is only for the Change Password modal in the edit page**/
+let Dialogtest = class Dialogtest {
+    constructor(dialogRef, fb, httpService, cookie, activeRoute, data) {
+        this.dialogRef = dialogRef;
+        this.fb = fb;
+        this.httpService = httpService;
+        this.cookie = cookie;
+        this.activeRoute = activeRoute;
+        this.data = data;
+        this.changePwdForm = _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"];
+        this.params_id = data.id;
+        this.user_token = cookie.get('jwtToken');
+        this.changePwdForm = this.fb.group({
+            password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            confirmpassword: [],
+        }, { validators: this.matchpassword('password', 'confirmpassword') });
+    }
+    matchpassword(passwordkye, confirmpasswordkye) {
+        return (group) => {
+            let passwordInput = group.controls[passwordkye], confirmpasswordInput = group.controls[confirmpasswordkye];
+            if (passwordInput.value !== confirmpasswordInput.value) {
+                return confirmpasswordInput.setErrors({ notEquivalent: true });
+            }
+            else {
+                return confirmpasswordInput.setErrors(null);
+            }
+        };
+    }
+    changePasswordFormSubmit() {
+        let x;
+        for (x in this.changePwdForm.controls) {
+            this.changePwdForm.controls[x].markAsTouched();
+        }
+        if (this.changePwdForm.valid) {
+            delete this.changePwdForm.value.confirmpassword;
+            var data = {
+                "_id": this.params_id,
+                "adminflag": 1,
+                "newPassword": this.changePwdForm.value.password,
+            };
+            this.httpService.httpViaPost('changepassword', data).subscribe(response => {
+                console.log("response", response);
+            });
+        }
+    }
+};
+Dialogtest.ctorParameters = () => [
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatDialogRef"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+    { type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_4__["HttpServiceService"] },
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_6__["CookieService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_7__["MAT_DIALOG_DATA"],] }] }
+];
+Dialogtest = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'dialogtest',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./modal.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/admin/tech-management/add-edit-tech/modal.html")).default,
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](5, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_7__["MAT_DIALOG_DATA"]))
+], Dialogtest);
 
 
 
@@ -7980,7 +8488,7 @@ let ListingTechComponent = class ListingTechComponent {
         this.allUserData_modify_header = {
             "firstname": "First Name", "lastname": "Last Name",
             "email": "E-Mail", "city": "City", "address": "Address", "state": "State", "zip": "Zip",
-            "status": "Status", "phone": "Phone Number", "date": "Data Added", "fullName": "Name"
+            "status": "Status", "phone": "Phone Number", "date": "Data Added", "full Name": "Name"
         };
         this.UpdateEndpoint = "addorupdatedata";
         this.deleteEndpoint = "deletesingledata";
@@ -8002,7 +8510,6 @@ let ListingTechComponent = class ListingTechComponent {
     ngOnInit() {
         this.activatedRoute.data.forEach((data) => {
             this.TechDashboardAllData = data.techDashboardData.res;
-            console.log("listing data", this.TechDashboardAllData);
         });
     }
 };
@@ -8280,6 +8787,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ForgetpasswordComponent = class ForgetpasswordComponent {
+    // public domainUrl: any = 'http://localhost:4201/reset-password';  
     constructor(commonFunction) {
         this.commonFunction = commonFunction;
         this.logo = '../../assets/favicon.ico';
@@ -8302,8 +8810,7 @@ let ForgetpasswordComponent = class ForgetpasswordComponent {
             "customLink": "",
         };
         this.buttonName = 'Reset Password';
-        // public domainUrl: any = 'http://testbedpece.influxiq.com/reset-password';  
-        this.domainUrl = 'http://localhost:4201/reset-password';
+        this.domainUrl = 'http://testbedpece.influxiq.com/reset-password';
         /* Set Meta Data */
         this.commonFunction.setTitleMetaTags();
     }
@@ -8931,6 +9438,7 @@ let ChangePasswordComponent = class ChangePasswordComponent {
             delete this.ChangePasswordForm.value.confirmPassword;
             var data = {
                 _id: this.cookies_id,
+                adminflag: 0,
                 oldPassword: this.ChangePasswordForm.value.oldPassword,
                 newPassword: this.ChangePasswordForm.value.newPassword
             };
@@ -9161,6 +9669,50 @@ NotFoundErrorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./not-found-error.component.css */ "./src/app/components/common/not-found-error/not-found-error.component.css")).default]
     })
 ], NotFoundErrorComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/common/password-dialog-box/password-dialog-box.component.css":
+/*!*****************************************************************************************!*\
+  !*** ./src/app/components/common/password-dialog-box/password-dialog-box.component.css ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvY29tbW9uL3Bhc3N3b3JkLWRpYWxvZy1ib3gvcGFzc3dvcmQtZGlhbG9nLWJveC5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/components/common/password-dialog-box/password-dialog-box.component.ts":
+/*!****************************************************************************************!*\
+  !*** ./src/app/components/common/password-dialog-box/password-dialog-box.component.ts ***!
+  \****************************************************************************************/
+/*! exports provided: PasswordDialogBoxComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PasswordDialogBoxComponent", function() { return PasswordDialogBoxComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let PasswordDialogBoxComponent = class PasswordDialogBoxComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+PasswordDialogBoxComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-password-dialog-box',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./password-dialog-box.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/common/password-dialog-box/password-dialog-box.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./password-dialog-box.component.css */ "./src/app/components/common/password-dialog-box/password-dialog-box.component.css")).default]
+    })
+], PasswordDialogBoxComponent);
 
 
 
@@ -9715,7 +10267,10 @@ let AddEditPatientComponent = class AddEditPatientComponent {
         let allcookies;
         allcookies = cookie.getAll();
         this.cookiesData = JSON.parse(allcookies.user_details);
+        console.log("cookies data", this.cookiesData);
         this.cookies_id = this.cookiesData._id;
+        this.cookies_name = this.cookiesData.firstname;
+        this.cookies_lastname = this.cookiesData.lastname;
         /* Set Meta Data */
         this.commonFunction.setTitleMetaTags();
         // this.user_token = cookie.get('jwtToken');
@@ -9759,9 +10314,9 @@ let AddEditPatientComponent = class AddEditPatientComponent {
     }
     getAllDoctorData() {
         var data = {
-            "source": "users",
+            "source": "users_view_doctor",
             "condition": {
-                tech_object: this.cookies_id
+                tech: this.cookies_name + " " + this.cookies_lastname
             },
             "token": this.user_token
         };
@@ -9770,6 +10325,7 @@ let AddEditPatientComponent = class AddEditPatientComponent {
             let result = {};
             result = response.res;
             this.allDoctorDataArray = result;
+            console.log("shshdjghsjdskj", this.allDoctorDataArray);
         });
     }
     /**for validation purpose**/
@@ -10143,7 +10699,7 @@ let TechDashboardComponent = class TechDashboardComponent {
         };
         this.techDashboardAllData = [];
         this.techSingleData = [];
-        this.userSingleData = {};
+        this.userSingleData = [];
         this.reportUploadedArray = [];
         this.reportProcessedArray = [];
         this.reportRemainingArray = [];
@@ -10166,9 +10722,9 @@ let TechDashboardComponent = class TechDashboardComponent {
     }
     getTechData() {
         var data = {
-            "source": "users",
+            "source": "users_view_doctor",
             "condition": {
-                "tech_object": this.user_id
+                tech: this.user_data.firstname + " " + this.user_data.lastname
             },
             "token": this.user_token
         };
@@ -10176,8 +10732,8 @@ let TechDashboardComponent = class TechDashboardComponent {
             .subscribe(response => {
             let result = {};
             result = response.res;
-            this.userSingleData = result[0];
-            console.log(this.userSingleData);
+            this.userSingleData = result;
+            console.log("tech dashboard", this.userSingleData);
         });
     }
     getTechCountData() {
@@ -10466,34 +11022,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _services_authguard_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/authguard.service */ "./src/app/services/authguard.service.ts");
-/* harmony import */ var _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/resolve.service */ "./src/app/services/resolve.service.ts");
-/* harmony import */ var _components_auth_login_login_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/auth/login/login.component */ "./src/app/components/auth/login/login.component.ts");
-/* harmony import */ var _components_auth_forgetpassword_forgetpassword_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/auth/forgetpassword/forgetpassword.component */ "./src/app/components/auth/forgetpassword/forgetpassword.component.ts");
-/* harmony import */ var _components_auth_resetpassword_resetpassword_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/auth/resetpassword/resetpassword.component */ "./src/app/components/auth/resetpassword/resetpassword.component.ts");
-/* harmony import */ var _components_admin_admin_dashboard_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/admin/admin-dashboard/admin-dashboard.component */ "./src/app/components/admin/admin-dashboard/admin-dashboard.component.ts");
-/* harmony import */ var _components_admin_user_management_user_add_edit_user_add_edit_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/admin/user-management/user-add-edit/user-add-edit.component */ "./src/app/components/admin/user-management/user-add-edit/user-add-edit.component.ts");
-/* harmony import */ var _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/admin/admin-management/add-edit/add-edit.component */ "./src/app/components/admin/admin-management/add-edit/add-edit.component.ts");
-/* harmony import */ var _components_admin_admin_management_manage_admin_list_manage_admin_list_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/admin/admin-management/manage-admin-list/manage-admin-list.component */ "./src/app/components/admin/admin-management/manage-admin-list/manage-admin-list.component.ts");
-/* harmony import */ var _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/admin/doctor-management/addedit-doctor/addedit-doctor.component */ "./src/app/components/admin/doctor-management/addedit-doctor/addedit-doctor.component.ts");
-/* harmony import */ var _components_admin_doctor_management_list_doctor_list_doctor_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/admin/doctor-management/list-doctor/list-doctor.component */ "./src/app/components/admin/doctor-management/list-doctor/list-doctor.component.ts");
-/* harmony import */ var _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/admin/biller-management/add-edit-biller/add-edit-biller.component */ "./src/app/components/admin/biller-management/add-edit-biller/add-edit-biller.component.ts");
-/* harmony import */ var _components_admin_biller_management_listing_biller_listing_biller_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/admin/biller-management/listing-biller/listing-biller.component */ "./src/app/components/admin/biller-management/listing-biller/listing-biller.component.ts");
-/* harmony import */ var _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/admin/tech-management/add-edit-tech/add-edit-tech.component */ "./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.ts");
-/* harmony import */ var _components_admin_tech_management_listing_tech_listing_tech_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/admin/tech-management/listing-tech/listing-tech.component */ "./src/app/components/admin/tech-management/listing-tech/listing-tech.component.ts");
-/* harmony import */ var _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/common/account-settings/account-settings.component */ "./src/app/components/common/account-settings/account-settings.component.ts");
-/* harmony import */ var _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/common/account-settings/change-password/change-password.component */ "./src/app/components/common/account-settings/change-password/change-password.component.ts");
-/* harmony import */ var _components_tech_tech_dashboard_tech_dashboard_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../components/tech/tech-dashboard/tech-dashboard.component */ "./src/app/components/tech/tech-dashboard/tech-dashboard.component.ts");
-/* harmony import */ var _components_tech_patient_management_add_edit_patient_add_edit_patient_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../components/tech/patient-management/add-edit-patient/add-edit-patient.component */ "./src/app/components/tech/patient-management/add-edit-patient/add-edit-patient.component.ts");
-/* harmony import */ var _components_tech_patient_management_bulk_upload_bulk_upload_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../components/tech/patient-management/bulk-upload/bulk-upload.component */ "./src/app/components/tech/patient-management/bulk-upload/bulk-upload.component.ts");
-/* harmony import */ var _components_biller_biller_dashboard_biller_dashboard_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../components/biller/biller-dashboard/biller-dashboard.component */ "./src/app/components/biller/biller-dashboard/biller-dashboard.component.ts");
-/* harmony import */ var _components_doctor_doctor_dashboard_doctor_dashboard_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../components/doctor/doctor-dashboard/doctor-dashboard.component */ "./src/app/components/doctor/doctor-dashboard/doctor-dashboard.component.ts");
-/* harmony import */ var _components_tech_report_details_report_details_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../components/tech/report-details/report-details.component */ "./src/app/components/tech/report-details/report-details.component.ts");
-/* harmony import */ var _components_common_not_found_error_not_found_error_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../components/common/not-found-error/not-found-error.component */ "./src/app/components/common/not-found-error/not-found-error.component.ts");
-/* harmony import */ var _components_test_test_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../components/test/test.component */ "./src/app/components/test/test.component.ts");
-/* harmony import */ var _components_admin_tech_management_healthrisk_system_encounter_healthrisk_system_encounter_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component */ "./src/app/components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component.ts");
-/* harmony import */ var _components_admin_tech_management_system_superbill_system_superbill_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../components/admin/tech-management/system-superbill/system-superbill.component */ "./src/app/components/admin/tech-management/system-superbill/system-superbill.component.ts");
-/* harmony import */ var _components_admin_tech_management_health_risk_analysis_health_risk_analysis_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../components/admin/tech-management/health-risk-analysis/health-risk-analysis.component */ "./src/app/components/admin/tech-management/health-risk-analysis/health-risk-analysis.component.ts");
-/* harmony import */ var _components_doctor_signature_management_signature_management_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../components/doctor/signature-management/signature-management.component */ "./src/app/components/doctor/signature-management/signature-management.component.ts");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+/* harmony import */ var _services_resolve_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/resolve.service */ "./src/app/services/resolve.service.ts");
+/* harmony import */ var _components_auth_login_login_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/auth/login/login.component */ "./src/app/components/auth/login/login.component.ts");
+/* harmony import */ var _components_auth_forgetpassword_forgetpassword_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/auth/forgetpassword/forgetpassword.component */ "./src/app/components/auth/forgetpassword/forgetpassword.component.ts");
+/* harmony import */ var _components_auth_resetpassword_resetpassword_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/auth/resetpassword/resetpassword.component */ "./src/app/components/auth/resetpassword/resetpassword.component.ts");
+/* harmony import */ var _components_admin_admin_dashboard_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/admin/admin-dashboard/admin-dashboard.component */ "./src/app/components/admin/admin-dashboard/admin-dashboard.component.ts");
+/* harmony import */ var _components_admin_user_management_user_add_edit_user_add_edit_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/admin/user-management/user-add-edit/user-add-edit.component */ "./src/app/components/admin/user-management/user-add-edit/user-add-edit.component.ts");
+/* harmony import */ var _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/admin/admin-management/add-edit/add-edit.component */ "./src/app/components/admin/admin-management/add-edit/add-edit.component.ts");
+/* harmony import */ var _components_admin_admin_management_manage_admin_list_manage_admin_list_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/admin/admin-management/manage-admin-list/manage-admin-list.component */ "./src/app/components/admin/admin-management/manage-admin-list/manage-admin-list.component.ts");
+/* harmony import */ var _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/admin/doctor-management/addedit-doctor/addedit-doctor.component */ "./src/app/components/admin/doctor-management/addedit-doctor/addedit-doctor.component.ts");
+/* harmony import */ var _components_admin_doctor_management_list_doctor_list_doctor_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/admin/doctor-management/list-doctor/list-doctor.component */ "./src/app/components/admin/doctor-management/list-doctor/list-doctor.component.ts");
+/* harmony import */ var _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/admin/biller-management/add-edit-biller/add-edit-biller.component */ "./src/app/components/admin/biller-management/add-edit-biller/add-edit-biller.component.ts");
+/* harmony import */ var _components_admin_biller_management_listing_biller_listing_biller_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/admin/biller-management/listing-biller/listing-biller.component */ "./src/app/components/admin/biller-management/listing-biller/listing-biller.component.ts");
+/* harmony import */ var _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/admin/tech-management/add-edit-tech/add-edit-tech.component */ "./src/app/components/admin/tech-management/add-edit-tech/add-edit-tech.component.ts");
+/* harmony import */ var _components_admin_tech_management_listing_tech_listing_tech_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/admin/tech-management/listing-tech/listing-tech.component */ "./src/app/components/admin/tech-management/listing-tech/listing-tech.component.ts");
+/* harmony import */ var _components_admin_doctor_office_management_doctor_office_management_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/admin/doctor-office-management/doctor-office-management.component */ "./src/app/components/admin/doctor-office-management/doctor-office-management.component.ts");
+/* harmony import */ var _components_admin_doctor_office_management_add_edit_doctor_ofc_add_edit_doctor_ofc_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component */ "./src/app/components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component.ts");
+/* harmony import */ var _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../components/common/account-settings/account-settings.component */ "./src/app/components/common/account-settings/account-settings.component.ts");
+/* harmony import */ var _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../components/common/account-settings/change-password/change-password.component */ "./src/app/components/common/account-settings/change-password/change-password.component.ts");
+/* harmony import */ var _components_tech_tech_dashboard_tech_dashboard_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../components/tech/tech-dashboard/tech-dashboard.component */ "./src/app/components/tech/tech-dashboard/tech-dashboard.component.ts");
+/* harmony import */ var _components_tech_patient_management_add_edit_patient_add_edit_patient_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../components/tech/patient-management/add-edit-patient/add-edit-patient.component */ "./src/app/components/tech/patient-management/add-edit-patient/add-edit-patient.component.ts");
+/* harmony import */ var _components_tech_patient_management_bulk_upload_bulk_upload_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../components/tech/patient-management/bulk-upload/bulk-upload.component */ "./src/app/components/tech/patient-management/bulk-upload/bulk-upload.component.ts");
+/* harmony import */ var _components_biller_biller_dashboard_biller_dashboard_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../components/biller/biller-dashboard/biller-dashboard.component */ "./src/app/components/biller/biller-dashboard/biller-dashboard.component.ts");
+/* harmony import */ var _components_doctor_doctor_dashboard_doctor_dashboard_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../components/doctor/doctor-dashboard/doctor-dashboard.component */ "./src/app/components/doctor/doctor-dashboard/doctor-dashboard.component.ts");
+/* harmony import */ var _components_tech_report_details_report_details_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../components/tech/report-details/report-details.component */ "./src/app/components/tech/report-details/report-details.component.ts");
+/* harmony import */ var _components_common_not_found_error_not_found_error_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../components/common/not-found-error/not-found-error.component */ "./src/app/components/common/not-found-error/not-found-error.component.ts");
+/* harmony import */ var _components_test_test_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../components/test/test.component */ "./src/app/components/test/test.component.ts");
+/* harmony import */ var _components_admin_tech_management_healthrisk_system_encounter_healthrisk_system_encounter_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component */ "./src/app/components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component.ts");
+/* harmony import */ var _components_admin_tech_management_system_superbill_system_superbill_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../components/admin/tech-management/system-superbill/system-superbill.component */ "./src/app/components/admin/tech-management/system-superbill/system-superbill.component.ts");
+/* harmony import */ var _components_admin_tech_management_health_risk_analysis_health_risk_analysis_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../components/admin/tech-management/health-risk-analysis/health-risk-analysis.component */ "./src/app/components/admin/tech-management/health-risk-analysis/health-risk-analysis.component.ts");
+/* harmony import */ var _components_doctor_signature_management_signature_management_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../components/doctor/signature-management/signature-management.component */ "./src/app/components/doctor/signature-management/signature-management.component.ts");
+
 
 
 
@@ -10516,6 +11076,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* Tech Management */
+
+
+/**Doctor Office Mnagement**/
 
 
 /* Account Settings */
@@ -10541,12 +11104,13 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     /* Auth Route */
     { path: '', redirectTo: '/login', pathMatch: 'full' },
-    { path: 'login', component: _components_auth_login_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
-    { path: 'forget-password', component: _components_auth_forgetpassword_forgetpassword_component__WEBPACK_IMPORTED_MODULE_6__["ForgetpasswordComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
-    { path: 'reset-password/:token', component: _components_auth_resetpassword_resetpassword_component__WEBPACK_IMPORTED_MODULE_7__["ResetpasswordComponent"] },
+    { path: 'login', component: _components_auth_login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'forget-password', component: _components_auth_forgetpassword_forgetpassword_component__WEBPACK_IMPORTED_MODULE_7__["ForgetpasswordComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'reset-password/:token', component: _components_auth_resetpassword_resetpassword_component__WEBPACK_IMPORTED_MODULE_8__["ResetpasswordComponent"] },
     { path: 'sign-up', redirectTo: '/login', pathMatch: 'full' },
     /* Admin Route */
-    { path: 'admin/dashboard', component: _components_admin_admin_dashboard_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_8__["AdminDashboardComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { dataCount: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"] },
+    { path: 'admin/dashboard', component: _components_admin_admin_dashboard_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_9__["AdminDashboardComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]],
+        resolve: { dataCount: _services_resolve_service__WEBPACK_IMPORTED_MODULE_5__["ResolveService"] },
         data: {
             requestcondition: {
                 source: 'Patient-Record-Report_view',
@@ -10556,11 +11120,11 @@ const routes = [
         },
     },
     /* Account-Settings */
-    { path: 'admin/account-settings', component: _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_18__["AccountSettingsComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
-    { path: 'admin/account-settings/change-password', component: _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_19__["ChangePasswordComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'admin/account-settings', component: _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_21__["AccountSettingsComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'admin/account-settings/change-password', component: _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_22__["ChangePasswordComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
     /* User Management */
-    { path: 'admin/user-management/add', component: _components_admin_user_management_user_add_edit_user_add_edit_component__WEBPACK_IMPORTED_MODULE_9__["UserAddEditComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
-    { path: 'admin/user-management/edit/:_id', component: _components_admin_user_management_user_add_edit_user_add_edit_component__WEBPACK_IMPORTED_MODULE_9__["UserAddEditComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { UserData: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"] },
+    { path: 'admin/user-management/add', component: _components_admin_user_management_user_add_edit_user_add_edit_component__WEBPACK_IMPORTED_MODULE_10__["UserAddEditComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'admin/user-management/edit/:_id', component: _components_admin_user_management_user_add_edit_user_add_edit_component__WEBPACK_IMPORTED_MODULE_10__["UserAddEditComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { UserData: _services_resolve_service__WEBPACK_IMPORTED_MODULE_5__["ResolveService"] },
         data: {
             requestcondition: {
                 source: 'user_management',
@@ -10570,8 +11134,8 @@ const routes = [
         },
     },
     /* Admin  Management */
-    { path: 'admin/admin-management/add', component: _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_10__["AddEditComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
-    { path: 'admin/admin-management/edit/:_id', component: _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_10__["AddEditComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { adminsingleData: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"] },
+    { path: 'admin/admin-management/add', component: _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_11__["AddEditComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'admin/admin-management/edit/:_id', component: _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_11__["AddEditComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { adminsingleData: _services_resolve_service__WEBPACK_IMPORTED_MODULE_5__["ResolveService"] },
         data: {
             requestcondition: {
                 source: 'users',
@@ -10580,7 +11144,7 @@ const routes = [
             endpoint: 'datalist'
         },
     },
-    { path: 'admin/admin-management', component: _components_admin_admin_management_manage_admin_list_manage_admin_list_component__WEBPACK_IMPORTED_MODULE_11__["ManageAdminListComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { adminManagementdData: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"] },
+    { path: 'admin/admin-management', component: _components_admin_admin_management_manage_admin_list_manage_admin_list_component__WEBPACK_IMPORTED_MODULE_12__["ManageAdminListComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { adminManagementdData: _services_resolve_service__WEBPACK_IMPORTED_MODULE_5__["ResolveService"] },
         data: {
             requestcondition: {
                 source: 'users_view_admin',
@@ -10590,8 +11154,8 @@ const routes = [
         },
     },
     /* Biller Management */
-    { path: 'admin/biller-management/add', component: _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_14__["AddEditBillerComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
-    { path: 'admin/biller-management/edit/:_id', component: _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_14__["AddEditBillerComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { billersingleData: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"] },
+    { path: 'admin/biller-management/add', component: _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_15__["AddEditBillerComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'admin/biller-management/edit/:_id', component: _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_15__["AddEditBillerComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { billersingleData: _services_resolve_service__WEBPACK_IMPORTED_MODULE_5__["ResolveService"] },
         data: {
             requestcondition: {
                 source: 'users',
@@ -10600,7 +11164,7 @@ const routes = [
             endpoint: 'datalist'
         },
     },
-    { path: 'admin/biller-management', component: _components_admin_biller_management_listing_biller_listing_biller_component__WEBPACK_IMPORTED_MODULE_15__["ListingBillerComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { Billerdata: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"] },
+    { path: 'admin/biller-management', component: _components_admin_biller_management_listing_biller_listing_biller_component__WEBPACK_IMPORTED_MODULE_16__["ListingBillerComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { Billerdata: _services_resolve_service__WEBPACK_IMPORTED_MODULE_5__["ResolveService"] },
         data: {
             requestcondition: {
                 source: 'users_view_biller',
@@ -10610,8 +11174,8 @@ const routes = [
         },
     },
     /* Tech Management */
-    { path: 'admin/tech-management/add', component: _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_16__["AddEditTechComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
-    { path: 'admin/tech-management/edit/:_id', component: _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_16__["AddEditTechComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { techData: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"] },
+    { path: 'admin/tech-management/add', component: _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_17__["AddEditTechComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'admin/tech-management/edit/:_id', component: _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_17__["AddEditTechComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { techData: _services_resolve_service__WEBPACK_IMPORTED_MODULE_5__["ResolveService"] },
         data: {
             requestcondition: {
                 source: 'users',
@@ -10620,7 +11184,7 @@ const routes = [
             endpoint: 'datalist'
         },
     },
-    { path: 'admin/tech-management', component: _components_admin_tech_management_listing_tech_listing_tech_component__WEBPACK_IMPORTED_MODULE_17__["ListingTechComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { techDashboardData: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"] },
+    { path: 'admin/tech-management', component: _components_admin_tech_management_listing_tech_listing_tech_component__WEBPACK_IMPORTED_MODULE_18__["ListingTechComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { techDashboardData: _services_resolve_service__WEBPACK_IMPORTED_MODULE_5__["ResolveService"] },
         data: {
             requestcondition: {
                 source: 'users_view_tech',
@@ -10630,8 +11194,9 @@ const routes = [
         },
     },
     /* Doctor Management */
-    { path: 'admin/doctor-management/add', component: _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_12__["AddeditDoctorComponent"] },
-    { path: 'admin/doctor-management/edit/:_id', component: _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_12__["AddeditDoctorComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { data: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"] },
+    { path: 'admin/doctor-management/add', component: _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_13__["AddeditDoctorComponent"] },
+    { path: 'admin/doctor-management/edit/:_id', component: _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_13__["AddeditDoctorComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]],
+        resolve: { data: _services_resolve_service__WEBPACK_IMPORTED_MODULE_5__["ResolveService"] },
         data: {
             requestcondition: {
                 source: 'users',
@@ -10640,7 +11205,8 @@ const routes = [
             endpoint: 'datalist'
         },
     },
-    { path: 'admin/doctor-management', component: _components_admin_doctor_management_list_doctor_list_doctor_component__WEBPACK_IMPORTED_MODULE_13__["ListDoctorComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { data: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"] },
+    { path: 'admin/doctor-management', component: _components_admin_doctor_management_list_doctor_list_doctor_component__WEBPACK_IMPORTED_MODULE_14__["ListDoctorComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]],
+        resolve: { data: _services_resolve_service__WEBPACK_IMPORTED_MODULE_5__["ResolveService"] },
         data: {
             requestcondition: {
                 source: 'users_view_doctor',
@@ -10649,39 +11215,65 @@ const routes = [
             endpoint: 'datalist'
         },
     },
-    /* Tech Dashboard */
-    { path: 'tech/dashboard', component: _components_tech_tech_dashboard_tech_dashboard_component__WEBPACK_IMPORTED_MODULE_20__["TechDashboardComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]],
-        resolve: { techDashboardData: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"] },
+    /**Doctor Office Management **/
+    {
+        path: 'admin/doctor-office-management', component: _components_admin_doctor_office_management_doctor_office_management_component__WEBPACK_IMPORTED_MODULE_19__["DoctorOfficeManagementComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]],
+        resolve: { data: _services_resolve_service__WEBPACK_IMPORTED_MODULE_5__["ResolveService"] },
         data: {
             requestcondition: {
-                source: 'Patient-Record-Report_view',
+                source: 'users_view_doctoroffice',
                 condition: {}
             },
             endpoint: 'datalist'
         },
     },
-    { path: 'tech/report/total-uploaded', component: _components_tech_report_details_report_details_component__WEBPACK_IMPORTED_MODULE_25__["ReportDetailsComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], },
-    { path: 'tech/report/total-processed', component: _components_tech_report_details_report_details_component__WEBPACK_IMPORTED_MODULE_25__["ReportDetailsComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], },
-    { path: 'tech/report/total-remained-processed', component: _components_tech_report_details_report_details_component__WEBPACK_IMPORTED_MODULE_25__["ReportDetailsComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], },
+    {
+        path: 'admin/doctor-office-management/add', component: _components_admin_doctor_office_management_add_edit_doctor_ofc_add_edit_doctor_ofc_component__WEBPACK_IMPORTED_MODULE_20__["AddEditDoctorOfcComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]]
+    },
+    {
+        path: 'admin/doctor-office-management/edit/:_id', component: _components_admin_doctor_office_management_add_edit_doctor_ofc_add_edit_doctor_ofc_component__WEBPACK_IMPORTED_MODULE_20__["AddEditDoctorOfcComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]],
+        resolve: { data: _services_resolve_service__WEBPACK_IMPORTED_MODULE_5__["ResolveService"] },
+        data: {
+            requestcondition: {
+                source: 'users',
+                condition: {}
+            },
+            endpoint: 'datalist'
+        },
+    },
+    /* Tech Dashboard */
+    { path: 'tech/dashboard', component: _components_tech_tech_dashboard_tech_dashboard_component__WEBPACK_IMPORTED_MODULE_23__["TechDashboardComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]],
+        resolve: { techDashboardData: _services_resolve_service__WEBPACK_IMPORTED_MODULE_5__["ResolveService"] },
+        data: {
+            requestcondition: {
+                source: 'Patient-Record-Report_view',
+                condition: {},
+            },
+            endpoint: 'datalist'
+        },
+    },
+    { path: 'tech/report/total-uploaded', component: _components_tech_report_details_report_details_component__WEBPACK_IMPORTED_MODULE_28__["ReportDetailsComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], },
+    { path: 'tech/report/total-processed', component: _components_tech_report_details_report_details_component__WEBPACK_IMPORTED_MODULE_28__["ReportDetailsComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], },
+    { path: 'tech/report/total-remained-processed', component: _components_tech_report_details_report_details_component__WEBPACK_IMPORTED_MODULE_28__["ReportDetailsComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], },
     /* Account-Settings */
-    { path: 'tech/account-settings', component: _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_18__["AccountSettingsComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
-    { path: 'tech/account-settings/change-password', component: _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_19__["ChangePasswordComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
-    { path: 'tech/patient-management/add', component: _components_tech_patient_management_add_edit_patient_add_edit_patient_component__WEBPACK_IMPORTED_MODULE_21__["AddEditPatientComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'tech/account-settings', component: _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_21__["AccountSettingsComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'tech/account-settings/change-password', component: _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_22__["ChangePasswordComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'tech/patient-management/add', component: _components_tech_patient_management_add_edit_patient_add_edit_patient_component__WEBPACK_IMPORTED_MODULE_24__["AddEditPatientComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
     /* Bulk Upload */
-    { path: 'tech/patient-management/bulk-upload', component: _components_tech_patient_management_bulk_upload_bulk_upload_component__WEBPACK_IMPORTED_MODULE_22__["BulkUploadComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'tech/patient-management/bulk-upload', component: _components_tech_patient_management_bulk_upload_bulk_upload_component__WEBPACK_IMPORTED_MODULE_25__["BulkUploadComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
     /* Biller Route */
-    { path: 'biller/dashboard', component: _components_biller_biller_dashboard_biller_dashboard_component__WEBPACK_IMPORTED_MODULE_23__["BillerDashboardComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'biller/dashboard', component: _components_biller_biller_dashboard_biller_dashboard_component__WEBPACK_IMPORTED_MODULE_26__["BillerDashboardComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
     /* Account-Settings */
-    { path: 'biller/account-settings', component: _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_18__["AccountSettingsComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
-    { path: 'biller/account-settings/change-password', component: _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_19__["ChangePasswordComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'biller/account-settings', component: _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_21__["AccountSettingsComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'biller/account-settings/change-password', component: _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_22__["ChangePasswordComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
     /* Doctor Route */
-    { path: 'doctor/dashboard', component: _components_doctor_doctor_dashboard_doctor_dashboard_component__WEBPACK_IMPORTED_MODULE_24__["DoctorDashboardComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
-    { path: 'doctor/signature-management', component: _components_doctor_signature_management_signature_management_component__WEBPACK_IMPORTED_MODULE_31__["SignatureManagementComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'doctor/dashboard', component: _components_doctor_doctor_dashboard_doctor_dashboard_component__WEBPACK_IMPORTED_MODULE_27__["DoctorDashboardComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'doctor/signature-management', component: _components_doctor_signature_management_signature_management_component__WEBPACK_IMPORTED_MODULE_34__["SignatureManagementComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
     /* Account-Settings */
-    { path: 'doctor/account-settings', component: _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_18__["AccountSettingsComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
-    { path: 'doctor/account-settings/change-password', component: _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_19__["ChangePasswordComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'doctor/account-settings', component: _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_21__["AccountSettingsComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
+    { path: 'doctor/account-settings/change-password', component: _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_22__["ChangePasswordComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]] },
     /* test component route start here */
-    { path: 'test', component: _components_test_test_component__WEBPACK_IMPORTED_MODULE_27__["TestComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { data: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"] },
+    { path: 'test', component: _components_test_test_component__WEBPACK_IMPORTED_MODULE_30__["TestComponent"], canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]], resolve: { data: _services_resolve_service__WEBPACK_IMPORTED_MODULE_5__["ResolveService"] },
         data: {
             requestcondition: {
                 source: 'user_management',
@@ -10690,18 +11282,30 @@ const routes = [
             endpoint: 'datalist'
         },
     },
-    { path: 'tech/health-risk-system-encounter', component: _components_admin_tech_management_healthrisk_system_encounter_healthrisk_system_encounter_component__WEBPACK_IMPORTED_MODULE_28__["HealthriskSystemEncounterComponent"] },
-    { path: 'tech/system-superbill', component: _components_admin_tech_management_system_superbill_system_superbill_component__WEBPACK_IMPORTED_MODULE_29__["SystemSuperbillComponent"] },
-    { path: 'tech/health-risk-analysis', component: _components_admin_tech_management_health_risk_analysis_health_risk_analysis_component__WEBPACK_IMPORTED_MODULE_30__["HealthRiskAnalysisComponent"] },
-    { path: '**', component: _components_common_not_found_error_not_found_error_component__WEBPACK_IMPORTED_MODULE_26__["NotFoundErrorComponent"] }
+    { path: 'tech/health-risk-system-encounter', component: _components_admin_tech_management_healthrisk_system_encounter_healthrisk_system_encounter_component__WEBPACK_IMPORTED_MODULE_31__["HealthriskSystemEncounterComponent"] },
+    { path: 'tech/system-superbill', component: _components_admin_tech_management_system_superbill_system_superbill_component__WEBPACK_IMPORTED_MODULE_32__["SystemSuperbillComponent"] },
+    { path: 'tech/health-risk-analysis', component: _components_admin_tech_management_health_risk_analysis_health_risk_analysis_component__WEBPACK_IMPORTED_MODULE_33__["HealthRiskAnalysisComponent"] },
+    /* Error Page Route */
+    { path: 'error/404', component: _components_common_not_found_error_not_found_error_component__WEBPACK_IMPORTED_MODULE_29__["NotFoundErrorComponent"] },
+    { path: '**', component: _components_common_not_found_error_not_found_error_component__WEBPACK_IMPORTED_MODULE_29__["NotFoundErrorComponent"] }
 ];
 let AppRoutingModule = class AppRoutingModule {
+    constructor(cookies) {
+        this.cookies = cookies;
+        var allData = this.cookies.getAll();
+        var userData = JSON.parse(allData.user_details);
+        console.log('Route Data >>--->', userData.type);
+        console.log('Route Array >>--->', routes);
+    }
 };
+AppRoutingModule.ctorParameters = () => [
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"] }
+];
 AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
         exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
-        providers: [_services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"]]
+        providers: [_services_resolve_service__WEBPACK_IMPORTED_MODULE_5__["ResolveService"]]
     })
 ], AppRoutingModule);
 
@@ -11061,20 +11665,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _http_service_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./http-service.service */ "./src/app/services/http-service.service.ts");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+/* harmony import */ var _http_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./http-service.service */ "./src/app/services/http-service.service.ts");
+
 
 
 
 
 let ResolveService = class ResolveService {
-    constructor(_apiService, router) {
+    constructor(cookies, _apiService, router) {
+        this.cookies = cookies;
         this._apiService = _apiService;
         this.router = router;
     }
     resolve(route, state) {
-        / will come into play while editing otherwise no effect /;
-        let requestData = route.data.requestcondition;
+        /* will come into play while editing otherwise no effect */
+        var requestData = route.data.requestcondition;
         requestData.condition = Object.assign(requestData.condition, route.params);
+        /* This one is for Tech Dashboard */
+        if (route.url[0].path == 'tech' && route.url[1].path == 'dashboard') {
+            var allData = this.cookies.getAll();
+            var userData = JSON.parse(allData.user_details);
+            requestData.condition['_id'] = userData._id;
+            console.log('Route Data >>--->', userData._id);
+        }
         return new Promise((resolve) => {
             if (typeof route.data.requestcondition.source != 'string') {
                 var returnData = {};
@@ -11111,7 +11725,8 @@ let ResolveService = class ResolveService {
     }
 };
 ResolveService.ctorParameters = () => [
-    { type: _http_service_service__WEBPACK_IMPORTED_MODULE_3__["HttpServiceService"] },
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] },
+    { type: _http_service_service__WEBPACK_IMPORTED_MODULE_4__["HttpServiceService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
 ];
 ResolveService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
