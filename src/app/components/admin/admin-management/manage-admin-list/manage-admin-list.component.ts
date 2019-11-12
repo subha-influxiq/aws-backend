@@ -17,7 +17,7 @@ export class ManageAdminListComponent implements OnInit {
     "firstname": "First Name", "lastname": "Last Name",
     "email": "E-Mail", "phone": "Phone Number", "date": "Date",
     "status": "Status","zip":"Zip","city":"City","state":"State","address":"Address",
-    "fullName":"Name"
+    "full Name":"Name"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";

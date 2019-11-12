@@ -43,12 +43,12 @@ import { PasswordDialogBoxComponent } from './components/common/password-dialog-
 /* Components (Pages) Start Here */
 /* >>>>------> Admin <------<<<< */
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
-import { AddEditComponent } from './components/admin/admin-management/add-edit/add-edit.component';
+import { AddEditComponent,ChangePasswordAdminModal } from './components/admin/admin-management/add-edit/add-edit.component';
 import { ManageAdminListComponent } from './components/admin/admin-management/manage-admin-list/manage-admin-list.component';
 import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
-import { AddeditDoctorComponent, Modal } from './components/admin/doctor-management/addedit-doctor/addedit-doctor.component';
+import { AddeditDoctorComponent, ChangePasswordDoctorModal } from './components/admin/doctor-management/addedit-doctor/addedit-doctor.component';
 import { ListDoctorComponent } from './components/admin/doctor-management/list-doctor/list-doctor.component';
-import { AddEditBillerComponent } from './components/admin/biller-management/add-edit-biller/add-edit-biller.component';
+import { AddEditBillerComponent ,ChangePasswordModal}from './components/admin/biller-management/add-edit-biller/add-edit-biller.component';
 import { ListingBillerComponent } from './components/admin/biller-management/listing-biller/listing-biller.component';
 import { ListingTechComponent } from './components/admin/tech-management/listing-tech/listing-tech.component';
 import { AddEditTechComponent,Dialogtest } from './components/admin/tech-management/add-edit-tech/add-edit-tech.component';
@@ -86,7 +86,7 @@ import { TechFooterComponent } from './components/tech/tech-footer/tech-footer.c
 import { DoctorFooterComponent } from './components/doctor/doctor-footer/doctor-footer.component'; 
 import { SignatureManagementComponent } from './components/doctor/signature-management/signature-management.component';
 import { DoctorOfficeManagementComponent } from './components/admin/doctor-office-management/doctor-office-management.component';
-import { AddEditDoctorOfcComponent } from './components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component';
+import { AddEditDoctorOfcComponent,ChangePasswordDoctorOfficeModal } from './components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component';
 import { MatPaginatorModule } from '@angular/material/paginator'; 
 
 @NgModule({
@@ -113,12 +113,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AdminHeaderComponent,
     AddeditDoctorComponent,
     ListDoctorComponent,
-    Modal,
+    ChangePasswordDoctorModal,
     AddEditBillerComponent,
     ListingBillerComponent,
     ListingTechComponent,
     AddEditTechComponent,
     Dialogtest,
+    ChangePasswordModal,
+    ChangePasswordDoctorOfficeModal,
+    ChangePasswordAdminModal,
     AccountSettingsComponent,
     ChangePasswordComponent,
     AddEditPatientComponent,
@@ -163,7 +166,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 
   providers: [HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }, CookieService, AuthguardService, HttpServiceService, DatePipe, CommonFunction],
   bootstrap: [AppComponent],
-  entryComponents:[Modal,Dialogtest,DialogBoxComponent,PasswordDialogBoxComponent,UploadDialogBoxComponent,DialogContentExampleDialog,TestComponent]
+  entryComponents:[ChangePasswordDoctorModal,Dialogtest,ChangePasswordModal,ChangePasswordAdminModal,ChangePasswordDoctorOfficeModal
+    ,DialogBoxComponent,PasswordDialogBoxComponent,UploadDialogBoxComponent,
+    DialogContentExampleDialog,TestComponent]
 
 })
 export class AppModule {

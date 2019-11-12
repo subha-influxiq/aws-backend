@@ -7,7 +7,11 @@ import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material';
 import { CommonFunction } from '../../../../class/common/common-function';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
-@Component({
+
+export interface DialogData {
+  message: string;
+  id: any;
+}@Component({
   selector: 'app-add-edit-doctor-ofc',
   templateUrl: './add-edit-doctor-ofc.component.html',
   styleUrls: ['./add-edit-doctor-ofc.component.css']
@@ -17,6 +21,8 @@ export class AddEditDoctorOfcComponent implements OnInit {
 
   public htmlText: any = { header: 'Add Doctor office', nav: 'Add Doctor office', buttonText: 'Save' };
   @ViewChild(FormGroupDirective, { static: false }) formDirective: FormGroupDirective;
+  public dialogRef: any;
+
   date = new FormControl(new Date());
   public ddmmyy: any;
   serializedDate = new FormControl((new Date()).toISOString());
@@ -32,27 +38,17 @@ export class AddEditDoctorOfcComponent implements OnInit {
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService, public snackBar: MatSnackBar, public commonFunction: CommonFunction,
     public dialog: MatDialog) {
+      this.params_id = this.activeRoute.snapshot.params._id;
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
-    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
     this.allStateCityData();
     this.user_token = cookie.get('jwtToken');
-    this.params_id = this.activeRoute.snapshot.params._id;
-    this.doctorOfficeAddEditForm = this.fb.group({
-      centerName: ['', Validators.required],
-      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phone: ['', Validators.required],
-      address: ['', Validators.required],
-      city: ['', Validators.required],
-      state: ['', Validators.required],
-      zip: ['', Validators.required],
-      date: [dateformat],
-      status: [''],
-      type: ['doctor_office'],
-      password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
-      confirmpassword: [],
-    }, { validators: this.matchpassword('password', 'confirmpassword') })
+    if(this.params_id){
+      this.generateEditForm();
+    }else{
+     this.generateAddForm();
+    }
+    
   }
 
   ngOnInit() {
@@ -82,6 +78,41 @@ export class AddEditDoctorOfcComponent implements OnInit {
 
     })
   }
+  generateAddForm(){
+    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
+    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    this.doctorOfficeAddEditForm = this.fb.group({
+      centerName: ['', Validators.required],
+      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
+      phone: ['', Validators.required],
+      address: ['', Validators.required],
+      city: ['', Validators.required],
+      state: ['', Validators.required],
+      zip: ['', Validators.required],
+      date: [dateformat],
+      status: [''],
+      type: ['doctor_office'],
+      password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
+      confirmpassword: [],
+    }, { validators: this.matchpassword('password', 'confirmpassword') })
+  }
+  generateEditForm(){
+    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
+    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    this.doctorOfficeAddEditForm = this.fb.group({
+      centerName: ['', Validators.required],
+      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
+      phone: ['', Validators.required],
+      address: ['', Validators.required],
+      city: ['', Validators.required],
+      state: ['', Validators.required],
+      zip: ['', Validators.required],
+      date: [dateformat],
+      status: [''],
+      type: ['doctor_office'],
+       })
+
+  }
   matchpassword(passwordkye: string, confirmpasswordkye: string) {
     return (group: FormGroup) => {
       let passwordInput = group.controls[passwordkye],
@@ -93,6 +124,14 @@ export class AddEditDoctorOfcComponent implements OnInit {
         return confirmpasswordInput.setErrors(null);
       }
     };
+  }
+  openDialog(x: any): void {
+    this.dialogRef = this.dialog.open(ChangePasswordDoctorOfficeModal, {
+
+      data: { message: x, 'id': this.params_id }
+    });
+    this.dialogRef.afterClosed().subscribe(result => {
+    });
   }
   /**for validation purpose**/
   inputUntouch(form: any, val: any) {
@@ -115,6 +154,9 @@ export class AddEditDoctorOfcComponent implements OnInit {
   getCity(event) {
     var val = event;
     this.cities = this.allCities[val];
+  }
+  backToManagePage(){
+    this.router.navigateByUrl("/admin/doctor-office-management");
   }
   getCityByName(stateName) {
     this.cities = this.allCities[stateName];
@@ -168,13 +210,67 @@ export class AddEditDoctorOfcComponent implements OnInit {
             duration: 2000,
           });
           this.formDirective.resetForm();
-          setTimeout(() => {
-            this.router.navigateByUrl("/admin/doctor-office-management");
-          }, 2200);
-
         })
     }else{
       alert("error");
     }
+  }
+}
+
+@Component({
+  selector: 'dialogtest',
+  templateUrl: 'modal.html',
+})
+
+export class ChangePasswordDoctorOfficeModal {
+  public is_error: any;
+  public changePwdForm: any = FormGroup;
+  public user_token: any;
+  public params_id: any;
+  public userData: any;
+
+  constructor(public dialogRef: MatDialogRef<ChangePasswordDoctorOfficeModal>,
+    public fb: FormBuilder, public httpService: HttpServiceService, public cookie: CookieService,
+    public activeRoute: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    this.params_id = data.id;
+
+    this.user_token = cookie.get('jwtToken');
+    this.changePwdForm = this.fb.group({
+      password: ['', Validators.required],
+      confirmpassword: [],
+    }, { validators: this.matchpassword('password', 'confirmpassword') })
+
+  }
+
+  matchpassword(passwordkye: string, confirmpasswordkye: string) {
+    return (group: FormGroup) => {
+      let passwordInput = group.controls[passwordkye],
+        confirmpasswordInput = group.controls[confirmpasswordkye];
+      if (passwordInput.value !== confirmpasswordInput.value) {
+        return confirmpasswordInput.setErrors({ notEquivalent: true });
+      }
+      else {
+        return confirmpasswordInput.setErrors(null);
+      }
+    };
+  }
+
+  changePasswordFormSubmit() {
+    let x: any;
+    for (x in this.changePwdForm.controls) {
+      this.changePwdForm.controls[x].markAsTouched();
+    }
+    if (this.changePwdForm.valid) {
+      delete this.changePwdForm.value.confirmpassword
+      var data = {
+        "_id": this.params_id,
+        "adminflag": 1,
+        "newPassword": this.changePwdForm.value.password,
+      }
+      this.httpService.httpViaPost('changepassword',data).subscribe(response=>{
+        console.log("response",response);
+      });
+    }
+
   }
 }

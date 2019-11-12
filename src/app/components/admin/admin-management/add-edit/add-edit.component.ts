@@ -1,4 +1,4 @@
-import { Component, OnInit ,ViewChild} from '@angular/core';
+import { Component, OnInit ,ViewChild,Inject} from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl,FormGroupDirective } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { HttpServiceService } from '../../../../services/http-service.service';
@@ -6,7 +6,12 @@ import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { CommonFunction } from '../../../../class/common/common-function';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 
+export interface DialogData {
+  message: string;
+  id: any;
+}
 @Component({
   selector: 'app-add-edit',
   templateUrl: './add-edit.component.html',
@@ -15,7 +20,7 @@ import { CommonFunction } from '../../../../class/common/common-function';
 
 export class AddEditComponent implements OnInit {
   @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
-
+  public dialogRef: any;
   date = new FormControl(new Date());
   public ddmmyy: any;
   serializedDate = new FormControl((new Date()).toISOString());
@@ -26,28 +31,20 @@ export class AddEditComponent implements OnInit {
   public message: any = "Submitted Successfully";
   public taxo_array:any=[];
   constructor(public fb: FormBuilder, private datePipe: DatePipe,
-    public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, public commonFunction: CommonFunction) {
+    public httpService: HttpServiceService, public cookie: CookieService, public router: Router,
+     public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, 
+     public commonFunction: CommonFunction,public dialog: MatDialog) {
 
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
 
     this.user_token = cookie.get('jwtToken');
-
-    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-
-    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
-    this.adminManagementAddEditForm = fb.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
-      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phone: ['', Validators.required],
-      date: [dateformat],
-      type: ['admin'],
-      taxo_list : [],
-      status: ['', Validators.required],
-      password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
-      confirmpassword: [],
-    }, { validator: this.machpassword('password', 'confirmpassword') })
+    if(this.params_id){
+      this.generateEditForm();
+    }else{
+      this.generateAddForm();
+    }
+    
   }
 
 
@@ -60,6 +57,37 @@ export class AddEditComponent implements OnInit {
       this.params_id = this.activeRoute.snapshot.params._id;
       this.getSingleResolveData();
     }
+
+  }
+  generateAddForm(){
+    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
+    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    this.adminManagementAddEditForm = this.fb.group({
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
+      phone: ['', Validators.required],
+      date: [dateformat],
+      type: ['admin'],
+      taxo_list : [],
+      status: ['', Validators.required],
+      password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
+      confirmpassword: [],
+    }, { validator: this.machpassword('password', 'confirmpassword') })
+  }
+  generateEditForm(){
+    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
+    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    this.adminManagementAddEditForm = this.fb.group({
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
+      phone: ['', Validators.required],
+      date: [dateformat],
+      type: ['admin'],
+      taxo_list : [],
+      status: ['', Validators.required],
+    })
 
   }
 
@@ -101,13 +129,24 @@ export class AddEditComponent implements OnInit {
   ResetAddEditForm() {
     this.formDirective.resetForm();
   }
+  backToManagePage(){
+    this.router.navigateByUrl('/admin/admin-management');
+  }
+  openDialog(x: any): void {
+    this.dialogRef = this.dialog.open(ChangePasswordAdminModal, {
+
+      data: { message: x, 'id': this.params_id }
+    });
+    this.dialogRef.afterClosed().subscribe(result => {
+    });
+  }
 
   AdminManagementAddFormSubmit() {
     let x: any;
     for (x in this.adminManagementAddEditForm.controls) {
       this.adminManagementAddEditForm.controls[x].markAsTouched();
     }
-    if (this.adminManagementAddEditForm.valid) {
+    if (this.adminManagementAddEditForm) {
       if (this.adminManagementAddEditForm.value.status)
         this.adminManagementAddEditForm.value.status = parseInt("1");
       else
@@ -149,14 +188,68 @@ export class AddEditComponent implements OnInit {
             duration: 2000,
           });
           this.formDirective.resetForm();
-          setTimeout(() => {
-            this.router.navigateByUrl('admin/admin-management');
-          }, 2200);
+         
 
         })
 
     }
   }
-
-
 }
+@Component({
+  selector: 'dialogtest',
+  templateUrl: 'modal.html',
+})
+
+export class ChangePasswordAdminModal {
+  public is_error: any;
+  public changePwdForm: any = FormGroup;
+  public user_token: any;
+  public params_id: any;
+  public userData: any;
+
+  constructor(public dialogRef: MatDialogRef<ChangePasswordAdminModal>,
+    public fb: FormBuilder, public httpService: HttpServiceService, public cookie: CookieService,
+    public activeRoute: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    this.params_id = data.id;
+
+    this.user_token = cookie.get('jwtToken');
+    this.changePwdForm = this.fb.group({
+      password: ['', Validators.required],
+      confirmpassword: [],
+    }, { validators: this.matchpassword('password', 'confirmpassword') })
+
+  }
+
+  matchpassword(passwordkye: string, confirmpasswordkye: string) {
+    return (group: FormGroup) => {
+      let passwordInput = group.controls[passwordkye],
+        confirmpasswordInput = group.controls[confirmpasswordkye];
+      if (passwordInput.value !== confirmpasswordInput.value) {
+        return confirmpasswordInput.setErrors({ notEquivalent: true });
+      }
+      else {
+        return confirmpasswordInput.setErrors(null);
+      }
+    };
+  }
+
+  changePasswordFormSubmit() {
+    let x: any;
+    for (x in this.changePwdForm.controls) {
+      this.changePwdForm.controls[x].markAsTouched();
+    }
+    if (this.changePwdForm.valid) {
+      delete this.changePwdForm.value.confirmpassword
+      var data = {
+        "_id": this.params_id,
+        "adminflag": 1,
+        "newPassword": this.changePwdForm.value.password,
+      }
+      this.httpService.httpViaPost('changepassword',data).subscribe(response=>{
+        console.log("response",response);
+      });
+    }
+
+  }
+}
+

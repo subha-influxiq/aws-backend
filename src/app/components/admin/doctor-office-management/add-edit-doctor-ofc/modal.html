@@ -1,0 +1,32 @@
+
+<mat-card class="add_form">
+        <h1 mat-dialog-title>Change Password</h1>
+    
+        <form class="example-form" autocomplete="off" name="changePwdForm" [formGroup]="changePwdForm"
+            (ngSubmit)="changePasswordFormSubmit()">
+            <mat-dialog-content class="mat-typography">
+    
+    
+                <mat-form-field>
+                    <input matInput placeholder="Password" type="password"
+                    [formControl]="changePwdForm.controls['password']">
+                    <mat-error *ngIf="changePwdForm.controls['password'].touched && !changePwdForm.controls['password'].valid
+              && changePwdForm.controls['password'].errors.required">
+                        Password can not be blank</mat-error>
+                </mat-form-field> <br>
+                <mat-form-field>
+                    <input matInput placeholder="Confirm Password" type="password"
+                    [formControl]="changePwdForm.controls['confirmpassword']">
+                    <mat-error
+                        *ngIf="!changePwdForm.controls['confirmpassword'].valid && changePwdForm.controls['confirmpassword'].touched">
+                        Password does not match </mat-error>
+                    
+                </mat-form-field><br>   
+    
+                <span class="submit_form">
+                    <button mat-flat-button mat-dialog-close type="button" > Cancel </button>
+                    <button mat-flat-button type="submit" [mat-dialog-close]="true" cdkFocusInitial> Submit </button>
+                </span>
+            </mat-dialog-content>
+        </form>
+    </mat-card>
