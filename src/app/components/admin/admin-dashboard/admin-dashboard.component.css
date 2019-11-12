@@ -137,7 +137,8 @@
 
 #menu_button{ display: none;}
 
-
+/* searches */
+.admin_table .action_bar{ height: auto; justify-content: space-between;}
 
 
 
