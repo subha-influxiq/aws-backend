@@ -7,6 +7,7 @@ import { CommonFunction } from '../../../class/common/common-function';
   styleUrls: ['./forgetpassword.component.css']
 })
 export class ForgetpasswordComponent implements OnInit {
+  // public formTitle : "resetttt forrmm";
 
   public logo: any = '../../assets/favicon.ico';
   // public signUpRouteingUrl: any = 'sign-up';

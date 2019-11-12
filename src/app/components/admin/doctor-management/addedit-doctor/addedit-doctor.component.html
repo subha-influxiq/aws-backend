@@ -93,7 +93,7 @@
 
 
       <!-- Confirm Password  -->
-
+      <ng-container *ngIf="!params_id">
       <mat-form-field appearance="fill" *ngIf="action=='add'">
         <mat-label>Confirm Password</mat-label>
         <input type="password" matInput placeholder="**********" formControlName="confirmpassword">
@@ -103,8 +103,7 @@
         *ngIf="!docManageForm.controls['confirmpassword'].valid && docManageForm.controls['confirmpassword'].touched">
         Confirm Password field can not be blank</mat-error>
       </mat-form-field>
-
-
+      </ng-container>
 
 
 
@@ -309,8 +308,12 @@
       <!-- Button  -->
 
       <span class="submit_form">
+          <button mat-flat-button type="button" (click)="backToManagePage()">Back </button>
         <button mat-flat-button type="reset">Reset</button>
         <button mat-flat-button type="submit" > {{ htmlText.buttonText }} </button>
+        <ng-container *ngIf="params_id">
+            <button mat-flat-button type="button" (click)="openDialog(test)"> Change Password </button>
+        </ng-container>
       </span>
     </form>
   </mat-card-content>

@@ -6,8 +6,11 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { Router, ActivatedRoute } from '@angular/router';
 import {nameValidator,npmValidator,zipValidator,phoneValidator,matchpwd} from './validators';
 import { CommonFunction } from '../../../../class/common/common-function';
+import { MatSnackBar } from '@angular/material';
+
 export interface DialogData {
-  msg: string;
+  message: string;
+  id: any;
 }
 
 
@@ -18,6 +21,7 @@ export interface DialogData {
 })
 export class AddeditDoctorComponent implements OnInit {
 
+  public message: any = "Submitted Successfully";
 
   // ==============================declarations=======================
   docManageForm: FormGroup;
@@ -40,10 +44,16 @@ export class AddeditDoctorComponent implements OnInit {
   public techArray:any=[];
   public billerArray:any=[];
   public doctorOfficeData:any=[];
+  public params_id:any;
   constructor(private formBuilder: FormBuilder, private http: HttpServiceService,
     private cookieService: CookieService, public dialog: MatDialog, private router: Router,
-    public acivatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
-
+    public acivatedRoute: ActivatedRoute, public commonFunction: CommonFunction,public snackBar : MatSnackBar) {
+      this.params_id = this.acivatedRoute.snapshot.params._id;
+      if(this.params_id){
+        this.generateEditForm();
+      }else{
+        this.generateAddForm();
+      }
       /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
 
@@ -68,17 +78,10 @@ export class AddeditDoctorComponent implements OnInit {
 
 
   ngOnInit() {
-
-    this.generateForm();
-
     //generating all the taxonomies
     for (let i = 0; i <= 10; i++)
       this.addCreds();
-     
       this.allStateCityData();
-
-
-
     // Case 
     switch (this.action) {
       case 'add':
@@ -138,13 +141,11 @@ export class AddeditDoctorComponent implements OnInit {
 
 
   // =============================Form Generator=======================
-  generateForm() {
+  generateAddForm() {
     this.docManageForm = this.formBuilder.group({
       firstname: ['',[Validators.required]],
       lastname: ['',[Validators.required]],
       email: ['',[Validators.required,Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)]],
-      password: ['',Validators.required],
-      confirmpassword: ['',matchpwd],
       phone: ["",[Validators.required]],
       practicename: ['',[Validators.required]],
       npm: ['',[Validators.required]],
@@ -160,10 +161,47 @@ export class AddeditDoctorComponent implements OnInit {
       doctorsOfficeName:[''],
       taxo_list: [],
       taxonomies: this.formBuilder.array([]),
+      password: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
+      confirmpassword: [],
+    }, { validators: this.matchpassword('password', 'confirmpassword')
+    });
+  }
+  generateEditForm(){
+    this.docManageForm = this.formBuilder.group({
+      firstname: ['',[Validators.required]],
+      lastname: ['',[Validators.required]],
+      email: ['',[Validators.required,Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)]],
+      phone: ["",[Validators.required]],
+      practicename: ['',[Validators.required]],
+      npm: ['',[Validators.required]],
+      address: ['',Validators.required],
+      fax : ['',Validators.required],
+      city: [''],
+      state: [''],
+      type:['doctor'],
+      zip: ['',[Validators.required]],
+      status: ['',],
+      tech : [''],
+      biller : [''],
+      doctorsOfficeName:[''],
+      taxo_list: [],
+      taxonomies: this.formBuilder.array([]),
+   
     });
   }
   // ==================================================================
-
+  matchpassword(passwordkye: string, confirmpasswordkye: string) {
+    return (group: FormGroup) => {
+      let passwordInput = group.controls[passwordkye],
+        confirmpasswordInput = group.controls[confirmpasswordkye];
+      if (passwordInput.value !== confirmpasswordInput.value) {
+        return confirmpasswordInput.setErrors({ notEquivalent: true });
+      }
+      else {
+        return confirmpasswordInput.setErrors(null);
+      }
+    };
+  }
 
 
 
@@ -181,19 +219,19 @@ export class AddeditDoctorComponent implements OnInit {
 
   // =========================================MODAL functions==========================================
   openDialog(x: any): void {
-    this.dialogRef = this.dialog.open(Modal, {
-      width: '250px',
-      data: { msg: x }
+    this.dialogRef = this.dialog.open(ChangePasswordDoctorModal, {
+
+      data: { message: x, 'id': this.params_id }
     });
-
     this.dialogRef.afterClosed().subscribe(result => {
-
     });
   }
   // =====================================================================================================
 
 
-
+  backToManagePage(){
+    this.router.navigateByUrl('admin/doctor-management');
+  }
 
 
 
@@ -300,11 +338,12 @@ export class AddeditDoctorComponent implements OnInit {
     this.http.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
       if (response.status == "success") {
       
-        this.openDialog(this.successMessage);
-        setTimeout(() => {
-          this.dialogRef.close();
-        }, 2000);
-        this.router.navigateByUrl('admin/doctor-management');;
+        let action = "ok";
+          this.snackBar.open(this.message, action, {
+            duration: 2000,
+          });
+       
+        
       } else {
         alert("Some error occurred. Please try again");
       }
@@ -351,3 +390,60 @@ export class Modal {
 
 }
 // ======================================================================================================
+@Component({
+  selector: 'dialogtest',
+  templateUrl: 'modal.html',
+})
+
+export class ChangePasswordDoctorModal {
+  public is_error: any;
+  public changePwdForm: any = FormGroup;
+  public user_token: any;
+  public params_id: any;
+  public userData: any;
+
+  constructor(public dialogRef: MatDialogRef<ChangePasswordDoctorModal>,
+    public fb: FormBuilder, public httpService: HttpServiceService, public cookie: CookieService,
+    public activeRoute: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    this.params_id = data.id;
+
+    this.user_token = cookie.get('jwtToken');
+    this.changePwdForm = this.fb.group({
+      password: ['', Validators.required],
+      confirmpassword: [],
+    }, { validators: this.matchpassword('password', 'confirmpassword') })
+
+  }
+
+  matchpassword(passwordkye: string, confirmpasswordkye: string) {
+    return (group: FormGroup) => {
+      let passwordInput = group.controls[passwordkye],
+        confirmpasswordInput = group.controls[confirmpasswordkye];
+      if (passwordInput.value !== confirmpasswordInput.value) {
+        return confirmpasswordInput.setErrors({ notEquivalent: true });
+      }
+      else {
+        return confirmpasswordInput.setErrors(null);
+      }
+    };
+  }
+
+  changePasswordFormSubmit() {
+    let x: any;
+    for (x in this.changePwdForm.controls) {
+      this.changePwdForm.controls[x].markAsTouched();
+    }
+    if (this.changePwdForm.valid) {
+      delete this.changePwdForm.value.confirmpassword
+      var data = {
+        "_id": this.params_id,
+        "adminflag": 1,
+        "newPassword": this.changePwdForm.value.password,
+      }
+      this.httpService.httpViaPost('changepassword',data).subscribe(response=>{
+        console.log("response",response);
+      });
+    }
+
+  }
+}

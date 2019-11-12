@@ -267,11 +267,11 @@ const routes: Routes = [
 
 export class AppRoutingModule {
 
-  constructor(public cookies: CookieService) {
-    var allData: any = this.cookies.getAll();
-    var userData = JSON.parse(allData.user_details);
-    console.log('Route Data >>--->', userData.type);
-    console.log('Route Array >>--->', routes);
-  }
+  // constructor(public cookies: CookieService) {
+  //   var allData: any = this.cookies.getAll();
+  //   var userData = JSON.parse(allData.user_details);
+  //   console.log('Route Data >>--->', userData.type);
+  //   console.log('Route Array >>--->', routes);
+  // }
 
 }

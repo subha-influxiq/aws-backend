@@ -45,10 +45,29 @@ export class AddEditBillerComponent implements OnInit {
 
     this.params_id = this.activeRoute.snapshot.params._id;
     this.user_token = cookie.get('jwtToken');
+    this.allStateCityData();
+
+    if(this.params_id){
+     this.generateEditForm();
+    }else{
+      this.generateAddForm();
+    }
+   
+  }
+
+  ngOnInit() {
+    if(this.params_id){
+      this.htmlText.header = 'Edit Biller Record';
+      this.htmlText.nav = 'Edit Biller';
+      this.htmlText.buttonText = 'Update';
+      this.message="Updated Successfully"
+      this.getSingleData();
+    }
+  }
+  generateAddForm(){
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
     var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
-    this.allStateCityData();
-    this.billerManagementAddEditForm = fb.group({
+    this.billerManagementAddEditForm = this.fb.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
       email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
@@ -60,21 +79,29 @@ export class AddEditBillerComponent implements OnInit {
       state: ['', Validators.required],
       date: [dateformat],
       type : ['biller'],
-      taxo_list : [],
+     
       status: ['', Validators.required],
       password: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
     }, { validators: this.matchpassword('password', 'confirmpassword') })
   }
-
-  ngOnInit() {
-    if(this.params_id){
-      this.htmlText.header = 'Edit Biller Record';
-      this.htmlText.nav = 'Edit Biller';
-      this.htmlText.buttonText = 'Update';
-      this.message="Updated Successfully"
-      this.getSingleData();
-    }
+  generateEditForm(){
+    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
+    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    this.billerManagementAddEditForm = this.fb.group({
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
+      phone: ['', Validators.required],
+      companyname: ['', Validators.required],
+      address: ['', Validators.required],
+      zip: ['', Validators.required],
+      city: ['', Validators.required],
+      state: ['', Validators.required],
+      date: [dateformat],
+      type : ['biller'],
+      status: ['', Validators.required],
+    })
   }
 
   getSingleData() {
@@ -148,7 +175,7 @@ export class AddEditBillerComponent implements OnInit {
   }
 
   openDialog(x: any): void {
-    this.dialogRef = this.dialog.open(Dialog, {
+    this.dialogRef = this.dialog.open(ChangePasswordModal, {
 
       data: { message: x, 'id': this.params_id }
     });
@@ -156,12 +183,13 @@ export class AddEditBillerComponent implements OnInit {
     });
   }
 
+
   BillerManagementAddFormSubmit() {
     let x: any;
     for (x in this.billerManagementAddEditForm.controls) {
       this.billerManagementAddEditForm.controls[x].markAsTouched();
     }
-    if (this.billerManagementAddEditForm.valid) {
+    if (this.billerManagementAddEditForm) {
       if (this.billerManagementAddEditForm.value.status)
         this.billerManagementAddEditForm.value.status = parseInt("1");
       else
@@ -185,7 +213,7 @@ export class AddEditBillerComponent implements OnInit {
             state: this.billerManagementAddEditForm.value.state,
             date: this.billerManagementAddEditForm.value.date,
             status: this.billerManagementAddEditForm.value.status,
-            password: this.billerManagementAddEditForm.value.password,
+            
           },
           "source" : "users",
           "token"  : this.user_token
@@ -217,18 +245,18 @@ export class AddEditBillerComponent implements OnInit {
 }
 
 @Component({
-  selector: 'dialog',
-  templateUrl: 'pwdchangemodal.html',
+  selector: 'dialogtest',
+  templateUrl: 'modal.html',
 })
 
-export class Dialog {
+export class ChangePasswordModal {
   public is_error: any;
   public changePwdForm: any = FormGroup;
   public user_token: any;
   public params_id: any;
   public userData: any;
 
-  constructor(public dialogRef: MatDialogRef<Dialog>,
+  constructor(public dialogRef: MatDialogRef<ChangePasswordModal>,
     public fb: FormBuilder, public httpService: HttpServiceService, public cookie: CookieService,
     public activeRoute: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: DialogData) {
     this.params_id = data.id;

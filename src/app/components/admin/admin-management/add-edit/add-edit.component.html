@@ -63,11 +63,12 @@
 
       <mat-form-field>
         <mat-label>Date</mat-label>
-        <input [value]="date.value" matInput [matDatepicker]="myPicker" placeholder="date">
+        <input [value]="date.value" matInput [matDatepicker]="myPicker" placeholder="date" disabled>
         <mat-datepicker-toggle matSuffix [for]="myPicker" disabled></mat-datepicker-toggle>
         <mat-datepicker #myPicker></mat-datepicker>
       </mat-form-field>
 
+      <ng-container *ngIf ="!params_id">
       <mat-form-field class="form-group">
         <input matInput placeholder="Password" type="password"
           [formControl]="adminManagementAddEditForm.controls['password']">
@@ -81,9 +82,8 @@
         <mat-error
           *ngIf="!adminManagementAddEditForm.controls['confirmpassword'].valid && adminManagementAddEditForm.controls['confirmpassword'].touched">
           Password does not match </mat-error>
-
       </mat-form-field>
-
+      </ng-container>
 
       <mat-checkbox [formControl]="adminManagementAddEditForm.controls['status']" checked>Status</mat-checkbox>
       <!-- <mat-error *ngIf="adminManagementAddEditForm.controls['status'].touched && !adminManagementAddEditForm.controls['status'].valid
@@ -92,8 +92,12 @@
 
 
       <span class="submit_form">
+        <button mat-flat-button type="button" (click)="backToManagePage()">Back </button>
         <button mat-flat-button type="reset">Reset </button>
-        <button mat-flat-button type="submit" [disabled]="!adminManagementAddEditForm.valid">{{ htmlText.buttonText }} </button>
+        <button mat-flat-button type="submit" >{{ htmlText.buttonText }} </button>
+        <ng-container *ngIf ="params_id">
+          <button mat-flat-button type="button" (click)="openDialog(test)"  > Change Password </button>
+        </ng-container>
       </span>
 
     </form>

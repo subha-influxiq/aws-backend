@@ -110,7 +110,7 @@
 
       <mat-form-field>
         <mat-label>Date</mat-label>
-        <input [value]="date.value" matInput [matDatepicker]="myPicker" placeholder="date">
+        <input [value]="date.value" matInput [matDatepicker]="myPicker" placeholder="date" disabled>
         <mat-datepicker-toggle matSuffix [for]="myPicker" disabled></mat-datepicker-toggle>
         <mat-datepicker #myPicker></mat-datepicker>
       </mat-form-field>
@@ -137,9 +137,7 @@
       <span class="submit_form">
           <button mat-flat-button type="button" (click)="backToManagePage()">Back </button>
         <button mat-flat-button type="reset">Reset </button>
-        <button mat-flat-button type="submit" [disabled]="!billerManagementAddEditForm.valid"> {{ htmlText.buttonText }}
-            
-        </button>
+        <button mat-flat-button type="submit" > {{ htmlText.buttonText }}</button>
         <ng-container *ngIf ="params_id">
             <button mat-flat-button type="button" (click)="openDialog(test)"  > Change Password </button>
           </ng-container>
