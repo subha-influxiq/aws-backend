@@ -238,10 +238,11 @@ const routes: Routes = [
   
  
   /* test component route start here */
-  { path: 'test', component: TestComponent, canActivate: [AuthguardService], resolve: { data: ResolveService },
+  { path: 'test', component: TestComponent,
+    resolve: { dataCount: ResolveService },
     data: {
       requestcondition: {
-        source: 'user_management',
+        source: 'Patient-Record-Report_view',
         condition: {}
       },
       endpoint: 'datalist'

@@ -73,7 +73,7 @@ import { BillerHeaderComponent } from './components/biller/biller-header/biller-
 /* Components (Pages) End Here */
 
 /* testing purpose start here */
-import { TestComponent, DialogContentExampleDialog } from './components/test/test.component';
+import { TestComponent } from './components/test/test.component';
 import { FileUploadModule } from 'file-upload'; 
 import { HealthriskSystemEncounterComponent } from './components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component';
 import { SystemSuperbillComponent } from './components/admin/tech-management/system-superbill/system-superbill.component';
@@ -107,7 +107,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     UserAddEditComponent,
     // Test
     TestComponent,
-    DialogContentExampleDialog,
     AddEditComponent,
     ManageAdminListComponent,
     AdminHeaderComponent,
@@ -167,8 +166,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   providers: [HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }, CookieService, AuthguardService, HttpServiceService, DatePipe, CommonFunction],
   bootstrap: [AppComponent],
   entryComponents:[ChangePasswordDoctorModal,Dialogtest,ChangePasswordModal,ChangePasswordAdminModal,ChangePasswordDoctorOfficeModal
-    ,DialogBoxComponent,PasswordDialogBoxComponent,UploadDialogBoxComponent,
-    DialogContentExampleDialog,TestComponent]
+    ,DialogBoxComponent,PasswordDialogBoxComponent,UploadDialogBoxComponent,TestComponent]
 
 })
 export class AppModule {
