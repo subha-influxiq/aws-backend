@@ -3,8 +3,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CommonFunction } from '../../../class/common/common-function';
-//import { MatTableDataSource, MatPaginator } from '@angular/material';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatPaginator } from '@angular/material';
+// import { MatPaginator} from '@angular/material/paginator';
 
 
 export interface PeriodicElement {
@@ -22,7 +22,7 @@ export interface AllDataElement {
   billerName: string;
   record: string;
   billGenerationDate: string;
-  techName:string;
+  techName: string;
   billSentDate: string;
   superBill: string;
   date: string;
@@ -45,21 +45,21 @@ export class AdminDashboardComponent implements OnInit {
   public processedStatusCount: any;
   public signedStatusCount: any;
   public billerStatusCount: any;
-  public headerText:any;
 
-
-  public commonDataFlug: boolean = false;
-  public uploadedStatusArray: PeriodicElement[] = [];
-  public processedStatusArray: PeriodicElement[] = [];
-  public signedStatusArray: PeriodicElement[] = [];
-  public billerStatusArray: PeriodicElement[] = [];
+  public headerText: any;
+  public commonArray: PeriodicElement[] = [];
+  public uploadedStatusArray: any = [];
+  public processedStatusArray: any = [];
+  public signedStatusArray: any = [];
+  public billerStatusArray: any = [];
   public displayedColumns: string[] = ['no', 'patientName', 'record_type', 'date_added', 'status'];
-  
-  public allDataColumns: string[] = [ 'no', 'billGenerationDate', 'techName','billSentDate', 'billerName', 'doctorName', 'record', 'superBill', 'date', 'patientName', 'status'];
+  public allDataColumns: string[] = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'doctorName', 'record', 'superBill', 'date', 'patientName', 'status'];
 
   dataSource: MatTableDataSource<PeriodicElement>;
   allDataSource: MatTableDataSource<AllDataElement>;
+
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  public allDataList: any = [];
 
   // applyFilter(filterValue: string) {
   //   this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -67,11 +67,12 @@ export class AdminDashboardComponent implements OnInit {
   //     this.dataSource.paginator.firstPage();
   //   }
   // }
-
+  
   constructor(private router: Router, public cookieService: CookieService,
-    private http: HttpServiceService, public activatedRoute: ActivatedRoute, 
+    private http: HttpServiceService, public activatedRoute: ActivatedRoute,
     public commonFunction: CommonFunction) {
 
+   
     this.user_token = cookieService.get('jwtToken');
 
     this.activatedRoute.data.subscribe(resolveData => {
@@ -87,10 +88,31 @@ export class AdminDashboardComponent implements OnInit {
     this.commonFunction.setTitleMetaTags();
   }
 
+  ngOnInit() {
+    this.activatedRoute.data.subscribe(resolveData => {
+      this.allDataList = resolveData.dataCount.res;
+      this.allDataSource = new MatTableDataSource(this.allDataList);
 
-  ngOnInit() { 
+    });
+
   }
- 
+
+  ngAfterViewInit() {
+    this.allDataSource.paginator = this.paginator;
+    // this.dataSource.paginator = this.paginator;
+  }
+
+  patientNameFilter(value: any) {
+    var data = {
+      "source": "Patient-Record-Report_view",
+      "condition": value,
+      "token" : this.user_token
+    }
+    this.http.httpViaPost('datalist', data).subscribe((response)=>{
+      let result:any = response.res;
+      this.allDataSource = result;
+    });
+  }
 
   getAllCountData() {
     var data = {
@@ -104,14 +126,11 @@ export class AdminDashboardComponent implements OnInit {
         "type": "biller"
       }
     }
-    this.http.httpViaPost('count', data)
-      .subscribe(response => {
-        let result: any;
-        result = response;
-        this.billerCount = result["biller-count"];
-        this.techCount = result["tech-count"];
-        this.doctorCount = result["doctor-count"];
-      })
+    this.http.httpViaPost('count', data).subscribe((response) => {
+      this.billerCount = response["biller-count"];
+      this.techCount = response["tech-count"];
+      this.doctorCount = response["doctor-count"];
+    });
   }
 
   getStatusCountData() {
@@ -151,16 +170,17 @@ export class AdminDashboardComponent implements OnInit {
       })
   }
 
+
   viewReportProcessData(flag: string) {
-    this.commonDataFlug = true;
     switch (flag) {
       case 'Reports Uploaded':
         this.headerText = "Reports Uploaded";
         this.dataSource = new MatTableDataSource<PeriodicElement>(this.uploadedStatusArray);
         break;
       case 'Report Processed':
-        this.headerText  = "Reports Processed";
-        this.dataSource = new MatTableDataSource<PeriodicElement>(this.processedStatusArray);
+        this.headerText = "Reports Processed";
+        this.commonArray = this.processedStatusArray;
+        this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       case 'Report Signed':
         this.headerText = "Reports Signed";
