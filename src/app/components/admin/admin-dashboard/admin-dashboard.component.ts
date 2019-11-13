@@ -52,11 +52,14 @@ export class AdminDashboardComponent implements OnInit {
   public processedStatusArray: any = [];
   public signedStatusArray: any = [];
   public billerStatusArray: any = [];
-  public displayedColumns: string[] = ['no', 'patientName', 'record_type', 'date_added', 'status'];
-  dataSource: MatTableDataSource<PeriodicElement>;
-
+  public displayedColumns: string[] = ['no', 'date_added','patientName','record_type','techName','record', 'status'];
   public allDataColumns: string[] = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'doctorName', 'record', 'superBill', 'date', 'patientName', 'status'];
+
+  dataSource: MatTableDataSource<PeriodicElement>;
   allDataSource: MatTableDataSource<AllDataElement>;
+
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  public allDataList: any = [];
   
   @ViewChild(MatPaginator, { static: true }) paginatorAll: MatPaginator;
 
@@ -72,9 +75,10 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.allDataSource.paginator = this.paginatorAll;
+  }
 
-    this.getAllCountData();
-    this.getStatusCountData();
+  ngAfterViewInit() {
+    this.allDataSource.paginator = this.paginator;
   }
 
   filterByName(value: any) {
@@ -95,7 +99,7 @@ export class AdminDashboardComponent implements OnInit {
     console.log("status search",value);
 
     var data = {
-      "source": "Patient-Record-Report_view",
+      "source": "patient_management_view_count",
       "condition": value,
       "token" : this.user_token
     }
@@ -103,7 +107,7 @@ export class AdminDashboardComponent implements OnInit {
     this.http.httpViaPost('datalist', data)
     .subscribe(Response=>{
       let result:any=Response.res;
-      this.allDataSource=result;  
+      this.dataSource=result;  
 
     })
 

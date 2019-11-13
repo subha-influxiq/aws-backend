@@ -94,44 +94,43 @@
 
   <mat-toolbar class="action_bar">
 
-
-  <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-  </mat-form-field>
-
     <!-- <mat-form-field>
       <input matInput placeholder="Search by Doctor" (keyup)="filterByName({ 'doctorName_regex': $event.target.value })" >
     </mat-form-field> -->
     <mat-form-field>
-      <input matInput placeholder="Search by Patient" (keyup)="filerByReports({ 'patientName_regex': $event.target.value })">
+      <input matInput placeholder="Search by Patient"
+        (keyup)="filerByReports({ 'patientName_regex': $event.target.value })">
     </mat-form-field>
-      <mat-form-field class="parent_cat">
-        <mat-select placeholder = "Search By Status" (selectionChange)="filerByReports({ 'status_regex': $event.value })">
-          <mat-option value=0>Select a status</mat-option>
-          <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
-          <mat-option value="doctor signed">Doctor Signed</mat-option>
-          <mat-option value="send to biller">Send To Biller</mat-option>
-          <mat-option value="error">Error</mat-option>
-          <mat-option value="pending">Pending</mat-option>
-        </mat-select>
+    <mat-form-field>
+        <input matInput placeholder="Search by Tech Name"
+          (keyup)="filerByReports({ 'techname_regex': $event.target.value })">
+      </mat-form-field>
+    <mat-form-field class="parent_cat">
+      <mat-select placeholder="Search By Status" (selectionChange)="filerByReports({ 'status_regex': $event.value })">
+        <mat-option value=0>Select a status</mat-option>
+        <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
+        <mat-option value="doctor signed">Doctor Signed</mat-option>
+        <mat-option value="send to biller">Send To Biller</mat-option>
+        <mat-option value="error">Error</mat-option>
+        <mat-option value="pending">Pending</mat-option>
+      </mat-select>
     </mat-form-field>
 
     <span class="date-range">
       <mat-form-field>
-        <input matInput [matDatepicker]="picker1" placeholder="Start Date" >
+        <input matInput [matDatepicker]="picker1" placeholder="Start Date">
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput [matDatepicker]="picker2" placeholder="End Date"
-          >
+        <input matInput [matDatepicker]="picker2" placeholder="End Date">
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field>
     </span>
 
-</mat-toolbar>
+  </mat-toolbar>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!-- Position Column -->
@@ -159,14 +158,14 @@
     </ng-container>
     <!-- Weight Column -->
     <ng-container matColumnDef="record">
-        <th mat-header-cell *matHeaderCellDef> Record </th>
-        <td mat-cell *matCellDef="let element" data-label="record"> {{ element.record }} </td>
-      </ng-container>
-          <!-- Weight Column -->
+      <th mat-header-cell *matHeaderCellDef> Record </th>
+      <td mat-cell *matCellDef="let element" data-label="record"> {{ element.record }} </td>
+    </ng-container>
+    <!-- Weight Column -->
     <ng-container matColumnDef="techName">
-        <th mat-header-cell *matHeaderCellDef> Tech Name </th>
-        <td mat-cell *matCellDef="let element" data-label="techName"> {{ element.techName }} </td>
-      </ng-container>
+      <th mat-header-cell *matHeaderCellDef> Tech Name </th>
+      <td mat-cell *matCellDef="let element" data-label="techName"> {{ element.techName }} </td>
+    </ng-container>
     <!-- Symbol Column -->
     <ng-container matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef> Status </th>
@@ -193,36 +192,35 @@
   </mat-toolbar>
 
   <mat-toolbar class="action_bar">
+ 
     <mat-form-field>
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      <input matInput placeholder="Search by Doctor"
+        (keyup)="filterByName({ 'doctorName_regex': $event.target.value })">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Search by Doctor" (keyup)="filterByName({ 'doctorName_regex': $event.target.value })" >
+      <input matInput placeholder="Search by Patient"
+        (keyup)="filterByName({ 'patientName_regex': $event.target.value })">
     </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Search by Patient" (keyup)="filterByName({ 'patientName_regex': $event.target.value })">
-    </mat-form-field>
-      <mat-form-field class="parent_cat">
-        <mat-select placeholder = "Search By Status" (selectionChange)="filterByName({ 'status_regex': $event.value })">
-          <mat-option value=0>Select a status</mat-option>
-          <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
-          <mat-option value="doctor signed">Doctor Signed</mat-option>
-          <mat-option value="send to biller">Send To Biller</mat-option>
-          <mat-option value="error">Error</mat-option>
-          <mat-option value="pending">Pending</mat-option>
-        </mat-select>
+    <mat-form-field class="parent_cat">
+      <mat-select placeholder="Search By Status" (selectionChange)="filterByName({ 'status_regex': $event.value })">
+        <mat-option value=0>Select a status</mat-option>
+        <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
+        <mat-option value="doctor signed">Doctor Signed</mat-option>
+        <mat-option value="send to biller">Send To Biller</mat-option>
+        <mat-option value="error">Error</mat-option>
+        <mat-option value="pending">Pending</mat-option>
+      </mat-select>
     </mat-form-field>
 
     <span class="date-range">
       <mat-form-field>
-        <input matInput [matDatepicker]="picker1" placeholder="Start Date" >
+        <input matInput [matDatepicker]="picker1" placeholder="Start Date">
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput [matDatepicker]="picker2" placeholder="End Date"
-          >
+        <input matInput [matDatepicker]="picker2" placeholder="End Date">
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field>

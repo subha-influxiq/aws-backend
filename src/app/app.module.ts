@@ -91,6 +91,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { DoctorOfficeDashboardComponent } from './components/doctor-office/doctor-office-dashboard/doctor-office-dashboard.component';
 import { DoctorOfficeHeaderComponent } from './components/doctor-office/doctor-office-header/doctor-office-header.component';
 import { DoctorOfficeFooterComponent } from './components/doctor-office/doctor-office-footer/doctor-office-footer.component';
+import { BookedAppoinmentsComponent } from './components/admin/booked-appoinments/booked-appoinments.component'; 
 
 @NgModule({
   declarations: [
@@ -149,6 +150,7 @@ import { DoctorOfficeFooterComponent } from './components/doctor-office/doctor-o
     DoctorOfficeDashboardComponent,
     DoctorOfficeHeaderComponent,
     DoctorOfficeFooterComponent
+    BookedAppoinmentsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

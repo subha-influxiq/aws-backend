@@ -31,6 +31,8 @@ import { ListingTechComponent } from '../components/admin/tech-management/listin
 /**Doctor Office Mnagement**/
 import { DoctorOfficeManagementComponent } from '../components/admin/doctor-office-management/doctor-office-management.component';
 import { AddEditDoctorOfcComponent } from '../components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component';
+/**Booked-Appoiments**/
+import { BookedAppoinmentsComponent } from '../components/admin/booked-appoinments/booked-appoinments.component';
 /* Account Settings */
 import { AccountSettingsComponent } from '../components/common/account-settings/account-settings.component';
 import { ChangePasswordComponent } from '../components/common/account-settings/change-password/change-password.component';
@@ -201,6 +203,10 @@ const routes: Routes = [
     },
   },
   /****************** Tech Route End *****************/
+  /**Booked-appoinments**/
+  {
+    path : 'admin/booked-appoinments' , component : BookedAppoinmentsComponent
+  },
 
   /****************** Tech Route Start *****************/
   { path: 'tech/dashboard', component: TechDashboardComponent, canActivate: [AuthguardService],

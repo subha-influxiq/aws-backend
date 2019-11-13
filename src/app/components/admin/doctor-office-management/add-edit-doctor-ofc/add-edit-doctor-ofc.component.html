@@ -74,11 +74,19 @@
             <mat-form-field class="parent_cat" appearance="fill">
                 <mat-label>City</mat-label>
                 <mat-select formControlName="city">
-                    <mat-option [value]=0>Select a category</mat-option>
+                    <mat-option [value]=0>Select a City</mat-option>
                     <mat-option *ngFor="let city of cities;" value="{{ city }}">{{ city }}</mat-option>
                 </mat-select>
             </mat-form-field>
 
+            <mat-form-field class="parent_cat" appearance="fill">
+                <mat-label>Select Technician</mat-label>
+                <mat-select formControlName="tech" multiple>
+                    <mat-option [value]=0>Select a Tech</mat-option>
+                    <mat-option *ngFor="let val of allTechData;" value="{{ val._id }}">{{ val.firstname }}
+                        {{ val.firstname }}</mat-option>
+                </mat-select>
+            </mat-form-field>
 
 
             <mat-form-field appearance="fill">
