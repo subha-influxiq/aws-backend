@@ -33,6 +33,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
   public states: any;
   public allCities: any;
   public cities: any;
+  public allTechData:any=[];
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
@@ -43,6 +44,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
     this.commonFunction.setTitleMetaTags();
     this.allStateCityData();
     this.user_token = cookie.get('jwtToken');
+    this.getAllTechData();
     if(this.params_id){
       this.generateEditForm();
     }else{
@@ -73,6 +75,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
       this.doctorOfficeAddEditForm.controls['address'].patchValue(techDetails[0].address);
       this.doctorOfficeAddEditForm.controls['city'].patchValue(techDetails[0].city);
       this.doctorOfficeAddEditForm.controls['state'].patchValue(techDetails[0].state);
+      this.doctorOfficeAddEditForm.controls['tech'].patchValue(techDetails[0].tech);
       this.doctorOfficeAddEditForm.controls['zip'].patchValue(techDetails[0].zip);
       this.doctorOfficeAddEditForm.controls['status'].patchValue(techDetails[0].status);
 
@@ -86,11 +89,12 @@ export class AddEditDoctorOfcComponent implements OnInit {
       email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
       phone: ['', Validators.required],
       address: ['', Validators.required],
-      city: ['', Validators.required],
-      state: ['', Validators.required],
+      city: [''],
+      state: [''],
       zip: ['', Validators.required],
       date: [dateformat],
       status: [''],
+      tech :[''],
       type: ['doctor_office'],
       password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
@@ -104,8 +108,9 @@ export class AddEditDoctorOfcComponent implements OnInit {
       email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
       phone: ['', Validators.required],
       address: ['', Validators.required],
-      city: ['', Validators.required],
-      state: ['', Validators.required],
+      city: [''],
+      state: [''],
+      tech :[''],
       zip: ['', Validators.required],
       date: [dateformat],
       status: [''],
@@ -158,6 +163,20 @@ export class AddEditDoctorOfcComponent implements OnInit {
   backToManagePage(){
     this.router.navigateByUrl("/admin/doctor-office-management");
   }
+    /**getting all the technician data**/
+    getAllTechData() {
+      var data = {
+        "source": "users",
+        "condition": {
+          "type": "tech"
+        },
+        "token": this.user_token
+      }
+      this.httpService.httpViaPost('datalist', data)
+        .subscribe(response => {
+          this.allTechData = response.res;
+        });
+    }
   getCityByName(stateName) {
     this.cities = this.allCities[stateName];
   }
@@ -191,6 +210,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
             address: this.doctorOfficeAddEditForm.value.address,
             city: this.doctorOfficeAddEditForm.value.city,
             state: this.doctorOfficeAddEditForm.value.state,
+            tech: this.doctorOfficeAddEditForm.value.tech,
             zip: this.doctorOfficeAddEditForm.value.zip,
             status: this.doctorOfficeAddEditForm.value.status,
           },

@@ -52,7 +52,7 @@ export class AdminDashboardComponent implements OnInit {
   public processedStatusArray: any = [];
   public signedStatusArray: any = [];
   public billerStatusArray: any = [];
-public displayedColumns: string[] = ['no', 'date_added','patientName','record_type','techName','record', 'status'];
+  public displayedColumns: string[] = ['no', 'date_added','patientName','record_type','techName','record', 'status'];
   public allDataColumns: string[] = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'doctorName', 'record', 'superBill', 'date', 'patientName', 'status'];
 
   dataSource: MatTableDataSource<PeriodicElement>;
@@ -60,13 +60,6 @@ public displayedColumns: string[] = ['no', 'date_added','patientName','record_ty
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   public allDataList: any = [];
-
-  // applyFilter(filterValue: string) {
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-  //   if (this.dataSource.paginator) {
-  //     this.dataSource.paginator.firstPage();
-  //   }
-  // }
   
   constructor(private router: Router, public cookieService: CookieService,
     private http: HttpServiceService, public activatedRoute: ActivatedRoute,
@@ -99,7 +92,6 @@ public displayedColumns: string[] = ['no', 'date_added','patientName','record_ty
 
   ngAfterViewInit() {
     this.allDataSource.paginator = this.paginator;
-    // this.dataSource.paginator = this.paginator;
   }
 
   filterByName(value: any) {
@@ -120,7 +112,7 @@ public displayedColumns: string[] = ['no', 'date_added','patientName','record_ty
     console.log("status search",value);
 
     var data = {
-      "source": "Patient-Record-Report_view",
+      "source": "patient_management_view_count",
       "condition": value,
       "token" : this.user_token
     }
@@ -128,7 +120,7 @@ public displayedColumns: string[] = ['no', 'date_added','patientName','record_ty
     this.http.httpViaPost('datalist', data)
     .subscribe(Response=>{
       let result:any=Response.res;
-      this.allDataSource=result;  
+      this.dataSource=result;  
 
     })
 

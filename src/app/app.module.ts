@@ -87,7 +87,8 @@ import { DoctorFooterComponent } from './components/doctor/doctor-footer/doctor-
 import { SignatureManagementComponent } from './components/doctor/signature-management/signature-management.component';
 import { DoctorOfficeManagementComponent } from './components/admin/doctor-office-management/doctor-office-management.component';
 import { AddEditDoctorOfcComponent,ChangePasswordDoctorOfficeModal } from './components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component';
-import { MatPaginatorModule } from '@angular/material/paginator'; 
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BookedAppoinmentsComponent } from './components/admin/booked-appoinments/booked-appoinments.component'; 
 
 @NgModule({
   declarations: [
@@ -143,7 +144,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     SignatureManagementComponent,
     PasswordDialogBoxComponent,
     DoctorOfficeManagementComponent,
-    AddEditDoctorOfcComponent
+    AddEditDoctorOfcComponent,
+    BookedAppoinmentsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
