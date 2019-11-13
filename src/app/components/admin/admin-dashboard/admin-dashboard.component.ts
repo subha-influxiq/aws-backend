@@ -52,7 +52,7 @@ export class AdminDashboardComponent implements OnInit {
   public processedStatusArray: any = [];
   public signedStatusArray: any = [];
   public billerStatusArray: any = [];
-  public displayedColumns: string[] = ['no', 'patientName', 'record_type', 'date_added', 'status'];
+public displayedColumns: string[] = ['no', 'date_added','patientName','record_type','techName','record', 'status'];
   public allDataColumns: string[] = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'doctorName', 'record', 'superBill', 'date', 'patientName', 'status'];
 
   dataSource = new MatTableDataSource(this.commonArray);
@@ -93,12 +93,30 @@ export class AdminDashboardComponent implements OnInit {
     this.allDataSource.paginator = this.paginator;
     // this.dataSource.paginator = this.paginator;
   }
-  patientNameFilter(value: any) {
+
+  filterByName(value: any) {
     var data = {
       "source": "Patient-Record-Report_view",
       "condition": value,
       "token" : this.user_token
     }
+    
+    this.http.httpViaPost('datalist', data)
+    .subscribe(Response=>{
+      let result:any=Response.res;
+      this.allDataSource=result;  
+
+    })
+  }
+
+  filerByReports(value:any){
+    console.log("status search",value);
+    var data = {
+      "source": "Patient-Record-Report_view",
+      "condition": value,
+      "token" : this.user_token
+    }
+    console.log("dataaa",data);
     this.http.httpViaPost('datalist', data)
     .subscribe(Response=>{
       let result:any=Response.res;
