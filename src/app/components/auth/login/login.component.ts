@@ -51,7 +51,11 @@ export class LoginComponent implements OnInit {
         {
           "type": "biller",
           "routerNav": "biller/dashboard"
-        }
+        },
+        {
+          "type": "doctor_office",
+          "routerNav": "doctor-office/dashboard"
+        },
       ]
     }
   }

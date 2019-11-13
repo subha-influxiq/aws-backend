@@ -5,7 +5,6 @@ import { HttpServiceService } from '../../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
-import { CommonFunction } from '../../../../class/common/common-function';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 
 export interface DialogData {
@@ -30,14 +29,8 @@ export class AddEditComponent implements OnInit {
   public htmlText: any = { header: 'Add New Admin', nav: 'Add Admin', buttonText: 'Save' };
   public message: any = "Submitted Successfully";
   public taxo_array:any=[];
-  constructor(public fb: FormBuilder, private datePipe: DatePipe,
-    public httpService: HttpServiceService, public cookie: CookieService, public router: Router,
-     public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, 
-     public commonFunction: CommonFunction,public dialog: MatDialog) {
-
-    /* Set Meta Data */
-    this.commonFunction.setTitleMetaTags();
-
+  
+  constructor(public fb: FormBuilder, private datePipe: DatePipe, public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, public dialog: MatDialog) {
     this.user_token = cookie.get('jwtToken');
     if(this.params_id){
       this.generateEditForm();

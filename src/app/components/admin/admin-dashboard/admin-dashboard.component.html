@@ -87,6 +87,103 @@
 </mat-card-content>
 
 
+<mat-card-content class="admin_table" *ngIf="commonArray.length > 0">
+  <mat-toolbar class="top_header">
+    <h2>{{ headerText }}</h2>
+  </mat-toolbar>
+
+  <mat-toolbar class="action_bar">
+
+
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+
+    <!-- <mat-form-field>
+      <input matInput placeholder="Search by Doctor" (keyup)="filterByName({ 'doctorName_regex': $event.target.value })" >
+    </mat-form-field> -->
+    <mat-form-field>
+      <input matInput placeholder="Search by Patient" (keyup)="filerByReports({ 'patientName_regex': $event.target.value })">
+    </mat-form-field>
+      <mat-form-field class="parent_cat">
+        <mat-select placeholder = "Search By Status" (selectionChange)="filerByReports({ 'status_regex': $event.value })">
+          <mat-option value=0>Select a status</mat-option>
+          <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
+          <mat-option value="doctor signed">Doctor Signed</mat-option>
+          <mat-option value="send to biller">Send To Biller</mat-option>
+          <mat-option value="error">Error</mat-option>
+          <mat-option value="pending">Pending</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <span class="date-range">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker1" placeholder="Start Date" >
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker2" placeholder="End Date"
+          >
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </span>
+
+</mat-toolbar>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="no">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="patientName">
+      <th mat-header-cell *matHeaderCellDef> Patient Name. </th>
+      <td mat-cell *matCellDef="let element" data-label="patient Name"> {{ element.patientName }} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="record_type">
+      <th mat-header-cell *matHeaderCellDef> Record Type </th>
+      <td mat-cell *matCellDef="let element" data-label="Record type"> {{ element.record_type }} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="date_added">
+      <th mat-header-cell *matHeaderCellDef> Date Added </th>
+      <td mat-cell *matCellDef="let element" data-label="Date Added"> {{ element.date_added }} </td>
+    </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="record">
+        <th mat-header-cell *matHeaderCellDef> Record </th>
+        <td mat-cell *matCellDef="let element" data-label="record"> {{ element.record }} </td>
+      </ng-container>
+          <!-- Weight Column -->
+    <ng-container matColumnDef="techName">
+        <th mat-header-cell *matHeaderCellDef> Tech Name </th>
+        <td mat-cell *matCellDef="let element" data-label="techName"> {{ element.techName }} </td>
+      </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element" data-label="Status"> <span>{{ element.status }} </span></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index"></tr>
+
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</mat-card-content>
+
+
+
+
+
 
 <!-- All Data listing start here(default listing) -->
 <mat-card-content class="admin_table" *ngIf="commonArray.length == 0">
@@ -100,13 +197,20 @@
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Search by Doctor">
+      <input matInput placeholder="Search by Doctor" (keyup)="filterByName({ 'doctorName_regex': $event.target.value })" >
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Search by Patient" (keyup)="patientNameFilter({ 'patientName_regex': $event.target.value })">
+      <input matInput placeholder="Search by Patient" (keyup)="filterByName({ 'patientName_regex': $event.target.value })">
     </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Status">
+      <mat-form-field class="parent_cat">
+        <mat-select placeholder = "Search By Status" (selectionChange)="filterByName({ 'status_regex': $event.value })">
+          <mat-option value=0>Select a status</mat-option>
+          <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
+          <mat-option value="doctor signed">Doctor Signed</mat-option>
+          <mat-option value="send to biller">Send To Biller</mat-option>
+          <mat-option value="error">Error</mat-option>
+          <mat-option value="pending">Pending</mat-option>
+        </mat-select>
     </mat-form-field>
 
     <span class="date-range">

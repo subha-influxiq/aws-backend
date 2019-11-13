@@ -5,7 +5,6 @@ import { HttpServiceService } from '../../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
-import { CommonFunction } from '../../../../class/common/common-function';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 
 export interface DialogData {
@@ -37,11 +36,7 @@ export class AddEditBillerComponent implements OnInit {
   public taxo_array :any=[];
   constructor(public fb: FormBuilder, private datePipe: DatePipe,
     public httpService: HttpServiceService, public cookie: CookieService, public router: Router,
-     public snackBar: MatSnackBar, public activeRoute: ActivatedRoute,
-      public commonFunction: CommonFunction,public dialog: MatDialog) {
-
-      /* Set Meta Data */
-    this.commonFunction.setTitleMetaTags();
+     public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, public dialog: MatDialog) {
 
     this.params_id = this.activeRoute.snapshot.params._id;
     this.user_token = cookie.get('jwtToken');

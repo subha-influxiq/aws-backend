@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CommonFunction } from '../../../class/common/common-function';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -61,7 +60,7 @@ export class AdminDashboardComponent implements OnInit {
   
   @ViewChild(MatPaginator, { static: true }) paginatorAll: MatPaginator;
 
-  constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
+  constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute) {
     /* Get Auth Token */
     this.user_token = cookieService.get('jwtToken');
 
@@ -69,9 +68,6 @@ export class AdminDashboardComponent implements OnInit {
       let allData: AllDataElement[] = resolveData.dataCount.res;
       this.allDataSource = new MatTableDataSource(allData);
     });
-
-    /* Set Meta Data */
-    this.commonFunction.setTitleMetaTags();
   }
 
   ngOnInit() {
@@ -81,16 +77,36 @@ export class AdminDashboardComponent implements OnInit {
     this.getStatusCountData();
   }
 
-  patientNameFilter(value: any) {
+  filterByName(value: any) {
     var data = {
       "source": "Patient-Record-Report_view",
       "condition": value,
       "token" : this.user_token
     }
-    this.http.httpViaPost('datalist', data).subscribe((response)=>{
-      let result:any = response.res;
-      this.allDataSource = result;
-    });
+    this.http.httpViaPost('datalist', data)
+    .subscribe(Response=>{
+      let result:any=Response.res;
+      this.allDataSource=result;  
+
+    })
+  }
+
+  filerByReports(value:any){
+    console.log("status search",value);
+
+    var data = {
+      "source": "Patient-Record-Report_view",
+      "condition": value,
+      "token" : this.user_token
+    }
+    console.log("dataaa",data);
+    this.http.httpViaPost('datalist', data)
+    .subscribe(Response=>{
+      let result:any=Response.res;
+      this.allDataSource=result;  
+
+    })
+
   }
 
   getAllCountData() {

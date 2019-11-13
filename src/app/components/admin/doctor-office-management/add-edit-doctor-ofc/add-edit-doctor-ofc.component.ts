@@ -5,7 +5,6 @@ import { HttpServiceService } from '../../../../services/http-service.service';
 import { DatePipe } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material';
-import { CommonFunction } from '../../../../class/common/common-function';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 
 export interface DialogData {
@@ -36,11 +35,8 @@ export class AddEditDoctorOfcComponent implements OnInit {
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
-    public cookie: CookieService, public snackBar: MatSnackBar, public commonFunction: CommonFunction,
-    public dialog: MatDialog) {
+    public cookie: CookieService, public snackBar: MatSnackBar, public dialog: MatDialog) {
       this.params_id = this.activeRoute.snapshot.params._id;
-    /* Set Meta Data */
-    this.commonFunction.setTitleMetaTags();
     this.allStateCityData();
     this.user_token = cookie.get('jwtToken');
     if(this.params_id){
