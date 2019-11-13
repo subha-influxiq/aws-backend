@@ -87,7 +87,7 @@
 </mat-card-content>
 
 
-<mat-card-content class="admin_table" *ngIf="commonArray.length > 0">
+<mat-card-content class="admin_table" *ngIf="commonDataFlug">
 <mat-toolbar class="top_header">
   <h2>{{ headerText }}</h2>
 </mat-toolbar>
@@ -137,7 +137,7 @@
 
 <!-- All Data listing start here(default listing) -->
 
-<mat-card-content class="admin_table" *ngIf="commonArray.length == 0">
+<mat-card-content class="admin_table" *ngIf="!commonDataFlug">
 
     <mat-toolbar class="top_header">
         <h2> Patient Record Report </h2>
@@ -149,7 +149,6 @@
 
   <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8">
 
-    
     <ng-container matColumnDef="no">
       <th mat-header-cell *matHeaderCellDef> No. </th>
       <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
@@ -208,6 +207,7 @@
     <tr mat-header-row *matHeaderRowDef="allDataColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: allDataColumns;let i = index"></tr>
   </table>
+  
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </mat-card-content>
 

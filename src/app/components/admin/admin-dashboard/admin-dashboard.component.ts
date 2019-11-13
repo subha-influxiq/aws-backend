@@ -3,8 +3,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CommonFunction } from '../../../class/common/common-function';
-import { MatTableDataSource ,MatPaginator} from '@angular/material';
-// import { MatPaginator} from '@angular/material/paginator';
+//import { MatTableDataSource, MatPaginator } from '@angular/material';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
 
 export interface PeriodicElement {
@@ -16,7 +16,6 @@ export interface PeriodicElement {
 }
 
 export interface AllDataElement {
-
   no: number;
   patientName: string;
   doctorName: string;
@@ -47,16 +46,20 @@ export class AdminDashboardComponent implements OnInit {
   public signedStatusCount: any;
   public billerStatusCount: any;
   public headerText:any;
-  public commonArray: PeriodicElement[] = [];
-  public uploadedStatusArray:any = [];
-  public processedStatusArray:any = [];
-  public signedStatusArray:any = [];
-  public billerStatusArray:any = [];
+
+
+  public commonDataFlug: boolean = false;
+  public uploadedStatusArray: PeriodicElement[] = [];
+  public processedStatusArray: PeriodicElement[] = [];
+  public signedStatusArray: PeriodicElement[] = [];
+  public billerStatusArray: PeriodicElement[] = [];
   public displayedColumns: string[] = ['no', 'patientName', 'record_type', 'date_added', 'status'];
+  
   public allDataColumns: string[] = [ 'no', 'billGenerationDate', 'techName','billSentDate', 'billerName', 'doctorName', 'record', 'superBill', 'date', 'patientName', 'status'];
 
-  dataSource = new MatTableDataSource(this.commonArray);
-  public allDataSource: any;
+  dataSource: MatTableDataSource<PeriodicElement>;
+  allDataSource: MatTableDataSource<AllDataElement>;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   // applyFilter(filterValue: string) {
   //   this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -65,32 +68,27 @@ export class AdminDashboardComponent implements OnInit {
   //   }
   // }
 
-  public allDataList: any = [];
-  // @ViewChild(MatPaginator) paginator: MatPaginator;   
-
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-
   constructor(private router: Router, public cookieService: CookieService,
     private http: HttpServiceService, public activatedRoute: ActivatedRoute, 
     public commonFunction: CommonFunction) {
-     
 
     this.user_token = cookieService.get('jwtToken');
+
+    this.activatedRoute.data.subscribe(resolveData => {
+      const allData: AllDataElement[] = resolveData.dataCount.res;
+      this.allDataSource = new MatTableDataSource(allData);
+      this.allDataSource.paginator = this.paginator;
+    });
+
     this.getAllCountData();
     this.getStatusCountData();
+
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
   }
 
 
-  ngOnInit() {
-this.dataSource.paginator=this.paginator; 
-    this.activatedRoute.data.subscribe(resolveData => {
-      this.allDataList = resolveData.dataCount.res;
-      this.allDataSource = new MatTableDataSource(this.allDataList);
-      this.allDataSource.paginator=this.paginator;
-    });
-  
+  ngOnInit() { 
   }
  
 
@@ -150,33 +148,27 @@ this.dataSource.paginator=this.paginator;
         this.processedStatusArray = result.data.status2;
         this.signedStatusArray = result.data.status3;
         this.billerStatusArray = result.data.status5;
-
       })
   }
 
   viewReportProcessData(flag: string) {
+    this.commonDataFlug = true;
     switch (flag) {
-
       case 'Reports Uploaded':
         this.headerText = "Reports Uploaded";
-        this.commonArray = this.uploadedStatusArray;
-        console.log(this.commonArray);
-        this.dataSource = new MatTableDataSource(this.commonArray);
+        this.dataSource = new MatTableDataSource<PeriodicElement>(this.uploadedStatusArray);
         break;
       case 'Report Processed':
         this.headerText  = "Reports Processed";
-        this.commonArray = this.processedStatusArray;
-        this.dataSource = new MatTableDataSource(this.commonArray);
+        this.dataSource = new MatTableDataSource<PeriodicElement>(this.processedStatusArray);
         break;
       case 'Report Signed':
         this.headerText = "Reports Signed";
-        this.commonArray = this.signedStatusArray;
-        this.dataSource = new MatTableDataSource(this.commonArray);
+        this.dataSource = new MatTableDataSource<PeriodicElement>(this.signedStatusArray);
         break;
       case 'Super Bill':
         this.headerText = "Sent to Super Bill";
-        this.commonArray = this.billerStatusArray;
-        this.dataSource = new MatTableDataSource(this.commonArray);
+        this.dataSource = new MatTableDataSource<PeriodicElement>(this.signedStatusArray);
         break;
       default:
         break;
