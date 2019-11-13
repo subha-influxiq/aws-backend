@@ -16,7 +16,6 @@ export interface PeriodicElement {
 }
 
 export interface AllDataElement {
-
   no: number;
   patientName: string;
   doctorName: string;
@@ -46,6 +45,7 @@ export class AdminDashboardComponent implements OnInit {
   public processedStatusCount: any;
   public signedStatusCount: any;
   public billerStatusCount: any;
+
   public headerText: any;
   public commonArray: PeriodicElement[] = [];
   public uploadedStatusArray: any = [];
@@ -55,8 +55,11 @@ export class AdminDashboardComponent implements OnInit {
 public displayedColumns: string[] = ['no', 'date_added','patientName','record_type','techName','record', 'status'];
   public allDataColumns: string[] = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'doctorName', 'record', 'superBill', 'date', 'patientName', 'status'];
 
-  dataSource = new MatTableDataSource(this.commonArray);
-  public allDataSource: any;
+  dataSource: MatTableDataSource<PeriodicElement>;
+  allDataSource: MatTableDataSource<AllDataElement>;
+
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  public allDataList: any = [];
 
   // applyFilter(filterValue: string) {
   //   this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -65,22 +68,26 @@ public displayedColumns: string[] = ['no', 'date_added','patientName','record_ty
   //   }
   // }
   
-  public allDataList: any = [];
-  // @ViewChild(MatPaginator) paginator: MatPaginator;   
-
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-
   constructor(private router: Router, public cookieService: CookieService,
     private http: HttpServiceService, public activatedRoute: ActivatedRoute,
     public commonFunction: CommonFunction) {
 
    
     this.user_token = cookieService.get('jwtToken');
+
+    this.activatedRoute.data.subscribe(resolveData => {
+      const allData: AllDataElement[] = resolveData.dataCount.res;
+      this.allDataSource = new MatTableDataSource(allData);
+      this.allDataSource.paginator = this.paginator;
+    });
+
     this.getAllCountData();
     this.getStatusCountData();
+
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
   }
+
   ngOnInit() {
     this.activatedRoute.data.subscribe(resolveData => {
       this.allDataList = resolveData.dataCount.res;
@@ -89,6 +96,7 @@ public displayedColumns: string[] = ['no', 'date_added','patientName','record_ty
     });
 
   }
+
   ngAfterViewInit() {
     this.allDataSource.paginator = this.paginator;
     // this.dataSource.paginator = this.paginator;
@@ -100,7 +108,6 @@ public displayedColumns: string[] = ['no', 'date_added','patientName','record_ty
       "condition": value,
       "token" : this.user_token
     }
-    
     this.http.httpViaPost('datalist', data)
     .subscribe(Response=>{
       let result:any=Response.res;
@@ -111,6 +118,7 @@ public displayedColumns: string[] = ['no', 'date_added','patientName','record_ty
 
   filerByReports(value:any){
     console.log("status search",value);
+
     var data = {
       "source": "Patient-Record-Report_view",
       "condition": value,
@@ -123,6 +131,7 @@ public displayedColumns: string[] = ['no', 'date_added','patientName','record_ty
       this.allDataSource=result;  
 
     })
+
   }
 
   getAllCountData() {
@@ -137,14 +146,11 @@ public displayedColumns: string[] = ['no', 'date_added','patientName','record_ty
         "type": "biller"
       }
     }
-    this.http.httpViaPost('count', data)
-      .subscribe(response => {
-        let result: any;
-        result = response;
-        this.billerCount = result["biller-count"];
-        this.techCount = result["tech-count"];
-        this.doctorCount = result["doctor-count"];
-      })
+    this.http.httpViaPost('count', data).subscribe((response) => {
+      this.billerCount = response["biller-count"];
+      this.techCount = response["tech-count"];
+      this.doctorCount = response["doctor-count"];
+    });
   }
 
   getStatusCountData() {
@@ -181,19 +187,15 @@ public displayedColumns: string[] = ['no', 'date_added','patientName','record_ty
         this.processedStatusArray = result.data.status2;
         this.signedStatusArray = result.data.status3;
         this.billerStatusArray = result.data.status5;
-
       })
   }
 
 
   viewReportProcessData(flag: string) {
     switch (flag) {
-
       case 'Reports Uploaded':
         this.headerText = "Reports Uploaded";
-        this.commonArray = this.uploadedStatusArray;
-        console.log(this.commonArray);
-        this.dataSource = new MatTableDataSource(this.commonArray);
+        this.dataSource = new MatTableDataSource<PeriodicElement>(this.uploadedStatusArray);
         break;
       case 'Report Processed':
         this.headerText = "Reports Processed";
@@ -202,13 +204,11 @@ public displayedColumns: string[] = ['no', 'date_added','patientName','record_ty
         break;
       case 'Report Signed':
         this.headerText = "Reports Signed";
-        this.commonArray = this.signedStatusArray;
-        this.dataSource = new MatTableDataSource(this.commonArray);
+        this.dataSource = new MatTableDataSource<PeriodicElement>(this.signedStatusArray);
         break;
       case 'Super Bill':
         this.headerText = "Sent to Super Bill";
-        this.commonArray = this.billerStatusArray;
-        this.dataSource = new MatTableDataSource(this.commonArray);
+        this.dataSource = new MatTableDataSource<PeriodicElement>(this.signedStatusArray);
         break;
       default:
         break;
