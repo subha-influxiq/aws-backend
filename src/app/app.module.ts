@@ -88,13 +88,16 @@ import { SignatureManagementComponent } from './components/doctor/signature-mana
 import { DoctorOfficeManagementComponent } from './components/admin/doctor-office-management/doctor-office-management.component';
 import { AddEditDoctorOfcComponent,ChangePasswordDoctorOfficeModal } from './components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { BookedAppoinmentsComponent } from './components/admin/booked-appoinments/booked-appoinments.component';
+import { ManageScheduleComponent } from './components/tech/tech-dashboard/manage-calender/manage-schedule/manage-schedule.component';
+import { ListComponent } from './components/tech/tech-dashboard/manage-calender/my-appointments/list/list.component'; 
 import { DoctorOfficeDashboardComponent } from './components/doctor-office/doctor-office-dashboard/doctor-office-dashboard.component';
 import { DoctorOfficeHeaderComponent } from './components/doctor-office/doctor-office-header/doctor-office-header.component';
 import { DoctorOfficeFooterComponent } from './components/doctor-office/doctor-office-footer/doctor-office-footer.component';
-import { BookedAppoinmentsComponent } from './components/admin/booked-appoinments/booked-appoinments.component';
 import { DoctorOfficeAccountSettingsComponent } from './components/doctor-office/doctor-office-account-settings/doctor-office-account-settings.component';
 import { DoctorOfficeChangePasswordComponent } from './components/doctor-office/doctor-office-account-settings/doctor-office-change-password/doctor-office-change-password.component';
  
+import { LogoutComponent } from './components/auth/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -150,12 +153,16 @@ import { DoctorOfficeChangePasswordComponent } from './components/doctor-office/
     PasswordDialogBoxComponent,
     DoctorOfficeManagementComponent,
     AddEditDoctorOfcComponent,
+    BookedAppoinmentsComponent,
+    ManageScheduleComponent,
+    ListComponent,
     DoctorOfficeDashboardComponent,
     DoctorOfficeHeaderComponent,
     DoctorOfficeFooterComponent,
     BookedAppoinmentsComponent,
     DoctorOfficeAccountSettingsComponent,
     DoctorOfficeChangePasswordComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

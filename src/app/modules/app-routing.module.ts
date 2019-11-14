@@ -10,7 +10,7 @@ import { ResolveService } from '../services/resolve.service';
 import { LoginComponent } from '../components/auth/login/login.component';
 import { ForgetpasswordComponent } from '../components/auth/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from '../components/auth/resetpassword/resetpassword.component';
-
+import { LogoutComponent } from '../components/auth/logout/logout.component';
 /****************** Admin *****************/
 import { AdminDashboardComponent } from '../components/admin/admin-dashboard/admin-dashboard.component';
 
@@ -39,6 +39,8 @@ import { ChangePasswordComponent } from '../components/common/account-settings/c
 
 /***************** Tech Dashboard ****************/
 import { TechDashboardComponent } from '../components/tech/tech-dashboard/tech-dashboard.component';
+import { ManageScheduleComponent } from '../components/tech/tech-dashboard/manage-calender/manage-schedule/manage-schedule.component';
+import { ListComponent } from '../components/tech/tech-dashboard/manage-calender/my-appointments/list/list.component';
 
 /* Patient Management */
 import { AddEditPatientComponent } from '../components/tech/patient-management/add-edit-patient/add-edit-patient.component';
@@ -71,6 +73,7 @@ const routes: Routes = [
   { path: 'forget-password', component: ForgetpasswordComponent, canActivate: [AuthguardService] },
   { path: 'reset-password/:token', component: ResetpasswordComponent },
   { path: 'sign-up', redirectTo: '/login', pathMatch: 'full' },
+  { path : 'logout' , component : LogoutComponent },
 
   /****************** Admin *****************/
   { path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AuthguardService],
@@ -241,14 +244,17 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  { path: 'tech/report/total-uploaded', component: ReportDetailsComponent, canActivate: [AuthguardService], },
-  { path: 'tech/report/total-processed', component: ReportDetailsComponent, canActivate: [AuthguardService], },
-  { path: 'tech/report/total-remained-processed', component: ReportDetailsComponent, canActivate: [AuthguardService], },
-
+  { path: 'tech/report/total-uploaded', component: ReportDetailsComponent, canActivate: [AuthguardService],},
+  { path: 'tech/report/total-processed', component: ReportDetailsComponent, canActivate: [AuthguardService],},
+  { path: 'tech/report/total-remained-processed', component: ReportDetailsComponent, canActivate: [AuthguardService],},
+  { path : 'tech/dashboard/manage-calender/manage-sehedule' , component : ManageScheduleComponent , canActivate: [AuthguardService]},
+  { path : 'tech/dashboard/manage-calender/my-appoinments' , component : ListComponent , canActivate: [AuthguardService]},
+  
   /* Account-Settings */
   { path: 'tech/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'tech/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
   { path: 'tech/patient-management/add', component: AddEditPatientComponent, canActivate: [AuthguardService] },
+  
   /* Bulk Upload */
   { path: 'tech/patient-management/bulk-upload', component: BulkUploadComponent, canActivate: [AuthguardService] },
   

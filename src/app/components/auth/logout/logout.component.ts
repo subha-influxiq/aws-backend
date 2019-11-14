@@ -5,12 +5,11 @@ import { CommonFunction } from '../../../class/common/common-function';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
-  selector: 'app-admin-header',
-  templateUrl: './admin-header.component.html',
-  styleUrls: ['./admin-header.component.css']
+  selector: 'app-logout',
+  templateUrl: './logout.component.html',
+  styleUrls: ['./logout.component.css']
 })
-
-export class AdminHeaderComponent implements OnInit {
+export class LogoutComponent implements OnInit {
   
   status: boolean = true;
   public user_data: any = {};
@@ -18,16 +17,13 @@ export class AdminHeaderComponent implements OnInit {
   public user_cookie:any;
 
   constructor(public cookies: CookieService, public router: Router, public commonFunction: CommonFunction) { 
-    window.scroll(0, 0);
-    let allData: any = {};
-    allData = this.cookies.getAll();
-    this.user_data = JSON.parse(allData.user_details);
-    this.user_cookie = cookies.get('jwtToken');
+    this.cookies.delete('jwtToken');
+    this.cookies.delete('user_details');
+    this.cookies.deleteAll();
+    this.router.navigateByUrl('login');
   }
 
   ngOnInit() {
-    /* Set Meta Data */
-    this.commonFunction.setTitleMetaTags();
   }
 
   myFunction() {
@@ -38,8 +34,15 @@ export class AdminHeaderComponent implements OnInit {
     this.cookies.delete('jwtToken');
     this.cookies.delete('user_details');
     this.cookies.deleteAll();
-    this.router.navigateByUrl('logout');
+    this.router.navigateByUrl('login');
   }
   /**logout function end here**/
+
+  menuFunction() {
+    console.log('Working on it.');
+    this.status = !this.status;  
+  }
+  
   
 }
+

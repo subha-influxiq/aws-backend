@@ -139,7 +139,7 @@
   padding: 16px;
   font-family: 'RobotoBold';
   font-size: 30px!important;
-  text-align: center;
+  text-align: center; display: block;width: auto;
 }
 .bradcrumb{  display: block;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
@@ -180,3 +180,6 @@
  .mat-bottom-sheet-container-large {
   border: 4px solid #ffbc36!important; background: linear-gradient(0deg, #ffdfab, #99dfff)!important;
  }
+.sub_menu{ background: linear-gradient(145deg, #ffcf7f, #ff5d12)!important;}
+.sub_menu button{ color: #fff; border-bottom: 2px solid #ddd;}
+.sub_menu button:last-child{ border: none; }
