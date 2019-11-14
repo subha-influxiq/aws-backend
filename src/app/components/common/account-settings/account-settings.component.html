@@ -58,7 +58,6 @@
             <mat-form-field appearance="fill">
                 <mat-label>Email Address</mat-label>
                 <input matInput placeholder="Email Address" [disabled]="true" value="{{ cookiesData.email }}"/>
-                    
             </mat-form-field>
 
             <mat-form-field appearance="fill">
@@ -84,16 +83,16 @@
                     (blur)="inputUntouch(AccountSettingsForm,'zip')">
                 <mat-error *ngIf="AccountSettingsForm.controls['zip'].touched && !AccountSettingsForm.controls['zip'].valid
           && AccountSettingsForm.controls['zip'].errors.required">
-                    Zip field can not be blank</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
+                    Zip field can not be blank. </mat-error>
+                    
                 <mat-label>Address</mat-label>
                 <input matInput placeholder="Address" [formControl]="AccountSettingsForm.controls['address']"
-                    (blur)="inputUntouch(AccountSettingsForm,'address')">
+                    (blur)="inputUntouch(AccountSettingsForm,'address')" />
                 <mat-error *ngIf="AccountSettingsForm.controls['address'].touched && !AccountSettingsForm.controls['address'].valid
             && AccountSettingsForm.controls['address'].errors.required">
                     Address field can not be blank</mat-error>
             </mat-form-field>
+
             <mat-form-field class="parent_cat" appearance="fill">
                 <mat-label>State</mat-label>
                 <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
@@ -101,6 +100,7 @@
                     <mat-option *ngFor="let state of states;" value="{{ state.name }}">{{ state.name }}</mat-option>
                 </mat-select>
             </mat-form-field>
+
             <mat-form-field class="parent_cat" appearance="fill">
                 <mat-label>City</mat-label>
                 <mat-select formControlName="city">
@@ -117,3 +117,5 @@
     </mat-card-content>
 
 </mat-card>
+
+<app-admin-footer></app-admin-footer>

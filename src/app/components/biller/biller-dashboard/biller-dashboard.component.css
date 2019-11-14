@@ -66,7 +66,7 @@
 .patient_report_section  .mat-form-field-appearance-outline .mat-form-field-wrapper {
   margin: 0!important;
 }
-.patient_report_section .patient_top_search { display: flex; align-items: center; justify-content: space-between; padding: 0 16px;}
+.patient_report_section .patient_top_search {    background: #f2f2f2; display: flex; align-items: center; justify-content: space-between; padding: 0 16px;}
 .patient_report_section .patient_top_search .search_bar { display: flex;  }
 .patient_report_section .patient_top_search .search_bar button{
   border: none;
@@ -93,6 +93,9 @@
     width: 1050px;
     margin: auto;
 
+}
+.patient_report_section table{
+  margin: 0 16px;
 }
 
 .footer_section{display: block; border-top: 1px solid #c7c7c7; margin-top: 30px; }
@@ -218,4 +221,7 @@
 @media screen and (max-width: 480px){
 .doctor_content_wrapper .mat-card-title { font-size: 24px; }
 .patient_report_section .patient_top_search h1 { font-size: 24px; }
+}
+table {
+  width: 100%;
 }

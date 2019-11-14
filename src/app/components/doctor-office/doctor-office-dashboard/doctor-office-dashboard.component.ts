@@ -14,6 +14,13 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class DoctorOfficeDashboardComponent implements OnInit {
 
+  // ===============declarations=========
+  // ====================================
+
+
+
+ 
+
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
 
   }

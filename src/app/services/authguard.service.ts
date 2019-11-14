@@ -24,7 +24,7 @@ export class AuthguardService implements CanActivate {
       switch(next.url[0].path) {
         case 'login':
         case 'forget-password':
-          this._router.navigate([userData.type + '/dashboard']);
+          this._router.navigate([userData.type.replace("_", "-") + '/dashboard']);
           break;
         default:
           if(userData.type == 'doctor_office' && next.url[0].path == 'doctor-office') {

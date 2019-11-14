@@ -78,12 +78,88 @@
     </span>
   </mat-card-content>
 
-<!-- table -->
-
-<!-- end table -->
 
 
-<!--
+<!-- --------------------------------------------------------------------------------------------------- -->
+ 
+
+  <div  class="mat-elevation-z8">
+  <!-- Default Biller table  -->
+  <table mat-table  [dataSource]="dataSource" matSort>
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Patient Column -->
+    <ng-container matColumnDef="Patient Name" >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Patient Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.patientName}} </td>
+    </ng-container>
+
+
+
+    <!-- Doctor Name Column -->
+    <ng-container matColumnDef="Doctor Name">
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header> Doctor Name </th>
+      <td mat-cell *matCellDef="let element"> {{ element.doctorName }} </td>
+    </ng-container>
+
+
+    <!-- Bill Sent Date Name Column -->
+    <ng-container matColumnDef="Bill Sent Date" >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Bill Sent Date </th>
+      <td mat-cell *matCellDef="let element"> {{ element.billSentDate }} </td>
+    </ng-container>
+
+
+
+    <!-- Bill Generation Date Name Column -->
+    <ng-container matColumnDef="Bill Generation Date" >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Bill Generation Date </th>
+      <td mat-cell *matCellDef="let element"> {{ element.billGenerationDate }} </td>
+    </ng-container>
+
+
+    <!-- Bill Sent Date Name Column -->
+    <ng-container matColumnDef="Tech Name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Tech Name</th>
+      <td mat-cell *matCellDef="let element"> {{ element.techName }} </td>
+    </ng-container>
+
+     <!-- Status Name Column -->
+     <ng-container matColumnDef="Status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element">  </td>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let element"> <span>
+          <button mat-button><i class="material-icons">
+              cloud_download
+            </i>
+          </button>
+          <button mat-button><i class="material-icons">
+              remove_red_eye
+            </i></button>
+        </span></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+<mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+</div>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+  <!-- table -->
+
+  <!-- end table -->
+
+
+  <!--
 <span class="button_action">
   <button mat-flat-button>upload bulk report</button>
   <button mat-flat-button>add a new patient records manually</button>

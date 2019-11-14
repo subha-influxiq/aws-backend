@@ -1,0 +1,73 @@
+<app-doctor-office-header></app-doctor-office-header>
+
+<!-- Header End -->
+<mat-card-content class="title_wrapper">
+    Account Setting
+</mat-card-content>
+
+<span class="add_header">
+    <span class="bradcrumb">
+        <a [routerLink]="['/doctor-dashboard/dashboard']">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>
+</span>
+<!-- End header with add button -->
+
+
+<!-- End header with add button -->
+
+<mat-card class="add_form">
+    <h2>Doctor Office Account Information</h2>
+    <mat-card-content class="form_wrapper">
+
+        <form [formGroup]="accountForm" autocomplete="off">
+            <mat-form-field>
+                <mat-label>Acces Code:</mat-label>
+                <input matInput formControlName="accesscode">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Address:</mat-label>
+                <input matInput formControlName="address">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Center Name:</mat-label>
+                <input matInput formControlName="centername">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>City:</mat-label>
+                <input matInput formControlName="city">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Date:</mat-label>
+                <input matInput formControlName="date" [readonly]="true">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Email:</mat-label>
+                <input matInput formControlName="email" >
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Phone:</mat-label>
+                <input matInput formControlName="phone">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>ZIP:</mat-label>
+                <input matInput formControlName="zip">
+            </mat-form-field>
+
+            <span class="submit_form">
+                <!-- <button mat-flat-button type="button" (click)="CancelRedirectToDashboard()"> Cancel </button>
+                <button mat-flat-button type="submit" [disabled]="!AccountSettingsForm.valid"> Update </button> -->
+                <button mat-flat-button type="submit"(click)="onSubmit()" >Update</button>
+            </span>
+        </form>
+
+    </mat-card-content>
+
+</mat-card>
+
+<app-doctor-office-footer></app-doctor-office-footer>
