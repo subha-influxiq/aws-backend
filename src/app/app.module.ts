@@ -149,7 +149,7 @@ import { BookedAppoinmentsComponent } from './components/admin/booked-appoinment
     AddEditDoctorOfcComponent,
     DoctorOfficeDashboardComponent,
     DoctorOfficeHeaderComponent,
-    DoctorOfficeFooterComponent
+    DoctorOfficeFooterComponent,
     BookedAppoinmentsComponent
   ],
   imports: [
