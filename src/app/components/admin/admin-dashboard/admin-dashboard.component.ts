@@ -71,6 +71,8 @@ export class AdminDashboardComponent implements OnInit {
       let allData: AllDataElement[] = resolveData.dataCount.res;
       this.allDataSource = new MatTableDataSource(allData);
     });
+    this.getAllCountData();
+    this.getStatusCountData();
   }
 
   ngOnInit() {

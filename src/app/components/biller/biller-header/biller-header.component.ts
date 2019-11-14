@@ -30,7 +30,7 @@ export class BillerHeaderComponent implements OnInit {
     this.cookies.delete('jwtToken');
     this.cookies.delete('user_details');
     this.cookies.deleteAll();
-    this.router.navigateByUrl('login');
+    this.router.navigateByUrl('logout');
   }
   /**logout function end here**/
 

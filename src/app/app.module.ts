@@ -94,6 +94,7 @@ import { ListComponent } from './components/tech/tech-dashboard/manage-calender/
 import { DoctorOfficeDashboardComponent } from './components/doctor-office/doctor-office-dashboard/doctor-office-dashboard.component';
 import { DoctorOfficeHeaderComponent } from './components/doctor-office/doctor-office-header/doctor-office-header.component';
 import { DoctorOfficeFooterComponent } from './components/doctor-office/doctor-office-footer/doctor-office-footer.component';
+import { LogoutComponent } from './components/auth/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -155,7 +156,8 @@ import { DoctorOfficeFooterComponent } from './components/doctor-office/doctor-o
     DoctorOfficeDashboardComponent,
     DoctorOfficeHeaderComponent,
     DoctorOfficeFooterComponent,
-    BookedAppoinmentsComponent
+    BookedAppoinmentsComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

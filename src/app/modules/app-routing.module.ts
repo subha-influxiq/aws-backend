@@ -10,7 +10,7 @@ import { ResolveService } from '../services/resolve.service';
 import { LoginComponent } from '../components/auth/login/login.component';
 import { ForgetpasswordComponent } from '../components/auth/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from '../components/auth/resetpassword/resetpassword.component';
-
+import { LogoutComponent } from '../components/auth/logout/logout.component';
 /****************** Admin *****************/
 import { AdminDashboardComponent } from '../components/admin/admin-dashboard/admin-dashboard.component';
 
@@ -72,6 +72,7 @@ const routes: Routes = [
   { path: 'forget-password', component: ForgetpasswordComponent, canActivate: [AuthguardService] },
   { path: 'reset-password/:token', component: ResetpasswordComponent},
   { path: 'sign-up', redirectTo: '/login', pathMatch: 'full' },
+  { path : 'logout' , component : LogoutComponent },
 
   /****************** Admin *****************/
   { path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AuthguardService],
