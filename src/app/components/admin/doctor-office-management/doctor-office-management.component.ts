@@ -13,11 +13,11 @@ export class DoctorOfficeManagementComponent implements OnInit {
 public doctorOfficeAllData : any=[];
 public user_cookie:any;
 
-public doctorOfficeAllData_skip: any = ["password","_id","type"];
+public doctorOfficeAllData_skip: any = ["password","_id","type","techId","centerName"];
   public editUrl: any = "admin/doctor-office-management/edit";
   public doctorOfficeAllData_modify_header: any = {
-    "centerName":"Center Name","email":"E-Mail","phone":"Phone","address":"Address","city":"City",
-    "state":"State","date":"Date Added","status":"Status"
+    "centerNamecopy":"Center Name","email":"E-Mail","phone":"Phone","address":"Address","city":"City",
+    "state":"State","date":"Date Added","status":"Status","techName":"Tech Name","zip" :"Zip"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";
@@ -27,7 +27,7 @@ public doctorOfficeAllData_skip: any = ["password","_id","type"];
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
-  SearchingSourceName:any = "users_view_doctoroffice";
+  public SearchingSourceName:any = "users_view_doctoroffice";
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
