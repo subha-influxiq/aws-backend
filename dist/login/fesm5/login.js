@@ -44,11 +44,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { MAT_DIALOG_DATA, MatDialogRef, MatDialog, MatSnackBar } from '@angular/material';
-import { Injectable, NgModule, Component, Input, ViewChild, Inject, CUSTOM_ELEMENTS_SCHEMA, defineInjectable, inject } from '@angular/core';
+import { Injectable, NgModule, Component, Input, ViewChild, Inject, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, defineInjectable, inject } from '@angular/core';
 import { FormBuilder, Validators, FormGroupDirective, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog, MatSnackBar } from '@angular/material';
 
 /**
  * @fileoverview added by tsickle
@@ -1777,18 +1777,21 @@ var snackBarComponent = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var ResetPasswordComponent = /** @class */ (function () {
-    function ResetPasswordComponent(fb, http, router, route, apiService) {
+    function ResetPasswordComponent(fb, http, router, route, apiService, snackBar) {
         var _this = this;
         this.fb = fb;
         this.http = http;
         this.router = router;
         this.route = route;
         this.apiService = apiService;
+        this.snackBar = snackBar;
         this.fromTitleNameValue = '';
         this.serverUrlValue = '';
         this.message = '';
         this.addEndpointValue = '';
         this.logoValue = '';
+        // public signUpRouteingUrlValue: any = '';
+        this.durationInSeconds = 5; // This is SnackBar set time
         this.route.params.subscribe((/**
          * @param {?} params
          * @return {?}
@@ -1806,9 +1809,8 @@ var ResetPasswordComponent = /** @class */ (function () {
         });
     }
     Object.defineProperty(ResetPasswordComponent.prototype, "fromTitleName", {
-        // public signUpRouteingUrlValue: any = '';
         set: 
-        // public signUpRouteingUrlValue: any = '';
+        // This is SnackBar set time
         /**
          * @param {?} fromTitleNameVal
          * @return {?}
@@ -1951,6 +1953,7 @@ var ResetPasswordComponent = /** @class */ (function () {
                 result = response;
                 console.log(result);
                 if (result.status == "success") {
+                    _this.openSnackBar();
                     _this.formDirective.resetForm(); // Use for reset the form
                     _this.message = '';
                 }
@@ -1959,6 +1962,17 @@ var ResetPasswordComponent = /** @class */ (function () {
                 }
             }));
         }
+    };
+    /**
+     * @return {?}
+     */
+    ResetPasswordComponent.prototype.openSnackBar = /**
+     * @return {?}
+     */
+    function () {
+        this.snackBar.openFromComponent(snackBarResetComponent, {
+            duration: this.durationInSeconds * 1000,
+        });
     };
     /********* Reset Password Form Submit end here*********/
     /**
@@ -1977,7 +1991,7 @@ var ResetPasswordComponent = /** @class */ (function () {
     ResetPasswordComponent.decorators = [
         { type: Component, args: [{
                     selector: 'lib-reset-password',
-                    template: "<div class=\"main-div\">\n\n  <mat-card class=\"from\">\n      <span class=\"logowrapper\" *ngIf=\"logoValue != ''\" >\n          <img  [src]=\"logoValue\">\n      </span>\n\n    <h2 *ngIf=\"fromTitleNameValue != ''\"> {{fromTitleNameValue}}</h2>\n\n\n    <form class=\"example-container\" [formGroup]=\"resetPasswordForm\" (ngSubmit)=\"resetPasswordSubmit()\" novalidate>\n<mat-error class=\"error\" *ngIf=\"message !=''\">{{message}}</mat-error>\n\n      <mat-form-field>\n        <input matInput placeholder=\"Password\" type=\"password\" formControlName=\"password\" (blur)=\"inputUntouched('password')\">\n        <mat-error\n          *ngIf=\"!resetPasswordForm.controls['password'].valid && resetPasswordForm.controls['password'].errors.required && resetPasswordForm.controls['password'].touched\">\n          Password field can not be blank</mat-error>\n          <!-- <mat-error  *ngIf=\"!resetPasswordForm.controls['password'].errors.required  && resetPasswordForm.controls['password'].touched\">Minimum length for password is 4!</mat-error> -->\n      </mat-form-field>\n\n      <mat-form-field>\n        <input matInput placeholder=\"Confirm Password\" type=\"password\"  formControlName=\"confirmPassword\" (blur)=\"inputUntouched('confirmPassword')\">\n        <mat-error\n          *ngIf=\"!resetPasswordForm.controls['confirmPassword'].valid && resetPasswordForm.controls['confirmPassword'].errors.required && resetPasswordForm.controls['confirmPassword'].touched\">\n          Confirm Password field can not be blank</mat-error>\n        <!-- <mat-error *ngIf=\"f.confirmPassword.errors.mustMatch\">Confirm Password is not valid</mat-error> -->\n        <mat-error *ngIf=\"!resetPasswordForm.controls['confirmPassword'].valid && resetPasswordForm.controls['confirmPassword'].touched\">Password does not match </mat-error>\n      </mat-form-field>\n\n      <button mat-raised-button color=\"primary\">Update Password</button>\n\n    </form>\n  </mat-card>\n</div>\n\n<!-- <button (click)=\"openSnackBar('succes', 'ok')\"> ok</button> -->",
+                    template: "<div class=\"main-div\">\n\n  <mat-card class=\"from\">\n      <span class=\"logowrapper\" *ngIf=\"logoValue != ''\" >\n          <img  [src]=\"logoValue\">\n      </span>\n\n    <h2 *ngIf=\"fromTitleNameValue != ''\"> {{fromTitleNameValue}}</h2>\n\n\n    <form class=\"example-container\" [formGroup]=\"resetPasswordForm\" (ngSubmit)=\"resetPasswordSubmit()\" novalidate>\n<mat-error class=\"error\" *ngIf=\"message !=''\">{{message}}</mat-error>\n\n      <mat-form-field>\n        <input matInput placeholder=\"Enter New Password\" type=\"password\" formControlName=\"password\" \n        (blur)=\"inputUntouched('password')\">\n        <mat-error\n          *ngIf=\"!resetPasswordForm.controls['password'].valid && resetPasswordForm.controls['password'].errors.required && resetPasswordForm.controls['password'].touched\">\n          Password field can not be blank</mat-error>\n          <!-- <mat-error  *ngIf=\"!resetPasswordForm.controls['password'].errors.required  && resetPasswordForm.controls['password'].touched\">Minimum length for password is 4!</mat-error> -->\n      </mat-form-field>\n\n      <mat-form-field>\n        <input matInput placeholder=\"Confirm New Password\" type=\"password\"  formControlName=\"confirmPassword\" (blur)=\"inputUntouched('confirmPassword')\">\n        <mat-error\n          *ngIf=\"!resetPasswordForm.controls['confirmPassword'].valid && resetPasswordForm.controls['confirmPassword'].errors.required && resetPasswordForm.controls['confirmPassword'].touched\">\n          Confirm Password field can not be blank</mat-error>\n        <!-- <mat-error *ngIf=\"f.confirmPassword.errors.mustMatch\">Confirm Password is not valid</mat-error> -->\n        <mat-error *ngIf=\"!resetPasswordForm.controls['confirmPassword'].valid && resetPasswordForm.controls['confirmPassword'].touched\">Password does not match </mat-error>\n      </mat-form-field>\n\n      <button mat-raised-button color=\"primary\">Update Password</button>\n\n    </form>\n  </mat-card>\n</div>\n\n<!-- <button (click)=\"openSnackBar('succes', 'ok')\"> ok</button> -->",
                     styles: [".example-container{display:flex;flex-direction:column}.example-container>*{width:100%}.from{width:30%;margin:0 auto}.from h2{text-align:center;background-color:#00f;color:#fff;padding:15px}.from a{padding-right:30px}.main-div{height:100vh;display:flex;justify-content:center;align-items:center}.signupfooter{margin-top:12px;display:flex;justify-content:space-between;align-items:center}.signupfooter a{cursor:pointer}.error{text-align:center}.logowrapper{margin:0 auto;display:block;text-align:center}"]
                 }] }
     ];
@@ -1987,7 +2001,8 @@ var ResetPasswordComponent = /** @class */ (function () {
         { type: HttpClient },
         { type: Router },
         { type: ActivatedRoute },
-        { type: ApiService }
+        { type: ApiService },
+        { type: MatSnackBar }
     ]; };
     ResetPasswordComponent.propDecorators = {
         formDirective: [{ type: ViewChild, args: [FormGroupDirective,] }],
@@ -1997,6 +2012,18 @@ var ResetPasswordComponent = /** @class */ (function () {
         logo: [{ type: Input }]
     };
     return ResetPasswordComponent;
+}());
+var snackBarResetComponent = /** @class */ (function () {
+    function snackBarResetComponent() {
+    }
+    snackBarResetComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'snack-bar-modale',
+                    template: "Password changed successfully",
+                    styles: ["\n    .example {\n      color: aliceblue;\n      background-color: yellowgreen;\n    }\n  "]
+                }] }
+    ];
+    return snackBarResetComponent;
 }());
 
 /**
@@ -2015,6 +2042,7 @@ var LoginModule = /** @class */ (function () {
                         ResetPasswordComponent,
                         successModalComponent,
                         snackBarComponent,
+                        snackBarResetComponent,
                     ],
                     imports: [
                         DemoMaterialModule,
@@ -2027,8 +2055,8 @@ var LoginModule = /** @class */ (function () {
                     exports: [LoginComponent, SignUpComponent, ForgetPasswordComponent, ResetPasswordComponent],
                     providers: [ApiService],
                     bootstrap: [],
-                    schemas: [CUSTOM_ELEMENTS_SCHEMA],
-                    entryComponents: [successModalComponent, snackBarComponent]
+                    schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
+                    entryComponents: [successModalComponent, snackBarComponent, snackBarResetComponent]
                 },] }
     ];
     return LoginModule;
@@ -2044,6 +2072,6 @@ var LoginModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { LoginService, LoginComponent, LoginModule, ApiService as ɵa, ForgetPasswordComponent as ɵd, snackBarComponent as ɵe, DemoMaterialModule as ɵg, ResetPasswordComponent as ɵf, SignUpComponent as ɵb, successModalComponent as ɵc };
+export { LoginService, LoginComponent, LoginModule, ApiService as ɵa, ForgetPasswordComponent as ɵd, snackBarComponent as ɵe, DemoMaterialModule as ɵh, ResetPasswordComponent as ɵf, snackBarResetComponent as ɵg, SignUpComponent as ɵb, successModalComponent as ɵc };
 
 //# sourceMappingURL=login.js.map

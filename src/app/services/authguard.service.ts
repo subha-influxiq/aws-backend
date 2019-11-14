@@ -24,13 +24,17 @@ export class AuthguardService implements CanActivate {
       switch(next.url[0].path) {
         case 'login':
         case 'forget-password':
-          this._router.navigate([userData.type + '/dashboard']);
+          this._router.navigate([userData.type.replace("_", "-") + '/dashboard']);
           break;
         default:
-          if(next.url[0].path == userData.type) {
+          if(userData.type == 'doctor_office' && next.url[0].path == 'doctor-office') {
             return true;
           } else {
-            this._router.navigate([userData.type + '/dashboard']);
+            if(next.url[0].path == userData.type) {
+              return true;
+            } else {
+              this._router.navigate([userData.type.replace("_", "-") + '/dashboard']);
+            }
           }
           break;
       }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddEditDoctorOfcComponent } from './add-edit-doctor-ofc.component';
+import { BookedAppoinmentsComponent } from './booked-appoinments.component';
 
-describe('AddEditDoctorOfcComponent', () => {
-  let component: AddEditDoctorOfcComponent;
-  let fixture: ComponentFixture<AddEditDoctorOfcComponent>;
+describe('BookedAppoinmentsComponent', () => {
+  let component: BookedAppoinmentsComponent;
+  let fixture: ComponentFixture<BookedAppoinmentsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddEditDoctorOfcComponent ]
+      declarations: [ BookedAppoinmentsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddEditDoctorOfcComponent);
+    fixture = TestBed.createComponent(BookedAppoinmentsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

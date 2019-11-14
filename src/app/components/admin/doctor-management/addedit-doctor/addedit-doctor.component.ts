@@ -5,7 +5,6 @@ import { CookieService } from 'ngx-cookie-service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
 import { nameValidator, npmValidator, zipValidator, phoneValidator, matchpwd } from './validators';
-import { CommonFunction } from '../../../../class/common/common-function';
 import { MatSnackBar } from '@angular/material';
 
 export interface DialogData {
@@ -47,7 +46,7 @@ export class AddeditDoctorComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private http: HttpServiceService,
     private cookieService: CookieService, public dialog: MatDialog, private router: Router,
-    public acivatedRoute: ActivatedRoute, public commonFunction: CommonFunction, public snackBar: MatSnackBar) {
+    public acivatedRoute: ActivatedRoute, public snackBar: MatSnackBar) {
 
     this.params_id = this.acivatedRoute.snapshot.params._id;
     if (this.params_id) {
@@ -55,9 +54,6 @@ export class AddeditDoctorComponent implements OnInit {
     } else {
       this.generateAddForm();
     }
-    /* Set Meta Data */
-    this.commonFunction.setTitleMetaTags();
-
     this.user_token = cookieService.get('jwtToken');
     this.getAllTechData();
     this.getAllBillerData();

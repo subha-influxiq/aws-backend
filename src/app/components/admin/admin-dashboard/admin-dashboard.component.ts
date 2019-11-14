@@ -2,10 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CommonFunction } from '../../../class/common/common-function';
-import { MatTableDataSource, MatPaginator } from '@angular/material';
-// import { MatPaginator} from '@angular/material/paginator';
-
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 export interface PeriodicElement {
   no: number;
@@ -16,7 +15,6 @@ export interface PeriodicElement {
 }
 
 export interface AllDataElement {
-
   no: number;
   patientName: string;
   doctorName: string;
@@ -46,54 +44,44 @@ export class AdminDashboardComponent implements OnInit {
   public processedStatusCount: any;
   public signedStatusCount: any;
   public billerStatusCount: any;
+
   public headerText: any;
+  
   public commonArray: PeriodicElement[] = [];
   public uploadedStatusArray: any = [];
   public processedStatusArray: any = [];
   public signedStatusArray: any = [];
   public billerStatusArray: any = [];
-  public displayedColumns: string[] = ['no', 'patientName', 'record_type', 'date_added', 'status'];
+  public displayedColumns: string[] = ['no', 'date_added','patientName','record_type','techName','record', 'status'];
   public allDataColumns: string[] = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'doctorName', 'record', 'superBill', 'date', 'patientName', 'status'];
 
-  dataSource = new MatTableDataSource(this.commonArray);
-  public allDataSource: any;
+  dataSource: MatTableDataSource<PeriodicElement>;
+  allDataSource: MatTableDataSource<AllDataElement>;
 
-  // applyFilter(filterValue: string) {
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-  //   if (this.dataSource.paginator) {
-  //     this.dataSource.paginator.firstPage();
-  //   }
-  // }
-  
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   public allDataList: any = [];
-  // @ViewChild(MatPaginator) paginator: MatPaginator;   
+  
+  @ViewChild(MatPaginator, { static: true }) paginatorAll: MatPaginator;
 
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-
-  constructor(private router: Router, public cookieService: CookieService,
-    private http: HttpServiceService, public activatedRoute: ActivatedRoute,
-    public commonFunction: CommonFunction) {
-
-   
+  constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute) {
+    /* Get Auth Token */
     this.user_token = cookieService.get('jwtToken');
-    this.getAllCountData();
-    this.getStatusCountData();
-    /* Set Meta Data */
-    this.commonFunction.setTitleMetaTags();
-  }
-  ngOnInit() {
+
     this.activatedRoute.data.subscribe(resolveData => {
-      this.allDataList = resolveData.dataCount.res;
-      this.allDataSource = new MatTableDataSource(this.allDataList);
-
+      let allData: AllDataElement[] = resolveData.dataCount.res;
+      this.allDataSource = new MatTableDataSource(allData);
     });
-
   }
+
+  ngOnInit() {
+    this.allDataSource.paginator = this.paginatorAll;
+  }
+
   ngAfterViewInit() {
     this.allDataSource.paginator = this.paginator;
-    // this.dataSource.paginator = this.paginator;
   }
-  patientNameFilter(value: any) {
+
+  filterByName(value: any) {
     var data = {
       "source": "Patient-Record-Report_view",
       "condition": value,
@@ -105,6 +93,24 @@ export class AdminDashboardComponent implements OnInit {
       this.allDataSource=result;  
 
     })
+  }
+
+  filerByReports(value:any){
+    console.log("status search",value);
+
+    var data = {
+      "source": "patient_management_view_count",
+      "condition": value,
+      "token" : this.user_token
+    }
+    console.log("dataaa",data);
+    this.http.httpViaPost('datalist', data)
+    .subscribe(Response=>{
+      let result:any=Response.res;
+      this.dataSource=result;  
+
+    })
+
   }
 
   getAllCountData() {
@@ -119,14 +125,11 @@ export class AdminDashboardComponent implements OnInit {
         "type": "biller"
       }
     }
-    this.http.httpViaPost('count', data)
-      .subscribe(response => {
-        let result: any;
-        result = response;
-        this.billerCount = result["biller-count"];
-        this.techCount = result["tech-count"];
-        this.doctorCount = result["doctor-count"];
-      })
+    this.http.httpViaPost('count', data).subscribe((response) => {
+      this.billerCount = response["biller-count"];
+      this.techCount = response["tech-count"];
+      this.doctorCount = response["doctor-count"];
+    });
   }
 
   getStatusCountData() {
@@ -163,18 +166,15 @@ export class AdminDashboardComponent implements OnInit {
         this.processedStatusArray = result.data.status2;
         this.signedStatusArray = result.data.status3;
         this.billerStatusArray = result.data.status5;
-
       })
   }
 
 
   viewReportProcessData(flag: string) {
     switch (flag) {
-
       case 'Reports Uploaded':
         this.headerText = "Reports Uploaded";
-        this.commonArray = this.uploadedStatusArray;
-        console.log(this.commonArray);
+        this.commonArray = this.processedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       case 'Report Processed':
@@ -184,12 +184,12 @@ export class AdminDashboardComponent implements OnInit {
         break;
       case 'Report Signed':
         this.headerText = "Reports Signed";
-        this.commonArray = this.signedStatusArray;
+        this.commonArray = this.processedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       case 'Super Bill':
         this.headerText = "Sent to Super Bill";
-        this.commonArray = this.billerStatusArray;
+        this.commonArray = this.processedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       default:

@@ -31,6 +31,8 @@ import { ListingTechComponent } from '../components/admin/tech-management/listin
 /**Doctor Office Mnagement**/
 import { DoctorOfficeManagementComponent } from '../components/admin/doctor-office-management/doctor-office-management.component';
 import { AddEditDoctorOfcComponent } from '../components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component';
+/**Booked-Appoiments**/
+import { BookedAppoinmentsComponent } from '../components/admin/booked-appoinments/booked-appoinments.component';
 /* Account Settings */
 import { AccountSettingsComponent } from '../components/common/account-settings/account-settings.component';
 import { ChangePasswordComponent } from '../components/common/account-settings/change-password/change-password.component';
@@ -48,6 +50,9 @@ import { BillerDashboardComponent } from '../components/biller/biller-dashboard/
 import { DoctorDashboardComponent } from '../components/doctor/doctor-dashboard/doctor-dashboard.component';
 import { ReportDetailsComponent } from '../components/tech/report-details/report-details.component';
 
+/***************** Doctor Office Dashboard ****************/
+import { DoctorOfficeDashboardComponent } from '../components/doctor-office/doctor-office-dashboard/doctor-office-dashboard.component';
+
 /* Error Pages */
 import { NotFoundErrorComponent } from '../components/common/not-found-error/not-found-error.component';
 
@@ -57,19 +62,19 @@ import { HealthriskSystemEncounterComponent } from '../components/admin/tech-man
 import { SystemSuperbillComponent } from '../components/admin/tech-management/system-superbill/system-superbill.component';
 import { HealthRiskAnalysisComponent } from '../components/admin/tech-management/health-risk-analysis/health-risk-analysis.component';
 import { SignatureManagementComponent } from '../components/doctor/signature-management/signature-management.component';
+import { DoctorOfficeAccountSettingsComponent } from '../components/doctor-office/doctor-office-account-settings/doctor-office-account-settings.component';
 
 const routes: Routes = [
-  /* Auth Route */
+  /********** Auth Route **********/
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate: [AuthguardService] },
   { path: 'forget-password', component: ForgetpasswordComponent, canActivate: [AuthguardService] },
   { path: 'reset-password/:token', component: ResetpasswordComponent },
   { path: 'sign-up', redirectTo: '/login', pathMatch: 'full' },
 
-  /* Admin Route */
-  {
-    path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AuthguardService],
-    resolve: { dataCount: ResolveService },
+  /****************** Admin *****************/
+  { path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AuthguardService],
+   resolve: { dataCount: ResolveService },
     data: {
       requestcondition: {
         source: 'Patient-Record-Report_view',
@@ -93,7 +98,7 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  /* Admin  Management */
+  /* Admin Management */
   { path: 'admin/admin-management/add', component: AddEditComponent, canActivate: [AuthguardService] },
   {
     path: 'admin/admin-management/edit/:_id', component: AddEditComponent, canActivate: [AuthguardService], resolve: { adminsingleData: ResolveService },
@@ -183,7 +188,7 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  /**Doctor Office Management **/
+  /* Doctor Office Management */
   {
     path: 'admin/doctor-office-management', component: DoctorOfficeManagementComponent, canActivate: [AuthguardService],
     resolve: { data: ResolveService },
@@ -195,9 +200,7 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  {
-    path: 'admin/doctor-office-management/add', component: AddEditDoctorOfcComponent, canActivate: [AuthguardService]
-  },
+  { path :'admin/doctor-office-management/add' ,component : AddEditDoctorOfcComponent,canActivate : [AuthguardService] },
   {
     path: 'admin/doctor-office-management/edit/:_id', component: AddEditDoctorOfcComponent, canActivate: [AuthguardService],
     resolve: { data: ResolveService },
@@ -207,12 +210,28 @@ const routes: Routes = [
         condition: {}
       },
       endpoint: 'datalist'
+    },    
+  },
+  /* Docotr Management Account settings*/
+  {
+    path: 'doctor-office/account-settings', component: DoctorOfficeAccountSettingsComponent, canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'users',
+        condition: {}
+      },
+      endpoint: 'datalist'
     },
   },
-
-  /* Tech Dashboard */
+  /****************** Tech Route End *****************/
+  /**Booked-appoinments**/
   {
-    path: 'tech/dashboard', component: TechDashboardComponent, canActivate: [AuthguardService],
+    path : 'admin/booked-appoinments' , component : BookedAppoinmentsComponent
+  },
+
+  /****************** Tech Route Start *****************/
+  { path: 'tech/dashboard', component: TechDashboardComponent, canActivate: [AuthguardService],
     resolve: { techDashboardData: ResolveService },
     data: {
       requestcondition: {
@@ -232,6 +251,11 @@ const routes: Routes = [
   { path: 'tech/patient-management/add', component: AddEditPatientComponent, canActivate: [AuthguardService] },
   /* Bulk Upload */
   { path: 'tech/patient-management/bulk-upload', component: BulkUploadComponent, canActivate: [AuthguardService] },
+  
+  { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent},
+  { path: 'tech/system-superbill', component: SystemSuperbillComponent},
+  { path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent},
+  /****************** Tech Route End *****************/
 
   /* Biller Route */
   // { path: 'biller/dashboard', component: BillerDashboardComponent, canActivate: [AuthguardService] },
@@ -257,14 +281,21 @@ const routes: Routes = [
   /* Account-Settings */
   { path: 'doctor/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'doctor/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
+  /****************** Doctor Route End *****************/
 
+  /****************** Doctor Office Route Start *****************/
+  { path: 'doctor-office/dashboard', component: DoctorOfficeDashboardComponent, canActivate: [AuthguardService] },
+  /* Account-Settings */
+  { path: 'doctor-office/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
+  { path: 'doctor-office/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
+  /****************** Doctor Office Route End *****************/
 
   /* test component route start here */
-  {
-    path: 'test', component: TestComponent, canActivate: [AuthguardService], resolve: { data: ResolveService },
+  { path: 'test', component: TestComponent,
+    resolve: { dataCount: ResolveService },
     data: {
       requestcondition: {
-        source: 'user_management',
+        source: 'Patient-Record-Report_view',
         condition: {}
       },
       endpoint: 'datalist'
@@ -289,6 +320,7 @@ const routes: Routes = [
 export class AppRoutingModule {
 
 
-  constructor() { }
+
+  constructor() {}
 
 }

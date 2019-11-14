@@ -73,7 +73,7 @@ import { BillerHeaderComponent } from './components/biller/biller-header/biller-
 /* Components (Pages) End Here */
 
 /* testing purpose start here */
-import { TestComponent, DialogContentExampleDialog } from './components/test/test.component';
+import { TestComponent } from './components/test/test.component';
 import { FileUploadModule } from 'file-upload'; 
 import { HealthriskSystemEncounterComponent } from './components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component';
 import { SystemSuperbillComponent } from './components/admin/tech-management/system-superbill/system-superbill.component';
@@ -87,7 +87,14 @@ import { DoctorFooterComponent } from './components/doctor/doctor-footer/doctor-
 import { SignatureManagementComponent } from './components/doctor/signature-management/signature-management.component';
 import { DoctorOfficeManagementComponent } from './components/admin/doctor-office-management/doctor-office-management.component';
 import { AddEditDoctorOfcComponent,ChangePasswordDoctorOfficeModal } from './components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component';
-import { MatPaginatorModule } from '@angular/material/paginator'; 
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { DoctorOfficeDashboardComponent } from './components/doctor-office/doctor-office-dashboard/doctor-office-dashboard.component';
+import { DoctorOfficeHeaderComponent } from './components/doctor-office/doctor-office-header/doctor-office-header.component';
+import { DoctorOfficeFooterComponent } from './components/doctor-office/doctor-office-footer/doctor-office-footer.component';
+import { BookedAppoinmentsComponent } from './components/admin/booked-appoinments/booked-appoinments.component';
+import { DoctorOfficeAccountSettingsComponent } from './components/doctor-office/doctor-office-account-settings/doctor-office-account-settings.component';
+import { DoctorOfficeChangePasswordComponent } from './components/doctor-office/doctor-office-account-settings/doctor-office-change-password/doctor-office-change-password.component';
+ 
 
 @NgModule({
   declarations: [
@@ -107,7 +114,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     UserAddEditComponent,
     // Test
     TestComponent,
-    DialogContentExampleDialog,
     AddEditComponent,
     ManageAdminListComponent,
     AdminHeaderComponent,
@@ -143,7 +149,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     SignatureManagementComponent,
     PasswordDialogBoxComponent,
     DoctorOfficeManagementComponent,
-    AddEditDoctorOfcComponent
+    AddEditDoctorOfcComponent,
+    DoctorOfficeDashboardComponent,
+    DoctorOfficeHeaderComponent,
+    DoctorOfficeFooterComponent,
+    BookedAppoinmentsComponent,
+    DoctorOfficeAccountSettingsComponent,
+    DoctorOfficeChangePasswordComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -167,8 +179,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   providers: [HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }, CookieService, AuthguardService, HttpServiceService, DatePipe, CommonFunction],
   bootstrap: [AppComponent],
   entryComponents:[ChangePasswordDoctorModal,Dialogtest,ChangePasswordModal,ChangePasswordAdminModal,ChangePasswordDoctorOfficeModal
-    ,DialogBoxComponent,PasswordDialogBoxComponent,UploadDialogBoxComponent,
-    DialogContentExampleDialog,TestComponent]
+    ,DialogBoxComponent,PasswordDialogBoxComponent,UploadDialogBoxComponent,TestComponent]
 
 })
 export class AppModule {

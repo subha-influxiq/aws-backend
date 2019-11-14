@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CommonFunction } from '../../../class/common/common-function';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
@@ -16,7 +17,7 @@ export class AdminHeaderComponent implements OnInit {
   public loader: boolean = true;
   public user_cookie:any;
 
-  constructor(public cookies: CookieService, public router: Router) { 
+  constructor(public cookies: CookieService, public router: Router, public commonFunction: CommonFunction) { 
     window.scroll(0, 0);
     let allData: any = {};
     allData = this.cookies.getAll();
@@ -25,6 +26,8 @@ export class AdminHeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    /* Set Meta Data */
+    this.commonFunction.setTitleMetaTags();
   }
 
   myFunction() {

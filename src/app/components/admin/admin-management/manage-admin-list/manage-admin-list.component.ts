@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { CommonFunction } from '../../../../class/common/common-function';
 
 @Component({
   selector: 'app-manage-admin-list',
@@ -37,10 +36,8 @@ export class ManageAdminListComponent implements OnInit {
 
     };
   public user_cookie: any;
-  constructor(public activatedRoute: ActivatedRoute, public cookie: CookieService, public commonFunction: CommonFunction) {
-    
-    /* Set Meta Data */
-    this.commonFunction.setTitleMetaTags();
+  
+  constructor(public activatedRoute: ActivatedRoute, public cookie: CookieService) {
     this.user_cookie = cookie.get('jwtToken');
   }
 
