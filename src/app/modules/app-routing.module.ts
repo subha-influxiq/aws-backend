@@ -52,6 +52,9 @@ import { BillerDashboardComponent } from '../components/biller/biller-dashboard/
 import { DoctorDashboardComponent } from '../components/doctor/doctor-dashboard/doctor-dashboard.component';
 import { ReportDetailsComponent} from '../components/tech/report-details/report-details.component';
 
+/***************** Doctor Office Dashboard ****************/
+import { DoctorOfficeDashboardComponent } from '../components/doctor-office/doctor-office-dashboard/doctor-office-dashboard.component';
+
 /* Error Pages */
 import { NotFoundErrorComponent } from '../components/common/not-found-error/not-found-error.component';
 
@@ -63,14 +66,14 @@ import { HealthRiskAnalysisComponent } from '../components/admin/tech-management
 import { SignatureManagementComponent } from '../components/doctor/signature-management/signature-management.component';
 
 const routes: Routes = [
-  /* Auth Route */
+  /********** Auth Route **********/
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate: [AuthguardService] },
   { path: 'forget-password', component: ForgetpasswordComponent, canActivate: [AuthguardService] },
   { path: 'reset-password/:token', component: ResetpasswordComponent},
   { path: 'sign-up', redirectTo: '/login', pathMatch: 'full' },
 
-  /* Admin Route */
+  /****************** Admin *****************/
   { path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AuthguardService],
    resolve: { dataCount: ResolveService },
     data: {
@@ -95,7 +98,7 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  /* Admin  Management */
+  /* Admin Management */
   { path: 'admin/admin-management/add', component: AddEditComponent, canActivate: [AuthguardService] },
   { path: 'admin/admin-management/edit/:_id', component: AddEditComponent, canActivate: [AuthguardService], resolve: { adminsingleData: ResolveService },
     data: {
@@ -177,7 +180,7 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  /**Doctor Office Management **/
+  /* Doctor Office Management */
   {
     path : 'admin/doctor-office-management',component : DoctorOfficeManagementComponent,canActivate: [AuthguardService],
     resolve: { data: ResolveService },
@@ -189,9 +192,7 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  {
-   path :'admin/doctor-office-management/add' ,component : AddEditDoctorOfcComponent,canActivate : [AuthguardService]
-  },
+  { path :'admin/doctor-office-management/add' ,component : AddEditDoctorOfcComponent,canActivate : [AuthguardService] },
   {
     path :'admin/doctor-office-management/edit/:_id' ,component : AddEditDoctorOfcComponent,canActivate : [AuthguardService],
     resolve: { data: ResolveService },
@@ -202,13 +203,14 @@ const routes: Routes = [
       },
       endpoint: 'datalist'
     },
-   },
-   /**Booked-appoinments**/
-   {
-     path : 'admin/booked-appoinments' , component : BookedAppoinmentsComponent
-   },
+  },
+  /****************** Tech Route End *****************/
+  /**Booked-appoinments**/
+  {
+    path : 'admin/booked-appoinments' , component : BookedAppoinmentsComponent
+  },
 
-  /* Tech Dashboard */
+  /****************** Tech Route Start *****************/
   { path: 'tech/dashboard', component: TechDashboardComponent, canActivate: [AuthguardService],
     resolve: { techDashboardData: ResolveService },
     data: { 
@@ -232,36 +234,47 @@ const routes: Routes = [
   
   /* Bulk Upload */
   { path: 'tech/patient-management/bulk-upload', component: BulkUploadComponent, canActivate: [AuthguardService] },
+  
+  { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent},
+  { path: 'tech/system-superbill', component: SystemSuperbillComponent},
+  { path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent},
+  /****************** Tech Route End *****************/
 
-  /* Biller Route */
+  /****************** Biller Route Start *****************/
   { path: 'biller/dashboard', component: BillerDashboardComponent, canActivate: [AuthguardService] },
+  
   /* Account-Settings */
   { path: 'biller/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'biller/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
-  
-  /* Doctor Route */
+  /****************** Biller Route End *****************/
+
+  /****************** Doctor Route Start *****************/
   { path: 'doctor/dashboard', component: DoctorDashboardComponent, canActivate: [AuthguardService] },
   { path: 'doctor/signature-management', component: SignatureManagementComponent ,canActivate: [AuthguardService]},
 
   /* Account-Settings */
   { path: 'doctor/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'doctor/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
-  
- 
+  /****************** Doctor Route End *****************/
+
+  /****************** Doctor Office Route Start *****************/
+  { path: 'doctor-office/dashboard', component: DoctorOfficeDashboardComponent, canActivate: [AuthguardService] },
+  /* Account-Settings */
+  { path: 'doctor-office/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
+  { path: 'doctor-office/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
+  /****************** Doctor Office Route End *****************/
+
   /* test component route start here */
-  { path: 'test', component: TestComponent, canActivate: [AuthguardService], resolve: { data: ResolveService },
+  { path: 'test', component: TestComponent,
+    resolve: { dataCount: ResolveService },
     data: {
       requestcondition: {
-        source: 'user_management',
+        source: 'Patient-Record-Report_view',
         condition: {}
       },
       endpoint: 'datalist'
     },
   },
-
-  { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent},
-  { path: 'tech/system-superbill', component: SystemSuperbillComponent},
-  { path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent},
 
   /* Error Page Route */
   { path: 'error/404', component: NotFoundErrorComponent },
@@ -275,7 +288,6 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule {
-
 
   constructor() {}
 

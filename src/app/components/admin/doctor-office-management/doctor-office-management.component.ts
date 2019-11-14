@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
 import { HttpServiceService } from '../../../services/http-service.service';
-import { CommonFunction } from '../../../class/common/common-function';
 
 @Component({
   selector: 'app-doctor-office-management',
@@ -39,10 +38,7 @@ public doctorOfficeAllData_skip: any = ["password","_id","type"];
 
   constructor(public activatedRoute : ActivatedRoute,
     public cookie: CookieService, public http: HttpClient,
-    public httpService: HttpServiceService, 
-     public commonFunction: CommonFunction) {
-         /* Set Meta Data */
-    this.commonFunction.setTitleMetaTags();
+    public httpService: HttpServiceService) {
 
     this.user_cookie = cookie.get('jwtToken');
       }

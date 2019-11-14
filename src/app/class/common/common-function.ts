@@ -23,6 +23,8 @@ export class CommonFunction {
                     break;
                 case 'Doctor':
                     break;
+                case 'Doctor Office':
+                    break;
                 case 'List':
                     break;
                 case 'Add':
@@ -49,7 +51,14 @@ export class CommonFunction {
         if(getToken) {
             let allcookies: any = this.cookie.getAll();
             let userData = JSON.parse(allcookies.user_details);
-            title = title + '| ' + userData.firstname + ' ' + userData.lastname + ' - AWS Backend';
+            switch(urlArr[1]) {
+                case 'Doctor Office':
+                    title = title + '| ' + userData.centerName + ' - AWS Backend';
+                    break;
+                default:
+                    title = title + '| ' + userData.firstname + ' ' + userData.lastname + ' - AWS Backend';
+                    break;
+            }
         } else {
             title = 'Welcome to AWS Backend | ' + title;
         }

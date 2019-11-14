@@ -73,7 +73,7 @@ import { BillerHeaderComponent } from './components/biller/biller-header/biller-
 /* Components (Pages) End Here */
 
 /* testing purpose start here */
-import { TestComponent, DialogContentExampleDialog } from './components/test/test.component';
+import { TestComponent } from './components/test/test.component';
 import { FileUploadModule } from 'file-upload'; 
 import { HealthriskSystemEncounterComponent } from './components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component';
 import { SystemSuperbillComponent } from './components/admin/tech-management/system-superbill/system-superbill.component';
@@ -91,6 +91,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { BookedAppoinmentsComponent } from './components/admin/booked-appoinments/booked-appoinments.component';
 import { ManageScheduleComponent } from './components/tech/tech-dashboard/manage-calender/manage-schedule/manage-schedule.component';
 import { ListComponent } from './components/tech/tech-dashboard/manage-calender/my-appointments/list/list.component'; 
+import { DoctorOfficeDashboardComponent } from './components/doctor-office/doctor-office-dashboard/doctor-office-dashboard.component';
+import { DoctorOfficeHeaderComponent } from './components/doctor-office/doctor-office-header/doctor-office-header.component';
+import { DoctorOfficeFooterComponent } from './components/doctor-office/doctor-office-footer/doctor-office-footer.component';
 
 @NgModule({
   declarations: [
@@ -110,7 +113,6 @@ import { ListComponent } from './components/tech/tech-dashboard/manage-calender/
     UserAddEditComponent,
     // Test
     TestComponent,
-    DialogContentExampleDialog,
     AddEditComponent,
     ManageAdminListComponent,
     AdminHeaderComponent,
@@ -149,7 +151,11 @@ import { ListComponent } from './components/tech/tech-dashboard/manage-calender/
     AddEditDoctorOfcComponent,
     BookedAppoinmentsComponent,
     ManageScheduleComponent,
-    ListComponent
+    ListComponent,
+    DoctorOfficeDashboardComponent,
+    DoctorOfficeHeaderComponent,
+    DoctorOfficeFooterComponent,
+    BookedAppoinmentsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -173,8 +179,7 @@ import { ListComponent } from './components/tech/tech-dashboard/manage-calender/
   providers: [HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }, CookieService, AuthguardService, HttpServiceService, DatePipe, CommonFunction],
   bootstrap: [AppComponent],
   entryComponents:[ChangePasswordDoctorModal,Dialogtest,ChangePasswordModal,ChangePasswordAdminModal,ChangePasswordDoctorOfficeModal
-    ,DialogBoxComponent,PasswordDialogBoxComponent,UploadDialogBoxComponent,
-    DialogContentExampleDialog,TestComponent]
+    ,DialogBoxComponent,PasswordDialogBoxComponent,UploadDialogBoxComponent,TestComponent]
 
 })
 export class AppModule {
