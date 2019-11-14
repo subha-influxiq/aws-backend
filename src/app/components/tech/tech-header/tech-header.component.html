@@ -5,11 +5,21 @@
       </span>
   
   
-      <mat-card-content class="quotation">
+      <!-- <mat-card-content class="quotation">
         <p>ADVANCED ANS TECHNOLOGY – BETTER PATIENT CARE – INCREASE PRACTICE REVENUE</p>
-      </mat-card-content>
+      </mat-card-content> -->
+      <mat-card-content class="quotation" >
+      <mat-nav-list>
+        <a mat-list-item routerLinkActive="active" [routerLink]="['/tech/dashboard']"> Dashboard </a>
+        <a mat-list-item  routerLinkActive="active" [matMenuTriggerFor]="calendarMenu"> Manage Calendar </a>
+        </mat-nav-list>
+
+        <mat-menu #calendarMenu="matMenu" class="sub_menu">
+          <button mat-menu-item [routerLink]="['/tech/dashboard/manage-calender/manage-sehedule']">Manage Schedule </button>
+          <button mat-menu-item [routerLink]="['/tech/dashboard/manage-calender/my-appoinments']">My Appointments</button>
+        </mat-menu>
   
-  
+    </mat-card-content>
       <mat-card-content class="profile_section">
         <mat-menu #appMenu="matMenu">
           <button mat-menu-item [routerLink]="['/tech/account-settings']">

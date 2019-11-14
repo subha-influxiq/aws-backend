@@ -76,11 +76,10 @@ export class AddEditBillerComponent implements OnInit {
       companyname: ['', Validators.required],
       address: ['', Validators.required],
       zip: ['', Validators.required],
-      city: ['', Validators.required],
-      state: ['', Validators.required],
+      city: [''],
+      state: [''],
       date: [dateformat],
       type : ['biller'],
-     
       status: ['', Validators.required],
       password: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],

@@ -39,6 +39,8 @@ import { ChangePasswordComponent } from '../components/common/account-settings/c
 
 /***************** Tech Dashboard ****************/
 import { TechDashboardComponent } from '../components/tech/tech-dashboard/tech-dashboard.component';
+import { ManageScheduleComponent } from '../components/tech/tech-dashboard/manage-calender/manage-schedule/manage-schedule.component';
+import { ListComponent } from '../components/tech/tech-dashboard/manage-calender/my-appointments/list/list.component';
 
 /* Patient Management */
 import { AddEditPatientComponent } from '../components/tech/patient-management/add-edit-patient/add-edit-patient.component';
@@ -220,11 +222,14 @@ const routes: Routes = [
   { path: 'tech/report/total-uploaded', component: ReportDetailsComponent, canActivate: [AuthguardService],},
   { path: 'tech/report/total-processed', component: ReportDetailsComponent, canActivate: [AuthguardService],},
   { path: 'tech/report/total-remained-processed', component: ReportDetailsComponent, canActivate: [AuthguardService],},
-
+  { path : 'tech/dashboard/manage-calender/manage-sehedule' , component : ManageScheduleComponent , canActivate: [AuthguardService]},
+  { path : 'tech/dashboard/manage-calender/my-appoinments' , component : ListComponent , canActivate: [AuthguardService]},
+  
   /* Account-Settings */
   { path: 'tech/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'tech/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
   { path: 'tech/patient-management/add', component: AddEditPatientComponent, canActivate: [AuthguardService] },
+  
   /* Bulk Upload */
   { path: 'tech/patient-management/bulk-upload', component: BulkUploadComponent, canActivate: [AuthguardService] },
 

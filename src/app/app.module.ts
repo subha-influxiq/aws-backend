@@ -88,7 +88,9 @@ import { SignatureManagementComponent } from './components/doctor/signature-mana
 import { DoctorOfficeManagementComponent } from './components/admin/doctor-office-management/doctor-office-management.component';
 import { AddEditDoctorOfcComponent,ChangePasswordDoctorOfficeModal } from './components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { BookedAppoinmentsComponent } from './components/admin/booked-appoinments/booked-appoinments.component'; 
+import { BookedAppoinmentsComponent } from './components/admin/booked-appoinments/booked-appoinments.component';
+import { ManageScheduleComponent } from './components/tech/tech-dashboard/manage-calender/manage-schedule/manage-schedule.component';
+import { ListComponent } from './components/tech/tech-dashboard/manage-calender/my-appointments/list/list.component'; 
 
 @NgModule({
   declarations: [
@@ -145,7 +147,9 @@ import { BookedAppoinmentsComponent } from './components/admin/booked-appoinment
     PasswordDialogBoxComponent,
     DoctorOfficeManagementComponent,
     AddEditDoctorOfcComponent,
-    BookedAppoinmentsComponent
+    BookedAppoinmentsComponent,
+    ManageScheduleComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
