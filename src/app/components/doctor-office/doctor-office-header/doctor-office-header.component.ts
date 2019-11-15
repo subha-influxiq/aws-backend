@@ -38,4 +38,9 @@ export class DoctorOfficeHeaderComponent implements OnInit {
   }
   /**logout function end here**/
 
+  /* Dashboard redirect */
+  toDashboard(){
+    this.router.navigateByUrl('/doctor-office/dashboard');
+  }
+
 }

@@ -161,15 +161,14 @@
 
 
         <h3>Taxonomies</h3>
-        <div formArrayName="taxonomies"
-          *ngFor="let j of checkboxArray,let loop of docManageForm.controls.taxonomies?.value; let i = index; trackBy: trackByFn">
-          <ng-container [formGroupName]="i">
-
-            <mat-checkbox formControlName="taxo" (click)="selectTaxo(j)">{{j}}</mat-checkbox>
-
-          </ng-container>
-        </div>
-
+        
+          <div class="flex-container">
+               <div *ngFor="let t of docManageForm.controls.taxonomies.controls;let i = index;">
+                    <input type="checkbox" [formControl]="t">{{myTaxonomies[i].name}}
+               </div>
+          </div>
+        
+       
         <!--         
         <mat-checkbox>Family Practice</mat-checkbox>
         <mat-checkbox>General Practitioner</mat-checkbox>

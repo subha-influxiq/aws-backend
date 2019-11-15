@@ -95,9 +95,10 @@ import { DoctorOfficeDashboardComponent } from './components/doctor-office/docto
 import { DoctorOfficeHeaderComponent } from './components/doctor-office/doctor-office-header/doctor-office-header.component';
 import { DoctorOfficeFooterComponent } from './components/doctor-office/doctor-office-footer/doctor-office-footer.component';
 import { DoctorOfficeAccountSettingsComponent } from './components/doctor-office/doctor-office-account-settings/doctor-office-account-settings.component';
-import { DoctorOfficeChangePasswordComponent } from './components/doctor-office/doctor-office-account-settings/doctor-office-change-password/doctor-office-change-password.component';
+
  
 import { LogoutComponent } from './components/auth/logout/logout.component';
+import { DoctorOfficeChangePasswordComponent } from './components/doctor-office/doctor-office-change-password/doctor-office-change-password.component';
 
 @NgModule({
   declarations: [

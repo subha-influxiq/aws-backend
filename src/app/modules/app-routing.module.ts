@@ -65,6 +65,8 @@ import { SystemSuperbillComponent } from '../components/admin/tech-management/sy
 import { HealthRiskAnalysisComponent } from '../components/admin/tech-management/health-risk-analysis/health-risk-analysis.component';
 import { SignatureManagementComponent } from '../components/doctor/signature-management/signature-management.component';
 import { DoctorOfficeAccountSettingsComponent } from '../components/doctor-office/doctor-office-account-settings/doctor-office-account-settings.component';
+import { DoctorOfficeChangePasswordComponent } from '../components/doctor-office/doctor-office-change-password/doctor-office-change-password.component';
+
 
 const routes: Routes = [
   /********** Auth Route **********/
@@ -227,6 +229,7 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+  { path:'doctor-office/account-settings/change-password' , component: DoctorOfficeChangePasswordComponent},
   /****************** Tech Route End *****************/
   /**Booked-appoinments**/
   {

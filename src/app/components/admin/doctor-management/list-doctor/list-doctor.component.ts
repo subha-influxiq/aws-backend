@@ -49,6 +49,7 @@ export class ListDoctorComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.data.subscribe(resolveData => {
       this.docData = resolveData.data.res;
+      console.log("DATALIST",this.docData);
     });
   }
 
