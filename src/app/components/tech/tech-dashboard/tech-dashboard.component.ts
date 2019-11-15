@@ -64,7 +64,7 @@ export class TechDashboardComponent implements OnInit {
   public reportUploadedArray: any = [];
   public reportProcessedArray: any = [];
   public reportRemainingArray: any = [];
-  public headerText:any;
+  public headerText: any;
 
   constructor(public cookie: CookieService, public http: HttpClient,
     public httpService: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
@@ -75,6 +75,7 @@ export class TechDashboardComponent implements OnInit {
     let allData: any = {};
     allData = cookie.getAll()
     this.user_data = JSON.parse(allData.user_details);
+  
     this.user_id = this.user_data.id;
     this.user_token = cookie.get('jwtToken');
     this.getTechData();
@@ -89,7 +90,7 @@ export class TechDashboardComponent implements OnInit {
     })
 
   }
-  getAllDashboardData(){
+  getAllDashboardData() {
 
   }
 
@@ -97,45 +98,47 @@ export class TechDashboardComponent implements OnInit {
     var data = {
       "source": "users_view_doctor",
       "condition": {
-        tech : this.user_data.firstname + " " +this.user_data.lastname
+        tech: this.user_data.firstname + " " + this.user_data.lastname
       },
       "token": this.user_token
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
-       
+
         let result: any = {};
         result = response.res;
         this.userSingleData = result;
         console.log("tech dashboard", this.userSingleData);
-        
+
       })
   }
   getTechCountData() {
     var data = {
       "source": "users",
       "condition": {
-        "status": "pending",
-        "type": "tech"
-      },
-      "condition1": {
-        "status": "waiting for doctor sign",
-        "type": "tech"
-      },
-      "condition2": {
-        "status": "doctor signed"
-      },
-      "condition3": {
-        "status": "error"
-      },
-      "condition4": {
-        "status": "send to biller"
-      },
-      "condition5": {
-        "record_type": "file"
-      },
-      "condition6": {
-        "type": "tech"
+        "condition": {
+          "status": "pending",
+          "type": "tech"
+        },
+        "condition1": {
+          "status": "waiting for doctor sign",
+          "type": "tech"
+        },
+        "condition2": {
+          "status": "doctor signed"
+        },
+        "condition3": {
+          "status": "error"
+        },
+        "condition4": {
+          "status": "send to biller"
+        },
+        "condition5": {
+          "record_type": "file"
+        },
+        "condition6": {
+          "type": "tech"
+        },
       },
       "token": this.user_token
     }
@@ -158,14 +161,14 @@ export class TechDashboardComponent implements OnInit {
         this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       case 'processed':
-          this.headerText = "Reports Processed";
-          this.commonArray = this.reportProcessedArray;
-          this.dataSource = new MatTableDataSource(this.commonArray);
+        this.headerText = "Reports Processed";
+        this.commonArray = this.reportProcessedArray;
+        this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       case 'remainProcess':
-          this.headerText = "Reports Remain to Process";
-         this.commonArray = this.reportRemainingArray;
-         this.dataSource = new MatTableDataSource(this.commonArray);
+        this.headerText = "Reports Remain to Process";
+        this.commonArray = this.reportRemainingArray;
+        this.dataSource = new MatTableDataSource(this.commonArray);
         break;
       default:
         break;

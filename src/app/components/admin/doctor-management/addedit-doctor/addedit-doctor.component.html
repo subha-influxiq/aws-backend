@@ -28,11 +28,11 @@
       <mat-form-field appearance="fill">
         <mat-label>First Name</mat-label>
         <input matInput placeholder="James" formControlName="firstname"
-        (blur)="inputUntouch(docManageForm,'firstname')">
-        
+          (blur)="inputUntouch(docManageForm,'firstname')">
+
         <mat-error *ngIf="docManageForm.controls['firstname'].touched && !docManageForm.controls['firstname'].valid
         && docManageForm.controls['firstname'].errors.required">
-        First Name can not be blank</mat-error>
+          First Name can not be blank</mat-error>
         <!-- <mat-error *ngIf="!docManageForm.controls['firstname'].valid
           && docManageForm.controls['firstname'].errors.required">First Name is required.</mat-error>
         <mat-error
@@ -49,10 +49,10 @@
       <mat-form-field appearance="fill">
         <mat-label>Last Name</mat-label>
         <input matInput placeholder="Anderson" formControlName="lastname"
-        (blur)="inputUntouch(docManageForm,'lastname')">
+          (blur)="inputUntouch(docManageForm,'lastname')">
         <mat-error *ngIf="docManageForm.controls['lastname'].touched && !docManageForm.controls['lastname'].valid
         && docManageForm.controls['lastname'].errors.required">
-        Last Name can not be blank</mat-error>
+          Last Name can not be blank</mat-error>
         <!-- <mat-error
           *ngIf="!docManageForm.controls['lastname'].valid && docManageForm.controls['lastname'].errors.required">Last
           Name is required.</mat-error>
@@ -70,7 +70,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
         <input matInput type="email" placeholder="jamesanderson@gmail.com" formControlName="email"
-        (blur)="inputUntouch(docManageForm,'email')">
+          (blur)="inputUntouch(docManageForm,'email')">
         <mat-error *ngIf="!docManageForm.controls['email'].valid && docManageForm.controls['email'].errors.required">
           Email is required.</mat-error>
         <mat-error *ngIf="!docManageForm.controls['email'].valid && !docManageForm.controls['email'].errors.required">
@@ -94,15 +94,15 @@
 
       <!-- Confirm Password  -->
       <ng-container *ngIf="!params_id">
-      <mat-form-field appearance="fill" *ngIf="action=='add'">
-        <mat-label>Confirm Password</mat-label>
-        <input type="password" matInput placeholder="**********" formControlName="confirmpassword">
-        <mat-error *ngIf="docManageForm.controls['confirmpassword']?.touched || docManageForm.controls['confirmpassword'].errors 
+        <mat-form-field appearance="fill" *ngIf="action=='add'">
+          <mat-label>Confirm Password</mat-label>
+          <input type="password" matInput placeholder="**********" formControlName="confirmpassword">
+          <mat-error *ngIf="docManageForm.controls['confirmpassword']?.touched || docManageForm.controls['confirmpassword'].errors 
         && docManageForm.controls['confirmpassword'].errors.required">Password do not match</mat-error>
-        <mat-error
-        *ngIf="!docManageForm.controls['confirmpassword'].valid && docManageForm.controls['confirmpassword'].touched">
-        Confirm Password field can not be blank</mat-error>
-      </mat-form-field>
+          <mat-error
+            *ngIf="!docManageForm.controls['confirmpassword'].valid && docManageForm.controls['confirmpassword'].touched">
+            Confirm Password field can not be blank</mat-error>
+        </mat-form-field>
       </ng-container>
 
 
@@ -111,27 +111,22 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Phone</mat-label>
-        <input matInput placeholder="9845711225" formControlName="phone"
-        (blur)="inputUntouch(docManageForm,'phone')">
+        <input matInput placeholder="9845711225" formControlName="phone" (blur)="inputUntouch(docManageForm,'phone')">
         <mat-error *ngIf="docManageForm.controls['phone'].touched && !docManageForm.controls['phone'].valid
         && docManageForm.controls['phone'].errors.required">
-        Phone can not be blank</mat-error>
+          Phone can not be blank</mat-error>
 
       </mat-form-field>
       <!-- FAX -->
       <mat-form-field appearance="fill">
         <mat-label>Fax</mat-label>
-        <input matInput placeholder="323 555 1234" formControlName="fax"
-        (blur)="inputUntouch(docManageForm,'fax')">
+        <input matInput placeholder="323 555 1234" formControlName="fax" (blur)="inputUntouch(docManageForm,'fax')">
         <mat-error *ngIf="docManageForm.controls['fax'].touched && !docManageForm.controls['fax'].valid
         && docManageForm.controls['fax'].errors.required">
-        Fax can not be blank</mat-error>
+          Fax can not be blank</mat-error>
         <!-- <mat-error *ngIf="!docManageForm.controls['fax'].valid && !docManageForm.controls['fax'].errors.required">
           Fax is not valid</mat-error> -->
       </mat-form-field>
-
-
-
 
 
       <!-- Practice Name  -->
@@ -152,47 +147,26 @@
           Practice name is not valid</mat-error> -->
       </mat-form-field>
 
-
-
-
       <mat-card-content class="checkbox_w">
-        <!-- Taxonomies  -->
-
-
 
         <h3>Taxonomies</h3>
         <div formArrayName="taxonomies"
           *ngFor="let j of checkboxArray,let loop of docManageForm.controls.taxonomies?.value; let i = index; trackBy: trackByFn">
           <ng-container [formGroupName]="i">
 
-            <mat-checkbox formControlName="taxo" (click)="selectTaxo(j)">{{j}}</mat-checkbox>
+            <mat-checkbox formControlName="taxo" (click)="selectTaxo(j)">{{ j }}</mat-checkbox>
 
           </ng-container>
         </div>
 
-        <!--         
-        <mat-checkbox>Family Practice</mat-checkbox>
-        <mat-checkbox>General Practitioner</mat-checkbox>
-        <mat-checkbox>Primary Care</mat-checkbox>
-        <mat-checkbox>Cardiology</mat-checkbox>
-        <mat-checkbox>Neurology</mat-checkbox>
-        <mat-checkbox>Internal Medicine</mat-checkbox>
-        <mat-checkbox>Endocrinology</mat-checkbox>
-        <mat-checkbox>Pain Management</mat-checkbox>
-        <mat-checkbox>Integrated</mat-checkbox>
-        <mat-checkbox>Others</mat-checkbox> -->
-
       </mat-card-content>
-
-
 
 
       <!-- NPI#  -->
 
       <mat-form-field appearance="fill">
         <mat-label>#NPI</mat-label>
-        <input matInput placeholder="1880101700" formControlName="npm" 
-        (blur)="inputUntouch(docManageForm,'npm')">
+        <input matInput placeholder="1880101700" formControlName="npm" (blur)="inputUntouch(docManageForm,'npm')">
         <mat-error *ngIf="docManageForm.controls['npm'].touched && !docManageForm.controls['npm'].valid
         && docManageForm.controls['npm'].errors.required">
           #NPI can not be blank</mat-error>
@@ -204,26 +178,16 @@
 
 
 
-
-
-
       <!-- Address  -->
 
       <mat-form-field appearance="fill">
         <mat-label>Address</mat-label>
         <textarea matInput placeholder="76 E. Mayfield Drive" formControlName="address"
-        (blur)="inputUntouch(docManageForm,'address')"></textarea>
+          (blur)="inputUntouch(docManageForm,'address')"></textarea>
         <mat-error *ngIf="docManageForm.controls['address'].touched && !docManageForm.controls['address'].valid
         && docManageForm.controls['address'].errors.required">
           Address can not be blank</mat-error>
       </mat-form-field>
-
-
-
-
-
-
-
 
       <!-- State  -->
 
@@ -234,9 +198,6 @@
           <mat-option *ngFor="let state of states;" value="{{ state.name }}">{{ state.name }}</mat-option>
         </mat-select>
       </mat-form-field>
-
-
-
 
       <!-- City  -->
 
@@ -276,7 +237,7 @@
         <mat-select formControlName="doctorsOfficeName">
           <mat-option [value]=0>Select a Doctor's Office</mat-option>
           <mat-option *ngFor="let val of doctorOfficeData;" value="{{ val.centerName }}">{{ val.centerName }}
-            </mat-option>
+          </mat-option>
         </mat-select>
       </mat-form-field>
 
@@ -308,11 +269,11 @@
       <!-- Button  -->
 
       <span class="submit_form">
-          <button mat-flat-button type="button" (click)="backToManagePage()">Back </button>
+        <button mat-flat-button type="button" (click)="backToManagePage()">Back </button>
         <button mat-flat-button type="reset">Reset</button>
-        <button mat-flat-button type="submit" > {{ htmlText.buttonText }} </button>
+        <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
         <ng-container *ngIf="params_id">
-            <button mat-flat-button type="button" (click)="openDialog(test)"> Change Password </button>
+          <button mat-flat-button type="button" (click)="openDialog(test)"> Change Password </button>
         </ng-container>
       </span>
     </form>

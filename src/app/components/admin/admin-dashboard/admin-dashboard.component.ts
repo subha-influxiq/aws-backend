@@ -5,6 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import * as momentImported from 'moment';
+const moment = momentImported;
 
 export interface PeriodicElement {
   no: number;
@@ -36,7 +38,7 @@ export interface AllDataElement {
 })
 export class AdminDashboardComponent implements OnInit {
 
-  public user_token: any;
+  public userToken: any;
   public billerCount: any;
   public doctorCount: any;
   public techCount: any;
@@ -46,26 +48,27 @@ export class AdminDashboardComponent implements OnInit {
   public billerStatusCount: any;
 
   public headerText: any;
-  
+
   public commonArray: PeriodicElement[] = [];
   public uploadedStatusArray: any = [];
   public processedStatusArray: any = [];
   public signedStatusArray: any = [];
   public billerStatusArray: any = [];
-  public displayedColumns: string[] = ['no', 'date_added','patientName','record_type','techName','record', 'status'];
-  public allDataColumns: string[] = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'doctorName', 'record', 'superBill', 'date', 'patientName', 'status'];
-
+  public displayedColumns: string[] = ['no', 'date_added', 'patientName', 'record_type', 'techName', 'record', 'status'];
+  public allDataColumns: string[] = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'doctorName', 'record', 'superBill', 'date', 'patientNamecopy', 'status'];
+  public startDate: any;
+  public endDate: any;
   dataSource: MatTableDataSource<PeriodicElement>;
   allDataSource: MatTableDataSource<AllDataElement>;
 
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   public allDataList: any = [];
-  
+
   @ViewChild(MatPaginator, { static: true }) paginatorAll: MatPaginator;
 
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute) {
     /* Get Auth Token */
-    this.user_token = cookieService.get('jwtToken');
+    this.userToken = cookieService.get('jwtToken');
 
     this.activatedRoute.data.subscribe(resolveData => {
       let allData: AllDataElement[] = resolveData.dataCount.res;
@@ -83,51 +86,88 @@ export class AdminDashboardComponent implements OnInit {
     this.allDataSource.paginator = this.paginator;
   }
 
-  filterByName(value: any) {
+  filterByName(key: string, value: string) {
+    let searchJson: any = {};
+    searchJson[key] = value.toLowerCase();
     var data = {
       "source": "Patient-Record-Report_view",
-      "condition": value,
-      "token" : this.user_token
+      "condition": searchJson,
+      "token": this.userToken
     }
     this.http.httpViaPost('datalist', data)
-    .subscribe(Response=>{
-      let result:any=Response.res;
-      this.allDataSource=result;  
-
-    })
+      .subscribe(Response => {
+        this.allDataSource = Response.res;
+      });
   }
 
-  filerByReports(value:any){
-    console.log("status search",value);
-
+  filerByReports(key: string, value: any) {
+    let searchJson: any = {};
+    searchJson[key] = value.toLowerCase();
     var data = {
       "source": "patient_management_view_count",
-      "condition": value,
-      "token" : this.user_token
+      "condition": searchJson,
+      "token": this.userToken
     }
-    console.log("dataaa",data);
+
     this.http.httpViaPost('datalist', data)
-    .subscribe(Response=>{
-      let result:any=Response.res;
-      this.dataSource=result;  
+      .subscribe(Response => {
+        let result: any = Response.res;
+        this.dataSource = result;
+      });
 
-    })
+  }
 
+  dateRangeSearch() {
+    var data = {
+      "source": "Patient-Record-Report_view",
+      "condition": {
+        "date" : {
+        $lte: moment(this.endDate).format('DD-MM-YYYY'),
+        $gte: moment(this.startDate).format('DD-MM-YYYY')
+      }
+    },
+      "token": this.userToken,
+    }
+    this.http.httpViaPost('datalist', data)
+      .subscribe((response) => {
+        this.allDataSource = response.res;
+      });
+  }
+
+  dateReportsRangeSearch() {
+    var data = {
+      "source": "patient_management_view_count",
+      "condition": {
+        "date_added": { 
+          $lte: moment(this.endDate).format('DD-MM-YYYY'),
+          $gte: moment(this.startDate).format('DD-MM-YYYY')
+        },
+        // status: 'waiting for doctor sign'
+    },
+      "token": this.userToken,
+    }
+    this.http.httpViaPost('datalist', data)
+      .subscribe((response) => {
+        this.dataSource = response.res;
+      });
   }
 
   getAllCountData() {
     var data = {
       "condition": {
-        "type": "doctor"
-      },
-      "condition1": {
-        "type": "tech"
-      },
-      "condition2": {
-        "type": "biller"
+        "condition": {
+          "type": "doctor"
+        },
+        "condition1": {
+          "type": "tech"
+        },
+        "condition2": {
+          "type": "biller"
+        }
       }
     }
     this.http.httpViaPost('count', data).subscribe((response) => {
+
       this.billerCount = response["biller-count"];
       this.techCount = response["tech-count"];
       this.doctorCount = response["doctor-count"];
@@ -137,26 +177,29 @@ export class AdminDashboardComponent implements OnInit {
   getStatusCountData() {
     var data = {
       "condition": {
-        "status": "pending"
-      },
-      "condition1": {
-        "status": "waiting for doctor sign"
-      },
-      "condition2": {
-        "status": "doctor signed"
-      },
-      "condition3": {
-        "status": "error"
-      },
-      "condition4": {
-        "status": "send to biller"
-      },
-      "condition5": {
-        "record_type": "file"
+        "condition": {
+          "status": "pending"
+        },
+        "condition1": {
+          "status": "waiting for doctor sign"
+        },
+        "condition2": {
+          "status": "doctor signed"
+        },
+        "condition3": {
+          "status": "error"
+        },
+        "condition4": {
+          "status": "send to biller"
+        },
+        "condition5": {
+          "record_type": "file"
+        }
       }
     }
     this.http.httpViaPost('statuscount', data)
       .subscribe(response => {
+
         let result: any;
         result = response;
         this.uploadedStatusCount = result["status-count1"];
@@ -212,5 +255,6 @@ export class AdminDashboardComponent implements OnInit {
   toDocList() {
     this.router.navigateByUrl('admin/doctor-management/list');
   }
+
 
 }
