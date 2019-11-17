@@ -19,7 +19,7 @@ export class TechHeaderComponent implements OnInit {
     let allData: any = {};
     allData = cookies.getAll()
     this.user_data = JSON.parse(allData.user_details);
-    console.log("okkkkk",this.user_data)
+   
     this.user_cookie = cookies.get('jwtToken');
    }
 

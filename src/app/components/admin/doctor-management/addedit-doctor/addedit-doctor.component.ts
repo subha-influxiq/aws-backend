@@ -277,8 +277,8 @@ export class AddeditDoctorComponent implements OnInit {
       "token": this.user_token
     }
     this.http.httpViaPost('datalist', data).subscribe(response => {
-        this.billerData = response.res;
-      });
+      this.billerData = response.res;
+    });
   }
 
 
@@ -311,7 +311,6 @@ export class AddeditDoctorComponent implements OnInit {
     let postData: any = {
       "source": "users",
       "data": Object.assign(this.docManageForm.value, this.condition),
-      "sourceobj": ["tech", "biller"],
       "token": this.cookieService.get('jwtToken')
 
     };
@@ -410,7 +409,6 @@ export class ChangePasswordDoctorModal {
         "newPassword": this.changePwdForm.value.password,
       }
       this.httpService.httpViaPost('changepassword', data).subscribe(response => {
-        console.log("response", response);
       });
     }
 
