@@ -30,15 +30,14 @@ export class AdminHeaderComponent implements OnInit {
     this.commonFunction.setTitleMetaTags();
   }
 
-  myFunction() {
-  }
-  
   /**logout function start here**/
   logout() {
     this.cookies.delete('jwtToken');
     this.cookies.delete('user_details');
     this.cookies.deleteAll();
-    this.router.navigateByUrl('logout');
+    setTimeout(() => {
+      this.router.navigateByUrl('logout');
+    }, 1000);
   }
   /**logout function end here**/
   
