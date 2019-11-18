@@ -236,7 +236,7 @@
         <mat-label>Select Doctor's Office</mat-label>
         <mat-select formControlName="doctorsOfficeName">
           <mat-option [value]=0>Select a Doctor's Office</mat-option>
-          <mat-option *ngFor="let val of doctorOfficeData;" value="{{ val.centerName }}">{{ val.centerName }}
+          <mat-option *ngFor="let val of doctorOfficeData;" value="{{ val._id }}">{{ val.centerName }}
           </mat-option>
         </mat-select>
       </mat-form-field>

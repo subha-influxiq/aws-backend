@@ -58,6 +58,8 @@ export class AdminDashboardComponent implements OnInit {
   public allDataColumns: string[] = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'doctorName', 'record', 'superBill', 'date', 'patientNamecopy', 'status'];
   public startDate: any;
   public endDate: any;
+  public statusFlag : any;
+
   dataSource: MatTableDataSource<PeriodicElement>;
   allDataSource: MatTableDataSource<AllDataElement>;
 
@@ -142,7 +144,7 @@ export class AdminDashboardComponent implements OnInit {
           $lte: moment(this.endDate).format('DD-MM-YYYY'),
           $gte: moment(this.startDate).format('DD-MM-YYYY')
         },
-        // status: 'waiting for doctor sign'
+        status: this.statusFlag
     },
       "token": this.userToken,
     }
@@ -216,6 +218,7 @@ export class AdminDashboardComponent implements OnInit {
 
 
   viewReportProcessData(flag: string) {
+    this.statusFlag = flag;
     switch (flag) {
       case 'Reports Uploaded':
         this.headerText = "Reports Uploaded";

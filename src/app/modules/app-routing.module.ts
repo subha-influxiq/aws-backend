@@ -238,7 +238,7 @@ const routes: Routes = [
     resolve: { techDashboardData: ResolveService },
     data: {
       requestcondition: {
-        source: 'Patient-Record-Report_view',
+        source: 'patient_management_view_tech',
         condition: {},
       },
       endpoint: 'datalist'
