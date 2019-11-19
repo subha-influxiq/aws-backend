@@ -7,6 +7,8 @@ import { HttpServiceService } from '../../../services/http-service.service';
 import { MatTableDataSource } from '@angular/material';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material';
+
 import * as momentImported from 'moment';
 const moment = momentImported;
 
@@ -52,8 +54,8 @@ export class DoctorDashboardComponent implements OnInit {
   public Pending: any;
   public DoctorSigned: any;
   public commonArray: PeriodicElement[] = [];
-  public allDataColumns: string[] = ['no', 'billGenerationDate', 'billSentDate', 'patientName', 'date', 'doctorName', 
-  'techName', 'record', 'superBill', 'status', 'billerName','billerDropDown'];
+  public allDataColumns: string[] = ['no', 'billGenerationDate', 'billSentDate', 'patientName', 'date',
+   'doctorName','record','techName', 'superBill', 'status', 'billerName', 'billerDropDown', 'action'];
   public headerText: any;
   public doctorSignedArray: any = [];
   public pendingArray: any = [];
@@ -62,11 +64,13 @@ export class DoctorDashboardComponent implements OnInit {
   public headertext: any;
   public start_date: any;
   public end_date: any;
-  public billerData : any=[];
+  public billerData: any = [];
   dataSource = new MatTableDataSource(this.allDataList);
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   public allDataSource_skip: any = ["patientName"];
-  constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService, public http: HttpServiceService, public activatedRoute: ActivatedRoute) {
+
+  constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService,
+    public http: HttpServiceService, public activatedRoute: ActivatedRoute, public snackBar: MatSnackBar) {
     let allcookies: any;
     allcookies = cookie.getAll();
     this.cookiesData = JSON.parse(allcookies.user_details);
@@ -82,13 +86,14 @@ export class DoctorDashboardComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.data.forEach(resolveData => {
       this.allDataList = resolveData.alldata;
+
     });
     this.allDataSource = new MatTableDataSource(this.allDataList);
     this.allDataSource.paginator = this.paginator;
     this.getData();
   }
 
-   getBillerData(){
+  getBillerData() {
     var data = {
       "source": "users_view_doctor",
       "condition": {
@@ -99,9 +104,8 @@ export class DoctorDashboardComponent implements OnInit {
     this.http.httpViaPost('datalist', data)
       .subscribe((response) => {
         this.billerData = response.res;
-       console.log("biller dataaaaa",this.billerData );
       })
-   }
+  }
 
   dateSearch() {
     var data = {
@@ -187,7 +191,6 @@ export class DoctorDashboardComponent implements OnInit {
     this.doctorSignedArray = this.allDataList.data.doctorsigned;
     this.pendingArray = this.allDataList.data.pending;
     this.allDataSource = this.allDataList.dataFull;
-
   }
 
   viewReportProcessData(flag: string) {
@@ -205,6 +208,37 @@ export class DoctorDashboardComponent implements OnInit {
       default:
         break;
     }
+  }
+
+  public sendToBillerJson: any = {};
+
+  setSendBiller(index: number, event: any) {
+    this.sendToBillerJson[index] = event.value;
+  }
+
+  allSendToBiller(index: number) {
+    // console.log('Dr Data >>-->', this.cookies_id);
+    // console.log('Pa Data >>-->', this.allDataSource[index]);
+    // console.log('Pa Data >>-->', this.allDataSource[index]._id);
+    // console.log('Biller Data >>-->', this.sendToBillerJson[index]);
+    var data: any = {
+      "source": "patient_management",
+      "data": {
+        "id": this.allDataSource[index]._id,
+        "biller_id": this.sendToBillerJson[index]
+      },
+      "sourceobj": ["biller_id"],
+      "token": this.user_token
+    }
+    this.http.httpViaPost('addorupdatedata', data).subscribe((response) => {
+      if (response.status = "success") {
+        let message = "Successfully Send";
+        let action = "ok";
+        this.snackBar.open(message, action, {
+          duration: 2000,
+        });
+      }
+    })
   }
 
 }
