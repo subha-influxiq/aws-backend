@@ -241,6 +241,10 @@ export class DoctorDashboardComponent implements OnInit {
       }
     })
   }
+  viewButton(index : number){
+    console.log("indexxxxx",this.allDataSource[index]);
+
+  }
 
 }
 

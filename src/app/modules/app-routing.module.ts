@@ -304,7 +304,16 @@ const routes: Routes = [
   },
 
   {
-    path: 'doctor/patient-record-report', component: PatientReportViewComponent, canActivate: [AuthguardService]
+    path: 'doctor/patient-record-report/:id', component: PatientReportViewComponent, 
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'patient_management',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
   },
 
   { path: 'doctor/signature-management', component: SignatureManagementComponent, canActivate: [AuthguardService] },
