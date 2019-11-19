@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonFunction } from '../../../class/common/common-function';
 import { MatTableDataSource } from '@angular/material';
+import {MatPaginator} from '@angular/material/paginator';
+
 export interface PeriodicElement {
   no: number;
   patientName: string;
@@ -12,6 +14,16 @@ export interface PeriodicElement {
   date_added: string;
   status: string;
 }
+export interface AllDataElement {
+  no: number;
+  patientName: string;
+  doctorName: string;
+  record: string;
+  billSentDate: string;
+  created_at: string;
+  status: string;
+}
+
 @Component({
   selector: 'app-tech-dashboard',
   templateUrl: './tech-dashboard.component.html',
@@ -23,36 +35,18 @@ export class TechDashboardComponent implements OnInit {
 
   public user_data: any = {};
   displayedColumns: string[] = ['no', 'patientName', 'record_type', 'date_added', 'status'];
+  allDataColumns: string[] = ['no','patientName', 'doctorName', 'record','created_at', 'billsendDate','status'];
+
+
+   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   dataSource = new MatTableDataSource(this.commonArray);
+  allDataSource: MatTableDataSource<AllDataElement>;
+
   /**lib-listing start here**/
 
   public allUserData: any = [];
-  public allUserData_skip: any = ["_id", "created_at"];
-  public editUrl: any = "user-management/edit";
-  public allUserData_modify_header: any = {
-    "firstname": "First Name", "lastname": "Last Name",
-    "email": "E-Mail", "city": "City", "address": "Address", "state": "State", "phone": "Phone", "zip": "Zip",
-    "status": "Status"
-  };
-
-  public UpdateEndpoint: any = "addorupdatedata";
-  public deleteEndpoint: any = "deletesingledata";
-  public token: any = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzExMTYzNDMsImlhdCI6MTU3MTAyOTk0M30.m7kRTmIwvk-G0qYmr0zJ9qXoFJea8fBwnIOt8d7n3bc";
-  public apiUrl: any = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";
-  public tableName: any = "user_management";
-
-  public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
-  public SearchingEndpoint: any = "datalist";
-  public SearchingSourceName: "user_management";
-  public search_settings: any =
-    {
-      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
-      textsearch: [{ label: "Search By Firstname", field: 'firstname' }],
-
-    };
-
-  /**lib listing end here**/
+  
   public user_id: any;
   public user_token: any;
   public techDashboardAllData: any = [];
@@ -65,6 +59,7 @@ export class TechDashboardComponent implements OnInit {
   public reportProcessedArray: any = [];
   public reportRemainingArray: any = [];
   public headerText: any;
+  public userToken : any;
 
   constructor(public cookie: CookieService, public http: HttpClient,
     public httpService: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
@@ -75,7 +70,8 @@ export class TechDashboardComponent implements OnInit {
     let allData: any = {};
     allData = cookie.getAll()
     this.user_data = JSON.parse(allData.user_details);
-  
+    this.userToken = cookie.get('jwtToken');
+
     this.user_id = this.user_data.id;
     this.user_token = cookie.get('jwtToken');
     this.getTechData();
@@ -86,13 +82,14 @@ export class TechDashboardComponent implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.data.forEach((data) => {
-      this.techDashboardAllData = data.techDashboardData.res;
+      let allDashboardData : any = data.techDashboardData.res;
+      this.techDashboardAllData = new MatTableDataSource(allDashboardData);
+      
     })
 
   }
-  getAllDashboardData() {
-
-  }
+  
+  
 
   getTechData() {
     var data = {
@@ -104,11 +101,9 @@ export class TechDashboardComponent implements OnInit {
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
-
         let result: any = {};
         result = response.res;
         this.userSingleData = result;
-        console.log("tech dashboard", this.userSingleData);
 
       })
   }
@@ -152,6 +147,35 @@ export class TechDashboardComponent implements OnInit {
         this.reportProcessedArray = response.data.status1;
 
       })
+  }
+  filterByName(key: string, value: string) {
+    let searchJson: any = {};
+    searchJson[key] = value.toLowerCase();
+    searchJson["user_id_object"] = this.user_id;
+    var data = {
+      "source": "patient_management_view_tech",
+      "condition": searchJson,
+      "token": this.userToken
+    }
+    this.httpService.httpViaPost('datalist', data)
+      .subscribe((Response) => {
+        this.techDashboardAllData = Response.res;
+      });
+  }
+
+  filerByReports(key: string, value: any) {
+    let searchJson: any = {};
+    searchJson[key] = value.toLowerCase();
+    var data = {
+      "source": "patient_management_view_tech",
+      "condition": searchJson,
+      "token": this.userToken
+    }
+    this.httpService.httpViaPost('datalist', data)
+    .subscribe((Response) => {
+      // this.techDashboardAllData = Response.res;
+    });
+
   }
   viewDetailsData(flag: any) {
     switch (flag) {

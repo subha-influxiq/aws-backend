@@ -49,7 +49,9 @@ import { AddEditPatientComponent } from '../components/tech/patient-management/a
 import { BulkUploadComponent } from '../components/tech/patient-management/bulk-upload/bulk-upload.component';
 
 import { BillerDashboardComponent } from '../components/biller/biller-dashboard/biller-dashboard.component';
+/**Doctor Dashboard **/
 import { DoctorDashboardComponent } from '../components/doctor/doctor-dashboard/doctor-dashboard.component';
+import { PatientReportViewComponent } from '../components/doctor/doctor-dashboard/patient-report-view/patient-report-view.component';
 import { ReportDetailsComponent } from '../components/tech/report-details/report-details.component';
 
 /***************** Doctor Office Dashboard ****************/
@@ -73,11 +75,12 @@ const routes: Routes = [
   { path: 'forget-password', component: ForgetpasswordComponent, canActivate: [AuthguardService] },
   { path: 'reset-password/:token', component: ResetpasswordComponent },
   { path: 'sign-up', redirectTo: '/login', pathMatch: 'full' },
-  { path : 'logout' , component : LogoutComponent },
+  { path: 'logout', component: LogoutComponent },
 
   /****************** Admin *****************/
-  { path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AuthguardService],
-   resolve: { dataCount: ResolveService },
+  {
+    path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AuthguardService],
+    resolve: { dataCount: ResolveService },
     data: {
       requestcondition: {
         source: 'Patient-Record-Report_view',
@@ -203,7 +206,7 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  { path :'admin/doctor-office-management/add' ,component : AddEditDoctorOfcComponent,canActivate : [AuthguardService] },
+  { path: 'admin/doctor-office-management/add', component: AddEditDoctorOfcComponent, canActivate: [AuthguardService] },
   {
     path: 'admin/doctor-office-management/edit/:_id', component: AddEditDoctorOfcComponent, canActivate: [AuthguardService],
     resolve: { data: ResolveService },
@@ -213,7 +216,7 @@ const routes: Routes = [
         condition: {}
       },
       endpoint: 'datalist'
-    },    
+    },
   },
   /* Docotr Management Account settings*/
   {
@@ -230,37 +233,38 @@ const routes: Routes = [
   /****************** Tech Route End *****************/
   /**Booked-appoinments**/
   {
-    path : 'admin/booked-appoinments' , component : BookedAppoinmentsComponent
+    path: 'admin/booked-appoinments', component: BookedAppoinmentsComponent
   },
 
   /****************** Tech Route Start *****************/
-  { path: 'tech/dashboard', component: TechDashboardComponent, canActivate: [AuthguardService],
+  {
+    path: 'tech/dashboard', component: TechDashboardComponent, canActivate: [AuthguardService],
     resolve: { techDashboardData: ResolveService },
     data: {
       requestcondition: {
-        source: 'Patient-Record-Report_view',
+        source: 'patient_management_view_tech',
         condition: {},
       },
       endpoint: 'datalist'
     },
   },
-  { path: 'tech/report/total-uploaded', component: ReportDetailsComponent, canActivate: [AuthguardService],},
-  { path: 'tech/report/total-processed', component: ReportDetailsComponent, canActivate: [AuthguardService],},
-  { path: 'tech/report/total-remained-processed', component: ReportDetailsComponent, canActivate: [AuthguardService],},
-  { path : 'tech/dashboard/manage-calender/manage-sehedule' , component : ManageScheduleComponent , canActivate: [AuthguardService]},
-  { path : 'tech/dashboard/manage-calender/my-appoinments' , component : ListComponent , canActivate: [AuthguardService]},
-  
+  { path: 'tech/report/total-uploaded', component: ReportDetailsComponent, canActivate: [AuthguardService], },
+  { path: 'tech/report/total-processed', component: ReportDetailsComponent, canActivate: [AuthguardService], },
+  { path: 'tech/report/total-remained-processed', component: ReportDetailsComponent, canActivate: [AuthguardService], },
+  { path: 'tech/dashboard/manage-calender/manage-sehedule', component: ManageScheduleComponent, canActivate: [AuthguardService] },
+  { path: 'tech/dashboard/manage-calender/my-appoinments', component: ListComponent, canActivate: [AuthguardService] },
+
   /* Account-Settings */
   { path: 'tech/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'tech/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
   { path: 'tech/patient-management/add', component: AddEditPatientComponent, canActivate: [AuthguardService] },
-  
+
   /* Bulk Upload */
   { path: 'tech/patient-management/bulk-upload', component: BulkUploadComponent, canActivate: [AuthguardService] },
-  
-  { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent},
-  { path: 'tech/system-superbill', component: SystemSuperbillComponent},
-  { path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent},
+
+  { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent },
+  { path: 'tech/system-superbill', component: SystemSuperbillComponent },
+  { path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent },
   /****************** Tech Route End *****************/
 
   /* Biller Route */
@@ -279,9 +283,30 @@ const routes: Routes = [
   /* Account-Settings */
   { path: 'biller/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'biller/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
-
   /* Doctor Route */
-  { path: 'doctor/dashboard', component: DoctorDashboardComponent, canActivate: [AuthguardService] },
+  {
+    path: 'doctor/dashboard', component: DoctorDashboardComponent, canActivate: [AuthguardService],
+    resolve: { alldata: ResolveService },
+    data: {
+      requestcondition: {
+        source: "Patient-Record-Report_view",
+        condition: {
+          "condition": {
+            "status": "doctor signed"
+          },
+          "condition1": {
+            "status": "pending"
+          }
+        }
+      },
+      endpoint: 'signaturecount'
+    },
+  },
+
+  {
+    path: 'doctor/patient-record-report', component: PatientReportViewComponent, canActivate: [AuthguardService]
+  },
+
   { path: 'doctor/signature-management', component: SignatureManagementComponent, canActivate: [AuthguardService] },
 
   /* Account-Settings */
@@ -297,7 +322,8 @@ const routes: Routes = [
   /****************** Doctor Office Route End *****************/
 
   /* test component route start here */
-  { path: 'test', component: TestComponent,
+  {
+    path: 'test', component: TestComponent,
     resolve: { dataCount: ResolveService },
     data: {
       requestcondition: {
@@ -327,6 +353,6 @@ export class AppRoutingModule {
 
 
 
-  constructor() {}
+  constructor() { }
 
 }

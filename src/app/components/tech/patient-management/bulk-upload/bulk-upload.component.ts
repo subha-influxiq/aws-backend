@@ -46,7 +46,7 @@ export class BulkUploadComponent implements OnInit {
       uploadFile   : [],
       status       : [1],
       note         : ['',Validators.required],
-      user_id            :  []
+      user_id      :  []
 
     })
     this.user_token = cookie.get('jwtToken');

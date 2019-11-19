@@ -61,7 +61,7 @@
           
             <mat-select formControlName="physicalOrdering" placeholder="Select a Doctor" >
               <mat-option [value]=0>Select a Doctor</mat-option>
-              <mat-option *ngFor="let doc of allDoctorDataArray;" value="{{ doc._id }}"> {{ doc.Full_Name }}
+              <mat-option *ngFor="let doc of allDoctorDataArray;" value="{{ doc._id }}"> {{ doc.fullName }}
                 </mat-option>
             </mat-select>
           </mat-form-field>
