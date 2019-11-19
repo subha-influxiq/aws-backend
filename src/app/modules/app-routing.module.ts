@@ -49,7 +49,9 @@ import { AddEditPatientComponent } from '../components/tech/patient-management/a
 import { BulkUploadComponent } from '../components/tech/patient-management/bulk-upload/bulk-upload.component';
 
 import { BillerDashboardComponent } from '../components/biller/biller-dashboard/biller-dashboard.component';
+/**Doctor Dashboard **/
 import { DoctorDashboardComponent } from '../components/doctor/doctor-dashboard/doctor-dashboard.component';
+import { PatientReportViewComponent } from '../components/doctor/doctor-dashboard/patient-report-view/patient-report-view.component';
 import { ReportDetailsComponent } from '../components/tech/report-details/report-details.component';
 
 /***************** Doctor Office Dashboard ****************/
@@ -299,6 +301,10 @@ const routes: Routes = [
       },
       endpoint: 'signaturecount'
     },
+  },
+
+  {
+    path: 'doctor/patient-record-report', component: PatientReportViewComponent, canActivate: [AuthguardService]
   },
 
   { path: 'doctor/signature-management', component: SignatureManagementComponent, canActivate: [AuthguardService] },

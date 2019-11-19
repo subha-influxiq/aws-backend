@@ -9,23 +9,21 @@ import { MatSnackBar } from '@angular/material';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
 import { CommonFunction } from '../../../../class/common/common-function';
-
 export interface DialogData {
   message: string;
 }
-
 @Component({
-  selector: 'app-add-edit-patient',
-  templateUrl: './add-edit-patient.component.html',
-  styleUrls: ['./add-edit-patient.component.css']
+  selector: 'app-patient-report-view',
+  templateUrl: './patient-report-view.component.html',
+  styleUrls: ['./patient-report-view.component.css']
 })
+export class PatientReportViewComponent implements OnInit {
 
-export class AddEditPatientComponent implements OnInit {
   @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
-  public htmlText: any = { nav: 'Add Patient' ,header:"Add Report Manually"};
+  public htmlText: any = { nav: 'Add Patient' ,header:"Physician Report"};
   public buttonText : any="Submit";
   public patientAddEditForm : FormGroup;
-  public user_token : any;
+  public userToken : any;
   date = new FormControl(new Date());
   public testDate :any;
   startdate: any ;
@@ -39,11 +37,13 @@ export class AddEditPatientComponent implements OnInit {
   public cookies_name:any;
   public cookies_lastname:any;
 
+
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService,public snakBar : MatSnackBar,public dialog: MatDialog,
      public commonFunction: CommonFunction) {
-      this.user_token = cookie.get('jwtToken');
+
+      this.userToken = cookie.get('jwtToken');
       let allcookies: any;
       allcookies = cookie.getAll();
       
@@ -56,65 +56,45 @@ export class AddEditPatientComponent implements OnInit {
       /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
 
-      // this.user_token = cookie.get('jwtToken');
-      this.getAllDoctorData();
+    this.patientAddEditForm = this.fb.group({
+      patientName        :  ['', [Validators.required, Validators.maxLength(30)]],
+      gender             :  ['', Validators.required],
+      birthDate          :  ['',Validators.required],
+      physicalOrdering   :  ['' ],
+      testDate           :  ['',Validators.required],
+      date               :  ['',Validators.required],
+      testCompletedDate  :  ['',Validators.required],
+      PTGPT              :  ['',Validators.required],
+      PTGVLFI            :  ['',Validators.required],
+      IR                 :  ['',Validators.required],
+      ESRNO              :  ['',Validators.required],
+      ESRL               :  ['',Validators.required],
+      peakC              :  ['',Validators.required],
+      PTGtype            :  ['',Validators.required],
+      PTGCVD             :  ['',Validators.required],
+      stressI            :  ['',Validators.required],
+      RI                 :  ['',Validators.required],
+      AIPTG              :  ['',Validators.required],
+      CIsCI              :  ['',Validators.required],
+      pNN50              :  ['',Validators.required],
+      RMSSD              :  ['',Validators.required],
+      SDba               :  ['',Validators.required],
+      SDda               :  ['',Validators.required],
+      DPRS               :  ['',Validators.required],
+      ValsR              :  ['',Validators.required],
+      BMI                :  ['',Validators.required],
+      bloodPressure      :  ['',Validators.required],
+      leaveNotes         :  ['',Validators.required],
+      systolic           :  [''],
+      diastolic          :  [''],
+      status             :  [1],
+      user_id            :  []
 
-      this.patientAddEditForm = this.fb.group({
-        patientName        :  ['', [Validators.required, Validators.maxLength(30)]],
-        gender             :  ['', Validators.required],
-        birthDate          :  ['',Validators.required],
-        physicalOrdering   :  ['' ],
-        testDate           :  ['',Validators.required],
-        date               :  ['',Validators.required],
-        testCompletedDate  :  ['',Validators.required],
-        PTGPT              :  ['',Validators.required],
-        PTGVLFI            :  ['',Validators.required],
-        IR                 :  ['',Validators.required],
-        ESRNO              :  ['',Validators.required],
-        ESRL               :  ['',Validators.required],
-        peakC              :  ['',Validators.required],
-        PTGtype            :  ['',Validators.required],
-        PTGCVD             :  ['',Validators.required],
-        stressI            :  ['',Validators.required],
-        RI                 :  ['',Validators.required],
-        AIPTG              :  ['',Validators.required],
-        CIsCI              :  ['',Validators.required],
-        pNN50              :  ['',Validators.required],
-        RMSSD              :  ['',Validators.required],
-        SDba               :  ['',Validators.required],
-        SDda               :  ['',Validators.required],
-        DPRS               :  ['',Validators.required],
-        ValsR              :  ['',Validators.required],
-        BMI                :  ['',Validators.required],
-        bloodPressure      :  ['',Validators.required],
-        leaveNotes         :  ['',Validators.required],
-        systolic           :  [''],
-        diastolic          :  [''],
-        status             :  [1],
-        user_id            :  []
+    })
 
-      })
-    }
+      }
 
   ngOnInit() {
-    
-  }
-
-  getAllDoctorData(){
-    var data = {
-      "source": "users_view_doctor",
-      "condition":{
-         tech:this.cookies_name + " " +this.cookies_lastname
-      },
-      "token": this.user_token
-    }
-    this.httpService.httpViaPost('datalist', data)
-      .subscribe(response => {
-       
-        let result: any = {};
-        result = response.res;
-        this.allDoctorDataArray = result;   
-      })
   }
 
   /**for validation purpose**/
@@ -157,44 +137,20 @@ export class AddEditPatientComponent implements OnInit {
         "source" : "patient_management",
         "data" : this.patientAddEditForm.value,
         "sourceobj": ["user_id","physicalOrdering"],
-        "token" : this.user_token
+        "token" : this.userToken
       }
 
       this.httpService.httpViaPost("addorupdatedata",data).subscribe(response=>{
         if(response.status="success"){
           this.formDirective.resetForm();
 
-          // this.resetAddEditForm();
+         
 
-          /* Open modal */
-          let data: any = {
-            width: '250px',
-            data: { 
-              header: "Success",
-              message: "Record Saved Successfully",
-              button1: { text: "Cancel" },
-              button2: { text: "Add Next" },
-            }
-          }
-          this.openDialog(data);
+         
+         
         }  
       });
     }
   }
 
-  openDialog(data) {
-    this.dialogRef = this.dialog.open(DialogBoxComponent, data);
-    this.dialogRef.afterClosed().subscribe(result => {
-      switch(result) {
-        case "Cancel":
-          this.router.navigateByUrl('/tech/dashboard');
-          break;
-        case "Add Next":
-          location.reload();
-          break;
-      }
-    });
-  }
-
 }
-

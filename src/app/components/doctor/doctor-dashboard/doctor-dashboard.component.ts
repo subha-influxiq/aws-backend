@@ -86,6 +86,7 @@ export class DoctorDashboardComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.data.forEach(resolveData => {
       this.allDataList = resolveData.alldata;
+      console.log(this.allDataList);
 
     });
     this.allDataSource = new MatTableDataSource(this.allDataList);

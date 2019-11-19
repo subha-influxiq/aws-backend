@@ -98,6 +98,7 @@ import { DoctorOfficeAccountSettingsComponent } from './components/doctor-office
 import { DoctorOfficeChangePasswordComponent } from './components/doctor-office/doctor-office-account-settings/doctor-office-change-password/doctor-office-change-password.component';
  
 import { LogoutComponent } from './components/auth/logout/logout.component';
+import { PatientReportViewComponent } from './components/doctor/doctor-dashboard/patient-report-view/patient-report-view.component';
 
 @NgModule({
   declarations: [
@@ -162,7 +163,8 @@ import { LogoutComponent } from './components/auth/logout/logout.component';
     BookedAppoinmentsComponent,
     DoctorOfficeAccountSettingsComponent,
     DoctorOfficeChangePasswordComponent,
-    LogoutComponent
+    LogoutComponent,
+    PatientReportViewComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
