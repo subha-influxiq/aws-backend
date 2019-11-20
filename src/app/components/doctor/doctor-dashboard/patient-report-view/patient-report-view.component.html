@@ -66,8 +66,8 @@
                         <mat-card-content>
                             <label> Test Date</label>
                             <mat-form-field>
-                                <input matInput [matDatepicker]="picker4" placeholder="" [(ngModel)]="startdate"
-                                    [ngModelOptions]="{standalone: true}">
+                                <input matInput [matDatepicker]="picker4" 
+                                formControlName="testDate" id="testDate" >
                                 <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
                                 <mat-datepicker #picker4></mat-datepicker>
                             </mat-form-field>
@@ -355,17 +355,23 @@
             <mat-tab label="Evalueation worksheet">
                 <ng-template matTabContent>
 
+                    
                     <app-health-risk-analysis></app-health-risk-analysis>
+              
                 </ng-template>
             </mat-tab>
             <mat-tab label="Encounter Form">
                 <ng-template matTabContent>
+                    
                     <app-healthrisk-system-encounter></app-healthrisk-system-encounter>
+                
                 </ng-template>
             </mat-tab>
             <mat-tab label="Superbill For Obesity">
                 <ng-template matTabContent>
+                   
                     <app-system-superbill></app-system-superbill>
+              
                 </ng-template>
             </mat-tab>
         </mat-tab-group>

@@ -345,7 +345,18 @@ const routes: Routes = [
 
   { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent },
   { path: 'tech/system-superbill', component: SystemSuperbillComponent },
-  { path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent },
+
+  { path: 'tech/health-risk-analysis',
+   component: HealthRiskAnalysisComponent ,
+   resolve: { data: ResolveService },
+   data: {
+     requestcondition: {
+       source: 'patient_management_view',
+       condition: {}
+     },
+     endpoint: 'datalist'
+   },
+  },
 
   /* Error Page Route */
   { path: 'error/404', component: NotFoundErrorComponent },
