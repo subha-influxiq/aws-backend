@@ -144,18 +144,15 @@ export class PatientReportViewComponent implements OnInit {
       let reportDetails: any = data.data.res;
       this.techId = reportDetails[0].user_id;
       this.allPatientReportData = reportDetails[0];
-      console.log("dataaa", this.allPatientReportData,reportDetails[0].testDate);
       this.patientAddEditForm.controls['patientName'].patchValue(reportDetails[0].patientName);
       this.patientAddEditForm.controls['gender'].patchValue(reportDetails[0].gender);
       this.patientAddEditForm.controls['physicalOrdering'].patchValue(reportDetails[0].physicalOrdering);
 
-      // let startDate:any = this.datePipe.transform(reportDetails[0].testDate, "dd-MM-yyyy");
-      // let sDateArr: any = startDate.split("-");
-      // this.patientAddEditForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
+      let sDateArr: any = reportDetails[0].testDate.split("-");
+      this.patientAddEditForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
       
-      // let endDate:any = this.datePipe.transform(reportDetails[0].testCompletedDate, "dd-MM-yyyy");
-      // let eDateArr: any = endDate.split("-");
-      // this.patientAddEditForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
+      let eDateArr: any = reportDetails[0].testCompletedDate.split("-");
+      this.patientAddEditForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
      
       this.patientAddEditForm.controls['PTGPT'].patchValue(reportDetails[0].PTGPT);
       this.patientAddEditForm.controls['PTGVLFI'].patchValue(reportDetails[0].PTGVLFI);

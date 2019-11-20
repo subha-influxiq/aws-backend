@@ -77,8 +77,7 @@
                         <mat-card-content>
                             <label> Test Completed</label>
                             <mat-form-field>
-                                <input matInput [matDatepicker]="picker3" [(ngModel)]="enddate"
-                                    [ngModelOptions]="{standalone: true}">
+                                <input matInput [matDatepicker]="picker3" formControlName="testCompletedDate" id="testCompletedDate">
                                 <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
                                 <mat-datepicker #picker3></mat-datepicker>
                             </mat-form-field>
