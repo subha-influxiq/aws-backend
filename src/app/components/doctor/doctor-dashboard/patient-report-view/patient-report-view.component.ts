@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, ViewChild } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild, HostListener } from '@angular/core';
 import {
   FormBuilder, FormControl, FormGroup, Validators, FormGroupDirective
 } from '@angular/forms';
@@ -40,6 +40,17 @@ export class PatientReportViewComponent implements OnInit {
   public allPatientReportData: any = [];
   public paramsId: any;
   public techId: any;
+
+
+// sticky section
+  isSticky: boolean = false;
+  stickyRight: boolean = false;
+
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {
+    this.isSticky = window.pageYOffset >= 50; 
+  }
+ 
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
