@@ -22,7 +22,7 @@ export class PatientReportViewComponent implements OnInit {
 
   @ViewChild(FormGroupDirective, { static: false }) formDirective: FormGroupDirective;
   public htmlText: any = { nav: 'Add Patient', header: "Physician Report" };
-  public buttonText: any = "Submit";
+  public buttonText: any = "Update";
   public patientAddEditForm: FormGroup;
   public userToken: any;
   date = new FormControl(new Date());
@@ -39,7 +39,7 @@ export class PatientReportViewComponent implements OnInit {
   public cookies_lastname: any;
   public allPatientReportData: any = [];
   public paramsId: any;
-
+  public techId: any;
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
@@ -55,7 +55,11 @@ export class PatientReportViewComponent implements OnInit {
     this.cookies_id = this.cookiesData._id;
     this.cookies_name = this.cookiesData.firstname;
     this.cookies_lastname = this.cookiesData.lastname;
-    this.paramsId = activeRoute.snapshot.params.id;
+    this.paramsId = activeRoute.snapshot.params._id;
+    var startDate = this.datePipe.transform(this.startdate, "dd-MM-yyyy");
+    var dateOfBirth = this.datePipe.transform(this.dateofbirth, "dd-MM-yyyy");
+    var endDate = this.datePipe.transform(this.enddate, "dd-MM-yyyy");
+    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
 
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
@@ -92,17 +96,73 @@ export class PatientReportViewComponent implements OnInit {
       systolic: [''],
       diastolic: [''],
       status: [1],
-      user_id: []
+
 
     })
 
   }
 
   ngOnInit() {
+    this.setDefaultValue();
+    this.getAllDoctorData();
+  }
+
+
+  setDefaultValue() {
     this.activeRoute.data.forEach((data) => {
-      this.allPatientReportData = data.data.res;
-      console.log("dataaa", this.allPatientReportData);
+      let reportDetails: any = data.data.res;
+      this.techId = reportDetails[0].user_id;
+      this.allPatientReportData = reportDetails[0];
+      console.log("dataaa", this.allPatientReportData,reportDetails[0].birthDate);
+      this.patientAddEditForm.controls['patientName'].patchValue(reportDetails[0].patientName);
+      this.patientAddEditForm.controls['gender'].patchValue(reportDetails[0].gender);
+      this.patientAddEditForm.controls['physicalOrdering'].patchValue(reportDetails[0].physicalOrdering);
+      this.patientAddEditForm.controls['testDate'].patchValue(reportDetails[0].testDate);
+      this.patientAddEditForm.controls['testCompletedDate'].patchValue(reportDetails[0].testCompletedDate);
+      this.patientAddEditForm.controls['PTGPT'].patchValue(reportDetails[0].PTGPT);
+      this.patientAddEditForm.controls['PTGVLFI'].patchValue(reportDetails[0].PTGVLFI);
+      this.patientAddEditForm.controls['IR'].patchValue(reportDetails[0].IR);
+      this.patientAddEditForm.controls['birthDate'].setValue(reportDetails[0].birthDate);
+
+      this.patientAddEditForm.controls['ESRNO'].patchValue(reportDetails[0].ESRNO);
+      this.patientAddEditForm.controls['ESRL'].patchValue(reportDetails[0].ESRL);
+      this.patientAddEditForm.controls['peakC'].patchValue(reportDetails[0].peakC);
+      this.patientAddEditForm.controls['PTGtype'].patchValue(reportDetails[0].PTGtype);
+      this.patientAddEditForm.controls['PTGCVD'].patchValue(reportDetails[0].PTGCVD);
+      this.patientAddEditForm.controls['stressI'].patchValue(reportDetails[0].stressI);
+      this.patientAddEditForm.controls['RI'].patchValue(reportDetails[0].RI);
+      this.patientAddEditForm.controls['AIPTG'].patchValue(reportDetails[0].AIPTG);
+      this.patientAddEditForm.controls['CIsCI'].patchValue(reportDetails[0].CIsCI);
+      this.patientAddEditForm.controls['pNN50'].patchValue(reportDetails[0].pNN50);
+      this.patientAddEditForm.controls['RMSSD'].patchValue(reportDetails[0].RMSSD);
+      this.patientAddEditForm.controls['SDba'].patchValue(reportDetails[0].SDba);
+      this.patientAddEditForm.controls['SDda'].patchValue(reportDetails[0].SDda);
+      this.patientAddEditForm.controls['DPRS'].patchValue(reportDetails[0].DPRS);
+      this.patientAddEditForm.controls['ValsR'].patchValue(reportDetails[0].ValsR);
+      this.patientAddEditForm.controls['BMI'].patchValue(reportDetails[0].BMI);
+      this.patientAddEditForm.controls['bloodPressure'].patchValue(reportDetails[0].systolic + "/" + reportDetails[0].diastolic);
+      this.patientAddEditForm.controls['leaveNotes'].patchValue(reportDetails[0].leaveNotes);
+      this.patientAddEditForm.controls['status'].patchValue(reportDetails[0].status);
     })
+  }
+
+  getAllDoctorData() {
+    var data = {
+
+      "source": "users_view_doctor",
+      "condition": {
+        "tech_id_object": this.techId
+      },
+      "token": this.userToken
+    }
+
+    this.httpService.httpViaPost('datalist', data)
+      .subscribe(response => {
+        let result: any = {};
+        result = response.res;
+        this.allDoctorDataArray = result;
+
+      })
   }
 
   /**for validation purpose**/
@@ -110,52 +170,46 @@ export class PatientReportViewComponent implements OnInit {
     form.controls[val].markAsUntouched();
   }
   /**for validation purpose**/
+  
 
-  /**modal end here */
-  resetAddEditForm() {
-    this.formDirective.resetForm();
-  }
+  // patientAddEditFormSubmit() {
 
-  patientAddEditFormSubmit() {
+  //   let x: any;
+  //   for (x in this.patientAddEditForm.controls) {
+  //     this.patientAddEditForm.controls[x].markAsTouched();
+  //   }
+  //   const myString = this.patientAddEditForm.controls.bloodPressure.value;
+  //   const splits = myString.split('/');
+  //   var startDate = this.datePipe.transform(this.startdate, "dd-MM-yyyy");
+  //   var dateOfBirth = this.datePipe.transform(this.dateofbirth, "dd-MM-yyyy");
+  //   var endDate = this.datePipe.transform(this.enddate, "dd-MM-yyyy");
+  //   var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+  //   this.patientAddEditForm.value.testDate = startDate;
+  //   this.patientAddEditForm.value.testCompletedDate = endDate;
+  //   this.patientAddEditForm.value.birthDate = dateOfBirth;
+  //   this.patientAddEditForm.controls['testDate'].patchValue(startDate);
+  //   this.patientAddEditForm.controls['testCompletedDate'].patchValue(endDate);
+  //   this.patientAddEditForm.controls['birthDate'].patchValue(dateOfBirth);
+  //   this.patientAddEditForm.controls['date'].patchValue(dateformat);
+  //   this.patientAddEditForm.controls['systolic'].patchValue(splits[0]);
+  //   this.patientAddEditForm.controls['diastolic'].patchValue(splits[1]);
 
-    let x: any;
-    for (x in this.patientAddEditForm.controls) {
-      this.patientAddEditForm.controls[x].markAsTouched();
-    }
-    const myString = this.patientAddEditForm.controls.bloodPressure.value;
-    const splits = myString.split('/');
-    var startDate = this.datePipe.transform(this.startdate, "dd-MM-yyyy");
-    var endDate = this.datePipe.transform(this.enddate, "dd-MM-yyyy");
-    var dateOfBirth = this.datePipe.transform(this.dateofbirth, "dd-MM-yyyy");
-    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
-    this.patientAddEditForm.value.testDate = startDate;
-    this.patientAddEditForm.value.testCompletedDate = endDate;
-    this.patientAddEditForm.value.birthDate = dateOfBirth;
-    this.patientAddEditForm.controls['testDate'].patchValue(startDate);
-    this.patientAddEditForm.controls['testCompletedDate'].patchValue(endDate);
-    this.patientAddEditForm.controls['birthDate'].patchValue(dateOfBirth);
-    this.patientAddEditForm.controls['date'].patchValue(dateformat);
-    this.patientAddEditForm.controls['systolic'].patchValue(splits[0]);
-    this.patientAddEditForm.controls['diastolic'].patchValue(splits[1]);
-    this.patientAddEditForm.controls['user_id'].patchValue(this.cookies_id);
-    delete this.patientAddEditForm.value.bloodPressure;
+  //   delete this.patientAddEditForm.value.bloodPressure;
 
-    if (this.patientAddEditForm.valid) {
-      var data: any = {
-        "source": "patient_management",
-        "data": this.patientAddEditForm.value,
-        "sourceobj": ["user_id", "physicalOrdering"],
-        "token": this.userToken
-      }
-
-      this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
-        if (response.status = "success") {
-          this.formDirective.resetForm();
-
-
-        }
-      });
-    }
-  }
+  //   if (this.patientAddEditForm.valid) {
+  //     var data: any = {
+  //       "source": "patient_management",
+  //       "data": this.patientAddEditForm.value,
+  //       "sourceobj": ["user_id", "physicalOrdering"],
+  //       "token": this.userToken
+  //     }
+  //     data.data["id"] = this.paramsId;
+  //     this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
+  //       if (response.status = "success") {
+  //         this.formDirective.resetForm();
+  //       }
+  //     });
+  //   }
+  // }
 
 }
