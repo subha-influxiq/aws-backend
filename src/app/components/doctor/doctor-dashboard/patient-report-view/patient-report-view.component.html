@@ -2,7 +2,7 @@
 
 <mat-card-content class="patient_report_wrapper">
     <mat-card-content class="patient_item_section">
-        <mat-card-content class="title_wrapper">
+        <mat-card-content class="title_wrapper report_header">
             {{ htmlText.header }}
         </mat-card-content>
 
@@ -32,8 +32,8 @@
                     <mat-card-content>
                         <label> DOB</label>
                         <mat-form-field>
-                            <input matInput [matDatepicker]="picker" [(ngModel)]="dateofbirth"
-                                [ngModelOptions]="{standalone: true}">
+                            <input matInput [matDatepicker]="picker"  
+                            formControlName="birthDate" id="birthDate"   >
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
                         </mat-form-field>
@@ -66,8 +66,8 @@
                         <mat-card-content>
                             <label> Test Date</label>
                             <mat-form-field>
-                                <input matInput [matDatepicker]="picker4" placeholder="" [(ngModel)]="startdate"
-                                    [ngModelOptions]="{standalone: true}">
+                                <input matInput [matDatepicker]="picker4" 
+                                formControlName="testDate" id="testDate" >
                                 <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
                                 <mat-datepicker #picker4></mat-datepicker>
                             </mat-form-field>
@@ -335,10 +335,10 @@
                                 Patient Diagnoses & Notes can not be blank</mat-error>
                         </mat-form-field>
                     </span>
-                    <span class="submit_form">
+                    <!-- <span class="submit_form">
                         <button mat-flat-button type="reset">Reset </button>
                         <button mat-flat-button type="submit"> {{ buttonText }} </button>
-                    </span>
+                    </span> -->
                 </form>
             </mat-card-content>
         </mat-card>
@@ -354,30 +354,31 @@
         <mat-tab-group class="previewTabs">
             <mat-tab label="Evalueation worksheet">
                 <ng-template matTabContent>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio facere deserunt neque itaque
-                    porro doloremque et nostrum velit aperiam id officia voluptatum quaerat repellendus, ut dolores
-                    obcaecati reiciendis blanditiis facilis vitae, eveniet unde ipsum inventore. Maxime at fuga libero
-                    sequi, inventore id cum beatae praesentium, recusandae corporis neque voluptatem temporibus.
 
+                    
+                    <app-health-risk-analysis></app-health-risk-analysis>
+              
                 </ng-template>
             </mat-tab>
             <mat-tab label="Encounter Form">
                 <ng-template matTabContent>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae pariatur nisi maxime aut expedita
-                    quisquam incidunt adipisci facilis a, accusantium rem porro tempore est labore quibusdam velit ex
-                    explicabo facere? Ad quasi doloribus eius in saepe, blanditiis, odit quidem eum nesciunt id placeat
-                    ut aliquid repudiandae recusandae suscipit facere dolorum?
+                    
+                    <app-healthrisk-system-encounter></app-healthrisk-system-encounter>
+                
                 </ng-template>
             </mat-tab>
             <mat-tab label="Superbill For Obesity">
                 <ng-template matTabContent>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit voluptatem animi commodi
-                    perferendis, omnis explicabo neque laboriosam quasi officiis eius minus et aliquid ducimus ea fugit.
-                    Ab necessitatibus quod eum.
+                   
+                    <app-system-superbill></app-system-superbill>
+              
                 </ng-template>
             </mat-tab>
         </mat-tab-group>
     </mat-card-content>
+    <mat-toolbar class="patient_preview"> 
+        <button mat-button>sign and sent to biller</button>
+      </mat-toolbar>
 </mat-card-content>
 
 

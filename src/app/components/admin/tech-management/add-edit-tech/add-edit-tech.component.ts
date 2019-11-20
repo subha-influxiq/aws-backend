@@ -125,7 +125,7 @@ export class AddEditTechComponent implements OnInit {
       this.TechManagementAddEditForm.controls['state'].patchValue(techDetails[0].state);
       this.TechManagementAddEditForm.controls['zip'].patchValue(techDetails[0].zip);
       this.TechManagementAddEditForm.controls['status'].patchValue(techDetails[0].status);
-      // this.TechManagementAddEditForm.controls['password'].patchValue(techDetails[0].password);
+      
 
     })
   }
