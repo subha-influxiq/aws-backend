@@ -1,7 +1,8 @@
 <app-doctor-header></app-doctor-header>
 
 <mat-card-content class="patient_report_wrapper">
-    <mat-card-content class="patient_item_section">
+    <mat-card-content class="patient_item_section"  
+        [ngClass]="{'mat-elevation-z5' : true, 'sticky' : isSticky}">
         <mat-card-content class="title_wrapper report_header">
             {{ htmlText.header }}
         </mat-card-content>
@@ -340,6 +341,9 @@
                     </span> -->
                 </form>
             </mat-card-content>
+
+
+
         </mat-card>
 
 
@@ -349,7 +353,7 @@
 
 
     </mat-card-content>
-    <mat-card-content class="patient_item_section">
+    <mat-card-content class="patient_item_section"   [ngClass]="{'mat-elevation-z5' : true, 'stickyRight' : isSticky}">
         <mat-tab-group class="previewTabs">
             <mat-tab label="Evalueation worksheet">
                 <ng-template matTabContent>
@@ -374,11 +378,13 @@
                 </ng-template>
             </mat-tab>
         </mat-tab-group>
+
+
     </mat-card-content>
-    <mat-toolbar class="patient_preview"> 
-        <button mat-button>sign and sent to biller</button>
-      </mat-toolbar>
+
 </mat-card-content>
 
-
+<mat-toolbar class="patient_preview">
+    <button mat-button>sign and sent to biller</button>
+</mat-toolbar>
 <app-admin-footer></app-admin-footer>

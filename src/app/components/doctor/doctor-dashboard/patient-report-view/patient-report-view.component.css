@@ -1,5 +1,5 @@
 .patient_report_wrapper{ display: flex; justify-content: space-between; flex-wrap: wrap; background: #f2f2f2;}
-.patient_report_wrapper .patient_item_section{ width: 50%; padding: 16px; box-sizing: border-box;}
+.patient_report_wrapper .patient_item_section{ width: 50%; padding: 16px; box-sizing: border-box; margin-bottom: 0;}
 
 /*left part css start here*/
 
@@ -92,7 +92,28 @@ width: 390px; border: 3px solid #d59d01; }
   font-family: "RobotoBlack"; padding-top: 4px;
 }
 .patient_preview { align-items: center; justify-content: center;  }
-.patient_preview button{  background: #1dbce9; font-size: 24px; text-transform: uppercase; font-family: "RobotoBold"; border-radius: 0; padding: 5px; width: 200px; color: #fff;
+.patient_preview button{  background: #1dbce9; font-size: 24px; text-transform: uppercase; font-family: "RobotoBold"; border-radius: 0; padding: 5px 16px;  color: #fff;
   margin: 0;
 }  
 /*left part css end here*/
+
+ 
+#frugalmap {
+  height: 300px;
+  width: 100%;
+  top: 50px;
+  position: relative;
+}
+
+.mat-elevation-z5 {
+  position: relative;
+}
+
+.sticky {
+  position: fixed;
+  top: 10px;
+  height: 640px;
+ 
+  overflow: auto;
+}
+.stickyRight{ margin-left: 50%!important;}
