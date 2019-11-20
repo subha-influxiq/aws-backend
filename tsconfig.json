@@ -37,7 +37,8 @@
       "file-upload/*": [
         "dist/file-upload/*"
       ],
-    }
+    },
+    "allowSyntheticDefaultImports": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

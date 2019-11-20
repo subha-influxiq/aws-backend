@@ -10,14 +10,47 @@ import { MatSnackBar } from '@angular/material';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
 import { CommonFunction } from '../../../../class/common/common-function';
+import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+
+// Depending on whether rollup is used, moment needs to be imported differently.
+// Since Moment.js doesn't have a default export, we normally need to import using the `* as`
+// syntax. However, rollup creates a synthetic default module and we thus need to import it using
+// the `default as` syntax.
+import * as _moment from 'moment';
+// tslint:disable-next-line:no-duplicate-imports
+import {default as _rollupMoment} from 'moment';
+
+const moment = _rollupMoment || _moment;
 export interface DialogData {
   message: string;
 }
+
+export const MY_FORMATS = {
+  parse: {
+    dateInput: 'LL',
+  },
+  display: {
+    dateInput: 'LL',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
+  },
+};
+
 @Component({
   selector: 'app-patient-report-view',
   templateUrl: './patient-report-view.component.html',
-  styleUrls: ['./patient-report-view.component.css']
+  styleUrls: ['./patient-report-view.component.css'],
+  providers: [
+    // `MomentDateAdapter` and `MAT_MOMENT_DATE_FORMATS` can be automatically provided by importing
+    // `MatMomentDateModule` in your applications root module. We provide it at the component level
+    // here, due to limitations of our example generation script.
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE ]},
+    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
+  ],
 })
+
 export class PatientReportViewComponent implements OnInit {
 
   @ViewChild(FormGroupDirective, { static: false }) formDirective: FormGroupDirective;
@@ -67,10 +100,8 @@ export class PatientReportViewComponent implements OnInit {
     this.cookies_name = this.cookiesData.firstname;
     this.cookies_lastname = this.cookiesData.lastname;
     this.paramsId = activeRoute.snapshot.params._id;
-    var startDate = this.datePipe.transform(this.startdate, "dd-MM-yyyy");
-    var dateOfBirth = this.datePipe.transform(this.dateofbirth, "dd-MM-yyyy");
-    var endDate = this.datePipe.transform(this.enddate, "dd-MM-yyyy");
-    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    // var dateOfBirth = this.datePipe.transform(this.dateofbirth, "dd-MM-yyyy");
+    // var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
 
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
@@ -78,9 +109,9 @@ export class PatientReportViewComponent implements OnInit {
     this.patientAddEditForm = this.fb.group({
       patientName: ['', [Validators.required, Validators.maxLength(30)]],
       gender: ['', Validators.required],
-      birthDate: ['', Validators.required],
+      birthDate: [''],
       physicalOrdering: [''],
-      testDate: ['', Validators.required],
+      testDate: [''],
       date: ['', Validators.required],
       testCompletedDate: ['', Validators.required],
       PTGPT: ['', Validators.required],
@@ -124,16 +155,26 @@ export class PatientReportViewComponent implements OnInit {
       let reportDetails: any = data.data.res;
       this.techId = reportDetails[0].user_id;
       this.allPatientReportData = reportDetails[0];
-      console.log("dataaa", this.allPatientReportData,reportDetails[0].birthDate);
+      console.log("dataaa", this.allPatientReportData,reportDetails[0].testDate);
       this.patientAddEditForm.controls['patientName'].patchValue(reportDetails[0].patientName);
       this.patientAddEditForm.controls['gender'].patchValue(reportDetails[0].gender);
       this.patientAddEditForm.controls['physicalOrdering'].patchValue(reportDetails[0].physicalOrdering);
-      this.patientAddEditForm.controls['testDate'].patchValue(reportDetails[0].testDate);
-      this.patientAddEditForm.controls['testCompletedDate'].patchValue(reportDetails[0].testCompletedDate);
+
+      // let startDate:any = this.datePipe.transform(reportDetails[0].testDate, "dd-MM-yyyy");
+      // let sDateArr: any = startDate.split("-");
+      // this.patientAddEditForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
+      
+      // let endDate:any = this.datePipe.transform(reportDetails[0].testCompletedDate, "dd-MM-yyyy");
+      // let eDateArr: any = endDate.split("-");
+      // this.patientAddEditForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
+     
       this.patientAddEditForm.controls['PTGPT'].patchValue(reportDetails[0].PTGPT);
       this.patientAddEditForm.controls['PTGVLFI'].patchValue(reportDetails[0].PTGVLFI);
       this.patientAddEditForm.controls['IR'].patchValue(reportDetails[0].IR);
-      this.patientAddEditForm.controls['birthDate'].setValue(reportDetails[0].birthDate);
+
+      let dateOfBirth: any = this.datePipe.transform(reportDetails[0].birthDate, "dd-MM-yyyy");
+      let dobArr: any = dateOfBirth.split("-");
+      this.patientAddEditForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1] - 1, dobArr[0]]));
 
       this.patientAddEditForm.controls['ESRNO'].patchValue(reportDetails[0].ESRNO);
       this.patientAddEditForm.controls['ESRL'].patchValue(reportDetails[0].ESRL);
