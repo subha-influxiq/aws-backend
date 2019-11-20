@@ -42,4 +42,12 @@ export class AppComponent {
     });
   }
 
+  /**page open at the top portion start**/
+
+  onActivate(event) {
+    window.scroll(0,0);
+}
+
+ /**page open at the top portion end**/
+
 }

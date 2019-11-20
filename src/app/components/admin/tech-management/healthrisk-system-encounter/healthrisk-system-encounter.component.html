@@ -20,18 +20,17 @@
             </tr>
             <tr>
                 <td>Ordering Physician
-                        <input type="text" [formControl]="patientEncounterForm.controls['physicalOrdering']"
+                    <input type="text" [formControl]="patientEncounterForm.controls['physicalOrdering']"
                         (blur)="inputUntouch(patientEncounterForm,'physicalOrdering')">
-                    </td>
+                </td>
                 <td> </td>
                 <td> <label>D.O.B
                         <mat-form-field>
-                                <input matInput [matDatepicker]="picker"  
-                                formControlName="birthDate" id="birthDate"   >
-                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                <mat-datepicker #picker></mat-datepicker>
-                            </mat-form-field>
-                </label> </td>
+                            <input matInput [matDatepicker]="picker" formControlName="birthDate" id="birthDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </label> </td>
             </tr>
 
             <tr>
