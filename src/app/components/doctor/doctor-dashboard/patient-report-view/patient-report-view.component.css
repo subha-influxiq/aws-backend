@@ -91,5 +91,8 @@ width: 390px; border: 3px solid #d59d01; }
   text-transform: uppercase;
   font-family: "RobotoBlack"; padding-top: 4px;
 }
-
+.patient_preview { align-items: center; justify-content: center;  }
+.patient_preview button{  background: #1dbce9; font-size: 24px; text-transform: uppercase; font-family: "RobotoBold"; border-radius: 0; padding: 5px; width: 200px; color: #fff;
+  margin: 0;
+}  
 /*left part css end here*/
