@@ -77,38 +77,13 @@ export class SystemSuperbillComponent implements OnInit {
     console.log('route:: ', this.activatedRoute.snapshot.params._id);
     this.userToken = cookie.get('jwtToken');
     this.patientBMIForm = this.fb.group({
+
       patientName: ['', [Validators.required, Validators.maxLength(30)]],
       gender: ['', Validators.required],
       birthDate: ['', Validators.required],
       physicalOrdering: [''],
       testDate: ['', Validators.required],
-      date: ['', Validators.required],
-      testCompletedDate: ['', Validators.required],
-      PTGPT: ['', Validators.required],
-      PTGVLFI: ['', Validators.required],
-      IR: ['', Validators.required],
-      ESRNO: ['', Validators.required],
-      ESRL: ['', Validators.required],
-      peakC: ['', Validators.required],
-      PTGtype: ['', Validators.required],
-      PTGCVD: ['', Validators.required],
-      stressI: ['', Validators.required],
-      RI: ['', Validators.required],
-      AIPTG: ['', Validators.required],
-      CIsCI: ['', Validators.required],
-      pNN50: ['', Validators.required],
-      RMSSD: ['', Validators.required],
-      SDba: ['', Validators.required],
-      SDda: ['', Validators.required],
-      DPRS: ['', Validators.required],
-      ValsR: ['', Validators.required],
-      BMI: ['', Validators.required],
-      bloodPressure: ['', Validators.required],
-      leaveNotes: ['', Validators.required],
-      systolic: [''],
-      diastolic: [''],
-      status: [1],
-      user_id: []
+      testCompletedDate: ['', Validators.required]
 
     })
     this.getPatientData(this.activatedRoute.snapshot.params._id);
