@@ -311,6 +311,7 @@ export class AddeditDoctorComponent implements OnInit {
     let postData: any = {
       "source": "users",
       "data": Object.assign(this.docManageForm.value, this.condition),
+      "domainurl" : 'http://testbedpece.influxiq.com/reset-password',
       "sourceobj": ["doctorsOfficeName"],
       "token": this.cookieService.get('jwtToken')
 
