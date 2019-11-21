@@ -15,11 +15,11 @@ export class ListDoctorComponent implements OnInit {
   // ===============================Declarations=========================
   docData: any = [];
   docData_skip: any = ["_id", "created_at", "password", "confirmpassword",
-   "taxonomies","password","confirmpassword","practicename","address","type"];
+   "taxonomies","password","confirmpassword","practicename","address","type","fullName"];
   docData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name", "email": "Email", "phone": "Phone",
     "practicename": "Practice name", "npm": "NPM#", "address": "Address", "city": "City", "state": "State",
-    "zip": "ZIP", "status": "Status", "taxo list": "Taxonomies","fullName":"Name"
+    "zip": "ZIP", "status": "Status", "taxo list": "Taxonomies","fullNamecopy":"Name","biller" : "Biller Name","tech" :"Tech Name"
   };
   tableName: any = 'users';
   UpdateEndpoint: any = "addorupdatedata";

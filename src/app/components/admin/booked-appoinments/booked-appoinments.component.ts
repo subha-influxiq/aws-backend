@@ -25,6 +25,7 @@ export interface PeriodicElement {
   styleUrls: ['./booked-appoinments.component.css']
 })
 export class BookedAppoinmentsComponent implements OnInit {
+  public userToken:any;
   public displayedColumns: string[] =
    ['no','organizerName', 'organizerEmail','appoinmentDate','appoinmentTime','timeZone','doctorName',
    'patientName','manage'];
@@ -33,14 +34,30 @@ export class BookedAppoinmentsComponent implements OnInit {
 
    @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor() { }
+  constructor(public http : HttpServiceService, public cookieService: CookieService) {
+     /* Get Auth Token */
+     this.userToken = cookieService.get('jwtToken');
+   }
 
   ngOnInit() {
 
     this.dataSource.paginator = this.paginator;
     
   }
-  
+  filerByReports(key : string , value : string){
+   let searchJson : any = {};
+   searchJson[key] = value.toLowerCase();
+    var data = {
+      "source": "patient_management_view_count",
+      "condition": searchJson,
+      "token" : this.userToken
+    }
+    this.http.httpViaPost('datalist', data)
+    .subscribe(Response=>{
+      let result:any=Response.res;
+      this.dataSource=result;  
+    })
+  }
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [

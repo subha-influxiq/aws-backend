@@ -72,7 +72,7 @@
         <p class="title_n">Name</p>
         <p class="title_a">
           <ng-container *ngFor="let val of userSingleData; let i =index">
-            {{ val.Full_Name}}
+            {{ val.fullName}}
             <ng-container *ngIf="i+1 < userSingleData.length">
                 ,
               </ng-container>

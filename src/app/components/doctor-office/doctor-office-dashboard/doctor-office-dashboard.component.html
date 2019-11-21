@@ -7,11 +7,11 @@
     <button mat-flat-button type="button" [routerLink]="['/admin/doctor-management']">View Details</button>
   </mat-card-content>
 
-  <mat-card-content class="itemsection two">
+  <!-- <mat-card-content class="itemsection two">
     <span class="counteer"> 9 </span>
     <p>Total Number of Billers</p>
     <button mat-flat-button type="button" [routerLink]="['/admin/biller-management']">View Details</button>
-  </mat-card-content>
+  </mat-card-content> -->
   
   <mat-card-content class="itemsection three">
     <span class="counteer"> 8 </span>
@@ -20,5 +20,47 @@
   </mat-card-content>
 </mat-card-content>
 
+
+
+
+
+
+
+
+  <!-- doctor tabel  -->
+<!-- ===================================================================================================== -->
+
+  <div  class="mat-elevation-z8">
+    <!-- Default Biller table  -->
+    <table mat-table  [dataSource]="dataSource" matSort>
+  
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+  
+      <!-- Patient Column -->
+      <ng-container matColumnDef="Patient Name" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Patient Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.patientName}} </td>
+      </ng-container>
+  
+  
+  
+  
+  
+  
+  
+      
+  
+  
+       
+  
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+  <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+  </div>
+  <!-- ======================================================================================== -->
 
 <app-doctor-office-footer></app-doctor-office-footer>

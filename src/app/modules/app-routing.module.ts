@@ -230,6 +230,9 @@ const routes: Routes = [
     },
   },
   { path:'doctor-office/account-settings/change-password' , component: DoctorOfficeChangePasswordComponent},
+  
+    
+    
   /****************** Tech Route End *****************/
   /**Booked-appoinments**/
   {
@@ -293,7 +296,18 @@ const routes: Routes = [
   /****************** Doctor Route End *****************/
 
   /****************** Doctor Office Route Start *****************/
-  { path: 'doctor-office/dashboard', component: DoctorOfficeDashboardComponent, canActivate: [AuthguardService] },
+  /*Doctor Office Dashboard*/
+  {
+    path: 'doctor-office/dashboard', component: DoctorOfficeDashboardComponent, canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'users_view_doctoroffice',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
   /* Account-Settings */
   { path: 'doctor-office/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'doctor-office/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },

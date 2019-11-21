@@ -12,6 +12,46 @@
 </span>
 <!-- End header with add button -->
 <div class="mat-elevation-z8">
+        <mat-toolbar class="action_bar">
+
+                <mat-form-field>
+                  <input matInput placeholder="Search by Doctor" 
+                  (keyup)="filerByReports( 'doctorName_regex', $event.target.value )" >
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Search by Patient"
+                    (keyup)="filerByReports( 'patientName_regex' , $event.target.value )">
+                </mat-form-field>
+                <!-- <mat-form-field>
+                    <input matInput placeholder="Search by Tech Name"
+                      (keyup)="filerByReports({ 'techname_regex': $event.target.value })">
+                  </mat-form-field> -->
+                <!-- <mat-form-field class="parent_cat">
+                  <mat-select placeholder="Search By Status" (selectionChange)="filerByReports({ 'status_regex': $event.value })">
+                    <mat-option value=0>Select a status</mat-option>
+                    <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
+                    <mat-option value="doctor signed">Doctor Signed</mat-option>
+                    <mat-option value="send to biller">Send To Biller</mat-option>
+                    <mat-option value="error">Error</mat-option>
+                    <mat-option value="pending">Pending</mat-option>
+                  </mat-select>
+                </mat-form-field> -->
+            
+                <span class="date-range">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="picker1" placeholder="Start Date">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+            
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="picker2" placeholder="End Date">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                  </mat-form-field>
+                </span>
+            
+              </mat-toolbar>
     <table mat-table [dataSource]="dataSource">
 
         <!-- Position Column -->

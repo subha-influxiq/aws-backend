@@ -189,7 +189,7 @@ export class AddeditDoctorComponent implements OnInit {
       confirmpassword: defaultValue.password,
       phone: defaultValue.phone,
       practicename: defaultValue.practicename,
-      taxonomies_list: defaultValue.taxonomies_list,
+      taxo_list: defaultValue.taxo_list,
       npm: defaultValue.npm,
       fax: defaultValue.fax,
       address: defaultValue.address,
@@ -226,7 +226,7 @@ export class AddeditDoctorComponent implements OnInit {
       tech: [''],
       biller: [''],
       doctorsOfficeName: [''],
-      taxonomies_list:[],
+      taxo_list:[],
     
       password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
@@ -256,7 +256,7 @@ export class AddeditDoctorComponent implements OnInit {
       tech: [''],
       biller: [''],
       doctorsOfficeName: [''],   
-      taxonomies_list:[''] 
+      taxo_list:[''] 
      
     });
     this.getSelectedTaxonomies();
@@ -355,8 +355,8 @@ export class AddeditDoctorComponent implements OnInit {
       "token": this.user_token
     }
     this.http.httpViaPost('datalist', data).subscribe(response => {
-        this.billerData = response.res;
-      });
+      this.billerData = response.res;
+    });
   }
 
 
@@ -364,7 +364,7 @@ export class AddeditDoctorComponent implements OnInit {
   onSubmit() {
     this.getSelectedTaxonomies();
     
-    this.docManageForm.value.taxonomies_list = this.selectTaxonomyNames;
+    this.docManageForm.value.taxo_list = this.selectTaxonomyNames;
     console.log("*************",this.docManageForm.value);
     let x: any;
     for (x in this.docManageForm.controls) {
@@ -393,7 +393,6 @@ export class AddeditDoctorComponent implements OnInit {
     let postData: any = {
       "source": "users",
       "data": Object.assign(this.docManageForm.value, this.condition),
-      "sourceobj": ["tech", "biller"],
       "token": this.cookieService.get('jwtToken')
 
     };
@@ -500,7 +499,6 @@ export class ChangePasswordDoctorModal {
         "newPassword": this.changePwdForm.value.password,
       }
       this.httpService.httpViaPost('changepassword', data).subscribe(response => {
-        console.log("response", response);
       });
     }
 
