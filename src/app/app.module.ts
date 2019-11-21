@@ -104,7 +104,6 @@ import { PatientReportViewComponent } from './components/doctor/doctor-dashboard
 @NgModule({
   declarations: [
     AppComponent,
-
     // Auth
     LoginComponent,
     ForgetpasswordComponent,
