@@ -25,12 +25,9 @@
 width: 390px; border: 3px solid #d59d01; }
 .add_form .submit_form button:nth-child(1){ background: linear-gradient(180deg, #f2be00, #a52a08); color: #f3f3f3; border: 2px solid #bb3c0d; margin-right: 16px; }
 .add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;}
+.add_form .example-form .wrapper{ display: inline-flex; align-items: center;}
 
-
-.report_header{
-  background: #686a00;
-
-}
+.report_header{ background: #686a00; }
 
 @media screen and (max-width: 1460px){
   .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; line-height: 26px;}
@@ -69,14 +66,14 @@ width: 390px; border: 3px solid #d59d01; }
   align-items: center;
 }
 .add_form .mat-card-content label , .add_form .patient_diagnotes label{ font-family: "RobotoMedium"; color: #01090c; font-size: 16px; margin: 0 5px}
-.add_form .mat-card-content label , 
+.add_form .mat-card-content label ,
 .add_form .patient_diagnotes label{ font-family: "RobotoMedium"; color: #01090c; font-size: 16px; margin:10px;line-height: 20px;}
 
 
 .add_form .mat-card-content .mat-checkbox { margin: 0 5px; }
 .add_form .mat-card-content ,
 .add_form .patient_diagnotes .mat-form-field {
-   
+
   position: relative;
   text-align: left;
   margin: 0 10px;
@@ -94,10 +91,10 @@ width: 390px; border: 3px solid #d59d01; }
 .patient_preview { align-items: center; justify-content: center;  }
 .patient_preview button{  background: #1dbce9; font-size: 24px; text-transform: uppercase; font-family: "RobotoBold"; border-radius: 0; padding: 5px 16px;  color: #fff;
   margin: 0;
-}  
+}
 /*left part css end here*/
 
- 
+
 #frugalmap {
   height: 300px;
   width: 100%;
@@ -112,8 +109,8 @@ width: 390px; border: 3px solid #d59d01; }
 .sticky {
   position: fixed;
   top: 10px;
-  height: 67%;
- 
+  height: 75%;
+
   overflow: auto;
 }
 .stickyRight{ margin-left: 50%!important;}
