@@ -61,10 +61,12 @@
 }
 
 table input[type="text"] {
-    height: 30px;
-    margin-left: 20px;
-    border: none;
-    border-bottom: 1.4px solid #000; padding: 0 15px;
+  height: 40px;
+  margin-left: 5px;
+  border: none;
+  border-bottom: 1.4px solid #000;
+  padding: 0 15px;
+  background: #e8e8e8;
 }
 table input[type="text"]:focus, textarea:focus{ outline: none;}
 .suggest {
@@ -73,4 +75,3 @@ table input[type="text"]:focus, textarea:focus{ outline: none;}
     margin-bottom: 6px;
     color: #096509;
 }
- 
