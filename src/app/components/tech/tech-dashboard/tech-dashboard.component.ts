@@ -38,9 +38,10 @@ export class TechDashboardComponent implements OnInit {
   allDataColumns: string[] = ['no','patientName', 'doctorName', 'record','created_at', 'billsendDate','status'];
 
 
-   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+   @ViewChild(MatPaginator, { static: false }) paginatorAll: MatPaginator;
 
-  dataSource = new MatTableDataSource(this.commonArray);
+   dataSource: MatTableDataSource<PeriodicElement>;
   allDataSource: MatTableDataSource<AllDataElement>;
 
   /**lib-listing start here**/
@@ -77,16 +78,19 @@ export class TechDashboardComponent implements OnInit {
     this.getTechData();
     this.getTechCountData();
 
+    this.activatedRoute.data.forEach((data) => {
+      let allDashboardData : AllDataElement[] = data.techDashboardData.res;
+      this.techDashboardAllData = new MatTableDataSource(allDashboardData);
+    })
   }
 
   ngOnInit() {
-
-    this.activatedRoute.data.forEach((data) => {
-      let allDashboardData : any = data.techDashboardData.res;
-      this.techDashboardAllData = new MatTableDataSource(allDashboardData);
-      
-    })
-
+    this.techDashboardAllData.paginator = this.paginator;
+    // this.dataSource.paginator = this.paginatorAll; 
+  }
+  ngAfterViewInit() {
+    this.techDashboardAllData.paginator = this.paginator;
+    // this.dataSource.paginator = this.paginatorAll; 
   }
   
   
@@ -183,16 +187,20 @@ export class TechDashboardComponent implements OnInit {
         this.headerText = "Reports Uploaded";
         this.commonArray = this.reportUploadedArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
+        this.dataSource.paginator = this.paginatorAll; 
+
         break;
       case 'processed':
         this.headerText = "Reports Processed";
         this.commonArray = this.reportProcessedArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
+        this.dataSource.paginator = this.paginatorAll; 
         break;
       case 'remainProcess':
         this.headerText = "Reports Remain to Process";
         this.commonArray = this.reportRemainingArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
+        this.dataSource.paginator = this.paginatorAll; 
         break;
       default:
         break;

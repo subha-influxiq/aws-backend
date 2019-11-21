@@ -16,15 +16,7 @@
 
 /*End header css */
 
-.footer_section{display: block; border-top: 1px solid #c7c7c7; margin-top: 30px; }
-.footer_section .footer_content{ width: 600px; padding: 0 16px; margin: 0 auto; display: block; text-align: center; }
-.footer_section .footer_content .link{ margin-top: 10px; display: block;  }
-.footer_section .footer_content .link a:nth-of-type(1){ border-right: 1px solid #2b2b2b; padding-right: 5px; }
-.footer_section .footer_content .link a, .footer_section .footer_content .link p{ font-size: 16px; font-family: "RobotoRegular"; color: #2b2b2b; text-decoration: none;}
-
-
-
-.add_header{ display: flex; margin: 0 16px;}
+.add_header{ display: flex; margin: 16px 20px;}
 .add_header button{ margin-left: auto;
   background: linear-gradient(180deg, #fac855, #e47e2a)!important;
   text-transform: uppercase;
