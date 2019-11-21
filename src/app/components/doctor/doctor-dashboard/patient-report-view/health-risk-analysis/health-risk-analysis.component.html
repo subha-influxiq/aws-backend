@@ -7,8 +7,8 @@
         <h2 class="ordering_phy">Ordering Physician:</h2>
       </td>
       <td colspan="2">
-        <input class="order_input" type="text" [formControl]="patientReportViewForm.controls['physicalOrdering']"
-        (blur)="inputUntouch(patientReportViewForm,'physicalOrdering')">
+        <input class="order_input" type="text" [formControl]="patientReportViewForm.controls['physicalOrderingname']"
+        (blur)="inputUntouch(patientReportViewForm,'physicalOrderingname')" value="pdata.physicalOrdering">
 
       </td>
     </tr>
@@ -431,7 +431,8 @@
         Diastolic
         (120/80)</td>
       <td>3 </td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['bloodPressure']"
+        (blur)="inputUntouch(patientReportViewForm,'bloodPressure')"></td>
       <td>
         <p>As of April 2018, The American Heart Association defines
           Hypertension as 130/80 millimeters of mercury (mm Hg)

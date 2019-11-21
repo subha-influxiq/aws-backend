@@ -82,6 +82,7 @@ export class HealthRiskAnalysisComponent implements OnInit {
       gender: ['', Validators.required],
       birthDate: ['', Validators.required],
       physicalOrdering: [''],
+      physicalOrderingname : [''],
       testDate: ['', Validators.required],
       date: ['', Validators.required],
       testCompletedDate: ['', Validators.required],
@@ -139,7 +140,7 @@ export class HealthRiskAnalysisComponent implements OnInit {
         this.patientSingleData = response.res;
         console.log("dataaa", patientDetails);
         this.patientReportViewForm.controls['patientName'].patchValue(patientDetails.patientName);
-        this.patientReportViewForm.controls['physicalOrdering'].patchValue(patientDetails.physicalOrdering);
+        this.patientReportViewForm.controls['physicalOrderingname'].patchValue(patientDetails.physicalOrderingname);
         this.patientReportViewForm.controls['gender'].patchValue(patientDetails.gender);
         this.patientReportViewForm.controls['PTGPT'].patchValue(patientDetails.PTGPT);
         this.patientReportViewForm.controls['PTGVLFI'].patchValue(patientDetails.PTGVLFI);
@@ -160,10 +161,14 @@ export class HealthRiskAnalysisComponent implements OnInit {
         this.patientReportViewForm.controls['ValsR'].patchValue(patientDetails.ValsR);
         this.patientReportViewForm.controls['BMI'].patchValue(patientDetails.BMI);
         this.patientReportViewForm.controls['leaveNotes'].patchValue(patientDetails.leaveNotes);
+        this.patientReportViewForm.controls['bloodPressure'].patchValue(patientDetails.bloodPressure);
 
         let dateOfBirth: any = this.datePipe.transform(patientDetails.birthDate, "dd-MM-yyyy");
         let dobArr: any = dateOfBirth.split("-");
         this.patientReportViewForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1] - 1, dobArr[0]]));
+
+        let sDateArr: any = patientDetails.testDate.split("-");
+      this.patientReportViewForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
 
         let eDateArr: any = patientDetails.testCompletedDate.split("-");
         this.patientReportViewForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
