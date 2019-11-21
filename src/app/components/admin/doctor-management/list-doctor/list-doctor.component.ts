@@ -19,7 +19,7 @@ export class ListDoctorComponent implements OnInit {
    "biller_id","doctorsOfficeName"];
   docData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name", "email": "Email", "phone": "Phone",
-    "practicename": "Practice name", "npm": "NPM#", "address": "Address", "city": "City", "state": "State",
+    "practicename": "Practice name", "npm": "NPI#", "address": "Address", "city": "City", "state": "State",
     "zip": "ZIP", "status": "Status", "taxo list": "Taxonomies","fullNamecopy":"Name","biller" : "Biller Name","tech" :"Tech Name"
   };
   tableName: any = 'users';
