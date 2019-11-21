@@ -58,7 +58,7 @@ export class AddEditTechComponent implements OnInit {
 
   generateAddForm() {
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
 
     this.TechManagementAddEditForm = this.fb.group({
       firstname: ['', Validators.required],
@@ -167,10 +167,12 @@ export class AddEditTechComponent implements OnInit {
   allStateCityData() {
     this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
       this.states = response;
+      this.getResolveData();
     });
 
     this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(response => {
       this.allCities = response;
+      this.getResolveData();
     });
   }
   /**for getting all states & cities  function end here**/

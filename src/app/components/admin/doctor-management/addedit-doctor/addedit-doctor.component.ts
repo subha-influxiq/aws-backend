@@ -220,10 +220,12 @@ export class AddeditDoctorComponent implements OnInit {
   allStateCityData() {
     this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
       this.states = response;
+      this.setDefaultValue(this.defaultData);
     });
 
     this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(response => {
       this.allCities = response;
+      this.setDefaultValue(this.defaultData);
     });
   }
   /**for getting all states & cities  function end here**/
@@ -321,6 +323,7 @@ export class AddeditDoctorComponent implements OnInit {
         this.snackBar.open(this.message, action, {
           duration: 2000,
         });
+        this.router.navigateByUrl('/admin/doctor-management')
       } else {
         alert("Some error occurred. Please try again");
       }
