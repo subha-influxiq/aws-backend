@@ -98,11 +98,8 @@ import { DoctorOfficeAccountSettingsComponent } from './components/doctor-office
 
  
 import { LogoutComponent } from './components/auth/logout/logout.component';
-<<<<<<< HEAD
 import { DoctorOfficeChangePasswordComponent } from './components/doctor-office/doctor-office-change-password/doctor-office-change-password.component';
-=======
 import { PatientReportViewComponent } from './components/doctor/doctor-dashboard/patient-report-view/patient-report-view.component';
->>>>>>> 4871f29d0461c08883330b5c7410006462eaa53e
 
 @NgModule({
   declarations: [
