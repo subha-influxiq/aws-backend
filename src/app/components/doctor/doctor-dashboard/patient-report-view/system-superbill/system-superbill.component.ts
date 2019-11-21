@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators, FormGroupDirective } f
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
-import { HttpServiceService } from '../../../../services/http-service.service';
+import { HttpServiceService } from '../../../../../services/http-service.service';
 import { DatePipe } from '@angular/common';
 
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
@@ -32,9 +32,9 @@ export const MY_FORMATS = {
 };
 
 @Component({
-  selector: 'app-healthrisk-system-encounter',
-  templateUrl: './healthrisk-system-encounter.component.html',
-  styleUrls: ['./healthrisk-system-encounter.component.css'],
+  selector: 'app-system-superbill',
+  templateUrl: './system-superbill.component.html',
+  styleUrls: ['./system-superbill.component.css'],
   providers: [
     // `MomentDateAdapter` and `MAT_MOMENT_DATE_FORMATS` can be automatically provided by importing
     // `MatMomentDateModule` in your applications root module. We provide it at the component level
@@ -43,11 +43,10 @@ export const MY_FORMATS = {
     { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
   ],
 })
-export class HealthriskSystemEncounterComponent implements OnInit {
-
+export class SystemSuperbillComponent implements OnInit {
   public userToken: any;
   public patientSingleData: any = [];
-  public patientEncounterForm: FormGroup;
+  public patientBMIForm: FormGroup;
   date = new FormControl(new Date());
   public testDate: any;
   startdate: any;
@@ -77,7 +76,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     public cookie: CookieService, public fb: FormBuilder, public router: Router, public datePipe: DatePipe) {
     console.log('route:: ', this.activatedRoute.snapshot.params._id);
     this.userToken = cookie.get('jwtToken');
-    this.patientEncounterForm = this.fb.group({
+    this.patientBMIForm = this.fb.group({
 
       patientName: ['', [Validators.required, Validators.maxLength(30)]],
       gender: ['', Validators.required],
@@ -101,34 +100,35 @@ export class HealthriskSystemEncounterComponent implements OnInit {
 
   getPatientData(id: any) {
     var data = {
-      "source": "patient_management_view_view_view",
+      "source": "patient_management_view_BMI",
       "condition": {
         "_id_object": id
       },
       "token": this.userToken
     }
     this.httpService.httpViaPost('datalist', data)
-      .subscribe((response) => {
-        
+      .subscribe(response => {
+        console.log(response);
         let patientDetails: any;
         patientDetails = response.res[0];
         this.patientSingleData = response.res;
         console.log("dataaa", patientDetails);
-        this.patientEncounterForm.controls['patientName'].patchValue(patientDetails.patientName);
-        this.patientEncounterForm.controls['physicalOrdering'].patchValue(patientDetails.physicalOrdering);
-        this.patientEncounterForm.controls['gender'].patchValue(patientDetails.gender);
+        this.patientBMIForm.controls['patientName'].patchValue(patientDetails.patientName);
+        this.patientBMIForm.controls['physicalOrdering'].patchValue(patientDetails.physicalOrdering);
+        this.patientBMIForm.controls['gender'].patchValue(patientDetails.gender);
         
 
         let dateOfBirth: any = this.datePipe.transform(patientDetails.birthDate, "dd-MM-yyyy");
         let dobArr: any = dateOfBirth.split("-");
-        this.patientEncounterForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1] - 1, dobArr[0]]));
+        this.patientBMIForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1] - 1, dobArr[0]]));
 
-        // let sDateArr: any = patientDetails.testDate.split("-");
-        // this.patientBMIForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
+        let sDateArr: any = patientDetails.testDate.split("-");
+        this.patientBMIForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
         //   let eDateArr: any = patientDetails.testCompletedDate.split("-");
         // this.patientReportViewForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
 
       })
   }
+
 
 }
