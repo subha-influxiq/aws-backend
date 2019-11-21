@@ -18,7 +18,7 @@ export class ResolveService implements Resolve<any> {
   constructor(public cookies: CookieService, private _apiService: HttpServiceService, private router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
-
+   console.log(route);
     /* will come into play while editing otherwise no effect */
     var requestData: any = route.data.requestcondition;
     requestData.condition = Object.assign(requestData.condition, route.params);
@@ -28,8 +28,10 @@ export class ResolveService implements Resolve<any> {
       var allData: any = this.cookies.getAll();
       var userData = JSON.parse(allData.user_details);
       requestData.condition['user_id_object'] = userData._id;
+     
     }
     /* This one is for Tech Dashboard End */
+    
 
     return new Promise((resolve) => {
       if(typeof route.data.requestcondition.source != 'string') {

@@ -1,26 +1,60 @@
 <mat-card-content class="health_risk_report">
+    <form class="example-form" autocomplete="off" name="patientReportViewForm" [formGroup]="patientReportViewForm">
   <table>
     <tr>
 
-      <td colspan="4"><h2 class="ordering_phy">Ordering Physician:</h2></td>
-      <td colspan="1"><input class="order_input" type="text"></td>
+      <td colspan="3">
+        <h2 class="ordering_phy">Ordering Physician:</h2>
+      </td>
+      <td colspan="2">
+        <input class="order_input" type="text" [formControl]="patientReportViewForm.controls['physicalOrdering']"
+        (blur)="inputUntouch(patientReportViewForm,'physicalOrdering')">
+
+      </td>
     </tr>
     <tr>
-      <td colspan="5"><h1 class="rm_phy">RM-3A Clinical Report Evaluation Worksheet</h1></td>
+      <td colspan="5">
+        <h1 class="rm_phy">RM-3A Clinical Report Evaluation Worksheet</h1>
+      </td>
     </tr>
 
     <tr>
-      <td colspan="3">Patient Name: <input type="text"></td>
-      <td colspan="1">Patient Gender: <label><input type="checkbox">Male</label> <label><input type="checkbox">Female</label></td>
-      <td colspan="1">D.O.B: <input type="text" ></td>
+      <td colspan="3">Patient Name:
+         <input type="text" [formControl]="patientReportViewForm.controls['patientName']"
+         (blur)="inputUntouch(patientReportViewForm,'patientName')">
+        </td>
+      <td colspan="1">Patient Gender: <label>
+        <input type="radio" value='Male' formControlName="gender">Male</label> 
+        <label><input type="radio" value='Female' formControlName="gender">Female</label></td>
+      <td colspan="1">D.O.B:
+          <mat-form-field>
+              <input matInput [matDatepicker]="picker"  
+              formControlName="birthDate" id="birthDate"   >
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </td>
     </tr>
 
 
     <tr>
-        <td colspan="3">Test Date: <input type="text"></td>
-        <td colspan="1">Tests Completed: <input type="text"></td>
+      <td colspan="3">Test Date:
+          <mat-form-field>
+              <input matInput [matDatepicker]="picker4" 
+              formControlName="testDate" id="testDate" >
+              <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+              <mat-datepicker #picker4></mat-datepicker>
+          </mat-form-field>
+        </td>
+      <td colspan="1">Tests Completed: 
+          <mat-form-field>
+              <input matInput [matDatepicker]="picker3" formControlName="testCompletedDate" id="testCompletedDate">
+              <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+              <mat-datepicker #picker3></mat-datepicker>
+          </mat-form-field>
+      </td>
 
-      </tr>
+    </tr>
 
 
     <!-- analytic -->
@@ -40,7 +74,8 @@
     <tr>
       <td>PTGTP </td>
       <td> 3 </td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['PTGPT']"
+        (blur)="inputUntouch(patientReportViewForm,'PTGPT')"></td>
       <td>
         <p>Helps to identify the risk of insulin resistance (Pre-diabetes &
           diabetes), heart disease and other metabolic disorders. High
@@ -58,7 +93,8 @@
     <tr>
       <td>PTGVLFI </td>
       <td> 3 & 6 </td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['PTGVLFI']"
+        (blur)="inputUntouch(patientReportViewForm,'PTGVLFI')"></td>
       <td>
         <p><b>Marker for Diabetes</b> - is a marker for impaired glucose
           tolerance (IGT) and Microcirculation complications.</p>
@@ -76,7 +112,8 @@
     <tr>
       <td>IR </td>
       <td> 1 </td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['IR']"
+        (blur)="inputUntouch(patientReportViewForm,'IR')"></td>
       <td>
         <p><b>Marker for Impaired Glucose Tolerance (IGT), Type 2 Diabetes
             (T2DM) and cardiovascular diseases.</b>Comparing our PTGTP
@@ -99,7 +136,8 @@
       <td>ESRNO
         Baseline </td>
       <td> 7 </td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['ESRNO']"
+        (blur)="inputUntouch(patientReportViewForm,'ESRNO')"></td>
       <td>
         <p><b>Marker for Distal Neuropathy </b> - is a marker of electrical skin
           response to nitric oxide (NO) production and vasodilation. Low
@@ -117,7 +155,8 @@
       <td>ESR L<br>
         (Latency)</td>
       <td> 7</td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['ESRL']"
+        (blur)="inputUntouch(patientReportViewForm,'ESRL')"></td>
       <td>
         <p><b>Marker for Peripheral Distal Neuropathy</b> - is a marker of sweat
           gland nerve density. Low numbers are an early detection of
@@ -135,7 +174,8 @@
       <td>Peak C<br>
         (Amplitude)</td>
       <td> 7 </td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['peakC']"
+        (blur)="inputUntouch(patientReportViewForm,'peakC')"></td>
       <td>
         <p>Marker of sweat gland function. Low Peak C numbers are found
           with nerve damage or Hyperhidrosis.</p>
@@ -153,7 +193,8 @@
         ( Enter Type 1-5 )
       </td>
       <td> 6</td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['PTGtype']"
+        (blur)="inputUntouch(patientReportViewForm,'PTGtype')"></td>
       <td>
         <p><b>Marker for Arterial Aging</b>– The pulse wave velocity (PWV) and
           the photoplethysmogram (PTG) are noninvasive methods for
@@ -173,7 +214,8 @@
       <td>PTG CVD
       </td>
       <td> 3</td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['PTGCVD']"
+        (blur)="inputUntouch(patientReportViewForm,'PTGCVD')"></td>
       <td>
         <p>Marker used to evaluate CVD. A score of 0 = normal, 1 =
           borderline and 2 = abnormal.</p>
@@ -191,7 +233,8 @@
 
       </td>
       <td> 2, 3 and 4 </td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['stressI']"
+        (blur)="inputUntouch(patientReportViewForm,'stressI')"></td>
       <td>
         <p><b>Marker heart disease</b> - correlates to C-Reactive Protein
           (CRP) and high numbers indicate a risk of Heart disease.</p>
@@ -209,7 +252,8 @@
     <tr>
       <td>RI </td>
       <td> 3 & 6</td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['RI']"
+        (blur)="inputUntouch(patientReportViewForm,'RI')" ></td>
       <td>
         <p>Marker for Atherosclerosis - an indicator of stiffness of the
           small and medium arteries.
@@ -229,7 +273,8 @@
       <td>AIPTG<br>
         (IPTG) </td>
       <td>3 & 6</td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['AIPTG']"
+        (blur)="inputUntouch(patientReportViewForm,'AIPTG')"></td>
       <td>
         <p><b>Marker for LDL Cholesterol Level.</b> High LDL Cholesterol is a
           Marker for Coronary Heart Disease (CHD) –
@@ -248,7 +293,8 @@
     <tr>
       <td>CIs (CI)</td>
       <td> 5</td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['CIsCI']"
+        (blur)="inputUntouch(patientReportViewForm,'CIsCI')"></td>
       <td>
         <p>Marker is an indicator that relates to Cardiac output to Body
           Surface Area (BSA)
@@ -266,7 +312,8 @@
     <tr>
       <td>pNN50</td>
       <td>4</td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['pNN50']"
+        (blur)="inputUntouch(patientReportViewForm,'pNN50')"></td>
       <td>
         <p>Marker for heart rhythm stability. Shows a risk of
           Heart Rate Variability issues
@@ -281,7 +328,8 @@
     <tr>
       <td>RMSSD</td>
       <td> 2 & 4 </td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['RMSSD']"
+        (blur)="inputUntouch(patientReportViewForm,'RMSSD')"></td>
       <td>
         <p>Marker that reflects the electrical stability of the heart
         </p>
@@ -298,7 +346,8 @@
     <tr>
       <td>SD ba</td>
       <td> 6 </td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['SDba']"
+        (blur)="inputUntouch(patientReportViewForm,'SDba')"></td>
       <td>
         <p>Marker for angiotensin activity </p>
       </td>
@@ -314,7 +363,8 @@
     <tr>
       <td>DPRS</td>
       <td> 2 & 5 </td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['DPRS']"
+        (blur)="inputUntouch(patientReportViewForm,'DPRS')"></td>
       <td>
         <p>Diastolic Pressure Response to Standing (DPRS) is the
           difference between the sitting diastolic minus the
@@ -332,7 +382,8 @@
     <tr>
       <td>ValsR</td>
       <td> 2 & 5 </td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['ValsR']"
+        (blur)="inputUntouch(patientReportViewForm,'ValsR')"></td>
       <td>
         <p>Valsalva Ratio (ValsR.) - is the measure of the Heart Rate
           response to Blood Pressure changes from the mechanical
@@ -352,7 +403,8 @@
         Score
         (I.E. 29.1)</td>
       <td> 1-7</td>
-      <td><input type="text"></td>
+      <td><input type="text" [formControl]="patientReportViewForm.controls['BMI']"
+        (blur)="inputUntouch(patientReportViewForm,'BMI')"></td>
       <td>
         <p>The National Institutes of Health (NIH) now defines normal
           weight, overweight, and obesity according to BMI rather
@@ -398,16 +450,21 @@
     <tr>
       <td colspan="5">
         <p class="area_header"><b>Patient Diagnoses & Notes:</b></p>
-        <textarea class="area_content"></textarea>
+        <textarea class="area_content" [formControl]="patientReportViewForm.controls['leaveNotes']"
+        (blur)="inputUntouch(patientReportViewForm,'leaveNotes')"></textarea>
       </td>
     </tr>
     <tr>
-        <td colspan="5">
-          <p ><b>IMPORTANT DISCLAIMER NOTE: The above are only patient recommendations and suggested ICD-10 codes based on the Risk Markers identified and
-              what they have been proven to identify risk for. No Medical Doctor, NP or Pa was involved in these determinations. For Insurance claim process to
-              be valid, a qualified M.D, D.O, NP or PA must establish their own independent diagnoses. </b></p>
+      <td colspan="5">
+        <p><b>IMPORTANT DISCLAIMER NOTE: The above are only patient recommendations and suggested ICD-10 codes based on
+            the Risk Markers identified and
+            what they have been proven to identify risk for. No Medical Doctor, NP or Pa was involved in these
+            determinations. For Insurance claim process to
+            be valid, a qualified M.D, D.O, NP or PA must establish their own independent diagnoses. </b></p>
 
-        </td>
-      </tr>
+      </td>
+    </tr>
   </table>
+    </form>
 </mat-card-content>
+

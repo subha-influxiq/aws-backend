@@ -33,3 +33,19 @@
 .content_wrapper .itemsection .sign_uploader .signature_upload{ position: inherit; top: 0; right: 0; background: #dd671d; color:#fff; }
 .gotoUpload{ position: inherit!important; top: 0; bottom: 0!important; background: #073f70!important; font-family: "RobotoBold"!important; width: 200px; padding: 3px; }
 .content_wrapper .itemsection:nth-child(1){ background: #efefef;}
+.top_header{ background: #f5ba4f; align-items: center; display: flex; justify-content: center; }
+.top_header h2{ margin: 0; font-size: 40px; color: #1f1f1f; font-family: "RobotoBold"; text-transform: uppercase; }
+.doctor_table .mat-form-field{
+  align-items: baseline;
+  box-sizing: border-box;
+  margin-left: 30px;
+}
+.doctorfromwrapper{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.doctorfromwrapper button{
+  margin-right: 30px;
+}

@@ -64,13 +64,13 @@ export class AddEditDoctorOfcComponent implements OnInit {
       techDetails = data.data.res;
       setTimeout(() => {
         this.getCityByName(techDetails[0].state);
-      }, 400);
+      }, 500);
       this.doctorOfficeAddEditForm.controls['centerName'].patchValue(techDetails[0].centerName);
       this.doctorOfficeAddEditForm.controls['email'].patchValue(techDetails[0].email);
       this.doctorOfficeAddEditForm.controls['phone'].patchValue(techDetails[0].phone);
       this.doctorOfficeAddEditForm.controls['address'].patchValue(techDetails[0].address);
-      this.doctorOfficeAddEditForm.controls['city'].patchValue(techDetails[0].city);
       this.doctorOfficeAddEditForm.controls['state'].patchValue(techDetails[0].state);
+      this.doctorOfficeAddEditForm.controls['city'].patchValue(techDetails[0].city);
       this.doctorOfficeAddEditForm.controls['tech'].patchValue(techDetails[0].tech);
       this.doctorOfficeAddEditForm.controls['zip'].patchValue(techDetails[0].zip);
       this.doctorOfficeAddEditForm.controls['status'].patchValue(techDetails[0].status);
@@ -144,16 +144,19 @@ export class AddEditDoctorOfcComponent implements OnInit {
   allStateCityData() {
     this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
       this.states = response;
+      this.getResolveData();
     });
 
     this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(response => {
       this.allCities = response;
+      this.getResolveData();
     });
   }
   /**for getting all states & cities  function end here**/
 
   getCity(event) {
     var val = event;
+    console.log(event)
     this.cities = this.allCities[val];
   }
   backToManagePage(){
@@ -174,7 +177,9 @@ export class AddEditDoctorOfcComponent implements OnInit {
         });
     }
   getCityByName(stateName) {
+    console.log('stateName',stateName)
     this.cities = this.allCities[stateName];
+    console.log(this.cities)
   }
 
   doctorOfficeAddEditFormFormSubmit() {
@@ -216,6 +221,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
         data = {
           "source": "users",
           "data": this.doctorOfficeAddEditForm.value,
+          "domainurl" : 'http://testbedpece.influxiq.com/reset-password',
           "token": this.user_token
         }
       }
@@ -226,6 +232,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
             duration: 2000,
           });
           this.formDirective.resetForm();
+          this.router.navigateByUrl('/admin/doctor-office-management');
         })
     }else{
       alert("error");

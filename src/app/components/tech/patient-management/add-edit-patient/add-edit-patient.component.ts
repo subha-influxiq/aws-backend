@@ -1,4 +1,4 @@
-import { Component, OnInit,Inject,ViewChild } from '@angular/core';
+import { Component, OnInit,Inject,ViewChild ,HostListener} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators ,FormGroupDirective
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -19,7 +19,7 @@ export interface DialogData {
   templateUrl: './add-edit-patient.component.html',
   styleUrls: ['./add-edit-patient.component.css']
 })
-
+@HostListener('window:scroll', ['$event'])
 export class AddEditPatientComponent implements OnInit {
   @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
   public htmlText: any = { nav: 'Add Patient' ,header:"Add Report Manually"};
@@ -38,10 +38,11 @@ export class AddEditPatientComponent implements OnInit {
   public tech_id:any;
   public cookies_name:any;
   public cookies_lastname:any;
-
+  
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
-    public cookie: CookieService,public snakBar : MatSnackBar,public dialog: MatDialog, public commonFunction: CommonFunction) {
+    public cookie: CookieService,public snakBar : MatSnackBar,public dialog: MatDialog,
+     public commonFunction: CommonFunction) {
       this.user_token = cookie.get('jwtToken');
       let allcookies: any;
       allcookies = cookie.getAll();
@@ -103,7 +104,7 @@ export class AddEditPatientComponent implements OnInit {
     var data = {
       "source": "users_view_doctor",
       "condition":{
-         tech:this.cookies_name + " " +this.cookies_lastname
+        "tech_id_object": this.cookies_id
       },
       "token": this.user_token
     }
@@ -113,7 +114,6 @@ export class AddEditPatientComponent implements OnInit {
         let result: any = {};
         result = response.res;
         this.allDoctorDataArray = result;   
-        console.log("shshdjghsjdskj",this.allDoctorDataArray);     
       })
   }
 

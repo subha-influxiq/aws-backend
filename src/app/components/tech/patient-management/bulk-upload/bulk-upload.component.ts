@@ -28,6 +28,8 @@ export class BulkUploadComponent implements OnInit {
   public images_array: any = [];
   public cookiesData:any={};
   public cookies_id :any;
+  public allDoctorDataArray : any = [];
+
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService,
     public cookie: CookieService, public snakBar: MatSnackBar, public commonFunction: CommonFunction) {
@@ -37,22 +39,41 @@ export class BulkUploadComponent implements OnInit {
       
       this.cookiesData = JSON.parse(allcookies.user_details);
       this.cookies_id = this.cookiesData._id;
-
+      this.getAllDoctorData();
+      
       /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
 
     this.techBulkUploadForm = this.fb.group({
       batchName    : ['', [Validators.required, Validators.maxLength(40)]],
+      physicalOrdering : [''],
       uploadFile   : [],
       status       : [1],
       note         : ['',Validators.required],
-      user_id            :  []
+      user_id      :  []
 
     })
     this.user_token = cookie.get('jwtToken');
   }
 
   ngOnInit() {
+  }
+
+  getAllDoctorData(){
+    var data = {
+      "source": "users_view_doctor",
+      "condition":{
+        "tech_id_object": this.cookies_id
+      },
+      "token": this.user_token
+    }
+    this.httpService.httpViaPost('datalist', data)
+      .subscribe(response => {
+       
+        let result: any = {};
+        result = response.res;
+        this.allDoctorDataArray = result;   
+      })
   }
   cancelButton(){
     this.router.navigateByUrl('/tech/dashboard');

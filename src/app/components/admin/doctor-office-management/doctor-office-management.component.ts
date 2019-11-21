@@ -13,11 +13,11 @@ export class DoctorOfficeManagementComponent implements OnInit {
 public doctorOfficeAllData : any=[];
 public user_cookie:any;
 
-public doctorOfficeAllData_skip: any = ["password","_id","type","techId","centerName"];
+public doctorOfficeAllData_skip: any = ["password","_id","type","techId","centerName","techCount"];
   public editUrl: any = "admin/doctor-office-management/edit";
   public doctorOfficeAllData_modify_header: any = {
     "centerNamecopy":"Center Name","email":"E-Mail","phone":"Phone","address":"Address","city":"City",
-    "state":"State","date":"Date Added","status":"Status","techName":"Tech Name","zip" :"Zip"
+    "state":"State","date":"Date Added","status":"Status","techName":"Tech Name","zip" :"Zip", "techCount": "Tech Count"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";

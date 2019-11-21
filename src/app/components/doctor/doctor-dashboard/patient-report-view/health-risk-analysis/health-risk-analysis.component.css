@@ -1,5 +1,5 @@
 .health_risk_report {
-  width: 70%;
+  width: 100%;
   margin: 26px auto;
   display: block;
   background: #f3f3f3;
@@ -70,8 +70,4 @@
   outline: none;
 }
 
-@media screen and (max-width: 1440px) {
-  .health_risk_report {
-    width: 90%;
-  }
-}
+ 
