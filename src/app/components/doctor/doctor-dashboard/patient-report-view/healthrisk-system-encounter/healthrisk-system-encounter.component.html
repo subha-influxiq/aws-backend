@@ -321,7 +321,8 @@
                 <tr>
                     <td>
                         <p>ADDITIONAL POTENTIAL HEALTH RISKS</p>
-                        <textarea class="additionalnotes additionalnotes3"></textarea>
+                        <textarea class="additionalnotes additionalnotes3" [formControl]="patientEncounterForm.controls['healthRisk']"
+                        (blur)="inputUntouch(patientEncounterForm,'healthRisk')"></textarea>
                     </td>
                     <td>
                         <label class="spacer_o"><input type="checkbox">I72.3</label>Aneurysm of Artery Iliac Crest<br>

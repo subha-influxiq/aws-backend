@@ -106,7 +106,7 @@ export class AddEditBillerComponent implements OnInit {
       billerDetails = data.billersingleData.res;
       setTimeout(() => {
         this.getCityByName(billerDetails[0].state);
-      }, 400);
+      }, 500);
       this.billerManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
       this.billerManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
       this.billerManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
@@ -143,10 +143,12 @@ export class AddEditBillerComponent implements OnInit {
   allStateCityData() {
     this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
       this.states = response;
+      this.getSingleData();
     });
 
     this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(response => {
       this.allCities = response;
+      this.getSingleData();
     });
   }
 
@@ -157,6 +159,7 @@ export class AddEditBillerComponent implements OnInit {
   }
 
   getCityByName(stateName) {
+    console.log(stateName)
     this.cities = this.allCities[stateName];
   }
 
@@ -215,6 +218,7 @@ export class AddEditBillerComponent implements OnInit {
         data = {
           "data": this.billerManagementAddEditForm.value,
           "source": "users",
+          "domainurl" : 'http://testbedpece.influxiq.com/reset-password',
           "token": this.user_token
         }
       }

@@ -27,7 +27,7 @@
 .health_risk_report table input[type="text"], input[type="date"] {
   height: 50px;
   border: none;
-  padding: 0 10px;
+  padding: 0 10px; background: #e8e8e8;
 }
 
 .health_risk_report table .order_input {
@@ -70,4 +70,4 @@
   outline: none;
 }
 
- 
+

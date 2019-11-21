@@ -186,3 +186,6 @@
 .patient_item_section .mat-tab-label { opacity: 1; background: #000; color: #ffff; font-size: 16px; text-transform: uppercase; font-family: "RobotoBold"; padding: 5px 16px; }
 .patient_item_section .mat-tab-label:nth-child(2){ margin: 0 8px; }   
 .mat-tab-label.mat-tab-label-active { background-color:#0298dc!important; }
+
+
+app-doctor-office-management .DataTable .mat-table .mat-column-Actions span span:nth-child(3) .material-icons{display: none;}

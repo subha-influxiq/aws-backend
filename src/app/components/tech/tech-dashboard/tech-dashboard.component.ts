@@ -38,7 +38,7 @@ export class TechDashboardComponent implements OnInit {
   allDataColumns: string[] = ['no','patientName', 'doctorName', 'record','created_at', 'billsendDate','status'];
 
 
-   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
   dataSource = new MatTableDataSource(this.commonArray);
   allDataSource: MatTableDataSource<AllDataElement>;
