@@ -63,7 +63,7 @@
 
 
 <mat-card-content class="doctor_content_wrapper">
-  <mat-card-title>Doctor Office You Are Working With</mat-card-title>
+  <mat-card-title>Doctor You Are Working With <a >()</a></mat-card-title>
   <mat-card-content class="table_structure">
 
 
@@ -230,6 +230,7 @@
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
+<!-- view details table start here -->
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
@@ -266,6 +267,7 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index"></tr>
   </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </mat-card-content>
 <!-- view details table end here -->
 

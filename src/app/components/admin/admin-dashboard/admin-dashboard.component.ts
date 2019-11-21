@@ -63,10 +63,10 @@ export class AdminDashboardComponent implements OnInit {
   dataSource: MatTableDataSource<PeriodicElement>;
   allDataSource: MatTableDataSource<AllDataElement>;
 
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   public allDataList: any = [];
 
-  @ViewChild(MatPaginator, { static: true }) paginatorAll: MatPaginator;
+  @ViewChild(MatPaginator, { static: false }) paginatorAll: MatPaginator;
 
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute) {
     /* Get Auth Token */
@@ -82,10 +82,12 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.allDataSource.paginator = this.paginatorAll;
+    // this.dataSource.paginator = this.paginator;
   }
 
   ngAfterViewInit() {
-    this.allDataSource.paginator = this.paginator;
+    this.allDataSource.paginator = this.paginatorAll;
+    // this.dataSource.paginator = this.paginator;
   }
 
   filterByName(key: string, value: string) {
@@ -222,23 +224,27 @@ export class AdminDashboardComponent implements OnInit {
     switch (flag) {
       case 'Reports Uploaded':
         this.headerText = "Reports Uploaded";
-        this.commonArray = this.processedStatusArray;
+        this.commonArray = this.uploadedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
+        this.dataSource.paginator = this.paginator;
         break;
       case 'Report Processed':
         this.headerText = "Reports Processed";
         this.commonArray = this.processedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
+        this.dataSource.paginator = this.paginator;
         break;
       case 'Report Signed':
         this.headerText = "Reports Signed";
-        this.commonArray = this.processedStatusArray;
+        this.commonArray = this.signedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
+        this.dataSource.paginator = this.paginator;
         break;
       case 'Super Bill':
         this.headerText = "Sent to Super Bill";
-        this.commonArray = this.processedStatusArray;
+        this.commonArray = this.billerStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
+        this.dataSource.paginator = this.paginator;
         break;
       default:
         break;

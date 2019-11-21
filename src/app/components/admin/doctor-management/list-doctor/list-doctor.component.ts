@@ -16,12 +16,13 @@ export class ListDoctorComponent implements OnInit {
   docData: any = [];
   docData_skip: any = ["_id", "created_at", "password", "confirmpassword",
    "taxonomies","password","confirmpassword","practicename","address","type","fullName","tech_id",
-   "biller_id","doctorsOfficeName"];
+   "biller_id","doctorsOfficeName", "city", "state", "zip"];
   docData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name", "email": "Email", "phone": "Phone",
-    "practicename": "Practice name", "npm": "NPM#", "address": "Address", "city": "City", "state": "State",
-    "zip": "ZIP", "status": "Status", "taxo list": "Taxonomies","fullNamecopy":"Name","biller" : "Biller Name","tech" :"Tech Name"
+    "practicename": "Practice name", "npm": "NPI#", "status": "Status", "taxo list": "Taxonomies","fullNamecopy":"Doctor Name","biller" : "Biller Name","tech" :"Tech Name"
   };
+
+  modal_skip: any = ["_id", "tech_id", "biller_id"];
   tableName: any = 'users';
   UpdateEndpoint: any = "addorupdatedata";
   deleteEndpoint: any = "deletesingledata";
@@ -50,6 +51,7 @@ export class ListDoctorComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.data.subscribe(resolveData => {
       this.docData = resolveData.data.res;
+      console.log("DATALIST",this.docData);
     });
   }
 
