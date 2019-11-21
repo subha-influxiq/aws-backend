@@ -14,9 +14,11 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class DoctorOfficeDashboardComponent implements OnInit {
 
-  // ===============declarations=========
-  // ====================================
+  /**************declaration**************/
+  doctorData:any=[];
 
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
 
  
@@ -26,6 +28,10 @@ export class DoctorOfficeDashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.activatedRoute.data.subscribe(resolveData => {
+      this.doctorData = resolveData.data.res;
+      console.log("8888888888888",this.doctorData);
+    });
   }
 
 }
