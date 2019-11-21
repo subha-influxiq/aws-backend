@@ -63,10 +63,10 @@ export class AdminDashboardComponent implements OnInit {
   dataSource: MatTableDataSource<PeriodicElement>;
   allDataSource: MatTableDataSource<AllDataElement>;
 
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   public allDataList: any = [];
 
-  @ViewChild(MatPaginator, { static: true }) paginatorAll: MatPaginator;
+  @ViewChild(MatPaginator, { static: false }) paginatorAll: MatPaginator;
 
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute) {
     /* Get Auth Token */
