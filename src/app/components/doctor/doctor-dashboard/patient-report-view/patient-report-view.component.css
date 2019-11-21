@@ -1,11 +1,8 @@
 .patient_report_wrapper{ display: flex; justify-content: space-between; flex-wrap: wrap; background: #f2f2f2;}
-<<<<<<< HEAD
 .patient_report_wrapper .patient_item_section{ width: 50%; padding: 16px; box-sizing: border-box; margin-bottom: 0; height: 75vh; overflow: scroll;}
-=======
 .patient_report_wrapper .patient_item_section{ width: 50%; padding: 16px; box-sizing: border-box; margin-bottom: 0;}
 /* .patient_report_wrapper .patient_item_section:first-child{ width: 40%;}
 .patient_report_wrapper .patient_item_section:last-child{ width: 60%; } */
->>>>>>> ceccac8e36b0f093aab7884414e797ac394c911c
 
 /*left part css start here*/
 
@@ -82,10 +79,7 @@ width: 390px; border: 3px solid #d59d01; }
   position: fixed;
   top: 10px;
   height: 75vh;
-<<<<<<< HEAD
 
-=======
->>>>>>> ceccac8e36b0f093aab7884414e797ac394c911c
   overflow: auto;
 }
 .stickyRight{ margin-left: 50%!important;}
