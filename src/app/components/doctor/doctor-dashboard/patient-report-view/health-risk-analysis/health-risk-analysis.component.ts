@@ -166,9 +166,8 @@ export class HealthRiskAnalysisComponent implements OnInit {
         this.patientReportViewForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1] - 1, dobArr[0]]));
 
         let eDateArr: any = patientDetails.testCompletedDate.split("-");
-      this.patientReportViewForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
-
-      })
+        this.patientReportViewForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
+      });
   }
 
 
