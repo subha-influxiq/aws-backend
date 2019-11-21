@@ -23,7 +23,7 @@ width: 390px; border: 3px solid #d59d01; }
 
 .add_form .example-form .field_setmodel{ border: 1px solid #6fa6bb;}
 .add_form .example-form .field_setmodel .legend_model{ font-family: "RobotoRegular"; font-size: 20px; text-transform: uppercase; color: #03a9f5;}
-.add_form .example-form .patients_info_wrapper{ display: inline-block;}
+.add_form .example-form .patients_info_wrapper{ display: inline;}
 .add_form .example-form .patients_info_wrapper  .mat-card-content { display: inline-block; width: 33%; margin: 0;}
 
 
