@@ -77,12 +77,15 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     public cookie: CookieService, public fb: FormBuilder, public router: Router, public datePipe: DatePipe) {
     console.log('route:: ', this.activatedRoute.snapshot.params._id);
     this.userToken = cookie.get('jwtToken');
+    this.getAllDoctorData();
+
     this.patientEncounterForm = this.fb.group({
 
       patientName: ['', [Validators.required, Validators.maxLength(30)]],
       gender: ['', Validators.required],
       birthDate: ['', Validators.required],
       physicalOrdering: [''],
+      healthRisk : [''],
       testDate: ['', Validators.required],
       testCompletedDate: ['', Validators.required]
 
@@ -98,6 +101,25 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     form.controls[val].markAsUntouched();
   }
   /**for validation purpose**/
+
+  getAllDoctorData() {
+    var data = {
+
+      "source": "users_view_doctor",
+      "condition": {
+        "tech_id_object": this.techId
+      },
+      "token": this.userToken
+    }
+
+    this.httpService.httpViaPost('datalist', data)
+      .subscribe(response => {
+        let result: any = {};
+        result = response.res;
+        this.allDoctorDataArray = result;
+
+      })
+  }
 
   getPatientData(id: any) {
     var data = {
@@ -117,6 +139,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         this.patientEncounterForm.controls['patientName'].patchValue(patientDetails.patientName);
         this.patientEncounterForm.controls['physicalOrdering'].patchValue(patientDetails.physicalOrdering);
         this.patientEncounterForm.controls['gender'].patchValue(patientDetails.gender);
+        // this.patientEncounterForm.controls['healthRisk'].patchValue(patientDetails.AIPTG_H);
         
 
         let dateOfBirth: any = this.datePipe.transform(patientDetails.birthDate, "dd-MM-yyyy");

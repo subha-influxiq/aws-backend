@@ -27,7 +27,7 @@ export class UserAddEditComponent implements OnInit {
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService) {
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
     this.allStateCityData();
     this.user_token = cookie.get('jwtToken');
     this.params_id = this.activeRoute.snapshot.params._id;
@@ -88,10 +88,12 @@ export class UserAddEditComponent implements OnInit {
   allStateCityData() {
     this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
       this.states = response;
+      this.getResolveData();
     });
 
     this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(response => {
       this.allCities = response;
+      this.getResolveData();
     });
   }
   /**for getting all states & cities  function end here**/
