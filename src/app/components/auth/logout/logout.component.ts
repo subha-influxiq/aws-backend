@@ -17,6 +17,9 @@ export class LogoutComponent implements OnInit {
   public user_cookie:any;
 
   constructor(public cookies: CookieService, public router: Router, public commonFunction: CommonFunction) { 
+    this.cookies.delete('jwtToken');
+    this.cookies.delete('user_details');
+    this.cookies.deleteAll();
   }
 
   ngOnInit() {
