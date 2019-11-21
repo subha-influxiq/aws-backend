@@ -83,7 +83,7 @@ width: 390px; border: 3px solid #d59d01; }
 .sticky {
   position: fixed;
   top: 10px;
-  height: 75%;
+  height: 68%;
 
   overflow: auto;
 }
