@@ -67,6 +67,8 @@ import { SystemSuperbillComponent } from '../components/doctor/doctor-dashboard/
 import { HealthRiskAnalysisComponent } from '../components/doctor/doctor-dashboard/patient-report-view/health-risk-analysis/health-risk-analysis.component';
 import { SignatureManagementComponent } from '../components/doctor/signature-management/signature-management.component';
 import { DoctorOfficeAccountSettingsComponent } from '../components/doctor-office/doctor-office-account-settings/doctor-office-account-settings.component';
+import { DoctorOfficeChangePasswordComponent } from '../components/doctor-office/doctor-office-change-password/doctor-office-change-password.component';
+
 
 const routes: Routes = [
   /********** Auth Route **********/
@@ -230,6 +232,10 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+  { path:'doctor-office/account-settings/change-password' , component: DoctorOfficeChangePasswordComponent},
+  
+    
+    
   /****************** Tech Route End *****************/
   /**Booked-appoinments**/
   {
@@ -324,7 +330,18 @@ const routes: Routes = [
   /****************** Doctor Route End *****************/
 
   /****************** Doctor Office Route Start *****************/
-  { path: 'doctor-office/dashboard', component: DoctorOfficeDashboardComponent, canActivate: [AuthguardService] },
+  /*Doctor Office Dashboard*/
+  {
+    path: 'doctor-office/dashboard', component: DoctorOfficeDashboardComponent, canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'users_view_doctoroffice',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
   /* Account-Settings */
   { path: 'doctor-office/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'doctor-office/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },

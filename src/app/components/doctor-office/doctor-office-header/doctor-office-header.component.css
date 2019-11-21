@@ -219,3 +219,6 @@
 .doctor_content_wrapper .mat-card-title { font-size: 24px; }
 .patient_report_section .patient_top_search h1 { font-size: 24px; }
 }
+.clickable{
+  cursor: pointer;
+}

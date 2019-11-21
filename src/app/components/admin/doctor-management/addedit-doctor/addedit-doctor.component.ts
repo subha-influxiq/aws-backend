@@ -5,7 +5,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
 import { nameValidator, npmValidator, zipValidator, phoneValidator, matchpwd } from './validators';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatCalendarBody } from '@angular/material';
+import * as _ from "lodash";
 
 export interface DialogData {
   message: string;
@@ -35,7 +36,7 @@ export class AddeditDoctorComponent implements OnInit {
   public states: any;
   public allCities: any;
   public cities: any;
-
+  selectTaxonomyNames: [string];
   public user_token: any;
   public techData: any = [];
   public billerData: any = [];
@@ -43,6 +44,52 @@ export class AddeditDoctorComponent implements OnInit {
   public billerArray: any = [];
   public doctorOfficeData: any = [];
   public params_id: any;
+
+
+
+  myTaxonomies:any= [
+    {
+      name:"Family Practice",
+      value:"Family Practice" 
+    },
+    {
+      name:"General Practitioner",
+      value:"General Practitioner"
+    },
+    {
+      name:"Primary Care",
+      value:"Primary Care"
+    },
+    {
+      name:"Cardiology",
+      value:"Cardiology",
+      selected:true
+    },
+    {
+      name:"Neurology",
+      value:"Neurology"
+    },
+    {
+      name:"Internal Medicine",
+      value:"Internal Medicine"
+    },
+    {
+      name:"Endocrinology",
+      value:"Endocrinology"
+    },
+    {
+      name:"Pain Management",
+      value:"Pain Management"
+    },
+    {
+      name:"Integrated",
+      value:"Integrated"
+    },
+    {
+      name:"Others",
+      value:"Others"
+    }
+  ];
 
   constructor(private formBuilder: FormBuilder, private http: HttpServiceService,
     private cookieService: CookieService, public dialog: MatDialog, private router: Router,
@@ -72,10 +119,10 @@ export class AddeditDoctorComponent implements OnInit {
   }
 
   ngOnInit() {
-    //generating all the taxonomies
-    for (let i = 0; i <= 10; i++)
-      this.addCreds();
+
     this.allStateCityData();
+
+    // this.createTaxoInputs();
     // Case 
     switch (this.action) {
       case 'add':
@@ -88,12 +135,45 @@ export class AddeditDoctorComponent implements OnInit {
         this.htmlText.buttonText = 'Update';
         this.successMessage = "One row updated";
         this.setDefaultValue(this.defaultData);
+        console.log("default data",this.defaultData);
         setTimeout(() => {
           this.getCityByName(this.defaultData.state);
         }, 2000);
         break;
     }
   }
+
+  /*creating taxonomy inputs*/
+  createTaxoInputs()
+  {
+    this.docManageForm = new FormGroup({
+      taxonomies:this.createTaxonomies(this.myTaxonomies)
+    });
+    this.getSelectedTaxonomies();
+  }
+
+
+  /*creating the taxonomies*/
+  createTaxonomies(taxo_inp){
+     const arr = taxo_inp.map(tax=>{
+       return new FormControl(tax.selected || false);
+     });
+     return new FormArray(arr);
+  }
+
+
+  getSelectedTaxonomies(){
+    this.selectTaxonomyNames = _.map(
+      this.docManageForm.controls.taxonomies["controls"],
+      (tax,i) =>{
+        return tax.value && this.myTaxonomies[i].value;
+      }
+    );
+
+    console.log("selectTaxonomyNames",this.selectTaxonomyNames);
+    this.getSelectedTaxonomiesName();
+  }
+
 
   inputUntouch(form: any, val: any) {
     form.controls[val].markAsUntouched();
@@ -109,7 +189,7 @@ export class AddeditDoctorComponent implements OnInit {
       confirmpassword: defaultValue.password,
       phone: defaultValue.phone,
       practicename: defaultValue.practicename,
-      taxonomies: defaultValue.taxonomies,
+      taxo_list: defaultValue.taxo_list,
       npm: defaultValue.npm,
       fax: defaultValue.fax,
       address: defaultValue.address,
@@ -120,7 +200,7 @@ export class AddeditDoctorComponent implements OnInit {
       doctorsOfficeName: defaultValue.doctorsOfficeName,
       zip: defaultValue.zip,
       status: defaultValue.status,
-      taxo_list: defaultValue.taxo_list
+      taxonomies:defaultValue.taxonomies
     });
   }
   // ======================================================================================
@@ -129,6 +209,7 @@ export class AddeditDoctorComponent implements OnInit {
   // =============================Form Generator=======================
   generateAddForm() {
     this.docManageForm = this.formBuilder.group({
+      taxonomies:this.createTaxonomies(this.myTaxonomies),
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)]],
@@ -145,17 +226,20 @@ export class AddeditDoctorComponent implements OnInit {
       tech: [''],
       biller: [''],
       doctorsOfficeName: [''],
-      taxo_list: [],
-      taxonomies: this.formBuilder.array([]),
+      taxo_list:[],
+    
       password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
     }, {
       validators: this.matchpassword('password', 'confirmpassword')
     });
+    this.getSelectedTaxonomies();
   }
 
   generateEditForm() {
+  
     this.docManageForm = this.formBuilder.group({
+      taxonomies:this.createTaxonomies(this.myTaxonomies),
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)]],
@@ -171,10 +255,11 @@ export class AddeditDoctorComponent implements OnInit {
       status: ['',],
       tech: [''],
       biller: [''],
-      doctorsOfficeName: [''],
-      taxo_list: [],
-      taxonomies: this.formBuilder.array([]),
+      doctorsOfficeName: [''],   
+      taxo_list:[''] 
+     
     });
+    this.getSelectedTaxonomies();
   }
 
   // ==================================================================
@@ -192,14 +277,7 @@ export class AddeditDoctorComponent implements OnInit {
   }
 
 
-  // ============================FormArrayCredentials===================
-  addCreds() {
-    const creds = this.docManageForm.controls.taxonomies as FormArray;
-    creds.push(this.formBuilder.group({
-      taxo: '',
-    }));
-  }
-  // ==================================================================== 
+ 
 
   // =========================================MODAL functions==========================================
   openDialog(x: any): void {
@@ -286,11 +364,15 @@ export class AddeditDoctorComponent implements OnInit {
 
   // ============================Submit Function=======================
   onSubmit() {
+    this.getSelectedTaxonomies();
+    
+    this.docManageForm.value.taxo_list = this.selectTaxonomyNames;
+    console.log("*************",this.docManageForm.value);
     let x: any;
     for (x in this.docManageForm.controls) {
       this.docManageForm.controls[x].markAsTouched();
     }
-    this.docManageForm.value.taxo_list = this.taxo_array;
+    
 
 
     /* stop here if form is invalid */
@@ -334,8 +416,16 @@ export class AddeditDoctorComponent implements OnInit {
   }
   // ==================================================================
 
-  selectTaxo(val: any) {
-    this.taxo_array.push(val);
+  /* getting the selected taxo names */
+  getSelectedTaxonomiesName(){
+     this.selectTaxonomyNames = _.filter(
+       this.selectTaxonomyNames,
+       function(tax){
+         if(tax !== false){
+           return tax;
+         }
+       }
+     )
   }
 
   trackByFn(index) {
