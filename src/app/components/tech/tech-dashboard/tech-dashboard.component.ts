@@ -1,4 +1,4 @@
-import { Component, OnInit ,ViewChild } from '@angular/core';
+import { Component, OnInit ,ViewChild,Inject } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
 import { HttpServiceService } from '../../../services/http-service.service';
@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CommonFunction } from '../../../class/common/common-function';
 import { MatTableDataSource } from '@angular/material';
 import {MatPaginator} from '@angular/material/paginator';
-
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export interface PeriodicElement {
   no: number;
   patientName: string;
@@ -24,6 +24,11 @@ export interface AllDataElement {
   status: string;
 }
 
+export interface DialogData {
+}
+
+
+
 @Component({
   selector: 'app-tech-dashboard',
   templateUrl: './tech-dashboard.component.html',
@@ -32,13 +37,18 @@ export interface AllDataElement {
 
 export class TechDashboardComponent implements OnInit {
   public commonArray: PeriodicElement[] = [];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+
+
+  public totalDoctor:any;
 
   public user_data: any = {};
-  displayedColumns: string[] = ['no', 'patientName', 'record_type', 'date_added', 'status'];
   allDataColumns: string[] = ['no','patientName', 'doctorName', 'record','created_at', 'billsendDate','status'];
 
 
    @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+  // dataSource=new MatTableDataSource(this.docArray);
+  
 
   dataSource = new MatTableDataSource(this.commonArray);
   allDataSource: MatTableDataSource<AllDataElement>;
@@ -51,7 +61,12 @@ export class TechDashboardComponent implements OnInit {
   public user_token: any;
   public techDashboardAllData: any = [];
   public techSingleData: any = [];
-  public userSingleData: any = [];
+  public userSingleDataName: any;
+  public userSingleDataTaxo:any;
+  public userSingleDataEmail:any;
+  public userSingleDataFax:any;
+  public userSingleDataPhone:any;
+  public allDoctorData:any=[];
   public uploadedStatusCount: any;
   public processedStatusCount: any;
   public signedStatusCount: any;
@@ -62,7 +77,7 @@ export class TechDashboardComponent implements OnInit {
   public userToken : any;
 
   constructor(public cookie: CookieService, public http: HttpClient,
-    public httpService: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
+    public httpService: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction,public dialog: MatDialog) {
 
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
@@ -101,10 +116,17 @@ export class TechDashboardComponent implements OnInit {
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
+        console.log(response);
         let result: any = {};
         result = response.res;
-        this.userSingleData = result;
-
+        this.allDoctorData=response.res;
+        console.log(this.allDoctorData);
+        this.userSingleDataName = result[0].fullName;
+        this.userSingleDataEmail=result[0].email;
+        this.userSingleDataFax=result[0].fax;
+        this.userSingleDataPhone=result[0].phone;
+        this.userSingleDataTaxo=result[0].taxo_list[0];
+        this.totalDoctor=response.resc;
       })
   }
   getTechCountData() {
@@ -198,7 +220,60 @@ export class TechDashboardComponent implements OnInit {
         break;
     }
   }
+
+  /**All doctor deatls view in modal */
+allDoctorViewModal(){
+ console.log("allDoctorViewModal"); 
+ //dialog function
+  const dialogGenreRef = this.dialog.open(DoctorViewDialogComponent, {
+    panelClass: ['modal-sm', 'infomodal'],
+    disableClose: true,
+  });
+  dialogGenreRef.afterClosed().subscribe(result => {
+    //console.log('SuccessDialogComponent was closed');
+  });
+}
+
 }
 
 
+// Doctor View dialog component
+@Component({
+  selector: 'doctor-dialog',
+  templateUrl: 'doctorview.component.html',
+})
+export class DoctorViewDialogComponent {
+  public user_token: any;
+  public allDoctorData:any;
+  public user_data:any;
+  public allData: any = {};
+  public userToken:any;
 
+  constructor(public dialogRef: MatDialogRef<DoctorViewDialogComponent>,@Inject(MAT_DIALOG_DATA) public data: DialogData,public cookie: CookieService, public http: HttpClient,
+    public httpService: HttpServiceService,) { 
+
+      this.allData = cookie.getAll()
+      this.user_data = JSON.parse(this.allData.user_details);
+      this.user_token = cookie.get('jwtToken');
+      var dta:any = {
+        "source": "users_view_doctor",
+        "condition": {
+          tech: this.user_data.firstname + " " + this.user_data.lastname
+        },
+        "token": this.user_token
+      }
+      this.httpService.httpViaPost('datalist', dta)
+        .subscribe(response => {
+          console.log(response);
+          let result: any = {};
+          result = response.res;
+          this.allDoctorData=response.res;
+          console.log(this.allDoctorData);
+        })
+    }
+    
+  public onNoClick(): void {
+    this.dialogRef.close();
+  }
+    
+}
