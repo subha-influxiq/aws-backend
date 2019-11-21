@@ -19,7 +19,7 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/materia
 // the `default as` syntax.
 import * as _moment from 'moment';
 // tslint:disable-next-line:no-duplicate-imports
-import {default as _rollupMoment} from 'moment';
+import { default as _rollupMoment } from 'moment';
 
 const moment = _rollupMoment || _moment;
 export interface DialogData {
@@ -46,7 +46,7 @@ export const MY_FORMATS = {
     // `MomentDateAdapter` and `MAT_MOMENT_DATE_FORMATS` can be automatically provided by importing
     // `MatMomentDateModule` in your applications root module. We provide it at the component level
     // here, due to limitations of our example generation script.
-    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE ]},
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
     { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
   ],
 })
@@ -75,15 +75,15 @@ export class PatientReportViewComponent implements OnInit {
   public techId: any;
 
 
-// sticky section
+  // sticky section
   isSticky: boolean = false;
   stickyRight: boolean = false;
 
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
-    this.isSticky = window.pageYOffset >= 50; 
+    this.isSticky = window.pageYOffset >= 50;
   }
- 
+
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
@@ -147,6 +147,7 @@ export class PatientReportViewComponent implements OnInit {
   ngOnInit() {
     this.setDefaultValue();
     this.getAllDoctorData();
+
   }
 
 
@@ -161,10 +162,10 @@ export class PatientReportViewComponent implements OnInit {
 
       let sDateArr: any = reportDetails[0].testDate.split("-");
       this.patientAddEditForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
-      
+
       let eDateArr: any = reportDetails[0].testCompletedDate.split("-");
       this.patientAddEditForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
-     
+
       this.patientAddEditForm.controls['PTGPT'].patchValue(reportDetails[0].PTGPT);
       this.patientAddEditForm.controls['PTGVLFI'].patchValue(reportDetails[0].PTGVLFI);
       this.patientAddEditForm.controls['IR'].patchValue(reportDetails[0].IR);
@@ -219,7 +220,7 @@ export class PatientReportViewComponent implements OnInit {
     form.controls[val].markAsUntouched();
   }
   /**for validation purpose**/
-  
+
 
   // patientAddEditFormSubmit() {
 
@@ -260,5 +261,8 @@ export class PatientReportViewComponent implements OnInit {
   //     });
   //   }
   // }
+
+
+
 
 }

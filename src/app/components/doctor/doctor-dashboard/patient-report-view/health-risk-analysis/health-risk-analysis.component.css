@@ -20,21 +20,25 @@
   border: 1px solid #adadad;
 }
 
+
 .health_risk_report table tr:nth-child(1) th {
   border: none;
 }
+
 
 .health_risk_report table input[type="text"], input[type="date"] {
   height: 50px;
   border: none;
   padding: 0 10px; background: #e8e8e8;
+  width: 90px;
 }
 
 .health_risk_report table .order_input {
-  width: 100%;
+  width: 300px!important;
   box-sizing: border-box;
   border-bottom: 1.4px solid #000!important;
 }
+.health_risk_report table .patient_name{ width: 160px!important;}
 
 .area_header {
   width: 100%;
@@ -51,11 +55,8 @@
 .gender_label {
   display: flex;
 }
-
-.ordering_phy {
-  text-align: right;
-  font-weight: 500;
-}
+.health_risk_report .orderInput { display: inline-flex; justify-content: center; align-items: center; width: 100%;}
+.ordering_phy { font-weight: 500; display: inline-block; margin-right: 10px;}
 
 .rm_phy {
   text-align: center;

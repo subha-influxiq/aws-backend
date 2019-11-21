@@ -23,8 +23,8 @@ width: 390px; border: 3px solid #d59d01; }
 
 .add_form .example-form .field_setmodel{ border: 1px solid #6fa6bb;}
 .add_form .example-form .field_setmodel .legend_model{ font-family: "RobotoRegular"; font-size: 20px; text-transform: uppercase; color: #03a9f5;}
-.add_form .example-form .patients_info_wrapper{ display: inline;}
-.add_form .example-form .patients_info_wrapper  .mat-card-content { display: inline-block; width: 33%; margin: 0;}
+.add_form .example-form .patients_info_wrapper{ display: inline-flex; flex-wrap: wrap;}
+.add_form .example-form .patients_info_wrapper  .mat-card-content { flex: 1 1 32%; margin: 0;}
 
 
 
@@ -68,10 +68,13 @@ width: 390px; border: 3px solid #d59d01; }
 
 @media screen and (max-width: 1440px){
   .add_form  { width: 1190px;}
-  .add_form .mat-card-content label { width: 85px; margin: 0; }
+  .add_form .mat-card-content label { width: 150px; margin: 0; }
 }
 @media screen and (max-width: 1400px){
   .add_form { width: 90%; }
+}
+@media screen and (max-width: 1100px){
+  .add_form .example-form .patients_info_wrapper .mat-card-content { flex: 1 1 50%; margin: 0; }
 }
 @media screen and (max-width: 1000px){
   .add_form .submit_form button { width: 48%; }
