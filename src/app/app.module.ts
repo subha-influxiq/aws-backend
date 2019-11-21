@@ -46,7 +46,7 @@ import { AdminDashboardComponent } from './components/admin/admin-dashboard/admi
 import { AddEditComponent,ChangePasswordAdminModal } from './components/admin/admin-management/add-edit/add-edit.component';
 import { ManageAdminListComponent } from './components/admin/admin-management/manage-admin-list/manage-admin-list.component';
 import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
-import { AddeditDoctorComponent, ChangePasswordDoctorModal } from './components/admin/doctor-management/addedit-doctor/addedit-doctor.component';
+import { AddeditDoctorComponent, ChangePasswordDoctorModal,  } from './components/admin/doctor-management/addedit-doctor/addedit-doctor.component';
 import { ListDoctorComponent } from './components/admin/doctor-management/list-doctor/list-doctor.component';
 import { AddEditBillerComponent ,ChangePasswordModal}from './components/admin/biller-management/add-edit-biller/add-edit-biller.component';
 import { ListingBillerComponent } from './components/admin/biller-management/listing-biller/listing-biller.component';
