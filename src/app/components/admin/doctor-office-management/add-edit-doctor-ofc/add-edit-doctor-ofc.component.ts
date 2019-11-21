@@ -221,6 +221,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
         data = {
           "source": "users",
           "data": this.doctorOfficeAddEditForm.value,
+          "domainurl" : 'http://testbedpece.influxiq.com/reset-password',
           "token": this.user_token
         }
       }

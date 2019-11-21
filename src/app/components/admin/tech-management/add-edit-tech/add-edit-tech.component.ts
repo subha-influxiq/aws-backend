@@ -227,6 +227,7 @@ export class AddEditTechComponent implements OnInit {
         data = {
           "source": "users",
           "data": this.TechManagementAddEditForm.value,
+          "domainurl" : 'http://testbedpece.influxiq.com/reset-password',
           "token": this.user_token
         }
       }

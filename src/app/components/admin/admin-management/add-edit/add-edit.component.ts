@@ -170,8 +170,10 @@ export class AddEditComponent implements OnInit {
         data = {
           "source": "users",
           "data": this.adminManagementAddEditForm.value,
-          "token": this.user_token
+          "token": this.user_token,
+          "domainurl" : 'http://testbedpece.influxiq.com/reset-password'
         }
+        
 
       }
 

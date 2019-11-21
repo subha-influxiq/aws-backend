@@ -218,6 +218,7 @@ export class AddEditBillerComponent implements OnInit {
         data = {
           "data": this.billerManagementAddEditForm.value,
           "source": "users",
+          "domainurl" : 'http://testbedpece.influxiq.com/reset-password',
           "token": this.user_token
         }
       }
