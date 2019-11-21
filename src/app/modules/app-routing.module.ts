@@ -62,9 +62,9 @@ import { NotFoundErrorComponent } from '../components/common/not-found-error/not
 
 /* Test Component */
 import { TestComponent } from '../components/test/test.component';
-import { HealthriskSystemEncounterComponent } from '../components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component';
-import { SystemSuperbillComponent } from '../components/admin/tech-management/system-superbill/system-superbill.component';
-import { HealthRiskAnalysisComponent } from '../components/admin/tech-management/health-risk-analysis/health-risk-analysis.component';
+import { HealthriskSystemEncounterComponent } from '../components/doctor/doctor-dashboard/patient-report-view/healthrisk-system-encounter/healthrisk-system-encounter.component';
+import { SystemSuperbillComponent } from '../components/doctor/doctor-dashboard/patient-report-view/system-superbill/system-superbill.component';
+import { HealthRiskAnalysisComponent } from '../components/doctor/doctor-dashboard/patient-report-view/health-risk-analysis/health-risk-analysis.component';
 import { SignatureManagementComponent } from '../components/doctor/signature-management/signature-management.component';
 import { DoctorOfficeAccountSettingsComponent } from '../components/doctor-office/doctor-office-account-settings/doctor-office-account-settings.component';
 

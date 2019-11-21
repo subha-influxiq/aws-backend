@@ -75,9 +75,9 @@ import { BillerHeaderComponent } from './components/biller/biller-header/biller-
 /* testing purpose start here */
 import { TestComponent } from './components/test/test.component';
 import { FileUploadModule } from 'file-upload'; 
-import { HealthriskSystemEncounterComponent } from './components/admin/tech-management/healthrisk-system-encounter/healthrisk-system-encounter.component';
-import { SystemSuperbillComponent } from './components/admin/tech-management/system-superbill/system-superbill.component';
-import { HealthRiskAnalysisComponent } from './components/admin/tech-management/health-risk-analysis/health-risk-analysis.component';
+import { HealthriskSystemEncounterComponent } from './components/doctor/doctor-dashboard/patient-report-view/healthrisk-system-encounter/healthrisk-system-encounter.component';
+import { SystemSuperbillComponent } from './components/doctor/doctor-dashboard/patient-report-view/system-superbill/system-superbill.component';
+import { HealthRiskAnalysisComponent } from './components/doctor/doctor-dashboard/patient-report-view/health-risk-analysis/health-risk-analysis.component';
 import { ReportDetailsComponent } from './components/tech/report-details/report-details.component';
 import { NotFoundErrorComponent } from './components/common/not-found-error/not-found-error.component';
 import { AdminFooterComponent } from './components/admin/admin-footer/admin-footer.component';
