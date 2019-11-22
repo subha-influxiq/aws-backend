@@ -64,13 +64,8 @@
 }
 .patient_report_section .patient_top_search { display: flex; align-items: center; justify-content: space-between; padding: 0 16px; margin-top: 20px; margin-bottom: 0;}
 .patient_report_section .patient_top_search .search_bar { display: flex;  }
-.patient_report_section .patient_top_search .search_bar button{
-  border: none;
-    background: #000;
-    color: #fff;
-    display: flex;
-    align-items: center; cursor: pointer;
-}
+.patient_report_section .patient_top_search .search_bar button{ border: none; background: #000; color: #fff; display: flex; align-items: center; cursor: pointer; }
+.patient_report_section { width: 95%; margin: 0 auto; display: block;}
 
 .patient_report_section .patient_top_search h1{ font-size: 32px; text-transform: uppercase;  color: #002035; margin: auto;}
 .patient_report_section .patient_top_search .search_bar button:focus{ outline: none; }
@@ -82,13 +77,13 @@
   font-size: 25px;
   padding: 10px;
   width: 515px;    border: 3px solid #d59d01; }
+  .techTable{ width: 100%;}
 
   .patient_report_section .button_action{
   display: flex;
     justify-content: space-between;
     width: 1050px;
     margin: auto;
-
 }
 
 .top_header{ background: #f5ba4f; align-items: center; display: flex; justify-content: center; }
