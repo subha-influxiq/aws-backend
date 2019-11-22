@@ -33,11 +33,6 @@
         <mat-error *ngIf="docManageForm.controls['firstname'].touched && !docManageForm.controls['firstname'].valid
         && docManageForm.controls['firstname'].errors.required">
           First Name can not be blank</mat-error>
-        <!-- <mat-error *ngIf="!docManageForm.controls['firstname'].valid
-          && docManageForm.controls['firstname'].errors.required">First Name is required.</mat-error>
-        <mat-error
-          *ngIf="!docManageForm.controls['firstname'].valid && !docManageForm.controls['firstname'].errors.required">
-          Name is not valid</mat-error> -->
       </mat-form-field>
 
 
@@ -69,7 +64,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
-        <input matInput type="email" placeholder="jamesanderson@gmail.com" formControlName="email"
+        <input matInput type="email" placeholder="exemple@exemple.com" formControlName="email"
           (blur)="inputUntouch(docManageForm,'email')">
         <mat-error *ngIf="!docManageForm.controls['email'].valid && docManageForm.controls['email'].errors.required">
           Email is required.</mat-error>
@@ -147,18 +142,16 @@
           Practice name is not valid</mat-error> -->
       </mat-form-field>
 
+
       <mat-form-field appearance="fill">
-        <mat-label>Select Taxonomy</mat-label>
-        <mat-select [formControl]="t" multiple>
-          <mat-option [value]=0>Select a taxonomy</mat-option>
+          <mat-label>Select Technician</mat-label>
+          <mat-select formControlName="taxo_list" multiple>
+            <mat-option [value]=0>Select a tech</mat-option>
+            <mat-option *ngFor="let tech of myTaxonomies;" value="{{ tech.name }}">{{tech.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
 
-          <mat-option *ngFor="let t of docManageForm.controls.taxonomies.controls;let i = index;">
-            <span>{{myTaxonomies[i].name}}</span>
-          </mat-option>
-
-
-        </mat-select>
-      </mat-form-field>
 
 
       <!-- NPI#  -->

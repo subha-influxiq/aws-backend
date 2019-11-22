@@ -10,6 +10,7 @@ import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dial
 export interface PeriodicElement {
   no: number;
   patientName: string;
+  doctorName: string;
   record_type: string;
   date_added: string;
   status: string;
@@ -37,7 +38,7 @@ export interface DialogData {
 
 export class TechDashboardComponent implements OnInit {
   public commonArray: PeriodicElement[] = [];
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['no', 'patientName', 'record_type', 'doctorName', 'date_added', 'status'];
 
 
   public totalDoctor:any;
@@ -174,6 +175,10 @@ export class TechDashboardComponent implements OnInit {
         this.reportRemainingArray = response.data.status2;
         this.reportProcessedArray = response.data.status1;
 
+        console.log('reportUploadedArray',this.reportUploadedArray)
+        console.log('reportRemainingArray',this.reportRemainingArray)
+        console.log('reportProcessedArray',this.reportProcessedArray)
+
       })
   }
   filterByName(key: string, value: string) {
@@ -218,6 +223,7 @@ export class TechDashboardComponent implements OnInit {
         this.headerText = "Reports Processed";
         this.commonArray = this.reportProcessedArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
+       
         this.dataSource.paginator = this.paginatorAll; 
         this.dataSource.sort = this.sort;
         break;
@@ -260,10 +266,12 @@ export class DoctorViewDialogComponent {
   public user_data:any;
   public allData: any = {};
   public userToken:any;
+  public loader: boolean = true;
 
   constructor(public dialogRef: MatDialogRef<DoctorViewDialogComponent>,@Inject(MAT_DIALOG_DATA) public data: DialogData,public cookie: CookieService, public http: HttpClient,
     public httpService: HttpServiceService,) { 
 
+      
       this.allData = cookie.getAll()
       this.user_data = JSON.parse(this.allData.user_details);
       this.user_token = cookie.get('jwtToken');
@@ -275,17 +283,21 @@ export class DoctorViewDialogComponent {
         "token": this.user_token
       }
       this.httpService.httpViaPost('datalist', dta)
-        .subscribe(response => {
+        .subscribe((response:any) => {
           console.log(response);
           let result: any = {};
           result = response.res;
-          this.allDoctorData=response.res;
-          console.log(this.allDoctorData);
+          if (response.resc > 0) {
+            this.loader = false;
+            this.allDoctorData=response.res;
+            console.log(this.allDoctorData);
+          }
+         
         })
     }
     
   public onNoClick(): void {
     this.dialogRef.close();
   }
-    
+
 }

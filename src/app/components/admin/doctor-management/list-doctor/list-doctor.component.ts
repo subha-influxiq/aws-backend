@@ -28,7 +28,7 @@ export class ListDoctorComponent implements OnInit {
   deleteEndpoint: any = "deletesingledata";
   user_cookie: any;
   searchingEndpoint:any="datalist";
-  searchSourceName:any="users_view_doctor"
+  searchSourceName:any="users_view_doctor_list"
   editUrl:any = 'admin/doctor-management/edit';
   apiUrl: any = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";
   status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
