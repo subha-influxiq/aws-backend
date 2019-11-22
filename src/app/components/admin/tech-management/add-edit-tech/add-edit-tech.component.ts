@@ -80,7 +80,7 @@ export class AddEditTechComponent implements OnInit {
 
   generateEditForm() {
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
 
     this.TechManagementAddEditForm = this.fb.group({
       firstname: ['', Validators.required],
