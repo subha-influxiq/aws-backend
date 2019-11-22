@@ -73,13 +73,10 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     this.isSticky = window.pageYOffset >= 50;
   }
 
-  constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService,
-    public cookie: CookieService, public fb: FormBuilder, public router: Router, public datePipe: DatePipe) {
-    console.log('route:: ', this.activatedRoute.snapshot.params._id);
+  constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService, public cookie: CookieService, public fb: FormBuilder, public router: Router, public datePipe: DatePipe) {
     this.userToken = cookie.get('jwtToken');
     this.getAllDoctorData();
     var dateformat = datePipe.transform(new Date(), "MM-dd-yyyy");
-    console.log("date format", dateformat);
     this.patientEncounterForm = this.fb.group({
       patientName: ['', [Validators.required, Validators.maxLength(30)]],
       gender: ['', Validators.required],
@@ -112,9 +109,10 @@ export class HealthriskSystemEncounterComponent implements OnInit {
       G232: [false],
       E1065: [false],
       G238: [false],
+      I251: [false],
+      R000: [false]
     })
     this.getPatientData(this.activatedRoute.snapshot.params._id);
-    console.log(this.patientEncounterForm.value.I10);
   }
 
   ngOnInit() {
@@ -127,8 +125,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
   /**for validation purpose**/
 
   getAllDoctorData() {
-    var data = {
-
+    var data: any = {
       "source": "users_view_doctor",
       "condition": {
         "tech_id_object": this.techId
@@ -282,8 +279,16 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         else
           this.patientEncounterForm.controls['G238'].patchValue(false);
 
+        if(this.pdata.I251 == 1)
+          this.patientEncounterForm.controls['I251'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['I251'].patchValue(false);
 
-
+        if(this.pdata.R000 == 1)
+          this.patientEncounterForm.controls['R000'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['R000'].patchValue(false);
+        
 
         // this.patientEncounterForm.controls['healthRisk'].patchValue(patientDetails.AIPTG_H);
 

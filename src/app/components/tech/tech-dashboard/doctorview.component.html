@@ -1,4 +1,5 @@
-<mat-card class="modalmainwrapper">
+<mat-card *ngIf="!loader" class="modalmainwrapper">
+  <span >
     <mat-card-subtitle>All Doctor</mat-card-subtitle>
 
     <mat-accordion *ngFor="let doc of allDoctorData">
@@ -16,4 +17,12 @@
       </mat-accordion>
 
     <button mat-button class="modalclosebtn" (click)="onNoClick()">close</button>
+  </span>
 </mat-card>
+
+
+
+
+<div *ngIf="loader"  style="display: flex; justify-content: center; align-items: center; height: 100%;">
+  <div>Please wait....</div>
+</div>
