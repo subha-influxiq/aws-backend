@@ -76,6 +76,9 @@ export class SystemSuperbillComponent implements OnInit {
     public cookie: CookieService, public fb: FormBuilder, public router: Router, public datePipe: DatePipe) {
     console.log('route:: ', this.activatedRoute.snapshot.params._id);
     this.userToken = cookie.get('jwtToken');
+    var dateformat = datePipe.transform(new Date(), "MM-dd-yyyy");
+    console.log("date format",dateformat);
+
     this.patientBMIForm = this.fb.group({
 
       patientName: ['', [Validators.required, Validators.maxLength(30)]],
@@ -83,7 +86,8 @@ export class SystemSuperbillComponent implements OnInit {
       birthDate: ['', Validators.required],
       physicalOrdering: [''],
       testDate: ['', Validators.required],
-      testCompletedDate: ['', Validators.required]
+      testCompletedDate: ['', Validators.required],
+      signDate : [dateformat]
 
     })
     this.getPatientData(this.activatedRoute.snapshot.params._id);

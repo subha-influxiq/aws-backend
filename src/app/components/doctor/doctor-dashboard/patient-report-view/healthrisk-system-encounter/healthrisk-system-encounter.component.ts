@@ -5,7 +5,6 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
 import { HttpServiceService } from '../../../../../services/http-service.service';
 import { DatePipe } from '@angular/common';
-
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 
@@ -63,6 +62,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
   public allPatientReportData: any = [];
   public paramsId: any;
   public techId: any;
+  public pdata: any = null;
 
   // sticky section
   isSticky: boolean = false;
@@ -78,19 +78,43 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     console.log('route:: ', this.activatedRoute.snapshot.params._id);
     this.userToken = cookie.get('jwtToken');
     this.getAllDoctorData();
-
+    var dateformat = datePipe.transform(new Date(), "MM-dd-yyyy");
+    console.log("date format", dateformat);
     this.patientEncounterForm = this.fb.group({
-
       patientName: ['', [Validators.required, Validators.maxLength(30)]],
       gender: ['', Validators.required],
       birthDate: ['', Validators.required],
       physicalOrdering: [''],
-      healthRisk : [''],
+      healthRisk: [''],
       testDate: ['', Validators.required],
-      testCompletedDate: ['', Validators.required]
-
+      testCompletedDate: ['', Validators.required],
+      signDate: [dateformat],
+      I10: [false],
+      I739: [false],
+      I70209: [false],
+      R733: [false],
+      E119: [false],
+      E1142: [false],
+      E1149: [false],
+      E1159: [false],
+      G603: [false],
+      I519: [false],
+      AIPTG_H: [''],
+      E1041: [false],
+      E858: [false],
+      E1042: [false],
+      E859: [false],
+      E1043: [false],
+      G230: [false],
+      E1044: [false],
+      G231: [false],
+      E1049: [false],
+      G232: [false],
+      E1065: [false],
+      G238: [false],
     })
     this.getPatientData(this.activatedRoute.snapshot.params._id);
+    console.log(this.patientEncounterForm.value.I10);
   }
 
   ngOnInit() {
@@ -131,16 +155,138 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe((response) => {
-        
-        let patientDetails: any;
+
+        let patientDetails: any = {};
         patientDetails = response.res[0];
+        this.pdata = response.res[0];
         this.patientSingleData = response.res;
         console.log("dataaa", patientDetails);
         this.patientEncounterForm.controls['patientName'].patchValue(patientDetails.patientName);
         this.patientEncounterForm.controls['physicalOrdering'].patchValue(patientDetails.physicalOrdering);
         this.patientEncounterForm.controls['gender'].patchValue(patientDetails.gender);
+
+        this.patientEncounterForm.controls['healthRisk'].patchValue(patientDetails.AIPTG_H + ','
+          + patientDetails.AIPTGis_A + ',' + patientDetails.Cl_H + ',' + patientDetails.DPRS_H + ','
+          + patientDetails.ValsR_A + ',' + patientDetails.ValsR_H + ',' + patientDetails.cl_A + ','
+          + patientDetails.StressI_A + ',' + patientDetails.DPRS_A + ',' + patientDetails.R000
+          + ',' + patientDetails.StressI_H);
+
+        if (this.pdata.I10 == 1)
+          this.patientEncounterForm.controls['I10'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['I10'].patchValue(false);
+
+
+        if (this.pdata.I739 == 1)
+          this.patientEncounterForm.controls['I739'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['I739'].patchValue(false);
+
+        if (this.pdata.I70209 == 1)
+          this.patientEncounterForm.controls['I70209'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['I70209'].patchValue(false);
+
+        if (this.pdata.R733 == 1)
+          this.patientEncounterForm.controls['R733'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['R733'].patchValue(false);
+
+        if (this.pdata.E119 == 1)
+          this.patientEncounterForm.controls['E119'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['E119'].patchValue(false);
+
+        if (this.pdata.E1142 == 1)
+          this.patientEncounterForm.controls['E1142'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['E1142'].patchValue(false);
+
+        if (this.pdata.E1149 == 1)
+          this.patientEncounterForm.controls['E1149'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['E1149'].patchValue(false);
+
+        if (this.pdata.E1159 == 1)
+          this.patientEncounterForm.controls['E1159'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['E1159'].patchValue(false);
+
+        if (this.pdata.G603 == 1)
+          this.patientEncounterForm.controls['G603'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['G603'].patchValue(false);
+
+        if (this.pdata.I519 == 1)
+          this.patientEncounterForm.controls['I519'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['I519'].patchValue(false);
+
+        if (this.pdata.E1041 == 1)
+          this.patientEncounterForm.controls['E1041'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['E1041'].patchValue(false);
+
+        if (this.pdata.E858 == 1)
+          this.patientEncounterForm.controls['E858'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['E858'].patchValue(false);
+
+        if (this.pdata.E1042 == 1)
+          this.patientEncounterForm.controls['E1042'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['E1042'].patchValue(false);
+
+        if (this.pdata.E859 == 1)
+          this.patientEncounterForm.controls['E859'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['E859'].patchValue(false);
+
+        if (this.pdata.E1043 == 1)
+          this.patientEncounterForm.controls['E1043'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['E1043'].patchValue(false);
+
+        if (this.pdata.G230 == 1)
+          this.patientEncounterForm.controls['G230'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['G230'].patchValue(false);
+
+        if (this.pdata.E1044 == 1)
+          this.patientEncounterForm.controls['E1044'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['E1044'].patchValue(false);
+
+        if (this.pdata.G231 == 1)
+          this.patientEncounterForm.controls['G231'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['G231'].patchValue(false);
+
+        if (this.pdata.E1049 == 1)
+          this.patientEncounterForm.controls['E1049'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['E1049'].patchValue(false);
+
+        if (this.pdata.G232 == 1)
+          this.patientEncounterForm.controls['G232'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['G232'].patchValue(false);
+
+        if (this.pdata.E1065 == 1)
+          this.patientEncounterForm.controls['E1065'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['E1065'].patchValue(false);
+
+        if (this.pdata.G238 == 1)
+          this.patientEncounterForm.controls['G238'].patchValue(true);
+        else
+          this.patientEncounterForm.controls['G238'].patchValue(false);
+
+
+
+
         // this.patientEncounterForm.controls['healthRisk'].patchValue(patientDetails.AIPTG_H);
-        
+
 
         let dateOfBirth: any = this.datePipe.transform(patientDetails.birthDate, "dd-MM-yyyy");
         let dobArr: any = dateOfBirth.split("-");
@@ -152,6 +298,10 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         // this.patientReportViewForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
 
       })
+  }
+
+  encounterFormSubmit() {
+
   }
 
 }
