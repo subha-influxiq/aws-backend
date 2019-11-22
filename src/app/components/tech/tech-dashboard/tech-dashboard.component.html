@@ -173,7 +173,7 @@
 
   <!--all dashboard data table start here-->
 
-    <table mat-table [dataSource]="techDashboardAllData" class="mat-elevation-z8">
+    <table mat-table [dataSource]="techDashboardAllData" matSort class="mat-elevation-z8">
 
       <ng-container matColumnDef="no">
         <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -232,7 +232,7 @@
   </mat-form-field>
 <!-- view details table start here -->
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
     <!-- Position Column -->
     <ng-container matColumnDef="no">

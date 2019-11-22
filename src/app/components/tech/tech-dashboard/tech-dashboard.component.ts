@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonFunction } from '../../../class/common/common-function';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatSort } from '@angular/material';
 import {MatPaginator} from '@angular/material/paginator';
 
 export interface PeriodicElement {
@@ -40,6 +40,8 @@ export class TechDashboardComponent implements OnInit {
 
    @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
    @ViewChild(MatPaginator, { static: false }) paginatorAll: MatPaginator;
+   @ViewChild(MatSort, { static: false }) sort: MatSort;
+   @ViewChild(MatSort, { static: false }) sortAll: MatSort;
 
    dataSource: MatTableDataSource<PeriodicElement>;
   allDataSource: MatTableDataSource<AllDataElement>;
@@ -86,11 +88,10 @@ export class TechDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.techDashboardAllData.paginator = this.paginator;
-    // this.dataSource.paginator = this.paginatorAll; 
+    this.techDashboardAllData.sort = this.sortAll;
   }
   ngAfterViewInit() {
     this.techDashboardAllData.paginator = this.paginator;
-    // this.dataSource.paginator = this.paginatorAll; 
   }
   
   
@@ -188,19 +189,21 @@ export class TechDashboardComponent implements OnInit {
         this.commonArray = this.reportUploadedArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         this.dataSource.paginator = this.paginatorAll; 
-
+        this.dataSource.sort = this.sort;
         break;
       case 'processed':
         this.headerText = "Reports Processed";
         this.commonArray = this.reportProcessedArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         this.dataSource.paginator = this.paginatorAll; 
+        this.dataSource.sort = this.sort;
         break;
       case 'remainProcess':
         this.headerText = "Reports Remain to Process";
         this.commonArray = this.reportRemainingArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         this.dataSource.paginator = this.paginatorAll; 
+        this.dataSource.sort = this.sort;
         break;
       default:
         break;
