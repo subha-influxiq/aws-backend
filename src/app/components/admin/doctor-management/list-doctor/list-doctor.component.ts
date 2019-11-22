@@ -36,7 +36,7 @@ export class ListDoctorComponent implements OnInit {
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
       textsearch: [{ label: "Search By Name", field: 'fullName' },
-      {label:"Search by Taxonomy",field:'taxo_list'},
+      // {label:"Search by Taxonomy",field:'taxo_list'},
       { label: "Search By E-Mail", field: 'email' }]
     };
   // ====================================================================
