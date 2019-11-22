@@ -75,3 +75,14 @@ table input[type="text"]:focus, textarea:focus{ outline: none;}
     margin-bottom: 6px;
     color: #096509;
 }
+.limbs{
+    margin: 0;
+    font-size: 22px;
+    color: #000;
+    text-align: center;
+    font-family: "RobotoBold";
+    border-top: 1px solid #b5b5b5;
+    margin-top: 15px;
+    text-transform: uppercase;
+    margin-bottom: -10px;
+ }
