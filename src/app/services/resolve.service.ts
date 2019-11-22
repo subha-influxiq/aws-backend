@@ -31,6 +31,16 @@ export class ResolveService implements Resolve<any> {
      
     }
     /* This one is for Tech Dashboard End */
+
+    /* This one is for Tech Dashboard Start */
+    if(route.url[0].path == 'doctor' && route.url[1].path == 'dashboard') {
+      var allData: any = this.cookies.getAll();
+      var userData = JSON.parse(allData.user_details);
+      requestData.condition.condition['_id'] = userData._id;
+      requestData.condition.condition1['_id'] = userData._id;
+     
+    }
+    /* This one is for Tech Dashboard End */
     
 
     return new Promise((resolve) => {
@@ -55,7 +65,8 @@ export class ResolveService implements Resolve<any> {
         setTimeout(() => {
           return resolve(returnData);
         }, 3000);
-      } else {
+      } 
+      else{
         console.log("-------------");
         this._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(api_object => {
           if (api_object) {
