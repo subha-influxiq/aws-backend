@@ -190,7 +190,7 @@
 
 .app-doctor-office-management .DataTable .mat-table .mat-column-Actions span span:nth-child(3) .material-icons{display: none;}
 
-.health_risk_report {
+/* .health_risk_report {
   width: 200px;
   height: 75vh;
   overflow: scroll;
@@ -209,5 +209,6 @@
 .health_risk_report::-webkit-scrollbar-thumb {
    border-radius: 10px;
    box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
+} */
 
+.infomodal{ overflow: auto;}

@@ -188,9 +188,11 @@ export class AddEditPatientComponent implements OnInit {
       switch(result) {
         case "Cancel":
           this.router.navigateByUrl('/tech/dashboard');
+          
           break;
         case "Add Next":
-          location.reload();
+          // location.reload();
+          this.resetAddEditForm();
           break;
       }
     });
