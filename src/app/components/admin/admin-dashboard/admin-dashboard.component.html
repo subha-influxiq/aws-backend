@@ -251,7 +251,7 @@
 
   </mat-toolbar>
 
-  <table mat-table [dataSource]="allDataSource" matSort class="mat-elevation-z8">
+  <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8">
     <ng-container matColumnDef="no">
       <th mat-header-cell *matHeaderCellDef> No. </th>
       <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>

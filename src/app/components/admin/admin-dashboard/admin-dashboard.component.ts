@@ -2,9 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';import { MatTableDataSource } from '@angular/material/table';
 import * as momentImported from 'moment';
 const moment = momentImported;
 
@@ -67,8 +65,6 @@ export class AdminDashboardComponent implements OnInit {
   public allDataList: any = [];
 
   @ViewChild(MatPaginator, { static: false }) paginatorAll: MatPaginator;
-  @ViewChild(MatSort, { static: true }) sort: MatSort;
-  @ViewChild(MatSort, { static: true }) sortAll: MatSort;
 
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute) {
     /* Get Auth Token */
@@ -84,12 +80,10 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.allDataSource.paginator = this.paginatorAll;
-    this.dataSource.sort = this.sortAll;
   }
 
   ngAfterViewInit() {
     this.allDataSource.paginator = this.paginatorAll;
-    this.dataSource.sort = this.sortAll;
   }
 
   filterByName(key: string, value: string) {
@@ -229,21 +223,18 @@ export class AdminDashboardComponent implements OnInit {
         this.commonArray = this.uploadedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
         break;
       case 'Report Processed':
         this.headerText = "Reports Processed";
         this.commonArray = this.processedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
         break;
       case 'Report Signed':
         this.headerText = "Reports Signed";
         this.commonArray = this.signedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
         break;
       case 'Super Bill':
         this.headerText = "Sent to Super Bill";
