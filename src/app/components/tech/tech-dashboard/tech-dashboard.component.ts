@@ -284,13 +284,13 @@ export class DoctorViewDialogComponent {
       }
       this.httpService.httpViaPost('datalist', dta)
         .subscribe((response:any) => {
-          console.log(response);
+          //console.log(response);
           let result: any = {};
           result = response.res;
           if (response.resc > 0) {
             this.loader = false;
             this.allDoctorData=response.res;
-            console.log(this.allDoctorData);
+            //console.log(this.allDoctorData);
           }
          
         })
