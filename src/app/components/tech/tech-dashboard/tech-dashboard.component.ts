@@ -232,7 +232,7 @@ export class TechDashboardComponent implements OnInit {
 
   /**All doctor deatls view in modal */
 allDoctorViewModal(){
- console.log("allDoctorViewModal"); 
+//  console.log("allDoctorViewModal"); 
  //dialog function
   const dialogGenreRef = this.dialog.open(DoctorViewDialogComponent, {
     panelClass: ['modal-sm', 'infomodal'],
