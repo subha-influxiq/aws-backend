@@ -136,10 +136,10 @@ export class AddEditPatientComponent implements OnInit {
     }
     const myString = this.patientAddEditForm.controls.bloodPressure.value;
     const splits = myString.split('/');
-    var startDate = this.datePipe.transform(this.startdate, "dd-MM-yyyy");
-    var endDate = this.datePipe.transform(this.enddate, "dd-MM-yyyy");
-    var dateOfBirth = this.datePipe.transform(this.dateofbirth,"dd-MM-yyyy");
-    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    var startDate = this.datePipe.transform(this.startdate, "MM-dd-yyyy");
+    var endDate = this.datePipe.transform(this.enddate, "MM-dd-yyyy");
+    var dateOfBirth = this.datePipe.transform(this.dateofbirth,"MM-dd-yyyy");
+    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
     this.patientAddEditForm.value.testDate = startDate;
     this.patientAddEditForm.value.testCompletedDate = endDate;
     this.patientAddEditForm.value.birthDate = dateOfBirth;
