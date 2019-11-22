@@ -63,7 +63,7 @@
 
 
 <mat-card-content class="doctor_content_wrapper">
-  <mat-card-title>Doctor You Are Working With <a >()</a></mat-card-title>
+  <mat-card-title>Doctor You Are Working With +<a (click)="allDoctorViewModal()">({{totalDoctor}})</a></mat-card-title>
   <mat-card-content class="table_structure">
 
 
@@ -71,55 +71,40 @@
       <mat-list-item>
         <p class="title_n">Name</p>
         <p class="title_a">
-          <ng-container *ngFor="let val of userSingleData; let i =index">
-            {{ val.fullName}}
-            <ng-container *ngIf="i+1 < userSingleData.length">
-                ,
-              </ng-container>
+          <ng-container>
+            {{ userSingleDataName}}
           </ng-container>
         </p>
       </mat-list-item>
       <mat-list-item>
         <p class="title_n">Taxonomies</p>
         <p class="title_a">
-          <ng-container *ngFor="let n of userSingleData; let i = index;">
-            {{ n.taxo_list}}
-            <ng-container *ngIf="i + 1 < userSingleData.length">
-              ,
-            </ng-container>
+          <ng-container>
+           {{userSingleDataTaxo}}
           </ng-container>
         </p>
       </mat-list-item>
       <mat-list-item>
         <p class="title_n">Email</p>
         <p class="title_a">
-          <ng-container *ngFor="let val of userSingleData; let i =index">
-            {{ val.email}}
-          <ng-container *ngIf=" i + 1 < userSingleData.length">
-            ,
-          </ng-container>
+          <ng-container>
+           {{userSingleDataEmail}}
           </ng-container>
         </p>
       </mat-list-item>
       <mat-list-item>
         <p class="title_n">Phone</p>
         <p class="title_a">
-          <ng-container *ngFor="let val of userSingleData; let i =index">
-            {{ val.phone}}
-            <ng-container *ngIf="i+1 < userSingleData.length">
-                ,
-              </ng-container>
+          <ng-container>
+           {{userSingleDataPhone}} 
           </ng-container>
         </p>
       </mat-list-item>
       <mat-list-item>
         <p class="title_n">FAX</p>
         <p class="title_a">
-          <ng-container *ngFor="let val of userSingleData; let i =index">
-            {{ val.fax}}
-               <ng-container *ngIf="i+1 < userSingleData.length">
-            ,
-          </ng-container>
+          <ng-container>
+            {{userSingleDataFax}} 
           </ng-container>
         </p>
       </mat-list-item>
