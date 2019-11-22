@@ -363,7 +363,8 @@
 
         </ng-template>
       </mat-tab>
-      <mat-tab label="Superbill For Obesity">
+
+      <mat-tab label="Superbill For Obesity" *ngIf="this.patientAddEditForm.value.BMI > 50">
         <ng-template matTabContent>
 
           <app-system-superbill></app-system-superbill>

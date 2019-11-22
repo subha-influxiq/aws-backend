@@ -80,7 +80,6 @@ export class SystemSuperbillComponent implements OnInit {
     console.log("date format",dateformat);
 
     this.patientBMIForm = this.fb.group({
-
       patientName: ['', [Validators.required, Validators.maxLength(30)]],
       gender: ['', Validators.required],
       birthDate: ['', Validators.required],
@@ -88,7 +87,6 @@ export class SystemSuperbillComponent implements OnInit {
       testDate: ['', Validators.required],
       testCompletedDate: ['', Validators.required],
       signDate : [dateformat]
-
     })
     this.getPatientData(this.activatedRoute.snapshot.params._id);
   }
@@ -110,27 +108,22 @@ export class SystemSuperbillComponent implements OnInit {
       },
       "token": this.userToken
     }
-    this.httpService.httpViaPost('datalist', data)
-      .subscribe(response => {
-        console.log(response);
-        let patientDetails: any;
-        patientDetails = response.res[0];
+
+    this.httpService.httpViaPost('datalist', data).subscribe((response) => {
         this.patientSingleData = response.res;
-        console.log("dataaa", patientDetails);
-        this.patientBMIForm.controls['patientName'].patchValue(patientDetails.patientName);
-        this.patientBMIForm.controls['physicalOrdering'].patchValue(patientDetails.physicalOrdering);
-        this.patientBMIForm.controls['gender'].patchValue(patientDetails.gender);
+        this.patientBMIForm.controls['patientName'].patchValue(response.res[0].patientName);
+        this.patientBMIForm.controls['physicalOrdering'].patchValue(response.res[0].physicalOrdering);
+        this.patientBMIForm.controls['gender'].patchValue(response.res[0].gender);
         
 
-        let dateOfBirth: any = this.datePipe.transform(patientDetails.birthDate, "dd-MM-yyyy");
+        let dateOfBirth: any = response.res[0].birthDate;
         let dobArr: any = dateOfBirth.split("-");
         this.patientBMIForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1] - 1, dobArr[0]]));
 
-        let sDateArr: any = patientDetails.testDate.split("-");
+        let sDateArr: any = response.res[0].testDate.split("-");
         this.patientBMIForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
         //   let eDateArr: any = patientDetails.testCompletedDate.split("-");
         // this.patientReportViewForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
-
       })
   }
 

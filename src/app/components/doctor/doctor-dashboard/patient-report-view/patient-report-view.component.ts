@@ -170,9 +170,9 @@ export class PatientReportViewComponent implements OnInit {
       this.patientAddEditForm.controls['PTGVLFI'].patchValue(reportDetails[0].PTGVLFI);
       this.patientAddEditForm.controls['IR'].patchValue(reportDetails[0].IR);
 
-      let dateOfBirth: any = this.datePipe.transform(reportDetails[0].birthDate, "dd-MM-yyyy");
+      let dateOfBirth: any = reportDetails[0].birthDate;
       let dobArr: any = dateOfBirth.split("-");
-      this.patientAddEditForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1] - 1, dobArr[0]]));
+      this.patientAddEditForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1], dobArr[0]]));
 
       this.patientAddEditForm.controls['ESRNO'].patchValue(reportDetails[0].ESRNO);
       this.patientAddEditForm.controls['ESRL'].patchValue(reportDetails[0].ESRL);
