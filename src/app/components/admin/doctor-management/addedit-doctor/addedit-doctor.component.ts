@@ -62,8 +62,7 @@ export class AddeditDoctorComponent implements OnInit {
     },
     {
       name:"Cardiology",
-      value:"Cardiology",
-      selected:true
+      value:"Cardiology"
     },
     {
       name:"Neurology",
@@ -144,35 +143,23 @@ export class AddeditDoctorComponent implements OnInit {
   }
 
   /*creating taxonomy inputs*/
-  createTaxoInputs()
-  {
-    this.docManageForm = new FormGroup({
-      taxonomies:this.createTaxonomies(this.myTaxonomies)
-    });
-    this.getSelectedTaxonomies();
-  }
+  // createTaxoInputs()
+  // {
+  //   this.docManageForm = new FormGroup({
+  //     taxo_list:this.createTaxonomies(this.myTaxonomies)
+  //   });
+  //   this.getSelectedTaxonomies();
+  // }
 
 
   /*creating the taxonomies*/
-  createTaxonomies(taxo_inp){
-     const arr = taxo_inp.map(tax=>{
-       return new FormControl(tax.selected || false);
-     });
-     return new FormArray(arr);
-  }
+  // createTaxonomies(taxo_inp){
+  //    const arr = taxo_inp.map(tax=>{
+  //      return new FormControl(tax.selected || false);
+  //    });
+  //    return new FormArray(arr);
+  // }
 
-
-  getSelectedTaxonomies(){
-    this.selectTaxonomyNames = _.map(
-      this.docManageForm.controls.taxonomies["controls"],
-      (tax,i) =>{
-        return tax.value && this.myTaxonomies[i].value;
-      }
-    );
-
-    console.log("selectTaxonomyNames",this.selectTaxonomyNames);
-    this.getSelectedTaxonomiesName();
-  }
 
 
   inputUntouch(form: any, val: any) {
@@ -209,7 +196,7 @@ export class AddeditDoctorComponent implements OnInit {
   // =============================Form Generator=======================
   generateAddForm() {
     this.docManageForm = this.formBuilder.group({
-      taxonomies:this.createTaxonomies(this.myTaxonomies),
+      // taxonomies:['', Validators.required],
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)]],
@@ -233,13 +220,12 @@ export class AddeditDoctorComponent implements OnInit {
     }, {
       validators: this.matchpassword('password', 'confirmpassword')
     });
-    this.getSelectedTaxonomies();
   }
 
   generateEditForm() {
   
     this.docManageForm = this.formBuilder.group({
-      taxonomies:this.createTaxonomies(this.myTaxonomies),
+      // taxonomies:['', Validators.required],
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)]],
@@ -259,7 +245,6 @@ export class AddeditDoctorComponent implements OnInit {
       taxo_list:[''] 
      
     });
-    this.getSelectedTaxonomies();
   }
 
   // ==================================================================
@@ -298,12 +283,17 @@ export class AddeditDoctorComponent implements OnInit {
   allStateCityData() {
     this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
       this.states = response;
-      this.setDefaultValue(this.defaultData);
+      if (this.params_id!= null) {
+        this.setDefaultValue(this.defaultData);
+      }
+     
     });
 
     this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(response => {
       this.allCities = response;
-      this.setDefaultValue(this.defaultData);
+      if (this.params_id!= null) {
+        this.setDefaultValue(this.defaultData);
+      }
     });
   }
   /**for getting all states & cities  function end here**/
@@ -364,9 +354,6 @@ export class AddeditDoctorComponent implements OnInit {
 
   // ============================Submit Function=======================
   onSubmit() {
-    this.getSelectedTaxonomies();
-    
-    this.docManageForm.value.taxo_list = this.selectTaxonomyNames;
     console.log("*************",this.docManageForm.value);
     let x: any;
     for (x in this.docManageForm.controls) {
@@ -376,12 +363,12 @@ export class AddeditDoctorComponent implements OnInit {
 
 
     /* stop here if form is invalid */
-    if (this.docManageForm.invalid) {
-      this.openDialog("Form is invalid");
-      setTimeout(() => {
-        this.dialogRef.close();
-      }, 2000);
-      return;
+    if (!this.docManageForm.valid) {
+      // this.openDialog("Form is invalid");
+      // setTimeout(() => {
+      //   this.dialogRef.close();
+      // }, 2000);
+      // return;
     } else {
 
       delete this.docManageForm.value.confirmpassword;
@@ -390,7 +377,7 @@ export class AddeditDoctorComponent implements OnInit {
       } else {
         this.docManageForm.value.status = parseInt("0");;
       }
-    }
+   
     /* start process to submited data */
     let postData: any = {
       "source": "users",
@@ -413,20 +400,13 @@ export class AddeditDoctorComponent implements OnInit {
     }, (error) => {
       alert("Some error occurred. Please try again.");
     });
+
+  }
+
+
   }
   // ==================================================================
 
-  /* getting the selected taxo names */
-  getSelectedTaxonomiesName(){
-     this.selectTaxonomyNames = _.filter(
-       this.selectTaxonomyNames,
-       function(tax){
-         if(tax !== false){
-           return tax;
-         }
-       }
-     )
-  }
 
   trackByFn(index) {
     return index;

@@ -66,7 +66,7 @@ export class DoctorDashboardComponent implements OnInit {
   public end_date: any;
   public billerData: any = [];
   dataSource = new MatTableDataSource(this.allDataList);
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   public allDataSource_skip: any = ["patientName"];
 
   constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService,
@@ -81,17 +81,25 @@ export class DoctorDashboardComponent implements OnInit {
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
     let matDatepicker = moment();
-  }
 
-  ngOnInit() {
+
     this.activatedRoute.data.forEach(resolveData => {
       this.allDataList = resolveData.alldata;
       console.log(this.allDataList);
-
+      this.allDataSource = new MatTableDataSource(this.allDataList);
+      this.allDataSource.paginator = this.paginator;
     });
-    this.allDataSource = new MatTableDataSource(this.allDataList);
-    this.allDataSource.paginator = this.paginator;
+
+  }
+
+  ngOnInit() {
+      this.allDataSource.paginator = this.paginator;
+   
     this.getData();
+  }
+
+  ngAfterViewInit() {
+    // this.allDataSource.paginator = this.paginator;
   }
 
   getBillerData() {
@@ -189,9 +197,11 @@ export class DoctorDashboardComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.allDataList);
     this.DoctorSigned = this.allDataList["doctorsigned-count"];
     this.Pending = this.allDataList["pending-count"];
+    console.log("Problem (Data not coming) >>--->", this.allDataList);
     this.doctorSignedArray = this.allDataList.data.doctorsigned;
     this.pendingArray = this.allDataList.data.pending;
     this.allDataSource = this.allDataList.dataFull;
+    // this.allDataSource.paginator = this.paginator;
   }
 
   viewReportProcessData(flag: string) {
@@ -200,11 +210,13 @@ export class DoctorDashboardComponent implements OnInit {
         this.headerText = "DOCTOR SIGNED REPORTS";
         this.commonArray = this.doctorSignedArray;
         this.allDataSource = new MatTableDataSource(this.commonArray);
+        this.allDataSource.paginator = this.paginator;
         break;
       case 'Report unSigned':
         this.headerText = "DOCTOR UNSIGNED REPORTS";
         this.commonArray = this.pendingArray;
         this.allDataSource = new MatTableDataSource(this.commonArray);
+        this.allDataSource.paginator = this.paginator;
         break;
       default:
         break;

@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MetaGuard } from '@ngx-meta/core';
@@ -190,7 +191,7 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'users_view_doctor',
+        source: 'users_view_doctor_list',
         condition: {}
       },
       endpoint: 'datalist'

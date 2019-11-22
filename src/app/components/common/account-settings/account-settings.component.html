@@ -84,7 +84,8 @@
                 <mat-error *ngIf="AccountSettingsForm.controls['zip'].touched && !AccountSettingsForm.controls['zip'].valid
           && AccountSettingsForm.controls['zip'].errors.required">
                     Zip field can not be blank. </mat-error>
-                    
+                </mat-form-field>
+                <mat-form-field appearance="fill">
                 <mat-label>Address</mat-label>
                 <input matInput placeholder="Address" [formControl]="AccountSettingsForm.controls['address']"
                     (blur)="inputUntouch(AccountSettingsForm,'address')" />

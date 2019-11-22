@@ -2,9 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';import { MatTableDataSource } from '@angular/material/table';
 import * as momentImported from 'moment';
 const moment = momentImported;
 
@@ -82,12 +80,10 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.allDataSource.paginator = this.paginatorAll;
-    // this.dataSource.paginator = this.paginator;
   }
 
   ngAfterViewInit() {
     this.allDataSource.paginator = this.paginatorAll;
-    // this.dataSource.paginator = this.paginator;
   }
 
   filterByName(key: string, value: string) {

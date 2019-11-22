@@ -52,7 +52,7 @@ export class AccountSettingsComponent implements OnInit {
 
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
 
-    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
     this.AccountSettingsForm = fb.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
@@ -91,10 +91,12 @@ export class AccountSettingsComponent implements OnInit {
   allStateCityData() {
     this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
       this.states = response;
+      this.SetValueForm();
     });
 
     this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(response => {
       this.allCities = response;
+      this.SetValueForm();
     });
   }
 

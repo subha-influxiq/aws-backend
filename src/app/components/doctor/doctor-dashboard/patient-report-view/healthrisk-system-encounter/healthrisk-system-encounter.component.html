@@ -1,4 +1,4 @@
-<mat-card-content class="encounter_wrapper">
+<mat-card-content class="encounter_wrapper" *ngIf="pdata !=null ">
     <form class="example-form" autocomplete="off" name="patientEncounterForm" [formGroup]="patientEncounterForm">
 
         <table class="tableone">
@@ -9,41 +9,53 @@
             </tr>
 
             <tr>
-                <td>Patient Name
-                    <input type="text" [formControl]="patientEncounterForm.controls['patientName']"
-                        (blur)="inputUntouch(patientEncounterForm,'patientName')">
+                <td>
+                    Patient Name
+                    <input type="text" [formControl]="patientEncounterForm.controls['patientName']" (blur)="inputUntouch(patientEncounterForm,'patientName')">
                 </td>
-                <td> <label>
-                        <input type="radio" value='Male' formControlName="gender">Male</label>
-                    <label><input type="radio" value='Female' formControlName="gender">Female</label> </td>
-                <td> <label>Date<input type="text"></label> </td>
+
+                <td>
+                    <label> <input type="radio" value='Male' formControlName="gender">Male </label>
+                    <label> <input type="radio" value='Female' formControlName="gender">Female</label>
+                </td>
+
+                <td>
+                    <label>Date<input type="text"></label>
+                </td>
             </tr>
+
             <tr>
-                <td>Ordering Physician
-                    <input type="text" [formControl]="patientEncounterForm.controls['physicalOrdering']"
-                        (blur)="inputUntouch(patientEncounterForm,'physicalOrdering')">
+                <td>
+                    Ordering Physician
+                    <input type="text" [formControl]="patientEncounterForm.controls['physicalOrdering']" (blur)="inputUntouch(patientEncounterForm,'physicalOrdering')" value="pdata.physicalOrdering">
                 </td>
+
                 <td> </td>
-                <td> <label>D.O.B
+                
+                <td>
+                    <label>
+                        D.O.B
                         <mat-form-field>
                             <input matInput [matDatepicker]="picker" formControlName="birthDate" id="birthDate">
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
                         </mat-form-field>
-                    </label> </td>
+                    </label>
+                </td>
             </tr>
 
             <tr>
                 <td>Physician’s Signature <input type="text"></td>
                 <td colspan="2">
                     <p class="suggest">Suggested billing amounts per CPT Code: </p>
-                    <label><input type="checkbox">95923: $410 </label>
-                    <label><input type="checkbox">95923: $410 </label>
-                    <label><input type="checkbox">95923: $410 </label><br>
-                    <label><input type="checkbox">95923: $410 </label>
-                    <label><input type="checkbox">95923: $410 </label>
+                    <label><input type="checkbox" checked>95923: $410 </label>
+                    <label><input type="checkbox" checked>95923: $410 </label>
+                    <label><input type="checkbox" checked>95923: $410 </label><br>
+                    <label><input type="checkbox" checked>95923: $410 </label>
+                    <label><input type="checkbox" checked>95923: $410 </label>
                 </td>
             </tr>
+
             <tr>
                 <td>
                     <p>1. Medicare modifier “XU” must be used on secondary CPT codes. </p>
@@ -52,15 +64,14 @@
                         Exam
                     </p>
                 </td>
+
                 <td colspan="2">
                     <label>
                         <input type="checkbox"> NO DIAGNOSIS DETECTED - SEE "ADDITIONAL POTENTIAL HEALTH RISKS" BELOW
                     </label>
                 </td>
             </tr>
-
         </table>
-
 
 
         <mat-card-content class="second_table">
@@ -74,196 +85,509 @@
                 </tr>
 
                 <tr>
-                    <td class="widther"><label class="spacer_o"><input type="checkbox"> E10.40 </label>Type 1 Diabetes
-                        W/
-                        Neurological Manifestations, Not Stated as Uncontrolled </td>
-                    <td class="widther"><label class="spacer_o"><input type="checkbox"> E85.4 </label> Organ - Limited
-                        Amyloidosis </td>
+                    <td class="widther">
+                        <label class="spacer_o">
+                            <input type="checkbox"> E10.40
+                        </label>
+                        Type 1 Diabetes W/Neurological Manifestations, Not Stated as Uncontrolled
+                    </td>
+
+                    <td class="widther">
+                        <label class="spacer_o">
+                            <input type="checkbox"> E85.4
+                        </label>
+                        Organ - Limited Amyloidosis
+                    </td>
                 </tr>
 
-
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E10.41 </label>Type 1 Diabetes Mellitus W/
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="E1041"> E10.41
+                        </label>Type 1
+                        Diabetes Mellitus W/
                         Diabetic
-                        Mononeuropathy </td>
-                    <td><label class="spacer_o"><input type="checkbox"> E85.8 </label> Other Amyloidosis </td>
-                </tr>
-                <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E10.42 </label>Type 1 Diabetes Mellitus W/
-                        Diabetic
-                        Polyneuropathy </td>
-                    <td><label class="spacer_o"><input type="checkbox"> E85. 9 </label> Amyloidosis Unspecified </td>
+                        Mononeuropathy
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="E858"> E85.8
+                        </label>
+                        Other
+                        Amyloidosis
+                    </td>
                 </tr>
 
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E10.43 </label>Type 1 Diabetes Mellitus W/
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="E1042"> E10.42
+                        </label>
+                        Type 1
+                        Diabetes Mellitus W/
                         Diabetic
-                        Autonomic (Poly) Neuropathy </td>
-                    <td><label class="spacer_o"><input type="checkbox">G23.0 </label>Hallervorden - Spatz Disease </td>
-                </tr>
-                <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E10.44 </label>Type 1 Diabetes Mellitus Diabetic
-                        Autonomic (Poly) Neuropathy </td>
-                    <td><label class="spacer_o"><input type="checkbox"> G23.1 </label>Progressive Supranuclear
-                        Ophthalmoplegia [Steele - Richardson – Olszewski ]</td>
+                        Polyneuropathy
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="E859"> E85. 9
+                        </label>
+                        Amyloidosis Unspecified
+                    </td>
                 </tr>
 
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E10.49 </label>Type 1 Diabetes Mellitus W/ Other
-                        Diabetic Neurological Complication </td>
-                    <td><label class="spacer_o"><input type="checkbox">G23.2</label>Striatonigral Degeneration </td>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="E1043"> E10.43
+                        </label>
+                        Type 1
+                        Diabetes Mellitus W/
+                        Diabetic
+                        Autonomic (Poly) Neuropathy
+                    </td>
+                    
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="G230">G23.0
+                        </label>
+                        Hallervorden
+                        - Spatz Disease
+                    </td>
                 </tr>
+
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E10.65 </label>Type 1 Diabetes (Juvenile) W/
-                        Neurological Manifestations, Uncontrolled Type 1</td>
-                    <td><label class="spacer_o"><input type="checkbox"> G23.8 </label>Other Degenerative Disease of
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="E1044"> E10.44
+                        </label>
+                        Type 1
+                        Diabetes Mellitus Diabetic
+                        Autonomic (Poly) Neuropathy
+                    </td>
+                    
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="G231"> G23.1
+                        </label>
+                        Progressive
+                        Supranuclear
+                        Ophthalmoplegia [Steele - Richardson – Olszewski ]
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="E1049"> E10.49
+                        </label>
+                        Type 1
+                        Diabetes Mellitus W/ Other
+                        Diabetic Neurological Complication
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="G232">G23.2
+                        </label>
+                        Striatonigral
+                        Degeneration
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="E1065"> E10.65
+                        </label>
+                        Type 1
+                        Diabetes (Juvenile) W/
+                        Neurological Manifestations, Uncontrolled Type 1
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="G238"> G23.8
+                        </label>
+                        Other
+                        Degenerative Disease of
                         Basal
-                        Ganglia </td>
+                        Ganglia
+                    </td>
                 </tr>
+
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E10.610 </label> Diabetes Mellitus W/ Diabetic
-                        Neurological Complications </td>
-                    <td><label class="spacer_o"><input type="checkbox"> G60.3</label>Idiopathic Progressive
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E10.610
+                        </label>
+                        Diabetes Mellitus W/ Diabetic
+                        Neurological Complications
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="G603"> G60.3
+                        </label>
+                        Idiopathic
+                        Progressive
                         Polyneuropathy
                     </td>
                 </tr>
 
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E11.9 </label> Type 2 Diabetes Mellitus Without
-                        Complications </td>
-                    <td><label class="spacer_o"><input type="checkbox"> G60.8 </label>Other Specified Idiopathic
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="E119">E11.9
+                        </label>
+                        Type 2 Diabetes Mellitus Without
+                        Complications
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> G60.8
+                        </label>
+                        Other Specified Idiopathic
                         Peripheral
-                        Neuropathy</td>
-                </tr>
-                <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E11.41 </label>Type 2 Diabetes Mellitus W/
-                        Diabetic
-                        Mononeuropathy </td>
-                    <td><label class="spacer_o"><input type="checkbox">G60.9 </label>Hereditary and Idiopathic
                         Neuropathy
-                        Unspecified </td>
+                    </td>
                 </tr>
 
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E11.42 </label>Type 2 Diabetes Mellitus W/
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E11.41
+                        </label>
+                        Type 2 Diabetes Mellitus W/
                         Diabetic
-                        Polyneuropathy </td>
-                    <td><label class="spacer_o"><input type="checkbox"> R20.2 </label>Paresthesia of Skin </td>
-                </tr>
-                <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E11.43 </label>Type 2 Diabetes W/ Autonomic
-                        Neuropathy </td>
-                    <td><label class="spacer_o"><input type="checkbox"> G90.09 </label>Other idiopathic peripheral
-                        autonomic
-                        neuropathy </td>
-                </tr>
-                <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E11.44 </label>Type 2 Diabetes Mellitus
-                        W/Diabetic
-                        Amyotrophy </td>
-                    <td><label class="spacer_o"><input type="checkbox"> G90.50 </label>Complex Regional Pain Syndrome 1
+                        Mononeuropathy
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox">G60.9
+                        </label>
+                        Hereditary and Idiopathic
+                        Neuropathy
+                        Unspecified
                     </td>
                 </tr>
+
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E11.49</label>Type 2 Diabetes Mellitus W/ Other
-                        Diabetic Neurological Complications </td>
-                    <td><label class="spacer_o"><input type="checkbox"> G90.59 </label> Reflex Sympathetic Dystrophy
-                        Unspecified</td>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="E1142"> E11.42
+                        </label>
+                        Type 2
+                        Diabetes Mellitus W/
+                        Diabetic
+                        Polyneuropathy
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> R20.2
+                        </label>
+                        Paresthesia of Skin
+                    </td>
                 </tr>
+
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox">E11.59</label>Type 2 Diabetes Mellitus W/ Other
-                        Diabetic Neurological Complications </td>
-                    <td><label class="spacer_o"><input type="checkbox"> G90.59 </label> Reflex Sympathetic Dystrophy
-                        Unspecified</td>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E11.43
+                        </label>
+                        Type 2 Diabetes W/ Autonomic
+                        Neuropathy
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> G90.09
+                        </label>
+                        Other idiopathic peripheral
+                        autonomic
+                        neuropathy
+                    </td>
                 </tr>
+
                 <tr>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E11.44
+                        </label>
+                        Type 2 Diabetes Mellitus
+                        W/Diabetic
+                        Amyotrophy
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> G90.50
+                        </label>
+                        Complex Regional Pain Syndrome 1
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="E1149"> E11.49
+                        </label>
+                        Type 2
+                        Diabetes Mellitus W/ Other
+                        Diabetic Neurological Complications
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> G90.59
+                        </label>
+                        Reflex Sympathetic Dystrophy
+                        Unspecified
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="E1159">E11.59
+                        </label>
+                        Type 2
+                        Diabetes Mellitus W/ Other
+                        Diabetic Neurological Complications
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> G90.59
+                        </label>
+                        Reflex Sympathetic Dystrophy
+                        Unspecified
+                    </td>
+                </tr>
+
+                <tr>
+<<<<<<< HEAD
                     <td><label class="spacer_o"><input type="checkbox"> E11.65 </label> Type 2 Diabetes Mellitus W/
                         Hyperglycemia </td>
                     <td><label class="spacer_o"><input type="checkbox"> R73.03 </label> Prediabetes <p class="limbs">Limbs</p> </td>
+=======
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E11.65
+                        </label>
+                        Type 2 Diabetes Mellitus W/
+                        Hyperglycemia
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="R733"> R73.03
+                        </label>
+                        Prediabetes Limbs
+                    </td>
+>>>>>>> 760f7761f430424bce2edb60f3f90ff104672a14
                 </tr>
 
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E13.40 </label>Other Specified Diabetes Mellitus
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E13.40
+                        </label>
+                        Other Specified Diabetes Mellitus
                         W/
-                        Diabetic Neuropathy Unspecified </td>
-                    <td><label class="spacer_o"><input type="checkbox"> G90.511 </label> Complex Regional Pain Syndrome
+                        Diabetic Neuropathy Unspecified
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> G90.511
+                        </label>
+                        Complex Regional Pain Syndrome
                         I of
-                        Right Upper Limb </td>
-                </tr>
-                <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E13.41 </label>Other Specified Diabetes Mellitus
-                        W/
-                        Diabetic Mononeuropathy </td>
-                    <td><label class="spacer_o"><input type="checkbox"> G90.512 </label> Complex Regional Pain Syndrome
-                        I of
-                        Left Upper Limb </td>
-                </tr>
-                <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E13.42 </label>Other Specified Diabetes Mellitus
-                        W/
-                        Diabetic Polyneuropathy </td>
-                    <td><label class="spacer_o"><input type="checkbox"> G90.513 </label> Complex Regional Pain Syndrome
-                        I of
-                        Upper Limb, Bilateral </td>
+                        Right Upper Limb
+                    </td>
                 </tr>
 
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E13.43 </label>Other Specified Diabetes Mellitus
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E13.41
+                        </label>
+                        Other Specified Diabetes Mellitus
                         W/
-                        Diabetic Autonomic (poly) Neuropathy </td>
-                    <td><label class="spacer_o"><input type="checkbox"> G90.519 </label> Complex Regional Pain Syndrome
+                        Diabetic Mononeuropathy
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> G90.512
+                        </label>
+                        Complex Regional Pain Syndrome
                         I of
-                        Unspecified Upper Limb </td>
+                        Left Upper Limb
+                    </td>
                 </tr>
 
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E13.44 </label>Other Specified Diabetes Mellitus
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E13.42
+                        </label>
+                        Other Specified Diabetes Mellitus
                         W/
-                        Diabetic Amyotrophy </td>
-                    <td><label class="spacer_o"><input type="checkbox"> G90.521 </label> Complex Regional Pain Syndrome
+                        Diabetic Polyneuropathy
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> G90.513
+                        </label>
+                        Complex Regional Pain Syndrome
                         I of
-                        Right Lower Limb </td>
+                        Upper Limb, Bilateral
+                    </td>
                 </tr>
+
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E13.49 </label>Other Specified Diabetes Mellitus
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E13.43
+                        </label>
+                        Other Specified Diabetes Mellitus
                         W/
-                        Other Diabetic Neurological Complication </td>
-                    <td><label class="spacer_o"><input type="checkbox"> G90.522</label> Complex Regional Pain Syndrome I
+                        Diabetic Autonomic (poly) Neuropathy
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> G90.519
+                        </label>
+                        Complex Regional Pain Syndrome
+                        I of
+                        Unspecified Upper Limb
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E13.44
+                        </label>
+                        Other Specified Diabetes Mellitus
+                        W/
+                        Diabetic Amyotrophy
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> G90.521
+                        </label>
+                        Complex Regional Pain Syndrome
+                        I of
+                        Right Lower Limb
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E13.49
+                        </label>
+                        Other Specified Diabetes Mellitus
+                        W/
+                        Other Diabetic Neurological Complication
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> G90.522
+                        </label>
+                        Complex Regional Pain Syndrome I
                         of
-                        Left Lower Limb </td>
+                        Left Lower Limb
+                    </td>
                 </tr>
 
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E13.610 </label> Other Specified Diabetes
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E13.610
+                        </label>
+                        Other Specified Diabetes
                         Mellitus
-                        W/ Diabetic Neuropathic Arthropathy Familial </td>
-                    <td><label class="spacer_o"><input type="checkbox">G90.523 </label> Complex Regional Pain Syndrome I
+                        W/ Diabetic Neuropathic Arthropathy Familial
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox">G90.523
+                        </label>
+                        Complex Regional Pain Syndrome I
                         of
-                        Lower Limb, Bilateral </td>
+                        Lower Limb, Bilateral
+                    </td>
                 </tr>
 
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E85.0 </label>Mediterranean Fever </td>
-                    <td><label class="spacer_o"><input type="checkbox"> G90.529 </label> Reflex Sympathetic Dystrophy of
-                        Lower Limb </td>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E85.0
+                        </label>
+                        Mediterranean Fever
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> G90.529
+                        </label>
+                        Reflex Sympathetic Dystrophy of
+                        Lower Limb
+                    </td>
                 </tr>
+
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E85.1 </label>Neuropathic Heredofamilial
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E85.1
+                        </label>
+                        Neuropathic Heredofamilial
                         Amyloidosis
                     </td>
-                    <td><label class="spacer_o"><input type="checkbox">R61</label> Generalized Hyperhidrosis </td>
-                </tr>
-                <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E85.2 </label>Heredofamilial Amyloidosis,
-                        Unspecified </td>
-                    <td> </td>
 
-                </tr>
-                <tr>
-                    <td><label class="spacer_o"><input type="checkbox"> E85.3</label>Secondary Systemic Amyloidosis
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox">R61
+                        </label>
+                        Generalized Hyperhidrosis
                     </td>
-                    <td> </td>
+                </tr>
 
+                <tr>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E85.2
+                        </label>
+                        Heredofamilial Amyloidosis,
+                        Unspecified
+                    </td>
+
+                    <td> </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox"> E85.3
+                        </label>
+                        Secondary Systemic Amyloidosis
+                    </td>
+
+                    <td> </td>
                 </tr>
 
                 <tr>
@@ -275,64 +599,181 @@
                         </p>
                     </td>
                 </tr>
+
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox">I70.0 </label>Atherosclerosis of Aorta </td>
-                    <td><label class="spacer_o"><input type="checkbox">I70.25</label>Atherosclerosis Native Arteries
-                        W/Ulceration</td>
-                </tr>
-                <tr>
-                    <td><label class="spacer_o"><input type="checkbox">I70.209</label>Atherosclerosis Native Arteries
-                        Extremities Unspecified </td>
-                    <td><label class="spacer_o"><input type="checkbox">I0.269 </label>Atherosclerosis Native Arteries W/
-                        Gangrene</td>
-                </tr>
-                <tr>
-                    <td><label class="spacer_o"><input type="checkbox">I70.219 </label>Atherosclerosis Native Arteries
-                        W/ Intermittent Claudation </td>
-                    <td><label class="spacer_o"><input type="checkbox">I70.399</label>Atherosclerosis of Bypass Graft
-                        Extremities</td>
-                </tr>
-                <tr>
-                    <td><label class="spacer_o"><input type="checkbox">I70.22 </label>Atherosclerosis Native Arteries
-                        Extremities with Rest Pain </td>
-                    <td><label class="spacer_o"><input type="checkbox">I70.499 </label>Atherosclerosis of Autologous
-                        Vein Bypass Graft Extremities</td>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox">I70.0
+                        </label>
+                        Atherosclerosis of Aorta
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox">I70.25
+                        </label>
+                        Atherosclerosis Native Arteries
+                        W/Ulceration
+                    </td>
                 </tr>
 
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox">R00.0</label>Tachycardia Unspecified Abnormal
-                        Heart Rate Rythm and Electrical Stability</td>
-                    <td><label class="spacer_o"><input type="checkbox">I70.599 </label>Atherosclerosis Non-Autologous
-                        Biological Bypass Graft</td>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="I70209">I70.209
+                        </label>Atherosclerosis Native Arteries Extremities Unspecified
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox">I0.269
+                        </label>
+                        Atherosclerosis Native Arteries W/
+                        Gangrene
+                    </td>
                 </tr>
 
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox">R55</label>Vasovagal syndrome/ Syncope and
-                        Collapse</td>
-                    <td><label class="spacer_o"><input type="checkbox">I51.9 </label>Heart Disease Unspecified</td>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox">I70.219
+                        </label>
+                        Atherosclerosis Native Arteries
+                        W/ Intermittent Claudation
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox">I70.399
+                        </label>
+                        Atherosclerosis of Bypass Graft
+                        Extremities
+                    </td>
                 </tr>
+
                 <tr>
-                    <td><label class="spacer_o"><input type="checkbox">I25.10</label>Atherosclerotic heart disease of
-                        native coronary artery without angina pectoris</td>
-                    <td><label class="spacer_o"><input type="checkbox">I72.1</label>Aneurysm of Artery Upper Extremity
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox">I70.22
+                        </label>
+                        Atherosclerosis Native Arteries
+                        Extremities with Rest Pain
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox">I70.499
+                        </label>
+                        Atherosclerosis of Autologous
+                        Vein Bypass Graft Extremities
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="R000">R00.0
+                        </label>
+                        Tachycardia Unspecified Abnormal
+                        Heart Rate Rythm and Electrical Stability
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox">I70.599
+                        </label>
+                        Atherosclerosis Non-Autologous
+                        Biological Bypass Graft
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox">R55
+                        </label>
+                        Vasovagal syndrome/ Syncope and
+                        Collapse
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="I519">I51.9
+                        </label>
+                        Heart
+                        Disease Unspecified
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="I251">I25.10
+                        </label>
+                        Atherosclerotic heart disease of
+                        native coronary artery without angina pectoris
+                    </td>
+
+                    <td>
+                        <label class="spacer_o">
+                            <input type="checkbox">I72.1
+                        </label>
+                        Aneurysm of Artery Upper Extremity
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <p>ADDITIONAL POTENTIAL HEALTH RISKS</p>
-                        <textarea class="additionalnotes additionalnotes3" [formControl]="patientEncounterForm.controls['healthRisk']"
-                        (blur)="inputUntouch(patientEncounterForm,'healthRisk')"></textarea>
+                        <textarea class="additionalnotes additionalnotes3"
+                            [formControl]="patientEncounterForm.controls['healthRisk']"
+                            (blur)="inputUntouch(patientEncounterForm,'healthRisk')"></textarea>
                     </td>
+
                     <td>
-                        <label class="spacer_o"><input type="checkbox">I72.3</label>Aneurysm of Artery Iliac Crest<br>
-                        <label class="spacer_o"><input type="checkbox">I72.4</label>Aneurysm of Artery of Lower
-                        Extremity <br>
-                        <label class="spacer_o"><input type="checkbox">I73.9 </label>Peripheral Vascular Disease,
-                        Unspecified <br>
-                        <label class="spacer_o"><input type="checkbox">Z13.9</label>Screening For Hypertension <br>
-                        <label class="spacer_o"><input type="checkbox">I10</label>Hypertension Unspecified<br>
-                        <label class="spacer_o"><input type="checkbox">195.1</label>Orthostatic Hypotension<br>
+                        <label class="spacer_o">
+                            <input type="checkbox">I72.3
+                        </label>Aneurysm of Artery Iliac Crest
+
+                        <br>
+
+                        <label class="spacer_o">
+                            <input type="checkbox">I72.4
+                        </label>
+                        Aneurysm of Artery of Lower
+                        Extremity
+
+                        <br>
+
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="I739">I73.9
+                        </label>
+                        Peripheral
+                        Vascular Disease,
+                        Unspecified
+                        <br>
+
+                        <label class="spacer_o">
+                            <input type="checkbox">Z13.9
+                        </label>
+                        Screening For Hypertension
+
+                        <br>
+
+                        <label class="spacer_o">
+                            <input type="checkbox" formControlName="I10">I10
+                        </label>
+                        Hypertension
+                        Unspecified
+
+                        <br>
+
+                        <label class="spacer_o">
+                            <input type="checkbox">195.1
+                        </label>
+                        Orthostatic Hypotension
+
+                        <br>
 
                         <p>Additional Chart Notes </p>
                         <textarea class="additionalnotes"></textarea>

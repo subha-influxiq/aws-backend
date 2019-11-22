@@ -54,7 +54,7 @@ export class AddEditComponent implements OnInit {
 
   generateAddForm(){
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
     this.adminManagementAddEditForm = this.fb.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
@@ -71,7 +71,7 @@ export class AddEditComponent implements OnInit {
 
   generateEditForm(){
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
     this.adminManagementAddEditForm = this.fb.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],

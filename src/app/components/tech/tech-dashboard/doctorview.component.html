@@ -1,0 +1,28 @@
+<mat-card *ngIf="!loader" class="modalmainwrapper">
+  <span >
+    <mat-card-subtitle>All Doctor</mat-card-subtitle>
+
+    <mat-accordion *ngFor="let doc of allDoctorData">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{doc.fullName}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+           Email:{{doc.email}}<br>
+           Phone:{{doc.phone}}<br>
+           Fax:{{doc.fax}}<br>
+           Taxonomies:{{doc.taxo_list}}
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    <button mat-button class="modalclosebtn" (click)="onNoClick()">close</button>
+  </span>
+</mat-card>
+
+
+
+
+<div *ngIf="loader"  style="display: flex; justify-content: center; align-items: center; height: 100%;">
+  <div>Please wait....</div>
+</div>

@@ -46,7 +46,7 @@ import { AdminDashboardComponent } from './components/admin/admin-dashboard/admi
 import { AddEditComponent,ChangePasswordAdminModal } from './components/admin/admin-management/add-edit/add-edit.component';
 import { ManageAdminListComponent } from './components/admin/admin-management/manage-admin-list/manage-admin-list.component';
 import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
-import { AddeditDoctorComponent, ChangePasswordDoctorModal } from './components/admin/doctor-management/addedit-doctor/addedit-doctor.component';
+import { AddeditDoctorComponent, ChangePasswordDoctorModal,  } from './components/admin/doctor-management/addedit-doctor/addedit-doctor.component';
 import { ListDoctorComponent } from './components/admin/doctor-management/list-doctor/list-doctor.component';
 import { AddEditBillerComponent ,ChangePasswordModal}from './components/admin/biller-management/add-edit-biller/add-edit-biller.component';
 import { ListingBillerComponent } from './components/admin/biller-management/listing-biller/listing-biller.component';
@@ -57,7 +57,7 @@ import { ChangePasswordComponent } from './components/common/account-settings/ch
 import { UserAddEditComponent } from './components/admin/user-management/user-add-edit/user-add-edit.component';
 
 /* >>>>------> Tech <------<<<< */
-import { TechDashboardComponent } from './components/tech/tech-dashboard/tech-dashboard.component';
+import { TechDashboardComponent,DoctorViewDialogComponent } from './components/tech/tech-dashboard/tech-dashboard.component';
 import { TechHeaderComponent } from './components/tech/tech-header/tech-header.component';
 import { AddEditPatientComponent  } from './components/tech/patient-management/add-edit-patient/add-edit-patient.component';
 import { BulkUploadComponent } from './components/tech/patient-management/bulk-upload/bulk-upload.component';
@@ -164,7 +164,8 @@ import { PatientReportViewComponent } from './components/doctor/doctor-dashboard
     DoctorOfficeAccountSettingsComponent,
     DoctorOfficeChangePasswordComponent,
     LogoutComponent,
-    PatientReportViewComponent
+    PatientReportViewComponent,
+    DoctorViewDialogComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -188,7 +189,7 @@ import { PatientReportViewComponent } from './components/doctor/doctor-dashboard
   providers: [HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }, CookieService, AuthguardService, HttpServiceService, DatePipe, CommonFunction],
   bootstrap: [AppComponent],
   entryComponents:[ChangePasswordDoctorModal,Dialogtest,ChangePasswordModal,ChangePasswordAdminModal,ChangePasswordDoctorOfficeModal
-    ,DialogBoxComponent,PasswordDialogBoxComponent,UploadDialogBoxComponent,TestComponent]
+    ,DialogBoxComponent,PasswordDialogBoxComponent,UploadDialogBoxComponent,TestComponent,DoctorViewDialogComponent]
 
 })
 export class AppModule {

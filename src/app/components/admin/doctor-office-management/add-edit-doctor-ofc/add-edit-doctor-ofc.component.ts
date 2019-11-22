@@ -79,7 +79,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
   }
   generateAddForm(){
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
     this.doctorOfficeAddEditForm = this.fb.group({
       centerName: ['', Validators.required],
       email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
@@ -98,7 +98,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
   }
   generateEditForm(){
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
     this.doctorOfficeAddEditForm = this.fb.group({
       centerName: ['', Validators.required],
       email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
