@@ -102,15 +102,15 @@ export class AddEditPatientComponent implements OnInit {
 
   getAllDoctorData(){
     var data = {
-      "source": "users_view_doctor",
-      "condition":{
-        "tech_id_object": this.cookies_id
-      },
+      "source": "users_view_doctor_list",
+      // "condition":{
+      //   "tech_id_object": this.cookies_id
+      // },
       "token": this.user_token
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
-       
+       console.log("doctor name",response);
         let result: any = {};
         result = response.res;
         this.allDoctorDataArray = result;   

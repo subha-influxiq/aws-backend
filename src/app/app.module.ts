@@ -59,7 +59,7 @@ import { UserAddEditComponent } from './components/admin/user-management/user-ad
 /* >>>>------> Tech <------<<<< */
 import { TechDashboardComponent,DoctorViewDialogComponent } from './components/tech/tech-dashboard/tech-dashboard.component';
 import { TechHeaderComponent } from './components/tech/tech-header/tech-header.component';
-import { AddEditPatientComponent  } from './components/tech/patient-management/add-edit-patient/add-edit-patient.component';
+import { AddEditPatientComponent  } from './components/admin/admin-dashboard/add-edit-patient/add-edit-patient.component';
 import { BulkUploadComponent } from './components/tech/patient-management/bulk-upload/bulk-upload.component';
 
 /* >>>>------> Doctor <------<<<< */

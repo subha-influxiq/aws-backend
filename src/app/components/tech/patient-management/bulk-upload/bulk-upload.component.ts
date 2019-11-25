@@ -15,7 +15,7 @@ import { CommonFunction } from '../../../../class/common/common-function';
 export class BulkUploadComponent implements OnInit {
 
   public configData: any = {
-    baseUrl: "http://3.15.236.141:5005/",
+    baseUrl: "https://3.15.236.141:5005/",
     endpoint: "uploads",
     size: "51200", // kb
     format: ["pdf","jpeg"], // use all small font
