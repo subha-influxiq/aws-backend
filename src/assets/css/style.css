@@ -115,7 +115,7 @@
 .DataTable table th.mat-header-cell { text-align: left; color: #fff; font-family: "RobotoBold"; font-weight: normal; font-size: 16px; }
 .DataTable table tr.mat-row:nth-child(even) {  background: #f1f1f1; }
 .DataTable table tr.mat-row:hover {  background: #fcecb2; }
-.DataTable table td span .cursor{ color: #fff; background: #cd9300; margin-right: 5px; vertical-align: middle; display: table-cell; border-right: 3px solid #fff; }
+.DataTable table td span .cursor{cursor: pointer; color: #fff; background: #cd9300; margin-right: 5px; vertical-align: middle; display: table-cell; border-right: 3px solid #fff; }
 .DataTable table td span .cursor i{ vertical-align: middle; }
 .DataTable table td span .cursor:nth-last-child(1){ border-right: none; }
 .DataTable .searchbar { padding: 0;}
