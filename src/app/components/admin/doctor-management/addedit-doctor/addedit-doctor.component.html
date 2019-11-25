@@ -204,7 +204,7 @@
       <!-- select tech name-->
 
       <mat-form-field appearance="fill">
-        <mat-label>Select Technician</mat-label>
+        <mat-label>Select Tech</mat-label>
         <mat-select formControlName="tech" multiple>
           <mat-option [value]=0>Select a tech</mat-option>
           <mat-option *ngFor="let tech of techData;" value="{{ tech._id }}">{{ tech.firstname }} {{tech.lastname}}
@@ -252,7 +252,7 @@
 
       <!-- Status -->
       <span class="status_wrapper">
-        <mat-checkbox formControlName="status">Status</mat-checkbox>
+        <mat-checkbox formControlName="status">Active</mat-checkbox>
 
       </span>
 
