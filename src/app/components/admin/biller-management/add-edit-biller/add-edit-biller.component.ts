@@ -143,12 +143,14 @@ export class AddEditBillerComponent implements OnInit {
   allStateCityData() {
     this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
       this.states = response;
-      this.getSingleData();
+      // this.getSingleData();
     });
 
     this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(response => {
       this.allCities = response;
-      this.getSingleData();
+      if(this.params_id){
+        this.getSingleData();
+      }    
     });
   }
 
