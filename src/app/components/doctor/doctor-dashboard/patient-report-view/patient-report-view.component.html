@@ -328,10 +328,18 @@
               </mat-form-field>
             </span>
           </fieldset>
-          <!-- <span class="submit_form">
+          <!-- <span clasg"
+superBill: "NA"g"
+superBill: "NA"
+user_id: 0
+user_id: 0s="submit_form">
                         <button mat-flat-button type="reset">Reset </button>
                         <button mat-flat-button type="submit"> {{ buttonText }} </button>
                     </span> -->
+                 <span  >
+                        <img class="bulkView" width=450px   src="assets/images/logo.png">
+                  </span>
+
         </form>
       </mat-card-content>
 
@@ -364,7 +372,7 @@
         </ng-template>
       </mat-tab>
 
-      <mat-tab label="Superbill For Obesity" *ngIf="this.patientAddEditForm.value.BMI > 50">
+      <mat-tab label="Superbill For Obesity" *ngIf="this.patientAddEditForm.value.BMI > 29">
         <ng-template matTabContent>
 
           <app-system-superbill></app-system-superbill>
