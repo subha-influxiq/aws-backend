@@ -22,7 +22,7 @@ public doctorOfficeAllData_skip: any = ["password","_id","type","techId","center
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";
+  public apiUrl:any;
   public tableName: any = "users";
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
@@ -41,6 +41,7 @@ public doctorOfficeAllData_skip: any = ["password","_id","type","techId","center
     public httpService: HttpServiceService) {
 
     this.user_cookie = cookie.get('jwtToken');
+    this.apiUrl = httpService.baseUrl ; 
       }
 
   ngOnInit() {

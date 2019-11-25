@@ -22,7 +22,7 @@ export class SignatureManagementComponent implements OnInit {
     let allcookies: any;
     allcookies = cookie.getAll();
     this.cookiesData = JSON.parse(allcookies.user_details);
-    console.log(this.cookiesData);
+    
     this.cookies_id = this.cookiesData._id;
     this.user_token = cookie.get('jwtToken');
     this.getDoctorSignedData();

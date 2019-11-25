@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-
+import { HttpServiceService } from '../../../../services/http-service.service';
 @Component({
   selector: 'app-listing-biller',
   templateUrl: './listing-biller.component.html',
@@ -22,7 +22,7 @@ public allUserData_skip: any = ["confirmpassword", "password",
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
   public token: any = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzExMTYzNDMsImlhdCI6MTU3MTAyOTk0M30.m7kRTmIwvk-G0qYmr0zJ9qXoFJea8fBwnIOt8d7n3bc";
-  public apiUrl: any = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";
+  public apiUrl: any ;
   public tableName: any = "users";
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
@@ -36,9 +36,12 @@ public allUserData_skip: any = ["confirmpassword", "password",
 
     };
   public user_cookie:any;
-  constructor(public activeRoute :ActivatedRoute, public cookie :CookieService) {
+  constructor(public activeRoute :ActivatedRoute, public cookie :CookieService,
+    public httpService : HttpServiceService) {
+
     this.user_cookie = cookie.get('jwtToken');
-   }
+    this.apiUrl = httpService.baseUrl;  
+  }
 
   ngOnInit() {
     this.getAllBillerData();
