@@ -48,7 +48,7 @@ export class AddEditPatientComponent implements OnInit {
       allcookies = cookie.getAll();
       
       this.cookiesData = JSON.parse(allcookies.user_details);
-      console.log("cookies data",this.cookiesData);
+     
       this.cookies_id = this.cookiesData._id;
       this.cookies_name = this.cookiesData.firstname;
       this.cookies_lastname = this.cookiesData.lastname;

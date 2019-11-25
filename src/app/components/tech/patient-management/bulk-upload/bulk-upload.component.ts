@@ -5,6 +5,8 @@ import { HttpServiceService } from '../../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material';
 import { CommonFunction } from '../../../../class/common/common-function';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
+import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-bulk-upload',
@@ -18,7 +20,7 @@ export class BulkUploadComponent implements OnInit {
     baseUrl: "https://3.15.236.141:5005/",
     endpoint: "uploads",
     size: "51200", // kb
-    format: ["pdf","jpeg"], // use all small font
+    format: ["pdf", "jpeg"], // use all small font
     type: "patient-file",
     path: "patientFile",
     prefix: "patient-file"
@@ -26,31 +28,34 @@ export class BulkUploadComponent implements OnInit {
   public techBulkUploadForm: FormGroup;
   public user_token: any;
   public images_array: any = [];
-  public cookiesData:any={};
-  public cookies_id :any;
-  public allDoctorDataArray : any = [];
+  public cookiesData: any = {};
+  public cookies_id: any;
+  public allDoctorDataArray: any = [];
+  public dialogRef: any;
+  public name :any="souresh";
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService,
-    public cookie: CookieService, public snakBar: MatSnackBar, public commonFunction: CommonFunction) {
-      this.user_token = cookie.get('jwtToken');
-      let allcookies: any;
-      allcookies = cookie.getAll();
-      
-      this.cookiesData = JSON.parse(allcookies.user_details);
-      this.cookies_id = this.cookiesData._id;
-      this.getAllDoctorData();
-      
-      /* Set Meta Data */
+    public cookie: CookieService, public snakBar: MatSnackBar, public dialog: MatDialog,
+    public commonFunction: CommonFunction) {
+    this.user_token = cookie.get('jwtToken');
+    let allcookies: any;
+    allcookies = cookie.getAll();
+
+    this.cookiesData = JSON.parse(allcookies.user_details);
+    this.cookies_id = this.cookiesData._id;
+    this.getAllDoctorData();
+
+    /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
 
     this.techBulkUploadForm = this.fb.group({
-      batchName    : ['', [Validators.required, Validators.maxLength(40)]],
-      physicalOrdering : [''],
-      uploadFile   : [],
-      status       : [1],
-      note         : ['',Validators.required],
-      user_id      :  []
+      batchName: ['', [Validators.required, Validators.maxLength(40)]],
+      physicalOrdering: [''],
+      uploadFile: [],
+      status: [1],
+      note: ['', Validators.required],
+      user_id: []
 
     })
     this.user_token = cookie.get('jwtToken');
@@ -59,23 +64,23 @@ export class BulkUploadComponent implements OnInit {
   ngOnInit() {
   }
 
-  getAllDoctorData(){
+  getAllDoctorData() {
     var data = {
       "source": "users_view_doctor",
-      "condition":{
+      "condition": {
         "tech_id_object": this.cookies_id
       },
       "token": this.user_token
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
-       
+
         let result: any = {};
         result = response.res;
-        this.allDoctorDataArray = result;   
+        this.allDoctorDataArray = result;
       })
   }
-  cancelButton(){
+  cancelButton() {
     this.router.navigateByUrl('/tech/dashboard');
   }
 
@@ -83,10 +88,23 @@ export class BulkUploadComponent implements OnInit {
     form.controls[val].markAsUntouched();
   }
 
-  
+
 
   techBulkUploadFormSubmit() {
-    console.log(this.techBulkUploadForm.value)
+    /* Open modal */
+    let modalData: any = {
+      width: '250px',
+      data: {
+        header: "Message",
+        message: "Are you sure you want to upload these reports for physician ?",
+        button1: { text: "No" },
+        button2: { text: "Yes" },
+      }
+    }
+    this.openDialog(modalData);  
+  }
+
+  bulkUploaddataSubmit(){
     if (this.configData) {
       for (const loop in this.configData.files) {
         this.images_array =
@@ -106,9 +124,7 @@ export class BulkUploadComponent implements OnInit {
     } else {
       this.techBulkUploadForm.value.uploadFile = false;
     }
-    //   for(let b in this.techBulkUploadForm.controls){
-    //   console.log(b,'---',this.techBulkUploadForm.controls[b].valid);
-    // }
+
     if(this.techBulkUploadForm.valid){
       var data = {
         "source"  : "patient_management",
@@ -129,6 +145,21 @@ export class BulkUploadComponent implements OnInit {
     }else{
       alert("error occured");
     }
+
+  }
+
+  openDialog(data) {
+    this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+    this.dialogRef.afterClosed().subscribe(result => {
+      switch (result) {
+        case "No":
+          location.reload();
+          break;
+        case "Yes":
+        this.bulkUploaddataSubmit();
+          break;
+      }
+    });
   }
 
 }
