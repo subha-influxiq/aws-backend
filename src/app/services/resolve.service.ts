@@ -18,7 +18,6 @@ export class ResolveService implements Resolve<any> {
   constructor(public cookies: CookieService, private _apiService: HttpServiceService, private router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
-   console.log(route);
     /* will come into play while editing otherwise no effect */
     var requestData: any = route.data.requestcondition;
     requestData.condition = Object.assign(requestData.condition, route.params);
@@ -28,11 +27,18 @@ export class ResolveService implements Resolve<any> {
       var allData: any = this.cookies.getAll();
       var userData = JSON.parse(allData.user_details);
       requestData.condition['user_id_object'] = userData._id;
-     
     }
     /* This one is for Tech Dashboard End */
-    
 
+    /* This one is for Doctor Dashboard Start */
+    if(route.url[0].path == 'doctor' && route.url[1].path == 'dashboard') {
+      var allData: any = this.cookies.getAll();
+      var userData = JSON.parse(allData.user_details);
+      // requestData.condition.condition['_id'] = userData._id;
+      // requestData.condition.condition1['_id'] = userData._id;
+    }
+    /* This one is for Doctor Dashboard End */
+    
     return new Promise((resolve) => {
       if(typeof route.data.requestcondition.source != 'string') {
         var returnData: any = {};
@@ -56,7 +62,6 @@ export class ResolveService implements Resolve<any> {
           return resolve(returnData);
         }, 3000);
       } else {
-        console.log("-------------");
         this._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(api_object => {
           if (api_object) {
             return resolve(api_object);

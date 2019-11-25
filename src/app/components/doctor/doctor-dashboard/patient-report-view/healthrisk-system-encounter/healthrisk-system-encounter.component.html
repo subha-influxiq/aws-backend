@@ -15,12 +15,14 @@
                 </td>
 
                 <td>
-                    <label> <input type="radio" value='Male' formControlName="gender">Male </label>
-                    <label> <input type="radio" value='Female' formControlName="gender">Female</label>
+                    <label> <input type="radio" value='Male' [formControl]="patientEncounterForm.controls['gender']">Male </label>
+                    <label> <input type="radio" value='Female' [formControl]="patientEncounterForm.controls['gender']">Female</label>
                 </td>
 
                 <td>
-                    <label>Date<input type="text"></label>
+                    <label>Date
+                        <input type="text" [formControl]="patientEncounterForm.controls['testDate']">
+                    </label>
                 </td>
             </tr>
 
@@ -36,7 +38,7 @@
                     <label>
                         D.O.B
                         <mat-form-field>
-                            <input matInput [matDatepicker]="picker" formControlName="birthDate" id="birthDate">
+                            <input matInput [matDatepicker]="picker" [formControl]="patientEncounterForm.controls['birthDate']" id="birthDate">
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
                         </mat-form-field>
@@ -48,11 +50,11 @@
                 <td>Physician’s Signature <input type="text"></td>
                 <td colspan="2">
                     <p class="suggest">Suggested billing amounts per CPT Code: </p>
-                    <label><input type="checkbox" checked>95923: $410 </label>
-                    <label><input type="checkbox" checked>95923: $410 </label>
-                    <label><input type="checkbox" checked>95923: $410 </label><br>
-                    <label><input type="checkbox" checked>95923: $410 </label>
-                    <label><input type="checkbox" checked>95923: $410 </label>
+                    <label><input type="checkbox" [formControl]="patientEncounterForm.controls['prefix_95923']">95923: $410 </label>
+                    <label><input type="checkbox" [formControl]="patientEncounterForm.controls['prefix_95943']">95943: $440 </label>
+                    <label><input type="checkbox" [formControl]="patientEncounterForm.controls['prefix_95921']">95921: $280 </label><br>
+                    <label><input type="checkbox" [formControl]="patientEncounterForm.controls['prefix_93923']">93923: $250 </label>
+                    <label><input type="checkbox" [formControl]="patientEncounterForm.controls['prefix_93922']">93922: $280 </label>
                 </td>
             </tr>
 
@@ -67,7 +69,7 @@
 
                 <td colspan="2">
                     <label>
-                        <input type="checkbox"> NO DIAGNOSIS DETECTED - SEE "ADDITIONAL POTENTIAL HEALTH RISKS" BELOW
+                        <input type="checkbox" [formControl]="patientEncounterForm.controls['no_diagnosis_detected']"> NO DIAGNOSIS DETECTED - SEE "ADDITIONAL POTENTIAL HEALTH RISKS" BELOW
                     </label>
                 </td>
             </tr>
@@ -87,14 +89,14 @@
                 <tr>
                     <td class="widther">
                         <label class="spacer_o">
-                            <input type="checkbox"> E10.40
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1040']"> E10.40
                         </label>
                         Type 1 Diabetes W/Neurological Manifestations, Not Stated as Uncontrolled
                     </td>
 
                     <td class="widther">
                         <label class="spacer_o">
-                            <input type="checkbox"> E85.4
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E854']"> E85.4
                         </label>
                         Organ - Limited Amyloidosis
                     </td>
@@ -103,7 +105,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="E1041"> E10.41
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1041']"> E10.41
                         </label>Type 1
                         Diabetes Mellitus W/
                         Diabetic
@@ -112,7 +114,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="E858"> E85.8
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E858']"> E85.8
                         </label>
                         Other
                         Amyloidosis
@@ -122,7 +124,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="E1042"> E10.42
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1042']"> E10.42
                         </label>
                         Type 1
                         Diabetes Mellitus W/
@@ -132,7 +134,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="E859"> E85. 9
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E859']"> E85. 9
                         </label>
                         Amyloidosis Unspecified
                     </td>
@@ -141,7 +143,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="E1043"> E10.43
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1043']"> E10.43
                         </label>
                         Type 1
                         Diabetes Mellitus W/
@@ -151,7 +153,7 @@
                     
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="G230">G23.0
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G230']">G23.0
                         </label>
                         Hallervorden
                         - Spatz Disease
@@ -161,7 +163,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="E1044"> E10.44
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1044']"> E10.44
                         </label>
                         Type 1
                         Diabetes Mellitus Diabetic
@@ -170,7 +172,7 @@
                     
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="G231"> G23.1
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G231']"> G23.1
                         </label>
                         Progressive
                         Supranuclear
@@ -181,7 +183,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="E1049"> E10.49
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1049']"> E10.49
                         </label>
                         Type 1
                         Diabetes Mellitus W/ Other
@@ -190,7 +192,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="G232">G23.2
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G232']">G23.2
                         </label>
                         Striatonigral
                         Degeneration
@@ -200,7 +202,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="E1065"> E10.65
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1065']"> E10.65
                         </label>
                         Type 1
                         Diabetes (Juvenile) W/
@@ -209,7 +211,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="G238"> G23.8
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G238']"> G23.8
                         </label>
                         Other
                         Degenerative Disease of
@@ -221,7 +223,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E10.610
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E10610']"> E10.610
                         </label>
                         Diabetes Mellitus W/ Diabetic
                         Neurological Complications
@@ -229,7 +231,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="G603"> G60.3
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G603']"> G60.3
                         </label>
                         Idiopathic
                         Progressive
@@ -240,7 +242,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="E119">E11.9
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E119']">E11.9
                         </label>
                         Type 2 Diabetes Mellitus Without
                         Complications
@@ -248,7 +250,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> G60.8
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G608']"> G60.8
                         </label>
                         Other Specified Idiopathic
                         Peripheral
@@ -259,7 +261,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E11.41
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1141']"> E11.41
                         </label>
                         Type 2 Diabetes Mellitus W/
                         Diabetic
@@ -268,7 +270,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox">G60.9
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G609']">G60.9
                         </label>
                         Hereditary and Idiopathic
                         Neuropathy
@@ -279,7 +281,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="E1142"> E11.42
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1142']"> E11.42
                         </label>
                         Type 2
                         Diabetes Mellitus W/
@@ -289,7 +291,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> R20.2
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['R202']"> R20.2
                         </label>
                         Paresthesia of Skin
                     </td>
@@ -298,7 +300,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E11.43
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1143']"> E11.43
                         </label>
                         Type 2 Diabetes W/ Autonomic
                         Neuropathy
@@ -306,7 +308,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> G90.09
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G9009']"> G90.09
                         </label>
                         Other idiopathic peripheral
                         autonomic
@@ -317,7 +319,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E11.44
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1144']"> E11.44
                         </label>
                         Type 2 Diabetes Mellitus
                         W/Diabetic
@@ -326,7 +328,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> G90.50
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G9050']"> G90.50
                         </label>
                         Complex Regional Pain Syndrome 1
                     </td>
@@ -335,7 +337,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="E1149"> E11.49
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1149']"> E11.49
                         </label>
                         Type 2
                         Diabetes Mellitus W/ Other
@@ -344,7 +346,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> G90.59
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G9059']"> G90.59
                         </label>
                         Reflex Sympathetic Dystrophy
                         Unspecified
@@ -354,7 +356,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="E1159">E11.59
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1159']">E11.59
                         </label>
                         Type 2
                         Diabetes Mellitus W/ Other
@@ -363,10 +365,9 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> G90.59
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G903']"> G90.3
                         </label>
-                        Reflex Sympathetic Dystrophy
-                        Unspecified
+                        Multi-System Degeneration of Autonomic Nervous System
                     </td>
                 </tr>
 
@@ -378,7 +379,7 @@
 =======
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E11.65
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1165']"> E11.65
                         </label>
                         Type 2 Diabetes Mellitus W/
                         Hyperglycemia
@@ -386,7 +387,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="R733"> R73.03
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['R733']"> R73.03
                         </label>
                         Prediabetes Limbs
                     </td>
@@ -396,7 +397,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E13.40
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1340']"> E13.40
                         </label>
                         Other Specified Diabetes Mellitus
                         W/
@@ -405,7 +406,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> G90.511
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G90511']"> G90.511
                         </label>
                         Complex Regional Pain Syndrome
                         I of
@@ -416,7 +417,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E13.41
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1341']"> E13.41
                         </label>
                         Other Specified Diabetes Mellitus
                         W/
@@ -425,7 +426,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> G90.512
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G90512']"> G90.512
                         </label>
                         Complex Regional Pain Syndrome
                         I of
@@ -436,7 +437,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E13.42
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1342']"> E13.42
                         </label>
                         Other Specified Diabetes Mellitus
                         W/
@@ -445,7 +446,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> G90.513
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G90513']"> G90.513
                         </label>
                         Complex Regional Pain Syndrome
                         I of
@@ -456,7 +457,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E13.43
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1343']"> E13.43
                         </label>
                         Other Specified Diabetes Mellitus
                         W/
@@ -465,7 +466,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> G90.519
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G90519']"> G90.519
                         </label>
                         Complex Regional Pain Syndrome
                         I of
@@ -476,7 +477,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E13.44
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1344']"> E13.44
                         </label>
                         Other Specified Diabetes Mellitus
                         W/
@@ -485,7 +486,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> G90.521
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G90521']"> G90.521
                         </label>
                         Complex Regional Pain Syndrome
                         I of
@@ -496,7 +497,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E13.49
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E1349']"> E13.49
                         </label>
                         Other Specified Diabetes Mellitus
                         W/
@@ -505,7 +506,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> G90.522
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G90522']"> G90.522
                         </label>
                         Complex Regional Pain Syndrome I
                         of
@@ -516,7 +517,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E13.610
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E13610']"> E13.610
                         </label>
                         Other Specified Diabetes
                         Mellitus
@@ -525,7 +526,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox">G90.523
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G90523']"> G90.523
                         </label>
                         Complex Regional Pain Syndrome I
                         of
@@ -536,14 +537,14 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E85.0
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E850']"> E85.0
                         </label>
                         Mediterranean Fever
                     </td>
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> G90.529
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['G90529']"> G90.529
                         </label>
                         Reflex Sympathetic Dystrophy of
                         Lower Limb
@@ -553,7 +554,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E85.1
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E851']"> E85.1
                         </label>
                         Neuropathic Heredofamilial
                         Amyloidosis
@@ -561,7 +562,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox">R61
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['R61']">R61
                         </label>
                         Generalized Hyperhidrosis
                     </td>
@@ -570,7 +571,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E85.2
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E852']"> E85.2
                         </label>
                         Heredofamilial Amyloidosis,
                         Unspecified
@@ -582,7 +583,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox"> E85.3
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['E853']"> E85.3
                         </label>
                         Secondary Systemic Amyloidosis
                     </td>
@@ -603,14 +604,14 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox">I70.0
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I700']">I70.0
                         </label>
                         Atherosclerosis of Aorta
                     </td>
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox">I70.25
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I7025']">I70.25
                         </label>
                         Atherosclerosis Native Arteries
                         W/Ulceration
@@ -620,13 +621,13 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="I70209">I70.209
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I70209']">I70.209
                         </label>Atherosclerosis Native Arteries Extremities Unspecified
                     </td>
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox">I0.269
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I0269']">I0.269
                         </label>
                         Atherosclerosis Native Arteries W/
                         Gangrene
@@ -636,7 +637,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox">I70.219
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I70219']">I70.219
                         </label>
                         Atherosclerosis Native Arteries
                         W/ Intermittent Claudation
@@ -644,7 +645,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox">I70.399
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I70399']">I70.399
                         </label>
                         Atherosclerosis of Bypass Graft
                         Extremities
@@ -654,7 +655,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox">I70.22
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I7022']">I70.22
                         </label>
                         Atherosclerosis Native Arteries
                         Extremities with Rest Pain
@@ -662,7 +663,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox">I70.499
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I70499']">I70.499
                         </label>
                         Atherosclerosis of Autologous
                         Vein Bypass Graft Extremities
@@ -672,7 +673,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="R000">R00.0
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['R000']">R00.0
                         </label>
                         Tachycardia Unspecified Abnormal
                         Heart Rate Rythm and Electrical Stability
@@ -680,7 +681,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox">I70.599
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I70599']">I70.599
                         </label>
                         Atherosclerosis Non-Autologous
                         Biological Bypass Graft
@@ -690,7 +691,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox">R55
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['R55']">R55
                         </label>
                         Vasovagal syndrome/ Syncope and
                         Collapse
@@ -698,7 +699,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="I519">I51.9
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I519']">I51.9
                         </label>
                         Heart
                         Disease Unspecified
@@ -708,7 +709,7 @@
                 <tr>
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="I251">I25.10
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I251']">I25.10
                         </label>
                         Atherosclerotic heart disease of
                         native coronary artery without angina pectoris
@@ -716,7 +717,7 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox">I72.1
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I721']">I72.1
                         </label>
                         Aneurysm of Artery Upper Extremity
                     </td>
@@ -732,13 +733,13 @@
 
                     <td>
                         <label class="spacer_o">
-                            <input type="checkbox">I72.3
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I723']">I72.3
                         </label>Aneurysm of Artery Iliac Crest
 
                         <br>
 
                         <label class="spacer_o">
-                            <input type="checkbox">I72.4
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I724']">I72.4
                         </label>
                         Aneurysm of Artery of Lower
                         Extremity
@@ -746,7 +747,7 @@
                         <br>
 
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="I739">I73.9
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I739']">I73.9
                         </label>
                         Peripheral
                         Vascular Disease,
@@ -754,14 +755,14 @@
                         <br>
 
                         <label class="spacer_o">
-                            <input type="checkbox">Z13.9
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['Z139']">Z13.9
                         </label>
                         Screening For Hypertension
 
                         <br>
 
                         <label class="spacer_o">
-                            <input type="checkbox" formControlName="I10">I10
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['I10']">I10
                         </label>
                         Hypertension
                         Unspecified
@@ -769,14 +770,14 @@
                         <br>
 
                         <label class="spacer_o">
-                            <input type="checkbox">195.1
+                            <input type="checkbox" [formControl]="patientEncounterForm.controls['prefix_1951']">195.1
                         </label>
                         Orthostatic Hypotension
 
                         <br>
 
                         <p>Additional Chart Notes </p>
-                        <textarea class="additionalnotes"></textarea>
+                        <textarea class="additionalnotes" [formControl]="patientEncounterForm.controls['additional_chart_notes']"></textarea>
                     </td>
                 </tr>
             </table>

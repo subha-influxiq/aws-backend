@@ -138,7 +138,7 @@ export class HealthRiskAnalysisComponent implements OnInit {
         let patientDetails: any;
         patientDetails = response.res[0];
         this.patientSingleData = response.res;
-        console.log("dataaa", patientDetails);
+        console.log("data >>--->", patientDetails);
         this.patientReportViewForm.controls['patientName'].patchValue(patientDetails.patientName);
         this.patientReportViewForm.controls['physicalOrderingname'].patchValue(patientDetails.physicalOrderingname);
         this.patientReportViewForm.controls['gender'].patchValue(patientDetails.gender);
@@ -163,7 +163,7 @@ export class HealthRiskAnalysisComponent implements OnInit {
         this.patientReportViewForm.controls['leaveNotes'].patchValue(patientDetails.leaveNotes);
         this.patientReportViewForm.controls['bloodPressure'].patchValue(patientDetails.bloodPressure);
 
-        let dateOfBirth: any = this.datePipe.transform(patientDetails.birthDate, "dd-MM-yyyy");
+        let dateOfBirth: any = patientDetails.birthDate;
         let dobArr: any = dateOfBirth.split("-");
         this.patientReportViewForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1] - 1, dobArr[0]]));
 
