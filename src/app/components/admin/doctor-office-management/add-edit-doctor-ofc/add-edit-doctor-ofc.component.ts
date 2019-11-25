@@ -144,10 +144,6 @@ export class AddEditDoctorOfcComponent implements OnInit {
   allStateCityData() {
     this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
       this.states = response;
-      if(this.params_id){
-        this.getResolveData();
-      }
-      
     });
 
     this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(response => {
