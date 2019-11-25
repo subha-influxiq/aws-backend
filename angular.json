@@ -58,6 +58,9 @@
                   "maximumError": "30kb"
                 }
               ]
+            },
+            "es5": {
+              "tsConfig": "./tsconfig-es5.app.json"
             }
           }
         },
@@ -69,6 +72,9 @@
           "configurations": {
             "production": {
               "browserTarget": "aws-backend:build:production"
+            },
+            "es5": {
+              "browserTarget": "aws-backend:build:es5"
             }
           }
         },

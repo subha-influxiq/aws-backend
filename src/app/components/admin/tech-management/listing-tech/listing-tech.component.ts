@@ -23,7 +23,7 @@ export class ListingTechComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";
+  public apiUrl:any;
   public tableName: any = "users";
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
@@ -46,6 +46,7 @@ export class ListingTechComponent implements OnInit {
     this.commonFunction.setTitleMetaTags();
 
       this.user_cookie = cookie.get('jwtToken');
+      this.apiUrl = httpService.baseUrl ; 
 
     }
 

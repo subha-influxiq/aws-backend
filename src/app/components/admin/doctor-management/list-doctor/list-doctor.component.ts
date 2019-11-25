@@ -30,7 +30,7 @@ export class ListDoctorComponent implements OnInit {
   searchingEndpoint:any="datalist";
   searchSourceName:any="users_view_doctor_list"
   editUrl:any = 'admin/doctor-management/edit';
-  apiUrl: any = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";
+  public apiUrl:any;
   status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public search_settings: any =
     {
@@ -45,6 +45,7 @@ export class ListDoctorComponent implements OnInit {
     private router: Router,public activatedRoute : ActivatedRoute) {
 
     this.user_cookie = cookieService.get('jwtToken');
+    this.apiUrl = http.baseUrl;
   }
 
 
