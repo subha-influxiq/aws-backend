@@ -22,12 +22,12 @@ display: flex;
 width: 100%;
 text-align: center;
 margin-top: 30px;
-justify-content: space-between;
+justify-content: center;
 margin: auto; }
 /* .add_form .submit_form button{ border-radius: 5px; background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: "RobotoBlack"; font-size: 25px; padding: 8px;
   width: 390px; border: 3px solid #d59d01; } */
 .add_form .submit_form button{ border-radius: 5px; background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: "RobotoBlack"; font-size: 25px; padding: 8px;
-width: 24%; border: 3px solid #d59d01; }
+width:270px; border: 3px solid #d59d01; margin: 8px; }
 .add_form .submit_form button:nth-child(1){ background: linear-gradient(180deg, #f2be00, #a52a08); color: #f3f3f3; border: 2px solid #bb3c0d;  }
 .add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;}
 
@@ -37,13 +37,19 @@ width: 24%; border: 3px solid #d59d01; }
 @media screen and (max-width: 1460px){
   .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; line-height: 26px;}
 }
+@media screen and (max-width: 1400px){
+  .add_form .submit_form button { width: 240px; font-size: 20px; }
+}
 @media screen and (max-width: 1366px){
-.add_form .submit_form button {font-size: 22px;}
 }
-@media screen and (max-width: 1000px){
-  .add_form .submit_form button { width: 48%; }
+@media screen and (max-width: 1199px){
+  .add_form { width: 90%; }
 }
+
+
 @media screen and (max-width: 991px){
+  .add_form .submit_form  { display: flex; flex-wrap: wrap;}
+  .add_form .submit_form button { width: 46%; }
 .techdashboard_header .mat-toolbar-row { flex-direction: column; padding: 20px;}
 .techdashboard_header .mat-toolbar-row .quotation p { margin-top: 16px; }
 }

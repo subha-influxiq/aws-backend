@@ -80,7 +80,7 @@
       <mat-form-field appearance="fill" *ngIf="action=='add'">
         <mat-label>Password</mat-label>
         <input matInput type="password" placeholder="*********" formControlName="password">
-        <mat-error *ngIf="docManageForm.controls['password']?.touched || docManageForm.controls['password'].errors 
+        <mat-error *ngIf="docManageForm.controls['password']?.touched || docManageForm.controls['password'].errors
         && docManageForm.controls['password'].errors.required">Password is required.</mat-error>
       </mat-form-field>
 
@@ -92,7 +92,7 @@
         <mat-form-field appearance="fill" *ngIf="action=='add'">
           <mat-label>Confirm Password</mat-label>
           <input type="password" matInput placeholder="**********" formControlName="confirmpassword">
-          <mat-error *ngIf="docManageForm.controls['confirmpassword']?.touched || docManageForm.controls['confirmpassword'].errors 
+          <mat-error *ngIf="docManageForm.controls['confirmpassword']?.touched || docManageForm.controls['confirmpassword'].errors
         && docManageForm.controls['confirmpassword'].errors.required">Password do not match</mat-error>
           <mat-error
             *ngIf="!docManageForm.controls['confirmpassword'].valid && docManageForm.controls['confirmpassword'].touched">
