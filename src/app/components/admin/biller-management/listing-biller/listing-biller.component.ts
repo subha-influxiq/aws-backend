@@ -24,7 +24,8 @@ public allUserData_skip: any = ["confirmpassword", "password",
   public token: any = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzExMTYzNDMsImlhdCI6MTU3MTAyOTk0M30.m7kRTmIwvk-G0qYmr0zJ9qXoFJea8fBwnIOt8d7n3bc";
   public apiUrl: any ;
   public tableName: any = "users";
-
+  previewModal_detail_skip: any = ['_id','fullNamecopy'];
+  
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
   public SearchingSourceName: any="users_view_biller";

@@ -24,8 +24,7 @@ export class ManageAdminListComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public token: any = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzExMTYzNDMsImlhdCI6MTU3MTAyOTk0M30.m7kRTmIwvk-G0qYmr0zJ9qXoFJea8fBwnIOt8d7n3bc";
-
+  public previewModal_skip : any=['_id','fullNamecopy'];
   public tableName: any = "users";
   public apiUrl: any;
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
@@ -46,7 +45,7 @@ export class ManageAdminListComponent implements OnInit {
 
     this.user_cookie = cookie.get('jwtToken');
     this.apiUrl = httpService.baseUrl;
-    console.log("fgsydfysfd", this.apiUrl);
+    
   }
 
   ngOnInit() {

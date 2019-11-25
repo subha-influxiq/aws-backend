@@ -18,6 +18,7 @@
 <lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0" 
   [datasource]="TechDashboardAllData"
   [skip]="allUserData_skip" 
+  [detail_skip_array]="previewModal_detail_skip"
   [modify_header_array]="allUserData_modify_header" 
   [apiurl]="apiUrl" 
   [sourcedata]="tableName"

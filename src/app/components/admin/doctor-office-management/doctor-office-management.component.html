@@ -15,6 +15,7 @@
 <lib-listing class="DataTable" *ngIf="doctorOfficeAllData.length>0" 
         [datasource]="doctorOfficeAllData"
         [skip]="doctorOfficeAllData_skip" 
+        [detail_skip_array]="previewModal_skip"
         [modify_header_array]="doctorOfficeAllData_modify_header" 
         [apiurl]="apiUrl" 
         [sourcedata]="tableName"

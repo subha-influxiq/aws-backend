@@ -22,7 +22,7 @@ export class ListDoctorComponent implements OnInit {
     "practicename": "Practice name", "npm": "NPI#", "status": "Status", "taxo list": "Taxonomies","fullNamecopy":"Doctor Name","biller" : "Biller Name","tech" :"Tech Name"
   };
 
-  modal_skip: any = ["_id", "tech_id", "biller_id"];
+  modal_skip: any = ["_id", "tech_id", "biller_id","created_at","fullNamecopy"];
   tableName: any = 'users';
   UpdateEndpoint: any = "addorupdatedata";
   deleteEndpoint: any = "deletesingledata";

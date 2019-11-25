@@ -19,6 +19,7 @@ public doctorOfficeAllData_skip: any = ["password","_id","type","techId","center
     "centerNamecopy":"Center Name","email":"E-Mail","phone":"Phone","address":"Address","city":"City",
     "state":"State","date":"Date Added","status":"Status","techName":"Tech Name","zip" :"Zip", "techCount": "Tech Count"
   };
+  public previewModal_skip : any=['_id','techId','centerNamecopy'];
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
