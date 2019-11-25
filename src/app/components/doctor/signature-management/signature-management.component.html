@@ -1,7 +1,7 @@
 <app-doctor-header></app-doctor-header>
 
 
-<mat-card-content class="content_wrapper" >
+<mat-card-content class="content_wrapper">
   <mat-card-content class="itemsection">
     <mat-card-content class="one uploadsign">
       <p>Manage Your Signature </p>
@@ -12,21 +12,23 @@
       <img src="../../../../assets/images/editicon.png">
     </span>
     <mat-card-content class="sign_uploader">
+      <span class="sing_box">
+        <input type="text">
+        <button class="signature_upload" (click)="openDialog()" mat-flat-button>{{ buttonText }}</button>
+      </span>
+      <h2 *ngIf="DoctorSignedData.length == 0" class="no_sign">No Signature Added</h2>
 
-      <input type="text"> 
-          <button  class="signature_upload" (click)="openDialog()" mat-flat-button>{{ buttonText }}</button>
-          <h2 *ngIf="DoctorSignedData.length == 0" class="message">No Signature Added</h2>
+      <span class="sing_box" *ngIf="DoctorSignedData.length == 0">
+        <h2 class="message">No record found.</h2>
+        <button class="signature_upload" (click)="openDialog()" mat-flat-button>Add One</button>
+
+      </span>
 
     </mat-card-content>
 
-    <span class="sign_uploader" *ngIf="DoctorSignedData.length == 0">
-      <h2 class="message">No record found.</h2>
-        <button class="signature_upload" (click)="openDialog()" mat-flat-button>Add One</button>
-
-    </span>
   </mat-card-content>
 
- 
+
 
 
   <!-- <mat-card-content class="itemsection two">
