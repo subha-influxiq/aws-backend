@@ -18,7 +18,8 @@ export class SignatureManagementComponent implements OnInit {
   public DoctorSignedData: any = [];
   public buttonText :any="Add One";
 
-  constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService, public http: HttpServiceService) {
+  constructor(public dialog: MatDialog, public commonFunction: CommonFunction,
+     public cookie: CookieService, public http: HttpServiceService) {
     let allcookies: any;
     allcookies = cookie.getAll();
     this.cookiesData = JSON.parse(allcookies.user_details);
