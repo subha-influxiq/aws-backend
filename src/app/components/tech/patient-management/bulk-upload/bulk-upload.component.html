@@ -21,37 +21,26 @@
             
               <mat-select formControlName="physicalOrdering" placeholder="Select a Doctor" >
                 <mat-option [value]=0>Select a Doctor</mat-option>
-                <mat-option *ngFor="let doc of allDoctorDataArray;" value="{{ doc._id }}"> {{ doc.fullName }}
+                <mat-option (click)="getsellabel(doc)" *ngFor="let doc of allDoctorDataArray;" value="{{ doc._id }}"> {{ doc.fullName }}
                   </mat-option>
               </mat-select>
             </mat-form-field>
         </mat-card-content>
       
-        <!-- <label>Status</label>
-      <mat-form-field   appearance="fill">
-        
-        <mat-select formControlName="status">
-          <mat-option  value="Pending">Pending</mat-option>
-          <mat-option  value="Waiting For Doctor Sign">Waiting For Doctor Sign</mat-option>
-          <mat-option  value="Doctor Signed">Doctor Signed</mat-option>
-          <mat-option  value="Send To Biller">Send To Biller</mat-option>
-          <mat-option  value="Error">Error</mat-option>
-        </mat-select>
-      </mat-form-field> -->
+       
     </mat-card-content>
      
-      <lib-file-upload [config]="configData" class="file_upload"></lib-file-upload>
+      <lib-file-upload [config]="configData" class="file_upload" ></lib-file-upload>
+      <span style="color: red;" *ngIf="!configData.files && configData.formSubmit">Please upload a file</span>
 
       <span class="patient_diagnotes">
         <label>Notes:</label>
         <mat-form-field class="example-full-width">
 
           <textarea matInput placeholder="Leave a comment" [formControl]="techBulkUploadForm.controls['note']"
-            (blur)="inputUntouch(techBulkUploadForm,'note')">
+            >
        </textarea>
-          <mat-error *ngIf="techBulkUploadForm.controls['note'].touched && !techBulkUploadForm.controls['note'].valid
-       && techBulkUploadForm.controls['note'].errors.required">
-            Notes can not be blank</mat-error>
+          
         </mat-form-field>
       </span>
       <span class="submit_form">
