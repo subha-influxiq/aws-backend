@@ -263,7 +263,7 @@ export class PatientReportViewComponent implements OnInit {
   // }
 
 
-  Imagesdelatils = [
+  ImageData = [
     "https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2018/10/29232033/report.jpg",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMZ4V1jLsEEqFkSvRlnKctb7SDysjaWlyS1GwnHYKCQ4BIKrz3",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRaioLbnw0bnKVx6GL3cae8Sfo-T3Ti1mxKWuyfQPEGarcdXLYZ",
@@ -279,13 +279,13 @@ export class PatientReportViewComponent implements OnInit {
     switch (action) {
       case 'preview':
         if (this.sliderCount == 0) {
-          this.sliderCount = this.Imagesdelatils.length - 1;
+          this.sliderCount = this.ImageData.length - 1;
         } else {
           this.sliderCount--;
         }
         break;
       case 'next':
-        if (this.sliderCount + 1 == this.Imagesdelatils.length) {
+        if (this.sliderCount + 1 == this.ImageData.length) {
           this.sliderCount = 0;
         } else {
           this.sliderCount++;

@@ -342,13 +342,13 @@
       <section>
         <mat-card-content class="document_wrapper">
           <span class="imageGallery">
-            <img [src]="Imagesdelatils[sliderCount]">
+            <img [src]="ImageData[sliderCount]">
           </span>
           <button mat-fab class="prev" (click)="playSlider('preview');"> <<</button>
            <button mat-fab class="next" (click)="playSlider('next');">>> </button>
           <!-- <button mat-fab (click)="playSlider('play');">PLAY</button> -->
 
-          <span class="itemCounter">Report {{ sliderCount + 1 }} of {{ Imagesdelatils.length }}</span>
+          <span class="itemCounter">Report {{ sliderCount + 1 }} of {{ ImageData.length }}</span>
         </mat-card-content>
       </section>
     </mat-card-content>

@@ -43,7 +43,7 @@ export class BulkUploadComponent implements OnInit {
     this.user_token = cookie.get('jwtToken');
     let allcookies: any;
     allcookies = cookie.getAll();
-   
+
 
     this.cookiesData = JSON.parse(allcookies.user_details);
     this.cookies_id = this.cookiesData._id;
@@ -94,29 +94,28 @@ export class BulkUploadComponent implements OnInit {
   /* This one is for get doctor dropdown data */
 
   getsellabel(docval:any){
-    
+
     this.selectedDoctorName=docval.fullName;
   }
- 
+
 
   techBulkUploadFormSubmit() {
-    
+
     /* Open modal */
     let modalData: any = {
-      width: '250px',
-      panelClass:'custom-dialog-panel-class',
+      panelClass:'bulkupload-dialog',
       data: {
         header: "Message",
-        message: "Are you sure you want to upload these reports for physician : [ "+ this.selectedDoctorName  + " ]?",
+        message: "Are you sure you want to upload these reports for physician :  "+ this.selectedDoctorName  + " ?",
         button1: { text: "No" },
         button2: { text: "Yes" },
       }
     }
-    this.openDialog(modalData);  
+    this.openDialog(modalData);
   }
 
   bulkUploaddataSubmit() {
-    
+
     this.configData.formSubmit = true;
     if (this.configData) {
       for (const loop in this.configData.files) {
@@ -162,7 +161,7 @@ export class BulkUploadComponent implements OnInit {
   }
 
   openDialog(data) {
-    
+
     this.dialogRef = this.dialog.open(DialogBoxComponent, data);
     this.dialogRef.afterClosed().subscribe(result => {
       switch (result) {
