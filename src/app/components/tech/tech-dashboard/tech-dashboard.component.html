@@ -63,7 +63,7 @@
 
 
 <mat-card-content class="doctor_content_wrapper">
-  <mat-card-title>Doctor You Are Working With +<a (click)="allDoctorViewModal()">({{totalDoctor}})</a></mat-card-title>
+  <mat-card-title>Doctor You Are Working With </mat-card-title>
   <mat-card-content class="table_structure">
 
 
@@ -110,6 +110,7 @@
       </mat-list-item>
     </mat-list>
   </mat-card-content>
+  <p class="doctorCount">and&nbsp; <a (click)="allDoctorViewModal()">({{totalDoctor}})</a>&nbsp;more.</p>
 </mat-card-content>
 
 

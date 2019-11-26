@@ -107,8 +107,8 @@
   border-right: 1px solid #044f82;
   width: 49%;
 }
-
-
+.doctorCount{ color: #fff; padding: 20px 16px 0; font-size: 18px; font-family: "RobotoRegular";}
+.doctorCount a{ color: #68cdff;font-weight: bold;}
 
 
 
