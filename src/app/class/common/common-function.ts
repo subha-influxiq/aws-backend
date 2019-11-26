@@ -5,6 +5,7 @@ import { MetaService } from '@ngx-meta/core';
 
 @Injectable()
 
+
 export class CommonFunction {
 
     constructor(private readonly meta: MetaService, public cookie: CookieService, public router: Router, public activeRoute: ActivatedRoute) { }

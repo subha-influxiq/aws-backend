@@ -86,3 +86,20 @@ table input[type="text"]:focus, textarea:focus{ outline: none;}
     text-transform: uppercase;
     margin-bottom: -10px;
  }
+
+ input[type="checkbox"]:checked {
+  /* box-shadow: 0 0 0 3px hotpink; */
+  position: relative;
+}
+input[type="checkbox"]:checked::before{
+  content: 'x';
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  height: auto;
+  color: #ff0707;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  border: .5px solid #807f7f;
+}

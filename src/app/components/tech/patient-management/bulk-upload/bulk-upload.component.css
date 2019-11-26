@@ -282,14 +282,14 @@ width: 390px; border: 3px solid #d59d01; }
   align-items: center;
 }
 .add_form .mat-card-content label , .add_form .patient_diagnotes label{ font-family: "RobotoMedium"; color: #01090c; font-size: 16px; margin: 0 5px}
-.add_form .mat-card-content label , 
+.add_form .mat-card-content label ,
 .add_form .patient_diagnotes label{ font-family: "RobotoMedium"; color: #01090c; font-size: 16px; margin:10px;line-height: 20px;}
 
 
 .add_form .mat-card-content .mat-checkbox { margin: 0 5px; }
 .add_form .mat-card-content ,
 .add_form .patient_diagnotes .mat-form-field {
-   
+
   position: relative;
   text-align: left;
   margin: 0 10px;

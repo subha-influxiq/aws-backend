@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, ViewChild} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpServiceService } from '../../../../services/http-service.service';
@@ -17,13 +17,14 @@ import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.compon
 export class BulkUploadComponent implements OnInit {
 
   public configData: any = {
-    baseUrl: "https://3.15.236.141:5005/",
+    baseUrl: "http://3.15.236.141:5005/",
     endpoint: "uploads",
     size: "51200", // kb
     format: ["pdf", "jpeg"], // use all small font
     type: "patient-file",
     path: "patientFile",
-    prefix: "patient-file"
+    prefix: "patient-file",
+    formSubmit: false
   }
   public techBulkUploadForm: FormGroup;
   public user_token: any;
@@ -32,7 +33,8 @@ export class BulkUploadComponent implements OnInit {
   public cookies_id: any;
   public allDoctorDataArray: any = [];
   public dialogRef: any;
-  public name :any="souresh";
+  public doctorName :any;
+  public selectedDoctorName :any;
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService,
@@ -41,6 +43,7 @@ export class BulkUploadComponent implements OnInit {
     this.user_token = cookie.get('jwtToken');
     let allcookies: any;
     allcookies = cookie.getAll();
+
 
     this.cookiesData = JSON.parse(allcookies.user_details);
     this.cookies_id = this.cookiesData._id;
@@ -54,7 +57,7 @@ export class BulkUploadComponent implements OnInit {
       physicalOrdering: [''],
       uploadFile: [],
       status: [1],
-      note: ['', Validators.required],
+      note: [''],
       user_id: []
 
     })
@@ -88,23 +91,32 @@ export class BulkUploadComponent implements OnInit {
     form.controls[val].markAsUntouched();
   }
 
+  /* This one is for get doctor dropdown data */
+
+  getsellabel(docval:any){
+
+    this.selectedDoctorName=docval.fullName;
+  }
 
 
   techBulkUploadFormSubmit() {
+
     /* Open modal */
     let modalData: any = {
-      width: '250px',
+      panelClass:'bulkupload-dialog',
       data: {
         header: "Message",
-        message: "Are you sure you want to upload these reports for physician ?",
+        message: "Are you sure you want to upload these reports for physician :  "+ this.selectedDoctorName  + " ?",
         button1: { text: "No" },
         button2: { text: "Yes" },
       }
     }
-    this.openDialog(modalData);  
+    this.openDialog(modalData);
   }
 
-  bulkUploaddataSubmit(){
+  bulkUploaddataSubmit() {
+
+    this.configData.formSubmit = true;
     if (this.configData) {
       for (const loop in this.configData.files) {
         this.images_array =
@@ -149,6 +161,7 @@ export class BulkUploadComponent implements OnInit {
   }
 
   openDialog(data) {
+
     this.dialogRef = this.dialog.open(DialogBoxComponent, data);
     this.dialogRef.afterClosed().subscribe(result => {
       switch (result) {

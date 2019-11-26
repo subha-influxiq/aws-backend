@@ -1,8 +1,7 @@
 .patient_report_wrapper{ display: flex; justify-content: space-between; flex-wrap: wrap; background: #f2f2f2;}
-.patient_report_wrapper .patient_item_section{ width: 50%; padding: 16px; box-sizing: border-box; margin-bottom: 0; height: 75vh; overflow: scroll;}
-.patient_report_wrapper .patient_item_section{ width: 50%; padding: 16px; box-sizing: border-box; margin-bottom: 0;}
-/* .patient_report_wrapper .patient_item_section:first-child{ width: 40%;}
-.patient_report_wrapper .patient_item_section:last-child{ width: 60%; } */
+.patient_report_wrapper .patient_item_section{  padding: 16px; box-sizing: border-box; margin-bottom: 0;  }
+.patient_report_wrapper .patient_item_section:first-child{ width: 40%;}
+.patient_report_wrapper .patient_item_section:last-child{ width: 60%; }
 
 /*left part css start here*/
 
@@ -83,7 +82,29 @@ width: 390px; border: 3px solid #d59d01; }
   overflow: auto;
 }
 .stickyRight{ margin-left: 40%!important;}
-
+.document_wrapper{
+  width: 100%; position: relative; margin-bottom: 0; box-shadow: 0px 4px 5px 0px #a5a5a5; border: 1px solid #43cef5; }
+.document_wrapper button{ position: absolute;
+  top: 40%; background: rgba(255,255,255,.6);
+  font-size: 18px;
+  font-family: "RobotoBold"; }
+  .document_wrapper:hover button{ background: #1dbce9; color: #fff; }
+.document_wrapper .prev{ left: 30px;}
+.document_wrapper .next{ right: 30px;}
+.imageGallery { height: 100%; display: flex; justify-content: center; align-items: center;  min-height: 500px; padding: 16px;}
+.imageGallery img{ width: 100%;
+  object-fit: cover;
+  height: 100%;
+  object-position: center center;}
+.document_wrapper .itemCounter{     display: block;
+  text-align: center;
+  margin: 0;
+  padding: 16px;
+  font-family: "Helvetica";
+  font-size: 18px;
+  background: #000000;
+  color: #fff;
+}
 /* media css */
 @media screen and (max-width: 1460px){
   .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; line-height: 26px;}
