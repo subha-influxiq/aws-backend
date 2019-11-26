@@ -107,15 +107,9 @@
 
 }
 
-.footer_section{display: block; border-top: 1px solid #c7c7c7; margin-top: 30px; }
-.footer_section .footer_content{ width: 600px; padding: 0 16px; margin: 0 auto; display: block; text-align: center; }
-.footer_section .footer_content .link{ margin-top: 10px; display: block;  }
-.footer_section .footer_content .link a:nth-of-type(1){ border-right: 1px solid #2b2b2b; padding-right: 5px; }
-.footer_section .footer_content .link a, .footer_section .footer_content .link p{ font-size: 16px; font-family: "RobotoRegular"; color: #2b2b2b; text-decoration: none;}
-
 /* table section */
 .top_header{ background: #f5ba4f; align-items: center; display: flex; justify-content: space-between; }
-.top_header .add_new{background: #ffffff; border-radius: 0; font-size: 20px; text-transform: uppercase; padding: 5px; width: 200px; font-family: "RobotoRegular";  }
+.top_header .add_new{ background: #f3f3f3; border-radius: 0; font-size: 20px; text-transform: uppercase; padding: 5px 20px; font-family: "RobotoBold"; }
 .top_header h2{ margin: 0; font-size: 40px; color: #1f1f1f; font-family: "RobotoBold"; text-transform: uppercase; }
 .admin_superbillsection { margin: 0 16px; display: block; }
 .admin_superbillsection h1{ font-size: 40px; font-family: 'RobotoBlack'; color: #002035; text-transform: uppercase; margin-bottom: 10px; margin-top: 20px; }
@@ -136,7 +130,6 @@
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle img{ max-width: 100%;}
 
 
-#menu_button{ display: none;}
 
 /* searches */
 .admin_table .action_bar{ height: auto; justify-content: space-between;}
