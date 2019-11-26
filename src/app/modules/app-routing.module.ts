@@ -44,7 +44,7 @@ import { ManageScheduleComponent } from '../components/tech/tech-dashboard/manag
 import { ListComponent } from '../components/tech/tech-dashboard/manage-calender/my-appointments/list/list.component';
 
 /* Patient Management */
-import { AddEditPatientComponent } from '../components/tech/patient-management/add-edit-patient/add-edit-patient.component';
+import { AddEditPatientComponent } from '../components/admin/admin-dashboard/add-edit-patient/add-edit-patient.component';
 
 /* Bulk Upload**/
 import { BulkUploadComponent } from '../components/tech/patient-management/bulk-upload/bulk-upload.component';
@@ -92,6 +92,7 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+  { path: 'admin/patient-management/add', component: AddEditPatientComponent, canActivate: [AuthguardService] },
   /* Account-Settings */
   { path: 'admin/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'admin/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
@@ -264,14 +265,14 @@ const routes: Routes = [
   /* Account-Settings */
   { path: 'tech/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'tech/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
-  { path: 'tech/patient-management/add', component: AddEditPatientComponent, canActivate: [AuthguardService] },
+  
 
   /* Bulk Upload */
   { path: 'tech/patient-management/bulk-upload', component: BulkUploadComponent, canActivate: [AuthguardService] },
 
-  { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent },
-  { path: 'tech/system-superbill', component: SystemSuperbillComponent },
-  { path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent },
+  { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent ,canActivate: [AuthguardService] },
+  { path: 'tech/system-superbill', component: SystemSuperbillComponent ,canActivate: [AuthguardService] },
+  { path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent,canActivate: [AuthguardService]  },
   /****************** Tech Route End *****************/
 
   /* Biller Route */

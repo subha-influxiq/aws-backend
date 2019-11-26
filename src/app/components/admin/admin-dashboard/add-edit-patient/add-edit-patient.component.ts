@@ -48,7 +48,7 @@ export class AddEditPatientComponent implements OnInit {
       allcookies = cookie.getAll();
       
       this.cookiesData = JSON.parse(allcookies.user_details);
-      console.log("cookies data",this.cookiesData);
+     
       this.cookies_id = this.cookiesData._id;
       this.cookies_name = this.cookiesData.firstname;
       this.cookies_lastname = this.cookiesData.lastname;
@@ -102,15 +102,15 @@ export class AddEditPatientComponent implements OnInit {
 
   getAllDoctorData(){
     var data = {
-      "source": "users_view_doctor",
-      "condition":{
-        "tech_id_object": this.cookies_id
-      },
+      "source": "users_view_doctor_list",
+      // "condition":{
+      //   "tech_id_object": this.cookies_id
+      // },
       "token": this.user_token
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
-       
+       console.log("doctor name",response);
         let result: any = {};
         result = response.res;
         this.allDoctorDataArray = result;   
