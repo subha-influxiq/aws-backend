@@ -169,7 +169,7 @@ export class BulkUploadComponent implements OnInit {
           location.reload();
           break;
         case "Yes":
-        this.bulkUploaddataSubmit();
+          this.bulkUploaddataSubmit();
           break;
       }
     });

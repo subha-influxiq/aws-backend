@@ -127,9 +127,28 @@
 /* Styling modal */
 .custom-modalbox{ width: 700px;}
 .custom-modalbox .mat-dialog-container { border: 4px solid #ffbc36; background: linear-gradient(0deg, #ffdfab, #99dfff); }
-.custom-modalbox .mat-dialog-container .mat-card  { background: rgba(0,0,0, 0.1); margin: 10px 0; }
+.custom-modalbox .mat-dialog-container .mat-card  { background: rgba(0,0,0, 0.1); border-radius: 0; display: flex; justify-content: center; align-items: end; margin-bottom: 16px;}
 .custom-modalbox .mat-dialog-container .mat-card  .mat-card-header-text { margin: 0; text-transform: capitalize; color: #000; font-family: "Robotomedium";}
-.custom-modalbox .mat-dialog-container .mat-button-base { background: rgb(35, 201, 255); color: #fff; text-transform: uppercase;}
+.custom-modalbox .mat-dialog-container .mat-button-base { background: rgb(185, 125, 45); color: #fff; text-transform: uppercase; width: 120px; border-radius: 0;}
+.custom-modalbox .example-card .mat-card-header { width: 280px; position: relative; }
+.custom-modalbox .example-card .mat-card-header .mat-card-title { margin-bottom: 0px; font-size: 18px; font-family: "RobotoRegular"; }
+.custom-modalbox .example-card .mat-card-header::before { content: ':'; display: inline-block; font-size: 30px; position: absolute; right: 0; top: -5px; padding-right: 16px; }
+.custom-modalbox .example-card .mat-card-content { width: 100%; }
+
+/* modal for bulk upload container */
+.bulkupload-dialog .mat-dialog-container{ background: linear-gradient(0deg, #fff1c6, #fffdf7); text-align: center;}
+.bulkupload-dialog .mat-dialog-container .mat-dialog-title { margin: 0 0 20px; display: block; margin-bottom: 0; color: #d66b1f; text-transform: uppercase;
+  font-family: "RobotoBold"; border-bottom: 1px solid; padding-bottom: 5px; }
+.bulkupload-dialog .mat-dialog-container .mat-dialog-content{ color: #313131; font-family: "RobotoRegular"; }
+.bulkupload-dialog .mat-dialog-container .mat-dialog-actions { display: flex; justify-content: center; }
+.bulkupload-dialog .mat-dialog-container .mat-dialog-actions button{ background: #25c1b3; width: 100px; border-radius: 0; color: #fff; }
+.bulkupload-dialog .mat-dialog-container .mat-dialog-actions button:last-child{ background: #ff4f4f; }
+
+/* end modal for bulk upload container */
+
+@media screen and (max-width: 1700px){
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item  .mat-list-item-content{ padding: 0 10px;}
+}
 @media screen and (max-width: 991px){
   .custom-modalbox{ width: 90%;}
 }
