@@ -81,39 +81,40 @@ export class AddEditDoctorOfcComponent implements OnInit {
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
     var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
     this.doctorOfficeAddEditForm = this.fb.group({
-      centerName: ['', Validators.required],
+      centerName: ['', [Validators.required]],
       email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phone: ['', Validators.required],
-      address: ['', Validators.required],
-      city: [''],
-      state: [''],
-      zip: ['', Validators.required],
-      date: [dateformat],
-      status: [''],
-      tech :[''],
-      type: ['doctor_office'],
+      phone: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      city: ['', []],
+      state: ['', []],
+      zip: ['', [Validators.required]],
+      date: [dateformat, []],
+      status: ['', []],
+      tech :['', []],
+      type: ['doctor_office', []],
       password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
     }, { validators: this.matchpassword('password', 'confirmpassword') })
   }
+
   generateEditForm(){
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
     var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
     this.doctorOfficeAddEditForm = this.fb.group({
-      centerName: ['', Validators.required],
+      centerName: ['', [Validators.required]],
       email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phone: ['', Validators.required],
-      address: ['', Validators.required],
-      city: [''],
-      state: [''],
-      tech :[''],
-      zip: ['', Validators.required],
-      date: [dateformat],
-      status: [''],
-      type: ['doctor_office'],
-       })
-
+      phone: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      city: ['', []],
+      state: ['', []],
+      tech :['', []],
+      zip: ['', [Validators.required]],
+      date: [dateformat, []],
+      status: ['', []],
+      type: ['doctor_office', []],
+    });
   }
+
   matchpassword(passwordkye: string, confirmpasswordkye: string) {
     return (group: FormGroup) => {
       let passwordInput = group.controls[passwordkye],
@@ -126,6 +127,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
       }
     };
   }
+
   openDialog(x: any): void {
     this.dialogRef = this.dialog.open(ChangePasswordDoctorOfficeModal, {
 
@@ -260,8 +262,8 @@ export class ChangePasswordDoctorOfficeModal {
 
     this.user_token = cookie.get('jwtToken');
     this.changePwdForm = this.fb.group({
-      password: ['', Validators.required],
-      confirmpassword: [],
+      password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
+      confirmpassword: ['', []],
     }, { validators: this.matchpassword('password', 'confirmpassword') })
 
   }
