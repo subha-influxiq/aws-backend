@@ -68,7 +68,7 @@ width: 390px; border: 3px solid #d59d01; }
 
 @media screen and (max-width: 1440px){
   .add_form  { width: 1190px;}
-  .add_form .mat-card-content label { width: 150px; margin: 0; }
+  .add_form .mat-card-content label { width: 150px; margin: 0; margin-right: 10px; }
 }
 @media screen and (max-width: 1400px){
   .add_form { width: 90%; }

@@ -1,5 +1,5 @@
 import { Component, OnInit ,ViewChild,Inject} from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl,FormGroupDirective } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl, FormGroupDirective, AbstractControl } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { HttpServiceService } from '../../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
@@ -67,6 +67,18 @@ export class AddEditComponent implements OnInit {
       password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
     }, { validator: this.machpassword('password', 'confirmpassword') })
+  }
+
+  validateEmailNotTaken(control: AbstractControl) {  
+    return (control: AbstractControl) => {
+      return this.httpService.checkingDuplicateEmail(control.value).subscribe((res) => {
+        if(res.data.length == 0) {
+          return { emailTaken: false }; 
+        } else {
+          return { emailTaken: true };
+        }
+      });
+    };
   }
 
   generateEditForm(){

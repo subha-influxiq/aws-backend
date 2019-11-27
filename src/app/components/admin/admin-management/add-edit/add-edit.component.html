@@ -50,6 +50,9 @@
           <mat-error
           *ngIf="!adminManagementAddEditForm.controls['email'].valid && !adminManagementAddEditForm.controls['email'].errors.required">
           Email is not valid</mat-error>
+
+          <!-- <mat-error *ngIf="!adminManagementAddEditForm.controls['email'].valid">
+          Email is already taken.</mat-error> -->
       </mat-form-field>
 
       <mat-form-field appearance="fill">

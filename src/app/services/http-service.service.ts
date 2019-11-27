@@ -60,6 +60,18 @@ export class HttpServiceService {
     return this.http.post(this.baseUrl + endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
   }
 
+  checkingDuplicateEmail(requestdata: any): Observable<any> {
+    let data: any = { "email": requestdata, "source": "users" };
+    /* set common header */
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.CookieService.get('jwtToken')
+      })
+    };
+
+    return this.http.post(this.baseUrl + 'duplicate-email-checking', JSON.stringify(data), httpOptions).pipe(map(res => res));
+  }
 
 }
 
