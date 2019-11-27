@@ -46,18 +46,16 @@ export class AddEditPatientComponent implements OnInit {
       this.user_token = cookie.get('jwtToken');
       let allcookies: any;
       allcookies = cookie.getAll();
-      
       this.cookiesData = JSON.parse(allcookies.user_details);
-     
       this.cookies_id = this.cookiesData._id;
       this.cookies_name = this.cookiesData.firstname;
       this.cookies_lastname = this.cookiesData.lastname;
-     
       /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
 
       // this.user_token = cookie.get('jwtToken');
       this.getAllDoctorData();
+      this.getAllTechData();
 
       this.patientAddEditForm = this.fb.group({
         patientName        :  ['', [Validators.required, Validators.maxLength(30)]],
@@ -91,7 +89,7 @@ export class AddEditPatientComponent implements OnInit {
         systolic           :  [''],
         diastolic          :  [''],
         status             :  [1],
-        user_id            :  []
+        added_by           :  []
 
       })
     }
@@ -103,17 +101,26 @@ export class AddEditPatientComponent implements OnInit {
   getAllDoctorData(){
     var data = {
       "source": "users_view_doctor_list",
-      // "condition":{
-      //   "tech_id_object": this.cookies_id
-      // },
       "token": this.user_token
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
-       console.log("doctor name",response);
+        console.log(response)
         let result: any = {};
         result = response.res;
         this.allDoctorDataArray = result;   
+      })
+  }
+
+  getAllTechData(){
+    var data = {
+      "source" : "users_view_admin",
+      "token"  : this.user_token
+    }
+    this.httpService.httpViaPost('datalist', data)
+      .subscribe((response) => {
+       console.log("doctor name",response);
+        
       })
   }
 
@@ -149,14 +156,14 @@ export class AddEditPatientComponent implements OnInit {
     this.patientAddEditForm.controls['date'].patchValue(dateformat);
     this.patientAddEditForm.controls['systolic'].patchValue(splits[0]);
     this.patientAddEditForm.controls['diastolic'].patchValue(splits[1]);
-    this.patientAddEditForm.controls['user_id'].patchValue(this.cookies_id);
+    this.patientAddEditForm.controls['added_by'].patchValue(this.cookies_id);
     delete this.patientAddEditForm.value.bloodPressure;
  
     if(this.patientAddEditForm.valid) {  
       var data :any = {
         "source" : "patient_management",
         "data" : this.patientAddEditForm.value,
-        "sourceobj": ["user_id","physicalOrdering"],
+        "sourceobj": ["physicalOrdering"],
         "token" : this.user_token
       }
 
