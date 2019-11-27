@@ -144,7 +144,7 @@
 
 
       <mat-form-field appearance="fill">
-          <mat-label>Select Technician</mat-label>
+          <mat-label>Select Taxonomies</mat-label>
           <mat-select formControlName="taxo_list" multiple>
             <mat-option [value]=0>Select a tech</mat-option>
             <mat-option *ngFor="let tech of myTaxonomies;" value="{{ tech.name }}">{{tech.name}}
