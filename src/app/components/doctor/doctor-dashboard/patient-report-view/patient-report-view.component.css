@@ -141,3 +141,11 @@ width: 390px; border: 3px solid #d59d01; }
 .techdashboard_header .mat-toolbar-row .quotation p { font-size: 16px; line-height: 22px; }
 .add_form h2 { font-size: 22px; line-height: 24px; text-align: center; }
 }
+
+/* testing purpose */
+
+.image_circle{ width: 100%;}
+.image_circle .imageGallery { display: block;}
+.image_circle .imageGallery img{ display: block;}
+.image_circle .image-row{ height: 100px; display: block;}
+.image_circle .image-row img{ width: 80px;}

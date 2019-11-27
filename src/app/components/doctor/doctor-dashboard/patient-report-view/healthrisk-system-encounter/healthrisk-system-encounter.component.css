@@ -93,6 +93,7 @@ table input[type="text"]:focus, textarea:focus{ outline: none;}
 }
 input[type="checkbox"]:checked::before{
   content: 'x';
+  /* content: '\2713'; checkmark */
   position: absolute;
   background: #fff;
   width: 100%;
@@ -102,4 +103,6 @@ input[type="checkbox"]:checked::before{
   display: flex;
   justify-content: center;
   border: .5px solid #807f7f;
+  line-height: 12px; box-sizing: border-box;
+  top: 0; border-radius: 2px; font-weight: bold;
 }
