@@ -61,18 +61,18 @@ export class AddEditTechComponent implements OnInit {
     var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
 
     this.TechManagementAddEditForm = this.fb.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
+      firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
       email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phone: ['', Validators.required],
-      address: ['', Validators.required],
-      city: ['', Validators.required],
-      state: ['', Validators.required],
-      zip: ['', Validators.required],
-      date: [dateformat],
-      type: ['tech'],
+      phone: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      state: ['', [Validators.required]],
+      zip: ['', [Validators.required]],
+      date: [dateformat, []],
+      type: ['tech', []],
       // taxo_list : [],
-      status: ['', Validators.required],
+      status: ['', []],
       password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: ['', Validators.required],
     }, { validators: this.matchpassword('password', 'confirmpassword') });
@@ -83,18 +83,18 @@ export class AddEditTechComponent implements OnInit {
     var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
 
     this.TechManagementAddEditForm = this.fb.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
+      firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
       email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phone: ['', Validators.required],
-      address: ['', Validators.required],
-      city: ['', Validators.required],
-      state: ['', Validators.required],
-      zip: ['', Validators.required],
-      date: [dateformat],
-      type: ['tech'],
+      phone: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      state: ['', [Validators.required]],
+      zip: ['', [Validators.required]],
+      date: [dateformat, []],
+      type: ['tech', []],
       // taxo_list : [],
-      status: ['', Validators.required],
+      status: ['', []],
     });
   }
 
@@ -125,8 +125,6 @@ export class AddEditTechComponent implements OnInit {
       this.TechManagementAddEditForm.controls['state'].patchValue(techDetails[0].state);
       this.TechManagementAddEditForm.controls['zip'].patchValue(techDetails[0].zip);
       this.TechManagementAddEditForm.controls['status'].patchValue(techDetails[0].status);
-      
-
     })
   }
 
@@ -136,8 +134,7 @@ export class AddEditTechComponent implements OnInit {
         confirmpasswordInput = group.controls[confirmpasswordkye];
       if (passwordInput.value !== confirmpasswordInput.value) {
         return confirmpasswordInput.setErrors({ notEquivalent: true });
-      }
-      else {
+      } else {
         return confirmpasswordInput.setErrors(null);
       }
     };
@@ -145,7 +142,6 @@ export class AddEditTechComponent implements OnInit {
 
   openDialog(x: any): void {
     this.dialogRef = this.dialog.open(Dialogtest, {
-
       data: { message: x, 'id': this.params_id }
     });
     this.dialogRef.afterClosed().subscribe(result => {
@@ -241,9 +237,8 @@ export class AddEditTechComponent implements OnInit {
             duration: 2000,
           });
           this.formDirective.resetForm();
-
-        })
-    }else{
+        });
+    } else {
     }
   }
 
@@ -268,7 +263,7 @@ export class Dialogtest {
 
     this.user_token = cookie.get('jwtToken');
     this.changePwdForm = this.fb.group({
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
     }, { validators: this.matchpassword('password', 'confirmpassword') })
 

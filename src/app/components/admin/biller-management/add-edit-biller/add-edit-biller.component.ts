@@ -64,20 +64,20 @@ export class AddEditBillerComponent implements OnInit {
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
     var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
     this.billerManagementAddEditForm = this.fb.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
+      firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
       email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phone: ['', Validators.required],
-      companyname: ['', Validators.required],
-      address: ['', Validators.required],
-      zip: ['', Validators.required],
-      city: [''],
-      state: [''],
-      date: [dateformat],
-      type : ['biller'],
-      status: ['', Validators.required],
-      password: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
-      confirmpassword: [],
+      phone: ['', [Validators.required]],
+      companyname: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      zip: ['', [Validators.required]],
+      city: ['', []],
+      state: ['', []],
+      date: [dateformat, []],
+      type: ['biller', []],
+      status: ['', []],
+      password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
+      confirmpassword: ['', []],
     }, { validators: this.matchpassword('password', 'confirmpassword') })
   }
 
@@ -85,18 +85,18 @@ export class AddEditBillerComponent implements OnInit {
     this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
     var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
     this.billerManagementAddEditForm = this.fb.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
+      firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
       email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phone: ['', Validators.required],
-      companyname: ['', Validators.required],
-      address: ['', Validators.required],
-      zip: ['', Validators.required],
-      city: ['', Validators.required],
-      state: ['', Validators.required],
-      date: [dateformat],
-      type : ['biller'],
-      status: ['', Validators.required],
+      phone: ['', [Validators.required]],
+      companyname: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      zip: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      state: ['', [Validators.required]],
+      date: [dateformat, []],
+      type : ['biller', []],
+      status: ['', []],
     })
   }
 
@@ -257,7 +257,7 @@ export class ChangePasswordModal {
     this.params_id = data.id;
     this.user_token = cookie.get('jwtToken');
     this.changePwdForm = this.fb.group({
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: [],
     }, { validators: this.matchpassword('password', 'confirmpassword') });
 
