@@ -50,6 +50,9 @@
           <mat-error
           *ngIf="!adminManagementAddEditForm.controls['email'].valid && !adminManagementAddEditForm.controls['email'].errors.required">
           Email is not valid</mat-error>
+
+          <!-- <mat-error *ngIf="!adminManagementAddEditForm.controls['email'].valid">
+          Email is already taken.</mat-error> -->
       </mat-form-field>
 
       <mat-form-field appearance="fill">
@@ -69,14 +72,14 @@
       </mat-form-field>
 
       <ng-container *ngIf ="!params_id">
-      <mat-form-field class="form-group">
+      <mat-form-field class="form-group" appearance="fill">
         <input matInput placeholder="Password" type="password"
           [formControl]="adminManagementAddEditForm.controls['password']">
         <mat-error
           *ngIf="!adminManagementAddEditForm.controls['password'].valid && adminManagementAddEditForm.controls['password'].touched">
           Password field can not be blank</mat-error>
       </mat-form-field>
-      <mat-form-field class="form-group">
+      <mat-form-field class="form-group" appearance="fill">
         <input matInput placeholder="Confirm Password" type="password"
           [formControl]="adminManagementAddEditForm.controls['confirmpassword']">
         <mat-error

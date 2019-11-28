@@ -38,6 +38,8 @@ export class AddEditPatientComponent implements OnInit {
   public tech_id:any;
   public cookies_name:any;
   public cookies_lastname:any;
+  public doctorNameId : any;
+  public allTechArray : any = [];
   
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
@@ -46,24 +48,23 @@ export class AddEditPatientComponent implements OnInit {
       this.user_token = cookie.get('jwtToken');
       let allcookies: any;
       allcookies = cookie.getAll();
-      
       this.cookiesData = JSON.parse(allcookies.user_details);
-     
       this.cookies_id = this.cookiesData._id;
       this.cookies_name = this.cookiesData.firstname;
       this.cookies_lastname = this.cookiesData.lastname;
-     
       /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
 
       // this.user_token = cookie.get('jwtToken');
       this.getAllDoctorData();
+      // this.getAllTechData();
 
       this.patientAddEditForm = this.fb.group({
         patientName        :  ['', [Validators.required, Validators.maxLength(30)]],
         gender             :  ['', Validators.required],
         birthDate          :  ['',Validators.required],
         physicalOrdering   :  ['' ],
+        tech               :  [''],
         testDate           :  ['',Validators.required],
         date               :  ['',Validators.required],
         testCompletedDate  :  ['',Validators.required],
@@ -91,7 +92,7 @@ export class AddEditPatientComponent implements OnInit {
         systolic           :  [''],
         diastolic          :  [''],
         status             :  [1],
-        user_id            :  []
+        added_by           :  []
 
       })
     }
@@ -103,17 +104,33 @@ export class AddEditPatientComponent implements OnInit {
   getAllDoctorData(){
     var data = {
       "source": "users_view_doctor_list",
-      // "condition":{
-      //   "tech_id_object": this.cookies_id
-      // },
       "token": this.user_token
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
-       console.log("doctor name",response);
         let result: any = {};
         result = response.res;
         this.allDoctorDataArray = result;   
+      })
+  }
+
+  getDoctorId(value:string){
+    this.doctorNameId = value;
+    this.getAllTechData();
+  }
+
+  getAllTechData(){
+    var data = {
+      "source" : "users_view_doctor",
+      "condition" : {
+          "_id_object" : this.doctorNameId
+      },
+      "token"  : this.user_token
+    }
+    this.httpService.httpViaPost('datalist', data)
+      .subscribe((response) => {
+       let result :any = response.res;
+       this.allTechArray = result;
       })
   }
 
@@ -149,14 +166,14 @@ export class AddEditPatientComponent implements OnInit {
     this.patientAddEditForm.controls['date'].patchValue(dateformat);
     this.patientAddEditForm.controls['systolic'].patchValue(splits[0]);
     this.patientAddEditForm.controls['diastolic'].patchValue(splits[1]);
-    this.patientAddEditForm.controls['user_id'].patchValue(this.cookies_id);
+    this.patientAddEditForm.controls['added_by'].patchValue(this.cookies_id);
     delete this.patientAddEditForm.value.bloodPressure;
  
     if(this.patientAddEditForm.valid) {  
       var data :any = {
         "source" : "patient_management",
         "data" : this.patientAddEditForm.value,
-        "sourceobj": ["user_id","physicalOrdering"],
+        "sourceobj": ["physicalOrdering","tech"],
         "token" : this.user_token
       }
 

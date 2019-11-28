@@ -2,13 +2,20 @@ import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MetaService } from '@ngx-meta/core';
+import {
+    FormBuilder,
+    FormGroup,
+    Validators,
+    AbstractControl
+  } from '@angular/forms';
+import { HttpServiceService } from '../../services/http-service.service';
 
 @Injectable()
 
 
 export class CommonFunction {
 
-    constructor(private readonly meta: MetaService, public cookie: CookieService, public router: Router, public activeRoute: ActivatedRoute) { }
+    constructor(public httpServiceService: HttpServiceService, private readonly meta: MetaService, public cookie: CookieService, public router: Router, public activeRoute: ActivatedRoute) { }
 
     setTitleMetaTags(): any {
         let url = this.router.url;
