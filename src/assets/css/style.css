@@ -205,7 +205,7 @@
   padding: 0px 10px;
 }
 .add_form .file_upload .uploadfilecontainer { width: 100%;}
-.admin_table{ width: 95%; margin: 20px auto; display: block;}
+.admin_table{ width: 100%; margin: 20px auto; display: block;}
 .admin_table table{ width: 100%; }
 
 .admin_table table tr td:nth-child(4) span{
