@@ -53,7 +53,7 @@ export class AdminDashboardComponent implements OnInit {
   public signedStatusArray: any = [];
   public billerStatusArray: any = [];
   public displayedColumns: string[] = ['no', 'date_added', 'patientName', 'record_type', 'techName', 'record', 'status'];
-  public allDataColumns: string[] = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'doctorName', 'record', 'superBill', 'date', 'patientNamecopy', 'status'];
+  public allDataColumns: string[] = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'doctorName', 'record', 'superBill', 'date', 'patientNamecopy', 'status','editRecord'];
   public startDate: any;
   public endDate: any;
   public statusFlag : any;

@@ -10,13 +10,13 @@ import { HttpServiceService } from '../../../../services/http-service.service';
 export class ListingBillerComponent implements OnInit {
 public allBillerData:any=[];
 public allUserData_skip: any = ["confirmpassword", "password", 
-"created_at","id","updated_at", "_id","type","phoneno","taxo_list","fullName"];
+"created_at","id","updated_at", "_id","type","phoneno","taxo_list","fullName","city","state","zip"];
   public editUrl: any = "admin/biller-management/edit";
   public allUserData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name",
     "email": "E-Mail", "phone": "Phone Number", "date": "Date Added",
-    "status": "Status","address" : "Address","zip" : "Zip","companyname":"Company Name",
-    "city":"City","state" : "State","fullNamecopy":"Name"
+    "status": "Status","address" : "Address","companyname":"Company Name",
+    "fullNamecopy":"Name"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";

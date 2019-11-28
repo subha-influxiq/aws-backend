@@ -35,7 +35,7 @@ export class AddEditTechComponent implements OnInit {
   public allCities: any;
   public cities: any;
   public params_id: any;
-  public htmlText: any = { header: 'Add New Technician', nav: 'Add Technician', buttonText: 'Save' };
+  public htmlText: any = { header: 'Add New Technician', nav: 'Add Tech', buttonText: 'Save' };
   public user_token: any;
   public taxo_array: any = [];
   public headerText: any = "add technician";

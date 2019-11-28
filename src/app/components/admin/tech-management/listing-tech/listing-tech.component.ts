@@ -13,14 +13,14 @@ import { CommonFunction } from '../../../../class/common/common-function';
 export class ListingTechComponent implements OnInit {
   public allUserData: any = [];
   public allUserData_skip: any = ["_id", "created_at","password","id",
-  "updated_at","type","phoneno","taxo_list","fullName"];
+  "updated_at","type","phoneno","taxo_list","fullName","city","state","zip"];
   public editUrl: any = "admin/tech-management/edit";
   public allUserData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name",
-    "email": "E-Mail", "city": "City", "address": "Address", "state": "State", "zip": "Zip",
-    "status": "Status","phone":"Phone Number","date":"Data Added","fullNamecopy" :"Name"
+    "email": "E-Mail",  "address": "Address","status": "Status","phone":"Phone Number"
+    ,"date":"Data Added","fullNamecopy" :"Name"
   };
-  previewModal_detail_skip: any = ['_id','fullNamecopy'];
+  public previewModal_detail_skip: any = ['_id','fullNamecopy'];
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";

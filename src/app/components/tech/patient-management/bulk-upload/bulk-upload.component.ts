@@ -77,7 +77,6 @@ export class BulkUploadComponent implements OnInit {
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
-
         let result: any = {};
         result = response.res;
         this.allDoctorDataArray = result;
@@ -115,7 +114,7 @@ export class BulkUploadComponent implements OnInit {
   }
 
   bulkUploaddataSubmit() {
-
+   
     this.configData.formSubmit = true;
     if (this.configData) {
       for (const loop in this.configData.files) {

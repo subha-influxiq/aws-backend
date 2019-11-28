@@ -111,6 +111,7 @@ export class AddEditPatientComponent implements OnInit {
         let result: any = {};
         result = response.res;
         this.allDoctorDataArray = result;   
+      
       })
   }
 
