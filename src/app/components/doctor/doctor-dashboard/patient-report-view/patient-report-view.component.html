@@ -344,8 +344,9 @@
           <span class="imageGallery">
             <img [src]="ImageData[sliderCount]">
           </span>
-          <button mat-fab class="prev" (click)="playSlider('preview');"> <<</button>
-           <button mat-fab class="next" (click)="playSlider('next');">>> </button>
+          <button mat-fab class="prev" (click)="playSlider('preview');">
+            <<</button> <button mat-fab class="next" (click)="playSlider('next');">>>
+          </button>
           <!-- <button mat-fab (click)="playSlider('play');">PLAY</button> -->
 
           <span class="itemCounter">Report {{ sliderCount + 1 }} of {{ ImageData.length }}</span>
@@ -376,6 +377,8 @@
             <app-system-superbill></app-system-superbill>
 
           </ng-template>
+
+
         </mat-tab>
       </mat-tab-group>
 
@@ -756,5 +759,12 @@
     </mat-toolbar>
 
     </ng-container> -->
+
+
+
+
+
+
+
 
 <app-admin-footer></app-admin-footer>

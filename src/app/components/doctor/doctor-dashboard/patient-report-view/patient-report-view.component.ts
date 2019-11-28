@@ -276,6 +276,7 @@ export class PatientReportViewComponent implements OnInit {
   public sliderCount: number = 0;
 
   playSlider(action: string) {
+
     switch (action) {
       case 'preview':
         if (this.sliderCount == 0) {
@@ -304,6 +305,8 @@ export class PatientReportViewComponent implements OnInit {
       //   break;
     }
   }
+
+
 
 
 }

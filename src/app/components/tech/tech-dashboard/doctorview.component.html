@@ -1,28 +1,40 @@
-<mat-card *ngIf="!loader" class="modalmainwrapper">
-  <span >
-    <mat-card-subtitle>All Doctor</mat-card-subtitle>
+<span *ngIf="!loader" class="modalmainwrapper">
 
-    <mat-accordion *ngFor="let doc of allDoctorData">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              {{doc.fullName}}
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-           Email:{{doc.email}}<br>
-           Phone:{{doc.phone}}<br>
-           Fax:{{doc.fax}}<br>
-           Taxonomies:{{doc.taxo_list}}
-        </mat-expansion-panel>
-      </mat-accordion>
+    <mat-card-subtitle class="main_title">Doctors You are Working With</mat-card-subtitle>
 
-    <button mat-button class="modalclosebtn" (click)="onNoClick()">close</button>
-  </span>
-</mat-card>
+    <!-- <mat-accordion>
+      <mat-expansion-panel *ngFor="let doc of allDoctorData">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{doc.fullName}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        Email:{{doc.email}}<br>
+        Phone:{{doc.phone}}<br>
+        Fax:{{doc.fax}}<br>
+        Taxonomies:{{doc.taxo_list}}
+      </mat-expansion-panel>
+    </mat-accordion> -->
 
 
 
 
-<div *ngIf="loader"  style="display: flex; justify-content: center; align-items: center; height: 100%;">
+<mat-card-content class="allDocGrid">
+  <mat-card-content class="allItem" *ngFor="let doc of allDoctorData">
+    <h3 class="header"> {{doc.fullName}}</h3>
+    <p class="otherDetails"> <label> Email: </label>{{doc.email}}</p>
+    <p class="otherDetails"> <label> Phone: </label>{{doc.phone}}</p>
+    <p class="otherDetails"> <label> Fax: </label>{{doc.fax}}</p>
+    <p class="otherDetails"> <label> Taxonomies: </label>{{doc.taxo_list}}</p>
+
+    <span class="items_counter">**</span>
+  </mat-card-content>
+</mat-card-content>
+<mat-toolbar class="button_w">
+<button mat-button class="modalclosebtn" (click)="onNoClick()">close</button>
+</mat-toolbar>
+</span>
+
+<div *ngIf="loader" style="display: flex; justify-content: center; align-items: center; height: 100%;">
   <div>Please wait....</div>
 </div>

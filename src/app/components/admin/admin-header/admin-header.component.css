@@ -1,76 +1,24 @@
 /* header css */
 
-.techdashboard_header {
-  height: auto;
-}
-
-.techdashboard_header .logo_wrapper {
-  max-width: 200px;
+.techdashboard_header { height: auto; padding: 0; background: #fff; box-shadow: 0px 2px 7px 2px #b7b7b7; margin: 20px 0; }
+.techdashboard_header .header_wrapper{ width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;}
+.techdashboard_header .logo_wrapper { max-width: 160px; display: block; cursor: pointer; flex: none; }
+.techdashboard_header .logo_wrapper:focus { outline: none; border: none; }
+.techdashboard_header .logo_wrapper img { max-width: 100%; vertical-align: middle; }
+.techdashboard_header .quotation { margin-bottom: 0px; }
+.techdashboard_header .quotation p { font-family: "RobotoMedium"; font-size: 30px; color: #002035; text-transform: uppercase; margin: 0; }
+.techdashboard_header .profile_section button { padding-top: 8px; }
+.techdashboard_header .profile_section { display: -webkit-box;  display: -ms-flexbox;  display: flex;  border-left: 1px solid #ada9a9;  padding-left: 5px;  margin-bottom: 0;
+  -webkit-box-pack: center;  -ms-flex-pack: center;  justify-content: center;  -webkit-box-align: center;  -ms-flex-align: center;  align-items: center; }
+.techdashboard_header .profile_section .username { padding-right: 10px;
   display: block;
-  cursor: pointer; flex: none;
-}
+  font-family: "AvenirRoman";
+  font-size: 16px;
+  color: #1f1f1f;}
 
-.techdashboard_header .logo_wrapper:focus {
-  outline: none;
-  border: none;
-}
+.techdashboard_header .quotation .mat-list-base { display: -webkit-box; display: -ms-flexbox; display: flex; padding-top: 0; }
 
-.techdashboard_header .logo_wrapper img {
-  max-width: 100%;
-  vertical-align: middle;
-}
-
-.techdashboard_header {
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0 40px;
-}
-
-.techdashboard_header .quotation {
-  margin-bottom: 0px;
-}
-
-.techdashboard_header .quotation p {
-  font-family: "RobotoMedium";
-  font-size: 30px;
-  color: #002035;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.techdashboard_header .profile_section button {
-  padding-top: 8px;
-}
-
-.techdashboard_header .profile_section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border-left: 1px solid #e2dede;
-  padding-left: 20px;
-  margin-bottom: 0;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.techdashboard_header .profile_section .username {
-  padding-right: 20px;
-  display: block;
-}
-
-.techdashboard_header .quotation .mat-list-base {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-top: 0;
-}
-
-.techdashboard_header .quotation .mat-list-base .mat-list-item:before {
+/* .techdashboard_header .quotation .mat-list-base .mat-list-item:before {
   content: "";
   left: -15px;
   width: 2px;
@@ -79,26 +27,28 @@
   display: inline-block;
   position: absolute;
   top: 35%;
-}
-
-.techdashboard_header .quotation .mat-list-base .mat-list-item:nth-child(1):before {
-  content: "";
-  width: 2px;
-  height: 0px;
-  background: #1c1c1c;
-  display: inline-block;
-  position: absolute;
-  top: 35%;
+} */
+.techdashboard_header .quotation .mat-nav-list .mat-list-item {
+  margin: 0;
+  position: relative;
+  font-family: "AvenirMedium";
+  font-size: 16px;
+  color: #767676;
 }
 
 .active {
-  color: #c18500!important;
+  color: #000000!important;
+  /* border-bottom: 3px solid #fecb00; position: relative; */
+}
+.active::before{
+  content: '';
+  width: 100%;
+  height: 4px;
+  background: #fecb00;
+  position: absolute;
+  bottom: -25px;
 }
 
-.techdashboard_header .quotation .mat-nav-list .mat-list-item {
-  margin: 0 16px;
-  position: relative;
-}
 
 /*End header css */
 
@@ -106,11 +56,12 @@
   display: none;
 }
 
-@media screen and (max-width: 1700px) {
-  .techdashboard_header .logo_wrapper { max-width: 160px; }
-  .techdashboard_header .quotation .mat-nav-list .mat-list-item { margin: 0 8px; }
-}
 
+@media screen and (max-width: 1540px) {
+
+  .techdashboard_header .header_wrapper { width: 1280px; }
+
+}
 @media screen and (max-width: 1500px) {
   .techdashboard_header .quotation .mat-nav-list .mat-list-item {
     margin: 0px;
@@ -122,11 +73,8 @@
   .content_wrapper .itemsection {
     padding-bottom: 36px;
   }
-  .techdashboard_header .quotation .mat-list-base .mat-list-item:before {
-    content: "";
-    left: -3px;
-    width: 2px;
-  }
+  .techdashboard_header .logo_wrapper { max-width: 120px; }
+  .active::before { bottom: -13px; }
 }
 
 @media screen and (max-width: 1440px) {
@@ -137,28 +85,17 @@
 }
 
 @media screen and (max-width: 1400px) {
-  .techdashboard_header .quotation p {
-    font-size: 20px;
-    text-align: center;
-    line-height: 22px;
-    white-space: normal;
-  }
-  .techdashboard_header {
-    padding: 0 20px;
-  }
-  .techdashboard_header .logo_wrapper{ max-width: 135px; }
+  .techdashboard_header .header_wrapper {width: 95%; }
 }
 
 @media screen and (max-width: 1366px) {
-  .techdashboard_header .quotation .mat-nav-list .mat-list-item {
-    margin: 0;
-  }
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item { margin: 0; }
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item{ margin: 0; }
+  .techdashboard_header .profile_section .username { font-size: 14px; }
 }
 
 @media screen and (max-width: 1280px) {
-  .techdashboard_header .profile_section {
-    padding-left: 8px;
-  }
+  .techdashboard_header .profile_section { padding-left: 8px; }
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-base .mat-list-item .mat-list-item-content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -241,11 +178,22 @@
     -ms-flex-direction: column;
     flex-direction: column;
   }
-  .techdashboard_header .quotation .mat-nav-list .mat-list-item {
-    font-size: 18px;
-  }
+
 }
 
+@media screen and (max-width: 1100px) {
+  .techdashboard_header .header_wrapper { width: 100%; flex-direction: column;   box-sizing: border-box; }
+  .techdashboard_header .logo_wrapper { max-width: 160px; }
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item { font-size: 16px; }
+  .techdashboard_header .profile_section { padding-left: 0; border: none; }
+  .techdashboard_header .profile_section .username { font-size: 16px; }
+  .active {
+    color: #000000!important;
+    border-bottom: 3px solid #fecb00; position: relative;
+  }
+  .active::before{
+    content: ''; display: none;}
+}
 @media screen and (max-width: 1080px) {
   .doctor_content_wrapper {
     padding: 40px 20px;

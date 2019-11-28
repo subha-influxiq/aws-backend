@@ -61,7 +61,7 @@ export class TechDashboardComponent implements OnInit {
   /**lib-listing start here**/
 
   public allUserData: any = [];
-  
+
   public user_id: any;
   public user_token: any;
   public techDashboardAllData: any = [];
@@ -110,8 +110,8 @@ export class TechDashboardComponent implements OnInit {
   ngAfterViewInit() {
     this.techDashboardAllData.paginator = this.paginator;
   }
-  
-  
+
+
 
   getTechData() {
     var data = {
@@ -216,22 +216,22 @@ export class TechDashboardComponent implements OnInit {
         this.headerText = "Reports Uploaded";
         this.commonArray = this.reportUploadedArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
-        this.dataSource.paginator = this.paginatorAll; 
+        this.dataSource.paginator = this.paginatorAll;
         this.dataSource.sort = this.sort;
         break;
       case 'processed':
         this.headerText = "Reports Processed";
         this.commonArray = this.reportProcessedArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
-       
-        this.dataSource.paginator = this.paginatorAll; 
+
+        this.dataSource.paginator = this.paginatorAll;
         this.dataSource.sort = this.sort;
         break;
       case 'remainProcess':
         this.headerText = "Reports Remain to Process";
         this.commonArray = this.reportRemainingArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
-        this.dataSource.paginator = this.paginatorAll; 
+        this.dataSource.paginator = this.paginatorAll;
         this.dataSource.sort = this.sort;
         break;
       default:
@@ -241,7 +241,7 @@ export class TechDashboardComponent implements OnInit {
 
   /**All doctor deatls view in modal */
 allDoctorViewModal(){
-//  console.log("allDoctorViewModal"); 
+//  console.log("allDoctorViewModal");
  //dialog function
   const dialogGenreRef = this.dialog.open(DoctorViewDialogComponent, {
     panelClass: ['modal-sm', 'infomodal'],
@@ -259,6 +259,7 @@ allDoctorViewModal(){
 @Component({
   selector: 'doctor-dialog',
   templateUrl: 'doctorview.component.html',
+  styleUrls: ['./tech-dashboard.component.css']
 })
 export class DoctorViewDialogComponent {
   public user_token: any;
@@ -269,9 +270,9 @@ export class DoctorViewDialogComponent {
   public loader: boolean = true;
 
   constructor(public dialogRef: MatDialogRef<DoctorViewDialogComponent>,@Inject(MAT_DIALOG_DATA) public data: DialogData,public cookie: CookieService, public http: HttpClient,
-    public httpService: HttpServiceService,) { 
+    public httpService: HttpServiceService,) {
 
-      
+
       this.allData = cookie.getAll()
       this.user_data = JSON.parse(this.allData.user_details);
       this.user_token = cookie.get('jwtToken');
@@ -292,10 +293,10 @@ export class DoctorViewDialogComponent {
             this.allDoctorData=response.res;
             //console.log(this.allDoctorData);
           }
-         
+
         })
     }
-    
+
   public onNoClick(): void {
     this.dialogRef.close();
   }
