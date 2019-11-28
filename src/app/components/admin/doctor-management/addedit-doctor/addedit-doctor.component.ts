@@ -336,6 +336,9 @@ export class AddeditDoctorComponent implements OnInit {
         this.doctorOfficeData = response.res;
       })
   }
+  redirectToListingPage(){
+    this.router.navigateByUrl('/admin/doctor-management');
+  }
 
   /**getting all the biller data**/
   getAllBillerData() {
@@ -393,7 +396,9 @@ export class AddeditDoctorComponent implements OnInit {
         this.snackBar.open(this.message, action, {
           duration: 2000,
         });
-        this.router.navigateByUrl('/admin/doctor-management')
+        setTimeout(() => {
+          
+        }, 1000);
       } else {
         alert("Some error occurred. Please try again");
       }

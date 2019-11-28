@@ -57,7 +57,37 @@
   font-style: normal;
 }
 
+/* new font face AVENier */
+@font-face {
+  font-family: 'AvenirMedium';
+  src: url('../fonts/AvenirLTStd-Medium.woff2') format('woff2'),
+      url('../fonts/AvenirLTStd-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'AvenirBlack';
+  src: url('../fonts/AvenirLTStd-Black.woff2') format('woff2'),
+      url('../fonts/AvenirLTStd-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirLight';
+  src: url('../fonts/AvenirLTStd-Light.woff2') format('woff2'),
+      url('../fonts/AvenirLTStd-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AvenirRoman';
+  src: url('../fonts/AvenirLTStd-Roman.woff2') format('woff2'),
+      url('../fonts/AvenirLTStd-Roman.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 :root {
@@ -67,14 +97,15 @@
 
   /* background-image: linear-gradient(40deg, #feca00, #1dbce9); */
 
-
+/* heder css */
+.techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 12px; }
+.techdashboard_header .quotation .mat-nav-list .mat-list-item:first-child .mat-list-item-content { padding-left: 0px; }
+.techdashboard_header .quotation .mat-nav-list .mat-list-item:last-child .mat-list-item-content { padding-right: 0px; }
 .main_wrapper{
    display: flex;
    height: 100%;
    justify-content: flex-start;
    align-items: center;
-   /* background-image: linear-gradient(145deg, #f0b800, #3ebff4); */
-   /* background-image: linear-gradient(145deg, #f9e7b0, #b3e1f5); */
    background: url(../images/doctorImage.png) no-repeat;
    background-position: left bottom;
    background-size: 835px;
@@ -140,18 +171,13 @@
 .bulkupload-dialog .mat-dialog-container .mat-dialog-title { margin: 0 0 20px; display: block; margin-bottom: 0; color: #d66b1f; text-transform: uppercase;
   font-family: "RobotoBold"; border-bottom: 1px solid; padding-bottom: 5px; }
 .bulkupload-dialog .mat-dialog-container .mat-dialog-content{ color: #313131; font-family: "RobotoRegular"; }
-.bulkupload-dialog .mat-dialog-container .mat-dialog-actions { display: flex; justify-content: center; }
+.bulkupload-dialog .mat-dialog-container .mat-dialog-actions { display: flex; justify-content: flex-end}
 .bulkupload-dialog .mat-dialog-container .mat-dialog-actions button{ background: #25c1b3; width: 100px; border-radius: 0; color: #fff; }
 .bulkupload-dialog .mat-dialog-container .mat-dialog-actions button:last-child{ background: #ff4f4f; }
 
 /* end modal for bulk upload container */
 
-@media screen and (max-width: 1700px){
-  .techdashboard_header .quotation .mat-nav-list .mat-list-item  .mat-list-item-content{ padding: 0 10px;}
-}
-@media screen and (max-width: 991px){
-  .custom-modalbox{ width: 90%;}
-}
+
 .title_wrapper{ background: linear-gradient(45deg, #efa03f, #32a9f5);
   color: #fff;
   text-transform: uppercase;
@@ -179,7 +205,7 @@
   padding: 0px 10px;
 }
 .add_form .file_upload .uploadfilecontainer { width: 100%;}
-.admin_table{ width: 95%; margin: 20px auto; display: block;}
+.admin_table{ width: 100%; margin: 20px auto; display: block;}
 .admin_table table{ width: 100%; }
 
 .admin_table table tr td:nth-child(4) span{
@@ -230,4 +256,6 @@
    box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 } */
 
-.infomodal{ overflow: auto;}
+.infomodal{ overflow: auto; width: 991px;}
+/* admin css */
+.admin_wrapper{ width: 1400px; margin: 20px auto; box-sizing: border-box;}

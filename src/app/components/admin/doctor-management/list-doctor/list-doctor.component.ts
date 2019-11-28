@@ -13,30 +13,31 @@ export class ListDoctorComponent implements OnInit {
 
 
   // ===============================Declarations=========================
-  docData: any = [];
-  docData_skip: any = ["_id", "created_at", "password", "confirmpassword",
+  public  docData: any = [];
+  public docData_skip: any = ["_id", "created_at", "password", "confirmpassword",
    "taxonomies","password","confirmpassword","practicename","address","type","fullName","tech_id",
    "biller_id","doctorsOfficeName", "city", "state", "zip"];
-  docData_modify_header: any = {
+  public docData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name", "email": "Email", "phone": "Phone",
-    "practicename": "Practice name", "npm": "NPI#", "status": "Status", "taxo list": "Taxonomies","fullNamecopy":"Doctor Name","biller" : "Biller Name","tech" :"Tech Name"
+    "practicename": "Practice name", "npm": "NPI#", "status": "Status", "taxo list": "Taxonomies","fullNamecopy":"Doctor Name","biller" : "Biller Name",
+    "tech" :"Tech Name","date" : "Date"
   };
 
-  modal_skip: any = ["_id", "tech_id", "biller_id","created_at","fullNamecopy"];
-  tableName: any = 'users';
-  UpdateEndpoint: any = "addorupdatedata";
-  deleteEndpoint: any = "deletesingledata";
-  user_cookie: any;
-  searchingEndpoint:any="datalist";
-  searchSourceName:any="users_view_doctor_list"
-  editUrl:any = 'admin/doctor-management/edit';
+  public modal_skip: any = ["_id", "tech_id", "biller_id","created_at","fullNamecopy"];
+  public tableName: any = 'users';
+  public UpdateEndpoint: any = "addorupdatedata";
+  public deleteEndpoint: any = "deletesingledata";
+  public user_cookie: any;
+  public searchingEndpoint:any="datalist";
+  public searchSourceName:any="users_view_doctor_list"
+  public editUrl:any = 'admin/doctor-management/edit';
   public apiUrl:any;
-  status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
+  public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
       textsearch: [{ label: "Search By Name", field: 'fullName' },
-      // {label:"Search by Taxonomy",field:'taxo_list'},
+      {label:"Search by Taxonomy",field:'taxo_list'},
       { label: "Search By E-Mail", field: 'email' }]
     };
   // ====================================================================
@@ -51,8 +52,9 @@ export class ListDoctorComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.data.subscribe(resolveData => {
+
       this.docData = resolveData.data.res;
-      console.log("DATALIST",this.docData);
+      
     });
   }
 
