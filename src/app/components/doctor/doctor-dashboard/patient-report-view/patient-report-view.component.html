@@ -382,22 +382,6 @@
         </mat-tab>
       </mat-tab-group>
 
-
-
-      <section class="image_circle">
-        <span class="imageGallery">
-          <img src="{{ ImageData[counter] }}">
-        </span>
-        <span class="image-row">
-          <span *ngFor="let item of ImageData; let i = index;">
-            <img src="{{ item }}" (click)="cilckable(i)">
-          </span>
-
-          <button mat-fab (click)="cilckable(i, 'next');">>></button>
-          <button mat-fab (click)="cilckable(i, 'prev');"><<</button>
-        </span>
-      </section>
-
     </mat-card-content>
 
   </mat-card-content>

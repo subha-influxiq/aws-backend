@@ -48,8 +48,8 @@
 
 .table_structure .mat-list-item p{ display: block; width: 100%; margin: 0; }
 
-.table_structure .mat-list-item .title_n{ color: #5aa8ed; font-size: 30px; font-family: "RobotoMedium"; font-weight: normal; text-transform: uppercase;  }
-.table_structure .mat-list-item .title_a{ color: #fff; font-size: 24px; font-family: "RobotoRegular";  text-transform: uppercase; }
+.table_structure .mat-list-item .title_n{ color: #5aa8ed; font-size: 24px; font-family: "RobotoMedium"; font-weight: normal; text-transform: uppercase;  }
+.table_structure .mat-list-item .title_a{ color: #fff; font-size: 18px; font-family: "RobotoRegular";  text-transform: uppercase; }
 .mat-form-field-flex {
   display: inline-flex;
   align-items: baseline;
@@ -70,49 +70,87 @@
 .patient_report_section .patient_top_search h1{ font-size: 32px; text-transform: uppercase;  color: #002035; margin: auto;}
 .patient_report_section .patient_top_search .search_bar button:focus{ outline: none; }
 .patient_report_section .button_action button{  border-radius: 5px;
-  background: linear-gradient(180deg, #f9dc19, #daa505);
-  color: #5e3619;
-  text-transform: uppercase;
-  font-family: "RobotoBlack";
-  font-size: 25px;
-  padding: 10px;
-  width: 400px;    border: 3px solid #d59d01; }
+  background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: "RobotoBlack"; font-size: 25px; padding: 10px; width: 400px; border: 3px solid #d59d01; }
   .techTable{ width: 100%;}
 
   .patient_report_section .button_action{ display: flex; justify-content: center; }
 
 .top_header{ background: #f5ba4f; align-items: center; display: flex; justify-content: center; }
 .top_header h2{ margin: 0; font-size: 40px; color: #1f1f1f; font-family: "RobotoBold"; text-transform: uppercase; }
-@media screen and (max-width: 1240px){
 
-  .doctor_content_wrapper { padding: 30px; }
-  .doctor_content_wrapper .table_structure { width: 100%; display: block; }
-  .table_structure .mat-list-item .title_n { font-size: 24px; }
-  .table_structure .mat-list-item .title_a { font-size: 18px; }
-  .doctor_content_wrapper .mat-card-title { font-size: 34px; margin-bottom: 16px; }
-
-}
-.table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
-  display: inline-flex;
-  height: auto;
-  -webkit-tap-highlight-color: transparent;
-  width: auto;
-  padding: 0;
-  color: #fff;
-  border-right: 1px solid #044f82;
-  width: 49%;
-}
+.table_structure .mat-list-base .mat-list-item,
+.mat-list-base .mat-list-option { display: inline-flex; height: auto; -webkit-tap-highlight-color: transparent; width: auto; padding: 0; color: #fff; border-right: 1px solid #044f82;
+  width: 49%; margin-bottom: 10px; }
 .doctorCount{ color: #fff; padding: 20px 16px 0; font-size: 18px; font-family: "RobotoRegular";}
-.doctorCount a{ color: #68cdff;font-weight: bold;}
+.doctorCount a{ color: #68cdff;font-weight: bold; cursor: pointer;}
+
+.allDocGrid{ display: flex; justify-content: center; flex-wrap: wrap; }
+.allDocGrid .allItem{ width: 32%;
+  margin: 1%;
+  padding: 16px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 7px -1px #d27200; position: relative; text-align: center;
+}
+.allDocGrid .allItem .items_counter{
+  /* content: '';
+  display: block;
+  font-size: 20px;
+  font-family: "RobotoBold";
+  color: #fff;
+  clip-path: polygon(100% -3%, 0% 100%, 0 0);
+  background: #fda300;
+  background: #462121;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 3px;
+  text-align: left; */
+  display: none;
+}
+.allDocGrid .allItem .header{
+  padding: 0 10px;
+  font-family: "RobotoBold";
+  color: #462121;
+  font-size: 18px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+.allDocGrid .allItem .otherDetails{ color: #3a2323;
+  font-size: 14px;
+  font-family: "Helvetica";
+  margin-bottom: 0;
+  margin-top: 10px;}
+  .allDocGrid .allItem .otherDetails label{
+  font-family: "RobotoMedium";
+  }
+
+.allDocGrid .allItem:nth-child(3n+1){ margin-left: 0; }
+.allDocGrid .allItem:nth-child(3n+3){ margin-right: 0; }
+.modalmainwrapper .button_w{ align-items: center; justify-content: flex-end;}
+.modalmainwrapper .button_w button{ background: #fb0505;
+  color: #fff;
+  font-size: 18px;
+  font-family: "RobotoBold";
+  border-radius: 0;
+  text-transform: capitalize;}
+
+.modalmainwrapper .main_title{ color: #0e0000;
+  display: block;
+  text-align: center;
+  font-family: "RobotoBold";
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-bottom: 16px;
+  background: #f9f9f9;
+  padding: 16px;
+  box-shadow: 0px 0px 3px 0px #fda300;}
 
 
 
 
-
-
-
-
-
+/* media css */
 
 @media screen and (max-width: 1700px){
   .content_wrapper .itemsection p { font-size: 26px; }
@@ -133,8 +171,14 @@
 @media screen and (max-width: 1400px){
 .techdashboard_header .mat-toolbar-row .quotation p { font-size: 20px; text-align: center; line-height: 22px; white-space: normal; }
 }
-
 @media screen and (max-width: 1240px){
+
+  .doctor_content_wrapper { padding: 30px; }
+  .doctor_content_wrapper .table_structure { width: 100%; display: block; }
+  .table_structure .mat-list-item .title_n { font-size: 24px; }
+  .table_structure .mat-list-item .title_a { font-size: 18px; }
+  .doctor_content_wrapper .mat-card-title { font-size: 34px; margin-bottom: 16px; }
+
   .doctor_content_wrapper{ background: #012035; }
 }
 @media screen and (max-width: 1199px){

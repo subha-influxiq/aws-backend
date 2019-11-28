@@ -15,31 +15,39 @@
 .techdashboard_header .mat-toolbar-row .quotation .mat-nav-list .mat-list-item { margin: 0 16px; }
 
 /*End header css */
-.content_wrapper{ display: flex; justify-content: space-between;  align-items: center; width: 99%; margin: auto;
-  text-align: center; }
-.content_wrapper .itemsection{width: 33%; margin: 14px 7px; padding: 15px; box-sizing: border-box; display: flex; flex-direction: column; min-height: 200px; align-items: center;
-  justify-content: center; position: relative;}
-.one{ background: url("../../../../assets/images/admindashcontentbg1.jpg") no-repeat center center; background-size: cover; }
-.two{ background: url("../../../../assets/images/admindashcontentbg2.jpg") no-repeat center center; background-size: cover; }
-.three{ background: url("../../../../assets/images/admindashcontentbg3.jpg") no-repeat center center; background-size: cover; }
-.content_wrapper .itemsection button{ position: absolute;
-  right: 0; bottom: 0; background: rgba(0,0,0, 0.4); color: #fff; font-family: "RobotoRegular"; font-size: 15px;  border-radius: 0; text-transform: uppercase; }
-.content_wrapper .itemsection .counteer{ width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border: 1px solid rgba(0,0,0,0.1);
-  background: rgba(0,0,0, 0.2);
-  box-shadow: 2px 2px 2px 2px transparent;
+.content_wrapper{ display: flex; justify-content: space-between;  align-items: center; width: 100%; margin: auto; text-align: center; }
+.content_wrapper .itemsection{width: 33%;
+  margin: 0px 7px;
+  box-sizing: border-box;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 50px;
-  font-family: "RobotoBlack";
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid #e8e9ef;  overflow: hidden;  }
+  .content_wrapper .itemsection .button_wrapper{ background: #4d545a; width: 23%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+
+    .content_wrapper .itemsection .icon{  display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      width: 22%;
+      box-sizing: border-box;}
+    .content_wrapper .itemsection .button_wrapper button{     width: auto;
+      background: transparent;
+      color: #fff;
+      padding: 0;
+      font-family: "AvenirMedium";
+      font-size: 15px;
 }
-.content_wrapper .itemsection p{   line-height: 28px; font-family: "RobotoBlack"; font-size: 30px; color: #fff; text-transform: uppercase; width: auto; margin: 20px auto; margin-top: 15px;}
+.content_wrapper .itemsection .counteer { box-sizing: border-box; width: 55%; padding: 5px; text-align: left; }
+.content_wrapper .itemsection .counteer .dataCount{ font-size: 48px; font-family: "AvenirBlack";  color: #4d545a; margin: 0;}
+.content_wrapper .itemsection .counteer .doctorNumber{ font-size: 18px; font-family: "AvenirMedium";  color: #4d545a; margin:0;}
 
-
-
+.content_wrapper .itemsection:nth-child(3n+1){ margin-left: 0;}
+.content_wrapper .itemsection:nth-child(3n+3){ margin-right: 0;}
 
 .doctor_content_wrapper{
   background: url("../../../../assets/images/doctorcontentbg.jpg") no-repeat center center;
@@ -111,22 +119,37 @@
 .top_header{ background: #f5ba4f; align-items: center; display: flex; justify-content: space-between; }
 .top_header .add_new{ background: #f3f3f3; border-radius: 0; font-size: 20px; text-transform: uppercase; padding: 5px 20px; font-family: "RobotoBold"; }
 .top_header h2{ margin: 0; font-size: 40px; color: #1f1f1f; font-family: "RobotoBold"; text-transform: uppercase; }
-.admin_superbillsection { margin: 0 16px; display: block; }
-.admin_superbillsection h1{ font-size: 40px; font-family: 'RobotoBlack'; color: #002035; text-transform: uppercase; margin-bottom: 10px; margin-top: 20px; }
+.admin_superbillsection {display: block; }
+.admin_superbillsection h1{ font-size: 20px;
+  font-family: 'AvenirMedium';
+  color: #535353;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  border-bottom: 1px solid #9c9c9c;
+  padding-bottom: 6px; }
 .admin_superbillsection .biller_wrapper  { display: flex; justify-content: center;}
-.admin_superbillsection .biller_wrapper .super_bill_item{ width: 24%; margin: .5%; padding:0px; display: flex; flex-direction: row-reverse;}
-.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(1){ background: #00c0ef;}
-.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(2){ background: #de4b39;}
-.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(3){ background: #7a65f2;}
-.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(4){ background: #d73a87;}
+.admin_superbillsection .biller_wrapper .super_bill_item{ width: 24%; margin: .5%; padding:0px; display: flex;  }
+.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(1){ background: #4099ff;}
+.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(2){ background: #ab8ce4;}
+.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(3){ background: #26c6da;}
+.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(4){ background: #ff5370;}
 .admin_superbillsection .biller_wrapper .super_bill_item span{display: flex; flex-direction: column; align-items: self-end; width: 83%; box-sizing: border-box; padding: 16px 5px; padding-right: 34px;}
 .admin_superbillsection .biller_wrapper .super_bill_item span h2{ color: #fff; font-size: 60px; text-transform: uppercase; font-family: 'RobotoBlack'; margin: 0;}
-.admin_superbillsection .biller_wrapper .super_bill_item span P{ line-height: 30px; color: #fff; font-size: 30px; text-transform: uppercase; font-family: 'RobotoBlack'; margin: 0; margin-bottom: 16px;}
+.admin_superbillsection .biller_wrapper .super_bill_item span P{ color: #fff;
+  font-size: 24px;
+  font-family: 'AvenirMedium';
+  margin: 0;
+  margin-bottom: 16px;
+  text-shadow: 1px 1px 0px #dadada;}
 .admin_superbillsection .biller_wrapper .super_bill_item span button{ color: #fff; font-size: 16px; text-transform: uppercase; font-family: 'RobotoRegular'; background: rgba(0,0,0,.3);
   border-radius: 00; line-height: 32px; margin-top: auto; }
-.admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper{ height: auto; border-left: 5px solid #fff; width: 15%; position: relative; padding: 0;}
-.admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle{ width: 70px; height: 70px; background: #fff; border-radius: 50%; display: flex; align-items: center;
-  justify-content: center; position: absolute; top: 35%; left: -37px; padding: 17px; box-sizing: border-box; }
+.admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper{ width: 20%;
+  position: relative;
+  padding: 0;
+  display: flex;
+  justify-content: center;}
+
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle img{ max-width: 100%;}
 
 

@@ -309,29 +309,4 @@ export class PatientReportViewComponent implements OnInit {
 
 
 
-  public counter: number = 0;
-  cilckable(index: number, action: string) {
-    this.counter = index;
-    console.log("item number", this.counter);
-
-    switch (action) {
-      case 'prev':
-        if (this.counter == 0) {
-          this.counter = this.ImageData.length - 1;
-          console.log('counter is' + this.counter)
-        } else {
-          this.counter--;
-        }
-        break;
-      case 'next':
-        if (this.counter + 1 == this.ImageData.length) {
-          this.counter = 0;
-        } else {
-          this.counter++;
-        }
-        break;
-    }
-
-  }
-
 }
