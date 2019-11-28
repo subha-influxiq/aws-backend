@@ -1,4 +1,4 @@
-<mat-toolbar class="techdashboard_header">
+<mat-toolbar class="techdashboard_header" [ngClass]="{'sticky' : isSticky}">
     <mat-card-content class="header_wrapper">
       <span class="logo_wrapper" [routerLink]="[ '/admin/dashboard' ]">
         <img src="../../../assets/images/logo.png">
