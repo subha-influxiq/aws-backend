@@ -257,9 +257,7 @@
 } */
 
 
-.mat-form-field-appearance-legacy .mat-form-field-label {
-  transform: perspective(100px);
-  -ms-transform: none;
+.action_bar .mat-form-field-appearance-legacy .mat-form-field-label {  
   font-size: 18px;
   font-family: "AvenirLight";
 }
@@ -267,3 +265,4 @@
 .infomodal{ overflow: auto; width: 991px;}
 /* admin css */
 .admin_wrapper{ width: 1400px; margin: 20px auto; box-sizing: border-box;}
+.searchcard { padding: 0; }
