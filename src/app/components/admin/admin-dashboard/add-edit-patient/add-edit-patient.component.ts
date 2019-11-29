@@ -65,34 +65,34 @@ export class AddEditPatientComponent implements OnInit {
         birthDate          :  ['', [Validators.required]],
         doctor_id          :  ['', []],
         tech_id            :  ['', []],
-        testDate           :  ['',Validators.required],
-        date               :  ['',Validators.required],
-        testCompletedDate  :  ['',Validators.required],
-        PTGPT              :  ['',Validators.required],
-        PTGVLFI            :  ['',Validators.required],
-        IR                 :  ['',Validators.required],
-        ESRNO              :  ['',Validators.required],
-        ESRL               :  ['',Validators.required],
-        peakC              :  ['',Validators.required],
-        PTGtype            :  ['',Validators.required],
-        PTGCVD             :  ['',Validators.required],
-        stressI            :  ['',Validators.required],
-        RI                 :  ['',Validators.required],
-        AIPTG              :  ['',Validators.required],
-        CIsCI              :  ['',Validators.required],
-        pNN50              :  ['',Validators.required],
-        RMSSD              :  ['',Validators.required],
-        SDba               :  ['',Validators.required],
-        SDda               :  ['',Validators.required],
-        DPRS               :  ['',Validators.required],
-        ValsR              :  ['',Validators.required],
-        BMI                :  ['',Validators.required],
-        bloodPressure      :  ['',Validators.required],
-        leaveNotes         :  ['',Validators.required],
-        systolic           :  [''],
-        diastolic          :  [''],
-        status             :  [1],
-        added_by           :  []
+        testDate           :  ['', [Validators.required]],
+        date               :  ['', [Validators.required]],
+        testCompletedDate  :  ['', [Validators.required]],
+        PTGPT              :  ['', [Validators.required]],
+        PTGVLFI            :  ['', [Validators.required]],
+        IR                 :  ['', [Validators.required]],
+        ESRNO              :  ['', [Validators.required]],
+        ESRL               :  ['', [Validators.required]],
+        peakC              :  ['', [Validators.required]],
+        PTGtype            :  ['', [Validators.required]],
+        PTGCVD             :  ['', [Validators.required]],
+        stressI            :  ['', [Validators.required]],
+        RI                 :  ['', [Validators.required]],
+        AIPTG              :  ['', [Validators.required]],
+        CIsCI              :  ['', [Validators.required]],
+        pNN50              :  ['', [Validators.required]],
+        RMSSD              :  ['', [Validators.required]],
+        SDba               :  ['', [Validators.required]],
+        SDda               :  ['', [Validators.required]],
+        DPRS               :  ['', [Validators.required]],
+        ValsR              :  ['', [Validators.required]],
+        BMI                :  ['', [Validators.required]],
+        bloodPressure      :  ['', [Validators.required]],
+        leaveNotes         :  ['', [Validators.required]],
+        systolic           :  ['', []],
+        diastolic          :  ['', []],
+        status             :  [1, []],
+        added_by           :  [this.cookies_id, []]
       })
     }
 
@@ -166,7 +166,6 @@ export class AddEditPatientComponent implements OnInit {
     this.patientAddEditForm.controls['date'].patchValue(dateformat);
     this.patientAddEditForm.controls['systolic'].patchValue(splits[0]);
     this.patientAddEditForm.controls['diastolic'].patchValue(splits[1]);
-    this.patientAddEditForm.controls['added_by'].patchValue(this.cookies_id);
     delete this.patientAddEditForm.value.bloodPressure;
  
     if(this.patientAddEditForm.valid) {  
