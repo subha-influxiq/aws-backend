@@ -52,7 +52,7 @@ export class AdminHeaderComponent implements OnInit {
 
    @HostListener('window:scroll', ['$event'])
    checkScroll() {
-     this.isSticky = window.pageYOffset >= 50;
+     this.isSticky = window.pageYOffset >= 20;
    }
 
 
