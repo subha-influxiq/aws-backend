@@ -56,7 +56,7 @@ export class DoctorDashboardComponent implements OnInit {
   public commonArray: PeriodicElement[] = [];
   public allDataColumns: string[] = ['no', 'billGenerationDate', 'billSentDate', 'patientName', 'date',
    'doctorName','record','techName', 'superBill', 'status', 'billerName', 'billerDropDown', 'action'];
-  public headerText: any;
+  public headerText: any=" DOCTOR SIGNATURE RECORD REPORTS";
   public doctorSignedArray: any = [];
   public pendingArray: any = [];
   public allDataList: any;
@@ -215,6 +215,7 @@ export class DoctorDashboardComponent implements OnInit {
       case 'Report unSigned':
         this.headerText = "DOCTOR UNSIGNED REPORTS";
         this.commonArray = this.pendingArray;
+        console.log("send button ",this.commonArray);
         this.allDataSource = new MatTableDataSource(this.commonArray);
         this.allDataSource.paginator = this.paginator;
         break;

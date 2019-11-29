@@ -110,7 +110,7 @@ export class AddEditPatientComponent implements OnInit {
         let result: any = {};
         result = response.res;
         this.allDoctorDataArray = result;   
-      
+      console.log("scfsfsfsfsf",this.allDoctorDataArray);
       })
   }
 
@@ -121,7 +121,7 @@ export class AddEditPatientComponent implements OnInit {
 
   getAllTechData(){
     var data = {
-      "source" : "users_view_doctor_list",
+      "source" : "users_view_doctor",
       "condition" : {
           "_id_object" : this.doctorNameId
       },

@@ -42,11 +42,11 @@ export class ResolveService implements Resolve<any> {
     /* This one is for Doctor Dashboard End */
 
     /* This one is for Biller Dashboard Start */
-    if(route.url[0].path == 'biller' && route.url[1].path == 'dashboard') {
-      var allData: any = this.cookies.getAll();
-      var userData = JSON.parse(allData.user_details);
-      requestData.condition.condition['biller_id'] = userData._id;
-    }
+    // if(route.url[0].path == 'biller' && route.url[1].path == 'dashboard') {
+    //   var allData: any = this.cookies.getAll();
+    //   var userData = JSON.parse(allData.user_details);
+    //   requestData.condition.condition['biller_id'] = userData._id;
+    // }
     /* This one is for Biller Dashboard End */
     /////////////////////////////////////////////////////////////////////
 
