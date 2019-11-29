@@ -323,6 +323,18 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+  {
+    path: 'doctor/patient-record-report/:_id/file', component: PatientReportViewComponent, 
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'pdf-to-img',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
 
   { path: 'doctor/signature-management', component: SignatureManagementComponent, canActivate: [AuthguardService] },
 

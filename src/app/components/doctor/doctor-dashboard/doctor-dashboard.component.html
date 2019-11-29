@@ -231,8 +231,8 @@
       <th mat-header-cell *matHeaderCellDef> Record </th>
       <td mat-cell *matCellDef="let element; let i = index;">
         <button *ngIf="element.status == 1" mat-raised-button type="button" color="primary" 
-        [routerLink]="['/doctor/patient-record-report',element._id]" >View</button>
-        
+        [routerLink]="['/doctor/patient-record-report', element._id, element.report_type]" >View</button>
+
         <button mat-raised-button *ngIf="element.status != 1" type="button" color="primary" disabled>View</button>
       </td>
     </ng-container>

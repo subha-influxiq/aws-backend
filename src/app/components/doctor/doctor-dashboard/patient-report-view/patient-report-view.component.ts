@@ -140,14 +140,15 @@ export class PatientReportViewComponent implements OnInit {
       diastolic: [''],
       report_type: ['', []],
       status: [1],
-    })
+    });
+
+    console.log('==================', this.router.url);
 
   }
 
   ngOnInit() {
     this.setDefaultValue();
     this.getAllDoctorData();
-
   }
 
 
