@@ -32,12 +32,11 @@ export class AddEditComponent implements OnInit {
   
   constructor(public fb: FormBuilder, private datePipe: DatePipe, public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, public dialog: MatDialog) {
     this.user_token = cookie.get('jwtToken');
-    if(this.params_id){
+    if(this.params_id) {
       this.generateEditForm();
-    }else{
+    } else {
       this.generateAddForm();
     }
-    
   }
 
   ngOnInit() {
@@ -49,7 +48,6 @@ export class AddEditComponent implements OnInit {
       this.params_id = this.activeRoute.snapshot.params._id;
       this.getSingleResolveData();
     }
-
   }
 
   generateAddForm(){
@@ -121,8 +119,7 @@ export class AddEditComponent implements OnInit {
       this.adminManagementAddEditForm.controls['phone'].patchValue(AdminSingleData[0].phone);
       this.adminManagementAddEditForm.controls['status'].patchValue(AdminSingleData[0].status);
       this.adminManagementAddEditForm.controls['password'].patchValue(AdminSingleData[0].password);
-    }
-    )
+    });
   }
 
   /**for validation purpose**/
@@ -185,8 +182,6 @@ export class AddEditComponent implements OnInit {
           "token": this.user_token,
           "domainurl" : 'http://testbedpece.influxiq.com/reset-password'
         }
-        
-
       }
 
       this.httpService.httpViaPost("addorupdatedata", data)
@@ -196,8 +191,7 @@ export class AddEditComponent implements OnInit {
             duration: 2000,
           });
           this.formDirective.resetForm();
-        })
-
+        });
     }
   }
 }

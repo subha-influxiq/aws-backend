@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonFunction } from '../../../class/common/common-function';
@@ -46,4 +46,16 @@ export class AdminHeaderComponent implements OnInit {
     this.status = !this.status;
 
   }
+
+   // sticky section
+   isSticky: boolean = false;
+
+   @HostListener('window:scroll', ['$event'])
+   checkScroll() {
+     this.isSticky = window.pageYOffset >= 50;
+   }
+
+
+
+
 }

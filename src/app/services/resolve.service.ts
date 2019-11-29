@@ -26,7 +26,7 @@ export class ResolveService implements Resolve<any> {
     if(route.url[0].path == 'tech' && route.url[1].path == 'dashboard') {
       var allData: any = this.cookies.getAll();
       var userData = JSON.parse(allData.user_details);
-      requestData.condition['user_id_object'] = userData._id;
+      requestData.condition['tech_id_object'] = userData._id;
     }
     /* This one is for Tech Dashboard End */
 

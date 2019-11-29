@@ -28,38 +28,18 @@
   position: absolute;
   top: 35%;
 } */
-.techdashboard_header .quotation .mat-nav-list .mat-list-item {
-  margin: 0;
-  position: relative;
-  font-family: "AvenirMedium";
-  font-size: 16px;
-  color: #767676;
-}
+.techdashboard_header .quotation .mat-nav-list .mat-list-item { margin: 0; position: relative; font-family: "AvenirMedium"; font-size: 16px; color: #767676;}
 
-.active {
-  color: #000000!important;
-  /* border-bottom: 3px solid #fecb00; position: relative; */
-}
-.active::before{
-  content: '';
-  width: 100%;
-  height: 4px;
-  background: #fecb00;
-  position: absolute;
-  bottom: -25px;
-}
+.active { color: #000000!important;  /* border-bottom: 3px solid #fecb00; position: relative; */}
+.active::before{ content: ''; width: 100%; height: 4px; background: #fecb00; position: absolute; bottom: -25px; }
 
 
 /*End header css */
-
-.togle_menu {
-  display: none;
-}
-
+.togle_menu { display: none;}
+.sticky { position: fixed; top: 0; margin: 0; z-index: 1; }
 
 @media screen and (max-width: 1540px) {
-
-  .techdashboard_header .header_wrapper { width: 1280px; }
+  .techdashboard_header .header_wrapper { width: 90%; }
 
 }
 @media screen and (max-width: 1500px) {
@@ -116,26 +96,14 @@
 }
 
 @media screen and (max-width: 1240px) {
-  .doctor_content_wrapper {
-    background: #012035;
-  }
-  .techdashboard_header .quotation .mat-nav-list .mat-list-item {
-    font-size: 14px;
-  }
+  .doctor_content_wrapper { background: #012035; }
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item { font-size: 14px; }
 }
 
 @media screen and (max-width: 1199px) {
-  .doctor_content_wrapper .table_structure {
-    width: 100%;
-  }
-  .patient_report_section .button_action {
-    width: 970px;
-  }
-  .patient_report_section .button_action button {
-    width: 475px;
-    font-size: 20px;
-    padding: 8px;
-  }
+  .doctor_content_wrapper .table_structure { width: 100%; }
+  .patient_report_section .button_action { width: 970px; }
+    .patient_report_section .button_action button { width: 475px; font-size: 20px;  padding: 8px; }
   .content_wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -256,24 +224,10 @@
   .table_structure .mat-list-item .title_a {
     font-size: 16px;
   }
-  .togle_menu {
-    display: block;
-    margin-top: 10px;
-    background: #f8c655;
-    color: #fff;
-  }
-  .techdashboard_header .quotation {
-    display: none;
-    width: 100%;
-    background: #ffd06f;
-  }
-  .techdashboard_header .quotation .mat-list-base {
-    display: block;
-  }
-  .techdashboard_header .quotation .mat-nav-list .mat-list-item {
-    margin: 0;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+  .togle_menu { display: block; margin-top: 10px; background: #f8c655; color: #fff; position: absolute; right: 20px; min-width: auto; }
+  .techdashboard_header .quotation { display: none; width: 100%; background: #ffd06f;}
+  .techdashboard_header .quotation .mat-list-base { display: block; }
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item { margin: 0; -webkit-box-align: center;   -ms-flex-align: center;
     align-items: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -284,9 +238,7 @@
     background: #fff3da;
     margin: 1px 0;
   }
-  .techdashboard_header .quotation .mat-nav-list .mat-list-item:nth-child(1) {
-    margin-top: 0;
-  }
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item:nth-child(1) { margin-top: 0; }
   .techdashboard_header .quotation .mat-list-base .mat-list-item:before {
     content: "";
     left: -15px;

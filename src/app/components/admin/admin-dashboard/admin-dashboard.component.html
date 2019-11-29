@@ -73,10 +73,10 @@
           </mat-card-content>
         </span>
         <span>
-          <h2> {{ uploadedStatusCount }} </h2>
           <p>Total No of <br>
             Reports Uploaded
           </p>
+          <h2> {{ uploadedStatusCount }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Reports Uploaded')">view all</button>
         </span>
 
@@ -88,10 +88,11 @@
           </mat-card-content>
         </span>
         <span>
-          <h2> {{ processedStatusCount }} </h2>
           <p>Total No of <br>
             Report Processed
+
           </p>
+          <h2> {{ processedStatusCount }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Report Processed')">view all</button>
         </span>
 
@@ -103,10 +104,10 @@
           </mat-card-content>
         </span>
         <span>
-          <h2> {{ signedStatusCount }} </h2>
           <p>Total No of <br>
             Report Signed
           </p>
+          <h2> {{ signedStatusCount }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
         </span>
 
@@ -118,10 +119,10 @@
           </mat-card-content>
         </span>
         <span>
-          <h2> {{ billerStatusCount }} </h2>
           <p> Sent to <br>
-            Biller
+            Super Bill
           </p>
+          <h2> {{ billerStatusCount }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Super Bill')">view all</button>
         </span>
 
@@ -180,7 +181,7 @@
     <!--date search end here  -->
 
   </mat-toolbar>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 adminTables">
 
     <!-- Position Column -->
     <ng-container matColumnDef="no">
@@ -209,8 +210,7 @@
     <ng-container matColumnDef="record">
       <th mat-header-cell *matHeaderCellDef> Record </th>
       <td mat-cell *matCellDef="let element; let i = index;">
-        <button mat-raised-button type="button" color="primary"
-        [routerLink]="['/doctor/patient-record-report',element._id]" >View</button>
+        <button mat-button type="button" class="viewButton" [routerLink]="['/doctor/patient-record-report',element._id]" >View</button>
       </td>
     </ng-container>
     <!-- Weight Column -->
@@ -245,7 +245,7 @@
     <mat-form-field>
       <input matInput placeholder="Search by Doctor" (keyup)="filterByName('doctorName_regex', $event.target.value)">
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field >
       <input matInput placeholder="Search by Patient" (keyup)="filterByName('patientName_regex', $event.target.value)">
     </mat-form-field>
     <mat-form-field class="parent_cat">
@@ -278,7 +278,7 @@
 
   </mat-toolbar>
 
-  <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8 adminTables">
     <ng-container matColumnDef="no">
       <th mat-header-cell *matHeaderCellDef> No. </th>
       <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
@@ -302,8 +302,7 @@
     <ng-container matColumnDef="record">
       <th mat-header-cell *matHeaderCellDef> Record </th>
       <td mat-cell *matCellDef="let element; let i = index;">
-        <button mat-raised-button type="button" color="primary"
-        [routerLink]="['/doctor/patient-record-report',element._id]" >View</button>
+        <button mat-button class="viewButton" [routerLink]="['/doctor/patient-record-report',element._id]" >View</button>
       </td>
     </ng-container>
 
