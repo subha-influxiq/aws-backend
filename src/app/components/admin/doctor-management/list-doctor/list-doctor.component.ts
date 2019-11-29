@@ -10,8 +10,6 @@ import { Router,ActivatedRoute } from '@angular/router';
 })
 export class ListDoctorComponent implements OnInit {
 
-
-
   // ===============================Declarations=========================
   public  docData: any = [];
   public docData_skip: any = ["_id", "created_at", "password", "confirmpassword",
@@ -23,7 +21,7 @@ export class ListDoctorComponent implements OnInit {
     "tech" :"Tech Name","date" : "Date"
   };
 
-  public modal_skip: any = ["_id", "tech_id", "biller_id","created_at","fullNamecopy"];
+  public previewModal_skip: any = ["_id", "tech_id", "biller_id","created_at","fullNamecopy"];
   public tableName: any = 'users';
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
@@ -37,7 +35,7 @@ export class ListDoctorComponent implements OnInit {
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
       textsearch: [{ label: "Search By Name", field: 'fullName' },
-      {label:"Search by Taxonomy",field:'taxo_list'},
+      // {label:"Search by Taxonomy",field:'taxo_list'},
       { label: "Search By E-Mail", field: 'email' }]
     };
   // ====================================================================
@@ -52,9 +50,7 @@ export class ListDoctorComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.data.subscribe(resolveData => {
-
       this.docData = resolveData.data.res;
-      
     });
   }
 

@@ -336,9 +336,7 @@ export class AddeditDoctorComponent implements OnInit {
         this.doctorOfficeData = response.res;
       })
   }
-  redirectToListingPage(){
-    this.router.navigateByUrl('/admin/doctor-management');
-  }
+ 
 
   /**getting all the biller data**/
   getAllBillerData() {
@@ -357,14 +355,11 @@ export class AddeditDoctorComponent implements OnInit {
 
   // ============================Submit Function=======================
   onSubmit() {
-    console.log("*************",this.docManageForm.value);
     let x: any;
     for (x in this.docManageForm.controls) {
       this.docManageForm.controls[x].markAsTouched();
     }
     
-
-
     /* stop here if form is invalid */
     if (!this.docManageForm.valid) {
       // this.openDialog("Form is invalid");
@@ -396,9 +391,9 @@ export class AddeditDoctorComponent implements OnInit {
         this.snackBar.open(this.message, action, {
           duration: 2000,
         });
-        setTimeout(() => {
-          
-        }, 1000);
+        // setTimeout(() => {
+        //   this.backToManagePage();
+        // }, 1000);
       } else {
         alert("Some error occurred. Please try again");
       }

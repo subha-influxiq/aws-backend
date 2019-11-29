@@ -250,7 +250,7 @@ const routes: Routes = [
     resolve: { techDashboardData: ResolveService },
     data: {
       requestcondition: {
-        source: 'patient_management_view_tech',
+        source: 'patient_management',
         condition: {},
       },
       endpoint: 'datalist'
@@ -300,10 +300,10 @@ const routes: Routes = [
         source: "Patient-Record-Report_view",
         condition: {
           "condition": {
-            "status": "doctor signed"
+              "status": 1
           },
           "condition1": {
-            "status": "pending"
+              "status": 2
           }
         }
       },

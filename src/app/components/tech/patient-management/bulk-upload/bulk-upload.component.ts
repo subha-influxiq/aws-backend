@@ -26,6 +26,7 @@ export class BulkUploadComponent implements OnInit {
     prefix: "patient-file",
     formSubmit: false
   }
+
   public techBulkUploadForm: FormGroup;
   public user_token: any;
   public images_array: any = [];
@@ -54,12 +55,12 @@ export class BulkUploadComponent implements OnInit {
 
     this.techBulkUploadForm = this.fb.group({
       batchName: ['', [Validators.required, Validators.maxLength(40)]],
-      physicalOrdering: [''],
+      doctor_id: ['', []],
       uploadFile: [],
-      status: [1],
-      note: [''],
-      user_id: []
-
+      status: [1, []],
+      note: ['', []],
+      tech_id: [this.cookies_id, []],
+      report_type: ['file', []],
     })
     this.user_token = cookie.get('jwtToken');
   }
@@ -82,6 +83,7 @@ export class BulkUploadComponent implements OnInit {
         this.allDoctorDataArray = result;
       })
   }
+
   cancelButton() {
     this.router.navigateByUrl('/tech/dashboard');
   }
@@ -92,20 +94,17 @@ export class BulkUploadComponent implements OnInit {
 
   /* This one is for get doctor dropdown data */
 
-  getsellabel(docval:any){
-
-    this.selectedDoctorName=docval.fullName;
+  getsellabel(docval:any) {
+    this.selectedDoctorName = docval.fullName;
   }
 
-
   techBulkUploadFormSubmit() {
-
     /* Open modal */
     let modalData: any = {
       panelClass:'bulkupload-dialog',
       data: {
         header: "Message",
-        message: "Are you sure you want to upload these reports for physician :  "+ this.selectedDoctorName  + " ?",
+        message: "Are you sure you want to upload these reports for physician : " + this.selectedDoctorName  + " ?",
         button1: { text: "No" },
         button2: { text: "Yes" },
       }
@@ -114,7 +113,6 @@ export class BulkUploadComponent implements OnInit {
   }
 
   bulkUploaddataSubmit() {
-   
     this.configData.formSubmit = true;
     if (this.configData) {
       for (const loop in this.configData.files) {
@@ -128,10 +126,6 @@ export class BulkUploadComponent implements OnInit {
           });
       }
       this.techBulkUploadForm.controls['uploadFile'].patchValue(this.images_array);
-      this.techBulkUploadForm.controls['user_id'].patchValue(this.cookies_id);
-
-
-
     } else {
       this.techBulkUploadForm.value.uploadFile = false;
     }
@@ -140,7 +134,7 @@ export class BulkUploadComponent implements OnInit {
       var data = {
         "source"  : "patient_management",
         "data"    : this.techBulkUploadForm.value,
-        "sourceobj": ["user_id"],
+        "sourceobj": ["tech_id", "doctor_id"],
         "token"   :  this.user_token
       }
       this.httpService.httpViaPost("addorupdatedata",data)
@@ -153,10 +147,9 @@ export class BulkUploadComponent implements OnInit {
             })
             this.router.navigateByUrl('/tech/dashboard');
           }         })
-    }else{
+    } else {
       alert("error occured");
     }
-
   }
 
   openDialog(data) {
