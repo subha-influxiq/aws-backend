@@ -339,7 +339,7 @@
 
 
 
-      <section *ngIf="allPatientReportData.report_type == 'file'">
+      <section *ngIf="subhaFlug == false">
         <mat-card-content class="document_wrapper">
           <span class="imageGallery">
             <img [src]="ImageData[sliderCount]">
@@ -365,7 +365,7 @@
         <mat-tab label="Encounter Form">
           <ng-template matTabContent>
 
-            <app-healthrisk-system-encounter></app-healthrisk-system-encounter>
+            <app-healthrisk-system-encounter *ngIf="subhaFlug == true"></app-healthrisk-system-encounter>
 
           </ng-template>
         </mat-tab>

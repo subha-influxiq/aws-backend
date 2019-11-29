@@ -76,6 +76,20 @@ export class PatientReportViewComponent implements OnInit {
   public techId: any;
 
 
+
+  public subhaFlug: any = true;
+  public ImageData = [
+    "https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2018/10/29232033/report.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMZ4V1jLsEEqFkSvRlnKctb7SDysjaWlyS1GwnHYKCQ4BIKrz3",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRaioLbnw0bnKVx6GL3cae8Sfo-T3Ti1mxKWuyfQPEGarcdXLYZ",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTbTiY2TqpRfr-gsyxua6SEOkOuVnOfEPVsrQekzQPS-ilnrXsD",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTE1jjEKgBi-H0qoortELsM8aFLHkoGzOUUw0uOI87_0bj73lpP",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTS06uDfeb32Pfk7GexL0F2nRrwV5_VP1b0J0EGfEnvDFH7zWW1",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQzySxWg6z-oAeqyRsfjo93588EQHj0l9HOaFOHINdQxwvn_7Aa",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR5zdI98vcz_kFEfxuToukqUOk9lB5asndrt4yKvHxv4WXZ4aGM"
+  ];
+
+
   // sticky section
   isSticky: boolean = false;
   stickyRight: boolean = false;
@@ -141,14 +155,19 @@ export class PatientReportViewComponent implements OnInit {
       report_type: ['', []],
       status: [1],
     });
-
-    console.log('==================', this.router.url);
-
   }
 
   ngOnInit() {
-    this.setDefaultValue();
-    this.getAllDoctorData();
+    if(this.activeRoute.snapshot.url[3].path != 'file') {
+      this.setDefaultValue();
+      this.getAllDoctorData();
+    } else {
+      this.subhaFlug = false;
+      this.activeRoute.data.forEach((data) => {
+        this.ImageData = data.data.res[0].data;
+        console.log("Images: ", data.data.res[0].data);
+      });
+    }
   }
 
 
@@ -263,17 +282,6 @@ export class PatientReportViewComponent implements OnInit {
   //   }
   // }
 
-
-  ImageData = [
-    "https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2018/10/29232033/report.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMZ4V1jLsEEqFkSvRlnKctb7SDysjaWlyS1GwnHYKCQ4BIKrz3",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRaioLbnw0bnKVx6GL3cae8Sfo-T3Ti1mxKWuyfQPEGarcdXLYZ",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTbTiY2TqpRfr-gsyxua6SEOkOuVnOfEPVsrQekzQPS-ilnrXsD",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTE1jjEKgBi-H0qoortELsM8aFLHkoGzOUUw0uOI87_0bj73lpP",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTS06uDfeb32Pfk7GexL0F2nRrwV5_VP1b0J0EGfEnvDFH7zWW1",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQzySxWg6z-oAeqyRsfjo93588EQHj0l9HOaFOHINdQxwvn_7Aa",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR5zdI98vcz_kFEfxuToukqUOk9lB5asndrt4yKvHxv4WXZ4aGM"
-  ]
   public sliderCount: number = 0;
 
   playSlider(action: string) {

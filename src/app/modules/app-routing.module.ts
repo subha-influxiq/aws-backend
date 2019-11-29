@@ -324,7 +324,7 @@ const routes: Routes = [
     },
   },
   {
-    path: 'doctor/patient-record-report/:_id/file', component: PatientReportViewComponent, 
+    path: 'doctor/patient-record-report/:patient_id_object/file', component: PatientReportViewComponent, 
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
