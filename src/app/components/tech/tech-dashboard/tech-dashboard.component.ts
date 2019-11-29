@@ -40,7 +40,6 @@ export class TechDashboardComponent implements OnInit {
   public commonArray: PeriodicElement[] = [];
   displayedColumns: string[] = ['no', 'patientName', 'record_type', 'doctorName', 'date_added', 'status'];
 
-
   public totalDoctor:any;
 
   public user_data: any = {};
@@ -111,8 +110,6 @@ export class TechDashboardComponent implements OnInit {
     this.techDashboardAllData.paginator = this.paginator;
   }
 
-
-
   getTechData() {
     var data = {
       "source": "users_view_doctor",
@@ -136,6 +133,7 @@ export class TechDashboardComponent implements OnInit {
         this.totalDoctor=response.resc;
       })
   }
+
   getTechCountData() {
     var data = {
       "source": "users",
@@ -166,6 +164,7 @@ export class TechDashboardComponent implements OnInit {
       },
       "token": this.user_token
     }
+    
     this.httpService.httpViaPost('statuscount', data)
       .subscribe(response => {
         this.processedStatusCount = response["status-count1"];

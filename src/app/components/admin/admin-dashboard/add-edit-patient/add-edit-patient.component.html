@@ -50,7 +50,7 @@
           <mat-card-content>
             <label>Ordering Physician</label>
             <mat-form-field>
-              <mat-select formControlName="physicalOrdering" placeholder="Select a Doctor" 
+              <mat-select formControlName="doctor_id" placeholder="Select a Doctor" 
                   (selectionChange)="getDoctorId($event.value);">
                 <mat-option [value]=0>Select a Doctor</mat-option>
                 <mat-option *ngFor="let doc of allDoctorDataArray;" value="{{ doc._id }}"> {{ doc.fullNamecopy }}
@@ -62,7 +62,7 @@
           <mat-card-content>
             <label> Tech Name </label>
             <mat-form-field>
-              <mat-select formControlName="tech" placeholder="Select a Tech" >
+              <mat-select formControlName="tech_id" placeholder="Select a Tech" >
                 <mat-option [value]=0>Select a Tech</mat-option>
                 <mat-option *ngFor="let doc of allTechArray;" value="{{ doc.tech_id }}"> {{ doc.tech }}
                 </mat-option>
