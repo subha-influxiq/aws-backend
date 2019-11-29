@@ -18,38 +18,51 @@ export class ResolveService implements Resolve<any> {
   constructor(public cookies: CookieService, private _apiService: HttpServiceService, private router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
+    
     /* will come into play while editing otherwise no effect */
     var requestData: any = route.data.requestcondition;
-    requestData.condition = Object.assign(requestData.condition, route.params);
-
 
 
     ////////////////// Condition for all dashboard ////////////////////
     /* This one is for Tech Dashboard Start */
-    if(route.url[0].path == 'tech' && route.url[1].path == 'dashboard') {
-      var allData: any = this.cookies.getAll();
-      var userData = JSON.parse(allData.user_details);
-      requestData.condition['tech_id_object'] = userData._id;
+    if(route.url[0].path == 'tech') {
+      switch(route.url[1].path) {
+        case 'dashboard':
+          var allData: any = this.cookies.getAll();
+          var userData = JSON.parse(allData.user_details);
+          requestData.condition['tech_id_object'] = userData._id;
+          break;
+      }
     }
     /* This one is for Tech Dashboard End */
 
     /* This one is for Doctor Dashboard Start */
-    if(route.url[0].path == 'doctor' && route.url[1].path == 'dashboard') {
-      var allData: any = this.cookies.getAll();
-      var userData = JSON.parse(allData.user_details);
-      requestData.condition.condition['doctor_id'] = userData._id;
+    if(route.url[0].path == 'doctor') {
+      switch(route.url[1].path) {
+        case 'dashboard':
+          var allData: any = this.cookies.getAll();
+          var userData = JSON.parse(allData.user_details);
+          requestData.condition.condition['doctor_id'] = userData._id;
+          break;
+      }
     }
     /* This one is for Doctor Dashboard End */
 
     /* This one is for Biller Dashboard Start */
-    if(route.url[0].path == 'biller' && route.url[1].path == 'dashboard') {
-      var allData: any = this.cookies.getAll();
-      var userData = JSON.parse(allData.user_details);
-      requestData.condition.condition['biller_id'] = userData._id;
+    if(route.url[0].path == 'biller') {
+      switch(route.url[1].path) {
+        case 'dashboard':
+          var allData: any = this.cookies.getAll();
+          var userData = JSON.parse(allData.user_details);
+          requestData.condition.condition['biller_id'] = userData._id;
+          break;
+      }
     }
     /* This one is for Biller Dashboard End */
     /////////////////////////////////////////////////////////////////////
 
+    /* If send any query params */
+    requestData.condition = Object.assign(requestData.condition, route.params);
 
     return new Promise((resolve) => {
       if(typeof route.data.requestcondition.source != 'string') {

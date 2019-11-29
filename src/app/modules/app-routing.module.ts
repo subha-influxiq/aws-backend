@@ -250,7 +250,7 @@ const routes: Routes = [
     resolve: { techDashboardData: ResolveService },
     data: {
       requestcondition: {
-        source: 'patient_management',
+        source: 'Patient-Record-Report_view',
         condition: {},
       },
       endpoint: 'datalist'
@@ -318,6 +318,18 @@ const routes: Routes = [
     data: {
       requestcondition: {
         source: 'patient_management',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+  {
+    path: 'doctor/patient-record-report/:_id/file', component: PatientReportViewComponent, 
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'pdf-to-img',
         condition: {}
       },
       endpoint: 'datalist'

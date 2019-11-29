@@ -110,7 +110,7 @@ export class AddEditPatientComponent implements OnInit {
         let result: any = {};
         result = response.res;
         this.allDoctorDataArray = result;   
-      
+      console.log("scfsfsfsfsf",this.allDoctorDataArray);
       })
   }
 
@@ -129,8 +129,8 @@ export class AddEditPatientComponent implements OnInit {
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe((response) => {
-       let result :any = response.res;
-       this.allTechArray = result;
+       this.allTechArray = response.res;
+       console.log("ygsyudgyus",this.allTechArray);
       })
   }
 
