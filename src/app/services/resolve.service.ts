@@ -22,6 +22,9 @@ export class ResolveService implements Resolve<any> {
     var requestData: any = route.data.requestcondition;
     requestData.condition = Object.assign(requestData.condition, route.params);
 
+
+
+    ////////////////// Condition for all dashboard ////////////////////
     /* This one is for Tech Dashboard Start */
     if(route.url[0].path == 'tech' && route.url[1].path == 'dashboard') {
       var allData: any = this.cookies.getAll();
@@ -34,11 +37,20 @@ export class ResolveService implements Resolve<any> {
     if(route.url[0].path == 'doctor' && route.url[1].path == 'dashboard') {
       var allData: any = this.cookies.getAll();
       var userData = JSON.parse(allData.user_details);
-      // requestData.condition.condition['_id'] = userData._id;
-      // requestData.condition.condition1['_id'] = userData._id;
+      requestData.condition.condition['doctor_id'] = userData._id;
     }
     /* This one is for Doctor Dashboard End */
-    
+
+    /* This one is for Biller Dashboard Start */
+    if(route.url[0].path == 'biller' && route.url[1].path == 'dashboard') {
+      var allData: any = this.cookies.getAll();
+      var userData = JSON.parse(allData.user_details);
+      requestData.condition.condition['biller_id'] = userData._id;
+    }
+    /* This one is for Biller Dashboard End */
+    /////////////////////////////////////////////////////////////////////
+
+
     return new Promise((resolve) => {
       if(typeof route.data.requestcondition.source != 'string') {
         var returnData: any = {};

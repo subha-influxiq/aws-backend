@@ -138,9 +138,8 @@ export class PatientReportViewComponent implements OnInit {
       leaveNotes: ['', Validators.required],
       systolic: [''],
       diastolic: [''],
+      report_type: ['', []],
       status: [1],
-
-
     })
 
   }
