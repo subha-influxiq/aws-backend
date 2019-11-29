@@ -134,7 +134,7 @@ export class BulkUploadComponent implements OnInit {
       var data = {
         "source"  : "patient_management",
         "data"    : this.techBulkUploadForm.value,
-        "sourceobj": ["tech_id"],
+        "sourceobj": ["tech_id", "doctor_id"],
         "token"   :  this.user_token
       }
       this.httpService.httpViaPost("addorupdatedata",data)

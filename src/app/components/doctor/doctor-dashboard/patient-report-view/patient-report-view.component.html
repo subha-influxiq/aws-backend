@@ -8,7 +8,7 @@
         {{ htmlText.header }}
       </mat-card-content>
 
-      <mat-card class="add_form">
+      <mat-card class="add_form" *ngIf="allPatientReportData.report_type == 'mannual'">
 
         <mat-card-content>
           <form class="example-form" autocomplete="off" name="patientAddEditForm" [formGroup]="patientAddEditForm"
@@ -339,7 +339,7 @@
 
 
 
-      <section>
+      <section *ngIf="allPatientReportData.report_type == 'file'">
         <mat-card-content class="document_wrapper">
           <span class="imageGallery">
             <img [src]="ImageData[sliderCount]">

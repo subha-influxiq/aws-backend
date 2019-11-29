@@ -238,7 +238,8 @@ export class DoctorDashboardComponent implements OnInit {
       "source": "patient_management",
       "data": {
         "id": this.allDataSource[index]._id,
-        "biller_id": this.sendToBillerJson[index]
+        "biller_id": this.sendToBillerJson[index],
+        "status": 2
       },
       "sourceobj": ["biller_id"],
       "token": this.user_token
