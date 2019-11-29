@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ElementRef, ViewChild} from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpServiceService } from '../../../../services/http-service.service';
@@ -34,8 +34,8 @@ export class BulkUploadComponent implements OnInit {
   public cookies_id: any;
   public allDoctorDataArray: any = [];
   public dialogRef: any;
-  public doctorName :any;
-  public selectedDoctorName :any;
+  public doctorName: any;
+  public selectedDoctorName: any;
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService,
@@ -94,23 +94,25 @@ export class BulkUploadComponent implements OnInit {
 
   /* This one is for get doctor dropdown data */
 
-  getsellabel(docval:any) {
+  getsellabel(docval: any) {
     this.selectedDoctorName = docval.fullName;
   }
 
   techBulkUploadFormSubmit() {
     /* Open modal */
     let modalData: any = {
-      panelClass:'bulkupload-dialog',
+      panelClass: 'bulkupload-dialog',
       data: {
         header: "Message",
-        message: "Are you sure you want to upload these reports for physician : " + this.selectedDoctorName  + " ?",
+        message: "Are you sure you want to upload these reports for physician : " + this.selectedDoctorName + " ?",
         button1: { text: "No" },
         button2: { text: "Yes" },
       }
     }
     this.openDialog(modalData);
   }
+
+  
 
   bulkUploaddataSubmit() {
     this.configData.formSubmit = true;
@@ -130,23 +132,24 @@ export class BulkUploadComponent implements OnInit {
       this.techBulkUploadForm.value.uploadFile = false;
     }
 
-    if(this.techBulkUploadForm.valid){
+    if (this.techBulkUploadForm.valid) {
       var data = {
-        "source"  : "patient_management",
-        "data"    : this.techBulkUploadForm.value,
+        "source": "patient_management",
+        "data": this.techBulkUploadForm.value,
         "sourceobj": ["tech_id", "doctor_id"],
-        "token"   :  this.user_token
+        "token": this.user_token
       }
-      this.httpService.httpViaPost("addorupdatedata",data)
-         .subscribe(response=>{
-          if(response.status="success"){
-            let message :any="Successfully Submitted";
-            let action:any="OK";
-            this.snakBar.open(message,action,{
-                duration : 2000
+      this.httpService.httpViaPost("addorupdatedata", data)
+        .subscribe(response => {
+          if (response.status = "success") {
+            let message: any = "Successfully Submitted";
+            let action: any = "OK";
+            this.snakBar.open(message, action, {
+              duration: 2000
             })
-            this.router.navigateByUrl('/tech/dashboard');
-          }         })
+
+          }
+        })
     } else {
       alert("error occured");
     }
