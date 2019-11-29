@@ -61,10 +61,10 @@ export class AddEditPatientComponent implements OnInit {
 
       this.patientAddEditForm = this.fb.group({
         patientName        :  ['', [Validators.required, Validators.maxLength(30)]],
-        gender             :  ['', [Validators.required]],
-        birthDate          :  ['', [Validators.required]],
-        doctor_id          :  ['', []],
-        tech_id            :  ['', []],
+        gender             :  ['', Validators.required],
+        birthDate          :  ['',Validators.required],
+        physicalOrdering   :  ['' ],
+        tech               :  [''],
         testDate           :  ['',Validators.required],
         date               :  ['',Validators.required],
         testCompletedDate  :  ['',Validators.required],
@@ -92,7 +92,9 @@ export class AddEditPatientComponent implements OnInit {
         systolic           :  [''],
         diastolic          :  [''],
         status             :  [1],
-        added_by           :  []
+        added_by           :  [],
+        type               :  ['mannual']
+
       })
     }
 
