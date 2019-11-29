@@ -29,7 +29,7 @@ export class ListingTechComponent implements OnInit {
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
-  SearchingSourceName:any = "users_view_tech";
+  public SearchingSourceName:any = "users_view_tech";
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
@@ -37,7 +37,7 @@ export class ListingTechComponent implements OnInit {
       { label: "Search By E-Mail", field: 'email' }],
 
     };
-    public user_cookie: any;
+  public user_cookie: any;
   public TechDashboardAllData: any = [];
   constructor(public cookie: CookieService, public http: HttpClient,
     public httpService: HttpServiceService, public activatedRoute: ActivatedRoute,
