@@ -136,24 +136,23 @@ export class TechDashboardComponent implements OnInit {
 
   getTechCountData() {
     var data = {
-      "source": "users",
       "condition": {
         "condition": {
-          "status": "pending",
+          "status": "1",
           "type": "tech"
         },
         "condition1": {
-          "status": "waiting for doctor sign",
+          "status": "2",
           "type": "tech"
         },
         "condition2": {
-          "status": "doctor signed"
+          "status": "3"
         },
         "condition3": {
           "status": "error"
         },
         "condition4": {
-          "status": "send to biller"
+          "status": "4"
         },
         "condition5": {
           "record_type": "file"
@@ -173,12 +172,7 @@ export class TechDashboardComponent implements OnInit {
         this.reportUploadedArray = response.data.status7;
         this.reportRemainingArray = response.data.status2;
         this.reportProcessedArray = response.data.status1;
-
-        console.log('reportUploadedArray',this.reportUploadedArray)
-        console.log('reportRemainingArray',this.reportRemainingArray)
-        console.log('reportProcessedArray',this.reportProcessedArray)
-
-      })
+      });
   }
   filterByName(key: string, value: string) {
     let searchJson: any = {};
@@ -278,7 +272,7 @@ export class DoctorViewDialogComponent {
       var dta:any = {
         "source": "users_view_doctor",
         "condition": {
-          tech: this.user_data.firstname + " " + this.user_data.lastname
+          tech_id_object: this.user_data._id
         },
         "token": this.user_token
       }

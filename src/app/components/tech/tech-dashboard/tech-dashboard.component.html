@@ -39,6 +39,8 @@
 <!-- end header -->
 
 <app-tech-header></app-tech-header>
+
+
 <mat-card-content class="content_wrapper">
   <mat-card-content class="itemsection one">
     <span class="counteer">{{ uploadedStatusCount }}</span>
@@ -110,7 +112,7 @@
       </mat-list-item>
     </mat-list>
   </mat-card-content>
-  <p class="doctorCount">and&nbsp; <a (click)="allDoctorViewModal()">({{totalDoctor}})</a>&nbsp;more.</p>
+  <p class="doctorCount">and&nbsp; <a (click)="allDoctorViewModal()">({{ totalDoctor }})</a>&nbsp;more.</p>
 </mat-card-content>
 
 
@@ -151,6 +153,13 @@
 
       </span>
   </mat-card-content>
+
+
+
+
+
+
+
   <mat-card-content class="admin_table techTable" *ngIf="commonArray.length == 0">
 
     <mat-toolbar class="top_header">

@@ -121,7 +121,7 @@ export class AddEditPatientComponent implements OnInit {
 
   getAllTechData(){
     var data = {
-      "source" : "users_view_doctor",
+      "source" : "users_view_doctor_list",
       "condition" : {
           "_id_object" : this.doctorNameId
       },
@@ -129,8 +129,8 @@ export class AddEditPatientComponent implements OnInit {
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe((response) => {
-       let result :any = response.res;
-       this.allTechArray = result;
+       this.allTechArray = response.res;
+       console.log("ygsyudgyus",this.allTechArray);
       })
   }
 
