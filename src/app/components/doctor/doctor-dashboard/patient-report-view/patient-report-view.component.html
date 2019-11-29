@@ -339,19 +339,18 @@
 
 
 
-      <section *ngIf="allPatientReportData.report_type == 'file'">
+      <mat-card *ngIf="allPatientReportData.report_type == 'file'">
         <mat-card-content class="document_wrapper">
           <span class="imageGallery">
             <img [src]="ImageData[sliderCount]">
           </span>
-          <button mat-fab class="prev" (click)="playSlider('preview');">
-            <<</button> <button mat-fab class="next" (click)="playSlider('next');">>>
-          </button>
+          <button mat-fab class="prev" type="button" (click)="playSlider('preview');"><<</button> 
+          <button mat-fab class="next" type="button" (click)="playSlider('next');">>></button>
           <!-- <button mat-fab (click)="playSlider('play');">PLAY</button> -->
 
           <span class="itemCounter">Report {{ sliderCount + 1 }} of {{ ImageData.length }}</span>
         </mat-card-content>
-      </section>
+      </mat-card>
     </mat-card-content>
 
     <mat-card-content class="patient_item_section" id="fixedScroll"
