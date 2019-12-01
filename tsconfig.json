@@ -34,9 +34,9 @@
       "file-upload": [
         "dist/file-upload"
       ],
-      "file-upload/*": [
-        "dist/file-upload/*"
-      ],
+      // "file-upload/*": [
+      //   "dist/file-upload/*"
+      // ],
     },
     "allowSyntheticDefaultImports": true
   },

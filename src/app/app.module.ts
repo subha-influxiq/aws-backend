@@ -74,7 +74,7 @@ import { BillerHeaderComponent } from './components/biller/biller-header/biller-
 
 /* testing purpose start here */
 import { TestComponent } from './components/test/test.component';
-import { FileUploadModule } from 'file-upload'; 
+import { FileUploadModule } from 'file-upload-lib-influxiq'; 
 import { HealthriskSystemEncounterComponent } from './components/doctor/doctor-dashboard/patient-report-view/healthrisk-system-encounter/healthrisk-system-encounter.component';
 import { SystemSuperbillComponent } from './components/doctor/doctor-dashboard/patient-report-view/system-superbill/system-superbill.component';
 import { HealthRiskAnalysisComponent } from './components/doctor/doctor-dashboard/patient-report-view/health-risk-analysis/health-risk-analysis.component';

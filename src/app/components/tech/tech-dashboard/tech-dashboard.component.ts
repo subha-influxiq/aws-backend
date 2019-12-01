@@ -77,7 +77,7 @@ export class TechDashboardComponent implements OnInit {
   public reportUploadedArray: any = [];
   public reportProcessedArray: any = [];
   public reportRemainingArray: any = [];
-  public headerText: any;
+  public headerText: any="Patient record report";
   public userToken : any;
 
   constructor(public cookie: CookieService, public http: HttpClient,
