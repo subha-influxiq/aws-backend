@@ -28,7 +28,7 @@ export class AddEditPatientComponent implements OnInit {
   public user_token : any;
   date = new FormControl(new Date());
   public testDate :any;
-  startdate: any ;
+  public  startdate: any ;
   enddate :any;
   dateofbirth :any;
   public dialogRef: any;
@@ -130,7 +130,7 @@ export class AddEditPatientComponent implements OnInit {
     this.httpService.httpViaPost('datalist', data)
       .subscribe((response) => {
        this.allTechArray = response.res;
-       console.log("ygsyudgyus",this.allTechArray);
+       
       })
   }
 
@@ -146,7 +146,6 @@ export class AddEditPatientComponent implements OnInit {
   }
 
   patientAddEditFormSubmit(){
-  
     let x: any;
     for (x in this.patientAddEditForm.controls) {
       this.patientAddEditForm.controls[x].markAsTouched();
@@ -179,9 +178,6 @@ export class AddEditPatientComponent implements OnInit {
       this.httpService.httpViaPost("addorupdatedata",data).subscribe(response=>{
         if(response.status="success"){
           this.formDirective.resetForm();
-
-          // this.resetAddEditForm();
-
           /* Open modal */
           let data: any = {
             width: '250px',
@@ -204,10 +200,8 @@ export class AddEditPatientComponent implements OnInit {
       switch(result) {
         case "Cancel":
           this.router.navigateByUrl('/tech/dashboard');
-          
           break;
         case "Add Next":
-          // location.reload();
           this.resetAddEditForm();
           break;
       }

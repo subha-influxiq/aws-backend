@@ -38,12 +38,12 @@ export interface DialogData {
 
 export class TechDashboardComponent implements OnInit {
   public commonArray: PeriodicElement[] = [];
-  displayedColumns: string[] = ['no', 'patientName', 'record_type', 'doctorName', 'date_added', 'status'];
+  displayedColumns: string[] = ['no', 'patientName', 'record_type', 'doctorName', 'techName','date_added', 'status'];
 
   public totalDoctor:any;
 
   public user_data: any = {};
-  allDataColumns: string[] = ['no','patientName', 'doctorName', 'record','created_at', 'billsendDate','status'];
+  allDataColumns: string[] = ['no','patientName', 'doctorName', 'techName','billerName','recordType','billGenerationData', 'billsendDate','status'];
 
 
    @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
@@ -97,6 +97,7 @@ export class TechDashboardComponent implements OnInit {
     this.getTechCountData();
 
     this.activatedRoute.data.forEach((data) => {
+      console.log("dataaaaaaaaaa",data);
       let allDashboardData : AllDataElement[] = data.techDashboardData.res;
       this.techDashboardAllData = new MatTableDataSource(allDashboardData);
     })
@@ -114,17 +115,15 @@ export class TechDashboardComponent implements OnInit {
     var data = {
       "source": "users_view_doctor",
       "condition": {
-        tech: this.user_data.firstname + " " + this.user_data.lastname
+        "tech_id_object": this.user_id
       },
       "token": this.user_token
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
-        console.log(response);
         let result: any = {};
         result = response.res;
         this.allDoctorData=response.res;
-        console.log(this.allDoctorData);
         this.userSingleDataName = result[0].fullName;
         this.userSingleDataEmail=result[0].email;
         this.userSingleDataFax=result[0].fax;
@@ -208,6 +207,7 @@ export class TechDashboardComponent implements OnInit {
       case 'upload':
         this.headerText = "Reports Uploaded";
         this.commonArray = this.reportUploadedArray;
+        console.log("first view all data",this.commonArray);
         this.dataSource = new MatTableDataSource(this.commonArray);
         this.dataSource.paginator = this.paginatorAll;
         this.dataSource.sort = this.sort;
@@ -234,14 +234,13 @@ export class TechDashboardComponent implements OnInit {
 
   /**All doctor deatls view in modal */
 allDoctorViewModal(){
-//  console.log("allDoctorViewModal");
  //dialog function
   const dialogGenreRef = this.dialog.open(DoctorViewDialogComponent, {
     panelClass: ['modal-sm', 'infomodal'],
     disableClose: true,
   });
   dialogGenreRef.afterClosed().subscribe(result => {
-    //console.log('SuccessDialogComponent was closed');
+   
   });
 }
 
@@ -262,7 +261,8 @@ export class DoctorViewDialogComponent {
   public userToken:any;
   public loader: boolean = true;
 
-  constructor(public dialogRef: MatDialogRef<DoctorViewDialogComponent>,@Inject(MAT_DIALOG_DATA) public data: DialogData,public cookie: CookieService, public http: HttpClient,
+  constructor(public dialogRef: MatDialogRef<DoctorViewDialogComponent>,@Inject(MAT_DIALOG_DATA) public data: DialogData,
+  public cookie: CookieService, public http: HttpClient,
     public httpService: HttpServiceService,) {
 
 
@@ -278,13 +278,13 @@ export class DoctorViewDialogComponent {
       }
       this.httpService.httpViaPost('datalist', dta)
         .subscribe((response:any) => {
-          //console.log(response);
+          
           let result: any = {};
           result = response.res;
           if (response.resc > 0) {
             this.loader = false;
             this.allDoctorData=response.res;
-            //console.log(this.allDoctorData);
+            
           }
 
         })
