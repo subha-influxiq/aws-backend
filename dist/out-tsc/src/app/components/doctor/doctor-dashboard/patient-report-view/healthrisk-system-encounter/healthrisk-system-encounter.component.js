@@ -1,0 +1,358 @@
+import * as tslib_1 from "tslib";
+import { Component } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+// Depending on whether rollup is used, moment needs to be imported differently.
+// Since Moment.js doesn't have a default export, we normally need to import using the `* as`
+// syntax. However, rollup creates a synthetic default module and we thus need to import it using
+// the `default as` syntax.
+import * as _moment from 'moment';
+// tslint:disable-next-line:no-duplicate-imports
+import { default as _rollupMoment } from 'moment';
+const moment = _rollupMoment || _moment;
+export const MY_FORMATS = {
+    parse: {
+        dateInput: 'LL',
+    },
+    display: {
+        dateInput: 'LL',
+        monthYearLabel: 'MMM YYYY',
+        dateA11yLabel: 'LL',
+        monthYearA11yLabel: 'MMMM YYYY',
+    },
+};
+let HealthriskSystemEncounterComponent = class HealthriskSystemEncounterComponent {
+    // @HostListener('window:scroll', ['$event'])
+    // checkScroll() {
+    //   this.isSticky = window.pageYOffset >= 50;
+    // }
+    constructor(activatedRoute, httpService, cookie, fb, router, datePipe) {
+        this.activatedRoute = activatedRoute;
+        this.httpService = httpService;
+        this.cookie = cookie;
+        this.fb = fb;
+        this.router = router;
+        this.datePipe = datePipe;
+        this.patientSingleData = [];
+        this.date = new FormControl(new Date());
+        this.cookiesData = {};
+        this.allDoctorDataArray = [];
+        this.allPatientReportData = [];
+        this.pdata = null;
+        // sticky section
+        this.isSticky = false;
+        this.stickyRight = false;
+        this.userToken = cookie.get('jwtToken');
+        this.getAllDoctorData();
+        var dateformat = datePipe.transform(new Date(), "MM-dd-yyyy");
+        this.patientEncounterForm = this.fb.group({
+            patientName: ['', [Validators.required, Validators.maxLength(30)]],
+            gender: ['', Validators.required],
+            birthDate: ['', Validators.required],
+            physicalOrdering: [''],
+            prefix_95923: [true],
+            prefix_95943: [true],
+            prefix_95921: [true],
+            prefix_93923: [true],
+            prefix_93922: [true],
+            no_diagnosis_detected: [false],
+            E1040: [false],
+            E854: [false],
+            E1041: [false],
+            E858: [false],
+            E1042: [false],
+            E859: [false],
+            E1043: [false],
+            G230: [false],
+            E1044: [false],
+            G231: [false],
+            E1049: [false],
+            G232: [false],
+            E1065: [false],
+            G238: [false],
+            E10610: [false],
+            G603: [false],
+            E119: [false],
+            G608: [false],
+            E1141: [false],
+            G609: [false],
+            E1142: [false],
+            R202: [false],
+            E1143: [false],
+            G9009: [false],
+            E1144: [false],
+            G9050: [false],
+            E1149: [false],
+            G9059: [false],
+            E1159: [false],
+            G903: [false],
+            E1165: [false],
+            R733: [false],
+            E1340: [false],
+            G90511: [false],
+            E1341: [false],
+            G90512: [false],
+            E1342: [false],
+            G90513: [false],
+            E1343: [false],
+            G90519: [false],
+            E1344: [false],
+            G90521: [false],
+            E1349: [false],
+            G90522: [false],
+            E13610: [false],
+            G90523: [false],
+            E850: [false],
+            G90529: [false],
+            E851: [false],
+            R61: [false],
+            E852: [false],
+            E853: [false],
+            I700: [false],
+            I7025: [false],
+            I70209: [false],
+            I0269: [false],
+            I70219: [false],
+            I70399: [false],
+            I7022: [false],
+            I70499: [false],
+            R000: [false],
+            I70599: [false],
+            R55: [false],
+            I519: [false],
+            I251: [false],
+            I721: [false],
+            healthRisk: [''],
+            I723: [false],
+            I724: [false],
+            I739: [false],
+            Z139: [false],
+            I10: [false],
+            prefix_1951: [false],
+            additional_chart_notes: [],
+            testDate: ['', Validators.required],
+            testCompletedDate: ['', Validators.required],
+            signDate: [dateformat],
+            AIPTG_H: [''],
+        });
+        this.getPatientData(this.activatedRoute.snapshot.params._id);
+    }
+    ngOnInit() {
+    }
+    /**for validation purpose**/
+    inputUntouch(form, val) {
+        form.controls[val].markAsUntouched();
+    }
+    /**for validation purpose**/
+    getAllDoctorData() {
+        var data = {
+            "source": "users_view_doctor",
+            "condition": {
+                "tech_id_object": this.techId
+            },
+            "token": this.userToken
+        };
+        this.httpService.httpViaPost('datalist', data)
+            .subscribe(response => {
+            let result = {};
+            result = response.res;
+            this.allDoctorDataArray = result;
+        });
+    }
+    getPatientData(id) {
+        var data = {
+            "source": "patient_management_view_view_view",
+            "condition": {
+                "_id_object": id
+            },
+            "token": this.userToken
+        };
+        this.httpService.httpViaPost('datalist', data)
+            .subscribe((response) => {
+            let patientDetails = {};
+            patientDetails = response.res[0];
+            this.pdata = response.res[0];
+            this.patientSingleData = response.res;
+            this.patientEncounterForm.controls['patientName'].patchValue(patientDetails.patientName);
+            this.patientEncounterForm.controls['physicalOrdering'].patchValue(patientDetails.physicalOrdering);
+            this.patientEncounterForm.controls['gender'].patchValue(patientDetails.gender);
+            let fieldText = '';
+            if (patientDetails.AIPTG_H != 0)
+                fieldText += '** ' + patientDetails.AIPTG_H + '\n\n';
+            if (patientDetails.AIPTGis_A != 0)
+                fieldText += '** ' + patientDetails.AIPTGis_A + '\n\n';
+            if (patientDetails.Cl_H != 0)
+                fieldText += '** ' + patientDetails.Cl_H + '\n\n';
+            if (patientDetails.DPRS_H != 0)
+                fieldText += '** ' + patientDetails.DPRS_H + '\n\n';
+            if (patientDetails.ValsR_A != 0)
+                fieldText += '** ' + patientDetails.ValsR_A + '\n\n';
+            if (patientDetails.ValsR_H != 0)
+                fieldText += '** ' + patientDetails.ValsR_H + '\n\n';
+            if (patientDetails.cl_A != 0)
+                fieldText += '** ' + patientDetails.cl_A + '\n\n';
+            if (patientDetails.StressI_A != 0)
+                fieldText += '** ' + patientDetails.StressI_A + '\n\n';
+            if (patientDetails.DPRS_A != 0)
+                fieldText += '** ' + patientDetails.DPRS_A + '\n\n';
+            if (patientDetails.R000 != 0)
+                fieldText += '** ' + patientDetails.R000 + '\n\n';
+            if (patientDetails.StressI_H != 0)
+                fieldText += '** ' + patientDetails.StressI_H + '\n\n';
+            this.patientEncounterForm.controls['healthRisk'].patchValue(fieldText);
+            if (this.pdata.I10 == 1)
+                this.patientEncounterForm.controls['I10'].patchValue(true);
+            if (this.pdata.I739 == 1)
+                this.patientEncounterForm.controls['I739'].patchValue(true);
+            if (this.pdata.I70209 == 1)
+                this.patientEncounterForm.controls['I70209'].patchValue(true);
+            if (this.pdata.R733 == 1)
+                this.patientEncounterForm.controls['R733'].patchValue(true);
+            if (this.pdata.E119 == 1)
+                this.patientEncounterForm.controls['E119'].patchValue(true);
+            if (this.pdata.E1142 == 1)
+                this.patientEncounterForm.controls['E1142'].patchValue(true);
+            if (this.pdata.E1149 == 1)
+                this.patientEncounterForm.controls['E1149'].patchValue(true);
+            if (this.pdata.E1159 == 1)
+                this.patientEncounterForm.controls['E1159'].patchValue(true);
+            if (this.pdata.G603 == 1)
+                this.patientEncounterForm.controls['G603'].patchValue(true);
+            if (this.pdata.I519 == 1)
+                this.patientEncounterForm.controls['I519'].patchValue(true);
+            if (this.pdata.E1041 == 1)
+                this.patientEncounterForm.controls['E1041'].patchValue(true);
+            if (this.pdata.E858 == 1)
+                this.patientEncounterForm.controls['E858'].patchValue(true);
+            if (this.pdata.E1042 == 1)
+                this.patientEncounterForm.controls['E1042'].patchValue(true);
+            if (this.pdata.E859 == 1)
+                this.patientEncounterForm.controls['E859'].patchValue(true);
+            if (this.pdata.E1043 == 1)
+                this.patientEncounterForm.controls['E1043'].patchValue(true);
+            if (this.pdata.G230 == 1)
+                this.patientEncounterForm.controls['G230'].patchValue(true);
+            if (this.pdata.E1044 == 1)
+                this.patientEncounterForm.controls['E1044'].patchValue(true);
+            if (this.pdata.G231 == 1)
+                this.patientEncounterForm.controls['G231'].patchValue(true);
+            if (this.pdata.E1049 == 1)
+                this.patientEncounterForm.controls['E1049'].patchValue(true);
+            if (this.pdata.G232 == 1)
+                this.patientEncounterForm.controls['G232'].patchValue(true);
+            if (this.pdata.E1065 == 1)
+                this.patientEncounterForm.controls['E1065'].patchValue(true);
+            if (this.pdata.G238 == 1)
+                this.patientEncounterForm.controls['G238'].patchValue(true);
+            if (this.pdata.I251 == 1)
+                this.patientEncounterForm.controls['I251'].patchValue(true);
+            if (this.pdata.R000 == 1)
+                this.patientEncounterForm.controls['R000'].patchValue(true);
+            let dateOfBirth = patientDetails.birthDate;
+            let dobArr = dateOfBirth.split("-");
+            this.patientEncounterForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1] - 1, dobArr[0]]));
+            /* After complete all patch value */
+            if (this.patientEncounterForm.value.E1040 == false ||
+                this.patientEncounterForm.value.E854 == false ||
+                this.patientEncounterForm.value.E1041 == false ||
+                this.patientEncounterForm.value.E858 == false ||
+                this.patientEncounterForm.value.E1042 == false ||
+                this.patientEncounterForm.value.E859 == false ||
+                this.patientEncounterForm.value.E1043 == false ||
+                this.patientEncounterForm.value.G230 == false ||
+                this.patientEncounterForm.value.E1044 == false ||
+                this.patientEncounterForm.value.G231 == false ||
+                this.patientEncounterForm.value.E1049 == false ||
+                this.patientEncounterForm.value.G232 == false ||
+                this.patientEncounterForm.value.E1065 == false ||
+                this.patientEncounterForm.value.G238 == false ||
+                this.patientEncounterForm.value.E10610 == false ||
+                this.patientEncounterForm.value.G603 == false ||
+                this.patientEncounterForm.value.E119 == false ||
+                this.patientEncounterForm.value.G608 == false ||
+                this.patientEncounterForm.value.E1141 == false ||
+                this.patientEncounterForm.value.G609 == false ||
+                this.patientEncounterForm.value.E1142 == false ||
+                this.patientEncounterForm.value.R202 == false ||
+                this.patientEncounterForm.value.E1143 == false ||
+                this.patientEncounterForm.value.G9009 == false ||
+                this.patientEncounterForm.value.E1144 == false ||
+                this.patientEncounterForm.value.G9050 == false ||
+                this.patientEncounterForm.value.E1149 == false ||
+                this.patientEncounterForm.value.G9059 == false ||
+                this.patientEncounterForm.value.E1159 == false ||
+                this.patientEncounterForm.value.G903 == false ||
+                this.patientEncounterForm.value.E1165 == false ||
+                this.patientEncounterForm.value.R733 == false ||
+                this.patientEncounterForm.value.E1340 == false ||
+                this.patientEncounterForm.value.G90511 == false ||
+                this.patientEncounterForm.value.E1341 == false ||
+                this.patientEncounterForm.value.G90512 == false ||
+                this.patientEncounterForm.value.E1342 == false ||
+                this.patientEncounterForm.value.G90513 == false ||
+                this.patientEncounterForm.value.E1343 == false ||
+                this.patientEncounterForm.value.G90519 == false ||
+                this.patientEncounterForm.value.E1344 == false ||
+                this.patientEncounterForm.value.G90521 == false ||
+                this.patientEncounterForm.value.E1349 == false ||
+                this.patientEncounterForm.value.G90522 == false ||
+                this.patientEncounterForm.value.E13610 == false ||
+                this.patientEncounterForm.value.G90523 == false ||
+                this.patientEncounterForm.value.E850 == false ||
+                this.patientEncounterForm.value.G90529 == false ||
+                this.patientEncounterForm.value.E851 == false ||
+                this.patientEncounterForm.value.R61 == false ||
+                this.patientEncounterForm.value.E852 == false ||
+                this.patientEncounterForm.value.E853 == false) {
+                // Set false value
+                this.patientEncounterForm.value.prefix_95923 = false;
+                this.patientEncounterForm.value.prefix_95921 = false;
+            }
+            if (this.patientEncounterForm.value.I700 == false ||
+                this.patientEncounterForm.value.I7025 == false ||
+                this.patientEncounterForm.value.I70209 == false ||
+                this.patientEncounterForm.value.I0269 == false ||
+                this.patientEncounterForm.value.I70219 == false ||
+                this.patientEncounterForm.value.I70399 == false ||
+                this.patientEncounterForm.value.I7022 == false ||
+                this.patientEncounterForm.value.I70499 == false ||
+                this.patientEncounterForm.value.R000 == false ||
+                this.patientEncounterForm.value.I70599 == false ||
+                this.patientEncounterForm.value.R55 == false ||
+                this.patientEncounterForm.value.I519 == false ||
+                this.patientEncounterForm.value.I251 == false ||
+                this.patientEncounterForm.value.I721 == false ||
+                this.patientEncounterForm.value.I723 == false ||
+                this.patientEncounterForm.value.I724 == false ||
+                this.patientEncounterForm.value.I739 == false ||
+                this.patientEncounterForm.value.Z139 == false ||
+                this.patientEncounterForm.value.I10 == false ||
+                this.patientEncounterForm.value.prefix_1951 == false) {
+                // Set false value
+                this.patientEncounterForm.value.prefix_93923 = false;
+            }
+            if (this.patientEncounterForm.value.prefix_95923 == false || this.patientEncounterForm.value.prefix_95921 == false || this.patientEncounterForm.value.prefix_93923 == false) {
+                this.patientEncounterForm.value.no_diagnosis_detected = true;
+            }
+        });
+    }
+    encounterFormSubmit() {
+    }
+};
+HealthriskSystemEncounterComponent = tslib_1.__decorate([
+    Component({
+        selector: 'app-healthrisk-system-encounter',
+        templateUrl: './healthrisk-system-encounter.component.html',
+        styleUrls: ['./healthrisk-system-encounter.component.css'],
+        providers: [
+            // `MomentDateAdapter` and `MAT_MOMENT_DATE_FORMATS` can be automatically provided by importing
+            // `MatMomentDateModule` in your applications root module. We provide it at the component level
+            // here, due to limitations of our example generation script.
+            { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+            { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
+        ],
+    })
+], HealthriskSystemEncounterComponent);
+export { HealthriskSystemEncounterComponent };
+//# sourceMappingURL=healthrisk-system-encounter.component.js.map
