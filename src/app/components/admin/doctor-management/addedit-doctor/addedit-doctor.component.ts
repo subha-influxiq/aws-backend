@@ -417,22 +417,24 @@ export class AddeditDoctorComponent implements OnInit {
 
 
 // ============================================MODAL COMPONENT===========================================
-@Component({
-  selector: 'app-modal',
-  templateUrl: 'modal.html',
-})
-export class Modal {
+// @Component({
+//   selector: 'app-modal',
+//   templateUrl: 'modal.html',
+// })
 
-  constructor(
-    public dialogRef: MatDialogRef<Modal>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+// export class Modal {
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
+//   constructor(
+//     public dialogRef: MatDialogRef<Modal>,
+//     @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
-}
+//   onNoClick(): void {
+//     this.dialogRef.close();
+//   }
+
+// }
 // ======================================================================================================
+
 @Component({
   selector: 'dialogtest',
   templateUrl: 'modal.html',

@@ -50,12 +50,9 @@ export class AdminHeaderComponent implements OnInit {
    // sticky section
    isSticky: boolean = false;
 
-   @HostListener('window:scroll', ['$event'])
-   checkScroll() {
-     this.isSticky = window.pageYOffset >= 20;
-   }
-
-
-
+  //  @HostListener('window:scroll', ['$event'])
+  //  checkScroll() {
+  //    this.isSticky = window.pageYOffset >= 20;
+  //  }
 
 }

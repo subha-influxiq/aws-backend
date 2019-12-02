@@ -45,7 +45,6 @@ export class BulkUploadComponent implements OnInit {
     let allcookies: any;
     allcookies = cookie.getAll();
 
-
     this.cookiesData = JSON.parse(allcookies.user_details);
     this.cookies_id = this.cookiesData._id;
     this.getAllDoctorData();

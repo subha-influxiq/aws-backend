@@ -14,6 +14,7 @@ import { MatSnackBar } from '@angular/material';
 
 export class UploadDialogBoxComponent implements OnInit {
 
+  public sign: string = '';
   public techUploadForm: FormGroup;
   public ErrCode: boolean;
   public user_token: any;
