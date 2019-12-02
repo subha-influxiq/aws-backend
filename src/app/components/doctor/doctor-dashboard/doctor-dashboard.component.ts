@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog , MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { UploadDialogBoxComponent } from '../../common/upload-dialog-box/upload-dialog-box.component';
 import { CommonFunction } from '../../../class/common/common-function';
 import { CookieService } from 'ngx-cookie-service';
@@ -8,7 +8,7 @@ import { MatTableDataSource } from '@angular/material';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material';
-
+import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component';
 import * as momentImported from 'moment';
 const moment = momentImported;
 
@@ -54,8 +54,12 @@ export class DoctorDashboardComponent implements OnInit {
   public Pending: any;
   public DoctorSigned: any;
   public commonArray: PeriodicElement[] = [];
-  public allDataColumns: string[] = ['no', 'billGenerationDate', 'billSentDate', 'patientName', 'date',
-    'doctorName', 'record', 'techName', 'superBill', 'status', 'billerDropDown', 'action'];
+  public allDataColumns: string[] = ['no', 'billGenerationDate', 'billSentDate', 'patientName',
+    'billerName', 'doctorName', 'record', 'recordType', 'techName', 'superBill', 'status', 'billerDropDown', 'action'];
+  
+    public dataCol:string[]=['billGenerationDate','billSentDate','doctorName','patientName',
+  'record','report_type','status','superBill','techName','billerName','billerDropDown','action'];
+  public dialogRef:any;
   public headerText: any = " DOCTOR SIGNATURE RECORD REPORTS";
   public doctorSignedArray: any = [];
   public pendingArray: any = [];
@@ -197,26 +201,57 @@ export class DoctorDashboardComponent implements OnInit {
     this.doctorSignedArray = this.allDataList.data.doctorsigned;
     this.pendingArray = this.allDataList.data.pending;
     this.allDataSource = this.allDataList.dataFull;
-    // this.allDataSource.paginator = this.paginator;
   }
 
   viewReportProcessData(flag: string) {
+    /* Open modal */
+    let modalData: any = {
+      panelClass: 'bulkupload-dialog',
+      data: {
+        header: "Message",
+        message: "No Records Found",
+        button1: { text: "" },
+        button2: { text: "Ok" },
+      }
+    }
     switch (flag) {
       case 'Report Signed':
+        if(this.doctorSignedArray.length > 0){
         this.headerText = "DOCTOR SIGNED REPORTS";
         this.commonArray = this.doctorSignedArray;
         this.allDataSource = new MatTableDataSource(this.commonArray);
         this.allDataSource.paginator = this.paginator;
+        }else{
+           this.openModal(modalData);
+        }
+        
         break;
       case 'Report unSigned':
-        this.headerText = "DOCTOR UNSIGNED REPORTS";
-        this.commonArray = this.pendingArray;
-        this.allDataSource = new MatTableDataSource(this.commonArray);
-        this.allDataSource.paginator = this.paginator;
+        if(this.pendingArray.length > 0){
+          this.headerText = "DOCTOR UNSIGNED REPORTS";
+          this.commonArray = this.pendingArray;
+          this.allDataSource = new MatTableDataSource(this.commonArray);
+          this.allDataSource.paginator = this.paginator;
+        }else{
+          this.openModal(modalData);
+        }
+        
         break;
       default:
         break;
     }
+  }
+  openModal(data) {
+
+    this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+    this.dialogRef.afterClosed().subscribe(result => {
+      switch (result) {
+        case "Ok":
+            this.dialogRef.close();
+          break;
+        
+      }
+    });
   }
 
   public sendToBillerJson: any = {};
