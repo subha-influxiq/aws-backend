@@ -68,10 +68,10 @@ export class HealthRiskAnalysisComponent implements OnInit {
   isSticky: boolean = false;
   stickyRight: boolean = false;
 
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    this.isSticky = window.pageYOffset >= 50;
-  }
+  // @HostListener('window:scroll', ['$event'])
+  // checkScroll() {
+  //   this.isSticky = window.pageYOffset >= 50;
+  // }
 
   constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService,
     public cookie: CookieService, public fb: FormBuilder, public router: Router,public datePipe : DatePipe) {

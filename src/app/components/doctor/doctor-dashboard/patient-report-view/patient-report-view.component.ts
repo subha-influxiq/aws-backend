@@ -94,10 +94,10 @@ export class PatientReportViewComponent implements OnInit {
   isSticky: boolean = false;
   stickyRight: boolean = false;
 
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    this.isSticky = window.pageYOffset >= 50;
-  }
+  // @HostListener('window:scroll', ['$event'])
+  // checkScroll() {
+  //   this.isSticky = window.pageYOffset >= 50;
+  // }
 
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
@@ -315,7 +315,8 @@ export class PatientReportViewComponent implements OnInit {
     }
   }
 
-
-
+  patientAddEditFormSubmit() {
+    console.log('OKKKK');
+  }
 
 }
