@@ -5,7 +5,7 @@ import { HttpServiceService } from '../../../services/http-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonFunction } from '../../../class/common/common-function';
 import { MatTableDataSource, MatSort } from '@angular/material';
-import {MatPaginator} from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component';
 
@@ -102,7 +102,6 @@ export class TechDashboardComponent implements OnInit {
     this.getTechCountData();
 
     this.activatedRoute.data.forEach((data) => {
-      console.log("dataaaaaaaaaa",data);
       let allDashboardData : AllDataElement[] = data.techDashboardData.res;
       this.techDashboardAllData = new MatTableDataSource(allDashboardData);
     })
@@ -206,10 +205,6 @@ export class TechDashboardComponent implements OnInit {
       // this.techDashboardAllData = Response.res;
     });
   }
-
- modalData(){
-
-}
 
   viewDetailsData(flag: any) {
      /* Open modal */

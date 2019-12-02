@@ -17,7 +17,8 @@ export class ListDoctorComponent implements OnInit {
    "biller_id","doctorsOfficeName", "city", "state", "zip"];
   public docData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name", "email": "Email", "phone": "Phone",
-    "practicename": "Practice name", "npm": "NPI#", "status": "Status", "taxo list": "Taxonomies","fullNamecopy":"Doctor Name","biller" : "Biller Name",
+    "practicename": "Practice name", "npm": "NPI#", "status": "Status", "taxo list": "Taxonomies",
+    "fullNamecopy":"Doctor Name","biller" : "Biller Name",
     "tech" :"Tech Name","date" : "Date"
   };
 

@@ -89,6 +89,7 @@ export class AdminDashboardComponent implements OnInit {
   filterByName(key: string, value: string) {
     let searchJson: any = {};
     searchJson[key] = value.toLowerCase();
+    console.log("searchh",searchJson);
     var data = {
       "source": "Patient-Record-Report_view",
       "condition": searchJson,
