@@ -55,8 +55,8 @@ export class DoctorDashboardComponent implements OnInit {
   public DoctorSigned: any;
   public commonArray: PeriodicElement[] = [];
   public allDataColumns: string[] = ['no', 'billGenerationDate', 'billSentDate', 'patientName', 'date',
-   'doctorName','record','techName', 'superBill', 'status', 'billerName', 'billerDropDown', 'action'];
-  public headerText: any=" DOCTOR SIGNATURE RECORD REPORTS";
+    'doctorName', 'record', 'techName', 'superBill', 'status', 'billerDropDown', 'action'];
+  public headerText: any = " DOCTOR SIGNATURE RECORD REPORTS";
   public doctorSignedArray: any = [];
   public pendingArray: any = [];
   public allDataList: any;
@@ -85,7 +85,6 @@ export class DoctorDashboardComponent implements OnInit {
 
     this.activatedRoute.data.forEach(resolveData => {
       this.allDataList = resolveData.alldata;
-      console.log(this.allDataList);
       this.allDataSource = new MatTableDataSource(this.allDataList);
       this.allDataSource.paginator = this.paginator;
     });
@@ -93,8 +92,7 @@ export class DoctorDashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.allDataSource.paginator = this.paginator;
-   
+    this.allDataSource.paginator = this.paginator;
     this.getData();
   }
 
@@ -131,9 +129,7 @@ export class DoctorDashboardComponent implements OnInit {
     this.http.httpViaPost('datalist', data)
       .subscribe(response => {
         this.allDataSource = response.res;
-
-      })
-
+      });
   }
 
   applyFilter(key: string, value: string) {
@@ -148,7 +144,6 @@ export class DoctorDashboardComponent implements OnInit {
     this.http.httpViaPost('datalist', data)
       .subscribe(response => {
         this.allDataSource = response.res;
-
       })
 
   }
@@ -166,6 +161,7 @@ export class DoctorDashboardComponent implements OnInit {
 
       })
   }
+
   openDialog() {
     const dialogRef = this.dialog.open(UploadDialogBoxComponent, {
       width: '1000px',
@@ -215,7 +211,6 @@ export class DoctorDashboardComponent implements OnInit {
       case 'Report unSigned':
         this.headerText = "DOCTOR UNSIGNED REPORTS";
         this.commonArray = this.pendingArray;
-        console.log("send button ",this.commonArray);
         this.allDataSource = new MatTableDataSource(this.commonArray);
         this.allDataSource.paginator = this.paginator;
         break;
@@ -231,10 +226,6 @@ export class DoctorDashboardComponent implements OnInit {
   }
 
   allSendToBiller(index: number) {
-    // console.log('Dr Data >>-->', this.cookies_id);
-    // console.log('Pa Data >>-->', this.allDataSource[index]);
-    // console.log('Pa Data >>-->', this.allDataSource[index]._id);
-    // console.log('Biller Data >>-->', this.sendToBillerJson[index]);
     var data: any = {
       "source": "patient_management",
       "data": {
@@ -255,9 +246,9 @@ export class DoctorDashboardComponent implements OnInit {
       }
     })
   }
-  viewButton(index : number){
-    console.log("indexxxxx",this.allDataSource[index]);
 
+  viewButton(index: number) {
+    console.log("indexxxxx", this.allDataSource[index]);
   }
 
 }

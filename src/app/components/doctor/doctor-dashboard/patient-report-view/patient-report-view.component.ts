@@ -75,8 +75,6 @@ export class PatientReportViewComponent implements OnInit {
   public paramsId: any;
   public techId: any;
 
-
-
   public subhaFlug: any = true;
   public ImageData = [
     "https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2018/10/29232033/report.jpg",
@@ -162,7 +160,6 @@ export class PatientReportViewComponent implements OnInit {
       this.setDefaultValue();
       this.getAllDoctorData();
     } else {
-      this.subhaFlug = false;
       this.activeRoute.data.forEach((data) => {
         this.ImageData = data.data.res[0].data;
         console.log("Images: ", data.data.res[0].data);
@@ -217,8 +214,7 @@ export class PatientReportViewComponent implements OnInit {
   }
 
   getAllDoctorData() {
-    var data = {
-
+    var data: any = {
       "source": "users_view_doctor",
       "condition": {
         "tech_id_object": this.techId
@@ -242,45 +238,45 @@ export class PatientReportViewComponent implements OnInit {
   /**for validation purpose**/
 
 
-  // patientAddEditFormSubmit() {
+  patientAddEditFormSubmit() {
 
-  //   let x: any;
-  //   for (x in this.patientAddEditForm.controls) {
-  //     this.patientAddEditForm.controls[x].markAsTouched();
-  //   }
-  //   const myString = this.patientAddEditForm.controls.bloodPressure.value;
-  //   const splits = myString.split('/');
-  //   var startDate = this.datePipe.transform(this.startdate, "dd-MM-yyyy");
-  //   var dateOfBirth = this.datePipe.transform(this.dateofbirth, "dd-MM-yyyy");
-  //   var endDate = this.datePipe.transform(this.enddate, "dd-MM-yyyy");
-  //   var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
-  //   this.patientAddEditForm.value.testDate = startDate;
-  //   this.patientAddEditForm.value.testCompletedDate = endDate;
-  //   this.patientAddEditForm.value.birthDate = dateOfBirth;
-  //   this.patientAddEditForm.controls['testDate'].patchValue(startDate);
-  //   this.patientAddEditForm.controls['testCompletedDate'].patchValue(endDate);
-  //   this.patientAddEditForm.controls['birthDate'].patchValue(dateOfBirth);
-  //   this.patientAddEditForm.controls['date'].patchValue(dateformat);
-  //   this.patientAddEditForm.controls['systolic'].patchValue(splits[0]);
-  //   this.patientAddEditForm.controls['diastolic'].patchValue(splits[1]);
+    let x: any;
+    for (x in this.patientAddEditForm.controls) {
+      this.patientAddEditForm.controls[x].markAsTouched();
+    }
+    const myString = this.patientAddEditForm.controls.bloodPressure.value;
+    const splits = myString.split('/');
+    var startDate = this.datePipe.transform(this.startdate, "dd-MM-yyyy");
+    var dateOfBirth = this.datePipe.transform(this.dateofbirth, "dd-MM-yyyy");
+    var endDate = this.datePipe.transform(this.enddate, "dd-MM-yyyy");
+    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    this.patientAddEditForm.value.testDate = startDate;
+    this.patientAddEditForm.value.testCompletedDate = endDate;
+    this.patientAddEditForm.value.birthDate = dateOfBirth;
+    this.patientAddEditForm.controls['testDate'].patchValue(startDate);
+    this.patientAddEditForm.controls['testCompletedDate'].patchValue(endDate);
+    this.patientAddEditForm.controls['birthDate'].patchValue(dateOfBirth);
+    this.patientAddEditForm.controls['date'].patchValue(dateformat);
+    this.patientAddEditForm.controls['systolic'].patchValue(splits[0]);
+    this.patientAddEditForm.controls['diastolic'].patchValue(splits[1]);
 
-  //   delete this.patientAddEditForm.value.bloodPressure;
+    delete this.patientAddEditForm.value.bloodPressure;
 
-  //   if (this.patientAddEditForm.valid) {
-  //     var data: any = {
-  //       "source": "patient_management",
-  //       "data": this.patientAddEditForm.value,
-  //       "sourceobj": ["user_id", "physicalOrdering"],
-  //       "token": this.userToken
-  //     }
-  //     data.data["id"] = this.paramsId;
-  //     this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
-  //       if (response.status = "success") {
-  //         this.formDirective.resetForm();
-  //       }
-  //     });
-  //   }
-  // }
+    if (this.patientAddEditForm.valid) {
+      var data: any = {
+        "source": "patient_management",
+        "data": this.patientAddEditForm.value,
+        "sourceobj": ["user_id", "physicalOrdering"],
+        "token": this.userToken
+      }
+      data.data["id"] = this.paramsId;
+      this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
+        if (response.status = "success") {
+          this.formDirective.resetForm();
+        }
+      });
+    }
+  }
 
   public sliderCount: number = 0;
 
@@ -301,22 +297,7 @@ export class PatientReportViewComponent implements OnInit {
           this.sliderCount++;
         }
         break;
-      // case 'play':
-      //   setTimeout(() => {
-      //     if(this.sliderCount + 1 == this.Imagesdelatils.length) {
-      //       this.sliderCount = 0;
-      //     } else {
-      //       this.sliderCount++;
-      //     }
-
-      //     this.playSlider('play');
-      //   }, 1000);
-      //   break;
     }
-  }
-
-  patientAddEditFormSubmit() {
-    console.log('OKKKK');
   }
 
 }

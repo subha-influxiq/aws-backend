@@ -18,26 +18,6 @@
       "es2018",
       "dom"
     ],
-    "paths": {
-      // "login": [ //login library 
-      //   "dist/login"
-      // ],
-      // "login/*": [
-      //   "dist/login/*"
-      // ],
-      // "lib-listing": [
-      //   "dist/listing"
-      // ],
-      // "listing/*": [
-      //   "dist/listing/*"
-      // ],
-      // "file-upload": [
-      //   "dist/file-upload"
-      // ],
-      // "file-upload/*": [
-      //   "dist/file-upload/*"
-      // ],
-    },
     "allowSyntheticDefaultImports": true
   },
   "angularCompilerOptions": {
