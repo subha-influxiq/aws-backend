@@ -14,7 +14,7 @@ import { ResetpasswordComponent } from '../components/auth/resetpassword/resetpa
 import { LogoutComponent } from '../components/auth/logout/logout.component';
 /****************** Admin *****************/
 import { AdminDashboardComponent } from '../components/admin/admin-dashboard/admin-dashboard.component';
-
+import { EditPatientRecordComponent } from '../components/admin/admin-dashboard/edit-patient-record/edit-patient-record.component';
 /* User Mnagement */
 import { UserAddEditComponent } from '../components/admin/user-management/user-add-edit/user-add-edit.component'
 import { AddEditComponent } from '../components/admin/admin-management/add-edit/add-edit.component';
@@ -93,6 +93,8 @@ const routes: Routes = [
     },
   },
   { path: 'admin/patient-management/add', component: AddEditPatientComponent, canActivate: [AuthguardService] },
+  { path: 'admin/patient-record/edit/:_id', component: EditPatientRecordComponent, canActivate: [AuthguardService] },
+  
   /* Account-Settings */
   { path: 'admin/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'admin/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
