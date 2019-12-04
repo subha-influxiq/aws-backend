@@ -163,9 +163,9 @@ export class BulkUploadComponent implements OnInit {
               duration: 2000
             });
 
-            setTimeout(() => {
-              this.router.navigateByUrl('/tech/dashboard');
-            }, 1000);
+            // setTimeout(() => {
+            //   this.router.navigateByUrl('/tech/dashboard');
+            // }, 1000);
           }
         })
     } else {
