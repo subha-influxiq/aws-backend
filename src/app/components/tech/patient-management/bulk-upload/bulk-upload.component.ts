@@ -24,7 +24,9 @@ export class BulkUploadComponent implements OnInit {
     type: "patient-file",
     path: "patientFile",
     prefix: "patient-file",
-    formSubmit: false
+    formSubmit: false,
+    conversionNeeded: 1,
+    bucketName: "awsbackend-dev-patient-files"
   }
 
   public techBulkUploadForm: FormGroup;
@@ -54,8 +56,8 @@ export class BulkUploadComponent implements OnInit {
 
     this.techBulkUploadForm = this.fb.group({
       batchName: ['', [Validators.required, Validators.maxLength(40)]],
-      doctor_id: ['', []],
-      uploadFile: [],
+      doctor_id: ['', [Validators.required]],
+      uploadFile: ['', []],
       status: [1, []],
       note: ['', []],
       tech_id: [this.cookies_id, []],
@@ -98,6 +100,10 @@ export class BulkUploadComponent implements OnInit {
   }
 
   techBulkUploadFormSubmit() {
+    this.configData.formSubmit = true;
+    if (!this.configData.files) {
+      return false;
+    }
     /* Open modal */
     let modalData: any = {
       panelClass: 'bulkupload-dialog',
@@ -108,14 +114,22 @@ export class BulkUploadComponent implements OnInit {
         button2: { text: "Yes" },
       }
     }
-    this.openDialog(modalData);
+
+    this.dialogRef = this.dialog.open(DialogBoxComponent, modalData);
+    this.dialogRef.afterClosed().subscribe(result => {
+      switch (result) {
+        case "No":
+          location.reload();
+          break;
+        case "Yes":
+          this.bulkUploaddataSubmit();
+          break;
+      }
+    });
   }
 
-  
-
   bulkUploaddataSubmit() {
-    this.configData.formSubmit = true;
-    if (this.configData) {
+    if (this.configData.files.count > 0) {
       for (const loop in this.configData.files) {
         this.images_array =
           this.images_array.concat({
@@ -123,9 +137,11 @@ export class BulkUploadComponent implements OnInit {
               + this.configData.path + '/',
             "image": this.configData.files[loop].upload.data.data.fileservername,
             "name": this.configData.files[loop].name,
-            "type": this.configData.files[loop].type
+            "type": this.configData.files[loop].type,
+            "bucketname": this.configData.bucketName
           });
       }
+
       this.techBulkUploadForm.controls['uploadFile'].patchValue(this.images_array);
     } else {
       this.techBulkUploadForm.value.uploadFile = false;
@@ -145,28 +161,16 @@ export class BulkUploadComponent implements OnInit {
             let action: any = "OK";
             this.snakBar.open(message, action, {
               duration: 2000
-            })
+            });
 
+            setTimeout(() => {
+              this.router.navigateByUrl('/tech/dashboard');
+            }, 1000);
           }
         })
     } else {
       alert("error occured");
     }
-  }
-
-  openDialog(data) {
-
-    this.dialogRef = this.dialog.open(DialogBoxComponent, data);
-    this.dialogRef.afterClosed().subscribe(result => {
-      switch (result) {
-        case "No":
-          location.reload();
-          break;
-        case "Yes":
-          this.bulkUploaddataSubmit();
-          break;
-      }
-    });
   }
 
 }

@@ -2,8 +2,7 @@
 
 <mat-card class="add_form">
   <mat-card-content>
-    <form class="example-form" autocomplete="off" name="techBulkUploadForm" [formGroup]="techBulkUploadForm"
-      (ngSubmit)="techBulkUploadFormSubmit()">
+    <form class="example-form" autocomplete="off" name="techBulkUploadForm" [formGroup]="techBulkUploadForm">
   
     
       <mat-card-content class="status_wrapper" > 
@@ -20,7 +19,7 @@
           <mat-form-field >
             
               <mat-select formControlName="doctor_id" placeholder="Select a Doctor" >
-                <mat-option [value]=0>Select a Doctor</mat-option>
+                <mat-option value="">Select a Doctor</mat-option>
                 <mat-option (click)="getsellabel(doc)" *ngFor="let doc of allDoctorDataArray;" value="{{ doc._id }}"> {{ doc.fullNamecopy }}
                   </mat-option>
               </mat-select>
@@ -45,7 +44,7 @@
       </span>
       <span class="submit_form">
         <button mat-flat-button type="button" (click)="cancelButton()"> Back </button>
-        <button mat-flat-button type="submit" [disabled]="!techBulkUploadForm.valid"> Submit </button>
+        <button mat-flat-button type="button" [disabled]="!techBulkUploadForm.valid" (click)="techBulkUploadFormSubmit()"> Submit </button>
       </span>
 
 

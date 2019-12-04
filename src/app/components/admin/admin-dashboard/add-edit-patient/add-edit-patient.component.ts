@@ -92,6 +92,7 @@ export class AddEditPatientComponent implements OnInit {
         systolic           :  ['', []],
         diastolic          :  ['', []],
         status             :  [1, []],
+        report_type        :  ['mannual', []],
         added_by           :  [this.cookies_id, []]
       })
     }
