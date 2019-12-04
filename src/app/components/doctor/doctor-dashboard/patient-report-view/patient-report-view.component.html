@@ -1,4 +1,5 @@
-<app-doctor-header></app-doctor-header>
+<app-doctor-header *ngIf="cookiesData.type == 'doctor' "></app-doctor-header>
+<app-admin-header *ngIf="cookiesData.type == 'admin' "></app-admin-header>
 
 <ng-container>
 
@@ -352,18 +353,19 @@
     </mat-card-content>
 
     <mat-card-content class="patient_item_section" id="fixedScroll"
-      [ngClass]="{'mat-elevation-z5' : true, 'stickyRight' : isSticky}">
+      [ngClass]="{'mat-elevation-z5' : true, 'stickyRight' : isSticky}" >
       <mat-tab-group class="previewTabs">
-        <!-- <mat-tab label="Evalueation worksheet">
+        <mat-tab label="Evalueation worksheet" *ngIf="cookiesData.type == 'admin' ">
         <ng-template matTabContent>
           <app-health-risk-analysis></app-health-risk-analysis>
         </ng-template>
-      </mat-tab> -->
+      </mat-tab>
 
         <mat-tab label="Encounter Form">
           <ng-template matTabContent>
 
             <app-healthrisk-system-encounter *ngIf="subhaFlug == true"></app-healthrisk-system-encounter>
+            <!-- <app-healthrisk-system-encounter *ngIf="cookiesData.type == 'admin' "></app-healthrisk-system-encounter> -->
 
           </ng-template>
         </mat-tab>
@@ -383,7 +385,7 @@
 
   </mat-card-content>
 
-  <mat-toolbar class="patient_preview">
+  <mat-toolbar class="patient_preview" *ngIf="cookiesData.type == 'doctor' ">
     <button mat-button>save and sign</button>
   </mat-toolbar>
 
@@ -756,7 +758,6 @@
     </mat-toolbar>
 
     </ng-container> -->
-
 
 
 

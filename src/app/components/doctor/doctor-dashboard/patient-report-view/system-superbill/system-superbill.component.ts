@@ -76,6 +76,10 @@ export class SystemSuperbillComponent implements OnInit {
     public cookie: CookieService, public fb: FormBuilder, public router: Router, public datePipe: DatePipe) {
     console.log('route:: ', this.activatedRoute.snapshot.params._id);
     this.userToken = cookie.get('jwtToken');
+    let allcookies: any;
+    allcookies = cookie.getAll();
+    this.cookiesData = JSON.parse(allcookies.user_details);
+
     var dateformat = datePipe.transform(new Date(), "MM-dd-yyyy");
     console.log("date format",dateformat);
 
@@ -88,6 +92,10 @@ export class SystemSuperbillComponent implements OnInit {
       testCompletedDate: ['', Validators.required],
       signDate : [dateformat]
     })
+    
+    if(this.cookiesData.type == 'admin'){
+      this.patientBMIForm.disable();
+    }
     this.getPatientData(this.activatedRoute.snapshot.params._id);
   }
 

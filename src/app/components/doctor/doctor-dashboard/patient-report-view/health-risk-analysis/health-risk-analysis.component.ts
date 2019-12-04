@@ -77,6 +77,10 @@ export class HealthRiskAnalysisComponent implements OnInit {
     public cookie: CookieService, public fb: FormBuilder, public router: Router,public datePipe : DatePipe) {
     console.log('route:: ', this.activatedRoute.snapshot.params._id);
     this.userToken = cookie.get('jwtToken');
+    let allcookies: any;
+    allcookies = cookie.getAll();
+    this.cookiesData = JSON.parse(allcookies.user_details);
+    
     this.patientReportViewForm = this.fb.group({
       patientName: ['', [Validators.required, Validators.maxLength(30)]],
       gender: ['', Validators.required],
@@ -114,6 +118,9 @@ export class HealthRiskAnalysisComponent implements OnInit {
 
     })
     this.getPatientData(this.activatedRoute.snapshot.params._id);
+    if(this.cookiesData.type == 'admin'){
+      this.patientReportViewForm.disable();
+    }
   }
 
   ngOnInit() {

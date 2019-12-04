@@ -92,6 +92,18 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+  {
+    path: 'admin/patient-record/:_id', component: PatientReportViewComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'patient_management',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
   { path: 'admin/patient-management/add', component: AddEditPatientComponent, canActivate: [AuthguardService] },
   {
     path: 'admin/patient-record/edit/:_id', component: EditPatientRecordComponent, canActivate: [AuthguardService],
@@ -328,7 +340,7 @@ const routes: Routes = [
 
   {
     path: 'doctor/patient-record-report/:_id', component: PatientReportViewComponent,
-    
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -338,9 +350,10 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+  
   {
     path: 'doctor/patient-record-report/:patient_id_object/file', component: PatientReportViewComponent,
-    
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -350,8 +363,8 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-   
- 
+
+
   { path: 'doctor/signature-management', component: SignatureManagementComponent, canActivate: [AuthguardService] },
 
   /* Account-Settings */
