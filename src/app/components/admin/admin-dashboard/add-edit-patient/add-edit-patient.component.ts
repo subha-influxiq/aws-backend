@@ -57,8 +57,6 @@ export class AddEditPatientComponent implements OnInit {
 
       // this.user_token = cookie.get('jwtToken');
       this.getAllDoctorData();
-      // this.getAllTechData();
-
       this.patientAddEditForm = this.fb.group({
         patientName        :  ['', [Validators.required, Validators.maxLength(30)]],
         gender             :  ['', [Validators.required]],
