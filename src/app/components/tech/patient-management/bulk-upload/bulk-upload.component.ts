@@ -55,9 +55,9 @@ export class BulkUploadComponent implements OnInit {
     this.commonFunction.setTitleMetaTags();
 
     this.techBulkUploadForm = this.fb.group({
-      batchName: ['', [Validators.required, Validators.maxLength(40)]],
+      batch_name: ['', [Validators.required, Validators.maxLength(40)]],
       doctor_id: ['', [Validators.required]],
-      uploadFile: ['', []],
+      upload_file: ['', []],
       status: [1, []],
       note: ['', []],
       tech_id: [this.cookies_id, []],
@@ -129,32 +129,33 @@ export class BulkUploadComponent implements OnInit {
   }
 
   bulkUploaddataSubmit() {
-    if (this.configData.files.count > 0) {
+    console.log(">>>>>>>>", this.configData.files);
+    if (this.configData.files.length > 0) {
       for (const loop in this.configData.files) {
         this.images_array =
           this.images_array.concat({
-            "basepath": this.configData.files[loop].upload.data.basepath + '/'
-              + this.configData.path + '/',
-            "image": this.configData.files[loop].upload.data.data.fileservername,
+            "upload_server_id": this.configData.files[loop].upload.data._id,
+            "basepath": this.configData.files[loop].upload.data.basepath + '/' + this.configData.path + '/',
+            "fileservername": this.configData.files[loop].upload.data.data.fileservername,
             "name": this.configData.files[loop].name,
             "type": this.configData.files[loop].type,
             "bucketname": this.configData.bucketName
           });
       }
 
-      this.techBulkUploadForm.controls['uploadFile'].patchValue(this.images_array);
+      this.techBulkUploadForm.controls['upload_file'].patchValue(this.images_array);
     } else {
-      this.techBulkUploadForm.value.uploadFile = false;
+      this.techBulkUploadForm.value.upload_file = false;
     }
 
     if (this.techBulkUploadForm.valid) {
       var data = {
-        "source": "patient_management",
+        "source": "bulk_report_upload",
         "data": this.techBulkUploadForm.value,
         "sourceobj": ["tech_id", "doctor_id"],
         "token": this.user_token
       }
-      this.httpService.httpViaPost("addorupdatedata", data)
+      this.httpService.httpViaPost("upload-bulk-report", data)
         .subscribe(response => {
           if (response.status = "success") {
             let message: any = "Successfully Submitted";
