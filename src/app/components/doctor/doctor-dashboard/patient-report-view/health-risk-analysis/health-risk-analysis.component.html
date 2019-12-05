@@ -27,12 +27,13 @@
         <input type="radio" value='Male' formControlName="gender">Male</label> 
         <label><input type="radio" value='Female' formControlName="gender">Female</label></td>
       <td colspan="1">D.O.B:
-          <mat-form-field>
+          <input class="order_input" type="text" matInput [formControl]="patientReportViewForm.controls['birthDate']">
+          <!-- <mat-form-field>
               <input matInput [matDatepicker]="picker"  
               formControlName="birthDate" id="birthDate"   >
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
+          </mat-form-field> -->
         </td>
     </tr>
 

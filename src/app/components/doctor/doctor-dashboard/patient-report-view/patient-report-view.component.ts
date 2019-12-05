@@ -108,7 +108,6 @@ export class PatientReportViewComponent implements OnInit {
     allcookies = cookie.getAll();
 
     this.cookiesData = JSON.parse(allcookies.user_details);
-
     this.cookies_id = this.cookiesData._id;
     this.cookies_name = this.cookiesData.firstname;
     this.cookies_lastname = this.cookiesData.lastname;
@@ -153,10 +152,16 @@ export class PatientReportViewComponent implements OnInit {
       report_type: ['', []],
       status: [1],
     });
+    
+    if(this.cookiesData.type == 'admin'){
+      this.patientAddEditForm.disable();
+
+    }
   }
 
   ngOnInit() {
-    if(this.activeRoute.snapshot.url[3].path != 'file') {
+   
+    if(this.activeRoute.snapshot==null || this.activeRoute.snapshot.url ==null || this.activeRoute.snapshot.url[3]==null || this.activeRoute.snapshot.url[3].path != 'file' ) {
       this.setDefaultValue();
       this.getAllDoctorData();
     } else {
@@ -165,6 +170,7 @@ export class PatientReportViewComponent implements OnInit {
         console.log("Images: ", data.data.res[0].data);
       });
     }
+    
   }
 
 
@@ -173,10 +179,11 @@ export class PatientReportViewComponent implements OnInit {
       let reportDetails: any = data.data.res;
       this.techId = reportDetails[0].user_id;
       this.allPatientReportData = reportDetails[0];
+      console.log("resolve dataaaa",this.allPatientReportData);
       this.patientAddEditForm.controls['patientName'].patchValue(reportDetails[0].patientName);
       this.patientAddEditForm.controls['gender'].patchValue(reportDetails[0].gender);
-      this.patientAddEditForm.controls['physicalOrdering'].patchValue(reportDetails[0].physicalOrdering);
-
+      this.patientAddEditForm.controls['physicalOrdering'].patchValue(reportDetails[0].doctor_id);
+      this.patientAddEditForm.controls['birthDate'].patchValue(reportDetails[0].birthDate);
       let sDateArr: any = reportDetails[0].testDate.split("-");
       this.patientAddEditForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
 
@@ -186,10 +193,10 @@ export class PatientReportViewComponent implements OnInit {
       this.patientAddEditForm.controls['PTGPT'].patchValue(reportDetails[0].PTGPT);
       this.patientAddEditForm.controls['PTGVLFI'].patchValue(reportDetails[0].PTGVLFI);
       this.patientAddEditForm.controls['IR'].patchValue(reportDetails[0].IR);
-
-      let dateOfBirth: any = reportDetails[0].birthDate;
-      let dobArr: any = dateOfBirth.split("-");
-      this.patientAddEditForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1], dobArr[0]]));
+      
+      // let dateOfBirth: any = reportDetails[0].birthDate;
+      // let dobArr: any = dateOfBirth.split("-");
+      // this.patientAddEditForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1], dobArr[0]]));
 
       this.patientAddEditForm.controls['ESRNO'].patchValue(reportDetails[0].ESRNO);
       this.patientAddEditForm.controls['ESRL'].patchValue(reportDetails[0].ESRL);

@@ -92,9 +92,34 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+  {
+    path: 'admin/patient-record/:_id', component: PatientReportViewComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'patient_management',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
   { path: 'admin/patient-management/add', component: AddEditPatientComponent, canActivate: [AuthguardService] },
-  { path: 'admin/patient-record/edit/:_id', component: EditPatientRecordComponent, canActivate: [AuthguardService] },
-  
+  {
+    path: 'admin/patient-record/edit/:_id', component: EditPatientRecordComponent, canActivate: [AuthguardService],
+    resolve: { patientData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'patient_management',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+
+
+
+  },
+
   /* Account-Settings */
   { path: 'admin/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'admin/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
@@ -236,10 +261,10 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  { path:'doctor-office/account-settings/change-password' , component: DoctorOfficeChangePasswordComponent},
-  
-    
-    
+  { path: 'doctor-office/account-settings/change-password', component: DoctorOfficeChangePasswordComponent },
+
+
+
   /****************** Tech Route End *****************/
   /**Booked-appoinments**/
   {
@@ -267,14 +292,14 @@ const routes: Routes = [
   /* Account-Settings */
   { path: 'tech/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'tech/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
-  
+
 
   /* Bulk Upload */
   { path: 'tech/patient-management/bulk-upload', component: BulkUploadComponent, canActivate: [AuthguardService] },
 
-  { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent ,canActivate: [AuthguardService] },
-  { path: 'tech/system-superbill', component: SystemSuperbillComponent ,canActivate: [AuthguardService] },
-  { path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent,canActivate: [AuthguardService]  },
+  { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent, canActivate: [AuthguardService] },
+  { path: 'tech/system-superbill', component: SystemSuperbillComponent, canActivate: [AuthguardService] },
+  { path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent, canActivate: [AuthguardService] },
   /****************** Tech Route End *****************/
 
   /* Biller Route */
@@ -302,10 +327,10 @@ const routes: Routes = [
         source: "Patient-Record-Report_view",
         condition: {
           "condition": {
-              "status": 1
+            "status": 1
           },
           "condition1": {
-              "status": 2
+            "status": 2
           }
         }
       },
@@ -314,7 +339,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'doctor/patient-record-report/:_id', component: PatientReportViewComponent, 
+    path: 'doctor/patient-record-report/:_id', component: PatientReportViewComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
@@ -325,8 +350,9 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+  
   {
-    path: 'doctor/patient-record-report/:patient_id_object/file', component: PatientReportViewComponent, 
+    path: 'doctor/patient-record-report/:patient_id_object/file', component: PatientReportViewComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
@@ -337,6 +363,7 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+
 
   { path: 'doctor/signature-management', component: SignatureManagementComponent, canActivate: [AuthguardService] },
 
@@ -379,16 +406,17 @@ const routes: Routes = [
   { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent },
   { path: 'tech/system-superbill', component: SystemSuperbillComponent },
 
-  { path: 'tech/health-risk-analysis',
-   component: HealthRiskAnalysisComponent ,
-   resolve: { data: ResolveService },
-   data: {
-     requestcondition: {
-       source: 'patient_management_view',
-       condition: {}
-     },
-     endpoint: 'datalist'
-   },
+  {
+    path: 'tech/health-risk-analysis',
+    component: HealthRiskAnalysisComponent,
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'patient_management_view',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
   },
 
   /* Error Page Route */
