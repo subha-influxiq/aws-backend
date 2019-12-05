@@ -77,16 +77,7 @@ export class EditPatientRecordComponent implements OnInit {
   isSticky: boolean = false;
   stickyRight: boolean = false;
 
-  public ImageData = [
-    "https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2018/10/29232033/report.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMZ4V1jLsEEqFkSvRlnKctb7SDysjaWlyS1GwnHYKCQ4BIKrz3",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRaioLbnw0bnKVx6GL3cae8Sfo-T3Ti1mxKWuyfQPEGarcdXLYZ",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTbTiY2TqpRfr-gsyxua6SEOkOuVnOfEPVsrQekzQPS-ilnrXsD",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTE1jjEKgBi-H0qoortELsM8aFLHkoGzOUUw0uOI87_0bj73lpP",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTS06uDfeb32Pfk7GexL0F2nRrwV5_VP1b0J0EGfEnvDFH7zWW1",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQzySxWg6z-oAeqyRsfjo93588EQHj0l9HOaFOHINdQxwvn_7Aa",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR5zdI98vcz_kFEfxuToukqUOk9lB5asndrt4yKvHxv4WXZ4aGM"
-  ];
+  public ImageData = [];
 
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
@@ -202,10 +193,7 @@ export class EditPatientRecordComponent implements OnInit {
     this.activeRoute.data.forEach((data) => {
       this.allPatientDataArray = data.patientData.res;
       let patientDetails : any=data.patientData.res;
-      console.log("dataaaaaa fileeee", this.allPatientDataArray);
-      this.testArray = patientDetails[0].images;
-      console.log("imagessssss",this.testArray);
-      // if(this.allPatientDataArray[0].record_type =='mannual'){
+      this.ImageData = patientDetails[0].images_url;
         this.patientAddEditForm.controls['patientName'].patchValue(patientDetails[0].patientName);
         this.patientAddEditForm.controls['gender'].patchValue(patientDetails[0].gender);
         this.patientAddEditForm.controls['doctor_id'].patchValue(patientDetails[0].doctor_id);
@@ -242,7 +230,6 @@ export class EditPatientRecordComponent implements OnInit {
         this.patientAddEditForm.controls['bloodPressure'].patchValue(patientDetails[0].systolic+"/"+patientDetails[0].diastolic);
         this.patientAddEditForm.controls['leaveNotes'].patchValue(patientDetails[0].leaveNotes);
 
-      // }
      
 
       
@@ -297,7 +284,6 @@ export class EditPatientRecordComponent implements OnInit {
 
     switch (action) {
       case 'preview':
-        console.log("hit perfectly");
         if (this.sliderCount == 0) {
           this.sliderCount = this.ImageData.length - 1;
         } else {

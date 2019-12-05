@@ -109,7 +109,6 @@ export class AddEditPatientComponent implements OnInit {
         let result: any = {};
         result = response.res;
         this.allDoctorDataArray = result;   
-      console.log("scfsfsfsfsf",this.allDoctorDataArray);
       })
   }
 
@@ -170,7 +169,7 @@ export class AddEditPatientComponent implements OnInit {
       var data :any = {
         "source" : "patient_management",
         "data" : this.patientAddEditForm.value,
-        "sourceobj": ["physicalOrdering","tech"],
+        "sourceobj": ["doctor_id","tech"],
         "token" : this.user_token
       }
 

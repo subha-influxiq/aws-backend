@@ -98,7 +98,7 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'patient_management',
+        source: 'patient_management_view',
         condition: {}
       },
       endpoint: 'datalist'
@@ -110,7 +110,7 @@ const routes: Routes = [
     resolve: { patientData: ResolveService },
     data: {
       requestcondition: {
-        source: 'patient_management',
+        source: 'patient_management_view',
         condition: {}
       },
       endpoint: 'datalist'

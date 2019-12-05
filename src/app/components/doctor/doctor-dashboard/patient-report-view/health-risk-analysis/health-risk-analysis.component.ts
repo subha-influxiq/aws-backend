@@ -173,11 +173,11 @@ export class HealthRiskAnalysisComponent implements OnInit {
         // let dobArr: any = dateOfBirth.split("-");
         // this.patientReportViewForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1] - 1, dobArr[0]]));
 
-        let sDateArr: any = patientDetails.testDate.split("-");
-        this.patientReportViewForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
+        // let sDateArr: any = patientDetails.testDate.split("-");
+        // this.patientReportViewForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
 
-        let eDateArr: any = patientDetails.testCompletedDate.split("-");
-        this.patientReportViewForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
+        // let eDateArr: any = patientDetails.testCompletedDate.split("-");
+        // this.patientReportViewForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
       });
   }
 

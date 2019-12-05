@@ -76,16 +76,7 @@ export class PatientReportViewComponent implements OnInit {
   public techId: any;
 
   public subhaFlug: any = true;
-  public ImageData = [
-    "https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2018/10/29232033/report.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMZ4V1jLsEEqFkSvRlnKctb7SDysjaWlyS1GwnHYKCQ4BIKrz3",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRaioLbnw0bnKVx6GL3cae8Sfo-T3Ti1mxKWuyfQPEGarcdXLYZ",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTbTiY2TqpRfr-gsyxua6SEOkOuVnOfEPVsrQekzQPS-ilnrXsD",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTE1jjEKgBi-H0qoortELsM8aFLHkoGzOUUw0uOI87_0bj73lpP",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTS06uDfeb32Pfk7GexL0F2nRrwV5_VP1b0J0EGfEnvDFH7zWW1",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQzySxWg6z-oAeqyRsfjo93588EQHj0l9HOaFOHINdQxwvn_7Aa",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR5zdI98vcz_kFEfxuToukqUOk9lB5asndrt4yKvHxv4WXZ4aGM"
-  ];
+  public ImageData = [];
 
 
   // sticky section
@@ -166,8 +157,8 @@ export class PatientReportViewComponent implements OnInit {
       this.getAllDoctorData();
     } else {
       this.activeRoute.data.forEach((data) => {
-        this.ImageData = data.data.res[0].data;
-        console.log("Images: ", data.data.res[0].data);
+        // this.ImageData = data.data.res[0].data;
+        // console.log("Images: ", data.data.res[0].data);
       });
     }
     
@@ -179,16 +170,19 @@ export class PatientReportViewComponent implements OnInit {
       let reportDetails: any = data.data.res;
       this.techId = reportDetails[0].user_id;
       this.allPatientReportData = reportDetails[0];
-      console.log("resolve dataaaa",this.allPatientReportData);
+     
+      this.ImageData = reportDetails[0].images_url;
+     
       this.patientAddEditForm.controls['patientName'].patchValue(reportDetails[0].patientName);
       this.patientAddEditForm.controls['gender'].patchValue(reportDetails[0].gender);
       this.patientAddEditForm.controls['physicalOrdering'].patchValue(reportDetails[0].doctor_id);
       this.patientAddEditForm.controls['birthDate'].patchValue(reportDetails[0].birthDate);
-      let sDateArr: any = reportDetails[0].testDate.split("-");
-      this.patientAddEditForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
 
-      let eDateArr: any = reportDetails[0].testCompletedDate.split("-");
-      this.patientAddEditForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
+      // let sDateArr: any = reportDetails[0].testDate.split("-");
+      // this.patientAddEditForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
+
+      // let eDateArr: any = reportDetails[0].testCompletedDate.split("-");
+      // this.patientAddEditForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
 
       this.patientAddEditForm.controls['PTGPT'].patchValue(reportDetails[0].PTGPT);
       this.patientAddEditForm.controls['PTGVLFI'].patchValue(reportDetails[0].PTGVLFI);
