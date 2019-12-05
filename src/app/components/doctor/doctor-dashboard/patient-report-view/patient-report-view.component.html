@@ -23,7 +23,7 @@
                     <input matInput [formControl]="patientAddEditForm.controls['patientName']"
                       (blur)="inputUntouch(patientAddEditForm,'patientName')">
                     <mat-error *ngIf="patientAddEditForm.controls['patientName'].touched && !patientAddEditForm.controls['patientName'].valid
-          && patientAddEditForm.controls['patientName'].errors.required">
+                         && patientAddEditForm.controls['patientName'].errors.required">
                       Patient Name can not be blank</mat-error>
                   </mat-form-field>
                 </mat-card-content>
@@ -37,10 +37,13 @@
                 <mat-card-content>
                   <label> DOB</label>
                   <mat-form-field>
+                  <input type="text" matInput [formControl]="patientAddEditForm.controls['birthDate']">
+                </mat-form-field>
+                  <!-- <mat-form-field>
                     <input matInput [matDatepicker]="picker" formControlName="birthDate" id="birthDate">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
-                  </mat-form-field>
+                  </mat-form-field> -->
                 </mat-card-content>
 
                 <mat-card-content>
@@ -354,6 +357,7 @@
 
     <mat-card-content class="patient_item_section" id="fixedScroll"
       [ngClass]="{'mat-elevation-z5' : true, 'stickyRight' : isSticky}" >
+
       <mat-tab-group class="previewTabs">
         <mat-tab label="Evalueation worksheet" *ngIf="cookiesData.type == 'admin' ">
         <ng-template matTabContent>

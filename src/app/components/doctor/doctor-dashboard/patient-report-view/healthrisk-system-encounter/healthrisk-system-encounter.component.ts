@@ -170,7 +170,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
       additional_chart_notes: [],
 
       testDate: ['', Validators.required],
-      testCompletedDate: ['', Validators.required],
+     
       signDate: [dateformat],
 
 
@@ -223,10 +223,13 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         patientDetails = response.res[0];
         this.pdata = response.res[0];
         this.patientSingleData = response.res;
+        console.log("encounter form dataaa",this.patientSingleData);
         this.patientEncounterForm.controls['patientName'].patchValue(patientDetails.patientName);
         this.patientEncounterForm.controls['physicalOrdering'].patchValue(patientDetails.physicalOrdering);
         this.patientEncounterForm.controls['gender'].patchValue(patientDetails.gender);
-
+        this.patientEncounterForm.controls['testDate'].patchValue(patientDetails.testDate);
+        this.patientEncounterForm.controls['birthDate'].patchValue(patientDetails.birthDate);
+        
         let fieldText: string = '';
         if (patientDetails.AIPTG_H != 0)
           fieldText += '** ' + patientDetails.AIPTG_H + '\n\n';
@@ -326,9 +329,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         if (this.pdata.R000 == 1)
           this.patientEncounterForm.controls['R000'].patchValue(true);
 
-        let dateOfBirth: any = patientDetails.birthDate;
-        let dobArr: any = dateOfBirth.split("-");
-        this.patientEncounterForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1] - 1, dobArr[0]]));
+       
 
 
         /* After complete all patch value */
