@@ -7,11 +7,10 @@
     <mat-card-content class="image_slider">
 
       <mat-card-content class="img_w">
-        <img src="../../../../../assets/images/logoLarge.png">
+        <img [src]="ImageData[sliderCount]">
       </mat-card-content>
-      <button mat-mini-fab class="prev">
-        << </button> <button mat-mini-fab class="next"> >>
-      </button>
+      <button mat-mini-fab class="prev" (click)="playSlider('preview');"> << </button> 
+      <button mat-mini-fab class="next" (click)="playSlider('next');"> >>  </button>
     </mat-card-content>
   </mat-card-content>
   <mat-card-content class="editItems mat-elevation-z5" [ngClass]="{display_section: allPatientDataArray[0].report_type == 'mannual'}" *ngIf="allPatientDataArray[0].report_type == 'mannual' || allPatientDataArray[0].report_type == 'file' ">

@@ -77,10 +77,22 @@ export class EditPatientRecordComponent implements OnInit {
   isSticky: boolean = false;
   stickyRight: boolean = false;
 
+  public ImageData = [
+    "https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2018/10/29232033/report.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMZ4V1jLsEEqFkSvRlnKctb7SDysjaWlyS1GwnHYKCQ4BIKrz3",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRaioLbnw0bnKVx6GL3cae8Sfo-T3Ti1mxKWuyfQPEGarcdXLYZ",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTbTiY2TqpRfr-gsyxua6SEOkOuVnOfEPVsrQekzQPS-ilnrXsD",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTE1jjEKgBi-H0qoortELsM8aFLHkoGzOUUw0uOI87_0bj73lpP",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTS06uDfeb32Pfk7GexL0F2nRrwV5_VP1b0J0EGfEnvDFH7zWW1",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQzySxWg6z-oAeqyRsfjo93588EQHj0l9HOaFOHINdQxwvn_7Aa",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR5zdI98vcz_kFEfxuToukqUOk9lB5asndrt4yKvHxv4WXZ4aGM"
+  ];
+
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
     this.isSticky = window.pageYOffset >= 50;
   }
+  public testArray:any=[];
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
@@ -160,7 +172,7 @@ export class EditPatientRecordComponent implements OnInit {
         let result: any = {};
         result = response.res;
         this.allDoctorDataArray = result;
-        this.getAllPatientData();
+        // this.getAllPatientData();
       })
   }
 
@@ -186,67 +198,58 @@ export class EditPatientRecordComponent implements OnInit {
   }
 
   getAllPatientData() {
+    
     this.activeRoute.data.forEach((data) => {
       this.allPatientDataArray = data.patientData.res;
       let patientDetails : any=data.patientData.res;
-      console.log("dataaaaaa", this.allPatientDataArray);
-      this.patientAddEditForm.controls['patientName'].patchValue(patientDetails[0].patientName);
-      this.patientAddEditForm.controls['gender'].patchValue(patientDetails[0].gender);
-      this.patientAddEditForm.controls['doctor_id'].patchValue(patientDetails[0].doctor_id);
-      this.patientAddEditForm.controls['tech_id'].patchValue(patientDetails[0].tech_id);
+      console.log("dataaaaaa fileeee", this.allPatientDataArray);
+      this.testArray = patientDetails[0].images;
+      console.log("imagessssss",this.testArray);
+      // if(this.allPatientDataArray[0].record_type =='mannual'){
+        this.patientAddEditForm.controls['patientName'].patchValue(patientDetails[0].patientName);
+        this.patientAddEditForm.controls['gender'].patchValue(patientDetails[0].gender);
+        this.patientAddEditForm.controls['doctor_id'].patchValue(patientDetails[0].doctor_id);
+        this.patientAddEditForm.controls['tech_id'].patchValue(patientDetails[0].tech_id);
+  
+        // let dateOfBirth: any = patientDetails[0].birthDate;
+        // let dobArr: any = dateOfBirth.split("-");
+        // this.patientAddEditForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1], dobArr[0]]))
+        //  console.log("birthdateeee",this,this.patientAddEditForm.value.birthDate);
+        
+        //  let sDateArr: any = patientDetails[0].testDate.split("-");
+        // this.patientAddEditForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
+  
+        this.patientAddEditForm.controls['PTGPT'].patchValue(patientDetails[0].PTGPT); 
+        this.patientAddEditForm.controls['PTGVLFI'].patchValue(patientDetails[0].PTGVLFI);
+        this.patientAddEditForm.controls['IR'].patchValue(patientDetails[0].IR);
+        this.patientAddEditForm.controls['ESRNO'].patchValue(patientDetails[0].ESRNO);
+        this.patientAddEditForm.controls['ESRL'].patchValue(patientDetails[0].ESRL);
+        this.patientAddEditForm.controls['peakC'].patchValue(patientDetails[0].peakC);
+        this.patientAddEditForm.controls['PTGtype'].patchValue(patientDetails[0].PTGtype);
+        this.patientAddEditForm.controls['PTGCVD'].patchValue(patientDetails[0].PTGCVD);
+        this.patientAddEditForm.controls['stressI'].patchValue(patientDetails[0].stressI);
+        this.patientAddEditForm.controls['RI'].patchValue(patientDetails[0].RI);
+        this.patientAddEditForm.controls['AIPTG'].patchValue(patientDetails[0].AIPTG);
+        this.patientAddEditForm.controls['CIsCI'].patchValue(patientDetails[0].CIsCI);
+        this.patientAddEditForm.controls['pNN50'].patchValue(patientDetails[0].pNN50);
+        this.patientAddEditForm.controls['RMSSD'].patchValue(patientDetails[0].RMSSD);
+        this.patientAddEditForm.controls['RMSSD'].patchValue(patientDetails[0].RMSSD);
+        this.patientAddEditForm.controls['SDba'].patchValue(patientDetails[0].SDba);
+        this.patientAddEditForm.controls['SDda'].patchValue(patientDetails[0].SDda);
+        this.patientAddEditForm.controls['DPRS'].patchValue(patientDetails[0].DPRS);
+        this.patientAddEditForm.controls['ValsR'].patchValue(patientDetails[0].ValsR);
+        this.patientAddEditForm.controls['BMI'].patchValue(patientDetails[0].BMI);
+        this.patientAddEditForm.controls['bloodPressure'].patchValue(patientDetails[0].systolic+"/"+patientDetails[0].diastolic);
+        this.patientAddEditForm.controls['leaveNotes'].patchValue(patientDetails[0].leaveNotes);
 
-      let sDateArr: any = patientDetails[0].testDate.split("-");
-      this.patientAddEditForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
-
-      this.patientAddEditForm.controls['PTGPT'].patchValue(patientDetails[0].PTGPT); 
-      this.patientAddEditForm.controls['PTGVLFI'].patchValue(patientDetails[0].PTGVLFI);
-      this.patientAddEditForm.controls['IR'].patchValue(patientDetails[0].IR);
-      this.patientAddEditForm.controls['ESRNO'].patchValue(patientDetails[0].ESRNO);
-      this.patientAddEditForm.controls['ESRL'].patchValue(patientDetails[0].ESRL);
-      this.patientAddEditForm.controls['peakC'].patchValue(patientDetails[0].peakC);
-      this.patientAddEditForm.controls['PTGtype'].patchValue(patientDetails[0].PTGtype);
-      this.patientAddEditForm.controls['PTGCVD'].patchValue(patientDetails[0].PTGCVD);
-      this.patientAddEditForm.controls['stressI'].patchValue(patientDetails[0].stressI);
-      this.patientAddEditForm.controls['RI'].patchValue(patientDetails[0].RI);
-      this.patientAddEditForm.controls['AIPTG'].patchValue(patientDetails[0].AIPTG);
-      this.patientAddEditForm.controls['CIsCI'].patchValue(patientDetails[0].CIsCI);
-      this.patientAddEditForm.controls['pNN50'].patchValue(patientDetails[0].pNN50);
-      this.patientAddEditForm.controls['RMSSD'].patchValue(patientDetails[0].RMSSD);
-      this.patientAddEditForm.controls['RMSSD'].patchValue(patientDetails[0].RMSSD);
-      this.patientAddEditForm.controls['SDba'].patchValue(patientDetails[0].SDba);
-      this.patientAddEditForm.controls['SDda'].patchValue(patientDetails[0].SDda);
-      this.patientAddEditForm.controls['DPRS'].patchValue(patientDetails[0].DPRS);
-      this.patientAddEditForm.controls['ValsR'].patchValue(patientDetails[0].ValsR);
-      this.patientAddEditForm.controls['BMI'].patchValue(patientDetails[0].BMI);
-      this.patientAddEditForm.controls['bloodPressure'].patchValue(patientDetails[0].systolic+"/"+patientDetails[0].diastolic);
-      this.patientAddEditForm.controls['leaveNotes'].patchValue(patientDetails[0].leaveNotes);
+      // }
+     
 
       
 
     })
   }
 
-  public sliderCount: number = 0;
-
-  // playSlider(action: string) {
-
-  //   switch (action) {
-  //     case 'preview':
-  //       if (this.sliderCount == 0) {
-  //         this.sliderCount = this.ImageData.length - 1;
-  //       } else {
-  //         this.sliderCount--;
-  //       }
-  //       break;
-  //     case 'next':
-  //       if (this.sliderCount + 1 == this.ImageData.length) {
-  //         this.sliderCount = 0;
-  //       } else {
-  //         this.sliderCount++;
-  //       }
-  //       break;
-  //   }
-  // }
 
   patientAddEditFormSubmit() {
     let x: any;
@@ -285,6 +288,29 @@ export class EditPatientRecordComponent implements OnInit {
 
         }
       });
+    }
+  }
+
+ public sliderCount: number = 0;
+
+  playSlider(action: string) {
+
+    switch (action) {
+      case 'preview':
+        console.log("hit perfectly");
+        if (this.sliderCount == 0) {
+          this.sliderCount = this.ImageData.length - 1;
+        } else {
+          this.sliderCount--;
+        }
+        break;
+      case 'next':
+        if (this.sliderCount + 1 == this.ImageData.length) {
+          this.sliderCount = 0;
+        } else {
+          this.sliderCount++;
+        }
+        break;
     }
   }
 
