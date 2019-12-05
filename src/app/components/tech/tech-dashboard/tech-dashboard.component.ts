@@ -142,7 +142,7 @@ export class TechDashboardComponent implements OnInit {
       "condition": {
         "condition": {
           "status": "1",
-          "type": "tech"
+          "type": "tech",
         },
         "condition1": {
           "status": "2",
@@ -163,6 +163,8 @@ export class TechDashboardComponent implements OnInit {
         "condition6": {
           "type": "tech"
         },
+        "_id": this.user_data._id,
+        "type": "tech_id"
       },
       "token": this.user_token
     }
