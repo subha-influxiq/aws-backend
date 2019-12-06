@@ -76,27 +76,6 @@ public result : any;
   }
   techUploadFormSubmit() {
 
-    // if (this.configData.files) {
-    //   if (this.configData.files.length > 1) {
-    //     this.ErrCode = true;
-    //     return;
-    //   }
-    //   this.techUploadForm.value.uploadfile =
-    //     {
-    //       "basepath": this.configData.files[0].upload.data.basepath + '/'
-    //         + this.configData.path + '/',
-    //       "image": this.configData.files[0].upload.data.data.fileservername,
-    //       "name": this.configData.files[0].name,
-    //       "type": this.configData.files[0].type
-    //     };
-    //   this.signatureArray = this.techUploadForm.value.uploadfile;
-    //   console.log("array", this.signatureArray);
-
-    // } else {
-    //   this.techUploadForm.value.uploadfile = false;
-    // }
-    // this.techUploadForm.controls['uploadfile'].patchValue(this.signatureArray);
-    // console.log("upload in tech dashboard", this.techUploadForm.value.uploadfile);
     let x: any;
     for (x in this.techUploadForm.controls) {
       this.techUploadForm.controls[x].markAsTouched();
@@ -107,7 +86,7 @@ public result : any;
       var data :any;
        if(this.result){
         data = {
-          "source": "doctor_signature",
+          "source": "users",
           "sourceobj": ["user_id"],
           "data": {
             id: this.result,
@@ -118,7 +97,7 @@ public result : any;
         }
        }else{
          data = {
-          "source": "doctor_signature",
+          "source": "users",
           "data": this.techUploadForm.value,
           "sourceobj": ["user_id"],
           "token": this.user_token
