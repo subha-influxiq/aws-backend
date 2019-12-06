@@ -342,7 +342,7 @@
       </mat-card>
 
       <section >
-        <mat-card-content class="document_wrapper">  
+        <mat-card-content class="document_wrapper" *ngIf="allPatientReportData.report_type == 'file'">  
           <span class="imageGallery">
             <img [src]="ImageData[sliderCount]">
           </span>

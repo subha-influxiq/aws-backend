@@ -55,7 +55,7 @@ export class DoctorDashboardComponent implements OnInit {
   public DoctorSigned: any;
   public commonArray: PeriodicElement[] = [];
   public allDataColumns: string[] = ['no', 'billGenerationDate', 'billSentDate', 'patientName',
-    'billerName', 'doctorName', 'record', 'recordType', 'techName', 'superBill', 'status', 'billerDropDown', 'action'];
+   'record', 'recordType', 'techName', 'superBill', 'status', 'billerDropDown', 'action'];
   
     public dataCol:string[]=['billGenerationDate','billSentDate','doctorName','patientName',
   'record','report_type','status','superBill','techName','billerName','billerDropDown','action'];
