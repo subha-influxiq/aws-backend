@@ -341,7 +341,7 @@
         </mat-card-content>
       </mat-card>
 
-      <section >
+      <section *ngIf="allPatientReportData.report_type == 'file'">
         <mat-card-content class="document_wrapper">  
           <span class="imageGallery">
             <img [src]="ImageData[sliderCount]">
@@ -360,7 +360,7 @@
       [ngClass]="{'mat-elevation-z5' : true, 'stickyRight' : isSticky}" >
 
       <mat-tab-group class="previewTabs">
-        <mat-tab label="Evalueation worksheet" *ngIf="cookiesData.type == 'admin' ">
+        <mat-tab label="Evalueation worksheet" *ngIf="cookiesData.type == 'admin' || cookiesData.type == 'doctor'">
         <ng-template matTabContent>
           <app-health-risk-analysis></app-health-risk-analysis>
         </ng-template>
@@ -369,7 +369,7 @@
         <mat-tab label="Encounter Form">
           <ng-template matTabContent>
 
-            <app-healthrisk-system-encounter *ngIf="subhaFlug == true"></app-healthrisk-system-encounter>
+            <app-healthrisk-system-encounter></app-healthrisk-system-encounter>
             <!-- <app-healthrisk-system-encounter *ngIf="cookiesData.type == 'admin' "></app-healthrisk-system-encounter> -->
 
           </ng-template>

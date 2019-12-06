@@ -344,26 +344,12 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'patient_management',
+        source: 'patient_management_view',
         condition: {}
       },
       endpoint: 'datalist'
     },
   },
-  
-  {
-    path: 'doctor/patient-record-report/:patient_id_object/file', component: PatientReportViewComponent,
-    canActivate: [AuthguardService],
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'pdf-to-img',
-        condition: {}
-      },
-      endpoint: 'datalist'
-    },
-  },
-
 
   { path: 'doctor/signature-management', component: SignatureManagementComponent, canActivate: [AuthguardService] },
 

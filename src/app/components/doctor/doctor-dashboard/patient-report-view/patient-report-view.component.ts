@@ -56,7 +56,6 @@ export class PatientReportViewComponent implements OnInit {
 
   @ViewChild(FormGroupDirective, { static: false }) formDirective: FormGroupDirective;
   public htmlText: any = { nav: 'Add Patient', header: "Physician Report" };
-  public buttonText: any = "Update";
   public patientAddEditForm: FormGroup;
   public userToken: any;
   date = new FormControl(new Date());
@@ -75,19 +74,8 @@ export class PatientReportViewComponent implements OnInit {
   public paramsId: any;
   public techId: any;
 
-  public subhaFlug: any = true;
+  public sliderCount: number = 0;
   public ImageData = [];
-
-
-  // sticky section
-  isSticky: boolean = false;
-  stickyRight: boolean = false;
-
-  // @HostListener('window:scroll', ['$event'])
-  // checkScroll() {
-  //   this.isSticky = window.pageYOffset >= 50;
-  // }
-
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
@@ -110,49 +98,47 @@ export class PatientReportViewComponent implements OnInit {
     this.commonFunction.setTitleMetaTags();
 
     this.patientAddEditForm = this.fb.group({
-      patientName: ['', [Validators.required, Validators.maxLength(30)]],
-      gender: ['', Validators.required],
-      birthDate: [''],
-      physicalOrdering: [''],
-      testDate: [''],
-      date: ['', Validators.required],
-      testCompletedDate: ['', Validators.required],
-      PTGPT: ['', Validators.required],
-      PTGVLFI: ['', Validators.required],
-      IR: ['', Validators.required],
-      ESRNO: ['', Validators.required],
-      ESRL: ['', Validators.required],
-      peakC: ['', Validators.required],
-      PTGtype: ['', Validators.required],
-      PTGCVD: ['', Validators.required],
-      stressI: ['', Validators.required],
-      RI: ['', Validators.required],
-      AIPTG: ['', Validators.required],
-      CIsCI: ['', Validators.required],
-      pNN50: ['', Validators.required],
-      RMSSD: ['', Validators.required],
-      SDba: ['', Validators.required],
-      SDda: ['', Validators.required],
-      DPRS: ['', Validators.required],
-      ValsR: ['', Validators.required],
-      BMI: ['', Validators.required],
-      bloodPressure: ['', Validators.required],
-      leaveNotes: ['', Validators.required],
-      systolic: [''],
-      diastolic: [''],
-      report_type: ['', []],
-      status: [1],
+      patientName:        ['', [ Validators.required, Validators.maxLength(30) ]],
+      gender:             ['', [ Validators.required ]],
+      birthDate:          ['', []],
+      physicalOrdering:   ['', []],
+      testDate:           ['', []],
+      date:               ['', [ Validators.required ]],
+      testCompletedDate:  ['', [ Validators.required ]],
+      PTGPT:              ['', [ Validators.required ]],
+      PTGVLFI:            ['', [ Validators.required ]],
+      IR:                 ['', [ Validators.required ]],
+      ESRNO:              ['', [ Validators.required ]],
+      ESRL:               ['', [ Validators.required ]],
+      peakC:              ['', [ Validators.required ]],
+      PTGtype:            ['', [ Validators.required ]],
+      PTGCVD:             ['', [ Validators.required ]],
+      stressI:            ['', [ Validators.required ]],
+      RI:                 ['', [ Validators.required ]],
+      AIPTG:              ['', [ Validators.required ]],
+      CIsCI:              ['', [ Validators.required ]],
+      pNN50:              ['', [ Validators.required ]],
+      RMSSD:              ['', [ Validators.required ]],
+      SDba:               ['', [ Validators.required ]],
+      SDda:               ['', [ Validators.required ]],
+      DPRS:               ['', [ Validators.required ]],
+      ValsR:              ['', [ Validators.required ]],
+      BMI:                ['', [ Validators.required ]],
+      bloodPressure:      ['', [ Validators.required ]],
+      leaveNotes:         ['', [ Validators.required ]],
+      systolic:           ['', []],
+      diastolic:          ['', []],
+      report_type:        ['', []],
+      status:             [1, []],
     });
     
     if(this.cookiesData.type == 'admin'){
       this.patientAddEditForm.disable();
-
     }
   }
 
   ngOnInit() {
-   
-    if(this.activeRoute.snapshot==null || this.activeRoute.snapshot.url ==null || this.activeRoute.snapshot.url[3]==null || this.activeRoute.snapshot.url[3].path != 'file' ) {
+    if(this.activeRoute.snapshot == null || this.activeRoute.snapshot.url ==null || this.activeRoute.snapshot.url[3]==null || this.activeRoute.snapshot.url[3].path != 'file' ) {
       this.setDefaultValue();
       this.getAllDoctorData();
     } else {
@@ -163,7 +149,6 @@ export class PatientReportViewComponent implements OnInit {
     }
     
   }
-
 
   setDefaultValue() {
     this.activeRoute.data.forEach((data) => {
@@ -223,13 +208,9 @@ export class PatientReportViewComponent implements OnInit {
       "token": this.userToken
     }
 
-    this.httpService.httpViaPost('datalist', data)
-      .subscribe(response => {
-        let result: any = {};
-        result = response.res;
-        this.allDoctorDataArray = result;
-
-      })
+    this.httpService.httpViaPost('datalist', data).subscribe((response) => {
+      this.allDoctorDataArray = response.res;
+    });
   }
 
   /**for validation purpose**/
@@ -240,17 +221,18 @@ export class PatientReportViewComponent implements OnInit {
 
 
   patientAddEditFormSubmit() {
-
     let x: any;
     for (x in this.patientAddEditForm.controls) {
       this.patientAddEditForm.controls[x].markAsTouched();
     }
-    const myString = this.patientAddEditForm.controls.bloodPressure.value;
-    const splits = myString.split('/');
-    var startDate = this.datePipe.transform(this.startdate, "dd-MM-yyyy");
+
+    const myString  = this.patientAddEditForm.controls.bloodPressure.value;
+    const splits    = myString.split('/');
+    var startDate   = this.datePipe.transform(this.startdate, "dd-MM-yyyy");
     var dateOfBirth = this.datePipe.transform(this.dateofbirth, "dd-MM-yyyy");
-    var endDate = this.datePipe.transform(this.enddate, "dd-MM-yyyy");
-    var dateformat = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+    var endDate     = this.datePipe.transform(this.enddate, "dd-MM-yyyy");
+    var dateformat  = this.datePipe.transform(new Date(), "dd-MM-yyyy");
+
     this.patientAddEditForm.value.testDate = startDate;
     this.patientAddEditForm.value.testCompletedDate = endDate;
     this.patientAddEditForm.value.birthDate = dateOfBirth;
@@ -271,7 +253,7 @@ export class PatientReportViewComponent implements OnInit {
         "token": this.userToken
       }
       data.data["id"] = this.paramsId;
-      this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
+      this.httpService.httpViaPost("addorupdatedata", data).subscribe((response) => {
         if (response.status = "success") {
           this.formDirective.resetForm();
         }
@@ -279,10 +261,7 @@ export class PatientReportViewComponent implements OnInit {
     }
   }
 
-  public sliderCount: number = 0;
-
   playSlider(action: string) {
-
     switch (action) {
       case 'preview':
         if (this.sliderCount == 0) {
