@@ -220,17 +220,7 @@
       <th mat-header-cell *matHeaderCellDef> Patient Name. </th>
       <td mat-cell *matCellDef="let element" data-label="Patient Name">{{ element.patientName }} </td>
     </ng-container>
-
-    <ng-container matColumnDef="billerName">
-      <th mat-header-cell *matHeaderCellDef> Biller Name </th>
-      <td mat-cell *matCellDef="let element" data-label="Biller Name">{{ element.billername }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="doctorName">
-      <th mat-header-cell *matHeaderCellDef> Doctor Name</th>
-      <td mat-cell *matCellDef="let element" data-label="Doctor Name"> {{ element.doctorname }} </td>
-    </ng-container>
-
+    
     <ng-container matColumnDef="record">
       <th mat-header-cell *matHeaderCellDef> Record </th>
       <td mat-cell *matCellDef="let element; let i = index;">
