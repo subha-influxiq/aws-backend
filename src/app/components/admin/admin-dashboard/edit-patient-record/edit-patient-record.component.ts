@@ -38,6 +38,7 @@ export const MY_FORMATS = {
     monthYearA11yLabel: 'MMMM YYYY',
   },
 };
+
 @Component({
   selector: 'app-edit-patient-record',
   templateUrl: './edit-patient-record.component.html',
@@ -50,6 +51,7 @@ export const MY_FORMATS = {
     { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
   ],
 })
+
 export class EditPatientRecordComponent implements OnInit {
 
   @ViewChild(FormGroupDirective, { static: false }) formDirective: FormGroupDirective;
@@ -79,10 +81,10 @@ export class EditPatientRecordComponent implements OnInit {
 
   public ImageData = [];
 
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    this.isSticky = window.pageYOffset >= 50;
-  }
+  // @HostListener('window:scroll', ['$event'])
+  // checkScroll() {
+  //   this.isSticky = window.pageYOffset >= 50;
+  // }
   public testArray:any=[];
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
