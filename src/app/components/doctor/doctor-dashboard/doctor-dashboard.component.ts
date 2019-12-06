@@ -227,15 +227,14 @@ export class DoctorDashboardComponent implements OnInit {
         
         break;
       case 'Report unSigned':
-        if(this.pendingArray.length > 0){
+        if(this.pendingArray.length > 0) {
           this.headerText = "DOCTOR UNSIGNED REPORTS";
           this.commonArray = this.pendingArray;
           this.allDataSource = new MatTableDataSource(this.commonArray);
           this.allDataSource.paginator = this.paginator;
-        }else{
+        } else {
           this.openModal(modalData);
         }
-        
         break;
       default:
         break;
