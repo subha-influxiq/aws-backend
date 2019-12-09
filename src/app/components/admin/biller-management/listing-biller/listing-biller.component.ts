@@ -21,7 +21,6 @@ public allUserData_skip: any = ["confirmpassword", "password",
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public token: any = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NzExMTYzNDMsImlhdCI6MTU3MTAyOTk0M30.m7kRTmIwvk-G0qYmr0zJ9qXoFJea8fBwnIOt8d7n3bc";
   public apiUrl: any ;
   public tableName: any = "users";
   previewModal_detail_skip: any = ['_id','fullNamecopy'];
