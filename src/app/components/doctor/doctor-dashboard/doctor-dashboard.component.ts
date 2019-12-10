@@ -197,7 +197,6 @@ export class DoctorDashboardComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.allDataList);
     this.DoctorSigned = this.allDataList["doctorsigned-count"];
     this.Pending = this.allDataList["pending-count"];
-    console.log("Problem (Data not coming) >>--->", this.allDataList);
     this.doctorSignedArray = this.allDataList.data.doctorsigned;
     this.pendingArray = this.allDataList.data.pending;
     this.allDataSource = this.allDataList.dataFull;
@@ -282,7 +281,7 @@ export class DoctorDashboardComponent implements OnInit {
   }
 
   viewButton(index: number) {
-    console.log("indexxxxx", this.allDataSource[index]);
+    console.log("View Button...", this.allDataSource[index]);
   }
 
 }
