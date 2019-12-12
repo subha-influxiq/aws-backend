@@ -11,7 +11,7 @@ import { map, catchError, tap } from 'rxjs/operators';
 export class HttpServiceService {
   private environment: any = "dev";
   private siteSettingData: any;
-  public baseUrl: any = "https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/";
+  public baseUrl: any = "https://5hyccia9v2.execute-api.us-east-1.amazonaws.com/dev/api/";
 
   constructor(private http: HttpClient, public CookieService: CookieService) {
     // this.getSiteSettingData().subscribe(responce => {

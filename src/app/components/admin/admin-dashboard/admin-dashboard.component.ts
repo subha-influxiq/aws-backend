@@ -36,16 +36,11 @@ export interface AllDataElement {
 })
 export class AdminDashboardComponent implements OnInit {
 
-  public userToken: any;
-  public billerCount: any;
-  public doctorCount: any;
-  public techCount: any;
-  public uploadedStatusCount: any;
-  public processedStatusCount: any;
-  public signedStatusCount: any;
-  public billerStatusCount: any;
-
-  public headerText: any;
+  public jwtToken: string = "";
+  public htmlText: any = {
+    headerText: ""
+  };
+  public allResolveData: any = {};
 
   public commonArray: PeriodicElement[] = [];
   public uploadedStatusArray: any = [];
@@ -68,14 +63,14 @@ export class AdminDashboardComponent implements OnInit {
 
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute) {
     /* Get Auth Token */
-    this.userToken = cookieService.get('jwtToken');
+    this.jwtToken = cookieService.get('jwtToken');
 
     this.activatedRoute.data.subscribe(resolveData => {
-      let allData: AllDataElement[] = resolveData.dataCount.res;
+      console.log("===========", resolveData);
+      this.allResolveData = resolveData.dataCount.data;
+      let allData: AllDataElement[] = this.allResolveData.totalReportData;
       this.allDataSource = new MatTableDataSource(allData);
     });
-    this.getAllCountData();
-    this.getStatusCountData();
   }
 
   ngOnInit() {
@@ -93,7 +88,7 @@ export class AdminDashboardComponent implements OnInit {
     var data = {
       "source": "Patient-Record-Report_view",
       "condition": searchJson,
-      "token": this.userToken
+      "token": this.jwtToken
     }
     this.http.httpViaPost('datalist', data)
       .subscribe(Response => {
@@ -107,7 +102,7 @@ export class AdminDashboardComponent implements OnInit {
     var data = {
       "source": "patient_management_view_count",
       "condition": searchJson,
-      "token": this.userToken
+      "token": this.jwtToken
     }
 
     this.http.httpViaPost('datalist', data)
@@ -127,7 +122,7 @@ export class AdminDashboardComponent implements OnInit {
         $gte: moment(this.startDate).format('DD-MM-YYYY')
       }
     },
-      "token": this.userToken,
+      "token": this.jwtToken,
     }
     this.http.httpViaPost('datalist', data)
       .subscribe((response) => {
@@ -145,34 +140,12 @@ export class AdminDashboardComponent implements OnInit {
         },
         status: this.statusFlag
     },
-      "token": this.userToken,
+      "token": this.jwtToken,
     }
     this.http.httpViaPost('datalist', data)
       .subscribe((response) => {
         this.dataSource = response.res;
       });
-  }
-
-  getAllCountData() {
-    var data = {
-      "condition": {
-        "condition": {
-          "type": "doctor"
-        },
-        "condition1": {
-          "type": "tech"
-        },
-        "condition2": {
-          "type": "biller"
-        }
-      }
-    }
-    this.http.httpViaPost('count', data).subscribe((response) => {
-
-      this.billerCount = response["biller-count"];
-      this.techCount = response["tech-count"];
-      this.doctorCount = response["doctor-count"];
-    });
   }
 
   getStatusCountData() {
@@ -203,11 +176,7 @@ export class AdminDashboardComponent implements OnInit {
 
         let result: any;
         result = response;
-        this.uploadedStatusCount = result["status-count1"];
-        this.processedStatusCount = result["status-count2"];
-        this.signedStatusCount = result["status-count3"];
-        this.billerStatusCount = result["status-count5"];
-
+        
         this.uploadedStatusArray = result.data.status1;
         this.processedStatusArray = result.data.status2;
         this.signedStatusArray = result.data.status3;
@@ -220,25 +189,25 @@ export class AdminDashboardComponent implements OnInit {
     this.statusFlag = flag;
     switch (flag) {
       case 'Reports Uploaded':
-        this.headerText = "Reports Uploaded";
+        this.htmlText.headerText = "Reports Uploaded";
         this.commonArray = this.uploadedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         this.dataSource.paginator = this.paginator;
         break;
       case 'Report Processed':
-        this.headerText = "Reports Processed";
+        this.htmlText.headerText = "Reports Processed";
         this.commonArray = this.processedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         this.dataSource.paginator = this.paginator;
         break;
       case 'Report Signed':
-        this.headerText = "Reports Signed";
+        this.htmlText.headerText = "Reports Signed";
         this.commonArray = this.signedStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         this.dataSource.paginator = this.paginator;
         break;
       case 'Super Bill':
-        this.headerText = "Sent to Super Bill";
+        this.htmlText.headerText = "Sent to Super Bill";
         this.commonArray = this.billerStatusArray;
         this.dataSource = new MatTableDataSource(this.commonArray);
         this.dataSource.paginator = this.paginator;

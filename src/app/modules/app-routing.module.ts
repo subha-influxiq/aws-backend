@@ -86,10 +86,10 @@ const routes: Routes = [
     resolve: { dataCount: ResolveService },
     data: {
       requestcondition: {
-        source: 'Patient-Record-Report_view',
+        source: '',
         condition: {}
       },
-      endpoint: 'datalist'
+      endpoint: 'admin-dashboard'
     },
   },
   {
