@@ -277,10 +277,10 @@ const routes: Routes = [
     resolve: { techDashboardData: ResolveService },
     data: {
       requestcondition: {
-        source: 'Patient-Record-Report_view',
+        source: '',
         condition: {},
       },
-      endpoint: 'datalist'
+      endpoint: 'tech-dashboard'
     },
   },
   { path: 'tech/report/total-uploaded', component: ReportDetailsComponent, canActivate: [AuthguardService], },

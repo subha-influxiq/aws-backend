@@ -30,7 +30,7 @@ export class ResolveService implements Resolve<any> {
     if(route.url[0].path == 'admin') {
       switch(route.url[1].path) {
         case 'dashboard':
-          requestData.condition['tech_id_object'] = userData._id;
+          requestData.condition['admin_id'] = userData._id;
           break;
       }
     }
@@ -40,7 +40,7 @@ export class ResolveService implements Resolve<any> {
     if(route.url[0].path == 'tech') {
       switch(route.url[1].path) {
         case 'dashboard':
-          requestData.condition['tech_id_object'] = userData._id;
+          requestData.condition['tech_id'] = userData._id;
           break;
       }
     }

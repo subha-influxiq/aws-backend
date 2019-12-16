@@ -31,8 +31,6 @@ export interface AllDataElement {
 export interface DialogData {
 }
 
-
-
 @Component({
   selector: 'app-tech-dashboard',
   templateUrl: './tech-dashboard.component.html',
@@ -42,155 +40,62 @@ export interface DialogData {
 export class TechDashboardComponent implements OnInit {
   public commonArray: PeriodicElement[] = [];
   displayedColumns: string[] = ['no', 'patientName', 'record_type', 'doctorName', 'techName','date_added', 'status'];
-
-  public totalDoctor:any;
-
-  public user_data: any = {};
   allDataColumns: string[] = ['no','patientName', 'doctorName', 'techName','billerName','recordType','billGenerationData', 'billsendDate','status'];
 
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+  @ViewChild(MatPaginator, { static: false }) paginatorAll: MatPaginator;
+  @ViewChild(MatSort, { static: false }) sort: MatSort;
+  @ViewChild(MatSort, { static: false }) sortAll: MatSort;
 
-   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-
-
-   @ViewChild(MatPaginator, { static: false }) paginatorAll: MatPaginator;
-   @ViewChild(MatSort, { static: false }) sort: MatSort;
-   @ViewChild(MatSort, { static: false }) sortAll: MatSort;
-
-
-   dataSource: MatTableDataSource<PeriodicElement>;
+  dataSource: MatTableDataSource<PeriodicElement>;
   allDataSource: MatTableDataSource<AllDataElement>;
 
-  /**lib-listing start here**/
-
-  public allUserData: any = [];
-
-  public user_id: any;
-  public user_token: any;
-  public techDashboardAllData: any = [];
-  public techSingleData: any = [];
-  public userSingleDataName: any;
-  public userSingleDataTaxo:any;
-  public userSingleDataEmail:any;
-  public userSingleDataFax:any;
-  public userSingleDataPhone:any;
-  public allDoctorData:any=[];
-  public uploadedStatusCount: any;
-  public processedStatusCount: any;
-  public signedStatusCount: any;
-  public reportUploadedArray: any = [];
-  public reportProcessedArray: any = [];
-  public reportRemainingArray: any = [];
-  public headerText: any="Patient record report";
-  public userToken : any;
+  public allResolveData: any;
+  public htmlText: any = {
+    headerText: "Patient Report Record"
+  }
+  public authData: any = {};
   public dialogRef: any;
 
   constructor(public cookie: CookieService, public http: HttpClient,
     public httpService: HttpServiceService, public activatedRoute: ActivatedRoute, 
     public commonFunction: CommonFunction,public dialog: MatDialog) {
 
-    /* Set Meta Data */
-    this.commonFunction.setTitleMetaTags();
-
-    let allData: any = {};
-    allData = cookie.getAll()
-    this.user_data = JSON.parse(allData.user_details);
-    this.userToken = cookie.get('jwtToken');
-
-    this.user_id = this.user_data.id;
-    this.user_token = cookie.get('jwtToken');
-    this.getTechData();
-    this.getTechCountData();
+    let allData: any = cookie.getAll();
+    this.authData["userData"] = JSON.parse(allData.user_details);
+    this.authData["jwtToken"] = cookie.get('jwtToken');
 
     this.activatedRoute.data.forEach((data) => {
-      let allDashboardData : AllDataElement[] = data.techDashboardData.res;
-      this.techDashboardAllData = new MatTableDataSource(allDashboardData);
-    })
+      this.allResolveData = data.techDashboardData.data;
+      console.log(">>>>>>>>>>>", this.allResolveData);
+      this.allResolveData["totalRemainToProcessCount"] = this.allResolveData.totalReportCount - this.allResolveData.processedReportCount;
+      let allDashboardData : AllDataElement[] = this.allResolveData.totalReportData;
+      this.allDataSource = new MatTableDataSource(allDashboardData);
+    });
   }
 
   ngOnInit() {
-    this.techDashboardAllData.paginator = this.paginator;
-    this.techDashboardAllData.sort = this.sortAll;
+    this.allDataSource.paginator = this.paginatorAll;
   }
+
   ngAfterViewInit() {
-    this.techDashboardAllData.paginator = this.paginator;
+    this.allDataSource.paginator = this.paginatorAll;
   }
 
-  getTechData() {
-    var data = {
-      "source": "users_view_doctor",
-      "condition": {
-        "tech_id_object": this.user_id
-      },
-      "token": this.user_token
-    }
-    this.httpService.httpViaPost('datalist', data)
-      .subscribe(response => {
-        let result: any = {};
-        result = response.res;
-        this.allDoctorData=response.res;
-        this.userSingleDataName = result[0].fullName;
-        this.userSingleDataEmail=result[0].email;
-        this.userSingleDataFax=result[0].fax;
-        this.userSingleDataPhone=result[0].phone;
-        this.userSingleDataTaxo=result[0].taxo_list[0];
-        this.totalDoctor=response.resc;
-      })
-  }
-
-  getTechCountData() {
-    var data = {
-      "condition": {
-        "condition": {
-          "status": "1",
-          "type": "tech",
-        },
-        "condition1": {
-          "status": "2",
-          "type": "tech"
-        },
-        "condition2": {
-          "status": "3"
-        },
-        "condition3": {
-          "status": "error"
-        },
-        "condition4": {
-          "status": "4"
-        },
-        "condition5": {
-          "record_type": "file"
-        },
-        "condition6": {
-          "type": "tech"
-        },
-        "_id": this.user_data._id,
-        "type": "tech_id"
-      },
-      "token": this.user_token
-    }
-    
-    this.httpService.httpViaPost('statuscount', data)
-      .subscribe(response => {
-        this.processedStatusCount = response["status-count1"];
-        this.signedStatusCount = response["status-count2"];
-        this.uploadedStatusCount = response["status-count7"]
-        this.reportUploadedArray = response.data.status7;
-        this.reportRemainingArray = response.data.status2;
-        this.reportProcessedArray = response.data.status1;
-      });
-  }
   filterByName(key: string, value: string) {
     let searchJson: any = {};
     searchJson[key] = value.toLowerCase();
-    searchJson["user_id_object"] = this.user_id;
+    searchJson["tech_id_object"] = this.authData.userData._id;
     var data = {
-      "source": "patient_management_view_tech",
+      "source": "Patient-Record-Report_view",
       "condition": searchJson,
-      "token": this.userToken
+      "token": this.authData.jwtToken
     }
-    this.httpService.httpViaPost('datalist', data)
-      .subscribe((Response) => {
-        this.techDashboardAllData = Response.res;
+    this.httpService.httpViaPost('datalist', data).subscribe((response) => {
+        let allDashboardData : AllDataElement[] = response.res;;
+        this.allDataSource = new MatTableDataSource(allDashboardData);
+        this.allDataSource.paginator = this.paginatorAll;
+        this.allDataSource.sort = this.sortAll;
       });
   }
 
@@ -198,13 +103,15 @@ export class TechDashboardComponent implements OnInit {
     let searchJson: any = {};
     searchJson[key] = value.toLowerCase();
     var data = {
-      "source": "patient_management_view_tech",
+      "source": "Patient-Record-Report_view",
       "condition": searchJson,
-      "token": this.userToken
+      "token": this.authData.jwtToken
     }
-    this.httpService.httpViaPost('datalist', data)
-    .subscribe((Response) => {
-      // this.techDashboardAllData = Response.res;
+    this.httpService.httpViaPost('datalist', data).subscribe((response) => {
+      let allDashboardData : AllDataElement[] = response.res;;
+      this.allDataSource = new MatTableDataSource(allDashboardData);
+      this.allDataSource.paginator = this.paginatorAll;
+      this.allDataSource.sort = this.sortAll;
     });
   }
 
@@ -222,39 +129,70 @@ export class TechDashboardComponent implements OnInit {
   
     switch (flag) {
       case 'upload':
-        if(this.reportUploadedArray.length > 0) {
-          this.headerText = "Reports Uploaded";
-          this.commonArray = this.reportUploadedArray;
-          this.dataSource = new MatTableDataSource(this.commonArray);
-          this.dataSource.paginator = this.paginatorAll;
-          this.dataSource.sort = this.sort;
+        if(this.allResolveData.totalReportCount > 0) {
+          this.htmlText.headerText = "Reports Uploaded";
+          let allDashboardData : AllDataElement[] = this.allResolveData.totalReportData;
+          this.allDataSource = new MatTableDataSource(allDashboardData);
+          this.allDataSource.paginator = this.paginator;
+          this.allDataSource.sort = this.sortAll;
         } else {
-           this.openDialog(modalData);        }
+           this.openDialog(modalData);        
+        }
         break;
       case 'processed':
-        if(this.reportProcessedArray>0){
-          this.headerText = "Reports Processed";
-          this.commonArray = this.reportProcessedArray;
-          this.dataSource = new MatTableDataSource(this.commonArray);
-          this.dataSource.paginator = this.paginatorAll;
-          this.dataSource.sort = this.sort;
-
-        }else{
+        if(this.allResolveData.processedReportCount > 0){
+          this.htmlText.headerText = "Reports Processed";
+          let condition = {
+            "source": "Patient-Record-Report_view",
+            "condition": {
+              "tech_id_object": this.authData.userData._id,
+              "page_1": { $exists:true },
+              "page_2": { $exists:true },
+              "page_3": { $exists:true },
+              "page_4": { $exists:true },
+              "page_5": { $exists:true },
+              "page_6": { $exists:true },
+              "page_7": { $exists:true },
+            },
+            "token": this.authData.jwtToken
+          }
+          this.httpService.httpViaPost('datalist', condition).subscribe((response) => {
+            let allDashboardData : AllDataElement[] = response.res;
+            this.allDataSource = new MatTableDataSource(allDashboardData);
+            this.allDataSource.paginator = this.paginator;
+            this.allDataSource.sort = this.sortAll;
+          });
+        } else {
           this.openDialog(modalData); 
         }
-        
         break;
       case 'remainProcess':
-        if(this,this.reportRemainingArray > 0){
-          this.headerText = "Reports Remain to Process";
-          this.commonArray = this.reportRemainingArray;
-          this.dataSource = new MatTableDataSource(this.commonArray);
-          this.dataSource.paginator = this.paginatorAll;
-          this.dataSource.sort = this.sort;
-        }else{
+        if(parseInt(this.allResolveData.totalRemainToProcessCount) > 0) {
+          let condition = {
+            "source": "Patient-Record-Report_view",
+            "condition": {
+              "tech_id_object": this.authData.userData._id,
+              $or: [
+                  {"page_1": { $exists:false }},
+                  {"page_2": { $exists:false }},
+                  {"page_3": { $exists:false }},
+                  {"page_4": { $exists:false }},
+                  {"page_5": { $exists:false }},
+                  {"page_6": { $exists:false }},
+                  {"page_7": { $exists:false }}
+                ]
+            },
+            "token": this.authData.jwtToken
+          }
+          this.httpService.httpViaPost('datalist', condition).subscribe((response) => {
+            let allDashboardData : AllDataElement[] = response.res;
+            this.allDataSource = new MatTableDataSource(allDashboardData);
+            this.allDataSource.paginator = this.paginator;
+            this.allDataSource.sort = this.sortAll;
+          });
+        } else {
           this.openDialog(modalData); 
         }
-
         break;
       default:
         break;
@@ -263,29 +201,27 @@ export class TechDashboardComponent implements OnInit {
 
 
   openDialog(data) {
-
     this.dialogRef = this.dialog.open(DialogBoxComponent, data);
     this.dialogRef.afterClosed().subscribe(result => {
       switch (result) {
         case "Ok":
             this.dialogRef.close();
           break;
-        
       }
     });
   }
 
   /**All doctor deatls view in modal */
-allDoctorViewModal(){
- //dialog function
-  const dialogGenreRef = this.dialog.open(DoctorViewDialogComponent, {
-    panelClass: ['modal-sm', 'infomodal'],
-    disableClose: true,
-  });
-  dialogGenreRef.afterClosed().subscribe(result => {
-   
-  });
-}
+  allDoctorViewModal() {
+    const dialogGenreRef = this.dialog.open(DoctorViewDialogComponent, {
+      panelClass: ['modal-sm', 'infomodal'],
+      disableClose: true,
+    });
+
+    dialogGenreRef.afterClosed().subscribe(result => {
+      console.log('Modal Close');
+    });
+  }
 
 }
 

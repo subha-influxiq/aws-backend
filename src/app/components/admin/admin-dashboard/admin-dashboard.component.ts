@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MatPaginator } from '@angular/material/paginator';import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import * as momentImported from 'moment';
 const moment = momentImported;
 
@@ -41,8 +42,6 @@ export class AdminDashboardComponent implements OnInit {
     headerText: ""
   };
   public allResolveData: any = {};
-
-  public commonArray: PeriodicElement[] = [];
   public uploadedStatusArray: any = [];
   public processedStatusArray: any = [];
   public signedStatusArray: any = [];
@@ -100,7 +99,7 @@ export class AdminDashboardComponent implements OnInit {
     let searchJson: any = {};
     searchJson[key] = value.toLowerCase();
     var data = {
-      "source": "patient_management_view_count",
+      "source": "Patient-Record-Report_view",
       "condition": searchJson,
       "token": this.jwtToken
     }
@@ -190,27 +189,63 @@ export class AdminDashboardComponent implements OnInit {
     switch (flag) {
       case 'Reports Uploaded':
         this.htmlText.headerText = "Reports Uploaded";
-        this.commonArray = this.uploadedStatusArray;
-        this.dataSource = new MatTableDataSource(this.commonArray);
-        this.dataSource.paginator = this.paginator;
+        let allData: AllDataElement[] = this.allResolveData.totalReportData;
+        this.allDataSource = new MatTableDataSource(allData);
+        this.allDataSource.paginator = this.paginatorAll;
         break;
       case 'Report Processed':
         this.htmlText.headerText = "Reports Processed";
-        this.commonArray = this.processedStatusArray;
-        this.dataSource = new MatTableDataSource(this.commonArray);
-        this.dataSource.paginator = this.paginator;
+        var data = {
+          "source": "Patient-Record-Report_view",
+          "condition": {
+            "page_1": { $exists:true },
+            "page_2": { $exists:true },
+            "page_3": { $exists:true },
+            "page_4": { $exists:true },
+            "page_5": { $exists:true },
+            "page_6": { $exists:true },
+            "page_7": { $exists:true }
+          },
+          "token": this.jwtToken,
+        }
+        this.http.httpViaPost('datalist', data).subscribe((response) => {
+          let allData: AllDataElement[] = response.res;
+          this.allDataSource = new MatTableDataSource(allData);
+          this.allDataSource.paginator = this.paginatorAll;
+        });
         break;
       case 'Report Signed':
         this.htmlText.headerText = "Reports Signed";
-        this.commonArray = this.signedStatusArray;
-        this.dataSource = new MatTableDataSource(this.commonArray);
-        this.dataSource.paginator = this.paginator;
+        var repostSignCond = {
+          "source": "Patient-Record-Report_view",
+          "condition": {
+            "doctor_signature": { $exists:true }
+          },
+          "token": this.jwtToken,
+        }
+        this.http.httpViaPost('datalist', repostSignCond).subscribe((response) => {
+          let allData: AllDataElement[] = response.res;
+          this.allDataSource = new MatTableDataSource(allData);
+          this.allDataSource.paginator = this.paginatorAll;
+        });
         break;
       case 'Super Bill':
+        /////////////////////////////////////////
+        //////////////// Pending ////////////////
+        /////////////////////////////////////////
         this.htmlText.headerText = "Sent to Super Bill";
-        this.commonArray = this.billerStatusArray;
-        this.dataSource = new MatTableDataSource(this.commonArray);
-        this.dataSource.paginator = this.paginator;
+        var repostSignCond = {
+          "source": "Patient-Record-Report_view",
+          "condition": {
+            "doctor_signature": { $exists:true }
+          },
+          "token": this.jwtToken,
+        }
+        this.http.httpViaPost('datalist', repostSignCond).subscribe((response) => {
+          let allData: AllDataElement[] = response.res;
+          this.allDataSource = new MatTableDataSource(allData);
+          this.allDataSource.paginator = this.paginatorAll;
+        });
         break;
       default:
         break;
