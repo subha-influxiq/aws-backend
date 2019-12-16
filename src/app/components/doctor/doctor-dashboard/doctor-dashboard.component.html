@@ -5,42 +5,29 @@
   <mat-card-content class="itemsection">
     <mat-card-content class="one uploadsign">
       <p>Manage Your Signature </p>
-
     </mat-card-content>
 
-    <span class="section_title">
+    <span [routerLink]="['/doctor/signature-management']" style="cursor: pointer;" class="section_title">
       <img src="../../../../assets/images/editicon.png">
     </span>
-    <!-- <mat-card-content class="sign_uploader">
-      <input type="text"> 
-          <button  class="signature_upload" (click)="openDialog()" mat-flat-button>{{ buttonText }}</button>
-          <h2 *ngIf="DoctorSignedData.length == 0" class="message">No Signature Added</h2>
-    </mat-card-content> -->
-
-    <button class="gotoUpload" mat-button routerLink="/doctor/signature-management">Manage Signature</button>
-
-    <!-- <span class="sign_uploader" *ngIf="DoctorSignedData.length == 0">
-      <h2 class="message">No record found.</h2>
-        <button class="signature_upload" (click)="openDialog()" mat-flat-button>Add One</button>
-    </span> -->
   </mat-card-content>
 
   <mat-card-content class="itemsection two">
-    <span class="counteer"> {{ DoctorSigned }}</span>
+    <span class="counteer"> {{ allResolveData.data.signReportCount }}</span>
     <p>Signed Records</p>
     <button mat-flat-button (click)="viewReportProcessData('Report Signed')">View Details</button>
   </mat-card-content>
   <mat-card-content class="itemsection three">
-    <span class="counteer"> {{ Pending }} </span>
+    <span class="counteer"> {{ allResolveData.data.pendingReportCount }} </span>
     <p>Pending Signature</p>
     <button mat-flat-button (click)="viewReportProcessData('Report unSigned')">View Details</button>
   </mat-card-content>
 </mat-card-content>
 
 <!-- Pending and signed  Data listing start here -->
-<mat-card-content class="doctor_table" *ngIf="commonArray.length > 0">
+<mat-card-content class="doctor_table">
   <mat-toolbar class="top_header">
-    <h2>{{ headerText }} </h2>
+    <h2>{{ htmlText.headerText }} </h2>
   </mat-toolbar>
   <span class="doctorfromwrapper">
     <mat-form-field>
@@ -123,29 +110,19 @@
       <td mat-cell *matCellDef="let element" data-label="Super Bill"> {{ element.superBill }} </td>
     </ng-container>
 
-    <!-- <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef> Date</th>
-      <td mat-cell *matCellDef="let element" data-label="Date"> {{ element.date }} </td>
-    </ng-container> -->
-
     <ng-container matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef> Status</th>
       <td mat-cell *matCellDef="let element" data-label="Status"> {{ element.status_text }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="billerName">
-      <th mat-header-cell *matHeaderCellDef> Biller Name</th>
-      <td mat-cell *matCellDef="let element" data-label="Biller Name"> {{ element.billername }} </td>
     </ng-container>
 
     <!-- drop down in mat table with a single button start here -->
     <ng-container matColumnDef="billerDropDown">
       <th mat-header-cell *matHeaderCellDef> Sent To Biller </th>
       <td mat-cell *matCellDef="let element; let i = index;">
-        <mat-form-field *ngIf="element.biller_id == ''" color="warn" appearance="outline">
+        <mat-form-field *ngIf="element.status == 1" color="warn" appearance="outline">
           <mat-label>Select A Biller</mat-label>
           <mat-select placeholder="Select A Biller" (selectionChange)="setSendBiller(i, $event);">
-            <mat-option *ngFor="let bd of billerData;let i = index;" [value]="bd.biller_id">
+            <mat-option *ngFor="let bd of allResolveData.data.allBillerList; let i = index;" [value]="bd.biller_id">
               {{ bd.biller }}
             </mat-option>
           </mat-select>
@@ -171,11 +148,11 @@
     <tr mat-row *matRowDef="let row; columns: dataCol;let i = index"></tr>
   </table>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[25, 50, 100, 200]"></mat-paginator>
 </mat-card-content>
 
 <!-- All Data listing start here(by default) -->
-<mat-card-content class="doctor_table" *ngIf="allDataSource.length > 0">
+<!-- <mat-card-content class="doctor_table">
 
   <mat-toolbar class="top_header">
     <h2> DOCTOR SIGNATURE RECORD REPORTS </h2>
@@ -258,11 +235,11 @@
     <ng-container matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef> Status</th>
       <td mat-cell *matCellDef="let element" data-label="Status"> {{ element.status_text }} </td>
-    </ng-container>
+    </ng-container> -->
 
 
     <!-- drop down in mat table with a single button start here -->
-    <ng-container matColumnDef="billerDropDown">
+    <!-- <ng-container matColumnDef="billerDropDown">
       <th mat-header-cell *matHeaderCellDef> Sent To Biller </th>
       <td mat-cell *matCellDef="let element; let i = index;">
         <mat-form-field *ngIf="element.status == 1" color="warn" appearance="outline">
@@ -285,15 +262,15 @@
 
         <button *ngIf="element.status == 1 && !element.converted_image && element.report_type == 'file'" disabled mat-raised-button type="button" color="accent" disabled>Processing</button>
       </td>
-    </ng-container>
+    </ng-container> -->
     <!--drop down in mat table with a single button end here -->
 
-    <tr mat-header-row *matHeaderRowDef="allDataColumns"></tr>
+    <!-- <tr mat-header-row *matHeaderRowDef="allDataColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: allDataColumns;let i = index"></tr>
   </table>
 
   <mat-paginator [pageSizeOptions]="[5, 10, 20, 100]"></mat-paginator>
-</mat-card-content>
+</mat-card-content> -->
 
 <!-- Doctor Footer -->
 <app-admin-footer></app-admin-footer>

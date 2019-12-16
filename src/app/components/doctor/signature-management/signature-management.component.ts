@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UploadDialogBoxComponent } from '../../common/upload-dialog-box/upload-dialog-box.component';
-import { MatDialog } from '@angular/material';
+import { MatDialog , MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CommonFunction } from 'src/app/class/common/common-function';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from 'src/app/services/http-service.service';
+import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-signature-management',
@@ -12,58 +13,79 @@ import { HttpServiceService } from 'src/app/services/http-service.service';
 })
 export class SignatureManagementComponent implements OnInit {
 
-  public cookiesData: any;
-  public cookies_id: any;
-  public user_token: any;
+  public authData: any = {};
   public DoctorSignedData: any = [];
-  public buttonText :any="Add One";
+  public htmlText: any = {
+    buttonText: "Add Signature"
+  };
+
+  /* Modal */
+  public dialogRef: any;
 
   constructor(public dialog: MatDialog, public commonFunction: CommonFunction,
      public cookie: CookieService, public http: HttpServiceService) {
-    let allcookies: any;
-    allcookies = cookie.getAll();
-    this.cookiesData = JSON.parse(allcookies.user_details);
-    
-    this.cookies_id = this.cookiesData._id;
-    this.user_token = cookie.get('jwtToken');
-    this.getDoctorSignedData();
+    let allcookies: any = cookie.getAll();
+    this.authData["user_details"] = JSON.parse(cookie.get('user_details'));
+    this.authData["jwtToken"] = cookie.get('jwtToken');
 
-    
-
-
-    /* Set Meta Data */
-    this.commonFunction.setTitleMetaTags();
+    console.log(this.authData.user_details.doctor_signature);
+    if(typeof this.authData.user_details.doctor_signature !== 'undefined') {
+      this.htmlText.buttonText = "Update Signature";
+      this.htmlText.viewSign = this.authData.user_details.doctor_signature;
+    }
   }
 
   ngOnInit() {
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(UploadDialogBoxComponent, {
-      width: '1000px',
-
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-  getDoctorSignedData() {
-    var data = {
-      "source": "doctor_signature",
-      "condition": {
-        "user_id_object": this.cookies_id
-      },
-      "token": this.user_token
+  updateSignature() {
+    if(typeof this.htmlText.viewSign !== 'undefined') {
+      var data = {
+        "source": "users",
+        "data": {
+          "id": this.authData.user_details._id,
+          "doctor_signature": this.htmlText.viewSign
+        },
+        "token": this.authData.jwtToken
+      }
+      this.http.httpViaPost('addorupdatedata', data).subscribe(response => {
+          if(response.status == "success") {
+            /* Open modal */
+            let modalData: any = {
+              panelClass: 'bulkupload-dialog',
+              data: {
+                header: "Message",
+                message: "Signature uploaded successfully.",
+                button1: { text: "" },
+                button2: { text: "Ok" },
+              }
+            }
+            this.openModal(modalData);
+          }
+        });
+    } else {
+      this.htmlText.errorMessage = "Please write your signature."
     }
-    this.http.httpViaPost('datalist', data)
-      .subscribe(response => {
-        this.DoctorSignedData =response.res; 
-        if(this.DoctorSignedData.length ==1){
-          this.buttonText = "Edit" ;
-        }
+  }
 
-      })
+  removeErrorMessage() {
+    if(typeof this.htmlText.viewSign === 'undefined' || this.htmlText.viewSign.length == 0) {
+      this.htmlText.errorMessage = "Please write your signature."
+    } else {
+      this.htmlText.errorMessage = ""
+    }
+  }
+
+  openModal(data) {
+    this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+    this.dialogRef.afterClosed().subscribe(result => {
+      switch (result) {
+        case "Ok":
+            this.dialogRef.close();
+          break;
+        
+      }
+    });
   }
 
 }

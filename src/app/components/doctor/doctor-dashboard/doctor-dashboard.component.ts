@@ -39,6 +39,7 @@ export interface AllDataElement {
   date: string;
   status: string;
 }
+
 @Component({
   selector: 'app-doctor-dashboard',
   templateUrl: './doctor-dashboard.component.html',
@@ -46,55 +47,40 @@ export interface AllDataElement {
 })
 
 export class DoctorDashboardComponent implements OnInit {
-  public cookiesData: any;
-  public cookies_id: any;
-  public user_token: any;
-  public DoctorSignedData: any = [];
-  public buttonText: any = "Add One";
-  public Pending: any;
-  public DoctorSigned: any;
-  public commonArray: PeriodicElement[] = [];
+
+  public authData: any = {};
+  public allResolveData: any;
+  public htmlText:any = { 
+    buttonText: "Add One",
+    headertext: "DOCTOR SIGNATURE RECORD REPORTS"
+  };
   public allDataColumns: string[] = ['no', 'billGenerationDate', 'billSentDate', 'patientName', 'record', 'recordType', 'techName', 'superBill', 'status', 'billerDropDown', 'action'];
-  public dataCol:string[] = ['billGenerationDate','billSentDate','doctorName','patientName', 'record','report_type','status','superBill','techName','billerName','billerDropDown','action'];
-  public dialogRef:any;
-  public headerText: any = " DOCTOR SIGNATURE RECORD REPORTS";
-  public doctorSignedArray: any = [];
-  public pendingArray: any = [];
-  public allDataList: any;
+  public dataCol:string[] = ['billGenerationDate','billSentDate','doctorName','patientName', 'record','report_type','status','superBill','techName','billerDropDown','action'];
+  public dialogRef: any;
   public allDataSource: any;
   public headertext: any;
   public start_date: any;
   public end_date: any;
   public billerData: any = [];
-  dataSource = new MatTableDataSource(this.allDataList);
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   public allDataSource_skip: any = ["patientName"];
 
   constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService,
     public http: HttpServiceService, public activatedRoute: ActivatedRoute, public snackBar: MatSnackBar) {
-    let allcookies: any;
-    allcookies = cookie.getAll();
-    this.cookiesData = JSON.parse(allcookies.user_details);
-    this.cookies_id = this.cookiesData._id;
-    this.user_token = cookie.get('jwtToken');
-    this.getDoctorSignedData();
-    this.getBillerData();
-    /* Set Meta Data */
-    this.commonFunction.setTitleMetaTags();
+    let allcookies: any = cookie.getAll();
+    this.authData["user_details"] = JSON.parse(cookie.get('user_details'));
+    this.authData["jwtToken"] = cookie.get('jwtToken');
+    
     let matDatepicker = moment();
-
-
     this.activatedRoute.data.forEach(resolveData => {
-      this.allDataList = resolveData.alldata;
-      this.allDataSource = new MatTableDataSource(this.allDataList);
+      this.allResolveData = resolveData.doctordata;
+      this.allDataSource = new MatTableDataSource(this.allResolveData.data.signReportData);
       this.allDataSource.paginator = this.paginator;
     });
-
   }
 
   ngOnInit() {
     this.allDataSource.paginator = this.paginator;
-    this.getData();
   }
 
   ngAfterViewInit() {
@@ -105,14 +91,14 @@ export class DoctorDashboardComponent implements OnInit {
     var data = {
       "source": "users_view_doctor",
       "condition": {
-        "_id_object": this.cookies_id
+        "_id_object": this.authData.to
       },
-      "token": this.user_token
+      "token": this.authData
     }
-    this.http.httpViaPost('datalist', data)
-      .subscribe((response) => {
-        this.billerData = response.res;
-      })
+
+    this.http.httpViaPost('datalist', data).subscribe((response) => {
+      this.billerData = response.res;
+    });
   }
 
   dateSearch() {
@@ -124,7 +110,7 @@ export class DoctorDashboardComponent implements OnInit {
           $gte: moment(this.start_date).format('DD-MM-YYYY')
         }
       },
-      "token": this.user_token,
+      "token": this.authData,
     }
 
     this.http.httpViaPost('datalist', data)
@@ -139,7 +125,7 @@ export class DoctorDashboardComponent implements OnInit {
     var data = {
       "source": "Patient-Record-Report_view",
       "condition": filterValue,
-      "token": this.user_token,
+      "token": this.authData,
     }
 
     this.http.httpViaPost('datalist', data)
@@ -153,7 +139,7 @@ export class DoctorDashboardComponent implements OnInit {
     var data = {
       "source": "Patient-Record-Report_view",
       "condition": filterValue,
-      "token": this.user_token,
+      "token": this.authData,
     }
 
     this.http.httpViaPost('datalist', data)
@@ -165,8 +151,7 @@ export class DoctorDashboardComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(UploadDialogBoxComponent, {
-      width: '1000px',
-
+      width: '1000px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -177,26 +162,14 @@ export class DoctorDashboardComponent implements OnInit {
     var data = {
       "source": "doctor_signature",
       "condition": {
-        "user_id_object": this.cookies_id
+        "user_id_object": this.authData
       },
-      "token": this.user_token
+      "token": this.authData
     }
     this.http.httpViaPost('datalist', data)
       .subscribe(response => {
-        this.DoctorSignedData = response.res;
-        if (this.DoctorSignedData.length == 1) {
-          this.buttonText = "Edit";
-        }
+        console.log("doctor signature: ", response.res);
       })
-  }
-
-  getData() {
-    this.dataSource = new MatTableDataSource(this.allDataList);
-    this.DoctorSigned = this.allDataList["doctorsigned-count"];
-    this.Pending = this.allDataList["pending-count"];
-    this.doctorSignedArray = this.allDataList.data.doctorsigned;
-    this.pendingArray = this.allDataList.data.pending;
-    this.allDataSource = this.allDataList.dataFull;
   }
 
   viewReportProcessData(flag: string) {
@@ -210,41 +183,53 @@ export class DoctorDashboardComponent implements OnInit {
         button2: { text: "Ok" },
       }
     }
+
     switch (flag) {
       case 'Report Signed':
-        if(this.doctorSignedArray.length > 0){
-        this.headerText = "DOCTOR SIGNED REPORTS";
-        this.commonArray = this.doctorSignedArray;
-        this.allDataSource = new MatTableDataSource(this.commonArray);
+        if(this.allResolveData.length > 0){
+        this.htmlText.headerText = "DOCTOR SIGNED REPORTS";
+        this.allDataSource = new MatTableDataSource(this.allResolveData.data.signReportData);
         this.allDataSource.paginator = this.paginator;
-        }else{
+        } else {
            this.openModal(modalData);
         }
-        
         break;
       case 'Report unSigned':
-        if(this.pendingArray.length > 0) {
-          this.headerText = "DOCTOR UNSIGNED REPORTS";
-          this.commonArray = this.pendingArray;
-          this.allDataSource = new MatTableDataSource(this.commonArray);
-          this.allDataSource.paginator = this.paginator;
-        } else {
-          this.openModal(modalData);
-        }
+        if(typeof this.allResolveData.data.pendingReportData === 'undefined') {
+            var data = {
+              "source": "Patient-Record-Report_view",
+              "condition": {
+                "doctor_signature": { $exists: false },
+                "doctor_id_object": this.authData.user_details._id
+              },
+              "token": this.authData.jwtToken
+            }
+            this.http.httpViaPost('datalist', data).subscribe(response => {
+              if(response.res.length > 0) {
+                this.allResolveData.data["pendingReportData"] = response.res;
+                this.allDataSource = new MatTableDataSource(this.allResolveData.data.pendingReportData);
+                this.allDataSource.paginator = this.paginator;
+              } else {
+                this.openModal(modalData);
+              }
+            });
+          } else {
+            this.allDataSource = new MatTableDataSource(this.allResolveData.data.pendingReportData);
+            this.allDataSource.paginator = this.paginator;
+          }
         break;
       default:
         break;
     }
   }
-  openModal(data) {
 
+  openModal(data) {
     this.dialogRef = this.dialog.open(DialogBoxComponent, data);
     this.dialogRef.afterClosed().subscribe(result => {
       switch (result) {
         case "Ok":
-            this.dialogRef.close();
+          this.dialogRef.close();
           break;
-        
       }
     });
   }
@@ -264,7 +249,7 @@ export class DoctorDashboardComponent implements OnInit {
         "status": 2
       },
       "sourceobj": ["biller_id"],
-      "token": this.user_token
+      "token": this.authData
     }
     this.http.httpViaPost('addorupdatedata', data).subscribe((response) => {
       if (response.status = "success") {

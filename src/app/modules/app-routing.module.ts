@@ -321,20 +321,13 @@ const routes: Routes = [
   /* Doctor Route */
   {
     path: 'doctor/dashboard', component: DoctorDashboardComponent, canActivate: [AuthguardService],
-    resolve: { alldata: ResolveService },
+    resolve: { doctordata: ResolveService },
     data: {
       requestcondition: {
-        source: "Patient-Record-Report_view",
-        condition: {
-          "condition": {
-            "status": 1
-          },
-          "condition1": {
-            "status": 2
-          }
-        }
+        source: 'Patient-Record-Report_view',
+        condition: {},
       },
-      endpoint: 'signaturecount'
+      endpoint: 'doctor-dashboard'
     },
   },
 
