@@ -24,13 +24,23 @@ export class ResolveService implements Resolve<any> {
 
 
     ////////////////// Condition for all dashboard ////////////////////
+    var allData: any = this.cookies.getAll();
+    var userData = JSON.parse(allData.user_details);
+    /* This one is for Tech Dashboard Start */
+    if(route.url[0].path == 'admin') {
+      switch(route.url[1].path) {
+        case 'dashboard':
+          requestData.condition['admin_id'] = userData._id;
+          break;
+      }
+    }
+    /* This one is for Tech Dashboard End */
+    
     /* This one is for Tech Dashboard Start */
     if(route.url[0].path == 'tech') {
       switch(route.url[1].path) {
         case 'dashboard':
-          var allData: any = this.cookies.getAll();
-          var userData = JSON.parse(allData.user_details);
-          requestData.condition['tech_id_object'] = userData._id;
+          requestData.condition['tech_id'] = userData._id;
           break;
       }
     }
@@ -40,8 +50,6 @@ export class ResolveService implements Resolve<any> {
     if(route.url[0].path == 'doctor') {
       switch(route.url[1].path) {
         case 'dashboard':
-          var allData: any = this.cookies.getAll();
-          var userData = JSON.parse(allData.user_details);
           requestData.condition.condition['doctor_id'] = userData._id;
           break;
       }
@@ -52,8 +60,6 @@ export class ResolveService implements Resolve<any> {
     if(route.url[0].path == 'biller') {
       switch(route.url[1].path) {
         case 'dashboard':
-          var allData: any = this.cookies.getAll();
-          var userData = JSON.parse(allData.user_details);
           requestData.condition.condition['biller_id'] = userData._id;
           break;
       }
@@ -77,15 +83,12 @@ export class ResolveService implements Resolve<any> {
           this._apiService.ResolveViaPost(data, route.data.endpoint).subscribe(api_object => {
             if (api_object) {
               returnData[route.data.requestcondition.source[i]] = api_object;
+              return resolve(returnData);
             } else { // id not found
               return true;
             }
           });
         }
-
-        setTimeout(() => {
-          return resolve(returnData);
-        }, 3000);
       } else {
         this._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(api_object => {
           if (api_object) {

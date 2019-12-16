@@ -4,59 +4,43 @@
   <mat-card-content class="content_wrapper">
     <mat-card-content class="itemsection">
       <span class="icon">
-          <img src="../../../../assets/images/adminDoctoricon1.png">
+        <img src="../../../../assets/images/adminDoctoricon1.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ doctorCount }}</h4>
+        <h4 class="dataCount"> {{ allResolveData.totalDoctorCount }}</h4>
         <p class="doctorNumber">Total Number of Doctors</p>
       </span>
       <span class="button_wrapper">
-        <button mat-button  [routerLink]="['/admin/doctor-management']">View Details</button>
+        <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
       </span>
 
     </mat-card-content>
+
     <mat-card-content class="itemsection">
-        <span class="icon">
-            <img src="../../../../assets/images/adminDoctoricon2.png">
-        </span>
-        <span class="counteer">
-          <h4 class="dataCount"> {{ billerCount }}</h4>
-          <p class="doctorNumber">Total Number of Billers</p>
-        </span>
-        <span class="button_wrapper">
-          <button mat-flat-button   [routerLink]="['/admin/biller-management']">View Details</button>
-        </span>
-
-      </mat-card-content>
-      <mat-card-content class="itemsection">
-          <span class="icon">
-              <img src="../../../../assets/images/adminDoctoricon3.png">
-          </span>
-          <span class="counteer">
-            <h4 class="dataCount"> {{ techCount }}</h4>
-            <p class="doctorNumber">Total Number of Techs</p>
-          </span>
-          <span class="button_wrapper">
-            <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
-          </span>
-
-        </mat-card-content>
-
-
-
-    <!-- <mat-card-content class="itemsection two">
-      <span class="counteer"> {{ billerCount }}</span>
-      <p>Total Number of Billers</p>
-      <button mat-flat-button type="button" [routerLink]="['/admin/biller-management']">View Details</button>
+      <span class="icon">
+        <img src="../../../../assets/images/adminDoctoricon2.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.totalBillerCount }}</h4>
+        <p class="doctorNumber">Total Number of Billers</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
+      </span>
     </mat-card-content>
-    <mat-card-content class="itemsection three">
-      <span class="counteer"> {{ techCount }} </span>
-      <p>Total Number of Techs</p>
-      <button mat-flat-button type="button" [routerLink]="['/admin/tech-management']">View Details</button>
-    </mat-card-content> -->
 
-
-
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/adminDoctoricon3.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.totalTechCount }}</h4>
+        <p class="doctorNumber">Total Number of Techs</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
+      </span>
+    </mat-card-content>
   </mat-card-content>
 
 
@@ -70,31 +54,32 @@
             <img src="../../../../assets/images/reporticon1.png">
           </mat-card-content>
         </span>
+
         <span>
           <p>Total No of <br>
             Reports Uploaded
           </p>
-          <h2> {{ uploadedStatusCount }} </h2>
+          <h2> {{ allResolveData.totalReportCount }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Reports Uploaded')">view all</button>
         </span>
-
       </mat-card-content>
+
       <mat-card-content class="super_bill_item sp_two">
         <span class="border_wrapper">
           <mat-card-content class="circle">
             <img src="../../../../assets/images/reporticon2.png">
           </mat-card-content>
         </span>
+
         <span>
           <p>Total No of <br>
             Report Processed
-
           </p>
-          <h2> {{ processedStatusCount }} </h2>
+          <h2> {{ allResolveData.processedReportCount }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Report Processed')">view all</button>
         </span>
-
       </mat-card-content>
+
       <mat-card-content class="super_bill_item sp_three">
         <span class="border_wrapper">
           <mat-card-content class="circle">
@@ -105,11 +90,11 @@
           <p>Total No of <br>
             Report Signed
           </p>
-          <h2> {{ signedStatusCount }} </h2>
+          <h2> {{ allResolveData.signReportCount }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
         </span>
-
       </mat-card-content>
+
       <mat-card-content class="super_bill_item sp_four">
         <span class="border_wrapper">
           <mat-card-content class="circle">
@@ -120,15 +105,15 @@
           <p> Sent to <br>
             Super Bill
           </p>
-          <h2> {{ billerStatusCount }} </h2>
+          <h2> {{ allResolveData.sendToSuparBillerReportCount }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Super Bill')">view all</button>
         </span>
-
       </mat-card-content>
     </mat-card-content>
   </mat-card-content>
 
 
+<<<<<<< HEAD
   <mat-card-content class="admin_table" *ngIf="commonArray.length > 0">
     <mat-toolbar class="top_header">
       <h2>{{ headerText }}</h2>
@@ -358,9 +343,11 @@
    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </mat-card-content>
 <!-- dashboard all listing end here -->
+=======
+>>>>>>> c36135095f895359b5e89ee84c90f9c070154cdd
 
   <!-- All Data listing start here(default listing) -->
-  <!-- <mat-card-content class="admin_table" *ngIf="commonArray.length == 0">
+  <mat-card-content class="admin_table">
 
     <mat-toolbar class="top_header">
       <h2> Patient Record Report </h2>
@@ -369,16 +356,15 @@
     </mat-toolbar>
 
     <mat-toolbar class="action_bar">
-
       <mat-form-field>
-        <input matInput placeholder="Search by Doctor" (keyup)="filterByName('doctorName_regex', $event.target.value)">
+        <input matInput placeholder="Search by Doctor" (keyup)="filterByName('doctorName_search_regex', $event.target.value)">
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="Search by Patient"
-          (keyup)="filterByName('patientName_regex', $event.target.value)">
+          (keyup)="filterByName('patientName_search_regex', $event.target.value)">
       </mat-form-field>
       <mat-form-field class="parent_cat">
-        <mat-select placeholder="Search By Status" (selectionChange)="filterByName('status_regex', $event.value)">
+        <mat-select placeholder="Search By Status" (selectionChange)="filterByName('status_search_regex', $event.value)">
           <mat-option value=0>Select a status</mat-option>
           <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
           <mat-option value="doctor signed">Doctor Signed</mat-option>
@@ -407,7 +393,7 @@
 
     </mat-toolbar>
 
-    <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8 adminTables">
       <ng-container matColumnDef="no">
         <th mat-header-cell *matHeaderCellDef> No. </th>
         <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
@@ -415,23 +401,31 @@
 
       <ng-container matColumnDef="patientNamecopy">
         <th mat-header-cell *matHeaderCellDef> Patient Name. </th>
-        <td mat-cell *matCellDef="let element" data-label="Patient Name"> {{ element.patientNamecopy }} </td>
+        <td mat-cell *matCellDef="let element" data-label="Patient Name"> {{ element.patientName }} </td>
       </ng-container>
 
       <ng-container matColumnDef="doctorName">
         <th mat-header-cell *matHeaderCellDef> Doctor Name</th>
-        <td mat-cell *matCellDef="let element" data-label="Doctor Name"> {{ element.doctorName }} </td>
+        <td mat-cell *matCellDef="let element" data-label="Doctor Name"> {{ element.doctorname }} </td>
       </ng-container>
 
       <ng-container matColumnDef="billerName">
         <th mat-header-cell *matHeaderCellDef> Biller Name</th>
-        <td mat-cell *matCellDef="let element" data-label="Biller Name"> {{ element.billerName }} </td>
+        <td mat-cell *matCellDef="let element" data-label="Biller Name"> {{ element.billername }} </td>
       </ng-container>
 
       <ng-container matColumnDef="record">
-        <th mat-header-cell *matHeaderCellDef> Record</th>
-        <td mat-cell *matCellDef="let element" data-label="Record"> {{ element.record }} </td>
+        <th mat-header-cell *matHeaderCellDef> Record </th>
+        <td mat-cell *matCellDef="let element; let i = index;">
+          <button mat-button class="viewButton" [routerLink]="['/admin/patient-record',element._id]">View</button>
+        </td>
       </ng-container>
+
+      <ng-container matColumnDef="report_type">
+        <th mat-header-cell *matHeaderCellDef> Record Type</th>
+        <td mat-cell *matCellDef="let element" data-label="Record Type"> {{ element.report_type }} </td>
+      </ng-container>
+
 
       <ng-container matColumnDef="billGenerationDate">
         <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>
@@ -440,7 +434,7 @@
 
       <ng-container matColumnDef="techName">
         <th mat-header-cell *matHeaderCellDef> Tech Name</th>
-        <td mat-cell *matCellDef="let element" data-label="Tech Name"> {{ element.techName }} </td>
+        <td mat-cell *matCellDef="let element" data-label="Tech Name"> {{ element.techname }} </td>
       </ng-container>
 
       <ng-container matColumnDef="billSentDate">
@@ -460,16 +454,24 @@
 
       <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef> Status</th>
-        <td mat-cell *matCellDef="let element" data-label="Status"> {{ element.status }} </td>
+        <td mat-cell *matCellDef="let element" data-label="Status"> {{ element.status_text }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="editRecord">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element; let i = index;">
+          <button mat-raised-button type="button" color="primary"
+            [routerLink]="['/admin/patient-record/edit',element._id]">Edit</button>
+        </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="allDataColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: allDataColumns;let i = index"></tr>
     </table>
 
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-  </mat-card-content> -->
+    <mat-paginator [pageSizeOptions]="[25, 50, 100, 200, 500]"></mat-paginator>
+  </mat-card-content>
   <!-- dashboard all listing end here -->
-
 </mat-card>
+
 <app-admin-footer></app-admin-footer>

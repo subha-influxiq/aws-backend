@@ -54,11 +54,8 @@ export class DoctorDashboardComponent implements OnInit {
   public Pending: any;
   public DoctorSigned: any;
   public commonArray: PeriodicElement[] = [];
-  public allDataColumns: string[] = ['no', 'billGenerationDate', 'billSentDate', 'patientName',
-   'record', 'recordType', 'techName', 'superBill', 'status', 'billerDropDown', 'action'];
-  
-    public dataCol:string[]=['billGenerationDate','billSentDate','doctorName','patientName',
-  'record','report_type','status','superBill','techName','billerName','billerDropDown','action'];
+  public allDataColumns: string[] = ['no', 'billGenerationDate', 'billSentDate', 'patientName', 'record', 'recordType', 'techName', 'superBill', 'status', 'billerDropDown', 'action'];
+  public dataCol:string[] = ['billGenerationDate','billSentDate','doctorName','patientName', 'record','report_type','status','superBill','techName','billerName','billerDropDown','action'];
   public dialogRef:any;
   public headerText: any = " DOCTOR SIGNATURE RECORD REPORTS";
   public doctorSignedArray: any = [];
