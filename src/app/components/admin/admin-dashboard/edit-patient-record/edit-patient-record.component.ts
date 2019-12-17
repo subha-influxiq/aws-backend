@@ -277,6 +277,8 @@ export class EditPatientRecordComponent implements OnInit {
 
         }
       });
+    } else {
+      console.log("Not submited: ", this.patientAddEditForm.valid);
     }
   }
 

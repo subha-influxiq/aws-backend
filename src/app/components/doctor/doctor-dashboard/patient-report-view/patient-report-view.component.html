@@ -71,9 +71,7 @@
                 <mat-card-content>
                   <label> Test Date</label>
                   <mat-form-field>
-                    <input matInput [matDatepicker]="picker4" formControlName="testDate" id="testDate">
-                    <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
-                    <mat-datepicker #picker4></mat-datepicker>
+                    <input matInput formControlName="testDate" id="testDate">
                   </mat-form-field>
 
                 </mat-card-content>
@@ -81,10 +79,7 @@
                 <mat-card-content>
                   <label> Test Completed</label>
                   <mat-form-field>
-                    <input matInput [matDatepicker]="picker3" formControlName="testCompletedDate"
-                      id="testCompletedDate">
-                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-                    <mat-datepicker #picker3></mat-datepicker>
+                    <input matInput formControlName="testCompletedDate">
                   </mat-form-field>
                 </mat-card-content>
               </span>
@@ -362,7 +357,7 @@
       <mat-card-content class="patient_item_section" id="fixedScroll">
 
       <mat-tab-group class="previewTabs">
-        <mat-tab label="Evalueation worksheet" *ngIf="cookiesData.type == 'admin' || cookiesData.type == 'doctor'">
+        <mat-tab label="Evalueation worksheet" *ngIf="cookiesData.type == 'admin'">
         <ng-template matTabContent>
           <app-health-risk-analysis></app-health-risk-analysis>
         </ng-template>

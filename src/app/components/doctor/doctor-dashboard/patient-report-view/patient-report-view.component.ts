@@ -163,11 +163,11 @@ export class PatientReportViewComponent implements OnInit {
       this.patientAddEditForm.controls['physicalOrdering'].patchValue(reportDetails[0].doctor_id);
       this.patientAddEditForm.controls['birthDate'].patchValue(reportDetails[0].birthDate);
 
-      // let sDateArr: any = reportDetails[0].testDate.split("-");
-      // this.patientAddEditForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
+      //let sDateArr: any = reportDetails[0].testDate.split("-");
+      this.patientAddEditForm.controls['testDate'].patchValue(reportDetails[0].testDate);
 
       // let eDateArr: any = reportDetails[0].testCompletedDate.split("-");
-      // this.patientAddEditForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
+      this.patientAddEditForm.controls['testCompletedDate'].patchValue(reportDetails[0].testCompletedDate);
 
       this.patientAddEditForm.controls['PTGPT'].patchValue(reportDetails[0].PTGPT);
       this.patientAddEditForm.controls['PTGVLFI'].patchValue(reportDetails[0].PTGVLFI);
@@ -196,6 +196,37 @@ export class PatientReportViewComponent implements OnInit {
       this.patientAddEditForm.controls['bloodPressure'].patchValue(reportDetails[0].systolic + "/" + reportDetails[0].diastolic);
       this.patientAddEditForm.controls['leaveNotes'].patchValue(reportDetails[0].leaveNotes);
       this.patientAddEditForm.controls['status'].patchValue(reportDetails[0].status);
+
+
+      /* Disable fied */
+      this.patientAddEditForm.controls['patientName'].disable();
+      this.patientAddEditForm.controls['gender'].disable();
+      this.patientAddEditForm.controls['physicalOrdering'].disable();
+      this.patientAddEditForm.controls['birthDate'].disable();
+      this.patientAddEditForm.controls['testDate'].disable();
+      this.patientAddEditForm.controls['testCompletedDate'].disable();
+      this.patientAddEditForm.controls['PTGPT'].disable();
+      this.patientAddEditForm.controls['PTGVLFI'].disable();
+      this.patientAddEditForm.controls['IR'].disable();
+      this.patientAddEditForm.controls['ESRNO'].disable();
+      this.patientAddEditForm.controls['ESRL'].disable();
+      this.patientAddEditForm.controls['peakC'].disable();
+      this.patientAddEditForm.controls['PTGtype'].disable();
+      this.patientAddEditForm.controls['PTGCVD'].disable();
+      this.patientAddEditForm.controls['stressI'].disable();
+      this.patientAddEditForm.controls['RI'].disable();
+      this.patientAddEditForm.controls['AIPTG'].disable();
+      this.patientAddEditForm.controls['CIsCI'].disable();
+      this.patientAddEditForm.controls['pNN50'].disable();
+      this.patientAddEditForm.controls['RMSSD'].disable();
+      this.patientAddEditForm.controls['SDba'].disable();
+      this.patientAddEditForm.controls['SDda'].disable();
+      this.patientAddEditForm.controls['DPRS'].disable();
+      this.patientAddEditForm.controls['ValsR'].disable();
+      this.patientAddEditForm.controls['BMI'].disable();
+      this.patientAddEditForm.controls['bloodPressure'].disable();
+      this.patientAddEditForm.controls['leaveNotes'].disable();
+      this.patientAddEditForm.controls['status'].disable();
     })
   }
 

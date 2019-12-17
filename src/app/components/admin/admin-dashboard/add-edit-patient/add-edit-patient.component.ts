@@ -169,7 +169,7 @@ export class AddEditPatientComponent implements OnInit {
       var data :any = {
         "source" : "patient_management",
         "data" : this.patientAddEditForm.value,
-        "sourceobj": ["doctor_id","tech"],
+        "sourceobj": ["doctor_id","tech_id"],
         "token" : this.user_token
       }
 
