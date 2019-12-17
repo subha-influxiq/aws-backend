@@ -8,8 +8,7 @@
 .editPatient_wrapper .editItems .image_slider .img_w{ width: 100%; margin-bottom: 0;}
 .editPatient_wrapper .editItems .image_slider .img_w img{ max-width: 100%;}
 .action_button{ justify-content: center;}
-.action_button button{ margin: 0 8px; background: #1dbce9; color: #fff; text-transform: uppercase;
-  border-radius: 0; min-width: 120px; font-family: "AvenirBlack";  font-size: 18px;  padding: 3px;}
+.action_button button{ margin: 0 8px; background: #1dbce9; color: #fff; text-transform: uppercase; border-radius: 0; min-width: 120px; font-family: "AvenirBlack";  font-size: 18px;  padding: 3px;}
 .action_button button:first-child{ margin-left:0;}
 .action_button button:last-child{ margin-right:0;}
 .display_section{ width: 100%!important; margin: auto;}
