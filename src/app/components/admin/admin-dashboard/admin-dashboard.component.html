@@ -115,7 +115,7 @@
 
 
   <!-- All Data listing start here(default listing) -->
-  <mat-card-content class="admin_table">
+  <mat-card-content class="table_wrapper">
 
     <mat-toolbar class="top_header">
       <h2> Patient Record Report </h2>
@@ -228,7 +228,7 @@
       <ng-container matColumnDef="editRecord">
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let element; let i = index;">
-          <button mat-raised-button type="button" color="primary"
+          <button mat-button type="button" class="editButton"
             [routerLink]="['/admin/patient-record/edit',element._id]">Edit</button>
         </td>
       </ng-container>
