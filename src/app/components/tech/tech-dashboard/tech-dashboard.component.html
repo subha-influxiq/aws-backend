@@ -1,6 +1,6 @@
 <app-tech-header></app-tech-header>
 <mat-card class="admin_wrapper">
-<mat-card-content class="content_wrapper">
+<!-- <mat-card-content class="content_wrapper">
   <mat-card-content class="itemsection one">
     <span class="counteer">{{ allResolveData.totalReportCount }}</span>
     <p>Total Number of <br>Reports uploaded</p>
@@ -18,10 +18,11 @@
     <p>Total Number of Reports <br>remain to process</p>
     <button mat-flat-button (click)="viewDetailsData('remainProcess')">View Details</button>
   </mat-card-content>
-</mat-card-content>
+</mat-card-content> -->
 
+<!-- new -->
 <mat-card-content class="admin_superbillsection">
-  <h1>Physician Report and Super Bills</h1>
+  <!-- <h1>Physician Report and Super Bills</h1> -->
   <mat-card-content class="biller_wrapper">
     <mat-card-content class="super_bill_item sp_one">
       <span class="border_wrapper">
@@ -35,7 +36,7 @@
           Reports Uploaded
         </p>
         <h2> {{ allResolveData.totalReportCount }} </h2>
-        <button mat-flat-button (click)="viewReportProcessData('Reports Uploaded')">view all</button>
+        <button mat-flat-button (click)="viewDetailsData('upload')">view all</button>
       </span>
     </mat-card-content>
 
@@ -51,7 +52,7 @@
           Report Processed
         </p>
         <h2> {{ allResolveData.processedReportCount }} </h2>
-        <button mat-flat-button (click)="viewReportProcessData('Report Processed')">view all</button>
+        <button mat-flat-button (click)="viewDetailsData('processed')">view all</button>
       </span>
     </mat-card-content>
 
@@ -62,28 +63,14 @@
         </mat-card-content>
       </span>
       <span class="container_wrapper">
-        <p>Total No of <br>
-          Report Signed
+        <p>Total Number of Reports Remain to Process
         </p>
-        <h2> {{ allResolveData.signReportCount }} </h2>
-        <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
+        <h2> {{ allResolveData.totalRemainToProcessCount }} </h2>
+        <button mat-flat-button (click)="viewDetailsData('remainProcess')">view all</button>
       </span>
     </mat-card-content>
 
-    <mat-card-content class="super_bill_item sp_four">
-      <span class="border_wrapper">
-        <mat-card-content class="circle">
-          <img src="../../../../assets/images/reporticon4.png">
-        </mat-card-content>
-      </span>
-      <span class="container_wrapper">
-        <p> Sent to <br>
-          Super Bill
-        </p>
-        <h2> {{ allResolveData.sendToSuparBillerReportCount }} </h2>
-        <button mat-flat-button (click)="viewReportProcessData('Super Bill')">view all</button>
-      </span>
-    </mat-card-content>
+
   </mat-card-content>
 </mat-card-content>
 
