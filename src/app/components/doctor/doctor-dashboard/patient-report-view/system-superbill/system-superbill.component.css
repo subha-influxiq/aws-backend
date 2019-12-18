@@ -46,3 +46,16 @@ input[type="text"]{
 input[type="text"]:focus{ outline: none;  }
 
 .line_link{ text-align: center; display: block; margin: 20px; color: #0808c3; font-family: "RobotoMedium";}
+
+
+.signaturefont {
+    font-family: "AmandaSignature";
+    font-size: 30px;
+    line-height: 58px;
+    height: 40px;
+    padding: 10px 25px;
+    box-sizing: border-box;
+    background: #fff;
+    border-bottom: 1px solid #000;
+    color: blue;
+  }

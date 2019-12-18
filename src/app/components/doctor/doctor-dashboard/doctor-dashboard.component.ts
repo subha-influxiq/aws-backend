@@ -74,17 +74,17 @@ export class DoctorDashboardComponent implements OnInit {
     let matDatepicker = moment();
     this.activatedRoute.data.forEach(resolveData => {
       this.allResolveData = resolveData.doctordata;
-      this.allDataSource = new MatTableDataSource(this.allResolveData.data.signReportData);
-      this.allDataSource.paginator = this.paginator;
+      this.allDataSource = new MatTableDataSource(this.allResolveData.data.allReportData);
     });
+
+    console.log(">>>--->", this.allResolveData.data.allBillerList);
   }
 
   ngOnInit() {
-    this.allDataSource.paginator = this.paginator;
   }
 
   ngAfterViewInit() {
-    // this.allDataSource.paginator = this.paginator;
+    this.allDataSource.paginator = this.paginator;
   }
 
   getBillerData() {
@@ -186,37 +186,52 @@ export class DoctorDashboardComponent implements OnInit {
 
     switch (flag) {
       case 'Report Signed':
-        if(this.allResolveData.length > 0){
-        this.htmlText.headerText = "DOCTOR SIGNED REPORTS";
-        this.allDataSource = new MatTableDataSource(this.allResolveData.data.signReportData);
-        this.allDataSource.paginator = this.paginator;
+        if(typeof this.allResolveData.data.signReportData === 'undefined') {
+          var data = {
+            "source": "Patient-Record-Report_view",
+            "condition": {
+              "doctor_signature": { $exists: true },
+              "doctor_id_object": this.authData.user_details._id
+            },
+            "token": this.authData.jwtToken
+          }
+          this.http.httpViaPost('datalist', data).subscribe(response => {
+            if(response.res.length > 0) {
+              this.allResolveData.data["signReportData"] = response.res;
+              this.allDataSource = new MatTableDataSource(this.allResolveData.data.signReportData);
+              this.allDataSource.paginator = this.paginator;
+            } else {
+              this.openModal(modalData);
+            }
+          });
         } else {
-           this.openModal(modalData);
+          this.allDataSource = new MatTableDataSource(this.allResolveData.data.signReportData);
+          this.allDataSource.paginator = this.paginator;
         }
         break;
       case 'Report unSigned':
         if(typeof this.allResolveData.data.pendingReportData === 'undefined') {
-            var data = {
-              "source": "Patient-Record-Report_view",
-              "condition": {
-                "doctor_signature": { $exists: false },
-                "doctor_id_object": this.authData.user_details._id
-              },
-              "token": this.authData.jwtToken
-            }
-            this.http.httpViaPost('datalist', data).subscribe(response => {
-              if(response.res.length > 0) {
-                this.allResolveData.data["pendingReportData"] = response.res;
-                this.allDataSource = new MatTableDataSource(this.allResolveData.data.pendingReportData);
-                this.allDataSource.paginator = this.paginator;
-              } else {
-                this.openModal(modalData);
-              }
-            });
-          } else {
-            this.allDataSource = new MatTableDataSource(this.allResolveData.data.pendingReportData);
-            this.allDataSource.paginator = this.paginator;
+          var data = {
+            "source": "Patient-Record-Report_view",
+            "condition": {
+              "doctor_signature": { $exists: false },
+              "doctor_id_object": this.authData.user_details._id
+            },
+            "token": this.authData.jwtToken
           }
+          this.http.httpViaPost('datalist', data).subscribe(response => {
+            if(response.res.length > 0) {
+              this.allResolveData.data["pendingReportData"] = response.res;
+              this.allDataSource = new MatTableDataSource(this.allResolveData.data.pendingReportData);
+              this.allDataSource.paginator = this.paginator;
+            } else {
+              this.openModal(modalData);
+            }
+          });
+        } else {
+          this.allDataSource = new MatTableDataSource(this.allResolveData.data.pendingReportData);
+          this.allDataSource.paginator = this.paginator;
+        }
         break;
       default:
         break;
@@ -235,31 +250,74 @@ export class DoctorDashboardComponent implements OnInit {
   }
 
   public sendToBillerJson: any = {};
+  public billerFlug: number;
 
   setSendBiller(index: number, event: any) {
+    this.billerFlug = event.value + 1;
     this.sendToBillerJson[index] = event.value;
   }
 
   allSendToBiller(index: number) {
-    var data: any = {
-      "source": "patient_management",
-      "data": {
-        "id": this.allDataSource[index]._id,
-        "biller_id": this.sendToBillerJson[index],
-        "status": 2
-      },
-      "sourceobj": ["biller_id"],
-      "token": this.authData
-    }
-    this.http.httpViaPost('addorupdatedata', data).subscribe((response) => {
-      if (response.status = "success") {
-        let message = "Successfully Send";
-        let action = "ok";
-        this.snackBar.open(message, action, {
-          duration: 2000,
-        });
+    if(typeof this.sendToBillerJson[index] !== 'undefined') {
+      for(var loop = 0; loop <= this.allResolveData.data.allBillerList.length - 1; loop++) {
+        if(this.allResolveData.data.allBillerList[loop].biller_id == this.sendToBillerJson[index]) {
+          var fullname = this.allResolveData.data.allBillerList[loop].firstname + ' ' + this.allResolveData.data.allBillerList[loop].lastname;
+        }
       }
-    })
+
+
+      let modalData: any = {
+        panelClass: 'bulkupload-dialog',
+        data: {
+          header: "Message",
+          message: "Do you want to send this report to biller " + fullname + " ?",
+          button1: { text: "Yes" },
+          button2: { text: "No" },
+        }
+      };
+      this.openModal(modalData);
+
+      this.dialogRef.afterClosed().subscribe(result => {
+        switch (result) {
+          case "Yes":
+            var data: any = {
+              "source": "patient_management",
+              "data": {
+                "id": this.allDataSource[index]._id,
+                "biller_id": this.sendToBillerJson[index],
+                "status": 2
+              },
+              "sourceobj": ["biller_id"],
+              "token": this.authData
+            };
+
+            this.http.httpViaPost('addorupdatedata', data).subscribe((response) => {
+              if (response.status = "success") {
+                let message = "Successfully Send";
+                let action = "OK";
+                this.snackBar.open(message, action, {
+                  duration: 2000,
+                });
+              }
+            });
+            break;
+          case "No":
+            this.dialogRef.close();
+            break;
+        }
+      });
+    } else {
+      let modalData: any = {
+        panelClass: 'bulkupload-dialog',
+        data: {
+          header: "Message",
+          message: "Please select a biller.",
+          button1: { text: "" },
+          button2: { text: "OK" },
+        }
+      };
+      this.openModal(modalData);
+    }
   }
 
   viewButton(index: number) {

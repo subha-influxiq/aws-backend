@@ -15,6 +15,9 @@ export class TechHeaderComponent implements OnInit {
 
   public loader: boolean = true;
   public user_cookie:any;
+  isSticky: boolean = false;
+  status: boolean = true;
+
   constructor(public cookies: CookieService, public router: Router) {
     let allData: any = {};
     allData = cookies.getAll()
@@ -35,4 +38,10 @@ export class TechHeaderComponent implements OnInit {
   }
   /**logout function end here**/
 
+  menuFunction(){
+    this.status = !this.status;
+
+  }
+
 }
+

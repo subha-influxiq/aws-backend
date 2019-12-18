@@ -5,6 +5,7 @@ import { CommonFunction } from 'src/app/class/common/common-function';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from 'src/app/services/http-service.service';
 import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-signature-management',
@@ -23,7 +24,7 @@ export class SignatureManagementComponent implements OnInit {
   public dialogRef: any;
 
   constructor(public dialog: MatDialog, public commonFunction: CommonFunction,
-     public cookie: CookieService, public http: HttpServiceService) {
+     public cookie: CookieService, public http: HttpServiceService, public activatedRoute: ActivatedRoute, public router: Router) {
     let allcookies: any = cookie.getAll();
     this.authData["user_details"] = JSON.parse(cookie.get('user_details'));
     this.authData["jwtToken"] = cookie.get('jwtToken');
@@ -50,6 +51,11 @@ export class SignatureManagementComponent implements OnInit {
       }
       this.http.httpViaPost('addorupdatedata', data).subscribe(response => {
           if(response.status == "success") {
+            console.log("cookie>>>", this.authData.user_details);
+            this.authData.user_details.doctor_signature = this.htmlText.viewSign;
+            let str = JSON.stringify(this.authData.user_details);
+            this.cookie.set('user_details', str);
+
             /* Open modal */
             let modalData: any = {
               panelClass: 'bulkupload-dialog',
@@ -81,9 +87,12 @@ export class SignatureManagementComponent implements OnInit {
     this.dialogRef.afterClosed().subscribe(result => {
       switch (result) {
         case "Ok":
-            this.dialogRef.close();
+          this.dialogRef.close();
+
+          this.activatedRoute.queryParams.subscribe(getData => {
+            this.router.navigateByUrl('/doctor/patient-record-report/' + getData['view']);
+          });
           break;
-        
       }
     });
   }

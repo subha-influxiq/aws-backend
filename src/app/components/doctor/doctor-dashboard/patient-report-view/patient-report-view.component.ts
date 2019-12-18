@@ -73,6 +73,7 @@ export class PatientReportViewComponent implements OnInit {
   public allPatientReportData: any = [];
   public paramsId: any;
   public techId: any;
+  public BMIFlug: number = 0;
 
   public sliderCount: number = 0;
   public ImageData = [];
@@ -87,6 +88,32 @@ export class PatientReportViewComponent implements OnInit {
     allcookies = cookie.getAll();
 
     this.cookiesData = JSON.parse(allcookies.user_details);
+    if(typeof this.cookiesData.doctor_signature === 'undefined') {
+      /* Open modal */
+      let modalData: any = {
+        panelClass: 'bulkupload-dialog',
+        data: {
+          header: "Message",
+          message: "Please upload your signature first.",
+          button1: { text: "Upload" },
+          button2: { text: "Close" },
+        }
+      }
+      this.openModal(modalData);
+
+      this.dialogRef.afterClosed().subscribe(result => {
+        switch (result) {
+          case "Upload":
+            this.dialogRef.close();
+            this.router.navigateByUrl('/doctor/signature-management?view=' + activeRoute.snapshot.params._id);
+            break;
+          case "Close":
+            this.dialogRef.close();
+            this.router.navigateByUrl('/doctor/dashboard');
+            break;
+        }
+      });
+    }
     this.cookies_id = this.cookiesData._id;
     this.cookies_name = this.cookiesData.firstname;
     this.cookies_lastname = this.cookiesData.lastname;
@@ -155,6 +182,7 @@ export class PatientReportViewComponent implements OnInit {
       let reportDetails: any = data.data.res;
       this.techId = reportDetails[0].user_id;
       this.allPatientReportData = reportDetails[0];
+      this.BMIFlug = Math.round(reportDetails[0].BMI);
      
       this.ImageData = reportDetails[0].images_url;
      
@@ -309,6 +337,10 @@ export class PatientReportViewComponent implements OnInit {
         }
         break;
     }
+  }
+
+  openModal(data) {
+    this.dialogRef = this.dialog.open(DialogBoxComponent, data);
   }
 
 }

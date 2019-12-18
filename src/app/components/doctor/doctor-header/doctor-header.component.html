@@ -1,9 +1,8 @@
-<mat-toolbar class="techdashboard_header">
-  <mat-toolbar-row>
-    <span class="logo_wrapper" [routerLink]="[ '/doctor/dashboard' ]">
+<mat-toolbar class="techdashboard_header" [ngClass]="{'sticky' : isSticky}">
+  <mat-card-content class="header_wrapper">
+    <span class="logo_wrapper" [routerLink]="[ '/admin/dashboard' ]">
       <img src="../../../assets/images/logo.png">
     </span>
-
 
     <mat-card-content class="quotation">
       <p>ADVANCED ANS TECHNOLOGY – BETTER PATIENT CARE – INCREASE PRACTICE REVENUE</p>
@@ -31,8 +30,8 @@
       </button>
 
     </mat-card-content>
-
-
-  </mat-toolbar-row>
+  </mat-card-content>
 </mat-toolbar>
 <!-- end header -->
+
+
