@@ -270,7 +270,7 @@ export class DoctorDashboardComponent implements OnInit {
         panelClass: 'bulkupload-dialog',
         data: {
           header: "Message",
-          message: "Do you want to send this report to biller " + fullname + " ?",
+          message: "Do you want to send this report to biller: " + fullname + " ?",
           button1: { text: "Yes" },
           button2: { text: "No" },
         }
