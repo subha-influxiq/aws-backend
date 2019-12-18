@@ -134,11 +134,9 @@
 .main_wrapper .login_wrapper .login_container .main-div{ height: auto; }
 .main_wrapper .login_wrapper .login_container .main-div .from  { width: 100%; margin: 0 auto; }
 .main_wrapper .login_wrapper .login_container .main-div .from .logowrapper img{ max-width: 100%;}
-.main_wrapper .login_wrapper .login_container .main-div .from  h2 { background: none; color: #39bbe9; padding: 0px; }
-.main_wrapper .login_wrapper .login_container .main-div .from button{
-  font-family: "RalewayBold"; text-transform: uppercase; font-size: 28px; padding: 8px 16px; margin: auto;
-  display: block; background-image: linear-gradient(40deg, var(--my-cool-background), var(--my-cool-background2))!important;
-}
+.main_wrapper .login_wrapper .login_container .main-div .from  h2 { background: none; color: #39bbe9; padding: 0px; font-family: 'AvenirMedium'; font-size: 26px; margin-bottom: 10px; }
+.main_wrapper .login_wrapper .login_container .main-div .from button{ font-family: "AvenirBlack"; text-transform: uppercase; font-size: 28px; padding: 8px 16px; margin: auto;
+  display: block; background: linear-gradient(45deg, #03a9f5, #fad249)}
 .main_wrapper .login_wrapper .login_container .main-div .from .signupfooter a{ padding: 0; cursor: pointer; font-family: "RalewayMedium"; text-transform: uppercase; font-size: 14px; }
 .table_structure .mat-list-item .mat-list-item-content { display: flex; flex-direction: column!important; }
 .patient_report_section  .mat-form-field-appearance-outline .mat-form-field-wrapper { margin: 0!important; padding-bottom: 0; }
@@ -341,25 +339,11 @@
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(3) span button{ color: #066d7a;  }
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(4) span button{ color: #911228;  }
 
-.admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper{ width: 20%;
-  position: relative;
-  padding: 0;
-  display: flex;    padding-top: 4%;
-  box-sizing: border-box;
-  padding-left: 8px; }
-  .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle{ margin: 0;}
+.admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper{ width: 20%; position: relative; padding: 0; display: flex; padding-top: 4%; box-sizing: border-box; }
+.admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle{ margin: 0;}
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle img{ max-width: 100%;}
-  .adminTables .viewButton{
-    background-color:var(--button-color2);
-    width: auto;
-    height: auto;
-    line-height: initial;
-    padding: 2px 0;
-    box-shadow: none;
-    border-radius: 2px;
-    font-family: "AvenirMedium";
-    color: #fff;
-}
+.adminTables .viewButton{ background-color:var(--button-color2); width: auto; height: auto; line-height: initial; padding: 2px 0; box-shadow: none; border-radius: 2px;
+    font-family: "AvenirMedium"; color: #fff; }
 
 .adminTables .editButton{
   background-color:var(--button-color1);
