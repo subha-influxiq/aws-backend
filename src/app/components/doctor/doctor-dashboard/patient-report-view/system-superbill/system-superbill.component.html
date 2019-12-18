@@ -39,7 +39,11 @@
             </label></td>
         </tr>
         <tr>
-            <td class="fifty" colspan="2"><label>Physician’s Signature<input type="text"></label></td>
+            <td class="fifty" colspan="2">
+                <label>Physician’s Signature
+                    <input class="signaturefont" type="text" matInput [formControl]="patientBMIForm.controls['doctor_signature']">
+                </label>
+            </td>
 
             <td class="fifty">Suggested billing amounts per CPT Code: </td>
         </tr>

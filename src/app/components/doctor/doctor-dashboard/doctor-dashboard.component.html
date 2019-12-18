@@ -144,7 +144,7 @@
         <th mat-header-cell *matHeaderCellDef> Record </th>
         <td mat-cell *matCellDef="let element; let i = index;">
           <button *ngIf="element.status == 1" mat-button type="button" class="viewButton"
-            [routerLink]="['/doctor/patient-record-report',element._id]">View</button>
+            [routerLink]="['/doctor/patient-record-report', element._id]">View</button>
           <button mat-raised-button *ngIf="element.status != 1" type="button" color="primary" disabled>View</button>
         </td>
       </ng-container>
@@ -187,7 +187,7 @@
             <mat-label>Select A Biller</mat-label>
             <mat-select placeholder="Select A Biller" (selectionChange)="setSendBiller(i, $event);">
               <mat-option *ngFor="let bd of allResolveData.data.allBillerList; let i = index;" [value]="bd.biller_id">
-                {{ bd.biller }}
+                {{ bd.firstname }} {{ bd.lastname }}
               </mat-option>
             </mat-select>
           </mat-form-field>

@@ -47,7 +47,10 @@
             </tr>
 
             <tr>
-                <td>Physician’s Signature <input type="text"></td>
+                <td>Physician’s Signature
+                    <input class="signaturefont" type="text" matInput [formControl]="patientEncounterForm.controls['doctor_signature']">
+                </td> 
+                
                 <td colspan="2">
                     <p class="suggest">Suggested billing amounts per CPT Code: </p>
                     <label><input type="checkbox" [formControl]="patientEncounterForm.controls['prefix_95923']">95923:

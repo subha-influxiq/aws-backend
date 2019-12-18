@@ -15,6 +15,9 @@ export class DoctorHeaderComponent implements OnInit {
 
   public loader: boolean = true;
   public user_cookie:any;
+  status: boolean = true;
+  isSticky: boolean = false;
+
   constructor(public cookies: CookieService, public router: Router) {
     let allData: any = {};
     allData = cookies.getAll()
@@ -33,5 +36,10 @@ export class DoctorHeaderComponent implements OnInit {
     this.router.navigateByUrl('logout');
   }
   /**logout function end here**/
+
+  menuFunction(){
+    this.status = !this.status;
+
+  }
 
 }

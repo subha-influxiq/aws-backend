@@ -88,6 +88,7 @@ export class SystemSuperbillComponent implements OnInit {
       gender: ['', Validators.required],
       birthDate: ['', Validators.required],
       physicalOrdering: [''],
+      doctor_signature: ['', Validators.required],
       testDate: ['', Validators.required],
       testCompletedDate: ['', Validators.required],
       signDate : [dateformat]
@@ -120,7 +121,8 @@ export class SystemSuperbillComponent implements OnInit {
     this.httpService.httpViaPost('datalist', data).subscribe((response) => {
         this.patientSingleData = response.res;
         this.patientBMIForm.controls['patientName'].patchValue(response.res[0].patientName);
-        this.patientBMIForm.controls['physicalOrdering'].patchValue(response.res[0].physicalOrdering);
+        this.patientBMIForm.controls['physicalOrdering'].patchValue(this.cookiesData.firstname + ' ' + this.cookiesData.lastname);
+        this.patientBMIForm.controls['doctor_signature'].patchValue(this.cookiesData.doctor_signature);
         this.patientBMIForm.controls['gender'].patchValue(response.res[0].gender);
         
 

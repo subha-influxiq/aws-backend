@@ -49,14 +49,6 @@
 
                 <mat-card-content>
                   <label>Ordering Physician</label>
-                  <!-- <mat-form-field>
-          <input matInput [formControl]="patientAddEditForm.controls['physicalOrdering']"
-            (blur)="inputUntouch(patientAddEditForm,'physicalOrdering')">
-          <mat-error *ngIf="patientAddEditForm.controls['physicalOrdering'].touched && !patientAddEditForm.controls['patientName'].valid
-          && patientAddEditForm.controls['physicalOrdering'].errors.required">
-            Ordering Physician field can not be blank</mat-error>
-        </mat-form-field> -->
-                  <!-- dropdown -->
                   <mat-form-field>
 
                     <mat-select formControlName="physicalOrdering" placeholder="Select a Doctor">
@@ -372,7 +364,7 @@
           </ng-template>
         </mat-tab>
 
-        <mat-tab label="Superbill For Obesity" *ngIf="this.patientAddEditForm.value.BMI > 29">
+        <mat-tab label="Superbill For Obesity" *ngIf="BMIFlug > 29">
           <ng-template matTabContent>
 
             <app-system-superbill></app-system-superbill>
@@ -388,7 +380,7 @@
   </mat-card-content>
 
   <mat-toolbar class="patient_preview" *ngIf="cookiesData.type == 'doctor' ">
-    <button mat-button>save and sign</button>
+    <button mat-button>SAVE</button>
   </mat-toolbar>
 
 </ng-container>

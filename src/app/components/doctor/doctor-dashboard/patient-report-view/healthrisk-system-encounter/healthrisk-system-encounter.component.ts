@@ -86,6 +86,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
       gender: ['', Validators.required],
       birthDate: ['', Validators.required],
       physicalOrdering: [''],
+      doctor_signature: ['', Validators.required],
       prefix_95923: [true],
       prefix_95943: [true],
       prefix_95921: [true],
@@ -225,7 +226,8 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         this.patientSingleData = response.res;
         console.log("encounter form dataaa",this.patientSingleData);
         this.patientEncounterForm.controls['patientName'].patchValue(patientDetails.patientName);
-        this.patientEncounterForm.controls['physicalOrdering'].patchValue(patientDetails.physicalOrdering);
+        this.patientEncounterForm.controls['physicalOrdering'].patchValue(this.cookiesData.firstname + ' ' + this.cookiesData.lastname);
+        this.patientEncounterForm.controls['doctor_signature'].patchValue(this.cookiesData.doctor_signature);
         this.patientEncounterForm.controls['gender'].patchValue(patientDetails.gender);
         this.patientEncounterForm.controls['testDate'].patchValue(patientDetails.testDate);
         this.patientEncounterForm.controls['birthDate'].patchValue(patientDetails.birthDate);
