@@ -2,28 +2,35 @@
 <app-admin-header></app-admin-header>
 
 <!-- header with add button -->
-<mat-card-content class="title_wrapper">
-  manage admin
-</mat-card-content>
+<mat-card class="admin_wrapper">
+  <!-- header with add button -->
+  <mat-card-content class="table_wrapper">
+    <mat-toolbar class="top_header">
+      <h2> manage admin </h2>
+    </mat-toolbar>
 
-<span class="add_header">
+    <span class="add_header">
 
-  <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Admin</span>
-  <button mat-flat-button [routerLink]="['/admin/admin-management/add']">Add Admin</button>
-</span>
-<!-- End header with add button -->
-<!-- <span class="add_header">
+
+      <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Admin</span>
+      <button mat-flat-button [routerLink]="['/admin/admin-management/add']">Add Admin</button>
+    </span>
+    <!-- End header with add button -->
+    <!-- <span class="add_header">
   <button mat-flat-button [routerLink]="[ '/admin-management/add']">Add Admin</button>
 </span> -->
-<!-- table -->
-<lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0" [datasource]="TechDashboardAllData"
-  [skip]="allUserData_skip" [detail_skip_array]="previewModal_skip" [modify_header_array]="allUserData_modify_header" [apiurl]="apiUrl" [sourcedata]="tableName"
-  [editroute]="editUrl" [jwttoken]="user_cookie" [statusarr]="status" [updateendpoint]="UpdateEndpoint"
-  [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
-  [date_search_source]="SearchingSourceName" [search_settings]="search_settings">
-</lib-listing>
-<h2 *ngIf="TechDashboardAllData.length == 0">No record found.</h2>
-<!-- end table -->
+    <!-- table -->
+    <lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0" [datasource]="TechDashboardAllData"
+      [skip]="allUserData_skip" [detail_skip_array]="previewModal_skip"
+      [modify_header_array]="allUserData_modify_header" [apiurl]="apiUrl" [sourcedata]="tableName" [editroute]="editUrl"
+      [jwttoken]="user_cookie" [statusarr]="status" [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint"
+      [date_search_endpoint]="SearchingEndpoint" [date_search_source]="SearchingSourceName"
+      [search_settings]="search_settings">
+    </lib-listing>
+    <h2 *ngIf="TechDashboardAllData.length == 0">No record found.</h2>
+    <!-- end table -->
 
-<!-- Admin Footer -->
+    <!-- Admin Footer -->
+  </mat-card-content>
+</mat-card>
 <app-admin-footer></app-admin-footer>

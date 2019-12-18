@@ -93,6 +93,7 @@
 :root {
   --button-color1: #feca00;
   --button-color2: #1dbce9;
+  --button-color3: #21e289;
   }
 
   /* background-image: linear-gradient(40deg, #feca00, #1dbce9); */
@@ -142,18 +143,23 @@
 .table_structure .mat-list-item .mat-list-item-content { display: flex; flex-direction: column!important; }
 .patient_report_section  .mat-form-field-appearance-outline .mat-form-field-wrapper { margin: 0!important; padding-bottom: 0; }
 .patient_report_section  .mat-form-field-appearance-outline .mat-form-field-infix { padding: 1em 0 1em 0; margin: 0; border: 0;}
-.DataTable table thead tr.mat-header-row { height: 56px; background: linear-gradient(180deg, #fac855, #e47e2a)!important; }
-.DataTable table th.mat-header-cell { text-align: left; color: #fff; font-family: "RobotoBold"; font-weight: normal; font-size: 16px; }
-.DataTable table tr.mat-row:nth-child(even) {  background: #f1f1f1; }
-.DataTable table tr.mat-row:hover {  background: #fcecb2; }
-.DataTable table td span .cursor{cursor: pointer; color: #fff; background: #cd9300; margin-right: 5px; vertical-align: middle; display: table-cell; border-right: 3px solid #fff; }
-.DataTable table td span .cursor i{ vertical-align: middle; }
+
+.DataTable table th.mat-header-cell { text-align: left;  font-family: "AvenirMedium";  font-size: 16px; }
+.DataTable table td.mat-cell{  font-family: "AvenirLight"; }
+.DataTable table td span .cursor{cursor: pointer; color:var(--button-color2);}
 .DataTable table td span .cursor:nth-last-child(1){ border-right: none; }
 .DataTable .searchbar { padding: 0;}
 .loader{ width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
 .loader img{ max-width: 100%; }
-
-
+.DataTable .multipledeleteandupdatebuttan { display: inline-flex; margin-bottom: 10px;}
+.DataTable .multipledeleteandupdatebuttan button { background: var(--button-color1);
+  line-height: inherit;
+  color: #000;
+  padding: 5px 10px;
+  box-shadow: none;
+  font-family: 'AvenirMedium';
+  font-size: 16px;}
+  .DataTable .multipledeleteandupdatebuttan button:last-child{ background: var(--button-color2); margin-left: 5px; color: #fff; }
 
 /* Styling modal */
 .custom-modalbox{ width: 700px;}
@@ -177,24 +183,15 @@
 
 /* end modal for bulk upload container */
 
+/* manage listing  */
+.table_wrapper .add_header {display: flex; height: auto; justify-content: space-between; align-items: center; padding: 10px 5px; background: #f9f9f9; }
+.table_wrapper .add_header button{ background:var(--button-color2); font-family: 'Avenirmedium'; font-size: 18px; color: #fff;
+  text-transform: uppercase;}
 
-.title_wrapper{ background: linear-gradient(45deg, #efa03f, #32a9f5);
-  color: #fff;
-  text-transform: uppercase;
-  padding: 16px;
-  font-family: 'RobotoBold';
-  font-size: 30px!important;
-  text-align: center; display: block;width: auto;
-}
-.bradcrumb{  display: block;}
+.bradcrumb{ display: block; font-family: 'AvenirLight';
+  font-size: 16px;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
-
-
-
-.container .searchbar span{  width: 100% ;
-  display: flex;
-  justify-content: space-evenly;
-}
+.container .searchbar span{ width: 100%; display: flex; justify-content: space-evenly; }
 .searchbar .mat-form-field .mat-form-field-flex {
   display: inline-flex;
   align-items: baseline;
@@ -202,8 +199,9 @@
   width: 100%;
   border: .5px solid #424242;
   border-radius: 4px;
-  padding: 0px 10px;
+  padding: 0px 10px 5px;
 }
+.searchbar .mat-form-field-prefix { bottom: -8px; }
 .add_form .file_upload .uploadfilecontainer { width: 100%;}
 .admin_table{ width: 100%; margin: 20px auto; display: block;}
 .admin_table table{ width: 100%; }
@@ -257,7 +255,7 @@
 } */
 
 
-.action_bar .mat-form-field-appearance-legacy .mat-form-field-label {  
+.action_bar .mat-form-field-appearance-legacy .mat-form-field-label {
   font-size: 16px;
     font-family: "AvenirLight";
     width: auto;
@@ -272,7 +270,7 @@
 
 /* admin css */
 
- 
+
 .admin_wrapper .content_wrapper{ display: flex; justify-content: space-between;  align-items: center; width: 100%; margin: auto; text-align: center; margin-bottom: 16px; }
 .admin_wrapper .content_wrapper .itemsection{width: 33%; margin: 0px 7px; box-sizing: border-box; display: flex; justify-content: center; position: relative; border-radius: 10px; border: 1px solid #e8e9ef;  overflow: hidden;  }
 .admin_wrapper .content_wrapper .itemsection .icon{  display: flex; align-items: center; justify-content: center; width: 20%; box-sizing: border-box;}
@@ -375,7 +373,7 @@
   color: #fff;
  }
 .admin_table .action_bar .date-range{ width: 36%; justify-content: space-between; display: flex;}
- .table_wrapper .mat-table { width: 100% }
+ .table_wrapper .mat-table { width: 100%; box-shadow: none; }
  .table_wrapper .mat-table .mat-cell .mat-form-field-appearance-outline .mat-form-field-wrapper {
   margin: 0;
   padding: 0;
@@ -390,7 +388,7 @@
   margin-top: -.25em;
 }
  .table_wrapper .top_header  {display: flex; align-items: center; justify-content: space-between; height: auto; padding:10px 5px;}
- .table_wrapper .top_header h2 { font-family: 'AvenirMedium'; font-size: 20px; }
+ .table_wrapper .top_header h2 { font-family: 'AvenirMedium'; font-size: 20px; text-transform: capitalize;}
  .table_wrapper .action_bar {display: flex; align-items: center; justify-content: space-between; height: auto; padding:10px 0;}
  .table_wrapper .action_bar .mat-form-field-label-wrapper {
   position: absolute;
@@ -417,9 +415,7 @@
   border: 1px solid #545454;
   border-radius: 5px;
 }
-.table_wrapper .action_bar .mat-form-field-appearance-legacy .mat-form-field-infix {
-  padding: 10px; border: 0;
-}
+.table_wrapper .action_bar .mat-form-field-appearance-legacy .mat-form-field-infix { padding: 10px; border: 0; font-size: 16px; font-family: 'AvenirLight'; }
 .table_wrapper .action_bar .mat-form-field.mat-focused .mat-form-field-ripple {
   background-color: transparent !important;
 }
@@ -437,6 +433,36 @@
 
 /* searches */
 .admin_table .action_bar{ height: auto; justify-content: space-between;}
+.table_wrapper tr.mat-header-row {
+  background: #edf0f2;
+}
+
+/* booked appointment */
+
+.bookedAppointment .action_bar .date-range { display: flex; width: 66%; }
+
+.admin_wrapper .title_wrapper { color: #fff; text-transform: uppercase; padding: 14px; font-family: 'AvenirBlack'; font-size: 30px; width: auto; background: #26c6da; text-align: center; }
+
+.admin_wrapper  .add_form .submit_form button{ border-radius: 5px; text-transform: uppercase; font-family: "AvenirMedium"; font-size: 26px; padding: 6px 10px;
+ width: 200px; background: var(--button-color2); color: #fff; margin-right: 16px;}
+ .admin_wrapper  .add_form .submit_form button:first-child{ margin-right: 16px; background: var(--button-color1);}
+ .admin_wrapper  .add_form .submit_form button:last-child{ margin-right: 0px; background: var(--button-color3);}
+
+
+ .admin_wrapper  .add_form{ width: 100%; margin: 20px auto; background: #f3f3f3; padding: 16px 10px; padding-bottom: 50px; border: 1px solid #91e7ff; }
+ .admin_wrapper  .add_form .form_wrapper textarea{ resize: none;}
+ .admin_wrapper  .add_form .form_wrapper .mat-form-field{ width: 49%; margin: 0.5%; }
+ .admin_wrapper  .add_form h2{ font-family: "RobotoBlack"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }
+
+ .admin_wrapper  .add_form .submit_form{ display: flex; width: 100%; text-align: center; margin-top: 30px; justify-content: center; margin: auto; }
+
+
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,5 @@
 <app-admin-header></app-admin-header>
-
+<mat-card class="admin_wrapper">
 <mat-card-content class="title_wrapper">
   {{ htmlText.header }}
 </mat-card-content>
@@ -50,8 +50,8 @@
           <mat-card-content>
             <label>Ordering Physician</label>
             <mat-form-field>
-              <mat-select formControlName="doctor_id" placeholder="Select a Doctor" 
-                  (selectionChange)="getDoctorId($event.value);">
+              <mat-select formControlName="doctor_id" placeholder="Select a Doctor"
+                (selectionChange)="getDoctorId($event.value);">
                 <mat-option [value]=0>Select a Doctor</mat-option>
                 <mat-option *ngFor="let doc of allDoctorDataArray;" value="{{ doc._id }}"> {{ doc.fullNamecopy }}
                 </mat-option>
@@ -62,7 +62,7 @@
           <mat-card-content>
             <label> Tech Name </label>
             <mat-form-field>
-              <mat-select formControlName="tech_id" placeholder="Select a Tech" >
+              <mat-select formControlName="tech_id" placeholder="Select a Tech">
                 <mat-option [value]=0>Select a Tech</mat-option>
                 <mat-option *ngFor="let doc of allTechArray;" value="{{ doc.tech_id }}"> {{ doc.tech }}
                 </mat-option>
@@ -70,7 +70,7 @@
             </mat-form-field>
           </mat-card-content>
 
-<!--
+          <!--
             <mat-card-content>
               <mat-form-field>
                 <mat-select formControlName="physicalOrdering" placeholder="Select a Doctor">
@@ -81,26 +81,25 @@
               </mat-form-field>
             </mat-card-content> -->
 
-            <mat-card-content>
-              <label> Test Date</label>
-              <mat-form-field>
-                <input matInput [matDatepicker]="picker4" [(ngModel)]="startdate"
-                  [ngModelOptions]="{standalone: true}">
-                <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
-                <mat-datepicker #picker4></mat-datepicker>
-              </mat-form-field>
+          <mat-card-content>
+            <label> Test Date</label>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker4" [(ngModel)]="startdate" [ngModelOptions]="{standalone: true}">
+              <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+              <mat-datepicker #picker4></mat-datepicker>
+            </mat-form-field>
 
-            </mat-card-content>
+          </mat-card-content>
 
-            <mat-card-content>
-              <label> Test Completed</label>
-              <mat-form-field>
-                <input matInput [matDatepicker]="picker3" [(ngModel)]="enddate" [ngModelOptions]="{standalone: true}">
-                <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-                <mat-datepicker #picker3></mat-datepicker>
-              </mat-form-field>
-            </mat-card-content>
-          </span>
+          <mat-card-content>
+            <label> Test Completed</label>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker3" [(ngModel)]="enddate" [ngModelOptions]="{standalone: true}">
+              <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+              <mat-datepicker #picker3></mat-datepicker>
+            </mat-form-field>
+          </mat-card-content>
+        </span>
       </fieldset>
 
       <br>
@@ -362,6 +361,6 @@
   </mat-card-content>
 </mat-card>
 
-
+</mat-card>
 <!-- Tech Footer -->
 <app-admin-footer></app-admin-footer>
