@@ -46,16 +46,27 @@ input[type="text"]{
 input[type="text"]:focus{ outline: none;  }
 
 .line_link{ text-align: center; display: block; margin: 20px; color: #0808c3; font-family: "RobotoMedium";}
-
-
-.signaturefont {
-    font-family: "AmandaSignature";
-    font-size: 30px;
-    line-height: 58px;
-    height: 40px;
-    padding: 10px 25px;
-    box-sizing: border-box;
-    background: #fff;
-    border-bottom: 1px solid #000;
-    color: blue;
-  }
+input[type="checkbox"]:checked {
+  /* box-shadow: 0 0 0 3px hotpink; */
+  position: relative;
+}
+input[type="checkbox"]:checked::before{
+  content: 'x';
+  /* content: '\2713'; checkmark */
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  height: auto;
+  color: #ff0707;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  border: .5px solid #807f7f;
+  line-height: 12px;
+  box-sizing: border-box;
+  top: 0;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 2px 7px 3px;
+}

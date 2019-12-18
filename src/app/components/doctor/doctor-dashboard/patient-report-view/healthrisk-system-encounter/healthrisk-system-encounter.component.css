@@ -52,12 +52,13 @@
 }
 
 .red_para {
-    color: #bd1818;
-    font-size: 22px;
-    font-weight: normal;
-    text-align: center;
-    margin: 5px;
-    font-family: "RobotoMedium";
+  color: #bd1818;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+  margin: 5px;
+  font-family: "AvenirMedium";
+  line-height: 22px;
 }
 
 table input[type="text"] {
@@ -103,8 +104,13 @@ input[type="checkbox"]:checked::before{
   display: flex;
   justify-content: center;
   border: .5px solid #807f7f;
-  line-height: 12px; box-sizing: border-box;
-  top: 0; border-radius: 2px; font-weight: bold;
+  line-height: 12px;
+  box-sizing: border-box;
+  top: 0;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 2px 7px 3px;
 }
 
 

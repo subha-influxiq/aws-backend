@@ -1,13 +1,14 @@
 <!-- Admin Header -->
 <app-admin-header></app-admin-header>
 
-<!-- header with add button -->
-<mat-card-content class="title_wrapper">
-  manage Technician
-</mat-card-content>
+<mat-card class="admin_wrapper">
+  <!-- header with add button -->
+  <mat-card-content class="table_wrapper">
+    <mat-toolbar class="top_header">
+      <h2> Manage Technician </h2>
+    </mat-toolbar>
 
-
-<span class="add_header">
+  <span class="add_header">
 
   <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Tech</span>
   <button mat-flat-button [routerLink]="['/admin/tech-management/add']">Add Tech</button>
@@ -15,18 +16,18 @@
 <!-- End header with add button -->
 
 
-<lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0" 
+<lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0"
   [datasource]="TechDashboardAllData"
-  [skip]="allUserData_skip" 
+  [skip]="allUserData_skip"
   [detail_skip_array]="previewModal_detail_skip"
-  [modify_header_array]="allUserData_modify_header" 
-  [apiurl]="apiUrl" 
+  [modify_header_array]="allUserData_modify_header"
+  [apiurl]="apiUrl"
   [sourcedata]="tableName"
-  [editroute]="editUrl" 
-  [jwttoken]="user_cookie" 
-  [statusarr]="status" 
+  [editroute]="editUrl"
+  [jwttoken]="user_cookie"
+  [statusarr]="status"
   [updateendpoint]="UpdateEndpoint"
-  [deleteendpoint]="deleteEndpoint" 
+  [deleteendpoint]="deleteEndpoint"
   [date_search_endpoint]="SearchingEndpoint"
   [date_search_source]="SearchingSourceName"
   [search_settings]="search_settings">
@@ -44,4 +45,6 @@
 </mat-card-content> -->
 
 <!-- Admin Footer -->
+</mat-card-content>
+</mat-card>
 <app-admin-footer></app-admin-footer>

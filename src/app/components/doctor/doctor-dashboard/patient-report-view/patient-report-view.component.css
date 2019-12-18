@@ -1,6 +1,6 @@
 .patient_report_wrapper{ display: flex; justify-content: space-between; flex-wrap: wrap; background: #f2f2f2;}
 .patient_report_wrapper .patient_item_section{  padding: 16px; box-sizing: border-box; margin-bottom: 0; width: 50%; }
- 
+
 
 /*left part css start here*/
 
@@ -29,7 +29,11 @@ width: 390px; border: 3px solid #d59d01; }
 .add_form .example-form .wrapper{ display: inline-flex; align-items: center; width: 100%; flex-wrap: wrap;}
 .add_form .example-form .wrapper label{ width: 150px; display: inline-block;}
 
-.report_header{ background: #686a00; }
+.report_header{ background: #686a00; padding: 14px; display: block;
+  font-family: 'AvenirBlack';
+  font-size: 26px;
+  color: #fff;
+  text-transform: uppercase;}
 
 
 
@@ -41,7 +45,7 @@ width: 390px; border: 3px solid #d59d01; }
   justify-content: center;
   align-items: center;
 }
-.add_form .mat-card-content label , .add_form .patient_diagnotes label{ font-family: "RobotoRegular"; color: #01090c; font-size: 14px; margin: 0 5px}
+.add_form .mat-card-content label , .add_form .patient_diagnotes label{ font-family: "AvenirLight"; color: #01090c; font-size: 14px; margin: 0 5px}
 .add_form .test_date_wrapper .mat-form-field{ width: 100px;}
 .add_form .test_date_wrapper  label{ width: 120px;}
 
@@ -56,7 +60,7 @@ width: 390px; border: 3px solid #d59d01; }
 .add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0 20px;}
 .add_form .patient_diagnotes .example-full-width textarea{ resize: none; }
 .add_form .example-form .field_setmodel{ border: 1px solid #6fa6bb;}
-.add_form .example-form .field_setmodel .legend_model{ font-family: "RobotoRegular"; font-size: 20px; text-transform: uppercase; color: #03a9f5;}
+.add_form .example-form .field_setmodel .legend_model{ font-family: "AvenirLight"; font-size: 20px; text-transform: uppercase; color: #03a9f5;}
 .add_header{ display: flex; margin: 0 16px;}
 .add_header button{ margin-left: auto;
   background: linear-gradient(180deg, #fac855, #e47e2a)!important;
@@ -64,7 +68,7 @@ width: 390px; border: 3px solid #d59d01; }
   font-family: "RobotoBlack"; padding-top: 4px;
 }
 .patient_preview { align-items: center; justify-content: center;  }
-.patient_preview button{  background: #1dbce9; font-size: 24px; text-transform: uppercase; font-family: "RobotoBold"; border-radius: 0; padding: 5px 16px;  color: #fff;
+.patient_preview button{  background: #1dbce9; font-size: 24px; text-transform: uppercase; font-family: "AvenirBlack"; border-radius: 0; padding: 5px 16px;  color: #fff;
   margin: 0;
 }
 /*left part css end here*/

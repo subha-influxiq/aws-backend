@@ -1,6 +1,6 @@
 <!-- Admin Header -->
 <app-admin-header></app-admin-header>
-
+<mat-card class="admin_wrapper">
 <!-- header with add button -->
 <mat-card-content class="title_wrapper">
   {{ htmlText.header }}
@@ -16,7 +16,7 @@
 </span>
 
 <mat-card class="add_form">
-  <h2>{{ htmlText.header }}</h2>
+  <!-- <h2>{{ htmlText.header }}</h2> -->
 
   <mat-card-content class="form_wrapper">
     <form class="example-form" autocomplete="off" name="adminManagementAddEditForm"
@@ -107,6 +107,6 @@
   </mat-card-content>
 
 </mat-card>
-
+</mat-card>
 <!-- Admin Footer -->
 <app-admin-footer></app-admin-footer>
