@@ -26,13 +26,20 @@
 
 
 .doctor_content_wrapper{
-  background: url("../../../../assets/images/doctorcontentbg.jpg") no-repeat center center;
-  background-size: cover; display: block; padding: 50px 40px; margin: 0 16px;
+  background: #f7f4f4;
+  display: block;
+  padding: 20px 20px;
+  margin: 0 5px;
+  border-radius: 10px;
 }
 
-.doctor_content_wrapper .mat-card-title{  font-size: 40px; font-family: "RobotoBlack"; text-transform: uppercase; color: #fff; margin-bottom: 30px;
+.doctor_content_wrapper .mat-card-title{      font-size: 30px;
+  font-family: "AvenirBlack";
+  text-transform: uppercase;
+  color: #313131;
+  margin-bottom: 30px;
   display: block;}
-.doctor_content_wrapper .table_structure{ width: 1080px; display: block;}
+.doctor_content_wrapper .table_structure{ width: 100%; display: block;}
 .doctor_content_wrapper table{ width: 100%;}
 /* .doctor_content_wrapper table tr th{ color: #5aa8ed; font-size: 30px; font-family: "RobotoMedium"; font-weight: normal; text-transform: uppercase; }
 .doctor_content_wrapper table tr td{ color: #fff; font-size: 24px; font-family: "RobotoRegular";  text-transform: uppercase; } */
@@ -48,8 +55,12 @@
 
 .table_structure .mat-list-item p{ display: block; width: 100%; margin: 0; }
 
-.table_structure .mat-list-item .title_n{ color: #5aa8ed; font-size: 24px; font-family: "RobotoMedium"; font-weight: normal; text-transform: uppercase;  }
-.table_structure .mat-list-item .title_a{ color: #fff; font-size: 18px; font-family: "RobotoRegular";  text-transform: uppercase; }
+.table_structure .mat-list-item .title_n{ color: #5aa8ed; font-size: 24px; font-family:"AvenirMedium"; font-weight: normal; text-transform: uppercase;  }
+.table_structure .mat-list-item .title_a{
+  color: #7b7b7b;
+  font-size: 18px;
+  font-family: "AvenirLight";
+  text-transform: uppercase;}
 .mat-form-field-flex {
   display: inline-flex;
   align-items: baseline;
@@ -81,7 +92,10 @@
 .table_structure .mat-list-base .mat-list-item,
 .mat-list-base .mat-list-option { display: inline-flex; height: auto; -webkit-tap-highlight-color: transparent; width: auto; padding: 0; color: #fff; border-right: 1px solid #044f82;
   width: 49%; margin-bottom: 10px; }
-.doctorCount{ color: #fff; padding: 20px 16px 0; font-size: 18px; font-family: "RobotoRegular";}
+.doctorCount{  color: #191818;
+  padding: 20px 16px 0;
+  font-size: 18px;
+  font-family: "AvenirLight";}
 .doctorCount a{ color: #68cdff;font-weight: bold; cursor: pointer;}
 
 .allDocGrid{ display: flex; justify-content: center; flex-wrap: wrap; }
