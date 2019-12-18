@@ -115,7 +115,7 @@ export class TechDashboardComponent implements OnInit {
     });
   }
 
-  viewDetailsData(flag: any) {
+  viewReportProcessData(flag: any) {
      /* Open modal */
      let modalData: any = {
       panelClass: 'bulkupload-dialog',
