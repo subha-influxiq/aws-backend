@@ -295,7 +295,6 @@
 
 .table_structure .mat-list-item .title_n{ color: #5aa8ed; font-size: 30px; font-family: "RobotoMedium"; font-weight: normal; text-transform: uppercase;  }
 .table_structure .mat-list-item .title_a{ color: #fff; font-size: 24px; font-family: "RobotoRegular";  text-transform: uppercase; }
-/* .mat-form-field-flex { display: inline-flex; align-items: baseline; box-sizing: border-box; width: 100%; border: 1px solid #012035;} */
 .patient_report_section .form_wrapper{ display: flex; margin: 0 10px;}
 .patient_report_section .form_wrapper .mat-form-field-flex{ border: 1px solid #000!important; }
 .patient_report_section .mat-form-field-appearance-outline .mat-form-field-wrapper { margin: 0!important;}
@@ -357,6 +356,12 @@
   margin: 0;
   padding: 0;
 }
+.table_wrapper .button_action{ display: block; text-align: center;}
+.table_wrapper .button_action button{ background: var(--button-color2); color: #fff;
+  font-size: 22px;
+  font-family: 'AvenirMedium';
+  padding: 4px 18px;
+  text-transform: uppercase;}
 .table_wrapper .mat-table .mat-cell .mat-form-field-appearance-outline .mat-form-field-infix {
   padding: 0;
   height: 28px;

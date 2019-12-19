@@ -1,6 +1,6 @@
 <app-tech-header></app-tech-header>
 <mat-card class="admin_wrapper">
-<!-- <mat-card-content class="content_wrapper">
+  <!-- <mat-card-content class="content_wrapper">
   <mat-card-content class="itemsection one">
     <span class="counteer">{{ allResolveData.totalReportCount }}</span>
     <p>Total Number of <br>Reports uploaded</p>
@@ -20,213 +20,226 @@
   </mat-card-content>
 </mat-card-content> -->
 
-<!-- new -->
-<mat-card-content class="admin_superbillsection">
-  <!-- <h1>Physician Report and Super Bills</h1> -->
-  <mat-card-content class="biller_wrapper">
-    <mat-card-content class="super_bill_item sp_one">
-      <span class="border_wrapper">
-        <mat-card-content class="circle">
-          <img src="../../../../assets/images/reporticon1.png">
-        </mat-card-content>
-      </span>
+  <!-- new -->
+  <mat-card-content class="admin_superbillsection">
+    <!-- <h1>Physician Report and Super Bills</h1> -->
+    <mat-card-content class="biller_wrapper">
+      <mat-card-content class="super_bill_item sp_one">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
 
-      <span class="container_wrapper">
-        <p>Total No of <br>
-          Reports Uploaded
-        </p>
-        <h2> {{ allResolveData.totalReportCount }} </h2>
-        <button mat-flat-button (click)="viewDetailsData('upload')">view all</button>
-      </span>
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Uploaded
+          </p>
+          <h2> {{ allResolveData.totalReportCount }} </h2>
+          <button mat-flat-button (click)="viewDetailsData('upload')">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item sp_two">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Report Processed
+          </p>
+          <h2> {{ allResolveData.processedReportCount }} </h2>
+          <button mat-flat-button (click)="viewDetailsData('processed')">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item sp_three">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon3.png">
+          </mat-card-content>
+        </span>
+        <span class="container_wrapper">
+          <p>Total Number of Reports Remain to Process
+          </p>
+          <h2> {{ allResolveData.totalRemainToProcessCount }} </h2>
+          <button mat-flat-button (click)="viewDetailsData('remainProcess')">view all</button>
+        </span>
+      </mat-card-content>
+
+
     </mat-card-content>
+  </mat-card-content>
 
-    <mat-card-content class="super_bill_item sp_two">
-      <span class="border_wrapper">
-        <mat-card-content class="circle">
-          <img src="../../../../assets/images/reporticon2.png">
-        </mat-card-content>
-      </span>
 
-      <span class="container_wrapper">
-        <p>Total No of <br>
-          Report Processed
-        </p>
-        <h2> {{ allResolveData.processedReportCount }} </h2>
-        <button mat-flat-button (click)="viewDetailsData('processed')">view all</button>
-      </span>
+  <mat-card-content class="doctor_content_wrapper">
+    <mat-card-title>Doctor You Are Working With </mat-card-title>
+    <mat-card-content class="table_structure">
+      <mat-list>
+
+        <mat-list-item>
+          <p class="title_n">Name</p>
+          <p class="title_a">
+            <ng-container>
+              {{ allResolveData.doctorWorkingWith[0].fullName }}
+            </ng-container>
+          </p>
+        </mat-list-item>
+
+        <mat-list-item>
+          <p class="title_n">Taxonomies</p>
+          <p class="title_a">
+            <ng-container>
+              {{ allResolveData.doctorWorkingWith[0].taxo_list[0] }}
+            </ng-container>
+          </p>
+        </mat-list-item>
+
+        <mat-list-item>
+          <p class="title_n">Email</p>
+          <p class="title_a">
+            <ng-container>
+              {{ allResolveData.doctorWorkingWith[0].email }}
+            </ng-container>
+          </p>
+        </mat-list-item>
+
+        <mat-list-item>
+          <p class="title_n">Phone</p>
+          <p class="title_a">
+            <ng-container>
+              {{ allResolveData.doctorWorkingWith[0].phone }}
+            </ng-container>
+          </p>
+        </mat-list-item>
+
+        <mat-list-item>
+          <p class="title_n">FAX</p>
+          <p class="title_a">
+            <ng-container>
+              {{ allResolveData.doctorWorkingWith[0].fax }}
+            </ng-container>
+          </p>
+        </mat-list-item>
+        <mat-list-item>
+          <p class="title_n">NPI#</p>
+          <p class="title_a">
+            <ng-container>
+              {{ allResolveData.doctorWorkingWith[0].fax }}
+            </ng-container>
+          </p>
+        </mat-list-item>
+
+      </mat-list>
     </mat-card-content>
+    <p class="doctorCount">and&nbsp; <a
+        (click)="allDoctorViewModal()">({{ allResolveData.doctorWorkingWith.length }})</a>&nbsp;more.</p>
 
-    <mat-card-content class="super_bill_item sp_three">
-      <span class="border_wrapper">
-        <mat-card-content class="circle">
-          <img src="../../../../assets/images/reporticon3.png">
-        </mat-card-content>
-      </span>
-      <span class="container_wrapper">
-        <p>Total Number of Reports Remain to Process
-        </p>
-        <h2> {{ allResolveData.totalRemainToProcessCount }} </h2>
-        <button mat-flat-button (click)="viewDetailsData('remainProcess')">view all</button>
-      </span>
-    </mat-card-content>
 
 
   </mat-card-content>
-</mat-card-content>
-
-
-<mat-card-content class="doctor_content_wrapper">
-  <mat-card-title>Doctor You Are Working With </mat-card-title>
-  <mat-card-content class="table_structure">
-    <mat-list>
-
-      <mat-list-item>
-        <p class="title_n">Name</p>
-        <p class="title_a">
-          <ng-container>
-            {{ allResolveData.doctorWorkingWith[0].fullName }}
-          </ng-container>
-        </p>
-      </mat-list-item>
-
-      <mat-list-item>
-        <p class="title_n">Taxonomies</p>
-        <p class="title_a">
-          <ng-container>
-            {{ allResolveData.doctorWorkingWith[0].taxo_list[0] }}
-          </ng-container>
-        </p>
-      </mat-list-item>
-
-      <mat-list-item>
-        <p class="title_n">Email</p>
-        <p class="title_a">
-          <ng-container>
-            {{ allResolveData.doctorWorkingWith[0].email }}
-          </ng-container>
-        </p>
-      </mat-list-item>
-
-      <mat-list-item>
-        <p class="title_n">Phone</p>
-        <p class="title_a">
-          <ng-container>
-            {{ allResolveData.doctorWorkingWith[0].phone }}
-          </ng-container>
-        </p>
-      </mat-list-item>
-
-      <mat-list-item>
-        <p class="title_n">FAX</p>
-        <p class="title_a">
-          <ng-container>
-            {{ allResolveData.doctorWorkingWith[0].fax }}
-          </ng-container>
-        </p>
-      </mat-list-item>
-
-    </mat-list>
-  </mat-card-content>
-  <p class="doctorCount">and&nbsp; <a (click)="allDoctorViewModal()">({{ allResolveData.doctorWorkingWith.length }})</a>&nbsp;more.</p>
-</mat-card-content>
 
 
 
-<!-- patainet report section -->
-<mat-card-content class="patient_report_section">
-  <mat-card-content class="patient_top_search">
-    <span class="search_bar">
-
-      <span class="form_wrapper">
-        <mat-form-field appearance="outline">
-          <input matInput placeholder="Search By Patient Name"
-            (keyup)="filterByName('patientName_search_regex', $event.target.value)">
-        </mat-form-field>
-      </span>
-
-      <span class="form_wrapper">
-        <mat-form-field appearance="outline">
-          <input matInput placeholder="Search By Doctor Name"
-            (keyup)="filterByName('doctorName_search_regex', $event.target.value)">
-        </mat-form-field>
-      </span>
-
-      <span class="form_wrapper">
-        <mat-form-field appearance="outline">
-          <input matInput placeholder="Search By Status">
-        </mat-form-field>
-      </span>
-
-    </span>
-  </mat-card-content>
-
-  <mat-card-content class="admin_table techTable">
+  <!-- patainet report section -->
+  <mat-card-content class="table_wrapper ">
 
     <mat-toolbar class="top_header">
       <h2>{{ htmlText.headerText }}</h2>
+      <!-- <button class="add_new" mat-button routerLink="/admin/patient-management/add">add patient records manually</button> -->
     </mat-toolbar>
 
-    <!--all dashboard data table start here-->
+    <mat-toolbar class="action_bar">
 
-    <table mat-table [dataSource]="allDataSource" matSort class="mat-elevation-z8">
+      <mat-form-field>
+        <input matInput placeholder="Search By Patient Name"
+          (keyup)="filterByName('patientName_search_regex', $event.target.value)">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Search By Doctor Name"
+          (keyup)="filterByName('doctorName_search_regex', $event.target.value)">
+      </mat-form-field>
+      <mat-form-field class="parent_cat">
+        <mat-select placeholder="Search By Status"
+          (selectionChange)="filterByName('status_search_regex', $event.value)">
+          <mat-option value=0>Select a status</mat-option>
+          <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
+          <mat-option value="doctor signed">Doctor Signed</mat-option>
+          <mat-option value="send to biller">Send To Biller</mat-option>
+          <mat-option value="error">Error</mat-option>
+          <mat-option value="pending">Pending</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-      <ng-container matColumnDef="no">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
-      </ng-container>
 
-      <ng-container matColumnDef="patientName">
-        <th mat-header-cell *matHeaderCellDef> Patient Name. </th>
-        <td mat-cell *matCellDef="let element" data-label="patient Name"> {{ element.patientName }} </td>
-      </ng-container>
+    </mat-toolbar>
 
-      <ng-container matColumnDef="doctorName">
-        <th mat-header-cell *matHeaderCellDef> Doctor Name</th>
-        <td mat-cell *matCellDef="let element" data-label="Doctor Name"> {{ element.doctorname }} </td>
-      </ng-container>
 
-      <ng-container matColumnDef="techName">
-        <th mat-header-cell *matHeaderCellDef> Tech Name</th>
-        <td mat-cell *matCellDef="let element" data-label="Tech Name"> {{ element.techname }} </td>
-      </ng-container>
+      <!--all dashboard data table start here-->
 
-      <ng-container matColumnDef="billerName">
-        <th mat-header-cell *matHeaderCellDef> Biller Name</th>
-        <td mat-cell *matCellDef="let element" data-label="Biller Name"> {{ element.billername }} </td>
-      </ng-container>
+      <table mat-table [dataSource]="allDataSource" matSort class="mat-elevation-z8">
 
-      <ng-container matColumnDef="recordType">
-        <th mat-header-cell *matHeaderCellDef> Record Type</th>
-        <td mat-cell *matCellDef="let element" data-label="Record Type"> {{ element.report_type }} </td>
-      </ng-container>
+        <ng-container matColumnDef="no">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
+        </ng-container>
 
-      <ng-container matColumnDef="billGenerationData">
-        <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>
-        <td mat-cell *matCellDef="let element" data-label="Bill Generation Date"> {{ element.billGenerationDate }} </td>
-      </ng-container>
+        <ng-container matColumnDef="patientName">
+          <th mat-header-cell *matHeaderCellDef> Patient Name. </th>
+          <td mat-cell *matCellDef="let element" data-label="patient Name"> {{ element.patientName }} </td>
+        </ng-container>
 
-      <ng-container matColumnDef="billsendDate">
-        <th mat-header-cell *matHeaderCellDef> Bill Send Date</th>
-        <td mat-cell *matCellDef="let element" data-label="Bill Send Date"> {{ element.billSentDate }} </td>
-      </ng-container>
+        <ng-container matColumnDef="doctorName">
+          <th mat-header-cell *matHeaderCellDef> Doctor Name</th>
+          <td mat-cell *matCellDef="let element" data-label="Doctor Name"> {{ element.doctorname }} </td>
+        </ng-container>
 
-      <ng-container matColumnDef="status">
-        <th mat-header-cell *matHeaderCellDef> Status </th>
-        <td mat-cell *matCellDef="let element" data-label="Status"> <span>{{ element.status_text }} </span></td>
-      </ng-container>
+        <ng-container matColumnDef="techName">
+          <th mat-header-cell *matHeaderCellDef> Tech Name</th>
+          <td mat-cell *matCellDef="let element" data-label="Tech Name"> {{ element.techname }} </td>
+        </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="allDataColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: allDataColumns;let i = index"></tr>
-    </table>
+        <ng-container matColumnDef="billerName">
+          <th mat-header-cell *matHeaderCellDef> Biller Name</th>
+          <td mat-cell *matCellDef="let element" data-label="Biller Name"> {{ element.billername }} </td>
+        </ng-container>
 
-    <mat-paginator [pageSizeOptions]="[25, 50, 100, 200, 500]"></mat-paginator>
+        <ng-container matColumnDef="recordType">
+          <th mat-header-cell *matHeaderCellDef> Record Type</th>
+          <td mat-cell *matCellDef="let element" data-label="Record Type"> {{ element.report_type }} </td>
+        </ng-container>
 
+        <ng-container matColumnDef="billGenerationData">
+          <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>
+          <td mat-cell *matCellDef="let element" data-label="Bill Generation Date"> {{ element.billGenerationDate }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="billsendDate">
+          <th mat-header-cell *matHeaderCellDef> Bill Send Date</th>
+          <td mat-cell *matCellDef="let element" data-label="Bill Send Date"> {{ element.billSentDate }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element" data-label="Status"> <span>{{ element.status_text }} </span></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="allDataColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: allDataColumns;let i = index"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[25, 50, 100, 200, 500]"></mat-paginator>
+
+
+
+    <span class="button_action">
+      <button mat-flat-button routerLink="/tech/patient-management/bulk-upload">upload bulk report</button>
+    </span>
   </mat-card-content>
-
-  <span class="button_action">
-    <button mat-flat-button routerLink="/tech/patient-management/bulk-upload">upload bulk report</button>
-  </span>
-</mat-card-content>
 
 </mat-card>
 <app-admin-footer></app-admin-footer>

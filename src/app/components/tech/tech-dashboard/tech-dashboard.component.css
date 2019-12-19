@@ -1,48 +1,22 @@
 
-.content_wrapper{ display: flex; justify-content: space-between;  align-items: center; width: 99%; margin: auto;
-  text-align: center; }
-.content_wrapper .itemsection{width: 33%; margin: 14px 7px; padding: 15px; box-sizing: border-box; display: flex; flex-direction: column; min-height: 200px; align-items: center;
-  justify-content: center; position: relative;}
-.one{ background: url("../../../../assets/images/techdashcontentbg1.jpg") no-repeat center center; background-size: cover; }
-.two{ background: url("../../../../assets/images/techdashcontentbg2.jpg") no-repeat center center; background-size: cover; }
-.three{ background: url("../../../../assets/images/techdashcontentbg3.jpg") no-repeat center center; background-size: cover; }
-.content_wrapper .itemsection button{ position: absolute;
-  right: 0; bottom: 0; background: rgba(0,0,0, 0.4); color: #fff; font-family: "RobotoRegular"; font-size: 15px;  border-radius: 0; text-transform: uppercase; }
-.content_wrapper .itemsection .counteer{ width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border: 1px solid rgba(0,0,0,0.1);
-  background: rgba(0,0,0, 0.2);
-  box-shadow: 2px 2px 2px 2px transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 50px;
-  font-family: "RobotoBlack";
-}
-.content_wrapper .itemsection p{   line-height: 34px; font-family: "RobotoBlack"; font-size: 30px; color: #fff; text-transform: uppercase; width: 100%; margin: 20px auto; margin-top: 15px;}
 
 
 
 
 .doctor_content_wrapper{
-  background: #f7f4f4;
+  background: #edf0f2;
   display: block;
-  padding: 20px 20px;
-  margin: 0 5px;
+  padding: 15px 5px;
+  margin: 0px 5px 16px;
   border-radius: 10px;
 }
 
-.doctor_content_wrapper .mat-card-title{      font-size: 30px;
-  font-family: "AvenirBlack";
-  text-transform: uppercase;
-  color: #313131;
-  margin-bottom: 30px;
-  display: block;}
-.doctor_content_wrapper .table_structure{ width: 100%; display: block;}
+.doctor_content_wrapper .mat-card-title{ font-size: 24px; font-family: "AvenirMedium"; text-transform: uppercase; color: #535353; margin-bottom: 5px; border-bottom: 1px solid #9c9c9c; padding: 0 10px; padding-bottom: 8px;}
+.doctor_content_wrapper .table_structure{ width: 100%; display: block; margin-bottom: 0; position: relative;}
 .doctor_content_wrapper table{ width: 100%;}
-/* .doctor_content_wrapper table tr th{ color: #5aa8ed; font-size: 30px; font-family: "RobotoMedium"; font-weight: normal; text-transform: uppercase; }
-.doctor_content_wrapper table tr td{ color: #fff; font-size: 24px; font-family: "RobotoRegular";  text-transform: uppercase; } */
+.doctor_content_wrapper .table_structure::before{ content: ''; width: 1px; height: 100%; background: #c1c5c7; position: absolute; right: 51%;}
+
+
 .table_structure .mat-list mat-list-base { display: flex; }
 .table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
   display: inline-flex;
@@ -55,7 +29,7 @@
 
 .table_structure .mat-list-item p{ display: block; width: 100%; margin: 0; }
 
-.table_structure .mat-list-item .title_n{ color: #5aa8ed; font-size: 24px; font-family:"AvenirMedium"; font-weight: normal; text-transform: uppercase;  }
+.table_structure .mat-list-item .title_n{ color: var(--button-color2); font-size: 22px; font-family:"AvenirMedium"; font-weight: normal; text-transform: uppercase;  }
 .table_structure .mat-list-item .title_a{
   color: #7b7b7b;
   font-size: 18px;
@@ -76,7 +50,7 @@
 .patient_report_section .patient_top_search { display: flex; align-items: center; justify-content: space-between; padding: 0 16px; margin-top: 20px; margin-bottom: 0;}
 .patient_report_section .patient_top_search .search_bar { display: flex;  }
 .patient_report_section .patient_top_search .search_bar button{ border: none; background: #000; color: #fff; display: flex; align-items: center; cursor: pointer; }
-.patient_report_section { width: 95%; margin: 0 auto; display: block;}
+
 
 .patient_report_section .patient_top_search h1{ font-size: 32px; text-transform: uppercase;  color: #002035; margin: auto;}
 .patient_report_section .patient_top_search .search_bar button:focus{ outline: none; }
@@ -84,19 +58,24 @@
   background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: "RobotoBlack"; font-size: 25px; padding: 10px; width: 400px; border: 3px solid #d59d01; }
   .techTable{ width: 100%;}
 
-  .patient_report_section .button_action{ display: flex; justify-content: center; }
 
-.top_header{ background: #f5ba4f; align-items: center; display: flex; justify-content: center; }
-.top_header h2{ margin: 0; font-size: 40px; color: #1f1f1f; font-family: "RobotoBold"; text-transform: uppercase; }
+
+
 
 .table_structure .mat-list-base .mat-list-item,
-.mat-list-base .mat-list-option { display: inline-flex; height: auto; -webkit-tap-highlight-color: transparent; width: auto; padding: 0; color: #fff; border-right: 1px solid #044f82;
+.mat-list-base .mat-list-option { display: inline-flex; height: auto; -webkit-tap-highlight-color: transparent; width: auto; padding: 0; color: #fff; border-right:0;
   width: 49%; margin-bottom: 10px; }
-.doctorCount{  color: #191818;
-  padding: 20px 16px 0;
+.doctorCount{ color: #353535;
+  padding: 3px 6px 6px;
   font-size: 18px;
-  font-family: "AvenirLight";}
-.doctorCount a{ color: #68cdff;font-weight: bold; cursor: pointer;}
+  font-family: "AvenirLight";
+  margin: 0 18px;
+  display: initial;
+  background: #ffffff;
+  border-radius: 5px;}
+.doctorCount a{     color: #26c6da;
+  font-family: 'AvenirBlack';
+  cursor: pointer;}
 
 .allDocGrid{ display: flex; justify-content: center; flex-wrap: wrap; }
 .allDocGrid .allItem{ width: 32%;
@@ -125,7 +104,7 @@
 }
 .allDocGrid .allItem .header{
   padding: 0 10px;
-  font-family: "RobotoBold";
+  font-family: "AvenirBlack";
   color: #462121;
   font-size: 18px;
   line-height: 20px;
@@ -133,11 +112,11 @@
 }
 .allDocGrid .allItem .otherDetails{ color: #3a2323;
   font-size: 14px;
-  font-family: "Helvetica";
+  font-family: "AvenirMedium";
   margin-bottom: 0;
   margin-top: 10px;}
   .allDocGrid .allItem .otherDetails label{
-  font-family: "RobotoMedium";
+  font-family: "AvenirBlack";
   }
 
 .allDocGrid .allItem:nth-child(3n+1){ margin-left: 0; }
@@ -153,7 +132,7 @@
 .modalmainwrapper .main_title{ color: #0e0000;
   display: block;
   text-align: center;
-  font-family: "RobotoBold";
+  font-family: "AvenirBlack";
   text-transform: uppercase;
   font-size: 30px;
   margin-bottom: 16px;
