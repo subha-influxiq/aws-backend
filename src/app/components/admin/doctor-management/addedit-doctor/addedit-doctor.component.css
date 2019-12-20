@@ -6,10 +6,7 @@
 .add_form .form_wrapper textarea{ resize: none;}
 .add_form h2{ font-family: "RobotoBlack"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }
 .add_form .submit_form { display: flex; width: 100%; justify-content: center; text-align: center; margin-top: 30px; }
-.add_form .submit_form button{ border-radius: 5px; text-transform: uppercase; font-family: "AvenirMedium"; font-size: 26px; padding: 6px 10px;
-  width: 200px; background: var(--button-color2); color: #fff; margin-right: 16px;}
-  .add_form .submit_form button:last-child{ margin-right: 0; background: #21e289;}
-.add_form .submit_form button:first-child{ margin-right: 16px; background: var(--button-color1);}
+
 
 .add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;}
 

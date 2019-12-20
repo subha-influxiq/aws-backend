@@ -1,12 +1,21 @@
 @media screen and (max-width: 1700px){
   .techdashboard_header .quotation .mat-nav-list .mat-list-item  .mat-list-item-content{ padding: 0 10px;}
 }
+@media screen and (max-width: 1500px){
+  .admin_wrapper { width: 90%; }
+  .action_bar .mat-form-field .mat-form-field-flex { width: 200px; }
+}
+@media screen and (max-width: 1410px){
+  .action_bar .mat-form-field .mat-form-field-flex { width: 180px; }
+  .table_wrapper .action_bar .date-range { width: auto;}
+}
 @media screen and (max-width: 1400px){
   .main_wrapper { background-size: 680px; padding-left: 727px; }
 }
 
 @media screen and (max-width: 1368px){
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 5px; }
+  .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber { font-size: 16px;}
 }
 @media screen and (max-width: 1300px){
 .main_wrapper { background-size: 680px; padding-left: 665px; }
