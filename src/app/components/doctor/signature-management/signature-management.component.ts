@@ -40,7 +40,7 @@ export class SignatureManagementComponent implements OnInit {
   }
 
   updateSignature() {
-    if(typeof this.htmlText.viewSign !== 'undefined') {
+    if(typeof this.htmlText.viewSign !== 'undefined' && this.htmlText.viewSign != '') {
       var data = {
         "source": "users",
         "data": {

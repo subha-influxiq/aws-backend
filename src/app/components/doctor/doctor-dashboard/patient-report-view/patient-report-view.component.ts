@@ -77,6 +77,9 @@ export class PatientReportViewComponent implements OnInit {
 
   public sliderCount: number = 0;
   public ImageData = [];
+  public biller: any = [];
+  public selectBiller: any;
+  public reportID: any;
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
@@ -88,7 +91,7 @@ export class PatientReportViewComponent implements OnInit {
     allcookies = cookie.getAll();
 
     this.cookiesData = JSON.parse(allcookies.user_details);
-    if(typeof this.cookiesData.doctor_signature === 'undefined') {
+    if(typeof this.cookiesData.doctor_signature === 'undefined' && this.cookiesData.type == 'doctor') {
       /* Open modal */
       let modalData: any = {
         panelClass: 'bulkupload-dialog',
@@ -162,6 +165,21 @@ export class PatientReportViewComponent implements OnInit {
     if(this.cookiesData.type == 'admin'){
       this.patientAddEditForm.disable();
     }
+
+
+    /* Get biller data */
+    var data: any = {
+      "source": "doctor_to_biller",
+      "condition": {
+        "_id_object": this.cookies_id
+      },
+      "token": this.userToken
+    };
+    this.httpService.httpViaPost("datalist", data).subscribe((response) => {
+      if (response.status = "success") {
+        this.biller = response.res;
+      }
+    });
   }
 
   ngOnInit() {
@@ -170,8 +188,7 @@ export class PatientReportViewComponent implements OnInit {
       this.getAllDoctorData();
     } else {
       this.activeRoute.data.forEach((data) => {
-        // this.ImageData = data.data.res[0].data;
-        // console.log("Images: ", data.data.res[0].data);
+        this.ImageData = data.data.res[0].data;
       });
     }
     
@@ -186,6 +203,7 @@ export class PatientReportViewComponent implements OnInit {
      
       this.ImageData = reportDetails[0].images_url;
      
+      this.reportID = reportDetails[0]._id;
       this.patientAddEditForm.controls['patientName'].patchValue(reportDetails[0].patientName);
       this.patientAddEditForm.controls['gender'].patchValue(reportDetails[0].gender);
       this.patientAddEditForm.controls['physicalOrdering'].patchValue(reportDetails[0].doctor_id);
@@ -337,6 +355,75 @@ export class PatientReportViewComponent implements OnInit {
         }
         break;
     }
+  }
+
+  reportSign(flug: any = 'default') {
+    if(typeof this.selectBiller !== 'undefined' && this.selectBiller != '') {
+      for(var loop = 0; loop <= this.biller.length - 1; loop++) {
+        if(this.biller[loop].biller_id == this.selectBiller) {
+          var fullname = this.biller[loop].firstname + ' ' + this.biller[loop].lastname;
+        }
+      }
+
+      let modalData: any = {
+        panelClass: 'bulkupload-dialog',
+        data: {
+          header: "Message",
+          message: "Do you want to send this report to biller: " + fullname + " ?",
+          button1: { text: "Yes" },
+          button2: { text: "No" },
+        }
+      };
+      this.openModal(modalData);
+
+      this.dialogRef.afterClosed().subscribe(result => {
+        switch (result) {
+          case "Yes":
+            var data: any = {
+              "source": "patient_management",
+              "data": { id: this.reportID, "doctor_signature": this.cookiesData.doctor_signature, "biller_id": this.selectBiller },
+              "sourceobj": ["biller_id"],
+              "token": this.userToken
+            }
+            data.data["id"] = this.paramsId;
+            this.httpService.httpViaPost("addorupdatedata", data).subscribe((response) => {
+              if (response.status = "success") {
+                switch(flug) {
+                  case 'back':
+                    this.dialogRef.close();
+                    this.router.navigateByUrl('/doctor/dashboard');
+                    break;
+                  case 'next':
+                    this.dialogRef.close();
+                    this.router.navigateByUrl('/doctor/dashboard');
+                    break;
+                  default:
+                    break;
+                }
+              }
+            });
+            break;
+          case "No":
+            this.dialogRef.close();
+            break;
+        }
+      });
+    } else {
+      let modalData: any = {
+        panelClass: 'bulkupload-dialog',
+        data: {
+          header: "Message",
+          message: "Select a biller first.",
+          button1: { text: "" },
+          button2: { text: "OK" },
+        }
+      }
+      this.openModal(modalData);
+    }
+  }
+
+  setSendBiller() {
+
   }
 
   openModal(data) {

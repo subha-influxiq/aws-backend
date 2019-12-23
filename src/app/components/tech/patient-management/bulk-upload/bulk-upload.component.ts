@@ -129,7 +129,6 @@ export class BulkUploadComponent implements OnInit {
   }
 
   bulkUploaddataSubmit() {
-    console.log(">>>>>>>>", this.configData.files);
     if (this.configData.files.length > 0) {
       for (const loop in this.configData.files) {
         this.images_array =
@@ -155,8 +154,7 @@ export class BulkUploadComponent implements OnInit {
         "sourceobj": ["tech_id", "doctor_id"],
         "token": this.user_token
       }
-      this.httpService.httpViaPost("upload-bulk-report", data)
-        .subscribe(response => {
+      this.httpService.httpViaPost("upload-bulk-report", data).subscribe(response => {
           if (response.status = "success") {
             let message: any = "Successfully Submitted";
             let action: any = "OK";
@@ -164,9 +162,9 @@ export class BulkUploadComponent implements OnInit {
               duration: 2000
             });
 
-            // setTimeout(() => {
-            //   this.router.navigateByUrl('/tech/dashboard');
-            // }, 1000);
+            setTimeout(() => {
+              this.router.navigateByUrl('/tech/dashboard');
+            }, 3000);
           }
         })
     } else {

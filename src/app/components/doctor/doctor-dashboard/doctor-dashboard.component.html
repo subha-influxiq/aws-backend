@@ -1,29 +1,8 @@
 <app-doctor-header></app-doctor-header>
 
 <mat-card class="admin_wrapper">
-  <!-- <mat-card-content class="content_wrapper">
-  <mat-card-content class="itemsection">
-    <mat-card-content class="one uploadsign">
-      <p>Manage Your Signature </p>
-    </mat-card-content>
-
-    <span [routerLink]="['/doctor/signature-management']" style="cursor: pointer;" class="section_title">
-      <img src="../../../../assets/images/editicon.png">
-    </span>
-  </mat-card-content>
-
-  <mat-card-content class="itemsection two">
-    <span class="counteer"> {{ allResolveData.data.signReportCount }}</span>
-    <p>Signed Records</p>
-    <button mat-flat-button (click)="viewReportProcessData('Report Signed')">View Details</button>
-  </mat-card-content>
-  <mat-card-content class="itemsection three">
-    <span class="counteer"> {{ allResolveData.data.pendingReportCount }} </span>
-    <p>Pending Signature</p>
-    <button mat-flat-button (click)="viewReportProcessData('Report unSigned')">View Details</button>
-  </mat-card-content>
-</mat-card-content> -->
-  <!-- new html  -->
+  
+  <!-- Count Block  -->
   <mat-card-content class="admin_superbillsection">
     <h1>Physician Report</h1>
     <mat-card-content class="biller_wrapper">
@@ -36,7 +15,6 @@
 
         <span class="container_wrapper">
           <p>MANAGE YOUR SIGNATURE</p>
-          <!-- <h2> {{ allResolveData.totalReportCount }} 200</h2> -->
           <button mat-flat-button [routerLink]="['/doctor/signature-management']">SIGN</button>
         </span>
       </mat-card-content>
@@ -69,29 +47,16 @@
         </span>
       </mat-card-content>
 
-      <!-- <mat-card-content class="super_bill_item sp_four">
-      <span class="border_wrapper">
-        <mat-card-content class="circle">
-          <img src="../../../../assets/images/reporticon4.png">
-        </mat-card-content>
-      </span>
-      <span>
-        <p> Sent to <br>
-          Super Bill
-        </p>
-        <h2> {{ allResolveData.sendToSuparBillerReportCount }} </h2>
-        <button mat-flat-button (click)="viewReportProcessData('Super Bill')">view all</button>
-      </span>
-    </mat-card-content> -->
     </mat-card-content>
   </mat-card-content>
+  
   <!-- Pending and signed  Data listing start here -->
   <mat-card-content class="table_wrapper">
+   
     <mat-toolbar class="top_header">
-
       <h2> Patient Record Report </h2>
-      <!-- <h2>{{ htmlText.headerText }}</h2> -->
     </mat-toolbar>
+    
     <span class="action_bar">
       <mat-form-field>
         <input matInput (keyup)="applyFilter( 'patientName_regex', $event.target.value )"
@@ -121,6 +86,7 @@
 
       <button mat-raised-button color="warn" (click)="dateSearch()">Date Search</button>
     </span>
+
     <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8 adminTables">
 
       <ng-container matColumnDef="no">
@@ -136,17 +102,6 @@
       <ng-container matColumnDef="doctorName">
         <th mat-header-cell *matHeaderCellDef> Doctor Name</th>
         <td mat-cell *matCellDef="let element" data-label="Doctor Name"> {{ element.doctorname }} </td>
-      </ng-container>
-
-
-
-      <ng-container matColumnDef="record">
-        <th mat-header-cell *matHeaderCellDef> Record </th>
-        <td mat-cell *matCellDef="let element; let i = index;">
-          <button *ngIf="element.status == 1" mat-button type="button" class="viewButton"
-            [routerLink]="['/doctor/patient-record-report', element._id]">View</button>
-          <button mat-raised-button *ngIf="element.status != 1" type="button" color="primary" disabled>View</button>
-        </td>
       </ng-container>
 
       <ng-container matColumnDef="report_type">
@@ -180,7 +135,7 @@
       </ng-container>
 
       <!-- drop down in mat table with a single button start here -->
-      <ng-container matColumnDef="billerDropDown">
+      <!-- <ng-container matColumnDef="billerDropDown">
         <th mat-header-cell *matHeaderCellDef> Sent To Biller </th>
         <td mat-cell *matCellDef="let element; let i = index;">
           <mat-form-field *ngIf="element.status == 1" color="warn" appearance="outline">
@@ -194,19 +149,25 @@
 
           <span *ngIf="element.biller_id != ''">{{ element.billername }}</span>
         </td>
-      </ng-container>
+      </ng-container> -->
+
+      <!-- <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element; let i = index;">
+          <button *ngIf="element.status == 1" mat-button type="button" class="editButton" (click)="allSendToBiller(i);">Send</button>
+          <button *ngIf="element.status != 1" disabled mat-raised-button type="button" class="editButton" (click)="allSendToBiller(i);">Send</button>
+        </td>
+      </ng-container> -->
+      <!--drop down in mat table with a single button end here -->
 
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let element; let i = index;">
-          <button *ngIf="element.status == 1" mat-button type="button" class="editButton"
-            (click)="allSendToBiller(i);">Send</button>
-          <button *ngIf="element.status != 1" disabled mat-raised-button type="button" class="editButton"
-            (click)="allSendToBiller(i);">Send</button>
-
+          <button *ngIf="element.status == 1" mat-button type="button" class="viewButton"
+            [routerLink]="['/doctor/patient-record-report', element._id]">View</button>
+          <button mat-raised-button *ngIf="element.status != 1" type="button" color="primary" disabled>View</button>
         </td>
       </ng-container>
-      <!--drop down in mat table with a single button end here -->
 
       <tr mat-header-row *matHeaderRowDef="dataCol"></tr>
       <tr mat-row *matRowDef="let row; columns: dataCol;let i = index"></tr>
@@ -214,130 +175,6 @@
 
     <mat-paginator [pageSizeOptions]="[25, 50, 100, 200]"></mat-paginator>
   </mat-card-content>
-
-
-  <!-- All Data listing start here(by default) -->
-  <!-- <mat-card-content class="doctor_table">
-
-  <mat-toolbar class="top_header">
-    <h2> DOCTOR SIGNATURE RECORD REPORTS </h2>
-  </mat-toolbar>
-  <span class="doctorfromwrapper">
-    <mat-form-field>
-      <input matInput (keyup)="applyFilter( 'patientName_regex', $event.target.value )"
-        placeholder="Search By Patient Name">
-    </mat-form-field>
-
-    <mat-form-field class="parent_cat">
-      <mat-select placeholder="Search By Status" (selectionChange)="applyStatusFilter({ 'status_regex':$event.value })">
-        <mat-option value=0>Select a status</mat-option>
-        <mat-option value="Send to biller">Send to biller.</mat-option>
-        <mat-option value="Downloaded">Downloaded</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker" [(ngModel)]="start_date" placeholder="Search By Date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker touchUi #picker></mat-datepicker>
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker1" [(ngModel)]="end_date" placeholder="Search By Date">
-      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-      <mat-datepicker touchUi #picker1></mat-datepicker>
-    </mat-form-field>
-
-    <button mat-raised-button color="warn" (click)="dateSearch()">Date Search</button>
-  </span>
-  <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8" style="width: 100%;">
-
-    <ng-container matColumnDef="no">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="patientName">
-      <th mat-header-cell *matHeaderCellDef> Patient Name. </th>
-      <td mat-cell *matCellDef="let element" data-label="Patient Name">{{ element.patientName }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="record">
-      <th mat-header-cell *matHeaderCellDef> Record </th>
-      <td mat-cell *matCellDef="let element; let i = index;">
-        <button *ngIf="element.status == 1 && element.converted_image || element.report_type == 'mannual'" mat-raised-button type="button" color="primary"
-          [routerLink]="['/doctor/patient-record-report', element._id]">View</button>
-
-        <button mat-raised-button *ngIf="element.status == 1 && !element.converted_image && element.report_type == 'file'" type="button" color="primary" disabled>Processing</button>
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="recordType">
-      <th mat-header-cell *matHeaderCellDef> Record Type</th>
-      <td mat-cell *matCellDef="let element" data-label="Record Type"> {{ element.report_type }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="billGenerationDate">
-      <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>
-      <td mat-cell *matCellDef="let element" data-label="Bill Generation Date"> {{ element.billGenerationDate }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="techName">
-      <th mat-header-cell *matHeaderCellDef> Tech Name</th>
-      <td mat-cell *matCellDef="let element" data-label="Tech Name"> {{ element.techname }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="billSentDate">
-      <th mat-header-cell *matHeaderCellDef> Bill Sent Date</th>
-      <td mat-cell *matCellDef="let element" data-label="Bill Sent Date"> {{ element.billSentDate }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="superBill">
-      <th mat-header-cell *matHeaderCellDef> Super Bill</th>
-      <td mat-cell *matCellDef="let element" data-label="Super Bill"> {{ element.superBill }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="status">
-      <th mat-header-cell *matHeaderCellDef> Status</th>
-      <td mat-cell *matCellDef="let element" data-label="Status"> {{ element.status_text }} </td>
-    </ng-container> -->
-
-
-  <!-- drop down in mat table with a single button start here -->
-  <!-- <ng-container matColumnDef="billerDropDown">
-      <th mat-header-cell *matHeaderCellDef> Sent To Biller </th>
-      <td mat-cell *matCellDef="let element; let i = index;">
-        <mat-form-field *ngIf="element.status == 1" color="warn" appearance="outline">
-          <mat-label>Select A Biller</mat-label>
-          <mat-select placeholder="Select A Biller" (selectionChange)="setSendBiller(i, $event);">
-            <mat-option *ngFor="let bd of billerData;let i = index;" [value]="bd.biller_id">
-              {{ bd.biller }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <span *ngIf="element.status != 1">{{ element.billername }}</span>
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef> Action </th>
-      <td mat-cell *matCellDef="let element; let i = index;">
-        <button *ngIf="element.status == 1 && element.converted_image || element.report_type == 'mannual'" mat-raised-button type="button" color="accent"
-          (click)="allSendToBiller(i);">Send</button>
-
-        <button *ngIf="element.status == 1 && !element.converted_image && element.report_type == 'file'" disabled mat-raised-button type="button" color="accent" disabled>Processing</button>
-      </td>
-    </ng-container> -->
-  <!--drop down in mat table with a single button end here -->
-
-  <!-- <tr mat-header-row *matHeaderRowDef="allDataColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: allDataColumns;let i = index"></tr>
-  </table>
-
-  <mat-paginator [pageSizeOptions]="[5, 10, 20, 100]"></mat-paginator>
-</mat-card-content> -->
-
-  <!-- Doctor Footer -->
-
 </mat-card>
+
 <app-admin-footer></app-admin-footer>

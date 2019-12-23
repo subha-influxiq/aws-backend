@@ -101,6 +101,7 @@ import { LogoutComponent } from './components/auth/logout/logout.component';
 import { DoctorOfficeChangePasswordComponent } from './components/doctor-office/doctor-office-change-password/doctor-office-change-password.component';
 import { PatientReportViewComponent } from './components/doctor/doctor-dashboard/patient-report-view/patient-report-view.component';
 import { EditPatientRecordComponent } from './components/admin/admin-dashboard/edit-patient-record/edit-patient-record.component';
+import { ReportNotProcessComponent } from './components/admin/report-not-process/report-not-process.component';
 
 @NgModule({
   declarations: [
@@ -167,7 +168,8 @@ import { EditPatientRecordComponent } from './components/admin/admin-dashboard/e
     LogoutComponent,
     PatientReportViewComponent,
     DoctorViewDialogComponent,
-    EditPatientRecordComponent
+    EditPatientRecordComponent,
+    ReportNotProcessComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

@@ -7,7 +7,7 @@
     <mat-card-content class="image_slider">
 
       <mat-card-content class="img_w">
-        <img [src]="ImageData[sliderCount]">
+        <img [src]="allPatientDataArray[0].file_basepath + ImageData[sliderCount].name">
       </mat-card-content>
       <button mat-mini-fab class="prev" (click)="playSlider('preview');">
         << </button> <button mat-mini-fab class="next" (click)="playSlider('next');"> >>
