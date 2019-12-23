@@ -1,11 +1,11 @@
 <app-tech-header></app-tech-header>
 
-<mat-card class="add_form">
-  <mat-card-content>
+<mat-card class="admin_wrapper" >
+  <mat-card-content class="add_form">
     <form class="example-form" autocomplete="off" name="techBulkUploadForm" [formGroup]="techBulkUploadForm">
-  
-    
-      <mat-card-content class="status_wrapper" > 
+
+
+      <mat-card-content class="status_wrapper" >
         <label>Batch Name</label>
         <mat-form-field appearance="fill">
           <input placeholder="Batch Name" matInput [formControl]="techBulkUploadForm.controls['batch_name']"
@@ -17,7 +17,7 @@
         <mat-card-content>
           <label>Ordering Physician</label>
           <mat-form-field >
-            
+
               <mat-select formControlName="doctor_id" placeholder="Select a Doctor" >
                 <mat-option value="">Select a Doctor</mat-option>
                 <mat-option (click)="getsellabel(doc)" *ngFor="let doc of allDoctorDataArray;" value="{{ doc._id }}"> {{ doc.fullNamecopy }}
@@ -25,10 +25,10 @@
               </mat-select>
             </mat-form-field>
         </mat-card-content>
-      
-       
+
+
     </mat-card-content>
-     
+
       <lib-file-upload [config]="configData" class="file_upload" ></lib-file-upload>
       <span style="color: red;" *ngIf="!configData.files && configData.formSubmit">Please upload a file</span>
 
@@ -39,7 +39,7 @@
           <textarea matInput placeholder="Leave a comment" [formControl]="techBulkUploadForm.controls['note']"
             >
        </textarea>
-          
+
         </mat-form-field>
       </span>
       <span class="submit_form">
@@ -52,12 +52,5 @@
   </mat-card-content>
 </mat-card>
 
-<mat-card-content class="footer_section">
-  <span class="footer_content">
-    <mat-card-content class="link">
-      <a href="">Privacy Policy</a>
-      <a href=""> Terms & conditions</a>
-    </mat-card-content>
-    <p>© Copyright 2018 Advanced Wellness Solutions- All Rights Reserved</p>
-  </span>
-</mat-card-content>
+
+<app-admin-footer></app-admin-footer>
