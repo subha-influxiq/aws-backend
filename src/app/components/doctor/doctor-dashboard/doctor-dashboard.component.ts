@@ -54,8 +54,9 @@ export class DoctorDashboardComponent implements OnInit {
     buttonText: "Add One",
     headertext: "DOCTOR SIGNATURE RECORD REPORTS"
   };
-  public allDataColumns: string[] = ['no', 'billGenerationDate', 'billSentDate', 'patientName', 'record', 'recordType', 'techName', 'superBill', 'status', 'billerDropDown', 'action'];
-  public dataCol:string[] = ['billGenerationDate','billSentDate','doctorName','patientName', 'record','report_type','status','superBill','techName','billerDropDown','action'];
+
+  public allDataColumns: string[] = ['no', 'billGenerationDate', 'billSentDate', 'patientName', 'recordType', 'techName', 'superBill', 'status', 'action'];
+  public dataCol:string[] = ['billGenerationDate','billSentDate','doctorName','patientName','report_type','status','superBill','techName', 'action'];
   public dialogRef: any;
   public allDataSource: any;
   public headertext: any;

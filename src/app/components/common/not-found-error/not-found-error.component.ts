@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-not-found-error',
@@ -9,7 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class NotFoundErrorComponent implements OnInit {
 public cookiesData : any;
 public userToken : any;
-  constructor(public cookie : CookieService) { 
+  constructor(public cookie : CookieService, public activatedRoute: ActivatedRoute, public router: Router) { 
     this.userToken = cookie.get('jwtToken');
     let allcookies: any;
     allcookies = cookie.getAll();
@@ -18,6 +19,10 @@ public userToken : any;
   }
 
   ngOnInit() {
+  }
+
+  gotoHome() {
+    this.router.navigateByUrl('/' + this.cookiesData.type + '/dashboard');
   }
 
 }

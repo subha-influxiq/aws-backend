@@ -69,8 +69,10 @@ width: 390px; border: 3px solid #d59d01; }
 }
 .patient_preview { align-items: center; justify-content: center;  }
 .patient_preview button{  background: #1dbce9; font-size: 24px; text-transform: uppercase; font-family: "AvenirBlack"; border-radius: 0; padding: 5px 16px;  color: #fff;
-  margin: 0;
+  margin: 0 5px;
 }
+.patient_preview button:first-child{ margin-left: 0;}
+.patient_preview button:last-child{ margin-right: o; background: var(--button-color3);}
 /*left part css end here*/
 
 .mat-elevation-z5 {

@@ -105,17 +105,17 @@ export class EditPatientRecordComponent implements OnInit {
     this.commonFunction.setTitleMetaTags();
 
     this.patientAddEditForm = this.fb.group({
-      id      :[this.paramsId,[]],
+      id :[this.paramsId, []],
       patientName: ['', [Validators.required, Validators.maxLength(30)]],
       gender: ['', [Validators.required]],
-      birthDate: ['', [Validators.required]],
+      birthDate: ['', []],
       doctor_id: ['', []],
       tech_id: ['', []],
-      testDate: ['', [Validators.required]],
-      date: ['', [Validators.required]],
-      testCompletedDate: ['', [Validators.required]],
+      testDate: ['', []],
+      date: ['', []],
+      testCompletedDate: ['', []],
       PTGPT: ['', [Validators.required]],
-      PTGVLFI: ['', [Validators.required]],
+      PTGVLFI: ['', []],
       IR: ['', [Validators.required]],
       ESRNO: ['', [Validators.required]],
       ESRL: ['', [Validators.required]],
@@ -133,17 +133,14 @@ export class EditPatientRecordComponent implements OnInit {
       DPRS: ['', [Validators.required]],
       ValsR: ['', [Validators.required]],
       BMI: ['', [Validators.required]],
-      bloodPressure: ['', [Validators.required]],
+      bloodPressure: ['', []],
       leaveNotes: ['', [Validators.required]],
       systolic: ['', []],
       diastolic: ['', []],
       status: [1, []],
       report_type:['mannual',[]],
-      updated_by: [this.cookies_id, []],
-      
-     
-    })
-
+      updated_by: [this.cookies_id, []]
+    });
   }
 
   ngOnInit() {
@@ -183,32 +180,39 @@ export class EditPatientRecordComponent implements OnInit {
       },
       "token": this.userToken
     }
-    this.httpService.httpViaPost('datalist', data)
-      .subscribe((response) => {
+    this.httpService.httpViaPost('datalist', data).subscribe((response) => {
         this.allTechArray = response.res;
-
-      })
+      });
   }
 
   getAllPatientData() {
-    
     this.activeRoute.data.forEach((data) => {
       this.allPatientDataArray = data.patientData.res;
+
+      console.log("Array: ", this.allPatientDataArray);
       let patientDetails : any=data.patientData.res;
-      this.ImageData = patientDetails[0].images_url;
+      console.log("Images: ", patientDetails[0].images);
+        this.ImageData = patientDetails[0].images;
+        this.getDoctorId(patientDetails[0].doctor_id);
+
         this.patientAddEditForm.controls['patientName'].patchValue(patientDetails[0].patientName);
         this.patientAddEditForm.controls['gender'].patchValue(patientDetails[0].gender);
         this.patientAddEditForm.controls['doctor_id'].patchValue(patientDetails[0].doctor_id);
         this.patientAddEditForm.controls['tech_id'].patchValue(patientDetails[0].tech_id);
   
-        // let dateOfBirth: any = patientDetails[0].birthDate;
-        // let dobArr: any = dateOfBirth.split("-");
-        // this.patientAddEditForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1], dobArr[0]]))
-        //  console.log("birthdateeee",this,this.patientAddEditForm.value.birthDate);
+        /* Date of birth */
+        let dateArr: any = patientDetails[0].birthDate.split("-");
+        this.dateofbirth = moment([dateArr[2], dateArr[1] - 1, dateArr[0]]);
+
+        /* Test Date */
+        dateArr = patientDetails[0].testDate.split("-");
+        this.startdate = moment([dateArr[2], dateArr[1] - 1, dateArr[0]]);
         
-        //  let sDateArr: any = patientDetails[0].testDate.split("-");
-        // this.patientAddEditForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
-  
+        /* Test complete date */
+        dateArr = patientDetails[0].testCompletedDate.split("-");
+        this.enddate = moment([dateArr[2], dateArr[1] - 1, dateArr[0]]);
+
+        this.patientAddEditForm.controls['report_type'].patchValue(patientDetails[0].report_type);
         this.patientAddEditForm.controls['PTGPT'].patchValue(patientDetails[0].PTGPT); 
         this.patientAddEditForm.controls['PTGVLFI'].patchValue(patientDetails[0].PTGVLFI);
         this.patientAddEditForm.controls['IR'].patchValue(patientDetails[0].IR);
@@ -231,12 +235,7 @@ export class EditPatientRecordComponent implements OnInit {
         this.patientAddEditForm.controls['BMI'].patchValue(patientDetails[0].BMI);
         this.patientAddEditForm.controls['bloodPressure'].patchValue(patientDetails[0].systolic+"/"+patientDetails[0].diastolic);
         this.patientAddEditForm.controls['leaveNotes'].patchValue(patientDetails[0].leaveNotes);
-
-     
-
-      
-
-    })
+    });
   }
 
 
@@ -266,19 +265,17 @@ export class EditPatientRecordComponent implements OnInit {
       var data: any = {
         "source": "patient_management",
         "data": this.patientAddEditForm.value,
-        "sourceobj": ["physicalOrdering", "tech"],
+        "sourceobj": ["doctor_id", "tech_id"],
         "token": this.userToken
       }
 
       this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
         if (response.status = "success") {
-          this.formDirective.resetForm();
-
-
+          this.router.navigateByUrl('/admin/dashboard');
         }
       });
     } else {
-      console.log("Not submited: ", this.patientAddEditForm.valid);
+      console.log("Not submited: ", this.patientAddEditForm.value);
     }
   }
 

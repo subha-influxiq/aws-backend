@@ -13,6 +13,7 @@ import { ForgetpasswordComponent } from '../components/auth/forgetpassword/forge
 import { ResetpasswordComponent } from '../components/auth/resetpassword/resetpassword.component';
 import { LogoutComponent } from '../components/auth/logout/logout.component';
 /****************** Admin *****************/
+import { ReportNotProcessComponent } from '../components/admin/report-not-process/report-not-process.component';
 import { AdminDashboardComponent } from '../components/admin/admin-dashboard/admin-dashboard.component';
 import { EditPatientRecordComponent } from '../components/admin/admin-dashboard/edit-patient-record/edit-patient-record.component';
 /* User Mnagement */
@@ -93,7 +94,44 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin/patient-record/:_id', component: PatientReportViewComponent,
+    path: 'admin/image-not-process', component: ReportNotProcessComponent, canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'patient_management',
+        condition: {
+          "report_type": "file",
+          "images": { $exists:false }
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  {
+    path: 'admin/text-not-process', component: ReportNotProcessComponent, canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'patient_management',
+        condition: {
+          "report_type": "file",
+          "images": { $exists:true },
+          $or: [
+            {"page_1": { $exists:false }},
+            {"page_2": { $exists:false }},
+            {"page_3": { $exists:false }},
+            {"page_4": { $exists:false }},
+            {"page_5": { $exists:false }},
+            {"page_6": { $exists:false }},
+            {"page_7": { $exists:false }}
+          ]
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  {
+    path: 'admin/patient-record/:_id_object', component: PatientReportViewComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
@@ -110,7 +148,7 @@ const routes: Routes = [
     resolve: { patientData: ResolveService },
     data: {
       requestcondition: {
-        source: 'patient_management_view',
+        source: 'patient_management',
         condition: {}
       },
       endpoint: 'datalist'

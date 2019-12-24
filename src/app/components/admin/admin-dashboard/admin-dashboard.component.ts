@@ -189,13 +189,19 @@ export class AdminDashboardComponent implements OnInit {
     switch (flag) {
       case 'Reports Uploaded':
         this.htmlText.headerText = "Reports Uploaded";
-        let allData: AllDataElement[] = this.allResolveData.totalReportData;
-        this.allDataSource = new MatTableDataSource(allData);
-        this.allDataSource.paginator = this.paginatorAll;
+        var data: any = {
+          "source": "Patient-Record-Report_view",
+          "token": this.jwtToken,
+        }
+        this.http.httpViaPost('datalist', data).subscribe((response) => {
+          let allData: AllDataElement[] = this.allResolveData.totalReportData;
+          this.allDataSource = new MatTableDataSource(allData);
+          this.allDataSource.paginator = this.paginatorAll;
+        });
         break;
       case 'Report Processed':
         this.htmlText.headerText = "Reports Processed";
-        var data = {
+        var data: any = {
           "source": "Patient-Record-Report_view",
           "condition": {
             "page_1": { $exists:true },
