@@ -239,10 +239,7 @@
   margin-right: 0;
 }
 
-.modalmainwrapper .button_w {
-  align-items: center;
-  justify-content: flex-end;
-}
+.modalmainwrapper .button_w { align-items: center; justify-content: flex-end; background: transparent; padding: 0; height: auto; }
 
 .modalmainwrapper .button_w button {
   background: #fb0505;

@@ -9,114 +9,113 @@
 <app-doctor-header *ngIf="headerFlag == 'doctor'"></app-doctor-header>
 
 <!-- Header End -->
+<mat-card class="admin_wrapper">
+  <mat-progress-bar *ngIf="loader" mode="indeterminate"></mat-progress-bar>
 
-<mat-progress-bar *ngIf="loader" mode="indeterminate"></mat-progress-bar>
-
-<mat-card-content class="title_wrapper">
+  <mat-card-content class="title_wrapper">
     Account Setting
-</mat-card-content>
+  </mat-card-content>
 
 
-<span class="add_header" *ngIf="cookiesData.type == 'tech'">
+  <span class="add_header" *ngIf="cookiesData.type == 'tech'">
     <span class="bradcrumb"><a [routerLink]="['/tech/dashboard']">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>
-</span>
-<span class="add_header" *ngIf="cookiesData.type == 'admin'">
+  </span>
+  <span class="add_header" *ngIf="cookiesData.type == 'admin'">
     <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>
-</span>
-<span class="add_header" *ngIf="cookiesData.type == 'biller'">
+  </span>
+  <span class="add_header" *ngIf="cookiesData.type == 'biller'">
     <span class="bradcrumb"><a [routerLink]="['/biller/dashboard']">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>
-</span>
-<span class="add_header" *ngIf="cookiesData.type == 'doctor'">
+  </span>
+  <span class="add_header" *ngIf="cookiesData.type == 'doctor'">
     <span class="bradcrumb"><a [routerLink]="['/biller/dashboard']">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>
-</span>
-<!-- End header with add button -->
+  </span>
+  <!-- End header with add button -->
 
-<mat-card class="add_form">
-    <h2>Account Information</h2>
+  <mat-card class="add_form">
+    <h2 class="t_head">Account Information</h2>
     <mat-card-content class="form_wrapper">
-        <form class="example-form" autocomplete="off" name="AccountSettingsForm" [formGroup]="AccountSettingsForm"
-            (ngSubmit)="AccountSettingsFormSubmit()">
+      <form class="example-form" autocomplete="off" name="AccountSettingsForm" [formGroup]="AccountSettingsForm"
+        (ngSubmit)="AccountSettingsFormSubmit()">
 
-            <mat-form-field appearance="fill">
-                <mat-label>Enter First Name</mat-label>
-                <input matInput placeholder="First Name" [formControl]="AccountSettingsForm.controls['firstname']"
-                    (blur)="inputUntouch(AccountSettingsForm,'firstname')">
-                <mat-error *ngIf="AccountSettingsForm.controls['firstname'].touched && !AccountSettingsForm.controls['firstname'].valid
+        <mat-form-field appearance="fill">
+          <mat-label>Enter First Name</mat-label>
+          <input matInput placeholder="First Name" [formControl]="AccountSettingsForm.controls['firstname']"
+            (blur)="inputUntouch(AccountSettingsForm,'firstname')">
+          <mat-error *ngIf="AccountSettingsForm.controls['firstname'].touched && !AccountSettingsForm.controls['firstname'].valid
            && AccountSettingsForm.controls['firstname'].errors.required">
-                    First Name field can not be blank</mat-error>
-            </mat-form-field>
+            First Name field can not be blank</mat-error>
+        </mat-form-field>
 
-            <mat-form-field appearance="fill">
-                <mat-label>Enter Last Name</mat-label>
-                <input matInput placeholder="Last Name" [formControl]="AccountSettingsForm.controls['lastname']"
-                    (blur)="inputUntouch(AccountSettingsForm,'lastname')">
-                <mat-error *ngIf="AccountSettingsForm.controls['lastname'].touched && !AccountSettingsForm.controls['lastname'].valid
+        <mat-form-field appearance="fill">
+          <mat-label>Enter Last Name</mat-label>
+          <input matInput placeholder="Last Name" [formControl]="AccountSettingsForm.controls['lastname']"
+            (blur)="inputUntouch(AccountSettingsForm,'lastname')">
+          <mat-error *ngIf="AccountSettingsForm.controls['lastname'].touched && !AccountSettingsForm.controls['lastname'].valid
            && AccountSettingsForm.controls['lastname'].errors.required">
-                    Last Name field can not be blank</mat-error>
-            </mat-form-field>
+            Last Name field can not be blank</mat-error>
+        </mat-form-field>
 
-            <mat-form-field appearance="fill">
-                <mat-label>Email Address</mat-label>
-                <input matInput placeholder="Email Address" [disabled]="true" value="{{ cookiesData.email }}"/>
-            </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Email Address</mat-label>
+          <input matInput placeholder="Email Address" [disabled]="true" value="{{ cookiesData.email }}" />
+        </mat-form-field>
 
-            <mat-form-field appearance="fill">
-                <mat-label>Phone </mat-label>
-                <input type="number" matInput placeholder="Phone"
-                    [formControl]="AccountSettingsForm.controls['phoneno']"
-                    (blur)="inputUntouch(AccountSettingsForm,'phoneno')">
-                <mat-error *ngIf="AccountSettingsForm.controls['phoneno'].touched && !AccountSettingsForm.controls['phoneno'].valid
+        <mat-form-field appearance="fill">
+          <mat-label>Phone </mat-label>
+          <input type="number" matInput placeholder="Phone" [formControl]="AccountSettingsForm.controls['phoneno']"
+            (blur)="inputUntouch(AccountSettingsForm,'phoneno')">
+          <mat-error *ngIf="AccountSettingsForm.controls['phoneno'].touched && !AccountSettingsForm.controls['phoneno'].valid
             && AccountSettingsForm.controls['phoneno'].errors.required">
-                    Phone Number field can not be blank</mat-error>
-            </mat-form-field>
+            Phone Number field can not be blank</mat-error>
+        </mat-form-field>
 
-            <mat-form-field>
-                <mat-label>Date</mat-label>
-                <input [value]="date.value" matInput [matDatepicker]="myPicker" placeholder="date">
-                <mat-datepicker-toggle matSuffix [for]="myPicker" disabled></mat-datepicker-toggle>
-                <mat-datepicker #myPicker></mat-datepicker>
-            </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Date</mat-label>
+          <input [value]="date.value" matInput [matDatepicker]="myPicker" placeholder="date">
+          <mat-datepicker-toggle matSuffix [for]="myPicker" disabled></mat-datepicker-toggle>
+          <mat-datepicker #myPicker></mat-datepicker>
+        </mat-form-field>
 
-            <mat-form-field appearance="fill">
-                <mat-label>Zip</mat-label>
-                <input type="number" matInput placeholder="ZIP" [formControl]="AccountSettingsForm.controls['zip']"
-                    (blur)="inputUntouch(AccountSettingsForm,'zip')">
-                <mat-error *ngIf="AccountSettingsForm.controls['zip'].touched && !AccountSettingsForm.controls['zip'].valid
+        <mat-form-field appearance="fill">
+          <mat-label>Zip</mat-label>
+          <input type="number" matInput placeholder="ZIP" [formControl]="AccountSettingsForm.controls['zip']"
+            (blur)="inputUntouch(AccountSettingsForm,'zip')">
+          <mat-error *ngIf="AccountSettingsForm.controls['zip'].touched && !AccountSettingsForm.controls['zip'].valid
           && AccountSettingsForm.controls['zip'].errors.required">
-                    Zip field can not be blank. </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                <mat-label>Address</mat-label>
-                <input matInput placeholder="Address" [formControl]="AccountSettingsForm.controls['address']"
-                    (blur)="inputUntouch(AccountSettingsForm,'address')" />
-                <mat-error *ngIf="AccountSettingsForm.controls['address'].touched && !AccountSettingsForm.controls['address'].valid
+            Zip field can not be blank. </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Address</mat-label>
+          <input matInput placeholder="Address" [formControl]="AccountSettingsForm.controls['address']"
+            (blur)="inputUntouch(AccountSettingsForm,'address')" />
+          <mat-error *ngIf="AccountSettingsForm.controls['address'].touched && !AccountSettingsForm.controls['address'].valid
             && AccountSettingsForm.controls['address'].errors.required">
-                    Address field can not be blank</mat-error>
-            </mat-form-field>
+            Address field can not be blank</mat-error>
+        </mat-form-field>
 
-            <mat-form-field class="parent_cat" appearance="fill">
-                <mat-label>State</mat-label>
-                <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
-                    <mat-option [value]=0>Select a category</mat-option>
-                    <mat-option *ngFor="let state of states;" value="{{ state.name }}">{{ state.name }}</mat-option>
-                </mat-select>
-            </mat-form-field>
+        <mat-form-field class="parent_cat" appearance="fill">
+          <mat-label>State</mat-label>
+          <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
+            <mat-option [value]=0>Select a category</mat-option>
+            <mat-option *ngFor="let state of states;" value="{{ state.name }}">{{ state.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
 
-            <mat-form-field class="parent_cat" appearance="fill">
-                <mat-label>City</mat-label>
-                <mat-select formControlName="city">
-                    <mat-option value=0>Select a category</mat-option>
-                    <mat-option *ngFor="let city of cities;" value="{{ city }}">{{ city }}</mat-option>
-                </mat-select>
-            </mat-form-field>
+        <mat-form-field class="parent_cat" appearance="fill">
+          <mat-label>City</mat-label>
+          <mat-select formControlName="city">
+            <mat-option value=0>Select a category</mat-option>
+            <mat-option *ngFor="let city of cities;" value="{{ city }}">{{ city }}</mat-option>
+          </mat-select>
+        </mat-form-field>
 
-            <span class="submit_form">
-                <button mat-flat-button type="button" (click)="CancelRedirectToDashboard()"> Cancel </button>
-                <button mat-flat-button type="submit" [disabled]="!AccountSettingsForm.valid"> Update </button>
-            </span>
-        </form>
+        <span class="submit_form">
+          <button mat-flat-button type="button" (click)="CancelRedirectToDashboard()"> Cancel </button>
+          <button mat-flat-button type="submit" [disabled]="!AccountSettingsForm.valid"> Update </button>
+        </span>
+      </form>
     </mat-card-content>
 
+  </mat-card>
 </mat-card>
-
 <app-admin-footer></app-admin-footer>
