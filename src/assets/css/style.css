@@ -255,12 +255,7 @@
 } */
 
 
-.action_bar .mat-form-field-appearance-legacy .mat-form-field-label {
-  font-size: 16px;
-    font-family: "AvenirLight";
-    width: auto;
-    padding-left: 10px;
-}
+.action_bar .mat-form-field-appearance-legacy .mat-form-field-label { font-size: 16px;  font-family: "AvenirLight"; width: auto; padding-left: 10px; }
 
 .infomodal{ overflow: auto; width: 991px;}
 /* admin css */
@@ -317,8 +312,7 @@
 .admin_superbillsection h1{ font-size: 20px; font-family: 'AvenirMedium'; color: #535353; text-transform: capitalize; margin-bottom: 10px;  border-bottom: 1px solid #9c9c9c;
   padding-bottom: 6px; }
 .admin_superbillsection .biller_wrapper  { display: flex; justify-content: center;}
-.admin_superbillsection .biller_wrapper .super_bill_item{ width: 34%; margin: .5%; padding:16px; display: flex;  padding-top: 2%;
-  border-radius: 10px; }
+.admin_superbillsection .biller_wrapper .super_bill_item{ width: 100%; margin: .5%; padding:16px; display: flex;  padding-top: 2%; border-radius: 10px; }
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(1){ background: #4099ff url("../../../../assets/images/admincircle_icon1.png") no-repeat right top; background-size: 120px;}
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(2){ background: #ab8ce4 url("../../../../assets/images/admincircle_icon2.png") no-repeat right top; background-size: 120px;}
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(3){ background: #26c6da url("../../../../assets/images/admincircle_icon3.png") no-repeat right top; background-size: 120px;}
@@ -326,10 +320,10 @@
 .admin_superbillsection .biller_wrapper .super_bill_item .container_wrapper{ display: flex; flex-direction: column; align-items: self-end; width: 80%; box-sizing: border-box;  }
 .admin_superbillsection .biller_wrapper .super_bill_item span h2{ color: #fff; font-size: 40px; text-transform: uppercase; font-family: 'AvenirMedium'; margin: 10px 0; text-shadow: 1px 1px 0px #dadada; word-break: break-all;}
 .admin_superbillsection .biller_wrapper .super_bill_item span P{ color: #fff; font-size: 24px; font-family: 'AvenirMedium'; margin: 0; line-height: 26px; text-shadow: 1px 1px 0px #dadada;}
-  .admin_superbillsection .biller_wrapper .super_bill_item:last-child{margin-bottom: 0.5%; }
+.admin_superbillsection .biller_wrapper .super_bill_item:last-child{margin-bottom: 0.5%; }
 .admin_superbillsection .biller_wrapper .super_bill_item span button{ font-size: 16px; text-transform: capitalize; font-family: 'AvenirLight'; line-height: 32px; margin-top: auto;
   width: 105px; border-radius: 5px; margin-left: auto;}
-  .adminTables  tr.mat-header-row { box-shadow: 0px 0px 1px 1px #bfbfbf; }
+.adminTables  tr.mat-header-row { box-shadow: 0px 0px 1px 1px #bfbfbf; }
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(1) span button{ color: #1b61b2;  }
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(2) span button{ color: #4a1aa4;  }
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(3) span button{ color: #066d7a;  }
@@ -341,23 +335,11 @@
 .adminTables .viewButton{ background-color:var(--button-color2); width: auto; height: auto; line-height: initial; padding: 2px 0; box-shadow: none; border-radius: 2px;
     font-family: "AvenirMedium"; color: #fff; }
 
-.adminTables .editButton{
-  background-color:var(--button-color1);
-  width: auto;
-  height: auto;
-  line-height: initial;
-  padding: 2px 0;
-  box-shadow: none;
-  border-radius: 2px;
-  font-family: "AvenirMedium";
-  color: #fff;
- }
+.adminTables .editButton{ background-color:var(--button-color1); width: auto; height: auto; line-height: initial; padding: 2px 0; box-shadow: none; border-radius: 2px;
+  font-family: "AvenirMedium"; color: #fff;}
 .admin_table .action_bar .date-range{ width: 36%; justify-content: space-between; display: flex;}
- .table_wrapper .mat-table { width: 100%; box-shadow: none; }
- .table_wrapper .mat-table .mat-cell .mat-form-field-appearance-outline .mat-form-field-wrapper {
-  margin: 0;
-  padding: 0;
-}
+.table_wrapper .mat-table { width: 100%; box-shadow: none; }
+.table_wrapper .mat-table .mat-cell .mat-form-field-appearance-outline .mat-form-field-wrapper { margin: 0; padding: 0; }
 .table_wrapper .button_action{ display: block; text-align: center;}
 .table_wrapper .button_action button{ background: var(--button-color2); color: #fff; font-size: 22px; font-family: 'AvenirMedium'; padding: 4px 18px; text-transform: uppercase;}
 .table_wrapper .mat-table .mat-cell .mat-form-field-appearance-outline .mat-form-field-infix { padding: 0; height: 28px; display: inline-flex; }
