@@ -1,11 +1,11 @@
 .editPatient_wrapper{ display: flex; justify-content: space-between; background: #f2f2f2;}
-.editPatient_wrapper .editItems{  width: 50%; margin-bottom: 0; box-sizing: border-box; padding: 16px;  }
+.editPatient_wrapper .editItems{  width: 50%; margin-bottom: 0; box-sizing: border-box; padding: 16px; background: #fff; }
 /* .editPatient_wrapper .editItems:first-child{ max-height: 75vh;} */
 .editPatient_wrapper .editItems .image_slider{ position: relative; }
 .editPatient_wrapper .editItems .image_slider button{top:40%; font-family: 'AvenirBlack'; position: absolute; }
 .editPatient_wrapper .editItems .image_slider .prev{ left: 0; }
 .editPatient_wrapper .editItems .image_slider .next{ right: 0; top: 39%; }
-.editPatient_wrapper .editItems .image_slider .img_w{ width: 100%; margin-bottom: 0;}
+.editPatient_wrapper .editItems .image_slider .img_w{ width: 100%; margin-bottom: 0; text-align: center; }
 .editPatient_wrapper .editItems .image_slider .img_w img{ max-width: 100%;}
 .action_button{ justify-content: center;}
 .action_button button{ margin: 0 8px; background: #1dbce9; color: #fff; text-transform: uppercase; border-radius: 0; min-width: 120px; font-family: "AvenirBlack";  font-size: 18px;  padding: 3px;}
@@ -13,8 +13,8 @@
 .action_button button:last-child{ margin-right:0;}
 .display_section{ width: 100%!important; margin: auto;}
 /*left part css start here*/
-
-.add_form{ width: 100%; margin: 20px auto; background: #f3f3f3; padding: 16px 10px; padding-bottom: 25px; border: 1px solid #91e7ff; box-sizing: border-box;}
+/* background: #f3f3f3; */
+.add_form{ width: 100%; margin: 20px auto;  padding: 16px 10px; padding-bottom: 25px; border: 1px solid #91e7ff; box-sizing: border-box;}
 .add_form .form_wrapper .mat-form-field{ width: 49%; margin: 0.5%; }
 .add_form .form_wrapper textarea{ resize: none;}
 .add_form h2{ font-family: "AvenirMedium"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }
@@ -57,6 +57,14 @@ width: 390px; border: 3px solid #d59d01; }
   .add_form .mat-card-content label { margin: 0; margin-right: 5px; }
 }
  
+@media screen and (max-width: 1199px){
+  .editPatient_wrapper .editItems { width: 100%; }
+  .editPatient_wrapper { display: flex; flex-direction: column; }
+  .add_form .test_date_wrapper .mat-card-actions, 
+  .add_form .test_date_wrapper .mat-card-content, 
+  .add_form .test_date_wrapper .mat-card-subtitle { width: 32%; }
+
+}
 @media screen and (max-width: 1100px){
   .add_form .example-form .patients_info_wrapper .mat-card-content { flex: 1 1 50%; margin: 0; }
 }
@@ -66,6 +74,9 @@ width: 390px; border: 3px solid #d59d01; }
 @media screen and (max-width: 991px){
 .techdashboard_header .mat-toolbar-row { flex-direction: column; padding: 20px;}
 .techdashboard_header .mat-toolbar-row .quotation p { margin-top: 16px; }
+.add_form .test_date_wrapper .mat-card-actions, 
+  .add_form .test_date_wrapper .mat-card-content, 
+  .add_form .test_date_wrapper .mat-card-subtitle { width: 48%; }
 }
 @media screen and (max-width: 768px){
   .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0; }
