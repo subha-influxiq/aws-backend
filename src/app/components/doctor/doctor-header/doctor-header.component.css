@@ -233,7 +233,10 @@
 .techdashboard_header .logo_wrapper:focus { outline: none; border: none; }
 .techdashboard_header .logo_wrapper img { max-width: 100%; vertical-align: middle; }
 .techdashboard_header .quotation { margin-bottom: 0px; }
-.techdashboard_header .quotation p { font-family: "RobotoMedium"; font-size: 30px; color: #002035; text-transform: uppercase; margin: 0; }
+.techdashboard_header .quotation p { font-family: "AvenirMedium"; font-size: 22px;
+  color: #002035;
+  text-transform: uppercase;
+  margin: 0;}
 .techdashboard_header .profile_section button { padding-top: 8px; }
 .techdashboard_header .profile_section { display: -webkit-box;  display: -ms-flexbox;  display: flex;  border-left: 1px solid #ada9a9;  padding-left: 5px;  margin-bottom: 0;
   -webkit-box-pack: center;  -ms-flex-pack: center;  justify-content: center;  -webkit-box-align: center;  -ms-flex-align: center;  align-items: center; }

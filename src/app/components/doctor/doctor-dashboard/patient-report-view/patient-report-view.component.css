@@ -1,5 +1,5 @@
-.patient_report_wrapper{ display: flex; justify-content: space-between; flex-wrap: wrap; background: #f2f2f2;}
-.patient_report_wrapper .patient_item_section{  padding: 16px; box-sizing: border-box; margin-bottom: 0; width: 50%; }
+.patient_report_wrapper{ display: flex; justify-content: space-between; flex-wrap: wrap; }
+.patient_report_wrapper .patient_item_section{  padding: 16px; box-sizing: border-box; margin-bottom: 0; width: 50%; background: #fff; }
 
 
 /*left part css start here*/
@@ -67,7 +67,7 @@ width: 390px; border: 3px solid #d59d01; }
   text-transform: uppercase;
   font-family: "RobotoBlack"; padding-top: 4px;
 }
-.patient_preview { align-items: center; justify-content: center;  }
+.patient_preview { align-items: center; justify-content: center; margin-top: 50px; height: auto; padding: 16px; }
 .patient_preview button{  background: #1dbce9; font-size: 24px; text-transform: uppercase; font-family: "AvenirBlack"; border-radius: 0; padding: 5px 16px;  color: #fff;
   margin: 0 5px;
 }
@@ -83,12 +83,11 @@ width: 390px; border: 3px solid #d59d01; }
   position: fixed;
   top: 10px;
   height: 75vh;
-
   overflow: auto;
 }
 .stickyRight{ margin-left: 40%!important;}
 .document_wrapper{
-  width: 100%; position: relative; margin-bottom: 0; box-shadow: 0px 4px 5px 0px #a5a5a5; border: 1px solid #43cef5; display: block; }
+  width: 100%; position: relative; margin-bottom: 0; box-shadow: 0px 4px 5px 0px #a5a5a5; border: 1px solid #43cef5; display: block; box-sizing: border-box; }
 .document_wrapper button{ position: absolute;
   top: 40%; background: rgba(255,255,255,.6);
   font-size: 18px;
@@ -122,6 +121,9 @@ width: 390px; border: 3px solid #d59d01; }
 .document_wrapper.next{
   left: 434px;
 }
+}
+@media screen and (max-width: 1199px){
+  .patient_report_wrapper .patient_item_section {  width: 100%; }
 }
 @media screen and (max-width: 1000px){
   .add_form .submit_form button { width: 48%; }
