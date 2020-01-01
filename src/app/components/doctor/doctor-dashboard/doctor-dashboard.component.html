@@ -170,7 +170,7 @@
         <td mat-cell *matCellDef="let element; let i = index;">
           <button *ngIf="element.status == 1" mat-button type="button" class="viewButton" [routerLink]="['/doctor/patient-record-report', element._id]">View</button>
           <button mat-raised-button *ngIf="element.status != 1" type="button" class="viewButton" disabled>View</button>
-          <button mat-raised-button *ngIf="element.status != 1" type="button" class="viewButton" (click)="downloadReport(element.download_link);">Download</button>
+          <button mat-raised-button *ngIf="element.status != 1" type="button" class="viewButton" (click)="downloadReport(element.file_path);">Download</button>
         </td>
       </ng-container>
 

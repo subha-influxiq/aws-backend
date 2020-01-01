@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
 import { CommonFunction } from '../../../../class/common/common-function';
+import { environment } from '../../../../../environments/environment';
 
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
@@ -178,7 +179,6 @@ export class PatientReportViewComponent implements OnInit {
     this.httpService.httpViaPost("datalist", data).subscribe((response) => {
       if (response.status = "success") {
         this.biller = response.res;
-        console.log(">>>>>", this.biller);
       }
     });
   }
@@ -384,9 +384,11 @@ export class PatientReportViewComponent implements OnInit {
               "source": "patient_management",
               "data": { 
                 "doctor_signature": this.cookiesData.doctor_signature, 
-                "biller_id": this.selectBiller, 
-                "status": 2,
-                "download_link": "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/html-pdf/report_" + this.paramsId + ".pdf"
+                "biller_id": this.selectBiller,
+                "download_link" : environment.siteBaseUrl + 'download/super-bill/' + this.reportID,
+                "file_path": "",
+                "download_password": "",
+                "status": 2
               },
               "report_id": this.reportID
             }

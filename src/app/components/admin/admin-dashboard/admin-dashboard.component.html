@@ -278,7 +278,7 @@
         <td mat-cell *matCellDef="let element; let i = index;">
           <button mat-button type="button" *ngIf="element.report_type == 'mannual' || (element.report_type == 'file' && element.images)" class="editButton" [routerLink]="['/admin/patient-record/edit',element._id]">Edit</button>
           <button mat-button type="button" *ngIf="element.report_type == 'file' && !element.images" class="editButton">Processing</button>
-          <button mat-button type="button" *ngIf="element.status != 1" class="editButton" (click)="downloadReport(element.download_link);">Download</button>
+          <button mat-button type="button" *ngIf="element.status != 1" class="editButton" (click)="downloadReport(element.file_path);">Download</button>
         </td>
       </ng-container>
 

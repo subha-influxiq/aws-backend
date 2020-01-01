@@ -70,6 +70,7 @@ import { HealthRiskAnalysisComponent } from '../components/doctor/doctor-dashboa
 import { SignatureManagementComponent } from '../components/doctor/signature-management/signature-management.component';
 import { DoctorOfficeAccountSettingsComponent } from '../components/doctor-office/doctor-office-account-settings/doctor-office-account-settings.component';
 import { DoctorOfficeChangePasswordComponent } from '../components/doctor-office/doctor-office-change-password/doctor-office-change-password.component';
+import { DownloadSuperbillerComponent } from '../components/biller/download-superbiller/download-superbiller.component';
 
 
 const routes: Routes = [
@@ -356,6 +357,18 @@ const routes: Routes = [
   /* Account-Settings */
   { path: 'biller/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
   { path: 'biller/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
+  {
+    path: 'download/super-bill/:_id', component: DownloadSuperbillerComponent,
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'patient_management',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+
   /* Doctor Route */
   {
     path: 'doctor/dashboard', component: DoctorDashboardComponent, canActivate: [AuthguardService],
