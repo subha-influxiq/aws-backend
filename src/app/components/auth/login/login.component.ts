@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonFunction } from '../../../class/common/common-function';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   public logo: any = './assets/images/logo.png';
   public fromTitle: any = "Login Here";    // This is a From Title
-  public fullUrl: any = "https://5hyccia9v2.execute-api.us-east-1.amazonaws.com/dev/api/";  // server url
+  public fullUrl: any = environment.apiBaseUrl;  // server url
   public endpoint: any = "login";
   public buttonName: any = 'Login Button';
 

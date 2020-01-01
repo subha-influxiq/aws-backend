@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonFunction } from '../../../class/common/common-function';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-forgetpassword',
@@ -11,7 +12,7 @@ export class ForgetpasswordComponent implements OnInit {
 
   public logo: any = '../../assets/favicon.ico';
   // public signUpRouteingUrl: any = 'sign-up';
-  public serverUrl:any = 'https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/';
+  public serverUrl:any = environment.apiBaseUrl;
   public addEndpoint: any = {
     endpoint:'forgetpassword'
   };
@@ -25,17 +26,13 @@ export class ForgetpasswordComponent implements OnInit {
   };
 
   public signUpRouteingUrl: any = {
-    // "path":"sign-up",
     "path":"",
-    // "buttonName":"sign-up",
     "customLink":"",
-    // "customURl":"https://advancedwellness.pro/"
   };
 
   public buttonName: any = 'Reset Password';
 
-  public domainUrl: any = 'http://testbedpece.influxiq.com/reset-password';  
-  // public domainUrl: any = 'http://localhost:4201/reset-password';  
+  public domainUrl: any =  environment.siteBaseUrl + 'reset-password';
 
   constructor(public commonFunction: CommonFunction) {
 

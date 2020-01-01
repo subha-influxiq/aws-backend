@@ -3,6 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  siteBaseUrl: "http://localhost:4200/",
+  apiBaseUrl: "https://5hyccia9v2.execute-api.us-east-1.amazonaws.com/dev/api/",
+  pagination: [20, 50, 100, 200, 500],
+  logo: "https://5hyccia9v2.execute-api.us-east-1.amazonaws.com/dev/api/",
+  siteTitle: "Hello World",
+  footerText: "influxiq PVT LTD copyright 2020",
   production: false
 };
 

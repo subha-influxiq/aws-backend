@@ -3,9 +3,9 @@
 
 <ng-container>
 
-  <mat-card-content class="patient_report_wrapper">
+  <mat-card-content class="patient_report_wrapper ">
     <!-- <mat-card-content class="patient_item_section" [ngClass]="{'mat-elevation-z5' : true, 'sticky' : isSticky}"> -->
-    <mat-card-content class="patient_item_section">
+    <mat-card-content class="patient_item_section mat-elevation-z8">
       <mat-card-content class="title_wrapper report_header">
         {{ htmlText.header }}
       </mat-card-content>
@@ -347,7 +347,7 @@
 
     <!-- <mat-card-content class="patient_item_section" id="fixedScroll"
       [ngClass]="{'mat-elevation-z5' : true, 'stickyRight' : isSticky}" > -->
-    <mat-card-content class="patient_item_section" id="fixedScroll">
+    <mat-card-content class="patient_item_section mat-elevation-z8" id="fixedScroll">
 
       <mat-tab-group class="previewTabs">
         <mat-tab label="Evalueation worksheet" *ngIf="cookiesData.type == 'admin'">
@@ -358,7 +358,6 @@
 
         <mat-tab label="Encounter Form">
           <ng-template matTabContent>
-
             <app-healthrisk-system-encounter></app-healthrisk-system-encounter>
           </ng-template>
         </mat-tab>
@@ -367,7 +366,6 @@
           <ng-template matTabContent>
             <app-system-superbill></app-system-superbill>
           </ng-template>
-
         </mat-tab>
       </mat-tab-group>
 
@@ -376,18 +374,16 @@
   </mat-card-content>
 
   <mat-toolbar class="patient_preview" *ngIf="cookiesData.type == 'doctor'">
-    
-    
-     
-      <mat-select class="select_wrp" placeholder="Select A Biller" [(ngModel)]="selectBiller">
+
+    <mat-form-field color="warn">
+      <mat-label>Select A Biller</mat-label>
+      <mat-select placeholder="Select A Biller" [(ngModel)]="selectBiller">
         <mat-option *ngFor="let bd of biller; let i = index;" [value]="bd.biller_id">
           {{ bd.firstname }} {{ bd.lastname }}
         </mat-option>
       </mat-select>
-   
+    </mat-form-field>
 
-
-    
     <button mat-button type="button" (click)="reportSign('back');">Sign & Back</button>
 
     <button mat-button type="button" (click)="reportSign('next');">Sign & Next</button>

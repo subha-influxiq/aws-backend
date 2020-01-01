@@ -1,10 +1,7 @@
 .encounter_wrapper {
     width: 100%;
     margin: 20px auto;
-    display: block;
-    background: #f7f7f7;
-    padding: 16px;
-    box-sizing: border-box;
+    display: block; 
 }
 
 .header {
@@ -62,12 +59,13 @@
 }
 
 table input[type="text"] {
-  height: 40px;
-  margin-left: 5px;
-  border: none;
-  border-bottom: 1.4px solid #000;
-  padding: 0 15px;
-  background: #e8e8e8;
+    height: 40px;
+    border: none;
+    border-bottom: 1.4px solid #000;
+    padding: 0 10px;
+    background: #f1f1f1;
+    width: auto;
+    box-sizing: border-box;
 }
 table input[type="text"]:focus, textarea:focus{ outline: none;}
 .suggest {

@@ -178,6 +178,7 @@ export class PatientReportViewComponent implements OnInit {
     this.httpService.httpViaPost("datalist", data).subscribe((response) => {
       if (response.status = "success") {
         this.biller = response.res;
+        console.log(">>>>>", this.biller);
       }
     });
   }
