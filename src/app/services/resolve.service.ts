@@ -60,7 +60,7 @@ export class ResolveService implements Resolve<any> {
     if(route.url[0].path == 'biller') {
       switch(route.url[1].path) {
         case 'dashboard':
-          requestData.condition.condition['biller_id'] = userData._id;
+          requestData.condition['biller_id'] = userData._id;
           break;
       }
     }

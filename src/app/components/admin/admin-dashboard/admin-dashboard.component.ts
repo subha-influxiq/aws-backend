@@ -272,5 +272,8 @@ export class AdminDashboardComponent implements OnInit {
     this.router.navigateByUrl('admin/doctor-management/list');
   }
 
+  downloadReport(link) {
+    window.open(link, "_blank");
+  }
 
 }

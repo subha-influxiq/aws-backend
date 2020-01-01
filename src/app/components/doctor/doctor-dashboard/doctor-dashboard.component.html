@@ -99,9 +99,19 @@
         <td mat-cell *matCellDef="let element" data-label="Patient Name">{{ element.patientName }} </td>
       </ng-container>
 
+      <ng-container matColumnDef="techName">
+        <th mat-header-cell *matHeaderCellDef> Tech Name</th>
+        <td mat-cell *matCellDef="let element" data-label="Tech Name"> {{ element.techname }} </td>
+      </ng-container>
+
       <ng-container matColumnDef="doctorName">
         <th mat-header-cell *matHeaderCellDef> Doctor Name</th>
         <td mat-cell *matCellDef="let element" data-label="Doctor Name"> {{ element.doctorname }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="billerName">
+        <th mat-header-cell *matHeaderCellDef> Biller Name</th>
+        <td mat-cell *matCellDef="let element" data-label="Biller Name"> {{ element.billername }} </td>
       </ng-container>
 
       <ng-container matColumnDef="report_type">
@@ -112,11 +122,6 @@
       <ng-container matColumnDef="billGenerationDate">
         <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>
         <td mat-cell *matCellDef="let element" data-label="Bill Generation Date"> {{ element.billGenerationDate }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="techName">
-        <th mat-header-cell *matHeaderCellDef> Tech Name</th>
-        <td mat-cell *matCellDef="let element" data-label="Tech Name"> {{ element.techname }} </td>
       </ng-container>
 
       <ng-container matColumnDef="billSentDate">
@@ -163,9 +168,9 @@
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let element; let i = index;">
-          <button *ngIf="element.status == 1" mat-button type="button" class="viewButton"
-            [routerLink]="['/doctor/patient-record-report', element._id]">View</button>
-          <button mat-raised-button *ngIf="element.status != 1" type="button" color="primary" disabled>View</button>
+          <button *ngIf="element.status == 1" mat-button type="button" class="viewButton" [routerLink]="['/doctor/patient-record-report', element._id]">View</button>
+          <button mat-raised-button *ngIf="element.status != 1" type="button" class="viewButton" disabled>View</button>
+          <button mat-raised-button *ngIf="element.status != 1" type="button" class="viewButton" (click)="downloadReport(element.download_link);">Download</button>
         </td>
       </ng-container>
 

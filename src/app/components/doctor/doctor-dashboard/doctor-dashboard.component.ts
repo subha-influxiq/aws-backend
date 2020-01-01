@@ -55,8 +55,8 @@ export class DoctorDashboardComponent implements OnInit {
     headertext: "DOCTOR SIGNATURE RECORD REPORTS"
   };
 
-  public allDataColumns: string[] = ['no', 'billGenerationDate', 'billSentDate', 'patientName', 'recordType', 'techName', 'superBill', 'status', 'action'];
-  public dataCol:string[] = ['billGenerationDate','billSentDate','doctorName','patientName','report_type','status','superBill','techName', 'action'];
+  public allDataColumns: string[] = ['no', 'billGenerationDate', 'billSentDate', 'patientName', 'billerName', 'recordType', 'techName', 'superBill', 'status', 'action'];
+  public dataCol:string[] = ['billGenerationDate','billSentDate','doctorName','patientName', 'billerName','report_type','status','superBill','techName', 'action'];
   public dialogRef: any;
   public allDataSource: any;
   public headertext: any;
@@ -292,6 +292,8 @@ export class DoctorDashboardComponent implements OnInit {
               "token": this.authData
             };
 
+            console.log("ooooooooooooooooo");
+
             this.http.httpViaPost('addorupdatedata', data).subscribe((response) => {
               if (response.status = "success") {
                 let message = "Successfully Send";
@@ -323,6 +325,10 @@ export class DoctorDashboardComponent implements OnInit {
 
   viewButton(index: number) {
     console.log("View Button...", this.allDataSource[index]);
+  }
+
+  downloadReport(link) {
+    window.open(link, "_blank");
   }
 
 }

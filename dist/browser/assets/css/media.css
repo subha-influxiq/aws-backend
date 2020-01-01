@@ -17,6 +17,7 @@
 }
 
 @media screen and (max-width: 1199px){
+.admin_wrapper { width: 95%; margin: 20px auto; box-sizing: border-box; }
 .main_wrapper { background-size: 580px; padding-left: 500px; justify-content: center; align-items: center; }
 .main_wrapper .login_wrapper { width: 500px; }
 .main_wrapper .img_wrapper { background: none; }
@@ -37,8 +38,7 @@
 .mobile-label {
   display: none;
 }
-}
-@media screen and (max-width: 1199px){
+
 .DataTable .container .searchbar span { width: 92%; }
 .DataTable .container .searchbar  {
   display: flex!important;
@@ -46,6 +46,8 @@
   flex-wrap: wrap;
   height: auto;
 }
+
+
 }
 @media(max-width: 600px) {
   .mobile-label { width: 80px; display: inline-block; font-weight: bold; }

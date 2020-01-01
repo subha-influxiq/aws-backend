@@ -377,14 +377,16 @@
 
   <mat-toolbar class="patient_preview" *ngIf="cookiesData.type == 'doctor'">
     
-    <mat-form-field color="warn" appearance="outline">
-      <mat-label>Select A Biller</mat-label>
-      <mat-select placeholder="Select A Biller" [(ngModel)]="selectBiller">
+    
+     
+      <mat-select class="select_wrp" placeholder="Select A Biller" [(ngModel)]="selectBiller">
         <mat-option *ngFor="let bd of biller; let i = index;" [value]="bd.biller_id">
           {{ bd.firstname }} {{ bd.lastname }}
         </mat-option>
       </mat-select>
-    </mat-form-field>
+   
+
+
     
     <button mat-button type="button" (click)="reportSign('back');">Sign & Back</button>
 

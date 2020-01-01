@@ -350,7 +350,7 @@ const routes: Routes = [
         source: 'Patient-Record-Report_view',
         condition: {},
       },
-      endpoint: 'datalist'
+      endpoint: 'biller-dashboard'
     },
   },
   /* Account-Settings */
