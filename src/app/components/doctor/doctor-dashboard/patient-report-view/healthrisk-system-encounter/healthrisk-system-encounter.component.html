@@ -16,9 +16,9 @@
         </td>
 
         <td>
-          <label> <input type="radio" value='Male' [formControl]="patientEncounterForm.controls['gender']">Male </label>
+          <label> <input type="radio" value='Male' [formControl]="patientEncounterForm.controls['gender']">M</label>
           <label> <input type="radio" value='Female'
-              [formControl]="patientEncounterForm.controls['gender']">Female</label>
+              [formControl]="patientEncounterForm.controls['gender']">F</label>
         </td>
 
         <td>
@@ -35,9 +35,7 @@
             value="pdata.physicalOrdering">
         </td>
 
-        <td> </td>
-
-        <td>
+        <td colspan="2">
           <label>
             D.O.B
             <input type="text" matInput [formControl]="patientEncounterForm.controls['birthDate']">
