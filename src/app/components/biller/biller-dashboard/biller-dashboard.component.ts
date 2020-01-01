@@ -100,4 +100,8 @@ export class BillerDashboardComponent implements OnInit {
     }
   }
 
+  downloadReport(link) {
+    window.open(link, "_blank");
+  }
+
 }
