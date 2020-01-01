@@ -1,7 +1,7 @@
 <app-doctor-header></app-doctor-header>
 
 <mat-card class="admin_wrapper">
-  
+
   <!-- Count Block  -->
   <mat-card-content class="admin_superbillsection">
     <h1>Physician Report</h1>
@@ -49,14 +49,14 @@
 
     </mat-card-content>
   </mat-card-content>
-  
+
   <!-- Pending and signed  Data listing start here -->
   <mat-card-content class="table_wrapper">
-   
+
     <mat-toolbar class="top_header">
       <h2> Patient Record Report </h2>
     </mat-toolbar>
-    
+
     <span class="action_bar">
       <mat-form-field>
         <input matInput (keyup)="applyFilter( 'patientName_regex', $event.target.value )"
@@ -169,8 +169,8 @@
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let element; let i = index;">
           <button *ngIf="element.status == 1" mat-button type="button" class="viewButton" [routerLink]="['/doctor/patient-record-report', element._id]">View</button>
-          <button mat-raised-button *ngIf="element.status != 1" type="button" class="viewButton" disabled>View</button>
-          <button mat-raised-button *ngIf="element.status != 1" type="button" class="viewButton" (click)="downloadReport(element.download_link);">Download</button>
+          <button mat-raised-button *ngIf="element.status != 1" type="button" class="viewButton downloadBtn" disabled>View</button>
+          <button mat-raised-button *ngIf="element.status != 1" type="button" class="viewButton downloadBtn" (click)="downloadReport(element.download_link);">Download</button>
         </td>
       </ng-container>
 
