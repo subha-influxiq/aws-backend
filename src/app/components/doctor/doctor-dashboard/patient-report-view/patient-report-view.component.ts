@@ -178,6 +178,7 @@ export class PatientReportViewComponent implements OnInit {
     this.httpService.httpViaPost("datalist", data).subscribe((response) => {
       if (response.status = "success") {
         this.biller = response.res;
+        console.log(">>>>>", this.biller);
       }
     });
   }
@@ -381,12 +382,16 @@ export class PatientReportViewComponent implements OnInit {
           case "Yes":
             var data: any = {
               "source": "patient_management",
-              "data": { id: this.reportID, "doctor_signature": this.cookiesData.doctor_signature, "biller_id": this.selectBiller },
-              "sourceobj": ["biller_id"],
-              "token": this.userToken
+              "data": { 
+                "doctor_signature": this.cookiesData.doctor_signature, 
+                "biller_id": this.selectBiller, 
+                "status": 2,
+                "download_link": "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/html-pdf/report_" + this.paramsId + ".pdf"
+              },
+              "report_id": this.reportID
             }
             data.data["id"] = this.paramsId;
-            this.httpService.httpViaPost("addorupdatedata", data).subscribe((response) => {
+            this.httpService.httpViaPost("report-sign-send-to-biller", data).subscribe((response) => {
               if (response.status = "success") {
                 switch(flug) {
                   case 'back':
@@ -428,6 +433,10 @@ export class PatientReportViewComponent implements OnInit {
 
   openModal(data) {
     this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+  }
+
+  downloadReport(link) {
+    window.open(link, "_blank");
   }
 
 }

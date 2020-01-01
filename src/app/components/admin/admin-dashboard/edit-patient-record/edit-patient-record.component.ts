@@ -201,16 +201,28 @@ export class EditPatientRecordComponent implements OnInit {
         this.patientAddEditForm.controls['tech_id'].patchValue(patientDetails[0].tech_id);
   
         /* Date of birth */
-        let dateArr: any = patientDetails[0].birthDate.split("-");
-        this.dateofbirth = moment([dateArr[2], dateArr[1] - 1, dateArr[0]]);
+        if(typeof(patientDetails[0].testDate) != "undefined") {
+          let dateArr: any = patientDetails[0].birthDate.split("-");
+          this.dateofbirth = moment([dateArr[2], dateArr[1] - 1, dateArr[0]]);
+        } else {
+          this.dateofbirth = "12/12/2012";
+        }
 
         /* Test Date */
-        dateArr = patientDetails[0].testDate.split("-");
-        this.startdate = moment([dateArr[2], dateArr[1] - 1, dateArr[0]]);
+        if(typeof(patientDetails[0].testDate) != "undefined") {
+          let dateArr = patientDetails[0].testDate.split("-");
+          this.startdate = moment([dateArr[2], dateArr[1] - 1, dateArr[0]]);
+        } else {
+          this.startdate = moment(["12", "12", "2012"]);
+        }
         
         /* Test complete date */
-        dateArr = patientDetails[0].testCompletedDate.split("-");
-        this.enddate = moment([dateArr[2], dateArr[1] - 1, dateArr[0]]);
+        if(typeof(patientDetails[0].testCompletedDate) != "undefined") {
+          let dateArr = patientDetails[0].testCompletedDate.split("-");
+          this.enddate = moment([dateArr[2], dateArr[1] - 1, dateArr[0]]);
+        } else {
+          this.dateofbirth = moment(["12", "12", "2012"]);
+        }
 
         this.patientAddEditForm.controls['report_type'].patchValue(patientDetails[0].report_type);
         this.patientAddEditForm.controls['PTGPT'].patchValue(patientDetails[0].PTGPT); 

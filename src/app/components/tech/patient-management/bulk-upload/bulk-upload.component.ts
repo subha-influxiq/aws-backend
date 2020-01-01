@@ -77,12 +77,12 @@ export class BulkUploadComponent implements OnInit {
       },
       "token": this.user_token
     }
-    this.httpService.httpViaPost('datalist', data)
-      .subscribe(response => {
+
+    this.httpService.httpViaPost('datalist', data).subscribe(response => {
         let result: any = {};
         result = response.res;
         this.allDoctorDataArray = result;
-      })
+      });
   }
 
   cancelButton() {
@@ -119,7 +119,6 @@ export class BulkUploadComponent implements OnInit {
     this.dialogRef.afterClosed().subscribe(result => {
       switch (result) {
         case "No":
-          location.reload();
           break;
         case "Yes":
           this.bulkUploaddataSubmit();
@@ -168,7 +167,25 @@ export class BulkUploadComponent implements OnInit {
           }
         })
     } else {
-      alert("error occured");
+      let modalData: any = {
+        panelClass: 'bulkupload-dialog',
+        data: {
+          header: "Message",
+          message: "An error occord. Please try later.",
+          button1: { text: "" },
+          button2: { text: "Ok" },
+        }
+      }
+  
+      this.dialogRef = this.dialog.open(DialogBoxComponent, modalData);
+      this.dialogRef.afterClosed().subscribe(result => {
+        switch (result) {
+          case "No":
+            break;
+          case "Ok":
+            break;
+        }
+      });
     }
   }
 

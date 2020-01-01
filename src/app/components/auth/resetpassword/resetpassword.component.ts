@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonFunction } from '../../../class/common/common-function';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-resetpassword',
@@ -11,7 +12,7 @@ export class ResetpasswordComponent implements OnInit {
 
   public fromTitleName: any = 'Change Your Password Here';
   public logo: any = './assets/images/logo.png';
-  public serverUrl: any = 'https://w8lauzoyaa.execute-api.us-east-1.amazonaws.com/dev/api/';
+  public serverUrl: any = environment.apiBaseUrl;
   public addEndpoint: any = {
     endpoint:'resetpassword',
     source:'users'

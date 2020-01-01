@@ -2,6 +2,6 @@
     <mat-spinner color="warn"></mat-spinner>
 </div>
 
-<app-http-loader></app-http-loader>
+<app-http-loader *ngIf="!loading"></app-http-loader>
 
 <router-outlet (activate)="onActivate($event)"></router-outlet>
