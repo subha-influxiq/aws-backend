@@ -20,7 +20,7 @@
 .second_table .header { text-align: center; }
 .additionalnotes { width: 100%; height: 120px; resize: none; padding: 10px; box-sizing: border-box; }
 .additionalnotes3 { height: 238px; }
-.red_para { color: #bd1818; font-size: 20px; font-weight: normal; text-align: center; font-family: "AvenirMedium"; line-height: 22px; }
+.red_para { color: #bd1818; font-size: 20px; font-weight: normal; text-align: center; font-family: "AvenirMedium"; line-height: 22px; margin: 10px; }
 table input[type="text"] {
     height: 40px;
     border: none;
