@@ -145,4 +145,8 @@ export class DownloadSuperbillerComponent implements OnInit {
     this.dialogRef = this.dialog.open(DialogBoxComponent, data);
   }
 
+  changeChapcha(length) {
+    this.htmlText.notBotText = this.commonFunction.randomNumber(length);
+  }
+
 }
