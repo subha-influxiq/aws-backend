@@ -66,7 +66,7 @@
 .patient_report_section  .mat-form-field-appearance-outline .mat-form-field-wrapper {
   margin: 0!important;
 }
-.patient_report_section .patient_top_search {    background: #f2f2f2; display: flex; align-items: center; justify-content: space-between; padding: 0 16px;}
+.patient_report_section .patient_top_search {    background: #f2f2f2; display: flex; align-items: center; justify-content: space-between; padding:16px;}
 .patient_report_section .patient_top_search .search_bar { display: flex;  }
 .patient_report_section .patient_top_search .search_bar button{
   border: none;
