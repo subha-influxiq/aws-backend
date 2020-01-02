@@ -17,15 +17,21 @@
   <mat-card-content class="card_wrapper">
 
 
-      <mat-card-content class="icon">
-        <i class="material-icons">
-          cloud_download
-          </i>
-      </mat-card-content>
+    <mat-card-content class="icon">
+      <i class="material-icons">
+        cloud_download
+      </i>
+    </mat-card-content>
     <mat-card-title>Enter Password to Download the Report</mat-card-title>
 
-    <mat-form-field class="example-full-width" >
-      <input matInput placeholder="Enter password" type="password" value="" [(ngModel)]="password">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter password" type="password" value="" [(ngModel)]="htmlText.password">
+    </mat-form-field>
+
+    <span class="botText">{{ htmlText.notBotText }}</span>
+
+    <mat-form-field *ngIf="htmlText.failedPassword >= 3" class="example-full-width">
+      <input matInput placeholder="Enter text" type="text" value="" [(ngModel)]="htmlText.notBotInput">
     </mat-form-field>
 
     <button mat-raised-button color="primary" (click)="downloadPDF();">Download</button>

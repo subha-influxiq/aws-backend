@@ -18,3 +18,15 @@
 .reset_wrapper .icon{ width: 110px; height: 110px; color: #03893b; border-radius: 50%; display: flex; justify-content: center; align-items: center;
 }
 .reset_wrapper .icon .material-icons{ font-size: 96px;}
+
+
+.botText {
+  font-family: "AmandaSignature";
+  font-size: 40px;
+  line-height: 58px;
+  height: 60px;
+  padding: 10px 25px;
+  box-sizing: border-box;
+  background: #fff;
+  color: blue;
+}

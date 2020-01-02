@@ -15,7 +15,8 @@ import { CommonFunction } from '../../../class/common/common-function';
 export class DownloadSuperbillerComponent implements OnInit {
 
   public htmlText: any = {
-    notBot: '',
+    notBotText: '',
+    notBotInput: '',
     password: '',
     failedPassword: 0
   };
@@ -23,8 +24,16 @@ export class DownloadSuperbillerComponent implements OnInit {
   public reportData: any = [];
 
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute, public dialog: MatDialog, public commonFunction: CommonFunction) {
+    let check: boolean = cookieService.check('downloadCount');
+    if(check == true) {
+      this.htmlText.notBotText = this.commonFunction.randomNumber(6);
+      this.htmlText.failedPassword = this.cookieService.get('downloadCount');
+    }
+    
     if (this.activatedRoute.snapshot.params._id) {
       this.getData(this.activatedRoute.snapshot.params._id);
+    } else {
+
     }
   }
 
@@ -34,13 +43,8 @@ export class DownloadSuperbillerComponent implements OnInit {
   downloadPDF() {
     if(this.htmlText.password == this.reportData.download_password) {
       /* Right password */
-      if(this.htmlText.failedPassword <= 3) {
-        this.htmlText.password = "";
-        window.open(this.reportData.file_path);
-      } else {
-        this.htmlText.password = "";
-        window.open(this.reportData.file_path);
-      }
+      this.htmlText.password = "";
+      window.open(this.reportData.file_path);
     } else {
       /* Wrong Password */
       var modalData: any = {
@@ -57,9 +61,9 @@ export class DownloadSuperbillerComponent implements OnInit {
       this.cookieService.set('downloadCount', this.htmlText.failedPassword);
       this.htmlText.password = "";
 
-      if(this.htmlText.failedPassword == 3) {
+      if(this.htmlText.failedPassword >= 3) {
         modalData.message = "Invalid Password. You’ve reached the maximum attempts.",
-        this.htmlText.notBot = this.commonFunction.randomNumber(6);
+        this.htmlText.notBotText = this.commonFunction.randomNumber(6);
       }
 
       this.openModal(modalData);
