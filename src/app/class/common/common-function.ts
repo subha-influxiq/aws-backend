@@ -7,11 +7,10 @@ import {
     FormGroup,
     Validators,
     AbstractControl
-  } from '@angular/forms';
+} from '@angular/forms';
 import { HttpServiceService } from '../../services/http-service.service';
 
 @Injectable()
-
 
 export class CommonFunction {
 
@@ -24,7 +23,7 @@ export class CommonFunction {
         for (let loop = 1; loop < urlArr.length; loop++) {
             urlArr[loop] = urlArr[loop].replace("-", " ");
             urlArr[loop] = this.titleCase(urlArr[loop]);
-            switch(urlArr[loop]) {
+            switch (urlArr[loop]) {
                 case 'Admin':
                     break;
                 case 'Tech':
@@ -56,10 +55,10 @@ export class CommonFunction {
 
         let getToken: boolean = this.cookie.check('jwtToken');
 
-        if(getToken) {
+        if (getToken) {
             let allcookies: any = this.cookie.getAll();
             let userData = JSON.parse(allcookies.user_details);
-            switch(urlArr[1]) {
+            switch (urlArr[1]) {
                 case 'Doctor Office':
                     title = title + '| ' + userData.centerName + ' - AWS Backend';
                     break;
@@ -89,5 +88,15 @@ export class CommonFunction {
         // Directly return the joined string
         return splitStr.join(' ');
     }
+
+    randomNumber(length): any {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+           result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+     }
 
 }

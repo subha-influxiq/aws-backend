@@ -32,7 +32,7 @@ export class ForgetpasswordComponent implements OnInit {
 
   public buttonName: any = 'Reset Password';
 
-  public domainUrl: any =  environment.siteBaseUrl + 'reset-password';
+  public domainUrl: any =  environment.siteBaseUrl + '/reset-password';
 
   constructor(public commonFunction: CommonFunction) {
 

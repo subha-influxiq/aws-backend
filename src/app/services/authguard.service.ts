@@ -15,7 +15,6 @@ export class AuthguardService implements CanActivate {
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
     var getToken = this.cookie.get('jwtToken');
-
     if (getToken) {
       var allData: any = this.cookie.getAll();
       var userData: any = JSON.parse(allData.user_details);

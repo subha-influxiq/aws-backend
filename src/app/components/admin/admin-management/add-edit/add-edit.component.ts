@@ -6,6 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
+import { environment } from '../../../../../environments/environment';
 
 export interface DialogData {
   message: string;
@@ -138,7 +139,6 @@ export class AddEditComponent implements OnInit {
 
   openDialog(x: any): void {
     this.dialogRef = this.dialog.open(ChangePasswordAdminModal, {
-
       data: { message: x, 'id': this.params_id }
     });
     this.dialogRef.afterClosed().subscribe(result => {
@@ -180,7 +180,7 @@ export class AddEditComponent implements OnInit {
           "source": "users",
           "data": this.adminManagementAddEditForm.value,
           "token": this.user_token,
-          "domainurl" : 'http://testbedpece.influxiq.com/reset-password'
+          "domainurl" : environment.siteBaseUrl + 'reset-password'
         }
       }
 

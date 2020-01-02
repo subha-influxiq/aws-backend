@@ -127,8 +127,7 @@ export class UserAddEditComponent implements OnInit {
             city: this.UserManagementAddEditForm.value.city,
             state: this.UserManagementAddEditForm.value.state,
             zip: this.UserManagementAddEditForm.value.zip,
-            status: this.UserManagementAddEditForm.value.status,
-
+            status: this.UserManagementAddEditForm.value.status
           },
           "token": this.user_token
         };

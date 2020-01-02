@@ -22,10 +22,10 @@ export class ResolveService implements Resolve<any> {
     /* will come into play while editing otherwise no effect */
     var requestData: any = route.data.requestcondition;
 
-
-    ////////////////// Condition for all dashboard ////////////////////
+    /* Condition for all dashboard */
     var allData: any = this.cookies.getAll();
     var userData = JSON.parse(allData.user_details);
+    
     /* This one is for Tech Dashboard Start */
     if(route.url[0].path == 'admin') {
       switch(route.url[1].path) {

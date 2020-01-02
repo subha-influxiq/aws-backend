@@ -12,6 +12,7 @@ import { HttpServiceService } from '../../../services/http-service.service';
   templateUrl: './biller-dashboard.component.html',
   styleUrls: ['./biller-dashboard.component.css']
 })
+
 export class BillerDashboardComponent implements OnInit {
 
   public htmlText: any = { tableHeaderText: "Patient Reports" };
@@ -23,7 +24,6 @@ export class BillerDashboardComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   /* Initializing the datasource to null */
   dataSource = null;
-
 
   constructor(public http: HttpClient, public commonFunction: CommonFunction, public activatedRoute: ActivatedRoute, public cookieService: CookieService, public httpService: HttpServiceService) {
     /* Get and set login User Data */
@@ -88,7 +88,6 @@ export class BillerDashboardComponent implements OnInit {
         }
         this.httpService.httpViaPost('biller-dashboard', data).subscribe((response) => {
           this.allResolveData = response.data;
-          console.log(">>>--->", response.data);
           
           /* Fetching the data into table */
           this.dataSource = new MatTableDataSource(this.allResolveData.reportData);

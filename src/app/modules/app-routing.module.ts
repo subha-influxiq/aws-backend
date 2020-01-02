@@ -359,14 +359,14 @@ const routes: Routes = [
   { path: 'biller/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
   {
     path: 'download/super-bill/:_id', component: DownloadSuperbillerComponent,
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'patient_management',
-        condition: {}
-      },
-      endpoint: 'datalist'
-    },
+    // resolve: { data: ResolveService },
+    // data: {
+    //   requestcondition: {
+    //     source: 'patient_management',
+    //     condition: {}
+    //   },
+    //   endpoint: 'datalistwithouttoken'
+    // },
   },
 
   /* Doctor Route */

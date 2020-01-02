@@ -2,7 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
+import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component';
 import { environment } from '../../../../environments/environment';
+import { CommonFunction } from '../../../class/common/common-function';
 
 @Component({
   selector: 'app-download-superbiller',
@@ -11,25 +14,73 @@ import { environment } from '../../../../environments/environment';
 })
 export class DownloadSuperbillerComponent implements OnInit {
 
+  public htmlText: any = {
+    notBot: '',
+    password: '',
+    failedPassword: 0
+  };
+  public dialogRef: any;
   public reportData: any = [];
-  public password: string = "";
 
-  constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute) {
-    this.activatedRoute.data.subscribe(resolveData => {
-      this.reportData = resolveData.data.res[0];
-    });
+  constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute, public dialog: MatDialog, public commonFunction: CommonFunction) {
+    if (this.activatedRoute.snapshot.params._id) {
+      this.getData(this.activatedRoute.snapshot.params._id);
+    }
   }
 
   ngOnInit() {
   }
 
   downloadPDF() {
-    if(this.password == this.reportData.download_password) {
-      this.password = "";
-      window.open(this.reportData.file_path);
+    if(this.htmlText.password == this.reportData.download_password) {
+      /* Right password */
+      if(this.htmlText.failedPassword <= 3) {
+        this.htmlText.password = "";
+        window.open(this.reportData.file_path);
+      } else {
+        this.htmlText.password = "";
+        window.open(this.reportData.file_path);
+      }
     } else {
-      console.log('Error...');
+      /* Wrong Password */
+      var modalData: any = {
+        panelClass: 'bulkupload-dialog',
+        data: {
+          header: "Message",
+          message: "Invalid Password.",
+          button1: { text: "" },
+          button2: { text: "OK" },
+        }
+      }
+
+      this.htmlText.failedPassword++;
+      this.cookieService.set('downloadCount', this.htmlText.failedPassword);
+      this.htmlText.password = "";
+
+      if(this.htmlText.failedPassword == 3) {
+        modalData.message = "Invalid Password. You’ve reached the maximum attempts.",
+        this.htmlText.notBot = this.commonFunction.randomNumber(6);
+      }
+
+      this.openModal(modalData);
     }
+  }
+  
+  getData(reportID) {
+    var data = {
+      "source": "patient_management",
+      "condition": {
+        "_id": reportID
+      }
+    }
+
+    this.http.httpViaPost("datalistwithouttoken", data).subscribe(response => {
+      this.reportData = response.res[0];
+    });
+  }
+
+  openModal(data) {
+    this.dialogRef = this.dialog.open(DialogBoxComponent, data);
   }
 
 }

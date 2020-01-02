@@ -3,15 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  siteBaseUrl: "http://localhost:4200/",
+  siteBaseUrl: "http://localhost:4201/",
   s3bucket: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/",
   apiBaseUrl: "https://5hyccia9v2.execute-api.us-east-1.amazonaws.com/dev/api/",
   pagination: [20, 50, 100, 200, 500],
   logo: "https://5hyccia9v2.execute-api.us-east-1.amazonaws.com/dev/api/",
-  siteTitle: "Hello World",
-  footerText: "influxiq PVT LTD copyright 2020",
-  production: false
+  siteTitle: "AWS Backend",
+  footerText: "AWS Copyright 2020",
+  production: true
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

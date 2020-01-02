@@ -12,8 +12,10 @@ import { environment } from '../../environments/environment';
 export class HttpServiceService {
   
   public baseUrl: any = environment.apiBaseUrl;
+  public jwtToken: any = "";
 
   constructor(private http: HttpClient, public CookieService: CookieService) {
+    this.jwtToken = this.CookieService.get('jwtToken');
   }
 
   /* read site setting data */
@@ -27,7 +29,7 @@ export class HttpServiceService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': this.CookieService.get('jwtToken')
+        'Authorization': this.jwtToken
       })
     };
     return this.http.post(this.baseUrl + endpoint, jsonData);
@@ -39,7 +41,7 @@ export class HttpServiceService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': this.CookieService.get('jwtToken')
+        'Authorization': this.jwtToken
       })
     };
     return this.http.get(this.baseUrl + endpoint, jsonData);
@@ -51,24 +53,11 @@ export class HttpServiceService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': this.CookieService.get('jwtToken')
+        'Authorization': this.jwtToken
       })
     };
 
     return this.http.post(this.baseUrl + endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
-  }
-
-  checkingDuplicateEmail(requestdata: any): Observable<any> {
-    let data: any = { "email": requestdata, "source": "users" };
-    /* set common header */
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': this.CookieService.get('jwtToken')
-      })
-    };
-
-    return this.http.post(this.baseUrl + 'duplicate-email-checking', JSON.stringify(data), httpOptions).pipe(map(res => res));
   }
 
 }
