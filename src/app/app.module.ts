@@ -14,6 +14,7 @@ import { FileUploadModule } from 'file-upload-lib-influxiq';
 import { DatePipe } from '@angular/common';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MetaModule } from '@ngx-meta/core';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 import { CookieService } from 'ngx-cookie-service';
 import { AuthguardService} from './services/authguard.service';
@@ -188,7 +189,7 @@ import { DownloadSuperbillerComponent } from './components/biller/download-super
     ReactiveFormsModule,
     FileUploadModule,
     HttpClientModule,
-    
+    DeviceDetectorModule.forRoot()
   ],
   exports: [MatPaginatorModule],
 

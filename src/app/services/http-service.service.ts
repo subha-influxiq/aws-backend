@@ -73,6 +73,18 @@ export class HttpServiceService {
     return this.http.post(this.baseUrl + 'duplicate-email-checking', JSON.stringify(data), httpOptions).pipe(map(res => res));
   }
 
+  /* call api via get method */
+  httpViaGetExt(url, jsonData): Observable<any> {
+    /* set common header */
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.jwtToken
+      })
+    };
+    return this.http.get(url, jsonData);
+  }
+
 }
 
 
