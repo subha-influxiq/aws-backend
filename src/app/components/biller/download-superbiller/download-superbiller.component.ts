@@ -19,64 +19,115 @@ export class DownloadSuperbillerComponent implements OnInit {
     notBotText: '',
     notBotInput: '',
     password: '',
-    failedPassword: 0,
+    passwordAttemptsCount: 0,
     ip: '',
+    tempToken: ''
   };
+
   public dialogRef: any;
   public reportData: any = [];
 
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute, public dialog: MatDialog, public commonFunction: CommonFunction, public deviceService: DeviceDetectorService) {
-    let check: boolean = cookieService.check('downloadCount');
-    if(check == true) {
-      this.htmlText.notBotText = this.commonFunction.randomNumber(6);
-      this.htmlText.failedPassword = this.cookieService.get('downloadCount');
-    }
-    
+    /* CHeck Route ID */
     if (this.activatedRoute.snapshot.params._id) {
       this.getData(this.activatedRoute.snapshot.params._id);
     } else {
       this.router.navigateByUrl('/login');
     }
-  }
+    
+    /* Check Password Attempts Count */
+    let check: boolean = cookieService.check('passwordAttemptsCount');
+    if(check == true) {
+      this.htmlText.notBotText = this.commonFunction.randomNumber(6);
+      this.htmlText.passwordAttemptsCount = this.cookieService.get('passwordAttemptsCount');
+    }
 
-  ngOnInit() {
+    /* Get IP Address */
     this.http.httpViaGetExt("http://api.ipify.org/?format=json", {}).subscribe(response => {
       this.htmlText.ip = response.ip;
-      this.epicFunction();
+    });
+
+    /* Get Temp Token */
+    this.http.httpViaGet("gettemptoken", {}).subscribe(response => {
+      this.htmlText.tempToken = response.token;
     });
   }
 
+  ngOnInit() {
+  }
+
   downloadPDF() {
-    if(this.htmlText.password == this.reportData.download_password) {
+    if((this.htmlText.password == this.reportData.download_password && this.reportData.passwordAttemptsCount <= 3) ||
+    (this.htmlText.password == this.reportData.download_password && this.htmlText.notBotText == this.htmlText.notBotInput)) {
       /* Right password */
-      this.cookieService.delete('downloadCount');
+      this.cookieService.delete('passwordAttemptsCount');
       this.htmlText.password = "";
-      window.open(this.reportData.file_path);
+      this.htmlText.notBotText = "";
+      this.htmlText.notBotInput = "";
+      this.htmlText.passwordAttemptsCount = 0;
+
+      /* Collect User Information for Download record */
+      let deviceInfo: any = this.deviceService.getDeviceInfo();
+      deviceInfo["isMobile"] = this.deviceService.isMobile();
+      deviceInfo["isTablet"] = this.deviceService.isTablet();
+      deviceInfo["isDesktop"] = this.deviceService.isDesktop();
+      
+      let postData: any = {
+        "source": "report_download",
+        "data": {
+          "biller_id": this.reportData.biller_id,
+          "tech_id": this.reportData.tech_id,
+          "doctor_id": this.reportData.doctor_id,
+          "ip": this.htmlText.ip,
+          "device_information": deviceInfo
+        },
+        "sourceobj": ["biller_id", "tech_id", "doctor_id"],
+        "token": this.htmlText.tempToken
+      };
+
+      this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
+        if(response.status == 'success') {
+          window.open(this.reportData.file_path);
+        } else {
+          var modalData: any = {
+            panelClass: 'bulkupload-dialog',
+            data: {
+              header: "Message",
+              message: "Some error occord. Please try again.",
+              button1: { text: "" },
+              button2: { text: "OK" },
+            }
+          }
+
+          this.openModal(modalData);
+        }
+      });
     } else {
       /* Wrong Password */
       var modalData: any = {
         panelClass: 'bulkupload-dialog',
         data: {
           header: "Message",
-          message: "Invalid Password.",
+          message: "Password is not valid.",
           button1: { text: "" },
           button2: { text: "OK" },
         }
       }
 
-      this.htmlText.failedPassword++;
-      this.cookieService.set('downloadCount', this.htmlText.failedPassword);
+      this.htmlText.passwordAttemptsCount++;
+      this.cookieService.set('passwordAttemptsCount', this.htmlText.passwordAttemptsCount);
       this.htmlText.password = "";
 
-      if(this.htmlText.failedPassword >= 3) {
-        modalData.message = "Invalid Password. You’ve reached the maximum attempts.",
+      if(this.htmlText.passwordAttemptsCount >= 3) {
+        modalData.data.message = "Password is not valid. You’ve reached the maximum attempts.",
         this.htmlText.notBotText = this.commonFunction.randomNumber(6);
       }
 
       this.openModal(modalData);
     }
   }
-  
+ 
+  /* Get Report Data */
   getData(reportID) {
     var data = {
       "source": "patient_management",
@@ -92,18 +143,6 @@ export class DownloadSuperbillerComponent implements OnInit {
 
   openModal(data) {
     this.dialogRef = this.dialog.open(DialogBoxComponent, data);
-  }
-
-  deviceInfo = null;
-  epicFunction() {
-    this.deviceInfo = this.deviceService.getDeviceInfo();
-    const isMobile = this.deviceService.isMobile();
-    const isTablet = this.deviceService.isTablet();
-    const isDesktopDevice = this.deviceService.isDesktop();
-    console.log(this.deviceInfo);
-    console.log(isMobile);  // returns if the device is a mobile device (android / iPhone / windows-phone etc)
-    console.log(isTablet);  // returns if the device us a tablet (iPad etc)
-    console.log(isDesktopDevice); // returns if the app is running on a Desktop browser.
   }
 
 }

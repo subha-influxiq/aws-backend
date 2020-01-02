@@ -28,9 +28,9 @@
       <input matInput placeholder="Enter password" type="password" value="" [(ngModel)]="htmlText.password">
     </mat-form-field>
 
-    <span class="botText">{{ htmlText.notBotText }}</span>
+    <span class="botText" *ngIf="htmlText.passwordAttemptsCount >= 3">{{ htmlText.notBotText }}</span>
 
-    <mat-form-field *ngIf="htmlText.failedPassword >= 3" class="example-full-width">
+    <mat-form-field *ngIf="htmlText.passwordAttemptsCount >= 3" class="example-full-width">
       <input matInput placeholder="Enter text" type="text" value="" [(ngModel)]="htmlText.notBotInput">
     </mat-form-field>
 
