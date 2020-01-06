@@ -18,25 +18,28 @@
     <mat-card-content class="icon">
       <i class="material-icons">cloud_download</i>
     </mat-card-content>
-    <mat-card-title>Enter Password to Download the Report</mat-card-title>
+    <mat-card-title *ngIf="!htmlText.downloadFlug">{{ htmlText.hraderText }}</mat-card-title>
+    <mat-card-title *ngIf="htmlText.downloadFlug" class="success_message">{{ htmlText.hraderText }}</mat-card-title>
 
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field *ngIf="!htmlText.downloadFlug" class="example-full-width" appearance="fill">
       <input matInput placeholder="Enter password" type="password" value="" [(ngModel)]="htmlText.password">
     </mat-form-field>
 
-    <span class="captcha_wrapper" *ngIf="htmlText.passwordAttemptsCount >= 3">
+    <span class="captcha_wrapper" *ngIf="htmlText.passwordAttemptsCount >= 3 && !htmlText.downloadFlug">
       <span class="botText">{{ htmlText.notBotText }} </span>
       <button mat-button class="refreshButton" (click)="changeChapcha(6);"><i class="material-icons"> autorenew </i></button>
     </span>
     
-    <mat-form-field *ngIf="htmlText.passwordAttemptsCount >= 3" class="example-full-width" appearance="fill">
+    <mat-form-field *ngIf="htmlText.passwordAttemptsCount >= 3 && !htmlText.downloadFlug" class="example-full-width" appearance="fill">
       <input matInput placeholder="Enter text" type="text" value="" [(ngModel)]="htmlText.notBotInput">
     </mat-form-field>
 
-    <button mat-raised-button class="download_button" (click)="downloadPDF();">Download</button>
+    <button *ngIf="!htmlText.downloadFlug" mat-raised-button class="download_button" (click)="downloadPDF();">Download</button>
 
-    <p class="error_message">Error! Try Again</p>
-    <p class="success_message">Thank You for Downloading</p>
+    <!-- <p class="error_message">Error! Try Again</p> -->
+    
+
+    <button *ngIf="htmlText.downloadFlug" routerLink="/login" mat-raised-button class="download_button">Home</button>
   </mat-card-content>
 </mat-card-content>
 <app-admin-footer></app-admin-footer>

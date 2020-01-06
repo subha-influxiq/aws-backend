@@ -7,6 +7,7 @@ import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { environment } from '../../../../environments/environment';
 import { CommonFunction } from '../../../class/common/common-function';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-download-superbiller',
@@ -16,18 +17,22 @@ import { CommonFunction } from '../../../class/common/common-function';
 export class DownloadSuperbillerComponent implements OnInit {
 
   public htmlText: any = {
+    hraderText: 'Enter Password to Download the Report',
     notBotText: '',
     notBotInput: '',
     password: '',
     passwordAttemptsCount: 0,
     ip: '',
-    tempToken: ''
+    tempToken: '',
+    downloadFlug: false
   };
 
   public dialogRef: any;
   public reportData: any = [];
 
-  constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute, public dialog: MatDialog, public commonFunction: CommonFunction, public deviceService: DeviceDetectorService) {
+  constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, 
+    public activatedRoute: ActivatedRoute, public dialog: MatDialog, public commonFunction: CommonFunction, 
+    public deviceService: DeviceDetectorService, public matSnackBar: MatSnackBar) {
     /* CHeck Route ID */
     if (this.activatedRoute.snapshot.params._id) {
       this.getData(this.activatedRoute.snapshot.params._id);
@@ -79,6 +84,7 @@ export class DownloadSuperbillerComponent implements OnInit {
           "tech_id": this.reportData.tech_id,
           "doctor_id": this.reportData.doctor_id,
           "ip": this.htmlText.ip,
+          "download_attempt": this.htmlText.passwordAttemptsCount,
           "device_information": deviceInfo
         },
         "sourceobj": ["biller_id", "tech_id", "doctor_id"],
@@ -87,43 +93,41 @@ export class DownloadSuperbillerComponent implements OnInit {
 
       this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
         if(response.status == 'success') {
+          this.htmlText.downloadFlug = true;
+          this.htmlText.hraderText = "Thank you for downloading.";
           window.open(this.reportData.file_path);
         } else {
-          var modalData: any = {
-            panelClass: 'bulkupload-dialog',
-            data: {
-              header: "Message",
-              message: "Some error occord. Please try again.",
-              button1: { text: "" },
-              button2: { text: "OK" },
-            }
-          }
-
-          this.openModal(modalData);
+          this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+            duration: 3000
+          });
         }
       });
     } else {
       /* Wrong Password */
-      var modalData: any = {
-        panelClass: 'bulkupload-dialog',
-        data: {
-          header: "Message",
-          message: "Password is not valid.",
-          button1: { text: "" },
-          button2: { text: "OK" },
+      if(this.htmlText.password == '' || this.htmlText.password != this.reportData.download_password) {
+        this.matSnackBar.open("Password is not valid.", "Ok", {
+          duration: 3000
+        });
+      } else {
+        if((this.htmlText.notBotInput == '' || this.htmlText.notBotText != this.htmlText.notBotInput) && 
+        this.htmlText.passwordAttemptsCount >= 3) {
+          this.matSnackBar.open("Chapcha is not valid.", "Ok", {
+            duration: 3000
+          });
         }
       }
 
+      /* Make field numm */
+      this.htmlText.password = "";
+      this.htmlText.notBotInput = "";
       this.htmlText.passwordAttemptsCount++;
       this.cookieService.set('passwordAttemptsCount', this.htmlText.passwordAttemptsCount);
-      this.htmlText.password = "";
 
+      /* Create New Chapcha */
       if(this.htmlText.passwordAttemptsCount >= 3) {
-        modalData.data.message = "Password is not valid. You’ve reached the maximum attempts.",
         this.htmlText.notBotText = this.commonFunction.randomNumber(6);
       }
-
-      this.openModal(modalData);
+      return false;
     }
   }
  
@@ -141,12 +145,9 @@ export class DownloadSuperbillerComponent implements OnInit {
     });
   }
 
-  openModal(data) {
-    this.dialogRef = this.dialog.open(DialogBoxComponent, data);
-  }
-
   changeChapcha(length) {
     this.htmlText.notBotText = this.commonFunction.randomNumber(length);
+    this.htmlText.notBotInput = "";
   }
 
 }
