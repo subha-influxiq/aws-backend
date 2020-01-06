@@ -29,8 +29,10 @@
 
             <mat-card-content>
               <label>Patient Gender</label>
+              <span class="patientGender">
               <input type="radio" value='Male' formControlName="gender">Male
               <input type="radio" value='Female' formControlName="gender">Female
+            </span>
             </mat-card-content>
 
             <mat-card-content>
@@ -103,7 +105,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['PTGPT'].touched && !patientAddEditForm.controls['PTGPT'].valid && patientAddEditForm.controls['PTGPT'].errors.required">PTGTP Required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['PTGPT_value']" placeholder="PTGPT value" />
               </mat-form-field>
             </mat-card-content>
@@ -122,7 +124,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['PTGVLFI'].touched && !patientAddEditForm.controls['PTGVLFI'].valid && patientAddEditForm.controls['PTGVLFI'].errors.required">PTGVLFI required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['PTGVLFI_value']" placeholder="PTGVLFI value" />
               </mat-form-field>
             </mat-card-content>
@@ -141,7 +143,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['IR'].touched && !patientAddEditForm.controls['IR'].valid && patientAddEditForm.controls['IR'].errors.required">IR required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['IR_value']" placeholder="IR value" />
               </mat-form-field>
             </mat-card-content>
@@ -160,7 +162,7 @@
                   <mat-error *ngIf="patientAddEditForm.controls['ESRNO'].touched && !patientAddEditForm.controls['ESRNO'].valid && patientAddEditForm.controls['ESRNO'].errors.required">ESRNO required.</mat-error>
                 </mat-form-field>
 
-                <mat-form-field>
+                <mat-form-field class="subValue">
                   <input matInput [formControl]="patientAddEditForm.controls['ESRNO_value']" placeholder="ESRNO value" />
                 </mat-form-field>
             </mat-card-content>
@@ -179,7 +181,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['ESRL'].touched && !patientAddEditForm.controls['ESRL'].valid && patientAddEditForm.controls['ESRL'].errors.required">ESR L required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['ESRL_value']" placeholder="ESRL value" />
               </mat-form-field>
             </mat-card-content>
@@ -198,7 +200,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['peakC'].touched && !patientAddEditForm.controls['peakC'].valid && patientAddEditForm.controls['peakC'].errors.required">Peak C required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['peakC_value']" placeholder="peakC value" />
               </mat-form-field>
             </mat-card-content>
@@ -217,7 +219,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['PTGtype'].touched && !patientAddEditForm.controls['PTGtype'].valid && patientAddEditForm.controls['PTGtype'].errors.required">PTG Type required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['PTGtype_value']" placeholder="PTG Type value" />
               </mat-form-field>
             </mat-card-content>
@@ -236,7 +238,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['PTGCVD'].touched && !patientAddEditForm.controls['PTGCVD'].valid && patientAddEditForm.controls['PTGCVD'].errors.required">PTG CVD required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['PTGCVD_value']" placeholder="PTGCVD value" />
               </mat-form-field>
             </mat-card-content>
@@ -255,7 +257,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['stressI'].touched && !patientAddEditForm.controls['stressI'].valid && patientAddEditForm.controls['stressI'].errors.required">Stress I required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['stressI_value']" placeholder="Stress I value" />                
               </mat-form-field>
             </mat-card-content>
@@ -274,7 +276,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['RI'].touched && !patientAddEditForm.controls['RI'].valid && patientAddEditForm.controls['RI'].errors.required">RI required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['RI_value']" placeholder="Stress I value" />
               </mat-form-field>
             </mat-card-content>
@@ -292,7 +294,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['AIPTG'].touched && !patientAddEditForm.controls['AIPTG'].valid && patientAddEditForm.controls['AIPTG'].errors.required">AIPTG required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['AIPTG_value']" placeholder="AIPTG value" />
               </mat-form-field>
             </mat-card-content>
@@ -311,7 +313,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['CIsCI'].touched && !patientAddEditForm.controls['CIsCI'].valid && patientAddEditForm.controls['CIsCI'].errors.required">CIs (CI) required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['CIsCI_value']" placeholder="CIsCI value">
               </mat-form-field>
             </mat-card-content>
@@ -330,7 +332,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['pNN50'].touched && !patientAddEditForm.controls['pNN50'].valid && patientAddEditForm.controls['pNN50'].errors.required">pNN50 required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['pNN50_value']" placeholder="pNN50 value" />
               </mat-form-field>
             </mat-card-content>
@@ -349,7 +351,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['RMSSD'].touched && !patientAddEditForm.controls['RMSSD'].valid && patientAddEditForm.controls['RMSSD'].errors.required">RMSSD required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['RMSSD_value']" placeholder="RMSSD value" />
               </mat-form-field>
             </mat-card-content>
@@ -368,7 +370,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['SDba'].touched && !patientAddEditForm.controls['SDba'].valid && patientAddEditForm.controls['SDba'].errors.required">SD ba - required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['SDba_value']" placeholder="SDba value" />
               </mat-form-field>
             </mat-card-content>
@@ -387,7 +389,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['SDda'].touched && !patientAddEditForm.controls['SDda'].valid && patientAddEditForm.controls['SDda'].errors.required">SD da required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['SDda_value']" placeholder="SDda value" />
               </mat-form-field>
             </mat-card-content>
@@ -406,7 +408,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['DPRS'].touched && !patientAddEditForm.controls['DPRS'].valid && patientAddEditForm.controls['DPRS'].errors.required">DPRS required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['DPRS_value']" placeholder="DPRS value" />
               </mat-form-field>
             </mat-card-content>
@@ -424,7 +426,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['ValsR'].touched && !patientAddEditForm.controls['ValsR'].valid && patientAddEditForm.controls['ValsR'].errors.required">ValsR required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['ValsR_value']" placeholder="ValsR value" />
               </mat-form-field>
             </mat-card-content>
@@ -443,7 +445,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['BMI'].touched && !patientAddEditForm.controls['BMI'].valid && patientAddEditForm.controls['BMI'].errors.required">BMI required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['BMI_value']" placeholder="BMI value" />
               </mat-form-field>
             </mat-card-content>
@@ -462,7 +464,7 @@
                 <mat-error *ngIf="patientAddEditForm.controls['bloodPressure'].touched && !patientAddEditForm.controls['bloodPressure'].valid && patientAddEditForm.controls['bloodPressure'].errors.required">Blood Pressure required.</mat-error>
               </mat-form-field>
 
-              <mat-form-field>
+              <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['bloodPressure_value']" placeholder="Blood Pressure value" />
               </mat-form-field>
             </mat-card-content>
