@@ -1,6 +1,5 @@
-import { Component, OnInit,Inject,ViewChild ,HostListener} from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators ,FormGroupDirective
-} from '@angular/forms';
+import { Component, OnInit, Inject, ViewChild, HostListener} from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators ,FormGroupDirective } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpServiceService } from '../../../../services/http-service.service'
 import { DatePipe } from '@angular/common';
@@ -19,43 +18,30 @@ export interface DialogData {
   templateUrl: './add-edit-patient.component.html',
   styleUrls: ['./add-edit-patient.component.css']
 })
+
 @HostListener('window:scroll', ['$event'])
+
 export class AddEditPatientComponent implements OnInit {
+  
   @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
-  public htmlText: any = { nav: 'Add Patient' ,header:"Add Report Manually"};
-  public buttonText : any="Submit";
+  
+  public htmlText: any = { 
+    nav: 'Add Patient',
+    header:"Add Report Manually",
+    buttonText: "Submit",
+  };
+  public allCookies: any;
   public patientAddEditForm : FormGroup;
-  public user_token : any;
-  date = new FormControl(new Date());
-  public testDate :any;
-  public  startdate: any ;
-  enddate :any;
-  dateofbirth :any;
   public dialogRef: any;
-  public cookiesData : any={};
-  public cookies_id:any;
-  public allDoctorDataArray : any = [];
-  public tech_id:any;
-  public cookies_name:any;
-  public cookies_lastname:any;
-  public doctorNameId : any;
-  public allTechArray : any = [];
   
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
-    public cookie: CookieService,public snakBar : MatSnackBar,public dialog: MatDialog,
+    public cookie: CookieService, public snakBar : MatSnackBar,public dialog: MatDialog,
      public commonFunction: CommonFunction) {
-      this.user_token = cookie.get('jwtToken');
-      let allcookies: any;
-      allcookies = cookie.getAll();
-      this.cookiesData = JSON.parse(allcookies.user_details);
-      this.cookies_id = this.cookiesData._id;
-      this.cookies_name = this.cookiesData.firstname;
-      this.cookies_lastname = this.cookiesData.lastname;
-      /* Set Meta Data */
-    this.commonFunction.setTitleMetaTags();
-
-      // this.user_token = cookie.get('jwtToken');
+      
+      this.allCookies = this.cookie.getAll();
+      this.allCookies.user_details =  JSON.parse(this.allCookies.user_details);
+      
       this.getAllDoctorData();
       this.patientAddEditForm = this.fb.group({
         patientName        :  ['', [Validators.required, Validators.maxLength(30)]],
@@ -66,81 +52,85 @@ export class AddEditPatientComponent implements OnInit {
         testDate           :  ['', [Validators.required]],
         date               :  ['', [Validators.required]],
         testCompletedDate  :  ['', [Validators.required]],
+
         PTGPT              :  ['', [Validators.required]],
+        PTGPT_value        :  ['', [Validators.required]],
         PTGVLFI            :  ['', [Validators.required]],
+        PTGVLFI_value      :  ['', [Validators.required]],
         IR                 :  ['', [Validators.required]],
+        IR_value           :  ['', [Validators.required]],
         ESRNO              :  ['', [Validators.required]],
+        ESRNO_value        :  ['', [Validators.required]],
         ESRL               :  ['', [Validators.required]],
+        ESRL_value         :  ['', [Validators.required]],
         peakC              :  ['', [Validators.required]],
+        peakC_value        :  ['', [Validators.required]],
         PTGtype            :  ['', [Validators.required]],
+        PTGtype_value      :  ['', [Validators.required]],
         PTGCVD             :  ['', [Validators.required]],
+        PTGCVD_value       :  ['', [Validators.required]],
         stressI            :  ['', [Validators.required]],
+        stressI_value      :  ['', [Validators.required]],
         RI                 :  ['', [Validators.required]],
+        RI_value           :  ['', [Validators.required]],
         AIPTG              :  ['', [Validators.required]],
+        AIPTG_value        :  ['', [Validators.required]],
         CIsCI              :  ['', [Validators.required]],
+        CIsCI_value        :  ['', [Validators.required]],
         pNN50              :  ['', [Validators.required]],
+        pNN50_value        :  ['', [Validators.required]],
         RMSSD              :  ['', [Validators.required]],
+        RMSSD_value        :  ['', [Validators.required]],
         SDba               :  ['', [Validators.required]],
+        SDba_value         :  ['', [Validators.required]],
         SDda               :  ['', [Validators.required]],
+        SDda_value         :  ['', [Validators.required]],
         DPRS               :  ['', [Validators.required]],
+        DPRS_value         :  ['', [Validators.required]],
         ValsR              :  ['', [Validators.required]],
+        ValsR_value        :  ['', [Validators.required]],
         BMI                :  ['', [Validators.required]],
+        BMI_value          :  ['', [Validators.required]],
         bloodPressure      :  ['', [Validators.required]],
+        bloodPressure_value:  ['', [Validators.required]],
+
         leaveNotes         :  ['', [Validators.required]],
-        systolic           :  ['', []],
-        diastolic          :  ['', []],
+        systolic_value     :  ['', []],
+        diastolic_value    :  ['', []],
         status             :  [1, []],
         report_type        :  ['mannual', []],
-        added_by           :  [this.cookies_id, []]
-      })
+        added_by           :  [this.allCookies.user_details._id, []]
+      });
     }
 
   ngOnInit() {
-    
   }
 
-  getAllDoctorData(){
+  getAllDoctorData() {
     var data = {
       "source": "users_view_doctor_list",
-      "token": this.user_token
+      "token": this.allCookies.jwtToken
     }
-    this.httpService.httpViaPost('datalist', data)
-      .subscribe(response => {
-        let result: any = {};
-        result = response.res;
-        this.allDoctorDataArray = result;   
-      })
+    this.httpService.httpViaPost('datalist', data).subscribe(response => {
+      this.htmlText.allDoctor = response.res;
+    });
   }
 
-  getDoctorId(value:string){
-    this.doctorNameId = value;
-    this.getAllTechData();
-  }
-
-  getAllTechData(){
+  getTechList(doctorID: string) {
     var data = {
-      "source" : "users_view_doctor",
-      "condition" : {
-          "_id_object" : this.doctorNameId
+      "source": "users_view_doctor",
+      "condition": {
+          "_id_object": doctorID
       },
-      "token"  : this.user_token
+      "token": this.allCookies.jwtToken
     }
-    this.httpService.httpViaPost('datalist', data)
-      .subscribe((response) => {
-       this.allTechArray = response.res;
-       
-      })
+    this.httpService.httpViaPost('datalist', data).subscribe((response) => {
+      this.htmlText.allTech = response.res;
+    });
   }
 
-  /**for validation purpose**/
   inputUntouch(form: any, val: any) {
     form.controls[val].markAsUntouched();
-  }
-  /**for validation purpose**/
-
-  /**modal end here */
-  resetAddEditForm(){
-    this.formDirective.resetForm();
   }
 
   patientAddEditFormSubmit(){
@@ -148,12 +138,13 @@ export class AddEditPatientComponent implements OnInit {
     for (x in this.patientAddEditForm.controls) {
       this.patientAddEditForm.controls[x].markAsTouched();
     }
-    const myString = this.patientAddEditForm.controls.bloodPressure.value;
-    const splits = myString.split('/');
-    var startDate = this.datePipe.transform(this.startdate, "MM-dd-yyyy");
-    var endDate = this.datePipe.transform(this.enddate, "MM-dd-yyyy");
-    var dateOfBirth = this.datePipe.transform(this.dateofbirth,"MM-dd-yyyy");
+
+  
+    var startDate = this.datePipe.transform("this.startdate", "MM-dd-yyyy");
+    var endDate = this.datePipe.transform("this.enddate", "MM-dd-yyyy");
+    var dateOfBirth = this.datePipe.transform("this.dateofbirth","MM-dd-yyyy");
     var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
+    
     this.patientAddEditForm.value.testDate = startDate;
     this.patientAddEditForm.value.testCompletedDate = endDate;
     this.patientAddEditForm.value.birthDate = dateOfBirth;
@@ -161,16 +152,20 @@ export class AddEditPatientComponent implements OnInit {
     this.patientAddEditForm.controls['testCompletedDate'].patchValue(endDate);
     this.patientAddEditForm.controls['birthDate'].patchValue(dateOfBirth);
     this.patientAddEditForm.controls['date'].patchValue(dateformat);
-    this.patientAddEditForm.controls['systolic'].patchValue(splits[0]);
-    this.patientAddEditForm.controls['diastolic'].patchValue(splits[1]);
-    delete this.patientAddEditForm.value.bloodPressure;
+
+    /* Setup Blood Pressure (systolic, diastolic) */
+    const bloodPressure = this.patientAddEditForm.controls.bloodPressure_value.value;
+    const systolicDiastolic = bloodPressure.split('/');
+    this.patientAddEditForm.controls['systolic'].patchValue(systolicDiastolic[0]);
+    this.patientAddEditForm.controls['diastolic'].patchValue(systolicDiastolic[1]);
+    delete this.patientAddEditForm.value.bloodPressure_value;
  
     if(this.patientAddEditForm.valid) {  
-      var data :any = {
+      var data: any = {
         "source" : "patient_management",
         "data" : this.patientAddEditForm.value,
         "sourceobj": ["doctor_id","tech_id"],
-        "token" : this.user_token
+        "token" : this.allCookies.jwtToken
       }
 
       this.httpService.httpViaPost("addorupdatedata",data).subscribe(response=>{
@@ -200,7 +195,7 @@ export class AddEditPatientComponent implements OnInit {
           this.router.navigateByUrl('/tech/dashboard');
           break;
         case "Add Next":
-          this.resetAddEditForm();
+          this.formDirective.resetForm();
           break;
       }
     });
