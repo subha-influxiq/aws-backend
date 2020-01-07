@@ -13,27 +13,33 @@
 .add_form .example-form .field_setmodel{ border: 1px solid #6fa6bb;}
 .add_form .example-form .field_setmodel .legend_model{ font-family: "AvenirLight"; font-size: 20px; text-transform: uppercase; color: #03a9f5;}
 .add_form .example-form .patients_info_wrapper{ display: inline-flex; flex-wrap: wrap;}
-.add_form .example-form .patients_info_wrapper  .mat-card-content { flex: 1 1 32%; margin: 0;}
-
-
-.add_form .test_date_wrapper .mat-card-actions, .add_form .test_date_wrapper .mat-card-content, .add_form .test_date_wrapper .mat-card-subtitle {
+/* .add_form .example-form .patients_info_wrapper  .mat-card-content { flex: 1 1 32%; margin: 0;} */
+.add_form .example-form .patients_info_wrapper  .mat-card-content { width: 32%; display: flex; flex-direction: column; margin-bottom: 0; margin-left: 9px;}
+.add_form .example-form .patients_info_wrapper  .mat-card-content .patientGender{ background: #fff; padding: 10px 0px; border: 1px solid #d0d0d0; border-bottom: 1px solid #5f5f5f; }
+.add_form .example-form .patients_info_wrapper label{ width: auto; display: block; margin-bottom: 5px;}
+.add_form .test_date_wrapper .mat-card-actions, 
+.add_form .test_date_wrapper .mat-card-content, 
+.add_form .test_date_wrapper .mat-card-subtitle {
   display: inline-flex;
-  margin-bottom: 16px;
+  margin: 0.5%;
   vertical-align: middle;
   justify-content: center;
   align-items: center;
+  width: 32%;
 }
-.add_form .mat-card-content label , .add_form .patient_diagnotes label{ font-family: "AvenirLight"; color: #000; font-size: 16px; margin: 0 10px; line-height: 20px;
-  width: 140px;}
+.add_form .mat-card-content label , .add_form .patient_diagnotes label{ font-family: "AvenirMedium"; color: #000; font-size: 14px;  line-height: 16px;
+  width: 125px;}
+  .add_form .test_date_wrapper .mat-card-content .subValue { margin-left: 5px; width: 24%; }
+  .add_form .test_date_wrapper{ display: flex; justify-content: flex-start; flex-wrap: wrap; }
+
 .add_form .mat-card-content .mat-checkbox { margin: 0 5px; }
 .add_form .mat-card-content ,
 .add_form .patient_diagnotes .mat-form-field {
-
   position: relative;
   text-align: left;
-  margin: 0 10px;
+  
 }
-.add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0; border: 1px solid #43cef5; background: #fff; box-sizing: border-box;}
+.add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0; border: 1px solid #43cef5; background: #fff; box-sizing: border-box; padding: 10px;}
 .add_form .patient_diagnotes .example-full-width textarea{ resize: none; }
 
 .add_header button{ margin-left: auto;
@@ -41,7 +47,7 @@
   text-transform: uppercase;
   font-family: "RobotoBlack"; padding-top: 4px;
 }
-.add_form .patient_diagnotes label{ width: 100%!important; margin: 5px 10px!important;}
+.add_form .patient_diagnotes label{ width: 100%!important; }
 
 @media screen and (max-width: 1600px){
   .add_form{ width: 1320px;}
@@ -56,21 +62,35 @@
   .add_form  { width: 1190px;}
   .add_form .mat-card-content label { width: 150px; margin: 0; margin-right: 10px; }
 }
+@media screen and (max-width: 1420px){
+  .add_form .test_date_wrapper .mat-card-content{ width: 48%; }
+}
 @media screen and (max-width: 1400px){
-  .add_form { width: 90%; }
+  .add_form { width: 100%; }
 }
-@media screen and (max-width: 1100px){
-  .add_form .example-form .patients_info_wrapper .mat-card-content { flex: 1 1 50%; margin: 0; }
-}
+ 
 @media screen and (max-width: 1000px){
   .add_form .submit_form button { width: 48%; }
 }
 @media screen and (max-width: 991px){
 .techdashboard_header .mat-toolbar-row { flex-direction: column; padding: 20px;}
 .techdashboard_header .mat-toolbar-row .quotation p { margin-top: 16px; }
+.add_form .test_date_wrapper .mat-card-content{ width: 100%; }
+}
+@media screen and (max-width: 800px){
+  .add_form .example-form .patients_info_wrapper .mat-card-content { width: 31%; }
+
 }
 @media screen and (max-width: 768px){
   .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0; }
+}
+@media screen and (max-width: 700px){
+  .add_form .test_date_wrapper .mat-card-content{ display: flex; flex-direction: column; justify-content: flex-start; }
+  .add_form .mat-card-content label { width: 100%; margin: 0; margin-bottom: 5px; }
+  .add_form .mat-card-content label br { display: none; }
+  .add_form .mat-card-content .mat-form-field{ width: 100%; }
+  .add_form .test_date_wrapper .mat-card-content .subValue { margin-left: 0px; width: 100%; }
+  .add_form .example-form .patients_info_wrapper .mat-card-content { flex: 1 1 100%; margin: 0; margin-top: 10px;}
 }
 @media screen and (max-width: 576px){
 .add_form .submit_form button { font-size: 22px; padding: 2px; }

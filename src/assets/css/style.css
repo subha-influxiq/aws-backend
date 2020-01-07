@@ -390,3 +390,12 @@
   box-sizing: border-box;
   margin-right: 5px;
 }
+/* add edit form */
+.add_form .test_date_wrapper .mat-card-content .mat-form-field-flex{    background: #fff;
+  border: 1px solid #d0d0d0;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+.add_form .example-form .patients_info_wrapper .mat-card-content .mat-form-field-flex{ background: #fff; border: 1px solid #d0d0d0; padding: 0 5px; box-sizing: border-box;}
+ 
