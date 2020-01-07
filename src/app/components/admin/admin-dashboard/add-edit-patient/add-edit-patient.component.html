@@ -34,7 +34,7 @@
             </mat-card-content>
 
             <mat-card-content>
-              <label> DOB</label>
+              <label> Date of birth</label>
               <mat-form-field>
                 <input matInput [matDatepicker]="picker" [(ngModel)]="dateofbirth" [ngModelOptions]="{standalone: true}">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -105,6 +105,7 @@
 
               <mat-form-field>
                 <input matInput [formControl]="patientAddEditForm.controls['PTGPT_value']" placeholder="PTGPT value" />
+                <mat-hint align="start"> <strong>Optional field.</strong></mat-hint>
               </mat-form-field>
             </mat-card-content>
 
