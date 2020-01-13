@@ -63,7 +63,7 @@
   .add_form .mat-card-content label { width: 150px; margin: 0; margin-right: 10px; }
 }
 @media screen and (max-width: 1420px){
-  .add_form .test_date_wrapper .mat-card-content{ width: 48%; }
+  .add_form .test_date_wrapper .mat-card-content{ width: 49%; }
 }
 @media screen and (max-width: 1400px){
   .add_form { width: 100%; }
