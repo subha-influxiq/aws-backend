@@ -18,7 +18,9 @@
         <button mat-menu-item [routerLink]="['/biller/account-settings/change-password']">
           <mat-icon>vpn_key</mat-icon> Change Password
         </button>
-        <button mat-menu-item (click)="logout()"> <mat-icon>power_settings_new</mat-icon> Logout </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>power_settings_new</mat-icon> Logout
+        </button>
       </mat-menu>
       <span class="username">{{user_data.firstname}} {{user_data.lastname}}</span>
       <button mat-icon-button [matMenuTriggerFor]="appMenu">
