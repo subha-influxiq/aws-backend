@@ -6,6 +6,7 @@ import { DatePipe } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
+import { environment } from '../../../../../environments/environment';
 
 export interface DialogData {
   message: string;
@@ -224,7 +225,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
         data = {
           "source": "users",
           "data": this.doctorOfficeAddEditForm.value,
-          "domainurl" : 'http://testbedpece.influxiq.com/reset-password',
+          "domainurl" : environment.siteBaseUrl + 'reset-password',
           "token": this.user_token
         }
       }

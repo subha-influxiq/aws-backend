@@ -270,8 +270,8 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'users_view_doctoroffice',
-        condition: {}
+        source: 'users',
+        condition: { "type": "doctor_office" }
       },
       endpoint: 'datalist'
     },

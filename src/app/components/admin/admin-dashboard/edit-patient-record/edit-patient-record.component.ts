@@ -55,246 +55,247 @@ export const MY_FORMATS = {
 export class EditPatientRecordComponent implements OnInit {
 
   @ViewChild(FormGroupDirective, { static: false }) formDirective: FormGroupDirective;
-  public htmlText: any = { nav: 'Add Patient', header: "Physician Report" };
-  public patientAddEditForm: FormGroup;
-  public user_token: any;
-  date = new FormControl(new Date());
-  public testDate: any;
-  public startdate: any;
-  enddate: any;
-  dateofbirth: any;
+  
+  public allPatientDataArray: any;
+  public htmlText: any = { 
+    nav: 'Add Patient',
+    header:"Add Report Manually",
+    buttonText: "Submit",
+  };
+  public allCookies: any;
+  public patientAddEditForm : FormGroup;
   public dialogRef: any;
-  public cookiesData: any = {};
-  public cookies_id: any;
-  public allDoctorDataArray: any = [];
-  public tech_id: any;
-  public cookies_name: any;
-  public cookies_lastname: any;
-  public doctorNameId: any;
-  public allTechArray: any = [];
-  public userToken: any;
-  public allPatientDataArray: any = [];
-  public paramsId: any;
-  // sticky section
-  isSticky: boolean = false;
-  stickyRight: boolean = false;
-
   public ImageData = [];
+  public paramsId: any;
 
-  // @HostListener('window:scroll', ['$event'])
-  // checkScroll() {
-  //   this.isSticky = window.pageYOffset >= 50;
-  // }
-  public testArray:any=[];
+  public startDate: any;
+  public endDate: any;
+  public dateOfBirth: any;
+  public dateFormat: any;
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService, public snakBar: MatSnackBar, public dialog: MatDialog,
     public commonFunction: CommonFunction) {
 
-    this.paramsId = this.activeRoute.snapshot.params._id
+    this.paramsId = this.activeRoute.snapshot.params._id;
 
-    this.userToken = cookie.get('jwtToken');
-    let allcookies: any;
-    allcookies = cookie.getAll();
-
-    this.cookiesData = JSON.parse(allcookies.user_details);
-
-    this.cookies_id = this.cookiesData._id;
+    this.allCookies = this.cookie.getAll();
+    this.allCookies.user_details =  JSON.parse(this.allCookies.user_details);
     this.getAllDoctorData();
-    this.commonFunction.setTitleMetaTags();
-
+      
     this.patientAddEditForm = this.fb.group({
-      id :[this.paramsId, []],
-      patientName: ['', [Validators.required, Validators.maxLength(30)]],
-      gender: ['', [Validators.required]],
-      birthDate: ['', []],
-      doctor_id: ['', []],
-      tech_id: ['', []],
-      testDate: ['', []],
-      date: ['', []],
-      testCompletedDate: ['', []],
-      PTGPT: ['', [Validators.required]],
-      PTGVLFI: ['', []],
-      IR: ['', [Validators.required]],
-      ESRNO: ['', [Validators.required]],
-      ESRL: ['', [Validators.required]],
-      peakC: ['', [Validators.required]],
-      PTGtype: ['', [Validators.required]],
-      PTGCVD: ['', [Validators.required]],
-      stressI: ['', [Validators.required]],
-      RI: ['', [Validators.required]],
-      AIPTG: ['', [Validators.required]],
-      CIsCI: ['', [Validators.required]],
-      pNN50: ['', [Validators.required]],
-      RMSSD: ['', [Validators.required]],
-      SDba: ['', [Validators.required]],
-      SDda: ['', [Validators.required]],
-      DPRS: ['', [Validators.required]],
-      ValsR: ['', [Validators.required]],
-      BMI: ['', [Validators.required]],
-      bloodPressure: ['', []],
-      leaveNotes: ['', [Validators.required]],
-      systolic: ['', []],
-      diastolic: ['', []],
-      status: [1, []],
-      report_type:['mannual',[]],
-      updated_by: [this.cookies_id, []]
+      id                 :  [this.paramsId, [Validators.required]],
+      patientName        :  ['', [Validators.required, Validators.maxLength(30)]],
+      gender             :  ['', [Validators.required]],
+      birthDate          :  ['', [Validators.required]],
+      doctor_id          :  ['', [Validators.required]],
+      tech_id            :  ['', [Validators.required]],
+      testDate           :  ['', [Validators.required]],
+      testCompletedDate  :  ['', [Validators.required]],
+
+      PTGPT              :  ['', [Validators.required]],
+      PTGPT_value        :  ['', []],
+      PTGVLFI            :  ['', [Validators.required]],
+      PTGVLFI_value      :  ['', []],
+      IR                 :  ['', [Validators.required]],
+      IR_value           :  ['', []],
+      ESRNO              :  ['', [Validators.required]],
+      ESRNO_value        :  ['', []],
+      ESRL               :  ['', [Validators.required]],
+      ESRL_value         :  ['', []],
+      peakC              :  ['', [Validators.required]],
+      peakC_value        :  ['', []],
+      PTGtype            :  ['', [Validators.required]],
+      PTGtype_value      :  ['', []],
+      PTGCVD             :  ['', [Validators.required]],
+      PTGCVD_value       :  ['', []],
+      stressI            :  ['', [Validators.required]],
+      stressI_value      :  ['', []],
+      RI                 :  ['', [Validators.required]],
+      RI_value           :  ['', []],
+      AIPTG              :  ['', [Validators.required]],
+      AIPTG_value        :  ['', []],
+      CIsCI              :  ['', [Validators.required]],
+      CIsCI_value        :  ['', []],
+      pNN50              :  ['', [Validators.required]],
+      pNN50_value        :  ['', []],
+      RMSSD              :  ['', [Validators.required]],
+      RMSSD_value        :  ['', []],
+      SDba               :  ['', [Validators.required]],
+      SDba_value         :  ['', []],
+      SDda               :  ['', [Validators.required]],
+      SDda_value         :  ['', []],
+      DPRS               :  ['', [Validators.required]],
+      DPRS_value         :  ['', []],
+      ValsR              :  ['', [Validators.required]],
+      ValsR_value        :  ['', []],
+      BMI                :  ['', [Validators.required]],
+      BMI_value          :  ['', []],
+      bloodPressure      :  ['', [Validators.required]],
+      bloodPressure_value:  ['', []],
+
+      leaveNotes         :  ['', [Validators.required]],
+      systolic_value     :  ['', []],
+      diastolic_value    :  ['', []],
+      status             :  [1, []],
+      report_type        :  ['mannual', []],
+      added_by           :  [this.allCookies.user_details._id, []]
     });
   }
 
   ngOnInit() {
     this.getAllPatientData();
   }
-  /**for validation purpose**/
-  inputUntouch(form: any, val: any) {
-    form.controls[val].markAsUntouched();
-  }
-  /**for validation purpose**/
 
   getAllDoctorData() {
     var data = {
       "source": "users_view_doctor_list",
-      "token": this.userToken
+      "token": this.allCookies.jwtToken
     }
-    this.httpService.httpViaPost('datalist', data)
-      .subscribe(response => {
-        let result: any = {};
-        result = response.res;
-        this.allDoctorDataArray = result;
-        // this.getAllPatientData();
-      })
+    this.httpService.httpViaPost('datalist', data).subscribe(response => {
+      this.htmlText.allDoctor = response.res;
+    });
   }
 
-  getDoctorId(value: string) {
-    this.doctorNameId = value;
-    this.getAllTechData();
-
-  }
-
-  getAllTechData() {
+  getTechList(doctorID: string) {
     var data = {
       "source": "users_view_doctor",
       "condition": {
-        "_id_object": this.doctorNameId
+          "_id_object": doctorID
       },
-      "token": this.userToken
+      "token": this.allCookies.jwtToken
     }
     this.httpService.httpViaPost('datalist', data).subscribe((response) => {
-        this.allTechArray = response.res;
-      });
+      this.htmlText.allTech = response.res;
+    });
   }
 
   getAllPatientData() {
     this.activeRoute.data.forEach((data) => {
       this.allPatientDataArray = data.patientData.res;
+      let patientDetails: any = data.patientData.res;
 
-      console.log("Array: ", this.allPatientDataArray);
-      let patientDetails : any=data.patientData.res;
-      console.log("Images: ", patientDetails[0].images);
-        this.ImageData = patientDetails[0].images;
-        this.getDoctorId(patientDetails[0].doctor_id);
+      this.ImageData = patientDetails[0].images;
+      this.getTechList(patientDetails[0].doctor_id);
 
-        this.patientAddEditForm.controls['patientName'].patchValue(patientDetails[0].patientName);
-        this.patientAddEditForm.controls['gender'].patchValue(patientDetails[0].gender);
-        this.patientAddEditForm.controls['doctor_id'].patchValue(patientDetails[0].doctor_id);
-        this.patientAddEditForm.controls['tech_id'].patchValue(patientDetails[0].tech_id);
-  
-        /* Date of birth */
-        if(typeof(patientDetails[0].testDate) != "undefined") {
-          let dateArr: any = patientDetails[0].birthDate.split("-");
-          this.dateofbirth = moment([dateArr[2], dateArr[1] - 1, dateArr[0]]);
-        } else {
-          this.dateofbirth = "12/12/2012";
-        }
+      this.patientAddEditForm.controls['patientName'].patchValue(patientDetails[0].patientName);
+      this.patientAddEditForm.controls['gender'].patchValue(patientDetails[0].gender);
+      this.patientAddEditForm.controls['doctor_id'].patchValue(patientDetails[0].doctor_id);
+      this.patientAddEditForm.controls['tech_id'].patchValue(patientDetails[0].tech_id);
 
-        /* Test Date */
-        if(typeof(patientDetails[0].testDate) != "undefined") {
-          let dateArr = patientDetails[0].testDate.split("-");
-          this.startdate = moment([dateArr[2], dateArr[1] - 1, dateArr[0]]);
-        } else {
-          this.startdate = moment(["12", "12", "2012"]);
-        }
-        
-        /* Test complete date */
-        if(typeof(patientDetails[0].testCompletedDate) != "undefined") {
-          let dateArr = patientDetails[0].testCompletedDate.split("-");
-          this.enddate = moment([dateArr[2], dateArr[1] - 1, dateArr[0]]);
-        } else {
-          this.dateofbirth = moment(["12", "12", "2012"]);
-        }
+      this.patientAddEditForm.controls['report_type'].patchValue(patientDetails[0].report_type);
+      
+      /* Date marge */
+      this.patientAddEditForm.value.birthDate = this.datePipe.transform(patientDetails[0].birthDate, "MM-dd-yyyy");
+      this.patientAddEditForm.value.testDate = this.datePipe.transform(patientDetails[0].testDate, "MM-dd-yyyy");
+      this.patientAddEditForm.value.testCompletedDate = this.datePipe.transform(patientDetails[0].testCompletedDate, "MM-dd-yyyy");
+      this.patientAddEditForm.value.date = this.datePipe.transform(patientDetails[0].date, "MM-dd-yyyy");
 
-        this.patientAddEditForm.controls['report_type'].patchValue(patientDetails[0].report_type);
-        this.patientAddEditForm.controls['PTGPT'].patchValue(patientDetails[0].PTGPT); 
-        this.patientAddEditForm.controls['PTGVLFI'].patchValue(patientDetails[0].PTGVLFI);
-        this.patientAddEditForm.controls['IR'].patchValue(patientDetails[0].IR);
-        this.patientAddEditForm.controls['ESRNO'].patchValue(patientDetails[0].ESRNO);
-        this.patientAddEditForm.controls['ESRL'].patchValue(patientDetails[0].ESRL);
-        this.patientAddEditForm.controls['peakC'].patchValue(patientDetails[0].peakC);
-        this.patientAddEditForm.controls['PTGtype'].patchValue(patientDetails[0].PTGtype);
-        this.patientAddEditForm.controls['PTGCVD'].patchValue(patientDetails[0].PTGCVD);
-        this.patientAddEditForm.controls['stressI'].patchValue(patientDetails[0].stressI);
-        this.patientAddEditForm.controls['RI'].patchValue(patientDetails[0].RI);
-        this.patientAddEditForm.controls['AIPTG'].patchValue(patientDetails[0].AIPTG);
-        this.patientAddEditForm.controls['CIsCI'].patchValue(patientDetails[0].CIsCI);
-        this.patientAddEditForm.controls['pNN50'].patchValue(patientDetails[0].pNN50);
-        this.patientAddEditForm.controls['RMSSD'].patchValue(patientDetails[0].RMSSD);
-        this.patientAddEditForm.controls['RMSSD'].patchValue(patientDetails[0].RMSSD);
-        this.patientAddEditForm.controls['SDba'].patchValue(patientDetails[0].SDba);
-        this.patientAddEditForm.controls['SDda'].patchValue(patientDetails[0].SDda);
-        this.patientAddEditForm.controls['DPRS'].patchValue(patientDetails[0].DPRS);
-        this.patientAddEditForm.controls['ValsR'].patchValue(patientDetails[0].ValsR);
-        this.patientAddEditForm.controls['BMI'].patchValue(patientDetails[0].BMI);
-        this.patientAddEditForm.controls['bloodPressure'].patchValue(patientDetails[0].systolic+"/"+patientDetails[0].diastolic);
-        this.patientAddEditForm.controls['leaveNotes'].patchValue(patientDetails[0].leaveNotes);
+      this.patientAddEditForm.controls['PTGPT'].patchValue(patientDetails[0].PTGPT); 
+      this.patientAddEditForm.controls['PTGPT_value'].patchValue(patientDetails[0].PTGPT_value); 
+      this.patientAddEditForm.controls['PTGVLFI'].patchValue(patientDetails[0].PTGVLFI);
+      this.patientAddEditForm.controls['PTGVLFI_value'].patchValue(patientDetails[0].PTGVLFI_value);
+      this.patientAddEditForm.controls['IR'].patchValue(patientDetails[0].IR);
+      this.patientAddEditForm.controls['IR_value'].patchValue(patientDetails[0].IR_value);
+      this.patientAddEditForm.controls['ESRNO'].patchValue(patientDetails[0].ESRNO);
+      this.patientAddEditForm.controls['ESRNO_value'].patchValue(patientDetails[0].ESRNO_value);
+      this.patientAddEditForm.controls['ESRL'].patchValue(patientDetails[0].ESRL);
+      this.patientAddEditForm.controls['ESRL_value'].patchValue(patientDetails[0].ESRL_value);
+      this.patientAddEditForm.controls['peakC'].patchValue(patientDetails[0].peakC);
+      this.patientAddEditForm.controls['peakC_value'].patchValue(patientDetails[0].peakC_value);
+      this.patientAddEditForm.controls['PTGtype'].patchValue(patientDetails[0].PTGtype);
+      this.patientAddEditForm.controls['PTGtype_value'].patchValue(patientDetails[0].PTGtype_value);
+      this.patientAddEditForm.controls['PTGCVD'].patchValue(patientDetails[0].PTGCVD);
+      this.patientAddEditForm.controls['PTGCVD_value'].patchValue(patientDetails[0].PTGCVD_value);
+      this.patientAddEditForm.controls['stressI'].patchValue(patientDetails[0].stressI);
+      this.patientAddEditForm.controls['stressI_value'].patchValue(patientDetails[0].stressI_value);
+      this.patientAddEditForm.controls['RI'].patchValue(patientDetails[0].RI);
+      this.patientAddEditForm.controls['RI_value'].patchValue(patientDetails[0].RI_value);
+      this.patientAddEditForm.controls['AIPTG'].patchValue(patientDetails[0].AIPTG);
+      this.patientAddEditForm.controls['AIPTG_value'].patchValue(patientDetails[0].AIPTG_value);
+      this.patientAddEditForm.controls['CIsCI'].patchValue(patientDetails[0].CIsCI);
+      this.patientAddEditForm.controls['CIsCI_value'].patchValue(patientDetails[0].CIsCI_value);
+      this.patientAddEditForm.controls['pNN50'].patchValue(patientDetails[0].pNN50);
+      this.patientAddEditForm.controls['pNN50_value'].patchValue(patientDetails[0].pNN50_value);
+      this.patientAddEditForm.controls['RMSSD'].patchValue(patientDetails[0].RMSSD);
+      this.patientAddEditForm.controls['RMSSD_value'].patchValue(patientDetails[0].RMSSD_value);
+      this.patientAddEditForm.controls['RMSSD'].patchValue(patientDetails[0].RMSSD);
+      this.patientAddEditForm.controls['RMSSD_value'].patchValue(patientDetails[0].RMSSD_value);
+      this.patientAddEditForm.controls['SDba'].patchValue(patientDetails[0].SDba);
+      this.patientAddEditForm.controls['SDba_value'].patchValue(patientDetails[0].SDba_value);
+      this.patientAddEditForm.controls['SDda'].patchValue(patientDetails[0].SDda);
+      this.patientAddEditForm.controls['SDda_value'].patchValue(patientDetails[0].SDda_value);
+      this.patientAddEditForm.controls['DPRS'].patchValue(patientDetails[0].DPRS);
+      this.patientAddEditForm.controls['DPRS_value'].patchValue(patientDetails[0].DPRS_value);
+      this.patientAddEditForm.controls['ValsR'].patchValue(patientDetails[0].ValsR);
+      this.patientAddEditForm.controls['ValsR_value'].patchValue(patientDetails[0].ValsR_value);
+      this.patientAddEditForm.controls['BMI'].patchValue(patientDetails[0].BMI);
+      this.patientAddEditForm.controls['BMI_value'].patchValue(patientDetails[0].BMI_value);
+      this.patientAddEditForm.controls['bloodPressure'].patchValue(patientDetails[0].bloodPressure);
+      this.patientAddEditForm.controls['bloodPressure_value'].patchValue(patientDetails[0].systolic_value + "/" + patientDetails[0].diastolic_value);
+      this.patientAddEditForm.controls['leaveNotes'].patchValue(patientDetails[0].leaveNotes);
     });
   }
-
 
   patientAddEditFormSubmit() {
     let x: any;
     for (x in this.patientAddEditForm.controls) {
       this.patientAddEditForm.controls[x].markAsTouched();
     }
-    const myString = this.patientAddEditForm.controls.bloodPressure.value;
-    const splits = myString.split('/');
-    var startDate = this.datePipe.transform(this.startdate, "MM-dd-yyyy");
-    var endDate = this.datePipe.transform(this.enddate, "MM-dd-yyyy");
-    var dateOfBirth = this.datePipe.transform(this.dateofbirth, "MM-dd-yyyy");
-    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
-    this.patientAddEditForm.value.testDate = startDate;
-    this.patientAddEditForm.value.testCompletedDate = endDate;
-    this.patientAddEditForm.value.birthDate = dateOfBirth;
-    this.patientAddEditForm.controls['testDate'].patchValue(startDate);
-    this.patientAddEditForm.controls['testCompletedDate'].patchValue(endDate);
-    this.patientAddEditForm.controls['birthDate'].patchValue(dateOfBirth);
-    this.patientAddEditForm.controls['date'].patchValue(dateformat);
-    this.patientAddEditForm.controls['systolic'].patchValue(splits[0]);
-    this.patientAddEditForm.controls['diastolic'].patchValue(splits[1]);
-    delete this.patientAddEditForm.value.bloodPressure;
+ 
+    if(this.patientAddEditForm.valid) {
+      this.patientAddEditForm.value.birthDate = this.datePipe.transform(this.patientAddEditForm.value.birthDate, "MM-dd-yyyy");
+      this.patientAddEditForm.value.testDate = this.datePipe.transform(this.patientAddEditForm.value.testDate, "MM-dd-yyyy");
+      this.patientAddEditForm.value.testCompletedDate = this.datePipe.transform(this.patientAddEditForm.value.testCompletedDate, "MM-dd-yyyy");
+      this.patientAddEditForm.value.date = this.datePipe.transform(this.patientAddEditForm.value.date, "MM-dd-yyyy");
 
-    if (this.patientAddEditForm.valid) {
+      /* Setup Blood Pressure (systolic, diastolic) */
+      const bloodPressure = this.patientAddEditForm.controls.bloodPressure_value.value;
+      const systolicDiastolic = bloodPressure.split('/');
+      this.patientAddEditForm.controls['systolic_value'].patchValue(systolicDiastolic[0]);
+      this.patientAddEditForm.controls['diastolic_value'].patchValue(systolicDiastolic[1]);
+      delete this.patientAddEditForm.value.bloodPressure_value;
+      
       var data: any = {
-        "source": "patient_management",
-        "data": this.patientAddEditForm.value,
-        "sourceobj": ["doctor_id", "tech_id"],
-        "token": this.userToken
+        "source" : "patient_management",
+        "data" : this.patientAddEditForm.value,
+        "sourceobj": ["doctor_id","tech_id"],
+        "token" : this.allCookies.jwtToken
       }
 
-      this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
-        if (response.status = "success") {
-          this.router.navigateByUrl('/admin/dashboard');
-        }
+      this.httpService.httpViaPost("addorupdatedata",data).subscribe(response=>{
+        if(response.status="success") {
+          this.formDirective.resetForm();
+          /* Open modal */
+          let data: any = {
+            width: '250px',
+            data: { 
+              header: "Success",
+              message: "Record Saved Updated.",
+              button1: { text: "OK" },
+              button2: { text: "" },
+            }
+          }
+          this.openDialog(data);
+        }  
       });
-    } else {
-      console.log("Not submited: ", this.patientAddEditForm.value);
     }
   }
 
- public sliderCount: number = 0;
+  openDialog(data) {
+    this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+    this.dialogRef.afterClosed().subscribe(result => {
+      switch(result) {
+        case "OK":
+          this.router.navigateByUrl('/tech/dashboard');
+          break;
+      }
+    });
+  }
 
+  public sliderCount: number = 0;
   playSlider(action: string) {
-
     switch (action) {
       case 'preview':
         if (this.sliderCount == 0) {
@@ -311,6 +312,10 @@ export class EditPatientRecordComponent implements OnInit {
         }
         break;
     }
+  }
+
+  inputUntouch(form: any, val: any) {
+    form.controls[val].markAsUntouched();
   }
 
 }

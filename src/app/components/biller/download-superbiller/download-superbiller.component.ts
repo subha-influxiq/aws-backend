@@ -33,8 +33,15 @@ export class DownloadSuperbillerComponent implements OnInit {
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, 
     public activatedRoute: ActivatedRoute, public dialog: MatDialog, public commonFunction: CommonFunction, 
     public deviceService: DeviceDetectorService, public matSnackBar: MatSnackBar) {
-    /* CHeck Route ID */
-    if (this.activatedRoute.snapshot.params._id) {
+
+    let loginCHeck: any = this.cookieService.getAll();
+    if(Object.keys(loginCHeck).length > 0) {
+      let userDetails = JSON.parse(loginCHeck.user_details);
+      console.log("User Details >>>----->",  userDetails);
+    }
+
+    /* Check Route ID */
+    if (typeof(this.activatedRoute.snapshot.params._id) != "undefined") {
       this.getData(this.activatedRoute.snapshot.params._id);
     } else {
       this.router.navigateByUrl('/login');
@@ -64,6 +71,8 @@ export class DownloadSuperbillerComponent implements OnInit {
   downloadPDF() {
     if((this.htmlText.password == this.reportData.download_password && this.reportData.passwordAttemptsCount <= 3) ||
     (this.htmlText.password == this.reportData.download_password && this.htmlText.notBotText == this.htmlText.notBotInput)) {
+      this.htmlText.passwordAttemptsCount++;
+
       /* Right password */
       this.cookieService.delete('passwordAttemptsCount');
       this.htmlText.password = "";
@@ -77,6 +86,18 @@ export class DownloadSuperbillerComponent implements OnInit {
       deviceInfo["isTablet"] = this.deviceService.isTablet();
       deviceInfo["isDesktop"] = this.deviceService.isDesktop();
       
+      /* Set downloader information */
+      var userDetails: any = {};
+      let loginCheck: any = this.cookieService.getAll();
+      if(Object.keys(loginCheck).length > 0) {
+        let user_details = JSON.parse(loginCheck.user_details);
+        userDetails["id"] = user_details._id;
+        userDetails["type"] = user_details.type;
+      } else {
+        userDetails["id"] = this.reportData.biller_id;
+        userDetails["type"] = "biller";
+      }
+
       let postData: any = {
         "source": "report_download",
         "data": {
@@ -85,6 +106,7 @@ export class DownloadSuperbillerComponent implements OnInit {
           "doctor_id": this.reportData.doctor_id,
           "ip": this.htmlText.ip,
           "download_attempt": this.htmlText.passwordAttemptsCount,
+          "downloader_information": userDetails,
           "device_information": deviceInfo
         },
         "sourceobj": ["biller_id", "tech_id", "doctor_id"],
@@ -141,7 +163,11 @@ export class DownloadSuperbillerComponent implements OnInit {
     }
 
     this.http.httpViaPost("datalistwithouttoken", data).subscribe(response => {
-      this.reportData = response.res[0];
+      if(response.res.length > 0) {
+        this.reportData = response.res[0];
+      } else {
+        this.router.navigateByUrl('/login');
+      }
     });
   }
 

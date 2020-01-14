@@ -45,6 +45,52 @@
   </mat-card-content>
 
 
+  <!-- Doctor occide related -->
+  <mat-card-content class="content_wrapper">
+
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/adminDoctoricon1.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.doctorOfficeCount }}</h4>
+        <p class="doctorNumber">Total No of Doctor's Office</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
+      </span>
+    </mat-card-content>
+
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/adminDoctoricon2.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.appointmentsPendingCount }}</h4>
+        <p class="doctorNumber">Total Appointments Pending</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
+      </span>
+    </mat-card-content>
+
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/adminDoctoricon3.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.appointmentsCompletedCount }}</h4>
+        <p class="doctorNumber">Total Appointments Completed</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
+      </span>
+    </mat-card-content>
+
+  </mat-card-content>
+
+
+
   <mat-card-content class="admin_superbillsection">
     <h1>Physician Report Process Status</h1>
     <mat-card-content class="biller_wrapper">

@@ -7,6 +7,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
+import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { CommonFunction } from '../../../../class/common/common-function';
 
 export interface DialogData {
@@ -33,11 +35,19 @@ export class AddEditPatientComponent implements OnInit {
   public allCookies: any;
   public patientAddEditForm : FormGroup;
   public dialogRef: any;
+
+  minDate = new Date(1900, 0, 1);
+  maxDate = new Date(2016, 11, 31);
+
+  public startDate: any;
+  public endDate: any;
+  public dateOfBirth: any;
+  public dateFormat: any;
   
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService, public snakBar : MatSnackBar,public dialog: MatDialog,
-     public commonFunction: CommonFunction) {
+    public commonFunction: CommonFunction) {
       
       this.allCookies = this.cookie.getAll();
       this.allCookies.user_details =  JSON.parse(this.allCookies.user_details);
@@ -47,10 +57,9 @@ export class AddEditPatientComponent implements OnInit {
         patientName        :  ['', [Validators.required, Validators.maxLength(30)]],
         gender             :  ['', [Validators.required]],
         birthDate          :  ['', [Validators.required]],
-        doctor_id          :  ['', []],
-        tech_id            :  ['', []],
+        doctor_id          :  ['', [Validators.required]],
+        tech_id            :  ['', [Validators.required]],
         testDate           :  ['', [Validators.required]],
-        date               :  ['', [Validators.required]],
         testCompletedDate  :  ['', [Validators.required]],
 
         PTGPT              :  ['', [Validators.required]],
@@ -129,38 +138,25 @@ export class AddEditPatientComponent implements OnInit {
     });
   }
 
-  inputUntouch(form: any, val: any) {
-    form.controls[val].markAsUntouched();
-  }
-
-  patientAddEditFormSubmit(){
+  patientAddEditFormSubmit() {
     let x: any;
     for (x in this.patientAddEditForm.controls) {
       this.patientAddEditForm.controls[x].markAsTouched();
     }
-
-  
-    var startDate = this.datePipe.transform("this.startdate", "MM-dd-yyyy");
-    var endDate = this.datePipe.transform("this.enddate", "MM-dd-yyyy");
-    var dateOfBirth = this.datePipe.transform("this.dateofbirth","MM-dd-yyyy");
-    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
-    
-    this.patientAddEditForm.value.testDate = startDate;
-    this.patientAddEditForm.value.testCompletedDate = endDate;
-    this.patientAddEditForm.value.birthDate = dateOfBirth;
-    this.patientAddEditForm.controls['testDate'].patchValue(startDate);
-    this.patientAddEditForm.controls['testCompletedDate'].patchValue(endDate);
-    this.patientAddEditForm.controls['birthDate'].patchValue(dateOfBirth);
-    this.patientAddEditForm.controls['date'].patchValue(dateformat);
-
-    /* Setup Blood Pressure (systolic, diastolic) */
-    const bloodPressure = this.patientAddEditForm.controls.bloodPressure_value.value;
-    const systolicDiastolic = bloodPressure.split('/');
-    this.patientAddEditForm.controls['systolic'].patchValue(systolicDiastolic[0]);
-    this.patientAddEditForm.controls['diastolic'].patchValue(systolicDiastolic[1]);
-    delete this.patientAddEditForm.value.bloodPressure_value;
  
-    if(this.patientAddEditForm.valid) {  
+    if(this.patientAddEditForm.valid) {
+      this.patientAddEditForm.value.birthDate = this.datePipe.transform(this.patientAddEditForm.value.birthDate, "MM-dd-yyyy");
+      this.patientAddEditForm.value.testDate = this.datePipe.transform(this.patientAddEditForm.value.testDate, "MM-dd-yyyy");
+      this.patientAddEditForm.value.testCompletedDate = this.datePipe.transform(this.patientAddEditForm.value.testCompletedDate, "MM-dd-yyyy");
+      this.patientAddEditForm.value.date = this.datePipe.transform(this.patientAddEditForm.value.date, "MM-dd-yyyy");
+
+      /* Setup Blood Pressure (systolic, diastolic) */
+      const bloodPressure = this.patientAddEditForm.controls.bloodPressure_value.value;
+      const systolicDiastolic = bloodPressure.split('/');
+      this.patientAddEditForm.controls['systolic_value'].patchValue(systolicDiastolic[0]);
+      this.patientAddEditForm.controls['diastolic_value'].patchValue(systolicDiastolic[1]);
+      delete this.patientAddEditForm.value.bloodPressure_value;
+      
       var data: any = {
         "source" : "patient_management",
         "data" : this.patientAddEditForm.value,
@@ -184,6 +180,8 @@ export class AddEditPatientComponent implements OnInit {
           this.openDialog(data);
         }  
       });
+    } else {
+      console.log(this.patientAddEditForm);
     }
   }
 
@@ -199,6 +197,10 @@ export class AddEditPatientComponent implements OnInit {
           break;
       }
     });
+  }
+
+  inputUntouch(form: any, val: any) {
+    form.controls[val].markAsUntouched();
   }
 
 }

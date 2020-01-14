@@ -30,58 +30,70 @@
             <mat-card-content>
               <label>Patient Gender</label>
               <span class="patientGender">
-              <input type="radio" value='Male' formControlName="gender">Male
-              <input type="radio" value='Female' formControlName="gender">Female
-            </span>
+                <input type="radio" value='Male' [formControl]="patientAddEditForm.controls['gender']">Male
+                <input type="radio" value='Female' [formControl]="patientAddEditForm.controls['gender']">Female
+              </span>
+
+              <mat-error *ngIf="patientAddEditForm.controls['gender'].touched && !patientAddEditForm.controls['gender'].valid && patientAddEditForm.controls['gender'].errors.required">Birth Date can not be blank.</mat-error>
             </mat-card-content>
 
             <mat-card-content>
               <label> Date of birth</label>
               <mat-form-field>
-                <input matInput [matDatepicker]="picker" [(ngModel)]="dateofbirth" [ngModelOptions]="{standalone: true}">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+                <input matInput [matDatepicker]="dobPicker" [formControl]="patientAddEditForm.controls['birthDate']">
+                <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+                <mat-datepicker #dobPicker></mat-datepicker>
+
+                <mat-error *ngIf="patientAddEditForm.controls['birthDate'].touched && !patientAddEditForm.controls['birthDate'].valid && patientAddEditForm.controls['birthDate'].errors.required">Birth Date can not be blank.</mat-error>
               </mat-form-field>
             </mat-card-content>
 
             <mat-card-content>
               <label>Ordering Physician</label>
               <mat-form-field>
-                <mat-select formControlName="doctor_id" placeholder="Select a Doctor" (selectionChange)="getTechList($event.value);">
-                  <mat-option [value]=0>Select a Doctor</mat-option>
+                <mat-select [formControl]="patientAddEditForm.controls['doctor_id']" placeholder="Select a Doctor" (selectionChange)="getTechList($event.value);">
+                  <mat-option>Select a Doctor</mat-option>
                   <mat-option *ngFor="let doc of this.htmlText.allDoctor;" value="{{ doc._id }}"> {{ doc.fullNamecopy }}
                   </mat-option>
                 </mat-select>
+
+                <mat-error *ngIf="patientAddEditForm.controls['doctor_id'].touched && !patientAddEditForm.controls['doctor_id'].valid && patientAddEditForm.controls['doctor_id'].errors.required">Select a doctor.</mat-error>
               </mat-form-field>
             </mat-card-content>
 
             <mat-card-content>
               <label> Tech Name </label>
               <mat-form-field>
-                <mat-select formControlName="tech_id" placeholder="Select a Tech">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                <mat-select [formControl]="patientAddEditForm.controls['tech_id']" placeholder="Select a Tech">
+                  <mat-option>Select a Tech</mat-option>
                   <mat-option *ngFor="let doc of htmlText.allTech;" value="{{ doc.tech_id }}"> {{ doc.tech }}
                   </mat-option>
                 </mat-select>
+
+                <mat-error *ngIf="patientAddEditForm.controls['tech_id'].touched && !patientAddEditForm.controls['tech_id'].valid && patientAddEditForm.controls['tech_id'].errors.required">Select a tech.</mat-error>
               </mat-form-field>
             </mat-card-content>
 
             <mat-card-content>
               <label> Test Date</label>
               <mat-form-field>
-                <input matInput [matDatepicker]="picker4" [(ngModel)]="startdate" [ngModelOptions]="{standalone: true}">
-                <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
-                <mat-datepicker #picker4></mat-datepicker>
+                <input matInput [matDatepicker]="testDatePicker" [formControl]="patientAddEditForm.controls['testDate']">
+                <mat-datepicker-toggle matSuffix [for]="testDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #testDatePicker></mat-datepicker>
               </mat-form-field>
+
+              <mat-error *ngIf="patientAddEditForm.controls['testDate'].touched && !patientAddEditForm.controls['testDate'].valid && patientAddEditForm.controls['testDate'].errors.required">Test date can not be blank.</mat-error>
             </mat-card-content>
 
             <mat-card-content>
               <label> Test Completed</label>
               <mat-form-field>
-                <input matInput [matDatepicker]="picker3" [(ngModel)]="enddate" [ngModelOptions]="{standalone: true}">
-                <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-                <mat-datepicker #picker3></mat-datepicker>
+                <input matInput [matDatepicker]="testCompletedDatePicker" [formControl]="patientAddEditForm.controls['testCompletedDate']">
+                <mat-datepicker-toggle matSuffix [for]="testCompletedDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #testCompletedDatePicker></mat-datepicker>
               </mat-form-field>
+
+              <mat-error *ngIf="patientAddEditForm.controls['testCompletedDate'].touched && !patientAddEditForm.controls['testCompletedDate'].valid && patientAddEditForm.controls['testCompletedDate'].errors.required">Test Completed Date can not be blank.</mat-error>
             </mat-card-content>
           </span>
         </fieldset>
@@ -96,7 +108,7 @@
               <label>PTGTP</label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['PTGPT']" (blur)="inputUntouch(patientAddEditForm,'PTGPT')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -116,7 +128,7 @@
               <label> PTGVLFI </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['PTGVLFI']" (blur)="inputUntouch(patientAddEditForm,'PTGVLFI')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -134,8 +146,8 @@
             <mat-card-content>
               <label> IR </label>
               <mat-form-field>
-                <mat-select [formControl]="patientAddEditForm.controls['RI']" (blur)="inputUntouch(patientAddEditForm,'RI')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                <mat-select [formControl]="patientAddEditForm.controls['IR']" (blur)="inputUntouch(patientAddEditForm,'IR')" placeholder="Select a Option">
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -154,7 +166,7 @@
               <label> ESRNO<br> (Baseline) </label>
                 <mat-form-field>
                   <mat-select [formControl]="patientAddEditForm.controls['ESRNO']" (blur)="inputUntouch(patientAddEditForm,'ESRNO')" placeholder="Select a Option">
-                    <mat-option [value]=0>Select a Tech</mat-option>
+                    <mat-option>Select a option</mat-option>
                     <mat-option value="N"> Normal</mat-option>
                     <mat-option value="A"> Abnormal</mat-option>
                     <mat-option value="H"> Highly Abnormal</mat-option>
@@ -173,7 +185,7 @@
               <label> ESR L<br> (Latency) </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['ESRL']" (blur)="inputUntouch(patientAddEditForm,'ESRL')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -192,7 +204,7 @@
               <label> Peak C <br> (Amplitude) </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['peakC']" (blur)="inputUntouch(patientAddEditForm,'peakC')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -211,7 +223,7 @@
               <label> PTG Type <br> (EnterType 1-5) </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['PTGtype']" (blur)="inputUntouch(patientAddEditForm,'PTGtype')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -230,7 +242,7 @@
               <label> PTG CVD </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['PTGCVD']" (blur)="inputUntouch(patientAddEditForm,'PTGCVD')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -249,7 +261,7 @@
               <label> Stress I <br> (Stress Index) </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['stressI']" (blur)="inputUntouch(patientAddEditForm,'stressI')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -268,7 +280,7 @@
               <label> RI </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['RI']" (blur)="inputUntouch(patientAddEditForm,'RI')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -286,7 +298,7 @@
               <label> AIPTG<br> (IPTG) </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['AIPTG']" (blur)="inputUntouch(patientAddEditForm,'AIPTG')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -305,7 +317,7 @@
               <label> CIs (CI) </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['CIsCI']" (blur)="inputUntouch(patientAddEditForm, 'CIsCI')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -324,7 +336,7 @@
               <label> pNN50 </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['pNN50']" (blur)="inputUntouch(patientAddEditForm,'pNN50')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -343,7 +355,7 @@
               <label> RMSSD </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['RMSSD']" (blur)="inputUntouch(patientAddEditForm,'pNN50')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -362,7 +374,7 @@
               <label> SD ba - </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['SDba']" (blur)="inputUntouch(patientAddEditForm,'SDba')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -381,7 +393,7 @@
               <label> SD da </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['SDda']" (blur)="inputUntouch(patientAddEditForm,'SDda')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -400,7 +412,7 @@
               <label>DPRS </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['DPRS']" (blur)="inputUntouch(patientAddEditForm,'DPRS')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -418,7 +430,7 @@
               <label>ValsR. </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['ValsR']" (blur)="inputUntouch(patientAddEditForm,'ValsR')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -437,7 +449,7 @@
               <label>BMI<br> Enter BMI Score (I.E. 29.1) </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['BMI']" (blur)="inputUntouch(patientAddEditForm,'BMI')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>
@@ -456,7 +468,7 @@
               <label>Blood Pressure<br> Systolic & Diastolic (120/80) </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['bloodPressure']" (blur)="inputUntouch(patientAddEditForm,'bloodPressure')" placeholder="Select a Option">
-                  <mat-option [value]=0>Select a Tech</mat-option>
+                  <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
                   <mat-option value="H"> Highly Abnormal</mat-option>

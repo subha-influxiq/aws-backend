@@ -7,6 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material';
 import { CommonFunction } from '../../../../class/common/common-function';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
+import { environment } from '../../../../../environments/environment';
 
 export interface DialogData {
   message: string;
@@ -220,23 +221,26 @@ export class AddEditTechComponent implements OnInit {
           },
           "token": this.user_token
         };
-
       } else {
         data = {
           "source": "users",
           "data": this.TechManagementAddEditForm.value,
-          "domainurl" : 'http://testbedpece.influxiq.com/reset-password',
+          "domainurl" : environment.siteBaseUrl + 'reset-password',
           "token": this.user_token
         }
       }
 
-      this.httpService.httpViaPost("addorupdatedata", data)
-        .subscribe(response => {
+      this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
+        if (response.status == "success") {
           let action = "ok";
           this.snackBar.open(this.message, action, {
             duration: 2000,
           });
-          this.formDirective.resetForm();
+        } else {
+          this.snackBar.open(response.msg, '', {
+            duration: 2000,
+          });
+        }
         });
     } else {
     }

@@ -6,6 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
+import { environment } from '../../../../../environments/environment';
 
 export interface DialogData {
   message: string;
@@ -31,23 +32,22 @@ export class AddEditBillerComponent implements OnInit {
   public cities: any;
   public htmlText: any = { header: 'Add New Biller', nav: 'Add Biller', buttonText: 'Save' };
   public params_id: any;
-  public message:any="Submitted Successfully";
+  public message: any = "Submitted Successfully";
   serializedDate = new FormControl((new Date()).toISOString());
-  public taxo_array :any=[];
-  constructor(public fb: FormBuilder, private datePipe: DatePipe,
-    public httpService: HttpServiceService, public cookie: CookieService, public router: Router,
+  public taxo_array: any = [];
+
+  constructor(public fb: FormBuilder, private datePipe: DatePipe, public httpService: HttpServiceService, public cookie: CookieService, public router: Router,
      public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, public dialog: MatDialog) {
 
     this.params_id = this.activeRoute.snapshot.params._id;
     this.user_token = cookie.get('jwtToken');
     this.allStateCityData();
 
-    if(this.params_id){
-     this.generateEditForm();
-    }else{
+    if(this.params_id) {
+      this.generateEditForm();
+    } else {
       this.generateAddForm();
     }
-   
   }
 
   ngOnInit() {
@@ -55,7 +55,7 @@ export class AddEditBillerComponent implements OnInit {
       this.htmlText.header = 'Edit Biller Record';
       this.htmlText.nav = 'Edit Biller';
       this.htmlText.buttonText = 'Update';
-      this.message="Updated Successfully"
+      this.message = "Updated Successfully"
       this.getSingleData();
     }
   }
@@ -66,7 +66,7 @@ export class AddEditBillerComponent implements OnInit {
     this.billerManagementAddEditForm = this.fb.group({
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
-      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
+      email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
       phone: ['', [Validators.required]],
       companyname: ['', [Validators.required]],
       address: ['', [Validators.required]],
@@ -181,7 +181,6 @@ export class AddEditBillerComponent implements OnInit {
     });
   }
 
-
   BillerManagementAddFormSubmit() {
     let x: any;
     for (x in this.billerManagementAddEditForm.controls) {
@@ -210,8 +209,7 @@ export class AddEditBillerComponent implements OnInit {
             city: this.billerManagementAddEditForm.value.city,
             state: this.billerManagementAddEditForm.value.state,
             date: this.billerManagementAddEditForm.value.date,
-            status: this.billerManagementAddEditForm.value.status,
-            
+            status: this.billerManagementAddEditForm.value.status
           },
           "source" : "users",
           "token"  : this.user_token
@@ -220,19 +218,24 @@ export class AddEditBillerComponent implements OnInit {
         data = {
           "data": this.billerManagementAddEditForm.value,
           "source": "users",
-          "domainurl" : 'http://testbedpece.influxiq.com/reset-password',
+          "domainurl" : environment.siteBaseUrl + 'reset-password',
           "token": this.user_token
         }
       }
     
-      this.httpService.httpViaPost("addorupdatedata", data)
-        .subscribe(response => {
-          let action = "Ok";
-          this.snackBar.open(this.message, action, {
-            duration: 2000,
-          });
-          this.formDirective.resetForm();
-        })
+      this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
+          if(response.status == 'success') {
+            let action = "Ok";
+            this.snackBar.open(this.message, action, {
+              duration: 2000,
+            });
+            this.formDirective.resetForm();
+          } else {
+            this.snackBar.open(response.msg, '', {
+              duration: 2000,
+            });
+          }
+        });
     }
   }
 }

@@ -7,6 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { nameValidator, npmValidator, zipValidator, phoneValidator, matchpwd } from './validators';
 import { MatSnackBar, MatCalendarBody } from '@angular/material';
 import * as _ from "lodash";
+import { environment } from '../../../../../environments/environment';
 
 export interface DialogData {
   message: string;
@@ -45,48 +46,46 @@ export class AddeditDoctorComponent implements OnInit {
   public doctorOfficeData: any = [];
   public params_id: any;
 
-
-
-  myTaxonomies:any= [
+  myTaxonomies: any = [
     {
-      name:"Family Practice",
-      value:"Family Practice" 
+      name: "Family Practice",
+      value: "Family Practice"
     },
     {
-      name:"General Practitioner",
-      value:"General Practitioner"
+      name: "General Practitioner",
+      value: "General Practitioner"
     },
     {
-      name:"Primary Care",
-      value:"Primary Care"
+      name: "Primary Care",
+      value: "Primary Care"
     },
     {
-      name:"Cardiology",
-      value:"Cardiology"
+      name: "Cardiology",
+      value: "Cardiology"
     },
     {
-      name:"Neurology",
-      value:"Neurology"
+      name: "Neurology",
+      value: "Neurology"
     },
     {
-      name:"Internal Medicine",
-      value:"Internal Medicine"
+      name: "Internal Medicine",
+      value: "Internal Medicine"
     },
     {
-      name:"Endocrinology",
-      value:"Endocrinology"
+      name: "Endocrinology",
+      value: "Endocrinology"
     },
     {
-      name:"Pain Management",
-      value:"Pain Management"
+      name: "Pain Management",
+      value: "Pain Management"
     },
     {
-      name:"Integrated",
-      value:"Integrated"
+      name: "Integrated",
+      value: "Integrated"
     },
     {
-      name:"Others",
-      value:"Others"
+      name: "Others",
+      value: "Others"
     }
   ];
 
@@ -134,7 +133,7 @@ export class AddeditDoctorComponent implements OnInit {
         this.htmlText.buttonText = 'Update';
         this.successMessage = "One row updated";
         this.setDefaultValue(this.defaultData);
-        console.log("default data",this.defaultData);
+        console.log("default data", this.defaultData);
         setTimeout(() => {
           this.getCityByName(this.defaultData.state);
         }, 2000);
@@ -142,31 +141,10 @@ export class AddeditDoctorComponent implements OnInit {
     }
   }
 
-  /*creating taxonomy inputs*/
-  // createTaxoInputs()
-  // {
-  //   this.docManageForm = new FormGroup({
-  //     taxo_list:this.createTaxonomies(this.myTaxonomies)
-  //   });
-  //   this.getSelectedTaxonomies();
-  // }
-
-
-  /*creating the taxonomies*/
-  // createTaxonomies(taxo_inp){
-  //    const arr = taxo_inp.map(tax=>{
-  //      return new FormControl(tax.selected || false);
-  //    });
-  //    return new FormArray(arr);
-  // }
-
-
-
   inputUntouch(form: any, val: any) {
     form.controls[val].markAsUntouched();
   }
 
-  // ===================================Setting the default Value========================
   setDefaultValue(defaultValue) {
     this.docManageForm.patchValue({
       firstname: defaultValue.firstname,
@@ -187,7 +165,7 @@ export class AddeditDoctorComponent implements OnInit {
       doctorsOfficeName: defaultValue.doctorsOfficeName,
       zip: defaultValue.zip,
       status: defaultValue.status,
-      taxonomies:defaultValue.taxonomies
+      taxonomies: defaultValue.taxonomies
     });
   }
   // ======================================================================================
@@ -213,8 +191,8 @@ export class AddeditDoctorComponent implements OnInit {
       tech: ['', []],
       biller: ['', []],
       doctorsOfficeName: ['', []],
-      taxo_list:['', []],
-    
+      taxo_list: ['', []],
+
       password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: ['', []],
     }, {
@@ -223,7 +201,7 @@ export class AddeditDoctorComponent implements OnInit {
   }
 
   generateEditForm() {
-  
+
     this.docManageForm = this.formBuilder.group({
       // taxonomies:['', Validators.required],
       firstname: ['', [Validators.required]],
@@ -241,9 +219,8 @@ export class AddeditDoctorComponent implements OnInit {
       status: ['', []],
       tech: ['', []],
       biller: ['', []],
-      doctorsOfficeName: ['', []],   
-      taxo_list:['', []] 
-     
+      doctorsOfficeName: ['', []],
+      taxo_list: ['', []]
     });
   }
 
@@ -254,15 +231,14 @@ export class AddeditDoctorComponent implements OnInit {
         confirmpasswordInput = group.controls[confirmpasswordkye];
       if (passwordInput.value !== confirmpasswordInput.value) {
         return confirmpasswordInput.setErrors({ notEquivalent: true });
-      }
-      else {
+      } else {
         return confirmpasswordInput.setErrors(null);
       }
     };
   }
 
 
- 
+
 
   // =========================================MODAL functions==========================================
   openDialog(x: any): void {
@@ -283,15 +259,15 @@ export class AddeditDoctorComponent implements OnInit {
   allStateCityData() {
     this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
       this.states = response;
-      if (this.params_id!= null) {
+      if (this.params_id != null) {
         this.setDefaultValue(this.defaultData);
       }
-     
+
     });
 
     this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(response => {
       this.allCities = response;
-      if (this.params_id!= null) {
+      if (this.params_id != null) {
         this.setDefaultValue(this.defaultData);
       }
     });
@@ -336,7 +312,7 @@ export class AddeditDoctorComponent implements OnInit {
         this.doctorOfficeData = response.res;
       })
   }
- 
+
 
   /**getting all the biller data**/
   getAllBillerData() {
@@ -359,7 +335,7 @@ export class AddeditDoctorComponent implements OnInit {
     for (x in this.docManageForm.controls) {
       this.docManageForm.controls[x].markAsTouched();
     }
-    
+
     /* stop here if form is invalid */
     if (!this.docManageForm.valid) {
       // this.openDialog("Form is invalid");
@@ -375,38 +351,35 @@ export class AddeditDoctorComponent implements OnInit {
       } else {
         this.docManageForm.value.status = parseInt("0");;
       }
-   
-    /* start process to submited data */
-    let postData: any = {
-      "source": "users",
-      "data": Object.assign(this.docManageForm.value, this.condition),
-      "domainurl" : 'http://testbedpece.influxiq.com/reset-password',
-      "sourceobj": ["doctorsOfficeName"],
-      "token": this.cookieService.get('jwtToken')
 
-    };
-    this.http.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
-      if (response.status == "success") {
-        let action = "ok";
-        this.snackBar.open(this.message, action, {
-          duration: 2000,
-        });
-        // setTimeout(() => {
-        //   this.backToManagePage();
-        // }, 1000);
-      } else {
-        alert("Some error occurred. Please try again");
-      }
-    }, (error) => {
-      alert("Some error occurred. Please try again.");
-    });
+      /* start process to submited data */
+      let postData: any = {
+        "source": "users",
+        "data": Object.assign(this.docManageForm.value, this.condition),
+        "domainurl": environment.siteBaseUrl + 'reset-password',
+        "sourceobj": ["doctorsOfficeName"],
+        "token": this.cookieService.get('jwtToken')
+      };
+
+      this.http.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
+        if (response.status == "success") {
+          let action = "ok";
+          this.snackBar.open(this.message, action, {
+            duration: 2000,
+          });
+        } else {
+          this.snackBar.open(response.msg, '', {
+            duration: 2000,
+          });
+        }
+      }, (error) => {
+        alert("Some error occurred. Please try again.");
+      });
+
+    }
+
 
   }
-
-
-  }
-  // ==================================================================
-
 
   trackByFn(index) {
     return index;
@@ -466,18 +439,17 @@ export class ChangePasswordDoctorModal {
         confirmpasswordInput = group.controls[confirmpasswordkye];
       if (passwordInput.value !== confirmpasswordInput.value) {
         return confirmpasswordInput.setErrors({ notEquivalent: true });
-      }
-      else {
+      } else {
         return confirmpasswordInput.setErrors(null);
       }
     };
   }
 
   changePasswordFormSubmit() {
-    let x: any;
-    for (x in this.changePwdForm.controls) {
+    for (let x in this.changePwdForm.controls) {
       this.changePwdForm.controls[x].markAsTouched();
     }
+
     if (this.changePwdForm.valid) {
       delete this.changePwdForm.value.confirmpassword
       var data = {
@@ -485,9 +457,10 @@ export class ChangePasswordDoctorModal {
         "adminflag": 1,
         "newPassword": this.changePwdForm.value.password,
       }
+
       this.httpService.httpViaPost('changepassword', data).subscribe(response => {
       });
     }
-
   }
+
 }
