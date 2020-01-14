@@ -30,8 +30,10 @@
   height: 50px;
   border: none;
   padding: 0 10px; background: #e8e8e8;
-  width: 90px;
+  width: 55px;
 }
+
+.health_risk_report .patientName{ width: 52%!important}
 
 .health_risk_report table .order_input {
   width: 300px!important;
