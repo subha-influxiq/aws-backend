@@ -12,6 +12,7 @@ export interface DialogData {
   message: string;
   id: any;
 }
+
 @Component({
   selector: 'app-add-edit',
   templateUrl: './add-edit.component.html',

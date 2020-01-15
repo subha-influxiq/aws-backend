@@ -2,8 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import * as momentImported from 'moment';
 const moment = momentImported;
 
@@ -47,10 +49,11 @@ export class AdminDashboardComponent implements OnInit {
   public signedStatusArray: any = [];
   public billerStatusArray: any = [];
   public displayedColumns: string[] = ['no', 'date_added', 'patientName', 'record_type', 'techName', 'record', 'status'];
-  public allDataColumns: string[] = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'record', 'superBill', 'date', 'patientNamecopy', 'status','editRecord'];
+  public allDataColumns: string[] = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'date', 'patientNamecopy', 'status','editRecord'];
   public startDate: any;
   public endDate: any;
   public statusFlag : any;
+  public dialogRef: any;
 
   dataSource: MatTableDataSource<PeriodicElement>;
   allDataSource: MatTableDataSource<AllDataElement>;
@@ -60,12 +63,12 @@ export class AdminDashboardComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: false }) paginatorAll: MatPaginator;
 
-  constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute) {
+  constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute,
+    public dialog: MatDialog) {
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
 
     this.activatedRoute.data.subscribe(resolveData => {
-      console.log("===========", resolveData);
       this.allResolveData = resolveData.dataCount.data;
       let allData: AllDataElement[] = this.allResolveData.totalReportData;
       this.allDataSource = new MatTableDataSource(allData);
@@ -89,8 +92,7 @@ export class AdminDashboardComponent implements OnInit {
       "condition": searchJson,
       "token": this.jwtToken
     }
-    this.http.httpViaPost('datalist', data)
-      .subscribe(Response => {
+    this.http.httpViaPost('datalist', data).subscribe(Response => {
         this.allDataSource = Response.res;
       });
   }
@@ -117,16 +119,15 @@ export class AdminDashboardComponent implements OnInit {
       "source": "Patient-Record-Report_view",
       "condition": {
         "date" : {
-        $lte: moment(this.endDate).format('DD-MM-YYYY'),
-        $gte: moment(this.startDate).format('DD-MM-YYYY')
-      }
-    },
+          $lte: moment(this.endDate).format('DD-MM-YYYY'),
+          $gte: moment(this.startDate).format('DD-MM-YYYY')
+        }
+      },
       "token": this.jwtToken,
     }
-    this.http.httpViaPost('datalist', data)
-      .subscribe((response) => {
-        this.allDataSource = response.res;
-      });
+    this.http.httpViaPost('datalist', data).subscribe((response) => {
+      this.allDataSource = response.res;
+    });
   }
 
   dateReportsRangeSearch() {
@@ -141,10 +142,9 @@ export class AdminDashboardComponent implements OnInit {
     },
       "token": this.jwtToken,
     }
-    this.http.httpViaPost('datalist', data)
-      .subscribe((response) => {
-        this.dataSource = response.res;
-      });
+    this.http.httpViaPost('datalist', data).subscribe((response) => {
+      this.dataSource = response.res;
+    });
   }
 
   getStatusCountData() {
@@ -274,6 +274,77 @@ export class AdminDashboardComponent implements OnInit {
 
   downloadReport(link) {
     window.open(link, "_blank");
+  }
+
+  deleteReport(pk_id: any, index: number) {
+    let data: any = {
+      width: '250px',
+      data: { 
+        header: "Alert",
+        message: "Do you want to delete this record ?",
+        button1: { text: "No" },
+        button2: { text: "Yes" },
+      }
+    }
+
+    this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+    this.dialogRef.afterClosed().subscribe(result => {
+      switch(result) {
+        case "No":
+          break;
+        case "Yes":
+          this.deleteProcess(pk_id, index);
+          break;
+      }
+    });
+  }
+
+  deleteProcess(pk_id: any, index: number) {
+    var repostSignCond = {
+      "source": "patient_management",
+      "id": pk_id,
+      "token": this.jwtToken,
+    }
+    this.http.httpViaPost('deletesingledata', repostSignCond).subscribe((response) => {
+      if(response.status == 'success') {
+        this.allResolveData.totalReportData.splice(index, 1);
+        let allData: AllDataElement[] = this.allResolveData.totalReportData;
+        this.allDataSource = new MatTableDataSource(allData);
+
+        let data: any = {
+          width: '250px',
+          data: { 
+            header: "Success",
+            message: "Successfully delete.",
+            button1: { text: "OK" },
+            button2: { text: "" },
+          }
+        }
+    
+        this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+      } else {
+        let data: any = {
+          width: '250px',
+          data: { 
+            header: "Error",
+            message: "An error occord. Please try again.",
+            button1: { text: "Re-Try" },
+            button2: { text: "Close" },
+          }
+        }
+    
+        this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+        this.dialogRef.afterClosed().subscribe(result => {
+          switch(result) {
+            case "Close":
+              break;
+            case "Re-Try":
+              this.deleteProcess(pk_id, index);
+              break;
+          }
+        });
+      }
+    });
   }
 
 }

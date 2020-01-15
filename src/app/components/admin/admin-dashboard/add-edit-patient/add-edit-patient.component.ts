@@ -46,7 +46,7 @@ export class AddEditPatientComponent implements OnInit {
   
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
-    public cookie: CookieService, public snakBar : MatSnackBar,public dialog: MatDialog,
+    public cookie: CookieService, public snakBar : MatSnackBar, public dialog: MatDialog,
     public commonFunction: CommonFunction) {
       
       this.allCookies = this.cookie.getAll();
