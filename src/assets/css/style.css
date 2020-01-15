@@ -401,6 +401,7 @@
   padding: 0 5px;
   box-sizing: border-box;
 }
-
-.add_form .example-form .patients_info_wrapper .mat-card-content .mat-form-field-flex{ background: #fff; border: 1px solid #d0d0d0; padding: 0 5px; box-sizing: border-box;}
- 
+ .patients_info_wrapper .mat-card-content .mat-form-field .mat-form-field-flex{     background: #fff;
+  border: 1px solid #e6e4e4;
+  padding: 0 7px;}
+ /* .editPatient_wrapper .patients_info_wrapper .mat-card-content .mat-form-field .mat-form-field-flex{ background: #ddd;} */

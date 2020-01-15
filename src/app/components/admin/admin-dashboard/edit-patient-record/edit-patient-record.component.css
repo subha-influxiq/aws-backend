@@ -8,7 +8,8 @@
 .editPatient_wrapper .editItems .image_slider .img_w{ width: 100%; margin-bottom: 0; text-align: center; }
 .editPatient_wrapper .editItems .image_slider .img_w img{ max-width: 100%;}
 .action_button{ justify-content: center;}
-.action_button button{ margin: 0 8px; background: #1dbce9; color: #fff; text-transform: uppercase; border-radius: 0; min-width: 120px; font-family: "AvenirBlack";  font-size: 18px;  padding: 3px;}
+.action_button button{  background:#fd3535; color: #fff; text-transform: uppercase; border-radius: 0; min-width: 120px; font-family: "AvenirBlack";  font-size: 18px;  padding: 3px;}
+.action_button button:last-child{ margin-left: 10px; background:  #1dbce9;}
 .action_button button:first-child{ margin-left:0;}
 .action_button button:last-child{ margin-right:0;}
 .display_section{ width: 100%!important; margin: auto;}
@@ -26,56 +27,67 @@ width: 390px; border: 3px solid #d59d01; }
 
 .add_form .example-form .field_setmodel{ border: 1px solid #6fa6bb;}
 .add_form .example-form .field_setmodel .legend_model{ font-family: "AvenirLight"; font-size: 20px; text-transform: uppercase; color: #03a9f5;}
-.add_form .example-form .patients_info_wrapper{ display: inline-flex; flex-wrap: wrap;}
-.add_form .example-form .patients_info_wrapper  .mat-card-content { flex: 1 1 32%; margin: 0;}
+.add_form .example-form .patients_info_wrapper{ display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; width: 100%;}
+.add_form .example-form .patients_info_wrapper .mat-card-content { width: 32%; margin: 0.5%; flex-direction: column;}
+.add_form .example-form .patients_info_wrapper .mat-card-content .mat-form-field { width: 100%; }
+.add_form .example-form .patients_info_wrapper .gender_wrapper{ padding-bottom: 16px;}
+.add_form .example-form .patients_info_wrapper .gender_wrapper .patientGender{ background: #fff; display: flex; border: 1px solid #dedede; padding: 10px 4px;
+  box-sizing: border-box; border-bottom: 2px solid #c5c4c4; }
+.add_form .mat-card-content label{ margin-right: 5px; }
 
-.add_form .test_date_wrapper .mat-card-actions, 
-.add_form .test_date_wrapper .mat-card-content, 
+.add_form .test_date_wrapper .mat-card-actions,
+.add_form .test_date_wrapper .mat-card-content,
 .add_form .test_date_wrapper .mat-card-subtitle {
   display: inline-flex; margin-bottom: 16px; vertical-align: middle; justify-content: center; align-items: center; }
-.add_form .mat-card-content label , 
-.add_form .patient_diagnotes label{ font-family: "AvenirLight"; color: #000; font-size: 16px; line-height: 20px; width: 140px;}
+.add_form .mat-card-content label ,
+.add_form .patient_diagnotes label{ font-family: "AvenirLight"; color: #000; font-size: 14px; line-height: 20px; width: 140px;}
 .add_form .mat-card-content .mat-checkbox { margin: 0 5px; }
 .add_form .mat-card-content ,
 .add_form .patient_diagnotes .mat-form-field { position: relative; text-align: left; margin: 0 10px; }
 .add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0; border: 1px solid #43cef5; background: #fff; box-sizing: border-box;}
 .add_form .patient_diagnotes .example-full-width textarea{ resize: none; }
 .add_header { display: flex; margin: 0 16px;}
-.add_header button{ margin-left: auto; background: linear-gradient(180deg, #fac855, #e47e2a)!important; text-transform: uppercase; font-family: "RobotoBlack"; padding-top: 4px;
-}
+.add_header button{ margin-left: auto; background: linear-gradient(180deg, #fac855, #e47e2a)!important; text-transform: uppercase; font-family: "RobotoBlack"; padding-top: 4px; }
 .add_form .patient_diagnotes label{ width: 100%!important; margin: 5px 10px!important;}
+.add_form .test_date_wrapper .mat-card-content .subValue { margin-left: 5px; width: 20%; }
+.add_form .test_date_wrapper{ display: flex; justify-content: space-between; width: 100%; flex-wrap: wrap;}
+.add_form .test_date_wrapper .mat-card-content{ margin: 0; width: 49%;}
 
 @media screen and (max-width: 1600px){
   .add_form .mat-card-content label { width: 95px; }
+  .add_form .test_date_wrapper .mat-form-field{ width: 160px;}
 }
 @media screen and (max-width: 1460px){
   .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; line-height: 26px;}
   .add_form .mat-card-content{ margin: 0 2px; }
 }
 
-@media screen and (max-width: 1440px){  
+@media screen and (max-width: 1440px){
   .add_form .mat-card-content label { margin: 0; margin-right: 5px; }
+  .add_form .test_date_wrapper .mat-card-content { flex-direction: column; }
+  .add_form .mat-card-content label { width: 100%; margin: 0; margin-bottom: 6px; font-family: 'AvenirMedium'; line-height: 16px;}
+  .add_form .mat-card-content label br{ display: none;}
+  .add_form .test_date_wrapper .mat-form-field { width: 100%; }
+  .add_form .test_date_wrapper .mat-card-content .subValue { margin-left: 0; width: 100%;  margin-top: -10px; }
 }
- 
 @media screen and (max-width: 1199px){
-  .editPatient_wrapper .editItems { width: 100%; }
-  .editPatient_wrapper { display: flex; flex-direction: column; }
-  .add_form .test_date_wrapper .mat-card-actions, 
-  .add_form .test_date_wrapper .mat-card-content, 
-  .add_form .test_date_wrapper .mat-card-subtitle { width: 32%; }
+.editPatient_wrapper .editItems { width: 100%; }
+.editPatient_wrapper { display: flex; flex-direction: column; }
+.add_form .test_date_wrapper .mat-card-actions,
+.add_form .test_date_wrapper .mat-card-content,
+.add_form .test_date_wrapper .mat-card-subtitle { width: 32%; margin: 0.5%;}
+.add_form .test_date_wrapper { display: flex; flex-wrap: wrap; }
 
 }
-@media screen and (max-width: 1100px){
-  .add_form .example-form .patients_info_wrapper .mat-card-content { flex: 1 1 50%; margin: 0; }
-}
+
 @media screen and (max-width: 1000px){
   .add_form .submit_form button { width: 48%; }
 }
 @media screen and (max-width: 991px){
 .techdashboard_header .mat-toolbar-row { flex-direction: column; padding: 20px;}
 .techdashboard_header .mat-toolbar-row .quotation p { margin-top: 16px; }
-.add_form .test_date_wrapper .mat-card-actions, 
-  .add_form .test_date_wrapper .mat-card-content, 
+.add_form .test_date_wrapper .mat-card-actions,
+  .add_form .test_date_wrapper .mat-card-content,
   .add_form .test_date_wrapper .mat-card-subtitle { width: 48%; }
 }
 @media screen and (max-width: 768px){
