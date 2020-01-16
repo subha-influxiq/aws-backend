@@ -194,7 +194,7 @@
 
         <ng-container matColumnDef="doctorName">
           <th mat-header-cell *matHeaderCellDef> Doctor Name</th>
-          <td mat-cell *matCellDef="let element" data-label="Doctor Name"> {{ element.doctorname }} </td>
+          <td mat-cell *matCellDef="let element" data-label="Doctor Name" innerHTML="{{ element.doctorname }}">  </td>
         </ng-container>
 
         <ng-container matColumnDef="techName">
