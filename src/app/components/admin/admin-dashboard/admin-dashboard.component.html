@@ -90,8 +90,9 @@
   </mat-card-content>
 
 
+  <!-- Report Status Section Start -->
   <mat-card-content class="admin_superbillsection">
-    <h1>Physician Report Status</h1>
+    <h1>Physician Reports Status</h1>
     <mat-card-content class="biller_wrapper">
 
       <mat-card-content class="super_bill_item sp_one">
@@ -105,8 +106,8 @@
           <p>Total No of <br>
             Manual Records
           </p>
-          <h2> {{ allResolveData.totalImageNotProcessCount }} </h2>
-          <button mat-flat-button routerLink="/admin/images-not-process">view all</button>
+          <h2> {{ allResolveData.totalMannualReportCount }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total Mannual Reports');">view all</button>
         </span>
       </mat-card-content>
 
@@ -121,13 +122,14 @@
           <p>Total No of <br>
             File Records
           </p>
-          <h2> {{ allResolveData.totalTextNotProcessCount }} </h2>
-          <button mat-flat-button routerLink="/admin/fileds-not-process">view all</button>
+          <h2> {{ allResolveData.totalFileReportCount }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
         </span>
       </mat-card-content>
 
     </mat-card-content>
   </mat-card-content>
+  <!-- Report Status Section End -->
 
 
   <mat-card-content class="admin_superbillsection">

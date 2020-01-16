@@ -185,23 +185,37 @@ export class AdminDashboardComponent implements OnInit {
 
 
   viewReportProcessData(flag: string) {
-    this.statusFlag = flag;
+    this.htmlText.headerText = flag;
+    var repostSignCond: any = {};
     switch (flag) {
+      /* Report Status Section */
+      case 'Total Mannual Reports':
+        repostSignCond = {
+          "source": "Patient-Record-Report_view",
+          "condition": {
+            "report_type": "mannual"
+          },
+          "token": this.jwtToken,
+        }
+        break;
+      case 'Total File Reports':
+          repostSignCond = {
+            "source": "Patient-Record-Report_view",
+            "condition": {
+              "report_type": "file"
+            },
+            "token": this.jwtToken,
+          }
+          break;
+      /* Report Status Section */
       case 'Reports Uploaded':
-        this.htmlText.headerText = "Reports Uploaded";
-        var data: any = {
+        repostSignCond = {
           "source": "Patient-Record-Report_view",
           "token": this.jwtToken,
         }
-        this.http.httpViaPost('datalist', data).subscribe((response) => {
-          let allData: AllDataElement[] = this.allResolveData.totalReportData;
-          this.allDataSource = new MatTableDataSource(allData);
-          this.allDataSource.paginator = this.paginatorAll;
-        });
         break;
       case 'Report Processed':
-        this.htmlText.headerText = "Reports Processed";
-        var data: any = {
+        repostSignCond = {
           "source": "Patient-Record-Report_view",
           "condition": {
             "page_1": { $exists:true },
@@ -214,48 +228,37 @@ export class AdminDashboardComponent implements OnInit {
           },
           "token": this.jwtToken,
         }
-        this.http.httpViaPost('datalist', data).subscribe((response) => {
-          let allData: AllDataElement[] = response.res;
-          this.allDataSource = new MatTableDataSource(allData);
-          this.allDataSource.paginator = this.paginatorAll;
-        });
         break;
       case 'Report Signed':
-        this.htmlText.headerText = "Reports Signed";
-        var repostSignCond = {
+        repostSignCond = {
           "source": "Patient-Record-Report_view",
           "condition": {
             "doctor_signature": { $exists:true }
           },
           "token": this.jwtToken,
         }
-        this.http.httpViaPost('datalist', repostSignCond).subscribe((response) => {
-          let allData: AllDataElement[] = response.res;
-          this.allDataSource = new MatTableDataSource(allData);
-          this.allDataSource.paginator = this.paginatorAll;
-        });
         break;
       case 'Super Bill':
         /////////////////////////////////////////
         //////////////// Pending ////////////////
         /////////////////////////////////////////
-        this.htmlText.headerText = "Sent to Super Bill";
-        var repostSignCond = {
+        repostSignCond = {
           "source": "Patient-Record-Report_view",
           "condition": {
             "doctor_signature": { $exists:true }
           },
           "token": this.jwtToken,
         }
-        this.http.httpViaPost('datalist', repostSignCond).subscribe((response) => {
-          let allData: AllDataElement[] = response.res;
-          this.allDataSource = new MatTableDataSource(allData);
-          this.allDataSource.paginator = this.paginatorAll;
-        });
         break;
       default:
         break;
     }
+
+    this.http.httpViaPost('datalist', repostSignCond).subscribe((response) => {
+      let allData: AllDataElement[] = response.res;
+      this.allDataSource = new MatTableDataSource(allData);
+      this.allDataSource.paginator = this.paginatorAll;
+    });
   }
 
   myFunction() {
