@@ -78,7 +78,6 @@ export class DownloadSuperbillerComponent implements OnInit {
       this.htmlText.password = "";
       this.htmlText.notBotText = "";
       this.htmlText.notBotInput = "";
-      this.htmlText.passwordAttemptsCount = 0;
 
       /* Collect User Information for Download record */
       let deviceInfo: any = this.deviceService.getDeviceInfo();
