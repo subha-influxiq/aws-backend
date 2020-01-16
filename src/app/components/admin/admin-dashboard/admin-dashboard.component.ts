@@ -6,6 +6,7 @@ import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
+import { DownloadDetailsComponent } from './download-details/download-details.component';
 import * as momentImported from 'moment';
 const moment = momentImported;
 
@@ -250,6 +251,15 @@ export class AdminDashboardComponent implements OnInit {
           "token": this.jwtToken,
         }
         break;
+      case 'Download Bill':
+        repostSignCond = {
+          "source": "Patient-Record-Report_view",
+          "condition": {
+            "download_count": { $exists: true }
+          },
+          "token": this.jwtToken,
+        }
+        break;
       default:
         break;
     }
@@ -348,6 +358,16 @@ export class AdminDashboardComponent implements OnInit {
         });
       }
     });
+  }
+
+  viewDownloadDetails(id: any) {
+    let data: any = {
+      width: '700px',
+      data: {
+        report_id: id
+      }
+    };
+    this.dialogRef = this.dialog.open(DownloadDetailsComponent, data);
   }
 
 }

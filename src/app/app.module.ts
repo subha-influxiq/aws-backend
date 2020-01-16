@@ -104,6 +104,7 @@ import { PatientReportViewComponent } from './components/doctor/doctor-dashboard
 import { EditPatientRecordComponent } from './components/admin/admin-dashboard/edit-patient-record/edit-patient-record.component';
 import { ReportNotProcessComponent } from './components/admin/report-not-process/report-not-process.component';
 import { DownloadSuperbillerComponent } from './components/biller/download-superbiller/download-superbiller.component';
+import { DownloadDetailsComponent } from './components/admin/admin-dashboard/download-details/download-details.component';
 
 @NgModule({
   declarations: [
@@ -172,7 +173,8 @@ import { DownloadSuperbillerComponent } from './components/biller/download-super
     DoctorViewDialogComponent,
     EditPatientRecordComponent,
     ReportNotProcessComponent,
-    DownloadSuperbillerComponent
+    DownloadSuperbillerComponent,
+    DownloadDetailsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -195,8 +197,18 @@ import { DownloadSuperbillerComponent } from './components/biller/download-super
 
   providers: [HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }, CookieService, AuthguardService, HttpServiceService, DatePipe, CommonFunction],
   bootstrap: [AppComponent],
-  entryComponents:[ChangePasswordDoctorModal,Dialogtest,ChangePasswordModal,ChangePasswordAdminModal,ChangePasswordDoctorOfficeModal
-    ,DialogBoxComponent,PasswordDialogBoxComponent,UploadDialogBoxComponent,TestComponent,DoctorViewDialogComponent]
+  entryComponents:[
+    ChangePasswordDoctorModal,
+    Dialogtest,ChangePasswordModal,
+    ChangePasswordAdminModal,
+    ChangePasswordDoctorOfficeModal,
+    DialogBoxComponent,
+    PasswordDialogBoxComponent,
+    UploadDialogBoxComponent,
+    TestComponent,
+    DoctorViewDialogComponent,
+    DownloadDetailsComponent
+  ]
 
 })
 export class AppModule {
