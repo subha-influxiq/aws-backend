@@ -37,7 +37,6 @@ export class DownloadSuperbillerComponent implements OnInit {
     let loginCHeck: any = this.cookieService.getAll();
     if(Object.keys(loginCHeck).length > 0) {
       let userDetails = JSON.parse(loginCHeck.user_details);
-      console.log("User Details >>>----->",  userDetails);
     }
 
     /* Check Route ID */
@@ -97,6 +96,12 @@ export class DownloadSuperbillerComponent implements OnInit {
         userDetails["type"] = "biller";
       }
 
+      if(typeof(this.reportData.download_count) == "undefined") {
+        this.reportData.download_count = 1;
+      } else {
+        this.reportData.download_count = this.reportData.download_count + 1;
+      }
+
       let postData: any = {
         "source": "report_download",
         "data": {
@@ -109,6 +114,7 @@ export class DownloadSuperbillerComponent implements OnInit {
           "downloader_information": userDetails,
           "device_information": deviceInfo
         },
+        "download_count": this.reportData.download_count,
         "sourceobj": ["report_id", "biller_id", "tech_id", "doctor_id"],
         "token": this.htmlText.tempToken
       };

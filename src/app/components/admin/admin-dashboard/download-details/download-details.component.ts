@@ -20,10 +20,9 @@ export interface DialogData {
 export class DownloadDetailsComponent implements OnInit {
 
   public data: any;
-  public displayedColumns = ['position', 'system', 'browser', 'device', 'download_attempt', 'date_time'];
+  public loader: boolean = true;
+  public displayedColumns = ['position', 'ip_address', 'os', 'browser', 'device', 'download_attempt', 'date_time'];
   public dataSource: any;
-
-
 
   constructor(public dialogRef: MatDialogRef<DownloadDetailsComponent>,
     @Inject(MAT_DIALOG_DATA) public dialogData: DialogData, public router: Router,
@@ -44,7 +43,7 @@ export class DownloadDetailsComponent implements OnInit {
       "token": jwtToken
     }
     this.http.httpViaPost('datalist', data).subscribe(response => {
-      console.log(response);
+      this.loader = false;
       this.dataSource = new MatTableDataSource(response.res);
     });
   }

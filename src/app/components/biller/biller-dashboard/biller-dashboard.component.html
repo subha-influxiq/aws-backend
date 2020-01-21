@@ -51,7 +51,7 @@
           <p> Total Download
           </p>
           <h2> {{ allResolveData.totalDownloadCount }} </h2>
-          <button mat-flat-button (click)="viewReportData('downloaded');">view all</button>
+          <button mat-flat-button (click)="viewReportData('Total Downloaded');">view all</button>
         </span>
       </mat-card-content>
       <mat-card-content class="super_bill_item sp_three">
@@ -64,7 +64,7 @@
         <span class="container_wrapper">
           <p> Pending Downloads</p>
           <h2> {{ allResolveData.totalNotDownloadCount }} </h2>
-          <button mat-flat-button (click)="viewReportData('not_downloaded');">view all</button>
+          <button mat-flat-button (click)="viewReportData('Not Downloaded');">view all</button>
         </span>
       </mat-card-content>
 
@@ -151,7 +151,7 @@
           <th mat-header-cell *matHeaderCellDef>Action</th>
           <td mat-cell *matCellDef="let element"> <span>
               <button mat-button class="viewButton"> View</button>
-              <button mat-button class="editButton downloadBtn" (click)="downloadReport(element.file_path);"> Download
+              <button mat-button class="editButton downloadBtn" (click)="downloadReport(element);"> Download
               </button>
             </span></td>
         </ng-container>

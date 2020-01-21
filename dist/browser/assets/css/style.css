@@ -263,9 +263,7 @@
 /* admin css */
 .admin_wrapper{ width: 1400px; margin: 20px auto; box-sizing: border-box;}
 .searchcard { padding: 0; }
-
-.sp_five{ background: #ff00bc;}
-.sp_six{ background: #00ffc4;}
+ 
 
 /* admin css */
 
@@ -321,11 +319,13 @@
 .admin_superbillsection h1{ font-size: 20px; font-family: 'AvenirMedium'; color: #535353; text-transform: capitalize; margin-bottom: 10px;  border-bottom: 1px solid #9c9c9c;
   padding-bottom: 6px; }
 .admin_superbillsection .biller_wrapper  { display: flex; justify-content: center;}
-.admin_superbillsection .biller_wrapper .super_bill_item{ width: 100%; margin: .5%; padding:16px; display: flex;  padding-top: 2%; border-radius: 10px; }
+.admin_superbillsection .biller_wrapper .super_bill_item{ width: 100%; margin: .5%; padding:10px; display: flex;  padding-top: 2%; border-radius: 10px; }
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(1){ background: #4099ff url("../../../../assets/images/admincircle_icon1.png") no-repeat right top; background-size: 120px;}
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(2){ background: #ab8ce4 url("../../../../assets/images/admincircle_icon2.png") no-repeat right top; background-size: 120px;}
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(3){ background: #26c6da url("../../../../assets/images/admincircle_icon3.png") no-repeat right top; background-size: 120px;}
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(4){ background: #ff5370 url("../../../../assets/images/admincircle_icon4.png") no-repeat right top; background-size: 110px;;}
+.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(5){ background: #ea53c2 url("../../../../assets/images/admincircle_icon1.png") no-repeat right top; background-size: 110px;;}
+.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(6){ background: #45dc92 url("../../../../assets/images/admincircle_icon3.png") no-repeat right top; background-size: 110px;;}
 .admin_superbillsection .biller_wrapper .super_bill_item .container_wrapper{ display: flex; flex-direction: column; align-items: self-end; width: 80%; box-sizing: border-box;  }
 .admin_superbillsection .biller_wrapper .super_bill_item span h2{ color: #fff; font-size: 40px; text-transform: uppercase; font-family: 'AvenirMedium'; margin: 10px 0; text-shadow: 1px 1px 0px #dadada; word-break: break-all;}
 .admin_superbillsection .biller_wrapper .super_bill_item span P{ color: #fff; font-size: 24px; font-family: 'AvenirMedium'; margin: 0; line-height: 26px; text-shadow: 1px 1px 0px #dadada;}
@@ -341,6 +341,12 @@
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper{ width: 20%; position: relative; padding: 0; display: flex; padding-top: 4%; box-sizing: border-box; }
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle{ margin: 0;}
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle img{ max-width: 100%;}
+.superbillerContainer .biller_wrapper .super_bill_item span P{ font-size: 18px!important; line-height: 20px!important;} 
+.superbillerContainer .biller_wrapper .super_bill_item span h2{ margin: 0;} 
+.superbillerContainer .biller_wrapper .super_bill_item span button { line-height: 28px!important; width: 90px!important; }
+ 
+
+
 .adminTables .viewButton{ background-color:var(--button-color2); width: auto; height: auto; line-height: initial; padding: 2px 10px; box-shadow: none; border-radius: 2px;
     font-family: "AvenirMedium"; color: #fff; min-width: inherit;}
 .adminTables .editButton{ background-color:var(--button-color1); width: auto; height: auto; line-height: initial; padding: 2px 10px; box-shadow: none; border-radius: 2px;
@@ -369,6 +375,15 @@
 .table_wrapper .action_bar .mat-form-field.mat-focused .mat-form-field-ripple { background-color: transparent !important;}
 .table_wrapper .action_bar .mat-form-field-appearance-legacy .mat-form-field-underline { height: 0; }
 .add_button{ background: #e5ae00; font-family: "AvenirMedium"; color: #fff; text-transform: capitalize; box-shadow: none; border-radius: 3px; font-size: 18px;}
+.table_wrapper .mat-table .buttons_ro{ display: inline-block; }
+.table_wrapper .mat-table .buttons_ro button{ margin: 0 2px; }
+.table_wrapper .mat-table .buttons_ro button:first-child{ margin-left: 0px;  }       
+.table_wrapper .mat-table .buttons_ro button:last-child{ margin-right: 0px;  }       
+.table_wrapper .mat-table .mat-column-doctorName .doctor_name{ margin: 6px 0; }
+.table_wrapper .mat-table .mat-column-doctorName .doctor_name span{ font-family: 'AvenirBlack'; color: #404242; }
+
+.biller_Dashboard .mat-table .mat-column-Doctor-Name .doctor_name{ margin: 6px 0; }
+.biller_Dashboard .mat-table .mat-column-Doctor-Name .doctor_name span{ font-family: 'AvenirBlack'; color: #404242; }
 
 /* searches */
 .admin_table .action_bar{ height: auto; justify-content: space-between;}
@@ -403,6 +418,7 @@
   padding: 0 5px;
   box-sizing: border-box;
 }
-
-.add_form .example-form .patients_info_wrapper .mat-card-content .mat-form-field-flex{ background: #fff; border: 1px solid #d0d0d0; padding: 0 5px; box-sizing: border-box;}
- 
+ .patients_info_wrapper .mat-card-content .mat-form-field .mat-form-field-flex{     background: #fff;
+  border: 1px solid #e6e4e4;
+  padding: 0 7px;}
+ /* .editPatient_wrapper .patients_info_wrapper .mat-card-content .mat-form-field .mat-form-field-flex{ background: #ddd;} */

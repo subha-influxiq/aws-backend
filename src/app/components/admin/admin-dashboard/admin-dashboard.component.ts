@@ -10,54 +10,32 @@ import { DownloadDetailsComponent } from './download-details/download-details.co
 import * as momentImported from 'moment';
 const moment = momentImported;
 
-export interface PeriodicElement {
-  no: number;
-  patientName: string;
-  record_type: string;
-  date_added: string;
-  status: string;
-}
-
-export interface AllDataElement {
-  no: number;
-  patientName: string;
-  doctorName: string;
-  billerName: string;
-  record: string;
-  billGenerationDate: string;
-  techName: string;
-  billSentDate: string;
-  superBill: string;
-  date: string;
-  status: string;
-}
-
 
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.css']
 })
+
 export class AdminDashboardComponent implements OnInit {
 
   public jwtToken: string = "";
   public htmlText: any = {
-    headerText: ""
+    headerText: "Patient Reports"
   };
+
   public allResolveData: any = {};
   public uploadedStatusArray: any = [];
   public processedStatusArray: any = [];
   public signedStatusArray: any = [];
   public billerStatusArray: any = [];
-  public displayedColumns: string[] = ['no', 'date_added', 'patientName', 'record_type', 'techName', 'record', 'status'];
-  public allDataColumns: string[] = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'date', 'patientNamecopy', 'status','editRecord'];
+  public allDataColumns: string[];
   public startDate: any;
   public endDate: any;
   public statusFlag : any;
   public dialogRef: any;
 
-  dataSource: MatTableDataSource<PeriodicElement>;
-  allDataSource: MatTableDataSource<AllDataElement>;
+  allDataSource: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   public allDataList: any = [];
@@ -69,15 +47,17 @@ export class AdminDashboardComponent implements OnInit {
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
 
+    /* Set Table Header */
+    this.allDataColumns = ['no', 'techName', 'report_type','doctorName', 'date', 'patientNamecopy', 'status','editRecord'];
+
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData = resolveData.dataCount.data;
-      let allData: AllDataElement[] = this.allResolveData.totalReportData;
+      let allData = this.allResolveData.totalReportData;
       this.allDataSource = new MatTableDataSource(allData);
     });
   }
 
   ngOnInit() {
-    this.allDataSource.paginator = this.paginatorAll;
   }
 
   ngAfterViewInit() {
@@ -87,7 +67,7 @@ export class AdminDashboardComponent implements OnInit {
   filterByName(key: string, value: string) {
     let searchJson: any = {};
     searchJson[key] = value.toLowerCase();
-    console.log("searchh",searchJson);
+
     var data = {
       "source": "Patient-Record-Report_view",
       "condition": searchJson,
@@ -110,7 +90,7 @@ export class AdminDashboardComponent implements OnInit {
     this.http.httpViaPost('datalist', data)
       .subscribe(Response => {
         let result: any = Response.res;
-        this.dataSource = result;
+        //this.dataSource = result;
       });
 
   }
@@ -144,7 +124,7 @@ export class AdminDashboardComponent implements OnInit {
       "token": this.jwtToken,
     }
     this.http.httpViaPost('datalist', data).subscribe((response) => {
-      this.dataSource = response.res;
+      //this.dataSource = response.res;
     });
   }
 
@@ -188,6 +168,9 @@ export class AdminDashboardComponent implements OnInit {
   viewReportProcessData(flag: string) {
     this.htmlText.headerText = flag;
     var repostSignCond: any = {};
+    /* Set Table Header */
+    this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'date', 'patientNamecopy', 'status','editRecord'];
+
     switch (flag) {
       /* Report Status Section */
       case 'Total Mannual Reports':
@@ -260,12 +243,21 @@ export class AdminDashboardComponent implements OnInit {
           "token": this.jwtToken,
         }
         break;
+      case 'Reports Pending Sing':
+        repostSignCond = {
+          "source": "Patient-Record-Report_view",
+          "condition": {
+            "doctor_signature": { $exists:false }
+          },
+          "token": this.jwtToken,
+        }
+        break;
       default:
         break;
     }
 
     this.http.httpViaPost('datalist', repostSignCond).subscribe((response) => {
-      let allData: AllDataElement[] = response.res;
+      let allData = response.res;
       this.allDataSource = new MatTableDataSource(allData);
       this.allDataSource.paginator = this.paginatorAll;
     });
@@ -321,7 +313,7 @@ export class AdminDashboardComponent implements OnInit {
     this.http.httpViaPost('deletesingledata', repostSignCond).subscribe((response) => {
       if(response.status == 'success') {
         this.allResolveData.totalReportData.splice(index, 1);
-        let allData: AllDataElement[] = this.allResolveData.totalReportData;
+        let allData = this.allResolveData.totalReportData;
         this.allDataSource = new MatTableDataSource(allData);
 
         let data: any = {
