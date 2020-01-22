@@ -94,6 +94,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
       prefix_93922: [true],
       no_diagnosis_detected: [false],
 
+      //old
       E1040: [false],
       E854: [false],
       E1041: [false],
@@ -168,19 +169,37 @@ export class HealthriskSystemEncounterComponent implements OnInit {
       Z139: [false],
       I10: [false],
       prefix_1951: [false],
+
+      //new
+      E0840: [false],
+      R0889: [false],
+      I70213: [false],
+      G629: [false],
+      I70212: [false],
+      G200: [false],
+      I7389: [false],
+      I70211: [false],
+      E1059: [false],
+      I70222: [false],
+      I2510: [false],
+      I70268: [false],
+      I70223: [false],
+      G458: [false],
+      I70228: [false],
+
       additional_chart_notes: [],
 
       testDate: ['', Validators.required],
-     
+
       signDate: [dateformat],
 
-
       AIPTG_H: [''],
-    })
+    });
     if (this.cookiesData.type == 'admin') {
       this.patientEncounterForm.disable();
     }
-    this.getPatientData(this.activatedRoute.snapshot.params._id);
+    console.log("=============params._id", this.activatedRoute.snapshot.params._id_object);
+    this.getPatientData(this.activatedRoute.snapshot.params._id_object);
   }
 
   ngOnInit() {
@@ -212,7 +231,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
 
   getPatientData(id: any) {
     var data = {
-      "source": "patient_management_view_view_view",
+      "source": "patient_management_condition_view",
       "condition": {
         "_id_object": id
       },
@@ -224,14 +243,14 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         patientDetails = response.res[0];
         this.pdata = response.res[0];
         this.patientSingleData = response.res;
-        console.log("encounter form dataaa",this.patientSingleData);
+        console.log("encounter form dataaa", this.patientSingleData);
         this.patientEncounterForm.controls['patientName'].patchValue(patientDetails.patientName);
         this.patientEncounterForm.controls['physicalOrdering'].patchValue(this.cookiesData.firstname + ' ' + this.cookiesData.lastname);
         this.patientEncounterForm.controls['doctor_signature'].patchValue(this.cookiesData.doctor_signature);
         this.patientEncounterForm.controls['gender'].patchValue(patientDetails.gender);
         this.patientEncounterForm.controls['testDate'].patchValue(patientDetails.testDate);
         this.patientEncounterForm.controls['birthDate'].patchValue(patientDetails.birthDate);
-        
+
         let fieldText: string = '';
         if (patientDetails.AIPTG_H != 0)
           fieldText += '** ' + patientDetails.AIPTG_H + '\n\n';
@@ -260,7 +279,6 @@ export class HealthriskSystemEncounterComponent implements OnInit {
 
         if (this.pdata.I10 == 1)
           this.patientEncounterForm.controls['I10'].patchValue(true);
-
 
         if (this.pdata.I739 == 1)
           this.patientEncounterForm.controls['I739'].patchValue(true);
@@ -331,8 +349,50 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         if (this.pdata.R000 == 1)
           this.patientEncounterForm.controls['R000'].patchValue(true);
 
-       
+        if (this.pdata.E0840 == 1)
+          this.patientEncounterForm.controls['E0840'].patchValue(true);
 
+        if (this.pdata.R0889 == 1)
+          this.patientEncounterForm.controls['E0840'].patchValue(true);
+          
+        if (this.pdata.I70213 == 1)
+          this.patientEncounterForm.controls['I70213'].patchValue(true);
+
+        if (this.pdata.G629 == 1)
+          this.patientEncounterForm.controls['G629'].patchValue(true);
+
+        if (this.pdata.I70212 == 1)
+          this.patientEncounterForm.controls['I70212'].patchValue(true);
+
+        if (this.pdata.G200 == 1)
+          this.patientEncounterForm.controls['G200'].patchValue(true);
+
+        if (this.pdata.I7389 == 1)
+          this.patientEncounterForm.controls['E0840'].patchValue(true);
+
+        if (this.pdata.I70211 == 1)
+          this.patientEncounterForm.controls['I70211'].patchValue(true);
+
+        if (this.pdata.E1059 == 1)
+          this.patientEncounterForm.controls['E1059'].patchValue(true);
+
+        if (this.pdata.I70222 == 1)
+          this.patientEncounterForm.controls['I70222'].patchValue(true);
+
+        if (this.pdata.I2510 == 1)
+          this.patientEncounterForm.controls['I2510'].patchValue(true);
+
+        if (this.pdata.I70268 == 1)
+          this.patientEncounterForm.controls['I70268'].patchValue(true);
+
+        if (this.pdata.I70223 == 1)
+          this.patientEncounterForm.controls['I70223'].patchValue(true);
+
+        if (this.pdata.G458 == 1)
+          this.patientEncounterForm.controls['G458'].patchValue(true);
+
+        if (this.pdata.I70228 == 1)
+          this.patientEncounterForm.controls['I70228'].patchValue(true);
 
         /* After complete all patch value */
         if (this.patientEncounterForm.value.E1040 == false ||
