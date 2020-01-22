@@ -7,6 +7,7 @@ import { HttpServiceService } from '../../../services/http-service.service';
 import { MatTableDataSource } from '@angular/material';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
+import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatSnackBar } from '@angular/material';
 import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component';
 import * as momentImported from 'moment';
@@ -67,7 +68,8 @@ export class DoctorDashboardComponent implements OnInit {
   public allDataSource_skip: any = ["patientName"];
 
   constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService,
-    public http: HttpServiceService, public activatedRoute: ActivatedRoute, public snackBar: MatSnackBar) {
+    public http: HttpServiceService, public activatedRoute: ActivatedRoute, public matSnackBar: MatSnackBar,
+    public deviceService: DeviceDetectorService) {
     let allcookies: any = cookie.getAll();
     this.authData["user_details"] = JSON.parse(cookie.get('user_details'));
     this.authData["jwtToken"] = cookie.get('jwtToken');
@@ -173,7 +175,7 @@ export class DoctorDashboardComponent implements OnInit {
       })
   }
 
-  viewReportProcessData(flag: string) {
+  viewReportProcessData(flag: string = null) {
     /* Open modal */
     let modalData: any = {
       panelClass: 'bulkupload-dialog',
@@ -235,6 +237,19 @@ export class DoctorDashboardComponent implements OnInit {
         }
         break;
       default:
+        var cond = {
+          "source": "",
+          "condition": {
+            "doctor_id": this.authData.user_details._id
+          },
+          "token": this.authData.jwtToken
+        }
+        this.http.httpViaPost('doctor-dashboard', cond).subscribe(response => {
+          if(response.res.length > 0) {
+            this.allResolveData = response;
+            this.allDataSource = new MatTableDataSource(this.allResolveData.data.allReportData);
+          }
+        });
         break;
     }
   }
@@ -298,7 +313,7 @@ export class DoctorDashboardComponent implements OnInit {
               if (response.status = "success") {
                 let message = "Successfully Send";
                 let action = "OK";
-                this.snackBar.open(message, action, {
+                this.matSnackBar.open(message, action, {
                   duration: 2000,
                 });
               }
@@ -327,8 +342,79 @@ export class DoctorDashboardComponent implements OnInit {
     console.log("View Button...", this.allDataSource[index]);
   }
 
-  downloadReport(link) {
-    window.open(link, "_blank");
+  downloadReport(report: any) {
+    if(typeof(report.download_count) == "undefined") {
+      report.download_count = 1;
+    } else {
+      report.download_count = report.download_count + 1;
+    }
+
+    /* Collect User Information for Download record */
+    let deviceInfo: any = this.deviceService.getDeviceInfo();
+    deviceInfo["isMobile"] = this.deviceService.isMobile();
+    deviceInfo["isTablet"] = this.deviceService.isTablet();
+    deviceInfo["isDesktop"] = this.deviceService.isDesktop();
+    
+    /* Set downloader information */
+    var userDetails = {
+      id: this.authData.user_details._id,
+      type: this.authData.user_details.type
+    };
+
+    let postData: any = {
+      "source": "report_download",
+      "data": {
+        "report_id": report._id,
+        "biller_id": this.authData.user_details._id,
+        "tech_id": report.tech_id,
+        "doctor_id": report.doctor_id,
+        "ip": this.htmlText.ip,
+        "download_attempt": 1,
+        "downloader_information": userDetails,
+        "device_information": deviceInfo
+      },
+      "sourceobj": ["report_id", "biller_id", "tech_id", "doctor_id"],
+      "download_count": report.download_count,
+      "token": this.authData.jwtToken
+    };
+
+    this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
+      if(response.status == 'success') {
+        this.matSnackBar.open("Start downloading.", "Ok", {
+          duration: 3000
+        });
+        window.open(report.file_path, "_blank");
+
+        this.refreshDashboard();
+      } else {
+        this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+          duration: 3000
+        });
+      }
+    });
+  }
+
+  refreshDashboard() {
+    let postData: any = {
+      source: "Patient-Record-Report_view",
+      condition: {
+        biller_id: this.authData.user_details._id
+      }
+    };
+    this.http.httpViaPost("biller-dashboard", postData).subscribe(response => {
+      if(response.status == 'success') {
+        this.allResolveData = response.data;
+        //this.viewReportProcessData(this.htmlText.tableHeaderText);
+      } else {
+        this.matSnackBar.open("Please wait...", "", {
+          duration: 1000
+        });
+
+        setTimeout(() => {
+          this.refreshDashboard();
+        }, 1000);
+      }
+    });
   }
 
 }

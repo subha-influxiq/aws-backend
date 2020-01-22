@@ -401,7 +401,7 @@
             <button mat-button type="button" *ngIf="htmlText.headerText == 'Download Bill'" class="viewButton" type="button" (click)="viewDownloadDetails(element._id);">Details</button>
             <button mat-button type="button" *ngIf="element.report_type == 'mannual' || (element.report_type == 'file' && element.images)" class="editButton" [routerLink]="['/admin/patient-record/edit',element._id]">Edit</button>
             <button mat-button type="button" *ngIf="element.report_type == 'file' && !element.images" class="editButton downloadBtn">Processing</button>
-            <button mat-button type="button" *ngIf="element.status != 1" class="editButton downloadBtn" (click)="downloadReport(element.download_link);">Download</button>
+            <button mat-button type="button" *ngIf="element.status != 1" class="editButton downloadBtn" (click)="downloadReport(element);">Download</button>
             <button mat-button type="button" class="editButton downloadBtn" (click)="deleteReport(element._id, i);">Delete</button>
         </span>
         </td>

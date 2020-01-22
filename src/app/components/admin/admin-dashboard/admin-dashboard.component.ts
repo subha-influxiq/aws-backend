@@ -7,6 +7,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { DownloadDetailsComponent } from './download-details/download-details.component';
+import { DeviceDetectorService } from 'ngx-device-detector';
+import { MatSnackBar } from '@angular/material';
 import * as momentImported from 'moment';
 const moment = momentImported;
 
@@ -19,6 +21,7 @@ const moment = momentImported;
 
 export class AdminDashboardComponent implements OnInit {
 
+  public loginUserData: any = {};
   public jwtToken: string = "";
   public htmlText: any = {
     headerText: "Patient Reports"
@@ -43,8 +46,12 @@ export class AdminDashboardComponent implements OnInit {
   @ViewChild(MatPaginator, { static: false }) paginatorAll: MatPaginator;
 
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute,
-    public dialog: MatDialog) {
-    /* Get Auth Token */
+    public dialog: MatDialog, public deviceService: DeviceDetectorService, private matSnackBar: MatSnackBar) {
+    
+    this.loginUserData["user_details"] = JSON.parse(cookieService.get('user_details'));
+    this.loginUserData["jwtToken"] = cookieService.get('jwtToken');
+
+      /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
 
     /* Set Table Header */
@@ -277,8 +284,79 @@ export class AdminDashboardComponent implements OnInit {
     this.router.navigateByUrl('admin/doctor-management/list');
   }
 
-  downloadReport(link) {
-    window.open(link, "_blank");
+  downloadReport(report: any) {
+    if(typeof(report.download_count) == "undefined") {
+      report.download_count = 1;
+    } else {
+      report.download_count = report.download_count + 1;
+    }
+
+    /* Collect User Information for Download record */
+    let deviceInfo: any = this.deviceService.getDeviceInfo();
+    deviceInfo["isMobile"] = this.deviceService.isMobile();
+    deviceInfo["isTablet"] = this.deviceService.isTablet();
+    deviceInfo["isDesktop"] = this.deviceService.isDesktop();
+    
+    /* Set downloader information */
+    var userDetails = {
+      id: this.loginUserData.user_details._id,
+      type: this.loginUserData.user_details.type
+    };
+
+    let postData: any = {
+      "source": "report_download",
+      "data": {
+        "report_id": report._id,
+        "biller_id": this.loginUserData.user_details._id,
+        "tech_id": report.tech_id,
+        "doctor_id": report.doctor_id,
+        "ip": this.htmlText.ip,
+        "download_attempt": 1,
+        "downloader_information": userDetails,
+        "device_information": deviceInfo
+      },
+      "sourceobj": ["report_id", "biller_id", "tech_id", "doctor_id"],
+      "download_count": report.download_count,
+      "token": this.loginUserData.jwtToken
+    };
+
+    this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
+      if(response.status == 'success') {
+        this.matSnackBar.open("Start downloading.", "Ok", {
+          duration: 3000
+        });
+        window.open(report.file_path, "_blank");
+
+        this.refreshDashboard();
+      } else {
+        this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+          duration: 3000
+        });
+      }
+    });
+  }
+
+  refreshDashboard() {
+    let postData: any = {
+      source: "Patient-Record-Report_view",
+      condition: {
+        biller_id: this.loginUserData.user_details._id
+      }
+    };
+    this.http.httpViaPost("admin-dashboard", postData).subscribe(response => {
+      if(response.status == 'success') {
+        this.allResolveData = response.data;
+        //this.viewReportProcessData(this.htmlText.tableHeaderText);
+      } else {
+        this.matSnackBar.open("Please wait...", "", {
+          duration: 1000
+        });
+
+        setTimeout(() => {
+          this.refreshDashboard();
+        }, 1000);
+      }
+    });
   }
 
   deleteReport(pk_id: any, index: number) {

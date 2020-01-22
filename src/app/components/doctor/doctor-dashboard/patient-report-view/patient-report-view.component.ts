@@ -198,6 +198,8 @@ export class PatientReportViewComponent implements OnInit {
   setDefaultValue() {
     this.activeRoute.data.forEach((data) => {
       let reportDetails: any = data.data.res;
+      console.log(">>--->", reportDetails);
+      
       this.techId = reportDetails[0].user_id;
       this.allPatientReportData = reportDetails[0];
       this.BMIFlug = Math.round(reportDetails[0].BMI);

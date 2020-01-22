@@ -388,7 +388,7 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'patient_management_view',
+        source: 'patient_management_condition_view',
         condition: {}
       },
       endpoint: 'datalist'
