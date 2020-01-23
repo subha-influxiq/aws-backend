@@ -255,8 +255,9 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         this.patientEncounterForm.controls['birthDate'].patchValue(patientDetails.birthDate);
 
         let fieldText: string = '';
+        console.log('patientDetails', patientDetails);
         if (patientDetails.AIPTG_H != 0)
-          fieldText += '** ' + this.pdata.AIPTG_H + '\n\n';
+          fieldText += '** ' + patientDetails.AIPTG_H + '\n\n';
         if (patientDetails.AIPTGis_A != 0)
           fieldText += '** ' + patientDetails.AIPTGis_A + '\n\n';
         if (patientDetails.Cl_H != 0)
@@ -267,8 +268,8 @@ export class HealthriskSystemEncounterComponent implements OnInit {
           fieldText += '** ' + patientDetails.ValsR_A + '\n\n';
         if (patientDetails.ValsR_H != 0)
           fieldText += '** ' + patientDetails.ValsR_H + '\n\n';
-        if (patientDetails.cl_A != 0)
-          fieldText += '** ' + patientDetails.cl_A + '\n\n';
+        if (patientDetails.Cl_A != 0)
+          fieldText += '** ' + patientDetails.Cl_A + '\n\n';
         if (patientDetails.StressI_A != 0)
           fieldText += '** ' + patientDetails.StressI_A + '\n\n';
         if (patientDetails.DPRS_A != 0)
@@ -280,7 +281,16 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         if (patientDetails.StressI_H != 0)
           fieldText += '** ' + patientDetails.StressI_H + '\n\n';
 
-console.log('this.pdata.AIPTG_H', fieldText);
+        if (patientDetails.SDbais_A_H != 0)
+          fieldText += '** ' + patientDetails.SDbais_A_H + '\n\n';
+
+        if (patientDetails.SDda_H != 0)
+          fieldText += '** ' + patientDetails.SDda_H + '\n\n';
+
+        if (patientDetails.SDdais_A != 0)
+          fieldText += '** ' + patientDetails.SDdais_A + '\n\n';
+
+        console.log('this.pdata.AIPTG_H', fieldText);
 
         this.patientEncounterForm.controls['healthRisk'].patchValue(fieldText);
 
@@ -364,7 +374,7 @@ console.log('this.pdata.AIPTG_H', fieldText);
 
         if (this.pdata.R0889 == 1)
           this.patientEncounterForm.controls['E0840'].patchValue(true);
-          
+
         if (this.pdata.I70213 == 1)
           this.patientEncounterForm.controls['I70213'].patchValue(true);
 
