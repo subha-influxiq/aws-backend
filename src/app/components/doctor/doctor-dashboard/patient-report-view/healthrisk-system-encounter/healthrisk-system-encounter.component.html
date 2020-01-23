@@ -17,8 +17,7 @@
 
         <td>
           <label> <input type="radio" value='Male' [formControl]="patientEncounterForm.controls['gender']">M</label>
-          <label> <input type="radio" value='Female'
-              [formControl]="patientEncounterForm.controls['gender']">F</label>
+          <label> <input type="radio" value='Female' [formControl]="patientEncounterForm.controls['gender']">F</label>
         </td>
 
         <td>
@@ -98,17 +97,17 @@
 
         <tr>
           <td class="widther">
-            <tr>
-              <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['E0840']"> </td>
-              <td> E08.40 Type 1 Diabetes W/ Neurological Manifestations, Not Stated as Uncontrolled</td>
-            </tr>
-           </td>
-          <td class="widther">
-            <tr>
-              <td><input type="checkbox" [formControl]="patientEncounterForm.controls['G603']"></td>
-              <td> G60.3 Idiopathic progressive neuropathy</td>
-            </tr>
-          </td>
+        <tr>
+          <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['E0840']"> </td>
+          <td> E08.40 Type 1 Diabetes W/ Neurological Manifestations, Not Stated as Uncontrolled</td>
+        </tr>
+        </td>
+        <td class="widther">
+          <tr>
+            <td><input type="checkbox" [formControl]="patientEncounterForm.controls['G603']"></td>
+            <td> G60.3 Idiopathic progressive neuropathy</td>
+          </tr>
+        </td>
         </tr>
 
         <tr>
@@ -142,6 +141,34 @@
           </tr>
         </td>
         </tr>
+
+
+
+
+
+        <tr>
+          <td>
+        <tr>
+          <td> </td>
+          <td> </td>
+        </tr>
+        </td>
+
+        <td>
+          <tr>
+            <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['G609']"></td>
+            <td>G60.9 Hereditary and idiopathic neuropathy, unspecified</td>
+          </tr>
+        </td>
+        </tr>
+
+
+
+
+
+
+
+
 
         <tr>
           <td>
@@ -223,6 +250,70 @@
           <tr>
             <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['R000']"></td>
             <td>R00.0 Tachycardia, unspecified Abnormal Heart Rhythm & Electrical Stability</td>
+          </tr>
+        </td>
+        </tr>
+
+        <tr>
+          <td>
+        <tr>
+          <td><input type="checkbox" [formControl]="patientEncounterForm.controls['E1141']"></td>
+          <td>E11.41 Type 2 Diabetes Mellitus W/ Diabetic Mononeuropathy</td>
+        </tr>
+        </td>
+
+        <td>
+          <tr>
+            <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['R55']"></td>
+            <td>R55 Vasovagal Syndrome/Syncope and collapse</td>
+          </tr>
+        </td>
+        </tr>
+
+        <tr>
+          <td>
+        <tr>
+          <td><input type="checkbox" [formControl]="patientEncounterForm.controls['E1142']"></td>
+          <td>E11.42 Type 2 Diabetes Mellitus W/ Diabetic Polyneuropathy</td>
+        </tr>
+        </td>
+
+        <td>
+          <tr>
+            <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['R7301']"></td>
+            <td>R73.01 Impaired fasting glucose (Non-Medicare)</td>
+          </tr>
+        </td>
+        </tr>
+
+        <tr>
+          <td>
+        <tr>
+          <td><input type="checkbox" [formControl]="patientEncounterForm.controls['E1143']"></td>
+          <td>E11.43 Type 2 Diabetes W/ Autonomic Neuropathy</td>
+        </tr>
+        </td>
+
+        <td>
+          <tr>
+            <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['R7303']"></td>
+            <td>R73.03 Prediabetes (Non-Medicare)</td>
+          </tr>
+        </td>
+        </tr>
+
+        <tr>
+          <td>
+        <tr>
+          <td><input type="checkbox" [formControl]="patientEncounterForm.controls['E1144']"></td>
+          <td>E11.44 Type 2 Diabetes Mellitus W/Diabetic Amyotrophy</td>
+        </tr>
+        </td>
+
+        <td>
+          <tr>
+            <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['G9050']"></td>
+            <td>G90.50 Complex regional pain syndrome I, unspecified</td>
           </tr>
         </td>
         </tr>
@@ -317,10 +408,10 @@
         </td>
 
         <td>
-            <tr>
-              <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['G90523']"></td>
-              <td> G90.523 Complex regional pain syndrome I of lower limb, bilateral </td>
-            </tr>
+          <tr>
+            <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['G90523']"></td>
+            <td> G90.523 Complex regional pain syndrome I of lower limb, bilateral </td>
+          </tr>
         </td>
         </tr>
 
@@ -341,18 +432,18 @@
 
         <tr>
           <td>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>G23.1 Progressive supranuclear ophthalmoplegia [Steele-Richardson
-                Olszewski]</td>
-            </tr>
-          </td>
-          <td>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td>I95.1 Orthostatic Hypotension</td>
-              </tr>
-          </td>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>G23.1 Progressive supranuclear ophthalmoplegia [Steele-Richardson
+            Olszewski]</td>
+        </tr>
+        </td>
+        <td>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>I95.1 Orthostatic Hypotension</td>
+          </tr>
+        </td>
         </tr>
 
         <tr>
@@ -365,8 +456,8 @@
 
         <td>
           <tr>
-            <td> </td>
-            <td> </td>
+            <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['R61']"></td>
+          <td>R61 Generalized hyperhidrosis </td>
           </tr>
         </td>
         </tr>
@@ -386,7 +477,7 @@
           </tr>
         </td>
         </tr>
-<!-- block part -->
+        <!-- block part -->
         <!-- <tr>
           <td>
         <tr>
@@ -530,7 +621,7 @@
 
           <td> </td>
         </tr> -->
-<!-- end -->
+        <!-- end -->
         <tr>
           <td colspan="2">
             <p class="red_para">ICD 10 DIAGNOSTIC CODES TO BE USED WITH CPT CODE: 93922 or 93923 (93923 1
@@ -543,165 +634,165 @@
 
         <tr>
           <td>
-            <tr>
-              <td><input type="checkbox" [formControl]="patientEncounterForm.controls['E1059']"></td>
-              <td>E10.59 Type 1 Diabetes W/ Other Circulatory Complications</td>
-            </tr>
-          </td>
+        <tr>
+          <td><input type="checkbox" [formControl]="patientEncounterForm.controls['E1059']"></td>
+          <td>E10.59 Type 1 Diabetes W/ Other Circulatory Complications</td>
+        </tr>
+        </td>
 
-          <td>
+        <td>
 
-            <tr>
-              <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I70222']"></td>
-              <td>I70.222 Atherosclerosis of native arteries of extremities with rest pain, left
-                leg</td>
-            </tr>
-          </td>
+          <tr>
+            <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I70222']"></td>
+            <td>I70.222 Atherosclerosis of native arteries of extremities with rest pain, left
+              leg</td>
+          </tr>
+        </td>
         </tr>
 
         <tr>
           <td>
-            <tr>
-              <td><input type="checkbox" [formControl]="patientEncounterForm.controls['E1159']"></td>
-              <td>E11.59 Type 2 Diabetes W/ Other Circulatory Complications</td>
-            </tr>
-          </td>
+        <tr>
+          <td><input type="checkbox" [formControl]="patientEncounterForm.controls['E1159']"></td>
+          <td>E11.59 Type 2 Diabetes W/ Other Circulatory Complications</td>
+        </tr>
+        </td>
 
-          <td>
-            <tr>
-              <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['I70223']"></td>
-              <td>I70.223 Atherosclerosis of native arteries of extremities with rest pain,
-                Bilateral legs</td>
-            </tr>
-          </td>
+        <td>
+          <tr>
+            <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['I70223']"></td>
+            <td>I70.223 Atherosclerosis of native arteries of extremities with rest pain,
+              Bilateral legs</td>
+          </tr>
+        </td>
         </tr>
 
         <tr>
           <td>
 
-            <tr>
-               <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['G458']"></td>
-               <td>G45.8 Other Transient Cerebral Ischemic Attacks and Related Syndrome</td>
-            </tr>
-          </td>
+        <tr>
+          <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['G458']"></td>
+          <td>G45.8 Other Transient Cerebral Ischemic Attacks and Related Syndrome</td>
+        </tr>
+        </td>
 
-          <td>
-            <tr>
-              <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I70228']"></td>
-              <td>I70.228 Atherosclerosis of native arteries of extremities with rest pain,
-                other extremity</td>
-            </tr>
-          </td>
+        <td>
+          <tr>
+            <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I70228']"></td>
+            <td>I70.228 Atherosclerosis of native arteries of extremities with rest pain,
+              other extremity</td>
+          </tr>
+        </td>
         </tr>
 
         <tr>
           <td>
-            <tr>
-              <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I10']"></td>
-              <td>I10 Hypertension Unspecified (Non-Medicare) <b>130/80</b> </td>
-            </tr>
-          </td>
+        <tr>
+          <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I10']"></td>
+          <td>I10 Hypertension Unspecified (Non-Medicare) <b>130/80</b> </td>
+        </tr>
+        </td>
 
-          <td>
-            <tr>
-              <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I70268']"></td>
-              <td>I70.268 Atherosclerosis of native arteries of extremities with gangrene, Other extremity</td>
-            </tr>
-          </td>
+        <td>
+          <tr>
+            <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I70268']"></td>
+            <td>I70.268 Atherosclerosis of native arteries of extremities with gangrene, Other extremity</td>
+          </tr>
+        </td>
         </tr>
 
         <tr>
           <td>
-            <tr>
-              <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I2510']"></td>
-              <td>I25.10 Atherosclerotic heart disease of native coronary artery w/o angina pectoris</td>
-            </tr>
-          </td>
+        <tr>
+          <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I2510']"></td>
+          <td>I25.10 Atherosclerotic heart disease of native coronary artery w/o angina pectoris</td>
+        </tr>
+        </td>
 
-          <td>
-            <tr>
-              <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I7025']"></td>
-              <td>I70.25 Atherosclerosis of native arteries of other extremities with Ulceration</td>
-            </tr>
-          </td>
+        <td>
+          <tr>
+            <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I7025']"></td>
+            <td>I70.25 Atherosclerosis of native arteries of other extremities with Ulceration</td>
+          </tr>
+        </td>
         </tr>
 
         <tr>
           <td>
-            <tr>
-              <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I519']"></td>
-              <td>I51.9 Heart disease, unspecified (Non-Medicare)</td>
-            </tr>
-          </td>
+        <tr>
+          <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I519']"></td>
+          <td>I51.9 Heart disease, unspecified (Non-Medicare)</td>
+        </tr>
+        </td>
 
-          <td>
-            <tr>
-              <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I721']"></td>
-              <td>I72.1 Aneurysm of artery of upper extremity</td>
-            </tr>
-          </td>
+        <td>
+          <tr>
+            <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I721']"></td>
+            <td>I72.1 Aneurysm of artery of upper extremity</td>
+          </tr>
+        </td>
         </tr>
 
         <tr>
           <td>
-             <tr>
-              <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I70209']"></td>
-              <td>I70.209 Atherosclerosis Native Arteries Extremities Unspecified (non-Medicare)</td>
-            </tr>
-          </td>
+        <tr>
+          <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I70209']"></td>
+          <td>I70.209 Atherosclerosis Native Arteries Extremities Unspecified (non-Medicare)</td>
+        </tr>
+        </td>
 
-          <td>
-            <tr>
-              <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['I724']"></td>
-              <td>I72.4 Aneurysm of artery of lower extremity </td>
-            </tr>
-          </td>
+        <td>
+          <tr>
+            <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['I724']"></td>
+            <td>I72.4 Aneurysm of artery of lower extremity </td>
+          </tr>
+        </td>
         </tr>
         <tr>
           <td>
-             <tr>
-              <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I70211']"></td>
-              <td>I70.211 Atherosclerosis of native arteries of extremities with intermittent
-                Claudication, right leg</td>
-            </tr>
-          </td>
-          <td>
-            <tr>
-              <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['I7389']"></td>
-              <td>I73.89 Other specified peripheral vascular diseases</td>
-            </tr>
-          </td>
+        <tr>
+          <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I70211']"></td>
+          <td>I70.211 Atherosclerosis of native arteries of extremities with intermittent
+            Claudication, right leg</td>
+        </tr>
+        </td>
+        <td>
+          <tr>
+            <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['I7389']"></td>
+            <td>I73.89 Other specified peripheral vascular diseases</td>
+          </tr>
+        </td>
         </tr>
         <tr>
           <td>
-             <tr>
-              <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I70212']"></td>
-              <td>I70.212 Atherosclerosis of native arteries of extremities with intermittent
-                Claudication, left leg</td>
-            </tr>
-          </td>
-          <td>
-            <tr>
-              <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['I739']"></td>
-              <td>I73.9 Peripheral vascular disease, unspecified</td>
-            </tr>
-          </td>
+        <tr>
+          <td><input type="checkbox" [formControl]="patientEncounterForm.controls['I70212']"></td>
+          <td>I70.212 Atherosclerosis of native arteries of extremities with intermittent
+            Claudication, left leg</td>
+        </tr>
+        </td>
+        <td>
+          <tr>
+            <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['I739']"></td>
+            <td>I73.9 Peripheral vascular disease, unspecified</td>
+          </tr>
+        </td>
         </tr>
         <tr>
           <td>
-             <tr>
-              <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['I70213']"> </td>
-              <td> I70.213 Atherosclerosis of native arteries of extremities with intermittent
-                Claudication, bilateral legs</td>
-            </tr>
-          </td>
-          <td>
-            <tr>
-              <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['R0889']"></td>
-              <td>R08.8 9 Other Specific Signs & Symptoms of Circulatory &
-                Respiratory Systems</td>
-            </tr>
-          </td>
+        <tr>
+          <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['I70213']"> </td>
+          <td> I70.213 Atherosclerosis of native arteries of extremities with intermittent
+            Claudication, bilateral legs</td>
+        </tr>
+        </td>
+        <td>
+          <tr>
+            <td> <input type="checkbox" [formControl]="patientEncounterForm.controls['R0889']"></td>
+            <td>R08.8 9 Other Specific Signs & Symptoms of Circulatory &
+              Respiratory Systems</td>
+          </tr>
+        </td>
         </tr>
 
 
@@ -763,7 +854,7 @@
             <p>Pre-Existing Diagnoses: </p>
             <textarea class="additionalnotes"
               [formControl]="patientEncounterForm.controls['additional_chart_notes']"></textarea>
-              <br>
+            <br>
             <p>Additional Physician’s Chart Notes:</p>
             <textarea class="additionalnotes"
               [formControl]="patientEncounterForm.controls['additional_chart_notes']"></textarea>
