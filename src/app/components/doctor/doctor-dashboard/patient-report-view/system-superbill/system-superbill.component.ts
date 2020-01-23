@@ -91,13 +91,31 @@ export class SystemSuperbillComponent implements OnInit {
       doctor_signature: ['', Validators.required],
       testDate: ['', Validators.required],
       testCompletedDate: ['', Validators.required],
-      signDate : [dateformat]
-    })
+      signDate : [dateformat],
+
+      Z6829: [false],
+      Z6833: [false],
+      Z6837: [false],
+      Z6842: [false],
+      Z6830: [false],
+      Z6834: [false],
+      Z6838: [false],
+      Z6843: [false],
+      Z6831: [false],
+      Z6835: [false],
+      Z6839: [false],
+      Z6844: [false],
+      Z6832: [false],
+      Z6836: [false],
+      Z6841: [false],
+      Z6845: [false],
+      
+    });
     
     if(this.cookiesData.type == 'admin'){
       this.patientBMIForm.disable();
     }
-    this.getPatientData(this.activatedRoute.snapshot.params._id);
+    this.getPatientData(this.activatedRoute.snapshot.params._id_object);
   }
 
   ngOnInit() {
@@ -127,14 +145,22 @@ export class SystemSuperbillComponent implements OnInit {
         
 
         let dateOfBirth: any = response.res[0].birthDate;
-        let dobArr: any = dateOfBirth.split("-");
-        this.patientBMIForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1] - 1, dobArr[0]]));
+        // let dobArr: any = dateOfBirth.split("-");
+        // this.patientBMIForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1] - 1, dobArr[0]]));
 
-        let sDateArr: any = response.res[0].testDate.split("-");
-        this.patientBMIForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
+        // let sDateArr: any = response.res[0].testDate.split("-");
+        // this.patientBMIForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
+        
+        var BMI = response.res[0].BMI.split(".", 2);
+        BMI = BMI[0] + BMI[1];
+        console.log('BMI', BMI);
+        
+        this.patientBMIForm.controls[BMI].patchValue(true);
         //   let eDateArr: any = patientDetails.testCompletedDate.split("-");
         // this.patientReportViewForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
-      })
+      });
+
+      
   }
 
 

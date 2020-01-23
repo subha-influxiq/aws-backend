@@ -201,7 +201,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     if (this.cookiesData.type == 'admin') {
       this.patientEncounterForm.disable();
     }
-    console.log("=============params._id", this.activatedRoute.snapshot.params._id_object);
+    // console.log("=============params._id", this.activatedRoute.snapshot.params._id_object);
     this.getPatientData(this.activatedRoute.snapshot.params._id_object);
   }
 
@@ -248,8 +248,8 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         this.patientSingleData = response.res;
         console.log("encounter form dataaa", this.patientSingleData);
         this.patientEncounterForm.controls['patientName'].patchValue(patientDetails.patientName);
-        this.patientEncounterForm.controls['physicalOrdering'].patchValue(this.cookiesData.firstname + ' ' + this.cookiesData.lastname);
-        this.patientEncounterForm.controls['doctor_signature'].patchValue(this.cookiesData.doctor_signature);
+        this.patientEncounterForm.controls['physicalOrdering'].patchValue(patientDetails.doctor_name);
+        this.patientEncounterForm.controls['doctor_signature'].patchValue(patientDetails.doctor_signature);
         this.patientEncounterForm.controls['gender'].patchValue(patientDetails.gender);
         this.patientEncounterForm.controls['testDate'].patchValue(patientDetails.testDate);
         this.patientEncounterForm.controls['birthDate'].patchValue(patientDetails.birthDate);
@@ -290,7 +290,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         if (patientDetails.SDdais_A != 0)
           fieldText += '** ' + patientDetails.SDdais_A + '\n\n';
 
-        console.log('this.pdata.AIPTG_H', fieldText);
+        // console.log('this.pdata.AIPTG_H', fieldText);
 
         this.patientEncounterForm.controls['healthRisk'].patchValue(fieldText);
 
@@ -369,9 +369,10 @@ export class HealthriskSystemEncounterComponent implements OnInit {
           console.log(this.R000Text);
         }
 
-        if (this.pdata.E0840 == 1)
+        if (this.pdata.E0840 == 1) {
           this.patientEncounterForm.controls['E0840'].patchValue(true);
-
+          
+        }
         if (this.pdata.R0889 == 1)
           this.patientEncounterForm.controls['E0840'].patchValue(true);
 
@@ -415,89 +416,91 @@ export class HealthriskSystemEncounterComponent implements OnInit {
           this.patientEncounterForm.controls['I70228'].patchValue(true);
 
         /* After complete all patch value */
-        if (this.patientEncounterForm.value.E1040 == false ||
-          this.patientEncounterForm.value.E854 == false ||
-          this.patientEncounterForm.value.E1041 == false ||
-          this.patientEncounterForm.value.E858 == false ||
-          this.patientEncounterForm.value.E1042 == false ||
-          this.patientEncounterForm.value.E859 == false ||
-          this.patientEncounterForm.value.E1043 == false ||
-          this.patientEncounterForm.value.G230 == false ||
-          this.patientEncounterForm.value.E1044 == false ||
-          this.patientEncounterForm.value.G231 == false ||
-          this.patientEncounterForm.value.E1049 == false ||
-          this.patientEncounterForm.value.G232 == false ||
-          this.patientEncounterForm.value.E1065 == false ||
-          this.patientEncounterForm.value.G238 == false ||
-          this.patientEncounterForm.value.E10610 == false ||
-          this.patientEncounterForm.value.G603 == false ||
-          this.patientEncounterForm.value.E119 == false ||
-          this.patientEncounterForm.value.G608 == false ||
-          this.patientEncounterForm.value.E1141 == false ||
-          this.patientEncounterForm.value.G609 == false ||
-          this.patientEncounterForm.value.E1142 == false ||
-          this.patientEncounterForm.value.R202 == false ||
-          this.patientEncounterForm.value.E1143 == false ||
-          this.patientEncounterForm.value.G9009 == false ||
-          this.patientEncounterForm.value.E1144 == false ||
-          this.patientEncounterForm.value.G9050 == false ||
-          this.patientEncounterForm.value.E1149 == false ||
-          this.patientEncounterForm.value.G9059 == false ||
-          this.patientEncounterForm.value.E1159 == false ||
-          this.patientEncounterForm.value.G903 == false ||
-          this.patientEncounterForm.value.E1165 == false ||
-          this.patientEncounterForm.value.R733 == false ||
-          this.patientEncounterForm.value.E1340 == false ||
-          this.patientEncounterForm.value.G90511 == false ||
-          this.patientEncounterForm.value.E1341 == false ||
-          this.patientEncounterForm.value.G90512 == false ||
-          this.patientEncounterForm.value.E1342 == false ||
-          this.patientEncounterForm.value.G90513 == false ||
-          this.patientEncounterForm.value.E1343 == false ||
-          this.patientEncounterForm.value.G90519 == false ||
-          this.patientEncounterForm.value.E1344 == false ||
-          this.patientEncounterForm.value.G90521 == false ||
-          this.patientEncounterForm.value.E1349 == false ||
-          this.patientEncounterForm.value.G90522 == false ||
-          this.patientEncounterForm.value.E13610 == false ||
-          this.patientEncounterForm.value.G90523 == false ||
-          this.patientEncounterForm.value.E850 == false ||
-          this.patientEncounterForm.value.G90529 == false ||
-          this.patientEncounterForm.value.E851 == false ||
-          this.patientEncounterForm.value.R61 == false ||
-          this.patientEncounterForm.value.E852 == false ||
+        if (this.patientEncounterForm.value.E1040 == false &&
+          this.patientEncounterForm.value.E854 == false &&
+          this.patientEncounterForm.value.E1041 == false &&
+          this.patientEncounterForm.value.E858 == false &&
+          this.patientEncounterForm.value.E1042 == false &&
+          this.patientEncounterForm.value.E859 == false &&
+          this.patientEncounterForm.value.E1043 == false &&
+          this.patientEncounterForm.value.G230 == false &&
+          this.patientEncounterForm.value.E1044 == false &&
+          this.patientEncounterForm.value.G231 == false &&
+          this.patientEncounterForm.value.E1049 == false &&
+          this.patientEncounterForm.value.G232 == false &&
+          this.patientEncounterForm.value.E1065 == false &&
+          this.patientEncounterForm.value.G238 == false &&
+          this.patientEncounterForm.value.E10610 == false &&
+          this.patientEncounterForm.value.G603 == false &&
+          this.patientEncounterForm.value.E119 == false &&
+          this.patientEncounterForm.value.G608 == false &&
+          this.patientEncounterForm.value.E1141 == false &&
+          this.patientEncounterForm.value.G609 == false &&
+          this.patientEncounterForm.value.E1142 == false &&
+          this.patientEncounterForm.value.R202 == false &&
+          this.patientEncounterForm.value.E1143 == false &&
+          this.patientEncounterForm.value.G9009 == false &&
+          this.patientEncounterForm.value.E1144 == false &&
+          this.patientEncounterForm.value.G9050 == false &&
+          this.patientEncounterForm.value.E1149 == false &&
+          this.patientEncounterForm.value.G9059 == false &&
+          this.patientEncounterForm.value.E1159 == false &&
+          this.patientEncounterForm.value.G903 == false &&
+          this.patientEncounterForm.value.E1165 == false &&
+          this.patientEncounterForm.value.R733 == false &&
+          this.patientEncounterForm.value.E1340 == false &&
+          this.patientEncounterForm.value.G90511 == false &&
+          this.patientEncounterForm.value.E1341 == false &&
+          this.patientEncounterForm.value.G90512 == false &&
+          this.patientEncounterForm.value.E1342 == false &&
+          this.patientEncounterForm.value.G90513 == false &&
+          this.patientEncounterForm.value.E1343 == false &&
+          this.patientEncounterForm.value.G90519 == false &&
+          this.patientEncounterForm.value.E1344 == false &&
+          this.patientEncounterForm.value.G90521 == false &&
+          this.patientEncounterForm.value.E1349 == false &&
+          this.patientEncounterForm.value.G90522 == false &&
+          this.patientEncounterForm.value.E13610 == false &&
+          this.patientEncounterForm.value.G90523 == false &&
+          this.patientEncounterForm.value.E850 == false &&
+          this.patientEncounterForm.value.G90529 == false &&
+          this.patientEncounterForm.value.E851 == false &&
+          this.patientEncounterForm.value.R61 == false &&
+          this.patientEncounterForm.value.E852 == false &&
           this.patientEncounterForm.value.E853 == false) {
           // Set false value
-          this.patientEncounterForm.value.prefix_95923 = false;
-          this.patientEncounterForm.value.prefix_95921 = false;
+          this.patientEncounterForm.controls['prefix_95923'].patchValue(false);
+          this.patientEncounterForm.controls['prefix_95921'].patchValue(false);
         }
 
-        if (this.patientEncounterForm.value.I700 == false ||
-          this.patientEncounterForm.value.I7025 == false ||
-          this.patientEncounterForm.value.I70209 == false ||
-          this.patientEncounterForm.value.I0269 == false ||
-          this.patientEncounterForm.value.I70219 == false ||
-          this.patientEncounterForm.value.I70399 == false ||
-          this.patientEncounterForm.value.I7022 == false ||
-          this.patientEncounterForm.value.I70499 == false ||
-          this.patientEncounterForm.value.R000 == false ||
-          this.patientEncounterForm.value.I70599 == false ||
-          this.patientEncounterForm.value.R55 == false ||
-          this.patientEncounterForm.value.I519 == false ||
-          this.patientEncounterForm.value.I251 == false ||
-          this.patientEncounterForm.value.I721 == false ||
-          this.patientEncounterForm.value.I723 == false ||
-          this.patientEncounterForm.value.I724 == false ||
-          this.patientEncounterForm.value.I739 == false ||
-          this.patientEncounterForm.value.Z139 == false ||
-          this.patientEncounterForm.value.I10 == false ||
+        if (this.patientEncounterForm.value.I700 == false &&
+          this.patientEncounterForm.value.I7025 == false &&
+          this.patientEncounterForm.value.I70209 == false &&
+          this.patientEncounterForm.value.I0269 == false &&
+          this.patientEncounterForm.value.I70219 == false &&
+          this.patientEncounterForm.value.I70399 == false &&
+          this.patientEncounterForm.value.I7022 == false &&
+          this.patientEncounterForm.value.I70499 == false &&
+          this.patientEncounterForm.value.R000 == false &&
+          this.patientEncounterForm.value.I70599 == false &&
+          this.patientEncounterForm.value.R55 == false &&
+          this.patientEncounterForm.value.I519 == false &&
+          this.patientEncounterForm.value.I251 == false &&
+          this.patientEncounterForm.value.I721 == false &&
+          this.patientEncounterForm.value.I723 == false &&
+          this.patientEncounterForm.value.I724 == false &&
+          this.patientEncounterForm.value.I739 == false &&
+          this.patientEncounterForm.value.Z139 == false &&
+          this.patientEncounterForm.value.I10 == false &&
           this.patientEncounterForm.value.prefix_1951 == false) {
           // Set false value
-          this.patientEncounterForm.value.prefix_93923 = false;
+          this.patientEncounterForm.controls['prefix_93923'].patchValue(false);
         }
 
-        if (this.patientEncounterForm.value.prefix_95923 == false || this.patientEncounterForm.value.prefix_95921 == false || this.patientEncounterForm.value.prefix_93923 == false) {
-          this.patientEncounterForm.value.no_diagnosis_detected = true;
+        if (this.patientEncounterForm.controls['prefix_95923'].value == false && 
+            this.patientEncounterForm.controls['prefix_95921'].value == false && 
+            this.patientEncounterForm.controls['prefix_93923'].value == false) {
+          this.patientEncounterForm.controls['no_diagnosis_detected'].patchValue(true);
         }
       });
   }
