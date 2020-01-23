@@ -64,6 +64,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
   public techId: any;
   public pdata: any = null;
 
+  public R000Text: string = "R00.0 Tachycardia, unspecified Abnormal Heart Rhythm & Electrical Stability";
   // sticky section
   isSticky: boolean = false;
   stickyRight: boolean = false;
@@ -255,7 +256,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
 
         let fieldText: string = '';
         if (patientDetails.AIPTG_H != 0)
-          fieldText += '** ' + patientDetails.AIPTG_H + '\n\n';
+          fieldText += '** ' + this.pdata.AIPTG_H + '\n\n';
         if (patientDetails.AIPTGis_A != 0)
           fieldText += '** ' + patientDetails.AIPTGis_A + '\n\n';
         if (patientDetails.Cl_H != 0)
@@ -272,10 +273,14 @@ export class HealthriskSystemEncounterComponent implements OnInit {
           fieldText += '** ' + patientDetails.StressI_A + '\n\n';
         if (patientDetails.DPRS_A != 0)
           fieldText += '** ' + patientDetails.DPRS_A + '\n\n';
-        if (patientDetails.R000 != 0)
-          fieldText += '** ' + patientDetails.R000 + '\n\n';
+        // if (patientDetails.R000 != 0) {
+        //   // fieldText += '** ' + this.pdata.R000 + '\n\n';
+        //   // console.log('fieldText', fieldText);
+        // }
         if (patientDetails.StressI_H != 0)
           fieldText += '** ' + patientDetails.StressI_H + '\n\n';
+
+console.log('this.pdata.AIPTG_H', fieldText);
 
         this.patientEncounterForm.controls['healthRisk'].patchValue(fieldText);
 
@@ -348,8 +353,11 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         if (this.pdata.I251 == 1)
           this.patientEncounterForm.controls['I251'].patchValue(true);
 
-        if (this.pdata.R000 == 1)
+        if (this.pdata.R000 != 0) {
           this.patientEncounterForm.controls['R000'].patchValue(true);
+          this.R000Text = "R00.0 Tachycardia, unspecified " + this.pdata.R000;
+          console.log(this.R000Text);
+        }
 
         if (this.pdata.E0840 == 1)
           this.patientEncounterForm.controls['E0840'].patchValue(true);
