@@ -115,7 +115,7 @@ export class SystemSuperbillComponent implements OnInit {
     if(this.cookiesData.type == 'admin'){
       this.patientBMIForm.disable();
     }
-    this.getPatientData(this.activatedRoute.snapshot.params._id_object);
+    this.getPatientData(this.activatedRoute.snapshot.params._id);
   }
 
   ngOnInit() {
