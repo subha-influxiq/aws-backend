@@ -184,7 +184,7 @@ export class PatientReportViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    if(this.activeRoute.snapshot == null || this.activeRoute.snapshot.url ==null || this.activeRoute.snapshot.url[3]==null || this.activeRoute.snapshot.url[3].path != 'file' ) {
+    if(this.activeRoute.snapshot == null || this.activeRoute.snapshot.url == null || this.activeRoute.snapshot.url[3]==null || this.activeRoute.snapshot.url[3].path != 'file' ) {
       this.setDefaultValue();
       this.getAllDoctorData();
     } else {
@@ -202,7 +202,7 @@ export class PatientReportViewComponent implements OnInit {
       
       this.techId = reportDetails[0].user_id;
       this.allPatientReportData = reportDetails[0];
-      this.BMIFlug = Math.round(reportDetails[0].BMI);
+      this.BMIFlug = Math.round(reportDetails[0].BMI_value);
      
       this.ImageData = reportDetails[0].images_url;
      
