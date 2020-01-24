@@ -293,32 +293,32 @@ export class HealthriskSystemEncounterComponent implements OnInit {
 
         this.patientEncounterForm.controls['healthRisk'].patchValue(fieldText);
 
-      if (this.pdata.I10 == 1)
-        this.patientEncounterForm.controls['I10'].patchValue(true);
+        if (this.pdata.I10 == 1)
+          this.patientEncounterForm.controls['I10'].patchValue(true);
 
-      if (this.pdata.I739 == 1)
-        this.patientEncounterForm.controls['I739'].patchValue(true);
+        if (this.pdata.I739 == 1)
+          this.patientEncounterForm.controls['I739'].patchValue(true);
 
-      if (this.pdata.I70209 == 1)
-        this.patientEncounterForm.controls['I70209'].patchValue(true);
+        if (this.pdata.I70209 == 1)
+          this.patientEncounterForm.controls['I70209'].patchValue(true);
 
-      if (this.pdata.R733 == 1)
-        this.patientEncounterForm.controls['R733'].patchValue(true);
+        if (this.pdata.R733 == 1)
+          this.patientEncounterForm.controls['R733'].patchValue(true);
 
-      if (this.pdata.E119 == 1)
-        this.patientEncounterForm.controls['E119'].patchValue(true);
+        if (this.pdata.E119 == 1)
+          this.patientEncounterForm.controls['E119'].patchValue(true);
 
-      if (this.pdata.E1142 == 1)
-        this.patientEncounterForm.controls['E1142'].patchValue(true);
+        if (this.pdata.E1142 == 1)
+          this.patientEncounterForm.controls['E1142'].patchValue(true);
 
-      if (this.pdata.E1149 == 1)
-        this.patientEncounterForm.controls['E1149'].patchValue(true);
+        if (this.pdata.E1149 == 1)
+          this.patientEncounterForm.controls['E1149'].patchValue(true);
 
-      if (this.pdata.E1159 == 1)
-        this.patientEncounterForm.controls['E1159'].patchValue(true);
+        if (this.pdata.E1159 == 1)
+          this.patientEncounterForm.controls['E1159'].patchValue(true);
 
-      if (this.pdata.G603 == 1)
-        this.patientEncounterForm.controls['G603'].patchValue(true);
+        if (this.pdata.G603 == 1)
+          this.patientEncounterForm.controls['G603'].patchValue(true);
 
         if (this.pdata.I519 == 1)
           this.patientEncounterForm.controls['I519'].patchValue(true);
@@ -370,7 +370,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
 
         if (this.pdata.E0840 == 1) {
           this.patientEncounterForm.controls['E0840'].patchValue(true);
-          
+
         }
         if (this.pdata.R0889 == 1)
           this.patientEncounterForm.controls['E0840'].patchValue(true);
@@ -496,11 +496,12 @@ export class HealthriskSystemEncounterComponent implements OnInit {
           this.patientEncounterForm.controls['prefix_93923'].patchValue(false);
         }
 
-        if (this.patientEncounterForm.controls['prefix_95923'].value == false && 
-            this.patientEncounterForm.controls['prefix_95921'].value == false && 
-            this.patientEncounterForm.controls['prefix_93923'].value == false) {
+        if (this.patientEncounterForm.controls['prefix_95923'].value == false &&
+          this.patientEncounterForm.controls['prefix_95921'].value == false &&
+          this.patientEncounterForm.controls['prefix_93923'].value == false) {
           this.patientEncounterForm.controls['no_diagnosis_detected'].patchValue(true);
         }
+<<<<<<< HEAD
       }
 
     //   if (this.pdata.E1041 == 1)
@@ -679,6 +680,9 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     //     this.patientEncounterForm.value.no_diagnosis_detected = true;
     //   }
     // });
+=======
+      });
+>>>>>>> 2b85bf0e47d5ecd3bb116a0b486015dae8c6a1ab
   }
   
 }
