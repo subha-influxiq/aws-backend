@@ -134,12 +134,13 @@ export class HealthRiskAnalysisComponent implements OnInit {
 
   getPatientData(id: any) {
     var data = {
-      "source": "patient_management",
+      "source": "patient_management_view",
       "condition": {
         "_id_object": id
       },
       "token": this.userToken
     }
+    
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
         console.log('response', response);
