@@ -132,7 +132,7 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin/patient-record/:_id_object', component: PatientReportViewComponent,
+    path: 'admin/patient-record/:_id', component: PatientReportViewComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
