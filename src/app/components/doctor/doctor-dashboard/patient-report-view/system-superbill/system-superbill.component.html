@@ -1,111 +1,172 @@
 <mat-card-content class="system_superbill_wrapper">
-        <form class="example-form" autocomplete="off" name="patientBMIForm" [formGroup]="patientBMIForm">
+    <form class="example-form" autocomplete="off" name="patientBMIForm" [formGroup]="patientBMIForm">
 
-    <table class="table_one">
-        <tr>
-            <td colspan="3">
-                <h2 class="top_header">For Intensive Behavioral Therapy Obesity Counseling</h2>
-            </td>
-        </tr>
+        <table class="table_one">
+            <tr>
+                <td colspan="3">
+                    <h2 class="top_header">For Intensive Behavioral Therapy Obesity Counseling</h2>
+                </td>
+            </tr>
 
-        <tr>
-            <td><label>Patient Name 
-                <input type="text" [formControl]="patientBMIForm.controls['patientName']"
-                (blur)="inputUntouch(patientBMIForm,'patientName')">
-            </label></td>
-            <td><label><input type="radio" value='Male' formControlName="gender">Male</label>
-                 <label><input type="radio" value='Female' formControlName="gender">Female</label></td>
-            <td><label>Test Date:
-                    <mat-form-field>
-                            <input matInput [matDatepicker]="picker4" 
-                            formControlName="testDate" id="testDate" >
+            <tr>
+                <td>
+                    <label>Patient Name
+                        <input type="text" [formControl]="patientBMIForm.controls['patientName']"
+                            (blur)="inputUntouch(patientBMIForm,'patientName')">
+                    </label>
+                </td>
+
+                <td>
+                    <label><input type="radio" value='Male' formControlName="gender">Male</label>
+
+                    <label><input type="radio" value='Female' formControlName="gender">Female</label>
+                </td>
+
+                <td>
+                    <label>Test Date:
+                        <mat-form-field>
+                            <input matInput [matDatepicker]="picker4" formControlName="testDate" id="testDate">
                             <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
                             <mat-datepicker #picker4></mat-datepicker>
                         </mat-form-field>
-            </label></td>
-        </tr>
-        <tr>
-            <td><label>Ordering Physician<input type="text"
-                [formControl]="patientBMIForm.controls['physicalOrdering']"
-                (blur)="inputUntouch(patientBMIForm,'physicalOrdering')"></label></td>
-            <td> </td>
-            <td><label>D.O.B
-                    <mat-form-field>
-                            <input matInput [matDatepicker]="picker"  
-                            formControlName="birthDate" id="birthDate"   >
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Ordering Physician<input type="text"
+                            [formControl]="patientBMIForm.controls['physicalOrdering']"
+                            (blur)="inputUntouch(patientBMIForm,'physicalOrdering')"></label></td>
+                <td> </td>
+                <td><label>D.O.B
+                        <mat-form-field>
+                            <input matInput [matDatepicker]="picker" formControlName="birthDate" id="birthDate">
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
                         </mat-form-field>
-            </label></td>
-        </tr>
-        <tr>
-            <td class="fifty" colspan="2">
-                <label>Physician’s Signature
-                    <input class="signaturefont" type="text" matInput [formControl]="patientBMIForm.controls['doctor_signature']">
-                </label>
-            </td>
+                    </label></td>
+            </tr>
+            <tr>
+                <td class="fifty" colspan="2">
+                    <label>Physician’s Signature
+                        <input class="signaturefont" type="text" matInput
+                            [formControl]="patientBMIForm.controls['doctor_signature']">
+                    </label>
+                </td>
 
-            <td class="fifty">Suggested billing amounts per CPT Code: </td>
-        </tr>
-        <tr>
-            <td class="fifty" colspan="2">
-                <p>1. Medicare modifier “XU” must be used on secondary CPT codes.</p>
-                <p>2. Modifier “59” for commercial insurance must be used on secondary CPT codes</p>
-                <p>3. Do not bill these tests on the same day as a physical</p>
-            </td>
+                <td class="fifty">Suggested billing amounts per CPT Code: </td>
+            </tr>
+            <tr>
+                <td class="fifty" colspan="2">
+                    <p>1. Medicare modifier “XU” must be used on secondary CPT codes.</p>
+                    <p>2. Modifier “59” for commercial insurance must be used on secondary CPT codes</p>
+                    <p>3. Do not bill these tests on the same day as a physical</p>
+                </td>
 
-            <td class="fifty">
-                <h4>Obesity Counseling ICD 10 Codes for Z68 CPT Codes Shown Below</h4>
-                <p><label><input type="checkbox" checked>G0447 Face-to-face obesity Counseling. 15 minutes: $40</label></p>
-                <p><label><input type="checkbox" checked>G0473 Face-to-face Obesity Counseling for groups of (2-10) 30 minutes:
-                        $20</label></p>
-            </td>
-        </tr>
-
-
-
-
-    </table>
-    <table class="table_two">
-        <tr>
-            <td colspan="4">
-                <h2 class="table2_header"> INTENSIVE BEHAVIORAL THERAPY (IBT) FOR OBESITY ICD10 DIAGNOSTIC CODES </h2>
-            </td>
-        </tr>
-
-        <tr>
-            <td><label><input type="checkbox">Z68.29 <span> 29 to 29.9</span> </label></td>
-            <td><label><input type="checkbox">Z68.33 <span> BMI 33 to 33.9</span> </label></td>
-            <td><label><input type="checkbox">Z68.37<span> BMI 37 to 37.9</span> </label></td>
-            <td><label><input type="checkbox">Z68.42 <span>BMI 45 to 49.9 </span> </label></td>
-        </tr>
-
-        <tr>
-            <td><label><input type="checkbox">Z68.30 <span>BMI 30 to 30.9 </span> </label></td>
-            <td><label><input type="checkbox">Z68.34 <span> BMI 34 to 34.9 </span> </label></td>
-            <td><label><input type="checkbox">Z68.38 <span>BMI 38 to 38.9</span> </label></td>
-            <td><label><input type="checkbox">Z68.43<span>BMI 50 to 59.9</span> </label></td>
-        </tr>
-        <tr>
-            <td><label><input type="checkbox">Z68.31 <span>BMI 31 to 31.9</span> </label></td>
-            <td><label><input type="checkbox">Z68.35 <span> BMI 35 to 35.9 </span> </label></td>
-            <td><label><input type="checkbox">Z68.39<span>BMI 39 to 39.9</span> </label></td>
-            <td><label><input type="checkbox">Z68.44<span>BMI 60 to 69.9</span> </label></td>
-        </tr>
-        <tr>
-            <td><label><input type="checkbox">Z68.32 <span>BMI 32 to 32.9</span> </label></td>
-            <td><label><input type="checkbox">Z68.36<span>BMI 36 to 36.9 </span> </label></td>
-            <td><label><input type="checkbox">Z68.41<span>BMI 40 to 44.9</span> </label></td>
-            <td><label><input type="checkbox">Z68.45<span>BMI 70 and over</span> </label></td>
-        </tr>
+                <td class="fifty">
+                    <h4>Obesity Counseling ICD 10 Codes for Z68 CPT Codes Shown Below</h4>
+                    <p><label><input type="checkbox" checked>G0447 Face-to-face obesity Counseling. 15 minutes:
+                            $40</label></p>
+                    <p><label><input type="checkbox" checked>G0473 Face-to-face Obesity Counseling for groups of (2-10)
+                            30 minutes:
+                            $20</label></p>
+                </td>
+            </tr>
 
 
-        <tr>
-            <td colspan="4"> 
-                <a class="line_link" target="_blank"
-                    href="https://www.cms.gov/medicare-coverage-database/details/nca-decision-memo.aspx?&NcaName=Intensive%20Behavioral%20Therapy%20for%20Obesity&bc=ACAAAAAAIAAA&NCAId=253&">Clinical Obesity Counselling - Qualifications, Procedures and On-going Requirements</a>
-            </td>
-        </tr>
-    </table>
-        </form>
+
+
+        </table>
+        <table class="table_two">
+            <tr>
+                <td colspan="4">
+                    <h2 class="table2_header"> INTENSIVE BEHAVIORAL THERAPY (IBT) FOR OBESITY ICD10 DIAGNOSTIC CODES
+                    </h2>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label> <input type="checkbox" [formControl]="patientBMIForm.controls['Z6829']">
+                        Z68.29 <span> BMI 29 to 29.9</span> </label>
+                </td>
+                <td>
+                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6833']">
+                        Z68.33 <span> BMI 33 to 33.9</span> </label>
+                </td>
+                <td>
+                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6837']">
+                        Z68.37<span> BMI 37 to 37.9</span> </label>
+                </td>
+                <td>
+                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6842']">
+                        Z68.42 <span>BMI 45 to 49.9 </span> </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6830']">
+                        Z68.30 <span>BMI 30 to 30.9 </span> </label>
+                </td>
+                <td>
+                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6834']">
+                        Z68.34 <span> BMI 34 to 34.9 </span> </label>
+                </td>
+                <td>
+                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6838']">
+                        Z68.38 <span>BMI 38 to 38.9</span> </label>
+                </td>
+                <td>
+                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6843']">
+                        Z68.43 <span>BMI 50 to 59.9</span> </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6831']">
+                        Z68.31 <span>BMI 31 to 31.9</span> </label>
+                </td>
+                <td>
+                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6835']">
+                        Z68.35 <span> BMI 35 to 35.9 </span> </label>
+                </td>
+                <td>
+                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6839']">
+                        Z68.39 <span>BMI 39 to 39.9</span> </label>
+                </td>
+                <td>
+                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6844']">
+                        Z68.44 <span>BMI 60 to 69.9</span> </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6832']">
+                        Z68.32 <span>BMI 32 to 32.9</span> </label>
+                    </td>
+                <td>
+                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6836']">
+                        Z68.36 <span>BMI 36 to 36.9 </span> </label>
+                    </td>
+                <td>
+                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6841']">
+                        Z68.41 <span>BMI 40 to 44.9</span> </label>
+                    </td>
+                <td>
+                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6845']">
+                        Z68.45 <span>BMI 70 and over</span> </label>
+                    </td>
+            </tr>
+
+
+            <tr>
+                <td colspan="4">
+                    <a class="line_link" target="_blank"
+                        href="https://www.cms.gov/medicare-coverage-database/details/nca-decision-memo.aspx?&NcaName=Intensive%20Behavioral%20Therapy%20for%20Obesity&bc=ACAAAAAAIAAA&NCAId=253&">Clinical
+                        Obesity Counselling - Qualifications, Procedures and On-going Requirements</a>
+                </td>
+            </tr>
+        </table>
+    </form>
 </mat-card-content>

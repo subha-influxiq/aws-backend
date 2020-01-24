@@ -90,7 +90,7 @@ export class HealthRiskAnalysisComponent implements OnInit {
       testDate: ['', Validators.required],
       date: ['', Validators.required],
       testCompletedDate: ['', Validators.required],
-      PTGPT: ['', Validators.required],
+      PTGTP: ['', Validators.required],
       PTGVLFI: ['', Validators.required],
       IR: ['', Validators.required],
       ESRNO: ['', Validators.required],
@@ -117,7 +117,7 @@ export class HealthRiskAnalysisComponent implements OnInit {
       user_id: []
 
     })
-    this.getPatientData(this.activatedRoute.snapshot.params._id);
+    this.getPatientData(this.activatedRoute.snapshot.params._id_object);
     if(this.cookiesData.type == 'admin'){
       this.patientReportViewForm.disable();
     }
@@ -134,7 +134,7 @@ export class HealthRiskAnalysisComponent implements OnInit {
 
   getPatientData(id: any) {
     var data = {
-      "source": "patient_management_view",
+      "source": "patient_management",
       "condition": {
         "_id_object": id
       },
@@ -142,13 +142,14 @@ export class HealthRiskAnalysisComponent implements OnInit {
     }
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
+        console.log('response', response);
         let patientDetails: any;
         patientDetails = response.res[0];
         this.patientSingleData = response.res;
         this.patientReportViewForm.controls['patientName'].patchValue(patientDetails.patientName);
         this.patientReportViewForm.controls['physicalOrderingname'].patchValue(patientDetails.physicalOrderingname);
         this.patientReportViewForm.controls['gender'].patchValue(patientDetails.gender);
-        this.patientReportViewForm.controls['PTGPT'].patchValue(patientDetails.PTGPT);
+        this.patientReportViewForm.controls['PTGTP'].patchValue(patientDetails.PTGTP);
         this.patientReportViewForm.controls['PTGVLFI'].patchValue(patientDetails.PTGVLFI);
         this.patientReportViewForm.controls['IR'].patchValue(patientDetails.IR);
         this.patientReportViewForm.controls['ESRNO'].patchValue(patientDetails.ESRNO);

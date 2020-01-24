@@ -239,46 +239,59 @@ export class HealthriskSystemEncounterComponent implements OnInit {
       },
       "token": this.userToken
     }
-    this.httpService.httpViaPost('datalist', data).subscribe((response) => {
-      console.log(response);
+    this.httpService.httpViaPost('datalist', data)
+      .subscribe((response) => {
+        let patientDetails: any = {};
+        patientDetails = response.res[0];
+        this.pdata = response.res[0];
+        this.patientSingleData = response.res;
+        console.log("encounter form dataaa", this.patientSingleData);
+        this.patientEncounterForm.controls['patientName'].patchValue(patientDetails.patientName);
+        this.patientEncounterForm.controls['physicalOrdering'].patchValue(patientDetails.doctor_name);
+        this.patientEncounterForm.controls['doctor_signature'].patchValue(patientDetails.doctor_signature);
+        this.patientEncounterForm.controls['gender'].patchValue(patientDetails.gender);
+        this.patientEncounterForm.controls['testDate'].patchValue(patientDetails.testDate);
+        this.patientEncounterForm.controls['birthDate'].patchValue(patientDetails.birthDate);
 
-      let patientDetails: any = response.res[0];
-      this.pdata = response.res[0];
-      this.patientSingleData = response.res;
-      this.patientEncounterForm.controls['patientName'].patchValue(patientDetails.patientName);
-      this.patientEncounterForm.controls['physicalOrdering'].patchValue(this.cookiesData.firstname + ' ' + this.cookiesData.lastname);
-      this.patientEncounterForm.controls['doctor_signature'].patchValue(this.cookiesData.doctor_signature);
-      this.patientEncounterForm.controls['gender'].patchValue(patientDetails.gender);
-      this.patientEncounterForm.controls['testDate'].patchValue(patientDetails.testDate);
-      this.patientEncounterForm.controls['birthDate'].patchValue(patientDetails.birthDate);
+        let fieldText: string = '';
+        console.log('patientDetails', patientDetails);
+        if (patientDetails.AIPTG_H != 0)
+          fieldText += '** ' + patientDetails.AIPTG_H + '\n\n';
+        if (patientDetails.AIPTGis_A != 0)
+          fieldText += '** ' + patientDetails.AIPTGis_A + '\n\n';
+        if (patientDetails.Cl_H != 0)
+          fieldText += '** ' + patientDetails.Cl_H + '\n\n';
+        if (patientDetails.DPRS_H != 0)
+          fieldText += '** ' + patientDetails.DPRS_H + '\n\n';
+        if (patientDetails.ValsR_A != 0)
+          fieldText += '** ' + patientDetails.ValsR_A + '\n\n';
+        if (patientDetails.ValsR_H != 0)
+          fieldText += '** ' + patientDetails.ValsR_H + '\n\n';
+        if (patientDetails.Cl_A != 0)
+          fieldText += '** ' + patientDetails.Cl_A + '\n\n';
+        if (patientDetails.StressI_A != 0)
+          fieldText += '** ' + patientDetails.StressI_A + '\n\n';
+        if (patientDetails.DPRS_A != 0)
+          fieldText += '** ' + patientDetails.DPRS_A + '\n\n';
+        // if (patientDetails.R000 != 0) {
+        //   // fieldText += '** ' + this.pdata.R000 + '\n\n';
+        //   // console.log('fieldText', fieldText);
+        // }
+        if (patientDetails.StressI_H != 0)
+          fieldText += '** ' + patientDetails.StressI_H + '\n\n';
 
-      let fieldText: string = '';
-      if (patientDetails.AIPTG_H != 0)
-        fieldText += '** ' + this.pdata.AIPTG_H + '\n\n';
-      if (patientDetails.AIPTGis_A != 0)
-        fieldText += '** ' + patientDetails.AIPTGis_A + '\n\n';
-      if (patientDetails.Cl_H != 0)
-        fieldText += '** ' + patientDetails.Cl_H + '\n\n';
-      if (patientDetails.DPRS_H != 0)
-        fieldText += '** ' + patientDetails.DPRS_H + '\n\n';
-      if (patientDetails.ValsR_A != 0)
-        fieldText += '** ' + patientDetails.ValsR_A + '\n\n';
-      if (patientDetails.ValsR_H != 0)
-        fieldText += '** ' + patientDetails.ValsR_H + '\n\n';
-      if (patientDetails.cl_A != 0)
-        fieldText += '** ' + patientDetails.cl_A + '\n\n';
-      if (patientDetails.StressI_A != 0)
-        fieldText += '** ' + patientDetails.StressI_A + '\n\n';
-      if (patientDetails.DPRS_A != 0)
-        fieldText += '** ' + patientDetails.DPRS_A + '\n\n';
-      if (patientDetails.R000 != 0) {
-        // fieldText += '** ' + this.pdata.R000 + '\n\n';
-        // console.log('fieldText', fieldText);
-      }
-      if (patientDetails.StressI_H != 0)
-        fieldText += '** ' + patientDetails.StressI_H + '\n\n';
+        if (patientDetails.SDbais_A_H != 0)
+          fieldText += '** ' + patientDetails.SDbais_A_H + '\n\n';
 
-      this.patientEncounterForm.controls['healthRisk'].patchValue(fieldText);
+        if (patientDetails.SDda_H != 0)
+          fieldText += '** ' + patientDetails.SDda_H + '\n\n';
+
+        if (patientDetails.SDdais_A != 0)
+          fieldText += '** ' + patientDetails.SDdais_A + '\n\n';
+
+        // console.log('this.pdata.AIPTG_H', fieldText);
+
+        this.patientEncounterForm.controls['healthRisk'].patchValue(fieldText);
 
       if (this.pdata.I10 == 1)
         this.patientEncounterForm.controls['I10'].patchValue(true);
@@ -307,9 +320,187 @@ export class HealthriskSystemEncounterComponent implements OnInit {
       if (this.pdata.G603 == 1)
         this.patientEncounterForm.controls['G603'].patchValue(true);
 
-      if (this.pdata.I519 == 1) {
-        this.patientEncounterForm.controls['I519'].patchValue(true);
-      }
+        if (this.pdata.I519 == 1)
+          this.patientEncounterForm.controls['I519'].patchValue(true);
+
+        if (this.pdata.E1041 == 1)
+          this.patientEncounterForm.controls['E1041'].patchValue(true);
+
+        if (this.pdata.E858 == 1)
+          this.patientEncounterForm.controls['E858'].patchValue(true);
+
+        if (this.pdata.E1042 == 1)
+          this.patientEncounterForm.controls['E1042'].patchValue(true);
+
+        if (this.pdata.E859 == 1)
+          this.patientEncounterForm.controls['E859'].patchValue(true);
+
+        if (this.pdata.E1043 == 1)
+          this.patientEncounterForm.controls['E1043'].patchValue(true);
+
+        if (this.pdata.G230 == 1)
+          this.patientEncounterForm.controls['G230'].patchValue(true);
+
+        if (this.pdata.E1044 == 1)
+          this.patientEncounterForm.controls['E1044'].patchValue(true);
+
+        if (this.pdata.G231 == 1)
+          this.patientEncounterForm.controls['G231'].patchValue(true);
+
+        if (this.pdata.E1049 == 1)
+          this.patientEncounterForm.controls['E1049'].patchValue(true);
+
+        if (this.pdata.G232 == 1)
+          this.patientEncounterForm.controls['G232'].patchValue(true);
+
+        if (this.pdata.E1065 == 1)
+          this.patientEncounterForm.controls['E1065'].patchValue(true);
+
+        if (this.pdata.G238 == 1)
+          this.patientEncounterForm.controls['G238'].patchValue(true);
+
+        if (this.pdata.I251 == 1)
+          this.patientEncounterForm.controls['I251'].patchValue(true);
+
+        if (this.pdata.R000 != 0) {
+          this.patientEncounterForm.controls['R000'].patchValue(true);
+          this.R000Text = "R00.0 Tachycardia, unspecified " + this.pdata.R000;
+          console.log(this.R000Text);
+        }
+
+        if (this.pdata.E0840 == 1) {
+          this.patientEncounterForm.controls['E0840'].patchValue(true);
+          
+        }
+        if (this.pdata.R0889 == 1)
+          this.patientEncounterForm.controls['E0840'].patchValue(true);
+
+        if (this.pdata.I70213 == 1)
+          this.patientEncounterForm.controls['I70213'].patchValue(true);
+
+        if (this.pdata.G629 == 1)
+          this.patientEncounterForm.controls['G629'].patchValue(true);
+
+        if (this.pdata.I70212 == 1)
+          this.patientEncounterForm.controls['I70212'].patchValue(true);
+
+        if (this.pdata.G200 == 1)
+          this.patientEncounterForm.controls['G200'].patchValue(true);
+
+        if (this.pdata.I7389 == 1)
+          this.patientEncounterForm.controls['E0840'].patchValue(true);
+
+        if (this.pdata.I70211 == 1)
+          this.patientEncounterForm.controls['I70211'].patchValue(true);
+
+        if (this.pdata.E1059 == 1)
+          this.patientEncounterForm.controls['E1059'].patchValue(true);
+
+        if (this.pdata.I70222 == 1)
+          this.patientEncounterForm.controls['I70222'].patchValue(true);
+
+        if (this.pdata.I2510 == 1)
+          this.patientEncounterForm.controls['I2510'].patchValue(true);
+
+        if (this.pdata.I70268 == 1)
+          this.patientEncounterForm.controls['I70268'].patchValue(true);
+
+        if (this.pdata.I70223 == 1)
+          this.patientEncounterForm.controls['I70223'].patchValue(true);
+
+        if (this.pdata.G458 == 1)
+          this.patientEncounterForm.controls['G458'].patchValue(true);
+
+        if (this.pdata.I70228 == 1)
+          this.patientEncounterForm.controls['I70228'].patchValue(true);
+
+        /* After complete all patch value */
+        if (this.patientEncounterForm.value.E1040 == false &&
+          this.patientEncounterForm.value.E854 == false &&
+          this.patientEncounterForm.value.E1041 == false &&
+          this.patientEncounterForm.value.E858 == false &&
+          this.patientEncounterForm.value.E1042 == false &&
+          this.patientEncounterForm.value.E859 == false &&
+          this.patientEncounterForm.value.E1043 == false &&
+          this.patientEncounterForm.value.G230 == false &&
+          this.patientEncounterForm.value.E1044 == false &&
+          this.patientEncounterForm.value.G231 == false &&
+          this.patientEncounterForm.value.E1049 == false &&
+          this.patientEncounterForm.value.G232 == false &&
+          this.patientEncounterForm.value.E1065 == false &&
+          this.patientEncounterForm.value.G238 == false &&
+          this.patientEncounterForm.value.E10610 == false &&
+          this.patientEncounterForm.value.G603 == false &&
+          this.patientEncounterForm.value.E119 == false &&
+          this.patientEncounterForm.value.G608 == false &&
+          this.patientEncounterForm.value.E1141 == false &&
+          this.patientEncounterForm.value.G609 == false &&
+          this.patientEncounterForm.value.E1142 == false &&
+          this.patientEncounterForm.value.R202 == false &&
+          this.patientEncounterForm.value.E1143 == false &&
+          this.patientEncounterForm.value.G9009 == false &&
+          this.patientEncounterForm.value.E1144 == false &&
+          this.patientEncounterForm.value.G9050 == false &&
+          this.patientEncounterForm.value.E1149 == false &&
+          this.patientEncounterForm.value.G9059 == false &&
+          this.patientEncounterForm.value.E1159 == false &&
+          this.patientEncounterForm.value.G903 == false &&
+          this.patientEncounterForm.value.E1165 == false &&
+          this.patientEncounterForm.value.R733 == false &&
+          this.patientEncounterForm.value.E1340 == false &&
+          this.patientEncounterForm.value.G90511 == false &&
+          this.patientEncounterForm.value.E1341 == false &&
+          this.patientEncounterForm.value.G90512 == false &&
+          this.patientEncounterForm.value.E1342 == false &&
+          this.patientEncounterForm.value.G90513 == false &&
+          this.patientEncounterForm.value.E1343 == false &&
+          this.patientEncounterForm.value.G90519 == false &&
+          this.patientEncounterForm.value.E1344 == false &&
+          this.patientEncounterForm.value.G90521 == false &&
+          this.patientEncounterForm.value.E1349 == false &&
+          this.patientEncounterForm.value.G90522 == false &&
+          this.patientEncounterForm.value.E13610 == false &&
+          this.patientEncounterForm.value.G90523 == false &&
+          this.patientEncounterForm.value.E850 == false &&
+          this.patientEncounterForm.value.G90529 == false &&
+          this.patientEncounterForm.value.E851 == false &&
+          this.patientEncounterForm.value.R61 == false &&
+          this.patientEncounterForm.value.E852 == false &&
+          this.patientEncounterForm.value.E853 == false) {
+          // Set false value
+          this.patientEncounterForm.controls['prefix_95923'].patchValue(false);
+          this.patientEncounterForm.controls['prefix_95921'].patchValue(false);
+        }
+
+        if (this.patientEncounterForm.value.I700 == false &&
+          this.patientEncounterForm.value.I7025 == false &&
+          this.patientEncounterForm.value.I70209 == false &&
+          this.patientEncounterForm.value.I0269 == false &&
+          this.patientEncounterForm.value.I70219 == false &&
+          this.patientEncounterForm.value.I70399 == false &&
+          this.patientEncounterForm.value.I7022 == false &&
+          this.patientEncounterForm.value.I70499 == false &&
+          this.patientEncounterForm.value.R000 == false &&
+          this.patientEncounterForm.value.I70599 == false &&
+          this.patientEncounterForm.value.R55 == false &&
+          this.patientEncounterForm.value.I519 == false &&
+          this.patientEncounterForm.value.I251 == false &&
+          this.patientEncounterForm.value.I721 == false &&
+          this.patientEncounterForm.value.I723 == false &&
+          this.patientEncounterForm.value.I724 == false &&
+          this.patientEncounterForm.value.I739 == false &&
+          this.patientEncounterForm.value.Z139 == false &&
+          this.patientEncounterForm.value.I10 == false &&
+          this.patientEncounterForm.value.prefix_1951 == false) {
+          // Set false value
+          this.patientEncounterForm.controls['prefix_93923'].patchValue(false);
+        }
+
+        if (this.patientEncounterForm.controls['prefix_95923'].value == false && 
+            this.patientEncounterForm.controls['prefix_95921'].value == false && 
+            this.patientEncounterForm.controls['prefix_93923'].value == false) {
+          this.patientEncounterForm.controls['no_diagnosis_detected'].patchValue(true);
+        }
 
       if (this.pdata.E1041 == 1)
         this.patientEncounterForm.controls['E1041'].patchValue(true);
