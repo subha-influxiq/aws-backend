@@ -117,7 +117,7 @@ export class HealthRiskAnalysisComponent implements OnInit {
       user_id: []
 
     })
-    this.getPatientData(this.activatedRoute.snapshot.params._id_object);
+    this.getPatientData(this.activatedRoute.snapshot.params._id);
     if(this.cookiesData.type == 'admin'){
       this.patientReportViewForm.disable();
     }
@@ -134,22 +134,23 @@ export class HealthRiskAnalysisComponent implements OnInit {
 
   getPatientData(id: any) {
     var data = {
-      "source": "patient_management",
+      "source": "patient_management_view",
       "condition": {
         "_id_object": id
       },
       "token": this.userToken
     }
+    
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
-        console.log('response', response);
+        console.log('response => ', response);
         let patientDetails: any;
         patientDetails = response.res[0];
         this.patientSingleData = response.res;
         this.patientReportViewForm.controls['patientName'].patchValue(patientDetails.patientName);
-        this.patientReportViewForm.controls['physicalOrderingname'].patchValue(patientDetails.physicalOrderingname);
+        this.patientReportViewForm.controls['physicalOrderingname'].patchValue(patientDetails.doctor_name);
         this.patientReportViewForm.controls['gender'].patchValue(patientDetails.gender);
-        this.patientReportViewForm.controls['PTGTP'].patchValue(patientDetails.PTGTP);
+        this.patientReportViewForm.controls['PTGTP'].patchValue(patientDetails.PTGtype);
         this.patientReportViewForm.controls['PTGVLFI'].patchValue(patientDetails.PTGVLFI);
         this.patientReportViewForm.controls['IR'].patchValue(patientDetails.IR);
         this.patientReportViewForm.controls['ESRNO'].patchValue(patientDetails.ESRNO);

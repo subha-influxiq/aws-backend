@@ -220,7 +220,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         "tech_id_object": this.techId
       },
       "token": this.userToken
-    }
+    };
 
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
@@ -228,7 +228,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         result = response.res;
         this.allDoctorDataArray = result;
 
-      })
+      });
   }
 
   getPatientData(id: any) {
@@ -503,5 +503,5 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         }
       });
   }
-
+  
 }
