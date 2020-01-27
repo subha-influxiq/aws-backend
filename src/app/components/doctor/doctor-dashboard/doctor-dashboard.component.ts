@@ -13,33 +13,7 @@ import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component
 import * as momentImported from 'moment';
 const moment = momentImported;
 
-export interface PeriodicElement {
-  no: number;
-  patientName: string;
-  doctorName: string;
-  billerName: string;
-  record: string;
-  billGenerationDate: string;
-  techName: string;
-  billSentDate: string;
-  superBill: string;
-  date: string;
-  status: string;
-}
 
-export interface AllDataElement {
-  no: number;
-  patientName: string;
-  doctorName: string;
-  billerName: string;
-  record: string;
-  billGenerationDate: string;
-  techName: string;
-  billSentDate: string;
-  superBill: string;
-  date: string;
-  status: string;
-}
 
 @Component({
   selector: 'app-doctor-dashboard',
@@ -51,26 +25,24 @@ export class DoctorDashboardComponent implements OnInit {
 
   public authData: any = {};
   public allResolveData: any;
-  public htmlText:any = { 
+  public htmlText: any = { 
     buttonText: "Add One",
-    headertext: "DOCTOR SIGNATURE RECORD REPORTS"
+    headerText: "Patient Record Report",
+    billerData: [],
   };
 
-  public allDataColumns: string[] = ['no', 'billGenerationDate', 'billSentDate', 'patientName', 'billerName', 'recordType', 'techName', 'superBill', 'status', 'action'];
-  public dataCol:string[] = ['billGenerationDate','billSentDate','doctorName','patientName', 'billerName','report_type','status','superBill','techName', 'action'];
+  public allDataColumns: string[] = ['billGenerationDate', 'billSentDate', 'doctorName','patientName', 'billerName','report_type','status','superBill','techName', 'action'];
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+
   public dialogRef: any;
   public allDataSource: any;
-  public headertext: any;
   public start_date: any;
   public end_date: any;
-  public billerData: any = [];
-  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-  public allDataSource_skip: any = ["patientName"];
-
+  
   constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService,
     public http: HttpServiceService, public activatedRoute: ActivatedRoute, public matSnackBar: MatSnackBar,
     public deviceService: DeviceDetectorService) {
-    let allcookies: any = cookie.getAll();
+
     this.authData["user_details"] = JSON.parse(cookie.get('user_details'));
     this.authData["jwtToken"] = cookie.get('jwtToken');
     
@@ -78,16 +50,14 @@ export class DoctorDashboardComponent implements OnInit {
     this.activatedRoute.data.forEach(resolveData => {
       this.allResolveData = resolveData.doctordata;
       this.allDataSource = new MatTableDataSource(this.allResolveData.data.allReportData);
+      this.allDataSource.paginator = this.paginator;
     });
-
-    console.log(">>>--->", this.allResolveData.data.allBillerList);
   }
 
   ngOnInit() {
   }
 
   ngAfterViewInit() {
-    this.allDataSource.paginator = this.paginator;
   }
 
   getBillerData() {
@@ -100,7 +70,7 @@ export class DoctorDashboardComponent implements OnInit {
     }
 
     this.http.httpViaPost('datalist', data).subscribe((response) => {
-      this.billerData = response.res;
+      this.htmlText.billerData = response.res;
     });
   }
 
@@ -145,11 +115,9 @@ export class DoctorDashboardComponent implements OnInit {
       "token": this.authData,
     }
 
-    this.http.httpViaPost('datalist', data)
-      .subscribe(response => {
-        this.allDataSource = response.res;
-
-      })
+    this.http.httpViaPost('datalist', data).subscribe(response => {
+      this.allDataSource = response.res;
+    });
   }
 
   openDialog() {
@@ -169,13 +137,14 @@ export class DoctorDashboardComponent implements OnInit {
       },
       "token": this.authData
     }
-    this.http.httpViaPost('datalist', data)
-      .subscribe(response => {
-        console.log("doctor signature: ", response.res);
-      })
+    this.http.httpViaPost('datalist', data).subscribe(response => {
+      console.log("doctor signature: ", response.res);
+    });
   }
 
   viewReportProcessData(flag: string = null) {
+    this.allDataColumns = ['billGenerationDate', 'billSentDate', 'doctorName','patientName', 'billerName','report_type','status','superBill','techName', 'action'];
+    this.htmlText.headerText = flag;
     /* Open modal */
     let modalData: any = {
       panelClass: 'bulkupload-dialog',
@@ -213,6 +182,7 @@ export class DoctorDashboardComponent implements OnInit {
         }
         break;
       case 'Report unSigned':
+        this.allDataColumns = ['doctorName','patientName', 'report_type','status','techName', 'action'];
         if(typeof this.allResolveData.data.pendingReportData === 'undefined') {
           var data = {
             "source": "Patient-Record-Report_view",

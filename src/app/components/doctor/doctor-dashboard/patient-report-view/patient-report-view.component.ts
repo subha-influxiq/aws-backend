@@ -184,7 +184,7 @@ export class PatientReportViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    if(this.activeRoute.snapshot == null || this.activeRoute.snapshot.url ==null || this.activeRoute.snapshot.url[3]==null || this.activeRoute.snapshot.url[3].path != 'file' ) {
+    if(this.activeRoute.snapshot == null || this.activeRoute.snapshot.url == null || this.activeRoute.snapshot.url[3]==null || this.activeRoute.snapshot.url[3].path != 'file' ) {
       this.setDefaultValue();
       this.getAllDoctorData();
     } else {
@@ -197,8 +197,8 @@ export class PatientReportViewComponent implements OnInit {
 
   setDefaultValue() {
     this.activeRoute.data.forEach((data) => {
+
       let reportDetails: any = data.data.res;
-      console.log(">>--->", reportDetails);
       
       this.techId = reportDetails[0].user_id;
       this.allPatientReportData = reportDetails[0];
@@ -385,6 +385,8 @@ export class PatientReportViewComponent implements OnInit {
             var data: any = {
               "source": "patient_management",
               "data": { 
+                "billGenerationDate": new Date(),
+                "billSentDate": new Date(),
                 "doctor_signature": this.cookiesData.doctor_signature, 
                 "biller_id": this.selectBiller,
                 "download_link" : environment.siteBaseUrl + 'download/super-bill/' + this.reportID,

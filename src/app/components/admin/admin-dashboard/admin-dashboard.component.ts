@@ -55,12 +55,13 @@ export class AdminDashboardComponent implements OnInit {
     this.jwtToken = cookieService.get('jwtToken');
 
     /* Set Table Header */
-    this.allDataColumns = ['no', 'techName', 'report_type','doctorName', 'date', 'patientNamecopy', 'status','editRecord'];
+    this.allDataColumns = ['no', 'techName', 'report_type','doctorName', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
 
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData = resolveData.dataCount.data;
       let allData = this.allResolveData.totalReportData;
       this.allDataSource = new MatTableDataSource(allData);
+      this.allDataSource.paginator = this.paginatorAll;
     });
   }
 
@@ -68,7 +69,6 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.allDataSource.paginator = this.paginatorAll;
   }
 
   filterByName(key: string, value: string) {
@@ -175,8 +175,9 @@ export class AdminDashboardComponent implements OnInit {
   viewReportProcessData(flag: string) {
     this.htmlText.headerText = flag;
     var repostSignCond: any = {};
+
+    this.allDataColumns = ['no', 'techName', 'report_type','doctorName', 'patientNamecopy', 'status', 'created_at','editRecord'];
     /* Set Table Header */
-    this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'date', 'patientNamecopy', 'status','editRecord'];
 
     switch (flag) {
       /* Report Status Section */
@@ -221,6 +222,8 @@ export class AdminDashboardComponent implements OnInit {
         }
         break;
       case 'Report Signed':
+        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
+
         repostSignCond = {
           "source": "Patient-Record-Report_view",
           "condition": {
@@ -230,6 +233,8 @@ export class AdminDashboardComponent implements OnInit {
         }
         break;
       case 'Super Bill':
+        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
+
         /////////////////////////////////////////
         //////////////// Pending ////////////////
         /////////////////////////////////////////
@@ -242,6 +247,8 @@ export class AdminDashboardComponent implements OnInit {
         }
         break;
       case 'Download Bill':
+        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
+
         repostSignCond = {
           "source": "Patient-Record-Report_view",
           "condition": {
@@ -328,6 +335,7 @@ export class AdminDashboardComponent implements OnInit {
         window.open(report.file_path, "_blank");
 
         this.refreshDashboard();
+        this.viewReportProcessData('Download Bill');
       } else {
         this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
           duration: 3000
@@ -346,7 +354,9 @@ export class AdminDashboardComponent implements OnInit {
     this.http.httpViaPost("admin-dashboard", postData).subscribe(response => {
       if(response.status == 'success') {
         this.allResolveData = response.data;
-        //this.viewReportProcessData(this.htmlText.tableHeaderText);
+        let allData = this.allResolveData.totalReportData;
+        this.allDataSource = new MatTableDataSource(allData);
+        this.allDataSource.paginator = this.paginatorAll;
       } else {
         this.matSnackBar.open("Please wait...", "", {
           duration: 1000

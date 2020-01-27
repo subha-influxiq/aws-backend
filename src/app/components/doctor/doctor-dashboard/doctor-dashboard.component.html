@@ -54,18 +54,16 @@
   <mat-card-content class="table_wrapper">
 
     <mat-toolbar class="top_header">
-      <h2> Patient Record Report </h2>
+      <h2> {{ htmlText.headerText }} </h2>
     </mat-toolbar>
 
     <span class="action_bar">
       <mat-form-field>
-        <input matInput (keyup)="applyFilter( 'patientName_regex', $event.target.value )"
-          placeholder="Search By Patient Name">
+        <input matInput (keyup)="applyFilter('patientName_regex', $event.target.value);" placeholder="Search By Patient Name">
       </mat-form-field>
 
       <mat-form-field class="parent_cat">
-        <mat-select placeholder="Search By Status"
-          (selectionChange)="applyStatusFilter({ 'status_regex':$event.value })">
+        <mat-select placeholder="Search By Status" (selectionChange)="applyStatusFilter({'status_regex': $event.value})">
           <mat-option value=0>Select a status</mat-option>
           <mat-option value="doctor signed">Doctor Signed</mat-option>
           <mat-option value="pending">Pending</mat-option>
@@ -109,7 +107,7 @@
         <td mat-cell *matCellDef="let element" data-label="Doctor Name" innerHTML="{{ element.doctorname }}"> </td>
       </ng-container>
 
-      <ng-container matColumnDef="billerName">
+      <ng-container matColumnDef="billerName" *ngIf="htmlText.headerText != 'Report unSigned'">
         <th mat-header-cell *matHeaderCellDef> Biller Name</th>
         <td mat-cell *matCellDef="let element" data-label="Biller Name"> {{ element.billername }} </td>
       </ng-container>
@@ -119,17 +117,17 @@
         <td mat-cell *matCellDef="let element" data-label="Record Type"> {{ element.report_type }} </td>
       </ng-container>
 
-      <ng-container matColumnDef="billGenerationDate">
+      <ng-container matColumnDef="billGenerationDate" *ngIf="htmlText.headerText != 'Report unSigned'">
         <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>
-        <td mat-cell *matCellDef="let element" data-label="Bill Generation Date"> {{ element.billGenerationDate }} </td>
+        <td mat-cell *matCellDef="let element" data-label="Bill Generation Date"> {{ element.billGenerationDate | date }} </td>
       </ng-container>
 
-      <ng-container matColumnDef="billSentDate">
+      <ng-container matColumnDef="billSentDate" *ngIf="htmlText.headerText != 'Report unSigned'">
         <th mat-header-cell *matHeaderCellDef> Bill Sent Date</th>
-        <td mat-cell *matCellDef="let element" data-label="Bill Sent Date"> {{ element.billSentDate }} </td>
+        <td mat-cell *matCellDef="let element" data-label="Bill Sent Date"> {{ element.billSentDate | date }} </td>
       </ng-container>
 
-      <ng-container matColumnDef="superBill">
+      <ng-container matColumnDef="superBill" *ngIf="htmlText.headerText != 'Report unSigned'">
         <th mat-header-cell *matHeaderCellDef> Super Bill</th>
         <td mat-cell *matCellDef="let element" data-label="Super Bill"> {{ element.superBill }} </td>
       </ng-container>
@@ -139,46 +137,23 @@
         <td mat-cell *matCellDef="let element" data-label="Status"> {{ element.status_text }} </td>
       </ng-container>
 
-      <!-- drop down in mat table with a single button start here -->
-      <!-- <ng-container matColumnDef="billerDropDown">
-        <th mat-header-cell *matHeaderCellDef> Sent To Biller </th>
-        <td mat-cell *matCellDef="let element; let i = index;">
-          <mat-form-field *ngIf="element.status == 1" color="warn" appearance="outline">
-            <mat-label>Select A Biller</mat-label>
-            <mat-select placeholder="Select A Biller" (selectionChange)="setSendBiller(i, $event);">
-              <mat-option *ngFor="let bd of allResolveData.data.allBillerList; let i = index;" [value]="bd.biller_id">
-                {{ bd.firstname }} {{ bd.lastname }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-
-          <span *ngIf="element.biller_id != ''">{{ element.billername }}</span>
-        </td>
-      </ng-container> -->
-
-      <!-- <ng-container matColumnDef="action">
-        <th mat-header-cell *matHeaderCellDef> Action </th>
-        <td mat-cell *matCellDef="let element; let i = index;">
-          <button *ngIf="element.status == 1" mat-button type="button" class="editButton" (click)="allSendToBiller(i);">Send</button>
-          <button *ngIf="element.status != 1" disabled mat-raised-button type="button" class="editButton" (click)="allSendToBiller(i);">Send</button>
-        </td>
-      </ng-container> -->
-      <!--drop down in mat table with a single button end here -->
-
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let element; let i = index;">
-          <button *ngIf="element.status == 1" mat-button type="button" class="viewButton" [routerLink]="['/doctor/patient-record-report', element._id]">View</button>
-          <button mat-raised-button *ngIf="element.status != 1" type="button" class="viewButton downloadBtn" disabled>View</button>
-          <button mat-raised-button *ngIf="element.status != 1" type="button" class="viewButton downloadBtn" (click)="downloadReport(element);">Download</button>
+          <button *ngIf="element.status == 1" mat-button type="button" class="viewButton"
+            [routerLink]="['/doctor/patient-record-report', element._id]">View</button>
+          <button mat-raised-button *ngIf="element.status != 1" type="button" class="viewButton downloadBtn"
+            disabled>View</button>
+          <button mat-raised-button *ngIf="element.status != 1" type="button" class="viewButton downloadBtn"
+            (click)="downloadReport(element);">Download</button>
         </td>
       </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="dataCol"></tr>
-      <tr mat-row *matRowDef="let row; columns: dataCol;let i = index"></tr>
+      <tr mat-header-row *matHeaderRowDef="allDataColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: allDataColumns;let i = index"></tr>
     </table>
 
-    <mat-paginator [pageSizeOptions]="[25, 50, 100, 200]"></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[50, 100, 200]"></mat-paginator>
   </mat-card-content>
 </mat-card>
 

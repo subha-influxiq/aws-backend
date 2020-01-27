@@ -39,8 +39,8 @@ export interface DialogData {
 
 export class TechDashboardComponent implements OnInit {
   public commonArray: PeriodicElement[] = [];
-  displayedColumns: string[] = ['no', 'patientName', 'record_type', 'doctorName', 'techName','date_added', 'status'];
-  allDataColumns: string[] = ['no','patientName', 'doctorName', 'techName','billerName','recordType','billGenerationData', 'billsendDate','status'];
+  displayedColumns: string[] = ['no', 'patientName', 'record_type', 'doctorName', 'techName','date_added', 'status', 'created_at'];
+  allDataColumns: string[] = ['no','patientName', 'doctorName', 'techName','billerName','recordType','billGenerationData', 'billsendDate', 'status', 'created_at'];
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   @ViewChild(MatPaginator, { static: false }) paginatorAll: MatPaginator;
@@ -67,7 +67,6 @@ export class TechDashboardComponent implements OnInit {
 
     this.activatedRoute.data.forEach((data) => {
       this.allResolveData = data.techDashboardData.data;
-      console.log(">>>>>>>>>>>", this.allResolveData);
       this.allResolveData["totalRemainToProcessCount"] = this.allResolveData.totalReportCount - this.allResolveData.processedReportCount;
       let allDashboardData : AllDataElement[] = this.allResolveData.totalReportData;
       this.allDataSource = new MatTableDataSource(allDashboardData);

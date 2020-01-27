@@ -151,9 +151,6 @@ const routes: Routes = [
       },
       endpoint: 'datalist'
     },
-
-
-
   },
 
   /* Account-Settings */
