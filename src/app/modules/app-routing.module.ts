@@ -95,15 +95,12 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin/image-not-process', component: ReportNotProcessComponent, canActivate: [AuthguardService],
+    path: 'admin/images-not-process', component: ReportNotProcessComponent, canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'patient_management',
-        condition: {
-          "report_type": "file",
-          "images": { $exists:false }
-        }
+        source: 'report_not_process_view',
+        condition: {}
       },
       endpoint: 'datalist'
     },
