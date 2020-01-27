@@ -142,7 +142,7 @@ export class AdminDashboardComponent implements OnInit {
           "status": "pending"
         },
         "condition1": {
-          "status": "Waiting for doctor sign"
+          "status": "waiting for doctor sign"
         },
         "condition2": {
           "status": "doctor signed"
