@@ -362,7 +362,7 @@
 
       <ng-container matColumnDef="billGenerationDate" *ngIf="htmlText.headerText != 'Patient Reports'">
         <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>
-        <td mat-cell *matCellDef="let element" data-label="Bill Generation Date"> {{ element.billGenerationDate }} </td>
+        <td mat-cell *matCellDef="let element" data-label="Bill Generation Date"> {{ element.billGenerationDate | date }} </td>
       </ng-container>
 
       <ng-container matColumnDef="techName">
@@ -372,7 +372,7 @@
 
       <ng-container matColumnDef="billSentDate" *ngIf="htmlText.headerText != 'Patient Reports'">
         <th mat-header-cell *matHeaderCellDef> Bill SentDate</th>
-        <td mat-cell *matCellDef="let element" data-label="Bill Sent Date"> {{ element.billSentDate }} </td>
+        <td mat-cell *matCellDef="let element" data-label="Bill Sent Date"> {{ element.billSentDate | date }} </td>
       </ng-container>
 
       <ng-container matColumnDef="superBill" *ngIf="htmlText.headerText != 'Patient Reports'">
@@ -381,8 +381,8 @@
       </ng-container>
 
       <ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef> Date</th>
-        <td mat-cell *matCellDef="let element" data-label="Date"> {{ element.date }} </td>
+        <th mat-header-cell *matHeaderCellDef> Created At</th>
+        <td mat-cell *matCellDef="let element" data-label="Date"> {{ element.testDate | date }} </td>
       </ng-container>
 
       <ng-container matColumnDef="status">

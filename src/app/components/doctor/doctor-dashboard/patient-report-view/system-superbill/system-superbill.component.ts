@@ -74,15 +74,14 @@ export class SystemSuperbillComponent implements OnInit {
 
   constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService,
     public cookie: CookieService, public fb: FormBuilder, public router: Router, public datePipe: DatePipe) {
-    console.log('route:: ', this.activatedRoute.snapshot.params._id);
-    this.userToken = cookie.get('jwtToken');
+    
+      this.userToken = cookie.get('jwtToken');
     let allcookies: any;
     allcookies = cookie.getAll();
     this.cookiesData = JSON.parse(allcookies.user_details);
 
     var dateformat = datePipe.transform(new Date(), "MM-dd-yyyy");
-    console.log("date format",dateformat);
-
+    
     this.patientBMIForm = this.fb.group({
       patientName: ['', [Validators.required, Validators.maxLength(30)]],
       gender: ['', Validators.required],
@@ -153,7 +152,6 @@ export class SystemSuperbillComponent implements OnInit {
         
         var BMI = response.res[0].BMI.split(".", 2);
         BMI = BMI[0] + BMI[1];
-        console.log('BMI', BMI);
         
         this.patientBMIForm.controls[BMI].patchValue(true);
         //   let eDateArr: any = patientDetails.testCompletedDate.split("-");

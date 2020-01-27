@@ -75,7 +75,7 @@ export class HealthRiskAnalysisComponent implements OnInit {
 
   constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService,
     public cookie: CookieService, public fb: FormBuilder, public router: Router,public datePipe : DatePipe) {
-    console.log('route:: ', this.activatedRoute.snapshot.params._id);
+    
     this.userToken = cookie.get('jwtToken');
     let allcookies: any;
     allcookies = cookie.getAll();
@@ -143,9 +143,8 @@ export class HealthRiskAnalysisComponent implements OnInit {
     
     this.httpService.httpViaPost('datalist', data)
       .subscribe(response => {
-        console.log('response => ', response);
-        let patientDetails: any;
-        patientDetails = response.res[0];
+
+        let patientDetails: any = response.res[0];
         this.patientSingleData = response.res;
         this.patientReportViewForm.controls['patientName'].patchValue(patientDetails.patientName);
         this.patientReportViewForm.controls['physicalOrderingname'].patchValue(patientDetails.doctor_name);

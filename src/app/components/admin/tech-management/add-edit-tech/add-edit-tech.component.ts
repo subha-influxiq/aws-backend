@@ -112,8 +112,7 @@ export class AddEditTechComponent implements OnInit {
   getResolveData() {
     this.activeRoute.data.forEach((data) => {
       this.usersData = data.techData.res;
-      let techDetails: any;
-      techDetails = data.techData.res;
+      let techDetails: any = data.techData.res;
       setTimeout(() => {
         this.getCityByName(techDetails[0].state);
       }, 400);

@@ -51,7 +51,6 @@ export class SignatureManagementComponent implements OnInit {
       }
       this.http.httpViaPost('addorupdatedata', data).subscribe(response => {
           if(response.status == "success") {
-            console.log("cookie>>>", this.authData.user_details);
             this.authData.user_details.doctor_signature = this.htmlText.viewSign;
             let str = JSON.stringify(this.authData.user_details);
             this.cookie.set('user_details', str);
