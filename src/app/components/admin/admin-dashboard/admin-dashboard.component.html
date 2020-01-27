@@ -380,9 +380,9 @@
         <td mat-cell *matCellDef="let element" data-label="Super Bill"> {{ element.superBill }} </td>
       </ng-container>
 
-      <ng-container matColumnDef="date">
+      <ng-container matColumnDef="created_at">
         <th mat-header-cell *matHeaderCellDef> Created At</th>
-        <td mat-cell *matCellDef="let element" data-label="Date"> {{ element.testDate | date }} </td>
+        <td mat-cell *matCellDef="let element" data-label="created_at"> {{ element.created_at | date }} </td>
       </ng-container>
 
       <ng-container matColumnDef="status">

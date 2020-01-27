@@ -55,7 +55,7 @@ export class AdminDashboardComponent implements OnInit {
     this.jwtToken = cookieService.get('jwtToken');
 
     /* Set Table Header */
-    this.allDataColumns = ['no', 'techName', 'report_type','doctorName', 'patientNamecopy', 'status', 'date', 'editRecord'];
+    this.allDataColumns = ['no', 'techName', 'report_type','doctorName', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
 
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData = resolveData.dataCount.data;
@@ -176,7 +176,7 @@ export class AdminDashboardComponent implements OnInit {
     this.htmlText.headerText = flag;
     var repostSignCond: any = {};
 
-    this.allDataColumns = ['no', 'techName', 'report_type','doctorName', 'patientNamecopy', 'status', 'date','editRecord'];
+    this.allDataColumns = ['no', 'techName', 'report_type','doctorName', 'patientNamecopy', 'status', 'created_at','editRecord'];
     /* Set Table Header */
 
     switch (flag) {
@@ -222,7 +222,7 @@ export class AdminDashboardComponent implements OnInit {
         }
         break;
       case 'Report Signed':
-        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'patientNamecopy', 'status', 'date', 'editRecord'];
+        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
 
         repostSignCond = {
           "source": "Patient-Record-Report_view",
@@ -233,7 +233,7 @@ export class AdminDashboardComponent implements OnInit {
         }
         break;
       case 'Super Bill':
-        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'patientNamecopy', 'status', 'date', 'editRecord'];
+        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
 
         /////////////////////////////////////////
         //////////////// Pending ////////////////
@@ -247,7 +247,7 @@ export class AdminDashboardComponent implements OnInit {
         }
         break;
       case 'Download Bill':
-        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'patientNamecopy', 'status', 'date', 'editRecord'];
+        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
 
         repostSignCond = {
           "source": "Patient-Record-Report_view",

@@ -32,8 +32,6 @@ export class LoginComponent implements OnInit {
 
   constructor(public cookies: CookieService, public commonFunction: CommonFunction) {
 
-    console.log("test: ", environment.siteBaseUrl);
-
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
 
