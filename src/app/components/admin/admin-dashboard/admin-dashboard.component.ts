@@ -9,6 +9,7 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { DownloadDetailsComponent } from './download-details/download-details.component';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatSnackBar } from '@angular/material';
+
 import * as momentImported from 'moment';
 const moment = momentImported;
 
@@ -32,9 +33,6 @@ export class AdminDashboardComponent implements OnInit {
   public signedStatusArray: any = [];
   public billerStatusArray: any = [];
   public allDataColumns: string[];
-  public startDate: any;
-  public endDate: any;
-  public statusFlag: any;
   public dialogRef: any;
 
   allDataSource: MatTableDataSource<any>;
@@ -74,106 +72,6 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-  }
-
-  filterByName(key: string, value: string) {
-    let searchJson: any = {};
-    searchJson[key] = value.toLowerCase();
-
-    var data = {
-      "source": "Patient-Record-Report_view",
-      "condition": searchJson,
-      "token": this.jwtToken
-    }
-    this.http.httpViaPost('datalist', data).subscribe(Response => {
-      this.allDataSource = Response.res;
-    });
-  }
-
-  filerByReports(key: string, value: any) {
-    let searchJson: any = {};
-    searchJson[key] = value.toLowerCase();
-    var data = {
-      "source": "Patient-Record-Report_view",
-      "condition": searchJson,
-      "token": this.jwtToken
-    }
-
-    this.http.httpViaPost('datalist', data)
-      .subscribe(Response => {
-        let result: any = Response.res;
-        //this.dataSource = result;
-      });
-
-  }
-
-  dateRangeSearch() {
-    var data = {
-      "source": "Patient-Record-Report_view",
-      "condition": {
-        "date": {
-          $lte: moment(this.endDate).format('DD-MM-YYYY'),
-          $gte: moment(this.startDate).format('DD-MM-YYYY')
-        }
-      },
-      "token": this.jwtToken,
-    }
-    this.http.httpViaPost('datalist', data).subscribe((response) => {
-      this.allDataSource = response.res;
-    });
-  }
-
-  dateReportsRangeSearch() {
-    var data = {
-      "source": "patient_management_view_count",
-      "condition": {
-        "date_added": {
-          $lte: moment(this.endDate).format('DD-MM-YYYY'),
-          $gte: moment(this.startDate).format('DD-MM-YYYY')
-        },
-        status: this.statusFlag
-      },
-      "token": this.jwtToken,
-    }
-    this.http.httpViaPost('datalist', data).subscribe((response) => {
-      //this.dataSource = response.res;
-    });
-  }
-
-  getStatusCountData() {
-    var data = {
-      "condition": {
-        "condition": {
-          "status": "pending"
-        },
-        "condition1": {
-          "status": "waiting for doctor sign"
-        },
-        "condition2": {
-          "status": "doctor signed"
-        },
-        "condition3": {
-          "status": "error"
-        },
-        "condition4": {
-          "status": "send to biller"
-        },
-        "condition5": {
-          "record_type": "file"
-        }
-      }
-    }
-    this.http.httpViaPost('statuscount', data)
-      .subscribe(response => {
-
-        let result: any;
-        result = response;
-
-        this.uploadedStatusArray = result.data.status1;
-        this.processedStatusArray = result.data.status2;
-        this.signedStatusArray = result.data.status3;
-        this.billerStatusArray = result.data.status5;
-      })
   }
 
   viewReportProcessData(flag: string) {
@@ -373,6 +271,7 @@ export class AdminDashboardComponent implements OnInit {
     });
   }
 
+  /* Delete record Start */
   deleteReport(pk_id: any, index: number) {
     let data: any = {
       width: '250px',
@@ -443,6 +342,7 @@ export class AdminDashboardComponent implements OnInit {
       }
     });
   }
+  /* Delete record End */
 
   viewDownloadDetails(id: any) {
     let data: any = {
@@ -473,6 +373,7 @@ export class AdminDashboardComponent implements OnInit {
           patientName: "",
           status: ""
         };
+        moment('ssss').format('DD-MM-YYYY');
         break;
     }
   }
