@@ -367,9 +367,7 @@ export class AdminDashboardComponent implements OnInit {
           "token": this.jwtToken
         };
 
-        this.http.httpViaPost('datalist', data).subscribe(response => {
-          console.log('Response.res', response.res);
-        });
+        this.viewReportProcessData(this.htmlText.headerText);
         break;
       case 'reset':
         this.searchJson = {
