@@ -356,17 +356,20 @@ export class AdminDashboardComponent implements OnInit {
   filter(flag) {
     switch (flag) {
       case 'search':
-        console.log(">>", this.searchJson);
-        console.log("Begin >>>", moment(this.searchJson.dateRange.begin).format("MM DD YYYY"));
-        console.log("End >>>", moment(this.searchJson.dateRange.end).format("MM DD YYYY"));
+        if (this.searchJson.dateRange != '') {
+          this.searchJson.dateRange.begin = moment(this.searchJson.dateRange.begin).format("MM/DD/YYYY")
+          this.searchJson.dateRange.end = moment(this.searchJson.dateRange.end).format("MM/DD/YYYY");
+        }
+
         var data = {
           "source": "Patient-Record-Report_view",
           "condition": this.searchJson,
           "token": this.jwtToken
-        }
-        // this.http.httpViaPost('datalist', data).subscribe(Response => {
-        //     this.allDataSource = Response.res;
-        //   });
+        };
+
+        this.http.httpViaPost('datalist', data).subscribe(response => {
+          console.log('Response.res', response.res);
+        });
         break;
       case 'reset':
         this.searchJson = {
