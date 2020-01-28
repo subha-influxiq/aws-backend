@@ -363,10 +363,9 @@ export class AdminDashboardComponent implements OnInit {
           "source": "Patient-Record-Report_view",
           "condition": this.searchJson,
           "token": this.jwtToken
-        }
-        // this.http.httpViaPost('datalist', data).subscribe(Response => {
-        //     this.allDataSource = Response.res;
-        //   });
+        };
+
+        this.viewReportProcessData(this.htmlText.headerText);
         break;
       case 'reset':
         this.searchJson = {
