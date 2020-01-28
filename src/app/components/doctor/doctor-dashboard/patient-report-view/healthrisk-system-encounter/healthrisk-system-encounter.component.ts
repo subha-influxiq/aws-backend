@@ -289,8 +289,13 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         if (patientDetails.SDdais_A != 0)
           fieldText += '** ' + patientDetails.SDdais_A + '\n\n';
 
-        // console.log('this.pdata.AIPTG_H', fieldText);
+        if (patientDetails.BMI_string_mannual != 0)
+          fieldText += '** ' + patientDetails.BMI_string_mannual + '\n\n';
+        
+        if (patientDetails.BMI_string != 0)
+          fieldText += '** ' + patientDetails.BMI_string + '\n\n';
 
+        // Display the values
         this.patientEncounterForm.controls['healthRisk'].patchValue(fieldText);
 
         if (this.pdata.I10 == 1)

@@ -185,6 +185,7 @@ export class PatientReportViewComponent implements OnInit {
 
   ngOnInit() {
     if(this.activeRoute.snapshot == null || this.activeRoute.snapshot.url == null || this.activeRoute.snapshot.url[3]==null || this.activeRoute.snapshot.url[3].path != 'file' ) {
+      console.log('ngOnInit() if');
       this.setDefaultValue();
       this.getAllDoctorData();
     } else {
@@ -196,15 +197,18 @@ export class PatientReportViewComponent implements OnInit {
   }
 
   setDefaultValue() {
+    
     this.activeRoute.data.forEach((data) => {
-
       let reportDetails: any = data.data.res;
+
+      console.log('reportDetails[0]', reportDetails[0]);
+
+      this.techId = reportDetails[0].tech_id;
       
-      this.techId = reportDetails[0].user_id;
       this.allPatientReportData = reportDetails[0];
-      this.BMIFlug = Math.round(reportDetails[0].BMI_value);
+      this.BMIFlug = Math.round(reportDetails[0].BMI);
      
-      this.ImageData = reportDetails[0].images_url;
+      this.ImageData = reportDetails[0].images;
      
       this.reportID = reportDetails[0]._id;
       this.patientAddEditForm.controls['patientName'].patchValue(reportDetails[0].patientName);

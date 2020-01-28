@@ -10,6 +10,8 @@ import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.compon
 import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { CommonFunction } from '../../../../class/common/common-function';
+import * as moment from 'moment';
+import 'moment/locale/pt-br';
 
 export interface DialogData {
   message: string;
@@ -145,11 +147,14 @@ export class AddEditPatientComponent implements OnInit {
     }
  
     if(this.patientAddEditForm.valid) {
-      this.patientAddEditForm.value.birthDate = this.datePipe.transform(this.patientAddEditForm.value.birthDate, "MM-dd-yyyy");
-      this.patientAddEditForm.value.testDate = this.datePipe.transform(this.patientAddEditForm.value.testDate, "MM-dd-yyyy");
-      this.patientAddEditForm.value.testCompletedDate = this.datePipe.transform(this.patientAddEditForm.value.testCompletedDate, "MM-dd-yyyy");
-      this.patientAddEditForm.value.date = this.datePipe.transform(this.patientAddEditForm.value.date, "MM-dd-yyyy");
+      // this.patientAddEditForm.value.birthDate = this.datePipe.transform(this.patientAddEditForm.value.birthDate, "MM-dd-yyyy");
+      // this.patientAddEditForm.value.testDate = this.datePipe.transform(this.patientAddEditForm.value.testDate, "MM-dd-yyyy");
+      // this.patientAddEditForm.value.testCompletedDate = this.datePipe.transform(this.patientAddEditForm.value.testCompletedDate, "MM-dd-yyyy");
+      // this.patientAddEditForm.value.date = this.datePipe.transform(this.patientAddEditForm.value.date, "MM-dd-yyyy");
 
+      /****** Format date with moment.js ******/
+      this.patientAddEditForm.value.birthDate = moment().format('L');
+      console.log('this.patientAddEditForm.value.birthDate', this.patientAddEditForm.value.birthDate);
       /* Setup Blood Pressure (systolic, diastolic) */
       const bloodPressure = this.patientAddEditForm.controls.bloodPressure_value.value;
       const systolicDiastolic = bloodPressure.split('/');

@@ -1,24 +1,23 @@
 <app-admin-header></app-admin-header>
 <mat-card class="admin_wrapper">
-  <mat-card-content class="title_wrapper">
-    {{ htmlText.header }}
-  </mat-card-content>
+    <mat-card-content class="title_wrapper">
+        {{ htmlText.header }}
+    </mat-card-content>
 
-  <span class="add_header">
+    <span class="add_header">
     <span class="bradcrumb">
       <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;{{ htmlText.nav }}
     </span>
-  </span>
+    </span>
 
-  <mat-card class="add_form">
-    <mat-card-content>
-      <form class="example-form" autocomplete="off" name="patientAddEditForm" [formGroup]="patientAddEditForm"
-        (ngSubmit)="patientAddEditFormSubmit()">
+    <mat-card class="add_form">
+        <mat-card-content>
+            <form class="example-form" autocomplete="off" name="patientAddEditForm" [formGroup]="patientAddEditForm" (ngSubmit)="patientAddEditFormSubmit()">
 
-        <fieldset class="field_setmodel">
-          <legend class="legend_model">Patients Information:</legend>
+                <fieldset class="field_setmodel">
+                    <legend class="legend_model">Patients Information:</legend>
 
-          <span class="patients_info_wrapper">
+                    <span class="patients_info_wrapper">
             <mat-card-content>
               <label>Patient Name</label>
               <mat-form-field>
@@ -34,75 +33,75 @@
                 <input type="radio" value='Female' [formControl]="patientAddEditForm.controls['gender']">Female
               </span>
 
-              <mat-error *ngIf="patientAddEditForm.controls['gender'].touched && !patientAddEditForm.controls['gender'].valid && patientAddEditForm.controls['gender'].errors.required">Birth Date can not be blank.</mat-error>
-            </mat-card-content>
+                    <mat-error *ngIf="patientAddEditForm.controls['gender'].touched && !patientAddEditForm.controls['gender'].valid && patientAddEditForm.controls['gender'].errors.required">Birth Date can not be blank.</mat-error>
+        </mat-card-content>
 
-            <mat-card-content>
-              <label> Date of birth</label>
-              <mat-form-field>
+        <mat-card-content>
+            <label> Date of birth</label>
+            <mat-form-field>
                 <input matInput [matDatepicker]="dobPicker" [formControl]="patientAddEditForm.controls['birthDate']">
                 <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
                 <mat-datepicker #dobPicker></mat-datepicker>
 
                 <mat-error *ngIf="patientAddEditForm.controls['birthDate'].touched && !patientAddEditForm.controls['birthDate'].valid && patientAddEditForm.controls['birthDate'].errors.required">Birth Date can not be blank.</mat-error>
-              </mat-form-field>
-            </mat-card-content>
+            </mat-form-field>
+        </mat-card-content>
 
-            <mat-card-content>
-              <label>Ordering Physician</label>
-              <mat-form-field>
+        <mat-card-content>
+            <label>Ordering Physician</label>
+            <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['doctor_id']" placeholder="Select a Doctor" (selectionChange)="getTechList($event.value);">
-                  <mat-option>Select a Doctor</mat-option>
-                  <mat-option *ngFor="let doc of this.htmlText.allDoctor;" value="{{ doc._id }}"> {{ doc.fullNamecopy }}
-                  </mat-option>
+                    <mat-option>Select a Doctor</mat-option>
+                    <mat-option *ngFor="let doc of this.htmlText.allDoctor;" value="{{ doc._id }}"> {{ doc.fullNamecopy }}
+                    </mat-option>
                 </mat-select>
 
                 <mat-error *ngIf="patientAddEditForm.controls['doctor_id'].touched && !patientAddEditForm.controls['doctor_id'].valid && patientAddEditForm.controls['doctor_id'].errors.required">Select a doctor.</mat-error>
-              </mat-form-field>
-            </mat-card-content>
+            </mat-form-field>
+        </mat-card-content>
 
-            <mat-card-content>
-              <label> Tech Name </label>
-              <mat-form-field>
+        <mat-card-content>
+            <label> Tech Name </label>
+            <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['tech_id']" placeholder="Select a Tech">
-                  <mat-option>Select a Tech</mat-option>
-                  <mat-option *ngFor="let doc of htmlText.allTech;" value="{{ doc.tech_id }}"> {{ doc.tech }}
-                  </mat-option>
+                    <mat-option>Select a Tech</mat-option>
+                    <mat-option *ngFor="let doc of htmlText.allTech;" value="{{ doc.tech_id }}"> {{ doc.tech }}
+                    </mat-option>
                 </mat-select>
 
                 <mat-error *ngIf="patientAddEditForm.controls['tech_id'].touched && !patientAddEditForm.controls['tech_id'].valid && patientAddEditForm.controls['tech_id'].errors.required">Select a tech.</mat-error>
-              </mat-form-field>
-            </mat-card-content>
+            </mat-form-field>
+        </mat-card-content>
 
-            <mat-card-content>
-              <label> Test Date</label>
-              <mat-form-field>
+        <mat-card-content>
+            <label> Test Date</label>
+            <mat-form-field>
                 <input matInput [matDatepicker]="testDatePicker" [formControl]="patientAddEditForm.controls['testDate']">
                 <mat-datepicker-toggle matSuffix [for]="testDatePicker"></mat-datepicker-toggle>
                 <mat-datepicker #testDatePicker></mat-datepicker>
-              </mat-form-field>
+            </mat-form-field>
 
-              <mat-error *ngIf="patientAddEditForm.controls['testDate'].touched && !patientAddEditForm.controls['testDate'].valid && patientAddEditForm.controls['testDate'].errors.required">Test date can not be blank.</mat-error>
-            </mat-card-content>
+            <mat-error *ngIf="patientAddEditForm.controls['testDate'].touched && !patientAddEditForm.controls['testDate'].valid && patientAddEditForm.controls['testDate'].errors.required">Test date can not be blank.</mat-error>
+        </mat-card-content>
 
-            <mat-card-content>
-              <label> Test Completed</label>
-              <mat-form-field>
+        <mat-card-content>
+            <label> Test Completed</label>
+            <mat-form-field>
                 <input matInput [matDatepicker]="testCompletedDatePicker" [formControl]="patientAddEditForm.controls['testCompletedDate']">
                 <mat-datepicker-toggle matSuffix [for]="testCompletedDatePicker"></mat-datepicker-toggle>
                 <mat-datepicker #testCompletedDatePicker></mat-datepicker>
-              </mat-form-field>
+            </mat-form-field>
 
-              <mat-error *ngIf="patientAddEditForm.controls['testCompletedDate'].touched && !patientAddEditForm.controls['testCompletedDate'].valid && patientAddEditForm.controls['testCompletedDate'].errors.required">Test Completed Date can not be blank.</mat-error>
-            </mat-card-content>
-          </span>
+            <mat-error *ngIf="patientAddEditForm.controls['testCompletedDate'].touched && !patientAddEditForm.controls['testCompletedDate'].valid && patientAddEditForm.controls['testCompletedDate'].errors.required">Test Completed Date can not be blank.</mat-error>
+        </mat-card-content>
+        </span>
         </fieldset>
 
         <br>
 
         <fieldset class="field_setmodel">
-          <legend class="legend_model">RM-3A Status report</legend>
-          <span class="test_date_wrapper">
+            <legend class="legend_model">RM-3A Status report</legend>
+            <span class="test_date_wrapper">
 
             <mat-card-content>
               <label>PTGTP</label>
@@ -488,11 +487,11 @@
         <br>
 
         <fieldset class="field_setmodel">
-          <legend class="legend_model">additional notes</legend>
-          
-          <br>
-          
-          <span class="patient_diagnotes">
+            <legend class="legend_model">additional notes</legend>
+
+            <br>
+
+            <span class="patient_diagnotes">
             <label>Patient Diagnoses & Notes:</label>
             <mat-form-field class="example-full-width">
 
@@ -501,14 +500,14 @@
             </mat-form-field>
           </span>
 
-          <span class="submit_form">
+            <span class="submit_form">
             <button mat-flat-button type="reset">Reset </button>
             <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
           </span>
         </fieldset>
-      </form>
-    </mat-card-content>
-  </mat-card>
+        </form>
+        </mat-card-content>
+    </mat-card>
 
 </mat-card>
 
