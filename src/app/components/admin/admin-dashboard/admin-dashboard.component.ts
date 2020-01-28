@@ -88,6 +88,7 @@ export class AdminDashboardComponent implements OnInit {
           "condition": {
             "report_type": "mannual"
           },
+          "search": this.searchJson,
           "token": this.jwtToken,
         }
         break;
@@ -97,6 +98,7 @@ export class AdminDashboardComponent implements OnInit {
           "condition": {
             "report_type": "file"
           },
+          "search": this.searchJson,
           "token": this.jwtToken,
         }
         break;
@@ -104,6 +106,8 @@ export class AdminDashboardComponent implements OnInit {
       case 'Reports Uploaded':
         repostSignCond = {
           "source": "Patient-Record-Report_view",
+          "condition": {},
+          "search": this.searchJson,
           "token": this.jwtToken,
         }
         break;
@@ -119,6 +123,7 @@ export class AdminDashboardComponent implements OnInit {
             "page_6": { $exists: true },
             "page_7": { $exists: true }
           },
+          "search": this.searchJson,
           "token": this.jwtToken,
         }
         break;
@@ -130,6 +135,7 @@ export class AdminDashboardComponent implements OnInit {
           "condition": {
             "doctor_signature": { $exists: true }
           },
+          "search": this.searchJson,
           "token": this.jwtToken,
         }
         break;
@@ -144,6 +150,7 @@ export class AdminDashboardComponent implements OnInit {
           "condition": {
             "doctor_signature": { $exists: true }
           },
+          "search": this.searchJson,
           "token": this.jwtToken,
         }
         break;
@@ -155,6 +162,7 @@ export class AdminDashboardComponent implements OnInit {
           "condition": {
             "download_count": { $exists: true }
           },
+          "search": this.searchJson,
           "token": this.jwtToken,
         }
         break;
@@ -164,15 +172,24 @@ export class AdminDashboardComponent implements OnInit {
           "condition": {
             "doctor_signature": { $exists: false }
           },
+          "search": this.searchJson,
           "token": this.jwtToken,
         }
         break;
       default:
+        repostSignCond = {
+          "source": "Patient-Record-Report_view",
+          "condition": {
+            "doctor_signature": { $exists:false }
+          },
+          "search": this.searchJson,
+          "token": this.jwtToken,
+        }
         break;
     }
 
-    this.http.httpViaPost('datalist', repostSignCond).subscribe((response) => {
-      let allData = response.res;
+    this.http.httpViaPost('admin-dashboard-datalist', repostSignCond).subscribe((response) => {
+      let allData = response.data;
       this.allDataSource = new MatTableDataSource(allData);
       this.allDataSource.paginator = this.paginatorAll;
     });
@@ -360,12 +377,6 @@ export class AdminDashboardComponent implements OnInit {
           this.searchJson.dateRange.begin = moment(this.searchJson.dateRange.begin).format("MM/DD/YYYY")
           this.searchJson.dateRange.end = moment(this.searchJson.dateRange.end).format("MM/DD/YYYY");
         }
-
-        var data = {
-          "source": "Patient-Record-Report_view",
-          "condition": this.searchJson,
-          "token": this.jwtToken
-        };
 
         this.viewReportProcessData(this.htmlText.headerText);
         break;
