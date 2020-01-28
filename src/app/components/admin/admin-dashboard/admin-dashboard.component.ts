@@ -40,12 +40,11 @@ export class AdminDashboardComponent implements OnInit {
   public searchJson: any = {
     doctorName: "",
     patientName: "",
-    status: ""
+    status: "",
+    dateRange: ""
   };
 
-  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   public allDataList: any = [];
-
   @ViewChild(MatPaginator, { static: false }) paginatorAll: MatPaginator;
 
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute,
@@ -358,6 +357,8 @@ export class AdminDashboardComponent implements OnInit {
     switch (flag) {
       case 'search':
         console.log(">>", this.searchJson);
+        console.log("Begin >>>", moment(this.searchJson.dateRange.begin).format("MM DD YYYY"));
+        console.log("End >>>", moment(this.searchJson.dateRange.end).format("MM DD YYYY"));
         var data = {
           "source": "Patient-Record-Report_view",
           "condition": this.searchJson,

@@ -317,14 +317,8 @@
       <!-- Filter by date -->
       <ng-container>
         <span class="date-range">
-          <!-- <mat-form-field>
-            <input matInput [matDatepicker]="picker1" placeholder="Start Date" [(ngModel)]="startDate">
-            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-            <mat-datepicker #picker1></mat-datepicker>
-          </mat-form-field> -->
-
           <mat-form-field>
-            <input matInput placeholder="Choose a date" [satDatepicker]="picker" [value]="date" />
+            <input matInput placeholder="Choose a date" [satDatepicker]="picker" [value]="date" [(ngModel)]="searchJson.dateRange" />
             <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
             <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
           </mat-form-field>
