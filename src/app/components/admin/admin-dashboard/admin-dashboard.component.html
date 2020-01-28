@@ -295,15 +295,16 @@
 
         <mat-toolbar class="action_bar">
             <mat-form-field>
-                <input matInput placeholder="Search by Doctor" (keyup)="filterByName('doctorName_search_regex', $event.target.value)">
+                <input matInput placeholder="Search by Doctor" [(ngModel)]="searchJson.doctorName">
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput placeholder="Search by Patient" (keyup)="filterByName('patientName_search_regex', $event.target.value)">
+                <input matInput placeholder="Search by Patient" [(ngModel)]="searchJson.patientName">
+                <!-- (keyup)="filterByName('patientName_search_regex', $event.target.value)"> -->
             </mat-form-field>
 
             <mat-form-field class="parent_cat">
-                <mat-select placeholder="Search By Status" (selectionChange)="filterByName('status_text', $event.value)">
+                <mat-select placeholder="Search By Status" [(ngModel)]="searchJson.status">
                     <mat-option value=0>Select a status</mat-option>
                     <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
                     <mat-option value="doctor signed">Doctor Signed</mat-option>
@@ -328,7 +329,10 @@
             <mat-datepicker #picker2></mat-datepicker>
           </mat-form-field>
         </span>
-                <button mat-raised-button color="primary" class="add_button" (click)="dateRangeSearch()">Search</button>
+                <button mat-raised-button color="primary" class="add_button" (click)="filter('search')">Search</button>
+                <button mat-raised-button color="primary" (click)="filter('reset')">
+                  <i class="material-icons"> replay </i>  
+                </button>
             </ng-container>
 
         </mat-toolbar>

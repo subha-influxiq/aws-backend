@@ -12,7 +12,6 @@ import { MatSnackBar } from '@angular/material';
 import * as momentImported from 'moment';
 const moment = momentImported;
 
-
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -35,10 +34,16 @@ export class AdminDashboardComponent implements OnInit {
   public allDataColumns: string[];
   public startDate: any;
   public endDate: any;
-  public statusFlag : any;
+  public statusFlag: any;
   public dialogRef: any;
 
   allDataSource: MatTableDataSource<any>;
+
+  public searchJson: any = {
+    doctorName: "",
+    patientName: "",
+    status: ""
+  };
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   public allDataList: any = [];
@@ -47,15 +52,15 @@ export class AdminDashboardComponent implements OnInit {
 
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute,
     public dialog: MatDialog, public deviceService: DeviceDetectorService, private matSnackBar: MatSnackBar) {
-    
+
     this.loginUserData["user_details"] = JSON.parse(cookieService.get('user_details'));
     this.loginUserData["jwtToken"] = cookieService.get('jwtToken');
 
-      /* Get Auth Token */
+    /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
 
     /* Set Table Header */
-    this.allDataColumns = ['no', 'techName', 'report_type','doctorName', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
+    this.allDataColumns = ['no', 'techName', 'report_type', 'doctorName', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
 
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData = resolveData.dataCount.data;
@@ -81,8 +86,8 @@ export class AdminDashboardComponent implements OnInit {
       "token": this.jwtToken
     }
     this.http.httpViaPost('datalist', data).subscribe(Response => {
-        this.allDataSource = Response.res;
-      });
+      this.allDataSource = Response.res;
+    });
   }
 
   filerByReports(key: string, value: any) {
@@ -106,7 +111,7 @@ export class AdminDashboardComponent implements OnInit {
     var data = {
       "source": "Patient-Record-Report_view",
       "condition": {
-        "date" : {
+        "date": {
           $lte: moment(this.endDate).format('DD-MM-YYYY'),
           $gte: moment(this.startDate).format('DD-MM-YYYY')
         }
@@ -122,12 +127,12 @@ export class AdminDashboardComponent implements OnInit {
     var data = {
       "source": "patient_management_view_count",
       "condition": {
-        "date_added": { 
+        "date_added": {
           $lte: moment(this.endDate).format('DD-MM-YYYY'),
           $gte: moment(this.startDate).format('DD-MM-YYYY')
         },
         status: this.statusFlag
-    },
+      },
       "token": this.jwtToken,
     }
     this.http.httpViaPost('datalist', data).subscribe((response) => {
@@ -163,7 +168,7 @@ export class AdminDashboardComponent implements OnInit {
 
         let result: any;
         result = response;
-        
+
         this.uploadedStatusArray = result.data.status1;
         this.processedStatusArray = result.data.status2;
         this.signedStatusArray = result.data.status3;
@@ -171,12 +176,11 @@ export class AdminDashboardComponent implements OnInit {
       })
   }
 
-
   viewReportProcessData(flag: string) {
     this.htmlText.headerText = flag;
     var repostSignCond: any = {};
 
-    this.allDataColumns = ['no', 'techName', 'report_type','doctorName', 'patientNamecopy', 'status', 'created_at','editRecord'];
+    this.allDataColumns = ['no', 'techName', 'report_type', 'doctorName', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
     /* Set Table Header */
 
     switch (flag) {
@@ -191,14 +195,14 @@ export class AdminDashboardComponent implements OnInit {
         }
         break;
       case 'Total File Reports':
-          repostSignCond = {
-            "source": "Patient-Record-Report_view",
-            "condition": {
-              "report_type": "file"
-            },
-            "token": this.jwtToken,
-          }
-          break;
+        repostSignCond = {
+          "source": "Patient-Record-Report_view",
+          "condition": {
+            "report_type": "file"
+          },
+          "token": this.jwtToken,
+        }
+        break;
       /* Report Status Section */
       case 'Reports Uploaded':
         repostSignCond = {
@@ -210,30 +214,30 @@ export class AdminDashboardComponent implements OnInit {
         repostSignCond = {
           "source": "Patient-Record-Report_view",
           "condition": {
-            "page_1": { $exists:true },
-            "page_2": { $exists:true },
-            "page_3": { $exists:true },
-            "page_4": { $exists:true },
-            "page_5": { $exists:true },
-            "page_6": { $exists:true },
-            "page_7": { $exists:true }
+            "page_1": { $exists: true },
+            "page_2": { $exists: true },
+            "page_3": { $exists: true },
+            "page_4": { $exists: true },
+            "page_5": { $exists: true },
+            "page_6": { $exists: true },
+            "page_7": { $exists: true }
           },
           "token": this.jwtToken,
         }
         break;
       case 'Report Signed':
-        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
+        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type', 'doctorName', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
 
         repostSignCond = {
           "source": "Patient-Record-Report_view",
           "condition": {
-            "doctor_signature": { $exists:true }
+            "doctor_signature": { $exists: true }
           },
           "token": this.jwtToken,
         }
         break;
       case 'Super Bill':
-        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
+        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type', 'doctorName', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
 
         /////////////////////////////////////////
         //////////////// Pending ////////////////
@@ -241,13 +245,13 @@ export class AdminDashboardComponent implements OnInit {
         repostSignCond = {
           "source": "Patient-Record-Report_view",
           "condition": {
-            "doctor_signature": { $exists:true }
+            "doctor_signature": { $exists: true }
           },
           "token": this.jwtToken,
         }
         break;
       case 'Download Bill':
-        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type','doctorName', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
+        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type', 'doctorName', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
 
         repostSignCond = {
           "source": "Patient-Record-Report_view",
@@ -261,7 +265,7 @@ export class AdminDashboardComponent implements OnInit {
         repostSignCond = {
           "source": "Patient-Record-Report_view",
           "condition": {
-            "doctor_signature": { $exists:false }
+            "doctor_signature": { $exists: false }
           },
           "token": this.jwtToken,
         }
@@ -292,7 +296,7 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   downloadReport(report: any) {
-    if(typeof(report.download_count) == "undefined") {
+    if (typeof (report.download_count) == "undefined") {
       report.download_count = 1;
     } else {
       report.download_count = report.download_count + 1;
@@ -303,7 +307,7 @@ export class AdminDashboardComponent implements OnInit {
     deviceInfo["isMobile"] = this.deviceService.isMobile();
     deviceInfo["isTablet"] = this.deviceService.isTablet();
     deviceInfo["isDesktop"] = this.deviceService.isDesktop();
-    
+
     /* Set downloader information */
     var userDetails = {
       id: this.loginUserData.user_details._id,
@@ -328,7 +332,7 @@ export class AdminDashboardComponent implements OnInit {
     };
 
     this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
-      if(response.status == 'success') {
+      if (response.status == 'success') {
         this.matSnackBar.open("Start downloading.", "Ok", {
           duration: 3000
         });
@@ -352,7 +356,7 @@ export class AdminDashboardComponent implements OnInit {
       }
     };
     this.http.httpViaPost("admin-dashboard", postData).subscribe(response => {
-      if(response.status == 'success') {
+      if (response.status == 'success') {
         this.allResolveData = response.data;
         let allData = this.allResolveData.totalReportData;
         this.allDataSource = new MatTableDataSource(allData);
@@ -372,7 +376,7 @@ export class AdminDashboardComponent implements OnInit {
   deleteReport(pk_id: any, index: number) {
     let data: any = {
       width: '250px',
-      data: { 
+      data: {
         header: "Alert",
         message: "Do you want to delete this record ?",
         button1: { text: "No" },
@@ -382,7 +386,7 @@ export class AdminDashboardComponent implements OnInit {
 
     this.dialogRef = this.dialog.open(DialogBoxComponent, data);
     this.dialogRef.afterClosed().subscribe(result => {
-      switch(result) {
+      switch (result) {
         case "No":
           break;
         case "Yes":
@@ -399,36 +403,36 @@ export class AdminDashboardComponent implements OnInit {
       "token": this.jwtToken,
     }
     this.http.httpViaPost('deletesingledata', repostSignCond).subscribe((response) => {
-      if(response.status == 'success') {
+      if (response.status == 'success') {
         this.allResolveData.totalReportData.splice(index, 1);
         let allData = this.allResolveData.totalReportData;
         this.allDataSource = new MatTableDataSource(allData);
 
         let data: any = {
           width: '250px',
-          data: { 
+          data: {
             header: "Success",
             message: "Successfully delete.",
             button1: { text: "OK" },
             button2: { text: "" },
           }
         }
-    
+
         this.dialogRef = this.dialog.open(DialogBoxComponent, data);
       } else {
         let data: any = {
           width: '250px',
-          data: { 
+          data: {
             header: "Error",
             message: "An error occord. Please try again.",
             button1: { text: "Re-Try" },
             button2: { text: "Close" },
           }
         }
-    
+
         this.dialogRef = this.dialog.open(DialogBoxComponent, data);
         this.dialogRef.afterClosed().subscribe(result => {
-          switch(result) {
+          switch (result) {
             case "Close":
               break;
             case "Re-Try":
@@ -448,6 +452,29 @@ export class AdminDashboardComponent implements OnInit {
       }
     };
     this.dialogRef = this.dialog.open(DownloadDetailsComponent, data);
+  }
+
+  filter(flag) {
+    switch (flag) {
+      case 'search':
+        console.log(">>", this.searchJson);
+        var data = {
+          "source": "Patient-Record-Report_view",
+          "condition": this.searchJson,
+          "token": this.jwtToken
+        }
+        // this.http.httpViaPost('datalist', data).subscribe(Response => {
+        //     this.allDataSource = Response.res;
+        //   });
+        break;
+      case 'reset':
+        this.searchJson = {
+          doctorName: "",
+          patientName: "",
+          status: ""
+        };
+        break;
+    }
   }
 
 }
