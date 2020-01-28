@@ -5,7 +5,6 @@ import { HttpServiceService } from '../../../services/http-service.service';
 import { MatTableDataSource, MatSnackBar } from '@angular/material';
 import { SelectionModel } from '@angular/cdk/collections';
 
-
 /* Mat Table Start */
 export interface TableInterface {
   file_original_name: any;
@@ -16,7 +15,6 @@ export interface TableInterface {
 
 const MEMBER_DATA: TableInterface[] = [];
 /* Table End */
-
 
 @Component({
   selector: 'app-report-not-process',
@@ -32,13 +30,13 @@ export class ReportNotProcessComponent implements OnInit {
   public allUserData_modify_header: any = {
     "firstname": "First Name", "lastname": "Last Name",
     "email": "E-Mail", "phone": "Phone Number", "date": "Date",
-    "status": "Status","address": "Address",
+    "status": "Status", "address": "Address",
     "fullNamecopy": "Name"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public previewModal_skip : any=['_id','fullNamecopy'];
+  public previewModal_skip: any = ['_id', 'fullNamecopy'];
   public tableName: any = "users";
   public apiUrl: any;
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
@@ -53,10 +51,9 @@ export class ReportNotProcessComponent implements OnInit {
     };
   public user_cookie: any;
 
-
   /****** New table allocation ******/
   displayedColumns: string[] = ['select', 'file_original_name', 'tech_name', 'doctor_name',
-                              'upload_time', 'action'];
+    'upload_time', 'action'];
   dataSource = new MatTableDataSource(MEMBER_DATA);
   public reportData: any;
   selection = new SelectionModel<TableInterface>(true, []);
@@ -67,18 +64,18 @@ export class ReportNotProcessComponent implements OnInit {
 
     this.user_cookie = cookie.get('jwtToken');
     this.apiUrl = httpService.baseUrl;
-    
+
   }
 
   ngOnInit() {
     this.activatedRoute.data.forEach((resolveData) => {
-      console.log("Data: ", resolveData.data);
+      //console.log("Data: ", resolveData.data);
       this.allResloveData = resolveData.data.res;
+      console.log(">>", this.allResloveData);
     });
 
     this.onPopulate();
   }
-
 
   onPopulate() {
     this.activatedRoute.data.forEach((resolveData) => {
@@ -88,20 +85,30 @@ export class ReportNotProcessComponent implements OnInit {
     });
   }
 
-  deleteData(id) {
-    console.log('id', id);
+  action(action, id, index) {
+    switch (action) {
+      case 'delete':
+        this.httpService.ResolveViaPost({ source: "patient_management", id: id }, "deletesingledata").subscribe((response: any) => {
 
-    this.httpService.ResolveViaPost({source: "patient_management", id: id }, "deletesingledata").subscribe((response: any) => {
-      alert('Successfully deleted');
-      //location.reload();
-    });
-  }
-
-  retry(id) {
-    console.log('id', id);
-    this.httpService.httpViaPost("getPdfToImages", {id: id }).subscribe((response: any) => {
-      this.openSnackBar("Retry ", response.status);
-    });
+          if (response.status == 'success') {
+            this.openSnackBar("Successfully delete.", "");
+            this.allResloveData.splice(index, 1);
+            this.dataSource = new MatTableDataSource(this.allResloveData);
+          } else {
+            this.openSnackBar("An error occord.", "");
+          }
+        });
+        break;
+      case 'retry':
+        this.httpService.httpViaPost("getPdfToImages", { id: id }).subscribe((response: any) => {
+          if (response.status == 'success') {
+            this.openSnackBar("Successfully reprocess.", "");
+          } else {
+            this.openSnackBar("An error occord.", "");
+          }
+        });
+        break;
+    }
   }
 
   /** Whether the number of selected elements matches the total number of rows. */
@@ -114,8 +121,8 @@ export class ReportNotProcessComponent implements OnInit {
   /** Selects all rows if they are not all selected; otherwise clear selection. */
   masterToggle() {
     this.isAllSelected() ?
-        this.selection.clear() :
-        this.dataSource.data.forEach(row => this.selection.select(row));
+      this.selection.clear() :
+      this.dataSource.data.forEach(row => this.selection.select(row));
   }
 
   /** The label for the checkbox on the passed row */
@@ -133,4 +140,3 @@ export class ReportNotProcessComponent implements OnInit {
     });
   }
 }
-
