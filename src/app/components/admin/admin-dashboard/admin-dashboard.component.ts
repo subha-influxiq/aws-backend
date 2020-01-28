@@ -372,7 +372,8 @@ export class AdminDashboardComponent implements OnInit {
         this.searchJson = {
           doctorName: "",
           patientName: "",
-          status: ""
+          status: "",
+          dateRange: ""
         };
         moment('ssss').format('DD-MM-YYYY');
         break;
