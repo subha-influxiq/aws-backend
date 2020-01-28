@@ -16,6 +16,10 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { MetaModule } from '@ngx-meta/core';
 import { DeviceDetectorModule } from 'ngx-device-detector';
 
+/* Date Range Picker */
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, SatDatepickerModule } from 'saturn-datepicker';
+import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
+
 import { CookieService } from 'ngx-cookie-service';
 import { AuthguardService} from './services/authguard.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -76,6 +80,7 @@ import { BillerHeaderComponent } from './components/biller/biller-header/biller-
 
 /* testing purpose start here */
 import { TestComponent } from './components/test/test.component';
+
 import { HealthriskSystemEncounterComponent } from './components/doctor/doctor-dashboard/patient-report-view/healthrisk-system-encounter/healthrisk-system-encounter.component';
 import { SystemSuperbillComponent } from './components/doctor/doctor-dashboard/patient-report-view/system-superbill/system-superbill.component';
 import { HealthRiskAnalysisComponent } from './components/doctor/doctor-dashboard/patient-report-view/health-risk-analysis/health-risk-analysis.component';
@@ -177,6 +182,7 @@ import { DownloadDetailsComponent } from './components/admin/admin-dashboard/dow
     DownloadDetailsComponent
   ],
   imports: [
+    SatDatepickerModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     MetaModule.forRoot(),
     AppRoutingModule,
@@ -193,10 +199,36 @@ import { DownloadDetailsComponent } from './components/admin/admin-dashboard/dow
     HttpClientModule,
     DeviceDetectorModule.forRoot()
   ],
-  exports: [MatPaginatorModule],
-
-  providers: [HttpLoaderService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }, CookieService, AuthguardService, HttpServiceService, DatePipe, CommonFunction],
-  bootstrap: [AppComponent],
+  exports: [
+    MatPaginatorModule
+  ],
+  providers: [
+    HttpLoaderService,
+    { 
+      provide: HTTP_INTERCEPTORS, 
+      useClass: LoaderInterceptor, 
+      multi: true 
+    }, 
+    CookieService, 
+    AuthguardService, 
+    HttpServiceService, 
+    DatePipe, 
+    CommonFunction,
+    { 
+      provide: DateAdapter, 
+      useClass: MomentDateAdapter, 
+      deps: [
+        MAT_DATE_LOCALE
+      ]
+    },
+    {
+      provide: MAT_DATE_FORMATS, 
+      useValue: MAT_MOMENT_DATE_FORMATS
+    },
+  ],
+  bootstrap: [
+    AppComponent
+  ],
   entryComponents:[
     ChangePasswordDoctorModal,
     Dialogtest,ChangePasswordModal,
@@ -209,7 +241,6 @@ import { DownloadDetailsComponent } from './components/admin/admin-dashboard/dow
     DoctorViewDialogComponent,
     DownloadDetailsComponent
   ]
-
 })
 export class AppModule {
 
