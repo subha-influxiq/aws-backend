@@ -370,26 +370,14 @@ export class AdminDashboardComponent implements OnInit {
     this.dialogRef = this.dialog.open(DownloadDetailsComponent, data);
   }
 
-  filter(flag) {
-    switch (flag) {
-      case 'search':
-        if (this.searchJson.dateRange != '') {
-          this.searchJson.dateRange.begin = moment(this.searchJson.dateRange.begin).format("MM/DD/YYYY")
-          this.searchJson.dateRange.end = moment(this.searchJson.dateRange.end).format("MM/DD/YYYY");
-        }
-
-        this.viewReportProcessData(this.htmlText.headerText);
-        break;
-      case 'reset':
-        this.searchJson = {
-          doctorName: "",
-          patientName: "",
-          status: "",
-          dateRange: ""
-        };
-        moment('ssss').format('DD-MM-YYYY');
-        break;
-    }
+  resetSearch() {
+    this.searchJson = {
+      doctorName: "",
+      patientName: "",
+      status: "",
+      dateRange: ""
+    };
+    this.viewReportProcessData(this.htmlText.headerText);
   }
 
 }

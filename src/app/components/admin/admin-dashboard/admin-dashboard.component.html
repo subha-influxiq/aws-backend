@@ -305,7 +305,7 @@
 
       <mat-form-field class="parent_cat">
         <mat-select placeholder="Search By Status" [(ngModel)]="searchJson.status">
-          <mat-option value=0>Select a status</mat-option>
+          <mat-option value="">Select a status</mat-option>
           <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
           <mat-option value="doctor signed">Doctor Signed</mat-option>
           <mat-option value="send to biller">Send To Biller</mat-option>
@@ -324,8 +324,8 @@
           </mat-form-field>
         </span>
 
-                <button mat-raised-button type="button" color="primary" class="add_button" (click)="filter('search')">Search</button>
-                <button mat-raised-button type="button" color="primary" class="add_button" (click)="filter('reset')">
+                <button mat-raised-button type="button" color="primary" class="add_button" (click)="viewReportProcessData(htmlText.headerText);">Search</button>
+                <button mat-raised-button type="button" color="primary" class="add_button" (click)="resetSearch();">
           <i class="material-icons"> replay </i>
         </button>
             </ng-container>
