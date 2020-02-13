@@ -11,109 +11,112 @@ import { environment } from '../../../../../environments/environment';
 export interface DialogData {
   message: string;
   id: any;
-}@Component({
+};
+
+@Component({
   selector: 'app-add-edit-doctor-ofc',
   templateUrl: './add-edit-doctor-ofc.component.html',
   styleUrls: ['./add-edit-doctor-ofc.component.css']
 })
+
 export class AddEditDoctorOfcComponent implements OnInit {
-  public message: any = "Submitted Successfully";
-
-  public htmlText: any = { header: 'Add Doctor office', nav: 'Add Doctor office', buttonText: 'Save' };
+  
   @ViewChild(FormGroupDirective, { static: false }) formDirective: FormGroupDirective;
-  public dialogRef: any;
 
-  date = new FormControl(new Date());
-  public ddmmyy: any;
-  serializedDate = new FormControl((new Date()).toISOString());
   public doctorOfficeAddEditForm: FormGroup;
-  public user_token: any;
   public params_id: any;
-  public usersData: any = [];
-  public states: any;
-  public allCities: any;
-  public cities: any;
-  public allTechData:any=[];
-
-  constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
+  public htmlText: any = {
+    userData: "",
+    header: 'Add New Doctor Office', 
+    nav: 'Add Doctor Office', 
+    buttonText: 'Save',
+    message: "Submitted Successfully",
+    doctorOfficeData: "",
+    techData: "",
+    billerData: "",
+    states: "",
+    allCities: "",
+    cities: "",
+    taxonomies: ""
+  };
+  public dialogRef: any;
+  
+  constructor(public formBuilder: FormBuilder, public acivatedRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
-    public cookie: CookieService, public snackBar: MatSnackBar, public dialog: MatDialog) {
-      this.params_id = this.activeRoute.snapshot.params._id;
-    this.allStateCityData();
-    this.user_token = cookie.get('jwtToken');
-    this.getAllTechData();
-    if(this.params_id){
-      this.generateEditForm();
-    }else{
-     this.generateAddForm();
-    }
+    public cookieService: CookieService, public snackBar: MatSnackBar, public dialog: MatDialog) {
     
+      this.htmlText.userData = this.cookieService.getAll();
+      this.getAllTechData();
+      this.allStateCityData();
+      
+      if (this.acivatedRoute.snapshot.params._id) {
+        this.generateAddEditForm('edit');
+  
+        this.htmlText.message     = "Updated Successfully";
+        this.htmlText.header      = 'Edit Doctor Office Record';
+        this.htmlText.nav         = 'Edit Doctor Office';
+        this.htmlText.buttonText  = 'Update';
+        this.params_id            = this.acivatedRoute.snapshot.params._id;
+      } else {
+        this.generateAddEditForm('add');
+      }
+  }
+
+  generateAddEditForm(flag: string = null) {
+    let validateRule: any = {
+      id:                     ['', []],
+      center_name:            ['', [ Validators.required, Validators.maxLength(50) ]],
+      firstname:              ['', [ Validators.required, Validators.maxLength(50) ]],
+      lastname:               ['', [ Validators.required, Validators.maxLength(50) ]],
+      email:                  ['', [ Validators.required, Validators.email, Validators.maxLength(100) ]],
+      phone:                  ['', [ Validators.required, Validators.minLength(7), Validators.maxLength(16) ]],
+      address:                ['', [ Validators.required, Validators.maxLength(200) ]],
+      zip:                    ['', [ Validators.required, Validators.minLength(4), Validators.maxLength(18) ]],
+      city:                   ['', [ Validators.required ]],
+      tech_id:                ['', [ Validators.required ]],
+      state:                  ['', [ Validators.required ]],
+      user_type:              ['doctor_office', []],
+      status:                 ['', []],
+      password:               ['', [ Validators.required, Validators.maxLength(16), Validators.minLength(6) ]],
+      confirmpassword:        ['', [ Validators.required ]]
+    };
+    let passwordRule: any = { validators: this.matchpassword('password', 'confirmpassword') };
+
+    switch(flag) {
+      case 'edit':
+        delete validateRule.password;
+        delete validateRule.confirmpassword;
+
+        this.doctorOfficeAddEditForm = this.formBuilder.group(validateRule);
+
+        this.acivatedRoute.data.forEach((data) => {
+          let doctorDetails: any = data.data.res;
+          setTimeout(() => {
+            this.getCity(doctorDetails[0].state);
+          }, 1000);
+
+          this.doctorOfficeAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
+          this.doctorOfficeAddEditForm.controls['center_name'].patchValue(doctorDetails[0].center_name);
+          this.doctorOfficeAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
+          this.doctorOfficeAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
+          this.doctorOfficeAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
+          this.doctorOfficeAddEditForm.controls['phone'].patchValue(doctorDetails[0].phone);
+          this.doctorOfficeAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
+          this.doctorOfficeAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
+          this.doctorOfficeAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
+          this.doctorOfficeAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_details);
+          this.doctorOfficeAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
+        });
+        break;
+      case 'add':
+        delete validateRule.id;
+        
+        this.doctorOfficeAddEditForm = this.formBuilder.group(validateRule, passwordRule);
+        break;
+    }
   }
 
   ngOnInit() {
-    if (this.params_id) {
-      this.htmlText.header = 'Edit Doctors Office Record';
-      this.htmlText.nav = 'Edit Doctors Office';
-      this.htmlText.buttonText = 'Update';
-      this.getResolveData();
-    }
-  }
-  getResolveData() {
-    this.activeRoute.data.forEach((data) => {
-      this.usersData = data.data.res;
-      let techDetails: any;
-      techDetails = data.data.res;
-      setTimeout(() => {
-        this.getCityByName(techDetails[0].state);
-      }, 500);
-      this.doctorOfficeAddEditForm.controls['centerName'].patchValue(techDetails[0].centerName);
-      this.doctorOfficeAddEditForm.controls['email'].patchValue(techDetails[0].email);
-      this.doctorOfficeAddEditForm.controls['phone'].patchValue(techDetails[0].phone);
-      this.doctorOfficeAddEditForm.controls['address'].patchValue(techDetails[0].address);
-      this.doctorOfficeAddEditForm.controls['state'].patchValue(techDetails[0].state);
-      this.doctorOfficeAddEditForm.controls['city'].patchValue(techDetails[0].city);
-      this.doctorOfficeAddEditForm.controls['tech'].patchValue(techDetails[0].tech);
-      this.doctorOfficeAddEditForm.controls['zip'].patchValue(techDetails[0].zip);
-      this.doctorOfficeAddEditForm.controls['status'].patchValue(techDetails[0].status);
-
-    })
-  }
-  generateAddForm(){
-    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
-    this.doctorOfficeAddEditForm = this.fb.group({
-      centerName: ['', [Validators.required]],
-      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phone: ['', [Validators.required]],
-      address: ['', [Validators.required]],
-      city: ['', []],
-      state: ['', []],
-      zip: ['', [Validators.required]],
-      date: [dateformat, []],
-      status: ['', []],
-      tech :['', []],
-      type: ['doctor_office', []],
-      password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
-      confirmpassword: [],
-    }, { validators: this.matchpassword('password', 'confirmpassword') })
-  }
-
-  generateEditForm(){
-    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
-    this.doctorOfficeAddEditForm = this.fb.group({
-      centerName: ['', [Validators.required]],
-      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phone: ['', [Validators.required]],
-      address: ['', [Validators.required]],
-      city: ['', []],
-      state: ['', []],
-      tech :['', []],
-      zip: ['', [Validators.required]],
-      date: [dateformat, []],
-      status: ['', []],
-      type: ['doctor_office', []],
-    });
   }
 
   matchpassword(passwordkye: string, confirmpasswordkye: string) {
@@ -131,115 +134,96 @@ export class AddEditDoctorOfcComponent implements OnInit {
 
   openDialog(x: any): void {
     this.dialogRef = this.dialog.open(ChangePasswordDoctorOfficeModal, {
-
       data: { message: x, 'id': this.params_id }
     });
     this.dialogRef.afterClosed().subscribe(result => {
     });
   }
+
   /**for validation purpose**/
   inputUntouch(form: any, val: any) {
-
     form.controls[val].markAsUntouched();
   }
   /**for validation purpose**/
+
   /**for getting all states & cities function start here**/
   allStateCityData() {
     this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
-      this.states = response;
+      this.htmlText.states = response;
     });
 
     this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(response => {
-      this.allCities = response;
-      if(this.params_id){
-        this.getResolveData();
-      }
+      this.htmlText.allCities = response;
     });
   }
   /**for getting all states & cities  function end here**/
 
   getCity(event) {
     var val = event;
-    console.log(event)
-    this.cities = this.allCities[val];
+    this.htmlText.cities = this.htmlText.allCities[val];
   }
-  backToManagePage(){
-    this.router.navigateByUrl("/admin/doctor-office-management");
+
+  /**getting all the technician data**/
+  getAllTechData() {
+    var data = {
+      "source": "data_pece",
+      "condition": {
+        "user_type": "tech"
+      },
+      "token": this.htmlText.userData.jwtToken
+    };
+    this.httpService.httpViaPost('datalist', data).subscribe(response => {
+      this.htmlText.techData = response.res;
+    });
   }
-    /**getting all the technician data**/
-    getAllTechData() {
-      var data = {
-        "source": "users",
-        "condition": {
-          "type": "tech"
-        },
-        "token": this.user_token
-      }
-      this.httpService.httpViaPost('datalist', data)
-        .subscribe(response => {
-          this.allTechData = response.res;
-        });
-    }
+
   getCityByName(stateName) {
-    console.log('stateName',stateName)
-    this.cities = this.allCities[stateName];
-    console.log(this.cities)
+    this.htmlText.cities = this.htmlText.allCities[stateName];
   }
 
   doctorOfficeAddEditFormFormSubmit() {
-    let x: any;
-    for (x in this.doctorOfficeAddEditForm.controls) {
+    for (let x in this.doctorOfficeAddEditForm.controls) {
       this.doctorOfficeAddEditForm.controls[x].markAsTouched();
     }
-     if(this.params_id){
-      delete this.doctorOfficeAddEditForm.value.password;
-      delete this.doctorOfficeAddEditForm.value.confirmpassword;
-     }
+
+    /* stop here if form is invalid */
     if (this.doctorOfficeAddEditForm.valid) {
-      if (this.doctorOfficeAddEditForm.value.status)
+      delete this.doctorOfficeAddEditForm.value.confirmpassword;
+
+      if (this.doctorOfficeAddEditForm.value.status) {
         this.doctorOfficeAddEditForm.value.status = parseInt("1");
-      else
-        this.doctorOfficeAddEditForm.value.status = parseInt("0");
-        
-      delete this.doctorOfficeAddEditForm.value.confirmpassword;  
-      
-      var data: any;
-      if (this.params_id) {
-        data = {
-          "source": "users",
-          "data": {
-            id: this.params_id,
-            centerName: this.doctorOfficeAddEditForm.value.centerName,
-            phone: this.doctorOfficeAddEditForm.value.phone,
-            email: this.doctorOfficeAddEditForm.value.email,
-            address: this.doctorOfficeAddEditForm.value.address,
-            city: this.doctorOfficeAddEditForm.value.city,
-            state: this.doctorOfficeAddEditForm.value.state,
-            tech: this.doctorOfficeAddEditForm.value.tech,
-            zip: this.doctorOfficeAddEditForm.value.zip,
-            status: this.doctorOfficeAddEditForm.value.status,
-          },
-          "token": this.user_token
-        };
-     } else {
-        data = {
-          "source": "users",
-          "data": this.doctorOfficeAddEditForm.value,
-          "domainurl" : environment.siteBaseUrl + 'reset-password',
-          "token": this.user_token
-        }
+      } else {
+        this.doctorOfficeAddEditForm.value.status = parseInt("0");;
       }
-      this.httpService.httpViaPost("addorupdatedata", data)
-        .subscribe(response => {
-          let action = "ok";
-          this.snackBar.open(this.message, action, {
+
+      /* start process to submited data */
+      let postData: any = {
+        "source": "data_pece",
+        "data": this.doctorOfficeAddEditForm.value,
+        "domainurl": environment.siteBaseUrl + 'reset-password',
+        "sourceobjArray": ["tech_id"],
+        "token": this.cookieService.get('jwtToken')
+      };
+
+      this.httpService.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
+        if (response.status == "success") {
+          this.formDirective.resetForm();
+
+          this.snackBar.open(this.htmlText.message, 'Ok', {
             duration: 2000,
           });
-          this.formDirective.resetForm();
-          this.router.navigateByUrl('/admin/doctor-office-management');
-        })
-    }else{
-      alert("error");
+
+          setTimeout(() => {
+            this.router.navigateByUrl("admin/doctor-management");
+          }, 2000);
+        } else {
+          this.snackBar.open(response.msg, '', {
+            duration: 2000,
+          });
+        }
+      }, (error) => {
+        alert("Some error occurred. Please try again.");
+      });
     }
   }
 }

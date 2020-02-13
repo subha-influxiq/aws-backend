@@ -8,6 +8,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatSnackBar } from '@angular/material';
+import * as momentImported from 'moment';
+const moment = momentImported;
 
 @Component({
   selector: 'app-biller-dashboard',
@@ -18,8 +20,13 @@ import { MatSnackBar } from '@angular/material';
 export class BillerDashboardComponent implements OnInit {
 
   public htmlText: any = {
-    tableHeaderText: "Patient Reports",
-    ip: ''
+    tableHeaderText: "Patient Reports"
+  };
+  public searchJson: any = {
+    doctorName: "",
+    patientName: "",
+    status: "",
+    dateRange: ""
   };
   public loginUserData: any = {};
   public allResolveData: any;
@@ -34,7 +41,8 @@ export class BillerDashboardComponent implements OnInit {
   constructor(public http: HttpClient, public commonFunction: CommonFunction, public activatedRoute: ActivatedRoute, 
     public cookieService: CookieService, public httpService: HttpServiceService, public deviceService: DeviceDetectorService,
     public matSnackBar: MatSnackBar) {
-    /* Get and set login User Data */
+    
+      /* Get and set login User Data */
     this.loginUserData["user_details"] = JSON.parse(this.cookieService.get('user_details'));
     this.loginUserData["jwtToken"] = this.cookieService.get('jwtToken');
 
@@ -59,13 +67,19 @@ export class BillerDashboardComponent implements OnInit {
   viewReportData(flug: string = "Patient Reports") {
     this.htmlText.tableHeaderText = flug;
     var data: any;
+
+    if(this.searchJson.dateRange != '') {
+      this.searchJson.dateRange.end = moment(this.searchJson.dateRange.end, "DD-MM-YYYY").add(1, 'days');
+    }
+
     switch(flug) {
       case 'Total Downloaded':
         data = {
           "source": "Patient-Record-Report_view",
           "token": this.loginUserData.jwtToken,
+          "search": this.searchJson,
           "condition": {
-            "biller_id_object": this.loginUserData.user_details._id,
+            "biller_id": this.loginUserData.user_details._id,
             "download_count": { $exists: true }
           }
         }
@@ -74,8 +88,9 @@ export class BillerDashboardComponent implements OnInit {
         data = {
           "source": "Patient-Record-Report_view",
           "token": this.loginUserData.jwtToken,
+          "search": this.searchJson,
           "condition": {
-            "biller_id_object": this.loginUserData.user_details._id,
+            "biller_id": this.loginUserData.user_details._id,
             "download_count": { $exists: false }
           }
         }
@@ -84,16 +99,17 @@ export class BillerDashboardComponent implements OnInit {
         data = {
           "source": "Patient-Record-Report_view",
           "token": this.loginUserData.jwtToken,
+          "search": this.searchJson,
           "condition": {
-            "biller_id_object": this.loginUserData.user_details._id
+            "biller_id": this.loginUserData.user_details._id
           }
         }
         break;
     }
 
-    this.httpService.httpViaPost('datalist', data).subscribe((response) => {
+    this.httpService.httpViaPost('dashboard-datalist', data).subscribe((response) => {
       /* Fetching the data into table */
-      this.dataSource = new MatTableDataSource(response.res);
+      this.dataSource = new MatTableDataSource(response.data);
       /* Adding the paginator options */
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
@@ -173,6 +189,15 @@ export class BillerDashboardComponent implements OnInit {
         }, 1000);
       }
     });
+  }
+
+  resetSearch() {
+    this.searchJson = {
+      patientName: "",
+      status: "",
+      dateRange: ""
+    };
+    this.viewReportData(this.htmlText.tableHeaderText);
   }
 
 }

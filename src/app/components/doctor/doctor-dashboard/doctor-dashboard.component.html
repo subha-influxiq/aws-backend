@@ -59,30 +59,28 @@
 
     <span class="action_bar">
       <mat-form-field>
-        <input matInput (keyup)="applyFilter('patientName_regex', $event.target.value);" placeholder="Search By Patient Name">
+        <input matInput type="text" placeholder="Search By Patient" [(ngModel)]="searchJson.patientName" />
       </mat-form-field>
 
-      <mat-form-field class="parent_cat">
-        <mat-select placeholder="Search By Status" (selectionChange)="applyStatusFilter({'status_regex': $event.value})">
-          <mat-option value=0>Select a status</mat-option>
+      <mat-form-field>
+        <mat-select placeholder="Search By Status" [(ngModel)]="searchJson.status">
+          <mat-option value="">Select a status</mat-option>
+          <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
           <mat-option value="doctor signed">Doctor Signed</mat-option>
+          <mat-option value="send to biller">Send To Biller</mat-option>
+          <mat-option value="error">Error</mat-option>
           <mat-option value="pending">Pending</mat-option>
+          this.viewReportProcessData(this.htmlText.headerText);
         </mat-select>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput [matDatepicker]="picker" [(ngModel)]="start_date" placeholder="Search By Date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker touchUi #picker></mat-datepicker>
+        <input matInput type="text" placeholder="Choose a date" [satDatepicker]="picker" [(ngModel)]="searchJson.dateRange" />
+        <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
+        <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
       </mat-form-field>
 
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker1" [(ngModel)]="end_date" placeholder="Search By Date">
-        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-        <mat-datepicker touchUi #picker1></mat-datepicker>
-      </mat-form-field>
-
-      <button mat-raised-button color="warn" (click)="dateSearch()">Date Search</button>
+      <button mat-raised-button color="warn" (click)="viewReportProcessData(htmlText.headerText);">Date Search</button>
     </span>
 
     <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8 adminTables">

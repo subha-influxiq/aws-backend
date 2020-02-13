@@ -82,7 +82,10 @@ export class EditPatientRecordComponent implements OnInit {
 
     this.allCookies = this.cookie.getAll();
     this.allCookies.user_details =  JSON.parse(this.allCookies.user_details);
-    this.getAllDoctorData();
+
+    setTimeout(() => {
+      this.getAllDoctorData();
+    }, 2000);
       
     this.patientAddEditForm = this.fb.group({
       id                 :  [this.paramsId, [Validators.required]],
@@ -177,7 +180,9 @@ export class EditPatientRecordComponent implements OnInit {
       let patientDetails: any = data.patientData.res;
 
       this.ImageData = patientDetails[0].images;
-      this.getTechList(patientDetails[0].doctor_id);
+      setTimeout(() => {
+        this.getTechList(patientDetails[0].doctor_id);
+      }, 4000);
 
       this.patientAddEditForm.controls['patientName'].patchValue(patientDetails[0].patientName);
       this.patientAddEditForm.controls['gender'].patchValue(patientDetails[0].gender);
@@ -187,10 +192,16 @@ export class EditPatientRecordComponent implements OnInit {
       this.patientAddEditForm.controls['report_type'].patchValue(patientDetails[0].report_type);
       
       /* Date marge */
-      this.patientAddEditForm.value.birthDate = this.datePipe.transform(patientDetails[0].birthDate, "MM-dd-yyyy");
-      this.patientAddEditForm.value.testDate = this.datePipe.transform(patientDetails[0].testDate, "MM-dd-yyyy");
-      this.patientAddEditForm.value.testCompletedDate = this.datePipe.transform(patientDetails[0].testCompletedDate, "MM-dd-yyyy");
-      this.patientAddEditForm.value.date = this.datePipe.transform(patientDetails[0].date, "MM-dd-yyyy");
+      var date: any = patientDetails[0].birthDate.split('-');
+      this.patientAddEditForm.controls['birthDate'].patchValue(moment([date[2], date[0] - 1, date[1]]));
+      
+      date = patientDetails[0].testDate.split('-');
+      this.patientAddEditForm.controls['testDate'].patchValue(moment([date[2], date[0] - 1, date[1]]));
+      
+      if(patientDetails[0].testCompletedDate != '' && typeof(patientDetails[0].testCompletedDate) != 'undefined') {
+        date = patientDetails[0].testCompletedDate.split('-');
+        this.patientAddEditForm.controls['testCompletedDate'].patchValue(moment([date[2], date[0] - 1, date[1]]));
+      }
 
       this.patientAddEditForm.controls['PTGPT'].patchValue(patientDetails[0].PTGPT); 
       this.patientAddEditForm.controls['PTGPT_value'].patchValue(patientDetails[0].PTGPT_value); 

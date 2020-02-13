@@ -15,129 +15,209 @@
   </span>
 
   <mat-card class="add_form">
-
-    <!-- <h2>add Doctors office</h2> -->
-
-
     <mat-card-content class="form_wrapper">
-      <form class="example-form" autocomplete="off" name="doctorOfficeAddEditForm" [formGroup]="doctorOfficeAddEditForm"
-        (ngSubmit)="doctorOfficeAddEditFormFormSubmit()">
+      <form class="example-form" autocomplete="off" name="doctorOfficeAddEditForm" [formGroup]="doctorOfficeAddEditForm" (ngSubmit)="doctorOfficeAddEditFormFormSubmit()">
 
+        <!-- Center Name Start -->
         <mat-form-field appearance="fill">
-          <mat-label>Enter Center Name</mat-label>
-          <input matInput placeholder="First Name" [formControl]="doctorOfficeAddEditForm.controls['centerName']"
-            (blur)="inputUntouch(doctorOfficeAddEditForm,'centerName')">
-          <mat-error *ngIf="doctorOfficeAddEditForm.controls['centerName'].touched && !doctorOfficeAddEditForm.controls['centerName'].valid
-                 && doctorOfficeAddEditForm.controls['centerName'].errors.required">
-            Center Name field can not be blank</mat-error>
+          <mat-label>Center Name</mat-label>
+
+          <input matInput placeholder="First Name" [formControl]="doctorOfficeAddEditForm.controls['center_name']"
+            (blur)="inputUntouch(doctorOfficeAddEditForm,'center_name')">
+
+          <mat-error
+            *ngIf="doctorOfficeAddEditForm.controls['center_name'].touched && !doctorOfficeAddEditForm.controls['center_name'].valid && doctorOfficeAddEditForm.controls['center_name'].errors.required">
+            Center Name required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="doctorOfficeAddEditForm.controls['center_name'].touched && !doctorOfficeAddEditForm.controls['center_name'].valid && doctorOfficeAddEditForm.controls['center_name'].errors.maxlength">
+            Center Name is not valid.
+          </mat-error>
         </mat-form-field>
+        <!-- Center Name End -->
 
+        <!-- Tech Details Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Select Tech</mat-label>
+          <mat-select formControlName="tech_id" multiple>
+            <mat-option [value]="">Select Tech</mat-option>
+            <mat-option *ngFor="let tech of htmlText.techData;" value="{{ tech._id }}">{{ tech.firstname }} {{tech.lastname}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Tech Details name -->
 
+        <!-- First Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
 
+          <input matInput placeholder="First Name" [formControl]="doctorOfficeAddEditForm.controls['firstname']"
+            (blur)="inputUntouch(doctorOfficeAddEditForm,'firstname')">
+
+          <mat-error
+            *ngIf="doctorOfficeAddEditForm.controls['firstname'].touched && !doctorOfficeAddEditForm.controls['firstname'].valid && doctorOfficeAddEditForm.controls['firstname'].errors.required">
+            First Name required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="doctorOfficeAddEditForm.controls['firstname'].touched && !doctorOfficeAddEditForm.controls['firstname'].valid && doctorOfficeAddEditForm.controls['firstname'].errors.maxlength">
+            First Name is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- First Name End -->
+
+        <!-- Last Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+
+          <input matInput placeholder="Last Name" [formControl]="doctorOfficeAddEditForm.controls['lastname']"
+            (blur)="inputUntouch(doctorOfficeAddEditForm,'lastname')">
+
+          <mat-error
+            *ngIf="doctorOfficeAddEditForm.controls['lastname'].touched && !doctorOfficeAddEditForm.controls['lastname'].valid && doctorOfficeAddEditForm.controls['lastname'].errors.required">
+            Last Name required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="doctorOfficeAddEditForm.controls['lastname'].touched && !doctorOfficeAddEditForm.controls['lastname'].valid && doctorOfficeAddEditForm.controls['lastname'].errors.maxlength">
+            Last Name is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Last Name End -->
+
+        <!-- Email Start -->
         <mat-form-field appearance="fill">
           <mat-label>Email Address</mat-label>
+
           <input matInput placeholder="Email Address" [formControl]="doctorOfficeAddEditForm.controls['email']"
             (blur)="inputUntouch(doctorOfficeAddEditForm,'email')">
-          <mat-error *ngIf="doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid
-                  && doctorOfficeAddEditForm.controls['email'].errors.required">
-            E-Mail field can not be blank</mat-error>
-          <mat-error
-            *ngIf="!doctorOfficeAddEditForm.controls['email'].valid && !doctorOfficeAddEditForm.controls['email'].errors.required">
-            Email is not valid</mat-error>
-        </mat-form-field>
 
+          <mat-error
+            *ngIf="doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid && doctorOfficeAddEditForm.controls['email'].errors.required">
+            Email required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid && doctorOfficeAddEditForm.controls['email'].errors.email">
+            Email is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Email End -->
+
+        <!-- Phone Number Start -->
         <mat-form-field appearance="fill">
-          <mat-label>Phone </mat-label>
+          <mat-label>Phone Number</mat-label>
+
           <input matInput placeholder="Phone" [formControl]="doctorOfficeAddEditForm.controls['phone']"
             (blur)="inputUntouch(doctorOfficeAddEditForm,'phone')">
-          <mat-error *ngIf="doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid
-                  && doctorOfficeAddEditForm.controls['phone'].errors.required">
-            Phone Number field can not be blank</mat-error>
-        </mat-form-field>
 
+          <mat-error
+            *ngIf="doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid && doctorOfficeAddEditForm.controls['phone'].errors.required">
+            Phone Number required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid && doctorOfficeAddEditForm.controls['phone'].errors.maxlength">
+            Phone Number is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Phone Number End -->
+
+        <!-- Address Start -->
         <mat-form-field appearance="fill">
           <mat-label>Address</mat-label>
-          <textarea matInput placeholder="Address" [formControl]="doctorOfficeAddEditForm.controls['address']"
-            (blur)="inputUntouch(doctorOfficeAddEditForm,'address')"></textarea>
-          <mat-error *ngIf="doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid
-                  && doctorOfficeAddEditForm.controls['address'].errors.required">
-            Address field can not be blank</mat-error>
+
+          <input matInput placeholder="Address" [formControl]="doctorOfficeAddEditForm.controls['address']"
+            (blur)="inputUntouch(doctorOfficeAddEditForm,'address')">
+
+          <mat-error *ngIf="doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid && doctorOfficeAddEditForm.controls['address'].errors.required">
+            Address required.
+          </mat-error>
+
+          <mat-error *ngIf="doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid && doctorOfficeAddEditForm.controls['address'].errors.maxlength">
+            Address is not valid.
+          </mat-error>
         </mat-form-field>
+        <!-- Address End -->
+
+        <!-- State Start -->
         <mat-form-field class="parent_cat" appearance="fill">
           <mat-label>State</mat-label>
-          <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
-            <mat-option [value]=0>Select a category</mat-option>
-            <mat-option *ngFor="let state of states;" value="{{ state.name }}">{{ state.name }}</mat-option>
-          </mat-select>
-        </mat-form-field>
 
+          <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
+            <mat-option [value]="">Select State</mat-option>
+            <mat-option *ngFor="let state of htmlText.states;" value="{{ state.name }}">{{ state.name }}</mat-option>
+          </mat-select>
+
+          <mat-error *ngIf="doctorOfficeAddEditForm.controls['state'].touched && !doctorOfficeAddEditForm.controls['state'].valid && doctorOfficeAddEditForm.controls['state'].errors.required">
+            State required.
+          </mat-error>
+        </mat-form-field>
+        <!-- State End -->
+
+        <!-- City Start -->
         <mat-form-field class="parent_cat" appearance="fill">
           <mat-label>City</mat-label>
+
           <mat-select formControlName="city">
-            <mat-option [value]=0>Select a City</mat-option>
-            <mat-option *ngFor="let city of cities;" value="{{ city }}">{{ city }}</mat-option>
+            <mat-option value="">Select City</mat-option>
+            <mat-option *ngFor="let city of htmlText.cities;" value="{{ city }}">{{ city }}</mat-option>
           </mat-select>
+
+          <mat-error *ngIf="doctorOfficeAddEditForm.controls['city'].touched && !doctorOfficeAddEditForm.controls['city'].valid && doctorOfficeAddEditForm.controls['city'].errors.required">
+            State required.
+          </mat-error>
         </mat-form-field>
+        <!-- City End -->
 
-        <mat-form-field class="parent_cat" appearance="fill">
-          <mat-label>Select Technician</mat-label>
-          <mat-select formControlName="tech" multiple>
-            <mat-option [value]=0>Select a Tech</mat-option>
-            <mat-option *ngFor="let val of allTechData;" value="{{ val._id }}">{{ val.firstname }}
-              {{ val.lastname }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-
-
+        <!-- Zip Start -->
         <mat-form-field appearance="fill">
-          <mat-label>ZIP</mat-label>
-          <input matInput placeholder="ZIP" [formControl]="doctorOfficeAddEditForm.controls['zip']"
+          <mat-label>Zip</mat-label>
+
+          <input type="number" matInput placeholder="ZIP" [formControl]="doctorOfficeAddEditForm.controls['zip']"
             (blur)="inputUntouch(doctorOfficeAddEditForm,'zip')">
-          <mat-error *ngIf="doctorOfficeAddEditForm.controls['zip'].touched && !doctorOfficeAddEditForm.controls['zip'].valid
-                  && doctorOfficeAddEditForm.controls['zip'].errors.required">
 
-            Zip field can not be blank</mat-error>
+          <mat-error *ngIf="doctorOfficeAddEditForm.controls['zip'].touched && !doctorOfficeAddEditForm.controls['zip'].valid && doctorOfficeAddEditForm.controls['zip'].errors.required">
+            Zip required.
+          </mat-error>
         </mat-form-field>
-
-
-        <mat-form-field>
-          <mat-label>Date</mat-label>
-          <input [value]="date.value" matInput [matDatepicker]="myPicker" placeholder="date" disabled>
-          <mat-datepicker-toggle matSuffix [for]="myPicker" disabled></mat-datepicker-toggle>
-          <mat-datepicker #myPicker></mat-datepicker>
-        </mat-form-field>
-
+        <!-- Zip Start -->
 
         <ng-container *ngIf="!params_id">
-          <mat-form-field class="form-group">
-            <input matInput placeholder="Password" type="password"
-              [formControl]="doctorOfficeAddEditForm.controls['password']">
-            <mat-error
-              *ngIf="!doctorOfficeAddEditForm.controls['password'].valid && doctorOfficeAddEditForm.controls['password'].touched">
-              Password field can not be blank</mat-error>
+          <!-- Password Start -->
+          <ng-container *ngIf="!params_id">
+            <mat-form-field class="form-group" appearance="fill">
 
-          </mat-form-field>
-          <mat-form-field class="form-group">
-            <input matInput placeholder="Confirm Password" type="password"
-              [formControl]="doctorOfficeAddEditForm.controls['confirmpassword']">
-            <mat-error
-              *ngIf="!doctorOfficeAddEditForm.controls['confirmpassword'].valid && doctorOfficeAddEditForm.controls['confirmpassword'].touched">
-              Password does not match </mat-error>
-          </mat-form-field>
+              <input matInput placeholder="Password" type="password"
+                [formControl]="doctorOfficeAddEditForm.controls['password']">
+
+              <mat-error *ngIf="!doctorOfficeAddEditForm.controls['password'].valid && doctorOfficeAddEditForm.controls['password'].touched">
+                Password required.
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="form-group" appearance="fill">
+              <input matInput placeholder="Confirm Password" type="password"
+                [formControl]="doctorOfficeAddEditForm.controls['confirmpassword']">
+
+              <mat-error *ngIf="!doctorOfficeAddEditForm.controls['confirmpassword'].valid && doctorOfficeAddEditForm.controls['confirmpassword'].touched">
+                Password does not match
+              </mat-error>
+            </mat-form-field>
+          </ng-container>
+          <!-- Password End -->
         </ng-container>
 
         <mat-checkbox [formControl]="doctorOfficeAddEditForm.controls['status']" checked>Active</mat-checkbox>
 
 
         <span class="submit_form">
-          <button mat-flat-button type="button" (click)="backToManagePage()">Back </button>
-
-          <button mat-flat-button type="reset">Reset </button>
+          <button mat-flat-button type="button" [routerLink]="['/admin/biller-management']"> Back</button>
+          <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset </button>
           <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
-          <ng-container *ngIf="params_id">
-            <button mat-flat-button type="button" (click)="openDialog('')"> Change Password </button>
-          </ng-container>
+          <button mat-flat-button type="button" *ngIf="params_id != ''" (click)="openDialog('')"> Change Password </button>
         </span>
+        
       </form>
     </mat-card-content>
   </mat-card>

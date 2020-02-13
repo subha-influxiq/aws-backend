@@ -111,6 +111,41 @@ import { ReportNotProcessComponent } from './components/admin/report-not-process
 import { DownloadSuperbillerComponent } from './components/biller/download-superbiller/download-superbiller.component';
 import { DownloadDetailsComponent } from './components/admin/admin-dashboard/download-details/download-details.component';
 
+/* Loader */
+import { NgxUiLoaderModule, NgxUiLoaderConfig, SPINNER, POSITION, PB_DIRECTION, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
+import { from } from 'rxjs';
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  "bgsColor": "red",
+  "bgsOpacity": 1,
+  "bgsPosition": "center-center",
+  "bgsSize": 80,
+  "bgsType": "rectangle-bounce",
+  "blur": 13,
+  "delay": 0,
+  "fgsColor": "red",
+  "fgsPosition": "center-center",
+  "fgsSize": 50,
+  "fgsType": "three-strings",
+  "gap": 50,
+  "logoPosition": "center-center",
+  "logoSize": 120,
+  "logoUrl": "../assets/images/minilogo.png",
+  "masterLoaderId": "master",
+  "overlayBorderRadius": "0",
+  "overlayColor": "rgba(40, 40, 40, 0.8)",
+  "pbColor": "red",
+  "pbDirection": "ltr",
+  "pbThickness": 6,
+  "hasProgressBar": true,
+  "text": "",
+  "textColor": "#FFFFFF",
+  "textPosition": "center-center",
+  "maxTime": -1,
+  "minTime": 500
+}
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -197,7 +232,14 @@ import { DownloadDetailsComponent } from './components/admin/admin-dashboard/dow
     ReactiveFormsModule,
     FileUploadModule,
     HttpClientModule,
-    DeviceDetectorModule.forRoot()
+    DeviceDetectorModule.forRoot(),
+
+    /* Loader */
+    NgxUiLoaderModule,
+    NgxUiLoaderRouterModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderRouterModule, // import this module for showing loader automatically when navigating between app routes
+    NgxUiLoaderHttpModule,
   ],
   exports: [
     MatPaginatorModule

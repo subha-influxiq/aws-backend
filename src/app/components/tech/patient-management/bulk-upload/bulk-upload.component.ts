@@ -29,6 +29,8 @@ export class BulkUploadComponent implements OnInit {
     bucketName: "awsbackend-dev-patient-files"
   }
 
+  public doctorDetails: any = {};
+
   public techBulkUploadForm: FormGroup;
   public user_token: any;
   public images_array: any = [];
@@ -96,7 +98,10 @@ export class BulkUploadComponent implements OnInit {
   /* This one is for get doctor dropdown data */
 
   getsellabel(docval: any) {
+    console.log(docval);
     this.selectedDoctorName = docval.fullName;
+    this.doctorDetails.name = docval.fullName;
+    this.doctorDetails.email = docval.email;
   }
 
   techBulkUploadFormSubmit() {
@@ -150,22 +155,22 @@ export class BulkUploadComponent implements OnInit {
       var data = {
         "source": "bulk_report_upload",
         "data": this.techBulkUploadForm.value,
+        "doctor_details": this.doctorDetails,
+        "tech_details": this.cookiesData,
         "sourceobj": ["tech_id", "doctor_id"],
         "token": this.user_token
-      }
+      };
       this.httpService.httpViaPost("upload-bulk-report", data).subscribe(response => {
-          if (response.status = "success") {
-            let message: any = "Successfully Submitted";
-            let action: any = "OK";
-            this.snakBar.open(message, action, {
-              duration: 2000
-            });
+        if (response.status = "success") {
+          this.snakBar.open("Successfully Submitted", "OK", {
+            duration: 1000
+          });
 
-            setTimeout(() => {
-              this.router.navigateByUrl('/tech/dashboard');
-            }, 3000);
-          }
-        })
+          setTimeout(() => {
+            this.router.navigateByUrl('/tech/dashboard');
+          }, 2000);
+        }
+      });
     } else {
       let modalData: any = {
         panelClass: 'bulkupload-dialog',

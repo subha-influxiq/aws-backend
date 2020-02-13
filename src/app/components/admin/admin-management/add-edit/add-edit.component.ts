@@ -20,53 +20,78 @@ export interface DialogData {
 })
 
 export class AddEditComponent implements OnInit {
+  
   @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
   public dialogRef: any;
-  date = new FormControl(new Date());
-  public ddmmyy: any;
-  serializedDate = new FormControl((new Date()).toISOString());
   public adminManagementAddEditForm: FormGroup;
-  public user_token: any;
-  public params_id: any;
-  public htmlText: any = { header: 'Add New Admin', nav: 'Add Admin', buttonText: 'Save' };
-  public message: any = "Submitted Successfully";
-  public taxo_array:any=[];
+  public params_id: any = '';
+  public htmlText: any = {
+    userData: "",
+    header: 'Add New Admin', 
+    nav: 'Add Admin', 
+    buttonText: 'Save',
+    message: "Submitted Successfully"
+  };
+  public taxo_array: any = [];
   
   constructor(public fb: FormBuilder, private datePipe: DatePipe, public httpService: HttpServiceService, public cookie: CookieService, public router: Router, public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, public dialog: MatDialog) {
-    this.user_token = cookie.get('jwtToken');
-    if(this.params_id) {
-      this.generateEditForm();
+    
+    this.htmlText.userData = cookie.getAll();
+    
+    if (this.activeRoute.snapshot.params._id) {
+      this.generateAddEditForm('edit');
+
+      this.htmlText.message     = "Updated Successfully";
+      this.htmlText.header      = 'Edit Admin Record';
+      this.htmlText.nav         = 'Edit Admin';
+      this.htmlText.buttonText  = 'Update';
+      this.params_id            = this.activeRoute.snapshot.params._id;
     } else {
-      this.generateAddForm();
+      this.generateAddEditForm('add');
     }
   }
 
   ngOnInit() {
-    if (this.activeRoute.snapshot.params._id) {
-      this.message = "Updated Successfully";
-      this.htmlText.header = 'Edit Admin Record';
-      this.htmlText.nav = 'Edit Admin';
-      this.htmlText.buttonText = 'Update';
-      this.params_id = this.activeRoute.snapshot.params._id;
-      this.getSingleResolveData();
-    }
   }
 
-  generateAddForm(){
-    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
-    this.adminManagementAddEditForm = this.fb.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
-      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phone: ['', Validators.required],
-      date: [dateformat],
-      type: ['admin'],
-      taxo_list : [],
-      status: ['', Validators.required],
-      password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
-      confirmpassword: [],
-    }, { validator: this.machpassword('password', 'confirmpassword') })
+  generateAddEditForm(flag: string = null) {
+    let validateRule: any = {
+      id:               ['', []],
+      firstname:        ['', [ Validators.required, Validators.maxLength(50) ]],
+      lastname:         ['', [ Validators.required, Validators.maxLength(50) ]],
+      email:            ['', [ Validators.required, Validators.email, Validators.maxLength(100) ]],
+      phone:            ['', [ Validators.required, Validators.minLength(7), Validators.maxLength(16) ]],
+      user_type:        ['admin', []],
+      status:           ['', [ Validators.required ]],
+      password:         ['', [ Validators.required, Validators.maxLength(16), Validators.minLength(6) ]],
+      confirmpassword:  [],
+    };
+    let passwordRule: any = { validator: this.machpassword('password', 'confirmpassword') };
+
+    switch(flag) {
+      case 'edit':
+        delete validateRule.password;
+        delete validateRule.confirmpassword;
+
+        this.adminManagementAddEditForm = this.fb.group(validateRule);
+
+        this.activeRoute.data.forEach((data) => {
+          let AdminSingleData: any = data.adminsingleData.res;
+    
+          this.adminManagementAddEditForm.controls['id'].patchValue(AdminSingleData[0]._id);
+          this.adminManagementAddEditForm.controls['firstname'].patchValue(AdminSingleData[0].firstname);
+          this.adminManagementAddEditForm.controls['lastname'].patchValue(AdminSingleData[0].lastname);
+          this.adminManagementAddEditForm.controls['email'].patchValue(AdminSingleData[0].email);
+          this.adminManagementAddEditForm.controls['phone'].patchValue(AdminSingleData[0].phone);
+          this.adminManagementAddEditForm.controls['status'].patchValue(AdminSingleData[0].status);
+        });
+        break;
+      case 'add':
+        delete validateRule.id;
+
+        this.adminManagementAddEditForm = this.fb.group(validateRule, passwordRule);
+        break;
+    }
   }
 
   validateEmailNotTaken(control: AbstractControl) {  
@@ -79,22 +104,6 @@ export class AddEditComponent implements OnInit {
         }
       });
     };
-  }
-
-  generateEditForm(){
-    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
-    this.adminManagementAddEditForm = this.fb.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
-      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phone: ['', Validators.required],
-      date: [dateformat],
-      type: ['admin'],
-      taxo_list : [],
-      status: ['', Validators.required],
-    })
-
   }
 
   machpassword(passwordkye: string, confirmpasswordkye: string) {
@@ -110,32 +119,9 @@ export class AddEditComponent implements OnInit {
     };
   }
 
-  /**Resolve data for edit */
-  getSingleResolveData() {
-    this.activeRoute.data.forEach((data) => {
-      let AdminSingleData: any
-      AdminSingleData = data.adminsingleData.res;
-      this.adminManagementAddEditForm.controls['firstname'].patchValue(AdminSingleData[0].firstname);
-      this.adminManagementAddEditForm.controls['lastname'].patchValue(AdminSingleData[0].lastname);
-      this.adminManagementAddEditForm.controls['email'].patchValue(AdminSingleData[0].email);
-      this.adminManagementAddEditForm.controls['phone'].patchValue(AdminSingleData[0].phone);
-      this.adminManagementAddEditForm.controls['status'].patchValue(AdminSingleData[0].status);
-      this.adminManagementAddEditForm.controls['password'].patchValue(AdminSingleData[0].password);
-    });
-  }
-
   /**for validation purpose**/
   inputUntouch(form: any, val: any) {
     form.controls[val].markAsUntouched();
-  }
-
-  /**for validation purpose**/
-  ResetAddEditForm() {
-    this.formDirective.resetForm();
-  }
-
-  backToManagePage(){
-    this.router.navigateByUrl('/admin/admin-management');
   }
 
   openDialog(x: any): void {
@@ -147,52 +133,40 @@ export class AddEditComponent implements OnInit {
   }
 
   AdminManagementAddFormSubmit() {
-    let x: any;
-    for (x in this.adminManagementAddEditForm.controls) {
+    for (let x in this.adminManagementAddEditForm.controls) {
       this.adminManagementAddEditForm.controls[x].markAsTouched();
     }
+
     if (this.adminManagementAddEditForm.valid) {
-      if (this.adminManagementAddEditForm.value.status)
-        this.adminManagementAddEditForm.value.status = parseInt("1");
-      else
-        this.adminManagementAddEditForm.value.status = parseInt("0");
-        this.adminManagementAddEditForm.value.taxo_list=this.taxo_array;
-      /**delete confirmpassword  field before submitted the form */
       delete this.adminManagementAddEditForm.value.confirmpassword;
-      /**end */
-      var data
-      if (this.params_id) {
-        data = {
-          "source": "users",
-          "data": {
-            id: this.params_id,
-            firstname: this.adminManagementAddEditForm.value.firstname,
-            lastname: this.adminManagementAddEditForm.value.lastname,
-            phone: this.adminManagementAddEditForm.value.phone,
-            email: this.adminManagementAddEditForm.value.email,
-            date: this.adminManagementAddEditForm.value.data,
-            password: this.adminManagementAddEditForm.value.password,
-            status: this.adminManagementAddEditForm.value.status,
-          },
-          "token": this.user_token
-        }
+      if (this.adminManagementAddEditForm.value.status) {
+        this.adminManagementAddEditForm.value.status = parseInt("1");
       } else {
-        data = {
-          "source": "users",
-          "data": this.adminManagementAddEditForm.value,
-          "token": this.user_token,
-          "domainurl" : environment.siteBaseUrl + 'reset-password'
-        }
+        this.adminManagementAddEditForm.value.status = parseInt("0");
       }
 
-      this.httpService.httpViaPost("addorupdatedata", data)
-        .subscribe(response => {
-          let action = "Ok";
-          this.snackBar.open(this.message, action, {
+      var data: any = {
+        "source": "data_pece",
+        "data": this.adminManagementAddEditForm.value,
+        "token": this.htmlText.userData.jwtToken,
+        "domainurl" : environment.siteBaseUrl + 'reset-password'
+      };
+
+      this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
+        if(response.status == 'success') {
+          this.snackBar.open(this.htmlText.message, "Ok", {
             duration: 2000,
           });
           this.formDirective.resetForm();
-        });
+          setTimeout(() => {
+            this.router.navigateByUrl('/admin/admin-management');
+          }, 1000);
+        } else {
+          this.snackBar.open("An error occoed. Error code: F-AEA-TS-164.", "Ok", {
+            duration: 2000,
+          });
+        }
+      });
     }
   }
 }

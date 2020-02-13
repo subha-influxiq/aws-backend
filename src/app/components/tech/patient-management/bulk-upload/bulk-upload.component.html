@@ -20,7 +20,7 @@
 
               <mat-select formControlName="doctor_id" placeholder="Select a Doctor" >
                 <mat-option value="">Select a Doctor</mat-option>
-                <mat-option (click)="getsellabel(doc)" *ngFor="let doc of allDoctorDataArray;" value="{{ doc._id }}"> {{ doc.fullNamecopy }}
+                <mat-option (click)="getsellabel(doc)" *ngFor="let doc of allDoctorDataArray;" value="{{ doc._id }}"> {{ doc.firstname }} {{ doc.lastname }}
                   </mat-option>
               </mat-select>
             </mat-form-field>
@@ -44,7 +44,7 @@
       </span>
       <span class="submit_form">
         <button mat-flat-button type="button" (click)="cancelButton()"> Back </button>
-        <button mat-flat-button type="button" [disabled]="!techBulkUploadForm.valid" (click)="techBulkUploadFormSubmit()"> Submit </button>
+        <button mat-flat-button type="button" (click)="techBulkUploadFormSubmit()"> Submit </button>
       </span>
 
 

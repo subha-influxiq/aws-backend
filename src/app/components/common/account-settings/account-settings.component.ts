@@ -42,7 +42,6 @@ export class AccountSettingsComponent implements OnInit {
     allcookies = cookie.getAll();
     
     this.cookiesData = JSON.parse(allcookies.user_details);
-    console.log("souresjhgfgfd",this.cookiesData.type);
     this.cookies_id = this.cookiesData._id;
 
     /* Set Meta Data */
@@ -60,8 +59,7 @@ export class AccountSettingsComponent implements OnInit {
       address: ['', Validators.required],
       zip: ['', Validators.required],
       city: ['', Validators.required],
-      state: ['', Validators.required],
-      date: [dateformat]
+      state: ['', Validators.required]
     })
   }
 
@@ -123,7 +121,7 @@ export class AccountSettingsComponent implements OnInit {
     if (this.AccountSettingsForm.valid) {
       var data: any;
       data = {
-        "source": "users",
+        "source": "data_pece",
         "data": {
           id: this.cookies_id,
           firstname: this.AccountSettingsForm.value.firstname,

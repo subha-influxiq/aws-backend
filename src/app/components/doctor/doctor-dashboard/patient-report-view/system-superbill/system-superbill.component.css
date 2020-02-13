@@ -70,3 +70,6 @@ input[type="checkbox"]:checked::before{
   font-size: 18px;
   padding: 2px 7px 3px;
 }
+
+.signaturefont { font-family: "AmandaSignature"; font-size: 30px; line-height: 58px; height: 40px; padding: 10px 25px; box-sizing: border-box; background: #fff;
+  border-bottom: 1px solid #000; color: blue; }

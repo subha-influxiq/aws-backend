@@ -76,29 +76,40 @@
     <mat-card-content class="patient_top_search">
       <h1> {{ htmlText.tableHeaderText }}</h1>
       <span class="search_bar">
+
         <span class="form_wrapper">
           <mat-form-field appearance="outline">
-            <input matInput [matDatepicker]="picker" (focus)="picker.open()" placeholder="Search By Date">
-            <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> -->
-            <mat-datepicker #picker></mat-datepicker>
+            <input matInput type="text" placeholder="Search By Patient" [(ngModel)]="searchJson.patientName">
           </mat-form-field>
-          <button><i class="material-icons"> search </i></button>
         </span>
 
         <span class="form_wrapper">
           <mat-form-field appearance="outline">
-            <input matInput placeholder="Search By Status">
+            <input matInput type="text" placeholder="Choose a date" [satDatepicker]="picker" [(ngModel)]="searchJson.dateRange" />
+            <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
+            <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
           </mat-form-field>
-          <button><i class="material-icons"> search </i></button>
         </span>
 
         <span class="form_wrapper">
-          <mat-form-field appearance="outline">
-            <input matInput placeholder="Search By Patient">
+          <mat-form-field class="parent_cat" appearance="outline">
+            <mat-select placeholder="Search By Status" [(ngModel)]="searchJson.status">
+              <mat-option value="">Select a status</mat-option>
+              <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
+              <mat-option value="doctor signed">Doctor Signed</mat-option>
+              <mat-option value="send to biller">Send To Biller</mat-option>
+              <mat-option value="error">Error</mat-option>
+              <mat-option value="pending">Pending</mat-option>
+              this.viewReportProcessData(this.htmlText.headerText);
+            </mat-select>
           </mat-form-field>
-          <button><i class="material-icons"> search </i></button>
         </span>
       </span>
+
+      <button mat-raised-button type="button" color="primary" (click)="viewReportData(htmlText.tableHeaderText);">Search</button>
+      <button mat-raised-button type="button" color="primary" (click)="resetSearch();">
+        <i class="material-icons"> replay </i>
+      </button>
     </mat-card-content>
 
     <div class="mat-elevation-z8">

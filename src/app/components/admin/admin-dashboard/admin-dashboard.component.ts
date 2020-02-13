@@ -38,7 +38,7 @@ export class AdminDashboardComponent implements OnInit {
   allDataSource: MatTableDataSource<any>;
 
   public searchJson: any = {
-    doctorName: "",
+    doctor_name: "",
     patientName: "",
     status: "",
     dateRange: ""
@@ -55,15 +55,11 @@ export class AdminDashboardComponent implements OnInit {
 
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
-
-    /* Set Table Header */
-    this.allDataColumns = ['no', 'techName', 'report_type', 'doctorName', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
-
+    
+    /* Get resolve data */
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData = resolveData.dataCount.data;
-      let allData = this.allResolveData.totalReportData;
-      this.allDataSource = new MatTableDataSource(allData);
-      this.allDataSource.paginator = this.paginatorAll;
+      this.viewReportProcessData(this.htmlText.headerText);
     });
   }
 
@@ -74,124 +70,87 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   viewReportProcessData(flag: string) {
-    this.htmlText.headerText = flag;
-    var repostSignCond: any = {};
+    if(this.searchJson.dateRange != '') {
+      this.searchJson.dateRange.end = moment(this.searchJson.dateRange.end, "DD-MM-YYYY").add(1, 'days');
+    }
 
-    this.allDataColumns = ['no', 'techName', 'report_type', 'doctorName', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
+    this.htmlText.headerText = flag;
+    var repostSignCond: any = {
+      "search": this.searchJson,
+      "token": this.jwtToken,
+    };
+
+    this.allDataColumns = ['no', 'tech_name', 'report_type', 'doctor_name', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
     /* Set Table Header */
 
     switch (flag) {
       /* Report Status Section */
       case 'Total Mannual Reports':
-        repostSignCond = {
-          "source": "Patient-Record-Report_view",
-          "condition": {
-            "report_type": "mannual"
-          },
-          "search": this.searchJson,
-          "token": this.jwtToken,
-        }
+        repostSignCond["condition"] = {
+          "report_type": "mannual"
+        };
         break;
       case 'Total File Reports':
-        repostSignCond = {
-          "source": "Patient-Record-Report_view",
-          "condition": {
-            "report_type": "file"
-          },
-          "search": this.searchJson,
-          "token": this.jwtToken,
-        }
+        repostSignCond["condition"] = {
+          "report_type": "file"
+        };
         break;
       /* Report Status Section */
       case 'Reports Uploaded':
-        repostSignCond = {
-          "source": "Patient-Record-Report_view",
-          "condition": {},
-          "search": this.searchJson,
-          "token": this.jwtToken,
-        }
+        repostSignCond["condition"] = {};
         break;
       case 'Report Processed':
-        repostSignCond = {
-          "source": "Patient-Record-Report_view",
-          "condition": {
-            "page_1": { $exists: true },
-            "page_2": { $exists: true },
-            "page_3": { $exists: true },
-            "page_4": { $exists: true },
-            "page_5": { $exists: true },
-            "page_6": { $exists: true },
-            "page_7": { $exists: true }
-          },
-          "search": this.searchJson,
-          "token": this.jwtToken,
-        }
+        repostSignCond["condition"] = {
+          "page_1": { $exists: true },
+          "page_2": { $exists: true },
+          "page_3": { $exists: true },
+          "page_4": { $exists: true },
+          "page_5": { $exists: true },
+          "page_6": { $exists: true },
+          "page_7": { $exists: true }
+        };
         break;
       case 'Report Signed':
-        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type', 'doctorName', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
+        this.allDataColumns = ['no', 'billGenerationDate', 'tech_name', 'billSentDate', 'biller_name', 'report_type', 'doctor_name', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
 
-        repostSignCond = {
-          "source": "Patient-Record-Report_view",
-          "condition": {
-            "doctor_signature": { $exists: true }
-          },
-          "search": this.searchJson,
-          "token": this.jwtToken,
-        }
+        repostSignCond["condition"] = {
+          "doctor_signature": { $exists: true }
+        };
         break;
       case 'Super Bill':
-        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type', 'doctorName', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
+        this.allDataColumns = ['no', 'billGenerationDate', 'tech_name', 'billSentDate', 'biller_name', 'report_type', 'doctor_name', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
 
         /////////////////////////////////////////
         //////////////// Pending ////////////////
         /////////////////////////////////////////
-        repostSignCond = {
-          "source": "Patient-Record-Report_view",
-          "condition": {
-            "doctor_signature": { $exists: true }
-          },
-          "search": this.searchJson,
-          "token": this.jwtToken,
-        }
+        repostSignCond["condition"] = {
+          "doctor_signature": { $exists: false }
+        };
         break;
       case 'Download Bill':
-        this.allDataColumns = ['no', 'billGenerationDate', 'techName', 'billSentDate', 'billerName', 'report_type', 'doctorName', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
+        this.allDataColumns = ['no', 'billGenerationDate', 'tech_name', 'billSentDate', 'biller_name', 'report_type', 'doctor_name', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
 
-        repostSignCond = {
-          "source": "Patient-Record-Report_view",
-          "condition": {
-            "download_count": { $exists: true }
-          },
-          "search": this.searchJson,
-          "token": this.jwtToken,
-        }
+        repostSignCond["condition"] = {
+          "download_count": { $exists: true }
+        };
         break;
       case 'Reports Pending Sing':
-        repostSignCond = {
-          "source": "Patient-Record-Report_view",
-          "condition": {
-            "doctor_signature": { $exists: false }
-          },
-          "search": this.searchJson,
-          "token": this.jwtToken,
-        }
+        repostSignCond["condition"] = {
+          "doctor_signature": { $exists: false }
+        };
         break;
       default:
-        repostSignCond = {
-          "source": "Patient-Record-Report_view",
-          "condition": {
-            "doctor_signature": { $exists:false }
-          },
-          "search": this.searchJson,
-          "token": this.jwtToken,
-        }
+        repostSignCond["condition"] = {};
         break;
     }
 
-    this.http.httpViaPost('admin-dashboard-datalist', repostSignCond).subscribe((response) => {
-      let allData = response.data;
-      this.allDataSource = new MatTableDataSource(allData);
-      this.allDataSource.paginator = this.paginatorAll;
+    this.http.httpViaPost('dashboard-datalist', repostSignCond).subscribe((response) => {
+      if(response.status == true) {
+        this.allDataSource = new MatTableDataSource(response.data);
+        this.allDataSource.paginator = this.paginatorAll;
+      } else {
+        this.allDataColumns = [];
+      }
     });
   }
 
@@ -225,7 +184,7 @@ export class AdminDashboardComponent implements OnInit {
     /* Set downloader information */
     var userDetails = {
       id: this.loginUserData.user_details._id,
-      type: this.loginUserData.user_details.type
+      user_type: this.loginUserData.user_details.user_type
     };
 
     let postData: any = {
@@ -372,7 +331,7 @@ export class AdminDashboardComponent implements OnInit {
 
   resetSearch() {
     this.searchJson = {
-      doctorName: "",
+      doctor_name: "",
       patientName: "",
       status: "",
       dateRange: ""

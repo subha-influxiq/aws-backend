@@ -138,24 +138,18 @@ export class SystemSuperbillComponent implements OnInit {
     this.httpService.httpViaPost('datalist', data).subscribe((response) => {
         this.patientSingleData = response.res;
         this.patientBMIForm.controls['patientName'].patchValue(response.res[0].patientName);
-        this.patientBMIForm.controls['physicalOrdering'].patchValue(this.cookiesData.firstname + ' ' + this.cookiesData.lastname);
-        this.patientBMIForm.controls['doctor_signature'].patchValue(this.cookiesData.doctor_signature);
+        this.patientBMIForm.controls['physicalOrdering'].patchValue(response.res[0].doctor_firstname + ' ' + response.res[0].doctor_lastname);
+        this.patientBMIForm.controls['doctor_signature'].patchValue(response.res[0].doctor_sign);
         this.patientBMIForm.controls['gender'].patchValue(response.res[0].gender);
         
 
-        let dateOfBirth: any = response.res[0].birthDate;
-        // let dobArr: any = dateOfBirth.split("-");
-        // this.patientBMIForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1] - 1, dobArr[0]]));
-
-        // let sDateArr: any = response.res[0].testDate.split("-");
-        // this.patientBMIForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
+        this.patientBMIForm.controls['birthDate'].patchValue(moment(response.res[0].birthDate).format("MM/DD/YYYY"));
+        this.patientBMIForm.controls['testDate'].patchValue(moment(response.res[0].testDate).format("MM/DD/YYYY"));
         
-        var BMI = response.res[0].BMI.split(".", 2);
+        var BMI = response.res[0].BMI_value.split(".", 2);
         BMI = BMI[0] + BMI[1];
         
         this.patientBMIForm.controls[BMI].patchValue(true);
-        //   let eDateArr: any = patientDetails.testCompletedDate.split("-");
-        // this.patientReportViewForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
       });
 
       

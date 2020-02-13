@@ -88,7 +88,7 @@ const routes: Routes = [
     resolve: { dataCount: ResolveService },
     data: {
       requestcondition: {
-        source: '',
+        source: 'data_pece',
         condition: {}
       },
       endpoint: 'admin-dashboard'
@@ -99,7 +99,7 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'report_not_process_view',
+        source: 'data_pece',
         condition: {}
       },
       endpoint: 'datalist'
@@ -110,7 +110,7 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'patient_management',
+        source: 'data_pece',
         condition: {
           "report_type": "file",
           "images": { $exists:true },
@@ -134,7 +134,7 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'patient_management_view',
+        source: 'data_pece',
         condition: {}
       },
       endpoint: 'datalist'
@@ -146,7 +146,7 @@ const routes: Routes = [
     resolve: { patientData: ResolveService },
     data: {
       requestcondition: {
-        source: 'patient_management',
+        source: 'data_pece',
         condition: {}
       },
       endpoint: 'datalist'
@@ -162,20 +162,23 @@ const routes: Routes = [
     path: 'admin/user-management/edit/:_id', component: UserAddEditComponent, canActivate: [AuthguardService], resolve: { UserData: ResolveService },
     data: {
       requestcondition: {
-        source: 'user_management',
+        source: 'data_pece',
         condition: {}
       },
       endpoint: 'datalist'
     },
   },
+
   /* Admin Management */
   { path: 'admin/admin-management/add', component: AddEditComponent, canActivate: [AuthguardService] },
   {
     path: 'admin/admin-management/edit/:_id', component: AddEditComponent, canActivate: [AuthguardService], resolve: { adminsingleData: ResolveService },
     data: {
       requestcondition: {
-        source: 'users',
-        condition: {}
+        source: 'data_pece',
+        condition: {
+          user_type: "admin"
+        }
       },
       endpoint: 'datalist'
     },
@@ -184,20 +187,25 @@ const routes: Routes = [
     path: 'admin/admin-management', component: ManageAdminListComponent, canActivate: [AuthguardService], resolve: { adminManagementdData: ResolveService },
     data: {
       requestcondition: {
-        source: 'users_view_admin',
-        condition: { 'type': 'admin' }
+        source: 'data_pece',
+        condition: {
+          user_type: "admin"
+        }
       },
       endpoint: 'datalist'
     },
   },
+
   /* Biller Management */
   { path: 'admin/biller-management/add', component: AddEditBillerComponent, canActivate: [AuthguardService] },
   {
     path: 'admin/biller-management/edit/:_id', component: AddEditBillerComponent, canActivate: [AuthguardService], resolve: { billersingleData: ResolveService },
     data: {
       requestcondition: {
-        source: 'users',
-        condition: {}
+        source: 'data_pece',
+        condition: {
+          user_type: "biller"
+        }
       },
       endpoint: 'datalist'
     },
@@ -206,8 +214,10 @@ const routes: Routes = [
     path: 'admin/biller-management', component: ListingBillerComponent, canActivate: [AuthguardService], resolve: { Billerdata: ResolveService },
     data: {
       requestcondition: {
-        source: 'users_view_biller',
-        condition: {}
+        source: 'data_pece',
+        condition: {
+          user_type: "biller"
+        }
       },
       endpoint: 'datalist'
     },
@@ -218,8 +228,10 @@ const routes: Routes = [
     path: 'admin/tech-management/edit/:_id', component: AddEditTechComponent, canActivate: [AuthguardService], resolve: { techData: ResolveService },
     data: {
       requestcondition: {
-        source: 'users',
-        condition: {}
+        source: 'data_pece',
+        condition: {
+          user_type: "tech"
+        }
       },
       endpoint: 'datalist'
     },
@@ -228,8 +240,10 @@ const routes: Routes = [
     path: 'admin/tech-management', component: ListingTechComponent, canActivate: [AuthguardService], resolve: { techDashboardData: ResolveService },
     data: {
       requestcondition: {
-        source: 'users_view_tech',
-        condition: {}
+        source: 'data_pece',
+        condition: {
+          user_type: "tech"
+        }
       },
       endpoint: 'datalist'
     },
@@ -241,8 +255,10 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'users',
-        condition: {}
+        source: 'data_pece',
+        condition: {
+          user_type: "doctor"
+        }
       },
       endpoint: 'datalist'
     },
@@ -252,8 +268,10 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'users_view_doctor_list',
-        condition: {}
+        source: 'data_pece',
+        condition: {
+          user_type: "doctor"
+        }
       },
       endpoint: 'datalist'
     },
@@ -264,8 +282,8 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'users',
-        condition: { "type": "doctor_office" }
+        source: 'data_pece',
+        condition: { "user_type": "doctor_office" }
       },
       endpoint: 'datalist'
     },
@@ -276,7 +294,7 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'users',
+        source: 'data_pece',
         condition: {}
       },
       endpoint: 'datalist'
@@ -288,7 +306,7 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'users',
+        source: 'data_pece',
         condition: {}
       },
       endpoint: 'datalist'
@@ -310,7 +328,7 @@ const routes: Routes = [
     resolve: { techDashboardData: ResolveService },
     data: {
       requestcondition: {
-        source: '',
+        source: 'data_pece',
         condition: {},
       },
       endpoint: 'tech-dashboard'
@@ -342,7 +360,7 @@ const routes: Routes = [
     resolve: { billerData: ResolveService },
     data: {
       requestcondition: {
-        source: 'Patient-Record-Report_view',
+        source: 'data_pece',
         condition: {},
       },
       endpoint: 'biller-dashboard'
@@ -369,7 +387,7 @@ const routes: Routes = [
     resolve: { doctordata: ResolveService },
     data: {
       requestcondition: {
-        source: 'Patient-Record-Report_view',
+        source: 'data_pece',
         condition: {},
       },
       endpoint: 'doctor-dashboard'
@@ -382,7 +400,7 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'patient_management_condition_view',
+        source: 'data_pece',
         condition: {}
       },
       endpoint: 'datalist'
@@ -403,7 +421,7 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'users_view_doctoroffice',
+        source: 'data_pece',
         condition: {}
       },
       endpoint: 'datalist'
@@ -420,7 +438,7 @@ const routes: Routes = [
     resolve: { dataCount: ResolveService },
     data: {
       requestcondition: {
-        source: 'Patient-Record-Report_view',
+        source: 'data_pece',
         condition: {}
       },
       endpoint: 'datalist'
@@ -436,7 +454,7 @@ const routes: Routes = [
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
-        source: 'patient_management_view',
+        source: 'data_pece',
         condition: {}
       },
       endpoint: 'datalist'

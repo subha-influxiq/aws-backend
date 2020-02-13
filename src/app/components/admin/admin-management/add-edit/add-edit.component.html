@@ -1,112 +1,122 @@
 <!-- Admin Header -->
 <app-admin-header></app-admin-header>
 <mat-card class="admin_wrapper">
-<!-- header with add button -->
-<mat-card-content class="title_wrapper">
-  {{ htmlText.header }}
-</mat-card-content>
-
-
-<span class="add_header">
-  <span class="bradcrumb">
-    <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a>&nbsp;
-    <a [routerLink]="['/admin/admin-management']">Manage Admin &nbsp;/</a> &nbsp;
-    {{ htmlText.nav }}
-  </span>
-</span>
-
-<mat-card class="add_form">
-  <!-- <h2>{{ htmlText.header }}</h2> -->
-
-  <mat-card-content class="form_wrapper">
-    <form class="example-form" autocomplete="off" name="adminManagementAddEditForm"
-      [formGroup]="adminManagementAddEditForm" (ngSubmit)="AdminManagementAddFormSubmit()">
-
-      <mat-form-field appearance="fill">
-        <mat-label>Enter First Name</mat-label>
-        <input matInput placeholder="First Name" [formControl]="adminManagementAddEditForm.controls['firstname']"
-          (blur)="inputUntouch(adminManagementAddEditForm,'firstname')">
-        <mat-error *ngIf="adminManagementAddEditForm.controls['firstname'].touched && !adminManagementAddEditForm.controls['firstname'].valid
-           && adminManagementAddEditForm.controls['firstname'].errors.required">
-          First Name field can not be blank</mat-error>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Enter Last Name</mat-label>
-        <input matInput placeholder="Last Name" [formControl]="adminManagementAddEditForm.controls['lastname']"
-          (blur)="inputUntouch(adminManagementAddEditForm,'lastname')">
-        <mat-error *ngIf="adminManagementAddEditForm.controls['lastname'].touched && !adminManagementAddEditForm.controls['lastname'].valid
-           && adminManagementAddEditForm.controls['lastname'].errors.required">
-          Last Name can not be blank</mat-error>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Email Address</mat-label>
-        <input matInput placeholder="Email Address" [formControl]="adminManagementAddEditForm.controls['email']"
-          (blur)="inputUntouch(adminManagementAddEditForm,'email')">
-        <mat-error *ngIf="adminManagementAddEditForm.controls['email'].touched && !adminManagementAddEditForm.controls['email'].valid
-            && adminManagementAddEditForm.controls['email'].errors.required">
-          E-Mail can not be blank</mat-error>
-          <mat-error
-          *ngIf="!adminManagementAddEditForm.controls['email'].valid && !adminManagementAddEditForm.controls['email'].errors.required">
-          Email is not valid</mat-error>
-
-          <!-- <mat-error *ngIf="!adminManagementAddEditForm.controls['email'].valid">
-          Email is already taken.</mat-error> -->
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Phone </mat-label>
-        <input matInput placeholder="Phone" [formControl]="adminManagementAddEditForm.controls['phone']"
-          (blur)="inputUntouch(adminManagementAddEditForm,'phone')">
-        <mat-error *ngIf="adminManagementAddEditForm.controls['phone'].touched && !adminManagementAddEditForm.controls['phone'].valid
-            && adminManagementAddEditForm.controls['phone'].errors.required">
-          Phone Number field can not be blank</mat-error>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Date</mat-label>
-        <input [value]="date.value" matInput [matDatepicker]="myPicker" placeholder="date" disabled>
-        <mat-datepicker-toggle matSuffix [for]="myPicker" disabled></mat-datepicker-toggle>
-        <mat-datepicker #myPicker></mat-datepicker>
-      </mat-form-field>
-
-      <ng-container *ngIf ="!params_id">
-      <mat-form-field class="form-group" appearance="fill">
-        <input matInput placeholder="Password" type="password"
-          [formControl]="adminManagementAddEditForm.controls['password']">
-        <mat-error
-          *ngIf="!adminManagementAddEditForm.controls['password'].valid && adminManagementAddEditForm.controls['password'].touched">
-          Password field can not be blank</mat-error>
-      </mat-form-field>
-      <mat-form-field class="form-group" appearance="fill">
-        <input matInput placeholder="Confirm Password" type="password"
-          [formControl]="adminManagementAddEditForm.controls['confirmpassword']">
-        <mat-error
-          *ngIf="!adminManagementAddEditForm.controls['confirmpassword'].valid && adminManagementAddEditForm.controls['confirmpassword'].touched">
-          Password does not match </mat-error>
-      </mat-form-field>
-      </ng-container>
-
-      <mat-checkbox [formControl]="adminManagementAddEditForm.controls['status']" checked>Active</mat-checkbox>
-      <!-- <mat-error *ngIf="adminManagementAddEditForm.controls['status'].touched && !adminManagementAddEditForm.controls['status'].valid
-      && adminManagementAddEditForm.controls['status'].errors.required">
-        Status field can not be blank</mat-error> -->
-
-
-      <span class="submit_form">
-        <button mat-flat-button type="button" (click)="backToManagePage()">Back </button>
-        <button mat-flat-button type="reset">Reset </button>
-        <button mat-flat-button type="submit" >{{ htmlText.buttonText }} </button>
-        <ng-container *ngIf ="params_id">
-          <button mat-flat-button type="button" (click)="openDialog('')"  > Change Password </button>
-        </ng-container>
-      </span>
-
-    </form>
+  <!-- header with add button -->
+  <mat-card-content class="title_wrapper">
+    {{ htmlText.header }}
   </mat-card-content>
 
-</mat-card>
+
+  <span class="add_header">
+    <span class="bradcrumb">
+      <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a>&nbsp;
+      <a [routerLink]="['/admin/admin-management']">Manage Admin &nbsp;/</a> &nbsp;
+      {{ htmlText.nav }}
+    </span>
+  </span>
+
+  <mat-card class="add_form">
+    <mat-card-content class="form_wrapper">
+      <form class="example-form" autocomplete="off" name="adminManagementAddEditForm" [formGroup]="adminManagementAddEditForm" (ngSubmit)="AdminManagementAddFormSubmit()">
+
+        <!-- First Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
+
+          <input matInput placeholder="First Name" [formControl]="adminManagementAddEditForm.controls['firstname']" (blur)="inputUntouch(adminManagementAddEditForm,'firstname')">
+          
+          <mat-error *ngIf="adminManagementAddEditForm.controls['firstname'].touched && !adminManagementAddEditForm.controls['firstname'].valid && adminManagementAddEditForm.controls['firstname'].errors.required">
+            First Name required.
+          </mat-error>
+
+          <mat-error *ngIf="adminManagementAddEditForm.controls['firstname'].touched && !adminManagementAddEditForm.controls['firstname'].valid && adminManagementAddEditForm.controls['firstname'].errors.maxlength">
+            First Name is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- First Name End -->
+
+        <!-- Last Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+
+          <input matInput placeholder="Last Name" [formControl]="adminManagementAddEditForm.controls['lastname']" (blur)="inputUntouch(adminManagementAddEditForm,'lastname')">
+          
+          <mat-error *ngIf="adminManagementAddEditForm.controls['lastname'].touched && !adminManagementAddEditForm.controls['lastname'].valid && adminManagementAddEditForm.controls['lastname'].errors.required">
+            Last Name required.
+          </mat-error>
+
+          <mat-error *ngIf="adminManagementAddEditForm.controls['lastname'].touched && !adminManagementAddEditForm.controls['lastname'].valid && adminManagementAddEditForm.controls['lastname'].errors.maxlength">
+            Last Name is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Last Name End -->
+
+        <!-- Email Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Email Address</mat-label>
+
+          <input matInput placeholder="Email Address" [formControl]="adminManagementAddEditForm.controls['email']" (blur)="inputUntouch(adminManagementAddEditForm,'email')">
+          
+          <mat-error *ngIf="adminManagementAddEditForm.controls['email'].touched && !adminManagementAddEditForm.controls['email'].valid && adminManagementAddEditForm.controls['email'].errors.required">
+            E-Mail required.
+          </mat-error>
+
+          <mat-error *ngIf="adminManagementAddEditForm.controls['email'].touched && !adminManagementAddEditForm.controls['email'].valid && adminManagementAddEditForm.controls['email'].errors.email">
+            Email is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Email End -->
+
+        <!-- Phone Number Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+
+          <input matInput placeholder="Phone" [formControl]="adminManagementAddEditForm.controls['phone']" (blur)="inputUntouch(adminManagementAddEditForm,'phone')">
+          
+          <mat-error *ngIf="adminManagementAddEditForm.controls['phone'].touched && !adminManagementAddEditForm.controls['phone'].valid && adminManagementAddEditForm.controls['phone'].errors.required">
+            Phone Number required.
+          </mat-error>
+
+          <mat-error *ngIf="adminManagementAddEditForm.controls['phone'].touched && !adminManagementAddEditForm.controls['phone'].valid && adminManagementAddEditForm.controls['phone'].errors.maxlength">
+            Phone Number is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Phone Number End -->
+
+        <!-- Password Start -->
+        <ng-container *ngIf="!params_id">
+          <mat-form-field class="form-group" appearance="fill">
+
+            <input matInput placeholder="Password" type="password" [formControl]="adminManagementAddEditForm.controls['password']">
+            
+            <mat-error *ngIf="!adminManagementAddEditForm.controls['password'].valid && adminManagementAddEditForm.controls['password'].touched">
+              Password required.
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="form-group" appearance="fill">
+            <input matInput placeholder="Confirm Password" type="password" [formControl]="adminManagementAddEditForm.controls['confirmpassword']">
+            
+            <mat-error *ngIf="!adminManagementAddEditForm.controls['confirmpassword'].valid && adminManagementAddEditForm.controls['confirmpassword'].touched">
+              Password does not match 
+            </mat-error>
+          </mat-form-field>
+        </ng-container>
+        <!-- Password End -->
+
+        <mat-checkbox [formControl]="adminManagementAddEditForm.controls['status']" checked>Active</mat-checkbox>
+
+        <span class="submit_form">
+          <button mat-flat-button type="button" [routerLink]="['/admin/admin-management']">Back </button>
+          <button mat-flat-button type="reset" *ngIf="params_id == ''"> Reset</button>
+          <button mat-flat-button type="submit">{{ htmlText.buttonText }} </button>
+          <button mat-flat-button type="button" *ngIf="params_id != ''" (click)="openDialog('')"> Change Password </button>
+        </span>
+
+      </form>
+    </mat-card-content>
+
+  </mat-card>
 </mat-card>
 <!-- Admin Footer -->
 <app-admin-footer></app-admin-footer>

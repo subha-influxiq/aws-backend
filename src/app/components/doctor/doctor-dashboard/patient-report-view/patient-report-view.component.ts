@@ -167,7 +167,6 @@ export class PatientReportViewComponent implements OnInit {
       this.patientAddEditForm.disable();
     }
 
-
     /* Get biller data */
     var data: any = {
       "source": "doctor_to_biller",
@@ -185,7 +184,6 @@ export class PatientReportViewComponent implements OnInit {
 
   ngOnInit() {
     if(this.activeRoute.snapshot == null || this.activeRoute.snapshot.url == null || this.activeRoute.snapshot.url[3]==null || this.activeRoute.snapshot.url[3].path != 'file' ) {
-      console.log('ngOnInit() if');
       this.setDefaultValue();
       this.getAllDoctorData();
     } else {
@@ -193,7 +191,6 @@ export class PatientReportViewComponent implements OnInit {
         this.ImageData = data.data.res[0].data;
       });
     }
-    
   }
 
   setDefaultValue() {
@@ -201,12 +198,10 @@ export class PatientReportViewComponent implements OnInit {
     this.activeRoute.data.forEach((data) => {
       let reportDetails: any = data.data.res;
 
-      console.log('reportDetails[0]', reportDetails[0]);
-
       this.techId = reportDetails[0].tech_id;
       
       this.allPatientReportData = reportDetails[0];
-      this.BMIFlug = Math.round(reportDetails[0].BMI);
+      this.BMIFlug = Math.round(reportDetails[0].BMI_value);
      
       this.ImageData = reportDetails[0].images;
      
@@ -214,22 +209,16 @@ export class PatientReportViewComponent implements OnInit {
       this.patientAddEditForm.controls['patientName'].patchValue(reportDetails[0].patientName);
       this.patientAddEditForm.controls['gender'].patchValue(reportDetails[0].gender);
       this.patientAddEditForm.controls['physicalOrdering'].patchValue(reportDetails[0].doctor_id);
-      this.patientAddEditForm.controls['birthDate'].patchValue(reportDetails[0].birthDate);
-
-      //let sDateArr: any = reportDetails[0].testDate.split("-");
-      this.patientAddEditForm.controls['testDate'].patchValue(reportDetails[0].testDate);
-
-      // let eDateArr: any = reportDetails[0].testCompletedDate.split("-");
-      this.patientAddEditForm.controls['testCompletedDate'].patchValue(reportDetails[0].testCompletedDate);
+      
+      this.patientAddEditForm.controls['birthDate'].patchValue(moment(reportDetails[0].birthDate).format("MM/DD/YYYY"));
+      this.patientAddEditForm.controls['testDate'].patchValue(moment(reportDetails[0].testDate).format("MM/DD/YYYY"));
+      this.patientAddEditForm.controls['testCompletedDate'].patchValue(moment(reportDetails[0].testCompletedDate).format("MM/DD/YYYY"));
 
       this.patientAddEditForm.controls['PTGPT'].patchValue(reportDetails[0].PTGPT);
       this.patientAddEditForm.controls['PTGVLFI'].patchValue(reportDetails[0].PTGVLFI);
       this.patientAddEditForm.controls['IR'].patchValue(reportDetails[0].IR);
       
-      // let dateOfBirth: any = reportDetails[0].birthDate;
-      // let dobArr: any = dateOfBirth.split("-");
-      // this.patientAddEditForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1], dobArr[0]]));
-
+      
       this.patientAddEditForm.controls['ESRNO'].patchValue(reportDetails[0].ESRNO);
       this.patientAddEditForm.controls['ESRL'].patchValue(reportDetails[0].ESRL);
       this.patientAddEditForm.controls['peakC'].patchValue(reportDetails[0].peakC);
@@ -245,8 +234,8 @@ export class PatientReportViewComponent implements OnInit {
       this.patientAddEditForm.controls['SDda'].patchValue(reportDetails[0].SDda);
       this.patientAddEditForm.controls['DPRS'].patchValue(reportDetails[0].DPRS);
       this.patientAddEditForm.controls['ValsR'].patchValue(reportDetails[0].ValsR);
-      this.patientAddEditForm.controls['BMI'].patchValue(reportDetails[0].BMI);
-      this.patientAddEditForm.controls['bloodPressure'].patchValue(reportDetails[0].systolic + "/" + reportDetails[0].diastolic);
+      this.patientAddEditForm.controls['BMI'].patchValue(reportDetails[0].BMI_value);
+      this.patientAddEditForm.controls['bloodPressure'].patchValue(reportDetails[0].systolic_value + "/" + reportDetails[0].diastolic_value);
       this.patientAddEditForm.controls['leaveNotes'].patchValue(reportDetails[0].leaveNotes);
       this.patientAddEditForm.controls['status'].patchValue(reportDetails[0].status);
 

@@ -1,7 +1,9 @@
-<div *ngIf="loading" class="mainOverlayLoader">
+<!-- <div *ngIf="loading" class="mainOverlayLoader">
     <mat-spinner color="warn"></mat-spinner>
-</div>
+</div> -->
 
 <app-http-loader *ngIf="!loading"></app-http-loader>
+
+<ngx-ui-loader></ngx-ui-loader>
 
 <router-outlet (activate)="onActivate($event)"></router-outlet>

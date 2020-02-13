@@ -149,7 +149,7 @@ export class HealthRiskAnalysisComponent implements OnInit {
         this.patientReportViewForm.controls['patientName'].patchValue(patientDetails.patientName);
         this.patientReportViewForm.controls['physicalOrderingname'].patchValue(patientDetails.doctor_name);
         this.patientReportViewForm.controls['gender'].patchValue(patientDetails.gender);
-        this.patientReportViewForm.controls['PTGTP'].patchValue(patientDetails.PTGtype);
+        this.patientReportViewForm.controls['PTGTP'].patchValue(patientDetails.PTGPT);
         this.patientReportViewForm.controls['PTGVLFI'].patchValue(patientDetails.PTGVLFI);
         this.patientReportViewForm.controls['IR'].patchValue(patientDetails.IR);
         this.patientReportViewForm.controls['ESRNO'].patchValue(patientDetails.ESRNO);
@@ -166,19 +166,15 @@ export class HealthRiskAnalysisComponent implements OnInit {
         this.patientReportViewForm.controls['SDba'].patchValue(patientDetails.SDba);
         this.patientReportViewForm.controls['DPRS'].patchValue(patientDetails.DPRS);
         this.patientReportViewForm.controls['ValsR'].patchValue(patientDetails.ValsR);
-        this.patientReportViewForm.controls['BMI'].patchValue(patientDetails.BMI);
+        this.patientReportViewForm.controls['BMI'].patchValue(patientDetails.BMI_value);
         this.patientReportViewForm.controls['leaveNotes'].patchValue(patientDetails.leaveNotes);
-        this.patientReportViewForm.controls['bloodPressure'].patchValue(patientDetails.systolic + "/" + patientDetails.diastolic);
+        this.patientReportViewForm.controls['bloodPressure'].patchValue(patientDetails.systolic_value + "/" + patientDetails.diastolic_value);
         this.patientReportViewForm.controls['birthDate'].patchValue(patientDetails.birthDate);
-        // let dateOfBirth: any = patientDetails.birthDate;
-        // let dobArr: any = dateOfBirth.split("-");
-        // this.patientReportViewForm.controls['birthDate'].patchValue(moment([dobArr[2], dobArr[1] - 1, dobArr[0]]));
+        
+        this.patientReportViewForm.controls['birthDate'].patchValue(moment(patientDetails.birthDate).format("MM/DD/YYYY"));
 
-        // let sDateArr: any = patientDetails.testDate.split("-");
-        // this.patientReportViewForm.controls['testDate'].patchValue(moment([sDateArr[2], sDateArr[1] - 1, sDateArr[0]]));
-
-        // let eDateArr: any = patientDetails.testCompletedDate.split("-");
-        // this.patientReportViewForm.controls['testCompletedDate'].patchValue(moment([eDateArr[2], eDateArr[1] - 1, eDateArr[0]]));
+        this.patientReportViewForm.controls['testDate'].patchValue(moment(patientDetails.testDate).format("MM/DD/YYYY"));
+        this.patientReportViewForm.controls['testCompletedDate'].patchValue(moment(patientDetails.testCompletedDate).format("MM/DD/YYYY"));
       });
   }
 

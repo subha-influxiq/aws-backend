@@ -30,6 +30,12 @@ export class DoctorDashboardComponent implements OnInit {
     headerText: "Patient Record Report",
     billerData: [],
   };
+  public searchJson: any = {
+    doctorName: "",
+    patientName: "",
+    status: "",
+    dateRange: ""
+  };
 
   public allDataColumns: string[] = ['billGenerationDate', 'billSentDate', 'doctorName','patientName', 'billerName','report_type','status','superBill','techName', 'action'];
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
@@ -74,51 +80,6 @@ export class DoctorDashboardComponent implements OnInit {
     });
   }
 
-  dateSearch() {
-    var data = {
-      "source": "Patient-Record-Report_view",
-      "condition": {
-        "date": {
-          $lte: moment(this.end_date).format('DD-MM-YYYY'),
-          $gte: moment(this.start_date).format('DD-MM-YYYY')
-        }
-      },
-      "token": this.authData,
-    }
-
-    this.http.httpViaPost('datalist', data)
-      .subscribe(response => {
-        this.allDataSource = response.res;
-      });
-  }
-
-  applyFilter(key: string, value: string) {
-    let filterValue: any = {};
-    filterValue[key] = value.toLowerCase();
-    var data = {
-      "source": "Patient-Record-Report_view",
-      "condition": filterValue,
-      "token": this.authData,
-    }
-
-    this.http.httpViaPost('datalist', data)
-      .subscribe(response => {
-        this.allDataSource = response.res;
-      })
-
-  }
-
-  applyStatusFilter(filterValue: any) {
-    var data = {
-      "source": "Patient-Record-Report_view",
-      "condition": filterValue,
-      "token": this.authData,
-    }
-
-    this.http.httpViaPost('datalist', data).subscribe(response => {
-      this.allDataSource = response.res;
-    });
-  }
 
   openDialog() {
     const dialogRef = this.dialog.open(UploadDialogBoxComponent, {
@@ -145,6 +106,7 @@ export class DoctorDashboardComponent implements OnInit {
   viewReportProcessData(flag: string = null) {
     this.allDataColumns = ['billGenerationDate', 'billSentDate', 'doctorName','patientName', 'billerName','report_type','status','superBill','techName', 'action'];
     this.htmlText.headerText = flag;
+    var data: any = {};
     /* Open modal */
     let modalData: any = {
       panelClass: 'bulkupload-dialog',
@@ -154,74 +116,56 @@ export class DoctorDashboardComponent implements OnInit {
         button1: { text: "" },
         button2: { text: "Ok" },
       }
+    };
+
+    if(this.searchJson.dateRange != '') {
+      this.searchJson.dateRange.end = moment(this.searchJson.dateRange.end, "DD-MM-YYYY").add(1, 'days');
     }
 
     switch (flag) {
       case 'Report Signed':
-        if(typeof this.allResolveData.data.signReportData === 'undefined') {
-          var data = {
-            "source": "Patient-Record-Report_view",
-            "condition": {
-              "doctor_signature": { $exists: true },
-              "doctor_id_object": this.authData.user_details._id
-            },
-            "token": this.authData.jwtToken
-          }
-          this.http.httpViaPost('datalist', data).subscribe(response => {
-            if(response.res.length > 0) {
-              this.allResolveData.data["signReportData"] = response.res;
-              this.allDataSource = new MatTableDataSource(this.allResolveData.data.signReportData);
-              this.allDataSource.paginator = this.paginator;
-            } else {
-              this.openModal(modalData);
-            }
-          });
-        } else {
-          this.allDataSource = new MatTableDataSource(this.allResolveData.data.signReportData);
-          this.allDataSource.paginator = this.paginator;
-        }
+        data = {
+          "source": "Patient-Record-Report_view",
+          "search": this.searchJson,
+          "condition": {
+            "doctor_signature": { $exists: true },
+            "doctor_id": this.authData.user_details._id
+          },
+          "token": this.authData.jwtToken
+        };
         break;
       case 'Report unSigned':
         this.allDataColumns = ['doctorName','patientName', 'report_type','status','techName', 'action'];
-        if(typeof this.allResolveData.data.pendingReportData === 'undefined') {
-          var data = {
-            "source": "Patient-Record-Report_view",
-            "condition": {
-              "doctor_signature": { $exists: false },
-              "doctor_id_object": this.authData.user_details._id
-            },
-            "token": this.authData.jwtToken
-          }
-          this.http.httpViaPost('datalist', data).subscribe(response => {
-            if(response.res.length > 0) {
-              this.allResolveData.data["pendingReportData"] = response.res;
-              this.allDataSource = new MatTableDataSource(this.allResolveData.data.pendingReportData);
-              this.allDataSource.paginator = this.paginator;
-            } else {
-              this.openModal(modalData);
-            }
-          });
-        } else {
-          this.allDataSource = new MatTableDataSource(this.allResolveData.data.pendingReportData);
-          this.allDataSource.paginator = this.paginator;
-        }
+        data = {
+          "source": "Patient-Record-Report_view",
+          "search": this.searchJson,
+          "condition": {
+            "doctor_signature": { $exists: false },
+            "doctor_id": this.authData.user_details._id
+          },
+          "token": this.authData.jwtToken
+        };
         break;
       default:
-        var cond = {
-          "source": "",
+        data = {
+          "source": "Patient-Record-Report_view",
+          "search": this.searchJson,
           "condition": {
             "doctor_id": this.authData.user_details._id
           },
           "token": this.authData.jwtToken
-        }
-        this.http.httpViaPost('doctor-dashboard', cond).subscribe(response => {
-          if(response.res.length > 0) {
-            this.allResolveData = response;
-            this.allDataSource = new MatTableDataSource(this.allResolveData.data.allReportData);
-          }
-        });
+        };
         break;
     }
+    this.http.httpViaPost('dashboard-datalist', data).subscribe(response => {
+      if(response.data.length > 0) {
+        this.allResolveData.data = response.data;
+        this.allDataSource = new MatTableDataSource(this.allResolveData.data);
+        this.allDataSource.paginator = this.paginator;
+      } else {
+        this.openModal(modalData);
+      }
+    });
   }
 
   openModal(data) {
@@ -385,6 +329,15 @@ export class DoctorDashboardComponent implements OnInit {
         }, 1000);
       }
     });
+  }
+
+  resetSearch() {
+    this.searchJson = {
+      patientName: "",
+      status: "",
+      dateRange: ""
+    };
+    this.viewReportProcessData(this.htmlText.headerText);
   }
 
 }

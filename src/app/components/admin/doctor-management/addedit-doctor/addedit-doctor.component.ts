@@ -14,217 +14,122 @@ export interface DialogData {
   id: any;
 }
 
-
 @Component({
   selector: 'app-addedit-doctor',
   templateUrl: './addedit-doctor.component.html',
   styleUrls: ['./addedit-doctor.component.css']
 })
+
 export class AddeditDoctorComponent implements OnInit {
 
-  public message: any = "Submitted Successfully";
-  // ============================== declarations =======================
-  public docManageForm: FormGroup;
-  public checkboxArray: any = ['Family Practice', 'General Practitioner', 'Primary Care',
-    'Cardiology', 'Neurology', 'Internal Medicine', 'Endocrinology', 'Pain Management', 'Integrated', 'Others'];
-  public dialogRef: any;
-  public successMessage: any = "Data Submitted Successfully!!!";
-  public taxo_array: any = [];
-  public htmlText: any = { header: 'Add New Doctor', nav: 'Add Doctor', buttonText: 'Save' };
-  public action: any;
-  public defaultData: any;
-  public condition: any;
-  public states: any;
-  public allCities: any;
-  public cities: any;
-  selectTaxonomyNames: [string];
-  public user_token: any;
-  public techData: any = [];
-  public billerData: any = [];
-  public techArray: any = [];
-  public billerArray: any = [];
-  public doctorOfficeData: any = [];
+  public doctorManagementAddEditForm: FormGroup;
   public params_id: any;
-
-  myTaxonomies: any = [
-    {
-      name: "Family Practice",
-      value: "Family Practice"
-    },
-    {
-      name: "General Practitioner",
-      value: "General Practitioner"
-    },
-    {
-      name: "Primary Care",
-      value: "Primary Care"
-    },
-    {
-      name: "Cardiology",
-      value: "Cardiology"
-    },
-    {
-      name: "Neurology",
-      value: "Neurology"
-    },
-    {
-      name: "Internal Medicine",
-      value: "Internal Medicine"
-    },
-    {
-      name: "Endocrinology",
-      value: "Endocrinology"
-    },
-    {
-      name: "Pain Management",
-      value: "Pain Management"
-    },
-    {
-      name: "Integrated",
-      value: "Integrated"
-    },
-    {
-      name: "Others",
-      value: "Others"
-    }
-  ];
+  public htmlText: any = {
+    userData: "",
+    header: 'Add New Doctor', 
+    nav: 'Add Doctor', 
+    buttonText: 'Save',
+    message: "Submitted Successfully",
+    doctorOfficeData: [],
+    techData: [],
+    billerData: [],
+    states: "",
+    allCities: "",
+    cities: "",
+    taxonomies: ""
+  };
+  public dialogRef: any;
 
   constructor(private formBuilder: FormBuilder, private http: HttpServiceService,
     private cookieService: CookieService, public dialog: MatDialog, private router: Router,
     public acivatedRoute: ActivatedRoute, public snackBar: MatSnackBar) {
 
-    this.params_id = this.acivatedRoute.snapshot.params._id;
-    if (this.params_id) {
-      this.generateEditForm();
+    this.htmlText.userData = this.cookieService.getAll();
+    this.allStateCityData();
+    this.getAllData();
+
+    if (this.acivatedRoute.snapshot.params._id) {
+      this.generateAddEditForm('edit');
+
+      this.htmlText.message     = "Updated Successfully";
+      this.htmlText.header      = 'Edit Doctor Record';
+      this.htmlText.nav         = 'Edit Doctor';
+      this.htmlText.buttonText  = 'Update';
+      this.params_id            = this.acivatedRoute.snapshot.params._id;
     } else {
-      this.generateAddForm();
+      this.generateAddEditForm('add');
     }
-    this.user_token = cookieService.get('jwtToken');
-    this.getAllTechData();
-    this.getAllBillerData();
-    this.getAllDoctorOfficeData();
-    this.acivatedRoute.params.subscribe(params => {
-      if (params['_id'] != null) {
-        this.action = "edit";
-        this.condition = { id: params._id };
-        this.acivatedRoute.data.subscribe(resolveData => {
-          this.defaultData = resolveData.data.res[0];
-        });
-      } else {
-        this.action = "add";
-      }
-    });
   }
 
   ngOnInit() {
+  }
 
-    this.allStateCityData();
+  generateAddEditForm(flag: string = null) {
+    let validateRule: any = {
+      id:                     ['', []],
+      firstname:              ['', [ Validators.required, Validators.maxLength(50) ]],
+      lastname:               ['', [ Validators.required, Validators.maxLength(50) ]],
+      email:                  ['', [ Validators.required, Validators.email, Validators.maxLength(100) ]],
+      phone:                  ['', [ Validators.required, Validators.minLength(7), Validators.maxLength(16) ]],
+      fax:                    ['', [Validators.required]],
+      practice_name:          ['', [Validators.required]],
+      npm:                    ['', [Validators.required]],
+      address:                ['', [ Validators.required, Validators.maxLength(200) ]],
+      zip:                    ['', [ Validators.required, Validators.minLength(4), Validators.maxLength(18) ]],
+      city:                   ['', [ Validators.required ]],
+      state:                  ['', [ Validators.required ]],
+      user_type:              ['doctor', []],
+      tech_id:                ['', []],
+      biller_id:              ['', []],
+      doctors_office_id:      ['', []],
+      taxo_list:              ['', []],
+      status:                 ['', []],
+      password:               ['', [ Validators.required, Validators.maxLength(16), Validators.minLength(6) ]],
+      confirmpassword:        ['', [ Validators.required ]]
+    };
+    let passwordRule: any = { validators: this.matchpassword('password', 'confirmpassword') };
 
-    // this.createTaxoInputs();
-    // Case 
-    switch (this.action) {
-      case 'add':
-        /* Button text */
-        break;
+    switch(flag) {
       case 'edit':
-        /* Button text */
-        this.htmlText.header = 'Edit Doctor Record';
-        this.htmlText.nav = 'Edit Doctor';
-        this.htmlText.buttonText = 'Update';
-        this.successMessage = "One row updated";
-        this.setDefaultValue(this.defaultData);
-        console.log("default data", this.defaultData);
-        setTimeout(() => {
-          this.getCityByName(this.defaultData.state);
-        }, 2000);
+        delete validateRule.password;
+        delete validateRule.confirmpassword;
+
+        this.doctorManagementAddEditForm = this.formBuilder.group(validateRule);
+
+        this.acivatedRoute.data.forEach((data) => {
+          let doctorDetails: any = data.data.res;
+          setTimeout(() => {
+            this.getCity(doctorDetails[0].state);
+          }, 1000);
+
+          this.doctorManagementAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
+          this.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
+          this.doctorManagementAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
+          this.doctorManagementAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
+          this.doctorManagementAddEditForm.controls['phone'].patchValue(doctorDetails[0].phone);
+          this.doctorManagementAddEditForm.controls['fax'].patchValue(doctorDetails[0].fax);
+          this.doctorManagementAddEditForm.controls['practice_name'].patchValue(doctorDetails[0].fax);
+          this.doctorManagementAddEditForm.controls['npm'].patchValue(doctorDetails[0].fax);
+          this.doctorManagementAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
+          this.doctorManagementAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
+          this.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
+          this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
+          this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_details);
+          this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_details);
+          this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_details);
+          this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
+          this.doctorManagementAddEditForm.controls['taxo_list'].patchValue(doctorDetails[0].taxo_list);
+          this.doctorManagementAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
+        });
+        break;
+      case 'add':
+        delete validateRule.id;
+        
+        this.doctorManagementAddEditForm = this.formBuilder.group(validateRule, passwordRule);
         break;
     }
   }
 
-  inputUntouch(form: any, val: any) {
-    form.controls[val].markAsUntouched();
-  }
-
-  setDefaultValue(defaultValue) {
-    this.docManageForm.patchValue({
-      firstname: defaultValue.firstname,
-      lastname: defaultValue.lastname,
-      email: defaultValue.email,
-      password: defaultValue.password,
-      confirmpassword: defaultValue.password,
-      phone: defaultValue.phone,
-      practicename: defaultValue.practicename,
-      taxo_list: defaultValue.taxo_list,
-      npm: defaultValue.npm,
-      fax: defaultValue.fax,
-      address: defaultValue.address,
-      city: defaultValue.city,
-      state: defaultValue.state,
-      tech: defaultValue.tech,
-      biller: defaultValue.biller,
-      doctorsOfficeName: defaultValue.doctorsOfficeName,
-      zip: defaultValue.zip,
-      status: defaultValue.status,
-      taxonomies: defaultValue.taxonomies
-    });
-  }
-  // ======================================================================================
-
-
-  // =============================Form Generator=======================
-  generateAddForm() {
-    this.docManageForm = this.formBuilder.group({
-      // taxonomies:['', Validators.required],
-      firstname: ['', [Validators.required]],
-      lastname: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)]],
-      phone: ["", [Validators.required]],
-      practicename: ['', [Validators.required]],
-      npm: ['', [Validators.required]],
-      address: ['', [Validators.required]],
-      fax: ['', [Validators.required]],
-      city: ['', []],
-      state: ['', []],
-      type: ['doctor', []],
-      zip: ['', [Validators.required]],
-      status: ['', []],
-      tech: ['', []],
-      biller: ['', []],
-      doctorsOfficeName: ['', []],
-      taxo_list: ['', []],
-
-      password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
-      confirmpassword: ['', []],
-    }, {
-      validators: this.matchpassword('password', 'confirmpassword')
-    });
-  }
-
-  generateEditForm() {
-
-    this.docManageForm = this.formBuilder.group({
-      // taxonomies:['', Validators.required],
-      firstname: ['', [Validators.required]],
-      lastname: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)]],
-      phone: ["", [Validators.required]],
-      practicename: ['', [Validators.required]],
-      npm: ['', [Validators.required]],
-      address: ['', [Validators.required]],
-      fax: ['', [Validators.required]],
-      city: ['', []],
-      state: ['', []],
-      type: ['doctor', []],
-      zip: ['', [Validators.required]],
-      status: ['', []],
-      tech: ['', []],
-      biller: ['', []],
-      doctorsOfficeName: ['', []],
-      taxo_list: ['', []]
-    });
-  }
-
-  // ==================================================================
   matchpassword(passwordkye: string, confirmpasswordkye: string) {
     return (group: FormGroup) => {
       let passwordInput = group.controls[passwordkye],
@@ -237,10 +142,12 @@ export class AddeditDoctorComponent implements OnInit {
     };
   }
 
+  /**for validation purpose**/
+  inputUntouch(form: any, val: any) {
+    form.controls[val].markAsUntouched();
+  }
+  /**for validation purpose**/
 
-
-
-  // =========================================MODAL functions==========================================
   openDialog(x: any): void {
     this.dialogRef = this.dialog.open(ChangePasswordDoctorModal, {
       data: { message: x, 'id': this.params_id }
@@ -248,125 +155,79 @@ export class AddeditDoctorComponent implements OnInit {
     this.dialogRef.afterClosed().subscribe(result => {
     });
   }
-  // =====================================================================================================
-
-
-  backToManagePage() {
-    this.router.navigateByUrl('admin/doctor-management');
-  }
 
   /**for getting all states & cities function start here**/
   allStateCityData() {
     this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
-      this.states = response;
-      if (this.params_id != null) {
-        this.setDefaultValue(this.defaultData);
-      }
-
+      this.htmlText.states = response;
     });
 
     this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(response => {
-      this.allCities = response;
-      if (this.params_id != null) {
-        this.setDefaultValue(this.defaultData);
-      }
+      this.htmlText.allCities = response;
+    });
+
+    this.http.getSiteSettingData("./assets/data-set/taxonomies.json").subscribe(response => {
+      this.htmlText.taxonomies = response;
     });
   }
   /**for getting all states & cities  function end here**/
 
   getCity(event: any) {
     var val = event;
-    this.cities = this.allCities[val];
+    this.htmlText.cities = this.htmlText.allCities[val];
   }
 
   getCityByName(stateName) {
-    this.cities = this.allCities[stateName];
+    this.htmlText.cities = this.htmlText.allCities[stateName];
   }
 
   /**getting all the technician data**/
-  getAllTechData() {
+  getAllData() {
     var data = {
-      "source": "users",
-      "condition": {
-        "type": "tech"
-      },
-      "token": this.user_token
-    }
-    this.http.httpViaPost('datalist', data)
-      .subscribe(response => {
-        this.techData = response.res;
+      "token": this.htmlText.userData.jwtToken
+    };
 
-      })
-  }
-
-  getAllDoctorOfficeData() {
-    var data = {
-      "source": "users",
-      "condition": {
-        "type": "doctor_office"
-      },
-      "token": this.user_token
-    }
-    this.http.httpViaPost('datalist', data)
-      .subscribe(response => {
-        this.doctorOfficeData = response.res;
-      })
-  }
-
-
-  /**getting all the biller data**/
-  getAllBillerData() {
-    var data = {
-      "source": "users",
-      "condition": {
-        "type": "biller"
-      },
-      "token": this.user_token
-    }
-    this.http.httpViaPost('datalist', data).subscribe(response => {
-      this.billerData = response.res;
+    this.http.httpViaPost('datalist-doctor-add', data).subscribe(response => {
+      this.htmlText.techData = response.data.tech_data;
+      this.htmlText.doctorOfficeData = response.data.doctor_office_data;
+      this.htmlText.billerData = response.data.biller_data;
     });
   }
 
-
-  // ============================Submit Function=======================
-  onSubmit() {
-    let x: any;
-    for (x in this.docManageForm.controls) {
-      this.docManageForm.controls[x].markAsTouched();
+  doctorManagementAddEditFormSubmit() {
+    for (let x in this.doctorManagementAddEditForm.controls) {
+      this.doctorManagementAddEditForm.controls[x].markAsTouched();
     }
 
     /* stop here if form is invalid */
-    if (!this.docManageForm.valid) {
-      // this.openDialog("Form is invalid");
-      // setTimeout(() => {
-      //   this.dialogRef.close();
-      // }, 2000);
-      // return;
-    } else {
+    if (this.doctorManagementAddEditForm.valid) {
+      delete this.doctorManagementAddEditForm.value.confirmpassword;
 
-      delete this.docManageForm.value.confirmpassword;
-      if (this.docManageForm.value.status) {
-        this.docManageForm.value.status = parseInt("1");
+      if (this.doctorManagementAddEditForm.value.status) {
+        this.doctorManagementAddEditForm.value.status = parseInt("1");
       } else {
-        this.docManageForm.value.status = parseInt("0");;
+        this.doctorManagementAddEditForm.value.status = parseInt("0");;
       }
 
       /* start process to submited data */
       let postData: any = {
-        "source": "users",
-        "data": Object.assign(this.docManageForm.value, this.condition),
+        "source": "data_pece",
+        "data": this.doctorManagementAddEditForm.value,
         "domainurl": environment.siteBaseUrl + 'reset-password',
-        "sourceobj": ["doctorsOfficeName"],
+        "sourceobj": ["doctors_office_id"],
+        "sourceobjArray": ["tech_id", "biller_id"],
         "token": this.cookieService.get('jwtToken')
       };
 
       this.http.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
         if (response.status == "success") {
-          let action = "ok";
-          this.snackBar.open(this.message, action, {
+          this.snackBar.open(this.htmlText.message, 'Ok', {
             duration: 2000,
           });
+
+          setTimeout(() => {
+            this.router.navigateByUrl("admin/doctor-management");
+          }, 1000);
         } else {
           this.snackBar.open(response.msg, '', {
             duration: 2000,
@@ -375,38 +236,9 @@ export class AddeditDoctorComponent implements OnInit {
       }, (error) => {
         alert("Some error occurred. Please try again.");
       });
-
     }
-
-
-  }
-
-  trackByFn(index) {
-    return index;
   }
 }
-
-
-
-
-// ============================================MODAL COMPONENT===========================================
-// @Component({
-//   selector: 'app-modal',
-//   templateUrl: 'modal.html',
-// })
-
-// export class Modal {
-
-//   constructor(
-//     public dialogRef: MatDialogRef<Modal>,
-//     @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
-
-//   onNoClick(): void {
-//     this.dialogRef.close();
-//   }
-
-// }
-// ======================================================================================================
 
 @Component({
   selector: 'dialogtest',

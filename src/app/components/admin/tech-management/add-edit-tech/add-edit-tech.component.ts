@@ -25,107 +25,93 @@ export class AddEditTechComponent implements OnInit {
   @ViewChild(FormGroupDirective, { static: false }) formDirective: FormGroupDirective;
 
   public TechManagementAddEditForm: FormGroup;
-  public message: any = "Submitted Successfully";
   public dialogRef: any;
 
-  date = new FormControl(new Date());
-  public ddmmyy: any;
-  serializedDate = new FormControl((new Date()).toISOString());
-  public usersData: any = [];
-  public states: any;
-  public allCities: any;
-  public cities: any;
   public params_id: any;
-  public htmlText: any = { header: 'Add New Technician', nav: 'Add Tech', buttonText: 'Save' };
-  public user_token: any;
-  public taxo_array: any = [];
-  public headerText: any = "add technician";
+  public htmlText: any = {
+    userData: "",
+    header: 'Add New Tech', 
+    nav: 'Add Tech', 
+    buttonText: 'Save',
+    message: "Submitted Successfully",
+    states: "",
+    allCities: "",
+    cities: ""
+  };
+
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService, public snackBar: MatSnackBar, public commonFunction: CommonFunction,
     public dialog: MatDialog) {
-    /* Set Meta Data */
-    this.commonFunction.setTitleMetaTags();
-
+    
+    this.htmlText.userData = cookie.getAll();
     this.allStateCityData();
-    this.user_token = cookie.get('jwtToken');
-    this.params_id = this.activeRoute.snapshot.params._id;
-    if (this.params_id) {
-      this.generateEditForm();
+
+    if (this.activeRoute.snapshot.params._id) {
+      this.generateAddEditForm('edit');
+
+      this.htmlText.message     = "Updated Successfully";
+      this.htmlText.header      = 'Edit Tech Record';
+      this.htmlText.nav         = 'Edit Tech';
+      this.htmlText.buttonText  = 'Update';
+      this.params_id            = this.activeRoute.snapshot.params._id;
     } else {
-      this.generateAddForm();
+      this.generateAddEditForm('add');
     }
   }
 
-  generateAddForm() {
-    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
+  generateAddEditForm(flag: string = null) {
+    let validateRule: any = {
+      id:               ['', []],
+      firstname:        ['', [ Validators.required, Validators.maxLength(50) ]],
+      lastname:         ['', [ Validators.required, Validators.maxLength(50) ]],
+      email:            ['', [ Validators.required, Validators.email, Validators.maxLength(100) ]],
+      phone:            ['', [ Validators.required, Validators.minLength(7), Validators.maxLength(16) ]],
+      address:          ['', [ Validators.required, Validators.maxLength(200) ]],
+      zip:              ['', [ Validators.required, Validators.minLength(4), Validators.maxLength(18) ]],
+      city:             ['', [ Validators.required ]],
+      state:            ['', [ Validators.required ]],
+      user_type:        ['tech', []],
+      status:           ['', []],
+      password:         ['', [ Validators.required, Validators.maxLength(16), Validators.minLength(6) ]],
+      confirmpassword:  ['', [ Validators.required ]]
+    };
+    let passwordRule: any = { validators: this.matchpassword('password', 'confirmpassword') };
 
-    this.TechManagementAddEditForm = this.fb.group({
-      firstname: ['', [Validators.required]],
-      lastname: ['', [Validators.required]],
-      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phone: ['', [Validators.required]],
-      address: ['', [Validators.required]],
-      city: ['', [Validators.required]],
-      state: ['', [Validators.required]],
-      zip: ['', [Validators.required]],
-      date: [dateformat, []],
-      type: ['tech', []],
-      // taxo_list : [],
-      status: ['', []],
-      password: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
-      confirmpassword: ['', Validators.required],
-    }, { validators: this.matchpassword('password', 'confirmpassword') });
-  }
+    switch(flag) {
+      case 'edit':
+        delete validateRule.password;
+        delete validateRule.confirmpassword;
 
-  generateEditForm() {
-    this.datePipe.transform(this.date.value, 'MM-dd-yyyy');
-    var dateformat = this.datePipe.transform(new Date(), "MM-dd-yyyy");
+        this.TechManagementAddEditForm = this.fb.group(validateRule);
 
-    this.TechManagementAddEditForm = this.fb.group({
-      firstname: ['', [Validators.required]],
-      lastname: ['', [Validators.required]],
-      email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
-      phone: ['', [Validators.required]],
-      address: ['', [Validators.required]],
-      city: ['', [Validators.required]],
-      state: ['', [Validators.required]],
-      zip: ['', [Validators.required]],
-      date: [dateformat, []],
-      type: ['tech', []],
-      // taxo_list : [],
-      status: ['', []],
-    });
+        this.activeRoute.data.forEach((data) => {
+          let billerDetails :any = data.techData.res;
+          setTimeout(() => {
+            this.getCity(billerDetails[0].state);
+          }, 1000);
+
+          this.TechManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
+          this.TechManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
+          this.TechManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
+          this.TechManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
+          this.TechManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
+          this.TechManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address);
+          this.TechManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
+          this.TechManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
+          this.TechManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
+          this.TechManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
+        });
+        break;
+      case 'add':
+        delete validateRule.id;
+        
+        this.TechManagementAddEditForm = this.fb.group(validateRule);
+        break;
+    }
   }
 
   ngOnInit() {
-    if (this.params_id) {
-      this.htmlText.header = 'Edit Technician Record';
-      this.htmlText.nav = 'Edit Technician';
-      this.headerText = "edit technician";
-      this.htmlText.buttonText = 'Update';
-      this.getResolveData();
-    }
-  }
-
-  getResolveData() {
-    this.activeRoute.data.forEach((data) => {
-      this.usersData = data.techData.res;
-      let techDetails: any = data.techData.res;
-      setTimeout(() => {
-        this.getCityByName(techDetails[0].state);
-      }, 400);
-      this.TechManagementAddEditForm.controls['firstname'].patchValue(techDetails[0].firstname);
-      this.TechManagementAddEditForm.controls['lastname'].patchValue(techDetails[0].lastname);
-      this.TechManagementAddEditForm.controls['email'].patchValue(techDetails[0].email);
-      this.TechManagementAddEditForm.controls['phone'].patchValue(techDetails[0].phone);
-      this.TechManagementAddEditForm.controls['address'].patchValue(techDetails[0].address);
-      this.TechManagementAddEditForm.controls['city'].patchValue(techDetails[0].city);
-      this.TechManagementAddEditForm.controls['state'].patchValue(techDetails[0].state);
-      this.TechManagementAddEditForm.controls['zip'].patchValue(techDetails[0].zip);
-      this.TechManagementAddEditForm.controls['status'].patchValue(techDetails[0].status);
-    })
   }
 
   matchpassword(passwordkye: string, confirmpasswordkye: string) {
@@ -154,94 +140,66 @@ export class AddEditTechComponent implements OnInit {
   }
   /**for validation purpose**/
 
-  /**resetting the form start here **/
-  ResetAddForm() {
-    this.formDirective.resetForm();
-  }
-  /**resetting the form start here **/
   /**for getting all states & cities function start here**/
   allStateCityData() {
     this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(response => {
-      this.states = response;
+      this.htmlText.states = response;
       // this.getResolveData();
     });
 
     this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(response => {
-      this.allCities = response;
-      if(this.params_id){
-        this.getResolveData();
-      }  
+      this.htmlText.allCities = response;  
     });
   }
   /**for getting all states & cities  function end here**/
 
   getCity(event) {
     var val = event;
-    this.cities = this.allCities[val];
+    this.htmlText.cities = this.htmlText.allCities[val];
   }
 
   getCityByName(stateName) {
-    this.cities = this.allCities[stateName];
-  }
-  backToManagePage(){
-    this.router.navigateByUrl("admin/tech-management");
+    this.htmlText.cities = this.htmlText.allCities[stateName];
   }
 
   TechManagementAddFormFormSubmit() {
-
-    let x: any;
-    for (x in this.TechManagementAddEditForm.controls) {
+    for (let x in this.TechManagementAddEditForm.controls) {
       this.TechManagementAddEditForm.controls[x].markAsTouched();
     }
 
     if (this.TechManagementAddEditForm.valid) {
-      if (this.TechManagementAddEditForm.value.status)
-        this.TechManagementAddEditForm.value.status = parseInt("1");
-      else
-        this.TechManagementAddEditForm.value.status = parseInt("0");
-      this.TechManagementAddEditForm.value.taxo_list = this.taxo_array;
-
       delete this.TechManagementAddEditForm.value.confirmpassword;
-      var data: any;
-      if (this.params_id) {
-        data = {
-          "source": "users",
-          "data": {
-            id: this.params_id,
-            firstname: this.TechManagementAddEditForm.value.firstname,
-            lastname: this.TechManagementAddEditForm.value.lastname,
-            phone: this.TechManagementAddEditForm.value.phone,
-            email: this.TechManagementAddEditForm.value.email,
-            address: this.TechManagementAddEditForm.value.address,
-            city: this.TechManagementAddEditForm.value.city,
-            state: this.TechManagementAddEditForm.value.state,
-            zip: this.TechManagementAddEditForm.value.zip,
-            status: this.TechManagementAddEditForm.value.status,
-          },
-          "token": this.user_token
-        };
+
+      if (this.TechManagementAddEditForm.value.status) {
+        this.TechManagementAddEditForm.value.status = parseInt("1");
       } else {
-        data = {
-          "source": "users",
-          "data": this.TechManagementAddEditForm.value,
-          "domainurl" : environment.siteBaseUrl + 'reset-password',
-          "token": this.user_token
-        }
+        this.TechManagementAddEditForm.value.status = parseInt("0");
       }
+      
+      var data: any = {
+        "source": "data_pece",
+        "data": this.TechManagementAddEditForm.value,
+        "token": this.htmlText.userData.jwtToken,
+        "domainurl" : environment.siteBaseUrl + 'reset-password'
+      };
 
       this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
         if (response.status == "success") {
-          let action = "ok";
-          this.snackBar.open(this.message, action, {
+          this.snackBar.open(this.htmlText.message, 'Ok', {
             duration: 2000,
           });
+
+          this.formDirective.resetForm();
+
+          setTimeout(() => {
+            this.router.navigateByUrl("admin/tech-management");
+          }, 1000);
         } else {
           this.snackBar.open(response.msg, '', {
             duration: 2000,
           });
         }
-        });
-    } else {
+      });
     }
   }
 

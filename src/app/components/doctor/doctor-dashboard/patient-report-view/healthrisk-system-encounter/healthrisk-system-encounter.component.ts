@@ -250,8 +250,9 @@ export class HealthriskSystemEncounterComponent implements OnInit {
         this.patientEncounterForm.controls['physicalOrdering'].patchValue(patientDetails.doctor_name);
         this.patientEncounterForm.controls['doctor_signature'].patchValue(patientDetails.doctor_signature);
         this.patientEncounterForm.controls['gender'].patchValue(patientDetails.gender);
-        this.patientEncounterForm.controls['testDate'].patchValue(patientDetails.testDate);
-        this.patientEncounterForm.controls['birthDate'].patchValue(patientDetails.birthDate);
+        
+        this.patientEncounterForm.controls['testDate'].patchValue(moment(patientDetails.testDate).format("MM/DD/YYYY"));
+        this.patientEncounterForm.controls['birthDate'].patchValue(moment(patientDetails.birthDate).format("MM/DD/YYYY"));
 
         let fieldText: string = '';
         console.log('patientDetails', patientDetails);

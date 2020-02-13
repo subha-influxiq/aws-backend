@@ -25,9 +25,7 @@
                 <td>
                     <label>Test Date:
                         <mat-form-field>
-                            <input matInput [matDatepicker]="picker4" formControlName="testDate" id="testDate">
-                            <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
-                            <mat-datepicker #picker4></mat-datepicker>
+                            <input type="text" matInput [formControl]="patientBMIForm.controls['testDate']">
                         </mat-form-field>
                     </label>
                 </td>
@@ -40,9 +38,7 @@
                 <td> </td>
                 <td><label>D.O.B
                         <mat-form-field>
-                            <input matInput [matDatepicker]="picker" formControlName="birthDate" id="birthDate">
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
+                            <input type="text" matInput [formControl]="patientBMIForm.controls['birthDate']">
                         </mat-form-field>
                     </label></td>
             </tr>
