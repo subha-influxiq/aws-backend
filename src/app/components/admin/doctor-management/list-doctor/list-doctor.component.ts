@@ -12,17 +12,46 @@ export class ListDoctorComponent implements OnInit {
 
   // ===============================Declarations=========================
   public  docData: any = [];
-  public docData_skip: any = ["_id", "created_at", "password", "confirmpassword",
-   "taxonomies","password","confirmpassword","practicename","address","type","fullName","tech_id",
-   "biller_id","doctorsOfficeName", "city", "state", "zip"];
+  public docData_skip: any = [
+    "_id",
+    "fax",
+    "address",
+    "zip",
+    "city",
+    "state",
+    "user_type",
+    "tech_id",
+    "biller_id",
+    "doctors_office_id",
+    "taxo_list",
+    "password",
+    "created_at",
+    "id",
+    "updated_at",
+    "doctor_signature"
+  ];
   public docData_modify_header: any = {
-    "firstname": "First Name", "lastname": "Last Name", "email": "Email", "phone": "Phone",
-    "practicename": "Practice name", "npm": "NPI#", "status": "Status", "taxo list": "Taxonomies",
-    "fullNamecopy":"Doctor Name","biller" : "Biller Name",
-    "tech" :"Tech Name","date" : "Date"
+    firstname: "First Name",
+    lastname: "Last Name",
+    "practice name": "Practice Name",
+    npi: "NPI#",
+    email: "Email",
+    phone: "Phone Number",
+    status: "Status",
   };
 
-  public previewModal_skip: any = ["_id", "tech_id", "biller_id","created_at","fullNamecopy"];
+  public previewModal_skip: any = [
+    "_id",
+    "user_type",
+    "tech_id",
+    "biller_id",
+    "doctors_office_id",
+    "taxo_list",
+    "password",
+    "created_at",
+    "id",
+    "updated_at"
+  ];
   public tableName: any = 'users';
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";

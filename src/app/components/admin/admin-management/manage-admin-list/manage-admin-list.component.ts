@@ -11,20 +11,37 @@ import { HttpServiceService } from '../../../../services/http-service.service';
 export class ManageAdminListComponent implements OnInit {
 
   public TechDashboardAllData: any = [];
-  public allUserData_skip: any = ["confirmpassword", "accesscode", "password",
-    "created_at", "_id", "id", "updated_at", "phoneno", "type", "taxo_list",
-    "state", "city", "zip", "address", "fullName","zip","city","state"];
+  public allUserData_skip: any = [
+    "_id",
+    "user_type",
+    "password",
+    "created_at",
+    "access_code",
+    "address",
+    "city", 
+    "state",
+    "updated_at",
+    "zip"
+  ];
   public editUrl: any = "admin/admin-management/edit";
   public allUserData_modify_header: any = {
-    "firstname": "First Name", "lastname": "Last Name",
-    "email": "E-Mail", "phone": "Phone Number", "date": "Date",
-    "status": "Status","address": "Address",
-    "fullNamecopy": "Name"
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "email": "Email", 
+    "phone": "Phone Number", 
+    "status": "Status",
   };
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public previewModal_skip : any=['_id','fullNamecopy'];
+  public previewModal_skip : any=[
+    "_id",
+    "user_type",
+    "password",
+    "created_at",
+    "access_code",
+    "updated_at",
+  ];
   public tableName: any = "users";
   public apiUrl: any;
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];

@@ -25,6 +25,8 @@ export class HttpServiceService {
 
   /* call api via post method */
   httpViaPost(endpoint, jsonData): Observable<any> {
+    this.jwtToken = this.CookieService.get('jwtToken');
+
     /* set common header */
     const httpOptions = {
       headers: new HttpHeaders({
@@ -37,6 +39,8 @@ export class HttpServiceService {
 
   /* call api via get method */
   httpViaGet(endpoint, jsonData): Observable<any> {
+    this.jwtToken = this.CookieService.get('jwtToken');
+
     /* set common header */
     const httpOptions = {
       headers: new HttpHeaders({
@@ -49,6 +53,8 @@ export class HttpServiceService {
 
   /* Resolve service */
   ResolveViaPost(requestdata: any, endpoint: any): Observable<any> {
+    this.jwtToken = this.CookieService.get('jwtToken');
+
     /* set common header */
     const httpOptions = {
       headers: new HttpHeaders({
@@ -56,12 +62,15 @@ export class HttpServiceService {
         'Authorization': this.jwtToken
       })
     };
+    requestdata['token'] = this.jwtToken;
 
     return this.http.post(this.baseUrl + endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
   }
 
   checkingDuplicateEmail(requestdata: any): Observable<any> {
+    this.jwtToken = this.CookieService.get('jwtToken');
     let data: any = { "email": requestdata, "source": "users" };
+
     /* set common header */
     const httpOptions = {
       headers: new HttpHeaders({
@@ -75,6 +84,8 @@ export class HttpServiceService {
 
   /* call api via get method */
   httpViaGetExt(url, jsonData): Observable<any> {
+    this.jwtToken = this.CookieService.get('jwtToken');
+    
     /* set common header */
     const httpOptions = {
       headers: new HttpHeaders({

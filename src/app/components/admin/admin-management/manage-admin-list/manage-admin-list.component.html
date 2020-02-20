@@ -10,15 +10,10 @@
     </mat-toolbar>
 
     <span class="add_header">
-
-
       <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Admin</span>
       <button mat-flat-button [routerLink]="['/admin/admin-management/add']">Add Admin</button>
     </span>
-    <!-- End header with add button -->
-    <!-- <span class="add_header">
-  <button mat-flat-button [routerLink]="[ '/admin-management/add']">Add Admin</button>
-</span> -->
+
     <!-- table -->
     <lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0" [datasource]="TechDashboardAllData"
       [skip]="allUserData_skip" [detail_skip_array]="previewModal_skip"

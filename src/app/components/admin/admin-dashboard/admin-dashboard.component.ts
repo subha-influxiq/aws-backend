@@ -38,7 +38,7 @@ export class AdminDashboardComponent implements OnInit {
   allDataSource: MatTableDataSource<any>;
 
   public searchJson: any = {
-    doctor_name: "",
+    doctorName: "",
     patientName: "",
     status: "",
     dateRange: ""
@@ -80,7 +80,7 @@ export class AdminDashboardComponent implements OnInit {
       "token": this.jwtToken,
     };
 
-    this.allDataColumns = ['no', 'tech_name', 'report_type', 'doctor_name', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
+    this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
     /* Set Table Header */
 
     switch (flag) {
@@ -111,14 +111,14 @@ export class AdminDashboardComponent implements OnInit {
         };
         break;
       case 'Report Signed':
-        this.allDataColumns = ['no', 'billGenerationDate', 'tech_name', 'billSentDate', 'biller_name', 'report_type', 'doctor_name', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
+        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'billerName', 'billGenerationDate', 'billSentDate', 'reportType', 'superBill', 'status', 'createdAt', 'editRecord'];
 
         repostSignCond["condition"] = {
           "doctor_signature": { $exists: true }
         };
         break;
       case 'Super Bill':
-        this.allDataColumns = ['no', 'billGenerationDate', 'tech_name', 'billSentDate', 'biller_name', 'report_type', 'doctor_name', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
+        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'billerName', 'billGenerationDate', 'billSentDate', 'reportType', 'superBill', 'status', 'createdAt', 'editRecord'];
 
         /////////////////////////////////////////
         //////////////// Pending ////////////////
@@ -128,7 +128,7 @@ export class AdminDashboardComponent implements OnInit {
         };
         break;
       case 'Download Bill':
-        this.allDataColumns = ['no', 'billGenerationDate', 'tech_name', 'billSentDate', 'biller_name', 'report_type', 'doctor_name', 'superBill', 'patientNamecopy', 'status', 'created_at', 'editRecord'];
+        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'billerName', 'billGenerationDate', 'billSentDate', 'reportType', 'superBill', 'status', 'createdAt', 'editRecord'];
 
         repostSignCond["condition"] = {
           "download_count": { $exists: true }
@@ -146,7 +146,10 @@ export class AdminDashboardComponent implements OnInit {
 
     this.http.httpViaPost('dashboard-datalist', repostSignCond).subscribe((response) => {
       if(response.status == true) {
-        this.allDataSource = new MatTableDataSource(response.data);
+        this.allResolveData.tableDataFlag = true;
+        this.allResolveData.tableData = response.data;
+
+        this.allDataSource = new MatTableDataSource(this.allResolveData.tableData);
         this.allDataSource.paginator = this.paginatorAll;
       } else {
         this.allDataColumns = [];
@@ -211,37 +214,11 @@ export class AdminDashboardComponent implements OnInit {
         });
         window.open(report.file_path, "_blank");
 
-        this.refreshDashboard();
-        this.viewReportProcessData('Download Bill');
+        this.viewReportProcessData(this.htmlText.headerText);
       } else {
         this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
           duration: 3000
         });
-      }
-    });
-  }
-
-  refreshDashboard() {
-    let postData: any = {
-      source: "Patient-Record-Report_view",
-      condition: {
-        biller_id: this.loginUserData.user_details._id
-      }
-    };
-    this.http.httpViaPost("admin-dashboard", postData).subscribe(response => {
-      if (response.status == 'success') {
-        this.allResolveData = response.data;
-        let allData = this.allResolveData.totalReportData;
-        this.allDataSource = new MatTableDataSource(allData);
-        this.allDataSource.paginator = this.paginatorAll;
-      } else {
-        this.matSnackBar.open("Please wait...", "", {
-          duration: 1000
-        });
-
-        setTimeout(() => {
-          this.refreshDashboard();
-        }, 1000);
       }
     });
   }
@@ -275,12 +252,12 @@ export class AdminDashboardComponent implements OnInit {
       "source": "patient_management",
       "id": pk_id,
       "token": this.jwtToken,
-    }
+    };
+    
     this.http.httpViaPost('deletesingledata', repostSignCond).subscribe((response) => {
       if (response.status == 'success') {
-        this.allResolveData.totalReportData.splice(index, 1);
-        let allData = this.allResolveData.totalReportData;
-        this.allDataSource = new MatTableDataSource(allData);
+        this.allResolveData.tableData.splice(index, 1);
+        this.allDataSource = new MatTableDataSource(this.allResolveData.tableData);
 
         let data: any = {
           width: '250px',
@@ -331,7 +308,7 @@ export class AdminDashboardComponent implements OnInit {
 
   resetSearch() {
     this.searchJson = {
-      doctor_name: "",
+      doctorName: "",
       patientName: "",
       status: "",
       dateRange: ""

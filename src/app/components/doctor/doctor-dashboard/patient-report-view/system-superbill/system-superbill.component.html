@@ -1,5 +1,5 @@
 <mat-card-content class="system_superbill_wrapper">
-    <form class="example-form" autocomplete="off" name="patientBMIForm" [formGroup]="patientBMIForm">
+    <form class="example-form" autocomplete="off">
 
         <table class="table_one">
             <tr>
@@ -11,42 +11,32 @@
             <tr>
                 <td>
                     <label>Patient Name
-                        <input type="text" [formControl]="patientBMIForm.controls['patientName']"
-                            (blur)="inputUntouch(patientBMIForm,'patientName')">
+                        <input type="text" value="{{ htmlText.patientDetails.patient_name }}">
                     </label>
                 </td>
 
                 <td>
-                    <label><input type="radio" value='Male' formControlName="gender">Male</label>
-
-                    <label><input type="radio" value='Female' formControlName="gender">Female</label>
+                    <label><input type="radio" [(ngModel)]="htmlText.patientDetails.gender" [ngModelOptions]="{standalone: true}" value='Male'>Male</label>
+                    <label><input type="radio" [(ngModel)]="htmlText.patientDetails.gender" [ngModelOptions]="{standalone: true}" value='Female'>Female</label>
                 </td>
 
                 <td>
                     <label>Test Date:
-                        <mat-form-field>
-                            <input type="text" matInput [formControl]="patientBMIForm.controls['testDate']">
-                        </mat-form-field>
+                        <input type="text" value="{{ htmlText.patientDetails.test_date | date }}">
                     </label>
                 </td>
             </tr>
 
             <tr>
-                <td><label>Ordering Physician<input type="text"
-                            [formControl]="patientBMIForm.controls['physicalOrdering']"
-                            (blur)="inputUntouch(patientBMIForm,'physicalOrdering')"></label></td>
+                <td><label>Ordering Physician<input type="text" value="{{ htmlText.patientDetails.doctor_name }}"></label></td>
                 <td> </td>
-                <td><label>D.O.B
-                        <mat-form-field>
-                            <input type="text" matInput [formControl]="patientBMIForm.controls['birthDate']">
-                        </mat-form-field>
-                    </label></td>
+                <td><label>D.O.B <input type="text" value="{{ htmlText.patientDetails.birth_date | date }}"></label></td>
             </tr>
+
             <tr>
                 <td class="fifty" colspan="2">
                     <label>Physician’s Signature
-                        <input class="signaturefont" type="text" matInput
-                            [formControl]="patientBMIForm.controls['doctor_signature']">
+                        <input class="signaturefont" type="text" value="{{ cookiesData.user_details.doctor_signature }}">
                     </label>
                 </td>
 
@@ -83,78 +73,77 @@
 
             <tr>
                 <td>
-                    <label> <input type="checkbox" [formControl]="patientBMIForm.controls['Z6829']">
+                    <label> <input type="checkbox">
                         Z68.29 <span> BMI 29 to 29.9</span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6833']">
+                    <label><input type="checkbox">
                         Z68.33 <span> BMI 33 to 33.9</span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6837']">
+                    <label><input type="checkbox">
                         Z68.37<span> BMI 37 to 37.9</span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6842']">
+                    <label><input type="checkbox">
                         Z68.42 <span>BMI 45 to 49.9 </span> </label>
                 </td>
             </tr>
 
             <tr>
                 <td>
-                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6830']">
+                    <label><input type="checkbox">
                         Z68.30 <span>BMI 30 to 30.9 </span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6834']">
+                    <label><input type="checkbox">
                         Z68.34 <span> BMI 34 to 34.9 </span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6838']">
+                    <label><input type="checkbox">
                         Z68.38 <span>BMI 38 to 38.9</span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6843']">
+                    <label><input type="checkbox">
                         Z68.43 <span>BMI 50 to 59.9</span> </label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6831']">
+                    <label><input type="checkbox">
                         Z68.31 <span>BMI 31 to 31.9</span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6835']">
+                    <label><input type="checkbox">
                         Z68.35 <span> BMI 35 to 35.9 </span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6839']">
+                    <label><input type="checkbox">
                         Z68.39 <span>BMI 39 to 39.9</span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6844']">
+                    <label><input type="checkbox">
                         Z68.44 <span>BMI 60 to 69.9</span> </label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6832']">
+                    <label><input type="checkbox">
                         Z68.32 <span>BMI 32 to 32.9</span> </label>
                     </td>
                 <td>
-                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6836']">
+                    <label><input type="checkbox">
                         Z68.36 <span>BMI 36 to 36.9 </span> </label>
                     </td>
                 <td>
-                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6841']">
+                    <label><input type="checkbox">
                         Z68.41 <span>BMI 40 to 44.9</span> </label>
                     </td>
                 <td>
-                    <label><input type="checkbox" [formControl]="patientBMIForm.controls['Z6845']">
+                    <label><input type="checkbox">
                         Z68.45 <span>BMI 70 and over</span> </label>
                     </td>
             </tr>
-
 
             <tr>
                 <td colspan="4">

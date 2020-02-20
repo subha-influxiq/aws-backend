@@ -103,7 +103,7 @@ export class DownloadSuperbillerComponent implements OnInit {
       }
 
       let postData: any = {
-        "source": "report_download",
+        "source": "data_pece",
         "data": {
           "report_id": this.activatedRoute.snapshot.params._id,
           "biller_id": this.reportData.biller_id,
@@ -124,6 +124,18 @@ export class DownloadSuperbillerComponent implements OnInit {
           this.htmlText.downloadFlug = true;
           this.htmlText.hraderText = "Thank you for downloading.";
           window.open(this.reportData.file_path);
+
+          // Update Status
+          let postData: any = {
+            "source": "data_pece",
+            "data": {
+              id: this.activatedRoute.snapshot.params._id,
+              status: "Downloaded"
+            },
+            "token": this.htmlText.tempToken
+          };
+          this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
+          });
         } else {
           this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
             duration: 3000
@@ -162,7 +174,7 @@ export class DownloadSuperbillerComponent implements OnInit {
   /* Get Report Data */
   getData(reportID) {
     var data = {
-      "source": "patient_management",
+      "source": "data_pece",
       "condition": {
         "_id": reportID
       }

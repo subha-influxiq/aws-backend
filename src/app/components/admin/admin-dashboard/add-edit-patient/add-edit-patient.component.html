@@ -19,6 +19,7 @@
           <legend class="legend_model">Patients Information:</legend>
 
           <span class="patients_info_wrapper">
+            <!-- Patient Name Start -->
             <mat-card-content>
               <label>Patient Name</label>
               <mat-form-field>
@@ -29,7 +30,9 @@
                   Patient Name can not be blank</mat-error>
               </mat-form-field>
             </mat-card-content>
+            <!-- Patient Name End -->
 
+            <!-- Patient Gender Start -->
             <mat-card-content>
               <label>Patient Gender</label>
               <span class="patientGender">
@@ -41,7 +44,9 @@
                 *ngIf="patientAddEditForm.controls['gender'].touched && !patientAddEditForm.controls['gender'].valid && patientAddEditForm.controls['gender'].errors.required">
                 Birth Date can not be blank.</mat-error>
             </mat-card-content>
+            <!-- Patient Gender End -->
 
+            <!-- Date of Birth Start -->
             <mat-card-content>
               <label> Date of birth</label>
               <mat-form-field>
@@ -54,14 +59,16 @@
                   Birth Date can not be blank.</mat-error>
               </mat-form-field>
             </mat-card-content>
+            <!-- Date of Birth End -->
 
+            <!-- Ordering Physician Start -->
             <mat-card-content>
               <label>Ordering Physician</label>
               <mat-form-field>
-                <mat-select [formControl]="patientAddEditForm.controls['doctor_id']" placeholder="Select a Doctor"
+                <mat-select placeholder="Select a Doctor"
                   (selectionChange)="getTechList($event.value);">
                   <mat-option>Select a Doctor</mat-option>
-                  <mat-option *ngFor="let doctor of this.htmlText.allDoctor;" value="{{ doctor._id }}"> {{ doctor.firstname }} {{ doctor.lastname }}
+                  <mat-option *ngFor="let doctor of htmlText.allDoctor; let i = index;" value="{{ i }}"> {{ doctor.firstname }} {{ doctor.lastname }}
                   </mat-option>
                 </mat-select>
 
@@ -70,7 +77,9 @@
                   Select a doctor.</mat-error>
               </mat-form-field>
             </mat-card-content>
+            <!-- Ordering Physician End -->
 
+            <!-- Tech Name Start -->
             <mat-card-content>
               <label> Tech Name </label>
               <mat-form-field>
@@ -85,7 +94,9 @@
                   Select a tech.</mat-error>
               </mat-form-field>
             </mat-card-content>
+            <!-- Tech Name End -->
 
+            <!-- Test Date Start -->
             <mat-card-content>
               <label> Test Date</label>
               <mat-form-field>
@@ -99,7 +110,9 @@
                 *ngIf="patientAddEditForm.controls['test_date'].touched && !patientAddEditForm.controls['test_date'].valid && patientAddEditForm.controls['test_date'].errors.required">
                 Test date can not be blank.</mat-error>
             </mat-card-content>
+            <!-- Test Date Start -->
 
+            <!-- Tech Completed Start -->
             <mat-card-content>
               <label> Test Completed</label>
               <mat-form-field>
@@ -113,6 +126,8 @@
                 *ngIf="patientAddEditForm.controls['test_completed_date'].touched && !patientAddEditForm.controls['test_completed_date'].valid && patientAddEditForm.controls['test_completed_date'].errors.required">
                 Test Completed Date can not be blank.</mat-error>
             </mat-card-content>
+            <!-- Test Completed Start -->
+
           </span>
         </fieldset>
 
@@ -122,11 +137,12 @@
           <legend class="legend_model">RM-3A Status report</legend>
           <span class="test_date_wrapper">
 
+            <!-- PTGTP Start -->
             <mat-card-content>
               <label>PTGTP</label>
               <mat-form-field>
-                <mat-select [formControl]="patientAddEditForm.controls['PTGPT']"
-                  (blur)="inputUntouch(patientAddEditForm,'PTGPT')" placeholder="Select a Option">
+                <mat-select [formControl]="patientAddEditForm.controls['PTGTP']"
+                  (blur)="inputUntouch(patientAddEditForm,'PTGTP')" placeholder="Select a Option">
                   <mat-option>Select a option</mat-option>
                   <mat-option value="N"> Normal</mat-option>
                   <mat-option value="A"> Abnormal</mat-option>
@@ -134,17 +150,18 @@
                 </mat-select>
 
                 <mat-error
-                  *ngIf="patientAddEditForm.controls['PTGPT'].touched && !patientAddEditForm.controls['PTGPT'].valid && patientAddEditForm.controls['PTGPT'].errors.required">
+                  *ngIf="patientAddEditForm.controls['PTGTP'].touched && !patientAddEditForm.controls['PTGTP'].valid && patientAddEditForm.controls['PTGTP'].errors.required">
                   PTGTP Required.</mat-error>
               </mat-form-field>
 
               <mat-form-field class="subValue">
-                <input matInput [formControl]="patientAddEditForm.controls['PTGPT_value']" placeholder="PTGPT value" />
+                <input matInput [formControl]="patientAddEditForm.controls['PTGTP_value']" placeholder="PTGTP value" />
                 <mat-hint align="start"> <strong>Optional field.</strong></mat-hint>
               </mat-form-field>
             </mat-card-content>
+            <!-- PTGTP End -->
 
-
+            <!-- PTGVLFI Start -->
             <mat-card-content>
               <label> PTGVLFI </label>
               <mat-form-field>
@@ -166,8 +183,9 @@
                   placeholder="PTGVLFI value" />
               </mat-form-field>
             </mat-card-content>
+            <!-- PTGVLFI End -->
 
-
+            <!-- IR Start -->
             <mat-card-content>
               <label> IR </label>
               <mat-form-field>
@@ -188,8 +206,9 @@
                 <input matInput [formControl]="patientAddEditForm.controls['IR_value']" placeholder="IR value" />
               </mat-form-field>
             </mat-card-content>
+            <!-- IR End -->
 
-
+            <!-- ESRNO Start -->
             <mat-card-content>
               <label> ESRNO<br> (Baseline) </label>
               <mat-form-field>
@@ -275,6 +294,13 @@
               <mat-form-field class="subValue">
                 <input matInput [formControl]="patientAddEditForm.controls['PTGtype_value']"
                   placeholder="PTG Type value" />
+
+                <mat-error
+                  *ngIf="patientAddEditForm.controls['PTGtype_value'].touched && !patientAddEditForm.controls['PTGtype_value'].valid && patientAddEditForm.controls['PTGtype_value'].errors.required">
+                  PTG Type value required.</mat-error>
+                <mat-error
+                  *ngIf="patientAddEditForm.controls['PTGtype_value'].touched && !patientAddEditForm.controls['PTGtype_value'].valid && patientAddEditForm.controls['PTGtype_value'].errors.pattern">
+                  PTG Type value is not valid.</mat-error>
               </mat-form-field>
             </mat-card-content>
 
@@ -524,21 +550,14 @@
             <mat-card-content>
               <label>BMI<br> Enter BMI Score (I.E. 29.1) </label>
               <mat-form-field>
-                <mat-select [formControl]="patientAddEditForm.controls['BMI']"
-                  (blur)="inputUntouch(patientAddEditForm,'BMI')" placeholder="Select a Option">
-                  <mat-option>Select a option</mat-option>
-                  <mat-option value="N"> Normal</mat-option>
-                  <mat-option value="A"> Abnormal</mat-option>
-                  <mat-option value="H"> Highly Abnormal</mat-option>
-                </mat-select>
+                <input matInput [formControl]="patientAddEditForm.controls['BMI']" placeholder="BMI value" />
 
                 <mat-error
                   *ngIf="patientAddEditForm.controls['BMI'].touched && !patientAddEditForm.controls['BMI'].valid && patientAddEditForm.controls['BMI'].errors.required">
-                  BMI required.</mat-error>
-              </mat-form-field>
-
-              <mat-form-field class="subValue">
-                <input matInput [formControl]="patientAddEditForm.controls['BMI_value']" placeholder="BMI value" />
+                  BMI value required.</mat-error>
+                <mat-error
+                  *ngIf="patientAddEditForm.controls['BMI'].touched && !patientAddEditForm.controls['BMI'].valid && patientAddEditForm.controls['BMI'].errors.pattern">
+                  BMI value is not valid.</mat-error>
               </mat-form-field>
             </mat-card-content>
 
@@ -560,8 +579,27 @@
               </mat-form-field>
 
               <mat-form-field class="subValue">
-                <input matInput [formControl]="patientAddEditForm.controls['blood_pressure_value']"
-                  placeholder="Blood Pressure value" />
+                <input matInput [formControl]="patientAddEditForm.controls['systolic_value']"
+                  placeholder="Systolic value" />
+
+                <mat-error
+                  *ngIf="patientAddEditForm.controls['systolic_value'].touched && !patientAddEditForm.controls['systolic_value'].valid && patientAddEditForm.controls['systolic_value'].errors.required">
+                  Systolic value required.</mat-error>
+                <mat-error
+                  *ngIf="patientAddEditForm.controls['systolic_value'].touched && !patientAddEditForm.controls['systolic_value'].valid && patientAddEditForm.controls['systolic_value'].errors.pattern">
+                  Systolic value is not valid.</mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="subValue">
+                <input matInput [formControl]="patientAddEditForm.controls['diastolic_value']"
+                  placeholder="Diastolic value" />
+
+                <mat-error
+                  *ngIf="patientAddEditForm.controls['diastolic_value'].touched && !patientAddEditForm.controls['diastolic_value'].valid && patientAddEditForm.controls['diastolic_value'].errors.required">
+                  Systolic value required.</mat-error>
+                <mat-error
+                  *ngIf="patientAddEditForm.controls['diastolic_value'].touched && !patientAddEditForm.controls['diastolic_value'].valid && patientAddEditForm.controls['diastolic_value'].errors.pattern">
+                  Diastolic value is not valid.</mat-error>
               </mat-form-field>
             </mat-card-content>
 

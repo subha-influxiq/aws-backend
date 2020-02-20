@@ -6,5 +6,7 @@ export const environment = {
   logo: "https://5hyccia9v2.execute-api.us-east-1.amazonaws.com/dev/api/",
   siteTitle: "AWS Backend",
   footerText: "AWS Copyright 2020",
-  production: true
+  production: true,
+
+  floatPattern: "(^[0-9]{1,9})+(\.[0-9]{1,4})?$",
 };

@@ -29,7 +29,6 @@ export class SignatureManagementComponent implements OnInit {
     this.authData["user_details"] = JSON.parse(cookie.get('user_details'));
     this.authData["jwtToken"] = cookie.get('jwtToken');
 
-    console.log(this.authData.user_details.doctor_signature);
     if(typeof this.authData.user_details.doctor_signature !== 'undefined') {
       this.htmlText.buttonText = "Update Signature";
       this.htmlText.viewSign = this.authData.user_details.doctor_signature;
@@ -42,7 +41,7 @@ export class SignatureManagementComponent implements OnInit {
   updateSignature() {
     if(typeof this.htmlText.viewSign !== 'undefined' && this.htmlText.viewSign != '') {
       var data = {
-        "source": "users",
+        "source": "data_pece",
         "data": {
           "id": this.authData.user_details._id,
           "doctor_signature": this.htmlText.viewSign
@@ -51,6 +50,8 @@ export class SignatureManagementComponent implements OnInit {
       }
       this.http.httpViaPost('addorupdatedata', data).subscribe(response => {
           if(response.status == "success") {
+            this.cookie.delete('user_details');
+
             this.authData.user_details.doctor_signature = this.htmlText.viewSign;
             let str = JSON.stringify(this.authData.user_details);
             this.cookie.set('user_details', str);
@@ -75,9 +76,9 @@ export class SignatureManagementComponent implements OnInit {
 
   removeErrorMessage() {
     if(typeof this.htmlText.viewSign === 'undefined' || this.htmlText.viewSign.length == 0) {
-      this.htmlText.errorMessage = "Please write your signature."
+      this.htmlText.errorMessage = "Please write your signature.";
     } else {
-      this.htmlText.errorMessage = ""
+      this.htmlText.errorMessage = "";
     }
   }
 

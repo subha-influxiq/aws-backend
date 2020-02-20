@@ -4,7 +4,6 @@
   <mat-card-content class="add_form">
     <form class="example-form" autocomplete="off" name="techBulkUploadForm" [formGroup]="techBulkUploadForm">
 
-
       <mat-card-content class="status_wrapper" >
         <label>Batch Name</label>
         <mat-form-field appearance="fill">
@@ -14,14 +13,14 @@
             && techBulkUploadForm.controls['batch_name'].errors.required">
             Batch Name field can not be blank</mat-error>
         </mat-form-field>
+
         <mat-card-content>
           <label>Ordering Physician</label>
           <mat-form-field >
-
-              <mat-select formControlName="doctor_id" placeholder="Select a Doctor" >
-                <mat-option value="">Select a Doctor</mat-option>
-                <mat-option (click)="getsellabel(doc)" *ngFor="let doc of allDoctorDataArray;" value="{{ doc._id }}"> {{ doc.firstname }} {{ doc.lastname }}
-                  </mat-option>
+              <mat-select (selectionChange)="getsellabel($event.value);" placeholder="Select a Doctor" >
+                <mat-option *ngFor="let doc of allDoctorDataArray; let i = index;" value="{{ i }}"> 
+                  {{ doc.firstname }} {{ doc.lastname }}
+                </mat-option>
               </mat-select>
             </mat-form-field>
         </mat-card-content>

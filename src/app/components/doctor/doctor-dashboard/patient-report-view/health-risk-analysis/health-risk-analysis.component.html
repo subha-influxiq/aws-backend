@@ -1,463 +1,430 @@
 <mat-card-content class="health_risk_report">
-    <form class="example-form" autocomplete="off" name="patientReportViewForm" [formGroup]="patientReportViewForm">
-  <table>
-    <tr>
-
-      <td colspan="3">
-        <h2 class="ordering_phy">Ordering Physician:</h2>
-      </td>
-      <td colspan="2">
-        <input class="order_input" type="text" [formControl]="patientReportViewForm.controls['physicalOrderingname']"
-        (blur)="inputUntouch(patientReportViewForm,'physicalOrderingname')" value="pdata.physicalOrdering">
-
-      </td>
-    </tr>
-    <tr>
-      <td colspan="5">
-        <h1 class="rm_phy">RM-3A Clinical Report Evaluation Worksheet</h1>
-      </td>
-    </tr>
-
-    <tr>
-      <td colspan="3">Patient Name:
-         <input type="text" class="patientName" [formControl]="patientReportViewForm.controls['patientName']"
-         (blur)="inputUntouch(patientReportViewForm,'patientName')">
+  <form class="example-form" autocomplete="off">
+    
+    <table>
+      <tr>
+        <td colspan="3">
+          <h2 class="ordering_phy">Ordering Physician:</h2>
         </td>
-      <td colspan="1">Patient Gender: <label>
-        <input type="radio" value='Male' formControlName="gender">Male</label> 
-        <label><input type="radio" value='Female' formControlName="gender">Female</label></td>
-      <td colspan="1">D.O.B:
-          <input class="order_input" type="text" matInput [formControl]="patientReportViewForm.controls['birthDate']">
-         
+        <td colspan="2">
+          <input class="order_input" type="text" value="{{ htmlText.patientDetails.doctor_name }}">
         </td>
-    </tr>
+      </tr>
 
-
-    <tr>
-      <td colspan="3">Test Date:
-          <mat-form-field>
-            <input class="order_input" type="text" matInput [formControl]="patientReportViewForm.controls['testDate']">
-          </mat-form-field>
+      <tr>
+        <td colspan="5">
+          <h1 class="rm_phy">RM-3A Clinical Report Evaluation Worksheet</h1>
         </td>
-      <td colspan="1">Tests Completed: 
-          <mat-form-field>
-            <input class="order_input" type="text" matInput [formControl]="patientReportViewForm.controls['testCompletedDate']">
+      </tr>
 
-          </mat-form-field>
-      </td>
+      <tr>
+        <td colspan="3">Patient Name:
+          <input type="text" class="patientName" value="{{ htmlText.patientDetails.patient_name }}">
+        </td>
 
-    </tr>
+        <td colspan="1">Patient Gender: <label>
+          <input type="radio" [(ngModel)]="htmlText.patientDetails.gender" [ngModelOptions]="{standalone: true}" value='Male'>Male</label>
+          <label><input type="radio" [(ngModel)]="htmlText.patientDetails.gender" [ngModelOptions]="{standalone: true}" value='Female'>Female</label>
+        </td>
 
+        <td colspan="1">D.O.B:
+          <input class="order_input" type="text" value="{{ htmlText.patientDetails.birth_date | date }}">
+        </td>
+      </tr>
 
-    <!-- analytic -->
+      <tr>
+        <td colspan="3">Test Date:
+          <input class="order_input" type="text" value="{{ htmlText.patientDetails.test_date | date }}">
+        </td>
 
+        <td colspan="1">Tests Completed:
+          <input class="order_input" type="text" value="{{ htmlText.patientDetails.test_completed_date | date }}">
+        </td>
+      </tr>
 
-    <tr>
-      <th>Risk Maker</th>
-      <th>Report
-        Page(s)</th>
-      <th>Current
-        Risk
-        Status</th>
-      <th>Description of Marker</th>
-      <th>Potential ICD 10 Code or other Recommendations</th>
-    </tr>
+      <tr>
+        <th>Risk Maker</th>
+        <th>Report
+          Page(s)</th>
+        <th>Current
+          Risk
+          Status</th>
+        <th>Description of Marker</th>
+        <th>Potential ICD 10 Code or other Recommendations</th>
+      </tr>
 
-    <tr>
-      <td>PTGTP </td>
-      <td> 3 </td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['PTGTP']"
-        (blur)="inputUntouch(patientReportViewForm,'PTGTP')"></td>
-      <td>
-        <p>Helps to identify the risk of insulin resistance (Pre-diabetes &
-          diabetes), heart disease and other metabolic disorders. High
-          numbers may be associated with fatty liver and atherosclerosis</p>
-      </td>
-      <td>
-        <p>
-          If PTGVLFI and IR are above normal, and the patient
-          has not been diagnosed with Diabetes previously, use
-          the Diabetes ICD 10 codes E10.40-E13.610G (with one
-          other qualified morbidity), or use ICD 10 code G90.3
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>PTGVLFI </td>
-      <td> 3 & 6 </td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['PTGVLFI']"
-        (blur)="inputUntouch(patientReportViewForm,'PTGVLFI')"></td>
-      <td>
-        <p><b>Marker for Diabetes</b> - is a marker for impaired glucose
-          tolerance (IGT) and Microcirculation complications.</p>
-      </td>
-      <td>
-        <p>
-          Use the ICD 10 Diabetes Codes E10.40-E13.610 if IR and
-          PTGTP shown above are Abnormal or High Risk. Or if
-          already diagnosed use ICD 10 Code G90.3
+      <tr>
+        <td>PTGTP </td>
+        <td> 3 </td>
+        <td><input type="text" value="{{ htmlText.patientDetails.PTGTP }}"></td>
+        <td>
+          <p>Helps to identify the risk of insulin resistance (Pre-diabetes &
+            diabetes), heart disease and other metabolic disorders. High
+            numbers may be associated with fatty liver and atherosclerosis</p>
+        </td>
+        <td>
+          <p>
+            If PTGVLFI and IR are above normal, and the patient
+            has not been diagnosed with Diabetes previously, use
+            the Diabetes ICD 10 codes E10.40-E13.610G (with one
+            other qualified morbidity), or use ICD 10 code G90.3
+          </p>
+        </td>
+      </tr>
 
-        </p>
-      </td>
-    </tr>
+      <tr>
+        <td>PTGVLFI </td>
+        <td> 3 & 6 </td>
+        <td><input type="text" value="{{ htmlText.patientDetails.PTGVLFI }}"></td>
+        <td>
+          <p><b>Marker for Diabetes</b> - is a marker for impaired glucose
+            tolerance (IGT) and Microcirculation complications.</p>
+        </td>
+        <td>
+          <p>
+            Use the ICD 10 Diabetes Codes E10.40-E13.610 if IR and
+            PTGTP shown above are Abnormal or High Risk. Or if
+            already diagnosed use ICD 10 Code G90.3
+          </p>
+        </td>
+      </tr>
 
-    <tr>
-      <td>IR </td>
-      <td> 1 </td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['IR']"
-        (blur)="inputUntouch(patientReportViewForm,'IR')"></td>
-      <td>
-        <p><b>Marker for Impaired Glucose Tolerance (IGT), Type 2 Diabetes
-            (T2DM) and cardiovascular diseases.</b>Comparing our PTGTP
-          marker vs the HE Clamp; our Marker has a sensitivity of 90%
-          and specificity of 90%</p>
-      </td>
-      <td>
-        <p>
-          E10.40-E13.610 if Diabetes has not already been
-          Diagnosed and there is also any other qualified
-          morbidity not previously diagnosed and treated (see
-          each Diabetes related ICD 10’s description). Or use ICD
-          10 Code 90.3 if both of the above have been diagnosed.
-        </p>
-      </td>
-    </tr>
+      <tr>
+        <td>IR </td>
+        <td> 1 </td>
+        <td><input type="text" value="{{ htmlText.patientDetails.IR }}"></td>
+        <td>
+          <p><b>Marker for Impaired Glucose Tolerance (IGT), Type 2 Diabetes
+              (T2DM) and cardiovascular diseases.</b>Comparing our PTGTP
+            marker vs the HE Clamp; our Marker has a sensitivity of 90%
+            and specificity of 90%</p>
+        </td>
+        <td>
+          <p>
+            E10.40-E13.610 if Diabetes has not already been
+            Diagnosed and there is also any other qualified
+            morbidity not previously diagnosed and treated (see
+            each Diabetes related ICD 10’s description). Or use ICD
+            10 Code 90.3 if both of the above have been diagnosed.
+          </p>
+        </td>
+      </tr>
 
+      <tr>
+        <td>ESRNO
+          Baseline </td>
+        <td> 7 </td>
+        <td><input type="text" value="{{ htmlText.patientDetails.ESRNO }}"></td>
+        <td>
+          <p><b>Marker for Distal Neuropathy </b> - is a marker of electrical skin
+            response to nitric oxide (NO) production and vasodilation. Low
+            numbers indicate risk of distal neuropathy.</p>
+        </td>
+        <td>
+          <p>
+            G60.3, G60.8, G60.9 or a combination of diabetes and
+            Neuropathy if Diabetes has not already been diagnosed
+            (or ICD 10 code 90.3 if already diagnosed)
+          </p>
+        </td>
+      </tr>
 
-    <tr>
-      <td>ESRNO
-        Baseline </td>
-      <td> 7 </td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['ESRNO']"
-        (blur)="inputUntouch(patientReportViewForm,'ESRNO')"></td>
-      <td>
-        <p><b>Marker for Distal Neuropathy </b> - is a marker of electrical skin
-          response to nitric oxide (NO) production and vasodilation. Low
-          numbers indicate risk of distal neuropathy.</p>
-      </td>
-      <td>
-        <p>
-          G60.3, G60.8, G60.9 or a combination of diabetes and
-          Neuropathy if Diabetes has not already been diagnosed
-          (or ICD 10 code 90.3 if already diagnosed)
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>ESR L<br>
-        (Latency)</td>
-      <td> 7</td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['ESRL']"
-        (blur)="inputUntouch(patientReportViewForm,'ESRL')"></td>
-      <td>
-        <p><b>Marker for Peripheral Distal Neuropathy</b> - is a marker of sweat
-          gland nerve density. Low numbers are an early detection of
-          peripheral distal neuropathy</p>
-      </td>
-      <td>
-        <p>
-          G60.3, G60.8, G60.9 or a combination of diabetes and
-          Neuropathy if Diabetes has not already been diagnosed
-        </p>
-      </td>
-    </tr>
+      <tr>
+        <td>ESR L<br>
+          (Latency)</td>
+        <td> 7</td>
+        <td><input type="text" value="{{ htmlText.patientDetails.ESRL }}"></td>
+        <td>
+          <p><b>Marker for Peripheral Distal Neuropathy</b> - is a marker of sweat
+            gland nerve density. Low numbers are an early detection of
+            peripheral distal neuropathy</p>
+        </td>
+        <td>
+          <p>
+            G60.3, G60.8, G60.9 or a combination of diabetes and
+            Neuropathy if Diabetes has not already been diagnosed
+          </p>
+        </td>
+      </tr>
 
-    <tr>
-      <td>Peak C<br>
-        (Amplitude)</td>
-      <td> 7 </td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['peakC']"
-        (blur)="inputUntouch(patientReportViewForm,'peakC')"></td>
-      <td>
-        <p>Marker of sweat gland function. Low Peak C numbers are found
-          with nerve damage or Hyperhidrosis.</p>
-      </td>
-      <td>
-        <p>
-          Shows Nerve Damage and indicates additional testing
-          or use ICD 10 Code R61 if patient has excessive sweat
-          (Hyperhidrosis) which will show on the foot plates)
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>PTG Type<br>
-        ( Enter Type 1-5 )
-      </td>
-      <td> 6</td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['PTGtype']"
-        (blur)="inputUntouch(patientReportViewForm,'PTGtype')"></td>
-      <td>
-        <p><b>Marker for Arterial Aging</b>– The pulse wave velocity (PWV) and
-          the photoplethysmogram (PTG) are noninvasive methods for
-          evaluating the pulse wave. a score of 1 to 2 is normal. A score of
-          3 is Abnormal and a score of 4 or 5 is High</p>
-      </td>
-      <td>
-        <p>
-          Use ICD 10 code 173.9 for Peripheral Vascular Disease
-          or, depending on RI below, choose one of the
-          Atherosclerosis ICD 10 codes 170.209, 219 or 229.
-        </p>
-      </td>
-    </tr>
+      <tr>
+        <td>Peak C<br>
+          (Amplitude)</td>
+        <td> 7 </td>
+        <td><input type="text" value="{{ htmlText.patientDetails.peakC }}"></td>
+        <td>
+          <p>Marker of sweat gland function. Low Peak C numbers are found
+            with nerve damage or Hyperhidrosis.</p>
+        </td>
+        <td>
+          <p>
+            Shows Nerve Damage and indicates additional testing
+            or use ICD 10 Code R61 if patient has excessive sweat
+            (Hyperhidrosis) which will show on the foot plates)
+          </p>
+        </td>
+      </tr>
 
-    <tr>
-      <td>PTG CVD
-      </td>
-      <td> 3</td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['PTGCVD']"
-        (blur)="inputUntouch(patientReportViewForm,'PTGCVD')"></td>
-      <td>
-        <p>Marker used to evaluate CVD. A score of 0 = normal, 1 =
-          borderline and 2 = abnormal.</p>
-      </td>
-      <td>
-        <p>
-          Use ICD 10 code I25.10 - Atheroslerotic
-          heart disease of native coronary artery
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>Stress I<br>
-        (Stress Index)
+      <tr>
+        <td>PTG Type<br>
+          ( Enter Type 1-5 )
+        </td>
+        <td> 6</td>
+        <td><input type="text" value="{{ htmlText.patientDetails.PTGtype_value }}"></td>
+        <td>
+          <p><b>Marker for Arterial Aging</b>– The pulse wave velocity (PWV) and
+            the photoplethysmogram (PTG) are noninvasive methods for
+            evaluating the pulse wave. a score of 1 to 2 is normal. A score of
+            3 is Abnormal and a score of 4 or 5 is High</p>
+        </td>
+        <td>
+          <p>
+            Use ICD 10 code 173.9 for Peripheral Vascular Disease
+            or, depending on RI below, choose one of the
+            Atherosclerosis ICD 10 codes 170.209, 219 or 229.
+          </p>
+        </td>
+      </tr>
 
-      </td>
-      <td> 2, 3 and 4 </td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['stressI']"
-        (blur)="inputUntouch(patientReportViewForm,'stressI')"></td>
-      <td>
-        <p><b>Marker heart disease</b> - correlates to C-Reactive Protein
-          (CRP) and high numbers indicate a risk of Heart disease.</p>
-      </td>
-      <td>
-        <p>
-          If not already diagnosed and there is no
-          indication of PAD, CVD or Atherosclerosis, use ICD
-          10 Code I51.90
+      <tr>
+        <td>PTG CVD
+        </td>
+        <td> 3</td>
+        <td><input type="text" value="{{ htmlText.patientDetails.PTGCVD }}"></td>
+        <td>
+          <p>Marker used to evaluate CVD. A score of 0 = normal, 1 =
+            borderline and 2 = abnormal.</p>
+        </td>
+        <td>
+          <p>
+            Use ICD 10 code I25.10 - Atheroslerotic
+            heart disease of native coronary artery
+          </p>
+        </td>
+      </tr>
 
-        </p>
-      </td>
-    </tr>
+      <tr>
+        <td>Stress I<br>
+          (Stress Index)
+        </td>
+        <td> 2, 3 and 4 </td>
+        <td><input type="text" value="{{ htmlText.patientDetails.stressI }}"></td>
+        <td>
+          <p><b>Marker heart disease</b> - correlates to C-Reactive Protein
+            (CRP) and high numbers indicate a risk of Heart disease.</p>
+        </td>
+        <td>
+          <p>
+            If not already diagnosed and there is no
+            indication of PAD, CVD or Atherosclerosis, use ICD
+            10 Code I51.90
+          </p>
+        </td>
+      </tr>
 
-    <tr>
-      <td>RI </td>
-      <td> 3 & 6</td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['RI']"
-        (blur)="inputUntouch(patientReportViewForm,'RI')" ></td>
-      <td>
-        <p>Marker for Atherosclerosis - an indicator of stiffness of the
-          small and medium arteries.
-        </p>
-      </td>
-      <td>
-        <p>
-          Use ICD 10 codes I70.209, 219 0r 229 if PTG R is also
-          above normal (choice of ICD 10 code 173.9 is also an
-          acceptable ICD 10 Code, at MD, NP or PA’s discretion)
+      <tr>
+        <td>RI </td>
+        <td> 3 & 6</td>
+        <td><input type="text" value="{{ htmlText.patientDetails.RI }}"></td>
+        <td>
+          <p>Marker for Atherosclerosis - an indicator of stiffness of the
+            small and medium arteries.
+          </p>
+        </td>
+        <td>
+          <p>
+            Use ICD 10 codes I70.209, 219 0r 229 if PTG R is also
+            above normal (choice of ICD 10 code 173.9 is also an
+            acceptable ICD 10 Code, at MD, NP or PA’s discretion)
+          </p>
+        </td>
+      </tr>
 
-        </p>
-      </td>
-    </tr>
+      <tr>
+        <td>AIPTG<br>
+          (IPTG) </td>
+        <td>3 & 6</td>
+        <td><input type="text" value="{{ htmlText.patientDetails.AIPTG }}"></td>
+        <td>
+          <p><b>Marker for LDL Cholesterol Level.</b> High LDL Cholesterol is a
+            Marker for Coronary Heart Disease (CHD) –
+          </p>
+        </td>
+        <td>
+          <p>
+            Additional LDL Cholesterol Testing when Abnormal or
+            High Risk
+          </p>
+        </td>
+      </tr>
 
-    <tr>
-      <td>AIPTG<br>
-        (IPTG) </td>
-      <td>3 & 6</td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['AIPTG']"
-        (blur)="inputUntouch(patientReportViewForm,'AIPTG')"></td>
-      <td>
-        <p><b>Marker for LDL Cholesterol Level.</b> High LDL Cholesterol is a
-          Marker for Coronary Heart Disease (CHD) –
+      <tr>
+        <td>CIs (CI)</td>
+        <td> 5</td>
+        <td><input type="text" value="{{ htmlText.patientDetails.CIsCI }}"></td>
+        <td>
+          <p>Marker is an indicator that relates to Cardiac output to Body
+            Surface Area (BSA)
+          </p>
+        </td>
+        <td>
+          <p>
+            Shows a need for more Cardio Exercise unless
+            prohibited due to other heart disease issues
+          </p>
+        </td>
+      </tr>
 
-        </p>
-      </td>
-      <td>
-        <p>
-          Additional LDL Cholesterol Testing when Abnormal or
-          High Risk
+      <tr>
+        <td>pNN50</td>
+        <td>4</td>
+        <td><input type="text" value="{{ htmlText.patientDetails.pNN50 }}"></td>
+        <td>
+          <p>Marker for heart rhythm stability. Shows a risk of
+            Heart Rate Variability issues
+          </p>
+        </td>
+        <td>
+          <p>
+            Use ICD 10 Code R00.0
+          </p>
+        </td>
+      </tr>
 
+      <tr>
+        <td>RMSSD</td>
+        <td> 2 & 4 </td>
+        <td><input type="text" value="{{ htmlText.patientDetails.RMSSD }}"></td>
+        <td>
+          <p>Marker that reflects the electrical stability of the heart
+          </p>
+        </td>
+        <td>
+          <p>
+            Suggests additional Cardiometabolic testing for
+            potential of tachycardia or other related issues
+          </p>
+        </td>
+      </tr>
 
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>CIs (CI)</td>
-      <td> 5</td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['CIsCI']"
-        (blur)="inputUntouch(patientReportViewForm,'CIsCI')"></td>
-      <td>
-        <p>Marker is an indicator that relates to Cardiac output to Body
-          Surface Area (BSA)
+      <tr>
+        <td>SD ba</td>
+        <td> 6 </td>
+        <td><input type="text" value="{{ htmlText.patientDetails.SDba }}"></td>
+        <td>
+          <p>Marker for angiotensin activity </p>
+        </td>
+        <td>
+          <p>
+            Angiotensin is a peptide hormone that causes
+            vasoconstriction and increase in blood pressure. It also
+            stimulates the release of aldosterone from the adrenal
+            cortex to promote sodium retention by the kidneys.
+          </p>
+        </td>
+      </tr>
 
-        </p>
-      </td>
-      <td>
-        <p>
-          Shows a need for more Cardio Exercise unless
-          prohibited due to other heart disease issues
-        </p>
-      </td>
-    </tr>
+      <tr>
+        <td>DPRS</td>
+        <td> 2 & 5 </td>
+        <td><input type="text" value="{{ htmlText.patientDetails.DPRS }}"></td>
+        <td>
+          <p>Diastolic Pressure Response to Standing (DPRS) is the
+            difference between the sitting diastolic minus the
+            standing diastolic pressure. Normal <=5 ->=10 mmHg.</p>
+        </td>
+        <td>
+          <p>
+            If above normal, additional cardio exercise may be
+            recommended and possibly the need for additional
+            Cardiometabolic testing.
 
-    <tr>
-      <td>pNN50</td>
-      <td>4</td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['pNN50']"
-        (blur)="inputUntouch(patientReportViewForm,'pNN50')"></td>
-      <td>
-        <p>Marker for heart rhythm stability. Shows a risk of
-          Heart Rate Variability issues
-        </p>
-      </td>
-      <td>
-        <p>
-          Use ICD 10 Code R00.0
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>RMSSD</td>
-      <td> 2 & 4 </td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['RMSSD']"
-        (blur)="inputUntouch(patientReportViewForm,'RMSSD')"></td>
-      <td>
-        <p>Marker that reflects the electrical stability of the heart
-        </p>
-      </td>
-      <td>
-        <p>
-          Suggests additional Cardiometabolic testing for
-          potential of tachycardia or other related issues
+          </p>
+        </td>
+      </tr>
 
-        </p>
-      </td>
-    </tr>
+      <tr>
+        <td>ValsR</td>
+        <td> 2 & 5 </td>
+        <td><input type="text" value="{{ htmlText.patientDetails.ValsR }}"></td>
+        <td>
+          <p>Valsalva Ratio (ValsR.) - is the measure of the Heart Rate
+            response to Blood Pressure changes from the mechanical
+            and cardiovascular effects of the Valsalva Maneuver.</p>
+        </td>
+        <td>
+          <p>
+            If above normal, additional cardio exercise may be
+            suggested after additional Cardiometabolic testing.
 
-    <tr>
-      <td>SD ba</td>
-      <td> 6 </td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['SDba']"
-        (blur)="inputUntouch(patientReportViewForm,'SDba')"></td>
-      <td>
-        <p>Marker for angiotensin activity </p>
-      </td>
-      <td>
-        <p>
-          Angiotensin is a peptide hormone that causes
-          vasoconstriction and increase in blood pressure. It also
-          stimulates the release of aldosterone from the adrenal
-          cortex to promote sodium retention by the kidneys.
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>DPRS</td>
-      <td> 2 & 5 </td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['DPRS']"
-        (blur)="inputUntouch(patientReportViewForm,'DPRS')"></td>
-      <td>
-        <p>Diastolic Pressure Response to Standing (DPRS) is the
-          difference between the sitting diastolic minus the
-          standing diastolic pressure. Normal <=5 ->=10 mmHg.</p>
-      </td>
-      <td>
-        <p>
-          If above normal, additional cardio exercise may be
-          recommended and possibly the need for additional
-          Cardiometabolic testing.
+          </p>
+        </td>
+      </tr>
 
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>ValsR</td>
-      <td> 2 & 5 </td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['ValsR']"
-        (blur)="inputUntouch(patientReportViewForm,'ValsR')"></td>
-      <td>
-        <p>Valsalva Ratio (ValsR.) - is the measure of the Heart Rate
-          response to Blood Pressure changes from the mechanical
-          and cardiovascular effects of the Valsalva Maneuver.</p>
-      </td>
-      <td>
-        <p>
-          If above normal, additional cardio exercise may be
-          suggested after additional Cardiometabolic testing.
+      <tr>
+        <td>BMI<br>
+          Enter BMI
+          Score
+          (I.E. 29.1)</td>
+        <td> 1-7</td>
+        <td><input type="text" value="{{ htmlText.patientDetails.BMI }}"></td>
+        <td>
+          <p>The National Institutes of Health (NIH) now defines normal
+            weight, overweight, and obesity according to BMI rather
+            than the traditional height/weight charts. Overweight is a
+            BMI of 27.3 or more for women and 27.8 or more for men.
+            29 or above qualifies a person for Intensive Behavioral
+            Therapy for Obesity. Medicare has no deductible or Co</p>
+        </td>
+        <td>
+          <p>
+            If the BMI reading is 30 or above, Obesity
+            Counseling is paid for by Medicare with no co-pay
+            or deductable. Most Comercial Carriers are paying
+            for this program as well Click Here for Medicare
+            Guidelines or Request document via e-mail at
+            gmw@ourwhy-deas.com.
+          </p>
+        </td>
+      </tr>
 
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>BMI<br>
-        Enter BMI
-        Score
-        (I.E. 29.1)</td>
-      <td> 1-7</td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['BMI']"
-        (blur)="inputUntouch(patientReportViewForm,'BMI')"></td>
-      <td>
-        <p>The National Institutes of Health (NIH) now defines normal
-          weight, overweight, and obesity according to BMI rather
-          than the traditional height/weight charts. Overweight is a
-          BMI of 27.3 or more for women and 27.8 or more for men.
-          29 or above qualifies a person for Intensive Behavioral
-          Therapy for Obesity. Medicare has no deductible or Co</p>
-      </td>
-      <td>
-        <p>
-          If the BMI reading is 30 or above, Obesity
-          Counseling is paid for by Medicare with no co-pay
-          or deductable. Most Comercial Carriers are paying
-          for this program as well Click Here for Medicare
-          Guidelines or Request document via e-mail at
-          gmw@ourwhy-deas.com.
-        </p>
-      </td>
-    </tr>
+      <tr>
+        <td>Blood Pressure <br>
+          Systolic &
+          Diastolic
+          (120/80)</td>
+        <td>3 </td>
+        <td><input type="text" value="{{ htmlText.patientDetails.systolic_value }}/{{ htmlText.patientDetails.diastolic_value }}"></td>
+        <td>
+          <p>As of April 2018, The American Heart Association defines
+            Hypertension as 130/80 millimeters of mercury (mm Hg)
+            and higher for all adults (The previous guidelines set the
+            threshold at 140/90 mm Hg for people younger than age
+            65, and 150/80 mm Hg for those ages 65 and older).</p>
+        </td>
+        <td>
+          <p>
+            use ICD10 Diagnostic Code I10
+          </p>
+        </td>
+      </tr>
 
-    <tr>
-      <td>Blood Pressure <br>
-        Systolic &
-        Diastolic
-        (120/80)</td>
-      <td>3 </td>
-      <td><input type="text" [formControl]="patientReportViewForm.controls['bloodPressure']"
-        (blur)="inputUntouch(patientReportViewForm,'bloodPressure')"></td>
-      <td>
-        <p>As of April 2018, The American Heart Association defines
-          Hypertension as 130/80 millimeters of mercury (mm Hg)
-          and higher for all adults (The previous guidelines set the
-          threshold at 140/90 mm Hg for people younger than age
-          65, and 150/80 mm Hg for those ages 65 and older).</p>
-      </td>
-      <td>
-        <p>
-          use ICD10 Diagnostic Code I10
-
-        </p>
-      </td>
-    </tr>
-
-    <tr>
-      <td colspan="5">
-        <p class="area_header"><b>Patient Diagnoses & Notes:</b></p>
-        <textarea class="area_content" [formControl]="patientReportViewForm.controls['leaveNotes']"
-        (blur)="inputUntouch(patientReportViewForm,'leaveNotes')"></textarea>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="5">
-        <p><b>IMPORTANT DISCLAIMER NOTE: The above are only patient recommendations and suggested ICD-10 codes based on
-            the Risk Markers identified and
-            what they have been proven to identify risk for. No Medical Doctor, NP or Pa was involved in these
-            determinations. For Insurance claim process to
-            be valid, a qualified M.D, D.O, NP or PA must establish their own independent diagnoses. </b></p>
-
-      </td>
-    </tr>
-  </table>
-    </form>
+      <tr>
+        <td colspan="5">
+          <p class="area_header"><b>Patient Diagnoses & Notes:</b></p>
+          <textarea class="area_content" value="{{ htmlText.patientDetails.leave_notes }}"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="5">
+          <p><b>IMPORTANT DISCLAIMER NOTE: The above are only patient recommendations and suggested ICD-10 codes based
+              on
+              the Risk Markers identified and
+              what they have been proven to identify risk for. No Medical Doctor, NP or Pa was involved in these
+              determinations. For Insurance claim process to
+              be valid, a qualified M.D, D.O, NP or PA must establish their own independent diagnoses. </b></p>
+        </td>
+      </tr>
+    </table>
+  </form>
 </mat-card-content>
-

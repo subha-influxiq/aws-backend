@@ -11,6 +11,7 @@ import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/mat
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { CommonFunction } from '../../../../class/common/common-function';
 import * as moment from 'moment';
+import { environment } from '../../../../../environments/environment';
 
 export interface DialogData {
   message: string;
@@ -37,14 +38,6 @@ export class AddEditPatientComponent implements OnInit {
   public patientAddEditForm : FormGroup;
   public dialogRef: any;
 
-  minDate = new Date(1900, 0, 1);
-  maxDate = new Date(2016, 11, 31);
-
-  public startDate: any;
-  public endDate: any;
-  public dateOfBirth: any;
-  public dateFormat: any;
-  
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService, public snakBar : MatSnackBar, public dialog: MatDialog,
@@ -60,13 +53,16 @@ export class AddEditPatientComponent implements OnInit {
         birth_date          :  ['', [Validators.required]],
         doctor_id           :  ['', [Validators.required]],
         doctor_name         :  ['', []],
+        doctor_email        :  ['', []],
+        doctor_details      :  ['', []],
         tech_id             :  ['', [Validators.required]],
         tech_name           :  ['', []],
+        tech_email          :  ['', []],
         test_date           :  ['', [Validators.required]],
         test_completed_date :  ['', [Validators.required]],
 
-        PTGPT              :  ['', [Validators.required]],
-        PTGPT_value        :  ['', []],
+        PTGTP              :  ['', [Validators.required]],
+        PTGTP_value        :  ['', []],
         PTGVLFI            :  ['', [Validators.required]],
         PTGVLFI_value      :  ['', []],
         IR                 :  ['', [Validators.required]],
@@ -78,7 +74,7 @@ export class AddEditPatientComponent implements OnInit {
         peakC              :  ['', [Validators.required]],
         peakC_value        :  ['', []],
         PTGtype            :  ['', [Validators.required]],
-        PTGtype_value      :  ['', []],
+        PTGtype_value      :  ['', [Validators.required, Validators.pattern(environment.floatPattern)]],
         PTGCVD             :  ['', [Validators.required]],
         PTGCVD_value       :  ['', []],
         stressI            :  ['', [Validators.required]],
@@ -102,14 +98,12 @@ export class AddEditPatientComponent implements OnInit {
         ValsR              :  ['', [Validators.required]],
         ValsR_value        :  ['', []],
         BMI                :  ['', [Validators.required]],
-        BMI_value          :  ['', []],
         blood_pressure      :  ['', [Validators.required]],
-        blood_pressure_value:  ['', []],
 
         leave_notes        :  ['', [Validators.required]],
-        systolic_value     :  ['', []],
-        diastolic_value    :  ['', []],
-        status             :  [1, []],
+        systolic_value     :  ['', [Validators.required, Validators.pattern(environment.floatPattern)]],
+        diastolic_value    :  ['', [Validators.required, Validators.pattern(environment.floatPattern)]],
+        status             :  ['Pending Signature', []],
         report_type        :  ['mannual', []],
         added_by           :  [this.allCookies.user_details._id, []]
       });
@@ -133,19 +127,26 @@ export class AddEditPatientComponent implements OnInit {
     });
   }
 
-  getTechList(doctorID: string) {
-    for(let loop = 0; loop < this.htmlText.allDoctor.length; loop++) {
-      if(this.htmlText.allDoctor[loop]._id == doctorID) {
-        this.patientAddEditForm.patchValue({
-          doctor_name: this.htmlText.allDoctor[loop].firstname + ' ' + this.htmlText.allDoctor[loop].lastname
-        });
-      }
-    }
+  getTechList(index: number) {
+    var details = '<p class="doctor_name">';
+    details += this.htmlText.allDoctor[index].firstname + ' ' + this.htmlText.allDoctor[index].lastname;
+    details += '<p class="doctor_name"> <span> Email: </span>';
+    details += this.htmlText.allDoctor[index].email;
+    details += '</p><p class="doctor_name"> <span>NPI: </span>';
+    details += this.htmlText.allDoctor[index].npi;
+    details += '</p>';
+
+    this.patientAddEditForm.patchValue({
+      doctor_id:      this.htmlText.allDoctor[index]._id,
+      doctor_name:    this.htmlText.allDoctor[index].firstname + ' ' + this.htmlText.allDoctor[index].lastname,
+      doctor_email:   this.htmlText.allDoctor[index].email,
+      doctor_details: details
+    });
 
     var data = {
       "source": "tech_by_doctor_id",
       "condition": {
-          "_id_object": doctorID,
+          "_id_object": this.htmlText.allDoctor[index]._id,
           "status": 1
       },
       "token": this.allCookies.jwtToken
@@ -159,8 +160,10 @@ export class AddEditPatientComponent implements OnInit {
   selectTech(techID: string) {
     for(let loop = 0; loop < this.htmlText.allTech.length; loop++) {
       if(this.htmlText.allTech[loop].tech_id == techID) {
+        this.htmlText.tech_details = this.htmlText.allTech[loop];
         this.patientAddEditForm.patchValue({
-          tech_name: this.htmlText.allTech[loop].firstname + ' ' + this.htmlText.allTech[loop].lastname
+          tech_name: this.htmlText.allTech[loop].firstname + ' ' + this.htmlText.allTech[loop].lastname,
+          tech_email: this.htmlText.allTech[loop].email
         });
       }
     }
@@ -170,25 +173,21 @@ export class AddEditPatientComponent implements OnInit {
     for (let x in this.patientAddEditForm.controls) {
       this.patientAddEditForm.controls[x].markAsTouched();
     }
- 
+
     if(this.patientAddEditForm.valid) {
       this.patientAddEditForm.value.birth_date          = new Date(this.patientAddEditForm.value.birth_date).getTime();
       this.patientAddEditForm.value.test_date           = new Date(this.patientAddEditForm.value.test_date).getTime();
       this.patientAddEditForm.value.test_completed_date = new Date(this.patientAddEditForm.value.test_completed_date).getTime();
       
-      /* Setup Blood Pressure (systolic, diastolic) */
-      const bloodPressure     = this.patientAddEditForm.controls.blood_pressure_value.value;
-      const systolicDiastolic = bloodPressure.split('/');
-      this.patientAddEditForm.controls['systolic_value'].patchValue(systolicDiastolic[0]);
-      this.patientAddEditForm.controls['diastolic_value'].patchValue(systolicDiastolic[1]);
-      delete this.patientAddEditForm.value.blood_pressure_value;
-      
       var data: any = {
         "source" : "data_pece",
         "data" : this.patientAddEditForm.value,
         "sourceobj": ["doctor_id","tech_id"],
-        "token" : this.allCookies.jwtToken
-      }
+        "token" : this.allCookies.jwtToken,
+        "login_url": environment.siteBaseUrl + "login",
+        "tech_details" : this.htmlText.tech_details,
+        "report_upload": true
+      };
 
       this.httpService.httpViaPost("addorupdatedata",data).subscribe(response=>{
         if(response.status="success"){
@@ -206,8 +205,6 @@ export class AddEditPatientComponent implements OnInit {
           this.openDialog(data);
         }  
       });
-    } else {
-      console.log(this.patientAddEditForm);
     }
   }
 

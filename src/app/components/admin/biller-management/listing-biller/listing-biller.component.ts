@@ -2,32 +2,39 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../../services/http-service.service';
+
 @Component({
   selector: 'app-listing-biller',
   templateUrl: './listing-biller.component.html',
   styleUrls: ['./listing-biller.component.css']
 })
+
 export class ListingBillerComponent implements OnInit {
-public allBillerData:any=[];
-public allUserData_skip: any = ["confirmpassword", "password", 
-"created_at","id","updated_at", "_id","type","phoneno","taxo_list","fullName","city","state","zip"];
+
+  public allBillerData: any = [];
+  public allUserData_skip: any = [
+    "_id", "address", "zip", "city", "state", "user_type", "password", "created_at"
+  ];
   public editUrl: any = "admin/biller-management/edit";
+  
   public allUserData_modify_header: any = {
-    "firstname": "First Name", "lastname": "Last Name",
-    "email": "E-Mail", "phone": "Phone Number", "date": "Date Added",
-    "status": "Status","address" : "Address","companyname":"Company Name",
-    "fullNamecopy":"Name"
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "company_name": "Company Name",
+    "status": "Status",
   };
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any ;
+  public apiUrl: any;
   public tableName: any = "users";
-  previewModal_detail_skip: any = ['_id','fullNamecopy'];
-  
+  previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
+
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
-  public SearchingSourceName: any="users_view_biller";
+  public SearchingSourceName: any = "users_view_biller";
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
@@ -35,18 +42,18 @@ public allUserData_skip: any = ["confirmpassword", "password",
       { label: "Search By E-Mail", field: 'email' }],
 
     };
-  public user_cookie:any;
-  constructor(public activeRoute :ActivatedRoute, public cookie :CookieService,
-    public httpService : HttpServiceService) {
+  public user_cookie: any;
+  constructor(public activeRoute: ActivatedRoute, public cookie: CookieService,
+    public httpService: HttpServiceService) {
 
     this.user_cookie = cookie.get('jwtToken');
-    this.apiUrl = httpService.baseUrl;  
+    this.apiUrl = httpService.baseUrl;
   }
 
   ngOnInit() {
     this.getAllBillerData();
   }
-  getAllBillerData(){
+  getAllBillerData() {
     this.activeRoute.data.forEach((data) => {
       this.allBillerData = data.Billerdata.res;
     })

@@ -1,28 +1,32 @@
 <!-- Admin Header -->
 <app-admin-header></app-admin-header>
+
 <mat-card class="admin_wrapper">
-<!-- header with add button -->
-<mat-card-content class="table_wrapper">
-  <mat-toolbar class="top_header">
-    <h2> Manage Biller </h2>
-  </mat-toolbar>
+  <!-- header with add button -->
+  <mat-card-content class="table_wrapper">
+    <mat-toolbar class="top_header">
+      <h2> Manage Biller </h2>
+    </mat-toolbar>
 
-<span class="add_header">
+    <span class="add_header">
 
-  <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Biller</span>
-  <button mat-flat-button [routerLink]="['/admin/biller-management/add']">Add Biller</button>
-</span>
-<!-- End header with add button -->
+      <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Biller</span>
+      <button mat-flat-button [routerLink]="['/admin/biller-management/add']">Add Biller</button>
+    </span>
+    <!-- End header with add button -->
 
-<!-- table -->
-<lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData" [skip]="allUserData_skip"
-  [modify_header_array]="allUserData_modify_header" [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl" [sourcedata]="tableName" [editroute]="editUrl"
-  [jwttoken]="user_cookie" [statusarr]="status" [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint"
-  [date_search_endpoint]="SearchingEndpoint" [date_search_source]="SearchingSourceName" [search_settings]="search_settings">
-</lib-listing>
-<h2 *ngIf="allBillerData.length == 0">No record found.</h2>
-<!-- end table -->
-</mat-card-content>
+    <!-- table -->
+    <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData" [skip]="allUserData_skip"
+      [modify_header_array]="allUserData_modify_header" [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl"
+      [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="user_cookie" [statusarr]="status"
+      [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
+      [date_search_source]="SearchingSourceName" [search_settings]="search_settings">
+    </lib-listing>
+    
+    <h2 *ngIf="allBillerData.length == 0">No record found.</h2>
+    <!-- end table -->
+  </mat-card-content>
 </mat-card>
+
 <!-- Admin Footer -->
 <app-admin-footer></app-admin-footer>

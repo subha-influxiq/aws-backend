@@ -73,7 +73,7 @@ export class AddeditDoctorComponent implements OnInit {
       phone:                  ['', [ Validators.required, Validators.minLength(7), Validators.maxLength(16) ]],
       fax:                    ['', [Validators.required]],
       practice_name:          ['', [Validators.required]],
-      npm:                    ['', [Validators.required]],
+      npi:                    ['', [Validators.required]],
       address:                ['', [ Validators.required, Validators.maxLength(200) ]],
       zip:                    ['', [ Validators.required, Validators.minLength(4), Validators.maxLength(18) ]],
       city:                   ['', [ Validators.required ]],
@@ -108,8 +108,8 @@ export class AddeditDoctorComponent implements OnInit {
           this.doctorManagementAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
           this.doctorManagementAddEditForm.controls['phone'].patchValue(doctorDetails[0].phone);
           this.doctorManagementAddEditForm.controls['fax'].patchValue(doctorDetails[0].fax);
-          this.doctorManagementAddEditForm.controls['practice_name'].patchValue(doctorDetails[0].fax);
-          this.doctorManagementAddEditForm.controls['npm'].patchValue(doctorDetails[0].fax);
+          this.doctorManagementAddEditForm.controls['practice_name'].patchValue(doctorDetails[0].practice_name);
+          this.doctorManagementAddEditForm.controls['npi'].patchValue(doctorDetails[0].npi);
           this.doctorManagementAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
           this.doctorManagementAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
           this.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);

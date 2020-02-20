@@ -37,7 +37,7 @@ export class DoctorDashboardComponent implements OnInit {
     dateRange: ""
   };
 
-  public allDataColumns: string[] = ['billGenerationDate', 'billSentDate', 'doctorName','patientName', 'billerName','report_type','status','superBill','techName', 'action'];
+  public allDataColumns: string[] = ['patientName', 'doctorName', 'techName', 'billerName', 'billGenerationDate', 'billSentDate', 'reportType', 'status', 'superBill', 'action'];
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
   public dialogRef: any;
@@ -52,7 +52,6 @@ export class DoctorDashboardComponent implements OnInit {
     this.authData["user_details"] = JSON.parse(cookie.get('user_details'));
     this.authData["jwtToken"] = cookie.get('jwtToken');
     
-    let matDatepicker = moment();
     this.activatedRoute.data.forEach(resolveData => {
       this.allResolveData = resolveData.doctordata;
       this.allDataSource = new MatTableDataSource(this.allResolveData.data.allReportData);

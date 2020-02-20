@@ -135,9 +135,9 @@
         <mat-form-field appearance="fill">
           <mat-label>#NPI</mat-label>
           
-          <input matInput placeholder="1880101700" formControlName="npm" (blur)="inputUntouch(doctorManagementAddEditForm,'npm')">
+          <input matInput placeholder="#NPI Number" formControlName="npi" (blur)="inputUntouch(doctorManagementAddEditForm,'npi')">
           
-          <mat-error *ngIf="doctorManagementAddEditForm.controls['npm'].touched && !doctorManagementAddEditForm.controls['npm'].valid && doctorManagementAddEditForm.controls['npm'].errors.required">
+          <mat-error *ngIf="doctorManagementAddEditForm.controls['npi'].touched && !doctorManagementAddEditForm.controls['npi'].valid && doctorManagementAddEditForm.controls['npi'].errors.required">
             #NPI required.
           </mat-error>
         </mat-form-field>

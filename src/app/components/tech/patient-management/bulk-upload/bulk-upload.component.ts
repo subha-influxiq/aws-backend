@@ -7,6 +7,7 @@ import { MatSnackBar } from '@angular/material';
 import { CommonFunction } from '../../../../class/common/common-function';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-bulk-upload',
@@ -38,8 +39,6 @@ export class BulkUploadComponent implements OnInit {
   public cookies_id: any;
   public allDoctorDataArray: any = [];
   public dialogRef: any;
-  public doctorName: any;
-  public selectedDoctorName: any;
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService,
@@ -57,13 +56,18 @@ export class BulkUploadComponent implements OnInit {
     this.commonFunction.setTitleMetaTags();
 
     this.techBulkUploadForm = this.fb.group({
-      batch_name: ['', [Validators.required, Validators.maxLength(40)]],
-      doctor_id: ['', [Validators.required]],
-      upload_file: ['', []],
-      status: [1, []],
-      note: ['', []],
-      tech_id: [this.cookies_id, []],
-      report_type: ['file', []],
+      batch_name          : ['', [Validators.required, Validators.maxLength(40)]],
+      doctor_id           : ['', [Validators.required]],
+      doctor_name         : ['', []],
+      doctor_email        : ['', []],
+      doctor_details      : ['', []],
+      tech_id             : [this.cookies_id, [Validators.required]],
+      tech_name           : [this.cookiesData.firstname + ' ' + this.cookiesData.lastname, []],
+      tech_email          : [this.cookiesData.email, []],
+      upload_file         : ['', []],
+      status              : ['Pending Signature', []],
+      note                : ['', []],
+      report_type         : ['file', []],
     })
     this.user_token = cookie.get('jwtToken');
   }
@@ -73,7 +77,7 @@ export class BulkUploadComponent implements OnInit {
 
   getAllDoctorData() {
     var data = {
-      "source": "users_view_doctor",
+      "source": "doctors_by_tech_id",
       "condition": {
         "tech_id_object": this.cookies_id
       },
@@ -97,11 +101,24 @@ export class BulkUploadComponent implements OnInit {
 
   /* This one is for get doctor dropdown data */
 
-  getsellabel(docval: any) {
-    console.log(docval);
-    this.selectedDoctorName = docval.fullName;
-    this.doctorDetails.name = docval.fullName;
-    this.doctorDetails.email = docval.email;
+  getsellabel(index: number) {
+    this.doctorDetails.name = this.allDoctorDataArray[index].firstname + ' ' + this.allDoctorDataArray[index].lastname;
+    this.doctorDetails.email = this.allDoctorDataArray[index].email;
+    
+    var details = '<p class="doctor_name">';
+    details += this.doctorDetails.name;
+    details += '<p class="doctor_name"> <span> Email: </span>';
+    details += this.allDoctorDataArray[index].email;
+    details += '</p><p class="doctor_name"> <span>NPI: </span>';
+    details += this.allDoctorDataArray[index].npi;
+    details += '</p>';
+
+    this.techBulkUploadForm.patchValue({
+      doctor_id: this.allDoctorDataArray[index]._id,
+      doctor_name: this.doctorDetails.name,
+      doctor_email: this.doctorDetails.email,
+      doctor_details: details
+    });
   }
 
   techBulkUploadFormSubmit() {
@@ -114,7 +131,7 @@ export class BulkUploadComponent implements OnInit {
       panelClass: 'bulkupload-dialog',
       data: {
         header: "Message",
-        message: "Are you sure you want to upload these reports for physician : " + this.selectedDoctorName + " ?",
+        message: "Are you sure you want to upload these reports for physician : " + this.doctorDetails.name + " ?",
         button1: { text: "No" },
         button2: { text: "Yes" },
       }
@@ -153,13 +170,15 @@ export class BulkUploadComponent implements OnInit {
 
     if (this.techBulkUploadForm.valid) {
       var data = {
-        "source": "bulk_report_upload",
+        "source": "data_pece",
         "data": this.techBulkUploadForm.value,
         "doctor_details": this.doctorDetails,
         "tech_details": this.cookiesData,
+        "login_url": environment.siteBaseUrl + "login",
         "sourceobj": ["tech_id", "doctor_id"],
         "token": this.user_token
       };
+
       this.httpService.httpViaPost("upload-bulk-report", data).subscribe(response => {
         if (response.status = "success") {
           this.snakBar.open("Successfully Submitted", "OK", {

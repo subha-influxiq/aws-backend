@@ -10,26 +10,45 @@ import { HttpServiceService } from '../../../services/http-service.service';
   styleUrls: ['./doctor-office-management.component.css']
 })
 export class DoctorOfficeManagementComponent implements OnInit {
-public doctorOfficeAllData : any=[];
-public user_cookie:any;
 
-public doctorOfficeAllData_skip: any = ["password","_id","type","techId","centerName","techCount","city",
-"state","city","zip"];
+  public doctorOfficeAllData: any = [];
+  public user_cookie: any;
+
+  public doctorOfficeAllData_skip: any = [
+    "_id",
+    "address",
+    "zip",
+    "city",
+    "tech_id",
+    "state",
+    "user_type",
+    "password",
+    "created_at"
+  ];
   public editUrl: any = "admin/doctor-office-management/edit";
   public doctorOfficeAllData_modify_header: any = {
-    "centerNamecopy":"Center Name","email":"E-Mail","phone":"Phone","address":"Address",
-    "date":"Date Added","status":"Status","techName":"Tech Name","techCount": "Tech Count"
+    center_name: "Center Name",
+    firstname: "First Name",
+    lastname: "Last Name",
+    email: "Email",
+    phone: "Phone Number",
+    status: "Status"
   };
-  public previewModal_skip : any=['_id','techId','centerNamecopy'];
+  public previewModal_skip: any = [
+    "_id",
+    "tech_id",
+    "state",
+    "user_type"
+  ];
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl:any;
+  public apiUrl: any;
   public tableName: any = "users";
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
-  public SearchingSourceName:any = "users_view_doctoroffice";
+  public SearchingSourceName: any = "users_view_doctoroffice";
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
@@ -38,13 +57,13 @@ public doctorOfficeAllData_skip: any = ["password","_id","type","techId","center
 
     };
 
-  constructor(public activatedRoute : ActivatedRoute,
+  constructor(public activatedRoute: ActivatedRoute,
     public cookie: CookieService, public http: HttpClient,
     public httpService: HttpServiceService) {
 
     this.user_cookie = cookie.get('jwtToken');
-    this.apiUrl = httpService.baseUrl ; 
-      }
+    this.apiUrl = httpService.baseUrl;
+  }
 
   ngOnInit() {
     this.activatedRoute.data.forEach((data) => {

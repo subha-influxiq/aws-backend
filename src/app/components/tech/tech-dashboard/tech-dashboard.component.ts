@@ -103,7 +103,7 @@ export class TechDashboardComponent implements OnInit {
     switch (flag) {
       case 'Reports Uploaded':
         condition = {
-          "source": "Patient-Record-Report_view",
+          "source": "data_pece",
           "search": this.searchJson,
           "condition": {
             "tech_id": this.authData.userData._id
@@ -113,7 +113,7 @@ export class TechDashboardComponent implements OnInit {
         break;
       case 'Reports Processed':
         condition = {
-          "source": "Patient-Record-Report_view",
+          "source": "data_pece",
           "search": this.searchJson,
           "condition": {
             "tech_id": this.authData.userData._id,
@@ -130,7 +130,7 @@ export class TechDashboardComponent implements OnInit {
         break;
       case 'Remain Process':
         condition = {
-          "source": "Patient-Record-Report_view",
+          "source": "data_pece",
           "search": this.searchJson,
           "condition": {
             "tech_id": this.authData.userData._id,
@@ -149,7 +149,7 @@ export class TechDashboardComponent implements OnInit {
         break;
       default:
         condition = {
-          "source": "Patient-Record-Report_view",
+          "source": "data_pece",
           "search": this.searchJson,
           "condition": {
             "tech_id": this.authData.userData._id

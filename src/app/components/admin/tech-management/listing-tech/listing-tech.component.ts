@@ -10,26 +10,47 @@ import { CommonFunction } from '../../../../class/common/common-function';
   templateUrl: './listing-tech.component.html',
   styleUrls: ['./listing-tech.component.css']
 })
+
 export class ListingTechComponent implements OnInit {
+  
   public allUserData: any = [];
-  public allUserData_skip: any = ["_id", "created_at","password","id",
-  "updated_at","type","phoneno","taxo_list","fullName","city","state","zip"];
+  public allUserData_skip: any = [
+    "_id",
+    "address",
+    "zip",
+    "city",
+    "state",
+    "user_type",
+    "password",
+    "created_at",
+    "id",
+    "updated_at"
+  ];
   public editUrl: any = "admin/tech-management/edit";
   public allUserData_modify_header: any = {
-    "firstname": "First Name", "lastname": "Last Name",
-    "email": "E-Mail",  "address": "Address","status": "Status","phone":"Phone Number"
-    ,"date":"Data Added","fullNamecopy" :"Name"
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "email": "Email",
+    "status": "Status",
+    "phone": "Phone Number"
   };
-  public previewModal_detail_skip: any = ['_id','fullNamecopy'];
+  public previewModal_detail_skip: any = [
+    "_id",
+    "user_type",
+    "password",
+    "created_at",
+    "id",
+    "updated_at"
+  ];
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl:any;
+  public apiUrl: any;
   public tableName: any = "users";
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
-  public SearchingSourceName:any = "users_view_tech";
+  public SearchingSourceName: any = "users_view_tech";
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
@@ -41,20 +62,20 @@ export class ListingTechComponent implements OnInit {
   public TechDashboardAllData: any = [];
   constructor(public cookie: CookieService, public http: HttpClient,
     public httpService: HttpServiceService, public activatedRoute: ActivatedRoute,
-     public commonFunction: CommonFunction) {
-      
-      /* Set Meta Data */
+    public commonFunction: CommonFunction) {
+
+    /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
 
-      this.user_cookie = cookie.get('jwtToken');
-      this.apiUrl = httpService.baseUrl ; 
+    this.user_cookie = cookie.get('jwtToken');
+    this.apiUrl = httpService.baseUrl;
 
-    }
+  }
 
   ngOnInit() {
     this.activatedRoute.data.forEach((data) => {
       this.TechDashboardAllData = data.techDashboardData.res;
-     
+
     })
   }
 
