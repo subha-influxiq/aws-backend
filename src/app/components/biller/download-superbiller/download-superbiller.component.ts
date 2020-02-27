@@ -103,7 +103,7 @@ export class DownloadSuperbillerComponent implements OnInit {
       }
 
       let postData: any = {
-        "source": "data_pece",
+        "source": "data_report_download_details",
         "data": {
           "report_id": this.activatedRoute.snapshot.params._id,
           "biller_id": this.reportData.biller_id,
@@ -129,8 +129,9 @@ export class DownloadSuperbillerComponent implements OnInit {
           let postData: any = {
             "source": "data_pece",
             "data": {
-              id: this.activatedRoute.snapshot.params._id,
-              status: "Downloaded"
+              "id": this.activatedRoute.snapshot.params._id,
+              "status": "Downloaded",
+              "download_count": this.reportData.download_count,
             },
             "token": this.htmlText.tempToken
           };

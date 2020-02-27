@@ -137,7 +137,7 @@ const routes: Routes = [
         source: 'data_pece',
         condition: {}
       },
-      endpoint: 'datalist'
+      endpoint: 'report-view'
     },
   },
   { path: 'admin/patient-management/add', component: AddEditPatientComponent, canActivate: [AuthguardService] },
@@ -329,7 +329,9 @@ const routes: Routes = [
     data: {
       requestcondition: {
         source: 'data_pece',
-        condition: {},
+        condition: {
+          "report_type": { $exists: true }
+        },
       },
       endpoint: 'tech-dashboard'
     },
@@ -380,6 +382,18 @@ const routes: Routes = [
     //   endpoint: 'datalistwithouttoken'
     // },
   },
+  {
+    path: 'biller/patient-record-report/:_id', component: PatientReportViewComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'report-view'
+    },
+  },
 
   /* Doctor Route */
   {
@@ -403,7 +417,7 @@ const routes: Routes = [
         source: 'data_pece',
         condition: {}
       },
-      endpoint: 'datalist'
+      endpoint: 'report-view'
     },
   },
 
@@ -439,9 +453,13 @@ const routes: Routes = [
     data: {
       requestcondition: {
         source: 'data_pece',
-        condition: {}
+        condition: {},
+        skip: 0,
+        limit: 50,
+        sort_val: "doa",
+        sort_type: "desc"
       },
-      endpoint: 'datalist'
+      endpoint: 'test-datalist'
     },
   },
 

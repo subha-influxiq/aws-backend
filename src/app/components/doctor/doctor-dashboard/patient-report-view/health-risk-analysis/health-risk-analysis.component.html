@@ -7,7 +7,7 @@
           <h2 class="ordering_phy">Ordering Physician:</h2>
         </td>
         <td colspan="2">
-          <input class="order_input" type="text" value="{{ htmlText.patientDetails.doctor_name }}">
+          <input class="order_input" type="text" value="{{ reportDetails.reportData[0].doctor_name }}">
         </td>
       </tr>
 
@@ -19,26 +19,26 @@
 
       <tr>
         <td colspan="3">Patient Name:
-          <input type="text" class="patientName" value="{{ htmlText.patientDetails.patient_name }}">
+          <input type="text" class="patientName" value="{{ reportDetails.reportData[0].patient_name }}">
         </td>
 
         <td colspan="1">Patient Gender: <label>
-          <input type="radio" [(ngModel)]="htmlText.patientDetails.gender" [ngModelOptions]="{standalone: true}" value='Male'>Male</label>
-          <label><input type="radio" [(ngModel)]="htmlText.patientDetails.gender" [ngModelOptions]="{standalone: true}" value='Female'>Female</label>
+          <input type="radio" [(ngModel)]="reportDetails.reportData[0].gender" [ngModelOptions]="{standalone: true}" value='Male'>Male</label>
+          <label><input type="radio" [(ngModel)]="reportDetails.reportData[0].gender" [ngModelOptions]="{standalone: true}" value='Female'>Female</label>
         </td>
 
         <td colspan="1">D.O.B:
-          <input class="order_input" type="text" value="{{ htmlText.patientDetails.birth_date | date }}">
+          <input class="order_input" type="text" value="{{ reportDetails.reportData[0].birth_date | date }}">
         </td>
       </tr>
 
       <tr>
         <td colspan="3">Test Date:
-          <input class="order_input" type="text" value="{{ htmlText.patientDetails.test_date | date }}">
+          <input class="order_input" type="text" value="{{ reportDetails.reportData[0].test_date | date }}">
         </td>
 
         <td colspan="1">Tests Completed:
-          <input class="order_input" type="text" value="{{ htmlText.patientDetails.test_completed_date | date }}">
+          <input class="order_input" type="text" value="{{ reportDetails.reportData[0].test_completed_date | date }}">
         </td>
       </tr>
 
@@ -56,7 +56,7 @@
       <tr>
         <td>PTGTP </td>
         <td> 3 </td>
-        <td><input type="text" value="{{ htmlText.patientDetails.PTGTP }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].PTGTP }}"></td>
         <td>
           <p>Helps to identify the risk of insulin resistance (Pre-diabetes &
             diabetes), heart disease and other metabolic disorders. High
@@ -75,7 +75,7 @@
       <tr>
         <td>PTGVLFI </td>
         <td> 3 & 6 </td>
-        <td><input type="text" value="{{ htmlText.patientDetails.PTGVLFI }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].PTGVLFI }}"></td>
         <td>
           <p><b>Marker for Diabetes</b> - is a marker for impaired glucose
             tolerance (IGT) and Microcirculation complications.</p>
@@ -92,7 +92,7 @@
       <tr>
         <td>IR </td>
         <td> 1 </td>
-        <td><input type="text" value="{{ htmlText.patientDetails.IR }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].IR }}"></td>
         <td>
           <p><b>Marker for Impaired Glucose Tolerance (IGT), Type 2 Diabetes
               (T2DM) and cardiovascular diseases.</b>Comparing our PTGTP
@@ -114,7 +114,7 @@
         <td>ESRNO
           Baseline </td>
         <td> 7 </td>
-        <td><input type="text" value="{{ htmlText.patientDetails.ESRNO }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].ESRNO }}"></td>
         <td>
           <p><b>Marker for Distal Neuropathy </b> - is a marker of electrical skin
             response to nitric oxide (NO) production and vasodilation. Low
@@ -133,7 +133,7 @@
         <td>ESR L<br>
           (Latency)</td>
         <td> 7</td>
-        <td><input type="text" value="{{ htmlText.patientDetails.ESRL }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].ESRL }}"></td>
         <td>
           <p><b>Marker for Peripheral Distal Neuropathy</b> - is a marker of sweat
             gland nerve density. Low numbers are an early detection of
@@ -151,7 +151,7 @@
         <td>Peak C<br>
           (Amplitude)</td>
         <td> 7 </td>
-        <td><input type="text" value="{{ htmlText.patientDetails.peakC }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].peakC }}"></td>
         <td>
           <p>Marker of sweat gland function. Low Peak C numbers are found
             with nerve damage or Hyperhidrosis.</p>
@@ -170,7 +170,7 @@
           ( Enter Type 1-5 )
         </td>
         <td> 6</td>
-        <td><input type="text" value="{{ htmlText.patientDetails.PTGtype_value }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].PTGtype_value }}"></td>
         <td>
           <p><b>Marker for Arterial Aging</b>– The pulse wave velocity (PWV) and
             the photoplethysmogram (PTG) are noninvasive methods for
@@ -190,7 +190,7 @@
         <td>PTG CVD
         </td>
         <td> 3</td>
-        <td><input type="text" value="{{ htmlText.patientDetails.PTGCVD }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].PTGCVD }}"></td>
         <td>
           <p>Marker used to evaluate CVD. A score of 0 = normal, 1 =
             borderline and 2 = abnormal.</p>
@@ -208,7 +208,7 @@
           (Stress Index)
         </td>
         <td> 2, 3 and 4 </td>
-        <td><input type="text" value="{{ htmlText.patientDetails.stressI }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].stressI }}"></td>
         <td>
           <p><b>Marker heart disease</b> - correlates to C-Reactive Protein
             (CRP) and high numbers indicate a risk of Heart disease.</p>
@@ -225,7 +225,7 @@
       <tr>
         <td>RI </td>
         <td> 3 & 6</td>
-        <td><input type="text" value="{{ htmlText.patientDetails.RI }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].RI }}"></td>
         <td>
           <p>Marker for Atherosclerosis - an indicator of stiffness of the
             small and medium arteries.
@@ -244,7 +244,7 @@
         <td>AIPTG<br>
           (IPTG) </td>
         <td>3 & 6</td>
-        <td><input type="text" value="{{ htmlText.patientDetails.AIPTG }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].AIPTG }}"></td>
         <td>
           <p><b>Marker for LDL Cholesterol Level.</b> High LDL Cholesterol is a
             Marker for Coronary Heart Disease (CHD) –
@@ -261,7 +261,7 @@
       <tr>
         <td>CIs (CI)</td>
         <td> 5</td>
-        <td><input type="text" value="{{ htmlText.patientDetails.CIsCI }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].CIsCI }}"></td>
         <td>
           <p>Marker is an indicator that relates to Cardiac output to Body
             Surface Area (BSA)
@@ -278,7 +278,7 @@
       <tr>
         <td>pNN50</td>
         <td>4</td>
-        <td><input type="text" value="{{ htmlText.patientDetails.pNN50 }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].pNN50 }}"></td>
         <td>
           <p>Marker for heart rhythm stability. Shows a risk of
             Heart Rate Variability issues
@@ -294,7 +294,7 @@
       <tr>
         <td>RMSSD</td>
         <td> 2 & 4 </td>
-        <td><input type="text" value="{{ htmlText.patientDetails.RMSSD }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].RMSSD }}"></td>
         <td>
           <p>Marker that reflects the electrical stability of the heart
           </p>
@@ -310,7 +310,7 @@
       <tr>
         <td>SD ba</td>
         <td> 6 </td>
-        <td><input type="text" value="{{ htmlText.patientDetails.SDba }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].SDba }}"></td>
         <td>
           <p>Marker for angiotensin activity </p>
         </td>
@@ -327,7 +327,7 @@
       <tr>
         <td>DPRS</td>
         <td> 2 & 5 </td>
-        <td><input type="text" value="{{ htmlText.patientDetails.DPRS }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].DPRS }}"></td>
         <td>
           <p>Diastolic Pressure Response to Standing (DPRS) is the
             difference between the sitting diastolic minus the
@@ -346,7 +346,7 @@
       <tr>
         <td>ValsR</td>
         <td> 2 & 5 </td>
-        <td><input type="text" value="{{ htmlText.patientDetails.ValsR }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].ValsR }}"></td>
         <td>
           <p>Valsalva Ratio (ValsR.) - is the measure of the Heart Rate
             response to Blood Pressure changes from the mechanical
@@ -367,7 +367,7 @@
           Score
           (I.E. 29.1)</td>
         <td> 1-7</td>
-        <td><input type="text" value="{{ htmlText.patientDetails.BMI }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].BMI }}"></td>
         <td>
           <p>The National Institutes of Health (NIH) now defines normal
             weight, overweight, and obesity according to BMI rather
@@ -394,7 +394,7 @@
           Diastolic
           (120/80)</td>
         <td>3 </td>
-        <td><input type="text" value="{{ htmlText.patientDetails.systolic_value }}/{{ htmlText.patientDetails.diastolic_value }}"></td>
+        <td><input type="text" value="{{ reportDetails.reportData[0].systolic_value }}/{{ reportDetails.reportData[0].diastolic_value }}"></td>
         <td>
           <p>As of April 2018, The American Heart Association defines
             Hypertension as 130/80 millimeters of mercury (mm Hg)
@@ -412,7 +412,7 @@
       <tr>
         <td colspan="5">
           <p class="area_header"><b>Patient Diagnoses & Notes:</b></p>
-          <textarea class="area_content" value="{{ htmlText.patientDetails.leave_notes }}"></textarea>
+          <textarea class="area_content" value="{{ reportDetails.reportData[0].leave_notes }}"></textarea>
         </td>
       </tr>
       <tr>

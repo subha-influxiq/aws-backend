@@ -3,7 +3,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { DownloadDetailsComponent } from './download-details/download-details.component';
@@ -69,38 +69,75 @@ export class AdminDashboardComponent implements OnInit {
   ngAfterViewInit() {
   }
 
-  viewReportProcessData(flag: string) {
+  refreshDashboard() {
+    let repostSignCond: any = {
+      "source":"data_pece",
+      "condition": {
+        "admin_id": this.loginUserData.user_details._id
+      },
+      "token": this.jwtToken
+    };
+    // get dashboard count
+    this.http.httpViaPost('admin-dashboard', repostSignCond).subscribe((response) => {
+      if(response.status == 'success') {
+        this.allResolveData = response.data;
+      } else {
+        this.router.navigateByUrl('logout');
+      }
+    });
+
+    // for listing
+    this.viewReportProcessData(this.htmlText.headerText);
+  }
+
+  viewReportProcessData(flag: string = null) {
+    // Set Header Flag
+    this.htmlText.headerText = flag;
+
+    // Date search
     if(this.searchJson.dateRange != '') {
       this.searchJson.dateRange.end = moment(this.searchJson.dateRange.end, "DD-MM-YYYY").add(1, 'days');
     }
 
-    this.htmlText.headerText = flag;
+    // search condition
     var repostSignCond: any = {
       "search": this.searchJson,
       "token": this.jwtToken,
+      "pagination": {
+        "skip": 0,
+        "limit": 50
+      }
     };
-
-    this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
-    /* Set Table Header */
 
     switch (flag) {
       /* Report Status Section */
       case 'Total Mannual Reports':
+        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
+        
         repostSignCond["condition"] = {
-          "report_type": "mannual"
+          report_type: "manual"
         };
         break;
       case 'Total File Reports':
+        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
+
         repostSignCond["condition"] = {
-          "report_type": "file"
+          report_type: "file"
         };
         break;
       /* Report Status Section */
       case 'Reports Uploaded':
-        repostSignCond["condition"] = {};
+        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
+
+        repostSignCond["condition"] = {
+          report_type: { $exists: true }
+        };
         break;
       case 'Report Processed':
+        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
+
         repostSignCond["condition"] = {
+          "report_type": { $exists: true },
           "page_1": { $exists: true },
           "page_2": { $exists: true },
           "page_3": { $exists: true },
@@ -114,33 +151,41 @@ export class AdminDashboardComponent implements OnInit {
         this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'billerName', 'billGenerationDate', 'billSentDate', 'reportType', 'superBill', 'status', 'createdAt', 'editRecord'];
 
         repostSignCond["condition"] = {
+          "report_type": { $exists: true },
           "doctor_signature": { $exists: true }
         };
         break;
       case 'Super Bill':
         this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'billerName', 'billGenerationDate', 'billSentDate', 'reportType', 'superBill', 'status', 'createdAt', 'editRecord'];
 
-        /////////////////////////////////////////
-        //////////////// Pending ////////////////
-        /////////////////////////////////////////
         repostSignCond["condition"] = {
-          "doctor_signature": { $exists: false }
+          "report_type": { $exists: true },
+          "biller_name": { $exists: true },
         };
         break;
       case 'Download Bill':
         this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'billerName', 'billGenerationDate', 'billSentDate', 'reportType', 'superBill', 'status', 'createdAt', 'editRecord'];
 
         repostSignCond["condition"] = {
+          "report_type": { $exists: true },
           "download_count": { $exists: true }
         };
         break;
       case 'Reports Pending Sing':
+        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
+
         repostSignCond["condition"] = {
+          "report_type": { $exists: true },
           "doctor_signature": { $exists: false }
         };
         break;
       default:
-        repostSignCond["condition"] = {};
+        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
+
+        repostSignCond["condition"] = {
+          "doctor_signature": { $exists: false },
+          "report_type": { $exists: true },
+        };
         break;
     }
 
@@ -152,9 +197,27 @@ export class AdminDashboardComponent implements OnInit {
         this.allDataSource = new MatTableDataSource(this.allResolveData.tableData);
         this.allDataSource.paginator = this.paginatorAll;
       } else {
-        this.allDataColumns = [];
+        this.router.navigateByUrl('logout');
       }
     });
+  }
+
+  pagination(flag: string = null) {
+    switch(flag) {
+      case "prev":
+        if(this.allResolveData.tableDataPagination.skip > 0) {
+          this.allResolveData.tableDataPagination.skip = 0;
+          this.allResolveData.tableDataPaginationlimit = 50;
+        }
+        break;
+      case "next":
+        this.allResolveData.tableDataPagination.skip = 0;
+        this.allResolveData.tableDataPaginationlimit = 50;
+        break;
+      default:
+        break;
+    }
+    this.allResolveData.tableDataPagination = null;
   }
 
   myFunction() {
@@ -249,7 +312,7 @@ export class AdminDashboardComponent implements OnInit {
 
   deleteProcess(pk_id: any, index: number) {
     var repostSignCond = {
-      "source": "patient_management",
+      "source": "data_pece",
       "id": pk_id,
       "token": this.jwtToken,
     };

@@ -1,4 +1,5 @@
-<app-doctor-header *ngIf="cookiesData.user_details.user_type == 'doctor' "></app-doctor-header>
+<app-biller-header *ngIf="cookiesData.user_details.user_type == 'biller'"></app-biller-header>
+<app-doctor-header *ngIf="cookiesData.user_details.user_type == 'doctor'"></app-doctor-header>
 <app-admin-header *ngIf="cookiesData.user_details.user_type == 'admin' "></app-admin-header>
 
 <ng-container>
@@ -10,7 +11,7 @@
         {{ htmlText.header }}
       </mat-card-content>
 
-      <mat-card class="add_form" *ngIf="htmlText.allResolveData.report_type == 'mannual'">
+      <mat-card class="add_form" *ngIf="htmlText.allResolveData.reportData[0].report_type == 'manual'">
         <mat-card-content>
 
           <form class="example-form">
@@ -22,7 +23,7 @@
                 <mat-card-content>
                   <label>Patient Name</label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.patient_name }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].patient_name }}">
                   </mat-form-field>
                 </mat-card-content>
                 <!-- Patient Name End -->
@@ -30,8 +31,8 @@
                 <!-- Patient Gender Start -->
                 <mat-card-content>
                   <label>Patient Gender</label>
-                  <input type="radio" [(ngModel)]="htmlText.allResolveData.gender" [ngModelOptions]="{standalone: true}" value="Male">Male
-                  <input type="radio" [(ngModel)]="htmlText.allResolveData.gender" [ngModelOptions]="{standalone: true}" value="Female">Female
+                  <input type="radio" [(ngModel)]="htmlText.allResolveData.reportData[0].gender" [ngModelOptions]="{standalone: true}" value="Male">Male
+                  <input type="radio" [(ngModel)]="htmlText.allResolveData.reportData[0].gender" [ngModelOptions]="{standalone: true}" value="Female">Female
                 </mat-card-content>
                 <!-- Patient Gender End -->
 
@@ -39,7 +40,7 @@
                 <mat-card-content>
                   <label> DOB</label>
                   <mat-form-field>
-                    <input matInput type="text" value="{{ htmlText.allResolveData.birth_date | date }}">
+                    <input matInput type="text" value="{{ htmlText.allResolveData.reportData[0].birth_date | date }}">
                   </mat-form-field>
                 </mat-card-content>
                 <!-- DOB End -->
@@ -48,7 +49,7 @@
                 <mat-card-content>
                   <label> Ordering Physician</label>
                   <mat-form-field>
-                    <input matInput matInput value="{{ htmlText.allResolveData.doctor_name }}">
+                    <input matInput matInput value="{{ htmlText.allResolveData.reportData[0].doctor_name }}">
                   </mat-form-field>
                 </mat-card-content>
                 <!-- Ordering Physician Start -->
@@ -57,7 +58,7 @@
                 <mat-card-content>
                   <label> Test Date</label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.test_date | date }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].test_date | date }}">
                   </mat-form-field>
                 </mat-card-content>
                 <!-- Test Date End -->
@@ -66,7 +67,7 @@
                 <mat-card-content>
                   <label> Test Completed</label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.test_completed_date | date }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].test_completed_date | date }}">
                   </mat-form-field>
                 </mat-card-content>
                 <!-- Test Completed Start -->
@@ -82,42 +83,42 @@
                 <mat-card-content>
                   <label> PTGTP </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.PTGTP }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].PTGTP }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label> PTGVLFI </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.PTGVLFI }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].PTGVLFI }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label> IR </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.IR }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].IR }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label> ESRNO<br> (Baseline) </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.ESRNO }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].ESRNO }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label> ESR L<br> (Latency) </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.ESRL }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].ESRL }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label> Peak C <br> (Amplitude) </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.peakC }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].peakC }}">
                   </mat-form-field>
                 </mat-card-content>
 
@@ -125,91 +126,91 @@
                   <label> PTG Type <br> (Enter
                     Type 1-5) </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.PTGtype }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].PTGtype }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label> PTG CVD </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.PTGCVD }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].PTGCVD }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label> Stress I <br> (Stress Index) </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.stressI }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].stressI }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label> RI </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.RI }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].RI }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label> AIPTG<br> (IPTG) </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.AIPTG }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].AIPTG }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label> CIs (CI) </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.CIsCI }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].CIsCI }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label> pNN50 </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.pNN50 }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].pNN50 }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label> RMSSD </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.RMSSD }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].RMSSD }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label> SD ba - </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.SDba }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].SDba }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label> SD da </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.SDda }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].SDda }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label>DPRS </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.DPRS }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].DPRS }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label>ValsR. </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.ValsR }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].ValsR }}">
                   </mat-form-field>
                 </mat-card-content>
 
                 <mat-card-content>
                   <label>BMI <br> Enter BMI Score (I.E. 29.1) </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.BMI }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].BMI }}">
                   </mat-form-field>
                 </mat-card-content>
 
@@ -218,7 +219,7 @@
                     Systolic & Diastolic (120/80) 
                   </label>
                   <mat-form-field>
-                    <input matInput value="{{ htmlText.allResolveData.systolic_value }}/{{ htmlText.allResolveData.diastolic_value }}">
+                    <input matInput value="{{ htmlText.allResolveData.reportData[0].systolic_value }}/{{ htmlText.allResolveData.reportData[0].diastolic_value }}">
                   </mat-form-field>
                 </mat-card-content>
               </span>
@@ -226,7 +227,7 @@
               <span class="patient_diagnotes">
                 <label>Patient Diagnoses & Notes:</label>
                 <mat-form-field class="example-full-width">
-                  <textarea matInput> {{ htmlText.allResolveData.leave_notes }} </textarea>
+                  <textarea matInput> {{ htmlText.allResolveData.reportData[0].leave_notes }} </textarea>
                 </mat-form-field>
               </span>
             </fieldset>
@@ -235,10 +236,10 @@
         </mat-card-content>
       </mat-card>
 
-      <section *ngIf="htmlText.allResolveData.report_type == 'file'">
+      <section *ngIf="htmlText.allResolveData.reportData[0].report_type == 'file'">
         <mat-card-content class="document_wrapper">
           <span class="imageGallery">
-            <img src="{{ htmlText.allResolveData.file_basepath }}{{ htmlText.allResolveData.images[htmlText.sliderCount].name }}">
+            <img src="{{ htmlText.allResolveData.reportData[0].file_basepath }}{{ htmlText.allResolveData.reportData[0].images[htmlText.sliderCount].name }}">
           </span>
           <mat-card-content>
             <button mat-fab class="prev" type="button" (click)="playSlider('preview');">
@@ -246,7 +247,7 @@
             </button>
             <!-- <button mat-fab (click)="playSlider('play');">PLAY</button> -->
           </mat-card-content>
-          <span class="itemCounter">Report {{ htmlText.sliderCount + 1 }} of {{ htmlText.allResolveData.images.length }}</span>
+          <span class="itemCounter">Report {{ htmlText.sliderCount + 1 }} of {{ htmlText.allResolveData.reportData[0].images.length }}</span>
         </mat-card-content>
       </section>
     </mat-card-content>
@@ -266,7 +267,7 @@
           </ng-template>
         </mat-tab>
 
-        <mat-tab label="Superbill For Obesity" *ngIf="htmlText.allResolveData.BMI_flag >= 29">
+        <mat-tab label="Superbill For Obesity" *ngIf="htmlText.allResolveData.reportData[0].BMI_flag >= 29">
           <ng-template matTabContent>
             <app-system-superbill [patientDetails]="htmlText.allResolveData"></app-system-superbill>
           </ng-template>

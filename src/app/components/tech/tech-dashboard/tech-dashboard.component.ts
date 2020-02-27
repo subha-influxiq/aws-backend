@@ -224,9 +224,9 @@ export class DoctorViewDialogComponent {
     this.user_data = JSON.parse(this.allData.user_details);
     this.user_token = cookie.get('jwtToken');
     var dta: any = {
-      "source": "users_view_doctor",
+      "source": "data_pece",
       "condition": {
-        tech_id_object: this.user_data._id
+        "tech_id_object": this.user_data._id
       },
       "token": this.user_token
     }

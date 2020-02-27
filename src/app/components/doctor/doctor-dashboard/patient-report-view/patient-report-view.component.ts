@@ -43,10 +43,10 @@ export class PatientReportViewComponent implements OnInit {
     this.cookiesData.user_details = JSON.parse(this.cookiesData.user_details);
 
     if(this.cookiesData.user_details.user_type == 'doctor') {
-      this.getBiller(this.cookiesData.user_details_id);
+      this.getBiller(this.cookiesData.user_details._id);
     }
 
-    if(typeof(this.cookiesData.user_details.doctor_signature) == 'undefined' && this.cookiesData.user_details.user_type == 'doctor') {
+    if((typeof(this.cookiesData.user_details.doctor_signature) == 'undefined' || this.cookiesData.user_details.doctor_signature == '') && this.cookiesData.user_details.user_type == 'doctor') {
       /* Open modal */
       let modalData: any = {
         panelClass: 'bulkupload-dialog',
@@ -76,8 +76,8 @@ export class PatientReportViewComponent implements OnInit {
 
   ngOnInit() {
     this.activeRoute.data.forEach((data) => {
-      this.htmlText.allResolveData = data.data.res[0];
-      this.htmlText.allResolveData.BMI_flag = Math.round(this.htmlText.allResolveData.BMI);
+      this.htmlText.allResolveData = data.data.data;
+      this.htmlText.allResolveData.reportData[0].BMI_flag = Math.round(this.htmlText.allResolveData.reportData[0].BMI);
     });
   }
 
@@ -99,13 +99,13 @@ export class PatientReportViewComponent implements OnInit {
     switch (action) {
       case 'preview':
         if (this.htmlText.sliderCount == 0) {
-          this.htmlText.sliderCount = this.htmlText.allResolveData.images.length - 1;
+          this.htmlText.sliderCount = this.htmlText.allResolveData.reportData[0].images.length - 1;
         } else {
           this.htmlText.sliderCount--;
         }
         break;
       case 'next':
-        if (this.htmlText.sliderCount + 1 == this.htmlText.allResolveData.images.length) {
+        if (this.htmlText.sliderCount + 1 == this.htmlText.allResolveData.reportData[0].images.length) {
           this.htmlText.sliderCount = 0;
         } else {
           this.htmlText.sliderCount++;
@@ -139,16 +139,18 @@ export class PatientReportViewComponent implements OnInit {
               "data": { 
                 "bill_generation_date": new Date(),
                 "bill_sent_date": new Date(),
-                "doctor_signature": this.cookiesData.doctor_signature, 
+                "doctor_signature": this.cookiesData.user_details.doctor_signature, 
                 "biller_id": billerID,
                 "biller_name": billerName,
                 "biller_email": billerEmail,
-                "download_link" : environment.siteBaseUrl + 'download/super-bill/' + this.htmlText.allResolveData._id,
+                "download_link" : environment.siteBaseUrl + 'download/super-bill/' + this.htmlText.allResolveData.reportData[0]._id,
                 "file_path": "",
                 "download_password": "",
+                "details": this.htmlText.allResolveData.details,
+                "provide_description": this.htmlText.allResolveData.provide_description,
                 "status": "Send to Biller"
               },
-              "report_id": this.htmlText.allResolveData._id
+              "report_id": this.htmlText.allResolveData.reportData[0]._id
             };
 
             data.data["id"] = this.activeRoute.snapshot.params._id;

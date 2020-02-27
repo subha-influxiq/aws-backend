@@ -104,7 +104,7 @@ export class AddEditPatientComponent implements OnInit {
         systolic_value     :  ['', [Validators.required, Validators.pattern(environment.floatPattern)]],
         diastolic_value    :  ['', [Validators.required, Validators.pattern(environment.floatPattern)]],
         status             :  ['Pending Signature', []],
-        report_type        :  ['mannual', []],
+        report_type        :  ['manual', []],
         added_by           :  [this.allCookies.user_details._id, []]
       });
     }
