@@ -13,7 +13,33 @@
     <input matInput placeholder="State" [(ngModel)]="search.state">
 </mat-form-field>
 
-<button mat-raised-button color="primary" (click)="searchData();">Search</button>
+<button mat-raised-button type="button" color="primary" (click)="getPageData();">Search</button>
+
+
+<br>
+<br>
+
+<mat-list role="list">
+    <mat-list-item role="listitem">Showing {{page.page_count}} result from
+        <ng-container *ngIf="total_count == 0">Many.</ng-container>
+        <ng-container *ngIf="total_count > 0">{{ total_count }}.</ng-container>
+    </mat-list-item>
+
+    <mat-form-field class="example-full-width">
+        <mat-label> Current page {{ page.page_no }} Total page {{ total_count / page.page_count }}</mat-label>
+        <input matInput type="number" placeholder="Total page {{ total_count / page.page_count }}"
+            (keyup)="getPageData();" [(ngModel)]="page.page_no">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Page Count</mat-label>
+        <input matInput type="number" placeholder="Page data {{ page.page_count }}" (keyup)="getPageData();"
+            [(ngModel)]="page.page_count">
+    </mat-form-field>
+</mat-list>
+
+<button mat-raised-button color="primary" (click)="nextPage('prev');">Prev</button>
+<button mat-raised-button color="primary" (click)="nextPage();">Next</button>
 
 
 
@@ -26,14 +52,23 @@
 
     <ng-container matColumnDef="#">
         <th mat-header-cell *matHeaderCellDef> # </th>
-        <td mat-cell *matCellDef="let element; let i = index;"> {{ (page.page_no - 1) * page.page_count + (i + 1) }}. </td>
+        <td mat-cell *matCellDef="let element; let i = index;"> {{ (page.page_no - 1) * page.page_count + (i + 1) }}.
+        </td>
     </ng-container>
 
     <ng-container *ngFor="let item of displayedColumns;" matColumnDef="{{item.key}}">
 
-        <th mat-header-cell *matHeaderCellDef (click)="sortPageData(item.key);"> 
-            <ng-container *ngIf="sort_val == item.key.toLowerCase()"> Sort By {{ sort_type }} </ng-container>
+        <th mat-header-cell *matHeaderCellDef>
+            <ng-container *ngIf="sort_val == item.key.toLowerCase()"> </ng-container>
             {{ item.value }}
+            <i *ngIf="sort_type == 'asc'" (click)="sortPageData(item.key);"
+                class="material-icons">
+                keyboard_arrow_down
+            </i>
+            <i *ngIf="sort_type == 'desc'" (click)="sortPageData(item.key);"
+                class="material-icons">
+                keyboard_arrow_up
+            </i>
         </th>
         <td mat-cell *matCellDef="let element">
             <span *ngIf="item.key != 'DOB' && item.key != 'DOA'"> {{ element[item.key] }} </span>
@@ -47,19 +82,21 @@
 </table>
 
 <mat-list role="list">
-    <mat-list-item role="listitem">Showing 50 result from 
+    <mat-list-item role="listitem">Showing {{page.page_count}} result from
         <ng-container *ngIf="total_count == 0">Many.</ng-container>
         <ng-container *ngIf="total_count > 0">{{ total_count }}.</ng-container>
     </mat-list-item>
 
     <mat-form-field class="example-full-width">
         <mat-label> Current page {{ page.page_no }} Total page {{ total_count / page.page_count }}</mat-label>
-        <input matInput type="number" placeholder="Total page {{ total_count / page.page_count }}" (keyup)="getPageData();" [(ngModel)]="page.page_no">
+        <input matInput type="number" placeholder="Total page {{ total_count / page.page_count }}"
+            (keyup)="getPageData();" [(ngModel)]="page.page_no">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
         <mat-label>Page Count</mat-label>
-        <input matInput type="number" placeholder="Page data {{ page.page_count }}" (keyup)="getPageData();" [(ngModel)]="page.page_count">
+        <input matInput type="number" placeholder="Page data {{ page.page_count }}" (keyup)="getPageData();"
+            [(ngModel)]="page.page_count">
     </mat-form-field>
 </mat-list>
 
