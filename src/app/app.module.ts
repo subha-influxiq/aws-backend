@@ -57,7 +57,7 @@ import { ListDoctorComponent } from './components/admin/doctor-management/list-d
 import { AddEditBillerComponent ,ChangePasswordModal}from './components/admin/biller-management/add-edit-biller/add-edit-biller.component';
 import { ListingBillerComponent } from './components/admin/biller-management/listing-biller/listing-biller.component';
 import { ListingTechComponent } from './components/admin/tech-management/listing-tech/listing-tech.component';
-import { AddEditTechComponent,Dialogtest } from './components/admin/tech-management/add-edit-tech/add-edit-tech.component';
+import { AddEditTechComponent, Dialogtest } from './components/admin/tech-management/add-edit-tech/add-edit-tech.component';
 import { AccountSettingsComponent } from './components/common/account-settings/account-settings.component';
 import { ChangePasswordComponent } from './components/common/account-settings/change-password/change-password.component';
 import { UserAddEditComponent } from './components/admin/user-management/user-add-edit/user-add-edit.component';
@@ -114,6 +114,13 @@ import { DownloadDetailsComponent } from './components/admin/admin-dashboard/dow
 /* Loader */
 import { NgxUiLoaderModule, NgxUiLoaderConfig, SPINNER, POSITION, PB_DIRECTION, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 import { from } from 'rxjs';
+
+// diagnostic-admin-management
+import { AddEditDiagnosticAdminComponent, DiagnosticAdminPasswordChange } from './components/admin/diagnostic-admin-management/add-edit-diagnostic-admin/add-edit-diagnostic-admin.component';
+import { ListingDiagnosticAdminComponent } from './components/admin/diagnostic-admin-management/listing-diagnostic-admin/listing-diagnostic-admin.component';
+import { DiagnosticAdminDashboardComponent } from './components/diagnostic-admin/diagnostic-admin-dashboard/diagnostic-admin-dashboard.component';
+import { DiagnosticAdminHeaderComponent } from './components/diagnostic-admin/diagnostic-admin-header/diagnostic-admin-header.component';
+import { DiagnosticAdminFooterComponent } from './components/diagnostic-admin/diagnostic-admin-footer/diagnostic-admin-footer.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -214,7 +221,14 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     EditPatientRecordComponent,
     ReportNotProcessComponent,
     DownloadSuperbillerComponent,
-    DownloadDetailsComponent
+    DownloadDetailsComponent,
+
+    AddEditDiagnosticAdminComponent,
+    DiagnosticAdminPasswordChange,
+    ListingDiagnosticAdminComponent,
+    DiagnosticAdminDashboardComponent,
+    DiagnosticAdminHeaderComponent,
+    DiagnosticAdminFooterComponent,
   ],
   imports: [
     SatDatepickerModule,
@@ -276,6 +290,9 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     Dialogtest,ChangePasswordModal,
     ChangePasswordAdminModal,
     ChangePasswordDoctorOfficeModal,
+    DiagnosticAdminPasswordChange,
+    DiagnosticAdminPasswordChange,
+
     DialogBoxComponent,
     PasswordDialogBoxComponent,
     UploadDialogBoxComponent,
@@ -284,6 +301,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     DownloadDetailsComponent
   ]
 })
+
 export class AppModule {
 
   constructor(public http: HttpClient) {

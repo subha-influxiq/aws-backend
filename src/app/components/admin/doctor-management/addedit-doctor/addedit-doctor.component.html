@@ -1,4 +1,12 @@
-<app-admin-header></app-admin-header>
+<!-- Admin Header -->
+<app-admin-header *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-header>
+
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-header *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+
+
 
 <!-- header with add button -->
 <mat-card class="admin_wrapper">
@@ -8,11 +16,23 @@
 
 
   <span class="add_header">
-    <span class="bradcrumb">
-      <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
-      <a [routerLink]="['/admin/doctor-management']">Manage Doctor &nbsp;/</a> &nbsp;
-      {{ htmlText.nav }}
-    </span>
+
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/admin/doctor-management']">Manage Doctor &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/diagnostic-admin/doctor-management']">Manage Tech &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
   </span>
   <!-- End header with add button -->
 
@@ -277,3 +297,14 @@
     </mat-card-content>
   </mat-card>
 </mat-card>
+
+
+
+
+
+<!-- Admin Footer -->
+<app-admin-footer *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-footer>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-footer *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-footer>
+

@@ -58,7 +58,7 @@ export class AdminDashboardComponent implements OnInit {
     
     /* Get resolve data */
     this.activatedRoute.data.subscribe(resolveData => {
-      this.allResolveData = resolveData.dataCount.data;
+      this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
       this.viewReportProcessData(this.htmlText.headerText);
     });
   }

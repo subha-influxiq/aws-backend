@@ -5,11 +5,11 @@
 export const environment = {
   siteBaseUrl: "http://localhost:4200/",
   s3bucket: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/",
-  apiBaseUrl: "http://127.0.0.1:8000/",
+  //apiBaseUrl: "http://127.0.0.1:8000/",
   //apiBaseUrl: "https://k5grb6fn3i.execute-api.us-east-1.amazonaws.com/dev/api/",
   
   //Main
-  //apiBaseUrl: "https://5hyccia9v2.execute-api.us-east-1.amazonaws.com/dev/api/",
+  apiBaseUrl: "https://5hyccia9v2.execute-api.us-east-1.amazonaws.com/dev/api/",
   //apiBaseUrl: "https://aws-lamda.influxiq.com/dev/api/",
   pagination: [20, 50, 100, 200, 500],
   logo: "https://5hyccia9v2.execute-api.us-east-1.amazonaws.com/dev/api/",

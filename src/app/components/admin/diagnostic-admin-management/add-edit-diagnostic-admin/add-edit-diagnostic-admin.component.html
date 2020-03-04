@@ -1,0 +1,285 @@
+<!-- Admin Header -->
+<app-admin-header></app-admin-header>
+<mat-card class="admin_wrapper">
+  <!-- header with add button -->
+  <mat-card-content class="title_wrapper">
+    {{ htmlText.header }}
+  </mat-card-content>
+
+
+  <span class="add_header">
+    <span class="bradcrumb">
+      <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+      <a [routerLink]="['/admin/diagnostic-admin-management']">Manage Diagnostic Admin &nbsp;/</a> &nbsp;
+      {{ htmlText.nav }}
+    </span>
+  </span>
+  <!-- End header with add button -->
+
+  <mat-card class="add_form">
+    <mat-card-content class="form_wrapper">
+      <form class="example-form" autocomplete="off" name="DiagnosticAdminManagementAddEditForm" [formGroup]="DiagnosticAdminManagementAddEditForm" (ngSubmit)="TechManagementAddFormFormSubmit()">
+
+        <!-- Center Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label> Center Name</mat-label>
+
+          <input matInput placeholder="Center Name" [formControl]="DiagnosticAdminManagementAddEditForm.controls['center_name']"
+            (blur)="inputUntouch(DiagnosticAdminManagementAddEditForm,'center_name')">
+
+          <mat-error
+            *ngIf="DiagnosticAdminManagementAddEditForm.controls['center_name'].touched && !DiagnosticAdminManagementAddEditForm.controls['center_name'].valid && DiagnosticAdminManagementAddEditForm.controls['center_name'].errors.required">
+            Center Name required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="DiagnosticAdminManagementAddEditForm.controls['center_name'].touched && !DiagnosticAdminManagementAddEditForm.controls['center_name'].valid && DiagnosticAdminManagementAddEditForm.controls['center_name'].errors.maxlength">
+            Center Name is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- First Name End -->
+
+        <!-- Email Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Email Address</mat-label>
+
+          <input matInput placeholder="Email Address" [formControl]="DiagnosticAdminManagementAddEditForm.controls['email']"
+            (blur)="inputUntouch(DiagnosticAdminManagementAddEditForm,'email')">
+
+          <mat-error
+            *ngIf="DiagnosticAdminManagementAddEditForm.controls['email'].touched && !DiagnosticAdminManagementAddEditForm.controls['email'].valid && DiagnosticAdminManagementAddEditForm.controls['email'].errors.required">
+            Email required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="DiagnosticAdminManagementAddEditForm.controls['email'].touched && !DiagnosticAdminManagementAddEditForm.controls['email'].valid && DiagnosticAdminManagementAddEditForm.controls['email'].errors.email">
+            Email is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Email End -->
+
+        <!-- Phone Number Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+
+          <input matInput placeholder="Phone" [formControl]="DiagnosticAdminManagementAddEditForm.controls['phone']"
+            (blur)="inputUntouch(DiagnosticAdminManagementAddEditForm,'phone')">
+
+          <mat-error
+            *ngIf="DiagnosticAdminManagementAddEditForm.controls['phone'].touched && !DiagnosticAdminManagementAddEditForm.controls['phone'].valid && DiagnosticAdminManagementAddEditForm.controls['phone'].errors.required">
+            Phone Number required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="DiagnosticAdminManagementAddEditForm.controls['phone'].touched && !DiagnosticAdminManagementAddEditForm.controls['phone'].valid && DiagnosticAdminManagementAddEditForm.controls['phone'].errors.maxlength">
+            Phone Number is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Phone Number End -->
+
+        <!-- FAX Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>FAX</mat-label>
+
+          <input matInput placeholder="Phone" [formControl]="DiagnosticAdminManagementAddEditForm.controls['fax']"
+            (blur)="inputUntouch(DiagnosticAdminManagementAddEditForm,'fax')">
+
+          <mat-error
+            *ngIf="DiagnosticAdminManagementAddEditForm.controls['fax'].touched && !DiagnosticAdminManagementAddEditForm.controls['fax'].valid && DiagnosticAdminManagementAddEditForm.controls['fax'].errors.maxlength">
+            FAX is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- FAX End -->
+
+        <!-- Address Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Address</mat-label>
+
+          <input matInput placeholder="Address" [formControl]="DiagnosticAdminManagementAddEditForm.controls['address']"
+            (blur)="inputUntouch(DiagnosticAdminManagementAddEditForm,'address')">
+
+          <mat-error *ngIf="DiagnosticAdminManagementAddEditForm.controls['address'].touched && !DiagnosticAdminManagementAddEditForm.controls['address'].valid && DiagnosticAdminManagementAddEditForm.controls['address'].errors.required">
+            Address required.
+          </mat-error>
+
+          <mat-error *ngIf="DiagnosticAdminManagementAddEditForm.controls['address'].touched && !DiagnosticAdminManagementAddEditForm.controls['address'].valid && DiagnosticAdminManagementAddEditForm.controls['address'].errors.maxlength">
+            Address is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Address End -->
+
+        <!-- State Start -->
+        <mat-form-field class="parent_cat" appearance="fill">
+          <mat-label>State</mat-label>
+
+          <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
+            <mat-option [value]="">Select state</mat-option>
+            <mat-option *ngFor="let state of htmlText.states;" value="{{ state.name }}">{{ state.name }}</mat-option>
+          </mat-select>
+
+          <mat-error *ngIf="DiagnosticAdminManagementAddEditForm.controls['state'].touched && !DiagnosticAdminManagementAddEditForm.controls['state'].valid && DiagnosticAdminManagementAddEditForm.controls['state'].errors.required">
+            State required.
+          </mat-error>
+        </mat-form-field>
+        <!-- State End -->
+
+        <!-- City Start -->
+        <mat-form-field class="parent_cat" appearance="fill">
+          <mat-label>City</mat-label>
+
+          <mat-select formControlName="city">
+            <mat-option value=0>Select city</mat-option>
+            <mat-option *ngFor="let city of htmlText.cities;" value="{{ city }}">{{ city }}</mat-option>
+          </mat-select>
+
+          <mat-error *ngIf="DiagnosticAdminManagementAddEditForm.controls['city'].touched && !DiagnosticAdminManagementAddEditForm.controls['city'].valid && DiagnosticAdminManagementAddEditForm.controls['city'].errors.required">
+            State required.
+          </mat-error>
+        </mat-form-field>
+        <!-- City End -->
+
+        <!-- Zip Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Zip</mat-label>
+
+          <input type="text" matInput placeholder="ZIP" [formControl]="DiagnosticAdminManagementAddEditForm.controls['zip']" (blur)="inputUntouch(DiagnosticAdminManagementAddEditForm,'zip')">
+
+          <mat-error *ngIf="DiagnosticAdminManagementAddEditForm.controls['zip'].touched && !DiagnosticAdminManagementAddEditForm.controls['zip'].valid && DiagnosticAdminManagementAddEditForm.controls['zip'].errors.required">
+            Zip required.
+          </mat-error>
+        </mat-form-field>
+        <!-- Zip Start -->
+
+        <ng-container *ngIf="!params_id">
+          <!-- Password Start -->
+          <ng-container *ngIf="!params_id">
+            <mat-form-field class="form-group" appearance="fill">
+
+              <input matInput placeholder="Password" type="password"
+                [formControl]="DiagnosticAdminManagementAddEditForm.controls['password']">
+
+              <mat-error *ngIf="!DiagnosticAdminManagementAddEditForm.controls['password'].valid && DiagnosticAdminManagementAddEditForm.controls['password'].touched">
+                Password required.
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="form-group" appearance="fill">
+              <input matInput placeholder="Confirm Password" type="password"
+                [formControl]="DiagnosticAdminManagementAddEditForm.controls['confirmpassword']">
+
+              <mat-error *ngIf="!DiagnosticAdminManagementAddEditForm.controls['confirmpassword'].valid && DiagnosticAdminManagementAddEditForm.controls['confirmpassword'].touched">
+                Password does not match
+              </mat-error>
+            </mat-form-field>
+          </ng-container>
+          <!-- Password End -->
+        </ng-container>
+
+        <mat-checkbox [formControl]="DiagnosticAdminManagementAddEditForm.controls['status']" checked>Active</mat-checkbox>
+
+
+        <h2> Contact Person 1</h2>
+
+        <!-- Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+
+          <input matInput placeholder="Center Name" [formControl]="DiagnosticAdminManagementAddEditForm.controls['contact_person_1_name']"
+            (blur)="inputUntouch(DiagnosticAdminManagementAddEditForm,'contact_person_1_name')">
+
+          <mat-error
+            *ngIf="DiagnosticAdminManagementAddEditForm.controls['contact_person_1_name'].touched && !DiagnosticAdminManagementAddEditForm.controls['contact_person_1_name'].valid && DiagnosticAdminManagementAddEditForm.controls['contact_person_1_name'].errors.maxlength">
+            Name is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Name End -->
+
+        <!-- Email Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Email Address</mat-label>
+
+          <input matInput placeholder="Email Address" [formControl]="DiagnosticAdminManagementAddEditForm.controls['contact_person_1_email']"
+            (blur)="inputUntouch(DiagnosticAdminManagementAddEditForm,'contact_person_1_email')">
+
+          <mat-error
+            *ngIf="DiagnosticAdminManagementAddEditForm.controls['contact_person_1_email'].touched && !DiagnosticAdminManagementAddEditForm.controls['contact_person_1_email'].valid && DiagnosticAdminManagementAddEditForm.controls['contact_person_1_email'].errors.email">
+            Email is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Email End -->
+
+        <!-- Phone Number Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+
+          <input matInput placeholder="Phone" [formControl]="DiagnosticAdminManagementAddEditForm.controls['contact_person_1_phone']"
+            (blur)="inputUntouch(DiagnosticAdminManagementAddEditForm,'contact_person_1_phone')">
+
+          <mat-error
+            *ngIf="DiagnosticAdminManagementAddEditForm.controls['contact_person_1_phone'].touched && !DiagnosticAdminManagementAddEditForm.controls['contact_person_1_phone'].valid && DiagnosticAdminManagementAddEditForm.controls['contact_person_1_phone'].errors.maxlength">
+            Phone Number is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Phone Number End -->
+
+
+        <h2> Contact Person 2</h2>
+
+        <!-- Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+
+          <input matInput placeholder="Name" [formControl]="DiagnosticAdminManagementAddEditForm.controls['contact_person_2_name']"
+            (blur)="inputUntouch(DiagnosticAdminManagementAddEditForm,'contact_person_2_name')">
+
+          <mat-error
+            *ngIf="DiagnosticAdminManagementAddEditForm.controls['contact_person_2_name'].touched && !DiagnosticAdminManagementAddEditForm.controls['contact_person_2_name'].valid && DiagnosticAdminManagementAddEditForm.controls['contact_person_2_name'].errors.maxlength">
+            Name is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Name End -->
+
+        <!-- Email Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Email Address</mat-label>
+
+          <input matInput placeholder="Email Address" [formControl]="DiagnosticAdminManagementAddEditForm.controls['contact_person_2_email']"
+            (blur)="inputUntouch(DiagnosticAdminManagementAddEditForm,'contact_person_2_email')">
+
+          <mat-error
+            *ngIf="DiagnosticAdminManagementAddEditForm.controls['contact_person_2_email'].touched && !DiagnosticAdminManagementAddEditForm.controls['contact_person_2_email'].valid && DiagnosticAdminManagementAddEditForm.controls['contact_person_2_email'].errors.email">
+            Email is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Email End -->
+
+        <!-- Phone Number Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+
+          <input matInput placeholder="Phone" [formControl]="DiagnosticAdminManagementAddEditForm.controls['contact_person_2_phone']"
+            (blur)="inputUntouch(DiagnosticAdminManagementAddEditForm,'contact_person_2_phone')">
+
+          <mat-error
+            *ngIf="DiagnosticAdminManagementAddEditForm.controls['contact_person_2_phone'].touched && !DiagnosticAdminManagementAddEditForm.controls['contact_person_2_phone'].valid && DiagnosticAdminManagementAddEditForm.controls['contact_person_2_phone'].errors.maxlength">
+            Phone Number is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Phone Number End -->
+
+
+        <!-- end here -->
+        <span class="submit_form">
+          <button mat-flat-button type="button" [routerLink]="['/admin/diagnostic-admin-management']">Back </button>
+          <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset </button>
+          <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
+          <button mat-flat-button type="button" *ngIf="params_id != ''" (click)="openDialog('')"> Change Password </button>
+        </span>
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+
+</mat-card>
+<!-- Admin Footer -->
+<app-admin-footer></app-admin-footer>
