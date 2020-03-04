@@ -344,6 +344,7 @@
 .superbillerContainer .biller_wrapper .super_bill_item span P{ font-size: 18px!important; line-height: 20px!important;} 
 .superbillerContainer .biller_wrapper .super_bill_item span h2{ margin: 0;} 
 .superbillerContainer .biller_wrapper .super_bill_item span button { line-height: 28px!important; width: 90px!important; }
+.superbillerContainer .biller_wrapper .super_bill_item {background-size: 90px!important; }
  
 
 
