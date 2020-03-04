@@ -1,5 +1,12 @@
 <!-- Admin Header -->
-<app-admin-header></app-admin-header>
+<app-admin-header *ngIf="userData.user_type == 'admin'"></app-admin-header>
+
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-header *ngIf="userData.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+
+
 
 <mat-card class="admin_wrapper">
 
@@ -9,8 +16,15 @@
     </mat-toolbar>
 
     <mat-toolbar class="add_header">
-      <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Doctor</span>
-      <button mat-flat-button [routerLink]="['/admin/doctor-management/add']">Add Doctor</button>
+      <ng-container *ngIf="userData.user_type == 'admin'">
+        <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Doctor</span>
+        <button mat-flat-button [routerLink]="['/admin/doctor-management/add']">Add Doctor</button>
+      </ng-container>
+
+      <ng-container *ngIf="userData.user_type == 'diagnostic_admin'">
+        <span class="bradcrumb"><a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Doctor</span>
+        <button mat-flat-button [routerLink]="['/diagnostic-admin/doctor-management/add']">Add Doctor</button>
+      </ng-container>
     </mat-toolbar>
     <!-- End header with add button -->
 
@@ -28,5 +42,10 @@
   </mat-card-content>
 </mat-card>
 
+
+
 <!-- Admin Footer -->
-<app-admin-footer></app-admin-footer>
+<app-admin-footer *ngIf="userData.user_type == 'admin'"></app-admin-footer>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-footer *ngIf="userData.user_type == 'diagnostic_admin'"></app-diagnostic-admin-footer>

@@ -8,7 +8,7 @@
         <img src="../../../../assets/images/adminDoctoricon1.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.totalDoctorCount }}</h4>
+        <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
         <p class="doctorNumber">Total Number of <br>Doctors</p>
       </span>
       <span class="button_wrapper">
@@ -21,7 +21,7 @@
         <img src="../../../../assets/images/adminDoctoricon2.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.totalBillerCount }}</h4>
+        <h4 class="dataCount"> {{ allResolveData.total_biller }}</h4>
         <p class="doctorNumber">Total Number of<br> Billers</p>
       </span>
       <span class="button_wrapper">
@@ -34,7 +34,7 @@
         <img src="../../../../assets/images/adminDoctoricon3.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.totalTechCount }}</h4>
+        <h4 class="dataCount"> {{ allResolveData.total_tech }}</h4>
         <p class="doctorNumber">Total Number of <br>Techs</p>
       </span>
       <span class="button_wrapper">
@@ -53,7 +53,7 @@
         <img src="../../../../assets/images/billerNoteicon3.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.doctorOfficeCount }}</h4>
+        <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
         <p class="doctorNumber">Total No of <br>Doctor's Office</p>
       </span>
       <span class="button_wrapper">
@@ -66,7 +66,7 @@
         <img src="../../../../assets/images/billerNoteicon1.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.appointmentsPendingCount }}</h4>
+        <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
         <p class="doctorNumber">Total Appointments<br> Pending</p>
       </span>
       <span class="button_wrapper">
@@ -79,7 +79,7 @@
         <img src="../../../../assets/images/billerNoteicon2.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.appointmentsCompletedCount }}</h4>
+        <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
         <p class="doctorNumber">Total Appointments<br> Completed</p>
       </span>
       <span class="button_wrapper">
@@ -106,8 +106,8 @@
           <p>Total No of <br>
             Manual Records
           </p>
-          <h2> {{ allResolveData.totalMannualReportCount }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total Mannual Reports');">view all</button>
+          <h2> {{ allResolveData.total_reports_type_manual }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total manual Reports');">view all</button>
         </span>
       </mat-card-content>
 
@@ -122,7 +122,7 @@
           <p>Total No of <br>
             File Records
           </p>
-          <h2> {{ allResolveData.totalFileReportCount }} </h2>
+            <h2> {{ allResolveData.total_reports_type_file }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
         </span>
       </mat-card-content>
@@ -147,7 +147,7 @@
           <p>Total No of <br>
             Images Not Processed
           </p>
-          <h2> {{ allResolveData.totalImageNotProcessCount }} </h2>
+          <h2> {{ allResolveData.total_field_exists }} </h2>
           <button mat-flat-button routerLink="/admin/images-not-process">view all</button>
         </span>
       </mat-card-content>
@@ -163,7 +163,7 @@
           <p>Total No of <br>
             Basic Details Not Processed
           </p>
-          <h2> {{ allResolveData.totalTextNotProcessCount }} </h2>
+          <h2> {{ allResolveData.total_field_not_exists }} </h2>
           <button mat-flat-button routerLink="/admin/fileds-not-process">view all</button>
         </span>
       </mat-card-content>
@@ -201,9 +201,9 @@
 
         <span class="container_wrapper">
           <p>Total No of <br>
-            Reports Uploaded
+            Reports Added
           </p>
-          <h2> {{ allResolveData.totalReportCount }} </h2>
+          <h2> {{ allResolveData.total_reports }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Reports Uploaded')">view all</button>
         </span>
       </mat-card-content>
@@ -234,7 +234,7 @@
           <p>Total No of <br>
             Report Signed
           </p>
-          <h2> {{ allResolveData.signReportCount }} </h2>
+          <h2> {{ allResolveData.total_sign_reports }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
         </span>
       </mat-card-content>
@@ -249,7 +249,7 @@
           <p> Sent to <br>
             Biller
           </p>
-          <h2> {{ allResolveData.sendToSuparBillerReportCount }} </h2>
+          <h2> {{ allResolveData.total_send_to_supar_biller_reports }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Super Bill')">view all</button>
         </span>
       </mat-card-content>
@@ -262,7 +262,7 @@
         </span>
         <span class="container_wrapper">
           <p> Reports Downloaded </p>
-          <h2> {{ allResolveData.totalReportDownloadCount }} </h2>
+          <h2> {{ allResolveData.total_reports_download }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Download Bill')">view all</button>
         </span>
       </mat-card-content>
@@ -275,7 +275,7 @@
         </span>
         <span class="container_wrapper">
           <p> Reports Pending Sing </p>
-          <h2> {{ allResolveData.notSignReportCount }} </h2>
+          <h2> {{ allResolveData.total_not_sign_reports }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Reports Pending Sing')">view all</button>
         </span>
       </mat-card-content>
@@ -289,12 +289,14 @@
 
     <mat-toolbar class="top_header">
       <h2> {{ htmlText.headerText }} </h2>
-      <button class="add_new" mat-button routerLink="/admin/patient-management/add">add patient records
-        manually
+      <button class="add_new tooltip" mat-button routerLink="/admin/patient-management/add">
+        <span class="tooltiptext"> Add Report </span>
+        <i class="material-icons">add_box</i>
       </button>
 
-      <button class="add_new" mat-button (click)="viewReportProcessData(htmlText.headerText);">
-        Refresh
+      <button class="add_new tooltip" mat-button (click)="refreshDashboard();">
+        <span class="tooltiptext"> Refresh Dashboard </span>
+        <i class="material-icons">cached</i>
       </button>
     </mat-toolbar>
 
@@ -328,9 +330,14 @@
           </mat-form-field>
         </span>
 
-        <button mat-raised-button type="button" color="primary" class="add_button" (click)="viewReportProcessData(htmlText.headerText);">Search</button>
-        <button mat-raised-button type="button" color="primary" class="add_button" (click)="resetSearch();">
-          <i class="material-icons"> replay </i>
+        <button mat-raised-button type="button" color="primary" class="add_button tooltip" (click)="viewReportProcessData(htmlText.headerText);">
+          <span class="tooltiptext"> Search </span>
+          <i class="material-icons">search</i>
+        </button>
+
+        <button mat-raised-button type="button" color="primary" class="add_button tooltip" (click)="resetSearch();" style="margin-left: 2px;">
+          <span class="tooltiptext"> Reset </span>
+          <i class="material-icons">replay</i>
         </button>
       </ng-container>
 
@@ -339,48 +346,48 @@
     <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8 adminTables">
       <ng-container matColumnDef="no">
         <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
+        <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }}. </td>
       </ng-container>
 
       <ng-container matColumnDef="patientName">
-        <th mat-header-cell *matHeaderCellDef> Patient Name. </th>
+        <th mat-header-cell *matHeaderCellDef> Patient Name </th>
         <td mat-cell *matCellDef="let element" data-label="Patient Name"> {{ element.patient_name }} </td>
       </ng-container>
 
       <ng-container matColumnDef="doctorName">
-        <th mat-header-cell *matHeaderCellDef> Doctor Name</th>
+        <th mat-header-cell *matHeaderCellDef> Doctor Name </th>
         <td mat-cell *matCellDef="let element" data-label="Doctor Name" innerHTML="{{ element.doctor_details }}"> </td>
       </ng-container>
 
       <ng-container matColumnDef="techName">
-        <th mat-header-cell *matHeaderCellDef> Tech Name</th>
+        <th mat-header-cell *matHeaderCellDef> Tech Name </th>
         <td mat-cell *matCellDef="let element" data-label="Tech Name"> {{ element.tech_name }} </td>
       </ng-container>
 
       <ng-container matColumnDef="billerName" *ngIf="htmlText.headerText != 'Patient Reports'">
-        <th mat-header-cell *matHeaderCellDef> Biller Name</th>
-        <td mat-cell *matCellDef="let element" data-label="Biller Name"> {{ element.biller_name }} {{ element.biller_details.lastname }} </td>
+        <th mat-header-cell *matHeaderCellDef> Biller Name </th>
+        <td mat-cell *matCellDef="let element" data-label="Biller Name"> {{ element.biller_name }} </td>
       </ng-container>
 
       <ng-container matColumnDef="billGenerationDate" *ngIf="htmlText.headerText != 'Patient Reports'">
-        <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>
+        <th mat-header-cell *matHeaderCellDef> Bill Generation Date </th>
         <td mat-cell *matCellDef="let element" data-label="Bill Generation Date">
-          {{ element.billGenerationDate | date }} </td>
+          {{ element.bill_generation_date | date }} </td>
       </ng-container>
 
       <ng-container matColumnDef="billSentDate" *ngIf="htmlText.headerText != 'Patient Reports'">
-        <th mat-header-cell *matHeaderCellDef> Bill SentDate</th>
-        <td mat-cell *matCellDef="let element" data-label="Bill Sent Date"> {{ element.billSentDate | date }} </td>
+        <th mat-header-cell *matHeaderCellDef> Bill Sent Date </th>
+        <td mat-cell *matCellDef="let element" data-label="Bill Sent Date"> {{ element.bill_sent_date | date }} </td>
       </ng-container>
 
       <ng-container matColumnDef="reportType">
-        <th mat-header-cell *matHeaderCellDef> Record Type</th>
+        <th mat-header-cell *matHeaderCellDef> Record Type </th>
         <td mat-cell *matCellDef="let element" data-label="Record Type"> {{ element.report_type }} </td>
       </ng-container>
 
       <ng-container matColumnDef="superBill" *ngIf="htmlText.headerText != 'Patient Reports'">
         <th mat-header-cell *matHeaderCellDef> Super Bill</th>
-        <td mat-cell *matCellDef="let element" data-label="Super Bill"> {{ element.superBill }} </td>
+        <td mat-cell *matCellDef="let element" data-label="Super Bill"> {{ element.super_bill }} </td>
       </ng-container>
 
       <ng-container matColumnDef="status">
@@ -388,7 +395,7 @@
         <td mat-cell *matCellDef="let element" data-label="Status">
           <ng-container *ngIf="element.report_type == 'file' && !element.images">Data Processing</ng-container>
           
-          <ng-container *ngIf="element.report_type == 'mannual' || (element.report_type == 'file' && element.images)"> {{ element.status }} </ng-container>
+          <ng-container *ngIf="element.report_type == 'manual' || (element.report_type == 'file' && element.images)"> {{ element.status }} </ng-container>
         </td>
       </ng-container>
 
@@ -402,17 +409,32 @@
         <td mat-cell *matCellDef="let element; let i = index;">
           <span class="buttons_ro">
 
-            <button mat-button type="button" *ngIf="element.report_type == 'mannual' || (element.report_type == 'file' && element.images)" class="viewButton" type="button" [routerLink]="['/admin/patient-record', element._id]">View</button>
+            <button mat-button type="button" *ngIf="element.report_type == 'manual' || (element.report_type == 'file' && element.images)" class="viewButton tooltip" type="button" [routerLink]="['/admin/patient-record', element._id]">
+              <span class="tooltiptext">View</span>
+              <i class="material-icons">pageview</i>
+            </button>
             
-            <button mat-button type="button" *ngIf="htmlText.headerText == 'Download Bill'" class="viewButton" type="button" (click)="viewDownloadDetails(element._id);">Details</button>
+            <button mat-button type="button" *ngIf="htmlText.headerText == 'Download Bill'" class="viewButton tooltip" type="button" (click)="viewDownloadDetails(element._id);">Details</button>
             
-            <button mat-button type="button" *ngIf="element.status == 'Downloaded' && element.report_type == 'mannual' || (element.report_type == 'file' && element.images)" class="editButton" [routerLink]="['/admin/patient-record/edit', element._id]">Edit</button>
+            <button mat-button type="button" *ngIf="element.status == 'Downloaded' && element.report_type == 'manual' || (element.report_type == 'file' && element.images)" class="editButton tooltip" [routerLink]="['/admin/patient-record/edit', element._id]">
+              <span class="tooltiptext">Edit</span>
+              <i class="material-icons">create</i>
+            </button>
             
-            <button mat-button type="button" *ngIf="element.report_type == 'file' && !element.images" class="editButton downloadBtn">Processing</button>
+            <button mat-button type="button" *ngIf="element.report_type == 'file' && !element.images" class="editButton downloadBtn tooltip">
+              <span class="tooltiptext">Processing</span>
+              <i class="material-icons">cached</i>
+            </button>
             
-            <button mat-button type="button" *ngIf="element.status != 'Pending Signature'" class="editButton downloadBtn" (click)="downloadReport(element);">Download</button>
+            <button mat-button type="button" *ngIf="element.status != 'Pending Signature'" class="editButton downloadBtn tooltip" (click)="downloadReport(element);">
+              <span class="tooltiptext">Download</span>
+              <i class="material-icons">cloud_download</i>
+            </button>
             
-            <button mat-button type="button" class="editButton downloadBtn" (click)="deleteReport(element._id, i);">Delete</button>
+            <button mat-button type="button" class="editButton downloadBtn tooltip" (click)="deleteReport(element._id, i);">
+              <span class="tooltiptext">Delete</span>
+              <i class="material-icons">delete</i>
+            </button>
           
           </span>
         </td>
@@ -422,7 +444,9 @@
       <tr mat-row *matRowDef="let row; columns: allDataColumns;let i = index"></tr>
     </table>
 
-    <mat-paginator [pageSizeOptions]="[50, 100, 200, 500]"></mat-paginator>
+    <button mat-raised-button type="button" color="primary" (click)="pagination('prev');">Prev</button>
+    <button mat-raised-button type="button" color="primary" (click)="pagination('next');">Next</button>
+
   </mat-card-content>
   <!-- dashboard all listing end here -->
 </mat-card>

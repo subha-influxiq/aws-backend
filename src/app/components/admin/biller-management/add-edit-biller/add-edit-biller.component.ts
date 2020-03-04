@@ -216,7 +216,7 @@ export class ChangePasswordModal {
 
   constructor(public dialogRef: MatDialogRef<ChangePasswordModal>,
     public fb: FormBuilder, public httpService: HttpServiceService, public cookie: CookieService,
-    public activeRoute: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    public activeRoute: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: DialogData, public snackBar: MatSnackBar) {
     
     this.params_id = data.id;
     this.user_token = cookie.get('jwtToken');
@@ -241,8 +241,7 @@ export class ChangePasswordModal {
   }
 
   changePasswordFormSubmit() {
-    let x: any;
-    for (x in this.changePwdForm.controls) {
+    for (let x in this.changePwdForm.controls) {
       this.changePwdForm.controls[x].markAsTouched();
     }
     if (this.changePwdForm.valid) {
@@ -252,8 +251,16 @@ export class ChangePasswordModal {
         "adminflag": 1,
         "newPassword": this.changePwdForm.value.password,
       }
-      this.httpService.httpViaPost('changepassword',data).subscribe(response=>{
-        console.log("response",response);
+      this.httpService.httpViaPost('changepassword',data).subscribe(response => {
+        if(response.status == true) {
+          this.snackBar.open('Successfully changed.', '', {
+            duration: 2000,
+          });
+        } else {
+          this.snackBar.open(response.message, '', {
+            duration: 2000,
+          });
+        }
       });
     }
 

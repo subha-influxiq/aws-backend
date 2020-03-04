@@ -7,6 +7,7 @@ import { HttpServiceService } from '../../../../../services/http-service.service
 import { DatePipe } from '@angular/common';
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { PatientReportViewComponent } from '../patient-report-view.component';
 
 @Component({
   selector: 'app-healthrisk-system-encounter',
@@ -21,17 +22,18 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     nav: 'Add Patient', 
     header: "Physician Report"
   };
+
+  public reportDetails: any;
   public cookiesData: any;
 
   @Input()
-  set patientDetails(patientDetails: any) {
-    this.htmlText.patientDetails = patientDetails;
+  set patientDetails(patientDetailsData: any) {
+    this.reportDetails = patientDetailsData;
   }
 
   constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService, public cookie: CookieService, public fb: FormBuilder, public router: Router, public datePipe: DatePipe) {
     this.cookiesData = this.cookie.getAll();
     this.cookiesData.user_details = JSON.parse(this.cookiesData.user_details);
-    //this.getPatientData(this.activatedRoute.snapshot.params._id);
   }
 
   ngOnInit() {

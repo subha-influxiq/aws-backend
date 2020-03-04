@@ -13,8 +13,6 @@ import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component
 import * as momentImported from 'moment';
 const moment = momentImported;
 
-
-
 @Component({
   selector: 'app-doctor-dashboard',
   templateUrl: './doctor-dashboard.component.html',
@@ -37,7 +35,7 @@ export class DoctorDashboardComponent implements OnInit {
     dateRange: ""
   };
 
-  public allDataColumns: string[] = ['patientName', 'doctorName', 'techName', 'billerName', 'billGenerationDate', 'billSentDate', 'reportType', 'status', 'superBill', 'action'];
+  public allDataColumns: string[] = ['no', 'patient_name', 'doctor_name', 'tech_name', 'biller_name', 'bill_generation_date', 'bill_sent_date', 'report_type', 'status', 'super_bill', 'action'];
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
   public dialogRef: any;
@@ -53,32 +51,14 @@ export class DoctorDashboardComponent implements OnInit {
     this.authData["jwtToken"] = cookie.get('jwtToken');
     
     this.activatedRoute.data.forEach(resolveData => {
-      this.allResolveData = resolveData.doctordata;
-      this.allDataSource = new MatTableDataSource(this.allResolveData.data.allReportData);
-      this.allDataSource.paginator = this.paginator;
+      this.allResolveData = resolveData.doctordata.data;
+
+      this.viewReportProcessData(this.htmlText.tableHeaderText);
     });
   }
 
   ngOnInit() {
   }
-
-  ngAfterViewInit() {
-  }
-
-  getBillerData() {
-    var data = {
-      "source": "users_view_doctor",
-      "condition": {
-        "_id_object": this.authData.to
-      },
-      "token": this.authData
-    }
-
-    this.http.httpViaPost('datalist', data).subscribe((response) => {
-      this.htmlText.billerData = response.res;
-    });
-  }
-
 
   openDialog() {
     const dialogRef = this.dialog.open(UploadDialogBoxComponent, {
@@ -89,21 +69,8 @@ export class DoctorDashboardComponent implements OnInit {
     });
   }
 
-  getDoctorSignedData() {
-    var data = {
-      "source": "doctor_signature",
-      "condition": {
-        "user_id_object": this.authData
-      },
-      "token": this.authData
-    }
-    this.http.httpViaPost('datalist', data).subscribe(response => {
-      console.log("doctor signature: ", response.res);
-    });
-  }
-
   viewReportProcessData(flag: string = null) {
-    this.allDataColumns = ['billGenerationDate', 'billSentDate', 'doctorName','patientName', 'billerName','report_type','status','superBill','techName', 'action'];
+    this.allDataColumns = ['no', 'patient_name', 'tech_name', 'doctor_name', 'biller_name', 'bill_generation_date', 'bill_sent_date', 'report_type', 'status', 'super_bill', 'action'];
     this.htmlText.headerText = flag;
     var data: any = {};
     /* Open modal */
@@ -124,9 +91,10 @@ export class DoctorDashboardComponent implements OnInit {
     switch (flag) {
       case 'Report Signed':
         data = {
-          "source": "Patient-Record-Report_view",
+          "source": "data_pece",
           "search": this.searchJson,
           "condition": {
+            "report_type": { $exists: true },
             "doctor_signature": { $exists: true },
             "doctor_id": this.authData.user_details._id
           },
@@ -134,11 +102,12 @@ export class DoctorDashboardComponent implements OnInit {
         };
         break;
       case 'Report unSigned':
-        this.allDataColumns = ['doctorName','patientName', 'report_type','status','techName', 'action'];
+        this.allDataColumns = ['no', 'patient_name', 'tech_name', 'doctor_name', 'report_type', 'status', 'action'];
         data = {
-          "source": "Patient-Record-Report_view",
+          "source": "data_pece",
           "search": this.searchJson,
           "condition": {
+            "report_type": { $exists: true },
             "doctor_signature": { $exists: false },
             "doctor_id": this.authData.user_details._id
           },
@@ -147,9 +116,10 @@ export class DoctorDashboardComponent implements OnInit {
         break;
       default:
         data = {
-          "source": "Patient-Record-Report_view",
+          "source": "data_pece",
           "search": this.searchJson,
           "condition": {
+            "report_type": { $exists: true },
             "doctor_id": this.authData.user_details._id
           },
           "token": this.authData.jwtToken
@@ -158,8 +128,8 @@ export class DoctorDashboardComponent implements OnInit {
     }
     this.http.httpViaPost('dashboard-datalist', data).subscribe(response => {
       if(response.data.length > 0) {
-        this.allResolveData.data = response.data;
-        this.allDataSource = new MatTableDataSource(this.allResolveData.data);
+        this.allResolveData.recordData = response.data;
+        this.allDataSource = new MatTableDataSource(this.allResolveData.recordData);
         this.allDataSource.paginator = this.paginator;
       } else {
         this.openModal(modalData);
@@ -176,83 +146,6 @@ export class DoctorDashboardComponent implements OnInit {
           break;
       }
     });
-  }
-
-  public sendToBillerJson: any = {};
-  public billerFlug: number;
-
-  setSendBiller(index: number, event: any) {
-    this.billerFlug = event.value + 1;
-    this.sendToBillerJson[index] = event.value;
-  }
-
-  allSendToBiller(index: number) {
-    if(typeof this.sendToBillerJson[index] !== 'undefined') {
-      for(var loop = 0; loop <= this.allResolveData.data.allBillerList.length - 1; loop++) {
-        if(this.allResolveData.data.allBillerList[loop].biller_id == this.sendToBillerJson[index]) {
-          var fullname = this.allResolveData.data.allBillerList[loop].firstname + ' ' + this.allResolveData.data.allBillerList[loop].lastname;
-        }
-      }
-
-
-      let modalData: any = {
-        panelClass: 'bulkupload-dialog',
-        data: {
-          header: "Message",
-          message: "Do you want to send this report to biller: " + fullname + " ?",
-          button1: { text: "Yes" },
-          button2: { text: "No" },
-        }
-      };
-      this.openModal(modalData);
-
-      this.dialogRef.afterClosed().subscribe(result => {
-        switch (result) {
-          case "Yes":
-            var data: any = {
-              "source": "patient_management",
-              "data": {
-                "id": this.allDataSource[index]._id,
-                "biller_id": this.sendToBillerJson[index],
-                "status": 2
-              },
-              "sourceobj": ["biller_id"],
-              "token": this.authData
-            };
-
-            console.log("ooooooooooooooooo");
-
-            this.http.httpViaPost('addorupdatedata', data).subscribe((response) => {
-              if (response.status = "success") {
-                let message = "Successfully Send";
-                let action = "OK";
-                this.matSnackBar.open(message, action, {
-                  duration: 2000,
-                });
-              }
-            });
-            break;
-          case "No":
-            this.dialogRef.close();
-            break;
-        }
-      });
-    } else {
-      let modalData: any = {
-        panelClass: 'bulkupload-dialog',
-        data: {
-          header: "Message",
-          message: "Please select a biller.",
-          button1: { text: "" },
-          button2: { text: "OK" },
-        }
-      };
-      this.openModal(modalData);
-    }
-  }
-
-  viewButton(index: number) {
-    console.log("View Button...", this.allDataSource[index]);
   }
 
   downloadReport(report: any) {
@@ -293,7 +186,7 @@ export class DoctorDashboardComponent implements OnInit {
 
     this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
       if(response.status == 'success') {
-        this.matSnackBar.open("Start downloading.", "Ok", {
+        this.matSnackBar.open("Start downloading...", "", {
           duration: 3000
         });
         window.open(report.file_path, "_blank");
@@ -309,15 +202,16 @@ export class DoctorDashboardComponent implements OnInit {
 
   refreshDashboard() {
     let postData: any = {
-      source: "Patient-Record-Report_view",
+      source: "data_pece",
       condition: {
-        biller_id: this.authData.user_details._id
+        doctor_id: this.authData.user_details._id
       }
     };
-    this.http.httpViaPost("biller-dashboard", postData).subscribe(response => {
+    
+    this.http.httpViaPost("doctor-dashboard", postData).subscribe(response => {
       if(response.status == 'success') {
         this.allResolveData = response.data;
-        //this.viewReportProcessData(this.htmlText.tableHeaderText);
+        this.viewReportProcessData(this.htmlText.tableHeaderText);
       } else {
         this.matSnackBar.open("Please wait...", "", {
           duration: 1000

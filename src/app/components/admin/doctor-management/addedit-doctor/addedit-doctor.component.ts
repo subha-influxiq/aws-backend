@@ -45,6 +45,7 @@ export class AddeditDoctorComponent implements OnInit {
     public acivatedRoute: ActivatedRoute, public snackBar: MatSnackBar) {
 
     this.htmlText.userData = this.cookieService.getAll();
+    this.htmlText.userData.user_details = JSON.parse(this.htmlText.userData.user_details);
     this.allStateCityData();
     this.getAllData();
 
@@ -210,14 +211,18 @@ export class AddeditDoctorComponent implements OnInit {
       }
 
       /* start process to submited data */
-      let postData: any = {
+      var postData: any = {
         "source": "data_pece",
         "data": this.doctorManagementAddEditForm.value,
         "domainurl": environment.siteBaseUrl + 'reset-password',
-        "sourceobj": ["doctors_office_id"],
-        "sourceobjArray": ["tech_id", "biller_id"],
+        "sourceobjArray": ["tech_id", "biller_id", "doctors_office_id"],
         "token": this.cookieService.get('jwtToken')
       };
+
+      if(this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
+        postData.data["diagnostic_admin_id"] = this.htmlText.userData.user_details._id;
+        postData["sourceobj"] = ["diagnostic_admin_id"];
+      }
 
       this.http.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
         if (response.status == "success") {

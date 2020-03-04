@@ -11,6 +11,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class ListDoctorComponent implements OnInit {
 
   // ===============================Declarations=========================
+  public userData: any;
   public  docData: any = [];
   public docData_skip: any = [
     "_id",
@@ -23,6 +24,7 @@ export class ListDoctorComponent implements OnInit {
     "tech_id",
     "biller_id",
     "doctors_office_id",
+    "diagnostic_admin_id",
     "taxo_list",
     "password",
     "created_at",
@@ -74,6 +76,8 @@ export class ListDoctorComponent implements OnInit {
     private router: Router,public activatedRoute : ActivatedRoute) {
 
     this.user_cookie = cookieService.get('jwtToken');
+    this.userData = JSON.parse(this.cookieService.get('user_details'));
+
     this.apiUrl = http.baseUrl;
   }
 

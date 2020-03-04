@@ -49,9 +49,11 @@ export class HealthRiskAnalysisComponent implements OnInit {
   public cookiesData: any;
   public htmlText: any = {};
 
+  public reportDetails: any;
+
   @Input()
-  set patientDetails(patientDetails: any) {
-    this.htmlText.patientDetails = patientDetails;
+  set patientDetails(patientDetailsData: any) {
+    this.reportDetails = patientDetailsData;
   }
 
   constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService,

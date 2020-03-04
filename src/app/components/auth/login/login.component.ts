@@ -57,6 +57,10 @@ export class LoginComponent implements OnInit {
           "user_type": "doctor_office",
           "routerNav": "doctor-office/dashboard"
         },
+        {
+          "user_type": "diagnostic_admin",
+          "routerNav": "diagnostic-admin/dashboard"
+        }
       ]
     }
   }

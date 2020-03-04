@@ -9,17 +9,17 @@
       </tr>
 
       <tr>
-        <td> Patient Name <input type="text" value="{{ htmlText.patientDetails.patient_name }}"></td>
+        <td> Patient Name <input type="text" value="{{ reportDetails.reportData[0].patient_name }}"></td>
         <td>
-          <label> <input type="radio" [(ngModel)]="htmlText.patientDetails.gender" [ngModelOptions]="{standalone: true}" value='Male'>M</label>
-          <label> <input type="radio" [(ngModel)]="htmlText.patientDetails.gender" [ngModelOptions]="{standalone: true}" value='Female'>F</label>
+          <label> <input type="radio" [(ngModel)]="reportDetails.reportData[0].gender" [ngModelOptions]="{standalone: true}" value='Male'>M</label>
+          <label> <input type="radio" [(ngModel)]="reportDetails.reportData[0].gender" [ngModelOptions]="{standalone: true}" value='Female'>F</label>
         </td>
-        <td> <label>Date <input type="text" value="{{ htmlText.patientDetails.test_date | date }}"> </label></td>
+        <td> <label>Date <input type="text" value="{{ reportDetails.reportData[0].test_date | date }}"> </label></td>
       </tr>
 
       <tr>
-        <td> Ordering Physician <input type="text" value="{{ htmlText.patientDetails.doctor_name }}"></td>
-        <td colspan="2"><label> D.O.B <input type="text" value="{{ htmlText.patientDetails.birth_date | date }}"></label></td>
+        <td> Ordering Physician <input type="text" value="{{ reportDetails.reportData[0].doctor_name }}"></td>
+        <td colspan="2"><label> D.O.B <input type="text" value="{{ reportDetails.reportData[0].birth_date | date }}"></label></td>
       </tr>
 
       <tr>
@@ -57,13 +57,13 @@
         <tr>
           <td class="widther">
         <tr>
-          <td><input type="checkbox"> </td>
+          <td><input type="checkbox" [(ngModel)]="reportDetails.details.E0840" [ngModelOptions]="{standalone: true}"> </td>
           <td> E08.40 Type 1 Diabetes W/ Neurological Manifestations, Not Stated as Uncontrolled</td>
         </tr>
         </td>
         <td class="widther">
           <tr>
-            <td><input type="checkbox"></td>
+            <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G603"></td>
             <td> G60.3 Idiopathic progressive neuropathy</td>
           </tr>
         </td>
@@ -72,13 +72,13 @@
         <tr>
           <td>
         <tr>
-          <td> <input type="checkbox"></td>
+          <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E1041"></td>
           <td>E10.41 Type 1 Diabetes Mellitus W/ Diabetic Mononeuropathy</td>
         </tr>
         </td>
         <td>
           <tr>
-            <td> <input type="checkbox"></td>
+            <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G608"></td>
             <td>G60.8 Other hereditary and idiopathic neuropathies</td>
           </tr>
         </td>
@@ -87,13 +87,13 @@
         <tr>
           <td>
         <tr>
-          <td> <input type="checkbox"></td>
+          <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E1042"></td>
           <td> E10.42 Type 1 Diabetes Mellitus W/ Diabetic Polyneuropathy</td>
         </tr>
         </td>
         <td>
           <tr>
-            <td> <input type="checkbox"></td>
+            <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G629"></td>
             <td>G62.9 Polyneuropathy, unspecified</td>
           </tr>
         </td>
@@ -108,7 +108,7 @@
           </td>
           <td>
             <tr>
-              <td> <input type="checkbox"></td>
+              <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G609"></td>
               <td>G60.9 Hereditary and idiopathic neuropathy, unspecified</td>
             </tr>
           </td>
@@ -117,13 +117,13 @@
         <tr>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E1043"></td>
               <td>E10.43 Type 1 Diabetes Mellitus W/ Diabetic Autonomic (Poly) Neuropathy</td>
             </tr>
           </td>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G9009"></td>
               <td>G90.09 Other idiopathic peripheral autonomic neuropathy</td>
             </tr>
           </td>
@@ -132,13 +132,13 @@
         <tr>
           <td>
             <tr>
-              <td> <input type="checkbox"></td>
+              <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E1044"></td>
               <td>E10.44 Type 1 Diabetes Mellitus W/ Diabetic Amyotrophy</td>
             </tr>
           </td>
           <td>
             <tr>
-              <td> <input type="checkbox"></td>
+              <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G903"></td>
               <td>G90.3 Multi-system degeneration of the autonomic nervous system</td>
             </tr>
             <tr>
@@ -151,13 +151,13 @@
         <tr>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E1049"></td>
               <td>E10.49 Type 1 Diabetes Mellitus W/ Other Diabetic Neurological Complications</td>
             </tr>
           </td>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G9050"></td>
               <td>G90.50 Complex regional pain syndrome I, unspecified</td>
             </tr>
           </td>
@@ -166,14 +166,14 @@
         <tr>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E10610"></td>
               <td>E10.610 Type 1 Diabetes (Juvenile) W/ diabetic Neuropathic Arthropathy</td>
             </tr>
           </td>
 
           <td>
             <tr>
-              <td> <input type="checkbox"></td>
+              <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G9059"></td>
               <td>G90.59 Complex regional pain syndrome I of other specified site</td>
             </tr>
           </td>
@@ -182,15 +182,15 @@
         <tr>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E119"></td>
               <td>E11.9 Type 2 Diabetes Without Complications (non-Medicare)</td>
             </tr>
           </td>
 
           <td>
             <tr>
-              <td> <input type="checkbox"></td>
-              <td>{{R000Text}}</td>
+              <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.R000"></td>
+              <td>R00.0 Tachycardia, unspecified {{ reportDetails.provide_description.R000_text_1 }}{{ reportDetails.provide_description.R000_text_2 }}{{ reportDetails.provide_description.R000_text_3 }}</td>
             </tr>
           </td>
         </tr>
@@ -198,13 +198,13 @@
         <tr>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E1141"></td>
               <td>E11.41 Type 2 Diabetes Mellitus W/ Diabetic Mononeuropathy</td>
             </tr>
           </td>
           <td>
             <tr>
-              <td> <input type="checkbox"></td>
+              <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.R55"></td>
               <td>R55 Vasovagal Syndrome/Syncope and collapse</td>
             </tr>
           </td>
@@ -213,13 +213,13 @@
         <tr>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E1142"></td>
               <td>E11.42 Type 2 Diabetes Mellitus W/ Diabetic Polyneuropathy</td>
             </tr>
           </td>
           <td>
             <tr>
-              <td> <input type="checkbox"></td>
+              <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.R7301"></td>
               <td>R73.01 Impaired fasting glucose (Non-Medicare)</td>
             </tr>
           </td>
@@ -228,13 +228,13 @@
         <tr>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E1143"></td>
               <td>E11.43 Type 2 Diabetes W/ Autonomic Neuropathy</td>
             </tr>
           </td>
           <td>
             <tr>
-              <td> <input type="checkbox"></td>
+              <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.R7303"></td>
               <td>R73.03 Prediabetes (Non-Medicare)</td>
             </tr>
           </td>
@@ -243,13 +243,13 @@
         <tr>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E1144"></td>
               <td>E11.44 Type 2 Diabetes Mellitus W/Diabetic Amyotrophy</td>
             </tr>
           </td>
           <td>
             <tr>
-              <td> <input type="checkbox"></td>
+              <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G9050"></td>
               <td>G90.50 Complex regional pain syndrome I, unspecified</td>
             </tr>
           </td>
@@ -258,13 +258,13 @@
         <tr>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E1149"></td>
               <td>E11.49 Type 2 Diabetes Mellitus W/ Other Diabetic Neurological Complications</td>
             </tr>
           </td>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G90511"></td>
               <td>G90.511 Complex regional pain syndrome I of right upper limb</td>
             </tr>
           </td>
@@ -273,13 +273,13 @@
         <tr>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E850"></td>
               <td>E85.0 Mediterranean Fever</td>
             </tr>
           </td>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G90512"></td>
               <td>G90.512 Complex regional pain syndrome I of left upper limb</td>
             </tr>
           </td>
@@ -288,13 +288,13 @@
         <tr>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E851"></td>
               <td>E85.1 Neuropathic Heredofamilial Amyloidosis</td>
             </tr>
           </td>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G90513"></td>
               <td>G90.513 Complex regional pain syndrome I of upper limb, bilateral</td>
             </tr>
           </td>
@@ -303,13 +303,13 @@
         <tr>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E853"></td>
               <td>E85.3 Secondary Systemic Amyloidosis</td>
             </tr>
           </td>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G90512"></td>
               <td>G90.521 Complex regional pain syndrome I of right lower limb</td>
             </tr>
           </td>
@@ -318,13 +318,13 @@
         <tr>
           <td>
             <tr>
-              <td> <input type="checkbox"></td>
+              <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E854"></td>
               <td>E85.4 Organ – Limited Amyloidosis</td>
             </tr>
           </td>
           <td>
             <tr>
-              <td><input type="checkbox"> </td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G90522"> </td>
               <td>G90.522 Complex regional pain syndrome I of left lower limb</td>
             </tr>
           </td>
@@ -333,14 +333,14 @@
         <tr>
           <td>
             <tr>
-              <td> <input type="checkbox"></td>
+              <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G200"></td>
               <td>G20.0 Parkinson’s Disease</td>
             </tr>
           </td>
 
           <td>
             <tr>
-              <td> <input type="checkbox"></td>
+              <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G90523"></td>
               <td> G90.523 Complex regional pain syndrome I of lower limb, bilateral </td>
             </tr>
           </td>
@@ -349,13 +349,13 @@
         <tr>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G230"></td>
               <td>G23.0 Hallervorden – Spatz Disease</td>
             </tr>
           </td>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G9059"></td>
               <td> G90.59 Complex regional pain syndrome I of other specified site</td>
             </tr>
           </td>
@@ -364,14 +364,14 @@
         <tr>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G231"></td>
               <td>G23.1 Progressive supranuclear ophthalmoplegia [Steele-Richardson
                 Olszewski]</td>
             </tr>
           </td>
           <td>
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I951"></td>
               <td>I95.1 Orthostatic Hypotension</td>
             </tr>
           </td>
@@ -380,14 +380,14 @@
         <tr>
           <td>
         <tr>
-          <td> <input type="checkbox"></td>
+          <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G232"></td>
           <td>G23.2 Striatonigral degeneration </td>
         </tr>
         </td>
 
         <td>
           <tr>
-            <td> <input type="checkbox"></td>
+            <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.R61"></td>
             <td>R61 Generalized hyperhidrosis </td>
           </tr>
         </td>
@@ -396,7 +396,7 @@
         <tr>
           <td>
         <tr>
-          <td><input type="checkbox"></td>
+          <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G238"></td>
           <td>G23.8 Other specified degenerative diseases of basal ganglia</td>
         </tr>
         </td>
@@ -422,7 +422,7 @@
         <tr>
           <td>
         <tr>
-          <td><input type="checkbox"></td>
+          <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E1059"></td>
           <td>E10.59 Type 1 Diabetes W/ Other Circulatory Complications</td>
         </tr>
         </td>
@@ -430,7 +430,7 @@
         <td>
 
           <tr>
-            <td><input type="checkbox"></td>
+            <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I70222"></td>
             <td>I70.222 Atherosclerosis of native arteries of extremities with rest pain, left
               leg</td>
           </tr>
@@ -440,14 +440,14 @@
         <tr>
           <td>
         <tr>
-          <td><input type="checkbox"></td>
+          <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.E1159"></td>
           <td>E11.59 Type 2 Diabetes W/ Other Circulatory Complications</td>
         </tr>
         </td>
 
         <td>
           <tr>
-            <td> <input type="checkbox"></td>
+            <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I70223"></td>
             <td>I70.223 Atherosclerosis of native arteries of extremities with rest pain,
               Bilateral legs</td>
           </tr>
@@ -458,14 +458,14 @@
           <td>
 
         <tr>
-          <td> <input type="checkbox"></td>
+          <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.G458"></td>
           <td>G45.8 Other Transient Cerebral Ischemic Attacks and Related Syndrome</td>
         </tr>
         </td>
 
         <td>
           <tr>
-            <td><input type="checkbox"></td>
+            <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I70228"></td>
             <td>I70.228 Atherosclerosis of native arteries of extremities with rest pain,
               other extremity</td>
           </tr>
@@ -475,14 +475,14 @@
         <tr>
           <td>
         <tr>
-          <td><input type="checkbox"></td>
-          <td>I10 Hypertension Unspecified (Non-Medicare) <b>130/80</b> </td>
+          <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I10"></td>
+          <td>I10 Hypertension Unspecified (Non-Medicare) <b>{{ reportDetails.reportData[0].systolic_value }}/{{ reportDetails.reportData[0].diastolic_value }}</b> </td>
         </tr>
         </td>
 
         <td>
           <tr>
-            <td><input type="checkbox"></td>
+            <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I70268"></td>
             <td>I70.268 Atherosclerosis of native arteries of extremities with gangrene, Other extremity</td>
           </tr>
         </td>
@@ -491,14 +491,14 @@
         <tr>
           <td>
         <tr>
-          <td><input type="checkbox"></td>
+          <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I2510"></td>
           <td>I25.10 Atherosclerotic heart disease of native coronary artery w/o angina pectoris</td>
         </tr>
         </td>
 
         <td>
           <tr>
-            <td><input type="checkbox"></td>
+            <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I7025"></td>
             <td>I70.25 Atherosclerosis of native arteries of other extremities with Ulceration</td>
           </tr>
         </td>
@@ -507,14 +507,14 @@
         <tr>
           <td>
         <tr>
-          <td><input type="checkbox"></td>
+          <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I519"></td>
           <td>I51.9 Heart disease, unspecified (Non-Medicare)</td>
         </tr>
         </td>
 
         <td>
           <tr>
-            <td><input type="checkbox"></td>
+            <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I721"></td>
             <td>I72.1 Aneurysm of artery of upper extremity</td>
           </tr>
         </td>
@@ -523,14 +523,14 @@
         <tr>
           <td>
         <tr>
-          <td><input type="checkbox"></td>
+          <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I70209"></td>
           <td>I70.209 Atherosclerosis Native Arteries Extremities Unspecified (non-Medicare)</td>
         </tr>
         </td>
 
         <td>
           <tr>
-            <td> <input type="checkbox"></td>
+            <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I724"></td>
             <td>I72.4 Aneurysm of artery of lower extremity </td>
           </tr>
         </td>
@@ -538,14 +538,14 @@
         <tr>
           <td>
         <tr>
-          <td><input type="checkbox"></td>
+          <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I70221"></td>
           <td>I70.211 Atherosclerosis of native arteries of extremities with intermittent
             Claudication, right leg</td>
         </tr>
         </td>
         <td>
           <tr>
-            <td> <input type="checkbox"></td>
+            <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I7389"></td>
             <td>I73.89 Other specified peripheral vascular diseases</td>
           </tr>
         </td>
@@ -553,14 +553,14 @@
         <tr>
           <td>
         <tr>
-          <td><input type="checkbox"></td>
+          <td><input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I70212"></td>
           <td>I70.212 Atherosclerosis of native arteries of extremities with intermittent
             Claudication, left leg</td>
         </tr>
         </td>
         <td>
           <tr>
-            <td> <input type="checkbox"></td>
+            <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I739"></td>
             <td>I73.9 Peripheral vascular disease, unspecified</td>
           </tr>
         </td>
@@ -568,14 +568,14 @@
         <tr>
           <td>
         <tr>
-          <td> <input type="checkbox"> </td>
+          <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.I70213"> </td>
           <td> I70.213 Atherosclerosis of native arteries of extremities with intermittent
             Claudication, bilateral legs</td>
         </tr>
         </td>
         <td>
           <tr>
-            <td> <input type="checkbox"></td>
+            <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.R088"></td>
             <td>R08.8 9 Other Specific Signs & Symptoms of Circulatory &
               Respiratory Systems</td>
           </tr>
@@ -584,7 +584,11 @@
         <tr>
           <td rowspan="2">
             <p>ADDITIONAL POTENTIAL HEALTH RISKS</p>
-            <textarea class="additionalnotes additionalnotes3"></textarea>
+            <!-- <textarea class="additionalnotes additionalnotes3" [(ngModel)]=""> -->
+              <ng-container *ngFor="let data of reportDetails.provide_description">
+                <p>{{ data }}</p>
+              </ng-container>
+            <!-- </textarea> -->
           </td>
 
           <td>

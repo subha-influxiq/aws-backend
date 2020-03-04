@@ -40,7 +40,8 @@ export class ListingTechComponent implements OnInit {
     "password",
     "created_at",
     "id",
-    "updated_at"
+    "updated_at",
+    "diagnostic_admin_id"
   ];
 
   public UpdateEndpoint: any = "addorupdatedata";
@@ -59,6 +60,7 @@ export class ListingTechComponent implements OnInit {
 
     };
   public user_cookie: any;
+  public userData: any;
   public TechDashboardAllData: any = [];
   constructor(public cookie: CookieService, public http: HttpClient,
     public httpService: HttpServiceService, public activatedRoute: ActivatedRoute,
@@ -68,8 +70,9 @@ export class ListingTechComponent implements OnInit {
     this.commonFunction.setTitleMetaTags();
 
     this.user_cookie = cookie.get('jwtToken');
+    this.userData = JSON.parse(this.cookie.get('user_details'));
+    
     this.apiUrl = httpService.baseUrl;
-
   }
 
   ngOnInit() {

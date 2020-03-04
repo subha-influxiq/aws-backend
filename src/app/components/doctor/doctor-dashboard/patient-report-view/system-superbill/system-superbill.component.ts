@@ -18,11 +18,13 @@ export class SystemSuperbillComponent implements OnInit {
     nav: 'Add Patient', 
     header: "Physician Report"
   };
+  
+  public reportDetails: any;
   public cookiesData: any;
 
   @Input()
-  set patientDetails(patientDetails: any) {
-    this.htmlText.patientDetails = patientDetails;
+  set patientDetails(patientDetailsData: any) {
+    this.reportDetails = patientDetailsData;
   }
 
   constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService,

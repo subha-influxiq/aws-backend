@@ -16,6 +16,7 @@ export class ListingBillerComponent implements OnInit {
     "_id", "address", "zip", "city", "state", "user_type", "password", "created_at"
   ];
   public editUrl: any = "admin/biller-management/edit";
+  public userData: any;
   
   public allUserData_modify_header: any = {
     "firstname": "First Name",
@@ -47,6 +48,7 @@ export class ListingBillerComponent implements OnInit {
     public httpService: HttpServiceService) {
 
     this.user_cookie = cookie.get('jwtToken');
+    this.userData = JSON.parse(this.cookie.get('user_details'));
     this.apiUrl = httpService.baseUrl;
   }
 

@@ -1,5 +1,10 @@
 <!-- Admin Header -->
-<app-admin-header></app-admin-header>
+<app-admin-header *ngIf="userData.user_type == 'admin'"></app-admin-header>
+
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-header *ngIf="userData.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
 
 <mat-card class="admin_wrapper">
   <!-- header with add button -->
@@ -10,8 +15,15 @@
 
   <span class="add_header">
 
-  <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Tech</span>
-  <button mat-flat-button [routerLink]="['/admin/tech-management/add']">Add Tech</button>
+  <ng-container *ngIf="userData.user_type == 'admin'">
+    <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Tech</span>
+    <button mat-flat-button [routerLink]="['/admin/tech-management/add']">Add Tech</button>
+  </ng-container>
+  
+  <ng-container *ngIf="userData.user_type == 'diagnostic_admin'">
+    <span class="bradcrumb"><a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Tech</span>
+    <button mat-flat-button [routerLink]="['/diagnostic-admin/tech-management/add']">Add Tech</button>
+  </ng-container>
 </span>
 <!-- End header with add button -->
 
@@ -35,8 +47,12 @@
 
 <h2 *ngIf="TechDashboardAllData.length == 0">No record found.</h2>
 
-<!-- Admin Footer -->
 </mat-card-content>
 </mat-card>
 
-<app-admin-footer></app-admin-footer>
+
+<!-- Admin Footer -->
+<app-admin-footer *ngIf="userData.user_type == 'admin'"></app-admin-footer>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-footer *ngIf="userData.user_type == 'diagnostic_admin'"></app-diagnostic-admin-footer>
