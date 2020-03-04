@@ -28,7 +28,7 @@
     <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
       <span class="bradcrumb">
         <a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
-        <a [routerLink]="['/diagnostic-admin/doctor-management']">Manage Tech &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/diagnostic-admin/doctor-management']">Manage Doctor &nbsp;/</a> &nbsp;
         {{ htmlText.nav }}
       </span>
     </ng-container>
@@ -231,14 +231,14 @@
         <!-- Biller Details End -->
 
         <!-- Doctor's Office Start -->
-        <mat-form-field appearance="fill">
+        <!-- <mat-form-field appearance="fill">
           <mat-label>Select Doctor's Office</mat-label>
           <mat-select formControlName="doctors_office_id">
             <mat-option [value]="">Select Doctor's Office</mat-option>
             <mat-option *ngFor="let doctorOfficeData of htmlText.doctorOfficeData;" value="{{ doctorOfficeData._id }}">{{ doctorOfficeData.firstname }} {{ doctorOfficeData.lastname }}
             </mat-option>
           </mat-select>
-        </mat-form-field>
+        </mat-form-field> -->
         <!-- Doctor's Office End -->
 
         <!-- Zip Start -->
@@ -287,7 +287,13 @@
         </span>
 
         <span class="submit_form">
-          <button mat-flat-button type="button" [routerLink]="['/admin/doctor-management']"> Back</button>
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+            <button mat-flat-button type="button" [routerLink]="['/admin/doctor-management']"> Back</button>
+          </ng-container>
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+            <button mat-flat-button type="button" [routerLink]="['/diagnostic-admin/doctor-management']">Back </button>
+          </ng-container>
+
           <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset</button>
           <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
           <button mat-flat-button type="button" *ngIf="params_id != ''" (click)="openDialog('')"> Change Password </button>

@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BillerFooterComponent implements OnInit {
 
-  constructor() { }
+  public htmlData: any = {};
+  constructor() { 
+    this.htmlData["year"] = new Date().getFullYear();
+  }
 
   ngOnInit() {
   }

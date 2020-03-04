@@ -42,7 +42,10 @@ export class AddEditBillerComponent implements OnInit {
      public snackBar: MatSnackBar, public activeRoute: ActivatedRoute, public dialog: MatDialog) {
 
     this.htmlText.userData = cookie.getAll();
+    this.htmlText.userData.user_details = JSON.parse(this.htmlText.userData.user_details);
     this.allStateCityData();
+
+    console.log(">>>>>", this.htmlText.userData.user_details.user_type);
 
     if (this.activeRoute.snapshot.params._id) {
       this.generateAddEditForm('edit');
@@ -180,6 +183,11 @@ export class AddEditBillerComponent implements OnInit {
         "token": this.htmlText.userData.jwtToken,
         "domainurl" : environment.siteBaseUrl + 'reset-password'
       };
+
+      if(this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
+        data.data["diagnostic_admin_id"] = this.htmlText.userData.user_details._id;
+        data["sourceobj"] = ["diagnostic_admin_id"];
+      }
     
       this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
         if(response.status == 'success') {
