@@ -158,7 +158,7 @@
 .admin_wrapper .mediaDoc_wrapper { display: flex; flex-wrap: wrap; }
 .admin_wrapper .mediaDoc_wrapper .new_wrapper_right { width: 100%; }
 .admin_wrapper .mediaDoc_wrapper .new_wrapper_left {width: 100%; margin-bottom: 16px; }
-.admin_wrapper .testingDoc { font-size: 30px; line-height: 30px; text-align: center; }
+.admin_wrapper .testingDoc { font-size: 26px; line-height: 30px; text-align: center; }
 .admin_superbillsection .biller_wrapper { display: flex; flex-wrap: wrap;}
 }
 @media screen and (max-width: 600px){
