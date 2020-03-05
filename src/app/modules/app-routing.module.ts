@@ -430,9 +430,9 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  { path: 'diagnostic-admin//biller-management/add', component: AddEditBillerComponent, canActivate: [AuthguardService] },
+  { path: 'diagnostic-admin/biller-management/add', component: AddEditBillerComponent, canActivate: [AuthguardService] },
   {
-    path: 'diagnostic-admin//biller-management/edit/:_id', component: AddEditBillerComponent, canActivate: [AuthguardService], resolve: { billersingleData: ResolveService },
+    path: 'diagnostic-admin/biller-management/edit/:_id', component: AddEditBillerComponent, canActivate: [AuthguardService], resolve: { billersingleData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',

@@ -5,9 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './diagnostic-admin-footer.component.html',
   styleUrls: ['./diagnostic-admin-footer.component.css']
 })
+
 export class DiagnosticAdminFooterComponent implements OnInit {
 
-  constructor() { }
+  public htmlData: any = {};
+  constructor() { 
+    this.htmlData["year"] = new Date().getFullYear();
+  }
 
   ngOnInit() {
   }

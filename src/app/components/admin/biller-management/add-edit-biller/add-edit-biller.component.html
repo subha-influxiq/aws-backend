@@ -1,5 +1,14 @@
 <!-- Admin Header -->
-<app-admin-header></app-admin-header>
+<app-admin-header *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-header>
+
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-header *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+
+
+
+
 <mat-card class="admin_wrapper">
   <!-- header with add button -->
   <mat-card-content class="title_wrapper">
@@ -8,11 +17,21 @@
 
 
   <span class="add_header">
-    <span class="bradcrumb">
-      <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
-      <a [routerLink]="['/admin/biller-management']">Manage Biller &nbsp;/</a> &nbsp;
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/admin/dashboard']"> Dashboard &nbsp;/</a> &nbsp;
+      <a [routerLink]="['/admin/biller-management']"> Manage Biller &nbsp;/</a> &nbsp;
       {{ htmlText.nav }}
-    </span>
+      </span>
+    </ng-container>
+
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/diagnostic-admin/biller-management']"> Manage Biller &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
   </span>
   <!-- End header with add button -->
 
@@ -205,7 +224,13 @@
         <mat-checkbox [formControl]="billerManagementAddEditForm.controls['status']" checked>Active</mat-checkbox>
 
         <span class="submit_form">
-          <button mat-flat-button type="button" [routerLink]="['/admin/biller-management']">Back </button>
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+            <button mat-flat-button type="button" [routerLink]="['/admin/biller-management']">Back </button>
+          </ng-container>
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+            <button mat-flat-button type="button" [routerLink]="['/diagnostic-admin/biller-management']">Back </button>
+          </ng-container>
+
           <button mat-flat-button type="reset" *ngIf="params_id == ''"> Reset</button>
           <button mat-flat-button type="submit"> {{ htmlText.buttonText }}</button>
           <button mat-flat-button type="button" *ngIf="params_id != ''" (click)="openDialog('')"> Change Password </button>
@@ -216,5 +241,12 @@
 
   </mat-card>
 </mat-card>
+
+
+
+
 <!-- Admin Footer -->
-<app-admin-footer></app-admin-footer>
+<app-admin-footer *ngIf="htmlText.userData.user_details.user_type === 'admin'"></app-admin-footer>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-footer *ngIf="htmlText.userData.user_details.user_type === 'diagnostic_admin'"></app-diagnostic-admin-footer>
