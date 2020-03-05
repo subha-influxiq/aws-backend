@@ -37,6 +37,9 @@
 .mobile-label { display: none;}
 .DataTable .container .searchbar span { width: 92%; }
 .DataTable .container .searchbar{ display: flex!important; justify-content: space-around!important; flex-wrap: wrap; height: auto;}
+/* tech dashboard */
+.report_wrapper .items_w .icon_w { height: 220px;}
+.report_wrapper .items_w .name_wr .reportName { font-size: 17px; line-height: 18px; }
 }
 @media(max-width: 600px) {
   .mobile-label { width: 80px; display: inline-block; font-weight: bold; }
@@ -135,13 +138,32 @@
     }
     .DataTable .searchbar { display: flex!important;   height: auto; }
 }
+@media screen and (max-width: 840px){
+  .quickRef .report_wrapper .items_w { width: 48%; margin: 1%;  }
+
+.quickRef .report_wrapper .items_w:nth-child(n+1) {  margin-left: 1%; }
+.quickRef .report_wrapper .items_w:nth-child(n+3) {  margin-right: 1%; }
+.table_wrapper .action_bar { display: flex; flex-wrap: wrap; justify-content: center; }
+.table_wrapper .action_bar .add_btn { margin-left: inherit;  }
+.table_wrapper .action_bar .mat-form-field { margin-bottom: 10px; }
+}
 @media screen and (max-width: 668px){
 .main_wrapper .login_wrapper { width: 450px; }
 .DataTable .searchbar { display: flex!important; flex-direction: column; }
+.admin_wrapper .mediaDoc_wrapper { display: flex; flex-wrap: wrap; }
+.admin_wrapper .mediaDoc_wrapper .new_wrapper_right { width: 100%; }
+.admin_wrapper .mediaDoc_wrapper .new_wrapper_left {width: 100%; margin-bottom: 16px; }
+.admin_wrapper .testingDoc { font-size: 30px; line-height: 30px; text-align: center; }
+.admin_superbillsection .biller_wrapper { display: flex; flex-wrap: wrap;}
+}
+@media screen and (max-width: 600px){
+  .quickRef .report_wrapper .items_w { width: 100%; }
+
 }
 @media screen and (max-width: 540px){
 .main_wrapper .login_wrapper { width: 400px; }
 .logo_section { width: 100%; }
+.viewMore_w button { min-width: 100%; }
 }
 @media screen and (max-width: 480px){
 .main_wrapper .login_wrapper { width: 360px; }
