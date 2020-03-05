@@ -16,6 +16,7 @@
 @media screen and (max-width: 1368px){
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 5px; }
   .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber { font-size: 16px;}
+
 }
 @media screen and (max-width: 1300px){
 .main_wrapper { background-size: 680px; padding-left: 665px; }
@@ -147,6 +148,10 @@
 .table_wrapper .action_bar .add_btn { margin-left: inherit;  }
 .table_wrapper .action_bar .mat-form-field { margin-bottom: 10px; }
 }
+@media screen and (max-width: 740px){
+  .mediaDoc_wrapper .media_inner_items .action_button { font-size: 20px; padding: 4px; }
+}
+
 @media screen and (max-width: 668px){
 .main_wrapper .login_wrapper { width: 450px; }
 .DataTable .searchbar { display: flex!important; flex-direction: column; }
