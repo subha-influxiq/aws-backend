@@ -457,12 +457,10 @@
 .report_wrapper .items_w  .icon_w{ background: #ffffff; padding: 10px; box-sizing: border-box; display: flex; flex-direction: column;
 align-items: center; justify-content: center; color: #fff; font-family: 'AvenirMedium'; text-transform: capitalize; font-size: 16px; height: 340px; }
 .report_wrapper .items_w  .icon_w img{ height: 100%; max-width: 100%;}
-.quickRef .report_wrapper{ display: flex; justify-content: space-between; flex-wrap: wrap;}
-.quickRef .report_wrapper .items_w { width: 33%; margin: 0.5%; display: flex; flex-direction: column; padding: 10px; box-sizing: border-box;
-  border: 1px solid #c3c3c3; border-radius: 8px;}
+.quickRef .report_wrapper{ display: flex; justify-content: center; flex-wrap: wrap;}
+.quickRef .report_wrapper .items_w { width: 32.3%; margin: 0.5%; display: flex; flex-direction: column; padding: 10px; box-sizing: border-box;
+  border: 1px solid #c3c3c3; border-radius: 5px;}
 .quickRef .report_wrapper .items_w:last-child{ margin-bottom: 0.5%;}
-.quickRef .report_wrapper .items_w:nth-child(n+1) {  margin-left: 0; }
-.quickRef .report_wrapper .items_w:nth-child(n+3) {  margin-right: 0; }
 .report_wrapper .items_w .name_wr{ display: flex; justify-content: space-between; align-items: center;}
 .report_wrapper .items_w .name_wr .reportName{ font-family: 'AvenirHeavy'; color: #272520; font-size: 20px; padding-right: 10px; line-height: 22px; box-sizing: border-box;}
 .report_wrapper .items_w .action_button{background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%);

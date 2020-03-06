@@ -70,3 +70,6 @@
 
 
  */
+.show{ flex-wrap: wrap; justify-content: center;}
+.hide{ display: none!important;}
+.viewMore{ display: flex; flex-wrap: wrap; justify-content: center;}

@@ -23,7 +23,7 @@ export class DoctorDashboardComponent implements OnInit {
 
   public authData: any = {};
   public allResolveData: any;
-  public htmlText: any = { 
+  public htmlText: any = {
     buttonText: "Add One",
     headerText: "Patient Record Report",
     billerData: [],
@@ -42,14 +42,17 @@ export class DoctorDashboardComponent implements OnInit {
   public allDataSource: any;
   public start_date: any;
   public end_date: any;
-  
+  public viewstatus:boolean = false;
+  public btnName:any = 'view more';
+  public show: boolean = false;
+
   constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService,
     public http: HttpServiceService, public activatedRoute: ActivatedRoute, public matSnackBar: MatSnackBar,
     public deviceService: DeviceDetectorService) {
 
     this.authData["user_details"] = JSON.parse(cookie.get('user_details'));
     this.authData["jwtToken"] = cookie.get('jwtToken');
-    
+
     this.activatedRoute.data.forEach(resolveData => {
       this.allResolveData = resolveData.doctordata.data;
 
@@ -160,7 +163,7 @@ export class DoctorDashboardComponent implements OnInit {
     deviceInfo["isMobile"] = this.deviceService.isMobile();
     deviceInfo["isTablet"] = this.deviceService.isTablet();
     deviceInfo["isDesktop"] = this.deviceService.isDesktop();
-    
+
     /* Set downloader information */
     var userDetails = {
       id: this.authData.user_details._id,
@@ -207,7 +210,7 @@ export class DoctorDashboardComponent implements OnInit {
         doctor_id: this.authData.user_details._id
       }
     };
-    
+
     this.http.httpViaPost("doctor-dashboard", postData).subscribe(response => {
       if(response.status == 'success') {
         this.allResolveData = response.data;
@@ -231,6 +234,14 @@ export class DoctorDashboardComponent implements OnInit {
       dateRange: ""
     };
     this.viewReportProcessData(this.htmlText.headerText);
+  }
+
+  viewMore(){
+    this.viewstatus = !this.viewstatus;
+    if (this.show)
+    this.btnName = "view More";
+  else
+    this.btnName = "view less";
   }
 
 }
