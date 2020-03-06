@@ -24,7 +24,8 @@ export class ListingTechComponent implements OnInit {
     "password",
     "created_at",
     "id",
-    "updated_at"
+    "updated_at",
+    "diagnostic_admin_id"
   ];
   public editUrl: any = "admin/tech-management/edit";
   public allUserData_modify_header: any = {
@@ -72,14 +73,21 @@ export class ListingTechComponent implements OnInit {
     this.user_cookie = cookie.get('jwtToken');
     this.userData = JSON.parse(this.cookie.get('user_details'));
     
+    if(this.userData.user_type == 'diagnostic_admin') {
+      this.editUrl = 'diagnostic-admin/tech-management/edit';
+    }
+
+    if(this.userData.user_type == 'doctor') {
+      this.editUrl = 'doctor/tech-management/edit';
+    }
+
     this.apiUrl = httpService.baseUrl;
   }
 
   ngOnInit() {
     this.activatedRoute.data.forEach((data) => {
       this.TechDashboardAllData = data.techDashboardData.res;
-
-    })
+    });
   }
 
 }

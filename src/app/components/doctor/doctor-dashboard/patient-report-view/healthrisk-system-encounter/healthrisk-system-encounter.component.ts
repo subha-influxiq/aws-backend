@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, HostListener, Input, Inject  } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener, Input, Inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, FormGroupDirective } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
@@ -18,8 +18,8 @@ import { PatientReportViewComponent } from '../patient-report-view.component';
 export class HealthriskSystemEncounterComponent implements OnInit {
 
   public R000Text: string = "R00.0 Tachycardia, unspecified Abnormal Heart Rhythm & Electrical Stability";
-  public htmlText: any = { 
-    nav: 'Add Patient', 
+  public htmlText: any = {
+    nav: 'Add Patient',
     header: "Physician Report"
   };
 
@@ -52,5 +52,5 @@ export class HealthriskSystemEncounterComponent implements OnInit {
       this.htmlText.patientDetails = response.res[0];
     });
   }
-  
+
 }

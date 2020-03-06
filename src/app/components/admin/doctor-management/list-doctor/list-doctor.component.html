@@ -1,10 +1,11 @@
 <!-- Admin Header -->
 <app-admin-header *ngIf="userData.user_type == 'admin'"></app-admin-header>
 
-
 <!-- Diagnostic Admin Header -->
 <app-diagnostic-admin-header *ngIf="userData.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
 
+<!-- Doctor Header -->
+<app-doctor-header *ngIf="userData.user_type == 'doctor'"></app-doctor-header>
 
 
 

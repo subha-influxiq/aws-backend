@@ -1,11 +1,11 @@
 <!-- Admin Header -->
 <app-admin-header *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-header>
 
-
 <!-- Diagnostic Admin Header -->
 <app-diagnostic-admin-header *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
 
-
+<!-- Doctor Header -->
+<app-doctor-header *ngIf="htmlText.userData.user_details.user_type == 'doctor'"></app-doctor-header>
 
 
 
@@ -29,6 +29,14 @@
       <span class="bradcrumb">
         <a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
         <a [routerLink]="['/diagnostic-admin/biller-management']"> Manage Biller &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'doctor'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/doctor/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/doctor/biller-management']"> Manage Biller &nbsp;/</a> &nbsp;
         {{ htmlText.nav }}
       </span>
     </ng-container>
@@ -246,7 +254,4 @@
 
 
 <!-- Admin Footer -->
-<app-admin-footer *ngIf="htmlText.userData.user_details.user_type === 'admin'"></app-admin-footer>
-
-<!-- Diagnostic Admin Header -->
-<app-diagnostic-admin-footer *ngIf="htmlText.userData.user_details.user_type === 'diagnostic_admin'"></app-diagnostic-admin-footer>
+<app-admin-footer></app-admin-footer>

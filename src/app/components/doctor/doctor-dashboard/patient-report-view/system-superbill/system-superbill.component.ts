@@ -36,6 +36,74 @@ export class SystemSuperbillComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(typeof(this.reportDetails.reportData[0].BMI) != 'undefined') {
+      this.reportDetails.reportData[0].BMI_flag = Math.round(this.reportDetails.reportData[0].BMI * 10);
+      console.log(">>>>", this.reportDetails.reportData[0].BMI_flag);
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 290 && this.reportDetails.reportData[0].BMI_flag < 300) {
+        this.reportDetails.reportData[0].BMI29 = true;
+      }
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 330 && this.reportDetails.reportData[0].BMI_flag < 340) {
+        this.reportDetails.reportData[0].BMI33 = true;
+      }
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 370 && this.reportDetails.reportData[0].BMI_flag < 380) {
+        this.reportDetails.reportData[0].BMI37 = true;
+      }
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 450 && this.reportDetails.reportData[0].BMI_flag < 500) {
+        this.reportDetails.reportData[0].BMI45 = true;
+      }
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 300 && this.reportDetails.reportData[0].BMI_flag < 310) {
+        this.reportDetails.reportData[0].BMI30 = true;
+      }
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 340 && this.reportDetails.reportData[0].BMI_flag < 350) {
+        this.reportDetails.reportData[0].BMI34 = true;
+      }
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 380 && this.reportDetails.reportData[0].BMI_flag < 390) {
+        this.reportDetails.reportData[0].BMI38 = true;
+      }
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 500 && this.reportDetails.reportData[0].BMI_flag < 600) {
+        this.reportDetails.reportData[0].BMI50 = true;
+      }
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 310 && this.reportDetails.reportData[0].BMI_flag < 320) {
+        this.reportDetails.reportData[0].BMI31 = true;
+      }
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 350 && this.reportDetails.reportData[0].BMI_flag < 360) {
+        this.reportDetails.reportData[0].BMI31 = true;
+      }
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 390 && this.reportDetails.reportData[0].BMI_flag < 400) {
+        this.reportDetails.reportData[0].BMI39 = true;
+      }
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 600 && this.reportDetails.reportData[0].BMI_flag < 700) {
+        this.reportDetails.reportData[0].BMI60 = true;
+      }
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 320 && this.reportDetails.reportData[0].BMI_flag < 330) {
+        this.reportDetails.reportData[0].BMI32 = true;
+      }
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 360 && this.reportDetails.reportData[0].BMI_flag < 370) {
+        this.reportDetails.reportData[0].BMI36 = true;
+      }
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 400 && this.reportDetails.reportData[0].BMI_flag < 450) {
+        this.reportDetails.reportData[0].BMI40 = true;
+      }
+
+      if(this.reportDetails.reportData[0].BMI_flag >= 700) {
+        this.reportDetails.reportData[0].BMI70 = true;
+      }
+    }
   }
 
 

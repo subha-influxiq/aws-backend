@@ -82,7 +82,7 @@ export class AddeditDoctorComponent implements OnInit {
       user_type:              ['doctor', []],
       tech_id:                ['', []],
       biller_id:              ['', []],
-      doctors_office_id:      ['', []],
+      //doctors_office_id:      ['', []],
       taxo_list:              ['', []],
       status:                 ['', []],
       password:               ['', [ Validators.required, Validators.maxLength(16), Validators.minLength(6) ]],
@@ -117,7 +117,7 @@ export class AddeditDoctorComponent implements OnInit {
           this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
           this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_details);
           this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_details);
-          this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_details);
+          //this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_details);
           this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
           this.doctorManagementAddEditForm.controls['taxo_list'].patchValue(doctorDetails[0].taxo_list);
           this.doctorManagementAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
@@ -185,8 +185,12 @@ export class AddeditDoctorComponent implements OnInit {
   /**getting all the technician data**/
   getAllData() {
     var data = {
-      "token": this.htmlText.userData.jwtToken
+      "token": this.htmlText.userData.jwtToken,
     };
+
+    if(this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
+      data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+    }
 
     this.http.httpViaPost('datalist-doctor-add', data).subscribe(response => {
       this.htmlText.techData = response.data.tech_data;
@@ -231,7 +235,14 @@ export class AddeditDoctorComponent implements OnInit {
           });
 
           setTimeout(() => {
-            this.router.navigateByUrl("admin/doctor-management");
+            switch(this.htmlText.userData.user_details.user_type) {
+              case 'diagnostic_admin':
+                this.router.navigateByUrl("admin/doctor-management");
+                break;
+              case 'admin':
+                this.router.navigateByUrl("diagnostic-admin/doctor-management");
+                break;
+            }
           }, 1000);
         } else {
           this.snackBar.open(response.msg, '', {

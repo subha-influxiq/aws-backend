@@ -188,6 +188,11 @@ export class AddEditBillerComponent implements OnInit {
         data.data["diagnostic_admin_id"] = this.htmlText.userData.user_details._id;
         data["sourceobj"] = ["diagnostic_admin_id"];
       }
+
+      if(this.htmlText.userData.user_details.user_type == 'doctor') {
+        data.data["doctor_id"] = this.htmlText.userData.user_details._id;
+        data["sourceobj"] = ["doctor_id"];
+      }
     
       this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
         if(response.status == 'success') {
@@ -197,7 +202,14 @@ export class AddEditBillerComponent implements OnInit {
           this.formDirective.resetForm();
           
           setTimeout(() => {
-            this.router.navigateByUrl("admin/biller-management");
+            switch(this.htmlText.userData.user_details.user_type) {
+              case 'diagnostic_admin':
+                this.router.navigateByUrl("admin/biller-management");
+                break;
+              case 'admin':
+                this.router.navigateByUrl("diagnostic-admin/biller-management");
+                break;
+            }
           }, 1000);
         } else {
           this.snackBar.open(response.msg, '', {

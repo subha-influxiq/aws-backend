@@ -26,11 +26,11 @@
         <td> Physician’s Signature <input class="signaturefont" type="text" value="{{ cookiesData.user_details.doctor_signature }}"></td>
         <td colspan="2">
           <p class="suggest">Suggested billing amounts per CPT Code: </p>
-          <label><input type="checkbox"> 95923: $410 </label>
-          <label><input type="checkbox"> 95943: $440 </label>
-          <label><input type="checkbox"> 95921: $280 </label> <br>
-          <label><input type="checkbox"> 93923: $250 </label>
-          <label><input type="checkbox"> 93922: $280 </label>
+          <label><input type="checkbox" [(ngModel)]="reportDetails.suggestBill.v95923" [ngModelOptions]="{standalone: true}"> 95923: $410 </label>
+          <label><input type="checkbox" [(ngModel)]="reportDetails.suggestBill.v95943" [ngModelOptions]="{standalone: true}"> 95943: $440 </label>
+          <label><input type="checkbox" [(ngModel)]="reportDetails.suggestBill.v95921" [ngModelOptions]="{standalone: true}"> 95921: $280 </label> <br>
+          <label><input type="checkbox" [(ngModel)]="reportDetails.suggestBill.v93923" [ngModelOptions]="{standalone: true}"> 93923: $250 </label>
+          <label><input type="checkbox" [(ngModel)]="reportDetails.suggestBill.v93922" [ngModelOptions]="{standalone: true}"> 93922: $280 </label>
         </td>
       </tr>
 
@@ -38,7 +38,7 @@
         <td> Patient’s Insurance Carrier (s) <input class="signaturefont" type="text"> </td>
         <td colspan="2">
           <label>
-            <input type="checkbox">
+            <input type="checkbox" [(ngModel)]="reportDetails.suggestBill.no_diagnosis_detected" [ngModelOptions]="{standalone: true}">
             No Diagnoses Established
           </label>
         </td>
@@ -190,7 +190,7 @@
           <td>
             <tr>
               <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.R000"></td>
-              <td>R00.0 Tachycardia, unspecified {{ reportDetails.provide_description.R000_text_1 }}{{ reportDetails.provide_description.R000_text_2 }}{{ reportDetails.provide_description.R000_text_3 }}</td>
+              <td>R00.0 Tachycardia, unspecified {{ reportDetails.rooo_Description.R000_text_1 }}{{ reportDetails.rooo_Description.R000_text_2 }}{{ reportDetails.rooo_Description.R000_text_3 }}</td>
             </tr>
           </td>
         </tr>
@@ -234,7 +234,7 @@
           </td>
           <td>
             <tr>
-              <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.R7303"></td>
+              <td> <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="reportDetails.details.R733"></td>
               <td>R73.03 Prediabetes (Non-Medicare)</td>
             </tr>
           </td>

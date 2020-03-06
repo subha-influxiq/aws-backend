@@ -1,5 +1,15 @@
 <!-- Admin Header -->
-<app-admin-header></app-admin-header>
+<app-admin-header *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-header>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-header *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+<!-- Doctor Header -->
+<app-doctor-header *ngIf="htmlText.userData.user_details.user_type == 'doctor'"></app-doctor-header>
+
+
+
+
 <mat-card class="admin_wrapper">
   <!-- header with add button -->
   <mat-card-content class="title_wrapper">

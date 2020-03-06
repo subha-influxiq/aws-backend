@@ -54,6 +54,7 @@ export class ResolveService implements Resolve<any> {
           break;
       }
     }
+      
     /* This one is for Doctor Dashboard End */
 
     /* This one is for Biller Dashboard Start */
@@ -65,6 +66,24 @@ export class ResolveService implements Resolve<any> {
       }
     }
     /* This one is for Biller Dashboard End */
+
+    /* This one is for Diagnostic Admin Start */
+    var allCookies: any = this.cookies.getAll();
+    allCookies.user_details = JSON.parse(allCookies.user_details);
+
+    if(route.url[0].path == 'diagnostic-admin') {
+      requestData.condition['diagnostic_admin_id_object'] = allCookies.user_details._id;
+    }
+    /* This one is for Diagnostic Admin End */
+
+    /* This one is for Diagnostic Admin Start */
+    var allCookies: any = this.cookies.getAll();
+    allCookies.user_details = JSON.parse(allCookies.user_details);
+
+    if(route.url[0].path == 'doctor') {
+      requestData.condition['doctor_id_object'] = allCookies.user_details._id;
+    }
+    /* This one is for Diagnostic Admin End */
     /////////////////////////////////////////////////////////////////////
 
     /* If send any query params */

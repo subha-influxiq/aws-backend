@@ -189,6 +189,11 @@ export class AddEditTechComponent implements OnInit {
         data["sourceobj"] = ["diagnostic_admin_id"];
       }
 
+      if(this.htmlText.userData.user_details.user_type == 'doctor') {
+        data.data["doctor_id"] = this.htmlText.userData.user_details._id;
+        data["sourceobj"] = ["doctor_id"];
+      }
+
       this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
         if (response.status == "success") {
           this.snackBar.open(this.htmlText.message, 'Ok', {
@@ -198,7 +203,14 @@ export class AddEditTechComponent implements OnInit {
           this.formDirective.resetForm();
 
           setTimeout(() => {
-            this.router.navigateByUrl("admin/tech-management");
+            switch(this.htmlText.userData.user_details.user_type) {
+              case 'diagnostic_admin':
+                this.router.navigateByUrl("admin/tech-management");
+                break;
+              case 'admin':
+                this.router.navigateByUrl("diagnostic-admin/tech-management");
+                break;
+            }
           }, 1000);
         } else {
           this.snackBar.open(response.msg, '', {

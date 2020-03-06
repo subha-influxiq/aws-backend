@@ -46,6 +46,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
     public cookieService: CookieService, public snackBar: MatSnackBar, public dialog: MatDialog) {
     
       this.htmlText.userData = this.cookieService.getAll();
+      this.htmlText.userData.user_details = JSON.parse(this.htmlText.userData.user_details);
       this.getAllTechData();
       this.allStateCityData();
       
@@ -104,7 +105,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
           this.doctorOfficeAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
           this.doctorOfficeAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
           this.doctorOfficeAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
-          this.doctorOfficeAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_details);
+          this.doctorOfficeAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
           this.doctorOfficeAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
         });
         break;
@@ -168,7 +169,8 @@ export class AddEditDoctorOfcComponent implements OnInit {
     var data = {
       "source": "data_pece",
       "condition": {
-        "user_type": "tech"
+        "user_type": "tech",
+        "doctor_id_object": this.htmlText.userData.user_details._id
       },
       "token": this.htmlText.userData.jwtToken
     };
@@ -204,6 +206,11 @@ export class AddEditDoctorOfcComponent implements OnInit {
         "sourceobjArray": ["tech_id"],
         "token": this.cookieService.get('jwtToken')
       };
+
+      if(this.htmlText.userData.user_details.user_type == 'doctor') {
+        postData.data["doctor_id"] = this.htmlText.userData.user_details._id;
+        postData["sourceobj"] = ["doctor_id"];
+      }
 
       this.httpService.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
         if (response.status == "success") {

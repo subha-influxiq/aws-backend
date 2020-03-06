@@ -1,9 +1,11 @@
 <!-- Admin Header -->
 <app-admin-header *ngIf="userData.user_type == 'admin'"></app-admin-header>
 
-
 <!-- Diagnostic Admin Header -->
 <app-diagnostic-admin-header *ngIf="userData.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+<!-- Doctor Header -->
+<app-doctor-header *ngIf="userData.user_type == 'doctor'"></app-doctor-header>
 
 
 
@@ -26,6 +28,11 @@
         <span class="bradcrumb"><a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Biller</span>
         <button mat-flat-button [routerLink]="['/diagnostic-admin/biller-management/add']">Add Biller</button>
       </ng-container>
+
+      <ng-container *ngIf="userData.user_type == 'doctor'">
+        <span class="bradcrumb"><a [routerLink]="['/doctor/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Biller</span>
+        <button mat-flat-button [routerLink]="['/doctor/biller-management/add']">Add Biller</button>
+      </ng-container>
     </span>
     <!-- End header with add button -->
 
@@ -45,7 +52,4 @@
 
 
 <!-- Admin Footer -->
-<app-admin-footer *ngIf="userData.user_type == 'admin'"></app-admin-footer>
-
-<!-- Diagnostic Admin Header -->
-<app-diagnostic-admin-footer *ngIf="userData.user_type == 'diagnostic_admin'"></app-diagnostic-admin-footer>
+<app-admin-footer></app-admin-footer>
