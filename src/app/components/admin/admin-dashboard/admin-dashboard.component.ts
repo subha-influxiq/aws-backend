@@ -80,7 +80,8 @@ export class AdminDashboardComponent implements OnInit {
     // get dashboard count
     this.http.httpViaPost('admin-dashboard', repostSignCond).subscribe((response) => {
       if(response.status == 'success') {
-        this.allResolveData = response.data;
+        this.allResolveData = response.data.dashboardCount[0];
+        this.viewReportProcessData(this.htmlText.headerText);
       } else {
         this.router.navigateByUrl('logout');
       }
@@ -101,6 +102,7 @@ export class AdminDashboardComponent implements OnInit {
 
     // search condition
     var repostSignCond: any = {
+      "source": "data_pece",
       "search": this.searchJson,
       "token": this.jwtToken,
       "pagination": {
@@ -110,8 +112,23 @@ export class AdminDashboardComponent implements OnInit {
     };
 
     switch (flag) {
+      // Images Not Processed
+      case 'Images Not Processed':
+        repostSignCond.source = "data_image_not_process";
+        repostSignCond["condition"] = {};
+        break;
+      // Basic Details Not Processed
+      case 'Basic Details Not Processed':
+        repostSignCond.source = "data_pece_page1_notexists";
+        repostSignCond["condition"] = {};
+        break;
+      // Risk Markers Not Processed
+      case 'Risk Markers Not Processed':
+        repostSignCond.source = "data_all_code_not_exists";
+        repostSignCond["condition"] = {};
+        break;
       /* Report Status Section */
-      case 'Total Mannual Reports':
+      case 'Total Manual Reports':
         this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
         
         repostSignCond["condition"] = {
@@ -136,16 +153,8 @@ export class AdminDashboardComponent implements OnInit {
       case 'Report Processed':
         this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
 
-        repostSignCond["condition"] = {
-          "report_type": { $exists: true },
-          "page_1": { $exists: true },
-          "page_2": { $exists: true },
-          "page_3": { $exists: true },
-          "page_4": { $exists: true },
-          "page_5": { $exists: true },
-          "page_6": { $exists: true },
-          "page_7": { $exists: true }
-        };
+        repostSignCond.source = "data_all_code_exists";
+        repostSignCond["condition"] = {};
         break;
       case 'Report Signed':
         this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'billerName', 'billGenerationDate', 'billSentDate', 'reportType', 'superBill', 'status', 'createdAt', 'editRecord'];
@@ -176,14 +185,14 @@ export class AdminDashboardComponent implements OnInit {
 
         repostSignCond["condition"] = {
           "report_type": { $exists: true },
-          "doctor_signature": { $exists: false }
+          "biller_id": { $exists: false }
         };
         break;
       default:
         this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
 
         repostSignCond["condition"] = {
-          "doctor_signature": { $exists: false },
+          "biller_id": { $exists: false },
           "report_type": { $exists: true },
         };
         break;

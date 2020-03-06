@@ -101,6 +101,10 @@ export class DoctorDashboardComponent implements OnInit {
             "doctor_signature": { $exists: true },
             "doctor_id": this.authData.user_details._id
           },
+          "pagination": {
+            "skip": 0,
+            "limit": 50
+          },
           "token": this.authData.jwtToken
         };
         break;
@@ -114,6 +118,10 @@ export class DoctorDashboardComponent implements OnInit {
             "doctor_signature": { $exists: false },
             "doctor_id": this.authData.user_details._id
           },
+          "pagination": {
+            "skip": 0,
+            "limit": 50
+          },
           "token": this.authData.jwtToken
         };
         break;
@@ -124,6 +132,10 @@ export class DoctorDashboardComponent implements OnInit {
           "condition": {
             "report_type": { $exists: true },
             "doctor_id": this.authData.user_details._id
+          },
+          "pagination": {
+            "skip": 0,
+            "limit": 50
           },
           "token": this.authData.jwtToken
         };

@@ -78,6 +78,10 @@ export class ListDoctorComponent implements OnInit {
     this.user_cookie = cookieService.get('jwtToken');
     this.userData = JSON.parse(this.cookieService.get('user_details'));
 
+    if(this.userData.user_type == 'diagnostic_admin') {
+      this.editUrl = 'diagnostic-admin/doctor-management/edit';
+    }
+
     this.apiUrl = http.baseUrl;
   }
 

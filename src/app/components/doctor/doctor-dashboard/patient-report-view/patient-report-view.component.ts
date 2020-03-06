@@ -9,6 +9,7 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
 import { CommonFunction } from '../../../../class/common/common-function';
 import { environment } from '../../../../../environments/environment';
+import { type } from 'os';
 
 export interface DialogData {
   message: string;
@@ -77,6 +78,9 @@ export class PatientReportViewComponent implements OnInit {
   ngOnInit() {
     this.activeRoute.data.forEach((data) => {
       this.htmlText.allResolveData = data.data.data;
+      if(typeof(this.htmlText.allResolveData.reportData[0].stressi) != 'undefined') {
+        this.htmlText.allResolveData.reportData[0].stressI = this.htmlText.allResolveData.reportData[0].stressi;
+      }
       this.htmlText.allResolveData.reportData[0].BMI_flag = Math.round(this.htmlText.allResolveData.reportData[0].BMI);
     });
   }
@@ -85,7 +89,7 @@ export class PatientReportViewComponent implements OnInit {
     var data = {
       "source": "biller_by_doctor_id",
       "condition": {
-        "tech_id_object": id
+        "_id_object": id
       },
       "token": this.cookiesData.jwtToken
     };

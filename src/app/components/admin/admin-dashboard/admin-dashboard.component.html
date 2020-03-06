@@ -107,7 +107,7 @@
             Manual Records
           </p>
           <h2> {{ allResolveData.total_reports_type_manual }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total manual Reports');">view all</button>
+          <button mat-flat-button (click)="viewReportProcessData('Total Manual Reports');">view all</button>
         </span>
       </mat-card-content>
 
@@ -147,8 +147,8 @@
           <p>Total No of <br>
             Images Not Processed
           </p>
-          <h2> {{ allResolveData.total_field_exists }} </h2>
-          <button mat-flat-button routerLink="/admin/images-not-process">view all</button>
+          <h2> {{ allResolveData.total_pdf_to_images_not_process }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Images Not Processed')">view all</button>
         </span>
       </mat-card-content>
 
@@ -163,8 +163,8 @@
           <p>Total No of <br>
             Basic Details Not Processed
           </p>
-          <h2> {{ allResolveData.total_field_not_exists }} </h2>
-          <button mat-flat-button routerLink="/admin/fileds-not-process">view all</button>
+          <h2> {{ allResolveData.total_basic_details_not_process }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Basic Details Not Processed')">view all</button>
         </span>
       </mat-card-content>
 
@@ -179,8 +179,8 @@
           <p>Total No of <br>
             Risk Markers Not Processed
           </p>
-          <h2> {{ allResolveData.totalTextNotProcessCount }} </h2>
-          <button mat-flat-button routerLink="/admin/pages-not-process">view all</button>
+          <h2> {{ allResolveData.total_code_not_exists }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Risk Markers Not Processed')">view all</button>
         </span>
       </mat-card-content>
 
@@ -219,7 +219,7 @@
           <p>Total No of <br>
             Report Processed
           </p>
-          <h2> {{ allResolveData.processedReportCount }} </h2>
+          <h2> {{ allResolveData.total_reports - allResolveData.total_pdf_to_images_not_process }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Report Processed')">view all</button>
         </span>
       </mat-card-content>

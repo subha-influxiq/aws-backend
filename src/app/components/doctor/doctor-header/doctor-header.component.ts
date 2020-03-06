@@ -19,10 +19,10 @@ export class DoctorHeaderComponent implements OnInit {
   isSticky: boolean = false;
 
   constructor(public cookies: CookieService, public router: Router) {
-    let allData: any = {};
-    allData = cookies.getAll()
+    let allData: any = cookies.getAll()
     this.user_data = JSON.parse(allData.user_details);
     this.user_cookie = cookies.get('jwtToken');
+    this.user_data["headerFlag"] = typeof(this.user_data.diagnostic_admin_id);
    }
 
   ngOnInit() {

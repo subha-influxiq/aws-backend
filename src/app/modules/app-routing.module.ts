@@ -380,8 +380,7 @@ const routes: Routes = [
       requestcondition: {
         source: 'data_pece',
         condition: {
-          user_type: "tech",
-          diagnostic_admin_id :{ $exists: true }
+          user_type: "tech"
         }
       },
       endpoint: 'datalist'
@@ -393,8 +392,7 @@ const routes: Routes = [
       requestcondition: {
         source: 'data_pece',
         condition: {
-          user_type: "tech",
-          diagnostic_admin_id :{ $exists: true }
+          user_type: "tech"
         }
       },
       endpoint: 'datalist'
@@ -409,8 +407,7 @@ const routes: Routes = [
       requestcondition: {
         source: 'data_pece',
         condition: {
-          user_type: "doctor",
-          diagnostic_admin_id :{ $exists: true }
+          user_type: "doctor"
         }
       },
       endpoint: 'datalist'
@@ -423,13 +420,13 @@ const routes: Routes = [
       requestcondition: {
         source: 'data_pece',
         condition: {
-          user_type: "doctor",
-          diagnostic_admin_id :{ $exists: true }
+          user_type: "doctor"
         }
       },
       endpoint: 'datalist'
     },
   },
+  /* Biller Management */
   { path: 'diagnostic-admin/biller-management/add', component: AddEditBillerComponent, canActivate: [AuthguardService] },
   {
     path: 'diagnostic-admin/biller-management/edit/:_id', component: AddEditBillerComponent, canActivate: [AuthguardService], resolve: { billersingleData: ResolveService },
@@ -437,8 +434,7 @@ const routes: Routes = [
       requestcondition: {
         source: 'data_pece',
         condition: {
-          user_type: "biller",
-          diagnostic_admin_id :{ $exists: true }
+          user_type: "biller"
         }
       },
       endpoint: 'datalist'
@@ -450,8 +446,7 @@ const routes: Routes = [
       requestcondition: {
         source: 'data_pece',
         condition: {
-          user_type: "biller",
-          diagnostic_admin_id :{ $exists: true }
+          user_type: "biller"
         }
       },
       endpoint: 'datalist'
@@ -602,7 +597,6 @@ const routes: Routes = [
       endpoint: 'doctor-dashboard'
     },
   },
-
   {
     path: 'doctor/patient-record-report/:_id', component: PatientReportViewComponent,
     canActivate: [AuthguardService],
@@ -615,7 +609,93 @@ const routes: Routes = [
       endpoint: 'report-view'
     },
   },
-
+  /* Biller Management */
+  { path: 'doctor/biller-management/add', component: AddEditBillerComponent, canActivate: [AuthguardService] },
+  {
+    path: 'doctor/biller-management/edit/:_id', component: AddEditBillerComponent, canActivate: [AuthguardService], resolve: { billersingleData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "biller",
+          diagnostic_admin_id :{ $exists: false }
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  {
+    path: 'doctor/biller-management', component: ListingBillerComponent, canActivate: [AuthguardService], resolve: { Billerdata: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "biller",
+          diagnostic_admin_id :{ $exists: false }
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  /* Tech Management */
+  { path: 'doctor/tech-management/add', component: AddEditTechComponent, canActivate: [AuthguardService] },
+  {
+    path: 'doctor/tech-management/edit/:_id', component: AddEditTechComponent, canActivate: [AuthguardService], resolve: { techData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "tech",
+          diagnostic_admin_id :{ $exists: false }
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  {
+    path: 'doctor/tech-management', component: ListingTechComponent, canActivate: [AuthguardService], resolve: { techDashboardData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "tech",
+          diagnostic_admin_id :{ $exists: false }
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  /* Doctor Office Management */
+  {
+    path: 'doctor/doctor-office-management', component: DoctorOfficeManagementComponent, canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: { 
+          "user_type": "doctor_office",
+          "diagnostic_admin_id" :{ $exists: false } 
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  { 
+    path: 'doctor/doctor-office-management/add', component: AddEditDoctorOfcComponent, canActivate: [AuthguardService] },
+  {
+    path: 'doctor/doctor-office-management/edit/:_id', component: AddEditDoctorOfcComponent, canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          "user_type": "doctor_office",
+          "diagnostic_admin_id" :{ $exists: false } 
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
   { path: 'doctor/signature-management', component: SignatureManagementComponent, canActivate: [AuthguardService] },
 
   /* Account-Settings */
