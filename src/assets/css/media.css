@@ -178,7 +178,7 @@
 .DataTable .container .searchbar { width: 90%; }
 .add_header { display: flex; margin: 0 16px; flex-direction: column; justify-content: center; align-items: center; }
 .add_header button { margin: 10px 0 0 0; }
-.table_wrapper .add_header{ display: flex; flex-direction: column; }
+.table_wrapper .add_header{ display: flex; flex-direction: column; width: 100%; margin: 0; box-sizing: border-box; }
 
 }
 @media screen and (max-width: 440px){
