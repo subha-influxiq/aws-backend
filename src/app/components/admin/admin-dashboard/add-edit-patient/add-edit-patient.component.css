@@ -17,14 +17,14 @@
 /* .add_form .example-form .patients_info_wrapper  .mat-card-content { flex: 1 1 32%; margin: 0;} */
 .add_form .example-form .patients_info_wrapper .mat-card-content { width: 32%; display: flex; flex-direction: column; margin-bottom: 0; margin-left: 9px;}
 .add_form .example-form .patients_info_wrapper .mat-card-content .patientGender{ background: #fff; padding: 10px 0px; border: 1px solid #d0d0d0; border-bottom: 1px solid #5f5f5f; }
-.add_form .example-form .patients_info_wrapper label{ width: auto; display: block; margin-bottom: 5px;}
+.add_form .example-form .patients_info_wrapper label{ width: auto;  margin-bottom: 5px;}
 .add_form .test_date_wrapper .mat-card-actions,
 .add_form .test_date_wrapper .mat-card-content,
 .add_form .test_date_wrapper .mat-card-subtitle {
   display: inline-flex;
   margin: 0.5%;
   vertical-align: middle;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 32%;
 }
@@ -50,6 +50,7 @@
 }
 .add_form .patient_diagnotes label{ width: 100%!important; }
 
+.auto_width{width: auto!important;}
 @media screen and (max-width: 1600px){
   .add_form{ width: 1320px;}
   .add_form .mat-card-content label { width: 95px; }

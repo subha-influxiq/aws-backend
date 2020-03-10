@@ -26,10 +26,10 @@ export interface DialogData {
 @HostListener('window:scroll', ['$event'])
 
 export class AddEditPatientComponent implements OnInit {
-  
+
   @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
-  
-  public htmlText: any = { 
+
+  public htmlText: any = {
     nav: 'Add Patient',
     header:"Add Report Manually",
     buttonText: "Submit",
@@ -42,10 +42,10 @@ export class AddEditPatientComponent implements OnInit {
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService, public snakBar : MatSnackBar, public dialog: MatDialog,
     public commonFunction: CommonFunction) {
-      
+
       this.allCookies = this.cookie.getAll();
       this.allCookies.user_details =  JSON.parse(this.allCookies.user_details);
-      
+
       this.getAllDoctorData();
       this.patientAddEditForm = this.fb.group({
         patient_name        :  ['', [Validators.required, Validators.maxLength(30)]],
@@ -178,7 +178,7 @@ export class AddEditPatientComponent implements OnInit {
       this.patientAddEditForm.value.birth_date          = new Date(this.patientAddEditForm.value.birth_date).getTime();
       this.patientAddEditForm.value.test_date           = new Date(this.patientAddEditForm.value.test_date).getTime();
       this.patientAddEditForm.value.test_completed_date = new Date(this.patientAddEditForm.value.test_completed_date).getTime();
-      
+
       var data: any = {
         "source" : "data_pece",
         "data" : this.patientAddEditForm.value,
@@ -195,7 +195,7 @@ export class AddEditPatientComponent implements OnInit {
           /* Open modal */
           let data: any = {
             width: '250px',
-            data: { 
+            data: {
               header: "Success",
               message: "Record Saved Successfully",
               button1: { text: "Cancel" },
@@ -203,7 +203,7 @@ export class AddEditPatientComponent implements OnInit {
             }
           }
           this.openDialog(data);
-        }  
+        }
       });
     }
   }
