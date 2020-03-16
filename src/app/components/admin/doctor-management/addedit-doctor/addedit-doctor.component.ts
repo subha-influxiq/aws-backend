@@ -80,8 +80,8 @@ export class AddeditDoctorComponent implements OnInit {
       city:                   ['', [ Validators.required ]],
       state:                  ['', [ Validators.required ]],
       user_type:              ['doctor', []],
-      tech_id:                ['', []],
-      biller_id:              ['', []],
+      //tech_id:                ['', []],
+      //biller_id:              ['', []],
       //doctors_office_id:      ['', []],
       taxo_list:              ['', []],
       status:                 ['', []],
@@ -115,8 +115,8 @@ export class AddeditDoctorComponent implements OnInit {
           this.doctorManagementAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
           this.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
           this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
-          this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_details);
-          this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_details);
+          //this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_details);
+          //this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_details);
           //this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_details);
           this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
           this.doctorManagementAddEditForm.controls['taxo_list'].patchValue(doctorDetails[0].taxo_list);
@@ -219,7 +219,7 @@ export class AddeditDoctorComponent implements OnInit {
         "source": "data_pece",
         "data": this.doctorManagementAddEditForm.value,
         "domainurl": environment.siteBaseUrl + 'reset-password',
-        "sourceobjArray": ["tech_id", "biller_id", "doctors_office_id"],
+        //"sourceobjArray": ["tech_id", "biller_id"],
         "token": this.cookieService.get('jwtToken')
       };
 

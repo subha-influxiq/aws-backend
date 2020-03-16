@@ -42,15 +42,15 @@ export class ManageAdminListComponent implements OnInit {
     "access_code",
     "updated_at",
   ];
-  public tableName: any = "users";
+  public tableName: any = "data_pece";
   public apiUrl: any;
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
-  public SearchingSourceName: any = "users_view_admin";
+  public SearchingSourceName: any = "data_admin_list";
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
-      textsearch: [{ label: "Search By Name", field: 'fullName' },
+      textsearch: [{ label: "Search By Name", field: 'name_search' },
       { label: "Search By E-Mail", field: 'email' }],
 
     };
@@ -62,7 +62,6 @@ export class ManageAdminListComponent implements OnInit {
 
     this.user_cookie = cookie.get('jwtToken');
     this.apiUrl = httpService.baseUrl;
-    
   }
 
   ngOnInit() {

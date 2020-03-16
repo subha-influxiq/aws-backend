@@ -52,11 +52,11 @@ export class ListingTechComponent implements OnInit {
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
-  public SearchingSourceName: any = "users_view_tech";
+  public SearchingSourceName: any = "data_tech_list";
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
-      textsearch: [{ label: "Search By Name", field: 'fullName' },
+      textsearch: [{ label: "Search By Name", field: 'name_search' },
       { label: "Search By E-Mail", field: 'email' }],
 
     };
