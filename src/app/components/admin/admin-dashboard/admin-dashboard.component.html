@@ -290,13 +290,15 @@
     <mat-toolbar class="top_header">
       <h2> {{ htmlText.headerText }} </h2>
       <span class="wrappp_R">
-        <button class="add_new tooltip" mat-button routerLink="/admin/patient-management/add">
-          <span class="tooltiptext"> Add Report </span>
+        <button class="add_new tooltip" mat-button routerLink="/admin/patient-management/add" matTooltip="Add Report" matTooltipPosition="above">
+          <!-- <span class="tooltiptext"> Add Report </span> -->
           <i class="material-icons">add</i>
         </button>
 
-        <button class="add_new tooltip" mat-button (click)="refreshDashboard();">
-          <span class="tooltiptext"> Refresh Dashboard </span>
+
+        <button class="add_new tooltip" mat-button (click)="refreshDashboard();"matTooltipPosition="above"
+          matTooltip="ReportRefresh Dashboard">
+          <!-- <span class="tooltiptext"> Refresh Dashboard </span> -->
           <i class="material-icons">cached</i>
         </button>
       </span>
