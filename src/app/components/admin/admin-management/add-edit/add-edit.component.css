@@ -22,10 +22,12 @@
 .techdashboard_header .mat-toolbar-row { flex-direction: column; padding: 20px;}
 .techdashboard_header .mat-toolbar-row .quotation p { margin-top: 16px; }
 .add_form .submit_form{ display: flex; flex-wrap: wrap; }
-.add_form .submit_form button { width: 46%; }
 }
 @media screen and (max-width: 768px){
   .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0; }
+}
+@media screen and (max-width: 680px){
+  .add_form .submit_form button { margin-bottom: 16px;}
 }
 @media screen and (max-width: 576px){
 .add_form .submit_form button { font-size: 22px; padding: 2px; }
