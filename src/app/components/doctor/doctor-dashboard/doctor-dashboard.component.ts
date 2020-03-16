@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { MatDialog , MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { UploadDialogBoxComponent } from '../../common/upload-dialog-box/upload-dialog-box.component';
 import { CommonFunction } from '../../../class/common/common-function';
 import { CookieService } from 'ngx-cookie-service';
@@ -42,9 +42,8 @@ export class DoctorDashboardComponent implements OnInit {
   public allDataSource: any;
   public start_date: any;
   public end_date: any;
-  public viewstatus:boolean = false;
-  public btnName:any = 'view more';
-  public show: boolean = false;
+  public viewstatus: boolean = false;
+  public btnName: any = 'view more';
 
   constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService,
     public http: HttpServiceService, public activatedRoute: ActivatedRoute, public matSnackBar: MatSnackBar,
@@ -87,7 +86,7 @@ export class DoctorDashboardComponent implements OnInit {
       }
     };
 
-    if(this.searchJson.dateRange != '') {
+    if (this.searchJson.dateRange != '') {
       this.searchJson.dateRange.end = moment(this.searchJson.dateRange.end, "DD-MM-YYYY").add(1, 'days');
     }
 
@@ -142,7 +141,7 @@ export class DoctorDashboardComponent implements OnInit {
         break;
     }
     this.http.httpViaPost('dashboard-datalist', data).subscribe(response => {
-      if(response.data.length > 0) {
+      if (response.data.length > 0) {
         this.allResolveData.recordData = response.data;
         this.allDataSource = new MatTableDataSource(this.allResolveData.recordData);
         this.allDataSource.paginator = this.paginator;
@@ -164,7 +163,7 @@ export class DoctorDashboardComponent implements OnInit {
   }
 
   downloadReport(report: any) {
-    if(typeof(report.download_count) == "undefined") {
+    if (typeof (report.download_count) == "undefined") {
       report.download_count = 1;
     } else {
       report.download_count = report.download_count + 1;
@@ -200,7 +199,7 @@ export class DoctorDashboardComponent implements OnInit {
     };
 
     this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
-      if(response.status == 'success') {
+      if (response.status == 'success') {
         this.matSnackBar.open("Start downloading...", "", {
           duration: 3000
         });
@@ -224,7 +223,7 @@ export class DoctorDashboardComponent implements OnInit {
     };
 
     this.http.httpViaPost("doctor-dashboard", postData).subscribe(response => {
-      if(response.status == 'success') {
+      if (response.status == 'success') {
         this.allResolveData = response.data;
         this.viewReportProcessData(this.htmlText.tableHeaderText);
       } else {
@@ -248,12 +247,13 @@ export class DoctorDashboardComponent implements OnInit {
     this.viewReportProcessData(this.htmlText.headerText);
   }
 
-  viewMore(){
+  viewMore() {
     this.viewstatus = !this.viewstatus;
-    if (this.show)
-    this.btnName = "view More";
-  else
-    this.btnName = "view less";
+
+    if (this.viewstatus)
+      this.btnName = "view less";
+    else
+      this.btnName = "view more";
   }
 
 }

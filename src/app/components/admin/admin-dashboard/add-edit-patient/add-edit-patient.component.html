@@ -36,8 +36,8 @@
             <mat-card-content>
               <label>Patient Gender</label>
               <span class="patientGender">
-                <input type="radio" value='Male' [formControl]="patientAddEditForm.controls['gender']">Male
-                <input type="radio" value='Female' [formControl]="patientAddEditForm.controls['gender']">Female
+               <label><input type="radio" value='Male' [formControl]="patientAddEditForm.controls['gender']">Male</label>
+              <label><input type="radio" value='Female' [formControl]="patientAddEditForm.controls['gender']">Female</label>
               </span>
 
               <mat-error
@@ -562,7 +562,7 @@
             </mat-card-content>
 
 
-            <mat-card-content>
+            <mat-card-content class="auto_width">
               <label>Blood Pressure<br> Systolic & Diastolic (120/80) </label>
               <mat-form-field>
                 <mat-select [formControl]="patientAddEditForm.controls['blood_pressure']"

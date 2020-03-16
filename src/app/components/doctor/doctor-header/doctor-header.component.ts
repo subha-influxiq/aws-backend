@@ -11,6 +11,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 export class DoctorHeaderComponent implements OnInit {
 
+  public toggleStatus:boolean = false;
   public user_data: any = {};
 
   public loader: boolean = true;
@@ -27,7 +28,7 @@ export class DoctorHeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   /**logout function start here**/
   logout() {
     this.cookies.delete('jwtToken');
@@ -38,7 +39,7 @@ export class DoctorHeaderComponent implements OnInit {
   /**logout function end here**/
 
   menuFunction(){
-    this.status = !this.status;
+    this.toggleStatus = !this.toggleStatus;
 
   }
 

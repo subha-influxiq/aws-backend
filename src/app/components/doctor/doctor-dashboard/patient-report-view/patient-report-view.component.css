@@ -57,7 +57,7 @@ width: 390px; border: 3px solid #d59d01; }
 }
 .add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0 8px; border: 2px solid #43cef5; background: #fff;
   box-sizing: border-box;}
-.add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0 20px;}
+.add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0px;}
 .add_form .patient_diagnotes .example-full-width textarea{ resize: none; }
 .add_form .example-form .field_setmodel{ border: 1px solid #6fa6bb;}
 .add_form .example-form .field_setmodel .legend_model{ font-family: "AvenirLight"; font-size: 20px; text-transform: uppercase; color: #03a9f5;}

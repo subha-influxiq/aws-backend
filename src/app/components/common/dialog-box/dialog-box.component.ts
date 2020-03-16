@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { ActivatedRoute, Router } from '@angular/router';
 
-export interface DialogData { 
+export interface DialogData {
   header: string,
   message: string,
   button1: { text: string },
