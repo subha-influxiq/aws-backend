@@ -26,11 +26,13 @@
         <td> Physician’s Signature <input class="signaturefont" type="text" value="{{ cookiesData.user_details.doctor_signature }}"></td>
         <td colspan="2">
           <p class="suggest">Suggested billing amounts per CPT Code: </p>
+          <span class="reportCheck">
           <label><input type="checkbox" [(ngModel)]="reportDetails.suggestBill.v95923" [ngModelOptions]="{standalone: true}"> 95923: $410 </label>
           <label><input type="checkbox" [(ngModel)]="reportDetails.suggestBill.v95943" [ngModelOptions]="{standalone: true}"> 95943: $440 </label>
-          <label><input type="checkbox" [(ngModel)]="reportDetails.suggestBill.v95921" [ngModelOptions]="{standalone: true}"> 95921: $280 </label> <br>
+          <label><input type="checkbox" [(ngModel)]="reportDetails.suggestBill.v95921" [ngModelOptions]="{standalone: true}"> 95921: $280 </label>
           <label><input type="checkbox" [(ngModel)]="reportDetails.suggestBill.v93923" [ngModelOptions]="{standalone: true}"> 93923: $250 </label>
           <label><input type="checkbox" [(ngModel)]="reportDetails.suggestBill.v93922" [ngModelOptions]="{standalone: true}"> 93922: $280 </label>
+        </span>
         </td>
       </tr>
 

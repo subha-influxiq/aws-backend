@@ -52,14 +52,14 @@
       url('../fonts/Roboto-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
-}
+}*/
 @font-face {
   font-family: 'AmandaSignature';
   src: url('../fonts/AmandaSignatureRegular.woff2') format('woff2'),
       url('../fonts/AmandaSignatureRegular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-} */
+}
 
 /* new font face AVENier */
 @font-face {
@@ -185,13 +185,13 @@
 .custom-modalbox .example-card .mat-card-content { width: 100%; } */
 
 /* modal for bulk upload container */
-.bulkupload-dialog .mat-dialog-container{ background: linear-gradient(0deg, #fff1c6, #fffdf7); text-align: center;}
+/* .bulkupload-dialog .mat-dialog-container{ background: linear-gradient(0deg, #fff1c6, #fffdf7); text-align: center;}
 .bulkupload-dialog .mat-dialog-container .mat-dialog-title { margin: 0 0 20px; display: block; margin-bottom: 0; color: #d66b1f; text-transform: uppercase;
   font-family: "RobotoBold"; border-bottom: 1px solid; padding-bottom: 5px; }
 .bulkupload-dialog .mat-dialog-container .mat-dialog-content{ color: #313131; font-family: "RobotoRegular"; }
 .bulkupload-dialog .mat-dialog-container .mat-dialog-actions { display: flex; justify-content: flex-end}
 .bulkupload-dialog .mat-dialog-container .mat-dialog-actions button{ background: #25c1b3; width: 100px; border-radius: 0; color: #fff; }
-.bulkupload-dialog .mat-dialog-container .mat-dialog-actions button:last-child{ background: #ff4f4f; }
+.bulkupload-dialog .mat-dialog-container .mat-dialog-actions button:last-child{ background: #ff4f4f; } */
 
 /* end modal for bulk upload container */
 
@@ -497,7 +497,7 @@ align-items: center; justify-content: center; color: #fff; font-family: 'AvenirM
 .mat-dialog-container .mat-dialog-content {
   display: block;
   margin: 0;
-  padding: 0;
+  padding: 0 10px; box-sizing: border-box;
   max-height: initial;
   overflow: auto; }
   .mat-dialog-container .mat-dialog-content p{
