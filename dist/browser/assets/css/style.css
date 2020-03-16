@@ -89,6 +89,14 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'AvenirHeavy';
+  src: url('../fonts/Avenir-Heavy.woff2') format('woff2'),
+      url('../fonts/Avenir-Heavy.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
 
 
 :root {
@@ -263,7 +271,7 @@
 /* admin css */
 .admin_wrapper{ width: 1400px; margin: 20px auto; box-sizing: border-box;}
 .searchcard { padding: 0; }
- 
+
 
 /* admin css */
 
@@ -341,10 +349,11 @@
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper{ width: 20%; position: relative; padding: 0; display: flex; padding-top: 4%; box-sizing: border-box; }
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle{ margin: 0;}
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle img{ max-width: 100%;}
-.superbillerContainer .biller_wrapper .super_bill_item span P{ font-size: 18px!important; line-height: 20px!important;} 
-.superbillerContainer .biller_wrapper .super_bill_item span h2{ margin: 0;} 
+.superbillerContainer .biller_wrapper .super_bill_item span P{ font-size: 18px!important; line-height: 20px!important;}
+.superbillerContainer .biller_wrapper .super_bill_item span h2{ margin: 0;}
 .superbillerContainer .biller_wrapper .super_bill_item span button { line-height: 28px!important; width: 90px!important; }
- 
+.superbillerContainer .biller_wrapper .super_bill_item {background-size: 90px!important; }
+
 
 
 .adminTables .viewButton{ background-color:var(--button-color2); width: auto; height: auto; line-height: initial; padding: 2px 10px; box-shadow: none; border-radius: 2px;
@@ -363,7 +372,11 @@
 .table_wrapper .mat-table .mat-cell  .mat-form-field-appearance-outline .mat-form-field-label { top: 16px; margin-top: -.25em; }
 .table_wrapper .top_header  {display: flex; align-items: center; justify-content: space-between; height: auto; padding:10px 5px;}
 .table_wrapper .top_header h2 { font-family: 'AvenirMedium'; font-size: 20px; text-transform: capitalize;}
-.table_wrapper .action_bar {display: flex; align-items: center; justify-content: space-between; height: auto; padding:10px;}
+.table_wrapper .action_bar {display: flex; align-items: center; height: auto; padding:10px 0;}
+.table_wrapper .action_bar .mat-form-field{ margin-right: 10px;}
+.table_wrapper .action_bar .mat-form-field:last-child{ margin-right: 0;}
+.table_wrapper .action_bar .add_btn{ border-radius: 3px; text-transform: uppercase; font-family: "AvenirMedium"; font-size: 18px; padding: 1px 16px; min-width: 170px;
+  background: var(--button-color2); color: #fff; margin-left: auto; }
 .table_wrapper .action_bar .mat-form-field-label-wrapper { position: absolute; left: 0px; box-sizing: content-box; width: 100%; height: 100%; overflow: hidden; pointer-events: none; top: -10px; padding-top: 20px; }
 .table_wrapper .action_bar .date-range{ display: flex; width: 43%; }
 .table_wrapper .action_bar .date-range .mat-form-field:last-child{ margin-left: 10px;}
@@ -377,8 +390,8 @@
 .add_button{ background: #e5ae00; font-family: "AvenirMedium"; color: #fff; text-transform: capitalize; box-shadow: none; border-radius: 3px; font-size: 18px;}
 .table_wrapper .mat-table .buttons_ro{ display: inline-block; }
 .table_wrapper .mat-table .buttons_ro button{ margin: 0 2px; }
-.table_wrapper .mat-table .buttons_ro button:first-child{ margin-left: 0px;  }       
-.table_wrapper .mat-table .buttons_ro button:last-child{ margin-right: 0px;  }       
+.table_wrapper .mat-table .buttons_ro button:first-child{ margin-left: 0px;  }
+.table_wrapper .mat-table .buttons_ro button:last-child{ margin-right: 0px;  }
 .table_wrapper .mat-table .mat-column-doctorName .doctor_name{ margin: 6px 0; }
 .table_wrapper .mat-table .mat-column-doctorName .doctor_name span{ font-family: 'AvenirBlack'; color: #404242; }
 
@@ -422,3 +435,36 @@
   border: 1px solid #e6e4e4;
   padding: 0 7px;}
  /* .editPatient_wrapper .patients_info_wrapper .mat-card-content .mat-form-field .mat-form-field-flex{ background: #ddd;} */
+
+
+ /* doctor dashboard new */
+ .admin_wrapper  .testingDoc { background: linear-gradient(0deg, #07aaf5, #40bffa); font-size: 34px; text-transform: uppercase; color: #fff; padding: 8px 10px;
+  font-family: 'AvenirMedium'; }
+ .admin_wrapper  .mediaDoc_wrapper { display: flex; justify-content: space-between; }
+ .admin_wrapper  .mediaDoc_wrapper .new_wrapper_left{ width: 73%; display: flex;}
+ .admin_wrapper  .mediaDoc_wrapper .new_wrapper_right{  width: 26%; display: flex; flex-direction: column;}
+ .admin_wrapper  .mediaDoc_wrapper .new_wrapper_right .media_inner_items:last-child { margin-top: 16px;}
+ .mediaDoc_wrapper .media_inner_items{ background: #f8f3f3;  margin: 0; display: flex;
+  flex-direction: column; border: 1px solid #b4b5b5; box-sizing: border-box; width:100%; }
+
+ .mediaDoc_wrapper .media_inner_items .image_wrapper { width: 100%; margin: 0; box-sizing: border-box; text-align: center;  display: flex;
+  align-items: center; justify-content: center;}
+ .mediaDoc_wrapper .media_inner_items .image_wrapper img{ max-width: 100%; vertical-align: middle;}
+ .mediaDoc_wrapper .media_inner_items .action_button { background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%);
+  color: #000000; font-size: 22px; font-family: 'AvenirHeavy'; padding: 9px; margin: 0; text-align: center; text-transform: uppercase; width: 100%;
+  border-radius: 0; margin-top: auto; box-sizing: border-box; }
+
+.report_wrapper .items_w  .icon_w{ background: #ffffff; padding: 10px; box-sizing: border-box; display: flex; flex-direction: column;
+align-items: center; justify-content: center; color: #fff; font-family: 'AvenirMedium'; text-transform: capitalize; font-size: 16px; height: 340px; }
+.report_wrapper .items_w  .icon_w img{ height: 100%; max-width: 100%;}
+.quickRef .report_wrapper{ display: flex; justify-content: center; flex-wrap: wrap;}
+.quickRef .report_wrapper .items_w { width: 32.3%; margin: 0.5%; display: flex; flex-direction: column; padding: 10px; box-sizing: border-box;
+  border: 1px solid #c3c3c3; border-radius: 5px;}
+.quickRef .report_wrapper .items_w:last-child{ margin-bottom: 0.5%;}
+.report_wrapper .items_w .name_wr{ display: flex; justify-content: space-between; align-items: center;}
+.report_wrapper .items_w .name_wr .reportName{ font-family: 'AvenirHeavy'; color: #272520; font-size: 20px; padding-right: 10px; line-height: 22px; box-sizing: border-box;}
+.report_wrapper .items_w .action_button{background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%);
+  color: #000000; font-size: 22px; font-family: 'AvenirHeavy'; padding: 4px; margin: 0; text-align: center; text-transform: uppercase; width: 100%;
+  border-radius: 0; margin-top: auto; box-sizing: border-box; }
+.viewMore_w{ justify-content: center; background: transparent!important; height: auto!important; margin-bottom: 30px!important; padding: 0!important;}
+.viewMore_w button{ min-width: 444px; background: linear-gradient(0deg, #04aaf5, #32baf9); font-family: 'AvenirHeavy'; color: #fff; text-transform: uppercase; font-size: 28px; padding: 4px;}
