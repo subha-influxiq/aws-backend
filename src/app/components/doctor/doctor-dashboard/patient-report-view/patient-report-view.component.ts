@@ -122,7 +122,7 @@ export class PatientReportViewComponent implements OnInit {
     if(typeof this.htmlText.billers !== 'undefined' && this.htmlText.billers != '') {
       var billerName = this.htmlText.billers[this.htmlText.billerArrayIndex].firstname + ' ' + this.htmlText.billers[this.htmlText.billerArrayIndex].lastname;
       var billerEmail = this.htmlText.billers[this.htmlText.billerArrayIndex].email;
-      var billerID = this.htmlText.billers[this.htmlText.billerArrayIndex]._id;
+      var billerID = this.htmlText.billers[this.htmlText.billerArrayIndex].biller_id;
 
       let modalData: any = {
         panelClass: 'bulkupload-dialog',

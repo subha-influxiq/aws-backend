@@ -84,14 +84,10 @@ export class BillerDashboardComponent implements OnInit {
 
     switch(flug) {
       case 'Total Downloaded':
-        repostSignCond.condition.download_count = {
-          "download_count": { $exists: true }
-        };
+        repostSignCond.condition.download_count = { $exists: true };
         break;
       case 'Not Downloaded':
-        repostSignCond.condition.download_count = {
-          "download_count": { $exists: false }
-        };
+        repostSignCond.condition.download_count = { $exists: false };
         break;
       default:
         break;
@@ -149,7 +145,18 @@ export class BillerDashboardComponent implements OnInit {
         });
         window.open(report.file_path, "_blank");
 
-        this.refreshDashboard();
+        let postData: any = {
+          "source": "data_pece",
+          "data": {
+            "id": report._id,
+            "download_count": report.download_count,
+          },
+          "token": this.loginUserData.jwtToken
+        };
+    
+        this.httpService.httpViaPost("addorupdatedata", postData).subscribe(response => {
+          this.refreshDashboard();
+        });
       } else {
         this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
           duration: 3000

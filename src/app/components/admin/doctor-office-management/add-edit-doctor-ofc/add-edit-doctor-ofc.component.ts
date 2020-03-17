@@ -107,6 +107,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
           this.doctorOfficeAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
           this.doctorOfficeAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
           this.doctorOfficeAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
+          this.doctorOfficeAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
         });
         break;
       case 'add':

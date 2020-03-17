@@ -51,8 +51,7 @@
         <mat-form-field appearance="fill">
           <mat-label>Select Tech</mat-label>
           <mat-select formControlName="tech_id" multiple>
-            <mat-option [value]="">Select Tech</mat-option>
-            <mat-option *ngFor="let tech of htmlText.techData;" value="{{ tech._id }}">{{ tech.firstname }} {{tech.lastname}}</mat-option>
+            <mat-option *ngFor="let tech of htmlText.techData;" value="{{ tech.tech_id }}">{{ tech.firstname }} {{tech.lastname}}</mat-option>
           </mat-select>
         </mat-form-field>
         <!-- Tech Details name -->
