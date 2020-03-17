@@ -121,6 +121,8 @@ import { ListingDiagnosticAdminComponent } from './components/admin/diagnostic-a
 import { DiagnosticAdminDashboardComponent } from './components/diagnostic-admin/diagnostic-admin-dashboard/diagnostic-admin-dashboard.component';
 import { DiagnosticAdminHeaderComponent } from './components/diagnostic-admin/diagnostic-admin-header/diagnostic-admin-header.component';
 import { DiagnosticAdminFooterComponent } from './components/diagnostic-admin/diagnostic-admin-footer/diagnostic-admin-footer.component';
+import { AddEditSalesPersonComponent } from './components/sales-person-management/add-edit-sales-person/add-edit-sales-person.component';
+import { ListSalesPersonComponent } from './components/sales-person-management/list-sales-person/list-sales-person.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -229,6 +231,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     DiagnosticAdminDashboardComponent,
     DiagnosticAdminHeaderComponent,
     DiagnosticAdminFooterComponent,
+    AddEditSalesPersonComponent,
+    ListSalesPersonComponent,
   ],
   imports: [
     SatDatepickerModule,

@@ -59,14 +59,14 @@ export class ListDoctorComponent implements OnInit {
   public deleteEndpoint: any = "deletesingledata";
   public user_cookie: any;
   public searchingEndpoint:any="datalist";
-  public searchSourceName:any="users_view_doctor_list"
+  public searchSourceName:any="data_doctor_list"
   public editUrl:any = 'admin/doctor-management/edit';
   public apiUrl:any;
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
-      textsearch: [{ label: "Search By Name", field: 'fullName' },
+      textsearch: [{ label: "Search By Name", field: 'name_search' },
       // {label:"Search by Taxonomy",field:'taxo_list'},
       { label: "Search By E-Mail", field: 'email' }]
     };
