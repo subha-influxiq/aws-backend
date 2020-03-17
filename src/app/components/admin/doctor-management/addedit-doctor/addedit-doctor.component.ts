@@ -90,6 +90,11 @@ export class AddeditDoctorComponent implements OnInit {
     };
     let passwordRule: any = { validators: this.matchpassword('password', 'confirmpassword') };
 
+    // diagnostic_admin
+    if(this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
+      validateRule["tech_id"] = ['', []];
+    }
+
     switch(flag) {
       case 'edit':
         delete validateRule.password;
@@ -115,7 +120,11 @@ export class AddeditDoctorComponent implements OnInit {
           this.doctorManagementAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
           this.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
           this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
-          //this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_details);
+
+          // diagnostic_admin
+          if(this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
+            this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
+          }
           //this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_details);
           //this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_details);
           this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
@@ -226,6 +235,7 @@ export class AddeditDoctorComponent implements OnInit {
       if(this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
         postData.data["diagnostic_admin_id"] = this.htmlText.userData.user_details._id;
         postData["sourceobj"] = ["diagnostic_admin_id"];
+        postData["sourceobjArray"] = ["tech_id"];
       }
 
       this.http.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {

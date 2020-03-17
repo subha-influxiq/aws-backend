@@ -167,10 +167,10 @@ export class AddEditDoctorOfcComponent implements OnInit {
   /**getting all the technician data**/
   getAllTechData() {
     var data = {
-      "source": "data_pece",
+      "source": "tech_by_doctor_id",
       "condition": {
-        "user_type": "tech",
-        "doctor_id_object": this.htmlText.userData.user_details._id
+        //"user_type": "tech",
+        "_id_object": this.htmlText.userData.user_details._id
       },
       "token": this.htmlText.userData.jwtToken
     };
@@ -221,7 +221,14 @@ export class AddEditDoctorOfcComponent implements OnInit {
           });
 
           setTimeout(() => {
-            this.router.navigateByUrl("admin/doctor-management");
+            switch(this.htmlText.userData.user_details.user_type) {
+              case 'doctor':
+                this.router.navigateByUrl("doctor/doctor-office-management");
+                break;
+              case 'admin':
+                this.router.navigateByUrl("admin/doctor-office-management");
+                break;
+            }
           }, 2000);
         } else {
           this.snackBar.open(response.msg, '', {

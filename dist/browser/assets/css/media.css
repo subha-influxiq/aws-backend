@@ -37,9 +37,18 @@
 /* tech dashboard */
 .report_wrapper .items_w .icon_w { height: 220px;}
 .report_wrapper .items_w .name_wr .reportName { font-size: 17px; line-height: 18px; }
+.admin_wrapper .content_wrapper .itemsection .button_wrapper { width: 30%; }
+.admin_wrapper .content_wrapper .itemsection .counteer .dataCount { font-size: 44px; }
+.admin_wrapper .content_wrapper .itemsection .icon { width: 16%;}
 }
 @media screen and (max-width: 1040px){
   .main_wrapper { background-size: 0; padding-left: 0; }
+  .admin_superbillsection .biller_wrapper { display: flex; flex-wrap: wrap;}
+  .admin_superbillsection .biller_wrapper .super_bill_item { width: 49%; }
+  .admin_wrapper .content_wrapper .itemsection{ flex-direction: column;}
+  .admin_wrapper .content_wrapper .itemsection .counteer { width: 100%; text-align: center; }
+  .admin_wrapper .content_wrapper .itemsection .icon { width: 100%; padding-top: 10px; }
+  .admin_wrapper .content_wrapper .itemsection .button_wrapper { width: 100%; }
 }
 @media screen and (max-width: 991px) {
     .DataTable .container .searchbar .mat-form-field { width: 100%;}
@@ -72,7 +81,7 @@
     .mat-table .mat-row {
       border-bottom: 10px solid #ddd;
       display: block;
-      height: auto;
+      height: auto; padding: 0;
     }
     /*
     .mat-table .mat-row:nth-child(even) {background: #CCC}
@@ -83,7 +92,7 @@
       display: block;
       font-size: 1em;
       text-align: right;
-      font-weight: bold;
+      /* font-weight: bold; */
       height:30px;
       margin-bottom: 2%;
       padding: 0 20px;
@@ -101,32 +110,32 @@
       position: absolute;
       left: 18px;
       font-size: 16px;
-      font-family: "RobotoMedium";
+      font-family: "AvenirMedium";
     }
 
-    .mat-table .mat-cell:after {
+  .mat-table .mat-cell:after {
       /*
       * aria-label has no advantage, it won't be read inside a table
       content: attr(aria-label);
-      */
-      content: attr(data-title);
-      float: left;
-      text-transform: uppercase;
-      font-weight: normal;
-      position: absolute;
-      left: 0;
-      font-size: .85em;
-    }
+  */
+  content: attr(title);
+  float: left;
+  text-transform: capitalize;
+  font-weight: normal;
+  position: absolute;
+  left: 16px;
+  font-size: 16px;
+  font-family: "AvenirMedium";
+}
 
-
-    .mat-table .mat-cell:last-child {
-      border-bottom: 0; margin-bottom: 10px;
-    }
-      .mat-table .mat-cell:first-child {
-      margin-top: 2%;
-    }
-    .DataTable .searchbar { display: flex!important;   height: auto; }
-    .custom-modalbox{ width: 90%;}
+.adminTables .mat-cell { height: auto; margin-bottom: 1%; padding: 10px 20px; padding-left: 36%; }
+.mat-table .mat-cell:last-child { border-bottom: 0; margin-bottom: 10px; }
+.mat-table .mat-cell:first-child { margin-top: 2%;}
+.DataTable .searchbar { display: flex!important;   height: auto; }
+.custom-modalbox{ width: 90%;}
+.table_wrapper .action_bar .resetButton_w { display: flex; width: 100%; margin-top: 10px; }
+.table_wrapper .action_bar { flex-wrap: wrap; }
+.cdk-overlay-connected-position-bounding-box { left: 40%!important;}
 }
 @media screen and (max-width: 840px){
   .quickRef .report_wrapper .items_w { width: 48%; margin: 1%;  }
@@ -157,6 +166,13 @@
 }
 @media screen and (max-width: 576px){
   .admin_table table tr td:nth-child(4) span {display: inline-block;}
+  .admin_wrapper .content_wrapper { flex-wrap: wrap; }
+  .admin_wrapper .content_wrapper .itemsection { flex-wrap: wrap; width: 100%; margin: 0; margin-bottom: 10px; }
+  .admin_superbillsection .biller_wrapper .super_bill_item { width: 100%; margin-bottom: 10px;  flex-direction: column;}
+  .admin_superbillsection .biller_wrapper .super_bill_item .container_wrapper { width: 100%; align-items: center; text-align: center;}
+  .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper { width: 100%; align-items: center; justify-content: center; }
+  .admin_superbillsection .biller_wrapper .super_bill_item span button{ margin: inherit;}
+  .admin_superbillsection .biller_wrapper .super_bill_item span P br{ display: none;}
 }
 @media screen and (max-width: 540px){
 .main_wrapper .login_wrapper { width: 400px; }
@@ -173,6 +189,9 @@
 .add_header button { margin: 10px 0 0 0; }
 .table_wrapper .add_header{ display: flex; flex-direction: column; width: 100%; margin: 0; box-sizing: border-box; }
 .example-container{ min-width: inherit;}
+.admin_wrapper { width: 100%; box-shadow: none; }
+.mat-table .mat-cell:before { left: 6px;}
+.adminTables .mat-cell { padding: 10px 6px 10px 0px;}
 }
 @media screen and (max-width: 440px){
 .main_wrapper .login_wrapper { width: 320px; }
@@ -180,13 +199,21 @@
 @media screen and (max-width: 420px){
   .mat-table .mat-row { padding: 0; }
   .mat-table .mat-cell:before { font-size: 15px; }
-  }
+  .table_wrapper .action_bar .mat-form-field,
+  .action_bar .mat-form-field .mat-form-field-flex { width: 100%; margin-right: 0;}
+  .table_wrapper .action_bar .date-range { width: 100%;}
+  .table_wrapper .action_bar .date-range .mat-form-field:last-child { margin-left: 0;}
+  .table_wrapper .top_header { flex-direction: column;}
+}
 @media screen and (max-width: 390px){
 .main_wrapper .login_wrapper { width: 280px; }
 }
 @media screen and (max-width: 350px){
 .main_wrapper .login_wrapper { width: 265px; }
 .main_wrapper .login_wrapper .login_container .main-div .from button { font-size: 18px; }
+.adminTables .mat-cell { padding: 10px 0; padding-left: 44%;}
+.mat-table .mat-cell:before { font-size: 13px; }
+.adminTables td.mat-cell:last-of-type { padding-right: 10px;  }
 }
 
 

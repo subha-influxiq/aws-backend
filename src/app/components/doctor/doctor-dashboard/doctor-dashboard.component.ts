@@ -145,8 +145,6 @@ export class DoctorDashboardComponent implements OnInit {
         this.allResolveData.recordData = response.data;
         this.allDataSource = new MatTableDataSource(this.allResolveData.recordData);
         this.allDataSource.paginator = this.paginator;
-      } else {
-        this.openModal(modalData);
       }
     });
   }

@@ -20,19 +20,22 @@ export class DoctorOfficeManagementComponent implements OnInit {
     "zip",
     "city",
     "tech_id",
+    "doctor_id",
     "state",
     "user_type",
     "password",
-    "created_at"
+    "id",
+    "created_at",
+    "updated_at"
   ];
   public editUrl: any = "admin/doctor-office-management/edit";
   public doctorOfficeAllData_modify_header: any = {
-    center_name: "Center Name",
-    firstname: "First Name",
-    lastname: "Last Name",
-    email: "Email",
-    phone: "Phone Number",
-    status: "Status"
+    "center name": "Center Name",
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "status": "Status"
   };
   public previewModal_skip: any = [
     "_id",

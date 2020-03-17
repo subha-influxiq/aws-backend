@@ -222,7 +222,10 @@
 
 
         <span class="submit_form">
-          <button mat-flat-button type="button" [routerLink]="['/admin/biller-management']"> Back</button>
+          <button mat-flat-button type="button" *ngIf="htmlText.userData.user_details.user_type == 'doctor'" [routerLink]="['/doctor/doctor-office-management']"> Back</button>
+          <button mat-flat-button type="button" *ngIf="htmlText.userData.user_details.user_type == 'admin'" [routerLink]="['/admin/doctor-office-management']"> Back</button>
+
+
           <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset </button>
           <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
           <button mat-flat-button type="button" *ngIf="params_id != ''" (click)="openDialog('')"> Change Password </button>
