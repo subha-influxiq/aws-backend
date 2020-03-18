@@ -27,6 +27,7 @@ export class DoctorDashboardComponent implements OnInit {
     buttonText: "Add One",
     headerText: "Patient Record Report",
     billerData: [],
+    signFlag: true
   };
   public searchJson: any = {
     doctorName: "",
@@ -51,6 +52,10 @@ export class DoctorDashboardComponent implements OnInit {
 
     this.authData["user_details"] = JSON.parse(cookie.get('user_details'));
     this.authData["jwtToken"] = cookie.get('jwtToken');
+
+    if(typeof(this.authData.user_details.diagnostic_admin_id) != 'undefined') {
+      this.htmlText.signFlag = false;
+    }
 
     this.activatedRoute.data.forEach(resolveData => {
       this.allResolveData = resolveData.doctordata.data;

@@ -45,8 +45,7 @@ export class BulkUploadComponent implements OnInit {
     public cookie: CookieService, public snakBar: MatSnackBar, public dialog: MatDialog,
     public commonFunction: CommonFunction) {
     this.user_token = cookie.get('jwtToken');
-    let allcookies: any;
-    allcookies = cookie.getAll();
+    let allcookies: any = cookie.getAll();
 
     this.cookiesData = JSON.parse(allcookies.user_details);
     this.cookies_id = this.cookiesData._id;
@@ -169,13 +168,18 @@ export class BulkUploadComponent implements OnInit {
     }
 
     if (this.techBulkUploadForm.valid) {
+      var formData: any = this.techBulkUploadForm.value;
+      if(typeof(this.cookiesData.diagnostic_admin_id) != 'undefined') {
+        formData["diagnostic_admin_id"] = this.cookiesData.diagnostic_admin_id;
+      }
+
       var data = {
         "source": "data_pece",
-        "data": this.techBulkUploadForm.value,
+        "data": formData,
         "doctor_details": this.doctorDetails,
         "tech_details": this.cookiesData,
         "login_url": environment.siteBaseUrl + "login",
-        "sourceobj": ["tech_id", "doctor_id"],
+        "sourceobj": ["tech_id", "doctor_id", "diagnostic_admin_id"],
         "token": this.user_token
       };
 

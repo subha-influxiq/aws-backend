@@ -28,7 +28,8 @@ export class PatientReportViewComponent implements OnInit {
     nav: 'Add Patient', 
     header: "Physician Report",
     allResolveData: "",
-    sliderCount: 0
+    sliderCount: 0,
+    sendToBiller: true
   };
   public cookiesData: any = {};
 
@@ -47,7 +48,8 @@ export class PatientReportViewComponent implements OnInit {
       this.getBiller(this.cookiesData.user_details._id);
     }
 
-    if((typeof(this.cookiesData.user_details.doctor_signature) == 'undefined' || this.cookiesData.user_details.doctor_signature == '') && this.cookiesData.user_details.user_type == 'doctor') {
+    if((typeof(this.cookiesData.user_details.doctor_signature) == 'undefined' || this.cookiesData.user_details.doctor_signature == '') && 
+    this.cookiesData.user_details.user_type == 'doctor' && typeof(this.cookiesData.user_details.diagnostic_admin_id) == 'undefined') {
       /* Open modal */
       let modalData: any = {
         panelClass: 'bulkupload-dialog',
@@ -83,6 +85,10 @@ export class PatientReportViewComponent implements OnInit {
       }
       this.htmlText.allResolveData.reportData[0].BMI_flag = Math.round(this.htmlText.allResolveData.reportData[0].BMI);
     });
+
+    if(typeof(this.cookiesData.user_details.diagnostic_admin_id) != 'undefined') {
+      this.htmlText.sendToBiller = false;
+    }
   }
 
   getBiller(id: any) {

@@ -284,8 +284,7 @@
 
   </mat-card-content>
 
-  <mat-toolbar class="patient_preview" *ngIf="cookiesData.user_details.user_type == 'doctor'">
-
+  <mat-toolbar class="patient_preview" *ngIf="cookiesData.user_details.user_type == 'doctor' && htmlText.sendToBiller == true">
     <mat-form-field color="warn">
       <mat-label>Select A Biller</mat-label>
       <mat-select [(ngModel)]="htmlText.billerArrayIndex" placeholder="Select A Biller">

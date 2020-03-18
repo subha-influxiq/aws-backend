@@ -259,7 +259,7 @@
   <mat-card-content class="admin_superbillsection">
     <mat-card-title class="testingDoc">Physician Report</mat-card-title>
     <mat-card-content class="biller_wrapper">
-      <!-- <mat-card-content class="super_bill_item sp_one">
+      <mat-card-content class="super_bill_item sp_one" *ngIf="htmlText.signFlag == true">
         <span class="border_wrapper">
           <mat-card-content class="circle">
             <img src="../../../../assets/images/reporticon3.png">
@@ -270,7 +270,7 @@
           <p>MANAGE YOUR SIGNATURE</p>
           <button mat-flat-button [routerLink]="['/doctor/signature-management']">SIGN</button>
         </span>
-      </mat-card-content> -->
+      </mat-card-content>
 
       <mat-card-content class="super_bill_item sp_two">
         <span class="border_wrapper">
