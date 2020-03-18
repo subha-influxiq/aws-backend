@@ -1,0 +1,98 @@
+.encounter_wrapper {
+  width: 100%;
+  margin: 20px auto;
+  display: block;
+}
+
+.header { text-align: center; margin: 0;
+  font-size: 30px;
+  font-family: "AvenirBlack";
+}
+
+.encounter_wrapper table { width: 100%;}
+
+.encounter_wrapper table { border-collapse: collapse; }
+.encounter_wrapper table, .encounter_wrapper  th, .encounter_wrapper  td { border: 1px solid #c7c7c7; padding: 5px 8px; font-family: 'AvenirMedium';}
+.encounter_wrapper table td tr td{ border:none; padding: 2px; vertical-align: top; font-family: 'AvenirMedium'; }
+.encounter_wrapper table td tr td b{ font-size: 16px; }
+.second_table .widther { width: 50%; }
+.second_table .spacer_o { margin-right: 15px; }
+.second_table .header { text-align: center; }
+.additionalnotes { width: 100%; height: 120px; resize: none; padding: 10px; box-sizing: border-box; }
+.additionalnotes3 { height: 238px; }
+.red_para { color: #bd1818; font-size: 20px; font-weight: normal; text-align: center; font-family: "AvenirMedium"; line-height: 22px; margin: 10px; }
+table input[type="text"] {
+  height: 40px;
+  border: none;
+  border-bottom: 1.4px solid #000;
+  padding: 0 10px;
+  background: #f1f1f1;
+  width: auto;
+  box-sizing: border-box;
+}
+table input[type="text"]:focus, textarea:focus{ outline: none;}
+.suggest { margin-top: 0; font-family: "AvenirMedium"; margin-bottom: 6px; color: #096509; }
+.limbs{ margin: 0; font-size: 22px; color: #000; text-align: center; font-family: "AvenirMedium"; border-top: 1px solid #b5b5b5; margin-top: 15px; text-transform: uppercase;
+  margin-bottom: -10px;
+}
+
+input[type="checkbox"]:checked {
+/* box-shadow: 0 0 0 3px hotpink; */
+position: relative;
+}
+input[type="checkbox"]:checked::before{
+content: 'x';
+/* content: '\2713'; checkmark */
+position: absolute;
+background: #fff;
+width: 100%;
+height: auto;
+color: #ff0707;
+left: 0px;
+display: flex;
+justify-content: center;
+border: .5px solid #807f7f;
+line-height: 12px;
+box-sizing: border-box;
+top: 0;
+border-radius: 2px;
+font-weight: bold;
+font-size: 16px;
+padding: 1px 7px 2px;
+}
+
+.signaturefont { font-family: "AmandaSignature"; font-size: 30px; line-height: 58px; height: 40px; padding: 10px 25px; box-sizing: border-box; background: #fff;
+border-bottom: 1px solid #000; color: rgb(5, 5, 253); }
+.reportCheck label{ width: 33%; display: inline-block; }
+
+
+  .content{ box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    display: block;
+    padding: 16px;
+    position: relative;
+    background: #dce5ea;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #bac4ca;}
+.content table{ width: 100%; border-collapse: collapse;}
+.content table th, .content table td{ text-align: left; width: auto; padding: 5px; font-family: 'AvenirMedium'; font-size: 16px; color: #000; }
+.content table th{    font-family: 'AvenirBlack'; margin-right: 16px;
+  color: #ffffff;
+  background: linear-gradient(-45deg, #03a9f5, #076eff);
+  width: 35%;
+  padding: 10px;
+  box-sizing: border-box;}
+  .content table td { width: 65%; padding-left: 20px;}
+@media screen and (max-width:1440px){
+.reportCheck label { width: 50%;}
+}
+
+@media screen and (max-width:1199px){
+.reportCheck label { width: 24%;}
+}
+@media screen and (max-width:900px){
+.reportCheck label { width: 50%;}
+}
+@media screen and (max-width: 600px){
+.reportCheck label { width: 100%; }
+}

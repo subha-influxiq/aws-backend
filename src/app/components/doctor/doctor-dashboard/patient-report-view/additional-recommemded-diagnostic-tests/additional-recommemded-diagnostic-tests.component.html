@@ -1,1 +1,107 @@
-<p>additional-recommemded-diagnostic-tests works!</p>
+<mat-card-content class="encounter_wrapper">
+  <table class="tableone">
+    <tr>
+      <td colspan="2">
+        <h2 class="header"> Additional Recommended Diagnostic Tests</h2>
+      </td>
+    </tr>
+
+    <tr>
+      <td> Patient Name <input type="text" value="test"></td>
+      <td> Patient Gender
+        <label> <input type="radio" [(ngModel)]="reportDetails.reportData[0].gender"
+            [ngModelOptions]="{standalone: true}" value='Male'>M</label>
+        <label> <input type="radio" [(ngModel)]="reportDetails.reportData[0].gender"
+            [ngModelOptions]="{standalone: true}" value='Female'>F</label>
+      </td>
+
+    </tr>
+
+    <tr>
+      <td><label> D.O.B <input type="text" value="{{ reportDetails.reportData[0].birth_date | date }}"></label></td>
+      <td> Test Date <input type="text" value="{{ reportDetails.reportData[0].test_date }}"></td>
+    </tr>
+
+
+  </table>
+</mat-card-content>
+
+<!-- <mat-card>
+    test Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit nobis nesciunt, accusamus dolores nostrum quisquam. Possimus, similique qui minima reiciendis unde temporibus non aspernatur iusto fuga libero voluptatum laudantium quidem!
+    <table>
+      <tr>
+        <th>Column</th>
+        <td>1</td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td>Pre-Diabetes</td>
+      </tr>
+      <tr>
+        <th>ICD -10</th>
+        <td>data</td>
+      </tr>
+      <tr>
+        <th>ABI &/or Doppler</th>
+        <td>data</td>
+      </tr>
+      <tr>
+        <th>Additional Testing</th>
+        <td>data</td>
+      </tr>
+    </table>
+
+
+
+</mat-card> -->
+
+<span class="loop">
+  <mat-card-content class="content">
+    <table>
+      <tr>
+        <th>Column</th>
+        <td>1</td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td>Pre-Diabetes</td>
+      </tr>
+      <tr>
+        <th>ICD -10</th>
+        <td>data</td>
+      </tr>
+      <tr>
+        <th>ABI &/or Doppler</th>
+        <td>data</td>
+      </tr>
+      <tr>
+        <th>Additional Testing</th>
+        <td>data</td>
+      </tr>
+    </table>
+  </mat-card-content>
+  <mat-card-content class="content">
+    <table>
+      <tr>
+        <th>Column</th>
+        <td>1</td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td>Pre-Diabetes</td>
+      </tr>
+      <tr>
+        <th>ICD -10</th>
+        <td>data</td>
+      </tr>
+      <tr>
+        <th>ABI &/or Doppler</th>
+        <td>data</td>
+      </tr>
+      <tr>
+        <th>Additional Testing</th>
+        <td>data</td>
+      </tr>
+    </table>
+  </mat-card-content>
+</span>
