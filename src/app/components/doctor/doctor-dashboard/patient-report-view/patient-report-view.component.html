@@ -272,6 +272,12 @@
             <app-system-superbill [patientDetails]="htmlText.allResolveData"></app-system-superbill>
           </ng-template>
         </mat-tab>
+
+        <mat-tab label="Additional Recommemded Diagnostic Tests">
+          <ng-template matTabContent>
+            <app-additional-recommemded-diagnostic-tests [patientDetails]="htmlText.allResolveData"></app-additional-recommemded-diagnostic-tests>
+          </ng-template>
+        </mat-tab>
       </mat-tab-group>
 
     </mat-card-content>
