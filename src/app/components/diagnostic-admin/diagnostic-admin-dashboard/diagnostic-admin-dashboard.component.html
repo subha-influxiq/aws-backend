@@ -1,454 +1,469 @@
-<app-diagnostic-admin-header></app-diagnostic-admin-header>
+<app-admin-header></app-admin-header>
 
 <mat-card class="admin_wrapper">
-    <mat-card-content class="content_wrapper">
-  
-      <mat-card-content class="itemsection">
-        <span class="icon">
-          <img src="../../../../assets/images/adminDoctoricon1.png">
-        </span>
-        <span class="counteer">
-          <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
-          <p class="doctorNumber">Total Number of <br>Doctors</p>
-        </span>
-        <span class="button_wrapper">
-          <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
-        </span>
-      </mat-card-content>
-  
-      <mat-card-content class="itemsection">
-        <span class="icon">
-          <img src="../../../../assets/images/adminDoctoricon2.png">
-        </span>
-        <span class="counteer">
-          <h4 class="dataCount"> {{ allResolveData.total_biller }}</h4>
-          <p class="doctorNumber">Total Number of<br> Billers</p>
-        </span>
-        <span class="button_wrapper">
-          <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
-        </span>
-      </mat-card-content>
-  
-      <mat-card-content class="itemsection">
-        <span class="icon">
-          <img src="../../../../assets/images/adminDoctoricon3.png">
-        </span>
-        <span class="counteer">
-          <h4 class="dataCount"> {{ allResolveData.total_tech }}</h4>
-          <p class="doctorNumber">Total Number of <br>Techs</p>
-        </span>
-        <span class="button_wrapper">
-          <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
-        </span>
-      </mat-card-content>
-  
+  <mat-card-content class="content_wrapper">
+
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/adminDoctoricon1.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+        <p class="doctorNumber">Total Number of <br>Doctors</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
+      </span>
     </mat-card-content>
-  
-  
-    <!-- Doctor occide related -->
-    <mat-card-content class="content_wrapper">
-  
-      <mat-card-content class="itemsection">
-        <span class="icon">
-          <img src="../../../../assets/images/billerNoteicon3.png">
-        </span>
-        <span class="counteer">
-          <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
-          <p class="doctorNumber">Total No of <br>Doctor's Office</p>
-        </span>
-        <span class="button_wrapper">
-          <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
-        </span>
-      </mat-card-content>
-  
-      <mat-card-content class="itemsection">
-        <span class="icon">
-          <img src="../../../../assets/images/billerNoteicon1.png">
-        </span>
-        <span class="counteer">
-          <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
-          <p class="doctorNumber">Total Appointments<br> Pending</p>
-        </span>
-        <span class="button_wrapper">
-          <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
-        </span>
-      </mat-card-content>
-  
-      <mat-card-content class="itemsection">
-        <span class="icon">
-          <img src="../../../../assets/images/billerNoteicon2.png">
-        </span>
-        <span class="counteer">
-          <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
-          <p class="doctorNumber">Total Appointments<br> Completed</p>
-        </span>
-        <span class="button_wrapper">
-          <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
-        </span>
-      </mat-card-content>
-  
+
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/adminDoctoricon2.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.total_biller }}</h4>
+        <p class="doctorNumber">Total Number of<br> Billers</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
+      </span>
     </mat-card-content>
-  
-  
-    <!-- Report Status Section Start -->
-    <mat-card-content class="admin_superbillsection">
-      <h1>Physician Reports Status</h1>
-      <mat-card-content class="biller_wrapper">
-  
-        <mat-card-content class="super_bill_item">
-          <span class="border_wrapper">
-            <mat-card-content class="circle">
-              <img src="../../../../assets/images/reporticon1.png">
-            </mat-card-content>
-          </span>
-  
-          <span class="container_wrapper">
-            <p>Total No of <br>
-              Manual Records
-            </p>
-            <h2> {{ allResolveData.total_reports_type_manual }} </h2>
-            <button mat-flat-button (click)="viewReportProcessData('Total manual Reports');">view all</button>
-          </span>
-        </mat-card-content>
-  
-        <mat-card-content class="super_bill_item">
-          <span class="border_wrapper">
-            <mat-card-content class="circle">
-              <img src="../../../../assets/images/reporticon2.png">
-            </mat-card-content>
-          </span>
-  
-          <span class="container_wrapper">
-            <p>Total No of <br>
-              File Records
-            </p>
-              <h2> {{ allResolveData.total_reports_type_file }} </h2>
-            <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
-          </span>
-        </mat-card-content>
-  
+
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/adminDoctoricon3.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.total_tech }}</h4>
+        <p class="doctorNumber">Total Number of <br>Techs</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
+      </span>
+    </mat-card-content>
+
+  </mat-card-content>
+
+
+  <!-- Doctor occide related -->
+  <mat-card-content class="content_wrapper">
+
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/billerNoteicon3.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
+        <p class="doctorNumber">Total No of <br>Doctor's Office</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
+      </span>
+    </mat-card-content>
+
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/billerNoteicon1.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+        <p class="doctorNumber">Total Appointments<br> Pending</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
+      </span>
+    </mat-card-content>
+
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/billerNoteicon2.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+        <p class="doctorNumber">Total Appointments<br> Completed</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
+      </span>
+    </mat-card-content>
+
+  </mat-card-content>
+
+
+  <!-- Report Status Section Start -->
+  <mat-card-content class="admin_superbillsection">
+    <h1>Physician Reports Status</h1>
+    <mat-card-content class="biller_wrapper">
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Manual Records
+          </p>
+          <h2> {{ allResolveData.total_reports_type_manual }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total Manual Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            File Records
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+    </mat-card-content>
+  </mat-card-content>
+  <!-- Report Status Section End -->
+
+
+  <mat-card-content class="admin_superbillsection">
+    <h1>Physician Report Process Status</h1>
+    <mat-card-content class="biller_wrapper">
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Images Not Processed
+          </p>
+          <h2> {{ allResolveData.total_pdf_to_images_not_process }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Images Not Processed')">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Basic Details Not Processed
+          </p>
+          <h2> {{ allResolveData.total_basic_details_not_process }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Basic Details Not Processed')">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item ">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Risk Markers Not Processed
+          </p>
+          <h2> {{ allResolveData.total_code_not_exists }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Risk Markers Not Processed')">view all</button>
+        </span>
+      </mat-card-content>
+
+    </mat-card-content>
+  </mat-card-content>
+
+
+  <mat-card-content class="admin_superbillsection superbillerContainer">
+    <h1>Physician Report and Super Bills</h1>
+    <mat-card-content class="biller_wrapper">
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Added
+          </p>
+          <h2> {{ allResolveData.total_reports }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Reports Uploaded')">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Report Processed
+          </p>
+          <h2> {{ allResolveData.total_reports - allResolveData.total_pdf_to_images_not_process }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Report Processed')">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon3.png">
+          </mat-card-content>
+        </span>
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Report Signed
+          </p>
+          <h2> {{ allResolveData.total_sign_reports }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon4.png">
+          </mat-card-content>
+        </span>
+        <span class="container_wrapper">
+          <p> Sent to <br>
+            Biller
+          </p>
+          <h2> {{ allResolveData.total_send_to_supar_biller_reports }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Super Bill')">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon4.png">
+          </mat-card-content>
+        </span>
+        <span class="container_wrapper">
+          <p> Reports Downloaded </p>
+          <h2> {{ allResolveData.total_reports_download }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Download Bill')">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon4.png">
+          </mat-card-content>
+        </span>
+        <span class="container_wrapper">
+          <p> Reports Pending Sing </p>
+          <h2> {{ allResolveData.total_not_sign_reports }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Reports Pending Sing')">view all</button>
+        </span>
       </mat-card-content>
     </mat-card-content>
-    <!-- Report Status Section End -->
-  
-  
-    <mat-card-content class="admin_superbillsection">
-      <h1>Physician Report Process Status</h1>
-      <mat-card-content class="biller_wrapper">
-  
-        <mat-card-content class="super_bill_item">
-          <span class="border_wrapper">
-            <mat-card-content class="circle">
-              <img src="../../../../assets/images/reporticon1.png">
-            </mat-card-content>
-          </span>
-  
-          <span class="container_wrapper">
-            <p>Total No of <br>
-              Images Not Processed
-            </p>
-            <h2> {{ allResolveData.total_field_exists }} </h2>
-            <button mat-flat-button routerLink="/admin/images-not-process">view all</button>
-          </span>
-        </mat-card-content>
-  
-        <mat-card-content class="super_bill_item">
-          <span class="border_wrapper">
-            <mat-card-content class="circle">
-              <img src="../../../../assets/images/reporticon2.png">
-            </mat-card-content>
-          </span>
-  
-          <span class="container_wrapper">
-            <p>Total No of <br>
-              Basic Details Not Processed
-            </p>
-            <h2> {{ allResolveData.total_field_not_exists }} </h2>
-            <button mat-flat-button routerLink="/admin/fileds-not-process">view all</button>
-          </span>
-        </mat-card-content>
-  
-        <mat-card-content class="super_bill_item ">
-          <span class="border_wrapper">
-            <mat-card-content class="circle">
-              <img src="../../../../assets/images/reporticon2.png">
-            </mat-card-content>
-          </span>
-  
-          <span class="container_wrapper">
-            <p>Total No of <br>
-              Risk Markers Not Processed
-            </p>
-            <h2> {{ allResolveData.totalTextNotProcessCount }} </h2>
-            <button mat-flat-button routerLink="/admin/pages-not-process">view all</button>
-          </span>
-        </mat-card-content>
-  
-      </mat-card-content>
-    </mat-card-content>
-  
-  
-    <mat-card-content class="admin_superbillsection superbillerContainer">
-      <h1>Physician Report and Super Bills</h1>
-      <mat-card-content class="biller_wrapper">
-  
-        <mat-card-content class="super_bill_item">
-          <span class="border_wrapper">
-            <mat-card-content class="circle">
-              <img src="../../../../assets/images/reporticon1.png">
-            </mat-card-content>
-          </span>
-  
-          <span class="container_wrapper">
-            <p>Total No of <br>
-              Reports Added
-            </p>
-            <h2> {{ allResolveData.total_reports }} </h2>
-            <button mat-flat-button (click)="viewReportProcessData('Reports Uploaded')">view all</button>
-          </span>
-        </mat-card-content>
-  
-        <mat-card-content class="super_bill_item">
-          <span class="border_wrapper">
-            <mat-card-content class="circle">
-              <img src="../../../../assets/images/reporticon2.png">
-            </mat-card-content>
-          </span>
-  
-          <span class="container_wrapper">
-            <p>Total No of <br>
-              Report Processed
-            </p>
-            <h2> {{ allResolveData.processedReportCount }} </h2>
-            <button mat-flat-button (click)="viewReportProcessData('Report Processed')">view all</button>
-          </span>
-        </mat-card-content>
-  
-        <mat-card-content class="super_bill_item">
-          <span class="border_wrapper">
-            <mat-card-content class="circle">
-              <img src="../../../../assets/images/reporticon3.png">
-            </mat-card-content>
-          </span>
-          <span class="container_wrapper">
-            <p>Total No of <br>
-              Report Signed
-            </p>
-            <h2> {{ allResolveData.total_sign_reports }} </h2>
-            <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
-          </span>
-        </mat-card-content>
-  
-        <mat-card-content class="super_bill_item">
-          <span class="border_wrapper">
-            <mat-card-content class="circle">
-              <img src="../../../../assets/images/reporticon4.png">
-            </mat-card-content>
-          </span>
-          <span class="container_wrapper">
-            <p> Sent to <br>
-              Biller
-            </p>
-            <h2> {{ allResolveData.total_send_to_supar_biller_reports }} </h2>
-            <button mat-flat-button (click)="viewReportProcessData('Super Bill')">view all</button>
-          </span>
-        </mat-card-content>
-  
-        <mat-card-content class="super_bill_item">
-          <span class="border_wrapper">
-            <mat-card-content class="circle">
-              <img src="../../../../assets/images/reporticon4.png">
-            </mat-card-content>
-          </span>
-          <span class="container_wrapper">
-            <p> Reports Downloaded </p>
-            <h2> {{ allResolveData.total_reports_download }} </h2>
-            <button mat-flat-button (click)="viewReportProcessData('Download Bill')">view all</button>
-          </span>
-        </mat-card-content>
-  
-        <mat-card-content class="super_bill_item">
-          <span class="border_wrapper">
-            <mat-card-content class="circle">
-              <img src="../../../../assets/images/reporticon4.png">
-            </mat-card-content>
-          </span>
-          <span class="container_wrapper">
-            <p> Reports Pending Sing </p>
-            <h2> {{ allResolveData.total_not_sign_reports }} </h2>
-            <button mat-flat-button (click)="viewReportProcessData('Reports Pending Sing')">view all</button>
-          </span>
-        </mat-card-content>
-      </mat-card-content>
-    </mat-card-content>
-  
-  
-  
-    <!-- All Data listing start here(default listing) -->
-    <mat-card-content class="table_wrapper">
-  
-      <mat-toolbar class="top_header">
-        <h2> {{ htmlText.headerText }} </h2>
-        <button class="add_new tooltip" mat-button routerLink="/admin/patient-management/add">
-          <span class="tooltiptext"> Add Report </span>
-          <i class="material-icons">add_box</i>
+  </mat-card-content>
+
+
+
+  <!-- All Data listing start here(default listing) -->
+  <mat-card-content class="table_wrapper">
+
+    <mat-toolbar class="top_header">
+      <h2> {{ htmlText.headerText }} </h2>
+      <span class="wrappp_R">
+        <button class="add_new tooltip" mat-button routerLink="/admin/patient-management/add" matTooltip="Add Report" matTooltipPosition="above">
+          <!-- <span class="tooltiptext"> Add Report </span> -->
+          <i class="material-icons">add</i> Add Report Manually
         </button>
-  
-        <button class="add_new tooltip" mat-button (click)="refreshDashboard();">
-          <span class="tooltiptext"> Refresh Dashboard </span>
+
+
+        <button class="add_new tooltip" mat-button (click)="refreshDashboard();"matTooltipPosition="above"
+          matTooltip="ReportRefresh Dashboard">
+          <!-- <span class="tooltiptext"> Refresh Dashboard </span> -->
           <i class="material-icons">cached</i>
         </button>
-      </mat-toolbar>
-  
-      <mat-toolbar *ngIf="allResolveData.tableDataFlag == true" class="action_bar">
-        <mat-form-field>
-          <input matInput placeholder="Search by Doctor" [(ngModel)]="searchJson.doctorName">
-        </mat-form-field>
-  
-        <mat-form-field>
-          <input matInput placeholder="Search by Patient" [(ngModel)]="searchJson.patientName">
-        </mat-form-field>
-  
-        <mat-form-field class="parent_cat">
-          <mat-select [(ngModel)]="searchJson.status">
-            <mat-option value="">Select a status</mat-option>
-            <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
-            <mat-option value="doctor signed">Doctor Signed</mat-option>
-            <mat-option value="send to biller">Send To Biller</mat-option>
-            <mat-option value="error">Error</mat-option>
-            <mat-option value="pending">Pending</mat-option>
-          </mat-select>
-        </mat-form-field>
-  
-        <!-- Filter by date -->
-        <ng-container>
-          <span class="date-range">
-            <mat-form-field>
-              <input matInput placeholder="Choose a date" [satDatepicker]="picker" [(ngModel)]="searchJson.dateRange" />
-              <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
-              <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
-            </mat-form-field>
-          </span>
-  
-          <button mat-raised-button type="button" color="primary" class="add_button tooltip" (click)="viewReportProcessData(htmlText.headerText);">
+      </span>
+    </mat-toolbar>
+
+    <mat-toolbar *ngIf="allResolveData.tableDataFlag == true" class="action_bar">
+      <mat-form-field>
+        <input matInput placeholder="Search by Doctor" [(ngModel)]="searchJson.doctorName">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Search by Patient" [(ngModel)]="searchJson.patientName">
+      </mat-form-field>
+
+      <mat-form-field class="parent_cat">
+        <mat-select [(ngModel)]="searchJson.status">
+          <mat-option value="">Select a status</mat-option>
+          <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
+          <mat-option value="doctor signed">Doctor Signed</mat-option>
+          <mat-option value="send to biller">Send To Biller</mat-option>
+          <mat-option value="error">Error</mat-option>
+          <mat-option value="pending">Pending</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Filter by date -->
+      <ng-container>
+        <span class="date-range">
+          <mat-form-field>
+            <input matInput placeholder="Choose a date" [satDatepicker]="picker" [(ngModel)]="searchJson.dateRange" />
+            <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
+            <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
+          </mat-form-field>
+        </span>
+        <span class="resetButton_w">
+          <button mat-raised-button type="button" class="add_button tooltip"
+            (click)="viewReportProcessData(htmlText.headerText);">
             <span class="tooltiptext"> Search </span>
             <i class="material-icons">search</i>
           </button>
-  
-          <button mat-raised-button type="button" color="primary" class="add_button tooltip" (click)="resetSearch();" style="margin-left: 2px;">
+
+          <button mat-raised-button type="button" class="add_button tooltip" (click)="resetSearch();">
             <span class="tooltiptext"> Reset </span>
             <i class="material-icons">replay</i>
           </button>
-        </ng-container>
-  
-      </mat-toolbar>
-  
-      <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8 adminTables">
-        <ng-container matColumnDef="no">
-          <th mat-header-cell *matHeaderCellDef> No. </th>
-          <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }}. </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="patientName">
-          <th mat-header-cell *matHeaderCellDef> Patient Name </th>
-          <td mat-cell *matCellDef="let element" data-label="Patient Name"> {{ element.patient_name }} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="doctorName">
-          <th mat-header-cell *matHeaderCellDef> Doctor Name </th>
-          <td mat-cell *matCellDef="let element" data-label="Doctor Name" innerHTML="{{ element.doctor_details }}"> </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="techName">
-          <th mat-header-cell *matHeaderCellDef> Tech Name </th>
-          <td mat-cell *matCellDef="let element" data-label="Tech Name"> {{ element.tech_name }} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="billerName" *ngIf="htmlText.headerText != 'Patient Reports'">
-          <th mat-header-cell *matHeaderCellDef> Biller Name </th>
-          <td mat-cell *matCellDef="let element" data-label="Biller Name"> {{ element.biller_name }} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="billGenerationDate" *ngIf="htmlText.headerText != 'Patient Reports'">
-          <th mat-header-cell *matHeaderCellDef> Bill Generation Date </th>
-          <td mat-cell *matCellDef="let element" data-label="Bill Generation Date">
-            {{ element.bill_generation_date | date }} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="billSentDate" *ngIf="htmlText.headerText != 'Patient Reports'">
-          <th mat-header-cell *matHeaderCellDef> Bill Sent Date </th>
-          <td mat-cell *matCellDef="let element" data-label="Bill Sent Date"> {{ element.bill_sent_date | date }} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="reportType">
-          <th mat-header-cell *matHeaderCellDef> Record Type </th>
-          <td mat-cell *matCellDef="let element" data-label="Record Type"> {{ element.report_type }} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="superBill" *ngIf="htmlText.headerText != 'Patient Reports'">
-          <th mat-header-cell *matHeaderCellDef> Super Bill</th>
-          <td mat-cell *matCellDef="let element" data-label="Super Bill"> {{ element.super_bill }} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="status">
-          <th mat-header-cell *matHeaderCellDef> Status</th>
-          <td mat-cell *matCellDef="let element" data-label="Status">
-            <ng-container *ngIf="element.report_type == 'file' && !element.images">Data Processing</ng-container>
-            
-            <ng-container *ngIf="element.report_type == 'manual' || (element.report_type == 'file' && element.images)"> {{ element.status }} </ng-container>
-          </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="createdAt">
-          <th mat-header-cell *matHeaderCellDef> Created At</th>
-          <td mat-cell *matCellDef="let element" data-label="created_at"> {{ element.created_at | date }} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="editRecord">
-          <th mat-header-cell *matHeaderCellDef> Action </th>
-          <td mat-cell *matCellDef="let element; let i = index;">
-            <span class="buttons_ro">
-  
-              <button mat-button type="button" *ngIf="element.report_type == 'manual' || (element.report_type == 'file' && element.images)" class="viewButton tooltip" type="button" [routerLink]="['/admin/patient-record', element._id]">
-                <span class="tooltiptext">View</span>
-                <i class="material-icons">pageview</i>
-              </button>
-              
-              <button mat-button type="button" *ngIf="htmlText.headerText == 'Download Bill'" class="viewButton tooltip" type="button" (click)="viewDownloadDetails(element._id);">Details</button>
-              
-              <button mat-button type="button" *ngIf="element.status == 'Downloaded' && element.report_type == 'manual' || (element.report_type == 'file' && element.images)" class="editButton tooltip" [routerLink]="['/admin/patient-record/edit', element._id]">
-                <span class="tooltiptext">Edit</span>
-                <i class="material-icons">create</i>
-              </button>
-              
-              <button mat-button type="button" *ngIf="element.report_type == 'file' && !element.images" class="editButton downloadBtn tooltip">
-                <span class="tooltiptext">Processing</span>
-                <i class="material-icons">cached</i>
-              </button>
-              
-              <button mat-button type="button" *ngIf="element.status != 'Pending Signature'" class="editButton downloadBtn tooltip" (click)="downloadReport(element);">
-                <span class="tooltiptext">Download</span>
-                <i class="material-icons">cloud_download</i>
-              </button>
-              
-              <button mat-button type="button" class="editButton downloadBtn tooltip" (click)="deleteReport(element._id, i);">
-                <span class="tooltiptext">Delete</span>
-                <i class="material-icons">delete</i>
-              </button>
-            
-            </span>
-          </td>
-        </ng-container>
-  
-        <tr mat-header-row *matHeaderRowDef="allDataColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: allDataColumns;let i = index"></tr>
-      </table>
-  
+        </span>
+      </ng-container>
+
+    </mat-toolbar>
+
+    <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8 adminTables">
+      <ng-container matColumnDef="no">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element; let i = index;" data-label="No."> {{ i + 1 }}. </td>
+      </ng-container>
+
+      <ng-container matColumnDef="patientName">
+        <th mat-header-cell *matHeaderCellDef> Patient Name </th>
+        <td mat-cell *matCellDef="let element" data-label="Patient Name"> {{ element.patient_name }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="doctorName">
+        <th mat-header-cell *matHeaderCellDef> Doctor Name </th>
+        <td mat-cell *matCellDef="let element" data-label="Doctor Name" innerHTML="{{ element.doctor_details }}"> </td>
+      </ng-container>
+
+      <ng-container matColumnDef="techName">
+        <th mat-header-cell *matHeaderCellDef> Tech Name </th>
+        <td mat-cell *matCellDef="let element" data-label="Tech Name"> {{ element.tech_name }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="billerName" *ngIf="htmlText.headerText != 'Patient Reports'">
+        <th mat-header-cell *matHeaderCellDef> Biller Name </th>
+        <td mat-cell *matCellDef="let element" data-label="Biller Name"> {{ element.biller_name }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="billGenerationDate" *ngIf="htmlText.headerText != 'Patient Reports'">
+        <th mat-header-cell *matHeaderCellDef> Bill Generation Date </th>
+        <td mat-cell *matCellDef="let element" data-label="Bill Generation Date">
+          {{ element.bill_generation_date | date }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="billSentDate" *ngIf="htmlText.headerText != 'Patient Reports'">
+        <th mat-header-cell *matHeaderCellDef> Bill Sent Date </th>
+        <td mat-cell *matCellDef="let element" data-label="Bill Sent Date"> {{ element.bill_sent_date | date }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="reportType">
+        <th mat-header-cell *matHeaderCellDef> Record Type </th>
+        <td mat-cell *matCellDef="let element" data-label="Record Type"> {{ element.report_type }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="superBill" *ngIf="htmlText.headerText != 'Patient Reports'">
+        <th mat-header-cell *matHeaderCellDef> Super Bill</th>
+        <td mat-cell *matCellDef="let element" data-label="Super Bill"> {{ element.super_bill }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status</th>
+        <td mat-cell *matCellDef="let element" data-label="Status">
+          <ng-container *ngIf="element.report_type == 'file' && !element.images">Data Processing</ng-container>
+
+          <ng-container *ngIf="element.report_type == 'manual' || (element.report_type == 'file' && element.images)">
+            {{ element.status }} </ng-container>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="createdAt">
+        <th mat-header-cell *matHeaderCellDef> Created At</th>
+        <td mat-cell *matCellDef="let element" data-label="created_at"> {{ element.created_at | date }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="editRecord">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element; let i = index;">
+          <span class="buttons_ro">
+
+            <button mat-button type="button"
+              *ngIf="element.report_type == 'manual' || (element.report_type == 'file' && element.images)"
+              class="viewButton tooltip" type="button" [routerLink]="['/admin/patient-record', element._id]">
+              <span class="tooltiptext">View</span>
+              <i class="material-icons">search</i>
+            </button>
+
+            <button mat-button type="button" *ngIf="htmlText.headerText == 'Download Bill'" class="viewButton tooltip"
+              type="button" (click)="viewDownloadDetails(element._id);">Details</button>
+
+            <button mat-button type="button"
+              *ngIf="element.status == 'Downloaded' && element.report_type == 'manual' || (element.report_type == 'file' && element.images)"
+              class="editButton tooltip" [routerLink]="['/admin/patient-record/edit', element._id]">
+              <span class="tooltiptext">Edit</span>
+              <i class="material-icons">create</i>
+            </button>
+
+            <button mat-button type="button" *ngIf="element.report_type == 'file' && !element.images"
+              class="editButton downloadBtn tooltip">
+              <span class="tooltiptext">Processing</span>
+              <i class="material-icons">cached</i>
+            </button>
+
+            <button mat-button type="button" *ngIf="element.status != 'Pending Signature'"
+              class="editButton downloadBtn tooltip" (click)="downloadReport(element);">
+              <span class="tooltiptext">Download</span>
+              <i class="material-icons">cloud_download</i>
+            </button>
+
+            <button mat-button type="button" class="editButton downloadBtn tooltip"
+              (click)="deleteReport(element._id, i);">
+              <span class="tooltiptext">Delete</span>
+              <i class="material-icons">delete</i>
+            </button>
+
+          </span>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="allDataColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: allDataColumns;let i = index"></tr>
+    </table>
+    <mat-toolbar class="footer_action">
       <button mat-raised-button type="button" color="primary" (click)="pagination('prev');">Prev</button>
       <button mat-raised-button type="button" color="primary" (click)="pagination('next');">Next</button>
-  
-    </mat-card-content>
-    <!-- dashboard all listing end here -->
-  </mat-card>
+    </mat-toolbar>
+  </mat-card-content>
+  <!-- dashboard all listing end here -->
+</mat-card>
 
-<app-diagnostic-admin-footer></app-diagnostic-admin-footer>
+<app-admin-footer></app-admin-footer>
