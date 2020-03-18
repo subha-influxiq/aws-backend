@@ -14,6 +14,7 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/materia
   templateUrl: './additional-recommemded-diagnostic-tests.component.html',
   styleUrls: ['./additional-recommemded-diagnostic-tests.component.css']
 })
+
 export class AdditionalRecommemdedDiagnosticTestsComponent implements OnInit {
 
   public cookiesData: any;
@@ -24,6 +25,7 @@ export class AdditionalRecommemdedDiagnosticTestsComponent implements OnInit {
   @Input()
   set patientDetails(patientDetailsData: any) {
     this.reportDetails = patientDetailsData;
+    console.log(">>>", patientDetailsData.additional_recommemded_diagnostic_tests);
   }
 
   constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService,

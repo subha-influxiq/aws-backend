@@ -52,6 +52,9 @@ export class ResolveService implements Resolve<any> {
         case 'dashboard':
           requestData.condition['doctor_id'] = userData._id;
           break;
+        default:
+          requestData.condition['doctor_id_object'] = userData._id;
+          break;
       }
     }
       
@@ -68,20 +71,9 @@ export class ResolveService implements Resolve<any> {
     /* This one is for Biller Dashboard End */
 
     /* This one is for Diagnostic Admin Start */
-    var allCookies: any = this.cookies.getAll();
-    allCookies.user_details = JSON.parse(allCookies.user_details);
-
     if(route.url[0].path == 'diagnostic-admin') {
-      requestData.condition['diagnostic_admin_id_object'] = allCookies.user_details._id;
-    }
-    /* This one is for Diagnostic Admin End */
-
-    /* This one is for Diagnostic Admin Start */
-    var allCookies: any = this.cookies.getAll();
-    allCookies.user_details = JSON.parse(allCookies.user_details);
-
-    if(route.url[0].path == 'doctor') {
-      requestData.condition['doctor_id_object'] = allCookies.user_details._id;
+      console.log("Subha Prasad");
+      requestData.condition['diagnostic_admin_id_object'] = userData._id;
     }
     /* This one is for Diagnostic Admin End */
     /////////////////////////////////////////////////////////////////////

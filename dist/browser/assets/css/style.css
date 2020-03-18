@@ -242,10 +242,13 @@
 .sub_menu{ background: linear-gradient(145deg, #2dbcce, #2ae6fd)!important}
 .sub_menu button{ color: #fff; border-bottom: 2px solid #ddd;}
 .sub_menu button:last-child{ border: none; }
-.patient_item_section .mat-tab-label { opacity: 1; background: #000; color: #ffff; font-size: 16px; text-transform: uppercase; font-family: "AvenirBlack"; padding: 5px 16px; }
+.patient_item_section .mat-tab-label { opacity: 1; background: #000; color: #ffff; font-size: 14px; text-transform: uppercase; font-family: "AvenirBlack"; padding: 5px 16px; }
 .patient_item_section .mat-tab-label:nth-child(2){ margin: 0 8px; }
+.patient_item_section .mat-tab-label:nth-child(4){ margin: 0 8px; }
 .mat-tab-label.mat-tab-label-active { background-color:#0298dc!important; }
-
+.patient_item_section .mat-tab-group.mat-primary .mat-ink-bar {
+  background-color: transparent;
+}
 
 .app-doctor-office-management .DataTable .mat-table .mat-column-Actions span span:nth-child(3) .material-icons{display: none;}
 

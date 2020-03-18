@@ -7,7 +7,7 @@
     </tr>
 
     <tr>
-      <td> Patient Name <input type="text" value="test"></td>
+      <td> Patient Name <input type="text" value="{{ reportDetails.reportData[0].doctor_name }}"></td>
       <td> Patient Gender
         <label> <input type="radio" [(ngModel)]="reportDetails.reportData[0].gender"
             [ngModelOptions]="{standalone: true}" value='Male'>M</label>
@@ -56,51 +56,27 @@
 </mat-card> -->
 
 <span class="loop">
-  <mat-card-content class="content">
+  <mat-card-content class="content" *ngFor="let data of reportDetails.additional_recommemded_diagnostic_tests; let i = index;">
     <table>
       <tr>
         <th>Column</th>
-        <td>1</td>
+        <td>{{ i + 1 }}</td>
       </tr>
       <tr>
         <th>Description</th>
-        <td>Pre-Diabetes</td>
+        <td [innerHtml]="data.description"></td>
       </tr>
       <tr>
         <th>ICD -10</th>
-        <td>data</td>
+        <td [innerHtml]="data.ICD10"></td>
       </tr>
       <tr>
         <th>ABI &/or Doppler</th>
-        <td>data</td>
+        <td [innerHtml]="data.ABI_doppler"></td>
       </tr>
       <tr>
         <th>Additional Testing</th>
-        <td>data</td>
-      </tr>
-    </table>
-  </mat-card-content>
-  <mat-card-content class="content">
-    <table>
-      <tr>
-        <th>Column</th>
-        <td>1</td>
-      </tr>
-      <tr>
-        <th>Description</th>
-        <td>Pre-Diabetes</td>
-      </tr>
-      <tr>
-        <th>ICD -10</th>
-        <td>data</td>
-      </tr>
-      <tr>
-        <th>ABI &/or Doppler</th>
-        <td>data</td>
-      </tr>
-      <tr>
-        <th>Additional Testing</th>
-        <td>data</td>
+        <td [innerHtml]="data.additional_testing"></td>
       </tr>
     </table>
   </mat-card-content>

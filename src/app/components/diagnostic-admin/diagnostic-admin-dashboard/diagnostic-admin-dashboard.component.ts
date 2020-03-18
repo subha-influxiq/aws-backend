@@ -114,14 +114,16 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
         this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
         
         repostSignCond["condition"] = {
-          report_type: "manual"
+          "diagnostic_admin_id_object": this.loginUserData.user_details._id,
+          "report_type": "manual"
         };
         break;
       case 'Total File Reports':
         this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
 
         repostSignCond["condition"] = {
-          report_type: "file"
+          "diagnostic_admin_id_object": this.loginUserData.user_details._id,
+          "report_type": "file"
         };
         break;
       /* Report Status Section */
@@ -129,7 +131,8 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
         this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
 
         repostSignCond["condition"] = {
-          report_type: { $exists: true }
+          "diagnostic_admin_id_object": this.loginUserData.user_details._id,
+          "report_type": { $exists: true }
         };
         break;
       case 'Report Processed':
@@ -137,6 +140,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
         repostSignCond["condition"] = {
           "report_type": { $exists: true },
+          "diagnostic_admin_id_object": this.loginUserData.user_details._id,
           "page_1": { $exists: true },
           "page_2": { $exists: true },
           "page_3": { $exists: true },
@@ -151,6 +155,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
         repostSignCond["condition"] = {
           "report_type": { $exists: true },
+          "diagnostic_admin_id_object": this.loginUserData.user_details._id,
           "doctor_signature": { $exists: true }
         };
         break;
@@ -159,6 +164,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
         repostSignCond["condition"] = {
           "report_type": { $exists: true },
+          "diagnostic_admin_id_object": this.loginUserData.user_details._id,
           "biller_name": { $exists: true },
         };
         break;
@@ -167,6 +173,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
         repostSignCond["condition"] = {
           "report_type": { $exists: true },
+          "diagnostic_admin_id_object": this.loginUserData.user_details._id,
           "download_count": { $exists: true }
         };
         break;
@@ -175,6 +182,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
         repostSignCond["condition"] = {
           "report_type": { $exists: true },
+          "diagnostic_admin_id_object": this.loginUserData.user_details._id,
           "doctor_signature": { $exists: false }
         };
         break;
@@ -183,6 +191,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
         repostSignCond["condition"] = {
           "doctor_signature": { $exists: false },
+          "diagnostic_admin_id_object": this.loginUserData.user_details._id,
           "report_type": { $exists: true },
         };
         break;
