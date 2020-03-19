@@ -74,6 +74,10 @@ import { DoctorOfficeDashboardComponent } from '../components/doctor-office/doct
 import { NotFoundErrorComponent } from '../components/common/not-found-error/not-found-error.component';
 
 
+/* Sales Person */
+import { SalesPersonDashboardComponent } from '../components/sales-person/sales-person-dashboard/sales-person-dashboard.component';
+
+
 /* Test Component */
 import { TestComponent } from '../components/test/test.component';
 import { HealthriskSystemEncounterComponent } from '../components/doctor/doctor-dashboard/patient-report-view/healthrisk-system-encounter/healthrisk-system-encounter.component';
@@ -759,6 +763,12 @@ const routes: Routes = [
       endpoint: 'test-datalist'
     },
   },
+
+
+
+
+  /****************** Sales Person *****************/
+  { path: 'sales-person/dashboard', component: SalesPersonDashboardComponent },
 
 
 

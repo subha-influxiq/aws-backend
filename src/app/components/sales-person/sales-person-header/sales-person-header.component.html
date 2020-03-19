@@ -1,0 +1,62 @@
+<mat-toolbar class="techdashboard_header" [ngClass]="{'sticky' : isSticky}">
+    <mat-card-content class="header_wrapper">
+      <span class="logo_wrapper" [routerLink]="[ '/admin/dashboard' ]">
+        <img src="../../../assets/images/logo.png">
+      </span>
+  
+      <mat-card-content *ngIf="user_data.headerFlag != 'undefined'" class="quotation">
+        <button mat-flat-button (click)="menuFunction()" class="togle_menu">
+          <i class="material-icons"> menu </i>
+        </button>
+  
+        <mat-card-content class="quotation" [ngClass]="toggleStatus ? 'success' : 'danger'">
+          <mat-nav-list>
+            <a mat-list-item routerLinkActive="active" [routerLink]="['/doctor/dashboard']"> Dashboard </a>
+            <a mat-list-item [routerLink]="['/doctor/doctor-office-management']" routerLinkActive="active"> Manage Doctor Office </a>
+          </mat-nav-list>
+        </mat-card-content>
+      </mat-card-content>
+  
+      <ng-container *ngIf="user_data.headerFlag == 'undefined'">
+        <button mat-flat-button (click)="menuFunction()" class="togle_menu">
+          <i class="material-icons"> menu </i>
+        </button>
+  
+        <mat-card-content class="quotation" [ngClass]="toggleStatus ? 'success' : 'danger'">
+          <mat-nav-list>
+            <a mat-list-item routerLinkActive="active" [routerLink]="['/doctor/dashboard']"> Dashboard </a>
+            <a mat-list-item [routerLink]="['/doctor/tech-management']" routerLinkActive="active"> Manage Tech </a>
+            <a mat-list-item [routerLink]="['/doctor/biller-management']" routerLinkActive="active"> Manage Biller </a>
+            <a mat-list-item [routerLink]="['/doctor/doctor-office-management']" routerLinkActive="active"> Manage Doctor Office </a>
+          </mat-nav-list>
+        </mat-card-content>
+      </ng-container>
+  
+  
+      <mat-card-content class="profile_section">
+        <mat-menu #appMenu="matMenu">
+          <button mat-menu-item [routerLink]="['/doctor/account-settings']">
+            <mat-icon>account_circle</mat-icon> Account Settings
+          </button>
+          <button mat-menu-item [routerLink]="['/doctor/account-settings/change-password']">
+            <mat-icon>vpn_key</mat-icon> Change Password
+          </button>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>power_settings_new</mat-icon> Logout
+          </button>
+        </mat-menu>
+        <span class="username">{{user_data.firstname}} {{user_data.lastname}}</span>
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+          <span class="user_profile">
+            <mat-icon>account_circle</mat-icon>
+            <i class="material-icons">
+              keyboard_arrow_down
+            </i>
+          </span>
+        </button>
+  
+      </mat-card-content>
+    </mat-card-content>
+  </mat-toolbar>
+  <!-- end header -->
+  

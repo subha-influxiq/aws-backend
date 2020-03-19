@@ -124,6 +124,9 @@ import { DiagnosticAdminFooterComponent } from './components/diagnostic-admin/di
 import { AddEditSalesPersonComponent } from './components/sales-person-management/add-edit-sales-person/add-edit-sales-person.component';
 import { ListSalesPersonComponent } from './components/sales-person-management/list-sales-person/list-sales-person.component';
 import { AdditionalRecommemdedDiagnosticTestsComponent } from './components/doctor/doctor-dashboard/patient-report-view/additional-recommemded-diagnostic-tests/additional-recommemded-diagnostic-tests.component';
+import { SalesPersonDashboardComponent } from './components/sales-person/sales-person-dashboard/sales-person-dashboard.component';
+import { SalesPersonHeaderComponent } from './components/sales-person/sales-person-header/sales-person-header.component';
+import { SalesPersonFooterComponent } from './components/sales-person/sales-person-footer/sales-person-footer.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -235,6 +238,9 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AddEditSalesPersonComponent,
     ListSalesPersonComponent,
     AdditionalRecommemdedDiagnosticTestsComponent,
+    SalesPersonDashboardComponent,
+    SalesPersonHeaderComponent,
+    SalesPersonFooterComponent,
   ],
   imports: [
     SatDatepickerModule,
