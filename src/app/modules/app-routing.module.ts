@@ -365,7 +365,19 @@ const routes: Routes = [
         source: 'data_pece',
         condition: {}
       },
-      endpoint: 'admin-dashboard'
+      endpoint: 'diagnostic-admin-dashboard'
+    },
+  },
+  {
+    path: 'diagnostic-admin/patient-record/:_id', component: PatientReportViewComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'report-view'
     },
   },
 

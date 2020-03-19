@@ -29,7 +29,8 @@ export class PatientReportViewComponent implements OnInit {
     header: "Physician Report",
     allResolveData: "",
     sliderCount: 0,
-    sendToBiller: true
+    sendToBiller: true,
+    sendButton: [ "Sign & Back", "Sign & Next" ]
   };
   public cookiesData: any = {};
 
@@ -44,7 +45,7 @@ export class PatientReportViewComponent implements OnInit {
     this.cookiesData = this.cookie.getAll();
     this.cookiesData.user_details = JSON.parse(this.cookiesData.user_details);
 
-    if(this.cookiesData.user_details.user_type == 'doctor') {
+    if(this.cookiesData.user_details.user_type == 'doctor' || this.cookiesData.user_details.user_type == 'diagnostic_admin') {
       this.getBiller(this.cookiesData.user_details._id);
     }
 
@@ -99,6 +100,14 @@ export class PatientReportViewComponent implements OnInit {
       },
       "token": this.cookiesData.jwtToken
     };
+
+    if(this.cookiesData.user_details.user_type == 'diagnostic_admin') {
+      data.condition["diagnostic_admin_id_object"] = this.cookiesData.user_details._id;
+      delete data.condition._id_object;
+
+      this.htmlText.sendButton[0] = "Send & Back";
+      this.htmlText.sendButton[1] = "Send & Next";
+    }
 
     this.httpService.httpViaPost('datalist', data).subscribe((response) => {
       this.htmlText.billers = response.res;

@@ -1,6 +1,7 @@
 <app-biller-header *ngIf="cookiesData.user_details.user_type == 'biller'"></app-biller-header>
 <app-doctor-header *ngIf="cookiesData.user_details.user_type == 'doctor'"></app-doctor-header>
-<app-admin-header *ngIf="cookiesData.user_details.user_type == 'admin' "></app-admin-header>
+<app-admin-header *ngIf="cookiesData.user_details.user_type == 'admin'"></app-admin-header>
+<app-diagnostic-admin-header *ngIf="cookiesData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
 
 <ng-container>
 
@@ -284,7 +285,7 @@
 
   </mat-card-content>
 
-  <mat-toolbar class="patient_preview" *ngIf="cookiesData.user_details.user_type == 'doctor' && htmlText.sendToBiller == true">
+  <mat-toolbar class="patient_preview" *ngIf="(cookiesData.user_details.user_type == 'diagnostic_admin' || cookiesData.user_details.user_type == 'doctor') && htmlText.sendToBiller == true">
     <mat-form-field color="warn">
       <mat-label>Select A Biller</mat-label>
       <mat-select [(ngModel)]="htmlText.billerArrayIndex" placeholder="Select A Biller">
@@ -294,9 +295,9 @@
       </mat-select>
     </mat-form-field>
 
-    <button mat-button type="button" (click)="reportSign('back');">Sign & Back</button>
+    <button mat-button type="button" (click)="reportSign('back');">{{ htmlText.sendButton[0] }}</button>
 
-    <button mat-button type="button" (click)="reportSign('next');">Sign & Next</button>
+    <button mat-button type="button" (click)="reportSign('next');">{{ htmlText.sendButton[1] }}</button>
   </mat-toolbar>
 
 </ng-container>
