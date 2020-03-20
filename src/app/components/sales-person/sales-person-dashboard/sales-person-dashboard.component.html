@@ -1,5 +1,144 @@
 <app-sales-person-header></app-sales-person-header>
 
-<p>sales-person-dashboard works!</p>
+<mat-card-content class="sales_person_db">
+  <section class="shareLi">
+    <span class="in_w">
+      <h2>SHARE LINK FOR DOCTOR SIGN UP</h2>
+      <mat-card-content class="input_w">
+        <mat-form-field>
+          <input matInput type="text" placeholder="Ex: www.abcd.com/025dghdk" readonly>
+        </mat-form-field>
+        <button mat-button><i class="fas fa-unlink"></i></button>
+      </mat-card-content>
+      <mat-card-content class="social_media_wrapper">
+        <button mat-button matTooltip="Share in Facebook" aria-label="Share links" matTooltipPosition="above"> <i
+            class="fab fa-facebook-square"></i></button>
+        <button mat-button matTooltip="Share in Twitter" aria-label="Share links" matTooltipPosition="above"> <i
+            class="fab fa-twitter-square"></i> </button>
+        <button mat-button matTooltip="Share in Linkedin" aria-label="Share links" matTooltipPosition="above"> <i
+            class="fab fa-linkedin"></i></button>
+        <button mat-button matTooltip="Share in Tumbler" aria-label="Share links" matTooltipPosition="above"><i
+            class="fab fa-tumblr-square"></i></button>
+      </mat-card-content>
+    </span>
+  </section>
+
+</mat-card-content>
+
+
+
+
+<section class="table_list">
+  <mat-card-content class="table_wrapper">
+
+    <mat-toolbar class="top_header">
+      <h2> Doctor's List</h2>
+      <!-- <span class="wrappp_R">
+        <button class="add_new tooltip" mat-button (click)="refreshDashboard();" matTooltipPosition="above"
+          matTooltip="ReportRefresh Dashboard">
+          <i class="material-icons">cached</i>
+        </button>
+      </span> -->
+    </mat-toolbar>
+
+    <mat-toolbar class="action_bar">
+      <mat-form-field>
+        <input matInput placeholder="Search by Name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Search by Email">
+      </mat-form-field>
+
+      <mat-form-field class="parent_cat">
+        <mat-select>
+          <mat-option value="">Select a no:'1', doctors_name</mat-option>
+          <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
+          <mat-option value="doctor signed">Doctor Signed</mat-option>
+          <mat-option value="send to biller">Send To Biller</mat-option>
+          <mat-option value="error">Error</mat-option>
+          <mat-option value="pending">Pending</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Filter by date -->
+      <!-- <ng-container>
+      <span class="date-range">
+        <mat-form-field>
+          <input matInput placeholder="Choose a date" [satDatepicker]="picker" [(ngModel)]="searchJson.dateRange" />
+          <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
+          <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
+        </mat-form-field>
+      </span>
+      <span class="resetButton_w">
+        <button mat-raised-button type="button" class="add_button tooltip"
+          (click)="viewReportProcessData(htmlText.headerText);">
+          <span class="tooltiptext"> Search </span>
+          <i class="material-icons">search</i>
+        </button>
+
+        <button mat-raised-button type="button" class="add_button tooltip" (click)="resetSearch();">
+          <span class="tooltiptext"> Reset </span>
+          <i class="material-icons">replay</i>
+        </button>
+      </span>
+    </ng-container> -->
+
+    <span class="button_action">
+     <button mat-button>Search</button>
+     <button mat-button>Reset</button>
+    </span>
+    </mat-toolbar>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 adminTables">
+      <ng-container matColumnDef="no">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element; let i = index;" data-label="No."> {{ i + 1 }}. </td>
+      </ng-container>
+
+      <ng-container matColumnDef="doctors_name">
+        <th mat-header-cell *matHeaderCellDef>Doctors Name </th>
+        <td mat-cell *matCellDef="let element" data-label="Doctors Name"> {{ element.doctors_name }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email</th>
+        <td mat-cell *matCellDef="let element" data-label="Email" innerHTML="{{ element.email }}"> </td>
+      </ng-container>
+
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef> Phone </th>
+        <td mat-cell *matCellDef="let element" data-label="Tech Name"> {{ element.phone }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="NPI">
+        <th mat-header-cell *matHeaderCellDef> NPI# </th>
+        <td mat-cell *matCellDef="let element" data-label="NPI#"> {{ element.NPI }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="addon">
+        <th mat-header-cell *matHeaderCellDef> Addon</th>
+        <td mat-cell *matCellDef="let element" data-label="Addon">
+          {{ element.addon }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef>Address</th>
+        <td mat-cell *matCellDef="let element" data-label="address"> {{ element.address }} </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index"></tr>
+    </table>
+    <mat-toolbar class="footer_action">
+      <button mat-raised-button type="button" color="primary" (click)="pagination('prev');">Prev</button>
+      <button mat-raised-button type="button" color="primary" (click)="pagination('next');">Next</button>
+    </mat-toolbar>
+  </mat-card-content>
+</section>
+
+
+
 
 <app-sales-person-footer></app-sales-person-footer>
