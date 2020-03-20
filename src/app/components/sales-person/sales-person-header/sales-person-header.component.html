@@ -3,12 +3,12 @@
       <span class="logo_wrapper" [routerLink]="[ '/admin/dashboard' ]">
         <img src="../../../assets/images/logo.png">
       </span>
-  
+<!--
       <mat-card-content *ngIf="user_data.headerFlag != 'undefined'" class="quotation">
         <button mat-flat-button (click)="menuFunction()" class="togle_menu">
           <i class="material-icons"> menu </i>
         </button>
-  
+
         <mat-card-content class="quotation" [ngClass]="toggleStatus ? 'success' : 'danger'">
           <mat-nav-list>
             <a mat-list-item routerLinkActive="active" [routerLink]="['/doctor/dashboard']"> Dashboard </a>
@@ -16,12 +16,12 @@
           </mat-nav-list>
         </mat-card-content>
       </mat-card-content>
-  
+
       <ng-container *ngIf="user_data.headerFlag == 'undefined'">
         <button mat-flat-button (click)="menuFunction()" class="togle_menu">
           <i class="material-icons"> menu </i>
         </button>
-  
+
         <mat-card-content class="quotation" [ngClass]="toggleStatus ? 'success' : 'danger'">
           <mat-nav-list>
             <a mat-list-item routerLinkActive="active" [routerLink]="['/doctor/dashboard']"> Dashboard </a>
@@ -30,9 +30,9 @@
             <a mat-list-item [routerLink]="['/doctor/doctor-office-management']" routerLinkActive="active"> Manage Doctor Office </a>
           </mat-nav-list>
         </mat-card-content>
-      </ng-container>
-  
-  
+      </ng-container> -->
+
+  <h3 class="header_title">ADVANCED ANS TECHNOLOGY – BETTER PATIENT CARE – INCREASE PRACTICE REVENUE</h3>
       <mat-card-content class="profile_section">
         <mat-menu #appMenu="matMenu">
           <button mat-menu-item [routerLink]="['/doctor/account-settings']">
@@ -54,9 +54,8 @@
             </i>
           </span>
         </button>
-  
+
       </mat-card-content>
     </mat-card-content>
   </mat-toolbar>
   <!-- end header -->
-  
