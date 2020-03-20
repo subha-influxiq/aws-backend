@@ -37,6 +37,14 @@ import { ListingBillerComponent } from '../components/admin/biller-management/li
 import { AddEditTechComponent } from '../components/admin/tech-management/add-edit-tech/add-edit-tech.component';
 import { ListingTechComponent } from '../components/admin/tech-management/listing-tech/listing-tech.component';
 
+/* Sales Person Management */
+import { ListSalesPersonComponent } from '../components/admin/sales-person-management/list-sales-person/list-sales-person.component';
+import { AddEditSalesPersonComponent } from '../components/admin/sales-person-management/add-edit-sales-person/add-edit-sales-person.component';
+
+/* FNQ Management */
+import { AddEditFaqComponent } from '../components/admin/faq-management/add-edit-faq/add-edit-faq.component';
+import { ListFaqComponent } from '../components/admin/faq-management/list-faq/list-faq.component';
+
 /**Doctor Office Mnagement**/
 import { DoctorOfficeManagementComponent } from '../components/admin/doctor-office-management/doctor-office-management.component';
 import { AddEditDoctorOfcComponent } from '../components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component';
@@ -344,6 +352,55 @@ const routes: Routes = [
         condition: {
           user_type: "diagnostic_admin"
         }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  /* Sales Person Management */
+  { path: 'admin/sales-person-management/add', component: AddEditSalesPersonComponent, canActivate: [AuthguardService] },
+  {
+    path: 'admin/sales-person-management/edit/:_id', component: AddEditSalesPersonComponent, canActivate: [AuthguardService], resolve: { techData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "sales_person",
+
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  {
+    path: 'admin/sales-person-management', component: ListSalesPersonComponent, canActivate: [AuthguardService], resolve: { techDashboardData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "sales_person"
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  /* FNQ Management */
+  { path: 'admin/faq-management/add', component: AddEditFaqComponent, canActivate: [AuthguardService] },
+  {
+    path: 'admin/faq-management/edit/:_id', component: AddEditFaqComponent, canActivate: [AuthguardService], resolve: { techData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_faq',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+  {
+    path: 'admin/faq-management', component: ListFaqComponent, canActivate: [AuthguardService], resolve: { techDashboardData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_faq',
+        condition: {}
       },
       endpoint: 'datalist'
     },
@@ -768,7 +825,17 @@ const routes: Routes = [
 
 
   /****************** Sales Person *****************/
-  { path: 'sales-person/dashboard', component: SalesPersonDashboardComponent },
+  {
+    path: 'sales-person/dashboard', component: SalesPersonDashboardComponent, canActivate: [AuthguardService],
+    // resolve: { dataCount: ResolveService },
+    // data: {
+    //   requestcondition: {
+    //     source: 'data_pece',
+    //     condition: {}
+    //   },
+    //   endpoint: 'diagnostic-admin-dashboard'
+    // },
+  },
 
 
 

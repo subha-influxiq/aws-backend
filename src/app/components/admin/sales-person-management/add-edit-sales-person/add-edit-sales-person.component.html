@@ -1,0 +1,210 @@
+<!-- Admin Header -->
+<app-admin-header *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-header>
+
+
+<mat-card class="admin_wrapper">
+  <!-- header with add button -->
+  <mat-card-content class="title_wrapper">
+    {{ htmlText.header }}
+  </mat-card-content>
+
+
+  <span class="add_header">
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/admin/sales-person-management']">Manage Sales Person &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+  </span>
+  <!-- End header with add button -->
+
+  <mat-card class="add_form">
+    <mat-card-content class="form_wrapper">
+      <form class="example-form" autocomplete="off" name="SalesPersonManagementAddEditForm" [formGroup]="SalesPersonManagementAddEditForm" (ngSubmit)="TechManagementAddFormFormSubmit()">
+
+        <!-- First Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
+
+          <input matInput placeholder="First Name" [formControl]="SalesPersonManagementAddEditForm.controls['firstname']"
+            (blur)="inputUntouch(SalesPersonManagementAddEditForm,'firstname')">
+
+          <mat-error
+            *ngIf="SalesPersonManagementAddEditForm.controls['firstname'].touched && !SalesPersonManagementAddEditForm.controls['firstname'].valid && SalesPersonManagementAddEditForm.controls['firstname'].errors.required">
+            First Name required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="SalesPersonManagementAddEditForm.controls['firstname'].touched && !SalesPersonManagementAddEditForm.controls['firstname'].valid && SalesPersonManagementAddEditForm.controls['firstname'].errors.maxlength">
+            First Name is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- First Name End -->
+
+        <!-- Last Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+
+          <input matInput placeholder="Last Name" [formControl]="SalesPersonManagementAddEditForm.controls['lastname']"
+            (blur)="inputUntouch(SalesPersonManagementAddEditForm,'lastname')">
+
+          <mat-error
+            *ngIf="SalesPersonManagementAddEditForm.controls['lastname'].touched && !SalesPersonManagementAddEditForm.controls['lastname'].valid && SalesPersonManagementAddEditForm.controls['lastname'].errors.required">
+            Last Name required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="SalesPersonManagementAddEditForm.controls['lastname'].touched && !SalesPersonManagementAddEditForm.controls['lastname'].valid && SalesPersonManagementAddEditForm.controls['lastname'].errors.maxlength">
+            Last Name is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Last Name End -->
+
+        <!-- Email Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Email Address</mat-label>
+
+          <input matInput placeholder="Email Address" [formControl]="SalesPersonManagementAddEditForm.controls['email']"
+            (blur)="inputUntouch(SalesPersonManagementAddEditForm,'email')">
+
+          <mat-error
+            *ngIf="SalesPersonManagementAddEditForm.controls['email'].touched && !SalesPersonManagementAddEditForm.controls['email'].valid && SalesPersonManagementAddEditForm.controls['email'].errors.required">
+            Email required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="SalesPersonManagementAddEditForm.controls['email'].touched && !SalesPersonManagementAddEditForm.controls['email'].valid && SalesPersonManagementAddEditForm.controls['email'].errors.email">
+            Email is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Email End -->
+
+        <!-- Phone Number Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+
+          <input matInput placeholder="Phone" [formControl]="SalesPersonManagementAddEditForm.controls['phone']"
+            (blur)="inputUntouch(SalesPersonManagementAddEditForm,'phone')">
+
+          <mat-error
+            *ngIf="SalesPersonManagementAddEditForm.controls['phone'].touched && !SalesPersonManagementAddEditForm.controls['phone'].valid && SalesPersonManagementAddEditForm.controls['phone'].errors.required">
+            Phone Number required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="SalesPersonManagementAddEditForm.controls['phone'].touched && !SalesPersonManagementAddEditForm.controls['phone'].valid && SalesPersonManagementAddEditForm.controls['phone'].errors.maxlength">
+            Phone Number is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Phone Number End -->
+
+        <!-- Address Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Address</mat-label>
+
+          <input matInput placeholder="Address" [formControl]="SalesPersonManagementAddEditForm.controls['address']"
+            (blur)="inputUntouch(SalesPersonManagementAddEditForm,'address')">
+
+          <mat-error *ngIf="SalesPersonManagementAddEditForm.controls['address'].touched && !SalesPersonManagementAddEditForm.controls['address'].valid && SalesPersonManagementAddEditForm.controls['address'].errors.required">
+            Address required.
+          </mat-error>
+
+          <mat-error *ngIf="SalesPersonManagementAddEditForm.controls['address'].touched && !SalesPersonManagementAddEditForm.controls['address'].valid && SalesPersonManagementAddEditForm.controls['address'].errors.maxlength">
+            Address is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Address End -->
+
+        <!-- State Start -->
+        <mat-form-field class="parent_cat" appearance="fill">
+          <mat-label>State</mat-label>
+
+          <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
+            <mat-option [value]="">Select state</mat-option>
+            <mat-option *ngFor="let state of htmlText.states;" value="{{ state.name }}">{{ state.name }}</mat-option>
+          </mat-select>
+
+          <mat-error *ngIf="SalesPersonManagementAddEditForm.controls['state'].touched && !SalesPersonManagementAddEditForm.controls['state'].valid && SalesPersonManagementAddEditForm.controls['state'].errors.required">
+            State required.
+          </mat-error>
+        </mat-form-field>
+        <!-- State End -->
+
+        <!-- City Start -->
+        <mat-form-field class="parent_cat" appearance="fill">
+          <mat-label>City</mat-label>
+
+          <mat-select formControlName="city">
+            <mat-option value=0>Select city</mat-option>
+            <mat-option *ngFor="let city of htmlText.cities;" value="{{ city }}">{{ city }}</mat-option>
+          </mat-select>
+
+          <mat-error *ngIf="SalesPersonManagementAddEditForm.controls['city'].touched && !SalesPersonManagementAddEditForm.controls['city'].valid && SalesPersonManagementAddEditForm.controls['city'].errors.required">
+            State required.
+          </mat-error>
+        </mat-form-field>
+        <!-- City End -->
+
+        <!-- Zip Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Zip</mat-label>
+
+          <input type="number" matInput placeholder="ZIP" [formControl]="SalesPersonManagementAddEditForm.controls['zip']" (blur)="inputUntouch(SalesPersonManagementAddEditForm,'zip')">
+
+          <mat-error *ngIf="SalesPersonManagementAddEditForm.controls['zip'].touched && !SalesPersonManagementAddEditForm.controls['zip'].valid && SalesPersonManagementAddEditForm.controls['zip'].errors.required">
+            Zip required.
+          </mat-error>
+        </mat-form-field>
+        <!-- Zip Start -->
+
+        <ng-container *ngIf="!params_id">
+          <!-- Password Start -->
+          <ng-container *ngIf="!params_id">
+            <mat-form-field class="form-group" appearance="fill">
+
+              <input matInput placeholder="Password" type="password"
+                [formControl]="SalesPersonManagementAddEditForm.controls['password']">
+
+              <mat-error *ngIf="!SalesPersonManagementAddEditForm.controls['password'].valid && SalesPersonManagementAddEditForm.controls['password'].touched">
+                Password required.
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="form-group" appearance="fill">
+              <input matInput placeholder="Confirm Password" type="password"
+                [formControl]="SalesPersonManagementAddEditForm.controls['confirmpassword']">
+
+              <mat-error *ngIf="!SalesPersonManagementAddEditForm.controls['confirmpassword'].valid && SalesPersonManagementAddEditForm.controls['confirmpassword'].touched">
+                Password does not match
+              </mat-error>
+            </mat-form-field>
+          </ng-container>
+          <!-- Password End -->
+        </ng-container>
+
+        <mat-checkbox [formControl]="SalesPersonManagementAddEditForm.controls['status']" checked>Active</mat-checkbox>
+
+
+        <!-- end here -->
+        <span class="submit_form">
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+            <button mat-flat-button type="button" [routerLink]="['/admin/sales-person-management']">Back </button>
+          </ng-container>
+
+          <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset </button>
+          <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
+          <button mat-flat-button type="button" *ngIf="params_id != ''" (click)="openDialog('')"> Change Password </button>
+        </span>
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+
+</mat-card>
+
+
+
+<!-- Admin Footer -->
+<app-admin-footer *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-footer>

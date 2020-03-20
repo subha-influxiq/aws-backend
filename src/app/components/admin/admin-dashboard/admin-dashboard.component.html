@@ -375,6 +375,26 @@
         <td mat-cell *matCellDef="let element" data-label="Biller Name"> {{ element.biller_name }} </td>
       </ng-container>
 
+      <ng-container matColumnDef="date_of_birth" *ngIf="htmlText.headerText == 'Basic Details Not Processed'">
+        <th mat-header-cell *matHeaderCellDef> Date of birth </th>
+        <td mat-cell *matCellDef="let element" data-label="Date of Birth"> {{ element.birth_date }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="gender" *ngIf="htmlText.headerText == 'Basic Details Not Processed'">
+        <th mat-header-cell *matHeaderCellDef> Gender </th>
+        <td mat-cell *matCellDef="let element" data-label="Gender"> {{ element.gender }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="test_date" *ngIf="htmlText.headerText == 'Basic Details Not Processed'">
+        <th mat-header-cell *matHeaderCellDef> Test Date </th>
+        <td mat-cell *matCellDef="let element" data-label="Test Date"> {{ element.test_date }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="bmi" *ngIf="htmlText.headerText == 'Basic Details Not Processed'">
+        <th mat-header-cell *matHeaderCellDef> BMI </th>
+        <td mat-cell *matCellDef="let element" data-label="BMI"> {{ element.BMI }} </td>
+      </ng-container>
+
       <ng-container matColumnDef="billGenerationDate" *ngIf="htmlText.headerText != 'Patient Reports'">
         <th mat-header-cell *matHeaderCellDef> Bill Generation Date </th>
         <td mat-cell *matCellDef="let element" data-label="Bill Generation Date">

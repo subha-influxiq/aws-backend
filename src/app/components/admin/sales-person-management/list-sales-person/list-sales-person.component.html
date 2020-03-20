@@ -1,0 +1,46 @@
+<!-- Admin Header -->
+<app-admin-header *ngIf="userData.user_type == 'admin'"></app-admin-header>
+
+
+<mat-card class="admin_wrapper">
+  <!-- header with add button -->
+  <mat-card-content class="table_wrapper">
+    <mat-toolbar class="top_header">
+      <h2> Manage Sales Person </h2>
+    </mat-toolbar>
+
+  <span class="add_header">
+
+  <ng-container *ngIf="userData.user_type == 'admin'">
+    <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Sales Person</span>
+    <button mat-flat-button [routerLink]="['/admin/sales-person-management/add']">Add Sales Person</button>
+  </ng-container>
+</span>
+<!-- End header with add button -->
+
+
+<lib-listing class="DataTable" *ngIf="salesPersonDashboardAllData.length>0"
+  [datasource]="salesPersonDashboardAllData"
+  [skip]="allUserData_skip"
+  [detail_skip_array]="previewModal_detail_skip"
+  [modify_header_array]="allUserData_modify_header"
+  [apiurl]="apiUrl"
+  [sourcedata]="tableName"
+  [editroute]="editUrl"
+  [jwttoken]="user_cookie"
+  [statusarr]="status"
+  [updateendpoint]="UpdateEndpoint"
+  [deleteendpoint]="deleteEndpoint"
+  [date_search_endpoint]="SearchingEndpoint"
+  [date_search_source]="SearchingSourceName"
+  [search_settings]="search_settings">
+</lib-listing>
+
+<h2 *ngIf="salesPersonDashboardAllData.length == 0">No record found.</h2>
+
+</mat-card-content>
+</mat-card>
+
+
+<!-- Admin Footer -->
+<app-admin-footer *ngIf="userData.user_type == 'admin'"></app-admin-footer>

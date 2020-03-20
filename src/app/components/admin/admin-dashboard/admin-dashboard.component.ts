@@ -119,6 +119,8 @@ export class AdminDashboardComponent implements OnInit {
         break;
       // Basic Details Not Processed
       case 'Basic Details Not Processed':
+        this.allDataColumns = [ 'patientName', 'date_of_birth', 'gender', 'test_date', 'bmi'];
+
         repostSignCond.source = "data_pece_page1_notexists";
         repostSignCond["condition"] = {};
         break;

@@ -1,0 +1,125 @@
+<!-- Admin Header -->
+<app-admin-header></app-admin-header>
+
+
+<mat-card class="admin_wrapper">
+    <!-- header with add button -->
+    <mat-card-content class="title_wrapper">
+        {{ htmlText.header }}
+    </mat-card-content>
+
+
+    <span class="add_header">
+        <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+            <span class="bradcrumb">
+                <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+                <a [routerLink]="['/admin/sales-person-management']">Manage FAQ &nbsp;/</a> &nbsp;
+                {{ htmlText.nav }}
+            </span>
+        </ng-container>
+    </span>
+    <!-- End header with add button -->
+
+    <mat-card class="add_form">
+        <mat-card-content class="form_wrapper">
+            <form class="example-form" autocomplete="off" name="FaqManagementAddEditForm"
+                [formGroup]="FaqManagementAddEditForm" (ngSubmit)="TechManagementAddFormFormSubmit()">
+
+                <!-- State Start -->
+                <mat-form-field class="parent_cat" appearance="fill">
+                    <mat-label>Users</mat-label>
+
+                    <mat-select formControlName="users">
+                        <mat-option [value]="">Select Users</mat-option>
+                        <mat-option value="admin">Admin</mat-option>
+                        <mat-option value="tech">Tech</mat-option>
+                        <mat-option value="doctor">Doctor</mat-option>
+                        <mat-option value="doctor_office">Doctor Office</mat-option>
+                        <mat-option value="biller">Biller</mat-option>
+                        <mat-option value="diagnostic_admin">Diagnostic Admin</mat-option>
+                        <mat-option value="sales_person">Sales Person</mat-option>
+                    </mat-select>
+
+                    <mat-error
+                        *ngIf="FaqManagementAddEditForm.controls['users'].touched && !FaqManagementAddEditForm.controls['users'].valid && FaqManagementAddEditForm.controls['users'].errors.required">
+                        State required.
+                    </mat-error>
+                </mat-form-field>
+                <!-- State End -->
+
+                <!-- Question Start -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Question</mat-label>
+
+                    <input matInput placeholder="Question"
+                        [formControl]="FaqManagementAddEditForm.controls['question']"
+                        (blur)="inputUntouch(FaqManagementAddEditForm,'question')">
+
+                    <mat-error
+                        *ngIf="FaqManagementAddEditForm.controls['question'].touched && !FaqManagementAddEditForm.controls['question'].valid && FaqManagementAddEditForm.controls['question'].errors.required">
+                        Question required.
+                    </mat-error>
+
+                    <mat-error
+                        *ngIf="FaqManagementAddEditForm.controls['question'].touched && !FaqManagementAddEditForm.controls['question'].valid && FaqManagementAddEditForm.controls['question'].errors.maxlength">
+                        Question is not valid.
+                    </mat-error>
+                </mat-form-field>
+                <!-- Question End -->
+
+                <!-- Answer Start -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Answer</mat-label>
+
+                    <textarea matInput placeholder="Answer"
+                        [formControl]="FaqManagementAddEditForm.controls['answer']"
+                        (blur)="inputUntouch(FaqManagementAddEditForm,'answer')"></textarea>
+
+                    <mat-error
+                        *ngIf="FaqManagementAddEditForm.controls['answer'].touched && !FaqManagementAddEditForm.controls['answer'].valid && FaqManagementAddEditForm.controls['answer'].errors.required">
+                        Answer required.
+                    </mat-error>
+
+                    <mat-error
+                        *ngIf="FaqManagementAddEditForm.controls['answer'].touched && !FaqManagementAddEditForm.controls['answer'].valid && FaqManagementAddEditForm.controls['answer'].errors.maxlength">
+                        Answer is not valid.
+                    </mat-error>
+                </mat-form-field>
+                <!-- Answer End -->
+
+                <!-- Priority Start -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Priority</mat-label>
+
+                    <input type="number" matInput placeholder="Priority"
+                        [formControl]="FaqManagementAddEditForm.controls['priority']"
+                        (blur)="inputUntouch(FaqManagementAddEditForm, 'priority')">
+
+                    <mat-error
+                        *ngIf="FaqManagementAddEditForm.controls['priority'].touched && !FaqManagementAddEditForm.controls['priority'].valid && FaqManagementAddEditForm.controls['priority'].errors.required">
+                        Priority required.
+                    </mat-error>
+                </mat-form-field>
+                <!-- Priority Start -->
+
+                <mat-checkbox [formControl]="FaqManagementAddEditForm.controls['status']" checked>Active
+                </mat-checkbox>
+
+                <!-- end here -->
+                <span class="submit_form">
+                    <button mat-flat-button type="button" [routerLink]="['/admin/faq-management']">Back</button>
+
+                    <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset </button>
+                    <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
+                </span>
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+
+</mat-card>
+
+
+
+<!-- Admin Footer -->
+<app-admin-footer></app-admin-footer>
