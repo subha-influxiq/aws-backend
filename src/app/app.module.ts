@@ -250,6 +250,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AddEditFaqComponent,
     ListFaqComponent,
     FaqViewComponent,
+    FaqViewComponent 
+    
   ],
   imports: [
     SatDatepickerModule,
@@ -275,6 +277,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderRouterModule, // import this module for showing loader automatically when navigating between app routes
     NgxUiLoaderHttpModule,
+
   ],
   exports: [
     MatPaginatorModule
