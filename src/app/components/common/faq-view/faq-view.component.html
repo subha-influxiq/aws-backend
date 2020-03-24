@@ -1,0 +1,55 @@
+<!-- Header Start -->
+
+<!-- Admin -->
+<app-admin-header *ngIf="userData.user_type == 'admin'"></app-admin-header>
+
+<!-- Biller -->
+<app-biller-header *ngIf="userData.user_type == 'biller'"></app-biller-header>
+
+<!-- Diagnostic Admin -->
+<app-diagnostic-admin-header *ngIf="userData.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+<!-- Doctor -->
+<app-doctor-header *ngIf="userData.user_type == 'doctor'"></app-doctor-header>
+
+<!-- Doctor Office -->
+<app-doctor-office-header *ngIf="userData.user_type == 'doctor_office'"></app-doctor-office-header>
+
+<!-- Sales Person -->
+<app-sales-person-header *ngIf="userData.user_type == 'sales_person'"></app-sales-person-header>
+
+<!-- Tech -->
+<app-tech-header *ngIf="userData.user_type == 'tech'"></app-tech-header>
+
+<!-- Header End -->
+
+
+
+<p>faq-view works!</p>
+
+
+
+<!-- Footer Start -->
+
+<!-- Admin -->
+<app-admin-footer *ngIf="userData.user_type == 'admin'"></app-admin-footer>
+
+<!-- Biller -->
+<app-biller-footer *ngIf="userData.user_type == 'biller'"></app-biller-footer>
+
+<!-- Diagnostic Admin -->
+<app-diagnostic-admin-footer *ngIf="userData.user_type == 'diagnostic_admin'"></app-diagnostic-admin-footer>
+
+<!-- Doctor -->
+<app-doctor-footer *ngIf="userData.user_type == 'doctor'"></app-doctor-footer>
+
+<!-- Doctor Office -->
+<app-doctor-office-footer *ngIf="userData.user_type == 'doctor_office'"></app-doctor-office-footer>
+
+<!-- Sales Person -->
+<app-sales-person-footer *ngIf="userData.user_type == 'sales_person'"></app-sales-person-footer>
+
+<!-- Tech -->
+<app-tech-footer *ngIf="userData.user_type == 'tech'"></app-tech-footer>
+
+<!-- Footer End -->

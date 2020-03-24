@@ -2,8 +2,10 @@
   .techdashboard_header .quotation .mat-nav-list .mat-list-item  .mat-list-item-content{ padding: 0 10px;}
 }
 @media screen and (max-width: 1500px){
-  .admin_wrapper { width: 90%; }
+  .admin_wrapper, .table_list, .sales_person_db { width: 90%; }
   .action_bar .mat-form-field .mat-form-field-flex { width: 200px; }
+  .sales_person_db .shareLi .in_w { width: 40%; }
+
 }
 @media screen and (max-width: 1410px){
   .action_bar .mat-form-field .mat-form-field-flex { width: 180px; }
@@ -40,6 +42,10 @@
 .admin_wrapper .content_wrapper .itemsection .button_wrapper { width: 30%; }
 .admin_wrapper .content_wrapper .itemsection .counteer .dataCount { font-size: 44px; }
 .admin_wrapper .content_wrapper .itemsection .icon { width: 16%;}
+.sales_person_db .shareLi .in_w { width: 65%; left: 0; right: 0; transform: inherit; top: 0; }
+.sales_person_db .shareLi { background-position: 6% bottom; padding: 60px 20px; height: auto; background-size: contain; position: relative;}
+.sales_person_db .shareLi .in_w { width: 60%; left: 0; right: 0; transform: inherit; top: 0; position: inherit; display: block;}
+
 }
 @media screen and (max-width: 1040px){
   .main_wrapper { background-size: 0; padding-left: 0; }

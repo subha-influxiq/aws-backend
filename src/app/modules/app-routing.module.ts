@@ -88,6 +88,8 @@ import { SalesPersonDashboardComponent } from '../components/sales-person/sales-
 
 /* Test Component */
 import { TestComponent } from '../components/test/test.component';
+
+
 import { HealthriskSystemEncounterComponent } from '../components/doctor/doctor-dashboard/patient-report-view/healthrisk-system-encounter/healthrisk-system-encounter.component';
 import { SystemSuperbillComponent } from '../components/doctor/doctor-dashboard/patient-report-view/system-superbill/system-superbill.component';
 import { HealthRiskAnalysisComponent } from '../components/doctor/doctor-dashboard/patient-report-view/health-risk-analysis/health-risk-analysis.component';
@@ -96,7 +98,7 @@ import { DoctorOfficeAccountSettingsComponent } from '../components/doctor-offic
 import { DoctorOfficeChangePasswordComponent } from '../components/doctor-office/doctor-office-change-password/doctor-office-change-password.component';
 import { DownloadSuperbillerComponent } from '../components/biller/download-superbiller/download-superbiller.component';
 import { DiagnosticAdminDashboardComponent } from '../components/diagnostic-admin/diagnostic-admin-dashboard/diagnostic-admin-dashboard.component';
-
+import { FaqViewComponent } from '../components/common/faq-view/faq-view.component';
 
 const routes: Routes = [
   /********** Auth Route **********/
@@ -109,7 +111,9 @@ const routes: Routes = [
 
   /****************** Admin *****************/
   {
-    path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AuthguardService],
+    path: 'admin/dashboard', 
+    component: AdminDashboardComponent, 
+    canActivate: [AuthguardService],
     resolve: { dataCount: ResolveService },
     data: {
       requestcondition: {
@@ -120,7 +124,9 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin/images-not-process', component: ReportNotProcessComponent, canActivate: [AuthguardService],
+    path: 'admin/images-not-process', 
+    component: ReportNotProcessComponent, 
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -131,22 +137,24 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin/text-not-process', component: ReportNotProcessComponent, canActivate: [AuthguardService],
+    path: 'admin/text-not-process', 
+    component: ReportNotProcessComponent, 
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
         condition: {
           "report_type": "file",
-          "images": { $exists:true },
+          "images": { $exists: true },
           $or: [
-            {"page_1": { $exists:false }},
-            {"page_2": { $exists:false }},
-            {"page_3": { $exists:false }},
-            {"page_4": { $exists:false }},
-            {"page_5": { $exists:false }},
-            {"page_6": { $exists:false }},
-            {"page_7": { $exists:false }}
+            { "page_1": { $exists: false } },
+            { "page_2": { $exists: false } },
+            { "page_3": { $exists: false } },
+            { "page_4": { $exists: false } },
+            { "page_5": { $exists: false } },
+            { "page_6": { $exists: false } },
+            { "page_7": { $exists: false } }
           ]
         }
       },
@@ -154,7 +162,8 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin/patient-record/:_id', component: PatientReportViewComponent,
+    path: 'admin/patient-record/:_id', 
+    component: PatientReportViewComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
@@ -165,9 +174,15 @@ const routes: Routes = [
       endpoint: 'report-view'
     },
   },
-  { path: 'admin/patient-management/add', component: AddEditPatientComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'admin/patient-management/add', 
+    component: AddEditPatientComponent, 
+    canActivate: [AuthguardService] 
+  },
   {
-    path: 'admin/patient-record/edit/:_id', component: EditPatientRecordComponent, canActivate: [AuthguardService],
+    path: 'admin/patient-record/edit/:_id', 
+    component: EditPatientRecordComponent, 
+    canActivate: [AuthguardService],
     resolve: { patientData: ResolveService },
     data: {
       requestcondition: {
@@ -178,13 +193,18 @@ const routes: Routes = [
     },
   },
 
-  /* Account-Settings */
-  { path: 'admin/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
-  { path: 'admin/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
+  
   /* User Management */
-  { path: 'admin/user-management/add', component: UserAddEditComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'admin/user-management/add', 
+    component: UserAddEditComponent, 
+    canActivate: [AuthguardService] 
+  },
   {
-    path: 'admin/user-management/edit/:_id', component: UserAddEditComponent, canActivate: [AuthguardService], resolve: { UserData: ResolveService },
+    path: 'admin/user-management/edit/:_id', 
+    component: UserAddEditComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { UserData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
@@ -195,7 +215,11 @@ const routes: Routes = [
   },
 
   /* Admin Management */
-  { path: 'admin/admin-management/add', component: AddEditComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'admin/admin-management/add', 
+    component: AddEditComponent, 
+    canActivate: [AuthguardService] 
+  },
   {
     path: 'admin/admin-management/edit/:_id', component: AddEditComponent, canActivate: [AuthguardService], resolve: { adminsingleData: ResolveService },
     data: {
@@ -209,7 +233,10 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin/admin-management', component: ManageAdminListComponent, canActivate: [AuthguardService], resolve: { adminManagementdData: ResolveService },
+    path: 'admin/admin-management', 
+    component: ManageAdminListComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { adminManagementdData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
@@ -222,9 +249,16 @@ const routes: Routes = [
   },
 
   /* Biller Management */
-  { path: 'admin/biller-management/add', component: AddEditBillerComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'admin/biller-management/add', 
+    component: AddEditBillerComponent, 
+    canActivate: [AuthguardService] 
+  },
   {
-    path: 'admin/biller-management/edit/:_id', component: AddEditBillerComponent, canActivate: [AuthguardService], resolve: { billersingleData: ResolveService },
+    path: 'admin/biller-management/edit/:_id', 
+    component: AddEditBillerComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { billersingleData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
@@ -236,7 +270,10 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin/biller-management', component: ListingBillerComponent, canActivate: [AuthguardService], resolve: { Billerdata: ResolveService },
+    path: 'admin/biller-management', 
+    component: ListingBillerComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { Billerdata: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
@@ -248,9 +285,16 @@ const routes: Routes = [
     },
   },
   /* Tech Management */
-  { path: 'admin/tech-management/add', component: AddEditTechComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'admin/tech-management/add', 
+    component: AddEditTechComponent, 
+    canActivate: [AuthguardService] 
+  },
   {
-    path: 'admin/tech-management/edit/:_id', component: AddEditTechComponent, canActivate: [AuthguardService], resolve: { techData: ResolveService },
+    path: 'admin/tech-management/edit/:_id', 
+    component: AddEditTechComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { techData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
@@ -263,7 +307,10 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin/tech-management', component: ListingTechComponent, canActivate: [AuthguardService], resolve: { techDashboardData: ResolveService },
+    path: 'admin/tech-management', 
+    component: ListingTechComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { techDashboardData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
@@ -275,9 +322,14 @@ const routes: Routes = [
     },
   },
   /* Doctor Management */
-  { path: 'admin/doctor-management/add', component: AddeditDoctorComponent },
+  { 
+    path: 'admin/doctor-management/add', 
+    component: AddeditDoctorComponent 
+  },
   {
-    path: 'admin/doctor-management/edit/:_id', component: AddeditDoctorComponent, canActivate: [AuthguardService],
+    path: 'admin/doctor-management/edit/:_id', 
+    component: AddeditDoctorComponent, 
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -290,7 +342,9 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin/doctor-management', component: ListDoctorComponent, canActivate: [AuthguardService],
+    path: 'admin/doctor-management', 
+    component: ListDoctorComponent, 
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -304,7 +358,8 @@ const routes: Routes = [
   },
   /* Doctor Office Management */
   {
-    path: 'admin/doctor-office-management', component: DoctorOfficeManagementComponent, canActivate: [AuthguardService],
+    path: 'admin/doctor-office-management', 
+    component: DoctorOfficeManagementComponent, canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -314,9 +369,15 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  { path: 'admin/doctor-office-management/add', component: AddEditDoctorOfcComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'admin/doctor-office-management/add', 
+    component: AddEditDoctorOfcComponent, 
+    canActivate: [AuthguardService] 
+  },
   {
-    path: 'admin/doctor-office-management/edit/:_id', component: AddEditDoctorOfcComponent, canActivate: [AuthguardService],
+    path: 'admin/doctor-office-management/edit/:_id', 
+    component: AddEditDoctorOfcComponent, 
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -328,7 +389,9 @@ const routes: Routes = [
   },
   /* Diagnostic Admin Management */
   {
-    path: 'admin/diagnostic-admin-management', component: ListingDiagnosticAdminComponent, canActivate: [AuthguardService],
+    path: 'admin/diagnostic-admin-management', 
+    component: ListingDiagnosticAdminComponent, 
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -341,10 +404,14 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin/diagnostic-admin-management/add', component: AddEditDiagnosticAdminComponent, canActivate: [AuthguardService],
+    path: 'admin/diagnostic-admin-management/add', 
+    component: AddEditDiagnosticAdminComponent, 
+    canActivate: [AuthguardService],
   },
   {
-    path: 'admin/diagnostic-admin-management/edit/:_id', component: AddEditDiagnosticAdminComponent, canActivate: [AuthguardService],
+    path: 'admin/diagnostic-admin-management/edit/:_id', 
+    component: AddEditDiagnosticAdminComponent, 
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -357,9 +424,16 @@ const routes: Routes = [
     },
   },
   /* Sales Person Management */
-  { path: 'admin/sales-person-management/add', component: AddEditSalesPersonComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'admin/sales-person-management/add', 
+    component: AddEditSalesPersonComponent, 
+    canActivate: [AuthguardService] 
+  },
   {
-    path: 'admin/sales-person-management/edit/:_id', component: AddEditSalesPersonComponent, canActivate: [AuthguardService], resolve: { techData: ResolveService },
+    path: 'admin/sales-person-management/edit/:_id', 
+    component: AddEditSalesPersonComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { techData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
@@ -372,7 +446,10 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin/sales-person-management', component: ListSalesPersonComponent, canActivate: [AuthguardService], resolve: { techDashboardData: ResolveService },
+    path: 'admin/sales-person-management', 
+    component: ListSalesPersonComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { techDashboardData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
@@ -384,9 +461,16 @@ const routes: Routes = [
     },
   },
   /* FNQ Management */
-  { path: 'admin/faq-management/add', component: AddEditFaqComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'admin/faq-management/add', 
+    component: AddEditFaqComponent, 
+    canActivate: [AuthguardService] 
+  },
   {
-    path: 'admin/faq-management/edit/:_id', component: AddEditFaqComponent, canActivate: [AuthguardService], resolve: { techData: ResolveService },
+    path: 'admin/faq-management/edit/:_id', 
+    component: AddEditFaqComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { techData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_faq',
@@ -396,7 +480,10 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin/faq-management', component: ListFaqComponent, canActivate: [AuthguardService], resolve: { techDashboardData: ResolveService },
+    path: 'admin/faq-management', 
+    component: ListFaqComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { techDashboardData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_faq',
@@ -405,9 +492,36 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  /**Booked-appoinments**/
+  /* Booked-appoinments */
+  { 
+    path: 'admin/booked-appoinments', 
+    component: BookedAppoinmentsComponent 
+  },
   {
-    path: 'admin/booked-appoinments', component: BookedAppoinmentsComponent
+    path: 'admin/faq', 
+    component: FaqViewComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { faqData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_faq',
+        condition: {
+          users: "admin"
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  /* Account-Settings */
+  { 
+    path: 'admin/account-settings', 
+    component: AccountSettingsComponent, 
+    canActivate: [AuthguardService] 
+  },
+  { 
+    path: 'admin/account-settings/change-password', 
+    component: ChangePasswordComponent, 
+    canActivate: [AuthguardService] 
   },
 
 
@@ -416,10 +530,11 @@ const routes: Routes = [
 
 
 
-  /** */
   /****************** Diagnostic Admin *****************/
   {
-    path: 'diagnostic-admin/dashboard', component: DiagnosticAdminDashboardComponent, canActivate: [AuthguardService],
+    path: 'diagnostic-admin/dashboard', 
+    component: DiagnosticAdminDashboardComponent, 
+    canActivate: [AuthguardService],
     resolve: { dataCount: ResolveService },
     data: {
       requestcondition: {
@@ -430,7 +545,8 @@ const routes: Routes = [
     },
   },
   {
-    path: 'diagnostic-admin/patient-record/:_id', component: PatientReportViewComponent,
+    path: 'diagnostic-admin/patient-record/:_id', 
+    component: PatientReportViewComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
@@ -443,12 +559,27 @@ const routes: Routes = [
   },
 
   /* Account-Settings */
-  { path: 'diagnostic-admin/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
-  { path: 'diagnostic-admin/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'diagnostic-admin/account-settings', 
+    component: AccountSettingsComponent, 
+    canActivate: [AuthguardService] 
+  },
+  { 
+    path: 'diagnostic-admin/account-settings/change-password', 
+    component: ChangePasswordComponent, 
+    canActivate: [AuthguardService] 
+  },
   /* Tech Management */
-  { path: 'diagnostic-admin/tech-management/add', component: AddEditTechComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'diagnostic-admin/tech-management/add', 
+    component: AddEditTechComponent, 
+    canActivate: [AuthguardService] 
+  },
   {
-    path: 'diagnostic-admin/tech-management/edit/:_id', component: AddEditTechComponent, canActivate: [AuthguardService], resolve: { techData: ResolveService },
+    path: 'diagnostic-admin/tech-management/edit/:_id', 
+    component: AddEditTechComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { techData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
@@ -460,7 +591,10 @@ const routes: Routes = [
     },
   },
   {
-    path: 'diagnostic-admin/tech-management', component: ListingTechComponent, canActivate: [AuthguardService], resolve: { techDashboardData: ResolveService },
+    path: 'diagnostic-admin/tech-management', 
+    component: ListingTechComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { techDashboardData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
@@ -472,9 +606,14 @@ const routes: Routes = [
     },
   },
   /* Doctor Management */
-  { path: 'diagnostic-admin/doctor-management/add', component: AddeditDoctorComponent },
+  { 
+    path: 'diagnostic-admin/doctor-management/add', 
+    component: AddeditDoctorComponent 
+  },
   {
-    path: 'diagnostic-admin/doctor-management/edit/:_id', component: AddeditDoctorComponent, canActivate: [AuthguardService],
+    path: 'diagnostic-admin/doctor-management/edit/:_id', 
+    component: AddeditDoctorComponent, 
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -487,7 +626,9 @@ const routes: Routes = [
     },
   },
   {
-    path: 'diagnostic-admin/doctor-management', component: ListDoctorComponent, canActivate: [AuthguardService],
+    path: 'diagnostic-admin/doctor-management', 
+    component: ListDoctorComponent, 
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -500,9 +641,16 @@ const routes: Routes = [
     },
   },
   /* Biller Management */
-  { path: 'diagnostic-admin/biller-management/add', component: AddEditBillerComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'diagnostic-admin/biller-management/add', 
+    component: AddEditBillerComponent, 
+    canActivate: [AuthguardService] 
+  },
   {
-    path: 'diagnostic-admin/biller-management/edit/:_id', component: AddEditBillerComponent, canActivate: [AuthguardService], resolve: { billersingleData: ResolveService },
+    path: 'diagnostic-admin/biller-management/edit/:_id', 
+    component: AddEditBillerComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { billersingleData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
@@ -514,7 +662,10 @@ const routes: Routes = [
     },
   },
   {
-    path: 'diagnostic-admin/biller-management', component: ListingBillerComponent, canActivate: [AuthguardService], resolve: { Billerdata: ResolveService },
+    path: 'diagnostic-admin/biller-management', 
+    component: ListingBillerComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { Billerdata: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
@@ -525,8 +676,21 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-
-
+  {
+    path: 'diagnostic-admin/faq', 
+    component: FaqViewComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { faqData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_faq',
+        condition: {
+          users: "diagnostic_admin"
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
 
 
 
@@ -537,7 +701,9 @@ const routes: Routes = [
 
   /* Docotr Management Account settings*/
   {
-    path: 'doctor-office/account-settings', component: DoctorOfficeAccountSettingsComponent, canActivate: [AuthguardService],
+    path: 'doctor-office/account-settings', 
+    component: DoctorOfficeAccountSettingsComponent, 
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -547,7 +713,25 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
-  { path: 'doctor-office/account-settings/change-password', component: DoctorOfficeChangePasswordComponent },
+  { 
+    path: 'doctor-office/account-settings/change-password', 
+    component: DoctorOfficeChangePasswordComponent 
+  },
+  {
+    path: 'doctor-office/faq', 
+    component: FaqViewComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { faqData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_faq',
+        condition: {
+          users: "doctor_office"
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
 
 
 
@@ -560,7 +744,9 @@ const routes: Routes = [
 
   /****************** Tech Route Start *****************/
   {
-    path: 'tech/dashboard', component: TechDashboardComponent, canActivate: [AuthguardService],
+    path: 'tech/dashboard', 
+    component: TechDashboardComponent, 
+    canActivate: [AuthguardService],
     resolve: { techDashboardData: ResolveService },
     data: {
       requestcondition: {
@@ -572,26 +758,74 @@ const routes: Routes = [
       endpoint: 'tech-dashboard'
     },
   },
-  { path: 'tech/report/total-uploaded', component: ReportDetailsComponent, canActivate: [AuthguardService], },
-  { path: 'tech/report/total-processed', component: ReportDetailsComponent, canActivate: [AuthguardService], },
-  { path: 'tech/report/total-remained-processed', component: ReportDetailsComponent, canActivate: [AuthguardService], },
-  { path: 'tech/dashboard/manage-calender/manage-sehedule', component: ManageScheduleComponent, canActivate: [AuthguardService] },
-  { path: 'tech/dashboard/manage-calender/my-appoinments', component: ListComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'tech/report/total-uploaded', 
+    component: ReportDetailsComponent, 
+    canActivate: [AuthguardService], 
+  },
+  { 
+    path: 'tech/report/total-processed', 
+    component: ReportDetailsComponent, 
+    canActivate: [AuthguardService] 
+  },
+  { 
+    path: 'tech/report/total-remained-processed', 
+    component: ReportDetailsComponent, 
+    canActivate: [AuthguardService]
+  },
+  { 
+    path: 'tech/dashboard/manage-calender/manage-sehedule', 
+    component: ManageScheduleComponent, 
+    canActivate: [AuthguardService] 
+  },
+  { 
+    path: 'tech/dashboard/manage-calender/my-appoinments', 
+    component: ListComponent, 
+    canActivate: [AuthguardService] 
+  },
 
   /* Account-Settings */
-  { path: 'tech/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
-  { path: 'tech/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'tech/account-settings', 
+    component: AccountSettingsComponent, 
+    canActivate: [AuthguardService] 
+  },
+  { 
+    path: 'tech/account-settings/change-password', 
+    component: ChangePasswordComponent, 
+    canActivate: [AuthguardService] 
+  },
 
 
   /* Bulk Upload */
-  { path: 'tech/patient-management/bulk-upload', component: BulkUploadComponent, canActivate: [AuthguardService] },
-
-  { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent, canActivate: [AuthguardService] },
-  { path: 'tech/system-superbill', component: SystemSuperbillComponent, canActivate: [AuthguardService] },
-  { path: 'tech/health-risk-analysis', component: HealthRiskAnalysisComponent, canActivate: [AuthguardService] },
-  { path: 'tech/health-risk-system-encounter', component: HealthriskSystemEncounterComponent },
-  { path: 'tech/system-superbill', component: SystemSuperbillComponent },
-
+  { 
+    path: 'tech/patient-management/bulk-upload', 
+    component: BulkUploadComponent, 
+    canActivate: [AuthguardService] 
+  },
+  { 
+    path: 'tech/health-risk-system-encounter', 
+    component: HealthriskSystemEncounterComponent, 
+    canActivate: [AuthguardService] 
+  },
+  { 
+    path: 'tech/system-superbill', 
+    component: SystemSuperbillComponent, 
+    canActivate: [AuthguardService] 
+  },
+  { 
+    path: 'tech/health-risk-analysis', 
+    component: HealthRiskAnalysisComponent, 
+    canActivate: [AuthguardService] 
+  },
+  { 
+    path: 'tech/health-risk-system-encounter', 
+    component: HealthriskSystemEncounterComponent 
+  },
+  { 
+    path: 'tech/system-superbill', 
+    component: SystemSuperbillComponent 
+  },
   {
     path: 'tech/health-risk-analysis',
     component: HealthRiskAnalysisComponent,
@@ -600,6 +834,21 @@ const routes: Routes = [
       requestcondition: {
         source: 'data_pece',
         condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+  {
+    path: 'tech/faq', 
+    component: FaqViewComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { faqData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_faq',
+        condition: {
+          users: "tech"
+        }
       },
       endpoint: 'datalist'
     },
@@ -616,10 +865,11 @@ const routes: Routes = [
 
 
 
-  /* Biller Route */
-  // { path: 'biller/dashboard', component: BillerDashboardComponent, canActivate: [AuthguardService] },
+  /*****************  Biller Route ****************/
   {
-    path: 'biller/dashboard', component: BillerDashboardComponent, canActivate: [AuthguardService],
+    path: 'biller/dashboard', 
+    component: BillerDashboardComponent, 
+    canActivate: [AuthguardService],
     resolve: { billerData: ResolveService },
     data: {
       requestcondition: {
@@ -629,14 +879,23 @@ const routes: Routes = [
       endpoint: 'biller-dashboard'
     },
   },
-  /* Account-Settings */
-  { path: 'biller/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
-  { path: 'biller/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
-  {
-    path: 'download/super-bill/:_id', component: DownloadSuperbillerComponent
+  { 
+    path: 'biller/account-settings', 
+    component: AccountSettingsComponent, 
+    canActivate: [AuthguardService] 
+  },
+  { 
+    path: 'biller/account-settings/change-password', 
+    component: ChangePasswordComponent, 
+    canActivate: [AuthguardService] 
   },
   {
-    path: 'biller/patient-record-report/:_id', component: PatientReportViewComponent,
+    path: 'download/super-bill/:_id', 
+    component: DownloadSuperbillerComponent
+  },
+  {
+    path: 'biller/patient-record-report/:_id', 
+    component: PatientReportViewComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
@@ -647,6 +906,22 @@ const routes: Routes = [
       endpoint: 'report-view'
     },
   },
+  {
+    path: 'biller/faq', 
+    component: FaqViewComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { faqData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_faq',
+        condition: {
+          users: "biller"
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  /******************  Biller Route *******************/
 
 
 
@@ -660,7 +935,9 @@ const routes: Routes = [
 
   /* Doctor Route */
   {
-    path: 'doctor/dashboard', component: DoctorDashboardComponent, canActivate: [AuthguardService],
+    path: 'doctor/dashboard', 
+    component: DoctorDashboardComponent, 
+    canActivate: [AuthguardService],
     resolve: { doctordata: ResolveService },
     data: {
       requestcondition: {
@@ -671,7 +948,8 @@ const routes: Routes = [
     },
   },
   {
-    path: 'doctor/patient-record-report/:_id', component: PatientReportViewComponent,
+    path: 'doctor/patient-record-report/:_id', 
+    component: PatientReportViewComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
@@ -682,98 +960,150 @@ const routes: Routes = [
       endpoint: 'report-view'
     },
   },
-  /* Biller Management */
-  { path: 'doctor/biller-management/add', component: AddEditBillerComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'doctor/biller-management/add', 
+    component: AddEditBillerComponent, 
+    canActivate: [AuthguardService] 
+  },
   {
-    path: 'doctor/biller-management/edit/:_id', component: AddEditBillerComponent, canActivate: [AuthguardService], resolve: { billersingleData: ResolveService },
+    path: 'doctor/biller-management/edit/:_id', 
+    component: AddEditBillerComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { billersingleData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
         condition: {
           user_type: "biller",
-          diagnostic_admin_id :{ $exists: false }
+          diagnostic_admin_id: { $exists: false }
         }
       },
       endpoint: 'datalist'
     },
   },
   {
-    path: 'doctor/biller-management', component: ListingBillerComponent, canActivate: [AuthguardService], resolve: { Billerdata: ResolveService },
+    path: 'doctor/biller-management', 
+    component: ListingBillerComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { Billerdata: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
         condition: {
           user_type: "biller",
-          diagnostic_admin_id :{ $exists: false }
-        }
-      },
-      endpoint: 'datalist'
-    },
-  },
-  /* Tech Management */
-  { path: 'doctor/tech-management/add', component: AddEditTechComponent, canActivate: [AuthguardService] },
-  {
-    path: 'doctor/tech-management/edit/:_id', component: AddEditTechComponent, canActivate: [AuthguardService], resolve: { techData: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {
-          user_type: "tech",
-          diagnostic_admin_id :{ $exists: false }
-        }
-      },
-      endpoint: 'datalist'
-    },
-  },
-  {
-    path: 'doctor/tech-management', component: ListingTechComponent, canActivate: [AuthguardService], resolve: { techDashboardData: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {
-          user_type: "tech",
-          diagnostic_admin_id :{ $exists: false }
-        }
-      },
-      endpoint: 'datalist'
-    },
-  },
-  /* Doctor Office Management */
-  {
-    path: 'doctor/doctor-office-management', component: DoctorOfficeManagementComponent, canActivate: [AuthguardService],
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: { 
-          "user_type": "doctor_office",
-          "diagnostic_admin_id" :{ $exists: false } 
+          diagnostic_admin_id: { $exists: false }
         }
       },
       endpoint: 'datalist'
     },
   },
   { 
-    path: 'doctor/doctor-office-management/add', component: AddEditDoctorOfcComponent, canActivate: [AuthguardService] },
+    path: 'doctor/tech-management/add', 
+    component: AddEditTechComponent, 
+    canActivate: [AuthguardService] 
+  },
   {
-    path: 'doctor/doctor-office-management/edit/:_id', component: AddEditDoctorOfcComponent, canActivate: [AuthguardService],
+    path: 'doctor/tech-management/edit/:_id', 
+    component: AddEditTechComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { techData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "tech",
+          diagnostic_admin_id: { $exists: false }
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  {
+    path: 'doctor/tech-management', 
+    component: ListingTechComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { techDashboardData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "tech",
+          diagnostic_admin_id: { $exists: false }
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  {
+    path: 'doctor/doctor-office-management', 
+    component: DoctorOfficeManagementComponent, 
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
         condition: {
           "user_type": "doctor_office",
-          "diagnostic_admin_id" :{ $exists: false } 
+          "diagnostic_admin_id": { $exists: false }
         }
       },
       endpoint: 'datalist'
     },
   },
-  { path: 'doctor/signature-management', component: SignatureManagementComponent, canActivate: [AuthguardService] },
+  {
+    path: 'doctor/doctor-office-management/add', 
+    component: AddEditDoctorOfcComponent, 
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'doctor/doctor-office-management/edit/:_id', 
+    component: AddEditDoctorOfcComponent, 
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          "user_type": "doctor_office",
+          "diagnostic_admin_id": { $exists: false }
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  { 
+    path: 'doctor/signature-management', 
+    component: SignatureManagementComponent, 
+    canActivate: [AuthguardService] 
+  },
+  {
+    path: 'doctor/faq', 
+    component: FaqViewComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { faqData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_faq',
+        condition: {
+          users: "doctor"
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+
 
   /* Account-Settings */
-  { path: 'doctor/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
-  { path: 'doctor/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'doctor/account-settings', 
+    component: AccountSettingsComponent, 
+    canActivate: [AuthguardService] 
+  },
+  { 
+    path: 'doctor/account-settings/change-password', 
+    component: ChangePasswordComponent, 
+    canActivate: [AuthguardService] 
+  },
   /****************** Doctor Route End *****************/
 
 
@@ -789,7 +1119,9 @@ const routes: Routes = [
   /****************** Doctor Office Route Start *****************/
   /*Doctor Office Dashboard*/
   {
-    path: 'doctor-office/dashboard', component: DoctorOfficeDashboardComponent, canActivate: [AuthguardService],
+    path: 'doctor-office/dashboard', 
+    component: DoctorOfficeDashboardComponent, 
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -799,9 +1131,32 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+  {
+    path: 'doctor/faq', 
+    component: FaqViewComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { faqData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_faq',
+        condition: {
+          users: "doctor_office"
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
   /* Account-Settings */
-  { path: 'doctor-office/account-settings', component: AccountSettingsComponent, canActivate: [AuthguardService] },
-  { path: 'doctor-office/account-settings/change-password', component: ChangePasswordComponent, canActivate: [AuthguardService] },
+  { 
+    path: 'doctor-office/account-settings', 
+    component: AccountSettingsComponent, 
+    canActivate: [AuthguardService] 
+  },
+  { 
+    path: 'doctor-office/account-settings/change-password', 
+    component: ChangePasswordComponent, 
+    canActivate: [AuthguardService] 
+  },
   /****************** Doctor Office Route End *****************/
 
   /* test component route start here */
@@ -826,7 +1181,9 @@ const routes: Routes = [
 
   /****************** Sales Person *****************/
   {
-    path: 'sales-person/dashboard', component: SalesPersonDashboardComponent, canActivate: [AuthguardService],
+    path: 'sales-person/dashboard', 
+    component: SalesPersonDashboardComponent, 
+    canActivate: [AuthguardService],
     // resolve: { dataCount: ResolveService },
     // data: {
     //   requestcondition: {
@@ -836,12 +1193,33 @@ const routes: Routes = [
     //   endpoint: 'diagnostic-admin-dashboard'
     // },
   },
+  {
+    path: 'sales-person/faq', 
+    component: FaqViewComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { faqData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_faq',
+        condition: {
+          users: "sales_person"
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
 
 
 
   /* Error Page Route */
-  { path: 'error/404', component: NotFoundErrorComponent },
-  { path: '**', component: NotFoundErrorComponent }
+  { 
+    path: 'error/404', 
+    component: NotFoundErrorComponent 
+  },
+  { 
+    path: '**', 
+    component: NotFoundErrorComponent 
+  }
 ];
 
 @NgModule({
