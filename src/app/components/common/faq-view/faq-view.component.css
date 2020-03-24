@@ -1,10 +1,12 @@
-.faq_wrapper{ width: 1440px; margin: 0 auto;}
+.faq_wrapper{ width: 1440px; margin: 50px auto;}
 
 .faq_wrapper .header{ font-size: 24px; font-family: 'AvenirMedium'; color: #767676; background: #f2f4f5; padding: 8px;}
-.mat-expansion-panel-header.mat-expanded:focus{ background: #00baff;}
+.faq_wrapper .mat-expansion-panel-body {padding: 0; }
+
+.faq_wrapper .mat-expansion-panel-header.mat-expanded:focus{ background: #00baff;}
  /* .mat-expansion-panel-header-title{color: #f2f4f5;} */
 
- .mat-expansion-panel-header.mat-expanded:focus .mat-expansion-panel-header-title {
+ .faq_wrapper .mat-expansion-panel-header.mat-expanded:focus .mat-expansion-panel-header-title {
     color: rgba(255, 255, 255, 0.87);
 }
 .active{background: #00baff!important;}
