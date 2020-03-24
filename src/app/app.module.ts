@@ -130,7 +130,7 @@ import { SalesPersonHeaderComponent } from './components/sales-person/sales-pers
 import { SalesPersonFooterComponent } from './components/sales-person/sales-person-footer/sales-person-footer.component';
 import { AddEditFaqComponent } from './components/admin/faq-management/add-edit-faq/add-edit-faq.component';
 import { ListFaqComponent } from './components/admin/faq-management/list-faq/list-faq.component';
-import { FaqViewComponent } from '../components/common/faq-view/faq-view.component';
+import { FaqViewComponent } from './components/common/faq-view/faq-view.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
