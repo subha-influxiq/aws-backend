@@ -519,3 +519,28 @@ align-items: center; justify-content: center; color: #fff; font-family: 'AvenirM
 .mat-dialog-container .mat-dialog-actions button{ background: var(--button-color1);
   color: #fff; min-width: 100px; font-family: 'AvenirMedium'; font-size: 18px;}
 .mat-dialog-container .mat-dialog-actions button:last-child{ background: var(--button-color2);}
+
+/* sales dashboard  */
+.sales_person_db{ width: 1440px; display: block; margin: 0 auto; }
+.sales_person_db .shareLi{ background: #cfaa1e url('../images/shareBanner.png') no-repeat; background-position: 10% bottom; padding:20px; height: 500px;
+  background-size: contain;
+  position: relative;
+}
+.sales_person_db .shareLi .in_w{ width:660px; background: #fff; margin-left: auto; padding: 16px; box-sizing: border-box; border-radius: 4px; top: 50%;
+  position: absolute; transform: translate(-50%, -50%); left: 70%; box-shadow: 0px 2px 8px 0px #404040;}
+.sales_person_db .shareLi .in_w h2{ margin: 0; color: #000; font-family: 'AvenirRoman'; font-size: 22px; text-transform: uppercase; margin-bottom: 10px;    margin-bottom: 10px;
+border-bottom: 2px solid; padding-bottom: 8px;}
+.sales_person_db .shareLi .in_w .input_w { display: flex; justify-content: space-between; align-items: center;}
+.sales_person_db .shareLi .in_w .input_w .mat-form-field{ width: 100%; }
+.sales_person_db .shareLi .in_w .input_w button{color: var(--button-color3); padding: 0; min-width: 50px;}
+.sales_person_db .shareLi .in_w .social_media_wrapper{ display: flex; align-items: center; justify-content: center; }
+.sales_person_db .shareLi .in_w .social_media_wrapper button{ padding: 0; min-width: 36px; color: var(--button-color2);}
+.sales_person_db .shareLi .in_w  .social_media_wrapper button i{ font-size: 30px; }
+.table_list{ margin: 0px auto; width: 1440px;}
+.table_list .top_header { background:#f5f5f5}
+.table_list .top_header .title1{ font-size: 26px; font-family: 'AvenirMedium'; }
+.table_list table{ width: 100%;}
+.table_list table td.mat-cell:last-of-type{ border-right: 1px solid #d6d6d6; }
+.table_list table td.mat-cell:first-of-type{ border-left: 1px solid #d6d6d6; }
+.table_list .button_action {  margin-left:auto;}
+.table_list .button_action button:last-child{ background: var(--button-color1); margin-left: 10px;}

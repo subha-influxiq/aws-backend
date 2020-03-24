@@ -37,4 +37,8 @@ export class SalesPersonDashboardComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
+  pagination(status: any = null) {
+
+  }
+
 }
