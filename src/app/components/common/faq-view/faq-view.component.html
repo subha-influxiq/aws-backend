@@ -7,7 +7,8 @@
 <app-biller-header *ngIf="loginUserData.user_details.user_type == 'biller'"></app-biller-header>
 
 <!-- Diagnostic Admin -->
-<app-diagnostic-admin-header *ngIf="loginUserData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+<app-diagnostic-admin-header *ngIf="loginUserData.user_details.user_type == 'diagnostic_admin'">
+</app-diagnostic-admin-header>
 
 <!-- Doctor -->
 <app-doctor-header *ngIf="loginUserData.user_details.user_type == 'doctor'"></app-doctor-header>
@@ -27,6 +28,68 @@
 
 <p>faq-view works!</p>
 
+<mat-card class="faq_wrapper">
+    <h2 class="header"> Frequently Asked Questions (FAQs) </h2>
+    <mat-accordion>
+        <mat-expansion-panel expanded="true">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <b>1 &nbsp;</b> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, quam.
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <!-- body -->
+            <div class="body_wrapper">
+                <div class="content_wr">
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus laborum, non esse natus
+                        magni architecto aspernatur, sit optio hic eveniet laudantium placeat, excepturi omnis harum
+                        ducimus iste consequatur voluptatibus ea.</p>
+                </div>
+                <div class="video_wr">
+                    <iframe width="400" height="315" src="https://www.youtube.com/embed/SdR8rl-NbB4" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <b>2 &nbsp;</b> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, quam.
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <!-- body -->
+            <div class="body_wrapper">
+                <div class="content_wr">
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus laborum, non esse natus
+                        magni architecto aspernatur, sit optio hic eveniet laudantium placeat, excepturi omnis harum
+                        ducimus iste consequatur voluptatibus ea.</p>
+                </div>
+                <div class="video_wr">
+                    <iframe width="400" height="315" src="https://www.youtube.com/embed/SdR8rl-NbB4" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <b>3 &nbsp;</b> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, quam.
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <!-- body -->
+            <div class="body_wrapper">
+                <div class="content_wr">
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus laborum, non esse natus
+                        magni architecto aspernatur, sit optio hic eveniet laudantium placeat, excepturi omnis harum
+                        ducimus iste consequatur voluptatibus ea.</p>
+                </div>
+                <div class="video_wr">
+                    <iframe width="400" height="315" src="https://www.youtube.com/embed/SdR8rl-NbB4" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </mat-expansion-panel>
+
+    </mat-accordion>
+</mat-card>
+
 
 
 <!-- Footer Start -->
@@ -38,7 +101,8 @@
 <app-biller-footer *ngIf="loginUserData.user_details.user_type == 'biller'"></app-biller-footer>
 
 <!-- Diagnostic Admin -->
-<app-diagnostic-admin-footer *ngIf="loginUserData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-footer>
+<app-diagnostic-admin-footer *ngIf="loginUserData.user_details.user_type == 'diagnostic_admin'">
+</app-diagnostic-admin-footer>
 
 <!-- Doctor -->
 <app-doctor-footer *ngIf="loginUserData.user_details.user_type == 'doctor'"></app-doctor-footer>
