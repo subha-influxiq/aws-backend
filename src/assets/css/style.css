@@ -544,3 +544,4 @@ border-bottom: 2px solid; padding-bottom: 8px;}
 .table_list table td.mat-cell:first-of-type{ border-left: 1px solid #d6d6d6; }
 .table_list .button_action {  margin-left:auto;}
 .table_list .button_action button:last-child{ background: var(--button-color1); margin-left: 10px;}
+.faq_wrapper .mat-expansion-panel-body {padding: 0; }
