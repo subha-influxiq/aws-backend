@@ -75,6 +75,8 @@
                         [formControl]="FaqManagementAddEditForm.controls['answer']"
                         (blur)="inputUntouch(FaqManagementAddEditForm,'answer')"></textarea>
 
+                    <ckeditor data="<p>Hello, world!</p>"></ckeditor>
+
                     <mat-error
                         *ngIf="FaqManagementAddEditForm.controls['answer'].touched && !FaqManagementAddEditForm.controls['answer'].valid && FaqManagementAddEditForm.controls['answer'].errors.required">
                         Answer required.

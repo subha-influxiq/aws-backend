@@ -132,6 +132,9 @@ import { AddEditFaqComponent } from './components/admin/faq-management/add-edit-
 import { ListFaqComponent } from './components/admin/faq-management/list-faq/list-faq.component';
 import { FaqViewComponent } from './components/common/faq-view/faq-view.component';
 
+// ck eitor
+import { CKEditorModule } from 'ckeditor4-angular';
+
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
   "bgsOpacity": 1,
@@ -278,6 +281,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxUiLoaderRouterModule, // import this module for showing loader automatically when navigating between app routes
     NgxUiLoaderHttpModule,
 
+    //ckeditor
+    CKEditorModule
   ],
   exports: [
     MatPaginatorModule
