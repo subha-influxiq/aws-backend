@@ -156,6 +156,7 @@
 
 .DataTable table th.mat-header-cell { text-align: left;  font-family: "AvenirMedium";  font-size: 16px; }
 .DataTable table th.mat-header-cell:last-of-type{ width: 10%;}
+.faq-management table th.mat-header-cell:last-of-type{ width: 14%;}
 
 .DataTable table td.mat-cell{  font-family: "AvenirLight"; }
 .DataTable table td span .cursor{cursor: pointer; color:var(--button-color2);}
