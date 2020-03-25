@@ -51,8 +51,7 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Question</mat-label>
 
-                    <input matInput placeholder="Question"
-                        [formControl]="FaqManagementAddEditForm.controls['question']"
+                    <input matInput placeholder="Question" [formControl]="FaqManagementAddEditForm.controls['question']"
                         (blur)="inputUntouch(FaqManagementAddEditForm,'question')">
 
                     <mat-error
@@ -107,8 +106,12 @@
                 </mat-form-field>
                 <!-- Priority End -->
 
-                <mat-checkbox [formControl]="FaqManagementAddEditForm.controls['status']" checked>Active
-                </mat-checkbox>
+                <!-- Status Start -->
+                <span class="wrppr">
+                    <mat-checkbox [formControl]="FaqManagementAddEditForm.controls['status']" checked>Active
+                    </mat-checkbox>
+                </span>
+                <!-- Status End -->
 
                 <!-- end here -->
                 <span class="submit_form">

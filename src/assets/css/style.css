@@ -156,6 +156,7 @@
 
 .DataTable table th.mat-header-cell { text-align: left;  font-family: "AvenirMedium";  font-size: 16px; }
 .DataTable table th.mat-header-cell:last-of-type{ width: 10%;}
+.faq-management table th.mat-header-cell:last-of-type{ width: 14%;}
 
 .DataTable table td.mat-cell{  font-family: "AvenirLight"; }
 .DataTable table td span .cursor{cursor: pointer; color:var(--button-color2);}
@@ -427,7 +428,8 @@ padding-bottom: 6px; }
   background: var(--button-color2); color: #fff; margin-right: 16px;}
  .admin_wrapper .add_form .submit_form button:first-child{ margin-right: 16px; background: var(--button-color1);}
  .admin_wrapper .add_form .submit_form button:last-child{ margin-right: 0px; background: var(--button-color3);}
- .admin_wrapper .add_form{ width: 100%; margin: 20px auto; background: #f3f3f3; padding: 16px 10px; padding-bottom: 50px; border: 1px solid #91e7ff; box-sizing: border-box;}
+ .admin_wrapper .add_form{ width: 100%; margin: 20px auto; background:#fbfbfb ; padding: 16px 10px; padding-bottom: 50px; border: 1px solid #91e7ff; box-sizing: border-box;}
+ /* #f3f3f3 */
  .admin_wrapper .add_form .form_wrapper textarea{ resize: none;}
  .admin_wrapper .add_form .form_wrapper .mat-form-field{ width: 49%; margin: 0.5%; }
  .admin_wrapper .add_form h2{ font-family: "AvenirBlack"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }
@@ -544,3 +546,4 @@ border-bottom: 2px solid; padding-bottom: 8px;}
 .table_list table td.mat-cell:first-of-type{ border-left: 1px solid #d6d6d6; }
 .table_list .button_action {  margin-left:auto;}
 .table_list .button_action button:last-child{ background: var(--button-color1); margin-left: 10px;}
+.faq_wrapper .mat-expansion-panel-body {padding: 0; }
