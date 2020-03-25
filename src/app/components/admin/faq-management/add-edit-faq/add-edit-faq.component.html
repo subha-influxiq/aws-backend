@@ -68,26 +68,29 @@
                 <!-- Question End -->
 
                 <!-- Answer Start -->
+                <ckeditor [(ngModel)]="htmlText.ckEditorValue" [ngModelOptions]="{standalone: true}"></ckeditor>
+                <p style="color: red;" *ngIf="FaqManagementAddEditForm.controls['answer'].touched && !FaqManagementAddEditForm.controls['answer'].valid && FaqManagementAddEditForm.controls['answer'].errors.required">
+                    Answer required.
+                </p>
+
+                <p style="color: red;" *ngIf="FaqManagementAddEditForm.controls['answer'].touched && !FaqManagementAddEditForm.controls['answer'].valid && FaqManagementAddEditForm.controls['answer'].errors.maxlength">
+                    Answer is not valid.
+                </p>
+                <!-- Answer End -->
+
+                <!-- Youtube Link Start -->
                 <mat-form-field appearance="fill">
-                    <mat-label>Answer</mat-label>
+                    <mat-label>Youtube Link</mat-label>
 
-                    <textarea matInput placeholder="Answer"
-                        [formControl]="FaqManagementAddEditForm.controls['answer']"
-                        (blur)="inputUntouch(FaqManagementAddEditForm,'answer')"></textarea>
+                    <input type="text" matInput placeholder="Youtube link"
+                        [formControl]="FaqManagementAddEditForm.controls['youtube_link']"
+                        (blur)="inputUntouch(FaqManagementAddEditForm, 'youtube_link')">
 
-                    <ckeditor data="<p>Hello, world!</p>"></ckeditor>
-
-                    <mat-error
-                        *ngIf="FaqManagementAddEditForm.controls['answer'].touched && !FaqManagementAddEditForm.controls['answer'].valid && FaqManagementAddEditForm.controls['answer'].errors.required">
-                        Answer required.
-                    </mat-error>
-
-                    <mat-error
-                        *ngIf="FaqManagementAddEditForm.controls['answer'].touched && !FaqManagementAddEditForm.controls['answer'].valid && FaqManagementAddEditForm.controls['answer'].errors.maxlength">
-                        Answer is not valid.
+                    <mat-error *ngIf="FaqManagementAddEditForm.controls['youtube_link'].touched && !FaqManagementAddEditForm.controls['youtube_link'].valid && FaqManagementAddEditForm.controls['youtube_link'].errors.required">
+                        Priority required.
                     </mat-error>
                 </mat-form-field>
-                <!-- Answer End -->
+                <!-- Youtube Link End -->
 
                 <!-- Priority Start -->
                 <mat-form-field appearance="fill">
@@ -102,7 +105,7 @@
                         Priority required.
                     </mat-error>
                 </mat-form-field>
-                <!-- Priority Start -->
+                <!-- Priority End -->
 
                 <mat-checkbox [formControl]="FaqManagementAddEditForm.controls['status']" checked>Active
                 </mat-checkbox>

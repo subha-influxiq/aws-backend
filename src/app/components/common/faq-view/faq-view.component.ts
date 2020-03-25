@@ -8,6 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatSnackBar } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-faq-view',
@@ -21,7 +22,7 @@ export class FaqViewComponent implements OnInit {
 
   constructor(public http: HttpClient, public commonFunction: CommonFunction, public activatedRoute: ActivatedRoute, 
     public cookieService: CookieService, public httpService: HttpServiceService, public deviceService: DeviceDetectorService,
-    public matSnackBar: MatSnackBar) {
+    public matSnackBar: MatSnackBar, private sanitizer: DomSanitizer) {
     
       /* Get and set login User Data */
     this.loginUserData["user_details"] = JSON.parse(this.cookieService.get('user_details'));
@@ -30,7 +31,10 @@ export class FaqViewComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.data.subscribe(resolveData => {
-      this.allResolveData = resolveData.faqData.data;
+      this.allResolveData = resolveData.faqData.res;
+      for(let loop = 0; loop < this.allResolveData.length; loop++) {
+        this.allResolveData[loop].youtube_link_save = this.sanitizer.bypassSecurityTrustResourceUrl(this.allResolveData[loop].youtube_link);
+      }
     });
   }
 

@@ -16,7 +16,8 @@ export class ListFaqComponent implements OnInit {
   public allUserData_skip: any = [
     "_id",
     "answer",
-    "created_at"
+    "created_at",
+    "youtube_link"
   ];
   public editUrl: any = "admin/faq-management/edit";
   public allUserData_modify_header: any = {

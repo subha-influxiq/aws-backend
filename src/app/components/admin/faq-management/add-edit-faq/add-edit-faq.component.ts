@@ -35,7 +35,8 @@ export class AddEditFaqComponent implements OnInit {
     message: "Submitted Successfully",
     states: "",
     allCities: "",
-    cities: ""
+    cities: "",
+    ckEditorValue: ""
   };
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
@@ -61,12 +62,13 @@ export class AddEditFaqComponent implements OnInit {
 
   generateAddEditForm(flag: string = null) {
     let validateRule: any = {
-      id:       ['', []],
-      users:    ['', [ Validators.required, Validators.maxLength(50) ]],
-      question: ['', [ Validators.required, Validators.maxLength(50) ]],
-      answer:   ['', [ Validators.required, Validators.maxLength(10000) ]],
-      priority: ['', [ Validators.required, Validators.minLength(7), Validators.maxLength(16) ]],
-      status:   ['', []],
+      id:           ['', []],
+      users:        ['', [ Validators.required, Validators.maxLength(50) ]],
+      question:     ['', [ Validators.required, Validators.maxLength(50) ]],
+      answer:       ['', [ Validators.required, Validators.maxLength(100000) ]],
+      youtube_link: ['', [ Validators.maxLength(500) ]],
+      priority:     ['', [ Validators.required, Validators.minLength(7), Validators.maxLength(16) ]],
+      status:       ['', []],
     };
     
     switch(flag) {
@@ -79,7 +81,8 @@ export class AddEditFaqComponent implements OnInit {
           this.FaqManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
           this.FaqManagementAddEditForm.controls['users'].patchValue(billerDetails[0].users);
           this.FaqManagementAddEditForm.controls['question'].patchValue(billerDetails[0].question);
-          this.FaqManagementAddEditForm.controls['answer'].patchValue(billerDetails[0].answer);
+          this.htmlText.ckEditorValue = billerDetails[0].answer;
+          this.FaqManagementAddEditForm.controls['youtube_link'].patchValue(billerDetails[0].youtube_link);
           this.FaqManagementAddEditForm.controls['priority'].patchValue(billerDetails[0].priority);
           this.FaqManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
         });
@@ -102,6 +105,7 @@ export class AddEditFaqComponent implements OnInit {
   /**for validation purpose**/
 
   TechManagementAddFormFormSubmit() {
+    this.FaqManagementAddEditForm.controls['answer'].patchValue(this.htmlText.ckEditorValue);
     for (let x in this.FaqManagementAddEditForm.controls) {
       this.FaqManagementAddEditForm.controls[x].markAsTouched();
     }
@@ -112,7 +116,7 @@ export class AddEditFaqComponent implements OnInit {
       } else {
         this.FaqManagementAddEditForm.value.status = parseInt("0");
       }
-      
+
       var data: any = {
         "source": "data_faq",
         "data": this.FaqManagementAddEditForm.value,
