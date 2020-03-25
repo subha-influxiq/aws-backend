@@ -5,13 +5,11 @@
 
 .faq_wrapper .mat-expansion-panel-header.mat-expanded:focus{ background: #00baff;}
  /* .mat-expansion-panel-header-title{color: #f2f4f5;} */
-
- .faq_wrapper .mat-expansion-panel-header.mat-expanded:focus .mat-expansion-panel-header-title {
+.faq_wrapper .mat-expansion-panel-header.mat-expanded:focus .mat-expansion-panel-header-title {
     color: rgba(255, 255, 255, 0.87);
 }
 .active{background: #00baff!important;}
-.active .mat-expansion-panel-header-title {
-    color: rgba(255, 255, 255, 0.87);
+.active .mat-expansion-panel-header-title { color: rgba(255, 255, 255, 0.87);
 }
 .body_wrapper{
     background:#f2f4f5 ; display: flex; justify-content: space-between; padding: 10px 20px;

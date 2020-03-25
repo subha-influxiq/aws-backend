@@ -51,8 +51,7 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Question</mat-label>
 
-                    <input matInput placeholder="Question"
-                        [formControl]="FaqManagementAddEditForm.controls['question']"
+                    <input matInput placeholder="Question" [formControl]="FaqManagementAddEditForm.controls['question']"
                         (blur)="inputUntouch(FaqManagementAddEditForm,'question')">
 
                     <mat-error
@@ -67,27 +66,7 @@
                 </mat-form-field>
                 <!-- Question End -->
 
-                <!-- Answer Start -->
-                <mat-form-field appearance="fill">
-                    <mat-label>Answer</mat-label>
 
-                    <textarea matInput placeholder="Answer"
-                        [formControl]="FaqManagementAddEditForm.controls['answer']"
-                        (blur)="inputUntouch(FaqManagementAddEditForm,'answer')"></textarea>
-
-                    <ckeditor data="<p>Hello, world!</p>"></ckeditor>
-
-                    <mat-error
-                        *ngIf="FaqManagementAddEditForm.controls['answer'].touched && !FaqManagementAddEditForm.controls['answer'].valid && FaqManagementAddEditForm.controls['answer'].errors.required">
-                        Answer required.
-                    </mat-error>
-
-                    <mat-error
-                        *ngIf="FaqManagementAddEditForm.controls['answer'].touched && !FaqManagementAddEditForm.controls['answer'].valid && FaqManagementAddEditForm.controls['answer'].errors.maxlength">
-                        Answer is not valid.
-                    </mat-error>
-                </mat-form-field>
-                <!-- Answer End -->
 
                 <!-- Priority Start -->
                 <mat-form-field appearance="fill">
@@ -103,10 +82,30 @@
                     </mat-error>
                 </mat-form-field>
                 <!-- Priority Start -->
+                <span class="wrppr">
+                    <mat-checkbox [formControl]="FaqManagementAddEditForm.controls['status']" checked>Active
+                    </mat-checkbox>
+                </span>
+                <!-- Answer Start -->
+                <mat-form-field appearance="fill" class="full_width">
+                    <mat-label>Answer</mat-label>
 
-                <mat-checkbox [formControl]="FaqManagementAddEditForm.controls['status']" checked>Active
-                </mat-checkbox>
+                    <textarea matInput placeholder="Answer" [formControl]="FaqManagementAddEditForm.controls['answer']"
+                        (blur)="inputUntouch(FaqManagementAddEditForm,'answer')"></textarea>
 
+                    <ckeditor data="<p>Hello, world!</p>"></ckeditor>
+
+                    <mat-error
+                        *ngIf="FaqManagementAddEditForm.controls['answer'].touched && !FaqManagementAddEditForm.controls['answer'].valid && FaqManagementAddEditForm.controls['answer'].errors.required">
+                        Answer required.
+                    </mat-error>
+
+                    <mat-error
+                        *ngIf="FaqManagementAddEditForm.controls['answer'].touched && !FaqManagementAddEditForm.controls['answer'].valid && FaqManagementAddEditForm.controls['answer'].errors.maxlength">
+                        Answer is not valid.
+                    </mat-error>
+                </mat-form-field>
+                <!-- Answer End -->
                 <!-- end here -->
                 <span class="submit_form">
                     <button mat-flat-button type="button" [routerLink]="['/admin/faq-management']">Back</button>
