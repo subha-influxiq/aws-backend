@@ -200,10 +200,9 @@
 .table_wrapper .add_header {display: flex; height: auto; justify-content: space-between; align-items: center; padding: 10px 5px; background: #f9f9f9; }
 .table_wrapper .add_header button{ background:var(--button-color2); font-family: 'Avenirmedium'; font-size: 18px; color: #fff;
   text-transform: uppercase;}
-  .table_wrapper .no_data{ font-family: 'AvenirBlack'; font-size: 18px;  }
-
+.table_wrapper .no_data{ font-family: 'AvenirBlack'; font-size: 18px;  }
 .bradcrumb{ display: block; font-family: 'AvenirLight';
-  font-size: 16px;}
+font-size: 16px;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
 .container .searchbar span{ display: flex; justify-content: space-between; }
 .container .searchbar .mat-form-field{margin-right: 10px;}
@@ -324,8 +323,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .patient_report_section .patient_top_search { display: flex; align-items: center; justify-content: space-between; padding: 0 16px; margin-top: 20px; margin-bottom: 0;}
 .patient_report_section .patient_top_search .search_bar { display: flex;  }
 .patient_report_section .patient_top_search .search_bar button{ border: none;
-  background: transparent; color: #757575;
-   display: flex; align-items: center; cursor: pointer;}
+  background: transparent; color: #757575; display: flex; align-items: center; cursor: pointer;}
 .patient_report_section .patient_top_search h1{ font-size: 32px; text-transform: uppercase;  color: #002035; margin: auto;}
 .patient_report_section .patient_top_search .search_bar button:focus{ outline: none; }
 .patient_report_section .button_action button{  border-radius: 5px; background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: "RobotoBlack";
@@ -416,7 +414,7 @@ padding-bottom: 6px; }
 .biller_Dashboard .mat-table .mat-column-Doctor-Name .doctor_name{ margin: 6px 0; }
 .biller_Dashboard .mat-table .mat-column-Doctor-Name .doctor_name span{ font-family: 'AvenirBlack'; color: #404242; }
 
-.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-empty.mat-form-field-label{width:auto!important; background:#fff;}
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{width:auto!important; background:#fff; color: #1dbce9!important; font-family: 'AvenirMedium';}
 
 /* searches */
 .admin_table .action_bar{ height: auto; justify-content: space-between;}
@@ -435,16 +433,12 @@ padding-bottom: 6px; }
  .admin_wrapper .add_form .form_wrapper textarea{ resize: none;}
  .admin_wrapper .add_form .form_wrapper .mat-form-field{ width: 49%; margin: 0.5%; }
  .admin_wrapper .add_form h2{ font-family: "AvenirBlack"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }
- .admin_wrapper .add_form .submit_form{ display: flex; width: 100%; text-align: center; margin-top: 30px; justify-content: center; margin: auto; }
-
-
+ .admin_wrapper .add_form .submit_form{ display: flex; width: 100%; text-align: center; margin-top: 30px; justify-content: center; }
 .patient_preview .mat-form-field-appearance-legacy .mat-form-field-wrapper { padding: 0;}
 .patient_preview .mat-form-field-wrapper{ padding: 0; }
 .patient_preview .mat-form-field-underline {display: none;}
-.patient_preview .mat-form-field-appearance-legacy .mat-form-field-infix {    padding: 10px;
-  border: 1px solid #1dbce9;
-  box-sizing: border-box;
-  margin-right: 5px;
+.patient_preview .mat-form-field-appearance-legacy .mat-form-field-infix { padding: 10px;
+  border: 1px solid #1dbce9; box-sizing: border-box; margin-right: 5px;
 }
 /* add edit form */
 .add_form .test_date_wrapper .mat-card-content .mat-form-field-flex{    background: #fff;
@@ -491,7 +485,7 @@ align-items: center; justify-content: center; color: #fff; font-family: 'AvenirM
 .viewMore_w button{ min-width: 444px; background: linear-gradient(0deg, #04aaf5, #32baf9); font-family: 'AvenirHeavy'; color: #fff; text-transform: uppercase; font-size: 28px; padding: 4px;}
 
 /* for all modal */
-.mat-dialog-container{     min-width: 400px; border: 2px solid #03d877; border-radius: 10px!important; padding: 0!important; min-height: 180px!important;}
+.mat-dialog-container{ min-width: 400px; border: 2px solid #03d877; border-radius: 10px!important; padding: 0!important; min-height: 180px!important;}
 .mat-dialog-container .mat-dialog-title {text-align: center;
   margin: 0;
   display: block;
@@ -507,21 +501,14 @@ align-items: center; justify-content: center; color: #fff; font-family: 'AvenirM
   padding: 0 10px; box-sizing: border-box;
   max-height: initial;
   overflow: auto; }
-  .mat-dialog-container .mat-dialog-content p{
-  text-align: center;
-    color: var(--button-color2);
-    font-size: 18px;
+.mat-dialog-container .mat-dialog-content p{ text-align: center; color: var(--button-color2); font-size: 18px;
     font-family: 'AvenirMedium';
-  }
-  .mat-dialog-container .mat-dialog-actions {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: inherit;
-    align-items: center;
-    justify-content: center;
+}
+.mat-dialog-container .mat-dialog-actions { display: flex; flex-wrap: wrap; min-height: inherit; align-items: center;
+  justify-content: center;
 }
 .mat-dialog-container .mat-dialog-actions button{ background: var(--button-color1);
-  color: #fff; min-width: 100px; font-family: 'AvenirMedium'; font-size: 18px;}
+color: #fff; min-width: 100px; font-family: 'AvenirMedium'; font-size: 18px;}
 .mat-dialog-container .mat-dialog-actions button:last-child{ background: var(--button-color2);}
 
 /* sales dashboard  */
