@@ -67,14 +67,22 @@
                 <!-- Question End -->
 
                 <!-- Answer Start -->
-                <ckeditor [(ngModel)]="htmlText.ckEditorValue" [ngModelOptions]="{standalone: true}"></ckeditor>
-                <p style="color: red;" *ngIf="FaqManagementAddEditForm.controls['answer'].touched && !FaqManagementAddEditForm.controls['answer'].valid && FaqManagementAddEditForm.controls['answer'].errors.required">
-                    Answer required.
-                </p>
 
-                <p style="color: red;" *ngIf="FaqManagementAddEditForm.controls['answer'].touched && !FaqManagementAddEditForm.controls['answer'].valid && FaqManagementAddEditForm.controls['answer'].errors.maxlength">
-                    Answer is not valid.
-                </p>
+
+                <span class="full_width">
+                    <mat-label>Answer</mat-label>
+                    <ckeditor [(ngModel)]="htmlText.ckEditorValue" [ngModelOptions]="{standalone: true}">
+                    </ckeditor>
+                    <p style="color: red;"
+                        *ngIf="FaqManagementAddEditForm.controls['answer'].touched && !FaqManagementAddEditForm.controls['answer'].valid && FaqManagementAddEditForm.controls['answer'].errors.required">
+                        Answer required.
+                    </p>
+
+                    <p style="color: red;"
+                        *ngIf="FaqManagementAddEditForm.controls['answer'].touched && !FaqManagementAddEditForm.controls['answer'].valid && FaqManagementAddEditForm.controls['answer'].errors.maxlength">
+                        Answer is not valid.
+                    </p>
+                </span>
                 <!-- Answer End -->
 
                 <!-- Youtube Link Start -->
@@ -85,7 +93,8 @@
                         [formControl]="FaqManagementAddEditForm.controls['youtube_link']"
                         (blur)="inputUntouch(FaqManagementAddEditForm, 'youtube_link')">
 
-                    <mat-error *ngIf="FaqManagementAddEditForm.controls['youtube_link'].touched && !FaqManagementAddEditForm.controls['youtube_link'].valid && FaqManagementAddEditForm.controls['youtube_link'].errors.required">
+                    <mat-error
+                        *ngIf="FaqManagementAddEditForm.controls['youtube_link'].touched && !FaqManagementAddEditForm.controls['youtube_link'].valid && FaqManagementAddEditForm.controls['youtube_link'].errors.required">
                         Priority required.
                     </mat-error>
                 </mat-form-field>
