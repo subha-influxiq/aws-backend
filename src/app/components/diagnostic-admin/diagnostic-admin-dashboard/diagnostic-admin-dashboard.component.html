@@ -290,13 +290,14 @@
     <mat-toolbar class="top_header">
       <h2> {{ htmlText.headerText }} </h2>
       <span class="wrappp_R">
-        <button class="add_new tooltip" mat-button routerLink="/diagnostic-admin/patient-management/add" matTooltip="Add Report" matTooltipPosition="above">
+        <button class="add_new tooltip" mat-button routerLink="/diagnostic-admin/patient-management/add"
+          matTooltip="Add Report" matTooltipPosition="above">
           <!-- <span class="tooltiptext"> Add Report </span> -->
           <i class="material-icons">add</i> Add Report Manually
         </button>
 
 
-        <button class="add_new tooltip" mat-button (click)="refreshDashboard();"matTooltipPosition="above"
+        <button class="add_new tooltip" mat-button (click)="refreshDashboard();" matTooltipPosition="above"
           matTooltip="ReportRefresh Dashboard">
           <!-- <span class="tooltiptext"> Refresh Dashboard </span> -->
           <i class="material-icons">cached</i>
@@ -432,7 +433,8 @@
             <ng-container *ngIf="loginUserData.user_details.user_type == 'diagnostic_admin'">
               <button mat-button type="button"
                 *ngIf="element.report_type == 'manual' || (element.report_type == 'file' && element.images)"
-                class="viewButton tooltip" type="button" [routerLink]="['/diagnostic-admin/patient-record', element._id]">
+                class="viewButton tooltip" type="button"
+                [routerLink]="['/diagnostic-admin/patient-record', element._id]">
                 <span class="tooltiptext">View</span>
                 <i class="material-icons">search</i>
               </button>
@@ -442,12 +444,23 @@
             <button mat-button type="button" *ngIf="htmlText.headerText == 'Download Bill'" class="viewButton tooltip"
               type="button" (click)="viewDownloadDetails(element._id);">Details</button>
 
-            <button mat-button type="button"
-              *ngIf="element.status == 'Downloaded' && element.report_type == 'manual' || (element.report_type == 'file' && element.images)"
-              class="editButton tooltip" [routerLink]="['/admin/patient-record/edit', element._id]">
-              <span class="tooltiptext">Edit</span>
-              <i class="material-icons">create</i>
-            </button>
+            <ng-container *ngIf="loginUserData.user_details.user_type == 'admin'">
+              <button mat-button type="button"
+                *ngIf="element.status == 'Downloaded' && element.report_type == 'manual' || (element.report_type == 'file' && element.images)"
+                class="editButton tooltip" [routerLink]="['/admin/patient-record/edit', element._id]">
+                <span class="tooltiptext">Edit</span>
+                <i class="material-icons">create</i>
+              </button>
+            </ng-container>
+
+            <ng-container *ngIf="loginUserData.user_details.user_type == 'diagnostic_admin'">
+              <button mat-button type="button"
+                *ngIf="element.status == 'Downloaded' && element.report_type == 'manual' || (element.report_type == 'file' && element.images)"
+                class="editButton tooltip" [routerLink]="['/diagnostic-admin/patient-record/edit', element._id]">
+                <span class="tooltiptext">Edit</span>
+                <i class="material-icons">create</i>
+              </button>
+            </ng-container>
 
             <button mat-button type="button" *ngIf="element.report_type == 'file' && !element.images"
               class="editButton downloadBtn tooltip">
@@ -474,7 +487,7 @@
       <tr mat-header-row *matHeaderRowDef="allDataColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: allDataColumns;let i = index"></tr>
     </table>
-    
+
     <mat-toolbar class="footer_action">
       <button mat-raised-button type="button" color="primary" (click)="pagination('prev');">Prev</button>
       <button mat-raised-button type="button" color="primary" (click)="pagination('next');">Next</button>

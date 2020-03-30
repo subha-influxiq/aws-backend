@@ -51,6 +51,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
     this.loginUserData["user_details"] = JSON.parse(cookieService.get('user_details'));
     this.loginUserData["jwtToken"] = cookieService.get('jwtToken');
+    console.log(this.loginUserData.user_details.user_type);
 
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');

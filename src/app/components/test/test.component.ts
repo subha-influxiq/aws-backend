@@ -4,6 +4,10 @@ import { HttpServiceService } from '../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CommonFunction } from '../../class/common/common-function';
 import { MatTableDataSource } from '@angular/material/table';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-test',
@@ -13,157 +17,77 @@ import { MatTableDataSource } from '@angular/material/table';
 
 export class TestComponent implements OnInit {
 
-  public resolveData: any;
-  public dataSource: any;
-  public displayedColumns:any;
-  public lastsearchcond:any={};
-  public displaycolvals:any = [];
-
-  public search: any = {
-    "name": "",
-    "city": "",
-    "state": ""
+  public configData: any = {
+    jwtToken: "",
+    baseUrl: "https://m9mkuic6o9.execute-api.us-east-1.amazonaws.com/dev/api/",
+    endPoint: {
+      add: "add-or-update-event-data",
+      datalist: "datalist",
+      deleteEvent: "delete-single-event",
+      viewEventSlots: "view-event-eventdayarr",
+      search: "search",
+      countSlot: "count-slot"
+    },
+    urls: {
+      view: "calendar-management",
+      viewSlotUser: "calendar-management/view-slot-user",
+      eventListing: "calendar-management/event-listing",
+      add: "calendar-management/create-slot",
+      edit: "",
+      // googleSync: "calendar-management/sync-with-google",
+      googleSync: "https://gapi.betoparedes.com/connect-calendar-pece.php"
+    },
+    timeZone: [
+      { text: 'Alaska Standard Time', value: '-08:00|America/Anchorage' },
+      { text: 'Pacific Standard Time', value: '-07:00|America/Los_Angeles' },
+      { text: 'Mountain Standard Time(GMT-06:00)', value: '-06:00|America/Denver' },
+      { text: 'Mountain Standard Time(GMT-07:00) (no DST)', value: '-07:00|America/Phoenix' },
+      { text: 'Central Standard Time', value: '-05:00|America/Chicago' },
+      { text: 'Eastern Standard Time', value: '-04:00|America/New_York' },
+      { text: 'Hawaii Standard Time', value: '-10:00|Pacific/Honolulu' }
+    ],
+    eventType: [
+      { text: "Admin Meetings", value: 1 },
+      { text: "Type 2", value: 2 },
+      { text: "Type 3", value: 3 },
+      { text: "Type 3", value: 4 }
+    ],
+    responseData: ""
   };
 
-  public page: any = {
-    "page_count": 50,
-    "page_no": 1
-  };
-
-  public sort_val: any;
-  public sort_item: any = {};
-  public sort_type: any;
-  public total_count: any = 0;
-
-  constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute, public commonFunction: CommonFunction) {
-    this.displayedColumns = [
-      {key:"name", value:'Name'},
-      {key:"DOB", value:'Date of Birth'},
-      {key:"DOA", value:'DOA'},
-      {key:"roll", value:'Roll'},
-      {key:"class", value: "Class"},
-      {key:"address", value: "Address"},
-      {key:"parent_phone", value: "Parent Phone"},
-      {key:"parent_email", value: "Parent Email"},
-      {key:"city", value: "City"},
-      {key:"state", value: "State"},
-      {key:"weight", value: "Weight"},
-      {key:"height", value: "Height"}
-    ];
-    let data: any = Array.from(this.displayedColumns, (x:any) => x.key);
-    this.displaycolvals = ['#'];
-    this.displaycolvals = this.displaycolvals.concat(data);
-
-    this.sort_val = 'doa';
-    this.sort_type = 'desc';
-
-    this.activatedRoute.data.subscribe(resolveData => {
-      //console.log(">>", resolveData.dataCount);
-      this.resolveData = resolveData.dataCount.data;
-      this.dataSource = new MatTableDataSource(this.resolveData);
-    });
-
-    this.getPageCount();
-  }
-
-  getPageData() {
-    let searchcond:any = {};
-    let serachval = this.search;
-    let searcharr = Object.keys(serachval).map(function (key) { 
-      // Using Number() to convert key to number type 
-      // Using obj[key] to retrieve key value 
-      return {key:key, val:serachval[key]};   
-  });
-
-  console.log('search arr',searcharr);
-  for(let k in searcharr){
-
-    if(searcharr[k].val!=null && searcharr[k].val!=''){
-      searchcond[searcharr[k].key]={$regex:searcharr[k].val};
-
-    }
-  }
-  searchcond={$and:[searchcond]}; 
-  this.lastsearchcond=searchcond;
-  console.log(searchcond,'cond'); 
-  //return;
-    //for(lel key in this.search){}
-    let repostSignCond: any = {
-      "source": "data_pece",
-      "condition": {},
-      "skip": (parseInt(this.page.page_no)-1) * parseInt(this.page.page_count),
-      "limit": parseInt(this.page.page_count),
-      "search": searchcond,
-      "sort_val": this.sort_val,
-      "sort_type": this.sort_type
-    };
-
-    
-
-    //console.log('repostSignCond.search',repostSignCond.search);
-    //return;
-    this.http.httpViaPost('test-datalist', repostSignCond).subscribe((response) => {
-      if(response.status == 'success') {
-        this.total_count=0;
-        this.getPageCount();
-        this.dataSource = new MatTableDataSource(response.data);
-      } else {
-        console.log(response);
-      }
-    });
-  }
-
-  sortPageData(item: any) {
-    this.sort_item.header = item; 
-    if(item != this.sort_val) {
-      this.sort_val = item;
-      // this.sort_type.header = item;
-      this.sort_type = 'asc';
-      this.getPageData();
-    } else {
-      if(this.sort_type == 'desc') {
-        this.sort_type = 'asc';
-      } else {
-        this.sort_type = 'desc';
-      }
-      console.log(">>>", this.sort_type);
-      this.getPageData();
-    }
-  }
-
-  nextPage(flag: string = null) {
-    if(flag == 'prev' && this.page.page_no > 1) {
-      this.page.page_no--;
-    } 
-
-    if(flag == null && this.page.page_no < this.total_count / this.page.page_no) {
-      this.page.page_no++;
-    }
-    this.getPageData();
-  }
-  
-  getPageCount() {
-    let repostSignCond: any = {
-      sort_val: "doa",
-      sort_type: "desc",
-      search:this.lastsearchcond
-    };
-
-
-    this.http.httpViaPost('test-datalist-page-count', repostSignCond).subscribe((response) => {
-      if(response.status == 'success') {
-        this.total_count = response.data;
-      } else {
-        console.log(response);
-      }
-    });
+  constructor(private http: HttpClient, public activatedRoute: ActivatedRoute, public cookieService: CookieService,
+    public snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
+    if (this.cookieService.check('jwtToken')) {
+      this.configData.jwtToken = this.cookieService.get('jwtToken');
+      this.activatedRoute.data.forEach((data) => {
+        this.configData.responseData = data.eventdayarrData.data;
+        console.log('responseData', this.configData.responseData);
+      });
+    }
+    else {
+      this.openSnackBar("Token not found", null);
+    }
   }
 
-  searchData() {
-    console.log(this.search);
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 3000,
+    });
+  }
+
+  /* call api via post method */
+  httpViaPost(endpoint, jsonData): Observable<any> {
+    /* set common header */
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': jsonData.token
+      })
+    };
+    return this.http.post(endpoint, jsonData);
   }
 
 }

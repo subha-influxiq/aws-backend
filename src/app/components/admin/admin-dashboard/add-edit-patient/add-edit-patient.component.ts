@@ -113,7 +113,7 @@ export class AddEditPatientComponent implements OnInit {
   }
 
   getAllDoctorData() {
-    var data = {
+    var data: any = {
       source: "data_pece",
       condition: {
         user_type: "doctor",
@@ -121,6 +121,10 @@ export class AddEditPatientComponent implements OnInit {
       },
       token: this.allCookies.jwtToken
     };
+
+    if(this.allCookies.user_details.user_type == 'diagnostic_admin') {
+      data.condition.diagnostic_admin_id_object = this.allCookies.user_details._id;
+    }
 
     this.httpService.httpViaPost('datalist', data).subscribe(response => {
       this.htmlText.allDoctor = response.res;
@@ -143,7 +147,7 @@ export class AddEditPatientComponent implements OnInit {
       doctor_details: details
     });
 
-    var data = {
+    var data: any = {
       "source": "tech_by_doctor_id",
       "condition": {
           "_id_object": this.htmlText.allDoctor[index]._id,
@@ -151,6 +155,10 @@ export class AddEditPatientComponent implements OnInit {
       },
       "token": this.allCookies.jwtToken
     };
+
+    if(this.allCookies.user_details.user_type == 'diagnostic_admin') {
+      //data.condition.diagnostic_admin_id_object = this.allCookies.user_details._id;
+    }
 
     this.httpService.httpViaPost('datalist', data).subscribe((response) => {
       this.htmlText.allTech = response.res;
@@ -188,6 +196,11 @@ export class AddEditPatientComponent implements OnInit {
         "tech_details" : this.htmlText.tech_details,
         "report_upload": true
       };
+
+      if(this.allCookies.user_details.user_type == 'diagnostic_admin') {
+        data.data.diagnostic_admin_id = this.allCookies.user_details._id;
+        data.sourceobj.push("diagnostic_admin_id");
+      }
 
       this.httpService.httpViaPost("addorupdatedata",data).subscribe(response=>{
         if(response.status="success"){
