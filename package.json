@@ -39,7 +39,7 @@
     "@candidosales/material-time-picker": "^2.0.0",
     "@angular/flex-layout": "^8.0.0-beta.27",
     "angular-material": "^1.1.20",
-    "calendar-management-lib-influxiq": "0.0.10",
+    "calendar-management-lib-influxiq": "0.0.11",
     "ckeditor4-angular": "^1.1.0",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.6.11",
