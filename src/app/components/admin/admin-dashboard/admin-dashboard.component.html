@@ -9,7 +9,7 @@
       </span>
       <span class="counteer">
         <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
-        <p class="doctorNumber">Total Number of <br>Doctors</p>
+        <p class="doctorNumber">Total Number of <br> Major Doctors</p>
       </span>
       <span class="button_wrapper">
         <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
@@ -50,7 +50,7 @@
 
     <mat-card-content class="itemsection">
       <span class="icon">
-        <img src="../../../../assets/images/billerNoteicon3.png">
+        <img src="../../../../assets/images/doctorOffice.png">
       </span>
       <span class="counteer">
         <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
@@ -61,6 +61,46 @@
       </span>
     </mat-card-content>
 
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/billerNoteicon2.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
+        <p class="doctorNumber">Total No of <br>Diagnostic Admin</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
+      </span>
+    </mat-card-content>
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/billerNoteicon3.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
+        <p class="doctorNumber">Total No of <br>Doctors</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
+      </span>
+    </mat-card-content>
+  </mat-card-content>
+
+   <!-- Doctor other related -->
+  <mat-card-content class="content_wrapper">
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/salesPerson.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.total_doctor }} </h4>
+        <p class="doctorNumber">Total Number of<br> Sales Person</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
+      </span>
+    </mat-card-content>
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/billerNoteicon1.png">
@@ -76,7 +116,7 @@
 
     <mat-card-content class="itemsection">
       <span class="icon">
-        <img src="../../../../assets/images/billerNoteicon2.png">
+        <img src="../../../../assets/images/calenderAppointment.png">
       </span>
       <span class="counteer">
         <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
@@ -290,13 +330,14 @@
     <mat-toolbar class="top_header">
       <h2> {{ htmlText.headerText }} </h2>
       <span class="wrappp_R">
-        <button class="add_new tooltip" mat-button routerLink="/admin/patient-management/add" matTooltip="Add Report" matTooltipPosition="above">
+        <button class="add_new tooltip" mat-button routerLink="/admin/patient-management/add" matTooltip="Add Report"
+          matTooltipPosition="above">
           <!-- <span class="tooltiptext"> Add Report </span> -->
           <i class="material-icons">add</i> Add Report Manually
         </button>
 
 
-        <button class="add_new tooltip" mat-button (click)="refreshDashboard();"matTooltipPosition="above"
+        <button class="add_new tooltip" mat-button (click)="refreshDashboard();" matTooltipPosition="above"
           matTooltip="ReportRefresh Dashboard">
           <!-- <span class="tooltiptext"> Refresh Dashboard </span> -->
           <i class="material-icons">cached</i>
