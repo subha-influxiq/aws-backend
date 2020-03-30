@@ -15,6 +15,8 @@ import { DatePipe } from '@angular/common';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MetaModule } from '@ngx-meta/core';
 import { DeviceDetectorModule } from 'ngx-device-detector';
+import { CKEditorModule } from 'ckeditor4-angular'; // ck editor
+import { CalendarManagementModule } from 'calendar-management-lib-influxiq';
 
 /* Date Range Picker */
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, SatDatepickerModule } from 'saturn-datepicker';
@@ -97,8 +99,8 @@ import { DoctorOfficeManagementComponent } from './components/admin/doctor-offic
 import { AddEditDoctorOfcComponent,ChangePasswordDoctorOfficeModal } from './components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BookedAppoinmentsComponent } from './components/admin/booked-appoinments/booked-appoinments.component';
-import { ManageScheduleComponent } from './components/tech/tech-dashboard/manage-calender/manage-schedule/manage-schedule.component';
-import { ListComponent } from './components/tech/tech-dashboard/manage-calender/my-appointments/list/list.component'; 
+import { ManageScheduleComponent } from './components/tech/manage-calender/manage-schedule/manage-schedule.component';
+import { ListComponent } from './components/tech/manage-calender/my-appointments/list/list.component'; 
 import { DoctorOfficeDashboardComponent } from './components/doctor-office/doctor-office-dashboard/doctor-office-dashboard.component';
 import { DoctorOfficeHeaderComponent } from './components/doctor-office/doctor-office-header/doctor-office-header.component';
 import { DoctorOfficeFooterComponent } from './components/doctor-office/doctor-office-footer/doctor-office-footer.component';
@@ -131,9 +133,6 @@ import { SalesPersonFooterComponent } from './components/sales-person/sales-pers
 import { AddEditFaqComponent } from './components/admin/faq-management/add-edit-faq/add-edit-faq.component';
 import { ListFaqComponent } from './components/admin/faq-management/list-faq/list-faq.component';
 import { FaqViewComponent } from './components/common/faq-view/faq-view.component';
-
-// ck eitor
-import { CKEditorModule } from 'ckeditor4-angular';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -268,6 +267,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     DemoMaterialModule,
     LoginModule,
     ListingModule,
+    CalendarManagementModule,
     FormsModule,
     ReactiveFormsModule,
     FileUploadModule,

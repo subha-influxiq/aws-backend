@@ -7,6 +7,6 @@ export const environment = {
   siteTitle: "AWS Backend",
   footerText: "AWS Copyright 2020",
   production: true,
-
   floatPattern: "(^[0-9]{1,9})+(\.[0-9]{1,4})?$",
+  googleSyncApi: "https://gapi.betoparedes.com/connect-calendar-pece.php"
 };
