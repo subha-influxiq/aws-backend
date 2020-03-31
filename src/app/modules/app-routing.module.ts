@@ -58,7 +58,7 @@ import { ChangePasswordComponent } from '../components/common/account-settings/c
 
 /***************** Tech Dashboard ****************/
 import { TechDashboardComponent } from '../components/tech/tech-dashboard/tech-dashboard.component';
-import { ManageScheduleComponent } from '../components/tech/manage-calender/manage-schedule/manage-schedule.component';
+import { CalHomeComponent } from '../components/tech/manage-calender/manage-schedule/cal-home/cal-home.component';
 import { ListComponent } from '../components/tech/manage-calender/my-appointments/list/list.component';
 
 /* Patient Management */
@@ -99,6 +99,9 @@ import { DoctorOfficeChangePasswordComponent } from '../components/doctor-office
 import { DownloadSuperbillerComponent } from '../components/biller/download-superbiller/download-superbiller.component';
 import { DiagnosticAdminDashboardComponent } from '../components/diagnostic-admin/diagnostic-admin-dashboard/diagnostic-admin-dashboard.component';
 import { FaqViewComponent } from '../components/common/faq-view/faq-view.component';
+import { CalCreateSlotComponent } from '../components/tech/manage-calender/manage-schedule/cal-create-slot/cal-create-slot.component';
+import { CalEventListingComponent } from '../components/tech/manage-calender/manage-schedule/cal-event-listing/cal-event-listing.component';
+import { CalViewSlotComponent } from '../components/tech/manage-calender/manage-schedule/cal-view-slot/cal-view-slot.component';
 
 const routes: Routes = [
   /********** Auth Route Start **********/
@@ -805,17 +808,48 @@ const routes: Routes = [
   /* Calender Management */
   { 
     path: 'tech/manage-calender/manage-sehedule', 
-    component: ManageScheduleComponent, 
-    // canActivate: [AuthguardService],
-    // resolve: {eventdayarrData: ResolveService},
-    // data: {
-    //   requestcondition: {
-    //     source: 'events_eventdayarr_view',
-    //     condition: {}
-    //   },
-    //   endpoint: 'view-event-eventdayarr'
-    // }
+    component: CalHomeComponent, 
+    canActivate: [AuthguardService],
+    resolve: {eventdayarrData: ResolveService},
+    data: {
+      requestcondition: {
+        source: 'events_eventdayarr_view',
+        condition: {}
+      },
+      endpoint: 'cal-view-event-eventdayarr'
+    }
   },
+  { 
+    path: 'tech/manage-calender/manage-sehedule/view-slot-user', 
+    component: CalViewSlotComponent, 
+    canActivate: [AuthguardService],
+    resolve: {eventdayarrData: ResolveService},
+    data: {
+      requestcondition: {
+        source: 'events_eventdayarr_view',
+        condition: {$and: [{event_type: 1}]}
+      },
+      endpoint: 'cal-view-event-eventdayarr'
+    }
+  },
+  { 
+    path: 'tech/manage-calender/manage-sehedule/create-slot', 
+    component: CalCreateSlotComponent
+  },
+  { 
+    path: 'tech/manage-calender/manage-sehedule/event-listing', 
+    component: CalEventListingComponent,
+    resolve: {eventListData: ResolveService},
+    data: {
+      requestcondition: {
+        source: 'events',
+        condition: {}
+      },
+      endpoint: 'cal-datalist'
+    },
+  },
+
+  /* My Appoinments */
   { 
     path: 'tech/manage-calender/my-appoinments', 
     component: ListComponent, 

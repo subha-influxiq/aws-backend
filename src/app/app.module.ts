@@ -99,7 +99,6 @@ import { DoctorOfficeManagementComponent } from './components/admin/doctor-offic
 import { AddEditDoctorOfcComponent,ChangePasswordDoctorOfficeModal } from './components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BookedAppoinmentsComponent } from './components/admin/booked-appoinments/booked-appoinments.component';
-import { ManageScheduleComponent } from './components/tech/manage-calender/manage-schedule/manage-schedule.component';
 import { ListComponent } from './components/tech/manage-calender/my-appointments/list/list.component'; 
 import { DoctorOfficeDashboardComponent } from './components/doctor-office/doctor-office-dashboard/doctor-office-dashboard.component';
 import { DoctorOfficeHeaderComponent } from './components/doctor-office/doctor-office-header/doctor-office-header.component';
@@ -133,6 +132,11 @@ import { SalesPersonFooterComponent } from './components/sales-person/sales-pers
 import { AddEditFaqComponent } from './components/admin/faq-management/add-edit-faq/add-edit-faq.component';
 import { ListFaqComponent } from './components/admin/faq-management/list-faq/list-faq.component';
 import { FaqViewComponent } from './components/common/faq-view/faq-view.component';
+import { CalCreateSlotComponent } from './components/tech/manage-calender/manage-schedule/cal-create-slot/cal-create-slot.component';
+import { CalSyncWithGoogleComponent } from './components/tech/manage-calender/manage-schedule/cal-sync-with-google/cal-sync-with-google.component';
+import { CalHomeComponent } from './components/tech/manage-calender/manage-schedule/cal-home/cal-home.component';
+import { CalViewSlotComponent } from './components/tech/manage-calender/manage-schedule/cal-view-slot/cal-view-slot.component';
+import { CalEventListingComponent } from './components/tech/manage-calender/manage-schedule/cal-event-listing/cal-event-listing.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -220,7 +224,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     DoctorOfficeManagementComponent,
     AddEditDoctorOfcComponent,
     BookedAppoinmentsComponent,
-    ManageScheduleComponent,
     ListComponent,
     DoctorOfficeDashboardComponent,
     DoctorOfficeHeaderComponent,
@@ -252,7 +255,12 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AddEditFaqComponent,
     ListFaqComponent,
     FaqViewComponent,
-    FaqViewComponent 
+    FaqViewComponent,
+    CalCreateSlotComponent,
+    CalSyncWithGoogleComponent,
+    CalHomeComponent,
+    CalViewSlotComponent,
+    CalEventListingComponent
     
   ],
   imports: [
