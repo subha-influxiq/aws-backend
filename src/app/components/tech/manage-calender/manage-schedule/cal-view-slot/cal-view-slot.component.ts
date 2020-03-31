@@ -1,3 +1,6 @@
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl,FormGroupDirective } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CommonFunction } from '../../../../../class/common/common-function';
@@ -7,7 +10,6 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { MatSnackBar } from '@angular/material';
 import { environment } from '../../../../../../environments/environment';
-import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-cal-view-slot',
@@ -206,7 +208,7 @@ export class CalViewSlotComponent implements OnInit {
           refresh_token: this.activatedRoute.snapshot.params.refresh
         }
       }
-      this.httpRequestService.postRequest('update-user', data).subscribe((response) => {
+      this.httpRequestService.httpViaPost('update-user', data).subscribe((response) => {
         console.log('response',response);
       });
     }
