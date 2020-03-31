@@ -137,6 +137,8 @@ import { CalSyncWithGoogleComponent } from './components/tech/manage-calender/ma
 import { CalHomeComponent } from './components/tech/manage-calender/manage-schedule/cal-home/cal-home.component';
 import { CalViewSlotComponent } from './components/tech/manage-calender/manage-schedule/cal-view-slot/cal-view-slot.component';
 import { CalEventListingComponent } from './components/tech/manage-calender/manage-schedule/cal-event-listing/cal-event-listing.component';
+import { AppoinmentsListingComponent } from './components/doctor-office/manage-appointments/appoinments-listing/appoinments-listing.component';
+import { BookAppoinmentNowComponent } from './components/doctor-office/manage-appointments/book-appoinment-now/book-appoinment-now.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -260,7 +262,9 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CalSyncWithGoogleComponent,
     CalHomeComponent,
     CalViewSlotComponent,
-    CalEventListingComponent
+    CalEventListingComponent,
+    AppoinmentsListingComponent,
+    BookAppoinmentNowComponent
     
   ],
   imports: [

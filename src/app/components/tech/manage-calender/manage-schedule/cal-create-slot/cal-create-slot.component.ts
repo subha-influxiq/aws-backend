@@ -44,10 +44,7 @@ export class CalCreateSlotComponent implements OnInit {
       { text: '120 Min', value: 120 }
     ],
     eventType: [
-      { text: 'Admin Meetings', value: 1 },
-      { text: 'Type 2', value: 2 },
-      { text: 'Type 3', value: 3 },
-      { text: 'Type 3', value: 4 }
+      { text: "Patient's Appointment for RM - 3A Testing", value: 1 }
     ]
   };
 

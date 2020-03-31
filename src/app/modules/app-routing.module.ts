@@ -103,6 +103,9 @@ import { CalCreateSlotComponent } from '../components/tech/manage-calender/manag
 import { CalEventListingComponent } from '../components/tech/manage-calender/manage-schedule/cal-event-listing/cal-event-listing.component';
 import { CalViewSlotComponent } from '../components/tech/manage-calender/manage-schedule/cal-view-slot/cal-view-slot.component';
 
+import { AppoinmentsListingComponent } from '../components/doctor-office/manage-appointments/appoinments-listing/appoinments-listing.component';
+import { BookAppoinmentNowComponent } from '../components/doctor-office/manage-appointments/book-appoinment-now/book-appoinment-now.component';
+
 const routes: Routes = [
   /********** Auth Route Start **********/
   { 
@@ -1202,6 +1205,36 @@ const routes: Routes = [
       },
       endpoint: 'datalist'
     },
+  },
+
+  /*Doctor Office Dashboard*/
+  {
+    path: 'doctor-office/manage-appointments', 
+    component: AppoinmentsListingComponent, 
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'events',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+
+  /*Doctor Office Dashboard*/
+  {
+    path: 'doctor-office/manage-appointments/book-appoinment-now', 
+    component: BookAppoinmentNowComponent,
+    canActivate: [AuthguardService],
+    resolve: {eventdayarrData: ResolveService},
+    data: {
+      requestcondition: {
+        source: 'events_eventdayarr_view',
+        condition: {}
+      },
+      endpoint: 'cal-view-event-eventdayarr'
+    }
   },
 
   /* Faq */

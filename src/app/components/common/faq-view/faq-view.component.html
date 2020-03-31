@@ -14,7 +14,7 @@
 <app-doctor-header *ngIf="loginUserData.user_details.user_type == 'doctor'"></app-doctor-header>
 
 <!-- Doctor Office -->
-<!-- <app-doctor-office-header *ngIf="loginloginUserData.user_details.user_type == 'doctor_office'"></app-doctor-office-header> -->
+<app-doctor-office-header *ngIf="loginUserData.user_details.user_type == 'doctor_office'"></app-doctor-office-header>
 
 <!-- Sales Person -->
 <app-sales-person-header *ngIf="loginUserData.user_details.user_type == 'sales_person'"></app-sales-person-header>

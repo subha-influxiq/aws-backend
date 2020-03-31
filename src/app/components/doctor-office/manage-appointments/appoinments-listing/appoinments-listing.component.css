@@ -1,0 +1,272 @@
+.doctor_content_wrapper {
+    background: #edf0f2;
+    display: block;
+    padding: 15px 5px;
+    margin: 0px 5px 16px;
+    border-radius: 10px;
+  }
+  
+  .doctor_content_wrapper .mat-card-title {
+    font-size: 24px;
+    font-family: "AvenirMedium";
+    text-transform: uppercase;
+    color: #535353;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #9c9c9c;
+    padding: 0 10px;
+    padding-bottom: 8px;
+  }
+  
+  .doctor_content_wrapper .table_structure {
+    width: 100%;
+    display: block;
+    margin-bottom: 0;
+    position: relative;
+  }
+  
+  .doctor_content_wrapper table {
+    width: 100%;
+  }
+  
+  .doctor_content_wrapper .table_structure::before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background: #c1c5c7;
+    position: absolute;
+    right: 51%;
+  }
+  
+  .table_structure .mat-list mat-list-base {
+    display: flex;
+  }
+  
+  .table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+    display: inline-flex;
+    height: auto;
+    -webkit-tap-highlight-color: transparent;
+    width: auto;
+    padding: 0;
+    color: #fff;
+    border-right: 1px solid #044f82;
+  }
+  
+  .table_structure .mat-list-base .mat-list-item:nth-last-child(1) {
+    border: none;
+  }
+  
+  .table_structure .mat-list-item p {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .table_structure .mat-list-item .title_n {
+    color: var(--button-color2);
+    font-size: 22px;
+    font-family: "AvenirMedium";
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  
+  .table_structure .mat-list-item .title_a {
+    color: #7b7b7b;
+    font-size: 18px;
+    font-family: "AvenirLight";
+    text-transform: uppercase;
+  }
+  
+  .mat-form-field-flex {
+    display: inline-flex;
+    align-items: baseline;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #012035;
+  }
+  
+  .patient_report_section .form_wrapper {
+    display: flex;
+    margin: 0 10px;
+  }
+  
+  .patient_report_section .form_wrapper .mat-form-field-flex {
+    border: 1px solid #000!important;
+  }
+  
+  .patient_report_section .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0!important;
+  }
+  
+  .patient_report_section .patient_top_search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  
+  .patient_report_section .patient_top_search .search_bar {
+    display: flex;
+  }
+  
+  .patient_report_section .patient_top_search .search_bar button {
+    border: none;
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .patient_report_section .patient_top_search h1 {
+    font-size: 32px;
+    text-transform: uppercase;
+    color: #002035;
+    margin: auto;
+  }
+  
+  .patient_report_section .patient_top_search .search_bar button:focus {
+    outline: none;
+  }
+  
+  .patient_report_section .button_action button {
+    border-radius: 5px;
+    background: linear-gradient(180deg, #f9dc19, #daa505);
+    color: #5e3619;
+    text-transform: uppercase;
+    font-family: "RobotoBlack";
+    font-size: 25px;
+    padding: 10px;
+    width: 400px;
+    border: 3px solid #d59d01;
+  }
+  
+  .techTable {
+    width: 100%;
+  }
+  
+  .table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+    display: inline-flex;
+    height: auto;
+    -webkit-tap-highlight-color: transparent;
+    width: auto;
+    padding: 0;
+    color: #fff;
+    border-right: 0;
+    width: 49%;
+    margin-bottom: 10px;
+  }
+  
+  .doctorCount {
+    color: #353535;
+    padding: 3px 6px 6px;
+    font-size: 18px;
+    font-family: "AvenirLight";
+    margin: 0 18px;
+    display: initial;
+    background: #ffffff;
+    border-radius: 5px;
+  }
+  
+  .doctorCount a {
+    color: #26c6da;
+    font-family: 'AvenirBlack';
+    cursor: pointer;
+  }
+  
+  .allDocGrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .allDocGrid .allItem {
+    width: 32%;
+    margin: 1%;
+    padding: 16px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 7px -1px #d27200;
+    position: relative;
+    text-align: center;
+  }
+  
+  .allDocGrid .allItem .items_counter {
+    /* content: '';
+    display: block;
+    font-size: 20px;
+    font-family: "RobotoBold";
+    color: #fff;
+    clip-path: polygon(100% -3%, 0% 100%, 0 0);
+    background: #fda300;
+    background: #462121;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 3px;
+    text-align: left; */
+    display: none;
+  }
+  
+  .allDocGrid .allItem .header {
+    padding: 0 10px;
+    font-family: "AvenirBlack";
+    color: #462121;
+    font-size: 18px;
+    line-height: 20px;
+    text-transform: uppercase;
+  }
+  
+  .allDocGrid .allItem .otherDetails {
+    color: #3a2323;
+    font-size: 14px;
+    font-family: "AvenirMedium";
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
+  
+  .allDocGrid .allItem .otherDetails label {
+    font-family: "AvenirBlack";
+  }
+  
+  .allDocGrid .allItem:nth-child(3n+1) {
+    margin-left: 0;
+  }
+  
+  .allDocGrid .allItem:nth-child(3n+3) {
+    margin-right: 0;
+  }
+  
+  .modalmainwrapper .button_w { align-items: center; justify-content: flex-end; background: transparent; padding: 0; height: auto; }
+  
+  .modalmainwrapper .button_w button {
+    background: #fb0505;
+    color: #fff;
+    font-size: 18px;
+    font-family: "RobotoBold";
+    border-radius: 0;
+    text-transform: capitalize;
+  }
+  
+  .modalmainwrapper .main_title {
+    color: #0e0000;
+    display: block;
+    text-align: center;
+    font-family: "AvenirBlack";
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-bottom: 16px;
+    background: #f9f9f9;
+    padding: 16px;
+    box-shadow: 0px 0px 3px 0px #fda300;
+  }
+  
+  @media screen and (max-width: 1199px) {
+    /* new modifiation */
+    .techDashboard .biller_wrapper .super_bill_item {
+      width: 29.2%;
+    }
+  }
+  

@@ -11,6 +11,8 @@ import { CommonFunction } from '../../../class/common/common-function';
 
 export class DoctorOfficeHeaderComponent implements OnInit {
 
+  public toggleStatus:boolean = false;
+  isSticky: boolean = false;
   public user_data: any = {};
 
   public loader: boolean = true;
@@ -41,6 +43,10 @@ export class DoctorOfficeHeaderComponent implements OnInit {
   /* Dashboard redirect */
   toDashboard(){
     this.router.navigateByUrl('/doctor-office/dashboard');
+  }
+
+  menuFunction(){
+    this.toggleStatus = !this.toggleStatus;
   }
 
 }
