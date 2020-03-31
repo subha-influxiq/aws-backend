@@ -1,25 +1,58 @@
+
 /* header css */
-.techdashboard_header{height: auto; padding: 0; background: #fff; box-shadow: 0px 2px 7px 2px #b7b7b7; margin: 20px 0; }
-.techdashboard_header .mat-toolbar-row{ padding: 0; height: auto; width: 1400px; margin: auto; display: flex; justify-content: space-between;}
-.techdashboard_header .mat-toolbar-row .logo_wrapper{ max-width: 160px; display: block; }
-.techdashboard_header .mat-toolbar-row .logo_wrapper img{ max-width: 100%; vertical-align: middle; }
-.techdashboard_header .mat-toolbar-row .quotation {margin: 0; }
-.techdashboard_header .mat-toolbar-row .quotation p{ font-family: "AvenirMedium"; font-size: 20px; color: #002035; text-transform: uppercase; margin: 0; word-break: break-word; text-align: center; white-space: normal; line-height: 20px; }
-.techdashboard_header .mat-toolbar-row .profile_section { display: flex; border-left: 1px solid #e2dede; padding-left: 6px; margin: 0;}
-.techdashboard_header .mat-toolbar-row .profile_section .username{ padding-right: 6px; display: block; font-family: 'AvenirMedium'; font-size: 16px;}
-/*End header css */ 
-  
-@media screen and (max-width: 1500px){ 
-  .techdashboard_header .mat-toolbar-row { width: 90%; }
+
+.techdashboard_header { height: auto; padding: 0; background: #fff; box-shadow: 0px 2px 7px 2px #b7b7b7; margin: 20px 0; }
+.techdashboard_header .header_wrapper{ width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;}
+.techdashboard_header .logo_wrapper { max-width: 160px; display: block; cursor: pointer; flex: none; }
+.techdashboard_header .logo_wrapper:focus { outline: none; border: none; }
+.techdashboard_header .logo_wrapper img { max-width: 100%; vertical-align: middle; }
+.techdashboard_header .quotation { margin-bottom: 0px; }
+.techdashboard_header .quotation p { font-family: "AvenirMedium"; font-size: 22px; color: #002035; text-transform: uppercase; margin: 0; word-break: break-word; white-space: normal;
+  text-align: center; line-height: 22px;}
+.techdashboard_header .profile_section button { padding-top: 8px; }
+.techdashboard_header .profile_section { display: -webkit-box;  display: -ms-flexbox;  display: flex;  border-left: 1px solid #ada9a9;  padding-left: 5px;  margin-bottom: 0;
+  -webkit-box-pack: center;  -ms-flex-pack: center;  justify-content: center;  -webkit-box-align: center;  -ms-flex-align: center;  align-items: center; }
+.techdashboard_header .profile_section .username { padding-right: 10px;
+  display: block;
+  font-family: "AvenirRoman";
+  font-size: 16px;
+  color: #1f1f1f;}
+
+.techdashboard_header .quotation .mat-list-base { display: -webkit-box; display: -ms-flexbox; display: flex; padding-top: 0; }
+
+/* .techdashboard_header .quotation .mat-list-base .mat-list-item:before {
+  content: "";
+  left: -15px;
+  width: 2px;
+  height: 15px;
+  background: #1c1c1c;
+  display: inline-block;
+  position: absolute;
+  top: 35%;
+} */
+.techdashboard_header .quotation .mat-nav-list .mat-list-item { margin: 0; position: relative; font-family: "AvenirMedium"; font-size: 16px; color: #767676;}
+
+.active { color: #000000!important;  /* border-bottom: 3px solid #fecb00; position: relative; */}
+.active::before{ content: ''; width: 100%; height: 4px; background: #fecb00; position: absolute; bottom: -25px; }
+
+.togle_menu { display: none;}
+
+@media screen and (max-width: 1500px){
+  .techdashboard_header .header_wrapper { width: 90%; }
 }
-@media screen and (max-width: 1400px){ 
-.techdashboard_header .mat-toolbar-row .quotation p { font-size: 18px; }
+@media screen and (max-width: 1199px){
+.techdashboard_header .quotation p { font-size: 18px;}
 }
-@media screen and (max-width: 991px){ 
-.techdashboard_header .mat-toolbar-row .quotation p { font-size: 16px; }
-}
-@media screen and (max-width: 740px){ 
-  .techdashboard_header .mat-toolbar-row { width: 90%; flex-direction: column; }
-  .techdashboard_header .mat-toolbar-row .quotation p { margin: 10px 0; }
-  .techdashboard_header .mat-toolbar-row .profile_section { display: flex; border-left: 0; padding-left: 0; margin: 0; }
+
+@media screen and (max-width: 991px){
+.techdashboard_header .header_wrapper { display: flex; flex-direction: column; }
+.techdashboard_header .quotation p { margin: 10px 5px; }
+.techdashboard_header .profile_section{ border-left: 0;}
+.togle_menu { display: block;}
+.success{ display: block;}
+.danger{ display: none;}
+.techdashboard_header .quotation .mat-list-base { display: flex; flex-direction: column; }
+.techdashboard_header .quotation { width: 100%;}
+.active::before{ bottom: 0; height: 2px;}
+.techdashboard_header .quotation .mat-nav-list .mat-list-item { display: flex; justify-content: center; }
 }
