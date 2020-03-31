@@ -1231,7 +1231,7 @@ const routes: Routes = [
     data: {
       requestcondition: {
         source: 'events_eventdayarr_view',
-        condition: {}
+        condition: {$and: [{event_type: 1}]}
       },
       endpoint: 'cal-view-event-eventdayarr'
     }

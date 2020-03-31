@@ -392,12 +392,19 @@
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let element; let i = index;">
-          <button *ngIf="element.status == 'Pending Signature'" mat-button type="button" class="viewButton"
-            [routerLink]="['/doctor/patient-record-report', element._id]">View</button>
+          <button  matTooltip="View" aria-label="Button" matTooltipPosition="above" *ngIf="element.status == 'Pending Signature'" mat-button type="button" class="viewButton"
+            [routerLink]="['/doctor/patient-record-report', element._id]"><i class="material-icons">
+              remove_red_eye
+            </i></button>
           <button mat-raised-button *ngIf="element.status != 'Pending Signature'" type="button"
-            class="viewButton downloadBtn" disabled>View</button>
-          <button mat-raised-button *ngIf="element.status != 'Pending Signature'" type="button"
-            class="viewButton downloadBtn" (click)="downloadReport(element);">Download</button>
+            class="viewButton downloadBtn" disabled matTooltip="View" aria-label="Button" matTooltipPosition="above"><i class="material-icons">
+              remove_red_eye
+            </i></button>
+          <button matTooltip="Download"
+          aria-label="Button" matTooltipPosition="above" mat-raised-button *ngIf="element.status != 'Pending Signature'" type="button"
+            class="viewButton downloadBtn" (click)="downloadReport(element);"><i class="material-icons">
+              cloud_download
+              </i></button>
         </td>
       </ng-container>
 

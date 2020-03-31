@@ -31,4 +31,8 @@ export class DoctorOfficeDashboardComponent implements OnInit {
     });
   }
 
+  viewReportProcessData(flag: any = null) {
+
+  }
+
 }
