@@ -823,6 +823,19 @@ const routes: Routes = [
     }
   },
   { 
+    path: 'tech/manage-calender/manage-sehedule/:access_token/:refresh', 
+    component: CalHomeComponent, 
+    canActivate: [AuthguardService],
+    resolve: {eventdayarrData: ResolveService},
+    data: {
+      requestcondition: {
+        source: 'events_eventdayarr_view',
+        condition: {}
+      },
+      endpoint: 'cal-view-event-eventdayarr'
+    }
+  },
+  { 
     path: 'tech/manage-calender/manage-sehedule/view-slot-user', 
     component: CalViewSlotComponent, 
     canActivate: [AuthguardService],

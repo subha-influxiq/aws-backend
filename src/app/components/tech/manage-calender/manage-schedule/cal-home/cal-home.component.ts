@@ -68,6 +68,8 @@ export class CalHomeComponent implements OnInit {
     } else {
       this.openSnackBar("Token not found", null);
     }
+
+    console.log("Url: ", this.configData.urls.googleSync);
   }
 
   openSnackBar(message: string, action: string) {
