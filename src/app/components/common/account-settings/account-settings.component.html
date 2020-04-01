@@ -3,6 +3,9 @@
 <app-biller-header *ngIf="headerFlag == 'biller'"></app-biller-header>
 <app-tech-header *ngIf="headerFlag == 'tech'"></app-tech-header>
 <app-doctor-header *ngIf="headerFlag == 'doctor'"></app-doctor-header>
+<app-doctor-office-header *ngIf="headerFlag == 'doctor-office'"></app-doctor-office-header>
+
+
 <!-- Header End -->
 <mat-card class="admin_wrapper">
   <mat-progress-bar *ngIf="loader" mode="indeterminate"></mat-progress-bar>

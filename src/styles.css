@@ -5,3 +5,63 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+
+
+
+
+
+
+
+
+
+/* For Cal Lib Start here */
+/* Styles for edit event modal */
+.edit-event-dialog {
+  font-size: 14px;
+  width: 100%
+}
+.modal-input {
+  font-size: 14px;
+  width: 46%;
+  margin-top: 5px;
+}
+.float-right {
+  float: right;
+}
+.m-r {
+  margin-right: 6px;
+}
+.m-l {
+  margin-left: 6px;
+}
+.full-width {
+  width: 95%;
+}
+.containerSpan {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+.time-picker {
+  display: inline-block;
+}
+.modal-title {
+  min-width: 80%;
+  font-size: 20px;
+  float: left;
+}
+.btn-modal-close {
+  float: right;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.center {
+  text-align: center;
+  margin: auto;
+  width: fit-content
+}
+
+/* For Cal Lib End here */
+

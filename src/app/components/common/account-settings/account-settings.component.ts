@@ -14,6 +14,7 @@ import { CommonFunction } from '../../../class/common/common-function';
 })
 
 export class AccountSettingsComponent implements OnInit {
+  
   @ViewChild(FormGroupDirective,{static: false}) formDirective: FormGroupDirective;
 
   date = new FormControl(new Date());

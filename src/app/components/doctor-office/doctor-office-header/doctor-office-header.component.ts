@@ -23,6 +23,8 @@ export class DoctorOfficeHeaderComponent implements OnInit {
     allData = cookies.getAll()
     this.user_data = JSON.parse(allData.user_details);
     this.user_cookie = cookies.get('jwtToken');
+
+    console.log(">>>", this.user_data);
    }
 
   ngOnInit() {
