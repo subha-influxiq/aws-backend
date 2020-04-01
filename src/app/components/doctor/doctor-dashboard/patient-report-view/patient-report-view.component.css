@@ -1,4 +1,4 @@
-.patient_report_wrapper{ display: flex; justify-content: space-between; flex-wrap: wrap; }
+.patient_report_wrapper{ display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 150px; }
 .patient_report_wrapper .patient_item_section{  padding: 16px; box-sizing: border-box; margin-bottom: 0; width: 50%; background: #fff; }
 
 

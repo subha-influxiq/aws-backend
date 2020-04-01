@@ -26,7 +26,7 @@
 .main_wrapper .login_wrapper { width: 450px; }
 }
 @media screen and (max-width: 1199px){
-.admin_wrapper { width: 95%; margin: 20px auto; box-sizing: border-box; }
+.admin_wrapper { width: 95%; box-sizing: border-box; }
 .main_wrapper { background-size: 580px; padding-left: 500px; justify-content: center; align-items: center; }
 .main_wrapper .login_wrapper { width: 500px; }
 .main_wrapper .img_wrapper { background: none; }
@@ -47,6 +47,12 @@
 .sales_person_db .shareLi .in_w { width: 60%; left: 0; right: 0; transform: inherit; top: 0; position: inherit; display: block;}
 
 }
+@media screen and (max-width: 1100px){
+.biller_Dashboard .patient_report_section .patient_top_search { flex-direction: column; justify-content: flex-start;
+    align-items: flex-start;
+}
+.biller_Dashboard .patient_report_section .patient_top_search h1 { margin-bottom: 10px; }
+}
 @media screen and (max-width: 1040px){
   .main_wrapper { background-size: 0; padding-left: 0; }
   .admin_superbillsection .biller_wrapper { display: flex; flex-wrap: wrap;}
@@ -57,6 +63,10 @@
   .admin_wrapper .content_wrapper .itemsection .button_wrapper { width: 100%; }
 }
 @media screen and (max-width: 991px) {
+  .biller_Dashboard .patient_report_section .patient_top_search .res_view { flex-direction: column; width: 100%;}
+  .biller_Dashboard .patient_report_section .patient_top_search .res_view .btn_action_wrapper {
+    margin-left: auto;
+}
     .DataTable .container .searchbar .mat-form-field { width: 100%;}
     .DataTable .container .searchbar {
       flex-wrap: wrap;
@@ -115,7 +125,6 @@
       font-weight: normal;
       position: absolute;
       left: 18px;
-      font-size: 16px;
       font-family: "AvenirMedium";
     }
 
@@ -184,6 +193,7 @@
 .main_wrapper .login_wrapper { width: 400px; }
 .logo_section { width: 100%; }
 .viewMore_w button { min-width: 100%; }
+.table_wrapper .top_header { flex-direction: column;}
 }
 @media screen and (max-width: 480px){
 .main_wrapper .login_wrapper { width: 360px; }
@@ -209,7 +219,7 @@
   .action_bar .mat-form-field .mat-form-field-flex { width: 100%; margin-right: 0;}
   .table_wrapper .action_bar .date-range { width: 100%;}
   .table_wrapper .action_bar .date-range .mat-form-field:last-child { margin-left: 0;}
-  .table_wrapper .top_header { flex-direction: column;}
+ 
 }
 @media screen and (max-width: 390px){
 .main_wrapper .login_wrapper { width: 280px; }

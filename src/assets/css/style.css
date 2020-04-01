@@ -291,7 +291,7 @@ font-size: 16px;}
 
 .infomodal{ overflow: auto; width: 991px;}
 /* admin css */
-.admin_wrapper{ width: 1400px; margin: 20px auto; box-sizing: border-box;}
+.admin_wrapper{ width: 1400px; margin: 20px auto; box-sizing: border-box; margin-bottom: 150px;}
 .searchcard { padding: 0; }
 
 
@@ -322,9 +322,14 @@ font-size: 16px;}
 .table_structure .mat-list-item p{ display: block; width: 100%; margin: 0; }
 .table_structure .mat-list-item .title_n{ color: #5aa8ed; font-size: 30px; font-family: "AvenirMedium"; font-weight: normal; text-transform: uppercase;  }
 .table_structure .mat-list-item .title_a{ color: #fff; font-size: 24px; font-family: "AvenirLight";  text-transform: uppercase; }
-.patient_report_section .form_wrapper{ display: flex; margin: 0 10px;}
+.patient_report_section .form_wrapper{ display: flex; margin-right: 10px;}
+.patient_report_section .form_wrapper:last-child{ margin-right: 0px;}
 /* .patient_report_section .form_wrapper .mat-form-field-flex{ border: 1px solid #000!important; } */
 .biller_Dashboard .patient_report_section .patient_top_search{ margin: 16px 0px; padding: 0; }
+.biller_Dashboard .patient_report_section .patient_top_search .res_view{ width: auto; display: flex;
+  justify-content: space-between;}
+
+  .biller_Dashboard .patient_report_section .patient_top_search .res_view  .btn_action_wrapper{ margin-left: 16px;}
 .biller_Dashboard .patient_report_section .patient_top_search .btn_action_wrapper button{ background: var(--button-color3); font-family: 'AvenirMedium'; font-size: 16px;
 margin-right: 10px; box-shadow: none; min-width: 80px; }
 .biller_Dashboard .patient_report_section .patient_top_search .btn_action_wrapper button:last-child{ margin: 0; background: var(--button-color2);}

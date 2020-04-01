@@ -75,6 +75,7 @@
   <mat-card-content class="patient_report_section">
     <mat-card-content class="patient_top_search">
       <h1> {{ htmlText.tableHeaderText }}</h1>
+      <span class="res_view">
       <span class="search_bar">
 
         <span class="form_wrapper">
@@ -113,6 +114,7 @@
           <i class="material-icons"> replay </i>
         </button>
       </span>
+    </span>
     </mat-card-content>
 
     <div class="mat-elevation-z8">
@@ -121,54 +123,54 @@
         <!-- Serial No -->
         <ng-container matColumnDef="no">
           <th mat-header-cell *matHeaderCellDef> No. </th>
-          <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }}. </td>
+          <td mat-cell data-label="No" *matCellDef="let element; let i = index;"> {{ i + 1 }}. </td>
         </ng-container>
 
         <!-- Patient Column -->
         <ng-container matColumnDef="Patient Name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Patient Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.patient_name}} </td>
+          <td mat-cell data-label="Patient Name" *matCellDef="let element"> {{element.patient_name}} </td>
         </ng-container>
 
         <!-- Bill Sent Date Name Column -->
         <ng-container matColumnDef="Tech Name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Tech Name</th>
-          <td mat-cell *matCellDef="let element"> {{ element.tech_name }} </td>
+          <td mat-cell data-label="Tech Name" *matCellDef="let element"> {{ element.tech_name }} </td>
         </ng-container>
 
         <!-- Doctor Name Column -->
         <ng-container matColumnDef="Doctor Name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Doctor Name </th>
-          <td mat-cell *matCellDef="let element" innerHTML="{{ element.doctor_name }}"> </td>
+          <td mat-cell data-label="Doctor Name" *matCellDef="let element" innerHTML="{{ element.doctor_name }}"> </td>
         </ng-container>
 
         <!-- Bill Sent Date Name Column -->
         <ng-container matColumnDef="Bill Sent Date">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Bill Sent Date </th>
-          <td mat-cell *matCellDef="let element"> {{ element.bill_sent_date | date }} </td>
+          <td mat-cell data-label="Bill Sent Date" *matCellDef="let element"> {{ element.bill_sent_date | date }} </td>
         </ng-container>
 
         <!-- Bill Generation Date Name Column -->
         <ng-container matColumnDef="Bill Generation Date">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Bill Generation Date </th>
-          <td mat-cell *matCellDef="let element"> {{ element.bill_generation_date | date }} </td>
+          <td mat-cell data-label="Bill Generation Date" *matCellDef="let element"> {{ element.bill_generation_date | date }} </td>
         </ng-container>
 
         <ng-container matColumnDef="report_type">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Record Type</th>
-          <td mat-cell *matCellDef="let element"> {{ element.report_type }} </td>
+          <td mat-cell data-label="Record Type" *matCellDef="let element"> {{ element.report_type }} </td>
         </ng-container>
 
         <!-- Status Name Column -->
         <ng-container matColumnDef="Status">
           <th mat-header-cell *matHeaderCellDef>Status</th>
-          <td mat-cell *matCellDef="let element"> {{ element.status }} </td>
+          <td mat-cell data-label="Status" *matCellDef="let element"> {{ element.status }} </td>
         </ng-container>
 
         <!-- Action Column -->
         <ng-container matColumnDef="Action">
           <th mat-header-cell *matHeaderCellDef>Action</th>
-          <td mat-cell *matCellDef="let element"> <span>
+          <td mat-cell data-label="Action" *matCellDef="let element"> <span>
               <button  matTooltip="View"
               aria-label="Button" matTooltipPosition="above" mat-button class="viewButton" [routerLink]="['/biller/patient-record-report', element._id]">
                 <i class="material-icons">

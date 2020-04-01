@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-admin-footer',
@@ -13,6 +13,13 @@ export class AdminFooterComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+  isSticky: boolean = false;
+
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {
+    this.isSticky = window.pageYOffset >= 150;
+    
   }
 
 }
