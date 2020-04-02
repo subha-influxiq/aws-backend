@@ -519,9 +519,7 @@ align-items: center; justify-content: center; color: #fff; font-family: 'AvenirM
   padding: 0 10px; box-sizing: border-box;
   max-height: initial;
   overflow: auto; }
-.mat-dialog-container .mat-dialog-content p{ text-align: center; color: var(--button-color2); font-size: 18px;
-    font-family: 'AvenirMedium';
-}
+.mat-dialog-container .mat-dialog-content p{ text-align: center; color: var(--button-color2); font-size: 18px; white-space: normal; word-break: break-all; font-family: 'AvenirMedium';}
 .mat-dialog-container .mat-dialog-actions { display: flex; flex-wrap: wrap; min-height: inherit; align-items: center;
   justify-content: center;
 }
