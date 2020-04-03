@@ -11,6 +11,12 @@
   position: fixed;
   bottom: 0px;
 }
+@media screen and (max-width: 1199px){
+  .sticky {
+    position: inherit;
+    bottom: 0px;
+}
+}
 @media screen and (max-width: 668px){
   .footer_section .footer_content { width: auto; }
 }
