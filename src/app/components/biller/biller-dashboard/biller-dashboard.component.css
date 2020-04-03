@@ -3,6 +3,7 @@
 .biller_Dashboard .patient_report_section .patient_top_search h1 { margin-bottom: 10px; }
 .patient_report_section .patient_top_search .search_bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; }
 .patient_report_section .form_wrapper { display: flex; margin-bottom: 16px; }
+.patient_report_section .patient_top_search .search_bar { justify-content: flex-start;}
 }
 
 @media screen and (max-width: 600px){
