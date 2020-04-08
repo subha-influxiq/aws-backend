@@ -22,14 +22,14 @@ export class CalHomeComponent implements OnInit {
     baseUrl: environment.apiBaseUrl,
     endPoint: {
       add: "add-or-update-event-data",
-      datalist: "cal-datalist",
-      deleteEvent: "cal-delete-single-event",
-      viewEventSlots: "cal-view-event-eventdayarr",
-      search: "cal-search",
-      countSlot: "cal-count-slot"
+      datalist: "datalist",
+      deleteEvent: "delete-single-event",
+      viewEventSlots: "view-event-eventdayarr",
+      search: "search",
+      countSlot: "count-slot"
     },
     urls: {
-      view: "calendar-management",
+      view: "tech/manage-calender/manage-sehedule/",
       viewSlotUser: "tech/manage-calender/manage-sehedule/view-slot-user",
       eventListing: "tech/manage-calender/manage-sehedule/event-listing",
       add: "tech/manage-calender/manage-sehedule/create-slot",

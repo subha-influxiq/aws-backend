@@ -181,22 +181,19 @@ export class BookAppoinmentNowComponent implements OnInit {
       this.configData.jwtToken = this.cookieService.get('jwtToken');
       this.activatedRoute.data.forEach((data) => {
         this.configData.responseData = data.eventdayarrData.data;
-        console.log('responseData', this.configData.responseData);
       });
     } else {
       this.openSnackBar('Token not found');
     }
-
     /******* Get user details from cookies ******/
     let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
     this.configData = Object.assign(this.configData, userDetails);
     // this.configData.refresh_token = userDetails.refresh_token;
     // this.configData.access_token = userDetails.access_token;
-
+    console.log('this.configData', this.configData);
     this.updateUser();
   }
-
-
+  
   updateUser() {
     let userDetails:any = JSON.parse(this.cookieService.get('user_details'));
     if (this.activatedRoute.snapshot.params.refresh && this.cookieService.check('user_details')) {
@@ -211,6 +208,8 @@ export class BookAppoinmentNowComponent implements OnInit {
       this.httpRequestService.httpViaPost('update-user', data).subscribe((response) => {
         console.log('response',response);
       });
+      // Update user_details in cookie
+      this.cookieService.set('user_details', JSON.stringify(Object.assign(userDetails, data.data)));
     }
   }
 

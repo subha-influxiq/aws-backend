@@ -12,7 +12,8 @@ export const environment = {
   footerText: "AWS Copyright 2020",
   production: true,
   floatPattern: "(^[0-9]{1,9})+(\.[0-9]{1,4})?$",
-  googleSyncApi: "https://gapi.betoparedes.com/connect-calendar-pece-live.php"
+  googleSyncApi: "https://gapi.betoparedes.com/connect-calendar-pece-live.php",
+  calendarApi: "https://m9mkuic6o9.execute-api.us-east-1.amazonaws.com/dev/api/"
 };
 
 

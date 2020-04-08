@@ -74,7 +74,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
       address:                ['', [ Validators.required, Validators.maxLength(200) ]],
       zip:                    ['', [ Validators.required, Validators.minLength(4), Validators.maxLength(18) ]],
       city:                   ['', [ Validators.required ]],
-      tech_id:                ['', [ Validators.required ]],
+      tech_id:                [null, [ Validators.required ]],
       state:                  ['', [ Validators.required ]],
       user_type:              ['doctor_office', []],
       status:                 ['', []],
@@ -168,10 +168,10 @@ export class AddEditDoctorOfcComponent implements OnInit {
   /**getting all the technician data**/
   getAllTechData() {
     var data = {
-      "source": "tech_by_doctor_id",
+      "source": "data_pece",
       "condition": {
-        //"user_type": "tech",
-        "_id_object": this.htmlText.userData.user_details._id
+        "user_type": "tech",
+        "doctor_id_object": this.htmlText.userData.user_details._id
       },
       "token": this.htmlText.userData.jwtToken
     };

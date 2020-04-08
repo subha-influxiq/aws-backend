@@ -15,10 +15,10 @@ export class CalCreateSlotComponent implements OnInit {
   public configData: any = {
     appName: 'Calendar Management',
     jwtToken: '',
-    baseUrl: environment.apiBaseUrl,
+    baseUrl: environment.calendarApi,
     endPoint: { 
-      add: 'cal-add-or-update-event-data', 
-      edit: 'cal-add-or-update-event-data'
+      add: 'add-or-update-event-data', 
+      edit: 'add-or-update-event-data'
     },
     urls: {
       view: 'tech/manage-calender/manage-sehedule',

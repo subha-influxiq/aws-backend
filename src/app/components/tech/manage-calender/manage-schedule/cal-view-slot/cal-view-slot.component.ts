@@ -21,15 +21,15 @@ export class CalViewSlotComponent implements OnInit {
   public configData: any = {
     appName: 'Calendar-Management',
     jwtToken: '',
-    baseUrl: environment.apiBaseUrl,
+    baseUrl: environment.calendarApi,
     endPoint: {
-      add: 'cal-add-or-update-event-data',
-      datalist: 'cal-datalist',
-      deleteEvent: 'cal-delete-single-event',
+      add: 'add-or-update-event-data',
+      datalist: 'datalist',
+      deleteEvent: 'delete-single-event',
       viewEventSlots: 'view-event-eventdayarr',
-      search: 'cal-search',
-      countSlot: 'cal-count-slot',
-      addToCalendar: 'cal-add-to-calendar'
+      search: 'search',
+      countSlot: 'count-slot',
+      addToCalendar: 'add-to-calendar'
     },
     urls: {
       view: "tech/manage-calender/manage-sehedule/",

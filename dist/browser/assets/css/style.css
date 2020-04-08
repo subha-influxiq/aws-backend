@@ -291,7 +291,7 @@ font-size: 16px;}
 
 .infomodal{ overflow: auto; width: 991px;}
 /* admin css */
-.admin_wrapper{ width: 1400px; margin: 20px auto; box-sizing: border-box;}
+.admin_wrapper{ width: 1400px; margin: 20px auto; box-sizing: border-box; margin-bottom: 150px;}
 .searchcard { padding: 0; }
 
 
@@ -322,9 +322,14 @@ font-size: 16px;}
 .table_structure .mat-list-item p{ display: block; width: 100%; margin: 0; }
 .table_structure .mat-list-item .title_n{ color: #5aa8ed; font-size: 30px; font-family: "AvenirMedium"; font-weight: normal; text-transform: uppercase;  }
 .table_structure .mat-list-item .title_a{ color: #fff; font-size: 24px; font-family: "AvenirLight";  text-transform: uppercase; }
-.patient_report_section .form_wrapper{ display: flex; margin: 0 10px;}
+.patient_report_section .form_wrapper{ display: flex; margin-right: 10px;}
+.patient_report_section .form_wrapper:last-child{ margin-right: 0px;}
 /* .patient_report_section .form_wrapper .mat-form-field-flex{ border: 1px solid #000!important; } */
 .biller_Dashboard .patient_report_section .patient_top_search{ margin: 16px 0px; padding: 0; }
+.biller_Dashboard .patient_report_section .patient_top_search .res_view{ width: auto; display: flex;
+  justify-content: space-between;}
+
+  .biller_Dashboard .patient_report_section .patient_top_search .res_view  .btn_action_wrapper{ margin-left: 16px;}
 .biller_Dashboard .patient_report_section .patient_top_search .btn_action_wrapper button{ background: var(--button-color3); font-family: 'AvenirMedium'; font-size: 16px;
 margin-right: 10px; box-shadow: none; min-width: 80px; }
 .biller_Dashboard .patient_report_section .patient_top_search .btn_action_wrapper button:last-child{ margin: 0; background: var(--button-color2);}
@@ -498,7 +503,7 @@ align-items: center; justify-content: center; color: #fff; font-family: 'AvenirM
 .viewMore_w button{ min-width: 444px; background: linear-gradient(0deg, #04aaf5, #32baf9); font-family: 'AvenirHeavy'; color: #fff; text-transform: uppercase; font-size: 28px; padding: 4px;}
 
 /* for all modal */
-.mat-dialog-container{ min-width: 400px; border: 2px solid #03d877; border-radius: 10px!important; padding: 0!important; min-height: 180px!important;}
+.mat-dialog-container{ min-width: 400px; border: 2px solid #03d877; border-radius: 10px!important; padding: 0!important; min-height: 180px!important; height: auto!important;}
 .mat-dialog-container .mat-dialog-title {text-align: center;
   margin: 0;
   display: block;
@@ -514,9 +519,7 @@ align-items: center; justify-content: center; color: #fff; font-family: 'AvenirM
   padding: 0 10px; box-sizing: border-box;
   max-height: initial;
   overflow: auto; }
-.mat-dialog-container .mat-dialog-content p{ text-align: center; color: var(--button-color2); font-size: 18px;
-    font-family: 'AvenirMedium';
-}
+.mat-dialog-container .mat-dialog-content p{ text-align: center; color: var(--button-color2); font-size: 18px; white-space: normal; word-break: break-all; font-family: 'AvenirMedium';}
 .mat-dialog-container .mat-dialog-actions { display: flex; flex-wrap: wrap; min-height: inherit; align-items: center;
   justify-content: center;
 }
@@ -549,3 +552,27 @@ border-bottom: 2px solid; padding-bottom: 8px;}
 .table_list .button_action {  margin-left:auto;}
 .table_list .button_action button:last-child{ background: var(--button-color1); margin-left: 10px;}
 .faq_wrapper .mat-expansion-panel-body {padding: 0; }
+
+
+
+/* calendar view */
+.calenderView .calender_first .mat-toolbar{ background: var(--button-color3); padding: 0;}
+.calenderView .calender_first .mat-toolbar .headerSpan { font-family: 'AvenirMedium'; font-size: 28px;}
+.calenderView .calender_first{ padding: 0;}
+.calenderView .calender_first .buttonsetToolbar { background: #f9f9f9; padding: 10px; height: auto; flex-wrap: wrap;
+  display: flex; justify-content: center; align-items: center;}
+.calenderView .calender_first .buttonsetToolbar .mat-raised-button.mat-primary { background-color: var(--button-color2); }
+.calenderView .calender_first .buttonsetToolbar .singleButton { font-family: 'AvenirRoman'; font-size: 16px;}
+
+.calenderView .filter { display: flex; justify-content: space-between; align-items: center; margin: 0!important; }
+.calenderView .filter .pagination { float: none; font-size: 14px; font-family: 'AvenirMedium'; margin-left: 8px; }
+.calenderView .slotview{ padding: 8px 0px!important;}
+.calenderView .slotview .example-card { max-width: 100%!important; width: 31%; margin: 1%; transition: all 300ms; }
+.calenderView .slotview .example-card:hover{ transform: scale(1.2); position: relative; z-index: 1; border: 1px solid var(--button-color3);}
+.calenderView .slotview .example-card .mat-card-actions button{ font-family: 'AvenirMedium';}
+.calenderView .slotview .example-card .mat-card-actions button:hover {transition: 200ms all; border:1px solid var(--button-color3); color: var(--button-color3); background: #fff!important; }
+
+.calenderView .example-container .button_wrapper button{ background: var(--button-color2);
+  font-family: "AvenirMedium"; font-size: 18px;}
+.calenderView .example-container .button_wrapper button:last-child{ background: var(--button-color3)}
+

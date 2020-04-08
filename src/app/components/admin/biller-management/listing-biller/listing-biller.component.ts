@@ -13,7 +13,16 @@ export class ListingBillerComponent implements OnInit {
 
   public allBillerData: any = [];
   public allUserData_skip: any = [
-    "_id", "address", "zip", "city", "state", "user_type", "password", "created_at", "diagnostic_admin_id",
+    "_id", 
+    "address", 
+    "zip", 
+    "city", 
+    "state", 
+    "user_type", 
+    "password", 
+    "created_at", 
+    "diagnostic_admin_id", 
+    "doctor_id",
   ];
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;

@@ -23,12 +23,12 @@ export class CalEventListingComponent implements OnInit {
   public configData: any = {
     appName: 'Calendar-Management',
     jwtToken: "",
-    baseUrl: environment.apiBaseUrl,
+    baseUrl: environment.calendarApi,
     endPoint: {
-      add: "cal-add-or-update-event-data",
-      datalist: "cal-datalist",
-      deleteEvent: "cal-delete-single-event",
-      search: "cal-search"
+      add: "add-or-update-event-data",
+      datalist: "datalist",
+      deleteEvent: "delete-single-event",
+      search: "search"
     },
     responseData: "",
     timeZone: [

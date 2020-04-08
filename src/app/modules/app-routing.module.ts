@@ -105,6 +105,8 @@ import { CalViewSlotComponent } from '../components/tech/manage-calender/manage-
 
 import { AppoinmentsListingComponent } from '../components/doctor-office/manage-appointments/appoinments-listing/appoinments-listing.component';
 import { BookAppoinmentNowComponent } from '../components/doctor-office/manage-appointments/book-appoinment-now/book-appoinment-now.component';
+import { CalSyncWithGoogleComponent } from '../components/tech/manage-calender/manage-schedule/cal-sync-with-google/cal-sync-with-google.component';
+
 
 const routes: Routes = [
   /********** Auth Route Start **********/
@@ -824,16 +826,8 @@ const routes: Routes = [
   },
   { 
     path: 'tech/manage-calender/manage-sehedule/:access_token/:refresh', 
-    component: CalHomeComponent, 
-    canActivate: [AuthguardService],
-    resolve: {eventdayarrData: ResolveService},
-    data: {
-      requestcondition: {
-        source: 'events_eventdayarr_view',
-        condition: {}
-      },
-      endpoint: 'cal-view-event-eventdayarr'
-    }
+    component: CalSyncWithGoogleComponent, 
+    canActivate: [AuthguardService]
   },
   { 
     path: 'tech/manage-calender/manage-sehedule/view-slot-user', 
@@ -1233,6 +1227,13 @@ const routes: Routes = [
       },
       endpoint: 'datalist'
     },
+  },
+
+  /* Google Sync */
+  { 
+    path: 'doctor-office/manage-appointments/:access_token/:refresh', 
+    component: CalSyncWithGoogleComponent, 
+    canActivate: [AuthguardService]
   },
 
   /*Doctor Office Dashboard*/

@@ -101,6 +101,21 @@ export class ResolveService implements Resolve<any> {
           });
         }
       } else {
+        /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
+        if (route.data.endpoint == 'view-event-eventdayarr' && this.cookies.check('timezone')) {
+          route.data.requestcondition.timezone = this.cookies.get('timezone');
+        }
+
+        /* If user is not an admin */
+        // if (this.cookies.check('user_details') &&
+        //   JSON.parse(this.cookies.get('user_details')).user_type != 'admin') {
+
+        //   route.data.requestcondition.condition = Object.assign(
+        //     route.data.requestcondition.condition, {useremail: JSON.parse(this.cookies.get('user_details')).email}
+        //   );
+
+        // }
+
         this._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(api_object => {
           if (api_object) {
             return resolve(api_object);

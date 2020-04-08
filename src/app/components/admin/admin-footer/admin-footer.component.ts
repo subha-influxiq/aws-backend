@@ -16,10 +16,11 @@ export class AdminFooterComponent implements OnInit {
   }
   isSticky: boolean = false;
 
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    this.isSticky = window.pageYOffset >= 150;
+  //@HostListener('window:scroll', ['$event'])
+
+  // checkScroll() {
+  //   this.isSticky = window.pageYOffset >= 150;
     
-  }
+  // }
 
 }
