@@ -47,6 +47,7 @@
 .sales_person_db .shareLi .in_w { width: 60%; left: 0; right: 0; transform: inherit; top: 0; position: inherit; display: block;}
 .calenderView .calendar_wrapper { width: 70%; overflow: scroll; }
 .calenderView .button_wrapper{ margin-top: 20px; }
+.admin_wrapper { margin-bottom: 50px; }
 }
 @media screen and (max-width: 1100px){
 .biller_Dashboard .patient_report_section .patient_top_search { flex-direction: column; justify-content: flex-start;
@@ -207,6 +208,10 @@
 .custom-modalbox .mat-dialog-container .mat-card { display: flex; justify-content: center; flex-direction: column;
   align-items: center;}
   .custom-modalbox .example-card .mat-card-header::before{ display: none;}
+  .table_wrapper .top_header .wrappp_R {
+    width: auto;
+    text-align: inherit;
+}
 }
 @media screen and (max-width: 480px){
 .main_wrapper .login_wrapper { width: 360px; }
@@ -221,6 +226,7 @@
 .admin_wrapper { width: 100%; box-shadow: none; }
 .mat-table .mat-cell:before { left: 6px;}
 .adminTables .mat-cell { padding: 10px 6px 10px 0px;}
+.mat-table .mat-cell:after { left: 6px; }
 }
 @media screen and (max-width: 440px){
 .main_wrapper .login_wrapper { width: 320px; }
@@ -236,6 +242,9 @@
 }
 @media screen and (max-width: 390px){
 .main_wrapper .login_wrapper { width: 280px; }
+.table_wrapper .top_header .wrappp_R { flex-direction: column; display: flex; align-items: center; }
+.top_header .wrappp_R .add_new{ margin-bottom: 10px;}
+.top_header .wrappp_R .add_new:last-child { margin-left: 0px; margin-bottom: 10px;}
 }
 @media screen and (max-width: 350px){
 .main_wrapper .login_wrapper { width: 265px; }
