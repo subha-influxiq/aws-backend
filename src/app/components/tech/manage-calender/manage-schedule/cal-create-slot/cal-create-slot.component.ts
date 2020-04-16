@@ -20,14 +20,17 @@ export class CalCreateSlotComponent implements OnInit {
       add: 'add-or-update-event-data', 
       edit: 'add-or-update-event-data'
     },
-    urls: {
-      view: 'tech/manage-calender/manage-sehedule',
-      viewSlotUser: 'tech/manage-calender/manage-sehedule/view-slot-user',
-      eventListing: 'tech/manage-calender/manage-sehedule/event-listing',
-      add: 'tech/manage-calender/manage-sehedule/create-slot',
-      edit: '',
-      googleSync: environment.googleSyncApi
-    },
+    urls: [
+      { pathUrl: 'tech/manage-calender/manage-sehedule', text: 'View Slot', color: 'primary', active: true, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/event-listing', text: 'Event Listing', color: 'accent', active: true, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/create-slot', text: 'Create Slot', color: 'warn', active: true, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/booked-events', text: 'Booked Events', color: 'accent', active: true, isExternalLink: false },
+      {
+        pathUrl: environment.googleSyncApi,
+        text: 'Add or Update Google Calendar', color: 'primary',
+        active: true, isExternalLink: true
+      }
+    ],
     timeZone: [
       { text: 'Alaska Standard Time', value: '-08:00|America/Anchorage' },
       { text: 'Pacific Standard Time', value: '-07:00|America/Los_Angeles' },
@@ -53,7 +56,12 @@ export class CalCreateSlotComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.configData.jwtToken = this.cookieService.get('jwtToken');
+    if (this.cookieService.check('user_details')) {
+      this.configData.jwtToken = this.cookieService.get('jwtToken');
+      // Merge logged in user details with the config data
+      let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
+      this.configData = Object.assign(this.configData, userDetails);
+    }
   }
 
 }

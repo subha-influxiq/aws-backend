@@ -1,4 +1,5 @@
 <app-tech-header></app-tech-header>
+
 <mat-card class="admin_wrapper">
   <!-- header with add button -->
   <mat-card-content class="title_wrapper">
@@ -11,59 +12,7 @@
   </mat-toolbar>
   <!-- End header with add button -->
 
-  <div class="mat-elevation-z8 table_wrapper">
-    <table mat-table [dataSource]="dataSource">
-
-      <!-- Position Column -->
-      <ng-container matColumnDef="no">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.no}} </td>
-      </ng-container>
-      <ng-container matColumnDef="organizerName">
-        <th mat-header-cell *matHeaderCellDef> Organizer's Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.organizerName}} </td>
-      </ng-container>
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="organizerEmail">
-        <th mat-header-cell *matHeaderCellDef> Organizer's Email </th>
-        <td mat-cell *matCellDef="let element"> {{element.organizerEmail}} </td>
-      </ng-container>
-
-      <!-- Weight Column -->
-      <ng-container matColumnDef="appoinmentDate">
-        <th mat-header-cell *matHeaderCellDef> Appoinment Date </th>
-        <td mat-cell *matCellDef="let element"> {{element.appoinmentDate}} </td>
-      </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="appoinmentTime">
-        <th mat-header-cell *matHeaderCellDef> Appoinment Time </th>
-        <td mat-cell *matCellDef="let element"> {{element.appoinmentTime}} </td>
-      </ng-container>
-      <ng-container matColumnDef="timeZone">
-        <th mat-header-cell *matHeaderCellDef> TimeZone </th>
-        <td mat-cell *matCellDef="let element"> {{element.timeZone}} </td>
-      </ng-container>
-      <ng-container matColumnDef="doctorName">
-        <th mat-header-cell *matHeaderCellDef> Doctor Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.doctorName}} </td>
-      </ng-container>
-      <ng-container matColumnDef="patientName">
-        <th mat-header-cell *matHeaderCellDef> Patient Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.patientName}} </td>
-      </ng-container>
-      <ng-container matColumnDef="manage">
-        <th mat-header-cell *matHeaderCellDef> Manage </th>
-        <td mat-cell *matCellDef="let element"> {{element.manage}} </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-  </div>
-
+  <lib-booked-event-listing [configData]="configData"></lib-booked-event-listing>
 </mat-card>
+
 <app-admin-footer></app-admin-footer>

@@ -19,7 +19,7 @@ import { environment } from '../../../../../../environments/environment';
 export class CalViewSlotComponent implements OnInit {
 
   public configData: any = {
-    appName: 'Calendar-Management',
+    appName: 'Calendar Management',
     jwtToken: '',
     baseUrl: environment.calendarApi,
     endPoint: {
@@ -31,14 +31,18 @@ export class CalViewSlotComponent implements OnInit {
       countSlot: 'count-slot',
       addToCalendar: 'add-to-calendar'
     },
-    urls: {
-      view: "tech/manage-calender/manage-sehedule/",
-      viewSlotUser: "tech/manage-calender/manage-sehedule/view-slot-user",
-      eventListing: "tech/manage-calender/manage-sehedule/event-listing",
-      add: "tech/manage-calender/manage-sehedule/create-slot",
-      edit: "",
-      googleSync: environment.googleSyncApi
-    },
+    urls: [
+      { pathUrl: 'tech/manage-calender/manage-sehedule', text: 'View Slot', color: 'primary', active: false, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/event-listing', text: 'Event Listing', color: 'accent', active: true, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/create-slot', text: 'Create Availability', color: 'warn', active: true, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/booked-events', text: 'Booked Events', color: 'accent', active: true, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/sync-with-google', text: 'Sync with Google', color: 'warn', active: true, isExternalLink: false },
+      {
+        pathUrl: environment.googleSyncApi,
+        text: 'Add or Update Google Calendar', color: 'primary',
+        active: true, isExternalLink: true
+      }
+    ],
     timeZone: [
       {text: 'Alaska Standard Time', value: '-08:00|America/Anchorage'},
       {text: 'Pacific Standard Time', value: '-07:00|America/Los_Angeles'},

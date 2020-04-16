@@ -21,7 +21,7 @@ export class CalEventListingComponent implements OnInit {
   public eventData: any;
 
   public configData: any = {
-    appName: 'Calendar-Management',
+    appName: 'Calendar Management',
     jwtToken: "",
     baseUrl: environment.calendarApi,
     endPoint: {
@@ -47,19 +47,20 @@ export class CalEventListingComponent implements OnInit {
       { text: "120 Min", value: 120 }
     ],
     eventType: [
-      { text: "Admin Meetings", value: 1 },
-      { text: "Type 2", value: 2 },
-      { text: "Type 3", value: 3 },
-      { text: "Type 3", value: 4 }
+      { text: "Admin Meetings", value: 1 }
     ],
-    urls: {
-      view: 'tech/manage-calender/manage-sehedule',
-      viewSlotUser: 'tech/manage-calender/manage-sehedule/view-slot-user',
-      eventListing: 'tech/manage-calender/manage-sehedule/event-listing',
-      add: 'tech/manage-calender/manage-sehedule/create-slot',
-      edit: '',
-      googleSync: environment.googleSyncApi
-    }
+    urls: [
+      { pathUrl: 'tech/manage-calender/manage-sehedule', text: 'View Slot', color: 'primary', active: false, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/event-listing', text: 'Event Listing', color: 'accent', active: true, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/create-slot', text: 'Create Availability', color: 'warn', active: true, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/booked-events', text: 'Booked Events', color: 'accent', active: true, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/sync-with-google', text: 'Sync with Google', color: 'warn', active: true, isExternalLink: false },
+      {
+        pathUrl: environment.googleSyncApi,
+        text: 'Add or Update Google Calendar', color: 'primary',
+        active: true, isExternalLink: true
+      }
+    ]
   };
 
   constructor(public http: HttpClient, private httpRequest: HttpServiceService,

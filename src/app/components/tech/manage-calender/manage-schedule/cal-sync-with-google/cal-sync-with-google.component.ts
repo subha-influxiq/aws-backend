@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpServiceService } from '../../../../../services/http-service.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-cal-sync-with-google',
@@ -10,13 +11,14 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class CalSyncWithGoogleComponent implements OnInit {
 
+  public displayMessage: string = "Please wait...";
+  public secCount: number = 5;
+
   constructor(public httpRequestService: HttpServiceService, public activatedRoute: ActivatedRoute,
-    public cookieService: CookieService) {
+    public cookieService: CookieService, public router: Router, public snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
-    console.log('ngOnInit() executing');
-    console.log('this.activatedRoute.snapshot', this.activatedRoute.snapshot.params);
     let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
     if (this.activatedRoute.snapshot.params.refresh && this.cookieService.check('user_details')) {
       let data = {
@@ -28,13 +30,33 @@ export class CalSyncWithGoogleComponent implements OnInit {
         }
       }
       this.httpRequestService.httpViaPost('cal-update-user', data).subscribe((response) => {
-        console.log('response', response);
+        if(response.status == 'success') {
+          setInterval(() => {
+            this.secCount = this.secCount - 1;
+            this.displayMessage = "Synchronize Complete. You will be redirected in " + this.secCount + " sec.";
+            if(this.secCount == 0) {
+              this.secCount = 1;
+              this.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
+            }
+          }, 1000);
+          
+          this.snackBar.open("Successfully updated.", "Ok", {
+            duration: 2000,
+          });
+        } else {
+          this.snackBar.open("SuccessfAn error occord. Please try again.", "Ok", {
+            duration: 2000,
+          });
+
+          setTimeout(() => {
+            this.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
+          }, 4000);
+        }
       });
     }
   }
 
   connectGoogleCalendar() {
-    console.log("connecting to google calendar...");
     this.httpRequestService.httpViaPost("https://gapi.betoparedes.com/connect-calendar-pece.php", null).subscribe((response) => {
       console.log("response", response);
     })

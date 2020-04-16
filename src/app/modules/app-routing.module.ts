@@ -106,7 +106,7 @@ import { CalViewSlotComponent } from '../components/tech/manage-calender/manage-
 import { AppoinmentsListingComponent } from '../components/doctor-office/manage-appointments/appoinments-listing/appoinments-listing.component';
 import { BookAppoinmentNowComponent } from '../components/doctor-office/manage-appointments/book-appoinment-now/book-appoinment-now.component';
 import { CalSyncWithGoogleComponent } from '../components/tech/manage-calender/manage-schedule/cal-sync-with-google/cal-sync-with-google.component';
-
+import { BookedEventsComponent } from '../components/tech/manage-calender/manage-schedule/booked-events/booked-events.component';
 
 const routes: Routes = [
   /********** Auth Route Start **********/
@@ -541,7 +541,16 @@ const routes: Routes = [
   /* Booked Appoinments */
   { 
     path: 'admin/booked-appoinments', 
-    component: BookedAppoinmentsComponent 
+    component: BookedAppoinmentsComponent,
+    canActivate: [AuthguardService],
+    resolve: {bookedEventList: ResolveService},
+    data: {
+      requestcondition: {
+        source: 'google-events',
+        condition: {}
+      },
+      endpoint: 'list-booked-events'
+    }
   },
 
   /* Faq */
@@ -847,6 +856,18 @@ const routes: Routes = [
     component: CalCreateSlotComponent
   },
   { 
+    path: 'tech/manage-calender/manage-sehedule/booked-events',
+    component: BookedEventsComponent,
+    resolve: {eventListData: ResolveService},
+    data: {
+      requestcondition: {
+        source: 'google-events',
+        condition: {}
+      },
+      endpoint: 'list-booked-events'
+    },
+  },
+  { 
     path: 'tech/manage-calender/manage-sehedule/event-listing', 
     component: CalEventListingComponent,
     resolve: {eventListData: ResolveService},
@@ -863,7 +884,15 @@ const routes: Routes = [
   { 
     path: 'tech/manage-calender/my-appoinments', 
     component: ListComponent, 
-    canActivate: [AuthguardService] 
+    canActivate: [AuthguardService],
+    resolve: {bookedEventList: ResolveService},
+    data: {
+      requestcondition: {
+        source: 'google-events',
+        condition: {}
+      },
+      endpoint: 'list-booked-events'
+    },
   },
 
   /* Bulk Upload */
@@ -1204,14 +1233,14 @@ const routes: Routes = [
     path: 'doctor-office/dashboard', 
     component: DoctorOfficeDashboardComponent, 
     canActivate: [AuthguardService],
-    resolve: { data: ResolveService },
+    resolve: {bookedEventList: ResolveService},
     data: {
       requestcondition: {
-        source: 'data_pece',
+        source: 'google-events',
         condition: {}
       },
-      endpoint: 'datalist'
-    },
+      endpoint: 'doctor-office-booked-list-events'
+    }
   },
 
   /*Doctor Office Dashboard*/
@@ -1219,14 +1248,14 @@ const routes: Routes = [
     path: 'doctor-office/manage-appointments', 
     component: AppoinmentsListingComponent, 
     canActivate: [AuthguardService],
-    resolve: { data: ResolveService },
+    resolve: {bookedEventList: ResolveService},
     data: {
       requestcondition: {
-        source: 'events',
+        source: 'google-events',
         condition: {}
       },
-      endpoint: 'datalist'
-    },
+      endpoint: 'doctor-office-booked-list-events'
+    }
   },
 
   /* Google Sync */
@@ -1247,7 +1276,7 @@ const routes: Routes = [
         source: 'events_eventdayarr_view',
         condition: {$and: [{event_type: 1}]}
       },
-      endpoint: 'cal-view-event-eventdayarr'
+      endpoint: 'cal-doctor-office-view-event-eventdayarr'
     }
   },
 

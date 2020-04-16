@@ -42,6 +42,11 @@ export class ResolveService implements Resolve<any> {
         case 'dashboard':
           requestData.condition['tech_id'] = userData._id;
           break;
+        case 'manage-calender':
+          if(route.url[2].path == 'manage-sehedule') {
+            requestData.condition['userid'] = userData._id;
+          }
+          break;
       }
     }
     /* This one is for Tech Dashboard End */
@@ -70,6 +75,21 @@ export class ResolveService implements Resolve<any> {
     }
     /* This one is for Biller Dashboard End */
 
+    /* This one is for Doctor Office Start */
+    if(route.url[0].path == 'doctor-office') {
+      switch(route.url[1].path) {
+        case 'dashboard':
+          //requestData.condition['doctor_office_id'] = userData._id;
+          requestData.condition['closeremail'] = userData.email;
+          break;
+        case 'manage-appointments':
+          requestData.condition['tech_id'] = userData.tech_id;
+          requestData.condition['closeremail'] = userData.email;
+          break;
+      }
+    }
+    /* This one is for Doctor Office End */
+
     /* This one is for Diagnostic Admin Start */
     if(route.url[0].path == 'diagnostic-admin') {
       //requestData.condition['diagnostic_admin_id_object'] = userData._id;
@@ -77,6 +97,7 @@ export class ResolveService implements Resolve<any> {
     }
     /* This one is for Diagnostic Admin End */
     /////////////////////////////////////////////////////////////////////
+
 
     /* If send any query params */
     requestData.condition = Object.assign(requestData.condition, route.params);

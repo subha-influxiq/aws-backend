@@ -10,6 +10,7 @@ import { Observable, of } from 'rxjs';
 import { MatSnackBar } from '@angular/material';
 import { environment } from '../../../../../environments/environment';
 import { FormGroup, FormBuilder, Validators, FormControl,FormGroupDirective } from '@angular/forms';
+import moment from 'moment-es6';
 
 @Component({
   selector: 'app-book-appoinment-now',
@@ -18,10 +19,11 @@ import { FormGroup, FormBuilder, Validators, FormControl,FormGroupDirective } fr
 })
 export class BookAppoinmentNowComponent implements OnInit {
 
+  today = moment().format('L');
   public configData: any = {
-    appName: 'Calendar-Management',
+    appName: 'Calendar Management',
     jwtToken: '',
-    baseUrl: 'https://m9mkuic6o9.execute-api.us-east-1.amazonaws.com/dev/api/',
+    baseUrl: environment.calendarApi,
     endPoint: {
       add: 'add-or-update-event-data',
       datalist: 'datalist',
@@ -29,16 +31,12 @@ export class BookAppoinmentNowComponent implements OnInit {
       viewEventSlots: 'view-event-eventdayarr',
       search: 'search',
       countSlot: 'count-slot',
-      addToCalendar: 'add-to-calendar'
+      addToCalendar: 'add-to-calendar',
+      getRefreshToken: 'get-refresh-token'
     },
-    urls: {
-      view: 'calendar-management',
-      viewSlotUser: 'calendar-management/view-slot-user',
-      eventListing: 'calendar-management/event-listing',
-      add: 'calendar-management/create-slot',
-      edit: '',
-      googleSync: 'https://gapi.betoparedes.com/connect-calendar-pece.php'
-    },
+    urls: [
+      { pathUrl: 'doctor-office/manage-appointments', text: 'View Booked List', color: 'primary', active: true, isExternalLink: false }
+    ],
     timeZone: [
       {text: 'Alaska Standard Time', value: '-08:00|America/Anchorage'},
       {text: 'Pacific Standard Time', value: '-07:00|America/Los_Angeles'},
@@ -71,7 +69,7 @@ export class BookAppoinmentNowComponent implements OnInit {
         validators: [Validators.required], error: "Select gender"
       },
       {type: 'input', name: 'patient_email', placeholder: 'Patient Email', label: 'Patient Email', value: '', validators: [Validators.required, Validators.email], error: "Enter patient email"},
-      {type: 'input', name: 'current_date', placeholder: 'Date', label: 'Booking date', value: ''},
+      {type: 'input', name: 'booking_date', placeholder: 'Date', label: 'Booking date', value: this.today},
       {type: 'input', name: 'height', placeholder: 'Ex. 6\'10"', label: 'Height', value: '', validators: [Validators.required], error: "Enter patient height"},
       {type: 'input', name: 'weight', placeholder: 'Ex. 210 lbs', label: 'Weight', value: '', validators: [Validators.required], error: "Enter patient weight"},
       {
