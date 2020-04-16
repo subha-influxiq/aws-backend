@@ -12,7 +12,9 @@ export class ListDoctorComponent implements OnInit {
 
   // ===============================Declarations=========================
   public userData: any;
+  public docData_count:any=0;
   public  docData: any = [];
+  public datasource: any;
   public docData_skip: any = [
     "_id",
     "fax",
@@ -29,6 +31,7 @@ export class ListDoctorComponent implements OnInit {
     "password",
     "created_at",
     "id",
+    "name_search",
     "updated_at",
     "doctor_signature"
   ];
@@ -52,6 +55,7 @@ export class ListDoctorComponent implements OnInit {
     "password",
     "created_at",
     "id",
+    "name_search",
     "updated_at"
   ];
   public tableName: any = 'users';
@@ -62,6 +66,17 @@ export class ListDoctorComponent implements OnInit {
   public searchSourceName:any="data_doctor_list"
   public editUrl:any = 'admin/doctor-management/edit';
   public apiUrl:any;
+  public datacollection: any='getdoctorlistdata';
+  public sortdata:any={
+    "type":'desc',
+    "field":'firstname',
+    "options":['firstname']
+ };
+ public limitcond:any={
+  "limit":10,
+  "skip":0,
+  "pagecount":1
+};
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public search_settings: any =
     {
@@ -87,9 +102,37 @@ export class ListDoctorComponent implements OnInit {
 
 
   ngOnInit() {
-    this.activatedRoute.data.subscribe(resolveData => {
-      this.docData = resolveData.data.res;
-    });
+    this.datasource = '';
+    let endpoint='getdoctorlistdata';
+    let endpointc='getdoctorlistdata-count';
+    let data:any={
+        "condition":{
+            "limit":10,
+            "skip":0
+        },
+    sort:{
+        "type":'desc',
+        "field":'firstname'
+    }
+ 
+    }
+        this.http.httpViaPost(endpointc, data).subscribe((res:any) => {
+            // console.log('in constructor');
+            // console.log(result);
+            this.docData_count =res.count;
+            //console.warn('blogData c',res);
+ 
+        }, error => {
+            console.log('Oooops!');
+        });
+ 
+        this.http.httpViaPost(endpoint,data).subscribe((res:any) => {
+           
+            this.docData =res.results.res;
+ 
+        }, error => {
+            console.log('Oooops!');
+        });
   }
 
 

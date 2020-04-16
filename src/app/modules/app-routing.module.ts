@@ -254,17 +254,7 @@ const routes: Routes = [
   {
     path: 'admin/admin-management', 
     component: ManageAdminListComponent, 
-    canActivate: [AuthguardService], 
-    resolve: { adminManagementdData: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {
-          user_type: "admin"
-        }
-      },
-      endpoint: 'datalist'
-    },
+    canActivate: [AuthguardService],
   },
   { 
     path: 'admin/admin-management/add', 
@@ -291,17 +281,7 @@ const routes: Routes = [
   {
     path: 'admin/biller-management', 
     component: ListingBillerComponent, 
-    canActivate: [AuthguardService], 
-    resolve: { Billerdata: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {
-          user_type: "biller"
-        }
-      },
-      endpoint: 'datalist'
-    },
+    canActivate: [AuthguardService],
   },
   { 
     path: 'admin/biller-management/add', 
@@ -328,17 +308,7 @@ const routes: Routes = [
   {
     path: 'admin/tech-management', 
     component: ListingTechComponent, 
-    canActivate: [AuthguardService], 
-    resolve: { techDashboardData: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {
-          user_type: "tech"
-        }
-      },
-      endpoint: 'datalist'
-    },
+    canActivate: [AuthguardService],
   },
   { 
     path: 'admin/tech-management/add', 
@@ -366,17 +336,7 @@ const routes: Routes = [
   {
     path: 'admin/doctor-management', 
     component: ListDoctorComponent, 
-    canActivate: [AuthguardService],
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {
-          user_type: "doctor"
-        }
-      },
-      endpoint: 'datalist'
-    },
+    canActivate: [AuthguardService]
   },
   { 
     path: 'admin/doctor-management/add', 
@@ -402,14 +362,6 @@ const routes: Routes = [
   {
     path: 'admin/doctor-office-management', 
     component: DoctorOfficeManagementComponent, canActivate: [AuthguardService],
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: { "user_type": "doctor_office" }
-      },
-      endpoint: 'datalist'
-    },
   },
   { 
     path: 'admin/doctor-office-management/add', 

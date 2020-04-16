@@ -35,7 +35,7 @@
       [modify_header_array]="doctorOfficeAllData_modify_header" [apiurl]="apiUrl" [sourcedata]="tableName"
       [editroute]="editUrl" [jwttoken]="user_cookie" [statusarr]="status" [updateendpoint]="UpdateEndpoint"
       [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
-      [date_search_source]="SearchingSourceName" [search_settings]="search_settings">
+      [date_search_source]="SearchingSourceName" [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection" [date_search_source_count]="doctorOfficeData_count" [limitcond]="limitcond">
     </lib-listing>
     <h2 class="no_data" *ngIf="doctorOfficeAllData.length == 0">No record found.</h2>
   </mat-card-content>
