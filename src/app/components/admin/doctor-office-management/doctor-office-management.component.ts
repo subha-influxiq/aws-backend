@@ -12,6 +12,9 @@ import { HttpServiceService } from '../../../services/http-service.service';
 export class DoctorOfficeManagementComponent implements OnInit {
 
   public doctorOfficeAllData: any = [];
+  public doctorOfficeData_count:any=0;
+  public datasource: any;
+
   public user_cookie: any;
 
   public doctorOfficeAllData_skip: any = [
@@ -26,7 +29,10 @@ export class DoctorOfficeManagementComponent implements OnInit {
     "password",
     "id",
     "created_at",
-    "updated_at"
+    "updated_at",
+    "refresh_token",
+    "lastGoogleCalendarUpdateOn",
+    "name_search"
   ];
   public editUrl: any = "admin/doctor-office-management/edit";
   public doctorOfficeAllData_modify_header: any = {
@@ -53,6 +59,17 @@ export class DoctorOfficeManagementComponent implements OnInit {
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
   public SearchingSourceName: any = "data_doctor_office_list";
+  public datacollection: any='getdoctorofficelistdata';
+  public sortdata:any={
+    "type":'desc',
+    "field":'firstname',
+    "options":['firstname']
+ };
+ public limitcond:any={
+  "limit":10,
+  "skip":0,
+  "pagecount":1
+};
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
@@ -75,9 +92,37 @@ export class DoctorOfficeManagementComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activatedRoute.data.forEach((data) => {
-      this.doctorOfficeAllData = data.data.res;
-    })
+    this.datasource = '';
+    let endpoint='getdoctorofficelistdata';
+    let endpointc='getdoctorofficelistdata-count';
+    let data:any={
+        "condition":{
+            "limit":10,
+            "skip":0
+        },
+    sort:{
+        "type":'desc',
+        "field":'firstname'
+    }
+ 
+    }
+        this.httpService.httpViaPost(endpointc, data).subscribe((res:any) => {
+            // console.log('in constructor');
+            // console.log(result);
+            this.doctorOfficeData_count =res.count;
+            //console.warn('blogData c',res);
+ 
+        }, error => {
+            console.log('Oooops!');
+        });
+ 
+        this.httpService.httpViaPost(endpoint,data).subscribe((res:any) => {
+           
+            this.doctorOfficeAllData =res.results.res;
+ 
+        }, error => {
+            console.log('Oooops!');
+        });
   }
 
 }

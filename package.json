@@ -48,7 +48,7 @@
     "file-upload-lib-influxiq": "0.0.16",
     "hammerjs": "^2.0.8",
     "jasmine-console-reporter": "^3.1.0",
-    "listing-angular7": "0.1.1",
+    "listing-angular7": "^0.1.5",
     "login-lib-influxiq": "0.0.7",
     "moment": "^2.24.0",
     "moment-es6": "^1.0.0",
