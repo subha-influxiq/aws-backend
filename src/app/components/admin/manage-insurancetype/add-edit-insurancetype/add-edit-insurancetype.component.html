@@ -1,0 +1,108 @@
+<!-- Admin Header -->
+<app-admin-header *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-header>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-header *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+<!-- Doctor Header -->
+<app-doctor-header *ngIf="htmlText.userData.user_details.user_type == 'doctor'"></app-doctor-header>
+
+
+
+
+<mat-card class="admin_wrapper">
+  <!-- header with add button -->
+  <mat-card-content class="title_wrapper">
+    {{ htmlText.header }}
+  </mat-card-content>
+  <span class="add_header">
+
+    <span class="bradcrumb">
+      <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+      <a [routerLink]="['/admin/doctor-office-management']">Manage Insurance-Type &nbsp;/</a> &nbsp;
+      {{ htmlText.nav }}
+    </span>
+  </span>
+
+  <mat-card class="add_form">
+    <mat-card-content class="form_wrapper">
+      <form class="example-form" autocomplete="off" name="insuranceTypeAddEditForm" [formGroup]="insuranceTypeAddEditForm" (ngSubmit)="insuranceTypeAddEditFormFormSubmit()">
+
+        <!-- Center Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Insurancetype Name</mat-label>
+
+          <input matInput placeholder="Insurancetype Name" [formControl]="insuranceTypeAddEditForm.controls['insurancetype_name']"
+            (blur)="inputUntouch(insuranceTypeAddEditForm,'insurancetype_name')">
+
+          <mat-error
+            *ngIf="insuranceTypeAddEditForm.controls['insurancetype_name'].touched && !insuranceTypeAddEditForm.controls['insurancetype_name'].valid && insuranceTypeAddEditForm.controls['insurancetype_name'].errors.required">
+            Insurancetype Name required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="insuranceTypeAddEditForm.controls['insurancetype_name'].touched && !insuranceTypeAddEditForm.controls['insurancetype_name'].valid && insuranceTypeAddEditForm.controls['insurancetype_name'].errors.maxlength">
+            Insurancetype Name is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Center Name End -->
+
+        <!-- Tech Details Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Select Insurance</mat-label>
+          <mat-select formControlName="insurance_id" multiple>
+            <mat-option *ngFor="let insurance of htmlText.insuranceData;" value="{{ insurance._id }}">{{ insurance.insurancename }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Tech Details name -->
+
+        <!-- First Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+
+          <input matInput placeholder="Description" [formControl]="insuranceTypeAddEditForm.controls['description']"
+            (blur)="inputUntouch(insuranceTypeAddEditForm,'description')">
+
+          <mat-error
+            *ngIf="insuranceTypeAddEditForm.controls['description'].touched && !insuranceTypeAddEditForm.controls['description'].valid && insuranceTypeAddEditForm.controls['description'].errors.required">
+            Description required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="insuranceTypeAddEditForm.controls['description'].touched && !insuranceTypeAddEditForm.controls['description'].valid && insuranceTypeAddEditForm.controls['description'].errors.maxlength">
+            Descriptionis not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- First Name End -->
+
+        <!-- Last Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Priority</mat-label>
+
+          <input matInput placeholder="Priority" [formControl]="insuranceTypeAddEditForm.controls['priority']"
+            (blur)="inputUntouch(insuranceTypeAddEditForm,'priority')">
+
+          <mat-error
+            *ngIf="insuranceTypeAddEditForm.controls['priority'].touched && !insuranceTypeAddEditForm.controls['priority'].valid && insuranceTypeAddEditForm.controls['priority'].errors.required">
+            Priority required.
+          </mat-error>
+        </mat-form-field>
+        <!-- Last Name End -->
+
+        <mat-checkbox [formControl]="insuranceTypeAddEditForm.controls['status']" checked>Active</mat-checkbox>
+
+
+        <span class="submit_form">
+          <button mat-flat-button type="button" *ngIf="htmlText.userData.user_details.user_type == 'doctor'" [routerLink]="['/doctor/doctor-office-management']"> Back</button>
+          <button mat-flat-button type="button" *ngIf="htmlText.userData.user_details.user_type == 'admin'" [routerLink]="['/admin/insurance-type-management']"> Back</button>
+
+
+          <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset </button>
+          <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
+        </span>
+        
+      </form>
+    </mat-card-content>
+  </mat-card>
+</mat-card>
+<app-admin-footer></app-admin-footer>

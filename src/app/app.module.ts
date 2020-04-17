@@ -140,6 +140,10 @@ import { CalEventListingComponent } from './components/tech/manage-calender/mana
 import { AppoinmentsListingComponent } from './components/doctor-office/manage-appointments/appoinments-listing/appoinments-listing.component';
 import { BookAppoinmentNowComponent } from './components/doctor-office/manage-appointments/book-appoinment-now/book-appoinment-now.component';
 import { BookedEventsComponent } from './components/tech/manage-calender/manage-schedule/booked-events/booked-events.component';
+import { AddEditInsuranceComponent } from './components/admin/manage-insurance/add-edit-insurance/add-edit-insurance.component';
+import { ListingInsuranceComponent } from './components/admin/manage-insurance/listing-insurance/listing-insurance.component';
+import { AddEditInsurancetypeComponent } from './components/admin/manage-insurancetype/add-edit-insurancetype/add-edit-insurancetype.component';
+import { ListingInsurancetypeComponent } from './components/admin/manage-insurancetype/listing-insurancetype/listing-insurancetype.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -266,7 +270,11 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CalEventListingComponent,
     AppoinmentsListingComponent,
     BookAppoinmentNowComponent,
-    BookedEventsComponent
+    BookedEventsComponent,
+    AddEditInsuranceComponent,
+    ListingInsuranceComponent,
+    AddEditInsurancetypeComponent,
+    ListingInsurancetypeComponent
     
   ],
   imports: [
