@@ -160,14 +160,14 @@
 
 .DataTable table td.mat-cell{  font-family: "AvenirRoman"; padding-right: 8px; }
 .DataTable table td span .cursor{cursor: pointer; display: inline-block; background: var(--button-color2);
-  margin-right: 5px; color: #fff; padding: 1px 8px; border-radius: 2px;}
-  .DataTable table td span .cursor:nth-child(2){ background: #ff5370;}
-  .DataTable table td span .cursor:nth-child(3){ background: var(--button-color1);}
-.DataTable table td span .cursor:nth-last-child(1){ border-right: none; margin: 0; background: var(--button-color3); }
+margin: 2px; color: #fff; padding: 1px 8px; border-radius: 2px;}
+.DataTable table td span .cursor:nth-child(2){ background: #ff5370;}
+.DataTable table td span .cursor:nth-child(3){ background: var(--button-color1);}
+.DataTable table td span .cursor:nth-last-child(1){ border-right: none; background: var(--button-color3); }
 .DataTable .searchbar { padding: 0;}
 .loader{ width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
 .loader img{ max-width: 100%; }
-.DataTable .multipledeleteandupdatebuttan { display: inline-flex; margin-bottom: 10px;}
+.DataTable .multipledeleteandupdatebuttan { display: inline-flex; margin-top: 16px;}
 .DataTable .multipledeleteandupdatebuttan button { background: var(--button-color1);
   line-height: inherit;
   color: #000;
@@ -202,13 +202,16 @@
 /* manage listing  */
 .table_wrapper .add_header {display: flex; height: auto; justify-content: space-between; align-items: center; padding: 10px 5px; background: #f9f9f9; }
 .table_wrapper .add_header button{ background:var(--button-color2); font-family: 'Avenirmedium'; font-size: 18px; color: #fff;
-  text-transform: uppercase;}
-.table_wrapper .no_data{ font-family: 'AvenirBlack'; font-size: 18px;  }
-.bradcrumb{ display: block; font-family: 'AvenirLight';
-font-size: 16px;}
+text-transform: uppercase;}
+.table_wrapper .no_data{ font-family: 'AvenirBlack'; font-size: 18px; }
+.bradcrumb{ display: block; font-family: 'AvenirLight'; font-size: 16px;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
 .container .searchbar span{ display: flex; justify-content: space-between; }
-.container .searchbar .mat-form-field{margin-right: 10px;}
+.container .searchbar .pad-gap{ margin: 0;}
+.container .searchbar .mat-form-field{margin-right: 10px;} 
+.container .searchbar .add_button { background: var(--button-color3); font-family: 'AvenirRoman'; font-size: 16px;
+color: #fff; text-transform: uppercase;} 
+
 .container .searchbar i{margin-left: auto;}
 
 .searchbar .mat-form-field .mat-form-field-flex {
@@ -571,8 +574,10 @@ border-bottom: 2px solid; padding-bottom: 8px;}
 .calenderView .slotview .example-card:hover{ transform: scale(1.2); position: relative; z-index: 1; border: 1px solid var(--button-color3);}
 .calenderView .slotview .example-card .mat-card-actions button{ font-family: 'AvenirMedium';}
 .calenderView .slotview .example-card .mat-card-actions button:hover {transition: 200ms all; border:1px solid var(--button-color3); color: var(--button-color3); background: #fff!important; }
-
-.calenderView .example-container .button_wrapper button{ background: var(--button-color2);
-  font-family: "AvenirMedium"; font-size: 18px;}
+.calenderView .example-container .button_wrapper button{ background: var(--button-color2); font-family: "AvenirMedium"; font-size: 18px;}
 .calenderView .example-container .button_wrapper button:last-child{ background: var(--button-color3)}
 
+
+.DataTable .mat-card br{ display: none;}
+.DataTable .mat-card mat-label{ margin-right: 10px;}
+.DataTable .mat-card .tablewrapper { margin-bottom: 16px;}
