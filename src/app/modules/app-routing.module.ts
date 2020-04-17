@@ -108,6 +108,10 @@ import { AppoinmentsListingComponent } from '../components/doctor-office/manage-
 import { BookAppoinmentNowComponent } from '../components/doctor-office/manage-appointments/book-appoinment-now/book-appoinment-now.component';
 import { CalSyncWithGoogleComponent } from '../components/tech/manage-calender/manage-schedule/cal-sync-with-google/cal-sync-with-google.component';
 import { BookedEventsComponent } from '../components/tech/manage-calender/manage-schedule/booked-events/booked-events.component';
+import {AddEditInsuranceComponent} from '../components/admin/manage-insurance/add-edit-insurance/add-edit-insurance.component';
+import { ListingInsuranceComponent } from '../components/admin/manage-insurance/listing-insurance/listing-insurance.component';
+import { AddEditInsurancetypeComponent } from '../components/admin/manage-insurancetype/add-edit-insurancetype/add-edit-insurancetype.component';
+import { ListingInsurancetypeComponent } from '../components/admin/manage-insurancetype/listing-insurancetype/listing-insurancetype.component';
 
 const routes: Routes = [
   /********** Auth Route Start **********/
@@ -315,6 +319,31 @@ const routes: Routes = [
     path: 'admin/tech-management/add', 
     component: AddEditTechComponent, 
     canActivate: [AuthguardService] 
+  },{
+    path: 'admin/insurance-management', 
+    component: ListingInsuranceComponent, 
+    canActivate: [AuthguardService],
+  },
+  { 
+    path: 'admin/insurance-management/add', 
+    component: AddEditInsuranceComponent, 
+    canActivate: [AuthguardService] 
+  },
+  {
+    path: 'admin/insurance-management/edit/:_id', 
+    component: AddEditInsuranceComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { insuranceData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "insurance",
+
+        }
+      },
+      endpoint: 'datalist'
+    },
   },
   {
     path: 'admin/tech-management/edit/:_id', 
@@ -372,6 +401,30 @@ const routes: Routes = [
   {
     path: 'admin/doctor-office-management/edit/:_id', 
     component: AddEditDoctorOfcComponent, 
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+
+
+  {
+    path: 'admin/insurance-type-management', 
+    component: ListingInsurancetypeComponent, canActivate: [AuthguardService],
+  },
+  { 
+    path: 'admin/insurance-type-management/add', 
+    component: AddEditInsurancetypeComponent, 
+    canActivate: [AuthguardService] 
+  },
+  {
+    path: 'admin/insurance-type-management/edit/:_id', 
+    component: AddEditInsurancetypeComponent, 
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
