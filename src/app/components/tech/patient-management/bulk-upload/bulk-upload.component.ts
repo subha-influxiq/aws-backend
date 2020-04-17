@@ -49,24 +49,22 @@ export class BulkUploadComponent implements OnInit {
 
     this.cookiesData = JSON.parse(allcookies.user_details);
     this.cookies_id = this.cookiesData._id;
-    this.getAllDoctorData();
-
-    /* Set Meta Data */
-    this.commonFunction.setTitleMetaTags();
+    //this.getAllDoctorData();
 
     this.techBulkUploadForm = this.fb.group({
-      batch_name          : ['', [Validators.required, Validators.maxLength(40)]],
-      doctor_id           : ['', [Validators.required]],
-      doctor_name         : ['', []],
-      doctor_email        : ['', []],
-      doctor_details      : ['', []],
-      tech_id             : [this.cookies_id, [Validators.required]],
-      tech_name           : [this.cookiesData.firstname + ' ' + this.cookiesData.lastname, []],
-      tech_email          : [this.cookiesData.email, []],
-      upload_file         : ['', []],
-      status              : ['Pending Signature', []],
-      note                : ['', []],
-      report_type         : ['file', []],
+      batch_name          : ['', [ Validators.required, Validators.maxLength(40) ]],
+      report_file_type    : ['', [ Validators.required ]],
+      // doctor_id           : ['', [Validators.required]],
+      // doctor_name         : ['', []],
+      // doctor_email        : ['', []],
+      // doctor_details      : ['', []],
+      tech_id             : [ this.cookies_id, [Validators.required] ],
+      tech_name           : [ this.cookiesData.firstname + ' ' + this.cookiesData.lastname, [] ],
+      tech_email          : [ this.cookiesData.email, [] ],
+      upload_file         : [ '', [] ],
+      status              : [ 'Pending Signature', [] ],
+      note                : [ '', [] ],
+      report_type         : [ 'file', [] ],
     })
     this.user_token = cookie.get('jwtToken');
   }
@@ -124,28 +122,32 @@ export class BulkUploadComponent implements OnInit {
     this.configData.formSubmit = true;
     if (!this.configData.files) {
       return false;
-    }
-    /* Open modal */
-    let modalData: any = {
-      panelClass: 'bulkupload-dialog',
-      data: {
-        header: "Message",
-        message: "Are you sure you want to upload these reports for physician : " + this.doctorDetails.name + " ?",
-        button1: { text: "No" },
-        button2: { text: "Yes" },
-      }
+    } else {
+      this.bulkUploaddataSubmit();
     }
 
-    this.dialogRef = this.dialog.open(DialogBoxComponent, modalData);
-    this.dialogRef.afterClosed().subscribe(result => {
-      switch (result) {
-        case "No":
-          break;
-        case "Yes":
-          this.bulkUploaddataSubmit();
-          break;
-      }
-    });
+
+    /* Open modal */
+    // let modalData: any = {
+    //   panelClass: 'bulkupload-dialog',
+    //   data: {
+    //     header: "Message",
+    //     message: "Are you sure you want to upload these reports for physician : " + this.doctorDetails.name + " ?",
+    //     button1: { text: "No" },
+    //     button2: { text: "Yes" },
+    //   }
+    // }
+
+    // this.dialogRef = this.dialog.open(DialogBoxComponent, modalData);
+    // this.dialogRef.afterClosed().subscribe(result => {
+    //   switch (result) {
+    //     case "No":
+    //       break;
+    //     case "Yes":
+    //       this.bulkUploaddataSubmit();
+    //       break;
+    //   }
+    // });
   }
 
   bulkUploaddataSubmit() {
@@ -176,7 +178,7 @@ export class BulkUploadComponent implements OnInit {
       var data = {
         "source": "data_pece",
         "data": formData,
-        "doctor_details": this.doctorDetails,
+        //"doctor_details": this.doctorDetails,
         "tech_details": this.cookiesData,
         "login_url": environment.siteBaseUrl + "login",
         "sourceobj": ["tech_id", "doctor_id", "diagnostic_admin_id"],
@@ -190,7 +192,7 @@ export class BulkUploadComponent implements OnInit {
           });
 
           setTimeout(() => {
-            this.router.navigateByUrl('/tech/dashboard');
+            this.router.navigateByUrl('/tech/patient-management/bulk-upload/report-conformation/' + response.upload_id);
           }, 2000);
         }
       });

@@ -140,6 +140,7 @@ import { CalEventListingComponent } from './components/tech/manage-calender/mana
 import { AppoinmentsListingComponent } from './components/doctor-office/manage-appointments/appoinments-listing/appoinments-listing.component';
 import { BookAppoinmentNowComponent } from './components/doctor-office/manage-appointments/book-appoinment-now/book-appoinment-now.component';
 import { BookedEventsComponent } from './components/tech/manage-calender/manage-schedule/booked-events/booked-events.component';
+import { ReportConformationComponent } from './components/tech/patient-management/report-conformation/report-conformation.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -266,7 +267,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CalEventListingComponent,
     AppoinmentsListingComponent,
     BookAppoinmentNowComponent,
-    BookedEventsComponent
+    BookedEventsComponent,
+    ReportConformationComponent
     
   ],
   imports: [

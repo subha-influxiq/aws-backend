@@ -1,0 +1,136 @@
+<app-tech-header></app-tech-header>
+
+<mat-card class="admin_wrapper">
+
+  <mat-card-content class="table_wrapper">
+    <mat-toolbar class="top_header">
+      <h2> Confirm submitted records with existing patient profile which yet to have a report.</h2>
+    </mat-toolbar>
+
+
+    <table mat-table [dataSource]="confirmSubmittedDataSource" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="no">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="patient_report">
+        <th mat-header-cell *matHeaderCellDef> Patient Report </th>
+        <td mat-cell *matCellDef="let element"> {{ element.file_original_name }} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="suggested_patient_by_system">
+        <th mat-header-cell *matHeaderCellDef> Suggested Patient by System </th>
+        <td mat-cell *matCellDef="let element"> 
+          <p>Patient Name: </p>
+          <p>Date of Birth: </p>
+          <p>Gender: </p>
+          <p>Height: </p>
+          <p>Waigth: </p>
+          <p>Related Doctor: </p>
+          <p>Doctor Office: </p>
+        </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="choose_other_patient">
+        <th mat-header-cell *matHeaderCellDef> Choose Other Patient </th>
+        <td mat-cell *matCellDef="let element">
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input type="text"
+                     placeholder="Pick one"
+                     aria-label="Number"
+                     matInput
+                     [formControl]="myControl"
+                     [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of options" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="confirmSubmittedDisplayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: confirmSubmittedDisplayedColumns;"></tr>
+    </table>
+
+  </mat-card-content>
+
+
+  <mat-card-content class="table_wrapper">
+    <mat-toolbar class="top_header">
+      <h2> Conflicting Patient Records </h2>
+    </mat-toolbar>
+  </mat-card-content>
+
+  <table mat-table [dataSource]="conflictingPatientRecordsDataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="no">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="patient_report">
+      <th mat-header-cell *matHeaderCellDef> Patient Report </th>
+      <td mat-cell *matCellDef="let element"> {{ element.file_name }} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="conflicting_records">
+      <th mat-header-cell *matHeaderCellDef> Suggested Patient by System </th>
+      <td mat-cell *matCellDef="let element"> 
+        <p>Patient Name: </p>
+        <p>Date of Birth: </p>
+        <p>Gender: </p>
+        <p>Height: </p>
+        <p>Waigth: </p>
+        <p>Related Doctor: </p>
+        <p>Doctor Office: </p>
+      </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="choose_patient">
+      <th mat-header-cell *matHeaderCellDef> Choose Other Patient </th>
+      <td mat-cell *matCellDef="let element">
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <input type="text"
+                   placeholder="Pick one"
+                   aria-label="Number"
+                   matInput
+                   [formControl]="myControl"
+                   [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of options" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="conflictingPatientRecordsDisplayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: conflictingPatientRecordsDisplayedColumns;"></tr>
+  </table>
+</mat-card>
+
+
+<app-admin-footer></app-admin-footer>
