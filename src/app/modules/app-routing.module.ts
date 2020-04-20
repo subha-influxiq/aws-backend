@@ -4,8 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { MetaGuard } from '@ngx-meta/core';
 import { AuthguardService } from '../services/authguard.service';
 import { from } from 'rxjs';
+
 /* Resolve Service */
 import { ResolveService } from '../services/resolve.service';
+import { CalendarService } from '../services/calendar.service';
 
 /* Auth Component */
 import { LoginComponent } from '../components/auth/login/login.component';
@@ -415,7 +417,8 @@ const routes: Routes = [
 
   {
     path: 'admin/insurance-type-management', 
-    component: ListingInsurancetypeComponent, canActivate: [AuthguardService],
+    component: ListingInsurancetypeComponent, 
+    canActivate: [AuthguardService],
   },
   { 
     path: 'admin/insurance-type-management/add', 

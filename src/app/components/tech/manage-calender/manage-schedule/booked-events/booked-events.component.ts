@@ -10,6 +10,8 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { MatSnackBar } from '@angular/material';
 import { environment } from '../../../../../../environments/environment';
+import { Validators } from '@angular/forms';
+import moment from 'moment-es6';
 
 @Component({
   selector: 'app-booked-events',
@@ -18,20 +20,22 @@ import { environment } from '../../../../../../environments/environment';
 })
 export class BookedEventsComponent implements OnInit {
 
+  today = moment().format('L');
+  states: any = [];
+
   public configData: any = {
     appName: 'Calendar Management',
-    jwtToken: "",
+    jwtToken: '',
     baseUrl: environment.calendarApi,
     endPoint: {
-      add: "add-or-update-event-data",
-      datalist: "datalist",
-      deleteEvent: "delete-single-event",
-      viewEventSlots: "view-event-eventdayarr",
-      search: "search",
-      countSlot: "count-slot",
-      listBookedEvents: "list-booked-events",
-      deleteBookedEvent: "delete-booked-event",
-      rescheduleBookedEvent: "reschedule"
+      add: 'add-or-update-event-data',
+      datalist: 'datalist',
+      deleteEvent: 'delete-single-event',
+      viewEventSlots: 'view-event-eventdayarr',
+      search: 'search',
+      countSlot: 'count-slot',
+      addToCalendar: 'add-to-calendar',
+      getRefreshToken: 'get-refresh-token'
     },
     urls: [
       { pathUrl: 'tech/manage-calender/manage-sehedule', text: 'View Slot', color: 'primary', active: false, isExternalLink: false },
@@ -55,17 +59,16 @@ export class BookedEventsComponent implements OnInit {
       { text: 'Hawaii Standard Time', value: '-10:00|Pacific/Honolulu' }
     ],
     eventType: [
-      { text: "Admin Meetings", value: 1 },
-      { text: "Type 2", value: 2 },
-      { text: "Type 3", value: 3 },
-      { text: "Type 3", value: 4 }
+      { text: "Patient's Appointment for RM - 3A Testing", value: 1 }
     ],
-    responseData: "",
-    primaryCondition: {$or: [{event_type: 1}, {event_type: 2}]}
+    responseData: '',
+    patientInfoFormFields: {},
+    calendarInfoFormFields: {},
+    primaryCondition: { $or: [{ event_type: 1 }, { event_type: 2 }] },
   };
 
   constructor(public cookieService: CookieService, public activatedRoute: ActivatedRoute,
-              public snackBar: MatSnackBar) { }
+    public snackBar: MatSnackBar) { }
 
   ngOnInit() {
     if (this.cookieService.check('jwtToken')) {
