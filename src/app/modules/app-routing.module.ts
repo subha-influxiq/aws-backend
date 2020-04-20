@@ -4,8 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { MetaGuard } from '@ngx-meta/core';
 import { AuthguardService } from '../services/authguard.service';
 import { from } from 'rxjs';
+
 /* Resolve Service */
 import { ResolveService } from '../services/resolve.service';
+import { CalendarService } from '../services/calendar.service';
 
 /* Auth Component */
 import { LoginComponent } from '../components/auth/login/login.component';
@@ -66,6 +68,7 @@ import { AddEditPatientComponent } from '../components/admin/admin-dashboard/add
 
 /* Bulk Upload**/
 import { BulkUploadComponent } from '../components/tech/patient-management/bulk-upload/bulk-upload.component';
+import { ReportConformationComponent } from '../components/tech/patient-management/report-conformation/report-conformation.component';
 
 import { BillerDashboardComponent } from '../components/biller/biller-dashboard/biller-dashboard.component';
 
@@ -414,7 +417,8 @@ const routes: Routes = [
 
   {
     path: 'admin/insurance-type-management', 
-    component: ListingInsurancetypeComponent, canActivate: [AuthguardService],
+    component: ListingInsurancetypeComponent, 
+    canActivate: [AuthguardService],
   },
   { 
     path: 'admin/insurance-type-management/add', 
@@ -904,6 +908,11 @@ const routes: Routes = [
   { 
     path: 'tech/patient-management/bulk-upload', 
     component: BulkUploadComponent, 
+    canActivate: [AuthguardService] 
+  },
+  { 
+    path: 'tech/patient-management/bulk-upload/report-conformation/:upload_id', 
+    component: ReportConformationComponent, 
     canActivate: [AuthguardService] 
   },
   { 

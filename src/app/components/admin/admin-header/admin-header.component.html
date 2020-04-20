@@ -23,16 +23,15 @@
           <button mat-menu-item [routerLink]="['/admin/sales-person-management']" routerLinkActive="active"> Sales Person </button>
         </mat-menu>
 
-        <a mat-list-item routerLinkActive="active" [routerLink]="['/admin/dashboard']"> Dashboard </a>
         
         <!-- Drop down menu -->
-        <a mat-list-item routerLinkActive="active" > Insurance Management </a>
-          <!-- <i class="material-icons">keyboard_arrow_down</i>
+        <a mat-list-item routerLinkActive="active" [matMenuTriggerFor]="insurance"> Insurance Management
+          <i class="material-icons">keyboard_arrow_down</i>
         </a>
-        <mat-menu #userMenu="matMenu">
-          <button mat-menu-item [routerLink]="['/admin/doctor-management']" routerLinkActive="active"> Manage Insurance </button>
-          <button mat-menu-item [routerLink]="['/admin/biller-management']" routerLinkActive="active"> Manage Insurancetype </button>
-        </mat-menu> -->
+        <mat-menu #insurance="matMenu">
+          <button mat-menu-item [routerLink]="['/admin/insurance-management']" routerLinkActive="active"> Manage Insurance </button>
+          <button mat-menu-item [routerLink]="['/admin/insurance-type-management']" routerLinkActive="active"> Manage Insurance Type </button>
+        </mat-menu>
 
 
         <a mat-list-item [routerLink]="['/admin/booked-appoinments']" routerLinkActive="active"> Booked Appointments</a>

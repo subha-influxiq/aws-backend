@@ -20,6 +20,7 @@ export class CalEventListingComponent implements OnInit {
 
   public eventData: any;
 
+
   public configData: any = {
     appName: 'Calendar Management',
     jwtToken: "",
@@ -60,7 +61,8 @@ export class CalEventListingComponent implements OnInit {
         text: 'Add or Update Google Calendar', color: 'primary',
         active: true, isExternalLink: true
       }
-    ]
+    ],
+    primaryCondition: {}
   };
 
   constructor(public http: HttpClient, private httpRequest: HttpServiceService,
