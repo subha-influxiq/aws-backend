@@ -1,5 +1,6 @@
 .footer_section{ display: block; border-top: 1px solid #c7c7c7; margin-top: 30px; background: #e0e5eb; padding: 10px; margin: 0;
-  width: 100%; z-index: 1; position: fixed; bottom: -100px; transition: all 200ms;
+  width: 100%; 
+  /* z-index: 1; position: fixed; bottom: -100px; transition: all 200ms; */
  }
 .footer_section .footer_content{ width: 600px; padding: 0 16px; margin: 0 auto; display: block; text-align: center; }
 .footer_section .footer_content .link{ margin-top: 10px; display: block; margin-bottom: 6px; }
@@ -7,10 +8,10 @@
 .footer_section .footer_content .link a, .footer_section .footer_content p{ font-size: 16px; font-family: "AvenirLight"; color: #797979; text-decoration: none;}
 .footer_content p{ margin: 0; margin-bottom: 5px; }
 
-.sticky {
+/* .sticky {
   position: fixed;
   bottom: 0px;
-}
+} */
 @media screen and (max-width: 1199px){
   .sticky {
     position: inherit;
