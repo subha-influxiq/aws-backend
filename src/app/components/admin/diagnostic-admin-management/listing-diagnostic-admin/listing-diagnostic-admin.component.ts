@@ -13,6 +13,8 @@ import { CommonFunction } from '../../../../class/common/common-function';
 export class ListingDiagnosticAdminComponent implements OnInit {
 
   public allUserData: any = [];
+  public diagnosticadminData_count: any = 0;
+  public datasource: any;
   public allUserData_skip: any = [
     "_id",
     "contact_person",
@@ -24,7 +26,8 @@ export class ListingDiagnosticAdminComponent implements OnInit {
     "password",
     "created_at",
     "id",
-    "updated_at"
+    "updated_at",
+    "name_search"
   ];
   public editUrl: any = "admin/diagnostic-admin-management/edit";
   public allUserData_modify_header: any = {
@@ -50,7 +53,18 @@ export class ListingDiagnosticAdminComponent implements OnInit {
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
+  public datacollection: any='getdiagnosticadminlistdata';
   public SearchingSourceName: any = "data_diagnostic_admin_list";
+  public sortdata:any={
+    "type":'desc',
+    "field":'centername',
+    "options":['center_name']
+ };
+ public limitcond:any={
+  "limit":10,
+  "skip":0,
+  "pagecount":1
+};
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
@@ -73,9 +87,37 @@ export class ListingDiagnosticAdminComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activatedRoute.data.forEach((data) => {
-      this.TechDashboardAllData = data.data.res;
-    });
+    this.datasource = '';
+    let endpoint='getdiagnosticadminlistdata';
+    let endpointc='getdiagnosticadminlistdata-count';
+    let data:any={
+        "condition":{
+            "limit":10,
+            "skip":0
+        },
+    sort:{
+        "type":'desc',
+        "field":'centername'
+    }
+ 
+    }
+        this.httpService.httpViaPost(endpointc, data).subscribe((res:any) => {
+            // console.log('in constructor');
+            // console.log(result);
+            this.diagnosticadminData_count =res.count;
+            //console.warn('blogData c',res);
+ 
+        }, error => {
+            console.log('Oooops!');
+        });
+ 
+        this.httpService.httpViaPost(endpoint,data).subscribe((res:any) => {
+           
+            this.TechDashboardAllData =res.results.res;
+ 
+        }, error => {
+            console.log('Oooops!');
+        });
   }
 
 }

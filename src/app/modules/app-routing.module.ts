@@ -443,17 +443,7 @@ const routes: Routes = [
   {
     path: 'admin/diagnostic-admin-management', 
     component: ListingDiagnosticAdminComponent, 
-    canActivate: [AuthguardService],
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {
-          user_type: "diagnostic_admin"
-        }
-      },
-      endpoint: 'datalist'
-    },
+    canActivate: [AuthguardService]
   },
   {
     path: 'admin/diagnostic-admin-management/add', 
@@ -480,17 +470,7 @@ const routes: Routes = [
   {
     path: 'admin/sales-person-management', 
     component: ListSalesPersonComponent, 
-    canActivate: [AuthguardService], 
-    resolve: { techDashboardData: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {
-          user_type: "sales_person"
-        }
-      },
-      endpoint: 'datalist'
-    },
+    canActivate: [AuthguardService]
   },
   { 
     path: 'admin/sales-person-management/add', 
