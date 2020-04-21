@@ -1,0 +1,52 @@
+<!-- Admin Header -->
+<app-admin-header *ngIf="userData.user_type == 'admin'"></app-admin-header>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-header *ngIf="userData.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+<!-- Doctor Header -->
+<app-doctor-header *ngIf="userData.user_type == 'doctor'"></app-doctor-header>
+
+
+
+<mat-card class="admin_wrapper">
+
+  <mat-card-content class="table_wrapper">
+    <mat-toolbar class="top_header">
+      <h2> Manage Admin Biller </h2>
+    </mat-toolbar>
+
+    <mat-toolbar class="add_header">
+      <ng-container *ngIf="userData.user_type == 'admin'">
+        <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Doctor</span>
+        <button mat-flat-button [routerLink]="['/admin/adminbiller-management/add']">Add Admin Biller</button>
+      </ng-container>
+
+      <ng-container *ngIf="userData.user_type == 'diagnostic_admin'">
+        <span class="bradcrumb"><a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Admin Biller</span>
+        <button mat-flat-button [routerLink]="['/diagnostic-admin/doctor-management/add']">Add Doctor</button>
+      </ng-container>
+    </mat-toolbar>
+    <!-- End header with add button -->
+
+    <!-- Listing goes here  -->
+    <lib-listing class="DataTable" *ngIf="docData.length>0" [datasource]="docData" [skip]="docData_skip"
+      [modify_header_array]="docData_modify_header" [sourcedata]="tableName" [detail_skip_array]="previewModal_skip"
+      [apiurl]="apiUrl" [editroute]="editUrl" [jwttoken]="user_cookie" [statusarr]="status"
+      [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="searchingEndpoint"
+      [date_search_source]="searchSourceName" [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection" [date_search_source_count]="docData_count" [limitcond]="limitcond">
+
+    </lib-listing>
+
+    <h2 *ngIf="docData.length == 0">No record found.</h2>
+    <!-- Listing ends here  -->
+  </mat-card-content>
+</mat-card>
+
+
+
+<!-- Admin Footer -->
+<app-admin-footer *ngIf="userData.user_type == 'admin'"></app-admin-footer>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-footer *ngIf="userData.user_type == 'diagnostic_admin'"></app-diagnostic-admin-footer>

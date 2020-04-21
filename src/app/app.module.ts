@@ -145,6 +145,10 @@ import { AddEditInsuranceComponent } from './components/admin/manage-insurance/a
 import { ListingInsuranceComponent } from './components/admin/manage-insurance/listing-insurance/listing-insurance.component';
 import { AddEditInsurancetypeComponent } from './components/admin/manage-insurancetype/add-edit-insurancetype/add-edit-insurancetype.component';
 import { ListingInsurancetypeComponent } from './components/admin/manage-insurancetype/listing-insurancetype/listing-insurancetype.component';
+import { AddEditDoctorgroupComponent } from './components/admin/manage-doctorgroup/add-edit-doctorgroup/add-edit-doctorgroup.component';
+import { ListingDoctorgroupComponent } from './components/admin/manage-doctorgroup/listing-doctorgroup/listing-doctorgroup.component';
+import { AddEditAdminbillerComponent } from './components/admin/manage-adminbiller/add-edit-adminbiller/add-edit-adminbiller.component';
+import { ListingAdminbillerComponent } from './components/admin/manage-adminbiller/listing-adminbiller/listing-adminbiller.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -276,7 +280,11 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AddEditInsuranceComponent,
     ListingInsuranceComponent,
     AddEditInsurancetypeComponent,
-    ListingInsurancetypeComponent
+    ListingInsurancetypeComponent,
+    AddEditDoctorgroupComponent,
+    ListingDoctorgroupComponent,
+    AddEditAdminbillerComponent,
+    ListingAdminbillerComponent
     
   ],
   imports: [
