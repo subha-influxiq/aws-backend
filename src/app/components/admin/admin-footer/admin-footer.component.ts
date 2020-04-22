@@ -14,9 +14,9 @@ export class AdminFooterComponent implements OnInit {
 
   ngOnInit() {
   }
-  isSticky: boolean = false;
+  // isSticky: boolean = false;
 
-  //@HostListener('window:scroll', ['$event'])
+  // @HostListener('window:scroll', ['$event'])
 
   // checkScroll() {
   //   this.isSticky = window.pageYOffset >= 150;
