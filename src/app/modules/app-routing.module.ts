@@ -118,6 +118,8 @@ import { AddEditDoctorgroupComponent } from '../components/admin/manage-doctorgr
 import { ListingDoctorgroupComponent } from '../components/admin/manage-doctorgroup/listing-doctorgroup/listing-doctorgroup.component';
 import { AddEditAdminbillerComponent } from '../components/admin/manage-adminbiller/add-edit-adminbiller/add-edit-adminbiller.component';
 import { ListingAdminbillerComponent } from '../components/admin/manage-adminbiller/listing-adminbiller/listing-adminbiller.component';
+import { AddEditPatientinformationComponent } from '../components/admin/manage-patientinformation/add-edit-patientinformation/add-edit-patientinformation.component';
+import { ListingPatientinformationComponent } from '../components/admin/manage-patientinformation/listing-patientinformation/listing-patientinformation.component';
 
 const routes: Routes = [
   /********** Auth Route Start **********/
@@ -240,6 +242,34 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+
+  /* Patient Information Management */
+  {
+    path: 'admin/patientinformation-management', 
+    component: ListingPatientinformationComponent,
+    canActivate: [AuthguardService],
+  },
+  {
+    path: 'admin/patientinformation-management/add', 
+    component: AddEditPatientinformationComponent, 
+    canActivate: [AuthguardService] 
+  },
+  {
+    path: 'admin/patientinformation-management/edit/:_id', 
+    component: AddEditPatientinformationComponent, 
+    canActivate: [AuthguardService],
+    resolve: { patientinformationData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "patient_information"
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+
 
   /* User Management */
   { 
