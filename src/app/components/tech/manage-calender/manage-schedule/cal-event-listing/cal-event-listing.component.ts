@@ -20,9 +20,8 @@ export class CalEventListingComponent implements OnInit {
 
   public eventData: any;
 
-
   public configData: any = {
-    appName: 'Calendar Management',
+    appName: 'Calendar-Management',
     jwtToken: "",
     baseUrl: environment.calendarApi,
     endPoint: {
@@ -51,9 +50,9 @@ export class CalEventListingComponent implements OnInit {
       { text: "Admin Meetings", value: 1 }
     ],
     urls: [
-      { pathUrl: 'tech/manage-calender/manage-sehedule', text: 'View Slot', color: 'primary', active: false, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule', text: 'View Slot', color: 'primary', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/event-listing', text: 'Event Listing', color: 'accent', active: true, isExternalLink: false },
-      { pathUrl: 'tech/manage-calender/manage-sehedule/create-slot', text: 'Create Availability', color: 'warn', active: true, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/create-availability', text: 'Create Availability', color: 'warn', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/booked-events', text: 'Booked Events', color: 'accent', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/sync-with-google', text: 'Sync with Google', color: 'warn', active: true, isExternalLink: false },
       {
@@ -66,9 +65,9 @@ export class CalEventListingComponent implements OnInit {
   };
 
   constructor(public http: HttpClient, private httpRequest: HttpServiceService,
-    private router: Router, private cookieService: CookieService,
-    private snackBar: MatSnackBar, private resolveService: ResolveService,
-    public activatedRoute: ActivatedRoute) {
+              private router: Router, private cookieService: CookieService,
+              private snackBar: MatSnackBar, private resolveService: ResolveService,
+              public activatedRoute: ActivatedRoute) {
 
   }
 
@@ -76,6 +75,11 @@ export class CalEventListingComponent implements OnInit {
     if (this.cookieService.check('jwtToken')) {
       this.configData.jwtToken = this.cookieService.get('jwtToken');
       this.getEvents();
+      // Merge logged in user details with the config data
+      let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
+      this.configData = Object.assign(this.configData, userDetails);
+
+      this.configData.primaryCondition = Object.assign(this.configData.primaryCondition, {userid: {$in: [userDetails._id]}});
     }
     else {
       this.openSnackBar("Token not found", null);

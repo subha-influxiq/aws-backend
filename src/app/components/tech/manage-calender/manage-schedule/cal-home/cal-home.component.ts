@@ -16,11 +16,11 @@ import { environment } from '../../../../../../environments/environment';
   styleUrls: ['./cal-home.component.css']
 })
 export class CalHomeComponent implements OnInit {
-
+  
   public configData: any = {
     appName: 'Calendar Management',
     jwtToken: "",
-    baseUrl: environment.apiBaseUrl,
+    baseUrl: environment.calendarApi,
     endPoint: {
       add: "add-or-update-event-data",
       datalist: "datalist",
@@ -30,9 +30,9 @@ export class CalHomeComponent implements OnInit {
       countSlot: "count-slot"
     },
     urls: [
-      { pathUrl: 'tech/manage-calender/manage-sehedule', text: 'View Slot', color: 'primary', active: false, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule', text: 'View Slot', color: 'primary', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/event-listing', text: 'Event Listing', color: 'accent', active: true, isExternalLink: false },
-      { pathUrl: 'tech/manage-calender/manage-sehedule/create-slot', text: 'Create Availability', color: 'warn', active: true, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/create-availability', text: 'Create Availability', color: 'warn', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/booked-events', text: 'Booked Events', color: 'accent', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/sync-with-google', text: 'Sync with Google', color: 'warn', active: true, isExternalLink: false },
       {
@@ -51,11 +51,9 @@ export class CalHomeComponent implements OnInit {
       { text: 'Hawaii Standard Time', value: '-10:00|Pacific/Honolulu' }
     ],
     eventType: [
-      { text: "Admin Meetings", value: 1 },
-      { text: "Type 2", value: 2 },
-      { text: "Type 3", value: 3 },
-      { text: "Type 3", value: 4 }
+      { text: "Admin Meetings", value: 1 }
     ],
+    primaryCondition: {},
     responseData: ""
   };
 
@@ -67,13 +65,16 @@ export class CalHomeComponent implements OnInit {
       this.configData.jwtToken = this.cookieService.get('jwtToken');
       this.activatedRoute.data.forEach((data) => {
         this.configData.responseData = data.eventdayarrData.data;
-        console.log('responseData: ', data.eventdayarrData.data);
       });
+
+      // Merge logged in user details with the config data
+      let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
+      this.configData = Object.assign(this.configData, userDetails);
+
+      this.configData.primaryCondition = Object.assign(this.configData.primaryCondition, {userid: {$in: [userDetails._id]}});
     } else {
       this.openSnackBar("Token not found", null);
     }
-
-    console.log("Url: ", this.configData.urls.googleSync);
   }
 
   openSnackBar(message: string, action: string) {

@@ -16,15 +16,13 @@ export class CalCreateSlotComponent implements OnInit {
     appName: 'Calendar Management',
     jwtToken: '',
     baseUrl: environment.calendarApi,
-    endPoint: { 
-      add: 'add-or-update-event-data', 
-      edit: 'add-or-update-event-data'
-    },
+    endPoint: { add: 'add-or-update-event-data', edit: 'add-or-update-event-data' },
     urls: [
       { pathUrl: 'tech/manage-calender/manage-sehedule', text: 'View Slot', color: 'primary', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/event-listing', text: 'Event Listing', color: 'accent', active: true, isExternalLink: false },
-      { pathUrl: 'tech/manage-calender/manage-sehedule/create-slot', text: 'Create Slot', color: 'warn', active: true, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/create-availability', text: 'Create Availability', color: 'warn', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/booked-events', text: 'Booked Events', color: 'accent', active: true, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/sync-with-google', text: 'Sync with Google', color: 'warn', active: true, isExternalLink: false },
       {
         pathUrl: environment.googleSyncApi,
         text: 'Add or Update Google Calendar', color: 'primary',
@@ -47,7 +45,10 @@ export class CalCreateSlotComponent implements OnInit {
       { text: '120 Min', value: 120 }
     ],
     eventType: [
-      { text: "Patient's Appointment for RM - 3A Testing", value: 1 }
+      { text: 'Admin Meetings', value: 1 },
+      { text: 'Type 2', value: 2 },
+      { text: 'Type 3', value: 3 },
+      { text: 'Type 3', value: 4 }
     ]
   };
 
@@ -63,5 +64,6 @@ export class CalCreateSlotComponent implements OnInit {
       this.configData = Object.assign(this.configData, userDetails);
     }
   }
+
 
 }

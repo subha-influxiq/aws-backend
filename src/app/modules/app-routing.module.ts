@@ -833,13 +833,13 @@ const routes: Routes = [
     path: 'tech/manage-calender/manage-sehedule', 
     component: CalHomeComponent, 
     canActivate: [AuthguardService],
-    resolve: {eventdayarrData: ResolveService},
+    resolve: {eventdayarrData: CalendarService},
     data: {
       requestcondition: {
         source: 'events_eventdayarr_view',
         condition: {}
       },
-      endpoint: 'cal-view-event-eventdayarr'
+      endpoint: 'view-event-eventdayarr'
     }
   },
   { 
@@ -861,13 +861,13 @@ const routes: Routes = [
     }
   },
   { 
-    path: 'tech/manage-calender/manage-sehedule/create-slot', 
+    path: 'tech/manage-calender/manage-sehedule/create-availability', 
     component: CalCreateSlotComponent
   },
   { 
     path: 'tech/manage-calender/manage-sehedule/booked-events',
     component: BookedEventsComponent,
-    resolve: {eventListData: ResolveService},
+    resolve: {eventListData: CalendarService},
     data: {
       requestcondition: {
         source: 'google-events',
@@ -879,13 +879,13 @@ const routes: Routes = [
   { 
     path: 'tech/manage-calender/manage-sehedule/event-listing', 
     component: CalEventListingComponent,
-    resolve: {eventListData: ResolveService},
+    resolve: {eventListData: CalendarService},
     data: {
       requestcondition: {
         source: 'events',
         condition: {}
       },
-      endpoint: 'cal-datalist'
+      endpoint: 'datalist'
     },
   },
 
@@ -1284,13 +1284,13 @@ const routes: Routes = [
     path: 'doctor-office/manage-appointments/book-appoinment-now', 
     component: BookAppoinmentNowComponent,
     canActivate: [AuthguardService],
-    resolve: {eventdayarrData: ResolveService},
+    resolve: {eventdayarrData: CalendarService},
     data: {
       requestcondition: {
         source: 'events_eventdayarr_view',
-        condition: {$and: [{event_type: 1}]}
+        condition: {$or: [{event_type: 1}]}
       },
-      endpoint: 'cal-doctor-office-view-event-eventdayarr'
+      endpoint: 'view-event-eventdayarr'
     }
   },
 

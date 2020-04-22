@@ -20,9 +20,6 @@ import moment from 'moment-es6';
 })
 export class BookedEventsComponent implements OnInit {
 
-  today = moment().format('L');
-  states: any = [];
-
   public configData: any = {
     appName: 'Calendar Management',
     jwtToken: '',
@@ -34,13 +31,14 @@ export class BookedEventsComponent implements OnInit {
       viewEventSlots: 'view-event-eventdayarr',
       search: 'search',
       countSlot: 'count-slot',
-      addToCalendar: 'add-to-calendar',
-      getRefreshToken: 'get-refresh-token'
+      listBookedEvents: 'list-booked-events',
+      deleteBookedEvent: 'delete-booked-event',
+      rescheduleBookedEvent: 'reschedule'
     },
     urls: [
-      { pathUrl: 'tech/manage-calender/manage-sehedule', text: 'View Slot', color: 'primary', active: false, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule', text: 'View Slot', color: 'primary', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/event-listing', text: 'Event Listing', color: 'accent', active: true, isExternalLink: false },
-      { pathUrl: 'tech/manage-calender/manage-sehedule/create-slot', text: 'Create Availability', color: 'warn', active: true, isExternalLink: false },
+      { pathUrl: 'tech/manage-calender/manage-sehedule/create-availability', text: 'Create Availability', color: 'warn', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/booked-events', text: 'Booked Events', color: 'accent', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/sync-with-google', text: 'Sync with Google', color: 'warn', active: true, isExternalLink: false },
       {
@@ -59,29 +57,27 @@ export class BookedEventsComponent implements OnInit {
       { text: 'Hawaii Standard Time', value: '-10:00|Pacific/Honolulu' }
     ],
     eventType: [
-      { text: "Patient's Appointment for RM - 3A Testing", value: 1 }
+      { text: 'Admin Meetings', value: 1 }
     ],
     responseData: '',
-    patientInfoFormFields: {},
-    calendarInfoFormFields: {},
-    primaryCondition: { $or: [{ event_type: 1 }, { event_type: 2 }] },
+    primaryCondition: { $or: [{ event_type: 1 }] }
   };
 
   constructor(public cookieService: CookieService, public activatedRoute: ActivatedRoute,
-    public snackBar: MatSnackBar) { }
+    public snackBar: MatSnackBar) {
+  }
 
   ngOnInit() {
     if (this.cookieService.check('jwtToken')) {
       this.configData.jwtToken = this.cookieService.get('jwtToken');
       this.activatedRoute.data.forEach((data) => {
-        this.configData.responseData = data.eventListData.data;
+        this.configData.responseData = data.bookedEventList.data;
       });
-
       // Merge logged in user details with the config data
       let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
       this.configData = Object.assign(this.configData, userDetails);
     } else {
-      this.openSnackBar("Token not found", null);
+      this.openSnackBar('Token not found', null);
     }
     console.log('this.configData', this.configData);
   }
