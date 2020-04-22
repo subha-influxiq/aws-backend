@@ -18,7 +18,7 @@ import { environment } from '../../../../../environments/environment';
 export class BulkUploadComponent implements OnInit {
 
   public configData: any = {
-    baseUrl: "https://fileupload.influxhostserver.com/",
+    baseUrl: environment.fileUploadUrl,
     endpoint: "uploads",
     size: "51200", // kb
     format: ["pdf", "jpeg"], // use all small font

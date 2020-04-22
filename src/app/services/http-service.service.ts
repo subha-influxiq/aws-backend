@@ -96,6 +96,14 @@ export class HttpServiceService {
     return this.http.get(url, jsonData);
   }
 
+  getRequest(url, data) {
+    return this.http.get(this.baseUrl + url, data);
+  }
+
+  get(url) {
+    return this.http.get(url);
+  }
+
 }
 
 

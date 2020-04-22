@@ -17,53 +17,62 @@ export interface EndpointComponent {
 
 export class CalendarService implements Resolve<any> {
 
-  constructor(private http: HttpClient, public cookies: CookieService, private _apiService: HttpServiceService, private router: Router) { }
+  constructor(public http: HttpClient, private _apiService: HttpServiceService, private router: Router, private cookieService: CookieService) {
+
+  }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
-    
     /* will come into play while editing otherwise no effect */
-    var requestData: any = route.data.requestcondition;
-
-    /* Condition for all dashboard */
-    var allData: any = this.cookies.getAll();
-    var userData = JSON.parse(allData.user_details);
-    
+    let requestData: any = route.data.requestcondition;
+    requestData.condition = Object.assign(requestData.condition, route.params);
     return new Promise((resolve) => {
-      if(typeof route.data.requestcondition.source != 'string') {
-        var returnData: any = {};
-
-        for(let i = 0; i <= route.data.requestcondition.source.length - 1; i++) {
-          let data: any = {
+      if (typeof route.data.requestcondition.source != 'string') {
+        let returnData: any = {};
+        for (let i = 0; i <= route.data.requestcondition.source.length - 1; i++) {
+          var data: any = {
             source: route.data.requestcondition.source[i],
             condition: {}
           };
+          /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
+          if (route.data.endpoint == 'view-event-eventdayarr' && this.cookieService.check('timezone')) {
+            data.timezone = this.cookieService.get('timezone');
+          }
+
+          /* If endpoint is 'view-event-eventdayarr' and user is not an admin */
+          if (route.data.endpoint == 'view-event-eventdayarr' && this.cookieService.check('user_details')) {
+            data.condition = JSON.parse(this.cookieService.get('user_details')).email;
+          }
 
           this.ResolveViaPost(data, route.data.endpoint).subscribe(api_object => {
             if (api_object) {
               returnData[route.data.requestcondition.source[i]] = api_object;
-              return resolve(returnData);
             } else { // id not found
               return true;
             }
           });
         }
+        setTimeout(() => {
+          return resolve(returnData);
+        }, 3000);
       } else {
         /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
-        if (route.data.endpoint == 'view-event-eventdayarr' && this.cookies.check('timezone')) {
-          route.data.requestcondition.timezone = this.cookies.get('timezone');
+        if (route.data.endpoint == 'view-event-eventdayarr' && this.cookieService.check('timezone')) {
+          route.data.requestcondition.timezone = this.cookieService.get('timezone');
         }
 
         /* If user is not an admin */
-        // if (this.cookies.check('user_details') &&
-        //   JSON.parse(this.cookies.get('user_details')).user_type != 'admin') {
+        if (this.cookieService.check('user_details') && JSON.parse(this.cookieService.get('user_details')).user_type == 'tech') {
+          route.data.requestcondition.condition = Object.assign(
+            route.data.requestcondition.condition, {userid: {$in: [JSON.parse(this.cookieService.get('user_details'))._id]}}
+          );
+          // route.data.requestcondition.condition.$or.push({userid: JSON.parse(this.cookieService.get('user_details'))._id});
+        } else {
+          route.data.requestcondition.condition = Object.assign(
+            route.data.requestcondition.condition, {userid: {$in: JSON.parse(this.cookieService.get('user_details')).tech_id}}
+          );
+        }
 
-        //   route.data.requestcondition.condition = Object.assign(
-        //     route.data.requestcondition.condition, {useremail: JSON.parse(this.cookies.get('user_details')).email}
-        //   );
-
-        // }
-
-        this._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(api_object => {
+        this.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(api_object => {
           if (api_object) {
             return resolve(api_object);
           } else { // id not found
@@ -75,7 +84,7 @@ export class CalendarService implements Resolve<any> {
   }
 
   ResolveViaPost(requestdata: any, endpoint: any): Observable<any> {
-    var jwtToken = this.cookies.get('jwtToken');
+    var jwtToken = this.cookieService.get('jwtToken');
 
     /* set common header */
     const httpOptions = {
