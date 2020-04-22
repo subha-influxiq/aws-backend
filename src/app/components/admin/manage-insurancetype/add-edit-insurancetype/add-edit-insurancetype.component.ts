@@ -136,7 +136,7 @@ export class AddEditInsurancetypeComponent implements OnInit {
         "source": "data_pece",
         "data": this.insuranceTypeAddEditForm.value,
         "domainurl": environment.siteBaseUrl + 'reset-password',
-        "sourceobjArray": ["insurance_id"],
+        "sourceobj": ["insurance_id"],
         "token": this.cookieService.get('jwtToken')
       };
 
