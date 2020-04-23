@@ -31,25 +31,46 @@ export class ReportConformationComponent implements OnInit {
 
       var data = {
         "source": "data_pece",
-        "condition": { "upload_id": this.activatedRoute.snapshot.paramMap.get("upload_id") },
+        "condition": { 
+          "upload_id": this.activatedRoute.snapshot.paramMap.get("upload_id") 
+        },
         "token": this.htmlText.userData.jwtToken
       };
 
       this.http.httpViaPost('datalist', data).subscribe(response => {
         if(response.status == true) {
           this.confirmSubmittedDataSource = response.res;
-        }
-      });
+          console.log(">>", this.confirmSubmittedDataSource);
 
-      var data = {
-        "source": "google_events",
-        "condition": { "upload_id": this.activatedRoute.snapshot.paramMap.get("upload_id") },
-        "token": this.htmlText.userData.jwtToken
-      };
+          var patientSearch = [];
+          for(let loop = 0; loop < this.confirmSubmittedDataSource.length; loop++) {
+            let patientNameArr = this.confirmSubmittedDataSource[loop].file_original_name.split(' ');
+            this.confirmSubmittedDataSource[loop].patient_name = patientNameArr[0] + ' ' + patientNameArr[1];
+            this.confirmSubmittedDataSource[loop].patient_name_search = patientNameArr[0];
+            patientSearch.push(patientNameArr[0]);
+          }
 
-      this.http.httpViaPost('datalist', data).subscribe(response => {
-        if(response.status == true) {
-          //this.confirmSubmittedDataSource = response.res;
+          let data = {
+            "source": "google_events",
+            "condition": { 
+              "patient_name": patientSearch
+            },
+            "token": this.htmlText.userData.jwtToken
+          };
+    
+          this.http.httpViaPost('bulk-upload-patient-match', data).subscribe(response => {
+            if(response.status == true) {
+              for(let loop = 0; loop < this.confirmSubmittedDataSource.length; loop++) {
+                for(let loop2 = 0; loop2 < response.data.length; loop2++) {
+                  if(this.confirmSubmittedDataSource[loop].patient_name.toLowerCase() == response.data[loop2].patient_name.toLowerCase()) {
+                    this.confirmSubmittedDataSource[loop].patient_details = response.data[loop2];
+                  }
+                }
+              }
+
+              console.log("main: ", this.confirmSubmittedDataSource);
+            }
+          });
         }
       });
     }

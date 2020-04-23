@@ -29,11 +29,11 @@
       <ng-container matColumnDef="suggested_patient_by_system">
         <th mat-header-cell *matHeaderCellDef> Suggested Patient by System </th>
         <td mat-cell *matCellDef="let element"> 
-          <p>Patient Name: </p>
-          <p>Date of Birth: </p>
-          <p>Gender: </p>
-          <p>Height: </p>
-          <p>Waigth: </p>
+          <p>Patient Name: {{ element.patient_details.patient_name }}</p>
+          <p>Date of Birth: {{ element.patient_details.dob }}</p>
+          <p>Gender: {{ element.patient_details.gender }}</p>
+          <p>Height: {{ element.patient_details.height }}</p>
+          <p>Waigth: {{ element.patient_details.weight }}</p>
           <p>Related Doctor: </p>
           <p>Doctor Office: </p>
         </td>
