@@ -1,0 +1,134 @@
+<!-- Admin Header -->
+<app-admin-header *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-header>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-header *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+<!-- Doctor Header -->
+<app-doctor-header *ngIf="htmlText.userData.user_details.user_type == 'doctor'"></app-doctor-header>
+
+
+<mat-card class="admin_wrapper">
+  <!-- header with add button -->
+  <mat-card-content class="title_wrapper">
+    {{ htmlText.header }}
+  </mat-card-content>
+
+
+  <span class="add_header">
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/admin/patientinformation-management']">Manage PatientInformation &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/diagnostic-admin/tech-management']">Manage PatientInformation &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'doctor'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/doctor/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/doctor/tech-management']">Manage PatientInformation &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+  </span>
+  <!-- End header with add button -->
+
+  <mat-card class="add_form">
+    <mat-card-content class="form_wrapper">
+      <form class="example-form" autocomplete="off" name="patientinformationAddEditForm" [formGroup]="patientinformationAddEditForm" (ngSubmit)="patientinformationAddEditFormSubmit()">
+
+        <!-- Insurance Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Type</mat-label>
+
+          <mat-select formControlName="type">
+            <mat-option value="checkbox">Checkbox</mat-option>
+            <mat-option value="numberfield">Number Field</mat-option>
+            <mat-option value="textfield">Text Field</mat-option>
+            <mat-option value="dropdown">Dropdown</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Insurance Name End -->
+
+
+        <!-- Description Start -->
+        <mat-form-field appearance="fill">
+            <mat-label>Label</mat-label>
+  
+            <input matInput placeholder="Label" [formControl]="patientinformationAddEditForm.controls['label']"
+              (blur)="inputUntouch(patientinformationAddEditForm,'label')">
+  
+            <mat-error
+              *ngIf="patientinformationAddEditForm.controls['label'].touched && !patientinformationAddEditForm.controls['label'].valid && patientinformationAddEditForm.controls['label'].errors.required">
+              Label required.
+            </mat-error>
+  
+            <mat-error
+              *ngIf="patientinformationAddEditForm.controls['label'].touched && !patientinformationAddEditForm.controls['label'].valid && patientinformationAddEditForm.controls['label'].errors.maxlength">
+              Label is not valid.
+            </mat-error>
+          </mat-form-field>
+          <!-- Description End -->
+
+        <!-- Description Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+
+          <input matInput placeholder="Description" [formControl]="patientinformationAddEditForm.controls['description']"
+            (blur)="inputUntouch(patientinformationAddEditForm,'description')">
+
+          <mat-error
+            *ngIf="patientinformationAddEditForm.controls['description'].touched && !patientinformationAddEditForm.controls['description'].valid && patientinformationAddEditForm.controls['description'].errors.required">
+            Description required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="patientinformationAddEditForm.controls['description'].touched && !patientinformationAddEditForm.controls['description'].valid && patientinformationAddEditForm.controls['description'].errors.maxlength">
+            Description is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Description End -->
+
+        <mat-checkbox [formControl]="patientinformationAddEditForm.controls['status']" checked>Active</mat-checkbox>
+
+
+        <!-- end here -->
+        <span class="submit_form">
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+            <button mat-flat-button type="button" [routerLink]="['/admin/patientinformation-management']">Back </button>
+          </ng-container>
+
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+            <button mat-flat-button type="button" [routerLink]="['/diagnostic-admin/insurance-management']">Back </button>
+          </ng-container>
+
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'doctor'">
+            <button mat-flat-button type="button" [routerLink]="['/doctor/tech-management']">Back </button>
+          </ng-container>
+
+          <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset </button>
+          <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
+        </span>
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+
+</mat-card>
+
+
+
+<!-- Admin Footer -->
+<app-admin-footer *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-footer>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-footer *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-footer>

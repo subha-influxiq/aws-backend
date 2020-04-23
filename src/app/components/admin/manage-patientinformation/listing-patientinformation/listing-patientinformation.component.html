@@ -13,14 +13,24 @@
   <!-- header with add button -->
   <mat-card-content class="table_wrapper">
     <mat-toolbar class="top_header">
-      <h2> Manage InsuranceType </h2>
+      <h2> Manage PatientInformation </h2>
     </mat-toolbar>
 
   <span class="add_header">
 
   <ng-container *ngIf="userData.user_type == 'admin'">
-    <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Insurance Type Management</span>
-    <button mat-flat-button [routerLink]="['/admin/insurancetype-management/add']">Add InsuranceType</button>
+    <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage PatientInformation</span>
+    <button mat-flat-button [routerLink]="['/admin/patientinformation-management/add']">Add PatientInformation</button>
+  </ng-container>
+  
+  <ng-container *ngIf="userData.user_type == 'diagnostic_admin'">
+    <span class="bradcrumb"><a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Tech</span>
+    <button mat-flat-button [routerLink]="['/diagnostic-admin/tech-management/add']">Add Tech</button>
+  </ng-container>
+
+  <ng-container *ngIf="userData.user_type == 'doctor'">
+    <span class="bradcrumb"><a [routerLink]="['/doctor/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Tech</span>
+    <button mat-flat-button [routerLink]="['/doctor/tech-management/add']">Add Tech</button>
   </ng-container>
 </span>
 <!-- End header with add button -->

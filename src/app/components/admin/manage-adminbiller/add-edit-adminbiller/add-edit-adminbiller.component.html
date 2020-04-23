@@ -1,0 +1,264 @@
+<!-- Admin Header -->
+<app-admin-header *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-header>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-header *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+<!-- Doctor Header -->
+<app-doctor-header *ngIf="htmlText.userData.user_details.user_type == 'doctor'"></app-doctor-header>
+
+
+<!-- header with add button -->
+<mat-card class="admin_wrapper">
+  <mat-card-content class="title_wrapper">
+    {{ htmlText.header }}
+  </mat-card-content>
+
+
+  <span class="add_header">
+
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/admin/adminbiller-management']">Manage Admin Biller &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/diagnostic-admin/doctor-management']">Manage Admin Biller &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
+  </span>
+  <!-- End header with add button -->
+
+  <mat-card class="add_form">
+    <mat-card-content class="form_wrapper">
+      <form class="example-form" autocomplete="off" [formGroup]="adminbillerManagementAddEditForm" (ngSubmit)="adminbillerManagementAddEditFormSubmit()">
+
+        <!-- First Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
+
+          <input matInput placeholder="First Name" [formControl]="adminbillerManagementAddEditForm.controls['firstname']"
+            (blur)="inputUntouch(adminbillerManagementAddEditForm,'firstname')">
+
+          <mat-error
+            *ngIf="adminbillerManagementAddEditForm.controls['firstname'].touched && !adminbillerManagementAddEditForm.controls['firstname'].valid && adminbillerManagementAddEditForm.controls['firstname'].errors.required">
+            First Name required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="adminbillerManagementAddEditForm.controls['firstname'].touched && !adminbillerManagementAddEditForm.controls['firstname'].valid && adminbillerManagementAddEditForm.controls['firstname'].errors.maxlength">
+            First Name is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- First Name End -->
+
+        <!-- Last Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+
+          <input matInput placeholder="Last Name" [formControl]="adminbillerManagementAddEditForm.controls['lastname']"
+            (blur)="inputUntouch(adminbillerManagementAddEditForm,'lastname')">
+
+          <mat-error
+            *ngIf="adminbillerManagementAddEditForm.controls['lastname'].touched && !adminbillerManagementAddEditForm.controls['lastname'].valid && adminbillerManagementAddEditForm.controls['lastname'].errors.required">
+            Last Name required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="adminbillerManagementAddEditForm.controls['lastname'].touched && !adminbillerManagementAddEditForm.controls['lastname'].valid && adminbillerManagementAddEditForm.controls['lastname'].errors.maxlength">
+            Last Name is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Last Name End -->
+
+        <!-- Email Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Email Address</mat-label>
+
+          <input matInput placeholder="Email Address" [formControl]="adminbillerManagementAddEditForm.controls['email']"
+            (blur)="inputUntouch(adminbillerManagementAddEditForm,'email')">
+
+          <mat-error
+            *ngIf="adminbillerManagementAddEditForm.controls['email'].touched && !adminbillerManagementAddEditForm.controls['email'].valid && adminbillerManagementAddEditForm.controls['email'].errors.required">
+            Email required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="adminbillerManagementAddEditForm.controls['email'].touched && !adminbillerManagementAddEditForm.controls['email'].valid && adminbillerManagementAddEditForm.controls['email'].errors.email">
+            Email is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Email End -->
+
+
+
+        <!-- Phone Number Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+
+          <input matInput placeholder="Phone" [formControl]="adminbillerManagementAddEditForm.controls['phone']"
+            (blur)="inputUntouch(adminbillerManagementAddEditForm,'phone')">
+
+          <mat-error
+            *ngIf="adminbillerManagementAddEditForm.controls['phone'].touched && !adminbillerManagementAddEditForm.controls['phone'].valid && adminbillerManagementAddEditForm.controls['phone'].errors.required">
+            Phone Number required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="adminbillerManagementAddEditForm.controls['phone'].touched && !adminbillerManagementAddEditForm.controls['phone'].valid && adminbillerManagementAddEditForm.controls['phone'].errors.maxlength">
+            Phone Number is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Phone Number End -->
+
+
+        <!-- Address Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Address</mat-label>
+
+          <input matInput placeholder="Address" [formControl]="adminbillerManagementAddEditForm.controls['address']"
+            (blur)="inputUntouch(adminbillerManagementAddEditForm,'address')">
+
+          <mat-error *ngIf="adminbillerManagementAddEditForm.controls['address'].touched && !adminbillerManagementAddEditForm.controls['address'].valid && adminbillerManagementAddEditForm.controls['address'].errors.required">
+            Address required.
+          </mat-error>
+
+          <mat-error *ngIf="adminbillerManagementAddEditForm.controls['address'].touched && !adminbillerManagementAddEditForm.controls['address'].valid && adminbillerManagementAddEditForm.controls['address'].errors.maxlength">
+            Address is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Address End -->
+
+        <!-- State Start -->
+        <mat-form-field class="parent_cat" appearance="fill">
+          <mat-label>State</mat-label>
+
+          <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
+            <mat-option [value]="">Select State</mat-option>
+            <mat-option *ngFor="let state of htmlText.states;" value="{{ state.name }}">{{ state.name }}</mat-option>
+          </mat-select>
+
+          <mat-error *ngIf="adminbillerManagementAddEditForm.controls['state'].touched && !adminbillerManagementAddEditForm.controls['state'].valid && adminbillerManagementAddEditForm.controls['state'].errors.required">
+            State required.
+          </mat-error>
+        </mat-form-field>
+        <!-- State End -->
+
+        <!-- City Start -->
+        <mat-form-field class="parent_cat" appearance="fill">
+          <mat-label>City</mat-label>
+
+          <mat-select formControlName="city">
+            <mat-option value="">Select City</mat-option>
+            <mat-option *ngFor="let city of htmlText.cities;" value="{{ city }}">{{ city }}</mat-option>
+          </mat-select>
+
+          <mat-error *ngIf="adminbillerManagementAddEditForm.controls['city'].touched && !adminbillerManagementAddEditForm.controls['city'].valid && adminbillerManagementAddEditForm.controls['city'].errors.required">
+            State required.
+          </mat-error>
+        </mat-form-field>
+        <!-- City End -->
+
+        <!-- Tech Details Start -->
+        <mat-form-field appearance="fill" *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+          <mat-label>Select Tech</mat-label>
+          <mat-select formControlName="tech_id" multiple>
+            <mat-option [value]="">Select Tech</mat-option>
+            <mat-option *ngFor="let tech of htmlText.techData;" value="{{ tech._id }}">{{ tech.firstname }} {{tech.lastname}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Tech Details name -->
+
+        <!-- Biller Details Start -->
+        <!-- <mat-form-field appearance="fill">
+          <mat-label>Select Biiler</mat-label>
+          <mat-select formControlName="biller_id" multiple>
+            <mat-option [value]="">Select a biiler</mat-option>
+            <mat-option *ngFor="let biller of htmlText.billerData;" value="{{ biller._id }}">{{ biller.firstname }} {{ biller.lastname }}</mat-option>
+          </mat-select>
+        </mat-form-field> -->
+        <!-- Biller Details End -->
+
+        <!-- Doctor's Office Start -->
+        <!-- <mat-form-field appearance="fill">
+          <mat-label>Select Doctor's Office</mat-label>
+          <mat-select formControlName="doctors_office_id">
+            <mat-option [value]="">Select Doctor's Office</mat-option>
+            <mat-option *ngFor="let doctorOfficeData of htmlText.doctorOfficeData;" value="{{ doctorOfficeData._id }}">{{ doctorOfficeData.firstname }} {{ doctorOfficeData.lastname }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field> -->
+        <!-- Doctor's Office End -->
+
+        <!-- Zip Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Zip</mat-label>
+
+          <input type="number" matInput placeholder="ZIP" [formControl]="adminbillerManagementAddEditForm.controls['zip']"
+            (blur)="inputUntouch(adminbillerManagementAddEditForm,'zip')">
+
+          <mat-error *ngIf="adminbillerManagementAddEditForm.controls['zip'].touched && !adminbillerManagementAddEditForm.controls['zip'].valid && adminbillerManagementAddEditForm.controls['zip'].errors.required">
+            Zip required.
+          </mat-error>
+        </mat-form-field>
+        <!-- Zip Start -->
+
+
+
+        <ng-container *ngIf="!params_id">
+          <!-- Password Start -->
+          <ng-container *ngIf="!params_id">
+            <mat-form-field class="form-group" appearance="fill">
+
+              <input matInput placeholder="Password" type="password"
+                [formControl]="adminbillerManagementAddEditForm.controls['password']">
+
+              <mat-error *ngIf="!adminbillerManagementAddEditForm.controls['password'].valid && adminbillerManagementAddEditForm.controls['password'].touched">
+                Password required.
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="form-group" appearance="fill">
+              <input matInput placeholder="Confirm Password" type="password"
+                [formControl]="adminbillerManagementAddEditForm.controls['confirmpassword']">
+
+              <mat-error *ngIf="!adminbillerManagementAddEditForm.controls['confirmpassword'].valid && adminbillerManagementAddEditForm.controls['confirmpassword'].touched">
+                Password does not match
+              </mat-error>
+            </mat-form-field>
+          </ng-container>
+          <!-- Password End -->
+        </ng-container>
+
+        <!-- Status -->
+        <span class="status_wrapper">
+          <mat-checkbox formControlName="status">Active</mat-checkbox>
+        </span>
+
+        <span class="submit_form">
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+            <button mat-flat-button type="button" [routerLink]="['/admin/doctor-management']"> Back</button>
+          </ng-container>
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+            <button mat-flat-button type="button" [routerLink]="['/diagnostic-admin/doctor-management']">Back </button>
+          </ng-container>
+
+          <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset</button>
+          <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
+        </span>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</mat-card>
+
+
+<app-tech-footer></app-tech-footer>

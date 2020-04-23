@@ -114,6 +114,12 @@ import {AddEditInsuranceComponent} from '../components/admin/manage-insurance/ad
 import { ListingInsuranceComponent } from '../components/admin/manage-insurance/listing-insurance/listing-insurance.component';
 import { AddEditInsurancetypeComponent } from '../components/admin/manage-insurancetype/add-edit-insurancetype/add-edit-insurancetype.component';
 import { ListingInsurancetypeComponent } from '../components/admin/manage-insurancetype/listing-insurancetype/listing-insurancetype.component';
+import { AddEditDoctorgroupComponent } from '../components/admin/manage-doctorgroup/add-edit-doctorgroup/add-edit-doctorgroup.component';
+import { ListingDoctorgroupComponent } from '../components/admin/manage-doctorgroup/listing-doctorgroup/listing-doctorgroup.component';
+import { AddEditAdminbillerComponent } from '../components/admin/manage-adminbiller/add-edit-adminbiller/add-edit-adminbiller.component';
+import { ListingAdminbillerComponent } from '../components/admin/manage-adminbiller/listing-adminbiller/listing-adminbiller.component';
+import { AddEditPatientinformationComponent } from '../components/admin/manage-patientinformation/add-edit-patientinformation/add-edit-patientinformation.component';
+import { ListingPatientinformationComponent } from '../components/admin/manage-patientinformation/listing-patientinformation/listing-patientinformation.component';
 
 const routes: Routes = [
   /********** Auth Route Start **********/
@@ -236,6 +242,34 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+
+  /* Patient Information Management */
+  {
+    path: 'admin/patientinformation-management', 
+    component: ListingPatientinformationComponent,
+    canActivate: [AuthguardService],
+  },
+  {
+    path: 'admin/patientinformation-management/add', 
+    component: AddEditPatientinformationComponent, 
+    canActivate: [AuthguardService] 
+  },
+  {
+    path: 'admin/patientinformation-management/edit/:_id', 
+    component: AddEditPatientinformationComponent, 
+    canActivate: [AuthguardService],
+    resolve: { patientinformationData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "patient_information"
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+
 
   /* User Management */
   { 
@@ -391,6 +425,63 @@ const routes: Routes = [
   },
   
   /* Doctor Office Management */
+
+    /* Admin Biller Management */
+    {
+      path: 'admin/adminbiller-management', 
+      component: ListingAdminbillerComponent, 
+      canActivate: [AuthguardService]
+    },
+    { 
+      path: 'admin/adminbiller-management/add', 
+      component: AddEditAdminbillerComponent 
+    },
+    {
+      path: 'admin/adminbiller-management/edit/:_id', 
+      component: AddEditBillerComponent, 
+      canActivate: [AuthguardService],
+      resolve: { data: ResolveService },
+      data: {
+        requestcondition: {
+          source: 'data_pece',
+          condition: {
+            user_type: "admin_biller"
+          }
+        },
+        endpoint: 'datalist'
+      },
+    },
+    
+    /* Admin Biller Management */
+
+    /* Doctor Group Management */
+    {
+      path: 'admin/doctor-management/group', 
+      component: ListingDoctorgroupComponent, 
+      canActivate: [AuthguardService]
+    },
+    { 
+      path: 'admin/doctor-management/group/add', 
+      component: AddEditDoctorgroupComponent 
+    },
+    {
+      path: 'admin/doctor-management/group/edit/:_id', 
+      component: AddEditDoctorgroupComponent, 
+      canActivate: [AuthguardService],
+      resolve: { data: ResolveService },
+      data: {
+        requestcondition: {
+          source: 'data_pece',
+          condition: {
+            user_type: "doctor_group"
+          }
+        },
+        endpoint: 'datalist'
+      },
+    },
+    
+    /* Doctor Group Management */
+
   {
     path: 'admin/doctor-office-management', 
     component: DoctorOfficeManagementComponent, canActivate: [AuthguardService],
