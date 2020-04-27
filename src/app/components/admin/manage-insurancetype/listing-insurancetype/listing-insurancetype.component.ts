@@ -29,7 +29,7 @@ export class ListingInsurancetypeComponent implements OnInit {
     "diagnostic_admin_id",
     "name_search"
   ];
-  public editUrl: any = "admin/insurance-management/edit";
+  public editUrl: any = "admin/insurance-type-management/edit";
   public allUserData_modify_header: any = {
     "insurancetype_name": "InsuranceType Name",
     "description": "Description",
