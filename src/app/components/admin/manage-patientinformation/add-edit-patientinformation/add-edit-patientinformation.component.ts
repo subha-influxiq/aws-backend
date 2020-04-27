@@ -8,6 +8,8 @@ import { MatSnackBar } from '@angular/material';
 import { CommonFunction } from '../../../../class/common/common-function';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { environment } from '../../../../../environments/environment';
+import {MatChipInputEvent} from '@angular/material';
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
 
 export interface DialogData {
   message: string;
@@ -22,10 +24,14 @@ export interface DialogData {
 export class AddEditPatientinformationComponent implements OnInit {
 
   @ViewChild(FormGroupDirective, { static: false }) formDirective: FormGroupDirective;
-
+  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+  selectable = true;
+  removable = true;
+  addOnBlur = true;
   public patientinformationAddEditForm: FormGroup;
   public dialogRef: any;
-
+  public addfieldFlage:boolean=false;
+  public addfieldArray:any =[];
   public params_id: any;
   public htmlText: any = {
     userData: "",
@@ -61,6 +67,7 @@ export class AddEditPatientinformationComponent implements OnInit {
       let validateRule: any = {
         id:               ['', []],
         type:        ['', []],
+        addfield:    ['',[]],
         label:        ['', [ Validators.required, Validators.maxLength(50) ]],
         description:         ['', [ Validators.required, Validators.maxLength(5000) ]],
         user_type:        ['patient_information', []],
@@ -76,6 +83,7 @@ export class AddEditPatientinformationComponent implements OnInit {
   
             this.patientinformationAddEditForm.controls['id'].patchValue(patientinformationDetails [0]._id);
             this.patientinformationAddEditForm.controls['type'].patchValue(patientinformationDetails [0].type);
+            this.patientinformationAddEditForm.controls['addfield'].patchValue(patientinformationDetails [0].addfield);
             this.patientinformationAddEditForm.controls['label'].patchValue(patientinformationDetails [0].label);
             this.patientinformationAddEditForm.controls['description'].patchValue(patientinformationDetails [0].description);
             this.patientinformationAddEditForm.controls['status'].patchValue(patientinformationDetails [0].status);
@@ -90,7 +98,28 @@ export class AddEditPatientinformationComponent implements OnInit {
 
   ngOnInit() {
   }
+  openType(){
+    // console.warn( this.patientinformationAddEditForm.controls['type'].value);
+    if(this.patientinformationAddEditForm.controls['type'].value=='dropdown') {
+      this.addfieldFlage=true;
+    } else {
+      this.addfieldFlage=false;
+    }
+  }
 
+  //keyUp event for email
+  collect_field(event: MatChipInputEvent):void{
+    const input=event.input;
+    const value = event.value;
+      this.addfieldArray.push(value);
+      if(input){
+        input.value='';
+      }
+  }
+//delete mass email
+  clearField(index) {
+    this.addfieldArray.splice(index, 1);
+  }
     /**for validation purpose**/
     inputUntouch(form: any, val: any) {
       form.controls[val].markAsUntouched();
@@ -109,7 +138,7 @@ export class AddEditPatientinformationComponent implements OnInit {
         } else {
           this.patientinformationAddEditForm.value.status = parseInt("0");
         }
-        
+        this.patientinformationAddEditForm.value.addfield=this.addfieldArray;
         var data: any = {
           "source": "data_pece",
           "data": this.patientinformationAddEditForm.value,

@@ -120,7 +120,8 @@ import { AddEditAdminbillerComponent } from '../components/admin/manage-adminbil
 import { ListingAdminbillerComponent } from '../components/admin/manage-adminbiller/listing-adminbiller/listing-adminbiller.component';
 import { AddEditPatientinformationComponent } from '../components/admin/manage-patientinformation/add-edit-patientinformation/add-edit-patientinformation.component';
 import { ListingPatientinformationComponent } from '../components/admin/manage-patientinformation/listing-patientinformation/listing-patientinformation.component';
-
+import { AddEditDistributorsComponent } from '../components/admin/manage-distributors/add-edit-distributors/add-edit-distributors.component';
+import { ListingDistributorsComponent } from '../components/admin/manage-distributors/listing-distributors/listing-distributors.component';
 const routes: Routes = [
   /********** Auth Route Start **********/
   { 
@@ -344,6 +345,38 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+
+  /* Distributors Management Start */
+
+  {
+    path: 'admin/distributors-management', 
+    component: ListingDistributorsComponent, 
+    canActivate: [AuthguardService],
+  },
+  { 
+    path: 'admin/distributors-management/add', 
+    component: AddEditDistributorsComponent, 
+    canActivate: [AuthguardService] 
+  },
+  {
+    path: 'admin/distributors-management/edit/:_id', 
+    component: AddEditDistributorsComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { distributorsData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "distributors",
+
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+
+
+  /* Distributors Management End */
   
   /* Tech Management */
   {

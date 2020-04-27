@@ -151,6 +151,8 @@ import { AddEditAdminbillerComponent } from './components/admin/manage-adminbill
 import { ListingAdminbillerComponent } from './components/admin/manage-adminbiller/listing-adminbiller/listing-adminbiller.component';
 import { AddEditPatientinformationComponent } from './components/admin/manage-patientinformation/add-edit-patientinformation/add-edit-patientinformation.component';
 import { ListingPatientinformationComponent } from './components/admin/manage-patientinformation/listing-patientinformation/listing-patientinformation.component';
+import { AddEditDistributorsComponent } from './components/admin/manage-distributors/add-edit-distributors/add-edit-distributors.component';
+import { ListingDistributorsComponent } from './components/admin/manage-distributors/listing-distributors/listing-distributors.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -288,7 +290,9 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AddEditAdminbillerComponent,
     ListingAdminbillerComponent,
     AddEditPatientinformationComponent,
-    ListingPatientinformationComponent
+    ListingPatientinformationComponent,
+    AddEditDistributorsComponent,
+    ListingDistributorsComponent
     
   ],
   imports: [

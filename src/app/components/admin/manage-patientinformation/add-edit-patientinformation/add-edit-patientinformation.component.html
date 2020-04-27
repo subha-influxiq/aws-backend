@@ -51,13 +51,44 @@
           <mat-label>Type</mat-label>
 
           <mat-select formControlName="type">
-            <mat-option value="checkbox">Checkbox</mat-option>
-            <mat-option value="numberfield">Number Field</mat-option>
-            <mat-option value="textfield">Text Field</mat-option>
-            <mat-option value="dropdown">Dropdown</mat-option>
+            <mat-option value="checkbox" (click)="openType();">Checkbox</mat-option>
+            <mat-option value="numberfield" (click)="openType();">Number Field</mat-option>
+            <mat-option value="textfield" (click)="openType();">Text Field</mat-option>
+            <mat-option value="dropdown" (click)="openType();">Dropdown</mat-option>
           </mat-select>
         </mat-form-field>
         <!-- Insurance Name End -->
+
+
+        <!-- Add Field Start -->
+        <ng-container *ngIf="addfieldFlage==true">
+          <!-- <mat-form-field appearance="fill" >
+          <mat-label>Add Field</mat-label>
+
+          <input matInput placeholder="Add Field" [formControl]="patientinformationAddEditForm.controls['addfield']"> 
+
+         <mat-error
+            *ngIf="patientinformationAddEditForm.controls['addfield'].touched && !patientinformationAddEditForm.controls['addfield'].valid && patientinformationAddEditForm.controls['addfield'].errors.required">
+            Add Field required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="patientinformationAddEditForm.controls['addfield'].touched && !patientinformationAddEditForm.controls['addfield'].valid && patientinformationAddEditForm.controls['addfield'].errors.maxlength">
+            Add Field is not valid.
+          </mat-error>
+       </mat-form-field> -->
+       <mat-form-field appearance="fill">
+       <mat-chip-list #chipListt>
+        <mat-chip *ngFor="let cma of addfieldArray;let i = index" [selectable]="selectable"
+        [removable]="removable" (removed)="clearField(i)">{{ cma }}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+      <input matInput placeholder="Add Fields" [formControl]="patientinformationAddEditForm.controls['addfield']" [matChipInputFor]="chipListt" [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="collect_field($event)"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes">
+      </mat-chip-list>
+    </mat-form-field>
+        </ng-container>
+        <!-- Add Field End -->
 
 
         <!-- Description Start -->
