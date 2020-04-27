@@ -346,7 +346,6 @@ const routes: Routes = [
     },
   },
 
-<<<<<<< HEAD
   /* Distributors Management Start */
 
   {
@@ -379,8 +378,6 @@ const routes: Routes = [
 
   /* Distributors Management End */
   
-=======
->>>>>>> 9fc07c0d276f2aedc3c501c1f5bb83966f12a75b
   /* Tech Management */
   {
     path: 'admin/tech-management',
