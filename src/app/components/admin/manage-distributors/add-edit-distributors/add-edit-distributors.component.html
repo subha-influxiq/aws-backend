@@ -46,43 +46,43 @@
     <mat-card-content class="form_wrapper">
       <form class="example-form" autocomplete="off" name="DistributorsManagementAddEditForm" [formGroup]="DistributorsManagementAddEditForm" (ngSubmit)="DistributorsManagementAddEditFormSubmit()">
 
-        <!-- First Name Start -->
+        <!-- Distributor Name Start -->
         <mat-form-field appearance="fill">
-          <mat-label>First Name</mat-label>
+          <mat-label>Distributor Name</mat-label>
 
-          <input matInput placeholder="First Name" [formControl]="DistributorsManagementAddEditForm.controls['firstname']"
-            (blur)="inputUntouch(DistributorsManagementAddEditForm,'firstname')">
+          <input matInput placeholder="Distributor Name" [formControl]="DistributorsManagementAddEditForm.controls['distributorname']"
+            (blur)="inputUntouch(DistributorsManagementAddEditForm,'distributorname')">
 
           <mat-error
-            *ngIf="DistributorsManagementAddEditForm.controls['firstname'].touched && !DistributorsManagementAddEditForm.controls['firstname'].valid && DistributorsManagementAddEditForm.controls['firstname'].errors.required">
-            First Name required.
+            *ngIf="DistributorsManagementAddEditForm.controls['distributorname'].touched && !DistributorsManagementAddEditForm.controls['distributorname'].valid && DistributorsManagementAddEditForm.controls['distributorname'].errors.required">
+            Distributor Name required.
           </mat-error>
 
           <mat-error
-            *ngIf="DistributorsManagementAddEditForm.controls['firstname'].touched && !DistributorsManagementAddEditForm.controls['firstname'].valid && DistributorsManagementAddEditForm.controls['firstname'].errors.maxlength">
-            First Name is not valid.
+            *ngIf="DistributorsManagementAddEditForm.controls['distributorname'].touched && !DistributorsManagementAddEditForm.controls['distributorname'].valid && DistributorsManagementAddEditForm.controls['distributorname'].errors.maxlength">
+            Distributor Name is not valid.
           </mat-error>
         </mat-form-field>
-        <!-- First Name End -->
+        <!-- Distributor Name End -->
 
-        <!-- Last Name Start -->
+        <!-- Contact Person Name Start -->
         <mat-form-field appearance="fill">
-          <mat-label>Last Name</mat-label>
+          <mat-label>Contact Person</mat-label>
 
-          <input matInput placeholder="Last Name" [formControl]="DistributorsManagementAddEditForm.controls['lastname']"
-            (blur)="inputUntouch(DistributorsManagementAddEditForm,'lastname')">
+          <input matInput placeholder="Contact Person" [formControl]="DistributorsManagementAddEditForm.controls['contactperson']"
+            (blur)="inputUntouch(DistributorsManagementAddEditForm,'contactperson')">
 
           <mat-error
-            *ngIf="DistributorsManagementAddEditForm.controls['lastname'].touched && !DistributorsManagementAddEditForm.controls['lastname'].valid && DistributorsManagementAddEditForm.controls['lastname'].errors.required">
-            Last Name required.
+            *ngIf="DistributorsManagementAddEditForm.controls['contactperson'].touched && !DistributorsManagementAddEditForm.controls['contactperson'].valid && DistributorsManagementAddEditForm.controls['contactperson'].errors.required">
+            Contact Person required.
           </mat-error>
 
           <mat-error
-            *ngIf="DistributorsManagementAddEditForm.controls['lastname'].touched && !DistributorsManagementAddEditForm.controls['lastname'].valid && DistributorsManagementAddEditForm.controls['lastname'].errors.maxlength">
-            Last Name is not valid.
+            *ngIf="DistributorsManagementAddEditForm.controls['contactperson'].touched && !DistributorsManagementAddEditForm.controls['contactperson'].valid && DistributorsManagementAddEditForm.controls['contactperson'].errors.maxlength">
+            Contact Person is not valid.
           </mat-error>
         </mat-form-field>
-        <!-- Last Name End -->
+        <!-- Contact Person End -->
 
         <!-- Email Start -->
         <mat-form-field appearance="fill">

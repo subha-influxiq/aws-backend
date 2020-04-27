@@ -32,8 +32,8 @@ export class ListingDistributorsComponent implements OnInit {
   ];
   public editUrl: any = "admin/tech-management/edit";
   public allUserData_modify_header: any = {
-    "firstname": "First Name",
-    "lastname": "Last Name",
+    "distributorname": "Distributor Name",
+    "contactperson": "Contact Person",
     "email": "Email",
     "status": "Status",
     "phone": "Phone Number"
@@ -59,8 +59,8 @@ export class ListingDistributorsComponent implements OnInit {
   public datacollection: any='getdistributorslistdata';
   public sortdata:any={
     "type":'desc',
-    "field":'firstname',
-    "options":['firstname']
+    "field":'distributorname',
+    "options":['distributorname']
  };
  public limitcond:any={
   "limit":10,
@@ -70,8 +70,8 @@ export class ListingDistributorsComponent implements OnInit {
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
-      textsearch: [{ label: "Search By Name", field: 'name_search' },
-      { label: "Search By E-Mail", field: 'email' }],
+      textsearch: [{ label: "Search By Distributor Name", field: 'distributorname_search' },
+      { label: "Search By E-Mail", field: 'email' },{ label: "Search By Contact Person", field: 'contactperson_sesrch' }],
 
     };
   public user_cookie: any;
@@ -109,7 +109,7 @@ export class ListingDistributorsComponent implements OnInit {
         },
     sort:{
         "type":'desc',
-        "field":'firstname'
+        "field":'distributorname'
     }
  
     }

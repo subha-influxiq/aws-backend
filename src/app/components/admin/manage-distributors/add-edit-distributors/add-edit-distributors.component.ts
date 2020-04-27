@@ -63,8 +63,8 @@ export class AddEditDistributorsComponent implements OnInit {
   generateAddEditForm(flag: string = null) {
     let validateRule: any = {
       id:               ['', []],
-      firstname:        ['', [ Validators.required, Validators.maxLength(50) ]],
-      lastname:         ['', [ Validators.required, Validators.maxLength(50) ]],
+      distributorname:        ['', [ Validators.required, Validators.maxLength(50) ]],
+      contactperson:         ['', [ Validators.required, Validators.maxLength(50) ]],
       email:            ['', [ Validators.required, Validators.email, Validators.maxLength(100) ]],
       phone:            ['', [ Validators.required, Validators.minLength(7), Validators.maxLength(16) ]],
       address:          ['', [ Validators.required, Validators.maxLength(200) ]],
@@ -92,8 +92,8 @@ export class AddEditDistributorsComponent implements OnInit {
           }, 1000);
 
           this.DistributorsManagementAddEditForm.controls['id'].patchValue(distributorsDetails[0]._id);
-          this.DistributorsManagementAddEditForm.controls['firstname'].patchValue(distributorsDetails[0].firstname);
-          this.DistributorsManagementAddEditForm.controls['lastname'].patchValue(distributorsDetails[0].lastname);
+          this.DistributorsManagementAddEditForm.controls['firstname'].patchValue(distributorsDetails[0].distributorname);
+          this.DistributorsManagementAddEditForm.controls['lastname'].patchValue(distributorsDetails[0].contactperson);
           this.DistributorsManagementAddEditForm.controls['email'].patchValue(distributorsDetails[0].email);
           this.DistributorsManagementAddEditForm.controls['phone'].patchValue(distributorsDetails[0].phone);
           this.DistributorsManagementAddEditForm.controls['address'].patchValue(distributorsDetails[0].address);
