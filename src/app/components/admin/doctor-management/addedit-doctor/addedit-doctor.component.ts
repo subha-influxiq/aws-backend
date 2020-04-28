@@ -201,6 +201,14 @@ export class AddeditDoctorComponent implements OnInit {
       data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
     }
 
+    if(this.htmlText.userData.user_details.user_type == 'doctor_group') {
+      data['doctorgroup_id_object'] = this.htmlText.userData.user_details._id;
+    }
+
+    if(this.htmlText.userData.user_details.user_type == 'distributors') {
+      data['distributor_id_object'] = this.htmlText.userData.user_details._id;
+    }
+
     this.http.httpViaPost('datalist-doctor-add', data).subscribe(response => {
       this.htmlText.techData = response.data.tech_data;
       this.htmlText.doctorOfficeData = response.data.doctor_office_data;
@@ -238,6 +246,16 @@ export class AddeditDoctorComponent implements OnInit {
         postData["sourceobjArray"] = ["tech_id"];
       }
 
+      if(this.htmlText.userData.user_details.user_type == 'doctor_group') {
+        postData.data["doctorgroup_id_object"] = this.htmlText.userData.user_details._id;
+        postData["sourceobj"] = ["doctorgroup_id_object"];
+      }
+
+      if(this.htmlText.userData.user_details.user_type == 'distributors') {
+        postData.data["distributor_id_object"] = this.htmlText.userData.user_details._id;
+        postData["sourceobj"] = ["distributor_id_object"];
+      }
+
       this.http.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
         if (response.status == "success") {
           this.snackBar.open(this.htmlText.message, 'Ok', {
@@ -252,6 +270,12 @@ export class AddeditDoctorComponent implements OnInit {
               case 'admin':
                 this.router.navigateByUrl("diagnostic-admin/doctor-management");
                 break;
+              case 'distributors':
+                this.router.navigateByUrl("distributors/doctor-management");
+                break; 
+              case 'doctor_group':
+                this.router.navigateByUrl("doctor-group/doctor-management");
+                break; 
             }
           }, 1000);
         } else {

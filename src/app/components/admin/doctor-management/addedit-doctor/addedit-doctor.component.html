@@ -33,6 +33,22 @@
       </span>
     </ng-container>
 
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'distributors'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/distributors/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/distributors/doctor-management']">Manage Doctor &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'doctor_group'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/doctor-group/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/doctor-group/doctor-management']">Manage Doctor &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
   </span>
   <!-- End header with add button -->
 
@@ -292,6 +308,12 @@
           </ng-container>
           <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
             <button mat-flat-button type="button" [routerLink]="['/diagnostic-admin/doctor-management']">Back </button>
+          </ng-container>
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'distributors'">
+            <button mat-flat-button type="button" [routerLink]="['/distributors/doctor-management']">Back </button>
+          </ng-container>
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'doctor_group'">
+            <button mat-flat-button type="button" [routerLink]="['/doctor-group/doctor-management']">Back </button>
           </ng-container>
 
           <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset</button>
