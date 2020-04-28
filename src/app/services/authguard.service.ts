@@ -35,10 +35,14 @@ export class AuthguardService implements CanActivate {
               if(userData.user_type == 'sales_person' && next.url[0].path == 'sales-person') {
                 return true;
               } else {
-                if(next.url[0].path == userData.user_type) {
+                if(userData.user_type == 'doctor_group' && next.url[0].path == 'doctor-group') {
                   return true;
                 } else {
-                  this._router.navigate([userData.user_type.replace("_", "-") + '/dashboard']);
+                  if(next.url[0].path == userData.user_type) {
+                    return true;
+                  } else {
+                    this._router.navigate([userData.user_type.replace("_", "-") + '/dashboard']);
+                  }
                 }
               }
             }

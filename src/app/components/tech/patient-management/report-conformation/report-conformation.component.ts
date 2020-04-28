@@ -62,16 +62,16 @@ export class ReportConformationComponent implements OnInit {
     this.http.httpViaPost('datalist', data).subscribe(response => {
       if(response.status == true) {
         /* Get name using file name start */
-        var confirmSubmittedDataSource: any = response.res;
+        this.htmlText.confirmSubmittedDataSource = response.res;
         var patientSearch = [];
         
-        for(let loop = 0; loop < confirmSubmittedDataSource.length; loop++) {
-          let patientNameArr = confirmSubmittedDataSource[loop].file_original_name.split(' ');
-          confirmSubmittedDataSource[loop].patient_name = patientNameArr[0] + ' ' + patientNameArr[1];
-          confirmSubmittedDataSource[loop].patient_name_search = patientNameArr[0];
+        for(let loop = 0; loop < this.htmlText.confirmSubmittedDataSource.length; loop++) {
+          let patientNameArr = this.htmlText.confirmSubmittedDataSource[loop].file_original_name.split(' ');
+          this.htmlText.confirmSubmittedDataSource[loop].patient_name = patientNameArr[0] + ' ' + patientNameArr[1];
+          this.htmlText.confirmSubmittedDataSource[loop].patient_name_search = patientNameArr[0];
           patientSearch.push(patientNameArr[0]);
 
-          confirmSubmittedDataSource[loop].patient_details = [];
+          this.htmlText.confirmSubmittedDataSource[loop].patient_details = [];
         }
         /* Get name using file name end */
 
@@ -90,43 +90,43 @@ export class ReportConformationComponent implements OnInit {
             this.options.push(response.data.match_patient[loop].patient_name);
           }
           this.htmlText.options = response.data.match_patient;
-          var conflictingPatientRecordsDataSource: any = [];
+          this.htmlText.conflictingPatientRecordsDataSource = [];
 
           if(response.status == "success") {
-            for(let loop = 0; loop < confirmSubmittedDataSource.length; loop++) {
+            for(let loop = 0; loop < this.htmlText.confirmSubmittedDataSource.length; loop++) {
               for(let loop2 = 0; loop2 < response.data.match_patient.length; loop2++) {
                 /* For find some patient */
-                if(confirmSubmittedDataSource[loop].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
+                if(this.htmlText.confirmSubmittedDataSource[loop].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
                   /* checking duplicate */
-                  if(typeof(confirmSubmittedDataSource[loop].patient_find_flag) == 'undefined') {
-                    confirmSubmittedDataSource[loop].patient_find_flag = true;
-                    confirmSubmittedDataSource[loop].patient_details.push(response.data.match_patient[loop2]);
+                  if(typeof(this.htmlText.confirmSubmittedDataSource[loop].patient_find_flag) == 'undefined') {
+                    this.htmlText.confirmSubmittedDataSource[loop].patient_find_flag = true;
+                    this.htmlText.confirmSubmittedDataSource[loop].patient_details.push(response.data.match_patient[loop2]);
                   } else {
-                    conflictingPatientRecordsDataSource.push(confirmSubmittedDataSource[loop]);
-                    conflictingPatientRecordsDataSource[loop].patient_details.push(response.data.match_patient[loop2]);
+                    this.htmlText.conflictingPatientRecordsDataSource.push(this.htmlText.confirmSubmittedDataSource[loop]);
+                    this.htmlText.conflictingPatientRecordsDataSource[loop].patient_details.push(response.data.match_patient[loop2]);
                   }
                 }
               }
             }
 
             /* Delete conflict data */
-            for(let loop = 0; loop < confirmSubmittedDataSource.length; loop++) {
-              if(confirmSubmittedDataSource[loop].patient_details.length > 1) {
-                confirmSubmittedDataSource.splice(loop, 1);
+            for(let loop = 0; loop < this.htmlText.confirmSubmittedDataSource.length; loop++) {
+              if(this.htmlText.confirmSubmittedDataSource[loop].patient_details.length > 1) {
+                this.htmlText.confirmSubmittedDataSource.splice(loop, 1);
               }
             }
 
             /* Add not find data */
-            var notFindDataSource: any = [];
-            for(let loop = 0; loop < confirmSubmittedDataSource.length; loop++) {
-              if(typeof(confirmSubmittedDataSource[loop].patient_find_flag) == 'undefined') {
-                notFindDataSource.push(confirmSubmittedDataSource[loop]);
+            this.htmlText.notFindDataSource = [];
+            for(let loop = 0; loop < this.htmlText.confirmSubmittedDataSource.length; loop++) {
+              if(typeof(this.htmlText.confirmSubmittedDataSource[loop].patient_find_flag) == 'undefined') {
+                this.htmlText.notFindDataSource.push(this.htmlText.confirmSubmittedDataSource[loop]);
               }
             }
 
-            this.confirmSubmittedDataSource = new MatTableDataSource(confirmSubmittedDataSource);
-            this.conflictingPatientRecordsDataSource = new MatTableDataSource(conflictingPatientRecordsDataSource);
-            this.notFindPatientRecordsDataSource = new MatTableDataSource(notFindDataSource);
+            this.confirmSubmittedDataSource = new MatTableDataSource(this.htmlText.confirmSubmittedDataSource);
+            this.conflictingPatientRecordsDataSource = new MatTableDataSource(this.htmlText.conflictingPatientRecordsDataSource);
+            this.notFindPatientRecordsDataSource = new MatTableDataSource(this.htmlText.notFindDataSource);
           }
         });
       }
@@ -141,6 +141,7 @@ export class ReportConformationComponent implements OnInit {
   }
 
   selectArrayIndex(flag, index) {
+    console.log(flag, index);
     this.autocomplateData.flag = flag;
     this.autocomplateData.arrayIndex = index;
   }
@@ -155,7 +156,35 @@ export class ReportConformationComponent implements OnInit {
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-    console.log(">>>>>", this.htmlText.options[this.autocomplateData.arrayIndex]);
+
+    switch(this.autocomplateData.flag) {
+      case 'find':
+        var patientData: any;
+        for(let loop = 0; loop < this.htmlText.options.length; loop++) {
+          if(this.htmlText.options[loop].patient_name == value) {
+            patientData = this.htmlText.options[loop];
+          }
+        }
+
+        this.htmlText.confirmSubmittedDataSource[this.autocomplateData.arrayIndex].patient_details.push(patientData);
+        this.htmlText.confirmSubmittedDataSource[this.autocomplateData.arrayIndex].patient_details.splice(0, 1);
+        this.confirmSubmittedDataSource = new MatTableDataSource(this.htmlText.confirmSubmittedDataSource);
+        
+        this.autocomplateData.flag = "";
+        this.autocomplateData.arrayIndex = "";
+        break;
+      case 'conflicting':
+        this.htmlText.conflictingPatientRecordsDataSource[this.autocomplateData.arrayIndex].patient_details.push(this.htmlText.options[this.autocomplateData.arrayIndex]);
+        this.htmlText.conflictingPatientRecordsDataSource[this.autocomplateData.arrayIndex].patient_details.splice(0, 1);
+        this.conflictingPatientRecordsDataSource = new MatTableDataSource(this.htmlText.conflictingPatientRecordsDataSource);
+        
+        break;
+      case 'not found':
+        this.notFindPatientRecordsDataSource = new MatTableDataSource(this.htmlText.notFindDataSource);
+        console.log(">>>>>", this.htmlText.options[this.autocomplateData.arrayIndex]);
+        break;
+    }
+
     return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
 
