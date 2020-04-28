@@ -28,7 +28,7 @@ export class ReportConformationComponent implements OnInit {
   public conflictingPatientRecordsDataSource: any = [];
 
   /* Not Find Patient Records */
-  public notFindPatientRecordsDisplayedColumns: string[] = ["no", "patient_report", "conflicting_records", "choose_patient"];
+  public notFindPatientRecordsDisplayedColumns: string[] = ["no", "patient_report", "choose_other_patient"];
   public notFindPatientRecordsDataSource: any = [];
 
   public htmlText: any = {};
@@ -37,6 +37,14 @@ export class ReportConformationComponent implements OnInit {
   myControl = new FormControl();
   options: any = [];
   filteredOptions: Observable<any[]>;
+
+  /* Auto Complete */
+  public autocomplateData: any = {
+    flag: "",
+    arrayIndex: ""
+  };
+
+  public checkboxData: any = [];
 
   constructor(private http: HttpServiceService, private cookieService: CookieService, private router: Router,public activatedRoute : ActivatedRoute) {
 
@@ -53,8 +61,8 @@ export class ReportConformationComponent implements OnInit {
 
     this.http.httpViaPost('datalist', data).subscribe(response => {
       if(response.status == true) {
-        var confirmSubmittedDataSource = response.res;
-
+        /* Get name using file name start */
+        var confirmSubmittedDataSource: any = response.res;
         var patientSearch = [];
         
         for(let loop = 0; loop < confirmSubmittedDataSource.length; loop++) {
@@ -63,16 +71,11 @@ export class ReportConformationComponent implements OnInit {
           confirmSubmittedDataSource[loop].patient_name_search = patientNameArr[0];
           patientSearch.push(patientNameArr[0]);
 
-          var jsonData = {
-            "patient_name": "",
-            "dob": "",
-            "gender": "",
-            "height": "",
-            "weight": ""
-          };
-          confirmSubmittedDataSource[loop].patient_details = jsonData;
+          confirmSubmittedDataSource[loop].patient_details = [];
         }
+        /* Get name using file name end */
 
+        /* Find patient name using file name start */
         let data = {
           "source": "google_events",
           "condition": { 
@@ -83,28 +86,47 @@ export class ReportConformationComponent implements OnInit {
         };
   
         this.http.httpViaPost('bulk-upload-patient-match', data).subscribe(response => {
-          this.options = response.data.match_patient;
+          for(let loop = 0; loop < response.data.match_patient.length; loop++) {
+            this.options.push(response.data.match_patient[loop].patient_name);
+          }
+          this.htmlText.options = response.data.match_patient;
           var conflictingPatientRecordsDataSource: any = [];
 
           if(response.status == "success") {
             for(let loop = 0; loop < confirmSubmittedDataSource.length; loop++) {
               for(let loop2 = 0; loop2 < response.data.match_patient.length; loop2++) {
+                /* For find some patient */
                 if(confirmSubmittedDataSource[loop].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
-                  if(typeof(response.data.match_patient[loop2].select_flag) == "undefined") {
-                    response.data.match_patient[loop2].select_flag = true;
-                    confirmSubmittedDataSource[loop].patient_details = response.data.match_patient[loop2];
+                  /* checking duplicate */
+                  if(typeof(confirmSubmittedDataSource[loop].patient_find_flag) == 'undefined') {
+                    confirmSubmittedDataSource[loop].patient_find_flag = true;
+                    confirmSubmittedDataSource[loop].patient_details.push(response.data.match_patient[loop2]);
                   } else {
-                    confirmSubmittedDataSource[loop].patient_details = response.data.match_patient[loop2];
                     conflictingPatientRecordsDataSource.push(confirmSubmittedDataSource[loop]);
-                    confirmSubmittedDataSource.splice(loop, 1);
-
-                    this.confirmSubmittedDataSource = new MatTableDataSource(confirmSubmittedDataSource);
-                    this.conflictingPatientRecordsDataSource = new MatTableDataSource(conflictingPatientRecordsDataSource);
-                    //this.conflictingPatientRecordsDataSource[this.conflictingPatientRecordsDataSource.length - 1].patient_details = response.data.match_patient[loop2];
+                    conflictingPatientRecordsDataSource[loop].patient_details.push(response.data.match_patient[loop2]);
                   }
                 }
               }
             }
+
+            /* Delete conflict data */
+            for(let loop = 0; loop < confirmSubmittedDataSource.length; loop++) {
+              if(confirmSubmittedDataSource[loop].patient_details.length > 1) {
+                confirmSubmittedDataSource.splice(loop, 1);
+              }
+            }
+
+            /* Add not find data */
+            var notFindDataSource: any = [];
+            for(let loop = 0; loop < confirmSubmittedDataSource.length; loop++) {
+              if(typeof(confirmSubmittedDataSource[loop].patient_find_flag) == 'undefined') {
+                notFindDataSource.push(confirmSubmittedDataSource[loop]);
+              }
+            }
+
+            this.confirmSubmittedDataSource = new MatTableDataSource(confirmSubmittedDataSource);
+            this.conflictingPatientRecordsDataSource = new MatTableDataSource(conflictingPatientRecordsDataSource);
+            this.notFindPatientRecordsDataSource = new MatTableDataSource(notFindDataSource);
           }
         });
       }
@@ -112,23 +134,29 @@ export class ReportConformationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges
-      .pipe(
-        startWith(''),
-        map(value => typeof value === 'string' ? value : value.patient_name),
-        map(name => name ? this._filter(name) : this.options.slice())
-      );
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value))
+    );
   }
 
-  displayFn(user: any): string {
-    //console.log("B", user);
-    return user && user ? user : '';
+  selectArrayIndex(flag, index) {
+    this.autocomplateData.flag = flag;
+    this.autocomplateData.arrayIndex = index;
   }
 
-  private _filter(name: string): any {
-    const filterValue = name.toLowerCase();
+  testFun() {
+    // for(let loop = 0; loop < this.htmlText.options.length; loop++) {
+    //   if(this.htmlText.options[loop].patient_name == user) {
+    //     console.log(">>>>>>", this.htmlText.options[loop]);
+    //   }
+    // }
+  }
 
-    return this.options.filter(option => option.patient_name.toLowerCase().indexOf(filterValue) === 0);
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    console.log(">>>>>", this.htmlText.options[this.autocomplateData.arrayIndex]);
+    return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
 
 }
