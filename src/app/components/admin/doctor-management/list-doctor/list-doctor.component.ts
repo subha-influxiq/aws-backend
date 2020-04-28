@@ -38,11 +38,12 @@ export class ListDoctorComponent implements OnInit {
   public docData_modify_header: any = {
     firstname: "First Name",
     lastname: "Last Name",
-    "practice name": "Practice Name",
+    practice_name: "Practice Name",
     npi: "NPI#",
     email: "Email",
     phone: "Phone Number",
     status: "Status",
+    date_added :"Date Added"
   };
 
   public previewModal_skip: any = [
@@ -70,7 +71,7 @@ export class ListDoctorComponent implements OnInit {
   public sortdata:any={
     "type":'desc',
     "field":'firstname',
-    "options":['firstname']
+    "options":['firstname','email','practice_name','npi','status','date_added']
  };
  public limitcond:any={
   "limit":10,

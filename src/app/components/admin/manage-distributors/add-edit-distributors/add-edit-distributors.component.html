@@ -1,0 +1,242 @@
+<!-- Admin Header -->
+<app-admin-header *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-header>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-header *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+<!-- Doctor Header -->
+<app-doctor-header *ngIf="htmlText.userData.user_details.user_type == 'doctor'"></app-doctor-header>
+
+
+<mat-card class="admin_wrapper">
+  <!-- header with add button -->
+  <mat-card-content class="title_wrapper">
+    {{ htmlText.header }}
+  </mat-card-content>
+
+
+  <span class="add_header">
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/admin/distributors-management']">Manage Distributors &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/diagnostic-admin/tech-management']">Manage Distributors &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'doctor'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/doctor/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/doctor/distributors-management']">Manage Distributors &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+  </span>
+  <!-- End header with add button -->
+
+  <mat-card class="add_form">
+    <mat-card-content class="form_wrapper">
+      <form class="example-form" autocomplete="off" name="DistributorsManagementAddEditForm" [formGroup]="DistributorsManagementAddEditForm" (ngSubmit)="DistributorsManagementAddEditFormSubmit()">
+
+        <!-- Distributor Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Distributor Name</mat-label>
+
+          <input matInput placeholder="Distributor Name" [formControl]="DistributorsManagementAddEditForm.controls['distributorname']"
+            (blur)="inputUntouch(DistributorsManagementAddEditForm,'distributorname')">
+
+          <mat-error
+            *ngIf="DistributorsManagementAddEditForm.controls['distributorname'].touched && !DistributorsManagementAddEditForm.controls['distributorname'].valid && DistributorsManagementAddEditForm.controls['distributorname'].errors.required">
+            Distributor Name required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="DistributorsManagementAddEditForm.controls['distributorname'].touched && !DistributorsManagementAddEditForm.controls['distributorname'].valid && DistributorsManagementAddEditForm.controls['distributorname'].errors.maxlength">
+            Distributor Name is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Distributor Name End -->
+
+        <!-- Contact Person Name Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Contact Person</mat-label>
+
+          <input matInput placeholder="Contact Person" [formControl]="DistributorsManagementAddEditForm.controls['contactperson']"
+            (blur)="inputUntouch(DistributorsManagementAddEditForm,'contactperson')">
+
+          <mat-error
+            *ngIf="DistributorsManagementAddEditForm.controls['contactperson'].touched && !DistributorsManagementAddEditForm.controls['contactperson'].valid && DistributorsManagementAddEditForm.controls['contactperson'].errors.required">
+            Contact Person required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="DistributorsManagementAddEditForm.controls['contactperson'].touched && !DistributorsManagementAddEditForm.controls['contactperson'].valid && DistributorsManagementAddEditForm.controls['contactperson'].errors.maxlength">
+            Contact Person is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Contact Person End -->
+
+        <!-- Email Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Email Address</mat-label>
+
+          <input matInput placeholder="Email Address" [formControl]="DistributorsManagementAddEditForm.controls['email']"
+            (blur)="inputUntouch(DistributorsManagementAddEditForm,'email')">
+
+          <mat-error
+            *ngIf="DistributorsManagementAddEditForm.controls['email'].touched && !DistributorsManagementAddEditForm.controls['email'].valid && DistributorsManagementAddEditForm.controls['email'].errors.required">
+            Email required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="DistributorsManagementAddEditForm.controls['email'].touched && !DistributorsManagementAddEditForm.controls['email'].valid && DistributorsManagementAddEditForm.controls['email'].errors.email">
+            Email is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Email End -->
+
+        <!-- Phone Number Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+
+          <input matInput placeholder="Phone" [formControl]="DistributorsManagementAddEditForm.controls['phone']"
+            (blur)="inputUntouch(DistributorsManagementAddEditForm,'phone')">
+
+          <mat-error
+            *ngIf="DistributorsManagementAddEditForm.controls['phone'].touched && !DistributorsManagementAddEditForm.controls['phone'].valid && DistributorsManagementAddEditForm.controls['phone'].errors.required">
+            Phone Number required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="DistributorsManagementAddEditForm.controls['phone'].touched && !DistributorsManagementAddEditForm.controls['phone'].valid && DistributorsManagementAddEditForm.controls['phone'].errors.maxlength">
+            Phone Number is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Phone Number End -->
+
+        <!-- Address Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Address</mat-label>
+
+          <input matInput placeholder="Address" [formControl]="DistributorsManagementAddEditForm.controls['address']"
+            (blur)="inputUntouch(DistributorsManagementAddEditForm,'address')">
+
+          <mat-error *ngIf="DistributorsManagementAddEditForm.controls['address'].touched && !DistributorsManagementAddEditForm.controls['address'].valid && DistributorsManagementAddEditForm.controls['address'].errors.required">
+            Address required.
+          </mat-error>
+
+          <mat-error *ngIf="DistributorsManagementAddEditForm.controls['address'].touched && !DistributorsManagementAddEditForm.controls['address'].valid && DistributorsManagementAddEditForm.controls['address'].errors.maxlength">
+            Address is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Address End -->
+
+        <!-- State Start -->
+        <mat-form-field class="parent_cat" appearance="fill">
+          <mat-label>State</mat-label>
+
+          <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
+            <mat-option [value]="">Select state</mat-option>
+            <mat-option *ngFor="let state of htmlText.states;" value="{{ state.name }}">{{ state.name }}</mat-option>
+          </mat-select>
+
+          <mat-error *ngIf="DistributorsManagementAddEditForm.controls['state'].touched && !DistributorsManagementAddEditForm.controls['state'].valid && DistributorsManagementAddEditForm.controls['state'].errors.required">
+            State required.
+          </mat-error>
+        </mat-form-field>
+        <!-- State End -->
+
+        <!-- City Start -->
+        <mat-form-field class="parent_cat" appearance="fill">
+          <mat-label>City</mat-label>
+
+          <mat-select formControlName="city">
+            <mat-option value=0>Select city</mat-option>
+            <mat-option *ngFor="let city of htmlText.cities;" value="{{ city }}">{{ city }}</mat-option>
+          </mat-select>
+
+          <mat-error *ngIf="DistributorsManagementAddEditForm.controls['city'].touched && !DistributorsManagementAddEditForm.controls['city'].valid && DistributorsManagementAddEditForm.controls['city'].errors.required">
+            State required.
+          </mat-error>
+        </mat-form-field>
+        <!-- City End -->
+
+        <!-- Zip Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Zip</mat-label>
+
+          <input type="number" matInput placeholder="ZIP" [formControl]="DistributorsManagementAddEditForm.controls['zip']" (blur)="inputUntouch(DistributorsManagementAddEditForm,'zip')">
+
+          <mat-error *ngIf="DistributorsManagementAddEditForm.controls['zip'].touched && !DistributorsManagementAddEditForm.controls['zip'].valid && DistributorsManagementAddEditForm.controls['zip'].errors.required">
+            Zip required.
+          </mat-error>
+        </mat-form-field>
+        <!-- Zip Start -->
+
+        <ng-container *ngIf="!params_id">
+          <!-- Password Start -->
+          <ng-container *ngIf="!params_id">
+            <mat-form-field class="form-group" appearance="fill">
+
+              <input matInput placeholder="Password" type="password"
+                [formControl]="DistributorsManagementAddEditForm.controls['password']">
+
+              <mat-error *ngIf="!DistributorsManagementAddEditForm.controls['password'].valid && DistributorsManagementAddEditForm.controls['password'].touched">
+                Password required.
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="form-group" appearance="fill">
+              <input matInput placeholder="Confirm Password" type="password"
+                [formControl]="DistributorsManagementAddEditForm.controls['confirmpassword']">
+
+              <mat-error *ngIf="!DistributorsManagementAddEditForm.controls['confirmpassword'].valid && DistributorsManagementAddEditForm.controls['confirmpassword'].touched">
+                Password does not match
+              </mat-error>
+            </mat-form-field>
+          </ng-container>
+          <!-- Password End -->
+        </ng-container>
+
+        <mat-checkbox [formControl]="DistributorsManagementAddEditForm.controls['status']" checked>Active</mat-checkbox>
+
+
+        <!-- end here -->
+        <span class="submit_form">
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+            <button mat-flat-button type="button" [routerLink]="['/admin/distributors-management']">Back </button>
+          </ng-container>
+
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+            <button mat-flat-button type="button" [routerLink]="['/diagnostic-admin/tech-management']">Back </button>
+          </ng-container>
+
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'doctor'">
+            <button mat-flat-button type="button" [routerLink]="['/doctor/tech-management']">Back </button>
+          </ng-container>
+
+          <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset </button>
+          <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
+        </span>
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+
+</mat-card>
+
+
+
+<!-- Admin Footer -->
+<app-admin-footer *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-footer>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-footer *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-footer>

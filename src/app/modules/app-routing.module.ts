@@ -120,7 +120,9 @@ import { AddEditAdminbillerComponent } from '../components/admin/manage-adminbil
 import { ListingAdminbillerComponent } from '../components/admin/manage-adminbiller/listing-adminbiller/listing-adminbiller.component';
 import { AddEditPatientinformationComponent } from '../components/admin/manage-patientinformation/add-edit-patientinformation/add-edit-patientinformation.component';
 import { ListingPatientinformationComponent } from '../components/admin/manage-patientinformation/listing-patientinformation/listing-patientinformation.component';
-
+import { AddEditDistributorsComponent } from '../components/admin/manage-distributors/add-edit-distributors/add-edit-distributors.component';
+import { ListingDistributorsComponent } from '../components/admin/manage-distributors/listing-distributors/listing-distributors.component';
+import { DoctorGroupDashboardComponent } from '../components/doctor-group/doctor-group-dashboard/doctor-group-dashboard.component';
 const routes: Routes = [
   /********** Auth Route Start **********/
   {
@@ -345,6 +347,38 @@ const routes: Routes = [
     },
   },
 
+  /* Distributors Management Start */
+
+  {
+    path: 'admin/distributors-management', 
+    component: ListingDistributorsComponent, 
+    canActivate: [AuthguardService],
+  },
+  { 
+    path: 'admin/distributors-management/add', 
+    component: AddEditDistributorsComponent, 
+    canActivate: [AuthguardService] 
+  },
+  {
+    path: 'admin/distributors-management/edit/:_id', 
+    component: AddEditDistributorsComponent, 
+    canActivate: [AuthguardService], 
+    resolve: { distributorsData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "distributors",
+
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+
+
+  /* Distributors Management End */
+  
   /* Tech Management */
   {
     path: 'admin/tech-management',
@@ -666,7 +700,20 @@ const routes: Routes = [
   },
   /********** Admin Routes End ***********/
 
-
+    /* Doctor Group Admin Dashboard */
+    {
+      path: 'doctor-group/dashboard',
+      component: DoctorGroupDashboardComponent,
+      canActivate: [AuthguardService],
+      resolve: { dataCount: ResolveService },
+      data: {
+        requestcondition: {
+          source: 'data_pece',
+          condition: {}
+        },
+        endpoint: 'diagnostic-admin-dashboard'
+      },
+    },
 
 
 
@@ -777,6 +824,15 @@ const routes: Routes = [
     path: 'diagnostic-admin/doctor-management',
     component: ListDoctorComponent,
     canActivate: [AuthguardService],
+  },
+  {
+    path: 'diagnostic-admin/doctor-management/add',
+    component: AddeditDoctorComponent
+  },
+  {
+    path: 'diagnostic-admin/doctor-management/edit/:_id',
+    component: AddeditDoctorComponent,
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -788,12 +844,43 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+
   {
-    path: 'diagnostic-admin/doctor-management/add',
+    path: 'distributors/doctor-management',
+    component: ListDoctorComponent,
+    canActivate: [AuthguardService],
+  },
+  {
+    path: 'distributors/doctor-management/add',
     component: AddeditDoctorComponent
   },
   {
-    path: 'diagnostic-admin/doctor-management/edit/:_id',
+    path: 'distributors/doctor-management/edit/:_id',
+    component: AddeditDoctorComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "doctor"
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+
+  {
+    path: 'doctor-group/doctor-management',
+    component: ListDoctorComponent,
+    canActivate: [AuthguardService],
+  },
+  {
+    path: 'doctor-group/doctor-management/add',
+    component: AddeditDoctorComponent
+  },
+  {
+    path: 'doctor-group/doctor-management/edit/:_id',
     component: AddeditDoctorComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },

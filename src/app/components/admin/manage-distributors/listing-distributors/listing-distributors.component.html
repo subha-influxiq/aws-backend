@@ -1,0 +1,67 @@
+<!-- Admin Header -->
+<app-admin-header *ngIf="userData.user_type == 'admin'"></app-admin-header>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-header *ngIf="userData.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+<!-- Doctor Header -->
+<app-doctor-header *ngIf="userData.user_type == 'doctor'"></app-doctor-header>
+
+
+
+<mat-card class="admin_wrapper">
+  <!-- header with add button -->
+  <mat-card-content class="table_wrapper">
+    <mat-toolbar class="top_header">
+      <h2> Manage Distributors </h2>
+    </mat-toolbar>
+
+  <span class="add_header">
+
+  <ng-container *ngIf="userData.user_type == 'admin'">
+    <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Distributors</span>
+    <button mat-flat-button [routerLink]="['/admin/distributors-management/add']">Add Distributors</button>
+  </ng-container>
+  
+  <ng-container *ngIf="userData.user_type == 'diagnostic_admin'">
+    <span class="bradcrumb"><a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Tech</span>
+    <button mat-flat-button [routerLink]="['/diagnostic-admin/tech-management/add']">Add Distributors</button>
+  </ng-container>
+
+  <ng-container *ngIf="userData.user_type == 'doctor'">
+    <span class="bradcrumb"><a [routerLink]="['/doctor/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Tech</span>
+    <button mat-flat-button [routerLink]="['/doctor/tech-management/add']">Add Distributors</button>
+  </ng-container>
+</span>
+<!-- End header with add button -->
+
+
+<lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0"
+  [datasource]="TechDashboardAllData"
+  [skip]="allUserData_skip"
+  [detail_skip_array]="previewModal_detail_skip"
+  [modify_header_array]="allUserData_modify_header"
+  [apiurl]="apiUrl"
+  [sourcedata]="tableName"
+  [editroute]="editUrl"
+  [jwttoken]="user_cookie"
+  [statusarr]="status"
+  [updateendpoint]="UpdateEndpoint"
+  [deleteendpoint]="deleteEndpoint"
+  [date_search_endpoint]="SearchingEndpoint"
+  [date_search_source]="SearchingSourceName"
+  [search_settings]="search_settings"
+  [sortdata]="sortdata" [datacollection]="datacollection" [date_search_source_count]="techData_count" [limitcond]="limitcond">
+</lib-listing>
+
+<h2 *ngIf="TechDashboardAllData.length == 0">No record found.</h2>
+
+</mat-card-content>
+</mat-card>
+
+
+<!-- Admin Footer -->
+<app-admin-footer *ngIf="userData.user_type == 'admin'"></app-admin-footer>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-footer *ngIf="userData.user_type == 'diagnostic_admin'"></app-diagnostic-admin-footer>
