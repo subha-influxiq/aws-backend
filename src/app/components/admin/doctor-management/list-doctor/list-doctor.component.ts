@@ -12,6 +12,7 @@ export class ListDoctorComponent implements OnInit {
 
   // ===============================Declarations=========================
   public userData: any;
+  public cookieUserallData: any = JSON.parse(this.cookieService.get('user_details'))
   public docData_count:any=0;
   public  docData: any = [];
   public datasource: any;
@@ -33,7 +34,10 @@ export class ListDoctorComponent implements OnInit {
     "id",
     "name_search",
     "updated_at",
-    "doctor_signature"
+    "doctor_signature",
+    "distributor_id",
+    "diagnostic_admin_id",
+    "doctorgroup_id"
   ];
   public docData_modify_header: any = {
     firstname: "First Name",
@@ -68,6 +72,19 @@ export class ListDoctorComponent implements OnInit {
   public editUrl:any = 'admin/doctor-management/edit';
   public apiUrl:any;
   public datacollection: any='getdoctorlistdata';
+  public data:any;
+  public field:any;
+  public fetch:any;
+  libdata:any={
+    basecondition: "",
+    updateendpoint:'statusupdate',
+    // hideeditbutton:true,// all these button options are optional not mandatory
+    //hidedeletebutton:true,
+    //hideviewbutton:false,
+    //hidestatustogglebutton:true,
+    // hideaction:true,
+    tableheaders:['firstname','lastname','email','parent_name','parent_type','phone','practice_name','npi','status','created_date',], //not required
+}
   public sortdata:any={
     "type":'desc',
     "field":'firstname',
@@ -79,12 +96,13 @@ export class ListDoctorComponent implements OnInit {
   "pagecount":1
 };
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
+  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },{ val: "distributors", 'name': 'Distributor' },{ val: "doctor_group", 'name': 'Doctor Group' }];
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
+      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status },{ label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }],
       textsearch: [{ label: "Search By Name", field: 'name_search' },
       // {label:"Search by Taxonomy",field:'taxo_list'},
-      { label: "Search By E-Mail", field: 'email' }]
+      { label: "Search By E-Mail", field: 'email' },{ label: "Search By Parent Name", field: 'parent_search' }]
     };
   // ====================================================================
 
@@ -96,11 +114,26 @@ export class ListDoctorComponent implements OnInit {
 
     if(this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/doctor-management/edit';
+      this.field = {'diagnostic_admin_id':this.userData._id};
+      this.data = this.userData._id;
     }
+    if(this.userData.user_type == 'doctor_group') {
+      this.editUrl = 'doctor-group/doctor-management/edit';
+      this.field = {'doctorgroup_id':this.userData._id};
+      this.data = this.userData._id;
+    }
+    if(this.userData.user_type == 'distributors') {
+      this.editUrl = 'distributors/doctor-management/edit';
+      this.field = {'distributors_id':this.userData._id};
+      this.data = this.userData._id;
+    }
+
+    this.libdata.basecondition = this.field;
+
+    console.log('libdata',this.libdata);
 
     this.apiUrl = http.baseUrl;
   }
-
 
   ngOnInit() {
     this.datasource = '';
@@ -114,9 +147,21 @@ export class ListDoctorComponent implements OnInit {
     sort:{
         "type":'desc',
         "field":'firstname'
+    },
+    data:this.fetch
     }
- 
+   
+    if(this.userData.user_type == 'diagnostic_admin') {
+      this.fetch={'diagnostic_admin_id':  this.data}
     }
+    if(this.userData.user_type == 'doctor_group') {
+      this.fetch={'doctorgroup_id':  this.data}
+    }
+    if(this.userData.user_type == 'distributors') {
+      this.fetch={'distributor_id':  this.data}
+    }
+    data.data = this.fetch;
+    console.log('2222',data);
         this.http.httpViaPost(endpointc, data).subscribe((res:any) => {
             // console.log('in constructor');
             // console.log(result);
