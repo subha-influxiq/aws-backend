@@ -96,17 +96,18 @@
     <!-- Weight Column -->
     <ng-container matColumnDef="conflicting_records">
       <th mat-header-cell *matHeaderCellDef> Conflicting Records </th>
-      <td mat-cell *matCellDef="let element">
+      <td mat-cell *matCellDef="let element; let j = index;">
         <ng-container *ngFor="let p of element.patient_details; let i = index;">
+          
+          <p>Patient Name: {{ p.patient_name }}</p>
+          <p>Date of Birth: {{ p.dob | date }}</p>
+          <p>Gender: {{ p.gender }}</p>
+          <p>Height: {{ p.height }}</p>
+          <p>Waigth: {{ p.weight }}</p>
           <p>
-            <mat-checkbox>
-              <p>Patient Name: {{ p.patient_name }}</p>
-              <p>Date of Birth: {{ p.dob | date }}</p>
-              <p>Gender: {{ p.gender }}</p>
-              <p>Height: {{ p.height }}</p>
-              <p>Waigth: {{ p.weight }}</p>
-            </mat-checkbox>
+            <button mat-raised-button color="primary" (click)="selectConflictingRecord('conflicting', j, i);">Select</button>
           </p>
+            
         </ng-container>
       </td>
     </ng-container>
@@ -114,7 +115,7 @@
     <!-- Symbol Column -->
     <ng-container matColumnDef="choose_other_patient">
       <th mat-header-cell *matHeaderCellDef> Choose Other Patient </th>
-      <td mat-cell *matCellDef="let element">
+      <td mat-cell *matCellDef="let element; let i = index;">
         
         <form class="example-form">
           <mat-form-field class="example-full-width">
@@ -168,7 +169,7 @@
     <!-- Symbol Column -->
     <ng-container matColumnDef="choose_other_patient">
       <th mat-header-cell *matHeaderCellDef> Choose Other Patient </th>
-      <td mat-cell *matCellDef="let element">
+      <td mat-cell *matCellDef="let element; let i = index;">
         
         <form class="example-form">
           <mat-form-field class="example-full-width">
@@ -198,13 +199,13 @@
   <br />
 
   <p>
-    <mat-checkbox>You want to submit with conflicts then please check this to agree conflicting data will not be added/updated into the system.</mat-checkbox>
+    <mat-checkbox [(ngModel)]="checkboxData.checkbox1">You want to submit with conflicts then please check this to agree conflicting data will not be added/updated into the system.</mat-checkbox>
   </p>
   <p>
-    <mat-checkbox>All mapping of patient records and patient data is verified correct.</mat-checkbox>
+    <mat-checkbox [(ngModel)]="checkboxData.checkbox2">All mapping of patient records and patient data is verified correct.</mat-checkbox>
   </p>
 
-  <button mat-raised-button color="primary">Submit</button>
+  <button mat-raised-button color="primary" (click)="updateRecord();">Submit</button>
 
 </mat-card>
 

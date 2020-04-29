@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpServiceService } from '../../../../services/http-service.service';
+import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
 import { CookieService } from 'ngx-cookie-service';
 import { Router,ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -44,9 +45,13 @@ export class ReportConformationComponent implements OnInit {
     arrayIndex: ""
   };
 
-  public checkboxData: any = [];
+  public checkboxData: any = {
+    checkbox1: false,
+    checkbox2: false
+  };
+  public dialogRef: any;
 
-  constructor(private http: HttpServiceService, private cookieService: CookieService, private router: Router,public activatedRoute : ActivatedRoute) {
+  constructor(public snackBar: MatSnackBar, public dialog: MatDialog, private http: HttpServiceService, private cookieService: CookieService, private router: Router,public activatedRoute : ActivatedRoute) {
 
     this.htmlText.userData = this.cookieService.getAll();
     this.htmlText.userData.user_details = JSON.parse(this.htmlText.userData.user_details);
@@ -146,12 +151,36 @@ export class ReportConformationComponent implements OnInit {
     this.autocomplateData.arrayIndex = index;
   }
 
-  testFun() {
-    // for(let loop = 0; loop < this.htmlText.options.length; loop++) {
-    //   if(this.htmlText.options[loop].patient_name == user) {
-    //     console.log(">>>>>>", this.htmlText.options[loop]);
-    //   }
-    // }
+  selectConflictingRecord(flag, conflictIndex, selectIndex) {
+    if(flag == 'conflicting') {
+      let data: any = {
+        width: '250px',
+        data: {
+          header: "Alert",
+          message: "Are you sure to select record ?",
+          button1: { text: "No" },
+          button2: { text: "Yes" },
+        }
+      };
+      this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+      this.dialogRef.afterClosed().subscribe(result => {
+        switch (result) {
+          case "No":
+            break;
+          case "Yes":
+            var patientDetails = this.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details[selectIndex];
+            this.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.splice(0, this.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.length);
+            this.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.push(patientDetails);
+
+            this.htmlText.confirmSubmittedDataSource.push(this.htmlText.conflictingPatientRecordsDataSource[conflictIndex]);
+            this.htmlText.conflictingPatientRecordsDataSource.splice(conflictIndex, 1);
+
+            this.confirmSubmittedDataSource = new MatTableDataSource(this.htmlText.confirmSubmittedDataSource);
+            this.conflictingPatientRecordsDataSource = new MatTableDataSource(this.htmlText.conflictingPatientRecordsDataSource);
+            break;
+        }
+      });
+    }
   }
 
   private _filter(value: string): string[] {
@@ -177,7 +206,6 @@ export class ReportConformationComponent implements OnInit {
         this.htmlText.conflictingPatientRecordsDataSource[this.autocomplateData.arrayIndex].patient_details.push(this.htmlText.options[this.autocomplateData.arrayIndex]);
         this.htmlText.conflictingPatientRecordsDataSource[this.autocomplateData.arrayIndex].patient_details.splice(0, 1);
         this.conflictingPatientRecordsDataSource = new MatTableDataSource(this.htmlText.conflictingPatientRecordsDataSource);
-        
         break;
       case 'not found':
         this.notFindPatientRecordsDataSource = new MatTableDataSource(this.htmlText.notFindDataSource);
@@ -186,6 +214,53 @@ export class ReportConformationComponent implements OnInit {
     }
 
     return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
+  }
+
+  updateRecord() {
+    if(this.checkboxData.checkbox1 == true && this.checkboxData.checkbox2 == true) {
+      var data: any = {
+        "source": "data_pece",
+        "data": this.htmlText.confirmSubmittedDataSource,
+        "token": this.htmlText.userData.jwtToken
+      };
+
+      this.http.httpViaPost("addorupdatedata", data).subscribe(response => {
+        if(response.status == 'success') {
+          this.snackBar.open("Successfully updated.", "Ok", {
+            duration: 2000,
+          });
+          
+          setTimeout(() => {
+            this.router.navigateByUrl('/tech/dashboard');
+          }, 1000);
+        } else {
+          this.snackBar.open("An error occoed. Error code: F-AEA-TS-164.", "Ok", {
+            duration: 2000,
+          });
+        }
+      });
+    } else {
+      let data: any = {
+        width: '250px',
+        data: {
+          header: "Alert",
+          message: "Please check confirm box before submit.",
+          button1: { text: "" },
+          button2: { text: "Okay" },
+        }
+      };
+      this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+      this.dialogRef.afterClosed().subscribe(result => {
+        switch (result) {
+          case "No":
+            break;
+          case "Yes":
+            break;
+        }
+      });
+    }
+    console.log(this.htmlText.confirmSubmittedDataSource);
+    console.log(this.checkboxData);
   }
 
 }
