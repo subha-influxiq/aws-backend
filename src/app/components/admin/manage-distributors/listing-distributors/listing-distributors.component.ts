@@ -71,7 +71,7 @@ export class ListingDistributorsComponent implements OnInit {
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
       textsearch: [{ label: "Search By Distributor Name", field: 'distributorname_search' },
-      { label: "Search By E-Mail", field: 'email' },{ label: "Search By Contact Person", field: 'contactperson_sesrch' }],
+      { label: "Search By E-Mail", field: 'email' },{ label: "Search By Contact Person", field: 'contactperson_search' }],
 
     };
   public user_cookie: any;

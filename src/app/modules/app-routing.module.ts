@@ -123,6 +123,7 @@ import { ListingPatientinformationComponent } from '../components/admin/manage-p
 import { AddEditDistributorsComponent } from '../components/admin/manage-distributors/add-edit-distributors/add-edit-distributors.component';
 import { ListingDistributorsComponent } from '../components/admin/manage-distributors/listing-distributors/listing-distributors.component';
 import { DoctorGroupDashboardComponent } from '../components/doctor-group/doctor-group-dashboard/doctor-group-dashboard.component';
+import { DistributorsDashboardComponent } from '../components/distributors/distributors-dashboard/distributors-dashboard.component';
 const routes: Routes = [
   /********** Auth Route Start **********/
   {
@@ -716,6 +717,21 @@ const routes: Routes = [
     },
 
 
+    /* Distributors Admin Dashboard */
+    {
+      path: 'distributors/dashboard',
+      component: DistributorsDashboardComponent,
+      canActivate: [AuthguardService],
+      resolve: { dataCount: ResolveService },
+      data: {
+        requestcondition: {
+          source: 'data_pece',
+          condition: {}
+        },
+        endpoint: 'diagnostic-admin-dashboard'
+      },
+    },
+
 
   /****************** Diagnostic Admin Routes Start *****************/
   /* Diagnostic Admin Dashboard */
@@ -782,6 +798,29 @@ const routes: Routes = [
     canActivate: [AuthguardService]
   },
 
+   /* Account Settings For Doctor Group */
+   {
+    path: 'doctor-group/account-settings',
+    component: AccountSettingsComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'doctor-group/account-settings/change-password',
+    component: ChangePasswordComponent,
+    canActivate: [AuthguardService]
+  },
+
+     /* Account Settings For Distributor */
+     {
+      path: 'distributors/account-settings',
+      component: AccountSettingsComponent,
+      canActivate: [AuthguardService]
+    },
+    {
+      path: 'distributors/account-settings/change-password',
+      component: ChangePasswordComponent,
+      canActivate: [AuthguardService]
+    },
   /* Tech Management */
   {
     path: 'diagnostic-admin/tech-management',

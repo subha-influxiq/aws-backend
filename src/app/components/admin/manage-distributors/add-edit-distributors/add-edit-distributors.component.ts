@@ -92,8 +92,8 @@ export class AddEditDistributorsComponent implements OnInit {
           }, 1000);
 
           this.DistributorsManagementAddEditForm.controls['id'].patchValue(distributorsDetails[0]._id);
-          this.DistributorsManagementAddEditForm.controls['firstname'].patchValue(distributorsDetails[0].distributorname);
-          this.DistributorsManagementAddEditForm.controls['lastname'].patchValue(distributorsDetails[0].contactperson);
+          this.DistributorsManagementAddEditForm.controls['distributorname'].patchValue(distributorsDetails[0].distributorname);
+          this.DistributorsManagementAddEditForm.controls['contactperson'].patchValue(distributorsDetails[0].contactperson);
           this.DistributorsManagementAddEditForm.controls['email'].patchValue(distributorsDetails[0].email);
           this.DistributorsManagementAddEditForm.controls['phone'].patchValue(distributorsDetails[0].phone);
           this.DistributorsManagementAddEditForm.controls['address'].patchValue(distributorsDetails[0].address);

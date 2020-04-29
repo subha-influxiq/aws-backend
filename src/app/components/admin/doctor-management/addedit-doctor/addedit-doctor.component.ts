@@ -242,18 +242,25 @@ export class AddeditDoctorComponent implements OnInit {
 
       if(this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
         postData.data["diagnostic_admin_id"] = this.htmlText.userData.user_details._id;
+        postData.data["parent_type"] = "diagnostic_admin";
         postData["sourceobj"] = ["diagnostic_admin_id"];
         postData["sourceobjArray"] = ["tech_id"];
       }
 
       if(this.htmlText.userData.user_details.user_type == 'doctor_group') {
         postData.data["doctorgroup_id_object"] = this.htmlText.userData.user_details._id;
-        postData["sourceobj"] = ["doctorgroup_id_object"];
+        postData.data["parent_type"] = "doctor_group";
+        postData["sourceobj"] = ["doctorgroup_id"];
       }
 
       if(this.htmlText.userData.user_details.user_type == 'distributors') {
         postData.data["distributor_id_object"] = this.htmlText.userData.user_details._id;
-        postData["sourceobj"] = ["distributor_id_object"];
+        postData.data["parent_type"] = "distributors";
+        postData["sourceobj"] = ["distributor_id"];
+      }
+
+      if(this.htmlText.userData.user_details.user_type == 'admin') {
+        postData.data["parent_type"] = "admin";
       }
 
       this.http.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
