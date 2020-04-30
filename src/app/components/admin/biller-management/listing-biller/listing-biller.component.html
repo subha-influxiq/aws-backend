@@ -1,8 +1,13 @@
 <!-- Admin Header -->
 <app-admin-header *ngIf="userData.user_type == 'admin'"></app-admin-header>
-
 <!-- Diagnostic Admin Header -->
 <app-diagnostic-admin-header *ngIf="userData.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+<!-- Doctor Group Admin Header -->
+<app-doctor-group-header *ngIf="userData.user_type == 'doctor_group'"></app-doctor-group-header>
+
+<!-- Distributors Admin Header -->
+<app-distributors-header *ngIf="userData.user_type == 'distributors'"></app-distributors-header>
 
 <!-- Doctor Header -->
 <app-doctor-header *ngIf="userData.user_type == 'doctor'"></app-doctor-header>
@@ -24,9 +29,20 @@
         <button mat-flat-button [routerLink]="['/admin/biller-management/add']">Add Biller</button>
       </ng-container>
       
+      
       <ng-container *ngIf="userData.user_type == 'diagnostic_admin'">
         <span class="bradcrumb"><a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Biller</span>
         <button mat-flat-button [routerLink]="['/diagnostic-admin/biller-management/add']">Add Biller</button>
+      </ng-container>
+
+      <ng-container *ngIf="userData.user_type == 'doctor_group'">
+        <span class="bradcrumb"><a [routerLink]="['/doctor-group/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Biller</span>
+        <button mat-flat-button [routerLink]="['/doctor-group/biller-management/add']">Add Biller</button>
+      </ng-container>
+
+      <ng-container *ngIf="userData.user_type == 'distributors'">
+        <span class="bradcrumb"><a [routerLink]="['/distributors/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Biller</span>
+        <button mat-flat-button [routerLink]="['/distributors/biller-management/add']">Add Biller</button>
       </ng-container>
 
       <ng-container *ngIf="userData.user_type == 'doctor'">
@@ -41,7 +57,7 @@
       [modify_header_array]="allUserData_modify_header" [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl"
       [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="user_cookie" [statusarr]="status"
       [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
-      [date_search_source]="SearchingSourceName" [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection" [date_search_source_count]="billerData_count" [limitcond]="limitcond">
+      [date_search_source]="SearchingSourceName" [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection" [libdata]="libdata" [date_search_source_count]="billerData_count" [limitcond]="limitcond">
     </lib-listing>
     
     <h2 *ngIf="allBillerData.length == 0">No record found.</h2>

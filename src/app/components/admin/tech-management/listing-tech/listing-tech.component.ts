@@ -15,6 +15,9 @@ export class ListingTechComponent implements OnInit {
   
   public allUserData: any = [];
   public techData_count:any=0;
+  public field:any;
+  public data:any;
+  public fetch:any;
   public datasource: any;
   public allUserData_skip: any = [
     "_id",
@@ -28,9 +31,22 @@ export class ListingTechComponent implements OnInit {
     "id",
     "updated_at",
     "diagnostic_admin_id",
-    "name_search"
+    "name_search",
+    "diagnostic_admin_id",
+    "distributor_id",
+    "doctorgroup_id"
   ];
   public editUrl: any = "admin/tech-management/edit";
+  libdata:any={
+    basecondition: "",
+    updateendpoint:'statusupdate',
+    // hideeditbutton:true,// all these button options are optional not mandatory
+    //hidedeletebutton:true,
+    //hideviewbutton:false,
+    //hidestatustogglebutton:true,
+    // hideaction:true,
+    tableheaders:['firstname','lastname','email','parent_name','parent_type','phone','status','created_date',], //not required
+}
   public allUserData_modify_header: any = {
     "firstname": "First Name",
     "lastname": "Last Name",
@@ -54,6 +70,7 @@ export class ListingTechComponent implements OnInit {
   public tableName: any = "users";
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
+  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },{ val: "distributors", 'name': 'Distributor' },{ val: "doctor_group", 'name': 'Doctor Group' }];
   public SearchingEndpoint: any = "datalist";
   public SearchingSourceName: any = "data_tech_list";
   public datacollection: any='gettechlistdata';
@@ -69,9 +86,9 @@ export class ListingTechComponent implements OnInit {
 };
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
+      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status },{ label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }],
       textsearch: [{ label: "Search By Name", field: 'name_search' },
-      { label: "Search By E-Mail", field: 'email' }],
+      { label: "Search By E-Mail", field: 'email' },{ label: "Search By Parent Name", field: 'parent_search' }],
 
     };
   public user_cookie: any;
@@ -89,7 +106,21 @@ export class ListingTechComponent implements OnInit {
     
     if(this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/tech-management/edit';
+      this.field = {'diagnostic_admin_id':this.userData._id};
+      this.data = this.userData._id;
     }
+    if(this.userData.user_type == 'doctor_group') {
+      this.editUrl = 'doctor-group/tech-management/edit';
+      this.field = {'doctorgroup_id':this.userData._id};
+      this.data = this.userData._id;
+    }
+    if(this.userData.user_type == 'distributors') {
+      this.editUrl = 'distributors/tech-management/edit';
+      this.field = {'distributors_id':this.userData._id};
+      this.data = this.userData._id;
+    }
+
+    this.libdata.basecondition = this.field;
 
     if(this.userData.user_type == 'doctor') {
       this.editUrl = 'doctor/tech-management/edit';
@@ -110,9 +141,21 @@ export class ListingTechComponent implements OnInit {
     sort:{
         "type":'desc',
         "field":'firstname'
-    }
+    },
+    data:this.fetch
  
     }
+
+    if(this.userData.user_type == 'diagnostic_admin') {
+      this.fetch={'diagnostic_admin_id':  this.data}
+    }
+    if(this.userData.user_type == 'doctor_group') {
+      this.fetch={'doctorgroup_id':  this.data}
+    }
+    if(this.userData.user_type == 'distributors') {
+      this.fetch={'distributor_id':  this.data}
+    }
+    data.data = this.fetch;
         this.httpService.httpViaPost(endpointc, data).subscribe((res:any) => {
             // console.log('in constructor');
             // console.log(result);

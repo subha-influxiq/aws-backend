@@ -248,19 +248,21 @@ export class AddeditDoctorComponent implements OnInit {
       }
 
       if(this.htmlText.userData.user_details.user_type == 'doctor_group') {
-        postData.data["doctorgroup_id_object"] = this.htmlText.userData.user_details._id;
+        postData.data["doctorgroup_id"] = this.htmlText.userData.user_details._id;
         postData.data["parent_type"] = "doctor_group";
         postData["sourceobj"] = ["doctorgroup_id"];
       }
 
       if(this.htmlText.userData.user_details.user_type == 'distributors') {
-        postData.data["distributor_id_object"] = this.htmlText.userData.user_details._id;
+        postData.data["distributor_id"] = this.htmlText.userData.user_details._id;
         postData.data["parent_type"] = "distributors";
         postData["sourceobj"] = ["distributor_id"];
       }
 
       if(this.htmlText.userData.user_details.user_type == 'admin') {
+        postData.data["admin_id"] = this.htmlText.userData.user_details._id;
         postData.data["parent_type"] = "admin";
+        postData["sourceobj"] = ["admin_id"];
       }
 
       this.http.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
@@ -271,10 +273,10 @@ export class AddeditDoctorComponent implements OnInit {
 
           setTimeout(() => {
             switch(this.htmlText.userData.user_details.user_type) {
-              case 'diagnostic_admin':
+              case 'admin':
                 this.router.navigateByUrl("admin/doctor-management");
                 break;
-              case 'admin':
+              case 'diagnostic_admin':
                 this.router.navigateByUrl("diagnostic-admin/doctor-management");
                 break;
               case 'distributors':

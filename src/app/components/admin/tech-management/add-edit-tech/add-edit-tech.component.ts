@@ -186,12 +186,31 @@ export class AddEditTechComponent implements OnInit {
 
       if(this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
         data.data["diagnostic_admin_id"] = this.htmlText.userData.user_details._id;
+        data.data["parent_type"] = "diagnostic_admin"
         data["sourceobj"] = ["diagnostic_admin_id"];
       }
 
       if(this.htmlText.userData.user_details.user_type == 'doctor') {
         data.data["doctor_id"] = this.htmlText.userData.user_details._id;
         data["sourceobj"] = ["doctor_id"];
+      }
+
+      if(this.htmlText.userData.user_details.user_type == 'doctor_group') {
+        data.data["doctorgroup_id"] = this.htmlText.userData.user_details._id;
+        data.data["parent_type"] = "doctor_group"
+        data["sourceobj"] = ["doctorgroup_id"];
+      }
+
+      if(this.htmlText.userData.user_details.user_type == 'distributors') {
+        data.data["distributor_id"] = this.htmlText.userData.user_details._id;
+        data.data["parent_type"] = "distributor"
+        data["sourceobj"] = ["distributor_id"];
+      }
+
+      if(this.htmlText.userData.user_details.user_type == 'admin') {
+        data.data["admin_id"] = this.htmlText.userData.user_details._id;
+        data.data["parent_type"] = "admin";
+        data["sourceobj"] = ["admin_id"];
       }
 
       this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
@@ -204,11 +223,17 @@ export class AddEditTechComponent implements OnInit {
 
           setTimeout(() => {
             switch(this.htmlText.userData.user_details.user_type) {
-              case 'diagnostic_admin':
+              case 'admin':
                 this.router.navigateByUrl("admin/tech-management");
                 break;
-              case 'admin':
+              case 'diagnostic_admin':
                 this.router.navigateByUrl("diagnostic-admin/tech-management");
+                break;
+              case  'doctor_group':
+                this.router.navigateByUrl("doctor-group/tech-management");
+                break;
+              case  'distributors':
+                this.router.navigateByUrl("distributors/tech-management");
                 break;
             }
           }, 1000);

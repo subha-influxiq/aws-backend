@@ -4,6 +4,13 @@
 <!-- Diagnostic Admin Header -->
 <app-diagnostic-admin-header *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
 
+<!-- Doctor Group Header -->
+<app-doctor-group-header *ngIf="htmlText.userData.user_details.user_type == 'doctor_group'"></app-doctor-group-header>
+
+<!-- Distributor Admin Header -->
+<app-distributors-header
+*ngIf="htmlText.userData.user_details.user_type == 'distributors'"></app-distributors-header>
+
 <!-- Doctor Header -->
 <app-doctor-header *ngIf="htmlText.userData.user_details.user_type == 'doctor'"></app-doctor-header>
 

@@ -825,8 +825,18 @@ const routes: Routes = [
   {
     path: 'diagnostic-admin/tech-management',
     component: ListingTechComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'diagnostic-admin/tech-management/add',
+    component: AddEditTechComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'diagnostic-admin/tech-management/edit/:_id',
+    component: AddEditTechComponent,
     canActivate: [AuthguardService],
-    resolve: { techDashboardData: ResolveService },
+    resolve: { techData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
@@ -837,13 +847,45 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+
   {
-    path: 'diagnostic-admin/tech-management/add',
+    path: 'doctor-group/tech-management',
+    component: ListingTechComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'doctor-group/tech-management/add',
     component: AddEditTechComponent,
     canActivate: [AuthguardService]
   },
   {
-    path: 'diagnostic-admin/tech-management/edit/:_id',
+    path: 'doctor-group/tech-management/edit/:_id',
+    component: AddEditTechComponent,
+    canActivate: [AuthguardService],
+    resolve: { techData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "tech"
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+
+  {
+    path: 'distributors/tech-management',
+    component: ListingTechComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'distributors/tech-management/add',
+    component: AddEditTechComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'distributors/tech-management/edit/:_id',
     component: AddEditTechComponent,
     canActivate: [AuthguardService],
     resolve: { techData: ResolveService },
@@ -939,16 +981,6 @@ const routes: Routes = [
     path: 'diagnostic-admin/biller-management',
     component: ListingBillerComponent,
     canActivate: [AuthguardService],
-    resolve: { Billerdata: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {
-          user_type: "biller"
-        }
-      },
-      endpoint: 'datalist'
-    },
   },
   {
     path: 'diagnostic-admin/biller-management/add',
@@ -970,6 +1002,58 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+
+  {
+    path: 'doctor-group/biller-management',
+    component: ListingBillerComponent,
+    canActivate: [AuthguardService],
+  },
+  {
+    path: 'doctor-group/biller-management/add',
+    component: AddEditBillerComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'doctor-group/biller-management/edit/:_id',
+    component: AddEditBillerComponent,
+    canActivate: [AuthguardService],
+    resolve: { billersingleData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "biller"
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+  {
+    path: 'distributors/biller-management',
+    component: ListingBillerComponent,
+    canActivate: [AuthguardService],
+  },
+  {
+    path: 'distributors/biller-management/add',
+    component: AddEditBillerComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'distributors/biller-management/edit/:_id',
+    component: AddEditBillerComponent,
+    canActivate: [AuthguardService],
+    resolve: { billersingleData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "biller"
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+
 
   /* Faq */
   {

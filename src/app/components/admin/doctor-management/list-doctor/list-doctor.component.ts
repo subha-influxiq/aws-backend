@@ -130,7 +130,7 @@ export class ListDoctorComponent implements OnInit {
 
     this.libdata.basecondition = this.field;
 
-    console.log('libdata',this.libdata);
+    // console.log('libdata',this.libdata);
 
     this.apiUrl = http.baseUrl;
   }
