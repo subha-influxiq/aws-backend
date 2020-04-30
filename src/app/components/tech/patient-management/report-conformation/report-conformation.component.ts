@@ -224,7 +224,7 @@ export class ReportConformationComponent implements OnInit {
         "token": this.htmlText.userData.jwtToken
       };
 
-      this.http.httpViaPost("addorupdatedata", data).subscribe(response => {
+      this.http.httpViaPost("update-upload-file", data).subscribe(response => {
         if(response.status == 'success') {
           this.snackBar.open("Successfully updated.", "Ok", {
             duration: 2000,
@@ -234,7 +234,7 @@ export class ReportConformationComponent implements OnInit {
             this.router.navigateByUrl('/tech/dashboard');
           }, 1000);
         } else {
-          this.snackBar.open("An error occoed. Error code: F-AEA-TS-164.", "Ok", {
+          this.snackBar.open(response.msg + " Error code: F-AEA-TS-164.", "Ok", {
             duration: 2000,
           });
         }
