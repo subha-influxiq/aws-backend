@@ -623,6 +623,60 @@ const routes: Routes = [
     },
   },
 
+  {
+    path: 'distributors/sales-person-management',
+    component: ListSalesPersonComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'distributors/sales-person-management/add',
+    component: AddEditSalesPersonComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'distributors/sales-person-management/edit/:_id',
+    component: AddEditSalesPersonComponent,
+    canActivate: [AuthguardService],
+    resolve: { techData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "sales_person",
+
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+
+  {
+    path: 'diagnostic-admin/sales-person-management',
+    component: ListSalesPersonComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'distributors/sales-person-management/add',
+    component: AddEditSalesPersonComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'distributors/sales-person-management/edit/:_id',
+    component: AddEditSalesPersonComponent,
+    canActivate: [AuthguardService],
+    resolve: { techData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {
+          user_type: "sales_person",
+
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
+
   /* FNQ Management */
   {
     path: 'admin/faq-management',

@@ -1,6 +1,16 @@
 <!-- Admin Header -->
 <app-admin-header *ngIf="userData.user_type == 'admin'"></app-admin-header>
 
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-header *ngIf="userData.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+
+<!-- Distributors Admin Header -->
+<app-distributors-header *ngIf="userData.user_type == 'distributors'"></app-distributors-header>
+
+<!-- Doctor Header -->
+<app-doctor-header *ngIf="userData.user_type == 'doctor'"></app-doctor-header>
+
 
 <mat-card class="admin_wrapper">
   <!-- header with add button -->
@@ -14,6 +24,21 @@
   <ng-container *ngIf="userData.user_type == 'admin'">
     <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Sales Person</span>
     <button mat-flat-button [routerLink]="['/admin/sales-person-management/add']">Add Sales Person</button>
+  </ng-container>
+
+  <ng-container *ngIf="userData.user_type == 'diagnostic_admin'">
+    <span class="bradcrumb"><a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Sales Person</span>
+    <button mat-flat-button [routerLink]="['/diagnostic-admin/sales-person-management/add']">Add Sales Person</button>
+  </ng-container>
+
+  <ng-container *ngIf="userData.user_type == 'distributors'">
+    <span class="bradcrumb"><a [routerLink]="['/distributors/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Sales Person</span>
+    <button mat-flat-button [routerLink]="['/distributors/sales-person-management/add']">Add Sales Person</button>
+  </ng-container>
+
+  <ng-container *ngIf="userData.user_type == 'doctor'">
+    <span class="bradcrumb"><a [routerLink]="['/doctor/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Sales Person</span>
+    <button mat-flat-button [routerLink]="['/doctor/sales-person-management/add']">Add Sales Person</button>
   </ng-container>
 </span>
 <!-- End header with add button -->
@@ -34,7 +59,7 @@
   [date_search_endpoint]="SearchingEndpoint"
   [date_search_source]="SearchingSourceName"
   [search_settings]="search_settings"
-  [sortdata]="sortdata" [datacollection]="datacollection" [date_search_source_count]="salesData_count" [limitcond]="limitcond">
+  [sortdata]="sortdata" [libdata]="libdata" [datacollection]="datacollection" [date_search_source_count]="salesData_count" [limitcond]="limitcond">
   
 </lib-listing>
 
