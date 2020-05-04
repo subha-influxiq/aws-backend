@@ -69,9 +69,9 @@
 }
 
 @media screen and (max-width: 1366px) {
-  .techdashboard_header .quotation .mat-nav-list .mat-list-item { margin: 0; }
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item { margin: 0; font-size: 14px; }
   .techdashboard_header .quotation .mat-nav-list .mat-list-item{ margin: 0; }
-  .techdashboard_header .profile_section .username { font-size: 14px; }
+  .techdashboard_header .profile_section .username { font-size: 14px; } 
 }
 
 @media screen and (max-width: 1280px) {

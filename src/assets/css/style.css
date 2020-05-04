@@ -522,6 +522,11 @@ align-items: center; justify-content: center; color: #fff; font-family: 'AvenirM
   padding: 0 10px; box-sizing: border-box;
   max-height: initial;
   overflow: auto; }
+
+  .mat-dialog-container .mat-dialog-content .mat-form-field{ width:100%}
+  .mat-dialog-container .mat-dialog-content .submit_form{  display: flex; justify-content: flex-end;}
+  .mat-dialog-container .mat-dialog-content .submit_form button{ font-family: 'AvenirBlack'; text-transform: uppercase; color: #fff; background: var(--button-color2);}
+  .mat-dialog-container .mat-dialog-content .submit_form button:last-child{ background: var(--button-color3);}
 .mat-dialog-container .mat-dialog-content p{ text-align: center; color: var(--button-color2); font-size: 18px; white-space: normal; word-break: break-all; font-family: 'AvenirMedium';}
 .mat-dialog-container .mat-dialog-actions { display: flex; flex-wrap: wrap; min-height: inherit; align-items: center;
   justify-content: center;
@@ -581,3 +586,16 @@ border-bottom: 2px solid; padding-bottom: 8px;}
 .DataTable .mat-card br{ display: none;}
 .DataTable .mat-card mat-label{ margin-right: 10px;}
 .DataTable .mat-card .tablewrapper { margin-bottom: 16px;}
+
+/* modification on 5.04.2020 */
+.calendar_data .mat-card{ box-shadow: none!important; padding: 0!important; margin:16px 0!important; }
+.calendar_data .calender_first .mat-toolbar.mat-primary{ background: var(--button-color3); }
+
+.calendar_data table th{ font-family: 'AvenirBlack'; }
+.calendar_data table td{ font-family: 'AvenirMedium'; }
+.lib-pager-class { clear: inherit!important; float: none!important; text-align: center; }
+.lib-pager-class .mat-form-field { width: 90px; margin: 0 10px}
+.lib-pager-class .mat-form-field  .mat-form-field-flex { border: 1px solid #e4e4e4; padding: 0 5px; border-radius: 6px;
+}
+.lib-pager-class .mat-form-field  .mat-form-field-appearance-legacy .mat-form-field-underline{ height: 0; }
+
