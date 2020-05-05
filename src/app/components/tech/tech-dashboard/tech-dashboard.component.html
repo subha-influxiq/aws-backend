@@ -52,6 +52,74 @@
         </span>
       </mat-card-content>
     </mat-card-content>
+
+    <mat-card-content class="biller_wrapper">
+      <mat-card-content class="super_bill_item sp_one">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports This Week
+          </p>
+          <h2> {{ allResolveData.totalreportthisweek }} </h2>
+          <button mat-flat-button (click)="viewDetailsData('Reports Uploaded')">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item sp_two">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Report Last Week
+          </p>
+          <h2> {{ allResolveData.totalreportpreviousweek }} </h2>
+          <button mat-flat-button (click)="viewDetailsData('Reports Processed')">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item sp_three">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon3.png">
+          </mat-card-content>
+        </span>
+        <span class="container_wrapper">
+          <p>Total Number of Reports This Month
+          </p>
+          <h2> {{ allResolveData.totalreportthismonth }} </h2>
+          <button mat-flat-button (click)="viewDetailsData('Remain Process')">view all</button>
+        </span>
+      </mat-card-content>
+
+    </mat-card-content>
+
+    <mat-card-content class="biller_wrapper">
+      <mat-card-content class="super_bill_item sp_one">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Last Month
+          </p>
+          <h2> {{ allResolveData.totalreportlastmonth }} </h2>
+          <button mat-flat-button (click)="viewDetailsData('Reports Uploaded')">view all</button>
+        </span>
+      </mat-card-content>
+
+    </mat-card-content>
   </mat-card-content>
 
 
