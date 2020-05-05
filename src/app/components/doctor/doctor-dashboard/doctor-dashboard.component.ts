@@ -45,6 +45,11 @@ export class DoctorDashboardComponent implements OnInit {
   public end_date: any;
   public viewstatus: boolean = false;
   public btnName: any = 'view more';
+  public data:any;
+  public otherData:any ={
+    all_details: { user_type: "" }
+  };
+  public header:any;
 
   constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService,
     public http: HttpServiceService, public activatedRoute: ActivatedRoute, public matSnackBar: MatSnackBar,
@@ -55,6 +60,20 @@ export class DoctorDashboardComponent implements OnInit {
 
     if(typeof(this.authData.user_details.diagnostic_admin_id) != 'undefined') {
       this.htmlText.signFlag = false;
+      this.data={_id_object:this.authData.user_details.diagnostic_admin_id};
+      this.header={name:"Diagnostic Admin Name"};
+    }
+
+    if(typeof(this.authData.user_details.distributor_id) != 'undefined') {
+      this.htmlText.signFlag = false;
+      this.data={_id_object:this.authData.user_details.distributor_id};
+      this.header={name:"Distributor Name"};
+    }
+
+    if(typeof(this.authData.user_details.doctorgroup_id) != 'undefined') {
+      this.htmlText.signFlag = false;
+      this.data={_id_object:this.authData.user_details.doctorgroup_id};
+      this.header={name:"Doctor Group Name"};
     }
 
     this.activatedRoute.data.forEach(resolveData => {
@@ -152,7 +171,20 @@ export class DoctorDashboardComponent implements OnInit {
         this.allDataSource.paginator = this.paginator;
       }
     });
+
+    let sectionData :any={
+        "source":"data_pece",
+        "condition":this.data,
+        "token":this.authData.jwtToken
+    }
+    this.http.httpViaPost('datalist', sectionData).subscribe(response => {
+      // if (response.data.length > 0) {
+        this.otherData["all_details"]= response.res[0];
+      // }
+      console.log('2222',this.otherData.all_details)
+    });
   }
+  
 
   openModal(data) {
     this.dialogRef = this.dialog.open(DialogBoxComponent, data);
