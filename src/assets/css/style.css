@@ -476,6 +476,41 @@ padding-bottom: 6px; }
  /* doctor dashboard new */
  .admin_wrapper  .testingDoc { background: linear-gradient(0deg, #07aaf5, #40bffa); font-size: 34px; text-transform: uppercase; color: #fff; padding: 8px 10px;
   font-family: 'AvenirMedium'; }
+.Admindmin_details .inner_er{ background:url('../../assets/images/doctordbImage.jpg') no-repeat;
+  background-size: cover;
+  padding: 30px;}
+  .Admindmin_details .inner_er h2{
+    text-align: center;
+    margin: 0;
+    color: var(--button-color3);
+    font-family: 'AvenirBlack';
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-top: 18px;
+  }
+  .Admindmin_details .inner{ column-count: 2; column-gap: 20px; display: block; }
+
+  .Admindmin_details .inner_er h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 32px;
+    font-family: 'AvenirMedium';
+    border-bottom: 2px solid #c5c4c4;
+    padding: 5px;
+    margin: 0;
+    background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%);
+    color: #231c23;
+  }
+  .Admindmin_details .list_wrapper{ width: 100%; margin: 0 auto; border-radius: 10px; background: #fff; box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12); padding-top: 0!important; padding-bottom: 20px;}
+  .Admindmin_details .inner_er .mat-list-item{ font-size: 18px;
+    font-family: 'AvenirMedium';
+    height: inherit;
+    padding: 5px;
+    box-sizing: border-box;
+    color: #545454; text-transform: capitalize;
+  }
+  .Admindmin_details .inner_er .mat-list-item .lg{ font-size: 18px; font-family: 'AvenirBlack'; }
+
  .admin_wrapper  .mediaDoc_wrapper { display: flex; justify-content: space-between; }
  .admin_wrapper  .mediaDoc_wrapper .new_wrapper_left{ width: 73%; display: flex;}
  .admin_wrapper  .mediaDoc_wrapper .new_wrapper_right{  width: 26%; display: flex; flex-direction: column;}
