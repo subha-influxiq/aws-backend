@@ -67,6 +67,7 @@ export class AddEditDoctorgroupComponent implements OnInit {
     let validateRule: any = {
       id:                     ['', []],
       groupname:              ['', [ Validators.required, Validators.maxLength(50) ]],
+      contactperson:              ['', [ Validators.required, Validators.maxLength(50) ]],
       email:                  ['', [ Validators.required, Validators.email, Validators.maxLength(100) ]],
       phone:                  ['', [ Validators.required, Validators.minLength(7), Validators.maxLength(16) ]],
       address:                ['', [ Validators.required, Validators.maxLength(200) ]],
