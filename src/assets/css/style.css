@@ -617,7 +617,7 @@ border-bottom: 2px solid; padding-bottom: 8px;}
 
 .calendar_data table th{ font-family: 'AvenirBlack'; }
 .calendar_data table td{ font-family: 'AvenirMedium'; }
-.lib-pager-class { clear: inherit!important; float: none!important; text-align: center; }
+.lib-pager-class { clear: inherit!important; float: none!important; text-align: center; margin-top: 16px;}
 .lib-pager-class .mat-form-field { width: 90px; margin: 0 10px}
 .lib-pager-class .mat-form-field  .mat-form-field-flex { border: 1px solid #e4e4e4; padding: 0 5px; border-radius: 6px;
 }
