@@ -15,7 +15,7 @@
 
         <span class="container_wrapper">
           <p> Total Appointments<br> Booked </p>
-          <h2> 20  </h2>
+          <h2> 20 </h2>
           <button mat-flat-button (click)="viewReportProcessData('Images Not Processed')">view all</button>
         </span>
       </mat-card-content>
@@ -28,8 +28,8 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total Appointments <br> Completed  </p>
-          <h2>30  </h2>
+          <p>Total Appointments <br> Completed </p>
+          <h2>30 </h2>
           <button mat-flat-button (click)="viewReportProcessData('Basic Details Not Processed')">view all</button>
         </span>
       </mat-card-content>
@@ -44,15 +44,15 @@
         <span class="container_wrapper">
           <p>Total Appointments<br> Pending
           </p>
-          <h2> 40  </h2>
+          <h2> 40 </h2>
           <button mat-flat-button (click)="viewReportProcessData('Risk Markers Not Processed')">view all</button>
         </span>
       </mat-card-content>
 
     </mat-card-content>
   </mat-card-content>
-</mat-card>
 
-<lib-booked-event-listing [configData]="configData"></lib-booked-event-listing>
+  <lib-booked-event-listing class="calendar_data" [configData]="configData"></lib-booked-event-listing>
+</mat-card>
 
 <app-admin-footer></app-admin-footer>

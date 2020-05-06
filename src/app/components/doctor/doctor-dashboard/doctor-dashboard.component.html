@@ -28,7 +28,8 @@
             <img src="../../../../assets/images/doctor-Dashboard-Health-report.jpg">
           </mat-card-content>
           <a mat-button class="action_button"
-            href="../../../../assets/Doctors Resources/Clinical Quick Reference Guide.pdf" target="_blank"> download </a>
+            href="../../../../assets/Doctors Resources/Clinical Quick Reference Guide.pdf" target="_blank"> download
+          </a>
         </mat-card-content>
       </span>
 
@@ -69,7 +70,8 @@
         </mat-card-content>
 
         <a mat-button class="action_button"
-          href="../../../../assets/Doctors Resources/2nd Block/Determination of age-related.pdf" target="_blank" > download</a>
+          href="../../../../assets/Doctors Resources/2nd Block/Determination of age-related.pdf" target="_blank">
+          download</a>
       </mat-card-content>
 
       <mat-card-content class="items_w">
@@ -144,7 +146,8 @@
           </mat-card-content>
 
           <a mat-button class="action_button"
-            href="../../../../assets/Doctors Resources/2nd Block/Assessment of Vascular Aging.pdf" target="_blank"> download
+            href="../../../../assets/Doctors Resources/2nd Block/Assessment of Vascular Aging.pdf" target="_blank">
+            download
           </a>
         </mat-card-content>
 
@@ -160,7 +163,8 @@
           </mat-card-content>
 
           <a mat-button class="action_button"
-            href="../../../../assets/Doctors Resources/2nd Block/Determination of age-related.pdf" target="_blank"> download
+            href="../../../../assets/Doctors Resources/2nd Block/Determination of age-related.pdf" target="_blank">
+            download
           </a>
         </mat-card-content>
         <mat-card-content class="items_w">
@@ -177,7 +181,8 @@
           </mat-card-content>
 
           <a mat-button class="action_button"
-            href="../../../../assets/Doctors Resources/2nd Block/Diabetes Sweat Response.pdf" target="_blank"> download </a>
+            href="../../../../assets/Doctors Resources/2nd Block/Diabetes Sweat Response.pdf" target="_blank"> download
+          </a>
         </mat-card-content>
 
         <mat-card-content class="items_w">
@@ -251,8 +256,101 @@
       <button mat-button (click)="viewMore()">{{ btnName }}</button>
     </mat-toolbar>
   </section>
+  <section class="Admindmin_details">
+    <mat-card-content class="inner_er">
+      <ng-container *ngIf="otherData.all_details.user_type == 'distributors'">
+
+      <mat-list class="list_wrapper">
+        <h3>{{header.name}}: &nbsp;</h3>
+        <h2>Details</h2>
+
+        <span class="inner">
+
+          <mat-list-item>
+            <span class="lg">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contactperson }} </span>
+
+          </mat-list-item>
+          <mat-list-item>
+            <span class="lg">Contact Phone :&nbsp; </span><span> {{otherData.all_details.phone}}</span>
+
+          </mat-list-item>
+          <mat-list-item>
+            <span class="lg">Contact Email :&nbsp; </span><span> {{otherData.all_details.email}} </span>
+
+          </mat-list-item>
+          <mat-list-item>
+            <span class="lg">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>
+
+          </mat-list-item>
+        </span>
+      </mat-list>
+    </ng-container>
+    </mat-card-content>
+  </section>
 
 
+  <section class="Admindmin_details">
+    <mat-card-content class="inner_er">
+      <ng-container *ngIf="otherData.all_details.user_type == 'diagnostic_admin'">
+      <mat-list class="list_wrapper">
+        <h3>{{header.name}}: &nbsp;</h3>
+        <h2>Details</h2>
+
+        <span class="inner">
+
+          <mat-list-item>
+            <span class="lg">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contact_person[0].name }} </span>
+
+          </mat-list-item>
+          <mat-list-item>
+            <span class="lg">Contact Phone :&nbsp; </span><span> {{otherData.all_details.contact_person[0].phone}}</span>
+
+          </mat-list-item>
+          <mat-list-item>
+            <span class="lg">Contact Email :&nbsp; </span><span> {{otherData.all_details.contact_person[0].email}} </span>
+
+          </mat-list-item>
+          <mat-list-item>
+            <span class="lg">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>
+
+          </mat-list-item>
+        </span>
+      </mat-list>
+    </ng-container>
+    </mat-card-content>
+  </section>
+
+  <section class="Admindmin_details">
+    <mat-card-content class="inner_er">
+
+      <ng-container *ngIf="otherData.all_details.user_type == 'doctor_group'">
+      <mat-list class="list_wrapper">
+        <h3>{{header.name}}: &nbsp;</h3>
+        <h2>Details</h2>
+
+        <span class="inner">
+
+          <mat-list-item>
+            <span class="lg">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contactperson }} </span>
+
+          </mat-list-item>
+          <mat-list-item>
+            <span class="lg">Contact Phone :&nbsp; </span><span> {{otherData.all_details.phone}}</span>
+
+          </mat-list-item>
+          <mat-list-item>
+            <span class="lg">Contact Email :&nbsp; </span><span> {{otherData.all_details.email}} </span>
+
+          </mat-list-item>
+          <mat-list-item>
+            <span class="lg">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>
+
+          </mat-list-item>
+        </span>
+      </mat-list>
+    </ng-container>
+    </mat-card-content>
+  </section>
 
   <!-- Count Block  -->
 
@@ -392,19 +490,21 @@
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let element; let i = index;">
-          <button  matTooltip="View" aria-label="Button" matTooltipPosition="above" *ngIf="element.status == 'Pending Signature'" mat-button type="button" class="viewButton"
+          <button matTooltip="View" aria-label="Button" matTooltipPosition="above"
+            *ngIf="element.status == 'Pending Signature'" mat-button type="button" class="viewButton"
             [routerLink]="['/doctor/patient-record-report', element._id]"><i class="material-icons">
               remove_red_eye
             </i></button>
           <button mat-raised-button *ngIf="element.status != 'Pending Signature'" type="button"
-            class="viewButton downloadBtn" disabled matTooltip="View" aria-label="Button" matTooltipPosition="above"><i class="material-icons">
+            class="viewButton downloadBtn" disabled matTooltip="View" aria-label="Button" matTooltipPosition="above"><i
+              class="material-icons">
               remove_red_eye
             </i></button>
-          <button matTooltip="Download"
-          aria-label="Button" matTooltipPosition="above" mat-raised-button *ngIf="element.status != 'Pending Signature'" type="button"
-            class="viewButton downloadBtn" (click)="downloadReport(element);"><i class="material-icons">
+          <button matTooltip="Download" aria-label="Button" matTooltipPosition="above" mat-raised-button
+            *ngIf="element.status != 'Pending Signature'" type="button" class="viewButton downloadBtn"
+            (click)="downloadReport(element);"><i class="material-icons">
               cloud_download
-              </i></button>
+            </i></button>
         </td>
       </ng-container>
 

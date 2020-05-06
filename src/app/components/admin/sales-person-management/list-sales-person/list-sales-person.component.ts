@@ -14,6 +14,9 @@ export class ListSalesPersonComponent implements OnInit {
 
   public allUserData: any = [];
   public datasource: any;
+  public field:any;
+  public data:any;
+  public fetch:any;
   public salesData_count:any=0;
   public allUserData_skip: any = [
     "_id",
@@ -26,7 +29,10 @@ export class ListSalesPersonComponent implements OnInit {
     "created_at",
     "id",
     "updated_at",
-    "diagnostic_admin_id"
+    "diagnostic_admin_id",
+    "admin_id",
+    "distributor_id",
+    "doctorgroup_id"
   ];
   public editUrl: any = "admin/sales-person-management/edit";
   public allUserData_modify_header: any = {
@@ -45,13 +51,25 @@ export class ListSalesPersonComponent implements OnInit {
     "updated_at",
     "diagnostic_admin_id"
   ];
+  
+  libdata:any={
+    basecondition: "",
+    updateendpoint:'statusupdate',
+    // hideeditbutton:true,// all these button options are optional not mandatory
+    //hidedeletebutton:true,
+    //hideviewbutton:false,
+    //hidestatustogglebutton:true,
+    // hideaction:true,
+    tableheaders:['firstname','lastname','email','parent_name','parent_type','phone','status','created_date',], //not required
+}
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
   public apiUrl: any;
-  public tableName: any = "users";
+  public tableName: any = "data_pece";
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
+  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },{ val: "distributors", 'name': 'Distributor' }];
   public SearchingEndpoint: any = "datalist";
   public SearchingSourceName: any = "data_sales_person_list";
   public datacollection: any='getsaleslistdata';
@@ -67,9 +85,9 @@ export class ListSalesPersonComponent implements OnInit {
 };
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
+      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status },{ label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }],
       textsearch: [{ label: "Search By Name", field: 'name_search' },
-      { label: "Search By E-Mail", field: 'email' }],
+      { label: "Search By E-Mail", field: 'email' },{ label: "Search By Parent Name", field: 'parent_search' }],
 
     };
   public user_cookie: any;
@@ -84,14 +102,23 @@ export class ListSalesPersonComponent implements OnInit {
 
     this.user_cookie = cookie.get('jwtToken');
     this.userData = JSON.parse(this.cookie.get('user_details'));
-    
+
     if(this.userData.user_type == 'diagnostic_admin') {
-      this.editUrl = 'diagnostic-admin/tech-management/edit';
+      this.editUrl = 'diagnostic-admin/sales-person-management/edit';
+      this.field = {'diagnostic_admin_id':this.userData._id};
+      this.data = this.userData._id;
+    }
+    if(this.userData.user_type == 'distributors') {
+      this.editUrl = 'distributors/sales-person-management/edit';
+      this.field = {'distributors_id':this.userData._id};
+      this.data = this.userData._id;
     }
 
     if(this.userData.user_type == 'doctor') {
       this.editUrl = 'doctor/tech-management/edit';
     }
+
+    this.libdata.basecondition = this.field;
 
     this.apiUrl = httpService.baseUrl;
   }
@@ -108,9 +135,17 @@ export class ListSalesPersonComponent implements OnInit {
     sort:{
         "type":'desc',
         "field":'firstname'
-    }
+    },
+    data:this.fetch
  
     }
+    if(this.userData.user_type == 'diagnostic_admin') {
+      this.fetch={'diagnostic_admin_id':  this.data}
+    }
+    if(this.userData.user_type == 'distributors') {
+      this.fetch={'distributor_id':  this.data}
+    }
+    data.data = this.fetch;
         this.httpService.httpViaPost(endpointc, data).subscribe((res:any) => {
             // console.log('in constructor');
             // console.log(result);

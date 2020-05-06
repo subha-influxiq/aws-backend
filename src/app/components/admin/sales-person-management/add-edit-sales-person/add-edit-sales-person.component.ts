@@ -183,6 +183,24 @@ export class AddEditSalesPersonComponent implements OnInit {
         "domainurl" : environment.siteBaseUrl + 'reset-password'
       };
 
+      if(this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
+        data.data["diagnostic_admin_id"] = this.htmlText.userData.user_details._id;
+        data.data["parent_type"] = "diagnostic_admin"
+        data["sourceobj"] = ["diagnostic_admin_id"];
+      }
+
+      if(this.htmlText.userData.user_details.user_type == 'distributors') {
+        data.data["distributor_id"] = this.htmlText.userData.user_details._id;
+        data.data["parent_type"] = "distributor"
+        data["sourceobj"] = ["distributor_id"];
+      }
+
+      if(this.htmlText.userData.user_details.user_type == 'admin') {
+        data.data["admin_id"] = this.htmlText.userData.user_details._id;
+        data.data["parent_type"] = "admin";
+        data["sourceobj"] = ["admin_id"];
+      }
+
       this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
         if (response.status == "success") {
           this.snackBar.open(this.htmlText.message, 'Ok', {
@@ -192,7 +210,18 @@ export class AddEditSalesPersonComponent implements OnInit {
           this.formDirective.resetForm();
 
           setTimeout(() => {
-            this.router.navigateByUrl("admin/sales-person-management");
+            switch(this.htmlText.userData.user_details.user_type) {
+              case 'admin':
+                this.router.navigateByUrl("admin/sales-person-management");
+                break;
+              case 'diagnostic_admin':
+                this.router.navigateByUrl("diagnostic-admin/sales-person-management");
+                break;
+              case  'distributors':
+                this.router.navigateByUrl("distributors/sales-person-management");
+                break;
+  
+            }
           }, 1000);
         } else {
           this.snackBar.open(response.msg, '', {

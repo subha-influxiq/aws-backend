@@ -40,7 +40,7 @@
     <mat-card-content class="form_wrapper">
       <form class="example-form" autocomplete="off" [formGroup]="doctorgroupManagementAddEditForm" (ngSubmit)="doctorgroupManagementAddEditFormSubmit()">
 
-        <!-- First Name Start -->
+        <!-- Group Name Start -->
         <mat-form-field appearance="fill">
           <mat-label>Group Name</mat-label>
 
@@ -57,7 +57,26 @@
             Group Name is not valid.
           </mat-error>
         </mat-form-field>
-        <!-- First Name End -->
+        <!-- Group Name End -->
+
+        <!-- Contact Person Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Contact Person Name</mat-label>
+
+          <input matInput placeholder="Contact Person Name" [formControl]="doctorgroupManagementAddEditForm.controls['contactperson']"
+            (blur)="inputUntouch(doctorgroupManagementAddEditForm,'contactperson')">
+
+          <mat-error
+            *ngIf="doctorgroupManagementAddEditForm.controls['contactperson'].touched && !doctorgroupManagementAddEditForm.controls['contactperson'].valid && doctorgroupManagementAddEditForm.controls['contactperson'].errors.required">
+            Contact Person Name required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="doctorgroupManagementAddEditForm.controls['contactperson'].touched && !doctorgroupManagementAddEditForm.controls['contactperson'].valid && doctorgroupManagementAddEditForm.controls['contactperson'].errors.maxlength">
+            Contact Person Name is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Contact Person End -->
 
         <!-- Email Start -->
         <mat-form-field appearance="fill">

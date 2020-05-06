@@ -60,7 +60,7 @@ export class ListingBillerComponent implements OnInit {
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
   public apiUrl: any;
-  public tableName: any = "users";
+  public tableName: any = "data_pece";
   public datacollection: any='getbillerlistdata';
   public sortdata:any={
     "type":'desc',
