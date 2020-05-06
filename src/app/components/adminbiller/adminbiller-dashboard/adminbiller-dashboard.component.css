@@ -1,0 +1,52 @@
+
+/* .content_wrapper{ display: flex; justify-content: space-between;  align-items: center; width: 100%; margin: auto; text-align: center; }
+.content_wrapper .itemsection{width: 33%; margin: 0px 7px; box-sizing: border-box; display: flex; justify-content: center; position: relative; border-radius: 10px; border: 1px solid #e8e9ef;  overflow: hidden;  }
+.content_wrapper .itemsection .icon{  display: flex; align-items: center; justify-content: center; width: 20%; box-sizing: border-box;}
+.content_wrapper .itemsection .icon img{ max-width: 100%; }
+.content_wrapper .itemsection .button_wrapper{ background: #4d545a; width: 25%; display: flex; align-items: center; justify-content: center; }
+.content_wrapper .itemsection .button_wrapper button{ width: auto; background: transparent; color: #fff; padding: 0; font-family: "AvenirMedium"; font-size: 15px; }
+.content_wrapper .itemsection .counteer { box-sizing: border-box; width: 55%; padding: 5px; text-align: left; }
+.content_wrapper .itemsection .counteer .dataCount{ font-size: 48px; font-family: "AvenirBlack";  color: #4d545a; margin: 0;}
+.content_wrapper .itemsection .counteer .doctorNumber{ font-size: 18px; font-family: "AvenirMedium";  color: #4d545a; margin:0;}
+.content_wrapper .itemsection:nth-child(3n+1){ margin-left: 0;}
+.content_wrapper .itemsection:nth-child(3n+3){ margin-right: 0;} */
+
+
+/* Subha CSS */
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    min-width: 100px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding:6px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }

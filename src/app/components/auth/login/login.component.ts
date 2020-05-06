@@ -76,11 +76,14 @@ export class LoginComponent implements OnInit {
         {
           "user_type": "distributors",
           "routerNav": "distributors/dashboard"
+        },
+        {
+          "user_type": "admin_biller",
+          "routerNav": "admin-biller/dashboard"
         }
       ]
     }
   }
-
   ngOnInit() {
   }
 

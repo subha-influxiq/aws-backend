@@ -75,7 +75,7 @@ export class ListDoctorComponent implements OnInit {
   public data:any;
   public field:any;
   public fetch:any;
-  libdata:any={
+  public libdata:any={
     basecondition: "",
     updateendpoint:'statusupdate',
     // hideeditbutton:true,// all these button options are optional not mandatory
@@ -83,7 +83,7 @@ export class ListDoctorComponent implements OnInit {
     //hideviewbutton:false,
     //hidestatustogglebutton:true,
     // hideaction:true,
-    tableheaders:['firstname','lastname','email','parent_name','parent_type','phone','practice_name','npi','status','created_date',], //not required
+    tableheaders:['firstname','lastname','email','phone','practice_name','npi','status','created_date',], //not required
 }
   public sortdata:any={
     "type":'desc',
@@ -99,10 +99,10 @@ export class ListDoctorComponent implements OnInit {
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },{ val: "distributors", 'name': 'Distributor' },{ val: "doctor_group", 'name': 'Doctor Group' }];
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status },{ label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }],
+      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
       textsearch: [{ label: "Search By Name", field: 'name_search' },
       // {label:"Search by Taxonomy",field:'taxo_list'},
-      { label: "Search By E-Mail", field: 'email' },{ label: "Search By Parent Name", field: 'parent_search' }]
+      { label: "Search By E-Mail", field: 'email' },{ label: "Search By NPI", field: 'npi' }]
     };
   // ====================================================================
 
@@ -117,6 +117,14 @@ export class ListDoctorComponent implements OnInit {
       this.field = {'diagnostic_admin_id':this.userData._id};
       this.data = this.userData._id;
     }
+
+    if(this.userData.user_type == 'admin') {
+      this.search_settings.textsearch.push({ label: "Search By Parent Name", field: 'parent_search' });
+      this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type });
+      this.libdata.tableheaders.splice(3,0,"parent_name");
+      this.libdata.tableheaders.splice(4,0,"parent_type");
+    }
+
     if(this.userData.user_type == 'doctor_group') {
       this.editUrl = 'doctor-group/doctor-management/edit';
       this.field = {'doctorgroup_id':this.userData._id};
