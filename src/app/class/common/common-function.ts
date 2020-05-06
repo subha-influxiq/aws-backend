@@ -9,6 +9,7 @@ import {
     AbstractControl
 } from '@angular/forms';
 import { HttpServiceService } from '../../services/http-service.service';
+import { type } from 'os';
 
 @Injectable()
 
@@ -90,13 +91,28 @@ export class CommonFunction {
     }
 
     randomNumber(length): any {
-        var result           = '';
-        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var result = '';
+        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         var charactersLength = characters.length;
-        for ( var i = 0; i < length; i++ ) {
-           result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        for (var i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
         }
         return result;
-     }
+    }
+
+    getYoutubeEmbedUrl(url) {
+        if(typeof(url) == 'string') {
+            var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            var match = url.match(regExp);
+
+            if (match && match[2].length == 11) {
+                return { status: true, url: 'https://www.youtube.com/embed/' + match[2] };
+            } else {
+                return { status: false, url: '' }
+            }
+        } else {
+            return { status: false, url: '' };
+        }
+    }
 
 }
