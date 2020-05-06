@@ -29,32 +29,33 @@ export class AddEditFaqComponent implements OnInit {
   public params_id: any;
   public htmlText: any = {
     userData: "",
-    header: 'Add New FAQ', 
-    nav: 'Add FAQ', 
+    header: 'Add New FAQ',
+    nav: 'Add FAQ',
     buttonText: 'Save',
     message: "Submitted Successfully",
     states: "",
     allCities: "",
     cities: "",
-    ckEditorValue: ""
+    ckEditorValue: "",
+    youtubeLinkError: false
   };
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService, public snackBar: MatSnackBar, public commonFunction: CommonFunction,
     public dialog: MatDialog) {
-    
+
     this.htmlText.userData = cookie.getAll();
     this.htmlText.userData.user_details = JSON.parse(this.htmlText.userData.user_details);
 
     if (this.activeRoute.snapshot.params._id) {
       this.generateAddEditForm('edit');
 
-      this.htmlText.message     = "Updated Successfully";
-      this.htmlText.header      = 'Edit FAQ Record';
-      this.htmlText.nav         = 'Edit FAQ';
-      this.htmlText.buttonText  = 'Update';
-      this.params_id            = this.activeRoute.snapshot.params._id;
+      this.htmlText.message = "Updated Successfully";
+      this.htmlText.header = 'Edit FAQ Record';
+      this.htmlText.nav = 'Edit FAQ';
+      this.htmlText.buttonText = 'Update';
+      this.params_id = this.activeRoute.snapshot.params._id;
     } else {
       this.generateAddEditForm('add');
     }
@@ -62,16 +63,16 @@ export class AddEditFaqComponent implements OnInit {
 
   generateAddEditForm(flag: string = null) {
     let validateRule: any = {
-      id:           ['', []],
-      users:        ['', [ Validators.required, Validators.maxLength(50) ]],
-      question:     ['', [ Validators.required, Validators.maxLength(50) ]],
-      answer:       ['', [ Validators.required, Validators.maxLength(100000) ]],
-      youtube_link: ['', [ Validators.maxLength(500) ]],
-      priority:     ['', [ Validators.required, Validators.minLength(7), Validators.maxLength(16) ]],
-      status:       ['', []],
+      id: ['', []],
+      users: ['', [Validators.required, Validators.maxLength(50)]],
+      question: ['', [Validators.required, Validators.maxLength(50)]],
+      answer: ['', [Validators.required, Validators.maxLength(100000)]],
+      youtube_link: ['', [Validators.maxLength(60)]],
+      priority: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(16)]],
+      status: ['', []],
     };
-    
-    switch(flag) {
+
+    switch (flag) {
       case 'edit':
         this.FaqManagementAddEditForm = this.fb.group(validateRule);
 
@@ -89,7 +90,7 @@ export class AddEditFaqComponent implements OnInit {
         break;
       case 'add':
         delete validateRule.id;
-        
+
         this.FaqManagementAddEditForm = this.fb.group(validateRule);
         break;
     }
@@ -116,12 +117,26 @@ export class AddEditFaqComponent implements OnInit {
       } else {
         this.FaqManagementAddEditForm.value.status = parseInt("0");
       }
-
+      
       var data: any = {
         "source": "data_faq",
         "data": this.FaqManagementAddEditForm.value,
         "token": this.htmlText.userData.jwtToken
       };
+
+      // create youtube enbad link
+      var videoLink = this.commonFunction.getYoutubeEmbedUrl(this.FaqManagementAddEditForm.value.youtube_link);
+      
+      if(videoLink.status == false && this.FaqManagementAddEditForm.value.youtube_link != '') {
+        this.snackBar.open("Youtube link is invalid.", 'Ok', {
+          duration: 4000,
+        });
+        data.data.youtube_link = '';
+        this.htmlText.youtubeLinkError = true;
+        return;
+      } else {
+        data.data.youtube_link = videoLink.url;
+      }
 
       this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
         if (response.status == "success") {
