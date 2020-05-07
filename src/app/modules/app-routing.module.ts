@@ -124,6 +124,7 @@ import { AddEditDistributorsComponent } from '../components/admin/manage-distrib
 import { ListingDistributorsComponent } from '../components/admin/manage-distributors/listing-distributors/listing-distributors.component';
 import { DoctorGroupDashboardComponent } from '../components/doctor-group/doctor-group-dashboard/doctor-group-dashboard.component';
 import { DistributorsDashboardComponent } from '../components/distributors/distributors-dashboard/distributors-dashboard.component';
+import { AdminbillerDashboardComponent } from '../components/adminbiller/adminbiller-dashboard/adminbiller-dashboard.component';
 const routes: Routes = [
   /********** Auth Route Start **********/
   {
@@ -157,7 +158,21 @@ const routes: Routes = [
   /********** Auth Route Start **********/
 
 
+/*========Admin Biller Routes========== */
 
+{
+  path: 'admin-biller/dashboard',
+  component: AdminbillerDashboardComponent,
+  canActivate: [AuthguardService],
+  resolve: { dataCount: ResolveService },
+  data: {
+    requestcondition: {
+      source: 'data_pece',
+      condition: {}
+    },
+    endpoint: 'admin-dashboard'
+  },
+},
 
 
   /********** Admin Routes Start **********/

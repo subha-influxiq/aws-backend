@@ -1,0 +1,411 @@
+<app-admin-header></app-admin-header>
+
+<mat-card class="admin_wrapper">
+  <mat-card-content class="content_wrapper">
+
+
+  </mat-card-content>
+
+
+
+
+  <!-- Report Status Section Start -->
+  <mat-card-content class="admin_superbillsection">
+    <h1>Total Patient Report Status</h1>
+    <mat-card-content class="biller_wrapper">
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Processed
+          </p>
+          <h2> {{ allResolveData.total_reports_type_manual }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total Manual Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Approved
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Not Approved
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports in Hold
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+    </mat-card-content>
+  </mat-card-content>
+  <!-- Report Status Section End -->
+
+
+  <mat-card-content class="admin_superbillsection">
+    <h1>Last Month Patient Report Status</h1>
+    <mat-card-content class="biller_wrapper">
+
+      
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Processed
+          </p>
+          <h2> {{ allResolveData.total_reports_type_manual }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total Manual Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Approved
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Not Approved
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports in Hold
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+    </mat-card-content>
+  </mat-card-content>
+
+
+  <mat-card-content class="admin_superbillsection superbillerContainer">
+    <h1>This Month Patient Report Status</h1>
+    <mat-card-content class="biller_wrapper">
+
+      
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Processed
+          </p>
+          <h2> {{ allResolveData.total_reports_type_manual }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total Manual Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Approved
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Not Approved
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports in Hold
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+    </mat-card-content>
+  </mat-card-content>
+
+  <mat-card-content class="admin_superbillsection superbillerContainer">
+    <h1>Last Week Patient Report Status</h1>
+    <mat-card-content class="biller_wrapper">
+
+      
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Processed
+          </p>
+          <h2> {{ allResolveData.total_reports_type_manual }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total Manual Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Approved
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Not Approved
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports in Hold
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+    </mat-card-content>
+  </mat-card-content>
+
+  <mat-card-content class="admin_superbillsection superbillerContainer">
+    <h1>This Week Patient Report Status</h1>
+    <mat-card-content class="biller_wrapper">
+
+      
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Processed
+          </p>
+          <h2> {{ allResolveData.total_reports_type_manual }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total Manual Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Approved
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports Not Approved
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon2.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of <br>
+            Reports in Hold
+          </p>
+          <h2> {{ allResolveData.total_reports_type_file }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+        </span>
+      </mat-card-content>
+    </mat-card-content>
+  </mat-card-content>
+
+
+
+  <!-- All Data listing start here(default listing) -->
+  <mat-card-content class="table_wrapper">
+
+    <mat-toolbar class="top_header">
+      <h2> {{ htmlText.headerText }} </h2>
+      <span class="wrappp_R">
+        <button class="add_new tooltip" mat-button routerLink="/admin/patient-management/add" matTooltip="Add Report"
+          matTooltipPosition="above">
+          <!-- <span class="tooltiptext"> Add Report </span> -->
+          <i class="material-icons">add</i> Add Report Manually
+        </button>
+
+
+        <button class="add_new tooltip" mat-button (click)="refreshDashboard();" matTooltipPosition="above"
+          matTooltip="ReportRefresh Dashboard">
+          <!-- <span class="tooltiptext"> Refresh Dashboard </span> -->
+          <i class="material-icons">cached</i>
+        </button>
+      </span>
+    </mat-toolbar>
+
+    <!-- Listing goes here  -->
+    <lib-listing class="DataTable" *ngIf="patientData.length>0" [datasource]="patientData" [skip]="patientData_skip"
+      [modify_header_array]="patientData_modify_header" [sourcedata]="tableName" [detail_skip_array]="previewModal_skip"
+      [apiurl]="apiUrl" [editroute]="editUrl" [jwttoken]="user_cookie" [statusarr]="status"
+      [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="searchingEndpoint"
+      [date_search_source]="searchSourceName" [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection" [libdata]="libdata" [date_search_source_count]="patientData_count" [limitcond]="limitcond">
+
+    </lib-listing>
+
+    <h2 *ngIf="patientData.length == 0">No record found.</h2>
+    <!-- Listing ends here  -->
+    
+  </mat-card-content>
+  <!-- dashboard all listing end here -->
+</mat-card>
+
+<app-admin-footer></app-admin-footer>
