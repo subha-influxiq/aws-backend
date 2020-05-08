@@ -2,7 +2,31 @@
 
 <mat-card class="admin_wrapper">
 
-    <lib-booked-event-listing [configData]="configData"></lib-booked-event-listing>
+    <lib-listing *ngIf="configData.responseData != null && configData.responseData.length > 0"
+        [datasource]="configData.responseData"
+        [skip]="configData.skipFields"
+        [modify_header_array]="configData.modify_header_array"
+        [apiurl]="configData.baseUrl"
+        [deleteendpoint]="configData.endPoint.deleteEvent"
+        [updateendpoint]="configData.endPoint.rescheduleBookedEvent"
+        [jwttoken]="configData.jwtToken"
+        [date_search_source]="configData.source"
+        [date_search_endpoint]="configData.endPoint.listBookedEvents"
+        [sourcedata]="configData.source"
+        [statusarr]="configData.statusarray"
+
+
+
+        [url]="configData.custom_link"
+        [search_settings]="configData.search_settings"
+
+        [searchendpoint]="configData.endPoint.listBookedEvents"
+        [sortdata]="configData.sortdata"
+        [datacollection]="configData.endPoint.listBookedEvents"
+        [date_search_source_count]="configData.date_search_source_count"
+        [libdata]="configData.libdata"
+        [updatetable]="configData.updatetable"
+        [limitcond]="configData.limitcond"></lib-listing>
 
 </mat-card>
 

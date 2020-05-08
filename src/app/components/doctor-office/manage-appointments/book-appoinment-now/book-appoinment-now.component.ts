@@ -27,15 +27,17 @@ export class BookAppoinmentNowComponent implements OnInit {
     jwtToken: '',
     baseUrl: environment.calendarApi,
     endPoint: {
-      add: "add-or-update-event-data",
-      datalist: "datalist",
-      deleteEvent: "delete-single-event",
-      viewEventSlots: "view-event-eventdayarr",
-      search: "search",
-      countSlot: "count-slot",
-      listBookedEvents: "list-booked-events",
-      deleteBookedEvent: "delete-booked-event",
-      rescheduleBookedEvent: "reschedule"
+      add: 'add-or-update-event-data',
+      datalist: 'datalist',
+      deleteEvent: 'delete-single-event',
+      viewEventSlots: 'view-event-eventdayarr',
+      search: 'search',
+      countSlot: 'count-slot',
+      addToCalendar: 'add-to-calendar',
+      getRefreshToken: 'get-refresh-token',
+      getTokenInfo: 'getauthorization-pece-getuserdata',
+      syncWithGoogle: 'get-events-from-google',
+      insuranceDataManage: 'insurance-data-manage'
     },
     urls: [],
     timeZone: [

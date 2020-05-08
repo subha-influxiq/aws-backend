@@ -1224,10 +1224,11 @@ const routes: Routes = [
     data: {
       requestcondition: {
         source: 'google-events',
-        condition: {}
+        condition: {},
+        sort: {type: 'asc', field: 'patient_name'}
       },
       endpoint: 'list-booked-events'
-    },
+    }
   },
   {
     path: 'tech/manage-calender/manage-sehedule/event-listing',
