@@ -243,6 +243,19 @@ const routes: Routes = [
     },
   },
   {
+    path: 'admin-biller/patient-record/:_id',
+    component: PatientReportViewComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'report-view'
+    },
+  },
+  {
     path: 'admin/patient-management/add',
     component: AddEditPatientComponent,
     canActivate: [AuthguardService]
