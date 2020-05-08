@@ -181,7 +181,6 @@ export class DoctorDashboardComponent implements OnInit {
       // if (response.data.length > 0) {
         this.otherData["all_details"]= response.res[0];
       // }
-      console.log('2222',this.otherData.all_details)
     });
   }
   
