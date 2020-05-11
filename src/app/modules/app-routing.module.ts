@@ -1240,7 +1240,7 @@ const routes: Routes = [
       requestcondition: {
         source: 'google-events',
         condition: {},
-        sort: {type: 'asc', field: 'patient_name'}
+        sort: {type: 'asc', field: 'booking_date'}
       },
       endpoint: 'list-booked-events'
     }

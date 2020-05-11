@@ -16,7 +16,11 @@ export class CalCreateSlotComponent implements OnInit {
     appName: 'Calendar Management',
     jwtToken: '',
     baseUrl: environment.calendarApi,
-    endPoint: { add: 'add-or-update-event-data', edit: 'add-or-update-event-data' },
+    endPoint: {
+      add: 'add-or-update-event-data',
+      edit: 'add-or-update-event-data',
+      getTokenInfo: 'getauthorization-pece-getuserdata'
+    },
     urls: [
       { pathUrl: 'tech/manage-calender/manage-sehedule', text: 'View Slot', color: 'primary', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/event-listing', text: 'Event Listing', color: 'accent', active: true, isExternalLink: false },
