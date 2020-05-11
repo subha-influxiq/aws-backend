@@ -135,7 +135,7 @@ export class BookedEventsComponent implements OnInit {
   };
 
   constructor(public cookieService: CookieService, public activatedRoute: ActivatedRoute,
-    public snackBar: MatSnackBar, public httpRequest: HttpServiceService) {
+    public snackBar: MatSnackBar, private http: HttpClient) {
   }
 
   ngOnInit() {
@@ -154,6 +154,7 @@ export class BookedEventsComponent implements OnInit {
 
       // Merge logged in user details with the config data
       let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
+      console.log('userDetails', userDetails);
       this.configData = Object.assign(this.configData, userDetails);
 
       let data = {
@@ -169,7 +170,7 @@ export class BookedEventsComponent implements OnInit {
       //     this.configData.skipFields.splice(this.configData.skipFields.indexOf(requiredFields[i]), 1)
       //   }
       // });
-      this.httpRequest.httpViaPost(this.configData.endPoint.listBookedEventsCount, data).subscribe((response: any) => {
+      this.httpViaPost(this.configData.baseUrl + this.configData.endPoint.listBookedEventsCount, data).subscribe((response: any) => {
         this.configData.date_search_source_count = response.count;
       });
 
@@ -185,6 +186,19 @@ export class BookedEventsComponent implements OnInit {
     this.snackBar.open(message, action, {
       duration: 3000,
     });
+  }
+
+
+  /* call api via post method */
+  httpViaPost(endpoint, jsonData): Observable<any> {
+    /* set common header */
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': jsonData.token
+      })
+    };
+    return this.http.post(endpoint, jsonData);
   }
 
 }

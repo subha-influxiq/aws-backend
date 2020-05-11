@@ -125,6 +125,8 @@ import { ListingDistributorsComponent } from '../components/admin/manage-distrib
 import { DoctorGroupDashboardComponent } from '../components/doctor-group/doctor-group-dashboard/doctor-group-dashboard.component';
 import { DistributorsDashboardComponent } from '../components/distributors/distributors-dashboard/distributors-dashboard.component';
 import { AdminbillerDashboardComponent } from '../components/adminbiller/adminbiller-dashboard/adminbiller-dashboard.component';
+import { AddPatientManuallyComponent } from '../components/doctor-office/add-patient/add-patient-manually/add-patient-manually.component';
+
 const routes: Routes = [
   /********** Auth Route Start **********/
   {
@@ -379,19 +381,19 @@ const routes: Routes = [
   /* Distributors Management Start */
 
   {
-    path: 'admin/distributors-management', 
-    component: ListingDistributorsComponent, 
+    path: 'admin/distributors-management',
+    component: ListingDistributorsComponent,
     canActivate: [AuthguardService],
   },
-  { 
-    path: 'admin/distributors-management/add', 
-    component: AddEditDistributorsComponent, 
-    canActivate: [AuthguardService] 
+  {
+    path: 'admin/distributors-management/add',
+    component: AddEditDistributorsComponent,
+    canActivate: [AuthguardService]
   },
   {
-    path: 'admin/distributors-management/edit/:_id', 
-    component: AddEditDistributorsComponent, 
-    canActivate: [AuthguardService], 
+    path: 'admin/distributors-management/edit/:_id',
+    component: AddEditDistributorsComponent,
+    canActivate: [AuthguardService],
     resolve: { distributorsData: ResolveService },
     data: {
       requestcondition: {
@@ -407,7 +409,7 @@ const routes: Routes = [
 
 
   /* Distributors Management End */
-  
+
   /* Tech Management */
   {
     path: 'admin/tech-management',
@@ -1629,13 +1631,29 @@ const routes: Routes = [
     path: 'doctor-office/manage-appointments',
     component: AppoinmentsListingComponent,
     canActivate: [AuthguardService],
-    resolve: { bookedEventList: ResolveService },
+    resolve: { bookedEventList: CalendarService },
     data: {
       requestcondition: {
         source: 'google-events',
-        condition: {}
+        condition: {},
+        sort: {type: 'asc', field: 'booking_date'}
       },
-      endpoint: 'doctor-office-booked-list-events'
+      endpoint: 'list-booked-events'
+    }
+  },
+
+  /* Add Patient Manually */
+  {
+    path: 'doctor-office/create-patient/add-patient-manually',
+    component: AddPatientManuallyComponent,
+    canActivate: [AuthguardService],
+    resolve: { eventdayarrData: CalendarService },
+    data: {
+      requestcondition: {
+        source: 'events_eventdayarr_view',
+        condition: { $or: [{ event_type: 1 }] }
+      },
+      endpoint: 'view-event-eventdayarr'
     }
   },
 

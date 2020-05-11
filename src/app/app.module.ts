@@ -162,6 +162,7 @@ import { DistributorsFooterComponent } from './components/distributors/distribut
 import { AdminbillerDashboardComponent } from './components/adminbiller/adminbiller-dashboard/adminbiller-dashboard.component';
 import { AdminbillerHeaderComponent } from './components/adminbiller/adminbiller-header/adminbiller-header.component';
 import { AdminbillerFooterComponent } from './components/adminbiller/adminbiller-footer/adminbiller-footer.component';
+import { AddPatientManuallyComponent } from './components/doctor-office/add-patient/add-patient-manually/add-patient-manually.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -310,7 +311,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     DistributorsFooterComponent,
     AdminbillerDashboardComponent,
     AdminbillerHeaderComponent,
-    AdminbillerFooterComponent
+    AdminbillerFooterComponent,
+    AddPatientManuallyComponent
     
   ],
   imports: [
