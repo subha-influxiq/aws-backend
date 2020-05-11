@@ -16,15 +16,17 @@ export class DoctorOfficeDashboardComponent implements OnInit {
     jwtToken: "",
     baseUrl: environment.calendarApi,
     endPoint: {
-      add: "add-or-update-event-data",
-      datalist: "datalist",
-      deleteEvent: "delete-single-event",
-      viewEventSlots: "view-event-eventdayarr",
-      search: "search",
-      countSlot: "count-slot",
-      listBookedEvents: "list-booked-events",
-      deleteBookedEvent: "delete-booked-event",
-      rescheduleBookedEvent: "reschedule"
+      add: 'add-or-update-event-data',
+      datalist: 'datalist',
+      deleteEvent: 'delete-single-event',
+      viewEventSlots: 'view-event-eventdayarr',
+      search: 'search',
+      countSlot: 'count-slot',
+      listBookedEvents: 'list-booked-events',
+      listBookedEventsCount: 'list-booked-events-count',
+      deleteBookedEvent: 'delete-booked-event',
+      rescheduleBookedEvent: 'reschedule',
+      getTokenInfo: 'getauthorization-pece-getuserdata'
     },
     urls: [],
     timeZone: [
@@ -52,7 +54,7 @@ export class DoctorOfficeDashboardComponent implements OnInit {
   ngOnInit() {
     if (this.cookieService.check('jwtToken')) {
       this.configData.jwtToken = this.cookieService.get('jwtToken');
-      
+
       this.activatedRoute.data.forEach((data) => {
         this.configData.responseData = data.bookedEventList.data;
       });
@@ -72,7 +74,7 @@ export class DoctorOfficeDashboardComponent implements OnInit {
   }
 
   viewReportProcessData(string: any = null) {
-    
+
   }
 
 }

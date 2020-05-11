@@ -10,8 +10,9 @@ import { environment } from '../../environments/environment';
 })
 
 export class HttpServiceService {
-  
+
   public baseUrl: any = environment.apiBaseUrl;
+  public calendarApiUrl: any = environment.calendarApi;
   public jwtToken: any = "";
 
   constructor(private http: HttpClient, public CookieService: CookieService) {
@@ -51,6 +52,21 @@ export class HttpServiceService {
     return this.http.get(this.baseUrl + endpoint, jsonData);
   }
 
+
+  /* call api via post method for calendar api */
+  postRequest(endpoint, jsonData): Observable<any> {
+    this.jwtToken = this.CookieService.get('jwtToken');
+
+    /* set common header */
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.jwtToken
+      })
+    };
+    return this.http.post(this.calendarApiUrl + endpoint, jsonData);
+  }
+
   /* Resolve service */
   ResolveViaPost(requestdata: any, endpoint: any): Observable<any> {
     this.jwtToken = this.CookieService.get('jwtToken');
@@ -85,7 +101,7 @@ export class HttpServiceService {
   /* call api via get method */
   httpViaGetExt(url, jsonData): Observable<any> {
     this.jwtToken = this.CookieService.get('jwtToken');
-    
+
     /* set common header */
     const httpOptions = {
       headers: new HttpHeaders({
