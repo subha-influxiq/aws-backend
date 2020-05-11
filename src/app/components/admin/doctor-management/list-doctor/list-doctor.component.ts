@@ -43,11 +43,13 @@ export class ListDoctorComponent implements OnInit {
     firstname: "First Name",
     lastname: "Last Name",
     practice_name: "Practice Name",
+    parent_name: "Parent Name",
+    parent_type: "Parent Type",
     npi: "NPI#",
     email: "Email",
     phone: "Phone Number",
     status: "Status",
-    date_added :"Date Added"
+    created_date :"Created Date"
   };
 
   public previewModal_skip: any = [
@@ -96,7 +98,7 @@ export class ListDoctorComponent implements OnInit {
   "pagecount":1
 };
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
-  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },{ val: "distributors", 'name': 'Distributor' },{ val: "doctor_group", 'name': 'Doctor Group' }];
+  public parent_type: any = [{ val: "Admin", 'name': 'Admin' }, { val: "Diagnostic Admin", 'name': 'Diagnostic Admin' },{ val: "Distributors", 'name': 'Distributors' },{ val: "Doctors Group Admin", 'name': 'Doctors Group Admin' }];
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],

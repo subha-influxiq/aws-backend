@@ -171,42 +171,37 @@ export class AppoinmentsListingComponent implements OnInit {
     if (this.cookie.check('jwtToken')) {
       this.configData.jwtToken = this.cookie.get('jwtToken');
       this.activatedRoute.data.forEach((data) => {
+        // Set dataset in responseData
         this.configData.responseData = data.bookedEventList.results.res;
-
+        // Create skipFields array(first save all the keys from the dataset)
         this.configData.skipFields = Object.keys(data.bookedEventList.results.res[0]);
         let requiredFields = ['patient_name', 'doctor_name', 'doctor_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName'];
+        // Modify the skipFields array(splicing the keys which is in the requiredFields)
         for (let i = 0; i < requiredFields.length; i++) {
           this.configData.skipFields.splice(this.configData.skipFields.indexOf(requiredFields[i]), 1)
         }
-
       });
 
       // Merge logged in user details with the config data
       let userDetails: any = JSON.parse(this.cookie.get('user_details'));
       this.configData = Object.assign(this.configData, userDetails);
 
+      /* ****************** Get total booked events count ****************** */
       let data = {
         source: 'google-events',
         condition: {},
+        token: this.configData.jwtToken,
         sort: {type: 'asc', field: 'patient_name'}
       };
-      // this.httpRequest.postRequest(this.configData.endPoint.listBookedEvents, data).subscribe((response: any) => {
-      //   this.configData.responseData = response.data;
-      //   this.configData.skipFields = Object.keys(response.data[0]);
-      //   let requiredFields = ['patient_name', 'closeremail', 'useremail', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName'];
-      //   for (let i = 0; i < requiredFields.length; i++) {
-      //     this.configData.skipFields.splice(this.configData.skipFields.indexOf(requiredFields[i]), 1)
-      //   }
-      // });
+
       this.httpService.postRequest(this.configData.endPoint.listBookedEventsCount, data).subscribe((response: any) => {
         this.configData.date_search_source_count = response.count;
       });
-
+      /* ******************************************************************* */
 
     } else {
       this.openSnackBar('Token not found', null);
     }
-    console.log('this.configData', this.configData);
   }
 
   openSnackBar(message: string, action: string) {
