@@ -29,6 +29,7 @@ export class CalCreateSlotComponent implements OnInit {
         active: true, isExternalLink: true
       }
     ],
+    redirectUrl: 'tech/manage-calender/manage-sehedule',
     timeZone: [
       { text: 'Alaska Standard Time', value: '-08:00|America/Anchorage' },
       { text: 'Pacific Standard Time', value: '-07:00|America/Los_Angeles' },
@@ -45,10 +46,7 @@ export class CalCreateSlotComponent implements OnInit {
       { text: '120 Min', value: 120 }
     ],
     eventType: [
-      { text: 'Admin Meetings', value: 1 },
-      { text: 'Type 2', value: 2 },
-      { text: 'Type 3', value: 3 },
-      { text: 'Type 3', value: 4 }
+      { text: 'Admin Meetings', value: 1 }
     ]
   };
 
@@ -64,6 +62,5 @@ export class CalCreateSlotComponent implements OnInit {
       this.configData = Object.assign(this.configData, userDetails);
     }
   }
-
 
 }

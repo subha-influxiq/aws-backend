@@ -476,6 +476,41 @@ padding-bottom: 6px; }
  /* doctor dashboard new */
  .admin_wrapper  .testingDoc { background: linear-gradient(0deg, #07aaf5, #40bffa); font-size: 34px; text-transform: uppercase; color: #fff; padding: 8px 10px;
   font-family: 'AvenirMedium'; }
+.Admindmin_details .inner_er{ background:url('../../assets/images/doctordbImage.jpg') no-repeat;
+  background-size: cover;
+  padding: 30px;}
+  .Admindmin_details .inner_er h2{
+    text-align: center;
+    margin: 0;
+    color: var(--button-color3);
+    font-family: 'AvenirBlack';
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-top: 18px;
+  }
+  .Admindmin_details .inner{ column-count: 2; column-gap: 20px; display: block; }
+
+  .Admindmin_details .inner_er h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-family: 'AvenirMedium';
+    border-bottom: 2px solid #c5c4c4;
+    padding: 5px;
+    margin: 0;
+    background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%);
+    color: #231c23;
+  }
+  .Admindmin_details .list_wrapper{ width: 100%; margin: 0 auto; border-radius: 10px; background: #fff; box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12); padding-top: 0!important; padding-bottom: 20px;}
+  .Admindmin_details .inner_er .mat-list-item{ font-size: 18px;
+    font-family: 'AvenirMedium';
+    height: inherit;
+    padding: 5px;
+    box-sizing: border-box;
+    color: #545454; text-transform: capitalize;
+  }
+  .Admindmin_details .inner_er .mat-list-item .lg{ font-size: 18px; font-family: 'AvenirBlack'; }
+
  .admin_wrapper  .mediaDoc_wrapper { display: flex; justify-content: space-between; }
  .admin_wrapper  .mediaDoc_wrapper .new_wrapper_left{ width: 73%; display: flex;}
  .admin_wrapper  .mediaDoc_wrapper .new_wrapper_right{  width: 26%; display: flex; flex-direction: column;}
@@ -507,21 +542,15 @@ align-items: center; justify-content: center; color: #fff; font-family: 'AvenirM
 
 /* for all modal */
 .mat-dialog-container{ min-width: 400px; border: 2px solid #03d877; border-radius: 10px!important; padding: 0!important; min-height: 180px!important; height: auto!important;}
-.mat-dialog-container .mat-dialog-title {text-align: center;
-  margin: 0;
-  display: block;
-  background: var(--button-color3);
-  color: #fff;
-  padding: 6px;
-  font-family: 'AvenirBlack';
-  text-transform: uppercase;
-}
+.mat-dialog-container .mat-dialog-title {text-align: center; margin: 0; display: block; background: var(--button-color3);
+color: #fff; padding: 6px; font-family: 'AvenirBlack'; text-transform: uppercase; }
 .mat-dialog-container .mat-dialog-content {
-  display: block;
-  margin: 0;
-  padding: 0 10px; box-sizing: border-box;
-  max-height: initial;
-  overflow: auto; }
+display: block; margin: 0; padding: 16px; box-sizing: border-box; max-height: initial; overflow: auto; }
+
+.mat-dialog-container .mat-dialog-content .mat-form-field{ width:100%}
+.mat-dialog-container .mat-dialog-content .submit_form{  display: flex; justify-content: flex-end;}
+.mat-dialog-container .mat-dialog-content .submit_form button{ font-family: 'AvenirBlack'; text-transform: uppercase; color: #fff; background: var(--button-color2);}
+.mat-dialog-container .mat-dialog-content .submit_form button:last-child{ background: var(--button-color3);}
 .mat-dialog-container .mat-dialog-content p{ text-align: center; color: var(--button-color2); font-size: 18px; white-space: normal; word-break: break-all; font-family: 'AvenirMedium';}
 .mat-dialog-container .mat-dialog-actions { display: flex; flex-wrap: wrap; min-height: inherit; align-items: center;
   justify-content: center;
@@ -581,3 +610,16 @@ border-bottom: 2px solid; padding-bottom: 8px;}
 .DataTable .mat-card br{ display: none;}
 .DataTable .mat-card mat-label{ margin-right: 10px;}
 .DataTable .mat-card .tablewrapper { margin-bottom: 16px;}
+
+/* modification on 5.04.2020 */
+.calendar_data .mat-card{ box-shadow: none!important; padding: 0!important; margin:16px 0!important; }
+.calendar_data .calender_first .mat-toolbar.mat-primary{ background: var(--button-color3); }
+
+.calendar_data table th{ font-family: 'AvenirBlack'; }
+.calendar_data table td{ font-family: 'AvenirMedium'; }
+.lib-pager-class { clear: inherit!important; float: none!important; text-align: center; margin-top: 16px;}
+.lib-pager-class .mat-form-field { width: 90px; margin: 0 10px}
+.lib-pager-class .mat-form-field  .mat-form-field-flex { border: 1px solid #e4e4e4; padding: 0 5px; border-radius: 6px;
+}
+.lib-pager-class .mat-form-field  .mat-form-field-appearance-legacy .mat-form-field-underline{ height: 0; }
+

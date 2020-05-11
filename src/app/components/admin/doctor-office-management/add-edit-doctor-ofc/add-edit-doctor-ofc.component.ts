@@ -167,15 +167,17 @@ export class AddEditDoctorOfcComponent implements OnInit {
 
   /**getting all the technician data**/
   getAllTechData() {
+    console.log(">>>>>", this.htmlText.userData.user_details);
+
     var data = {
       "source": "data_pece",
       "condition": {
         "user_type": "tech",
-        "doctor_id_object": this.htmlText.userData.user_details._id
+        "tech_id": this.htmlText.userData.user_details.tech_id
       },
       "token": this.htmlText.userData.jwtToken
     };
-    this.httpService.httpViaPost('datalist', data).subscribe(response => {
+    this.httpService.httpViaPost('doctor-add-tech-list', data).subscribe(response => {
       this.htmlText.techData = response.res;
     });
   }

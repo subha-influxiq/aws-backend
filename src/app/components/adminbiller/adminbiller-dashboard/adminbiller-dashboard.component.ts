@@ -78,7 +78,7 @@ export class AdminbillerDashboardComponent implements OnInit {
     cpt_codes: "CPT Codes",
     test_date: "Test Date",
     report_file_type: "Report Type",
-    status: "Status"
+    stat: "Status"
   };
 
   public previewModal_skip: any = [
@@ -107,19 +107,76 @@ export class AdminbillerDashboardComponent implements OnInit {
   public field:any;
   public fetch:any;
   public libdata:any={
-    basecondition: {report_type:"file"},
+    // basecondition: {report_type:"file"},
     updateendpoint:'statusupdate',
     hideeditbutton:true,// all these button options are optional not mandatory
     hidedeletebutton:true,
-    hideviewbutton:false,
+    hideviewbutton:true,
     //hidestatustogglebutton:true,
     // hideaction:true,
-    tableheaders:['patient_name','doctor_name','doctor_email','npi','cpt_codes','test_date','report_file_type','status',], //not required
+    tableheaders:['patient_name','doctor_name','doctor_email','npi','cpt_codes','test_time','report_file_type','stat',], //not required
+    custombuttons:[
+      {
+          label:"Patient Details",
+          type:'action',
+          datatype:'local',
+          datafields:['description','author','blogtitle','tags_array','image','video','created_date','created_datetime'],
+          cond:'status',
+          condval:0
+      } ,
+      {
+          label:"Patient Report",
+          route:"admin-biller/patient-record",
+          type:'internallink',
+          cond:'converted_image',
+          condval:true,
+          param:['_id'],
+      },
+      {
+          label:"Doctor Details",
+          type:'action',
+          datatype:'api',
+          endpoint:'getblogdatabyid',
+          //cond:'status',
+          //condval:0,
+          param:'blog_id',
+          refreshdata:true
+      } ,
+      {
+          label:"Tech Details",
+          type:'action',
+          datatype:'api',
+          endpoint:'gettechdatabyid',
+          otherparam:["patient_name"],
+          //cond:'status',
+          //condval:0,
+          param:'tech_id',
+          refreshdata:true
+      } ,
+      {
+        label:"Generate Pdf",
+        type:'action',
+        datatype:'api',
+        endpoint:'report-sign-send-to-biller',
+        otherparam:["status"],
+        //cond:'status',
+        //condval:0,
+        param:'report_id',
+        refreshdata:true
+      },
+      {
+        label:"Download",
+        link:"https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/html-pdf",
+        type:'externallink',
+        paramtype:'angular',
+        param:["file_name"]
+    },
+  ]
 }
   public sortdata:any={
     "type":'desc',
     "field":'patient_name',
-    "options":['patient_name','test_date']
+    "options":['patient_name','test_time']
  };
  public limitcond:any={
   "limit":10,
@@ -147,7 +204,6 @@ export class AdminbillerDashboardComponent implements OnInit {
 
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
-    
     /* Get resolve data */
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
@@ -168,8 +224,8 @@ export class AdminbillerDashboardComponent implements OnInit {
     sort:{
         "type":'desc',
         "field":'patient_name'
-    },
-    report_type:"file"
+    }
+    // report_type:"file"
     }
         this.http.httpViaPost(endpointc, data).subscribe((res:any) => {
             // console.log('in constructor');

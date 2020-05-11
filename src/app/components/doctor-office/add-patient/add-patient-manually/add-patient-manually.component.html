@@ -1,0 +1,38 @@
+<app-doctor-office-header></app-doctor-office-header>
+
+<!-- Header Start -->
+
+<app-admin-header *ngIf="headerFlag == 'admin'"></app-admin-header>
+
+<app-biller-header *ngIf="headerFlag == 'biller'"></app-biller-header>
+
+<app-tech-header *ngIf="headerFlag == 'tech'"></app-tech-header>
+
+<app-doctor-header *ngIf="headerFlag == 'doctor'"></app-doctor-header>
+
+<!-- Header End -->
+
+<mat-progress-bar *ngIf="loader" mode="indeterminate"></mat-progress-bar>
+
+
+<span class="add_header">
+    <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Add Patient</span>
+</span>
+<!-- End header with add button -->
+
+<mat-card class="add_form">
+    <h2>Add Record</h2>
+    <mat-card-content class="form_wrapper">
+        <lib-showform *ngIf="formdata !=null"
+                  [formdata]="formdata"
+                  [formfieldrefresh]="formfieldrefresh"
+                  [formfieldrefreshdata]="formfieldrefreshdata"
+    > </lib-showform>
+    </mat-card-content>
+</mat-card>
+
+<app-admin-footer></app-admin-footer>
+
+
+
+<app-doctor-office-footer></app-doctor-office-footer>

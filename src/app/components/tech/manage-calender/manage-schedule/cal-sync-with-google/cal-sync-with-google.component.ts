@@ -25,7 +25,7 @@ export class CalSyncWithGoogleComponent implements OnInit {
         token: this.cookieService.get('jwtToken'),
         id: userDetails._id,
         data: {
-          access_token: this.activatedRoute.snapshot.params.access_t,
+          access_token: this.activatedRoute.snapshot.params.access_token,
           refresh_token: this.activatedRoute.snapshot.params.refresh
         }
       }
@@ -39,7 +39,7 @@ export class CalSyncWithGoogleComponent implements OnInit {
               this.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
             }
           }, 1000);
-          
+
           this.snackBar.open("Successfully updated.", "Ok", {
             duration: 2000,
           });

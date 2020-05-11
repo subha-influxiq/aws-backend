@@ -125,6 +125,8 @@ import { ListingDistributorsComponent } from '../components/admin/manage-distrib
 import { DoctorGroupDashboardComponent } from '../components/doctor-group/doctor-group-dashboard/doctor-group-dashboard.component';
 import { DistributorsDashboardComponent } from '../components/distributors/distributors-dashboard/distributors-dashboard.component';
 import { AdminbillerDashboardComponent } from '../components/adminbiller/adminbiller-dashboard/adminbiller-dashboard.component';
+import { AddPatientManuallyComponent } from '../components/doctor-office/add-patient/add-patient-manually/add-patient-manually.component';
+
 const routes: Routes = [
   /********** Auth Route Start **********/
   {
@@ -231,6 +233,19 @@ const routes: Routes = [
   /* Patient Management */
   {
     path: 'admin/patient-record/:_id',
+    component: PatientReportViewComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'report-view'
+    },
+  },
+  {
+    path: 'admin-biller/patient-record/:_id',
     component: PatientReportViewComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
@@ -1224,10 +1239,11 @@ const routes: Routes = [
     data: {
       requestcondition: {
         source: 'google-events',
-        condition: {}
+        condition: {},
+        sort: {type: 'asc', field: 'patient_name'}
       },
       endpoint: 'list-booked-events'
-    },
+    }
   },
   {
     path: 'tech/manage-calender/manage-sehedule/event-listing',
@@ -1622,6 +1638,21 @@ const routes: Routes = [
         condition: {}
       },
       endpoint: 'doctor-office-booked-list-events'
+    }
+  },
+
+  /* Add Patient Manually */
+  {
+    path: 'doctor-office/create-patient/add-patient-manually',
+    component: AddPatientManuallyComponent,
+    canActivate: [AuthguardService],
+    resolve: { eventdayarrData: CalendarService },
+    data: {
+      requestcondition: {
+        source: 'events_eventdayarr_view',
+        condition: { $or: [{ event_type: 1 }] }
+      },
+      endpoint: 'view-event-eventdayarr'
     }
   },
 
