@@ -63,8 +63,8 @@ export class AppoinmentsListingComponent implements OnInit {
     skipFields: [],
     modify_header_array: {
       patient_name: 'Patient Name',
-      closeremail: 'Booked by',
-      useremail: 'Organizer Email',
+      doctor_name: 'Doctor Name',
+      doctor_office_name: 'Doctor Office Name',
       booking_date: 'Booked On',
       startdate: 'Event Date',
       slot: "Start Time",
@@ -77,7 +77,7 @@ export class AppoinmentsListingComponent implements OnInit {
       detailview_override: [],
       updateendpoint: 'statusupdate',
       hideeditbutton: true,// all these button options are optional not mandatory
-      tableheaders: ['patient_name', 'closeremail', 'useremail', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName'], //not required
+      tableheaders: ['patient_name', 'doctor_name', 'doctor_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName'], //not required
       custombuttons: []
     },
     updatetable: false,
@@ -88,7 +88,7 @@ export class AppoinmentsListingComponent implements OnInit {
     },
     sortdata: {
       "type": 'asc',
-      "field": 'patient_name',
+      "field": 'booking_date',
       "options": ['patient_name', 'booking_date', 'startdate', 'slot', 'slot_end_time']
     },
     custom_link: [],
@@ -174,7 +174,7 @@ export class AppoinmentsListingComponent implements OnInit {
         this.configData.responseData = data.bookedEventList.results.res;
 
         this.configData.skipFields = Object.keys(data.bookedEventList.results.res[0]);
-        let requiredFields = ['patient_name', 'closeremail', 'useremail', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName'];
+        let requiredFields = ['patient_name', 'doctor_name', 'doctor_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName'];
         for (let i = 0; i < requiredFields.length; i++) {
           this.configData.skipFields.splice(this.configData.skipFields.indexOf(requiredFields[i]), 1)
         }
