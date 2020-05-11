@@ -28,7 +28,8 @@ export class CalEventListingComponent implements OnInit {
       add: "add-or-update-event-data",
       datalist: "datalist",
       deleteEvent: "delete-single-event",
-      search: "search"
+      search: "search",
+      getTokenInfo: 'getauthorization-pece-getuserdata'
     },
     responseData: "",
     timeZone: [
