@@ -13,6 +13,7 @@
 }
 @media screen and (max-width: 1400px){
   .main_wrapper { background-size: 680px; padding-left: 727px; }
+  .admin_wrapper .content_wrapper .itemsection .counteer .dataCount { font-size: 38px; }
 }
 @media screen and (max-width: 1368px){
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 5px; }
