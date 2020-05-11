@@ -154,15 +154,23 @@ export class AdminbillerDashboardComponent implements OnInit {
           refreshdata:true
       } ,
       {
-          label:"Parent Details",
-          type:'action',
-          datatype:'api',
-          endpoint:'getblogdatabyid',
-          //cond:'status',
-          //condval:0,
-          param:'blog_id',
-          refreshdata:true
-      }
+        label:"Generate Pdf",
+        type:'action',
+        datatype:'api',
+        endpoint:'report-sign-send-to-biller',
+        otherparam:["status"],
+        //cond:'status',
+        //condval:0,
+        param:'report_id',
+        refreshdata:true
+      },
+      {
+        label:"Download",
+        link:"https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/html-pdf",
+        type:'externallink',
+        paramtype:'angular',
+        param:["file_name"]
+    },
   ]
 }
   public sortdata:any={
@@ -196,7 +204,6 @@ export class AdminbillerDashboardComponent implements OnInit {
 
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
-    
     /* Get resolve data */
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData = resolveData.dataCount.data.dashboardCount[0];

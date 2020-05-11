@@ -256,12 +256,13 @@
       <button mat-button (click)="viewMore()">{{ btnName }}</button>
     </mat-toolbar>
   </section>
+
+  <ng-container *ngIf="otherData.all_details.user_type == 'distributors'">
   <section class="Admindmin_details">
     <mat-card-content class="inner_er">
-      <ng-container *ngIf="otherData.all_details.user_type == 'distributors'">
 
       <mat-list class="list_wrapper">
-        <h3>{{header.name}}: &nbsp;</h3>
+        <h3>{{header.name}} : {{otherData.all_details.distributorname}} &nbsp;</h3>
         <h2>Details</h2>
 
         <span class="inner">
@@ -284,16 +285,16 @@
           </mat-list-item>
         </span>
       </mat-list>
-    </ng-container>
     </mat-card-content>
   </section>
+</ng-container>
 
 
+  <ng-container *ngIf="otherData.all_details.user_type == 'diagnostic_admin'">
   <section class="Admindmin_details">
     <mat-card-content class="inner_er">
-      <ng-container *ngIf="otherData.all_details.user_type == 'diagnostic_admin'">
       <mat-list class="list_wrapper">
-        <h3>{{header.name}}: &nbsp;</h3>
+        <h3>{{header.name}} : {{otherData.all_details.center_name}} &nbsp;</h3>
         <h2>Details</h2>
 
         <span class="inner">
@@ -316,16 +317,18 @@
           </mat-list-item>
         </span>
       </mat-list>
-    </ng-container>
     </mat-card-content>
   </section>
 
+</ng-container>
+
+
+<ng-container *ngIf="otherData.all_details.user_type == 'doctor_group'">
   <section class="Admindmin_details">
     <mat-card-content class="inner_er">
 
-      <ng-container *ngIf="otherData.all_details.user_type == 'doctor_group'">
       <mat-list class="list_wrapper">
-        <h3>{{header.name}}: &nbsp;</h3>
+        <h3>{{header.name}} : {{otherData.all_details.groupname }} &nbsp;</h3>
         <h2>Details</h2>
 
         <span class="inner">
@@ -348,9 +351,9 @@
           </mat-list-item>
         </span>
       </mat-list>
-    </ng-container>
     </mat-card-content>
   </section>
+</ng-container>
 
   <!-- Count Block  -->
 

@@ -58,13 +58,15 @@ export class BookAppoinmentNowComponent implements OnInit {
     responseData: '',
     patientInfoFormFields: {},
     calendarInfoFormFields: {},
-    primaryCondition: {$or: [{event_type: 1}, {event_type: 2}]}
+    primaryCondition: {$or: [{event_type: 1}, {event_type: 2}], userid: {$in: JSON.parse(this.cookieService.get('user_details')).tech_id}}
   };
 
   public resolveData;
+  public userDetails: any;
 
   constructor(public activatedRoute: ActivatedRoute, public cookieService: CookieService,
-              public snackBar: MatSnackBar, public httpRequestService: HttpServiceService) {
+              public snackBar: MatSnackBar, public httpRequestService: HttpServiceService,
+              private http: HttpClient) {
   }
 
 
@@ -83,21 +85,21 @@ export class BookAppoinmentNowComponent implements OnInit {
     }
 
     /******* Get user details from cookies ******/
-    let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
-    this.configData = Object.assign(this.configData, userDetails);
+    this.userDetails = JSON.parse(this.cookieService.get('user_details'));
+    this.configData = Object.assign(this.configData, this.userDetails);
 
-    this.configData.primaryCondition = Object.assign(this.configData.primaryCondition, {userid: {$in: [userDetails._id]}});
+    // this.configData.primaryCondition = Object.assign(this.configData.primaryCondition, {userid: {$in: [userDetails._id]}});
 
     this.updateUser();
   }
 
 
   updateUser() {
-    let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
+    // let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
     if (this.activatedRoute.snapshot.params.refresh && this.cookieService.check('user_details')) {
       let data = {
         token: this.cookieService.get('jwtToken'),
-        id: userDetails._id,
+        id: this.userDetails._id,
         data: {
           access_token: this.activatedRoute.snapshot.params.access_t,
           refresh_token: this.activatedRoute.snapshot.params.refresh
@@ -110,16 +112,16 @@ export class BookAppoinmentNowComponent implements OnInit {
         }
       });
 
-      let urlSendEmail = this.configData.baseUrl + 'send-confirmation-email?id=' + userDetails._id;
+      let urlSendEmail = this.configData.baseUrl + 'send-confirmation-email?id=' + this.userDetails._id;
       this.httpRequestService.getRequest(urlSendEmail, {}).subscribe((response: any) => {
         if (response.status == 'success') {
           console.log('Mail sent ', response.msg_id);
-          this.openSnackBar('Confirmation email sent to your email - ' + userDetails.email, 'Ok');
+          this.openSnackBar('Confirmation email sent to your email - ' + this.userDetails.email, 'Ok');
         }
       })
 
       // Update user_details in cookie
-      this.cookieService.set('user_details', JSON.stringify(Object.assign(userDetails, data.data)));
+      this.cookieService.set('user_details', JSON.stringify(Object.assign(this.userDetails, data.data)));
     }
   }
 
@@ -701,7 +703,18 @@ export class BookAppoinmentNowComponent implements OnInit {
           {type: 'input', name: 'additional_notes', placeholder: 'Additional Notes', label: 'Additional Notes', value: ''}
         ];
 
-        this.configData = Object.assign(this.configData, {patientInfoFormFields: patientInfoFormFields.concat(otherFieldsData, checkboxFields, autocompleteFields)}, {calendarInfoFormFields: calendarInfoFormFields});
+        // get informations of the doctor
+        this.httpViaPost(this.configData.baseUrl + 'get-doctor-info', {condition: {_id: this.userDetails.doctor_id}}).subscribe((response:any) => {
+          let hiddenFields: any = [
+            {type: 'input', name: 'doctor_id', value: response.data._id, hidden: true},
+            {type: 'input', name: 'doctor_office_id', value: response.data.doctor_office_id, hidden: true},
+            {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
+            {type: 'input', name: 'parent_type', value: response.data.parent_type, hidden: true},
+            {type: 'input', name: 'parent_id', value: response.data.parent_id, hidden: true},
+          ]
+          this.configData = Object.assign(this.configData, {patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields)}, {calendarInfoFormFields: calendarInfoFormFields});
+
+        });
 
       }, error => {
         console.log('Oooops! Cannot get states.');
@@ -712,6 +725,19 @@ export class BookAppoinmentNowComponent implements OnInit {
     this.snackBar.open(message, action, {
       duration: 3000,
     });
+  }
+
+
+  /* call api via post method */
+  httpViaPost(endpoint, jsonData): Observable<any> {
+    /* set common header */
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': jsonData.token
+      })
+    };
+    return this.http.post(endpoint, jsonData);
   }
 
 }

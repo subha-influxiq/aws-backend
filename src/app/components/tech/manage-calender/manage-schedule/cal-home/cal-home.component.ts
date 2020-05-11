@@ -16,7 +16,7 @@ import { environment } from '../../../../../../environments/environment';
   styleUrls: ['./cal-home.component.css']
 })
 export class CalHomeComponent implements OnInit {
-  
+
   public configData: any = {
     appName: 'Calendar Management',
     jwtToken: "",
@@ -27,7 +27,8 @@ export class CalHomeComponent implements OnInit {
       deleteEvent: "delete-single-event",
       viewEventSlots: "view-event-eventdayarr",
       search: "search",
-      countSlot: "count-slot"
+      countSlot: "count-slot",
+      getTokenInfo: 'getauthorization-pece-getuserdata'
     },
     urls: [
       { pathUrl: 'tech/manage-calender/manage-sehedule', text: 'View Slot', color: 'primary', active: true, isExternalLink: false },
