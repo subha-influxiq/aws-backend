@@ -381,19 +381,19 @@ const routes: Routes = [
   /* Distributors Management Start */
 
   {
-    path: 'admin/distributors-management', 
-    component: ListingDistributorsComponent, 
+    path: 'admin/distributors-management',
+    component: ListingDistributorsComponent,
     canActivate: [AuthguardService],
   },
-  { 
-    path: 'admin/distributors-management/add', 
-    component: AddEditDistributorsComponent, 
-    canActivate: [AuthguardService] 
+  {
+    path: 'admin/distributors-management/add',
+    component: AddEditDistributorsComponent,
+    canActivate: [AuthguardService]
   },
   {
-    path: 'admin/distributors-management/edit/:_id', 
-    component: AddEditDistributorsComponent, 
-    canActivate: [AuthguardService], 
+    path: 'admin/distributors-management/edit/:_id',
+    component: AddEditDistributorsComponent,
+    canActivate: [AuthguardService],
     resolve: { distributorsData: ResolveService },
     data: {
       requestcondition: {
@@ -409,7 +409,7 @@ const routes: Routes = [
 
 
   /* Distributors Management End */
-  
+
   /* Tech Management */
   {
     path: 'admin/tech-management',
@@ -1631,13 +1631,14 @@ const routes: Routes = [
     path: 'doctor-office/manage-appointments',
     component: AppoinmentsListingComponent,
     canActivate: [AuthguardService],
-    resolve: { bookedEventList: ResolveService },
+    resolve: { bookedEventList: CalendarService },
     data: {
       requestcondition: {
         source: 'google-events',
-        condition: {}
+        condition: {},
+        sort: {type: 'asc', field: 'booking_date'}
       },
-      endpoint: 'doctor-office-booked-list-events'
+      endpoint: 'list-booked-events'
     }
   },
 
