@@ -151,8 +151,7 @@
 
 @media screen and (max-width: 1100px) {
   .techdashboard_header .header_wrapper { width: 100%; flex-direction: column;   box-sizing: border-box; }
-  .techdashboard_header .logo_wrapper { max-width: 160px; }
-  .techdashboard_header .quotation .mat-nav-list .mat-list-item { font-size: 16px; }
+  .techdashboard_header .logo_wrapper { max-width: 160px; } 
   .techdashboard_header .profile_section { padding-left: 0; border: none; }
   .techdashboard_header .profile_section .username { font-size: 16px; }
   .active {
@@ -162,94 +161,40 @@
   .active::before{
     content: ''; display: none;}
 }
-@media screen and (max-width: 1080px) {
-  .doctor_content_wrapper {
-    padding: 40px 20px;
-  }
-  .doctor_content_wrapper .mat-card-title {
-    font-size: 32px;
-    margin-bottom: 20px;
-  }
-  .table_structure .mat-list-item .title_n {
-    font-size: 22px;
-  }
-  .table_structure .mat-list-item .title_a {
-    font-size: 20px;
-  }
+@media screen and (max-width: 1080px) { 
+  .doctor_content_wrapper { padding: 40px 20px; }
+  .doctor_content_wrapper .mat-card-title { font-size: 32px; margin-bottom: 20px; }
+  .table_structure .mat-list-item .title_n { font-size: 22px; }
+  .table_structure .mat-list-item .title_a { font-size: 20px; }
 }
 
 @media screen and (max-width: 1038px) {
-  .content_wrapper .itemsection {
-    width: 30.9%;
-  }
+  .content_wrapper .itemsection { width: 30.9%; }
 }
 
 @media screen and (max-width: 991px) {
-  .doctor_content_wrapper {
-    text-align: center;
+  .doctor_content_wrapper { text-align: center; }
+  .patient_report_section .patient_top_search { display: -webkit-box; display: -ms-flexbox; display: flex;
+  -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-orient: vertical;
+  -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+  .patient_report_section .patient_top_search .search_bar { margin-bottom: 20px; }
+  .patient_report_section .button_action button { padding: 8px 30px; margin: 0 10px; width: 100%; }
+  .patient_report_section .button_action { width: auto; margin: 0 5px; display: -webkit-box;
+   display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
   }
-  .patient_report_section .patient_top_search {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-  .patient_report_section .patient_top_search .search_bar {
-    margin-bottom: 20px;
-  }
-  .patient_report_section .button_action button {
-    padding: 8px 30px;
-    margin: 0 10px;
-    width: 100%;
-  }
-  .patient_report_section .button_action {
-    width: auto;
-    margin: 0 5px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-  .content_wrapper .itemsection {
-    width: 30.8%;
-  }
-  .table_structure .mat-list-item .title_a {
-    font-size: 16px;
-  }
+  .content_wrapper .itemsection { width: 30.8%; }
+  .table_structure .mat-list-item .title_a { font-size: 16px; }
   .togle_menu { display: block; margin-top: 10px; background: #f8c655; color: #fff; position: absolute; right: 20px; min-width: auto; }
   .techdashboard_header .quotation { display: none; width: 100%; background: #ffd06f;}
   .techdashboard_header .quotation .mat-list-base { display: block; }
   .techdashboard_header .quotation .mat-nav-list .mat-list-item { margin: 0; -webkit-box-align: center;   -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    background: #fff3da;
-    margin: 1px 0;
-  }
+  align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+  display: -webkit-box; display: -ms-flexbox; display: flex; background: #fff3da; margin: 1px 0; }
   .techdashboard_header .quotation .mat-nav-list .mat-list-item:nth-child(1) { margin-top: 0; }
   .techdashboard_header .quotation .mat-list-base .mat-list-item:before {
-    content: "";
-    left: -15px;
-    width: 2px;
-    height: 15px;
-    background: #1c1c1c;
-    display: inline-block;
-    position: absolute;
-    top: 35%;
-    display: none;
-  }
+   content: ""; left: -15px; width: 2px; height: 15px; background: #1c1c1c; display: inline-block;
+   position: absolute; top: 35%; display: none; }
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item { font-size: 16px; }
 }
 
 @media screen and (max-width: 970px) {
