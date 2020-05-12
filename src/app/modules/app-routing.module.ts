@@ -745,7 +745,7 @@ const routes: Routes = [
     path: 'admin/booked-appoinments',
     component: BookedAppoinmentsComponent,
     canActivate: [AuthguardService],
-    resolve: { bookedEventList: ResolveService },
+    // resolve: { bookedEventList: ResolveService },
     data: {
       requestcondition: {
         source: 'google-events',

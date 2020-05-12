@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {environment} from "../../../../environments/environment";
 import {CookieService} from "ngx-cookie-service";
 import {MatSnackBar} from "@angular/material/snack-bar";
@@ -48,7 +48,10 @@ export class PastAppoinmentsComponent implements OnInit {
     ],
     responseData: [],
     // primaryCondition: {$or: [{event_type: 1}, {event_type: 2}]},
-    primaryCondition: {$or: [{event_type: 1}, {event_type: 2}], userid: {$in: JSON.parse(this.cookie.get('user_details')).tech_id}},
+    primaryCondition: {
+      $or: [{event_type: 1}, {event_type: 2}],
+      userid: {$in: JSON.parse(this.cookie.get('user_details')).tech_id}
+    },
 
 
     // lib-listing inputs
@@ -128,7 +131,8 @@ export class PastAppoinmentsComponent implements OnInit {
 
 
   constructor(public cookie: CookieService, public snackBar: MatSnackBar,
-              public httpService: HttpServiceService) { }
+              public httpService: HttpServiceService) {
+  }
 
   ngOnInit() {
     if (this.cookie.check('jwtToken')) {
@@ -138,16 +142,26 @@ export class PastAppoinmentsComponent implements OnInit {
         condition: {},
         sort: {type: 'asc', field: 'booking_date'}
       }
-      /* If user is not an admin */
-      if (this.cookie.check('user_details') && JSON.parse(this.cookie.get('user_details')).user_type == 'tech') {
-        data.condition = Object.assign(
-          data.condition, {userid: {$in: [JSON.parse(this.cookie.get('user_details'))._id]}}
-        );
-      } else {
-        data.condition = Object.assign(
-          data.condition, {userid: {$in: JSON.parse(this.cookie.get('user_details')).tech_id}}
-        );
-        data.condition.userid.$in.push(JSON.parse(this.cookie.get('user_details'))._id);
+      /* Create condition with respect to the user_type */
+      if (this.cookie.check('user_details')) {
+        switch (JSON.parse(this.cookie.get('user_details')).user_type) {
+          case 'admin':
+            // do nothing. all records will be loaded...
+            break;
+
+          case 'doctor_office':
+            data.condition = Object.assign(
+              data.condition, {userid: {$in: JSON.parse(this.cookie.get('user_details')).tech_id}}
+            );
+            data.condition.userid.$in.push(JSON.parse(this.cookie.get('user_details'))._id);
+            break;
+
+          default:
+            data.condition = Object.assign(
+              data.condition, {userid: {$in: [JSON.parse(this.cookie.get('user_details'))._id]}}
+            );
+            break;
+        }
       }
 
       this.httpService.postRequest(this.configData.endPoint.listBookedEvents, data).subscribe((response: any) => {
