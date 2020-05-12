@@ -688,48 +688,6 @@ export class AddPatientManuallyComponent implements OnInit {
         prefix: "",
         suffix: ""
       },
-      {
-        label: "Insurance type",
-        name: "insurance_type",
-        hint: '',
-        type: 'select',
-        val: this.insuranceTypeData,
-        multiple: false,
-        validations: [
-          { rule: 'required' }
-        ],
-        prefix: "",
-        suffix: "",
-        isDependent: true,
-        dependentOn: 'insurance_id',
-        options: this.insuranceTypeData
-      },
-      {
-        type: 'input',
-        name: 'insurance_name_input',
-        placeholder: 'Name of the insurance',
-        label: 'Name of the insurance',
-        value: '',
-        validators: {},
-        error: 'Enter practice name',
-        caption: 'Patient General Information',
-        isDependent: true,
-        dependentOn: 'insurance_id',
-        condition: 0
-      },
-      {
-        type: 'input',
-        name: 'insurance_type_input',
-        placeholder: 'Insurance type',
-        label: 'Insurance type',
-        value: '',
-        validators: {},
-        error: 'Enter practice name',
-        caption: 'Patient General Information',
-        isDependent: true,
-        dependentOn: 'insurance_id',
-        condition: 0
-      },
       { type: 'input', name: 'event_title', placeholder: 'Event Title', label: 'Event Title', value: '', disabled: true },
       { type: 'input', name: 'description', placeholder: 'Event Description', label: 'Event Description', value: '', disabled: true },
       { type: 'input', name: 'startdate', placeholder: 'Date of Appointment', label: 'Date of Appointment', value: '', disabled: true },
@@ -809,34 +767,87 @@ export class AddPatientManuallyComponent implements OnInit {
   }
 
   listenFormFieldChange(val: any) {
-    alert("Subha >>> " + val.field.name);
+    console.log("Subha >>> ", val.fieldval);
     switch(val.field.name) {
       case 'insurance_id':
-        var countFlag: number = 0;
-        for (let i = 0; i < this.resolveData.others.insurance_type.length; i++) {
-          for(let j = 0; j < this.resolveData.others.insurance_type[i].insurance_id.length; j++) {
-            if(val.fieldval == this.resolveData.others.insurance_type[i].insurance_id[j]) {
-              countFlag++;
-              let temp: any = {};
-              temp['name'] = this.resolveData.others.insurance_type[i].insurancetype_name;
-              temp['val'] = this.resolveData.others.insurance_type[i]._id;
-              this.insuranceTypeData.push(temp);
+        if(val.fieldval != 0) {
+          var countFlag: number = 0;
+          for (let i = 0; i < this.resolveData.others.insurance_type.length; i++) {
+            for(let j = 0; j < this.resolveData.others.insurance_type[i].insurance_id.length; j++) {
+              if(val.fieldval == this.resolveData.others.insurance_type[i].insurance_id[j]) {
+                countFlag++;
+                let temp: any = {};
+                temp['name'] = this.resolveData.others.insurance_type[i].insurancetype_name;
+                temp['val'] = this.resolveData.others.insurance_type[i]._id;
+                this.insuranceTypeData.push(temp);
+              }
             }
           }
-        }
 
-        if(countFlag == 0) {
-          this.insuranceTypeData.push({});
-        }
-
-        this.formfieldrefreshdata = {
-          field: 'addfromcontrol', value: {
-              label: "Pet Name",
-              name: "petname",
-              type: 'text',
-              after: 'insurance_name_input'
+          if(countFlag == 0) {
+            this.insuranceTypeData.push({});
           }
-        };
+
+          this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'insurance_name_input' } };
+          this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'insurance_type_input' } };
+          this.formfieldrefreshdata = {
+            field: 'addfromcontrol',
+            value: {
+              label: "Insurance type",
+              name: "insurance_type",
+              hint: '',
+              type: 'select',
+              val: this.insuranceTypeData,
+              multiple: false,
+              validations: [
+                { rule: 'required' }
+              ],
+              prefix: "",
+              suffix: "",
+              after: 'insurance_id'
+            }
+          };
+        } else {
+          console.log("Working...");
+          this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'insurance_type' } };
+          
+          setTimeout(() => {
+            this.formfieldrefreshdata = {
+              field: 'addfromcontrol',
+              value: {
+                label: 'Name of the insurance',
+                name: 'insurance_name_input',
+                type: 'text',
+                val: '',
+                validators: [
+                  { rule: 'required' }
+                ],
+                prefix: "",
+                suffix: "",
+                after: 'insurance_id'
+              }
+            };
+          }, 1000);
+
+          setTimeout(() => {
+            this.formfieldrefreshdata = {
+              field: 'addfromcontrol',
+              value: {
+                type: 'text',
+                name: 'insurance_type_input',
+                placeholder: 'Insurance type',
+                label: 'Insurance type',
+                value: '',
+                validators: [
+                  { rule: 'required' }
+                ],
+                prefix: "",
+                suffix: "",
+                after: 'insurance_name_input'
+              }
+            };
+          }, 2000);
+        }
         break;
     }
   }
