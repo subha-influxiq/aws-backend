@@ -20,7 +20,7 @@
 
   <mat-card-content class="table_wrapper">
     <mat-toolbar class="top_header">
-      <h2> Manage doctor </h2>
+      <h2> Manage doctor</h2>
     </mat-toolbar>
 
     <mat-toolbar class="add_header">
@@ -47,7 +47,7 @@
     <!-- End header with add button -->
 
     <!-- Listing goes here  -->
-    <lib-listing class="DataTable" *ngIf="docData.length>0" [datasource]="docData" [skip]="docData_skip"
+    <lib-listing class="DataTable manageDoctor" *ngIf="docData.length>0" [datasource]="docData" [skip]="docData_skip"
       [modify_header_array]="docData_modify_header" [sourcedata]="tableName" [detail_skip_array]="previewModal_skip"
       [apiurl]="apiUrl" [editroute]="editUrl" [jwttoken]="user_cookie" [statusarr]="status"
       [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="searchingEndpoint"
