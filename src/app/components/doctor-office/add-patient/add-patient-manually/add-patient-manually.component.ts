@@ -140,8 +140,8 @@ export class AddPatientManuallyComponent implements OnInit {
         label: 'Blurred Vision',
         multiple: true,
         val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
+          { key: 0, val: 'bv_six_months' },
+          { key: 1, val: 'bv_today' }
         ],
         value: [true, true]
       },
@@ -151,8 +151,8 @@ export class AddPatientManuallyComponent implements OnInit {
         name: 'Autonomic Nervous System Dysfunction (ANSD)',
         multiple: true,
         val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
+          { key: 0, val: 'ebs_six_months' },
+          { key: 1, val: 'ebs_today' }
         ],
         value: [true, true]
       },
@@ -727,6 +727,44 @@ export class AddPatientManuallyComponent implements OnInit {
     allcookies = cookieService.getAll();
     this.cookiesData = JSON.parse(allcookies.user_details);
     this.cookies_id = this.cookiesData._id;
+
+    var data: any = {
+      "source": "data_pece",
+      "condition": {
+        tech_id: this.cookiesData.tech_id
+      },
+      "token": this.jwtToken,
+    };
+
+    this.httpService.httpViaPost("doctor-add-tech-list", data).subscribe(response => {
+      if(response.status == true) {
+        var techDetails = [];
+        for (let i = 0; i < response.res.length; i++) {
+          let temp = {};
+          temp['name'] = response.res[i].firstname + ' ' + response.res[i].lastname;
+          temp['val'] = response.res[i]._id;
+          techDetails.push(temp);
+        }
+
+        this.formfieldrefreshdata = {
+          field: 'addfromcontrol',
+          value: {
+            label: "Select Tech",
+            name: "tech_id",
+            hint: '',
+            type: 'select',
+            val: techDetails,
+            multiple: false,
+            validations: [
+              { rule: 'required' }
+            ],
+            prefix: "",
+            suffix: "",
+            after: 'insurance_id'
+          }
+        };
+      }
+    });
   }
 
   ngOnInit() {
@@ -742,7 +780,6 @@ export class AddPatientManuallyComponent implements OnInit {
   getStates(): any {
     /* ****************** Get states value from assets/states.json ****************** */
     this.httpService.get('assets/data/states.json').subscribe(res => {
-      console.log("State >> ", res);
       var state: any = res;
       for (let loop = 0; loop < state.length; loop++) {
         this.states.push({ name: state[loop].text, val: state[loop].value });
@@ -767,7 +804,6 @@ export class AddPatientManuallyComponent implements OnInit {
   }
 
   listenFormFieldChange(val: any) {
-    console.log("Subha >>> ", val.fieldval);
     switch(val.field.name) {
       case 'insurance_id':
         if(val.fieldval != 0) {
@@ -808,7 +844,6 @@ export class AddPatientManuallyComponent implements OnInit {
             }
           };
         } else {
-          console.log("Working...");
           this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'insurance_type' } };
           
           setTimeout(() => {
@@ -848,6 +883,109 @@ export class AddPatientManuallyComponent implements OnInit {
             };
           }, 2000);
         }
+        break;
+      case 'tech_id':
+        let data: any = {
+          "source": "data_pece",
+          "condition": {
+            tech_id_object: val.fieldval
+          },
+          "token": this.jwtToken,
+        };
+
+        this.httpService.httpViaPost("datalist", data).subscribe(response => {
+          this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'doctor_id' } };
+          this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_type' } };
+          this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_id' } };
+          
+          if(response.status == true) {
+            var doctorDetails = [];
+            console.log("AAAAAAAAAAAAAAAAAa", response.res);
+            for (let i = 0; i < response.res.length; i++) {
+              let temp = {};
+              temp['name'] = response.res[i].firstname + ' ' + response.res[i].lastname;
+              temp['val'] = response.res[i]._id;
+              doctorDetails.push(temp);
+            }
+          }
+
+          // set doctor dropdown
+          setTimeout(() => {
+            this.formfieldrefreshdata = {
+              field: 'addfromcontrol',
+              value: {
+                label: "Select Doctor",
+                name: "doctor_id",
+                hint: '',
+                type: 'select',
+                val: doctorDetails,
+                multiple: false,
+                validations: [
+                  { rule: 'required' }
+                ],
+                prefix: "",
+                suffix: "",
+                after: 'tech_id'
+              }
+            };
+          }, 100);
+        });
+        break;
+      case 'doctor_id':
+        let data2: any = {
+          "source": "data_pece",
+          "condition": {
+            "_id_object": val.fieldval
+          },
+          "token": this.jwtToken,
+        };
+
+        this.httpService.httpViaPost("datalist", data2).subscribe(response => {
+          if(response.status == true) {
+            // set parent id and type
+            let parentData: any = {
+              "source": "data_pece",
+              "condition": {
+                _id_object: val.fieldval
+              },
+              "token": this.jwtToken,
+            };
+
+            this.httpService.httpViaPost("datalist", parentData).subscribe(response => {
+              if(response.status == true) {
+                if(typeof(response.res[0].parent_type) != 'undefined') {
+                  setTimeout(() => {
+                    this.formfieldrefreshdata = {
+                      field: 'addfromcontrol',
+                      value: {
+                        label: "",
+                        name: "parent_type",
+                        hint: '',
+                        type: 'text',
+                        value: response.res[0].parent_type,
+                        after: 'tech_id'
+                      }
+                    };
+                  }, 200);
+        
+                  setTimeout(() => {
+                    this.formfieldrefreshdata = {
+                      field: 'addfromcontrol',
+                      value: {
+                        label: "",
+                        name: "parent_id",
+                        hint: '',
+                        type: 'text',
+                        value: response.res[0].parent_id,
+                        after: 'tech_id'
+                      }
+                    };
+                  }, 300);
+                }
+              }
+            });
+          }
+        });
         break;
     }
   }
