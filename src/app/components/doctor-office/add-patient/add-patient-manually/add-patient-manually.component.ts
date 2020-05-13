@@ -53,7 +53,7 @@ export class AddPatientManuallyComponent implements OnInit {
     cancelroute: '/doctor-office/dashboard',
     fields: [
       {
-        heading: "Patient General Information",
+        heading: "<h2>Patient General Information</h2>",
         type: 'text',
         name: 'practice_name',
         placeholder: 'Practice Name',
@@ -63,8 +63,7 @@ export class AddPatientManuallyComponent implements OnInit {
         error: 'Enter practice name',
         caption: 'Patient General Information'
       },
-      { type: 'input', name: 'address', placeholder: 'Address', label: 'Address', value: '' },
-      // {type: 'input', name: 'state', placeholder: 'State', label: 'State', value: ''},
+      { type: 'textarea', name: 'address', placeholder: 'Address', label: 'Address', value: '' },
       {
         label: "State",
         name: "state",
@@ -137,8 +136,25 @@ export class AddPatientManuallyComponent implements OnInit {
         error: 'Enter patient weight'
       },
       { type: 'text', name: 'booking_date', placeholder: 'Date', label: 'Booking date', value: this.today, disabled: true },
+      
       {
-        heading: "Autonomic Nervous System Dysfunction (ANSD)"
+        heading: '<h2>Insurance Information</h2>',
+        label: "Insurance name",
+        name: 'insurance_id',
+        hint: '',
+        type: 'select',
+        val: this.insuranceData,
+        value: [],
+        multiple: false,
+        validations: [
+          { rule: 'required' }
+        ],
+        prefix: "",
+        suffix: ""
+      },
+
+      {
+        heading: "<h2>Autonomic Nervous System Dysfunction (ANSD)</h2>"
       },
       {
         heading: 'Blurred Vision',
@@ -251,7 +267,7 @@ export class AddPatientManuallyComponent implements OnInit {
         label: '6 Months',
       },
 
-      { heading: 'Sudomotor Dysfunction (SUDOD)' },
+      { heading: '<h2>Sudomotor Dysfunction (SUDOD)</h2>' },
       {
         heading: 'Burning Sensations',
         type: 'checkbox',
@@ -341,7 +357,7 @@ export class AddPatientManuallyComponent implements OnInit {
         label: '6 Months',
       },
 
-      { heading: 'ENDOTHELIAL DYSFUNCTION (ENDOD)' },
+      { heading: '<h2>ENDOTHELIAL DYSFUNCTION (ENDOD)<h2>' },
       {
         heading: 'Angina (severe chest pain, often spreading to shoulder, arm, back, neck, or jaw)',
         type: 'checkbox',
@@ -420,7 +436,7 @@ export class AddPatientManuallyComponent implements OnInit {
         label: '6 Months',
       },
 
-      { heading: 'CARDIOMETABOLIC RISK (CMR)' },
+      { heading: '<h2>CARDIOMETABOLIC RISK (CMR)</h2>' },
       {
         heading: 'Headaches',
         type: 'checkbox',
@@ -455,7 +471,7 @@ export class AddPatientManuallyComponent implements OnInit {
         label: '6 Months',
       },
 
-      { heading: 'INSULIN RESISTANCE (IR)' },
+      { heading: '<h2>INSULIN RESISTANCE (IR)</h2>' },
       {
         heading: 'Blurred Vision',
         type: 'checkbox',
@@ -512,7 +528,7 @@ export class AddPatientManuallyComponent implements OnInit {
         label: '6 Months',
       },
 
-      { heading: 'SMALL FIBER SENSORY NEUROPATHY (SFN)' },
+      { heading: '<h2>SMALL FIBER SENSORY NEUROPATHY (SFN)</h2>' },
       {
         heading: 'Burning Sensations',
         type: 'checkbox',
@@ -580,7 +596,7 @@ export class AddPatientManuallyComponent implements OnInit {
         label: '6 Months',
       },
 
-      { heading: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)' },
+      { heading: '<h2>CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)</h2>' },
       {
         heading: 'Blurred Vision',
         type: 'checkbox',
@@ -703,7 +719,7 @@ export class AddPatientManuallyComponent implements OnInit {
         label: '6 Months',
       },
 
-      { heading: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)' },
+      { heading: '<h2>PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)</h2>' },
       {
         heading: 'Blood clot in a vein (Venous Thrombosis)',
         type: 'checkbox',
@@ -750,25 +766,10 @@ export class AddPatientManuallyComponent implements OnInit {
       },
 
 
-      {
-        heading: 'Insurance Information',
-        label: "Insurance name",
-        name: 'insurance_id',
-        hint: '',
-        type: 'select',
-        val: this.insuranceData,
-        value: [],
-        multiple: false,
-        validations: [
-          { rule: 'required' }
-        ],
-        prefix: "",
-        suffix: ""
-      },
-      { type: 'input', name: 'event_title', placeholder: 'Event Title', label: 'Event Title', value: '', disabled: true },
-      { type: 'input', name: 'description', placeholder: 'Event Description', label: 'Event Description', value: '', disabled: true },
-      { type: 'input', name: 'startdate', placeholder: 'Date of Appointment', label: 'Date of Appointment', value: '', disabled: true },
-      { type: 'input', name: 'slot', placeholder: 'Time of Appointment', label: 'Time of Appointment', value: '', disabled: true },
+      // { type: 'input', name: 'event_title', placeholder: 'Event Title', label: 'Event Title', value: '', disabled: true },
+      // { type: 'input', name: 'description', placeholder: 'Event Description', label: 'Event Description', value: '', disabled: true },
+      // { type: 'input', name: 'startdate', placeholder: 'Date of Appointment', label: 'Date of Appointment', value: '', disabled: true },
+      // { type: 'input', name: 'slot', placeholder: 'Time of Appointment', label: 'Time of Appointment', value: '', disabled: true },
       {
         type: 'date',
         name: 'appointment_date',
@@ -838,6 +839,15 @@ export class AddPatientManuallyComponent implements OnInit {
     this.cookiesData = JSON.parse(allcookies.user_details);
     this.cookies_id = this.cookiesData._id;
 
+    this.formfieldrefreshdata = {
+      field: 'addfromcontrol',
+      value: {
+        name: "doctor_office_id",
+        type: 'hidden',
+        value: this.cookiesData._id
+      }
+    };
+
     var data: any = {
       "source": "data_pece",
       "condition": {
@@ -856,23 +866,25 @@ export class AddPatientManuallyComponent implements OnInit {
           techDetails.push(temp);
         }
 
-        this.formfieldrefreshdata = {
-          field: 'addfromcontrol',
-          value: {
-            label: "Select Tech",
-            name: "tech_id",
-            hint: '',
-            type: 'select',
-            val: techDetails,
-            multiple: false,
-            validations: [
-              { rule: 'required' }
-            ],
-            prefix: "",
-            suffix: "",
-            after: 'insurance_id'
-          }
-        };
+        setTimeout(() => {
+          this.formfieldrefreshdata = {
+            field: 'addfromcontrol',
+            value: {
+              label: "Select Tech",
+              name: "tech_id",
+              hint: '',
+              type: 'select',
+              val: techDetails,
+              multiple: false,
+              validations: [
+                { rule: 'required' }
+              ],
+              prefix: "",
+              suffix: "",
+              after: 'insurance_id'
+            }
+          };
+        }, 300);
       }
     });
   }
@@ -881,6 +893,62 @@ export class AddPatientManuallyComponent implements OnInit {
     if (this.cookieService.check('jwtToken')) {
       this.activatedRoute.data.forEach((data) => {
         this.resolveData = data.eventdayarrData;
+        
+        let otherFieldsData = [];
+        for (let i = 0; i < this.resolveData.others.patient_information.length; i++) {
+          let fieldData: any;
+          switch (this.resolveData.others.patient_information[i].type) {
+            case 'checkbox':
+              this.formfieldrefreshdata = {
+                field: 'addfromcontrol',
+                value: {
+                  heading: "<h2>Others Details</h2>",
+                  type: 'checkbox',
+                  label: this.resolveData.others.patient_information[i].description,
+                  name: this.resolveData.others.patient_information[i].label,
+                  after: 'insurance_id'
+                }
+              };
+              break;
+            case 'textfield':
+              this.formfieldrefreshdata = {
+                field: 'addfromcontrol',
+                value: {
+                  type: 'text',
+                  name: this.resolveData.others.patient_information[i].description,
+                  label: this.resolveData.others.patient_information[i].label,
+                  value: '',
+                  validators: { rule: 'required' },
+                  after: 'insurance_id'
+                }
+              };
+              break;
+            case 'dropdown':
+              var temp: any = [];
+              for (let j = 0; j < this.resolveData.others.patient_information[i].addfield.length; j++) {
+                let json = {
+                  name: this.resolveData.others.patient_information[i].addfield[j],
+                  val: this.resolveData.others.patient_information[i].addfield[j]
+                }
+                temp.push(json);
+              }
+                
+              this.formfieldrefreshdata = {
+                field: 'addfromcontrol',
+                value: {
+                  label: this.resolveData.others.patient_information[i].label,
+                  name: this.resolveData.others.patient_information[i].description,
+                  type: 'select',
+                  val: temp,
+                  validations: [
+                    { rule: 'required' }
+                  ],
+                  after: 'insurance_id'
+                }
+              };
+              break;
+          }
+        }
       });
     } else {
       this.openSnackBar('Token not found');
@@ -993,7 +1061,7 @@ export class AddPatientManuallyComponent implements OnInit {
             };
           }, 2000);
         }
-        break;
+        break;this.cookiesData
       case 'tech_id':
         let data: any = {
           "source": "data_pece",
