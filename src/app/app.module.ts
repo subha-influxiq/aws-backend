@@ -93,19 +93,19 @@ import { NotFoundErrorComponent } from './components/common/not-found-error/not-
 import { AdminFooterComponent } from './components/admin/admin-footer/admin-footer.component';
 import { BillerFooterComponent } from './components/biller/biller-footer/biller-footer.component';
 import { TechFooterComponent } from './components/tech/tech-footer/tech-footer.component';
-import { DoctorFooterComponent } from './components/doctor/doctor-footer/doctor-footer.component'; 
+import { DoctorFooterComponent } from './components/doctor/doctor-footer/doctor-footer.component';
 import { SignatureManagementComponent } from './components/doctor/signature-management/signature-management.component';
 import { DoctorOfficeManagementComponent } from './components/admin/doctor-office-management/doctor-office-management.component';
 import { AddEditDoctorOfcComponent,ChangePasswordDoctorOfficeModal } from './components/admin/doctor-office-management/add-edit-doctor-ofc/add-edit-doctor-ofc.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BookedAppoinmentsComponent } from './components/admin/booked-appoinments/booked-appoinments.component';
-import { ListComponent } from './components/tech/manage-calender/my-appointments/list/list.component'; 
+import { ListComponent } from './components/tech/manage-calender/my-appointments/list/list.component';
 import { DoctorOfficeDashboardComponent } from './components/doctor-office/doctor-office-dashboard/doctor-office-dashboard.component';
 import { DoctorOfficeHeaderComponent } from './components/doctor-office/doctor-office-header/doctor-office-header.component';
 import { DoctorOfficeFooterComponent } from './components/doctor-office/doctor-office-footer/doctor-office-footer.component';
 import { DoctorOfficeAccountSettingsComponent } from './components/doctor-office/doctor-office-account-settings/doctor-office-account-settings.component';
 
- 
+
 import { LogoutComponent } from './components/auth/logout/logout.component';
 import { DoctorOfficeChangePasswordComponent } from './components/doctor-office/doctor-office-change-password/doctor-office-change-password.component';
 import { PatientReportViewComponent } from './components/doctor/doctor-dashboard/patient-report-view/patient-report-view.component';
@@ -163,6 +163,8 @@ import { AdminbillerDashboardComponent } from './components/adminbiller/adminbil
 import { AdminbillerHeaderComponent } from './components/adminbiller/adminbiller-header/adminbiller-header.component';
 import { AdminbillerFooterComponent } from './components/adminbiller/adminbiller-footer/adminbiller-footer.component';
 import { AddPatientManuallyComponent } from './components/doctor-office/add-patient/add-patient-manually/add-patient-manually.component';
+import {UpcomingAppoinmentsComponent} from "./components/booked-events-listing/upcoming-appoinments/upcoming-appoinments.component";
+import {PastAppoinmentsComponent} from "./components/booked-events-listing/past-appoinments/past-appoinments.component";
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -235,7 +237,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     UploadDialogBoxComponent,
     BillerHeaderComponent,
     DoctorHeaderComponent,
-    TechHeaderComponent, 
+    TechHeaderComponent,
     HealthriskSystemEncounterComponent, SystemSuperbillComponent,
     HealthRiskAnalysisComponent,
     ReportDetailsComponent,
@@ -312,8 +314,9 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AdminbillerDashboardComponent,
     AdminbillerHeaderComponent,
     AdminbillerFooterComponent,
-    AddPatientManuallyComponent
-    
+    AddPatientManuallyComponent,
+    UpcomingAppoinmentsComponent,
+    PastAppoinmentsComponent
   ],
   imports: [
     SatDatepickerModule,
@@ -349,25 +352,25 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   ],
   providers: [
     HttpLoaderService,
-    { 
-      provide: HTTP_INTERCEPTORS, 
-      useClass: LoaderInterceptor, 
-      multi: true 
-    }, 
-    CookieService, 
-    AuthguardService, 
-    HttpServiceService, 
-    DatePipe, 
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true
+    },
+    CookieService,
+    AuthguardService,
+    HttpServiceService,
+    DatePipe,
     CommonFunction,
-    { 
-      provide: DateAdapter, 
-      useClass: MomentDateAdapter, 
+    {
+      provide: DateAdapter,
+      useClass: MomentDateAdapter,
       deps: [
         MAT_DATE_LOCALE
       ]
     },
     {
-      provide: MAT_DATE_FORMATS, 
+      provide: MAT_DATE_FORMATS,
       useValue: MAT_MOMENT_DATE_FORMATS
     },
   ],

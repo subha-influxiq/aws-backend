@@ -15,8 +15,19 @@
     <mat-toolbar class="top_header">
       <h2> manage appoinments </h2>
     </mat-toolbar>
-     
-    <lib-booked-event-listing [configData]="configData"></lib-booked-event-listing>
+
+<!--    <lib-booked-event-listing [configData]="configData"></lib-booked-event-listing>-->
+    <!-- Booked Events Listing -->
+    <mat-tab-group>
+      <!-- Upcoming events -->
+      <mat-tab label="Upcoming Events">
+        <app-upcoming-appoinments></app-upcoming-appoinments>
+      </mat-tab>
+      <!-- Past events -->
+      <mat-tab label="Past Events">
+        <app-past-appoinments></app-past-appoinments>
+      </mat-tab>
+    </mat-tab-group>
 
   </mat-card-content>
 </mat-card>

@@ -745,7 +745,7 @@ const routes: Routes = [
     path: 'admin/booked-appoinments',
     component: BookedAppoinmentsComponent,
     canActivate: [AuthguardService],
-    resolve: { bookedEventList: ResolveService },
+    // resolve: { bookedEventList: ResolveService },
     data: {
       requestcondition: {
         source: 'google-events',
@@ -1631,7 +1631,7 @@ const routes: Routes = [
     path: 'doctor-office/manage-appointments',
     component: AppoinmentsListingComponent,
     canActivate: [AuthguardService],
-    resolve: { bookedEventList: CalendarService },
+    // resolve: { bookedEventList: CalendarService },
     data: {
       requestcondition: {
         source: 'google-events',
