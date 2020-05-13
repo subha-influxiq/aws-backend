@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
-import { HttpServiceService } from '../../../../services/http-service.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { CommonFunction } from '../../../../class/common/common-function';
-import { MatTableDataSource } from '@angular/material/table';
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { MatSnackBar } from '@angular/material';
-import { environment } from '../../../../../environments/environment';
-import { FormGroup, FormBuilder, Validators, FormControl, FormGroupDirective } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {CookieService} from 'ngx-cookie-service';
+import {HttpServiceService} from '../../../../services/http-service.service';
+import {Router, ActivatedRoute} from '@angular/router';
+import {CommonFunction} from '../../../../class/common/common-function';
+import {MatTableDataSource} from '@angular/material/table';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
+import {Observable, of} from 'rxjs';
+import {MatSnackBar} from '@angular/material';
+import {environment} from '../../../../../environments/environment';
+import {FormGroup, FormBuilder, Validators, FormControl, FormGroupDirective} from '@angular/forms';
 import moment from 'moment-es6';
 
 @Component({
@@ -58,7 +58,10 @@ export class BookAppoinmentNowComponent implements OnInit {
     responseData: '',
     patientInfoFormFields: {},
     calendarInfoFormFields: {},
-    primaryCondition: {$or: [{event_type: 1}, {event_type: 2}], userid: {$in: JSON.parse(this.cookieService.get('user_details')).tech_id}}
+    primaryCondition: {
+      $or: [{event_type: 1}, {event_type: 2}],
+      userid: {$in: JSON.parse(this.cookieService.get('user_details')).tech_id}
+    }
   };
 
   public resolveData;
@@ -88,7 +91,7 @@ export class BookAppoinmentNowComponent implements OnInit {
     this.userDetails = JSON.parse(this.cookieService.get('user_details'));
     this.configData = Object.assign(this.configData, this.userDetails);
 
-    // this.configData.primaryCondition = Object.assign(this.configData.primaryCondition, {userid: {$in: [userDetails._id]}});
+    // this.configData.primaryCondition = Object.assign(this.configData.primaryCondition, {userid: {$in: [this.userDetails._id]}});
 
     this.updateUser();
   }
@@ -105,7 +108,7 @@ export class BookAppoinmentNowComponent implements OnInit {
           refresh_token: this.activatedRoute.snapshot.params.refresh
         }
       };
-      this.httpRequestService.httpViaPost('update-user', data).subscribe((response: any) => {
+      this.httpRequestService.postRequest('update-user', data).subscribe((response: any) => {
         console.log('response', response);
         if (response.status == 'success') {
           this.openSnackBar('Calendar added successfully...')
@@ -118,7 +121,7 @@ export class BookAppoinmentNowComponent implements OnInit {
           console.log('Mail sent ', response.msg_id);
           this.openSnackBar('Confirmation email sent to your email - ' + this.userDetails.email, 'Ok');
         }
-      })
+      });
 
       // Update user_details in cookie
       this.cookieService.set('user_details', JSON.stringify(Object.assign(this.userDetails, data.data)));
@@ -160,12 +163,39 @@ export class BookAppoinmentNowComponent implements OnInit {
                 type: 'checkbox',
                 label: this.resolveData.others.patient_information[i].description,
                 checkItems: [
-                  {name: this.resolveData.others.patient_information[i].label, value: false, label: '', labelPosition: 'before'}
+                  {
+                    name: this.resolveData.others.patient_information[i].label,
+                    value: false,
+                    label: '',
+                    labelPosition: 'before'
+                  }
                 ]
               };
               break;
 
-            case 'input':
+            case 'textfield':
+              fieldData = {
+                type: 'input',
+                name: this.resolveData.others.patient_information[i].label,
+                placeholder: this.resolveData.others.patient_information[i].description,
+                label: this.resolveData.others.patient_information[i].description,
+                value: ''}
+              break;
+
+            case 'dropdown':
+              for (let j = 0; j < this.resolveData.others.patient_information[i].addfield.length; j++) {
+                this.resolveData.others.patient_information[i].addfield[j] = {
+                  text: this.resolveData.others.patient_information[i].addfield[j],
+                  value: this.resolveData.others.patient_information[i].addfield[j]
+                }
+              }
+              fieldData = {
+                type: 'select',
+                name: this.resolveData.others.patient_information[i].label,
+                placeholder: this.resolveData.others.patient_information[i].description,
+                label: this.resolveData.others.patient_information[i].description,
+                options: this.resolveData.others.patient_information[i].addfield
+              }
               break;
           }
 
@@ -179,7 +209,7 @@ export class BookAppoinmentNowComponent implements OnInit {
         }
         console.log('otherFieldsData', otherFieldsData);
 
-        let patientInfoFormFields:any = [
+        let patientInfoFormFields: any = [
           {
             type: 'input',
             name: 'practice_name',
@@ -252,10 +282,17 @@ export class BookAppoinmentNowComponent implements OnInit {
             validators: [Validators.required],
             error: 'Enter patient weight'
           },
-          {type: 'input', name: 'booking_date', placeholder: 'Date', label: 'Booking date', value: this.today, disabled: true},
+          {
+            type: 'input',
+            name: 'booking_date',
+            placeholder: 'Date',
+            label: 'Booking date',
+            value: this.today,
+            disabled: true
+          },
         ];
 
-        let checkboxFields:any = [
+        let checkboxFields: any = [
           {
             type: 'checkbox', caption: 'Autonomic Nervous System Dysfunction (ANSD)',
             label: 'Blurred Vision',
@@ -646,7 +683,7 @@ export class BookAppoinmentNowComponent implements OnInit {
           }
         ];
 
-        let autocompleteFields:any = [
+        let autocompleteFields: any = [
           {
             type: 'select',
             name: 'insurance_id', // name must be insurance_id
@@ -689,10 +726,38 @@ export class BookAppoinmentNowComponent implements OnInit {
         ];
 
         let calendarInfoFormFields = [
-          {type: 'input', name: 'event_title', placeholder: 'Event Title', label: 'Event Title', value: '', disabled: true},
-          {type: 'input', name: 'description', placeholder: 'Event Description', label: 'Event Description', value: '', disabled: true},
-          {type: 'input', name: 'startdate', placeholder: 'Date of Appointment', label: 'Date of Appointment', value: '', disabled: true},
-          {type: 'input', name: 'slot', placeholder: 'Time of Appointment', label: 'Time of Appointment', value: '', disabled: true},
+          {
+            type: 'input',
+            name: 'event_title',
+            placeholder: 'Event Title',
+            label: 'Event Title',
+            value: '',
+            disabled: true
+          },
+          {
+            type: 'input',
+            name: 'description',
+            placeholder: 'Event Description',
+            label: 'Event Description',
+            value: '',
+            disabled: true
+          },
+          {
+            type: 'input',
+            name: 'startdate',
+            placeholder: 'Date of Appointment',
+            label: 'Date of Appointment',
+            value: '',
+            disabled: true
+          },
+          {
+            type: 'input',
+            name: 'slot',
+            placeholder: 'Time of Appointment',
+            label: 'Time of Appointment',
+            value: '',
+            disabled: true
+          },
           {
             type: 'select', name: 'reqTimezone',
             options: [
@@ -706,14 +771,41 @@ export class BookAppoinmentNowComponent implements OnInit {
             ],
             value: '-05:00|America/Chicago', disabled: true
           },
-          {type: 'input', name: 'username', placeholder: 'Organizer Name', label: 'Organizer Name', value: '', disabled: true},
-          {type: 'input', name: 'useremail', placeholder: 'Organizer Email', label: 'Organizer Email', value: '', disabled: true},
-          {type: 'input', name: 'attendees', placeholder: 'Attendee Email', label: 'Attendee Email', value: '', disabled: true},
-          {type: 'input', name: 'additional_notes', placeholder: 'Additional Notes', label: 'Additional Notes', value: ''}
+          {
+            type: 'input',
+            name: 'username',
+            placeholder: 'Organizer Name',
+            label: 'Organizer Name',
+            value: '',
+            disabled: true
+          },
+          {
+            type: 'input',
+            name: 'useremail',
+            placeholder: 'Organizer Email',
+            label: 'Organizer Email',
+            value: '',
+            disabled: true
+          },
+          {
+            type: 'input',
+            name: 'attendees',
+            placeholder: 'Attendee Email',
+            label: 'Attendee Email',
+            value: '',
+            disabled: true
+          },
+          {
+            type: 'input',
+            name: 'additional_notes',
+            placeholder: 'Additional Notes',
+            label: 'Additional Notes',
+            value: ''
+          }
         ];
 
-        // get informations of the doctor
-        this.httpViaPost(this.configData.baseUrl + 'get-doctor-info', {condition: {_id: this.userDetails.doctor_id}}).subscribe((response:any) => {
+        this.httpRequestService.postRequest('get-doctor-info', {condition: {_id: this.userDetails.doctor_id}}).subscribe((response: any) => {
+
           let hiddenFields: any = [
             {type: 'input', name: 'doctor_id', value: response.data._id, hidden: true},
             {type: 'input', name: 'doctor_office_id', value: response.data.doctor_office_id, hidden: true},
@@ -724,7 +816,6 @@ export class BookAppoinmentNowComponent implements OnInit {
           this.configData = Object.assign(this.configData, {patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields)}, {calendarInfoFormFields: calendarInfoFormFields});
 
         });
-
       }, error => {
         console.log('Oooops! Cannot get states.');
       });
@@ -734,19 +825,6 @@ export class BookAppoinmentNowComponent implements OnInit {
     this.snackBar.open(message, action, {
       duration: 3000,
     });
-  }
-
-
-  /* call api via post method */
-  httpViaPost(endpoint, jsonData): Observable<any> {
-    /* set common header */
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': jsonData.token
-      })
-    };
-    return this.http.post(endpoint, jsonData);
   }
 
 }
