@@ -327,6 +327,7 @@ export class BookAppoinmentNowComponent implements OnInit {
               {name: 'vomiting_today', value: false, label: 'Today', labelPosition: 'before'}
             ]
           },
+
           {
             type: 'checkbox', caption: 'Sudomotor Dysfunction (SUDOD)',
             label: 'Burning Sensations',
@@ -384,6 +385,7 @@ export class BookAppoinmentNowComponent implements OnInit {
               {name: 'up_today', value: false, label: 'Today', labelPosition: 'before'}
             ]
           },
+
           {
             type: 'checkbox', caption: 'ENDOTHELIAL DYSFUNCTION (ENDOD)',
             label: 'Angina (severe chest pain, often spreading to shoulder, arm, back, neck, or jaw)',
@@ -434,6 +436,7 @@ export class BookAppoinmentNowComponent implements OnInit {
               {name: 'tia_today', value: false, label: 'Today', labelPosition: 'before'}
             ]
           },
+
           {
             type: 'checkbox', caption: 'CARDIOMETABOLIC RISK (CMR)',
             label: 'Headaches',
@@ -456,6 +459,7 @@ export class BookAppoinmentNowComponent implements OnInit {
               {name: 'soa_today', value: false, label: 'Today', labelPosition: 'before'}
             ]
           },
+
           {
             type: 'checkbox', caption: 'INSULIN RESISTANCE (IR)',
             label: 'Blurred Vision',
@@ -492,6 +496,8 @@ export class BookAppoinmentNowComponent implements OnInit {
               {name: 'ihr_today', value: false, label: 'Today', labelPosition: 'before'}
             ]
           },
+
+
           {
             type: 'checkbox', caption: 'SMALL FIBER SENSORY NEUROPATHY (SFN)',
             label: 'Burning Sensations',
@@ -528,6 +534,7 @@ export class BookAppoinmentNowComponent implements OnInit {
               {name: 'pnsf_today', value: false, label: 'Today', labelPosition: 'before'}
             ]
           },
+
           {
             type: 'checkbox', caption: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)',
             label: 'Blurred Vision',
@@ -606,6 +613,8 @@ export class BookAppoinmentNowComponent implements OnInit {
               {name: 'rsb_today', value: false, label: 'Today', labelPosition: 'before'}
             ]
           },
+
+          
           {
             type: 'checkbox', caption: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)',
             label: 'Blood clot in a vein (Venous Thrombosis)',
