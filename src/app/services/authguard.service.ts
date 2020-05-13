@@ -17,34 +17,37 @@ export class AuthguardService implements CanActivate {
     var getToken = this.cookie.get('jwtToken');
     if (getToken) {
       var allData: any = this.cookie.getAll();
-      var userData: any = JSON.parse(allData.user_details);
-
+      // allData['user_details'] = JSON.stringify(allData);
+      console.log('////////',allData);
+      // var user_details = JSON.stringify(allData.user_details);
+      // console.log('++++++++++++++++',user_details);
+      var userData: any = JSON.parse(allData.user_type);
       /* Login User */
       switch (next.url[0].path) {
         case 'login':
         case 'forget-password':
-          this._router.navigate([userData.user_type.replace("_", "-") + '/dashboard']);
+          this._router.navigate([userData.replace("_", "-") + '/dashboard']);
           break;
         default:
-          if (userData.user_type == 'doctor_office' && next.url[0].path == 'doctor-office') {
+          if (userData == 'doctor_office' && next.url[0].path == 'doctor-office') {
             return true;
           } else {
-            if (userData.user_type == 'diagnostic_admin' && next.url[0].path == 'diagnostic-admin') {
+            if (userData == 'diagnostic_admin' && next.url[0].path == 'diagnostic-admin') {
               return true;
             } else {
-              if (userData.user_type == 'sales_person' && next.url[0].path == 'sales-person') {
+              if (userData == 'sales_person' && next.url[0].path == 'sales-person') {
                 return true;
               } else {
-                if (userData.user_type == 'doctor_group' && next.url[0].path == 'doctor-group') {
+                if (userData == 'doctor_group' && next.url[0].path == 'doctor-group') {
                   return true;
                 } else {
-                  if (userData.user_type == 'admin_biller' && next.url[0].path == 'admin-biller') {
+                  if (userData == 'admin_biller' && next.url[0].path == 'admin-biller') {
                     return true;
                   } else {
-                    if (next.url[0].path == userData.user_type) {
+                    if (next.url[0].path == userData) {
                       return true;
                     } else {
-                      this._router.navigate([userData.user_type.replace("_", "-") + '/dashboard']);
+                      this._router.navigate([userData.replace("_", "-") + '/dashboard']);
                     }
                   }
                 }

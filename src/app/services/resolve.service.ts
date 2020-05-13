@@ -23,14 +23,13 @@ export class ResolveService implements Resolve<any> {
     var requestData: any = route.data.requestcondition;
 
     /* Condition for all dashboard */
-    var allData: any = this.cookies.getAll();
-    var userData = JSON.parse(allData.user_details);
+    var userData: any = this.cookies.getAll();
     
     /* This one is for Tech Dashboard Start */
     if(route.url[0].path == 'admin') {
       switch(route.url[1].path) {
         case 'dashboard':
-          requestData.condition['admin_id'] = userData._id;
+          requestData.condition['admin_id'] = JSON.parse(userData._id);;
           break;
       }
     }
@@ -40,11 +39,11 @@ export class ResolveService implements Resolve<any> {
     if(route.url[0].path == 'tech') {
       switch(route.url[1].path) {
         case 'dashboard':
-          requestData.condition['tech_id'] = userData._id;
+          requestData.condition['tech_id'] = JSON.parse(userData._id);;
           break;
         case 'manage-calender':
           if(route.url[2].path == 'manage-sehedule') {
-            requestData.condition['userid'] = userData._id;
+            requestData.condition['userid'] = JSON.parse(userData._id);;
           }
           break;
       }
@@ -55,10 +54,10 @@ export class ResolveService implements Resolve<any> {
     if(route.url[0].path == 'doctor') {
       switch(route.url[1].path) {
         case 'dashboard':
-          requestData.condition['doctor_id'] = userData._id;
+          requestData.condition['doctor_id'] = JSON.parse(userData._id);;
           break;
         default:
-          requestData.condition['doctor_id_object'] = userData._id;
+          requestData.condition['doctor_id_object'] = JSON.parse(userData._id);;
           break;
       }
     }
@@ -69,7 +68,7 @@ export class ResolveService implements Resolve<any> {
     if(route.url[0].path == 'biller') {
       switch(route.url[1].path) {
         case 'dashboard':
-          requestData.condition['biller_id'] = userData._id;
+          requestData.condition['biller_id'] = JSON.parse(userData._id);;
           break;
       }
     }
@@ -79,7 +78,7 @@ export class ResolveService implements Resolve<any> {
     if(route.url[0].path == 'doctor-office') {
       switch(route.url[1].path) {
         case 'dashboard':
-          //requestData.condition['doctor_office_id'] = userData._id;
+          //requestData.condition['doctor_office_id'] = JSON.parse(userData._id);;
           requestData.condition['closeremail'] = userData.email;
           break;
         case 'manage-appointments':
@@ -92,8 +91,8 @@ export class ResolveService implements Resolve<any> {
 
     /* This one is for Diagnostic Admin Start */
     if(route.url[0].path == 'diagnostic-admin') {
-      //requestData.condition['diagnostic_admin_id_object'] = userData._id;
-      requestData.condition['diagnostic_admin_id_object'] = userData._id;
+      //requestData.condition['diagnostic_admin_id_object'] = JSON.parse(userData._id);;
+      requestData.condition['diagnostic_admin_id_object'] = JSON.parse(userData._id);;
     }
     /* This one is for Diagnostic Admin End */
     /////////////////////////////////////////////////////////////////////

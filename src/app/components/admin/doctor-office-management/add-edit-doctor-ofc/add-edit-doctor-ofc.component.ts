@@ -37,7 +37,12 @@ export class AddEditDoctorOfcComponent implements OnInit {
     states: "",
     allCities: "",
     cities: "",
-    taxonomies: ""
+    taxonomies: "",
+    user_details:{
+      user_type:"",
+      tech_id:"",
+      _id:""
+    }
   };
   public dialogRef: any;
   
@@ -46,7 +51,10 @@ export class AddEditDoctorOfcComponent implements OnInit {
     public cookieService: CookieService, public snackBar: MatSnackBar, public dialog: MatDialog) {
     
       this.htmlText.userData = this.cookieService.getAll();
-      this.htmlText.userData.user_details = JSON.parse(this.htmlText.userData.user_details);
+      console.log(this.htmlText.userData.user_type);
+      this.htmlText.user_details.user_type = JSON.parse(this.htmlText.userData.user_type);
+      this.htmlText.user_details._id = JSON.parse(this.htmlText.userData._id);
+      this.htmlText.user_details.tech_id = JSON.parse(this.htmlText.userData.tech_id);
       this.getAllTechData();
       this.allStateCityData();
       
@@ -167,13 +175,13 @@ export class AddEditDoctorOfcComponent implements OnInit {
 
   /**getting all the technician data**/
   getAllTechData() {
-    console.log(">>>>>", this.htmlText.userData.user_details);
+    console.log(">>>>>", this.htmlText.user_details);
 
     var data = {
       "source": "data_pece",
       "condition": {
         "user_type": "tech",
-        "tech_id": this.htmlText.userData.user_details.tech_id
+        "tech_id": this.htmlText.user_details.tech_id
       },
       "token": this.htmlText.userData.jwtToken
     };
@@ -210,8 +218,8 @@ export class AddEditDoctorOfcComponent implements OnInit {
         "token": this.cookieService.get('jwtToken')
       };
 
-      if(this.htmlText.userData.user_details.user_type == 'doctor') {
-        postData.data["doctor_id"] = this.htmlText.userData.user_details._id;
+      if(this.htmlText.user_details.user_type == 'doctor') {
+        postData.data["doctor_id"] = this.htmlText.user_details._id;
         postData["sourceobj"] = ["doctor_id"];
       }
 
@@ -224,7 +232,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
           });
 
           setTimeout(() => {
-            switch(this.htmlText.userData.user_details.user_type) {
+            switch(this.htmlText.user_details.user_type) {
               case 'doctor':
                 this.router.navigateByUrl("doctor/doctor-office-management");
                 break;

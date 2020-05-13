@@ -11,8 +11,11 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class ListDoctorComponent implements OnInit {
 
   // ===============================Declarations=========================
-  public userData: any;
-  public cookieUserallData: any = JSON.parse(this.cookieService.get('user_details'))
+  public userData: any={
+    user_type:"",
+    _id:""
+  };
+  // public cookieUserallData: any = JSON.parse(this.cookieService.get('user_details'))
   public docData_count:any=0;
   public  docData: any = [];
   public datasource: any;
@@ -112,7 +115,9 @@ export class ListDoctorComponent implements OnInit {
     private router: Router,public activatedRoute : ActivatedRoute) {
 
     this.user_cookie = cookieService.get('jwtToken');
-    this.userData = JSON.parse(this.cookieService.get('user_details'));
+    let allData = cookieService.getAll();
+    this.userData.user_type = JSON.parse(allData.user_type);
+    this.userData._id = JSON.parse(allData._id);
 
     if(this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/doctor-management/edit';

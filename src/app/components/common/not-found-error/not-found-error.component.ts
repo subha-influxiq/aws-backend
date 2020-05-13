@@ -14,6 +14,7 @@ public userToken : any;
     this.userToken = cookie.get('jwtToken');
     let allcookies: any;
     allcookies = cookie.getAll();
+    allcookies['user_details'] = JSON.stringify(allcookies);
     this.cookiesData = JSON.parse(allcookies.user_details);
     console.log("token data",this.cookiesData.type);
   }
@@ -22,7 +23,7 @@ public userToken : any;
   }
 
   gotoHome() {
-    this.router.navigateByUrl('/' + this.cookiesData.type + '/dashboard');
+    this.router.navigateByUrl('/' + JSON.parse(this.cookiesData.user_type) + '/dashboard');
   }
 
 }

@@ -21,7 +21,14 @@ const moment = momentImported;
 
 export class DoctorDashboardComponent implements OnInit {
 
-  public authData: any = {};
+  public authData: any = {
+    user_details:{
+      user_type:"",
+      tech_id:"",
+      parent_type:"",
+      _id:""
+    }
+  };
   public allResolveData: any;
   public htmlText: any = {
     buttonText: "Add One",
@@ -50,12 +57,16 @@ export class DoctorDashboardComponent implements OnInit {
     all_details: { user_type: "" }
   };
   public header:any;
+  public allData:any;
 
   constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService,
     public http: HttpServiceService, public activatedRoute: ActivatedRoute, public matSnackBar: MatSnackBar,
     public deviceService: DeviceDetectorService) {
-
-    this.authData["user_details"] = JSON.parse(cookie.get('user_details'));
+    this.allData = cookie.getAll();
+    this.authData.user_details.user_type = JSON.parse(this.allData.user_type);
+    // this.authData.user_details.parent_type = JSON.parse(this.allData.parent_type);
+    this.authData.user_details.tech_id = JSON.parse(this.allData.tech_id);
+    this.authData.user_details._id = JSON.parse(this.allData._id);
     this.authData["jwtToken"] = cookie.get('jwtToken');
 
     if(typeof(this.authData.user_details.diagnostic_admin_id) != 'undefined') {

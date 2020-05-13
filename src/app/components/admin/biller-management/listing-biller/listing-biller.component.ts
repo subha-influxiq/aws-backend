@@ -46,7 +46,7 @@ export class ListingBillerComponent implements OnInit {
     //hideviewbutton:false,
     //hidestatustogglebutton:true,
     // hideaction:true,
-    tableheaders:['firstname','lastname','email','parent_name','parent_type','phone','company_name','status','created_date',], //not required
+    tableheaders:['firstname','lastname','email','parent_name','parent_type','phone','company_name','status','logincounts','last_login_datetime'], //not required
 }
   public allUserData_modify_header: any = {
     "firstname": "First Name",
@@ -55,6 +55,8 @@ export class ListingBillerComponent implements OnInit {
     "phone": "Phone",
     "company_name": "Company Name",
     "status": "Status",
+    "logincounts": "No Of Login",
+    "last_login_datetime": "Last Login"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";
@@ -62,6 +64,7 @@ export class ListingBillerComponent implements OnInit {
   public apiUrl: any;
   public tableName: any = "data_pece";
   public datacollection: any='getbillerlistdata';
+  
   public sortdata:any={
     "type":'desc',
     "field":'firstname',
@@ -72,6 +75,7 @@ export class ListingBillerComponent implements OnInit {
   "skip":0,
   "pagecount":1
 };
+
   previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];

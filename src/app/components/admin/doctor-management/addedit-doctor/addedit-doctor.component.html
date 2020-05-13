@@ -1,18 +1,18 @@
 <!-- Admin Header -->
-<app-admin-header *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-header>
+<app-admin-header *ngIf="htmlText.user_details.user_type == 'admin'"></app-admin-header>
 
 <!-- Diagnostic Admin Header -->
-<app-diagnostic-admin-header *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+<app-diagnostic-admin-header *ngIf="htmlText.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
 
 <!-- Doctor Group Header -->
-<app-doctor-group-header *ngIf="htmlText.userData.user_details.user_type == 'doctor_group'"></app-doctor-group-header>
+<app-doctor-group-header *ngIf="htmlText.user_details.user_type == 'doctor_group'"></app-doctor-group-header>
 
 <!-- Distributor Admin Header -->
 <app-distributors-header
-*ngIf="htmlText.userData.user_details.user_type == 'distributors'"></app-distributors-header>
+*ngIf="htmlText.user_details.user_type == 'distributors'"></app-distributors-header>
 
 <!-- Doctor Header -->
-<app-doctor-header *ngIf="htmlText.userData.user_details.user_type == 'doctor'"></app-doctor-header>
+<app-doctor-header *ngIf="htmlText.user_details.user_type == 'doctor'"></app-doctor-header>
 
 
 <!-- header with add button -->
@@ -24,7 +24,7 @@
 
   <span class="add_header">
 
-    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+    <ng-container *ngIf="htmlText.user_details.user_type == 'admin'">
       <span class="bradcrumb">
         <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
         <a [routerLink]="['/admin/doctor-management']">Manage Doctor &nbsp;/</a> &nbsp;
@@ -32,7 +32,7 @@
       </span>
     </ng-container>
 
-    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+    <ng-container *ngIf="htmlText.user_details.user_type == 'diagnostic_admin'">
       <span class="bradcrumb">
         <a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
         <a [routerLink]="['/diagnostic-admin/doctor-management']">Manage Doctor &nbsp;/</a> &nbsp;
@@ -40,7 +40,7 @@
       </span>
     </ng-container>
 
-    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'distributors'">
+    <ng-container *ngIf="htmlText.user_details.user_type == 'distributors'">
       <span class="bradcrumb">
         <a [routerLink]="['/distributors/dashboard']">Dashboard &nbsp;/</a> &nbsp;
         <a [routerLink]="['/distributors/doctor-management']">Manage Doctor &nbsp;/</a> &nbsp;
@@ -48,7 +48,7 @@
       </span>
     </ng-container>
 
-    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'doctor_group'">
+    <ng-container *ngIf="htmlText.user_details.user_type == 'doctor_group'">
       <span class="bradcrumb">
         <a [routerLink]="['/doctor-group/dashboard']">Dashboard &nbsp;/</a> &nbsp;
         <a [routerLink]="['/doctor-group/doctor-management']">Manage Doctor &nbsp;/</a> &nbsp;
@@ -234,7 +234,7 @@
         <!-- City End -->
 
         <!-- Tech Details Start -->
-        <mat-form-field appearance="fill" *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+        <mat-form-field appearance="fill" *ngIf="htmlText.user_details.user_type == 'diagnostic_admin'">
           <mat-label>Select Tech</mat-label>
           <mat-select formControlName="tech_id" multiple>
             <mat-option [value]="">Select Tech</mat-option>
@@ -310,16 +310,16 @@
         </span>
 
         <span class="submit_form">
-          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+          <ng-container *ngIf="htmlText.user_details.user_type == 'admin'">
             <button mat-flat-button type="button" [routerLink]="['/admin/doctor-management']"> Back</button>
           </ng-container>
-          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+          <ng-container *ngIf="htmlText.user_details.user_type == 'diagnostic_admin'">
             <button mat-flat-button type="button" [routerLink]="['/diagnostic-admin/doctor-management']">Back </button>
           </ng-container>
-          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'distributors'">
+          <ng-container *ngIf="htmlText.user_details.user_type == 'distributors'">
             <button mat-flat-button type="button" [routerLink]="['/distributors/doctor-management']">Back </button>
           </ng-container>
-          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'doctor_group'">
+          <ng-container *ngIf="htmlText.user_details.user_type == 'doctor_group'">
             <button mat-flat-button type="button" [routerLink]="['/doctor-group/doctor-management']">Back </button>
           </ng-container>
 

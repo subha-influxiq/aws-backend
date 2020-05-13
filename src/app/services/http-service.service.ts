@@ -38,6 +38,12 @@ export class HttpServiceService {
     return this.http.post(this.baseUrl + endpoint, jsonData);
   }
 
+  //ip track api function
+  getclientip() {
+    var result = this.http.get("https://ipinfo.io/?format=json&token=9797c42b93078a").pipe(map(res => res));
+    return result;
+  }
+
   /* call api via get method */
   httpViaGet(endpoint, jsonData): Observable<any> {
     this.jwtToken = this.CookieService.get('jwtToken');

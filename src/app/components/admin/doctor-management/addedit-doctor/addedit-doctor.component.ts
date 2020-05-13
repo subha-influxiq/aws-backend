@@ -36,7 +36,11 @@ export class AddeditDoctorComponent implements OnInit {
     states: "",
     allCities: "",
     cities: "",
-    taxonomies: ""
+    taxonomies: "",
+    user_details:{
+      user_type:"",
+      _id:""
+    }
   };
   public dialogRef: any;
 
@@ -45,7 +49,8 @@ export class AddeditDoctorComponent implements OnInit {
     public acivatedRoute: ActivatedRoute, public snackBar: MatSnackBar) {
 
     this.htmlText.userData = this.cookieService.getAll();
-    this.htmlText.userData.user_details = JSON.parse(this.htmlText.userData.user_details);
+    this.htmlText.user_details.user_type = JSON.parse(this.htmlText.userData.user_type);
+    this.htmlText.user_details._id = JSON.parse(this.htmlText.userData._id);
     this.allStateCityData();
     this.getAllData();
 
@@ -91,7 +96,11 @@ export class AddeditDoctorComponent implements OnInit {
     let passwordRule: any = { validators: this.matchpassword('password', 'confirmpassword') };
 
     // diagnostic_admin
-    if(this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
+    if(this.htmlText.user_details.user_type == 'diagnostic_admin') {
+      validateRule["tech_id"] = ['', []];
+    }
+
+    if(this.htmlText.user_details.user_type == 'doctor') {
       validateRule["tech_id"] = ['', []];
     }
 
@@ -122,7 +131,11 @@ export class AddeditDoctorComponent implements OnInit {
           this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
 
           // diagnostic_admin
-          if(this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
+          if(this.htmlText.user_details.user_type == 'diagnostic_admin') {
+            this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
+          }
+          // doctor
+          if(this.htmlText.user_details.user_type == 'doctor') {
             this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
           }
           //this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_details);
@@ -197,15 +210,15 @@ export class AddeditDoctorComponent implements OnInit {
       "token": this.htmlText.userData.jwtToken,
     };
 
-    if(this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
+    if(this.htmlText.user_details.user_type == 'diagnostic_admin') {
       data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
     }
 
-    if(this.htmlText.userData.user_details.user_type == 'doctor_group') {
+    if(this.htmlText.user_details.user_type == 'doctor_group') {
       data['doctorgroup_id_object'] = this.htmlText.userData.user_details._id;
     }
 
-    if(this.htmlText.userData.user_details.user_type == 'distributors') {
+    if(this.htmlText.user_details.user_type == 'distributors') {
       data['distributor_id_object'] = this.htmlText.userData.user_details._id;
     }
 
@@ -240,30 +253,30 @@ export class AddeditDoctorComponent implements OnInit {
         "token": this.cookieService.get('jwtToken')
       };
 
-      if(this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
-        postData.data["parent_id"] = this.htmlText.userData.user_details._id;
-        postData.data["parent_type"] = "Diagnostic Admin";
+      if(this.htmlText.user_details.user_type == 'diagnostic_admin') {
+        postData.data["parent_id"] = this.htmlText.user_details._id;
+        postData.data["parent_type"] = "diagnostic_dmin";
         postData["sourceobj"] = ["parent_id"];
         postData["sourceobjArray"] = ["tech_id"];
       }
 
-      if(this.htmlText.userData.user_details.user_type == 'doctor_group') {
-        postData.data["parent_id"] = this.htmlText.userData.user_details._id;
-        postData.data["parent_type"] = "Doctors Group Admin";
+      if(this.htmlText.user_details.user_type == 'doctor_group') {
+        postData.data["parent_id"] = this.htmlText.user_details._id;
+        postData.data["parent_type"] = "doctors_group_admin";
         postData["sourceobj"] = ["parent_id"];
         postData["sourceobjArray"] = ["tech_id"];
       }
 
-      if(this.htmlText.userData.user_details.user_type == 'distributors') {
-        postData.data["parent_id"] = this.htmlText.userData.user_details._id;
-        postData.data["parent_type"] = "Distributors";
+      if(this.htmlText.user_details.user_type == 'distributors') {
+        postData.data["parent_id"] = this.htmlText.user_details._id;
+        postData.data["parent_type"] = "distributors";
         postData["sourceobj"] = ["parent_id"];
         postData["sourceobjArray"] = ["tech_id"];
       }
 
-      if(this.htmlText.userData.user_details.user_type == 'admin') {
-        postData.data["parent_id"] = this.htmlText.userData.user_details._id;
-        postData.data["parent_type"] = "Admin";
+      if(this.htmlText.user_details.user_type == 'admin') {
+        postData.data["parent_id"] = this.htmlText.user_details._id;
+        postData.data["parent_type"] = "admin";
         postData["sourceobj"] = ["parent_id"];
       }
 
@@ -274,7 +287,7 @@ export class AddeditDoctorComponent implements OnInit {
           });
 
           setTimeout(() => {
-            switch(this.htmlText.userData.user_details.user_type) {
+            switch(this.htmlText.user_details.user_type) {
               case 'admin':
                 this.router.navigateByUrl("admin/doctor-management");
                 break;

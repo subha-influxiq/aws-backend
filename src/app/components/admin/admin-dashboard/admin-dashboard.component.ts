@@ -50,7 +50,7 @@ export class AdminDashboardComponent implements OnInit {
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute,
     public dialog: MatDialog, public deviceService: DeviceDetectorService, private matSnackBar: MatSnackBar) {
 
-    this.loginUserData["user_details"] = JSON.parse(cookieService.get('user_details'));
+    this.loginUserData["user_details"] = cookieService.getAll();
     this.loginUserData["jwtToken"] = cookieService.get('jwtToken');
 
     /* Get Auth Token */
@@ -70,10 +70,11 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   refreshDashboard() {
+    let id = JSON.parse(this.loginUserData.userDetails._id);
     let repostSignCond: any = {
       "source":"data_pece",
       "condition": {
-        "admin_id": this.loginUserData.user_details._id
+        "admin_id": this.loginUserData.id
       },
       "token": this.jwtToken
     };
@@ -260,15 +261,15 @@ export class AdminDashboardComponent implements OnInit {
 
     /* Set downloader information */
     var userDetails = {
-      id: this.loginUserData.user_details._id,
-      user_type: this.loginUserData.user_details.user_type
+      id: JSON.parse(this.loginUserData.user_details._id),
+      user_type: JSON.parse(this.loginUserData.user_details.user_type)
     };
 
     let postData: any = {
       "source": "report_download",
       "data": {
         "report_id": report._id,
-        "biller_id": this.loginUserData.user_details._id,
+        "biller_id": JSON.parse(this.loginUserData.user_details._id),
         "tech_id": report.tech_id,
         "doctor_id": report.doctor_id,
         "ip": this.htmlText.ip,
