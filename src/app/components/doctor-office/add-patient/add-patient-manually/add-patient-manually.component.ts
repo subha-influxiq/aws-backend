@@ -25,6 +25,8 @@ export class AddPatientManuallyComponent implements OnInit {
   cookies_id: string;
   formTag: boolean = false;
 
+  parent_type: any = '';
+  parent_id: any = '';
 
   states: any = [];
   // lib
@@ -45,15 +47,16 @@ export class AddPatientManuallyComponent implements OnInit {
     resettext: "reset This",
     redirectpath: "/doctor-office/dashboard",
     submitactive: true, //optional, default true
-    apiUrl: environment.apiBaseUrl,
-    endpoint: 'addorupdatedata',
+    apiUrl: environment.calendarApi,
+    endpoint: 'add-to-calendar',
     jwttoken: "",
     //hidereset:true,
     //hidecancel:true,
     cancelroute: '/doctor-office/dashboard',
     fields: [
       {
-        type: 'input',
+        heading: "<h2>Patient General Information</h2>",
+        type: 'text',
         name: 'practice_name',
         placeholder: 'Practice Name',
         label: 'Practice Name',
@@ -62,12 +65,10 @@ export class AddPatientManuallyComponent implements OnInit {
         error: 'Enter practice name',
         caption: 'Patient General Information'
       },
-      { type: 'input', name: 'address', placeholder: 'Address', label: 'Address', value: '' },
-      // {type: 'input', name: 'state', placeholder: 'State', label: 'State', value: ''},
+      { type: 'textarea', name: 'address', placeholder: 'Address', label: 'Address', value: '' },
       {
         label: "State",
         name: "state",
-        hint: 'Select state',
         type: 'select',
         val: this.states,
         value: [],
@@ -78,10 +79,10 @@ export class AddPatientManuallyComponent implements OnInit {
         prefix: "",
         suffix: ""
       },
-      { type: 'input', name: 'city', placeholder: 'City', label: 'City', value: '' },
-      { type: 'input', name: 'zip', placeholder: 'ZIP', label: 'ZIP', value: '' },
+      { type: 'text', name: 'city', placeholder: 'City', label: 'City', value: '' },
+      { type: 'text', name: 'zip', placeholder: 'ZIP', label: 'ZIP', value: '' },
       {
-        type: 'input',
+        type: 'text',
         name: 'patient_name',
         placeholder: 'Patient Name',
         label: 'Patient Name',
@@ -99,15 +100,18 @@ export class AddPatientManuallyComponent implements OnInit {
         error: 'Enter date of birth of the patient'
       },
       {
-        type: 'select', name: 'gender', placeholder: 'Gender', label: 'Gender',
-        options: [
-          { text: 'Male', value: 'male' },
-          { text: 'Female', value: 'female' }
+        type: 'select',
+        name: 'gender', 
+        placeholder: 'Gender', 
+        label: 'Gender',
+        val: [
+          { name: 'Male', val: 'male' },
+          { name: 'Female', val: 'female' }
         ],
         validators: { rule: 'required' }, error: 'Select gender'
       },
       {
-        type: 'input',
+        type: 'text',
         name: 'patient_email',
         placeholder: 'Patient Email',
         label: 'Patient Email',
@@ -116,7 +120,7 @@ export class AddPatientManuallyComponent implements OnInit {
         error: 'Enter patient email'
       },
       {
-        type: 'input',
+        type: 'text',
         name: 'height',
         placeholder: 'Ex. 6\'10"',
         label: 'Height',
@@ -125,7 +129,7 @@ export class AddPatientManuallyComponent implements OnInit {
         error: 'Enter patient height'
       },
       {
-        type: 'input',
+        type: 'text',
         name: 'weight',
         placeholder: 'Ex. 210 lbs',
         label: 'Weight',
@@ -133,548 +137,10 @@ export class AddPatientManuallyComponent implements OnInit {
         validators: { rule: 'required' },
         error: 'Enter patient weight'
       },
-      { type: 'input', name: 'booking_date', placeholder: 'Date', label: 'Booking date', value: this.today, disabled: true },
+      { type: 'text', name: 'booking_date', placeholder: 'Date', label: 'Booking date', value: this.today, disabled: true },
+      
       {
-        type: 'checkbox',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        label: 'Blurred Vision',
-        multiple: true,
-        val: [
-          { key: 0, val: 'bv_six_months' },
-          { key: 1, val: 'bv_today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox',
-        label: 'Elevated Blood Sugar',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: 'ebs_six_months' },
-          { key: 1, val: 'ebs_today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox',
-        label: 'Extreme Thirst',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Frequent Urination',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Fatigue (Tiredness)',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Heartburn',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Increased Hunger',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Nausea',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Numbness & Tingling in Hands or Feet',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Vomiting',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', caption: 'Sudomotor Dysfunction (SUDOD)',
-        label: 'Burning Sensations',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Difficulty Digesting Food',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Dizziness or Fainting',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Exercise Intolerance',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Sexual Difficulties',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Sweat Abnormalities',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Tingling Hands & Feet',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Urinary Problems',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', caption: 'ENDOTHELIAL DYSFUNCTION (ENDOD)',
-        label: 'Angina (severe chest pain, often spreading to shoulder, arm, back, neck, or jaw)',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Chest Pain that goes away with rest',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Heartburn',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Pain In Calves',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Shortness of Breath',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Stroke',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'TIA (mini stroke)',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', caption: 'CARDIOMETABOLIC RISK (CMR)',
-        label: 'Headaches',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Dizziness',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Swelling of Ankles',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', caption: 'INSULIN RESISTANCE (IR)',
-        label: 'Blurred Vision',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Elevated Blood Sugar',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Extreme Thirst',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Fatigue (Tiredness)',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Increased Hunger',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', caption: 'SMALL FIBER SENSORY NEUROPATHY (SFN)',
-        label: 'Burning Sensations',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Painful Contact With Socks or Bed Sheets',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Pebble or Sandlike Sensation In Shoes',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Stabbing or Electrical Shock Sensation',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Pins And Needles Sensation In Feet',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', caption: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)',
-        label: 'Blurred Vision',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Cold, Clammy, Pale Skin',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Depression',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Dizziness or Lightheadedness',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Thirst',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Fainting',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Fatigue (Tiredness)',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Lack of Concentration',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Lack of Energy',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Nausea',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Rapid, Shallow Breathing',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', caption: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)',
-        label: 'Blood clot in a vein (Venous Thrombosis)',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Heart Attack',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Irregular heartbeat, too fast/slow (Atrial Fibrillation)',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
-        type: 'checkbox', label: 'Stroke',
-        name: 'Autonomic Nervous System Dysfunction (ANSD)',
-        multiple: true,
-        val: [
-          { key: 0, val: '6 Months' },
-          { key: 1, val: 'Today' }
-        ],
-        value: [true, true]
-      },
-      {
+        heading: '<h2>Insurance Information</h2>',
         label: "Insurance name",
         name: 'insurance_id',
         hint: '',
@@ -688,23 +154,715 @@ export class AddPatientManuallyComponent implements OnInit {
         prefix: "",
         suffix: ""
       },
-      { type: 'input', name: 'event_title', placeholder: 'Event Title', label: 'Event Title', value: '', disabled: true },
-      { type: 'input', name: 'description', placeholder: 'Event Description', label: 'Event Description', value: '', disabled: true },
-      { type: 'input', name: 'startdate', placeholder: 'Date of Appointment', label: 'Date of Appointment', value: '', disabled: true },
-      { type: 'input', name: 'slot', placeholder: 'Time of Appointment', label: 'Time of Appointment', value: '', disabled: true },
+
       {
-        type: 'select', name: 'reqTimezone',
-        options: [
-          { text: 'Alaska Standard Time', value: '-08:00|America/Anchorage' },
-          { text: 'Pacific Standard Time', value: '-07:00|America/Los_Angeles' },
-          { text: 'Mountain Standard Time(GMT-06:00)', value: '-06:00|America/Denver' },
-          { text: 'Mountain Standard Time(GMT-07:00) (no DST)', value: '-07:00|America/Phoenix' },
-          { text: 'Central Standard Time', value: '-05:00|America/Chicago' },
-          { text: 'Eastern Standard Time', value: '-04:00|America/New_York' },
-          { text: 'Hawaii Standard Time', value: '-10:00|Pacific/Honolulu' }
-        ],
-        value: '-05:00|America/Chicago', disabled: true
+        name: "parent_type",
+        type: 'hidden',
+        value: this.parent_type
       },
+      {
+        name: "parent_id",
+        type: 'hidden',
+        value: this.parent_id
+      },
+      {
+        type: 'date',
+        name: 'appointment_date',
+        placeholder: 'Appointment Date',
+        label: 'Appointment Date',
+        value: '',
+        validators: { rule: 'required' },
+        error: 'Enter Appointment Date'
+      },
+      {
+        type: 'select', 
+        label: "Time Zone",
+        name: 'reqTimezone',
+        val: [
+          { name: 'Alaska Standard Time', val: '-08:00|America/Anchorage' },
+          { name: 'Pacific Standard Time', val: '-07:00|America/Los_Angeles' },
+          { name: 'Mountain Standard Time(GMT-06:00)', val: '-06:00|America/Denver' },
+          { name: 'Mountain Standard Time(GMT-07:00) (no DST)', val: '-07:00|America/Phoenix' },
+          { name: 'Central Standard Time', val: '-05:00|America/Chicago' },
+          { name: 'Eastern Standard Time', val: '-04:00|America/New_York' },
+          { name: 'Hawaii Standard Time', val: '-10:00|Pacific/Honolulu' }
+        ],
+        validations: [
+          { rule: 'required' }
+        ],
+        prefix: "",
+        suffix: ""
+      },
+      {
+        type: 'select', 
+        label: "Appointment Time",
+        name: 'appointment_time',
+        val: [
+          { name: '6.00 AM to 6.30 AM', val: '6.00 AM to 6.30 AM' },
+          { name: '6.30 AM to 7.00 AM', val: '6.30 AM to 7.00 AM' },
+          { name: '7.00 AM to 7.30 AM', val: '7.00 AM to 7.30 AM' },
+          { name: '7.30 AM to 8.00 AM', val: '7.30 AM to 8.00 AM' },
+          { name: '8.00 AM to 8.30 AM', val: '8.00 AM to 8.30 AM' },
+          { name: '8.30 AM to 9.00 AM', val: '8.30 AM to 9.00 AM' },
+          { name: '9.00 AM to 9.30 AM', val: '9.00 AM to 9.30 AM' },
+          { name: '9.30 AM to 10.00 AM', val: '9.30 AM to 10.00 AM' },
+          { name: '10.00 AM to 10.30 AM', val: '10.00 AM to 10.30 AM' },
+          { name: '10.30 AM to 11.00 AM', val: '10.30 AM to 11.00 AM' },
+          { name: '11.00 AM to 11.30 AM', val: '11.00 AM to 11.30 AM' },
+          { name: '11.30 AM to 12.00 AM', val: '11.30 AM to 12.00 AM' },
+          { name: '12.00 PM to 12.30 PM', val: '12.00 PM to 12.30 PM' },
+          { name: '1.00 PM to 1.30 PM', val: '1.00 PM to 1.30 PM' },
+          { name: '1.30 PM to 2.00 PM', val: '1.30 PM to 2.00 PM' },
+          { name: '2.00 PM to 2.30 PM', val: '2.00 PM to 2.30 PM' },
+          { name: '2.30 PM to 3.00 PM', val: '2.30 PM to 3.00 PM' },
+          { name: '3.00 PM to 3.30 PM', val: '3.00 PM to 3.30 PM' },
+          { name: '3.30 PM to 4.00 PM', val: '3.30 PM to 4.00 PM' },
+          { name: '4.00 PM to 4.30 PM', val: '4.00 PM to 4.30 PM' },
+          { name: '4.30 PM to 5.00 PM', val: '4.30 PM to 5.00 PM' },
+          { name: '5.00 PM to 5.30 PM', val: '5.00 PM to 5.30 PM' },
+          { name: '5.30 PM to 6.00 PM', val: '5.30 PM to 6.00 PM' },
+          { name: '6.00 PM to 6.30 PM', val: '6.00 PM to 6.30 PM' },          
+          { name: '6.30 PM to 7.00 PM', val: '6.30 PM to 7.00 PM' },          
+          { name: '7.00 PM to 7.30 PM', val: '7.00 PM to 7.30 PM' },          
+          { name: '7.30 PM to 8.00 PM', val: '7.30 PM to 8.00 PM' },          
+          { name: '8.00 PM to 8.30 PM', val: '8.00 PM to 8.30 PM' },          
+          { name: '8.30 PM to 9.00 PM', val: '8.30 PM to 9.00 PM' },          
+          { name: '9.00 PM to 9.00 PM', val: '9.00 PM to 9.00 PM' },          
+          { name: '9.30 PM to 10.00 PM', val: '9.30 PM to 10.00 PM' }     
+        ],
+        validations: [
+          { rule: 'required' }
+        ],
+        prefix: "",
+        suffix: ""
+      },
+
+      {
+        heading: "<h2>Autonomic Nervous System Dysfunction (ANSD)</h2>"
+      },
+      {
+        heading: 'Blurred Vision',
+        type: 'checkbox',
+        name: 'bv_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'bv_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Elevated Blood Sugar',
+        type: 'checkbox',
+        name: 'ebs_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'ebs_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Extreme Thirst',
+        type: 'checkbox',
+        name: 'et_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'et_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Frequent Urination',
+        type: 'checkbox',
+        name: 'fu_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'fu_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Fatigue (Tiredness)',
+        type: 'checkbox',
+        name: 'ft_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'ft_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Heartburn',
+        type: 'checkbox',
+        name: 'hb_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'hb_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Increased Hunger',
+        type: 'checkbox',
+        name: 'ih_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'ih_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Nausea',
+        type: 'checkbox',
+        name: 'nau_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'nau_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Numbness & Tingling in Hands or Feet',
+        type: 'checkbox',
+        name: 'nthf_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'nthf_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Vomiting',
+        type: 'checkbox',
+        name: 'vomiting_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'vomiting_six_months',
+        label: '6 Months',
+      },
+
+      { heading: '<h2>Sudomotor Dysfunction (SUDOD)</h2>' },
+      {
+        heading: 'Burning Sensations',
+        type: 'checkbox',
+        name: 'bs_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'bs_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Difficulty Digesting Food',
+        type: 'checkbox',
+        name: 'ddf_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'ddf_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Dizziness or Fainting',
+        type: 'checkbox',
+        name: 'dof_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'dof_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Exercise Intolerance',
+        type: 'checkbox',
+        name: 'ei_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'ei_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Sexual Difficulties',
+        type: 'checkbox',
+        name: 'sd_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'sd_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Sweat Abnormalities',
+        type: 'checkbox',
+        name: 'sa_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'sa_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Tingling Hands & Feet',
+        type: 'checkbox',
+        name: 'thf_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'thf_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Urinary Problems',
+        type: 'checkbox',
+        name: 'up_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'up_six_months',
+        label: '6 Months',
+      },
+
+      { heading: '<h2>ENDOTHELIAL DYSFUNCTION (ENDOD)<h2>' },
+      {
+        heading: 'Angina (severe chest pain, often spreading to shoulder, arm, back, neck, or jaw)',
+        type: 'checkbox',
+        name: 'angina_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'angina_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Chest Pain that goes away with rest',
+        type: 'checkbox',
+        name: 'cptgawr_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'cptgawr_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Heartburn',
+        type: 'checkbox',
+        name: 'hrtbn_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'hrtbn_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Pain In Calves',
+        type: 'checkbox',
+        name: 'pic_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'pic_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Shortness of Breath',
+        type: 'checkbox',
+        name: 'sob_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'sob_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Stroke',
+        type: 'checkbox',
+        name: 'stroke_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'stroke_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'TIA (mini stroke)',
+        type: 'checkbox',
+        name: 'tia_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'tia_six_months',
+        label: '6 Months',
+      },
+
+      { heading: '<h2>CARDIOMETABOLIC RISK (CMR)</h2>' },
+      {
+        heading: 'Headaches',
+        type: 'checkbox',
+        name: 'headaches_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'headaches_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Dizziness',
+        type: 'checkbox',
+        name: 'dizziness_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'dizziness_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Swelling of Ankles',
+        type: 'checkbox',
+        name: 'soa_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'soa_six_months',
+        label: '6 Months',
+      },
+
+      { heading: '<h2>INSULIN RESISTANCE (IR)</h2>' },
+      {
+        heading: 'Blurred Vision',
+        type: 'checkbox',
+        name: 'blv_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'blv_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Elevated Blood Sugar',
+        type: 'checkbox',
+        name: 'ebsr_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'ebsr_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Extreme Thirst',
+        type: 'checkbox',
+        name: 'ext_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'ext_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Fatigue (Tiredness)',
+        type: 'checkbox',
+        name: 'ftd_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'ftd_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Increased Hunger',
+        type: 'checkbox',
+        name: 'ihr_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'ihr_six_months',
+        label: '6 Months',
+      },
+
+      { heading: '<h2>SMALL FIBER SENSORY NEUROPATHY (SFN)</h2>' },
+      {
+        heading: 'Burning Sensations',
+        type: 'checkbox',
+        name: 'burns_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'burns_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Painful Contact With Socks or Bed Sheets',
+        type: 'checkbox',
+        name: 'pcwsbs_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'pcwsbs_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Pebble or Sandlike Sensation In Shoes',
+        type: 'checkbox',
+        name: 'psss_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'psss_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Pebble or Sandlike Sensation In Shoes',
+        type: 'checkbox',
+        name: 'psss_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'psss_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Stabbing or Electrical Shock Sensation',
+        type: 'checkbox',
+        name: 'sess_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'sess_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Pins And Needles Sensation In Feet',
+        type: 'checkbox',
+        name: 'pnsf_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'pnsf_six_months',
+        label: '6 Months',
+      },
+
+      { heading: '<h2>CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)</h2>' },
+      {
+        heading: 'Blurred Vision',
+        type: 'checkbox',
+        name: 'bldv_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'bldv_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Cold, Clammy, Pale Skin',
+        type: 'checkbox',
+        name: 'ccps_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'ccps_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Depression',
+        type: 'checkbox',
+        name: 'depression_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'depression_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Dizziness or Lightheadedness',
+        type: 'checkbox',
+        name: 'dol_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'dol_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Thirst',
+        type: 'checkbox',
+        name: 'thirst_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'thirst_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Fainting',
+        type: 'checkbox',
+        name: 'fainting_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'fainting_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Fatigue (Tiredness)',
+        type: 'checkbox',
+        name: 'fatt_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'fatt_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Lack of Concentration',
+        type: 'checkbox',
+        name: 'loc_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'loc_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Lack of Energy',
+        type: 'checkbox',
+        name: 'loe_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'loe_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Nausea',
+        type: 'checkbox',
+        name: 'nausea_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'nausea_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Rapid, Shallow Breathing',
+        type: 'checkbox',
+        name: 'rsb_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'rsb_six_months',
+        label: '6 Months',
+      },
+
+      { heading: '<h2>PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)</h2>' },
+      {
+        heading: 'Blood clot in a vein (Venous Thrombosis)',
+        type: 'checkbox',
+        name: 'bciv_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'bciv_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Heart Attack',
+        type: 'checkbox',
+        name: 'hattk_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'hattk_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Irregular heartbeat, too fast/slow (Atrial Fibrillation)',
+        type: 'checkbox',
+        name: 'iftfs_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'ihtfs_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: 'Stroke',
+        type: 'checkbox',
+        name: 'strk_today',
+        label: 'Today',
+      },
+      {
+        type: 'checkbox',
+        name: 'strk_six_months',
+        label: '6 Months',
+      },
+      {
+        heading: '<h2>Notes</h2>',
+        type: 'textarea',
+        name: 'notes',
+        placeholder: '',
+        label: 'Notes',
+        value: '',
+        validators: {  }
+      },
+      {
+        name: "add_to_google",
+        type: 'hidden',
+        value: true
+      },
+
       { type: 'input', name: 'username', placeholder: 'Organizer Name', label: 'Organizer Name', value: '', disabled: true },
       { type: 'input', name: 'useremail', placeholder: 'Organizer Email', label: 'Organizer Email', value: '', disabled: true },
       { type: 'input', name: 'attendees', placeholder: 'Attendee Email', label: 'Attendee Email', value: '', disabled: true },
@@ -728,41 +886,56 @@ export class AddPatientManuallyComponent implements OnInit {
     this.cookiesData = JSON.parse(allcookies.user_details);
     this.cookies_id = this.cookiesData._id;
 
+    this.formfieldrefreshdata = {
+      field: 'addfromcontrol',
+      value: {
+        name: "doctor_office_id",
+        type: 'hidden',
+        value: this.cookiesData._id
+      }
+    };
+
     var data: any = {
       "source": "data_pece",
       "condition": {
-        tech_id: this.cookiesData.tech_id
+        _id_object: this.cookiesData.doctor_id
       },
       "token": this.jwtToken,
     };
 
-    this.httpService.httpViaPost("doctor-add-tech-list", data).subscribe(response => {
+    this.httpService.httpViaPost("datalist", data).subscribe(response => {
       if(response.status == true) {
-        var techDetails = [];
+        var doctorDetails = [];
         for (let i = 0; i < response.res.length; i++) {
           let temp = {};
           temp['name'] = response.res[i].firstname + ' ' + response.res[i].lastname;
           temp['val'] = response.res[i]._id;
-          techDetails.push(temp);
+          doctorDetails.push(temp);
         }
 
-        this.formfieldrefreshdata = {
-          field: 'addfromcontrol',
-          value: {
-            label: "Select Tech",
-            name: "tech_id",
-            hint: '',
-            type: 'select',
-            val: techDetails,
-            multiple: false,
-            validations: [
-              { rule: 'required' }
-            ],
-            prefix: "",
-            suffix: "",
-            after: 'insurance_id'
-          }
-        };
+        this.parent_type = response.res[0].parent_type;
+        this.parent_id = response.res[0].parent_id;
+
+        setTimeout(() => {
+          this.formfieldrefreshdata = {
+            field: 'addfromcontrol',
+            value: {
+              heading: "<h2>Appointment Details</h2>",
+              label: "Select Doctor",
+              name: "doctor_id",
+              hint: '',
+              type: 'select',
+              val: doctorDetails,
+              multiple: false,
+              validations: [
+                { rule: 'required' }
+              ],
+              prefix: "",
+              suffix: "",
+              after: 'insurance_id'
+            }
+          };
+        }, 300);
       }
     });
   }
@@ -771,6 +944,62 @@ export class AddPatientManuallyComponent implements OnInit {
     if (this.cookieService.check('jwtToken')) {
       this.activatedRoute.data.forEach((data) => {
         this.resolveData = data.eventdayarrData;
+        
+        var otherFieldsData: any = [];
+        for (let i = this.resolveData.others.patient_information.length - 1; i >= 0; i--) {
+          let fieldData: any;
+          switch (this.resolveData.others.patient_information[i].type) {
+            case 'checkbox':
+              otherFieldsData.push({
+                type: 'checkbox',
+                label: this.resolveData.others.patient_information[i].description,
+                name: this.resolveData.others.patient_information[i].label,
+                after: 'appointment_time'
+              });
+              break;
+            case 'textfield':
+              otherFieldsData.push({
+                type: 'text',
+                name: this.resolveData.others.patient_information[i].label,
+                label: this.resolveData.others.patient_information[i].description,
+                value: '',
+                validators: { rule: 'required' },
+                after: 'appointment_time'
+              });
+              break;
+            case 'dropdown':
+              var temp: any = [];
+              for (let j = 0; j < this.resolveData.others.patient_information[i].addfield.length; j++) {
+                let json = {
+                  name: this.resolveData.others.patient_information[i].addfield[j],
+                  val: this.resolveData.others.patient_information[i].addfield[j]
+                }
+                temp.push(json);
+              }
+                
+              otherFieldsData.push({
+                label: this.resolveData.others.patient_information[i].description,
+                name: this.resolveData.others.patient_information[i].label,
+                type: 'select',
+                val: temp,
+                validations: [
+                  { rule: 'required' }
+                ],
+                after: 'appointment_time'
+              });
+              break;
+          }
+        }
+
+        otherFieldsData[otherFieldsData.length - 1].heading = "<h2>Others Details</h2>";
+
+        this.formfieldrefreshdata = {
+          field: 'addfromcontrol',
+          value: otherFieldsData
+        }
+
+        console.log('Loop finished.');
+        console.log("Hello World: ", otherFieldsData);
       });
     } else {
       this.openSnackBar('Token not found');
@@ -883,29 +1112,28 @@ export class AddPatientManuallyComponent implements OnInit {
             };
           }, 2000);
         }
-        break;
-      case 'tech_id':
+        break;this.cookiesData
+      case 'doctor_id':
         let data: any = {
-          "source": "data_pece",
+          "source": "tech_by_doctor_id",
           "condition": {
-            tech_id_object: val.fieldval
+            _id_object: val.fieldval
           },
           "token": this.jwtToken,
         };
 
         this.httpService.httpViaPost("datalist", data).subscribe(response => {
-          this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'doctor_id' } };
-          this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_type' } };
-          this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_id' } };
+          // this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'doctor_id' } };
+          // this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_type' } };
+          // this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_id' } };
           
           if(response.status == true) {
-            var doctorDetails = [];
-            console.log("AAAAAAAAAAAAAAAAAa", response.res);
+            var techDetails = [];
             for (let i = 0; i < response.res.length; i++) {
               let temp = {};
               temp['name'] = response.res[i].firstname + ' ' + response.res[i].lastname;
               temp['val'] = response.res[i]._id;
-              doctorDetails.push(temp);
+              techDetails.push(temp);
             }
           }
 
@@ -914,18 +1142,15 @@ export class AddPatientManuallyComponent implements OnInit {
             this.formfieldrefreshdata = {
               field: 'addfromcontrol',
               value: {
-                label: "Select Doctor",
-                name: "doctor_id",
+                label: "Select Tech",
+                name: "tech_id",
                 hint: '',
                 type: 'select',
-                val: doctorDetails,
-                multiple: false,
+                val: techDetails,
                 validations: [
                   { rule: 'required' }
                 ],
-                prefix: "",
-                suffix: "",
-                after: 'tech_id'
+                after: 'doctor_id'
               }
             };
           }, 100);
@@ -958,12 +1183,9 @@ export class AddPatientManuallyComponent implements OnInit {
                     this.formfieldrefreshdata = {
                       field: 'addfromcontrol',
                       value: {
-                        label: "",
                         name: "parent_type",
-                        hint: '',
-                        type: 'text',
-                        value: response.res[0].parent_type,
-                        after: 'tech_id'
+                        type: 'hidden',
+                        value: response.res[0].parent_type
                       }
                     };
                   }, 200);
@@ -972,12 +1194,9 @@ export class AddPatientManuallyComponent implements OnInit {
                     this.formfieldrefreshdata = {
                       field: 'addfromcontrol',
                       value: {
-                        label: "",
                         name: "parent_id",
-                        hint: '',
-                        type: 'text',
-                        value: response.res[0].parent_id,
-                        after: 'tech_id'
+                        type: 'hidden',
+                        value: response.res[0].parent_id
                       }
                     };
                   }, 300);
