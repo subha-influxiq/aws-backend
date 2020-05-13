@@ -155,6 +155,8 @@ THE SOFTWARE.
 
 @angular/material/dialog
 
+@angular/material/divider
+
 @angular/material/expansion
 
 @angular/material/form-field

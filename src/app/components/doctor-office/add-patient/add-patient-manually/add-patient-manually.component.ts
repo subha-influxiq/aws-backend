@@ -25,6 +25,8 @@ export class AddPatientManuallyComponent implements OnInit {
   cookies_id: string;
   formTag: boolean = false;
 
+  parent_type: any = '';
+  parent_id: any = '';
 
   states: any = [];
   // lib
@@ -146,6 +148,88 @@ export class AddPatientManuallyComponent implements OnInit {
         val: this.insuranceData,
         value: [],
         multiple: false,
+        validations: [
+          { rule: 'required' }
+        ],
+        prefix: "",
+        suffix: ""
+      },
+
+      {
+        name: "parent_type",
+        type: 'hidden',
+        value: this.parent_type
+      },
+      {
+        name: "parent_id",
+        type: 'hidden',
+        value: this.parent_id
+      },
+      {
+        type: 'date',
+        name: 'appointment_date',
+        placeholder: 'Appointment Date',
+        label: 'Appointment Date',
+        value: '',
+        validators: { rule: 'required' },
+        error: 'Enter Appointment Date'
+      },
+      {
+        type: 'select', 
+        label: "Time Zone",
+        name: 'reqTimezone',
+        val: [
+          { name: 'Alaska Standard Time', val: '-08:00|America/Anchorage' },
+          { name: 'Pacific Standard Time', val: '-07:00|America/Los_Angeles' },
+          { name: 'Mountain Standard Time(GMT-06:00)', val: '-06:00|America/Denver' },
+          { name: 'Mountain Standard Time(GMT-07:00) (no DST)', val: '-07:00|America/Phoenix' },
+          { name: 'Central Standard Time', val: '-05:00|America/Chicago' },
+          { name: 'Eastern Standard Time', val: '-04:00|America/New_York' },
+          { name: 'Hawaii Standard Time', val: '-10:00|Pacific/Honolulu' }
+        ],
+        validations: [
+          { rule: 'required' }
+        ],
+        prefix: "",
+        suffix: ""
+      },
+      {
+        type: 'select', 
+        label: "Appointment Time",
+        name: 'appointment_time',
+        val: [
+          { name: '6.00 AM to 6.30 AM', val: '6.00 AM to 6.30 AM' },
+          { name: '6.30 AM to 7.00 AM', val: '6.30 AM to 7.00 AM' },
+          { name: '7.00 AM to 7.30 AM', val: '7.00 AM to 7.30 AM' },
+          { name: '7.30 AM to 8.00 AM', val: '7.30 AM to 8.00 AM' },
+          { name: '8.00 AM to 8.30 AM', val: '8.00 AM to 8.30 AM' },
+          { name: '8.30 AM to 9.00 AM', val: '8.30 AM to 9.00 AM' },
+          { name: '9.00 AM to 9.30 AM', val: '9.00 AM to 9.30 AM' },
+          { name: '9.30 AM to 10.00 AM', val: '9.30 AM to 10.00 AM' },
+          { name: '10.00 AM to 10.30 AM', val: '10.00 AM to 10.30 AM' },
+          { name: '10.30 AM to 11.00 AM', val: '10.30 AM to 11.00 AM' },
+          { name: '11.00 AM to 11.30 AM', val: '11.00 AM to 11.30 AM' },
+          { name: '11.30 AM to 12.00 AM', val: '11.30 AM to 12.00 AM' },
+          { name: '12.00 PM to 12.30 PM', val: '12.00 PM to 12.30 PM' },
+          { name: '1.00 PM to 1.30 PM', val: '1.00 PM to 1.30 PM' },
+          { name: '1.30 PM to 2.00 PM', val: '1.30 PM to 2.00 PM' },
+          { name: '2.00 PM to 2.30 PM', val: '2.00 PM to 2.30 PM' },
+          { name: '2.30 PM to 3.00 PM', val: '2.30 PM to 3.00 PM' },
+          { name: '3.00 PM to 3.30 PM', val: '3.00 PM to 3.30 PM' },
+          { name: '3.30 PM to 4.00 PM', val: '3.30 PM to 4.00 PM' },
+          { name: '4.00 PM to 4.30 PM', val: '4.00 PM to 4.30 PM' },
+          { name: '4.30 PM to 5.00 PM', val: '4.30 PM to 5.00 PM' },
+          { name: '5.00 PM to 5.30 PM', val: '5.00 PM to 5.30 PM' },
+          { name: '5.30 PM to 6.00 PM', val: '5.30 PM to 6.00 PM' },
+          { name: '6.00 PM to 6.30 PM', val: '6.00 PM to 6.30 PM' },          
+          { name: '6.30 PM to 7.00 PM', val: '6.30 PM to 7.00 PM' },          
+          { name: '7.00 PM to 7.30 PM', val: '7.00 PM to 7.30 PM' },          
+          { name: '7.30 PM to 8.00 PM', val: '7.30 PM to 8.00 PM' },          
+          { name: '8.00 PM to 8.30 PM', val: '8.00 PM to 8.30 PM' },          
+          { name: '8.30 PM to 9.00 PM', val: '8.30 PM to 9.00 PM' },          
+          { name: '9.00 PM to 9.00 PM', val: '9.00 PM to 9.00 PM' },          
+          { name: '9.30 PM to 10.00 PM', val: '9.30 PM to 10.00 PM' }     
+        ],
         validations: [
           { rule: 'required' }
         ],
@@ -764,58 +848,21 @@ export class AddPatientManuallyComponent implements OnInit {
         name: 'strk_six_months',
         label: '6 Months',
       },
+      {
+        heading: '<h2>Notes</h2>',
+        type: 'textarea',
+        name: 'notes',
+        placeholder: '',
+        label: 'Notes',
+        value: '',
+        validators: {  }
+      },
+      {
+        name: "add_to_google",
+        type: 'hidden',
+        value: true
+      },
 
-
-      // { type: 'input', name: 'event_title', placeholder: 'Event Title', label: 'Event Title', value: '', disabled: true },
-      // { type: 'input', name: 'description', placeholder: 'Event Description', label: 'Event Description', value: '', disabled: true },
-      // { type: 'input', name: 'startdate', placeholder: 'Date of Appointment', label: 'Date of Appointment', value: '', disabled: true },
-      // { type: 'input', name: 'slot', placeholder: 'Time of Appointment', label: 'Time of Appointment', value: '', disabled: true },
-      {
-        type: 'date',
-        name: 'appointment_date',
-        placeholder: 'Appointment Date',
-        label: 'Appointment Date',
-        value: '',
-        validators: { rule: 'required' },
-        error: 'Enter Appointment Date'
-      },
-      {
-        type: 'select', 
-        label: "Time Zone",
-        name: 'reqTimezone',
-        val: [
-          { name: 'Alaska Standard Time', val: '-08:00|America/Anchorage' },
-          { name: 'Pacific Standard Time', val: '-07:00|America/Los_Angeles' },
-          { name: 'Mountain Standard Time(GMT-06:00)', val: '-06:00|America/Denver' },
-          { name: 'Mountain Standard Time(GMT-07:00) (no DST)', val: '-07:00|America/Phoenix' },
-          { name: 'Central Standard Time', val: '-05:00|America/Chicago' },
-          { name: 'Eastern Standard Time', val: '-04:00|America/New_York' },
-          { name: 'Hawaii Standard Time', val: '-10:00|Pacific/Honolulu' }
-        ],
-        validations: [
-          { rule: 'required' }
-        ],
-        prefix: "",
-        suffix: ""
-      },
-      {
-        type: 'text',
-        name: 'appointment_time_hh',
-        placeholder: 'Appointment Time {HH}',
-        label: 'Appointment Time {HH}',
-        value: '',
-        validators: { rule: 'required' },
-        error: 'Enter Appointment Time'
-      },
-      {
-        type: 'text',
-        name: 'appointment_time_mm',
-        placeholder: 'Appointment Time {MM}',
-        label: 'Appointment Time {MM}',
-        value: '',
-        validators: { rule: 'required' },
-        error: 'Enter Appointment Time'
-      },
       { type: 'input', name: 'username', placeholder: 'Organizer Name', label: 'Organizer Name', value: '', disabled: true },
       { type: 'input', name: 'useremail', placeholder: 'Organizer Email', label: 'Organizer Email', value: '', disabled: true },
       { type: 'input', name: 'attendees', placeholder: 'Attendee Email', label: 'Attendee Email', value: '', disabled: true },
@@ -851,30 +898,34 @@ export class AddPatientManuallyComponent implements OnInit {
     var data: any = {
       "source": "data_pece",
       "condition": {
-        tech_id: this.cookiesData.tech_id
+        _id_object: this.cookiesData.doctor_id
       },
       "token": this.jwtToken,
     };
 
-    this.httpService.httpViaPost("doctor-add-tech-list", data).subscribe(response => {
+    this.httpService.httpViaPost("datalist", data).subscribe(response => {
       if(response.status == true) {
-        var techDetails = [];
+        var doctorDetails = [];
         for (let i = 0; i < response.res.length; i++) {
           let temp = {};
           temp['name'] = response.res[i].firstname + ' ' + response.res[i].lastname;
           temp['val'] = response.res[i]._id;
-          techDetails.push(temp);
+          doctorDetails.push(temp);
         }
+
+        this.parent_type = response.res[0].parent_type;
+        this.parent_id = response.res[0].parent_id;
 
         setTimeout(() => {
           this.formfieldrefreshdata = {
             field: 'addfromcontrol',
             value: {
-              label: "Select Tech",
-              name: "tech_id",
+              heading: "<h2>Appointment Details</h2>",
+              label: "Select Doctor",
+              name: "doctor_id",
               hint: '',
               type: 'select',
-              val: techDetails,
+              val: doctorDetails,
               multiple: false,
               validations: [
                 { rule: 'required' }
@@ -894,34 +945,27 @@ export class AddPatientManuallyComponent implements OnInit {
       this.activatedRoute.data.forEach((data) => {
         this.resolveData = data.eventdayarrData;
         
-        let otherFieldsData = [];
-        for (let i = 0; i < this.resolveData.others.patient_information.length; i++) {
+        var otherFieldsData: any = [];
+        for (let i = this.resolveData.others.patient_information.length - 1; i >= 0; i--) {
           let fieldData: any;
           switch (this.resolveData.others.patient_information[i].type) {
             case 'checkbox':
-              this.formfieldrefreshdata = {
-                field: 'addfromcontrol',
-                value: {
-                  heading: "<h2>Others Details</h2>",
-                  type: 'checkbox',
-                  label: this.resolveData.others.patient_information[i].description,
-                  name: this.resolveData.others.patient_information[i].label,
-                  after: 'insurance_id'
-                }
-              };
+              otherFieldsData.push({
+                type: 'checkbox',
+                label: this.resolveData.others.patient_information[i].description,
+                name: this.resolveData.others.patient_information[i].label,
+                after: 'appointment_time'
+              });
               break;
             case 'textfield':
-              this.formfieldrefreshdata = {
-                field: 'addfromcontrol',
-                value: {
-                  type: 'text',
-                  name: this.resolveData.others.patient_information[i].description,
-                  label: this.resolveData.others.patient_information[i].label,
-                  value: '',
-                  validators: { rule: 'required' },
-                  after: 'insurance_id'
-                }
-              };
+              otherFieldsData.push({
+                type: 'text',
+                name: this.resolveData.others.patient_information[i].label,
+                label: this.resolveData.others.patient_information[i].description,
+                value: '',
+                validators: { rule: 'required' },
+                after: 'appointment_time'
+              });
               break;
             case 'dropdown':
               var temp: any = [];
@@ -933,22 +977,29 @@ export class AddPatientManuallyComponent implements OnInit {
                 temp.push(json);
               }
                 
-              this.formfieldrefreshdata = {
-                field: 'addfromcontrol',
-                value: {
-                  label: this.resolveData.others.patient_information[i].label,
-                  name: this.resolveData.others.patient_information[i].description,
-                  type: 'select',
-                  val: temp,
-                  validations: [
-                    { rule: 'required' }
-                  ],
-                  after: 'insurance_id'
-                }
-              };
+              otherFieldsData.push({
+                label: this.resolveData.others.patient_information[i].description,
+                name: this.resolveData.others.patient_information[i].label,
+                type: 'select',
+                val: temp,
+                validations: [
+                  { rule: 'required' }
+                ],
+                after: 'appointment_time'
+              });
               break;
           }
         }
+
+        otherFieldsData[otherFieldsData.length - 1].heading = "<h2>Others Details</h2>";
+
+        this.formfieldrefreshdata = {
+          field: 'addfromcontrol',
+          value: otherFieldsData
+        }
+
+        console.log('Loop finished.');
+        console.log("Hello World: ", otherFieldsData);
       });
     } else {
       this.openSnackBar('Token not found');
@@ -1062,27 +1113,27 @@ export class AddPatientManuallyComponent implements OnInit {
           }, 2000);
         }
         break;this.cookiesData
-      case 'tech_id':
+      case 'doctor_id':
         let data: any = {
-          "source": "data_pece",
+          "source": "tech_by_doctor_id",
           "condition": {
-            tech_id_object: val.fieldval
+            _id_object: val.fieldval
           },
           "token": this.jwtToken,
         };
 
         this.httpService.httpViaPost("datalist", data).subscribe(response => {
-          this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'doctor_id' } };
-          this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_type' } };
-          this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_id' } };
+          // this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'doctor_id' } };
+          // this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_type' } };
+          // this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_id' } };
           
           if(response.status == true) {
-            var doctorDetails = [];
+            var techDetails = [];
             for (let i = 0; i < response.res.length; i++) {
               let temp = {};
               temp['name'] = response.res[i].firstname + ' ' + response.res[i].lastname;
               temp['val'] = response.res[i]._id;
-              doctorDetails.push(temp);
+              techDetails.push(temp);
             }
           }
 
@@ -1091,15 +1142,15 @@ export class AddPatientManuallyComponent implements OnInit {
             this.formfieldrefreshdata = {
               field: 'addfromcontrol',
               value: {
-                label: "Select Doctor",
-                name: "doctor_id",
+                label: "Select Tech",
+                name: "tech_id",
                 hint: '',
                 type: 'select',
-                val: doctorDetails,
+                val: techDetails,
                 validations: [
                   { rule: 'required' }
                 ],
-                after: 'tech_id'
+                after: 'doctor_id'
               }
             };
           }, 100);
