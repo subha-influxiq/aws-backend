@@ -203,6 +203,63 @@
         </mat-form-field>
         <!-- Address End -->
 
+
+        <!-- parent type Start -->
+        <mat-form-field class="parent_cat" appearance="fill">
+          <mat-label>Parent Type</mat-label>
+
+          <mat-select formControlName="parent_type" (selectionChange)="getParentData($event.value);">
+            <mat-option [value]="">Select Parent Type</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_type;" value="{{ parent.name }}">{{ parent.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- Parent Type End -->
+
+
+        <!-- Parent Name Start -->
+        <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'DiagnosticAdmin'">
+          <mat-label>Select Parent Name</mat-label>
+          <mat-select formControlName="parent_id">
+            <mat-option [value]="">Select Parent Name</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_id;" value="{{ parent._id }}" (click)="getalldata(parent)">{{ parent.center_name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Parent Name name -->
+
+
+        <!-- Parent Name Start -->
+        <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'DoctorGroup'">
+          <mat-label>Select Parent Name</mat-label>
+          <mat-select formControlName="parent_id">
+            <mat-option [value]="">Select Parent Name</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_id;" value="{{ parent._id }}" (click)="getalldata(parent)">{{ parent.groupname }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Parent Name name -->
+
+
+        <!-- Parent Name Start -->
+        <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'Distributor'">
+          <mat-label>Select Parent Name</mat-label>
+          <mat-select formControlName="parent_id" >
+            <mat-option [value]="">Select Parent Name</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_id;" value="{{ parent._id }}" (click)="getalldata(parent)">{{ parent.distributorname }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Parent Name name -->
+
+
+        <!-- Parent Name Start -->
+        <!-- <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'Admin'">
+          <mat-label>Select Parent Name</mat-label>
+          <mat-select formControlName="parent_id">
+            <mat-option [value]="">Select Parent Name</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_id;" value="{{ parent._id }}">{{ parent.distributorname }}</mat-option>
+          </mat-select>
+        </mat-form-field> -->
+        <!-- Parent Name name -->
+
         <!-- State Start -->
         <mat-form-field class="parent_cat" appearance="fill">
           <mat-label>State</mat-label>
@@ -234,7 +291,7 @@
         <!-- City End -->
 
         <!-- Tech Details Start -->
-        <mat-form-field appearance="fill" *ngIf="htmlText.user_details.user_type == 'diagnostic_admin'">
+        <mat-form-field appearance="fill">
           <mat-label>Select Tech</mat-label>
           <mat-select formControlName="tech_id" multiple>
             <mat-option [value]="">Select Tech</mat-option>
@@ -244,24 +301,24 @@
         <!-- Tech Details name -->
 
         <!-- Biller Details Start -->
-        <!-- <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill">
           <mat-label>Select Biiler</mat-label>
           <mat-select formControlName="biller_id" multiple>
             <mat-option [value]="">Select a biiler</mat-option>
             <mat-option *ngFor="let biller of htmlText.billerData;" value="{{ biller._id }}">{{ biller.firstname }} {{ biller.lastname }}</mat-option>
           </mat-select>
-        </mat-form-field> -->
+        </mat-form-field>
         <!-- Biller Details End -->
 
         <!-- Doctor's Office Start -->
-        <!-- <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill">
           <mat-label>Select Doctor's Office</mat-label>
-          <mat-select formControlName="doctors_office_id">
+          <mat-select formControlName="doctors_office_id" multiple>
             <mat-option [value]="">Select Doctor's Office</mat-option>
             <mat-option *ngFor="let doctorOfficeData of htmlText.doctorOfficeData;" value="{{ doctorOfficeData._id }}">{{ doctorOfficeData.firstname }} {{ doctorOfficeData.lastname }}
             </mat-option>
           </mat-select>
-        </mat-form-field> -->
+        </mat-form-field>
         <!-- Doctor's Office End -->
 
         <!-- Zip Start -->

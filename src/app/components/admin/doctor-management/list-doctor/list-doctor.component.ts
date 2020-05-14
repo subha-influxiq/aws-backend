@@ -91,7 +91,7 @@ export class ListDoctorComponent implements OnInit {
   public sortdata:any={
     "type":'desc',
     "field":'firstname',
-    "options":['firstname','email','practice_name','npi','status','date_added']
+    "options":['firstname','email','practice_name','npi','status','created_date']
  };
  public limitcond:any={
   "limit":10,
