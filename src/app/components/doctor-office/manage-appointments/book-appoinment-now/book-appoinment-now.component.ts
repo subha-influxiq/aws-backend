@@ -72,7 +72,7 @@ export class BookAppoinmentNowComponent implements OnInit {
               public snackBar: MatSnackBar, public httpRequestService: HttpServiceService,
               public dialog: MatDialog) {
 
-    this.openDialog();
+    // this.openDialog();
   }
 
 

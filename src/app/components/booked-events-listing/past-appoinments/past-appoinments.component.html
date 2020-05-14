@@ -1,3 +1,7 @@
+<mat-label *ngIf="configData.responseData == null || configData.responseData.length < 1">
+  No booked evnets found
+</mat-label>
+
 <lib-listing *ngIf="configData.responseData != null && configData.responseData.length > 0"
              [datasource]="configData.responseData"
              [skip]="configData.skipFields"
