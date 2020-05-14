@@ -52,47 +52,55 @@ export class LoginComponent implements OnInit {
         {
           "user_type": "tech",
           "routerNav": "tech/dashboard",
-          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken'}
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',
+          user_details:"user_details"}
         },
         {
           "user_type": "biller",
           "routerNav": "biller/dashboard",
-          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken'}
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',user_details:"user_details"}
         },
         {
           "user_type": "doctor_office",
           "routerNav": "doctor-office/dashboard",
-          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken'}
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',
+          user_details:"user_details"}
         },
         {
           "user_type": "diagnostic_admin",
           "routerNav": "diagnostic-admin/dashboard",
-          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken'}
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',
+          user_details:"user_details"}
         },
         {
           "user_type": "doctor_group",
           "routerNav": "doctor-group/dashboard",
-          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwttoken:'jwttoken'}
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwttoken:'jwttoken',
+          user_details:"user_details"}
         },
         {
           "user_type": "sales_person",
           "routerNav": "sales-person/dashboard",
-          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken'}
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',
+          user_details:"user_details"}
         },
         {
           "user_type": "doctor_group",
           "routerNav": "doctor-group/dashboard",
-          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken'}
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',
+          user_details:"user_details"}
         },
         {
           "user_type": "distributors",
           "routerNav": "distributors/dashboard",
-          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken'}
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',
+          user_details:"user_details"}
         },
         {
           "user_type": "admin_biller",
           "routerNav": "admin-biller/dashboard",
-          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken'}
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',
+          user_details:"user_details"}
         }
       ]
     }
