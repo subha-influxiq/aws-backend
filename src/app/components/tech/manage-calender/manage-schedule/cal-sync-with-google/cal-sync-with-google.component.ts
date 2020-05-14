@@ -21,7 +21,7 @@ export class CalSyncWithGoogleComponent implements OnInit {
   }
 
   ngOnInit() {
-    // let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
+    this.userDetails = JSON.parse(this.cookieService.get('user_details'));
     if (this.activatedRoute.snapshot.params.refresh && this.cookieService.check('user_details')) {
       let url = environment.calendarApi + 'getauthorization-pece-getuserdata' +
         '?access_token=' + this.activatedRoute.snapshot.params.access_token;
