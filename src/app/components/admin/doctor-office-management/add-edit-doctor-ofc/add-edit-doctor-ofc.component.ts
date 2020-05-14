@@ -38,11 +38,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
     allCities: "",
     cities: "",
     taxonomies: "",
-    user_details:{
-      user_type:"",
-      tech_id:"",
-      _id:""
-    }
+    user_details:'',
   };
   public dialogRef: any;
   
@@ -52,9 +48,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
     
       this.htmlText.userData = this.cookieService.getAll();
       console.log(this.htmlText.userData.user_type);
-      this.htmlText.user_details.user_type = JSON.parse(this.htmlText.userData.user_type);
-      this.htmlText.user_details._id = JSON.parse(this.htmlText.userData._id);
-      this.htmlText.user_details.tech_id = JSON.parse(this.htmlText.userData.tech_id);
+      this.htmlText.user_details = JSON.parse(this.htmlText.userData.user_details);
       this.getAllTechData();
       this.allStateCityData();
       

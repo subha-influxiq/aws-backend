@@ -17,15 +17,13 @@ export class AdminHeaderComponent implements OnInit {
   public user_data: any = {};
   public loader: boolean = true;
   public user_cookie:any;
-  public firstname :any;
-  public lastname: any;
+  public user_details:any;
 
   constructor(public cookies: CookieService, public router: Router, public commonFunction: CommonFunction) {
     window.scroll(0, 0);
     let user_details: any = {};
-    user_details = this.cookies.getAll();
-    this.firstname = JSON.parse(user_details.firstname);
-    this.lastname = JSON.parse(user_details.lastname);
+    let allData = this.cookies.getAll();
+    this.user_details = JSON.parse(allData.user_details);
     this.user_cookie = cookies.get('jwtToken');
   }
 

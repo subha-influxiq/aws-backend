@@ -57,13 +57,14 @@ export class CommonFunction {
         let getToken: boolean = this.cookie.check('jwtToken');
 
         if (getToken) {
-            let userData: any = this.cookie.getAll();
+            let allData: any = this.cookie.getAll();
+            let userData: any = JSON.parse(allData.user_details);
             switch (urlArr[1]) {
                 case 'Doctor Office':
-                    title = title + '| ' + JSON.parse(userData.centerName) + ' - AWS Backend';
+                    title = title + '| ' + userData.centerName + ' - AWS Backend';
                     break;
                 default:
-                    title = title + '| ' + JSON.parse(userData.firstname) + ' ' + JSON.parse(userData.lastname) + ' - AWS Backend';
+                    title = title + '| ' + userData.firstname + ' ' + userData.lastname + ' - AWS Backend';
                     break;
             }
         } else {
