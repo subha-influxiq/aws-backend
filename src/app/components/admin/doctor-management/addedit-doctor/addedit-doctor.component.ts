@@ -37,10 +37,7 @@ export class AddeditDoctorComponent implements OnInit {
     allCities: "",
     cities: "",
     taxonomies: "",
-    user_details:{
-      user_type:"",
-      _id:""
-    }
+    user_details:""
   };
   public dialogRef: any;
 
@@ -49,8 +46,7 @@ export class AddeditDoctorComponent implements OnInit {
     public acivatedRoute: ActivatedRoute, public snackBar: MatSnackBar) {
 
     this.htmlText.userData = this.cookieService.getAll();
-    this.htmlText.user_details.user_type = JSON.parse(this.htmlText.userData.user_type);
-    this.htmlText.user_details._id = JSON.parse(this.htmlText.userData._id);
+    this.htmlText.user_details = JSON.parse(this.htmlText.userData.user_details);
     this.allStateCityData();
     this.getAllData();
 

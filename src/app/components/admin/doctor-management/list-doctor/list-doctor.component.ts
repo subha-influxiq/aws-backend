@@ -12,8 +12,6 @@ export class ListDoctorComponent implements OnInit {
 
   // ===============================Declarations=========================
   public userData: any={
-    user_type:"",
-    _id:""
   };
   // public cookieUserallData: any = JSON.parse(this.cookieService.get('user_details'))
   public docData_count:any=0;
@@ -116,8 +114,7 @@ export class ListDoctorComponent implements OnInit {
 
     this.user_cookie = cookieService.get('jwtToken');
     let allData = cookieService.getAll();
-    this.userData.user_type = JSON.parse(allData.user_type);
-    this.userData._id = JSON.parse(allData._id);
+    this.userData = JSON.parse(allData.user_details);
 
     if(this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/doctor-management/edit';
