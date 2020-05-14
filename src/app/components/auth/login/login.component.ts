@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
         {
           "user_type": "doctor",
           "routerNav": "doctor/dashboard",
-          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',tech_id:"tech_id",parent_type:"parent_type",firstname: 'firstname',lastname: 'lastname'}
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',tech_id:"tech_id",parent_type:"parent_type",firstname: 'firstname',lastname: 'lastname',user_details:"user_details"}
         },
         {
           "user_type": "tech",
