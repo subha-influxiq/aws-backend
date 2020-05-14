@@ -56,7 +56,6 @@ export class AddeditDoctorComponent implements OnInit {
     // this.getAllData();
     // this.f();
     this.getalldata();
-    this.getdoctofficeData();
 
     if (this.acivatedRoute.snapshot.params._id) {
       this.generateAddEditForm('edit');
@@ -229,11 +228,19 @@ export class AddeditDoctorComponent implements OnInit {
       "condition":{}
     };
 
+    var data2 = {
+      "token": this.htmlText.userData.jwtToken,
+      "source":"data_pece",
+      "condition":{}
+    };
+
     if(id.user_type == 'diagnostic_admin') {
       data.condition['parent_id_object'] = id._id;
       data.condition['user_type'] = "tech"
       data1.condition['parent_id_object'] = id._id;
       data1.condition['user_type'] = "biller"
+      data2.condition['parent_id_object'] = id._id;
+      data2.condition['user_type'] = "doctor_office"
     }
 
     if(id.user_type == 'doctor_group') {
@@ -241,6 +248,8 @@ export class AddeditDoctorComponent implements OnInit {
       data.condition['user_type'] = "tech"
       data1.condition['parent_id_object'] = id._id;
       data1.condition['user_type'] = "biller"
+      data2.condition['parent_id_object'] = id._id;
+      data2.condition['user_type'] = "doctor_office"
     }
 
     if(id.user_type == 'distributors') {
@@ -248,11 +257,14 @@ export class AddeditDoctorComponent implements OnInit {
       data.condition['user_type'] = "tech"
       data1.condition['parent_id_object'] = id._id;
       data1.condition['user_type'] = "biller"
+      data2.condition['parent_id_object'] = id._id;
+      data2.condition['user_type'] = "doctor_office"
     }
 
     if(id == '') {
       data.condition['user_type'] = "tech"
       data1.condition['user_type'] = "biller"
+      data2.condition['user_type'] = "doctor_office"
     }
 
     this.http.httpViaPost('datalist', data).subscribe(response => {
@@ -262,19 +274,8 @@ export class AddeditDoctorComponent implements OnInit {
     this.http.httpViaPost('datalist', data1).subscribe(response => {
       this.htmlText.billerData = response.res;
     });
-  }
 
-  // ******Geting Doctor Office Data*********
-
-  getdoctofficeData() {
-    var data = {
-      "token": this.htmlText.userData.jwtToken,
-      "source":"data_pece",
-      "condition":{
-        "user_type":"doctor_office"
-      }
-    };
-    this.http.httpViaPost('datalist', data).subscribe(response => {
+    this.http.httpViaPost('datalist', data2).subscribe(response => {
       this.htmlText.doctorOfficeData = response.res;
     });
   }
@@ -333,8 +334,6 @@ export class AddeditDoctorComponent implements OnInit {
   }
 
   doctorManagementAddEditFormSubmit() {
-    console.log(this.doctorManagementAddEditForm.value);
-    return;
     let Data =Object.keys(this.doctorManagementAddEditForm.value)
     for (let x in this.doctorManagementAddEditForm.controls) {
       this.doctorManagementAddEditForm.controls[x].markAsTouched();
