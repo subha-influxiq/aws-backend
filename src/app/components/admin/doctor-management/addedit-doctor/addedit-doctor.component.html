@@ -264,7 +264,8 @@
         <mat-form-field class="parent_cat" appearance="fill">
           <mat-label>State</mat-label>
 
-          <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
+          <!-- <mat-select formControlName="state" (selectionChange)="getCity($event.value);"> -->
+            <mat-select formControlName="state">
             <mat-option [value]="">Select State</mat-option>
             <mat-option *ngFor="let state of htmlText.states;" value="{{ state.name }}">{{ state.name }}</mat-option>
           </mat-select>
@@ -276,7 +277,7 @@
         <!-- State End -->
 
         <!-- City Start -->
-        <mat-form-field class="parent_cat" appearance="fill">
+        <!-- <mat-form-field class="parent_cat" appearance="fill">
           <mat-label>City</mat-label>
 
           <mat-select formControlName="city">
@@ -287,7 +288,20 @@
           <mat-error *ngIf="doctorManagementAddEditForm.controls['city'].touched && !doctorManagementAddEditForm.controls['city'].valid && doctorManagementAddEditForm.controls['city'].errors.required">
             State required.
           </mat-error>
+        </mat-form-field> -->
+
+        
+         <mat-form-field appearance="fill">
+          <mat-label>City</mat-label>
+          
+          <input matInput placeholder="City" formControlName="city" (blur)="inputUntouch(doctorManagementAddEditForm,'city')">
+          
+          <mat-error *ngIf="doctorManagementAddEditForm.controls['npi'].touched && !doctorManagementAddEditForm.controls['city'].valid && doctorManagementAddEditForm.controls['city'].errors.required">
+            City required.
+          </mat-error>
         </mat-form-field>
+      
+
         <!-- City End -->
 
         <!-- Tech Details Start -->

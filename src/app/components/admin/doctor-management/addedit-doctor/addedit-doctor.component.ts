@@ -132,19 +132,20 @@ export class AddeditDoctorComponent implements OnInit {
           this.doctorManagementAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
           this.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
           this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
-          this.getCity(doctorDetails[0].state);//
-          this.getalldata(doctorDetails[0].parent_id);
+          this.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
           // this.getCity(doctorDetails[0].state);
-          this.getCityByName(doctorDetails[0].state);
+          this.getalldata(doctorDetails[0].parent_id);
+          //  this.getCity(doctorDetails[0].state);
+          // this.getCityByName(doctorDetails[0].state);
           setTimeout(() => {
             // getCityByName
-            this.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
+            
             this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
             this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_id);
             this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_id);
-            console.log('doctorDetails[0].doctors_office_id',doctorDetails[0].doctors_office_id);
-            console.log('doctorDetails[0].tech_id',doctorDetails[0].tech_id);
-            console.log('doctorDetails[0].biller_id',doctorDetails[0].biller_id);
+            console.log('doctorDetails[0].doctors_office_id', doctorDetails[0].doctors_office_id);
+            console.log('doctorDetails[0].tech_id', doctorDetails[0].tech_id);
+            console.log('doctorDetails[0].biller_id', doctorDetails[0].biller_id);
           }, 2000);
 
           // if (doctorDetails[0].parent_type != "admin") {
@@ -261,6 +262,7 @@ export class AddeditDoctorComponent implements OnInit {
 
   getCityByName(stateName) {
     this.htmlText.cities = this.htmlText.allCities[stateName];
+    console.log(stateName,this.htmlText.allCities[stateName],'cc');
   }
 
   /**getting all the technician data**/
