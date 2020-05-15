@@ -89,8 +89,8 @@ export class AddeditDoctorComponent implements OnInit {
       state:                  ['', [ Validators.required ]],
       user_type:              ['doctor', []],
       parent_type:            ['admin' ,[]],
-      parent_id:            [this.htmlText.user_details._id, []],
-      tech_id:                ['', []],
+      parent_id:              ['', []],
+      // tech_id:                ['', []],
       biller_id:              ['', []],
       doctors_office_id:      ['', []],
       taxo_list:              ['', []],
@@ -154,7 +154,6 @@ export class AddeditDoctorComponent implements OnInit {
           if(doctorDetails[0].parent_type != "admin") {
           this.doctorManagementAddEditForm.controls['parent_id'].patchValue(doctorDetails[0].parent_id);
           }
-          this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
           this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_id);
           this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_id);
 
@@ -258,8 +257,6 @@ export class AddeditDoctorComponent implements OnInit {
     };
 
     if(id.user_type == 'diagnostic_admin') {
-      data.condition['parent_id_object'] = id._id;
-      data.condition['user_type'] = "tech"
       data1.condition['parent_id_object'] = id._id;
       data1.condition['user_type'] = "biller"
       data2.condition['parent_id_object'] = id._id;
@@ -267,8 +264,6 @@ export class AddeditDoctorComponent implements OnInit {
     }
 
     if(id.user_type == 'doctor_group') {
-      data.condition['parent_id_object'] = id._id;
-      data.condition['user_type'] = "tech"
       data1.condition['parent_id_object'] = id._id;
       data1.condition['user_type'] = "biller"
       data2.condition['parent_id_object'] = id._id;
@@ -276,8 +271,6 @@ export class AddeditDoctorComponent implements OnInit {
     }
 
     if(id.user_type == 'distributors') {
-      data.condition['parent_id_object'] = id._id;
-      data.condition['user_type'] = "tech"
       data1.condition['parent_id_object'] = id._id;
       data1.condition['user_type'] = "biller"
       data2.condition['parent_id_object'] = id._id;
@@ -285,7 +278,6 @@ export class AddeditDoctorComponent implements OnInit {
     }
 
     if(id == '') {
-      data.condition['user_type'] = "tech"
       data1.condition['user_type'] = "biller"
       data2.condition['user_type'] = "doctor_office"
     }
