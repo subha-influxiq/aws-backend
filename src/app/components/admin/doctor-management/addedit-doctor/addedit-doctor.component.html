@@ -380,9 +380,10 @@
             <button mat-flat-button type="button" [routerLink]="['/doctor-group/doctor-management']">Back </button>
           </ng-container>
 
-          <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset</button>
+          <!-- <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset</button> -->
           <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
-          <button mat-flat-button type="button" *ngIf="params_id != ''" (click)="openDialog('')"> Change Password </button>
+
+          <button mat-flat-button type="button"  (click)="openDialog('')"> Change Password </button> 
         </span>
 
       </form>
