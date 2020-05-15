@@ -23,13 +23,21 @@
 <mat-card class="add_form">
     <h2>Add Record</h2>
     <mat-card-content class="form_wrapper">
-        <lib-showform class="adptient_manually" *ngIf="formdata !=null"
-                  [formdata]="formdata"
-                  [formfieldrefresh]="formfieldrefresh"
-                  [formfieldrefreshdata]="formfieldrefreshdata"
-                  (onFormFieldChange)="listenFormFieldChange($event)"
-    > </lib-showform>
+<!--        <lib-showform class="adptient_manually" *ngIf="formdata !=null"-->
+<!--                  [formdata]="formdata"-->
+<!--                  [formfieldrefresh]="formfieldrefresh"-->
+<!--                  [formfieldrefreshdata]="formfieldrefreshdata"-->
+<!--                  (onFormFieldChange)="listenFormFieldChange($event)"-->
+<!--    > </lib-showform>-->
+
+      <lib-book-appointment-form *ngIf="configData.patientInfoFormFields != null"
+                                 [configData]="configData">
+      </lib-book-appointment-form>
     </mat-card-content>
 </mat-card>
+
+
+
+
 
 <app-admin-footer></app-admin-footer>

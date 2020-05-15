@@ -212,7 +212,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .bradcrumb{ display: block; font-family: 'AvenirLight'; font-size: 16px;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
 .container .searchbar span{ display: flex; justify-content: space-between; }
- 
+
 .container .searchbar .add_button { background: var(--button-color3); font-family: 'AvenirRoman'; font-size: 16px;
 color: #fff; text-transform: uppercase;}
 
@@ -655,7 +655,7 @@ border-bottom: 2px solid; padding-bottom: 8px;}
   margin: 0 6px;
 
 }
-.adptient_manually .mat-form-field-appearance-legacy .mat-form-field-wrapper{ 
+.adptient_manually .mat-form-field-appearance-legacy .mat-form-field-wrapper{
   width: 100%;
 }
 .adptient_manually .form_header_practice_name {  display: block;
