@@ -213,7 +213,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .bradcrumb{ display: block; font-family: 'AvenirLight'; font-size: 16px;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
 .container .searchbar span{ display: flex; justify-content: space-between; }
- 
+
 .container .searchbar .add_button { background: var(--button-color3); font-family: 'AvenirRoman'; font-size: 16px;
 color: #fff; text-transform: uppercase;}
 
@@ -567,7 +567,7 @@ align-items: center; justify-content: center; color: #fff; font-family: 'AvenirM
 .viewMore_w button{ min-width: 444px; background: linear-gradient(0deg, #04aaf5, #32baf9); font-family: 'AvenirHeavy'; color: #fff; text-transform: uppercase; font-size: 28px; padding: 4px;}
 
 /* for all modal */
-.mat-dialog-container{ min-width: 400px; border: 2px solid #03d877; border-radius: 10px!important; padding: 0!important; min-height: 180px!important; height: auto!important;}
+.mat-dialog-container{ min-width: 400px; border: 1px solid #03d877; border-radius: 0px!important; padding: 0!important; min-height: 180px!important; height: auto!important;}
 .mat-dialog-container .mat-dialog-title {text-align: center; margin: 0; display: block; background: var(--button-color3);
 color: #fff; padding: 6px; font-family: 'AvenirBlack'; text-transform: uppercase; }
 .mat-dialog-container .mat-dialog-content {
@@ -656,7 +656,7 @@ border-bottom: 2px solid; padding-bottom: 8px;}
   margin: 0 6px;
 
 }
-.adptient_manually .mat-form-field-appearance-legacy .mat-form-field-wrapper{ 
+.adptient_manually .mat-form-field-appearance-legacy .mat-form-field-wrapper{
   width: 100%;
 }
 .adptient_manually .form_header_practice_name {  display: block;
@@ -673,12 +673,33 @@ border-bottom: 2px solid; padding-bottom: 8px;}
 }
 .adptient_manually .form_header_ { display: block;}
 /* for calendar-management library */
-.width-md {
-  width: 32% !important;
-}
+.book-event .mat-dialog-container .mat-stepper-horizontal .width-md { width: 32%; }
 /**********************************/
 
 .db_title{ font-family: 'AvenirMedium'; font-size: 20px; color: #535353; text-transform: capitalize; border-bottom: 1px solid #a5a5a5; padding-bottom: 10px; }
 .app_list .mat-card{ padding: 0!important; }
 .app_list .mat-card .searchbar { padding: 0; }
 lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
+
+/* calendar management */
+.book-event .mat-dialog-container .mat-stepper-horizontal .mat-horizontal-content-container{padding: 0;}
+.book-event .mat-dialog-container .mat-stepper-horizontal h4{ font-family: 'AvenirMedium';
+  margin: 0;
+  font-size: 20px;
+  color: #0ac3a2;
+  text-transform: uppercase;
+  margin-bottom: 14px; } 
+  .book-event .mat-dialog-container .mat-stepper-horizontal .containerSpan mat-label{ color: #505050; }
+ .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .header { font-family: 'AvenirMedium'; font-size: 18px; text-transform: uppercase; color: #036d6d;}
+  .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .checbox_wrapper {
+ 
+    min-width: 150px;
+    margin-left: 10px; }
+  .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type { margin-bottom: 6px; margin-bottom: 6px;
+    font-family: 'AvenirMedium';
+    font-size: 14px;
+    color: #5f5c5a;}
+  .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .label_name{
+    font-size: 16px; color: #0ac3a2; text-align: left; word-break: break-word; }
+
+ .book-event .mat-dialog-container .mat-raised-button { background: var(--button-color2); margin-top: 16px;}

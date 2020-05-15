@@ -53,6 +53,7 @@
 
 .DataTable table th.mat-header-cell:last-of-type { width: auto; }
 .searchbar .mat-form-field { width: 32%; }
+.book-event .mat-dialog-container .mat-stepper-horizontal .width-md { width: 31%; }
 }
 @media screen and (max-width: 1100px){
 .biller_Dashboard .patient_report_section .patient_top_search { flex-direction: column; justify-content: flex-start;
@@ -151,6 +152,9 @@
 .calendar_data .table td{ max-width: inherit!important; height: inherit;} 
 .calendar_data .table td .btn-group { border: none; width: auto; } 
 
+}
+@media screen and (max-width: 900px){
+  .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item{ width: 100%; }
 }
 @media screen and (max-width: 840px){
 
