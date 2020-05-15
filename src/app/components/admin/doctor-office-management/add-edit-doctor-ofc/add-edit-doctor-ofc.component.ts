@@ -217,6 +217,24 @@ export class AddEditDoctorOfcComponent implements OnInit {
         postData["sourceobj"] = ["doctor_id"];
       }
 
+      if(this.htmlText.user_details.user_type == 'diagnostic_admin') {
+        postData.data["parent_id"] = this.htmlText.user_details._id;
+        postData["sourceobj"] = ["parent_id"];
+        postData["parent_type"] = ["diagnostic_admin"];
+      }
+
+      if(this.htmlText.user_details.user_type == 'doctor_group') {
+        postData.data["parent_id"] = this.htmlText.user_details._id;
+        postData["sourceobj"] = ["parent_id"];
+        postData["parent_type"] = ["doctor_group"];
+      }
+
+      if(this.htmlText.user_details.user_type == 'distributors') {
+        postData.data["parent_id"] = this.htmlText.user_details._id;
+        postData["sourceobj"] = ["parent_id"];
+        postData["parent_type"] = ["distributors"];
+      }
+
       this.httpService.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
         if (response.status == "success") {
           this.formDirective.resetForm();

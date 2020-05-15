@@ -40,10 +40,14 @@
         <a mat-list-item [routerLink]="['/admin/booked-appoinments']" routerLinkActive="active"> Booked Appointments</a>
 
         <a mat-list-item [routerLink]="['/admin/patientinformation-management']" routerLinkActive="active"> Manage PatientInformation</a>
-        <a mat-list-item [routerLink]="['/admin/faq-management']" routerLinkActive="active"> FAQ Management</a>
-        <a mat-list-item [routerLink]="['/admin/faq']" routerLinkActive="active"> FAQ</a>
+        <a mat-list-item [matMenuTriggerFor]="FAQManagement"> FAQ Management  <i class="material-icons">keyboard_arrow_down</i></a>
+        <a mat-list-item > </a>
 
       </mat-nav-list>
+      <mat-menu #FAQManagement="matMenu">
+        <button mat-menu-item [routerLink]="['/admin/faq-management']"  routerLinkActive="active"> Manage FAQ</button>
+        <button mat-menu-item [routerLink]="['/admin/faq']" routerLinkActive="active"> FAQ</button>
+      </mat-menu>
     </mat-card-content>
 
 

@@ -32,6 +32,10 @@ export class AddeditDoctorComponent implements OnInit {
     message: "Submitted Successfully",
     doctorOfficeData: [],
     techData: [],
+    parent_type : [{
+      name:"Distributor"
+    },{name:"DiagnosticAdmin"},{name:"DoctorGroup"}],
+    parent_id: [],
     billerData: [],
     states: "",
     allCities: "",
@@ -40,6 +44,7 @@ export class AddeditDoctorComponent implements OnInit {
     user_details:""
   };
   public dialogRef: any;
+  public selectionChangeValue:any;
 
   constructor(private formBuilder: FormBuilder, private http: HttpServiceService,
     private cookieService: CookieService, public dialog: MatDialog, private router: Router,
@@ -48,7 +53,9 @@ export class AddeditDoctorComponent implements OnInit {
     this.htmlText.userData = this.cookieService.getAll();
     this.htmlText.user_details = JSON.parse(this.htmlText.userData.user_details);
     this.allStateCityData();
-    this.getAllData();
+    // this.getAllData();
+    // this.f();
+    this.getalldata();
 
     if (this.acivatedRoute.snapshot.params._id) {
       this.generateAddEditForm('edit');
@@ -81,9 +88,11 @@ export class AddeditDoctorComponent implements OnInit {
       city:                   ['', [ Validators.required ]],
       state:                  ['', [ Validators.required ]],
       user_type:              ['doctor', []],
-      //tech_id:                ['', []],
-      //biller_id:              ['', []],
-      //doctors_office_id:      ['', []],
+      parent_type:            ['admin' ,[]],
+      parent_id:            [this.htmlText.user_details._id, []],
+      tech_id:                ['', []],
+      biller_id:              ['', []],
+      doctors_office_id:      ['', []],
       taxo_list:              ['', []],
       status:                 ['', []],
       password:               ['', [ Validators.required, Validators.maxLength(16), Validators.minLength(6) ]],
@@ -129,6 +138,11 @@ export class AddeditDoctorComponent implements OnInit {
           // diagnostic_admin
           if(this.htmlText.user_details.user_type == 'diagnostic_admin') {
             this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
+          }
+
+          if(this.htmlText.user_details.user_type == 'admin') {
+            this.doctorManagementAddEditForm.controls['parent_id'] = this.htmlText.user_details._id;
+            // this.doctorManagementAddEditForm.controls['parent_type'] = this.;
           }
           // doctor
           if(this.htmlText.user_details.user_type == 'doctor') {
@@ -201,31 +215,126 @@ export class AddeditDoctorComponent implements OnInit {
   }
 
   /**getting all the technician data**/
-  getAllData() {
+  getalldata(id:any='') {
     var data = {
       "token": this.htmlText.userData.jwtToken,
+      "source":"data_pece",
+      "condition":{}
     };
 
-    if(this.htmlText.user_details.user_type == 'diagnostic_admin') {
-      data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+    var data1 = {
+      "token": this.htmlText.userData.jwtToken,
+      "source":"data_pece",
+      "condition":{}
+    };
+
+    var data2 = {
+      "token": this.htmlText.userData.jwtToken,
+      "source":"data_pece",
+      "condition":{}
+    };
+
+    if(id.user_type == 'diagnostic_admin') {
+      data.condition['parent_id_object'] = id._id;
+      data.condition['user_type'] = "tech"
+      data1.condition['parent_id_object'] = id._id;
+      data1.condition['user_type'] = "biller"
+      data2.condition['parent_id_object'] = id._id;
+      data2.condition['user_type'] = "doctor_office"
     }
 
-    if(this.htmlText.user_details.user_type == 'doctor_group') {
-      data['doctorgroup_id_object'] = this.htmlText.userData.user_details._id;
+    if(id.user_type == 'doctor_group') {
+      data.condition['parent_id_object'] = id._id;
+      data.condition['user_type'] = "tech"
+      data1.condition['parent_id_object'] = id._id;
+      data1.condition['user_type'] = "biller"
+      data2.condition['parent_id_object'] = id._id;
+      data2.condition['user_type'] = "doctor_office"
     }
 
-    if(this.htmlText.user_details.user_type == 'distributors') {
-      data['distributor_id_object'] = this.htmlText.userData.user_details._id;
+    if(id.user_type == 'distributors') {
+      data.condition['parent_id_object'] = id._id;
+      data.condition['user_type'] = "tech"
+      data1.condition['parent_id_object'] = id._id;
+      data1.condition['user_type'] = "biller"
+      data2.condition['parent_id_object'] = id._id;
+      data2.condition['user_type'] = "doctor_office"
     }
 
-    this.http.httpViaPost('datalist-doctor-add', data).subscribe(response => {
-      this.htmlText.techData = response.data.tech_data;
-      this.htmlText.doctorOfficeData = response.data.doctor_office_data;
-      this.htmlText.billerData = response.data.biller_data;
+    if(id == '') {
+      data.condition['user_type'] = "tech"
+      data1.condition['user_type'] = "biller"
+      data2.condition['user_type'] = "doctor_office"
+    }
+
+    this.http.httpViaPost('datalist', data).subscribe(response => {
+      this.htmlText.techData = response.res;
+    });
+
+    this.http.httpViaPost('datalist', data1).subscribe(response => {
+      this.htmlText.billerData = response.res;
+    });
+
+    this.http.httpViaPost('datalist', data2).subscribe(response => {
+      this.htmlText.doctorOfficeData = response.res;
+    });
+  }
+
+  /**getting all the Parent data**/
+
+  
+  getParentData(id:any='') {
+    var billerData = id;
+    this.selectionChangeValue =  billerData; 
+    console.log('1111',billerData);
+    if(billerData == 'DiagnosticAdmin') {
+      // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+      var data = {
+        "source":"data_pece",
+        "condition":{
+          "user_type":"diagnostic_admin"
+        },
+        "token": this.htmlText.userData.jwtToken,
+      }
+    }
+
+    if(billerData == 'Distributor') {
+      // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+      var data = {
+        "source":"data_pece",
+        "condition":{
+          "user_type":"distributors"
+        },
+        "token": this.htmlText.userData.jwtToken,
+      }
+    }
+
+    if(billerData == 'DoctorGroup') {
+      // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+      var data = {
+        "source":"data_pece",
+        "condition":{
+          "user_type":"doctor_group"
+        },
+        "token": this.htmlText.userData.jwtToken,
+      }
+    }
+
+    // if(this.htmlText.user_details.user_type == 'distributors') {
+    //   data['distributor_id_object'] = this.htmlText.userData.user_details._id;
+    // }
+
+    this.http.httpViaPost('datalist', data).subscribe(response => {
+      // console.log('+++++++++',response);
+      this.htmlText.parent_id = response.res;
+      // this.htmlText.parent_id = response;
+      // this.htmlText.doctorOfficeData = response.data.doctor_office_data;
+      // this.htmlText.billerData = response.data.biller_data;
     });
   }
 
   doctorManagementAddEditFormSubmit() {
+    let Data =Object.keys(this.doctorManagementAddEditForm.value)
     for (let x in this.doctorManagementAddEditForm.controls) {
       this.doctorManagementAddEditForm.controls[x].markAsTouched();
     }
@@ -240,12 +349,13 @@ export class AddeditDoctorComponent implements OnInit {
         this.doctorManagementAddEditForm.value.status = parseInt("0");;
       }
 
+      
       /* start process to submited data */
       var postData: any = {
         "source": "data_pece",
         "data": this.doctorManagementAddEditForm.value,
         "domainurl": environment.siteBaseUrl + 'reset-password',
-        //"sourceobjArray": ["tech_id", "biller_id"],
+        "sourceobjArray": [Data[14], Data[15],Data[16]],
         "token": this.cookieService.get('jwtToken')
       };
 
@@ -268,12 +378,6 @@ export class AddeditDoctorComponent implements OnInit {
         postData.data["parent_type"] = "distributors";
         postData["sourceobj"] = ["parent_id"];
         postData["sourceobjArray"] = ["tech_id"];
-      }
-
-      if(this.htmlText.user_details.user_type == 'admin') {
-        postData.data["parent_id"] = this.htmlText.user_details._id;
-        postData.data["parent_type"] = "admin";
-        postData["sourceobj"] = ["parent_id"];
       }
 
       this.http.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {

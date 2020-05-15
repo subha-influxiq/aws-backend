@@ -23,7 +23,7 @@
 <mat-card class="add_form">
     <h2>Add Record</h2>
     <mat-card-content class="form_wrapper">
-        <lib-showform *ngIf="formdata !=null"
+        <lib-showform class="adptient_manually" *ngIf="formdata !=null"
                   [formdata]="formdata"
                   [formfieldrefresh]="formfieldrefresh"
                   [formfieldrefreshdata]="formfieldrefreshdata"
@@ -33,7 +33,3 @@
 </mat-card>
 
 <app-admin-footer></app-admin-footer>
-
-
-
-<app-doctor-office-footer></app-doctor-office-footer>
