@@ -89,8 +89,8 @@ export class AddeditDoctorComponent implements OnInit {
       state:                  ['', [ Validators.required ]],
       user_type:              ['doctor', []],
       parent_type:            ['admin' ,[]],
-      parent_id:              ['', []],
-      // tech_id:                ['', []],
+      parent_id:            [this.htmlText.user_details._id, []],
+      tech_id:                ['', []],
       biller_id:              ['', []],
       doctors_office_id:      ['', []],
       taxo_list:              ['', []],
@@ -121,21 +121,14 @@ export class AddeditDoctorComponent implements OnInit {
           setTimeout(() => {
             this.getCity(doctorDetails[0].state);
           }, 1000);
-          if(doctorDetails[0].parent_type == "admin") {
-          setTimeout(() => {
-            this.getalldata();
-          }, 1000);
-        }else {
           setTimeout(() => {
             this.getalldata(doctorDetails[0].parent_id);
           }, 1000);
-        }
-        if(doctorDetails[0].parent_type != "admin") {
+
           setTimeout(() => {
             this.getParentData(doctorDetails[0].parent_type);
           }, 1000);
-        }
-          console.log('=======',doctorDetails[0]);
+          console.log('=======',doctorDetails[0])
           this.doctorManagementAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
           this.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
           this.doctorManagementAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
@@ -148,12 +141,9 @@ export class AddeditDoctorComponent implements OnInit {
           this.doctorManagementAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
           this.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
           this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
-          if(doctorDetails[0].parent_type != "admin") {
           this.doctorManagementAddEditForm.controls['parent_type'].patchValue(doctorDetails[0].parent_type);
-          }
-          if(doctorDetails[0].parent_type != "admin") {
           this.doctorManagementAddEditForm.controls['parent_id'].patchValue(doctorDetails[0].parent_id);
-          }
+          this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
           this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_id);
           this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_id);
 
@@ -257,6 +247,8 @@ export class AddeditDoctorComponent implements OnInit {
     };
 
     if(id.user_type == 'diagnostic_admin') {
+      data.condition['parent_id_object'] = id._id;
+      data.condition['user_type'] = "tech"
       data1.condition['parent_id_object'] = id._id;
       data1.condition['user_type'] = "biller"
       data2.condition['parent_id_object'] = id._id;
@@ -264,6 +256,8 @@ export class AddeditDoctorComponent implements OnInit {
     }
 
     if(id.user_type == 'doctor_group') {
+      data.condition['parent_id_object'] = id._id;
+      data.condition['user_type'] = "tech"
       data1.condition['parent_id_object'] = id._id;
       data1.condition['user_type'] = "biller"
       data2.condition['parent_id_object'] = id._id;
@@ -271,6 +265,8 @@ export class AddeditDoctorComponent implements OnInit {
     }
 
     if(id.user_type == 'distributors') {
+      data.condition['parent_id_object'] = id._id;
+      data.condition['user_type'] = "tech"
       data1.condition['parent_id_object'] = id._id;
       data1.condition['user_type'] = "biller"
       data2.condition['parent_id_object'] = id._id;
@@ -278,6 +274,7 @@ export class AddeditDoctorComponent implements OnInit {
     }
 
     if(id == '') {
+      data.condition['user_type'] = "tech"
       data1.condition['user_type'] = "biller"
       data2.condition['user_type'] = "doctor_office"
     }
@@ -349,7 +346,6 @@ export class AddeditDoctorComponent implements OnInit {
   }
 
   doctorManagementAddEditFormSubmit() {
-    console.log('2222222222222');
     let Data =Object.keys(this.doctorManagementAddEditForm.value)
     for (let x in this.doctorManagementAddEditForm.controls) {
       this.doctorManagementAddEditForm.controls[x].markAsTouched();

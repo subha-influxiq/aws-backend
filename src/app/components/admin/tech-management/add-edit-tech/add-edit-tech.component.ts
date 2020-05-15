@@ -73,6 +73,7 @@ export class AddEditTechComponent implements OnInit {
       city:             ['', [ Validators.required ]],
       state:            ['', [ Validators.required ]],
       user_type:        ['tech', []],
+      biller_id:        ['',[]],
       status:           ['', []],
       password:         ['', [ Validators.required, Validators.maxLength(16), Validators.minLength(6) ]],
       confirmpassword:  ['', [ Validators.required ]]
