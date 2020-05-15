@@ -646,8 +646,28 @@ border-bottom: 2px solid; padding-bottom: 8px;}
 .lib-pager-class .mat-form-field  .mat-form-field-appearance-legacy .mat-form-field-underline{ height: 0; }
 
 /* manage admin */
+.adptient_manually mat-form-field{
+  width: 32%;
+  display: inline-flex;
+  margin: 0 6px;
 
-
+}
+.adptient_manually .mat-form-field-appearance-legacy .mat-form-field-wrapper{ 
+  width: 100%;
+}
+.adptient_manually .form_header_practice_name {  display: block;
+  font-size: 18px;
+  color: #000000;
+  font-family: 'AvenirMedium';
+  text-transform: uppercase; position: relative;
+}
+.adptient_manually .form_header_practice_name::before{
+  content: ''; width: 30%; height: 2px;
+  background: #8bc348;
+  position: absolute;
+  bottom: -5px;
+}
+.adptient_manually .form_header_ { display: block;}
 /* for calendar-management library */
 .width-md {
   width: 32% !important;
