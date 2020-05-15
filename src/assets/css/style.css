@@ -678,15 +678,7 @@ border-bottom: 2px solid; padding-bottom: 8px;}
 }
 /**********************************/
 
-.db_title{
-  font-family: 'AvenirMedium';
-  font-size: 20px; color: #535353;
-  text-transform: capitalize; border-bottom: 1px solid #a5a5a5;
-  padding-bottom: 10px;
-}
-.app_list .mat-card{
-  padding: 0!important;
-}
-.app_list .mat-card .searchbar {
-  padding: 0;
-}
+.db_title{ font-family: 'AvenirMedium'; font-size: 20px; color: #535353; text-transform: capitalize; border-bottom: 1px solid #a5a5a5; padding-bottom: 10px; }
+.app_list .mat-card{ padding: 0!important; }
+.app_list .mat-card .searchbar { padding: 0; }
+lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
