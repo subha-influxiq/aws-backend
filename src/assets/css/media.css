@@ -22,6 +22,8 @@
 }
 @media screen and (max-width: 1300px){
 .main_wrapper { background-size: 680px; padding-left: 665px; }
+.tablewrapper{ overflow: scroll;}
+.table_wrapper .mat-table{ width: 1920px;}
 }
 @media screen and (max-width: 1240px){
 .main_wrapper .login_wrapper { width: 450px; }
@@ -82,7 +84,9 @@
   position: relative;
 }
  
-
+.table_wrapper .mat-table {
+  width: 100%;
+}
 .mat-table {border: 0; vertical-align: middle;}
 .mat-table caption { font-size: 1em; }
 

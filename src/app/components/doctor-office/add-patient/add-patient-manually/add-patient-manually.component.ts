@@ -48,7 +48,7 @@ export class AddPatientManuallyComponent implements OnInit {
     redirectpath: "/doctor-office/dashboard",
     submitactive: true, //optional, default true
     apiUrl: environment.calendarApi,
-    endpoint: 'add-to-calendar',
+    endpoint: 'add-to-calendar-manually',
     jwttoken: "",
     //hidereset:true,
     //hidecancel:true,
@@ -101,8 +101,8 @@ export class AddPatientManuallyComponent implements OnInit {
       },
       {
         type: 'select',
-        name: 'gender', 
-        placeholder: 'Gender', 
+        name: 'gender',
+        placeholder: 'Gender',
         label: 'Gender',
         val: [
           { name: 'Male', val: 'male' },
@@ -138,7 +138,7 @@ export class AddPatientManuallyComponent implements OnInit {
         error: 'Enter patient weight'
       },
       { type: 'text', name: 'booking_date', placeholder: 'Date', label: 'Booking date', value: this.today, disabled: true },
-      
+
       {
         heading: '<h2>Insurance Information</h2>',
         label: "Insurance name",
@@ -167,7 +167,7 @@ export class AddPatientManuallyComponent implements OnInit {
       },
       {
         type: 'date',
-        name: 'appointment_date',
+        name: 'startdate',
         placeholder: 'Appointment Date',
         label: 'Appointment Date',
         value: '',
@@ -175,7 +175,7 @@ export class AddPatientManuallyComponent implements OnInit {
         error: 'Enter Appointment Date'
       },
       {
-        type: 'select', 
+        type: 'select',
         label: "Time Zone",
         name: 'reqTimezone',
         val: [
@@ -194,7 +194,7 @@ export class AddPatientManuallyComponent implements OnInit {
         suffix: ""
       },
       {
-        type: 'select', 
+        type: 'select',
         label: "Appointment Time",
         name: 'appointment_time',
         val: [
@@ -221,14 +221,14 @@ export class AddPatientManuallyComponent implements OnInit {
           { name: '4.30 PM to 5.00 PM', val: '4.30 PM to 5.00 PM' },
           { name: '5.00 PM to 5.30 PM', val: '5.00 PM to 5.30 PM' },
           { name: '5.30 PM to 6.00 PM', val: '5.30 PM to 6.00 PM' },
-          { name: '6.00 PM to 6.30 PM', val: '6.00 PM to 6.30 PM' },          
-          { name: '6.30 PM to 7.00 PM', val: '6.30 PM to 7.00 PM' },          
-          { name: '7.00 PM to 7.30 PM', val: '7.00 PM to 7.30 PM' },          
-          { name: '7.30 PM to 8.00 PM', val: '7.30 PM to 8.00 PM' },          
-          { name: '8.00 PM to 8.30 PM', val: '8.00 PM to 8.30 PM' },          
-          { name: '8.30 PM to 9.00 PM', val: '8.30 PM to 9.00 PM' },          
-          { name: '9.00 PM to 9.00 PM', val: '9.00 PM to 9.00 PM' },          
-          { name: '9.30 PM to 10.00 PM', val: '9.30 PM to 10.00 PM' }     
+          { name: '6.00 PM to 6.30 PM', val: '6.00 PM to 6.30 PM' },
+          { name: '6.30 PM to 7.00 PM', val: '6.30 PM to 7.00 PM' },
+          { name: '7.00 PM to 7.30 PM', val: '7.00 PM to 7.30 PM' },
+          { name: '7.30 PM to 8.00 PM', val: '7.30 PM to 8.00 PM' },
+          { name: '8.00 PM to 8.30 PM', val: '8.00 PM to 8.30 PM' },
+          { name: '8.30 PM to 9.00 PM', val: '8.30 PM to 9.00 PM' },
+          { name: '9.00 PM to 9.00 PM', val: '9.00 PM to 9.00 PM' },
+          { name: '9.30 PM to 10.00 PM', val: '9.30 PM to 10.00 PM' }
         ],
         validations: [
           { rule: 'required' }
@@ -944,7 +944,7 @@ export class AddPatientManuallyComponent implements OnInit {
     if (this.cookieService.check('jwtToken')) {
       this.activatedRoute.data.forEach((data) => {
         this.resolveData = data.eventdayarrData;
-        
+
         var otherFieldsData: any = [];
         for (let i = this.resolveData.others.patient_information.length - 1; i >= 0; i--) {
           let fieldData: any;
@@ -976,7 +976,7 @@ export class AddPatientManuallyComponent implements OnInit {
                 }
                 temp.push(json);
               }
-                
+
               otherFieldsData.push({
                 label: this.resolveData.others.patient_information[i].description,
                 name: this.resolveData.others.patient_information[i].label,
@@ -1074,7 +1074,7 @@ export class AddPatientManuallyComponent implements OnInit {
           };
         } else {
           this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'insurance_type' } };
-          
+
           setTimeout(() => {
             this.formfieldrefreshdata = {
               field: 'addfromcontrol',
@@ -1126,7 +1126,7 @@ export class AddPatientManuallyComponent implements OnInit {
           // this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'doctor_id' } };
           // this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_type' } };
           // this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_id' } };
-          
+
           if(response.status == true) {
             var techDetails = [];
             for (let i = 0; i < response.res.length; i++) {
@@ -1189,7 +1189,7 @@ export class AddPatientManuallyComponent implements OnInit {
                       }
                     };
                   }, 200);
-        
+
                   setTimeout(() => {
                     this.formfieldrefreshdata = {
                       field: 'addfromcontrol',

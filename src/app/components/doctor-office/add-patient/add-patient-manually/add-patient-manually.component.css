@@ -1,9 +1,9 @@
-.add_form{ width: 700px; margin: 20px auto; background: #f3f3f3; padding: 16px 10px; padding-bottom: 50px; border: 1px solid #91e7ff; }
+.add_form{ width: 85%; margin: 20px auto; background: #f3f3f3; padding: 16px 10px; padding-bottom: 50px; border: 1px solid #91e7ff; }
 .add_form .form_wrapper .mat-form-field{ width: 100%;  }
 .add_form .form_wrapper textarea{ resize: none;}
-.add_form h2{ font-family: "RobotoBlack"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }
+.add_form h2{ font-family: "AvenirBlack"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }
 .add_form .submit_form { display: block; width: 100%; text-align: center; margin-top: 30px; }
-.add_form .submit_form button{ border-radius: 5px; background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: "RobotoBlack"; font-size: 25px; padding: 2px;
+.add_form .submit_form button{ border-radius: 5px; background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: "AvenirBlack"; font-size: 25px; padding: 2px;
 width: 240px; border: 3px solid #d59d01; }
 .add_form .submit_form button:nth-child(1){ background: linear-gradient(180deg, #f2be00, #a52a08); color: #f3f3f3; border: 2px solid #bb3c0d; margin-right: 16px; }
 .add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;}
@@ -11,9 +11,9 @@ width: 240px; border: 3px solid #d59d01; }
 .add_header button{ margin-left: auto;
   background: linear-gradient(180deg, #fac855, #e47e2a)!important;
   text-transform: uppercase;
-  font-family: "RobotoBlack"; padding-top: 4px;
+  font-family: "AvenirBlack"; padding-top: 4px;
 }
-
+ 
 @media screen and (max-width: 840px){
   .add_form { width: 80%; }
 }

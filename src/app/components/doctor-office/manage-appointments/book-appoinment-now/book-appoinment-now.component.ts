@@ -305,387 +305,431 @@ export class BookAppoinmentNowComponent implements OnInit {
             checkItems: [
               {name: 'bv_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'bv_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Elevated Blood Sugar',
             checkItems: [
               {name: 'ebs_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'ebs_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Extreme Thirst',
             checkItems: [
               {name: 'et_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'et_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Frequent Urination',
             checkItems: [
               {name: 'fu_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'fu_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Fatigue (Tiredness)',
             checkItems: [
               {name: 'ft_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'ft_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Heartburn',
             checkItems: [
               {name: 'hb_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'hb_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Increased Hunger',
             checkItems: [
               {name: 'ih_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'ih_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Nausea',
             checkItems: [
               {name: 'nau_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'nau_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Numbness & Tingling in Hands or Feet',
             checkItems: [
               {name: 'nthf_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'nthf_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Vomiting',
             checkItems: [
               {name: 'vomiting_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'vomiting_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
-
           {
             type: 'checkbox', caption: 'Sudomotor Dysfunction (SUDOD)',
             label: 'Burning Sensations',
             checkItems: [
               {name: 'bs_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'bs_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Difficulty Digesting Food',
             checkItems: [
               {name: 'ddf_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'ddf_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Dizziness or Fainting',
             checkItems: [
               {name: 'dof_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'dof_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Exercise Intolerance',
             checkItems: [
               {name: 'ei_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'ei_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Sexual Difficulties',
             checkItems: [
               {name: 'sd_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'sd_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Sweat Abnormalities',
             checkItems: [
               {name: 'sa_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'sa_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Tingling Hands & Feet',
             checkItems: [
               {name: 'thf_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'thf_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
           {
             type: 'checkbox', label: 'Urinary Problems',
             checkItems: [
               {name: 'up_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'up_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'Autonomic Nervous System Dysfunction (ANSD)'
           },
-
           {
             type: 'checkbox', caption: 'ENDOTHELIAL DYSFUNCTION (ENDOD)',
             label: 'Angina (severe chest pain, often spreading to shoulder, arm, back, neck, or jaw)',
             checkItems: [
               {name: 'angina_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'angina_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
           },
           {
             type: 'checkbox', label: 'Chest Pain that goes away with rest',
             checkItems: [
               {name: 'cptgawr_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'cptgawr_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
           },
           {
             type: 'checkbox', label: 'Heartburn',
             checkItems: [
               {name: 'hrtbn_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'hrtbn_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
           },
           {
             type: 'checkbox', label: 'Pain In Calves',
             checkItems: [
               {name: 'pic_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'pic_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
           },
           {
             type: 'checkbox', label: 'Shortness of Breath',
             checkItems: [
               {name: 'sob_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'sob_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
           },
           {
             type: 'checkbox', label: 'Stroke',
             checkItems: [
               {name: 'stroke_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'stroke_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
           },
           {
             type: 'checkbox', label: 'TIA (mini stroke)',
             checkItems: [
               {name: 'tia_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'tia_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
           },
-
           {
             type: 'checkbox', caption: 'CARDIOMETABOLIC RISK (CMR)',
             label: 'Headaches',
             checkItems: [
               {name: 'headaches_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'headaches_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'CARDIOMETABOLIC RISK (CMR)'
           },
           {
             type: 'checkbox', label: 'Dizziness',
             checkItems: [
               {name: 'dizziness_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'dizziness_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'CARDIOMETABOLIC RISK (CMR)'
           },
           {
             type: 'checkbox', label: 'Swelling of Ankles',
             checkItems: [
               {name: 'soa_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'soa_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'CARDIOMETABOLIC RISK (CMR)'
           },
-
           {
             type: 'checkbox', caption: 'INSULIN RESISTANCE (IR)',
             label: 'Blurred Vision',
             checkItems: [
               {name: 'blv_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'blv_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'INSULIN RESISTANCE (IR)'
           },
           {
             type: 'checkbox', label: 'Elevated Blood Sugar',
             checkItems: [
               {name: 'ebsr_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'ebsr_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'INSULIN RESISTANCE (IR)'
           },
           {
             type: 'checkbox', label: 'Extreme Thirst',
             checkItems: [
               {name: 'ext_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'ext_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'INSULIN RESISTANCE (IR)'
           },
           {
             type: 'checkbox', label: 'Fatigue (Tiredness)',
             checkItems: [
               {name: 'ftd_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'ftd_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'INSULIN RESISTANCE (IR)'
           },
           {
             type: 'checkbox', label: 'Increased Hunger',
             checkItems: [
               {name: 'ihr_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'ihr_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'INSULIN RESISTANCE (IR)'
           },
-
-
           {
             type: 'checkbox', caption: 'SMALL FIBER SENSORY NEUROPATHY (SFN)',
             label: 'Burning Sensations',
             checkItems: [
               {name: 'burns_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'burns_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'SMALL FIBER SENSORY NEUROPATHY (SFN)'
           },
           {
             type: 'checkbox', label: 'Painful Contact With Socks or Bed Sheets',
             checkItems: [
               {name: 'pcwsbs_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'pcwsbs_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'SMALL FIBER SENSORY NEUROPATHY (SFN)'
           },
           {
             type: 'checkbox', label: 'Pebble or Sandlike Sensation In Shoes',
             checkItems: [
               {name: 'psss_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'psss_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'SMALL FIBER SENSORY NEUROPATHY (SFN)'
           },
           {
             type: 'checkbox', label: 'Stabbing or Electrical Shock Sensation',
             checkItems: [
               {name: 'sess_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'sess_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'SMALL FIBER SENSORY NEUROPATHY (SFN)'
           },
           {
             type: 'checkbox', label: 'Pins And Needles Sensation In Feet',
             checkItems: [
               {name: 'pnsf_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'pnsf_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'SMALL FIBER SENSORY NEUROPATHY (SFN)'
           },
-
           {
             type: 'checkbox', caption: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)',
             label: 'Blurred Vision',
             checkItems: [
               {name: 'bldv_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'bldv_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
           },
           {
             type: 'checkbox', label: 'Cold, Clammy, Pale Skin',
             checkItems: [
               {name: 'ccps_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'ccps_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
           },
           {
             type: 'checkbox', label: 'Depression',
             checkItems: [
               {name: 'depression_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'depression_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
           },
           {
             type: 'checkbox', label: 'Dizziness or Lightheadedness',
             checkItems: [
               {name: 'dol_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'dol_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
           },
           {
             type: 'checkbox', label: 'Thirst',
             checkItems: [
               {name: 'thirst_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'thirst_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
           },
           {
             type: 'checkbox', label: 'Fainting',
             checkItems: [
               {name: 'fainting_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'fainting_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
           },
           {
             type: 'checkbox', label: 'Fatigue (Tiredness)',
             checkItems: [
               {name: 'fatt_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'fatt_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
           },
           {
             type: 'checkbox', label: 'Lack of Concentration',
             checkItems: [
               {name: 'loc_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'loc_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
           },
           {
             type: 'checkbox', label: 'Lack of Energy',
             checkItems: [
               {name: 'loe_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'loe_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
           },
           {
             type: 'checkbox', label: 'Nausea',
             checkItems: [
               {name: 'nausea_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'nausea_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
           },
           {
             type: 'checkbox', label: 'Rapid, Shallow Breathing',
             checkItems: [
               {name: 'rsb_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'rsb_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
           },
-
-
           {
             type: 'checkbox', caption: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)',
             label: 'Blood clot in a vein (Venous Thrombosis)',
             checkItems: [
               {name: 'bciv_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'bciv_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)'
           },
           {
             type: 'checkbox', label: 'Heart Attack',
             checkItems: [
               {name: 'hattk_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'hattk_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)'
           },
           {
             type: 'checkbox', label: 'Irregular heartbeat, too fast/slow (Atrial Fibrillation)',
             checkItems: [
               {name: 'ihtfs_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'iftfs_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)'
           },
           {
             type: 'checkbox', label: 'Stroke',
             checkItems: [
               {name: 'strk_six_months', value: false, label: '6 Months', labelPosition: 'before'},
               {name: 'strk_today', value: false, label: 'Today', labelPosition: 'before'}
-            ]
+            ],
+            isSymptomChecklist: true, block: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)'
           }
         ];
 
