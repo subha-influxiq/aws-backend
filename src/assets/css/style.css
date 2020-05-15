@@ -282,8 +282,11 @@ color: #fff; text-transform: uppercase;}
 .patient_item_section .mat-tab-label { opacity: 1; background: #000; color: #ffff; font-size: 14px; text-transform: uppercase; font-family: "AvenirBlack"; padding: 5px 16px; }
 .patient_item_section .mat-tab-label:nth-child(2){ margin: 0 8px; }
 .patient_item_section .mat-tab-label:nth-child(4){ margin: 0 8px; }
-.mat-tab-label.mat-tab-label-active { background-color:#0298dc!important; opacity: 1!important;
+.admin_wrapper .mat-tab-label.mat-tab-label-active { background-color:var(--button-color3); opacity: 1!important;
   color: #ffff; }
+.admin_wrapper .mat-tab-group.mat-primary .mat-ink-bar {
+    background-color: #048007;
+}
 .patient_item_section .mat-tab-group.mat-primary .mat-ink-bar {
   background-color: transparent;
 }
