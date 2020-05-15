@@ -54,7 +54,7 @@ export class DoctorOfficeManagementComponent implements OnInit {
   public deleteEndpoint: any = "deletesingledata";
   public apiUrl: any;
   public tableName: any = "users";
-  public userData: any;
+  public userData: any={}
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
@@ -83,7 +83,8 @@ export class DoctorOfficeManagementComponent implements OnInit {
     public httpService: HttpServiceService) {
 
     this.user_cookie = cookie.get('jwtToken');
-    this.userData = JSON.parse(this.cookie.get('user_details'));
+    let allData=cookie.getAll()
+    this.userData = JSON.parse(allData.user_details);
     this.apiUrl = httpService.baseUrl;
 
     if(this.userData.user_type == 'doctor') {

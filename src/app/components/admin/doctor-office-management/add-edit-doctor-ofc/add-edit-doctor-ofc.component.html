@@ -1,11 +1,11 @@
 <!-- Admin Header -->
-<app-admin-header *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-header>
+<app-admin-header *ngIf="htmlText.user_details.user_type == 'admin'"></app-admin-header>
 
 <!-- Diagnostic Admin Header -->
-<app-diagnostic-admin-header *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+<app-diagnostic-admin-header *ngIf="htmlText.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
 
 <!-- Doctor Header -->
-<app-doctor-header *ngIf="htmlText.userData.user_details.user_type == 'doctor'"></app-doctor-header>
+<app-doctor-header *ngIf="htmlText.user_details.user_type == 'doctor'"></app-doctor-header>
 
 
 
@@ -221,8 +221,8 @@
 
 
         <span class="submit_form">
-          <button mat-flat-button type="button" *ngIf="htmlText.userData.user_details.user_type == 'doctor'" [routerLink]="['/doctor/doctor-office-management']"> Back</button>
-          <button mat-flat-button type="button" *ngIf="htmlText.userData.user_details.user_type == 'admin'" [routerLink]="['/admin/doctor-office-management']"> Back</button>
+          <button mat-flat-button type="button" *ngIf="htmlText.user_details.user_type == 'doctor'" [routerLink]="['/doctor/doctor-office-management']"> Back</button>
+          <button mat-flat-button type="button" *ngIf="htmlText.user_details.user_type == 'admin'" [routerLink]="['/admin/doctor-office-management']"> Back</button>
 
 
           <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset </button>

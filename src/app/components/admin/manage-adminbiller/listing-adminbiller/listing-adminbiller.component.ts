@@ -10,7 +10,9 @@ import { Router,ActivatedRoute } from '@angular/router';
 })
 export class ListingAdminbillerComponent implements OnInit {
 
-  public userData: any;
+  public userData: any = {
+    user_type:""
+  };
   public docData_count:any=0;
   public  docData: any = [];
   public datasource: any;
@@ -38,11 +40,12 @@ export class ListingAdminbillerComponent implements OnInit {
   public docData_modify_header: any = {
     firstname: "First Name",
     lastname: "Last Name",
-    "practice name": "Practice Name",
-    npi: "NPI#",
     email: "Email",
     phone: "Phone Number",
     status: "Status",
+    "logincounts": "No Of Login",
+    "last_login_datetime": "Last Login",
+    "last login datetime": "Last Login"
   };
 
   public previewModal_skip: any = [
@@ -52,12 +55,19 @@ export class ListingAdminbillerComponent implements OnInit {
     "biller_id",
     "doctors_office_id",
     "taxo_list",
-    "password",
-    "created_at",
-    "id",
-    "name_search",
-    "updated_at"
+    "created_date"
   ];
+   public libdata:any={
+    // basecondition: {report_type:"file"},
+    updateendpoint:'statusupdate',
+    // hideeditbutton:true,// all these button options are optional not mandatory
+    // hidedeletebutton:true,
+    // hideviewbutton:true,
+    //hidestatustogglebutton:true,
+    // hideaction:true,
+    tableheaders:['firstname','lastname','email','phone','status','logincounts','last_login_datetime'] //not required
+   
+}
   public tableName: any = 'users';
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
@@ -91,13 +101,17 @@ export class ListingAdminbillerComponent implements OnInit {
     private router: Router,public activatedRoute : ActivatedRoute) {
 
     this.user_cookie = cookieService.get('jwtToken');
-    this.userData = JSON.parse(this.cookieService.get('user_details'));
+    let allData = cookieService.getAll();
+    this.userData.user_type = JSON.parse(allData.user_type);
 
     if(this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/doctor-management/edit';
     }
 
     this.apiUrl = http.baseUrl;
+    this.http.getclientip().subscribe((res: any) => {
+      console.log(res);
+        })
   }
 
 

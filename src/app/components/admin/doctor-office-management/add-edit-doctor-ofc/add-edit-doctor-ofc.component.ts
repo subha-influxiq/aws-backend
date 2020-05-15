@@ -37,7 +37,8 @@ export class AddEditDoctorOfcComponent implements OnInit {
     states: "",
     allCities: "",
     cities: "",
-    taxonomies: ""
+    taxonomies: "",
+    user_details:'',
   };
   public dialogRef: any;
   
@@ -46,7 +47,8 @@ export class AddEditDoctorOfcComponent implements OnInit {
     public cookieService: CookieService, public snackBar: MatSnackBar, public dialog: MatDialog) {
     
       this.htmlText.userData = this.cookieService.getAll();
-      this.htmlText.userData.user_details = JSON.parse(this.htmlText.userData.user_details);
+      console.log(this.htmlText.userData.user_type);
+      this.htmlText.user_details = JSON.parse(this.htmlText.userData.user_details);
       this.getAllTechData();
       this.allStateCityData();
       
@@ -167,13 +169,13 @@ export class AddEditDoctorOfcComponent implements OnInit {
 
   /**getting all the technician data**/
   getAllTechData() {
-    console.log(">>>>>", this.htmlText.userData.user_details);
+    console.log(">>>>>", this.htmlText.user_details);
 
     var data = {
       "source": "data_pece",
       "condition": {
         "user_type": "tech",
-        "tech_id": this.htmlText.userData.user_details.tech_id
+        "tech_id": this.htmlText.user_details.tech_id
       },
       "token": this.htmlText.userData.jwtToken
     };
@@ -210,9 +212,27 @@ export class AddEditDoctorOfcComponent implements OnInit {
         "token": this.cookieService.get('jwtToken')
       };
 
-      if(this.htmlText.userData.user_details.user_type == 'doctor') {
-        postData.data["doctor_id"] = this.htmlText.userData.user_details._id;
+      if(this.htmlText.user_details.user_type == 'doctor') {
+        postData.data["doctor_id"] = this.htmlText.user_details._id;
         postData["sourceobj"] = ["doctor_id"];
+      }
+
+      if(this.htmlText.user_details.user_type == 'diagnostic_admin') {
+        postData.data["parent_id"] = this.htmlText.user_details._id;
+        postData["sourceobj"] = ["parent_id"];
+        postData["parent_type"] = ["diagnostic_admin"];
+      }
+
+      if(this.htmlText.user_details.user_type == 'doctor_group') {
+        postData.data["parent_id"] = this.htmlText.user_details._id;
+        postData["sourceobj"] = ["parent_id"];
+        postData["parent_type"] = ["doctor_group"];
+      }
+
+      if(this.htmlText.user_details.user_type == 'distributors') {
+        postData.data["parent_id"] = this.htmlText.user_details._id;
+        postData["sourceobj"] = ["parent_id"];
+        postData["parent_type"] = ["distributors"];
       }
 
       this.httpService.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
@@ -224,7 +244,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
           });
 
           setTimeout(() => {
-            switch(this.htmlText.userData.user_details.user_type) {
+            switch(this.htmlText.user_details.user_type) {
               case 'doctor':
                 this.router.navigateByUrl("doctor/doctor-office-management");
                 break;

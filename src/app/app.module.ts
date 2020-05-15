@@ -138,7 +138,10 @@ import { CalHomeComponent } from './components/tech/manage-calender/manage-sched
 import { CalViewSlotComponent } from './components/tech/manage-calender/manage-schedule/cal-view-slot/cal-view-slot.component';
 import { CalEventListingComponent } from './components/tech/manage-calender/manage-schedule/cal-event-listing/cal-event-listing.component';
 import { AppoinmentsListingComponent } from './components/doctor-office/manage-appointments/appoinments-listing/appoinments-listing.component';
-import { BookAppoinmentNowComponent } from './components/doctor-office/manage-appointments/book-appoinment-now/book-appoinment-now.component';
+import {
+  BookAppoinmentNowComponent,
+  ChooseDoctorDialog
+} from './components/doctor-office/manage-appointments/book-appoinment-now/book-appoinment-now.component';
 import { BookedEventsComponent } from './components/tech/manage-calender/manage-schedule/booked-events/booked-events.component';
 import { ReportConformationComponent } from './components/tech/patient-management/report-conformation/report-conformation.component';
 import { AddEditInsuranceComponent } from './components/admin/manage-insurance/add-edit-insurance/add-edit-insurance.component';
@@ -316,7 +319,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AdminbillerFooterComponent,
     AddPatientManuallyComponent,
     UpcomingAppoinmentsComponent,
-    PastAppoinmentsComponent
+    PastAppoinmentsComponent,
+    ChooseDoctorDialog
   ],
   imports: [
     SatDatepickerModule,
@@ -390,7 +394,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     UploadDialogBoxComponent,
     TestComponent,
     DoctorViewDialogComponent,
-    DownloadDetailsComponent
+    DownloadDetailsComponent,
+    ChooseDoctorDialog
   ]
 })
 

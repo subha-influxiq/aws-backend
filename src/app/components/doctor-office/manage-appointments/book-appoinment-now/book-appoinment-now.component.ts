@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {CookieService} from 'ngx-cookie-service';
 import {HttpServiceService} from '../../../../services/http-service.service';
 import {Router, ActivatedRoute} from '@angular/router';
@@ -11,6 +11,7 @@ import {MatSnackBar} from '@angular/material';
 import {environment} from '../../../../../environments/environment';
 import {FormGroup, FormBuilder, Validators, FormControl, FormGroupDirective} from '@angular/forms';
 import moment from 'moment-es6';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-book-appoinment-now',
@@ -69,7 +70,9 @@ export class BookAppoinmentNowComponent implements OnInit {
 
   constructor(public activatedRoute: ActivatedRoute, public cookieService: CookieService,
               public snackBar: MatSnackBar, public httpRequestService: HttpServiceService,
-              private http: HttpClient) {
+              public dialog: MatDialog) {
+
+    // this.openDialog();
   }
 
 
@@ -92,6 +95,9 @@ export class BookAppoinmentNowComponent implements OnInit {
     this.configData = Object.assign(this.configData, this.userDetails);
 
     // this.configData.primaryCondition = Object.assign(this.configData.primaryCondition, {userid: {$in: [this.userDetails._id]}});
+    this.httpRequestService.postRequest('get-doctor-list', {_id: {$in: [this.userDetails.doctor_id]}}).subscribe((result: any) => {
+      console.info('result', result);
+    })
 
     this.updateUser();
   }
@@ -651,7 +657,7 @@ export class BookAppoinmentNowComponent implements OnInit {
             ]
           },
 
-          
+
           {
             type: 'checkbox', caption: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)',
             label: 'Blood clot in a vein (Venous Thrombosis)',
@@ -808,8 +814,8 @@ export class BookAppoinmentNowComponent implements OnInit {
 
           let hiddenFields: any = [
             {type: 'input', name: 'doctor_id', value: response.data._id, hidden: true},
-            {type: 'input', name: 'doctor_office_id', value: response.data.doctor_office_id, hidden: true},
-            {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
+            {type: 'input', name: 'doctor_office_id', value: this.userDetails._id, hidden: true},
+            // {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
             {type: 'input', name: 'parent_type', value: response.data.parent_type, hidden: true},
             {type: 'input', name: 'parent_id', value: response.data.parent_id, hidden: true},
           ]
@@ -825,6 +831,41 @@ export class BookAppoinmentNowComponent implements OnInit {
     this.snackBar.open(message, action, {
       duration: 3000,
     });
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ChooseDoctorDialog, {
+      width: '500px',
+      data: 'abc'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+
+    });
+  }
+
+}
+
+
+
+// Choose doctor modal
+@Component({
+  selector: 'choose-doctor',
+  templateUrl: 'choose-doctor.html',
+})
+export class ChooseDoctorDialog {
+
+  public selectedDoctor;
+
+  foods = []
+  constructor(public dialogRef: MatDialogRef<ChooseDoctorDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

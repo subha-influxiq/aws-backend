@@ -21,7 +21,8 @@ const moment = momentImported;
 
 export class DoctorDashboardComponent implements OnInit {
 
-  public authData: any = {};
+  public authData: any = {
+  };
   public allResolveData: any;
   public htmlText: any = {
     buttonText: "Add One",
@@ -50,29 +51,30 @@ export class DoctorDashboardComponent implements OnInit {
     all_details: { user_type: "" }
   };
   public header:any;
+  public allData:any;
 
   constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService,
     public http: HttpServiceService, public activatedRoute: ActivatedRoute, public matSnackBar: MatSnackBar,
     public deviceService: DeviceDetectorService) {
-
-    this.authData["user_details"] = JSON.parse(cookie.get('user_details'));
+    this.allData = cookie.getAll();
+    this.authData = JSON.parse(this.allData.user_details);
     this.authData["jwtToken"] = cookie.get('jwtToken');
 
-    if(typeof(this.authData.user_details.diagnostic_admin_id) != 'undefined') {
+    if(typeof(this.authData.diagnostic_admin_id) != 'undefined') {
       this.htmlText.signFlag = false;
-      this.data={_id_object:this.authData.user_details.diagnostic_admin_id};
+      this.data={_id_object:this.authData.diagnostic_admin_id};
       this.header={name:"Diagnostic Admin Name"};
     }
 
-    if(typeof(this.authData.user_details.distributor_id) != 'undefined') {
+    if(typeof(this.authData.distributor_id) != 'undefined') {
       this.htmlText.signFlag = false;
-      this.data={_id_object:this.authData.user_details.distributor_id};
+      this.data={_id_object:this.authData.distributor_id};
       this.header={name:"Distributor Name"};
     }
 
-    if(typeof(this.authData.user_details.doctorgroup_id) != 'undefined') {
+    if(typeof(this.authData.doctorgroup_id) != 'undefined') {
       this.htmlText.signFlag = false;
-      this.data={_id_object:this.authData.user_details.doctorgroup_id};
+      this.data={_id_object:this.authData.doctorgroup_id};
       this.header={name:"Doctor Group Name"};
     }
 
@@ -122,7 +124,7 @@ export class DoctorDashboardComponent implements OnInit {
           "condition": {
             "report_type": { $exists: true },
             "doctor_signature": { $exists: true },
-            "doctor_id": this.authData.user_details._id
+            "doctor_id": this.authData._id
           },
           "pagination": {
             "skip": 0,
@@ -139,7 +141,7 @@ export class DoctorDashboardComponent implements OnInit {
           "condition": {
             "report_type": { $exists: true },
             "doctor_signature": { $exists: false },
-            "doctor_id": this.authData.user_details._id
+            "doctor_id": this.authData._id
           },
           "pagination": {
             "skip": 0,
@@ -154,7 +156,7 @@ export class DoctorDashboardComponent implements OnInit {
           "search": this.searchJson,
           "condition": {
             "report_type": { $exists: true },
-            "doctor_id": this.authData.user_details._id
+            "doctor_id": this.authData._id
           },
           "pagination": {
             "skip": 0,
@@ -211,15 +213,15 @@ export class DoctorDashboardComponent implements OnInit {
 
     /* Set downloader information */
     var userDetails = {
-      id: this.authData.user_details._id,
-      type: this.authData.user_details.type
+      id: this.authData._id,
+      type: this.authData.type
     };
 
     let postData: any = {
       "source": "report_download",
       "data": {
         "report_id": report._id,
-        "biller_id": this.authData.user_details._id,
+        "biller_id": this.authData._id,
         "tech_id": report.tech_id,
         "doctor_id": report.doctor_id,
         "ip": this.htmlText.ip,
@@ -252,7 +254,7 @@ export class DoctorDashboardComponent implements OnInit {
     let postData: any = {
       source: "data_pece",
       condition: {
-        doctor_id: this.authData.user_details._id
+        doctor_id: this.authData._id
       }
     };
 

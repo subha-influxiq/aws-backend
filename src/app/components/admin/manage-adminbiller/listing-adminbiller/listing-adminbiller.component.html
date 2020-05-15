@@ -18,13 +18,13 @@
 
     <mat-toolbar class="add_header">
       <ng-container *ngIf="userData.user_type == 'admin'">
-        <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Doctor</span>
+        <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Admin Biller</span>
         <button mat-flat-button [routerLink]="['/admin/adminbiller-management/add']">Add Admin Biller</button>
       </ng-container>
 
       <ng-container *ngIf="userData.user_type == 'diagnostic_admin'">
         <span class="bradcrumb"><a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Admin Biller</span>
-        <button mat-flat-button [routerLink]="['/diagnostic-admin/doctor-management/add']">Add Doctor</button>
+        <button mat-flat-button [routerLink]="['/diagnostic-admin/doctor-management/add']">Add Admin Biller</button>
       </ng-container>
     </mat-toolbar>
     <!-- End header with add button -->
@@ -34,7 +34,7 @@
       [modify_header_array]="docData_modify_header" [sourcedata]="tableName" [detail_skip_array]="previewModal_skip"
       [apiurl]="apiUrl" [editroute]="editUrl" [jwttoken]="user_cookie" [statusarr]="status"
       [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="searchingEndpoint"
-      [date_search_source]="searchSourceName" [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection" [date_search_source_count]="docData_count" [limitcond]="limitcond">
+      [date_search_source]="searchSourceName" [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection" [date_search_source_count]="docData_count" [limitcond]="limitcond" [libdata]="libdata">
 
     </lib-listing>
 

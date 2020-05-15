@@ -3,6 +3,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonFunction } from '../../../class/common/common-function';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { J } from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-admin-header',
@@ -16,12 +17,13 @@ export class AdminHeaderComponent implements OnInit {
   public user_data: any = {};
   public loader: boolean = true;
   public user_cookie:any;
+  public user_details:any;
 
   constructor(public cookies: CookieService, public router: Router, public commonFunction: CommonFunction) {
     window.scroll(0, 0);
-    let allData: any = {};
-    allData = this.cookies.getAll();
-    this.user_data = JSON.parse(allData.user_details);
+    let user_details: any = {};
+    let allData = this.cookies.getAll();
+    this.user_details = JSON.parse(allData.user_details);
     this.user_cookie = cookies.get('jwtToken');
   }
 

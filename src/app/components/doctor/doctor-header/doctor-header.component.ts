@@ -12,7 +12,8 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 export class DoctorHeaderComponent implements OnInit {
 
   public toggleStatus:boolean = false;
-  public user_data: any = {};
+  public user_data: any = {
+  };
 
   public loader: boolean = true;
   public user_cookie:any;

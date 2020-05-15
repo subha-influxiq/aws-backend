@@ -1,18 +1,18 @@
 <!-- Admin Header -->
-<app-admin-header *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-header>
+<app-admin-header *ngIf="htmlText.user_details.user_type == 'admin'"></app-admin-header>
 
 <!-- Diagnostic Admin Header -->
-<app-diagnostic-admin-header *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+<app-diagnostic-admin-header *ngIf="htmlText.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
 
 <!-- Doctor Group Header -->
-<app-doctor-group-header *ngIf="htmlText.userData.user_details.user_type == 'doctor_group'"></app-doctor-group-header>
+<app-doctor-group-header *ngIf="htmlText.user_details.user_type == 'doctor_group'"></app-doctor-group-header>
 
 <!-- Distributor Admin Header -->
 <app-distributors-header
-*ngIf="htmlText.userData.user_details.user_type == 'distributors'"></app-distributors-header>
+*ngIf="htmlText.user_details.user_type == 'distributors'"></app-distributors-header>
 
 <!-- Doctor Header -->
-<app-doctor-header *ngIf="htmlText.userData.user_details.user_type == 'doctor'"></app-doctor-header>
+<app-doctor-header *ngIf="htmlText.user_details.user_type == 'doctor'"></app-doctor-header>
 
 
 <!-- header with add button -->
@@ -24,7 +24,7 @@
 
   <span class="add_header">
 
-    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+    <ng-container *ngIf="htmlText.user_details.user_type == 'admin'">
       <span class="bradcrumb">
         <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
         <a [routerLink]="['/admin/doctor-management']">Manage Doctor &nbsp;/</a> &nbsp;
@@ -32,7 +32,7 @@
       </span>
     </ng-container>
 
-    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+    <ng-container *ngIf="htmlText.user_details.user_type == 'diagnostic_admin'">
       <span class="bradcrumb">
         <a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
         <a [routerLink]="['/diagnostic-admin/doctor-management']">Manage Doctor &nbsp;/</a> &nbsp;
@@ -40,7 +40,7 @@
       </span>
     </ng-container>
 
-    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'distributors'">
+    <ng-container *ngIf="htmlText.user_details.user_type == 'distributors'">
       <span class="bradcrumb">
         <a [routerLink]="['/distributors/dashboard']">Dashboard &nbsp;/</a> &nbsp;
         <a [routerLink]="['/distributors/doctor-management']">Manage Doctor &nbsp;/</a> &nbsp;
@@ -48,7 +48,7 @@
       </span>
     </ng-container>
 
-    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'doctor_group'">
+    <ng-container *ngIf="htmlText.user_details.user_type == 'doctor_group'">
       <span class="bradcrumb">
         <a [routerLink]="['/doctor-group/dashboard']">Dashboard &nbsp;/</a> &nbsp;
         <a [routerLink]="['/doctor-group/doctor-management']">Manage Doctor &nbsp;/</a> &nbsp;
@@ -203,6 +203,63 @@
         </mat-form-field>
         <!-- Address End -->
 
+
+        <!-- parent type Start -->
+        <mat-form-field class="parent_cat" appearance="fill">
+          <mat-label>Parent Type</mat-label>
+
+          <mat-select formControlName="parent_type" (selectionChange)="getParentData($event.value);">
+            <mat-option [value]="">Select Parent Type</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_type;" value="{{ parent.name }}">{{ parent.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- Parent Type End -->
+
+
+        <!-- Parent Name Start -->
+        <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'DiagnosticAdmin'">
+          <mat-label>Select Parent Name</mat-label>
+          <mat-select formControlName="parent_id">
+            <mat-option [value]="">Select Parent Name</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_id;" value="{{ parent._id }}" (click)="getalldata(parent)">{{ parent.center_name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Parent Name name -->
+
+
+        <!-- Parent Name Start -->
+        <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'DoctorGroup'">
+          <mat-label>Select Parent Name</mat-label>
+          <mat-select formControlName="parent_id">
+            <mat-option [value]="">Select Parent Name</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_id;" value="{{ parent._id }}" (click)="getalldata(parent)">{{ parent.groupname }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Parent Name name -->
+
+
+        <!-- Parent Name Start -->
+        <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'Distributor'">
+          <mat-label>Select Parent Name</mat-label>
+          <mat-select formControlName="parent_id" >
+            <mat-option [value]="">Select Parent Name</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_id;" value="{{ parent._id }}" (click)="getalldata(parent)">{{ parent.distributorname }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Parent Name name -->
+
+
+        <!-- Parent Name Start -->
+        <!-- <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'Admin'">
+          <mat-label>Select Parent Name</mat-label>
+          <mat-select formControlName="parent_id">
+            <mat-option [value]="">Select Parent Name</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_id;" value="{{ parent._id }}">{{ parent.distributorname }}</mat-option>
+          </mat-select>
+        </mat-form-field> -->
+        <!-- Parent Name name -->
+
         <!-- State Start -->
         <mat-form-field class="parent_cat" appearance="fill">
           <mat-label>State</mat-label>
@@ -234,7 +291,7 @@
         <!-- City End -->
 
         <!-- Tech Details Start -->
-        <mat-form-field appearance="fill" *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+        <mat-form-field appearance="fill">
           <mat-label>Select Tech</mat-label>
           <mat-select formControlName="tech_id" multiple>
             <mat-option [value]="">Select Tech</mat-option>
@@ -244,24 +301,24 @@
         <!-- Tech Details name -->
 
         <!-- Biller Details Start -->
-        <!-- <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill">
           <mat-label>Select Biiler</mat-label>
           <mat-select formControlName="biller_id" multiple>
             <mat-option [value]="">Select a biiler</mat-option>
             <mat-option *ngFor="let biller of htmlText.billerData;" value="{{ biller._id }}">{{ biller.firstname }} {{ biller.lastname }}</mat-option>
           </mat-select>
-        </mat-form-field> -->
+        </mat-form-field>
         <!-- Biller Details End -->
 
         <!-- Doctor's Office Start -->
-        <!-- <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill">
           <mat-label>Select Doctor's Office</mat-label>
-          <mat-select formControlName="doctors_office_id">
+          <mat-select formControlName="doctors_office_id" multiple>
             <mat-option [value]="">Select Doctor's Office</mat-option>
             <mat-option *ngFor="let doctorOfficeData of htmlText.doctorOfficeData;" value="{{ doctorOfficeData._id }}">{{ doctorOfficeData.firstname }} {{ doctorOfficeData.lastname }}
             </mat-option>
           </mat-select>
-        </mat-form-field> -->
+        </mat-form-field>
         <!-- Doctor's Office End -->
 
         <!-- Zip Start -->
@@ -310,16 +367,16 @@
         </span>
 
         <span class="submit_form">
-          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+          <ng-container *ngIf="htmlText.user_details.user_type == 'admin'">
             <button mat-flat-button type="button" [routerLink]="['/admin/doctor-management']"> Back</button>
           </ng-container>
-          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+          <ng-container *ngIf="htmlText.user_details.user_type == 'diagnostic_admin'">
             <button mat-flat-button type="button" [routerLink]="['/diagnostic-admin/doctor-management']">Back </button>
           </ng-container>
-          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'distributors'">
+          <ng-container *ngIf="htmlText.user_details.user_type == 'distributors'">
             <button mat-flat-button type="button" [routerLink]="['/distributors/doctor-management']">Back </button>
           </ng-container>
-          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'doctor_group'">
+          <ng-container *ngIf="htmlText.user_details.user_type == 'doctor_group'">
             <button mat-flat-button type="button" [routerLink]="['/doctor-group/doctor-management']">Back </button>
           </ng-container>
 

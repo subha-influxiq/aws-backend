@@ -57,8 +57,8 @@ export class CommonFunction {
         let getToken: boolean = this.cookie.check('jwtToken');
 
         if (getToken) {
-            let allcookies: any = this.cookie.getAll();
-            let userData = JSON.parse(allcookies.user_details);
+            let allData: any = this.cookie.getAll();
+            let userData: any = JSON.parse(allData.user_details);
             switch (urlArr[1]) {
                 case 'Doctor Office':
                     title = title + '| ' + userData.centerName + ' - AWS Backend';

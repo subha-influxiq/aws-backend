@@ -11,10 +11,12 @@ import { environment } from '../../../../environments/environment';
 export class LoginComponent implements OnInit {
 
   public logo: any = './assets/images/logo.png';
+  public ipinfoid = '9797c42b93078a';
   public fromTitle: any = "Login Here";    // This is a From Title
   public fullUrl: any = environment.apiBaseUrl;  // server url
   public endpoint: any = "login";
   public buttonName: any = 'Login Button';
+  public defaultLoginUrl = '/login';
 
   public signUpRouteingUrl: any = {
     "path": "",
@@ -39,47 +41,66 @@ export class LoginComponent implements OnInit {
       "data": [
         {
           "user_type": "admin",
-          "routerNav": "admin/dashboard"
+          "routerNav": "admin/dashboard",
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',firstname: 'firstname',lastname: 'lastname',user_details:'user_details'}
         },
         {
           "user_type": "doctor",
-          "routerNav": "doctor/dashboard"
+          "routerNav": "doctor/dashboard",
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',tech_id:"tech_id",parent_type:"parent_type",firstname: 'firstname',lastname: 'lastname',user_details:"user_details"}
         },
         {
           "user_type": "tech",
-          "routerNav": "tech/dashboard"
+          "routerNav": "tech/dashboard",
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',
+          user_details:"user_details"}
         },
         {
           "user_type": "biller",
-          "routerNav": "biller/dashboard"
+          "routerNav": "biller/dashboard",
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',user_details:"user_details"}
         },
         {
           "user_type": "doctor_office",
-          "routerNav": "doctor-office/dashboard"
+          "routerNav": "doctor-office/dashboard",
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',
+          user_details:"user_details"}
         },
         {
           "user_type": "diagnostic_admin",
-          "routerNav": "diagnostic-admin/dashboard"
+          "routerNav": "diagnostic-admin/dashboard",
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',
+          user_details:"user_details"}
         },
         {
           "user_type": "doctor_group",
-          "routerNav": "doctor-group/dashboard"
+          "routerNav": "doctor-group/dashboard",
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwttoken:'jwttoken',
+          user_details:"user_details"}
         },
         {
           "user_type": "sales_person",
-          "routerNav": "sales-person/dashboard"
+          "routerNav": "sales-person/dashboard",
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',
+          user_details:"user_details"}
         },
         {
           "user_type": "doctor_group",
-          "routerNav": "doctor-group/dashboard"
+          "routerNav": "doctor-group/dashboard",
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',
+          user_details:"user_details"}
         },
         {
           "user_type": "distributors",
-          "routerNav": "distributors/dashboard"
+          "routerNav": "distributors/dashboard",
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',
+          user_details:"user_details"}
         },
         {
           "user_type": "admin_biller",
-          "routerNav": "admin-biller/dashboard"
+          "routerNav": "admin-biller/dashboard",
+          cookies: {_id:'_id',user_type:"user_type", useremail:'email',jwtToken:'jwttoken',
+          user_details:"user_details"}
         }
       ]
     }

@@ -131,7 +131,7 @@ const routes: Routes = [
   /********** Auth Route Start **********/
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
