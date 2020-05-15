@@ -209,7 +209,7 @@
           <mat-label>Parent Type</mat-label>
 
           <mat-select formControlName="parent_type" (selectionChange)="getParentData($event.value);">
-            <mat-option [value]="">Select Parent Type</mat-option>
+            <mat-option [value]="admin">Select Parent Type</mat-option>
             <mat-option *ngFor="let parent of htmlText.parent_type;" value="{{ parent.name }}">{{ parent.name }}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -264,7 +264,8 @@
         <mat-form-field class="parent_cat" appearance="fill">
           <mat-label>State</mat-label>
 
-          <mat-select formControlName="state" (selectionChange)="getCity($event.value);">
+          <!-- <mat-select formControlName="state" (selectionChange)="getCity($event.value);"> -->
+            <mat-select formControlName="state">
             <mat-option [value]="">Select State</mat-option>
             <mat-option *ngFor="let state of htmlText.states;" value="{{ state.name }}">{{ state.name }}</mat-option>
           </mat-select>
@@ -276,7 +277,7 @@
         <!-- State End -->
 
         <!-- City Start -->
-        <mat-form-field class="parent_cat" appearance="fill">
+        <!-- <mat-form-field class="parent_cat" appearance="fill">
           <mat-label>City</mat-label>
 
           <mat-select formControlName="city">
@@ -287,7 +288,20 @@
           <mat-error *ngIf="doctorManagementAddEditForm.controls['city'].touched && !doctorManagementAddEditForm.controls['city'].valid && doctorManagementAddEditForm.controls['city'].errors.required">
             State required.
           </mat-error>
+        </mat-form-field> -->
+
+        
+         <mat-form-field appearance="fill">
+          <mat-label>City</mat-label>
+          
+          <input matInput placeholder="City" formControlName="city" (blur)="inputUntouch(doctorManagementAddEditForm,'city')">
+          
+          <mat-error *ngIf="doctorManagementAddEditForm.controls['npi'].touched && !doctorManagementAddEditForm.controls['city'].valid && doctorManagementAddEditForm.controls['city'].errors.required">
+            City required.
+          </mat-error>
         </mat-form-field>
+      
+
         <!-- City End -->
 
         <!-- Tech Details Start -->
@@ -380,9 +394,10 @@
             <button mat-flat-button type="button" [routerLink]="['/doctor-group/doctor-management']">Back </button>
           </ng-container>
 
-          <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset</button>
+          <!-- <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset</button> -->
           <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
-          <button mat-flat-button type="button" *ngIf="params_id != ''" (click)="openDialog('')"> Change Password </button>
+
+          <button mat-flat-button type="button"  (click)="openDialog('')"> Change Password </button> 
         </span>
 
       </form>
