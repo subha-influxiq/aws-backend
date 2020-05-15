@@ -153,20 +153,21 @@
 .table_structure .mat-list-item .mat-list-item-content { display: flex; flex-direction: column!important; }
 .patient_report_section  .mat-form-field-appearance-outline .mat-form-field-wrapper { margin: 0!important; padding-bottom: 0; }
 .patient_report_section  .mat-form-field-appearance-outline .mat-form-field-infix { padding: 1em 0 1em 0; margin: 0; border: 0;}
-.table_wrapper h2{ font-size: 20px;
-  color: #ff0000;
-  font-family: 'AvenirMedium';
-  text-transform: capitalize;
-  text-align: center;}
+.table_wrapper h2{ font-size: 20px; color: #ff0000; font-family: 'AvenirMedium'; text-transform: capitalize; text-align: center;}
 .DataTable table th.mat-header-cell { text-align: left;  font-family: "AvenirMedium";  font-size: 16px; }
+ table th.mat-header-cell span { display: flex; justify-content: space-between; align-items: center;}
 .DataTable table th.mat-header-cell:last-of-type{ width: auto; min-width: 150px;}
 /* .faq-management table th.mat-header-cell:last-of-type{ width: 14%;} */
 
 .DataTable table td.mat-cell{  font-family: "AvenirRoman"; padding-right: 8px; }
+.tablewrapper table td span .cursor,
 .DataTable table td span .cursor{cursor: pointer; display: inline-block; background: var(--button-color2);
 margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
+.tablewrapper table td span .cursor .material-icons,
 .DataTable table td span .cursor .material-icons{ font-size: 18px;}
+.tablewrapper table td span .cursor:nth-child(2),
 .DataTable table td span .cursor:nth-child(2){ background: #ff5370;}
+.tablewrapper table td span .cursor:nth-child(3),
 .DataTable table td span .cursor:nth-child(3){ background: var(--button-color1);}
 .DataTable table td span .cursor:nth-last-child(1){ border-right: none; background: var(--button-color3); }
 .DataTable .searchbar { padding: 0;}
