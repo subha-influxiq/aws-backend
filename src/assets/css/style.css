@@ -212,8 +212,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .bradcrumb{ display: block; font-family: 'AvenirLight'; font-size: 16px;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
 .container .searchbar span{ display: flex; justify-content: space-between; }
-.container .searchbar .pad-gap{ margin: 0;}
-.container .searchbar .mat-form-field{margin-right: 10px;}
+ 
 .container .searchbar .add_button { background: var(--button-color3); font-family: 'AvenirRoman'; font-size: 16px;
 color: #fff; text-transform: uppercase;}
 
@@ -224,7 +223,7 @@ color: #fff; text-transform: uppercase;}
   margin-bottom: 20px;
   box-shadow: 0px 2px 2px #c5c5c5;
   padding-bottom: 16px!important; position: relative; }
-  .searchbar .mat-form-field{  width: 32%;}
+  .searchbar .mat-form-field{ width: 32.3%; margin: 0 0.5%!important;}
  .searchbar .cursor{ width: 35px;
   border-radius: 50%;
   background: var(--button-color2);
@@ -235,13 +234,13 @@ color: #fff; text-transform: uppercase;}
   align-items: center;
   color: #fff;
   margin:0 10px;}
-
+  .pad-gap{ margin: inherit!important;}
 .searchbar .mat-form-field .mat-form-field-flex {
   display: inline-flex;
   align-items: baseline;
   box-sizing: border-box;
   width: 100%;
-  border: .5px solid #424242;
+  border: .5px solid #bdbdbd;
   border-radius: 4px;
   padding: 0px 10px 5px;
 }
@@ -283,7 +282,8 @@ color: #fff; text-transform: uppercase;}
 .patient_item_section .mat-tab-label { opacity: 1; background: #000; color: #ffff; font-size: 14px; text-transform: uppercase; font-family: "AvenirBlack"; padding: 5px 16px; }
 .patient_item_section .mat-tab-label:nth-child(2){ margin: 0 8px; }
 .patient_item_section .mat-tab-label:nth-child(4){ margin: 0 8px; }
-.mat-tab-label.mat-tab-label-active { background-color:#0298dc!important; }
+.mat-tab-label.mat-tab-label-active { background-color:#0298dc!important; opacity: 1!important;
+  color: #ffff; }
 .patient_item_section .mat-tab-group.mat-primary .mat-ink-bar {
   background-color: transparent;
 }
@@ -673,3 +673,16 @@ border-bottom: 2px solid; padding-bottom: 8px;}
   width: 32% !important;
 }
 /**********************************/
+
+.db_title{
+  font-family: 'AvenirMedium';
+  font-size: 20px; color: #535353;
+  text-transform: capitalize; border-bottom: 1px solid #a5a5a5;
+  padding-bottom: 10px;
+}
+.app_list .mat-card{
+  padding: 0!important;
+}
+.app_list .mat-card .searchbar {
+  padding: 0;
+}
