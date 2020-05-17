@@ -576,6 +576,75 @@ const routes: Routes = [
   /* Doctor Group Management */
 
   {
+    path: 'distributors/doctor-office-management',
+    component: DoctorOfficeManagementComponent, canActivate: [AuthguardService],
+  },
+  {
+    path: 'distributors/doctor-office-management/add',
+    component: AddEditDoctorOfcComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'distributors/doctor-office-management/edit/:_id',
+    component: AddEditDoctorOfcComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+
+  {
+    path: 'diagnostic-admin/doctor-office-management',
+    component: DoctorOfficeManagementComponent, canActivate: [AuthguardService],
+  },
+  {
+    path: 'diagnostic-admin/doctor-office-management/add',
+    component: AddEditDoctorOfcComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'diagnostic-admin/doctor-office-management/edit/:_id',
+    component: AddEditDoctorOfcComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+
+  {
+    path: 'doctor-group/doctor-office-management',
+    component: DoctorOfficeManagementComponent, canActivate: [AuthguardService],
+  },
+  {
+    path: 'doctor-group/doctor-office-management/add',
+    component: AddEditDoctorOfcComponent,
+    canActivate: [AuthguardService]
+  },
+  {
+    path: 'doctor-group/doctor-office-management/edit/:_id',
+    component: AddEditDoctorOfcComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+
+  {
     path: 'admin/doctor-office-management',
     component: DoctorOfficeManagementComponent, canActivate: [AuthguardService],
   },

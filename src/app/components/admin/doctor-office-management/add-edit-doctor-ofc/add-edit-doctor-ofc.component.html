@@ -7,6 +7,12 @@
 <!-- Doctor Header -->
 <app-doctor-header *ngIf="htmlText.user_details.user_type == 'doctor'"></app-doctor-header>
 
+<!-- Doctor Group Header -->
+<app-doctor-group-header *ngIf="htmlText.user_details.user_type == 'doctor_group'"></app-doctor-group-header>
+
+<!-- Distributor Header -->
+<app-doctor-group-header *ngIf="htmlText.user_details.user_type == 'distributors'"></app-doctor-group-header>
+
 
 
 
@@ -16,12 +22,46 @@
     {{ htmlText.header }}
   </mat-card-content>
   <span class="add_header">
-
-    <span class="bradcrumb">
-      <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
-      <a [routerLink]="['/admin/doctor-office-management']">Manage Doctor-Office &nbsp;/</a> &nbsp;
+    <ng-container *ngIf="htmlText.user_details.user_type == 'admin'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/admin/dashboard']"> Dashboard &nbsp;/</a> &nbsp;
+      <a [routerLink]="['/admin/doctor-office-management']"> Manage Doctor's Office &nbsp;/</a> &nbsp;
       {{ htmlText.nav }}
-    </span>
+      </span>
+    </ng-container>
+
+    <ng-container *ngIf="htmlText.user_details.user_type == 'diagnostic_admin'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/diagnostic-admin/doctor-office-management']"> Manage Doctor's Office &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
+
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'doctor_group'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/doctor-group/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/doctor-group/doctor-office-management']">Manage Doctor's Office &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
+    <ng-container *ngIf="htmlText.user_details.user_type == 'distributors`'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/distributors/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/distributors/doctor-office-management']">Manage Doctor's Office &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
+    <ng-container *ngIf="htmlText.user_details.user_type == 'doctor'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/doctor/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/doctor/doctor-office-management']"> Manage Doctor's Office &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
   </span>
 
   <mat-card class="add_form">
@@ -148,6 +188,52 @@
           </mat-error>
         </mat-form-field>
         <!-- Address End -->
+
+        <!-- parent type Start -->
+        <mat-form-field class="parent_cat" appearance="fill" *ngIf = "htmlText.user_details.user_type == 'admin'">
+          <mat-label>Parent Type</mat-label>
+
+          <mat-select formControlName="parent_type" (selectionChange)="getParentData($event.value);">
+            <mat-option [value]="admin">Select Parent Type</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_type;" value="{{ parent.name }}">{{ parent.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- Parent Type End -->
+
+
+        <!-- Parent Name Start -->
+        <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'DiagnosticAdmin'">
+          <mat-label>Select Parent Name</mat-label>
+          <mat-select formControlName="parent_id">
+            <mat-option [value]="">Select Parent Name</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_id;" value="{{ parent._id }}" >{{ parent.center_name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Parent Name name -->
+
+
+        <!-- Parent Name Start -->
+        <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'DoctorGroup'">
+          <mat-label>Select Parent Name</mat-label>
+          <mat-select formControlName="parent_id">
+            <mat-option [value]="">Select Parent Name</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_id;" value="{{ parent._id }}" >{{ parent.groupname }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Parent Name name -->
+
+
+        <!-- Parent Name Start -->
+        <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'Distributor'">
+          <mat-label>Select Parent Name</mat-label>
+          <mat-select formControlName="parent_id" >
+            <mat-option [value]="">Select Parent Name</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_id;" value="{{ parent._id }}" >{{ parent.distributorname }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Parent Name name -->
+
 
         <!-- State Start -->
         <mat-form-field class="parent_cat" appearance="fill">

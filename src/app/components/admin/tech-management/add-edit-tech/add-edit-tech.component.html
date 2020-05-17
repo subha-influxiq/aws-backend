@@ -162,6 +162,52 @@
         </mat-form-field>
         <!-- Address End -->
 
+        <!-- parent type Start -->
+        <mat-form-field class="parent_cat" appearance="fill" *ngIf = "htmlText.userData.user_details.user_type == 'admin'">
+          <mat-label>Parent Type</mat-label>
+
+          <mat-select formControlName="parent_type" (selectionChange)="getParentData($event.value);">
+            <mat-option [value]="admin">Select Parent Type</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_type;" value="{{ parent.name }}">{{ parent.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- Parent Type End -->
+
+
+        <!-- Parent Name Start -->
+        <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'DiagnosticAdmin'">
+          <mat-label>Select Parent Name</mat-label>
+          <mat-select formControlName="parent_id">
+            <mat-option [value]="">Select Parent Name</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_id;" value="{{ parent._id }}" >{{ parent.center_name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Parent Name name -->
+
+
+        <!-- Parent Name Start -->
+        <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'DoctorGroup'">
+          <mat-label>Select Parent Name</mat-label>
+          <mat-select formControlName="parent_id">
+            <mat-option [value]="">Select Parent Name</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_id;" value="{{ parent._id }}" >{{ parent.groupname }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Parent Name name -->
+
+
+        <!-- Parent Name Start -->
+        <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'Distributor'">
+          <mat-label>Select Parent Name</mat-label>
+          <mat-select formControlName="parent_id" >
+            <mat-option [value]="">Select Parent Name</mat-option>
+            <mat-option *ngFor="let parent of htmlText.parent_id;" value="{{ parent._id }}" >{{ parent.distributorname }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Parent Name name -->
+
+
         <!-- State Start -->
         <mat-form-field class="parent_cat" appearance="fill">
           <mat-label>State</mat-label>

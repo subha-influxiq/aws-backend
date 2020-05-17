@@ -118,7 +118,7 @@ export class ListDoctorComponent implements OnInit {
 
     if(this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/doctor-management/edit';
-      this.field = {'diagnostic_admin_id':this.userData._id};
+      this.field = {'parent_id':this.userData._id};
       this.data = this.userData._id;
     }
 
@@ -131,12 +131,12 @@ export class ListDoctorComponent implements OnInit {
 
     if(this.userData.user_type == 'doctor_group') {
       this.editUrl = 'doctor-group/doctor-management/edit';
-      this.field = {'doctorgroup_id':this.userData._id};
+      this.field = {'parent_id':this.userData._id};
       this.data = this.userData._id;
     }
     if(this.userData.user_type == 'distributors') {
       this.editUrl = 'distributors/doctor-management/edit';
-      this.field = {'distributors_id':this.userData._id};
+      this.field = {'parent_id':this.userData._id};
       this.data = this.userData._id;
     }
 
@@ -164,13 +164,13 @@ export class ListDoctorComponent implements OnInit {
     }
    
     if(this.userData.user_type == 'diagnostic_admin') {
-      this.fetch={'diagnostic_admin_id':  this.data}
+      this.fetch={'parent_id':  this.data}
     }
     if(this.userData.user_type == 'doctor_group') {
-      this.fetch={'doctorgroup_id':  this.data}
+      this.fetch={'parent_id':  this.data}
     }
     if(this.userData.user_type == 'distributors') {
-      this.fetch={'distributor_id':  this.data}
+      this.fetch={'parent_id':  this.data}
     }
     data.data = this.fetch;
     console.log('2222',data);
