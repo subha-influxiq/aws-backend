@@ -411,7 +411,7 @@ export class AddeditDoctorComponent implements OnInit {
       var postData: any = {
         "source": "data_pece",
         "data": this.doctorManagementAddEditForm.value,
-        "sourceobjArray": ["tech_id","biller_id","doctor_office_id"],
+        "sourceobjArray": ["tech_id","biller_id","doctors_office_id"],
         "token": this.cookieService.get('jwtToken')
       };
 
