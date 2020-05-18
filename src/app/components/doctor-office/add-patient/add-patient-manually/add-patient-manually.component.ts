@@ -1926,7 +1926,7 @@ export class AddPatientManuallyComponent implements OnInit {
           }
         ];
 
-        let calendarInfoFormFields = [
+        let calendarInfoFormFields: any = [
           {
             type: 'input',
             name: 'event_title',
@@ -1997,11 +1997,42 @@ export class AddPatientManuallyComponent implements OnInit {
 
 
         this.httpRequestService.postRequest('get-doctor-info', {condition: {_id: this.userDetails.doctor_id}}).subscribe((response:any) => {
+          let tech_ids = [];
+          for (let i = 0; i < response.data.tech_ids.id.length; i++) {
+            let temp = {};
+            temp['text'] = response.data.tech_ids.firstname[i] + ' ' + response.data.tech_ids.lastname[i];
+            temp['value'] = response.data.tech_ids.id[i];
+            temp['child_of'] = response.data._id;
+            tech_ids.push(temp);
+            console.log('tech_ids', tech_ids);
+          }
+
+          console.log('tech_ids', tech_ids);
+          calendarInfoFormFields.push(
+            {
+              type: 'select',
+              name: 'doctor_id',
+              placeholder: 'Select Doctor',
+              label: 'Doctor Name',
+              value: '',
+              options: [{text: response.data.firstname + ' ' + response.data.lastname,
+                          value: response.data._id}]
+            },
+            {
+            type: 'select',
+            name: 'tech_id',
+            placeholder: 'Select Tech',
+            label: 'Tech Name',
+            value: '',
+            isDependent: true,
+            dependentOn: 'doctor_id',
+            options: tech_ids
+          });
 
           let hiddenFields: any = [
-            {type: 'input', name: 'doctor_id', value: response.data._id, hidden: true},
+            // {type: 'input', name: 'doctor_id', value: response.data._id, hidden: true},
             {type: 'input', name: 'doctor_office_id', value: response.data.doctor_office_id, hidden: true},
-            {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
+            // {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
             {type: 'input', name: 'parent_type', value: response.data.parent_type, hidden: true},
             {type: 'input', name: 'parent_id', value: response.data.parent_id, hidden: true},
           ]
