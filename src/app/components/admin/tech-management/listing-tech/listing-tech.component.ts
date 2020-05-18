@@ -52,7 +52,9 @@ export class ListingTechComponent implements OnInit {
     "lastname": "Last Name",
     "email": "Email",
     "status": "Status",
-    "phone": "Phone Number"
+    "phone": "Phone Number",
+    "parent_name" : "Parent Name",
+    "parent_type" : "Parent Type"
   };
   public previewModal_detail_skip: any = [
     "_id",
@@ -86,7 +88,7 @@ export class ListingTechComponent implements OnInit {
 };
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status },{ label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }],
+      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status },{ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type }],
       textsearch: [{ label: "Search By Name", field: 'name_search' },
       { label: "Search By E-Mail", field: 'email' },{ label: "Search By Parent Name", field: 'parent_search' }],
 
