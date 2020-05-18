@@ -1257,9 +1257,12 @@ export class AddPatientManuallyComponent implements OnInit {
 
   public resolveData;
   public userDetails: any;
+  public headerFlag: any;
+  public loader: boolean = false;
 
   constructor(public activatedRoute: ActivatedRoute, public cookieService: CookieService,
               public snackBar: MatSnackBar, public httpRequestService: HttpServiceService) {
+                this.headerFlag = this.activatedRoute.snapshot.url[0].path;
   }
 
 

@@ -209,7 +209,7 @@
           <mat-label>Parent Type</mat-label>
 
           <mat-select formControlName="parent_type">
-            <mat-option [value]="admin">Select Parent Type</mat-option>
+            <mat-option value="admin">Select Parent Type</mat-option>
             <mat-option *ngFor="let parent of htmlText.parent_type;" value="{{ parent.value }}" (click)="getParentData(parent.name)">{{ parent.name }}</mat-option>
           </mat-select>
         </mat-form-field>
