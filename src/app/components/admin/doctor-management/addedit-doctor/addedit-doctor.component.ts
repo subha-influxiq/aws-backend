@@ -33,8 +33,8 @@ export class AddeditDoctorComponent implements OnInit {
     doctorOfficeData: [],
     techData: [],
     parent_type: [{
-      name: "Distributor"
-    }, { name: "DiagnosticAdmin" }, { name: "DoctorGroup" }],
+      name: "Distributor",value:"distributor"
+    }, { name: "DiagnosticAdmin",value:"diagnostic_admin" }, { name: "DoctorGroup",value:"doctor_group" }],
     parent_id: [],
     billerData: [],
     states: "",
@@ -55,7 +55,12 @@ export class AddeditDoctorComponent implements OnInit {
     this.allStateCityData();
     // this.getAllData();
     // this.f();
-    this.getalldata();
+    
+    if(this.htmlText.user_details.user_type !='admin') {
+      this.getalldata(this.htmlText.user_details);
+    } else {
+      this.getalldata();
+    }
 
     if (this.acivatedRoute.snapshot.params._id) {
       this.generateAddEditForm('edit');
@@ -68,6 +73,7 @@ export class AddeditDoctorComponent implements OnInit {
     } else {
       this.generateAddEditForm('add');
     }
+    
   }
 
   ngOnInit() {
@@ -385,8 +391,6 @@ export class AddeditDoctorComponent implements OnInit {
   }
 
   doctorManagementAddEditFormSubmit() {
-    console.log('2222222222222');
-    let Data = Object.keys(this.doctorManagementAddEditForm.value)
     for (let x in this.doctorManagementAddEditForm.controls) {
       this.doctorManagementAddEditForm.controls[x].markAsTouched();
     }
@@ -403,11 +407,11 @@ export class AddeditDoctorComponent implements OnInit {
 
 
       /* start process to submited data */
+      
       var postData: any = {
         "source": "data_pece",
         "data": this.doctorManagementAddEditForm.value,
-        "domainurl": environment.siteBaseUrl + 'reset-password',
-        "sourceobjArray": [Data[14], Data[15], Data[16]],
+        "sourceobjArray": ["tech_id","biller_id","doctor_office_id"],
         "token": this.cookieService.get('jwtToken')
       };
 
@@ -431,7 +435,6 @@ export class AddeditDoctorComponent implements OnInit {
         postData["sourceobj"] = ["parent_id"];
         postData["sourceobjArray"] = ["tech_id"];
       }
-
       this.http.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
         if (response.status == "success") {
           this.snackBar.open(this.htmlText.message, 'Ok', {

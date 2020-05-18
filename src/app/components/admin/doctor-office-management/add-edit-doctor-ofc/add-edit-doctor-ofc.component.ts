@@ -25,6 +25,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
 
   public doctorOfficeAddEditForm: FormGroup;
   public params_id: any;
+  public selectionChangeValue: any;
   public htmlText: any = {
     userData: "",
     header: 'Add New Doctor Office', 
@@ -34,6 +35,9 @@ export class AddEditDoctorOfcComponent implements OnInit {
     doctorOfficeData: "",
     techData: "",
     billerData: "",
+    parent_type: [{
+      name: "Distributor"
+    }, { name: "DiagnosticAdmin" }, { name: "DoctorGroup" }],
     states: "",
     allCities: "",
     cities: "",
@@ -49,7 +53,11 @@ export class AddEditDoctorOfcComponent implements OnInit {
       this.htmlText.userData = this.cookieService.getAll();
       console.log(this.htmlText.userData.user_type);
       this.htmlText.user_details = JSON.parse(this.htmlText.userData.user_details);
+      if(this.htmlText.user_details.user_type == 'admin') {
       this.getAllTechData();
+      } else {
+       this.getAllTechData(this.htmlText.user_details._id);
+      }
       this.allStateCityData();
       
       if (this.acivatedRoute.snapshot.params._id) {
@@ -77,6 +85,8 @@ export class AddEditDoctorOfcComponent implements OnInit {
       zip:                    ['', [ Validators.required, Validators.minLength(4), Validators.maxLength(18) ]],
       city:                   ['', [ Validators.required ]],
       tech_id:                [null, [ Validators.required ]],
+      parent_type: ['admin',[]],
+      parent_id: ['', []],
       state:                  ['', [ Validators.required ]],
       user_type:              ['doctor_office', []],
       status:                 ['', []],
@@ -107,7 +117,16 @@ export class AddEditDoctorOfcComponent implements OnInit {
           this.doctorOfficeAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
           this.doctorOfficeAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
           this.doctorOfficeAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
-          this.doctorOfficeAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
+          this.doctorOfficeAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);// this.getCity(doctorDetails[0].state);
+          this.getParentData(doctorDetails[0].parent_type);
+          //  this.getCity(doctorDetails[0].state);
+          // this.getCityByName(doctorDetails[0].state);
+          setTimeout(() => {
+            // getCityByName
+            
+            this.doctorOfficeAddEditForm.controls['parent_type'].patchValue(doctorDetails[0].parent_type);
+            this.doctorOfficeAddEditForm.controls['parent_id'].patchValue(doctorDetails[0].parent_id);
+          }, 2000);
           this.doctorOfficeAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
           this.doctorOfficeAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
         });
@@ -168,19 +187,73 @@ export class AddEditDoctorOfcComponent implements OnInit {
   }
 
   /**getting all the technician data**/
-  getAllTechData() {
+  getAllTechData(id:any='') {
     console.log(">>>>>", this.htmlText.user_details);
 
     var data = {
       "source": "data_pece",
       "condition": {
         "user_type": "tech",
-        "tech_id": this.htmlText.user_details.tech_id
+        "tech_id": this.htmlText.user_details.tech_id,
+        "parent_id_object":id
       },
       "token": this.htmlText.userData.jwtToken
     };
-    this.httpService.httpViaPost('doctor-add-tech-list', data).subscribe(response => {
+    this.httpService.httpViaPost('datalist', data).subscribe(response => {
       this.htmlText.techData = response.res;
+    });
+  }
+
+  /**getting all the Parent data**/
+
+
+  getParentData(id: any = '') {
+    var billerData = id;
+    this.selectionChangeValue = billerData;
+    console.log('1111', billerData);
+    if (billerData == 'DiagnosticAdmin') {
+      // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+      var data = {
+        "source": "data_pece",
+        "condition": {
+          "user_type": "diagnostic_admin"
+        },
+        "token": this.htmlText.userData.jwtToken,
+      }
+    }
+
+    if (billerData == 'Distributor') {
+      // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+      var data = {
+        "source": "data_pece",
+        "condition": {
+          "user_type": "distributors"
+        },
+        "token": this.htmlText.userData.jwtToken,
+      }
+    }
+
+    if (billerData == 'DoctorGroup') {
+      // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+      var data = {
+        "source": "data_pece",
+        "condition": {
+          "user_type": "doctor_group"
+        },
+        "token": this.htmlText.userData.jwtToken,
+      }
+    }
+
+    // if(this.htmlText.user_details.user_type == 'distributors') {
+    //   data['distributor_id_object'] = this.htmlText.userData.user_details._id;
+    // }
+
+    this.httpService.httpViaPost('datalist', data).subscribe(response => {
+      // console.log('+++++++++',response);
+      this.htmlText.parent_id = response.res;
+      // this.htmlText.parent_id = response;
+      // this.htmlText.doctorOfficeData = response.data.doctor_office_data;
+      // this.htmlText.billerData = response.data.biller_data;
     });
   }
 
@@ -208,6 +281,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
         "source": "data_pece",
         "data": this.doctorOfficeAddEditForm.value,
         "domainurl": environment.siteBaseUrl + 'reset-password',
+        "sourceobj":["parent_id"],
         "sourceobjArray": ["tech_id"],
         "token": this.cookieService.get('jwtToken')
       };

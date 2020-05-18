@@ -28,11 +28,15 @@ export class AddEditBillerComponent implements OnInit {
   public states: any;
   public allCities: any;
   public cities: any;
+  public selectionChangeValue: any;
   public htmlText: any = { 
     header: 'Add New Biller', 
     nav: 'Add Biller', 
     buttonText: 'Save',
-    userData: ''
+    userData: '',
+    parent_type: [{
+      name: "Distributor"
+    }, { name: "DiagnosticAdmin" }, { name: "DoctorGroup" }],
   };
   public params_id: any;
   public message: any = "Submitted Successfully";
@@ -76,6 +80,8 @@ export class AddEditBillerComponent implements OnInit {
       city:           ['', [ Validators.required ]],
       state:          ['', [ Validators.required ]],
       user_type:      ['biller', []],
+      parent_type: ['admin'],
+      parent_id: ['', []],
       status:         ['', []],
       password:       ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: ['', []],
@@ -101,7 +107,16 @@ export class AddEditBillerComponent implements OnInit {
           this.billerManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
           this.billerManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
           this.billerManagementAddEditForm.controls['company_name'].patchValue(billerDetails[0].company_name);
-          this.billerManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address);
+          this.billerManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address);// this.getCity(doctorDetails[0].state);
+          this.getParentData(billerDetails[0].parent_type);
+          //  this.getCity(doctorDetails[0].state);
+          // this.getCityByName(doctorDetails[0].state);
+          setTimeout(() => {
+            // getCityByName
+            
+            this.billerManagementAddEditForm.controls['parent_type'].patchValue(billerDetails[0].parent_type);
+            this.billerManagementAddEditForm.controls['parent_id'].patchValue(billerDetails[0].parent_id);
+          }, 2000);
           this.billerManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
           this.billerManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
           this.billerManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
@@ -156,6 +171,59 @@ export class AddEditBillerComponent implements OnInit {
     this.cities = this.allCities[stateName];
   }
 
+  /**getting all the Parent data**/
+
+
+  getParentData(id: any = '') {
+    var billerData = id;
+    this.selectionChangeValue = billerData;
+    console.log('1111', billerData);
+    if (billerData == 'DiagnosticAdmin') {
+      // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+      var data = {
+        "source": "data_pece",
+        "condition": {
+          "user_type": "diagnostic_admin"
+        },
+        "token": this.htmlText.userData.jwtToken,
+      }
+    }
+
+    if (billerData == 'Distributor') {
+      // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+      var data = {
+        "source": "data_pece",
+        "condition": {
+          "user_type": "distributors"
+        },
+        "token": this.htmlText.userData.jwtToken,
+      }
+    }
+
+    if (billerData == 'DoctorGroup') {
+      // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+      var data = {
+        "source": "data_pece",
+        "condition": {
+          "user_type": "doctor_group"
+        },
+        "token": this.htmlText.userData.jwtToken,
+      }
+    }
+
+    // if(this.htmlText.user_details.user_type == 'distributors') {
+    //   data['distributor_id_object'] = this.htmlText.userData.user_details._id;
+    // }
+
+    this.httpService.httpViaPost('datalist', data).subscribe(response => {
+      // console.log('+++++++++',response);
+      this.htmlText.parent_id = response.res;
+      // this.htmlText.parent_id = response;
+      // this.htmlText.doctorOfficeData = response.data.doctor_office_data;
+      // this.htmlText.billerData = response.data.biller_data;
+    });
+  }
+
   openDialog(x: any): void {
     this.dialogRef = this.dialog.open(ChangePasswordModal, {
       data: { message: x, 'id': this.params_id }
@@ -180,14 +248,15 @@ export class AddEditBillerComponent implements OnInit {
       var data: any = {
         "source": "data_pece",
         "data": this.billerManagementAddEditForm.value,
+        "sourceobj":["parent_id"],
         "token": this.htmlText.userData.jwtToken,
         "domainurl" : environment.siteBaseUrl + 'reset-password'
       };
 
       if(this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
-        data.data["diagnostic_admin_id"] = this.htmlText.userData.user_details._id;
+        data.data["parent_id"] = this.htmlText.userData.user_details._id;
         data.data["parent_type"] = "diagnostic_admin"
-        data["sourceobj"] = ["diagnostic_admin_id"];
+        data["sourceobj"] = ["parent_id"];
       }
 
       if(this.htmlText.userData.user_details.user_type == 'doctor') {
@@ -196,21 +265,15 @@ export class AddEditBillerComponent implements OnInit {
       }
 
       if(this.htmlText.userData.user_details.user_type == 'doctor_group') {
-        data.data["doctorgroup_id"] = this.htmlText.userData.user_details._id;
+        data.data["parent_id"] = this.htmlText.userData.user_details._id;
         data.data["parent_type"] = "doctor_group"
-        data["sourceobj"] = ["doctorgroup_id"];
+        data["sourceobj"] = ["parent_id"];
       }
 
       if(this.htmlText.userData.user_details.user_type == 'distributors') {
-        data.data["distributor_id"] = this.htmlText.userData.user_details._id;
+        data.data["parent_id"] = this.htmlText.userData.user_details._id;
         data.data["parent_type"] = "distributor"
-        data["sourceobj"] = ["distributor_id"];
-      }
-
-      if(this.htmlText.userData.user_details.user_type == 'admin') {
-        data.data["admin_id"] = this.htmlText.userData.user_details._id;
-        data.data["parent_type"] = "admin";
-        data["sourceobj"] = ["admin_id"];
+        data["sourceobj"] = ["parent_id"];
       }
     
       this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {

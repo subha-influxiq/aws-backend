@@ -383,7 +383,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-admin-header></app-admin-header>\n\n<mat-card class=\"admin_wrapper\">\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br> Major Doctors</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_biller }}</h4>\n        <p class=\"doctorNumber\">Total Number of<br> Billers</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_tech }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br>Techs</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <!-- Doctor occide related -->\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/doctorOffice.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Doctor's Office</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Diagnostic Admin</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Doctors</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n  </mat-card-content>\n\n  <!-- Doctor other related -->\n  <mat-card-content class=\"content_wrapper\">\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/salesPerson.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }} </h4>\n        <p class=\"doctorNumber\">Total Number of<br> Sales Person</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Appointments<br> Pending</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/calenderAppointment.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Appointments<br> Completed</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <!-- Report Status Section Start -->\n  <mat-card-content class=\"admin_superbillsection\">\n    <h1>Physician Reports Status</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Manual Records\n          </p>\n          <h2> {{ allResolveData.total_reports_type_manual }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Total Manual Reports');\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            File Records\n          </p>\n          <h2> {{ allResolveData.total_reports_type_file }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Total File Reports');\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n  <!-- Report Status Section End -->\n\n\n  <mat-card-content class=\"admin_superbillsection\">\n    <h1>Physician Report Process Status</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Images Not Processed\n          </p>\n          <h2> {{ allResolveData.total_pdf_to_images_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Images Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Basic Details Not Processed\n          </p>\n          <h2> {{ allResolveData.total_basic_details_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Basic Details Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item \">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Risk Markers Not Processed\n          </p>\n          <h2> {{ allResolveData.total_code_not_exists }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Risk Markers Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n\n\n  <mat-card-content class=\"admin_superbillsection superbillerContainer\">\n    <h1>Physician Report and Super Bills</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports Added\n          </p>\n          <h2> {{ allResolveData.total_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Processed\n          </p>\n          <h2> {{ allResolveData.total_reports - allResolveData.total_pdf_to_images_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Signed\n          </p>\n          <h2> {{ allResolveData.total_sign_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Sent to <br>\n            Biller\n          </p>\n          <h2> {{ allResolveData.total_send_to_supar_biller_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Super Bill')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Downloaded </p>\n          <h2> {{ allResolveData.total_reports_download }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Download Bill')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Pending Sing </p>\n          <h2> {{ allResolveData.total_not_sign_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Reports Pending Sing')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n  </mat-card-content>\n\n\n\n  <!-- All Data listing start here(default listing) -->\n  <mat-card-content class=\"table_wrapper\">\n\n    <mat-toolbar class=\"top_header\">\n      <h2> {{ htmlText.headerText }} </h2>\n      <span class=\"wrappp_R\">\n        <button class=\"add_new tooltip\" mat-button routerLink=\"/admin/patient-management/add\" matTooltip=\"Add Report\"\n          matTooltipPosition=\"above\">\n          <!-- <span class=\"tooltiptext\"> Add Report </span> -->\n          <i class=\"material-icons\">add</i> Add Report Manually\n        </button>\n\n\n        <button class=\"add_new tooltip\" mat-button (click)=\"refreshDashboard();\" matTooltipPosition=\"above\"\n          matTooltip=\"ReportRefresh Dashboard\">\n          <!-- <span class=\"tooltiptext\"> Refresh Dashboard </span> -->\n          <i class=\"material-icons\">cached</i>\n        </button>\n      </span>\n    </mat-toolbar>\n\n    <mat-toolbar *ngIf=\"allResolveData.tableDataFlag == true\" class=\"action_bar\">\n      <mat-form-field>\n        <input matInput placeholder=\"Search by Doctor\" [(ngModel)]=\"searchJson.doctorName\">\n      </mat-form-field>\n\n      <mat-form-field>\n        <input matInput placeholder=\"Search by Patient\" [(ngModel)]=\"searchJson.patientName\">\n      </mat-form-field>\n\n      <mat-form-field class=\"parent_cat\">\n        <mat-select [(ngModel)]=\"searchJson.status\">\n          <mat-option value=\"\">Select a status</mat-option>\n          <mat-option value=\"waiting for doctor sign\">Waiting For Doctor Sign</mat-option>\n          <mat-option value=\"doctor signed\">Doctor Signed</mat-option>\n          <mat-option value=\"send to biller\">Send To Biller</mat-option>\n          <mat-option value=\"error\">Error</mat-option>\n          <mat-option value=\"pending\">Pending</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <!-- Filter by date -->\n      <ng-container>\n        <span class=\"date-range\">\n          <mat-form-field>\n            <input matInput placeholder=\"Choose a date\" [satDatepicker]=\"picker\" [(ngModel)]=\"searchJson.dateRange\" />\n            <sat-datepicker #picker [rangeMode]=\"true\"></sat-datepicker>\n            <sat-datepicker-toggle matSuffix [for]=\"picker\"></sat-datepicker-toggle>\n          </mat-form-field>\n        </span>\n        <span class=\"resetButton_w\">\n          <button mat-raised-button type=\"button\" class=\"add_button tooltip\"\n            (click)=\"viewReportProcessData(htmlText.headerText);\">\n            <span class=\"tooltiptext\"> Search </span>\n            <i class=\"material-icons\">search</i>\n          </button>\n\n          <button mat-raised-button type=\"button\" class=\"add_button tooltip\" (click)=\"resetSearch();\">\n            <span class=\"tooltiptext\"> Reset </span>\n            <i class=\"material-icons\">replay</i>\n          </button>\n        </span>\n      </ng-container>\n\n    </mat-toolbar>\n\n    <table mat-table [dataSource]=\"allDataSource\" class=\"mat-elevation-z8 adminTables\">\n      <ng-container matColumnDef=\"no\">\n        <th mat-header-cell *matHeaderCellDef> No. </th>\n        <td mat-cell *matCellDef=\"let element; let i = index;\" data-label=\"No.\"> {{ i + 1 }}. </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"patientName\">\n        <th mat-header-cell *matHeaderCellDef> Patient Name </th>\n        <td mat-cell *matCellDef=\"let element\" data-label=\"Patient Name\"> {{ element.patient_name }} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"doctorName\">\n        <th mat-header-cell *matHeaderCellDef> Doctor Name </th>\n        <td mat-cell *matCellDef=\"let element\" data-label=\"Doctor Name\" innerHTML=\"{{ element.doctor_details }}\"> </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"techName\">\n        <th mat-header-cell *matHeaderCellDef> Tech Name </th>\n        <td mat-cell *matCellDef=\"let element\" data-label=\"Tech Name\"> {{ element.tech_name }} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"billerName\" *ngIf=\"htmlText.headerText != 'Patient Reports'\">\n        <th mat-header-cell *matHeaderCellDef> Biller Name </th>\n        <td mat-cell *matCellDef=\"let element\" data-label=\"Biller Name\"> {{ element.biller_name }} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"date_of_birth\" *ngIf=\"htmlText.headerText == 'Basic Details Not Processed'\">\n        <th mat-header-cell *matHeaderCellDef> Date of birth </th>\n        <td mat-cell *matCellDef=\"let element\" data-label=\"Date of Birth\"> {{ element.birth_date }} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"gender\" *ngIf=\"htmlText.headerText == 'Basic Details Not Processed'\">\n        <th mat-header-cell *matHeaderCellDef> Gender </th>\n        <td mat-cell *matCellDef=\"let element\" data-label=\"Gender\"> {{ element.gender }} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"test_date\" *ngIf=\"htmlText.headerText == 'Basic Details Not Processed'\">\n        <th mat-header-cell *matHeaderCellDef> Test Date </th>\n        <td mat-cell *matCellDef=\"let element\" data-label=\"Test Date\"> {{ element.test_date }} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"bmi\" *ngIf=\"htmlText.headerText == 'Basic Details Not Processed'\">\n        <th mat-header-cell *matHeaderCellDef> BMI </th>\n        <td mat-cell *matCellDef=\"let element\" data-label=\"BMI\"> {{ element.BMI }} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"billGenerationDate\" *ngIf=\"htmlText.headerText != 'Patient Reports'\">\n        <th mat-header-cell *matHeaderCellDef> Bill Generation Date </th>\n        <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Generation Date\">\n          {{ element.bill_generation_date | date }} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"billSentDate\" *ngIf=\"htmlText.headerText != 'Patient Reports'\">\n        <th mat-header-cell *matHeaderCellDef> Bill Sent Date </th>\n        <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Sent Date\"> {{ element.bill_sent_date | date }} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"reportType\">\n        <th mat-header-cell *matHeaderCellDef> Record Type </th>\n        <td mat-cell *matCellDef=\"let element\" data-label=\"Record Type\"> {{ element.report_type }} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"superBill\" *ngIf=\"htmlText.headerText != 'Patient Reports'\">\n        <th mat-header-cell *matHeaderCellDef> Super Bill</th>\n        <td mat-cell *matCellDef=\"let element\" data-label=\"Super Bill\"> {{ element.super_bill }} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"status\">\n        <th mat-header-cell *matHeaderCellDef> Status</th>\n        <td mat-cell *matCellDef=\"let element\" data-label=\"Status\">\n          <ng-container *ngIf=\"element.report_type == 'file' && !element.images\">Data Processing</ng-container>\n\n          <ng-container *ngIf=\"element.report_type == 'manual' || (element.report_type == 'file' && element.images)\">\n            {{ element.status }} </ng-container>\n        </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"createdAt\">\n        <th mat-header-cell *matHeaderCellDef> Created At</th>\n        <td mat-cell *matCellDef=\"let element\" data-label=\"created_at\"> {{ element.created_at | date }} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"editRecord\">\n        <th mat-header-cell *matHeaderCellDef> Action </th>\n        <td mat-cell *matCellDef=\"let element; let i = index;\">\n          <span class=\"buttons_ro\">\n\n            <button mat-button type=\"button\"\n              *ngIf=\"element.report_type == 'manual' || (element.report_type == 'file' && element.images)\"\n              class=\"viewButton tooltip\" type=\"button\" [routerLink]=\"['/admin/patient-record', element._id]\">\n              <span class=\"tooltiptext\">View</span>\n              <i class=\"material-icons\">search</i>\n            </button>\n\n            <button mat-button type=\"button\" *ngIf=\"htmlText.headerText == 'Download Bill'\" class=\"viewButton tooltip\"\n              type=\"button\" (click)=\"viewDownloadDetails(element._id);\">Details</button>\n\n            <button mat-button type=\"button\"\n              *ngIf=\"element.status == 'Downloaded' && element.report_type == 'manual' || (element.report_type == 'file' && element.images)\"\n              class=\"editButton tooltip\" [routerLink]=\"['/admin/patient-record/edit', element._id]\">\n              <span class=\"tooltiptext\">Edit</span>\n              <i class=\"material-icons\">create</i>\n            </button>\n\n            <button mat-button type=\"button\" *ngIf=\"element.report_type == 'file' && !element.images\"\n              class=\"editButton downloadBtn tooltip\">\n              <span class=\"tooltiptext\">Processing</span>\n              <i class=\"material-icons\">cached</i>\n            </button>\n\n            <button mat-button type=\"button\" *ngIf=\"element.status != 'Pending Signature'\"\n              class=\"editButton downloadBtn tooltip\" (click)=\"downloadReport(element);\">\n              <span class=\"tooltiptext\">Download</span>\n              <i class=\"material-icons\">cloud_download</i>\n            </button>\n\n            <button mat-button type=\"button\" class=\"editButton downloadBtn tooltip\"\n              (click)=\"deleteReport(element._id, i);\">\n              <span class=\"tooltiptext\">Delete</span>\n              <i class=\"material-icons\">delete</i>\n            </button>\n            <button mat-button type=\"button\" class=\"editButton tooltip\" >\n              <span class=\"tooltiptext\">Notes</span>\n              <i class=\"material-icons\">comment</i>\n            </button>\n\n          </span>\n        </td>\n      </ng-container>\n\n      <tr mat-header-row *matHeaderRowDef=\"allDataColumns\"></tr>\n      <tr mat-row *matRowDef=\"let row; columns: allDataColumns;let i = index\"></tr>\n    </table>\n    <mat-toolbar class=\"footer_action\">\n      <button mat-raised-button type=\"button\" color=\"primary\" (click)=\"pagination('prev');\">Prev</button>\n      <button mat-raised-button type=\"button\" color=\"primary\" (click)=\"pagination('next');\">Next</button>\n    </mat-toolbar>\n  </mat-card-content>\n  <!-- dashboard all listing end here -->\n</mat-card>\n\n<app-admin-footer></app-admin-footer>";
+    __webpack_exports__["default"] = "<app-admin-header></app-admin-header>\n\n<mat-card class=\"admin_wrapper\">\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br> Major Doctors</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_biller }}</h4>\n        <p class=\"doctorNumber\">Total Number of<br> Billers</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_tech }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br>Techs</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <!-- Doctor occide related -->\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/doctorOffice.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Doctor's Office</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Diagnostic Admin</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Doctors</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n  </mat-card-content>\n\n  <!-- Doctor other related -->\n  <mat-card-content class=\"content_wrapper\">\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/salesPerson.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }} </h4>\n        <p class=\"doctorNumber\">Total Number of<br> Sales Person</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Appointments<br> Pending</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/calenderAppointment.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Appointments<br> Completed</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <!-- Report Status Section Start -->\n  <mat-card-content class=\"admin_superbillsection\">\n    <h1>Physician Reports Status</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Manual Records\n          </p>\n          <h2> {{ allResolveData.total_reports_type_manual }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Total Manual Reports');\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            File Records\n          </p>\n          <h2> {{ allResolveData.total_reports_type_file }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Total File Reports');\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n  <!-- Report Status Section End -->\n\n\n  <mat-card-content class=\"admin_superbillsection\">\n    <h1>Physician Report Process Status</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Images Not Processed\n          </p>\n          <h2> {{ allResolveData.total_pdf_to_images_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Images Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Basic Details Not Processed\n          </p>\n          <h2> {{ allResolveData.total_basic_details_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Basic Details Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item \">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Risk Markers Not Processed\n          </p>\n          <h2> {{ allResolveData.total_code_not_exists }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Risk Markers Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n\n\n  <mat-card-content class=\"admin_superbillsection superbillerContainer\">\n    <h1>Physician Report and Super Bills</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports Added\n          </p>\n          <h2> {{ allResolveData.total_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Processed\n          </p>\n          <h2> {{ allResolveData.total_reports - allResolveData.total_pdf_to_images_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Signed\n          </p>\n          <h2> {{ allResolveData.total_sign_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Sent to <br>\n            Biller\n          </p>\n          <h2> {{ allResolveData.total_send_to_supar_biller_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Super Bill')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Downloaded </p>\n          <h2> {{ allResolveData.total_reports_download }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Download Bill')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Pending Sing </p>\n          <h2> {{ allResolveData.total_not_sign_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Reports Pending Sing')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n  </mat-card-content>\n\n\n\n  <!-- All Data listing start here(default listing) -->\n  <mat-card-content class=\"table_wrapper\">\n\n    <mat-toolbar class=\"top_header\">\n      <h2> {{ htmlText.headerText }} </h2>\n      <span class=\"wrappp_R\">\n        <button class=\"add_new tooltip\" mat-button routerLink=\"/admin/patient-management/add\" matTooltip=\"Add Report\"\n          matTooltipPosition=\"above\">\n          <!-- <span class=\"tooltiptext\"> Add Report </span> -->\n          <i class=\"material-icons\">add</i> Add Report Manually\n        </button>\n\n\n        <button class=\"add_new tooltip\" mat-button (click)=\"refreshDashboard();\" matTooltipPosition=\"above\"\n          matTooltip=\"ReportRefresh Dashboard\">\n          <!-- <span class=\"tooltiptext\"> Refresh Dashboard </span> -->\n          <i class=\"material-icons\">cached</i>\n        </button>\n      </span>\n    </mat-toolbar>\n\n    <mat-toolbar *ngIf=\"allResolveData.tableDataFlag == true\" class=\"action_bar\">\n      <mat-form-field>\n        <input matInput placeholder=\"Search by Doctor\" [(ngModel)]=\"searchJson.doctorName\">\n      </mat-form-field>\n\n      <mat-form-field>\n        <input matInput placeholder=\"Search by Patient\" [(ngModel)]=\"searchJson.patientName\">\n      </mat-form-field>\n\n      <mat-form-field class=\"parent_cat\">\n        <mat-select [(ngModel)]=\"searchJson.status\">\n          <mat-option value=\"\">Select a status</mat-option>\n          <mat-option value=\"waiting for doctor sign\">Waiting For Doctor Sign</mat-option>\n          <mat-option value=\"doctor signed\">Doctor Signed</mat-option>\n          <mat-option value=\"send to biller\">Send To Biller</mat-option>\n          <mat-option value=\"error\">Error</mat-option>\n          <mat-option value=\"pending\">Pending</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <!-- Filter by date -->\n      <ng-container>\n        <span class=\"date-range\">\n          <mat-form-field>\n            <input matInput placeholder=\"Choose a date\" [satDatepicker]=\"picker\" [(ngModel)]=\"searchJson.dateRange\" />\n            <sat-datepicker #picker [rangeMode]=\"true\"></sat-datepicker>\n            <sat-datepicker-toggle matSuffix [for]=\"picker\"></sat-datepicker-toggle>\n          </mat-form-field>\n        </span>\n        <span class=\"resetButton_w\">\n          <button mat-raised-button type=\"button\" class=\"add_button tooltip\"\n            (click)=\"viewReportProcessData(htmlText.headerText);\">\n            <span class=\"tooltiptext\"> Search </span>\n            <i class=\"material-icons\">search</i>\n          </button>\n\n          <button mat-raised-button type=\"button\" class=\"add_button tooltip\" (click)=\"resetSearch();\">\n            <span class=\"tooltiptext\"> Reset </span>\n            <i class=\"material-icons\">replay</i>\n          </button>\n        </span>\n      </ng-container>\n\n    </mat-toolbar>\n    <mat-card-content class=\"tablewrapper\">\n      <table mat-table [dataSource]=\"allDataSource\" class=\"mat-elevation-z8 adminTables\">\n        <ng-container matColumnDef=\"no\">\n          <th mat-header-cell *matHeaderCellDef> No. </th>\n          <td mat-cell *matCellDef=\"let element; let i = index;\" data-label=\"No.\"> {{ i + 1 }}. </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"patientName\">\n          <th mat-header-cell *matHeaderCellDef> Patient Name </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Patient Name\"> {{ element.patient_name }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"doctorName\">\n          <th mat-header-cell *matHeaderCellDef> Doctor Name </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Doctor Name\" innerHTML=\"{{ element.doctor_details }}\">\n          </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"techName\">\n          <th mat-header-cell *matHeaderCellDef> Tech Name </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Tech Name\"> {{ element.tech_name }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"billerName\" *ngIf=\"htmlText.headerText != 'Patient Reports'\">\n          <th mat-header-cell *matHeaderCellDef> Biller Name </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Biller Name\"> {{ element.biller_name }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"date_of_birth\" *ngIf=\"htmlText.headerText == 'Basic Details Not Processed'\">\n          <th mat-header-cell *matHeaderCellDef> Date of birth </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Date of Birth\"> {{ element.birth_date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"gender\" *ngIf=\"htmlText.headerText == 'Basic Details Not Processed'\">\n          <th mat-header-cell *matHeaderCellDef> Gender </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Gender\"> {{ element.gender }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"test_date\" *ngIf=\"htmlText.headerText == 'Basic Details Not Processed'\">\n          <th mat-header-cell *matHeaderCellDef> Test Date </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Test Date\"> {{ element.test_date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"bmi\" *ngIf=\"htmlText.headerText == 'Basic Details Not Processed'\">\n          <th mat-header-cell *matHeaderCellDef> BMI </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"BMI\"> {{ element.BMI }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"billGenerationDate\" *ngIf=\"htmlText.headerText != 'Patient Reports'\">\n          <th mat-header-cell *matHeaderCellDef> Bill Generation Date </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Generation Date\">\n            {{ element.bill_generation_date | date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"billSentDate\" *ngIf=\"htmlText.headerText != 'Patient Reports'\">\n          <th mat-header-cell *matHeaderCellDef> Bill Sent Date </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Sent Date\"> {{ element.bill_sent_date | date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"reportType\">\n          <th mat-header-cell *matHeaderCellDef> Record Type </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Record Type\"> {{ element.report_type }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"superBill\" *ngIf=\"htmlText.headerText != 'Patient Reports'\">\n          <th mat-header-cell *matHeaderCellDef> Super Bill</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Super Bill\"> {{ element.super_bill }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"status\">\n          <th mat-header-cell *matHeaderCellDef> Status</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Status\">\n            <ng-container *ngIf=\"element.report_type == 'file' && !element.images\">Data Processing</ng-container>\n\n            <ng-container *ngIf=\"element.report_type == 'manual' || (element.report_type == 'file' && element.images)\">\n              {{ element.status }} </ng-container>\n          </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"createdAt\">\n          <th mat-header-cell *matHeaderCellDef> Created At</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"created_at\"> {{ element.created_at | date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"editRecord\">\n          <th mat-header-cell *matHeaderCellDef> Action </th>\n          <td mat-cell *matCellDef=\"let element; let i = index;\">\n            <span class=\"buttons_ro\">\n\n              <button mat-button type=\"button\"\n                *ngIf=\"element.report_type == 'manual' || (element.report_type == 'file' && element.images)\"\n                class=\"viewButton tooltip\" type=\"button\" [routerLink]=\"['/admin/patient-record', element._id]\">\n                <span class=\"tooltiptext\">View</span>\n                <i class=\"material-icons\">search</i>\n              </button>\n\n              <button mat-button type=\"button\" *ngIf=\"htmlText.headerText == 'Download Bill'\" class=\"viewButton tooltip\"\n                type=\"button\" (click)=\"viewDownloadDetails(element._id);\">Details</button>\n\n              <button mat-button type=\"button\"\n                *ngIf=\"element.status == 'Downloaded' && element.report_type == 'manual' || (element.report_type == 'file' && element.images)\"\n                class=\"editButton tooltip\" [routerLink]=\"['/admin/patient-record/edit', element._id]\">\n                <span class=\"tooltiptext\">Edit</span>\n                <i class=\"material-icons\">create</i>\n              </button>\n\n              <button mat-button type=\"button\" *ngIf=\"element.report_type == 'file' && !element.images\"\n                class=\"editButton downloadBtn tooltip\">\n                <span class=\"tooltiptext\">Processing</span>\n                <i class=\"material-icons\">cached</i>\n              </button>\n\n              <button mat-button type=\"button\" *ngIf=\"element.status != 'Pending Signature'\"\n                class=\"editButton downloadBtn tooltip\" (click)=\"downloadReport(element);\">\n                <span class=\"tooltiptext\">Download</span>\n                <i class=\"material-icons\">cloud_download</i>\n              </button>\n\n              <button mat-button type=\"button\" class=\"editButton downloadBtn tooltip\"\n                (click)=\"deleteReport(element._id, i);\">\n                <span class=\"tooltiptext\">Delete</span>\n                <i class=\"material-icons\">delete</i>\n              </button>\n              <button mat-button type=\"button\" class=\"editButton tooltip\">\n                <span class=\"tooltiptext\">Notes</span>\n                <i class=\"material-icons\">comment</i>\n              </button>\n\n            </span>\n          </td>\n        </ng-container>\n\n        <tr mat-header-row *matHeaderRowDef=\"allDataColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: allDataColumns;let i = index\"></tr>\n      </table>\n    </mat-card-content>\n    <mat-toolbar class=\"footer_action\">\n      <button mat-raised-button type=\"button\" color=\"primary\" (click)=\"pagination('prev');\">Prev</button>\n      <button mat-raised-button type=\"button\" color=\"primary\" (click)=\"pagination('next');\">Next</button>\n    </mat-toolbar>\n  </mat-card-content>\n  <!-- dashboard all listing end here -->\n</mat-card>\n\n<app-admin-footer></app-admin-footer>";
     /***/
   },
 
@@ -463,7 +463,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n  <mat-card-content class=\"header_wrapper\">\n    <span class=\"logo_wrapper\" [routerLink]=\"[ '/admin/dashboard' ]\">\n      <img src=\"../../../assets/images/logo.png\">\n    </span>\n\n    <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n    <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\">\n      <mat-nav-list>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/admin/dashboard']\"> Dashboard </a>\n        \n        <!-- Drop down menu -->\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"userMenu\"> Users Management \n          <i class=\"material-icons\">keyboard_arrow_down</i>\n        </a>\n        <mat-menu #userMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/admin/doctor-management']\" routerLinkActive=\"active\"> Manage Doctor </button>\n          <button mat-menu-item [routerLink]=\"['/admin/biller-management']\" routerLinkActive=\"active\"> Manage Biller </button>\n          <button mat-menu-item [routerLink]=\"['/admin/tech-management']\" routerLinkActive=\"active\"> Manage Tech </button>\n          <button mat-menu-item [routerLink]=\"['/admin/admin-management']\" routerLinkActive=\"active\"> Manage Admin </button>\n          <button mat-menu-item [routerLink]=\"['/admin/doctor-office-management']\" routerLinkActive=\"active\"> Doctors Office </button>\n          <button mat-menu-item [routerLink]=\"['/admin/diagnostic-admin-management']\" routerLinkActive=\"active\"> Diagnostic Admin </button>\n          <button mat-menu-item [routerLink]=\"['/admin/sales-person-management']\" routerLinkActive=\"active\"> Sales Person </button>\n          <button mat-menu-item [routerLink]=\"['/admin/doctor-management/group']\" routerLinkActive=\"active\"> Doctors Group </button>\n          <button mat-menu-item [routerLink]=\"['/admin/adminbiller-management']\" routerLinkActive=\"active\">Biller Admin</button>\n          <button mat-menu-item [routerLink]=\"['/admin/distributors-management']\" routerLinkActive=\"active\">Manage Distributor</button>\n        </mat-menu>\n\n        \n        <!-- Drop down menu -->\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"insurance\"> Insurance Management\n          <i class=\"material-icons\">keyboard_arrow_down</i>\n        </a>\n        <mat-menu #insurance=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/admin/insurance-management']\" routerLinkActive=\"active\"> Manage Insurance </button>\n          <button mat-menu-item [routerLink]=\"['/admin/insurance-type-management']\" routerLinkActive=\"active\"> Manage Insurance Type </button>\n        </mat-menu>\n\n\n        <a mat-list-item [routerLink]=\"['/admin/booked-appoinments']\" routerLinkActive=\"active\"> Booked Appointments</a>\n\n        <a mat-list-item [routerLink]=\"['/admin/patientinformation-management']\" routerLinkActive=\"active\"> Manage PatientInformation</a>\n        <a mat-list-item [routerLink]=\"['/admin/faq-management']\" routerLinkActive=\"active\"> FAQ Management</a>\n        <a mat-list-item [routerLink]=\"['/admin/faq']\" routerLinkActive=\"active\"> FAQ</a>\n\n      </mat-nav-list>\n    </mat-card-content>\n\n\n    <mat-card-content class=\"profile_section\">\n      <mat-menu #appMenu=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/admin/account-settings']\">\n          <mat-icon>account_circle</mat-icon> Account Settings\n        </button>\n\n        <button mat-menu-item [routerLink]=\"['/admin/account-settings/change-password']\">\n          <mat-icon>vpn_key</mat-icon> Change Password\n        </button>\n\n        <button mat-menu-item (click)=\"logout()\">\n          <mat-icon>power_settings_new</mat-icon> Logout\n        </button>\n      </mat-menu>\n      <span class=\"username\">{{user_details.firstname}} {{user_details.lastname}}</span>\n      <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n        <span class=\"user_profile\">\n          <mat-icon>account_circle</mat-icon>\n          <i class=\"material-icons\">\n            keyboard_arrow_down\n          </i>\n        </span>\n      </button>\n    </mat-card-content>\n  </mat-card-content>\n</mat-toolbar>\n<!-- end header -->";
+    __webpack_exports__["default"] = "<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n  <mat-card-content class=\"header_wrapper\">\n    <span class=\"logo_wrapper\" [routerLink]=\"[ '/admin/dashboard' ]\">\n      <img src=\"../../../assets/images/logo.png\">\n    </span>\n\n    <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n    <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\">\n      <mat-nav-list>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/admin/dashboard']\"> Dashboard </a>\n        \n        <!-- Drop down menu -->\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"userMenu\"> Users Management \n          <i class=\"material-icons\">keyboard_arrow_down</i>\n        </a>\n        <mat-menu #userMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/admin/doctor-management']\" routerLinkActive=\"active\"> Manage Doctor </button>\n          <button mat-menu-item [routerLink]=\"['/admin/biller-management']\" routerLinkActive=\"active\"> Manage Biller </button>\n          <button mat-menu-item [routerLink]=\"['/admin/tech-management']\" routerLinkActive=\"active\"> Manage Tech </button>\n          <button mat-menu-item [routerLink]=\"['/admin/admin-management']\" routerLinkActive=\"active\"> Manage Admin </button>\n          <button mat-menu-item [routerLink]=\"['/admin/doctor-office-management']\" routerLinkActive=\"active\"> Doctors Office </button>\n          <button mat-menu-item [routerLink]=\"['/admin/diagnostic-admin-management']\" routerLinkActive=\"active\"> Diagnostic Admin </button>\n          <button mat-menu-item [routerLink]=\"['/admin/sales-person-management']\" routerLinkActive=\"active\"> Sales Person </button>\n          <button mat-menu-item [routerLink]=\"['/admin/doctor-management/group']\" routerLinkActive=\"active\"> Doctors Group </button>\n          <button mat-menu-item [routerLink]=\"['/admin/adminbiller-management']\" routerLinkActive=\"active\">Biller Admin</button>\n          <button mat-menu-item [routerLink]=\"['/admin/distributors-management']\" routerLinkActive=\"active\">Manage Distributor</button>\n        </mat-menu>\n\n        \n        <!-- Drop down menu -->\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"insurance\"> Insurance Management\n          <i class=\"material-icons\">keyboard_arrow_down</i>\n        </a>\n        <mat-menu #insurance=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/admin/insurance-management']\" routerLinkActive=\"active\"> Manage Insurance </button>\n          <button mat-menu-item [routerLink]=\"['/admin/insurance-type-management']\" routerLinkActive=\"active\"> Manage Insurance Type </button>\n        </mat-menu>\n\n\n        <a mat-list-item [routerLink]=\"['/admin/booked-appoinments']\" routerLinkActive=\"active\"> Booked Appointments</a>\n\n        <a mat-list-item [routerLink]=\"['/admin/patientinformation-management']\" routerLinkActive=\"active\"> Manage PatientInformation</a>\n        <a mat-list-item [matMenuTriggerFor]=\"FAQManagement\"> FAQ Management  <i class=\"material-icons\">keyboard_arrow_down</i></a>\n        <a mat-list-item > </a>\n\n      </mat-nav-list>\n      <mat-menu #FAQManagement=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/admin/faq-management']\"  routerLinkActive=\"active\"> Manage FAQ</button>\n        <button mat-menu-item [routerLink]=\"['/admin/faq']\" routerLinkActive=\"active\"> FAQ</button>\n      </mat-menu>\n    </mat-card-content>\n\n\n    <mat-card-content class=\"profile_section\">\n      <mat-menu #appMenu=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/admin/account-settings']\">\n          <mat-icon>account_circle</mat-icon> Account Settings\n        </button>\n\n        <button mat-menu-item [routerLink]=\"['/admin/account-settings/change-password']\">\n          <mat-icon>vpn_key</mat-icon> Change Password\n        </button>\n\n        <button mat-menu-item (click)=\"logout()\">\n          <mat-icon>power_settings_new</mat-icon> Logout\n        </button>\n      </mat-menu>\n      <span class=\"username\">{{user_details.firstname}} {{user_details.lastname}}</span>\n      <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n        <span class=\"user_profile\">\n          <mat-icon>account_circle</mat-icon>\n          <i class=\"material-icons\">\n            keyboard_arrow_down\n          </i>\n        </span>\n      </button>\n    </mat-card-content>\n  </mat-card-content>\n</mat-toolbar>\n<!-- end header -->";
     /***/
   },
 
@@ -543,7 +543,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\"></app-admin-header>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'distributors'\"></app-doctor-group-header>\n\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n\n\n  <span class=\"add_header\">\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\"> Dashboard &nbsp;/</a> &nbsp;\n      <a [routerLink]=\"['/admin/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n      {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/biller-management']\">Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'distributors`'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/biller-management']\">Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n  </span>\n  <!-- End header with add button -->\n\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"billerManagementAddEditForm\" [formGroup]=\"billerManagementAddEditForm\" (ngSubmit)=\"BillerManagementAddFormSubmit()\">\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"billerManagementAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['firstname'].touched && !billerManagementAddEditForm.controls['firstname'].valid && billerManagementAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['firstname'].touched && !billerManagementAddEditForm.controls['firstname'].valid && billerManagementAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"billerManagementAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['lastname'].touched && !billerManagementAddEditForm.controls['lastname'].valid && billerManagementAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['lastname'].touched && !billerManagementAddEditForm.controls['lastname'].valid && billerManagementAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"billerManagementAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid && billerManagementAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid && billerManagementAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"billerManagementAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid && billerManagementAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid && billerManagementAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Company Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Company Name </mat-label>\n\n          <input matInput placeholder=\"Company Name\"\n            [formControl]=\"billerManagementAddEditForm.controls['company_name']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'company_name')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['company_name'].touched && !billerManagementAddEditForm.controls['company_name'].valid && billerManagementAddEditForm.controls['company_name'].errors.required\">\n            Company Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['company_name'].touched && !billerManagementAddEditForm.controls['company_name'].valid && billerManagementAddEditForm.controls['company_name'].errors.maxlength\">\n            Company Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Company Name End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"billerManagementAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['address'].touched && !billerManagementAddEditForm.controls['address'].valid && billerManagementAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['address'].touched && !billerManagementAddEditForm.controls['address'].valid && billerManagementAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select State</mat-option>\n            <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['state'].touched && !billerManagementAddEditForm.controls['state'].valid && billerManagementAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=\"\">Select City</mat-option>\n            <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['city'].touched && !billerManagementAddEditForm.controls['city'].valid && billerManagementAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"billerManagementAddEditForm.controls['zip']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['zip'].touched && !billerManagementAddEditForm.controls['zip'].valid && billerManagementAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"billerManagementAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!billerManagementAddEditForm.controls['password'].valid && billerManagementAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"billerManagementAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!billerManagementAddEditForm.controls['confirmpassword'].valid && billerManagementAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"billerManagementAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n        <span class=\"submit_form\">\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/biller-management']\">Back </button>\n          </ng-container>\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/diagnostic-admin/biller-management']\">Back </button>\n          </ng-container>\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\"> Reset</button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }}</button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n\n      </form>\n    </mat-card-content>\n\n  </mat-card>\n</mat-card>\n\n\n\n\n<!-- Admin Footer -->\n<app-admin-footer></app-admin-footer>";
+    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\"></app-admin-header>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Distributor Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'distributors'\"></app-doctor-group-header>\n\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n\n\n  <span class=\"add_header\">\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\"> Dashboard &nbsp;/</a> &nbsp;\n      <a [routerLink]=\"['/admin/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n      {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/biller-management']\">Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'distributors`'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/biller-management']\">Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n  </span>\n  <!-- End header with add button -->\n\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"billerManagementAddEditForm\" [formGroup]=\"billerManagementAddEditForm\" (ngSubmit)=\"BillerManagementAddFormSubmit()\">\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"billerManagementAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['firstname'].touched && !billerManagementAddEditForm.controls['firstname'].valid && billerManagementAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['firstname'].touched && !billerManagementAddEditForm.controls['firstname'].valid && billerManagementAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"billerManagementAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['lastname'].touched && !billerManagementAddEditForm.controls['lastname'].valid && billerManagementAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['lastname'].touched && !billerManagementAddEditForm.controls['lastname'].valid && billerManagementAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"billerManagementAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid && billerManagementAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid && billerManagementAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"billerManagementAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid && billerManagementAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid && billerManagementAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Company Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Company Name </mat-label>\n\n          <input matInput placeholder=\"Company Name\"\n            [formControl]=\"billerManagementAddEditForm.controls['company_name']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'company_name')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['company_name'].touched && !billerManagementAddEditForm.controls['company_name'].valid && billerManagementAddEditForm.controls['company_name'].errors.required\">\n            Company Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['company_name'].touched && !billerManagementAddEditForm.controls['company_name'].valid && billerManagementAddEditForm.controls['company_name'].errors.maxlength\">\n            Company Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Company Name End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"billerManagementAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['address'].touched && !billerManagementAddEditForm.controls['address'].valid && billerManagementAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['address'].touched && !billerManagementAddEditForm.controls['address'].valid && billerManagementAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- parent type Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\" *ngIf = \"htmlText.userData.user_details.user_type == 'admin'\">\n          <mat-label>Parent Type</mat-label>\n\n          <mat-select formControlName=\"parent_type\" (selectionChange)=\"getParentData($event.value);\">\n            <mat-option [value]=\"admin\">Select Parent Type</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_type;\" value=\"{{ parent.name }}\">{{ parent.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- Parent Type End -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DiagnosticAdmin'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.center_name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DoctorGroup'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.groupname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'Distributor'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\" >\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select State</mat-option>\n            <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['state'].touched && !billerManagementAddEditForm.controls['state'].valid && billerManagementAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=\"\">Select City</mat-option>\n            <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['city'].touched && !billerManagementAddEditForm.controls['city'].valid && billerManagementAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"billerManagementAddEditForm.controls['zip']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['zip'].touched && !billerManagementAddEditForm.controls['zip'].valid && billerManagementAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"billerManagementAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!billerManagementAddEditForm.controls['password'].valid && billerManagementAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"billerManagementAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!billerManagementAddEditForm.controls['confirmpassword'].valid && billerManagementAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"billerManagementAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n        <span class=\"submit_form\">\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/biller-management']\">Back </button>\n          </ng-container>\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/diagnostic-admin/biller-management']\">Back </button>\n          </ng-container>\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\"> Reset</button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }}</button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n\n      </form>\n    </mat-card-content>\n\n  </mat-card>\n</mat-card>\n\n\n\n\n<!-- Admin Footer -->\n<app-admin-footer></app-admin-footer>";
     /***/
   },
 
@@ -683,7 +683,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.user_details.user_type == 'admin'\"></app-admin-header>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Distributor Admin Header -->\n<app-distributors-header\n*ngIf=\"htmlText.user_details.user_type == 'distributors'\"></app-distributors-header>\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n\n<!-- header with add button -->\n<mat-card class=\"admin_wrapper\">\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n\n\n  <span class=\"add_header\">\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/admin/doctor-management']\">Manage Doctor &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/doctor-management']\">Manage Doctor &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'distributors'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/doctor-management']\">Manage Doctor &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/doctor-management']\">Manage Doctor &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n  </span>\n  <!-- End header with add button -->\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" [formGroup]=\"doctorManagementAddEditForm\" (ngSubmit)=\"doctorManagementAddEditFormSubmit()\">\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"doctorManagementAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(doctorManagementAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['firstname'].touched && !doctorManagementAddEditForm.controls['firstname'].valid && doctorManagementAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['firstname'].touched && !doctorManagementAddEditForm.controls['firstname'].valid && doctorManagementAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"doctorManagementAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(doctorManagementAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['lastname'].touched && !doctorManagementAddEditForm.controls['lastname'].valid && doctorManagementAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['lastname'].touched && !doctorManagementAddEditForm.controls['lastname'].valid && doctorManagementAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"doctorManagementAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(doctorManagementAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['email'].touched && !doctorManagementAddEditForm.controls['email'].valid && doctorManagementAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['email'].touched && !doctorManagementAddEditForm.controls['email'].valid && doctorManagementAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"doctorManagementAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(doctorManagementAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['phone'].touched && !doctorManagementAddEditForm.controls['phone'].valid && doctorManagementAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['phone'].touched && !doctorManagementAddEditForm.controls['phone'].valid && doctorManagementAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- FAX -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Fax</mat-label>\n\n          <input matInput placeholder=\"Fax Number\" formControlName=\"fax\" (blur)=\"inputUntouch(doctorManagementAddEditForm,'fax')\">\n          \n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['fax'].touched && !doctorManagementAddEditForm.controls['fax'].valid && doctorManagementAddEditForm.controls['fax'].errors.required\">\n            Fax required.\n          </mat-error>\n        </mat-form-field>\n\n\n        <!-- Practice Name Start  -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Practice Name</mat-label>\n          \n          <input matInput placeholder=\"Practice Name\" formControlName=\"practice_name\" (blur)=\"inputUntouch(doctorManagementAddEditForm, 'practice_name')\">\n          \n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['practice_name'].touched && !doctorManagementAddEditForm.controls['practice_name'].valid && doctorManagementAddEditForm.controls['practice_name'].errors.required\">\n            Practice Name required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Practice Name Start  -->\n\n\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Select Taxonomies</mat-label>\n          <mat-select formControlName=\"taxo_list\" multiple>\n            <mat-option [value]=\"\">Select Tech</mat-option>\n            <mat-option *ngFor=\"let taxonomie of htmlText.taxonomies;\" value=\"{{ taxonomie.name }}\">{{ taxonomie.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- NPI Start  -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>#NPI</mat-label>\n          \n          <input matInput placeholder=\"#NPI Number\" formControlName=\"npi\" (blur)=\"inputUntouch(doctorManagementAddEditForm,'npi')\">\n          \n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['npi'].touched && !doctorManagementAddEditForm.controls['npi'].valid && doctorManagementAddEditForm.controls['npi'].errors.required\">\n            #NPI required.\n          </mat-error>\n        </mat-form-field>\n        <!-- NPI End  -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"doctorManagementAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(doctorManagementAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['address'].touched && !doctorManagementAddEditForm.controls['address'].valid && doctorManagementAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['address'].touched && !doctorManagementAddEditForm.controls['address'].valid && doctorManagementAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n\n        <!-- parent type Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>Parent Type</mat-label>\n\n          <mat-select formControlName=\"parent_type\" (selectionChange)=\"getParentData($event.value);\">\n            <mat-option [value]=\"\">Select Parent Type</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_type;\" value=\"{{ parent.name }}\">{{ parent.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- Parent Type End -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DiagnosticAdmin'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" (click)=\"getalldata(parent)\">{{ parent.center_name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DoctorGroup'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" (click)=\"getalldata(parent)\">{{ parent.groupname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'Distributor'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\" >\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" (click)=\"getalldata(parent)\">{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <!-- <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'Admin'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\">{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field> -->\n        <!-- Parent Name name -->\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select State</mat-option>\n            <mat-option *ngFor=\"let state of htmlText.states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['state'].touched && !doctorManagementAddEditForm.controls['state'].valid && doctorManagementAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=\"\">Select City</mat-option>\n            <mat-option *ngFor=\"let city of htmlText.cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['city'].touched && !doctorManagementAddEditForm.controls['city'].valid && doctorManagementAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Tech Details Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Select Tech</mat-label>\n          <mat-select formControlName=\"tech_id\" multiple>\n            <mat-option [value]=\"\">Select Tech</mat-option>\n            <mat-option *ngFor=\"let tech of htmlText.techData;\" value=\"{{ tech._id }}\">{{ tech.firstname }} {{tech.lastname}}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Tech Details name -->\n\n        <!-- Biller Details Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Select Biiler</mat-label>\n          <mat-select formControlName=\"biller_id\" multiple>\n            <mat-option [value]=\"\">Select a biiler</mat-option>\n            <mat-option *ngFor=\"let biller of htmlText.billerData;\" value=\"{{ biller._id }}\">{{ biller.firstname }} {{ biller.lastname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Biller Details End -->\n\n        <!-- Doctor's Office Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Select Doctor's Office</mat-label>\n          <mat-select formControlName=\"doctors_office_id\" multiple>\n            <mat-option [value]=\"\">Select Doctor's Office</mat-option>\n            <mat-option *ngFor=\"let doctorOfficeData of htmlText.doctorOfficeData;\" value=\"{{ doctorOfficeData._id }}\">{{ doctorOfficeData.firstname }} {{ doctorOfficeData.lastname }}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Doctor's Office End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"doctorManagementAddEditForm.controls['zip']\"\n            (blur)=\"inputUntouch(doctorManagementAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['zip'].touched && !doctorManagementAddEditForm.controls['zip'].valid && doctorManagementAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"doctorManagementAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!doctorManagementAddEditForm.controls['password'].valid && doctorManagementAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"doctorManagementAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!doctorManagementAddEditForm.controls['confirmpassword'].valid && doctorManagementAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <!-- Status -->\n        <span class=\"status_wrapper\">\n          <mat-checkbox formControlName=\"status\">Active</mat-checkbox>\n        </span>\n\n        <span class=\"submit_form\">\n          <ng-container *ngIf=\"htmlText.user_details.user_type == 'admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/doctor-management']\"> Back</button>\n          </ng-container>\n          <ng-container *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/diagnostic-admin/doctor-management']\">Back </button>\n          </ng-container>\n          <ng-container *ngIf=\"htmlText.user_details.user_type == 'distributors'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/distributors/doctor-management']\">Back </button>\n          </ng-container>\n          <ng-container *ngIf=\"htmlText.user_details.user_type == 'doctor_group'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/doctor-group/doctor-management']\">Back </button>\n          </ng-container>\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\">Reset</button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }} </button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n\n      </form>\n    </mat-card-content>\n  </mat-card>\n\n</mat-card>\n\n\n<app-tech-footer></app-tech-footer>\n";
+    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.user_details.user_type == 'admin'\"></app-admin-header>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Distributor Admin Header -->\n<app-distributors-header\n*ngIf=\"htmlText.user_details.user_type == 'distributors'\"></app-distributors-header>\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n\n<!-- header with add button -->\n<mat-card class=\"admin_wrapper\">\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n\n\n  <span class=\"add_header\">\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/admin/doctor-management']\">Manage Doctor &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/doctor-management']\">Manage Doctor &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'distributors'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/doctor-management']\">Manage Doctor &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/doctor-management']\">Manage Doctor &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n  </span>\n  <!-- End header with add button -->\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" [formGroup]=\"doctorManagementAddEditForm\" (ngSubmit)=\"doctorManagementAddEditFormSubmit()\">\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"doctorManagementAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(doctorManagementAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['firstname'].touched && !doctorManagementAddEditForm.controls['firstname'].valid && doctorManagementAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['firstname'].touched && !doctorManagementAddEditForm.controls['firstname'].valid && doctorManagementAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"doctorManagementAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(doctorManagementAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['lastname'].touched && !doctorManagementAddEditForm.controls['lastname'].valid && doctorManagementAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['lastname'].touched && !doctorManagementAddEditForm.controls['lastname'].valid && doctorManagementAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"doctorManagementAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(doctorManagementAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['email'].touched && !doctorManagementAddEditForm.controls['email'].valid && doctorManagementAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['email'].touched && !doctorManagementAddEditForm.controls['email'].valid && doctorManagementAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"doctorManagementAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(doctorManagementAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['phone'].touched && !doctorManagementAddEditForm.controls['phone'].valid && doctorManagementAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorManagementAddEditForm.controls['phone'].touched && !doctorManagementAddEditForm.controls['phone'].valid && doctorManagementAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- FAX -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Fax</mat-label>\n\n          <input matInput placeholder=\"Fax Number\" formControlName=\"fax\" (blur)=\"inputUntouch(doctorManagementAddEditForm,'fax')\">\n          \n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['fax'].touched && !doctorManagementAddEditForm.controls['fax'].valid && doctorManagementAddEditForm.controls['fax'].errors.required\">\n            Fax required.\n          </mat-error>\n        </mat-form-field>\n\n\n        <!-- Practice Name Start  -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Practice Name</mat-label>\n          \n          <input matInput placeholder=\"Practice Name\" formControlName=\"practice_name\" (blur)=\"inputUntouch(doctorManagementAddEditForm, 'practice_name')\">\n          \n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['practice_name'].touched && !doctorManagementAddEditForm.controls['practice_name'].valid && doctorManagementAddEditForm.controls['practice_name'].errors.required\">\n            Practice Name required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Practice Name Start  -->\n\n\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Select Taxonomies</mat-label>\n          <mat-select formControlName=\"taxo_list\" multiple>\n            <mat-option [value]=\"\">Select Tech</mat-option>\n            <mat-option *ngFor=\"let taxonomie of htmlText.taxonomies;\" value=\"{{ taxonomie.name }}\">{{ taxonomie.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- NPI Start  -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>#NPI</mat-label>\n          \n          <input matInput placeholder=\"#NPI Number\" formControlName=\"npi\" (blur)=\"inputUntouch(doctorManagementAddEditForm,'npi')\">\n          \n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['npi'].touched && !doctorManagementAddEditForm.controls['npi'].valid && doctorManagementAddEditForm.controls['npi'].errors.required\">\n            #NPI required.\n          </mat-error>\n        </mat-form-field>\n        <!-- NPI End  -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"doctorManagementAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(doctorManagementAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['address'].touched && !doctorManagementAddEditForm.controls['address'].valid && doctorManagementAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['address'].touched && !doctorManagementAddEditForm.controls['address'].valid && doctorManagementAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n\n        <!-- parent type Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\" *ngIf = \"htmlText.user_details.user_type == 'admin'\">\n          <mat-label>Parent Type</mat-label>\n\n          <mat-select formControlName=\"parent_type\">\n            <mat-option [value]=\"admin\">Select Parent Type</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_type;\" value=\"{{ parent.value }}\" (click)=\"getParentData(parent.name)\">{{ parent.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- Parent Type End -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DiagnosticAdmin'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" (click)=\"getalldata(parent)\">{{ parent.center_name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DoctorGroup'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" (click)=\"getalldata(parent)\">{{ parent.groupname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'Distributor'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\" >\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" (click)=\"getalldata(parent)\">{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <!-- <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'Admin'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\">{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field> -->\n        <!-- Parent Name name -->\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <!-- <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\"> -->\n            <mat-select formControlName=\"state\">\n            <mat-option [value]=\"\">Select State</mat-option>\n            <mat-option *ngFor=\"let state of htmlText.states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['state'].touched && !doctorManagementAddEditForm.controls['state'].valid && doctorManagementAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <!-- <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n          <mat-select formControlName=\"city\">\n            <mat-option value=\"\">Select City</mat-option>\n            <mat-option *ngFor=\"let city of htmlText.cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['city'].touched && !doctorManagementAddEditForm.controls['city'].valid && doctorManagementAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field> -->\n\n        \n         <mat-form-field appearance=\"fill\">\n          <mat-label>City</mat-label>\n          \n          <input matInput placeholder=\"City\" formControlName=\"city\" (blur)=\"inputUntouch(doctorManagementAddEditForm,'city')\">\n          \n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['npi'].touched && !doctorManagementAddEditForm.controls['city'].valid && doctorManagementAddEditForm.controls['city'].errors.required\">\n            City required.\n          </mat-error>\n        </mat-form-field>\n      \n\n        <!-- City End -->\n\n        <!-- Tech Details Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Select Tech</mat-label>\n          <mat-select formControlName=\"tech_id\" multiple>\n            <mat-option [value]=\"\">Select Tech</mat-option>\n            <mat-option *ngFor=\"let tech of htmlText.techData;\" value=\"{{ tech._id }}\">{{ tech.firstname }} {{tech.lastname}}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Tech Details name -->\n\n        <!-- Biller Details Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Select Biiler</mat-label>\n          <mat-select formControlName=\"biller_id\" multiple>\n            <mat-option [value]=\"\">Select a biiler</mat-option>\n            <mat-option *ngFor=\"let biller of htmlText.billerData;\" value=\"{{ biller._id }}\">{{ biller.firstname }} {{ biller.lastname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Biller Details End -->\n\n        <!-- Doctor's Office Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Select Doctor's Office</mat-label>\n          <mat-select formControlName=\"doctors_office_id\" multiple>\n            <mat-option [value]=\"\">Select Doctor's Office</mat-option>\n            <mat-option *ngFor=\"let doctorOfficeData of htmlText.doctorOfficeData;\" value=\"{{ doctorOfficeData._id }}\">{{ doctorOfficeData.firstname }} {{ doctorOfficeData.lastname }}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Doctor's Office End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"doctorManagementAddEditForm.controls['zip']\"\n            (blur)=\"inputUntouch(doctorManagementAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"doctorManagementAddEditForm.controls['zip'].touched && !doctorManagementAddEditForm.controls['zip'].valid && doctorManagementAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"doctorManagementAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!doctorManagementAddEditForm.controls['password'].valid && doctorManagementAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"doctorManagementAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!doctorManagementAddEditForm.controls['confirmpassword'].valid && doctorManagementAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <!-- Status -->\n        <span class=\"status_wrapper\">\n          <mat-checkbox formControlName=\"status\">Active</mat-checkbox>\n        </span>\n\n        <span class=\"submit_form\">\n          <ng-container *ngIf=\"htmlText.user_details.user_type == 'admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/doctor-management']\"> Back</button>\n          </ng-container>\n          <ng-container *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/diagnostic-admin/doctor-management']\">Back </button>\n          </ng-container>\n          <ng-container *ngIf=\"htmlText.user_details.user_type == 'distributors'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/distributors/doctor-management']\">Back </button>\n          </ng-container>\n          <ng-container *ngIf=\"htmlText.user_details.user_type == 'doctor_group'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/doctor-group/doctor-management']\">Back </button>\n          </ng-container>\n\n          <!-- <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\">Reset</button> -->\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }} </button>\n\n          <button mat-flat-button type=\"button\"  (click)=\"openDialog('')\"> Change Password </button> \n        </span>\n\n      </form>\n    </mat-card-content>\n  </mat-card>\n\n</mat-card>\n\n\n<app-tech-footer></app-tech-footer>";
     /***/
   },
 
@@ -743,7 +743,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.user_details.user_type == 'admin'\"></app-admin-header>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n  <span class=\"add_header\">\n\n    <span class=\"bradcrumb\">\n      <a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n      <a [routerLink]=\"['/admin/doctor-office-management']\">Manage Doctor-Office &nbsp;/</a> &nbsp;\n      {{ htmlText.nav }}\n    </span>\n  </span>\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"doctorOfficeAddEditForm\" [formGroup]=\"doctorOfficeAddEditForm\" (ngSubmit)=\"doctorOfficeAddEditFormFormSubmit()\">\n\n        <!-- Center Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Center Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"doctorOfficeAddEditForm.controls['center_name']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'center_name')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['center_name'].touched && !doctorOfficeAddEditForm.controls['center_name'].valid && doctorOfficeAddEditForm.controls['center_name'].errors.required\">\n            Center Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['center_name'].touched && !doctorOfficeAddEditForm.controls['center_name'].valid && doctorOfficeAddEditForm.controls['center_name'].errors.maxlength\">\n            Center Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Center Name End -->\n\n        <!-- Tech Details Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Select Tech</mat-label>\n          <mat-select formControlName=\"tech_id\" multiple>\n            <mat-option *ngFor=\"let tech of htmlText.techData;\" value=\"{{ tech._id }}\">{{ tech.firstname }} {{tech.lastname}}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Tech Details name -->\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"doctorOfficeAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['firstname'].touched && !doctorOfficeAddEditForm.controls['firstname'].valid && doctorOfficeAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['firstname'].touched && !doctorOfficeAddEditForm.controls['firstname'].valid && doctorOfficeAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"doctorOfficeAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['lastname'].touched && !doctorOfficeAddEditForm.controls['lastname'].valid && doctorOfficeAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['lastname'].touched && !doctorOfficeAddEditForm.controls['lastname'].valid && doctorOfficeAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"doctorOfficeAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid && doctorOfficeAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid && doctorOfficeAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"doctorOfficeAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid && doctorOfficeAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid && doctorOfficeAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"doctorOfficeAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid && doctorOfficeAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid && doctorOfficeAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select State</mat-option>\n            <mat-option *ngFor=\"let state of htmlText.states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['state'].touched && !doctorOfficeAddEditForm.controls['state'].valid && doctorOfficeAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=\"\">Select City</mat-option>\n            <mat-option *ngFor=\"let city of htmlText.cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['city'].touched && !doctorOfficeAddEditForm.controls['city'].valid && doctorOfficeAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"doctorOfficeAddEditForm.controls['zip']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['zip'].touched && !doctorOfficeAddEditForm.controls['zip'].valid && doctorOfficeAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"doctorOfficeAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!doctorOfficeAddEditForm.controls['password'].valid && doctorOfficeAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"doctorOfficeAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!doctorOfficeAddEditForm.controls['confirmpassword'].valid && doctorOfficeAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"doctorOfficeAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n\n        <span class=\"submit_form\">\n          <button mat-flat-button type=\"button\" *ngIf=\"htmlText.user_details.user_type == 'doctor'\" [routerLink]=\"['/doctor/doctor-office-management']\"> Back</button>\n          <button mat-flat-button type=\"button\" *ngIf=\"htmlText.user_details.user_type == 'admin'\" [routerLink]=\"['/admin/doctor-office-management']\"> Back</button>\n\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\">Reset </button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }} </button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n        \n      </form>\n    </mat-card-content>\n  </mat-card>\n</mat-card>\n<app-admin-footer></app-admin-footer>\n";
+    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.user_details.user_type == 'admin'\"></app-admin-header>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Distributor Header -->\n<app-doctor-group-header *ngIf=\"htmlText.user_details.user_type == 'distributors'\"></app-doctor-group-header>\n\n\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n  <span class=\"add_header\">\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\"> Dashboard &nbsp;/</a> &nbsp;\n      <a [routerLink]=\"['/admin/doctor-office-management']\"> Manage Doctor's Office &nbsp;/</a> &nbsp;\n      {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/doctor-office-management']\"> Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/doctor-office-management']\">Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'distributors`'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/doctor-office-management']\">Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'doctor'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor/doctor-office-management']\"> Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n  </span>\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"doctorOfficeAddEditForm\" [formGroup]=\"doctorOfficeAddEditForm\" (ngSubmit)=\"doctorOfficeAddEditFormFormSubmit()\">\n\n        <!-- Center Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Center Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"doctorOfficeAddEditForm.controls['center_name']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'center_name')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['center_name'].touched && !doctorOfficeAddEditForm.controls['center_name'].valid && doctorOfficeAddEditForm.controls['center_name'].errors.required\">\n            Center Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['center_name'].touched && !doctorOfficeAddEditForm.controls['center_name'].valid && doctorOfficeAddEditForm.controls['center_name'].errors.maxlength\">\n            Center Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Center Name End -->\n\n        <!-- Tech Details Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Select Tech</mat-label>\n          <mat-select formControlName=\"tech_id\" multiple>\n            <mat-option *ngFor=\"let tech of htmlText.techData;\" value=\"{{ tech._id }}\">{{ tech.firstname }} {{tech.lastname}}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Tech Details name -->\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"doctorOfficeAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['firstname'].touched && !doctorOfficeAddEditForm.controls['firstname'].valid && doctorOfficeAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['firstname'].touched && !doctorOfficeAddEditForm.controls['firstname'].valid && doctorOfficeAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"doctorOfficeAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['lastname'].touched && !doctorOfficeAddEditForm.controls['lastname'].valid && doctorOfficeAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['lastname'].touched && !doctorOfficeAddEditForm.controls['lastname'].valid && doctorOfficeAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"doctorOfficeAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid && doctorOfficeAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid && doctorOfficeAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"doctorOfficeAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid && doctorOfficeAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid && doctorOfficeAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"doctorOfficeAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid && doctorOfficeAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid && doctorOfficeAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- parent type Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\" *ngIf = \"htmlText.user_details.user_type == 'admin'\">\n          <mat-label>Parent Type</mat-label>\n\n          <mat-select formControlName=\"parent_type\" (selectionChange)=\"getParentData($event.value);\">\n            <mat-option [value]=\"admin\">Select Parent Type</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_type;\" value=\"{{ parent.name }}\">{{ parent.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- Parent Type End -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DiagnosticAdmin'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.center_name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DoctorGroup'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.groupname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'Distributor'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\" >\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select State</mat-option>\n            <mat-option *ngFor=\"let state of htmlText.states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['state'].touched && !doctorOfficeAddEditForm.controls['state'].valid && doctorOfficeAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=\"\">Select City</mat-option>\n            <mat-option *ngFor=\"let city of htmlText.cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['city'].touched && !doctorOfficeAddEditForm.controls['city'].valid && doctorOfficeAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"doctorOfficeAddEditForm.controls['zip']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['zip'].touched && !doctorOfficeAddEditForm.controls['zip'].valid && doctorOfficeAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"doctorOfficeAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!doctorOfficeAddEditForm.controls['password'].valid && doctorOfficeAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"doctorOfficeAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!doctorOfficeAddEditForm.controls['confirmpassword'].valid && doctorOfficeAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"doctorOfficeAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n\n        <span class=\"submit_form\">\n          <button mat-flat-button type=\"button\" *ngIf=\"htmlText.user_details.user_type == 'doctor'\" [routerLink]=\"['/doctor/doctor-office-management']\"> Back</button>\n          <button mat-flat-button type=\"button\" *ngIf=\"htmlText.user_details.user_type == 'admin'\" [routerLink]=\"['/admin/doctor-office-management']\"> Back</button>\n\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\">Reset </button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }} </button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n        \n      </form>\n    </mat-card-content>\n  </mat-card>\n</mat-card>\n<app-admin-footer></app-admin-footer>\n";
     /***/
   },
 
@@ -783,7 +783,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"userData.user_type == 'admin'\"></app-admin-header>\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"userData.user_type == 'doctor'\"></app-doctor-header>\n\n\n\n\n<!-- header with add button -->\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"table_wrapper\">\n    <mat-toolbar class=\"top_header\">\n      <h2> manage Doctor's Office</h2>\n    </mat-toolbar>\n\n    <ng-container *ngIf=\"userData.user_type == 'admin'\">\n      <span class=\"add_header\">\n        <span class=\"bradcrumb\"><a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Manage Doctor's Office</span>\n        <button mat-flat-button [routerLink]=\"['/admin/doctor-office-management/add']\">Add Doctors Office</button>\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"userData.user_type == 'doctor'\">\n      <span class=\"add_header\">\n        <span class=\"bradcrumb\"><a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Manage Doctor's Office</span>\n        <button mat-flat-button [routerLink]=\"['/doctor/doctor-office-management/add']\">Add Doctors Office</button>\n      </span>\n    </ng-container>\n\n    <lib-listing class=\"DataTable\" *ngIf=\"doctorOfficeAllData.length>0\" [datasource]=\"doctorOfficeAllData\"\n      [skip]=\"doctorOfficeAllData_skip\" [detail_skip_array]=\"previewModal_skip\"\n      [modify_header_array]=\"doctorOfficeAllData_modify_header\" [apiurl]=\"apiUrl\" [sourcedata]=\"tableName\"\n      [editroute]=\"editUrl\" [jwttoken]=\"user_cookie\" [statusarr]=\"status\" [updateendpoint]=\"UpdateEndpoint\"\n      [deleteendpoint]=\"deleteEndpoint\" [date_search_endpoint]=\"SearchingEndpoint\"\n      [date_search_source]=\"SearchingSourceName\" [search_settings]=\"search_settings\" [sortdata]=\"sortdata\" [datacollection]=\"datacollection\" [date_search_source_count]=\"doctorOfficeData_count\" [limitcond]=\"limitcond\">\n    </lib-listing>\n    <h2 class=\"no_data\" *ngIf=\"doctorOfficeAllData.length == 0\">No record found.</h2>\n  </mat-card-content>\n  \n</mat-card>\n<!-- Admin Footer -->\n<app-admin-footer></app-admin-footer>\n";
+    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"userData.user_type == 'admin'\"></app-admin-header>\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"userData.user_type == 'doctor'\"></app-doctor-header>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"userData.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Group Admin Header -->\n<app-doctor-group-header *ngIf=\"userData.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Distributors Admin Header -->\n<app-distributors-header *ngIf=\"userData.user_type == 'distributors'\"></app-distributors-header>\n\n\n\n\n<!-- header with add button -->\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"table_wrapper\">\n    <mat-toolbar class=\"top_header\">\n      <h2> manage Doctor's Office</h2>\n    </mat-toolbar>\n\n    <ng-container *ngIf=\"userData.user_type == 'admin'\">\n      <span class=\"add_header\">\n        <span class=\"bradcrumb\"><a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Manage Doctor's Office</span>\n        <button mat-flat-button [routerLink]=\"['/admin/doctor-office-management/add']\">Add Doctors Office</button>\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"userData.user_type == 'doctor'\">\n      <span class=\"add_header\">\n        <span class=\"bradcrumb\"><a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Manage Doctor's Office</span>\n        <button mat-flat-button [routerLink]=\"['/doctor/doctor-office-management/add']\">Add Doctors Office</button>\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"userData.user_type == 'diagnostic_admin'\">\n      <span class=\"add_header\">\n        <span class=\"bradcrumb\"><a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Manage Doctor's Office</span>\n        <button mat-flat-button [routerLink]=\"['/diagnostic-admin/doctor-office-management/add']\">Add Doctors Office</button>\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"userData.user_type == 'doctor_group'\">\n      <span class=\"add_header\">\n        <span class=\"bradcrumb\"><a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Manage Doctor's Office</span>\n        <button mat-flat-button [routerLink]=\"['/doctor-group/doctor-office-management/add']\">Add Doctors Office</button>\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"userData.user_type == 'distributors'\">\n      <span class=\"add_header\">\n        <span class=\"bradcrumb\"><a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Manage Doctor's Office</span>\n        <button mat-flat-button [routerLink]=\"['/distributors/doctor-office-management/add']\">Add Doctors Office</button>\n      </span>\n    </ng-container>\n\n\n    <lib-listing class=\"DataTable\" *ngIf=\"doctorOfficeAllData.length>0\" [datasource]=\"doctorOfficeAllData\"\n      [skip]=\"doctorOfficeAllData_skip\" [detail_skip_array]=\"previewModal_skip\"\n      [modify_header_array]=\"doctorOfficeAllData_modify_header\" [apiurl]=\"apiUrl\" [sourcedata]=\"tableName\"\n      [editroute]=\"editUrl\" [jwttoken]=\"user_cookie\" [statusarr]=\"status\" [updateendpoint]=\"UpdateEndpoint\"\n      [deleteendpoint]=\"deleteEndpoint\" [date_search_endpoint]=\"SearchingEndpoint\"\n      [date_search_source]=\"SearchingSourceName\" [search_settings]=\"search_settings\" [sortdata]=\"sortdata\" [datacollection]=\"datacollection\" [date_search_source_count]=\"doctorOfficeData_count\" [limitcond]=\"limitcond\">\n    </lib-listing>\n    <h2 class=\"no_data\" *ngIf=\"doctorOfficeAllData.length == 0\">No record found.</h2>\n  </mat-card-content>\n  \n</mat-card>\n<!-- Admin Footer -->\n<app-admin-footer></app-admin-footer>\n";
     /***/
   },
 
@@ -1163,7 +1163,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\"></app-admin-header>\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'distributors'\"></app-doctor-group-header>\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n\n\n  <span class=\"add_header\">\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/admin/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'distributors`'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n  </span>\n  <!-- End header with add button -->\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"TechManagementAddEditForm\" [formGroup]=\"TechManagementAddEditForm\" (ngSubmit)=\"TechManagementAddFormFormSubmit()\">\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"TechManagementAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['firstname'].touched && !TechManagementAddEditForm.controls['firstname'].valid && TechManagementAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['firstname'].touched && !TechManagementAddEditForm.controls['firstname'].valid && TechManagementAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"TechManagementAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['lastname'].touched && !TechManagementAddEditForm.controls['lastname'].valid && TechManagementAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['lastname'].touched && !TechManagementAddEditForm.controls['lastname'].valid && TechManagementAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"TechManagementAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['email'].touched && !TechManagementAddEditForm.controls['email'].valid && TechManagementAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['email'].touched && !TechManagementAddEditForm.controls['email'].valid && TechManagementAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"TechManagementAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['phone'].touched && !TechManagementAddEditForm.controls['phone'].valid && TechManagementAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['phone'].touched && !TechManagementAddEditForm.controls['phone'].valid && TechManagementAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"TechManagementAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['address'].touched && !TechManagementAddEditForm.controls['address'].valid && TechManagementAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['address'].touched && !TechManagementAddEditForm.controls['address'].valid && TechManagementAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select state</mat-option>\n            <mat-option *ngFor=\"let state of htmlText.states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['state'].touched && !TechManagementAddEditForm.controls['state'].valid && TechManagementAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=0>Select city</mat-option>\n            <mat-option *ngFor=\"let city of htmlText.cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['city'].touched && !TechManagementAddEditForm.controls['city'].valid && TechManagementAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"TechManagementAddEditForm.controls['zip']\" (blur)=\"inputUntouch(TechManagementAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['zip'].touched && !TechManagementAddEditForm.controls['zip'].valid && TechManagementAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"TechManagementAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!TechManagementAddEditForm.controls['password'].valid && TechManagementAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"TechManagementAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!TechManagementAddEditForm.controls['confirmpassword'].valid && TechManagementAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"TechManagementAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n\n        <!-- end here -->\n        <span class=\"submit_form\">\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/tech-management']\">Back </button>\n          </ng-container>\n\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/diagnostic-admin/tech-management']\">Back </button>\n          </ng-container>\n\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/doctor/tech-management']\">Back </button>\n          </ng-container>\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\">Reset </button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }} </button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n      </form>\n\n    </mat-card-content>\n  </mat-card>\n\n</mat-card>\n\n\n\n<!-- Admin Footer -->\n<app-admin-footer *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\"></app-admin-footer>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-footer *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-footer>\n";
+    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\"></app-admin-header>\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'distributors'\"></app-doctor-group-header>\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n\n\n  <span class=\"add_header\">\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/admin/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'distributors`'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n  </span>\n  <!-- End header with add button -->\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"TechManagementAddEditForm\" [formGroup]=\"TechManagementAddEditForm\" (ngSubmit)=\"TechManagementAddFormFormSubmit()\">\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"TechManagementAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['firstname'].touched && !TechManagementAddEditForm.controls['firstname'].valid && TechManagementAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['firstname'].touched && !TechManagementAddEditForm.controls['firstname'].valid && TechManagementAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"TechManagementAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['lastname'].touched && !TechManagementAddEditForm.controls['lastname'].valid && TechManagementAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['lastname'].touched && !TechManagementAddEditForm.controls['lastname'].valid && TechManagementAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"TechManagementAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['email'].touched && !TechManagementAddEditForm.controls['email'].valid && TechManagementAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['email'].touched && !TechManagementAddEditForm.controls['email'].valid && TechManagementAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"TechManagementAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['phone'].touched && !TechManagementAddEditForm.controls['phone'].valid && TechManagementAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['phone'].touched && !TechManagementAddEditForm.controls['phone'].valid && TechManagementAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"TechManagementAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['address'].touched && !TechManagementAddEditForm.controls['address'].valid && TechManagementAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['address'].touched && !TechManagementAddEditForm.controls['address'].valid && TechManagementAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- parent type Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\" *ngIf = \"htmlText.userData.user_details.user_type == 'admin'\">\n          <mat-label>Parent Type</mat-label>\n\n          <mat-select formControlName=\"parent_type\" (selectionChange)=\"getParentData($event.value);\">\n            <mat-option [value]=\"admin\">Select Parent Type</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_type;\" value=\"{{ parent.name }}\">{{ parent.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- Parent Type End -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DiagnosticAdmin'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.center_name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DoctorGroup'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.groupname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'Distributor'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\" >\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select state</mat-option>\n            <mat-option *ngFor=\"let state of htmlText.states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['state'].touched && !TechManagementAddEditForm.controls['state'].valid && TechManagementAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=0>Select city</mat-option>\n            <mat-option *ngFor=\"let city of htmlText.cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['city'].touched && !TechManagementAddEditForm.controls['city'].valid && TechManagementAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"TechManagementAddEditForm.controls['zip']\" (blur)=\"inputUntouch(TechManagementAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['zip'].touched && !TechManagementAddEditForm.controls['zip'].valid && TechManagementAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"TechManagementAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!TechManagementAddEditForm.controls['password'].valid && TechManagementAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"TechManagementAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!TechManagementAddEditForm.controls['confirmpassword'].valid && TechManagementAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"TechManagementAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n\n        <!-- end here -->\n        <span class=\"submit_form\">\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/tech-management']\">Back </button>\n          </ng-container>\n\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/diagnostic-admin/tech-management']\">Back </button>\n          </ng-container>\n\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/doctor/tech-management']\">Back </button>\n          </ng-container>\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\">Reset </button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }} </button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n      </form>\n\n    </mat-card-content>\n  </mat-card>\n\n</mat-card>\n\n\n\n<!-- Admin Footer -->\n<app-admin-footer *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\"></app-admin-footer>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-footer *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-footer>\n";
     /***/
   },
 
@@ -1463,7 +1463,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-label *ngIf=\"configData.responseData == null || configData.responseData.length < 1\">\n  No booked evnets found\n</mat-label>\n\n<lib-listing *ngIf=\"configData.responseData != null && configData.responseData.length > 0\"\n             [datasource]=\"configData.responseData\"\n             [skip]=\"configData.skipFields\"\n             [modify_header_array]=\"configData.modify_header_array\"\n             [apiurl]=\"configData.baseUrl\"\n             [deleteendpoint]=\"configData.endPoint.deleteEvent\"\n             [updateendpoint]=\"configData.endPoint.rescheduleBookedEvent\"\n             [jwttoken]=\"configData.jwtToken\"\n             [date_search_source]=\"configData.source\"\n             [date_search_endpoint]=\"configData.endPoint.listBookedEvents\"\n             [sourcedata]=\"configData.source\"\n             [statusarr]=\"configData.statusarray\"\n             [url]=\"configData.custom_link\"\n             [search_settings]=\"configData.search_settings\"\n             [searchendpoint]=\"configData.endPoint.listBookedEvents\"\n             [sortdata]=\"configData.sortdata\"\n             [datacollection]=\"configData.endPoint.listBookedEvents\"\n             [date_search_source_count]=\"configData.date_search_source_count\"\n             [libdata]=\"configData.libdata\"\n             [updatetable]=\"configData.updatetable\"\n             [limitcond]=\"configData.limitcond\">\n</lib-listing>\n";
+    __webpack_exports__["default"] = "<mat-label *ngIf=\"configData.responseData == null || configData.responseData.length < 1\">\n  No booked evnets found\n</mat-label>\n<h1 class=\"db_title\"> Booked Appointments</h1>\n<lib-listing class=\"app_list\" *ngIf=\"configData.responseData != null && configData.responseData.length > 0\"\n             [datasource]=\"configData.responseData\"\n             [skip]=\"configData.skipFields\"\n             [modify_header_array]=\"configData.modify_header_array\"\n             [apiurl]=\"configData.baseUrl\"\n             [deleteendpoint]=\"configData.endPoint.deleteEvent\"\n             [updateendpoint]=\"configData.endPoint.rescheduleBookedEvent\"\n             [jwttoken]=\"configData.jwtToken\"\n             [date_search_source]=\"configData.source\"\n             [date_search_endpoint]=\"configData.endPoint.listBookedEvents\"\n             [sourcedata]=\"configData.source\"\n             [statusarr]=\"configData.statusarray\"\n             [url]=\"configData.custom_link\"\n             [search_settings]=\"configData.search_settings\"\n             [searchendpoint]=\"configData.endPoint.listBookedEvents\"\n             [sortdata]=\"configData.sortdata\"\n             [datacollection]=\"configData.endPoint.listBookedEvents\"\n             [date_search_source_count]=\"configData.date_search_source_count\"\n             [libdata]=\"configData.libdata\"\n             [updatetable]=\"configData.updatetable\"\n             [limitcond]=\"configData.limitcond\">\n</lib-listing>\n";
     /***/
   },
 
@@ -1483,7 +1483,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-label *ngIf=\"configData.responseData == null || configData.responseData.length < 1\">\n  No booked evnets found\n</mat-label>\n\n<lib-listing *ngIf=\"configData.responseData != null && configData.responseData.length > 0\"\n             [datasource]=\"configData.responseData\"\n             [skip]=\"configData.skipFields\"\n             [modify_header_array]=\"configData.modify_header_array\"\n             [apiurl]=\"configData.baseUrl\"\n             [deleteendpoint]=\"configData.endPoint.deleteEvent\"\n             [updateendpoint]=\"configData.endPoint.rescheduleBookedEvent\"\n             [jwttoken]=\"configData.jwtToken\"\n             [date_search_source]=\"configData.source\"\n             [date_search_endpoint]=\"configData.endPoint.listUpcomingBookedEvents\"\n             [sourcedata]=\"configData.source\"\n             [statusarr]=\"configData.statusarray\"\n             [url]=\"configData.custom_link\"\n             [search_settings]=\"configData.search_settings\"\n             [searchendpoint]=\"configData.endPoint.listUpcomingBookedEvents\"\n             [sortdata]=\"configData.sortdata\"\n             [datacollection]=\"configData.endPoint.listUpcomingBookedEvents\"\n             [date_search_source_count]=\"configData.date_search_source_count\"\n             [libdata]=\"configData.libdata\"\n             [updatetable]=\"configData.updatetable\"\n             [limitcond]=\"configData.limitcond\">\n</lib-listing>\n";
+    __webpack_exports__["default"] = "<mat-label *ngIf=\"configData.responseData == null || configData.responseData.length < 1\">\n  No booked evnets found\n</mat-label>\n<h1 class=\"db_title\"> Booked Appointments</h1>\n<lib-listing class=\"app_list\" *ngIf=\"configData.responseData != null && configData.responseData.length > 0\"\n             [datasource]=\"configData.responseData\"\n             [skip]=\"configData.skipFields\"\n             [modify_header_array]=\"configData.modify_header_array\"\n             [apiurl]=\"configData.baseUrl\"\n             [deleteendpoint]=\"configData.endPoint.deleteEvent\"\n             [updateendpoint]=\"configData.endPoint.rescheduleBookedEvent\"\n             [jwttoken]=\"configData.jwtToken\"\n             [date_search_source]=\"configData.source\"\n             [date_search_endpoint]=\"configData.endPoint.listUpcomingBookedEvents\"\n             [sourcedata]=\"configData.source\"\n             [statusarr]=\"configData.statusarray\"\n             [url]=\"configData.custom_link\"\n             [search_settings]=\"configData.search_settings\"\n             [searchendpoint]=\"configData.endPoint.listUpcomingBookedEvents\"\n             [sortdata]=\"configData.sortdata\"\n             [datacollection]=\"configData.endPoint.listUpcomingBookedEvents\"\n             [date_search_source_count]=\"configData.date_search_source_count\"\n             [libdata]=\"configData.libdata\"\n             [updatetable]=\"configData.updatetable\"\n             [limitcond]=\"configData.limitcond\">\n</lib-listing>\n";
     /***/
   },
 
@@ -1763,7 +1763,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n    <mat-card-content class=\"header_wrapper\">\n      <span class=\"logo_wrapper\" [routerLink]=\"[ '/distributors/dashboard' ]\">\n        <img src=\"../../../assets/images/logo.png\">\n      </span>\n  \n      <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n      <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\">\n        <mat-nav-list>\n          <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/distributors/dashboard']\"> Dashboard </a>\n          \n          <a mat-list-item [routerLink]=\"['/distributors/doctor-management']\" routerLinkActive=\"active\"> Manage Doctor </a>\n\n          <a mat-list-item [routerLink]=\"['/distributors/biller-management']\" routerLinkActive=\"active\"> Manage Biller </a>\n\n          <a mat-list-item [routerLink]=\"['/distributors/tech-management']\" routerLinkActive=\"active\"> Manage Tech </a>\n\n          <a mat-list-item [routerLink]=\"['/distributors/sales-person-management']\" routerLinkActive=\"active\"> Manage Sales Person </a>\n  \n        </mat-nav-list>\n      </mat-card-content>\n  \n  \n      <mat-card-content class=\"profile_section\">\n        <mat-menu #appMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/distributors/account-settings']\">\n            <mat-icon>account_circle</mat-icon> Account Settings\n          </button>\n  \n          <button mat-menu-item [routerLink]=\"['/distributors/account-settings/change-password']\">\n            <mat-icon>vpn_key</mat-icon> Change Password\n          </button>\n  \n          <button mat-menu-item (click)=\"logout()\">\n            <mat-icon>power_settings_new</mat-icon> Logout\n          </button>\n        </mat-menu>\n        <span class=\"username\">{{ user_data.distributorname }} </span>\n        <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n          <span class=\"user_profile\">\n            <mat-icon>account_circle</mat-icon>\n            <i class=\"material-icons\">\n              keyboard_arrow_down\n            </i>\n          </span>\n        </button>\n      </mat-card-content>\n    </mat-card-content>\n  </mat-toolbar>\n  <!-- end header -->";
+    __webpack_exports__["default"] = "<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n    <mat-card-content class=\"header_wrapper\">\n      <span class=\"logo_wrapper\" [routerLink]=\"[ '/distributors/dashboard' ]\">\n        <img src=\"../../../assets/images/logo.png\">\n      </span>\n  \n      <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n      <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\">\n        <mat-nav-list>\n          <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/distributors/dashboard']\"> Dashboard </a>\n          \n          <a mat-list-item [routerLink]=\"['/distributors/doctor-management']\" routerLinkActive=\"active\"> Manage Doctor </a>\n\n          <a mat-list-item [routerLink]=\"['/distributors/biller-management']\" routerLinkActive=\"active\"> Manage Biller </a>\n\n          <a mat-list-item [routerLink]=\"['/distributors/tech-management']\" routerLinkActive=\"active\"> Manage Tech </a>\n\n          <a mat-list-item [routerLink]=\"['/distributors/doctor-office-management']\" routerLinkActive=\"active\"> Manage Doctor Office </a>\n\n          <a mat-list-item [routerLink]=\"['/distributors/sales-person-management']\" routerLinkActive=\"active\"> Manage Sales Person </a>\n  \n        </mat-nav-list>\n      </mat-card-content>\n  \n  \n      <mat-card-content class=\"profile_section\">\n        <mat-menu #appMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/distributors/account-settings']\">\n            <mat-icon>account_circle</mat-icon> Account Settings\n          </button>\n  \n          <button mat-menu-item [routerLink]=\"['/distributors/account-settings/change-password']\">\n            <mat-icon>vpn_key</mat-icon> Change Password\n          </button>\n  \n          <button mat-menu-item (click)=\"logout()\">\n            <mat-icon>power_settings_new</mat-icon> Logout\n          </button>\n        </mat-menu>\n        <span class=\"username\">{{ user_data.distributorname }} </span>\n        <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n          <span class=\"user_profile\">\n            <mat-icon>account_circle</mat-icon>\n            <i class=\"material-icons\">\n              keyboard_arrow_down\n            </i>\n          </span>\n        </button>\n      </mat-card-content>\n    </mat-card-content>\n  </mat-toolbar>\n  <!-- end header -->";
     /***/
   },
 
@@ -1843,7 +1843,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-doctor-office-header></app-doctor-office-header>\n\n<!-- Header Start -->\n\n<app-admin-header *ngIf=\"headerFlag == 'admin'\"></app-admin-header>\n\n<app-biller-header *ngIf=\"headerFlag == 'biller'\"></app-biller-header>\n\n<app-tech-header *ngIf=\"headerFlag == 'tech'\"></app-tech-header>\n\n<app-doctor-header *ngIf=\"headerFlag == 'doctor'\"></app-doctor-header>\n\n<!-- Header End -->\n\n<mat-progress-bar *ngIf=\"loader\" mode=\"indeterminate\"></mat-progress-bar>\n\n\n<span class=\"add_header\">\n    <span class=\"bradcrumb\"><a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Add Patient</span>\n</span>\n<!-- End header with add button -->\n\n<mat-card class=\"add_form\">\n    <h2>Add Record</h2>\n    <mat-card-content class=\"form_wrapper\">\n        <lib-showform *ngIf=\"formdata !=null\"\n                  [formdata]=\"formdata\"\n                  [formfieldrefresh]=\"formfieldrefresh\"\n                  [formfieldrefreshdata]=\"formfieldrefreshdata\"\n                  (onFormFieldChange)=\"listenFormFieldChange($event)\"\n    > </lib-showform>\n    </mat-card-content>\n</mat-card>\n\n<app-admin-footer></app-admin-footer>\n\n\n\n<app-doctor-office-footer></app-doctor-office-footer>";
+    __webpack_exports__["default"] = "<app-doctor-office-header></app-doctor-office-header>\n\n<!-- Header Start -->\n\n<app-admin-header *ngIf=\"headerFlag == 'admin'\"></app-admin-header>\n\n<app-biller-header *ngIf=\"headerFlag == 'biller'\"></app-biller-header>\n\n<app-tech-header *ngIf=\"headerFlag == 'tech'\"></app-tech-header>\n\n<app-doctor-header *ngIf=\"headerFlag == 'doctor'\"></app-doctor-header>\n\n<!-- Header End -->\n\n<mat-progress-bar *ngIf=\"loader\" mode=\"indeterminate\"></mat-progress-bar>\n\n\n<span class=\"add_header\">\n    <span class=\"bradcrumb\"><a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Add Patient</span>\n</span>\n<!-- End header with add button -->\n\n<mat-card class=\"add_form\">\n    <h2>Add Record</h2>\n    <mat-card-content class=\"form_wrapper\">\n        <lib-showform class=\"adptient_manually\" *ngIf=\"formdata !=null\"\n                  [formdata]=\"formdata\"\n                  [formfieldrefresh]=\"formfieldrefresh\"\n                  [formfieldrefreshdata]=\"formfieldrefreshdata\"\n                  (onFormFieldChange)=\"listenFormFieldChange($event)\"\n    > </lib-showform>\n    </mat-card-content>\n</mat-card>\n\n<app-admin-footer></app-admin-footer>\n";
     /***/
   },
 
@@ -2523,7 +2523,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n  <mat-card-content class=\"header_wrapper\">\n    <span class=\"logo_wrapper\" [routerLink]=\"[ '/tech/dashboard' ]\">\n      <img src=\"../../../assets/images/logo.png\">\n    </span>\n\n\n    <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n    <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\">\n      <mat-nav-list>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/tech/dashboard']\"> Dashboard </a>\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"calendarMenu\"> Manage Calendar </a>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/tech/faq']\"> FAQ </a>\n      </mat-nav-list>\n\n      <mat-menu #calendarMenu=\"matMenu\" class=\"sub_menu\">\n        <button mat-menu-item [routerLink]=\"['/tech/manage-calender/manage-sehedule']\">Manage Schedule\n        </button>\n        <button mat-menu-item [routerLink]=\"['/tech/manage-calender/my-appoinments']\">My Appointments</button>\n      </mat-menu>\n    </mat-card-content>\n\n    <mat-card-content class=\"profile_section\">\n      <mat-menu #appMenu=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/tech/account-settings']\">\n          <mat-icon>account_circle</mat-icon> Account Settings\n        </button>\n        <button mat-menu-item [routerLink]=\"['/tech/account-settings/change-password']\">\n          <mat-icon>vpn_key</mat-icon> Change Password\n        </button>\n        <button mat-menu-item (click)=\"logout()\">\n          <mat-icon>power_settings_new</mat-icon> Logout\n        </button>\n      </mat-menu>\n      <span class=\"username\">{{user_data.firstname}} {{user_data.lastname}}</span>\n      <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n        <span class=\"user_profile\">\n          <mat-icon>account_circle</mat-icon>\n          <i class=\"material-icons\">\n            keyboard_arrow_down\n          </i>\n        </span>\n      </button>\n\n    </mat-card-content>\n  </mat-card-content>\n</mat-toolbar>\n<!-- end header -->";
+    __webpack_exports__["default"] = "<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n  <mat-card-content class=\"header_wrapper\">\n    <span class=\"logo_wrapper\" [routerLink]=\"[ '/tech/dashboard' ]\">\n      <img src=\"../../../assets/images/logo.png\">\n    </span>\n\n\n    <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n    <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\">\n      <mat-nav-list>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/tech/dashboard']\"> Dashboard </a>\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"calendarMenu\"> Manage Calendar </a>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/tech/faq']\"> FAQ </a>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/tech/faq']\"> Manage Doctor </a>\n      </mat-nav-list>\n\n      <mat-menu #calendarMenu=\"matMenu\" class=\"sub_menu\">\n        <button mat-menu-item [routerLink]=\"['/tech/manage-calender/manage-sehedule']\">Manage Schedule\n        </button>\n        <button mat-menu-item [routerLink]=\"['/tech/manage-calender/my-appoinments']\">My Appointments</button>\n      </mat-menu>\n    </mat-card-content>\n\n    <mat-card-content class=\"profile_section\">\n      <mat-menu #appMenu=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/tech/account-settings']\">\n          <mat-icon>account_circle</mat-icon> Account Settings\n        </button>\n        <button mat-menu-item [routerLink]=\"['/tech/account-settings/change-password']\">\n          <mat-icon>vpn_key</mat-icon> Change Password\n        </button>\n        <button mat-menu-item (click)=\"logout()\">\n          <mat-icon>power_settings_new</mat-icon> Logout\n        </button>\n      </mat-menu>\n      <span class=\"username\">{{user_data.firstname}} {{user_data.lastname}}</span>\n      <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n        <span class=\"user_profile\">\n          <mat-icon>account_circle</mat-icon>\n          <i class=\"material-icons\">\n            keyboard_arrow_down\n          </i>\n        </span>\n      </button>\n\n    </mat-card-content>\n  </mat-card-content>\n</mat-toolbar>\n<!-- end header -->";
     /***/
   },
 
@@ -7124,7 +7124,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           header: 'Add New Biller',
           nav: 'Add Biller',
           buttonText: 'Save',
-          userData: ''
+          userData: '',
+          parent_type: [{
+            name: "Distributor"
+          }, {
+            name: "DiagnosticAdmin"
+          }, {
+            name: "DoctorGroup"
+          }]
         };
         this.message = "Submitted Successfully";
         this.taxo_array = [];
@@ -7165,6 +7172,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             city: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             state: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             user_type: ['biller', []],
+            parent_type: ['admin'],
+            parent_id: ['', []],
             status: ['', []],
             password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(16), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(6)]],
             confirmpassword: ['', []]
@@ -7196,7 +7205,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                 _this25.billerManagementAddEditForm.controls['company_name'].patchValue(billerDetails[0].company_name);
 
-                _this25.billerManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address);
+                _this25.billerManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address); // this.getCity(doctorDetails[0].state);
+
+
+                _this25.getParentData(billerDetails[0].parent_type); //  this.getCity(doctorDetails[0].state);
+                // this.getCityByName(doctorDetails[0].state);
+
+
+                setTimeout(function () {
+                  // getCityByName
+                  _this25.billerManagementAddEditForm.controls['parent_type'].patchValue(billerDetails[0].parent_type);
+
+                  _this25.billerManagementAddEditForm.controls['parent_id'].patchValue(billerDetails[0].parent_id);
+                }, 2000);
 
                 _this25.billerManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
 
@@ -7266,6 +7287,61 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getCityByName(stateName) {
           this.cities = this.allCities[stateName];
         }
+        /**getting all the Parent data**/
+
+      }, {
+        key: "getParentData",
+        value: function getParentData() {
+          var _this27 = this;
+
+          var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+          var billerData = id;
+          this.selectionChangeValue = billerData;
+          console.log('1111', billerData);
+
+          if (billerData == 'DiagnosticAdmin') {
+            // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+            var data = {
+              "source": "data_pece",
+              "condition": {
+                "user_type": "diagnostic_admin"
+              },
+              "token": this.htmlText.userData.jwtToken
+            };
+          }
+
+          if (billerData == 'Distributor') {
+            // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+            var data = {
+              "source": "data_pece",
+              "condition": {
+                "user_type": "distributors"
+              },
+              "token": this.htmlText.userData.jwtToken
+            };
+          }
+
+          if (billerData == 'DoctorGroup') {
+            // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+            var data = {
+              "source": "data_pece",
+              "condition": {
+                "user_type": "doctor_group"
+              },
+              "token": this.htmlText.userData.jwtToken
+            };
+          } // if(this.htmlText.user_details.user_type == 'distributors') {
+          //   data['distributor_id_object'] = this.htmlText.userData.user_details._id;
+          // }
+
+
+          this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
+            // console.log('+++++++++',response);
+            _this27.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
+            // this.htmlText.doctorOfficeData = response.data.doctor_office_data;
+            // this.htmlText.billerData = response.data.biller_data;
+          });
+        }
       }, {
         key: "openDialog",
         value: function openDialog(x) {
@@ -7280,7 +7356,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "BillerManagementAddFormSubmit",
         value: function BillerManagementAddFormSubmit() {
-          var _this27 = this;
+          var _this28 = this;
 
           for (var x in this.billerManagementAddEditForm.controls) {
             this.billerManagementAddEditForm.controls[x].markAsTouched();
@@ -7298,14 +7374,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var data = {
               "source": "data_pece",
               "data": this.billerManagementAddEditForm.value,
+              "sourceobj": ["parent_id"],
               "token": this.htmlText.userData.jwtToken,
               "domainurl": _environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].siteBaseUrl + 'reset-password'
             };
 
             if (this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
-              data.data["diagnostic_admin_id"] = this.htmlText.userData.user_details._id;
+              data.data["parent_id"] = this.htmlText.userData.user_details._id;
               data.data["parent_type"] = "diagnostic_admin";
-              data["sourceobj"] = ["diagnostic_admin_id"];
+              data["sourceobj"] = ["parent_id"];
             }
 
             if (this.htmlText.userData.user_details.user_type == 'doctor') {
@@ -7314,56 +7391,50 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
 
             if (this.htmlText.userData.user_details.user_type == 'doctor_group') {
-              data.data["doctorgroup_id"] = this.htmlText.userData.user_details._id;
+              data.data["parent_id"] = this.htmlText.userData.user_details._id;
               data.data["parent_type"] = "doctor_group";
-              data["sourceobj"] = ["doctorgroup_id"];
+              data["sourceobj"] = ["parent_id"];
             }
 
             if (this.htmlText.userData.user_details.user_type == 'distributors') {
-              data.data["distributor_id"] = this.htmlText.userData.user_details._id;
+              data.data["parent_id"] = this.htmlText.userData.user_details._id;
               data.data["parent_type"] = "distributor";
-              data["sourceobj"] = ["distributor_id"];
-            }
-
-            if (this.htmlText.userData.user_details.user_type == 'admin') {
-              data.data["admin_id"] = this.htmlText.userData.user_details._id;
-              data.data["parent_type"] = "admin";
-              data["sourceobj"] = ["admin_id"];
+              data["sourceobj"] = ["parent_id"];
             }
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == 'success') {
-                _this27.snackBar.open(_this27.message, 'Ok', {
+                _this28.snackBar.open(_this28.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this27.formDirective.resetForm();
+                _this28.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this27.htmlText.userData.user_details.user_type) {
+                  switch (_this28.htmlText.userData.user_details.user_type) {
                     case 'admin':
-                      _this27.router.navigateByUrl("admin/biller-management");
+                      _this28.router.navigateByUrl("admin/biller-management");
 
                       break;
 
                     case 'diagnostic_admin':
-                      _this27.router.navigateByUrl("diagnostic-admin/biller-management");
+                      _this28.router.navigateByUrl("diagnostic-admin/biller-management");
 
                       break;
 
                     case 'doctor_group':
-                      _this27.router.navigateByUrl("doctor-group/biller-management");
+                      _this28.router.navigateByUrl("doctor-group/biller-management");
 
                       break;
 
                     case 'distributors':
-                      _this27.router.navigateByUrl("distributors/biller-management");
+                      _this28.router.navigateByUrl("distributors/biller-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this27.snackBar.open(response.msg, '', {
+                _this28.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -7451,7 +7522,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "changePasswordFormSubmit",
         value: function changePasswordFormSubmit() {
-          var _this28 = this;
+          var _this29 = this;
 
           for (var x in this.changePwdForm.controls) {
             this.changePwdForm.controls[x].markAsTouched();
@@ -7466,11 +7537,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost('changepassword', data).subscribe(function (response) {
               if (response.status == true) {
-                _this28.snackBar.open('Successfully changed.', '', {
+                _this29.snackBar.open('Successfully changed.', '', {
                   duration: 2000
                 });
               } else {
-                _this28.snackBar.open(response.message, '', {
+                _this29.snackBar.open(response.message, '', {
                   duration: 2000
                 });
               }
@@ -7683,7 +7754,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (this.userData.user_type == 'diagnostic_admin') {
           this.editUrl = 'diagnostic-admin/biller-management/edit';
           this.field = {
-            'diagnostic_admin_id': this.userData._id
+            'parent_id': this.userData._id
           };
           this.data = this.userData._id;
         }
@@ -7691,7 +7762,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (this.userData.user_type == 'doctor_group') {
           this.editUrl = 'doctor-group/biller-management/edit';
           this.field = {
-            'doctorgroup_id': this.userData._id
+            'parent_id': this.userData._id
           };
           this.data = this.userData._id;
         }
@@ -7699,7 +7770,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (this.userData.user_type == 'distributors') {
           this.editUrl = 'distributors/biller-management/edit';
           this.field = {
-            'distributors_id': this.userData._id
+            'parent_id': this.userData._id
           };
           this.data = this.userData._id;
         }
@@ -7716,7 +7787,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingBillerComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this29 = this;
+          var _this30 = this;
 
           this.datasource = '';
           var endpoint = 'getbillerlistdata';
@@ -7735,19 +7806,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           if (this.userData.user_type == 'diagnostic_admin') {
             this.fetch = {
-              'diagnostic_admin_id': this.data
+              'parent_id': this.data
             };
           }
 
           if (this.userData.user_type == 'doctor_group') {
             this.fetch = {
-              'doctorgroup_id': this.data
+              'parent_id': this.data
             };
           }
 
           if (this.userData.user_type == 'distributors') {
             this.fetch = {
-              'distributor_id': this.data
+              'parent_id': this.data
             };
           }
 
@@ -7755,12 +7826,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this29.billerData_count = res.count; //console.warn('blogData c',res);
+            _this30.billerData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this29.allBillerData = res.results.res;
+            _this30.allBillerData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -7768,10 +7839,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllBillerData",
         value: function getAllBillerData() {
-          var _this30 = this;
+          var _this31 = this;
 
           this.activeRoute.data.forEach(function (data) {
-            _this30.allBillerData = data.Billerdata.res;
+            _this31.allBillerData = data.Billerdata.res;
           });
         }
       }]);
@@ -8125,7 +8196,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditDiagnosticAdminComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this31 = this;
+          var _this32 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -8163,40 +8234,40 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 console.log(data);
                 var diagnosticAdmin = data.data.res[0];
                 setTimeout(function () {
-                  _this31.getCity(diagnosticAdmin.state);
+                  _this32.getCity(diagnosticAdmin.state);
                 }, 1000);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['id'].patchValue(diagnosticAdmin._id);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['id'].patchValue(diagnosticAdmin._id);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['center_name'].patchValue(diagnosticAdmin.center_name);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['center_name'].patchValue(diagnosticAdmin.center_name);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['email'].patchValue(diagnosticAdmin.email);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['email'].patchValue(diagnosticAdmin.email);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['phone'].patchValue(diagnosticAdmin.phone);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['phone'].patchValue(diagnosticAdmin.phone);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['fax'].patchValue(diagnosticAdmin.phone);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['fax'].patchValue(diagnosticAdmin.phone);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['address'].patchValue(diagnosticAdmin.address);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['address'].patchValue(diagnosticAdmin.address);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['zip'].patchValue(diagnosticAdmin.zip);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['zip'].patchValue(diagnosticAdmin.zip);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['city'].patchValue(diagnosticAdmin.city);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['city'].patchValue(diagnosticAdmin.city);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['state'].patchValue(diagnosticAdmin.state);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['state'].patchValue(diagnosticAdmin.state);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['status'].patchValue(diagnosticAdmin.status);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['status'].patchValue(diagnosticAdmin.status);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['contact_person_1_name'].patchValue(diagnosticAdmin.contact_person[0].name);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['contact_person_1_name'].patchValue(diagnosticAdmin.contact_person[0].name);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['contact_person_1_email'].patchValue(diagnosticAdmin.contact_person[0].email);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['contact_person_1_email'].patchValue(diagnosticAdmin.contact_person[0].email);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['contact_person_1_phone'].patchValue(diagnosticAdmin.contact_person[0].phone);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['contact_person_1_phone'].patchValue(diagnosticAdmin.contact_person[0].phone);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['contact_person_2_name'].patchValue(diagnosticAdmin.contact_person[1].name);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['contact_person_2_name'].patchValue(diagnosticAdmin.contact_person[1].name);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['contact_person_2_email'].patchValue(diagnosticAdmin.contact_person[1].email);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['contact_person_2_email'].patchValue(diagnosticAdmin.contact_person[1].email);
 
-                _this31.DiagnosticAdminManagementAddEditForm.controls['contact_person_2_phone'].patchValue(diagnosticAdmin.contact_person[1].phone);
+                _this32.DiagnosticAdminManagementAddEditForm.controls['contact_person_2_phone'].patchValue(diagnosticAdmin.contact_person[1].phone);
               });
               break;
 
@@ -8250,13 +8321,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this32 = this;
+          var _this33 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this32.htmlText.states = response; // this.getResolveData();
+            _this33.htmlText.states = response; // this.getResolveData();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this32.htmlText.allCities = response;
+            _this33.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -8275,7 +8346,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "TechManagementAddFormFormSubmit",
         value: function TechManagementAddFormFormSubmit() {
-          var _this33 = this;
+          var _this34 = this;
 
           for (var x in this.DiagnosticAdminManagementAddEditForm.controls) {
             this.DiagnosticAdminManagementAddEditForm.controls[x].markAsTouched();
@@ -8314,17 +8385,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this33.snackBar.open(_this33.htmlText.message, 'Ok', {
+                _this34.snackBar.open(_this34.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this33.formDirective.resetForm();
+                _this34.formDirective.resetForm();
 
                 setTimeout(function () {
-                  _this33.router.navigateByUrl("admin/diagnostic-admin-management");
+                  _this34.router.navigateByUrl("admin/diagnostic-admin-management");
                 }, 2000);
               } else {
-                _this33.snackBar.open(response.msg, '', {
+                _this34.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -8619,7 +8690,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingDiagnosticAdminComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this34 = this;
+          var _this35 = this;
 
           this.datasource = '';
           var endpoint = 'getdiagnosticadminlistdata';
@@ -8637,12 +8708,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this34.diagnosticadminData_count = res.count; //console.warn('blogData c',res);
+            _this35.diagnosticadminData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this34.TechDashboardAllData = res.results.res;
+            _this35.TechDashboardAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -8771,12 +8842,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/material */
     "./node_modules/@angular/material/esm2015/material.js");
-    /* harmony import */
-
-
-    var _environments_environment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
-    /*! ../../../../../environments/environment */
-    "./src/environments/environment.ts");
 
     var AddeditDoctorComponent =
     /*#__PURE__*/
@@ -8800,11 +8865,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           doctorOfficeData: [],
           techData: [],
           parent_type: [{
-            name: "Distributor"
+            name: "Distributor",
+            value: "distributor"
           }, {
-            name: "DiagnosticAdmin"
+            name: "DiagnosticAdmin",
+            value: "diagnostic_admin"
           }, {
-            name: "DoctorGroup"
+            name: "DoctorGroup",
+            value: "doctor_group"
           }],
           parent_id: [],
           billerData: [],
@@ -8819,7 +8887,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.allStateCityData(); // this.getAllData();
         // this.f();
 
-        this.getalldata();
+        if (this.htmlText.user_details.user_type != 'admin') {
+          this.getalldata(this.htmlText.user_details);
+        } else {
+          this.getalldata();
+        }
 
         if (this.acivatedRoute.snapshot.params._id) {
           this.generateAddEditForm('edit');
@@ -8839,7 +8911,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this35 = this;
+          var _this36 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -8855,13 +8927,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             zip: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(4), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(18)]],
             city: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             state: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
-            user_type: ['doctor', []],
-            parent_type: ['admin', []],
-            parent_id: [this.htmlText.user_details._id, []],
-            tech_id: ['', []],
-            biller_id: ['', []],
-            doctors_office_id: ['', []],
-            taxo_list: ['', []],
+            user_type: ['doctor'],
+            parent_type: ['admin'],
+            parent_id: ['', []],
+            tech_id: [[]],
+            biller_id: [[]],
+            doctors_office_id: [[]],
+            taxo_list: [[]],
             status: ['', []],
             password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(16), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(6)]],
             confirmpassword: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
@@ -8871,11 +8943,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }; // diagnostic_admin
 
           if (this.htmlText.user_details.user_type == 'diagnostic_admin') {
-            validateRule["tech_id"] = ['', []];
+            validateRule["tech_id"] = [[], []];
           }
 
           if (this.htmlText.user_details.user_type == 'doctor') {
-            validateRule["tech_id"] = ['', []];
+            validateRule["tech_id"] = [[], []];
           }
 
           switch (flag) {
@@ -8885,55 +8957,103 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.doctorManagementAddEditForm = this.formBuilder.group(validateRule);
               this.acivatedRoute.data.forEach(function (data) {
                 var doctorDetails = data.data.res;
+                console.log('=======', doctorDetails[0]);
+
+                _this36.doctorManagementAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
+
+                _this36.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
+
+                _this36.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
+
+                _this36.doctorManagementAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
+
+                _this36.doctorManagementAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
+
+                _this36.doctorManagementAddEditForm.controls['phone'].patchValue(doctorDetails[0].phone);
+
+                _this36.doctorManagementAddEditForm.controls['fax'].patchValue(doctorDetails[0].fax);
+
+                _this36.doctorManagementAddEditForm.controls['practice_name'].patchValue(doctorDetails[0].practice_name);
+
+                _this36.doctorManagementAddEditForm.controls['npi'].patchValue(doctorDetails[0].npi);
+
+                _this36.doctorManagementAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
+
+                _this36.doctorManagementAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
+
+                _this36.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
+
+                _this36.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
+
+                _this36.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city); // this.getCity(doctorDetails[0].state);
+
+
+                _this36.getalldata(doctorDetails[0].parent_id); //  this.getCity(doctorDetails[0].state);
+                // this.getCityByName(doctorDetails[0].state);
+
+
                 setTimeout(function () {
-                  _this35.getCity(doctorDetails[0].state);
-                }, 1000);
+                  // getCityByName
+                  _this36.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
 
-                _this35.doctorManagementAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
+                  _this36.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_id);
 
-                _this35.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
+                  _this36.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_id);
 
-                _this35.doctorManagementAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
+                  console.log('doctorDetails[0].doctors_office_id', doctorDetails[0].doctors_office_id);
+                  console.log('doctorDetails[0].tech_id', doctorDetails[0].tech_id);
+                  console.log('doctorDetails[0].biller_id', doctorDetails[0].biller_id);
+                }, 2000); // if (doctorDetails[0].parent_type != "admin") {
 
-                _this35.doctorManagementAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
-
-                _this35.doctorManagementAddEditForm.controls['phone'].patchValue(doctorDetails[0].phone);
-
-                _this35.doctorManagementAddEditForm.controls['fax'].patchValue(doctorDetails[0].fax);
-
-                _this35.doctorManagementAddEditForm.controls['practice_name'].patchValue(doctorDetails[0].practice_name);
-
-                _this35.doctorManagementAddEditForm.controls['npi'].patchValue(doctorDetails[0].npi);
-
-                _this35.doctorManagementAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
-
-                _this35.doctorManagementAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
-
-                _this35.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
-
-                _this35.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state); // diagnostic_admin
+                _this36.doctorManagementAddEditForm.controls['parent_type'].patchValue(doctorDetails[0].parent_type); // }
+                // if (doctorDetails[0].parent_type != "admin") {
 
 
-                if (_this35.htmlText.user_details.user_type == 'diagnostic_admin') {
-                  _this35.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
-                }
-
-                if (_this35.htmlText.user_details.user_type == 'admin') {
-                  _this35.doctorManagementAddEditForm.controls['parent_id'] = _this35.htmlText.user_details._id; // this.doctorManagementAddEditForm.controls['parent_type'] = this.;
-                } // doctor
+                _this36.doctorManagementAddEditForm.controls['parent_id'].patchValue(doctorDetails[0].parent_id); // }
+                // this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
 
 
-                if (_this35.htmlText.user_details.user_type == 'doctor') {
-                  _this35.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
-                } //this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_details);
+                _this36.doctorManagementAddEditForm.controls['taxo_list'].patchValue(doctorDetails[0].taxo_list);
+
+                _this36.doctorManagementAddEditForm.controls['status'].patchValue(doctorDetails[0].status); // this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_details);
+                // this.getalldata(doctorDetails[0].parent_id);
+                // return;
+                // setTimeout(() => {
+                //   this.getCity(doctorDetails[0].state);
+                // }, 1000);
+                // if (doctorDetails[0].parent_type == "admin") {
+                //   setTimeout(() => {
+                //     this.getalldata();
+                //   }, 1000);
+                // } else {
+                //   setTimeout(() => {
+                //     this.getalldata(doctorDetails[0].parent_id);
+                //   }, 1000);
+                // }
+                // if (doctorDetails[0].parent_type != "admin") {
+                //   setTimeout(() => {
+                //     this.getParentData(doctorDetails[0].parent_type);
+                //   }, 1000);
+                // }
+                // return
+                // this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
+                // this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_id);
+                // this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_id);
+                // // diagnostic_admin
+                // if (this.htmlText.user_details.user_type == 'diagnostic_admin') {
+                //   this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
+                // }
+                // if (this.htmlText.user_details.user_type == 'admin') {
+                //   this.doctorManagementAddEditForm.controls['parent_id'] = this.htmlText.user_details._id;
+                //   // this.doctorManagementAddEditForm.controls['parent_type'] = this.;
+                // }
+                // // doctor
+                // if (this.htmlText.user_details.user_type == 'doctor') {
+                //   this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
+                // }
+                //this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_details);
                 //this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_details);
 
-
-                _this35.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
-
-                _this35.doctorManagementAddEditForm.controls['taxo_list'].patchValue(doctorDetails[0].taxo_list);
-
-                _this35.doctorManagementAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
               });
               break;
 
@@ -8984,16 +9104,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this36 = this;
+          var _this37 = this;
 
           this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this36.htmlText.states = response;
+            _this37.htmlText.states = response;
           });
           this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this36.htmlText.allCities = response;
+            _this37.htmlText.allCities = response;
           });
           this.http.getSiteSettingData("./assets/data-set/taxonomies.json").subscribe(function (response) {
-            _this36.htmlText.taxonomies = response;
+            _this37.htmlText.taxonomies = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -9008,13 +9128,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "getCityByName",
         value: function getCityByName(stateName) {
           this.htmlText.cities = this.htmlText.allCities[stateName];
+          console.log(stateName, this.htmlText.allCities[stateName], 'cc');
         }
         /**getting all the technician data**/
 
       }, {
         key: "getalldata",
         value: function getalldata() {
-          var _this37 = this;
+          var _this38 = this;
 
           var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
           var data = {
@@ -9067,13 +9188,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.http.httpViaPost('datalist', data).subscribe(function (response) {
-            _this37.htmlText.techData = response.res;
+            _this38.htmlText.techData = response.res;
           });
           this.http.httpViaPost('datalist', data1).subscribe(function (response) {
-            _this37.htmlText.billerData = response.res;
+            _this38.htmlText.billerData = response.res;
           });
           this.http.httpViaPost('datalist', data2).subscribe(function (response) {
-            _this37.htmlText.doctorOfficeData = response.res;
+            _this38.htmlText.doctorOfficeData = response.res;
           });
         }
         /**getting all the Parent data**/
@@ -9081,7 +9202,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getParentData",
         value: function getParentData() {
-          var _this38 = this;
+          var _this39 = this;
 
           var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
           var billerData = id;
@@ -9126,7 +9247,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('datalist', data).subscribe(function (response) {
             // console.log('+++++++++',response);
-            _this38.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
+            _this39.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
             // this.htmlText.doctorOfficeData = response.data.doctor_office_data;
             // this.htmlText.billerData = response.data.biller_data;
           });
@@ -9134,9 +9255,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "doctorManagementAddEditFormSubmit",
         value: function doctorManagementAddEditFormSubmit() {
-          var _this39 = this;
-
-          var Data = Object.keys(this.doctorManagementAddEditForm.value);
+          var _this40 = this;
 
           for (var x in this.doctorManagementAddEditForm.controls) {
             this.doctorManagementAddEditForm.controls[x].markAsTouched();
@@ -9159,8 +9278,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var postData = {
               "source": "data_pece",
               "data": this.doctorManagementAddEditForm.value,
-              "domainurl": _environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].siteBaseUrl + 'reset-password',
-              "sourceobjArray": [Data[14], Data[15], Data[16]],
+              "sourceobjArray": ["tech_id", "biller_id", "doctor_office_id"],
               "token": this.cookieService.get('jwtToken')
             };
 
@@ -9187,35 +9305,35 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.http.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == "success") {
-                _this39.snackBar.open(_this39.htmlText.message, 'Ok', {
+                _this40.snackBar.open(_this40.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  switch (_this39.htmlText.user_details.user_type) {
+                  switch (_this40.htmlText.user_details.user_type) {
                     case 'admin':
-                      _this39.router.navigateByUrl("admin/doctor-management");
+                      _this40.router.navigateByUrl("admin/doctor-management");
 
                       break;
 
                     case 'diagnostic_admin':
-                      _this39.router.navigateByUrl("diagnostic-admin/doctor-management");
+                      _this40.router.navigateByUrl("diagnostic-admin/doctor-management");
 
                       break;
 
                     case 'distributors':
-                      _this39.router.navigateByUrl("distributors/doctor-management");
+                      _this40.router.navigateByUrl("distributors/doctor-management");
 
                       break;
 
                     case 'doctor_group':
-                      _this39.router.navigateByUrl("doctor-group/doctor-management");
+                      _this40.router.navigateByUrl("doctor-group/doctor-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this39.snackBar.open(response.msg, '', {
+                _this40.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -9519,7 +9637,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (this.userData.user_type == 'diagnostic_admin') {
           this.editUrl = 'diagnostic-admin/doctor-management/edit';
           this.field = {
-            'diagnostic_admin_id': this.userData._id
+            'parent_id': this.userData._id
           };
           this.data = this.userData._id;
         }
@@ -9541,7 +9659,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (this.userData.user_type == 'doctor_group') {
           this.editUrl = 'doctor-group/doctor-management/edit';
           this.field = {
-            'doctorgroup_id': this.userData._id
+            'parent_id': this.userData._id
           };
           this.data = this.userData._id;
         }
@@ -9549,7 +9667,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (this.userData.user_type == 'distributors') {
           this.editUrl = 'distributors/doctor-management/edit';
           this.field = {
-            'distributors_id': this.userData._id
+            'parent_id': this.userData._id
           };
           this.data = this.userData._id;
         }
@@ -9562,7 +9680,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListDoctorComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this40 = this;
+          var _this41 = this;
 
           this.datasource = '';
           var endpoint = 'getdoctorlistdata';
@@ -9581,19 +9699,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           if (this.userData.user_type == 'diagnostic_admin') {
             this.fetch = {
-              'diagnostic_admin_id': this.data
+              'parent_id': this.data
             };
           }
 
           if (this.userData.user_type == 'doctor_group') {
             this.fetch = {
-              'doctorgroup_id': this.data
+              'parent_id': this.data
             };
           }
 
           if (this.userData.user_type == 'distributors') {
             this.fetch = {
-              'distributor_id': this.data
+              'parent_id': this.data
             };
           }
 
@@ -9602,12 +9720,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.http.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this40.docData_count = res.count; //console.warn('blogData c',res);
+            _this41.docData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.http.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this40.docData = res.results.res;
+            _this41.docData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -9766,6 +9884,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           doctorOfficeData: "",
           techData: "",
           billerData: "",
+          parent_type: [{
+            name: "Distributor"
+          }, {
+            name: "DiagnosticAdmin"
+          }, {
+            name: "DoctorGroup"
+          }],
           states: "",
           allCities: "",
           cities: "",
@@ -9775,7 +9900,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.htmlText.userData = this.cookieService.getAll();
         console.log(this.htmlText.userData.user_type);
         this.htmlText.user_details = JSON.parse(this.htmlText.userData.user_details);
-        this.getAllTechData();
+
+        if (this.htmlText.user_details.user_type == 'admin') {
+          this.getAllTechData();
+        } else {
+          this.getAllTechData(this.htmlText.user_details._id);
+        }
+
         this.allStateCityData();
 
         if (this.acivatedRoute.snapshot.params._id) {
@@ -9793,7 +9924,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditDoctorOfcComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this41 = this;
+          var _this42 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -9807,6 +9938,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             zip: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(4), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(18)]],
             city: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             tech_id: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            parent_type: ['admin', []],
+            parent_id: ['', []],
             state: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             user_type: ['doctor_office', []],
             status: ['', []],
@@ -9825,32 +9958,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.acivatedRoute.data.forEach(function (data) {
                 var doctorDetails = data.data.res;
                 setTimeout(function () {
-                  _this41.getCity(doctorDetails[0].state);
+                  _this42.getCity(doctorDetails[0].state);
                 }, 1000);
 
-                _this41.doctorOfficeAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
+                _this42.doctorOfficeAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
 
-                _this41.doctorOfficeAddEditForm.controls['center_name'].patchValue(doctorDetails[0].center_name);
+                _this42.doctorOfficeAddEditForm.controls['center_name'].patchValue(doctorDetails[0].center_name);
 
-                _this41.doctorOfficeAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
+                _this42.doctorOfficeAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
 
-                _this41.doctorOfficeAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
+                _this42.doctorOfficeAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
 
-                _this41.doctorOfficeAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
+                _this42.doctorOfficeAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
 
-                _this41.doctorOfficeAddEditForm.controls['phone'].patchValue(doctorDetails[0].phone);
+                _this42.doctorOfficeAddEditForm.controls['phone'].patchValue(doctorDetails[0].phone);
 
-                _this41.doctorOfficeAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
+                _this42.doctorOfficeAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
 
-                _this41.doctorOfficeAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
+                _this42.doctorOfficeAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
 
-                _this41.doctorOfficeAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
+                _this42.doctorOfficeAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
 
-                _this41.doctorOfficeAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
+                _this42.doctorOfficeAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id); // this.getCity(doctorDetails[0].state);
 
-                _this41.doctorOfficeAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
 
-                _this41.doctorOfficeAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
+                _this42.getParentData(doctorDetails[0].parent_type); //  this.getCity(doctorDetails[0].state);
+                // this.getCityByName(doctorDetails[0].state);
+
+
+                setTimeout(function () {
+                  // getCityByName
+                  _this42.doctorOfficeAddEditForm.controls['parent_type'].patchValue(doctorDetails[0].parent_type);
+
+                  _this42.doctorOfficeAddEditForm.controls['parent_id'].patchValue(doctorDetails[0].parent_id);
+                }, 2000);
+
+                _this42.doctorOfficeAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
+
+                _this42.doctorOfficeAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
               });
               break;
 
@@ -9904,13 +10049,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this42 = this;
+          var _this43 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this42.htmlText.states = response;
+            _this43.htmlText.states = response;
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this42.htmlText.allCities = response;
+            _this43.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -9926,19 +10071,76 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllTechData",
         value: function getAllTechData() {
-          var _this43 = this;
+          var _this44 = this;
 
+          var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
           console.log(">>>>>", this.htmlText.user_details);
           var data = {
             "source": "data_pece",
             "condition": {
               "user_type": "tech",
-              "tech_id": this.htmlText.user_details.tech_id
+              "tech_id": this.htmlText.user_details.tech_id,
+              "parent_id_object": id
             },
             "token": this.htmlText.userData.jwtToken
           };
-          this.httpService.httpViaPost('doctor-add-tech-list', data).subscribe(function (response) {
-            _this43.htmlText.techData = response.res;
+          this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
+            _this44.htmlText.techData = response.res;
+          });
+        }
+        /**getting all the Parent data**/
+
+      }, {
+        key: "getParentData",
+        value: function getParentData() {
+          var _this45 = this;
+
+          var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+          var billerData = id;
+          this.selectionChangeValue = billerData;
+          console.log('1111', billerData);
+
+          if (billerData == 'DiagnosticAdmin') {
+            // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+            var data = {
+              "source": "data_pece",
+              "condition": {
+                "user_type": "diagnostic_admin"
+              },
+              "token": this.htmlText.userData.jwtToken
+            };
+          }
+
+          if (billerData == 'Distributor') {
+            // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+            var data = {
+              "source": "data_pece",
+              "condition": {
+                "user_type": "distributors"
+              },
+              "token": this.htmlText.userData.jwtToken
+            };
+          }
+
+          if (billerData == 'DoctorGroup') {
+            // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+            var data = {
+              "source": "data_pece",
+              "condition": {
+                "user_type": "doctor_group"
+              },
+              "token": this.htmlText.userData.jwtToken
+            };
+          } // if(this.htmlText.user_details.user_type == 'distributors') {
+          //   data['distributor_id_object'] = this.htmlText.userData.user_details._id;
+          // }
+
+
+          this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
+            // console.log('+++++++++',response);
+            _this45.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
+            // this.htmlText.doctorOfficeData = response.data.doctor_office_data;
+            // this.htmlText.billerData = response.data.biller_data;
           });
         }
       }, {
@@ -9949,7 +10151,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "doctorOfficeAddEditFormFormSubmit",
         value: function doctorOfficeAddEditFormFormSubmit() {
-          var _this44 = this;
+          var _this46 = this;
 
           for (var x in this.doctorOfficeAddEditForm.controls) {
             this.doctorOfficeAddEditForm.controls[x].markAsTouched();
@@ -9973,6 +10175,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "source": "data_pece",
               "data": this.doctorOfficeAddEditForm.value,
               "domainurl": _environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].siteBaseUrl + 'reset-password',
+              "sourceobj": ["parent_id"],
               "sourceobjArray": ["tech_id"],
               "token": this.cookieService.get('jwtToken')
             };
@@ -10002,27 +10205,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == "success") {
-                _this44.formDirective.resetForm();
+                _this46.formDirective.resetForm();
 
-                _this44.snackBar.open(_this44.htmlText.message, 'Ok', {
+                _this46.snackBar.open(_this46.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  switch (_this44.htmlText.user_details.user_type) {
+                  switch (_this46.htmlText.user_details.user_type) {
                     case 'doctor':
-                      _this44.router.navigateByUrl("doctor/doctor-office-management");
+                      _this46.router.navigateByUrl("doctor/doctor-office-management");
 
                       break;
 
                     case 'admin':
-                      _this44.router.navigateByUrl("admin/doctor-office-management");
+                      _this46.router.navigateByUrl("admin/doctor-office-management");
 
                       break;
                   }
                 }, 2000);
               } else {
-                _this44.snackBar.open(response.msg, '', {
+                _this46.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -10313,7 +10516,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(DoctorOfficeManagementComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this45 = this;
+          var _this47 = this;
 
           this.datasource = '';
           var endpoint = 'getdoctorofficelistdata';
@@ -10331,12 +10534,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this45.doctorOfficeData_count = res.count; //console.warn('blogData c',res);
+            _this47.doctorOfficeData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this45.doctorOfficeAllData = res.results.res;
+            _this47.doctorOfficeAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -10509,7 +10712,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditFaqComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this46 = this;
+          var _this48 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -10528,19 +10731,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var billerDetails = data.techData.res;
 
-                _this46.FaqManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
+                _this48.FaqManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
 
-                _this46.FaqManagementAddEditForm.controls['users'].patchValue(billerDetails[0].users);
+                _this48.FaqManagementAddEditForm.controls['users'].patchValue(billerDetails[0].users);
 
-                _this46.FaqManagementAddEditForm.controls['question'].patchValue(billerDetails[0].question);
+                _this48.FaqManagementAddEditForm.controls['question'].patchValue(billerDetails[0].question);
 
-                _this46.htmlText.ckEditorValue = billerDetails[0].answer;
+                _this48.htmlText.ckEditorValue = billerDetails[0].answer;
 
-                _this46.FaqManagementAddEditForm.controls['youtube_link'].patchValue(billerDetails[0].youtube_link);
+                _this48.FaqManagementAddEditForm.controls['youtube_link'].patchValue(billerDetails[0].youtube_link);
 
-                _this46.FaqManagementAddEditForm.controls['priority'].patchValue(billerDetails[0].priority);
+                _this48.FaqManagementAddEditForm.controls['priority'].patchValue(billerDetails[0].priority);
 
-                _this46.FaqManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
+                _this48.FaqManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
               });
               break;
 
@@ -10565,7 +10768,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "TechManagementAddFormFormSubmit",
         value: function TechManagementAddFormFormSubmit() {
-          var _this47 = this;
+          var _this49 = this;
 
           this.FaqManagementAddEditForm.controls['answer'].patchValue(this.htmlText.ckEditorValue);
 
@@ -10601,17 +10804,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this47.snackBar.open(_this47.htmlText.message, 'Ok', {
+                _this49.snackBar.open(_this49.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this47.formDirective.resetForm();
+                _this49.formDirective.resetForm();
 
                 setTimeout(function () {
-                  _this47.router.navigateByUrl("admin/faq-management");
+                  _this49.router.navigateByUrl("admin/faq-management");
                 }, 1000);
               } else {
-                _this47.snackBar.open(response.msg, '', {
+                _this49.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -10802,10 +11005,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListFaqComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this48 = this;
+          var _this50 = this;
 
           this.activatedRoute.data.forEach(function (data) {
-            _this48.FaqManagementAddEditForm = data.techDashboardData.res;
+            _this50.FaqManagementAddEditForm = data.techDashboardData.res;
           });
         }
       }]);
@@ -10982,7 +11185,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this49 = this;
+          var _this51 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -11019,39 +11222,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.acivatedRoute.data.forEach(function (data) {
                 var adminbillerDetails = data.data.res;
                 setTimeout(function () {
-                  _this49.getCity(adminbillerDetails[0].state);
+                  _this51.getCity(adminbillerDetails[0].state);
                 }, 1000);
 
-                _this49.adminbillerManagementAddEditForm.controls['id'].patchValue(adminbillerDetails[0]._id);
+                _this51.adminbillerManagementAddEditForm.controls['id'].patchValue(adminbillerDetails[0]._id);
 
-                _this49.adminbillerManagementAddEditForm.controls['firstname'].patchValue(adminbillerDetails[0].firstname);
+                _this51.adminbillerManagementAddEditForm.controls['firstname'].patchValue(adminbillerDetails[0].firstname);
 
-                _this49.adminbillerManagementAddEditForm.controls['lastname'].patchValue(adminbillerDetails[0].lastname);
+                _this51.adminbillerManagementAddEditForm.controls['lastname'].patchValue(adminbillerDetails[0].lastname);
 
-                _this49.adminbillerManagementAddEditForm.controls['email'].patchValue(adminbillerDetails[0].email);
+                _this51.adminbillerManagementAddEditForm.controls['email'].patchValue(adminbillerDetails[0].email);
 
-                _this49.adminbillerManagementAddEditForm.controls['phone'].patchValue(adminbillerDetails[0].phone);
+                _this51.adminbillerManagementAddEditForm.controls['phone'].patchValue(adminbillerDetails[0].phone);
 
-                _this49.adminbillerManagementAddEditForm.controls['address'].patchValue(adminbillerDetails[0].address);
+                _this51.adminbillerManagementAddEditForm.controls['address'].patchValue(adminbillerDetails[0].address);
 
-                _this49.adminbillerManagementAddEditForm.controls['zip'].patchValue(adminbillerDetails[0].zip);
+                _this51.adminbillerManagementAddEditForm.controls['zip'].patchValue(adminbillerDetails[0].zip);
 
-                _this49.adminbillerManagementAddEditForm.controls['city'].patchValue(adminbillerDetails[0].city);
+                _this51.adminbillerManagementAddEditForm.controls['city'].patchValue(adminbillerDetails[0].city);
 
-                _this49.adminbillerManagementAddEditForm.controls['state'].patchValue(adminbillerDetails[0].state); // diagnostic_admin
+                _this51.adminbillerManagementAddEditForm.controls['state'].patchValue(adminbillerDetails[0].state); // diagnostic_admin
 
 
-                if (_this49.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
-                  _this49.adminbillerManagementAddEditForm.controls['tech_id'].patchValue(adminbillerDetails[0].tech_id);
+                if (_this51.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
+                  _this51.adminbillerManagementAddEditForm.controls['tech_id'].patchValue(adminbillerDetails[0].tech_id);
                 } //this.adminbillerManagementAddEditForm.controls['biller_id'].patchValue(adminbillerDetails[0].biller_details);
                 //this.adminbillerManagementAddEditForm.controls['doctors_office_id'].patchValue(adminbillerDetails[0].doctors_office_details);
 
 
-                _this49.adminbillerManagementAddEditForm.controls['state'].patchValue(adminbillerDetails[0].state);
+                _this51.adminbillerManagementAddEditForm.controls['state'].patchValue(adminbillerDetails[0].state);
 
-                _this49.adminbillerManagementAddEditForm.controls['taxo_list'].patchValue(adminbillerDetails[0].taxo_list);
+                _this51.adminbillerManagementAddEditForm.controls['taxo_list'].patchValue(adminbillerDetails[0].taxo_list);
 
-                _this49.adminbillerManagementAddEditForm.controls['status'].patchValue(adminbillerDetails[0].status);
+                _this51.adminbillerManagementAddEditForm.controls['status'].patchValue(adminbillerDetails[0].status);
               });
               break;
 
@@ -11091,16 +11294,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this50 = this;
+          var _this52 = this;
 
           this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this50.htmlText.states = response;
+            _this52.htmlText.states = response;
           });
           this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this50.htmlText.allCities = response;
+            _this52.htmlText.allCities = response;
           });
           this.http.getSiteSettingData("./assets/data-set/taxonomies.json").subscribe(function (response) {
-            _this50.htmlText.taxonomies = response;
+            _this52.htmlText.taxonomies = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -11119,7 +11322,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "adminbillerManagementAddEditFormSubmit",
         value: function adminbillerManagementAddEditFormSubmit() {
-          var _this51 = this;
+          var _this53 = this;
 
           for (var x in this.adminbillerManagementAddEditForm.controls) {
             this.adminbillerManagementAddEditForm.controls[x].markAsTouched();
@@ -11155,25 +11358,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.http.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == "success") {
-                _this51.snackBar.open(_this51.htmlText.message, 'Ok', {
+                _this53.snackBar.open(_this53.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  switch (_this51.htmlText.userData.user_details.user_type) {
+                  switch (_this53.htmlText.userData.user_details.user_type) {
                     case 'diagnostic_admin':
-                      _this51.router.navigateByUrl("admin/adminbiller-management");
+                      _this53.router.navigateByUrl("admin/adminbiller-management");
 
                       break;
 
                     case 'admin':
-                      _this51.router.navigateByUrl("admin/adminbiller-management");
+                      _this53.router.navigateByUrl("admin/adminbiller-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this51.snackBar.open(response.msg, '', {
+                _this53.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -11382,7 +11585,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingAdminbillerComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this52 = this;
+          var _this54 = this;
 
           this.datasource = '';
           var endpoint = 'getbilleradminlistdata';
@@ -11400,12 +11603,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.http.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this52.docData_count = res.count; //console.warn('blogData c',res);
+            _this54.docData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.http.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this52.docData = res.results.res;
+            _this54.docData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -11583,7 +11786,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditDistributorsComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this53 = this;
+          var _this55 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -11613,28 +11816,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var distributorsDetails = data.distributorsData.res;
                 setTimeout(function () {
-                  _this53.getCity(distributorsDetails[0].state);
+                  _this55.getCity(distributorsDetails[0].state);
                 }, 1000);
 
-                _this53.DistributorsManagementAddEditForm.controls['id'].patchValue(distributorsDetails[0]._id);
+                _this55.DistributorsManagementAddEditForm.controls['id'].patchValue(distributorsDetails[0]._id);
 
-                _this53.DistributorsManagementAddEditForm.controls['distributorname'].patchValue(distributorsDetails[0].distributorname);
+                _this55.DistributorsManagementAddEditForm.controls['distributorname'].patchValue(distributorsDetails[0].distributorname);
 
-                _this53.DistributorsManagementAddEditForm.controls['contactperson'].patchValue(distributorsDetails[0].contactperson);
+                _this55.DistributorsManagementAddEditForm.controls['contactperson'].patchValue(distributorsDetails[0].contactperson);
 
-                _this53.DistributorsManagementAddEditForm.controls['email'].patchValue(distributorsDetails[0].email);
+                _this55.DistributorsManagementAddEditForm.controls['email'].patchValue(distributorsDetails[0].email);
 
-                _this53.DistributorsManagementAddEditForm.controls['phone'].patchValue(distributorsDetails[0].phone);
+                _this55.DistributorsManagementAddEditForm.controls['phone'].patchValue(distributorsDetails[0].phone);
 
-                _this53.DistributorsManagementAddEditForm.controls['address'].patchValue(distributorsDetails[0].address);
+                _this55.DistributorsManagementAddEditForm.controls['address'].patchValue(distributorsDetails[0].address);
 
-                _this53.DistributorsManagementAddEditForm.controls['zip'].patchValue(distributorsDetails[0].zip);
+                _this55.DistributorsManagementAddEditForm.controls['zip'].patchValue(distributorsDetails[0].zip);
 
-                _this53.DistributorsManagementAddEditForm.controls['city'].patchValue(distributorsDetails[0].city);
+                _this55.DistributorsManagementAddEditForm.controls['city'].patchValue(distributorsDetails[0].city);
 
-                _this53.DistributorsManagementAddEditForm.controls['state'].patchValue(distributorsDetails[0].state);
+                _this55.DistributorsManagementAddEditForm.controls['state'].patchValue(distributorsDetails[0].state);
 
-                _this53.DistributorsManagementAddEditForm.controls['status'].patchValue(distributorsDetails[0].status);
+                _this55.DistributorsManagementAddEditForm.controls['status'].patchValue(distributorsDetails[0].status);
               });
               break;
 
@@ -11677,13 +11880,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this54 = this;
+          var _this56 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this54.htmlText.states = response; // this.getResolveData();
+            _this56.htmlText.states = response; // this.getResolveData();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this54.htmlText.allCities = response;
+            _this56.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -11702,7 +11905,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "DistributorsManagementAddEditFormSubmit",
         value: function DistributorsManagementAddEditFormSubmit() {
-          var _this55 = this;
+          var _this57 = this;
 
           for (var x in this.DistributorsManagementAddEditForm.controls) {
             this.DistributorsManagementAddEditForm.controls[x].markAsTouched();
@@ -11736,27 +11939,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this55.snackBar.open(_this55.htmlText.message, 'Ok', {
+                _this57.snackBar.open(_this57.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this55.formDirective.resetForm();
+                _this57.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this55.htmlText.userData.user_details.user_type) {
+                  switch (_this57.htmlText.userData.user_details.user_type) {
                     case 'diagnostic_admin':
-                      _this55.router.navigateByUrl("admin/distributors-management");
+                      _this57.router.navigateByUrl("admin/distributors-management");
 
                       break;
 
                     case 'admin':
-                      _this55.router.navigateByUrl("admin/distributors-management");
+                      _this57.router.navigateByUrl("admin/distributors-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this55.snackBar.open(response.msg, '', {
+                _this57.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -11971,7 +12174,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingDistributorsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this56 = this;
+          var _this58 = this;
 
           this.datasource = '';
           var endpoint = 'getdistributorslistdata';
@@ -11989,12 +12192,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this56.techData_count = res.count; //console.warn('blogData c',res);
+            _this58.techData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this56.TechDashboardAllData = res.results.res;
+            _this58.TechDashboardAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -12174,7 +12377,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this57 = this;
+          var _this59 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -12207,34 +12410,34 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.doctorgroupManagementAddEditForm = this.formBuilder.group(validateRule);
               this.acivatedRoute.data.forEach(function (data) {
                 setTimeout(function () {
-                  _this57.getCity(doctorgrouoDetails[0].state);
+                  _this59.getCity(doctorgrouoDetails[0].state);
                 }, 1000);
                 var doctorgrouoDetails = data.data.res;
 
-                _this57.doctorgroupManagementAddEditForm.controls['id'].patchValue(doctorgrouoDetails[0]._id);
+                _this59.doctorgroupManagementAddEditForm.controls['id'].patchValue(doctorgrouoDetails[0]._id);
 
-                _this57.doctorgroupManagementAddEditForm.controls['groupname'].patchValue(doctorgrouoDetails[0].groupname);
+                _this59.doctorgroupManagementAddEditForm.controls['groupname'].patchValue(doctorgrouoDetails[0].groupname);
 
-                _this57.doctorgroupManagementAddEditForm.controls['email'].patchValue(doctorgrouoDetails[0].email);
+                _this59.doctorgroupManagementAddEditForm.controls['email'].patchValue(doctorgrouoDetails[0].email);
 
-                _this57.doctorgroupManagementAddEditForm.controls['phone'].patchValue(doctorgrouoDetails[0].phone);
+                _this59.doctorgroupManagementAddEditForm.controls['phone'].patchValue(doctorgrouoDetails[0].phone);
 
-                _this57.doctorgroupManagementAddEditForm.controls['address'].patchValue(doctorgrouoDetails[0].address);
+                _this59.doctorgroupManagementAddEditForm.controls['address'].patchValue(doctorgrouoDetails[0].address);
 
-                _this57.doctorgroupManagementAddEditForm.controls['zip'].patchValue(doctorgrouoDetails[0].zip);
+                _this59.doctorgroupManagementAddEditForm.controls['zip'].patchValue(doctorgrouoDetails[0].zip);
 
-                _this57.doctorgroupManagementAddEditForm.controls['city'].patchValue(doctorgrouoDetails[0].city);
+                _this59.doctorgroupManagementAddEditForm.controls['city'].patchValue(doctorgrouoDetails[0].city);
 
-                _this57.doctorgroupManagementAddEditForm.controls['state'].patchValue(doctorgrouoDetails[0].state); // diagnostic_admin
+                _this59.doctorgroupManagementAddEditForm.controls['state'].patchValue(doctorgrouoDetails[0].state); // diagnostic_admin
 
 
-                if (_this57.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
-                  _this57.doctorgroupManagementAddEditForm.controls['tech_id'].patchValue(doctorgrouoDetails[0].tech_id);
+                if (_this59.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
+                  _this59.doctorgroupManagementAddEditForm.controls['tech_id'].patchValue(doctorgrouoDetails[0].tech_id);
                 } //this.doctorgroupManagementAddEditForm.controls['biller_id'].patchValue(doctorgrouoDetails[0].biller_details);
                 //this.doctorgroupManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorgrouoDetails[0].doctors_office_details);
 
 
-                _this57.doctorgroupManagementAddEditForm.controls['status'].patchValue(doctorgrouoDetails[0].status);
+                _this59.doctorgroupManagementAddEditForm.controls['status'].patchValue(doctorgrouoDetails[0].status);
               });
               break;
 
@@ -12272,13 +12475,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this58 = this;
+          var _this60 = this;
 
           this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this58.htmlText.states = response;
+            _this60.htmlText.states = response;
           });
           this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this58.htmlText.allCities = response;
+            _this60.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -12297,7 +12500,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "doctorgroupManagementAddEditFormSubmit",
         value: function doctorgroupManagementAddEditFormSubmit() {
-          var _this59 = this;
+          var _this61 = this;
 
           for (var x in this.doctorgroupManagementAddEditForm.controls) {
             this.doctorgroupManagementAddEditForm.controls[x].markAsTouched();
@@ -12333,25 +12536,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.http.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == "success") {
-                _this59.snackBar.open(_this59.htmlText.message, 'Ok', {
+                _this61.snackBar.open(_this61.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  switch (_this59.htmlText.userData.user_details.user_type) {
+                  switch (_this61.htmlText.userData.user_details.user_type) {
                     case 'diagnostic_admin':
-                      _this59.router.navigateByUrl("admin/doctor-management/group");
+                      _this61.router.navigateByUrl("admin/doctor-management/group");
 
                       break;
 
                     case 'admin':
-                      _this59.router.navigateByUrl("admin/doctor-management/group");
+                      _this61.router.navigateByUrl("admin/doctor-management/group");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this59.snackBar.open(response.msg, '', {
+                _this61.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -12539,7 +12742,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingDoctorgroupComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this60 = this;
+          var _this62 = this;
 
           this.datasource = '';
           var endpoint = 'getdoctorgrouplistdata';
@@ -12557,12 +12760,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.http.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this60.docData_count = res.count; //console.warn('blogData c',res);
+            _this62.docData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.http.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this60.docData = res.results.res;
+            _this62.docData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -12736,7 +12939,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditInsuranceComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this61 = this;
+          var _this63 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -12754,15 +12957,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var insuranceDetails = data.insuranceData.res;
 
-                _this61.InsuranceAddEditForm.controls['id'].patchValue(insuranceDetails[0]._id);
+                _this63.InsuranceAddEditForm.controls['id'].patchValue(insuranceDetails[0]._id);
 
-                _this61.InsuranceAddEditForm.controls['insurancename'].patchValue(insuranceDetails[0].insurancename);
+                _this63.InsuranceAddEditForm.controls['insurancename'].patchValue(insuranceDetails[0].insurancename);
 
-                _this61.InsuranceAddEditForm.controls['description'].patchValue(insuranceDetails[0].description);
+                _this63.InsuranceAddEditForm.controls['description'].patchValue(insuranceDetails[0].description);
 
-                _this61.InsuranceAddEditForm.controls['priority'].patchValue(insuranceDetails[0].priority);
+                _this63.InsuranceAddEditForm.controls['priority'].patchValue(insuranceDetails[0].priority);
 
-                _this61.InsuranceAddEditForm.controls['status'].patchValue(insuranceDetails[0].status);
+                _this63.InsuranceAddEditForm.controls['status'].patchValue(insuranceDetails[0].status);
               });
               break;
 
@@ -12785,7 +12988,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "InsuranceManagementAddFormFormSubmit",
         value: function InsuranceManagementAddFormFormSubmit() {
-          var _this62 = this;
+          var _this64 = this;
 
           for (var x in this.InsuranceAddEditForm.controls) {
             this.InsuranceAddEditForm.controls[x].markAsTouched();
@@ -12819,27 +13022,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this62.snackBar.open(_this62.htmlText.message, 'Ok', {
+                _this64.snackBar.open(_this64.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this62.formDirective.resetForm();
+                _this64.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this62.htmlText.userData.user_details.user_type) {
+                  switch (_this64.htmlText.userData.user_details.user_type) {
                     case 'diagnostic_admin':
-                      _this62.router.navigateByUrl("admin/insurance-management");
+                      _this64.router.navigateByUrl("admin/insurance-management");
 
                       break;
 
                     case 'admin':
-                      _this62.router.navigateByUrl("admin/insurance-management");
+                      _this64.router.navigateByUrl("admin/insurance-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this62.snackBar.open(response.msg, '', {
+                _this64.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -13047,7 +13250,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingInsuranceComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this63 = this;
+          var _this65 = this;
 
           this.datasource = '';
           var endpoint = 'getinsurancelistdata';
@@ -13065,12 +13268,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this63.insuranceData_count = res.count; //console.warn('blogData c',res);
+            _this65.insuranceData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this63.InsuranceAllData = res.results.res;
+            _this65.InsuranceAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -13242,7 +13445,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditInsurancetypeComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this64 = this;
+          var _this66 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -13261,17 +13464,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.acivatedRoute.data.forEach(function (data) {
                 var doctorDetails = data.data.res;
 
-                _this64.insuranceTypeAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
+                _this66.insuranceTypeAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
 
-                _this64.insuranceTypeAddEditForm.controls['insurancetype_name'].patchValue(doctorDetails[0].insurancetype_name);
+                _this66.insuranceTypeAddEditForm.controls['insurancetype_name'].patchValue(doctorDetails[0].insurancetype_name);
 
-                _this64.insuranceTypeAddEditForm.controls['description'].patchValue(doctorDetails[0].description);
+                _this66.insuranceTypeAddEditForm.controls['description'].patchValue(doctorDetails[0].description);
 
-                _this64.insuranceTypeAddEditForm.controls['priority'].patchValue(doctorDetails[0].priority);
+                _this66.insuranceTypeAddEditForm.controls['priority'].patchValue(doctorDetails[0].priority);
 
-                _this64.insuranceTypeAddEditForm.controls['insurance_id'].patchValue(doctorDetails[0].insurance_id);
+                _this66.insuranceTypeAddEditForm.controls['insurance_id'].patchValue(doctorDetails[0].insurance_id);
 
-                _this64.insuranceTypeAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
+                _this66.insuranceTypeAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
               });
               break;
 
@@ -13298,7 +13501,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllinsuranceData",
         value: function getAllinsuranceData() {
-          var _this65 = this;
+          var _this67 = this;
 
           var data = {
             "source": "data_pece",
@@ -13308,13 +13511,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "token": this.htmlText.userData.jwtToken
           };
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this65.htmlText.insuranceData = response.res;
+            _this67.htmlText.insuranceData = response.res;
           });
         }
       }, {
         key: "insuranceTypeAddEditFormFormSubmit",
         value: function insuranceTypeAddEditFormFormSubmit() {
-          var _this66 = this;
+          var _this68 = this;
 
           for (var x in this.insuranceTypeAddEditForm.controls) {
             this.insuranceTypeAddEditForm.controls[x].markAsTouched();
@@ -13349,27 +13552,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == "success") {
-                _this66.formDirective.resetForm();
+                _this68.formDirective.resetForm();
 
-                _this66.snackBar.open(_this66.htmlText.message, 'Ok', {
+                _this68.snackBar.open(_this68.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  switch (_this66.htmlText.userData.user_details.user_type) {
+                  switch (_this68.htmlText.userData.user_details.user_type) {
                     case 'doctor':
-                      _this66.router.navigateByUrl("doctor/doctor-office-management");
+                      _this68.router.navigateByUrl("doctor/doctor-office-management");
 
                       break;
 
                     case 'admin':
-                      _this66.router.navigateByUrl("admin/insurance-type-management");
+                      _this68.router.navigateByUrl("admin/insurance-type-management");
 
                       break;
                   }
                 }, 2000);
               } else {
-                _this66.snackBar.open(response.msg, '', {
+                _this68.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -13578,7 +13781,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingInsurancetypeComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this67 = this;
+          var _this69 = this;
 
           this.datasource = '';
           var endpoint = 'getinsurancetypelistdata';
@@ -13596,12 +13799,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this67.insuranceData_count = res.count; //console.warn('blogData c',res);
+            _this69.insuranceData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this67.InsuranceAllData = res.results.res;
+            _this69.InsuranceAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -13789,7 +13992,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditPatientinformationComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this68 = this;
+          var _this70 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -13808,17 +14011,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var patientinformationDetails = data.patientinformationData.res;
 
-                _this68.patientinformationAddEditForm.controls['id'].patchValue(patientinformationDetails[0]._id);
+                _this70.patientinformationAddEditForm.controls['id'].patchValue(patientinformationDetails[0]._id);
 
-                _this68.patientinformationAddEditForm.controls['type'].patchValue(patientinformationDetails[0].type);
+                _this70.patientinformationAddEditForm.controls['type'].patchValue(patientinformationDetails[0].type);
 
-                _this68.patientinformationAddEditForm.controls['addfield'].patchValue(patientinformationDetails[0].addfield);
+                _this70.patientinformationAddEditForm.controls['addfield'].patchValue(patientinformationDetails[0].addfield);
 
-                _this68.patientinformationAddEditForm.controls['label'].patchValue(patientinformationDetails[0].label);
+                _this70.patientinformationAddEditForm.controls['label'].patchValue(patientinformationDetails[0].label);
 
-                _this68.patientinformationAddEditForm.controls['description'].patchValue(patientinformationDetails[0].description);
+                _this70.patientinformationAddEditForm.controls['description'].patchValue(patientinformationDetails[0].description);
 
-                _this68.patientinformationAddEditForm.controls['status'].patchValue(patientinformationDetails[0].status);
+                _this70.patientinformationAddEditForm.controls['status'].patchValue(patientinformationDetails[0].status);
               });
               break;
 
@@ -13869,7 +14072,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "patientinformationAddEditFormSubmit",
         value: function patientinformationAddEditFormSubmit() {
-          var _this69 = this;
+          var _this71 = this;
 
           for (var x in this.patientinformationAddEditForm.controls) {
             this.patientinformationAddEditForm.controls[x].markAsTouched();
@@ -13904,27 +14107,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this69.snackBar.open(_this69.htmlText.message, 'Ok', {
+                _this71.snackBar.open(_this71.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this69.formDirective.resetForm();
+                _this71.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this69.htmlText.userData.user_details.user_type) {
+                  switch (_this71.htmlText.userData.user_details.user_type) {
                     case 'diagnostic_admin':
-                      _this69.router.navigateByUrl("admin/patientinformation-management");
+                      _this71.router.navigateByUrl("admin/patientinformation-management");
 
                       break;
 
                     case 'admin':
-                      _this69.router.navigateByUrl("admin/patientinformation-management");
+                      _this71.router.navigateByUrl("admin/patientinformation-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this69.snackBar.open(response.msg, '', {
+                _this71.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -14149,7 +14352,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingPatientinformationComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this70 = this;
+          var _this72 = this;
 
           this.datasource = '';
           var endpoint = 'getpatientinformationlistdata';
@@ -14167,12 +14370,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this70.insuranceData_count = res.count; //console.warn('blogData c',res);
+            _this72.insuranceData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this70.InsuranceAllData = res.results.res;
+            _this72.InsuranceAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -14357,30 +14560,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ReportNotProcessComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this71 = this;
+          var _this73 = this;
 
           this.activatedRoute.data.forEach(function (resolveData) {
             //console.log("Data: ", resolveData.data);
-            _this71.allResloveData = resolveData.data.res;
-            console.log(">>", _this71.allResloveData);
+            _this73.allResloveData = resolveData.data.res;
+            console.log(">>", _this73.allResloveData);
           });
           this.onPopulate();
         }
       }, {
         key: "onPopulate",
         value: function onPopulate() {
-          var _this72 = this;
+          var _this74 = this;
 
           this.activatedRoute.data.forEach(function (resolveData) {
             console.log("Data on populate: ", resolveData);
-            _this72.reportData = resolveData.data.res;
-            _this72.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableDataSource"](_this72.reportData);
+            _this74.reportData = resolveData.data.res;
+            _this74.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableDataSource"](_this74.reportData);
           });
         }
       }, {
         key: "action",
         value: function action(_action, id, index) {
-          var _this73 = this;
+          var _this75 = this;
 
           switch (_action) {
             case 'delete':
@@ -14389,13 +14592,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 id: id
               }, "deletesingledata").subscribe(function (response) {
                 if (response.status == 'success') {
-                  _this73.openSnackBar("Successfully delete.", "");
+                  _this75.openSnackBar("Successfully delete.", "");
 
-                  _this73.allResloveData.splice(index, 1);
+                  _this75.allResloveData.splice(index, 1);
 
-                  _this73.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableDataSource"](_this73.allResloveData);
+                  _this75.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableDataSource"](_this75.allResloveData);
                 } else {
-                  _this73.openSnackBar("An error occord.", "");
+                  _this75.openSnackBar("An error occord.", "");
                 }
               });
               break;
@@ -14405,9 +14608,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 id: id
               }).subscribe(function (response) {
                 if (response.status == 'success') {
-                  _this73.openSnackBar("Successfully reprocess.", "");
+                  _this75.openSnackBar("Successfully reprocess.", "");
                 } else {
-                  _this73.openSnackBar("An error occord.", "");
+                  _this75.openSnackBar("An error occord.", "");
                 }
               });
               break;
@@ -14427,10 +14630,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "masterToggle",
         value: function masterToggle() {
-          var _this74 = this;
+          var _this76 = this;
 
           this.isAllSelected() ? this.selection.clear() : this.dataSource.data.forEach(function (row) {
-            return _this74.selection.select(row);
+            return _this76.selection.select(row);
           });
         }
         /** The label for the checkbox on the passed row */
@@ -14631,7 +14834,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditSalesPersonComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this75 = this;
+          var _this77 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -14661,28 +14864,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var billerDetails = data.techData.res;
                 setTimeout(function () {
-                  _this75.getCity(billerDetails[0].state);
+                  _this77.getCity(billerDetails[0].state);
                 }, 1000);
 
-                _this75.SalesPersonManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
+                _this77.SalesPersonManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
 
-                _this75.SalesPersonManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
+                _this77.SalesPersonManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
 
-                _this75.SalesPersonManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
+                _this77.SalesPersonManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
 
-                _this75.SalesPersonManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
+                _this77.SalesPersonManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
 
-                _this75.SalesPersonManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
+                _this77.SalesPersonManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
 
-                _this75.SalesPersonManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address);
+                _this77.SalesPersonManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address);
 
-                _this75.SalesPersonManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
+                _this77.SalesPersonManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
 
-                _this75.SalesPersonManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
+                _this77.SalesPersonManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
 
-                _this75.SalesPersonManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
+                _this77.SalesPersonManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
 
-                _this75.SalesPersonManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
+                _this77.SalesPersonManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
               });
               break;
 
@@ -14736,13 +14939,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this76 = this;
+          var _this78 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this76.htmlText.states = response; // this.getResolveData();
+            _this78.htmlText.states = response; // this.getResolveData();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this76.htmlText.allCities = response;
+            _this78.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -14761,7 +14964,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "TechManagementAddFormFormSubmit",
         value: function TechManagementAddFormFormSubmit() {
-          var _this77 = this;
+          var _this79 = this;
 
           for (var x in this.SalesPersonManagementAddEditForm.controls) {
             this.SalesPersonManagementAddEditForm.controls[x].markAsTouched();
@@ -14803,32 +15006,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this77.snackBar.open(_this77.htmlText.message, 'Ok', {
+                _this79.snackBar.open(_this79.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this77.formDirective.resetForm();
+                _this79.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this77.htmlText.userData.user_details.user_type) {
+                  switch (_this79.htmlText.userData.user_details.user_type) {
                     case 'admin':
-                      _this77.router.navigateByUrl("admin/sales-person-management");
+                      _this79.router.navigateByUrl("admin/sales-person-management");
 
                       break;
 
                     case 'diagnostic_admin':
-                      _this77.router.navigateByUrl("diagnostic-admin/sales-person-management");
+                      _this79.router.navigateByUrl("diagnostic-admin/sales-person-management");
 
                       break;
 
                     case 'distributors':
-                      _this77.router.navigateByUrl("distributors/sales-person-management");
+                      _this79.router.navigateByUrl("distributors/sales-person-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this77.snackBar.open(response.msg, '', {
+                _this79.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -15173,7 +15376,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListSalesPersonComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this78 = this;
+          var _this80 = this;
 
           this.datasource = '';
           var endpoint = 'getsaleslistdata';
@@ -15206,12 +15409,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this78.salesData_count = res.count; //console.warn('blogData c',res);
+            _this80.salesData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this78.salesPersonDashboardAllData = res.results.res;
+            _this80.salesPersonDashboardAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -15346,12 +15549,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _class_common_common_function__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ../../../../class/common/common-function */
     "./src/app/class/common/common-function.ts");
-    /* harmony import */
-
-
-    var _environments_environment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
-    /*! ../../../../../environments/environment */
-    "./src/environments/environment.ts");
 
     var AddEditTechComponent =
     /*#__PURE__*/
@@ -15376,7 +15573,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           message: "Submitted Successfully",
           states: "",
           allCities: "",
-          cities: ""
+          cities: "",
+          parent_type: [{
+            name: "Distributor"
+          }, {
+            name: "DiagnosticAdmin"
+          }, {
+            name: "DoctorGroup"
+          }]
         };
         this.htmlText.userData = cookie.getAll();
         this.htmlText.userData.user_details = JSON.parse(this.htmlText.userData.user_details);
@@ -15397,7 +15601,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditTechComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this79 = this;
+          var _this81 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -15411,6 +15615,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             city: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             state: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             user_type: ['tech', []],
+            parent_type: ['admin', []],
+            parent_id: ['', []],
             status: ['', []],
             password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(16), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(6)]],
             confirmpassword: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
@@ -15427,28 +15633,40 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var billerDetails = data.techData.res;
                 setTimeout(function () {
-                  _this79.getCity(billerDetails[0].state);
+                  _this81.getCity(billerDetails[0].state);
                 }, 1000);
 
-                _this79.TechManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
+                _this81.TechManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
 
-                _this79.TechManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
+                _this81.TechManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
 
-                _this79.TechManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
+                _this81.TechManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
 
-                _this79.TechManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
+                _this81.TechManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
 
-                _this79.TechManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
+                _this81.TechManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
 
-                _this79.TechManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address);
+                _this81.TechManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address); // this.getCity(doctorDetails[0].state);
 
-                _this79.TechManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
 
-                _this79.TechManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
+                _this81.getParentData(billerDetails[0].parent_type); //  this.getCity(doctorDetails[0].state);
+                // this.getCityByName(doctorDetails[0].state);
 
-                _this79.TechManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
 
-                _this79.TechManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
+                setTimeout(function () {
+                  // getCityByName
+                  _this81.TechManagementAddEditForm.controls['parent_type'].patchValue(billerDetails[0].parent_type);
+
+                  _this81.TechManagementAddEditForm.controls['parent_id'].patchValue(billerDetails[0].parent_id);
+                }, 2000);
+
+                _this81.TechManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
+
+                _this81.TechManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
+
+                _this81.TechManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
+
+                _this81.TechManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
               });
               break;
 
@@ -15502,13 +15720,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this80 = this;
+          var _this82 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this80.htmlText.states = response; // this.getResolveData();
+            _this82.htmlText.states = response; // this.getResolveData();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this80.htmlText.allCities = response;
+            _this82.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -15525,9 +15743,62 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.htmlText.cities = this.htmlText.allCities[stateName];
         }
       }, {
+        key: "getParentData",
+        value: function getParentData() {
+          var _this83 = this;
+
+          var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+          var billerData = id;
+          this.selectionChangeValue = billerData;
+          console.log('1111', billerData);
+
+          if (billerData == 'DiagnosticAdmin') {
+            // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+            var data = {
+              "source": "data_pece",
+              "condition": {
+                "user_type": "diagnostic_admin"
+              },
+              "token": this.htmlText.userData.jwtToken
+            };
+          }
+
+          if (billerData == 'Distributor') {
+            // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+            var data = {
+              "source": "data_pece",
+              "condition": {
+                "user_type": "distributors"
+              },
+              "token": this.htmlText.userData.jwtToken
+            };
+          }
+
+          if (billerData == 'DoctorGroup') {
+            // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
+            var data = {
+              "source": "data_pece",
+              "condition": {
+                "user_type": "doctor_group"
+              },
+              "token": this.htmlText.userData.jwtToken
+            };
+          } // if(this.htmlText.user_details.user_type == 'distributors') {
+          //   data['distributor_id_object'] = this.htmlText.userData.user_details._id;
+          // }
+
+
+          this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
+            // console.log('+++++++++',response);
+            _this83.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
+            // this.htmlText.doctorOfficeData = response.data.doctor_office_data;
+            // this.htmlText.billerData = response.data.biller_data;
+          });
+        }
+      }, {
         key: "TechManagementAddFormFormSubmit",
         value: function TechManagementAddFormFormSubmit() {
-          var _this81 = this;
+          var _this84 = this;
 
           for (var x in this.TechManagementAddEditForm.controls) {
             this.TechManagementAddEditForm.controls[x].markAsTouched();
@@ -15546,13 +15817,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "source": "data_pece",
               "data": this.TechManagementAddEditForm.value,
               "token": this.htmlText.userData.jwtToken,
-              "domainurl": _environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].siteBaseUrl + 'reset-password'
+              "sourceobj": ["parent_id"]
             };
 
             if (this.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
-              data.data["diagnostic_admin_id"] = this.htmlText.userData.user_details._id;
+              data.data["parent_id"] = this.htmlText.userData.user_details._id;
               data.data["parent_type"] = "diagnostic_admin";
-              data["sourceobj"] = ["diagnostic_admin_id"];
+              data["sourceobj"] = ["parent_id"];
             }
 
             if (this.htmlText.userData.user_details.user_type == 'doctor') {
@@ -15561,56 +15832,50 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
 
             if (this.htmlText.userData.user_details.user_type == 'doctor_group') {
-              data.data["doctorgroup_id"] = this.htmlText.userData.user_details._id;
+              data.data["parent_id"] = this.htmlText.userData.user_details._id;
               data.data["parent_type"] = "doctor_group";
-              data["sourceobj"] = ["doctorgroup_id"];
+              data["sourceobj"] = ["parent_id"];
             }
 
             if (this.htmlText.userData.user_details.user_type == 'distributors') {
-              data.data["distributor_id"] = this.htmlText.userData.user_details._id;
+              data.data["parent_id"] = this.htmlText.userData.user_details._id;
               data.data["parent_type"] = "distributor";
-              data["sourceobj"] = ["distributor_id"];
-            }
-
-            if (this.htmlText.userData.user_details.user_type == 'admin') {
-              data.data["admin_id"] = this.htmlText.userData.user_details._id;
-              data.data["parent_type"] = "admin";
-              data["sourceobj"] = ["admin_id"];
+              data["sourceobj"] = ["parent_id"];
             }
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this81.snackBar.open(_this81.htmlText.message, 'Ok', {
+                _this84.snackBar.open(_this84.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this81.formDirective.resetForm();
+                _this84.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this81.htmlText.userData.user_details.user_type) {
+                  switch (_this84.htmlText.userData.user_details.user_type) {
                     case 'admin':
-                      _this81.router.navigateByUrl("admin/tech-management");
+                      _this84.router.navigateByUrl("admin/tech-management");
 
                       break;
 
                     case 'diagnostic_admin':
-                      _this81.router.navigateByUrl("diagnostic-admin/tech-management");
+                      _this84.router.navigateByUrl("diagnostic-admin/tech-management");
 
                       break;
 
                     case 'doctor_group':
-                      _this81.router.navigateByUrl("doctor-group/tech-management");
+                      _this84.router.navigateByUrl("doctor-group/tech-management");
 
                       break;
 
                     case 'distributors':
-                      _this81.router.navigateByUrl("distributors/tech-management");
+                      _this84.router.navigateByUrl("distributors/tech-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this81.snackBar.open(response.msg, '', {
+                _this84.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -15934,7 +16199,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (this.userData.user_type == 'diagnostic_admin') {
           this.editUrl = 'diagnostic-admin/tech-management/edit';
           this.field = {
-            'diagnostic_admin_id': this.userData._id
+            'parent_id': this.userData._id
           };
           this.data = this.userData._id;
         }
@@ -15942,7 +16207,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (this.userData.user_type == 'doctor_group') {
           this.editUrl = 'doctor-group/tech-management/edit';
           this.field = {
-            'doctorgroup_id': this.userData._id
+            'parent_id': this.userData._id
           };
           this.data = this.userData._id;
         }
@@ -15950,7 +16215,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (this.userData.user_type == 'distributors') {
           this.editUrl = 'distributors/tech-management/edit';
           this.field = {
-            'distributors_id': this.userData._id
+            'parent_id': this.userData._id
           };
           this.data = this.userData._id;
         }
@@ -15967,7 +16232,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingTechComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this82 = this;
+          var _this85 = this;
 
           this.datasource = '';
           var endpoint = 'gettechlistdata';
@@ -15986,19 +16251,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           if (this.userData.user_type == 'diagnostic_admin') {
             this.fetch = {
-              'diagnostic_admin_id': this.data
+              'parent_id': this.data
             };
           }
 
           if (this.userData.user_type == 'doctor_group') {
             this.fetch = {
-              'doctorgroup_id': this.data
+              'parent_id': this.data
             };
           }
 
           if (this.userData.user_type == 'distributors') {
             this.fetch = {
-              'distributor_id': this.data
+              'parent_id': this.data
             };
           }
 
@@ -16006,12 +16271,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this82.techData_count = res.count; //console.warn('blogData c',res);
+            _this85.techData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this82.TechDashboardAllData = res.results.res;
+            _this85.TechDashboardAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -16177,30 +16442,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getResolveData",
         value: function getResolveData() {
-          var _this83 = this;
+          var _this86 = this;
 
           this.activeRoute.data.forEach(function (data) {
-            _this83.usersData = data.UserData.res;
+            _this86.usersData = data.UserData.res;
             var userDetails;
             userDetails = data.UserData.res;
 
-            _this83.UserManagementAddEditForm.controls['firstname'].patchValue(userDetails[0].firstname);
+            _this86.UserManagementAddEditForm.controls['firstname'].patchValue(userDetails[0].firstname);
 
-            _this83.UserManagementAddEditForm.controls['lastname'].patchValue(userDetails[0].lastname);
+            _this86.UserManagementAddEditForm.controls['lastname'].patchValue(userDetails[0].lastname);
 
-            _this83.UserManagementAddEditForm.controls['email'].patchValue(userDetails[0].email);
+            _this86.UserManagementAddEditForm.controls['email'].patchValue(userDetails[0].email);
 
-            _this83.UserManagementAddEditForm.controls['phoneno'].patchValue(userDetails[0].phoneno);
+            _this86.UserManagementAddEditForm.controls['phoneno'].patchValue(userDetails[0].phoneno);
 
-            _this83.UserManagementAddEditForm.controls['address'].patchValue(userDetails[0].address);
+            _this86.UserManagementAddEditForm.controls['address'].patchValue(userDetails[0].address);
 
-            _this83.UserManagementAddEditForm.controls['city'].patchValue(userDetails[0].city);
+            _this86.UserManagementAddEditForm.controls['city'].patchValue(userDetails[0].city);
 
-            _this83.UserManagementAddEditForm.controls['state'].patchValue(userDetails[0].state);
+            _this86.UserManagementAddEditForm.controls['state'].patchValue(userDetails[0].state);
 
-            _this83.UserManagementAddEditForm.controls['zip'].patchValue(userDetails[0].zip);
+            _this86.UserManagementAddEditForm.controls['zip'].patchValue(userDetails[0].zip);
 
-            _this83.UserManagementAddEditForm.controls['status'].patchValue(userDetails[0].status);
+            _this86.UserManagementAddEditForm.controls['status'].patchValue(userDetails[0].status);
           });
         }
         /**for validation purpose**/
@@ -16226,17 +16491,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this84 = this;
+          var _this87 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this84.states = response;
+            _this87.states = response;
 
-            _this84.getResolveData();
+            _this87.getResolveData();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this84.allCities = response;
+            _this87.allCities = response;
 
-            _this84.getResolveData();
+            _this87.getResolveData();
           });
         }
         /**for getting all states & cities  function end here**/
@@ -16250,7 +16515,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "UserManagementAddFormFormSubmit",
         value: function UserManagementAddFormFormSubmit() {
-          var _this85 = this;
+          var _this88 = this;
 
           var x;
 
@@ -16289,10 +16554,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (res) {
-            _this85.ResetAddForm();
+            _this88.ResetAddForm();
 
             setTimeout(function () {
-              _this85.router.navigateByUrl('/dashboard/tech');
+              _this88.router.navigateByUrl('/dashboard/tech');
             }, 100);
           });
         }
@@ -16453,7 +16718,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function AdminbillerDashboardComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this86 = this;
+        var _this89 = this;
 
         _classCallCheck(this, AdminbillerDashboardComponent);
 
@@ -16622,9 +16887,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this86.allResolveData = resolveData.dataCount.data.dashboardCount[0];
+          _this89.allResolveData = resolveData.dataCount.data.dashboardCount[0];
 
-          _this86.viewReportProcessData(_this86.htmlText.headerText);
+          _this89.viewReportProcessData(_this89.htmlText.headerText);
         });
         this.apiUrl = http.baseUrl;
       }
@@ -16632,7 +16897,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AdminbillerDashboardComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this87 = this;
+          var _this90 = this;
 
           this.datasource = '';
           var endpoint = 'getpatientlistdata';
@@ -16651,12 +16916,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.http.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this87.patientData_count = res.count; //console.warn('blogData c',res);
+            _this90.patientData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.http.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this87.patientData = res.results.res;
+            _this90.patientData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -16667,7 +16932,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this88 = this;
+          var _this91 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -16679,11 +16944,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('admin-dashboard', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this88.allResolveData = response.data.dashboardCount[0];
+              _this91.allResolveData = response.data.dashboardCount[0];
 
-              _this88.viewReportProcessData(_this88.htmlText.headerText);
+              _this91.viewReportProcessData(_this91.htmlText.headerText);
             } else {
-              _this88.router.navigateByUrl('logout');
+              _this91.router.navigateByUrl('logout');
             }
           }); // for listing
 
@@ -16692,7 +16957,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this89 = this;
+          var _this92 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           // Set Header Flag
@@ -16829,12 +17094,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('dashboard-datalist', repostSignCond).subscribe(function (response) {
             if (response.status == true) {
-              _this89.allResolveData.tableDataFlag = true;
-              _this89.allResolveData.tableData = response.data;
-              _this89.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this89.allResolveData.tableData);
-              _this89.allDataSource.paginator = _this89.paginatorAll;
+              _this92.allResolveData.tableDataFlag = true;
+              _this92.allResolveData.tableData = response.data;
+              _this92.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this92.allResolveData.tableData);
+              _this92.allDataSource.paginator = _this92.paginatorAll;
             } else {
-              _this89.router.navigateByUrl('logout');
+              _this92.router.navigateByUrl('logout');
             }
           });
         }
@@ -16884,7 +17149,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this90 = this;
+          var _this93 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -16922,15 +17187,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this90.matSnackBar.open("Start downloading.", "Ok", {
+              _this93.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this90.viewReportProcessData(_this90.htmlText.headerText);
+              _this93.viewReportProcessData(_this93.htmlText.headerText);
             } else {
-              _this90.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this93.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -16941,7 +17206,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteReport",
         value: function deleteReport(pk_id, index) {
-          var _this91 = this;
+          var _this94 = this;
 
           var data = {
             width: '250px',
@@ -16963,7 +17228,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 break;
 
               case "Yes":
-                _this91.deleteProcess(pk_id, index);
+                _this94.deleteProcess(pk_id, index);
 
                 break;
             }
@@ -16972,7 +17237,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteProcess",
         value: function deleteProcess(pk_id, index) {
-          var _this92 = this;
+          var _this95 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -16981,9 +17246,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost('deletesingledata', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this92.allResolveData.tableData.splice(index, 1);
+              _this95.allResolveData.tableData.splice(index, 1);
 
-              _this92.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this92.allResolveData.tableData);
+              _this95.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this95.allResolveData.tableData);
               var data = {
                 width: '250px',
                 data: {
@@ -16997,7 +17262,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this92.dialogRef = _this92.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
+              _this95.dialogRef = _this95.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
             } else {
               var _data4 = {
                 width: '250px',
@@ -17012,15 +17277,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this92.dialogRef = _this92.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data4);
+              _this95.dialogRef = _this95.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data4);
 
-              _this92.dialogRef.afterClosed().subscribe(function (result) {
+              _this95.dialogRef.afterClosed().subscribe(function (result) {
                 switch (result) {
                   case "Close":
                     break;
 
                   case "Re-Try":
-                    _this92.deleteProcess(pk_id, index);
+                    _this95.deleteProcess(pk_id, index);
 
                     break;
                 }
@@ -17710,14 +17975,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LogoutComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this93 = this;
+          var _this96 = this;
 
           this.cookies.delete('jwtToken');
           this.cookies.delete('user_details');
           this.cookies.deleteAll();
           this.cookies.deleteAll('/');
           setTimeout(function () {
-            _this93.router.navigateByUrl('login');
+            _this96.router.navigateByUrl('login');
 
             window.location.href = '/';
           }, 1500);
@@ -17976,7 +18241,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function BillerDashboardComponent(http, commonFunction, activatedRoute, cookieService, httpService, deviceService, matSnackBar) {
-        var _this94 = this;
+        var _this97 = this;
 
         _classCallCheck(this, BillerDashboardComponent);
 
@@ -18008,25 +18273,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get IP Address */
 
         this.httpService.httpViaGetExt("http://api.ipify.org/?format=json", {}).subscribe(function (response) {
-          _this94.htmlText.ip = response.ip;
+          _this97.htmlText.ip = response.ip;
         });
       }
 
       _createClass(BillerDashboardComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this95 = this;
+          var _this98 = this;
 
           this.activatedRoute.data.subscribe(function (resolveData) {
-            _this95.allResolveData = resolveData.billerData.data;
+            _this98.allResolveData = resolveData.billerData.data;
 
-            _this95.viewReportData();
+            _this98.viewReportData();
           });
         }
       }, {
         key: "viewReportData",
         value: function viewReportData() {
-          var _this96 = this;
+          var _this99 = this;
 
           var flug = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "Patient Reports";
           var paginationOption = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
@@ -18072,17 +18337,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpService.httpViaPost('dashboard-datalist', repostSignCond).subscribe(function (response) {
             /* Fetching the data into table */
-            _this96.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](response.data);
+            _this99.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](response.data);
             /* Adding the paginator options */
 
-            _this96.dataSource.paginator = _this96.paginator;
-            _this96.dataSource.sort = _this96.sort;
+            _this99.dataSource.paginator = _this99.paginator;
+            _this99.dataSource.sort = _this99.sort;
           });
         }
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this97 = this;
+          var _this100 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -18120,7 +18385,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.httpService.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this97.matSnackBar.open("Start downloading.", "Ok", {
+              _this100.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
@@ -18131,14 +18396,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   "id": report._id,
                   "download_count": report.download_count
                 },
-                "token": _this97.loginUserData.jwtToken
+                "token": _this100.loginUserData.jwtToken
               };
 
-              _this97.httpService.httpViaPost("addorupdatedata", _postData).subscribe(function (response) {
-                _this97.refreshDashboard();
+              _this100.httpService.httpViaPost("addorupdatedata", _postData).subscribe(function (response) {
+                _this100.refreshDashboard();
               });
             } else {
-              _this97.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this100.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -18147,7 +18412,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this98 = this;
+          var _this101 = this;
 
           var postData = {
             source: "data_pece",
@@ -18157,16 +18422,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.httpService.httpViaPost("biller-dashboard", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this98.viewReportData(_this98.htmlText.tableHeaderText);
+              _this101.viewReportData(_this101.htmlText.tableHeaderText);
 
-              _this98.allResolveData = response.data;
+              _this101.allResolveData = response.data;
             } else {
-              _this98.matSnackBar.open("Please wait...", "", {
+              _this101.matSnackBar.open("Please wait...", "", {
                 duration: 1000
               });
 
               setTimeout(function () {
-                _this98.refreshDashboard();
+                _this101.refreshDashboard();
               }, 1000);
             }
           });
@@ -18524,7 +18789,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DownloadSuperbillerComponent(router, cookieService, http, activatedRoute, dialog, commonFunction, deviceService, matSnackBar) {
-        var _this99 = this;
+        var _this102 = this;
 
         _classCallCheck(this, DownloadSuperbillerComponent);
 
@@ -18573,12 +18838,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
         this.http.httpViaGetExt("http://api.ipify.org/?format=json", {}).subscribe(function (response) {
-          _this99.htmlText.ip = response.ip;
+          _this102.htmlText.ip = response.ip;
         });
         /* Get Temp Token */
 
         this.http.httpViaGet("gettemptoken", {}).subscribe(function (response) {
-          _this99.htmlText.tempToken = response.token;
+          _this102.htmlText.tempToken = response.token;
         });
       }
 
@@ -18588,7 +18853,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadPDF",
         value: function downloadPDF() {
-          var _this100 = this;
+          var _this103 = this;
 
           if (this.htmlText.password == this.reportData.download_password && this.reportData.passwordAttemptsCount <= 3 || this.htmlText.password == this.reportData.download_password && this.htmlText.notBotText == this.htmlText.notBotInput) {
             this.htmlText.passwordAttemptsCount++;
@@ -18642,23 +18907,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
               if (response.status == 'success') {
-                _this100.htmlText.downloadFlug = true;
-                _this100.htmlText.hraderText = "Thank you for downloading.";
-                window.open(_this100.reportData.file_path); // Update Status
+                _this103.htmlText.downloadFlug = true;
+                _this103.htmlText.hraderText = "Thank you for downloading.";
+                window.open(_this103.reportData.file_path); // Update Status
 
                 var _postData2 = {
                   "source": "data_pece",
                   "data": {
-                    "id": _this100.activatedRoute.snapshot.params._id,
+                    "id": _this103.activatedRoute.snapshot.params._id,
                     "status": "Downloaded",
-                    "download_count": _this100.reportData.download_count
+                    "download_count": _this103.reportData.download_count
                   },
-                  "token": _this100.htmlText.tempToken
+                  "token": _this103.htmlText.tempToken
                 };
 
-                _this100.http.httpViaPost("addorupdatedata", _postData2).subscribe(function (response) {});
+                _this103.http.httpViaPost("addorupdatedata", _postData2).subscribe(function (response) {});
               } else {
-                _this100.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+                _this103.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                   duration: 3000
                 });
               }
@@ -18697,7 +18962,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getData",
         value: function getData(reportID) {
-          var _this101 = this;
+          var _this104 = this;
 
           var data = {
             "source": "data_pece",
@@ -18707,9 +18972,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("datalistwithouttoken", data).subscribe(function (response) {
             if (response.res.length > 0) {
-              _this101.reportData = response.res[0];
+              _this104.reportData = response.res[0];
             } else {
-              _this101.router.navigateByUrl('/login');
+              _this104.router.navigateByUrl('/login');
             }
           });
         }
@@ -19020,7 +19285,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PastAppoinmentsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this102 = this;
+          var _this105 = this;
 
           if (this.cookie.check('jwtToken')) {
             this.configData.jwtToken = this.cookie.get('jwtToken');
@@ -19061,13 +19326,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.postRequest(this.configData.endPoint.listBookedEvents, data).subscribe(function (response) {
               // Set dataset in responseData
-              _this102.configData.responseData = response.results.res; // Create skipFields array(first save all the keys from the dataset)
+              _this105.configData.responseData = response.results.res; // Create skipFields array(first save all the keys from the dataset)
 
-              if (response.results.res > 0) _this102.configData.skipFields = Object.keys(response.results.res[0]);
+              if (response.results.res > 0) _this105.configData.skipFields = Object.keys(response.results.res[0]);
               var requiredFields = ['patient_name', 'doctor_name', 'doctor_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName']; // Modify the skipFields array(splicing the keys which is in the requiredFields)
 
               for (var i = 0; i < requiredFields.length; i++) {
-                _this102.configData.skipFields.splice(_this102.configData.skipFields.indexOf(requiredFields[i]), 1);
+                _this105.configData.skipFields.splice(_this105.configData.skipFields.indexOf(requiredFields[i]), 1);
               }
             }); // Merge logged in user details with the config data
             // let userDetails: any = JSON.parse(this.cookie.get('user_details'));
@@ -19076,7 +19341,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /* ****************** Get total booked events count ****************** */
 
             this.httpService.postRequest(this.configData.endPoint.listBookedEventsCount, data).subscribe(function (response) {
-              _this102.configData.date_search_source_count = response.count;
+              _this105.configData.date_search_source_count = response.count;
             });
             /* ******************************************************************* */
           } else {
@@ -19381,7 +19646,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(UpcomingAppoinmentsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this103 = this;
+          var _this106 = this;
 
           if (this.cookie.check('jwtToken')) {
             this.configData.jwtToken = this.cookie.get('jwtToken');
@@ -19422,13 +19687,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.postRequest(this.configData.endPoint.listUpcomingBookedEvents, data).subscribe(function (response) {
               // Set dataset in responseData
-              _this103.configData.responseData = response.results.res; // Create skipFields array(first save all the keys from the dataset)
+              _this106.configData.responseData = response.results.res; // Create skipFields array(first save all the keys from the dataset)
 
-              if (response.results.res > 0) _this103.configData.skipFields = Object.keys(response.results.res[0]);
+              if (response.results.res > 0) _this106.configData.skipFields = Object.keys(response.results.res[0]);
               var requiredFields = ['patient_name', 'doctor_name', 'doctor_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName']; // Modify the skipFields array(splicing the keys which is in the requiredFields)
 
               for (var i = 0; i < requiredFields.length; i++) {
-                _this103.configData.skipFields.splice(_this103.configData.skipFields.indexOf(requiredFields[i]), 1);
+                _this106.configData.skipFields.splice(_this106.configData.skipFields.indexOf(requiredFields[i]), 1);
               }
             }); // Merge logged in user details with the config data
             // let userDetails: any = JSON.parse(this.cookie.get('user_details'));
@@ -19437,7 +19702,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /* ****************** Get total booked events count ****************** */
 
             this.httpService.postRequest(this.configData.endPoint.listUpcomingBookedEventsCount, data).subscribe(function (response) {
-              _this103.configData.date_search_source_count = response.count;
+              _this106.configData.date_search_source_count = response.count;
             });
             /* ******************************************************************* */
           } else {
@@ -19633,10 +19898,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "SetValueForm",
         value: function SetValueForm() {
-          var _this104 = this;
+          var _this107 = this;
 
           setTimeout(function () {
-            _this104.getCityByName(_this104.cookiesData.state);
+            _this107.getCityByName(_this107.cookiesData.state);
           }, 400);
           this.AccountSettingsForm.controls['firstname'].patchValue(this.cookiesData.firstname);
           this.AccountSettingsForm.controls['lastname'].patchValue(this.cookiesData.lastname);
@@ -19651,17 +19916,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this105 = this;
+          var _this108 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this105.states = response;
+            _this108.states = response;
 
-            _this105.SetValueForm();
+            _this108.SetValueForm();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this105.allCities = response;
+            _this108.allCities = response;
 
-            _this105.SetValueForm();
+            _this108.SetValueForm();
           });
         }
         /**for getting all states & cities  function end here**/
@@ -19685,7 +19950,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "AccountSettingsFormSubmit",
         value: function AccountSettingsFormSubmit() {
-          var _this106 = this;
+          var _this109 = this;
 
           this.loader = true;
           var x;
@@ -19712,26 +19977,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "token": this.user_token
             };
             this.httpService.httpViaPost('addorupdatedata', data).subscribe(function (response) {
-              var userDetailsCookie = JSON.parse(_this106.cookie.get('user_details'));
+              var userDetailsCookie = JSON.parse(_this109.cookie.get('user_details'));
               var type = userDetailsCookie.type;
 
-              _this106.cookie.delete('user_details');
+              _this109.cookie.delete('user_details');
 
-              userDetailsCookie.firstname = _this106.AccountSettingsForm.value.firstname;
-              userDetailsCookie.lastname = _this106.AccountSettingsForm.value.lastname;
+              userDetailsCookie.firstname = _this109.AccountSettingsForm.value.firstname;
+              userDetailsCookie.lastname = _this109.AccountSettingsForm.value.lastname;
               userDetailsCookie = JSON.stringify(userDetailsCookie);
-              _this106.loader = false;
+              _this109.loader = false;
               var action = "Ok";
 
-              _this106.snackBar.open(_this106.message, action, {
+              _this109.snackBar.open(_this109.message, action, {
                 duration: 1000
               });
 
               setTimeout(function () {
-                _this106.cookie.set('user_details', userDetailsCookie);
+                _this109.cookie.set('user_details', userDetailsCookie);
               }, 1000);
               setTimeout(function () {
-                _this106.router.navigateByUrl(type + '/dashboard');
+                _this109.router.navigateByUrl(type + '/dashboard');
               }, 3000);
             });
           }
@@ -19933,7 +20198,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ChangePasswordFormSubmit",
         value: function ChangePasswordFormSubmit() {
-          var _this107 = this;
+          var _this110 = this;
 
           this.loader = true;
           var x;
@@ -19951,25 +20216,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               newPassword: this.ChangePasswordForm.value.newPassword
             };
             this.httpService.httpViaPost('changepassword', data).subscribe(function (response) {
-              _this107.formDirective.resetForm();
+              _this110.formDirective.resetForm();
 
-              _this107.loader = false;
+              _this110.loader = false;
 
               if (response.status == true) {
-                _this107.snackBar.open(response.message, "OK", {
+                _this110.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
 
                 setTimeout(function () {
-                  _this107.router.navigateByUrl('/admin/dashboard');
+                  _this110.router.navigateByUrl('/admin/dashboard');
                 }, 1550);
               } else {
-                _this107.snackBar.open(response.message, "OK", {
+                _this110.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
               }
             }, function (error) {
-              _this107.loader = false;
+              _this110.loader = false;
               alert("Some error occord. Please try later.");
             });
           }
@@ -20256,13 +20521,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(FaqViewComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this108 = this;
+          var _this111 = this;
 
           this.activatedRoute.data.subscribe(function (resolveData) {
-            _this108.allResolveData = resolveData.faqData.res;
+            _this111.allResolveData = resolveData.faqData.res;
 
-            for (var loop = 0; loop < _this108.allResolveData.length; loop++) {
-              _this108.allResolveData[loop].youtube_link_save = _this108.sanitizer.bypassSecurityTrustResourceUrl(_this108.allResolveData[loop].youtube_link);
+            for (var loop = 0; loop < _this111.allResolveData.length; loop++) {
+              _this111.allResolveData[loop].youtube_link_save = _this111.sanitizer.bypassSecurityTrustResourceUrl(_this111.allResolveData[loop].youtube_link);
             }
           });
         }
@@ -20371,7 +20636,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function HttpLoaderComponent(loaderService, activatedRoute, router) {
-        var _this109 = this;
+        var _this112 = this;
 
         _classCallCheck(this, HttpLoaderComponent);
 
@@ -20381,7 +20646,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var urlArr = this.router.url.split("/"); // if(urlArr[3] == 'bulk-upload') {
 
         this.loaderService.isLoading.subscribe(function (v) {
-          _this109.httpLoading = v;
+          _this112.httpLoading = v;
         }); // }
       }
 
@@ -20751,7 +21016,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getSignatureData",
         value: function getSignatureData() {
-          var _this110 = this;
+          var _this113 = this;
 
           var data = {
             "source": "doctor_signature",
@@ -20761,9 +21026,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "token": this.user_token
           };
           this.http.httpViaPost('datalist', data).subscribe(function (response) {
-            _this110.result = response.res[0]._id;
+            _this113.result = response.res[0]._id;
 
-            _this110.techUploadForm.controls['sign'].patchValue(response.res[0].sign);
+            _this113.techUploadForm.controls['sign'].patchValue(response.res[0].sign);
           });
         }
       }, {
@@ -20966,7 +21231,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DiagnosticAdminDashboardComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this111 = this;
+        var _this114 = this;
 
         _classCallCheck(this, DiagnosticAdminDashboardComponent);
 
@@ -21003,9 +21268,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this111.allResolveData = resolveData.dataCount.data.dashboardCount[0];
+          _this114.allResolveData = resolveData.dataCount.data.dashboardCount[0];
 
-          _this111.viewReportProcessData(_this111.htmlText.headerText);
+          _this114.viewReportProcessData(_this114.htmlText.headerText);
         });
       }
 
@@ -21018,7 +21283,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this112 = this;
+          var _this115 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -21030,9 +21295,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('admin-dashboard', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this112.allResolveData = response.data;
+              _this115.allResolveData = response.data;
             } else {
-              _this112.router.navigateByUrl('logout');
+              _this115.router.navigateByUrl('logout');
             }
           }); // for listing
 
@@ -21041,7 +21306,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this113 = this;
+          var _this116 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           // Set Header Flag
@@ -21190,12 +21455,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('dashboard-datalist', repostSignCond).subscribe(function (response) {
             if (response.status == true) {
-              _this113.allResolveData.tableDataFlag = true;
-              _this113.allResolveData.tableData = response.data;
-              _this113.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this113.allResolveData.tableData);
-              _this113.allDataSource.paginator = _this113.paginatorAll;
+              _this116.allResolveData.tableDataFlag = true;
+              _this116.allResolveData.tableData = response.data;
+              _this116.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this116.allResolveData.tableData);
+              _this116.allDataSource.paginator = _this116.paginatorAll;
             } else {
-              _this113.router.navigateByUrl('logout');
+              _this116.router.navigateByUrl('logout');
             }
           });
         }
@@ -21245,7 +21510,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this114 = this;
+          var _this117 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -21283,15 +21548,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this114.matSnackBar.open("Start downloading.", "Ok", {
+              _this117.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this114.viewReportProcessData(_this114.htmlText.headerText);
+              _this117.viewReportProcessData(_this117.htmlText.headerText);
             } else {
-              _this114.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this117.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -21302,7 +21567,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteReport",
         value: function deleteReport(pk_id, index) {
-          var _this115 = this;
+          var _this118 = this;
 
           var data = {
             width: '250px',
@@ -21324,7 +21589,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 break;
 
               case "Yes":
-                _this115.deleteProcess(pk_id, index);
+                _this118.deleteProcess(pk_id, index);
 
                 break;
             }
@@ -21333,7 +21598,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteProcess",
         value: function deleteProcess(pk_id, index) {
-          var _this116 = this;
+          var _this119 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -21342,9 +21607,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost('deletesingledata', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this116.allResolveData.tableData.splice(index, 1);
+              _this119.allResolveData.tableData.splice(index, 1);
 
-              _this116.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this116.allResolveData.tableData);
+              _this119.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this119.allResolveData.tableData);
               var data = {
                 width: '250px',
                 data: {
@@ -21358,7 +21623,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this116.dialogRef = _this116.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
+              _this119.dialogRef = _this119.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
             } else {
               var _data5 = {
                 width: '250px',
@@ -21373,15 +21638,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this116.dialogRef = _this116.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data5);
+              _this119.dialogRef = _this119.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data5);
 
-              _this116.dialogRef.afterClosed().subscribe(function (result) {
+              _this119.dialogRef.afterClosed().subscribe(function (result) {
                 switch (result) {
                   case "Close":
                     break;
 
                   case "Re-Try":
-                    _this116.deleteProcess(pk_id, index);
+                    _this119.deleteProcess(pk_id, index);
 
                     break;
                 }
@@ -21635,13 +21900,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          var _this117 = this;
+          var _this120 = this;
 
           this.cookies.delete('jwtToken');
           this.cookies.delete('user_details');
           this.cookies.deleteAll();
           setTimeout(function () {
-            _this117.router.navigateByUrl('logout');
+            _this120.router.navigateByUrl('logout');
           }, 1000);
         }
         /**logout function end here**/
@@ -21803,7 +22068,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DistributorsDashboardComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this118 = this;
+        var _this121 = this;
 
         _classCallCheck(this, DistributorsDashboardComponent);
 
@@ -21840,9 +22105,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this118.allResolveData = resolveData.dataCount.data.dashboardCount[0];
+          _this121.allResolveData = resolveData.dataCount.data.dashboardCount[0];
 
-          _this118.viewReportProcessData(_this118.htmlText.headerText);
+          _this121.viewReportProcessData(_this121.htmlText.headerText);
         });
       }
 
@@ -21855,7 +22120,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this119 = this;
+          var _this122 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -21867,9 +22132,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('admin-dashboard', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this119.allResolveData = response.data;
+              _this122.allResolveData = response.data;
             } else {
-              _this119.router.navigateByUrl('logout');
+              _this122.router.navigateByUrl('logout');
             }
           }); // for listing
 
@@ -21878,7 +22143,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this120 = this;
+          var _this123 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           // Set Header Flag
@@ -22027,12 +22292,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('dashboard-datalist', repostSignCond).subscribe(function (response) {
             if (response.status == true) {
-              _this120.allResolveData.tableDataFlag = true;
-              _this120.allResolveData.tableData = response.data;
-              _this120.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this120.allResolveData.tableData);
-              _this120.allDataSource.paginator = _this120.paginatorAll;
+              _this123.allResolveData.tableDataFlag = true;
+              _this123.allResolveData.tableData = response.data;
+              _this123.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this123.allResolveData.tableData);
+              _this123.allDataSource.paginator = _this123.paginatorAll;
             } else {
-              _this120.router.navigateByUrl('logout');
+              _this123.router.navigateByUrl('logout');
             }
           });
         }
@@ -22082,7 +22347,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this121 = this;
+          var _this124 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -22120,15 +22385,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this121.matSnackBar.open("Start downloading.", "Ok", {
+              _this124.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this121.viewReportProcessData(_this121.htmlText.headerText);
+              _this124.viewReportProcessData(_this124.htmlText.headerText);
             } else {
-              _this121.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this124.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -22139,7 +22404,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteReport",
         value: function deleteReport(pk_id, index) {
-          var _this122 = this;
+          var _this125 = this;
 
           var data = {
             width: '250px',
@@ -22161,7 +22426,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 break;
 
               case "Yes":
-                _this122.deleteProcess(pk_id, index);
+                _this125.deleteProcess(pk_id, index);
 
                 break;
             }
@@ -22170,7 +22435,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteProcess",
         value: function deleteProcess(pk_id, index) {
-          var _this123 = this;
+          var _this126 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -22179,9 +22444,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost('deletesingledata', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this123.allResolveData.tableData.splice(index, 1);
+              _this126.allResolveData.tableData.splice(index, 1);
 
-              _this123.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this123.allResolveData.tableData);
+              _this126.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this126.allResolveData.tableData);
               var data = {
                 width: '250px',
                 data: {
@@ -22195,7 +22460,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this123.dialogRef = _this123.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
+              _this126.dialogRef = _this126.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
             } else {
               var _data6 = {
                 width: '250px',
@@ -22210,15 +22475,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this123.dialogRef = _this123.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data6);
+              _this126.dialogRef = _this126.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data6);
 
-              _this123.dialogRef.afterClosed().subscribe(function (result) {
+              _this126.dialogRef.afterClosed().subscribe(function (result) {
                 switch (result) {
                   case "Close":
                     break;
 
                   case "Re-Try":
-                    _this123.deleteProcess(pk_id, index);
+                    _this126.deleteProcess(pk_id, index);
 
                     break;
                 }
@@ -22472,13 +22737,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          var _this124 = this;
+          var _this127 = this;
 
           this.cookies.delete('jwtToken');
           this.cookies.delete('user_details');
           this.cookies.deleteAll();
           setTimeout(function () {
-            _this124.router.navigateByUrl('logout');
+            _this127.router.navigateByUrl('logout');
           }, 1000);
         }
         /**logout function end here**/
@@ -22640,7 +22905,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DoctorGroupDashboardComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this125 = this;
+        var _this128 = this;
 
         _classCallCheck(this, DoctorGroupDashboardComponent);
 
@@ -22677,9 +22942,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this125.allResolveData = resolveData.dataCount.data.dashboardCount[0];
+          _this128.allResolveData = resolveData.dataCount.data.dashboardCount[0];
 
-          _this125.viewReportProcessData(_this125.htmlText.headerText);
+          _this128.viewReportProcessData(_this128.htmlText.headerText);
         });
       }
 
@@ -22692,7 +22957,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this126 = this;
+          var _this129 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -22704,9 +22969,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('admin-dashboard', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this126.allResolveData = response.data;
+              _this129.allResolveData = response.data;
             } else {
-              _this126.router.navigateByUrl('logout');
+              _this129.router.navigateByUrl('logout');
             }
           }); // for listing
 
@@ -22715,7 +22980,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this127 = this;
+          var _this130 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           // Set Header Flag
@@ -22864,12 +23129,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('dashboard-datalist', repostSignCond).subscribe(function (response) {
             if (response.status == true) {
-              _this127.allResolveData.tableDataFlag = true;
-              _this127.allResolveData.tableData = response.data;
-              _this127.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this127.allResolveData.tableData);
-              _this127.allDataSource.paginator = _this127.paginatorAll;
+              _this130.allResolveData.tableDataFlag = true;
+              _this130.allResolveData.tableData = response.data;
+              _this130.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this130.allResolveData.tableData);
+              _this130.allDataSource.paginator = _this130.paginatorAll;
             } else {
-              _this127.router.navigateByUrl('logout');
+              _this130.router.navigateByUrl('logout');
             }
           });
         }
@@ -22919,7 +23184,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this128 = this;
+          var _this131 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -22957,15 +23222,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this128.matSnackBar.open("Start downloading.", "Ok", {
+              _this131.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this128.viewReportProcessData(_this128.htmlText.headerText);
+              _this131.viewReportProcessData(_this131.htmlText.headerText);
             } else {
-              _this128.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this131.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -22976,7 +23241,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteReport",
         value: function deleteReport(pk_id, index) {
-          var _this129 = this;
+          var _this132 = this;
 
           var data = {
             width: '250px',
@@ -22998,7 +23263,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 break;
 
               case "Yes":
-                _this129.deleteProcess(pk_id, index);
+                _this132.deleteProcess(pk_id, index);
 
                 break;
             }
@@ -23007,7 +23272,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteProcess",
         value: function deleteProcess(pk_id, index) {
-          var _this130 = this;
+          var _this133 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -23016,9 +23281,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost('deletesingledata', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this130.allResolveData.tableData.splice(index, 1);
+              _this133.allResolveData.tableData.splice(index, 1);
 
-              _this130.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this130.allResolveData.tableData);
+              _this133.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this133.allResolveData.tableData);
               var data = {
                 width: '250px',
                 data: {
@@ -23032,7 +23297,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this130.dialogRef = _this130.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
+              _this133.dialogRef = _this133.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
             } else {
               var _data7 = {
                 width: '250px',
@@ -23047,15 +23312,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this130.dialogRef = _this130.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data7);
+              _this133.dialogRef = _this133.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data7);
 
-              _this130.dialogRef.afterClosed().subscribe(function (result) {
+              _this133.dialogRef.afterClosed().subscribe(function (result) {
                 switch (result) {
                   case "Close":
                     break;
 
                   case "Re-Try":
-                    _this130.deleteProcess(pk_id, index);
+                    _this133.deleteProcess(pk_id, index);
 
                     break;
                 }
@@ -23309,13 +23574,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          var _this131 = this;
+          var _this134 = this;
 
           this.cookies.delete('jwtToken');
           this.cookies.delete('user_details');
           this.cookies.deleteAll();
           setTimeout(function () {
-            _this131.router.navigateByUrl('logout');
+            _this134.router.navigateByUrl('logout');
           }, 1000);
         }
         /**logout function end here**/
@@ -23369,7 +23634,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".add_form{ width: 700px; margin: 20px auto; background: #f3f3f3; padding: 16px 10px; padding-bottom: 50px; border: 1px solid #91e7ff; }\n.add_form .form_wrapper .mat-form-field{ width: 100%;  }\n.add_form .form_wrapper textarea{ resize: none;}\n.add_form h2{ font-family: \"RobotoBlack\"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }\n.add_form .submit_form { display: block; width: 100%; text-align: center; margin-top: 30px; }\n.add_form .submit_form button{ border-radius: 5px; background: -webkit-gradient(linear, left top, left bottom, from(#f9dc19), to(#daa505)); background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: \"RobotoBlack\"; font-size: 25px; padding: 2px;\nwidth: 240px; border: 3px solid #d59d01; }\n.add_form .submit_form button:nth-child(1){ background: -webkit-gradient(linear, left top, left bottom, from(#f2be00), to(#a52a08)); background: linear-gradient(180deg, #f2be00, #a52a08); color: #f3f3f3; border: 2px solid #bb3c0d; margin-right: 16px; }\n.add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;}\n.add_header{ display: -webkit-box; display: flex; margin: 016px;}\n.add_header button{ margin-left: auto;\n  background: -webkit-gradient(linear, left top, left bottom, from(#fac855), to(#e47e2a))!important;\n  background: linear-gradient(180deg, #fac855, #e47e2a)!important;\n  text-transform: uppercase;\n  font-family: \"RobotoBlack\"; padding-top: 4px;\n}\n@media screen and (max-width: 840px){\n  .add_form { width: 80%; }\n}\n@media screen and (max-width: 560px){\n.add_form .submit_form button:nth-child(1) { margin-right: 0px; margin-bottom: 16px; }\n.add_form .submit_form button { width: 100%; }\n\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9kb2N0b3Itb2ZmaWNlL2FkZC1wYXRpZW50L2FkZC1wYXRpZW50LW1hbnVhbGx5L2FkZC1wYXRpZW50LW1hbnVhbGx5LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsV0FBVyxZQUFZLEVBQUUsaUJBQWlCLEVBQUUsbUJBQW1CLEVBQUUsa0JBQWtCLEVBQUUsb0JBQW9CLEVBQUUseUJBQXlCLEVBQUU7QUFDdEkseUNBQXlDLFdBQVcsR0FBRztBQUN2RCxrQ0FBa0MsWUFBWSxDQUFDO0FBQy9DLGNBQWMsMEJBQTBCLEVBQUUseUJBQXlCLEVBQUUsZUFBZSxFQUFFLGNBQWMsRUFBRSxjQUFjLEVBQUU7QUFDdEgseUJBQXlCLGNBQWMsRUFBRSxXQUFXLEVBQUUsa0JBQWtCLEVBQUUsZ0JBQWdCLEVBQUU7QUFDNUYsK0JBQStCLGtCQUFrQixFQUFFLHVGQUFxRCxFQUFyRCxxREFBcUQsRUFBRSxjQUFjLEVBQUUseUJBQXlCLEVBQUUsMEJBQTBCLEVBQUUsZUFBZSxFQUFFLFlBQVk7QUFDOU0sWUFBWSxFQUFFLHlCQUF5QixFQUFFO0FBQ3pDLDRDQUE0Qyx1RkFBcUQsRUFBckQscURBQXFELEVBQUUsY0FBYyxFQUFFLHlCQUF5QixFQUFFLGtCQUFrQixFQUFFO0FBQ2xLLDJCQUEyQixtQkFBbUIsRUFBRSxXQUFXLEVBQUUsbUJBQW1CLENBQUM7QUFDakYsYUFBYSxvQkFBYSxFQUFiLGFBQWEsRUFBRSxhQUFhLENBQUM7QUFDMUMsb0JBQW9CLGlCQUFpQjtFQUNuQyxpR0FBK0Q7RUFBL0QsK0RBQStEO0VBQy9ELHlCQUF5QjtFQUN6QiwwQkFBMEIsRUFBRSxnQkFBZ0I7QUFDOUM7QUFFQTtFQUNFLFlBQVksVUFBVSxFQUFFO0FBQzFCO0FBQ0E7QUFDQSw2Q0FBNkMsaUJBQWlCLEVBQUUsbUJBQW1CLEVBQUU7QUFDckYsZ0NBQWdDLFdBQVcsRUFBRTs7QUFFN0MiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2RvY3Rvci1vZmZpY2UvYWRkLXBhdGllbnQvYWRkLXBhdGllbnQtbWFudWFsbHkvYWRkLXBhdGllbnQtbWFudWFsbHkuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hZGRfZm9ybXsgd2lkdGg6IDcwMHB4OyBtYXJnaW46IDIwcHggYXV0bzsgYmFja2dyb3VuZDogI2YzZjNmMzsgcGFkZGluZzogMTZweCAxMHB4OyBwYWRkaW5nLWJvdHRvbTogNTBweDsgYm9yZGVyOiAxcHggc29saWQgIzkxZTdmZjsgfVxuLmFkZF9mb3JtIC5mb3JtX3dyYXBwZXIgLm1hdC1mb3JtLWZpZWxkeyB3aWR0aDogMTAwJTsgIH1cbi5hZGRfZm9ybSAuZm9ybV93cmFwcGVyIHRleHRhcmVheyByZXNpemU6IG5vbmU7fVxuLmFkZF9mb3JtIGgyeyBmb250LWZhbWlseTogXCJSb2JvdG9CbGFja1wiOyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBmb250LXNpemU6IDI0cHg7IHBhZGRpbmc6IDAgNnB4OyBjb2xvcjogIzFkYmNlOTsgfVxuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSB7IGRpc3BsYXk6IGJsb2NrOyB3aWR0aDogMTAwJTsgdGV4dC1hbGlnbjogY2VudGVyOyBtYXJnaW4tdG9wOiAzMHB4OyB9XG4uYWRkX2Zvcm0gLnN1Ym1pdF9mb3JtIGJ1dHRvbnsgYm9yZGVyLXJhZGl1czogNXB4OyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjZjlkYzE5LCAjZGFhNTA1KTsgY29sb3I6ICM1ZTM2MTk7IHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7IGZvbnQtZmFtaWx5OiBcIlJvYm90b0JsYWNrXCI7IGZvbnQtc2l6ZTogMjVweDsgcGFkZGluZzogMnB4O1xud2lkdGg6IDI0MHB4OyBib3JkZXI6IDNweCBzb2xpZCAjZDU5ZDAxOyB9XG4uYWRkX2Zvcm0gLnN1Ym1pdF9mb3JtIGJ1dHRvbjpudGgtY2hpbGQoMSl7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxODBkZWcsICNmMmJlMDAsICNhNTJhMDgpOyBjb2xvcjogI2YzZjNmMzsgYm9yZGVyOiAycHggc29saWQgI2JiM2MwZDsgbWFyZ2luLXJpZ2h0OiAxNnB4OyB9XG4uYWRkX2Zvcm0gLnJldHVybl9idXR0b24geyBiYWNrZ3JvdW5kOiAjMWRiY2U5OyBjb2xvcjogI2ZmZjsgbWFyZ2luLWJvdHRvbTogMTJweDt9XG4uYWRkX2hlYWRlcnsgZGlzcGxheTogZmxleDsgbWFyZ2luOiAwMTZweDt9XG4uYWRkX2hlYWRlciBidXR0b257IG1hcmdpbi1sZWZ0OiBhdXRvO1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjZmFjODU1LCAjZTQ3ZTJhKSFpbXBvcnRhbnQ7XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gIGZvbnQtZmFtaWx5OiBcIlJvYm90b0JsYWNrXCI7IHBhZGRpbmctdG9wOiA0cHg7XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDg0MHB4KXtcbiAgLmFkZF9mb3JtIHsgd2lkdGg6IDgwJTsgfVxufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNTYwcHgpe1xuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b246bnRoLWNoaWxkKDEpIHsgbWFyZ2luLXJpZ2h0OiAwcHg7IG1hcmdpbi1ib3R0b206IDE2cHg7IH1cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0gYnV0dG9uIHsgd2lkdGg6IDEwMCU7IH1cblxufVxuIl19 */";
+    __webpack_exports__["default"] = ".add_form{ width: 85%; margin: 20px auto; background: #f3f3f3; padding: 16px 10px; padding-bottom: 50px; border: 1px solid #91e7ff; }\n.add_form .form_wrapper .mat-form-field{ width: 100%;  }\n.add_form .form_wrapper textarea{ resize: none;}\n.add_form h2{ font-family: \"AvenirBlack\"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }\n.add_form .submit_form { display: block; width: 100%; text-align: center; margin-top: 30px; }\n.add_form .submit_form button{ border-radius: 5px; background: -webkit-gradient(linear, left top, left bottom, from(#f9dc19), to(#daa505)); background: linear-gradient(180deg, #f9dc19, #daa505); color: #5e3619; text-transform: uppercase; font-family: \"AvenirBlack\"; font-size: 25px; padding: 2px;\nwidth: 240px; border: 3px solid #d59d01; }\n.add_form .submit_form button:nth-child(1){ background: -webkit-gradient(linear, left top, left bottom, from(#f2be00), to(#a52a08)); background: linear-gradient(180deg, #f2be00, #a52a08); color: #f3f3f3; border: 2px solid #bb3c0d; margin-right: 16px; }\n.add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;}\n.add_header{ display: -webkit-box; display: flex; margin: 016px;}\n.add_header button{ margin-left: auto;\n  background: -webkit-gradient(linear, left top, left bottom, from(#fac855), to(#e47e2a))!important;\n  background: linear-gradient(180deg, #fac855, #e47e2a)!important;\n  text-transform: uppercase;\n  font-family: \"AvenirBlack\"; padding-top: 4px;\n}\n@media screen and (max-width: 840px){\n  .add_form { width: 80%; }\n}\n@media screen and (max-width: 560px){\n.add_form .submit_form button:nth-child(1) { margin-right: 0px; margin-bottom: 16px; }\n.add_form .submit_form button { width: 100%; }\n\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9kb2N0b3Itb2ZmaWNlL2FkZC1wYXRpZW50L2FkZC1wYXRpZW50LW1hbnVhbGx5L2FkZC1wYXRpZW50LW1hbnVhbGx5LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsV0FBVyxVQUFVLEVBQUUsaUJBQWlCLEVBQUUsbUJBQW1CLEVBQUUsa0JBQWtCLEVBQUUsb0JBQW9CLEVBQUUseUJBQXlCLEVBQUU7QUFDcEkseUNBQXlDLFdBQVcsR0FBRztBQUN2RCxrQ0FBa0MsWUFBWSxDQUFDO0FBQy9DLGNBQWMsMEJBQTBCLEVBQUUseUJBQXlCLEVBQUUsZUFBZSxFQUFFLGNBQWMsRUFBRSxjQUFjLEVBQUU7QUFDdEgseUJBQXlCLGNBQWMsRUFBRSxXQUFXLEVBQUUsa0JBQWtCLEVBQUUsZ0JBQWdCLEVBQUU7QUFDNUYsK0JBQStCLGtCQUFrQixFQUFFLHVGQUFxRCxFQUFyRCxxREFBcUQsRUFBRSxjQUFjLEVBQUUseUJBQXlCLEVBQUUsMEJBQTBCLEVBQUUsZUFBZSxFQUFFLFlBQVk7QUFDOU0sWUFBWSxFQUFFLHlCQUF5QixFQUFFO0FBQ3pDLDRDQUE0Qyx1RkFBcUQsRUFBckQscURBQXFELEVBQUUsY0FBYyxFQUFFLHlCQUF5QixFQUFFLGtCQUFrQixFQUFFO0FBQ2xLLDJCQUEyQixtQkFBbUIsRUFBRSxXQUFXLEVBQUUsbUJBQW1CLENBQUM7QUFDakYsYUFBYSxvQkFBYSxFQUFiLGFBQWEsRUFBRSxhQUFhLENBQUM7QUFDMUMsb0JBQW9CLGlCQUFpQjtFQUNuQyxpR0FBK0Q7RUFBL0QsK0RBQStEO0VBQy9ELHlCQUF5QjtFQUN6QiwwQkFBMEIsRUFBRSxnQkFBZ0I7QUFDOUM7QUFFQTtFQUNFLFlBQVksVUFBVSxFQUFFO0FBQzFCO0FBQ0E7QUFDQSw2Q0FBNkMsaUJBQWlCLEVBQUUsbUJBQW1CLEVBQUU7QUFDckYsZ0NBQWdDLFdBQVcsRUFBRTs7QUFFN0MiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2RvY3Rvci1vZmZpY2UvYWRkLXBhdGllbnQvYWRkLXBhdGllbnQtbWFudWFsbHkvYWRkLXBhdGllbnQtbWFudWFsbHkuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hZGRfZm9ybXsgd2lkdGg6IDg1JTsgbWFyZ2luOiAyMHB4IGF1dG87IGJhY2tncm91bmQ6ICNmM2YzZjM7IHBhZGRpbmc6IDE2cHggMTBweDsgcGFkZGluZy1ib3R0b206IDUwcHg7IGJvcmRlcjogMXB4IHNvbGlkICM5MWU3ZmY7IH1cbi5hZGRfZm9ybSAuZm9ybV93cmFwcGVyIC5tYXQtZm9ybS1maWVsZHsgd2lkdGg6IDEwMCU7ICB9XG4uYWRkX2Zvcm0gLmZvcm1fd3JhcHBlciB0ZXh0YXJlYXsgcmVzaXplOiBub25lO31cbi5hZGRfZm9ybSBoMnsgZm9udC1mYW1pbHk6IFwiQXZlbmlyQmxhY2tcIjsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgZm9udC1zaXplOiAyNHB4OyBwYWRkaW5nOiAwIDZweDsgY29sb3I6ICMxZGJjZTk7IH1cbi5hZGRfZm9ybSAuc3VibWl0X2Zvcm0geyBkaXNwbGF5OiBibG9jazsgd2lkdGg6IDEwMCU7IHRleHQtYWxpZ246IGNlbnRlcjsgbWFyZ2luLXRvcDogMzBweDsgfVxuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b257IGJvcmRlci1yYWRpdXM6IDVweDsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE4MGRlZywgI2Y5ZGMxOSwgI2RhYTUwNSk7IGNvbG9yOiAjNWUzNjE5OyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBmb250LWZhbWlseTogXCJBdmVuaXJCbGFja1wiOyBmb250LXNpemU6IDI1cHg7IHBhZGRpbmc6IDJweDtcbndpZHRoOiAyNDBweDsgYm9yZGVyOiAzcHggc29saWQgI2Q1OWQwMTsgfVxuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b246bnRoLWNoaWxkKDEpeyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjZjJiZTAwLCAjYTUyYTA4KTsgY29sb3I6ICNmM2YzZjM7IGJvcmRlcjogMnB4IHNvbGlkICNiYjNjMGQ7IG1hcmdpbi1yaWdodDogMTZweDsgfVxuLmFkZF9mb3JtIC5yZXR1cm5fYnV0dG9uIHsgYmFja2dyb3VuZDogIzFkYmNlOTsgY29sb3I6ICNmZmY7IG1hcmdpbi1ib3R0b206IDEycHg7fVxuLmFkZF9oZWFkZXJ7IGRpc3BsYXk6IGZsZXg7IG1hcmdpbjogMDE2cHg7fVxuLmFkZF9oZWFkZXIgYnV0dG9ueyBtYXJnaW4tbGVmdDogYXV0bztcbiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE4MGRlZywgI2ZhYzg1NSwgI2U0N2UyYSkhaW1wb3J0YW50O1xuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICBmb250LWZhbWlseTogXCJBdmVuaXJCbGFja1wiOyBwYWRkaW5nLXRvcDogNHB4O1xufVxuIFxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogODQwcHgpe1xuICAuYWRkX2Zvcm0geyB3aWR0aDogODAlOyB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA1NjBweCl7XG4uYWRkX2Zvcm0gLnN1Ym1pdF9mb3JtIGJ1dHRvbjpudGgtY2hpbGQoMSkgeyBtYXJnaW4tcmlnaHQ6IDBweDsgbWFyZ2luLWJvdHRvbTogMTZweDsgfVxuLmFkZF9mb3JtIC5zdWJtaXRfZm9ybSBidXR0b24geyB3aWR0aDogMTAwJTsgfVxuXG59XG4iXX0= */";
     /***/
   },
 
@@ -23463,7 +23728,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function AddPatientManuallyComponent(formBuilder, httpService, snackBar, commonFunction, activatedRoute, cookieService, router) {
-        var _this132 = this;
+        var _this135 = this;
 
         _classCallCheck(this, AddPatientManuallyComponent);
 
@@ -23498,7 +23763,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           redirectpath: "/doctor-office/dashboard",
           submitactive: true,
           apiUrl: src_environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].calendarApi,
-          endpoint: 'add-to-calendar',
+          endpoint: 'add-to-calendar-manually',
           jwttoken: "",
           //hidereset:true,
           //hidecancel:true,
@@ -23640,7 +23905,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             value: this.parent_id
           }, {
             type: 'date',
-            name: 'appointment_date',
+            name: 'startdate',
             placeholder: 'Appointment Date',
             label: 'Appointment Date',
             value: '',
@@ -24359,10 +24624,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               doctorDetails.push(temp);
             }
 
-            _this132.parent_type = response.res[0].parent_type;
-            _this132.parent_id = response.res[0].parent_id;
+            _this135.parent_type = response.res[0].parent_type;
+            _this135.parent_id = response.res[0].parent_id;
             setTimeout(function () {
-              _this132.formfieldrefreshdata = {
+              _this135.formfieldrefreshdata = {
                 field: 'addfromcontrol',
                 value: {
                   heading: "<h2>Appointment Details</h2>",
@@ -24388,22 +24653,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddPatientManuallyComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this133 = this;
+          var _this136 = this;
 
           if (this.cookieService.check('jwtToken')) {
             this.activatedRoute.data.forEach(function (data) {
-              _this133.resolveData = data.eventdayarrData;
+              _this136.resolveData = data.eventdayarrData;
               var otherFieldsData = [];
 
-              for (var i = _this133.resolveData.others.patient_information.length - 1; i >= 0; i--) {
+              for (var i = _this136.resolveData.others.patient_information.length - 1; i >= 0; i--) {
                 var fieldData = void 0;
 
-                switch (_this133.resolveData.others.patient_information[i].type) {
+                switch (_this136.resolveData.others.patient_information[i].type) {
                   case 'checkbox':
                     otherFieldsData.push({
                       type: 'checkbox',
-                      label: _this133.resolveData.others.patient_information[i].description,
-                      name: _this133.resolveData.others.patient_information[i].label,
+                      label: _this136.resolveData.others.patient_information[i].description,
+                      name: _this136.resolveData.others.patient_information[i].label,
                       after: 'appointment_time'
                     });
                     break;
@@ -24411,8 +24676,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   case 'textfield':
                     otherFieldsData.push({
                       type: 'text',
-                      name: _this133.resolveData.others.patient_information[i].label,
-                      label: _this133.resolveData.others.patient_information[i].description,
+                      name: _this136.resolveData.others.patient_information[i].label,
+                      label: _this136.resolveData.others.patient_information[i].description,
                       value: '',
                       validators: {
                         rule: 'required'
@@ -24424,17 +24689,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   case 'dropdown':
                     var temp = [];
 
-                    for (var j = 0; j < _this133.resolveData.others.patient_information[i].addfield.length; j++) {
+                    for (var j = 0; j < _this136.resolveData.others.patient_information[i].addfield.length; j++) {
                       var json = {
-                        name: _this133.resolveData.others.patient_information[i].addfield[j],
-                        val: _this133.resolveData.others.patient_information[i].addfield[j]
+                        name: _this136.resolveData.others.patient_information[i].addfield[j],
+                        val: _this136.resolveData.others.patient_information[i].addfield[j]
                       };
                       temp.push(json);
                     }
 
                     otherFieldsData.push({
-                      label: _this133.resolveData.others.patient_information[i].description,
-                      name: _this133.resolveData.others.patient_information[i].label,
+                      label: _this136.resolveData.others.patient_information[i].description,
+                      name: _this136.resolveData.others.patient_information[i].label,
                       type: 'select',
                       val: temp,
                       validations: [{
@@ -24447,7 +24712,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
 
               otherFieldsData[otherFieldsData.length - 1].heading = "<h2>Others Details</h2>";
-              _this133.formfieldrefreshdata = {
+              _this136.formfieldrefreshdata = {
                 field: 'addfromcontrol',
                 value: otherFieldsData
               };
@@ -24461,28 +24726,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getStates",
         value: function getStates() {
-          var _this134 = this;
+          var _this137 = this;
 
           /* ****************** Get states value from assets/states.json ****************** */
           this.httpService.get('assets/data/states.json').subscribe(function (res) {
             var state = res;
 
             for (var loop = 0; loop < state.length; loop++) {
-              _this134.states.push({
+              _this137.states.push({
                 name: state[loop].text,
                 val: state[loop].value
               });
             }
 
-            for (var i = 0; i < _this134.resolveData.others.insurance.length; i++) {
+            for (var i = 0; i < _this137.resolveData.others.insurance.length; i++) {
               var temp = {};
-              temp['name'] = _this134.resolveData.others.insurance[i].insurancename;
-              temp['val'] = _this134.resolveData.others.insurance[i]._id;
+              temp['name'] = _this137.resolveData.others.insurance[i].insurancename;
+              temp['val'] = _this137.resolveData.others.insurance[i]._id;
 
-              _this134.insuranceData.push(temp);
+              _this137.insuranceData.push(temp);
             }
 
-            _this134.insuranceData.push({
+            _this137.insuranceData.push({
               name: 'Others',
               val: 0
             });
@@ -24501,7 +24766,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "listenFormFieldChange",
         value: function listenFormFieldChange(val) {
-          var _this135 = this;
+          var _this138 = this;
 
           switch (val.field.name) {
             case 'insurance_id':
@@ -24561,7 +24826,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 };
                 setTimeout(function () {
-                  _this135.formfieldrefreshdata = {
+                  _this138.formfieldrefreshdata = {
                     field: 'addfromcontrol',
                     value: {
                       label: 'Name of the insurance',
@@ -24578,7 +24843,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   };
                 }, 1000);
                 setTimeout(function () {
-                  _this135.formfieldrefreshdata = {
+                  _this138.formfieldrefreshdata = {
                     field: 'addfromcontrol',
                     value: {
                       type: 'text',
@@ -24625,7 +24890,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
                 setTimeout(function () {
-                  _this135.formfieldrefreshdata = {
+                  _this138.formfieldrefreshdata = {
                     field: 'addfromcontrol',
                     value: {
                       label: "Select Tech",
@@ -24659,14 +24924,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     "condition": {
                       _id_object: val.fieldval
                     },
-                    "token": _this135.jwtToken
+                    "token": _this138.jwtToken
                   };
 
-                  _this135.httpService.httpViaPost("datalist", parentData).subscribe(function (response) {
+                  _this138.httpService.httpViaPost("datalist", parentData).subscribe(function (response) {
                     if (response.status == true) {
                       if (typeof response.res[0].parent_type != 'undefined') {
                         setTimeout(function () {
-                          _this135.formfieldrefreshdata = {
+                          _this138.formfieldrefreshdata = {
                             field: 'addfromcontrol',
                             value: {
                               name: "parent_type",
@@ -24676,7 +24941,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                           };
                         }, 200);
                         setTimeout(function () {
-                          _this135.formfieldrefreshdata = {
+                          _this138.formfieldrefreshdata = {
                             field: 'addfromcontrol',
                             value: {
                               name: "parent_id",
@@ -24833,7 +25098,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(DoctorOfficeAccountSettingsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this136 = this;
+          var _this139 = this;
 
           //generating the form
           this.generateForm(); //setting the default value
@@ -24842,7 +25107,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.allStateCityData();
           setTimeout(function () {
-            _this136.getCityByName(_this136.userData.state);
+            _this139.getCityByName(_this139.userData.state);
           }, 2000);
         }
       }, {
@@ -24881,7 +25146,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onSubmit",
         value: function onSubmit() {
-          var _this137 = this;
+          var _this140 = this;
 
           this.loader = true;
           if (this.accountForm.invalid) return;else {
@@ -24892,30 +25157,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == 'success') {
-                var userDetailsCookie = JSON.parse(_this137.cookieService.get('user_details'));
+                var userDetailsCookie = JSON.parse(_this140.cookieService.get('user_details'));
                 var type = userDetailsCookie.type;
 
-                _this137.cookieService.delete('user_details'); // -------------------------------------
+                _this140.cookieService.delete('user_details'); // -------------------------------------
 
 
-                userDetailsCookie.address = _this137.accountForm.value.address; // -------------------------------------
+                userDetailsCookie.address = _this140.accountForm.value.address; // -------------------------------------
 
                 userDetailsCookie = JSON.stringify(userDetailsCookie);
                 console.log("-->", userDetailsCookie);
-                _this137.loader = false;
+                _this140.loader = false;
                 var action = "Ok";
 
-                _this137.snackBar.open(_this137.message, action, {
+                _this140.snackBar.open(_this140.message, action, {
                   duration: 1000
                 });
 
                 setTimeout(function () {// this.cookieService.set('user_details', userDetailsCookie);
                 }, 1000);
                 setTimeout(function () {
-                  _this137.router.navigateByUrl('/doctor-office/dashboard');
+                  _this140.router.navigateByUrl('/doctor-office/dashboard');
                 }, 3000);
               } else {
-                _this137.snackBar.open(response.status, "OK", {
+                _this140.snackBar.open(response.status, "OK", {
                   duration: 1500
                 });
               }
@@ -24932,13 +25197,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this138 = this;
+          var _this141 = this;
 
           this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this138.states = response;
+            _this141.states = response;
           });
           this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this138.allCities = response;
+            _this141.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -25136,7 +25401,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "changePassword",
         value: function changePassword() {
-          var _this139 = this;
+          var _this142 = this;
 
           this.loader = true;
 
@@ -25150,21 +25415,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost('changepassword', data).subscribe(function (response) {
               // this.formDirective.resetForm();
-              _this139.loader = false;
+              _this142.loader = false;
 
               if (response.Status == true) {
-                _this139.snackBar.open(response.message, "OK", {
+                _this142.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
 
-                _this139.router.navigateByUrl('doctor-office/dashboard');
+                _this142.router.navigateByUrl('doctor-office/dashboard');
               } else {
-                _this139.snackBar.open(response.message, "OK", {
+                _this142.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
               }
             }, function (error) {
-              _this139.loader = false;
+              _this142.loader = false;
               alert("Some error occurred. Please try later.");
             });
           }
@@ -25935,15 +26200,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(BookAppoinmentNowComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this140 = this;
+          var _this143 = this;
 
           this.getStates();
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this140.resolveData = data.eventdayarrData;
-              _this140.configData.responseData = data.eventdayarrData.data;
+              _this143.resolveData = data.eventdayarrData;
+              _this143.configData.responseData = data.eventdayarrData.data;
             });
           } else {
             this.openSnackBar('Token not found');
@@ -25966,7 +26231,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateUser",
         value: function updateUser() {
-          var _this141 = this;
+          var _this144 = this;
 
           // let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
           if (this.activatedRoute.snapshot.params.refresh && this.cookieService.check('user_details')) {
@@ -25982,7 +26247,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               console.log('response', response);
 
               if (response.status == 'success') {
-                _this141.openSnackBar('Calendar added successfully...');
+                _this144.openSnackBar('Calendar added successfully...');
               }
             });
             var urlSendEmail = this.configData.baseUrl + 'send-confirmation-email?id=' + this.userDetails._id;
@@ -25990,7 +26255,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               if (response.status == 'success') {
                 console.log('Mail sent ', response.msg_id);
 
-                _this141.openSnackBar('Confirmation email sent to your email - ' + _this141.userDetails.email, 'Ok');
+                _this144.openSnackBar('Confirmation email sent to your email - ' + _this144.userDetails.email, 'Ok');
               }
             }); // Update user_details in cookie
 
@@ -26000,17 +26265,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getStates",
         value: function getStates() {
-          var _this142 = this;
+          var _this145 = this;
 
           /* ****************** Get states value from assets/states.json ****************** */
           this.httpRequestService.get('assets/data/states.json').subscribe(function (res) {
-            _this142.states = res;
+            _this145.states = res;
             var insuranceData = [];
 
-            for (var i = 0; i < _this142.resolveData.others.insurance.length; i++) {
+            for (var i = 0; i < _this145.resolveData.others.insurance.length; i++) {
               var temp = {};
-              temp['text'] = _this142.resolveData.others.insurance[i].insurancename;
-              temp['value'] = _this142.resolveData.others.insurance[i]._id;
+              temp['text'] = _this145.resolveData.others.insurance[i].insurancename;
+              temp['value'] = _this145.resolveData.others.insurance[i]._id;
               insuranceData.push(temp);
             }
 
@@ -26020,27 +26285,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
             var insuranceTypeData = [];
 
-            for (var _i2 = 0; _i2 < _this142.resolveData.others.insurance_type.length; _i2++) {
+            for (var _i2 = 0; _i2 < _this145.resolveData.others.insurance_type.length; _i2++) {
               var _temp2 = {};
-              _temp2['text'] = _this142.resolveData.others.insurance_type[_i2].insurancetype_name;
-              _temp2['value'] = _this142.resolveData.others.insurance_type[_i2]._id;
-              _temp2['child_of'] = _this142.resolveData.others.insurance_type[_i2].insurance_id;
+              _temp2['text'] = _this145.resolveData.others.insurance_type[_i2].insurancetype_name;
+              _temp2['value'] = _this145.resolveData.others.insurance_type[_i2]._id;
+              _temp2['child_of'] = _this145.resolveData.others.insurance_type[_i2].insurance_id;
               insuranceTypeData.push(_temp2);
             }
 
             console.log('insuranceTypeData', insuranceTypeData);
             var otherFieldsData = [];
 
-            for (var _i3 = 0; _i3 < _this142.resolveData.others.patient_information.length; _i3++) {
+            for (var _i3 = 0; _i3 < _this145.resolveData.others.patient_information.length; _i3++) {
               var fieldData = void 0;
 
-              switch (_this142.resolveData.others.patient_information[_i3].type) {
+              switch (_this145.resolveData.others.patient_information[_i3].type) {
                 case 'checkbox':
                   fieldData = {
                     type: 'checkbox',
-                    label: _this142.resolveData.others.patient_information[_i3].description,
+                    label: _this145.resolveData.others.patient_information[_i3].description,
                     checkItems: [{
-                      name: _this142.resolveData.others.patient_information[_i3].label,
+                      name: _this145.resolveData.others.patient_information[_i3].label,
                       value: false,
                       label: '',
                       labelPosition: 'before'
@@ -26051,27 +26316,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 case 'textfield':
                   fieldData = {
                     type: 'input',
-                    name: _this142.resolveData.others.patient_information[_i3].label,
-                    placeholder: _this142.resolveData.others.patient_information[_i3].description,
-                    label: _this142.resolveData.others.patient_information[_i3].description,
+                    name: _this145.resolveData.others.patient_information[_i3].label,
+                    placeholder: _this145.resolveData.others.patient_information[_i3].description,
+                    label: _this145.resolveData.others.patient_information[_i3].description,
                     value: ''
                   };
                   break;
 
                 case 'dropdown':
-                  for (var j = 0; j < _this142.resolveData.others.patient_information[_i3].addfield.length; j++) {
-                    _this142.resolveData.others.patient_information[_i3].addfield[j] = {
-                      text: _this142.resolveData.others.patient_information[_i3].addfield[j],
-                      value: _this142.resolveData.others.patient_information[_i3].addfield[j]
+                  for (var j = 0; j < _this145.resolveData.others.patient_information[_i3].addfield.length; j++) {
+                    _this145.resolveData.others.patient_information[_i3].addfield[j] = {
+                      text: _this145.resolveData.others.patient_information[_i3].addfield[j],
+                      value: _this145.resolveData.others.patient_information[_i3].addfield[j]
                     };
                   }
 
                   fieldData = {
                     type: 'select',
-                    name: _this142.resolveData.others.patient_information[_i3].label,
-                    placeholder: _this142.resolveData.others.patient_information[_i3].description,
-                    label: _this142.resolveData.others.patient_information[_i3].description,
-                    options: _this142.resolveData.others.patient_information[_i3].addfield
+                    name: _this145.resolveData.others.patient_information[_i3].label,
+                    placeholder: _this145.resolveData.others.patient_information[_i3].description,
+                    label: _this145.resolveData.others.patient_information[_i3].description,
+                    options: _this145.resolveData.others.patient_information[_i3].addfield
                   };
                   break;
               }
@@ -26107,7 +26372,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'state',
               placeholder: 'Select State',
               label: 'State',
-              options: _this142.states,
+              options: _this145.states,
               validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__["Validators"].required],
               error: 'Select state'
             }, {
@@ -26181,7 +26446,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'booking_date',
               placeholder: 'Date',
               label: 'Booking date',
-              value: _this142.today,
+              value: _this145.today,
               disabled: true
             }];
             var checkboxFields = [{
@@ -26198,7 +26463,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Elevated Blood Sugar',
@@ -26212,7 +26479,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Extreme Thirst',
@@ -26226,7 +26495,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Frequent Urination',
@@ -26240,7 +26511,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Fatigue (Tiredness)',
@@ -26254,7 +26527,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Heartburn',
@@ -26268,7 +26543,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Increased Hunger',
@@ -26282,7 +26559,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Nausea',
@@ -26296,7 +26575,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Numbness & Tingling in Hands or Feet',
@@ -26310,7 +26591,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Vomiting',
@@ -26324,7 +26607,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               caption: 'Sudomotor Dysfunction (SUDOD)',
@@ -26339,7 +26624,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Difficulty Digesting Food',
@@ -26353,7 +26640,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Dizziness or Fainting',
@@ -26367,7 +26656,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Exercise Intolerance',
@@ -26381,7 +26672,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Sexual Difficulties',
@@ -26395,7 +26688,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Sweat Abnormalities',
@@ -26409,7 +26704,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Tingling Hands & Feet',
@@ -26423,7 +26720,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               label: 'Urinary Problems',
@@ -26437,7 +26736,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
             }, {
               type: 'checkbox',
               caption: 'ENDOTHELIAL DYSFUNCTION (ENDOD)',
@@ -26452,7 +26753,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
             }, {
               type: 'checkbox',
               label: 'Chest Pain that goes away with rest',
@@ -26466,7 +26769,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
             }, {
               type: 'checkbox',
               label: 'Heartburn',
@@ -26480,7 +26785,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
             }, {
               type: 'checkbox',
               label: 'Pain In Calves',
@@ -26494,7 +26801,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
             }, {
               type: 'checkbox',
               label: 'Shortness of Breath',
@@ -26508,7 +26817,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
             }, {
               type: 'checkbox',
               label: 'Stroke',
@@ -26522,7 +26833,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
             }, {
               type: 'checkbox',
               label: 'TIA (mini stroke)',
@@ -26536,7 +26849,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
             }, {
               type: 'checkbox',
               caption: 'CARDIOMETABOLIC RISK (CMR)',
@@ -26551,7 +26866,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC RISK (CMR)'
             }, {
               type: 'checkbox',
               label: 'Dizziness',
@@ -26565,7 +26882,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC RISK (CMR)'
             }, {
               type: 'checkbox',
               label: 'Swelling of Ankles',
@@ -26579,7 +26898,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC RISK (CMR)'
             }, {
               type: 'checkbox',
               caption: 'INSULIN RESISTANCE (IR)',
@@ -26594,7 +26915,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'INSULIN RESISTANCE (IR)'
             }, {
               type: 'checkbox',
               label: 'Elevated Blood Sugar',
@@ -26608,7 +26931,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'INSULIN RESISTANCE (IR)'
             }, {
               type: 'checkbox',
               label: 'Extreme Thirst',
@@ -26622,7 +26947,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'INSULIN RESISTANCE (IR)'
             }, {
               type: 'checkbox',
               label: 'Fatigue (Tiredness)',
@@ -26636,7 +26963,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'INSULIN RESISTANCE (IR)'
             }, {
               type: 'checkbox',
               label: 'Increased Hunger',
@@ -26650,7 +26979,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'INSULIN RESISTANCE (IR)'
             }, {
               type: 'checkbox',
               caption: 'SMALL FIBER SENSORY NEUROPATHY (SFN)',
@@ -26665,7 +26996,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'SMALL FIBER SENSORY NEUROPATHY (SFN)'
             }, {
               type: 'checkbox',
               label: 'Painful Contact With Socks or Bed Sheets',
@@ -26679,7 +27012,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'SMALL FIBER SENSORY NEUROPATHY (SFN)'
             }, {
               type: 'checkbox',
               label: 'Pebble or Sandlike Sensation In Shoes',
@@ -26693,7 +27028,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'SMALL FIBER SENSORY NEUROPATHY (SFN)'
             }, {
               type: 'checkbox',
               label: 'Stabbing or Electrical Shock Sensation',
@@ -26707,7 +27044,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'SMALL FIBER SENSORY NEUROPATHY (SFN)'
             }, {
               type: 'checkbox',
               label: 'Pins And Needles Sensation In Feet',
@@ -26721,7 +27060,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'SMALL FIBER SENSORY NEUROPATHY (SFN)'
             }, {
               type: 'checkbox',
               caption: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)',
@@ -26736,7 +27077,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
             }, {
               type: 'checkbox',
               label: 'Cold, Clammy, Pale Skin',
@@ -26750,7 +27093,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
             }, {
               type: 'checkbox',
               label: 'Depression',
@@ -26764,7 +27109,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
             }, {
               type: 'checkbox',
               label: 'Dizziness or Lightheadedness',
@@ -26778,7 +27125,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
             }, {
               type: 'checkbox',
               label: 'Thirst',
@@ -26792,7 +27141,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
             }, {
               type: 'checkbox',
               label: 'Fainting',
@@ -26806,7 +27157,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
             }, {
               type: 'checkbox',
               label: 'Fatigue (Tiredness)',
@@ -26820,7 +27173,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
             }, {
               type: 'checkbox',
               label: 'Lack of Concentration',
@@ -26834,7 +27189,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
             }, {
               type: 'checkbox',
               label: 'Lack of Energy',
@@ -26848,7 +27205,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
             }, {
               type: 'checkbox',
               label: 'Nausea',
@@ -26862,7 +27221,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
             }, {
               type: 'checkbox',
               label: 'Rapid, Shallow Breathing',
@@ -26876,7 +27237,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
             }, {
               type: 'checkbox',
               caption: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)',
@@ -26891,7 +27254,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)'
             }, {
               type: 'checkbox',
               label: 'Heart Attack',
@@ -26905,7 +27270,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)'
             }, {
               type: 'checkbox',
               label: 'Irregular heartbeat, too fast/slow (Atrial Fibrillation)',
@@ -26919,7 +27286,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)'
             }, {
               type: 'checkbox',
               label: 'Stroke',
@@ -26933,7 +27302,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: false,
                 label: 'Today',
                 labelPosition: 'before'
-              }]
+              }],
+              isSymptomChecklist: true,
+              block: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)'
             }];
             var autocompleteFields = [{
               type: 'select',
@@ -27055,9 +27426,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               value: ''
             }];
 
-            _this142.httpRequestService.postRequest('get-doctor-info', {
+            _this145.httpRequestService.postRequest('get-doctor-info', {
               condition: {
-                _id: _this142.userDetails.doctor_id
+                _id: _this145.userDetails.doctor_id
               }
             }).subscribe(function (response) {
               var hiddenFields = [{
@@ -27068,7 +27439,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }, {
                 type: 'input',
                 name: 'doctor_office_id',
-                value: _this142.userDetails._id,
+                value: _this145.userDetails._id,
                 hidden: true
               }, // {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
               {
@@ -27082,7 +27453,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: response.data.parent_id,
                 hidden: true
               }];
-              _this142.configData = Object.assign(_this142.configData, {
+              _this145.configData = Object.assign(_this145.configData, {
                 patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields)
               }, {
                 calendarInfoFormFields: calendarInfoFormFields
@@ -27312,7 +27683,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DoctorDashboardComponent(dialog, commonFunction, cookie, http, activatedRoute, matSnackBar, deviceService) {
-        var _this143 = this;
+        var _this146 = this;
 
         _classCallCheck(this, DoctorDashboardComponent);
 
@@ -27379,9 +27750,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         this.activatedRoute.data.forEach(function (resolveData) {
-          _this143.allResolveData = resolveData.doctordata.data;
+          _this146.allResolveData = resolveData.doctordata.data;
 
-          _this143.viewReportProcessData(_this143.htmlText.tableHeaderText);
+          _this146.viewReportProcessData(_this146.htmlText.tableHeaderText);
         });
       }
 
@@ -27399,7 +27770,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this144 = this;
+          var _this147 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           this.allDataColumns = ['no', 'patient_name', 'tech_name', 'doctor_name', 'biller_name', 'bill_generation_date', 'bill_sent_date', 'report_type', 'status', 'super_bill', 'action'];
@@ -27490,9 +27861,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('dashboard-datalist', data).subscribe(function (response) {
             if (response.data.length > 0) {
-              _this144.allResolveData.recordData = response.data;
-              _this144.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this144.allResolveData.recordData);
-              _this144.allDataSource.paginator = _this144.paginator;
+              _this147.allResolveData.recordData = response.data;
+              _this147.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this147.allResolveData.recordData);
+              _this147.allDataSource.paginator = _this147.paginator;
             }
           });
           var sectionData = {
@@ -27502,19 +27873,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost('datalist', sectionData).subscribe(function (response) {
             // if (response.data.length > 0) {
-            _this144.otherData["all_details"] = response.res[0]; // }
+            _this147.otherData["all_details"] = response.res[0]; // }
           });
         }
       }, {
         key: "openModal",
         value: function openModal(data) {
-          var _this145 = this;
+          var _this148 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_11__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this145.dialogRef.close();
+                _this148.dialogRef.close();
 
                 break;
             }
@@ -27523,7 +27894,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this146 = this;
+          var _this149 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -27561,15 +27932,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this146.matSnackBar.open("Start downloading...", "", {
+              _this149.matSnackBar.open("Start downloading...", "", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this146.refreshDashboard();
+              _this149.refreshDashboard();
             } else {
-              _this146.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this149.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -27578,7 +27949,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this147 = this;
+          var _this150 = this;
 
           var postData = {
             source: "data_pece",
@@ -27588,16 +27959,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("doctor-dashboard", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this147.allResolveData = response.data;
+              _this150.allResolveData = response.data;
 
-              _this147.viewReportProcessData(_this147.htmlText.tableHeaderText);
+              _this150.viewReportProcessData(_this150.htmlText.tableHeaderText);
             } else {
-              _this147.matSnackBar.open("Please wait...", "", {
+              _this150.matSnackBar.open("Please wait...", "", {
                 duration: 1000
               });
 
               setTimeout(function () {
-                _this147.refreshDashboard();
+                _this150.refreshDashboard();
               }, 1000);
             }
           });
@@ -28107,7 +28478,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getPatientData",
         value: function getPatientData(id) {
-          var _this148 = this;
+          var _this151 = this;
 
           var data = {
             "source": "data_pece",
@@ -28117,7 +28488,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "token": this.cookiesData.jwtToken
           };
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this148.htmlText.patientDetails = response.res[0];
+            _this151.htmlText.patientDetails = response.res[0];
           });
         }
       }, {
@@ -28269,7 +28640,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function PatientReportViewComponent(fb, activeRoute, router, httpService, datePipe, cookie, snakBar, dialog, commonFunction) {
-        var _this149 = this;
+        var _this152 = this;
 
         _classCallCheck(this, PatientReportViewComponent);
 
@@ -28317,16 +28688,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Upload":
-                _this149.dialogRef.close();
+                _this152.dialogRef.close();
 
-                _this149.router.navigateByUrl('/doctor/signature-management?view=' + activeRoute.snapshot.params._id);
+                _this152.router.navigateByUrl('/doctor/signature-management?view=' + activeRoute.snapshot.params._id);
 
                 break;
 
               case "Close":
-                _this149.dialogRef.close();
+                _this152.dialogRef.close();
 
-                _this149.router.navigateByUrl('/doctor/dashboard');
+                _this152.router.navigateByUrl('/doctor/dashboard');
 
                 break;
             }
@@ -28337,17 +28708,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PatientReportViewComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this150 = this;
+          var _this153 = this;
 
           this.activeRoute.data.forEach(function (data) {
-            _this150.htmlText.allResolveData = data.data.data;
-            console.log(">>>>", _this150.htmlText.allResolveData);
+            _this153.htmlText.allResolveData = data.data.data;
+            console.log(">>>>", _this153.htmlText.allResolveData);
 
-            if (typeof _this150.htmlText.allResolveData.reportData[0].stressi != 'undefined') {
-              _this150.htmlText.allResolveData.reportData[0].stressI = _this150.htmlText.allResolveData.reportData[0].stressi;
+            if (typeof _this153.htmlText.allResolveData.reportData[0].stressi != 'undefined') {
+              _this153.htmlText.allResolveData.reportData[0].stressI = _this153.htmlText.allResolveData.reportData[0].stressi;
             }
 
-            _this150.htmlText.allResolveData.reportData[0].BMI_flag = Math.round(_this150.htmlText.allResolveData.reportData[0].BMI);
+            _this153.htmlText.allResolveData.reportData[0].BMI_flag = Math.round(_this153.htmlText.allResolveData.reportData[0].BMI);
           });
 
           if (typeof this.cookiesData.user_details.diagnostic_admin_id != 'undefined') {
@@ -28357,7 +28728,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getBiller",
         value: function getBiller(id) {
-          var _this151 = this;
+          var _this154 = this;
 
           var data = {
             "source": "biller_by_doctor_id",
@@ -28375,7 +28746,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this151.htmlText.billers = response.res;
+            _this154.htmlText.billers = response.res;
           });
         }
       }, {
@@ -28404,7 +28775,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "reportSign",
         value: function reportSign() {
-          var _this152 = this;
+          var _this155 = this;
 
           var flug = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'default';
 
@@ -28434,35 +28805,35 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     "data": {
                       "bill_generation_date": new Date(),
                       "bill_sent_date": new Date(),
-                      "doctor_signature": _this152.cookiesData.user_details.doctor_signature,
+                      "doctor_signature": _this155.cookiesData.user_details.doctor_signature,
                       "biller_id": billerID,
                       "biller_name": billerName,
                       "biller_email": billerEmail,
-                      "download_link": _environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].siteBaseUrl + 'download/super-bill/' + _this152.htmlText.allResolveData.reportData[0]._id,
+                      "download_link": _environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].siteBaseUrl + 'download/super-bill/' + _this155.htmlText.allResolveData.reportData[0]._id,
                       "file_path": "",
                       "download_password": "",
-                      "details": _this152.htmlText.allResolveData.details,
-                      "provide_description": _this152.htmlText.allResolveData.provide_description,
+                      "details": _this155.htmlText.allResolveData.details,
+                      "provide_description": _this155.htmlText.allResolveData.provide_description,
                       "status": "Send to Biller"
                     },
-                    "report_id": _this152.htmlText.allResolveData.reportData[0]._id
+                    "report_id": _this155.htmlText.allResolveData.reportData[0]._id
                   };
-                  data.data["id"] = _this152.activeRoute.snapshot.params._id;
+                  data.data["id"] = _this155.activeRoute.snapshot.params._id;
 
-                  _this152.httpService.httpViaPost("report-sign-send-to-biller", data).subscribe(function (response) {
+                  _this155.httpService.httpViaPost("report-sign-send-to-biller", data).subscribe(function (response) {
                     if (response.status = "success") {
                       switch (flug) {
                         case 'back':
-                          _this152.dialogRef.close();
+                          _this155.dialogRef.close();
 
-                          _this152.router.navigateByUrl('/doctor/dashboard');
+                          _this155.router.navigateByUrl('/doctor/dashboard');
 
                           break;
 
                         case 'next':
-                          _this152.dialogRef.close();
+                          _this155.dialogRef.close();
 
-                          _this152.router.navigateByUrl('/doctor/dashboard');
+                          _this155.router.navigateByUrl('/doctor/dashboard');
 
                           break;
 
@@ -28475,7 +28846,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   break;
 
                 case "No":
-                  _this152.dialogRef.close();
+                  _this155.dialogRef.close();
 
                   break;
               }
@@ -29089,7 +29460,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateSignature",
         value: function updateSignature() {
-          var _this153 = this;
+          var _this156 = this;
 
           if (typeof this.htmlText.viewSign !== 'undefined' && this.htmlText.viewSign != '') {
             var data = {
@@ -29102,12 +29473,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost('addorupdatedata', data).subscribe(function (response) {
               if (response.status == "success") {
-                _this153.cookie.delete('user_details');
+                _this156.cookie.delete('user_details');
 
-                _this153.authData.user_details.doctor_signature = _this153.htmlText.viewSign;
-                var str = JSON.stringify(_this153.authData.user_details);
+                _this156.authData.user_details.doctor_signature = _this156.htmlText.viewSign;
+                var str = JSON.stringify(_this156.authData.user_details);
 
-                _this153.cookie.set('user_details', str);
+                _this156.cookie.set('user_details', str);
                 /* Open modal */
 
 
@@ -29125,7 +29496,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 };
 
-                _this153.openModal(modalData);
+                _this156.openModal(modalData);
               }
             });
           } else {
@@ -29144,16 +29515,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "openModal",
         value: function openModal(data) {
-          var _this154 = this;
+          var _this157 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_6__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this154.dialogRef.close();
+                _this157.dialogRef.close();
 
-                _this154.activatedRoute.queryParams.subscribe(function (getData) {
-                  _this154.router.navigateByUrl('/doctor/patient-record-report/' + getData['view']);
+                _this157.activatedRoute.queryParams.subscribe(function (getData) {
+                  _this157.router.navigateByUrl('/doctor/patient-record-report/' + getData['view']);
                 });
 
                 break;
@@ -30340,10 +30711,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getEvents",
         value: function getEvents() {
-          var _this155 = this;
+          var _this158 = this;
 
           this.activatedRoute.data.forEach(function (data) {
-            _this155.configData.responseData = data.eventListData.data;
+            _this158.configData.responseData = data.eventListData.data;
           });
         }
       }, {
@@ -30564,12 +30935,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalHomeComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this156 = this;
+          var _this159 = this;
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this156.configData.responseData = data.eventdayarrData.data;
+              _this159.configData.responseData = data.eventdayarrData.data;
             }); // Merge logged in user details with the config data
 
             var userDetails = JSON.parse(this.cookieService.get('user_details'));
@@ -30733,7 +31104,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalSyncWithGoogleComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this157 = this;
+          var _this160 = this;
 
           this.userDetails = JSON.parse(this.cookieService.get('user_details'));
 
@@ -30741,53 +31112,53 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var url = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_6__["environment"].calendarApi + 'getauthorization-pece-getuserdata' + '?access_token=' + this.activatedRoute.snapshot.params.access_token;
             this.httpRequestService.get(url).subscribe(function (response) {
               var data = {
-                token: _this157.cookieService.get('jwtToken'),
-                id: _this157.userDetails._id,
+                token: _this160.cookieService.get('jwtToken'),
+                id: _this160.userDetails._id,
                 data: {
-                  access_token: _this157.activatedRoute.snapshot.params.access_token,
-                  refresh_token: _this157.activatedRoute.snapshot.params.refresh,
+                  access_token: _this160.activatedRoute.snapshot.params.access_token,
+                  refresh_token: _this160.activatedRoute.snapshot.params.refresh,
                   connected_gmail: response.id
                 }
               }; // Update user details in database
 
-              _this157.httpRequestService.postRequest('update-user', data).subscribe(function (response) {
+              _this160.httpRequestService.postRequest('update-user', data).subscribe(function (response) {
                 console.log('response', response);
 
                 if (response.status == 'success') {
-                  _this157.openSnackBar('Calendar added successfully...');
+                  _this160.openSnackBar('Calendar added successfully...');
 
                   setInterval(function () {
-                    _this157.secCount = _this157.secCount - 1;
-                    _this157.displayMessage = "Synchronize Complete. You will be redirected in " + _this157.secCount + " sec.";
+                    _this160.secCount = _this160.secCount - 1;
+                    _this160.displayMessage = "Synchronize Complete. You will be redirected in " + _this160.secCount + " sec.";
 
-                    if (_this157.secCount == 0) {
-                      _this157.secCount = 1;
+                    if (_this160.secCount == 0) {
+                      _this160.secCount = 1;
 
-                      _this157.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
+                      _this160.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
                     }
                   }, 1000);
                 } else {
-                  _this157.openSnackBar("An error occurs. Please try again.", "Ok");
+                  _this160.openSnackBar("An error occurs. Please try again.", "Ok");
 
                   setTimeout(function () {
-                    _this157.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
+                    _this160.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
                   }, 4000);
                 }
               }); // Send email to the logged in user
 
 
-              var urlSendEmail = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_6__["environment"].calendarApi + 'send-confirmation-email?id=' + _this157.userDetails._id;
+              var urlSendEmail = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_6__["environment"].calendarApi + 'send-confirmation-email?id=' + _this160.userDetails._id;
 
-              _this157.httpRequestService.get(urlSendEmail).subscribe(function (response) {
+              _this160.httpRequestService.get(urlSendEmail).subscribe(function (response) {
                 if (response.status == 'success') {
                   console.log('Mail sent ', response.msg_id);
 
-                  _this157.openSnackBar('Confirmation email sent to your email - ' + _this157.userDetails.email, 'Ok');
+                  _this160.openSnackBar('Confirmation email sent to your email - ' + _this160.userDetails.email, 'Ok');
                 }
               }); // Update user_details in cookie
 
 
-              _this157.cookieService.set('user_details', JSON.stringify(Object.assign(_this157.userDetails, data.data)));
+              _this160.cookieService.set('user_details', JSON.stringify(Object.assign(_this160.userDetails, data.data)));
             });
             /* **********************************************************************************
             this.httpRequestService.httpViaPost('cal-update-user', data).subscribe((response) => {
@@ -31349,13 +31720,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalViewSlotComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this158 = this;
+          var _this161 = this;
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this158.configData.responseData = data.eventdayarrData.data;
-              console.log('responseData', _this158.configData.responseData);
+              _this161.configData.responseData = data.eventdayarrData.data;
+              console.log('responseData', _this161.configData.responseData);
             });
           } else {
             this.openSnackBar('Token not found');
@@ -31702,7 +32073,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllDoctorData",
         value: function getAllDoctorData() {
-          var _this159 = this;
+          var _this162 = this;
 
           var data = {
             "source": "doctors_by_tech_id",
@@ -31714,7 +32085,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
             var result = {};
             result = response.res;
-            _this159.allDoctorDataArray = result;
+            _this162.allDoctorDataArray = result;
           });
         }
       }, {
@@ -31783,7 +32154,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "bulkUploaddataSubmit",
         value: function bulkUploaddataSubmit() {
-          var _this160 = this;
+          var _this163 = this;
 
           if (this.configData.files.length > 0) {
             for (var loop in this.configData.files) {
@@ -31820,12 +32191,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost("upload-bulk-report", data).subscribe(function (response) {
               if (response.status = "success") {
-                _this160.snakBar.open("Successfully Submitted", "OK", {
+                _this163.snakBar.open("Successfully Submitted", "OK", {
                   duration: 1000
                 });
 
                 setTimeout(function () {
-                  _this160.router.navigateByUrl('/tech/patient-management/bulk-upload/report-conformation/' + response.upload_id);
+                  _this163.router.navigateByUrl('/tech/patient-management/bulk-upload/report-conformation/' + response.upload_id);
                 }, 2000);
               }
             });
@@ -31996,7 +32367,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function ReportConformationComponent(snackBar, dialog, http, cookieService, router, activatedRoute) {
-        var _this161 = this;
+        var _this164 = this;
 
         _classCallCheck(this, ReportConformationComponent);
 
@@ -32045,16 +32416,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.http.httpViaPost('datalist', data).subscribe(function (response) {
           if (response.status == true) {
             /* Get name using file name start */
-            _this161.htmlText.confirmSubmittedDataSource = response.res;
+            _this164.htmlText.confirmSubmittedDataSource = response.res;
             var patientSearch = [];
 
-            for (var loop = 0; loop < _this161.htmlText.confirmSubmittedDataSource.length; loop++) {
-              var patientNameArr = _this161.htmlText.confirmSubmittedDataSource[loop].file_original_name.split(' ');
+            for (var loop = 0; loop < _this164.htmlText.confirmSubmittedDataSource.length; loop++) {
+              var patientNameArr = _this164.htmlText.confirmSubmittedDataSource[loop].file_original_name.split(' ');
 
-              _this161.htmlText.confirmSubmittedDataSource[loop].patient_name = patientNameArr[0] + ' ' + patientNameArr[1];
-              _this161.htmlText.confirmSubmittedDataSource[loop].patient_name_search = patientNameArr[0];
+              _this164.htmlText.confirmSubmittedDataSource[loop].patient_name = patientNameArr[0] + ' ' + patientNameArr[1];
+              _this164.htmlText.confirmSubmittedDataSource[loop].patient_name_search = patientNameArr[0];
               patientSearch.push(patientNameArr[0]);
-              _this161.htmlText.confirmSubmittedDataSource[loop].patient_details = [];
+              _this164.htmlText.confirmSubmittedDataSource[loop].patient_details = [];
             }
             /* Get name using file name end */
 
@@ -32065,33 +32436,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "source": "google_events",
               "condition": {
                 "patient_name": patientSearch,
-                "userid": _this161.htmlText.userData.user_details._id
+                "userid": _this164.htmlText.userData.user_details._id
               },
-              "token": _this161.htmlText.userData.jwtToken
+              "token": _this164.htmlText.userData.jwtToken
             };
 
-            _this161.http.httpViaPost('bulk-upload-patient-match', _data8).subscribe(function (response) {
+            _this164.http.httpViaPost('bulk-upload-patient-match', _data8).subscribe(function (response) {
               for (var _loop = 0; _loop < response.data.match_patient.length; _loop++) {
-                _this161.options.push(response.data.match_patient[_loop].patient_name);
+                _this164.options.push(response.data.match_patient[_loop].patient_name);
               }
 
-              _this161.htmlText.options = response.data.match_patient;
-              _this161.htmlText.conflictingPatientRecordsDataSource = [];
+              _this164.htmlText.options = response.data.match_patient;
+              _this164.htmlText.conflictingPatientRecordsDataSource = [];
 
               if (response.status == "success") {
-                for (var _loop2 = 0; _loop2 < _this161.htmlText.confirmSubmittedDataSource.length; _loop2++) {
+                for (var _loop2 = 0; _loop2 < _this164.htmlText.confirmSubmittedDataSource.length; _loop2++) {
                   for (var loop2 = 0; loop2 < response.data.match_patient.length; loop2++) {
                     /* For find some patient */
-                    if (_this161.htmlText.confirmSubmittedDataSource[_loop2].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
+                    if (_this164.htmlText.confirmSubmittedDataSource[_loop2].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
                       /* checking duplicate */
-                      if (typeof _this161.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag == 'undefined') {
-                        _this161.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag = true;
+                      if (typeof _this164.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag == 'undefined') {
+                        _this164.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag = true;
 
-                        _this161.htmlText.confirmSubmittedDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
+                        _this164.htmlText.confirmSubmittedDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
                       } else {
-                        _this161.htmlText.conflictingPatientRecordsDataSource.push(_this161.htmlText.confirmSubmittedDataSource[_loop2]);
+                        _this164.htmlText.conflictingPatientRecordsDataSource.push(_this164.htmlText.confirmSubmittedDataSource[_loop2]);
 
-                        _this161.htmlText.conflictingPatientRecordsDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
+                        _this164.htmlText.conflictingPatientRecordsDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
                       }
                     }
                   }
@@ -32099,25 +32470,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 /* Delete conflict data */
 
 
-                for (var _loop3 = 0; _loop3 < _this161.htmlText.confirmSubmittedDataSource.length; _loop3++) {
-                  if (_this161.htmlText.confirmSubmittedDataSource[_loop3].patient_details.length > 1) {
-                    _this161.htmlText.confirmSubmittedDataSource.splice(_loop3, 1);
+                for (var _loop3 = 0; _loop3 < _this164.htmlText.confirmSubmittedDataSource.length; _loop3++) {
+                  if (_this164.htmlText.confirmSubmittedDataSource[_loop3].patient_details.length > 1) {
+                    _this164.htmlText.confirmSubmittedDataSource.splice(_loop3, 1);
                   }
                 }
                 /* Add not find data */
 
 
-                _this161.htmlText.notFindDataSource = [];
+                _this164.htmlText.notFindDataSource = [];
 
-                for (var _loop4 = 0; _loop4 < _this161.htmlText.confirmSubmittedDataSource.length; _loop4++) {
-                  if (typeof _this161.htmlText.confirmSubmittedDataSource[_loop4].patient_find_flag == 'undefined') {
-                    _this161.htmlText.notFindDataSource.push(_this161.htmlText.confirmSubmittedDataSource[_loop4]);
+                for (var _loop4 = 0; _loop4 < _this164.htmlText.confirmSubmittedDataSource.length; _loop4++) {
+                  if (typeof _this164.htmlText.confirmSubmittedDataSource[_loop4].patient_find_flag == 'undefined') {
+                    _this164.htmlText.notFindDataSource.push(_this164.htmlText.confirmSubmittedDataSource[_loop4]);
                   }
                 }
 
-                _this161.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this161.htmlText.confirmSubmittedDataSource);
-                _this161.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this161.htmlText.conflictingPatientRecordsDataSource);
-                _this161.notFindPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this161.htmlText.notFindDataSource);
+                _this164.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this164.htmlText.confirmSubmittedDataSource);
+                _this164.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this164.htmlText.conflictingPatientRecordsDataSource);
+                _this164.notFindPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this164.htmlText.notFindDataSource);
               }
             });
           }
@@ -32127,10 +32498,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ReportConformationComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this162 = this;
+          var _this165 = this;
 
           this.filteredOptions = this.myControl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["startWith"])(''), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["map"])(function (value) {
-            return _this162._filter(value);
+            return _this165._filter(value);
           }));
         }
       }, {
@@ -32143,7 +32514,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "selectConflictingRecord",
         value: function selectConflictingRecord(flag, conflictIndex, selectIndex) {
-          var _this163 = this;
+          var _this166 = this;
 
           if (flag == 'conflicting') {
             var data = {
@@ -32166,18 +32537,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   break;
 
                 case "Yes":
-                  var patientDetails = _this163.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details[selectIndex];
+                  var patientDetails = _this166.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details[selectIndex];
 
-                  _this163.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.splice(0, _this163.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.length);
+                  _this166.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.splice(0, _this166.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.length);
 
-                  _this163.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.push(patientDetails);
+                  _this166.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.push(patientDetails);
 
-                  _this163.htmlText.confirmSubmittedDataSource.push(_this163.htmlText.conflictingPatientRecordsDataSource[conflictIndex]);
+                  _this166.htmlText.confirmSubmittedDataSource.push(_this166.htmlText.conflictingPatientRecordsDataSource[conflictIndex]);
 
-                  _this163.htmlText.conflictingPatientRecordsDataSource.splice(conflictIndex, 1);
+                  _this166.htmlText.conflictingPatientRecordsDataSource.splice(conflictIndex, 1);
 
-                  _this163.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this163.htmlText.confirmSubmittedDataSource);
-                  _this163.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this163.htmlText.conflictingPatientRecordsDataSource);
+                  _this166.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this166.htmlText.confirmSubmittedDataSource);
+                  _this166.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this166.htmlText.conflictingPatientRecordsDataSource);
                   break;
               }
             });
@@ -32224,7 +32595,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateRecord",
         value: function updateRecord() {
-          var _this164 = this;
+          var _this167 = this;
 
           if (this.checkboxData.checkbox1 == true && this.checkboxData.checkbox2 == true) {
             var data = {
@@ -32234,15 +32605,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost("update-upload-file", data).subscribe(function (response) {
               if (response.status == 'success') {
-                _this164.snackBar.open("Successfully updated.", "Ok", {
+                _this167.snackBar.open("Successfully updated.", "Ok", {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  _this164.router.navigateByUrl('/tech/dashboard');
+                  _this167.router.navigateByUrl('/tech/dashboard');
                 }, 1000);
               } else {
-                _this164.snackBar.open(response.msg + " Error code: F-AEA-TS-164.", "Ok", {
+                _this167.snackBar.open(response.msg + " Error code: F-AEA-TS-164.", "Ok", {
                   duration: 2000
                 });
               }
@@ -32533,7 +32904,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function TechDashboardComponent(cookie, http, httpService, activatedRoute, commonFunction, dialog) {
-        var _this165 = this;
+        var _this168 = this;
 
         _classCallCheck(this, TechDashboardComponent);
 
@@ -32560,10 +32931,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.authData["userData"] = JSON.parse(allData.user_details);
         this.authData["jwtToken"] = cookie.get('jwtToken');
         this.activatedRoute.data.forEach(function (data) {
-          _this165.allResolveData = data.techDashboardData.data;
-          _this165.allResolveData["totalRemainToProcessCount"] = _this165.allResolveData.totalReportCount - _this165.allResolveData.processedReportCount;
-          var allDashboardData = _this165.allResolveData.totalReportData;
-          _this165.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
+          _this168.allResolveData = data.techDashboardData.data;
+          _this168.allResolveData["totalRemainToProcessCount"] = _this168.allResolveData.totalReportCount - _this168.allResolveData.processedReportCount;
+          var allDashboardData = _this168.allResolveData.totalReportData;
+          _this168.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
         });
       }
 
@@ -32580,7 +32951,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewDetailsData",
         value: function viewDetailsData(flag) {
-          var _this166 = this;
+          var _this169 = this;
 
           var condition = {};
           this.htmlText.headerText = flag;
@@ -32687,21 +33058,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpService.httpViaPost('dashboard-datalist', condition).subscribe(function (response) {
             var allDashboardData = response.data;
-            _this166.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
-            _this166.allDataSource.paginator = _this166.paginator;
-            _this166.allDataSource.sort = _this166.sortAll;
+            _this169.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
+            _this169.allDataSource.paginator = _this169.paginator;
+            _this169.allDataSource.sort = _this169.sortAll;
           });
         }
       }, {
         key: "openDialog",
         value: function openDialog(data) {
-          var _this167 = this;
+          var _this170 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_10__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this167.dialogRef.close();
+                _this170.dialogRef.close();
 
                 break;
             }
@@ -32778,7 +33149,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DoctorViewDialogComponent(dialogRef, data, cookie, http, httpService) {
-        var _this168 = this;
+        var _this171 = this;
 
         _classCallCheck(this, DoctorViewDialogComponent);
 
@@ -32803,8 +33174,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var result = response.res;
 
           if (response.resc > 0) {
-            _this168.loader = false;
-            _this168.allDoctorData = response.res;
+            _this171.loader = false;
+            _this171.allDoctorData = response.res;
           }
         });
       }
@@ -33206,13 +33577,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TestComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this169 = this;
+          var _this172 = this;
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this169.configData.responseData = data.eventdayarrData.data;
-              console.log('responseData', _this169.configData.responseData);
+              _this172.configData.responseData = data.eventdayarrData.data;
+              console.log('responseData', _this172.configData.responseData);
             });
           } else {
             this.openSnackBar("Token not found", null);
@@ -34241,6 +34612,72 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     },
     /* Doctor Group Management */
     {
+      path: 'distributors/doctor-office-management',
+      component: _components_admin_doctor_office_management_doctor_office_management_component__WEBPACK_IMPORTED_MODULE_28__["DoctorOfficeManagementComponent"],
+      canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]]
+    }, {
+      path: 'distributors/doctor-office-management/add',
+      component: _components_admin_doctor_office_management_add_edit_doctor_ofc_add_edit_doctor_ofc_component__WEBPACK_IMPORTED_MODULE_29__["AddEditDoctorOfcComponent"],
+      canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]]
+    }, {
+      path: 'distributors/doctor-office-management/edit/:_id',
+      component: _components_admin_doctor_office_management_add_edit_doctor_ofc_add_edit_doctor_ofc_component__WEBPACK_IMPORTED_MODULE_29__["AddEditDoctorOfcComponent"],
+      canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]],
+      resolve: {
+        data: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"]
+      },
+      data: {
+        requestcondition: {
+          source: 'data_pece',
+          condition: {}
+        },
+        endpoint: 'datalist'
+      }
+    }, {
+      path: 'diagnostic-admin/doctor-office-management',
+      component: _components_admin_doctor_office_management_doctor_office_management_component__WEBPACK_IMPORTED_MODULE_28__["DoctorOfficeManagementComponent"],
+      canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]]
+    }, {
+      path: 'diagnostic-admin/doctor-office-management/add',
+      component: _components_admin_doctor_office_management_add_edit_doctor_ofc_add_edit_doctor_ofc_component__WEBPACK_IMPORTED_MODULE_29__["AddEditDoctorOfcComponent"],
+      canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]]
+    }, {
+      path: 'diagnostic-admin/doctor-office-management/edit/:_id',
+      component: _components_admin_doctor_office_management_add_edit_doctor_ofc_add_edit_doctor_ofc_component__WEBPACK_IMPORTED_MODULE_29__["AddEditDoctorOfcComponent"],
+      canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]],
+      resolve: {
+        data: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"]
+      },
+      data: {
+        requestcondition: {
+          source: 'data_pece',
+          condition: {}
+        },
+        endpoint: 'datalist'
+      }
+    }, {
+      path: 'doctor-group/doctor-office-management',
+      component: _components_admin_doctor_office_management_doctor_office_management_component__WEBPACK_IMPORTED_MODULE_28__["DoctorOfficeManagementComponent"],
+      canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]]
+    }, {
+      path: 'doctor-group/doctor-office-management/add',
+      component: _components_admin_doctor_office_management_add_edit_doctor_ofc_add_edit_doctor_ofc_component__WEBPACK_IMPORTED_MODULE_29__["AddEditDoctorOfcComponent"],
+      canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]]
+    }, {
+      path: 'doctor-group/doctor-office-management/edit/:_id',
+      component: _components_admin_doctor_office_management_add_edit_doctor_ofc_add_edit_doctor_ofc_component__WEBPACK_IMPORTED_MODULE_29__["AddEditDoctorOfcComponent"],
+      canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]],
+      resolve: {
+        data: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"]
+      },
+      data: {
+        requestcondition: {
+          source: 'data_pece',
+          condition: {}
+        },
+        endpoint: 'datalist'
+      }
+    }, {
       path: 'admin/doctor-office-management',
       component: _components_admin_doctor_office_management_doctor_office_management_component__WEBPACK_IMPORTED_MODULE_28__["DoctorOfficeManagementComponent"],
       canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]]
@@ -35938,7 +36375,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalendarService, [{
         key: "resolve",
         value: function resolve(route, state) {
-          var _this170 = this;
+          var _this173 = this;
 
           /* will come into play while editing otherwise no effect */
           var requestData = route.data.requestcondition;
@@ -35957,17 +36394,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   };
                   /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
 
-                  if (route.data.endpoint == 'view-event-eventdayarr' && _this170.cookieService.check('timezone')) {
-                    data.timezone = _this170.cookieService.get('timezone');
+                  if (route.data.endpoint == 'view-event-eventdayarr' && _this173.cookieService.check('timezone')) {
+                    data.timezone = _this173.cookieService.get('timezone');
                   }
                   /* If endpoint is 'view-event-eventdayarr' and user is not an admin */
 
 
-                  if (route.data.endpoint == 'view-event-eventdayarr' && _this170.cookieService.check('user_details')) {
-                    data.condition = JSON.parse(_this170.cookieService.get('user_details')).email;
+                  if (route.data.endpoint == 'view-event-eventdayarr' && _this173.cookieService.check('user_details')) {
+                    data.condition = JSON.parse(_this173.cookieService.get('user_details')).email;
                   }
 
-                  _this170.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
+                  _this173.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
                     if (api_object) {
                       returnData[route.data.requestcondition.source[i]] = api_object;
                     } else {
@@ -35987,27 +36424,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               })();
             } else {
               /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
-              if (route.data.endpoint == 'view-event-eventdayarr' && _this170.cookieService.check('timezone')) {
-                route.data.requestcondition.timezone = _this170.cookieService.get('timezone');
+              if (route.data.endpoint == 'view-event-eventdayarr' && _this173.cookieService.check('timezone')) {
+                route.data.requestcondition.timezone = _this173.cookieService.get('timezone');
               }
               /* If user is not an admin */
 
 
-              if (_this170.cookieService.check('user_details') && JSON.parse(_this170.cookieService.get('user_details')).user_type == 'tech') {
+              if (_this173.cookieService.check('user_details') && JSON.parse(_this173.cookieService.get('user_details')).user_type == 'tech') {
                 route.data.requestcondition.condition = Object.assign(route.data.requestcondition.condition, {
                   userid: {
-                    $in: [JSON.parse(_this170.cookieService.get('user_details'))._id]
+                    $in: [JSON.parse(_this173.cookieService.get('user_details'))._id]
                   }
                 }); // route.data.requestcondition.condition.$or.push({userid: JSON.parse(this.cookieService.get('user_details'))._id});
               } else {
                 route.data.requestcondition.condition = Object.assign(route.data.requestcondition.condition, {
                   userid: {
-                    $in: JSON.parse(_this170.cookieService.get('user_details')).tech_id
+                    $in: JSON.parse(_this173.cookieService.get('user_details')).tech_id
                   }
                 });
               }
 
-              _this170.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
+              _this173.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
                 if (api_object) {
                   return resolve(api_object);
                 } else {
@@ -36390,7 +36827,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ResolveService, [{
         key: "resolve",
         value: function resolve(route, state) {
-          var _this171 = this;
+          var _this174 = this;
 
           /* will come into play while editing otherwise no effect */
           var requestData = route.data.requestcondition;
@@ -36505,7 +36942,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   condition: {}
                 };
 
-                _this171._apiService.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
+                _this174._apiService.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
                   if (api_object) {
                     returnData[route.data.requestcondition.source[i]] = api_object;
                     return resolve(returnData);
@@ -36521,8 +36958,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
             } else {
               /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
-              if (route.data.endpoint == 'view-event-eventdayarr' && _this171.cookies.check('timezone')) {
-                route.data.requestcondition.timezone = _this171.cookies.get('timezone');
+              if (route.data.endpoint == 'view-event-eventdayarr' && _this174.cookies.check('timezone')) {
+                route.data.requestcondition.timezone = _this174.cookies.get('timezone');
               }
               /* If user is not an admin */
               // if (this.cookies.check('user_details') &&
@@ -36533,7 +36970,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               // }
 
 
-              _this171._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
+              _this174._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
                 if (api_object) {
                   return resolve(api_object);
                 } else {
