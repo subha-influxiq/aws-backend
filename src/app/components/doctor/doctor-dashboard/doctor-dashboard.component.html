@@ -258,102 +258,105 @@
   </section>
 
   <ng-container *ngIf="otherData.all_details.user_type == 'distributors'">
-  <section class="Admindmin_details">
-    <mat-card-content class="inner_er">
+    <section class="Admindmin_details">
+      <mat-card-content class="inner_er">
 
-      <mat-list class="list_wrapper">
-        <h3>{{header.name}} : {{otherData.all_details.distributorname}} &nbsp;</h3>
-        <h2>Details</h2>
+        <mat-list class="list_wrapper">
+          <h3>{{header.name}} : {{otherData.all_details.distributorname}} &nbsp;</h3>
+          <h2>Details</h2>
 
-        <span class="inner">
+          <span class="inner">
 
-          <mat-list-item>
-            <span class="lg">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contactperson }} </span>
+            <mat-list-item>
+              <span class="lg">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contactperson }} </span>
 
-          </mat-list-item>
-          <mat-list-item>
-            <span class="lg">Contact Phone :&nbsp; </span><span> {{otherData.all_details.phone}}</span>
+            </mat-list-item>
+            <mat-list-item>
+              <span class="lg">Contact Phone :&nbsp; </span><span> {{otherData.all_details.phone}}</span>
 
-          </mat-list-item>
-          <mat-list-item>
-            <span class="lg">Contact Email :&nbsp; </span><span> {{otherData.all_details.email}} </span>
+            </mat-list-item>
+            <mat-list-item>
+              <span class="lg">Contact Email :&nbsp; </span><span> {{otherData.all_details.email}} </span>
 
-          </mat-list-item>
-          <mat-list-item>
-            <span class="lg">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>
+            </mat-list-item>
+            <mat-list-item>
+              <span class="lg">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>
 
-          </mat-list-item>
-        </span>
-      </mat-list>
-    </mat-card-content>
-  </section>
-</ng-container>
+            </mat-list-item>
+          </span>
+        </mat-list>
+      </mat-card-content>
+    </section>
+  </ng-container>
 
 
   <ng-container *ngIf="otherData.all_details.user_type == 'diagnostic_admin'">
-  <section class="Admindmin_details">
-    <mat-card-content class="inner_er">
-      <mat-list class="list_wrapper">
-        <h3>{{header.name}} : {{otherData.all_details.center_name}} &nbsp;</h3>
-        <h2>Details</h2>
+    <section class="Admindmin_details">
+      <mat-card-content class="inner_er">
+        <mat-list class="list_wrapper">
+          <h3>{{header.name}} : {{otherData.all_details.center_name}} &nbsp;</h3>
+          <h2>Details</h2>
 
-        <span class="inner">
+          <span class="inner">
 
-          <mat-list-item>
-            <span class="lg">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contact_person[0].name }} </span>
+            <mat-list-item>
+              <span class="lg">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contact_person[0].name }}
+              </span>
 
-          </mat-list-item>
-          <mat-list-item>
-            <span class="lg">Contact Phone :&nbsp; </span><span> {{otherData.all_details.contact_person[0].phone}}</span>
+            </mat-list-item>
+            <mat-list-item>
+              <span class="lg">Contact Phone :&nbsp; </span><span>
+                {{otherData.all_details.contact_person[0].phone}}</span>
 
-          </mat-list-item>
-          <mat-list-item>
-            <span class="lg">Contact Email :&nbsp; </span><span> {{otherData.all_details.contact_person[0].email}} </span>
+            </mat-list-item>
+            <mat-list-item>
+              <span class="lg">Contact Email :&nbsp; </span><span> {{otherData.all_details.contact_person[0].email}}
+              </span>
 
-          </mat-list-item>
-          <mat-list-item>
-            <span class="lg">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>
+            </mat-list-item>
+            <mat-list-item>
+              <span class="lg">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>
 
-          </mat-list-item>
-        </span>
-      </mat-list>
-    </mat-card-content>
-  </section>
+            </mat-list-item>
+          </span>
+        </mat-list>
+      </mat-card-content>
+    </section>
 
-</ng-container>
+  </ng-container>
 
 
-<ng-container *ngIf="otherData.all_details.user_type == 'doctor_group'">
-  <section class="Admindmin_details">
-    <mat-card-content class="inner_er">
+  <ng-container *ngIf="otherData.all_details.user_type == 'doctor_group'">
+    <section class="Admindmin_details">
+      <mat-card-content class="inner_er">
 
-      <mat-list class="list_wrapper">
-        <h3>{{header.name}} : {{otherData.all_details.groupname }} &nbsp;</h3>
-        <h2>Details</h2>
+        <mat-list class="list_wrapper">
+          <h3>{{header.name}} : {{otherData.all_details.groupname }} &nbsp;</h3>
+          <h2>Details</h2>
 
-        <span class="inner">
+          <span class="inner">
 
-          <mat-list-item>
-            <span class="lg">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contactperson }} </span>
+            <mat-list-item>
+              <span class="lg">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contactperson }} </span>
 
-          </mat-list-item>
-          <mat-list-item>
-            <span class="lg">Contact Phone :&nbsp; </span><span> {{otherData.all_details.phone}}</span>
+            </mat-list-item>
+            <mat-list-item>
+              <span class="lg">Contact Phone :&nbsp; </span><span> {{otherData.all_details.phone}}</span>
 
-          </mat-list-item>
-          <mat-list-item>
-            <span class="lg">Contact Email :&nbsp; </span><span> {{otherData.all_details.email}} </span>
+            </mat-list-item>
+            <mat-list-item>
+              <span class="lg">Contact Email :&nbsp; </span><span> {{otherData.all_details.email}} </span>
 
-          </mat-list-item>
-          <mat-list-item>
-            <span class="lg">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>
+            </mat-list-item>
+            <mat-list-item>
+              <span class="lg">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>
 
-          </mat-list-item>
-        </span>
-      </mat-list>
-    </mat-card-content>
-  </section>
-</ng-container>
+            </mat-list-item>
+          </span>
+        </mat-list>
+      </mat-card-content>
+    </section>
+  </ng-container>
 
   <!-- Count Block  -->
 
@@ -436,85 +439,85 @@
 
       <button mat-button class="add_btn" (click)="viewReportProcessData(htmlText.headerText);">Date Search</button>
     </span>
+    <div class="tablewrapper">
+      <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8 adminTables">
 
-    <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8 adminTables">
+        <ng-container matColumnDef="no">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
+        </ng-container>
 
-      <ng-container matColumnDef="no">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
-      </ng-container>
+        <ng-container matColumnDef="patient_name">
+          <th mat-header-cell *matHeaderCellDef> Patient Name. </th>
+          <td mat-cell *matCellDef="let element" data-label="Patient Name">{{ element.patient_name }} </td>
+        </ng-container>
 
-      <ng-container matColumnDef="patient_name">
-        <th mat-header-cell *matHeaderCellDef> Patient Name. </th>
-        <td mat-cell *matCellDef="let element" data-label="Patient Name">{{ element.patient_name }} </td>
-      </ng-container>
+        <ng-container matColumnDef="doctor_name">
+          <th mat-header-cell *matHeaderCellDef> Doctor Name</th>
+          <td mat-cell *matCellDef="let element" data-label="Doctor Name" innerHTML="{{ element.doctor_name }}"> </td>
+        </ng-container>
 
-      <ng-container matColumnDef="doctor_name">
-        <th mat-header-cell *matHeaderCellDef> Doctor Name</th>
-        <td mat-cell *matCellDef="let element" data-label="Doctor Name" innerHTML="{{ element.doctor_name }}"> </td>
-      </ng-container>
+        <ng-container matColumnDef="tech_name">
+          <th mat-header-cell *matHeaderCellDef> Tech Name</th>
+          <td mat-cell *matCellDef="let element" data-label="Tech Name"> {{ element.tech_name }} </td>
+        </ng-container>
 
-      <ng-container matColumnDef="tech_name">
-        <th mat-header-cell *matHeaderCellDef> Tech Name</th>
-        <td mat-cell *matCellDef="let element" data-label="Tech Name"> {{ element.tech_name }} </td>
-      </ng-container>
+        <ng-container matColumnDef="biller_name" *ngIf="htmlText.headerText != 'Report unSigned'">
+          <th mat-header-cell *matHeaderCellDef> Biller Name</th>
+          <td mat-cell *matCellDef="let element" data-label="Biller Name"> {{ element.biller_name }} </td>
+        </ng-container>
 
-      <ng-container matColumnDef="biller_name" *ngIf="htmlText.headerText != 'Report unSigned'">
-        <th mat-header-cell *matHeaderCellDef> Biller Name</th>
-        <td mat-cell *matCellDef="let element" data-label="Biller Name"> {{ element.biller_name }} </td>
-      </ng-container>
+        <ng-container matColumnDef="report_type">
+          <th mat-header-cell *matHeaderCellDef> Record Type</th>
+          <td mat-cell *matCellDef="let element" data-label="Record Type"> {{ element.report_type }} </td>
+        </ng-container>
 
-      <ng-container matColumnDef="report_type">
-        <th mat-header-cell *matHeaderCellDef> Record Type</th>
-        <td mat-cell *matCellDef="let element" data-label="Record Type"> {{ element.report_type }} </td>
-      </ng-container>
+        <ng-container matColumnDef="bill_generation_date" *ngIf="htmlText.headerText != 'Report unSigned'">
+          <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>
+          <td mat-cell *matCellDef="let element" data-label="Bill Generation Date">
+            {{ element.bill_generation_date | date }} </td>
+        </ng-container>
 
-      <ng-container matColumnDef="bill_generation_date" *ngIf="htmlText.headerText != 'Report unSigned'">
-        <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>
-        <td mat-cell *matCellDef="let element" data-label="Bill Generation Date">
-          {{ element.bill_generation_date | date }} </td>
-      </ng-container>
+        <ng-container matColumnDef="bill_sent_date" *ngIf="htmlText.headerText != 'Report unSigned'">
+          <th mat-header-cell *matHeaderCellDef> Bill Sent Date</th>
+          <td mat-cell *matCellDef="let element" data-label="Bill Sent Date"> {{ element.billSentDate | date }} </td>
+        </ng-container>
 
-      <ng-container matColumnDef="bill_sent_date" *ngIf="htmlText.headerText != 'Report unSigned'">
-        <th mat-header-cell *matHeaderCellDef> Bill Sent Date</th>
-        <td mat-cell *matCellDef="let element" data-label="Bill Sent Date"> {{ element.billSentDate | date }} </td>
-      </ng-container>
+        <ng-container matColumnDef="super_bill" *ngIf="htmlText.headerText != 'Report unSigned'">
+          <th mat-header-cell *matHeaderCellDef> Super Bill</th>
+          <td mat-cell *matCellDef="let element" data-label="Super Bill"> {{ element.super_bill }} </td>
+        </ng-container>
 
-      <ng-container matColumnDef="super_bill" *ngIf="htmlText.headerText != 'Report unSigned'">
-        <th mat-header-cell *matHeaderCellDef> Super Bill</th>
-        <td mat-cell *matCellDef="let element" data-label="Super Bill"> {{ element.super_bill }} </td>
-      </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status</th>
+          <td mat-cell *matCellDef="let element" data-label="Status"> {{ element.status }} </td>
+        </ng-container>
 
-      <ng-container matColumnDef="status">
-        <th mat-header-cell *matHeaderCellDef> Status</th>
-        <td mat-cell *matCellDef="let element" data-label="Status"> {{ element.status }} </td>
-      </ng-container>
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let element; let i = index;">
+            <button matTooltip="View" aria-label="Button" matTooltipPosition="above"
+              *ngIf="element.status == 'Pending Signature'" mat-button type="button" class="viewButton"
+              [routerLink]="['/doctor/patient-record-report', element._id]"><i class="material-icons">
+                remove_red_eye
+              </i></button>
+            <button mat-raised-button *ngIf="element.status != 'Pending Signature'" type="button"
+              class="viewButton downloadBtn" disabled matTooltip="View" aria-label="Button"
+              matTooltipPosition="above"><i class="material-icons">
+                remove_red_eye
+              </i></button>
+            <button matTooltip="Download" aria-label="Button" matTooltipPosition="above" mat-raised-button
+              *ngIf="element.status != 'Pending Signature'" type="button" class="viewButton downloadBtn"
+              (click)="downloadReport(element);"><i class="material-icons">
+                cloud_download
+              </i></button>
+          </td>
+        </ng-container>
 
-      <ng-container matColumnDef="action">
-        <th mat-header-cell *matHeaderCellDef> Action </th>
-        <td mat-cell *matCellDef="let element; let i = index;">
-          <button matTooltip="View" aria-label="Button" matTooltipPosition="above"
-            *ngIf="element.status == 'Pending Signature'" mat-button type="button" class="viewButton"
-            [routerLink]="['/doctor/patient-record-report', element._id]"><i class="material-icons">
-              remove_red_eye
-            </i></button>
-          <button mat-raised-button *ngIf="element.status != 'Pending Signature'" type="button"
-            class="viewButton downloadBtn" disabled matTooltip="View" aria-label="Button" matTooltipPosition="above"><i
-              class="material-icons">
-              remove_red_eye
-            </i></button>
-          <button matTooltip="Download" aria-label="Button" matTooltipPosition="above" mat-raised-button
-            *ngIf="element.status != 'Pending Signature'" type="button" class="viewButton downloadBtn"
-            (click)="downloadReport(element);"><i class="material-icons">
-              cloud_download
-            </i></button>
-        </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="allDataColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: allDataColumns;let i = index"></tr>
-    </table>
-
+        <tr mat-header-row *matHeaderRowDef="allDataColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: allDataColumns;let i = index"></tr>
+      </table>
+    </div>
     <mat-paginator [pageSizeOptions]="[50, 100, 200]"></mat-paginator>
   </mat-card-content>
 </mat-card>
