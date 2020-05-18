@@ -175,6 +175,22 @@ const routes: Routes = [
     endpoint: 'admin-dashboard'
   },
 },
+// faq
+{
+  path: 'admin-biller/faq',
+  component: FaqViewComponent,
+  canActivate: [AuthguardService],
+  resolve: { faqData: ResolveService },
+  data: {
+    requestcondition: {
+      source: 'data_faq',
+      condition: {
+        users: "admin_biller"
+      }
+    },
+    endpoint: 'datalist'
+  },
+},
 
 
   /********** Admin Routes Start **********/
@@ -597,6 +613,22 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+  /* Faq */
+  {
+    path: 'distributors/faq',
+    component: FaqViewComponent,
+    canActivate: [AuthguardService],
+    resolve: { faqData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_faq',
+        condition: {
+          users: "distributors"
+        }
+      },
+      endpoint: 'datalist'
+    },
+  },
 
   {
     path: 'diagnostic-admin/doctor-office-management',
@@ -639,6 +671,22 @@ const routes: Routes = [
       requestcondition: {
         source: 'data_pece',
         condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+  /* Faq */
+  {
+    path: 'doctor-group/faq',
+    component: FaqViewComponent,
+    canActivate: [AuthguardService],
+    resolve: { faqData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_faq',
+        condition: {
+          users: "doctor_group"
+        }
       },
       endpoint: 'datalist'
     },

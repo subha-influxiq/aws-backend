@@ -45,6 +45,50 @@
   </mat-card-content>
 
 
+  <mat-card-content class="content_wrapper">
+
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/adminDoctoricon1.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.total_distributor }}</h4>
+        <p class="doctorNumber">Total Number of <br> Distributor</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-button [routerLink]="['/admin/distributors-management']">View Details</button>
+      </span>
+    </mat-card-content>
+
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/adminDoctoricon2.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.total_doctors_group_admin }}</h4>
+        <p class="doctorNumber">Total Number of<br> Doctors Group Admin</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-flat-button [routerLink]="['/admin/doctor-management/group']">View Details</button>
+      </span>
+    </mat-card-content>
+
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/adminDoctoricon3.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.total_biller_admin }}</h4>
+        <p class="doctorNumber">Total Number of <br>Biller Admin</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-flat-button [routerLink]="['/admin/adminbiller-management']">View Details</button>
+      </span>
+    </mat-card-content>
+
+  </mat-card-content>
+
+
   <!-- Doctor occide related -->
   <mat-card-content class="content_wrapper">
 
