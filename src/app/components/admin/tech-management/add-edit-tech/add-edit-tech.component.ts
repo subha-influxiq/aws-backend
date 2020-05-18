@@ -39,8 +39,8 @@ export class AddEditTechComponent implements OnInit {
     allCities: "",
     cities: "",
     parent_type: [{
-      name: "Distributor"
-    }, { name: "DiagnosticAdmin" }, { name: "DoctorGroup" }],
+      name: "Distributor",value:"distributor"
+    }, { name: "DiagnosticAdmin",value:"diagnostic_admin" }, { name: "DoctorGroup",value:"doctor_group" }],
   };
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
