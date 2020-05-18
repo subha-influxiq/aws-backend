@@ -543,7 +543,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\"></app-admin-header>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Distributor Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'distributors'\"></app-doctor-group-header>\n\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n\n\n  <span class=\"add_header\">\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\"> Dashboard &nbsp;/</a> &nbsp;\n      <a [routerLink]=\"['/admin/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n      {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/biller-management']\">Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'distributors`'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/biller-management']\">Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n  </span>\n  <!-- End header with add button -->\n\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"billerManagementAddEditForm\" [formGroup]=\"billerManagementAddEditForm\" (ngSubmit)=\"BillerManagementAddFormSubmit()\">\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"billerManagementAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['firstname'].touched && !billerManagementAddEditForm.controls['firstname'].valid && billerManagementAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['firstname'].touched && !billerManagementAddEditForm.controls['firstname'].valid && billerManagementAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"billerManagementAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['lastname'].touched && !billerManagementAddEditForm.controls['lastname'].valid && billerManagementAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['lastname'].touched && !billerManagementAddEditForm.controls['lastname'].valid && billerManagementAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"billerManagementAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid && billerManagementAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid && billerManagementAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"billerManagementAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid && billerManagementAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid && billerManagementAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Company Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Company Name </mat-label>\n\n          <input matInput placeholder=\"Company Name\"\n            [formControl]=\"billerManagementAddEditForm.controls['company_name']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'company_name')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['company_name'].touched && !billerManagementAddEditForm.controls['company_name'].valid && billerManagementAddEditForm.controls['company_name'].errors.required\">\n            Company Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['company_name'].touched && !billerManagementAddEditForm.controls['company_name'].valid && billerManagementAddEditForm.controls['company_name'].errors.maxlength\">\n            Company Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Company Name End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"billerManagementAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['address'].touched && !billerManagementAddEditForm.controls['address'].valid && billerManagementAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['address'].touched && !billerManagementAddEditForm.controls['address'].valid && billerManagementAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- parent type Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\" *ngIf = \"htmlText.userData.user_details.user_type == 'admin'\">\n          <mat-label>Parent Type</mat-label>\n\n          <mat-select formControlName=\"parent_type\" (selectionChange)=\"getParentData($event.value);\">\n            <mat-option [value]=\"admin\">Select Parent Type</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_type;\" value=\"{{ parent.name }}\">{{ parent.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- Parent Type End -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DiagnosticAdmin'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.center_name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DoctorGroup'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.groupname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'Distributor'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\" >\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select State</mat-option>\n            <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['state'].touched && !billerManagementAddEditForm.controls['state'].valid && billerManagementAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=\"\">Select City</mat-option>\n            <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['city'].touched && !billerManagementAddEditForm.controls['city'].valid && billerManagementAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"billerManagementAddEditForm.controls['zip']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['zip'].touched && !billerManagementAddEditForm.controls['zip'].valid && billerManagementAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"billerManagementAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!billerManagementAddEditForm.controls['password'].valid && billerManagementAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"billerManagementAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!billerManagementAddEditForm.controls['confirmpassword'].valid && billerManagementAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"billerManagementAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n        <span class=\"submit_form\">\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/biller-management']\">Back </button>\n          </ng-container>\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/diagnostic-admin/biller-management']\">Back </button>\n          </ng-container>\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\"> Reset</button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }}</button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n\n      </form>\n    </mat-card-content>\n\n  </mat-card>\n</mat-card>\n\n\n\n\n<!-- Admin Footer -->\n<app-admin-footer></app-admin-footer>";
+    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\"></app-admin-header>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Distributor Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'distributors'\"></app-doctor-group-header>\n\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n\n\n  <span class=\"add_header\">\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\"> Dashboard &nbsp;/</a> &nbsp;\n      <a [routerLink]=\"['/admin/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n      {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/biller-management']\">Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'distributors`'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/biller-management']\">Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n  </span>\n  <!-- End header with add button -->\n\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"billerManagementAddEditForm\" [formGroup]=\"billerManagementAddEditForm\" (ngSubmit)=\"BillerManagementAddFormSubmit()\">\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"billerManagementAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['firstname'].touched && !billerManagementAddEditForm.controls['firstname'].valid && billerManagementAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['firstname'].touched && !billerManagementAddEditForm.controls['firstname'].valid && billerManagementAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"billerManagementAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['lastname'].touched && !billerManagementAddEditForm.controls['lastname'].valid && billerManagementAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['lastname'].touched && !billerManagementAddEditForm.controls['lastname'].valid && billerManagementAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"billerManagementAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid && billerManagementAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid && billerManagementAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"billerManagementAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid && billerManagementAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid && billerManagementAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Company Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Company Name </mat-label>\n\n          <input matInput placeholder=\"Company Name\"\n            [formControl]=\"billerManagementAddEditForm.controls['company_name']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'company_name')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['company_name'].touched && !billerManagementAddEditForm.controls['company_name'].valid && billerManagementAddEditForm.controls['company_name'].errors.required\">\n            Company Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['company_name'].touched && !billerManagementAddEditForm.controls['company_name'].valid && billerManagementAddEditForm.controls['company_name'].errors.maxlength\">\n            Company Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Company Name End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"billerManagementAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['address'].touched && !billerManagementAddEditForm.controls['address'].valid && billerManagementAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['address'].touched && !billerManagementAddEditForm.controls['address'].valid && billerManagementAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- parent type Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\" *ngIf = \"htmlText.userData.user_details.user_type == 'admin'\">\n          <mat-label>Parent Type</mat-label>\n\n          <mat-select formControlName=\"parent_type\">\n            <mat-option [value]=\"admin\">Select Parent Type</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_type;\" value=\"{{ parent.value }}\" (click)=\"getParentData(parent.name)\">{{ parent.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- Parent Type End -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DiagnosticAdmin'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.center_name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DoctorGroup'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.groupname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'Distributor'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\" >\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select State</mat-option>\n            <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['state'].touched && !billerManagementAddEditForm.controls['state'].valid && billerManagementAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=\"\">Select City</mat-option>\n            <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['city'].touched && !billerManagementAddEditForm.controls['city'].valid && billerManagementAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"billerManagementAddEditForm.controls['zip']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['zip'].touched && !billerManagementAddEditForm.controls['zip'].valid && billerManagementAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"billerManagementAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!billerManagementAddEditForm.controls['password'].valid && billerManagementAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"billerManagementAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!billerManagementAddEditForm.controls['confirmpassword'].valid && billerManagementAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"billerManagementAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n        <span class=\"submit_form\">\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/biller-management']\">Back </button>\n          </ng-container>\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/diagnostic-admin/biller-management']\">Back </button>\n          </ng-container>\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\"> Reset</button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }}</button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n\n      </form>\n    </mat-card-content>\n\n  </mat-card>\n</mat-card>\n\n\n\n\n<!-- Admin Footer -->\n<app-admin-footer></app-admin-footer>";
     /***/
   },
 
@@ -743,7 +743,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.user_details.user_type == 'admin'\"></app-admin-header>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Distributor Header -->\n<app-doctor-group-header *ngIf=\"htmlText.user_details.user_type == 'distributors'\"></app-doctor-group-header>\n\n\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n  <span class=\"add_header\">\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\"> Dashboard &nbsp;/</a> &nbsp;\n      <a [routerLink]=\"['/admin/doctor-office-management']\"> Manage Doctor's Office &nbsp;/</a> &nbsp;\n      {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/doctor-office-management']\"> Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/doctor-office-management']\">Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'distributors`'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/doctor-office-management']\">Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'doctor'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor/doctor-office-management']\"> Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n  </span>\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"doctorOfficeAddEditForm\" [formGroup]=\"doctorOfficeAddEditForm\" (ngSubmit)=\"doctorOfficeAddEditFormFormSubmit()\">\n\n        <!-- Center Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Center Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"doctorOfficeAddEditForm.controls['center_name']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'center_name')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['center_name'].touched && !doctorOfficeAddEditForm.controls['center_name'].valid && doctorOfficeAddEditForm.controls['center_name'].errors.required\">\n            Center Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['center_name'].touched && !doctorOfficeAddEditForm.controls['center_name'].valid && doctorOfficeAddEditForm.controls['center_name'].errors.maxlength\">\n            Center Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Center Name End -->\n\n        <!-- Tech Details Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Select Tech</mat-label>\n          <mat-select formControlName=\"tech_id\" multiple>\n            <mat-option *ngFor=\"let tech of htmlText.techData;\" value=\"{{ tech._id }}\">{{ tech.firstname }} {{tech.lastname}}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Tech Details name -->\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"doctorOfficeAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['firstname'].touched && !doctorOfficeAddEditForm.controls['firstname'].valid && doctorOfficeAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['firstname'].touched && !doctorOfficeAddEditForm.controls['firstname'].valid && doctorOfficeAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"doctorOfficeAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['lastname'].touched && !doctorOfficeAddEditForm.controls['lastname'].valid && doctorOfficeAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['lastname'].touched && !doctorOfficeAddEditForm.controls['lastname'].valid && doctorOfficeAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"doctorOfficeAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid && doctorOfficeAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid && doctorOfficeAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"doctorOfficeAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid && doctorOfficeAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid && doctorOfficeAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"doctorOfficeAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid && doctorOfficeAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid && doctorOfficeAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- parent type Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\" *ngIf = \"htmlText.user_details.user_type == 'admin'\">\n          <mat-label>Parent Type</mat-label>\n\n          <mat-select formControlName=\"parent_type\" (selectionChange)=\"getParentData($event.value);\">\n            <mat-option [value]=\"admin\">Select Parent Type</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_type;\" value=\"{{ parent.name }}\">{{ parent.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- Parent Type End -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DiagnosticAdmin'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.center_name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DoctorGroup'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.groupname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'Distributor'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\" >\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select State</mat-option>\n            <mat-option *ngFor=\"let state of htmlText.states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['state'].touched && !doctorOfficeAddEditForm.controls['state'].valid && doctorOfficeAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=\"\">Select City</mat-option>\n            <mat-option *ngFor=\"let city of htmlText.cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['city'].touched && !doctorOfficeAddEditForm.controls['city'].valid && doctorOfficeAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"doctorOfficeAddEditForm.controls['zip']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['zip'].touched && !doctorOfficeAddEditForm.controls['zip'].valid && doctorOfficeAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"doctorOfficeAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!doctorOfficeAddEditForm.controls['password'].valid && doctorOfficeAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"doctorOfficeAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!doctorOfficeAddEditForm.controls['confirmpassword'].valid && doctorOfficeAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"doctorOfficeAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n\n        <span class=\"submit_form\">\n          <button mat-flat-button type=\"button\" *ngIf=\"htmlText.user_details.user_type == 'doctor'\" [routerLink]=\"['/doctor/doctor-office-management']\"> Back</button>\n          <button mat-flat-button type=\"button\" *ngIf=\"htmlText.user_details.user_type == 'admin'\" [routerLink]=\"['/admin/doctor-office-management']\"> Back</button>\n\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\">Reset </button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }} </button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n        \n      </form>\n    </mat-card-content>\n  </mat-card>\n</mat-card>\n<app-admin-footer></app-admin-footer>\n";
+    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.user_details.user_type == 'admin'\"></app-admin-header>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Distributor Header -->\n<app-doctor-group-header *ngIf=\"htmlText.user_details.user_type == 'distributors'\"></app-doctor-group-header>\n\n\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n  <span class=\"add_header\">\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\"> Dashboard &nbsp;/</a> &nbsp;\n      <a [routerLink]=\"['/admin/doctor-office-management']\"> Manage Doctor's Office &nbsp;/</a> &nbsp;\n      {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/doctor-office-management']\"> Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/doctor-office-management']\">Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'distributors`'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/doctor-office-management']\">Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'doctor'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor/doctor-office-management']\"> Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n  </span>\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"doctorOfficeAddEditForm\" [formGroup]=\"doctorOfficeAddEditForm\" (ngSubmit)=\"doctorOfficeAddEditFormFormSubmit()\">\n\n        <!-- Center Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Center Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"doctorOfficeAddEditForm.controls['center_name']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'center_name')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['center_name'].touched && !doctorOfficeAddEditForm.controls['center_name'].valid && doctorOfficeAddEditForm.controls['center_name'].errors.required\">\n            Center Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['center_name'].touched && !doctorOfficeAddEditForm.controls['center_name'].valid && doctorOfficeAddEditForm.controls['center_name'].errors.maxlength\">\n            Center Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Center Name End -->\n\n        <!-- Tech Details Start -->\n        <!-- <mat-form-field appearance=\"fill\">\n          <mat-label>Select Tech</mat-label>\n          <mat-select formControlName=\"tech_id\" multiple>\n            <mat-option *ngFor=\"let tech of htmlText.techData;\" value=\"{{ tech._id }}\">{{ tech.firstname }} {{tech.lastname}}</mat-option>\n          </mat-select>\n        </mat-form-field> -->\n        <!-- Tech Details name -->\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"doctorOfficeAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['firstname'].touched && !doctorOfficeAddEditForm.controls['firstname'].valid && doctorOfficeAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['firstname'].touched && !doctorOfficeAddEditForm.controls['firstname'].valid && doctorOfficeAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"doctorOfficeAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['lastname'].touched && !doctorOfficeAddEditForm.controls['lastname'].valid && doctorOfficeAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['lastname'].touched && !doctorOfficeAddEditForm.controls['lastname'].valid && doctorOfficeAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"doctorOfficeAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid && doctorOfficeAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid && doctorOfficeAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"doctorOfficeAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid && doctorOfficeAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid && doctorOfficeAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"doctorOfficeAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid && doctorOfficeAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid && doctorOfficeAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- parent type Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\" *ngIf = \"htmlText.user_details.user_type == 'admin'\">\n          <mat-label>Parent Type</mat-label>\n\n          <mat-select formControlName=\"parent_type\">\n            <mat-option [value]=\"admin\">Select Parent Type</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_type;\" value=\"{{ parent.value }}\" (click)=\"getParentData(parent.name)\">{{ parent.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- Parent Type End -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DiagnosticAdmin'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.center_name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DoctorGroup'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.groupname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'Distributor'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\" >\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select State</mat-option>\n            <mat-option *ngFor=\"let state of htmlText.states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['state'].touched && !doctorOfficeAddEditForm.controls['state'].valid && doctorOfficeAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=\"\">Select City</mat-option>\n            <mat-option *ngFor=\"let city of htmlText.cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['city'].touched && !doctorOfficeAddEditForm.controls['city'].valid && doctorOfficeAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"doctorOfficeAddEditForm.controls['zip']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['zip'].touched && !doctorOfficeAddEditForm.controls['zip'].valid && doctorOfficeAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"doctorOfficeAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!doctorOfficeAddEditForm.controls['password'].valid && doctorOfficeAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"doctorOfficeAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!doctorOfficeAddEditForm.controls['confirmpassword'].valid && doctorOfficeAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"doctorOfficeAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n\n        <span class=\"submit_form\">\n          <button mat-flat-button type=\"button\" *ngIf=\"htmlText.user_details.user_type == 'doctor'\" [routerLink]=\"['/doctor/doctor-office-management']\"> Back</button>\n          <button mat-flat-button type=\"button\" *ngIf=\"htmlText.user_details.user_type == 'admin'\" [routerLink]=\"['/admin/doctor-office-management']\"> Back</button>\n\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\">Reset </button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }} </button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n        \n      </form>\n    </mat-card-content>\n  </mat-card>\n</mat-card>\n<app-admin-footer></app-admin-footer>\n";
     /***/
   },
 
@@ -1163,7 +1163,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\"></app-admin-header>\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'distributors'\"></app-doctor-group-header>\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n\n\n  <span class=\"add_header\">\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/admin/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'distributors`'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n  </span>\n  <!-- End header with add button -->\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"TechManagementAddEditForm\" [formGroup]=\"TechManagementAddEditForm\" (ngSubmit)=\"TechManagementAddFormFormSubmit()\">\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"TechManagementAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['firstname'].touched && !TechManagementAddEditForm.controls['firstname'].valid && TechManagementAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['firstname'].touched && !TechManagementAddEditForm.controls['firstname'].valid && TechManagementAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"TechManagementAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['lastname'].touched && !TechManagementAddEditForm.controls['lastname'].valid && TechManagementAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['lastname'].touched && !TechManagementAddEditForm.controls['lastname'].valid && TechManagementAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"TechManagementAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['email'].touched && !TechManagementAddEditForm.controls['email'].valid && TechManagementAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['email'].touched && !TechManagementAddEditForm.controls['email'].valid && TechManagementAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"TechManagementAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['phone'].touched && !TechManagementAddEditForm.controls['phone'].valid && TechManagementAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['phone'].touched && !TechManagementAddEditForm.controls['phone'].valid && TechManagementAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"TechManagementAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['address'].touched && !TechManagementAddEditForm.controls['address'].valid && TechManagementAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['address'].touched && !TechManagementAddEditForm.controls['address'].valid && TechManagementAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- parent type Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\" *ngIf = \"htmlText.userData.user_details.user_type == 'admin'\">\n          <mat-label>Parent Type</mat-label>\n\n          <mat-select formControlName=\"parent_type\" (selectionChange)=\"getParentData($event.value);\">\n            <mat-option [value]=\"admin\">Select Parent Type</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_type;\" value=\"{{ parent.name }}\">{{ parent.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- Parent Type End -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DiagnosticAdmin'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.center_name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DoctorGroup'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.groupname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'Distributor'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\" >\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select state</mat-option>\n            <mat-option *ngFor=\"let state of htmlText.states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['state'].touched && !TechManagementAddEditForm.controls['state'].valid && TechManagementAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=0>Select city</mat-option>\n            <mat-option *ngFor=\"let city of htmlText.cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['city'].touched && !TechManagementAddEditForm.controls['city'].valid && TechManagementAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"TechManagementAddEditForm.controls['zip']\" (blur)=\"inputUntouch(TechManagementAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['zip'].touched && !TechManagementAddEditForm.controls['zip'].valid && TechManagementAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"TechManagementAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!TechManagementAddEditForm.controls['password'].valid && TechManagementAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"TechManagementAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!TechManagementAddEditForm.controls['confirmpassword'].valid && TechManagementAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"TechManagementAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n\n        <!-- end here -->\n        <span class=\"submit_form\">\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/tech-management']\">Back </button>\n          </ng-container>\n\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/diagnostic-admin/tech-management']\">Back </button>\n          </ng-container>\n\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/doctor/tech-management']\">Back </button>\n          </ng-container>\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\">Reset </button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }} </button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n      </form>\n\n    </mat-card-content>\n  </mat-card>\n\n</mat-card>\n\n\n\n<!-- Admin Footer -->\n<app-admin-footer *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\"></app-admin-footer>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-footer *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-footer>\n";
+    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\"></app-admin-header>\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'distributors'\"></app-doctor-group-header>\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n\n\n  <span class=\"add_header\">\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/admin/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'distributors`'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor/tech-management']\">Manage Tech &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n  </span>\n  <!-- End header with add button -->\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"TechManagementAddEditForm\" [formGroup]=\"TechManagementAddEditForm\" (ngSubmit)=\"TechManagementAddFormFormSubmit()\">\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"TechManagementAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['firstname'].touched && !TechManagementAddEditForm.controls['firstname'].valid && TechManagementAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['firstname'].touched && !TechManagementAddEditForm.controls['firstname'].valid && TechManagementAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"TechManagementAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['lastname'].touched && !TechManagementAddEditForm.controls['lastname'].valid && TechManagementAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['lastname'].touched && !TechManagementAddEditForm.controls['lastname'].valid && TechManagementAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"TechManagementAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['email'].touched && !TechManagementAddEditForm.controls['email'].valid && TechManagementAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['email'].touched && !TechManagementAddEditForm.controls['email'].valid && TechManagementAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"TechManagementAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['phone'].touched && !TechManagementAddEditForm.controls['phone'].valid && TechManagementAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"TechManagementAddEditForm.controls['phone'].touched && !TechManagementAddEditForm.controls['phone'].valid && TechManagementAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"TechManagementAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(TechManagementAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['address'].touched && !TechManagementAddEditForm.controls['address'].valid && TechManagementAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['address'].touched && !TechManagementAddEditForm.controls['address'].valid && TechManagementAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- parent type Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\" *ngIf = \"htmlText.userData.user_details.user_type == 'admin'\">\n          <mat-label>Parent Type</mat-label>\n\n          <mat-select formControlName=\"parent_type\">\n            <mat-option [value]=\"admin\">Select Parent Type</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_type;\" value=\"{{ parent.value }}\" (click)=\"getParentData(parent.name)\">{{ parent.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- Parent Type End -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DiagnosticAdmin'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.center_name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'DoctorGroup'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.groupname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"selectionChangeValue == 'Distributor'\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\" >\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select state</mat-option>\n            <mat-option *ngFor=\"let state of htmlText.states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['state'].touched && !TechManagementAddEditForm.controls['state'].valid && TechManagementAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=0>Select city</mat-option>\n            <mat-option *ngFor=\"let city of htmlText.cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['city'].touched && !TechManagementAddEditForm.controls['city'].valid && TechManagementAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"TechManagementAddEditForm.controls['zip']\" (blur)=\"inputUntouch(TechManagementAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"TechManagementAddEditForm.controls['zip'].touched && !TechManagementAddEditForm.controls['zip'].valid && TechManagementAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"TechManagementAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!TechManagementAddEditForm.controls['password'].valid && TechManagementAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"TechManagementAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!TechManagementAddEditForm.controls['confirmpassword'].valid && TechManagementAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"TechManagementAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n\n        <!-- end here -->\n        <span class=\"submit_form\">\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/tech-management']\">Back </button>\n          </ng-container>\n\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/diagnostic-admin/tech-management']\">Back </button>\n          </ng-container>\n\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/doctor/tech-management']\">Back </button>\n          </ng-container>\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\">Reset </button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }} </button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n      </form>\n\n    </mat-card-content>\n  </mat-card>\n\n</mat-card>\n\n\n\n<!-- Admin Footer -->\n<app-admin-footer *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\"></app-admin-footer>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-footer *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-footer>\n";
     /***/
   },
 
@@ -7126,11 +7126,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           buttonText: 'Save',
           userData: '',
           parent_type: [{
-            name: "Distributor"
+            name: "Distributor",
+            value: "distributor"
           }, {
-            name: "DiagnosticAdmin"
+            name: "DiagnosticAdmin",
+            value: "diagnostic_admin"
           }, {
-            name: "DoctorGroup"
+            name: "DoctorGroup",
+            value: "doctor_group"
           }]
         };
         this.message = "Submitted Successfully";
@@ -9278,7 +9281,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var postData = {
               "source": "data_pece",
               "data": this.doctorManagementAddEditForm.value,
-              "sourceobjArray": ["tech_id", "biller_id", "doctor_office_id"],
+              "sourceobjArray": ["tech_id", "biller_id", "doctors_office_id"],
               "token": this.cookieService.get('jwtToken')
             };
 
@@ -9885,11 +9888,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           techData: "",
           billerData: "",
           parent_type: [{
-            name: "Distributor"
+            name: "Distributor",
+            value: "distributor"
           }, {
-            name: "DiagnosticAdmin"
+            name: "DiagnosticAdmin",
+            value: "diagnostic_admin"
           }, {
-            name: "DoctorGroup"
+            name: "DoctorGroup",
+            value: "doctor_group"
           }],
           states: "",
           allCities: "",
@@ -9899,13 +9905,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
         this.htmlText.userData = this.cookieService.getAll();
         console.log(this.htmlText.userData.user_type);
-        this.htmlText.user_details = JSON.parse(this.htmlText.userData.user_details);
-
-        if (this.htmlText.user_details.user_type == 'admin') {
-          this.getAllTechData();
-        } else {
-          this.getAllTechData(this.htmlText.user_details._id);
-        }
+        this.htmlText.user_details = JSON.parse(this.htmlText.userData.user_details); // if(this.htmlText.user_details.user_type == 'admin') {
+        // this.getAllTechData();
+        // } else {
+        //  this.getAllTechData(this.htmlText.user_details._id);
+        // }
 
         this.allStateCityData();
 
@@ -10067,33 +10071,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.htmlText.cities = this.htmlText.allCities[val];
         }
         /**getting all the technician data**/
+        // getAllTechData(id:any='') {
+        //   console.log(">>>>>", this.htmlText.user_details);
+        //   var data = {
+        //     "source": "data_pece",
+        //     "condition": {
+        //       "user_type": "tech",
+        //       "tech_id": this.htmlText.user_details.tech_id
+        //     },
+        //     "token": this.htmlText.userData.jwtToken
+        //   };
+        //   if(this.htmlText.user_details.user_type !='admin') {
+        //     data.condition["parent_id"] = id;
+        //   }
+        //   this.httpService.httpViaPost('datalist', data).subscribe(response => {
+        //     this.htmlText.techData = response.res;
+        //   });
+        // }
 
-      }, {
-        key: "getAllTechData",
-        value: function getAllTechData() {
-          var _this44 = this;
-
-          var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-          console.log(">>>>>", this.htmlText.user_details);
-          var data = {
-            "source": "data_pece",
-            "condition": {
-              "user_type": "tech",
-              "tech_id": this.htmlText.user_details.tech_id,
-              "parent_id_object": id
-            },
-            "token": this.htmlText.userData.jwtToken
-          };
-          this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this44.htmlText.techData = response.res;
-          });
-        }
         /**getting all the Parent data**/
 
       }, {
         key: "getParentData",
         value: function getParentData() {
-          var _this45 = this;
+          var _this44 = this;
 
           var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
           var billerData = id;
@@ -10138,7 +10139,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
             // console.log('+++++++++',response);
-            _this45.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
+            _this44.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
             // this.htmlText.doctorOfficeData = response.data.doctor_office_data;
             // this.htmlText.billerData = response.data.biller_data;
           });
@@ -10151,7 +10152,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "doctorOfficeAddEditFormFormSubmit",
         value: function doctorOfficeAddEditFormFormSubmit() {
-          var _this46 = this;
+          var _this45 = this;
 
           for (var x in this.doctorOfficeAddEditForm.controls) {
             this.doctorOfficeAddEditForm.controls[x].markAsTouched();
@@ -10205,27 +10206,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == "success") {
-                _this46.formDirective.resetForm();
+                _this45.formDirective.resetForm();
 
-                _this46.snackBar.open(_this46.htmlText.message, 'Ok', {
+                _this45.snackBar.open(_this45.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  switch (_this46.htmlText.user_details.user_type) {
+                  switch (_this45.htmlText.user_details.user_type) {
                     case 'doctor':
-                      _this46.router.navigateByUrl("doctor/doctor-office-management");
+                      _this45.router.navigateByUrl("doctor/doctor-office-management");
 
                       break;
 
                     case 'admin':
-                      _this46.router.navigateByUrl("admin/doctor-office-management");
+                      _this45.router.navigateByUrl("admin/doctor-office-management");
 
                       break;
                   }
                 }, 2000);
               } else {
-                _this46.snackBar.open(response.msg, '', {
+                _this45.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -10516,7 +10517,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(DoctorOfficeManagementComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this47 = this;
+          var _this46 = this;
 
           this.datasource = '';
           var endpoint = 'getdoctorofficelistdata';
@@ -10534,12 +10535,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this47.doctorOfficeData_count = res.count; //console.warn('blogData c',res);
+            _this46.doctorOfficeData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this47.doctorOfficeAllData = res.results.res;
+            _this46.doctorOfficeAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -10712,7 +10713,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditFaqComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this48 = this;
+          var _this47 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -10731,19 +10732,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var billerDetails = data.techData.res;
 
-                _this48.FaqManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
+                _this47.FaqManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
 
-                _this48.FaqManagementAddEditForm.controls['users'].patchValue(billerDetails[0].users);
+                _this47.FaqManagementAddEditForm.controls['users'].patchValue(billerDetails[0].users);
 
-                _this48.FaqManagementAddEditForm.controls['question'].patchValue(billerDetails[0].question);
+                _this47.FaqManagementAddEditForm.controls['question'].patchValue(billerDetails[0].question);
 
-                _this48.htmlText.ckEditorValue = billerDetails[0].answer;
+                _this47.htmlText.ckEditorValue = billerDetails[0].answer;
 
-                _this48.FaqManagementAddEditForm.controls['youtube_link'].patchValue(billerDetails[0].youtube_link);
+                _this47.FaqManagementAddEditForm.controls['youtube_link'].patchValue(billerDetails[0].youtube_link);
 
-                _this48.FaqManagementAddEditForm.controls['priority'].patchValue(billerDetails[0].priority);
+                _this47.FaqManagementAddEditForm.controls['priority'].patchValue(billerDetails[0].priority);
 
-                _this48.FaqManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
+                _this47.FaqManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
               });
               break;
 
@@ -10768,7 +10769,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "TechManagementAddFormFormSubmit",
         value: function TechManagementAddFormFormSubmit() {
-          var _this49 = this;
+          var _this48 = this;
 
           this.FaqManagementAddEditForm.controls['answer'].patchValue(this.htmlText.ckEditorValue);
 
@@ -10804,17 +10805,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this49.snackBar.open(_this49.htmlText.message, 'Ok', {
+                _this48.snackBar.open(_this48.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this49.formDirective.resetForm();
+                _this48.formDirective.resetForm();
 
                 setTimeout(function () {
-                  _this49.router.navigateByUrl("admin/faq-management");
+                  _this48.router.navigateByUrl("admin/faq-management");
                 }, 1000);
               } else {
-                _this49.snackBar.open(response.msg, '', {
+                _this48.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -11005,10 +11006,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListFaqComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this50 = this;
+          var _this49 = this;
 
           this.activatedRoute.data.forEach(function (data) {
-            _this50.FaqManagementAddEditForm = data.techDashboardData.res;
+            _this49.FaqManagementAddEditForm = data.techDashboardData.res;
           });
         }
       }]);
@@ -11185,7 +11186,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this51 = this;
+          var _this50 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -11222,39 +11223,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.acivatedRoute.data.forEach(function (data) {
                 var adminbillerDetails = data.data.res;
                 setTimeout(function () {
-                  _this51.getCity(adminbillerDetails[0].state);
+                  _this50.getCity(adminbillerDetails[0].state);
                 }, 1000);
 
-                _this51.adminbillerManagementAddEditForm.controls['id'].patchValue(adminbillerDetails[0]._id);
+                _this50.adminbillerManagementAddEditForm.controls['id'].patchValue(adminbillerDetails[0]._id);
 
-                _this51.adminbillerManagementAddEditForm.controls['firstname'].patchValue(adminbillerDetails[0].firstname);
+                _this50.adminbillerManagementAddEditForm.controls['firstname'].patchValue(adminbillerDetails[0].firstname);
 
-                _this51.adminbillerManagementAddEditForm.controls['lastname'].patchValue(adminbillerDetails[0].lastname);
+                _this50.adminbillerManagementAddEditForm.controls['lastname'].patchValue(adminbillerDetails[0].lastname);
 
-                _this51.adminbillerManagementAddEditForm.controls['email'].patchValue(adminbillerDetails[0].email);
+                _this50.adminbillerManagementAddEditForm.controls['email'].patchValue(adminbillerDetails[0].email);
 
-                _this51.adminbillerManagementAddEditForm.controls['phone'].patchValue(adminbillerDetails[0].phone);
+                _this50.adminbillerManagementAddEditForm.controls['phone'].patchValue(adminbillerDetails[0].phone);
 
-                _this51.adminbillerManagementAddEditForm.controls['address'].patchValue(adminbillerDetails[0].address);
+                _this50.adminbillerManagementAddEditForm.controls['address'].patchValue(adminbillerDetails[0].address);
 
-                _this51.adminbillerManagementAddEditForm.controls['zip'].patchValue(adminbillerDetails[0].zip);
+                _this50.adminbillerManagementAddEditForm.controls['zip'].patchValue(adminbillerDetails[0].zip);
 
-                _this51.adminbillerManagementAddEditForm.controls['city'].patchValue(adminbillerDetails[0].city);
+                _this50.adminbillerManagementAddEditForm.controls['city'].patchValue(adminbillerDetails[0].city);
 
-                _this51.adminbillerManagementAddEditForm.controls['state'].patchValue(adminbillerDetails[0].state); // diagnostic_admin
+                _this50.adminbillerManagementAddEditForm.controls['state'].patchValue(adminbillerDetails[0].state); // diagnostic_admin
 
 
-                if (_this51.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
-                  _this51.adminbillerManagementAddEditForm.controls['tech_id'].patchValue(adminbillerDetails[0].tech_id);
+                if (_this50.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
+                  _this50.adminbillerManagementAddEditForm.controls['tech_id'].patchValue(adminbillerDetails[0].tech_id);
                 } //this.adminbillerManagementAddEditForm.controls['biller_id'].patchValue(adminbillerDetails[0].biller_details);
                 //this.adminbillerManagementAddEditForm.controls['doctors_office_id'].patchValue(adminbillerDetails[0].doctors_office_details);
 
 
-                _this51.adminbillerManagementAddEditForm.controls['state'].patchValue(adminbillerDetails[0].state);
+                _this50.adminbillerManagementAddEditForm.controls['state'].patchValue(adminbillerDetails[0].state);
 
-                _this51.adminbillerManagementAddEditForm.controls['taxo_list'].patchValue(adminbillerDetails[0].taxo_list);
+                _this50.adminbillerManagementAddEditForm.controls['taxo_list'].patchValue(adminbillerDetails[0].taxo_list);
 
-                _this51.adminbillerManagementAddEditForm.controls['status'].patchValue(adminbillerDetails[0].status);
+                _this50.adminbillerManagementAddEditForm.controls['status'].patchValue(adminbillerDetails[0].status);
               });
               break;
 
@@ -11294,16 +11295,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this52 = this;
+          var _this51 = this;
 
           this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this52.htmlText.states = response;
+            _this51.htmlText.states = response;
           });
           this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this52.htmlText.allCities = response;
+            _this51.htmlText.allCities = response;
           });
           this.http.getSiteSettingData("./assets/data-set/taxonomies.json").subscribe(function (response) {
-            _this52.htmlText.taxonomies = response;
+            _this51.htmlText.taxonomies = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -11322,7 +11323,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "adminbillerManagementAddEditFormSubmit",
         value: function adminbillerManagementAddEditFormSubmit() {
-          var _this53 = this;
+          var _this52 = this;
 
           for (var x in this.adminbillerManagementAddEditForm.controls) {
             this.adminbillerManagementAddEditForm.controls[x].markAsTouched();
@@ -11358,25 +11359,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.http.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == "success") {
-                _this53.snackBar.open(_this53.htmlText.message, 'Ok', {
+                _this52.snackBar.open(_this52.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  switch (_this53.htmlText.userData.user_details.user_type) {
+                  switch (_this52.htmlText.userData.user_details.user_type) {
                     case 'diagnostic_admin':
-                      _this53.router.navigateByUrl("admin/adminbiller-management");
+                      _this52.router.navigateByUrl("admin/adminbiller-management");
 
                       break;
 
                     case 'admin':
-                      _this53.router.navigateByUrl("admin/adminbiller-management");
+                      _this52.router.navigateByUrl("admin/adminbiller-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this53.snackBar.open(response.msg, '', {
+                _this52.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -11585,7 +11586,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingAdminbillerComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this54 = this;
+          var _this53 = this;
 
           this.datasource = '';
           var endpoint = 'getbilleradminlistdata';
@@ -11603,12 +11604,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.http.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this54.docData_count = res.count; //console.warn('blogData c',res);
+            _this53.docData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.http.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this54.docData = res.results.res;
+            _this53.docData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -11786,7 +11787,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditDistributorsComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this55 = this;
+          var _this54 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -11816,28 +11817,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var distributorsDetails = data.distributorsData.res;
                 setTimeout(function () {
-                  _this55.getCity(distributorsDetails[0].state);
+                  _this54.getCity(distributorsDetails[0].state);
                 }, 1000);
 
-                _this55.DistributorsManagementAddEditForm.controls['id'].patchValue(distributorsDetails[0]._id);
+                _this54.DistributorsManagementAddEditForm.controls['id'].patchValue(distributorsDetails[0]._id);
 
-                _this55.DistributorsManagementAddEditForm.controls['distributorname'].patchValue(distributorsDetails[0].distributorname);
+                _this54.DistributorsManagementAddEditForm.controls['distributorname'].patchValue(distributorsDetails[0].distributorname);
 
-                _this55.DistributorsManagementAddEditForm.controls['contactperson'].patchValue(distributorsDetails[0].contactperson);
+                _this54.DistributorsManagementAddEditForm.controls['contactperson'].patchValue(distributorsDetails[0].contactperson);
 
-                _this55.DistributorsManagementAddEditForm.controls['email'].patchValue(distributorsDetails[0].email);
+                _this54.DistributorsManagementAddEditForm.controls['email'].patchValue(distributorsDetails[0].email);
 
-                _this55.DistributorsManagementAddEditForm.controls['phone'].patchValue(distributorsDetails[0].phone);
+                _this54.DistributorsManagementAddEditForm.controls['phone'].patchValue(distributorsDetails[0].phone);
 
-                _this55.DistributorsManagementAddEditForm.controls['address'].patchValue(distributorsDetails[0].address);
+                _this54.DistributorsManagementAddEditForm.controls['address'].patchValue(distributorsDetails[0].address);
 
-                _this55.DistributorsManagementAddEditForm.controls['zip'].patchValue(distributorsDetails[0].zip);
+                _this54.DistributorsManagementAddEditForm.controls['zip'].patchValue(distributorsDetails[0].zip);
 
-                _this55.DistributorsManagementAddEditForm.controls['city'].patchValue(distributorsDetails[0].city);
+                _this54.DistributorsManagementAddEditForm.controls['city'].patchValue(distributorsDetails[0].city);
 
-                _this55.DistributorsManagementAddEditForm.controls['state'].patchValue(distributorsDetails[0].state);
+                _this54.DistributorsManagementAddEditForm.controls['state'].patchValue(distributorsDetails[0].state);
 
-                _this55.DistributorsManagementAddEditForm.controls['status'].patchValue(distributorsDetails[0].status);
+                _this54.DistributorsManagementAddEditForm.controls['status'].patchValue(distributorsDetails[0].status);
               });
               break;
 
@@ -11880,13 +11881,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this56 = this;
+          var _this55 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this56.htmlText.states = response; // this.getResolveData();
+            _this55.htmlText.states = response; // this.getResolveData();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this56.htmlText.allCities = response;
+            _this55.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -11905,7 +11906,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "DistributorsManagementAddEditFormSubmit",
         value: function DistributorsManagementAddEditFormSubmit() {
-          var _this57 = this;
+          var _this56 = this;
 
           for (var x in this.DistributorsManagementAddEditForm.controls) {
             this.DistributorsManagementAddEditForm.controls[x].markAsTouched();
@@ -11939,27 +11940,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this57.snackBar.open(_this57.htmlText.message, 'Ok', {
+                _this56.snackBar.open(_this56.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this57.formDirective.resetForm();
+                _this56.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this57.htmlText.userData.user_details.user_type) {
+                  switch (_this56.htmlText.userData.user_details.user_type) {
                     case 'diagnostic_admin':
-                      _this57.router.navigateByUrl("admin/distributors-management");
+                      _this56.router.navigateByUrl("admin/distributors-management");
 
                       break;
 
                     case 'admin':
-                      _this57.router.navigateByUrl("admin/distributors-management");
+                      _this56.router.navigateByUrl("admin/distributors-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this57.snackBar.open(response.msg, '', {
+                _this56.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -12174,7 +12175,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingDistributorsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this58 = this;
+          var _this57 = this;
 
           this.datasource = '';
           var endpoint = 'getdistributorslistdata';
@@ -12192,12 +12193,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this58.techData_count = res.count; //console.warn('blogData c',res);
+            _this57.techData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this58.TechDashboardAllData = res.results.res;
+            _this57.TechDashboardAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -12377,7 +12378,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this59 = this;
+          var _this58 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -12410,34 +12411,34 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.doctorgroupManagementAddEditForm = this.formBuilder.group(validateRule);
               this.acivatedRoute.data.forEach(function (data) {
                 setTimeout(function () {
-                  _this59.getCity(doctorgrouoDetails[0].state);
+                  _this58.getCity(doctorgrouoDetails[0].state);
                 }, 1000);
                 var doctorgrouoDetails = data.data.res;
 
-                _this59.doctorgroupManagementAddEditForm.controls['id'].patchValue(doctorgrouoDetails[0]._id);
+                _this58.doctorgroupManagementAddEditForm.controls['id'].patchValue(doctorgrouoDetails[0]._id);
 
-                _this59.doctorgroupManagementAddEditForm.controls['groupname'].patchValue(doctorgrouoDetails[0].groupname);
+                _this58.doctorgroupManagementAddEditForm.controls['groupname'].patchValue(doctorgrouoDetails[0].groupname);
 
-                _this59.doctorgroupManagementAddEditForm.controls['email'].patchValue(doctorgrouoDetails[0].email);
+                _this58.doctorgroupManagementAddEditForm.controls['email'].patchValue(doctorgrouoDetails[0].email);
 
-                _this59.doctorgroupManagementAddEditForm.controls['phone'].patchValue(doctorgrouoDetails[0].phone);
+                _this58.doctorgroupManagementAddEditForm.controls['phone'].patchValue(doctorgrouoDetails[0].phone);
 
-                _this59.doctorgroupManagementAddEditForm.controls['address'].patchValue(doctorgrouoDetails[0].address);
+                _this58.doctorgroupManagementAddEditForm.controls['address'].patchValue(doctorgrouoDetails[0].address);
 
-                _this59.doctorgroupManagementAddEditForm.controls['zip'].patchValue(doctorgrouoDetails[0].zip);
+                _this58.doctorgroupManagementAddEditForm.controls['zip'].patchValue(doctorgrouoDetails[0].zip);
 
-                _this59.doctorgroupManagementAddEditForm.controls['city'].patchValue(doctorgrouoDetails[0].city);
+                _this58.doctorgroupManagementAddEditForm.controls['city'].patchValue(doctorgrouoDetails[0].city);
 
-                _this59.doctorgroupManagementAddEditForm.controls['state'].patchValue(doctorgrouoDetails[0].state); // diagnostic_admin
+                _this58.doctorgroupManagementAddEditForm.controls['state'].patchValue(doctorgrouoDetails[0].state); // diagnostic_admin
 
 
-                if (_this59.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
-                  _this59.doctorgroupManagementAddEditForm.controls['tech_id'].patchValue(doctorgrouoDetails[0].tech_id);
+                if (_this58.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
+                  _this58.doctorgroupManagementAddEditForm.controls['tech_id'].patchValue(doctorgrouoDetails[0].tech_id);
                 } //this.doctorgroupManagementAddEditForm.controls['biller_id'].patchValue(doctorgrouoDetails[0].biller_details);
                 //this.doctorgroupManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorgrouoDetails[0].doctors_office_details);
 
 
-                _this59.doctorgroupManagementAddEditForm.controls['status'].patchValue(doctorgrouoDetails[0].status);
+                _this58.doctorgroupManagementAddEditForm.controls['status'].patchValue(doctorgrouoDetails[0].status);
               });
               break;
 
@@ -12475,13 +12476,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this60 = this;
+          var _this59 = this;
 
           this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this60.htmlText.states = response;
+            _this59.htmlText.states = response;
           });
           this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this60.htmlText.allCities = response;
+            _this59.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -12500,7 +12501,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "doctorgroupManagementAddEditFormSubmit",
         value: function doctorgroupManagementAddEditFormSubmit() {
-          var _this61 = this;
+          var _this60 = this;
 
           for (var x in this.doctorgroupManagementAddEditForm.controls) {
             this.doctorgroupManagementAddEditForm.controls[x].markAsTouched();
@@ -12536,25 +12537,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.http.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == "success") {
-                _this61.snackBar.open(_this61.htmlText.message, 'Ok', {
+                _this60.snackBar.open(_this60.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  switch (_this61.htmlText.userData.user_details.user_type) {
+                  switch (_this60.htmlText.userData.user_details.user_type) {
                     case 'diagnostic_admin':
-                      _this61.router.navigateByUrl("admin/doctor-management/group");
+                      _this60.router.navigateByUrl("admin/doctor-management/group");
 
                       break;
 
                     case 'admin':
-                      _this61.router.navigateByUrl("admin/doctor-management/group");
+                      _this60.router.navigateByUrl("admin/doctor-management/group");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this61.snackBar.open(response.msg, '', {
+                _this60.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -12742,7 +12743,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingDoctorgroupComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this62 = this;
+          var _this61 = this;
 
           this.datasource = '';
           var endpoint = 'getdoctorgrouplistdata';
@@ -12760,12 +12761,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.http.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this62.docData_count = res.count; //console.warn('blogData c',res);
+            _this61.docData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.http.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this62.docData = res.results.res;
+            _this61.docData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -12939,7 +12940,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditInsuranceComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this63 = this;
+          var _this62 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -12957,15 +12958,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var insuranceDetails = data.insuranceData.res;
 
-                _this63.InsuranceAddEditForm.controls['id'].patchValue(insuranceDetails[0]._id);
+                _this62.InsuranceAddEditForm.controls['id'].patchValue(insuranceDetails[0]._id);
 
-                _this63.InsuranceAddEditForm.controls['insurancename'].patchValue(insuranceDetails[0].insurancename);
+                _this62.InsuranceAddEditForm.controls['insurancename'].patchValue(insuranceDetails[0].insurancename);
 
-                _this63.InsuranceAddEditForm.controls['description'].patchValue(insuranceDetails[0].description);
+                _this62.InsuranceAddEditForm.controls['description'].patchValue(insuranceDetails[0].description);
 
-                _this63.InsuranceAddEditForm.controls['priority'].patchValue(insuranceDetails[0].priority);
+                _this62.InsuranceAddEditForm.controls['priority'].patchValue(insuranceDetails[0].priority);
 
-                _this63.InsuranceAddEditForm.controls['status'].patchValue(insuranceDetails[0].status);
+                _this62.InsuranceAddEditForm.controls['status'].patchValue(insuranceDetails[0].status);
               });
               break;
 
@@ -12988,7 +12989,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "InsuranceManagementAddFormFormSubmit",
         value: function InsuranceManagementAddFormFormSubmit() {
-          var _this64 = this;
+          var _this63 = this;
 
           for (var x in this.InsuranceAddEditForm.controls) {
             this.InsuranceAddEditForm.controls[x].markAsTouched();
@@ -13022,27 +13023,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this64.snackBar.open(_this64.htmlText.message, 'Ok', {
+                _this63.snackBar.open(_this63.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this64.formDirective.resetForm();
+                _this63.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this64.htmlText.userData.user_details.user_type) {
+                  switch (_this63.htmlText.userData.user_details.user_type) {
                     case 'diagnostic_admin':
-                      _this64.router.navigateByUrl("admin/insurance-management");
+                      _this63.router.navigateByUrl("admin/insurance-management");
 
                       break;
 
                     case 'admin':
-                      _this64.router.navigateByUrl("admin/insurance-management");
+                      _this63.router.navigateByUrl("admin/insurance-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this64.snackBar.open(response.msg, '', {
+                _this63.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -13250,7 +13251,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingInsuranceComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this65 = this;
+          var _this64 = this;
 
           this.datasource = '';
           var endpoint = 'getinsurancelistdata';
@@ -13268,12 +13269,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this65.insuranceData_count = res.count; //console.warn('blogData c',res);
+            _this64.insuranceData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this65.InsuranceAllData = res.results.res;
+            _this64.InsuranceAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -13445,7 +13446,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditInsurancetypeComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this66 = this;
+          var _this65 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -13464,17 +13465,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.acivatedRoute.data.forEach(function (data) {
                 var doctorDetails = data.data.res;
 
-                _this66.insuranceTypeAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
+                _this65.insuranceTypeAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
 
-                _this66.insuranceTypeAddEditForm.controls['insurancetype_name'].patchValue(doctorDetails[0].insurancetype_name);
+                _this65.insuranceTypeAddEditForm.controls['insurancetype_name'].patchValue(doctorDetails[0].insurancetype_name);
 
-                _this66.insuranceTypeAddEditForm.controls['description'].patchValue(doctorDetails[0].description);
+                _this65.insuranceTypeAddEditForm.controls['description'].patchValue(doctorDetails[0].description);
 
-                _this66.insuranceTypeAddEditForm.controls['priority'].patchValue(doctorDetails[0].priority);
+                _this65.insuranceTypeAddEditForm.controls['priority'].patchValue(doctorDetails[0].priority);
 
-                _this66.insuranceTypeAddEditForm.controls['insurance_id'].patchValue(doctorDetails[0].insurance_id);
+                _this65.insuranceTypeAddEditForm.controls['insurance_id'].patchValue(doctorDetails[0].insurance_id);
 
-                _this66.insuranceTypeAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
+                _this65.insuranceTypeAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
               });
               break;
 
@@ -13501,7 +13502,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllinsuranceData",
         value: function getAllinsuranceData() {
-          var _this67 = this;
+          var _this66 = this;
 
           var data = {
             "source": "data_pece",
@@ -13511,13 +13512,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "token": this.htmlText.userData.jwtToken
           };
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this67.htmlText.insuranceData = response.res;
+            _this66.htmlText.insuranceData = response.res;
           });
         }
       }, {
         key: "insuranceTypeAddEditFormFormSubmit",
         value: function insuranceTypeAddEditFormFormSubmit() {
-          var _this68 = this;
+          var _this67 = this;
 
           for (var x in this.insuranceTypeAddEditForm.controls) {
             this.insuranceTypeAddEditForm.controls[x].markAsTouched();
@@ -13552,27 +13553,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == "success") {
-                _this68.formDirective.resetForm();
+                _this67.formDirective.resetForm();
 
-                _this68.snackBar.open(_this68.htmlText.message, 'Ok', {
+                _this67.snackBar.open(_this67.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  switch (_this68.htmlText.userData.user_details.user_type) {
+                  switch (_this67.htmlText.userData.user_details.user_type) {
                     case 'doctor':
-                      _this68.router.navigateByUrl("doctor/doctor-office-management");
+                      _this67.router.navigateByUrl("doctor/doctor-office-management");
 
                       break;
 
                     case 'admin':
-                      _this68.router.navigateByUrl("admin/insurance-type-management");
+                      _this67.router.navigateByUrl("admin/insurance-type-management");
 
                       break;
                   }
                 }, 2000);
               } else {
-                _this68.snackBar.open(response.msg, '', {
+                _this67.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -13781,7 +13782,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingInsurancetypeComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this69 = this;
+          var _this68 = this;
 
           this.datasource = '';
           var endpoint = 'getinsurancetypelistdata';
@@ -13799,12 +13800,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this69.insuranceData_count = res.count; //console.warn('blogData c',res);
+            _this68.insuranceData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this69.InsuranceAllData = res.results.res;
+            _this68.InsuranceAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -13992,7 +13993,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditPatientinformationComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this70 = this;
+          var _this69 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -14011,17 +14012,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var patientinformationDetails = data.patientinformationData.res;
 
-                _this70.patientinformationAddEditForm.controls['id'].patchValue(patientinformationDetails[0]._id);
+                _this69.patientinformationAddEditForm.controls['id'].patchValue(patientinformationDetails[0]._id);
 
-                _this70.patientinformationAddEditForm.controls['type'].patchValue(patientinformationDetails[0].type);
+                _this69.patientinformationAddEditForm.controls['type'].patchValue(patientinformationDetails[0].type);
 
-                _this70.patientinformationAddEditForm.controls['addfield'].patchValue(patientinformationDetails[0].addfield);
+                _this69.patientinformationAddEditForm.controls['addfield'].patchValue(patientinformationDetails[0].addfield);
 
-                _this70.patientinformationAddEditForm.controls['label'].patchValue(patientinformationDetails[0].label);
+                _this69.patientinformationAddEditForm.controls['label'].patchValue(patientinformationDetails[0].label);
 
-                _this70.patientinformationAddEditForm.controls['description'].patchValue(patientinformationDetails[0].description);
+                _this69.patientinformationAddEditForm.controls['description'].patchValue(patientinformationDetails[0].description);
 
-                _this70.patientinformationAddEditForm.controls['status'].patchValue(patientinformationDetails[0].status);
+                _this69.patientinformationAddEditForm.controls['status'].patchValue(patientinformationDetails[0].status);
               });
               break;
 
@@ -14072,7 +14073,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "patientinformationAddEditFormSubmit",
         value: function patientinformationAddEditFormSubmit() {
-          var _this71 = this;
+          var _this70 = this;
 
           for (var x in this.patientinformationAddEditForm.controls) {
             this.patientinformationAddEditForm.controls[x].markAsTouched();
@@ -14107,27 +14108,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this71.snackBar.open(_this71.htmlText.message, 'Ok', {
+                _this70.snackBar.open(_this70.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this71.formDirective.resetForm();
+                _this70.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this71.htmlText.userData.user_details.user_type) {
+                  switch (_this70.htmlText.userData.user_details.user_type) {
                     case 'diagnostic_admin':
-                      _this71.router.navigateByUrl("admin/patientinformation-management");
+                      _this70.router.navigateByUrl("admin/patientinformation-management");
 
                       break;
 
                     case 'admin':
-                      _this71.router.navigateByUrl("admin/patientinformation-management");
+                      _this70.router.navigateByUrl("admin/patientinformation-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this71.snackBar.open(response.msg, '', {
+                _this70.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -14352,7 +14353,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingPatientinformationComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this72 = this;
+          var _this71 = this;
 
           this.datasource = '';
           var endpoint = 'getpatientinformationlistdata';
@@ -14370,12 +14371,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this72.insuranceData_count = res.count; //console.warn('blogData c',res);
+            _this71.insuranceData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this72.InsuranceAllData = res.results.res;
+            _this71.InsuranceAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -14560,30 +14561,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ReportNotProcessComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this73 = this;
+          var _this72 = this;
 
           this.activatedRoute.data.forEach(function (resolveData) {
             //console.log("Data: ", resolveData.data);
-            _this73.allResloveData = resolveData.data.res;
-            console.log(">>", _this73.allResloveData);
+            _this72.allResloveData = resolveData.data.res;
+            console.log(">>", _this72.allResloveData);
           });
           this.onPopulate();
         }
       }, {
         key: "onPopulate",
         value: function onPopulate() {
-          var _this74 = this;
+          var _this73 = this;
 
           this.activatedRoute.data.forEach(function (resolveData) {
             console.log("Data on populate: ", resolveData);
-            _this74.reportData = resolveData.data.res;
-            _this74.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableDataSource"](_this74.reportData);
+            _this73.reportData = resolveData.data.res;
+            _this73.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableDataSource"](_this73.reportData);
           });
         }
       }, {
         key: "action",
         value: function action(_action, id, index) {
-          var _this75 = this;
+          var _this74 = this;
 
           switch (_action) {
             case 'delete':
@@ -14592,13 +14593,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 id: id
               }, "deletesingledata").subscribe(function (response) {
                 if (response.status == 'success') {
-                  _this75.openSnackBar("Successfully delete.", "");
+                  _this74.openSnackBar("Successfully delete.", "");
 
-                  _this75.allResloveData.splice(index, 1);
+                  _this74.allResloveData.splice(index, 1);
 
-                  _this75.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableDataSource"](_this75.allResloveData);
+                  _this74.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableDataSource"](_this74.allResloveData);
                 } else {
-                  _this75.openSnackBar("An error occord.", "");
+                  _this74.openSnackBar("An error occord.", "");
                 }
               });
               break;
@@ -14608,9 +14609,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 id: id
               }).subscribe(function (response) {
                 if (response.status == 'success') {
-                  _this75.openSnackBar("Successfully reprocess.", "");
+                  _this74.openSnackBar("Successfully reprocess.", "");
                 } else {
-                  _this75.openSnackBar("An error occord.", "");
+                  _this74.openSnackBar("An error occord.", "");
                 }
               });
               break;
@@ -14630,10 +14631,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "masterToggle",
         value: function masterToggle() {
-          var _this76 = this;
+          var _this75 = this;
 
           this.isAllSelected() ? this.selection.clear() : this.dataSource.data.forEach(function (row) {
-            return _this76.selection.select(row);
+            return _this75.selection.select(row);
           });
         }
         /** The label for the checkbox on the passed row */
@@ -14834,7 +14835,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditSalesPersonComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this77 = this;
+          var _this76 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -14864,28 +14865,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var billerDetails = data.techData.res;
                 setTimeout(function () {
-                  _this77.getCity(billerDetails[0].state);
+                  _this76.getCity(billerDetails[0].state);
                 }, 1000);
 
-                _this77.SalesPersonManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
+                _this76.SalesPersonManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
 
-                _this77.SalesPersonManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
+                _this76.SalesPersonManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
 
-                _this77.SalesPersonManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
+                _this76.SalesPersonManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
 
-                _this77.SalesPersonManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
+                _this76.SalesPersonManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
 
-                _this77.SalesPersonManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
+                _this76.SalesPersonManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
 
-                _this77.SalesPersonManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address);
+                _this76.SalesPersonManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address);
 
-                _this77.SalesPersonManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
+                _this76.SalesPersonManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
 
-                _this77.SalesPersonManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
+                _this76.SalesPersonManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
 
-                _this77.SalesPersonManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
+                _this76.SalesPersonManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
 
-                _this77.SalesPersonManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
+                _this76.SalesPersonManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
               });
               break;
 
@@ -14939,13 +14940,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this78 = this;
+          var _this77 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this78.htmlText.states = response; // this.getResolveData();
+            _this77.htmlText.states = response; // this.getResolveData();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this78.htmlText.allCities = response;
+            _this77.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -14964,7 +14965,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "TechManagementAddFormFormSubmit",
         value: function TechManagementAddFormFormSubmit() {
-          var _this79 = this;
+          var _this78 = this;
 
           for (var x in this.SalesPersonManagementAddEditForm.controls) {
             this.SalesPersonManagementAddEditForm.controls[x].markAsTouched();
@@ -15006,32 +15007,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this79.snackBar.open(_this79.htmlText.message, 'Ok', {
+                _this78.snackBar.open(_this78.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this79.formDirective.resetForm();
+                _this78.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this79.htmlText.userData.user_details.user_type) {
+                  switch (_this78.htmlText.userData.user_details.user_type) {
                     case 'admin':
-                      _this79.router.navigateByUrl("admin/sales-person-management");
+                      _this78.router.navigateByUrl("admin/sales-person-management");
 
                       break;
 
                     case 'diagnostic_admin':
-                      _this79.router.navigateByUrl("diagnostic-admin/sales-person-management");
+                      _this78.router.navigateByUrl("diagnostic-admin/sales-person-management");
 
                       break;
 
                     case 'distributors':
-                      _this79.router.navigateByUrl("distributors/sales-person-management");
+                      _this78.router.navigateByUrl("distributors/sales-person-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this79.snackBar.open(response.msg, '', {
+                _this78.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -15376,7 +15377,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListSalesPersonComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this80 = this;
+          var _this79 = this;
 
           this.datasource = '';
           var endpoint = 'getsaleslistdata';
@@ -15409,12 +15410,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this80.salesData_count = res.count; //console.warn('blogData c',res);
+            _this79.salesData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this80.salesPersonDashboardAllData = res.results.res;
+            _this79.salesPersonDashboardAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -15575,11 +15576,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           allCities: "",
           cities: "",
           parent_type: [{
-            name: "Distributor"
+            name: "Distributor",
+            value: "distributor"
           }, {
-            name: "DiagnosticAdmin"
+            name: "DiagnosticAdmin",
+            value: "diagnostic_admin"
           }, {
-            name: "DoctorGroup"
+            name: "DoctorGroup",
+            value: "doctor_group"
           }]
         };
         this.htmlText.userData = cookie.getAll();
@@ -15601,7 +15605,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditTechComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this81 = this;
+          var _this80 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -15633,40 +15637,40 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var billerDetails = data.techData.res;
                 setTimeout(function () {
-                  _this81.getCity(billerDetails[0].state);
+                  _this80.getCity(billerDetails[0].state);
                 }, 1000);
 
-                _this81.TechManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
+                _this80.TechManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
 
-                _this81.TechManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
+                _this80.TechManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
 
-                _this81.TechManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
+                _this80.TechManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
 
-                _this81.TechManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
+                _this80.TechManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
 
-                _this81.TechManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
+                _this80.TechManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
 
-                _this81.TechManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address); // this.getCity(doctorDetails[0].state);
+                _this80.TechManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address); // this.getCity(doctorDetails[0].state);
 
 
-                _this81.getParentData(billerDetails[0].parent_type); //  this.getCity(doctorDetails[0].state);
+                _this80.getParentData(billerDetails[0].parent_type); //  this.getCity(doctorDetails[0].state);
                 // this.getCityByName(doctorDetails[0].state);
 
 
                 setTimeout(function () {
                   // getCityByName
-                  _this81.TechManagementAddEditForm.controls['parent_type'].patchValue(billerDetails[0].parent_type);
+                  _this80.TechManagementAddEditForm.controls['parent_type'].patchValue(billerDetails[0].parent_type);
 
-                  _this81.TechManagementAddEditForm.controls['parent_id'].patchValue(billerDetails[0].parent_id);
+                  _this80.TechManagementAddEditForm.controls['parent_id'].patchValue(billerDetails[0].parent_id);
                 }, 2000);
 
-                _this81.TechManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
+                _this80.TechManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
 
-                _this81.TechManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
+                _this80.TechManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
 
-                _this81.TechManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
+                _this80.TechManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
 
-                _this81.TechManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
+                _this80.TechManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
               });
               break;
 
@@ -15720,13 +15724,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this82 = this;
+          var _this81 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this82.htmlText.states = response; // this.getResolveData();
+            _this81.htmlText.states = response; // this.getResolveData();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this82.htmlText.allCities = response;
+            _this81.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -15745,7 +15749,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getParentData",
         value: function getParentData() {
-          var _this83 = this;
+          var _this82 = this;
 
           var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
           var billerData = id;
@@ -15790,7 +15794,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
             // console.log('+++++++++',response);
-            _this83.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
+            _this82.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
             // this.htmlText.doctorOfficeData = response.data.doctor_office_data;
             // this.htmlText.billerData = response.data.biller_data;
           });
@@ -15798,7 +15802,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "TechManagementAddFormFormSubmit",
         value: function TechManagementAddFormFormSubmit() {
-          var _this84 = this;
+          var _this83 = this;
 
           for (var x in this.TechManagementAddEditForm.controls) {
             this.TechManagementAddEditForm.controls[x].markAsTouched();
@@ -15845,37 +15849,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this84.snackBar.open(_this84.htmlText.message, 'Ok', {
+                _this83.snackBar.open(_this83.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this84.formDirective.resetForm();
+                _this83.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this84.htmlText.userData.user_details.user_type) {
+                  switch (_this83.htmlText.userData.user_details.user_type) {
                     case 'admin':
-                      _this84.router.navigateByUrl("admin/tech-management");
+                      _this83.router.navigateByUrl("admin/tech-management");
 
                       break;
 
                     case 'diagnostic_admin':
-                      _this84.router.navigateByUrl("diagnostic-admin/tech-management");
+                      _this83.router.navigateByUrl("diagnostic-admin/tech-management");
 
                       break;
 
                     case 'doctor_group':
-                      _this84.router.navigateByUrl("doctor-group/tech-management");
+                      _this83.router.navigateByUrl("doctor-group/tech-management");
 
                       break;
 
                     case 'distributors':
-                      _this84.router.navigateByUrl("distributors/tech-management");
+                      _this83.router.navigateByUrl("distributors/tech-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this84.snackBar.open(response.msg, '', {
+                _this83.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -16232,7 +16236,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingTechComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this85 = this;
+          var _this84 = this;
 
           this.datasource = '';
           var endpoint = 'gettechlistdata';
@@ -16271,12 +16275,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this85.techData_count = res.count; //console.warn('blogData c',res);
+            _this84.techData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this85.TechDashboardAllData = res.results.res;
+            _this84.TechDashboardAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -16442,30 +16446,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getResolveData",
         value: function getResolveData() {
-          var _this86 = this;
+          var _this85 = this;
 
           this.activeRoute.data.forEach(function (data) {
-            _this86.usersData = data.UserData.res;
+            _this85.usersData = data.UserData.res;
             var userDetails;
             userDetails = data.UserData.res;
 
-            _this86.UserManagementAddEditForm.controls['firstname'].patchValue(userDetails[0].firstname);
+            _this85.UserManagementAddEditForm.controls['firstname'].patchValue(userDetails[0].firstname);
 
-            _this86.UserManagementAddEditForm.controls['lastname'].patchValue(userDetails[0].lastname);
+            _this85.UserManagementAddEditForm.controls['lastname'].patchValue(userDetails[0].lastname);
 
-            _this86.UserManagementAddEditForm.controls['email'].patchValue(userDetails[0].email);
+            _this85.UserManagementAddEditForm.controls['email'].patchValue(userDetails[0].email);
 
-            _this86.UserManagementAddEditForm.controls['phoneno'].patchValue(userDetails[0].phoneno);
+            _this85.UserManagementAddEditForm.controls['phoneno'].patchValue(userDetails[0].phoneno);
 
-            _this86.UserManagementAddEditForm.controls['address'].patchValue(userDetails[0].address);
+            _this85.UserManagementAddEditForm.controls['address'].patchValue(userDetails[0].address);
 
-            _this86.UserManagementAddEditForm.controls['city'].patchValue(userDetails[0].city);
+            _this85.UserManagementAddEditForm.controls['city'].patchValue(userDetails[0].city);
 
-            _this86.UserManagementAddEditForm.controls['state'].patchValue(userDetails[0].state);
+            _this85.UserManagementAddEditForm.controls['state'].patchValue(userDetails[0].state);
 
-            _this86.UserManagementAddEditForm.controls['zip'].patchValue(userDetails[0].zip);
+            _this85.UserManagementAddEditForm.controls['zip'].patchValue(userDetails[0].zip);
 
-            _this86.UserManagementAddEditForm.controls['status'].patchValue(userDetails[0].status);
+            _this85.UserManagementAddEditForm.controls['status'].patchValue(userDetails[0].status);
           });
         }
         /**for validation purpose**/
@@ -16491,17 +16495,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this87 = this;
+          var _this86 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this87.states = response;
+            _this86.states = response;
 
-            _this87.getResolveData();
+            _this86.getResolveData();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this87.allCities = response;
+            _this86.allCities = response;
 
-            _this87.getResolveData();
+            _this86.getResolveData();
           });
         }
         /**for getting all states & cities  function end here**/
@@ -16515,7 +16519,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "UserManagementAddFormFormSubmit",
         value: function UserManagementAddFormFormSubmit() {
-          var _this88 = this;
+          var _this87 = this;
 
           var x;
 
@@ -16554,10 +16558,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (res) {
-            _this88.ResetAddForm();
+            _this87.ResetAddForm();
 
             setTimeout(function () {
-              _this88.router.navigateByUrl('/dashboard/tech');
+              _this87.router.navigateByUrl('/dashboard/tech');
             }, 100);
           });
         }
@@ -16718,7 +16722,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function AdminbillerDashboardComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this89 = this;
+        var _this88 = this;
 
         _classCallCheck(this, AdminbillerDashboardComponent);
 
@@ -16887,9 +16891,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this89.allResolveData = resolveData.dataCount.data.dashboardCount[0];
+          _this88.allResolveData = resolveData.dataCount.data.dashboardCount[0];
 
-          _this89.viewReportProcessData(_this89.htmlText.headerText);
+          _this88.viewReportProcessData(_this88.htmlText.headerText);
         });
         this.apiUrl = http.baseUrl;
       }
@@ -16897,7 +16901,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AdminbillerDashboardComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this90 = this;
+          var _this89 = this;
 
           this.datasource = '';
           var endpoint = 'getpatientlistdata';
@@ -16916,12 +16920,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.http.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this90.patientData_count = res.count; //console.warn('blogData c',res);
+            _this89.patientData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.http.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this90.patientData = res.results.res;
+            _this89.patientData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -16932,7 +16936,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this91 = this;
+          var _this90 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -16944,11 +16948,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('admin-dashboard', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this91.allResolveData = response.data.dashboardCount[0];
+              _this90.allResolveData = response.data.dashboardCount[0];
 
-              _this91.viewReportProcessData(_this91.htmlText.headerText);
+              _this90.viewReportProcessData(_this90.htmlText.headerText);
             } else {
-              _this91.router.navigateByUrl('logout');
+              _this90.router.navigateByUrl('logout');
             }
           }); // for listing
 
@@ -16957,7 +16961,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this92 = this;
+          var _this91 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           // Set Header Flag
@@ -17094,12 +17098,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('dashboard-datalist', repostSignCond).subscribe(function (response) {
             if (response.status == true) {
-              _this92.allResolveData.tableDataFlag = true;
-              _this92.allResolveData.tableData = response.data;
-              _this92.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this92.allResolveData.tableData);
-              _this92.allDataSource.paginator = _this92.paginatorAll;
+              _this91.allResolveData.tableDataFlag = true;
+              _this91.allResolveData.tableData = response.data;
+              _this91.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this91.allResolveData.tableData);
+              _this91.allDataSource.paginator = _this91.paginatorAll;
             } else {
-              _this92.router.navigateByUrl('logout');
+              _this91.router.navigateByUrl('logout');
             }
           });
         }
@@ -17149,7 +17153,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this93 = this;
+          var _this92 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -17187,15 +17191,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this93.matSnackBar.open("Start downloading.", "Ok", {
+              _this92.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this93.viewReportProcessData(_this93.htmlText.headerText);
+              _this92.viewReportProcessData(_this92.htmlText.headerText);
             } else {
-              _this93.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this92.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -17206,7 +17210,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteReport",
         value: function deleteReport(pk_id, index) {
-          var _this94 = this;
+          var _this93 = this;
 
           var data = {
             width: '250px',
@@ -17228,7 +17232,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 break;
 
               case "Yes":
-                _this94.deleteProcess(pk_id, index);
+                _this93.deleteProcess(pk_id, index);
 
                 break;
             }
@@ -17237,7 +17241,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteProcess",
         value: function deleteProcess(pk_id, index) {
-          var _this95 = this;
+          var _this94 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -17246,9 +17250,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost('deletesingledata', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this95.allResolveData.tableData.splice(index, 1);
+              _this94.allResolveData.tableData.splice(index, 1);
 
-              _this95.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this95.allResolveData.tableData);
+              _this94.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this94.allResolveData.tableData);
               var data = {
                 width: '250px',
                 data: {
@@ -17262,7 +17266,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this95.dialogRef = _this95.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
+              _this94.dialogRef = _this94.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
             } else {
               var _data4 = {
                 width: '250px',
@@ -17277,15 +17281,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this95.dialogRef = _this95.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data4);
+              _this94.dialogRef = _this94.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data4);
 
-              _this95.dialogRef.afterClosed().subscribe(function (result) {
+              _this94.dialogRef.afterClosed().subscribe(function (result) {
                 switch (result) {
                   case "Close":
                     break;
 
                   case "Re-Try":
-                    _this95.deleteProcess(pk_id, index);
+                    _this94.deleteProcess(pk_id, index);
 
                     break;
                 }
@@ -17975,14 +17979,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LogoutComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this96 = this;
+          var _this95 = this;
 
           this.cookies.delete('jwtToken');
           this.cookies.delete('user_details');
           this.cookies.deleteAll();
           this.cookies.deleteAll('/');
           setTimeout(function () {
-            _this96.router.navigateByUrl('login');
+            _this95.router.navigateByUrl('login');
 
             window.location.href = '/';
           }, 1500);
@@ -18241,7 +18245,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function BillerDashboardComponent(http, commonFunction, activatedRoute, cookieService, httpService, deviceService, matSnackBar) {
-        var _this97 = this;
+        var _this96 = this;
 
         _classCallCheck(this, BillerDashboardComponent);
 
@@ -18273,25 +18277,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get IP Address */
 
         this.httpService.httpViaGetExt("http://api.ipify.org/?format=json", {}).subscribe(function (response) {
-          _this97.htmlText.ip = response.ip;
+          _this96.htmlText.ip = response.ip;
         });
       }
 
       _createClass(BillerDashboardComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this98 = this;
+          var _this97 = this;
 
           this.activatedRoute.data.subscribe(function (resolveData) {
-            _this98.allResolveData = resolveData.billerData.data;
+            _this97.allResolveData = resolveData.billerData.data;
 
-            _this98.viewReportData();
+            _this97.viewReportData();
           });
         }
       }, {
         key: "viewReportData",
         value: function viewReportData() {
-          var _this99 = this;
+          var _this98 = this;
 
           var flug = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "Patient Reports";
           var paginationOption = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
@@ -18337,17 +18341,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpService.httpViaPost('dashboard-datalist', repostSignCond).subscribe(function (response) {
             /* Fetching the data into table */
-            _this99.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](response.data);
+            _this98.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](response.data);
             /* Adding the paginator options */
 
-            _this99.dataSource.paginator = _this99.paginator;
-            _this99.dataSource.sort = _this99.sort;
+            _this98.dataSource.paginator = _this98.paginator;
+            _this98.dataSource.sort = _this98.sort;
           });
         }
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this100 = this;
+          var _this99 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -18385,7 +18389,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.httpService.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this100.matSnackBar.open("Start downloading.", "Ok", {
+              _this99.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
@@ -18396,14 +18400,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   "id": report._id,
                   "download_count": report.download_count
                 },
-                "token": _this100.loginUserData.jwtToken
+                "token": _this99.loginUserData.jwtToken
               };
 
-              _this100.httpService.httpViaPost("addorupdatedata", _postData).subscribe(function (response) {
-                _this100.refreshDashboard();
+              _this99.httpService.httpViaPost("addorupdatedata", _postData).subscribe(function (response) {
+                _this99.refreshDashboard();
               });
             } else {
-              _this100.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this99.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -18412,7 +18416,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this101 = this;
+          var _this100 = this;
 
           var postData = {
             source: "data_pece",
@@ -18422,16 +18426,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.httpService.httpViaPost("biller-dashboard", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this101.viewReportData(_this101.htmlText.tableHeaderText);
+              _this100.viewReportData(_this100.htmlText.tableHeaderText);
 
-              _this101.allResolveData = response.data;
+              _this100.allResolveData = response.data;
             } else {
-              _this101.matSnackBar.open("Please wait...", "", {
+              _this100.matSnackBar.open("Please wait...", "", {
                 duration: 1000
               });
 
               setTimeout(function () {
-                _this101.refreshDashboard();
+                _this100.refreshDashboard();
               }, 1000);
             }
           });
@@ -18789,7 +18793,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DownloadSuperbillerComponent(router, cookieService, http, activatedRoute, dialog, commonFunction, deviceService, matSnackBar) {
-        var _this102 = this;
+        var _this101 = this;
 
         _classCallCheck(this, DownloadSuperbillerComponent);
 
@@ -18838,12 +18842,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
         this.http.httpViaGetExt("http://api.ipify.org/?format=json", {}).subscribe(function (response) {
-          _this102.htmlText.ip = response.ip;
+          _this101.htmlText.ip = response.ip;
         });
         /* Get Temp Token */
 
         this.http.httpViaGet("gettemptoken", {}).subscribe(function (response) {
-          _this102.htmlText.tempToken = response.token;
+          _this101.htmlText.tempToken = response.token;
         });
       }
 
@@ -18853,7 +18857,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadPDF",
         value: function downloadPDF() {
-          var _this103 = this;
+          var _this102 = this;
 
           if (this.htmlText.password == this.reportData.download_password && this.reportData.passwordAttemptsCount <= 3 || this.htmlText.password == this.reportData.download_password && this.htmlText.notBotText == this.htmlText.notBotInput) {
             this.htmlText.passwordAttemptsCount++;
@@ -18907,23 +18911,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
               if (response.status == 'success') {
-                _this103.htmlText.downloadFlug = true;
-                _this103.htmlText.hraderText = "Thank you for downloading.";
-                window.open(_this103.reportData.file_path); // Update Status
+                _this102.htmlText.downloadFlug = true;
+                _this102.htmlText.hraderText = "Thank you for downloading.";
+                window.open(_this102.reportData.file_path); // Update Status
 
                 var _postData2 = {
                   "source": "data_pece",
                   "data": {
-                    "id": _this103.activatedRoute.snapshot.params._id,
+                    "id": _this102.activatedRoute.snapshot.params._id,
                     "status": "Downloaded",
-                    "download_count": _this103.reportData.download_count
+                    "download_count": _this102.reportData.download_count
                   },
-                  "token": _this103.htmlText.tempToken
+                  "token": _this102.htmlText.tempToken
                 };
 
-                _this103.http.httpViaPost("addorupdatedata", _postData2).subscribe(function (response) {});
+                _this102.http.httpViaPost("addorupdatedata", _postData2).subscribe(function (response) {});
               } else {
-                _this103.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+                _this102.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                   duration: 3000
                 });
               }
@@ -18962,7 +18966,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getData",
         value: function getData(reportID) {
-          var _this104 = this;
+          var _this103 = this;
 
           var data = {
             "source": "data_pece",
@@ -18972,9 +18976,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("datalistwithouttoken", data).subscribe(function (response) {
             if (response.res.length > 0) {
-              _this104.reportData = response.res[0];
+              _this103.reportData = response.res[0];
             } else {
-              _this104.router.navigateByUrl('/login');
+              _this103.router.navigateByUrl('/login');
             }
           });
         }
@@ -19285,7 +19289,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PastAppoinmentsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this105 = this;
+          var _this104 = this;
 
           if (this.cookie.check('jwtToken')) {
             this.configData.jwtToken = this.cookie.get('jwtToken');
@@ -19326,13 +19330,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.postRequest(this.configData.endPoint.listBookedEvents, data).subscribe(function (response) {
               // Set dataset in responseData
-              _this105.configData.responseData = response.results.res; // Create skipFields array(first save all the keys from the dataset)
+              _this104.configData.responseData = response.results.res; // Create skipFields array(first save all the keys from the dataset)
 
-              if (response.results.res > 0) _this105.configData.skipFields = Object.keys(response.results.res[0]);
+              if (response.results.res > 0) _this104.configData.skipFields = Object.keys(response.results.res[0]);
               var requiredFields = ['patient_name', 'doctor_name', 'doctor_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName']; // Modify the skipFields array(splicing the keys which is in the requiredFields)
 
               for (var i = 0; i < requiredFields.length; i++) {
-                _this105.configData.skipFields.splice(_this105.configData.skipFields.indexOf(requiredFields[i]), 1);
+                _this104.configData.skipFields.splice(_this104.configData.skipFields.indexOf(requiredFields[i]), 1);
               }
             }); // Merge logged in user details with the config data
             // let userDetails: any = JSON.parse(this.cookie.get('user_details'));
@@ -19341,7 +19345,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /* ****************** Get total booked events count ****************** */
 
             this.httpService.postRequest(this.configData.endPoint.listBookedEventsCount, data).subscribe(function (response) {
-              _this105.configData.date_search_source_count = response.count;
+              _this104.configData.date_search_source_count = response.count;
             });
             /* ******************************************************************* */
           } else {
@@ -19646,7 +19650,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(UpcomingAppoinmentsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this106 = this;
+          var _this105 = this;
 
           if (this.cookie.check('jwtToken')) {
             this.configData.jwtToken = this.cookie.get('jwtToken');
@@ -19687,13 +19691,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.postRequest(this.configData.endPoint.listUpcomingBookedEvents, data).subscribe(function (response) {
               // Set dataset in responseData
-              _this106.configData.responseData = response.results.res; // Create skipFields array(first save all the keys from the dataset)
+              _this105.configData.responseData = response.results.res; // Create skipFields array(first save all the keys from the dataset)
 
-              if (response.results.res > 0) _this106.configData.skipFields = Object.keys(response.results.res[0]);
+              if (response.results.res > 0) _this105.configData.skipFields = Object.keys(response.results.res[0]);
               var requiredFields = ['patient_name', 'doctor_name', 'doctor_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName']; // Modify the skipFields array(splicing the keys which is in the requiredFields)
 
               for (var i = 0; i < requiredFields.length; i++) {
-                _this106.configData.skipFields.splice(_this106.configData.skipFields.indexOf(requiredFields[i]), 1);
+                _this105.configData.skipFields.splice(_this105.configData.skipFields.indexOf(requiredFields[i]), 1);
               }
             }); // Merge logged in user details with the config data
             // let userDetails: any = JSON.parse(this.cookie.get('user_details'));
@@ -19702,7 +19706,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /* ****************** Get total booked events count ****************** */
 
             this.httpService.postRequest(this.configData.endPoint.listUpcomingBookedEventsCount, data).subscribe(function (response) {
-              _this106.configData.date_search_source_count = response.count;
+              _this105.configData.date_search_source_count = response.count;
             });
             /* ******************************************************************* */
           } else {
@@ -19898,10 +19902,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "SetValueForm",
         value: function SetValueForm() {
-          var _this107 = this;
+          var _this106 = this;
 
           setTimeout(function () {
-            _this107.getCityByName(_this107.cookiesData.state);
+            _this106.getCityByName(_this106.cookiesData.state);
           }, 400);
           this.AccountSettingsForm.controls['firstname'].patchValue(this.cookiesData.firstname);
           this.AccountSettingsForm.controls['lastname'].patchValue(this.cookiesData.lastname);
@@ -19916,17 +19920,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this108 = this;
+          var _this107 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this108.states = response;
+            _this107.states = response;
 
-            _this108.SetValueForm();
+            _this107.SetValueForm();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this108.allCities = response;
+            _this107.allCities = response;
 
-            _this108.SetValueForm();
+            _this107.SetValueForm();
           });
         }
         /**for getting all states & cities  function end here**/
@@ -19950,7 +19954,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "AccountSettingsFormSubmit",
         value: function AccountSettingsFormSubmit() {
-          var _this109 = this;
+          var _this108 = this;
 
           this.loader = true;
           var x;
@@ -19977,26 +19981,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "token": this.user_token
             };
             this.httpService.httpViaPost('addorupdatedata', data).subscribe(function (response) {
-              var userDetailsCookie = JSON.parse(_this109.cookie.get('user_details'));
+              var userDetailsCookie = JSON.parse(_this108.cookie.get('user_details'));
               var type = userDetailsCookie.type;
 
-              _this109.cookie.delete('user_details');
+              _this108.cookie.delete('user_details');
 
-              userDetailsCookie.firstname = _this109.AccountSettingsForm.value.firstname;
-              userDetailsCookie.lastname = _this109.AccountSettingsForm.value.lastname;
+              userDetailsCookie.firstname = _this108.AccountSettingsForm.value.firstname;
+              userDetailsCookie.lastname = _this108.AccountSettingsForm.value.lastname;
               userDetailsCookie = JSON.stringify(userDetailsCookie);
-              _this109.loader = false;
+              _this108.loader = false;
               var action = "Ok";
 
-              _this109.snackBar.open(_this109.message, action, {
+              _this108.snackBar.open(_this108.message, action, {
                 duration: 1000
               });
 
               setTimeout(function () {
-                _this109.cookie.set('user_details', userDetailsCookie);
+                _this108.cookie.set('user_details', userDetailsCookie);
               }, 1000);
               setTimeout(function () {
-                _this109.router.navigateByUrl(type + '/dashboard');
+                _this108.router.navigateByUrl(type + '/dashboard');
               }, 3000);
             });
           }
@@ -20198,7 +20202,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ChangePasswordFormSubmit",
         value: function ChangePasswordFormSubmit() {
-          var _this110 = this;
+          var _this109 = this;
 
           this.loader = true;
           var x;
@@ -20216,25 +20220,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               newPassword: this.ChangePasswordForm.value.newPassword
             };
             this.httpService.httpViaPost('changepassword', data).subscribe(function (response) {
-              _this110.formDirective.resetForm();
+              _this109.formDirective.resetForm();
 
-              _this110.loader = false;
+              _this109.loader = false;
 
               if (response.status == true) {
-                _this110.snackBar.open(response.message, "OK", {
+                _this109.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
 
                 setTimeout(function () {
-                  _this110.router.navigateByUrl('/admin/dashboard');
+                  _this109.router.navigateByUrl('/admin/dashboard');
                 }, 1550);
               } else {
-                _this110.snackBar.open(response.message, "OK", {
+                _this109.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
               }
             }, function (error) {
-              _this110.loader = false;
+              _this109.loader = false;
               alert("Some error occord. Please try later.");
             });
           }
@@ -20521,13 +20525,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(FaqViewComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this111 = this;
+          var _this110 = this;
 
           this.activatedRoute.data.subscribe(function (resolveData) {
-            _this111.allResolveData = resolveData.faqData.res;
+            _this110.allResolveData = resolveData.faqData.res;
 
-            for (var loop = 0; loop < _this111.allResolveData.length; loop++) {
-              _this111.allResolveData[loop].youtube_link_save = _this111.sanitizer.bypassSecurityTrustResourceUrl(_this111.allResolveData[loop].youtube_link);
+            for (var loop = 0; loop < _this110.allResolveData.length; loop++) {
+              _this110.allResolveData[loop].youtube_link_save = _this110.sanitizer.bypassSecurityTrustResourceUrl(_this110.allResolveData[loop].youtube_link);
             }
           });
         }
@@ -20636,7 +20640,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function HttpLoaderComponent(loaderService, activatedRoute, router) {
-        var _this112 = this;
+        var _this111 = this;
 
         _classCallCheck(this, HttpLoaderComponent);
 
@@ -20646,7 +20650,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var urlArr = this.router.url.split("/"); // if(urlArr[3] == 'bulk-upload') {
 
         this.loaderService.isLoading.subscribe(function (v) {
-          _this112.httpLoading = v;
+          _this111.httpLoading = v;
         }); // }
       }
 
@@ -21016,7 +21020,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getSignatureData",
         value: function getSignatureData() {
-          var _this113 = this;
+          var _this112 = this;
 
           var data = {
             "source": "doctor_signature",
@@ -21026,9 +21030,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "token": this.user_token
           };
           this.http.httpViaPost('datalist', data).subscribe(function (response) {
-            _this113.result = response.res[0]._id;
+            _this112.result = response.res[0]._id;
 
-            _this113.techUploadForm.controls['sign'].patchValue(response.res[0].sign);
+            _this112.techUploadForm.controls['sign'].patchValue(response.res[0].sign);
           });
         }
       }, {
@@ -21231,7 +21235,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DiagnosticAdminDashboardComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this114 = this;
+        var _this113 = this;
 
         _classCallCheck(this, DiagnosticAdminDashboardComponent);
 
@@ -21268,9 +21272,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this114.allResolveData = resolveData.dataCount.data.dashboardCount[0];
+          _this113.allResolveData = resolveData.dataCount.data.dashboardCount[0];
 
-          _this114.viewReportProcessData(_this114.htmlText.headerText);
+          _this113.viewReportProcessData(_this113.htmlText.headerText);
         });
       }
 
@@ -21283,7 +21287,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this115 = this;
+          var _this114 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -21295,9 +21299,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('admin-dashboard', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this115.allResolveData = response.data;
+              _this114.allResolveData = response.data;
             } else {
-              _this115.router.navigateByUrl('logout');
+              _this114.router.navigateByUrl('logout');
             }
           }); // for listing
 
@@ -21306,7 +21310,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this116 = this;
+          var _this115 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           // Set Header Flag
@@ -21455,12 +21459,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('dashboard-datalist', repostSignCond).subscribe(function (response) {
             if (response.status == true) {
-              _this116.allResolveData.tableDataFlag = true;
-              _this116.allResolveData.tableData = response.data;
-              _this116.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this116.allResolveData.tableData);
-              _this116.allDataSource.paginator = _this116.paginatorAll;
+              _this115.allResolveData.tableDataFlag = true;
+              _this115.allResolveData.tableData = response.data;
+              _this115.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this115.allResolveData.tableData);
+              _this115.allDataSource.paginator = _this115.paginatorAll;
             } else {
-              _this116.router.navigateByUrl('logout');
+              _this115.router.navigateByUrl('logout');
             }
           });
         }
@@ -21510,7 +21514,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this117 = this;
+          var _this116 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -21548,15 +21552,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this117.matSnackBar.open("Start downloading.", "Ok", {
+              _this116.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this117.viewReportProcessData(_this117.htmlText.headerText);
+              _this116.viewReportProcessData(_this116.htmlText.headerText);
             } else {
-              _this117.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this116.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -21567,7 +21571,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteReport",
         value: function deleteReport(pk_id, index) {
-          var _this118 = this;
+          var _this117 = this;
 
           var data = {
             width: '250px',
@@ -21589,7 +21593,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 break;
 
               case "Yes":
-                _this118.deleteProcess(pk_id, index);
+                _this117.deleteProcess(pk_id, index);
 
                 break;
             }
@@ -21598,7 +21602,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteProcess",
         value: function deleteProcess(pk_id, index) {
-          var _this119 = this;
+          var _this118 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -21607,9 +21611,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost('deletesingledata', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this119.allResolveData.tableData.splice(index, 1);
+              _this118.allResolveData.tableData.splice(index, 1);
 
-              _this119.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this119.allResolveData.tableData);
+              _this118.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this118.allResolveData.tableData);
               var data = {
                 width: '250px',
                 data: {
@@ -21623,7 +21627,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this119.dialogRef = _this119.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
+              _this118.dialogRef = _this118.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
             } else {
               var _data5 = {
                 width: '250px',
@@ -21638,15 +21642,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this119.dialogRef = _this119.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data5);
+              _this118.dialogRef = _this118.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data5);
 
-              _this119.dialogRef.afterClosed().subscribe(function (result) {
+              _this118.dialogRef.afterClosed().subscribe(function (result) {
                 switch (result) {
                   case "Close":
                     break;
 
                   case "Re-Try":
-                    _this119.deleteProcess(pk_id, index);
+                    _this118.deleteProcess(pk_id, index);
 
                     break;
                 }
@@ -21900,13 +21904,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          var _this120 = this;
+          var _this119 = this;
 
           this.cookies.delete('jwtToken');
           this.cookies.delete('user_details');
           this.cookies.deleteAll();
           setTimeout(function () {
-            _this120.router.navigateByUrl('logout');
+            _this119.router.navigateByUrl('logout');
           }, 1000);
         }
         /**logout function end here**/
@@ -22068,7 +22072,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DistributorsDashboardComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this121 = this;
+        var _this120 = this;
 
         _classCallCheck(this, DistributorsDashboardComponent);
 
@@ -22105,9 +22109,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this121.allResolveData = resolveData.dataCount.data.dashboardCount[0];
+          _this120.allResolveData = resolveData.dataCount.data.dashboardCount[0];
 
-          _this121.viewReportProcessData(_this121.htmlText.headerText);
+          _this120.viewReportProcessData(_this120.htmlText.headerText);
         });
       }
 
@@ -22120,7 +22124,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this122 = this;
+          var _this121 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -22132,9 +22136,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('admin-dashboard', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this122.allResolveData = response.data;
+              _this121.allResolveData = response.data;
             } else {
-              _this122.router.navigateByUrl('logout');
+              _this121.router.navigateByUrl('logout');
             }
           }); // for listing
 
@@ -22143,7 +22147,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this123 = this;
+          var _this122 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           // Set Header Flag
@@ -22292,12 +22296,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('dashboard-datalist', repostSignCond).subscribe(function (response) {
             if (response.status == true) {
-              _this123.allResolveData.tableDataFlag = true;
-              _this123.allResolveData.tableData = response.data;
-              _this123.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this123.allResolveData.tableData);
-              _this123.allDataSource.paginator = _this123.paginatorAll;
+              _this122.allResolveData.tableDataFlag = true;
+              _this122.allResolveData.tableData = response.data;
+              _this122.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this122.allResolveData.tableData);
+              _this122.allDataSource.paginator = _this122.paginatorAll;
             } else {
-              _this123.router.navigateByUrl('logout');
+              _this122.router.navigateByUrl('logout');
             }
           });
         }
@@ -22347,7 +22351,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this124 = this;
+          var _this123 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -22385,15 +22389,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this124.matSnackBar.open("Start downloading.", "Ok", {
+              _this123.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this124.viewReportProcessData(_this124.htmlText.headerText);
+              _this123.viewReportProcessData(_this123.htmlText.headerText);
             } else {
-              _this124.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this123.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -22404,7 +22408,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteReport",
         value: function deleteReport(pk_id, index) {
-          var _this125 = this;
+          var _this124 = this;
 
           var data = {
             width: '250px',
@@ -22426,7 +22430,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 break;
 
               case "Yes":
-                _this125.deleteProcess(pk_id, index);
+                _this124.deleteProcess(pk_id, index);
 
                 break;
             }
@@ -22435,7 +22439,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteProcess",
         value: function deleteProcess(pk_id, index) {
-          var _this126 = this;
+          var _this125 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -22444,9 +22448,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost('deletesingledata', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this126.allResolveData.tableData.splice(index, 1);
+              _this125.allResolveData.tableData.splice(index, 1);
 
-              _this126.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this126.allResolveData.tableData);
+              _this125.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this125.allResolveData.tableData);
               var data = {
                 width: '250px',
                 data: {
@@ -22460,7 +22464,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this126.dialogRef = _this126.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
+              _this125.dialogRef = _this125.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
             } else {
               var _data6 = {
                 width: '250px',
@@ -22475,15 +22479,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this126.dialogRef = _this126.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data6);
+              _this125.dialogRef = _this125.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data6);
 
-              _this126.dialogRef.afterClosed().subscribe(function (result) {
+              _this125.dialogRef.afterClosed().subscribe(function (result) {
                 switch (result) {
                   case "Close":
                     break;
 
                   case "Re-Try":
-                    _this126.deleteProcess(pk_id, index);
+                    _this125.deleteProcess(pk_id, index);
 
                     break;
                 }
@@ -22737,13 +22741,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          var _this127 = this;
+          var _this126 = this;
 
           this.cookies.delete('jwtToken');
           this.cookies.delete('user_details');
           this.cookies.deleteAll();
           setTimeout(function () {
-            _this127.router.navigateByUrl('logout');
+            _this126.router.navigateByUrl('logout');
           }, 1000);
         }
         /**logout function end here**/
@@ -22905,7 +22909,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DoctorGroupDashboardComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this128 = this;
+        var _this127 = this;
 
         _classCallCheck(this, DoctorGroupDashboardComponent);
 
@@ -22942,9 +22946,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this128.allResolveData = resolveData.dataCount.data.dashboardCount[0];
+          _this127.allResolveData = resolveData.dataCount.data.dashboardCount[0];
 
-          _this128.viewReportProcessData(_this128.htmlText.headerText);
+          _this127.viewReportProcessData(_this127.htmlText.headerText);
         });
       }
 
@@ -22957,7 +22961,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this129 = this;
+          var _this128 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -22969,9 +22973,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('admin-dashboard', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this129.allResolveData = response.data;
+              _this128.allResolveData = response.data;
             } else {
-              _this129.router.navigateByUrl('logout');
+              _this128.router.navigateByUrl('logout');
             }
           }); // for listing
 
@@ -22980,7 +22984,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this130 = this;
+          var _this129 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           // Set Header Flag
@@ -23129,12 +23133,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('dashboard-datalist', repostSignCond).subscribe(function (response) {
             if (response.status == true) {
-              _this130.allResolveData.tableDataFlag = true;
-              _this130.allResolveData.tableData = response.data;
-              _this130.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this130.allResolveData.tableData);
-              _this130.allDataSource.paginator = _this130.paginatorAll;
+              _this129.allResolveData.tableDataFlag = true;
+              _this129.allResolveData.tableData = response.data;
+              _this129.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this129.allResolveData.tableData);
+              _this129.allDataSource.paginator = _this129.paginatorAll;
             } else {
-              _this130.router.navigateByUrl('logout');
+              _this129.router.navigateByUrl('logout');
             }
           });
         }
@@ -23184,7 +23188,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this131 = this;
+          var _this130 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -23222,15 +23226,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this131.matSnackBar.open("Start downloading.", "Ok", {
+              _this130.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this131.viewReportProcessData(_this131.htmlText.headerText);
+              _this130.viewReportProcessData(_this130.htmlText.headerText);
             } else {
-              _this131.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this130.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -23241,7 +23245,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteReport",
         value: function deleteReport(pk_id, index) {
-          var _this132 = this;
+          var _this131 = this;
 
           var data = {
             width: '250px',
@@ -23263,7 +23267,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 break;
 
               case "Yes":
-                _this132.deleteProcess(pk_id, index);
+                _this131.deleteProcess(pk_id, index);
 
                 break;
             }
@@ -23272,7 +23276,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteProcess",
         value: function deleteProcess(pk_id, index) {
-          var _this133 = this;
+          var _this132 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -23281,9 +23285,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost('deletesingledata', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this133.allResolveData.tableData.splice(index, 1);
+              _this132.allResolveData.tableData.splice(index, 1);
 
-              _this133.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this133.allResolveData.tableData);
+              _this132.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this132.allResolveData.tableData);
               var data = {
                 width: '250px',
                 data: {
@@ -23297,7 +23301,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this133.dialogRef = _this133.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
+              _this132.dialogRef = _this132.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
             } else {
               var _data7 = {
                 width: '250px',
@@ -23312,15 +23316,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this133.dialogRef = _this133.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data7);
+              _this132.dialogRef = _this132.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data7);
 
-              _this133.dialogRef.afterClosed().subscribe(function (result) {
+              _this132.dialogRef.afterClosed().subscribe(function (result) {
                 switch (result) {
                   case "Close":
                     break;
 
                   case "Re-Try":
-                    _this133.deleteProcess(pk_id, index);
+                    _this132.deleteProcess(pk_id, index);
 
                     break;
                 }
@@ -23574,13 +23578,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          var _this134 = this;
+          var _this133 = this;
 
           this.cookies.delete('jwtToken');
           this.cookies.delete('user_details');
           this.cookies.deleteAll();
           setTimeout(function () {
-            _this134.router.navigateByUrl('logout');
+            _this133.router.navigateByUrl('logout');
           }, 1000);
         }
         /**logout function end here**/
@@ -24988,7 +24992,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddPatientManuallyComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this135 = this;
+          var _this134 = this;
 
           /******* Get user details from cookies ******/
           this.userDetails = JSON.parse(this.cookieService.get('user_details'));
@@ -24998,8 +25002,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this135.resolveData = data.eventdayarrData;
-              _this135.configData.responseData = data.eventdayarrData.data;
+              _this134.resolveData = data.eventdayarrData;
+              _this134.configData.responseData = data.eventdayarrData.data;
             });
           } else {
             this.openSnackBar('Token not found');
@@ -25009,17 +25013,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getStates",
         value: function getStates() {
-          var _this136 = this;
+          var _this135 = this;
 
           /* ****************** Get states value from assets/states.json ****************** */
           this.httpRequestService.get('assets/data/states.json').subscribe(function (res) {
-            _this136.states = res;
+            _this135.states = res;
             var insuranceData = [];
 
-            for (var i = 0; i < _this136.resolveData.others.insurance.length; i++) {
+            for (var i = 0; i < _this135.resolveData.others.insurance.length; i++) {
               var temp = {};
-              temp['text'] = _this136.resolveData.others.insurance[i].insurancename;
-              temp['value'] = _this136.resolveData.others.insurance[i]._id;
+              temp['text'] = _this135.resolveData.others.insurance[i].insurancename;
+              temp['value'] = _this135.resolveData.others.insurance[i]._id;
               insuranceData.push(temp);
             }
 
@@ -25029,27 +25033,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
             var insuranceTypeData = [];
 
-            for (var _i = 0; _i < _this136.resolveData.others.insurance_type.length; _i++) {
+            for (var _i = 0; _i < _this135.resolveData.others.insurance_type.length; _i++) {
               var _temp = {};
-              _temp['text'] = _this136.resolveData.others.insurance_type[_i].insurancetype_name;
-              _temp['value'] = _this136.resolveData.others.insurance_type[_i]._id;
-              _temp['child_of'] = _this136.resolveData.others.insurance_type[_i].insurance_id;
+              _temp['text'] = _this135.resolveData.others.insurance_type[_i].insurancetype_name;
+              _temp['value'] = _this135.resolveData.others.insurance_type[_i]._id;
+              _temp['child_of'] = _this135.resolveData.others.insurance_type[_i].insurance_id;
               insuranceTypeData.push(_temp);
             }
 
             console.log('insuranceTypeData', insuranceTypeData);
             var otherFieldsData = [];
 
-            for (var _i2 = 0; _i2 < _this136.resolveData.others.patient_information.length; _i2++) {
+            for (var _i2 = 0; _i2 < _this135.resolveData.others.patient_information.length; _i2++) {
               var fieldData = void 0;
 
-              switch (_this136.resolveData.others.patient_information[_i2].type) {
+              switch (_this135.resolveData.others.patient_information[_i2].type) {
                 case 'checkbox':
                   fieldData = {
                     type: 'checkbox',
-                    label: _this136.resolveData.others.patient_information[_i2].description,
+                    label: _this135.resolveData.others.patient_information[_i2].description,
                     checkItems: [{
-                      name: _this136.resolveData.others.patient_information[_i2].label,
+                      name: _this135.resolveData.others.patient_information[_i2].label,
                       value: false,
                       label: '',
                       labelPosition: 'before'
@@ -25060,27 +25064,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 case 'textfield':
                   fieldData = {
                     type: 'input',
-                    name: _this136.resolveData.others.patient_information[_i2].label,
-                    placeholder: _this136.resolveData.others.patient_information[_i2].description,
-                    label: _this136.resolveData.others.patient_information[_i2].description,
+                    name: _this135.resolveData.others.patient_information[_i2].label,
+                    placeholder: _this135.resolveData.others.patient_information[_i2].description,
+                    label: _this135.resolveData.others.patient_information[_i2].description,
                     value: ''
                   };
                   break;
 
                 case 'dropdown':
-                  for (var j = 0; j < _this136.resolveData.others.patient_information[_i2].addfield.length; j++) {
-                    _this136.resolveData.others.patient_information[_i2].addfield[j] = {
-                      text: _this136.resolveData.others.patient_information[_i2].addfield[j],
-                      value: _this136.resolveData.others.patient_information[_i2].addfield[j]
+                  for (var j = 0; j < _this135.resolveData.others.patient_information[_i2].addfield.length; j++) {
+                    _this135.resolveData.others.patient_information[_i2].addfield[j] = {
+                      text: _this135.resolveData.others.patient_information[_i2].addfield[j],
+                      value: _this135.resolveData.others.patient_information[_i2].addfield[j]
                     };
                   }
 
                   fieldData = {
                     type: 'select',
-                    name: _this136.resolveData.others.patient_information[_i2].label,
-                    placeholder: _this136.resolveData.others.patient_information[_i2].description,
-                    label: _this136.resolveData.others.patient_information[_i2].description,
-                    options: _this136.resolveData.others.patient_information[_i2].addfield
+                    name: _this135.resolveData.others.patient_information[_i2].label,
+                    placeholder: _this135.resolveData.others.patient_information[_i2].description,
+                    label: _this135.resolveData.others.patient_information[_i2].description,
+                    options: _this135.resolveData.others.patient_information[_i2].addfield
                   };
                   break;
               }
@@ -25116,7 +25120,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'state',
               placeholder: 'Select State',
               label: 'State',
-              options: _this136.states,
+              options: _this135.states,
               validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
               error: 'Select state'
             }, {
@@ -25190,7 +25194,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'booking_date',
               placeholder: 'Date',
               label: 'Booking date',
-              value: _this136.today,
+              value: _this135.today,
               disabled: true
             }];
             var checkboxFields = [{
@@ -26160,9 +26164,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               value: ''
             }];
 
-            _this136.httpRequestService.postRequest('get-doctor-info', {
+            _this135.httpRequestService.postRequest('get-doctor-info', {
               condition: {
-                _id: _this136.userDetails.doctor_id
+                _id: _this135.userDetails.doctor_id
               }
             }).subscribe(function (response) {
               var tech_ids = [];
@@ -26215,10 +26219,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: response.data.parent_id,
                 hidden: true
               }];
-              _this136.configData = Object.assign(_this136.configData, {
+              _this135.configData = Object.assign(_this135.configData, {
                 patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields, calendarInfoFormFields)
               });
-              console.log('this.configData', _this136.configData);
+              console.log('this.configData', _this135.configData);
             });
           }, function (error) {
             console.log('Oooops! Cannot get states.');
@@ -26366,7 +26370,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(DoctorOfficeAccountSettingsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this137 = this;
+          var _this136 = this;
 
           //generating the form
           this.generateForm(); //setting the default value
@@ -26375,7 +26379,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.allStateCityData();
           setTimeout(function () {
-            _this137.getCityByName(_this137.userData.state);
+            _this136.getCityByName(_this136.userData.state);
           }, 2000);
         }
       }, {
@@ -26414,7 +26418,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onSubmit",
         value: function onSubmit() {
-          var _this138 = this;
+          var _this137 = this;
 
           this.loader = true;
           if (this.accountForm.invalid) return;else {
@@ -26425,30 +26429,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == 'success') {
-                var userDetailsCookie = JSON.parse(_this138.cookieService.get('user_details'));
+                var userDetailsCookie = JSON.parse(_this137.cookieService.get('user_details'));
                 var type = userDetailsCookie.type;
 
-                _this138.cookieService.delete('user_details'); // -------------------------------------
+                _this137.cookieService.delete('user_details'); // -------------------------------------
 
 
-                userDetailsCookie.address = _this138.accountForm.value.address; // -------------------------------------
+                userDetailsCookie.address = _this137.accountForm.value.address; // -------------------------------------
 
                 userDetailsCookie = JSON.stringify(userDetailsCookie);
                 console.log("-->", userDetailsCookie);
-                _this138.loader = false;
+                _this137.loader = false;
                 var action = "Ok";
 
-                _this138.snackBar.open(_this138.message, action, {
+                _this137.snackBar.open(_this137.message, action, {
                   duration: 1000
                 });
 
                 setTimeout(function () {// this.cookieService.set('user_details', userDetailsCookie);
                 }, 1000);
                 setTimeout(function () {
-                  _this138.router.navigateByUrl('/doctor-office/dashboard');
+                  _this137.router.navigateByUrl('/doctor-office/dashboard');
                 }, 3000);
               } else {
-                _this138.snackBar.open(response.status, "OK", {
+                _this137.snackBar.open(response.status, "OK", {
                   duration: 1500
                 });
               }
@@ -26465,13 +26469,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this139 = this;
+          var _this138 = this;
 
           this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this139.states = response;
+            _this138.states = response;
           });
           this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this139.allCities = response;
+            _this138.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -26669,7 +26673,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "changePassword",
         value: function changePassword() {
-          var _this140 = this;
+          var _this139 = this;
 
           this.loader = true;
 
@@ -26683,21 +26687,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost('changepassword', data).subscribe(function (response) {
               // this.formDirective.resetForm();
-              _this140.loader = false;
+              _this139.loader = false;
 
               if (response.Status == true) {
-                _this140.snackBar.open(response.message, "OK", {
+                _this139.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
 
-                _this140.router.navigateByUrl('doctor-office/dashboard');
+                _this139.router.navigateByUrl('doctor-office/dashboard');
               } else {
-                _this140.snackBar.open(response.message, "OK", {
+                _this139.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
               }
             }, function (error) {
-              _this140.loader = false;
+              _this139.loader = false;
               alert("Some error occurred. Please try later.");
             });
           }
@@ -27468,15 +27472,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(BookAppoinmentNowComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this141 = this;
+          var _this140 = this;
 
           this.getStates();
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this141.resolveData = data.eventdayarrData;
-              _this141.configData.responseData = data.eventdayarrData.data;
+              _this140.resolveData = data.eventdayarrData;
+              _this140.configData.responseData = data.eventdayarrData.data;
             });
           } else {
             this.openSnackBar('Token not found');
@@ -27499,7 +27503,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateUser",
         value: function updateUser() {
-          var _this142 = this;
+          var _this141 = this;
 
           // let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
           if (this.activatedRoute.snapshot.params.refresh && this.cookieService.check('user_details')) {
@@ -27515,7 +27519,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               console.log('response', response);
 
               if (response.status == 'success') {
-                _this142.openSnackBar('Calendar added successfully...');
+                _this141.openSnackBar('Calendar added successfully...');
               }
             });
             var urlSendEmail = this.configData.baseUrl + 'send-confirmation-email?id=' + this.userDetails._id;
@@ -27523,7 +27527,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               if (response.status == 'success') {
                 console.log('Mail sent ', response.msg_id);
 
-                _this142.openSnackBar('Confirmation email sent to your email - ' + _this142.userDetails.email, 'Ok');
+                _this141.openSnackBar('Confirmation email sent to your email - ' + _this141.userDetails.email, 'Ok');
               }
             }); // Update user_details in cookie
 
@@ -27533,17 +27537,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getStates",
         value: function getStates() {
-          var _this143 = this;
+          var _this142 = this;
 
           /* ****************** Get states value from assets/states.json ****************** */
           this.httpRequestService.get('assets/data/states.json').subscribe(function (res) {
-            _this143.states = res;
+            _this142.states = res;
             var insuranceData = [];
 
-            for (var i = 0; i < _this143.resolveData.others.insurance.length; i++) {
+            for (var i = 0; i < _this142.resolveData.others.insurance.length; i++) {
               var temp = {};
-              temp['text'] = _this143.resolveData.others.insurance[i].insurancename;
-              temp['value'] = _this143.resolveData.others.insurance[i]._id;
+              temp['text'] = _this142.resolveData.others.insurance[i].insurancename;
+              temp['value'] = _this142.resolveData.others.insurance[i]._id;
               insuranceData.push(temp);
             }
 
@@ -27553,27 +27557,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
             var insuranceTypeData = [];
 
-            for (var _i4 = 0; _i4 < _this143.resolveData.others.insurance_type.length; _i4++) {
+            for (var _i4 = 0; _i4 < _this142.resolveData.others.insurance_type.length; _i4++) {
               var _temp3 = {};
-              _temp3['text'] = _this143.resolveData.others.insurance_type[_i4].insurancetype_name;
-              _temp3['value'] = _this143.resolveData.others.insurance_type[_i4]._id;
-              _temp3['child_of'] = _this143.resolveData.others.insurance_type[_i4].insurance_id;
+              _temp3['text'] = _this142.resolveData.others.insurance_type[_i4].insurancetype_name;
+              _temp3['value'] = _this142.resolveData.others.insurance_type[_i4]._id;
+              _temp3['child_of'] = _this142.resolveData.others.insurance_type[_i4].insurance_id;
               insuranceTypeData.push(_temp3);
             }
 
             console.log('insuranceTypeData', insuranceTypeData);
             var otherFieldsData = [];
 
-            for (var _i5 = 0; _i5 < _this143.resolveData.others.patient_information.length; _i5++) {
+            for (var _i5 = 0; _i5 < _this142.resolveData.others.patient_information.length; _i5++) {
               var fieldData = void 0;
 
-              switch (_this143.resolveData.others.patient_information[_i5].type) {
+              switch (_this142.resolveData.others.patient_information[_i5].type) {
                 case 'checkbox':
                   fieldData = {
                     type: 'checkbox',
-                    label: _this143.resolveData.others.patient_information[_i5].description,
+                    label: _this142.resolveData.others.patient_information[_i5].description,
                     checkItems: [{
-                      name: _this143.resolveData.others.patient_information[_i5].label,
+                      name: _this142.resolveData.others.patient_information[_i5].label,
                       value: false,
                       label: '',
                       labelPosition: 'before'
@@ -27584,27 +27588,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 case 'textfield':
                   fieldData = {
                     type: 'input',
-                    name: _this143.resolveData.others.patient_information[_i5].label,
-                    placeholder: _this143.resolveData.others.patient_information[_i5].description,
-                    label: _this143.resolveData.others.patient_information[_i5].description,
+                    name: _this142.resolveData.others.patient_information[_i5].label,
+                    placeholder: _this142.resolveData.others.patient_information[_i5].description,
+                    label: _this142.resolveData.others.patient_information[_i5].description,
                     value: ''
                   };
                   break;
 
                 case 'dropdown':
-                  for (var j = 0; j < _this143.resolveData.others.patient_information[_i5].addfield.length; j++) {
-                    _this143.resolveData.others.patient_information[_i5].addfield[j] = {
-                      text: _this143.resolveData.others.patient_information[_i5].addfield[j],
-                      value: _this143.resolveData.others.patient_information[_i5].addfield[j]
+                  for (var j = 0; j < _this142.resolveData.others.patient_information[_i5].addfield.length; j++) {
+                    _this142.resolveData.others.patient_information[_i5].addfield[j] = {
+                      text: _this142.resolveData.others.patient_information[_i5].addfield[j],
+                      value: _this142.resolveData.others.patient_information[_i5].addfield[j]
                     };
                   }
 
                   fieldData = {
                     type: 'select',
-                    name: _this143.resolveData.others.patient_information[_i5].label,
-                    placeholder: _this143.resolveData.others.patient_information[_i5].description,
-                    label: _this143.resolveData.others.patient_information[_i5].description,
-                    options: _this143.resolveData.others.patient_information[_i5].addfield
+                    name: _this142.resolveData.others.patient_information[_i5].label,
+                    placeholder: _this142.resolveData.others.patient_information[_i5].description,
+                    label: _this142.resolveData.others.patient_information[_i5].description,
+                    options: _this142.resolveData.others.patient_information[_i5].addfield
                   };
                   break;
               }
@@ -27640,7 +27644,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'state',
               placeholder: 'Select State',
               label: 'State',
-              options: _this143.states,
+              options: _this142.states,
               validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__["Validators"].required],
               error: 'Select state'
             }, {
@@ -27714,7 +27718,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'booking_date',
               placeholder: 'Date',
               label: 'Booking date',
-              value: _this143.today,
+              value: _this142.today,
               disabled: true
             }];
             var checkboxFields = [{
@@ -28694,9 +28698,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               value: ''
             }];
 
-            _this143.httpRequestService.postRequest('get-doctor-info', {
+            _this142.httpRequestService.postRequest('get-doctor-info', {
               condition: {
-                _id: _this143.userDetails.doctor_id
+                _id: _this142.userDetails.doctor_id
               }
             }).subscribe(function (response) {
               var hiddenFields = [{
@@ -28707,7 +28711,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }, {
                 type: 'input',
                 name: 'doctor_office_id',
-                value: _this143.userDetails._id,
+                value: _this142.userDetails._id,
                 hidden: true
               }, // {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
               {
@@ -28721,7 +28725,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: response.data.parent_id,
                 hidden: true
               }];
-              _this143.configData = Object.assign(_this143.configData, {
+              _this142.configData = Object.assign(_this142.configData, {
                 patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields)
               }, {
                 calendarInfoFormFields: calendarInfoFormFields
@@ -28951,7 +28955,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DoctorDashboardComponent(dialog, commonFunction, cookie, http, activatedRoute, matSnackBar, deviceService) {
-        var _this144 = this;
+        var _this143 = this;
 
         _classCallCheck(this, DoctorDashboardComponent);
 
@@ -29018,9 +29022,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         this.activatedRoute.data.forEach(function (resolveData) {
-          _this144.allResolveData = resolveData.doctordata.data;
+          _this143.allResolveData = resolveData.doctordata.data;
 
-          _this144.viewReportProcessData(_this144.htmlText.tableHeaderText);
+          _this143.viewReportProcessData(_this143.htmlText.tableHeaderText);
         });
       }
 
@@ -29038,7 +29042,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this145 = this;
+          var _this144 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           this.allDataColumns = ['no', 'patient_name', 'tech_name', 'doctor_name', 'biller_name', 'bill_generation_date', 'bill_sent_date', 'report_type', 'status', 'super_bill', 'action'];
@@ -29129,9 +29133,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('dashboard-datalist', data).subscribe(function (response) {
             if (response.data.length > 0) {
-              _this145.allResolveData.recordData = response.data;
-              _this145.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this145.allResolveData.recordData);
-              _this145.allDataSource.paginator = _this145.paginator;
+              _this144.allResolveData.recordData = response.data;
+              _this144.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this144.allResolveData.recordData);
+              _this144.allDataSource.paginator = _this144.paginator;
             }
           });
           var sectionData = {
@@ -29141,19 +29145,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost('datalist', sectionData).subscribe(function (response) {
             // if (response.data.length > 0) {
-            _this145.otherData["all_details"] = response.res[0]; // }
+            _this144.otherData["all_details"] = response.res[0]; // }
           });
         }
       }, {
         key: "openModal",
         value: function openModal(data) {
-          var _this146 = this;
+          var _this145 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_11__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this146.dialogRef.close();
+                _this145.dialogRef.close();
 
                 break;
             }
@@ -29162,7 +29166,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this147 = this;
+          var _this146 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -29200,15 +29204,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this147.matSnackBar.open("Start downloading...", "", {
+              _this146.matSnackBar.open("Start downloading...", "", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this147.refreshDashboard();
+              _this146.refreshDashboard();
             } else {
-              _this147.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this146.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -29217,7 +29221,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this148 = this;
+          var _this147 = this;
 
           var postData = {
             source: "data_pece",
@@ -29227,16 +29231,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("doctor-dashboard", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this148.allResolveData = response.data;
+              _this147.allResolveData = response.data;
 
-              _this148.viewReportProcessData(_this148.htmlText.tableHeaderText);
+              _this147.viewReportProcessData(_this147.htmlText.tableHeaderText);
             } else {
-              _this148.matSnackBar.open("Please wait...", "", {
+              _this147.matSnackBar.open("Please wait...", "", {
                 duration: 1000
               });
 
               setTimeout(function () {
-                _this148.refreshDashboard();
+                _this147.refreshDashboard();
               }, 1000);
             }
           });
@@ -29746,7 +29750,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getPatientData",
         value: function getPatientData(id) {
-          var _this149 = this;
+          var _this148 = this;
 
           var data = {
             "source": "data_pece",
@@ -29756,7 +29760,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "token": this.cookiesData.jwtToken
           };
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this149.htmlText.patientDetails = response.res[0];
+            _this148.htmlText.patientDetails = response.res[0];
           });
         }
       }, {
@@ -29908,7 +29912,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function PatientReportViewComponent(fb, activeRoute, router, httpService, datePipe, cookie, snakBar, dialog, commonFunction) {
-        var _this150 = this;
+        var _this149 = this;
 
         _classCallCheck(this, PatientReportViewComponent);
 
@@ -29956,16 +29960,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Upload":
-                _this150.dialogRef.close();
+                _this149.dialogRef.close();
 
-                _this150.router.navigateByUrl('/doctor/signature-management?view=' + activeRoute.snapshot.params._id);
+                _this149.router.navigateByUrl('/doctor/signature-management?view=' + activeRoute.snapshot.params._id);
 
                 break;
 
               case "Close":
-                _this150.dialogRef.close();
+                _this149.dialogRef.close();
 
-                _this150.router.navigateByUrl('/doctor/dashboard');
+                _this149.router.navigateByUrl('/doctor/dashboard');
 
                 break;
             }
@@ -29976,17 +29980,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PatientReportViewComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this151 = this;
+          var _this150 = this;
 
           this.activeRoute.data.forEach(function (data) {
-            _this151.htmlText.allResolveData = data.data.data;
-            console.log(">>>>", _this151.htmlText.allResolveData);
+            _this150.htmlText.allResolveData = data.data.data;
+            console.log(">>>>", _this150.htmlText.allResolveData);
 
-            if (typeof _this151.htmlText.allResolveData.reportData[0].stressi != 'undefined') {
-              _this151.htmlText.allResolveData.reportData[0].stressI = _this151.htmlText.allResolveData.reportData[0].stressi;
+            if (typeof _this150.htmlText.allResolveData.reportData[0].stressi != 'undefined') {
+              _this150.htmlText.allResolveData.reportData[0].stressI = _this150.htmlText.allResolveData.reportData[0].stressi;
             }
 
-            _this151.htmlText.allResolveData.reportData[0].BMI_flag = Math.round(_this151.htmlText.allResolveData.reportData[0].BMI);
+            _this150.htmlText.allResolveData.reportData[0].BMI_flag = Math.round(_this150.htmlText.allResolveData.reportData[0].BMI);
           });
 
           if (typeof this.cookiesData.user_details.diagnostic_admin_id != 'undefined') {
@@ -29996,7 +30000,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getBiller",
         value: function getBiller(id) {
-          var _this152 = this;
+          var _this151 = this;
 
           var data = {
             "source": "biller_by_doctor_id",
@@ -30014,7 +30018,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this152.htmlText.billers = response.res;
+            _this151.htmlText.billers = response.res;
           });
         }
       }, {
@@ -30043,7 +30047,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "reportSign",
         value: function reportSign() {
-          var _this153 = this;
+          var _this152 = this;
 
           var flug = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'default';
 
@@ -30073,35 +30077,35 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     "data": {
                       "bill_generation_date": new Date(),
                       "bill_sent_date": new Date(),
-                      "doctor_signature": _this153.cookiesData.user_details.doctor_signature,
+                      "doctor_signature": _this152.cookiesData.user_details.doctor_signature,
                       "biller_id": billerID,
                       "biller_name": billerName,
                       "biller_email": billerEmail,
-                      "download_link": _environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].siteBaseUrl + 'download/super-bill/' + _this153.htmlText.allResolveData.reportData[0]._id,
+                      "download_link": _environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].siteBaseUrl + 'download/super-bill/' + _this152.htmlText.allResolveData.reportData[0]._id,
                       "file_path": "",
                       "download_password": "",
-                      "details": _this153.htmlText.allResolveData.details,
-                      "provide_description": _this153.htmlText.allResolveData.provide_description,
+                      "details": _this152.htmlText.allResolveData.details,
+                      "provide_description": _this152.htmlText.allResolveData.provide_description,
                       "status": "Send to Biller"
                     },
-                    "report_id": _this153.htmlText.allResolveData.reportData[0]._id
+                    "report_id": _this152.htmlText.allResolveData.reportData[0]._id
                   };
-                  data.data["id"] = _this153.activeRoute.snapshot.params._id;
+                  data.data["id"] = _this152.activeRoute.snapshot.params._id;
 
-                  _this153.httpService.httpViaPost("report-sign-send-to-biller", data).subscribe(function (response) {
+                  _this152.httpService.httpViaPost("report-sign-send-to-biller", data).subscribe(function (response) {
                     if (response.status = "success") {
                       switch (flug) {
                         case 'back':
-                          _this153.dialogRef.close();
+                          _this152.dialogRef.close();
 
-                          _this153.router.navigateByUrl('/doctor/dashboard');
+                          _this152.router.navigateByUrl('/doctor/dashboard');
 
                           break;
 
                         case 'next':
-                          _this153.dialogRef.close();
+                          _this152.dialogRef.close();
 
-                          _this153.router.navigateByUrl('/doctor/dashboard');
+                          _this152.router.navigateByUrl('/doctor/dashboard');
 
                           break;
 
@@ -30114,7 +30118,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   break;
 
                 case "No":
-                  _this153.dialogRef.close();
+                  _this152.dialogRef.close();
 
                   break;
               }
@@ -30728,7 +30732,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateSignature",
         value: function updateSignature() {
-          var _this154 = this;
+          var _this153 = this;
 
           if (typeof this.htmlText.viewSign !== 'undefined' && this.htmlText.viewSign != '') {
             var data = {
@@ -30741,12 +30745,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost('addorupdatedata', data).subscribe(function (response) {
               if (response.status == "success") {
-                _this154.cookie.delete('user_details');
+                _this153.cookie.delete('user_details');
 
-                _this154.authData.user_details.doctor_signature = _this154.htmlText.viewSign;
-                var str = JSON.stringify(_this154.authData.user_details);
+                _this153.authData.user_details.doctor_signature = _this153.htmlText.viewSign;
+                var str = JSON.stringify(_this153.authData.user_details);
 
-                _this154.cookie.set('user_details', str);
+                _this153.cookie.set('user_details', str);
                 /* Open modal */
 
 
@@ -30764,7 +30768,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 };
 
-                _this154.openModal(modalData);
+                _this153.openModal(modalData);
               }
             });
           } else {
@@ -30783,16 +30787,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "openModal",
         value: function openModal(data) {
-          var _this155 = this;
+          var _this154 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_6__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this155.dialogRef.close();
+                _this154.dialogRef.close();
 
-                _this155.activatedRoute.queryParams.subscribe(function (getData) {
-                  _this155.router.navigateByUrl('/doctor/patient-record-report/' + getData['view']);
+                _this154.activatedRoute.queryParams.subscribe(function (getData) {
+                  _this154.router.navigateByUrl('/doctor/patient-record-report/' + getData['view']);
                 });
 
                 break;
@@ -31979,10 +31983,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getEvents",
         value: function getEvents() {
-          var _this156 = this;
+          var _this155 = this;
 
           this.activatedRoute.data.forEach(function (data) {
-            _this156.configData.responseData = data.eventListData.data;
+            _this155.configData.responseData = data.eventListData.data;
           });
         }
       }, {
@@ -32203,12 +32207,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalHomeComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this157 = this;
+          var _this156 = this;
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this157.configData.responseData = data.eventdayarrData.data;
+              _this156.configData.responseData = data.eventdayarrData.data;
             }); // Merge logged in user details with the config data
 
             var userDetails = JSON.parse(this.cookieService.get('user_details'));
@@ -32372,7 +32376,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalSyncWithGoogleComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this158 = this;
+          var _this157 = this;
 
           this.userDetails = JSON.parse(this.cookieService.get('user_details'));
 
@@ -32380,53 +32384,53 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var url = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_6__["environment"].calendarApi + 'getauthorization-pece-getuserdata' + '?access_token=' + this.activatedRoute.snapshot.params.access_token;
             this.httpRequestService.get(url).subscribe(function (response) {
               var data = {
-                token: _this158.cookieService.get('jwtToken'),
-                id: _this158.userDetails._id,
+                token: _this157.cookieService.get('jwtToken'),
+                id: _this157.userDetails._id,
                 data: {
-                  access_token: _this158.activatedRoute.snapshot.params.access_token,
-                  refresh_token: _this158.activatedRoute.snapshot.params.refresh,
+                  access_token: _this157.activatedRoute.snapshot.params.access_token,
+                  refresh_token: _this157.activatedRoute.snapshot.params.refresh,
                   connected_gmail: response.id
                 }
               }; // Update user details in database
 
-              _this158.httpRequestService.postRequest('update-user', data).subscribe(function (response) {
+              _this157.httpRequestService.postRequest('update-user', data).subscribe(function (response) {
                 console.log('response', response);
 
                 if (response.status == 'success') {
-                  _this158.openSnackBar('Calendar added successfully...');
+                  _this157.openSnackBar('Calendar added successfully...');
 
                   setInterval(function () {
-                    _this158.secCount = _this158.secCount - 1;
-                    _this158.displayMessage = "Synchronize Complete. You will be redirected in " + _this158.secCount + " sec.";
+                    _this157.secCount = _this157.secCount - 1;
+                    _this157.displayMessage = "Synchronize Complete. You will be redirected in " + _this157.secCount + " sec.";
 
-                    if (_this158.secCount == 0) {
-                      _this158.secCount = 1;
+                    if (_this157.secCount == 0) {
+                      _this157.secCount = 1;
 
-                      _this158.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
+                      _this157.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
                     }
                   }, 1000);
                 } else {
-                  _this158.openSnackBar("An error occurs. Please try again.", "Ok");
+                  _this157.openSnackBar("An error occurs. Please try again.", "Ok");
 
                   setTimeout(function () {
-                    _this158.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
+                    _this157.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
                   }, 4000);
                 }
               }); // Send email to the logged in user
 
 
-              var urlSendEmail = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_6__["environment"].calendarApi + 'send-confirmation-email?id=' + _this158.userDetails._id;
+              var urlSendEmail = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_6__["environment"].calendarApi + 'send-confirmation-email?id=' + _this157.userDetails._id;
 
-              _this158.httpRequestService.get(urlSendEmail).subscribe(function (response) {
+              _this157.httpRequestService.get(urlSendEmail).subscribe(function (response) {
                 if (response.status == 'success') {
                   console.log('Mail sent ', response.msg_id);
 
-                  _this158.openSnackBar('Confirmation email sent to your email - ' + _this158.userDetails.email, 'Ok');
+                  _this157.openSnackBar('Confirmation email sent to your email - ' + _this157.userDetails.email, 'Ok');
                 }
               }); // Update user_details in cookie
 
 
-              _this158.cookieService.set('user_details', JSON.stringify(Object.assign(_this158.userDetails, data.data)));
+              _this157.cookieService.set('user_details', JSON.stringify(Object.assign(_this157.userDetails, data.data)));
             });
             /* **********************************************************************************
             this.httpRequestService.httpViaPost('cal-update-user', data).subscribe((response) => {
@@ -32988,13 +32992,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalViewSlotComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this159 = this;
+          var _this158 = this;
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this159.configData.responseData = data.eventdayarrData.data;
-              console.log('responseData', _this159.configData.responseData);
+              _this158.configData.responseData = data.eventdayarrData.data;
+              console.log('responseData', _this158.configData.responseData);
             });
           } else {
             this.openSnackBar('Token not found');
@@ -33341,7 +33345,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllDoctorData",
         value: function getAllDoctorData() {
-          var _this160 = this;
+          var _this159 = this;
 
           var data = {
             "source": "doctors_by_tech_id",
@@ -33353,7 +33357,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
             var result = {};
             result = response.res;
-            _this160.allDoctorDataArray = result;
+            _this159.allDoctorDataArray = result;
           });
         }
       }, {
@@ -33422,7 +33426,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "bulkUploaddataSubmit",
         value: function bulkUploaddataSubmit() {
-          var _this161 = this;
+          var _this160 = this;
 
           if (this.configData.files.length > 0) {
             for (var loop in this.configData.files) {
@@ -33459,12 +33463,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost("upload-bulk-report", data).subscribe(function (response) {
               if (response.status = "success") {
-                _this161.snakBar.open("Successfully Submitted", "OK", {
+                _this160.snakBar.open("Successfully Submitted", "OK", {
                   duration: 1000
                 });
 
                 setTimeout(function () {
-                  _this161.router.navigateByUrl('/tech/patient-management/bulk-upload/report-conformation/' + response.upload_id);
+                  _this160.router.navigateByUrl('/tech/patient-management/bulk-upload/report-conformation/' + response.upload_id);
                 }, 2000);
               }
             });
@@ -33635,7 +33639,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function ReportConformationComponent(snackBar, dialog, http, cookieService, router, activatedRoute) {
-        var _this162 = this;
+        var _this161 = this;
 
         _classCallCheck(this, ReportConformationComponent);
 
@@ -33684,16 +33688,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.http.httpViaPost('datalist', data).subscribe(function (response) {
           if (response.status == true) {
             /* Get name using file name start */
-            _this162.htmlText.confirmSubmittedDataSource = response.res;
+            _this161.htmlText.confirmSubmittedDataSource = response.res;
             var patientSearch = [];
 
-            for (var loop = 0; loop < _this162.htmlText.confirmSubmittedDataSource.length; loop++) {
-              var patientNameArr = _this162.htmlText.confirmSubmittedDataSource[loop].file_original_name.split(' ');
+            for (var loop = 0; loop < _this161.htmlText.confirmSubmittedDataSource.length; loop++) {
+              var patientNameArr = _this161.htmlText.confirmSubmittedDataSource[loop].file_original_name.split(' ');
 
-              _this162.htmlText.confirmSubmittedDataSource[loop].patient_name = patientNameArr[0] + ' ' + patientNameArr[1];
-              _this162.htmlText.confirmSubmittedDataSource[loop].patient_name_search = patientNameArr[0];
+              _this161.htmlText.confirmSubmittedDataSource[loop].patient_name = patientNameArr[0] + ' ' + patientNameArr[1];
+              _this161.htmlText.confirmSubmittedDataSource[loop].patient_name_search = patientNameArr[0];
               patientSearch.push(patientNameArr[0]);
-              _this162.htmlText.confirmSubmittedDataSource[loop].patient_details = [];
+              _this161.htmlText.confirmSubmittedDataSource[loop].patient_details = [];
             }
             /* Get name using file name end */
 
@@ -33704,33 +33708,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "source": "google_events",
               "condition": {
                 "patient_name": patientSearch,
-                "userid": _this162.htmlText.userData.user_details._id
+                "userid": _this161.htmlText.userData.user_details._id
               },
-              "token": _this162.htmlText.userData.jwtToken
+              "token": _this161.htmlText.userData.jwtToken
             };
 
-            _this162.http.httpViaPost('bulk-upload-patient-match', _data8).subscribe(function (response) {
+            _this161.http.httpViaPost('bulk-upload-patient-match', _data8).subscribe(function (response) {
               for (var _loop = 0; _loop < response.data.match_patient.length; _loop++) {
-                _this162.options.push(response.data.match_patient[_loop].patient_name);
+                _this161.options.push(response.data.match_patient[_loop].patient_name);
               }
 
-              _this162.htmlText.options = response.data.match_patient;
-              _this162.htmlText.conflictingPatientRecordsDataSource = [];
+              _this161.htmlText.options = response.data.match_patient;
+              _this161.htmlText.conflictingPatientRecordsDataSource = [];
 
               if (response.status == "success") {
-                for (var _loop2 = 0; _loop2 < _this162.htmlText.confirmSubmittedDataSource.length; _loop2++) {
+                for (var _loop2 = 0; _loop2 < _this161.htmlText.confirmSubmittedDataSource.length; _loop2++) {
                   for (var loop2 = 0; loop2 < response.data.match_patient.length; loop2++) {
                     /* For find some patient */
-                    if (_this162.htmlText.confirmSubmittedDataSource[_loop2].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
+                    if (_this161.htmlText.confirmSubmittedDataSource[_loop2].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
                       /* checking duplicate */
-                      if (typeof _this162.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag == 'undefined') {
-                        _this162.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag = true;
+                      if (typeof _this161.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag == 'undefined') {
+                        _this161.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag = true;
 
-                        _this162.htmlText.confirmSubmittedDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
+                        _this161.htmlText.confirmSubmittedDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
                       } else {
-                        _this162.htmlText.conflictingPatientRecordsDataSource.push(_this162.htmlText.confirmSubmittedDataSource[_loop2]);
+                        _this161.htmlText.conflictingPatientRecordsDataSource.push(_this161.htmlText.confirmSubmittedDataSource[_loop2]);
 
-                        _this162.htmlText.conflictingPatientRecordsDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
+                        _this161.htmlText.conflictingPatientRecordsDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
                       }
                     }
                   }
@@ -33738,25 +33742,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 /* Delete conflict data */
 
 
-                for (var _loop3 = 0; _loop3 < _this162.htmlText.confirmSubmittedDataSource.length; _loop3++) {
-                  if (_this162.htmlText.confirmSubmittedDataSource[_loop3].patient_details.length > 1) {
-                    _this162.htmlText.confirmSubmittedDataSource.splice(_loop3, 1);
+                for (var _loop3 = 0; _loop3 < _this161.htmlText.confirmSubmittedDataSource.length; _loop3++) {
+                  if (_this161.htmlText.confirmSubmittedDataSource[_loop3].patient_details.length > 1) {
+                    _this161.htmlText.confirmSubmittedDataSource.splice(_loop3, 1);
                   }
                 }
                 /* Add not find data */
 
 
-                _this162.htmlText.notFindDataSource = [];
+                _this161.htmlText.notFindDataSource = [];
 
-                for (var _loop4 = 0; _loop4 < _this162.htmlText.confirmSubmittedDataSource.length; _loop4++) {
-                  if (typeof _this162.htmlText.confirmSubmittedDataSource[_loop4].patient_find_flag == 'undefined') {
-                    _this162.htmlText.notFindDataSource.push(_this162.htmlText.confirmSubmittedDataSource[_loop4]);
+                for (var _loop4 = 0; _loop4 < _this161.htmlText.confirmSubmittedDataSource.length; _loop4++) {
+                  if (typeof _this161.htmlText.confirmSubmittedDataSource[_loop4].patient_find_flag == 'undefined') {
+                    _this161.htmlText.notFindDataSource.push(_this161.htmlText.confirmSubmittedDataSource[_loop4]);
                   }
                 }
 
-                _this162.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this162.htmlText.confirmSubmittedDataSource);
-                _this162.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this162.htmlText.conflictingPatientRecordsDataSource);
-                _this162.notFindPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this162.htmlText.notFindDataSource);
+                _this161.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this161.htmlText.confirmSubmittedDataSource);
+                _this161.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this161.htmlText.conflictingPatientRecordsDataSource);
+                _this161.notFindPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this161.htmlText.notFindDataSource);
               }
             });
           }
@@ -33766,10 +33770,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ReportConformationComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this163 = this;
+          var _this162 = this;
 
           this.filteredOptions = this.myControl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["startWith"])(''), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["map"])(function (value) {
-            return _this163._filter(value);
+            return _this162._filter(value);
           }));
         }
       }, {
@@ -33782,7 +33786,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "selectConflictingRecord",
         value: function selectConflictingRecord(flag, conflictIndex, selectIndex) {
-          var _this164 = this;
+          var _this163 = this;
 
           if (flag == 'conflicting') {
             var data = {
@@ -33805,18 +33809,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   break;
 
                 case "Yes":
-                  var patientDetails = _this164.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details[selectIndex];
+                  var patientDetails = _this163.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details[selectIndex];
 
-                  _this164.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.splice(0, _this164.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.length);
+                  _this163.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.splice(0, _this163.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.length);
 
-                  _this164.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.push(patientDetails);
+                  _this163.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.push(patientDetails);
 
-                  _this164.htmlText.confirmSubmittedDataSource.push(_this164.htmlText.conflictingPatientRecordsDataSource[conflictIndex]);
+                  _this163.htmlText.confirmSubmittedDataSource.push(_this163.htmlText.conflictingPatientRecordsDataSource[conflictIndex]);
 
-                  _this164.htmlText.conflictingPatientRecordsDataSource.splice(conflictIndex, 1);
+                  _this163.htmlText.conflictingPatientRecordsDataSource.splice(conflictIndex, 1);
 
-                  _this164.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this164.htmlText.confirmSubmittedDataSource);
-                  _this164.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this164.htmlText.conflictingPatientRecordsDataSource);
+                  _this163.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this163.htmlText.confirmSubmittedDataSource);
+                  _this163.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this163.htmlText.conflictingPatientRecordsDataSource);
                   break;
               }
             });
@@ -33863,7 +33867,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateRecord",
         value: function updateRecord() {
-          var _this165 = this;
+          var _this164 = this;
 
           if (this.checkboxData.checkbox1 == true && this.checkboxData.checkbox2 == true) {
             var data = {
@@ -33873,15 +33877,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost("update-upload-file", data).subscribe(function (response) {
               if (response.status == 'success') {
-                _this165.snackBar.open("Successfully updated.", "Ok", {
+                _this164.snackBar.open("Successfully updated.", "Ok", {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  _this165.router.navigateByUrl('/tech/dashboard');
+                  _this164.router.navigateByUrl('/tech/dashboard');
                 }, 1000);
               } else {
-                _this165.snackBar.open(response.msg + " Error code: F-AEA-TS-164.", "Ok", {
+                _this164.snackBar.open(response.msg + " Error code: F-AEA-TS-164.", "Ok", {
                   duration: 2000
                 });
               }
@@ -34172,7 +34176,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function TechDashboardComponent(cookie, http, httpService, activatedRoute, commonFunction, dialog) {
-        var _this166 = this;
+        var _this165 = this;
 
         _classCallCheck(this, TechDashboardComponent);
 
@@ -34199,10 +34203,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.authData["userData"] = JSON.parse(allData.user_details);
         this.authData["jwtToken"] = cookie.get('jwtToken');
         this.activatedRoute.data.forEach(function (data) {
-          _this166.allResolveData = data.techDashboardData.data;
-          _this166.allResolveData["totalRemainToProcessCount"] = _this166.allResolveData.totalReportCount - _this166.allResolveData.processedReportCount;
-          var allDashboardData = _this166.allResolveData.totalReportData;
-          _this166.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
+          _this165.allResolveData = data.techDashboardData.data;
+          _this165.allResolveData["totalRemainToProcessCount"] = _this165.allResolveData.totalReportCount - _this165.allResolveData.processedReportCount;
+          var allDashboardData = _this165.allResolveData.totalReportData;
+          _this165.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
         });
       }
 
@@ -34219,7 +34223,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewDetailsData",
         value: function viewDetailsData(flag) {
-          var _this167 = this;
+          var _this166 = this;
 
           var condition = {};
           this.htmlText.headerText = flag;
@@ -34326,21 +34330,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpService.httpViaPost('dashboard-datalist', condition).subscribe(function (response) {
             var allDashboardData = response.data;
-            _this167.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
-            _this167.allDataSource.paginator = _this167.paginator;
-            _this167.allDataSource.sort = _this167.sortAll;
+            _this166.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
+            _this166.allDataSource.paginator = _this166.paginator;
+            _this166.allDataSource.sort = _this166.sortAll;
           });
         }
       }, {
         key: "openDialog",
         value: function openDialog(data) {
-          var _this168 = this;
+          var _this167 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_10__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this168.dialogRef.close();
+                _this167.dialogRef.close();
 
                 break;
             }
@@ -34417,7 +34421,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DoctorViewDialogComponent(dialogRef, data, cookie, http, httpService) {
-        var _this169 = this;
+        var _this168 = this;
 
         _classCallCheck(this, DoctorViewDialogComponent);
 
@@ -34442,8 +34446,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var result = response.res;
 
           if (response.resc > 0) {
-            _this169.loader = false;
-            _this169.allDoctorData = response.res;
+            _this168.loader = false;
+            _this168.allDoctorData = response.res;
           }
         });
       }
@@ -34845,13 +34849,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TestComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this170 = this;
+          var _this169 = this;
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this170.configData.responseData = data.eventdayarrData.data;
-              console.log('responseData', _this170.configData.responseData);
+              _this169.configData.responseData = data.eventdayarrData.data;
+              console.log('responseData', _this169.configData.responseData);
             });
           } else {
             this.openSnackBar("Token not found", null);
@@ -37643,7 +37647,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalendarService, [{
         key: "resolve",
         value: function resolve(route, state) {
-          var _this171 = this;
+          var _this170 = this;
 
           /* will come into play while editing otherwise no effect */
           var requestData = route.data.requestcondition;
@@ -37662,17 +37666,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   };
                   /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
 
-                  if (route.data.endpoint == 'view-event-eventdayarr' && _this171.cookieService.check('timezone')) {
-                    data.timezone = _this171.cookieService.get('timezone');
+                  if (route.data.endpoint == 'view-event-eventdayarr' && _this170.cookieService.check('timezone')) {
+                    data.timezone = _this170.cookieService.get('timezone');
                   }
                   /* If endpoint is 'view-event-eventdayarr' and user is not an admin */
 
 
-                  if (route.data.endpoint == 'view-event-eventdayarr' && _this171.cookieService.check('user_details')) {
-                    data.condition = JSON.parse(_this171.cookieService.get('user_details')).email;
+                  if (route.data.endpoint == 'view-event-eventdayarr' && _this170.cookieService.check('user_details')) {
+                    data.condition = JSON.parse(_this170.cookieService.get('user_details')).email;
                   }
 
-                  _this171.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
+                  _this170.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
                     if (api_object) {
                       returnData[route.data.requestcondition.source[i]] = api_object;
                     } else {
@@ -37692,27 +37696,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               })();
             } else {
               /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
-              if (route.data.endpoint == 'view-event-eventdayarr' && _this171.cookieService.check('timezone')) {
-                route.data.requestcondition.timezone = _this171.cookieService.get('timezone');
+              if (route.data.endpoint == 'view-event-eventdayarr' && _this170.cookieService.check('timezone')) {
+                route.data.requestcondition.timezone = _this170.cookieService.get('timezone');
               }
               /* If user is not an admin */
 
 
-              if (_this171.cookieService.check('user_details') && JSON.parse(_this171.cookieService.get('user_details')).user_type == 'tech') {
+              if (_this170.cookieService.check('user_details') && JSON.parse(_this170.cookieService.get('user_details')).user_type == 'tech') {
                 route.data.requestcondition.condition = Object.assign(route.data.requestcondition.condition, {
                   userid: {
-                    $in: [JSON.parse(_this171.cookieService.get('user_details'))._id]
+                    $in: [JSON.parse(_this170.cookieService.get('user_details'))._id]
                   }
                 }); // route.data.requestcondition.condition.$or.push({userid: JSON.parse(this.cookieService.get('user_details'))._id});
               } else {
                 route.data.requestcondition.condition = Object.assign(route.data.requestcondition.condition, {
                   userid: {
-                    $in: JSON.parse(_this171.cookieService.get('user_details')).tech_id
+                    $in: JSON.parse(_this170.cookieService.get('user_details')).tech_id
                   }
                 });
               }
 
-              _this171.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
+              _this170.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
                 if (api_object) {
                   return resolve(api_object);
                 } else {
@@ -38095,7 +38099,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ResolveService, [{
         key: "resolve",
         value: function resolve(route, state) {
-          var _this172 = this;
+          var _this171 = this;
 
           /* will come into play while editing otherwise no effect */
           var requestData = route.data.requestcondition;
@@ -38210,7 +38214,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   condition: {}
                 };
 
-                _this172._apiService.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
+                _this171._apiService.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
                   if (api_object) {
                     returnData[route.data.requestcondition.source[i]] = api_object;
                     return resolve(returnData);
@@ -38226,8 +38230,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
             } else {
               /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
-              if (route.data.endpoint == 'view-event-eventdayarr' && _this172.cookies.check('timezone')) {
-                route.data.requestcondition.timezone = _this172.cookies.get('timezone');
+              if (route.data.endpoint == 'view-event-eventdayarr' && _this171.cookies.check('timezone')) {
+                route.data.requestcondition.timezone = _this171.cookies.get('timezone');
               }
               /* If user is not an admin */
               // if (this.cookies.check('user_details') &&
@@ -38238,7 +38242,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               // }
 
 
-              _this172._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
+              _this171._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
                 if (api_object) {
                   return resolve(api_object);
                 } else {
