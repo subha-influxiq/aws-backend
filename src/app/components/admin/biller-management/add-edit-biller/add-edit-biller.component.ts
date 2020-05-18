@@ -35,8 +35,8 @@ export class AddEditBillerComponent implements OnInit {
     buttonText: 'Save',
     userData: '',
     parent_type: [{
-      name: "Distributor"
-    }, { name: "DiagnosticAdmin" }, { name: "DoctorGroup" }],
+      name: "Distributor",value:"distributor"
+    }, { name: "DiagnosticAdmin",value:"diagnostic_admin" }, { name: "DoctorGroup",value:"doctor_group" }],
   };
   public params_id: any;
   public message: any = "Submitted Successfully";

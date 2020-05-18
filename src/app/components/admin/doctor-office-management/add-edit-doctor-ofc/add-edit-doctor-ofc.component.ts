@@ -36,8 +36,8 @@ export class AddEditDoctorOfcComponent implements OnInit {
     techData: "",
     billerData: "",
     parent_type: [{
-      name: "Distributor"
-    }, { name: "DiagnosticAdmin" }, { name: "DoctorGroup" }],
+      name: "Distributor",value:"distributor"
+    }, { name: "DiagnosticAdmin",value:"diagnostic_admin" }, { name: "DoctorGroup",value:"doctor_group" }],
     states: "",
     allCities: "",
     cities: "",
@@ -53,11 +53,11 @@ export class AddEditDoctorOfcComponent implements OnInit {
       this.htmlText.userData = this.cookieService.getAll();
       console.log(this.htmlText.userData.user_type);
       this.htmlText.user_details = JSON.parse(this.htmlText.userData.user_details);
-      if(this.htmlText.user_details.user_type == 'admin') {
-      this.getAllTechData();
-      } else {
-       this.getAllTechData(this.htmlText.user_details._id);
-      }
+      // if(this.htmlText.user_details.user_type == 'admin') {
+      // this.getAllTechData();
+      // } else {
+      //  this.getAllTechData(this.htmlText.user_details._id);
+      // }
       this.allStateCityData();
       
       if (this.acivatedRoute.snapshot.params._id) {
@@ -187,25 +187,25 @@ export class AddEditDoctorOfcComponent implements OnInit {
   }
 
   /**getting all the technician data**/
-  getAllTechData(id:any='') {
-    console.log(">>>>>", this.htmlText.user_details);
+  // getAllTechData(id:any='') {
+  //   console.log(">>>>>", this.htmlText.user_details);
 
-    var data = {
-      "source": "data_pece",
-      "condition": {
-        "user_type": "tech",
-        "tech_id": this.htmlText.user_details.tech_id
-      },
-      "token": this.htmlText.userData.jwtToken
-    };
+  //   var data = {
+  //     "source": "data_pece",
+  //     "condition": {
+  //       "user_type": "tech",
+  //       "tech_id": this.htmlText.user_details.tech_id
+  //     },
+  //     "token": this.htmlText.userData.jwtToken
+  //   };
 
-    if(this.htmlText.user_details.user_type !='admin') {
-      data.condition["parent_id"] = id;
-    }
-    this.httpService.httpViaPost('datalist', data).subscribe(response => {
-      this.htmlText.techData = response.res;
-    });
-  }
+  //   if(this.htmlText.user_details.user_type !='admin') {
+  //     data.condition["parent_id"] = id;
+  //   }
+  //   this.httpService.httpViaPost('datalist', data).subscribe(response => {
+  //     this.htmlText.techData = response.res;
+  //   });
+  // }
 
   /**getting all the Parent data**/
 
