@@ -26165,22 +26165,46 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 _id: _this136.userDetails.doctor_id
               }
             }).subscribe(function (response) {
-              var hiddenFields = [{
-                type: 'input',
+              var tech_ids = [];
+
+              for (var _i3 = 0; _i3 < response.data.tech_ids.id.length; _i3++) {
+                var _temp2 = {};
+                _temp2['text'] = response.data.tech_ids.firstname[_i3] + ' ' + response.data.tech_ids.lastname[_i3];
+                _temp2['value'] = response.data.tech_ids.id[_i3];
+                _temp2['child_of'] = response.data._id;
+                tech_ids.push(_temp2);
+                console.log('tech_ids', tech_ids);
+              }
+
+              console.log('tech_ids', tech_ids);
+              calendarInfoFormFields.push({
+                type: 'select',
                 name: 'doctor_id',
-                value: response.data._id,
-                hidden: true
+                placeholder: 'Select Doctor',
+                label: 'Doctor Name',
+                value: '',
+                options: [{
+                  text: response.data.firstname + ' ' + response.data.lastname,
+                  value: response.data._id
+                }]
               }, {
+                type: 'select',
+                name: 'tech_id',
+                placeholder: 'Select Tech',
+                label: 'Tech Name',
+                value: '',
+                isDependent: true,
+                dependentOn: 'doctor_id',
+                options: tech_ids
+              });
+              var hiddenFields = [// {type: 'input', name: 'doctor_id', value: response.data._id, hidden: true},
+              {
                 type: 'input',
                 name: 'doctor_office_id',
                 value: response.data.doctor_office_id,
                 hidden: true
-              }, {
-                type: 'input',
-                name: 'tech_id',
-                value: response.data.tech_id,
-                hidden: true
-              }, {
+              }, // {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
+              {
                 type: 'input',
                 name: 'parent_type',
                 value: response.data.parent_type,
@@ -27529,27 +27553,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
             var insuranceTypeData = [];
 
-            for (var _i3 = 0; _i3 < _this143.resolveData.others.insurance_type.length; _i3++) {
-              var _temp2 = {};
-              _temp2['text'] = _this143.resolveData.others.insurance_type[_i3].insurancetype_name;
-              _temp2['value'] = _this143.resolveData.others.insurance_type[_i3]._id;
-              _temp2['child_of'] = _this143.resolveData.others.insurance_type[_i3].insurance_id;
-              insuranceTypeData.push(_temp2);
+            for (var _i4 = 0; _i4 < _this143.resolveData.others.insurance_type.length; _i4++) {
+              var _temp3 = {};
+              _temp3['text'] = _this143.resolveData.others.insurance_type[_i4].insurancetype_name;
+              _temp3['value'] = _this143.resolveData.others.insurance_type[_i4]._id;
+              _temp3['child_of'] = _this143.resolveData.others.insurance_type[_i4].insurance_id;
+              insuranceTypeData.push(_temp3);
             }
 
             console.log('insuranceTypeData', insuranceTypeData);
             var otherFieldsData = [];
 
-            for (var _i4 = 0; _i4 < _this143.resolveData.others.patient_information.length; _i4++) {
+            for (var _i5 = 0; _i5 < _this143.resolveData.others.patient_information.length; _i5++) {
               var fieldData = void 0;
 
-              switch (_this143.resolveData.others.patient_information[_i4].type) {
+              switch (_this143.resolveData.others.patient_information[_i5].type) {
                 case 'checkbox':
                   fieldData = {
                     type: 'checkbox',
-                    label: _this143.resolveData.others.patient_information[_i4].description,
+                    label: _this143.resolveData.others.patient_information[_i5].description,
                     checkItems: [{
-                      name: _this143.resolveData.others.patient_information[_i4].label,
+                      name: _this143.resolveData.others.patient_information[_i5].label,
                       value: false,
                       label: '',
                       labelPosition: 'before'
@@ -27560,27 +27584,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 case 'textfield':
                   fieldData = {
                     type: 'input',
-                    name: _this143.resolveData.others.patient_information[_i4].label,
-                    placeholder: _this143.resolveData.others.patient_information[_i4].description,
-                    label: _this143.resolveData.others.patient_information[_i4].description,
+                    name: _this143.resolveData.others.patient_information[_i5].label,
+                    placeholder: _this143.resolveData.others.patient_information[_i5].description,
+                    label: _this143.resolveData.others.patient_information[_i5].description,
                     value: ''
                   };
                   break;
 
                 case 'dropdown':
-                  for (var j = 0; j < _this143.resolveData.others.patient_information[_i4].addfield.length; j++) {
-                    _this143.resolveData.others.patient_information[_i4].addfield[j] = {
-                      text: _this143.resolveData.others.patient_information[_i4].addfield[j],
-                      value: _this143.resolveData.others.patient_information[_i4].addfield[j]
+                  for (var j = 0; j < _this143.resolveData.others.patient_information[_i5].addfield.length; j++) {
+                    _this143.resolveData.others.patient_information[_i5].addfield[j] = {
+                      text: _this143.resolveData.others.patient_information[_i5].addfield[j],
+                      value: _this143.resolveData.others.patient_information[_i5].addfield[j]
                     };
                   }
 
                   fieldData = {
                     type: 'select',
-                    name: _this143.resolveData.others.patient_information[_i4].label,
-                    placeholder: _this143.resolveData.others.patient_information[_i4].description,
-                    label: _this143.resolveData.others.patient_information[_i4].description,
-                    options: _this143.resolveData.others.patient_information[_i4].addfield
+                    name: _this143.resolveData.others.patient_information[_i5].label,
+                    placeholder: _this143.resolveData.others.patient_information[_i5].description,
+                    label: _this143.resolveData.others.patient_information[_i5].description,
+                    options: _this143.resolveData.others.patient_information[_i5].addfield
                   };
                   break;
               }
