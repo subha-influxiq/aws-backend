@@ -22,6 +22,14 @@
 <!-- Tech -->
 <app-tech-header *ngIf="loginUserData.user_details.user_type == 'tech'"></app-tech-header>
 
+<!-- doctor group -->
+<app-doctor-group-header *ngIf="loginUserData.user_details.user_type == 'doctor_group'"></app-doctor-group-header>
+
+<!-- distributors  -->
+<app-distributors-header *ngIf="loginUserData.user_details.user_type == 'distributors'"></app-distributors-header> 
+
+<!-- admin_biller  -->
+<app-admin-header *ngIf="loginUserData.user_details.user_type == 'admin_biller'"></app-admin-header>
 <!-- Header End -->
 
 
@@ -55,25 +63,6 @@
 <!-- Footer Start -->
 
 <!-- Admin -->
-<app-admin-footer *ngIf="loginUserData.user_details.user_type == 'admin'"></app-admin-footer>
-
-<!-- Biller -->
-<app-biller-footer *ngIf="loginUserData.user_details.user_type == 'biller'"></app-biller-footer>
-
-<!-- Diagnostic Admin -->
-<app-diagnostic-admin-footer *ngIf="loginUserData.user_details.user_type == 'diagnostic_admin'">
-</app-diagnostic-admin-footer>
-
-<!-- Doctor -->
-<app-doctor-footer *ngIf="loginUserData.user_details.user_type == 'doctor'"></app-doctor-footer>
-
-<!-- Doctor Office -->
-<!-- <app-doctor-office-footer *ngIf="loginUserData.user_details.user_type == 'doctor_office'"></app-doctor-office-footer> -->
-
-<!-- Sales Person -->
-<app-sales-person-footer *ngIf="loginUserData.user_details.user_type == 'sales_person'"></app-sales-person-footer>
-
-<!-- Tech -->
-<app-tech-footer *ngIf="loginUserData.user_details.user_type == 'tech'"></app-tech-footer>
+<app-admin-footer></app-admin-footer>
 
 <!-- Footer End -->

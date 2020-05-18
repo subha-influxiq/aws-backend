@@ -63,13 +63,13 @@ export class AddEditFaqComponent implements OnInit {
 
   generateAddEditForm(flag: string = null) {
     let validateRule: any = {
-      id: ['', []],
-      users: ['', [Validators.required, Validators.maxLength(50)]],
-      question: ['', [Validators.required, Validators.maxLength(50)]],
-      answer: ['', [Validators.required, Validators.maxLength(100000)]],
+      id:           ['', []],
+      users:        ['', [Validators.required, Validators.maxLength(50)]],
+      question:     ['', [Validators.required, Validators.maxLength(50)]],
+      answer:       ['', [Validators.required, Validators.maxLength(100000)]],
       youtube_link: ['', [Validators.maxLength(60)]],
-      priority: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(16)]],
-      status: ['', []],
+      priority:     ['', [Validators.required, Validators.minLength(7), Validators.maxLength(16)]],
+      status:       ['', []],
     };
 
     switch (flag) {
