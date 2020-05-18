@@ -1463,7 +1463,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-label *ngIf=\"configData.responseData == null || configData.responseData.length < 1\">\n  No booked evnets found\n</mat-label>\n<h1 class=\"db_title\"> Booked Appointments</h1>\n<lib-listing class=\"app_list\" *ngIf=\"configData.responseData != null && configData.responseData.length > 0\"\n             [datasource]=\"configData.responseData\"\n             [skip]=\"configData.skipFields\"\n             [modify_header_array]=\"configData.modify_header_array\"\n             [apiurl]=\"configData.baseUrl\"\n             [deleteendpoint]=\"configData.endPoint.deleteEvent\"\n             [updateendpoint]=\"configData.endPoint.rescheduleBookedEvent\"\n             [jwttoken]=\"configData.jwtToken\"\n             [date_search_source]=\"configData.source\"\n             [date_search_endpoint]=\"configData.endPoint.listBookedEvents\"\n             [sourcedata]=\"configData.source\"\n             [statusarr]=\"configData.statusarray\"\n             [url]=\"configData.custom_link\"\n             [search_settings]=\"configData.search_settings\"\n             [searchendpoint]=\"configData.endPoint.listBookedEvents\"\n             [sortdata]=\"configData.sortdata\"\n             [datacollection]=\"configData.endPoint.listBookedEvents\"\n             [date_search_source_count]=\"configData.date_search_source_count\"\n             [libdata]=\"configData.libdata\"\n             [updatetable]=\"configData.updatetable\"\n             [limitcond]=\"configData.limitcond\">\n</lib-listing>\n";
+    __webpack_exports__["default"] = "<mat-label *ngIf=\"configData.responseData == null || configData.responseData.length < 1\">\n  No booked evnets found\n</mat-label>\n<h1 class=\"db_title\"> Booked Appointment</h1>\n<lib-listing class=\"app_list\" *ngIf=\"configData.responseData != null && configData.responseData.length > 0\"\n             [datasource]=\"configData.responseData\"\n             [skip]=\"configData.skipFields\"\n             [modify_header_array]=\"configData.modify_header_array\"\n             [apiurl]=\"configData.baseUrl\"\n             [deleteendpoint]=\"configData.endPoint.deleteEvent\"\n             [updateendpoint]=\"configData.endPoint.rescheduleBookedEvent\"\n             [jwttoken]=\"configData.jwtToken\"\n             [date_search_source]=\"configData.source\"\n             [date_search_endpoint]=\"configData.endPoint.listBookedEvents\"\n             [sourcedata]=\"configData.source\"\n             [statusarr]=\"configData.statusarray\"\n             [url]=\"configData.custom_link\"\n             [search_settings]=\"configData.search_settings\"\n             [searchendpoint]=\"configData.endPoint.listBookedEvents\"\n             [sortdata]=\"configData.sortdata\"\n             [datacollection]=\"configData.endPoint.listBookedEvents\"\n             [date_search_source_count]=\"configData.date_search_source_count\"\n             [libdata]=\"configData.libdata\"\n             [updatetable]=\"configData.updatetable\"\n             [limitcond]=\"configData.limitcond\">\n</lib-listing>\n";
     /***/
   },
 
@@ -1483,7 +1483,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-label *ngIf=\"configData.responseData == null || configData.responseData.length < 1\">\n  No booked evnets found\n</mat-label>\n<h1 class=\"db_title\"> Booked Appointments</h1>\n<lib-listing class=\"app_list\" *ngIf=\"configData.responseData != null && configData.responseData.length > 0\"\n             [datasource]=\"configData.responseData\"\n             [skip]=\"configData.skipFields\"\n             [modify_header_array]=\"configData.modify_header_array\"\n             [apiurl]=\"configData.baseUrl\"\n             [deleteendpoint]=\"configData.endPoint.deleteEvent\"\n             [updateendpoint]=\"configData.endPoint.rescheduleBookedEvent\"\n             [jwttoken]=\"configData.jwtToken\"\n             [date_search_source]=\"configData.source\"\n             [date_search_endpoint]=\"configData.endPoint.listUpcomingBookedEvents\"\n             [sourcedata]=\"configData.source\"\n             [statusarr]=\"configData.statusarray\"\n             [url]=\"configData.custom_link\"\n             [search_settings]=\"configData.search_settings\"\n             [searchendpoint]=\"configData.endPoint.listUpcomingBookedEvents\"\n             [sortdata]=\"configData.sortdata\"\n             [datacollection]=\"configData.endPoint.listUpcomingBookedEvents\"\n             [date_search_source_count]=\"configData.date_search_source_count\"\n             [libdata]=\"configData.libdata\"\n             [updatetable]=\"configData.updatetable\"\n             [limitcond]=\"configData.limitcond\">\n</lib-listing>\n";
+    __webpack_exports__["default"] = "<mat-label *ngIf=\"configData.responseData == null || configData.responseData.length < 1\">\n  No booked evnets found\n</mat-label>\n<h1 class=\"db_title\"> Booked Appointment</h1>\n<lib-listing class=\"app_list\" *ngIf=\"configData.responseData != null && configData.responseData.length > 0\"\n             [datasource]=\"configData.responseData\"\n             [skip]=\"configData.skipFields\"\n             [modify_header_array]=\"configData.modify_header_array\"\n             [apiurl]=\"configData.baseUrl\"\n             [deleteendpoint]=\"configData.endPoint.deleteEvent\"\n             [updateendpoint]=\"configData.endPoint.rescheduleBookedEvent\"\n             [jwttoken]=\"configData.jwtToken\"\n             [date_search_source]=\"configData.source\"\n             [date_search_endpoint]=\"configData.endPoint.listUpcomingBookedEvents\"\n             [sourcedata]=\"configData.source\"\n             [statusarr]=\"configData.statusarray\"\n             [url]=\"configData.custom_link\"\n             [search_settings]=\"configData.search_settings\"\n             [searchendpoint]=\"configData.endPoint.listUpcomingBookedEvents\"\n             [sortdata]=\"configData.sortdata\"\n             [datacollection]=\"configData.endPoint.listUpcomingBookedEvents\"\n             [date_search_source_count]=\"configData.date_search_source_count\"\n             [libdata]=\"configData.libdata\"\n             [updatetable]=\"configData.updatetable\"\n             [limitcond]=\"configData.limitcond\">\n</lib-listing>\n";
     /***/
   },
 
@@ -1703,7 +1703,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n  <mat-card-content class=\"header_wrapper\">\n    <span class=\"logo_wrapper\" [routerLink]=\"[ '/diagnostic-admin/dashboard' ]\">\n      <img src=\"../../../assets/images/logo.png\">\n    </span>\n\n    <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n    <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\">\n      <mat-nav-list>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/diagnostic-admin/dashboard']\"> Dashboard </a>\n        \n        <a mat-list-item [routerLink]=\"['/diagnostic-admin/doctor-management']\" routerLinkActive=\"active\"> Manage Doctor </a>\n        <a mat-list-item [routerLink]=\"['/diagnostic-admin/tech-management']\" routerLinkActive=\"active\"> Manage Tech </a>\n        <a mat-list-item [routerLink]=\"['/diagnostic-admin/biller-management']\" routerLinkActive=\"active\"> Manage Biller </a>\n        <a mat-list-item [routerLink]=\"['/diagnostic-admin/faq']\" routerLinkActive=\"active\"> FAQ </a>\n        <a mat-list-item [routerLink]=\"['/diagnostic-admin/sales-person-management']\" routerLinkActive=\"active\"> Manage Sales Person </a>\n        \n\n      </mat-nav-list>\n    </mat-card-content>\n\n\n    <mat-card-content class=\"profile_section\">\n      <mat-menu #appMenu=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/diagnostic-admin/account-settings']\">\n          <mat-icon>account_circle</mat-icon> Account Settings\n        </button>\n\n        <button mat-menu-item [routerLink]=\"['/diagnostic-admin/account-settings/change-password']\">\n          <mat-icon>vpn_key</mat-icon> Change Password\n        </button>\n\n        <button mat-menu-item (click)=\"logout()\">\n          <mat-icon>power_settings_new</mat-icon> Logout\n        </button>\n      </mat-menu>\n      <span class=\"username\">{{ user_data.center_name }} </span>\n      <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n        <span class=\"user_profile\">\n          <mat-icon>account_circle</mat-icon>\n          <i class=\"material-icons\">\n            keyboard_arrow_down\n          </i>\n        </span>\n      </button>\n    </mat-card-content>\n  </mat-card-content>\n</mat-toolbar>\n<!-- end header -->";
+    __webpack_exports__["default"] = "<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n  <mat-card-content class=\"header_wrapper\">\n    <span class=\"logo_wrapper\" [routerLink]=\"[ '/diagnostic-admin/dashboard' ]\">\n      <img src=\"../../../assets/images/logo.png\">\n    </span>\n\n    <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n    <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\">\n      <mat-nav-list>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/diagnostic-admin/dashboard']\"> Dashboard </a>\n        \n        <a mat-list-item [routerLink]=\"['/diagnostic-admin/doctor-management']\" routerLinkActive=\"active\"> Manage Doctor </a>\n        <a mat-list-item [routerLink]=\"['/diagnostic-admin/tech-management']\" routerLinkActive=\"active\"> Manage Tech </a>\n        <a mat-list-item [routerLink]=\"['/diagnostic-admin/biller-management']\" routerLinkActive=\"active\"> Manage Biller </a>\n        <a mat-list-item [routerLink]=\"['/diagnostic-admin/doctor-office-management']\" routerLinkActive=\"active\"> Manage Doctor Office </a>\n        <a mat-list-item [routerLink]=\"['/diagnostic-admin/faq']\" routerLinkActive=\"active\"> FAQ </a>\n        <a mat-list-item [routerLink]=\"['/diagnostic-admin/sales-person-management']\" routerLinkActive=\"active\"> Manage Sales Person </a>\n        \n\n      </mat-nav-list>\n    </mat-card-content>\n\n\n    <mat-card-content class=\"profile_section\">\n      <mat-menu #appMenu=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/diagnostic-admin/account-settings']\">\n          <mat-icon>account_circle</mat-icon> Account Settings\n        </button>\n\n        <button mat-menu-item [routerLink]=\"['/diagnostic-admin/account-settings/change-password']\">\n          <mat-icon>vpn_key</mat-icon> Change Password\n        </button>\n\n        <button mat-menu-item (click)=\"logout()\">\n          <mat-icon>power_settings_new</mat-icon> Logout\n        </button>\n      </mat-menu>\n      <span class=\"username\">{{ user_data.center_name }} </span>\n      <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n        <span class=\"user_profile\">\n          <mat-icon>account_circle</mat-icon>\n          <i class=\"material-icons\">\n            keyboard_arrow_down\n          </i>\n        </span>\n      </button>\n    </mat-card-content>\n  </mat-card-content>\n</mat-toolbar>\n<!-- end header -->";
     /***/
   },
 
@@ -1823,7 +1823,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n    <mat-card-content class=\"header_wrapper\">\n      <span class=\"logo_wrapper\" [routerLink]=\"[ '/doctor-group/dashboard' ]\">\n        <img src=\"../../../assets/images/logo.png\">\n      </span>\n  \n      <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n      <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\">\n        <mat-nav-list>\n          <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/doctor-group/dashboard']\"> Dashboard </a>\n          \n          <a mat-list-item [routerLink]=\"['/doctor-group/doctor-management']\" routerLinkActive=\"active\"> Manage Doctor </a>\n          \n          <a mat-list-item [routerLink]=\"['/doctor-group/biller-management']\" routerLinkActive=\"active\"> Manage Biller </a>\n\n          <a mat-list-item [routerLink]=\"['/doctor-group/tech-management']\" routerLinkActive=\"active\"> Manage Tech </a>\n        </mat-nav-list>\n      </mat-card-content>\n  \n  \n      <mat-card-content class=\"profile_section\">\n        <mat-menu #appMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/doctor-group/account-settings']\">\n            <mat-icon>account_circle</mat-icon> Account Settings\n          </button>\n  \n          <button mat-menu-item [routerLink]=\"['/doctor-group/account-settings/change-password']\">\n            <mat-icon>vpn_key</mat-icon> Change Password\n          </button>\n  \n          <button mat-menu-item (click)=\"logout()\">\n            <mat-icon>power_settings_new</mat-icon> Logout\n          </button>\n        </mat-menu>\n        <span class=\"username\">{{ user_data.groupname }} </span>\n        <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n          <span class=\"user_profile\">\n            <mat-icon>account_circle</mat-icon>\n            <i class=\"material-icons\">\n              keyboard_arrow_down\n            </i>\n          </span>\n        </button>\n      </mat-card-content>\n    </mat-card-content>\n  </mat-toolbar>\n  <!-- end header -->";
+    __webpack_exports__["default"] = "<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n    <mat-card-content class=\"header_wrapper\">\n      <span class=\"logo_wrapper\" [routerLink]=\"[ '/doctor-group/dashboard' ]\">\n        <img src=\"../../../assets/images/logo.png\">\n      </span>\n  \n      <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n      <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\">\n        <mat-nav-list>\n          <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/doctor-group/dashboard']\"> Dashboard </a>\n          \n          <a mat-list-item [routerLink]=\"['/doctor-group/doctor-management']\" routerLinkActive=\"active\"> Manage Doctor </a>\n          \n          <a mat-list-item [routerLink]=\"['/doctor-group/biller-management']\" routerLinkActive=\"active\"> Manage Biller </a>\n\n          <a mat-list-item [routerLink]=\"['/doctor-group/doctor-office-management']\" routerLinkActive=\"active\"> Manage Doctor Office </a>\n\n          <a mat-list-item [routerLink]=\"['/doctor-group/tech-management']\" routerLinkActive=\"active\"> Manage Tech </a>\n        </mat-nav-list>\n      </mat-card-content>\n  \n  \n      <mat-card-content class=\"profile_section\">\n        <mat-menu #appMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/doctor-group/account-settings']\">\n            <mat-icon>account_circle</mat-icon> Account Settings\n          </button>\n  \n          <button mat-menu-item [routerLink]=\"['/doctor-group/account-settings/change-password']\">\n            <mat-icon>vpn_key</mat-icon> Change Password\n          </button>\n  \n          <button mat-menu-item (click)=\"logout()\">\n            <mat-icon>power_settings_new</mat-icon> Logout\n          </button>\n        </mat-menu>\n        <span class=\"username\">{{ user_data.groupname }} </span>\n        <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n          <span class=\"user_profile\">\n            <mat-icon>account_circle</mat-icon>\n            <i class=\"material-icons\">\n              keyboard_arrow_down\n            </i>\n          </span>\n        </button>\n      </mat-card-content>\n    </mat-card-content>\n  </mat-toolbar>\n  <!-- end header -->";
     /***/
   },
 
@@ -1843,7 +1843,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-doctor-office-header></app-doctor-office-header>\n\n<!-- Header Start -->\n\n<app-admin-header *ngIf=\"headerFlag == 'admin'\"></app-admin-header>\n\n<app-biller-header *ngIf=\"headerFlag == 'biller'\"></app-biller-header>\n\n<app-tech-header *ngIf=\"headerFlag == 'tech'\"></app-tech-header>\n\n<app-doctor-header *ngIf=\"headerFlag == 'doctor'\"></app-doctor-header>\n\n<!-- Header End -->\n\n<mat-progress-bar *ngIf=\"loader\" mode=\"indeterminate\"></mat-progress-bar>\n\n\n<span class=\"add_header\">\n    <span class=\"bradcrumb\"><a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Add Patient</span>\n</span>\n<!-- End header with add button -->\n\n<mat-card class=\"add_form\">\n    <h2>Add Record</h2>\n    <mat-card-content class=\"form_wrapper\">\n        <lib-showform class=\"adptient_manually\" *ngIf=\"formdata !=null\"\n                  [formdata]=\"formdata\"\n                  [formfieldrefresh]=\"formfieldrefresh\"\n                  [formfieldrefreshdata]=\"formfieldrefreshdata\"\n                  (onFormFieldChange)=\"listenFormFieldChange($event)\"\n    > </lib-showform>\n    </mat-card-content>\n</mat-card>\n\n<app-admin-footer></app-admin-footer>\n";
+    __webpack_exports__["default"] = "<app-doctor-office-header></app-doctor-office-header>\n\n<!-- Header Start -->\n\n<app-admin-header *ngIf=\"headerFlag == 'admin'\"></app-admin-header>\n\n<app-biller-header *ngIf=\"headerFlag == 'biller'\"></app-biller-header>\n\n<app-tech-header *ngIf=\"headerFlag == 'tech'\"></app-tech-header>\n\n<app-doctor-header *ngIf=\"headerFlag == 'doctor'\"></app-doctor-header>\n\n<!-- Header End -->\n\n<mat-progress-bar *ngIf=\"loader\" mode=\"indeterminate\"></mat-progress-bar>\n\n\n<span class=\"add_header\">\n    <span class=\"bradcrumb\"><a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Add Patient</span>\n</span>\n<!-- End header with add button -->\n\n<mat-card class=\"add_form\">\n    <h2>Add Record</h2>\n    <mat-card-content class=\"form_wrapper\">\n<!--        <lib-showform class=\"adptient_manually\" *ngIf=\"formdata !=null\"-->\n<!--                  [formdata]=\"formdata\"-->\n<!--                  [formfieldrefresh]=\"formfieldrefresh\"-->\n<!--                  [formfieldrefreshdata]=\"formfieldrefreshdata\"-->\n<!--                  (onFormFieldChange)=\"listenFormFieldChange($event)\"-->\n<!--    > </lib-showform>-->\n\n      <lib-book-appointment-form *ngIf=\"configData.patientInfoFormFields != null\"\n                                 [configData]=\"configData\">\n      </lib-book-appointment-form>\n    </mat-card-content>\n</mat-card>\n\n\n\n\n\n<app-admin-footer></app-admin-footer>\n";
     /***/
   },
 
@@ -23702,1054 +23702,2499 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _class_common_common_function__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-    /*! ../../../../class/common/common-function */
-    "./src/app/class/common/common-function.ts");
-    /* harmony import */
-
-
-    var src_environments_environment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
-    /*! src/environments/environment */
-    "./src/environments/environment.ts");
-    /* harmony import */
-
-
-    var moment_es6__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var moment_es6__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! moment-es6 */
     "./node_modules/moment-es6/index.js");
     /* harmony import */
 
 
-    var moment_es6__WEBPACK_IMPORTED_MODULE_9___default =
+    var moment_es6__WEBPACK_IMPORTED_MODULE_7___default =
     /*#__PURE__*/
-    __webpack_require__.n(moment_es6__WEBPACK_IMPORTED_MODULE_9__);
+    __webpack_require__.n(moment_es6__WEBPACK_IMPORTED_MODULE_7__);
 
     var AddPatientManuallyComponent =
     /*#__PURE__*/
     function () {
-      function AddPatientManuallyComponent(formBuilder, httpService, snackBar, commonFunction, activatedRoute, cookieService, router) {
-        var _this135 = this;
-
+      function AddPatientManuallyComponent(activatedRoute, cookieService, snackBar, httpRequestService) {
         _classCallCheck(this, AddPatientManuallyComponent);
 
-        this.formBuilder = formBuilder;
-        this.httpService = httpService;
-        this.snackBar = snackBar;
-        this.commonFunction = commonFunction;
         this.activatedRoute = activatedRoute;
         this.cookieService = cookieService;
-        this.router = router;
-        this.today = moment_es6__WEBPACK_IMPORTED_MODULE_9___default()().format('L');
-        this.loader = false;
-        this.formTag = false;
-        this.parent_type = '';
-        this.parent_id = '';
-        this.states = []; // lib
+        this.snackBar = snackBar;
+        this.httpRequestService = httpRequestService; // today = moment().format('L');
+        // doctorOfficeChangePasswordForm: FormGroup;
+        // loader: boolean = false;
+        // headerFlag: any;
+        // jwtToken: any;
+        // cookiesData: any;
+        // cookies_id: string;
+        // formTag: boolean = false;
+        //
+        // parent_type: any = '';
+        // parent_id: any = '';
+        //
+        // states: any = [];
+        // // lib
+        // emailregex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        // passwordregex: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
+        //
+        // insuranceData: any = [];
+        // insuranceTypeData: any = [];
+        // temtdata: any = '';
+        // // formdata
+        // formfieldrefresh: boolean = false;
+        // updatetable: boolean = false;
+        // formfieldrefreshdata: any = null;
+        // formdata: any = {
+        //   successmessage: "Added Successfully !!",
+        //   submittext: "Submit",
+        //   canceltext: "Cancel Now",
+        //   resettext: "reset This",
+        //   redirectpath: "/doctor-office/dashboard",
+        //   submitactive: true, //optional, default true
+        //   apiUrl: environment.calendarApi,
+        //   endpoint: 'add-to-calendar-manually',
+        //   jwttoken: "",
+        //   //hidereset:true,
+        //   //hidecancel:true,
+        //   cancelroute: '/doctor-office/dashboard',
+        //   fields: [
+        //     {
+        //       heading: "<h2>Patient General Information</h2>",
+        //       type: 'text',
+        //       name: 'practice_name',
+        //       placeholder: 'Practice Name',
+        //       label: 'Practice Name',
+        //       value: '',
+        //       validators: { rule: 'required' },
+        //       error: 'Enter practice name',
+        //       caption: 'Patient General Information'
+        //     },
+        //     { type: 'textarea', name: 'address', placeholder: 'Address', label: 'Address', value: '' },
+        //     {
+        //       label: "State",
+        //       name: "state",
+        //       type: 'select',
+        //       val: this.states,
+        //       value: [],
+        //       multiple: false,
+        //       validations: [
+        //         { rule: 'required' }
+        //       ],
+        //       prefix: "",
+        //       suffix: ""
+        //     },
+        //     { type: 'text', name: 'city', placeholder: 'City', label: 'City', value: '' },
+        //     { type: 'text', name: 'zip', placeholder: 'ZIP', label: 'ZIP', value: '' },
+        //     {
+        //       type: 'text',
+        //       name: 'patient_name',
+        //       placeholder: 'Patient Name',
+        //       label: 'Patient Name',
+        //       value: '',
+        //       validators: { rule: 'required' },
+        //       error: 'Enter patient name'
+        //     },
+        //     {
+        //       type: 'date',
+        //       name: 'dob',
+        //       placeholder: 'Date of Birth',
+        //       label: 'Date of Birth',
+        //       value: '',
+        //       validators: { rule: 'required' },
+        //       error: 'Enter date of birth of the patient'
+        //     },
+        //     {
+        //       type: 'select',
+        //       name: 'gender',
+        //       placeholder: 'Gender',
+        //       label: 'Gender',
+        //       val: [
+        //         { name: 'Male', val: 'male' },
+        //         { name: 'Female', val: 'female' }
+        //       ],
+        //       validators: { rule: 'required' }, error: 'Select gender'
+        //     },
+        //     {
+        //       type: 'text',
+        //       name: 'patient_email',
+        //       placeholder: 'Patient Email',
+        //       label: 'Patient Email',
+        //       value: '',
+        //       validators: [Validators.required, Validators.email],
+        //       error: 'Enter patient email'
+        //     },
+        //     {
+        //       type: 'text',
+        //       name: 'height',
+        //       placeholder: 'Ex. 6\'10"',
+        //       label: 'Height',
+        //       value: '',
+        //       validators: { rule: 'required' },
+        //       error: 'Enter patient height'
+        //     },
+        //     {
+        //       type: 'text',
+        //       name: 'weight',
+        //       placeholder: 'Ex. 210 lbs',
+        //       label: 'Weight',
+        //       value: '',
+        //       validators: { rule: 'required' },
+        //       error: 'Enter patient weight'
+        //     },
+        //     { type: 'text', name: 'booking_date', placeholder: 'Date', label: 'Booking date', value: this.today, disabled: true },
+        //
+        //     {
+        //       heading: '<h2>Insurance Information</h2>',
+        //       label: "Insurance name",
+        //       name: 'insurance_id',
+        //       hint: '',
+        //       type: 'select',
+        //       val: this.insuranceData,
+        //       value: [],
+        //       multiple: false,
+        //       validations: [
+        //         { rule: 'required' }
+        //       ],
+        //       prefix: "",
+        //       suffix: ""
+        //     },
+        //
+        //     {
+        //       name: "parent_type",
+        //       type: 'hidden',
+        //       value: this.parent_type
+        //     },
+        //     {
+        //       name: "parent_id",
+        //       type: 'hidden',
+        //       value: this.parent_id
+        //     },
+        //     {
+        //       type: 'date',
+        //       name: 'startdate',
+        //       placeholder: 'Appointment Date',
+        //       label: 'Appointment Date',
+        //       value: '',
+        //       validators: { rule: 'required' },
+        //       error: 'Enter Appointment Date'
+        //     },
+        //     {
+        //       type: 'select',
+        //       label: "Time Zone",
+        //       name: 'reqTimezone',
+        //       val: [
+        //         { name: 'Alaska Standard Time', val: '-08:00|America/Anchorage' },
+        //         { name: 'Pacific Standard Time', val: '-07:00|America/Los_Angeles' },
+        //         { name: 'Mountain Standard Time(GMT-06:00)', val: '-06:00|America/Denver' },
+        //         { name: 'Mountain Standard Time(GMT-07:00) (no DST)', val: '-07:00|America/Phoenix' },
+        //         { name: 'Central Standard Time', val: '-05:00|America/Chicago' },
+        //         { name: 'Eastern Standard Time', val: '-04:00|America/New_York' },
+        //         { name: 'Hawaii Standard Time', val: '-10:00|Pacific/Honolulu' }
+        //       ],
+        //       validations: [
+        //         { rule: 'required' }
+        //       ],
+        //       prefix: "",
+        //       suffix: ""
+        //     },
+        //     {
+        //       type: 'select',
+        //       label: "Appointment Time",
+        //       name: 'appointment_time',
+        //       val: [
+        //         { name: '6.00 AM to 6.30 AM', val: '6.00 AM to 6.30 AM' },
+        //         { name: '6.30 AM to 7.00 AM', val: '6.30 AM to 7.00 AM' },
+        //         { name: '7.00 AM to 7.30 AM', val: '7.00 AM to 7.30 AM' },
+        //         { name: '7.30 AM to 8.00 AM', val: '7.30 AM to 8.00 AM' },
+        //         { name: '8.00 AM to 8.30 AM', val: '8.00 AM to 8.30 AM' },
+        //         { name: '8.30 AM to 9.00 AM', val: '8.30 AM to 9.00 AM' },
+        //         { name: '9.00 AM to 9.30 AM', val: '9.00 AM to 9.30 AM' },
+        //         { name: '9.30 AM to 10.00 AM', val: '9.30 AM to 10.00 AM' },
+        //         { name: '10.00 AM to 10.30 AM', val: '10.00 AM to 10.30 AM' },
+        //         { name: '10.30 AM to 11.00 AM', val: '10.30 AM to 11.00 AM' },
+        //         { name: '11.00 AM to 11.30 AM', val: '11.00 AM to 11.30 AM' },
+        //         { name: '11.30 AM to 12.00 AM', val: '11.30 AM to 12.00 AM' },
+        //         { name: '12.00 PM to 12.30 PM', val: '12.00 PM to 12.30 PM' },
+        //         { name: '1.00 PM to 1.30 PM', val: '1.00 PM to 1.30 PM' },
+        //         { name: '1.30 PM to 2.00 PM', val: '1.30 PM to 2.00 PM' },
+        //         { name: '2.00 PM to 2.30 PM', val: '2.00 PM to 2.30 PM' },
+        //         { name: '2.30 PM to 3.00 PM', val: '2.30 PM to 3.00 PM' },
+        //         { name: '3.00 PM to 3.30 PM', val: '3.00 PM to 3.30 PM' },
+        //         { name: '3.30 PM to 4.00 PM', val: '3.30 PM to 4.00 PM' },
+        //         { name: '4.00 PM to 4.30 PM', val: '4.00 PM to 4.30 PM' },
+        //         { name: '4.30 PM to 5.00 PM', val: '4.30 PM to 5.00 PM' },
+        //         { name: '5.00 PM to 5.30 PM', val: '5.00 PM to 5.30 PM' },
+        //         { name: '5.30 PM to 6.00 PM', val: '5.30 PM to 6.00 PM' },
+        //         { name: '6.00 PM to 6.30 PM', val: '6.00 PM to 6.30 PM' },
+        //         { name: '6.30 PM to 7.00 PM', val: '6.30 PM to 7.00 PM' },
+        //         { name: '7.00 PM to 7.30 PM', val: '7.00 PM to 7.30 PM' },
+        //         { name: '7.30 PM to 8.00 PM', val: '7.30 PM to 8.00 PM' },
+        //         { name: '8.00 PM to 8.30 PM', val: '8.00 PM to 8.30 PM' },
+        //         { name: '8.30 PM to 9.00 PM', val: '8.30 PM to 9.00 PM' },
+        //         { name: '9.00 PM to 9.00 PM', val: '9.00 PM to 9.00 PM' },
+        //         { name: '9.30 PM to 10.00 PM', val: '9.30 PM to 10.00 PM' }
+        //       ],
+        //       validations: [
+        //         { rule: 'required' }
+        //       ],
+        //       prefix: "",
+        //       suffix: ""
+        //     },
+        //
+        //     {
+        //       heading: "<h2>Autonomic Nervous System Dysfunction (ANSD)</h2>"
+        //     },
+        //     {
+        //       heading: 'Blurred Vision',
+        //       type: 'checkbox',
+        //       name: 'bv_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'bv_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Elevated Blood Sugar',
+        //       type: 'checkbox',
+        //       name: 'ebs_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'ebs_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Extreme Thirst',
+        //       type: 'checkbox',
+        //       name: 'et_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'et_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Frequent Urination',
+        //       type: 'checkbox',
+        //       name: 'fu_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'fu_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Fatigue (Tiredness)',
+        //       type: 'checkbox',
+        //       name: 'ft_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'ft_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Heartburn',
+        //       type: 'checkbox',
+        //       name: 'hb_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'hb_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Increased Hunger',
+        //       type: 'checkbox',
+        //       name: 'ih_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'ih_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Nausea',
+        //       type: 'checkbox',
+        //       name: 'nau_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'nau_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Numbness & Tingling in Hands or Feet',
+        //       type: 'checkbox',
+        //       name: 'nthf_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'nthf_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Vomiting',
+        //       type: 'checkbox',
+        //       name: 'vomiting_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'vomiting_six_months',
+        //       label: '6 Months',
+        //     },
+        //
+        //     { heading: '<h2>Sudomotor Dysfunction (SUDOD)</h2>' },
+        //     {
+        //       heading: 'Burning Sensations',
+        //       type: 'checkbox',
+        //       name: 'bs_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'bs_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Difficulty Digesting Food',
+        //       type: 'checkbox',
+        //       name: 'ddf_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'ddf_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Dizziness or Fainting',
+        //       type: 'checkbox',
+        //       name: 'dof_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'dof_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Exercise Intolerance',
+        //       type: 'checkbox',
+        //       name: 'ei_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'ei_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Sexual Difficulties',
+        //       type: 'checkbox',
+        //       name: 'sd_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'sd_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Sweat Abnormalities',
+        //       type: 'checkbox',
+        //       name: 'sa_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'sa_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Tingling Hands & Feet',
+        //       type: 'checkbox',
+        //       name: 'thf_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'thf_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Urinary Problems',
+        //       type: 'checkbox',
+        //       name: 'up_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'up_six_months',
+        //       label: '6 Months',
+        //     },
+        //
+        //     { heading: '<h2>ENDOTHELIAL DYSFUNCTION (ENDOD)<h2>' },
+        //     {
+        //       heading: 'Angina (severe chest pain, often spreading to shoulder, arm, back, neck, or jaw)',
+        //       type: 'checkbox',
+        //       name: 'angina_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'angina_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Chest Pain that goes away with rest',
+        //       type: 'checkbox',
+        //       name: 'cptgawr_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'cptgawr_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Heartburn',
+        //       type: 'checkbox',
+        //       name: 'hrtbn_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'hrtbn_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Pain In Calves',
+        //       type: 'checkbox',
+        //       name: 'pic_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'pic_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Shortness of Breath',
+        //       type: 'checkbox',
+        //       name: 'sob_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'sob_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Stroke',
+        //       type: 'checkbox',
+        //       name: 'stroke_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'stroke_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'TIA (mini stroke)',
+        //       type: 'checkbox',
+        //       name: 'tia_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'tia_six_months',
+        //       label: '6 Months',
+        //     },
+        //
+        //     { heading: '<h2>CARDIOMETABOLIC RISK (CMR)</h2>' },
+        //     {
+        //       heading: 'Headaches',
+        //       type: 'checkbox',
+        //       name: 'headaches_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'headaches_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Dizziness',
+        //       type: 'checkbox',
+        //       name: 'dizziness_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'dizziness_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Swelling of Ankles',
+        //       type: 'checkbox',
+        //       name: 'soa_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'soa_six_months',
+        //       label: '6 Months',
+        //     },
+        //
+        //     { heading: '<h2>INSULIN RESISTANCE (IR)</h2>' },
+        //     {
+        //       heading: 'Blurred Vision',
+        //       type: 'checkbox',
+        //       name: 'blv_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'blv_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Elevated Blood Sugar',
+        //       type: 'checkbox',
+        //       name: 'ebsr_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'ebsr_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Extreme Thirst',
+        //       type: 'checkbox',
+        //       name: 'ext_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'ext_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Fatigue (Tiredness)',
+        //       type: 'checkbox',
+        //       name: 'ftd_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'ftd_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Increased Hunger',
+        //       type: 'checkbox',
+        //       name: 'ihr_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'ihr_six_months',
+        //       label: '6 Months',
+        //     },
+        //
+        //     { heading: '<h2>SMALL FIBER SENSORY NEUROPATHY (SFN)</h2>' },
+        //     {
+        //       heading: 'Burning Sensations',
+        //       type: 'checkbox',
+        //       name: 'burns_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'burns_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Painful Contact With Socks or Bed Sheets',
+        //       type: 'checkbox',
+        //       name: 'pcwsbs_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'pcwsbs_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Pebble or Sandlike Sensation In Shoes',
+        //       type: 'checkbox',
+        //       name: 'psss_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'psss_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Pebble or Sandlike Sensation In Shoes',
+        //       type: 'checkbox',
+        //       name: 'psss_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'psss_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Stabbing or Electrical Shock Sensation',
+        //       type: 'checkbox',
+        //       name: 'sess_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'sess_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Pins And Needles Sensation In Feet',
+        //       type: 'checkbox',
+        //       name: 'pnsf_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'pnsf_six_months',
+        //       label: '6 Months',
+        //     },
+        //
+        //     { heading: '<h2>CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)</h2>' },
+        //     {
+        //       heading: 'Blurred Vision',
+        //       type: 'checkbox',
+        //       name: 'bldv_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'bldv_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Cold, Clammy, Pale Skin',
+        //       type: 'checkbox',
+        //       name: 'ccps_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'ccps_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Depression',
+        //       type: 'checkbox',
+        //       name: 'depression_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'depression_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Dizziness or Lightheadedness',
+        //       type: 'checkbox',
+        //       name: 'dol_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'dol_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Thirst',
+        //       type: 'checkbox',
+        //       name: 'thirst_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'thirst_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Fainting',
+        //       type: 'checkbox',
+        //       name: 'fainting_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'fainting_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Fatigue (Tiredness)',
+        //       type: 'checkbox',
+        //       name: 'fatt_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'fatt_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Lack of Concentration',
+        //       type: 'checkbox',
+        //       name: 'loc_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'loc_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Lack of Energy',
+        //       type: 'checkbox',
+        //       name: 'loe_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'loe_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Nausea',
+        //       type: 'checkbox',
+        //       name: 'nausea_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'nausea_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Rapid, Shallow Breathing',
+        //       type: 'checkbox',
+        //       name: 'rsb_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'rsb_six_months',
+        //       label: '6 Months',
+        //     },
+        //
+        //     { heading: '<h2>PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)</h2>' },
+        //     {
+        //       heading: 'Blood clot in a vein (Venous Thrombosis)',
+        //       type: 'checkbox',
+        //       name: 'bciv_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'bciv_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Heart Attack',
+        //       type: 'checkbox',
+        //       name: 'hattk_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'hattk_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Irregular heartbeat, too fast/slow (Atrial Fibrillation)',
+        //       type: 'checkbox',
+        //       name: 'iftfs_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'ihtfs_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: 'Stroke',
+        //       type: 'checkbox',
+        //       name: 'strk_today',
+        //       label: 'Today',
+        //     },
+        //     {
+        //       type: 'checkbox',
+        //       name: 'strk_six_months',
+        //       label: '6 Months',
+        //     },
+        //     {
+        //       heading: '<h2>Notes</h2>',
+        //       type: 'textarea',
+        //       name: 'notes',
+        //       placeholder: '',
+        //       label: 'Notes',
+        //       value: '',
+        //       validators: {  }
+        //     },
+        //     {
+        //       name: "add_to_google",
+        //       type: 'hidden',
+        //       value: true
+        //     },
+        //
+        //     { type: 'input', name: 'username', placeholder: 'Organizer Name', label: 'Organizer Name', value: '', disabled: true },
+        //     { type: 'input', name: 'useremail', placeholder: 'Organizer Email', label: 'Organizer Email', value: '', disabled: true },
+        //     { type: 'input', name: 'attendees', placeholder: 'Attendee Email', label: 'Attendee Email', value: '', disabled: true },
+        //     { type: 'input', name: 'additional_notes', placeholder: 'Additional Notes', label: 'Additional Notes', value: '' }
+        //   ]
+        // };
+        //
+        // public resolveData;
+        //
+        // constructor(private formBuilder: FormBuilder, private httpService: HttpServiceService,
+        //   private snackBar: MatSnackBar, private commonFunction: CommonFunction, private activatedRoute: ActivatedRoute,
+        //   private cookieService: CookieService, private router: Router) {
+        //
+        //   this.getStates();
+        //
+        //   this.headerFlag = this.activatedRoute.snapshot.url[0].path;
+        //   this.jwtToken = cookieService.get('jwtToken');
+        //   this.formdata.jwttoken = this.jwtToken;
+        //   let allcookies: any;
+        //   allcookies = cookieService.getAll();
+        //   this.cookiesData = JSON.parse(allcookies.user_details);
+        //   this.cookies_id = this.cookiesData._id;
+        //
+        //   this.formfieldrefreshdata = {
+        //     field: 'addfromcontrol',
+        //     value: {
+        //       name: "doctor_office_id",
+        //       type: 'hidden',
+        //       value: this.cookiesData._id
+        //     }
+        //   };
+        //
+        //   var data: any = {
+        //     "source": "data_pece",
+        //     "condition": {
+        //       _id_object: this.cookiesData.doctor_id
+        //     },
+        //     "token": this.jwtToken,
+        //   };
+        //
+        //   this.httpService.httpViaPost("datalist", data).subscribe(response => {
+        //     if(response.status == true) {
+        //       var doctorDetails = [];
+        //       for (let i = 0; i < response.res.length; i++) {
+        //         let temp = {};
+        //         temp['name'] = response.res[i].firstname + ' ' + response.res[i].lastname;
+        //         temp['val'] = response.res[i]._id;
+        //         doctorDetails.push(temp);
+        //       }
+        //
+        //       this.parent_type = response.res[0].parent_type;
+        //       this.parent_id = response.res[0].parent_id;
+        //
+        //       setTimeout(() => {
+        //         this.formfieldrefreshdata = {
+        //           field: 'addfromcontrol',
+        //           value: {
+        //             heading: "<h2>Appointment Details</h2>",
+        //             label: "Select Doctor",
+        //             name: "doctor_id",
+        //             hint: '',
+        //             type: 'select',
+        //             val: doctorDetails,
+        //             multiple: false,
+        //             validations: [
+        //               { rule: 'required' }
+        //             ],
+        //             prefix: "",
+        //             suffix: "",
+        //             after: 'insurance_id'
+        //           }
+        //         };
+        //       }, 300);
+        //     }
+        //   });
+        // }
+        //
+        // ngOnInit() {
+        //   if (this.cookieService.check('jwtToken')) {
+        //     this.activatedRoute.data.forEach((data) => {
+        //       this.resolveData = data.eventdayarrData;
+        //
+        //       var otherFieldsData: any = [];
+        //       for (let i = this.resolveData.others.patient_information.length - 1; i >= 0; i--) {
+        //         let fieldData: any;
+        //         switch (this.resolveData.others.patient_information[i].type) {
+        //           case 'checkbox':
+        //             otherFieldsData.push({
+        //               type: 'checkbox',
+        //               label: this.resolveData.others.patient_information[i].description,
+        //               name: this.resolveData.others.patient_information[i].label,
+        //               after: 'appointment_time'
+        //             });
+        //             break;
+        //           case 'textfield':
+        //             otherFieldsData.push({
+        //               type: 'text',
+        //               name: this.resolveData.others.patient_information[i].label,
+        //               label: this.resolveData.others.patient_information[i].description,
+        //               value: '',
+        //               validators: { rule: 'required' },
+        //               after: 'appointment_time'
+        //             });
+        //             break;
+        //           case 'dropdown':
+        //             var temp: any = [];
+        //             for (let j = 0; j < this.resolveData.others.patient_information[i].addfield.length; j++) {
+        //               let json = {
+        //                 name: this.resolveData.others.patient_information[i].addfield[j],
+        //                 val: this.resolveData.others.patient_information[i].addfield[j]
+        //               }
+        //               temp.push(json);
+        //             }
+        //
+        //             otherFieldsData.push({
+        //               label: this.resolveData.others.patient_information[i].description,
+        //               name: this.resolveData.others.patient_information[i].label,
+        //               type: 'select',
+        //               val: temp,
+        //               validations: [
+        //                 { rule: 'required' }
+        //               ],
+        //               after: 'appointment_time'
+        //             });
+        //             break;
+        //         }
+        //       }
+        //
+        //       otherFieldsData[otherFieldsData.length - 1].heading = "<h2>Others Details</h2>";
+        //
+        //       this.formfieldrefreshdata = {
+        //         field: 'addfromcontrol',
+        //         value: otherFieldsData
+        //       }
+        //
+        //       console.log('Loop finished.');
+        //       console.log("Hello World: ", otherFieldsData);
+        //     });
+        //   } else {
+        //     this.openSnackBar('Token not found');
+        //   }
+        // }
+        //
+        // getStates(): any {
+        //   /* ****************** Get states value from assets/states.json ****************** */
+        //   this.httpService.get('assets/data/states.json').subscribe(res => {
+        //     var state: any = res;
+        //     for (let loop = 0; loop < state.length; loop++) {
+        //       this.states.push({ name: state[loop].text, val: state[loop].value });
+        //     }
+        //
+        //     for (let i = 0; i < this.resolveData.others.insurance.length; i++) {
+        //       let temp = {};
+        //       temp['name'] = this.resolveData.others.insurance[i].insurancename;
+        //       temp['val'] = this.resolveData.others.insurance[i]._id;
+        //       this.insuranceData.push(temp);
+        //     }
+        //     this.insuranceData.push({ name: 'Others', val: 0 });
+        //   }, error => {
+        //     console.log('Oooops! Cannot get states.');
+        //   });
+        // }
+        //
+        // openSnackBar(message: string, action: string = null) {
+        //   this.snackBar.open(message, action, {
+        //     duration: 3000,
+        //   });
+        // }
+        //
+        // listenFormFieldChange(val: any) {
+        //   switch(val.field.name) {
+        //     case 'insurance_id':
+        //       if(val.fieldval != 0) {
+        //         var countFlag: number = 0;
+        //         for (let i = 0; i < this.resolveData.others.insurance_type.length; i++) {
+        //           for(let j = 0; j < this.resolveData.others.insurance_type[i].insurance_id.length; j++) {
+        //             if(val.fieldval == this.resolveData.others.insurance_type[i].insurance_id[j]) {
+        //               countFlag++;
+        //               let temp: any = {};
+        //               temp['name'] = this.resolveData.others.insurance_type[i].insurancetype_name;
+        //               temp['val'] = this.resolveData.others.insurance_type[i]._id;
+        //               this.insuranceTypeData.push(temp);
+        //             }
+        //           }
+        //         }
+        //
+        //         if(countFlag == 0) {
+        //           this.insuranceTypeData.push({});
+        //         }
+        //
+        //         this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'insurance_name_input' } };
+        //         this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'insurance_type_input' } };
+        //         this.formfieldrefreshdata = {
+        //           field: 'addfromcontrol',
+        //           value: {
+        //             label: "Insurance type",
+        //             name: "insurance_type",
+        //             hint: '',
+        //             type: 'select',
+        //             val: this.insuranceTypeData,
+        //             multiple: false,
+        //             validations: [
+        //               { rule: 'required' }
+        //             ],
+        //             prefix: "",
+        //             suffix: "",
+        //             after: 'insurance_id'
+        //           }
+        //         };
+        //       } else {
+        //         this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'insurance_type' } };
+        //
+        //         setTimeout(() => {
+        //           this.formfieldrefreshdata = {
+        //             field: 'addfromcontrol',
+        //             value: {
+        //               label: 'Name of the insurance',
+        //               name: 'insurance_name_input',
+        //               type: 'text',
+        //               val: '',
+        //               validators: [
+        //                 { rule: 'required' }
+        //               ],
+        //               prefix: "",
+        //               suffix: "",
+        //               after: 'insurance_id'
+        //             }
+        //           };
+        //         }, 1000);
+        //
+        //         setTimeout(() => {
+        //           this.formfieldrefreshdata = {
+        //             field: 'addfromcontrol',
+        //             value: {
+        //               type: 'text',
+        //               name: 'insurance_type_input',
+        //               placeholder: 'Insurance type',
+        //               label: 'Insurance type',
+        //               value: '',
+        //               validators: [
+        //                 { rule: 'required' }
+        //               ],
+        //               prefix: "",
+        //               suffix: "",
+        //               after: 'insurance_name_input'
+        //             }
+        //           };
+        //         }, 2000);
+        //       }
+        //       break;this.cookiesData
+        //     case 'doctor_id':
+        //       let data: any = {
+        //         "source": "tech_by_doctor_id",
+        //         "condition": {
+        //           _id_object: val.fieldval
+        //         },
+        //         "token": this.jwtToken,
+        //       };
+        //
+        //       this.httpService.httpViaPost("datalist", data).subscribe(response => {
+        //         // this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'doctor_id' } };
+        //         // this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_type' } };
+        //         // this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_id' } };
+        //
+        //         if(response.status == true) {
+        //           var techDetails = [];
+        //           for (let i = 0; i < response.res.length; i++) {
+        //             let temp = {};
+        //             temp['name'] = response.res[i].firstname + ' ' + response.res[i].lastname;
+        //             temp['val'] = response.res[i]._id;
+        //             techDetails.push(temp);
+        //           }
+        //         }
+        //
+        //         // set doctor dropdown
+        //         setTimeout(() => {
+        //           this.formfieldrefreshdata = {
+        //             field: 'addfromcontrol',
+        //             value: {
+        //               label: "Select Tech",
+        //               name: "tech_id",
+        //               hint: '',
+        //               type: 'select',
+        //               val: techDetails,
+        //               validations: [
+        //                 { rule: 'required' }
+        //               ],
+        //               after: 'doctor_id'
+        //             }
+        //           };
+        //         }, 100);
+        //       });
+        //       break;
+        //     case 'doctor_id':
+        //       let data2: any = {
+        //         "source": "data_pece",
+        //         "condition": {
+        //           "_id_object": val.fieldval
+        //         },
+        //         "token": this.jwtToken,
+        //       };
+        //
+        //       this.httpService.httpViaPost("datalist", data2).subscribe(response => {
+        //         if(response.status == true) {
+        //           // set parent id and type
+        //           let parentData: any = {
+        //             "source": "data_pece",
+        //             "condition": {
+        //               _id_object: val.fieldval
+        //             },
+        //             "token": this.jwtToken,
+        //           };
+        //
+        //           this.httpService.httpViaPost("datalist", parentData).subscribe(response => {
+        //             if(response.status == true) {
+        //               if(typeof(response.res[0].parent_type) != 'undefined') {
+        //                 setTimeout(() => {
+        //                   this.formfieldrefreshdata = {
+        //                     field: 'addfromcontrol',
+        //                     value: {
+        //                       name: "parent_type",
+        //                       type: 'hidden',
+        //                       value: response.res[0].parent_type
+        //                     }
+        //                   };
+        //                 }, 200);
+        //
+        //                 setTimeout(() => {
+        //                   this.formfieldrefreshdata = {
+        //                     field: 'addfromcontrol',
+        //                     value: {
+        //                       name: "parent_id",
+        //                       type: 'hidden',
+        //                       value: response.res[0].parent_id
+        //                     }
+        //                   };
+        //                 }, 300);
+        //               }
+        //             }
+        //           });
+        //         }
+        //       });
+        //       break;
+        //   }
+        // }
 
-        this.emailregex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        this.passwordregex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
-        this.insuranceData = [];
-        this.insuranceTypeData = [];
-        this.temtdata = ''; // formdata
-
-        this.formfieldrefresh = false;
-        this.updatetable = false;
-        this.formfieldrefreshdata = null;
-        this.formdata = {
-          successmessage: "Added Successfully !!",
-          submittext: "Submit",
-          canceltext: "Cancel Now",
-          resettext: "reset This",
-          redirectpath: "/doctor-office/dashboard",
-          submitactive: true,
-          apiUrl: src_environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].calendarApi,
-          endpoint: 'add-to-calendar-manually',
-          jwttoken: "",
-          //hidereset:true,
-          //hidecancel:true,
-          cancelroute: '/doctor-office/dashboard',
-          fields: [{
-            heading: "<h2>Patient General Information</h2>",
-            type: 'text',
-            name: 'practice_name',
-            placeholder: 'Practice Name',
-            label: 'Practice Name',
-            value: '',
-            validators: {
-              rule: 'required'
-            },
-            error: 'Enter practice name',
-            caption: 'Patient General Information'
-          }, {
-            type: 'textarea',
-            name: 'address',
-            placeholder: 'Address',
-            label: 'Address',
-            value: ''
-          }, {
-            label: "State",
-            name: "state",
-            type: 'select',
-            val: this.states,
-            value: [],
-            multiple: false,
-            validations: [{
-              rule: 'required'
-            }],
-            prefix: "",
-            suffix: ""
-          }, {
-            type: 'text',
-            name: 'city',
-            placeholder: 'City',
-            label: 'City',
-            value: ''
-          }, {
-            type: 'text',
-            name: 'zip',
-            placeholder: 'ZIP',
-            label: 'ZIP',
-            value: ''
-          }, {
-            type: 'text',
-            name: 'patient_name',
-            placeholder: 'Patient Name',
-            label: 'Patient Name',
-            value: '',
-            validators: {
-              rule: 'required'
-            },
-            error: 'Enter patient name'
-          }, {
-            type: 'date',
-            name: 'dob',
-            placeholder: 'Date of Birth',
-            label: 'Date of Birth',
-            value: '',
-            validators: {
-              rule: 'required'
-            },
-            error: 'Enter date of birth of the patient'
-          }, {
-            type: 'select',
-            name: 'gender',
-            placeholder: 'Gender',
-            label: 'Gender',
-            val: [{
-              name: 'Male',
-              val: 'male'
-            }, {
-              name: 'Female',
-              val: 'female'
-            }],
-            validators: {
-              rule: 'required'
-            },
-            error: 'Select gender'
-          }, {
-            type: 'text',
-            name: 'patient_email',
-            placeholder: 'Patient Email',
-            label: 'Patient Email',
-            value: '',
-            validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email],
-            error: 'Enter patient email'
-          }, {
-            type: 'text',
-            name: 'height',
-            placeholder: 'Ex. 6\'10"',
-            label: 'Height',
-            value: '',
-            validators: {
-              rule: 'required'
-            },
-            error: 'Enter patient height'
-          }, {
-            type: 'text',
-            name: 'weight',
-            placeholder: 'Ex. 210 lbs',
-            label: 'Weight',
-            value: '',
-            validators: {
-              rule: 'required'
-            },
-            error: 'Enter patient weight'
-          }, {
-            type: 'text',
-            name: 'booking_date',
-            placeholder: 'Date',
-            label: 'Booking date',
-            value: this.today,
-            disabled: true
-          }, {
-            heading: '<h2>Insurance Information</h2>',
-            label: "Insurance name",
-            name: 'insurance_id',
-            hint: '',
-            type: 'select',
-            val: this.insuranceData,
-            value: [],
-            multiple: false,
-            validations: [{
-              rule: 'required'
-            }],
-            prefix: "",
-            suffix: ""
-          }, {
-            name: "parent_type",
-            type: 'hidden',
-            value: this.parent_type
-          }, {
-            name: "parent_id",
-            type: 'hidden',
-            value: this.parent_id
-          }, {
-            type: 'date',
-            name: 'startdate',
-            placeholder: 'Appointment Date',
-            label: 'Appointment Date',
-            value: '',
-            validators: {
-              rule: 'required'
-            },
-            error: 'Enter Appointment Date'
-          }, {
-            type: 'select',
-            label: "Time Zone",
-            name: 'reqTimezone',
-            val: [{
-              name: 'Alaska Standard Time',
-              val: '-08:00|America/Anchorage'
-            }, {
-              name: 'Pacific Standard Time',
-              val: '-07:00|America/Los_Angeles'
-            }, {
-              name: 'Mountain Standard Time(GMT-06:00)',
-              val: '-06:00|America/Denver'
-            }, {
-              name: 'Mountain Standard Time(GMT-07:00) (no DST)',
-              val: '-07:00|America/Phoenix'
-            }, {
-              name: 'Central Standard Time',
-              val: '-05:00|America/Chicago'
-            }, {
-              name: 'Eastern Standard Time',
-              val: '-04:00|America/New_York'
-            }, {
-              name: 'Hawaii Standard Time',
-              val: '-10:00|Pacific/Honolulu'
-            }],
-            validations: [{
-              rule: 'required'
-            }],
-            prefix: "",
-            suffix: ""
-          }, {
-            type: 'select',
-            label: "Appointment Time",
-            name: 'appointment_time',
-            val: [{
-              name: '6.00 AM to 6.30 AM',
-              val: '6.00 AM to 6.30 AM'
-            }, {
-              name: '6.30 AM to 7.00 AM',
-              val: '6.30 AM to 7.00 AM'
-            }, {
-              name: '7.00 AM to 7.30 AM',
-              val: '7.00 AM to 7.30 AM'
-            }, {
-              name: '7.30 AM to 8.00 AM',
-              val: '7.30 AM to 8.00 AM'
-            }, {
-              name: '8.00 AM to 8.30 AM',
-              val: '8.00 AM to 8.30 AM'
-            }, {
-              name: '8.30 AM to 9.00 AM',
-              val: '8.30 AM to 9.00 AM'
-            }, {
-              name: '9.00 AM to 9.30 AM',
-              val: '9.00 AM to 9.30 AM'
-            }, {
-              name: '9.30 AM to 10.00 AM',
-              val: '9.30 AM to 10.00 AM'
-            }, {
-              name: '10.00 AM to 10.30 AM',
-              val: '10.00 AM to 10.30 AM'
-            }, {
-              name: '10.30 AM to 11.00 AM',
-              val: '10.30 AM to 11.00 AM'
-            }, {
-              name: '11.00 AM to 11.30 AM',
-              val: '11.00 AM to 11.30 AM'
-            }, {
-              name: '11.30 AM to 12.00 AM',
-              val: '11.30 AM to 12.00 AM'
-            }, {
-              name: '12.00 PM to 12.30 PM',
-              val: '12.00 PM to 12.30 PM'
-            }, {
-              name: '1.00 PM to 1.30 PM',
-              val: '1.00 PM to 1.30 PM'
-            }, {
-              name: '1.30 PM to 2.00 PM',
-              val: '1.30 PM to 2.00 PM'
-            }, {
-              name: '2.00 PM to 2.30 PM',
-              val: '2.00 PM to 2.30 PM'
-            }, {
-              name: '2.30 PM to 3.00 PM',
-              val: '2.30 PM to 3.00 PM'
-            }, {
-              name: '3.00 PM to 3.30 PM',
-              val: '3.00 PM to 3.30 PM'
-            }, {
-              name: '3.30 PM to 4.00 PM',
-              val: '3.30 PM to 4.00 PM'
-            }, {
-              name: '4.00 PM to 4.30 PM',
-              val: '4.00 PM to 4.30 PM'
-            }, {
-              name: '4.30 PM to 5.00 PM',
-              val: '4.30 PM to 5.00 PM'
-            }, {
-              name: '5.00 PM to 5.30 PM',
-              val: '5.00 PM to 5.30 PM'
-            }, {
-              name: '5.30 PM to 6.00 PM',
-              val: '5.30 PM to 6.00 PM'
-            }, {
-              name: '6.00 PM to 6.30 PM',
-              val: '6.00 PM to 6.30 PM'
-            }, {
-              name: '6.30 PM to 7.00 PM',
-              val: '6.30 PM to 7.00 PM'
-            }, {
-              name: '7.00 PM to 7.30 PM',
-              val: '7.00 PM to 7.30 PM'
-            }, {
-              name: '7.30 PM to 8.00 PM',
-              val: '7.30 PM to 8.00 PM'
-            }, {
-              name: '8.00 PM to 8.30 PM',
-              val: '8.00 PM to 8.30 PM'
-            }, {
-              name: '8.30 PM to 9.00 PM',
-              val: '8.30 PM to 9.00 PM'
-            }, {
-              name: '9.00 PM to 9.00 PM',
-              val: '9.00 PM to 9.00 PM'
-            }, {
-              name: '9.30 PM to 10.00 PM',
-              val: '9.30 PM to 10.00 PM'
-            }],
-            validations: [{
-              rule: 'required'
-            }],
-            prefix: "",
-            suffix: ""
-          }, {
-            heading: "<h2>Autonomic Nervous System Dysfunction (ANSD)</h2>"
-          }, {
-            heading: 'Blurred Vision',
-            type: 'checkbox',
-            name: 'bv_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'bv_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Elevated Blood Sugar',
-            type: 'checkbox',
-            name: 'ebs_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'ebs_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Extreme Thirst',
-            type: 'checkbox',
-            name: 'et_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'et_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Frequent Urination',
-            type: 'checkbox',
-            name: 'fu_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'fu_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Fatigue (Tiredness)',
-            type: 'checkbox',
-            name: 'ft_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'ft_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Heartburn',
-            type: 'checkbox',
-            name: 'hb_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'hb_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Increased Hunger',
-            type: 'checkbox',
-            name: 'ih_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'ih_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Nausea',
-            type: 'checkbox',
-            name: 'nau_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'nau_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Numbness & Tingling in Hands or Feet',
-            type: 'checkbox',
-            name: 'nthf_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'nthf_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Vomiting',
-            type: 'checkbox',
-            name: 'vomiting_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'vomiting_six_months',
-            label: '6 Months'
-          }, {
-            heading: '<h2>Sudomotor Dysfunction (SUDOD)</h2>'
-          }, {
-            heading: 'Burning Sensations',
-            type: 'checkbox',
-            name: 'bs_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'bs_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Difficulty Digesting Food',
-            type: 'checkbox',
-            name: 'ddf_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'ddf_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Dizziness or Fainting',
-            type: 'checkbox',
-            name: 'dof_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'dof_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Exercise Intolerance',
-            type: 'checkbox',
-            name: 'ei_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'ei_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Sexual Difficulties',
-            type: 'checkbox',
-            name: 'sd_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'sd_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Sweat Abnormalities',
-            type: 'checkbox',
-            name: 'sa_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'sa_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Tingling Hands & Feet',
-            type: 'checkbox',
-            name: 'thf_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'thf_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Urinary Problems',
-            type: 'checkbox',
-            name: 'up_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'up_six_months',
-            label: '6 Months'
-          }, {
-            heading: '<h2>ENDOTHELIAL DYSFUNCTION (ENDOD)<h2>'
-          }, {
-            heading: 'Angina (severe chest pain, often spreading to shoulder, arm, back, neck, or jaw)',
-            type: 'checkbox',
-            name: 'angina_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'angina_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Chest Pain that goes away with rest',
-            type: 'checkbox',
-            name: 'cptgawr_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'cptgawr_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Heartburn',
-            type: 'checkbox',
-            name: 'hrtbn_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'hrtbn_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Pain In Calves',
-            type: 'checkbox',
-            name: 'pic_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'pic_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Shortness of Breath',
-            type: 'checkbox',
-            name: 'sob_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'sob_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Stroke',
-            type: 'checkbox',
-            name: 'stroke_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'stroke_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'TIA (mini stroke)',
-            type: 'checkbox',
-            name: 'tia_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'tia_six_months',
-            label: '6 Months'
-          }, {
-            heading: '<h2>CARDIOMETABOLIC RISK (CMR)</h2>'
-          }, {
-            heading: 'Headaches',
-            type: 'checkbox',
-            name: 'headaches_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'headaches_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Dizziness',
-            type: 'checkbox',
-            name: 'dizziness_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'dizziness_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Swelling of Ankles',
-            type: 'checkbox',
-            name: 'soa_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'soa_six_months',
-            label: '6 Months'
-          }, {
-            heading: '<h2>INSULIN RESISTANCE (IR)</h2>'
-          }, {
-            heading: 'Blurred Vision',
-            type: 'checkbox',
-            name: 'blv_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'blv_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Elevated Blood Sugar',
-            type: 'checkbox',
-            name: 'ebsr_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'ebsr_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Extreme Thirst',
-            type: 'checkbox',
-            name: 'ext_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'ext_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Fatigue (Tiredness)',
-            type: 'checkbox',
-            name: 'ftd_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'ftd_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Increased Hunger',
-            type: 'checkbox',
-            name: 'ihr_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'ihr_six_months',
-            label: '6 Months'
-          }, {
-            heading: '<h2>SMALL FIBER SENSORY NEUROPATHY (SFN)</h2>'
-          }, {
-            heading: 'Burning Sensations',
-            type: 'checkbox',
-            name: 'burns_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'burns_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Painful Contact With Socks or Bed Sheets',
-            type: 'checkbox',
-            name: 'pcwsbs_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'pcwsbs_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Pebble or Sandlike Sensation In Shoes',
-            type: 'checkbox',
-            name: 'psss_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'psss_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Pebble or Sandlike Sensation In Shoes',
-            type: 'checkbox',
-            name: 'psss_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'psss_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Stabbing or Electrical Shock Sensation',
-            type: 'checkbox',
-            name: 'sess_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'sess_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Pins And Needles Sensation In Feet',
-            type: 'checkbox',
-            name: 'pnsf_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'pnsf_six_months',
-            label: '6 Months'
-          }, {
-            heading: '<h2>CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)</h2>'
-          }, {
-            heading: 'Blurred Vision',
-            type: 'checkbox',
-            name: 'bldv_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'bldv_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Cold, Clammy, Pale Skin',
-            type: 'checkbox',
-            name: 'ccps_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'ccps_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Depression',
-            type: 'checkbox',
-            name: 'depression_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'depression_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Dizziness or Lightheadedness',
-            type: 'checkbox',
-            name: 'dol_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'dol_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Thirst',
-            type: 'checkbox',
-            name: 'thirst_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'thirst_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Fainting',
-            type: 'checkbox',
-            name: 'fainting_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'fainting_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Fatigue (Tiredness)',
-            type: 'checkbox',
-            name: 'fatt_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'fatt_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Lack of Concentration',
-            type: 'checkbox',
-            name: 'loc_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'loc_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Lack of Energy',
-            type: 'checkbox',
-            name: 'loe_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'loe_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Nausea',
-            type: 'checkbox',
-            name: 'nausea_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'nausea_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Rapid, Shallow Breathing',
-            type: 'checkbox',
-            name: 'rsb_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'rsb_six_months',
-            label: '6 Months'
-          }, {
-            heading: '<h2>PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)</h2>'
-          }, {
-            heading: 'Blood clot in a vein (Venous Thrombosis)',
-            type: 'checkbox',
-            name: 'bciv_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'bciv_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Heart Attack',
-            type: 'checkbox',
-            name: 'hattk_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'hattk_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Irregular heartbeat, too fast/slow (Atrial Fibrillation)',
-            type: 'checkbox',
-            name: 'iftfs_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'ihtfs_six_months',
-            label: '6 Months'
-          }, {
-            heading: 'Stroke',
-            type: 'checkbox',
-            name: 'strk_today',
-            label: 'Today'
-          }, {
-            type: 'checkbox',
-            name: 'strk_six_months',
-            label: '6 Months'
-          }, {
-            heading: '<h2>Notes</h2>',
-            type: 'textarea',
-            name: 'notes',
-            placeholder: '',
-            label: 'Notes',
-            value: '',
-            validators: {}
-          }, {
-            name: "add_to_google",
-            type: 'hidden',
-            value: true
-          }, {
-            type: 'input',
-            name: 'username',
-            placeholder: 'Organizer Name',
-            label: 'Organizer Name',
-            value: '',
-            disabled: true
-          }, {
-            type: 'input',
-            name: 'useremail',
-            placeholder: 'Organizer Email',
-            label: 'Organizer Email',
-            value: '',
-            disabled: true
-          }, {
-            type: 'input',
-            name: 'attendees',
-            placeholder: 'Attendee Email',
-            label: 'Attendee Email',
-            value: '',
-            disabled: true
-          }, {
-            type: 'input',
-            name: 'additional_notes',
-            placeholder: 'Additional Notes',
-            label: 'Additional Notes',
-            value: ''
-          }]
-        };
-        this.getStates();
-        this.headerFlag = this.activatedRoute.snapshot.url[0].path;
-        this.jwtToken = cookieService.get('jwtToken');
-        this.formdata.jwttoken = this.jwtToken;
-        var allcookies;
-        allcookies = cookieService.getAll();
-        this.cookiesData = JSON.parse(allcookies.user_details);
-        this.cookies_id = this.cookiesData._id;
-        this.formfieldrefreshdata = {
-          field: 'addfromcontrol',
-          value: {
-            name: "doctor_office_id",
-            type: 'hidden',
-            value: this.cookiesData._id
-          }
-        };
-        var data = {
-          "source": "data_pece",
-          "condition": {
-            _id_object: this.cookiesData.doctor_id
+        this.today = moment_es6__WEBPACK_IMPORTED_MODULE_7___default()().format('L');
+        this.states = [];
+        this.configData = {
+          appName: 'Calendar-Management',
+          jwtToken: '',
+          baseUrl: 'https://m9mkuic6o9.execute-api.us-east-1.amazonaws.com/dev/api/',
+          endPoint: {
+            add: 'add-or-update-event-data',
+            datalist: 'datalist',
+            deleteEvent: 'delete-single-event',
+            viewEventSlots: 'view-event-eventdayarr',
+            search: 'search',
+            countSlot: 'count-slot',
+            addToCalendar: 'add-to-calendar-manually',
+            getRefreshToken: 'get-refresh-token',
+            getTokenInfo: 'getauthorization-pece-getuserdata',
+            syncWithGoogle: 'get-events-from-google',
+            insuranceDataManage: 'insurance-data-manage'
           },
-          "token": this.jwtToken
-        };
-        this.httpService.httpViaPost("datalist", data).subscribe(function (response) {
-          if (response.status == true) {
-            var doctorDetails = [];
-
-            for (var i = 0; i < response.res.length; i++) {
-              var temp = {};
-              temp['name'] = response.res[i].firstname + ' ' + response.res[i].lastname;
-              temp['val'] = response.res[i]._id;
-              doctorDetails.push(temp);
+          urls: [],
+          timeZone: [{
+            text: 'Alaska Standard Time',
+            value: '-08:00|America/Anchorage'
+          }, {
+            text: 'Pacific Standard Time',
+            value: '-07:00|America/Los_Angeles'
+          }, {
+            text: 'Mountain Standard Time(GMT-06:00)',
+            value: '-06:00|America/Denver'
+          }, {
+            text: 'Mountain Standard Time(GMT-07:00) (no DST)',
+            value: '-07:00|America/Phoenix'
+          }, {
+            text: 'Central Standard Time',
+            value: '-05:00|America/Chicago'
+          }, {
+            text: 'Eastern Standard Time',
+            value: '-04:00|America/New_York'
+          }, {
+            text: 'Hawaii Standard Time',
+            value: '-10:00|Pacific/Honolulu'
+          }],
+          eventType: [{
+            text: 'Admin Meetings',
+            value: 1
+          }, {
+            text: 'Type 2',
+            value: 2
+          }, {
+            text: 'Type 3',
+            value: 3
+          }, {
+            text: 'Type 3',
+            value: 4
+          }],
+          responseData: '',
+          patientInfoFormFields: null,
+          calendarInfoFormFields: {},
+          primaryCondition: {
+            $or: [{
+              event_type: 1
+            }, {
+              event_type: 2
+            }],
+            userid: {
+              $in: JSON.parse(this.cookieService.get('user_details')).tech_id
             }
-
-            _this135.parent_type = response.res[0].parent_type;
-            _this135.parent_id = response.res[0].parent_id;
-            setTimeout(function () {
-              _this135.formfieldrefreshdata = {
-                field: 'addfromcontrol',
-                value: {
-                  heading: "<h2>Appointment Details</h2>",
-                  label: "Select Doctor",
-                  name: "doctor_id",
-                  hint: '',
-                  type: 'select',
-                  val: doctorDetails,
-                  multiple: false,
-                  validations: [{
-                    rule: 'required'
-                  }],
-                  prefix: "",
-                  suffix: "",
-                  after: 'insurance_id'
-                }
-              };
-            }, 300);
           }
-        });
+        };
       }
 
       _createClass(AddPatientManuallyComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this136 = this;
+          var _this135 = this;
+
+          /******* Get user details from cookies ******/
+          this.userDetails = JSON.parse(this.cookieService.get('user_details'));
+          this.configData = Object.assign(this.configData, this.userDetails);
+          this.getStates();
 
           if (this.cookieService.check('jwtToken')) {
+            this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this136.resolveData = data.eventdayarrData;
-              var otherFieldsData = [];
-
-              for (var i = _this136.resolveData.others.patient_information.length - 1; i >= 0; i--) {
-                var fieldData = void 0;
-
-                switch (_this136.resolveData.others.patient_information[i].type) {
-                  case 'checkbox':
-                    otherFieldsData.push({
-                      type: 'checkbox',
-                      label: _this136.resolveData.others.patient_information[i].description,
-                      name: _this136.resolveData.others.patient_information[i].label,
-                      after: 'appointment_time'
-                    });
-                    break;
-
-                  case 'textfield':
-                    otherFieldsData.push({
-                      type: 'text',
-                      name: _this136.resolveData.others.patient_information[i].label,
-                      label: _this136.resolveData.others.patient_information[i].description,
-                      value: '',
-                      validators: {
-                        rule: 'required'
-                      },
-                      after: 'appointment_time'
-                    });
-                    break;
-
-                  case 'dropdown':
-                    var temp = [];
-
-                    for (var j = 0; j < _this136.resolveData.others.patient_information[i].addfield.length; j++) {
-                      var json = {
-                        name: _this136.resolveData.others.patient_information[i].addfield[j],
-                        val: _this136.resolveData.others.patient_information[i].addfield[j]
-                      };
-                      temp.push(json);
-                    }
-
-                    otherFieldsData.push({
-                      label: _this136.resolveData.others.patient_information[i].description,
-                      name: _this136.resolveData.others.patient_information[i].label,
-                      type: 'select',
-                      val: temp,
-                      validations: [{
-                        rule: 'required'
-                      }],
-                      after: 'appointment_time'
-                    });
-                    break;
-                }
-              }
-
-              otherFieldsData[otherFieldsData.length - 1].heading = "<h2>Others Details</h2>";
-              _this136.formfieldrefreshdata = {
-                field: 'addfromcontrol',
-                value: otherFieldsData
-              };
-              console.log('Loop finished.');
-              console.log("Hello World: ", otherFieldsData);
+              _this135.resolveData = data.eventdayarrData;
+              _this135.configData.responseData = data.eventdayarrData.data;
             });
           } else {
             this.openSnackBar('Token not found');
-          }
+          } // this.configData.primaryCondition = Object.assign(this.configData.primaryCondition, {userid: {$in: [this.userDetails._id]}});
+
         }
       }, {
         key: "getStates",
         value: function getStates() {
-          var _this137 = this;
+          var _this136 = this;
 
           /* ****************** Get states value from assets/states.json ****************** */
-          this.httpService.get('assets/data/states.json').subscribe(function (res) {
-            var state = res;
+          this.httpRequestService.get('assets/data/states.json').subscribe(function (res) {
+            _this136.states = res;
+            var insuranceData = [];
 
-            for (var loop = 0; loop < state.length; loop++) {
-              _this137.states.push({
-                name: state[loop].text,
-                val: state[loop].value
-              });
-            }
-
-            for (var i = 0; i < _this137.resolveData.others.insurance.length; i++) {
+            for (var i = 0; i < _this136.resolveData.others.insurance.length; i++) {
               var temp = {};
-              temp['name'] = _this137.resolveData.others.insurance[i].insurancename;
-              temp['val'] = _this137.resolveData.others.insurance[i]._id;
-
-              _this137.insuranceData.push(temp);
+              temp['text'] = _this136.resolveData.others.insurance[i].insurancename;
+              temp['value'] = _this136.resolveData.others.insurance[i]._id;
+              insuranceData.push(temp);
             }
 
-            _this137.insuranceData.push({
-              name: 'Others',
-              val: 0
+            insuranceData.push({
+              text: 'Others',
+              value: 0
+            });
+            var insuranceTypeData = [];
+
+            for (var _i = 0; _i < _this136.resolveData.others.insurance_type.length; _i++) {
+              var _temp = {};
+              _temp['text'] = _this136.resolveData.others.insurance_type[_i].insurancetype_name;
+              _temp['value'] = _this136.resolveData.others.insurance_type[_i]._id;
+              _temp['child_of'] = _this136.resolveData.others.insurance_type[_i].insurance_id;
+              insuranceTypeData.push(_temp);
+            }
+
+            console.log('insuranceTypeData', insuranceTypeData);
+            var otherFieldsData = [];
+
+            for (var _i2 = 0; _i2 < _this136.resolveData.others.patient_information.length; _i2++) {
+              var fieldData = void 0;
+
+              switch (_this136.resolveData.others.patient_information[_i2].type) {
+                case 'checkbox':
+                  fieldData = {
+                    type: 'checkbox',
+                    label: _this136.resolveData.others.patient_information[_i2].description,
+                    checkItems: [{
+                      name: _this136.resolveData.others.patient_information[_i2].label,
+                      value: false,
+                      label: '',
+                      labelPosition: 'before'
+                    }]
+                  };
+                  break;
+
+                case 'textfield':
+                  fieldData = {
+                    type: 'input',
+                    name: _this136.resolveData.others.patient_information[_i2].label,
+                    placeholder: _this136.resolveData.others.patient_information[_i2].description,
+                    label: _this136.resolveData.others.patient_information[_i2].description,
+                    value: ''
+                  };
+                  break;
+
+                case 'dropdown':
+                  for (var j = 0; j < _this136.resolveData.others.patient_information[_i2].addfield.length; j++) {
+                    _this136.resolveData.others.patient_information[_i2].addfield[j] = {
+                      text: _this136.resolveData.others.patient_information[_i2].addfield[j],
+                      value: _this136.resolveData.others.patient_information[_i2].addfield[j]
+                    };
+                  }
+
+                  fieldData = {
+                    type: 'select',
+                    name: _this136.resolveData.others.patient_information[_i2].label,
+                    placeholder: _this136.resolveData.others.patient_information[_i2].description,
+                    label: _this136.resolveData.others.patient_information[_i2].description,
+                    options: _this136.resolveData.others.patient_information[_i2].addfield
+                  };
+                  break;
+              }
+
+              if (fieldData != undefined) {
+                if (otherFieldsData.length == 0) {
+                  fieldData['caption'] = 'Others Details';
+                }
+
+                otherFieldsData.push(fieldData);
+              }
+            }
+
+            console.log('otherFieldsData', otherFieldsData);
+            var patientInfoFormFields = [{
+              type: 'input',
+              name: 'practice_name',
+              placeholder: 'Practice Name',
+              label: 'Practice Name',
+              value: '',
+              validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+              error: 'Enter practice name',
+              caption: 'Patient General Information'
+            }, {
+              type: 'input',
+              name: 'address',
+              placeholder: 'Address',
+              label: 'Address',
+              value: ''
+            }, // {type: 'input', name: 'state', placeholder: 'State', label: 'State', value: ''},
+            {
+              type: 'select',
+              name: 'state',
+              placeholder: 'Select State',
+              label: 'State',
+              options: _this136.states,
+              validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+              error: 'Select state'
+            }, {
+              type: 'input',
+              name: 'city',
+              placeholder: 'City',
+              label: 'City',
+              value: ''
+            }, {
+              type: 'input',
+              name: 'zip',
+              placeholder: 'ZIP',
+              label: 'ZIP',
+              value: ''
+            }, {
+              type: 'input',
+              name: 'patient_name',
+              placeholder: 'Patient Name',
+              label: 'Patient Name',
+              value: '',
+              validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+              error: 'Enter patient name'
+            }, {
+              type: 'date',
+              name: 'dob',
+              placeholder: 'Date of Birth',
+              label: 'Date of Birth',
+              value: '',
+              validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+              error: 'Enter date of birth of the patient'
+            }, {
+              type: 'select',
+              name: 'gender',
+              placeholder: 'Gender',
+              label: 'Gender',
+              options: [{
+                text: 'Male',
+                value: 'male'
+              }, {
+                text: 'Female',
+                value: 'female'
+              }],
+              validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+              error: 'Select gender'
+            }, {
+              type: 'input',
+              name: 'patient_email',
+              placeholder: 'Patient Email',
+              label: 'Patient Email',
+              value: '',
+              validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email],
+              error: 'Enter patient email'
+            }, {
+              type: 'input',
+              name: 'height',
+              placeholder: 'Ex. 6\'10"',
+              label: 'Height',
+              value: '',
+              validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+              error: 'Enter patient height'
+            }, {
+              type: 'input',
+              name: 'weight',
+              placeholder: 'Ex. 210 lbs',
+              label: 'Weight',
+              value: '',
+              validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+              error: 'Enter patient weight'
+            }, {
+              type: 'input',
+              name: 'booking_date',
+              placeholder: 'Date',
+              label: 'Booking date',
+              value: _this136.today,
+              disabled: true
+            }];
+            var checkboxFields = [{
+              type: 'checkbox',
+              caption: 'Autonomic Nervous System Dysfunction (ANSD)',
+              label: 'Blurred Vision',
+              checkItems: [{
+                name: 'bv_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'bv_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Elevated Blood Sugar',
+              checkItems: [{
+                name: 'ebs_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'ebs_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Extreme Thirst',
+              checkItems: [{
+                name: 'et_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'et_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Frequent Urination',
+              checkItems: [{
+                name: 'fu_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'fu_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Fatigue (Tiredness)',
+              checkItems: [{
+                name: 'ft_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'ft_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Heartburn',
+              checkItems: [{
+                name: 'hb_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'hb_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Increased Hunger',
+              checkItems: [{
+                name: 'ih_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'ih_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Nausea',
+              checkItems: [{
+                name: 'nau_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'nau_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Numbness & Tingling in Hands or Feet',
+              checkItems: [{
+                name: 'nthf_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'nthf_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Vomiting',
+              checkItems: [{
+                name: 'vomiting_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'vomiting_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              caption: 'Sudomotor Dysfunction (SUDOD)',
+              label: 'Burning Sensations',
+              checkItems: [{
+                name: 'bs_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'bs_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Difficulty Digesting Food',
+              checkItems: [{
+                name: 'ddf_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'ddf_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Dizziness or Fainting',
+              checkItems: [{
+                name: 'dof_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'dof_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Exercise Intolerance',
+              checkItems: [{
+                name: 'ei_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'ei_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Sexual Difficulties',
+              checkItems: [{
+                name: 'sd_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'sd_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Sweat Abnormalities',
+              checkItems: [{
+                name: 'sa_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'sa_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Tingling Hands & Feet',
+              checkItems: [{
+                name: 'thf_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'thf_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              label: 'Urinary Problems',
+              checkItems: [{
+                name: 'up_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'up_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'Autonomic Nervous System Dysfunction (ANSD)'
+            }, {
+              type: 'checkbox',
+              caption: 'ENDOTHELIAL DYSFUNCTION (ENDOD)',
+              label: 'Angina (severe chest pain, often spreading to shoulder, arm, back, neck, or jaw)',
+              checkItems: [{
+                name: 'angina_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'angina_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
+            }, {
+              type: 'checkbox',
+              label: 'Chest Pain that goes away with rest',
+              checkItems: [{
+                name: 'cptgawr_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'cptgawr_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
+            }, {
+              type: 'checkbox',
+              label: 'Heartburn',
+              checkItems: [{
+                name: 'hrtbn_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'hrtbn_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
+            }, {
+              type: 'checkbox',
+              label: 'Pain In Calves',
+              checkItems: [{
+                name: 'pic_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'pic_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
+            }, {
+              type: 'checkbox',
+              label: 'Shortness of Breath',
+              checkItems: [{
+                name: 'sob_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'sob_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
+            }, {
+              type: 'checkbox',
+              label: 'Stroke',
+              checkItems: [{
+                name: 'stroke_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'stroke_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
+            }, {
+              type: 'checkbox',
+              label: 'TIA (mini stroke)',
+              checkItems: [{
+                name: 'tia_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'tia_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'ENDOTHELIAL DYSFUNCTION (ENDOD)'
+            }, {
+              type: 'checkbox',
+              caption: 'CARDIOMETABOLIC RISK (CMR)',
+              label: 'Headaches',
+              checkItems: [{
+                name: 'headaches_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'headaches_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC RISK (CMR)'
+            }, {
+              type: 'checkbox',
+              label: 'Dizziness',
+              checkItems: [{
+                name: 'dizziness_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'dizziness_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC RISK (CMR)'
+            }, {
+              type: 'checkbox',
+              label: 'Swelling of Ankles',
+              checkItems: [{
+                name: 'soa_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'soa_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC RISK (CMR)'
+            }, {
+              type: 'checkbox',
+              caption: 'INSULIN RESISTANCE (IR)',
+              label: 'Blurred Vision',
+              checkItems: [{
+                name: 'blv_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'blv_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'INSULIN RESISTANCE (IR)'
+            }, {
+              type: 'checkbox',
+              label: 'Elevated Blood Sugar',
+              checkItems: [{
+                name: 'ebsr_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'ebsr_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'INSULIN RESISTANCE (IR)'
+            }, {
+              type: 'checkbox',
+              label: 'Extreme Thirst',
+              checkItems: [{
+                name: 'ext_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'ext_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'INSULIN RESISTANCE (IR)'
+            }, {
+              type: 'checkbox',
+              label: 'Fatigue (Tiredness)',
+              checkItems: [{
+                name: 'ftd_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'ftd_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'INSULIN RESISTANCE (IR)'
+            }, {
+              type: 'checkbox',
+              label: 'Increased Hunger',
+              checkItems: [{
+                name: 'ihr_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'ihr_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'INSULIN RESISTANCE (IR)'
+            }, {
+              type: 'checkbox',
+              caption: 'SMALL FIBER SENSORY NEUROPATHY (SFN)',
+              label: 'Burning Sensations',
+              checkItems: [{
+                name: 'burns_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'burns_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'SMALL FIBER SENSORY NEUROPATHY (SFN)'
+            }, {
+              type: 'checkbox',
+              label: 'Painful Contact With Socks or Bed Sheets',
+              checkItems: [{
+                name: 'pcwsbs_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'pcwsbs_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'SMALL FIBER SENSORY NEUROPATHY (SFN)'
+            }, {
+              type: 'checkbox',
+              label: 'Pebble or Sandlike Sensation In Shoes',
+              checkItems: [{
+                name: 'psss_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'psss_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'SMALL FIBER SENSORY NEUROPATHY (SFN)'
+            }, {
+              type: 'checkbox',
+              label: 'Stabbing or Electrical Shock Sensation',
+              checkItems: [{
+                name: 'sess_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'sess_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'SMALL FIBER SENSORY NEUROPATHY (SFN)'
+            }, {
+              type: 'checkbox',
+              label: 'Pins And Needles Sensation In Feet',
+              checkItems: [{
+                name: 'pnsf_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'pnsf_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'SMALL FIBER SENSORY NEUROPATHY (SFN)'
+            }, {
+              type: 'checkbox',
+              caption: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)',
+              label: 'Blurred Vision',
+              checkItems: [{
+                name: 'bldv_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'bldv_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
+            }, {
+              type: 'checkbox',
+              label: 'Cold, Clammy, Pale Skin',
+              checkItems: [{
+                name: 'ccps_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'ccps_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
+            }, {
+              type: 'checkbox',
+              label: 'Depression',
+              checkItems: [{
+                name: 'depression_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'depression_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
+            }, {
+              type: 'checkbox',
+              label: 'Dizziness or Lightheadedness',
+              checkItems: [{
+                name: 'dol_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'dol_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
+            }, {
+              type: 'checkbox',
+              label: 'Thirst',
+              checkItems: [{
+                name: 'thirst_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'thirst_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
+            }, {
+              type: 'checkbox',
+              label: 'Fainting',
+              checkItems: [{
+                name: 'fainting_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'fainting_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
+            }, {
+              type: 'checkbox',
+              label: 'Fatigue (Tiredness)',
+              checkItems: [{
+                name: 'fatt_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'fatt_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
+            }, {
+              type: 'checkbox',
+              label: 'Lack of Concentration',
+              checkItems: [{
+                name: 'loc_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'loc_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
+            }, {
+              type: 'checkbox',
+              label: 'Lack of Energy',
+              checkItems: [{
+                name: 'loe_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'loe_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
+            }, {
+              type: 'checkbox',
+              label: 'Nausea',
+              checkItems: [{
+                name: 'nausea_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'nausea_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
+            }, {
+              type: 'checkbox',
+              label: 'Rapid, Shallow Breathing',
+              checkItems: [{
+                name: 'rsb_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'rsb_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'CARDIOMETABOLIC AUTONOMIC NEUROPATHY (CAN)'
+            }, {
+              type: 'checkbox',
+              caption: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)',
+              label: 'Blood clot in a vein (Venous Thrombosis)',
+              checkItems: [{
+                name: 'bciv_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'bciv_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)'
+            }, {
+              type: 'checkbox',
+              label: 'Heart Attack',
+              checkItems: [{
+                name: 'hattk_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'hattk_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)'
+            }, {
+              type: 'checkbox',
+              label: 'Irregular heartbeat, too fast/slow (Atrial Fibrillation)',
+              checkItems: [{
+                name: 'ihtfs_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'iftfs_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)'
+            }, {
+              type: 'checkbox',
+              label: 'Stroke',
+              checkItems: [{
+                name: 'strk_six_months',
+                value: false,
+                label: '6 Months',
+                labelPosition: 'before'
+              }, {
+                name: 'strk_today',
+                value: false,
+                label: 'Today',
+                labelPosition: 'before'
+              }],
+              isSymptomChecklist: true,
+              block: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)'
+            }];
+            var autocompleteFields = [{
+              type: 'select',
+              name: 'insurance_id',
+              placeholder: 'Insurance name',
+              label: 'Insurance name',
+              value: '',
+              options: insuranceData,
+              caption: 'Insurance Information'
+            }, {
+              type: 'select',
+              name: 'insurance_type',
+              placeholder: 'Insurance type',
+              label: 'Insurance type',
+              value: '',
+              isDependent: true,
+              dependentOn: 'insurance_id',
+              options: insuranceTypeData
+            }, {
+              type: 'input',
+              name: 'insurance_name_input',
+              placeholder: 'Name of the insurance',
+              label: 'Name of the insurance',
+              value: '',
+              isDependent: true,
+              dependentOn: 'insurance_id',
+              condition: 0
+            }, {
+              type: 'input',
+              name: 'insurance_type_input',
+              placeholder: 'Insurance type',
+              label: 'Insurance type',
+              value: '',
+              isDependent: true,
+              dependentOn: 'insurance_id',
+              condition: 0
+            }];
+            var calendarInfoFormFields = [{
+              type: 'input',
+              name: 'event_title',
+              placeholder: 'Event Title',
+              label: 'Event Title',
+              value: '',
+              caption: 'Additional Information'
+            }, {
+              type: 'date',
+              name: 'startdate',
+              placeholder: 'Date of Appointment',
+              label: 'Date of Appointment',
+              value: '',
+              validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+              error: 'Enter Date of Appointment'
+            }, {
+              type: 'input',
+              name: 'slot',
+              placeholder: 'Time of Appointment',
+              label: 'Time of Appointment',
+              value: ''
+            }, {
+              type: 'select',
+              name: 'reqTimezone',
+              options: [{
+                text: 'Alaska Standard Time',
+                value: '-08:00|America/Anchorage'
+              }, {
+                text: 'Pacific Standard Time',
+                value: '-07:00|America/Los_Angeles'
+              }, {
+                text: 'Mountain Standard Time(GMT-06:00)',
+                value: '-06:00|America/Denver'
+              }, {
+                text: 'Mountain Standard Time(GMT-07:00) (no DST)',
+                value: '-07:00|America/Phoenix'
+              }, {
+                text: 'Central Standard Time',
+                value: '-05:00|America/Chicago'
+              }, {
+                text: 'Eastern Standard Time',
+                value: '-04:00|America/New_York'
+              }, {
+                text: 'Hawaii Standard Time',
+                value: '-10:00|Pacific/Honolulu'
+              }],
+              value: '-05:00|America/Chicago'
+            }, {
+              type: 'input',
+              name: 'username',
+              placeholder: 'Organizer Name',
+              label: 'Organizer Name',
+              value: '',
+              disabled: true
+            }, {
+              type: 'input',
+              name: 'useremail',
+              placeholder: 'Organizer Email',
+              label: 'Organizer Email',
+              value: ''
+            }, {
+              type: 'input',
+              name: 'attendees',
+              placeholder: 'Attendee Email',
+              label: 'Attendee Email',
+              value: ''
+            }, {
+              type: 'input',
+              name: 'additional_notes',
+              placeholder: 'Additional Notes',
+              label: 'Additional Notes',
+              value: ''
+            }];
+
+            _this136.httpRequestService.postRequest('get-doctor-info', {
+              condition: {
+                _id: _this136.userDetails.doctor_id
+              }
+            }).subscribe(function (response) {
+              var hiddenFields = [{
+                type: 'input',
+                name: 'doctor_id',
+                value: response.data._id,
+                hidden: true
+              }, {
+                type: 'input',
+                name: 'doctor_office_id',
+                value: response.data.doctor_office_id,
+                hidden: true
+              }, {
+                type: 'input',
+                name: 'tech_id',
+                value: response.data.tech_id,
+                hidden: true
+              }, {
+                type: 'input',
+                name: 'parent_type',
+                value: response.data.parent_type,
+                hidden: true
+              }, {
+                type: 'input',
+                name: 'parent_id',
+                value: response.data.parent_id,
+                hidden: true
+              }];
+              _this136.configData = Object.assign(_this136.configData, {
+                patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields, calendarInfoFormFields)
+              });
+              console.log('this.configData', _this136.configData);
             });
           }, function (error) {
             console.log('Oooops! Cannot get states.');
@@ -24763,201 +26208,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             duration: 3000
           });
         }
-      }, {
-        key: "listenFormFieldChange",
-        value: function listenFormFieldChange(val) {
-          var _this138 = this;
-
-          switch (val.field.name) {
-            case 'insurance_id':
-              if (val.fieldval != 0) {
-                var countFlag = 0;
-
-                for (var i = 0; i < this.resolveData.others.insurance_type.length; i++) {
-                  for (var j = 0; j < this.resolveData.others.insurance_type[i].insurance_id.length; j++) {
-                    if (val.fieldval == this.resolveData.others.insurance_type[i].insurance_id[j]) {
-                      countFlag++;
-                      var temp = {};
-                      temp['name'] = this.resolveData.others.insurance_type[i].insurancetype_name;
-                      temp['val'] = this.resolveData.others.insurance_type[i]._id;
-                      this.insuranceTypeData.push(temp);
-                    }
-                  }
-                }
-
-                if (countFlag == 0) {
-                  this.insuranceTypeData.push({});
-                }
-
-                this.formfieldrefreshdata = {
-                  field: 'removefromcontrol',
-                  value: {
-                    name: 'insurance_name_input'
-                  }
-                };
-                this.formfieldrefreshdata = {
-                  field: 'removefromcontrol',
-                  value: {
-                    name: 'insurance_type_input'
-                  }
-                };
-                this.formfieldrefreshdata = {
-                  field: 'addfromcontrol',
-                  value: {
-                    label: "Insurance type",
-                    name: "insurance_type",
-                    hint: '',
-                    type: 'select',
-                    val: this.insuranceTypeData,
-                    multiple: false,
-                    validations: [{
-                      rule: 'required'
-                    }],
-                    prefix: "",
-                    suffix: "",
-                    after: 'insurance_id'
-                  }
-                };
-              } else {
-                this.formfieldrefreshdata = {
-                  field: 'removefromcontrol',
-                  value: {
-                    name: 'insurance_type'
-                  }
-                };
-                setTimeout(function () {
-                  _this138.formfieldrefreshdata = {
-                    field: 'addfromcontrol',
-                    value: {
-                      label: 'Name of the insurance',
-                      name: 'insurance_name_input',
-                      type: 'text',
-                      val: '',
-                      validators: [{
-                        rule: 'required'
-                      }],
-                      prefix: "",
-                      suffix: "",
-                      after: 'insurance_id'
-                    }
-                  };
-                }, 1000);
-                setTimeout(function () {
-                  _this138.formfieldrefreshdata = {
-                    field: 'addfromcontrol',
-                    value: {
-                      type: 'text',
-                      name: 'insurance_type_input',
-                      placeholder: 'Insurance type',
-                      label: 'Insurance type',
-                      value: '',
-                      validators: [{
-                        rule: 'required'
-                      }],
-                      prefix: "",
-                      suffix: "",
-                      after: 'insurance_name_input'
-                    }
-                  };
-                }, 2000);
-              }
-
-              break;
-              this.cookiesData;
-
-            case 'doctor_id':
-              var data = {
-                "source": "tech_by_doctor_id",
-                "condition": {
-                  _id_object: val.fieldval
-                },
-                "token": this.jwtToken
-              };
-              this.httpService.httpViaPost("datalist", data).subscribe(function (response) {
-                // this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'doctor_id' } };
-                // this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_type' } };
-                // this.formfieldrefreshdata = { field: 'removefromcontrol', value: { name: 'parent_id' } };
-                if (response.status == true) {
-                  var techDetails = [];
-
-                  for (var _i = 0; _i < response.res.length; _i++) {
-                    var _temp = {};
-                    _temp['name'] = response.res[_i].firstname + ' ' + response.res[_i].lastname;
-                    _temp['val'] = response.res[_i]._id;
-                    techDetails.push(_temp);
-                  }
-                } // set doctor dropdown
-
-
-                setTimeout(function () {
-                  _this138.formfieldrefreshdata = {
-                    field: 'addfromcontrol',
-                    value: {
-                      label: "Select Tech",
-                      name: "tech_id",
-                      hint: '',
-                      type: 'select',
-                      val: techDetails,
-                      validations: [{
-                        rule: 'required'
-                      }],
-                      after: 'doctor_id'
-                    }
-                  };
-                }, 100);
-              });
-              break;
-
-            case 'doctor_id':
-              var data2 = {
-                "source": "data_pece",
-                "condition": {
-                  "_id_object": val.fieldval
-                },
-                "token": this.jwtToken
-              };
-              this.httpService.httpViaPost("datalist", data2).subscribe(function (response) {
-                if (response.status == true) {
-                  // set parent id and type
-                  var parentData = {
-                    "source": "data_pece",
-                    "condition": {
-                      _id_object: val.fieldval
-                    },
-                    "token": _this138.jwtToken
-                  };
-
-                  _this138.httpService.httpViaPost("datalist", parentData).subscribe(function (response) {
-                    if (response.status == true) {
-                      if (typeof response.res[0].parent_type != 'undefined') {
-                        setTimeout(function () {
-                          _this138.formfieldrefreshdata = {
-                            field: 'addfromcontrol',
-                            value: {
-                              name: "parent_type",
-                              type: 'hidden',
-                              value: response.res[0].parent_type
-                            }
-                          };
-                        }, 200);
-                        setTimeout(function () {
-                          _this138.formfieldrefreshdata = {
-                            field: 'addfromcontrol',
-                            value: {
-                              name: "parent_id",
-                              type: 'hidden',
-                              value: response.res[0].parent_id
-                            }
-                          };
-                        }, 300);
-                      }
-                    }
-                  });
-                }
-              });
-              break;
-          }
-        }
       }]);
 
       return AddPatientManuallyComponent;
@@ -24965,19 +26215,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     AddPatientManuallyComponent.ctorParameters = function () {
       return [{
-        type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]
-      }, {
-        type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_3__["HttpServiceService"]
-      }, {
-        type: _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSnackBar"]
-      }, {
-        type: _class_common_common_function__WEBPACK_IMPORTED_MODULE_7__["CommonFunction"]
-      }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"]
       }, {
         type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"]
       }, {
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
+        type: _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSnackBar"]
+      }, {
+        type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_3__["HttpServiceService"]
       }];
     };
 
@@ -25098,7 +26342,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(DoctorOfficeAccountSettingsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this139 = this;
+          var _this137 = this;
 
           //generating the form
           this.generateForm(); //setting the default value
@@ -25107,7 +26351,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.allStateCityData();
           setTimeout(function () {
-            _this139.getCityByName(_this139.userData.state);
+            _this137.getCityByName(_this137.userData.state);
           }, 2000);
         }
       }, {
@@ -25146,7 +26390,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onSubmit",
         value: function onSubmit() {
-          var _this140 = this;
+          var _this138 = this;
 
           this.loader = true;
           if (this.accountForm.invalid) return;else {
@@ -25157,30 +26401,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == 'success') {
-                var userDetailsCookie = JSON.parse(_this140.cookieService.get('user_details'));
+                var userDetailsCookie = JSON.parse(_this138.cookieService.get('user_details'));
                 var type = userDetailsCookie.type;
 
-                _this140.cookieService.delete('user_details'); // -------------------------------------
+                _this138.cookieService.delete('user_details'); // -------------------------------------
 
 
-                userDetailsCookie.address = _this140.accountForm.value.address; // -------------------------------------
+                userDetailsCookie.address = _this138.accountForm.value.address; // -------------------------------------
 
                 userDetailsCookie = JSON.stringify(userDetailsCookie);
                 console.log("-->", userDetailsCookie);
-                _this140.loader = false;
+                _this138.loader = false;
                 var action = "Ok";
 
-                _this140.snackBar.open(_this140.message, action, {
+                _this138.snackBar.open(_this138.message, action, {
                   duration: 1000
                 });
 
                 setTimeout(function () {// this.cookieService.set('user_details', userDetailsCookie);
                 }, 1000);
                 setTimeout(function () {
-                  _this140.router.navigateByUrl('/doctor-office/dashboard');
+                  _this138.router.navigateByUrl('/doctor-office/dashboard');
                 }, 3000);
               } else {
-                _this140.snackBar.open(response.status, "OK", {
+                _this138.snackBar.open(response.status, "OK", {
                   duration: 1500
                 });
               }
@@ -25197,13 +26441,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this141 = this;
+          var _this139 = this;
 
           this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this141.states = response;
+            _this139.states = response;
           });
           this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this141.allCities = response;
+            _this139.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -25401,7 +26645,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "changePassword",
         value: function changePassword() {
-          var _this142 = this;
+          var _this140 = this;
 
           this.loader = true;
 
@@ -25415,21 +26659,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost('changepassword', data).subscribe(function (response) {
               // this.formDirective.resetForm();
-              _this142.loader = false;
+              _this140.loader = false;
 
               if (response.Status == true) {
-                _this142.snackBar.open(response.message, "OK", {
+                _this140.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
 
-                _this142.router.navigateByUrl('doctor-office/dashboard');
+                _this140.router.navigateByUrl('doctor-office/dashboard');
               } else {
-                _this142.snackBar.open(response.message, "OK", {
+                _this140.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
               }
             }, function (error) {
-              _this142.loader = false;
+              _this140.loader = false;
               alert("Some error occurred. Please try later.");
             });
           }
@@ -26200,15 +27444,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(BookAppoinmentNowComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this143 = this;
+          var _this141 = this;
 
           this.getStates();
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this143.resolveData = data.eventdayarrData;
-              _this143.configData.responseData = data.eventdayarrData.data;
+              _this141.resolveData = data.eventdayarrData;
+              _this141.configData.responseData = data.eventdayarrData.data;
             });
           } else {
             this.openSnackBar('Token not found');
@@ -26231,7 +27475,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateUser",
         value: function updateUser() {
-          var _this144 = this;
+          var _this142 = this;
 
           // let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
           if (this.activatedRoute.snapshot.params.refresh && this.cookieService.check('user_details')) {
@@ -26247,7 +27491,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               console.log('response', response);
 
               if (response.status == 'success') {
-                _this144.openSnackBar('Calendar added successfully...');
+                _this142.openSnackBar('Calendar added successfully...');
               }
             });
             var urlSendEmail = this.configData.baseUrl + 'send-confirmation-email?id=' + this.userDetails._id;
@@ -26255,7 +27499,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               if (response.status == 'success') {
                 console.log('Mail sent ', response.msg_id);
 
-                _this144.openSnackBar('Confirmation email sent to your email - ' + _this144.userDetails.email, 'Ok');
+                _this142.openSnackBar('Confirmation email sent to your email - ' + _this142.userDetails.email, 'Ok');
               }
             }); // Update user_details in cookie
 
@@ -26265,17 +27509,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getStates",
         value: function getStates() {
-          var _this145 = this;
+          var _this143 = this;
 
           /* ****************** Get states value from assets/states.json ****************** */
           this.httpRequestService.get('assets/data/states.json').subscribe(function (res) {
-            _this145.states = res;
+            _this143.states = res;
             var insuranceData = [];
 
-            for (var i = 0; i < _this145.resolveData.others.insurance.length; i++) {
+            for (var i = 0; i < _this143.resolveData.others.insurance.length; i++) {
               var temp = {};
-              temp['text'] = _this145.resolveData.others.insurance[i].insurancename;
-              temp['value'] = _this145.resolveData.others.insurance[i]._id;
+              temp['text'] = _this143.resolveData.others.insurance[i].insurancename;
+              temp['value'] = _this143.resolveData.others.insurance[i]._id;
               insuranceData.push(temp);
             }
 
@@ -26285,27 +27529,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
             var insuranceTypeData = [];
 
-            for (var _i2 = 0; _i2 < _this145.resolveData.others.insurance_type.length; _i2++) {
+            for (var _i3 = 0; _i3 < _this143.resolveData.others.insurance_type.length; _i3++) {
               var _temp2 = {};
-              _temp2['text'] = _this145.resolveData.others.insurance_type[_i2].insurancetype_name;
-              _temp2['value'] = _this145.resolveData.others.insurance_type[_i2]._id;
-              _temp2['child_of'] = _this145.resolveData.others.insurance_type[_i2].insurance_id;
+              _temp2['text'] = _this143.resolveData.others.insurance_type[_i3].insurancetype_name;
+              _temp2['value'] = _this143.resolveData.others.insurance_type[_i3]._id;
+              _temp2['child_of'] = _this143.resolveData.others.insurance_type[_i3].insurance_id;
               insuranceTypeData.push(_temp2);
             }
 
             console.log('insuranceTypeData', insuranceTypeData);
             var otherFieldsData = [];
 
-            for (var _i3 = 0; _i3 < _this145.resolveData.others.patient_information.length; _i3++) {
+            for (var _i4 = 0; _i4 < _this143.resolveData.others.patient_information.length; _i4++) {
               var fieldData = void 0;
 
-              switch (_this145.resolveData.others.patient_information[_i3].type) {
+              switch (_this143.resolveData.others.patient_information[_i4].type) {
                 case 'checkbox':
                   fieldData = {
                     type: 'checkbox',
-                    label: _this145.resolveData.others.patient_information[_i3].description,
+                    label: _this143.resolveData.others.patient_information[_i4].description,
                     checkItems: [{
-                      name: _this145.resolveData.others.patient_information[_i3].label,
+                      name: _this143.resolveData.others.patient_information[_i4].label,
                       value: false,
                       label: '',
                       labelPosition: 'before'
@@ -26316,27 +27560,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 case 'textfield':
                   fieldData = {
                     type: 'input',
-                    name: _this145.resolveData.others.patient_information[_i3].label,
-                    placeholder: _this145.resolveData.others.patient_information[_i3].description,
-                    label: _this145.resolveData.others.patient_information[_i3].description,
+                    name: _this143.resolveData.others.patient_information[_i4].label,
+                    placeholder: _this143.resolveData.others.patient_information[_i4].description,
+                    label: _this143.resolveData.others.patient_information[_i4].description,
                     value: ''
                   };
                   break;
 
                 case 'dropdown':
-                  for (var j = 0; j < _this145.resolveData.others.patient_information[_i3].addfield.length; j++) {
-                    _this145.resolveData.others.patient_information[_i3].addfield[j] = {
-                      text: _this145.resolveData.others.patient_information[_i3].addfield[j],
-                      value: _this145.resolveData.others.patient_information[_i3].addfield[j]
+                  for (var j = 0; j < _this143.resolveData.others.patient_information[_i4].addfield.length; j++) {
+                    _this143.resolveData.others.patient_information[_i4].addfield[j] = {
+                      text: _this143.resolveData.others.patient_information[_i4].addfield[j],
+                      value: _this143.resolveData.others.patient_information[_i4].addfield[j]
                     };
                   }
 
                   fieldData = {
                     type: 'select',
-                    name: _this145.resolveData.others.patient_information[_i3].label,
-                    placeholder: _this145.resolveData.others.patient_information[_i3].description,
-                    label: _this145.resolveData.others.patient_information[_i3].description,
-                    options: _this145.resolveData.others.patient_information[_i3].addfield
+                    name: _this143.resolveData.others.patient_information[_i4].label,
+                    placeholder: _this143.resolveData.others.patient_information[_i4].description,
+                    label: _this143.resolveData.others.patient_information[_i4].description,
+                    options: _this143.resolveData.others.patient_information[_i4].addfield
                   };
                   break;
               }
@@ -26372,7 +27616,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'state',
               placeholder: 'Select State',
               label: 'State',
-              options: _this145.states,
+              options: _this143.states,
               validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__["Validators"].required],
               error: 'Select state'
             }, {
@@ -26446,7 +27690,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'booking_date',
               placeholder: 'Date',
               label: 'Booking date',
-              value: _this145.today,
+              value: _this143.today,
               disabled: true
             }];
             var checkboxFields = [{
@@ -27426,9 +28670,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               value: ''
             }];
 
-            _this145.httpRequestService.postRequest('get-doctor-info', {
+            _this143.httpRequestService.postRequest('get-doctor-info', {
               condition: {
-                _id: _this145.userDetails.doctor_id
+                _id: _this143.userDetails.doctor_id
               }
             }).subscribe(function (response) {
               var hiddenFields = [{
@@ -27439,7 +28683,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }, {
                 type: 'input',
                 name: 'doctor_office_id',
-                value: _this145.userDetails._id,
+                value: _this143.userDetails._id,
                 hidden: true
               }, // {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
               {
@@ -27453,7 +28697,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value: response.data.parent_id,
                 hidden: true
               }];
-              _this145.configData = Object.assign(_this145.configData, {
+              _this143.configData = Object.assign(_this143.configData, {
                 patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields)
               }, {
                 calendarInfoFormFields: calendarInfoFormFields
@@ -27683,7 +28927,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DoctorDashboardComponent(dialog, commonFunction, cookie, http, activatedRoute, matSnackBar, deviceService) {
-        var _this146 = this;
+        var _this144 = this;
 
         _classCallCheck(this, DoctorDashboardComponent);
 
@@ -27750,9 +28994,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         this.activatedRoute.data.forEach(function (resolveData) {
-          _this146.allResolveData = resolveData.doctordata.data;
+          _this144.allResolveData = resolveData.doctordata.data;
 
-          _this146.viewReportProcessData(_this146.htmlText.tableHeaderText);
+          _this144.viewReportProcessData(_this144.htmlText.tableHeaderText);
         });
       }
 
@@ -27770,7 +29014,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this147 = this;
+          var _this145 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           this.allDataColumns = ['no', 'patient_name', 'tech_name', 'doctor_name', 'biller_name', 'bill_generation_date', 'bill_sent_date', 'report_type', 'status', 'super_bill', 'action'];
@@ -27861,9 +29105,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('dashboard-datalist', data).subscribe(function (response) {
             if (response.data.length > 0) {
-              _this147.allResolveData.recordData = response.data;
-              _this147.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this147.allResolveData.recordData);
-              _this147.allDataSource.paginator = _this147.paginator;
+              _this145.allResolveData.recordData = response.data;
+              _this145.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this145.allResolveData.recordData);
+              _this145.allDataSource.paginator = _this145.paginator;
             }
           });
           var sectionData = {
@@ -27873,19 +29117,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost('datalist', sectionData).subscribe(function (response) {
             // if (response.data.length > 0) {
-            _this147.otherData["all_details"] = response.res[0]; // }
+            _this145.otherData["all_details"] = response.res[0]; // }
           });
         }
       }, {
         key: "openModal",
         value: function openModal(data) {
-          var _this148 = this;
+          var _this146 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_11__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this148.dialogRef.close();
+                _this146.dialogRef.close();
 
                 break;
             }
@@ -27894,7 +29138,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this149 = this;
+          var _this147 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -27932,15 +29176,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this149.matSnackBar.open("Start downloading...", "", {
+              _this147.matSnackBar.open("Start downloading...", "", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this149.refreshDashboard();
+              _this147.refreshDashboard();
             } else {
-              _this149.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this147.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -27949,7 +29193,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this150 = this;
+          var _this148 = this;
 
           var postData = {
             source: "data_pece",
@@ -27959,16 +29203,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("doctor-dashboard", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this150.allResolveData = response.data;
+              _this148.allResolveData = response.data;
 
-              _this150.viewReportProcessData(_this150.htmlText.tableHeaderText);
+              _this148.viewReportProcessData(_this148.htmlText.tableHeaderText);
             } else {
-              _this150.matSnackBar.open("Please wait...", "", {
+              _this148.matSnackBar.open("Please wait...", "", {
                 duration: 1000
               });
 
               setTimeout(function () {
-                _this150.refreshDashboard();
+                _this148.refreshDashboard();
               }, 1000);
             }
           });
@@ -28478,7 +29722,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getPatientData",
         value: function getPatientData(id) {
-          var _this151 = this;
+          var _this149 = this;
 
           var data = {
             "source": "data_pece",
@@ -28488,7 +29732,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "token": this.cookiesData.jwtToken
           };
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this151.htmlText.patientDetails = response.res[0];
+            _this149.htmlText.patientDetails = response.res[0];
           });
         }
       }, {
@@ -28640,7 +29884,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function PatientReportViewComponent(fb, activeRoute, router, httpService, datePipe, cookie, snakBar, dialog, commonFunction) {
-        var _this152 = this;
+        var _this150 = this;
 
         _classCallCheck(this, PatientReportViewComponent);
 
@@ -28688,16 +29932,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Upload":
-                _this152.dialogRef.close();
+                _this150.dialogRef.close();
 
-                _this152.router.navigateByUrl('/doctor/signature-management?view=' + activeRoute.snapshot.params._id);
+                _this150.router.navigateByUrl('/doctor/signature-management?view=' + activeRoute.snapshot.params._id);
 
                 break;
 
               case "Close":
-                _this152.dialogRef.close();
+                _this150.dialogRef.close();
 
-                _this152.router.navigateByUrl('/doctor/dashboard');
+                _this150.router.navigateByUrl('/doctor/dashboard');
 
                 break;
             }
@@ -28708,17 +29952,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PatientReportViewComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this153 = this;
+          var _this151 = this;
 
           this.activeRoute.data.forEach(function (data) {
-            _this153.htmlText.allResolveData = data.data.data;
-            console.log(">>>>", _this153.htmlText.allResolveData);
+            _this151.htmlText.allResolveData = data.data.data;
+            console.log(">>>>", _this151.htmlText.allResolveData);
 
-            if (typeof _this153.htmlText.allResolveData.reportData[0].stressi != 'undefined') {
-              _this153.htmlText.allResolveData.reportData[0].stressI = _this153.htmlText.allResolveData.reportData[0].stressi;
+            if (typeof _this151.htmlText.allResolveData.reportData[0].stressi != 'undefined') {
+              _this151.htmlText.allResolveData.reportData[0].stressI = _this151.htmlText.allResolveData.reportData[0].stressi;
             }
 
-            _this153.htmlText.allResolveData.reportData[0].BMI_flag = Math.round(_this153.htmlText.allResolveData.reportData[0].BMI);
+            _this151.htmlText.allResolveData.reportData[0].BMI_flag = Math.round(_this151.htmlText.allResolveData.reportData[0].BMI);
           });
 
           if (typeof this.cookiesData.user_details.diagnostic_admin_id != 'undefined') {
@@ -28728,7 +29972,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getBiller",
         value: function getBiller(id) {
-          var _this154 = this;
+          var _this152 = this;
 
           var data = {
             "source": "biller_by_doctor_id",
@@ -28746,7 +29990,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this154.htmlText.billers = response.res;
+            _this152.htmlText.billers = response.res;
           });
         }
       }, {
@@ -28775,7 +30019,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "reportSign",
         value: function reportSign() {
-          var _this155 = this;
+          var _this153 = this;
 
           var flug = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'default';
 
@@ -28805,35 +30049,35 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     "data": {
                       "bill_generation_date": new Date(),
                       "bill_sent_date": new Date(),
-                      "doctor_signature": _this155.cookiesData.user_details.doctor_signature,
+                      "doctor_signature": _this153.cookiesData.user_details.doctor_signature,
                       "biller_id": billerID,
                       "biller_name": billerName,
                       "biller_email": billerEmail,
-                      "download_link": _environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].siteBaseUrl + 'download/super-bill/' + _this155.htmlText.allResolveData.reportData[0]._id,
+                      "download_link": _environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].siteBaseUrl + 'download/super-bill/' + _this153.htmlText.allResolveData.reportData[0]._id,
                       "file_path": "",
                       "download_password": "",
-                      "details": _this155.htmlText.allResolveData.details,
-                      "provide_description": _this155.htmlText.allResolveData.provide_description,
+                      "details": _this153.htmlText.allResolveData.details,
+                      "provide_description": _this153.htmlText.allResolveData.provide_description,
                       "status": "Send to Biller"
                     },
-                    "report_id": _this155.htmlText.allResolveData.reportData[0]._id
+                    "report_id": _this153.htmlText.allResolveData.reportData[0]._id
                   };
-                  data.data["id"] = _this155.activeRoute.snapshot.params._id;
+                  data.data["id"] = _this153.activeRoute.snapshot.params._id;
 
-                  _this155.httpService.httpViaPost("report-sign-send-to-biller", data).subscribe(function (response) {
+                  _this153.httpService.httpViaPost("report-sign-send-to-biller", data).subscribe(function (response) {
                     if (response.status = "success") {
                       switch (flug) {
                         case 'back':
-                          _this155.dialogRef.close();
+                          _this153.dialogRef.close();
 
-                          _this155.router.navigateByUrl('/doctor/dashboard');
+                          _this153.router.navigateByUrl('/doctor/dashboard');
 
                           break;
 
                         case 'next':
-                          _this155.dialogRef.close();
+                          _this153.dialogRef.close();
 
-                          _this155.router.navigateByUrl('/doctor/dashboard');
+                          _this153.router.navigateByUrl('/doctor/dashboard');
 
                           break;
 
@@ -28846,7 +30090,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   break;
 
                 case "No":
-                  _this155.dialogRef.close();
+                  _this153.dialogRef.close();
 
                   break;
               }
@@ -29460,7 +30704,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateSignature",
         value: function updateSignature() {
-          var _this156 = this;
+          var _this154 = this;
 
           if (typeof this.htmlText.viewSign !== 'undefined' && this.htmlText.viewSign != '') {
             var data = {
@@ -29473,12 +30717,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost('addorupdatedata', data).subscribe(function (response) {
               if (response.status == "success") {
-                _this156.cookie.delete('user_details');
+                _this154.cookie.delete('user_details');
 
-                _this156.authData.user_details.doctor_signature = _this156.htmlText.viewSign;
-                var str = JSON.stringify(_this156.authData.user_details);
+                _this154.authData.user_details.doctor_signature = _this154.htmlText.viewSign;
+                var str = JSON.stringify(_this154.authData.user_details);
 
-                _this156.cookie.set('user_details', str);
+                _this154.cookie.set('user_details', str);
                 /* Open modal */
 
 
@@ -29496,7 +30740,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 };
 
-                _this156.openModal(modalData);
+                _this154.openModal(modalData);
               }
             });
           } else {
@@ -29515,16 +30759,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "openModal",
         value: function openModal(data) {
-          var _this157 = this;
+          var _this155 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_6__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this157.dialogRef.close();
+                _this155.dialogRef.close();
 
-                _this157.activatedRoute.queryParams.subscribe(function (getData) {
-                  _this157.router.navigateByUrl('/doctor/patient-record-report/' + getData['view']);
+                _this155.activatedRoute.queryParams.subscribe(function (getData) {
+                  _this155.router.navigateByUrl('/doctor/patient-record-report/' + getData['view']);
                 });
 
                 break;
@@ -30711,10 +31955,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getEvents",
         value: function getEvents() {
-          var _this158 = this;
+          var _this156 = this;
 
           this.activatedRoute.data.forEach(function (data) {
-            _this158.configData.responseData = data.eventListData.data;
+            _this156.configData.responseData = data.eventListData.data;
           });
         }
       }, {
@@ -30935,12 +32179,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalHomeComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this159 = this;
+          var _this157 = this;
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this159.configData.responseData = data.eventdayarrData.data;
+              _this157.configData.responseData = data.eventdayarrData.data;
             }); // Merge logged in user details with the config data
 
             var userDetails = JSON.parse(this.cookieService.get('user_details'));
@@ -31104,7 +32348,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalSyncWithGoogleComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this160 = this;
+          var _this158 = this;
 
           this.userDetails = JSON.parse(this.cookieService.get('user_details'));
 
@@ -31112,53 +32356,53 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var url = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_6__["environment"].calendarApi + 'getauthorization-pece-getuserdata' + '?access_token=' + this.activatedRoute.snapshot.params.access_token;
             this.httpRequestService.get(url).subscribe(function (response) {
               var data = {
-                token: _this160.cookieService.get('jwtToken'),
-                id: _this160.userDetails._id,
+                token: _this158.cookieService.get('jwtToken'),
+                id: _this158.userDetails._id,
                 data: {
-                  access_token: _this160.activatedRoute.snapshot.params.access_token,
-                  refresh_token: _this160.activatedRoute.snapshot.params.refresh,
+                  access_token: _this158.activatedRoute.snapshot.params.access_token,
+                  refresh_token: _this158.activatedRoute.snapshot.params.refresh,
                   connected_gmail: response.id
                 }
               }; // Update user details in database
 
-              _this160.httpRequestService.postRequest('update-user', data).subscribe(function (response) {
+              _this158.httpRequestService.postRequest('update-user', data).subscribe(function (response) {
                 console.log('response', response);
 
                 if (response.status == 'success') {
-                  _this160.openSnackBar('Calendar added successfully...');
+                  _this158.openSnackBar('Calendar added successfully...');
 
                   setInterval(function () {
-                    _this160.secCount = _this160.secCount - 1;
-                    _this160.displayMessage = "Synchronize Complete. You will be redirected in " + _this160.secCount + " sec.";
+                    _this158.secCount = _this158.secCount - 1;
+                    _this158.displayMessage = "Synchronize Complete. You will be redirected in " + _this158.secCount + " sec.";
 
-                    if (_this160.secCount == 0) {
-                      _this160.secCount = 1;
+                    if (_this158.secCount == 0) {
+                      _this158.secCount = 1;
 
-                      _this160.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
+                      _this158.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
                     }
                   }, 1000);
                 } else {
-                  _this160.openSnackBar("An error occurs. Please try again.", "Ok");
+                  _this158.openSnackBar("An error occurs. Please try again.", "Ok");
 
                   setTimeout(function () {
-                    _this160.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
+                    _this158.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
                   }, 4000);
                 }
               }); // Send email to the logged in user
 
 
-              var urlSendEmail = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_6__["environment"].calendarApi + 'send-confirmation-email?id=' + _this160.userDetails._id;
+              var urlSendEmail = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_6__["environment"].calendarApi + 'send-confirmation-email?id=' + _this158.userDetails._id;
 
-              _this160.httpRequestService.get(urlSendEmail).subscribe(function (response) {
+              _this158.httpRequestService.get(urlSendEmail).subscribe(function (response) {
                 if (response.status == 'success') {
                   console.log('Mail sent ', response.msg_id);
 
-                  _this160.openSnackBar('Confirmation email sent to your email - ' + _this160.userDetails.email, 'Ok');
+                  _this158.openSnackBar('Confirmation email sent to your email - ' + _this158.userDetails.email, 'Ok');
                 }
               }); // Update user_details in cookie
 
 
-              _this160.cookieService.set('user_details', JSON.stringify(Object.assign(_this160.userDetails, data.data)));
+              _this158.cookieService.set('user_details', JSON.stringify(Object.assign(_this158.userDetails, data.data)));
             });
             /* **********************************************************************************
             this.httpRequestService.httpViaPost('cal-update-user', data).subscribe((response) => {
@@ -31720,13 +32964,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalViewSlotComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this161 = this;
+          var _this159 = this;
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this161.configData.responseData = data.eventdayarrData.data;
-              console.log('responseData', _this161.configData.responseData);
+              _this159.configData.responseData = data.eventdayarrData.data;
+              console.log('responseData', _this159.configData.responseData);
             });
           } else {
             this.openSnackBar('Token not found');
@@ -32073,7 +33317,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllDoctorData",
         value: function getAllDoctorData() {
-          var _this162 = this;
+          var _this160 = this;
 
           var data = {
             "source": "doctors_by_tech_id",
@@ -32085,7 +33329,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
             var result = {};
             result = response.res;
-            _this162.allDoctorDataArray = result;
+            _this160.allDoctorDataArray = result;
           });
         }
       }, {
@@ -32154,7 +33398,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "bulkUploaddataSubmit",
         value: function bulkUploaddataSubmit() {
-          var _this163 = this;
+          var _this161 = this;
 
           if (this.configData.files.length > 0) {
             for (var loop in this.configData.files) {
@@ -32191,12 +33435,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost("upload-bulk-report", data).subscribe(function (response) {
               if (response.status = "success") {
-                _this163.snakBar.open("Successfully Submitted", "OK", {
+                _this161.snakBar.open("Successfully Submitted", "OK", {
                   duration: 1000
                 });
 
                 setTimeout(function () {
-                  _this163.router.navigateByUrl('/tech/patient-management/bulk-upload/report-conformation/' + response.upload_id);
+                  _this161.router.navigateByUrl('/tech/patient-management/bulk-upload/report-conformation/' + response.upload_id);
                 }, 2000);
               }
             });
@@ -32367,7 +33611,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function ReportConformationComponent(snackBar, dialog, http, cookieService, router, activatedRoute) {
-        var _this164 = this;
+        var _this162 = this;
 
         _classCallCheck(this, ReportConformationComponent);
 
@@ -32416,16 +33660,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.http.httpViaPost('datalist', data).subscribe(function (response) {
           if (response.status == true) {
             /* Get name using file name start */
-            _this164.htmlText.confirmSubmittedDataSource = response.res;
+            _this162.htmlText.confirmSubmittedDataSource = response.res;
             var patientSearch = [];
 
-            for (var loop = 0; loop < _this164.htmlText.confirmSubmittedDataSource.length; loop++) {
-              var patientNameArr = _this164.htmlText.confirmSubmittedDataSource[loop].file_original_name.split(' ');
+            for (var loop = 0; loop < _this162.htmlText.confirmSubmittedDataSource.length; loop++) {
+              var patientNameArr = _this162.htmlText.confirmSubmittedDataSource[loop].file_original_name.split(' ');
 
-              _this164.htmlText.confirmSubmittedDataSource[loop].patient_name = patientNameArr[0] + ' ' + patientNameArr[1];
-              _this164.htmlText.confirmSubmittedDataSource[loop].patient_name_search = patientNameArr[0];
+              _this162.htmlText.confirmSubmittedDataSource[loop].patient_name = patientNameArr[0] + ' ' + patientNameArr[1];
+              _this162.htmlText.confirmSubmittedDataSource[loop].patient_name_search = patientNameArr[0];
               patientSearch.push(patientNameArr[0]);
-              _this164.htmlText.confirmSubmittedDataSource[loop].patient_details = [];
+              _this162.htmlText.confirmSubmittedDataSource[loop].patient_details = [];
             }
             /* Get name using file name end */
 
@@ -32436,33 +33680,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "source": "google_events",
               "condition": {
                 "patient_name": patientSearch,
-                "userid": _this164.htmlText.userData.user_details._id
+                "userid": _this162.htmlText.userData.user_details._id
               },
-              "token": _this164.htmlText.userData.jwtToken
+              "token": _this162.htmlText.userData.jwtToken
             };
 
-            _this164.http.httpViaPost('bulk-upload-patient-match', _data8).subscribe(function (response) {
+            _this162.http.httpViaPost('bulk-upload-patient-match', _data8).subscribe(function (response) {
               for (var _loop = 0; _loop < response.data.match_patient.length; _loop++) {
-                _this164.options.push(response.data.match_patient[_loop].patient_name);
+                _this162.options.push(response.data.match_patient[_loop].patient_name);
               }
 
-              _this164.htmlText.options = response.data.match_patient;
-              _this164.htmlText.conflictingPatientRecordsDataSource = [];
+              _this162.htmlText.options = response.data.match_patient;
+              _this162.htmlText.conflictingPatientRecordsDataSource = [];
 
               if (response.status == "success") {
-                for (var _loop2 = 0; _loop2 < _this164.htmlText.confirmSubmittedDataSource.length; _loop2++) {
+                for (var _loop2 = 0; _loop2 < _this162.htmlText.confirmSubmittedDataSource.length; _loop2++) {
                   for (var loop2 = 0; loop2 < response.data.match_patient.length; loop2++) {
                     /* For find some patient */
-                    if (_this164.htmlText.confirmSubmittedDataSource[_loop2].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
+                    if (_this162.htmlText.confirmSubmittedDataSource[_loop2].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
                       /* checking duplicate */
-                      if (typeof _this164.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag == 'undefined') {
-                        _this164.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag = true;
+                      if (typeof _this162.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag == 'undefined') {
+                        _this162.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag = true;
 
-                        _this164.htmlText.confirmSubmittedDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
+                        _this162.htmlText.confirmSubmittedDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
                       } else {
-                        _this164.htmlText.conflictingPatientRecordsDataSource.push(_this164.htmlText.confirmSubmittedDataSource[_loop2]);
+                        _this162.htmlText.conflictingPatientRecordsDataSource.push(_this162.htmlText.confirmSubmittedDataSource[_loop2]);
 
-                        _this164.htmlText.conflictingPatientRecordsDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
+                        _this162.htmlText.conflictingPatientRecordsDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
                       }
                     }
                   }
@@ -32470,25 +33714,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 /* Delete conflict data */
 
 
-                for (var _loop3 = 0; _loop3 < _this164.htmlText.confirmSubmittedDataSource.length; _loop3++) {
-                  if (_this164.htmlText.confirmSubmittedDataSource[_loop3].patient_details.length > 1) {
-                    _this164.htmlText.confirmSubmittedDataSource.splice(_loop3, 1);
+                for (var _loop3 = 0; _loop3 < _this162.htmlText.confirmSubmittedDataSource.length; _loop3++) {
+                  if (_this162.htmlText.confirmSubmittedDataSource[_loop3].patient_details.length > 1) {
+                    _this162.htmlText.confirmSubmittedDataSource.splice(_loop3, 1);
                   }
                 }
                 /* Add not find data */
 
 
-                _this164.htmlText.notFindDataSource = [];
+                _this162.htmlText.notFindDataSource = [];
 
-                for (var _loop4 = 0; _loop4 < _this164.htmlText.confirmSubmittedDataSource.length; _loop4++) {
-                  if (typeof _this164.htmlText.confirmSubmittedDataSource[_loop4].patient_find_flag == 'undefined') {
-                    _this164.htmlText.notFindDataSource.push(_this164.htmlText.confirmSubmittedDataSource[_loop4]);
+                for (var _loop4 = 0; _loop4 < _this162.htmlText.confirmSubmittedDataSource.length; _loop4++) {
+                  if (typeof _this162.htmlText.confirmSubmittedDataSource[_loop4].patient_find_flag == 'undefined') {
+                    _this162.htmlText.notFindDataSource.push(_this162.htmlText.confirmSubmittedDataSource[_loop4]);
                   }
                 }
 
-                _this164.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this164.htmlText.confirmSubmittedDataSource);
-                _this164.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this164.htmlText.conflictingPatientRecordsDataSource);
-                _this164.notFindPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this164.htmlText.notFindDataSource);
+                _this162.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this162.htmlText.confirmSubmittedDataSource);
+                _this162.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this162.htmlText.conflictingPatientRecordsDataSource);
+                _this162.notFindPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this162.htmlText.notFindDataSource);
               }
             });
           }
@@ -32498,10 +33742,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ReportConformationComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this165 = this;
+          var _this163 = this;
 
           this.filteredOptions = this.myControl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["startWith"])(''), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["map"])(function (value) {
-            return _this165._filter(value);
+            return _this163._filter(value);
           }));
         }
       }, {
@@ -32514,7 +33758,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "selectConflictingRecord",
         value: function selectConflictingRecord(flag, conflictIndex, selectIndex) {
-          var _this166 = this;
+          var _this164 = this;
 
           if (flag == 'conflicting') {
             var data = {
@@ -32537,18 +33781,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   break;
 
                 case "Yes":
-                  var patientDetails = _this166.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details[selectIndex];
+                  var patientDetails = _this164.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details[selectIndex];
 
-                  _this166.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.splice(0, _this166.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.length);
+                  _this164.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.splice(0, _this164.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.length);
 
-                  _this166.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.push(patientDetails);
+                  _this164.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.push(patientDetails);
 
-                  _this166.htmlText.confirmSubmittedDataSource.push(_this166.htmlText.conflictingPatientRecordsDataSource[conflictIndex]);
+                  _this164.htmlText.confirmSubmittedDataSource.push(_this164.htmlText.conflictingPatientRecordsDataSource[conflictIndex]);
 
-                  _this166.htmlText.conflictingPatientRecordsDataSource.splice(conflictIndex, 1);
+                  _this164.htmlText.conflictingPatientRecordsDataSource.splice(conflictIndex, 1);
 
-                  _this166.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this166.htmlText.confirmSubmittedDataSource);
-                  _this166.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this166.htmlText.conflictingPatientRecordsDataSource);
+                  _this164.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this164.htmlText.confirmSubmittedDataSource);
+                  _this164.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](_this164.htmlText.conflictingPatientRecordsDataSource);
                   break;
               }
             });
@@ -32595,7 +33839,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateRecord",
         value: function updateRecord() {
-          var _this167 = this;
+          var _this165 = this;
 
           if (this.checkboxData.checkbox1 == true && this.checkboxData.checkbox2 == true) {
             var data = {
@@ -32605,15 +33849,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost("update-upload-file", data).subscribe(function (response) {
               if (response.status == 'success') {
-                _this167.snackBar.open("Successfully updated.", "Ok", {
+                _this165.snackBar.open("Successfully updated.", "Ok", {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  _this167.router.navigateByUrl('/tech/dashboard');
+                  _this165.router.navigateByUrl('/tech/dashboard');
                 }, 1000);
               } else {
-                _this167.snackBar.open(response.msg + " Error code: F-AEA-TS-164.", "Ok", {
+                _this165.snackBar.open(response.msg + " Error code: F-AEA-TS-164.", "Ok", {
                   duration: 2000
                 });
               }
@@ -32904,7 +34148,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function TechDashboardComponent(cookie, http, httpService, activatedRoute, commonFunction, dialog) {
-        var _this168 = this;
+        var _this166 = this;
 
         _classCallCheck(this, TechDashboardComponent);
 
@@ -32931,10 +34175,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.authData["userData"] = JSON.parse(allData.user_details);
         this.authData["jwtToken"] = cookie.get('jwtToken');
         this.activatedRoute.data.forEach(function (data) {
-          _this168.allResolveData = data.techDashboardData.data;
-          _this168.allResolveData["totalRemainToProcessCount"] = _this168.allResolveData.totalReportCount - _this168.allResolveData.processedReportCount;
-          var allDashboardData = _this168.allResolveData.totalReportData;
-          _this168.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
+          _this166.allResolveData = data.techDashboardData.data;
+          _this166.allResolveData["totalRemainToProcessCount"] = _this166.allResolveData.totalReportCount - _this166.allResolveData.processedReportCount;
+          var allDashboardData = _this166.allResolveData.totalReportData;
+          _this166.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
         });
       }
 
@@ -32951,7 +34195,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewDetailsData",
         value: function viewDetailsData(flag) {
-          var _this169 = this;
+          var _this167 = this;
 
           var condition = {};
           this.htmlText.headerText = flag;
@@ -33058,21 +34302,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpService.httpViaPost('dashboard-datalist', condition).subscribe(function (response) {
             var allDashboardData = response.data;
-            _this169.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
-            _this169.allDataSource.paginator = _this169.paginator;
-            _this169.allDataSource.sort = _this169.sortAll;
+            _this167.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
+            _this167.allDataSource.paginator = _this167.paginator;
+            _this167.allDataSource.sort = _this167.sortAll;
           });
         }
       }, {
         key: "openDialog",
         value: function openDialog(data) {
-          var _this170 = this;
+          var _this168 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_10__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this170.dialogRef.close();
+                _this168.dialogRef.close();
 
                 break;
             }
@@ -33149,7 +34393,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DoctorViewDialogComponent(dialogRef, data, cookie, http, httpService) {
-        var _this171 = this;
+        var _this169 = this;
 
         _classCallCheck(this, DoctorViewDialogComponent);
 
@@ -33174,8 +34418,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var result = response.res;
 
           if (response.resc > 0) {
-            _this171.loader = false;
-            _this171.allDoctorData = response.res;
+            _this169.loader = false;
+            _this169.allDoctorData = response.res;
           }
         });
       }
@@ -33577,13 +34821,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TestComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this172 = this;
+          var _this170 = this;
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this172.configData.responseData = data.eventdayarrData.data;
-              console.log('responseData', _this172.configData.responseData);
+              _this170.configData.responseData = data.eventdayarrData.data;
+              console.log('responseData', _this170.configData.responseData);
             });
           } else {
             this.openSnackBar("Token not found", null);
@@ -36375,7 +37619,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalendarService, [{
         key: "resolve",
         value: function resolve(route, state) {
-          var _this173 = this;
+          var _this171 = this;
 
           /* will come into play while editing otherwise no effect */
           var requestData = route.data.requestcondition;
@@ -36394,17 +37638,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   };
                   /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
 
-                  if (route.data.endpoint == 'view-event-eventdayarr' && _this173.cookieService.check('timezone')) {
-                    data.timezone = _this173.cookieService.get('timezone');
+                  if (route.data.endpoint == 'view-event-eventdayarr' && _this171.cookieService.check('timezone')) {
+                    data.timezone = _this171.cookieService.get('timezone');
                   }
                   /* If endpoint is 'view-event-eventdayarr' and user is not an admin */
 
 
-                  if (route.data.endpoint == 'view-event-eventdayarr' && _this173.cookieService.check('user_details')) {
-                    data.condition = JSON.parse(_this173.cookieService.get('user_details')).email;
+                  if (route.data.endpoint == 'view-event-eventdayarr' && _this171.cookieService.check('user_details')) {
+                    data.condition = JSON.parse(_this171.cookieService.get('user_details')).email;
                   }
 
-                  _this173.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
+                  _this171.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
                     if (api_object) {
                       returnData[route.data.requestcondition.source[i]] = api_object;
                     } else {
@@ -36424,27 +37668,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               })();
             } else {
               /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
-              if (route.data.endpoint == 'view-event-eventdayarr' && _this173.cookieService.check('timezone')) {
-                route.data.requestcondition.timezone = _this173.cookieService.get('timezone');
+              if (route.data.endpoint == 'view-event-eventdayarr' && _this171.cookieService.check('timezone')) {
+                route.data.requestcondition.timezone = _this171.cookieService.get('timezone');
               }
               /* If user is not an admin */
 
 
-              if (_this173.cookieService.check('user_details') && JSON.parse(_this173.cookieService.get('user_details')).user_type == 'tech') {
+              if (_this171.cookieService.check('user_details') && JSON.parse(_this171.cookieService.get('user_details')).user_type == 'tech') {
                 route.data.requestcondition.condition = Object.assign(route.data.requestcondition.condition, {
                   userid: {
-                    $in: [JSON.parse(_this173.cookieService.get('user_details'))._id]
+                    $in: [JSON.parse(_this171.cookieService.get('user_details'))._id]
                   }
                 }); // route.data.requestcondition.condition.$or.push({userid: JSON.parse(this.cookieService.get('user_details'))._id});
               } else {
                 route.data.requestcondition.condition = Object.assign(route.data.requestcondition.condition, {
                   userid: {
-                    $in: JSON.parse(_this173.cookieService.get('user_details')).tech_id
+                    $in: JSON.parse(_this171.cookieService.get('user_details')).tech_id
                   }
                 });
               }
 
-              _this173.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
+              _this171.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
                 if (api_object) {
                   return resolve(api_object);
                 } else {
@@ -36827,7 +38071,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ResolveService, [{
         key: "resolve",
         value: function resolve(route, state) {
-          var _this174 = this;
+          var _this172 = this;
 
           /* will come into play while editing otherwise no effect */
           var requestData = route.data.requestcondition;
@@ -36942,7 +38186,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   condition: {}
                 };
 
-                _this174._apiService.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
+                _this172._apiService.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
                   if (api_object) {
                     returnData[route.data.requestcondition.source[i]] = api_object;
                     return resolve(returnData);
@@ -36958,8 +38202,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
             } else {
               /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
-              if (route.data.endpoint == 'view-event-eventdayarr' && _this174.cookies.check('timezone')) {
-                route.data.requestcondition.timezone = _this174.cookies.get('timezone');
+              if (route.data.endpoint == 'view-event-eventdayarr' && _this172.cookies.check('timezone')) {
+                route.data.requestcondition.timezone = _this172.cookies.get('timezone');
               }
               /* If user is not an admin */
               // if (this.cookies.check('user_details') &&
@@ -36970,7 +38214,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               // }
 
 
-              _this174._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
+              _this172._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
                 if (api_object) {
                   return resolve(api_object);
                 } else {
