@@ -194,11 +194,14 @@ export class AddEditDoctorOfcComponent implements OnInit {
       "source": "data_pece",
       "condition": {
         "user_type": "tech",
-        "tech_id": this.htmlText.user_details.tech_id,
-        "parent_id_object":id
+        "tech_id": this.htmlText.user_details.tech_id
       },
       "token": this.htmlText.userData.jwtToken
     };
+
+    if(this.htmlText.user_details.user_type !='admin') {
+      data.condition["parent_id"] = id;
+    }
     this.httpService.httpViaPost('datalist', data).subscribe(response => {
       this.htmlText.techData = response.res;
     });
