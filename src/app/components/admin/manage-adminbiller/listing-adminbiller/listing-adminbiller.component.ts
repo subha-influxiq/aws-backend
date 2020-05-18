@@ -11,7 +11,6 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class ListingAdminbillerComponent implements OnInit {
 
   public userData: any = {
-    user_type:""
   };
   public docData_count:any=0;
   public  docData: any = [];
@@ -102,7 +101,7 @@ export class ListingAdminbillerComponent implements OnInit {
 
     this.user_cookie = cookieService.get('jwtToken');
     let allData = cookieService.getAll();
-    this.userData.user_type = JSON.parse(allData.user_type);
+    this.userData = JSON.parse(allData.user_details);
 
     if(this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/doctor-management/edit';
