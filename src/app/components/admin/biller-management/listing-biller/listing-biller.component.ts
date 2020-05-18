@@ -55,6 +55,8 @@ export class ListingBillerComponent implements OnInit {
     "phone": "Phone",
     "company_name": "Company Name",
     "status": "Status",
+    "parent_name" : "Parent Name",
+    "parent_type" : "Parent Type",
     "logincounts": "No Of Login",
     "last_login_datetime": "Last Login"
   };
@@ -84,7 +86,7 @@ export class ListingBillerComponent implements OnInit {
   public SearchingSourceName: any = "data_biller_list";
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status },{ label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }],
+      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status },{ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type }],
       textsearch: [{ label: "Search By Name", field: 'name_search' },
       { label: "Search By E-Mail", field: 'email' },{ label: "Search By Parent Name", field: 'parent_search' },{ label: "Search By Company Name", field: 'company_search' }]
 

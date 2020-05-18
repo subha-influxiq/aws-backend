@@ -41,6 +41,8 @@ export class DoctorOfficeManagementComponent implements OnInit {
     "lastname": "Last Name",
     "email": "Email",
     "phone": "Phone Number",
+    "parent_name" : "Parent Name",
+    "parent_type" : "Parent Type",
     "status": "Status"
   };
   public previewModal_skip: any = [
@@ -57,6 +59,7 @@ export class DoctorOfficeManagementComponent implements OnInit {
   public userData: any={}
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
+  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },{ val: "distributors", 'name': 'Distributor' },{ val: "doctor_group", 'name': 'Doctor Group' }];
   public SearchingEndpoint: any = "datalist";
   public SearchingSourceName: any = "data_doctor_office_list";
   public datacollection: any='getdoctorofficelistdata';
@@ -72,9 +75,9 @@ export class DoctorOfficeManagementComponent implements OnInit {
 };
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
+      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status },{ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type }],
       textsearch: [{ label: "Search By Center Name", field: 'name_search' },
-      { label: "Search By E-Mail", field: 'email' }],
+      { label: "Search By Parent Name", field: 'parent_search' },{ label: "Search By E-Mail", field: 'email' }],
 
     };
 
