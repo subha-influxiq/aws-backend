@@ -2039,8 +2039,8 @@ export class AddPatientManuallyComponent implements OnInit {
             // {type: 'input', name: 'doctor_id', value: response.data._id, hidden: true},
             {type: 'input', name: 'doctor_office_id', value: this.userDetails._id, hidden: true},
             // {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
-            {type: 'input', name: 'parent_type', value: response.data.parent_type, hidden: true},
-            {type: 'input', name: 'parent_id', value: response.data.parent_id, hidden: true},
+            // {type: 'input', name: 'parent_type', value: response.data.parent_type, hidden: true},
+            // {type: 'input', name: 'parent_id', value: response.data.parent_id, hidden: true},
           ]
           this.configData = Object.assign(this.configData, {patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields, calendarInfoFormFields)});
           console.log('this.configData', this.configData)

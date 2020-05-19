@@ -1,9 +1,10 @@
 <app-doctor-office-header></app-doctor-office-header>
 
+<button mat-button (click)="openDialog()">Change Tech</button>
 
 <mat-card class="admin_wrapper">
 
-  <lib-view-slot-user class="calenderView" [configData]="configData"></lib-view-slot-user>
+  <lib-view-slot-user class="calenderView" [configData]="configData" *ngIf="configData.responseData.length > 0 && configData.patientInfoFormFields.length > 0"></lib-view-slot-user>
 
 </mat-card>
 
