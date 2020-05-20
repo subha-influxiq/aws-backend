@@ -168,6 +168,7 @@ import { AdminbillerFooterComponent } from './components/adminbiller/adminbiller
 import { AddPatientManuallyComponent } from './components/doctor-office/add-patient/add-patient-manually/add-patient-manually.component';
 import {UpcomingAppoinmentsComponent} from "./components/booked-events-listing/upcoming-appoinments/upcoming-appoinments.component";
 import {PastAppoinmentsComponent} from "./components/booked-events-listing/past-appoinments/past-appoinments.component";
+import { PatientSelectModalComponent } from './components/tech/patient-management/patient-select-modal/patient-select-modal.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -320,7 +321,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AddPatientManuallyComponent,
     UpcomingAppoinmentsComponent,
     PastAppoinmentsComponent,
-    ChooseDoctorDialog
+    ChooseDoctorDialog,
+    PatientSelectModalComponent
   ],
   imports: [
     SatDatepickerModule,
@@ -395,7 +397,9 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     TestComponent,
     DoctorViewDialogComponent,
     DownloadDetailsComponent,
-    ChooseDoctorDialog
+    ChooseDoctorDialog,
+
+    PatientSelectModalComponent
   ]
 })
 

@@ -12,6 +12,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatSnackBar } from '@angular/material';
+import { PatientSelectModalComponent } from '../patient-select-modal/patient-select-modal.component';
 
 @Component({
   selector: 'app-report-conformation',
@@ -32,12 +33,11 @@ export class ReportConformationComponent implements OnInit {
   public notFindPatientRecordsDisplayedColumns: string[] = ["no", "patient_report", "choose_other_patient"];
   public notFindPatientRecordsDataSource: any = [];
 
-  public htmlText: any = {};
-
-  /*Auto Complete*/
-  myControl = new FormControl();
-  options: any = [];
-  filteredOptions: Observable<any[]>;
+  public htmlText: any = {
+    confirmSubmittedDataSource: [],
+    conflictingPatientRecordsDataSource: [],
+    notFindDataSource: []
+  };
 
   /* Auto Complete */
   public autocomplateData: any = {
@@ -80,9 +80,9 @@ export class ReportConformationComponent implements OnInit {
         }
         /* Get name using file name end */
 
-        /* Find patient name using file name start */
+        /* Find patient name using file name start view_google_event_with_all_data */
         let data = {
-          "source": "google_events",
+          "source": "view_google_event_with_all_data",
           "condition": { 
             "patient_name": patientSearch,
             "userid": this.htmlText.userData.user_details._id
@@ -91,10 +91,7 @@ export class ReportConformationComponent implements OnInit {
         };
   
         this.http.httpViaPost('bulk-upload-patient-match', data).subscribe(response => {
-          for(let loop = 0; loop < response.data.match_patient.length; loop++) {
-            this.options.push(response.data.match_patient[loop].patient_name);
-          }
-          this.htmlText.options = response.data.match_patient;
+          this.htmlText.options = response.data.all_patient;
           this.htmlText.conflictingPatientRecordsDataSource = [];
 
           if(response.status == "success") {
@@ -123,10 +120,16 @@ export class ReportConformationComponent implements OnInit {
 
             /* Add not find data */
             this.htmlText.notFindDataSource = [];
+            var deleteIndex = [];
             for(let loop = 0; loop < this.htmlText.confirmSubmittedDataSource.length; loop++) {
               if(typeof(this.htmlText.confirmSubmittedDataSource[loop].patient_find_flag) == 'undefined') {
                 this.htmlText.notFindDataSource.push(this.htmlText.confirmSubmittedDataSource[loop]);
+                deleteIndex.push(loop);
               }
+            }
+
+            for(let loop = 0; loop < deleteIndex.length; loop++) {
+              this.htmlText.confirmSubmittedDataSource.splice(deleteIndex, 1);
             }
 
             this.confirmSubmittedDataSource = new MatTableDataSource(this.htmlText.confirmSubmittedDataSource);
@@ -139,14 +142,9 @@ export class ReportConformationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value))
-    );
   }
 
   selectArrayIndex(flag, index) {
-    console.log(flag, index);
     this.autocomplateData.flag = flag;
     this.autocomplateData.arrayIndex = index;
   }
@@ -181,39 +179,6 @@ export class ReportConformationComponent implements OnInit {
         }
       });
     }
-  }
-
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-
-    switch(this.autocomplateData.flag) {
-      case 'find':
-        var patientData: any;
-        for(let loop = 0; loop < this.htmlText.options.length; loop++) {
-          if(this.htmlText.options[loop].patient_name == value) {
-            patientData = this.htmlText.options[loop];
-          }
-        }
-
-        this.htmlText.confirmSubmittedDataSource[this.autocomplateData.arrayIndex].patient_details.push(patientData);
-        this.htmlText.confirmSubmittedDataSource[this.autocomplateData.arrayIndex].patient_details.splice(0, 1);
-        this.confirmSubmittedDataSource = new MatTableDataSource(this.htmlText.confirmSubmittedDataSource);
-        
-        this.autocomplateData.flag = "";
-        this.autocomplateData.arrayIndex = "";
-        break;
-      case 'conflicting':
-        this.htmlText.conflictingPatientRecordsDataSource[this.autocomplateData.arrayIndex].patient_details.push(this.htmlText.options[this.autocomplateData.arrayIndex]);
-        this.htmlText.conflictingPatientRecordsDataSource[this.autocomplateData.arrayIndex].patient_details.splice(0, 1);
-        this.conflictingPatientRecordsDataSource = new MatTableDataSource(this.htmlText.conflictingPatientRecordsDataSource);
-        break;
-      case 'not found':
-        this.notFindPatientRecordsDataSource = new MatTableDataSource(this.htmlText.notFindDataSource);
-        console.log(">>>>>", this.htmlText.options[this.autocomplateData.arrayIndex]);
-        break;
-    }
-
-    return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
 
   updateRecord() {
@@ -259,8 +224,40 @@ export class ReportConformationComponent implements OnInit {
         }
       });
     }
-    console.log(this.htmlText.confirmSubmittedDataSource);
-    console.log(this.checkboxData);
+  }
+
+  changePatientDialog(sectionFlag, tableIndex) {
+    const dialogRef = this.dialog.open(PatientSelectModalComponent, {
+      width: '500px',
+      data: { allPatient: this.htmlText.options }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result != '') {
+        switch(sectionFlag) {
+          case 'submitted':
+            this.htmlText.confirmSubmittedDataSource[tableIndex].patient_details.splice(0, 1);
+            this.htmlText.confirmSubmittedDataSource[tableIndex].patient_details.push(result);
+            this.confirmSubmittedDataSource = new MatTableDataSource(this.htmlText.confirmSubmittedDataSource);
+            break;
+          case 'conflicting':
+            this.htmlText.conflictingPatientRecordsDataSource[tableIndex].patient_details = [];
+            this.htmlText.conflictingPatientRecordsDataSource[tableIndex].patient_details.push(result);
+            this.conflictingPatientRecordsDataSource = new MatTableDataSource(this.htmlText.conflictingPatientRecordsDataSource);
+            break;
+          case 'not found':
+            this.htmlText.confirmSubmittedDataSource.push(this.htmlText.notFindDataSource[tableIndex]);
+            this.htmlText.confirmSubmittedDataSource[this.htmlText.confirmSubmittedDataSource.length - 1].patient_details.push(result);
+            this.htmlText.notFindDataSource.splice(tableIndex, 1);
+
+            this.confirmSubmittedDataSource = new MatTableDataSource(this.htmlText.confirmSubmittedDataSource);
+            this.notFindPatientRecordsDataSource = new MatTableDataSource(this.htmlText.notFindDataSource);
+            break;
+          default:
+            break;
+        }
+      }
+    });
   }
 
 }
