@@ -51,17 +51,14 @@ export class BookAppoinmentNowComponent implements OnInit {
       {text: 'Hawaii Standard Time', value: '-10:00|Pacific/Honolulu'}
     ],
     eventType: [
-      {text: 'Admin Meetings', value: 1},
-      {text: 'Type 2', value: 2},
-      {text: 'Type 3', value: 3},
-      {text: 'Type 3', value: 4}
+      {text: 'Admin Meetings', value: 1}
     ],
-    responseData: '',
+    responseData: [],
     patientInfoFormFields: {},
     calendarInfoFormFields: {},
     primaryCondition: {
-      $or: [{event_type: 1}, {event_type: 2}],
-      userid: {$in: JSON.parse(this.cookieService.get('user_details')).tech_id}
+      // $or: [{event_type: 1}, {event_type: 2}],
+      // userid: {$in: JSON.parse(this.cookieService.get('user_details')).tech_id}
     }
   };
 
@@ -72,20 +69,20 @@ export class BookAppoinmentNowComponent implements OnInit {
               public snackBar: MatSnackBar, public httpRequestService: HttpServiceService,
               public dialog: MatDialog) {
 
-    // this.openDialog();
+
   }
 
 
   ngOnInit() {
 
-    this.getStates();
+    // this.getStates();
 
     if (this.cookieService.check('jwtToken')) {
       this.configData.jwtToken = this.cookieService.get('jwtToken');
-      this.activatedRoute.data.forEach((data) => {
-        this.resolveData = data.eventdayarrData;
-        this.configData.responseData = data.eventdayarrData.data;
-      });
+      // this.activatedRoute.data.forEach((data) => {
+      //   this.resolveData = data.eventdayarrData;
+      //   this.configData.responseData = data.eventdayarrData.data;
+      // });
     } else {
       this.openSnackBar('Token not found');
     }
@@ -94,10 +91,11 @@ export class BookAppoinmentNowComponent implements OnInit {
     this.userDetails = JSON.parse(this.cookieService.get('user_details'));
     this.configData = Object.assign(this.configData, this.userDetails);
 
+    this.openDialog();
     // this.configData.primaryCondition = Object.assign(this.configData.primaryCondition, {userid: {$in: [this.userDetails._id]}});
-    this.httpRequestService.postRequest('get-doctor-list', {_id: {$in: [this.userDetails.doctor_id]}}).subscribe((result: any) => {
-      console.info('result', result);
-    })
+    // this.httpRequestService.postRequest('get-doctor-list', {_id: {$in: [this.userDetails.doctor_id]}}).subscribe((result: any) => {
+    //   console.info('result', result);
+    // })
 
     this.updateUser();
   }
@@ -880,12 +878,25 @@ export class BookAppoinmentNowComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(ChooseDoctorDialog, {
       width: '500px',
-      data: 'abc'
+      data: this.userDetails
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);
+      this.configData.responseData = [];
+      this.configData.primaryCondition = {
+        userid: {$in: [result]}
+      }
+      this.httpRequestService.postRequest(this.configData.endPoint.viewEventSlots, {
+        token: this.configData.jwtToken,
+        condition: this.configData.primaryCondition
+      }).subscribe((response: any) => {
+        this.configData.responseData = response.data;
+        this.resolveData = response;
 
+
+        this.getStates();
+      })
     });
   }
 
@@ -898,18 +909,47 @@ export class BookAppoinmentNowComponent implements OnInit {
   selector: 'choose-doctor',
   templateUrl: 'choose-doctor.html',
 })
-export class ChooseDoctorDialog {
+export class ChooseDoctorDialog implements OnInit {
 
-  public selectedDoctor;
 
-  foods = []
-  constructor(public dialogRef: MatDialogRef<ChooseDoctorDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: any) {
+  public doctorList;
+  public doctor_id;
+  public techList;
+  public tech_id;
+
+  loadingTech = false;
+
+  constructor(public dialogRef: MatDialogRef<ChooseDoctorDialog>, public snackBar: MatSnackBar,
+    @Inject(MAT_DIALOG_DATA) public data: any, public httpRequestService: HttpServiceService) {
 
   }
 
+  ngOnInit(): void {
+    // throw new Error("Method not implemented.");
+    this.httpRequestService.postRequest('get-doctor-info',{condition: {doctors_office_id: this.data._id}}).subscribe((response: any) => {
+      this.doctorList = response.data
+    });
+  }
+
+  onChangeDoctor(doctor_id) {
+    console.log('doctor_id', doctor_id);
+    this.loadingTech = true;
+    this.httpRequestService.postRequest('get-tech-info', {condition: {_id: doctor_id}}).subscribe((response: any) => {
+      if (response._dropdown.length > 0)
+        this.techList = response._dropdown;
+      else
+        this.openSnackBar('No tech found for this doctor', 'Ok');
+      this.loadingTech = false;
+    })
+  }
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  openSnackBar(message: string, action: string = null) {
+    this.snackBar.open(message, action, {
+      duration: 3000,
+    });
   }
 
 }
