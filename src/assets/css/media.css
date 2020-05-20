@@ -19,7 +19,7 @@
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 5px; }
   .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber { font-size: 16px;}
   .tablewrapper{ overflow-x: scroll;}
-  .table_wrapper .mat-table{ width: 1700px;}
+  .table_wrapper .mat-table{ width: 1500px;}
 }
 @media screen and (max-width: 1300px){
 .main_wrapper { background-size: 680px; padding-left: 665px; }
@@ -155,6 +155,7 @@
 }
 @media screen and (max-width: 900px){
   .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item{ width: 100%; }
+  .admin_wrapper .title_wrapper { font-size: 24px; }
 }
 @media screen and (max-width: 840px){
 
@@ -175,7 +176,7 @@
   .calenderView .slotview .example-card { width: 47%; }
   .custom-modalbox, .mat-dialog-container { min-width: 90%;}
   .admin_wrapper .add_form .submit_form button { font-size: 18px; width: 48%; margin: 1%; }
-
+  .admin_wrapper .add_form .submit_form button:first-child { margin-right: 8px; }
 }
 @media screen and (max-width: 668px){
 .main_wrapper .login_wrapper { width: 450px; }

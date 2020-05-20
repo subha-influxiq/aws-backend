@@ -27,7 +27,7 @@ export class AddEditTechComponent implements OnInit {
   public TechManagementAddEditForm: FormGroup;
   public dialogRef: any;
   public selectionChangeValue: any;
-  public params_id: any;
+  public params_id: any = '';
   
   public htmlText: any = {
     userData: "",
@@ -273,6 +273,8 @@ export class AddEditTechComponent implements OnInit {
         data["sourceobj"] = ["parent_id"];
       }
 
+      if(this.htmlText.userData.user_details.user_type !='doctor') {
+
       this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
         if (response.status == "success") {
           this.snackBar.open(this.htmlText.message, 'Ok', {
@@ -303,6 +305,45 @@ export class AddEditTechComponent implements OnInit {
           });
         }
       });
+    } else {
+      data.data["parent_id"] = this.htmlText.userData.user_details._id;
+      data.data["parent_type"] = "doctor"
+      data["sourceobj"] = ["parent_id"];
+      data["doctorid"] = this.htmlText.userData.user_details._id
+      this.httpService.httpViaPost("add-tech-data", data).subscribe(response => {
+        if (response.status == "success") {
+          this.snackBar.open(this.htmlText.message, 'Ok', {
+            duration: 2000,
+          });
+
+          this.formDirective.resetForm();
+
+          setTimeout(() => {
+            switch(this.htmlText.userData.user_details.user_type) {
+              case 'admin':
+                this.router.navigateByUrl("admin/tech-management");
+                break;
+              case 'diagnostic_admin':
+                this.router.navigateByUrl("diagnostic-admin/tech-management");
+                break;
+              case  'doctor_group':
+                this.router.navigateByUrl("doctor-group/tech-management");
+                break;
+              case  'distributors':
+                this.router.navigateByUrl("distributors/tech-management");
+                break;
+              case 'doctor' :
+                this.router.navigateByUrl("doctor/tech-management");
+                break;
+            }
+          }, 1000);
+        } else {
+          this.snackBar.open(response.msg, '', {
+            duration: 2000,
+          });
+        }
+      });
+    }
     }
   }
 

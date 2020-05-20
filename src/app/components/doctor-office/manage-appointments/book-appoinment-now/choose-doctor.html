@@ -1,16 +1,27 @@
-<h1 mat-dialog-title>Choose your doctor from below</h1>
+<h1 mat-dialog-title>Choose your doctor and tech from below</h1>
 <div mat-dialog-content>
 <!--  <p>What's your favorite animal?</p>-->
   <mat-form-field>
-    <mat-label>Favorite Animal</mat-label>
-    <mat-select [(ngModel)]="selectedDoctor">
-      <mat-option *ngFor="let food of foods" [value]="food.value">
-        {{food.viewValue}}
+    <mat-label>Select doctor</mat-label>
+    <mat-select [(ngModel)]="doctor_id" (selectionChange)="onChangeDoctor($event.value)">
+      <mat-option *ngFor="let doctor of doctorList" [value]="doctor._id">
+        {{doctor.firstname + ' ' + doctor.lastname}}
       </mat-option>
     </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Select tech</mat-label>
+    <mat-select [(ngModel)]="tech_id">
+      <mat-option *ngFor="let tech of techList" [value]="tech.value">
+        {{tech.text}}
+      </mat-option>
+    </mat-select>
+    <mat-progress-bar mode="buffer" *ngIf="loadingTech"></mat-progress-bar>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
 <!--  <button mat-button (click)="onNoClick()">No Thanks</button>-->
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+  <button mat-button [mat-dialog-close]="tech_id" cdkFocusInitial>Ok</button>
 </div>

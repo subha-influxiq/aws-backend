@@ -1786,14 +1786,14 @@ const routes: Routes = [
     path: 'doctor-office/manage-appointments/book-appoinment-now',
     component: BookAppoinmentNowComponent,
     canActivate: [AuthguardService],
-    resolve: { eventdayarrData: CalendarService },
-    data: {
-      requestcondition: {
-        source: 'events_eventdayarr_view',
-        condition: { $or: [{ event_type: 1 }] }
-      },
-      endpoint: 'view-event-eventdayarr'
-    }
+    // resolve: { eventdayarrData: CalendarService },
+    // data: {
+    //   requestcondition: {
+    //     source: 'events_eventdayarr_view',
+    //     condition: { $or: [{ event_type: 1 }] }
+    //   },
+    //   endpoint: 'view-event-eventdayarr'
+    // }
   },
 
   /* Faq */

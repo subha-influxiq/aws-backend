@@ -387,7 +387,7 @@
       </ng-container>
 
     </mat-toolbar>
-
+<div class="tablewrapper">
     <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8 adminTables">
       <ng-container matColumnDef="no">
         <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -515,6 +515,7 @@
       <tr mat-header-row *matHeaderRowDef="allDataColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: allDataColumns;let i = index"></tr>
     </table>
+  </div>
     <mat-toolbar class="footer_action">
       <button mat-raised-button type="button" color="primary" (click)="pagination('prev');">Prev</button>
       <button mat-raised-button type="button" color="primary" (click)="pagination('next');">Next</button>

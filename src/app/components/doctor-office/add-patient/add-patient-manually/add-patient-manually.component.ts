@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { HttpServiceService } from '../../../../services/http-service.service';
-import { CookieService } from 'ngx-cookie-service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material';
-import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
-import { CommonFunction } from '../../../../class/common/common-function';
-import { environment } from 'src/environments/environment';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
+import {HttpServiceService} from '../../../../services/http-service.service';
+import {CookieService} from 'ngx-cookie-service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {MatSnackBar} from '@angular/material';
+import {DialogBoxComponent} from '../../../common/dialog-box/dialog-box.component';
+import {CommonFunction} from '../../../../class/common/common-function';
+import {environment} from 'src/environments/environment';
 import moment from 'moment-es6';
 
 @Component({
@@ -1210,9 +1210,6 @@ export class AddPatientManuallyComponent implements OnInit {
   // }
 
 
-
-
-
   today = moment().format('L');
   states: any = [];
 
@@ -1252,7 +1249,10 @@ export class AddPatientManuallyComponent implements OnInit {
     responseData: '',
     patientInfoFormFields: null,
     calendarInfoFormFields: {},
-    primaryCondition: {$or: [{event_type: 1}, {event_type: 2}], userid: {$in: JSON.parse(this.cookieService.get('user_details')).tech_id}}
+    primaryCondition: {
+      $or: [{event_type: 1}, {event_type: 2}],
+      userid: {$in: JSON.parse(this.cookieService.get('user_details')).tech_id}
+    }
   };
 
   public resolveData;
@@ -1284,10 +1284,10 @@ export class AddPatientManuallyComponent implements OnInit {
     }
 
 
-
     // this.configData.primaryCondition = Object.assign(this.configData.primaryCondition, {userid: {$in: [this.userDetails._id]}});
 
   }
+
   getStates(): any {
     /* ****************** Get states value from assets/states.json ****************** */
     this.httpRequestService.get('assets/data/states.json')
@@ -1339,7 +1339,8 @@ export class AddPatientManuallyComponent implements OnInit {
                 name: this.resolveData.others.patient_information[i].label,
                 placeholder: this.resolveData.others.patient_information[i].description,
                 label: this.resolveData.others.patient_information[i].description,
-                value: ''}
+                value: ''
+              }
               break;
 
             case 'dropdown':
@@ -1956,6 +1957,7 @@ export class AddPatientManuallyComponent implements OnInit {
           },
           {
             type: 'select', name: 'reqTimezone',
+            label: 'Timezone',
             options: [
               {text: 'Alaska Standard Time', value: '-08:00|America/Anchorage'},
               {text: 'Pacific Standard Time', value: '-07:00|America/Los_Angeles'},
@@ -1999,18 +2001,16 @@ export class AddPatientManuallyComponent implements OnInit {
         ];
 
 
-        this.httpRequestService.postRequest('get-doctor-info', {condition: {_id: this.userDetails.doctor_id}}).subscribe((response:any) => {
-          let tech_ids = [];
-          for (let i = 0; i < response.data.tech_ids.id.length; i++) {
+        this.httpRequestService.postRequest('get-doctor-info', {condition: {doctors_office_id: this.userDetails._id}}).subscribe((response: any) => {
+          let doctorArray = [];
+          for (let i = 0; i < response.data.length; i++) {
             let temp = {};
-            temp['text'] = response.data.tech_ids.firstname[i] + ' ' + response.data.tech_ids.lastname[i];
-            temp['value'] = response.data.tech_ids.id[i];
-            temp['child_of'] = response.data._id;
-            tech_ids.push(temp);
-            console.log('tech_ids', tech_ids);
+            temp['text'] = response.data[i].firstname + ' ' + response.data[i].lastname;
+            temp['value'] = response.data[i]._id;
+            doctorArray.push(temp);
           }
 
-          console.log('tech_ids', tech_ids);
+          console.log('doctorArray', doctorArray);
           calendarInfoFormFields.push(
             {
               type: 'select',
@@ -2018,26 +2018,29 @@ export class AddPatientManuallyComponent implements OnInit {
               placeholder: 'Select Doctor',
               label: 'Doctor Name',
               value: '',
-              options: [{text: response.data.firstname + ' ' + response.data.lastname,
-                          value: response.data._id}]
+              options: doctorArray,
+              hasChildWithDynamicLoading: true,
+              childField: 'tech_id',
+              endpoint: 'get-tech-info'
             },
             {
-            type: 'select',
-            name: 'tech_id',
-            placeholder: 'Select Tech',
-            label: 'Tech Name',
-            value: '',
-            isDependent: true,
-            dependentOn: 'doctor_id',
-            options: tech_ids
-          });
+              type: 'select',
+              name: 'tech_id',
+              placeholder: 'Select Tech',
+              label: 'Tech Name',
+              value: '',
+              isDependent: true,
+              loadDynamically: true,
+              options: []
+            }
+          );
 
           let hiddenFields: any = [
             // {type: 'input', name: 'doctor_id', value: response.data._id, hidden: true},
-            {type: 'input', name: 'doctor_office_id', value: response.data.doctor_office_id, hidden: true},
+            {type: 'input', name: 'doctor_office_id', value: this.userDetails._id, hidden: true},
             // {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
-            {type: 'input', name: 'parent_type', value: response.data.parent_type, hidden: true},
-            {type: 'input', name: 'parent_id', value: response.data.parent_id, hidden: true},
+            // {type: 'input', name: 'parent_type', value: response.data.parent_type, hidden: true},
+            // {type: 'input', name: 'parent_id', value: response.data.parent_id, hidden: true},
           ]
           this.configData = Object.assign(this.configData, {patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields, calendarInfoFormFields)});
           console.log('this.configData', this.configData)
