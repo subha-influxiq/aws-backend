@@ -63,6 +63,7 @@ export class BulkUploadComponent implements OnInit {
       tech_email          : [ this.cookiesData.email, [] ],
       upload_file         : [ '', [] ],
       status              : [ 'Pending Signature', [] ],
+      ready_for_process   : [ false, [] ],
       note                : [ '', [] ],
       report_type         : [ 'file', [] ],
     })
