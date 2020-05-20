@@ -97,6 +97,7 @@ export class DoctorOfficeManagementComponent implements OnInit {
 
   ngOnInit() {
     this.datasource = '';
+    if(this.userData.user_type !="doctor") {
     let endpoint='getdoctorofficelistdata';
     let endpointc='getdoctorofficelistdata-count';
     let data:any={
@@ -127,6 +128,40 @@ export class DoctorOfficeManagementComponent implements OnInit {
         }, error => {
             console.log('Oooops!');
         });
+  } else {
+    let endpoint='getdoctorofficelistdata';
+    let endpointc='getdoctorofficelistdata-count';
+    let data:any={
+        "condition":{
+            "limit":10,
+            "skip":0
+        },
+    sort:{
+        "type":'desc',
+        "field":'firstname'
+    },
+    type:"doctor",
+    docofficeid: this.userData._id
+ 
+    }
+        this.httpService.httpViaPost(endpointc, data).subscribe((res:any) => {
+            // console.log('in constructor');
+            // console.log(result);
+            this.doctorOfficeData_count =res.count;
+            //console.warn('blogData c',res);
+ 
+        }, error => {
+            console.log('Oooops!');
+        });
+ 
+        this.httpService.httpViaPost(endpoint,data).subscribe((res:any) => {
+           
+            this.doctorOfficeAllData =res.results.res;
+ 
+        }, error => {
+            console.log('Oooops!');
+        });
   }
+}
 
 }

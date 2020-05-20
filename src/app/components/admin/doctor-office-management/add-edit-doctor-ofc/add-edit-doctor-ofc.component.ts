@@ -24,7 +24,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
   @ViewChild(FormGroupDirective, { static: false }) formDirective: FormGroupDirective;
 
   public doctorOfficeAddEditForm: FormGroup;
-  public params_id: any;
+  public params_id: any='';
   public selectionChangeValue: any;
   public htmlText: any = {
     userData: "",
@@ -51,7 +51,6 @@ export class AddEditDoctorOfcComponent implements OnInit {
     public cookieService: CookieService, public snackBar: MatSnackBar, public dialog: MatDialog) {
     
       this.htmlText.userData = this.cookieService.getAll();
-      console.log(this.htmlText.userData.user_type);
       this.htmlText.user_details = JSON.parse(this.htmlText.userData.user_details);
       // if(this.htmlText.user_details.user_type == 'admin') {
       // this.getAllTechData();
@@ -59,7 +58,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
       //  this.getAllTechData(this.htmlText.user_details._id);
       // }
       this.allStateCityData();
-      
+      console.log('888888',this.acivatedRoute.snapshot);
       if (this.acivatedRoute.snapshot.params._id) {
         this.generateAddEditForm('edit');
   
@@ -137,6 +136,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
         this.doctorOfficeAddEditForm = this.formBuilder.group(validateRule, passwordRule);
         break;
     }
+    console.log('2222222222',this.params_id)
   }
 
   ngOnInit() {
@@ -311,7 +311,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
         postData["sourceobj"] = ["parent_id"];
         postData["parent_type"] = ["distributors"];
       }
-
+      if(this.htmlText.user_details.user_type !='doctor') {
       this.httpService.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
         if (response.status == "success") {
           this.formDirective.resetForm();
@@ -338,7 +338,39 @@ export class AddEditDoctorOfcComponent implements OnInit {
       }, (error) => {
         alert("Some error occurred. Please try again.");
       });
+    } else {
+      postData.data["parent_id"] = this.htmlText.userData.user_details._id;
+      postData.data["parent_type"] = "doctor"
+      postData["sourceobj"] = ["parent_id"];
+      postData["doctorid"] = this.htmlText.userData.user_details._id
+      this.httpService.httpViaPost('add-doctor-office-data', postData).subscribe((response: any) => {
+        if (response.status == "success") {
+          this.formDirective.resetForm();
+
+          this.snackBar.open(this.htmlText.message, 'Ok', {
+            duration: 2000,
+          });
+
+          setTimeout(() => {
+            switch(this.htmlText.user_details.user_type) {
+              case 'doctor':
+                this.router.navigateByUrl("doctor/doctor-office-management");
+                break;
+              case 'admin':
+                this.router.navigateByUrl("admin/doctor-office-management");
+                break;
+            }
+          }, 2000);
+        } else {
+          this.snackBar.open(response.msg, '', {
+            duration: 2000,
+          });
+        }
+      }, (error) => {
+        alert("Some error occurred. Please try again.");
+      });
     }
+  }
   }
 }
 

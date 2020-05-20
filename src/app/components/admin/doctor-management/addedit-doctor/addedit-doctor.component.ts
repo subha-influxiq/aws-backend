@@ -23,7 +23,7 @@ export interface DialogData {
 export class AddeditDoctorComponent implements OnInit {
 
   public doctorManagementAddEditForm: FormGroup;
-  public params_id: any;
+  public params_id: any='';
   public htmlText: any = {
     userData: "",
     header: 'Add New Doctor',
@@ -320,7 +320,10 @@ export class AddeditDoctorComponent implements OnInit {
 
     if (id == '') {
       data.condition['user_type'] = "tech"
+      data.condition['parent_type'] = "admin"
       data1.condition['user_type'] = "biller"
+      data1.condition['parent_type'] = "admin"
+      data2.condition['parent_type'] = "admin"
       data2.condition['user_type'] = "doctor_office"
     }
 

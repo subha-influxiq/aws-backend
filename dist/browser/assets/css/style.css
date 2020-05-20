@@ -588,9 +588,7 @@ color: #fff; min-width: 100px; font-family: 'AvenirMedium'; font-size: 18px;}
 /* sales dashboard  */
 .sales_person_db{ width: 1440px; display: block; margin: 0 auto; }
 .sales_person_db .shareLi{ background: #cfaa1e url('../images/shareBanner.png') no-repeat; background-position: 10% bottom; padding:20px; height: 500px;
-  background-size: contain;
-  position: relative;
-}
+  background-size: contain; position: relative; margin-bottom: 16px; }
 .sales_person_db .shareLi .in_w{ width:660px; background: #fff; margin-left: auto; padding: 16px; box-sizing: border-box; border-radius: 4px; top: 50%;
   position: absolute; transform: translate(-50%, -50%); left: 70%; box-shadow: 0px 2px 8px 0px #404040;}
 .sales_person_db .shareLi .in_w h2{ margin: 0; color: #000; font-family: 'AvenirRoman'; font-size: 22px; text-transform: uppercase; margin-bottom: 10px;    margin-bottom: 10px;

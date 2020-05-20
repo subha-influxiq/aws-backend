@@ -133,6 +133,7 @@ export class ListingTechComponent implements OnInit {
 
   ngOnInit() {
     this.datasource = '';
+    if(this.userData.user_type !="doctor") {
     let endpoint='gettechlistdata';
     let endpointc='gettechlistdata-count';
     let data:any={
@@ -145,8 +146,52 @@ export class ListingTechComponent implements OnInit {
         "field":'firstname'
     },
     data:this.fetch
- 
     }
+  
+
+    if(this.userData.user_type == 'diagnostic_admin') {
+      this.fetch={'parent_id':  this.data}
+    }
+    if(this.userData.user_type == 'doctor_group') {
+      this.fetch={'parent_id':  this.data}
+    }
+    if(this.userData.user_type == 'distributors') {
+      this.fetch={'parent_id':  this.data}
+    }
+    data.data = this.fetch;
+        this.httpService.httpViaPost(endpointc, data).subscribe((res:any) => {
+            // console.log('in constructor');
+            // console.log(result);
+            this.techData_count =res.count;
+            //console.warn('blogData c',res);
+ 
+        }, error => {
+            console.log('Oooops!');
+        });
+ 
+        this.httpService.httpViaPost(endpoint,data).subscribe((res:any) => {
+           
+            this.TechDashboardAllData =res.results.res;
+ 
+        }, error => {
+            console.log('Oooops!');
+        });
+  } else {
+    let endpoint='gettechlistdata';
+    let endpointc='gettechlistdata-count';
+    let data:any={
+        "condition":{
+            "limit":10,
+            "skip":0
+        },
+    sort:{
+        "type":'desc',
+        "field":'firstname'
+    },
+    type:"doctor",
+    _id: this.userData._id
+    }
+  
 
     if(this.userData.user_type == 'diagnostic_admin') {
       this.fetch={'parent_id':  this.data}
@@ -176,5 +221,6 @@ export class ListingTechComponent implements OnInit {
             console.log('Oooops!');
         });
   }
+}
 
 }
