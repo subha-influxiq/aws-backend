@@ -134,7 +134,7 @@
   text-transform: capitalize;
   font-weight: normal;
   position: absolute;
-  left: 16px;
+  left: 0px;
   font-size: 16px;
   font-family: "AvenirMedium";
 }
@@ -168,7 +168,7 @@
 .Admindmin_details .inner { column-count: 1; }
 .admin_wrapper .add_form .submit_form button { font-size: 18px; }
 .admin_wrapper .add_form .submit_form { display: flex; flex-wrap: wrap; }
-
+.book-appointment .mat-form-field { width: 31.8%; }
 
 }
 @media screen and (max-width: 740px){
