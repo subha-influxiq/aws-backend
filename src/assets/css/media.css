@@ -154,8 +154,11 @@
 
 }
 @media screen and (max-width: 900px){
-  .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item{ width: 100%; }
+  .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item,
+  .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item{ width: 100%; margin: 0;
+    margin-bottom: 16px;}
   .admin_wrapper .title_wrapper { font-size: 24px; }
+  .book-appointment .mat-form-field { width: 31.6%; }
 }
 @media screen and (max-width: 840px){
 
@@ -168,7 +171,7 @@
 .Admindmin_details .inner { column-count: 1; }
 .admin_wrapper .add_form .submit_form button { font-size: 18px; }
 .admin_wrapper .add_form .submit_form { display: flex; flex-wrap: wrap; }
-.book-appointment .mat-form-field { width: 31.8%; }
+
 
 }
 @media screen and (max-width: 740px){
@@ -199,9 +202,9 @@
 .mat-table .mat-cell:before{ left: 0;}
 .table_wrapper .add_header { display: flex; flex-direction: column; }
 .table_wrapper .add_header button { margin-top: 16px; }
-.searchbar .mat-form-field {
-  width: 47%;
-}
+.searchbar .mat-form-field { width: 47%; }
+.book-event .mat-dialog-container .mat-stepper-horizontal .width-md,
+.book-appointment .mat-form-field { width: 47.5%; }
 
 }
 @media screen and (max-width: 576px){
@@ -251,6 +254,25 @@ align-items: center;}
   justify-content: center; }
 .admin_wrapper .add_form .submit_form button { font-size: 16px; }
 .admin_wrapper .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0; margin-bottom: 5px; }
+.book-event .mat-dialog-container .mat-stepper-horizontal .width-md,
+.book-appointment .mat-form-field { width: 100%; }
+.book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type, 
+.book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type { flex-direction: column;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 12px;
+}
+.book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type:last-child,
+.book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type:last-child { flex-direction: column;
+  margin-bottom: 0px;
+  border-bottom: none;
+  padding-bottom: 0px;
+}
+.book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .checbox_wrapper, 
+.book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .checbox_wrapper { margin-left: 0;
+  margin-top: 6px;
+}
+
 }
 
 @media screen and (max-width: 440px){

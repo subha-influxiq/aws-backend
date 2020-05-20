@@ -709,14 +709,15 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .checbox_wrapper { min-width: 150px; margin-left: 10px; }
 
 .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type,
-.book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type { margin-bottom: 6px; margin-bottom: 6px; font-family: 'AvenirMedium'; font-size: 14px; color: #5f5c5a;}
+.book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type {margin-bottom: 6px; font-family: 'AvenirMedium'; font-size: 14px; color: #5f5c5a;}
 
 .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .label_name,
 .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .label_name{
   font-size: 16px; color: #0ac3a2; text-align: left; word-break: break-word; }
 
 .book-appointment div>.mat-raised-button,
-.book-event .mat-dialog-container .mat-raised-button { background: var(--button-color2); margin-top: 16px;}
+.book-event .mat-dialog-container .mat-raised-button { background: linear-gradient(45deg, #21b9ff, #8bc348);
+  margin-top: 16px; min-width: 120px; font-family: 'AvenirBlack'; border-radius: 0; text-transform: uppercase;}
 
 
   
