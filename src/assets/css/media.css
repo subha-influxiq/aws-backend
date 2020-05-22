@@ -19,7 +19,7 @@
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 5px; }
   .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber { font-size: 16px;}
   .tablewrapper{ overflow-x: scroll;}
-  .table_wrapper .mat-table{ width: 1500px;}
+  .table_wrapper .mat-table{ width: 1600px;}
 }
 @media screen and (max-width: 1300px){
 .main_wrapper { background-size: 680px; padding-left: 665px; }
@@ -27,6 +27,12 @@
 }
 @media screen and (max-width: 1240px){
 .main_wrapper .login_wrapper { width: 450px; }
+
+.calenderView .filter .pagination { width: 260px; }
+.calenderView .filter .pagination  .mat-icon-button { padding: 0; min-width: 0; width: auto;
+  height: auto; flex-shrink: 0; line-height: inherit; }
+.calenderView .filter .pagination mat-label{ font-size: 12px; margin:0;}
+.calenderView .filter .filter-box { margin-right: 10px; width: 180px;}
 }
 @media screen and (max-width: 1199px){
 .admin_wrapper { width: 95%; box-sizing: border-box; margin-bottom: 50px; }
@@ -69,6 +75,9 @@
   .admin_wrapper .content_wrapper .itemsection .counteer { width: 100%; text-align: center; }
   .admin_wrapper .content_wrapper .itemsection .icon { width: 100%; padding-top: 10px; }
   .admin_wrapper .content_wrapper .itemsection .button_wrapper { width: 100%; }
+  .calenderView .filter .filter-box { width: 26%; }
+  .calenderView .filter { flex-wrap: wrap; padding: 10px 0; }
+  .calenderView .filter .pagination { width: auto; margin: auto; }
 }
 @media screen and (max-width: 991px) {
   .biller_Dashboard .patient_report_section .patient_top_search .res_view { flex-direction: column; width: 100%;}
@@ -171,8 +180,8 @@
 .Admindmin_details .inner { column-count: 1; }
 .admin_wrapper .add_form .submit_form button { font-size: 18px; }
 .admin_wrapper .add_form .submit_form { display: flex; flex-wrap: wrap; }
-
-
+.calenderView .filter .filter-box { width: 32%; }
+.calenderView .calender_first .mat-toolbar { padding: 10px; height: auto; }
 }
 @media screen and (max-width: 740px){
   .mediaDoc_wrapper .media_inner_items .action_button { font-size: 20px; padding: 4px; }
@@ -189,6 +198,7 @@
 .admin_wrapper .testingDoc { font-size: 26px; line-height: 30px; text-align: center; }
 .admin_superbillsection .biller_wrapper { display: flex; flex-wrap: wrap;}
 .searchbar .mat-form-field { width: 48%; }
+.calenderView .calender_first .mat-toolbar .headerSpan { font-size: 22px; }
 }
 @media screen and (max-width: 600px){
   .quickRef .report_wrapper .items_w { width: 100%; }
@@ -205,7 +215,8 @@
 .searchbar .mat-form-field { width: 47%; }
 .book-event .mat-dialog-container .mat-stepper-horizontal .width-md,
 .book-appointment .mat-form-field { width: 47.5%; }
-
+.calenderView .calender_first .mat-toolbar { flex-direction: column; }
+.calenderView .calender_first .buttonsetToolbar {flex-direction: row;}
 }
 @media screen and (max-width: 576px){
   .admin_table table tr td:nth-child(4) span {display: inline-block;}
@@ -273,6 +284,8 @@ align-items: center;}
   margin-top: 6px;
 }
 
+.calenderView .filter .filter-box { width: 100%; }
+.calenderView .slotview .example-card { width: 100%; box-sizing: border-box;  margin: 0; margin-bottom: 16px; }
 }
 
 @media screen and (max-width: 440px){
@@ -289,6 +302,11 @@ align-items: center;}
   .DataTable .mat-card mat-label { margin-right: 0; display: block; margin-bottom: 10px;
 }
  
+}
+@media screen and (max-width: 400px){
+  .calenderView .filter button{ width: 49%; margin: 0; }
+  .calenderView .filter .pagination { width: 100%; margin: auto; text-align: center; margin-top: 16px; }
+  .calenderView .calender_first .buttonsetToolbar .singleButton { font-size: 14px; }
 }
 @media screen and (max-width: 390px){
 .main_wrapper .login_wrapper { width: 280px; }

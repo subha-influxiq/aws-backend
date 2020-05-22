@@ -31,7 +31,7 @@
 .add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0;}
 .add_form .patient_diagnotes .example-full-width textarea{ resize: none; }
 .add_form .status_wrapper{ display: flex; align-items: center; justify-content: space-evenly; margin: 0; }
-.add_form  .status_wrapper .mat-form-field { width: 35%; }
+.add_form  .status_wrapper .mat-form-field { width: 48%; }
 
 
 
