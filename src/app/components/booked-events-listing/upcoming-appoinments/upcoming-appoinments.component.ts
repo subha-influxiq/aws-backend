@@ -61,15 +61,17 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       startdate: 'Event Date',
       slot: "Start Time",
       slot_end_time: 'End Time',
-      timezoneName: 'Timezone'
+      timezoneName: 'Timezone',
+      status: 'Status'
     },
     source: 'google-events',
     date_search_source_count: 0,
     libdata: {
+      basecondition: {},
       detailview_override: [],
       updateendpoint: 'statusupdate',
       hideeditbutton: true,// all these button options are optional not mandatory
-      tableheaders: ['patient_name', 'doctor_name', 'doctor_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName'], //not required
+      tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'], //not required
       custombuttons: []
     },
     updatetable: false,
@@ -145,10 +147,13 @@ export class UpcomingAppoinmentsComponent implements OnInit {
             break;
 
           case 'doctor_office':
+            // data.condition = Object.assign(
+            //   data.condition, {userid: {$in: JSON.parse(this.cookie.get('user_details')).tech_id}}
+            // );
+            // data.condition.userid.$in.push(JSON.parse(this.cookie.get('user_details'))._id);
             data.condition = Object.assign(
-              data.condition, {userid: {$in: JSON.parse(this.cookie.get('user_details')).tech_id}}
-            );
-            data.condition.userid.$in.push(JSON.parse(this.cookie.get('user_details'))._id);
+              data.condition, {doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id}
+            )
             break;
 
           default:
@@ -166,7 +171,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
         // Create skipFields array(first save all the keys from the dataset)
         if (response.results.res > 0)
           this.configData.skipFields = Object.keys(response.results.res[0]);
-        let requiredFields = ['patient_name', 'doctor_name', 'doctor_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName'];
+        let requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'];
         // Modify the skipFields array(splicing the keys which is in the requiredFields)
         for (let i = 0; i < requiredFields.length; i++) {
           this.configData.skipFields.splice(this.configData.skipFields.indexOf(requiredFields[i]), 1)

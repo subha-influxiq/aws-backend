@@ -182,6 +182,7 @@ export class ReportConformationComponent implements OnInit {
   }
 
   updateRecord() {
+    console.log("SUBHA >>>----> ", this.htmlText.confirmSubmittedDataSource);
     if(this.checkboxData.checkbox1 == true && this.checkboxData.checkbox2 == true) {
       var data: any = {
         "source": "data_pece",

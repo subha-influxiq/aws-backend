@@ -94,7 +94,7 @@
 
                     <input type="text" matInput placeholder="Youtube link"
                         [formControl]="FaqManagementAddEditForm.controls['youtube_link']"
-                        (blur)="inputUntouch(FaqManagementAddEditForm, 'youtube_link')">
+                        (blur)="inputUntouch(FaqManagementAddEditForm, 'youtube_link')" (keyup)="getVideo();">
 
                     <mat-error
                         *ngIf="FaqManagementAddEditForm.controls['youtube_link'].touched && !FaqManagementAddEditForm.controls['youtube_link'].valid && FaqManagementAddEditForm.controls['youtube_link'].errors.required">
@@ -117,6 +117,16 @@
                     </mat-error>
                 </mat-form-field>
                 <!-- Priority End -->
+
+                <div>
+                    <ng-container *ngIf="htmlText.youtubeViewLink.status == true">
+                        <iframe width="400" height="315" [src]="htmlText.youtubeViewLink.url" frameborder="0" allowfullscreen></iframe>
+                    </ng-container>
+
+                    <ng-container *ngIf="htmlText.youtubeViewLink.status == false && FaqManagementAddEditForm.value.youtube_link != ''">
+                        <span>Video not found.</span>
+                    </ng-container>
+                </div>
 
                 <!-- Status Start -->
                 <span class="wrppr">

@@ -55,14 +55,13 @@ export class ResolveService implements Resolve<any> {
     if(route.url[0].path == 'doctor') {
       switch(route.url[1].path) {
         case 'dashboard':
-          requestData.condition['doctor_id'] = userData._id;;
+          requestData.condition['doctor_id'] = userData._id;
           break;
         default:
-          requestData.condition['doctor_id_object'] = userData._id;;
+          //requestData.condition['doctor_id_object'] = userData._id;
           break;
       }
-    }
-      
+    } 
     /* This one is for Doctor Dashboard End */
 
     /* This one is for Biller Dashboard Start */
@@ -106,7 +105,7 @@ export class ResolveService implements Resolve<any> {
       if(typeof route.data.requestcondition.source != 'string') {
         var returnData: any = {};
 
-        for(let i = 0; i <= route.data.requestcondition.source.length - 1; i++) {
+        for(let i = 0; i < route.data.requestcondition.source.length; i++) {
           let data: any = {
             source: route.data.requestcondition.source[i],
             condition: {}

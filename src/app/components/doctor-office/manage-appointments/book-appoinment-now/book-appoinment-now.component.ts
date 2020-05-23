@@ -827,7 +827,7 @@ export class BookAppoinmentNowComponent implements OnInit {
 
         let hiddenFields: any = [
           {type: 'input', name: 'doctor_id', value: doctor_id, hidden: true},
-          {type: 'input', name: 'doctor_office_id', value: this.userDetails._id, hidden: true},
+          {type: 'input', name: 'doctors_office_id', value: this.userDetails._id, hidden: true},
           // {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
           {type: 'input', name: 'parent_type', value: parent_type, hidden: true},
           {type: 'input', name: 'parent_id', value: parent_id, hidden: true},
