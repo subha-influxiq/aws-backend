@@ -121,7 +121,7 @@
       </mat-toolbar>
     </mat-card-content>
 
-    <table mat-table [dataSource]="notFindPatientRecordsDataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="notFindPatientRecordsDataSource" >
 
       <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -151,9 +151,7 @@
     </table>
   </ng-container>
 
-  <br />
-  <br />
-
+ <mat-card-content class="con-report-lebel">
   <p>
     <mat-checkbox [(ngModel)]="checkboxData.checkbox1">You want to submit with conflicts then please check this to agree conflicting data will not be added/updated into the system.</mat-checkbox>
   </p>
@@ -162,7 +160,7 @@
   </p>
 
   <button mat-raised-button color="primary" (click)="updateRecord();">Submit</button>
-
+</mat-card-content>
 </mat-card>
 
 
