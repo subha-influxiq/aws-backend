@@ -750,7 +750,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 
 
   /* bulk-upload/report-conformation */
-  .repot_modal td button{  font-family: 'AvenirMedium'; background: linear-gradient(45deg, #048006, #77da00);
+  .report_modal td button{  font-family: 'AvenirMedium'; background: linear-gradient(45deg, #048006, #77da00);
     border-radius: 0; text-transform: uppercase; color: #fff!important;}
   .modal_view .mat-form-field{ width:100%;}
   .modal_view .mat-form-field .mat-form-field-flex { padding: 0 7px 4px; border: 1px solid #dadada; }

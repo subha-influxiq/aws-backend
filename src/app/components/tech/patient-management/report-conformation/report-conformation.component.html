@@ -8,7 +8,7 @@
         <h2> Confirm submitted records with existing patient profile which yet to have a report.</h2>
       </mat-toolbar>
       <div class="tablewrapper">
-      <table mat-table [dataSource]="confirmSubmittedDataSource" class="mat-elevation-z8">
+      <table mat-table [dataSource]="confirmSubmittedDataSource" class="report_modal mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -65,7 +65,7 @@
       </mat-toolbar>
     </mat-card-content>
     <div class="tablewrapper">
-    <table mat-table [dataSource]="conflictingPatientRecordsDataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="conflictingPatientRecordsDataSource" class="report_modal mat-elevation-z8">
 
       <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -125,7 +125,7 @@
       </mat-toolbar>
     </mat-card-content>
     <div class="tablewrapper"> 
-      <table mat-table [dataSource]="notFindPatientRecordsDataSource" class="repot_modal">
+      <table mat-table [dataSource]="notFindPatientRecordsDataSource" class="report_modal">
 
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
