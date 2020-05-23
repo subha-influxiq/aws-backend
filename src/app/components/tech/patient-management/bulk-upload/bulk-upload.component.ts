@@ -62,7 +62,7 @@ export class BulkUploadComponent implements OnInit {
       tech_name           : [ this.cookiesData.firstname + ' ' + this.cookiesData.lastname, [] ],
       tech_email          : [ this.cookiesData.email, [] ],
       upload_file         : [ '', [] ],
-      status              : [ 'Pending Signature', [] ],
+      status              : [ 2, [] ],
       ready_for_process   : [ false, [] ],
       note                : [ '', [] ],
       report_type         : [ 'file', [] ],
@@ -175,6 +175,14 @@ export class BulkUploadComponent implements OnInit {
       if(typeof(this.cookiesData.diagnostic_admin_id) != 'undefined') {
         formData["diagnostic_admin_id"] = this.cookiesData.diagnostic_admin_id;
       }
+
+      formData.report_life_circle = [];
+      formData.report_life_circle.push({
+        "upload_by_tech_id" : this.cookies_id,
+        "upload_date"       : Date.now(),
+        "upload_status"     : 2,
+        "upload_status_text": "File uploaded"
+      });
 
       var data = {
         "source": "data_pece",

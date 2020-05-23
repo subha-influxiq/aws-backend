@@ -8,6 +8,7 @@ import { MatSnackBar } from '@angular/material';
 import { CommonFunction } from '../../../../class/common/common-function';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { environment } from '../../../../../environments/environment';
+import { DomSanitizer } from '@angular/platform-browser';
 
 export interface DialogData {
   message: string;
@@ -37,13 +38,17 @@ export class AddEditFaqComponent implements OnInit {
     allCities: "",
     cities: "",
     ckEditorValue: "",
-    youtubeLinkError: false
+    youtubeLinkError: false,
+    youtubeViewLink: {
+      status: false,
+      url: ''
+    }
   };
 
   constructor(public fb: FormBuilder, public activeRoute: ActivatedRoute,
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService, public snackBar: MatSnackBar, public commonFunction: CommonFunction,
-    public dialog: MatDialog) {
+    public dialog: MatDialog, private sanitizer: DomSanitizer) {
 
     this.htmlText.userData = cookie.getAll();
     this.htmlText.userData.user_details = JSON.parse(this.htmlText.userData.user_details);
@@ -86,6 +91,8 @@ export class AddEditFaqComponent implements OnInit {
           this.FaqManagementAddEditForm.controls['youtube_link'].patchValue(billerDetails[0].youtube_link);
           this.FaqManagementAddEditForm.controls['priority'].patchValue(billerDetails[0].priority);
           this.FaqManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
+
+          this.getVideo();
         });
         break;
       case 'add':
@@ -155,6 +162,17 @@ export class AddEditFaqComponent implements OnInit {
           });
         }
       });
+    }
+  }
+
+  getVideo() {
+    this.htmlText.youtubeViewLink = this.commonFunction.getYoutubeEmbedUrl(this.FaqManagementAddEditForm.value.youtube_link);
+
+    if(this.htmlText.youtubeViewLink.status == true) {
+      this.htmlText.youtubeViewLink.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.htmlText.youtubeViewLink.url);
+    } else {
+      this.htmlText.youtubeViewLink.status = false;
+      this.htmlText.youtubeViewLink.url = '';
     }
   }
 
