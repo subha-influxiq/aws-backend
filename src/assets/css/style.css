@@ -211,7 +211,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .file_upload .files-view .viewUrlwrapper .othersFilePreview { background: linear-gradient(45deg, #21e289, #1dbce9);}
 .file_upload .files-view .viewUrlcontent .mat-card-actions button,
 .file_upload .button-group button{ font-family: 'AvenirMedium'; background: var(--button-color3); margin-right: 10px;
-  box-shadow: none; }
+  box-shadow: none; color:#fff; }
 .file_upload .files-view .viewUrlcontent .mat-card-header-text{ margin: 16px 0 0 0;}
 .file_upload .files-view .viewUrlcontent .mat-card-header-text .mat-card-title { font-family: 'AvenirMedium';}
 .file_upload .files-view .viewUrlcontent .mat-card-header-text .fileDescription { margin-top: 0; font-family: 'AvenirMedium';}
@@ -749,4 +749,8 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
   margin-top: 16px; min-width: 120px; font-family: 'AvenirBlack'; border-radius: 0; text-transform: uppercase;}
 
 
-  
+  /* bulk-upload/report-conformation */
+  .repot_modal td button{  font-family: 'AvenirMedium'; background: linear-gradient(45deg, #048006, #77da00);
+    border-radius: 0; text-transform: uppercase; color: #fff!important;}
+  .modal_view .mat-form-field{ width:100%;}
+  .modal_view .mat-form-field .mat-form-field-flex { padding: 0 7px 4px; border: 1px solid #dadada; }

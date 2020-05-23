@@ -228,7 +228,7 @@ export class ReportConformationComponent implements OnInit {
 
   changePatientDialog(sectionFlag, tableIndex) {
     const dialogRef = this.dialog.open(PatientSelectModalComponent, {
-      width: '500px',
+     panelClass:'patient-confirm-report',
       data: { allPatient: this.htmlText.options }
     });
 

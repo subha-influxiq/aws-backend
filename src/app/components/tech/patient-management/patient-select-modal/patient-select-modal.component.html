@@ -1,5 +1,5 @@
 <h2 mat-dialog-title>Select Patient</h2>
-
+<mat-card class="modal_view">
 <mat-form-field>
     <mat-label>Select patient</mat-label>
     <mat-select (selectionChange)="selectPatient($event.value);">
@@ -33,3 +33,4 @@
     <button mat-button mat-dialog-close>Cancel</button>
     <button mat-button [mat-dialog-close]="selectPatientData" cdkFocusInitial>Confirm</button>
 </mat-dialog-actions>
+</mat-card>
