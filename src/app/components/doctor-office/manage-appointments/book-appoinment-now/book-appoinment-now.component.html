@@ -4,7 +4,10 @@
 
 <mat-card class="admin_wrapper">
 
-  <lib-view-slot-user class="calenderView" [configData]="configData" *ngIf="configData.responseData.length > 0 && configData.patientInfoFormFields.length > 0"></lib-view-slot-user>
+  <mat-label *ngIf="configData.responseData.length == 0 && !loading">No slot found for this tech</mat-label>
+
+  <lib-view-slot-user class="calenderView" [configData]="configData"
+                      *ngIf="configData.responseData.length > 0 && configData.patientInfoFormFields.length > 0"></lib-view-slot-user>
 
 </mat-card>
 

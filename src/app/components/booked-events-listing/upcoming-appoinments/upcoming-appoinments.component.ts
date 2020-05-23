@@ -48,7 +48,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
     ],
     responseData: [],
     // primaryCondition: {$or: [{event_type: 1}, {event_type: 2}]},
-    primaryCondition: {$or: [{event_type: 1}, {event_type: 2}], userid: {$in: JSON.parse(this.cookie.get('user_details')).tech_id}},
+    primaryCondition: {userid: {$in: JSON.parse(this.cookie.get('user_details')).tech_id}},
 
 
     // lib-listing inputs
