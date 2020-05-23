@@ -588,20 +588,17 @@ align-items: center; justify-content: center; color: #fff; font-family: 'AvenirM
 .viewMore_w button{ min-width: 444px; background: linear-gradient(0deg, #04aaf5, #32baf9); font-family: 'AvenirHeavy'; color: #fff; text-transform: uppercase; font-size: 28px; padding: 4px;}
 
 /* for all modal */
-.mat-dialog-container{ min-width: 400px; border: 1px solid #03d877; border-radius: 0px!important; padding: 0!important; min-height: 180px!important; height: auto!important;}
+.mat-dialog-container{ min-width: 400px; border: 1px solid #03d877; border-radius: 0px!important; padding: 0!important;}
 .mat-dialog-container .mat-dialog-title {text-align: center; margin: 0; display: block; background: var(--button-color3);
 color: #fff; padding: 6px; font-family: 'AvenirBlack'; text-transform: uppercase; }
-.mat-dialog-container .mat-dialog-content {
-display: block; margin: 0; padding: 16px; box-sizing: border-box; max-height: initial; overflow: auto; }
+.mat-dialog-container .mat-dialog-content { display: block; margin: 0; padding: 16px; box-sizing: border-box; max-height: initial; overflow: auto; }
 
 .mat-dialog-container .mat-dialog-content .mat-form-field{ width:100%}
 .mat-dialog-container .mat-dialog-content .submit_form{  display: flex; justify-content: flex-end;}
 .mat-dialog-container .mat-dialog-content .submit_form button{ font-family: 'AvenirBlack'; text-transform: uppercase; color: #fff; background: var(--button-color2);}
 .mat-dialog-container .mat-dialog-content .submit_form button:last-child{ background: var(--button-color3);}
 .mat-dialog-container .mat-dialog-content p{ text-align: center; color: var(--button-color2); font-size: 18px; white-space: normal; word-break: break-all; font-family: 'AvenirMedium';}
-.mat-dialog-container .mat-dialog-actions { display: flex; flex-wrap: wrap; min-height: inherit; align-items: center;
-  justify-content: center;
-}
+.mat-dialog-container .mat-dialog-actions { display: flex; flex-wrap: wrap; min-height: inherit; align-items: center; justify-content: center; margin-bottom: 0;}
 .mat-dialog-container .mat-dialog-actions button{ background: var(--button-color1);
 color: #fff; min-width: 100px; font-family: 'AvenirMedium'; font-size: 18px;}
 .mat-dialog-container .mat-dialog-actions button:last-child{ background: var(--button-color2);}
@@ -629,7 +626,6 @@ border-bottom: 2px solid; padding-bottom: 8px;}
 .table_list .button_action {  margin-left:auto;}
 .table_list .button_action button:last-child{ background: var(--button-color1); margin-left: 10px;}
 .faq_wrapper .mat-expansion-panel-body {padding: 0; }
-
 
 
 /* calendar view */
