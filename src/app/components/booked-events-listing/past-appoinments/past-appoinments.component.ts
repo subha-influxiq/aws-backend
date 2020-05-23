@@ -48,10 +48,7 @@ export class PastAppoinmentsComponent implements OnInit {
     ],
     responseData: [],
     // primaryCondition: {$or: [{event_type: 1}, {event_type: 2}]},
-    primaryCondition: {
-      $or: [{event_type: 1}, {event_type: 2}],
-      userid: {$in: JSON.parse(this.cookie.get('user_details')).tech_id}
-    },
+    primaryCondition: {userid: {$in: JSON.parse(this.cookie.get('user_details')).tech_id}},
 
 
     // lib-listing inputs
@@ -69,6 +66,7 @@ export class PastAppoinmentsComponent implements OnInit {
     source: 'google-events',
     date_search_source_count: 0,
     libdata: {
+      basecondition: {userid: {$in: JSON.parse(this.cookie.get('user_details')).tech_id}},
       detailview_override: [],
       updateendpoint: 'statusupdate',
       hideeditbutton: true,// all these button options are optional not mandatory
@@ -150,10 +148,13 @@ export class PastAppoinmentsComponent implements OnInit {
             break;
 
           case 'doctor_office':
+            // data.condition = Object.assign(
+            //   data.condition, {userid: {$in: JSON.parse(this.cookie.get('user_details')).tech_id}}
+            // );
+            // data.condition.userid.$in.push(JSON.parse(this.cookie.get('user_details'))._id);
             data.condition = Object.assign(
-              data.condition, {userid: {$in: JSON.parse(this.cookie.get('user_details')).tech_id}}
-            );
-            data.condition.userid.$in.push(JSON.parse(this.cookie.get('user_details'))._id);
+              data.condition, {doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id}
+            )
             break;
 
           default:

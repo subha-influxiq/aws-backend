@@ -1262,7 +1262,7 @@ export class AddPatientManuallyComponent implements OnInit {
 
   constructor(public activatedRoute: ActivatedRoute, public cookieService: CookieService,
               public snackBar: MatSnackBar, public httpRequestService: HttpServiceService) {
-                this.headerFlag = this.activatedRoute.snapshot.url[0].path;
+    this.headerFlag = this.activatedRoute.snapshot.url[0].path;
   }
 
 
@@ -1311,7 +1311,7 @@ export class AddPatientManuallyComponent implements OnInit {
           temp['child_of'] = this.resolveData.others.insurance_type[i].insurance_id;
           insuranceTypeData.push(temp);
         }
-        console.log('insuranceTypeData', insuranceTypeData);
+        // console.log('insuranceTypeData', insuranceTypeData);
 
         let otherFieldsData = [];
         for (let i = 0; i < this.resolveData.others.patient_information.length; i++) {
@@ -1368,21 +1368,15 @@ export class AddPatientManuallyComponent implements OnInit {
             otherFieldsData.push(fieldData);
           }
         }
-        console.log('otherFieldsData', otherFieldsData);
+        // console.log('otherFieldsData', otherFieldsData);
 
         let patientInfoFormFields: any = [
           {
-            type: 'input',
-            name: 'practice_name',
-            placeholder: 'Practice Name',
-            label: 'Practice Name',
-            value: '',
-            validators: [Validators.required],
-            error: 'Enter practice name',
+            type: 'input', name: 'practice_name', placeholder: 'Practice Name', label: 'Practice Name',
+            value: '', validators: [Validators.required], error: 'Enter practice name',
             caption: 'Patient General Information'
           },
           {type: 'input', name: 'address', placeholder: 'Address', label: 'Address', value: ''},
-          // {type: 'input', name: 'state', placeholder: 'State', label: 'State', value: ''},
           {
             type: 'select', name: 'state', placeholder: 'Select State', label: 'State',
             options: this.states,
@@ -1391,22 +1385,8 @@ export class AddPatientManuallyComponent implements OnInit {
           {type: 'input', name: 'city', placeholder: 'City', label: 'City', value: ''},
           {type: 'input', name: 'zip', placeholder: 'ZIP', label: 'ZIP', value: ''},
           {
-            type: 'input',
-            name: 'patient_name',
-            placeholder: 'Patient Name',
-            label: 'Patient Name',
-            value: '',
-            validators: [Validators.required],
-            error: 'Enter patient name'
-          },
-          {
-            type: 'date',
-            name: 'dob',
-            placeholder: 'Date of Birth',
-            label: 'Date of Birth',
-            value: '',
-            validators: [Validators.required],
-            error: 'Enter date of birth of the patient'
+            type: 'input', name: 'patient_name', placeholder: 'Patient Name', label: 'Patient Name',
+            value: '', validators: [Validators.required], error: 'Enter patient name'
           },
           {
             type: 'select', name: 'gender', placeholder: 'Gender', label: 'Gender',
@@ -1417,39 +1397,24 @@ export class AddPatientManuallyComponent implements OnInit {
             validators: [Validators.required], error: 'Select gender'
           },
           {
-            type: 'input',
-            name: 'patient_email',
-            placeholder: 'Patient Email',
-            label: 'Patient Email',
-            value: '',
-            validators: [Validators.required, Validators.email],
-            error: 'Enter patient email'
+            type: 'input', name: 'patient_email', placeholder: 'Patient Email', label: 'Patient Email',
+            value: '', validators: [Validators.required, Validators.email], error: 'Enter patient email'
           },
           {
-            type: 'input',
-            name: 'height',
-            placeholder: 'Ex. 6\'10"',
-            label: 'Height',
-            value: '',
-            validators: [Validators.required],
-            error: 'Enter patient height'
+            type: 'input', name: 'height', placeholder: 'Ex. 6\'10"', label: 'Height',
+            value: '', validators: [Validators.required], error: 'Enter patient height'
           },
           {
-            type: 'input',
-            name: 'weight',
-            placeholder: 'Ex. 210 lbs',
-            label: 'Weight',
-            value: '',
-            validators: [Validators.required],
-            error: 'Enter patient weight'
+            type: 'input', name: 'weight', placeholder: 'Ex. 210 lbs', label: 'Weight',
+            value: '', validators: [Validators.required], error: 'Enter patient weight'
           },
           {
-            type: 'input',
-            name: 'booking_date',
-            placeholder: 'Date',
-            label: 'Booking date',
-            value: this.today,
-            disabled: true
+            type: 'input', name: 'booking_date', placeholder: 'Date', label: 'Booking date',
+            value: this.today, disabled: true
+          },
+          {
+            type: 'date', name: 'dob', placeholder: 'Date of Birth', label: 'Date of Birth',
+            value: '', validators: [Validators.required], error: 'Enter date of birth of the patient'
           },
         ];
 
@@ -1932,32 +1897,16 @@ export class AddPatientManuallyComponent implements OnInit {
 
         let calendarInfoFormFields: any = [
           {
-            type: 'input',
-            name: 'event_title',
-            placeholder: 'Event Title',
-            label: 'Event Title',
-            value: '',
-            caption: 'Additional Information'
+            type: 'date', name: 'startdate', placeholder: 'Date of Appointment',
+            label: 'Date of Appointment', value: '', validators: [Validators.required],
+            error: 'Enter Date of Appointment', caption: 'Appointment Schedule'
           },
           {
-            type: 'date',
-            name: 'startdate',
-            placeholder: 'Date of Appointment',
-            label: 'Date of Appointment',
-            value: '',
-            validators: [Validators.required],
-            error: 'Enter Date of Appointment'
+            type: 'input', name: 'slot', placeholder: 'Time of Appointment',
+            label: 'Time of Appointment', value: ''
           },
           {
-            type: 'input',
-            name: 'slot',
-            placeholder: 'Time of Appointment',
-            label: 'Time of Appointment',
-            value: ''
-          },
-          {
-            type: 'select', name: 'reqTimezone',
-            label: 'Timezone',
+            type: 'select', name: 'reqTimezone', label: 'Timezone',
             options: [
               {text: 'Alaska Standard Time', value: '-08:00|America/Anchorage'},
               {text: 'Pacific Standard Time', value: '-07:00|America/Los_Angeles'},
@@ -1968,21 +1917,6 @@ export class AddPatientManuallyComponent implements OnInit {
               {text: 'Hawaii Standard Time', value: '-10:00|Pacific/Honolulu'}
             ],
             value: '-05:00|America/Chicago'
-          },
-          {
-            type: 'input',
-            name: 'username',
-            placeholder: 'Organizer Name',
-            label: 'Organizer Name',
-            value: '',
-            disabled: true
-          },
-          {
-            type: 'input',
-            name: 'useremail',
-            placeholder: 'Organizer Email',
-            label: 'Organizer Email',
-            value: ''
           },
           {
             type: 'input',
@@ -2010,40 +1944,33 @@ export class AddPatientManuallyComponent implements OnInit {
             doctorArray.push(temp);
           }
 
-          console.log('doctorArray', doctorArray);
+          // console.log('doctorArray', doctorArray);
           calendarInfoFormFields.push(
             {
-              type: 'select',
-              name: 'doctor_id',
-              placeholder: 'Select Doctor',
-              label: 'Doctor Name',
-              value: '',
-              options: doctorArray,
-              hasChildWithDynamicLoading: true,
-              childField: 'tech_id',
-              endpoint: 'get-tech-info'
+              type: 'select', name: 'doctor_id', placeholder: 'Select Doctor', label: 'Doctor Name',
+              value: '', options: doctorArray, hasChildWithDynamicLoading: true,
+              childField: 'tech_id', endpoint: 'get-tech-info', caption: 'Select doctor and tech'
             },
             {
-              type: 'select',
-              name: 'tech_id',
-              placeholder: 'Select Tech',
-              label: 'Tech Name',
-              value: '',
-              isDependent: true,
-              loadDynamically: true,
-              options: []
+              type: 'select', name: 'tech_id', placeholder: 'Select Tech', label: 'Tech Name',
+              value: '', isDependent: true, loadDynamically: true, options: []
             }
           );
 
           let hiddenFields: any = [
-            // {type: 'input', name: 'doctor_id', value: response.data._id, hidden: true},
             {type: 'input', name: 'doctor_office_id', value: this.userDetails._id, hidden: true},
-            // {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
-            // {type: 'input', name: 'parent_type', value: response.data.parent_type, hidden: true},
-            // {type: 'input', name: 'parent_id', value: response.data.parent_id, hidden: true},
+            {type: 'input', name: 'parent_type', value: response.data.parent_type, hidden: true},
+            {type: 'input', name: 'parent_id', value: response.data.parent_id, hidden: true},
+            {type: 'input', name: 'userid', value: this.userDetails._id, hidden: true},
+            {type: 'input', name: 'username', value: this.userDetails.center_name, hidden: true},
+            {type: 'input', name: 'useremail', value: this.userDetails.email, hidden: true}
           ]
-          this.configData = Object.assign(this.configData, {patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields, calendarInfoFormFields)});
-          console.log('this.configData', this.configData)
+          this.configData = Object.assign(this.configData,
+            {
+              patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData,
+                checkboxFields, hiddenFields, calendarInfoFormFields)
+            }
+          );
         });
       }, error => {
         console.log('Oooops! Cannot get states.');
