@@ -7,8 +7,8 @@
       <mat-toolbar class="top_header">
         <h2> Confirm submitted records with existing patient profile which yet to have a report.</h2>
       </mat-toolbar>
-
-      <table mat-table [dataSource]="confirmSubmittedDataSource" class="mat-elevation-z8">
+      <div class="tablewrapper">
+      <table mat-table [dataSource]="confirmSubmittedDataSource" class="report_modal mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -37,7 +37,8 @@
               <p>Height: {{ p.height }}</p>
               <p>Waigth: {{ p.weight }}</p>
               <p>Related Doctor: {{ p.doctor_details[0].firstname }} {{ p.doctor_details[0].lastname }} </p>
-              <p>Doctor Office: {{ p.doctor_office_details[0].firstname }} {{ p.doctor_office_details[0].lastname }} </p>
+              <p>Doctor Office: {{ p.doctor_office_details[0].firstname }} {{ p.doctor_office_details[0].lastname }}
+              </p>
             </ng-container>
           </td>
         </ng-container>
@@ -46,13 +47,14 @@
         <ng-container matColumnDef="choose_other_patient">
           <th mat-header-cell *matHeaderCellDef> Choose Other Patient </th>
           <td mat-cell *matCellDef="let element; let i = index;">
-          <button mat-button color="primary" (click)="changePatientDialog('submitted', i);">Select Patient</button>
+            <button mat-button color="primary" (click)="changePatientDialog('submitted', i);">Select Patient</button>
           </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="confirmSubmittedDisplayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: confirmSubmittedDisplayedColumns;"></tr>
       </table>
+    </div>
     </mat-card-content>
   </ng-container>
 
@@ -62,8 +64,8 @@
         <h2> Conflicting Patient Records </h2>
       </mat-toolbar>
     </mat-card-content>
-
-    <table mat-table [dataSource]="conflictingPatientRecordsDataSource" class="mat-elevation-z8">
+    <div class="tablewrapper">
+    <table mat-table [dataSource]="conflictingPatientRecordsDataSource" class="report_modal mat-elevation-z8">
 
       <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -85,16 +87,17 @@
         <th mat-header-cell *matHeaderCellDef> Conflicting Records </th>
         <td mat-cell *matCellDef="let element; let j = index;">
           <ng-container *ngFor="let p of element.patient_details; let i = index;">
-            
+
             <p>Patient Name: {{ p.patient_name }}</p>
             <p>Date of Birth: {{ p.dob | date }}</p>
             <p>Gender: {{ p.gender }}</p>
             <p>Height: {{ p.height }}</p>
             <p>Waigth: {{ p.weight }}</p>
             <p>
-              <button mat-raised-button color="primary" (click)="selectConflictingRecord('conflicting', j, i);">Select</button>
+              <button mat-raised-button color="primary"
+                (click)="selectConflictingRecord('conflicting', j, i);">Select</button>
             </p>
-              
+
           </ng-container>
         </td>
       </ng-container>
@@ -110,6 +113,7 @@
       <tr mat-header-row *matHeaderRowDef="conflictingPatientRecordsDisplayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: conflictingPatientRecordsDisplayedColumns;"></tr>
     </table>
+  </div>
   </ng-container>
 
   <br />
@@ -120,47 +124,51 @@
         <h2> Reports That System can't Map </h2>
       </mat-toolbar>
     </mat-card-content>
+    <div class="tablewrapper"> 
+      <table mat-table [dataSource]="notFindPatientRecordsDataSource" class="report_modal">
 
-    <table mat-table [dataSource]="notFindPatientRecordsDataSource" >
-
-      <!--- Note that these columns can be defined in any order.
+        <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
 
-      <!-- Position Column -->
-      <ng-container matColumnDef="no">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
-      </ng-container>
+        <!-- Position Column -->
+        <ng-container matColumnDef="no">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
+        </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="patient_report">
-        <th mat-header-cell *matHeaderCellDef> Patient Report </th>
-        <td mat-cell *matCellDef="let element"> {{ element.file_original_name }} </td>
-      </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="patient_report">
+          <th mat-header-cell *matHeaderCellDef> Patient Report </th>
+          <td mat-cell *matCellDef="let element"> {{ element.file_original_name }} </td>
+        </ng-container>
 
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="choose_other_patient">
-        <th mat-header-cell *matHeaderCellDef> Choose Other Patient </th>
-        <td mat-cell *matCellDef="let element; let i = index;">
-          <button mat-button color="primary" (click)="changePatientDialog('not found', i);">Select Patient</button>
-        </td>
-      </ng-container>
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="choose_other_patient">
+          <th mat-header-cell *matHeaderCellDef> Choose Other Patient </th>
+          <td mat-cell *matCellDef="let element; let i = index;">
+            <button mat-button color="primary" (click)="changePatientDialog('not found', i);">Select Patient</button>
+          </td>
+        </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="notFindPatientRecordsDisplayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: notFindPatientRecordsDisplayedColumns;"></tr>
-    </table>
+        <tr mat-header-row *matHeaderRowDef="notFindPatientRecordsDisplayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: notFindPatientRecordsDisplayedColumns;"></tr>
+      </table>
+   
+    </div>
   </ng-container>
 
- <mat-card-content class="con-report-lebel">
-  <p>
-    <mat-checkbox [(ngModel)]="checkboxData.checkbox1">You want to submit with conflicts then please check this to agree conflicting data will not be added/updated into the system.</mat-checkbox>
-  </p>
-  <p>
-    <mat-checkbox [(ngModel)]="checkboxData.checkbox2">All mapping of patient records and patient data is verified correct.</mat-checkbox>
-  </p>
+  <mat-card-content class="con-report-lebel">
+    <p>
+      <mat-checkbox [(ngModel)]="checkboxData.checkbox1">You want to submit with conflicts then please check this to
+        agree conflicting data will not be added/updated into the system.</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox [(ngModel)]="checkboxData.checkbox2">All mapping of patient records and patient data is verified
+        correct.</mat-checkbox>
+    </p>
 
-  <button mat-raised-button color="primary" (click)="updateRecord();">Submit</button>
-</mat-card-content>
+    <button mat-raised-button color="primary" (click)="updateRecord();">Submit</button>
+  </mat-card-content>
 </mat-card>
 
 

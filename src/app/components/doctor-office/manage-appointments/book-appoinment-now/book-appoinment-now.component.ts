@@ -22,6 +22,7 @@ export class BookAppoinmentNowComponent implements OnInit {
 
   today = moment().format('L');
   states: any = [];
+  loading = true;
 
   public configData: any = {
     appName: 'Calendar-Management',
@@ -113,7 +114,7 @@ export class BookAppoinmentNowComponent implements OnInit {
         }
       };
       this.httpRequestService.postRequest('update-user', data).subscribe((response: any) => {
-        console.log('response', response);
+        // console.log('response', response);
         if (response.status == 'success') {
           this.openSnackBar('Calendar added successfully...')
         }
@@ -122,7 +123,7 @@ export class BookAppoinmentNowComponent implements OnInit {
       let urlSendEmail = this.configData.baseUrl + 'send-confirmation-email?id=' + this.userDetails._id;
       this.httpRequestService.getRequest(urlSendEmail, {}).subscribe((response: any) => {
         if (response.status == 'success') {
-          console.log('Mail sent ', response.msg_id);
+          // console.log('Mail sent ', response.msg_id);
           this.openSnackBar('Confirmation email sent to your email - ' + this.userDetails.email, 'Ok');
         }
       });
@@ -132,7 +133,7 @@ export class BookAppoinmentNowComponent implements OnInit {
     }
   }
 
-  getStates(): any {
+  populateFormFields(doctor_id, parent_id, parent_type): any {
     /* ****************** Get states value from assets/states.json ****************** */
     this.httpRequestService.get('assets/data/states.json')
       .subscribe(res => {
@@ -155,7 +156,7 @@ export class BookAppoinmentNowComponent implements OnInit {
           temp['child_of'] = this.resolveData.others.insurance_type[i].insurance_id;
           insuranceTypeData.push(temp);
         }
-        console.log('insuranceTypeData', insuranceTypeData);
+        // console.log('insuranceTypeData', insuranceTypeData);
 
         let otherFieldsData = [];
         for (let i = 0; i < this.resolveData.others.patient_information.length; i++) {
@@ -183,7 +184,8 @@ export class BookAppoinmentNowComponent implements OnInit {
                 name: this.resolveData.others.patient_information[i].label,
                 placeholder: this.resolveData.others.patient_information[i].description,
                 label: this.resolveData.others.patient_information[i].description,
-                value: ''}
+                value: ''
+              }
               break;
 
             case 'dropdown':
@@ -211,7 +213,7 @@ export class BookAppoinmentNowComponent implements OnInit {
             otherFieldsData.push(fieldData);
           }
         }
-        console.log('otherFieldsData', otherFieldsData);
+        // console.log('otherFieldsData', otherFieldsData);
 
         let patientInfoFormFields: any = [
           {
@@ -775,39 +777,23 @@ export class BookAppoinmentNowComponent implements OnInit {
 
         let calendarInfoFormFields = [
           {
-            type: 'input',
-            name: 'event_title',
-            placeholder: 'Event Title',
-            label: 'Event Title',
-            value: '',
-            disabled: true
+            type: 'input', name: 'event_title', placeholder: 'Event Title',
+            label: 'Event Title', value: '', disabled: true
           },
           {
-            type: 'input',
-            name: 'description',
-            placeholder: 'Event Description',
-            label: 'Event Description',
-            value: '',
-            disabled: true
+            type: 'input', name: 'description', placeholder: 'Event Description',
+            label: 'Event Description', value: '', disabled: true
           },
           {
-            type: 'input',
-            name: 'startdate',
-            placeholder: 'Date of Appointment',
-            label: 'Date of Appointment',
-            value: '',
-            disabled: true
+            type: 'input', name: 'startdate', placeholder: 'Date of Appointment',
+            label: 'Date of Appointment', value: '', disabled: true
           },
           {
-            type: 'input',
-            name: 'slot',
-            placeholder: 'Time of Appointment',
-            label: 'Time of Appointment',
-            value: '',
-            disabled: true
+            type: 'input', name: 'slot', placeholder: 'Time of Appointment',
+            label: 'Time of Appointment', value: '', disabled: true
           },
           {
-            type: 'select', name: 'reqTimezone',
+            type: 'select', name: 'reqTimezone', label: 'Timezone',
             options: [
               {text: 'Alaska Standard Time', value: '-08:00|America/Anchorage'},
               {text: 'Pacific Standard Time', value: '-07:00|America/Los_Angeles'},
@@ -820,50 +806,35 @@ export class BookAppoinmentNowComponent implements OnInit {
             value: '-05:00|America/Chicago', disabled: true
           },
           {
-            type: 'input',
-            name: 'username',
-            placeholder: 'Organizer Name',
-            label: 'Organizer Name',
-            value: '',
-            disabled: true
+            type: 'input', name: 'username', placeholder: 'Organizer Name',
+            label: 'Organizer Name', value: '', disabled: true
           },
           {
-            type: 'input',
-            name: 'useremail',
-            placeholder: 'Organizer Email',
-            label: 'Organizer Email',
-            value: '',
-            disabled: true
+            type: 'input', name: 'useremail', placeholder: 'Organizer Email',
+            label: 'Organizer Email', value: '', disabled: true
           },
           {
-            type: 'input',
-            name: 'attendees',
-            placeholder: 'Attendee Email',
-            label: 'Attendee Email',
-            value: '',
-            disabled: true
+            type: 'input', name: 'attendees', placeholder: 'Attendee Email',
+            label: 'Attendee Email', value: '', disabled: true
           },
           {
-            type: 'input',
-            name: 'additional_notes',
-            placeholder: 'Additional Notes',
-            label: 'Additional Notes',
-            value: ''
+            type: 'input', name: 'additional_notes', placeholder: 'Additional Notes',
+            label: 'Additional Notes', value: ''
           }
         ];
 
-        this.httpRequestService.postRequest('get-doctor-info', {condition: {_id: this.userDetails.doctor_id}}).subscribe((response: any) => {
+        // this.httpRequestService.postRequest('get-doctor-info', {condition: {_id: this.userDetails.doctor_id}}).subscribe((response: any) => {
 
-          let hiddenFields: any = [
-            {type: 'input', name: 'doctor_id', value: response.data._id, hidden: true},
-            {type: 'input', name: 'doctor_office_id', value: this.userDetails._id, hidden: true},
-            // {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
-            {type: 'input', name: 'parent_type', value: response.data.parent_type, hidden: true},
-            {type: 'input', name: 'parent_id', value: response.data.parent_id, hidden: true},
-          ]
-          this.configData = Object.assign(this.configData, {patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields)}, {calendarInfoFormFields: calendarInfoFormFields});
+        let hiddenFields: any = [
+          {type: 'input', name: 'doctor_id', value: doctor_id, hidden: true},
+          {type: 'input', name: 'doctors_office_id', value: this.userDetails._id, hidden: true},
+          // {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
+          {type: 'input', name: 'parent_type', value: parent_type, hidden: true},
+          {type: 'input', name: 'parent_id', value: parent_id, hidden: true},
+        ]
+        this.configData = Object.assign(this.configData, {patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields)}, {calendarInfoFormFields: calendarInfoFormFields});
 
-        });
+        // });
       }, error => {
         console.log('Oooops! Cannot get states.');
       });
@@ -885,7 +856,7 @@ export class BookAppoinmentNowComponent implements OnInit {
       console.log('The dialog was closed', result);
       this.configData.responseData = [];
       this.configData.primaryCondition = {
-        userid: {$in: [result]}
+        userid: {$in: [result.tech_id]}
       }
       this.httpRequestService.postRequest(this.configData.endPoint.viewEventSlots, {
         token: this.configData.jwtToken,
@@ -894,14 +865,14 @@ export class BookAppoinmentNowComponent implements OnInit {
         this.configData.responseData = response.data;
         this.resolveData = response;
 
+        this.populateFormFields(result.doctor_id, result.parent_id, result.parent_type);
 
-        this.getStates();
+        this.loading = false;
       })
     });
   }
 
 }
-
 
 
 // Choose doctor modal
@@ -913,35 +884,45 @@ export class ChooseDoctorDialog implements OnInit {
 
 
   public doctorList;
-  public doctor_id;
   public techList;
-  public tech_id;
+  public doctor;
+  public selectedIds: any = {
+    doctor_id: '',
+    tech_id: '',
+    parent_id: '',
+    parent_type: ''
+  };
 
   loadingTech = false;
 
   constructor(public dialogRef: MatDialogRef<ChooseDoctorDialog>, public snackBar: MatSnackBar,
-    @Inject(MAT_DIALOG_DATA) public data: any, public httpRequestService: HttpServiceService) {
+              @Inject(MAT_DIALOG_DATA) public data: any, public httpRequestService: HttpServiceService) {
 
   }
 
   ngOnInit(): void {
     // throw new Error("Method not implemented.");
-    this.httpRequestService.postRequest('get-doctor-info',{condition: {doctors_office_id: this.data._id}}).subscribe((response: any) => {
+    this.httpRequestService.postRequest('get-doctor-info', {condition: {doctors_office_id: this.data._id}}).subscribe((response: any) => {
       this.doctorList = response.data
     });
   }
 
-  onChangeDoctor(doctor_id) {
-    console.log('doctor_id', doctor_id);
+  onChangeDoctor(doctor: any) {
+    console.log('doctor', doctor);
     this.loadingTech = true;
-    this.httpRequestService.postRequest('get-tech-info', {condition: {_id: doctor_id}}).subscribe((response: any) => {
+    this.httpRequestService.postRequest('get-tech-info', {condition: {_id: doctor.doctor_id}}).subscribe((response: any) => {
       if (response._dropdown.length > 0)
         this.techList = response._dropdown;
       else
         this.openSnackBar('No tech found for this doctor', 'Ok');
       this.loadingTech = false;
-    })
+    });
+
+    this.selectedIds.doctor_id = doctor.doctor_id;
+    this.selectedIds.parent_id = doctor.parent_id;
+    this.selectedIds.parent_type = doctor.parent_type;
   }
+
   onNoClick(): void {
     this.dialogRef.close();
   }
