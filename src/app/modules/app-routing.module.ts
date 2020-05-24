@@ -1380,14 +1380,14 @@ const routes: Routes = [
     path: 'tech/manage-calender/my-appoinments',
     component: ListComponent,
     canActivate: [AuthguardService],
-    resolve: { bookedEventList: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'google-events',
-        condition: {}
-      },
-      endpoint: 'list-booked-events'
-    },
+    // resolve: { bookedEventList: ResolveService },
+    // data: {
+    //   requestcondition: {
+    //     source: 'google-events',
+    //     condition: {}
+    //   },
+    //   endpoint: 'list-booked-events'
+    // },
   },
 
   /* Bulk Upload */

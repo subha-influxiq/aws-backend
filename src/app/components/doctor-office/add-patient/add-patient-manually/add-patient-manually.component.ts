@@ -1241,10 +1241,7 @@ export class AddPatientManuallyComponent implements OnInit {
       {text: 'Hawaii Standard Time', value: '-10:00|Pacific/Honolulu'}
     ],
     eventType: [
-      {text: 'Admin Meetings', value: 1},
-      {text: 'Type 2', value: 2},
-      {text: 'Type 3', value: 3},
-      {text: 'Type 3', value: 4}
+      {text: 'Admin Meetings', value: 1}
     ],
     responseData: '',
     patientInfoFormFields: null,
@@ -1941,6 +1938,8 @@ export class AddPatientManuallyComponent implements OnInit {
             let temp = {};
             temp['text'] = response.data[i].firstname + ' ' + response.data[i].lastname;
             temp['value'] = response.data[i]._id;
+            temp['parent_id'] = response.data[i].parent_id;
+            temp['parent_type'] = response.data[i].parent_type;
             doctorArray.push(temp);
           }
 
@@ -1949,6 +1948,8 @@ export class AddPatientManuallyComponent implements OnInit {
             {
               type: 'select', name: 'doctor_id', placeholder: 'Select Doctor', label: 'Doctor Name',
               value: '', options: doctorArray, hasChildWithDynamicLoading: true,
+              hasAdditionalFieldsWithValue: true,
+              additionalFields: ['parent_id', 'parent_type'], // must have additionalFields if hasAdditionalFieldsWithValue is true
               childField: 'tech_id', endpoint: 'get-tech-info', caption: 'Select doctor and tech'
             },
             {

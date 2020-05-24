@@ -216,7 +216,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .file_upload .files-view .viewUrlcontent .mat-card-header-text .mat-card-title { font-family: 'AvenirMedium';}
 .file_upload .files-view .viewUrlcontent .mat-card-header-text .fileDescription { margin-top: 0; font-family: 'AvenirMedium';}
 .file_upload .files-view .viewUrlcontent .mat-card-actions button:last-child,
-.file_upload .button-group button:last-child{background:red; margin:0; } 
+.file_upload .button-group button:last-child{background:red; margin:0; }
 
 .admin_wrapper  .con-report-lebel { margin-top: 16px;}
 .admin_wrapper  .con-report-lebel p { font-family: 'AvenirMedium'; color: #f54400;
@@ -721,7 +721,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 
 .book-appointment .mat-stepper-horizontal h4,
 .book-event .mat-dialog-container .mat-stepper-horizontal h4{ font-family: 'AvenirMedium'; margin: 0; font-size: 20px;
-  color: #0ac3a2; text-transform: uppercase; margin-bottom: 14px; }  
+  color: #0ac3a2; text-transform: uppercase; margin-bottom: 14px; }
 
 .book-appointment .mat-stepper-horizontal .containerSpan mat-label,
 .book-event .mat-dialog-container .mat-stepper-horizontal .containerSpan mat-label{ color: #505050; }
@@ -744,4 +744,3 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
   margin-top: 16px; min-width: 120px; font-family: 'AvenirBlack'; border-radius: 0; text-transform: uppercase;}
 
 
-  
