@@ -36,8 +36,8 @@
               <p>Gender: {{ p.gender }}</p>
               <p>Height: {{ p.height }}</p>
               <p>Waigth: {{ p.weight }}</p>
-              <p>Related Doctor: {{ p.doctor_details[0].firstname }} {{ p.doctor_details[0].lastname }} </p>
-              <p>Doctor Office: {{ p.doctor_office_details[0].firstname }} {{ p.doctor_office_details[0].lastname }}
+              <p *ngIf="p.doctor_details.length > 0">Related Doctor: {{ p.doctor_details[0].firstname }} {{ p.doctor_details[0].lastname }} </p>
+              <p *ngIf="p.doctor_office_details.length > 0">Doctor Office: {{ p.doctor_office_details[0].firstname }} {{ p.doctor_office_details[0].lastname }}
               </p>
             </ng-container>
           </td>

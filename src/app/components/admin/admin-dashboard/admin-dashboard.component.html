@@ -372,208 +372,31 @@
   <!-- All Data listing start here(default listing) -->
   <mat-card-content class="table_wrapper">
 
-    <mat-toolbar class="top_header">
-      <h2> {{ htmlText.headerText }} </h2>
-      <span class="wrappp_R">
-        <button class="add_new tooltip" mat-button routerLink="/admin/patient-management/add" matTooltip="Add Report"
-          matTooltipPosition="above">
-          <!-- <span class="tooltiptext"> Add Report </span> -->
-          <i class="material-icons">add</i> Add Report Manually
-        </button>
+    <!-- table -->
+    <lib-listing
+      class="DataTable" 
+      *ngIf="allBillerData.length>0" 
+      [datasource]="allBillerData" 
+      [skip]="allUserData_skip"
+      [modify_header_array]="allUserData_modify_header" 
+      [detail_skip_array]="previewModal_detail_skip" 
+      [apiurl]="apiUrl"
+      [sourcedata]="tableName" 
+      [editroute]="editUrl" 
+      [jwttoken]="user_cookie" 
+      [statusarr]="status"
+      [updateendpoint]="UpdateEndpoint" 
+      [deleteendpoint]="deleteEndpoint" 
+      [date_search_endpoint]="SearchingEndpoint"
+      [date_search_source]="SearchingSourceName" 
+      [search_settings]="search_settings" 
+      [sortdata]="sortdata" 
+      [datacollection]="datacollection" 
+      [libdata]="libdata" 
+      [date_search_source_count]="billerData_count" 
+      [limitcond]="limitcond" >
+    </lib-listing>
 
-
-        <button class="add_new tooltip" mat-button (click)="refreshDashboard();" matTooltipPosition="above"
-          matTooltip="ReportRefresh Dashboard">
-          <!-- <span class="tooltiptext"> Refresh Dashboard </span> -->
-          <i class="material-icons">cached</i>
-        </button>
-      </span>
-    </mat-toolbar>
-
-    <mat-toolbar *ngIf="allResolveData.tableDataFlag == true" class="action_bar">
-      <mat-form-field>
-        <input matInput placeholder="Search by Doctor" [(ngModel)]="searchJson.doctorName">
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput placeholder="Search by Patient" [(ngModel)]="searchJson.patientName">
-      </mat-form-field>
-
-      <mat-form-field class="parent_cat">
-        <mat-select [(ngModel)]="searchJson.status">
-          <mat-option value="">Select a status</mat-option>
-          <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
-          <mat-option value="doctor signed">Doctor Signed</mat-option>
-          <mat-option value="send to biller">Send To Biller</mat-option>
-          <mat-option value="error">Error</mat-option>
-          <mat-option value="pending">Pending</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <!-- Filter by date -->
-      <ng-container>
-        <span class="date-range">
-          <mat-form-field>
-            <input matInput placeholder="Choose a date" [satDatepicker]="picker" [(ngModel)]="searchJson.dateRange" />
-            <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
-            <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
-          </mat-form-field>
-        </span>
-        <span class="resetButton_w">
-          <button mat-raised-button type="button" class="add_button tooltip"
-            (click)="viewReportProcessData(htmlText.headerText);">
-            <span class="tooltiptext"> Search </span>
-            <i class="material-icons">search</i>
-          </button>
-
-          <button mat-raised-button type="button" class="add_button tooltip" (click)="resetSearch();">
-            <span class="tooltiptext"> Reset </span>
-            <i class="material-icons">replay</i>
-          </button>
-        </span>
-      </ng-container>
-
-    </mat-toolbar>
-    <mat-card-content class="tablewrapper">
-      <table mat-table [dataSource]="allDataSource" class="mat-elevation-z8 adminTables">
-        <ng-container matColumnDef="no">
-          <th mat-header-cell *matHeaderCellDef> No. </th>
-          <td mat-cell *matCellDef="let element; let i = index;" data-label="No."> {{ i + 1 }}. </td>
-        </ng-container>
-
-        <ng-container matColumnDef="patientName">
-          <th mat-header-cell *matHeaderCellDef> Patient Name </th>
-          <td mat-cell *matCellDef="let element" data-label="Patient Name"> {{ element.patient_name }} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="doctorName">
-          <th mat-header-cell *matHeaderCellDef> Doctor Name </th>
-          <td mat-cell *matCellDef="let element" data-label="Doctor Name" innerHTML="{{ element.doctor_details }}">
-          </td>
-        </ng-container>
-
-        <ng-container matColumnDef="techName">
-          <th mat-header-cell *matHeaderCellDef> Tech Name </th>
-          <td mat-cell *matCellDef="let element" data-label="Tech Name"> {{ element.tech_name }} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="billerName" *ngIf="htmlText.headerText != 'Patient Reports'">
-          <th mat-header-cell *matHeaderCellDef> Biller Name </th>
-          <td mat-cell *matCellDef="let element" data-label="Biller Name"> {{ element.biller_name }} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="date_of_birth" *ngIf="htmlText.headerText == 'Basic Details Not Processed'">
-          <th mat-header-cell *matHeaderCellDef> Date of birth </th>
-          <td mat-cell *matCellDef="let element" data-label="Date of Birth"> {{ element.birth_date }} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="gender" *ngIf="htmlText.headerText == 'Basic Details Not Processed'">
-          <th mat-header-cell *matHeaderCellDef> Gender </th>
-          <td mat-cell *matCellDef="let element" data-label="Gender"> {{ element.gender }} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="test_date" *ngIf="htmlText.headerText == 'Basic Details Not Processed'">
-          <th mat-header-cell *matHeaderCellDef> Test Date </th>
-          <td mat-cell *matCellDef="let element" data-label="Test Date"> {{ element.test_date }} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="bmi" *ngIf="htmlText.headerText == 'Basic Details Not Processed'">
-          <th mat-header-cell *matHeaderCellDef> BMI </th>
-          <td mat-cell *matCellDef="let element" data-label="BMI"> {{ element.BMI }} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="billGenerationDate" *ngIf="htmlText.headerText != 'Patient Reports'">
-          <th mat-header-cell *matHeaderCellDef> Bill Generation Date </th>
-          <td mat-cell *matCellDef="let element" data-label="Bill Generation Date">
-            {{ element.bill_generation_date | date }} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="billSentDate" *ngIf="htmlText.headerText != 'Patient Reports'">
-          <th mat-header-cell *matHeaderCellDef> Bill Sent Date </th>
-          <td mat-cell *matCellDef="let element" data-label="Bill Sent Date"> {{ element.bill_sent_date | date }} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="reportType">
-          <th mat-header-cell *matHeaderCellDef> Record Type </th>
-          <td mat-cell *matCellDef="let element" data-label="Record Type"> {{ element.report_type }} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="superBill" *ngIf="htmlText.headerText != 'Patient Reports'">
-          <th mat-header-cell *matHeaderCellDef> Super Bill</th>
-          <td mat-cell *matCellDef="let element" data-label="Super Bill"> {{ element.super_bill }} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="status">
-          <th mat-header-cell *matHeaderCellDef> Status</th>
-          <td mat-cell *matCellDef="let element" data-label="Status">
-            <ng-container *ngIf="element.report_type == 'file' && !element.images">Data Processing</ng-container>
-
-            <ng-container *ngIf="element.report_type == 'manual' || (element.report_type == 'file' && element.images)">
-              {{ element.status }} </ng-container>
-          </td>
-        </ng-container>
-
-        <ng-container matColumnDef="createdAt">
-          <th mat-header-cell *matHeaderCellDef> Created At</th>
-          <td mat-cell *matCellDef="let element" data-label="created_at"> {{ element.created_at | date }} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="editRecord">
-          <th mat-header-cell *matHeaderCellDef> Action </th>
-          <td mat-cell *matCellDef="let element; let i = index;">
-            <span class="buttons_ro">
-
-              <button mat-button type="button"
-                *ngIf="element.report_type == 'manual' || (element.report_type == 'file' && element.images)"
-                class="viewButton tooltip" type="button" [routerLink]="['/admin/patient-record', element._id]">
-                <span class="tooltiptext">View</span>
-                <i class="material-icons">search</i>
-              </button>
-
-              <button mat-button type="button" *ngIf="htmlText.headerText == 'Download Bill'" class="viewButton tooltip"
-                type="button" (click)="viewDownloadDetails(element._id);">Details</button>
-
-              <button mat-button type="button"
-                *ngIf="element.status == 'Downloaded' && element.report_type == 'manual' || (element.report_type == 'file' && element.images)"
-                class="editButton tooltip" [routerLink]="['/admin/patient-record/edit', element._id]">
-                <span class="tooltiptext">Edit</span>
-                <i class="material-icons">create</i>
-              </button>
-
-              <button mat-button type="button" *ngIf="element.report_type == 'file' && !element.images"
-                class="editButton downloadBtn tooltip">
-                <span class="tooltiptext">Processing</span>
-                <i class="material-icons">cached</i>
-              </button>
-
-              <button mat-button type="button" *ngIf="element.status != 'Pending Signature'"
-                class="editButton downloadBtn tooltip" (click)="downloadReport(element);">
-                <span class="tooltiptext">Download</span>
-                <i class="material-icons">cloud_download</i>
-              </button>
-
-              <button mat-button type="button" class="editButton downloadBtn tooltip"
-                (click)="deleteReport(element._id, i);">
-                <span class="tooltiptext">Delete</span>
-                <i class="material-icons">delete</i>
-              </button>
-              <button mat-button type="button" class="editButton tooltip">
-                <span class="tooltiptext">Notes</span>
-                <i class="material-icons">comment</i>
-              </button>
-
-            </span>
-          </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="allDataColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: allDataColumns;let i = index"></tr>
-      </table>
-    </mat-card-content>
-    <mat-toolbar class="footer_action">
-      <button mat-raised-button type="button" color="primary" (click)="pagination('prev');">Prev</button>
-      <button mat-raised-button type="button" color="primary" (click)="pagination('next');">Next</button>
-    </mat-toolbar>
   </mat-card-content>
   <!-- dashboard all listing end here -->
 </mat-card>

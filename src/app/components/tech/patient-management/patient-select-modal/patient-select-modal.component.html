@@ -22,10 +22,10 @@
     <mat-divider></mat-divider>
     <mat-list-item>Booking date: {{ selectPatientData.booking_date | date }} </mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item>Related Doctor: {{ selectPatientData.doctor_details[0].firstname }} {{ selectPatientData.doctor_details[0].lastname }} </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>Doctor Office: {{ selectPatientData.doctor_office_details[0].firstname }} {{ selectPatientData.doctor_office_details[0].lastname }} </mat-list-item>
-    <mat-divider></mat-divider>
+    <mat-list-item *ngIf="selectPatientData.doctor_details.length > 0">Related Doctor: {{ selectPatientData.doctor_details[0].firstname }} {{ selectPatientData.doctor_details[0].lastname }} </mat-list-item>
+    <mat-divider *ngIf="selectPatientData.doctor_details.length > 0"></mat-divider>
+    <mat-list-item *ngIf="selectPatientData.doctor_office_details.length > 0">Doctor Office: {{ selectPatientData.doctor_office_details[0].firstname }} {{ selectPatientData.doctor_office_details[0].lastname }} </mat-list-item>
+    <mat-divider *ngIf="selectPatientData.doctor_office_details.length > 0"></mat-divider>
 </mat-list>
 
 
