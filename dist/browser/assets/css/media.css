@@ -49,14 +49,13 @@
 .report_wrapper .items_w .icon_w { height: 220px;}
 .report_wrapper .items_w .name_wr .reportName { font-size: 17px; line-height: 18px; }
 .admin_wrapper .content_wrapper .itemsection .button_wrapper { width: 30%; }
-.admin_wrapper .content_wrapper .itemsection .counteer .dataCount { font-size: 44px; }
-.admin_wrapper .content_wrapper .itemsection .icon { width: 16%;}
+.admin_wrapper .content_wrapper .itemsection .counteer .dataCount { font-size: 32px; }
+.admin_wrapper .content_wrapper .itemsection .icon { width: 16%; padding-left: 4px;}
 .sales_person_db .shareLi .in_w { width: 65%; left: 0; right: 0; transform: inherit; top: 0; }
 .sales_person_db .shareLi { background-position: 6% bottom; padding: 60px 20px; height: auto; background-size: contain; position: relative;}
 .sales_person_db .shareLi .in_w { width: 60%; left: 0; right: 0; transform: inherit; top: 0; position: inherit; display: block;}
 .calenderView .calendar_wrapper { width: 70%; overflow: scroll; }
 .calenderView .button_wrapper{ margin-top: 20px; }
-
 .DataTable table th.mat-header-cell:last-of-type { width: auto; }
 .searchbar .mat-form-field { width: 32%; }
 .book-event .mat-dialog-container .mat-stepper-horizontal .width-md { width: 31%; }

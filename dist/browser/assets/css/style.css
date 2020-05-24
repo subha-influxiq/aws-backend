@@ -211,12 +211,12 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .file_upload .files-view .viewUrlwrapper .othersFilePreview { background: linear-gradient(45deg, #21e289, #1dbce9);}
 .file_upload .files-view .viewUrlcontent .mat-card-actions button,
 .file_upload .button-group button{ font-family: 'AvenirMedium'; background: var(--button-color3); margin-right: 10px;
-  box-shadow: none; }
+  box-shadow: none; color:#fff; }
 .file_upload .files-view .viewUrlcontent .mat-card-header-text{ margin: 16px 0 0 0;}
 .file_upload .files-view .viewUrlcontent .mat-card-header-text .mat-card-title { font-family: 'AvenirMedium';}
 .file_upload .files-view .viewUrlcontent .mat-card-header-text .fileDescription { margin-top: 0; font-family: 'AvenirMedium';}
 .file_upload .files-view .viewUrlcontent .mat-card-actions button:last-child,
-.file_upload .button-group button:last-child{background:red; margin:0; }
+.file_upload .button-group button:last-child{background:red; margin:0; } 
 
 .admin_wrapper  .con-report-lebel { margin-top: 16px;}
 .admin_wrapper  .con-report-lebel p { font-family: 'AvenirMedium'; color: #f54400;
@@ -588,20 +588,17 @@ align-items: center; justify-content: center; color: #fff; font-family: 'AvenirM
 .viewMore_w button{ min-width: 444px; background: linear-gradient(0deg, #04aaf5, #32baf9); font-family: 'AvenirHeavy'; color: #fff; text-transform: uppercase; font-size: 28px; padding: 4px;}
 
 /* for all modal */
-.mat-dialog-container{ min-width: 400px; border: 1px solid #03d877; border-radius: 0px!important; padding: 0!important; min-height: 180px!important; height: auto!important;}
+.mat-dialog-container{ min-width: 400px; border: 1px solid #03d877; border-radius: 0px!important; padding: 0!important;}
 .mat-dialog-container .mat-dialog-title {text-align: center; margin: 0; display: block; background: var(--button-color3);
 color: #fff; padding: 6px; font-family: 'AvenirBlack'; text-transform: uppercase; }
-.mat-dialog-container .mat-dialog-content {
-display: block; margin: 0; padding: 16px; box-sizing: border-box; max-height: initial; overflow: auto; }
+.mat-dialog-container .mat-dialog-content { display: block; margin: 0; padding: 16px; box-sizing: border-box; max-height: initial; overflow: auto; }
 
 .mat-dialog-container .mat-dialog-content .mat-form-field{ width:100%}
 .mat-dialog-container .mat-dialog-content .submit_form{  display: flex; justify-content: flex-end;}
 .mat-dialog-container .mat-dialog-content .submit_form button{ font-family: 'AvenirBlack'; text-transform: uppercase; color: #fff; background: var(--button-color2);}
 .mat-dialog-container .mat-dialog-content .submit_form button:last-child{ background: var(--button-color3);}
 .mat-dialog-container .mat-dialog-content p{ text-align: center; color: var(--button-color2); font-size: 18px; white-space: normal; word-break: break-all; font-family: 'AvenirMedium';}
-.mat-dialog-container .mat-dialog-actions { display: flex; flex-wrap: wrap; min-height: inherit; align-items: center;
-  justify-content: center;
-}
+.mat-dialog-container .mat-dialog-actions { display: flex; flex-wrap: wrap; min-height: inherit; align-items: center; justify-content: center; margin-bottom: 0;}
 .mat-dialog-container .mat-dialog-actions button{ background: var(--button-color1);
 color: #fff; min-width: 100px; font-family: 'AvenirMedium'; font-size: 18px;}
 .mat-dialog-container .mat-dialog-actions button:last-child{ background: var(--button-color2);}
@@ -629,7 +626,6 @@ border-bottom: 2px solid; padding-bottom: 8px;}
 .table_list .button_action {  margin-left:auto;}
 .table_list .button_action button:last-child{ background: var(--button-color1); margin-left: 10px;}
 .faq_wrapper .mat-expansion-panel-body {padding: 0; }
-
 
 
 /* calendar view */
@@ -721,7 +717,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 
 .book-appointment .mat-stepper-horizontal h4,
 .book-event .mat-dialog-container .mat-stepper-horizontal h4{ font-family: 'AvenirMedium'; margin: 0; font-size: 20px;
-  color: #0ac3a2; text-transform: uppercase; margin-bottom: 14px; }
+  color: #0ac3a2; text-transform: uppercase; margin-bottom: 14px; }  
 
 .book-appointment .mat-stepper-horizontal .containerSpan mat-label,
 .book-event .mat-dialog-container .mat-stepper-horizontal .containerSpan mat-label{ color: #505050; }
@@ -739,8 +735,18 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .label_name{
   font-size: 16px; color: #0ac3a2; text-align: left; word-break: break-word; }
 
+.book-appointment .mat-stepper-horizontal .containerSpan,  
+.book-event .mat-dialog-container .mat-stepper-horizontal .containerSpan { overflow: inherit;
+  clear: none;} 
+
+
 .book-appointment div>.mat-raised-button,
 .book-event .mat-dialog-container .mat-raised-button { background: linear-gradient(45deg, #21b9ff, #8bc348);
   margin-top: 16px; min-width: 120px; font-family: 'AvenirBlack'; border-radius: 0; text-transform: uppercase;}
 
 
+  /* bulk-upload/report-conformation */
+  .report_modal td button{  font-family: 'AvenirMedium'; background: linear-gradient(45deg, #048006, #77da00);
+    border-radius: 0; text-transform: uppercase; color: #fff!important;}
+  .modal_view .mat-form-field{ width:100%;}
+  .modal_view .mat-form-field .mat-form-field-flex { padding: 0 7px 4px; border: 1px solid #dadada; }
