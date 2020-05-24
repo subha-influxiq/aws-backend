@@ -1244,7 +1244,7 @@ export class AddPatientManuallyComponent implements OnInit {
       {text: 'Admin Meetings', value: 1}
     ],
     responseData: '',
-    patientInfoFormFields: null,
+    patientInfoFormFields: [],
     calendarInfoFormFields: {},
     primaryCondition: {
       $or: [{event_type: 1}, {event_type: 2}],
@@ -1268,7 +1268,8 @@ export class AddPatientManuallyComponent implements OnInit {
     this.userDetails = JSON.parse(this.cookieService.get('user_details'));
     this.configData = Object.assign(this.configData, this.userDetails);
 
-    this.getStates();
+    console.log('this.userDetails', this.userDetails);
+    this.populateFormFields();
 
     if (this.cookieService.check('jwtToken')) {
       this.configData.jwtToken = this.cookieService.get('jwtToken');
@@ -1285,7 +1286,7 @@ export class AddPatientManuallyComponent implements OnInit {
 
   }
 
-  getStates(): any {
+  populateFormFields(): any {
     /* ****************** Get states value from assets/states.json ****************** */
     this.httpRequestService.get('assets/data/states.json')
       .subscribe(res => {
@@ -1895,7 +1896,8 @@ export class AddPatientManuallyComponent implements OnInit {
         let calendarInfoFormFields: any = [
           {
             type: 'date', name: 'startdate', placeholder: 'Date of Appointment',
-            label: 'Date of Appointment', value: '', validators: [Validators.required],
+            label: 'Date of Appointment', value: '', minToday: true,
+            validators: [Validators.required],
             error: 'Enter Date of Appointment', caption: 'Appointment Schedule'
           },
           {
@@ -1916,18 +1918,12 @@ export class AddPatientManuallyComponent implements OnInit {
             value: '-05:00|America/Chicago'
           },
           {
-            type: 'input',
-            name: 'attendees',
-            placeholder: 'Attendee Email',
-            label: 'Attendee Email',
-            value: ''
+            type: 'input', name: 'attendees', placeholder: 'Attendee Email',
+            label: 'Attendee Email', value: ''
           },
           {
-            type: 'input',
-            name: 'additional_notes',
-            placeholder: 'Additional Notes',
-            label: 'Additional Notes',
-            value: ''
+            type: 'textarea', name: 'additional_notes', placeholder: 'Additional Notes',
+            label: 'Additional Notes', value: ''
           }
         ];
 
@@ -1950,16 +1946,18 @@ export class AddPatientManuallyComponent implements OnInit {
               value: '', options: doctorArray, hasChildWithDynamicLoading: true,
               hasAdditionalFieldsWithValue: true,
               additionalFields: ['parent_id', 'parent_type'], // must have additionalFields if hasAdditionalFieldsWithValue is true
-              childField: 'tech_id', endpoint: 'get-tech-info', caption: 'Select doctor and tech'
+              childField: 'tech_id', endpoint: 'get-tech-info', caption: 'Select doctor and tech',
+              validators: [Validators.required], error: 'Select doctor'
             },
             {
               type: 'select', name: 'tech_id', placeholder: 'Select Tech', label: 'Tech Name',
-              value: '', isDependent: true, loadDynamically: true, options: []
+              value: '', isDependent: true, loadDynamically: true, options: [],
+              validators: [Validators.required], error: 'Select tech'
             }
           );
 
           let hiddenFields: any = [
-            {type: 'input', name: 'doctor_office_id', value: this.userDetails._id, hidden: true},
+            {type: 'input', name: 'doctors_office_id', value: this.userDetails._id, hidden: true},
             {type: 'input', name: 'parent_type', value: response.data.parent_type, hidden: true},
             {type: 'input', name: 'parent_id', value: response.data.parent_id, hidden: true},
             {type: 'input', name: 'userid', value: this.userDetails._id, hidden: true},
@@ -1972,6 +1970,7 @@ export class AddPatientManuallyComponent implements OnInit {
                 checkboxFields, hiddenFields, calendarInfoFormFields)
             }
           );
+          console.log('this.configData', this.configData);
         });
       }, error => {
         console.log('Oooops! Cannot get states.');
