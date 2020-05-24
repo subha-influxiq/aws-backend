@@ -22,13 +22,13 @@ export class TechHeaderComponent implements OnInit {
     let allData: any = {};
     allData = cookies.getAll()
     this.user_data = JSON.parse(allData.user_details);
-   
+
     this.user_cookie = cookies.get('jwtToken');
    }
 
   ngOnInit() {
   }
-  
+
   /**logout function start here**/
   logout() {
     this.cookies.delete('jwtToken');

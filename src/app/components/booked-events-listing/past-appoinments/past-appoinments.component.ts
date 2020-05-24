@@ -149,19 +149,35 @@ export class PastAppoinmentsComponent implements OnInit {
             break;
 
           case 'doctor_office':
-            // data.condition = Object.assign(
-            //   data.condition, {userid: {$in: JSON.parse(this.cookie.get('user_details')).tech_id}}
-            // );
-            // data.condition.userid.$in.push(JSON.parse(this.cookie.get('user_details'))._id);
             data.condition = Object.assign(
               data.condition, {doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id}
-            )
+            );
+
+            // store the basecondition for the lib-listing
+            this.configData.libdata.basecondition = {
+              doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id
+            }
             break;
 
-          default:
+          case 'doctor':
+            data.condition = Object.assign(
+              data.condition, {doctor_id: JSON.parse(this.cookie.get('user_details'))._id}
+            );
+
+            // store the basecondition for the lib-listing
+            this.configData.libdata.basecondition = {
+              doctor_id: JSON.parse(this.cookie.get('user_details'))._id
+            }
+            break;
+
+          default: // for tech
             data.condition = Object.assign(
               data.condition, {userid: {$in: [JSON.parse(this.cookie.get('user_details'))._id]}}
             );
+            // store the basecondition for the lib-listing
+            this.configData.libdata.basecondition = {
+              userid: {$in: [JSON.parse(this.cookie.get('user_details'))._id]}
+            }
             break;
         }
       }

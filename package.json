@@ -39,7 +39,7 @@
     "@nguniversal/module-map-ngfactory-loader": "0.0.0",
     "@ngx-meta/core": "^7.0.10",
     "angular-material": "^1.1.20",
-    "calendar-management-lib-influxiq": "^0.3.0",
+    "calendar-management-lib-influxiq": "^0.3.3",
     "ckeditor4-angular": "^1.1.0",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.6.11",
