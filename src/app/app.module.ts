@@ -327,8 +327,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     ChooseDoctorDialog,
     PatientSelectModalComponent,
     ReportUploadSuccessModalComponent,
-    EncounterFormComponent,
-    RescheduleAppointmentComponent
+    EncounterFormComponent
   ],
   imports: [
     SatDatepickerModule,
