@@ -85,7 +85,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
           label: "Reschedule",
           route: "doctor-office/reschedule-appointment",
           type: 'internallink',
-          cond:'status', condval:0,
+          cond: 'is_google_event', condval: true,
           param: ['_id', 'doctor_id'],
         }
       ]
