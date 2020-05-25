@@ -127,6 +127,7 @@ import { DistributorsDashboardComponent } from '../components/distributors/distr
 import { AdminbillerDashboardComponent } from '../components/adminbiller/adminbiller-dashboard/adminbiller-dashboard.component';
 import { AddPatientManuallyComponent } from '../components/doctor-office/add-patient/add-patient-manually/add-patient-manually.component';
 import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
+// import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
 
 const routes: Routes = [
   /********** Auth Route Start **********/
