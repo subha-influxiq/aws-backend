@@ -126,6 +126,8 @@ import { DoctorGroupDashboardComponent } from '../components/doctor-group/doctor
 import { DistributorsDashboardComponent } from '../components/distributors/distributors-dashboard/distributors-dashboard.component';
 import { AdminbillerDashboardComponent } from '../components/adminbiller/adminbiller-dashboard/adminbiller-dashboard.component';
 import { AddPatientManuallyComponent } from '../components/doctor-office/add-patient/add-patient-manually/add-patient-manually.component';
+// import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component"
+import { EncounterFormComponent } from '../components/encounter-form/encounter-form.component'
 import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
 // import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
 
@@ -252,6 +254,19 @@ const routes: Routes = [
   {
     path: 'admin/patient-record/:_id',
     component: PatientReportViewComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'report-view'
+    },
+  },
+  {
+    path: 'admin/patient-record/encounter/:_id',
+    component: EncounterFormComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
@@ -1798,11 +1813,11 @@ const routes: Routes = [
     // }
   },
 
-  {
-    path: 'doctor-office/reschedule-appointment/:_id/:doctor_id',
-    component: RescheduleAppointmentComponent,
-    canActivate: [AuthguardService]
-  },
+  // {
+  //   path: 'doctor-office/reschedule-appointment/:_id/:doctor_id',
+  //   component: RescheduleAppointmentComponent,
+  //   canActivate: [AuthguardService]
+  // },
 
   /* Faq */
   {

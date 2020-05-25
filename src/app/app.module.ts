@@ -170,6 +170,7 @@ import {UpcomingAppoinmentsComponent} from "./components/booked-events-listing/u
 import {PastAppoinmentsComponent} from "./components/booked-events-listing/past-appoinments/past-appoinments.component";
 import { PatientSelectModalComponent } from './components/tech/patient-management/patient-select-modal/patient-select-modal.component';
 import { ReportUploadSuccessModalComponent } from './components/tech/patient-management/report-upload-success-modal/report-upload-success-modal.component';
+import { EncounterFormComponent } from './components/encounter-form/encounter-form.component';
 import {RescheduleAppointmentComponent} from "./components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -326,7 +327,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     ChooseDoctorDialog,
     PatientSelectModalComponent,
     ReportUploadSuccessModalComponent,
-    RescheduleAppointmentComponent
+    EncounterFormComponent
   ],
   imports: [
     SatDatepickerModule,

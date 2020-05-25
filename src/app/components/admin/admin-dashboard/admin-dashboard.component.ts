@@ -50,29 +50,48 @@ export class AdminDashboardComponent implements OnInit {
     "converted_image",
     "images",
     "patient_details",
-    "patient_name_search"
+    "patient_name_search",
+    "report_life_circle",
+    "note",
+    "additional_potential_health_risks",
+    "cpt_codes",
+    "created_at"
   ];
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
-  libdata: any = {
+  public libdata: any = {
     basecondition: "",
-    updateendpoint: 'statusupdate',
+    updateendpoint: '',
+    custombuttons: [
+      {
+        label: "View Report",
+        route: "admin/patient-record/",
+        type: 'internallink',
+        param: ['_id'],
+      },
+    ],
+    hideeditbutton: true,// all these button options are optional not mandatory
+    hidedeletebutton: true,
+    hidestatustogglebutton: true,
+    hideviewbutton: true,
     tableheaders: [
+      "doctor_name",
       "tech_name",
-      "report_type",
-      "report_life_circle",
-      "note",
-      "created_at",
       "patient_name",
-    ], //not required
+      "status_text",
+      "created_at_datetime",
+      "cpt_code_count",
+      "addl_hlth_risk"
+    ]
   }
   public allUserData_modify_header: any = {
+    "doctor_name": "Doctor Name",
+    "tech_name": "Tech Name",
     "patient_name": "Patient Name",
-    "tech name": "Tech Name",
-    "report_type": "Report Type",
-    "report_life_circle": "Status",
-    "note": "Notes",
-    "created_at": "Created At"
+    "status_text": "Status",
+    "created_at_datetime": "Report Added",
+    "cpt_code_count": "CPT Code Count",
+    "addl_hlth_risk": "Addl Hlth Risk"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";
@@ -92,7 +111,7 @@ export class AdminDashboardComponent implements OnInit {
     "pagecount": 1
   };
 
-  previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
+  public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
@@ -153,6 +172,10 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   ngAfterViewInit() {
+  }
+
+  viewReportProcessData(flag) {
+    console.log(flag);
   }
 
 }
