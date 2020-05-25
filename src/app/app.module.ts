@@ -170,11 +170,7 @@ import {UpcomingAppoinmentsComponent} from "./components/booked-events-listing/u
 import {PastAppoinmentsComponent} from "./components/booked-events-listing/past-appoinments/past-appoinments.component";
 import { PatientSelectModalComponent } from './components/tech/patient-management/patient-select-modal/patient-select-modal.component';
 import { ReportUploadSuccessModalComponent } from './components/tech/patient-management/report-upload-success-modal/report-upload-success-modal.component';
-<<<<<<< HEAD
 import { EncounterFormComponent } from './components/encounter-form/encounter-form.component';
-=======
-import {RescheduleAppointmentComponent} from "./components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
->>>>>>> 507023fdfd747d0b09fe81887b406f5d959626b4
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -330,11 +326,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     ChooseDoctorDialog,
     PatientSelectModalComponent,
     ReportUploadSuccessModalComponent,
-<<<<<<< HEAD
     EncounterFormComponent
-=======
-    RescheduleAppointmentComponent
->>>>>>> 507023fdfd747d0b09fe81887b406f5d959626b4
   ],
   imports: [
     SatDatepickerModule,
