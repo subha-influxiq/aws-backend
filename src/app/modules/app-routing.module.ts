@@ -126,6 +126,7 @@ import { DoctorGroupDashboardComponent } from '../components/doctor-group/doctor
 import { DistributorsDashboardComponent } from '../components/distributors/distributors-dashboard/distributors-dashboard.component';
 import { AdminbillerDashboardComponent } from '../components/adminbiller/adminbiller-dashboard/adminbiller-dashboard.component';
 import { AddPatientManuallyComponent } from '../components/doctor-office/add-patient/add-patient-manually/add-patient-manually.component';
+import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
 
 const routes: Routes = [
   /********** Auth Route Start **********/
@@ -1794,6 +1795,12 @@ const routes: Routes = [
     //   },
     //   endpoint: 'view-event-eventdayarr'
     // }
+  },
+
+  {
+    path: 'doctor-office/reschedule-appointment/:_id/:doctor_id',
+    component: RescheduleAppointmentComponent,
+    canActivate: [AuthguardService]
   },
 
   /* Faq */
