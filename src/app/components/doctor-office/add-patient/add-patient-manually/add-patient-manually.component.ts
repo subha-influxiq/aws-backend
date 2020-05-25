@@ -1246,10 +1246,7 @@ export class AddPatientManuallyComponent implements OnInit {
     responseData: '',
     patientInfoFormFields: [],
     calendarInfoFormFields: {},
-    primaryCondition: {
-      $or: [{event_type: 1}, {event_type: 2}],
-      userid: {$in: JSON.parse(this.cookieService.get('user_details')).tech_id}
-    }
+    primaryCondition: {}
   };
 
   public resolveData;
@@ -1959,10 +1956,10 @@ export class AddPatientManuallyComponent implements OnInit {
           let hiddenFields: any = [
             {type: 'input', name: 'doctors_office_id', value: this.userDetails._id, hidden: true},
             {type: 'input', name: 'parent_type', value: response.data.parent_type, hidden: true},
-            {type: 'input', name: 'parent_id', value: response.data.parent_id, hidden: true},
-            {type: 'input', name: 'userid', value: this.userDetails._id, hidden: true},
-            {type: 'input', name: 'username', value: this.userDetails.center_name, hidden: true},
-            {type: 'input', name: 'useremail', value: this.userDetails.email, hidden: true}
+            {type: 'input', name: 'parent_id', value: response.data.parent_id, hidden: true}
+            // {type: 'input', name: 'userid', value: this.userDetails._id, hidden: true},
+            // {type: 'input', name: 'username', value: this.userDetails.center_name, hidden: true},
+            // {type: 'input', name: 'useremail', value: this.userDetails.email, hidden: true}
           ]
           this.configData = Object.assign(this.configData,
             {

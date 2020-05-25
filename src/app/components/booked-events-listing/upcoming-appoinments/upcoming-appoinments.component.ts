@@ -70,6 +70,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       basecondition: {},
       detailview_override: [],
       updateendpoint: 'statusupdate',
+      hidestatustogglebutton: true,
       hidedeletebutton: true,
       hideeditbutton: true,// all these button options are optional not mandatory
       tableheaders: ['patient_name', 'doctor_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'], //not required
@@ -77,15 +78,14 @@ export class UpcomingAppoinmentsComponent implements OnInit {
         {
           label: "Cancel", type: 'action', datatype: 'api',
           endpoint: 'delete-booked-event', otherparam: [],
-          // cond:'status', condval:0,
+          cond: 'status', condval:0,
           param: '_id', refreshdata: true,
         },
         {
           label: "Reschedule",
           route: "doctor-office/reschedule-appointment",
           type: 'internallink',
-          //cond:'status',
-          //condval:0,
+          cond:'status', condval:0,
           param: ['_id', 'doctor_id'],
         }
       ]
@@ -97,7 +97,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       "pagecount": 1
     },
     sortdata: {
-      "type": 'asc',
+      "type": 'desc',
       "field": 'booking_date',
       "options": ['patient_name', 'booking_date', 'startdate', 'slot', 'slot_end_time']
     },
@@ -139,7 +139,9 @@ export class UpcomingAppoinmentsComponent implements OnInit {
   };
 
   constructor(public cookie: CookieService, public snackBar: MatSnackBar,
-              public httpService: HttpServiceService) { }
+              public httpService: HttpServiceService) {
+
+  }
 
   ngOnInit() {
     // load doctor search dynamically
@@ -150,7 +152,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
         temp['name']= response.data[i].firstname + ' ' + response.data[i].lastname;
         this.searchByDoctor.values.push(temp);
       }
-    })
+    });
 
 
     if (this.cookie.check('jwtToken')) {
@@ -158,7 +160,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       let data: any = {
         token: this.configData.jwtToken,
         condition: {},
-        sort: {type: 'asc', field: 'booking_date'}
+        sort: {type: 'desc', field: 'booking_date'}
       }
       /* Create condition with respect to the user_type */
       if (this.cookie.check('user_details')) {
