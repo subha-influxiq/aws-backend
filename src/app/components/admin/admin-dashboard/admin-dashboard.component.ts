@@ -54,7 +54,8 @@ export class AdminDashboardComponent implements OnInit {
     "report_life_circle",
     "note",
     "additional_potential_health_risks",
-    "cpt_codes"
+    "cpt_codes",
+    "created_at"
   ];
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
@@ -77,9 +78,8 @@ export class AdminDashboardComponent implements OnInit {
       "doctor_name",
       "tech_name",
       "patient_name",
-      "report_type",
       "status_text",
-      "created_at",
+      "created_at_datetime",
       "cpt_code_count",
       "addl_hlth_risk"
     ]
@@ -88,9 +88,8 @@ export class AdminDashboardComponent implements OnInit {
     "doctor_name": "Doctor Name",
     "tech_name": "Tech Name",
     "patient_name": "Patient Name",
-    "report_type": "Report Type",
     "status_text": "Status",
-    "created_at": "Report Added",
+    "created_at_datetime": "Report Added",
     "cpt_code_count": "CPT Code Count",
     "addl_hlth_risk": "Addl Hlth Risk"
   };

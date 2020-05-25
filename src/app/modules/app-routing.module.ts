@@ -126,13 +126,10 @@ import { DoctorGroupDashboardComponent } from '../components/doctor-group/doctor
 import { DistributorsDashboardComponent } from '../components/distributors/distributors-dashboard/distributors-dashboard.component';
 import { AdminbillerDashboardComponent } from '../components/adminbiller/adminbiller-dashboard/adminbiller-dashboard.component';
 import { AddPatientManuallyComponent } from '../components/doctor-office/add-patient/add-patient-manually/add-patient-manually.component';
-<<<<<<< HEAD
 // import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component"
 import { EncounterFormComponent } from '../components/encounter-form/encounter-form.component'
-=======
 import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
 // import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
->>>>>>> 507023fdfd747d0b09fe81887b406f5d959626b4
 
 const routes: Routes = [
   /********** Auth Route Start **********/
