@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {environment} from "../../../../environments/environment";
 import {CookieService} from "ngx-cookie-service";
 import {MatSnackBar} from "@angular/material/snack-bar";
@@ -10,6 +10,8 @@ import {HttpServiceService} from "../../../services/http-service.service";
   styleUrls: ['./upcoming-appoinments.component.css']
 })
 export class UpcomingAppoinmentsComponent implements OnInit {
+
+  public searchByDoctor: any = {label: "Search By Doctor", field: 'doctor_id', values: []};
 
   public configData: any = {
     appName: 'Calendar Management',
@@ -41,10 +43,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       {text: 'Hawaii Standard Time', value: '-10:00|Pacific/Honolulu'}
     ],
     eventType: [
-      {text: "Admin Meetings", value: 1},
-      {text: "Type 2", value: 2},
-      {text: "Type 3", value: 3},
-      {text: "Type 3", value: 4}
+      {text: "Admin Meetings", value: 1}
     ],
     responseData: [],
     // primaryCondition: {$or: [{event_type: 1}, {event_type: 2}]},
@@ -56,23 +55,40 @@ export class UpcomingAppoinmentsComponent implements OnInit {
     modify_header_array: {
       patient_name: 'Patient Name',
       doctor_name: 'Doctor Name',
-      doctor_office_name: 'Doctor Office Name',
       booking_date: 'Booked On',
       startdate: 'Event Date',
       slot: "Start Time",
       slot_end_time: 'End Time',
       timezoneName: 'Timezone',
-      status: 'Status'
+      status: 'Status',
+      // doctors_office_name: 'Doctors office name',
+      username: 'Tech Name'
     },
-    source: 'google-events',
+    source: 'google_events',
     date_search_source_count: 0,
     libdata: {
       basecondition: {},
       detailview_override: [],
       updateendpoint: 'statusupdate',
+      hidedeletebutton: true,
       hideeditbutton: true,// all these button options are optional not mandatory
-      tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'], //not required
-      custombuttons: []
+      tableheaders: ['patient_name', 'doctor_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'], //not required
+      custombuttons: [
+        {
+          label: "Cancel", type: 'action', datatype: 'api',
+          endpoint: 'delete-booked-event', otherparam: [],
+          // cond:'status', condval:0,
+          param: '_id', refreshdata: true,
+        },
+        {
+          label: "Reschedule",
+          route: "doctor-office/reschedule-appointment",
+          type: 'internallink',
+          //cond:'status',
+          //condval:0,
+          param: ['_id', 'doctor_id'],
+        }
+      ]
     },
     updatetable: false,
     limitcond: {
@@ -107,31 +123,36 @@ export class UpcomingAppoinmentsComponent implements OnInit {
 
       // this is use for  Autocomplete search
       search: [
-        {
-          label: "Search By Doctor", field: 'doctor_id', values: [
-            {val: 'example_doctor_id', name: 'YmattZ A'},
-            {val: 'YmattZ', name: 'YmattZ A'},
-            {val: 'Ymatt', name: 'YmattZ AB'},
-            {val: 'Jessica', name: 'A Jessica'}
-          ]
-        },
-        {
-          label: "Search By Doctor Office", field: 'doctor_office_id', values: [
-            {val: 'example_doctor_office_id', name: 'YmattZ A'},
-            {val: 'YmattZ', name: 'YmattZ A'},
-            {val: 'Ymatt', name: 'YmattZ AB'},
-            {val: 'Jessica', name: 'A Jessica'}
-          ]
-        }
+        // {
+        //   label: "Search By Doctor", field: 'doctor_id', values: [
+        //     {val: 'example_doctor_id', name: 'YmattZ A'},
+        //     {val: 'YmattZ', name: 'YmattZ A'},
+        //     {val: 'Ymatt', name: 'YmattZ AB'},
+        //     {val: 'Jessica', name: 'A Jessica'}
+        //   ]
+        // },
+        this.searchByDoctor
       ]
     },
-    statusarray: [{val: 0, 'name': 'Pending'}, {val: 1, 'name': 'Approved'}, {val: 2, 'name': 'Canceled'}]
+    statusarray: [{val: 0, 'name': 'Pending'}, {val: 1, 'name': 'Approved'}, {val: 2, 'name': 'Canceled'}],
+    detail_skip_array: ['_id']
   };
 
   constructor(public cookie: CookieService, public snackBar: MatSnackBar,
               public httpService: HttpServiceService) { }
 
   ngOnInit() {
+    // load doctor search dynamically
+    this.httpService.postRequest('get-doctor-info', {condition: {doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id}}).subscribe((response: any) => {
+      for (let i=0; i<response.data.length; i++) {
+        let temp: any = {};
+        temp['val'] = response.data[i]._id;
+        temp['name']= response.data[i].firstname + ' ' + response.data[i].lastname;
+        this.searchByDoctor.values.push(temp);
+      }
+    })
+
+
     if (this.cookie.check('jwtToken')) {
       this.configData.jwtToken = this.cookie.get('jwtToken');
       let data: any = {
@@ -187,7 +208,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
         // Create skipFields array(first save all the keys from the dataset)
         if (response.results.res > 0)
           this.configData.skipFields = Object.keys(response.results.res[0]);
-        let requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'];
+        let requiredFields = ['patient_name', 'doctor_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'];
         // Modify the skipFields array(splicing the keys which is in the requiredFields)
         for (let i = 0; i < requiredFields.length; i++) {
           this.configData.skipFields.splice(this.configData.skipFields.indexOf(requiredFields[i]), 1)
