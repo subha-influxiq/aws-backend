@@ -354,8 +354,14 @@ export class AddEditDoctorOfcComponent implements OnInit {
               case 'doctor':
                 this.router.navigateByUrl("doctor/doctor-office-management");
                 break;
-              case 'admin':
-                this.router.navigateByUrl("admin/doctor-office-management");
+              case 'diagnostic_admin':
+                this.router.navigateByUrl("diagnostic-admin/doctor-office-management");
+                break;
+              case 'doctor_group':
+                this.router.navigateByUrl("doctor-group/doctor-office-management");
+                break;
+              case 'distributors':
+                this.router.navigateByUrl("distributors/doctor-office-management");
                 break;
             }
           }, 2000);

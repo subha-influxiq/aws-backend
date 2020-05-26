@@ -73,6 +73,8 @@ export class DoctorOfficeManagementComponent implements OnInit {
   "skip":0,
   "pagecount":1
 };
+
+
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status },{ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type }],
@@ -95,6 +97,17 @@ export class DoctorOfficeManagementComponent implements OnInit {
     }
   }
 
+  libdata: any = {
+    basecondition: {"parent_id":this.userData._id},
+    updateendpoint: 'statusupdate',
+    // hideeditbutton:true,// all these button options are optional not mandatory
+    //hidedeletebutton:true,
+    //hideviewbutton:false,
+    //hidestatustogglebutton:true,
+    // hideaction:true,
+    tableheaders: ['firstname', 'lastname', 'email', 'parent_name', 'parent_type', 'phone', 'company_name', 'status', 'logincounts', 'last_login_datetime'], //not required
+  }
+
   ngOnInit() {
     this.datasource = '';
     if(this.userData.user_type !="doctor") {
@@ -108,8 +121,10 @@ export class DoctorOfficeManagementComponent implements OnInit {
     sort:{
         "type":'desc',
         "field":'firstname'
-    }
- 
+    },
+    data :{
+      parent_id : this.userData._id
+    },
     }
         this.httpService.httpViaPost(endpointc, data).subscribe((res:any) => {
             // console.log('in constructor');
@@ -141,7 +156,7 @@ export class DoctorOfficeManagementComponent implements OnInit {
         "field":'firstname'
     },
     type:"doctor",
-    docofficeid: this.userData._id
+    docofficeid: this.userData._id,
  
     }
         this.httpService.httpViaPost(endpointc, data).subscribe((res:any) => {
