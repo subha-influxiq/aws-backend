@@ -78,12 +78,7 @@ export class TechDashboardComponent implements OnInit {
     basecondition: {},
     updateendpoint: '',
     custombuttons: [
-      {
-        label: "View Report",
-        route: "admin/patient-record/",
-        type: 'internallink',
-        param: ['_id'],
-      },
+      
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
@@ -91,7 +86,6 @@ export class TechDashboardComponent implements OnInit {
     hideviewbutton: true,
     tableheaders: [
       "doctor_name",
-      "tech_name",
       "patient_name",
       "status_text",
       "created_at_datetime",
@@ -198,6 +192,7 @@ export class TechDashboardComponent implements OnInit {
         "type": 'desc',
         "field": 'patient_name'
       },
+      searchcondition: {},
       basecondition: {
         "tech_id": this.authData.userData._id
       }
