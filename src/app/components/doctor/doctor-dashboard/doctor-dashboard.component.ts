@@ -11,6 +11,8 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatSnackBar } from '@angular/material';
 import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component';
 import * as momentImported from 'moment';
+import { environment } from '../../../../environments/environment';
+
 const moment = momentImported;
 
 @Component({
@@ -88,7 +90,7 @@ export class DoctorDashboardComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any;
+  public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
   public datacollection: any = 'getpatientlistdata';
 

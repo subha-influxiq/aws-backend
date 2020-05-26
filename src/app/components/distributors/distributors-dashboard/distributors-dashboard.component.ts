@@ -10,6 +10,8 @@ import { DownloadDetailsComponent } from '../../admin/admin-dashboard/download-d
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatSnackBar } from '@angular/material';
 import * as momentImported from 'moment';
+import { environment } from '../../../../environments/environment';
+
 const moment = momentImported;
 
 @Component({
@@ -113,7 +115,7 @@ export class DistributorsDashboardComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any;
+  public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
   public datacollection: any = 'getbillerlistdata';
 

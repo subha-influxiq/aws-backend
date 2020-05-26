@@ -10,6 +10,8 @@ import { DownloadDetailsComponent } from '../../admin/admin-dashboard/download-d
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatSnackBar } from '@angular/material';
 import * as momentImported from 'moment';
+import { environment } from '../../../../environments/environment';
+
 const moment = momentImported;
 
 @Component({
@@ -100,7 +102,7 @@ export class AdminbillerDashboardComponent implements OnInit {
   public searchingEndpoint:any="datalist";
   public searchSourceName:any="data_doctor_list"
   public editUrl:any = 'admin/doctor-management/edit';
-  public apiUrl:any;
+  public apiUrl: any = environment.apiBaseUrl;
   public datacollection: any='getpatientlistdata';
   public data:any;
   public field:any;

@@ -9,6 +9,7 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { DownloadDetailsComponent } from '../../admin/admin-dashboard/download-details/download-details.component';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatSnackBar } from '@angular/material';
+import { environment } from '../../../../environments/environment';
 
 import * as momentImported from 'moment';
 const moment = momentImported;
@@ -132,7 +133,7 @@ public allUserData_modify_header: any = {
 
 public UpdateEndpoint: any = "addorupdatedata";
 public deleteEndpoint: any = "deletesingledata";
-public apiUrl: any;
+public apiUrl: any = environment.apiBaseUrl;
 public tableName: any = "data_pece";
 public datacollection: any = 'getbillerlistdata';
 
