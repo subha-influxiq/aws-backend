@@ -12904,7 +12904,7 @@ let PastAppoinmentsComponent = class PastAppoinmentsComponent {
                 slot_end_time: 'End Time',
                 timezoneName: 'Timezone',
                 status: 'Status',
-                username: 'Tech name'
+                tech_name: 'Tech name'
             },
             source: 'google-events',
             date_search_source_count: 0,
@@ -12915,7 +12915,7 @@ let PastAppoinmentsComponent = class PastAppoinmentsComponent {
                 hidestatustogglebutton: true,
                 hidedeletebutton: true,
                 hideeditbutton: true,
-                tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'],
+                tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'tech_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'],
                 custombuttons: []
             },
             updatetable: false,
@@ -13006,7 +13006,7 @@ let PastAppoinmentsComponent = class PastAppoinmentsComponent {
                 // Create skipFields array(first save all the keys from the dataset)
                 if (response.results.res > 0)
                     this.configData.skipFields = Object.keys(response.results.res[0]);
-                let requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'];
+                let requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'tech_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'];
                 // Check user_type === 'doctor_office'
                 if (JSON.parse(this.cookie.get('user_details')).user_type === 'doctor_office') {
                     requiredFields.splice(requiredFields.indexOf('doctors_office_name'), 1);
