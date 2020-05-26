@@ -62,7 +62,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       timezoneName: 'Timezone',
       status: 'Status',
       doctors_office_name: 'Doctors office name',
-      username: 'Tech Name',
+      tech_name: 'Tech Name',
       is_google_event: 'Calendar Event'
     },
     source: 'google_events',
@@ -74,7 +74,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       hidestatustogglebutton: true,
       hidedeletebutton: true,
       hideeditbutton: true,// all these button options are optional not mandatory
-      tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'is_google_event', 'status'],
+      tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'tech_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'is_google_event', 'status'],
       custombuttons: [
         {
           label: "Cancel", type: 'action', datatype: 'api',
@@ -86,7 +86,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
           label: "Reschedule",
           route: "doctor-office/reschedule-appointment",
           type: 'internallink',
-          cond: 'is_google_event', condval: true,
+          cond: 'can_reschedule', condval: true,
           param: ['_id', 'doctor_id'],
         }
       ]
@@ -211,7 +211,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
         // Create skipFields array(first save all the keys from the dataset)
         if (response.results.res > 0)
           this.configData.skipFields = Object.keys(response.results.res[0]);
-        let requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'is_google_event', 'status'];
+        let requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'tech_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'is_google_event', 'status'];
 
         // Check user_type === 'doctor_office'
         if (JSON.parse(this.cookie.get('user_details')).user_type === 'doctor_office') {
