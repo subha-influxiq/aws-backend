@@ -11,6 +11,8 @@ import {HttpServiceService} from "../../../services/http-service.service";
 })
 export class PastAppoinmentsComponent implements OnInit {
 
+  public searchByDoctor: any = {label: "Search By Doctor", field: 'doctor_id', values: []};
+
   public configData: any = {
     appName: 'Calendar Management',
     jwtToken: "",
@@ -62,7 +64,8 @@ export class PastAppoinmentsComponent implements OnInit {
       slot: "Start Time",
       slot_end_time: 'End Time',
       timezoneName: 'Timezone',
-      status: 'Status'
+      status: 'Status',
+      username: 'Tech name'
     },
     source: 'google-events',
     date_search_source_count: 0,
@@ -70,8 +73,10 @@ export class PastAppoinmentsComponent implements OnInit {
       basecondition: {},
       detailview_override: [],
       updateendpoint: 'statusupdate',
+      hidestatustogglebutton: true,
+      hidedeletebutton: true,
       hideeditbutton: true,// all these button options are optional not mandatory
-      tableheaders: ['patient_name', 'doctor_name', 'doctor_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'], //not required
+      tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'], //not required
       custombuttons: []
     },
     updatetable: false,
@@ -81,7 +86,7 @@ export class PastAppoinmentsComponent implements OnInit {
       "pagecount": 1
     },
     sortdata: {
-      "type": 'asc',
+      "type": 'desc',
       "field": 'booking_date',
       "options": ['patient_name', 'booking_date', 'startdate', 'slot', 'slot_end_time']
     },
@@ -106,24 +111,7 @@ export class PastAppoinmentsComponent implements OnInit {
       textsearch: [{label: "Search By Patient Name", field: 'patient_name'}],
 
       // this is use for  Autocomplete search
-      search: [
-        {
-          label: "Search By Doctor", field: 'doctor_id', values: [
-            {val: 'example_doctor_id', name: 'YmattZ A'},
-            {val: 'YmattZ', name: 'YmattZ A'},
-            {val: 'Ymatt', name: 'YmattZ AB'},
-            {val: 'Jessica', name: 'A Jessica'}
-          ]
-        },
-        {
-          label: "Search By Doctor Office", field: 'doctor_office_id', values: [
-            {val: 'example_doctor_office_id', name: 'YmattZ A'},
-            {val: 'YmattZ', name: 'YmattZ A'},
-            {val: 'Ymatt', name: 'YmattZ AB'},
-            {val: 'Jessica', name: 'A Jessica'}
-          ]
-        }
-      ]
+      search: [this.searchByDoctor]
     },
     statusarray: [{val: 0, 'name': 'Pending'}, {val: 1, 'name': 'Approved'}, {val: 2, 'name': 'Canceled'}]
   };
@@ -134,12 +122,24 @@ export class PastAppoinmentsComponent implements OnInit {
   }
 
   ngOnInit() {
+    // load doctor search dynamically
+    setTimeout(() => {
+      this.httpService.postRequest('get-doctor-info', {condition: {doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id}}).subscribe((response: any) => {
+        for (let i = 0; i < response.data.length; i++) {
+          let temp: any = {};
+          temp['val'] = response.data[i]._id;
+          temp['name'] = response.data[i].firstname + ' ' + response.data[i].lastname;
+          this.searchByDoctor.values.push(temp);
+        }
+      })
+    }, 3000);
+
     if (this.cookie.check('jwtToken')) {
       this.configData.jwtToken = this.cookie.get('jwtToken');
       let data: any = {
         token: this.configData.jwtToken,
         condition: {},
-        sort: {type: 'asc', field: 'booking_date'}
+        sort: {type: 'desc', field: 'booking_date'}
       }
       /* Create condition with respect to the user_type */
       if (this.cookie.check('user_details')) {
@@ -189,7 +189,16 @@ export class PastAppoinmentsComponent implements OnInit {
         // Create skipFields array(first save all the keys from the dataset)
         if (response.results.res > 0)
           this.configData.skipFields = Object.keys(response.results.res[0]);
-        let requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'];
+        let requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'];
+
+        // Check user_type === 'doctor_office'
+        if (JSON.parse(this.cookie.get('user_details')).user_type === 'doctor_office') {
+          requiredFields.splice(requiredFields.indexOf('doctors_office_name'), 1);
+          this.configData.libdata.tableheaders.splice(
+            this.configData.libdata.tableheaders.indexOf('doctors_office_name'), 1
+          );
+        }
+
         // Modify the skipFields array(splicing the keys which is in the requiredFields)
         for (let i = 0; i < requiredFields.length; i++) {
           this.configData.skipFields.splice(this.configData.skipFields.indexOf(requiredFields[i]), 1)

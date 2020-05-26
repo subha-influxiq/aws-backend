@@ -61,8 +61,9 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       slot_end_time: 'End Time',
       timezoneName: 'Timezone',
       status: 'Status',
-      // doctors_office_name: 'Doctors office name',
-      username: 'Tech Name'
+      doctors_office_name: 'Doctors office name',
+      username: 'Tech Name',
+      is_google_event: 'Calendar Event'
     },
     source: 'google_events',
     date_search_source_count: 0,
@@ -70,22 +71,22 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       basecondition: {},
       detailview_override: [],
       updateendpoint: 'statusupdate',
+      hidestatustogglebutton: true,
       hidedeletebutton: true,
       hideeditbutton: true,// all these button options are optional not mandatory
-      tableheaders: ['patient_name', 'doctor_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'], //not required
+      tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'is_google_event', 'status'],
       custombuttons: [
         {
           label: "Cancel", type: 'action', datatype: 'api',
           endpoint: 'delete-booked-event', otherparam: [],
-          // cond:'status', condval:0,
+          cond: 'status', condval:0,
           param: '_id', refreshdata: true,
         },
         {
           label: "Reschedule",
           route: "doctor-office/reschedule-appointment",
           type: 'internallink',
-          //cond:'status',
-          //condval:0,
+          cond: 'is_google_event', condval: true,
           param: ['_id', 'doctor_id'],
         }
       ]
@@ -97,7 +98,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       "pagecount": 1
     },
     sortdata: {
-      "type": 'asc',
+      "type": 'desc',
       "field": 'booking_date',
       "options": ['patient_name', 'booking_date', 'startdate', 'slot', 'slot_end_time']
     },
@@ -139,7 +140,9 @@ export class UpcomingAppoinmentsComponent implements OnInit {
   };
 
   constructor(public cookie: CookieService, public snackBar: MatSnackBar,
-              public httpService: HttpServiceService) { }
+              public httpService: HttpServiceService) {
+
+  }
 
   ngOnInit() {
     // load doctor search dynamically
@@ -150,7 +153,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
         temp['name']= response.data[i].firstname + ' ' + response.data[i].lastname;
         this.searchByDoctor.values.push(temp);
       }
-    })
+    });
 
 
     if (this.cookie.check('jwtToken')) {
@@ -158,7 +161,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       let data: any = {
         token: this.configData.jwtToken,
         condition: {},
-        sort: {type: 'asc', field: 'booking_date'}
+        sort: {type: 'desc', field: 'booking_date'}
       }
       /* Create condition with respect to the user_type */
       if (this.cookie.check('user_details')) {
@@ -208,7 +211,16 @@ export class UpcomingAppoinmentsComponent implements OnInit {
         // Create skipFields array(first save all the keys from the dataset)
         if (response.results.res > 0)
           this.configData.skipFields = Object.keys(response.results.res[0]);
-        let requiredFields = ['patient_name', 'doctor_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'];
+        let requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'is_google_event', 'status'];
+
+        // Check user_type === 'doctor_office'
+        if (JSON.parse(this.cookie.get('user_details')).user_type === 'doctor_office') {
+          requiredFields.splice(requiredFields.indexOf('doctors_office_name'), 1);
+          this.configData.libdata.tableheaders.splice(
+            this.configData.libdata.tableheaders.indexOf('doctors_office_name'), 1
+          );
+        }
+
         // Modify the skipFields array(splicing the keys which is in the requiredFields)
         for (let i = 0; i < requiredFields.length; i++) {
           this.configData.skipFields.splice(this.configData.skipFields.indexOf(requiredFields[i]), 1)
