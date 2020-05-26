@@ -52,6 +52,7 @@ export class TechDashboardComponent implements OnInit {
     "_id",
     "report_file_type",
     "tech_id",
+    "tech_name",
     "tech_email",
     "batch_name",
     "report_type",
@@ -100,7 +101,6 @@ export class TechDashboardComponent implements OnInit {
   }
   public allUserData_modify_header: any = {
     "doctor_name": "Doctor Name",
-    "tech_name": "Tech Name",
     "patient_name": "Patient Name",
     "status_text": "Status",
     "created_at_datetime": "Report Added",
@@ -112,7 +112,7 @@ export class TechDashboardComponent implements OnInit {
   public deleteEndpoint: any = "deletesingledata";
   public apiUrl: any;
   public tableName: any = "data_pece";
-  public datacollection: any = 'getbillerlistdata';
+  public datacollection: any = 'getpatientlistdatatech';
 
   public sortdata: any = {
     "type": 'desc',
@@ -187,8 +187,8 @@ export class TechDashboardComponent implements OnInit {
 
     // lib list
     this.libdata.basecondition.tech_id = this.authData.userData._id;
-    let endpoint = 'getPatientlistdata';
-    let endpointc = 'getPatientlistdata-count';
+    let endpoint = 'getpatientlistdatatech';
+    let endpointc = 'getpatientlistdatatech-count';
     let data: any = {
       "condition": {
         "limit": 10,
