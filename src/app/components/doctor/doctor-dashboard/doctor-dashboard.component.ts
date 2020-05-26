@@ -11,6 +11,8 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatSnackBar } from '@angular/material';
 import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component';
 import * as momentImported from 'moment';
+import { environment } from '../../../../environments/environment';
+
 const moment = momentImported;
 
 @Component({
@@ -30,6 +32,7 @@ export class DoctorDashboardComponent implements OnInit {
   public allUserData_skip: any = [
     "_id",
     "report_file_type",
+    "doctor_name",
     "tech_id",
     "tech_email",
     "batch_name",
@@ -58,7 +61,7 @@ export class DoctorDashboardComponent implements OnInit {
     custombuttons: [
       {
         label: "View Report",
-        route: "admin/patient-record/",
+        route: "doctor/patient-record-report/",
         type: 'internallink',
         param: ['_id'],
       },
@@ -68,7 +71,6 @@ export class DoctorDashboardComponent implements OnInit {
     hidestatustogglebutton: true,
     hideviewbutton: true,
     tableheaders: [
-      "doctor_name",
       "tech_name",
       "patient_name",
       "status_text",
@@ -78,7 +80,6 @@ export class DoctorDashboardComponent implements OnInit {
     ]
   }
   public allUserData_modify_header: any = {
-    "doctor_name": "Doctor Name",
     "tech_name": "Tech Name",
     "patient_name": "Patient Name",
     "status_text": "Status",
@@ -89,9 +90,9 @@ export class DoctorDashboardComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any;
+  public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
-  public datacollection: any = 'getbillerlistdata';
+  public datacollection: any = 'getpatientlistdata';
 
   public sortdata: any = {
     "type": 'desc',
@@ -183,9 +184,8 @@ export class DoctorDashboardComponent implements OnInit {
     });
 
     // lib list
-    //this.libdata.basecondition.tech_id = this.authData.userData._id;
-    let endpoint = 'getPatientlistdata';
-    let endpointc = 'getPatientlistdata-count';
+    let endpoint = 'getpatientlistdata';
+    let endpointc = 'getpatientlistdata-count';
     let data: any = {
       "condition": {
         "limit": 10,
@@ -194,6 +194,10 @@ export class DoctorDashboardComponent implements OnInit {
       sort: {
         "type": 'desc',
         "field": 'patient_name'
+      },
+      searchcondition: {},
+      basecondition: {
+        "doctor_id": this.authData._id
       }
     }
 

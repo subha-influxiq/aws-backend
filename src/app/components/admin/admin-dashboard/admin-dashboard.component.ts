@@ -9,8 +9,10 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { DownloadDetailsComponent } from './download-details/download-details.component';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatSnackBar } from '@angular/material';
+import { environment } from '../../../../environments/environment';
 
 import * as momentImported from 'moment';
+import { from } from 'rxjs';
 const moment = momentImported;
 
 @Component({
@@ -96,9 +98,9 @@ export class AdminDashboardComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any;
+  public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
-  public datacollection: any = 'getbillerlistdata';
+  public datacollection: any = 'getPatientlistdata';
 
   public sortdata: any = {
     "type": 'desc',
