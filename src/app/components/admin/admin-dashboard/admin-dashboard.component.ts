@@ -100,7 +100,7 @@ export class AdminDashboardComponent implements OnInit {
   public deleteEndpoint: any = "deletesingledata";
   public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
-  public datacollection: any = 'getbillerlistdata';
+  public datacollection: any = 'getPatientlistdata';
 
   public sortdata: any = {
     "type": 'desc',
