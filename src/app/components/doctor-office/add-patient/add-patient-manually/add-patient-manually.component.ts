@@ -1254,6 +1254,8 @@ export class AddPatientManuallyComponent implements OnInit {
   public headerFlag: any;
   public loader: boolean = false;
 
+  public timeslots: any = [];
+
   constructor(public activatedRoute: ActivatedRoute, public cookieService: CookieService,
               public snackBar: MatSnackBar, public httpRequestService: HttpServiceService) {
     this.headerFlag = this.activatedRoute.snapshot.url[0].path;
@@ -1277,6 +1279,7 @@ export class AddPatientManuallyComponent implements OnInit {
     } else {
       this.openSnackBar('Token not found');
     }
+
 
 
     // this.configData.primaryCondition = Object.assign(this.configData.primaryCondition, {userid: {$in: [this.userDetails._id]}});
@@ -1898,8 +1901,27 @@ export class AddPatientManuallyComponent implements OnInit {
             error: 'Enter Date of Appointment', caption: 'Appointment Schedule'
           },
           {
-            type: 'input', name: 'slot', placeholder: 'Time of Appointment',
-            label: 'Time of Appointment', value: ''
+            type: 'select', name: 'slot', placeholder: 'Time of Appointment',
+            label: 'Time of Appointment',
+            options: [
+              {text: '06:00 AM', value: '06:00 AM'}, {text: '06:30 AM', value: '06:30 AM'},
+              {text: '07:00 AM', value: '07:00 AM'}, {text: '07:30 AM', value: '07:30 AM'},
+              {text: '08:00 AM', value: '08:00 AM'}, {text: '08:30 AM', value: '08:30 AM'},
+              {text: '09:00 AM', value: '09:00 AM'}, {text: '09:30 AM', value: '09:30 AM'},
+              {text: '10:00 AM', value: '10:00 AM'}, {text: '10:30 AM', value: '10:30 AM'},
+              {text: '11:00 AM', value: '11:00 AM'}, {text: '11:30 AM', value: '11:30 AM'},
+              {text: '12:00 PM', value: '12:00 PM'}, {text: '12:30 PM', value: '12:30 PM'},
+              {text: '01:00 PM', value: '01:00 PM'}, {text: '01:30 PM', value: '01:30 PM'},
+              {text: '02:00 PM', value: '02:00 PM'}, {text: '02:30 PM', value: '02:30 PM'},
+              {text: '03:00 PM', value: '03:00 PM'}, {text: '03:30 PM', value: '03:30 PM'},
+              {text: '04:00 PM', value: '04:00 PM'}, {text: '04:30 PM', value: '04:30 PM'},
+              {text: '05:00 PM', value: '05:00 PM'}, {text: '05:30 PM', value: '05:30 PM'},
+              {text: '06:00 PM', value: '06:00 PM'}, {text: '06:30 PM', value: '06:30 PM'},
+              {text: '07:00 PM', value: '07:00 PM'}, {text: '07:30 PM', value: '07:30 PM'},
+              {text: '08:00 PM', value: '08:00 PM'}, {text: '08:30 PM', value: '08:30 PM'},
+              {text: '09:00 PM', value: '09:00 PM'}, {text: '09:30 PM', value: '09:30 PM'},
+              {text: '10:00 PM', value: '10:00 PM'}
+            ]
           },
           {
             type: 'select', name: 'reqTimezone', label: 'Timezone',
