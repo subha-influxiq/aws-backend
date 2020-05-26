@@ -74,7 +74,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       hidestatustogglebutton: true,
       hidedeletebutton: true,
       hideeditbutton: true,// all these button options are optional not mandatory
-      tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'is_google_event', 'status'], //not required
+      tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'is_google_event', 'status'],
       custombuttons: [
         {
           label: "Cancel", type: 'action', datatype: 'api',

@@ -344,7 +344,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-admin-header></app-admin-header>\n\n<mat-card class=\"admin_wrapper\">\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br> Major Doctors</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_biller }}</h4>\n        <p class=\"doctorNumber\">Total Number of<br> Billers</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_tech }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br>Techs</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_distributor }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br> Distributor</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/distributors-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctors_group_admin }}</h4>\n        <p class=\"doctorNumber\">Total Number of<br> Doctors Group Admin</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/doctor-management/group']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_biller_admin }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br>Biller Admin</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/adminbiller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <!-- Doctor occide related -->\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/doctorOffice.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Doctor's Office</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Diagnostic Admin</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Doctors</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n  </mat-card-content>\n\n  <!-- Doctor other related -->\n  <mat-card-content class=\"content_wrapper\">\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/salesPerson.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }} </h4>\n        <p class=\"doctorNumber\">Total Number of<br> Sales Person</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Appointments<br> Pending</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/calenderAppointment.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Appointments<br> Completed</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <!-- Report Status Section Start -->\n  <mat-card-content class=\"admin_superbillsection\">\n    <h1>Physician Reports Status</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Manual Records\n          </p>\n          <h2> {{ allResolveData.total_reports_type_manual }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Total Manual Reports');\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            File Records\n          </p>\n          <h2> {{ allResolveData.total_reports_type_file }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Total File Reports');\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n  <!-- Report Status Section End -->\n\n\n  <mat-card-content class=\"admin_superbillsection\">\n    <h1>Physician Report Process Status</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Images Not Processed\n          </p>\n          <h2> {{ allResolveData.total_pdf_to_images_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Images Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Basic Details Not Processed\n          </p>\n          <h2> {{ allResolveData.total_basic_details_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Basic Details Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item \">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Risk Markers Not Processed\n          </p>\n          <h2> {{ allResolveData.total_code_not_exists }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Risk Markers Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n\n\n  <mat-card-content class=\"admin_superbillsection superbillerContainer\">\n    <h1>Physician Report and Super Bills</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports Added\n          </p>\n          <h2> {{ allResolveData.total_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Processed\n          </p>\n          <h2> {{ allResolveData.total_reports - allResolveData.total_pdf_to_images_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Signed\n          </p>\n          <h2> {{ allResolveData.total_sign_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Sent to <br>\n            Biller\n          </p>\n          <h2> {{ allResolveData.total_send_to_supar_biller_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Super Bill')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Downloaded </p>\n          <h2> {{ allResolveData.total_reports_download }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Download Bill')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Pending Sing </p>\n          <h2> {{ allResolveData.total_not_sign_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Reports Pending Sing')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n  </mat-card-content>\n\n\n\n  <!-- All Data listing start here(default listing) -->\n  <mat-card-content class=\"table_wrapper\">\n\n    <!-- table -->\n    <lib-listing\n      class=\"DataTable\" \n      *ngIf=\"allBillerData.length>0\" \n      [datasource]=\"allBillerData\" \n      [skip]=\"allUserData_skip\"\n      [modify_header_array]=\"allUserData_modify_header\" \n      [detail_skip_array]=\"previewModal_detail_skip\" \n      [apiurl]=\"apiUrl\"\n      [sourcedata]=\"tableName\" \n      [editroute]=\"editUrl\" \n      [jwttoken]=\"user_cookie\" \n      [statusarr]=\"status\"\n      [updateendpoint]=\"UpdateEndpoint\" \n      [deleteendpoint]=\"deleteEndpoint\" \n      [date_search_endpoint]=\"SearchingEndpoint\"\n      [date_search_source]=\"SearchingSourceName\" \n      [search_settings]=\"search_settings\" \n      [sortdata]=\"sortdata\" \n      [datacollection]=\"datacollection\" \n      [libdata]=\"libdata\" \n      [date_search_source_count]=\"billerData_count\" \n      [limitcond]=\"limitcond\" >\n    </lib-listing>\n\n  </mat-card-content>\n  <!-- dashboard all listing end here -->\n</mat-card>\n\n<app-admin-footer></app-admin-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-admin-header></app-admin-header>\n\n<mat-card class=\"admin_wrapper\">\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br> Major Doctors</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_biller }}</h4>\n        <p class=\"doctorNumber\">Total Number of<br> Billers</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_tech }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br>Techs</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_distributor }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br> Distributor</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/distributors-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctors_group_admin }}</h4>\n        <p class=\"doctorNumber\">Total Number of<br> Doctors Group Admin</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/doctor-management/group']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_biller_admin }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br>Biller Admin</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/adminbiller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <!-- Doctor occide related -->\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/doctorOffice.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Doctor's Office</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Diagnostic Admin</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Doctors</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n  </mat-card-content>\n\n  <!-- Doctor other related -->\n  <mat-card-content class=\"content_wrapper\">\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/salesPerson.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }} </h4>\n        <p class=\"doctorNumber\">Total Number of<br> Sales Person</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Appointments<br> Pending</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/calenderAppointment.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Appointments<br> Completed</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <!-- Report Status Section Start -->\n  <mat-card-content class=\"admin_superbillsection\">\n    <h1>Physician Reports Status</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Manual Records\n          </p>\n          <h2> {{ allResolveData.total_reports_type_manual }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Total Manual Reports');\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            File Records\n          </p>\n          <h2> {{ allResolveData.total_reports_type_file }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Total File Reports');\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n  <!-- Report Status Section End -->\n\n\n  <mat-card-content class=\"admin_superbillsection\">\n    <h1>Physician Report Process Status</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Images Not Processed\n          </p>\n          <h2> {{ allResolveData.total_pdf_to_images_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Images Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Basic Details Not Processed\n          </p>\n          <h2> {{ allResolveData.total_basic_details_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Basic Details Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item \">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Risk Markers Not Processed\n          </p>\n          <h2> {{ allResolveData.total_code_not_exists }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Risk Markers Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n\n\n  <mat-card-content class=\"admin_superbillsection superbillerContainer\">\n    <h1>Physician Report and Super Bills</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports Added\n          </p>\n          <h2> {{ allResolveData.total_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Processed\n          </p>\n          <h2> {{ allResolveData.total_reports - allResolveData.total_pdf_to_images_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Signed\n          </p>\n          <h2> {{ allResolveData.total_sign_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Sent to <br>\n            Biller\n          </p>\n          <h2> {{ allResolveData.total_send_to_supar_biller_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Super Bill')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Downloaded </p>\n          <h2> {{ allResolveData.total_reports_download }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Download Bill')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Pending Sing </p>\n          <h2> {{ allResolveData.total_not_sign_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Reports Pending Sing')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n  </mat-card-content>\n\n\n\n  <!-- All Data listing start here(default listing) -->\n  <mat-card-content class=\"table_wrapper\">\n\n    <!-- table -->\n    <lib-listing\n      class=\"DataTable\" \n      *ngIf=\"allBillerData.length>0\" \n      [datasource]=\"allBillerData\" \n      [skip]=\"allUserData_skip\"\n      [modify_header_array]=\"allUserData_modify_header\" \n      [detail_skip_array]=\"previewModal_detail_skip\" \n      [apiurl]=\"apiUrl\"\n      [sourcedata]=\"tableName\" \n      [editroute]=\"editUrl\" \n      [jwttoken]=\"jwtToken\" \n      [statusarr]=\"status\"\n      [updateendpoint]=\"UpdateEndpoint\" \n      [deleteendpoint]=\"deleteEndpoint\" \n      [date_search_endpoint]=\"SearchingEndpoint\"\n      [date_search_source]=\"SearchingSourceName\" \n      [search_settings]=\"search_settings\" \n      [sortdata]=\"sortdata\" \n      [datacollection]=\"datacollection\" \n      [libdata]=\"libdata\" \n      [date_search_source_count]=\"billerData_count\" \n      [limitcond]=\"limitcond\" >\n    </lib-listing>\n\n  </mat-card-content>\n  <!-- dashboard all listing end here -->\n</mat-card>\n\n<app-admin-footer></app-admin-footer>");
 
 /***/ }),
 
@@ -1050,19 +1050,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.html":
-/*!*****************************************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.html ***!
-  \*****************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Listing starts -->\n<mat-dialog-content>\n  <div class=\"center\">\n    <mat-label>\n      <b>{{availableSlots.length > 0 || progressSpinner.loading ? 'Available slots' : 'No slot available'}}</b>\n    </mat-label>\n  </div>\n\n  <div class=\"center\" *ngIf=\"progressSpinner.loading\">\n    <mat-progress-spinner [mode]=\"progressSpinner.mode\"></mat-progress-spinner> <br>\n    <mat-label><b>{{progressSpinner.bookingStatus}}</b></mat-label>\n  </div>\n\n\n  <div class=\"filter\" *ngIf=\"availableSlots.length > 0\">\n\n    <!-- Update timezone -->\n    <mat-form-field appearance=\"outline\" class=\"filter-box\">\n      <mat-label>My timezone</mat-label>\n      <mat-select [(ngModel)]=\"filterOptions.timezone\" (selectionChange)=\"onChangeTimezone($event)\"\n                  placeholder=\"Change timezone\">\n        <mat-option *ngFor=\"let tz of configData.timeZone;\" [value]=\"tz.value\">{{ tz.text }}</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <!-- Event Type -->\n    <!-- <mat-form-field appearance=\"outline\" class=\"filter-box\">\n      <mat-label>Event Type</mat-label>\n      <mat-select [(ngModel)]=\"filterOptions.eventType\">\n        <mat-option *ngFor=\"let et of libConfigData.eventType;\" [value]=\"et.value\">{{ et.text }}\n        </mat-option>\n      </mat-select>\n    </mat-form-field> -->\n\n    <!-- Search by Date range -->\n    <mat-form-field appearance=\"outline\" class=\"filter-box\">\n      <mat-label>Search by date range</mat-label>\n      <input matInput [(ngModel)]=\"filterOptions.availableDates\" placeholder=\"Date range\" [satDatepicker]=\"picker2\"\n             [min]=\"today\" disabled>\n      <sat-datepicker #picker2 [rangeMode]=\"true\" disabled=\"false\"></sat-datepicker>\n      <sat-datepicker-toggle matSuffix [for]=\"picker2\"></sat-datepicker-toggle>\n    </mat-form-field>\n\n    <!-- Search button -->\n    <button mat-stroked-button color=\"primary\" class=\"m-r\" (click)=\"search()\">\n      <mat-icon>search</mat-icon>\n    </button>\n\n    <!-- Reset filter button -->\n    <button mat-stroked-button color=\"primary\" class=\"m-l\" (click)=\"resetFilter()\" matTooltip=\"Reset filter\">\n      <mat-icon>rotate_right</mat-icon>\n    </button>\n\n\n    <!-- -------------------------- Pagination start ------------------------ -->\n    <div class=\"pagination\">\n      <button mat-icon-button (click)=\"pageStep('prev')\">\n        <mat-icon>arrow_back</mat-icon>\n      </button>\n      <mat-label>\n        <b *ngIf=\"page.total_record == 0\">No event slot found</b>\n        <b *ngIf=\"page.total_record != 0\">Showing results {{page.start}} - {{page.end}} of {{page.total_record}}</b>\n      </mat-label>\n      <button mat-icon-button (click)=\"pageStep('next')\">\n        <mat-icon>arrow_forward</mat-icon>\n      </button>\n\n      <br>\n      <mat-label class=\"sample_label\">Items/page:</mat-label> &nbsp;\n      <mat-select class=\"selectPageCount\" [(ngModel)]=\"itemCount\" (selectionChange)=\"onChangePageCount()\">\n        <mat-option [value]=\"20\">20</mat-option>\n        <mat-option [value]=\"50\">50</mat-option>\n        <mat-option [value]=\"100\">100</mat-option>\n        <mat-option [value]=\"200\">200</mat-option>\n      </mat-select>\n\n      <mat-label class=\"sample_label\">Page:</mat-label> &nbsp;\n      <mat-select class=\"selectPageCount\" [(ngModel)]=\"jumpToPageNumber\" (selectionChange)=\"jumpToPage()\">\n        <mat-option *ngFor=\"let i of arrPage\" [value]=\"i - 1\">\n          {{i}}\n        </mat-option>\n      </mat-select>\n\n    </div>\n    <!-- ------------------------- Pagination end ------------------------- -->\n\n  </div>\n\n  <div class=\"slotview\">\n    <mat-card class=\"slot-card\" *ngFor=\"let data of availableSlots\">\n      <mat-card-content class=\"slot-card-content\">\n        <p><b>{{data.event_title}}</b></p>\n        <p><b>Details:</b> {{data.description}}</p>\n        <p><b>Date:</b> {{data.startdate}} &nbsp; <b>Slot:</b> {{data.slot}} - {{data.slot_end_time}}</p>\n        <p><b>Timezone:</b> {{data.timezoneName}}</p>\n      </mat-card-content>\n      <mat-card-actions>\n        <button mat-raised-button color=\"primary\" (click)=\"rebook(data)\">Reschedule</button>\n      </mat-card-actions>\n    </mat-card>\n  </div>\n</mat-dialog-content>\n");
-
-/***/ }),
-
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/booked-events-listing/upcoming-appoinments/upcoming-appoinments.component.html":
 /*!*************************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/booked-events-listing/upcoming-appoinments/upcoming-appoinments.component.html ***!
@@ -1410,7 +1397,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1 mat-dialog-title>Choose your doctor and tech from below</h1>\n<div mat-dialog-content>\n<!--  <p>What's your favorite animal?</p>-->\n  <mat-form-field>\n    <mat-label>Select doctor</mat-label>\n    <mat-select [(ngModel)]=\"doctor\" (selectionChange)=\"onChangeDoctor($event.value)\">\n      <mat-option *ngFor=\"let doctor of doctorList\" [value]=\"{doctor_id: doctor._id, parent_id: doctor.parent_id, parent_type: doctor.parent_type}\">\n        {{doctor.firstname + ' ' + doctor.lastname}}\n      </mat-option>\n    </mat-select>\n  </mat-form-field>\n\n\n  <mat-form-field>\n    <mat-label>Select tech</mat-label>\n    <mat-select [(ngModel)]=\"selectedIds.tech_id\">\n      <mat-option *ngFor=\"let tech of techList\" [value]=\"tech.value\">\n        {{tech.text}}\n      </mat-option>\n    </mat-select>\n    <mat-progress-bar mode=\"buffer\" *ngIf=\"loadingTech\"></mat-progress-bar>\n  </mat-form-field>\n</div>\n<div mat-dialog-actions>\n<!--  <button mat-button (click)=\"onNoClick()\">No Thanks</button>-->\n  <button mat-button [mat-dialog-close]=\"selectedIds\" cdkFocusInitial>Ok</button>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1 mat-dialog-title>Choose your doctor and tech from below</h1>\n<div mat-dialog-content>\n<!--  <p>What's your favorite animal?</p>-->\n  <mat-form-field>\n    <mat-label>Select doctor</mat-label>\n    <mat-select [(ngModel)]=\"doctor\" (selectionChange)=\"onChangeDoctor($event.value)\">\n      <mat-option *ngFor=\"let doctor of doctorList\" [value]=\"{doctor_id: doctor._id, parent_id: doctor.parent_id, parent_type: doctor.parent_type}\">\n        {{doctor.firstname + ' ' + doctor.lastname}}\n      </mat-option>\n    </mat-select>\n  </mat-form-field>\n\n\n  <!--\n  <mat-form-field>\n    <mat-label>Select tech</mat-label>\n    <mat-select [(ngModel)]=\"selectedIds.tech_id\">\n      <mat-option *ngFor=\"let tech of techList\" [value]=\"tech.value\">\n        {{tech.text}}\n      </mat-option>\n    </mat-select>\n    <mat-progress-bar mode=\"buffer\" *ngIf=\"loadingTech\"></mat-progress-bar>\n  </mat-form-field>\n  -->\n</div>\n<div mat-dialog-actions>\n<!--  <button mat-button (click)=\"onNoClick()\">No Thanks</button>-->\n  <button mat-button [mat-dialog-close]=\"selectedIds\" cdkFocusInitial>Ok</button>\n</div>\n");
 
 /***/ }),
 
@@ -1423,7 +1410,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-doctor-header></app-doctor-header>\n\n<mat-card class=\"admin_wrapper\">\n  <section class=\"mediaDoc\">\n    <mat-card-title class=\"testingDoc\"> Media Deck of Testing Services </mat-card-title>\n    <mat-card-content class=\"mediaDoc_wrapper\">\n      <span class=\"new_wrapper_left\">\n        <mat-card-content class=\"media_inner_items\">\n          <mat-card-content class=\"image_wrapper\">\n            <img src=\"../../../../assets/images/doctor-Dashboard-Banner.jpg\">\n          </mat-card-content>\n          <a mat-button class=\"action_button\" href=\"../../../../assets/Doctors Resources/DCS doctor's deck.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n      </span>\n      <span class=\"new_wrapper_right\">\n        <mat-card-content class=\"media_inner_items\">\n\n          <mat-card-content class=\"image_wrapper\">\n            <img src=\"../../../../assets/images/doctor-Dashboard-sampeltest.jpg\">\n          </mat-card-content>\n          <a mat-button class=\"action_button\" href=\"../../../../assets/Doctors Resources/AWSPhysiciansReport2019567.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"media_inner_items\">\n          <mat-card-content class=\"image_wrapper\">\n            <img src=\"../../../../assets/images/doctor-Dashboard-Health-report.jpg\">\n          </mat-card-content>\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/Clinical Quick Reference Guide.pdf\" target=\"_blank\"> download\n          </a>\n        </mat-card-content>\n      </span>\n\n    </mat-card-content>\n  </section>\n\n\n  <section class=\"quickRef\">\n    <mat-card-title class=\"testingDoc\">Clinical Quick Reference Guide </mat-card-title>\n\n    <mat-card-content class=\"report_wrapper\">\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport1.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Impact of Reduced Heart Rate Variability on Risk for\n            Cardiac Events</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Impact of Reduced Heart Rate Variability on Risk.pdf\"\n          target=\"_blank\"> download </a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport2.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Determination of age-related increases in largeartery stiffness by digital pulse\n            contour analysis</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Determination of age-related.pdf\" target=\"_blank\">\n          download</a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport3.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Role of Endothelial Dysfunction in Atherosclerosis</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Role of Endothelial Dysfunction in Atherosclerosis.pdf\"\n          target=\"_blank\"> download </a>\n      </mat-card-content>\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport4.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Diabetes, Glucose, Insulin, and Heart Rate Variability</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Diabetes_Glucose_Insulin_and_Heart.pdf\" target=\"_blank\">\n          download </a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport5.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Diabetic Neuropathies: The Nerve Damageof Diabetes</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Diabetic Neuropathies.pdf\" target=\"_blank\"> download </a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport6.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Vitamin D Status, Autonomic Nervous SystemActivity, and Cardiometabolic Risk</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Vitamin D Status Autonomic Nervous System.pdf\"\n          target=\"_blank\"> download </a>\n      </mat-card-content>\n      <span class=\"viewMore\" [ngClass]=\"viewstatus ? 'show' : 'hide'\">\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport7.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Assessment of Vascular Aging and\n              Atherosclerosis in Hypertensive Subjects:\n              Second Derivative of Photoplethysmogram\n              Versus Pulse Wave Velocity</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Assessment of Vascular Aging.pdf\" target=\"_blank\">\n            download\n          </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport8.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Determination of age-related increases in large\n              artery stiffness by digital pulse contour analysis</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Determination of age-related.pdf\" target=\"_blank\">\n            download\n          </a>\n        </mat-card-content>\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport9.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Diabetes: Sweat Response and\n              Heart Rate Variability During\n              Electrical Stimulation in Controls\n              and People With Diabetes</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Diabetes Sweat Response.pdf\" target=\"_blank\"> download\n          </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport10.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">The Relationship between Vascular Function\n              and the Autonomic Nervous System</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/The Relationship between.pdf\" target=\"_blank\"> download\n          </a>\n        </mat-card-content>\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport11.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Assessment of insulin sensitivity by the hyperinsulinemic euglycemic clamp:\n              Comparison with the spectral analysis of photoplethysmography</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/Assessment of insulin sensitivity by the hyperinsulinemic.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport12.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Detection of neuropathy using a sudomotor\n              test in type 2 diabetes</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Detection of neuropathy using a sudomotor test.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport13.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Diagnosis and Treatment of Pain in Small Fiber Neuropathy.</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Diagnosis and Treatment of Pain in Small Fiber Neuropathy.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n      </span>\n\n    </mat-card-content>\n\n    <mat-toolbar class=\"viewMore_w\">\n      <button mat-button (click)=\"viewMore()\">{{ btnName }}</button>\n    </mat-toolbar>\n  </section>\n\n  <ng-container *ngIf=\"otherData.all_details.user_type == 'distributors'\">\n    <section class=\"Admindmin_details\">\n      <mat-card-content class=\"inner_er\">\n\n        <mat-list class=\"list_wrapper\">\n          <h3>{{header.name}} : {{otherData.all_details.distributorname}} &nbsp;</h3>\n          <h2>Details</h2>\n\n          <span class=\"inner\">\n\n            <mat-list-item>\n              <span class=\"lg\">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contactperson }} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Phone :&nbsp; </span><span> {{otherData.all_details.phone}}</span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Email :&nbsp; </span><span> {{otherData.all_details.email}} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>\n\n            </mat-list-item>\n          </span>\n        </mat-list>\n      </mat-card-content>\n    </section>\n  </ng-container>\n\n\n  <ng-container *ngIf=\"otherData.all_details.user_type == 'diagnostic_admin'\">\n    <section class=\"Admindmin_details\">\n      <mat-card-content class=\"inner_er\">\n        <mat-list class=\"list_wrapper\">\n          <h3>{{header.name}} : {{otherData.all_details.center_name}} &nbsp;</h3>\n          <h2>Details</h2>\n\n          <span class=\"inner\">\n\n            <mat-list-item>\n              <span class=\"lg\">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contact_person[0].name }}\n              </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Phone :&nbsp; </span><span>\n                {{otherData.all_details.contact_person[0].phone}}</span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Email :&nbsp; </span><span> {{otherData.all_details.contact_person[0].email}}\n              </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>\n\n            </mat-list-item>\n          </span>\n        </mat-list>\n      </mat-card-content>\n    </section>\n\n  </ng-container>\n\n\n  <ng-container *ngIf=\"otherData.all_details.user_type == 'doctor_group'\">\n    <section class=\"Admindmin_details\">\n      <mat-card-content class=\"inner_er\">\n\n        <mat-list class=\"list_wrapper\">\n          <h3>{{header.name}} : {{otherData.all_details.groupname }} &nbsp;</h3>\n          <h2>Details</h2>\n\n          <span class=\"inner\">\n\n            <mat-list-item>\n              <span class=\"lg\">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contactperson }} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Phone :&nbsp; </span><span> {{otherData.all_details.phone}}</span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Email :&nbsp; </span><span> {{otherData.all_details.email}} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>\n\n            </mat-list-item>\n          </span>\n        </mat-list>\n      </mat-card-content>\n    </section>\n  </ng-container>\n\n  <!-- Count Block  -->\n\n  <mat-card-content class=\"admin_superbillsection\">\n    <mat-card-title class=\"testingDoc\">Physician Report</mat-card-title>\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\" *ngIf=\"htmlText.signFlag == true\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>MANAGE YOUR SIGNATURE</p>\n          <button mat-flat-button [routerLink]=\"['/doctor/signature-management']\">SIGN</button>\n        </span>\n      </mat-card-content>\n\n      <!-- <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of<br> Reports Uploaded</p>\n          <h2> {{ allResolveData.signReportCount }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_three\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of<br> Reports Processed</p>\n          <h2> {{ allResolveData.pendingReportCount }}</h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report unSigned')\">view all</button>\n        </span>\n      </mat-card-content> -->\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of <br> Reports Processed</p>\n          <h2> 112 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of <br> Reports Pending Signature</p>\n          <h2> 212 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n\n    <mat-card-content class=\"admin_superbillsection\">\n      <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p> Total Numbers of <br> Reports Asked for Review</p>\n          <h2> 76 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p> Total Numbers of <br> Reports Sent to Biller</p>\n          <h2> 92 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of <br> Reports Downloaded by Biller</p>\n          <h2> 155 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n    </mat-card-content>\n  </mat-card-content>\n\n  <!-- Pending and signed  Data listing start here -->\n  <mat-card-content class=\"table_wrapper\">\n    <mat-card-title class=\"testingDoc\">Physician Report List</mat-card-title>\n    <mat-toolbar class=\"top_header\">\n      <h2> {{ htmlText.headerText }} </h2>\n    </mat-toolbar>\n\n    <span class=\"action_bar\">\n      <mat-form-field>\n        <input matInput type=\"text\" placeholder=\"Search By Patient\" [(ngModel)]=\"searchJson.patientName\" />\n      </mat-form-field>\n\n      <mat-form-field>\n        <mat-select [(ngModel)]=\"searchJson.status\">\n          <mat-option value=\"\">Select a status</mat-option>\n          <mat-option value=\"waiting for doctor sign\">Waiting For Doctor Sign</mat-option>\n          <mat-option value=\"doctor signed\">Doctor Signed</mat-option>\n          <mat-option value=\"send to biller\">Send To Biller</mat-option>\n          <mat-option value=\"error\">Error</mat-option>\n          <mat-option value=\"pending\">Pending</mat-option>\n          this.viewReportProcessData(this.htmlText.headerText);\n        </mat-select>\n      </mat-form-field>\n\n      <mat-form-field>\n        <input matInput type=\"text\" placeholder=\"Choose a date\" [satDatepicker]=\"picker\"\n          [(ngModel)]=\"searchJson.dateRange\" />\n        <sat-datepicker #picker [rangeMode]=\"true\"></sat-datepicker>\n        <sat-datepicker-toggle matSuffix [for]=\"picker\"></sat-datepicker-toggle>\n      </mat-form-field>\n\n      <button mat-button class=\"add_btn\" (click)=\"viewReportProcessData(htmlText.headerText);\">Date Search</button>\n    </span>\n    <div class=\"tablewrapper\">\n      <table mat-table [dataSource]=\"allDataSource\" class=\"mat-elevation-z8 adminTables\">\n\n        <ng-container matColumnDef=\"no\">\n          <th mat-header-cell *matHeaderCellDef> No. </th>\n          <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"patient_name\">\n          <th mat-header-cell *matHeaderCellDef> Patient Name. </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Patient Name\">{{ element.patient_name }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"doctor_name\">\n          <th mat-header-cell *matHeaderCellDef> Doctor Name</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Doctor Name\" innerHTML=\"{{ element.doctor_name }}\"> </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"tech_name\">\n          <th mat-header-cell *matHeaderCellDef> Tech Name</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Tech Name\"> {{ element.tech_name }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"biller_name\" *ngIf=\"htmlText.headerText != 'Report unSigned'\">\n          <th mat-header-cell *matHeaderCellDef> Biller Name</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Biller Name\"> {{ element.biller_name }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"report_type\">\n          <th mat-header-cell *matHeaderCellDef> Record Type</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Record Type\"> {{ element.report_type }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"bill_generation_date\" *ngIf=\"htmlText.headerText != 'Report unSigned'\">\n          <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Generation Date\">\n            {{ element.bill_generation_date | date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"bill_sent_date\" *ngIf=\"htmlText.headerText != 'Report unSigned'\">\n          <th mat-header-cell *matHeaderCellDef> Bill Sent Date</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Sent Date\"> {{ element.billSentDate | date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"super_bill\" *ngIf=\"htmlText.headerText != 'Report unSigned'\">\n          <th mat-header-cell *matHeaderCellDef> Super Bill</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Super Bill\"> {{ element.super_bill }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"status\">\n          <th mat-header-cell *matHeaderCellDef> Status</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Status\"> {{ element.status }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"action\">\n          <th mat-header-cell *matHeaderCellDef> Action </th>\n          <td mat-cell *matCellDef=\"let element; let i = index;\">\n            <button matTooltip=\"View\" aria-label=\"Button\" matTooltipPosition=\"above\"\n              *ngIf=\"element.status == 'Pending Signature'\" mat-button type=\"button\" class=\"viewButton\"\n              [routerLink]=\"['/doctor/patient-record-report', element._id]\"><i class=\"material-icons\">\n                remove_red_eye\n              </i></button>\n            <button mat-raised-button *ngIf=\"element.status != 'Pending Signature'\" type=\"button\"\n              class=\"viewButton downloadBtn\" disabled matTooltip=\"View\" aria-label=\"Button\"\n              matTooltipPosition=\"above\"><i class=\"material-icons\">\n                remove_red_eye\n              </i></button>\n            <button matTooltip=\"Download\" aria-label=\"Button\" matTooltipPosition=\"above\" mat-raised-button\n              *ngIf=\"element.status != 'Pending Signature'\" type=\"button\" class=\"viewButton downloadBtn\"\n              (click)=\"downloadReport(element);\"><i class=\"material-icons\">\n                cloud_download\n              </i></button>\n          </td>\n        </ng-container>\n\n        <tr mat-header-row *matHeaderRowDef=\"allDataColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: allDataColumns;let i = index\"></tr>\n      </table>\n    </div>\n    <mat-paginator [pageSizeOptions]=\"[50, 100, 200]\"></mat-paginator>\n  </mat-card-content>\n</mat-card>\n\n\n<app-admin-footer></app-admin-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-doctor-header></app-doctor-header>\n\n<mat-card class=\"admin_wrapper\">\n  <section class=\"mediaDoc\">\n    <mat-card-title class=\"testingDoc\"> Media Deck of Testing Services </mat-card-title>\n    <mat-card-content class=\"mediaDoc_wrapper\">\n      <span class=\"new_wrapper_left\">\n        <mat-card-content class=\"media_inner_items\">\n          <mat-card-content class=\"image_wrapper\">\n            <img src=\"../../../../assets/images/doctor-Dashboard-Banner.jpg\">\n          </mat-card-content>\n          <a mat-button class=\"action_button\" href=\"../../../../assets/Doctors Resources/DCS doctor's deck.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n      </span>\n      <span class=\"new_wrapper_right\">\n        <mat-card-content class=\"media_inner_items\">\n\n          <mat-card-content class=\"image_wrapper\">\n            <img src=\"../../../../assets/images/doctor-Dashboard-sampeltest.jpg\">\n          </mat-card-content>\n          <a mat-button class=\"action_button\" href=\"../../../../assets/Doctors Resources/AWSPhysiciansReport2019567.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"media_inner_items\">\n          <mat-card-content class=\"image_wrapper\">\n            <img src=\"../../../../assets/images/doctor-Dashboard-Health-report.jpg\">\n          </mat-card-content>\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/Clinical Quick Reference Guide.pdf\" target=\"_blank\"> download\n          </a>\n        </mat-card-content>\n      </span>\n\n    </mat-card-content>\n  </section>\n\n\n  <section class=\"quickRef\">\n    <mat-card-title class=\"testingDoc\">Clinical Quick Reference Guide </mat-card-title>\n\n    <mat-card-content class=\"report_wrapper\">\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport1.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Impact of Reduced Heart Rate Variability on Risk for\n            Cardiac Events</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Impact of Reduced Heart Rate Variability on Risk.pdf\"\n          target=\"_blank\"> download </a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport2.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Determination of age-related increases in largeartery stiffness by digital pulse\n            contour analysis</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Determination of age-related.pdf\" target=\"_blank\">\n          download</a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport3.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Role of Endothelial Dysfunction in Atherosclerosis</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Role of Endothelial Dysfunction in Atherosclerosis.pdf\"\n          target=\"_blank\"> download </a>\n      </mat-card-content>\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport4.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Diabetes, Glucose, Insulin, and Heart Rate Variability</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Diabetes_Glucose_Insulin_and_Heart.pdf\" target=\"_blank\">\n          download </a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport5.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Diabetic Neuropathies: The Nerve Damageof Diabetes</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Diabetic Neuropathies.pdf\" target=\"_blank\"> download </a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport6.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Vitamin D Status, Autonomic Nervous SystemActivity, and Cardiometabolic Risk</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Vitamin D Status Autonomic Nervous System.pdf\"\n          target=\"_blank\"> download </a>\n      </mat-card-content>\n      <span class=\"viewMore\" [ngClass]=\"viewstatus ? 'show' : 'hide'\">\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport7.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Assessment of Vascular Aging and\n              Atherosclerosis in Hypertensive Subjects:\n              Second Derivative of Photoplethysmogram\n              Versus Pulse Wave Velocity</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Assessment of Vascular Aging.pdf\" target=\"_blank\">\n            download\n          </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport8.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Determination of age-related increases in large\n              artery stiffness by digital pulse contour analysis</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Determination of age-related.pdf\" target=\"_blank\">\n            download\n          </a>\n        </mat-card-content>\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport9.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Diabetes: Sweat Response and\n              Heart Rate Variability During\n              Electrical Stimulation in Controls\n              and People With Diabetes</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Diabetes Sweat Response.pdf\" target=\"_blank\"> download\n          </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport10.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">The Relationship between Vascular Function\n              and the Autonomic Nervous System</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/The Relationship between.pdf\" target=\"_blank\"> download\n          </a>\n        </mat-card-content>\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport11.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Assessment of insulin sensitivity by the hyperinsulinemic euglycemic clamp:\n              Comparison with the spectral analysis of photoplethysmography</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/Assessment of insulin sensitivity by the hyperinsulinemic.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport12.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Detection of neuropathy using a sudomotor\n              test in type 2 diabetes</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Detection of neuropathy using a sudomotor test.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport13.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Diagnosis and Treatment of Pain in Small Fiber Neuropathy.</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Diagnosis and Treatment of Pain in Small Fiber Neuropathy.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n      </span>\n\n    </mat-card-content>\n\n    <mat-toolbar class=\"viewMore_w\">\n      <button mat-button (click)=\"viewMore()\">{{ btnName }}</button>\n    </mat-toolbar>\n  </section>\n\n  <ng-container *ngIf=\"otherData.all_details.user_type == 'distributors'\">\n    <section class=\"Admindmin_details\">\n      <mat-card-content class=\"inner_er\">\n\n        <mat-list class=\"list_wrapper\">\n          <h3>{{header.name}} : {{otherData.all_details.distributorname}} &nbsp;</h3>\n          <h2>Details</h2>\n\n          <span class=\"inner\">\n\n            <mat-list-item>\n              <span class=\"lg\">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contactperson }} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Phone :&nbsp; </span><span> {{otherData.all_details.phone}}</span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Email :&nbsp; </span><span> {{otherData.all_details.email}} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>\n\n            </mat-list-item>\n          </span>\n        </mat-list>\n      </mat-card-content>\n    </section>\n  </ng-container>\n\n\n  <ng-container *ngIf=\"otherData.all_details.user_type == 'diagnostic_admin'\">\n    <section class=\"Admindmin_details\">\n      <mat-card-content class=\"inner_er\">\n        <mat-list class=\"list_wrapper\">\n          <h3>{{header.name}} : {{otherData.all_details.center_name}} &nbsp;</h3>\n          <h2>Details</h2>\n\n          <span class=\"inner\">\n\n            <mat-list-item>\n              <span class=\"lg\">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contact_person[0].name }}\n              </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Phone :&nbsp; </span><span>\n                {{otherData.all_details.contact_person[0].phone}}</span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Email :&nbsp; </span><span> {{otherData.all_details.contact_person[0].email}}\n              </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>\n\n            </mat-list-item>\n          </span>\n        </mat-list>\n      </mat-card-content>\n    </section>\n\n  </ng-container>\n\n\n  <ng-container *ngIf=\"otherData.all_details.user_type == 'doctor_group'\">\n    <section class=\"Admindmin_details\">\n      <mat-card-content class=\"inner_er\">\n\n        <mat-list class=\"list_wrapper\">\n          <h3>{{header.name}} : {{otherData.all_details.groupname }} &nbsp;</h3>\n          <h2>Details</h2>\n\n          <span class=\"inner\">\n\n            <mat-list-item>\n              <span class=\"lg\">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contactperson }} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Phone :&nbsp; </span><span> {{otherData.all_details.phone}}</span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Email :&nbsp; </span><span> {{otherData.all_details.email}} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>\n\n            </mat-list-item>\n          </span>\n        </mat-list>\n      </mat-card-content>\n    </section>\n  </ng-container>\n\n  <!-- Count Block  -->\n\n  <mat-card-content class=\"admin_superbillsection\">\n    <mat-card-title class=\"testingDoc\">Physician Report</mat-card-title>\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\" *ngIf=\"htmlText.signFlag == true\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>MANAGE YOUR SIGNATURE</p>\n          <button mat-flat-button [routerLink]=\"['/doctor/signature-management']\">SIGN</button>\n        </span>\n      </mat-card-content>\n\n      <!-- <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of<br> Reports Uploaded</p>\n          <h2> {{ allResolveData.signReportCount }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_three\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of<br> Reports Processed</p>\n          <h2> {{ allResolveData.pendingReportCount }}</h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report unSigned')\">view all</button>\n        </span>\n      </mat-card-content> -->\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of <br> Reports Processed</p>\n          <h2> 112 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of <br> Reports Pending Signature</p>\n          <h2> 212 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n\n    <mat-card-content class=\"admin_superbillsection\">\n      <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p> Total Numbers of <br> Reports Asked for Review</p>\n          <h2> 76 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p> Total Numbers of <br> Reports Sent to Biller</p>\n          <h2> 92 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of <br> Reports Downloaded by Biller</p>\n          <h2> 155 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n    </mat-card-content>\n  </mat-card-content>\n\n  <!-- Pending and signed  Data listing start here -->\n  <mat-card-content class=\"table_wrapper\">\n    <mat-card-title class=\"testingDoc\">Physician Report List</mat-card-title>\n    <mat-toolbar class=\"top_header\">\n      <h2> {{ htmlText.headerText }} </h2>\n    </mat-toolbar>\n\n    <span class=\"action_bar\">\n      <mat-form-field>\n        <input matInput type=\"text\" placeholder=\"Search By Patient\" [(ngModel)]=\"searchJson.patientName\" />\n      </mat-form-field>\n\n      <mat-form-field>\n        <mat-select [(ngModel)]=\"searchJson.status\">\n          <mat-option value=\"\">Select a status</mat-option>\n          <mat-option value=\"waiting for doctor sign\">Waiting For Doctor Sign</mat-option>\n          <mat-option value=\"doctor signed\">Doctor Signed</mat-option>\n          <mat-option value=\"send to biller\">Send To Biller</mat-option>\n          <mat-option value=\"error\">Error</mat-option>\n          <mat-option value=\"pending\">Pending</mat-option>\n          this.viewReportProcessData(this.htmlText.headerText);\n        </mat-select>\n      </mat-form-field>\n\n      <mat-form-field>\n        <input matInput type=\"text\" placeholder=\"Choose a date\" [satDatepicker]=\"picker\"\n          [(ngModel)]=\"searchJson.dateRange\" />\n        <sat-datepicker #picker [rangeMode]=\"true\"></sat-datepicker>\n        <sat-datepicker-toggle matSuffix [for]=\"picker\"></sat-datepicker-toggle>\n      </mat-form-field>\n\n      <button mat-button class=\"add_btn\" (click)=\"viewReportProcessData(htmlText.headerText);\">Date Search</button>\n    </span>\n\n    <div class=\"tablewrapper\">\n      \n      <!-- table -->\n      <lib-listing\n        class=\"DataTable\" \n        *ngIf=\"allBillerData.length>0\" \n        [datasource]=\"allBillerData\" \n        [skip]=\"allUserData_skip\"\n        [modify_header_array]=\"allUserData_modify_header\" \n        [detail_skip_array]=\"previewModal_detail_skip\" \n        [apiurl]=\"apiUrl\"\n        [sourcedata]=\"tableName\" \n        [editroute]=\"editUrl\" \n        [jwttoken]=\"jwtToken\" \n        [statusarr]=\"status\"\n        [updateendpoint]=\"UpdateEndpoint\" \n        [deleteendpoint]=\"deleteEndpoint\" \n        [date_search_endpoint]=\"SearchingEndpoint\"\n        [date_search_source]=\"SearchingSourceName\" \n        [search_settings]=\"search_settings\" \n        [sortdata]=\"sortdata\" \n        [datacollection]=\"datacollection\" \n        [libdata]=\"libdata\" \n        [date_search_source_count]=\"billerData_count\" \n        [limitcond]=\"limitcond\" >\n      </lib-listing>\n\n    </div>\n    <mat-paginator [pageSizeOptions]=\"[50, 100, 200]\"></mat-paginator>\n  </mat-card-content>\n</mat-card>\n\n\n<app-admin-footer></app-admin-footer>");
 
 /***/ }),
 
@@ -1528,6 +1515,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<app-doctor-header></app-doctor-header>\n\n\n<mat-card-content class=\"content_wrapper\">\n  <mat-card-content class=\"itemsection\">\n    <mat-card-content class=\"one uploadsign\">\n      <p>Manage Your Signature </p>\n\n    </mat-card-content>\n\n    <span class=\"section_title\">\n      <img src=\"../../../../assets/images/editicon.png\">\n    </span>\n\n    <span class=\"signaturefont\">{{ htmlText.viewSign }}</span>\n\n    <mat-card-content class=\"sign_uploader\">\n      <span class=\"sing_box\">\n        <input type=\"text\" [(ngModel)]=\"htmlText.viewSign\" (keyup)=\"removeErrorMessage();\">\n        <br/>\n        <span style=\"color: red;\">{{ htmlText.errorMessage }}</span>\n      </span>\n\n      <br />\n\n      <span class=\"sing_box\">\n        <button class=\"signature_upload\" (click)=\"updateSignature();\" mat-flat-button>{{ htmlText.buttonText }}</button>\n      </span>\n    </mat-card-content>\n  </mat-card-content>\n</mat-card-content>\n\n<!-- Tech Footer -->\n<app-admin-footer></app-admin-footer>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/encounter-form/encounter-form.component.html":
+/*!***************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/encounter-form/encounter-form.component.html ***!
+  \***************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>New york report pdf</title>\n    <style>\n        body {\n            margin: 0;\n            padding: 0;\n            font-family: sans-serif;\n        }\n\n        .min_wrapr {\n            width: 798px;\n            height:auto;\n            background: #fff;\n            margin: 50px auto;\n            border: 1px solid #3a3838;\n        }\n\n        table {\n            width: 100%;\n        }\n\n        table th,\n        table td {\n            padding: 4px 8px;\n            vertical-align: top;\n        }\n\n        table tr td p {\n            display: flex;\n            margin: 0;\n            box-sizing: border-box;\n            font-size: 12px;\n        }\n\n        table tr td p span {\n            min-width: 124px;\n        }\n\n        table tr td p input[type='text'] {\n            width: 100%;\n            font-family: sans-serif;\n            border: none;\n            border-bottom: 1px solid #252424;\n            padding-bottom: 4px;\n            background: none;\n        }\n\n        table tr td p input[type='text']:focus {\n            outline: none;\n        }\n\n        .suggestBill {\n            border: 1px solid #6b6a6a;\n            padding: 4px;\n            justify-content: center;\n            margin-bottom: 6px;\n        }\n\n        .bill_amount {\n            flex-wrap: wrap;\n        }\n\n        .bill_amount label {\n            font-size: 12px;\n        }\n\n        .middle_part h2 {\n            color: #f50808;\n            font-size: 12px;\n            text-align: center;\n            border: 2px solid #3e3c3c;\n            padding: 8px 0;\n            border-left: 0;\n            border-right: 0;\n            box-sizing: border-box;\n            margin: 0;\n        }\n\n        .chkValue {\n            min-width: 70px;\n            font-size: 10px;\n            display: flex;\n            align-items: center;\n        }\n  \n        .inner_form table {\n            border-collapse: collapse;\n        }\n\n        .inner_form tr td {\n            width: 50%;\n            padding: 1px;\n        }\n\n        .inner_form tr td span {\n            font-size: 10px;\n        }\n\n        h3 {\n            font-size: 10px;\n            margin: 3px auto;\n            border-bottom: 1px solid #302f31;\n            width: 215px;\n        }\n        ul li{\n            font-size: 10px; margin: 2px 0;\n        }\n    </style>\n</head>\n\n<body>\n    <div class=\"min_wrapr\">\n        <div class=\"top_part\">\n            <table>\n                <tr>\n                    <td>\n                        <p><span> Patient Name</span><input type=\"text\"></p>\n                    </td>\n                    <td>\n                        <p><label style=\"border: none;\">M <input type=\"checkbox\"></label> <label style=\"border: none;\">F\n                                <input type=\"checkbox\"></label></p>\n                    </td>\n                    <td>\n                        <p><span>Test Date</span><input type=\"text\" value=\"test patient name\"></p>\n                    </td>\n                </tr>\n\n                <tr>\n                    <td colspan=\"2\">\n                        <p><span> Ordering Physician</span><input type=\"text\" value=\"patient name\"> </p>\n                    </td>\n                    <td>\n                        <p><span style=\"text-align: right; padding-right: 16px;\"> D.O.B</span><input type=\"text\"\n                                value=\"test patient name\"></p>\n                    </td>\n                </tr>\n\n                <tr>\n                    <td colspan=\"2\">\n                        <p><span>Physician’s Signature</span><input type=\"text\" value=\"patient name\"> </p>\n                    </td>\n                    <td style=\"width: 45%;\">\n                        <p class=\"suggestBill\">Suggested billing amounts per CPT</p>\n                        <p class=\"bill_amount\">\n                            <label><input type=\"checkbox\">95923: $410</label>\n                            <label><input type=\"checkbox\">95943: $440</label>\n                            <label><input type=\"checkbox\">95921: $280</label>\n                            <label><input type=\"checkbox\">93923: $250.00</label>\n                            <label><input type=\"checkbox\">93922: $280</label>\n\n\n                        </p>\n\n                    </td>\n                </tr>\n\n\n                <tr>\n                    <td colspan=\"2\">\n                        <p><span>Patient’s Insurance Carrier (s)</span><input type=\"text\" value=\"patient name\"> </p>\n                    </td>\n                    <td>\n                        <p> <label><input type=\"checkbox\">No Diagnoses Established</label></p>\n                    </td>\n                </tr>\n            </table>\n        </div>\n\n\n        <div class=\"middle_part\">\n            <h2>ICD 10 DIAGNOSTIC CODES TO BE USED WITH CPT CODE: 95921 (or use 95943 is allowed), and 95923</h2>\n\n\n            <div class=\"inner_form\">\n                <table>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E08.40</label>\n                                <span>Type 1 Diabetes W/ Neurological Manifestations, Not Stated as\n                                    Uncontrolled</span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G60.3 </label>\n                                <span>Idiopathic progressive neuropathy</span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E10.41</label>\n\n                                <span>Type 1 Diabetes Mellitus W/ Diabetic Mononeuropathy</span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G60.8 </label>\n                                <span>Other hereditary and idiopathic neuropathies</span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E10.42</label>\n                                <span>Type 1 Diabetes Mellitus W/ Diabetic Polyneuropathy</span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G60.9</label>\n                                <span>Hereditary and idiopathic neuropathy, unspecified</span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E10.43</label>\n                                <span> Type 1 Diabetes Mellitus W/ Diabetic Autonomic (Poly) Neuropathy</span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G62.9</label>\n                                <span> Polyneuropathy, unspecified</span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E10.44</label>\n                                <span>Type 1 Diabetes Mellitus W/ Diabetic Amyotrophy</span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.09</label>\n                                <span>Other idiopathic peripheral autonomic neuropathy </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E10.49</label>\n                                <span>Type 1 Diabetes Mellitus W/ Other Diabetic Neurological Complications </span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.3</label>\n                                <span>Multi-system degeneration of the autonomic nervous system</span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E10.610</label>\n                                <span>Type 1 Diabetes (Juvenile) W/ diabetic Neuropathic Arthropathy </span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.50</label>\n                                <span> Complex regional pain syndrome I, unspecified</span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E11.9</label>\n                                <span> Type 2 Diabetes Without Complications (non-Medicare) </span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.59</label>\n                                <span> Complex regional pain syndrome I of other specified site</span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E11.41</label>\n                                <span> Type 2 Diabetes Mellitus W/ Diabetic Mononeuropathy</span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">R00.0</label>\n                                <span> Tachycardia, unspecified Abnormal Heart Rhythm & Electrical Stability</span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E11.42</label>\n                                <span>Type 2 Diabetes Mellitus W/ Diabetic Polyneuropathy </span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">R55</label>\n                                <span> Vasovagal Syndrome/Syncope and collapse </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E11.43</label>\n                                <span>Type 2 Diabetes Mellitus W/ Diabetic Polyneuropathy Type 2 Diabetes W/ Autonomic\n                                    Neuropathy </span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">R73.01</label>\n                                <span> Impaired fasting glucose (Non-Medicare) </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\"> E11.44</label>\n                                <span> Type 2 Diabetes Mellitus W/Diabetic Amyotrophy </span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">R73.03</label>\n                                <span>Prediabetes (Non-Medicare) </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E11.49</label>\n                                <span>\n                                    Type 2 Diabetes Mellitus W/ Other Diabetic Neurological Complications </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.50</label>\n                                <span>Complex regional pain syndrome I, unspecified</span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\"> E85.0 </label>\n                                <span>Mediterranean Fever </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.511</label>\n                                <span> Complex regional pain syndrome I of right upper limb </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E85.1</label>\n                                <span>Neuropathic Heredofamilial Amyloidosis </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.512</label>\n                                <span> Complex regional pain syndrome I of left upper limb </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E85.3</label>\n                                <span>Secondary Systemic Amyloidosis </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.513</label>\n                                <span> Complex regional pain syndrome I of upper limb, bilateral </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E85.4</label>\n                                <span> Organ – Limited Amyloidosis </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.521</label>\n                                <span> Complex regional pain syndrome I of right lower limb </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G20.0 </label>\n                                <span> Parkinson’s Disease </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.522</label>\n                                <span>Complex regional pain syndrome I of left lower limb </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G23.0</label>\n                                <span> Hallervorden – Spatz Disease </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.523</label>\n                                <span> Complex regional pain syndrome I of lower limb, bilateral </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G23.1</label>\n                                <span> Progressive supranuclear ophthalmoplegia [Steele-Richardson Olszewski]</span>\n                            </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.59</label>\n                                <span> Complex regional pain syndrome I of other specified site </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G23.2</label>\n                                <span> Striatonigral degeneration</span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I95.1</label>\n                                <span> Orthostatic Hypotension </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G23.8</label>\n                                <span> Other specified degenerative diseases of basal ganglia </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">R61 </label>\n                                <span>Generalized hyperhidrosis\n                                </span> </p>\n                        </td>\n                    </tr>\n                </table>\n            </div>\n        </div>\n        <!-- end middle part -->\n        <div class=\"middle_part\">\n            <h2>ICD 10 DIAGNOSTIC CODES TO BE USED WITH CPT CODE: 93922 or 93923 (93923 1 UNIT FOR UPPER AND 1 UNIT FOR\n                LOWER EXTREMITY) REQUIRED ANSILLARY TESTING: ABI, WAVE FORM DOPPLER OR PULSE WAVE /PHOTO PLETHYSMOGRAPHY\n                DEVICE </h2>\n\n\n            <div class=\"inner_form\">\n                <table>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E10.59</label>\n                                <span> Type 1 Diabetes W/ Other Circulatory Complications</span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.222</label>\n                                <span> Atherosclerosis of native arteries of extremities with rest pain, left leg</span>\n                            </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E11.59</label>\n                                <span> Type 2 Diabetes W/ Other Circulatory Complications </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.223</label>\n                                <span> Atherosclerosis of native arteries of extremities with rest pain, Bilateral legs\n                                </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G45.8</label>\n                                <span> Other Transient Cerebral Ischemic Attacks and Related Syndrome </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.228</label>\n                                <span> Atherosclerosis of native arteries of extremities with rest pain, other extremity\n                                </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I10</label>\n                                <span> Hypertension Unspecified (Non-Medicare) </span>&nbsp; <b>130/80</b> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.268 </label>\n                                <span> Atherosclerosis of native arteries of extremities with gangrene, Other extremity\n                                </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I59.1</label>\n                                <span> Heart disease, unspecified (Non-Medicare) </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.268</label>\n                                <span> Atherosclerosis of native arteries of extremities with gangrene, Other extremity\n                                </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.209</label>\n                                <span> Atherosclerosis Native Arteries Extremities Unspecified (non-Medicare) </span>\n                            </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.25</label>\n                                <span> Atherosclerosis of native arteries of other extremities with Ulceration </span>\n                            </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.211</label>\n                                <span> Atherosclerosis of native arteries of extremities with intermittent Claudication,\n                                    right leg </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I72.1 </label>\n                                <span> Aneurysm of artery of upper extremity </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.212</label>\n                                <span> Atherosclerosis of native arteries of extremities with intermittent Claudication,\n                                    left leg </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I72.4</label>\n                                <span> Aneurysm of artery of lower extremity </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.212</label>\n                                <span> I70.213 Atherosclerosis of native arteries of extremities with intermittent\n                                    Claudication, bilateral leg</span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I73.89</label>\n                                <span> Other specified peripheral vascular diseases </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <h3> ADDITIONAL POTENTIAL HEALTH RISKS </h3>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I73.9 </label>\n                                <span> Peripheral vascular disease, unspecified </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <div>\n                              <ul>\n                                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, deserunt.</li>\n                                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, deserunt.</li>\n                                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, deserunt.</li>\n                                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, deserunt.</li>\n                              </ul>\n                                    <!-- </p> -->\n                            </div>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">R08.8 9 </label>\n                                <span>    Other Specific Signs & Symptoms of Circulatory & Respiratory  Systems </span> </p>\n\n                                <div style=\"min-height: 40px;\">\n                                    <h3> Pre-Existing Diagnoses:</h3>\n\n                                </div>\n                                <div style=\"min-height: 40px;\">\n                                    <h3> Additional Physician’s Chart Notes</h3>\n                                </div>\n                        </td>\n                    </tr>\n                </table>\n            </div>\n        </div>\n\n    </div>\n</body>\n\n</html>");
 
 /***/ }),
 
@@ -1709,7 +1709,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2 mat-dialog-title>Report Successfully Uploaded</h2>\n\n<mat-card class=\"modal_view\">\n\n    <ng-container *ngIf=\"data.confirmSubmittedDataSource.length > 0\">\n        <mat-card-content class=\"table_wrapper\">\n            <mat-toolbar class=\"top_header\">\n                <h2> Confirm Submitted Records</h2>\n            </mat-toolbar>\n            <div class=\"tablewrapper\">\n                <table mat-table [dataSource]=\"confirmSubmittedDataSource\" class=\"report_modal mat-elevation-z8\">\n\n                    <!--- Note that these columns can be defined in any order.\n                  The actual rendered columns are set as a property on the row definition\" -->\n\n                    <!-- Position Column -->\n                    <ng-container matColumnDef=\"no\">\n                        <th mat-header-cell *matHeaderCellDef> No. </th>\n                        <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n                    </ng-container>\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"patient_report\">\n                        <th mat-header-cell *matHeaderCellDef> Patient Report </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{ element.file_original_name }} </td>\n                    </ng-container>\n\n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"suggested_patient_by_system\">\n                        <th mat-header-cell *matHeaderCellDef> Suggested Patient by System </th>\n                        <td mat-cell *matCellDef=\"let element\">\n\n                            <ng-container *ngFor=\"let p of element.patient_details; let i = index;\">\n                                <p>Patient Name: {{ p.patient_name }}</p>\n                                <p>Date of Birth: {{ p.dob | date }}</p>\n                                <p>Gender: {{ p.gender }}</p>\n                                <p>Height: {{ p.height }}</p>\n                                <p>Waigth: {{ p.weight }}</p>\n                                <p *ngIf=\"p.doctor_details.length > 0\">Related Doctor:\n                                    {{ p.doctor_details[0].firstname }} {{ p.doctor_details[0].lastname }} </p>\n                                <p *ngIf=\"p.doctor_office_details.length > 0\">Doctor Office: {{ p.doctor_office_details[0].firstname }}\n                                    {{ p.doctor_office_details[0].lastname }}\n                                </p>\n                            </ng-container>\n                        </td>\n                    </ng-container>\n\n                    <tr mat-header-row *matHeaderRowDef=\"confirmSubmittedDisplayedColumns\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: confirmSubmittedDisplayedColumns;\"></tr>\n                </table>\n            </div>\n        </mat-card-content>\n    </ng-container>\n\n    <ng-container *ngIf=\"data.conflictingPatientRecordsDataSource.length > 0\">\n        <mat-card-content class=\"table_wrapper\">\n            <mat-toolbar class=\"top_header\">\n                <h2> Conflicting Patient Records </h2>\n            </mat-toolbar>\n        </mat-card-content>\n        <div class=\"tablewrapper\">\n            <table mat-table [dataSource]=\"conflictingPatientRecordsDataSource\" class=\"report_modal mat-elevation-z8\">\n\n                <!--- Note that these columns can be defined in any order.\n                  The actual rendered columns are set as a property on the row definition\" -->\n\n                <!-- Position Column -->\n                <ng-container matColumnDef=\"no\">\n                    <th mat-header-cell *matHeaderCellDef> No. </th>\n                    <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n                </ng-container>\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"patient_report\">\n                    <th mat-header-cell *matHeaderCellDef> Patient Report </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ element.file_original_name }} </td>\n                </ng-container>\n\n                <tr mat-header-row *matHeaderRowDef=\"conflictingPatientRecordsDisplayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: conflictingPatientRecordsDisplayedColumns;\"></tr>\n            </table>\n        </div>\n    </ng-container>\n\n    <br />\n\n    <ng-container *ngIf=\"data.notFindDataSource.length > 0\">\n        <mat-card-content class=\"table_wrapper\">\n            <mat-toolbar class=\"top_header\">\n                <h2> Reports That System can't Map </h2>\n            </mat-toolbar>\n        </mat-card-content>\n        <div class=\"tablewrapper\">\n            <table mat-table [dataSource]=\"notFindPatientRecordsDataSource\" class=\"report_modal\">\n\n                <!--- Note that these columns can be defined in any order.\n                  The actual rendered columns are set as a property on the row definition\" -->\n\n                <!-- Position Column -->\n                <ng-container matColumnDef=\"no\">\n                    <th mat-header-cell *matHeaderCellDef> No. </th>\n                    <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n                </ng-container>\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"patient_report\">\n                    <th mat-header-cell *matHeaderCellDef> Patient Report </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ element.file_original_name }} </td>\n                </ng-container>\n\n                <tr mat-header-row *matHeaderRowDef=\"notFindPatientRecordsDisplayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: notFindPatientRecordsDisplayedColumns;\"></tr>\n            </table>\n\n        </div>\n    </ng-container>\n\n    <mat-dialog-actions align=\"end\">\n        <button mat-button cdkFocusInitial>Ok</button>\n    </mat-dialog-actions>\n\n</mat-card>");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2 mat-dialog-title>Report Successfully Uploaded</h2>\n\n<mat-card class=\"modal_view\">\n\n    <ng-container *ngIf=\"data.confirmSubmittedDataSource.length > 0\">\n        <mat-card-content class=\"table_wrapper\">\n            <mat-toolbar class=\"top_header\">\n                <h2> Confirm Submitted Records</h2>\n            </mat-toolbar>\n            <div class=\"tablewrapper\">\n                <table mat-table [dataSource]=\"confirmSubmittedDataSource\" class=\"report_modal mat-elevation-z8\">\n\n                    <!--- Note that these columns can be defined in any order.\n                  The actual rendered columns are set as a property on the row definition\" -->\n\n                    <!-- Position Column -->\n                    <ng-container matColumnDef=\"no\">\n                        <th mat-header-cell *matHeaderCellDef> No. </th>\n                        <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n                    </ng-container>\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"patient_report\">\n                        <th mat-header-cell *matHeaderCellDef> Patient Report </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{ element.file_original_name }} </td>\n                    </ng-container>\n\n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"suggested_patient_by_system\">\n                        <th mat-header-cell *matHeaderCellDef> Suggested Patient by System </th>\n                        <td mat-cell *matCellDef=\"let element\">\n\n                            <ng-container *ngFor=\"let p of element.patient_details; let i = index;\">\n                                <p>Patient Name: {{ p.patient_name }}</p>\n                                <p>Date of Birth: {{ p.dob | date }}</p>\n                                <p>Gender: {{ p.gender }}</p>\n                                <p>Height: {{ p.height }}</p>\n                                <p>Waigth: {{ p.weight }}</p>\n                                <p *ngIf=\"p.doctor_details.length > 0\">Related Doctor:\n                                    {{ p.doctor_details[0].firstname }} {{ p.doctor_details[0].lastname }} </p>\n                                <p *ngIf=\"p.doctor_office_details.length > 0\">Doctor Office: {{ p.doctor_office_details[0].firstname }}\n                                    {{ p.doctor_office_details[0].lastname }}\n                                </p>\n                            </ng-container>\n                        </td>\n                    </ng-container>\n\n                    <tr mat-header-row *matHeaderRowDef=\"confirmSubmittedDisplayedColumns\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: confirmSubmittedDisplayedColumns;\"></tr>\n                </table>\n            </div>\n        </mat-card-content>\n    </ng-container>\n\n    <ng-container *ngIf=\"data.conflictingPatientRecordsDataSource.length > 0\">\n        <mat-card-content class=\"table_wrapper\">\n            <mat-toolbar class=\"top_header\">\n                <h2> Conflicting Patient Records </h2>\n            </mat-toolbar>\n        </mat-card-content>\n        <div class=\"tablewrapper\">\n            <table mat-table [dataSource]=\"conflictingPatientRecordsDataSource\" class=\"report_modal mat-elevation-z8\">\n\n                <!--- Note that these columns can be defined in any order.\n                  The actual rendered columns are set as a property on the row definition\" -->\n\n                <!-- Position Column -->\n                <ng-container matColumnDef=\"no\">\n                    <th mat-header-cell *matHeaderCellDef> No. </th>\n                    <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n                </ng-container>\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"patient_report\">\n                    <th mat-header-cell *matHeaderCellDef> Patient Report </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ element.file_original_name }} </td>\n                </ng-container>\n\n                <tr mat-header-row *matHeaderRowDef=\"conflictingPatientRecordsDisplayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: conflictingPatientRecordsDisplayedColumns;\"></tr>\n            </table>\n        </div>\n    </ng-container>\n\n    <br />\n\n    <ng-container *ngIf=\"data.notFindDataSource.length > 0\">\n        <mat-card-content class=\"table_wrapper\">\n            <mat-toolbar class=\"top_header\">\n                <h2> Reports That System can't Map </h2>\n            </mat-toolbar>\n        </mat-card-content>\n        <div class=\"tablewrapper\">\n            <table mat-table [dataSource]=\"notFindPatientRecordsDataSource\" class=\"report_modal\">\n\n                <!--- Note that these columns can be defined in any order.\n                  The actual rendered columns are set as a property on the row definition\" -->\n\n                <!-- Position Column -->\n                <ng-container matColumnDef=\"no\">\n                    <th mat-header-cell *matHeaderCellDef> No. </th>\n                    <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n                </ng-container>\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"patient_report\">\n                    <th mat-header-cell *matHeaderCellDef> Patient Report </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ element.file_original_name }} </td>\n                </ng-container>\n\n                <tr mat-header-row *matHeaderRowDef=\"notFindPatientRecordsDisplayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: notFindPatientRecordsDisplayedColumns;\"></tr>\n            </table>\n\n        </div>\n    </ng-container>\n\n    <mat-dialog-actions align=\"end\">\n        <button mat-button mat-dialog-close>DONE</button>\n    </mat-dialog-actions>\n\n</mat-card>");
 
 /***/ }),
 
@@ -1748,7 +1748,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-tech-header></app-tech-header>\n\n<mat-card class=\"admin_wrapper\">\n\n  <!-- new -->\n  <mat-card-content class=\"admin_superbillsection techDashboard\">\n    <!-- <h1>Physician Report and Super Bills</h1> -->\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports Uploaded\n          </p>\n          <h2> {{ allResolveData.totalReportCount }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Processed\n          </p>\n          <h2> {{ allResolveData.processedReportCount }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_three\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Number of Reports Remain to Process\n          </p>\n          <h2> {{ allResolveData.totalRemainToProcessCount }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Remain Process')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports This Week\n          </p>\n          <h2> {{ allResolveData.totalreportthisweek }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Last Week\n          </p>\n          <h2> {{ allResolveData.totalreportpreviousweek }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_three\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Number of Reports This Month\n          </p>\n          <h2> {{ allResolveData.totalreportthismonth }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Remain Process')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports Last Month\n          </p>\n          <h2> {{ allResolveData.totalreportlastmonth }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n\n\n  <!-- <mat-card-content class=\"doctor_content_wrapper\">\n    <mat-card-title>Doctor You Are Working With </mat-card-title>\n    <mat-card-content class=\"table_structure\">\n      <mat-list>\n\n        <mat-list-item>\n          <p class=\"title_n\">Name</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].firstname }} {{ allResolveData.doctorWorkingWith[0].lastname }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">Taxonomies</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].taxo_list[0] }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">Email</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].email }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">Phone</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].phone }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">FAX</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].fax }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">NPI#</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].npm }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n      </mat-list>\n    </mat-card-content>\n\n    <p class=\"doctorCount\">and&nbsp; <a\n        (click)=\"allDoctorViewModal()\">({{ allResolveData.doctorWorkingWith.length }})</a>&nbsp;more.</p>\n\n  </mat-card-content> -->\n\n\n\n  <!-- patainet report section -->\n  <mat-card-content class=\"table_wrapper \">\n\n    <mat-toolbar class=\"top_header\">\n      <h2>{{ htmlText.headerText }}</h2>\n\n      <button class=\"add_new\" mat-button routerLink=\"/tech/patient-management/bulk-upload\">upload bulk report</button>\n      <!-- <button class=\"add_new\" mat-button routerLink=\"/admin/patient-management/add\">add patient records manually</button> -->\n    </mat-toolbar>\n\n    <mat-toolbar class=\"action_bar\">\n      <mat-form-field>\n        <input matInput placeholder=\"Search by Doctor\" [(ngModel)]=\"searchJson.doctorName\">\n      </mat-form-field>\n\n      <mat-form-field>\n        <input matInput placeholder=\"Search by Patient\" [(ngModel)]=\"searchJson.patientName\">\n      </mat-form-field>\n\n      <mat-form-field class=\"parent_cat\">\n        <mat-select placeholder=\"Search By Status\" [(ngModel)]=\"searchJson.status\">\n          <mat-option value=\"\">Select a status</mat-option>\n          <mat-option value=\"waiting for doctor sign\">Waiting For Doctor Sign</mat-option>\n          <mat-option value=\"doctor signed\">Doctor Signed</mat-option>\n          <mat-option value=\"send to biller\">Send To Biller</mat-option>\n          <mat-option value=\"error\">Error</mat-option>\n          <mat-option value=\"pending\">Pending</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <!-- Filter by date -->\n      <ng-container>\n        <span class=\"date-range\">\n          <mat-form-field>\n            <input matInput placeholder=\"Choose a date\" [satDatepicker]=\"picker\" [(ngModel)]=\"searchJson.dateRange\" />\n            <sat-datepicker #picker [rangeMode]=\"true\"></sat-datepicker>\n            <sat-datepicker-toggle matSuffix [for]=\"picker\"></sat-datepicker-toggle>\n          </mat-form-field>\n        </span>\n        <span class=\"resetButton_w\">\n          <button mat-raised-button type=\"button\" color=\"primary\" class=\"add_button\"\n            (click)=\"viewDetailsData(htmlText.headerText);\">Search</button>\n          <button mat-raised-button type=\"button\" color=\"primary\" class=\"add_button\" (click)=\"resetSearch();\">\n            <i class=\"material-icons\"> replay </i>\n          </button>\n        </span>\n      </ng-container> \n    </mat-toolbar>\n    <!--all dashboard data table start here-->\n    <div class=\"tablewrapper\">\n      <table mat-table [dataSource]=\"allDataSource\" matSort class=\"mat-elevation-z8\">\n\n        <ng-container matColumnDef=\"no\">\n          <th mat-header-cell *matHeaderCellDef> No. </th>\n          <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"patientName\">\n          <th mat-header-cell *matHeaderCellDef> Patient Name. </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"patient Name\"> {{ element.patient_name }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"doctorName\">\n          <th mat-header-cell *matHeaderCellDef> Doctor Name</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Doctor Name\" innerHTML=\"{{ element.doctor_details }}\">\n          </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"techName\">\n          <th mat-header-cell *matHeaderCellDef> Tech Name</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Tech Name\"> {{ element.tech_name }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"billerName\">\n          <th mat-header-cell *matHeaderCellDef> Biller Name</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Biller Name\"> {{ element.biller_name }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"recordType\">\n          <th mat-header-cell *matHeaderCellDef> Record Type</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Record Type\"> {{ element.report_type }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"billGenerationData\">\n          <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Generation Date\">\n            {{ element.billGenerationDate | date }}\n          </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"billsendDate\">\n          <th mat-header-cell *matHeaderCellDef> Bill Send Date</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Send Date\"> {{ element.billSentDate | date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"status\">\n          <th mat-header-cell *matHeaderCellDef> Status </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Status\"> <span>{{ element.status }} </span></td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"created_at\">\n          <th mat-header-cell *matHeaderCellDef> Uploaded At </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"created_at\"> <span>{{ element.created_at | date }} </span>\n          </td>\n        </ng-container>\n\n        <tr mat-header-row *matHeaderRowDef=\"allDataColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: allDataColumns;let i = index\"></tr>\n      </table>\n    </div>\n    <mat-paginator [pageSizeOptions]=\"[50, 100, 200]\"></mat-paginator>\n\n    <span class=\"button_action\">\n      <button mat-flat-button routerLink=\"/tech/patient-management/bulk-upload\">upload bulk report</button>\n    </span>\n  </mat-card-content>\n\n</mat-card>\n<app-admin-footer></app-admin-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-tech-header></app-tech-header>\n\n<mat-card class=\"admin_wrapper\">\n\n  <!-- new -->\n  <mat-card-content class=\"admin_superbillsection techDashboard\">\n    <!-- <h1>Physician Report and Super Bills</h1> -->\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports Uploaded\n          </p>\n          <h2> {{ allResolveData.totalReportCount }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Processed\n          </p>\n          <h2> {{ allResolveData.processedReportCount }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_three\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Number of Reports Remain to Process\n          </p>\n          <h2> {{ allResolveData.totalRemainToProcessCount }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Remain Process')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports This Week\n          </p>\n          <h2> {{ allResolveData.totalreportthisweek }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Last Week\n          </p>\n          <h2> {{ allResolveData.totalreportpreviousweek }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_three\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Number of Reports This Month\n          </p>\n          <h2> {{ allResolveData.totalreportthismonth }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Remain Process')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports Last Month\n          </p>\n          <h2> {{ allResolveData.totalreportlastmonth }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n\n\n  <!-- <mat-card-content class=\"doctor_content_wrapper\">\n    <mat-card-title>Doctor You Are Working With </mat-card-title>\n    <mat-card-content class=\"table_structure\">\n      <mat-list>\n\n        <mat-list-item>\n          <p class=\"title_n\">Name</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].firstname }} {{ allResolveData.doctorWorkingWith[0].lastname }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">Taxonomies</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].taxo_list[0] }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">Email</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].email }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">Phone</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].phone }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">FAX</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].fax }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">NPI#</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].npm }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n      </mat-list>\n    </mat-card-content>\n\n    <p class=\"doctorCount\">and&nbsp; <a\n        (click)=\"allDoctorViewModal()\">({{ allResolveData.doctorWorkingWith.length }})</a>&nbsp;more.</p>\n\n  </mat-card-content> -->\n\n\n\n  <!-- patainet report section -->\n  <mat-card-content class=\"table_wrapper\">\n\n    <mat-toolbar class=\"top_header\">\n      <h2>{{ htmlText.headerText }}</h2>\n\n      <button class=\"add_new\" mat-button routerLink=\"/tech/patient-management/bulk-upload\">upload bulk report</button>\n    </mat-toolbar>\n\n    <!--all dashboard data table start here-->\n    <div class=\"tablewrapper\">\n      <!-- table -->\n      <lib-listing\n        class=\"DataTable\" \n        *ngIf=\"allBillerData.length>0\" \n        [datasource]=\"allBillerData\" \n        [skip]=\"allUserData_skip\"\n        [modify_header_array]=\"allUserData_modify_header\" \n        [detail_skip_array]=\"previewModal_detail_skip\" \n        [apiurl]=\"apiUrl\"\n        [sourcedata]=\"tableName\" \n        [editroute]=\"editUrl\" \n        [jwttoken]=\"jwtToken\" \n        [statusarr]=\"status\"\n        [updateendpoint]=\"UpdateEndpoint\" \n        [deleteendpoint]=\"deleteEndpoint\" \n        [date_search_endpoint]=\"SearchingEndpoint\"\n        [date_search_source]=\"SearchingSourceName\" \n        [search_settings]=\"search_settings\" \n        [sortdata]=\"sortdata\" \n        [datacollection]=\"datacollection\" \n        [libdata]=\"libdata\" \n        [date_search_source_count]=\"billerData_count\" \n        [limitcond]=\"limitcond\" >\n      </lib-listing>\n    </div>\n    \n\n    <span class=\"button_action\">\n      <button mat-flat-button routerLink=\"/tech/patient-management/bulk-upload\">upload bulk report</button>\n    </span>\n  </mat-card-content>\n\n</mat-card>\n<app-admin-footer></app-admin-footer>");
 
 /***/ }),
 
@@ -1774,7 +1774,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n  <mat-card-content class=\"header_wrapper\">\n    <span class=\"logo_wrapper\" [routerLink]=\"[ '/tech/dashboard' ]\">\n      <img src=\"../../../assets/images/logo.png\">\n    </span>\n\n\n    <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n    <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\">\n      <mat-nav-list>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/tech/dashboard']\"> Dashboard </a>\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"calendarMenu\"> Manage Calendar <i class=\"material-icons\">\n          keyboard_arrow_down\n          </i></a>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/tech/faq']\"> FAQ </a>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/']\"> Manage Doctor </a>\n      </mat-nav-list>\n\n      <mat-menu #calendarMenu=\"matMenu\" class=\"sub_menu\">\n        <button mat-menu-item [routerLink]=\"['/tech/manage-calender/manage-sehedule']\">Manage Schedule\n        </button>\n        <button mat-menu-item [routerLink]=\"['/tech/manage-calender/my-appoinments']\">My Appointments</button>\n      </mat-menu>\n    </mat-card-content>\n\n    <mat-card-content class=\"profile_section\">\n      <mat-menu #appMenu=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/tech/account-settings']\">\n          <mat-icon>account_circle</mat-icon> Account Settings\n        </button>\n        <button mat-menu-item [routerLink]=\"['/tech/account-settings/change-password']\">\n          <mat-icon>vpn_key</mat-icon> Change Password\n        </button>\n        <button mat-menu-item (click)=\"logout()\">\n          <mat-icon>power_settings_new</mat-icon> Logout\n        </button>\n      </mat-menu>\n      <span class=\"username\">{{user_data.firstname}} {{user_data.lastname}}</span>\n      <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n        <span class=\"user_profile\">\n          <mat-icon>account_circle</mat-icon>\n          <i class=\"material-icons\">\n            keyboard_arrow_down\n          </i>\n        </span>\n      </button>\n\n    </mat-card-content>\n  </mat-card-content>\n</mat-toolbar>\n<!-- end header -->");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n  <mat-card-content class=\"header_wrapper\">\n    <span class=\"logo_wrapper\" [routerLink]=\"[ '/tech/dashboard' ]\">\n      <img src=\"../../../assets/images/logo.png\">\n    </span>\n\n\n    <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n    <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\">\n      <mat-nav-list>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/tech/dashboard']\"> Dashboard </a>\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"calendarMenu\"> Manage Calendar <i class=\"material-icons\">\n          keyboard_arrow_down\n          </i>\n        </a>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/tech/faq']\"> FAQ </a>\n      </mat-nav-list>\n\n      <mat-menu #calendarMenu=\"matMenu\" class=\"sub_menu\">\n        <button mat-menu-item [routerLink]=\"['/tech/manage-calender/manage-sehedule']\">Manage Schedule\n        </button>\n        <button mat-menu-item [routerLink]=\"['/tech/manage-calender/my-appoinments']\">My Appointments</button>\n      </mat-menu>\n    </mat-card-content>\n\n    <mat-card-content class=\"profile_section\">\n      <mat-menu #appMenu=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/tech/account-settings']\">\n          <mat-icon>account_circle</mat-icon> Account Settings\n        </button>\n        <button mat-menu-item [routerLink]=\"['/tech/account-settings/change-password']\">\n          <mat-icon>vpn_key</mat-icon> Change Password\n        </button>\n        <button mat-menu-item (click)=\"logout()\">\n          <mat-icon>power_settings_new</mat-icon> Logout\n        </button>\n      </mat-menu>\n      <span class=\"username\">{{user_data.firstname}} {{user_data.lastname}}</span>\n      <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n        <span class=\"user_profile\">\n          <mat-icon>account_circle</mat-icon>\n          <i class=\"material-icons\">\n            keyboard_arrow_down\n          </i>\n        </span>\n      </button>\n\n    </mat-card-content>\n  </mat-card-content>\n</mat-toolbar>\n<!-- end header -->");
 
 /***/ }),
 
@@ -2282,7 +2282,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_booked_events_listing_past_appoinments_past_appoinments_component__WEBPACK_IMPORTED_MODULE_128__ = __webpack_require__(/*! ./components/booked-events-listing/past-appoinments/past-appoinments.component */ "./src/app/components/booked-events-listing/past-appoinments/past-appoinments.component.ts");
 /* harmony import */ var _components_tech_patient_management_patient_select_modal_patient_select_modal_component__WEBPACK_IMPORTED_MODULE_129__ = __webpack_require__(/*! ./components/tech/patient-management/patient-select-modal/patient-select-modal.component */ "./src/app/components/tech/patient-management/patient-select-modal/patient-select-modal.component.ts");
 /* harmony import */ var _components_tech_patient_management_report_upload_success_modal_report_upload_success_modal_component__WEBPACK_IMPORTED_MODULE_130__ = __webpack_require__(/*! ./components/tech/patient-management/report-upload-success-modal/report-upload-success-modal.component */ "./src/app/components/tech/patient-management/report-upload-success-modal/report-upload-success-modal.component.ts");
-/* harmony import */ var _components_booked_events_listing_reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_131__ = __webpack_require__(/*! ./components/booked-events-listing/reschedule-appointment/reschedule-appointment.component */ "./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.ts");
+/* harmony import */ var _components_encounter_form_encounter_form_component__WEBPACK_IMPORTED_MODULE_131__ = __webpack_require__(/*! ./components/encounter-form/encounter-form.component */ "./src/app/components/encounter-form/encounter-form.component.ts");
 
 
 
@@ -2594,7 +2594,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _components_doctor_office_manage_appointments_book_appoinment_now_book_appoinment_now_component__WEBPACK_IMPORTED_MODULE_102__["ChooseDoctorDialog"],
             _components_tech_patient_management_patient_select_modal_patient_select_modal_component__WEBPACK_IMPORTED_MODULE_129__["PatientSelectModalComponent"],
             _components_tech_patient_management_report_upload_success_modal_report_upload_success_modal_component__WEBPACK_IMPORTED_MODULE_130__["ReportUploadSuccessModalComponent"],
-            _components_booked_events_listing_reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_131__["RescheduleAppointmentComponent"]
+            _components_encounter_form_encounter_form_component__WEBPACK_IMPORTED_MODULE_131__["EncounterFormComponent"]
         ],
         imports: [
             saturn_datepicker__WEBPACK_IMPORTED_MODULE_17__["SatDatepickerModule"],
@@ -3228,28 +3228,47 @@ let AdminDashboardComponent = class AdminDashboardComponent {
             "converted_image",
             "images",
             "patient_details",
-            "patient_name_search"
+            "patient_name_search",
+            "report_life_circle",
+            "note",
+            "additional_potential_health_risks",
+            "cpt_codes",
+            "created_at"
         ];
         this.editUrl = "admin/biller-management/edit";
         this.libdata = {
             basecondition: "",
-            updateendpoint: 'statusupdate',
-            tableheaders: [
-                "tech_name",
-                "report_type",
-                "report_life_circle",
-                "note",
-                "created_at",
-                "patient_name",
+            updateendpoint: '',
+            custombuttons: [
+                {
+                    label: "View Report",
+                    route: "admin/patient-record/",
+                    type: 'internallink',
+                    param: ['_id'],
+                },
             ],
+            hideeditbutton: true,
+            hidedeletebutton: true,
+            hidestatustogglebutton: true,
+            hideviewbutton: true,
+            tableheaders: [
+                "doctor_name",
+                "tech_name",
+                "patient_name",
+                "status_text",
+                "created_at_datetime",
+                "cpt_code_count",
+                "addl_hlth_risk"
+            ]
         };
         this.allUserData_modify_header = {
+            "doctor_name": "Doctor Name",
+            "tech_name": "Tech Name",
             "patient_name": "Patient Name",
-            "tech name": "Tech Name",
-            "report_type": "Report Type",
-            "report_life_circle": "Status",
-            "note": "Notes",
-            "created_at": "Created At"
+            "status_text": "Status",
+            "created_at_datetime": "Report Added",
+            "cpt_code_count": "CPT Code Count",
+            "addl_hlth_risk": "Addl Hlth Risk"
         };
         this.UpdateEndpoint = "addorupdatedata";
         this.deleteEndpoint = "deletesingledata";
@@ -3311,6 +3330,9 @@ let AdminDashboardComponent = class AdminDashboardComponent {
     ngOnInit() {
     }
     ngAfterViewInit() {
+    }
+    viewReportProcessData(flag) {
+        console.log(flag);
     }
 };
 AdminDashboardComponent.ctorParameters = () => [
@@ -6414,7 +6436,6 @@ let AddEditDoctorOfcComponent = class AddEditDoctorOfcComponent {
             address: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(200)]],
             zip: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(4), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(18)]],
             city: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
-            tech_id: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             parent_type: ['admin', []],
             parent_id: ['', []],
             state: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -6589,7 +6610,6 @@ let AddEditDoctorOfcComponent = class AddEditDoctorOfcComponent {
                 "data": this.doctorOfficeAddEditForm.value,
                 "domainurl": _environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].siteBaseUrl + 'reset-password',
                 "sourceobj": ["parent_id"],
-                "sourceobjArray": ["tech_id"],
                 "token": this.cookieService.get('jwtToken')
             };
             if (this.htmlText.user_details.user_type == 'doctor') {
@@ -12797,6 +12817,7 @@ let PastAppoinmentsComponent = class PastAppoinmentsComponent {
         this.cookie = cookie;
         this.snackBar = snackBar;
         this.httpService = httpService;
+        this.searchByDoctor = { label: "Search By Doctor", field: 'doctor_id', values: [] };
         this.configData = {
             appName: 'Calendar Management',
             jwtToken: "",
@@ -12846,7 +12867,8 @@ let PastAppoinmentsComponent = class PastAppoinmentsComponent {
                 slot: "Start Time",
                 slot_end_time: 'End Time',
                 timezoneName: 'Timezone',
-                status: 'Status'
+                status: 'Status',
+                username: 'Tech name'
             },
             source: 'google-events',
             date_search_source_count: 0,
@@ -12854,8 +12876,10 @@ let PastAppoinmentsComponent = class PastAppoinmentsComponent {
                 basecondition: {},
                 detailview_override: [],
                 updateendpoint: 'statusupdate',
+                hidestatustogglebutton: true,
+                hidedeletebutton: true,
                 hideeditbutton: true,
-                tableheaders: ['patient_name', 'doctor_name', 'doctor_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'],
+                tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'],
                 custombuttons: []
             },
             updatetable: false,
@@ -12865,7 +12889,7 @@ let PastAppoinmentsComponent = class PastAppoinmentsComponent {
                 "pagecount": 1
             },
             sortdata: {
-                "type": 'asc',
+                "type": 'desc',
                 "field": 'booking_date',
                 "options": ['patient_name', 'booking_date', 'startdate', 'slot', 'slot_end_time']
             },
@@ -12887,35 +12911,29 @@ let PastAppoinmentsComponent = class PastAppoinmentsComponent {
                 // this is use for  text search
                 textsearch: [{ label: "Search By Patient Name", field: 'patient_name' }],
                 // this is use for  Autocomplete search
-                search: [
-                    {
-                        label: "Search By Doctor", field: 'doctor_id', values: [
-                            { val: 'example_doctor_id', name: 'YmattZ A' },
-                            { val: 'YmattZ', name: 'YmattZ A' },
-                            { val: 'Ymatt', name: 'YmattZ AB' },
-                            { val: 'Jessica', name: 'A Jessica' }
-                        ]
-                    },
-                    {
-                        label: "Search By Doctor Office", field: 'doctor_office_id', values: [
-                            { val: 'example_doctor_office_id', name: 'YmattZ A' },
-                            { val: 'YmattZ', name: 'YmattZ A' },
-                            { val: 'Ymatt', name: 'YmattZ AB' },
-                            { val: 'Jessica', name: 'A Jessica' }
-                        ]
-                    }
-                ]
+                search: [this.searchByDoctor]
             },
             statusarray: [{ val: 0, 'name': 'Pending' }, { val: 1, 'name': 'Approved' }, { val: 2, 'name': 'Canceled' }]
         };
     }
     ngOnInit() {
+        // load doctor search dynamically
+        setTimeout(() => {
+            this.httpService.postRequest('get-doctor-info', { condition: { doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id } }).subscribe((response) => {
+                for (let i = 0; i < response.data.length; i++) {
+                    let temp = {};
+                    temp['val'] = response.data[i]._id;
+                    temp['name'] = response.data[i].firstname + ' ' + response.data[i].lastname;
+                    this.searchByDoctor.values.push(temp);
+                }
+            });
+        }, 3000);
         if (this.cookie.check('jwtToken')) {
             this.configData.jwtToken = this.cookie.get('jwtToken');
             let data = {
                 token: this.configData.jwtToken,
                 condition: {},
-                sort: { type: 'asc', field: 'booking_date' }
+                sort: { type: 'desc', field: 'booking_date' }
             };
             /* Create condition with respect to the user_type */
             if (this.cookie.check('user_details')) {
@@ -12952,7 +12970,12 @@ let PastAppoinmentsComponent = class PastAppoinmentsComponent {
                 // Create skipFields array(first save all the keys from the dataset)
                 if (response.results.res > 0)
                     this.configData.skipFields = Object.keys(response.results.res[0]);
-                let requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'];
+                let requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'];
+                // Check user_type === 'doctor_office'
+                if (JSON.parse(this.cookie.get('user_details')).user_type === 'doctor_office') {
+                    requiredFields.splice(requiredFields.indexOf('doctors_office_name'), 1);
+                    this.configData.libdata.tableheaders.splice(this.configData.libdata.tableheaders.indexOf('doctors_office_name'), 1);
+                }
                 // Modify the skipFields array(splicing the keys which is in the requiredFields)
                 for (let i = 0; i < requiredFields.length; i++) {
                     this.configData.skipFields.splice(this.configData.skipFields.indexOf(requiredFields[i]), 1);
@@ -12989,558 +13012,6 @@ PastAppoinmentsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./past-appoinments.component.css */ "./src/app/components/booked-events-listing/past-appoinments/past-appoinments.component.css")).default]
     })
 ], PastAppoinmentsComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.css":
-/*!**************************************************************************************************************!*\
-  !*** ./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.css ***!
-  \**************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".example-card {\n  max-width: 400px;\n}\n\n.example-header-image {\n  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');\n  background-size: cover;\n  border: 2px solid rgb(224, 218, 218);\n}\n\n.headerSpan {\n  text-align: center;\n  display: block;\n  margin: auto;\n}\n\n.darkToolbar {\n  background-color: black;\n}\n\n.gridListWrapper {\n  padding: 30px;\n}\n\n.buttonsetToolbar {\n  background-color: #f4f3f8;\n  text-align: center;\n  display: block;\n  padding-top: 10px;\n}\n\n.singleButton {\n  margin: 5px;\n  display: inline-block;\n}\n\n.example-container {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n}\n\n.example-container > * {\n  width: 100%;\n}\n\n.headerSpan {\n  text-align: center;\n  display: block;\n  margin: auto;\n}\n\n.darkToolbar {\n  background-color: black;\n}\n\n.gridListWrapper {\n  padding: 30px;\n}\n\n.buttonsetToolbar {\n  background-color: #f4f3f8;\n  text-align: center;\n  display: block;\n  padding-top: 10px;\n}\n\n.singleButton {\n  margin: 5px;\n  display: inline-block;\n}\n\n.calender_first {\n  margin-bottom: 16px;\n  width: 100%;\n}\n\n.title {\n  text-align: center;\n  background: #57abdc;\n  color: #fff;\n  padding: 16px;\n  margin: 0 16px;\n  margin-bottom: 20px;\n}\n\n.calendar_wrapper {\n  width: 60%;\n  margin: auto;\n  border: 1px solid #00ffb8;\n}\n\n.calendar_wrapper .event_wrapper {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n}\n\n.calendar_wrapper .event_wrapper .mat-form-field {\n  width: 100%;\n}\n\n.time_picker, .button_wrapper {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: justify;\n          justify-content: space-between;\n}\n\n.time_picker .timer, .button_wrapper button {\n  width: 49%;\n}\n\n.button_wrapper {\n  margin-top: 20px;\n}\n\n.button_wrapper button {\n  padding: 5px;\n  border-radius: 0;\n}\n\n.example-card {\n  max-width: 400px;\n}\n\n.example-header-image {\n  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');\n  background-size: cover;\n}\n\n.slotview {\n  background-color: #f4f3f8;\n  padding: 2% 5%;\n  display: -webkit-box;\n  display: flex;\n  flex-wrap: wrap;\n  -webkit-box-pack: center;\n          justify-content: center;\n}\n\nmat-card {\n  margin: 5px;\n  width: 30%;\n}\n\nb {\n  font-weight: 500;\n}\n\nmat-card-content {\n  font-size: 15px;\n}\n\n.filter {\n  align-content: center;\n  margin-left: 3%;\n  margin-right: 3%;\n}\n\n.filter-box {\n  width: 200px;\n  margin-bottom: auto;\n  margin-right: 15px;\n  font-size: 14px;\n}\n\n.filter-box :disabled {\n  color: #000;\n  border-color: lightgray;\n}\n\n.m-r {\n  margin-right: 6px;\n}\n\n.m-l {\n  margin-left: 6px;\n}\n\n.pagination {\n  border: 1px solid lightgray;\n  border-radius: 5px;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  display: inline-block;\n  float: right;\n  font-size: 15px;\n  padding: 5px;\n}\n\n.selectPageCount {\n  width: 45px;\n}\n\n.sample_label {\n  margin-left: 12px;\n}\n\n/* test wrapper */\n\n.lib_wrpr{ display: -webkit-box; display: flex;\n  -webkit-box-pack: justify;\n          justify-content: space-between;\n  flex-wrap: wrap;\n}\n\n.lb_item{\n  width: 49%;\n  border: 1px solid #dadada;\n  margin: 0.5%;\n  box-sizing: border-box;\n  padding: 10px;\n\n}\n\n.lb_item .header{ margin: 0; margin-bottom: 16px;}\n\n.symptoms_type {\n  display:-webkit-box;\n  display:flex; -webkit-box-pack: justify; justify-content: space-between;\n}\n\n.symptoms_type .label_name{ margin: 0;}\n\n.checbox_wrapper{ display: -webkit-box; display: flex;\n  -webkit-box-pack: justify;\n          justify-content: space-between;}\n\n.checbox_wrapper label{ margin:0 5px;}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9ib29rZWQtZXZlbnRzLWxpc3RpbmcvcmVzY2hlZHVsZS1hcHBvaW50bWVudC9yZXNjaGVkdWxlLWFwcG9pbnRtZW50LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxtRkFBbUY7RUFDbkYsc0JBQXNCO0VBQ3RCLG9DQUFvQztBQUN0Qzs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixjQUFjO0VBQ2QsWUFBWTtBQUNkOztBQUVBO0VBQ0UsdUJBQXVCO0FBQ3pCOztBQUVBO0VBQ0UsYUFBYTtBQUNmOztBQUVBO0VBQ0UseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQixjQUFjO0VBQ2QsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0UsV0FBVztFQUNYLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLG9CQUFhO0VBQWIsYUFBYTtFQUNiLDRCQUFzQjtFQUF0Qiw2QkFBc0I7VUFBdEIsc0JBQXNCO0FBQ3hCOztBQUVBO0VBQ0UsV0FBVztBQUNiOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGNBQWM7RUFDZCxZQUFZO0FBQ2Q7O0FBRUE7RUFDRSx1QkFBdUI7QUFDekI7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7RUFDRSx5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLGNBQWM7RUFDZCxpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gscUJBQXFCO0FBQ3ZCOztBQUVBO0VBQ0UsbUJBQW1CO0VBQ25CLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixtQkFBbUI7RUFDbkIsV0FBVztFQUNYLGFBQWE7RUFDYixjQUFjO0VBQ2QsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsVUFBVTtFQUNWLFlBQVk7RUFDWix5QkFBeUI7QUFDM0I7O0FBRUE7RUFDRSxvQkFBYTtFQUFiLGFBQWE7RUFDYiw0QkFBc0I7RUFBdEIsNkJBQXNCO1VBQXRCLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLFdBQVc7QUFDYjs7QUFFQTtFQUNFLG9CQUFhO0VBQWIsYUFBYTtFQUNiLHlCQUE4QjtVQUE5Qiw4QkFBOEI7QUFDaEM7O0FBRUE7RUFDRSxVQUFVO0FBQ1o7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCOztBQUlBO0VBQ0UsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsbUZBQW1GO0VBQ25GLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLHlCQUF5QjtFQUN6QixjQUFjO0VBQ2Qsb0JBQWE7RUFBYixhQUFhO0VBQ2IsZUFBZTtFQUNmLHdCQUF1QjtVQUF2Qix1QkFBdUI7QUFDekI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsVUFBVTtBQUNaOztBQUVBO0VBQ0UsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLHFCQUFxQjtFQUNyQixlQUFlO0VBQ2YsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsWUFBWTtFQUNaLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCx1QkFBdUI7QUFDekI7O0FBRUE7RUFDRSxpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSwyQkFBMkI7RUFDM0Isa0JBQWtCO0VBQ2xCLDBCQUFrQjtFQUFsQix1QkFBa0I7RUFBbEIsa0JBQWtCO0VBQ2xCLHFCQUFxQjtFQUNyQixZQUFZO0VBQ1osZUFBZTtFQUNmLFlBQVk7QUFDZDs7QUFFQTtFQUNFLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGlCQUFpQjtBQUNuQjs7QUFFQSxpQkFBaUI7O0FBQ2pCLFdBQVcsb0JBQWEsRUFBYixhQUFhO0VBQ3RCLHlCQUE4QjtVQUE5Qiw4QkFBOEI7RUFDOUIsZUFBZTtBQUNqQjs7QUFDQTtFQUNFLFVBQVU7RUFDVix5QkFBeUI7RUFDekIsWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixhQUFhOztBQUVmOztBQUNBLGtCQUFrQixTQUFTLEVBQUUsbUJBQW1CLENBQUM7O0FBQ2pEO0VBQ0UsbUJBQVk7RUFBWixZQUFZLEVBQUUseUJBQThCLEVBQTlCLDhCQUE4QjtBQUM5Qzs7QUFDQSw0QkFBNEIsU0FBUyxDQUFDOztBQUN0QyxrQkFBa0Isb0JBQWEsRUFBYixhQUFhO0VBQzdCLHlCQUE4QjtVQUE5Qiw4QkFBOEIsQ0FBQzs7QUFDakMsd0JBQXdCLFlBQVksQ0FBQyIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYm9va2VkLWV2ZW50cy1saXN0aW5nL3Jlc2NoZWR1bGUtYXBwb2ludG1lbnQvcmVzY2hlZHVsZS1hcHBvaW50bWVudC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmV4YW1wbGUtY2FyZCB7XG4gIG1heC13aWR0aDogNDAwcHg7XG59XG5cbi5leGFtcGxlLWhlYWRlci1pbWFnZSB7XG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnaHR0cHM6Ly9tYXRlcmlhbC5hbmd1bGFyLmlvL2Fzc2V0cy9pbWcvZXhhbXBsZXMvc2hpYmExLmpwZycpO1xuICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuICBib3JkZXI6IDJweCBzb2xpZCByZ2IoMjI0LCAyMTgsIDIxOCk7XG59XG5cbi5oZWFkZXJTcGFuIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBkaXNwbGF5OiBibG9jaztcbiAgbWFyZ2luOiBhdXRvO1xufVxuXG4uZGFya1Rvb2xiYXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbn1cblxuLmdyaWRMaXN0V3JhcHBlciB7XG4gIHBhZGRpbmc6IDMwcHg7XG59XG5cbi5idXR0b25zZXRUb29sYmFyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y0ZjNmODtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBkaXNwbGF5OiBibG9jaztcbiAgcGFkZGluZy10b3A6IDEwcHg7XG59XG5cbi5zaW5nbGVCdXR0b24ge1xuICBtYXJnaW46IDVweDtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xufVxuXG4uZXhhbXBsZS1jb250YWluZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xufVxuXG4uZXhhbXBsZS1jb250YWluZXIgPiAqIHtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5oZWFkZXJTcGFuIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBkaXNwbGF5OiBibG9jaztcbiAgbWFyZ2luOiBhdXRvO1xufVxuXG4uZGFya1Rvb2xiYXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbn1cblxuLmdyaWRMaXN0V3JhcHBlciB7XG4gIHBhZGRpbmc6IDMwcHg7XG59XG5cbi5idXR0b25zZXRUb29sYmFyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y0ZjNmODtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBkaXNwbGF5OiBibG9jaztcbiAgcGFkZGluZy10b3A6IDEwcHg7XG59XG5cbi5zaW5nbGVCdXR0b24ge1xuICBtYXJnaW46IDVweDtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xufVxuXG4uY2FsZW5kZXJfZmlyc3Qge1xuICBtYXJnaW4tYm90dG9tOiAxNnB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxuLnRpdGxlIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBiYWNrZ3JvdW5kOiAjNTdhYmRjO1xuICBjb2xvcjogI2ZmZjtcbiAgcGFkZGluZzogMTZweDtcbiAgbWFyZ2luOiAwIDE2cHg7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG59XG5cbi5jYWxlbmRhcl93cmFwcGVyIHtcbiAgd2lkdGg6IDYwJTtcbiAgbWFyZ2luOiBhdXRvO1xuICBib3JkZXI6IDFweCBzb2xpZCAjMDBmZmI4O1xufVxuXG4uY2FsZW5kYXJfd3JhcHBlciAuZXZlbnRfd3JhcHBlciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG59XG5cbi5jYWxlbmRhcl93cmFwcGVyIC5ldmVudF93cmFwcGVyIC5tYXQtZm9ybS1maWVsZCB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4udGltZV9waWNrZXIsIC5idXR0b25fd3JhcHBlciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLnRpbWVfcGlja2VyIC50aW1lciwgLmJ1dHRvbl93cmFwcGVyIGJ1dHRvbiB7XG4gIHdpZHRoOiA0OSU7XG59XG5cbi5idXR0b25fd3JhcHBlciB7XG4gIG1hcmdpbi10b3A6IDIwcHg7XG59XG5cbi5idXR0b25fd3JhcHBlciBidXR0b24ge1xuICBwYWRkaW5nOiA1cHg7XG4gIGJvcmRlci1yYWRpdXM6IDA7XG59XG5cblxuXG4uZXhhbXBsZS1jYXJkIHtcbiAgbWF4LXdpZHRoOiA0MDBweDtcbn1cblxuLmV4YW1wbGUtaGVhZGVyLWltYWdlIHtcbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCdodHRwczovL21hdGVyaWFsLmFuZ3VsYXIuaW8vYXNzZXRzL2ltZy9leGFtcGxlcy9zaGliYTEuanBnJyk7XG4gIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XG59XG5cbi5zbG90dmlldyB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmNGYzZjg7XG4gIHBhZGRpbmc6IDIlIDUlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LXdyYXA6IHdyYXA7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xufVxuXG5tYXQtY2FyZCB7XG4gIG1hcmdpbjogNXB4O1xuICB3aWR0aDogMzAlO1xufVxuXG5iIHtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbn1cblxubWF0LWNhcmQtY29udGVudCB7XG4gIGZvbnQtc2l6ZTogMTVweDtcbn1cblxuLmZpbHRlciB7XG4gIGFsaWduLWNvbnRlbnQ6IGNlbnRlcjtcbiAgbWFyZ2luLWxlZnQ6IDMlO1xuICBtYXJnaW4tcmlnaHQ6IDMlO1xufVxuXG4uZmlsdGVyLWJveCB7XG4gIHdpZHRoOiAyMDBweDtcbiAgbWFyZ2luLWJvdHRvbTogYXV0bztcbiAgbWFyZ2luLXJpZ2h0OiAxNXB4O1xuICBmb250LXNpemU6IDE0cHg7XG59XG5cbi5maWx0ZXItYm94IDpkaXNhYmxlZCB7XG4gIGNvbG9yOiAjMDAwO1xuICBib3JkZXItY29sb3I6IGxpZ2h0Z3JheTtcbn1cblxuLm0tciB7XG4gIG1hcmdpbi1yaWdodDogNnB4O1xufVxuXG4ubS1sIHtcbiAgbWFyZ2luLWxlZnQ6IDZweDtcbn1cblxuLnBhZ2luYXRpb24ge1xuICBib3JkZXI6IDFweCBzb2xpZCBsaWdodGdyYXk7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgd2lkdGg6IGZpdC1jb250ZW50O1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGZsb2F0OiByaWdodDtcbiAgZm9udC1zaXplOiAxNXB4O1xuICBwYWRkaW5nOiA1cHg7XG59XG5cbi5zZWxlY3RQYWdlQ291bnQge1xuICB3aWR0aDogNDVweDtcbn1cblxuLnNhbXBsZV9sYWJlbCB7XG4gIG1hcmdpbi1sZWZ0OiAxMnB4O1xufVxuXG4vKiB0ZXN0IHdyYXBwZXIgKi9cbi5saWJfd3JwcnsgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICBmbGV4LXdyYXA6IHdyYXA7XG59XG4ubGJfaXRlbXtcbiAgd2lkdGg6IDQ5JTtcbiAgYm9yZGVyOiAxcHggc29saWQgI2RhZGFkYTtcbiAgbWFyZ2luOiAwLjUlO1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBwYWRkaW5nOiAxMHB4O1xuXG59XG4ubGJfaXRlbSAuaGVhZGVyeyBtYXJnaW46IDA7IG1hcmdpbi1ib3R0b206IDE2cHg7fVxuLnN5bXB0b21zX3R5cGUge1xuICBkaXNwbGF5OmZsZXg7IGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cbi5zeW1wdG9tc190eXBlIC5sYWJlbF9uYW1leyBtYXJnaW46IDA7fVxuLmNoZWNib3hfd3JhcHBlcnsgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO31cbi5jaGVjYm94X3dyYXBwZXIgbGFiZWx7IG1hcmdpbjowIDVweDt9XG4iXX0= */");
-
-/***/ }),
-
-/***/ "./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.ts":
-/*!*************************************************************************************************************!*\
-  !*** ./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.ts ***!
-  \*************************************************************************************************************/
-/*! exports provided: RescheduleAppointmentComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RescheduleAppointmentComponent", function() { return RescheduleAppointmentComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var moment_es6__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment-es6 */ "./node_modules/moment-es6/index.js");
-/* harmony import */ var moment_es6__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment_es6__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/snack-bar */ "./node_modules/@angular/material/esm2015/snack-bar.js");
-/* harmony import */ var _services_http_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/http-service.service */ "./src/app/services/http-service.service.ts");
-/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/fesm2015/ngx-cookie-service.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../environments/environment */ "./src/environments/environment.ts");
-
-
-
-
-
-
-
-
-let RescheduleAppointmentComponent = class RescheduleAppointmentComponent {
-    constructor(snackBar, activatedRoute, httpRequest, cookieService, router) {
-        this.snackBar = snackBar;
-        this.activatedRoute = activatedRoute;
-        this.httpRequest = httpRequest;
-        this.cookieService = cookieService;
-        this.router = router;
-        this.configData = {
-            appName: 'Calendar Management',
-            jwtToken: "",
-            baseUrl: _environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].calendarApi,
-            endPoint: {
-                add: 'add-or-update-event-data',
-                datalist: 'datalist',
-                deleteEvent: 'delete-single-event',
-                viewEventSlots: 'view-event-eventdayarr',
-                search: 'search',
-                countSlot: 'count-slot',
-                // listBookedEvents: 'list-booked-events',
-                // listBookedEventsCount: 'list-booked-events-count',
-                listUpcomingBookedEvents: 'list-upcoming-booked-events',
-                listUpcomingBookedEventsCount: 'list-upcoming-booked-events-count',
-                deleteBookedEvent: 'delete-booked-event',
-                rescheduleBookedEvent: 'reschedule',
-                getTokenInfo: 'getauthorization-pece-getuserdata'
-            },
-            urls: [],
-            timeZone: [
-                { text: 'Alaska Standard Time', value: '-08:00|America/Anchorage' },
-                { text: 'Pacific Standard Time', value: '-07:00|America/Los_Angeles' },
-                { text: 'Mountain Standard Time(GMT-06:00)', value: '-06:00|America/Denver' },
-                { text: 'Mountain Standard Time(GMT-07:00) (no DST)', value: '-07:00|America/Phoenix' },
-                { text: 'Central Standard Time', value: '-05:00|America/Chicago' },
-                { text: 'Eastern Standard Time', value: '-04:00|America/New_York' },
-                { text: 'Hawaii Standard Time', value: '-10:00|Pacific/Honolulu' }
-            ],
-            eventType: [
-                { text: "Admin Meetings", value: 1 }
-            ],
-            responseData: [],
-            // primaryCondition: {$or: [{event_type: 1}, {event_type: 2}]},
-            primaryCondition: {},
-        };
-        this.availableSlots = [];
-        this.progressSpinner = {
-            mode: 'indeterminate',
-            loading: true,
-            bookingStatus: 'Finding available slots'
-        };
-        /* Search fields */
-        this.filterOptions = {
-            availableDates: '',
-            eventType: '',
-            timezone: ''
-        };
-        this.today = new Date();
-        /* Variable for pagination */
-        this.page = {
-            start: 1,
-            end: 20,
-            page_count: 20,
-            page_no: 1,
-            total_record: 0
-        };
-        this.itemCount = 20;
-        this.arrPage = [];
-        this.jumpToPageNumber = 0;
-    }
-    ngOnInit() {
-        if (this.cookieService.check('jwtToken')) {
-            if (this.cookieService.check('timezone')) {
-                this.filterOptions.timezone = this.cookieService.get('timezone');
-            }
-            else {
-                this.filterOptions.timezone = '-05:00|America/Chicago';
-            }
-            let booking_id = this.activatedRoute.snapshot.params._id;
-            let doctor_id = this.activatedRoute.snapshot.params.doctor_id;
-            this.configData.jwtToken = this.cookieService.get('jwtToken');
-            let data = {
-                token: this.configData.jwtToken,
-                condition: {
-                    _id: booking_id
-                },
-                source: 'google_events'
-            };
-            this.httpRequest.postRequest('get-data', data).subscribe((response) => {
-                this.bookingDetails = response.res[0];
-            });
-            let data2 = {
-                token: this.configData.jwtToken,
-                condition: {
-                    _id: doctor_id
-                }
-            };
-            this.httpRequest.postRequest('get-tech-info', data2).subscribe((response) => {
-                let arrTech = response.data.map(tech => tech._id);
-                this.configData.primaryCondition = { userid: { $in: arrTech } };
-                this.loadAvailableSlots();
-                this.getPageCount();
-            });
-        }
-        else {
-            this.openSnackBar('Token not found', 'Ok');
-        }
-    }
-    /*
-     * getPageCount() count total number of records found in the collection
-     */
-    getPageCount() {
-        let data;
-        if (this.searchData == null) {
-            data = {
-                token: this.configData.jwtToken,
-                condition: this.configData.primaryCondition //{$and:[{event_type: 1}]}
-            };
-        }
-        else {
-            data = this.searchData;
-        }
-        /* If the user is not an admin then load events that created by him/her only */
-        // if (this.data.libConfigData.user_type != 'admin') {
-        //   data.condition = Object.assign(data.condition, {userid: this.data.libConfigData._id});
-        // }
-        this.httpRequest.postRequest(this.configData.endPoint.countSlot, data).subscribe((response) => {
-            if (response.status == 'success') {
-                /* Update value of this.page */
-                this.page.total_record = response.data;
-                if (this.page.total_record < this.page.page_count) {
-                    this.page.end = this.page.total_record;
-                }
-                else {
-                    this.page.end = this.page.page_count;
-                }
-                /* Create page array */
-                this.arrPage = [];
-                for (let i = 0; i < this.page.total_record / this.page.page_count; i++) {
-                    this.arrPage.push(i + 1);
-                }
-            }
-            else {
-                // console.log(response);
-            }
-        });
-    }
-    /*
-     * pageStep is the function to step forward and backward the page
-     * Load next or previous n(page.page_count) items
-     */
-    pageStep(flag = null) {
-        let data;
-        if (flag == 'prev' && this.page.page_no > 1) {
-            this.loading = true;
-            data = {
-                token: this.configData.jwtToken,
-                skip: this.page.start - this.page.page_count - 1,
-                limit: this.page.page_count,
-                timezone: this.filterOptions.timezone,
-                condition: this.configData.primaryCondition
-            };
-        }
-        if (flag == 'next' && (this.page.end < this.page.total_record)) {
-            this.loading = true;
-            data = {
-                token: this.configData.jwtToken,
-                skip: this.page.end,
-                limit: this.page.page_count,
-                timezone: this.filterOptions.timezone,
-                condition: this.configData.primaryCondition
-            };
-        }
-        /*
-         * If the data variable is uninitialized there is no need to execute the httpRequest
-         */
-        if (data != null) {
-            /* If there has a search value then it must be include the search condition with data */
-            if (this.searchData != null) {
-                data.condition = this.searchData.condition;
-            }
-            /* If the user is not an admin then load events that created by him/her only */
-            // if (this.configData.user_type != 'admin') {
-            //   data.condition = Object.assign(data.condition, {userid: this.configData._id});
-            // }
-            this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe((response) => {
-                if (response.status == 'success') {
-                    this.availableSlots = response.data;
-                    this.changePage(flag);
-                }
-                else {
-                    // console.log('response', response);
-                }
-                this.loading = false;
-            });
-        }
-    }
-    /*
-     * Function for changing page variables along with the pageStep
-     */
-    changePage(cflag) {
-        switch (cflag) {
-            /* case 'next' will execute when pageStep('next') execute or on click of forward button */
-            case 'next':
-                this.page.page_no++;
-                this.jumpToPageNumber++;
-                this.page.start = this.page.start + this.page.page_count;
-                if (this.page.end + this.page.page_count <= this.page.total_record) {
-                    this.page.end = this.page.end + this.page.page_count;
-                }
-                else {
-                    this.page.end = this.page.total_record;
-                }
-                break;
-            /* case 'prev' will execute when pageStep('prev') execute or on click of backward button */
-            case 'prev':
-                this.page.page_no--;
-                this.jumpToPageNumber--;
-                this.page.end = this.page.start - 1;
-                this.page.start = this.page.start - this.page.page_count;
-                break;
-        }
-    }
-    /*
-     * Change the page count value and reload items with the changed value
-     */
-    onChangePageCount() {
-        this.loading = true;
-        let data = {
-            token: this.configData.jwtToken,
-            skip: 0,
-            limit: parseInt(this.itemCount),
-            timezone: this.filterOptions.timezone,
-            condition: {}
-        };
-        /* If there has a search value then it must be include the search condition with data */
-        if (this.searchData != null) {
-            data.condition = this.searchData.condition;
-        }
-        else {
-            data.condition.$and = this.configData.primaryCondition.$and;
-        }
-        /* If the user is not an admin then load events that created by him/her only */
-        // if (this.configData.user_type != 'admin') {
-        //   data.condition = Object.assign(data.condition, {userid: this.data.libConfigData._id});
-        // }
-        this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe((response) => {
-            if (response.status == 'success') {
-                // this.ngOnInit();
-                this.availableSlots = response.data;
-                this.page.start = 1;
-                if (parseInt(this.itemCount) < this.page.total_record) {
-                    this.page.end = parseInt(this.itemCount);
-                }
-                else {
-                    this.page.end = this.page.total_record;
-                }
-                this.page.page_count = parseInt(this.itemCount);
-                this.page.page_no = 1;
-                this.jumpToPageNumber = 0;
-                /* Create page array */
-                this.arrPage = [];
-                for (let i = 0; i <= this.page.total_record / this.page.page_count; i++) {
-                    this.arrPage.push(i + 1);
-                }
-            }
-            else {
-                console.log('response', response);
-            }
-            this.loading = false;
-        });
-    }
-    /*
-     * jumpToPage() directly take into the page that calculates for the current page_count
-     */
-    jumpToPage() {
-        this.loading = true;
-        let data = {
-            token: this.configData.jwtToken,
-            skip: this.page.page_count * this.jumpToPageNumber,
-            limit: this.page.page_count,
-            timezone: this.filterOptions.timezone,
-            condition: {}
-        };
-        /* If there has a search value then it must be include the search condition with data */
-        if (this.searchData != null) {
-            data.condition = this.searchData.condition;
-        }
-        data.condition.$and = this.configData.primaryCondition.$and;
-        /* If the user is not an admin then load events that created by him/her only */
-        // if (this.configData.user_type != 'admin') {
-        //   data.condition = Object.assign(data.condition, {userid: this.data.libConfigData._id});
-        // }
-        this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe((response) => {
-            if (response.status == 'success') {
-                this.availableSlots = response.data;
-                this.page.page_no = this.jumpToPageNumber + 1;
-                this.page.start = (this.page.page_count * this.jumpToPageNumber) + 1;
-                if ((this.page.page_count * this.jumpToPageNumber) + this.page.page_count < this.page.total_record) {
-                    this.page.end = (this.page.page_count * this.jumpToPageNumber) + this.page.page_count;
-                }
-                else {
-                    this.page.end = this.page.total_record;
-                }
-            }
-            else {
-                // console.log('response', response);
-            }
-            this.loading = false;
-        });
-    }
-    search() {
-        // const primaryCondition = this.data.libConfigData.primaryCondition;
-        //let searchd:any=this.data.libConfigData.primaryCondition;
-        this.searchData = {
-            condition: {},
-            token: this.configData.jwtToken,
-            timezone: this.filterOptions.timezone
-        };
-        if (this.searchData.condition.$and == null) {
-            this.searchData.condition.$and = [];
-        }
-        if (this.filterOptions.availableDates != '') {
-            this.searchData.condition.$and.push({ start_datetime_unix: { $gte: moment_es6__WEBPACK_IMPORTED_MODULE_2___default()(this.filterOptions.availableDates.begin).subtract(12, 'hours').valueOf() } });
-            this.searchData.condition.$and.push({ start_datetime_unix: { $lte: moment_es6__WEBPACK_IMPORTED_MODULE_2___default()(this.filterOptions.availableDates.end).add(12, 'hours').valueOf() } });
-            // data.condition.end_date = {
-            //   $lte: moment(this.availableDates.end).format('L')
-            // };
-        }
-        this.searchData.condition.$and = this.searchData.condition.$and.concat(this.configData.primaryCondition);
-        /* if (this.filterOptions.eventType != '') {
-          this.searchData.condition.event_type = this.filterOptions.eventType;
-        } */
-        /* If the user is not an admin then load events that created by him/her only */
-        // if (this.data.libConfigData.user_type != 'admin') {
-        //   this.searchData.condition = Object.assign(this.searchData.condition, {userid: this.data.libConfigData._id});
-        // }
-        this.loading = true;
-        this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, this.searchData).subscribe((response) => {
-            if (response.data.length == 0) {
-                this.openSnackBar('No event found', null);
-            }
-            if (response.status == 'success') {
-                this.page.start = 1;
-                if (response.data.length > this.page.page_count) {
-                    this.page.end = this.page.page_count;
-                }
-                else {
-                    this.page.end = response.data.length;
-                }
-                this.page.page_no = 1;
-                this.jumpToPageNumber = 0;
-            }
-            this.availableSlots = response.data;
-            this.loading = false;
-        });
-        this.getPageCount();
-    }
-    /*
-     * resetFilter() reset the search fields and reloads data without any condition
-     */
-    resetFilter() {
-        this.loading = true;
-        /* Reset searchData value to 'null' and filterOptions value to blank('')*/
-        this.searchData = null;
-        this.filterOptions.availableDates = '';
-        this.filterOptions.eventType = '';
-        /* Create data object */
-        let data = {
-            token: this.configData.jwtToken,
-            skip: 0,
-            limit: this.page.page_count,
-            timezone: this.filterOptions.timezone,
-            condition: this.configData.primaryCondition
-        };
-        /* If the user is not an admin then load events that created by him/her only */
-        // if (this.data.libConfigData.user_type != 'admin') {
-        //   data.condition = Object.assign(data.condition, {userid: this.data.libConfigData._id});
-        // }
-        this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe((response) => {
-            if (response.status == 'success') {
-                this.page.start = 1;
-                if (response.data.length > this.page.page_count) {
-                    this.page.end = this.page.page_count;
-                }
-                else {
-                    this.page.end = response.data.length;
-                }
-                this.page.page_no = 1;
-                this.jumpToPageNumber = 0;
-                this.availableSlots = response.data;
-                this.loading = false;
-            }
-            else {
-                this.openSnackBar('Something went wrong. Please try again.', null);
-            }
-        });
-        this.getPageCount();
-    }
-    onChangeTimezone(event) {
-        this.loading = true;
-        this.cookieService.set('timezone', this.filterOptions.timezone);
-        /* Create data object */
-        let data = {
-            token: this.configData.jwtToken,
-            skip: this.page.start - 1,
-            limit: this.page.page_count,
-            timezone: this.filterOptions.timezone,
-            condition: this.configData.primaryCondition
-        };
-        /* If there has a search value then it must be include the search condition with data */
-        if (this.searchData != null) {
-            data.condition = this.searchData.condition;
-        }
-        /* If the user is not an admin then load events that created by him/her only */
-        // if (this.data.libConfigData.user_type != 'admin') {
-        //   data.condition = Object.assign(data.condition, {userid: this.data.libConfigData._id});
-        // }
-        this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe((response) => {
-            if (response.status == 'success') {
-                this.availableSlots = response.data;
-                this.loading = false;
-            }
-            else {
-                this.openSnackBar('Something went wrong. Please try again.', null);
-            }
-        });
-    }
-    loadAvailableSlots() {
-        /* ********************* Loader ****************** */
-        this.progressSpinner.loading = true;
-        let dot = ['.', '. .', '. . .'];
-        for (let i = 0; i < 6; i++) {
-            setTimeout(() => {
-                if (this.progressSpinner.loading) {
-                    this.progressSpinner.bookingStatus = 'Finding available slots ' + dot[i % 3];
-                }
-            }, 500 * (i + 1));
-        }
-        /* *********************************************** */
-        /* Create data object */
-        let data = {
-            token: this.configData.jwtToken,
-            timezone: this.filterOptions.timezone,
-            condition: this.configData.primaryCondition
-        };
-        /* If the user is not an admin then load events that created by him/her only */
-        // if (this.data.libConfigData.user_type != 'admin') {
-        //   data.condition = Object.assign(data.condition, {useremail: this.data.libConfigData.email});
-        // }
-        this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe((response) => {
-            if (response.status == 'success') {
-                // console.log('response', response);
-                this.availableSlots = response.data;
-                this.progressSpinner.loading = false;
-            }
-            else {
-                this.openSnackBar('Something went wrong. Please try again.', null);
-            }
-        });
-    }
-    rebook(item) {
-        let data = {
-            booked_slot_data: this.bookingDetails,
-            reschedule_slot_data: item
-        };
-        /* ****************** Reschedule in google calendar ****************** */
-        if (this.bookingDetails.googleevent != undefined) {
-            let url = 'https://gapi.betoparedes.com/updateevent.php?event=' +
-                this.bookingDetails.googleevent + '&refresh_token=' + this.bookingDetails.refresh_token +
-                '&summary=' + item.event_title + '&start=' + item.startDateTime + '&end=' + item.endDateTime;
-            this.httpRequest.get(url).subscribe((response) => {
-                console.log('response from google', response);
-            });
-        }
-        /* ****************** Reschedule in database ****************** */
-        this.httpRequest.postRequest(this.configData.endPoint.rescheduleBookedEvent, data).subscribe((response) => {
-            if (response.status == 'success') {
-                console.log('response', response);
-                this.progressSpinner.loading = false;
-                // this.dialogRef.close(true);
-                this.openSnackBar('Rescheduled successfully', 'Ok');
-                this.router.navigateByUrl('doctor-office/dashboard');
-            }
-            else {
-                this.openSnackBar('Something went wrong. Please try again.', null);
-            }
-        });
-    }
-    openSnackBar(message, action) {
-        this.snackBar.open(message, action, {
-            duration: 5000,
-        });
-    }
-};
-RescheduleAppointmentComponent.ctorParameters = () => [
-    { type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"] },
-    { type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_4__["HttpServiceService"] },
-    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] }
-];
-RescheduleAppointmentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-reschedule-appointment',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./reschedule-appointment.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./reschedule-appointment.component.css */ "./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.css")).default]
-    })
-], RescheduleAppointmentComponent);
 
 
 
@@ -13633,8 +13104,9 @@ let UpcomingAppoinmentsComponent = class UpcomingAppoinmentsComponent {
                 slot_end_time: 'End Time',
                 timezoneName: 'Timezone',
                 status: 'Status',
-                // doctors_office_name: 'Doctors office name',
-                username: 'Tech Name'
+                doctors_office_name: 'Doctors office name',
+                username: 'Tech Name',
+                is_google_event: 'Calendar Event'
             },
             source: 'google_events',
             date_search_source_count: 0,
@@ -13642,22 +13114,22 @@ let UpcomingAppoinmentsComponent = class UpcomingAppoinmentsComponent {
                 basecondition: {},
                 detailview_override: [],
                 updateendpoint: 'statusupdate',
+                hidestatustogglebutton: true,
                 hidedeletebutton: true,
                 hideeditbutton: true,
-                tableheaders: ['patient_name', 'doctor_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'],
+                tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'is_google_event', 'status'],
                 custombuttons: [
                     {
                         label: "Cancel", type: 'action', datatype: 'api',
                         endpoint: 'delete-booked-event', otherparam: [],
-                        // cond:'status', condval:0,
+                        cond: 'status', condval: 0,
                         param: '_id', refreshdata: true,
                     },
                     {
                         label: "Reschedule",
                         route: "doctor-office/reschedule-appointment",
                         type: 'internallink',
-                        //cond:'status',
-                        //condval:0,
+                        cond: 'is_google_event', condval: true,
                         param: ['_id', 'doctor_id'],
                     }
                 ]
@@ -13669,7 +13141,7 @@ let UpcomingAppoinmentsComponent = class UpcomingAppoinmentsComponent {
                 "pagecount": 1
             },
             sortdata: {
-                "type": 'asc',
+                "type": 'desc',
                 "field": 'booking_date',
                 "options": ['patient_name', 'booking_date', 'startdate', 'slot', 'slot_end_time']
             },
@@ -13722,7 +13194,7 @@ let UpcomingAppoinmentsComponent = class UpcomingAppoinmentsComponent {
             let data = {
                 token: this.configData.jwtToken,
                 condition: {},
-                sort: { type: 'asc', field: 'booking_date' }
+                sort: { type: 'desc', field: 'booking_date' }
             };
             /* Create condition with respect to the user_type */
             if (this.cookie.check('user_details')) {
@@ -13759,7 +13231,12 @@ let UpcomingAppoinmentsComponent = class UpcomingAppoinmentsComponent {
                 // Create skipFields array(first save all the keys from the dataset)
                 if (response.results.res > 0)
                     this.configData.skipFields = Object.keys(response.results.res[0]);
-                let requiredFields = ['patient_name', 'doctor_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'];
+                let requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'is_google_event', 'status'];
+                // Check user_type === 'doctor_office'
+                if (JSON.parse(this.cookie.get('user_details')).user_type === 'doctor_office') {
+                    requiredFields.splice(requiredFields.indexOf('doctors_office_name'), 1);
+                    this.configData.libdata.tableheaders.splice(this.configData.libdata.tableheaders.indexOf('doctors_office_name'), 1);
+                }
                 // Modify the skipFields array(splicing the keys which is in the requiredFields)
                 for (let i = 0; i < requiredFields.length; i++) {
                     this.configData.skipFields.splice(this.configData.skipFields.indexOf(requiredFields[i]), 1);
@@ -17506,10 +16983,7 @@ let AddPatientManuallyComponent = class AddPatientManuallyComponent {
             responseData: '',
             patientInfoFormFields: [],
             calendarInfoFormFields: {},
-            primaryCondition: {
-                $or: [{ event_type: 1 }, { event_type: 2 }],
-                userid: { $in: JSON.parse(this.cookieService.get('user_details')).tech_id }
-            }
+            primaryCondition: {}
         };
         this.loader = false;
         this.headerFlag = this.activatedRoute.snapshot.url[0].path;
@@ -18186,10 +17660,10 @@ let AddPatientManuallyComponent = class AddPatientManuallyComponent {
                 let hiddenFields = [
                     { type: 'input', name: 'doctors_office_id', value: this.userDetails._id, hidden: true },
                     { type: 'input', name: 'parent_type', value: response.data.parent_type, hidden: true },
-                    { type: 'input', name: 'parent_id', value: response.data.parent_id, hidden: true },
-                    { type: 'input', name: 'userid', value: this.userDetails._id, hidden: true },
-                    { type: 'input', name: 'username', value: this.userDetails.center_name, hidden: true },
-                    { type: 'input', name: 'useremail', value: this.userDetails.email, hidden: true }
+                    { type: 'input', name: 'parent_id', value: response.data.parent_id, hidden: true }
+                    // {type: 'input', name: 'userid', value: this.userDetails._id, hidden: true},
+                    // {type: 'input', name: 'username', value: this.userDetails.center_name, hidden: true},
+                    // {type: 'input', name: 'useremail', value: this.userDetails.email, hidden: true}
                 ];
                 this.configData = Object.assign(this.configData, {
                     patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields, calendarInfoFormFields)
@@ -19671,7 +19145,7 @@ let BookAppoinmentNowComponent = class BookAppoinmentNowComponent {
             console.log('The dialog was closed', result);
             this.configData.responseData = [];
             this.configData.primaryCondition = {
-                userid: { $in: [result.tech_id] }
+                userid: { $in: result.tech_id }
             };
             this.httpRequestService.postRequest(this.configData.endPoint.viewEventSlots, {
                 token: this.configData.jwtToken,
@@ -19729,6 +19203,7 @@ let ChooseDoctorDialog = class ChooseDoctorDialog {
                 this.techList = response._dropdown;
             else
                 this.openSnackBar('No tech found for this doctor', 'Ok');
+            this.selectedIds.tech_id = response._dropdown.map(tech => tech.value);
             this.loadingTech = false;
         });
         this.selectedIds.doctor_id = doctor.doctor_id;
@@ -19823,6 +19298,92 @@ let DoctorDashboardComponent = class DoctorDashboardComponent {
         this.activatedRoute = activatedRoute;
         this.matSnackBar = matSnackBar;
         this.deviceService = deviceService;
+        // Lib list
+        this.allBillerData = [];
+        this.billerData_count = 0;
+        this.allUserData_skip = [
+            "_id",
+            "report_file_type",
+            "tech_id",
+            "tech_email",
+            "batch_name",
+            "report_type",
+            "status",
+            "file_basepath",
+            "file_bucketname",
+            "file_name",
+            "file_original_name",
+            "file_type",
+            "converted_image",
+            "images",
+            "patient_details",
+            "patient_name_search",
+            "report_life_circle",
+            "note",
+            "additional_potential_health_risks",
+            "cpt_codes",
+            "created_at"
+        ];
+        this.editUrl = "admin/biller-management/edit";
+        this.libdata = {
+            basecondition: {},
+            updateendpoint: '',
+            custombuttons: [
+                {
+                    label: "View Report",
+                    route: "admin/patient-record/",
+                    type: 'internallink',
+                    param: ['_id'],
+                },
+            ],
+            hideeditbutton: true,
+            hidedeletebutton: true,
+            hidestatustogglebutton: true,
+            hideviewbutton: true,
+            tableheaders: [
+                "doctor_name",
+                "tech_name",
+                "patient_name",
+                "status_text",
+                "created_at_datetime",
+                "cpt_code_count",
+                "addl_hlth_risk"
+            ]
+        };
+        this.allUserData_modify_header = {
+            "doctor_name": "Doctor Name",
+            "tech_name": "Tech Name",
+            "patient_name": "Patient Name",
+            "status_text": "Status",
+            "created_at_datetime": "Report Added",
+            "cpt_code_count": "CPT Code Count",
+            "addl_hlth_risk": "Addl Hlth Risk"
+        };
+        this.UpdateEndpoint = "addorupdatedata";
+        this.deleteEndpoint = "deletesingledata";
+        this.tableName = "data_pece";
+        this.datacollection = 'getbillerlistdata';
+        this.sortdata = {
+            "type": 'desc',
+            "field": 'firstname',
+            "options": ['firstname', 'email', 'created_date']
+        };
+        this.limitcond = {
+            "limit": 10,
+            "skip": 0,
+            "pagecount": 1
+        };
+        this.previewModal_detail_skip = ['_id', 'user_type', 'status', 'password', 'created_at'];
+        this.status = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
+        this.parent_type = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
+        this.SearchingEndpoint = "datalist";
+        this.SearchingSourceName = "data_biller_list";
+        this.search_settings = {
+            selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }, { label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type }],
+            textsearch: [{ label: "Search By Name", field: 'name_search' },
+                { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }]
+        };
+        // lib list end
         this.authData = {};
         this.htmlText = {
             buttonText: "Add One",
@@ -19863,6 +19424,30 @@ let DoctorDashboardComponent = class DoctorDashboardComponent {
         this.activatedRoute.data.forEach(resolveData => {
             this.allResolveData = resolveData.doctordata.data;
             this.viewReportProcessData(this.htmlText.tableHeaderText);
+        });
+        // lib list
+        //this.libdata.basecondition.tech_id = this.authData.userData._id;
+        let endpoint = 'getPatientlistdata';
+        let endpointc = 'getPatientlistdata-count';
+        let data = {
+            "condition": {
+                "limit": 10,
+                "skip": 0
+            },
+            sort: {
+                "type": 'desc',
+                "field": 'patient_name'
+            }
+        };
+        this.http.httpViaPost(endpointc, data).subscribe((res) => {
+            this.billerData_count = res.count;
+        }, error => {
+            console.log('Oooops!');
+        });
+        this.http.httpViaPost(endpoint, data).subscribe((res) => {
+            this.allBillerData = res.results.res;
+        }, error => {
+            console.log('Oooops!');
         });
     }
     ngOnInit() {
@@ -21005,6 +20590,65 @@ SignatureManagementComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"](
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./signature-management.component.css */ "./src/app/components/doctor/signature-management/signature-management.component.css")).default]
     })
 ], SignatureManagementComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/encounter-form/encounter-form.component.css":
+/*!************************************************************************!*\
+  !*** ./src/app/components/encounter-form/encounter-form.component.css ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZW5jb3VudGVyLWZvcm0vZW5jb3VudGVyLWZvcm0uY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/components/encounter-form/encounter-form.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/encounter-form/encounter-form.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: EncounterFormComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EncounterFormComponent", function() { return EncounterFormComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_http_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/http-service.service */ "./src/app/services/http-service.service.ts");
+
+
+
+let EncounterFormComponent = class EncounterFormComponent {
+    constructor(http) {
+        this.http = http;
+        let data = {
+            "source": "",
+            "condition": ""
+        };
+        this.http.httpViaPost("get-report-data", data).subscribe((response) => {
+            // console.log('7777',response);
+            this.html_body = response.res;
+        });
+    }
+    ngOnInit() {
+    }
+};
+EncounterFormComponent.ctorParameters = () => [
+    { type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_2__["HttpServiceService"] }
+];
+EncounterFormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-encounter-form',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./encounter-form.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/encounter-form/encounter-form.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./encounter-form.component.css */ "./src/app/components/encounter-form/encounter-form.component.css")).default]
+    })
+], EncounterFormComponent);
 
 
 
@@ -22740,6 +22384,7 @@ let ReportConformationComponent = class ReportConformationComponent {
                                 if (this.htmlText.confirmSubmittedDataSource[loop].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
                                     /* checking duplicate */
                                     if (typeof (this.htmlText.confirmSubmittedDataSource[loop].patient_find_flag) == 'undefined') {
+                                        console.log(">>>", response.data.match_patient[loop2]);
                                         this.htmlText.confirmSubmittedDataSource[loop].patient_find_flag = true;
                                         this.htmlText.confirmSubmittedDataSource[loop].patient_details.push(response.data.match_patient[loop2]);
                                         this.htmlText.confirmSubmittedDataSource[loop].status = 3;
@@ -22771,13 +22416,12 @@ let ReportConformationComponent = class ReportConformationComponent {
                             }
                         }
                         /* Add not find data */
-                        this.htmlText.notFindDataSource = [];
                         var deleteIndex = [];
                         for (let loop = 0; loop < this.htmlText.confirmSubmittedDataSource.length; loop++) {
                             if (typeof (this.htmlText.confirmSubmittedDataSource[loop].patient_find_flag) == 'undefined') {
                                 this.htmlText.notFindDataSource.push(this.htmlText.confirmSubmittedDataSource[loop]);
-                                this.htmlText.notFindDataSource[loop].status = 3;
-                                this.htmlText.notFindDataSource[loop].report_life_circle.push({
+                                this.htmlText.notFindDataSource[this.htmlText.notFindDataSource.length - 1].status = 3;
+                                this.htmlText.notFindDataSource[this.htmlText.notFindDataSource.length - 1].report_life_circle.push({
                                     upload_by_tech_id: this.htmlText.userData.user_details._id,
                                     upload_date: Date.now(),
                                     upload_status: 3,
@@ -23115,6 +22759,92 @@ let TechDashboardComponent = class TechDashboardComponent {
         this.activatedRoute = activatedRoute;
         this.commonFunction = commonFunction;
         this.dialog = dialog;
+        // Lib list
+        this.allBillerData = [];
+        this.billerData_count = 0;
+        this.allUserData_skip = [
+            "_id",
+            "report_file_type",
+            "tech_id",
+            "tech_email",
+            "batch_name",
+            "report_type",
+            "status",
+            "file_basepath",
+            "file_bucketname",
+            "file_name",
+            "file_original_name",
+            "file_type",
+            "converted_image",
+            "images",
+            "patient_details",
+            "patient_name_search",
+            "report_life_circle",
+            "note",
+            "additional_potential_health_risks",
+            "cpt_codes",
+            "created_at"
+        ];
+        this.editUrl = "admin/biller-management/edit";
+        this.libdata = {
+            basecondition: {},
+            updateendpoint: '',
+            custombuttons: [
+                {
+                    label: "View Report",
+                    route: "admin/patient-record/",
+                    type: 'internallink',
+                    param: ['_id'],
+                },
+            ],
+            hideeditbutton: true,
+            hidedeletebutton: true,
+            hidestatustogglebutton: true,
+            hideviewbutton: true,
+            tableheaders: [
+                "doctor_name",
+                "tech_name",
+                "patient_name",
+                "status_text",
+                "created_at_datetime",
+                "cpt_code_count",
+                "addl_hlth_risk"
+            ]
+        };
+        this.allUserData_modify_header = {
+            "doctor_name": "Doctor Name",
+            "tech_name": "Tech Name",
+            "patient_name": "Patient Name",
+            "status_text": "Status",
+            "created_at_datetime": "Report Added",
+            "cpt_code_count": "CPT Code Count",
+            "addl_hlth_risk": "Addl Hlth Risk"
+        };
+        this.UpdateEndpoint = "addorupdatedata";
+        this.deleteEndpoint = "deletesingledata";
+        this.tableName = "data_pece";
+        this.datacollection = 'getbillerlistdata';
+        this.sortdata = {
+            "type": 'desc',
+            "field": 'firstname',
+            "options": ['firstname', 'email', 'created_date']
+        };
+        this.limitcond = {
+            "limit": 10,
+            "skip": 0,
+            "pagecount": 1
+        };
+        this.previewModal_detail_skip = ['_id', 'user_type', 'status', 'password', 'created_at'];
+        this.status = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
+        this.parent_type = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
+        this.SearchingEndpoint = "datalist";
+        this.SearchingSourceName = "data_biller_list";
+        this.search_settings = {
+            selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }, { label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type }],
+            textsearch: [{ label: "Search By Name", field: 'name_search' },
+                { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }]
+        };
+        // lib list end
         this.commonArray = [];
         this.searchJson = {
             doctorName: "",
@@ -23131,11 +22861,40 @@ let TechDashboardComponent = class TechDashboardComponent {
         let allData = cookie.getAll();
         this.authData["userData"] = JSON.parse(allData.user_details);
         this.authData["jwtToken"] = cookie.get('jwtToken');
+        /* Get Auth Token */
+        this.jwtToken = cookie.get('jwtToken');
         this.activatedRoute.data.forEach((data) => {
             this.allResolveData = data.techDashboardData.data;
             this.allResolveData["totalRemainToProcessCount"] = this.allResolveData.totalReportCount - this.allResolveData.processedReportCount;
             let allDashboardData = this.allResolveData.totalReportData;
             this.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
+        });
+        // lib list
+        this.libdata.basecondition.tech_id = this.authData.userData._id;
+        let endpoint = 'getPatientlistdata';
+        let endpointc = 'getPatientlistdata-count';
+        let data = {
+            "condition": {
+                "limit": 10,
+                "skip": 0
+            },
+            sort: {
+                "type": 'desc',
+                "field": 'patient_name'
+            },
+            basecondition: {
+                "tech_id": this.authData.userData._id
+            }
+        };
+        this.httpService.httpViaPost(endpointc, data).subscribe((res) => {
+            this.billerData_count = res.count;
+        }, error => {
+            console.log('Oooops!');
+        });
+        this.httpService.httpViaPost(endpoint, data).subscribe((res) => {
+            this.allBillerData = res.results.res;
+        }, error => {
+            console.log('Oooops!');
         });
     }
     ngOnInit() {
@@ -23659,7 +23418,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_distributors_distributors_dashboard_distributors_dashboard_component__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(/*! ../components/distributors/distributors-dashboard/distributors-dashboard.component */ "./src/app/components/distributors/distributors-dashboard/distributors-dashboard.component.ts");
 /* harmony import */ var _components_adminbiller_adminbiller_dashboard_adminbiller_dashboard_component__WEBPACK_IMPORTED_MODULE_75__ = __webpack_require__(/*! ../components/adminbiller/adminbiller-dashboard/adminbiller-dashboard.component */ "./src/app/components/adminbiller/adminbiller-dashboard/adminbiller-dashboard.component.ts");
 /* harmony import */ var _components_doctor_office_add_patient_add_patient_manually_add_patient_manually_component__WEBPACK_IMPORTED_MODULE_76__ = __webpack_require__(/*! ../components/doctor-office/add-patient/add-patient-manually/add-patient-manually.component */ "./src/app/components/doctor-office/add-patient/add-patient-manually/add-patient-manually.component.ts");
-/* harmony import */ var _components_booked_events_listing_reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(/*! ../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component */ "./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.ts");
+/* harmony import */ var _components_encounter_form_encounter_form_component__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(/*! ../components/encounter-form/encounter-form.component */ "./src/app/components/encounter-form/encounter-form.component.ts");
 
 
 
@@ -23757,6 +23516,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component"
 
 // import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
 const routes = [
@@ -23876,6 +23636,19 @@ const routes = [
     {
         path: 'admin/patient-record/:_id',
         component: _components_doctor_doctor_dashboard_patient_report_view_patient_report_view_component__WEBPACK_IMPORTED_MODULE_41__["PatientReportViewComponent"],
+        canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]],
+        resolve: { data: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"] },
+        data: {
+            requestcondition: {
+                source: 'data_pece',
+                condition: {}
+            },
+            endpoint: 'report-view'
+        },
+    },
+    {
+        path: 'admin/patient-record/encounter/:_id',
+        component: _components_encounter_form_encounter_form_component__WEBPACK_IMPORTED_MODULE_77__["EncounterFormComponent"],
         canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]],
         resolve: { data: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"] },
         data: {
@@ -25310,11 +25083,11 @@ const routes = [
         component: _components_doctor_office_manage_appointments_book_appoinment_now_book_appoinment_now_component__WEBPACK_IMPORTED_MODULE_58__["BookAppoinmentNowComponent"],
         canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]],
     },
-    {
-        path: 'doctor-office/reschedule-appointment/:_id/:doctor_id',
-        component: _components_booked_events_listing_reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_77__["RescheduleAppointmentComponent"],
-        canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]]
-    },
+    // {
+    //   path: 'doctor-office/reschedule-appointment/:_id/:doctor_id',
+    //   component: RescheduleAppointmentComponent,
+    //   canActivate: [AuthguardService]
+    // },
     /* Faq */
     {
         path: 'doctor-office/faq',

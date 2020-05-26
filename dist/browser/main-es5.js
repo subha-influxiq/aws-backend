@@ -383,7 +383,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-admin-header></app-admin-header>\n\n<mat-card class=\"admin_wrapper\">\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br> Major Doctors</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_biller }}</h4>\n        <p class=\"doctorNumber\">Total Number of<br> Billers</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_tech }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br>Techs</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_distributor }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br> Distributor</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/distributors-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctors_group_admin }}</h4>\n        <p class=\"doctorNumber\">Total Number of<br> Doctors Group Admin</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/doctor-management/group']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_biller_admin }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br>Biller Admin</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/adminbiller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <!-- Doctor occide related -->\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/doctorOffice.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Doctor's Office</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Diagnostic Admin</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Doctors</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n  </mat-card-content>\n\n  <!-- Doctor other related -->\n  <mat-card-content class=\"content_wrapper\">\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/salesPerson.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }} </h4>\n        <p class=\"doctorNumber\">Total Number of<br> Sales Person</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Appointments<br> Pending</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/calenderAppointment.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Appointments<br> Completed</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <!-- Report Status Section Start -->\n  <mat-card-content class=\"admin_superbillsection\">\n    <h1>Physician Reports Status</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Manual Records\n          </p>\n          <h2> {{ allResolveData.total_reports_type_manual }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Total Manual Reports');\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            File Records\n          </p>\n          <h2> {{ allResolveData.total_reports_type_file }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Total File Reports');\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n  <!-- Report Status Section End -->\n\n\n  <mat-card-content class=\"admin_superbillsection\">\n    <h1>Physician Report Process Status</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Images Not Processed\n          </p>\n          <h2> {{ allResolveData.total_pdf_to_images_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Images Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Basic Details Not Processed\n          </p>\n          <h2> {{ allResolveData.total_basic_details_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Basic Details Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item \">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Risk Markers Not Processed\n          </p>\n          <h2> {{ allResolveData.total_code_not_exists }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Risk Markers Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n\n\n  <mat-card-content class=\"admin_superbillsection superbillerContainer\">\n    <h1>Physician Report and Super Bills</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports Added\n          </p>\n          <h2> {{ allResolveData.total_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Processed\n          </p>\n          <h2> {{ allResolveData.total_reports - allResolveData.total_pdf_to_images_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Signed\n          </p>\n          <h2> {{ allResolveData.total_sign_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Sent to <br>\n            Biller\n          </p>\n          <h2> {{ allResolveData.total_send_to_supar_biller_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Super Bill')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Downloaded </p>\n          <h2> {{ allResolveData.total_reports_download }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Download Bill')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Pending Sing </p>\n          <h2> {{ allResolveData.total_not_sign_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Reports Pending Sing')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n  </mat-card-content>\n\n\n\n  <!-- All Data listing start here(default listing) -->\n  <mat-card-content class=\"table_wrapper\">\n\n    <!-- table -->\n    <lib-listing\n      class=\"DataTable\" \n      *ngIf=\"allBillerData.length>0\" \n      [datasource]=\"allBillerData\" \n      [skip]=\"allUserData_skip\"\n      [modify_header_array]=\"allUserData_modify_header\" \n      [detail_skip_array]=\"previewModal_detail_skip\" \n      [apiurl]=\"apiUrl\"\n      [sourcedata]=\"tableName\" \n      [editroute]=\"editUrl\" \n      [jwttoken]=\"user_cookie\" \n      [statusarr]=\"status\"\n      [updateendpoint]=\"UpdateEndpoint\" \n      [deleteendpoint]=\"deleteEndpoint\" \n      [date_search_endpoint]=\"SearchingEndpoint\"\n      [date_search_source]=\"SearchingSourceName\" \n      [search_settings]=\"search_settings\" \n      [sortdata]=\"sortdata\" \n      [datacollection]=\"datacollection\" \n      [libdata]=\"libdata\" \n      [date_search_source_count]=\"billerData_count\" \n      [limitcond]=\"limitcond\" >\n    </lib-listing>\n\n  </mat-card-content>\n  <!-- dashboard all listing end here -->\n</mat-card>\n\n<app-admin-footer></app-admin-footer>";
+    __webpack_exports__["default"] = "<app-admin-header></app-admin-header>\n\n<mat-card class=\"admin_wrapper\">\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br> Major Doctors</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_biller }}</h4>\n        <p class=\"doctorNumber\">Total Number of<br> Billers</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_tech }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br>Techs</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_distributor }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br> Distributor</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/distributors-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctors_group_admin }}</h4>\n        <p class=\"doctorNumber\">Total Number of<br> Doctors Group Admin</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/doctor-management/group']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/adminDoctoricon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_biller_admin }}</h4>\n        <p class=\"doctorNumber\">Total Number of <br>Biller Admin</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/adminbiller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <!-- Doctor occide related -->\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/doctorOffice.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Doctor's Office</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon2.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Diagnostic Admin</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon3.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor_office }}</h4>\n        <p class=\"doctorNumber\">Total No of <br>Doctors</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n  </mat-card-content>\n\n  <!-- Doctor other related -->\n  <mat-card-content class=\"content_wrapper\">\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/salesPerson.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }} </h4>\n        <p class=\"doctorNumber\">Total Number of<br> Sales Person</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerNoteicon1.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Appointments<br> Pending</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/calenderAppointment.png\">\n      </span>\n      <span class=\"counteer\">\n        <h4 class=\"dataCount\"> {{ allResolveData.total_doctor }}</h4>\n        <p class=\"doctorNumber\">Total Appointments<br> Completed</p>\n      </span>\n      <span class=\"button_wrapper\">\n        <button mat-flat-button [routerLink]=\"['/admin/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <!-- Report Status Section Start -->\n  <mat-card-content class=\"admin_superbillsection\">\n    <h1>Physician Reports Status</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Manual Records\n          </p>\n          <h2> {{ allResolveData.total_reports_type_manual }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Total Manual Reports');\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            File Records\n          </p>\n          <h2> {{ allResolveData.total_reports_type_file }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Total File Reports');\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n  <!-- Report Status Section End -->\n\n\n  <mat-card-content class=\"admin_superbillsection\">\n    <h1>Physician Report Process Status</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Images Not Processed\n          </p>\n          <h2> {{ allResolveData.total_pdf_to_images_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Images Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Basic Details Not Processed\n          </p>\n          <h2> {{ allResolveData.total_basic_details_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Basic Details Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item \">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Risk Markers Not Processed\n          </p>\n          <h2> {{ allResolveData.total_code_not_exists }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Risk Markers Not Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n\n\n  <mat-card-content class=\"admin_superbillsection superbillerContainer\">\n    <h1>Physician Report and Super Bills</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports Added\n          </p>\n          <h2> {{ allResolveData.total_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Processed\n          </p>\n          <h2> {{ allResolveData.total_reports - allResolveData.total_pdf_to_images_not_process }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Signed\n          </p>\n          <h2> {{ allResolveData.total_sign_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Sent to <br>\n            Biller\n          </p>\n          <h2> {{ allResolveData.total_send_to_supar_biller_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Super Bill')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Downloaded </p>\n          <h2> {{ allResolveData.total_reports_download }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Download Bill')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Pending Sing </p>\n          <h2> {{ allResolveData.total_not_sign_reports }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Reports Pending Sing')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n  </mat-card-content>\n\n\n\n  <!-- All Data listing start here(default listing) -->\n  <mat-card-content class=\"table_wrapper\">\n\n    <!-- table -->\n    <lib-listing\n      class=\"DataTable\" \n      *ngIf=\"allBillerData.length>0\" \n      [datasource]=\"allBillerData\" \n      [skip]=\"allUserData_skip\"\n      [modify_header_array]=\"allUserData_modify_header\" \n      [detail_skip_array]=\"previewModal_detail_skip\" \n      [apiurl]=\"apiUrl\"\n      [sourcedata]=\"tableName\" \n      [editroute]=\"editUrl\" \n      [jwttoken]=\"jwtToken\" \n      [statusarr]=\"status\"\n      [updateendpoint]=\"UpdateEndpoint\" \n      [deleteendpoint]=\"deleteEndpoint\" \n      [date_search_endpoint]=\"SearchingEndpoint\"\n      [date_search_source]=\"SearchingSourceName\" \n      [search_settings]=\"search_settings\" \n      [sortdata]=\"sortdata\" \n      [datacollection]=\"datacollection\" \n      [libdata]=\"libdata\" \n      [date_search_source_count]=\"billerData_count\" \n      [limitcond]=\"limitcond\" >\n    </lib-listing>\n\n  </mat-card-content>\n  <!-- dashboard all listing end here -->\n</mat-card>\n\n<app-admin-footer></app-admin-footer>";
     /***/
   },
 
@@ -1468,26 +1468,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
-  "./node_modules/raw-loader/dist/cjs.js!./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.html":
-  /*!*****************************************************************************************************************************************************!*\
-    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.html ***!
-    \*****************************************************************************************************************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function node_modulesRawLoaderDistCjsJsSrcAppComponentsBookedEventsListingRescheduleAppointmentRescheduleAppointmentComponentHtml(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = "<!-- Listing starts -->\n<mat-dialog-content>\n  <div class=\"center\">\n    <mat-label>\n      <b>{{availableSlots.length > 0 || progressSpinner.loading ? 'Available slots' : 'No slot available'}}</b>\n    </mat-label>\n  </div>\n\n  <div class=\"center\" *ngIf=\"progressSpinner.loading\">\n    <mat-progress-spinner [mode]=\"progressSpinner.mode\"></mat-progress-spinner> <br>\n    <mat-label><b>{{progressSpinner.bookingStatus}}</b></mat-label>\n  </div>\n\n\n  <div class=\"filter\" *ngIf=\"availableSlots.length > 0\">\n\n    <!-- Update timezone -->\n    <mat-form-field appearance=\"outline\" class=\"filter-box\">\n      <mat-label>My timezone</mat-label>\n      <mat-select [(ngModel)]=\"filterOptions.timezone\" (selectionChange)=\"onChangeTimezone($event)\"\n                  placeholder=\"Change timezone\">\n        <mat-option *ngFor=\"let tz of configData.timeZone;\" [value]=\"tz.value\">{{ tz.text }}</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <!-- Event Type -->\n    <!-- <mat-form-field appearance=\"outline\" class=\"filter-box\">\n      <mat-label>Event Type</mat-label>\n      <mat-select [(ngModel)]=\"filterOptions.eventType\">\n        <mat-option *ngFor=\"let et of libConfigData.eventType;\" [value]=\"et.value\">{{ et.text }}\n        </mat-option>\n      </mat-select>\n    </mat-form-field> -->\n\n    <!-- Search by Date range -->\n    <mat-form-field appearance=\"outline\" class=\"filter-box\">\n      <mat-label>Search by date range</mat-label>\n      <input matInput [(ngModel)]=\"filterOptions.availableDates\" placeholder=\"Date range\" [satDatepicker]=\"picker2\"\n             [min]=\"today\" disabled>\n      <sat-datepicker #picker2 [rangeMode]=\"true\" disabled=\"false\"></sat-datepicker>\n      <sat-datepicker-toggle matSuffix [for]=\"picker2\"></sat-datepicker-toggle>\n    </mat-form-field>\n\n    <!-- Search button -->\n    <button mat-stroked-button color=\"primary\" class=\"m-r\" (click)=\"search()\">\n      <mat-icon>search</mat-icon>\n    </button>\n\n    <!-- Reset filter button -->\n    <button mat-stroked-button color=\"primary\" class=\"m-l\" (click)=\"resetFilter()\" matTooltip=\"Reset filter\">\n      <mat-icon>rotate_right</mat-icon>\n    </button>\n\n\n    <!-- -------------------------- Pagination start ------------------------ -->\n    <div class=\"pagination\">\n      <button mat-icon-button (click)=\"pageStep('prev')\">\n        <mat-icon>arrow_back</mat-icon>\n      </button>\n      <mat-label>\n        <b *ngIf=\"page.total_record == 0\">No event slot found</b>\n        <b *ngIf=\"page.total_record != 0\">Showing results {{page.start}} - {{page.end}} of {{page.total_record}}</b>\n      </mat-label>\n      <button mat-icon-button (click)=\"pageStep('next')\">\n        <mat-icon>arrow_forward</mat-icon>\n      </button>\n\n      <br>\n      <mat-label class=\"sample_label\">Items/page:</mat-label> &nbsp;\n      <mat-select class=\"selectPageCount\" [(ngModel)]=\"itemCount\" (selectionChange)=\"onChangePageCount()\">\n        <mat-option [value]=\"20\">20</mat-option>\n        <mat-option [value]=\"50\">50</mat-option>\n        <mat-option [value]=\"100\">100</mat-option>\n        <mat-option [value]=\"200\">200</mat-option>\n      </mat-select>\n\n      <mat-label class=\"sample_label\">Page:</mat-label> &nbsp;\n      <mat-select class=\"selectPageCount\" [(ngModel)]=\"jumpToPageNumber\" (selectionChange)=\"jumpToPage()\">\n        <mat-option *ngFor=\"let i of arrPage\" [value]=\"i - 1\">\n          {{i}}\n        </mat-option>\n      </mat-select>\n\n    </div>\n    <!-- ------------------------- Pagination end ------------------------- -->\n\n  </div>\n\n  <div class=\"slotview\">\n    <mat-card class=\"slot-card\" *ngFor=\"let data of availableSlots\">\n      <mat-card-content class=\"slot-card-content\">\n        <p><b>{{data.event_title}}</b></p>\n        <p><b>Details:</b> {{data.description}}</p>\n        <p><b>Date:</b> {{data.startdate}} &nbsp; <b>Slot:</b> {{data.slot}} - {{data.slot_end_time}}</p>\n        <p><b>Timezone:</b> {{data.timezoneName}}</p>\n      </mat-card-content>\n      <mat-card-actions>\n        <button mat-raised-button color=\"primary\" (click)=\"rebook(data)\">Reschedule</button>\n      </mat-card-actions>\n    </mat-card>\n  </div>\n</mat-dialog-content>\n";
-    /***/
-  },
-
-  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/components/booked-events-listing/upcoming-appoinments/upcoming-appoinments.component.html":
   /*!*************************************************************************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/booked-events-listing/upcoming-appoinments/upcoming-appoinments.component.html ***!
@@ -2023,7 +2003,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<h1 mat-dialog-title>Choose your doctor and tech from below</h1>\n<div mat-dialog-content>\n<!--  <p>What's your favorite animal?</p>-->\n  <mat-form-field>\n    <mat-label>Select doctor</mat-label>\n    <mat-select [(ngModel)]=\"doctor\" (selectionChange)=\"onChangeDoctor($event.value)\">\n      <mat-option *ngFor=\"let doctor of doctorList\" [value]=\"{doctor_id: doctor._id, parent_id: doctor.parent_id, parent_type: doctor.parent_type}\">\n        {{doctor.firstname + ' ' + doctor.lastname}}\n      </mat-option>\n    </mat-select>\n  </mat-form-field>\n\n\n  <mat-form-field>\n    <mat-label>Select tech</mat-label>\n    <mat-select [(ngModel)]=\"selectedIds.tech_id\">\n      <mat-option *ngFor=\"let tech of techList\" [value]=\"tech.value\">\n        {{tech.text}}\n      </mat-option>\n    </mat-select>\n    <mat-progress-bar mode=\"buffer\" *ngIf=\"loadingTech\"></mat-progress-bar>\n  </mat-form-field>\n</div>\n<div mat-dialog-actions>\n<!--  <button mat-button (click)=\"onNoClick()\">No Thanks</button>-->\n  <button mat-button [mat-dialog-close]=\"selectedIds\" cdkFocusInitial>Ok</button>\n</div>\n";
+    __webpack_exports__["default"] = "<h1 mat-dialog-title>Choose your doctor and tech from below</h1>\n<div mat-dialog-content>\n<!--  <p>What's your favorite animal?</p>-->\n  <mat-form-field>\n    <mat-label>Select doctor</mat-label>\n    <mat-select [(ngModel)]=\"doctor\" (selectionChange)=\"onChangeDoctor($event.value)\">\n      <mat-option *ngFor=\"let doctor of doctorList\" [value]=\"{doctor_id: doctor._id, parent_id: doctor.parent_id, parent_type: doctor.parent_type}\">\n        {{doctor.firstname + ' ' + doctor.lastname}}\n      </mat-option>\n    </mat-select>\n  </mat-form-field>\n\n\n  <!--\n  <mat-form-field>\n    <mat-label>Select tech</mat-label>\n    <mat-select [(ngModel)]=\"selectedIds.tech_id\">\n      <mat-option *ngFor=\"let tech of techList\" [value]=\"tech.value\">\n        {{tech.text}}\n      </mat-option>\n    </mat-select>\n    <mat-progress-bar mode=\"buffer\" *ngIf=\"loadingTech\"></mat-progress-bar>\n  </mat-form-field>\n  -->\n</div>\n<div mat-dialog-actions>\n<!--  <button mat-button (click)=\"onNoClick()\">No Thanks</button>-->\n  <button mat-button [mat-dialog-close]=\"selectedIds\" cdkFocusInitial>Ok</button>\n</div>\n";
     /***/
   },
 
@@ -2043,7 +2023,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-doctor-header></app-doctor-header>\n\n<mat-card class=\"admin_wrapper\">\n  <section class=\"mediaDoc\">\n    <mat-card-title class=\"testingDoc\"> Media Deck of Testing Services </mat-card-title>\n    <mat-card-content class=\"mediaDoc_wrapper\">\n      <span class=\"new_wrapper_left\">\n        <mat-card-content class=\"media_inner_items\">\n          <mat-card-content class=\"image_wrapper\">\n            <img src=\"../../../../assets/images/doctor-Dashboard-Banner.jpg\">\n          </mat-card-content>\n          <a mat-button class=\"action_button\" href=\"../../../../assets/Doctors Resources/DCS doctor's deck.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n      </span>\n      <span class=\"new_wrapper_right\">\n        <mat-card-content class=\"media_inner_items\">\n\n          <mat-card-content class=\"image_wrapper\">\n            <img src=\"../../../../assets/images/doctor-Dashboard-sampeltest.jpg\">\n          </mat-card-content>\n          <a mat-button class=\"action_button\" href=\"../../../../assets/Doctors Resources/AWSPhysiciansReport2019567.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"media_inner_items\">\n          <mat-card-content class=\"image_wrapper\">\n            <img src=\"../../../../assets/images/doctor-Dashboard-Health-report.jpg\">\n          </mat-card-content>\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/Clinical Quick Reference Guide.pdf\" target=\"_blank\"> download\n          </a>\n        </mat-card-content>\n      </span>\n\n    </mat-card-content>\n  </section>\n\n\n  <section class=\"quickRef\">\n    <mat-card-title class=\"testingDoc\">Clinical Quick Reference Guide </mat-card-title>\n\n    <mat-card-content class=\"report_wrapper\">\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport1.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Impact of Reduced Heart Rate Variability on Risk for\n            Cardiac Events</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Impact of Reduced Heart Rate Variability on Risk.pdf\"\n          target=\"_blank\"> download </a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport2.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Determination of age-related increases in largeartery stiffness by digital pulse\n            contour analysis</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Determination of age-related.pdf\" target=\"_blank\">\n          download</a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport3.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Role of Endothelial Dysfunction in Atherosclerosis</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Role of Endothelial Dysfunction in Atherosclerosis.pdf\"\n          target=\"_blank\"> download </a>\n      </mat-card-content>\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport4.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Diabetes, Glucose, Insulin, and Heart Rate Variability</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Diabetes_Glucose_Insulin_and_Heart.pdf\" target=\"_blank\">\n          download </a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport5.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Diabetic Neuropathies: The Nerve Damageof Diabetes</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Diabetic Neuropathies.pdf\" target=\"_blank\"> download </a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport6.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Vitamin D Status, Autonomic Nervous SystemActivity, and Cardiometabolic Risk</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Vitamin D Status Autonomic Nervous System.pdf\"\n          target=\"_blank\"> download </a>\n      </mat-card-content>\n      <span class=\"viewMore\" [ngClass]=\"viewstatus ? 'show' : 'hide'\">\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport7.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Assessment of Vascular Aging and\n              Atherosclerosis in Hypertensive Subjects:\n              Second Derivative of Photoplethysmogram\n              Versus Pulse Wave Velocity</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Assessment of Vascular Aging.pdf\" target=\"_blank\">\n            download\n          </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport8.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Determination of age-related increases in large\n              artery stiffness by digital pulse contour analysis</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Determination of age-related.pdf\" target=\"_blank\">\n            download\n          </a>\n        </mat-card-content>\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport9.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Diabetes: Sweat Response and\n              Heart Rate Variability During\n              Electrical Stimulation in Controls\n              and People With Diabetes</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Diabetes Sweat Response.pdf\" target=\"_blank\"> download\n          </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport10.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">The Relationship between Vascular Function\n              and the Autonomic Nervous System</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/The Relationship between.pdf\" target=\"_blank\"> download\n          </a>\n        </mat-card-content>\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport11.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Assessment of insulin sensitivity by the hyperinsulinemic euglycemic clamp:\n              Comparison with the spectral analysis of photoplethysmography</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/Assessment of insulin sensitivity by the hyperinsulinemic.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport12.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Detection of neuropathy using a sudomotor\n              test in type 2 diabetes</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Detection of neuropathy using a sudomotor test.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport13.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Diagnosis and Treatment of Pain in Small Fiber Neuropathy.</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Diagnosis and Treatment of Pain in Small Fiber Neuropathy.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n      </span>\n\n    </mat-card-content>\n\n    <mat-toolbar class=\"viewMore_w\">\n      <button mat-button (click)=\"viewMore()\">{{ btnName }}</button>\n    </mat-toolbar>\n  </section>\n\n  <ng-container *ngIf=\"otherData.all_details.user_type == 'distributors'\">\n    <section class=\"Admindmin_details\">\n      <mat-card-content class=\"inner_er\">\n\n        <mat-list class=\"list_wrapper\">\n          <h3>{{header.name}} : {{otherData.all_details.distributorname}} &nbsp;</h3>\n          <h2>Details</h2>\n\n          <span class=\"inner\">\n\n            <mat-list-item>\n              <span class=\"lg\">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contactperson }} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Phone :&nbsp; </span><span> {{otherData.all_details.phone}}</span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Email :&nbsp; </span><span> {{otherData.all_details.email}} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>\n\n            </mat-list-item>\n          </span>\n        </mat-list>\n      </mat-card-content>\n    </section>\n  </ng-container>\n\n\n  <ng-container *ngIf=\"otherData.all_details.user_type == 'diagnostic_admin'\">\n    <section class=\"Admindmin_details\">\n      <mat-card-content class=\"inner_er\">\n        <mat-list class=\"list_wrapper\">\n          <h3>{{header.name}} : {{otherData.all_details.center_name}} &nbsp;</h3>\n          <h2>Details</h2>\n\n          <span class=\"inner\">\n\n            <mat-list-item>\n              <span class=\"lg\">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contact_person[0].name }}\n              </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Phone :&nbsp; </span><span>\n                {{otherData.all_details.contact_person[0].phone}}</span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Email :&nbsp; </span><span> {{otherData.all_details.contact_person[0].email}}\n              </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>\n\n            </mat-list-item>\n          </span>\n        </mat-list>\n      </mat-card-content>\n    </section>\n\n  </ng-container>\n\n\n  <ng-container *ngIf=\"otherData.all_details.user_type == 'doctor_group'\">\n    <section class=\"Admindmin_details\">\n      <mat-card-content class=\"inner_er\">\n\n        <mat-list class=\"list_wrapper\">\n          <h3>{{header.name}} : {{otherData.all_details.groupname }} &nbsp;</h3>\n          <h2>Details</h2>\n\n          <span class=\"inner\">\n\n            <mat-list-item>\n              <span class=\"lg\">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contactperson }} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Phone :&nbsp; </span><span> {{otherData.all_details.phone}}</span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Email :&nbsp; </span><span> {{otherData.all_details.email}} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>\n\n            </mat-list-item>\n          </span>\n        </mat-list>\n      </mat-card-content>\n    </section>\n  </ng-container>\n\n  <!-- Count Block  -->\n\n  <mat-card-content class=\"admin_superbillsection\">\n    <mat-card-title class=\"testingDoc\">Physician Report</mat-card-title>\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\" *ngIf=\"htmlText.signFlag == true\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>MANAGE YOUR SIGNATURE</p>\n          <button mat-flat-button [routerLink]=\"['/doctor/signature-management']\">SIGN</button>\n        </span>\n      </mat-card-content>\n\n      <!-- <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of<br> Reports Uploaded</p>\n          <h2> {{ allResolveData.signReportCount }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_three\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of<br> Reports Processed</p>\n          <h2> {{ allResolveData.pendingReportCount }}</h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report unSigned')\">view all</button>\n        </span>\n      </mat-card-content> -->\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of <br> Reports Processed</p>\n          <h2> 112 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of <br> Reports Pending Signature</p>\n          <h2> 212 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n\n    <mat-card-content class=\"admin_superbillsection\">\n      <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p> Total Numbers of <br> Reports Asked for Review</p>\n          <h2> 76 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p> Total Numbers of <br> Reports Sent to Biller</p>\n          <h2> 92 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of <br> Reports Downloaded by Biller</p>\n          <h2> 155 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n    </mat-card-content>\n  </mat-card-content>\n\n  <!-- Pending and signed  Data listing start here -->\n  <mat-card-content class=\"table_wrapper\">\n    <mat-card-title class=\"testingDoc\">Physician Report List</mat-card-title>\n    <mat-toolbar class=\"top_header\">\n      <h2> {{ htmlText.headerText }} </h2>\n    </mat-toolbar>\n\n    <span class=\"action_bar\">\n      <mat-form-field>\n        <input matInput type=\"text\" placeholder=\"Search By Patient\" [(ngModel)]=\"searchJson.patientName\" />\n      </mat-form-field>\n\n      <mat-form-field>\n        <mat-select [(ngModel)]=\"searchJson.status\">\n          <mat-option value=\"\">Select a status</mat-option>\n          <mat-option value=\"waiting for doctor sign\">Waiting For Doctor Sign</mat-option>\n          <mat-option value=\"doctor signed\">Doctor Signed</mat-option>\n          <mat-option value=\"send to biller\">Send To Biller</mat-option>\n          <mat-option value=\"error\">Error</mat-option>\n          <mat-option value=\"pending\">Pending</mat-option>\n          this.viewReportProcessData(this.htmlText.headerText);\n        </mat-select>\n      </mat-form-field>\n\n      <mat-form-field>\n        <input matInput type=\"text\" placeholder=\"Choose a date\" [satDatepicker]=\"picker\"\n          [(ngModel)]=\"searchJson.dateRange\" />\n        <sat-datepicker #picker [rangeMode]=\"true\"></sat-datepicker>\n        <sat-datepicker-toggle matSuffix [for]=\"picker\"></sat-datepicker-toggle>\n      </mat-form-field>\n\n      <button mat-button class=\"add_btn\" (click)=\"viewReportProcessData(htmlText.headerText);\">Date Search</button>\n    </span>\n    <div class=\"tablewrapper\">\n      <table mat-table [dataSource]=\"allDataSource\" class=\"mat-elevation-z8 adminTables\">\n\n        <ng-container matColumnDef=\"no\">\n          <th mat-header-cell *matHeaderCellDef> No. </th>\n          <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"patient_name\">\n          <th mat-header-cell *matHeaderCellDef> Patient Name. </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Patient Name\">{{ element.patient_name }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"doctor_name\">\n          <th mat-header-cell *matHeaderCellDef> Doctor Name</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Doctor Name\" innerHTML=\"{{ element.doctor_name }}\"> </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"tech_name\">\n          <th mat-header-cell *matHeaderCellDef> Tech Name</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Tech Name\"> {{ element.tech_name }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"biller_name\" *ngIf=\"htmlText.headerText != 'Report unSigned'\">\n          <th mat-header-cell *matHeaderCellDef> Biller Name</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Biller Name\"> {{ element.biller_name }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"report_type\">\n          <th mat-header-cell *matHeaderCellDef> Record Type</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Record Type\"> {{ element.report_type }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"bill_generation_date\" *ngIf=\"htmlText.headerText != 'Report unSigned'\">\n          <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Generation Date\">\n            {{ element.bill_generation_date | date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"bill_sent_date\" *ngIf=\"htmlText.headerText != 'Report unSigned'\">\n          <th mat-header-cell *matHeaderCellDef> Bill Sent Date</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Sent Date\"> {{ element.billSentDate | date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"super_bill\" *ngIf=\"htmlText.headerText != 'Report unSigned'\">\n          <th mat-header-cell *matHeaderCellDef> Super Bill</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Super Bill\"> {{ element.super_bill }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"status\">\n          <th mat-header-cell *matHeaderCellDef> Status</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Status\"> {{ element.status }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"action\">\n          <th mat-header-cell *matHeaderCellDef> Action </th>\n          <td mat-cell *matCellDef=\"let element; let i = index;\">\n            <button matTooltip=\"View\" aria-label=\"Button\" matTooltipPosition=\"above\"\n              *ngIf=\"element.status == 'Pending Signature'\" mat-button type=\"button\" class=\"viewButton\"\n              [routerLink]=\"['/doctor/patient-record-report', element._id]\"><i class=\"material-icons\">\n                remove_red_eye\n              </i></button>\n            <button mat-raised-button *ngIf=\"element.status != 'Pending Signature'\" type=\"button\"\n              class=\"viewButton downloadBtn\" disabled matTooltip=\"View\" aria-label=\"Button\"\n              matTooltipPosition=\"above\"><i class=\"material-icons\">\n                remove_red_eye\n              </i></button>\n            <button matTooltip=\"Download\" aria-label=\"Button\" matTooltipPosition=\"above\" mat-raised-button\n              *ngIf=\"element.status != 'Pending Signature'\" type=\"button\" class=\"viewButton downloadBtn\"\n              (click)=\"downloadReport(element);\"><i class=\"material-icons\">\n                cloud_download\n              </i></button>\n          </td>\n        </ng-container>\n\n        <tr mat-header-row *matHeaderRowDef=\"allDataColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: allDataColumns;let i = index\"></tr>\n      </table>\n    </div>\n    <mat-paginator [pageSizeOptions]=\"[50, 100, 200]\"></mat-paginator>\n  </mat-card-content>\n</mat-card>\n\n\n<app-admin-footer></app-admin-footer>";
+    __webpack_exports__["default"] = "<app-doctor-header></app-doctor-header>\n\n<mat-card class=\"admin_wrapper\">\n  <section class=\"mediaDoc\">\n    <mat-card-title class=\"testingDoc\"> Media Deck of Testing Services </mat-card-title>\n    <mat-card-content class=\"mediaDoc_wrapper\">\n      <span class=\"new_wrapper_left\">\n        <mat-card-content class=\"media_inner_items\">\n          <mat-card-content class=\"image_wrapper\">\n            <img src=\"../../../../assets/images/doctor-Dashboard-Banner.jpg\">\n          </mat-card-content>\n          <a mat-button class=\"action_button\" href=\"../../../../assets/Doctors Resources/DCS doctor's deck.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n      </span>\n      <span class=\"new_wrapper_right\">\n        <mat-card-content class=\"media_inner_items\">\n\n          <mat-card-content class=\"image_wrapper\">\n            <img src=\"../../../../assets/images/doctor-Dashboard-sampeltest.jpg\">\n          </mat-card-content>\n          <a mat-button class=\"action_button\" href=\"../../../../assets/Doctors Resources/AWSPhysiciansReport2019567.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"media_inner_items\">\n          <mat-card-content class=\"image_wrapper\">\n            <img src=\"../../../../assets/images/doctor-Dashboard-Health-report.jpg\">\n          </mat-card-content>\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/Clinical Quick Reference Guide.pdf\" target=\"_blank\"> download\n          </a>\n        </mat-card-content>\n      </span>\n\n    </mat-card-content>\n  </section>\n\n\n  <section class=\"quickRef\">\n    <mat-card-title class=\"testingDoc\">Clinical Quick Reference Guide </mat-card-title>\n\n    <mat-card-content class=\"report_wrapper\">\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport1.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Impact of Reduced Heart Rate Variability on Risk for\n            Cardiac Events</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Impact of Reduced Heart Rate Variability on Risk.pdf\"\n          target=\"_blank\"> download </a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport2.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Determination of age-related increases in largeartery stiffness by digital pulse\n            contour analysis</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Determination of age-related.pdf\" target=\"_blank\">\n          download</a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport3.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Role of Endothelial Dysfunction in Atherosclerosis</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Role of Endothelial Dysfunction in Atherosclerosis.pdf\"\n          target=\"_blank\"> download </a>\n      </mat-card-content>\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport4.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Diabetes, Glucose, Insulin, and Heart Rate Variability</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Diabetes_Glucose_Insulin_and_Heart.pdf\" target=\"_blank\">\n          download </a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport5.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Diabetic Neuropathies: The Nerve Damageof Diabetes</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Diabetic Neuropathies.pdf\" target=\"_blank\"> download </a>\n      </mat-card-content>\n\n      <mat-card-content class=\"items_w\">\n        <mat-card-content class=\"icon_w\">\n          <img src=\"../../../../assets/images/clinicalReport6.jpg\">\n        </mat-card-content>\n\n        <mat-card-content class=\"name_wr\">\n          <span class=\"reportName\">Vitamin D Status, Autonomic Nervous SystemActivity, and Cardiometabolic Risk</span>\n          <img src=\"../../../../assets/images/pdfIcon.jpg\">\n        </mat-card-content>\n\n        <a mat-button class=\"action_button\"\n          href=\"../../../../assets/Doctors Resources/2nd Block/Vitamin D Status Autonomic Nervous System.pdf\"\n          target=\"_blank\"> download </a>\n      </mat-card-content>\n      <span class=\"viewMore\" [ngClass]=\"viewstatus ? 'show' : 'hide'\">\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport7.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Assessment of Vascular Aging and\n              Atherosclerosis in Hypertensive Subjects:\n              Second Derivative of Photoplethysmogram\n              Versus Pulse Wave Velocity</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Assessment of Vascular Aging.pdf\" target=\"_blank\">\n            download\n          </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport8.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Determination of age-related increases in large\n              artery stiffness by digital pulse contour analysis</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Determination of age-related.pdf\" target=\"_blank\">\n            download\n          </a>\n        </mat-card-content>\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport9.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Diabetes: Sweat Response and\n              Heart Rate Variability During\n              Electrical Stimulation in Controls\n              and People With Diabetes</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Diabetes Sweat Response.pdf\" target=\"_blank\"> download\n          </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport10.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">The Relationship between Vascular Function\n              and the Autonomic Nervous System</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/The Relationship between.pdf\" target=\"_blank\"> download\n          </a>\n        </mat-card-content>\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport11.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Assessment of insulin sensitivity by the hyperinsulinemic euglycemic clamp:\n              Comparison with the spectral analysis of photoplethysmography</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/Assessment of insulin sensitivity by the hyperinsulinemic.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport12.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Detection of neuropathy using a sudomotor\n              test in type 2 diabetes</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Detection of neuropathy using a sudomotor test.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n        <mat-card-content class=\"items_w\">\n          <mat-card-content class=\"icon_w\">\n            <img src=\"../../../../assets/images/clinicalReport13.jpg\">\n          </mat-card-content>\n\n          <mat-card-content class=\"name_wr\">\n            <span class=\"reportName\">Diagnosis and Treatment of Pain in Small Fiber Neuropathy.</span>\n            <img src=\"../../../../assets/images/pdfIcon.jpg\">\n          </mat-card-content>\n\n          <a mat-button class=\"action_button\"\n            href=\"../../../../assets/Doctors Resources/2nd Block/Diagnosis and Treatment of Pain in Small Fiber Neuropathy.pdf\"\n            target=\"_blank\"> download </a>\n        </mat-card-content>\n\n      </span>\n\n    </mat-card-content>\n\n    <mat-toolbar class=\"viewMore_w\">\n      <button mat-button (click)=\"viewMore()\">{{ btnName }}</button>\n    </mat-toolbar>\n  </section>\n\n  <ng-container *ngIf=\"otherData.all_details.user_type == 'distributors'\">\n    <section class=\"Admindmin_details\">\n      <mat-card-content class=\"inner_er\">\n\n        <mat-list class=\"list_wrapper\">\n          <h3>{{header.name}} : {{otherData.all_details.distributorname}} &nbsp;</h3>\n          <h2>Details</h2>\n\n          <span class=\"inner\">\n\n            <mat-list-item>\n              <span class=\"lg\">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contactperson }} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Phone :&nbsp; </span><span> {{otherData.all_details.phone}}</span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Email :&nbsp; </span><span> {{otherData.all_details.email}} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>\n\n            </mat-list-item>\n          </span>\n        </mat-list>\n      </mat-card-content>\n    </section>\n  </ng-container>\n\n\n  <ng-container *ngIf=\"otherData.all_details.user_type == 'diagnostic_admin'\">\n    <section class=\"Admindmin_details\">\n      <mat-card-content class=\"inner_er\">\n        <mat-list class=\"list_wrapper\">\n          <h3>{{header.name}} : {{otherData.all_details.center_name}} &nbsp;</h3>\n          <h2>Details</h2>\n\n          <span class=\"inner\">\n\n            <mat-list-item>\n              <span class=\"lg\">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contact_person[0].name }}\n              </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Phone :&nbsp; </span><span>\n                {{otherData.all_details.contact_person[0].phone}}</span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Email :&nbsp; </span><span> {{otherData.all_details.contact_person[0].email}}\n              </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>\n\n            </mat-list-item>\n          </span>\n        </mat-list>\n      </mat-card-content>\n    </section>\n\n  </ng-container>\n\n\n  <ng-container *ngIf=\"otherData.all_details.user_type == 'doctor_group'\">\n    <section class=\"Admindmin_details\">\n      <mat-card-content class=\"inner_er\">\n\n        <mat-list class=\"list_wrapper\">\n          <h3>{{header.name}} : {{otherData.all_details.groupname }} &nbsp;</h3>\n          <h2>Details</h2>\n\n          <span class=\"inner\">\n\n            <mat-list-item>\n              <span class=\"lg\">Contact Person :&nbsp; </span><span> {{ otherData.all_details.contactperson }} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Phone :&nbsp; </span><span> {{otherData.all_details.phone}}</span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Contact Email :&nbsp; </span><span> {{otherData.all_details.email}} </span>\n\n            </mat-list-item>\n            <mat-list-item>\n              <span class=\"lg\">Address :&nbsp; </span><span> {{otherData.all_details.address}} </span>\n\n            </mat-list-item>\n          </span>\n        </mat-list>\n      </mat-card-content>\n    </section>\n  </ng-container>\n\n  <!-- Count Block  -->\n\n  <mat-card-content class=\"admin_superbillsection\">\n    <mat-card-title class=\"testingDoc\">Physician Report</mat-card-title>\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\" *ngIf=\"htmlText.signFlag == true\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>MANAGE YOUR SIGNATURE</p>\n          <button mat-flat-button [routerLink]=\"['/doctor/signature-management']\">SIGN</button>\n        </span>\n      </mat-card-content>\n\n      <!-- <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of<br> Reports Uploaded</p>\n          <h2> {{ allResolveData.signReportCount }} </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_three\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of<br> Reports Processed</p>\n          <h2> {{ allResolveData.pendingReportCount }}</h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report unSigned')\">view all</button>\n        </span>\n      </mat-card-content> -->\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of <br> Reports Processed</p>\n          <h2> 112 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of <br> Reports Pending Signature</p>\n          <h2> 212 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n\n    <mat-card-content class=\"admin_superbillsection\">\n      <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p> Total Numbers of <br> Reports Asked for Review</p>\n          <h2> 76 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p> Total Numbers of <br> Reports Sent to Biller</p>\n          <h2> 92 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Numbers of <br> Reports Downloaded by Biller</p>\n          <h2> 155 </h2>\n          <button mat-flat-button (click)=\"viewReportProcessData('Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n    </mat-card-content>\n  </mat-card-content>\n\n  <!-- Pending and signed  Data listing start here -->\n  <mat-card-content class=\"table_wrapper\">\n    <mat-card-title class=\"testingDoc\">Physician Report List</mat-card-title>\n    <mat-toolbar class=\"top_header\">\n      <h2> {{ htmlText.headerText }} </h2>\n    </mat-toolbar>\n\n    <span class=\"action_bar\">\n      <mat-form-field>\n        <input matInput type=\"text\" placeholder=\"Search By Patient\" [(ngModel)]=\"searchJson.patientName\" />\n      </mat-form-field>\n\n      <mat-form-field>\n        <mat-select [(ngModel)]=\"searchJson.status\">\n          <mat-option value=\"\">Select a status</mat-option>\n          <mat-option value=\"waiting for doctor sign\">Waiting For Doctor Sign</mat-option>\n          <mat-option value=\"doctor signed\">Doctor Signed</mat-option>\n          <mat-option value=\"send to biller\">Send To Biller</mat-option>\n          <mat-option value=\"error\">Error</mat-option>\n          <mat-option value=\"pending\">Pending</mat-option>\n          this.viewReportProcessData(this.htmlText.headerText);\n        </mat-select>\n      </mat-form-field>\n\n      <mat-form-field>\n        <input matInput type=\"text\" placeholder=\"Choose a date\" [satDatepicker]=\"picker\"\n          [(ngModel)]=\"searchJson.dateRange\" />\n        <sat-datepicker #picker [rangeMode]=\"true\"></sat-datepicker>\n        <sat-datepicker-toggle matSuffix [for]=\"picker\"></sat-datepicker-toggle>\n      </mat-form-field>\n\n      <button mat-button class=\"add_btn\" (click)=\"viewReportProcessData(htmlText.headerText);\">Date Search</button>\n    </span>\n\n    <div class=\"tablewrapper\">\n      \n      <!-- table -->\n      <lib-listing\n        class=\"DataTable\" \n        *ngIf=\"allBillerData.length>0\" \n        [datasource]=\"allBillerData\" \n        [skip]=\"allUserData_skip\"\n        [modify_header_array]=\"allUserData_modify_header\" \n        [detail_skip_array]=\"previewModal_detail_skip\" \n        [apiurl]=\"apiUrl\"\n        [sourcedata]=\"tableName\" \n        [editroute]=\"editUrl\" \n        [jwttoken]=\"jwtToken\" \n        [statusarr]=\"status\"\n        [updateendpoint]=\"UpdateEndpoint\" \n        [deleteendpoint]=\"deleteEndpoint\" \n        [date_search_endpoint]=\"SearchingEndpoint\"\n        [date_search_source]=\"SearchingSourceName\" \n        [search_settings]=\"search_settings\" \n        [sortdata]=\"sortdata\" \n        [datacollection]=\"datacollection\" \n        [libdata]=\"libdata\" \n        [date_search_source_count]=\"billerData_count\" \n        [limitcond]=\"limitcond\" >\n      </lib-listing>\n\n    </div>\n    <mat-paginator [pageSizeOptions]=\"[50, 100, 200]\"></mat-paginator>\n  </mat-card-content>\n</mat-card>\n\n\n<app-admin-footer></app-admin-footer>";
     /***/
   },
 
@@ -2204,6 +2184,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
     __webpack_exports__["default"] = "<app-doctor-header></app-doctor-header>\n\n\n<mat-card-content class=\"content_wrapper\">\n  <mat-card-content class=\"itemsection\">\n    <mat-card-content class=\"one uploadsign\">\n      <p>Manage Your Signature </p>\n\n    </mat-card-content>\n\n    <span class=\"section_title\">\n      <img src=\"../../../../assets/images/editicon.png\">\n    </span>\n\n    <span class=\"signaturefont\">{{ htmlText.viewSign }}</span>\n\n    <mat-card-content class=\"sign_uploader\">\n      <span class=\"sing_box\">\n        <input type=\"text\" [(ngModel)]=\"htmlText.viewSign\" (keyup)=\"removeErrorMessage();\">\n        <br/>\n        <span style=\"color: red;\">{{ htmlText.errorMessage }}</span>\n      </span>\n\n      <br />\n\n      <span class=\"sing_box\">\n        <button class=\"signature_upload\" (click)=\"updateSignature();\" mat-flat-button>{{ htmlText.buttonText }}</button>\n      </span>\n    </mat-card-content>\n  </mat-card-content>\n</mat-card-content>\n\n<!-- Tech Footer -->\n<app-admin-footer></app-admin-footer>\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/components/encounter-form/encounter-form.component.html":
+  /*!***************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/encounter-form/encounter-form.component.html ***!
+    \***************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppComponentsEncounterFormEncounterFormComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>New york report pdf</title>\n    <style>\n        body {\n            margin: 0;\n            padding: 0;\n            font-family: sans-serif;\n        }\n\n        .min_wrapr {\n            width: 798px;\n            height:auto;\n            background: #fff;\n            margin: 50px auto;\n            border: 1px solid #3a3838;\n        }\n\n        table {\n            width: 100%;\n        }\n\n        table th,\n        table td {\n            padding: 4px 8px;\n            vertical-align: top;\n        }\n\n        table tr td p {\n            display: flex;\n            margin: 0;\n            box-sizing: border-box;\n            font-size: 12px;\n        }\n\n        table tr td p span {\n            min-width: 124px;\n        }\n\n        table tr td p input[type='text'] {\n            width: 100%;\n            font-family: sans-serif;\n            border: none;\n            border-bottom: 1px solid #252424;\n            padding-bottom: 4px;\n            background: none;\n        }\n\n        table tr td p input[type='text']:focus {\n            outline: none;\n        }\n\n        .suggestBill {\n            border: 1px solid #6b6a6a;\n            padding: 4px;\n            justify-content: center;\n            margin-bottom: 6px;\n        }\n\n        .bill_amount {\n            flex-wrap: wrap;\n        }\n\n        .bill_amount label {\n            font-size: 12px;\n        }\n\n        .middle_part h2 {\n            color: #f50808;\n            font-size: 12px;\n            text-align: center;\n            border: 2px solid #3e3c3c;\n            padding: 8px 0;\n            border-left: 0;\n            border-right: 0;\n            box-sizing: border-box;\n            margin: 0;\n        }\n\n        .chkValue {\n            min-width: 70px;\n            font-size: 10px;\n            display: flex;\n            align-items: center;\n        }\n  \n        .inner_form table {\n            border-collapse: collapse;\n        }\n\n        .inner_form tr td {\n            width: 50%;\n            padding: 1px;\n        }\n\n        .inner_form tr td span {\n            font-size: 10px;\n        }\n\n        h3 {\n            font-size: 10px;\n            margin: 3px auto;\n            border-bottom: 1px solid #302f31;\n            width: 215px;\n        }\n        ul li{\n            font-size: 10px; margin: 2px 0;\n        }\n    </style>\n</head>\n\n<body>\n    <div class=\"min_wrapr\">\n        <div class=\"top_part\">\n            <table>\n                <tr>\n                    <td>\n                        <p><span> Patient Name</span><input type=\"text\"></p>\n                    </td>\n                    <td>\n                        <p><label style=\"border: none;\">M <input type=\"checkbox\"></label> <label style=\"border: none;\">F\n                                <input type=\"checkbox\"></label></p>\n                    </td>\n                    <td>\n                        <p><span>Test Date</span><input type=\"text\" value=\"test patient name\"></p>\n                    </td>\n                </tr>\n\n                <tr>\n                    <td colspan=\"2\">\n                        <p><span> Ordering Physician</span><input type=\"text\" value=\"patient name\"> </p>\n                    </td>\n                    <td>\n                        <p><span style=\"text-align: right; padding-right: 16px;\"> D.O.B</span><input type=\"text\"\n                                value=\"test patient name\"></p>\n                    </td>\n                </tr>\n\n                <tr>\n                    <td colspan=\"2\">\n                        <p><span>Physician’s Signature</span><input type=\"text\" value=\"patient name\"> </p>\n                    </td>\n                    <td style=\"width: 45%;\">\n                        <p class=\"suggestBill\">Suggested billing amounts per CPT</p>\n                        <p class=\"bill_amount\">\n                            <label><input type=\"checkbox\">95923: $410</label>\n                            <label><input type=\"checkbox\">95943: $440</label>\n                            <label><input type=\"checkbox\">95921: $280</label>\n                            <label><input type=\"checkbox\">93923: $250.00</label>\n                            <label><input type=\"checkbox\">93922: $280</label>\n\n\n                        </p>\n\n                    </td>\n                </tr>\n\n\n                <tr>\n                    <td colspan=\"2\">\n                        <p><span>Patient’s Insurance Carrier (s)</span><input type=\"text\" value=\"patient name\"> </p>\n                    </td>\n                    <td>\n                        <p> <label><input type=\"checkbox\">No Diagnoses Established</label></p>\n                    </td>\n                </tr>\n            </table>\n        </div>\n\n\n        <div class=\"middle_part\">\n            <h2>ICD 10 DIAGNOSTIC CODES TO BE USED WITH CPT CODE: 95921 (or use 95943 is allowed), and 95923</h2>\n\n\n            <div class=\"inner_form\">\n                <table>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E08.40</label>\n                                <span>Type 1 Diabetes W/ Neurological Manifestations, Not Stated as\n                                    Uncontrolled</span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G60.3 </label>\n                                <span>Idiopathic progressive neuropathy</span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E10.41</label>\n\n                                <span>Type 1 Diabetes Mellitus W/ Diabetic Mononeuropathy</span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G60.8 </label>\n                                <span>Other hereditary and idiopathic neuropathies</span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E10.42</label>\n                                <span>Type 1 Diabetes Mellitus W/ Diabetic Polyneuropathy</span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G60.9</label>\n                                <span>Hereditary and idiopathic neuropathy, unspecified</span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E10.43</label>\n                                <span> Type 1 Diabetes Mellitus W/ Diabetic Autonomic (Poly) Neuropathy</span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G62.9</label>\n                                <span> Polyneuropathy, unspecified</span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E10.44</label>\n                                <span>Type 1 Diabetes Mellitus W/ Diabetic Amyotrophy</span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.09</label>\n                                <span>Other idiopathic peripheral autonomic neuropathy </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E10.49</label>\n                                <span>Type 1 Diabetes Mellitus W/ Other Diabetic Neurological Complications </span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.3</label>\n                                <span>Multi-system degeneration of the autonomic nervous system</span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E10.610</label>\n                                <span>Type 1 Diabetes (Juvenile) W/ diabetic Neuropathic Arthropathy </span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.50</label>\n                                <span> Complex regional pain syndrome I, unspecified</span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E11.9</label>\n                                <span> Type 2 Diabetes Without Complications (non-Medicare) </span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.59</label>\n                                <span> Complex regional pain syndrome I of other specified site</span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E11.41</label>\n                                <span> Type 2 Diabetes Mellitus W/ Diabetic Mononeuropathy</span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">R00.0</label>\n                                <span> Tachycardia, unspecified Abnormal Heart Rhythm & Electrical Stability</span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E11.42</label>\n                                <span>Type 2 Diabetes Mellitus W/ Diabetic Polyneuropathy </span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">R55</label>\n                                <span> Vasovagal Syndrome/Syncope and collapse </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E11.43</label>\n                                <span>Type 2 Diabetes Mellitus W/ Diabetic Polyneuropathy Type 2 Diabetes W/ Autonomic\n                                    Neuropathy </span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">R73.01</label>\n                                <span> Impaired fasting glucose (Non-Medicare) </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\"> E11.44</label>\n                                <span> Type 2 Diabetes Mellitus W/Diabetic Amyotrophy </span> </p>\n\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">R73.03</label>\n                                <span>Prediabetes (Non-Medicare) </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E11.49</label>\n                                <span>\n                                    Type 2 Diabetes Mellitus W/ Other Diabetic Neurological Complications </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.50</label>\n                                <span>Complex regional pain syndrome I, unspecified</span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\"> E85.0 </label>\n                                <span>Mediterranean Fever </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.511</label>\n                                <span> Complex regional pain syndrome I of right upper limb </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E85.1</label>\n                                <span>Neuropathic Heredofamilial Amyloidosis </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.512</label>\n                                <span> Complex regional pain syndrome I of left upper limb </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E85.3</label>\n                                <span>Secondary Systemic Amyloidosis </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.513</label>\n                                <span> Complex regional pain syndrome I of upper limb, bilateral </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E85.4</label>\n                                <span> Organ – Limited Amyloidosis </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.521</label>\n                                <span> Complex regional pain syndrome I of right lower limb </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G20.0 </label>\n                                <span> Parkinson’s Disease </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.522</label>\n                                <span>Complex regional pain syndrome I of left lower limb </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G23.0</label>\n                                <span> Hallervorden – Spatz Disease </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.523</label>\n                                <span> Complex regional pain syndrome I of lower limb, bilateral </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G23.1</label>\n                                <span> Progressive supranuclear ophthalmoplegia [Steele-Richardson Olszewski]</span>\n                            </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G90.59</label>\n                                <span> Complex regional pain syndrome I of other specified site </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G23.2</label>\n                                <span> Striatonigral degeneration</span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I95.1</label>\n                                <span> Orthostatic Hypotension </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G23.8</label>\n                                <span> Other specified degenerative diseases of basal ganglia </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">R61 </label>\n                                <span>Generalized hyperhidrosis\n                                </span> </p>\n                        </td>\n                    </tr>\n                </table>\n            </div>\n        </div>\n        <!-- end middle part -->\n        <div class=\"middle_part\">\n            <h2>ICD 10 DIAGNOSTIC CODES TO BE USED WITH CPT CODE: 93922 or 93923 (93923 1 UNIT FOR UPPER AND 1 UNIT FOR\n                LOWER EXTREMITY) REQUIRED ANSILLARY TESTING: ABI, WAVE FORM DOPPLER OR PULSE WAVE /PHOTO PLETHYSMOGRAPHY\n                DEVICE </h2>\n\n\n            <div class=\"inner_form\">\n                <table>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E10.59</label>\n                                <span> Type 1 Diabetes W/ Other Circulatory Complications</span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.222</label>\n                                <span> Atherosclerosis of native arteries of extremities with rest pain, left leg</span>\n                            </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">E11.59</label>\n                                <span> Type 2 Diabetes W/ Other Circulatory Complications </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.223</label>\n                                <span> Atherosclerosis of native arteries of extremities with rest pain, Bilateral legs\n                                </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">G45.8</label>\n                                <span> Other Transient Cerebral Ischemic Attacks and Related Syndrome </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.228</label>\n                                <span> Atherosclerosis of native arteries of extremities with rest pain, other extremity\n                                </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I10</label>\n                                <span> Hypertension Unspecified (Non-Medicare) </span>&nbsp; <b>130/80</b> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.268 </label>\n                                <span> Atherosclerosis of native arteries of extremities with gangrene, Other extremity\n                                </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I59.1</label>\n                                <span> Heart disease, unspecified (Non-Medicare) </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.268</label>\n                                <span> Atherosclerosis of native arteries of extremities with gangrene, Other extremity\n                                </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.209</label>\n                                <span> Atherosclerosis Native Arteries Extremities Unspecified (non-Medicare) </span>\n                            </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.25</label>\n                                <span> Atherosclerosis of native arteries of other extremities with Ulceration </span>\n                            </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.211</label>\n                                <span> Atherosclerosis of native arteries of extremities with intermittent Claudication,\n                                    right leg </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I72.1 </label>\n                                <span> Aneurysm of artery of upper extremity </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.212</label>\n                                <span> Atherosclerosis of native arteries of extremities with intermittent Claudication,\n                                    left leg </span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I72.4</label>\n                                <span> Aneurysm of artery of lower extremity </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I70.212</label>\n                                <span> I70.213 Atherosclerosis of native arteries of extremities with intermittent\n                                    Claudication, bilateral leg</span> </p>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I73.89</label>\n                                <span> Other specified peripheral vascular diseases </span> </p>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <h3> ADDITIONAL POTENTIAL HEALTH RISKS </h3>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">I73.9 </label>\n                                <span> Peripheral vascular disease, unspecified </span> </p>\n                        </td>\n                    </tr>\n\n                    <tr>\n                        <td style=\"border-right: 2px solid #000;\">\n                            <div>\n                              <ul>\n                                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, deserunt.</li>\n                                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, deserunt.</li>\n                                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, deserunt.</li>\n                                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, deserunt.</li>\n                              </ul>\n                                    <!-- </p> -->\n                            </div>\n                        </td>\n\n                        <td>\n                            <p> <label class=\"chkValue\"><input type=\"checkbox\">R08.8 9 </label>\n                                <span>    Other Specific Signs & Symptoms of Circulatory & Respiratory  Systems </span> </p>\n\n                                <div style=\"min-height: 40px;\">\n                                    <h3> Pre-Existing Diagnoses:</h3>\n\n                                </div>\n                                <div style=\"min-height: 40px;\">\n                                    <h3> Additional Physician’s Chart Notes</h3>\n                                </div>\n                        </td>\n                    </tr>\n                </table>\n            </div>\n        </div>\n\n    </div>\n</body>\n\n</html>";
     /***/
   },
 
@@ -2483,7 +2483,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<h2 mat-dialog-title>Report Successfully Uploaded</h2>\n\n<mat-card class=\"modal_view\">\n\n    <ng-container *ngIf=\"data.confirmSubmittedDataSource.length > 0\">\n        <mat-card-content class=\"table_wrapper\">\n            <mat-toolbar class=\"top_header\">\n                <h2> Confirm Submitted Records</h2>\n            </mat-toolbar>\n            <div class=\"tablewrapper\">\n                <table mat-table [dataSource]=\"confirmSubmittedDataSource\" class=\"report_modal mat-elevation-z8\">\n\n                    <!--- Note that these columns can be defined in any order.\n                  The actual rendered columns are set as a property on the row definition\" -->\n\n                    <!-- Position Column -->\n                    <ng-container matColumnDef=\"no\">\n                        <th mat-header-cell *matHeaderCellDef> No. </th>\n                        <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n                    </ng-container>\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"patient_report\">\n                        <th mat-header-cell *matHeaderCellDef> Patient Report </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{ element.file_original_name }} </td>\n                    </ng-container>\n\n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"suggested_patient_by_system\">\n                        <th mat-header-cell *matHeaderCellDef> Suggested Patient by System </th>\n                        <td mat-cell *matCellDef=\"let element\">\n\n                            <ng-container *ngFor=\"let p of element.patient_details; let i = index;\">\n                                <p>Patient Name: {{ p.patient_name }}</p>\n                                <p>Date of Birth: {{ p.dob | date }}</p>\n                                <p>Gender: {{ p.gender }}</p>\n                                <p>Height: {{ p.height }}</p>\n                                <p>Waigth: {{ p.weight }}</p>\n                                <p *ngIf=\"p.doctor_details.length > 0\">Related Doctor:\n                                    {{ p.doctor_details[0].firstname }} {{ p.doctor_details[0].lastname }} </p>\n                                <p *ngIf=\"p.doctor_office_details.length > 0\">Doctor Office: {{ p.doctor_office_details[0].firstname }}\n                                    {{ p.doctor_office_details[0].lastname }}\n                                </p>\n                            </ng-container>\n                        </td>\n                    </ng-container>\n\n                    <tr mat-header-row *matHeaderRowDef=\"confirmSubmittedDisplayedColumns\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: confirmSubmittedDisplayedColumns;\"></tr>\n                </table>\n            </div>\n        </mat-card-content>\n    </ng-container>\n\n    <ng-container *ngIf=\"data.conflictingPatientRecordsDataSource.length > 0\">\n        <mat-card-content class=\"table_wrapper\">\n            <mat-toolbar class=\"top_header\">\n                <h2> Conflicting Patient Records </h2>\n            </mat-toolbar>\n        </mat-card-content>\n        <div class=\"tablewrapper\">\n            <table mat-table [dataSource]=\"conflictingPatientRecordsDataSource\" class=\"report_modal mat-elevation-z8\">\n\n                <!--- Note that these columns can be defined in any order.\n                  The actual rendered columns are set as a property on the row definition\" -->\n\n                <!-- Position Column -->\n                <ng-container matColumnDef=\"no\">\n                    <th mat-header-cell *matHeaderCellDef> No. </th>\n                    <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n                </ng-container>\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"patient_report\">\n                    <th mat-header-cell *matHeaderCellDef> Patient Report </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ element.file_original_name }} </td>\n                </ng-container>\n\n                <tr mat-header-row *matHeaderRowDef=\"conflictingPatientRecordsDisplayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: conflictingPatientRecordsDisplayedColumns;\"></tr>\n            </table>\n        </div>\n    </ng-container>\n\n    <br />\n\n    <ng-container *ngIf=\"data.notFindDataSource.length > 0\">\n        <mat-card-content class=\"table_wrapper\">\n            <mat-toolbar class=\"top_header\">\n                <h2> Reports That System can't Map </h2>\n            </mat-toolbar>\n        </mat-card-content>\n        <div class=\"tablewrapper\">\n            <table mat-table [dataSource]=\"notFindPatientRecordsDataSource\" class=\"report_modal\">\n\n                <!--- Note that these columns can be defined in any order.\n                  The actual rendered columns are set as a property on the row definition\" -->\n\n                <!-- Position Column -->\n                <ng-container matColumnDef=\"no\">\n                    <th mat-header-cell *matHeaderCellDef> No. </th>\n                    <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n                </ng-container>\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"patient_report\">\n                    <th mat-header-cell *matHeaderCellDef> Patient Report </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ element.file_original_name }} </td>\n                </ng-container>\n\n                <tr mat-header-row *matHeaderRowDef=\"notFindPatientRecordsDisplayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: notFindPatientRecordsDisplayedColumns;\"></tr>\n            </table>\n\n        </div>\n    </ng-container>\n\n    <mat-dialog-actions align=\"end\">\n        <button mat-button cdkFocusInitial>Ok</button>\n    </mat-dialog-actions>\n\n</mat-card>";
+    __webpack_exports__["default"] = "<h2 mat-dialog-title>Report Successfully Uploaded</h2>\n\n<mat-card class=\"modal_view\">\n\n    <ng-container *ngIf=\"data.confirmSubmittedDataSource.length > 0\">\n        <mat-card-content class=\"table_wrapper\">\n            <mat-toolbar class=\"top_header\">\n                <h2> Confirm Submitted Records</h2>\n            </mat-toolbar>\n            <div class=\"tablewrapper\">\n                <table mat-table [dataSource]=\"confirmSubmittedDataSource\" class=\"report_modal mat-elevation-z8\">\n\n                    <!--- Note that these columns can be defined in any order.\n                  The actual rendered columns are set as a property on the row definition\" -->\n\n                    <!-- Position Column -->\n                    <ng-container matColumnDef=\"no\">\n                        <th mat-header-cell *matHeaderCellDef> No. </th>\n                        <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n                    </ng-container>\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"patient_report\">\n                        <th mat-header-cell *matHeaderCellDef> Patient Report </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{ element.file_original_name }} </td>\n                    </ng-container>\n\n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"suggested_patient_by_system\">\n                        <th mat-header-cell *matHeaderCellDef> Suggested Patient by System </th>\n                        <td mat-cell *matCellDef=\"let element\">\n\n                            <ng-container *ngFor=\"let p of element.patient_details; let i = index;\">\n                                <p>Patient Name: {{ p.patient_name }}</p>\n                                <p>Date of Birth: {{ p.dob | date }}</p>\n                                <p>Gender: {{ p.gender }}</p>\n                                <p>Height: {{ p.height }}</p>\n                                <p>Waigth: {{ p.weight }}</p>\n                                <p *ngIf=\"p.doctor_details.length > 0\">Related Doctor:\n                                    {{ p.doctor_details[0].firstname }} {{ p.doctor_details[0].lastname }} </p>\n                                <p *ngIf=\"p.doctor_office_details.length > 0\">Doctor Office: {{ p.doctor_office_details[0].firstname }}\n                                    {{ p.doctor_office_details[0].lastname }}\n                                </p>\n                            </ng-container>\n                        </td>\n                    </ng-container>\n\n                    <tr mat-header-row *matHeaderRowDef=\"confirmSubmittedDisplayedColumns\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: confirmSubmittedDisplayedColumns;\"></tr>\n                </table>\n            </div>\n        </mat-card-content>\n    </ng-container>\n\n    <ng-container *ngIf=\"data.conflictingPatientRecordsDataSource.length > 0\">\n        <mat-card-content class=\"table_wrapper\">\n            <mat-toolbar class=\"top_header\">\n                <h2> Conflicting Patient Records </h2>\n            </mat-toolbar>\n        </mat-card-content>\n        <div class=\"tablewrapper\">\n            <table mat-table [dataSource]=\"conflictingPatientRecordsDataSource\" class=\"report_modal mat-elevation-z8\">\n\n                <!--- Note that these columns can be defined in any order.\n                  The actual rendered columns are set as a property on the row definition\" -->\n\n                <!-- Position Column -->\n                <ng-container matColumnDef=\"no\">\n                    <th mat-header-cell *matHeaderCellDef> No. </th>\n                    <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n                </ng-container>\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"patient_report\">\n                    <th mat-header-cell *matHeaderCellDef> Patient Report </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ element.file_original_name }} </td>\n                </ng-container>\n\n                <tr mat-header-row *matHeaderRowDef=\"conflictingPatientRecordsDisplayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: conflictingPatientRecordsDisplayedColumns;\"></tr>\n            </table>\n        </div>\n    </ng-container>\n\n    <br />\n\n    <ng-container *ngIf=\"data.notFindDataSource.length > 0\">\n        <mat-card-content class=\"table_wrapper\">\n            <mat-toolbar class=\"top_header\">\n                <h2> Reports That System can't Map </h2>\n            </mat-toolbar>\n        </mat-card-content>\n        <div class=\"tablewrapper\">\n            <table mat-table [dataSource]=\"notFindPatientRecordsDataSource\" class=\"report_modal\">\n\n                <!--- Note that these columns can be defined in any order.\n                  The actual rendered columns are set as a property on the row definition\" -->\n\n                <!-- Position Column -->\n                <ng-container matColumnDef=\"no\">\n                    <th mat-header-cell *matHeaderCellDef> No. </th>\n                    <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n                </ng-container>\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"patient_report\">\n                    <th mat-header-cell *matHeaderCellDef> Patient Report </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ element.file_original_name }} </td>\n                </ng-container>\n\n                <tr mat-header-row *matHeaderRowDef=\"notFindPatientRecordsDisplayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: notFindPatientRecordsDisplayedColumns;\"></tr>\n            </table>\n\n        </div>\n    </ng-container>\n\n    <mat-dialog-actions align=\"end\">\n        <button mat-button mat-dialog-close>DONE</button>\n    </mat-dialog-actions>\n\n</mat-card>";
     /***/
   },
 
@@ -2543,7 +2543,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-tech-header></app-tech-header>\n\n<mat-card class=\"admin_wrapper\">\n\n  <!-- new -->\n  <mat-card-content class=\"admin_superbillsection techDashboard\">\n    <!-- <h1>Physician Report and Super Bills</h1> -->\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports Uploaded\n          </p>\n          <h2> {{ allResolveData.totalReportCount }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Processed\n          </p>\n          <h2> {{ allResolveData.processedReportCount }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_three\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Number of Reports Remain to Process\n          </p>\n          <h2> {{ allResolveData.totalRemainToProcessCount }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Remain Process')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports This Week\n          </p>\n          <h2> {{ allResolveData.totalreportthisweek }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Last Week\n          </p>\n          <h2> {{ allResolveData.totalreportpreviousweek }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_three\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Number of Reports This Month\n          </p>\n          <h2> {{ allResolveData.totalreportthismonth }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Remain Process')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports Last Month\n          </p>\n          <h2> {{ allResolveData.totalreportlastmonth }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n\n\n  <!-- <mat-card-content class=\"doctor_content_wrapper\">\n    <mat-card-title>Doctor You Are Working With </mat-card-title>\n    <mat-card-content class=\"table_structure\">\n      <mat-list>\n\n        <mat-list-item>\n          <p class=\"title_n\">Name</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].firstname }} {{ allResolveData.doctorWorkingWith[0].lastname }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">Taxonomies</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].taxo_list[0] }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">Email</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].email }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">Phone</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].phone }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">FAX</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].fax }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">NPI#</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].npm }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n      </mat-list>\n    </mat-card-content>\n\n    <p class=\"doctorCount\">and&nbsp; <a\n        (click)=\"allDoctorViewModal()\">({{ allResolveData.doctorWorkingWith.length }})</a>&nbsp;more.</p>\n\n  </mat-card-content> -->\n\n\n\n  <!-- patainet report section -->\n  <mat-card-content class=\"table_wrapper \">\n\n    <mat-toolbar class=\"top_header\">\n      <h2>{{ htmlText.headerText }}</h2>\n\n      <button class=\"add_new\" mat-button routerLink=\"/tech/patient-management/bulk-upload\">upload bulk report</button>\n      <!-- <button class=\"add_new\" mat-button routerLink=\"/admin/patient-management/add\">add patient records manually</button> -->\n    </mat-toolbar>\n\n    <mat-toolbar class=\"action_bar\">\n      <mat-form-field>\n        <input matInput placeholder=\"Search by Doctor\" [(ngModel)]=\"searchJson.doctorName\">\n      </mat-form-field>\n\n      <mat-form-field>\n        <input matInput placeholder=\"Search by Patient\" [(ngModel)]=\"searchJson.patientName\">\n      </mat-form-field>\n\n      <mat-form-field class=\"parent_cat\">\n        <mat-select placeholder=\"Search By Status\" [(ngModel)]=\"searchJson.status\">\n          <mat-option value=\"\">Select a status</mat-option>\n          <mat-option value=\"waiting for doctor sign\">Waiting For Doctor Sign</mat-option>\n          <mat-option value=\"doctor signed\">Doctor Signed</mat-option>\n          <mat-option value=\"send to biller\">Send To Biller</mat-option>\n          <mat-option value=\"error\">Error</mat-option>\n          <mat-option value=\"pending\">Pending</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <!-- Filter by date -->\n      <ng-container>\n        <span class=\"date-range\">\n          <mat-form-field>\n            <input matInput placeholder=\"Choose a date\" [satDatepicker]=\"picker\" [(ngModel)]=\"searchJson.dateRange\" />\n            <sat-datepicker #picker [rangeMode]=\"true\"></sat-datepicker>\n            <sat-datepicker-toggle matSuffix [for]=\"picker\"></sat-datepicker-toggle>\n          </mat-form-field>\n        </span>\n        <span class=\"resetButton_w\">\n          <button mat-raised-button type=\"button\" color=\"primary\" class=\"add_button\"\n            (click)=\"viewDetailsData(htmlText.headerText);\">Search</button>\n          <button mat-raised-button type=\"button\" color=\"primary\" class=\"add_button\" (click)=\"resetSearch();\">\n            <i class=\"material-icons\"> replay </i>\n          </button>\n        </span>\n      </ng-container> \n    </mat-toolbar>\n    <!--all dashboard data table start here-->\n    <div class=\"tablewrapper\">\n      <table mat-table [dataSource]=\"allDataSource\" matSort class=\"mat-elevation-z8\">\n\n        <ng-container matColumnDef=\"no\">\n          <th mat-header-cell *matHeaderCellDef> No. </th>\n          <td mat-cell *matCellDef=\"let element; let i = index;\"> {{ i + 1 }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"patientName\">\n          <th mat-header-cell *matHeaderCellDef> Patient Name. </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"patient Name\"> {{ element.patient_name }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"doctorName\">\n          <th mat-header-cell *matHeaderCellDef> Doctor Name</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Doctor Name\" innerHTML=\"{{ element.doctor_details }}\">\n          </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"techName\">\n          <th mat-header-cell *matHeaderCellDef> Tech Name</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Tech Name\"> {{ element.tech_name }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"billerName\">\n          <th mat-header-cell *matHeaderCellDef> Biller Name</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Biller Name\"> {{ element.biller_name }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"recordType\">\n          <th mat-header-cell *matHeaderCellDef> Record Type</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Record Type\"> {{ element.report_type }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"billGenerationData\">\n          <th mat-header-cell *matHeaderCellDef> Bill Generation Date</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Generation Date\">\n            {{ element.billGenerationDate | date }}\n          </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"billsendDate\">\n          <th mat-header-cell *matHeaderCellDef> Bill Send Date</th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Bill Send Date\"> {{ element.billSentDate | date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"status\">\n          <th mat-header-cell *matHeaderCellDef> Status </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"Status\"> <span>{{ element.status }} </span></td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"created_at\">\n          <th mat-header-cell *matHeaderCellDef> Uploaded At </th>\n          <td mat-cell *matCellDef=\"let element\" data-label=\"created_at\"> <span>{{ element.created_at | date }} </span>\n          </td>\n        </ng-container>\n\n        <tr mat-header-row *matHeaderRowDef=\"allDataColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: allDataColumns;let i = index\"></tr>\n      </table>\n    </div>\n    <mat-paginator [pageSizeOptions]=\"[50, 100, 200]\"></mat-paginator>\n\n    <span class=\"button_action\">\n      <button mat-flat-button routerLink=\"/tech/patient-management/bulk-upload\">upload bulk report</button>\n    </span>\n  </mat-card-content>\n\n</mat-card>\n<app-admin-footer></app-admin-footer>";
+    __webpack_exports__["default"] = "<app-tech-header></app-tech-header>\n\n<mat-card class=\"admin_wrapper\">\n\n  <!-- new -->\n  <mat-card-content class=\"admin_superbillsection techDashboard\">\n    <!-- <h1>Physician Report and Super Bills</h1> -->\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports Uploaded\n          </p>\n          <h2> {{ allResolveData.totalReportCount }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Processed\n          </p>\n          <h2> {{ allResolveData.processedReportCount }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_three\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Number of Reports Remain to Process\n          </p>\n          <h2> {{ allResolveData.totalRemainToProcessCount }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Remain Process')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports This Week\n          </p>\n          <h2> {{ allResolveData.totalreportthisweek }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_two\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Report Last Week\n          </p>\n          <h2> {{ allResolveData.totalreportpreviousweek }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item sp_three\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Number of Reports This Month\n          </p>\n          <h2> {{ allResolveData.totalreportthismonth }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Remain Process')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item sp_one\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total No of <br>\n            Reports Last Month\n          </p>\n          <h2> {{ allResolveData.totalreportlastmonth }} </h2>\n          <button mat-flat-button (click)=\"viewDetailsData('Reports Uploaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n    </mat-card-content>\n  </mat-card-content>\n\n\n  <!-- <mat-card-content class=\"doctor_content_wrapper\">\n    <mat-card-title>Doctor You Are Working With </mat-card-title>\n    <mat-card-content class=\"table_structure\">\n      <mat-list>\n\n        <mat-list-item>\n          <p class=\"title_n\">Name</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].firstname }} {{ allResolveData.doctorWorkingWith[0].lastname }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">Taxonomies</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].taxo_list[0] }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">Email</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].email }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">Phone</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].phone }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">FAX</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].fax }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n        <mat-list-item>\n          <p class=\"title_n\">NPI#</p>\n          <p class=\"title_a\">\n            <ng-container>\n              {{ allResolveData.doctorWorkingWith[0].npm }}\n            </ng-container>\n          </p>\n        </mat-list-item>\n\n      </mat-list>\n    </mat-card-content>\n\n    <p class=\"doctorCount\">and&nbsp; <a\n        (click)=\"allDoctorViewModal()\">({{ allResolveData.doctorWorkingWith.length }})</a>&nbsp;more.</p>\n\n  </mat-card-content> -->\n\n\n\n  <!-- patainet report section -->\n  <mat-card-content class=\"table_wrapper\">\n\n    <mat-toolbar class=\"top_header\">\n      <h2>{{ htmlText.headerText }}</h2>\n\n      <button class=\"add_new\" mat-button routerLink=\"/tech/patient-management/bulk-upload\">upload bulk report</button>\n    </mat-toolbar>\n\n    <!--all dashboard data table start here-->\n    <div class=\"tablewrapper\">\n      <!-- table -->\n      <lib-listing\n        class=\"DataTable\" \n        *ngIf=\"allBillerData.length>0\" \n        [datasource]=\"allBillerData\" \n        [skip]=\"allUserData_skip\"\n        [modify_header_array]=\"allUserData_modify_header\" \n        [detail_skip_array]=\"previewModal_detail_skip\" \n        [apiurl]=\"apiUrl\"\n        [sourcedata]=\"tableName\" \n        [editroute]=\"editUrl\" \n        [jwttoken]=\"jwtToken\" \n        [statusarr]=\"status\"\n        [updateendpoint]=\"UpdateEndpoint\" \n        [deleteendpoint]=\"deleteEndpoint\" \n        [date_search_endpoint]=\"SearchingEndpoint\"\n        [date_search_source]=\"SearchingSourceName\" \n        [search_settings]=\"search_settings\" \n        [sortdata]=\"sortdata\" \n        [datacollection]=\"datacollection\" \n        [libdata]=\"libdata\" \n        [date_search_source_count]=\"billerData_count\" \n        [limitcond]=\"limitcond\" >\n      </lib-listing>\n    </div>\n    \n\n    <span class=\"button_action\">\n      <button mat-flat-button routerLink=\"/tech/patient-management/bulk-upload\">upload bulk report</button>\n    </span>\n  </mat-card-content>\n\n</mat-card>\n<app-admin-footer></app-admin-footer>";
     /***/
   },
 
@@ -2583,7 +2583,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n  <mat-card-content class=\"header_wrapper\">\n    <span class=\"logo_wrapper\" [routerLink]=\"[ '/tech/dashboard' ]\">\n      <img src=\"../../../assets/images/logo.png\">\n    </span>\n\n\n    <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n    <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\">\n      <mat-nav-list>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/tech/dashboard']\"> Dashboard </a>\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"calendarMenu\"> Manage Calendar <i class=\"material-icons\">\n          keyboard_arrow_down\n          </i></a>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/tech/faq']\"> FAQ </a>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/']\"> Manage Doctor </a>\n      </mat-nav-list>\n\n      <mat-menu #calendarMenu=\"matMenu\" class=\"sub_menu\">\n        <button mat-menu-item [routerLink]=\"['/tech/manage-calender/manage-sehedule']\">Manage Schedule\n        </button>\n        <button mat-menu-item [routerLink]=\"['/tech/manage-calender/my-appoinments']\">My Appointments</button>\n      </mat-menu>\n    </mat-card-content>\n\n    <mat-card-content class=\"profile_section\">\n      <mat-menu #appMenu=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/tech/account-settings']\">\n          <mat-icon>account_circle</mat-icon> Account Settings\n        </button>\n        <button mat-menu-item [routerLink]=\"['/tech/account-settings/change-password']\">\n          <mat-icon>vpn_key</mat-icon> Change Password\n        </button>\n        <button mat-menu-item (click)=\"logout()\">\n          <mat-icon>power_settings_new</mat-icon> Logout\n        </button>\n      </mat-menu>\n      <span class=\"username\">{{user_data.firstname}} {{user_data.lastname}}</span>\n      <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n        <span class=\"user_profile\">\n          <mat-icon>account_circle</mat-icon>\n          <i class=\"material-icons\">\n            keyboard_arrow_down\n          </i>\n        </span>\n      </button>\n\n    </mat-card-content>\n  </mat-card-content>\n</mat-toolbar>\n<!-- end header -->";
+    __webpack_exports__["default"] = "<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n  <mat-card-content class=\"header_wrapper\">\n    <span class=\"logo_wrapper\" [routerLink]=\"[ '/tech/dashboard' ]\">\n      <img src=\"../../../assets/images/logo.png\">\n    </span>\n\n\n    <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n    <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\">\n      <mat-nav-list>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/tech/dashboard']\"> Dashboard </a>\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"calendarMenu\"> Manage Calendar <i class=\"material-icons\">\n          keyboard_arrow_down\n          </i>\n        </a>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/tech/faq']\"> FAQ </a>\n      </mat-nav-list>\n\n      <mat-menu #calendarMenu=\"matMenu\" class=\"sub_menu\">\n        <button mat-menu-item [routerLink]=\"['/tech/manage-calender/manage-sehedule']\">Manage Schedule\n        </button>\n        <button mat-menu-item [routerLink]=\"['/tech/manage-calender/my-appoinments']\">My Appointments</button>\n      </mat-menu>\n    </mat-card-content>\n\n    <mat-card-content class=\"profile_section\">\n      <mat-menu #appMenu=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/tech/account-settings']\">\n          <mat-icon>account_circle</mat-icon> Account Settings\n        </button>\n        <button mat-menu-item [routerLink]=\"['/tech/account-settings/change-password']\">\n          <mat-icon>vpn_key</mat-icon> Change Password\n        </button>\n        <button mat-menu-item (click)=\"logout()\">\n          <mat-icon>power_settings_new</mat-icon> Logout\n        </button>\n      </mat-menu>\n      <span class=\"username\">{{user_data.firstname}} {{user_data.lastname}}</span>\n      <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n        <span class=\"user_profile\">\n          <mat-icon>account_circle</mat-icon>\n          <i class=\"material-icons\">\n            keyboard_arrow_down\n          </i>\n        </span>\n      </button>\n\n    </mat-card-content>\n  </mat-card-content>\n</mat-toolbar>\n<!-- end header -->";
     /***/
   },
 
@@ -4185,9 +4185,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _components_booked_events_listing_reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_131__ = __webpack_require__(
-    /*! ./components/booked-events-listing/reschedule-appointment/reschedule-appointment.component */
-    "./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.ts"); // login library
+    var _components_encounter_form_encounter_form_component__WEBPACK_IMPORTED_MODULE_131__ = __webpack_require__(
+    /*! ./components/encounter-form/encounter-form.component */
+    "./src/app/components/encounter-form/encounter-form.component.ts"); // login library
     // ck editor
 
     /* Date Range Picker */
@@ -4269,7 +4269,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _components_auth_login_login_component__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"], _components_auth_forgetpassword_forgetpassword_component__WEBPACK_IMPORTED_MODULE_28__["ForgetpasswordComponent"], _components_auth_resetpassword_resetpassword_component__WEBPACK_IMPORTED_MODULE_29__["ResetpasswordComponent"], // dashboard
       _components_tech_tech_dashboard_tech_dashboard_component__WEBPACK_IMPORTED_MODULE_48__["TechDashboardComponent"], _components_admin_admin_dashboard_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_33__["AdminDashboardComponent"], _components_biller_biller_dashboard_biller_dashboard_component__WEBPACK_IMPORTED_MODULE_54__["BillerDashboardComponent"], _components_doctor_doctor_dashboard_doctor_dashboard_component__WEBPACK_IMPORTED_MODULE_52__["DoctorDashboardComponent"], //user-management
       _components_admin_user_management_user_add_edit_user_add_edit_component__WEBPACK_IMPORTED_MODULE_45__["UserAddEditComponent"], // Test
-      _components_test_test_component__WEBPACK_IMPORTED_MODULE_56__["TestComponent"], _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_34__["AddEditComponent"], _components_admin_admin_management_manage_admin_list_manage_admin_list_component__WEBPACK_IMPORTED_MODULE_35__["ManageAdminListComponent"], _components_admin_admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_36__["AdminHeaderComponent"], _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_37__["AddeditDoctorComponent"], _components_admin_doctor_management_list_doctor_list_doctor_component__WEBPACK_IMPORTED_MODULE_38__["ListDoctorComponent"], _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_37__["ChangePasswordDoctorModal"], _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_39__["AddEditBillerComponent"], _components_admin_biller_management_listing_biller_listing_biller_component__WEBPACK_IMPORTED_MODULE_40__["ListingBillerComponent"], _components_admin_tech_management_listing_tech_listing_tech_component__WEBPACK_IMPORTED_MODULE_41__["ListingTechComponent"], _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_42__["AddEditTechComponent"], _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_42__["Dialogtest"], _components_admin_sales_person_management_add_edit_sales_person_add_edit_sales_person_component__WEBPACK_IMPORTED_MODULE_47__["SRDialogtest"], _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_39__["ChangePasswordModal"], _components_admin_doctor_office_management_add_edit_doctor_ofc_add_edit_doctor_ofc_component__WEBPACK_IMPORTED_MODULE_68__["ChangePasswordDoctorOfficeModal"], _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_34__["ChangePasswordAdminModal"], _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_43__["AccountSettingsComponent"], _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_44__["ChangePasswordComponent"], _components_admin_admin_dashboard_add_edit_patient_add_edit_patient_component__WEBPACK_IMPORTED_MODULE_50__["AddEditPatientComponent"], _components_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_30__["DialogBoxComponent"], _components_tech_patient_management_bulk_upload_bulk_upload_component__WEBPACK_IMPORTED_MODULE_51__["BulkUploadComponent"], _components_common_upload_dialog_box_upload_dialog_box_component__WEBPACK_IMPORTED_MODULE_31__["UploadDialogBoxComponent"], _components_biller_biller_header_biller_header_component__WEBPACK_IMPORTED_MODULE_55__["BillerHeaderComponent"], _components_doctor_doctor_header_doctor_header_component__WEBPACK_IMPORTED_MODULE_53__["DoctorHeaderComponent"], _components_tech_tech_header_tech_header_component__WEBPACK_IMPORTED_MODULE_49__["TechHeaderComponent"], _components_doctor_doctor_dashboard_patient_report_view_healthrisk_system_encounter_healthrisk_system_encounter_component__WEBPACK_IMPORTED_MODULE_57__["HealthriskSystemEncounterComponent"], _components_doctor_doctor_dashboard_patient_report_view_system_superbill_system_superbill_component__WEBPACK_IMPORTED_MODULE_58__["SystemSuperbillComponent"], _components_doctor_doctor_dashboard_patient_report_view_health_risk_analysis_health_risk_analysis_component__WEBPACK_IMPORTED_MODULE_59__["HealthRiskAnalysisComponent"], _components_tech_report_details_report_details_component__WEBPACK_IMPORTED_MODULE_60__["ReportDetailsComponent"], _components_common_http_loader_http_loader_component__WEBPACK_IMPORTED_MODULE_23__["HttpLoaderComponent"], _components_common_not_found_error_not_found_error_component__WEBPACK_IMPORTED_MODULE_61__["NotFoundErrorComponent"], _components_admin_admin_footer_admin_footer_component__WEBPACK_IMPORTED_MODULE_62__["AdminFooterComponent"], _components_biller_biller_footer_biller_footer_component__WEBPACK_IMPORTED_MODULE_63__["BillerFooterComponent"], _components_tech_tech_footer_tech_footer_component__WEBPACK_IMPORTED_MODULE_64__["TechFooterComponent"], _components_doctor_doctor_footer_doctor_footer_component__WEBPACK_IMPORTED_MODULE_65__["DoctorFooterComponent"], _components_doctor_signature_management_signature_management_component__WEBPACK_IMPORTED_MODULE_66__["SignatureManagementComponent"], _components_common_password_dialog_box_password_dialog_box_component__WEBPACK_IMPORTED_MODULE_32__["PasswordDialogBoxComponent"], _components_admin_doctor_office_management_doctor_office_management_component__WEBPACK_IMPORTED_MODULE_67__["DoctorOfficeManagementComponent"], _components_admin_doctor_office_management_add_edit_doctor_ofc_add_edit_doctor_ofc_component__WEBPACK_IMPORTED_MODULE_68__["AddEditDoctorOfcComponent"], _components_admin_booked_appoinments_booked_appoinments_component__WEBPACK_IMPORTED_MODULE_70__["BookedAppoinmentsComponent"], _components_tech_manage_calender_my_appointments_list_list_component__WEBPACK_IMPORTED_MODULE_71__["ListComponent"], _components_doctor_office_doctor_office_dashboard_doctor_office_dashboard_component__WEBPACK_IMPORTED_MODULE_72__["DoctorOfficeDashboardComponent"], _components_doctor_office_doctor_office_header_doctor_office_header_component__WEBPACK_IMPORTED_MODULE_73__["DoctorOfficeHeaderComponent"], _components_doctor_office_doctor_office_footer_doctor_office_footer_component__WEBPACK_IMPORTED_MODULE_74__["DoctorOfficeFooterComponent"], _components_admin_booked_appoinments_booked_appoinments_component__WEBPACK_IMPORTED_MODULE_70__["BookedAppoinmentsComponent"], _components_doctor_office_doctor_office_account_settings_doctor_office_account_settings_component__WEBPACK_IMPORTED_MODULE_75__["DoctorOfficeAccountSettingsComponent"], _components_doctor_office_doctor_office_change_password_doctor_office_change_password_component__WEBPACK_IMPORTED_MODULE_77__["DoctorOfficeChangePasswordComponent"], _components_auth_logout_logout_component__WEBPACK_IMPORTED_MODULE_76__["LogoutComponent"], _components_doctor_doctor_dashboard_patient_report_view_patient_report_view_component__WEBPACK_IMPORTED_MODULE_78__["PatientReportViewComponent"], _components_tech_tech_dashboard_tech_dashboard_component__WEBPACK_IMPORTED_MODULE_48__["DoctorViewDialogComponent"], _components_admin_admin_dashboard_edit_patient_record_edit_patient_record_component__WEBPACK_IMPORTED_MODULE_79__["EditPatientRecordComponent"], _components_admin_report_not_process_report_not_process_component__WEBPACK_IMPORTED_MODULE_80__["ReportNotProcessComponent"], _components_biller_download_superbiller_download_superbiller_component__WEBPACK_IMPORTED_MODULE_81__["DownloadSuperbillerComponent"], _components_admin_admin_dashboard_download_details_download_details_component__WEBPACK_IMPORTED_MODULE_82__["DownloadDetailsComponent"], _components_admin_diagnostic_admin_management_add_edit_diagnostic_admin_add_edit_diagnostic_admin_component__WEBPACK_IMPORTED_MODULE_84__["AddEditDiagnosticAdminComponent"], _components_admin_diagnostic_admin_management_add_edit_diagnostic_admin_add_edit_diagnostic_admin_component__WEBPACK_IMPORTED_MODULE_84__["DiagnosticAdminPasswordChange"], _components_admin_diagnostic_admin_management_listing_diagnostic_admin_listing_diagnostic_admin_component__WEBPACK_IMPORTED_MODULE_85__["ListingDiagnosticAdminComponent"], _components_diagnostic_admin_diagnostic_admin_dashboard_diagnostic_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_86__["DiagnosticAdminDashboardComponent"], _components_diagnostic_admin_diagnostic_admin_header_diagnostic_admin_header_component__WEBPACK_IMPORTED_MODULE_87__["DiagnosticAdminHeaderComponent"], _components_diagnostic_admin_diagnostic_admin_footer_diagnostic_admin_footer_component__WEBPACK_IMPORTED_MODULE_88__["DiagnosticAdminFooterComponent"], _components_doctor_doctor_dashboard_patient_report_view_additional_recommemded_diagnostic_tests_additional_recommemded_diagnostic_tests_component__WEBPACK_IMPORTED_MODULE_89__["AdditionalRecommemdedDiagnosticTestsComponent"], _components_admin_sales_person_management_list_sales_person_list_sales_person_component__WEBPACK_IMPORTED_MODULE_46__["ListSalesPersonComponent"], _components_admin_sales_person_management_add_edit_sales_person_add_edit_sales_person_component__WEBPACK_IMPORTED_MODULE_47__["AddEditSalesPersonComponent"], _components_sales_person_sales_person_dashboard_sales_person_dashboard_component__WEBPACK_IMPORTED_MODULE_90__["SalesPersonDashboardComponent"], _components_sales_person_sales_person_header_sales_person_header_component__WEBPACK_IMPORTED_MODULE_91__["SalesPersonHeaderComponent"], _components_sales_person_sales_person_footer_sales_person_footer_component__WEBPACK_IMPORTED_MODULE_92__["SalesPersonFooterComponent"], _components_admin_faq_management_add_edit_faq_add_edit_faq_component__WEBPACK_IMPORTED_MODULE_93__["AddEditFaqComponent"], _components_admin_faq_management_list_faq_list_faq_component__WEBPACK_IMPORTED_MODULE_94__["ListFaqComponent"], _components_common_faq_view_faq_view_component__WEBPACK_IMPORTED_MODULE_95__["FaqViewComponent"], _components_common_faq_view_faq_view_component__WEBPACK_IMPORTED_MODULE_95__["FaqViewComponent"], _components_tech_manage_calender_manage_schedule_cal_create_slot_cal_create_slot_component__WEBPACK_IMPORTED_MODULE_96__["CalCreateSlotComponent"], _components_tech_manage_calender_manage_schedule_cal_sync_with_google_cal_sync_with_google_component__WEBPACK_IMPORTED_MODULE_97__["CalSyncWithGoogleComponent"], _components_tech_manage_calender_manage_schedule_cal_home_cal_home_component__WEBPACK_IMPORTED_MODULE_98__["CalHomeComponent"], _components_tech_manage_calender_manage_schedule_cal_view_slot_cal_view_slot_component__WEBPACK_IMPORTED_MODULE_99__["CalViewSlotComponent"], _components_tech_manage_calender_manage_schedule_cal_event_listing_cal_event_listing_component__WEBPACK_IMPORTED_MODULE_100__["CalEventListingComponent"], _components_doctor_office_manage_appointments_appoinments_listing_appoinments_listing_component__WEBPACK_IMPORTED_MODULE_101__["AppoinmentsListingComponent"], _components_doctor_office_manage_appointments_book_appoinment_now_book_appoinment_now_component__WEBPACK_IMPORTED_MODULE_102__["BookAppoinmentNowComponent"], _components_tech_manage_calender_manage_schedule_booked_events_booked_events_component__WEBPACK_IMPORTED_MODULE_103__["BookedEventsComponent"], _components_tech_patient_management_report_conformation_report_conformation_component__WEBPACK_IMPORTED_MODULE_104__["ReportConformationComponent"], _components_admin_manage_insurance_add_edit_insurance_add_edit_insurance_component__WEBPACK_IMPORTED_MODULE_105__["AddEditInsuranceComponent"], _components_admin_manage_insurance_listing_insurance_listing_insurance_component__WEBPACK_IMPORTED_MODULE_106__["ListingInsuranceComponent"], _components_admin_manage_insurancetype_add_edit_insurancetype_add_edit_insurancetype_component__WEBPACK_IMPORTED_MODULE_107__["AddEditInsurancetypeComponent"], _components_admin_manage_insurancetype_listing_insurancetype_listing_insurancetype_component__WEBPACK_IMPORTED_MODULE_108__["ListingInsurancetypeComponent"], _components_admin_manage_doctorgroup_add_edit_doctorgroup_add_edit_doctorgroup_component__WEBPACK_IMPORTED_MODULE_109__["AddEditDoctorgroupComponent"], _components_admin_manage_doctorgroup_listing_doctorgroup_listing_doctorgroup_component__WEBPACK_IMPORTED_MODULE_110__["ListingDoctorgroupComponent"], _components_admin_manage_adminbiller_add_edit_adminbiller_add_edit_adminbiller_component__WEBPACK_IMPORTED_MODULE_111__["AddEditAdminbillerComponent"], _components_admin_manage_adminbiller_listing_adminbiller_listing_adminbiller_component__WEBPACK_IMPORTED_MODULE_112__["ListingAdminbillerComponent"], _components_admin_manage_patientinformation_add_edit_patientinformation_add_edit_patientinformation_component__WEBPACK_IMPORTED_MODULE_113__["AddEditPatientinformationComponent"], _components_admin_manage_patientinformation_listing_patientinformation_listing_patientinformation_component__WEBPACK_IMPORTED_MODULE_114__["ListingPatientinformationComponent"], _components_admin_manage_distributors_add_edit_distributors_add_edit_distributors_component__WEBPACK_IMPORTED_MODULE_115__["AddEditDistributorsComponent"], _components_admin_manage_distributors_listing_distributors_listing_distributors_component__WEBPACK_IMPORTED_MODULE_116__["ListingDistributorsComponent"], _components_doctor_group_doctor_group_dashboard_doctor_group_dashboard_component__WEBPACK_IMPORTED_MODULE_117__["DoctorGroupDashboardComponent"], _components_doctor_group_doctor_group_header_doctor_group_header_component__WEBPACK_IMPORTED_MODULE_118__["DoctorGroupHeaderComponent"], _components_doctor_group_doctor_group_footer_doctor_group_footer_component__WEBPACK_IMPORTED_MODULE_119__["DoctorGroupFooterComponent"], _components_distributors_distributors_dashboard_distributors_dashboard_component__WEBPACK_IMPORTED_MODULE_120__["DistributorsDashboardComponent"], _components_distributors_distributors_header_distributors_header_component__WEBPACK_IMPORTED_MODULE_121__["DistributorsHeaderComponent"], _components_distributors_distributors_footer_distributors_footer_component__WEBPACK_IMPORTED_MODULE_122__["DistributorsFooterComponent"], _components_adminbiller_adminbiller_dashboard_adminbiller_dashboard_component__WEBPACK_IMPORTED_MODULE_123__["AdminbillerDashboardComponent"], _components_adminbiller_adminbiller_header_adminbiller_header_component__WEBPACK_IMPORTED_MODULE_124__["AdminbillerHeaderComponent"], _components_adminbiller_adminbiller_footer_adminbiller_footer_component__WEBPACK_IMPORTED_MODULE_125__["AdminbillerFooterComponent"], _components_doctor_office_add_patient_add_patient_manually_add_patient_manually_component__WEBPACK_IMPORTED_MODULE_126__["AddPatientManuallyComponent"], _components_booked_events_listing_upcoming_appoinments_upcoming_appoinments_component__WEBPACK_IMPORTED_MODULE_127__["UpcomingAppoinmentsComponent"], _components_booked_events_listing_past_appoinments_past_appoinments_component__WEBPACK_IMPORTED_MODULE_128__["PastAppoinmentsComponent"], _components_doctor_office_manage_appointments_book_appoinment_now_book_appoinment_now_component__WEBPACK_IMPORTED_MODULE_102__["ChooseDoctorDialog"], _components_tech_patient_management_patient_select_modal_patient_select_modal_component__WEBPACK_IMPORTED_MODULE_129__["PatientSelectModalComponent"], _components_tech_patient_management_report_upload_success_modal_report_upload_success_modal_component__WEBPACK_IMPORTED_MODULE_130__["ReportUploadSuccessModalComponent"], _components_booked_events_listing_reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_131__["RescheduleAppointmentComponent"]],
+      _components_test_test_component__WEBPACK_IMPORTED_MODULE_56__["TestComponent"], _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_34__["AddEditComponent"], _components_admin_admin_management_manage_admin_list_manage_admin_list_component__WEBPACK_IMPORTED_MODULE_35__["ManageAdminListComponent"], _components_admin_admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_36__["AdminHeaderComponent"], _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_37__["AddeditDoctorComponent"], _components_admin_doctor_management_list_doctor_list_doctor_component__WEBPACK_IMPORTED_MODULE_38__["ListDoctorComponent"], _components_admin_doctor_management_addedit_doctor_addedit_doctor_component__WEBPACK_IMPORTED_MODULE_37__["ChangePasswordDoctorModal"], _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_39__["AddEditBillerComponent"], _components_admin_biller_management_listing_biller_listing_biller_component__WEBPACK_IMPORTED_MODULE_40__["ListingBillerComponent"], _components_admin_tech_management_listing_tech_listing_tech_component__WEBPACK_IMPORTED_MODULE_41__["ListingTechComponent"], _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_42__["AddEditTechComponent"], _components_admin_tech_management_add_edit_tech_add_edit_tech_component__WEBPACK_IMPORTED_MODULE_42__["Dialogtest"], _components_admin_sales_person_management_add_edit_sales_person_add_edit_sales_person_component__WEBPACK_IMPORTED_MODULE_47__["SRDialogtest"], _components_admin_biller_management_add_edit_biller_add_edit_biller_component__WEBPACK_IMPORTED_MODULE_39__["ChangePasswordModal"], _components_admin_doctor_office_management_add_edit_doctor_ofc_add_edit_doctor_ofc_component__WEBPACK_IMPORTED_MODULE_68__["ChangePasswordDoctorOfficeModal"], _components_admin_admin_management_add_edit_add_edit_component__WEBPACK_IMPORTED_MODULE_34__["ChangePasswordAdminModal"], _components_common_account_settings_account_settings_component__WEBPACK_IMPORTED_MODULE_43__["AccountSettingsComponent"], _components_common_account_settings_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_44__["ChangePasswordComponent"], _components_admin_admin_dashboard_add_edit_patient_add_edit_patient_component__WEBPACK_IMPORTED_MODULE_50__["AddEditPatientComponent"], _components_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_30__["DialogBoxComponent"], _components_tech_patient_management_bulk_upload_bulk_upload_component__WEBPACK_IMPORTED_MODULE_51__["BulkUploadComponent"], _components_common_upload_dialog_box_upload_dialog_box_component__WEBPACK_IMPORTED_MODULE_31__["UploadDialogBoxComponent"], _components_biller_biller_header_biller_header_component__WEBPACK_IMPORTED_MODULE_55__["BillerHeaderComponent"], _components_doctor_doctor_header_doctor_header_component__WEBPACK_IMPORTED_MODULE_53__["DoctorHeaderComponent"], _components_tech_tech_header_tech_header_component__WEBPACK_IMPORTED_MODULE_49__["TechHeaderComponent"], _components_doctor_doctor_dashboard_patient_report_view_healthrisk_system_encounter_healthrisk_system_encounter_component__WEBPACK_IMPORTED_MODULE_57__["HealthriskSystemEncounterComponent"], _components_doctor_doctor_dashboard_patient_report_view_system_superbill_system_superbill_component__WEBPACK_IMPORTED_MODULE_58__["SystemSuperbillComponent"], _components_doctor_doctor_dashboard_patient_report_view_health_risk_analysis_health_risk_analysis_component__WEBPACK_IMPORTED_MODULE_59__["HealthRiskAnalysisComponent"], _components_tech_report_details_report_details_component__WEBPACK_IMPORTED_MODULE_60__["ReportDetailsComponent"], _components_common_http_loader_http_loader_component__WEBPACK_IMPORTED_MODULE_23__["HttpLoaderComponent"], _components_common_not_found_error_not_found_error_component__WEBPACK_IMPORTED_MODULE_61__["NotFoundErrorComponent"], _components_admin_admin_footer_admin_footer_component__WEBPACK_IMPORTED_MODULE_62__["AdminFooterComponent"], _components_biller_biller_footer_biller_footer_component__WEBPACK_IMPORTED_MODULE_63__["BillerFooterComponent"], _components_tech_tech_footer_tech_footer_component__WEBPACK_IMPORTED_MODULE_64__["TechFooterComponent"], _components_doctor_doctor_footer_doctor_footer_component__WEBPACK_IMPORTED_MODULE_65__["DoctorFooterComponent"], _components_doctor_signature_management_signature_management_component__WEBPACK_IMPORTED_MODULE_66__["SignatureManagementComponent"], _components_common_password_dialog_box_password_dialog_box_component__WEBPACK_IMPORTED_MODULE_32__["PasswordDialogBoxComponent"], _components_admin_doctor_office_management_doctor_office_management_component__WEBPACK_IMPORTED_MODULE_67__["DoctorOfficeManagementComponent"], _components_admin_doctor_office_management_add_edit_doctor_ofc_add_edit_doctor_ofc_component__WEBPACK_IMPORTED_MODULE_68__["AddEditDoctorOfcComponent"], _components_admin_booked_appoinments_booked_appoinments_component__WEBPACK_IMPORTED_MODULE_70__["BookedAppoinmentsComponent"], _components_tech_manage_calender_my_appointments_list_list_component__WEBPACK_IMPORTED_MODULE_71__["ListComponent"], _components_doctor_office_doctor_office_dashboard_doctor_office_dashboard_component__WEBPACK_IMPORTED_MODULE_72__["DoctorOfficeDashboardComponent"], _components_doctor_office_doctor_office_header_doctor_office_header_component__WEBPACK_IMPORTED_MODULE_73__["DoctorOfficeHeaderComponent"], _components_doctor_office_doctor_office_footer_doctor_office_footer_component__WEBPACK_IMPORTED_MODULE_74__["DoctorOfficeFooterComponent"], _components_admin_booked_appoinments_booked_appoinments_component__WEBPACK_IMPORTED_MODULE_70__["BookedAppoinmentsComponent"], _components_doctor_office_doctor_office_account_settings_doctor_office_account_settings_component__WEBPACK_IMPORTED_MODULE_75__["DoctorOfficeAccountSettingsComponent"], _components_doctor_office_doctor_office_change_password_doctor_office_change_password_component__WEBPACK_IMPORTED_MODULE_77__["DoctorOfficeChangePasswordComponent"], _components_auth_logout_logout_component__WEBPACK_IMPORTED_MODULE_76__["LogoutComponent"], _components_doctor_doctor_dashboard_patient_report_view_patient_report_view_component__WEBPACK_IMPORTED_MODULE_78__["PatientReportViewComponent"], _components_tech_tech_dashboard_tech_dashboard_component__WEBPACK_IMPORTED_MODULE_48__["DoctorViewDialogComponent"], _components_admin_admin_dashboard_edit_patient_record_edit_patient_record_component__WEBPACK_IMPORTED_MODULE_79__["EditPatientRecordComponent"], _components_admin_report_not_process_report_not_process_component__WEBPACK_IMPORTED_MODULE_80__["ReportNotProcessComponent"], _components_biller_download_superbiller_download_superbiller_component__WEBPACK_IMPORTED_MODULE_81__["DownloadSuperbillerComponent"], _components_admin_admin_dashboard_download_details_download_details_component__WEBPACK_IMPORTED_MODULE_82__["DownloadDetailsComponent"], _components_admin_diagnostic_admin_management_add_edit_diagnostic_admin_add_edit_diagnostic_admin_component__WEBPACK_IMPORTED_MODULE_84__["AddEditDiagnosticAdminComponent"], _components_admin_diagnostic_admin_management_add_edit_diagnostic_admin_add_edit_diagnostic_admin_component__WEBPACK_IMPORTED_MODULE_84__["DiagnosticAdminPasswordChange"], _components_admin_diagnostic_admin_management_listing_diagnostic_admin_listing_diagnostic_admin_component__WEBPACK_IMPORTED_MODULE_85__["ListingDiagnosticAdminComponent"], _components_diagnostic_admin_diagnostic_admin_dashboard_diagnostic_admin_dashboard_component__WEBPACK_IMPORTED_MODULE_86__["DiagnosticAdminDashboardComponent"], _components_diagnostic_admin_diagnostic_admin_header_diagnostic_admin_header_component__WEBPACK_IMPORTED_MODULE_87__["DiagnosticAdminHeaderComponent"], _components_diagnostic_admin_diagnostic_admin_footer_diagnostic_admin_footer_component__WEBPACK_IMPORTED_MODULE_88__["DiagnosticAdminFooterComponent"], _components_doctor_doctor_dashboard_patient_report_view_additional_recommemded_diagnostic_tests_additional_recommemded_diagnostic_tests_component__WEBPACK_IMPORTED_MODULE_89__["AdditionalRecommemdedDiagnosticTestsComponent"], _components_admin_sales_person_management_list_sales_person_list_sales_person_component__WEBPACK_IMPORTED_MODULE_46__["ListSalesPersonComponent"], _components_admin_sales_person_management_add_edit_sales_person_add_edit_sales_person_component__WEBPACK_IMPORTED_MODULE_47__["AddEditSalesPersonComponent"], _components_sales_person_sales_person_dashboard_sales_person_dashboard_component__WEBPACK_IMPORTED_MODULE_90__["SalesPersonDashboardComponent"], _components_sales_person_sales_person_header_sales_person_header_component__WEBPACK_IMPORTED_MODULE_91__["SalesPersonHeaderComponent"], _components_sales_person_sales_person_footer_sales_person_footer_component__WEBPACK_IMPORTED_MODULE_92__["SalesPersonFooterComponent"], _components_admin_faq_management_add_edit_faq_add_edit_faq_component__WEBPACK_IMPORTED_MODULE_93__["AddEditFaqComponent"], _components_admin_faq_management_list_faq_list_faq_component__WEBPACK_IMPORTED_MODULE_94__["ListFaqComponent"], _components_common_faq_view_faq_view_component__WEBPACK_IMPORTED_MODULE_95__["FaqViewComponent"], _components_common_faq_view_faq_view_component__WEBPACK_IMPORTED_MODULE_95__["FaqViewComponent"], _components_tech_manage_calender_manage_schedule_cal_create_slot_cal_create_slot_component__WEBPACK_IMPORTED_MODULE_96__["CalCreateSlotComponent"], _components_tech_manage_calender_manage_schedule_cal_sync_with_google_cal_sync_with_google_component__WEBPACK_IMPORTED_MODULE_97__["CalSyncWithGoogleComponent"], _components_tech_manage_calender_manage_schedule_cal_home_cal_home_component__WEBPACK_IMPORTED_MODULE_98__["CalHomeComponent"], _components_tech_manage_calender_manage_schedule_cal_view_slot_cal_view_slot_component__WEBPACK_IMPORTED_MODULE_99__["CalViewSlotComponent"], _components_tech_manage_calender_manage_schedule_cal_event_listing_cal_event_listing_component__WEBPACK_IMPORTED_MODULE_100__["CalEventListingComponent"], _components_doctor_office_manage_appointments_appoinments_listing_appoinments_listing_component__WEBPACK_IMPORTED_MODULE_101__["AppoinmentsListingComponent"], _components_doctor_office_manage_appointments_book_appoinment_now_book_appoinment_now_component__WEBPACK_IMPORTED_MODULE_102__["BookAppoinmentNowComponent"], _components_tech_manage_calender_manage_schedule_booked_events_booked_events_component__WEBPACK_IMPORTED_MODULE_103__["BookedEventsComponent"], _components_tech_patient_management_report_conformation_report_conformation_component__WEBPACK_IMPORTED_MODULE_104__["ReportConformationComponent"], _components_admin_manage_insurance_add_edit_insurance_add_edit_insurance_component__WEBPACK_IMPORTED_MODULE_105__["AddEditInsuranceComponent"], _components_admin_manage_insurance_listing_insurance_listing_insurance_component__WEBPACK_IMPORTED_MODULE_106__["ListingInsuranceComponent"], _components_admin_manage_insurancetype_add_edit_insurancetype_add_edit_insurancetype_component__WEBPACK_IMPORTED_MODULE_107__["AddEditInsurancetypeComponent"], _components_admin_manage_insurancetype_listing_insurancetype_listing_insurancetype_component__WEBPACK_IMPORTED_MODULE_108__["ListingInsurancetypeComponent"], _components_admin_manage_doctorgroup_add_edit_doctorgroup_add_edit_doctorgroup_component__WEBPACK_IMPORTED_MODULE_109__["AddEditDoctorgroupComponent"], _components_admin_manage_doctorgroup_listing_doctorgroup_listing_doctorgroup_component__WEBPACK_IMPORTED_MODULE_110__["ListingDoctorgroupComponent"], _components_admin_manage_adminbiller_add_edit_adminbiller_add_edit_adminbiller_component__WEBPACK_IMPORTED_MODULE_111__["AddEditAdminbillerComponent"], _components_admin_manage_adminbiller_listing_adminbiller_listing_adminbiller_component__WEBPACK_IMPORTED_MODULE_112__["ListingAdminbillerComponent"], _components_admin_manage_patientinformation_add_edit_patientinformation_add_edit_patientinformation_component__WEBPACK_IMPORTED_MODULE_113__["AddEditPatientinformationComponent"], _components_admin_manage_patientinformation_listing_patientinformation_listing_patientinformation_component__WEBPACK_IMPORTED_MODULE_114__["ListingPatientinformationComponent"], _components_admin_manage_distributors_add_edit_distributors_add_edit_distributors_component__WEBPACK_IMPORTED_MODULE_115__["AddEditDistributorsComponent"], _components_admin_manage_distributors_listing_distributors_listing_distributors_component__WEBPACK_IMPORTED_MODULE_116__["ListingDistributorsComponent"], _components_doctor_group_doctor_group_dashboard_doctor_group_dashboard_component__WEBPACK_IMPORTED_MODULE_117__["DoctorGroupDashboardComponent"], _components_doctor_group_doctor_group_header_doctor_group_header_component__WEBPACK_IMPORTED_MODULE_118__["DoctorGroupHeaderComponent"], _components_doctor_group_doctor_group_footer_doctor_group_footer_component__WEBPACK_IMPORTED_MODULE_119__["DoctorGroupFooterComponent"], _components_distributors_distributors_dashboard_distributors_dashboard_component__WEBPACK_IMPORTED_MODULE_120__["DistributorsDashboardComponent"], _components_distributors_distributors_header_distributors_header_component__WEBPACK_IMPORTED_MODULE_121__["DistributorsHeaderComponent"], _components_distributors_distributors_footer_distributors_footer_component__WEBPACK_IMPORTED_MODULE_122__["DistributorsFooterComponent"], _components_adminbiller_adminbiller_dashboard_adminbiller_dashboard_component__WEBPACK_IMPORTED_MODULE_123__["AdminbillerDashboardComponent"], _components_adminbiller_adminbiller_header_adminbiller_header_component__WEBPACK_IMPORTED_MODULE_124__["AdminbillerHeaderComponent"], _components_adminbiller_adminbiller_footer_adminbiller_footer_component__WEBPACK_IMPORTED_MODULE_125__["AdminbillerFooterComponent"], _components_doctor_office_add_patient_add_patient_manually_add_patient_manually_component__WEBPACK_IMPORTED_MODULE_126__["AddPatientManuallyComponent"], _components_booked_events_listing_upcoming_appoinments_upcoming_appoinments_component__WEBPACK_IMPORTED_MODULE_127__["UpcomingAppoinmentsComponent"], _components_booked_events_listing_past_appoinments_past_appoinments_component__WEBPACK_IMPORTED_MODULE_128__["PastAppoinmentsComponent"], _components_doctor_office_manage_appointments_book_appoinment_now_book_appoinment_now_component__WEBPACK_IMPORTED_MODULE_102__["ChooseDoctorDialog"], _components_tech_patient_management_patient_select_modal_patient_select_modal_component__WEBPACK_IMPORTED_MODULE_129__["PatientSelectModalComponent"], _components_tech_patient_management_report_upload_success_modal_report_upload_success_modal_component__WEBPACK_IMPORTED_MODULE_130__["ReportUploadSuccessModalComponent"], _components_encounter_form_encounter_form_component__WEBPACK_IMPORTED_MODULE_131__["EncounterFormComponent"]],
       imports: [saturn_datepicker__WEBPACK_IMPORTED_MODULE_17__["SatDatepickerModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"].withServerTransition({
         appId: 'serverApp'
       }), _ngx_meta_core__WEBPACK_IMPORTED_MODULE_13__["MetaModule"].forRoot(), _modules_app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["CommonModule"], _nguniversal_common__WEBPACK_IMPORTED_MODULE_7__["TransferHttpCacheModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], _ng_toolkit_universal__WEBPACK_IMPORTED_MODULE_8__["NgtUniversalModule"], _app_modules_materialModule__WEBPACK_IMPORTED_MODULE_27__["DemoMaterialModule"], login_lib_influxiq__WEBPACK_IMPORTED_MODULE_10__["LoginModule"], listing_angular7__WEBPACK_IMPORTED_MODULE_11__["ListingModule"], calendar_management_lib_influxiq__WEBPACK_IMPORTED_MODULE_16__["CalendarManagementModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_21__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_21__["ReactiveFormsModule"], file_upload_lib_influxiq__WEBPACK_IMPORTED_MODULE_12__["FileUploadModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], ngx_device_detector__WEBPACK_IMPORTED_MODULE_14__["DeviceDetectorModule"].forRoot(),
@@ -5137,20 +5137,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.allBillerData = [];
         this.billerData_count = 0;
-        this.allUserData_skip = ["_id", "report_file_type", "tech_id", "tech_email", "batch_name", "report_type", "status", "file_basepath", "file_bucketname", "file_name", "file_original_name", "file_type", "converted_image", "images", "patient_details", "patient_name_search"];
+        this.allUserData_skip = ["_id", "report_file_type", "tech_id", "tech_email", "batch_name", "report_type", "status", "file_basepath", "file_bucketname", "file_name", "file_original_name", "file_type", "converted_image", "images", "patient_details", "patient_name_search", "report_life_circle", "note", "additional_potential_health_risks", "cpt_codes", "created_at"];
         this.editUrl = "admin/biller-management/edit";
         this.libdata = {
           basecondition: "",
-          updateendpoint: 'statusupdate',
-          tableheaders: ["tech_name", "report_type", "report_life_circle", "note", "created_at", "patient_name"]
+          updateendpoint: '',
+          custombuttons: [{
+            label: "View Report",
+            route: "admin/patient-record/",
+            type: 'internallink',
+            param: ['_id']
+          }],
+          hideeditbutton: true,
+          hidedeletebutton: true,
+          hidestatustogglebutton: true,
+          hideviewbutton: true,
+          tableheaders: ["doctor_name", "tech_name", "patient_name", "status_text", "created_at_datetime", "cpt_code_count", "addl_hlth_risk"]
         };
         this.allUserData_modify_header = {
+          "doctor_name": "Doctor Name",
+          "tech_name": "Tech Name",
           "patient_name": "Patient Name",
-          "tech name": "Tech Name",
-          "report_type": "Report Type",
-          "report_life_circle": "Status",
-          "note": "Notes",
-          "created_at": "Created At"
+          "status_text": "Status",
+          "created_at_datetime": "Report Added",
+          "cpt_code_count": "CPT Code Count",
+          "addl_hlth_risk": "Addl Hlth Risk"
         };
         this.UpdateEndpoint = "addorupdatedata";
         this.deleteEndpoint = "deletesingledata";
@@ -5254,6 +5265,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ngAfterViewInit",
         value: function ngAfterViewInit() {}
+      }, {
+        key: "viewReportProcessData",
+        value: function viewReportProcessData(flag) {
+          console.log(flag);
+        }
       }]);
 
       return AdminDashboardComponent;
@@ -9801,7 +9817,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             address: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(200)]],
             zip: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(4), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(18)]],
             city: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
-            tech_id: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             parent_type: ['admin', []],
             parent_id: ['', []],
             state: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -10039,7 +10054,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "data": this.doctorOfficeAddEditForm.value,
               "domainurl": _environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].siteBaseUrl + 'reset-password',
               "sourceobj": ["parent_id"],
-              "sourceobjArray": ["tech_id"],
               "token": this.cookieService.get('jwtToken')
             };
 
@@ -19230,6 +19244,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.cookie = cookie;
         this.snackBar = snackBar;
         this.httpService = httpService;
+        this.searchByDoctor = {
+          label: "Search By Doctor",
+          field: 'doctor_id',
+          values: []
+        };
         this.configData = {
           appName: 'Calendar Management',
           jwtToken: "",
@@ -19299,7 +19318,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             slot: "Start Time",
             slot_end_time: 'End Time',
             timezoneName: 'Timezone',
-            status: 'Status'
+            status: 'Status',
+            username: 'Tech name'
           },
           source: 'google-events',
           date_search_source_count: 0,
@@ -19307,8 +19327,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             basecondition: {},
             detailview_override: [],
             updateendpoint: 'statusupdate',
+            hidestatustogglebutton: true,
+            hidedeletebutton: true,
             hideeditbutton: true,
-            tableheaders: ['patient_name', 'doctor_name', 'doctor_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'],
+            tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'],
             custombuttons: []
           },
           updatetable: false,
@@ -19318,7 +19340,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "pagecount": 1
           },
           sortdata: {
-            "type": 'asc',
+            "type": 'desc',
             "field": 'booking_date',
             "options": ['patient_name', 'booking_date', 'startdate', 'slot', 'slot_end_time']
           },
@@ -19352,39 +19374,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               field: 'patient_name'
             }],
             // this is use for  Autocomplete search
-            search: [{
-              label: "Search By Doctor",
-              field: 'doctor_id',
-              values: [{
-                val: 'example_doctor_id',
-                name: 'YmattZ A'
-              }, {
-                val: 'YmattZ',
-                name: 'YmattZ A'
-              }, {
-                val: 'Ymatt',
-                name: 'YmattZ AB'
-              }, {
-                val: 'Jessica',
-                name: 'A Jessica'
-              }]
-            }, {
-              label: "Search By Doctor Office",
-              field: 'doctor_office_id',
-              values: [{
-                val: 'example_doctor_office_id',
-                name: 'YmattZ A'
-              }, {
-                val: 'YmattZ',
-                name: 'YmattZ A'
-              }, {
-                val: 'Ymatt',
-                name: 'YmattZ AB'
-              }, {
-                val: 'Jessica',
-                name: 'A Jessica'
-              }]
-            }]
+            search: [this.searchByDoctor]
           },
           statusarray: [{
             val: 0,
@@ -19404,13 +19394,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function ngOnInit() {
           var _this99 = this;
 
+          // load doctor search dynamically
+          setTimeout(function () {
+            _this99.httpService.postRequest('get-doctor-info', {
+              condition: {
+                doctors_office_id: JSON.parse(_this99.cookie.get('user_details'))._id
+              }
+            }).subscribe(function (response) {
+              for (var i = 0; i < response.data.length; i++) {
+                var temp = {};
+                temp['val'] = response.data[i]._id;
+                temp['name'] = response.data[i].firstname + ' ' + response.data[i].lastname;
+
+                _this99.searchByDoctor.values.push(temp);
+              }
+            });
+          }, 3000);
+
           if (this.cookie.check('jwtToken')) {
             this.configData.jwtToken = this.cookie.get('jwtToken');
             var data = {
               token: this.configData.jwtToken,
               condition: {},
               sort: {
-                type: 'asc',
+                type: 'desc',
                 field: 'booking_date'
               }
             };
@@ -19464,7 +19471,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this99.configData.responseData = response.results.res; // Create skipFields array(first save all the keys from the dataset)
 
               if (response.results.res > 0) _this99.configData.skipFields = Object.keys(response.results.res[0]);
-              var requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status']; // Modify the skipFields array(splicing the keys which is in the requiredFields)
+              var requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status']; // Check user_type === 'doctor_office'
+
+              if (JSON.parse(_this99.cookie.get('user_details')).user_type === 'doctor_office') {
+                requiredFields.splice(requiredFields.indexOf('doctors_office_name'), 1);
+
+                _this99.configData.libdata.tableheaders.splice(_this99.configData.libdata.tableheaders.indexOf('doctors_office_name'), 1);
+              } // Modify the skipFields array(splicing the keys which is in the requiredFields)
+
 
               for (var i = 0; i < requiredFields.length; i++) {
                 _this99.configData.skipFields.splice(_this99.configData.skipFields.indexOf(requiredFields[i]), 1);
@@ -19514,752 +19528,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /*! ./past-appoinments.component.css */
       "./src/app/components/booked-events-listing/past-appoinments/past-appoinments.component.css")).default]
     })], PastAppoinmentsComponent);
-    /***/
-  },
-
-  /***/
-  "./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.css":
-  /*!**************************************************************************************************************!*\
-    !*** ./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.css ***!
-    \**************************************************************************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function srcAppComponentsBookedEventsListingRescheduleAppointmentRescheduleAppointmentComponentCss(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = ".example-card {\n  max-width: 400px;\n}\n\n.example-header-image {\n  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');\n  background-size: cover;\n  border: 2px solid rgb(224, 218, 218);\n}\n\n.headerSpan {\n  text-align: center;\n  display: block;\n  margin: auto;\n}\n\n.darkToolbar {\n  background-color: black;\n}\n\n.gridListWrapper {\n  padding: 30px;\n}\n\n.buttonsetToolbar {\n  background-color: #f4f3f8;\n  text-align: center;\n  display: block;\n  padding-top: 10px;\n}\n\n.singleButton {\n  margin: 5px;\n  display: inline-block;\n}\n\n.example-container {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n}\n\n.example-container > * {\n  width: 100%;\n}\n\n.headerSpan {\n  text-align: center;\n  display: block;\n  margin: auto;\n}\n\n.darkToolbar {\n  background-color: black;\n}\n\n.gridListWrapper {\n  padding: 30px;\n}\n\n.buttonsetToolbar {\n  background-color: #f4f3f8;\n  text-align: center;\n  display: block;\n  padding-top: 10px;\n}\n\n.singleButton {\n  margin: 5px;\n  display: inline-block;\n}\n\n.calender_first {\n  margin-bottom: 16px;\n  width: 100%;\n}\n\n.title {\n  text-align: center;\n  background: #57abdc;\n  color: #fff;\n  padding: 16px;\n  margin: 0 16px;\n  margin-bottom: 20px;\n}\n\n.calendar_wrapper {\n  width: 60%;\n  margin: auto;\n  border: 1px solid #00ffb8;\n}\n\n.calendar_wrapper .event_wrapper {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n}\n\n.calendar_wrapper .event_wrapper .mat-form-field {\n  width: 100%;\n}\n\n.time_picker, .button_wrapper {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: justify;\n          justify-content: space-between;\n}\n\n.time_picker .timer, .button_wrapper button {\n  width: 49%;\n}\n\n.button_wrapper {\n  margin-top: 20px;\n}\n\n.button_wrapper button {\n  padding: 5px;\n  border-radius: 0;\n}\n\n.example-card {\n  max-width: 400px;\n}\n\n.example-header-image {\n  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');\n  background-size: cover;\n}\n\n.slotview {\n  background-color: #f4f3f8;\n  padding: 2% 5%;\n  display: -webkit-box;\n  display: flex;\n  flex-wrap: wrap;\n  -webkit-box-pack: center;\n          justify-content: center;\n}\n\nmat-card {\n  margin: 5px;\n  width: 30%;\n}\n\nb {\n  font-weight: 500;\n}\n\nmat-card-content {\n  font-size: 15px;\n}\n\n.filter {\n  align-content: center;\n  margin-left: 3%;\n  margin-right: 3%;\n}\n\n.filter-box {\n  width: 200px;\n  margin-bottom: auto;\n  margin-right: 15px;\n  font-size: 14px;\n}\n\n.filter-box :disabled {\n  color: #000;\n  border-color: lightgray;\n}\n\n.m-r {\n  margin-right: 6px;\n}\n\n.m-l {\n  margin-left: 6px;\n}\n\n.pagination {\n  border: 1px solid lightgray;\n  border-radius: 5px;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  display: inline-block;\n  float: right;\n  font-size: 15px;\n  padding: 5px;\n}\n\n.selectPageCount {\n  width: 45px;\n}\n\n.sample_label {\n  margin-left: 12px;\n}\n\n/* test wrapper */\n\n.lib_wrpr{ display: -webkit-box; display: flex;\n  -webkit-box-pack: justify;\n          justify-content: space-between;\n  flex-wrap: wrap;\n}\n\n.lb_item{\n  width: 49%;\n  border: 1px solid #dadada;\n  margin: 0.5%;\n  box-sizing: border-box;\n  padding: 10px;\n\n}\n\n.lb_item .header{ margin: 0; margin-bottom: 16px;}\n\n.symptoms_type {\n  display:-webkit-box;\n  display:flex; -webkit-box-pack: justify; justify-content: space-between;\n}\n\n.symptoms_type .label_name{ margin: 0;}\n\n.checbox_wrapper{ display: -webkit-box; display: flex;\n  -webkit-box-pack: justify;\n          justify-content: space-between;}\n\n.checbox_wrapper label{ margin:0 5px;}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9ib29rZWQtZXZlbnRzLWxpc3RpbmcvcmVzY2hlZHVsZS1hcHBvaW50bWVudC9yZXNjaGVkdWxlLWFwcG9pbnRtZW50LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxtRkFBbUY7RUFDbkYsc0JBQXNCO0VBQ3RCLG9DQUFvQztBQUN0Qzs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixjQUFjO0VBQ2QsWUFBWTtBQUNkOztBQUVBO0VBQ0UsdUJBQXVCO0FBQ3pCOztBQUVBO0VBQ0UsYUFBYTtBQUNmOztBQUVBO0VBQ0UseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQixjQUFjO0VBQ2QsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0UsV0FBVztFQUNYLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLG9CQUFhO0VBQWIsYUFBYTtFQUNiLDRCQUFzQjtFQUF0Qiw2QkFBc0I7VUFBdEIsc0JBQXNCO0FBQ3hCOztBQUVBO0VBQ0UsV0FBVztBQUNiOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGNBQWM7RUFDZCxZQUFZO0FBQ2Q7O0FBRUE7RUFDRSx1QkFBdUI7QUFDekI7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7RUFDRSx5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLGNBQWM7RUFDZCxpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gscUJBQXFCO0FBQ3ZCOztBQUVBO0VBQ0UsbUJBQW1CO0VBQ25CLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixtQkFBbUI7RUFDbkIsV0FBVztFQUNYLGFBQWE7RUFDYixjQUFjO0VBQ2QsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsVUFBVTtFQUNWLFlBQVk7RUFDWix5QkFBeUI7QUFDM0I7O0FBRUE7RUFDRSxvQkFBYTtFQUFiLGFBQWE7RUFDYiw0QkFBc0I7RUFBdEIsNkJBQXNCO1VBQXRCLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLFdBQVc7QUFDYjs7QUFFQTtFQUNFLG9CQUFhO0VBQWIsYUFBYTtFQUNiLHlCQUE4QjtVQUE5Qiw4QkFBOEI7QUFDaEM7O0FBRUE7RUFDRSxVQUFVO0FBQ1o7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCOztBQUlBO0VBQ0UsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsbUZBQW1GO0VBQ25GLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLHlCQUF5QjtFQUN6QixjQUFjO0VBQ2Qsb0JBQWE7RUFBYixhQUFhO0VBQ2IsZUFBZTtFQUNmLHdCQUF1QjtVQUF2Qix1QkFBdUI7QUFDekI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsVUFBVTtBQUNaOztBQUVBO0VBQ0UsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLHFCQUFxQjtFQUNyQixlQUFlO0VBQ2YsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsWUFBWTtFQUNaLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCx1QkFBdUI7QUFDekI7O0FBRUE7RUFDRSxpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSwyQkFBMkI7RUFDM0Isa0JBQWtCO0VBQ2xCLDBCQUFrQjtFQUFsQix1QkFBa0I7RUFBbEIsa0JBQWtCO0VBQ2xCLHFCQUFxQjtFQUNyQixZQUFZO0VBQ1osZUFBZTtFQUNmLFlBQVk7QUFDZDs7QUFFQTtFQUNFLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGlCQUFpQjtBQUNuQjs7QUFFQSxpQkFBaUI7O0FBQ2pCLFdBQVcsb0JBQWEsRUFBYixhQUFhO0VBQ3RCLHlCQUE4QjtVQUE5Qiw4QkFBOEI7RUFDOUIsZUFBZTtBQUNqQjs7QUFDQTtFQUNFLFVBQVU7RUFDVix5QkFBeUI7RUFDekIsWUFBWTtFQUNaLHNCQUFzQjtFQUN0QixhQUFhOztBQUVmOztBQUNBLGtCQUFrQixTQUFTLEVBQUUsbUJBQW1CLENBQUM7O0FBQ2pEO0VBQ0UsbUJBQVk7RUFBWixZQUFZLEVBQUUseUJBQThCLEVBQTlCLDhCQUE4QjtBQUM5Qzs7QUFDQSw0QkFBNEIsU0FBUyxDQUFDOztBQUN0QyxrQkFBa0Isb0JBQWEsRUFBYixhQUFhO0VBQzdCLHlCQUE4QjtVQUE5Qiw4QkFBOEIsQ0FBQzs7QUFDakMsd0JBQXdCLFlBQVksQ0FBQyIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYm9va2VkLWV2ZW50cy1saXN0aW5nL3Jlc2NoZWR1bGUtYXBwb2ludG1lbnQvcmVzY2hlZHVsZS1hcHBvaW50bWVudC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmV4YW1wbGUtY2FyZCB7XG4gIG1heC13aWR0aDogNDAwcHg7XG59XG5cbi5leGFtcGxlLWhlYWRlci1pbWFnZSB7XG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnaHR0cHM6Ly9tYXRlcmlhbC5hbmd1bGFyLmlvL2Fzc2V0cy9pbWcvZXhhbXBsZXMvc2hpYmExLmpwZycpO1xuICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuICBib3JkZXI6IDJweCBzb2xpZCByZ2IoMjI0LCAyMTgsIDIxOCk7XG59XG5cbi5oZWFkZXJTcGFuIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBkaXNwbGF5OiBibG9jaztcbiAgbWFyZ2luOiBhdXRvO1xufVxuXG4uZGFya1Rvb2xiYXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbn1cblxuLmdyaWRMaXN0V3JhcHBlciB7XG4gIHBhZGRpbmc6IDMwcHg7XG59XG5cbi5idXR0b25zZXRUb29sYmFyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y0ZjNmODtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBkaXNwbGF5OiBibG9jaztcbiAgcGFkZGluZy10b3A6IDEwcHg7XG59XG5cbi5zaW5nbGVCdXR0b24ge1xuICBtYXJnaW46IDVweDtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xufVxuXG4uZXhhbXBsZS1jb250YWluZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xufVxuXG4uZXhhbXBsZS1jb250YWluZXIgPiAqIHtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5oZWFkZXJTcGFuIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBkaXNwbGF5OiBibG9jaztcbiAgbWFyZ2luOiBhdXRvO1xufVxuXG4uZGFya1Rvb2xiYXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbn1cblxuLmdyaWRMaXN0V3JhcHBlciB7XG4gIHBhZGRpbmc6IDMwcHg7XG59XG5cbi5idXR0b25zZXRUb29sYmFyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y0ZjNmODtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBkaXNwbGF5OiBibG9jaztcbiAgcGFkZGluZy10b3A6IDEwcHg7XG59XG5cbi5zaW5nbGVCdXR0b24ge1xuICBtYXJnaW46IDVweDtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xufVxuXG4uY2FsZW5kZXJfZmlyc3Qge1xuICBtYXJnaW4tYm90dG9tOiAxNnB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxuLnRpdGxlIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBiYWNrZ3JvdW5kOiAjNTdhYmRjO1xuICBjb2xvcjogI2ZmZjtcbiAgcGFkZGluZzogMTZweDtcbiAgbWFyZ2luOiAwIDE2cHg7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG59XG5cbi5jYWxlbmRhcl93cmFwcGVyIHtcbiAgd2lkdGg6IDYwJTtcbiAgbWFyZ2luOiBhdXRvO1xuICBib3JkZXI6IDFweCBzb2xpZCAjMDBmZmI4O1xufVxuXG4uY2FsZW5kYXJfd3JhcHBlciAuZXZlbnRfd3JhcHBlciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG59XG5cbi5jYWxlbmRhcl93cmFwcGVyIC5ldmVudF93cmFwcGVyIC5tYXQtZm9ybS1maWVsZCB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4udGltZV9waWNrZXIsIC5idXR0b25fd3JhcHBlciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLnRpbWVfcGlja2VyIC50aW1lciwgLmJ1dHRvbl93cmFwcGVyIGJ1dHRvbiB7XG4gIHdpZHRoOiA0OSU7XG59XG5cbi5idXR0b25fd3JhcHBlciB7XG4gIG1hcmdpbi10b3A6IDIwcHg7XG59XG5cbi5idXR0b25fd3JhcHBlciBidXR0b24ge1xuICBwYWRkaW5nOiA1cHg7XG4gIGJvcmRlci1yYWRpdXM6IDA7XG59XG5cblxuXG4uZXhhbXBsZS1jYXJkIHtcbiAgbWF4LXdpZHRoOiA0MDBweDtcbn1cblxuLmV4YW1wbGUtaGVhZGVyLWltYWdlIHtcbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCdodHRwczovL21hdGVyaWFsLmFuZ3VsYXIuaW8vYXNzZXRzL2ltZy9leGFtcGxlcy9zaGliYTEuanBnJyk7XG4gIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XG59XG5cbi5zbG90dmlldyB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmNGYzZjg7XG4gIHBhZGRpbmc6IDIlIDUlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LXdyYXA6IHdyYXA7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xufVxuXG5tYXQtY2FyZCB7XG4gIG1hcmdpbjogNXB4O1xuICB3aWR0aDogMzAlO1xufVxuXG5iIHtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbn1cblxubWF0LWNhcmQtY29udGVudCB7XG4gIGZvbnQtc2l6ZTogMTVweDtcbn1cblxuLmZpbHRlciB7XG4gIGFsaWduLWNvbnRlbnQ6IGNlbnRlcjtcbiAgbWFyZ2luLWxlZnQ6IDMlO1xuICBtYXJnaW4tcmlnaHQ6IDMlO1xufVxuXG4uZmlsdGVyLWJveCB7XG4gIHdpZHRoOiAyMDBweDtcbiAgbWFyZ2luLWJvdHRvbTogYXV0bztcbiAgbWFyZ2luLXJpZ2h0OiAxNXB4O1xuICBmb250LXNpemU6IDE0cHg7XG59XG5cbi5maWx0ZXItYm94IDpkaXNhYmxlZCB7XG4gIGNvbG9yOiAjMDAwO1xuICBib3JkZXItY29sb3I6IGxpZ2h0Z3JheTtcbn1cblxuLm0tciB7XG4gIG1hcmdpbi1yaWdodDogNnB4O1xufVxuXG4ubS1sIHtcbiAgbWFyZ2luLWxlZnQ6IDZweDtcbn1cblxuLnBhZ2luYXRpb24ge1xuICBib3JkZXI6IDFweCBzb2xpZCBsaWdodGdyYXk7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgd2lkdGg6IGZpdC1jb250ZW50O1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGZsb2F0OiByaWdodDtcbiAgZm9udC1zaXplOiAxNXB4O1xuICBwYWRkaW5nOiA1cHg7XG59XG5cbi5zZWxlY3RQYWdlQ291bnQge1xuICB3aWR0aDogNDVweDtcbn1cblxuLnNhbXBsZV9sYWJlbCB7XG4gIG1hcmdpbi1sZWZ0OiAxMnB4O1xufVxuXG4vKiB0ZXN0IHdyYXBwZXIgKi9cbi5saWJfd3JwcnsgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICBmbGV4LXdyYXA6IHdyYXA7XG59XG4ubGJfaXRlbXtcbiAgd2lkdGg6IDQ5JTtcbiAgYm9yZGVyOiAxcHggc29saWQgI2RhZGFkYTtcbiAgbWFyZ2luOiAwLjUlO1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBwYWRkaW5nOiAxMHB4O1xuXG59XG4ubGJfaXRlbSAuaGVhZGVyeyBtYXJnaW46IDA7IG1hcmdpbi1ib3R0b206IDE2cHg7fVxuLnN5bXB0b21zX3R5cGUge1xuICBkaXNwbGF5OmZsZXg7IGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cbi5zeW1wdG9tc190eXBlIC5sYWJlbF9uYW1leyBtYXJnaW46IDA7fVxuLmNoZWNib3hfd3JhcHBlcnsgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO31cbi5jaGVjYm94X3dyYXBwZXIgbGFiZWx7IG1hcmdpbjowIDVweDt9XG4iXX0= */";
-    /***/
-  },
-
-  /***/
-  "./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.ts":
-  /*!*************************************************************************************************************!*\
-    !*** ./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.ts ***!
-    \*************************************************************************************************************/
-
-  /*! exports provided: RescheduleAppointmentComponent */
-
-  /***/
-  function srcAppComponentsBookedEventsListingRescheduleAppointmentRescheduleAppointmentComponentTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "RescheduleAppointmentComponent", function () {
-      return RescheduleAppointmentComponent;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
-    /* harmony import */
-
-
-    var moment_es6__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! moment-es6 */
-    "./node_modules/moment-es6/index.js");
-    /* harmony import */
-
-
-    var moment_es6__WEBPACK_IMPORTED_MODULE_2___default =
-    /*#__PURE__*/
-    __webpack_require__.n(moment_es6__WEBPACK_IMPORTED_MODULE_2__);
-    /* harmony import */
-
-
-    var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! @angular/material/snack-bar */
-    "./node_modules/@angular/material/esm2015/snack-bar.js");
-    /* harmony import */
-
-
-    var _services_http_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! ../../../services/http-service.service */
-    "./src/app/services/http-service.service.ts");
-    /* harmony import */
-
-
-    var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! ngx-cookie-service */
-    "./node_modules/ngx-cookie-service/fesm2015/ngx-cookie-service.js");
-    /* harmony import */
-
-
-    var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! @angular/router */
-    "./node_modules/@angular/router/fesm2015/router.js");
-    /* harmony import */
-
-
-    var _environments_environment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-    /*! ../../../../environments/environment */
-    "./src/environments/environment.ts");
-
-    var RescheduleAppointmentComponent =
-    /*#__PURE__*/
-    function () {
-      function RescheduleAppointmentComponent(snackBar, activatedRoute, httpRequest, cookieService, router) {
-        _classCallCheck(this, RescheduleAppointmentComponent);
-
-        this.snackBar = snackBar;
-        this.activatedRoute = activatedRoute;
-        this.httpRequest = httpRequest;
-        this.cookieService = cookieService;
-        this.router = router;
-        this.configData = {
-          appName: 'Calendar Management',
-          jwtToken: "",
-          baseUrl: _environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].calendarApi,
-          endPoint: {
-            add: 'add-or-update-event-data',
-            datalist: 'datalist',
-            deleteEvent: 'delete-single-event',
-            viewEventSlots: 'view-event-eventdayarr',
-            search: 'search',
-            countSlot: 'count-slot',
-            // listBookedEvents: 'list-booked-events',
-            // listBookedEventsCount: 'list-booked-events-count',
-            listUpcomingBookedEvents: 'list-upcoming-booked-events',
-            listUpcomingBookedEventsCount: 'list-upcoming-booked-events-count',
-            deleteBookedEvent: 'delete-booked-event',
-            rescheduleBookedEvent: 'reschedule',
-            getTokenInfo: 'getauthorization-pece-getuserdata'
-          },
-          urls: [],
-          timeZone: [{
-            text: 'Alaska Standard Time',
-            value: '-08:00|America/Anchorage'
-          }, {
-            text: 'Pacific Standard Time',
-            value: '-07:00|America/Los_Angeles'
-          }, {
-            text: 'Mountain Standard Time(GMT-06:00)',
-            value: '-06:00|America/Denver'
-          }, {
-            text: 'Mountain Standard Time(GMT-07:00) (no DST)',
-            value: '-07:00|America/Phoenix'
-          }, {
-            text: 'Central Standard Time',
-            value: '-05:00|America/Chicago'
-          }, {
-            text: 'Eastern Standard Time',
-            value: '-04:00|America/New_York'
-          }, {
-            text: 'Hawaii Standard Time',
-            value: '-10:00|Pacific/Honolulu'
-          }],
-          eventType: [{
-            text: "Admin Meetings",
-            value: 1
-          }],
-          responseData: [],
-          // primaryCondition: {$or: [{event_type: 1}, {event_type: 2}]},
-          primaryCondition: {}
-        };
-        this.availableSlots = [];
-        this.progressSpinner = {
-          mode: 'indeterminate',
-          loading: true,
-          bookingStatus: 'Finding available slots'
-        };
-        /* Search fields */
-
-        this.filterOptions = {
-          availableDates: '',
-          eventType: '',
-          timezone: ''
-        };
-        this.today = new Date();
-        /* Variable for pagination */
-
-        this.page = {
-          start: 1,
-          end: 20,
-          page_count: 20,
-          page_no: 1,
-          total_record: 0
-        };
-        this.itemCount = 20;
-        this.arrPage = [];
-        this.jumpToPageNumber = 0;
-      }
-
-      _createClass(RescheduleAppointmentComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
-          var _this100 = this;
-
-          if (this.cookieService.check('jwtToken')) {
-            if (this.cookieService.check('timezone')) {
-              this.filterOptions.timezone = this.cookieService.get('timezone');
-            } else {
-              this.filterOptions.timezone = '-05:00|America/Chicago';
-            }
-
-            var booking_id = this.activatedRoute.snapshot.params._id;
-            var doctor_id = this.activatedRoute.snapshot.params.doctor_id;
-            this.configData.jwtToken = this.cookieService.get('jwtToken');
-            var data = {
-              token: this.configData.jwtToken,
-              condition: {
-                _id: booking_id
-              },
-              source: 'google_events'
-            };
-            this.httpRequest.postRequest('get-data', data).subscribe(function (response) {
-              _this100.bookingDetails = response.res[0];
-            });
-            var data2 = {
-              token: this.configData.jwtToken,
-              condition: {
-                _id: doctor_id
-              }
-            };
-            this.httpRequest.postRequest('get-tech-info', data2).subscribe(function (response) {
-              var arrTech = response.data.map(function (tech) {
-                return tech._id;
-              });
-              _this100.configData.primaryCondition = {
-                userid: {
-                  $in: arrTech
-                }
-              };
-
-              _this100.loadAvailableSlots();
-
-              _this100.getPageCount();
-            });
-          } else {
-            this.openSnackBar('Token not found', 'Ok');
-          }
-        }
-        /*
-         * getPageCount() count total number of records found in the collection
-         */
-
-      }, {
-        key: "getPageCount",
-        value: function getPageCount() {
-          var _this101 = this;
-
-          var data;
-
-          if (this.searchData == null) {
-            data = {
-              token: this.configData.jwtToken,
-              condition: this.configData.primaryCondition //{$and:[{event_type: 1}]}
-
-            };
-          } else {
-            data = this.searchData;
-          }
-          /* If the user is not an admin then load events that created by him/her only */
-          // if (this.data.libConfigData.user_type != 'admin') {
-          //   data.condition = Object.assign(data.condition, {userid: this.data.libConfigData._id});
-          // }
-
-
-          this.httpRequest.postRequest(this.configData.endPoint.countSlot, data).subscribe(function (response) {
-            if (response.status == 'success') {
-              /* Update value of this.page */
-              _this101.page.total_record = response.data;
-
-              if (_this101.page.total_record < _this101.page.page_count) {
-                _this101.page.end = _this101.page.total_record;
-              } else {
-                _this101.page.end = _this101.page.page_count;
-              }
-              /* Create page array */
-
-
-              _this101.arrPage = [];
-
-              for (var i = 0; i < _this101.page.total_record / _this101.page.page_count; i++) {
-                _this101.arrPage.push(i + 1);
-              }
-            } else {// console.log(response);
-            }
-          });
-        }
-        /*
-         * pageStep is the function to step forward and backward the page
-         * Load next or previous n(page.page_count) items
-         */
-
-      }, {
-        key: "pageStep",
-        value: function pageStep() {
-          var _this102 = this;
-
-          var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-          var data;
-
-          if (flag == 'prev' && this.page.page_no > 1) {
-            this.loading = true;
-            data = {
-              token: this.configData.jwtToken,
-              skip: this.page.start - this.page.page_count - 1,
-              limit: this.page.page_count,
-              timezone: this.filterOptions.timezone,
-              condition: this.configData.primaryCondition
-            };
-          }
-
-          if (flag == 'next' && this.page.end < this.page.total_record) {
-            this.loading = true;
-            data = {
-              token: this.configData.jwtToken,
-              skip: this.page.end,
-              limit: this.page.page_count,
-              timezone: this.filterOptions.timezone,
-              condition: this.configData.primaryCondition
-            };
-          }
-          /*
-           * If the data variable is uninitialized there is no need to execute the httpRequest
-           */
-
-
-          if (data != null) {
-            /* If there has a search value then it must be include the search condition with data */
-            if (this.searchData != null) {
-              data.condition = this.searchData.condition;
-            }
-            /* If the user is not an admin then load events that created by him/her only */
-            // if (this.configData.user_type != 'admin') {
-            //   data.condition = Object.assign(data.condition, {userid: this.configData._id});
-            // }
-
-
-            this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe(function (response) {
-              if (response.status == 'success') {
-                _this102.availableSlots = response.data;
-
-                _this102.changePage(flag);
-              } else {// console.log('response', response);
-              }
-
-              _this102.loading = false;
-            });
-          }
-        }
-        /*
-         * Function for changing page variables along with the pageStep
-         */
-
-      }, {
-        key: "changePage",
-        value: function changePage(cflag) {
-          switch (cflag) {
-            /* case 'next' will execute when pageStep('next') execute or on click of forward button */
-            case 'next':
-              this.page.page_no++;
-              this.jumpToPageNumber++;
-              this.page.start = this.page.start + this.page.page_count;
-
-              if (this.page.end + this.page.page_count <= this.page.total_record) {
-                this.page.end = this.page.end + this.page.page_count;
-              } else {
-                this.page.end = this.page.total_record;
-              }
-
-              break;
-
-            /* case 'prev' will execute when pageStep('prev') execute or on click of backward button */
-
-            case 'prev':
-              this.page.page_no--;
-              this.jumpToPageNumber--;
-              this.page.end = this.page.start - 1;
-              this.page.start = this.page.start - this.page.page_count;
-              break;
-          }
-        }
-        /*
-         * Change the page count value and reload items with the changed value
-         */
-
-      }, {
-        key: "onChangePageCount",
-        value: function onChangePageCount() {
-          var _this103 = this;
-
-          this.loading = true;
-          var data = {
-            token: this.configData.jwtToken,
-            skip: 0,
-            limit: parseInt(this.itemCount),
-            timezone: this.filterOptions.timezone,
-            condition: {}
-          };
-          /* If there has a search value then it must be include the search condition with data */
-
-          if (this.searchData != null) {
-            data.condition = this.searchData.condition;
-          } else {
-            data.condition.$and = this.configData.primaryCondition.$and;
-          }
-          /* If the user is not an admin then load events that created by him/her only */
-          // if (this.configData.user_type != 'admin') {
-          //   data.condition = Object.assign(data.condition, {userid: this.data.libConfigData._id});
-          // }
-
-
-          this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe(function (response) {
-            if (response.status == 'success') {
-              // this.ngOnInit();
-              _this103.availableSlots = response.data;
-              _this103.page.start = 1;
-
-              if (parseInt(_this103.itemCount) < _this103.page.total_record) {
-                _this103.page.end = parseInt(_this103.itemCount);
-              } else {
-                _this103.page.end = _this103.page.total_record;
-              }
-
-              _this103.page.page_count = parseInt(_this103.itemCount);
-              _this103.page.page_no = 1;
-              _this103.jumpToPageNumber = 0;
-              /* Create page array */
-
-              _this103.arrPage = [];
-
-              for (var i = 0; i <= _this103.page.total_record / _this103.page.page_count; i++) {
-                _this103.arrPage.push(i + 1);
-              }
-            } else {
-              console.log('response', response);
-            }
-
-            _this103.loading = false;
-          });
-        }
-        /*
-         * jumpToPage() directly take into the page that calculates for the current page_count
-         */
-
-      }, {
-        key: "jumpToPage",
-        value: function jumpToPage() {
-          var _this104 = this;
-
-          this.loading = true;
-          var data = {
-            token: this.configData.jwtToken,
-            skip: this.page.page_count * this.jumpToPageNumber,
-            limit: this.page.page_count,
-            timezone: this.filterOptions.timezone,
-            condition: {}
-          };
-          /* If there has a search value then it must be include the search condition with data */
-
-          if (this.searchData != null) {
-            data.condition = this.searchData.condition;
-          }
-
-          data.condition.$and = this.configData.primaryCondition.$and;
-          /* If the user is not an admin then load events that created by him/her only */
-          // if (this.configData.user_type != 'admin') {
-          //   data.condition = Object.assign(data.condition, {userid: this.data.libConfigData._id});
-          // }
-
-          this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe(function (response) {
-            if (response.status == 'success') {
-              _this104.availableSlots = response.data;
-              _this104.page.page_no = _this104.jumpToPageNumber + 1;
-              _this104.page.start = _this104.page.page_count * _this104.jumpToPageNumber + 1;
-
-              if (_this104.page.page_count * _this104.jumpToPageNumber + _this104.page.page_count < _this104.page.total_record) {
-                _this104.page.end = _this104.page.page_count * _this104.jumpToPageNumber + _this104.page.page_count;
-              } else {
-                _this104.page.end = _this104.page.total_record;
-              }
-            } else {// console.log('response', response);
-            }
-
-            _this104.loading = false;
-          });
-        }
-      }, {
-        key: "search",
-        value: function search() {
-          var _this105 = this;
-
-          // const primaryCondition = this.data.libConfigData.primaryCondition;
-          //let searchd:any=this.data.libConfigData.primaryCondition;
-          this.searchData = {
-            condition: {},
-            token: this.configData.jwtToken,
-            timezone: this.filterOptions.timezone
-          };
-
-          if (this.searchData.condition.$and == null) {
-            this.searchData.condition.$and = [];
-          }
-
-          if (this.filterOptions.availableDates != '') {
-            this.searchData.condition.$and.push({
-              start_datetime_unix: {
-                $gte: moment_es6__WEBPACK_IMPORTED_MODULE_2___default()(this.filterOptions.availableDates.begin).subtract(12, 'hours').valueOf()
-              }
-            });
-            this.searchData.condition.$and.push({
-              start_datetime_unix: {
-                $lte: moment_es6__WEBPACK_IMPORTED_MODULE_2___default()(this.filterOptions.availableDates.end).add(12, 'hours').valueOf()
-              }
-            }); // data.condition.end_date = {
-            //   $lte: moment(this.availableDates.end).format('L')
-            // };
-          }
-
-          this.searchData.condition.$and = this.searchData.condition.$and.concat(this.configData.primaryCondition);
-          /* if (this.filterOptions.eventType != '') {
-            this.searchData.condition.event_type = this.filterOptions.eventType;
-          } */
-
-          /* If the user is not an admin then load events that created by him/her only */
-          // if (this.data.libConfigData.user_type != 'admin') {
-          //   this.searchData.condition = Object.assign(this.searchData.condition, {userid: this.data.libConfigData._id});
-          // }
-
-          this.loading = true;
-          this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, this.searchData).subscribe(function (response) {
-            if (response.data.length == 0) {
-              _this105.openSnackBar('No event found', null);
-            }
-
-            if (response.status == 'success') {
-              _this105.page.start = 1;
-
-              if (response.data.length > _this105.page.page_count) {
-                _this105.page.end = _this105.page.page_count;
-              } else {
-                _this105.page.end = response.data.length;
-              }
-
-              _this105.page.page_no = 1;
-              _this105.jumpToPageNumber = 0;
-            }
-
-            _this105.availableSlots = response.data;
-            _this105.loading = false;
-          });
-          this.getPageCount();
-        }
-        /*
-         * resetFilter() reset the search fields and reloads data without any condition
-         */
-
-      }, {
-        key: "resetFilter",
-        value: function resetFilter() {
-          var _this106 = this;
-
-          this.loading = true;
-          /* Reset searchData value to 'null' and filterOptions value to blank('')*/
-
-          this.searchData = null;
-          this.filterOptions.availableDates = '';
-          this.filterOptions.eventType = '';
-          /* Create data object */
-
-          var data = {
-            token: this.configData.jwtToken,
-            skip: 0,
-            limit: this.page.page_count,
-            timezone: this.filterOptions.timezone,
-            condition: this.configData.primaryCondition
-          };
-          /* If the user is not an admin then load events that created by him/her only */
-          // if (this.data.libConfigData.user_type != 'admin') {
-          //   data.condition = Object.assign(data.condition, {userid: this.data.libConfigData._id});
-          // }
-
-          this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe(function (response) {
-            if (response.status == 'success') {
-              _this106.page.start = 1;
-
-              if (response.data.length > _this106.page.page_count) {
-                _this106.page.end = _this106.page.page_count;
-              } else {
-                _this106.page.end = response.data.length;
-              }
-
-              _this106.page.page_no = 1;
-              _this106.jumpToPageNumber = 0;
-              _this106.availableSlots = response.data;
-              _this106.loading = false;
-            } else {
-              _this106.openSnackBar('Something went wrong. Please try again.', null);
-            }
-          });
-          this.getPageCount();
-        }
-      }, {
-        key: "onChangeTimezone",
-        value: function onChangeTimezone(event) {
-          var _this107 = this;
-
-          this.loading = true;
-          this.cookieService.set('timezone', this.filterOptions.timezone);
-          /* Create data object */
-
-          var data = {
-            token: this.configData.jwtToken,
-            skip: this.page.start - 1,
-            limit: this.page.page_count,
-            timezone: this.filterOptions.timezone,
-            condition: this.configData.primaryCondition
-          };
-          /* If there has a search value then it must be include the search condition with data */
-
-          if (this.searchData != null) {
-            data.condition = this.searchData.condition;
-          }
-          /* If the user is not an admin then load events that created by him/her only */
-          // if (this.data.libConfigData.user_type != 'admin') {
-          //   data.condition = Object.assign(data.condition, {userid: this.data.libConfigData._id});
-          // }
-
-
-          this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe(function (response) {
-            if (response.status == 'success') {
-              _this107.availableSlots = response.data;
-              _this107.loading = false;
-            } else {
-              _this107.openSnackBar('Something went wrong. Please try again.', null);
-            }
-          });
-        }
-      }, {
-        key: "loadAvailableSlots",
-        value: function loadAvailableSlots() {
-          var _this108 = this;
-
-          /* ********************* Loader ****************** */
-          this.progressSpinner.loading = true;
-          var dot = ['.', '. .', '. . .'];
-
-          var _loop = function _loop(i) {
-            setTimeout(function () {
-              if (_this108.progressSpinner.loading) {
-                _this108.progressSpinner.bookingStatus = 'Finding available slots ' + dot[i % 3];
-              }
-            }, 500 * (i + 1));
-          };
-
-          for (var i = 0; i < 6; i++) {
-            _loop(i);
-          }
-          /* *********************************************** */
-
-          /* Create data object */
-
-
-          var data = {
-            token: this.configData.jwtToken,
-            timezone: this.filterOptions.timezone,
-            condition: this.configData.primaryCondition
-          };
-          /* If the user is not an admin then load events that created by him/her only */
-          // if (this.data.libConfigData.user_type != 'admin') {
-          //   data.condition = Object.assign(data.condition, {useremail: this.data.libConfigData.email});
-          // }
-
-          this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe(function (response) {
-            if (response.status == 'success') {
-              // console.log('response', response);
-              _this108.availableSlots = response.data;
-              _this108.progressSpinner.loading = false;
-            } else {
-              _this108.openSnackBar('Something went wrong. Please try again.', null);
-            }
-          });
-        }
-      }, {
-        key: "rebook",
-        value: function rebook(item) {
-          var _this109 = this;
-
-          var data = {
-            booked_slot_data: this.bookingDetails,
-            reschedule_slot_data: item
-          };
-          /* ****************** Reschedule in google calendar ****************** */
-
-          if (this.bookingDetails.googleevent != undefined) {
-            var url = 'https://gapi.betoparedes.com/updateevent.php?event=' + this.bookingDetails.googleevent + '&refresh_token=' + this.bookingDetails.refresh_token + '&summary=' + item.event_title + '&start=' + item.startDateTime + '&end=' + item.endDateTime;
-            this.httpRequest.get(url).subscribe(function (response) {
-              console.log('response from google', response);
-            });
-          }
-          /* ****************** Reschedule in database ****************** */
-
-
-          this.httpRequest.postRequest(this.configData.endPoint.rescheduleBookedEvent, data).subscribe(function (response) {
-            if (response.status == 'success') {
-              console.log('response', response);
-              _this109.progressSpinner.loading = false; // this.dialogRef.close(true);
-
-              _this109.openSnackBar('Rescheduled successfully', 'Ok');
-
-              _this109.router.navigateByUrl('doctor-office/dashboard');
-            } else {
-              _this109.openSnackBar('Something went wrong. Please try again.', null);
-            }
-          });
-        }
-      }, {
-        key: "openSnackBar",
-        value: function openSnackBar(message, action) {
-          this.snackBar.open(message, action, {
-            duration: 5000
-          });
-        }
-      }]);
-
-      return RescheduleAppointmentComponent;
-    }();
-
-    RescheduleAppointmentComponent.ctorParameters = function () {
-      return [{
-        type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"]
-      }, {
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"]
-      }, {
-        type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_4__["HttpServiceService"]
-      }, {
-        type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"]
-      }, {
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]
-      }];
-    };
-
-    RescheduleAppointmentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-      selector: 'app-reschedule-appointment',
-      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
-      /*! raw-loader!./reschedule-appointment.component.html */
-      "./node_modules/raw-loader/dist/cjs.js!./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.html")).default,
-      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
-      /*! ./reschedule-appointment.component.css */
-      "./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.css")).default]
-    })], RescheduleAppointmentComponent);
     /***/
   },
 
@@ -20417,8 +19685,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             slot_end_time: 'End Time',
             timezoneName: 'Timezone',
             status: 'Status',
-            // doctors_office_name: 'Doctors office name',
-            username: 'Tech Name'
+            doctors_office_name: 'Doctors office name',
+            username: 'Tech Name',
+            is_google_event: 'Calendar Event'
           },
           source: 'google_events',
           date_search_source_count: 0,
@@ -20426,24 +19695,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             basecondition: {},
             detailview_override: [],
             updateendpoint: 'statusupdate',
+            hidestatustogglebutton: true,
             hidedeletebutton: true,
             hideeditbutton: true,
-            tableheaders: ['patient_name', 'doctor_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'],
+            tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'is_google_event', 'status'],
             custombuttons: [{
               label: "Cancel",
               type: 'action',
               datatype: 'api',
               endpoint: 'delete-booked-event',
               otherparam: [],
-              // cond:'status', condval:0,
+              cond: 'status',
+              condval: 0,
               param: '_id',
               refreshdata: true
             }, {
               label: "Reschedule",
               route: "doctor-office/reschedule-appointment",
               type: 'internallink',
-              //cond:'status',
-              //condval:0,
+              cond: 'is_google_event',
+              condval: true,
               param: ['_id', 'doctor_id']
             }]
           },
@@ -20454,7 +19725,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "pagecount": 1
           },
           sortdata: {
-            "type": 'asc',
+            "type": 'desc',
             "field": 'booking_date',
             "options": ['patient_name', 'booking_date', 'startdate', 'slot', 'slot_end_time']
           },
@@ -20515,7 +19786,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(UpcomingAppoinmentsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this110 = this;
+          var _this100 = this;
 
           // load doctor search dynamically
           this.httpService.postRequest('get-doctor-info', {
@@ -20528,7 +19799,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               temp['val'] = response.data[i]._id;
               temp['name'] = response.data[i].firstname + ' ' + response.data[i].lastname;
 
-              _this110.searchByDoctor.values.push(temp);
+              _this100.searchByDoctor.values.push(temp);
             }
           });
 
@@ -20538,7 +19809,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               token: this.configData.jwtToken,
               condition: {},
               sort: {
-                type: 'asc',
+                type: 'desc',
                 field: 'booking_date'
               }
             };
@@ -20589,13 +19860,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.postRequest(this.configData.endPoint.listUpcomingBookedEvents, data).subscribe(function (response) {
               // Set dataset in responseData
-              _this110.configData.responseData = response.results.res; // Create skipFields array(first save all the keys from the dataset)
+              _this100.configData.responseData = response.results.res; // Create skipFields array(first save all the keys from the dataset)
 
-              if (response.results.res > 0) _this110.configData.skipFields = Object.keys(response.results.res[0]);
-              var requiredFields = ['patient_name', 'doctor_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status']; // Modify the skipFields array(splicing the keys which is in the requiredFields)
+              if (response.results.res > 0) _this100.configData.skipFields = Object.keys(response.results.res[0]);
+              var requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'username', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'is_google_event', 'status']; // Check user_type === 'doctor_office'
+
+              if (JSON.parse(_this100.cookie.get('user_details')).user_type === 'doctor_office') {
+                requiredFields.splice(requiredFields.indexOf('doctors_office_name'), 1);
+
+                _this100.configData.libdata.tableheaders.splice(_this100.configData.libdata.tableheaders.indexOf('doctors_office_name'), 1);
+              } // Modify the skipFields array(splicing the keys which is in the requiredFields)
+
 
               for (var i = 0; i < requiredFields.length; i++) {
-                _this110.configData.skipFields.splice(_this110.configData.skipFields.indexOf(requiredFields[i]), 1);
+                _this100.configData.skipFields.splice(_this100.configData.skipFields.indexOf(requiredFields[i]), 1);
               }
             }); // Merge logged in user details with the config data
             // let userDetails: any = JSON.parse(this.cookie.get('user_details'));
@@ -20604,7 +19882,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /* ****************** Get total booked events count ****************** */
 
             this.httpService.postRequest(this.configData.endPoint.listUpcomingBookedEventsCount, data).subscribe(function (response) {
-              _this110.configData.date_search_source_count = response.count;
+              _this100.configData.date_search_source_count = response.count;
             });
             /* ******************************************************************* */
           } else {
@@ -20800,10 +20078,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "SetValueForm",
         value: function SetValueForm() {
-          var _this111 = this;
+          var _this101 = this;
 
           setTimeout(function () {
-            _this111.getCityByName(_this111.cookiesData.state);
+            _this101.getCityByName(_this101.cookiesData.state);
           }, 400);
           this.AccountSettingsForm.controls['firstname'].patchValue(this.cookiesData.firstname);
           this.AccountSettingsForm.controls['lastname'].patchValue(this.cookiesData.lastname);
@@ -20818,17 +20096,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this112 = this;
+          var _this102 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this112.states = response;
+            _this102.states = response;
 
-            _this112.SetValueForm();
+            _this102.SetValueForm();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this112.allCities = response;
+            _this102.allCities = response;
 
-            _this112.SetValueForm();
+            _this102.SetValueForm();
           });
         }
         /**for getting all states & cities  function end here**/
@@ -20852,7 +20130,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "AccountSettingsFormSubmit",
         value: function AccountSettingsFormSubmit() {
-          var _this113 = this;
+          var _this103 = this;
 
           this.loader = true;
           var x;
@@ -20879,26 +20157,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "token": this.user_token
             };
             this.httpService.httpViaPost('addorupdatedata', data).subscribe(function (response) {
-              var userDetailsCookie = JSON.parse(_this113.cookie.get('user_details'));
+              var userDetailsCookie = JSON.parse(_this103.cookie.get('user_details'));
               var type = userDetailsCookie.type;
 
-              _this113.cookie.delete('user_details');
+              _this103.cookie.delete('user_details');
 
-              userDetailsCookie.firstname = _this113.AccountSettingsForm.value.firstname;
-              userDetailsCookie.lastname = _this113.AccountSettingsForm.value.lastname;
+              userDetailsCookie.firstname = _this103.AccountSettingsForm.value.firstname;
+              userDetailsCookie.lastname = _this103.AccountSettingsForm.value.lastname;
               userDetailsCookie = JSON.stringify(userDetailsCookie);
-              _this113.loader = false;
+              _this103.loader = false;
               var action = "Ok";
 
-              _this113.snackBar.open(_this113.message, action, {
+              _this103.snackBar.open(_this103.message, action, {
                 duration: 1000
               });
 
               setTimeout(function () {
-                _this113.cookie.set('user_details', userDetailsCookie);
+                _this103.cookie.set('user_details', userDetailsCookie);
               }, 1000);
               setTimeout(function () {
-                _this113.router.navigateByUrl(type + '/dashboard');
+                _this103.router.navigateByUrl(type + '/dashboard');
               }, 3000);
             });
           }
@@ -21100,7 +20378,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ChangePasswordFormSubmit",
         value: function ChangePasswordFormSubmit() {
-          var _this114 = this;
+          var _this104 = this;
 
           this.loader = true;
           var x;
@@ -21118,25 +20396,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               newPassword: this.ChangePasswordForm.value.newPassword
             };
             this.httpService.httpViaPost('changepassword', data).subscribe(function (response) {
-              _this114.formDirective.resetForm();
+              _this104.formDirective.resetForm();
 
-              _this114.loader = false;
+              _this104.loader = false;
 
               if (response.status == true) {
-                _this114.snackBar.open(response.message, "OK", {
+                _this104.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
 
                 setTimeout(function () {
-                  _this114.router.navigateByUrl('/admin/dashboard');
+                  _this104.router.navigateByUrl('/admin/dashboard');
                 }, 1550);
               } else {
-                _this114.snackBar.open(response.message, "OK", {
+                _this104.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
               }
             }, function (error) {
-              _this114.loader = false;
+              _this104.loader = false;
               alert("Some error occord. Please try later.");
             });
           }
@@ -21423,13 +20701,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(FaqViewComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this115 = this;
+          var _this105 = this;
 
           this.activatedRoute.data.subscribe(function (resolveData) {
-            _this115.allResolveData = resolveData.faqData.res;
+            _this105.allResolveData = resolveData.faqData.res;
 
-            for (var loop = 0; loop < _this115.allResolveData.length; loop++) {
-              _this115.allResolveData[loop].youtube_link_save = _this115.sanitizer.bypassSecurityTrustResourceUrl(_this115.allResolveData[loop].youtube_link);
+            for (var loop = 0; loop < _this105.allResolveData.length; loop++) {
+              _this105.allResolveData[loop].youtube_link_save = _this105.sanitizer.bypassSecurityTrustResourceUrl(_this105.allResolveData[loop].youtube_link);
             }
           });
         }
@@ -21538,7 +20816,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function HttpLoaderComponent(loaderService, activatedRoute, router) {
-        var _this116 = this;
+        var _this106 = this;
 
         _classCallCheck(this, HttpLoaderComponent);
 
@@ -21548,7 +20826,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var urlArr = this.router.url.split("/"); // if(urlArr[3] == 'bulk-upload') {
 
         this.loaderService.isLoading.subscribe(function (v) {
-          _this116.httpLoading = v;
+          _this106.httpLoading = v;
         }); // }
       }
 
@@ -21918,7 +21196,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getSignatureData",
         value: function getSignatureData() {
-          var _this117 = this;
+          var _this107 = this;
 
           var data = {
             "source": "doctor_signature",
@@ -21928,9 +21206,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "token": this.user_token
           };
           this.http.httpViaPost('datalist', data).subscribe(function (response) {
-            _this117.result = response.res[0]._id;
+            _this107.result = response.res[0]._id;
 
-            _this117.techUploadForm.controls['sign'].patchValue(response.res[0].sign);
+            _this107.techUploadForm.controls['sign'].patchValue(response.res[0].sign);
           });
         }
       }, {
@@ -22133,7 +21411,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DiagnosticAdminDashboardComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this118 = this;
+        var _this108 = this;
 
         _classCallCheck(this, DiagnosticAdminDashboardComponent);
 
@@ -22170,9 +21448,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this118.allResolveData = resolveData.dataCount.data.dashboardCount[0];
+          _this108.allResolveData = resolveData.dataCount.data.dashboardCount[0];
 
-          _this118.viewReportProcessData(_this118.htmlText.headerText);
+          _this108.viewReportProcessData(_this108.htmlText.headerText);
         });
       }
 
@@ -22185,7 +21463,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this119 = this;
+          var _this109 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -22197,9 +21475,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('admin-dashboard', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this119.allResolveData = response.data;
+              _this109.allResolveData = response.data;
             } else {
-              _this119.router.navigateByUrl('logout');
+              _this109.router.navigateByUrl('logout');
             }
           }); // for listing
 
@@ -22208,7 +21486,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this120 = this;
+          var _this110 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           // Set Header Flag
@@ -22357,12 +21635,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('dashboard-datalist', repostSignCond).subscribe(function (response) {
             if (response.status == true) {
-              _this120.allResolveData.tableDataFlag = true;
-              _this120.allResolveData.tableData = response.data;
-              _this120.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this120.allResolveData.tableData);
-              _this120.allDataSource.paginator = _this120.paginatorAll;
+              _this110.allResolveData.tableDataFlag = true;
+              _this110.allResolveData.tableData = response.data;
+              _this110.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this110.allResolveData.tableData);
+              _this110.allDataSource.paginator = _this110.paginatorAll;
             } else {
-              _this120.router.navigateByUrl('logout');
+              _this110.router.navigateByUrl('logout');
             }
           });
         }
@@ -22412,7 +21690,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this121 = this;
+          var _this111 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -22450,15 +21728,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this121.matSnackBar.open("Start downloading.", "Ok", {
+              _this111.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this121.viewReportProcessData(_this121.htmlText.headerText);
+              _this111.viewReportProcessData(_this111.htmlText.headerText);
             } else {
-              _this121.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this111.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -22469,7 +21747,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteReport",
         value: function deleteReport(pk_id, index) {
-          var _this122 = this;
+          var _this112 = this;
 
           var data = {
             width: '250px',
@@ -22491,7 +21769,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 break;
 
               case "Yes":
-                _this122.deleteProcess(pk_id, index);
+                _this112.deleteProcess(pk_id, index);
 
                 break;
             }
@@ -22500,7 +21778,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteProcess",
         value: function deleteProcess(pk_id, index) {
-          var _this123 = this;
+          var _this113 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -22509,9 +21787,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost('deletesingledata', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this123.allResolveData.tableData.splice(index, 1);
+              _this113.allResolveData.tableData.splice(index, 1);
 
-              _this123.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this123.allResolveData.tableData);
+              _this113.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this113.allResolveData.tableData);
               var data = {
                 width: '250px',
                 data: {
@@ -22525,7 +21803,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this123.dialogRef = _this123.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
+              _this113.dialogRef = _this113.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
             } else {
               var _data7 = {
                 width: '250px',
@@ -22540,15 +21818,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this123.dialogRef = _this123.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data7);
+              _this113.dialogRef = _this113.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data7);
 
-              _this123.dialogRef.afterClosed().subscribe(function (result) {
+              _this113.dialogRef.afterClosed().subscribe(function (result) {
                 switch (result) {
                   case "Close":
                     break;
 
                   case "Re-Try":
-                    _this123.deleteProcess(pk_id, index);
+                    _this113.deleteProcess(pk_id, index);
 
                     break;
                 }
@@ -22802,13 +22080,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          var _this124 = this;
+          var _this114 = this;
 
           this.cookies.delete('jwtToken');
           this.cookies.delete('user_details');
           this.cookies.deleteAll();
           setTimeout(function () {
-            _this124.router.navigateByUrl('logout');
+            _this114.router.navigateByUrl('logout');
           }, 1000);
         }
         /**logout function end here**/
@@ -22970,7 +22248,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DistributorsDashboardComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this125 = this;
+        var _this115 = this;
 
         _classCallCheck(this, DistributorsDashboardComponent);
 
@@ -23007,9 +22285,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this125.allResolveData = resolveData.dataCount.data.dashboardCount[0];
+          _this115.allResolveData = resolveData.dataCount.data.dashboardCount[0];
 
-          _this125.viewReportProcessData(_this125.htmlText.headerText);
+          _this115.viewReportProcessData(_this115.htmlText.headerText);
         });
       }
 
@@ -23022,7 +22300,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this126 = this;
+          var _this116 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -23034,9 +22312,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('admin-dashboard', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this126.allResolveData = response.data;
+              _this116.allResolveData = response.data;
             } else {
-              _this126.router.navigateByUrl('logout');
+              _this116.router.navigateByUrl('logout');
             }
           }); // for listing
 
@@ -23045,7 +22323,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this127 = this;
+          var _this117 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           // Set Header Flag
@@ -23194,12 +22472,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('dashboard-datalist', repostSignCond).subscribe(function (response) {
             if (response.status == true) {
-              _this127.allResolveData.tableDataFlag = true;
-              _this127.allResolveData.tableData = response.data;
-              _this127.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this127.allResolveData.tableData);
-              _this127.allDataSource.paginator = _this127.paginatorAll;
+              _this117.allResolveData.tableDataFlag = true;
+              _this117.allResolveData.tableData = response.data;
+              _this117.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this117.allResolveData.tableData);
+              _this117.allDataSource.paginator = _this117.paginatorAll;
             } else {
-              _this127.router.navigateByUrl('logout');
+              _this117.router.navigateByUrl('logout');
             }
           });
         }
@@ -23249,7 +22527,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this128 = this;
+          var _this118 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -23287,15 +22565,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this128.matSnackBar.open("Start downloading.", "Ok", {
+              _this118.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this128.viewReportProcessData(_this128.htmlText.headerText);
+              _this118.viewReportProcessData(_this118.htmlText.headerText);
             } else {
-              _this128.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this118.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -23306,7 +22584,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteReport",
         value: function deleteReport(pk_id, index) {
-          var _this129 = this;
+          var _this119 = this;
 
           var data = {
             width: '250px',
@@ -23328,7 +22606,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 break;
 
               case "Yes":
-                _this129.deleteProcess(pk_id, index);
+                _this119.deleteProcess(pk_id, index);
 
                 break;
             }
@@ -23337,7 +22615,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteProcess",
         value: function deleteProcess(pk_id, index) {
-          var _this130 = this;
+          var _this120 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -23346,9 +22624,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost('deletesingledata', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this130.allResolveData.tableData.splice(index, 1);
+              _this120.allResolveData.tableData.splice(index, 1);
 
-              _this130.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this130.allResolveData.tableData);
+              _this120.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this120.allResolveData.tableData);
               var data = {
                 width: '250px',
                 data: {
@@ -23362,7 +22640,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this130.dialogRef = _this130.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
+              _this120.dialogRef = _this120.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
             } else {
               var _data8 = {
                 width: '250px',
@@ -23377,15 +22655,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this130.dialogRef = _this130.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data8);
+              _this120.dialogRef = _this120.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data8);
 
-              _this130.dialogRef.afterClosed().subscribe(function (result) {
+              _this120.dialogRef.afterClosed().subscribe(function (result) {
                 switch (result) {
                   case "Close":
                     break;
 
                   case "Re-Try":
-                    _this130.deleteProcess(pk_id, index);
+                    _this120.deleteProcess(pk_id, index);
 
                     break;
                 }
@@ -23639,13 +22917,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          var _this131 = this;
+          var _this121 = this;
 
           this.cookies.delete('jwtToken');
           this.cookies.delete('user_details');
           this.cookies.deleteAll();
           setTimeout(function () {
-            _this131.router.navigateByUrl('logout');
+            _this121.router.navigateByUrl('logout');
           }, 1000);
         }
         /**logout function end here**/
@@ -23807,7 +23085,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DoctorGroupDashboardComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this132 = this;
+        var _this122 = this;
 
         _classCallCheck(this, DoctorGroupDashboardComponent);
 
@@ -23844,9 +23122,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this132.allResolveData = resolveData.dataCount.data.dashboardCount[0];
+          _this122.allResolveData = resolveData.dataCount.data.dashboardCount[0];
 
-          _this132.viewReportProcessData(_this132.htmlText.headerText);
+          _this122.viewReportProcessData(_this122.htmlText.headerText);
         });
       }
 
@@ -23859,7 +23137,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this133 = this;
+          var _this123 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -23871,9 +23149,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('admin-dashboard', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this133.allResolveData = response.data;
+              _this123.allResolveData = response.data;
             } else {
-              _this133.router.navigateByUrl('logout');
+              _this123.router.navigateByUrl('logout');
             }
           }); // for listing
 
@@ -23882,7 +23160,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this134 = this;
+          var _this124 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           // Set Header Flag
@@ -24031,12 +23309,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('dashboard-datalist', repostSignCond).subscribe(function (response) {
             if (response.status == true) {
-              _this134.allResolveData.tableDataFlag = true;
-              _this134.allResolveData.tableData = response.data;
-              _this134.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this134.allResolveData.tableData);
-              _this134.allDataSource.paginator = _this134.paginatorAll;
+              _this124.allResolveData.tableDataFlag = true;
+              _this124.allResolveData.tableData = response.data;
+              _this124.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this124.allResolveData.tableData);
+              _this124.allDataSource.paginator = _this124.paginatorAll;
             } else {
-              _this134.router.navigateByUrl('logout');
+              _this124.router.navigateByUrl('logout');
             }
           });
         }
@@ -24086,7 +23364,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this135 = this;
+          var _this125 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -24124,15 +23402,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this135.matSnackBar.open("Start downloading.", "Ok", {
+              _this125.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this135.viewReportProcessData(_this135.htmlText.headerText);
+              _this125.viewReportProcessData(_this125.htmlText.headerText);
             } else {
-              _this135.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this125.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -24143,7 +23421,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteReport",
         value: function deleteReport(pk_id, index) {
-          var _this136 = this;
+          var _this126 = this;
 
           var data = {
             width: '250px',
@@ -24165,7 +23443,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 break;
 
               case "Yes":
-                _this136.deleteProcess(pk_id, index);
+                _this126.deleteProcess(pk_id, index);
 
                 break;
             }
@@ -24174,7 +23452,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteProcess",
         value: function deleteProcess(pk_id, index) {
-          var _this137 = this;
+          var _this127 = this;
 
           var repostSignCond = {
             "source": "data_pece",
@@ -24183,9 +23461,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost('deletesingledata', repostSignCond).subscribe(function (response) {
             if (response.status == 'success') {
-              _this137.allResolveData.tableData.splice(index, 1);
+              _this127.allResolveData.tableData.splice(index, 1);
 
-              _this137.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this137.allResolveData.tableData);
+              _this127.allDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this127.allResolveData.tableData);
               var data = {
                 width: '250px',
                 data: {
@@ -24199,7 +23477,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this137.dialogRef = _this137.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
+              _this127.dialogRef = _this127.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], data);
             } else {
               var _data9 = {
                 width: '250px',
@@ -24214,15 +23492,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this137.dialogRef = _this137.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data9);
+              _this127.dialogRef = _this127.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], _data9);
 
-              _this137.dialogRef.afterClosed().subscribe(function (result) {
+              _this127.dialogRef.afterClosed().subscribe(function (result) {
                 switch (result) {
                   case "Close":
                     break;
 
                   case "Re-Try":
-                    _this137.deleteProcess(pk_id, index);
+                    _this127.deleteProcess(pk_id, index);
 
                     break;
                 }
@@ -24476,13 +23754,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          var _this138 = this;
+          var _this128 = this;
 
           this.cookies.delete('jwtToken');
           this.cookies.delete('user_details');
           this.cookies.deleteAll();
           setTimeout(function () {
-            _this138.router.navigateByUrl('logout');
+            _this128.router.navigateByUrl('logout');
           }, 1000);
         }
         /**logout function end here**/
@@ -25865,16 +25143,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           responseData: '',
           patientInfoFormFields: [],
           calendarInfoFormFields: {},
-          primaryCondition: {
-            $or: [{
-              event_type: 1
-            }, {
-              event_type: 2
-            }],
-            userid: {
-              $in: JSON.parse(this.cookieService.get('user_details')).tech_id
-            }
-          }
+          primaryCondition: {}
         };
         this.loader = false;
         this.headerFlag = this.activatedRoute.snapshot.url[0].path;
@@ -25883,7 +25152,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddPatientManuallyComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this139 = this;
+          var _this129 = this;
 
           /******* Get user details from cookies ******/
           this.userDetails = JSON.parse(this.cookieService.get('user_details'));
@@ -25894,8 +25163,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this139.resolveData = data.eventdayarrData;
-              _this139.configData.responseData = data.eventdayarrData.data;
+              _this129.resolveData = data.eventdayarrData;
+              _this129.configData.responseData = data.eventdayarrData.data;
             });
           } else {
             this.openSnackBar('Token not found');
@@ -25905,17 +25174,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "populateFormFields",
         value: function populateFormFields() {
-          var _this140 = this;
+          var _this130 = this;
 
           /* ****************** Get states value from assets/states.json ****************** */
           this.httpRequestService.get('assets/data/states.json').subscribe(function (res) {
-            _this140.states = res;
+            _this130.states = res;
             var insuranceData = [];
 
-            for (var i = 0; i < _this140.resolveData.others.insurance.length; i++) {
+            for (var i = 0; i < _this130.resolveData.others.insurance.length; i++) {
               var temp = {};
-              temp['text'] = _this140.resolveData.others.insurance[i].insurancename;
-              temp['value'] = _this140.resolveData.others.insurance[i]._id;
+              temp['text'] = _this130.resolveData.others.insurance[i].insurancename;
+              temp['value'] = _this130.resolveData.others.insurance[i]._id;
               insuranceData.push(temp);
             }
 
@@ -25925,27 +25194,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
             var insuranceTypeData = [];
 
-            for (var _i = 0; _i < _this140.resolveData.others.insurance_type.length; _i++) {
+            for (var _i = 0; _i < _this130.resolveData.others.insurance_type.length; _i++) {
               var _temp = {};
-              _temp['text'] = _this140.resolveData.others.insurance_type[_i].insurancetype_name;
-              _temp['value'] = _this140.resolveData.others.insurance_type[_i]._id;
-              _temp['child_of'] = _this140.resolveData.others.insurance_type[_i].insurance_id;
+              _temp['text'] = _this130.resolveData.others.insurance_type[_i].insurancetype_name;
+              _temp['value'] = _this130.resolveData.others.insurance_type[_i]._id;
+              _temp['child_of'] = _this130.resolveData.others.insurance_type[_i].insurance_id;
               insuranceTypeData.push(_temp);
             } // console.log('insuranceTypeData', insuranceTypeData);
 
 
             var otherFieldsData = [];
 
-            for (var _i2 = 0; _i2 < _this140.resolveData.others.patient_information.length; _i2++) {
+            for (var _i2 = 0; _i2 < _this130.resolveData.others.patient_information.length; _i2++) {
               var fieldData = void 0;
 
-              switch (_this140.resolveData.others.patient_information[_i2].type) {
+              switch (_this130.resolveData.others.patient_information[_i2].type) {
                 case 'checkbox':
                   fieldData = {
                     type: 'checkbox',
-                    label: _this140.resolveData.others.patient_information[_i2].description,
+                    label: _this130.resolveData.others.patient_information[_i2].description,
                     checkItems: [{
-                      name: _this140.resolveData.others.patient_information[_i2].label,
+                      name: _this130.resolveData.others.patient_information[_i2].label,
                       value: false,
                       label: '',
                       labelPosition: 'before'
@@ -25956,27 +25225,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 case 'textfield':
                   fieldData = {
                     type: 'input',
-                    name: _this140.resolveData.others.patient_information[_i2].label,
-                    placeholder: _this140.resolveData.others.patient_information[_i2].description,
-                    label: _this140.resolveData.others.patient_information[_i2].description,
+                    name: _this130.resolveData.others.patient_information[_i2].label,
+                    placeholder: _this130.resolveData.others.patient_information[_i2].description,
+                    label: _this130.resolveData.others.patient_information[_i2].description,
                     value: ''
                   };
                   break;
 
                 case 'dropdown':
-                  for (var j = 0; j < _this140.resolveData.others.patient_information[_i2].addfield.length; j++) {
-                    _this140.resolveData.others.patient_information[_i2].addfield[j] = {
-                      text: _this140.resolveData.others.patient_information[_i2].addfield[j],
-                      value: _this140.resolveData.others.patient_information[_i2].addfield[j]
+                  for (var j = 0; j < _this130.resolveData.others.patient_information[_i2].addfield.length; j++) {
+                    _this130.resolveData.others.patient_information[_i2].addfield[j] = {
+                      text: _this130.resolveData.others.patient_information[_i2].addfield[j],
+                      value: _this130.resolveData.others.patient_information[_i2].addfield[j]
                     };
                   }
 
                   fieldData = {
                     type: 'select',
-                    name: _this140.resolveData.others.patient_information[_i2].label,
-                    placeholder: _this140.resolveData.others.patient_information[_i2].description,
-                    label: _this140.resolveData.others.patient_information[_i2].description,
-                    options: _this140.resolveData.others.patient_information[_i2].addfield
+                    name: _this130.resolveData.others.patient_information[_i2].label,
+                    placeholder: _this130.resolveData.others.patient_information[_i2].description,
+                    label: _this130.resolveData.others.patient_information[_i2].description,
+                    options: _this130.resolveData.others.patient_information[_i2].addfield
                   };
                   break;
               }
@@ -26011,7 +25280,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'state',
               placeholder: 'Select State',
               label: 'State',
-              options: _this140.states,
+              options: _this130.states,
               validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
               error: 'Select state'
             }, {
@@ -26077,7 +25346,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'booking_date',
               placeholder: 'Date',
               label: 'Booking date',
-              value: _this140.today,
+              value: _this130.today,
               disabled: true
             }, {
               type: 'date',
@@ -27038,9 +26307,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               value: ''
             }];
 
-            _this140.httpRequestService.postRequest('get-doctor-info', {
+            _this130.httpRequestService.postRequest('get-doctor-info', {
               condition: {
-                doctors_office_id: _this140.userDetails._id
+                doctors_office_id: _this130.userDetails._id
               }
             }).subscribe(function (response) {
               var doctorArray = [];
@@ -27085,7 +26354,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               var hiddenFields = [{
                 type: 'input',
                 name: 'doctors_office_id',
-                value: _this140.userDetails._id,
+                value: _this130.userDetails._id,
                 hidden: true
               }, {
                 type: 'input',
@@ -27097,26 +26366,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 name: 'parent_id',
                 value: response.data.parent_id,
                 hidden: true
-              }, {
-                type: 'input',
-                name: 'userid',
-                value: _this140.userDetails._id,
-                hidden: true
-              }, {
-                type: 'input',
-                name: 'username',
-                value: _this140.userDetails.center_name,
-                hidden: true
-              }, {
-                type: 'input',
-                name: 'useremail',
-                value: _this140.userDetails.email,
-                hidden: true
-              }];
-              _this140.configData = Object.assign(_this140.configData, {
+              } // {type: 'input', name: 'userid', value: this.userDetails._id, hidden: true},
+              // {type: 'input', name: 'username', value: this.userDetails.center_name, hidden: true},
+              // {type: 'input', name: 'useremail', value: this.userDetails.email, hidden: true}
+              ];
+              _this130.configData = Object.assign(_this130.configData, {
                 patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields, calendarInfoFormFields)
               });
-              console.log('this.configData', _this140.configData);
+              console.log('this.configData', _this130.configData);
             });
           }, function (error) {
             console.log('Oooops! Cannot get states.');
@@ -27264,7 +26521,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(DoctorOfficeAccountSettingsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this141 = this;
+          var _this131 = this;
 
           //generating the form
           this.generateForm(); //setting the default value
@@ -27273,7 +26530,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.allStateCityData();
           setTimeout(function () {
-            _this141.getCityByName(_this141.userData.state);
+            _this131.getCityByName(_this131.userData.state);
           }, 2000);
         }
       }, {
@@ -27312,7 +26569,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onSubmit",
         value: function onSubmit() {
-          var _this142 = this;
+          var _this132 = this;
 
           this.loader = true;
           if (this.accountForm.invalid) return;else {
@@ -27323,30 +26580,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == 'success') {
-                var userDetailsCookie = JSON.parse(_this142.cookieService.get('user_details'));
+                var userDetailsCookie = JSON.parse(_this132.cookieService.get('user_details'));
                 var type = userDetailsCookie.type;
 
-                _this142.cookieService.delete('user_details'); // -------------------------------------
+                _this132.cookieService.delete('user_details'); // -------------------------------------
 
 
-                userDetailsCookie.address = _this142.accountForm.value.address; // -------------------------------------
+                userDetailsCookie.address = _this132.accountForm.value.address; // -------------------------------------
 
                 userDetailsCookie = JSON.stringify(userDetailsCookie);
                 console.log("-->", userDetailsCookie);
-                _this142.loader = false;
+                _this132.loader = false;
                 var action = "Ok";
 
-                _this142.snackBar.open(_this142.message, action, {
+                _this132.snackBar.open(_this132.message, action, {
                   duration: 1000
                 });
 
                 setTimeout(function () {// this.cookieService.set('user_details', userDetailsCookie);
                 }, 1000);
                 setTimeout(function () {
-                  _this142.router.navigateByUrl('/doctor-office/dashboard');
+                  _this132.router.navigateByUrl('/doctor-office/dashboard');
                 }, 3000);
               } else {
-                _this142.snackBar.open(response.status, "OK", {
+                _this132.snackBar.open(response.status, "OK", {
                   duration: 1500
                 });
               }
@@ -27363,13 +26620,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this143 = this;
+          var _this133 = this;
 
           this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this143.states = response;
+            _this133.states = response;
           });
           this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this143.allCities = response;
+            _this133.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -27567,7 +26824,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "changePassword",
         value: function changePassword() {
-          var _this144 = this;
+          var _this134 = this;
 
           this.loader = true;
 
@@ -27581,21 +26838,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost('changepassword', data).subscribe(function (response) {
               // this.formDirective.resetForm();
-              _this144.loader = false;
+              _this134.loader = false;
 
               if (response.Status == true) {
-                _this144.snackBar.open(response.message, "OK", {
+                _this134.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
 
-                _this144.router.navigateByUrl('doctor-office/dashboard');
+                _this134.router.navigateByUrl('doctor-office/dashboard');
               } else {
-                _this144.snackBar.open(response.message, "OK", {
+                _this134.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
               }
             }, function (error) {
-              _this144.loader = false;
+              _this134.loader = false;
               alert("Some error occurred. Please try later.");
             });
           }
@@ -28375,7 +27632,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateUser",
         value: function updateUser() {
-          var _this145 = this;
+          var _this135 = this;
 
           // let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
           if (this.activatedRoute.snapshot.params.refresh && this.cookieService.check('user_details')) {
@@ -28390,14 +27647,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.httpRequestService.postRequest('update-user', data).subscribe(function (response) {
               // console.log('response', response);
               if (response.status == 'success') {
-                _this145.openSnackBar('Calendar added successfully...');
+                _this135.openSnackBar('Calendar added successfully...');
               }
             });
             var urlSendEmail = this.configData.baseUrl + 'send-confirmation-email?id=' + this.userDetails._id;
             this.httpRequestService.getRequest(urlSendEmail, {}).subscribe(function (response) {
               if (response.status == 'success') {
                 // console.log('Mail sent ', response.msg_id);
-                _this145.openSnackBar('Confirmation email sent to your email - ' + _this145.userDetails.email, 'Ok');
+                _this135.openSnackBar('Confirmation email sent to your email - ' + _this135.userDetails.email, 'Ok');
               }
             }); // Update user_details in cookie
 
@@ -28407,17 +27664,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "populateFormFields",
         value: function populateFormFields(doctor_id, parent_id, parent_type) {
-          var _this146 = this;
+          var _this136 = this;
 
           /* ****************** Get states value from assets/states.json ****************** */
           this.httpRequestService.get('assets/data/states.json').subscribe(function (res) {
-            _this146.states = res;
+            _this136.states = res;
             var insuranceData = [];
 
-            for (var i = 0; i < _this146.resolveData.others.insurance.length; i++) {
+            for (var i = 0; i < _this136.resolveData.others.insurance.length; i++) {
               var temp = {};
-              temp['text'] = _this146.resolveData.others.insurance[i].insurancename;
-              temp['value'] = _this146.resolveData.others.insurance[i]._id;
+              temp['text'] = _this136.resolveData.others.insurance[i].insurancename;
+              temp['value'] = _this136.resolveData.others.insurance[i]._id;
               insuranceData.push(temp);
             }
 
@@ -28427,27 +27684,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
             var insuranceTypeData = [];
 
-            for (var _i4 = 0; _i4 < _this146.resolveData.others.insurance_type.length; _i4++) {
+            for (var _i4 = 0; _i4 < _this136.resolveData.others.insurance_type.length; _i4++) {
               var _temp3 = {};
-              _temp3['text'] = _this146.resolveData.others.insurance_type[_i4].insurancetype_name;
-              _temp3['value'] = _this146.resolveData.others.insurance_type[_i4]._id;
-              _temp3['child_of'] = _this146.resolveData.others.insurance_type[_i4].insurance_id;
+              _temp3['text'] = _this136.resolveData.others.insurance_type[_i4].insurancetype_name;
+              _temp3['value'] = _this136.resolveData.others.insurance_type[_i4]._id;
+              _temp3['child_of'] = _this136.resolveData.others.insurance_type[_i4].insurance_id;
               insuranceTypeData.push(_temp3);
             } // console.log('insuranceTypeData', insuranceTypeData);
 
 
             var otherFieldsData = [];
 
-            for (var _i5 = 0; _i5 < _this146.resolveData.others.patient_information.length; _i5++) {
+            for (var _i5 = 0; _i5 < _this136.resolveData.others.patient_information.length; _i5++) {
               var fieldData = void 0;
 
-              switch (_this146.resolveData.others.patient_information[_i5].type) {
+              switch (_this136.resolveData.others.patient_information[_i5].type) {
                 case 'checkbox':
                   fieldData = {
                     type: 'checkbox',
-                    label: _this146.resolveData.others.patient_information[_i5].description,
+                    label: _this136.resolveData.others.patient_information[_i5].description,
                     checkItems: [{
-                      name: _this146.resolveData.others.patient_information[_i5].label,
+                      name: _this136.resolveData.others.patient_information[_i5].label,
                       value: false,
                       label: '',
                       labelPosition: 'before'
@@ -28458,27 +27715,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 case 'textfield':
                   fieldData = {
                     type: 'input',
-                    name: _this146.resolveData.others.patient_information[_i5].label,
-                    placeholder: _this146.resolveData.others.patient_information[_i5].description,
-                    label: _this146.resolveData.others.patient_information[_i5].description,
+                    name: _this136.resolveData.others.patient_information[_i5].label,
+                    placeholder: _this136.resolveData.others.patient_information[_i5].description,
+                    label: _this136.resolveData.others.patient_information[_i5].description,
                     value: ''
                   };
                   break;
 
                 case 'dropdown':
-                  for (var j = 0; j < _this146.resolveData.others.patient_information[_i5].addfield.length; j++) {
-                    _this146.resolveData.others.patient_information[_i5].addfield[j] = {
-                      text: _this146.resolveData.others.patient_information[_i5].addfield[j],
-                      value: _this146.resolveData.others.patient_information[_i5].addfield[j]
+                  for (var j = 0; j < _this136.resolveData.others.patient_information[_i5].addfield.length; j++) {
+                    _this136.resolveData.others.patient_information[_i5].addfield[j] = {
+                      text: _this136.resolveData.others.patient_information[_i5].addfield[j],
+                      value: _this136.resolveData.others.patient_information[_i5].addfield[j]
                     };
                   }
 
                   fieldData = {
                     type: 'select',
-                    name: _this146.resolveData.others.patient_information[_i5].label,
-                    placeholder: _this146.resolveData.others.patient_information[_i5].description,
-                    label: _this146.resolveData.others.patient_information[_i5].description,
-                    options: _this146.resolveData.others.patient_information[_i5].addfield
+                    name: _this136.resolveData.others.patient_information[_i5].label,
+                    placeholder: _this136.resolveData.others.patient_information[_i5].description,
+                    label: _this136.resolveData.others.patient_information[_i5].description,
+                    options: _this136.resolveData.others.patient_information[_i5].addfield
                   };
                   break;
               }
@@ -28514,7 +27771,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'state',
               placeholder: 'Select State',
               label: 'State',
-              options: _this146.states,
+              options: _this136.states,
               validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__["Validators"].required],
               error: 'Select state'
             }, {
@@ -28588,7 +27845,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'booking_date',
               placeholder: 'Date',
               label: 'Booking date',
-              value: _this146.today,
+              value: _this136.today,
               disabled: true
             }];
             var checkboxFields = [{
@@ -29577,7 +28834,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }, {
               type: 'input',
               name: 'doctors_office_id',
-              value: _this146.userDetails._id,
+              value: _this136.userDetails._id,
               hidden: true
             }, // {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
             {
@@ -29591,7 +28848,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               value: parent_id,
               hidden: true
             }];
-            _this146.configData = Object.assign(_this146.configData, {
+            _this136.configData = Object.assign(_this136.configData, {
               patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields)
             }, {
               calendarInfoFormFields: calendarInfoFormFields
@@ -29611,7 +28868,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "openDialog",
         value: function openDialog() {
-          var _this147 = this;
+          var _this137 = this;
 
           var dialogRef = this.dialog.open(ChooseDoctorDialog, {
             width: '500px',
@@ -29619,23 +28876,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           dialogRef.afterClosed().subscribe(function (result) {
             console.log('The dialog was closed', result);
-            _this147.configData.responseData = [];
-            _this147.configData.primaryCondition = {
+            _this137.configData.responseData = [];
+            _this137.configData.primaryCondition = {
               userid: {
-                $in: [result.tech_id]
+                $in: result.tech_id
               }
             };
 
-            _this147.httpRequestService.postRequest(_this147.configData.endPoint.viewEventSlots, {
-              token: _this147.configData.jwtToken,
-              condition: _this147.configData.primaryCondition
+            _this137.httpRequestService.postRequest(_this137.configData.endPoint.viewEventSlots, {
+              token: _this137.configData.jwtToken,
+              condition: _this137.configData.primaryCondition
             }).subscribe(function (response) {
-              _this147.configData.responseData = response.data;
-              _this147.resolveData = response;
+              _this137.configData.responseData = response.data;
+              _this137.resolveData = response;
 
-              _this147.populateFormFields(result.doctor_id, result.parent_id, result.parent_type);
+              _this137.populateFormFields(result.doctor_id, result.parent_id, result.parent_type);
 
-              _this147.loading = false;
+              _this137.loading = false;
             });
           });
         }
@@ -29690,7 +28947,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ChooseDoctorDialog, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this148 = this;
+          var _this138 = this;
 
           // throw new Error("Method not implemented.");
           this.httpRequestService.postRequest('get-doctor-info', {
@@ -29698,13 +28955,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               doctors_office_id: this.data._id
             }
           }).subscribe(function (response) {
-            _this148.doctorList = response.data;
+            _this138.doctorList = response.data;
           });
         }
       }, {
         key: "onChangeDoctor",
         value: function onChangeDoctor(doctor) {
-          var _this149 = this;
+          var _this139 = this;
 
           console.log('doctor', doctor);
           this.loadingTech = true;
@@ -29713,8 +28970,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _id: doctor.doctor_id
             }
           }).subscribe(function (response) {
-            if (response._dropdown.length > 0) _this149.techList = response._dropdown;else _this149.openSnackBar('No tech found for this doctor', 'Ok');
-            _this149.loadingTech = false;
+            if (response._dropdown.length > 0) _this139.techList = response._dropdown;else _this139.openSnackBar('No tech found for this doctor', 'Ok');
+            _this139.selectedIds.tech_id = response._dropdown.map(function (tech) {
+              return tech.value;
+            });
+            _this139.loadingTech = false;
           });
           this.selectedIds.doctor_id = doctor.doctor_id;
           this.selectedIds.parent_id = doctor.parent_id;
@@ -29893,7 +29153,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DoctorDashboardComponent(dialog, commonFunction, cookie, http, activatedRoute, matSnackBar, deviceService) {
-        var _this150 = this;
+        var _this140 = this;
 
         _classCallCheck(this, DoctorDashboardComponent);
 
@@ -29903,7 +29163,98 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.http = http;
         this.activatedRoute = activatedRoute;
         this.matSnackBar = matSnackBar;
-        this.deviceService = deviceService;
+        this.deviceService = deviceService; // Lib list
+
+        this.allBillerData = [];
+        this.billerData_count = 0;
+        this.allUserData_skip = ["_id", "report_file_type", "tech_id", "tech_email", "batch_name", "report_type", "status", "file_basepath", "file_bucketname", "file_name", "file_original_name", "file_type", "converted_image", "images", "patient_details", "patient_name_search", "report_life_circle", "note", "additional_potential_health_risks", "cpt_codes", "created_at"];
+        this.editUrl = "admin/biller-management/edit";
+        this.libdata = {
+          basecondition: {},
+          updateendpoint: '',
+          custombuttons: [{
+            label: "View Report",
+            route: "admin/patient-record/",
+            type: 'internallink',
+            param: ['_id']
+          }],
+          hideeditbutton: true,
+          hidedeletebutton: true,
+          hidestatustogglebutton: true,
+          hideviewbutton: true,
+          tableheaders: ["doctor_name", "tech_name", "patient_name", "status_text", "created_at_datetime", "cpt_code_count", "addl_hlth_risk"]
+        };
+        this.allUserData_modify_header = {
+          "doctor_name": "Doctor Name",
+          "tech_name": "Tech Name",
+          "patient_name": "Patient Name",
+          "status_text": "Status",
+          "created_at_datetime": "Report Added",
+          "cpt_code_count": "CPT Code Count",
+          "addl_hlth_risk": "Addl Hlth Risk"
+        };
+        this.UpdateEndpoint = "addorupdatedata";
+        this.deleteEndpoint = "deletesingledata";
+        this.tableName = "data_pece";
+        this.datacollection = 'getbillerlistdata';
+        this.sortdata = {
+          "type": 'desc',
+          "field": 'firstname',
+          "options": ['firstname', 'email', 'created_date']
+        };
+        this.limitcond = {
+          "limit": 10,
+          "skip": 0,
+          "pagecount": 1
+        };
+        this.previewModal_detail_skip = ['_id', 'user_type', 'status', 'password', 'created_at'];
+        this.status = [{
+          val: 1,
+          'name': 'Active'
+        }, {
+          val: 0,
+          'name': 'Inactive'
+        }];
+        this.parent_type = [{
+          val: "admin",
+          'name': 'Admin'
+        }, {
+          val: "diagnostic_admin",
+          'name': 'Diagnostic Admin'
+        }, {
+          val: "distributors",
+          'name': 'Distributor'
+        }, {
+          val: "doctor_group",
+          'name': 'Doctor Group'
+        }];
+        this.SearchingEndpoint = "datalist";
+        this.SearchingSourceName = "data_biller_list";
+        this.search_settings = {
+          selectsearch: [{
+            label: 'Search By Status',
+            field: 'status',
+            values: this.status
+          }, {
+            label: 'Search By Parent Type',
+            field: 'parent_type_search',
+            values: this.parent_type
+          }],
+          textsearch: [{
+            label: "Search By Name",
+            field: 'name_search'
+          }, {
+            label: "Search By E-Mail",
+            field: 'email'
+          }, {
+            label: "Search By Parent Name",
+            field: 'parent_search'
+          }, {
+            label: "Search By Company Name",
+            field: 'company_search'
+          }]
+        }; // lib list end
+
         this.authData = {};
         this.htmlText = {
           buttonText: "Add One",
@@ -29960,9 +29311,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         this.activatedRoute.data.forEach(function (resolveData) {
-          _this150.allResolveData = resolveData.doctordata.data;
+          _this140.allResolveData = resolveData.doctordata.data;
 
-          _this150.viewReportProcessData(_this150.htmlText.tableHeaderText);
+          _this140.viewReportProcessData(_this140.htmlText.tableHeaderText);
+        }); // lib list
+        //this.libdata.basecondition.tech_id = this.authData.userData._id;
+
+        var endpoint = 'getPatientlistdata';
+        var endpointc = 'getPatientlistdata-count';
+        var data = {
+          "condition": {
+            "limit": 10,
+            "skip": 0
+          },
+          sort: {
+            "type": 'desc',
+            "field": 'patient_name'
+          }
+        };
+        this.http.httpViaPost(endpointc, data).subscribe(function (res) {
+          _this140.billerData_count = res.count;
+        }, function (error) {
+          console.log('Oooops!');
+        });
+        this.http.httpViaPost(endpoint, data).subscribe(function (res) {
+          _this140.allBillerData = res.results.res;
+        }, function (error) {
+          console.log('Oooops!');
         });
       }
 
@@ -29980,7 +29355,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this151 = this;
+          var _this141 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           this.allDataColumns = ['no', 'patient_name', 'tech_name', 'doctor_name', 'biller_name', 'bill_generation_date', 'bill_sent_date', 'report_type', 'status', 'super_bill', 'action'];
@@ -30071,9 +29446,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('dashboard-datalist', data).subscribe(function (response) {
             if (response.data.length > 0) {
-              _this151.allResolveData.recordData = response.data;
-              _this151.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this151.allResolveData.recordData);
-              _this151.allDataSource.paginator = _this151.paginator;
+              _this141.allResolveData.recordData = response.data;
+              _this141.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](_this141.allResolveData.recordData);
+              _this141.allDataSource.paginator = _this141.paginator;
             }
           });
           var sectionData = {
@@ -30083,19 +29458,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost('datalist', sectionData).subscribe(function (response) {
             // if (response.data.length > 0) {
-            _this151.otherData["all_details"] = response.res[0]; // }
+            _this141.otherData["all_details"] = response.res[0]; // }
           });
         }
       }, {
         key: "openModal",
         value: function openModal(data) {
-          var _this152 = this;
+          var _this142 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_11__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this152.dialogRef.close();
+                _this142.dialogRef.close();
 
                 break;
             }
@@ -30104,7 +29479,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this153 = this;
+          var _this143 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -30142,15 +29517,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this153.matSnackBar.open("Start downloading...", "", {
+              _this143.matSnackBar.open("Start downloading...", "", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this153.refreshDashboard();
+              _this143.refreshDashboard();
             } else {
-              _this153.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this143.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -30159,7 +29534,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refreshDashboard",
         value: function refreshDashboard() {
-          var _this154 = this;
+          var _this144 = this;
 
           var postData = {
             source: "data_pece",
@@ -30169,16 +29544,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("doctor-dashboard", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this154.allResolveData = response.data;
+              _this144.allResolveData = response.data;
 
-              _this154.viewReportProcessData(_this154.htmlText.tableHeaderText);
+              _this144.viewReportProcessData(_this144.htmlText.tableHeaderText);
             } else {
-              _this154.matSnackBar.open("Please wait...", "", {
+              _this144.matSnackBar.open("Please wait...", "", {
                 duration: 1000
               });
 
               setTimeout(function () {
-                _this154.refreshDashboard();
+                _this144.refreshDashboard();
               }, 1000);
             }
           });
@@ -30688,7 +30063,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getPatientData",
         value: function getPatientData(id) {
-          var _this155 = this;
+          var _this145 = this;
 
           var data = {
             "source": "data_pece",
@@ -30698,7 +30073,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "token": this.cookiesData.jwtToken
           };
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this155.htmlText.patientDetails = response.res[0];
+            _this145.htmlText.patientDetails = response.res[0];
           });
         }
       }, {
@@ -30850,7 +30225,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function PatientReportViewComponent(fb, activeRoute, router, httpService, datePipe, cookie, snakBar, dialog, commonFunction) {
-        var _this156 = this;
+        var _this146 = this;
 
         _classCallCheck(this, PatientReportViewComponent);
 
@@ -30898,16 +30273,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Upload":
-                _this156.dialogRef.close();
+                _this146.dialogRef.close();
 
-                _this156.router.navigateByUrl('/doctor/signature-management?view=' + activeRoute.snapshot.params._id);
+                _this146.router.navigateByUrl('/doctor/signature-management?view=' + activeRoute.snapshot.params._id);
 
                 break;
 
               case "Close":
-                _this156.dialogRef.close();
+                _this146.dialogRef.close();
 
-                _this156.router.navigateByUrl('/doctor/dashboard');
+                _this146.router.navigateByUrl('/doctor/dashboard');
 
                 break;
             }
@@ -30918,17 +30293,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PatientReportViewComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this157 = this;
+          var _this147 = this;
 
           this.activeRoute.data.forEach(function (data) {
-            _this157.htmlText.allResolveData = data.data.data;
-            console.log(">>>>", _this157.htmlText.allResolveData);
+            _this147.htmlText.allResolveData = data.data.data;
+            console.log(">>>>", _this147.htmlText.allResolveData);
 
-            if (typeof _this157.htmlText.allResolveData.reportData[0].stressi != 'undefined') {
-              _this157.htmlText.allResolveData.reportData[0].stressI = _this157.htmlText.allResolveData.reportData[0].stressi;
+            if (typeof _this147.htmlText.allResolveData.reportData[0].stressi != 'undefined') {
+              _this147.htmlText.allResolveData.reportData[0].stressI = _this147.htmlText.allResolveData.reportData[0].stressi;
             }
 
-            _this157.htmlText.allResolveData.reportData[0].BMI_flag = Math.round(_this157.htmlText.allResolveData.reportData[0].BMI);
+            _this147.htmlText.allResolveData.reportData[0].BMI_flag = Math.round(_this147.htmlText.allResolveData.reportData[0].BMI);
           });
 
           if (typeof this.cookiesData.user_details.diagnostic_admin_id != 'undefined') {
@@ -30938,7 +30313,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getBiller",
         value: function getBiller(id) {
-          var _this158 = this;
+          var _this148 = this;
 
           var data = {
             "source": "biller_by_doctor_id",
@@ -30956,7 +30331,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this158.htmlText.billers = response.res;
+            _this148.htmlText.billers = response.res;
           });
         }
       }, {
@@ -30985,7 +30360,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "reportSign",
         value: function reportSign() {
-          var _this159 = this;
+          var _this149 = this;
 
           var flug = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'default';
 
@@ -31015,35 +30390,35 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     "data": {
                       "bill_generation_date": new Date(),
                       "bill_sent_date": new Date(),
-                      "doctor_signature": _this159.cookiesData.user_details.doctor_signature,
+                      "doctor_signature": _this149.cookiesData.user_details.doctor_signature,
                       "biller_id": billerID,
                       "biller_name": billerName,
                       "biller_email": billerEmail,
-                      "download_link": _environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].siteBaseUrl + 'download/super-bill/' + _this159.htmlText.allResolveData.reportData[0]._id,
+                      "download_link": _environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].siteBaseUrl + 'download/super-bill/' + _this149.htmlText.allResolveData.reportData[0]._id,
                       "file_path": "",
                       "download_password": "",
-                      "details": _this159.htmlText.allResolveData.details,
-                      "provide_description": _this159.htmlText.allResolveData.provide_description,
+                      "details": _this149.htmlText.allResolveData.details,
+                      "provide_description": _this149.htmlText.allResolveData.provide_description,
                       "status": "Send to Biller"
                     },
-                    "report_id": _this159.htmlText.allResolveData.reportData[0]._id
+                    "report_id": _this149.htmlText.allResolveData.reportData[0]._id
                   };
-                  data.data["id"] = _this159.activeRoute.snapshot.params._id;
+                  data.data["id"] = _this149.activeRoute.snapshot.params._id;
 
-                  _this159.httpService.httpViaPost("report-sign-send-to-biller", data).subscribe(function (response) {
+                  _this149.httpService.httpViaPost("report-sign-send-to-biller", data).subscribe(function (response) {
                     if (response.status = "success") {
                       switch (flug) {
                         case 'back':
-                          _this159.dialogRef.close();
+                          _this149.dialogRef.close();
 
-                          _this159.router.navigateByUrl('/doctor/dashboard');
+                          _this149.router.navigateByUrl('/doctor/dashboard');
 
                           break;
 
                         case 'next':
-                          _this159.dialogRef.close();
+                          _this149.dialogRef.close();
 
-                          _this159.router.navigateByUrl('/doctor/dashboard');
+                          _this149.router.navigateByUrl('/doctor/dashboard');
 
                           break;
 
@@ -31056,7 +30431,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   break;
 
                 case "No":
-                  _this159.dialogRef.close();
+                  _this149.dialogRef.close();
 
                   break;
               }
@@ -31670,7 +31045,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateSignature",
         value: function updateSignature() {
-          var _this160 = this;
+          var _this150 = this;
 
           if (typeof this.htmlText.viewSign !== 'undefined' && this.htmlText.viewSign != '') {
             var data = {
@@ -31683,12 +31058,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost('addorupdatedata', data).subscribe(function (response) {
               if (response.status == "success") {
-                _this160.cookie.delete('user_details');
+                _this150.cookie.delete('user_details');
 
-                _this160.authData.user_details.doctor_signature = _this160.htmlText.viewSign;
-                var str = JSON.stringify(_this160.authData.user_details);
+                _this150.authData.user_details.doctor_signature = _this150.htmlText.viewSign;
+                var str = JSON.stringify(_this150.authData.user_details);
 
-                _this160.cookie.set('user_details', str);
+                _this150.cookie.set('user_details', str);
                 /* Open modal */
 
 
@@ -31706,7 +31081,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 };
 
-                _this160.openModal(modalData);
+                _this150.openModal(modalData);
               }
             });
           } else {
@@ -31725,16 +31100,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "openModal",
         value: function openModal(data) {
-          var _this161 = this;
+          var _this151 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_6__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this161.dialogRef.close();
+                _this151.dialogRef.close();
 
-                _this161.activatedRoute.queryParams.subscribe(function (getData) {
-                  _this161.router.navigateByUrl('/doctor/patient-record-report/' + getData['view']);
+                _this151.activatedRoute.queryParams.subscribe(function (getData) {
+                  _this151.router.navigateByUrl('/doctor/patient-record-report/' + getData['view']);
                 });
 
                 break;
@@ -31771,6 +31146,109 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /*! ./signature-management.component.css */
       "./src/app/components/doctor/signature-management/signature-management.component.css")).default]
     })], SignatureManagementComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/components/encounter-form/encounter-form.component.css":
+  /*!************************************************************************!*\
+    !*** ./src/app/components/encounter-form/encounter-form.component.css ***!
+    \************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppComponentsEncounterFormEncounterFormComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZW5jb3VudGVyLWZvcm0vZW5jb3VudGVyLWZvcm0uY29tcG9uZW50LmNzcyJ9 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/components/encounter-form/encounter-form.component.ts":
+  /*!***********************************************************************!*\
+    !*** ./src/app/components/encounter-form/encounter-form.component.ts ***!
+    \***********************************************************************/
+
+  /*! exports provided: EncounterFormComponent */
+
+  /***/
+  function srcAppComponentsEncounterFormEncounterFormComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "EncounterFormComponent", function () {
+      return EncounterFormComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _services_http_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../../services/http-service.service */
+    "./src/app/services/http-service.service.ts");
+
+    var EncounterFormComponent =
+    /*#__PURE__*/
+    function () {
+      function EncounterFormComponent(http) {
+        var _this152 = this;
+
+        _classCallCheck(this, EncounterFormComponent);
+
+        this.http = http;
+        var data = {
+          "source": "",
+          "condition": ""
+        };
+        this.http.httpViaPost("get-report-data", data).subscribe(function (response) {
+          // console.log('7777',response);
+          _this152.html_body = response.res;
+        });
+      }
+
+      _createClass(EncounterFormComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }]);
+
+      return EncounterFormComponent;
+    }();
+
+    EncounterFormComponent.ctorParameters = function () {
+      return [{
+        type: _services_http_service_service__WEBPACK_IMPORTED_MODULE_2__["HttpServiceService"]
+      }];
+    };
+
+    EncounterFormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-encounter-form',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./encounter-form.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/components/encounter-form/encounter-form.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./encounter-form.component.css */
+      "./src/app/components/encounter-form/encounter-form.component.css")).default]
+    })], EncounterFormComponent);
     /***/
   },
 
@@ -32921,10 +32399,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getEvents",
         value: function getEvents() {
-          var _this162 = this;
+          var _this153 = this;
 
           this.activatedRoute.data.forEach(function (data) {
-            _this162.configData.responseData = data.eventListData.data;
+            _this153.configData.responseData = data.eventListData.data;
           });
         }
       }, {
@@ -33145,12 +32623,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalHomeComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this163 = this;
+          var _this154 = this;
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this163.configData.responseData = data.eventdayarrData.data;
+              _this154.configData.responseData = data.eventdayarrData.data;
             }); // Merge logged in user details with the config data
 
             var userDetails = JSON.parse(this.cookieService.get('user_details'));
@@ -33314,7 +32792,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalSyncWithGoogleComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this164 = this;
+          var _this155 = this;
 
           this.userDetails = JSON.parse(this.cookieService.get('user_details'));
 
@@ -33322,53 +32800,53 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var url = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_6__["environment"].calendarApi + 'getauthorization-pece-getuserdata' + '?access_token=' + this.activatedRoute.snapshot.params.access_token;
             this.httpRequestService.get(url).subscribe(function (response) {
               var data = {
-                token: _this164.cookieService.get('jwtToken'),
-                id: _this164.userDetails._id,
+                token: _this155.cookieService.get('jwtToken'),
+                id: _this155.userDetails._id,
                 data: {
-                  access_token: _this164.activatedRoute.snapshot.params.access_token,
-                  refresh_token: _this164.activatedRoute.snapshot.params.refresh,
+                  access_token: _this155.activatedRoute.snapshot.params.access_token,
+                  refresh_token: _this155.activatedRoute.snapshot.params.refresh,
                   connected_gmail: response.id
                 }
               }; // Update user details in database
 
-              _this164.httpRequestService.postRequest('update-user', data).subscribe(function (response) {
+              _this155.httpRequestService.postRequest('update-user', data).subscribe(function (response) {
                 console.log('response', response);
 
                 if (response.status == 'success') {
-                  _this164.openSnackBar('Calendar added successfully...');
+                  _this155.openSnackBar('Calendar added successfully...');
 
                   setInterval(function () {
-                    _this164.secCount = _this164.secCount - 1;
-                    _this164.displayMessage = "Synchronize Complete. You will be redirected in " + _this164.secCount + " sec.";
+                    _this155.secCount = _this155.secCount - 1;
+                    _this155.displayMessage = "Synchronize Complete. You will be redirected in " + _this155.secCount + " sec.";
 
-                    if (_this164.secCount == 0) {
-                      _this164.secCount = 1;
+                    if (_this155.secCount == 0) {
+                      _this155.secCount = 1;
 
-                      _this164.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
+                      _this155.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
                     }
                   }, 1000);
                 } else {
-                  _this164.openSnackBar("An error occurs. Please try again.", "Ok");
+                  _this155.openSnackBar("An error occurs. Please try again.", "Ok");
 
                   setTimeout(function () {
-                    _this164.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
+                    _this155.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
                   }, 4000);
                 }
               }); // Send email to the logged in user
 
 
-              var urlSendEmail = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_6__["environment"].calendarApi + 'send-confirmation-email?id=' + _this164.userDetails._id;
+              var urlSendEmail = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_6__["environment"].calendarApi + 'send-confirmation-email?id=' + _this155.userDetails._id;
 
-              _this164.httpRequestService.get(urlSendEmail).subscribe(function (response) {
+              _this155.httpRequestService.get(urlSendEmail).subscribe(function (response) {
                 if (response.status == 'success') {
                   console.log('Mail sent ', response.msg_id);
 
-                  _this164.openSnackBar('Confirmation email sent to your email - ' + _this164.userDetails.email, 'Ok');
+                  _this155.openSnackBar('Confirmation email sent to your email - ' + _this155.userDetails.email, 'Ok');
                 }
               }); // Update user_details in cookie
 
 
-              _this164.cookieService.set('user_details', JSON.stringify(Object.assign(_this164.userDetails, data.data)));
+              _this155.cookieService.set('user_details', JSON.stringify(Object.assign(_this155.userDetails, data.data)));
             });
             /* **********************************************************************************
             this.httpRequestService.httpViaPost('cal-update-user', data).subscribe((response) => {
@@ -33930,13 +33408,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalViewSlotComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this165 = this;
+          var _this156 = this;
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this165.configData.responseData = data.eventdayarrData.data;
-              console.log('responseData', _this165.configData.responseData);
+              _this156.configData.responseData = data.eventdayarrData.data;
+              console.log('responseData', _this156.configData.responseData);
             });
           } else {
             this.openSnackBar('Token not found');
@@ -34284,7 +33762,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllDoctorData",
         value: function getAllDoctorData() {
-          var _this166 = this;
+          var _this157 = this;
 
           var data = {
             "source": "doctors_by_tech_id",
@@ -34296,7 +33774,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
             var result = {};
             result = response.res;
-            _this166.allDoctorDataArray = result;
+            _this157.allDoctorDataArray = result;
           });
         }
       }, {
@@ -34365,7 +33843,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "bulkUploaddataSubmit",
         value: function bulkUploaddataSubmit() {
-          var _this167 = this;
+          var _this158 = this;
 
           if (this.configData.files.length > 0) {
             for (var loop in this.configData.files) {
@@ -34409,12 +33887,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost("upload-bulk-report", data).subscribe(function (response) {
               if (response.status = "success") {
-                _this167.snakBar.open("Successfully Submitted", "OK", {
+                _this158.snakBar.open("Successfully Submitted", "OK", {
                   duration: 1000
                 });
 
                 setTimeout(function () {
-                  _this167.router.navigateByUrl('/tech/patient-management/bulk-upload/report-conformation/' + response.upload_id);
+                  _this158.router.navigateByUrl('/tech/patient-management/bulk-upload/report-conformation/' + response.upload_id);
                 }, 2000);
               }
             });
@@ -34696,7 +34174,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function ReportConformationComponent(snackBar, dialog, http, cookieService, router, activatedRoute) {
-        var _this168 = this;
+        var _this159 = this;
 
         _classCallCheck(this, ReportConformationComponent);
 
@@ -34745,16 +34223,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.http.httpViaPost('datalist', data).subscribe(function (response) {
           if (response.status == true) {
             /* Get name using file name start */
-            _this168.htmlText.confirmSubmittedDataSource = response.res;
+            _this159.htmlText.confirmSubmittedDataSource = response.res;
             var patientSearch = [];
 
-            for (var loop = 0; loop < _this168.htmlText.confirmSubmittedDataSource.length; loop++) {
-              var patientNameArr = _this168.htmlText.confirmSubmittedDataSource[loop].file_original_name.split(' ');
+            for (var loop = 0; loop < _this159.htmlText.confirmSubmittedDataSource.length; loop++) {
+              var patientNameArr = _this159.htmlText.confirmSubmittedDataSource[loop].file_original_name.split(' ');
 
-              _this168.htmlText.confirmSubmittedDataSource[loop].patient_name = patientNameArr[0] + ' ' + patientNameArr[1];
-              _this168.htmlText.confirmSubmittedDataSource[loop].patient_name_search = patientNameArr[0];
+              _this159.htmlText.confirmSubmittedDataSource[loop].patient_name = patientNameArr[0] + ' ' + patientNameArr[1];
+              _this159.htmlText.confirmSubmittedDataSource[loop].patient_name_search = patientNameArr[0];
               patientSearch.push(patientNameArr[0]);
-              _this168.htmlText.confirmSubmittedDataSource[loop].patient_details = [];
+              _this159.htmlText.confirmSubmittedDataSource[loop].patient_details = [];
             }
             /* Get name using file name end */
 
@@ -34765,43 +34243,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "source": "view_google_event_with_all_data",
               "condition": {
                 "patient_name": patientSearch,
-                "userid": _this168.htmlText.userData.user_details._id
+                "userid": _this159.htmlText.userData.user_details._id
               },
-              "token": _this168.htmlText.userData.jwtToken
+              "token": _this159.htmlText.userData.jwtToken
             };
 
-            _this168.http.httpViaPost('bulk-upload-patient-match', _data10).subscribe(function (response) {
-              _this168.htmlText.options = response.data.all_patient;
-              _this168.htmlText.conflictingPatientRecordsDataSource = [];
+            _this159.http.httpViaPost('bulk-upload-patient-match', _data10).subscribe(function (response) {
+              _this159.htmlText.options = response.data.all_patient;
+              _this159.htmlText.conflictingPatientRecordsDataSource = [];
 
               if (response.status == "success") {
-                for (var _loop2 = 0; _loop2 < _this168.htmlText.confirmSubmittedDataSource.length; _loop2++) {
+                for (var _loop = 0; _loop < _this159.htmlText.confirmSubmittedDataSource.length; _loop++) {
                   for (var loop2 = 0; loop2 < response.data.match_patient.length; loop2++) {
                     /* For find some patient */
-                    if (_this168.htmlText.confirmSubmittedDataSource[_loop2].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
+                    if (_this159.htmlText.confirmSubmittedDataSource[_loop].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
                       /* checking duplicate */
-                      if (typeof _this168.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag == 'undefined') {
-                        _this168.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag = true;
+                      if (typeof _this159.htmlText.confirmSubmittedDataSource[_loop].patient_find_flag == 'undefined') {
+                        console.log(">>>", response.data.match_patient[loop2]);
+                        _this159.htmlText.confirmSubmittedDataSource[_loop].patient_find_flag = true;
 
-                        _this168.htmlText.confirmSubmittedDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
+                        _this159.htmlText.confirmSubmittedDataSource[_loop].patient_details.push(response.data.match_patient[loop2]);
 
-                        _this168.htmlText.confirmSubmittedDataSource[_loop2].status = 3;
+                        _this159.htmlText.confirmSubmittedDataSource[_loop].status = 3;
 
-                        _this168.htmlText.confirmSubmittedDataSource[_loop2].report_life_circle.push({
-                          upload_by_tech_id: _this168.htmlText.userData.user_details._id,
+                        _this159.htmlText.confirmSubmittedDataSource[_loop].report_life_circle.push({
+                          upload_by_tech_id: _this159.htmlText.userData.user_details._id,
                           upload_date: Date.now(),
                           upload_status: 3,
                           upload_status_text: "File uploaded confirm"
                         });
                       } else {
-                        _this168.htmlText.conflictingPatientRecordsDataSource.push(_this168.htmlText.confirmSubmittedDataSource[_loop2]);
+                        _this159.htmlText.conflictingPatientRecordsDataSource.push(_this159.htmlText.confirmSubmittedDataSource[_loop]);
 
-                        _this168.htmlText.conflictingPatientRecordsDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
+                        _this159.htmlText.conflictingPatientRecordsDataSource[_loop].patient_details.push(response.data.match_patient[loop2]);
 
-                        _this168.htmlText.conflictingPatientRecordsDataSource[_loop2].status = 3;
+                        _this159.htmlText.conflictingPatientRecordsDataSource[_loop].status = 3;
 
-                        _this168.htmlText.conflictingPatientRecordsDataSource[_loop2].report_life_circle.push({
-                          upload_by_tech_id: _this168.htmlText.userData.user_details._id,
+                        _this159.htmlText.conflictingPatientRecordsDataSource[_loop].report_life_circle.push({
+                          upload_by_tech_id: _this159.htmlText.userData.user_details._id,
                           upload_date: Date.now(),
                           upload_status: 3,
                           upload_status_text: "File uploaded confirm"
@@ -34813,41 +34292,40 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 /* Delete conflict data */
 
 
-                for (var _loop3 = 0; _loop3 < _this168.htmlText.confirmSubmittedDataSource.length; _loop3++) {
-                  if (_this168.htmlText.confirmSubmittedDataSource[_loop3].patient_details.length > 1) {
-                    _this168.htmlText.confirmSubmittedDataSource.splice(_loop3, 1);
+                for (var _loop2 = 0; _loop2 < _this159.htmlText.confirmSubmittedDataSource.length; _loop2++) {
+                  if (_this159.htmlText.confirmSubmittedDataSource[_loop2].patient_details.length > 1) {
+                    _this159.htmlText.confirmSubmittedDataSource.splice(_loop2, 1);
                   }
                 }
                 /* Add not find data */
 
 
-                _this168.htmlText.notFindDataSource = [];
                 var deleteIndex = [];
 
-                for (var _loop4 = 0; _loop4 < _this168.htmlText.confirmSubmittedDataSource.length; _loop4++) {
-                  if (typeof _this168.htmlText.confirmSubmittedDataSource[_loop4].patient_find_flag == 'undefined') {
-                    _this168.htmlText.notFindDataSource.push(_this168.htmlText.confirmSubmittedDataSource[_loop4]);
+                for (var _loop3 = 0; _loop3 < _this159.htmlText.confirmSubmittedDataSource.length; _loop3++) {
+                  if (typeof _this159.htmlText.confirmSubmittedDataSource[_loop3].patient_find_flag == 'undefined') {
+                    _this159.htmlText.notFindDataSource.push(_this159.htmlText.confirmSubmittedDataSource[_loop3]);
 
-                    _this168.htmlText.notFindDataSource[_loop4].status = 3;
+                    _this159.htmlText.notFindDataSource[_this159.htmlText.notFindDataSource.length - 1].status = 3;
 
-                    _this168.htmlText.notFindDataSource[_loop4].report_life_circle.push({
-                      upload_by_tech_id: _this168.htmlText.userData.user_details._id,
+                    _this159.htmlText.notFindDataSource[_this159.htmlText.notFindDataSource.length - 1].report_life_circle.push({
+                      upload_by_tech_id: _this159.htmlText.userData.user_details._id,
                       upload_date: Date.now(),
                       upload_status: 3,
                       upload_status_text: "File uploaded confirm"
                     });
 
-                    deleteIndex.push(_loop4);
+                    deleteIndex.push(_loop3);
                   }
                 }
 
-                for (var _loop5 = 0; _loop5 < deleteIndex.length; _loop5++) {
-                  _this168.htmlText.confirmSubmittedDataSource.splice(deleteIndex, 1);
+                for (var _loop4 = 0; _loop4 < deleteIndex.length; _loop4++) {
+                  _this159.htmlText.confirmSubmittedDataSource.splice(deleteIndex, 1);
                 }
 
-                _this168.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this168.htmlText.confirmSubmittedDataSource);
-                _this168.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this168.htmlText.conflictingPatientRecordsDataSource);
-                _this168.notFindPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this168.htmlText.notFindDataSource);
+                _this159.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this159.htmlText.confirmSubmittedDataSource);
+                _this159.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this159.htmlText.conflictingPatientRecordsDataSource);
+                _this159.notFindPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this159.htmlText.notFindDataSource);
               }
             });
           }
@@ -34866,7 +34344,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "selectConflictingRecord",
         value: function selectConflictingRecord(flag, conflictIndex, selectIndex) {
-          var _this169 = this;
+          var _this160 = this;
 
           if (flag == 'conflicting') {
             var data = {
@@ -34889,18 +34367,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   break;
 
                 case "Yes":
-                  var patientDetails = _this169.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details[selectIndex];
+                  var patientDetails = _this160.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details[selectIndex];
 
-                  _this169.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.splice(0, _this169.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.length);
+                  _this160.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.splice(0, _this160.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.length);
 
-                  _this169.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.push(patientDetails);
+                  _this160.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.push(patientDetails);
 
-                  _this169.htmlText.confirmSubmittedDataSource.push(_this169.htmlText.conflictingPatientRecordsDataSource[conflictIndex]);
+                  _this160.htmlText.confirmSubmittedDataSource.push(_this160.htmlText.conflictingPatientRecordsDataSource[conflictIndex]);
 
-                  _this169.htmlText.conflictingPatientRecordsDataSource.splice(conflictIndex, 1);
+                  _this160.htmlText.conflictingPatientRecordsDataSource.splice(conflictIndex, 1);
 
-                  _this169.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this169.htmlText.confirmSubmittedDataSource);
-                  _this169.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this169.htmlText.conflictingPatientRecordsDataSource);
+                  _this160.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this160.htmlText.confirmSubmittedDataSource);
+                  _this160.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this160.htmlText.conflictingPatientRecordsDataSource);
                   break;
               }
             });
@@ -34909,7 +34387,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateRecord",
         value: function updateRecord() {
-          var _this170 = this;
+          var _this161 = this;
 
           console.log("SUBHA >>>----> ", this.htmlText.confirmSubmittedDataSource);
 
@@ -34921,20 +34399,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost("update-upload-file", data).subscribe(function (response) {
               if (response.status == 'success') {
-                var dialogRef = _this170.dialog.open(_report_upload_success_modal_report_upload_success_modal_component__WEBPACK_IMPORTED_MODULE_9__["ReportUploadSuccessModalComponent"], {
+                var dialogRef = _this161.dialog.open(_report_upload_success_modal_report_upload_success_modal_component__WEBPACK_IMPORTED_MODULE_9__["ReportUploadSuccessModalComponent"], {
                   panelClass: 'patient-confirm-report',
                   data: {
-                    confirmSubmittedDataSource: _this170.htmlText.confirmSubmittedDataSource,
-                    conflictingPatientRecordsDataSource: _this170.htmlText.conflictingPatientRecordsDataSource,
-                    notFindDataSource: _this170.htmlText.notFindDataSource
+                    confirmSubmittedDataSource: _this161.htmlText.confirmSubmittedDataSource,
+                    conflictingPatientRecordsDataSource: _this161.htmlText.conflictingPatientRecordsDataSource,
+                    notFindDataSource: _this161.htmlText.notFindDataSource
                   }
                 });
 
                 dialogRef.afterClosed().subscribe(function (result) {
-                  _this170.router.navigateByUrl('/tech/dashboard');
+                  _this161.router.navigateByUrl('/tech/dashboard');
                 });
               } else {
-                _this170.snackBar.open(response.msg + " Error code: F-AEA-TS-164.", "Ok", {
+                _this161.snackBar.open(response.msg + " Error code: F-AEA-TS-164.", "Ok", {
                   duration: 2000
                 });
               }
@@ -34968,7 +34446,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "changePatientDialog",
         value: function changePatientDialog(sectionFlag, tableIndex) {
-          var _this171 = this;
+          var _this162 = this;
 
           var dialogRef = this.dialog.open(_patient_select_modal_patient_select_modal_component__WEBPACK_IMPORTED_MODULE_8__["PatientSelectModalComponent"], {
             panelClass: 'patient-confirm-report',
@@ -34980,30 +34458,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             if (result != '') {
               switch (sectionFlag) {
                 case 'submitted':
-                  _this171.htmlText.confirmSubmittedDataSource[tableIndex].patient_details.splice(0, 1);
+                  _this162.htmlText.confirmSubmittedDataSource[tableIndex].patient_details.splice(0, 1);
 
-                  _this171.htmlText.confirmSubmittedDataSource[tableIndex].patient_details.push(result);
+                  _this162.htmlText.confirmSubmittedDataSource[tableIndex].patient_details.push(result);
 
-                  _this171.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this171.htmlText.confirmSubmittedDataSource);
+                  _this162.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this162.htmlText.confirmSubmittedDataSource);
                   break;
 
                 case 'conflicting':
-                  _this171.htmlText.conflictingPatientRecordsDataSource[tableIndex].patient_details = [];
+                  _this162.htmlText.conflictingPatientRecordsDataSource[tableIndex].patient_details = [];
 
-                  _this171.htmlText.conflictingPatientRecordsDataSource[tableIndex].patient_details.push(result);
+                  _this162.htmlText.conflictingPatientRecordsDataSource[tableIndex].patient_details.push(result);
 
-                  _this171.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this171.htmlText.conflictingPatientRecordsDataSource);
+                  _this162.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this162.htmlText.conflictingPatientRecordsDataSource);
                   break;
 
                 case 'not found':
-                  _this171.htmlText.confirmSubmittedDataSource.push(_this171.htmlText.notFindDataSource[tableIndex]);
+                  _this162.htmlText.confirmSubmittedDataSource.push(_this162.htmlText.notFindDataSource[tableIndex]);
 
-                  _this171.htmlText.confirmSubmittedDataSource[_this171.htmlText.confirmSubmittedDataSource.length - 1].patient_details.push(result);
+                  _this162.htmlText.confirmSubmittedDataSource[_this162.htmlText.confirmSubmittedDataSource.length - 1].patient_details.push(result);
 
-                  _this171.htmlText.notFindDataSource.splice(tableIndex, 1);
+                  _this162.htmlText.notFindDataSource.splice(tableIndex, 1);
 
-                  _this171.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this171.htmlText.confirmSubmittedDataSource);
-                  _this171.notFindPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this171.htmlText.notFindDataSource);
+                  _this162.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this162.htmlText.confirmSubmittedDataSource);
+                  _this162.notFindPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this162.htmlText.notFindDataSource);
                   break;
 
                 default:
@@ -35396,7 +34874,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function TechDashboardComponent(cookie, http, httpService, activatedRoute, commonFunction, dialog) {
-        var _this172 = this;
+        var _this163 = this;
 
         _classCallCheck(this, TechDashboardComponent);
 
@@ -35405,7 +34883,98 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.httpService = httpService;
         this.activatedRoute = activatedRoute;
         this.commonFunction = commonFunction;
-        this.dialog = dialog;
+        this.dialog = dialog; // Lib list
+
+        this.allBillerData = [];
+        this.billerData_count = 0;
+        this.allUserData_skip = ["_id", "report_file_type", "tech_id", "tech_email", "batch_name", "report_type", "status", "file_basepath", "file_bucketname", "file_name", "file_original_name", "file_type", "converted_image", "images", "patient_details", "patient_name_search", "report_life_circle", "note", "additional_potential_health_risks", "cpt_codes", "created_at"];
+        this.editUrl = "admin/biller-management/edit";
+        this.libdata = {
+          basecondition: {},
+          updateendpoint: '',
+          custombuttons: [{
+            label: "View Report",
+            route: "admin/patient-record/",
+            type: 'internallink',
+            param: ['_id']
+          }],
+          hideeditbutton: true,
+          hidedeletebutton: true,
+          hidestatustogglebutton: true,
+          hideviewbutton: true,
+          tableheaders: ["doctor_name", "tech_name", "patient_name", "status_text", "created_at_datetime", "cpt_code_count", "addl_hlth_risk"]
+        };
+        this.allUserData_modify_header = {
+          "doctor_name": "Doctor Name",
+          "tech_name": "Tech Name",
+          "patient_name": "Patient Name",
+          "status_text": "Status",
+          "created_at_datetime": "Report Added",
+          "cpt_code_count": "CPT Code Count",
+          "addl_hlth_risk": "Addl Hlth Risk"
+        };
+        this.UpdateEndpoint = "addorupdatedata";
+        this.deleteEndpoint = "deletesingledata";
+        this.tableName = "data_pece";
+        this.datacollection = 'getbillerlistdata';
+        this.sortdata = {
+          "type": 'desc',
+          "field": 'firstname',
+          "options": ['firstname', 'email', 'created_date']
+        };
+        this.limitcond = {
+          "limit": 10,
+          "skip": 0,
+          "pagecount": 1
+        };
+        this.previewModal_detail_skip = ['_id', 'user_type', 'status', 'password', 'created_at'];
+        this.status = [{
+          val: 1,
+          'name': 'Active'
+        }, {
+          val: 0,
+          'name': 'Inactive'
+        }];
+        this.parent_type = [{
+          val: "admin",
+          'name': 'Admin'
+        }, {
+          val: "diagnostic_admin",
+          'name': 'Diagnostic Admin'
+        }, {
+          val: "distributors",
+          'name': 'Distributor'
+        }, {
+          val: "doctor_group",
+          'name': 'Doctor Group'
+        }];
+        this.SearchingEndpoint = "datalist";
+        this.SearchingSourceName = "data_biller_list";
+        this.search_settings = {
+          selectsearch: [{
+            label: 'Search By Status',
+            field: 'status',
+            values: this.status
+          }, {
+            label: 'Search By Parent Type',
+            field: 'parent_type_search',
+            values: this.parent_type
+          }],
+          textsearch: [{
+            label: "Search By Name",
+            field: 'name_search'
+          }, {
+            label: "Search By E-Mail",
+            field: 'email'
+          }, {
+            label: "Search By Parent Name",
+            field: 'parent_search'
+          }, {
+            label: "Search By Company Name",
+            field: 'company_search'
+          }]
+        }; // lib list end
+
         this.commonArray = [];
         this.searchJson = {
           doctorName: "",
@@ -35422,11 +34991,41 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var allData = cookie.getAll();
         this.authData["userData"] = JSON.parse(allData.user_details);
         this.authData["jwtToken"] = cookie.get('jwtToken');
+        /* Get Auth Token */
+
+        this.jwtToken = cookie.get('jwtToken');
         this.activatedRoute.data.forEach(function (data) {
-          _this172.allResolveData = data.techDashboardData.data;
-          _this172.allResolveData["totalRemainToProcessCount"] = _this172.allResolveData.totalReportCount - _this172.allResolveData.processedReportCount;
-          var allDashboardData = _this172.allResolveData.totalReportData;
-          _this172.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
+          _this163.allResolveData = data.techDashboardData.data;
+          _this163.allResolveData["totalRemainToProcessCount"] = _this163.allResolveData.totalReportCount - _this163.allResolveData.processedReportCount;
+          var allDashboardData = _this163.allResolveData.totalReportData;
+          _this163.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
+        }); // lib list
+
+        this.libdata.basecondition.tech_id = this.authData.userData._id;
+        var endpoint = 'getPatientlistdata';
+        var endpointc = 'getPatientlistdata-count';
+        var data = {
+          "condition": {
+            "limit": 10,
+            "skip": 0
+          },
+          sort: {
+            "type": 'desc',
+            "field": 'patient_name'
+          },
+          basecondition: {
+            "tech_id": this.authData.userData._id
+          }
+        };
+        this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
+          _this163.billerData_count = res.count;
+        }, function (error) {
+          console.log('Oooops!');
+        });
+        this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
+          _this163.allBillerData = res.results.res;
+        }, function (error) {
+          console.log('Oooops!');
         });
       }
 
@@ -35443,7 +35042,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewDetailsData",
         value: function viewDetailsData(flag) {
-          var _this173 = this;
+          var _this164 = this;
 
           var condition = {};
           this.htmlText.headerText = flag;
@@ -35550,21 +35149,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpService.httpViaPost('dashboard-datalist', condition).subscribe(function (response) {
             var allDashboardData = response.data;
-            _this173.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
-            _this173.allDataSource.paginator = _this173.paginator;
-            _this173.allDataSource.sort = _this173.sortAll;
+            _this164.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
+            _this164.allDataSource.paginator = _this164.paginator;
+            _this164.allDataSource.sort = _this164.sortAll;
           });
         }
       }, {
         key: "openDialog",
         value: function openDialog(data) {
-          var _this174 = this;
+          var _this165 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_10__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this174.dialogRef.close();
+                _this165.dialogRef.close();
 
                 break;
             }
@@ -35641,7 +35240,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function DoctorViewDialogComponent(dialogRef, data, cookie, http, httpService) {
-        var _this175 = this;
+        var _this166 = this;
 
         _classCallCheck(this, DoctorViewDialogComponent);
 
@@ -35666,8 +35265,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var result = response.res;
 
           if (response.resc > 0) {
-            _this175.loader = false;
-            _this175.allDoctorData = response.res;
+            _this166.loader = false;
+            _this166.allDoctorData = response.res;
           }
         });
       }
@@ -36069,13 +35668,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TestComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this176 = this;
+          var _this167 = this;
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this176.configData.responseData = data.eventdayarrData.data;
-              console.log('responseData', _this176.configData.responseData);
+              _this167.configData.responseData = data.eventdayarrData.data;
+              console.log('responseData', _this167.configData.responseData);
             });
           } else {
             this.openSnackBar("Token not found", null);
@@ -36615,9 +36214,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _components_booked_events_listing_reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(
-    /*! ../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component */
-    "./src/app/components/booked-events-listing/reschedule-appointment/reschedule-appointment.component.ts");
+    var _components_encounter_form_encounter_form_component__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(
+    /*! ../components/encounter-form/encounter-form.component */
+    "./src/app/components/encounter-form/encounter-form.component.ts");
     /* Resolve Service */
 
     /* Auth Component */
@@ -36656,6 +36255,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* Sales Person */
 
     /* Test Component */
+    // import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component"
     // import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
 
 
@@ -36801,6 +36401,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     {
       path: 'admin/patient-record/:_id',
       component: _components_doctor_doctor_dashboard_patient_report_view_patient_report_view_component__WEBPACK_IMPORTED_MODULE_41__["PatientReportViewComponent"],
+      canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]],
+      resolve: {
+        data: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"]
+      },
+      data: {
+        requestcondition: {
+          source: 'data_pece',
+          condition: {}
+        },
+        endpoint: 'report-view'
+      }
+    }, {
+      path: 'admin/patient-record/encounter/:_id',
+      component: _components_encounter_form_encounter_form_component__WEBPACK_IMPORTED_MODULE_77__["EncounterFormComponent"],
       canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]],
       resolve: {
         data: _services_resolve_service__WEBPACK_IMPORTED_MODULE_4__["ResolveService"]
@@ -38305,11 +37919,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       path: 'doctor-office/manage-appointments/book-appoinment-now',
       component: _components_doctor_office_manage_appointments_book_appoinment_now_book_appoinment_now_component__WEBPACK_IMPORTED_MODULE_58__["BookAppoinmentNowComponent"],
       canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]]
-    }, {
-      path: 'doctor-office/reschedule-appointment/:_id/:doctor_id',
-      component: _components_booked_events_listing_reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_77__["RescheduleAppointmentComponent"],
-      canActivate: [_services_authguard_service__WEBPACK_IMPORTED_MODULE_3__["AuthguardService"]]
-    },
+    }, // {
+    //   path: 'doctor-office/reschedule-appointment/:_id/:doctor_id',
+    //   component: RescheduleAppointmentComponent,
+    //   canActivate: [AuthguardService]
+    // },
+
     /* Faq */
     {
       path: 'doctor-office/faq',
@@ -38907,7 +38522,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalendarService, [{
         key: "resolve",
         value: function resolve(route, state) {
-          var _this177 = this;
+          var _this168 = this;
 
           /* will come into play while editing otherwise no effect */
           var requestData = route.data.requestcondition;
@@ -38919,24 +38534,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               (function () {
                 var returnData = {};
 
-                var _loop6 = function _loop6(i) {
+                var _loop5 = function _loop5(i) {
                   data = {
                     source: route.data.requestcondition.source[i],
                     condition: {}
                   };
                   /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
 
-                  if (route.data.endpoint == 'view-event-eventdayarr' && _this177.cookieService.check('timezone')) {
-                    data.timezone = _this177.cookieService.get('timezone');
+                  if (route.data.endpoint == 'view-event-eventdayarr' && _this168.cookieService.check('timezone')) {
+                    data.timezone = _this168.cookieService.get('timezone');
                   }
                   /* If endpoint is 'view-event-eventdayarr' and user is not an admin */
 
 
-                  if (route.data.endpoint == 'view-event-eventdayarr' && _this177.cookieService.check('user_details')) {
-                    data.condition = JSON.parse(_this177.cookieService.get('user_details')).email;
+                  if (route.data.endpoint == 'view-event-eventdayarr' && _this168.cookieService.check('user_details')) {
+                    data.condition = JSON.parse(_this168.cookieService.get('user_details')).email;
                   }
 
-                  _this177.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
+                  _this168.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
                     if (api_object) {
                       returnData[route.data.requestcondition.source[i]] = api_object;
                     } else {
@@ -38947,7 +38562,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 };
 
                 for (var i = 0; i <= route.data.requestcondition.source.length - 1; i++) {
-                  _loop6(i);
+                  _loop5(i);
                 }
 
                 setTimeout(function () {
@@ -38956,27 +38571,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               })();
             } else {
               /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
-              if (route.data.endpoint == 'view-event-eventdayarr' && _this177.cookieService.check('timezone')) {
-                route.data.requestcondition.timezone = _this177.cookieService.get('timezone');
+              if (route.data.endpoint == 'view-event-eventdayarr' && _this168.cookieService.check('timezone')) {
+                route.data.requestcondition.timezone = _this168.cookieService.get('timezone');
               }
               /* If user is not an admin */
 
 
-              if (_this177.cookieService.check('user_details') && JSON.parse(_this177.cookieService.get('user_details')).user_type == 'tech') {
+              if (_this168.cookieService.check('user_details') && JSON.parse(_this168.cookieService.get('user_details')).user_type == 'tech') {
                 route.data.requestcondition.condition = Object.assign(route.data.requestcondition.condition, {
                   userid: {
-                    $in: [JSON.parse(_this177.cookieService.get('user_details'))._id]
+                    $in: [JSON.parse(_this168.cookieService.get('user_details'))._id]
                   }
                 }); // route.data.requestcondition.condition.$or.push({userid: JSON.parse(this.cookieService.get('user_details'))._id});
               } else {
                 route.data.requestcondition.condition = Object.assign(route.data.requestcondition.condition, {
                   userid: {
-                    $in: JSON.parse(_this177.cookieService.get('user_details')).tech_id
+                    $in: JSON.parse(_this168.cookieService.get('user_details')).tech_id
                   }
                 });
               }
 
-              _this177.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
+              _this168.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
                 if (api_object) {
                   return resolve(api_object);
                 } else {
@@ -39359,7 +38974,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ResolveService, [{
         key: "resolve",
         value: function resolve(route, state) {
-          var _this178 = this;
+          var _this169 = this;
 
           /* will come into play while editing otherwise no effect */
           var requestData = route.data.requestcondition;
@@ -39466,13 +39081,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             if (typeof route.data.requestcondition.source != 'string') {
               var returnData = {};
 
-              var _loop7 = function _loop7(i) {
+              var _loop6 = function _loop6(i) {
                 var data = {
                   source: route.data.requestcondition.source[i],
                   condition: {}
                 };
 
-                _this178._apiService.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
+                _this169._apiService.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
                   if (api_object) {
                     returnData[route.data.requestcondition.source[i]] = api_object;
                     return resolve(returnData);
@@ -39484,12 +39099,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               };
 
               for (var i = 0; i < route.data.requestcondition.source.length; i++) {
-                _loop7(i);
+                _loop6(i);
               }
             } else {
               /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
-              if (route.data.endpoint == 'view-event-eventdayarr' && _this178.cookies.check('timezone')) {
-                route.data.requestcondition.timezone = _this178.cookies.get('timezone');
+              if (route.data.endpoint == 'view-event-eventdayarr' && _this169.cookies.check('timezone')) {
+                route.data.requestcondition.timezone = _this169.cookies.get('timezone');
               }
               /* If user is not an admin */
               // if (this.cookies.check('user_details') &&
@@ -39500,7 +39115,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               // }
 
 
-              _this178._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
+              _this169._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
                 if (api_object) {
                   return resolve(api_object);
                 } else {
