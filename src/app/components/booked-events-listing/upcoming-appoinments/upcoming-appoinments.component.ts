@@ -72,7 +72,13 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       detailview_override: [
         {key: 'event_title', val: 'Event Title'},
         {key: 'startdate', val: 'Start Date'},
+        {key: 'practice_name', val: 'Practice Name'},
+        {key: 'patient_name', val: 'Patient Name'},
+        {key: 'patient_email', val: 'Patient Email'},
+        {key: 'has_pvt', val: 'Has PVT'},
+        {key: 'has_diabetics', val: 'Has Diabetics'},
         {key: 'Had_PVD', val: 'Had PVD'},
+        {key: 'booking_date', val: 'Booking Date'},
         {key: 'additional_notes', val: 'Additional Notes'},
 
         {key: 'angina_six_months', val: 'Angina(6 Months)'},
@@ -256,7 +262,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       ]
     },
     statusarray: [{val: 0, 'name': 'Pending'}, {val: 1, 'name': 'Approved'}, {val: 2, 'name': 'Canceled'}],
-    detail_skip_array: ['_id', 'username', 'useremail']
+    detail_skip_array: ['_id', 'username', 'useremail', 'startdate_unix', 'can_reschedule', 'is_google_event', 'doctor_id', 'doctors_office_id', 'doctor_name', 'doctors_office_name', 'tech_id', 'tech_name', 'timezoneName', 'parent_id', 'parent_type', 'userid', 'username', 'start_datetime_unix']
   };
 
   constructor(public cookie: CookieService, public snackBar: MatSnackBar,
