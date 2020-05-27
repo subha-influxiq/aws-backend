@@ -262,9 +262,15 @@
           </ng-template>
         </mat-tab> -->
 
+        <mat-tab label="Patient Details">
+          <ng-template matTabContent>
+            <app-patient-details [patientDetails]="htmlText.allResolveData" [orginalData]="htmlText.orginalData"></app-patient-details>
+          </ng-template>
+        </mat-tab>
+
         <mat-tab label="Encounter Form">
           <ng-template matTabContent>
-            <app-healthrisk-system-encounter [patientDetails]="htmlText.allResolveData"></app-healthrisk-system-encounter>
+            <app-healthrisk-system-encounter [patientDetails]="htmlText.allResolveData" [orginalData]="htmlText.orginalData"></app-healthrisk-system-encounter>
           </ng-template>
         </mat-tab>
 
@@ -279,6 +285,7 @@
             <app-additional-recommemded-diagnostic-tests [patientDetails]="htmlText.allResolveData"></app-additional-recommemded-diagnostic-tests>
           </ng-template>
         </mat-tab>
+
       </mat-tab-group>
 
     </mat-card-content>

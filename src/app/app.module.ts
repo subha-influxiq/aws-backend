@@ -172,6 +172,7 @@ import { PatientSelectModalComponent } from './components/tech/patient-managemen
 import { ReportUploadSuccessModalComponent } from './components/tech/patient-management/report-upload-success-modal/report-upload-success-modal.component';
 import { EncounterFormComponent } from './components/encounter-form/encounter-form.component';
 import {RescheduleAppointmentComponent} from "./components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
+import { PatientDetailsComponent } from './components/doctor/doctor-dashboard/patient-report-view/patient-details/patient-details.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -329,7 +330,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     ReportUploadSuccessModalComponent,
     EncounterFormComponent,
     RescheduleAppointmentComponent,
-    EncounterFormComponent
+    EncounterFormComponent,
+    PatientDetailsComponent
   ],
   imports: [
     SatDatepickerModule,

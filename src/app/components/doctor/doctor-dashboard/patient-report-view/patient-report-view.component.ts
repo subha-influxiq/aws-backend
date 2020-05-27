@@ -81,8 +81,7 @@ export class PatientReportViewComponent implements OnInit {
   ngOnInit() {
     this.activeRoute.data.forEach((data) => {
       this.htmlText.allResolveData = data.data.data;
-
-      console.log(">>>>", this.htmlText.allResolveData);
+      this.htmlText.orginalData = data.data.data_2[0];
 
       if(typeof(this.htmlText.allResolveData.reportData[0].stressi) != 'undefined') {
         this.htmlText.allResolveData.reportData[0].stressI = this.htmlText.allResolveData.reportData[0].stressi;

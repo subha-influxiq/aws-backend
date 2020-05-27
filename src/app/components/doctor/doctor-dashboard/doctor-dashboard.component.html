@@ -1,7 +1,7 @@
 <app-doctor-header></app-doctor-header>
 
 <mat-card class="admin_wrapper">
-  <section class="mediaDoc">
+  <section class="mediaDoc" *ngIf="authData.parent_type != 'admin'">
     <mat-card-title class="testingDoc"> Media Deck of Testing Services </mat-card-title>
     <mat-card-content class="mediaDoc_wrapper">
       <span class="new_wrapper_left">
@@ -37,7 +37,7 @@
   </section>
 
 
-  <section class="quickRef">
+  <section class="quickRef" *ngIf="authData.parent_type != 'admin'">
     <mat-card-title class="testingDoc">Clinical Quick Reference Guide </mat-card-title>
 
     <mat-card-content class="report_wrapper">
