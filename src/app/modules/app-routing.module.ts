@@ -1813,11 +1813,11 @@ const routes: Routes = [
     // }
   },
 
-  // {
-  //   path: 'doctor-office/reschedule-appointment/:_id/:doctor_id',
-  //   component: RescheduleAppointmentComponent,
-  //   canActivate: [AuthguardService]
-  // },
+  {
+    path: 'doctor-office/reschedule-appointment/:_id/:doctor_id',
+    component: RescheduleAppointmentComponent,
+    canActivate: [AuthguardService]
+  },
 
   /* Faq */
   {
