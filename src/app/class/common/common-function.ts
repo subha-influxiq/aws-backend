@@ -26,12 +26,19 @@ export class CommonFunction {
             urlArr[loop] = this.titleCase(urlArr[loop]);
             switch (urlArr[loop]) {
                 case 'Admin':
+                    title = 'Admin';
+                    break;
+                case 'Patient Record':
+                    title = title + ' | View Report ';
                     break;
                 case 'Tech':
+                    title = 'Tech ';
                     break;
                 case 'Doctor':
+                    title = 'Doctor ';
                     break;
                 case 'Doctor Office':
+                    title = 'Doctor Office ';
                     break;
                 case 'List':
                     break;
@@ -49,7 +56,7 @@ export class CommonFunction {
                     loop = urlArr.length
                     break;
                 default:
-                    title += urlArr[loop] + ' ';
+                    //title += urlArr[loop] + ' ';
                     break;
             }
         }

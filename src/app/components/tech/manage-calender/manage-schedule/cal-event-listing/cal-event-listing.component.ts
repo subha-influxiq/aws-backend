@@ -29,7 +29,8 @@ export class CalEventListingComponent implements OnInit {
       datalist: "datalist",
       deleteEvent: "delete-single-event",
       search: "search",
-      getTokenInfo: 'getauthorization-pece-getuserdata'
+      getTokenInfo: 'getauthorization-pece-getuserdata',
+      syncWithGoogle: 'get-events-from-google'
     },
     responseData: "",
     timeZone: [
@@ -55,7 +56,12 @@ export class CalEventListingComponent implements OnInit {
       { pathUrl: 'tech/manage-calender/manage-sehedule/event-listing', text: 'Event Listing', color: 'accent', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/create-availability', text: 'Create Availability', color: 'warn', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/booked-events', text: 'Booked Events', color: 'accent', active: true, isExternalLink: false },
-      { pathUrl: 'tech/manage-calender/manage-sehedule/sync-with-google', text: 'Sync with Google', color: 'warn', active: true, isExternalLink: false },
+      // { pathUrl: 'tech/manage-calender/manage-sehedule/sync-with-google', text: 'Sync with Google', color: 'warn', active: true, isExternalLink: false },
+      {
+        type: 'syncGoogleCalendar',
+        text: 'Sync with google', color: 'warn', spinnerColor: 'primary',
+        active: true, isExternalLink: false
+      },
       {
         pathUrl: environment.googleSyncApi,
         text: 'Add or Update Google Calendar', color: 'primary',

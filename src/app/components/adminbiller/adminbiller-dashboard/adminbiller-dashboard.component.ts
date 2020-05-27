@@ -10,6 +10,8 @@ import { DownloadDetailsComponent } from '../../admin/admin-dashboard/download-d
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatSnackBar } from '@angular/material';
 import * as momentImported from 'moment';
+import { environment } from '../../../../environments/environment';
+
 const moment = momentImported;
 
 @Component({
@@ -49,36 +51,35 @@ export class AdminbillerDashboardComponent implements OnInit {
   public datasource: any;
   public patientData_skip: any = [
     "_id",
-    "fax",
-    "address",
-    "zip",
-    "city",
-    "state",
-    "user_type",
+    "report_file_type",
     "tech_id",
-    "biller_id",
-    "doctors_office_id",
-    "diagnostic_admin_id",
-    "taxo_list",
-    "password",
-    "created_at",
-    "id",
-    "name_search",
-    "updated_at",
-    "doctor_signature",
-    "distributor_id",
-    "diagnostic_admin_id",
-    "doctorgroup_id"
+    "tech_email",
+    "batch_name",
+    "report_type",
+    "status",
+    "file_basepath",
+    "file_bucketname",
+    "file_name",
+    "file_original_name",
+    "file_type",
+    "converted_image",
+    "images",
+    "patient_details",
+    "patient_name_search",
+    "report_life_circle",
+    "note",
+    "additional_potential_health_risks",
+    "cpt_codes",
+    "created_at"
   ];
   public patientData_modify_header: any = {
-    patient_name: "Patient Name",
-    doctor_name: "Doctor Name",
-    doctor_email: "Doctor Email",
-    npi: "NPI#",
-    cpt_codes: "CPT Codes",
-    test_date: "Test Date",
-    report_file_type: "Report Type",
-    stat: "Status"
+    "doctor_name": "Doctor Name",
+    "tech_name": "Tech Name",
+    "patient_name": "Patient Name",
+    "status_text": "Status",
+    "created_at_datetime": "Report Added",
+    "cpt_code_count": "CPT Code Count",
+    "addl_hlth_risk": "Addl Hlth Risk"
   };
 
   public previewModal_skip: any = [
@@ -101,7 +102,7 @@ export class AdminbillerDashboardComponent implements OnInit {
   public searchingEndpoint:any="datalist";
   public searchSourceName:any="data_doctor_list"
   public editUrl:any = 'admin/doctor-management/edit';
-  public apiUrl:any;
+  public apiUrl: any = environment.apiBaseUrl;
   public datacollection: any='getpatientlistdata';
   public data:any;
   public field:any;
@@ -114,7 +115,15 @@ export class AdminbillerDashboardComponent implements OnInit {
     hideviewbutton:true,
     //hidestatustogglebutton:true,
     // hideaction:true,
-    tableheaders:['patient_name','doctor_name','doctor_email','npi','cpt_codes','test_time','report_file_type','stat',], //not required
+    tableheaders:[
+      "doctor_name",
+      "tech_name",
+      "patient_name",
+      "status_text",
+      "created_at_datetime",
+      "cpt_code_count",
+      "addl_hlth_risk"
+    ], //not required
     custombuttons:[
       {
           label:"Patient Details",
@@ -228,10 +237,7 @@ export class AdminbillerDashboardComponent implements OnInit {
     // report_type:"file"
     }
         this.http.httpViaPost(endpointc, data).subscribe((res:any) => {
-            // console.log('in constructor');
-            // console.log(result);
             this.patientData_count =res.count;
-            //console.warn('blogData c',res);
  
         }, error => {
             console.log('Oooops!');

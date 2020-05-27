@@ -37,12 +37,14 @@ export class AppoinmentsListingComponent implements OnInit {
   public authData: any = {};
   public dialogRef: any;
 
+
+
   constructor(public cookie: CookieService, public http: HttpClient, public snackBar: MatSnackBar,
               public httpService: HttpServiceService, public activatedRoute: ActivatedRoute,
               public commonFunction: CommonFunction, public dialog: MatDialog) {
 
     let allData: any = cookie.getAll();
-    this.authData["userData"] = JSON.parse(allData.user_details);
+    this.authData["userData"] = JSON.parse(cookie.get('user_details'));
     this.authData["jwtToken"] = cookie.get('jwtToken');
   }
 

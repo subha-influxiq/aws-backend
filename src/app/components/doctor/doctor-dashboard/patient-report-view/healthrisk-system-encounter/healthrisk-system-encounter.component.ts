@@ -24,11 +24,17 @@ export class HealthriskSystemEncounterComponent implements OnInit {
   };
 
   public reportDetails: any;
+  public orginalReportDetails: any;
   public cookiesData: any;
 
   @Input()
   set patientDetails(patientDetailsData: any) {
     this.reportDetails = patientDetailsData;
+  }
+
+  @Input()
+  set orginalData(orginalData: any) {
+    this.orginalReportDetails = orginalData;
   }
 
   constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService, public cookie: CookieService, public fb: FormBuilder, public router: Router, public datePipe: DatePipe) {
@@ -37,6 +43,11 @@ export class HealthriskSystemEncounterComponent implements OnInit {
   }
 
   ngOnInit() {
+    // console.log("Print Data: ", this.orginalReportDetails);
+    // console.log("additional_potential_health_risks: ", this.orginalReportDetails.additional_potential_health_risks);
+    // console.log("r00_description: ", this.orginalReportDetails.r00_description);
+    // console.log("icd_codes: ", this.orginalReportDetails.icd_codes);
+    // console.log("cpt_codes: ", this.orginalReportDetails.cpt_codes);
   }
 
   getPatientData(id: any) {
@@ -51,6 +62,10 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     this.httpService.httpViaPost('datalist', data).subscribe((response) => {
       this.htmlText.patientDetails = response.res[0];
     });
+  }
+
+  checkValue(event: any, fieldName){
+    console.log(event, fieldName);
   }
 
 }

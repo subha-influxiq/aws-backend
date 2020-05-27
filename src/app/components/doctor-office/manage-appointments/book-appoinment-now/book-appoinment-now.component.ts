@@ -856,7 +856,7 @@ export class BookAppoinmentNowComponent implements OnInit {
       console.log('The dialog was closed', result);
       this.configData.responseData = [];
       this.configData.primaryCondition = {
-        userid: {$in: [result.tech_id]}
+        userid: {$in: result.tech_id}
       }
       this.httpRequestService.postRequest(this.configData.endPoint.viewEventSlots, {
         token: this.configData.jwtToken,
@@ -915,6 +915,7 @@ export class ChooseDoctorDialog implements OnInit {
         this.techList = response._dropdown;
       else
         this.openSnackBar('No tech found for this doctor', 'Ok');
+      this.selectedIds.tech_id = response._dropdown.map(tech => tech.value);
       this.loadingTech = false;
     });
 

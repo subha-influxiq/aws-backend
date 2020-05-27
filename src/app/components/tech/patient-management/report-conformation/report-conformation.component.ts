@@ -13,6 +13,7 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatSnackBar } from '@angular/material';
 import { PatientSelectModalComponent } from '../patient-select-modal/patient-select-modal.component';
+import { ReportUploadSuccessModalComponent } from '../report-upload-success-modal/report-upload-success-modal.component';
 
 @Component({
   selector: 'app-report-conformation',
@@ -101,11 +102,26 @@ export class ReportConformationComponent implements OnInit {
                 if(this.htmlText.confirmSubmittedDataSource[loop].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
                   /* checking duplicate */
                   if(typeof(this.htmlText.confirmSubmittedDataSource[loop].patient_find_flag) == 'undefined') {
+                    console.log(">>>", response.data.match_patient[loop2]);
                     this.htmlText.confirmSubmittedDataSource[loop].patient_find_flag = true;
                     this.htmlText.confirmSubmittedDataSource[loop].patient_details.push(response.data.match_patient[loop2]);
+                    this.htmlText.confirmSubmittedDataSource[loop].status = 3;
+                    this.htmlText.confirmSubmittedDataSource[loop].report_life_circle.push({
+                      upload_by_tech_id: this.htmlText.userData.user_details._id,
+                      upload_date: Date.now(),
+                      upload_status: 3,
+                      upload_status_text: "File uploaded confirm"
+                    });
                   } else {
                     this.htmlText.conflictingPatientRecordsDataSource.push(this.htmlText.confirmSubmittedDataSource[loop]);
                     this.htmlText.conflictingPatientRecordsDataSource[loop].patient_details.push(response.data.match_patient[loop2]);
+                    this.htmlText.conflictingPatientRecordsDataSource[loop].status = 3;
+                    this.htmlText.conflictingPatientRecordsDataSource[loop].report_life_circle.push({
+                      upload_by_tech_id: this.htmlText.userData.user_details._id,
+                      upload_date: Date.now(),
+                      upload_status: 3,
+                      upload_status_text: "File uploaded confirm"
+                    });
                   }
                 }
               }
@@ -119,11 +135,17 @@ export class ReportConformationComponent implements OnInit {
             }
 
             /* Add not find data */
-            this.htmlText.notFindDataSource = [];
             var deleteIndex = [];
             for(let loop = 0; loop < this.htmlText.confirmSubmittedDataSource.length; loop++) {
               if(typeof(this.htmlText.confirmSubmittedDataSource[loop].patient_find_flag) == 'undefined') {
                 this.htmlText.notFindDataSource.push(this.htmlText.confirmSubmittedDataSource[loop]);
+                this.htmlText.notFindDataSource[this.htmlText.notFindDataSource.length - 1].status = 3;
+                this.htmlText.notFindDataSource[this.htmlText.notFindDataSource.length - 1].report_life_circle.push({
+                  upload_by_tech_id: this.htmlText.userData.user_details._id,
+                  upload_date: Date.now(),
+                  upload_status: 3,
+                  upload_status_text: "File uploaded confirm"
+                });
                 deleteIndex.push(loop);
               }
             }
@@ -183,6 +205,7 @@ export class ReportConformationComponent implements OnInit {
 
   updateRecord() {
     console.log("SUBHA >>>----> ", this.htmlText.confirmSubmittedDataSource);
+    
     if(this.checkboxData.checkbox1 == true && this.checkboxData.checkbox2 == true) {
       var data: any = {
         "source": "data_pece",
@@ -192,13 +215,18 @@ export class ReportConformationComponent implements OnInit {
 
       this.http.httpViaPost("update-upload-file", data).subscribe(response => {
         if(response.status == 'success') {
-          this.snackBar.open("Successfully updated.", "Ok", {
-            duration: 2000,
+          const dialogRef = this.dialog.open(ReportUploadSuccessModalComponent, {
+            panelClass:'patient-confirm-report',
+             data: {
+              confirmSubmittedDataSource: this.htmlText.confirmSubmittedDataSource,
+              conflictingPatientRecordsDataSource: this.htmlText.conflictingPatientRecordsDataSource,
+              notFindDataSource: this.htmlText.notFindDataSource
+            }
           });
-          
-          setTimeout(() => {
+       
+          dialogRef.afterClosed().subscribe(result => {
             this.router.navigateByUrl('/tech/dashboard');
-          }, 1000);
+          });
         } else {
           this.snackBar.open(response.msg + " Error code: F-AEA-TS-164.", "Ok", {
             duration: 2000,

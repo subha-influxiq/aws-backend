@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New york report pdf</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .min_wrapr {
+            width: 798px;
+            height:auto;
+            background: #fff;
+            margin: 50px auto;
+            border: 1px solid #3a3838;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table th,
+        table td {
+            padding: 4px 8px;
+            vertical-align: top;
+        }
+
+        table tr td p {
+            display: flex;
+            margin: 0;
+            box-sizing: border-box;
+            font-size: 12px;
+        }
+
+        table tr td p span {
+            min-width: 124px;
+        }
+
+        table tr td p input[type='text'] {
+            width: 100%;
+            font-family: sans-serif;
+            border: none;
+            border-bottom: 1px solid #252424;
+            padding-bottom: 4px;
+            background: none;
+        }
+
+        table tr td p input[type='text']:focus {
+            outline: none;
+        }
+
+        .suggestBill {
+            border: 1px solid #6b6a6a;
+            padding: 4px;
+            justify-content: center;
+            margin-bottom: 6px;
+        }
+
+        .bill_amount {
+            flex-wrap: wrap;
+        }
+
+        .bill_amount label {
+            font-size: 12px;
+        }
+
+        .middle_part h2 {
+            color: #f50808;
+            font-size: 12px;
+            text-align: center;
+            border: 2px solid #3e3c3c;
+            padding: 8px 0;
+            border-left: 0;
+            border-right: 0;
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .chkValue {
+            min-width: 70px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+        }
+  
+        .inner_form table {
+            border-collapse: collapse;
+        }
+
+        .inner_form tr td {
+            width: 50%;
+            padding: 1px;
+        }
+
+        .inner_form tr td span {
+            font-size: 10px;
+        }
+
+        h3 {
+            font-size: 10px;
+            margin: 3px auto;
+            border-bottom: 1px solid #302f31;
+            width: 215px;
+        }
+        ul li{
+            font-size: 10px; margin: 2px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="min_wrapr">
+        <div class="top_part">
+            <table>
+                <tr>
+                    <td>
+                        <p><span> Patient Name</span><input type="text"></p>
+                    </td>
+                    <td>
+                        <p><label style="border: none;">M <input type="checkbox"></label> <label style="border: none;">F
+                                <input type="checkbox"></label></p>
+                    </td>
+                    <td>
+                        <p><span>Test Date</span><input type="text" value="test patient name"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <p><span> Ordering Physician</span><input type="text" value="patient name"> </p>
+                    </td>
+                    <td>
+                        <p><span style="text-align: right; padding-right: 16px;"> D.O.B</span><input type="text"
+                                value="test patient name"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <p><span>Physician’s Signature</span><input type="text" value="patient name"> </p>
+                    </td>
+                    <td style="width: 45%;">
+                        <p class="suggestBill">Suggested billing amounts per CPT</p>
+                        <p class="bill_amount">
+                            <label><input type="checkbox">95923: $410</label>
+                            <label><input type="checkbox">95943: $440</label>
+                            <label><input type="checkbox">95921: $280</label>
+                            <label><input type="checkbox">93923: $250.00</label>
+                            <label><input type="checkbox">93922: $280</label>
+
+
+                        </p>
+
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td colspan="2">
+                        <p><span>Patient’s Insurance Carrier (s)</span><input type="text" value="patient name"> </p>
+                    </td>
+                    <td>
+                        <p> <label><input type="checkbox">No Diagnoses Established</label></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="middle_part">
+            <h2>ICD 10 DIAGNOSTIC CODES TO BE USED WITH CPT CODE: 95921 (or use 95943 is allowed), and 95923</h2>
+
+
+            <div class="inner_form">
+                <table>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E08.40</label>
+                                <span>Type 1 Diabetes W/ Neurological Manifestations, Not Stated as
+                                    Uncontrolled</span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G60.3 </label>
+                                <span>Idiopathic progressive neuropathy</span> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E10.41</label>
+
+                                <span>Type 1 Diabetes Mellitus W/ Diabetic Mononeuropathy</span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G60.8 </label>
+                                <span>Other hereditary and idiopathic neuropathies</span> </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E10.42</label>
+                                <span>Type 1 Diabetes Mellitus W/ Diabetic Polyneuropathy</span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G60.9</label>
+                                <span>Hereditary and idiopathic neuropathy, unspecified</span> </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E10.43</label>
+                                <span> Type 1 Diabetes Mellitus W/ Diabetic Autonomic (Poly) Neuropathy</span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G62.9</label>
+                                <span> Polyneuropathy, unspecified</span> </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E10.44</label>
+                                <span>Type 1 Diabetes Mellitus W/ Diabetic Amyotrophy</span> </p>
+
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G90.09</label>
+                                <span>Other idiopathic peripheral autonomic neuropathy </span> </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E10.49</label>
+                                <span>Type 1 Diabetes Mellitus W/ Other Diabetic Neurological Complications </span> </p>
+
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G90.3</label>
+                                <span>Multi-system degeneration of the autonomic nervous system</span> </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E10.610</label>
+                                <span>Type 1 Diabetes (Juvenile) W/ diabetic Neuropathic Arthropathy </span> </p>
+
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G90.50</label>
+                                <span> Complex regional pain syndrome I, unspecified</span> </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E11.9</label>
+                                <span> Type 2 Diabetes Without Complications (non-Medicare) </span> </p>
+
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G90.59</label>
+                                <span> Complex regional pain syndrome I of other specified site</span> </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E11.41</label>
+                                <span> Type 2 Diabetes Mellitus W/ Diabetic Mononeuropathy</span> </p>
+
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">R00.0</label>
+                                <span> Tachycardia, unspecified Abnormal Heart Rhythm & Electrical Stability</span> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E11.42</label>
+                                <span>Type 2 Diabetes Mellitus W/ Diabetic Polyneuropathy </span> </p>
+
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">R55</label>
+                                <span> Vasovagal Syndrome/Syncope and collapse </span> </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E11.43</label>
+                                <span>Type 2 Diabetes Mellitus W/ Diabetic Polyneuropathy Type 2 Diabetes W/ Autonomic
+                                    Neuropathy </span> </p>
+
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">R73.01</label>
+                                <span> Impaired fasting glucose (Non-Medicare) </span> </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox"> E11.44</label>
+                                <span> Type 2 Diabetes Mellitus W/Diabetic Amyotrophy </span> </p>
+
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">R73.03</label>
+                                <span>Prediabetes (Non-Medicare) </span> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E11.49</label>
+                                <span>
+                                    Type 2 Diabetes Mellitus W/ Other Diabetic Neurological Complications </span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G90.50</label>
+                                <span>Complex regional pain syndrome I, unspecified</span> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox"> E85.0 </label>
+                                <span>Mediterranean Fever </span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G90.511</label>
+                                <span> Complex regional pain syndrome I of right upper limb </span> </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E85.1</label>
+                                <span>Neuropathic Heredofamilial Amyloidosis </span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G90.512</label>
+                                <span> Complex regional pain syndrome I of left upper limb </span> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E85.3</label>
+                                <span>Secondary Systemic Amyloidosis </span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G90.513</label>
+                                <span> Complex regional pain syndrome I of upper limb, bilateral </span> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E85.4</label>
+                                <span> Organ – Limited Amyloidosis </span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G90.521</label>
+                                <span> Complex regional pain syndrome I of right lower limb </span> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">G20.0 </label>
+                                <span> Parkinson’s Disease </span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G90.522</label>
+                                <span>Complex regional pain syndrome I of left lower limb </span> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">G23.0</label>
+                                <span> Hallervorden – Spatz Disease </span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G90.523</label>
+                                <span> Complex regional pain syndrome I of lower limb, bilateral </span> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">G23.1</label>
+                                <span> Progressive supranuclear ophthalmoplegia [Steele-Richardson Olszewski]</span>
+                            </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">G90.59</label>
+                                <span> Complex regional pain syndrome I of other specified site </span> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">G23.2</label>
+                                <span> Striatonigral degeneration</span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">I95.1</label>
+                                <span> Orthostatic Hypotension </span> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">G23.8</label>
+                                <span> Other specified degenerative diseases of basal ganglia </span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">R61 </label>
+                                <span>Generalized hyperhidrosis
+                                </span> </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- end middle part -->
+        <div class="middle_part">
+            <h2>ICD 10 DIAGNOSTIC CODES TO BE USED WITH CPT CODE: 93922 or 93923 (93923 1 UNIT FOR UPPER AND 1 UNIT FOR
+                LOWER EXTREMITY) REQUIRED ANSILLARY TESTING: ABI, WAVE FORM DOPPLER OR PULSE WAVE /PHOTO PLETHYSMOGRAPHY
+                DEVICE </h2>
+
+
+            <div class="inner_form">
+                <table>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E10.59</label>
+                                <span> Type 1 Diabetes W/ Other Circulatory Complications</span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">I70.222</label>
+                                <span> Atherosclerosis of native arteries of extremities with rest pain, left leg</span>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">E11.59</label>
+                                <span> Type 2 Diabetes W/ Other Circulatory Complications </span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">I70.223</label>
+                                <span> Atherosclerosis of native arteries of extremities with rest pain, Bilateral legs
+                                </span> </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">G45.8</label>
+                                <span> Other Transient Cerebral Ischemic Attacks and Related Syndrome </span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">I70.228</label>
+                                <span> Atherosclerosis of native arteries of extremities with rest pain, other extremity
+                                </span> </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">I10</label>
+                                <span> Hypertension Unspecified (Non-Medicare) </span>&nbsp; <b>130/80</b> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">I70.268 </label>
+                                <span> Atherosclerosis of native arteries of extremities with gangrene, Other extremity
+                                </span> </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">I59.1</label>
+                                <span> Heart disease, unspecified (Non-Medicare) </span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">I70.268</label>
+                                <span> Atherosclerosis of native arteries of extremities with gangrene, Other extremity
+                                </span> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">I70.209</label>
+                                <span> Atherosclerosis Native Arteries Extremities Unspecified (non-Medicare) </span>
+                            </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">I70.25</label>
+                                <span> Atherosclerosis of native arteries of other extremities with Ulceration </span>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">I70.211</label>
+                                <span> Atherosclerosis of native arteries of extremities with intermittent Claudication,
+                                    right leg </span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">I72.1 </label>
+                                <span> Aneurysm of artery of upper extremity </span> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">I70.212</label>
+                                <span> Atherosclerosis of native arteries of extremities with intermittent Claudication,
+                                    left leg </span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">I72.4</label>
+                                <span> Aneurysm of artery of lower extremity </span> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <p> <label class="chkValue"><input type="checkbox">I70.212</label>
+                                <span> I70.213 Atherosclerosis of native arteries of extremities with intermittent
+                                    Claudication, bilateral leg</span> </p>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">I73.89</label>
+                                <span> Other specified peripheral vascular diseases </span> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <h3> ADDITIONAL POTENTIAL HEALTH RISKS </h3>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">I73.9 </label>
+                                <span> Peripheral vascular disease, unspecified </span> </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <div>
+                              <ul>
+                                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, deserunt.</li>
+                                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, deserunt.</li>
+                                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, deserunt.</li>
+                                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, deserunt.</li>
+                              </ul>
+                                    <!-- </p> -->
+                            </div>
+                        </td>
+
+                        <td>
+                            <p> <label class="chkValue"><input type="checkbox">R08.8 9 </label>
+                                <span>    Other Specific Signs & Symptoms of Circulatory & Respiratory  Systems </span> </p>
+
+                                <div style="min-height: 40px;">
+                                    <h3> Pre-Existing Diagnoses:</h3>
+
+                                </div>
+                                <div style="min-height: 40px;">
+                                    <h3> Additional Physician’s Chart Notes</h3>
+                                </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -28,19 +28,26 @@ export class CalHomeComponent implements OnInit {
       viewEventSlots: "view-event-eventdayarr",
       search: "search",
       countSlot: "count-slot",
-      getTokenInfo: 'getauthorization-pece-getuserdata'
+      getTokenInfo: 'getauthorization-pece-getuserdata',
+      syncWithGoogle: 'get-events-from-google'
     },
     urls: [
       { pathUrl: 'tech/manage-calender/manage-sehedule', text: 'View Slot', color: 'primary', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/event-listing', text: 'Event Listing', color: 'accent', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/create-availability', text: 'Create Availability', color: 'warn', active: true, isExternalLink: false },
       { pathUrl: 'tech/manage-calender/manage-sehedule/booked-events', text: 'Booked Events', color: 'accent', active: true, isExternalLink: false },
-      { pathUrl: 'tech/manage-calender/manage-sehedule/sync-with-google', text: 'Sync with Google', color: 'warn', active: true, isExternalLink: false },
+      // { pathUrl: 'tech/manage-calender/manage-sehedule/sync-with-google', text: 'Sync with Google', color: 'warn', active: true, isExternalLink: false },
+      {
+        type: 'syncGoogleCalendar',
+        text: 'Sync with google', color: 'warn', spinnerColor: 'primary',
+        active: true, isExternalLink: false
+      },
       {
         pathUrl: environment.googleSyncApi,
         text: 'Add or Update Google Calendar', color: 'primary',
         active: true, isExternalLink: true
-      }
+      },
+
     ],
     timeZone: [
       { text: 'Alaska Standard Time', value: '-08:00|America/Anchorage' },

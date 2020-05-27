@@ -169,6 +169,10 @@ import { AddPatientManuallyComponent } from './components/doctor-office/add-pati
 import {UpcomingAppoinmentsComponent} from "./components/booked-events-listing/upcoming-appoinments/upcoming-appoinments.component";
 import {PastAppoinmentsComponent} from "./components/booked-events-listing/past-appoinments/past-appoinments.component";
 import { PatientSelectModalComponent } from './components/tech/patient-management/patient-select-modal/patient-select-modal.component';
+import { ReportUploadSuccessModalComponent } from './components/tech/patient-management/report-upload-success-modal/report-upload-success-modal.component';
+import { EncounterFormComponent } from './components/encounter-form/encounter-form.component';
+import {RescheduleAppointmentComponent} from "./components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
+import { PatientDetailsComponent } from './components/doctor/doctor-dashboard/patient-report-view/patient-details/patient-details.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -322,7 +326,12 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     UpcomingAppoinmentsComponent,
     PastAppoinmentsComponent,
     ChooseDoctorDialog,
-    PatientSelectModalComponent
+    PatientSelectModalComponent,
+    ReportUploadSuccessModalComponent,
+    EncounterFormComponent,
+    RescheduleAppointmentComponent,
+    EncounterFormComponent,
+    PatientDetailsComponent
   ],
   imports: [
     SatDatepickerModule,
@@ -399,7 +408,9 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     DownloadDetailsComponent,
     ChooseDoctorDialog,
 
-    PatientSelectModalComponent
+    // Bulk Upload Modal
+    PatientSelectModalComponent,
+    ReportUploadSuccessModalComponent
   ]
 })
 

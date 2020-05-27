@@ -90,7 +90,7 @@ export class SignatureManagementComponent implements OnInit {
           this.dialogRef.close();
 
           this.activatedRoute.queryParams.subscribe(getData => {
-            this.router.navigateByUrl('/doctor/patient-record-report/' + getData['view']);
+            this.router.navigateByUrl('/doctor/dashboard');
           });
           break;
       }

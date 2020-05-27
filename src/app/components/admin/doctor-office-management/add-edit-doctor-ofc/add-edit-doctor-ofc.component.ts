@@ -83,7 +83,6 @@ export class AddEditDoctorOfcComponent implements OnInit {
       address:                ['', [ Validators.required, Validators.maxLength(200) ]],
       zip:                    ['', [ Validators.required, Validators.minLength(4), Validators.maxLength(18) ]],
       city:                   ['', [ Validators.required ]],
-      tech_id:                [null, [ Validators.required ]],
       parent_type: ['admin',[]],
       parent_id: ['', []],
       state:                  ['', [ Validators.required ]],
@@ -285,7 +284,6 @@ export class AddEditDoctorOfcComponent implements OnInit {
         "data": this.doctorOfficeAddEditForm.value,
         "domainurl": environment.siteBaseUrl + 'reset-password',
         "sourceobj":["parent_id"],
-        "sourceobjArray": ["tech_id"],
         "token": this.cookieService.get('jwtToken')
       };
 
@@ -356,8 +354,14 @@ export class AddEditDoctorOfcComponent implements OnInit {
               case 'doctor':
                 this.router.navigateByUrl("doctor/doctor-office-management");
                 break;
-              case 'admin':
-                this.router.navigateByUrl("admin/doctor-office-management");
+              case 'diagnostic_admin':
+                this.router.navigateByUrl("diagnostic-admin/doctor-office-management");
+                break;
+              case 'doctor_group':
+                this.router.navigateByUrl("doctor-group/doctor-office-management");
+                break;
+              case 'distributors':
+                this.router.navigateByUrl("distributors/doctor-office-management");
                 break;
             }
           }, 2000);
