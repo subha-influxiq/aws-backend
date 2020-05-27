@@ -12,6 +12,7 @@ import { environment } from '../../environments/environment';
 export class HttpServiceService {
 
   public baseUrl: any = environment.apiBaseUrl;
+  public baseUrl1: any = environment.apiBaseUrl1;
   public calendarApiUrl: any = environment.calendarApi;
   public jwtToken: any = "";
 
@@ -36,6 +37,20 @@ export class HttpServiceService {
       })
     };
     return this.http.post(this.baseUrl + endpoint, jsonData);
+  }
+
+  /* call api via post method */
+  httpViaPostbyApi1(endpoint, jsonData): Observable<any> {
+    this.jwtToken = this.CookieService.get('jwtToken');
+
+    /* set common header */
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.jwtToken
+      })
+    };
+    return this.http.post(this.baseUrl1 + endpoint, jsonData);
   }
 
   //ip track api function
