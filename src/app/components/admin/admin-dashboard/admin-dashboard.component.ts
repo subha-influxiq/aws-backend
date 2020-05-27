@@ -164,13 +164,13 @@ export class AdminDashboardComponent implements OnInit {
       }
     }
 
-    this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
+    this.http.httpViaPostbyApi1(endpointc, data).subscribe((res: any) => {
       this.billerData_count = res.count;
     }, error => {
       console.log('Oooops!');
     });
 
-    this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
+    this.http.httpViaPostbyApi1(endpoint, data).subscribe((res: any) => {
       this.allBillerData = res.results.res;
     }, error => {
       console.log('Oooops!');
