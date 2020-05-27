@@ -18,7 +18,7 @@
 @media screen and (max-width: 1368px){
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 5px; }
   .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber { font-size: 16px;}
-  .tablewrapper{ overflow-x: scroll;}
+  .tablewrapper{ overflow-x: scroll; display: block;}
   .table_wrapper .mat-table{ width: 1600px;}
 }
 @media screen and (max-width: 1300px){
