@@ -71,6 +71,13 @@ export class AdminDashboardComponent implements OnInit {
         type: 'internallink',
         param: ['_id'],
       },
+      {
+        label: "Download Report",
+        link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
+        type: 'externallink',
+        paramtype: 'angular',
+        param: ['download_file_name']
+    },
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
