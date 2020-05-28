@@ -41,6 +41,8 @@ export class PatientDetailsComponent implements OnInit {
     calendarInfoFormFields: {},
     primaryCondition: {}
   };
+  formfieldrefreshdata: any = null;
+  public patientName: any = '';
 
   constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService, public cookie: CookieService, public fb: FormBuilder, public router: Router, public datePipe: DatePipe) {
     this.cookiesData = this.cookie.getAll();
@@ -51,6 +53,99 @@ export class PatientDetailsComponent implements OnInit {
     // console.log("Patient Details Start =============================================");
     // console.log("Print Data: ", this.orginalReportDetails.patient_details[0]);
     // console.log("Patient Details End =============================================");
+
+    var data = {
+      "source": "data_pece",
+      "condition": {
+        "_id_object": this.orginalReportDetails.patient_details[0].insurance_id
+      },
+      "token": this.cookiesData.jwtToken
+    }
+    this.httpService.httpViaPost('datalist', data).subscribe(response => {
+      if(response.status == true) {
+        this.patientName = response.res[0].insurancename;
+        console.log(">", this.configData.patientInfoFormFields[11]);
+        console.log(">>", response.res);
+      }
+    });
+
+    let patientInfoFormFields: any = [
+      {
+        type: 'input', name: 'practice_name', placeholder: 'Practice Name', label: 'Practice Name',
+        value: this.orginalReportDetails.patient_details[0].practice_name, validators: [Validators.required], error: 'Enter practice name',
+        caption: 'Patient General Information',
+      },
+      {
+        type: 'input', 
+        name: 'address', 
+        placeholder: 'Address', 
+        label: 'Address', 
+        value: this.orginalReportDetails.patient_details[0].address 
+      },
+      {
+        type: 'input', 
+        name: 'state', 
+        placeholder: 'State', 
+        label: 'State', 
+        value: this.orginalReportDetails.patient_details[0].state
+      },
+      {
+        type: 'input', 
+        name: 'city', 
+        placeholder: 'City', 
+        label: 'City', 
+        value: this.orginalReportDetails.patient_details[0].city
+      },
+      {
+        type: 'input', 
+        name: 'zip', 
+        placeholder: 'ZIP', 
+        label: 'ZIP', 
+        value: this.orginalReportDetails.patient_details[0].zip 
+      },
+      {
+        type: 'input', 
+        name: 'patient_name',  
+        label: 'Patient Name',
+        value: this.orginalReportDetails.patient_details[0].patient_name, validators: [Validators.required], error: 'Enter patient name'
+      },
+      {
+        type: 'input', 
+        name: 'gender', 
+        label: 'Gender',
+        value: this.orginalReportDetails.patient_details[0].gender,
+      },
+      {
+        type: 'input', 
+        name: 'patient_email',
+        label: 'Patient Email',
+        value: this.orginalReportDetails.patient_details[0].patient_email
+      },
+      {
+        type: 'input', 
+        name: 'height',
+        label: 'Height',
+        value: this.orginalReportDetails.patient_details[0].height
+      },
+      {
+        type: 'input', 
+        name: 'weight', 
+        label: 'Weight',
+        value: this.orginalReportDetails.patient_details[0].weight
+      },
+      {
+        type: 'input', 
+        name: 'dob', 
+        label: 'Date of Birth',
+        value: this.orginalReportDetails.patient_details[0].dob
+      },
+      {
+        type: 'input', 
+        name: 'insurance_name', 
+        label: 'Insurance Name',
+        value: this.patientName
+      },
+    ];
 
     let checkboxFields: any = [
       {
@@ -489,7 +584,7 @@ export class PatientDetailsComponent implements OnInit {
 
     this.configData = Object.assign(this.configData,
       {
-        patientInfoFormFields: checkboxFields
+        patientInfoFormFields: patientInfoFormFields.concat(checkboxFields)
       }
     );
   }
