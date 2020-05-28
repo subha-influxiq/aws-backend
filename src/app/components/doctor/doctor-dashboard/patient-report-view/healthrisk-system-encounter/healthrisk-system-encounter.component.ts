@@ -8,6 +8,7 @@ import { DatePipe } from '@angular/common';
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { PatientReportViewComponent } from '../patient-report-view.component';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-healthrisk-system-encounter',
@@ -37,7 +38,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     this.orginalReportDetails = orginalData;
   }
 
-  constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService, public cookie: CookieService, public fb: FormBuilder, public router: Router, public datePipe: DatePipe) {
+  constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService, public cookie: CookieService, public fb: FormBuilder, public router: Router, public datePipe: DatePipe, public matSnackBar: MatSnackBar) {
     this.cookiesData = this.cookie.getAll();
     this.cookiesData.user_details = JSON.parse(this.cookiesData.user_details);
   }
@@ -64,8 +65,29 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     });
   }
 
-  checkValue(event: any, fieldName){
+  checkValue(value: any, fieldName){
     console.log(event, fieldName);
+    console.log("Patient data id: ", this.orginalReportDetails._id);
+    var data = {
+      "source": "data_pece",
+      "condition": {
+        "_id": this.orginalReportDetails._id
+      },
+      "token": this.cookiesData.jwtToken
+    };
+    data[fieldName] = value;
+
+    this.httpService.httpViaPost('update-patient-data-codes', data).subscribe((response) => {
+      if(response.status == true) {
+        this.matSnackBar.open("Successfully updated.", "Ok", {
+          duration: 4000
+        });
+      } else {
+        this.matSnackBar.open("An error occord.", "Ok", {
+          duration: 4000
+        });
+      }
+    });
   }
 
 }
