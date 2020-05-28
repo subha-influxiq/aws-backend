@@ -65,27 +65,38 @@ export class DoctorDashboardComponent implements OnInit {
         type: 'internallink',
         param: ['_id'],
       },
+      {
+        label: "Download Report",
+        link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
+        type: 'externallink',
+        paramtype: 'angular',
+        param: ['download_file_name']
+      }
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
     hidestatustogglebutton: true,
     hideviewbutton: true,
     tableheaders: [
-      "tech_name",
       "patient_name",
+      // "tech_name",
       "status_text",
       "created_at_datetime",
-      "cpt_code_count",
-      "addl_hlth_risk"
+      "cpt_addl",
+      "general_details",
+      // "parent_type",
+      // "parent_id",
+      // "doctors_office_id",
     ]
   }
   public allUserData_modify_header: any = {
-    "tech_name": "Tech Name",
+    "general_details": "Related Info",
+    // "tech_name": "Tech Name",
     "patient_name": "Patient Name",
     "status_text": "Status",
     "created_at_datetime": "Report Added",
-    "cpt_code_count": "CPT Code Count",
-    "addl_hlth_risk": "Addl Hlth Risk"
+    "cpt_addl": "CPT/ Addl Hrisk C", 
+    // "addl_hlth_risk": "Addl Hlth Risk"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";
@@ -114,6 +125,7 @@ export class DoctorDashboardComponent implements OnInit {
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }, { label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type }],
+      datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
       textsearch: [{ label: "Search By Name", field: 'name_search' },
       { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }]
 
@@ -158,6 +170,7 @@ export class DoctorDashboardComponent implements OnInit {
     this.allData = cookie.getAll();
     this.authData = JSON.parse(this.allData.user_details);
     this.authData["jwtToken"] = cookie.get('jwtToken');
+    console.log(this.authData._id,'aa');
 
     if(typeof(this.authData.diagnostic_admin_id) != 'undefined') {
       this.htmlText.signFlag = false;
@@ -195,19 +208,19 @@ export class DoctorDashboardComponent implements OnInit {
         "type": 'desc',
         "field": 'patient_name'
       },
-      searchcondition: {},
+      searchcondition: {doc_id:this.authData._id},
       basecondition: {
         "doctor_id": this.authData._id
       }
     }
 
-    this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
+    this.http.httpViaPostbyApi1(endpointc, data).subscribe((res: any) => {
       this.billerData_count = res.count;
     }, error => {
       console.log('Oooops!');
     });
 
-    this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
+    this.http.httpViaPostbyApi1(endpoint, data).subscribe((res: any) => {
       this.allBillerData = res.results.res;
     }, error => {
       console.log('Oooops!');

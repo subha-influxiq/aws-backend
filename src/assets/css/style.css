@@ -589,8 +589,8 @@ align-items: center; justify-content: center; color: #fff; font-family: 'AvenirM
 
 /* for all modal */
 .mat-dialog-container{ min-width: 400px; border: 1px solid #03d877; border-radius: 0px!important; padding: 0!important;}
-.mat-dialog-container .mat-dialog-title {line-height: inherit; text-align: center; margin: 0; display: block; background: var(--button-color3);
-color: #fff; padding: 6px; font-family: 'AvenirBlack'; text-transform: uppercase; }
+.mat-dialog-container .mat-dialog-title {line-height: inherit;  text-align: center; margin: 0; display: block; background: var(--button-color3);
+color: #fff; padding:10px 6px; font-family: 'AvenirBlack'; text-transform: uppercase; }
 .mat-dialog-container .mat-dialog-content { display: block; margin: 0; padding: 16px; box-sizing: border-box; max-height: 90vh; overflow: auto; }
 
 .mat-dialog-container .mat-dialog-content .mat-form-field{ width:100%}

@@ -57,7 +57,7 @@ export class AdminDashboardComponent implements OnInit {
     "note",
     "additional_potential_health_risks",
     "cpt_codes",
-    "created_at"
+    "created_at","doctor_name"
   ];
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
@@ -77,30 +77,32 @@ export class AdminDashboardComponent implements OnInit {
         type: 'externallink',
         paramtype: 'angular',
         param: ['download_file_name']
-    },
+      },
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
     hidestatustogglebutton: true,
     hideviewbutton: true,
     tableheaders: [
-      "doctor_name",
-      "tech_name",
       "patient_name",
+      // "tech_name",
       "status_text",
       "created_at_datetime",
-      "cpt_code_count",
-      "addl_hlth_risk"
+      "cpt_addl",
+      "general_details",
+      // "parent_type",
+      // "parent_id",
+      // "doctors_office_id",
     ]
   }
   public allUserData_modify_header: any = {
-    "doctor_name": "Doctor Name",
-    "tech_name": "Tech Name",
+    "general_details": "Related Info",
+    // "tech_name": "Tech Name",
     "patient_name": "Patient Name",
     "status_text": "Status",
     "created_at_datetime": "Report Added",
-    "cpt_code_count": "CPT Code Count",
-    "addl_hlth_risk": "Addl Hlth Risk"
+    "cpt_addl": "CPT/ Addl Hrisk C",
+    // "addl_hlth_risk": "Addl Hlth Risk"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";
@@ -111,8 +113,8 @@ export class AdminDashboardComponent implements OnInit {
 
   public sortdata: any = {
     "type": 'desc',
-    "field": 'firstname',
-    "options": ['firstname', 'email', 'created_date']
+    "field": 'patient_name',
+    "options": ['patient_name', 'email', 'created_date']
   };
   public limitcond: any = {
     "limit": 10,
@@ -129,6 +131,7 @@ export class AdminDashboardComponent implements OnInit {
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }, { label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type }],
+      datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
       textsearch: [{ label: "Search By Name", field: 'name_search' },
       { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }]
 
