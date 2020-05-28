@@ -66,7 +66,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
   }
 
   checkValue(value: any, fieldName){
-    console.log(event, fieldName);
+    console.log(value, fieldName);
     console.log("Patient data id: ", this.orginalReportDetails._id);
     var data = {
       "source": "data_pece",
