@@ -756,8 +756,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton1 { display: inline; }
 
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton0 button,
-.admin_dashboard .DataTable .tablewrapper tr td .custombutton1 button{ font-family: 'AvenirMedium';
-  background: var(--button-color3); box-shadow: none;}
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton1 button{ font-family: 'AvenirMedium'; background: var(--button-color3); box-shadow: none; margin-bottom: 10px;}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton1 button{ background: var(--button-color2);}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p{ margin:6px 0}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(1){color: #21e289; font-size: 15px; font-weight: 700;}
