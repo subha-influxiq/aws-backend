@@ -199,7 +199,7 @@
 
 
         <!-- Parent Name Start -->
-        <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'DiagnosticAdmin'">
+        <mat-form-field appearance="fill" *ngIf = "(selectionChangeValue == 'DiagnosticAdmin') ||(selectionChangeValue == 'diagnostic_admin')">
           <mat-label>Select Parent Name</mat-label>
           <mat-select formControlName="parent_id">
             <mat-option [value]="">Select Parent Name</mat-option>
@@ -210,7 +210,7 @@
 
 
         <!-- Parent Name Start -->
-        <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'DoctorGroup'">
+        <mat-form-field appearance="fill" *ngIf = "(selectionChangeValue == 'DoctorGroup') || (selectionChangeValue == 'doctor_group')">
           <mat-label>Select Parent Name</mat-label>
           <mat-select formControlName="parent_id">
             <mat-option [value]="">Select Parent Name</mat-option>
@@ -221,7 +221,7 @@
 
 
         <!-- Parent Name Start -->
-        <mat-form-field appearance="fill" *ngIf = "selectionChangeValue == 'Distributor'">
+        <mat-form-field appearance="fill" *ngIf = "(selectionChangeValue == 'Distributor') || (selectionChangeValue == 'distributor')">
           <mat-label>Select Parent Name</mat-label>
           <mat-select formControlName="parent_id" >
             <mat-option [value]="">Select Parent Name</mat-option>

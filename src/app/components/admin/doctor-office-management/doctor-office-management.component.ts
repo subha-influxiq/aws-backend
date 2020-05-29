@@ -113,6 +113,12 @@ export class DoctorOfficeManagementComponent implements OnInit {
     if(this.userData.user_type !="doctor") {
     let endpoint='getdoctorofficelistdata';
     let endpointc='getdoctorofficelistdata-count';
+    let userdata ={};
+    if(this.userData.user_type !="admin") {
+      userdata = {
+        parent_id : this.userData._id
+      }
+    }
     let data:any={
         "condition":{
             "limit":10,
@@ -122,9 +128,7 @@ export class DoctorOfficeManagementComponent implements OnInit {
         "type":'desc',
         "field":'firstname'
     },
-    data :{
-      parent_id : this.userData._id
-    },
+    data :userdata,
     }
         this.httpService.httpViaPost(endpointc, data).subscribe((res:any) => {
             // console.log('in constructor');
