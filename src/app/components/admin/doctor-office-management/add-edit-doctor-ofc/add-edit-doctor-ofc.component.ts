@@ -115,7 +115,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
           this.doctorOfficeAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
           this.doctorOfficeAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
           this.doctorOfficeAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
-          this.doctorOfficeAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);// this.getCity(doctorDetails[0].state);
+          // this.doctorOfficeAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);// this.getCity(doctorDetails[0].state);
           this.getParentData(doctorDetails[0].parent_type);
           //  this.getCity(doctorDetails[0].state);
           // this.getCityByName(doctorDetails[0].state);
@@ -210,10 +210,11 @@ export class AddEditDoctorOfcComponent implements OnInit {
 
 
   getParentData(id: any = '') {
+    console.log('222222222222',id);
     var billerData = id;
     this.selectionChangeValue = billerData;
     console.log('1111', billerData);
-    if (billerData == 'DiagnosticAdmin') {
+    if ((billerData == 'DiagnosticAdmin') || (billerData == "diagnostic_admin")) {
       // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
       var data = {
         "source": "data_pece",
@@ -224,7 +225,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
       }
     }
 
-    if (billerData == 'Distributor') {
+    if ((billerData == 'Distributor') || (billerData == 'distributor')) {
       // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
       var data = {
         "source": "data_pece",
@@ -235,7 +236,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
       }
     }
 
-    if (billerData == 'DoctorGroup') {
+    if ((billerData == 'DoctorGroup') || (billerData == "doctor_group")) {
       // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
       var data = {
         "source": "data_pece",
