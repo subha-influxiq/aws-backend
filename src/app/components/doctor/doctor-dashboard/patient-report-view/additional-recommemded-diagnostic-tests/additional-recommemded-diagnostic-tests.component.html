@@ -7,19 +7,19 @@
     </tr>
 
     <tr>
-      <td> Patient Name <input type="text" value="{{ reportDetails.reportData[0].doctor_name }}"></td>
+      <td> Patient Name <input type="text" value="{{ orginalReportDetails.patient_details[0].patient_name }}"></td>
       <td> Patient Gender
-        <label> <input type="radio" [(ngModel)]="reportDetails.reportData[0].gender"
-            [ngModelOptions]="{standalone: true}" value='Male'>M</label>
-        <label> <input type="radio" [(ngModel)]="reportDetails.reportData[0].gender"
-            [ngModelOptions]="{standalone: true}" value='Female'>F</label>
+        <label> <input type="radio" [(ngModel)]="orginalReportDetails.patient_details[0].gender"
+            [ngModelOptions]="{standalone: 'male'}" value='Male'>M</label>
+        <label> <input type="radio" [(ngModel)]="orginalReportDetails.patient_details[0].gender"
+            [ngModelOptions]="{standalone: 'female'}" value='Female'>F</label>
       </td>
 
     </tr>
 
     <tr>
-      <td><label> D.O.B <input type="text" value="{{ reportDetails.reportData[0].birth_date | date }}"></label></td>
-      <td> Test Date <input type="text" value="{{ reportDetails.reportData[0].test_date }}"></td>
+      <td><label> D.O.B <input type="text" value="{{ orginalReportDetails.patient_details[0].dob | date }}"></label></td>
+      <td> Test Date <input type="text" value="{{ orginalReportDetails.patient_details[0].test_date }}"></td>
     </tr>
 
 

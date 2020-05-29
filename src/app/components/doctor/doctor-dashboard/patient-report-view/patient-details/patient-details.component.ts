@@ -42,7 +42,7 @@ export class PatientDetailsComponent implements OnInit {
     primaryCondition: {}
   };
   formfieldrefreshdata: any = null;
-  public patientName: any = '';
+  public insuranceName: any = '';
 
   constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService, public cookie: CookieService, public fb: FormBuilder, public router: Router, public datePipe: DatePipe) {
     this.cookiesData = this.cookie.getAll();
@@ -61,13 +61,13 @@ export class PatientDetailsComponent implements OnInit {
       },
       "token": this.cookiesData.jwtToken
     }
-    this.httpService.httpViaPost('datalist', data).subscribe(response => {
-      if(response.status == true) {
-        this.patientName = response.res[0].insurancename;
-        console.log(">", this.configData.patientInfoFormFields[11]);
-        console.log(">>", response.res);
-      }
-    });
+    // this.httpService.httpViaPost('datalist', data).subscribe(response => {
+    //   if(response.status == true) {
+    //     this.insuranceName = response.res[0].insurancename;
+    //     console.log(">", this.configData.patientInfoFormFields[11]);
+    //     console.log(">>", response.res);
+    //   }
+    // });
 
     let patientInfoFormFields: any = [
       {
@@ -143,7 +143,7 @@ export class PatientDetailsComponent implements OnInit {
         type: 'input', 
         name: 'insurance_name', 
         label: 'Insurance Name',
-        value: this.patientName
+        value: this.insuranceName
       },
     ];
 
