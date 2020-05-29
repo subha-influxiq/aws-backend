@@ -276,13 +276,13 @@
 
         <mat-tab label="Superbill For Obesity" *ngIf="htmlText.allResolveData.reportData[0].BMI_flag >= 29">
           <ng-template matTabContent>
-            <app-system-superbill [patientDetails]="htmlText.allResolveData"></app-system-superbill>
+            <app-system-superbill [patientDetails]="htmlText.allResolveData" [orginalData]="htmlText.orginalData"></app-system-superbill>
           </ng-template>
         </mat-tab>
 
         <mat-tab label="Additional Recommemded Diagnostic Tests">
           <ng-template matTabContent>
-            <app-additional-recommemded-diagnostic-tests [patientDetails]="htmlText.allResolveData"></app-additional-recommemded-diagnostic-tests>
+            <app-additional-recommemded-diagnostic-tests [patientDetails]="htmlText.allResolveData" [orginalData]="htmlText.orginalData"></app-additional-recommemded-diagnostic-tests>
           </ng-template>
         </mat-tab>
 

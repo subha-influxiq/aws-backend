@@ -21,11 +21,16 @@ export class AdditionalRecommemdedDiagnosticTestsComponent implements OnInit {
   public htmlText: any = {};
 
   public reportDetails: any;
+  public orginalReportDetails: any;
 
   @Input()
   set patientDetails(patientDetailsData: any) {
     this.reportDetails = patientDetailsData;
-    console.log(">>>", patientDetailsData.additional_recommemded_diagnostic_tests);
+  }
+
+  @Input()
+  set orginalData(orginalData: any) {
+    this.orginalReportDetails = orginalData;
   }
 
   constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService,
@@ -36,6 +41,7 @@ export class AdditionalRecommemdedDiagnosticTestsComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(">>>>", this.orginalReportDetails.patient_details[0]);
   }
 
 }

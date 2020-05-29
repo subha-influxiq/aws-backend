@@ -86,7 +86,7 @@ export class ReportConformationComponent implements OnInit {
           "source": "view_google_event_with_all_data",
           "condition": { 
             "patient_name": patientSearch,
-            "userid": this.htmlText.userData.user_details._id
+            "tech_id": this.htmlText.userData.user_details._id
           },
           "token": this.htmlText.userData.jwtToken
         };
