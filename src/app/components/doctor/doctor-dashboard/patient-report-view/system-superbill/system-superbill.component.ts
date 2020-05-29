@@ -21,10 +21,16 @@ export class SystemSuperbillComponent implements OnInit {
   
   public reportDetails: any;
   public cookiesData: any;
+  public orginalReportDetails: any;
 
   @Input()
   set patientDetails(patientDetailsData: any) {
     this.reportDetails = patientDetailsData;
+  }
+
+  @Input()
+  set orginalData(orginalData: any) {
+    this.orginalReportDetails = orginalData;
   }
 
   constructor(public activatedRoute: ActivatedRoute, public httpService: HttpServiceService,

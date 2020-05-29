@@ -65,19 +65,22 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     });
   }
 
-  checkValue(value: any, fieldName){
-    console.log(value, fieldName);
-    console.log("Patient data id: ", this.orginalReportDetails._id);
-    var data = {
+  checkValue(codeFlag = "icd_codes", value: any, fieldName) {
+    var postData:any = {
       "source": "data_pece",
       "condition": {
         "_id": this.orginalReportDetails._id
       },
-      "token": this.cookiesData.jwtToken
+      "token": this.cookiesData.jwtToken,
+      "field": fieldName,
+      "code_type": codeFlag,
+      "value": value
     };
-    data[fieldName] = value;
 
-    this.httpService.httpViaPost('update-patient-data-codes', data).subscribe((response) => {
+    console.log(">>>", JSON.stringify(postData));
+    // return;
+
+    this.httpService.httpViaPost('update-patient-data-codes', postData).subscribe((response) => {
       if(response.status == true) {
         this.matSnackBar.open("Successfully updated.", "Ok", {
           duration: 4000
