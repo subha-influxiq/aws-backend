@@ -239,33 +239,14 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 color: #fff; text-transform: uppercase;}
 
 /* .container .searchbar i{margin-left: auto;} */
-.searchbar { height: auto!important;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 20px;
-  box-shadow: 0px 2px 2px #c5c5c5;
+.searchbar { height: auto!important; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; box-shadow: 0px 2px 2px #c5c5c5;
   padding-bottom: 16px!important; position: relative; }
-  .searchbar .mat-form-field{ width: 32.3%; margin: 0 0.5%!important;}
- .searchbar .cursor{ width: 35px;
-  border-radius: 50%;
-  background: var(--button-color2);
-  height: 35px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  margin:0 10px;}
-  .pad-gap{ margin: inherit!important;}
-.searchbar .mat-form-field .mat-form-field-flex {
-  display: inline-flex;
-  align-items: baseline;
-  box-sizing: border-box;
-  width: 100%;
-  border: .5px solid #bdbdbd;
-  border-radius: 4px;
-  padding: 0px 10px 5px;
-}
+.searchbar .mat-form-field{ width: 32%; margin: 0 0.5%!important;}
+.searchbar .cursor{ width: 35px; border-radius: 50%; background: var(--button-color2); height: 35px;
+  margin: auto; display: flex; justify-content: center; align-items: center; color: #fff; margin:0 10px;}
+.pad-gap{ margin: inherit!important;}
+.searchbar .mat-form-field .mat-form-field-flex { display: inline-flex; align-items: baseline; box-sizing: border-box;
+  width: 100%; border: .5px solid #bdbdbd; border-radius: 4px; padding: 0px 10px 5px; }
 .searchbar .mat-form-field-prefix { bottom: -8px; }
 .add_form .file_upload .uploadfilecontainer { width: 100%; box-sizing: border-box;}
 .admin_table{ width: 100%; margin: 20px auto; display: block;}
@@ -754,6 +735,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .searchbar .mat-form-field{ width: 23.5%;}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton0{display: inline; margin-right: 10px;} 
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton1 { display: inline; }
+.admin_dashboard .DataTable .container .searchbar .search_class { width:auto;}
 
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton0 button,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton1 button{ font-family: 'AvenirMedium'; background: var(--button-color3); box-shadow: none; margin-bottom: 10px;}
