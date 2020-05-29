@@ -233,6 +233,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .table_wrapper .no_data{ font-family: 'AvenirBlack'; font-size: 18px; }
 .bradcrumb{ display: block; font-family: 'AvenirLight'; font-size: 16px;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
+.container .searchbar .search_class{ display: flex; justify-content: center; width: 100%; }
 .container .searchbar span{ display: flex; justify-content: center; width: 100%; }
 
 .container .searchbar .add_button { background: var(--button-color3); font-family: 'AvenirRoman'; font-size: 16px;
@@ -735,6 +736,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .searchbar .mat-form-field{ width: 23.5%;}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton0{display: inline; margin-right: 10px;} 
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton1 { display: inline; }
+.admin_dashboard .DataTable .container .searchbar .search_class:first-child { margin-left: 20px;}
 .admin_dashboard .DataTable .container .searchbar .search_class { width:auto;}
 
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton0 button,
