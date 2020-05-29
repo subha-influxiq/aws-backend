@@ -170,7 +170,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .tablewrapper table td span .cursor:nth-child(3),
 .DataTable table td span .cursor:nth-child(3){ background: var(--button-color1);}
 .DataTable table td span .cursor:nth-last-child(1){ border-right: none; background: var(--button-color3); }
-.DataTable .searchbar { padding: 0;}
+.DataTable .searchbar { padding: 0; padding-top: 16px;}
 .loader{ width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
 .loader img{ max-width: 100%; }
 .DataTable .multipledeleteandupdatebuttan { display: inline-flex; margin-top: 16px;}
@@ -233,7 +233,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .table_wrapper .no_data{ font-family: 'AvenirBlack'; font-size: 18px; }
 .bradcrumb{ display: block; font-family: 'AvenirLight'; font-size: 16px;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
-.container .searchbar span{ display: flex; justify-content: space-between; }
+.container .searchbar span{ display: flex; justify-content: center; width: 100%; }
 
 .container .searchbar .add_button { background: var(--button-color3); font-family: 'AvenirRoman'; font-size: 16px;
 color: #fff; text-transform: uppercase;}
@@ -589,8 +589,8 @@ align-items: center; justify-content: center; color: #fff; font-family: 'AvenirM
 
 /* for all modal */
 .mat-dialog-container{ min-width: 400px; border: 1px solid #03d877; border-radius: 0px!important; padding: 0!important;}
-.mat-dialog-container .mat-dialog-title {line-height: inherit; text-align: center; margin: 0; display: block; background: var(--button-color3);
-color: #fff; padding: 6px; font-family: 'AvenirBlack'; text-transform: uppercase; }
+.mat-dialog-container .mat-dialog-title {line-height: inherit;  text-align: center; margin: 0; display: block; background: var(--button-color3);
+color: #fff; padding:10px 6px; font-family: 'AvenirBlack'; text-transform: uppercase; }
 .mat-dialog-container .mat-dialog-content { display: block; margin: 0; padding: 16px; box-sizing: border-box; max-height: 90vh; overflow: auto; }
 
 .mat-dialog-container .mat-dialog-content .mat-form-field{ width:100%}
@@ -636,8 +636,9 @@ color: #ffffff; text-align: inherit; display: inline-flex; align-items: center;}
 .calenderView .calender_first{ padding: 0;}
 .calenderView .calender_first .buttonsetToolbar { background: #f9f9f9; padding: 10px; height: auto; flex-wrap: wrap;
   display: flex; justify-content: center; align-items: center;}
-.calenderView .calender_first .buttonsetToolbar .mat-raised-button.mat-primary { background-color: var(--button-color2); }
-.calenderView .calender_first .buttonsetToolbar .singleButton { font-family: 'AvenirRoman'; font-size: 16px;}
+.calenderView .calender_first .buttonsetToolbar .singleButton {font-family: 'AvenirRoman';
+    font-size: 16px; background: linear-gradient(45deg, #06b1ff, #75d403); box-shadow: none;}
+.calenderView .calender_first .buttonsetToolbar .singleButton:nth-child(5)  { background: linear-gradient(45deg, #ff220f, #da1f00);}
 .calenderView .filter { display: flex; justify-content: space-between; align-items: center; margin: 0!important; }
 .calenderView .filter .pagination { float: none; font-size: 14px; font-family: 'AvenirMedium'; margin-left: 8px; }
 .calenderView .slotview{ padding: 8px 0px!important;}
@@ -743,9 +744,21 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .book-event .mat-dialog-container .mat-raised-button { background: linear-gradient(45deg, #21b9ff, #8bc348);
   margin-top: 16px; min-width: 120px; font-family: 'AvenirBlack'; border-radius: 0; text-transform: uppercase;}
 
+/* bulk-upload/report-conformation */
+.report_modal td button{  font-family: 'AvenirMedium'; background: linear-gradient(45deg, #048006, #77da00);
+ border-radius: 0; text-transform: uppercase; color: #fff!important;}
+.modal_view .mat-form-field{ width:100%;}
+.modal_view .mat-form-field .mat-form-field-flex { padding: 0 7px 4px; border: 1px solid #dadada; }
 
-  /* bulk-upload/report-conformation */
-  .report_modal td button{  font-family: 'AvenirMedium'; background: linear-gradient(45deg, #048006, #77da00);
-    border-radius: 0; text-transform: uppercase; color: #fff!important;}
-  .modal_view .mat-form-field{ width:100%;}
-  .modal_view .mat-form-field .mat-form-field-flex { padding: 0 7px 4px; border: 1px solid #dadada; }
+  /* new modification */
+.admin_dashboard .DataTable .searchbar .mat-form-field{ width: 23.5%;}
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton0{display: inline; margin-right: 10px;} 
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton1 { display: inline; }
+
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton0 button,
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton1 button{ font-family: 'AvenirMedium'; background: var(--button-color3); box-shadow: none; margin-bottom: 10px;}
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton1 button{ background: var(--button-color2);}
+.admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p{ margin:6px 0}
+.admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(1){color: #21e289; font-size: 15px; font-weight: 700;}
+.admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(2){color: #6fc4dc; font-weight: 600;}
+.form2_wrapper .DataTable .searchbar .mat-form-field{ width:48%;}

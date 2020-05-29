@@ -9,10 +9,8 @@
     <tr>
       <td> Patient Name <input type="text" value="{{ orginalReportDetails.patient_details[0].patient_name }}"></td>
       <td> Patient Gender
-        <label> <input type="radio" [(ngModel)]="orginalReportDetails.patient_details[0].gender"
-            [ngModelOptions]="{standalone: 'male'}" value='Male'>M</label>
-        <label> <input type="radio" [(ngModel)]="orginalReportDetails.patient_details[0].gender"
-            [ngModelOptions]="{standalone: 'female'}" value='Female'>F</label>
+        <label> <input type="radio" [(ngModel)]="orginalReportDetails.patient_details[0].gender" [ngModelOptions]="{standalone: 'male'}" value='Male'>M</label>
+        <label> <input type="radio" [(ngModel)]="orginalReportDetails.patient_details[0].gender" [ngModelOptions]="{standalone: 'female'}" value='Female'>F</label>
       </td>
 
     </tr>

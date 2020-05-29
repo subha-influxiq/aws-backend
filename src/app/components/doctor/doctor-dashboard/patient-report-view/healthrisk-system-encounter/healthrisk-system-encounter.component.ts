@@ -25,7 +25,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
   };
 
   public reportDetails: any;
-  public orginalReportDetails: any;
+  public orginalReportDetails: any = {};
   public cookiesData: any;
 
   @Input()
@@ -76,9 +76,6 @@ export class HealthriskSystemEncounterComponent implements OnInit {
       "code_type": codeFlag,
       "value": value
     };
-
-    console.log(">>>", JSON.stringify(postData));
-    // return;
 
     this.httpService.httpViaPost('update-patient-data-codes', postData).subscribe((response) => {
       if(response.status == true) {

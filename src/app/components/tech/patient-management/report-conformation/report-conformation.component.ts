@@ -102,7 +102,6 @@ export class ReportConformationComponent implements OnInit {
                 if(this.htmlText.confirmSubmittedDataSource[loop].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
                   /* checking duplicate */
                   if(typeof(this.htmlText.confirmSubmittedDataSource[loop].patient_find_flag) == 'undefined') {
-                    console.log(">>>", response.data.match_patient[loop2]);
                     this.htmlText.confirmSubmittedDataSource[loop].patient_find_flag = true;
                     this.htmlText.confirmSubmittedDataSource[loop].patient_details.push(response.data.match_patient[loop2]);
                     this.htmlText.confirmSubmittedDataSource[loop].status = 3;
@@ -114,9 +113,9 @@ export class ReportConformationComponent implements OnInit {
                     });
                   } else {
                     this.htmlText.conflictingPatientRecordsDataSource.push(this.htmlText.confirmSubmittedDataSource[loop]);
-                    this.htmlText.conflictingPatientRecordsDataSource[loop].patient_details.push(response.data.match_patient[loop2]);
-                    this.htmlText.conflictingPatientRecordsDataSource[loop].status = 3;
-                    this.htmlText.conflictingPatientRecordsDataSource[loop].report_life_circle.push({
+                    this.htmlText.conflictingPatientRecordsDataSource[this.htmlText.conflictingPatientRecordsDataSource.length - 1].patient_details.push(response.data.match_patient[loop2]);
+                    this.htmlText.conflictingPatientRecordsDataSource[this.htmlText.conflictingPatientRecordsDataSource.length - 1].status = 3;
+                    this.htmlText.conflictingPatientRecordsDataSource[this.htmlText.conflictingPatientRecordsDataSource.length - 1].report_life_circle.push({
                       upload_by_tech_id: this.htmlText.userData.user_details._id,
                       upload_date: Date.now(),
                       upload_status: 3,
