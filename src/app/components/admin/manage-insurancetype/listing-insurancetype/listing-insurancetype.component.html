@@ -25,7 +25,7 @@
 </span>
 <!-- End header with add button -->
 
-
+<div class="form2_wrapper">
 <lib-listing class="DataTable" *ngIf="InsuranceAllData.length>0"
   [datasource]="InsuranceAllData"
   [skip]="allUserData_skip"
@@ -45,7 +45,7 @@
 </lib-listing>
 
 <h2 *ngIf="InsuranceAllData.length == 0">No record found.</h2>
-
+</div>
 </mat-card-content>
 </mat-card>
 

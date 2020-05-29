@@ -2,7 +2,8 @@
   No booked evnets found
 </mat-label>
 <h1 class="db_title"> Booked Appointment</h1>
-<lib-listing class="app_list" *ngIf="configData.responseData != null && configData.responseData.length > 0"
+<div class="admin_dashboard">
+<lib-listing class="app_list DataTable " *ngIf="configData.responseData != null && configData.responseData.length > 0"
              [datasource]="configData.responseData"
              [skip]="configData.skipFields"
              [modify_header_array]="configData.modify_header_array"
@@ -25,3 +26,4 @@
              [detail_skip_array]="configData.detail_skip_array"
              [limitcond]="configData.limitcond">
 </lib-listing>
+</div>

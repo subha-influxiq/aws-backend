@@ -5,7 +5,8 @@
   .admin_wrapper, .table_list, .sales_person_db { width: 90%; }
   .action_bar .mat-form-field .mat-form-field-flex { width: 200px; }
   .sales_person_db .shareLi .in_w { width: 40%; }
-
+  .admin_dashboard .DataTable .tablewrapper tr td .custombutton0 button { margin-bottom: 10px;}
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 4px; }
 }
 @media screen and (max-width: 1410px){
   .action_bar .mat-form-field .mat-form-field-flex { width: 180px; }
@@ -44,7 +45,7 @@
 .example-container { display: flex; flex-direction: column; max-height: 500px; min-width: 300px;}
 .mat-table { overflow: auto; max-height: 500px;}
 .mobile-label { display: none;}
-.DataTable .container .searchbar{ display: flex!important; justify-content: space-around!important; flex-wrap: wrap; height: auto;}
+.DataTable .container .searchbar{ display: flex!important; flex-wrap: wrap; height: auto;}
 /* tech dashboard */
 .report_wrapper .items_w .icon_w { height: 220px;}
 .report_wrapper .items_w .name_wr .reportName { font-size: 17px; line-height: 18px; }
@@ -59,6 +60,7 @@
 .DataTable table th.mat-header-cell:last-of-type { width: auto; }
 .searchbar .mat-form-field { width: 32%; }
 .book-event .mat-dialog-container .mat-stepper-horizontal .width-md { width: 31%; }
+.admin_dashboard  .DataTable .container .searchbar{ justify-content: center!important;}
 }
 @media screen and (max-width: 1100px){
 .biller_Dashboard .patient_report_section .patient_top_search { flex-direction: column; justify-content: flex-start;
@@ -188,6 +190,7 @@
   .custom-modalbox, .mat-dialog-container { min-width: 90%;}
   .admin_wrapper .add_form .submit_form button { font-size: 18px; width: 48%; margin: 1%; }
   .admin_wrapper .add_form .submit_form button:first-child { margin-right: 8px; }
+  .admin_dashboard .DataTable .searchbar .mat-form-field{ width: 48.5%;}
 }
 @media screen and (max-width: 668px){
 .main_wrapper .login_wrapper { width: 450px; }
