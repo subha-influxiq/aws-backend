@@ -180,10 +180,11 @@ export class AddEditTechComponent implements OnInit {
   }
 
   getParentData(id: any = '') {
+    console.log('222222222222',id);
     var billerData = id;
     this.selectionChangeValue = billerData;
     console.log('1111', billerData);
-    if (billerData == 'DiagnosticAdmin') {
+    if ((billerData == 'DiagnosticAdmin') || (billerData == "diagnostic_admin")) {
       // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
       var data = {
         "source": "data_pece",
@@ -194,7 +195,7 @@ export class AddEditTechComponent implements OnInit {
       }
     }
 
-    if (billerData == 'Distributor') {
+    if ((billerData == 'Distributor') || (billerData == 'distributor')) {
       // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
       var data = {
         "source": "data_pece",
@@ -205,7 +206,7 @@ export class AddEditTechComponent implements OnInit {
       }
     }
 
-    if (billerData == 'DoctorGroup') {
+    if ((billerData == 'DoctorGroup') || (billerData == "doctor_group")) {
       // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
       var data = {
         "source": "data_pece",
