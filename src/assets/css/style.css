@@ -233,7 +233,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .table_wrapper .no_data{ font-family: 'AvenirBlack'; font-size: 18px; }
 .bradcrumb{ display: block; font-family: 'AvenirLight'; font-size: 16px;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
-.container .searchbar span{ display: flex; justify-content: space-between; }
+.container .searchbar span{ display: flex; justify-content: center; width: 100%; }
 
 .container .searchbar .add_button { background: var(--button-color3); font-family: 'AvenirRoman'; font-size: 16px;
 color: #fff; text-transform: uppercase;}
