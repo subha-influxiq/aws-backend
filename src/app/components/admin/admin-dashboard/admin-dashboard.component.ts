@@ -78,6 +78,61 @@ export class AdminDashboardComponent implements OnInit {
         paramtype: 'angular',
         param: ['download_file_name']
       },
+      {
+        label:"Tech Details",
+        type:'action',
+        datatype:'api',
+        endpoint:'get-tech-details',
+        // otherparam:["patient_name"],
+        //cond:'status',
+        //condval:0,
+        param:'id',
+        refreshdata:true
+    } ,
+    {
+      label:"View Codes",
+      type:'action',
+      datatype:'api',
+      endpoint:'get-codes-details',
+      // otherparam:["patient_name"],
+      //cond:'status',
+      //condval:0,
+      param:'id',
+      refreshdata:true
+  } ,
+    {
+      label:"Doctor Details",
+      type:'action',
+      datatype:'api',
+      endpoint:'get-doctor-details',
+      // otherparam:["patient_name"],
+      //cond:'status',
+      //condval:0,
+      param:'id',
+      refreshdata:true
+  } ,
+  {
+    label:"Doctor Office Details",
+    type:'action',
+    datatype:'api',
+    endpoint:'get-doctor-office-details',
+    // otherparam:["patient_name"],
+    //cond:'status',
+    //condval:0,
+    param:'id',
+    refreshdata:true
+} ,
+{
+  label:"View Parent",
+  type:'action',
+  datatype:'api',
+  endpoint:'get-doctor-office-details',
+  // otherparam:["patient_name"],
+  cond:'patient_details[0].parent_id',
+  condval:"",
+  param:'id',
+  refreshdata:true
+} ,
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
@@ -107,7 +162,7 @@ export class AdminDashboardComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any = environment.apiBaseUrl;
+  public apiUrl: any = environment.apiBaseUrl1;
   public tableName: any = "data_pece";
   public datacollection: any = 'getPatientlistdata';
 
@@ -126,11 +181,12 @@ export class AdminDashboardComponent implements OnInit {
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
+  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }];
   public SearchingEndpoint: any = "datalist";
   public SearchingSourceName: any = "data_biller_list";
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }, { label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type }],
+      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }, { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type }],
       datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
       textsearch: [{ label: "Search By Name", field: 'name_search' },
       { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }]
