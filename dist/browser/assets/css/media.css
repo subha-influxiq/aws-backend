@@ -161,6 +161,7 @@
 .DataTable .mat-card .tablewrapper { margin-bottom: 16px; margin-top: 16px; }
 .calendar_data .table td{ max-width: inherit!important; height: inherit;} 
 .calendar_data .table td .btn-group { border: none; width: auto; } 
+.modal_view .table_wrapper .mat-table{ width:100%; min-width: inherit;}
 
 }
 @media screen and (max-width: 900px){

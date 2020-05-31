@@ -86,8 +86,9 @@ export class AdminDashboardComponent implements OnInit {
         // otherparam:["patient_name"],
         //cond:'status',
         //condval:0,
+        datafields: ['firstname','lastname','email','phone','address','city','state','zip'],
         param:'id',
-        refreshdata:true
+        // refreshdata:true
     } ,
     {
       label:"View Codes",
@@ -98,29 +99,31 @@ export class AdminDashboardComponent implements OnInit {
       //cond:'status',
       //condval:0,
       param:'id',
-      refreshdata:true
+      // refreshdata:true
   } ,
     {
       label:"Doctor Details",
       type:'action',
       datatype:'api',
       endpoint:'get-doctor-details',
+      datafields: ['firstname','lastname','email','fax','practice_name','npi','phone','address','city','state','zip'],
       // otherparam:["patient_name"],
       //cond:'status',
       //condval:0,
       param:'id',
-      refreshdata:true
+      // refreshdata:true
   } ,
   {
     label:"Doctor Office Details",
     type:'action',
     datatype:'api',
     endpoint:'get-doctor-office-details',
+    datafields: ['centername','firstname','lastname','email','phone','address','city','state','zip'],
     // otherparam:["patient_name"],
     //cond:'status',
     //condval:0,
     param:'id',
-    refreshdata:true
+    // refreshdata:true
 } ,
 {
   label:"View Parent",
@@ -131,7 +134,7 @@ export class AdminDashboardComponent implements OnInit {
   cond:'parent_details_check',
   condval:1,
   param:'id',
-  refreshdata:true
+  // refreshdata:true
 } ,
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
