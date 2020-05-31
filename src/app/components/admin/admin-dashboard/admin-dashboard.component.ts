@@ -183,14 +183,21 @@ export class AdminDashboardComponent implements OnInit {
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
   public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }];
   public SearchingEndpoint: any = "datalist";
+  public authval: any = [
+    { val: 'YmattZ', 'name': 'YmattZ A' },
+    { val: 'YmattZ', 'name': 'YmattZ A' },
+    { val: 'Ymatt', 'name': 'YmattZ AB' },
+    { val: 'Jessica', 'name': 'A Jessica'}
+];
   public SearchingSourceName: any = "data_biller_list";
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }, { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type }],
-      datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
-      textsearch: [{ label: "Search By Name", field: 'name_search' },
-      { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }]
-
+      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }, { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type } , { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }],
+      // datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
+      // textsearch: [{ label: "Search By Name", field: 'name_search' },
+      // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],
+      search:[{label: "Search By Doctor", field: 'author_search', values:this.authval },
+      {label: "Search By Tech", field: 'author_search', values:this.authval },{label: "Search By Doctor Office", field: 'author_search', values:this.authval },{label: "Search By Parent Name", field: 'author_search', values:this.authval },{label: "Search By Doctor City", field: 'author_search', values:this.authval },{label: "Search By Doctor State", field: 'author_search', values:this.authval },{label: "Search By Parent City", field: 'author_search', values:this.authval },{label: "Search By Parent State", field: 'author_search', values:this.authval }]
     };
   // lib list end
 
