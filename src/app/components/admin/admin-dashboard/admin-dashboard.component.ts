@@ -95,6 +95,7 @@ export class AdminDashboardComponent implements OnInit {
       type:'action',
       datatype:'api',
       endpoint:'get-codes-details',
+      datafields: ['additional_potential_health_risks','cpt_codes','icd_codes'],
       // otherparam:["patient_name"],
       //cond:'status',
       //condval:0,
@@ -126,7 +127,7 @@ export class AdminDashboardComponent implements OnInit {
     // refreshdata:true
 } ,
 {
-  label:"View Parent",
+  label:"Parent Details",
   type:'action',
   datatype:'api',
   endpoint:'get-parent-details',
