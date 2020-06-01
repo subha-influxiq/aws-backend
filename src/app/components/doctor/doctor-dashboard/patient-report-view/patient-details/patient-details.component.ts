@@ -69,13 +69,15 @@ export class PatientDetailsComponent implements OnInit {
     //   }
     // });
 
+    console.log("Patient details >>>", this.orginalReportDetails.patient_details[0].doctor_details[0].practice_name);
+
     let patientInfoFormFields: any = [
       {
         type: 'input',
         name: 'practice_name',
         placeholder: 'Practice Name',
         label: 'Practice Name',
-        value: this.orginalReportDetails.patient_details[0].practice_name,
+        value: this.orginalReportDetails.patient_details[0].doctor_details[0].practice_name,
         validators: [Validators.required],
         error: 'Enter practice name',
         caption: 'Patient General Information',
