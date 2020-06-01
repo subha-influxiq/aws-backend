@@ -10,8 +10,8 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2">        
-                        <lib-book-appointment-form class="book-appointment" [configData]="configData"></lib-book-appointment-form>
+                    <td colspan="2">
+                        <lib-book-appointment-form class="book-appointment" [configData]="configData" *ngIf="configData.patientInfoFormFields.length > 0"></lib-book-appointment-form>
                     </td>
                 </tr>
 

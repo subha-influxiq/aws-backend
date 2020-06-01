@@ -71,87 +71,50 @@ export class PatientDetailsComponent implements OnInit {
 
     let patientInfoFormFields: any = [
       {
-        type: 'input',
-        name: 'practice_name',
-        placeholder: 'Practice Name',
-        label: 'Practice Name',
-        value: this.orginalReportDetails.patient_details[0].practice_name,
-        validators: [Validators.required],
-        error: 'Enter practice name',
-        caption: 'Patient General Information',
+        type: 'input', name: 'practice_name', placeholder: 'Practice Name',
+        label: 'Practice Name', value: this.orginalReportDetails.patient_details[0].practice_name,
+        caption: 'Patient General Information', disabled: true
       },
       {
-        type: 'input',
-        name: 'address',
-        placeholder: 'Address',
-        label: 'Address',
-        value: this.orginalReportDetails.patient_details[0].address
+        type: 'input', name: 'address', placeholder: 'Address', label: 'Address',
+        value: this.orginalReportDetails.patient_details[0].address, disabled: true
       },
       {
-        type: 'input',
-        name: 'state',
-        placeholder: 'State',
-        label: 'State',
-        value: this.orginalReportDetails.patient_details[0].state
+        type: 'input', name: 'state', placeholder: 'State', label: 'State',
+        value: this.orginalReportDetails.patient_details[0].state, disabled: true
       },
       {
-        type: 'input',
-        name: 'city',
-        placeholder: 'City',
-        label: 'City',
-        value: this.orginalReportDetails.patient_details[0].city
+        type: 'input', name: 'city', placeholder: 'City', label: 'City',
+        value: this.orginalReportDetails.patient_details[0].city, disabled: true
       },
       {
-        type: 'input',
-        name: 'zip',
-        placeholder: 'ZIP',
-        label: 'ZIP',
-        value: this.orginalReportDetails.patient_details[0].zip
+        type: 'input', name: 'zip', placeholder: 'ZIP', label: 'ZIP',
+        value: this.orginalReportDetails.patient_details[0].zip, disabled: true
       },
       {
-        type: 'input',
-        name: 'patient_name',
-        label: 'Patient Name',
-        value: this.orginalReportDetails.patient_details[0].patient_name,
-        validators: [Validators.required],
-        error: 'Enter patient name'
+        type: 'input', name: 'patient_name', label: 'Patient Name',
+        value: this.orginalReportDetails.patient_details[0].patient_name, disabled: true
       },
       {
-        type: 'input',
-        name: 'gender',
-        label: 'Gender',
-        value: this.orginalReportDetails.patient_details[0].gender,
+        type: 'input', name: 'gender', label: 'Gender',
+        value: this.orginalReportDetails.patient_details[0].gender, disabled: true
       },
       {
-        type: 'input',
-        name: 'patient_email',
-        label: 'Patient Email',
-        value: this.orginalReportDetails.patient_details[0].patient_email
+        type: 'input', name: 'patient_email', label: 'Patient Email',
+        value: this.orginalReportDetails.patient_details[0].patient_email, disabled: true
       },
       {
-        type: 'input',
-        name: 'height',
-        label: 'Height',
-        value: this.orginalReportDetails.patient_details[0].height
+        type: 'input', name: 'height', label: 'Height',
+        value: this.orginalReportDetails.patient_details[0].height, disabled: true
       },
       {
-        type: 'input',
-        name: 'weight',
-        label: 'Weight',
-        value: this.orginalReportDetails.patient_details[0].weight
+        type: 'input', name: 'weight', label: 'Weight',
+        value: this.orginalReportDetails.patient_details[0].weight, disabled: true
       },
       {
-        type: 'input',
-        name: 'dob',
-        label: 'Date of Birth',
-        value: this.orginalReportDetails.patient_details[0].dob
-      },
-      {
-        type: 'input',
-        name: 'insurance_name',
-        label: 'Insurance Name',
-        value: this.insuranceName
-      },
+        type: 'input', name: 'dob', label: 'Date of Birth',
+        value: this.orginalReportDetails.patient_details[0].dob, disabled: true
+      }
     ];
 
     let checkboxFields: any = [
@@ -1131,10 +1094,8 @@ export class PatientDetailsComponent implements OnInit {
       this.httpService.postRequest('get-data', requestData).subscribe((response: any) => {
         let insurance_name = response.res[0].insurancename;
         patientInfoFormFields.push({
-          type: 'input',
-          name: 'insurance_name',
-          label: 'Insurance Name',
-          value: insurance_name
+          type: 'input', name: 'insurance_name', label: 'Insurance Name',
+          value: insurance_name, disabled: true
         });
         this.configData = Object.assign(this.configData,
           {
