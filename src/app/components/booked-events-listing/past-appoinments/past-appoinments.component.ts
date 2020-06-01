@@ -299,11 +299,19 @@ export class PastAppoinmentsComponent implements OnInit {
 
           default: // for tech
             data.condition = Object.assign(
-              data.condition, {userid: {$in: [JSON.parse(this.cookie.get('user_details'))._id]}}
+              data.condition, {
+                $or: [
+                  {userid: {$in: [JSON.parse(this.cookie.get('user_details'))._id]}},
+                  {tech_id: {$in: [JSON.parse(this.cookie.get('user_details'))._id]}}
+                ]
+              }
             );
             // store the basecondition for the lib-listing
             this.configData.libdata.basecondition = {
-              userid: {$in: [JSON.parse(this.cookie.get('user_details'))._id]}
+              $or: [
+                {userid: {$in: [JSON.parse(this.cookie.get('user_details'))._id]}},
+                {tech_id: {$in: [JSON.parse(this.cookie.get('user_details'))._id]}}
+              ]
             }
             break;
         }

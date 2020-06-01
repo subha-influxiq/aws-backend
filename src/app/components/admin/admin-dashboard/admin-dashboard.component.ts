@@ -78,6 +78,65 @@ export class AdminDashboardComponent implements OnInit {
         paramtype: 'angular',
         param: ['download_file_name']
       },
+      {
+        label:"Tech Details",
+        type:'action',
+        datatype:'api',
+        endpoint:'get-tech-details',
+        // otherparam:["patient_name"],
+        //cond:'status',
+        //condval:0,
+        datafields: ['firstname','lastname','email','phone','address','city','state','zip'],
+        param:'id',
+        // refreshdata:true
+    } ,
+    {
+      label:"View Codes",
+      type:'action',
+      datatype:'api',
+      endpoint:'get-codes-details',
+      datafields: ['additional_potential_health_risks','cpt_codes','icd_codes'],
+      // otherparam:["patient_name"],
+      //cond:'status',
+      //condval:0,
+      param:'id',
+      // refreshdata:true
+  } ,
+    {
+      label:"Doctor Details",
+      type:'action',
+      datatype:'api',
+      endpoint:'get-doctor-details',
+      datafields: ['firstname','lastname','email','fax','practice_name','npi','phone','address','city','state','zip'],
+      // otherparam:["patient_name"],
+      //cond:'status',
+      //condval:0,
+      param:'id',
+      // refreshdata:true
+  } ,
+  {
+    label:"Doctor Office Details",
+    type:'action',
+    datatype:'api',
+    endpoint:'get-doctor-office-details',
+    datafields: ['centername','firstname','lastname','email','phone','address','city','state','zip'],
+    // otherparam:["patient_name"],
+    //cond:'status',
+    //condval:0,
+    param:'id',
+    // refreshdata:true
+} ,
+{
+  label:"Parent Details",
+  type:'action',
+  datatype:'api',
+  endpoint:'get-parent-details',
+  // otherparam:["patient_name"],
+  cond:'parent_details_check',
+  condval:1,
+  param:'id',
+  // refreshdata:true
+} ,
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
@@ -107,7 +166,7 @@ export class AdminDashboardComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any = environment.apiBaseUrl;
+  public apiUrl: any = environment.apiBaseUrl1;
   public tableName: any = "data_pece";
   public datacollection: any = 'getPatientlistdata';
 
@@ -126,15 +185,25 @@ export class AdminDashboardComponent implements OnInit {
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
+  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }];
   public SearchingEndpoint: any = "datalist";
+  public authval: any = [];
+  public docofficeval: any = [];
+  public techval: any = [];
+  public parentnameval: any = [];
+  public doctorcity: any = [];
+  public doctorstate: any = [];
+  public patientcity: any = [];
+  public patientstate: any = [];
   public SearchingSourceName: any = "data_biller_list";
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }, { label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type }],
-      datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
-      textsearch: [{ label: "Search By Name", field: 'name_search' },
-      { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }]
-
+      selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type } , { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }],
+      // datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
+      // textsearch: [{ label: "Search By Name", field: 'name_search' },
+      // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],
+      search:[{label: "Search By Doctor", field: 'doc_name_search', values:this.authval },
+      {label: "Search By Tech", field: 'tech_name_search', values:this.techval },{label: "Search By Doctor Office", field: 'author_search', values:this.docofficeval },{label: "Search By Parent Name", field: 'patient_name', values:this.parentnameval },{label: "Search By Doctor City", field: 'author_search', values:this.doctorcity },{label: "Search By Doctor State", field: 'author_search', values:this.doctorstate },{label: "Search By Parent City", field: 'author_search', values:this.patientcity },{label: "Search By Parent State", field: 'author_search', values:this.patientstate }]
     };
   // lib list end
 
@@ -152,6 +221,7 @@ export class AdminDashboardComponent implements OnInit {
       this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
       //this.viewReportProcessData(this.htmlText.headerText);
     });
+
 
     // lib list
     let endpoint = 'getPatientlistdata';
@@ -174,7 +244,32 @@ export class AdminDashboardComponent implements OnInit {
     });
 
     this.http.httpViaPostbyApi1(endpoint, data).subscribe((res: any) => {
+      // console.log(res);
       this.allBillerData = res.results.res;
+      for(var i in res.results.res) {
+        this.authval.push({name:res.results.res[i].doc_name,val:res.results.res[i].doc_name_search})
+      }
+      for(var i in res.results.res) {
+        this.techval.push({name:res.results.res[i].tech_name,val:res.results.res[i].tech_name_search})
+      }
+      for(var i in res.results.res) {
+        this.parentnameval.push({name:res.results.res[i].parent_name,val:res.results.res[i].parent_name_search})
+      }
+      for(var i in res.results.res) {
+        this.doctorstate.push({name:res.results.res[i].doctor_state,val:res.results.res[i].doctor_state_search})
+      }
+      for(var i in res.results.res) {
+        this.doctorcity.push({name:res.results.res[i].doctor_city,val:res.results.res[i].doctor_city_search})
+      }
+      for(var i in res.results.res) {
+        this.patientcity.push({name:res.results.res[i].patient_city,val:res.results.res[i].patient_city_search})
+      }
+      for(var i in res.results.res) {
+        this.patientstate.push({name:res.results.res[i].patient_state,val:res.results.res[i].patient_state_search })
+      }
+      for(var i in res.results.res) {
+        this.docofficeval.push({name:res.results.res[i].doctor_ofiice_name,val:res.results.res[i].doctor_ofiice_name_search })
+      }
     }, error => {
       console.log('Oooops!');
     });

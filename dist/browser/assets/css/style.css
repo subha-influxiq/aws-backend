@@ -120,12 +120,10 @@
    justify-content: flex-start;
    align-items: center;
    background: url(../images/doctorImage.png) no-repeat;
-   background-position: left bottom;
-   background-size: 835px;
-   background-color: #fdfaee;
-   padding-left: 800px;
+   background-position: left bottom; background-size: 835px; background-color: #fdfaee; padding-left: 800px; }
 
-  }
+.modal_view { overflow: scroll; max-height: 90vh;}
+.modal_view .table_wrapper .mat-table{ width:100%; min-width: 800px;}
 .main_wrapper .login_wrapper { padding: 0;}
 .main_wrapper .login_wrapper{ width: 580px; background: #fff; }
 .main_wrapper  .img_wrapper{ background: url("../images/doctorImage.png") no-repeat; background-position: left bottom;}
