@@ -19,8 +19,8 @@
 @media screen and (max-width: 1368px){
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 5px; }
   .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber { font-size: 16px;}
-  .tablewrapper{ overflow-x: scroll; display: block;}
-  .table_wrapper .mat-table{ width: 1600px;}
+  .overflowwrapper{ overflow-x: scroll; display: block;}
+  .overflowwrapper .mat-table{ width: 1600px;}
 }
 @media screen and (max-width: 1300px){
 .main_wrapper { background-size: 680px; padding-left: 665px; }
@@ -166,8 +166,7 @@
 }
 @media screen and (max-width: 900px){
   .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item,
-  .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item{ width: 100%; margin: 0;
-    margin-bottom: 16px;}
+  .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item{ width: 100%; margin: 0; margin-bottom: 16px;}
   .admin_wrapper .title_wrapper { font-size: 24px; }
   .book-appointment .mat-form-field { width: 31.6%; }
 }

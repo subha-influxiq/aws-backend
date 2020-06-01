@@ -2,57 +2,7 @@
 *{
   box-sizing: border-box;
 }
-/* @font-face {
-  font-family: 'RalewayBold';
-  src: url('../fonts/Raleway-Bold.woff2') format('woff2'),
-      url('../fonts/Raleway-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'RalewayMedium';
-  src: url('../fonts/Raleway-Medium.woff2') format('woff2'),
-      url('../fonts/Raleway-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'RalewayRegular';
-  src: url('../fonts/Raleway-Regular.woff2') format('woff2'),
-      url('../fonts/Raleway-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'RobotoMedium';
-  src: url('../fonts/Roboto-Medium.woff2') format('woff2'),
-      url('../fonts/Roboto-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'RobotoRegular';
-  src: url('../fonts/Roboto-Regular.woff2') format('woff2'),
-      url('../fonts/Roboto-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'RobotoBlack';
-  src: url('../fonts/Roboto-Black.woff2') format('woff2'),
-      url('../fonts/Roboto-Black.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'RobotoBold';
-  src: url('../fonts/Roboto-Bold.woff2') format('woff2'),
-      url('../fonts/Roboto-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}*/
+ 
 @font-face {
   font-family: 'AmandaSignature';
   src: url('../fonts/AmandaSignatureRegular.woff2') format('woff2'),
@@ -109,7 +59,7 @@
   }
 
   /* background-image: linear-gradient(40deg, #feca00, #1dbce9); */
-
+  .mat-form-field-appearance-legacy .mat-form-field-underline { height: 0!important;}
 /* heder css */
 .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 12px; }
 .techdashboard_header .quotation .mat-nav-list .mat-list-item:first-child .mat-list-item-content { padding-left: 0px; }
@@ -153,6 +103,9 @@
 .patient_report_section  .mat-form-field-appearance-outline .mat-form-field-infix { padding: 1em 0 1em 0; margin: 0; border: 0;}
 .table_wrapper h2{ font-size: 20px; color: #ff0000; font-family: 'AvenirMedium'; text-transform: capitalize; text-align: center;}
 .DataTable table th.mat-header-cell { text-align: left;  font-family: "AvenirMedium";  font-size: 16px; }
+
+.tablewrapper tr td:first-child, .tablewrapper tr th:first-child{ padding-left: 14px!important; }
+
  table th.mat-header-cell span { display: flex; justify-content: space-between; align-items: center;}
 .DataTable table th.mat-header-cell:last-of-type{ width: auto; min-width: 150px;}
 /* .faq-management table th.mat-header-cell:last-of-type{ width: 14%;} */
@@ -220,9 +173,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .admin_wrapper  .con-report-lebel p { font-family: 'AvenirMedium'; color: #f54400;
   margin: 5px 0;}
 .admin_wrapper  .con-report-lebel button { font-family: 'AvenirMedium'; margin-top: 16px;
-  background: linear-gradient(45deg, #03a9f5, #77da00);
-  min-width: 120px;
-  border-radius: 0;
+  background: linear-gradient(45deg, #03a9f5, #77da00);  min-width: 120px; border-radius: 0;
   text-transform: uppercase;}
 /* manage listing  */
 .table_wrapper .add_header {display: flex; height: auto; justify-content: space-between; align-items: center; padding: 10px; background: #f9f9f9; }
@@ -232,20 +183,20 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .bradcrumb{ display: block; font-family: 'AvenirLight'; font-size: 16px;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
 .container .searchbar .search_class{ display: flex; justify-content: center; width: 100%; }
-.container .searchbar span{ display: flex; justify-content: center; width: 100%; }
+
 
 .container .searchbar .add_button { background: var(--button-color3); font-family: 'AvenirRoman'; font-size: 16px;
-color: #fff; text-transform: uppercase;}
+color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 
 /* .container .searchbar i{margin-left: auto;} */
 .searchbar { height: auto!important; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; box-shadow: 0px 2px 2px #c5c5c5;
-  padding-bottom: 16px!important; position: relative; }
+  padding-bottom: 16px!important; position: relative; background: #f5f5f5; }
 .searchbar .mat-form-field{ width: 32%; margin: 0 0.5%!important;}
 .searchbar .cursor{ width: 35px; border-radius: 50%; background: var(--button-color2); height: 35px;
   margin: auto; display: flex; justify-content: center; align-items: center; color: #fff; margin:0 10px;}
 .pad-gap{ margin: inherit!important;}
 .searchbar .mat-form-field .mat-form-field-flex { display: inline-flex; align-items: baseline; box-sizing: border-box;
-  width: 100%; border: .5px solid #bdbdbd; border-radius: 4px; padding: 0px 10px 5px; }
+  width: 100%; border: .5px solid #bdbdbd; border-radius: 2px; padding: 0px 10px 5px; background: #fff; }
 .searchbar .mat-form-field-prefix { bottom: -8px; }
 .add_form .file_upload .uploadfilecontainer { width: 100%; box-sizing: border-box;}
 .admin_table{ width: 100%; margin: 20px auto; display: block;}
@@ -321,15 +272,16 @@ color: #fff; text-transform: uppercase;}
 
 .infomodal{ overflow: auto; width: 991px;}
 /* admin css */
-.admin_wrapper{ width: 1400px; margin: 20px auto; box-sizing: border-box; margin-bottom: 70px;}
+.admin_wrapper{ width: 1400px; margin: 20px auto; box-sizing: border-box; margin-bottom: 70px; padding: 5px!important; background: #f1f1f1!important;}
 .searchcard { padding: 0; }
 
 
 /* admin css */
 
 
-.admin_wrapper .content_wrapper{ display: flex; justify-content: space-between;  align-items: center; width: 100%; margin: auto; text-align: center; margin-bottom: 16px; }
-.admin_wrapper .content_wrapper .itemsection{width: 33%; margin: 0px 7px; box-sizing: border-box; display: flex; justify-content: center; position: relative; border-radius: 10px; border: 1px solid #e8e9ef;  overflow: hidden;  }
+.admin_wrapper .content_wrapper{ display: flex; justify-content: space-between;  align-items: center; width: 100%; margin: auto; text-align: center;     margin-top: 10px!important;
+  margin-bottom: 12px; }
+.admin_wrapper .content_wrapper .itemsection{width: 33%; margin: 0px 7px; box-sizing: border-box; display: flex; justify-content: center; position: relative; border-radius: 10px; border: 1px solid #e8e9ef;  overflow: hidden; background:#fff;  }
 .admin_wrapper .content_wrapper .itemsection .icon{  display: flex; align-items: center; justify-content: center; width: 20%; box-sizing: border-box;}
 .admin_wrapper .content_wrapper .itemsection .icon img{ max-width: 100%; }
 .admin_wrapper .content_wrapper .itemsection .button_wrapper{ background: #4d545a; width: 25%; display: flex; align-items: center; justify-content: center; }
@@ -337,8 +289,8 @@ color: #fff; text-transform: uppercase;}
 .admin_wrapper .content_wrapper .itemsection .counteer { box-sizing: border-box; width: 55%; padding: 5px; text-align: left; }
 .admin_wrapper .content_wrapper .itemsection .counteer .dataCount{ font-size: 48px; font-family: "AvenirBlack";  color: #4d545a; margin: 0;}
 .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber{ font-size: 18px; font-family: "AvenirMedium";  color: #4d545a; margin:0;}
-.admin_wrapper .content_wrapper .itemsection:nth-child(3n+1){ margin-left: 0;}
-.admin_wrapper .content_wrapper .itemsection:nth-child(3n+3){ margin-right: 0;}
+.admin_wrapper .content_wrapper .itemsection:nth-child(3n+1){ margin-left: 8px;}
+.admin_wrapper .content_wrapper .itemsection:nth-child(3n+3){ margin-right: 8px;}
 
 .doctor_content_wrapper{ background: url("../../../../assets/images/doctorcontentbg.jpg") no-repeat center center; background-size: cover; display: block; padding: 50px 40px; margin: 0 16px;}
 
@@ -356,10 +308,9 @@ color: #fff; text-transform: uppercase;}
 .patient_report_section .form_wrapper:last-child{ margin-right: 0px;}
 /* .patient_report_section .form_wrapper .mat-form-field-flex{ border: 1px solid #000!important; } */
 .biller_Dashboard .patient_report_section .patient_top_search{ margin: 16px 0px; padding: 0; }
-.biller_Dashboard .patient_report_section .patient_top_search .res_view{ width: auto; display: flex;
-  justify-content: space-between;}
+.biller_Dashboard .patient_report_section .patient_top_search .res_view{ width: auto; display: flex; justify-content: space-between;}
 
-  .biller_Dashboard .patient_report_section .patient_top_search .res_view  .btn_action_wrapper{ margin-left: 16px;}
+.biller_Dashboard .patient_report_section .patient_top_search .res_view  .btn_action_wrapper{ margin-left: 16px;}
 .biller_Dashboard .patient_report_section .patient_top_search .btn_action_wrapper button{ background: var(--button-color3); font-family: 'AvenirMedium'; font-size: 16px;
 margin-right: 10px; box-shadow: none; min-width: 80px; }
 .biller_Dashboard .patient_report_section .patient_top_search .btn_action_wrapper button:last-child{ margin: 0; background: var(--button-color2);}
@@ -384,8 +335,14 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .top_header .wrappp_R .add_new:last-child{margin-left: 10px; background: #21e289;}
 .top_header h2{ margin: 0;font-size: 20px; color: #535353; font-family: "AvenirMedium"; }
 .admin_superbillsection {display: block; }
-.admin_superbillsection h1{ font-size: 20px; font-family: 'AvenirMedium'; color: #535353; text-transform: capitalize; margin-bottom: 10px;  border-bottom: 1px solid #9c9c9c;
-padding-bottom: 6px; }
+.admin_superbillsection h1{ font-size: 20px;
+  font-family: 'AvenirMedium';
+  color: #535353;
+  text-transform: capitalize;
+  border-bottom: 1px solid #9c9c9c;
+  padding: 10px 8px;
+  background: #e0e5eb;
+  margin: 0 6px 10px;}
 .admin_superbillsection .biller_wrapper  { display: flex; justify-content: center; margin-bottom: 0;}
 .admin_superbillsection .biller_wrapper .super_bill_item{ width: 100%; margin: .5%; padding:10px; display: flex;  padding-top: 2%; border-radius: 10px; }
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(1){ background: #4099ff url("../../../../assets/images/admincircle_icon1.png") no-repeat right top; background-size: 120px;}
@@ -421,13 +378,15 @@ padding-bottom: 6px; }
 .adminTables .downloadBtn,
 .adminTables .downloadBtn{ margin-left: 5px; background: #ff5370; }
 .admin_table .action_bar .date-range{ width: 36%; justify-content: space-between; display: flex;}
+.table_wrapper { margin:  0 6px;}
 .table_wrapper .mat-table { width: 100%; box-shadow: none; }
 .table_wrapper .mat-table .mat-cell .mat-form-field-appearance-outline .mat-form-field-wrapper { margin: 0; padding: 0; }
-.table_wrapper .button_action{ display: block; text-align: center;}
+.table_wrapper .button_action{ display: block; text-align: center; margin-top: 16px;}
 .table_wrapper .button_action button{ background: var(--button-color2); color: #fff; font-size: 22px; font-family: 'AvenirMedium'; padding: 4px 18px; text-transform: uppercase;}
 .table_wrapper .mat-table .mat-cell .mat-form-field-appearance-outline .mat-form-field-infix { padding: 0; height: 28px; display: inline-flex; }
 .table_wrapper .mat-table .mat-cell  .mat-form-field-appearance-outline .mat-form-field-label { top: 16px; margin-top: -.25em; }
-.table_wrapper .top_header  {display: flex; align-items: center; justify-content: space-between; height: auto; padding:10px 5px;}
+.table_wrapper .top_header  {display: flex; align-items: center; justify-content: space-between; height: auto; padding: 10px 8px;
+  background: #e0e5eb;}
 .table_wrapper .top_header h2 { font-family: 'AvenirMedium'; font-size: 20px; text-transform: capitalize;}
 .table_wrapper .top_header .wrappp_R{ width: 100%; text-align: right;}
 .table_wrapper .action_bar {display: flex; align-items: center; height: auto; padding:10px 5px;}
@@ -466,7 +425,7 @@ padding-bottom: 6px; }
 
 /* searches */
 .admin_table .action_bar{ height: auto; justify-content: space-between;}
-.table_wrapper tr.mat-header-row { background: #edf0f2; }
+.table_wrapper tr.mat-header-row { background: #e0e5eb; }
 
 /* booked appointment */
 .bookedAppointment .action_bar .date-range { display: flex; width: 66%; }
@@ -744,3 +703,6 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(1){color: #21e289; font-size: 15px; font-weight: 700;}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(2){color: #6fc4dc; font-weight: 600;}
 .form2_wrapper .DataTable .searchbar .mat-form-field{ width:48%;}
+
+
+ 
