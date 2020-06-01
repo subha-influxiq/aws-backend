@@ -88,6 +88,7 @@ export class AdminDashboardComponent implements OnInit {
         //condval:0,
         datafields: ['firstname','lastname','email','phone','address','city','state','zip'],
         param:'id',
+        headermessage: 'Tech Info',
         // refreshdata:true
     } ,
     {
@@ -100,6 +101,7 @@ export class AdminDashboardComponent implements OnInit {
       //cond:'status',
       //condval:0,
       param:'id',
+      headermessage: 'Codes Info',
       // refreshdata:true
   } ,
     {
@@ -112,6 +114,7 @@ export class AdminDashboardComponent implements OnInit {
       //cond:'status',
       //condval:0,
       param:'id',
+      headermessage: 'Doctor Info',
       // refreshdata:true
   } ,
   {
@@ -124,6 +127,7 @@ export class AdminDashboardComponent implements OnInit {
     //cond:'status',
     //condval:0,
     param:'id',
+    headermessage: 'Doctor Office Info',
     // refreshdata:true
 } ,
 {
@@ -135,6 +139,7 @@ export class AdminDashboardComponent implements OnInit {
   cond:'parent_details_check',
   condval:1,
   param:'id',
+  headermessage: 'Parent Info',
   // refreshdata:true
 } ,
     ],
