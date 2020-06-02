@@ -430,6 +430,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
  
  .encounter_wrapper .second_table  .book-appointment .mat-card{ box-shadow: none; padding: 10px 8px; }
  .encounter_wrapper .second_table  .book-appointment .mat-horizontal-stepper-header-container { display: none; }
+ .encounter_wrapper .second_table  .book-appointment .float-right { display: none; }
  .patient_report_wrapper .patient_item_section .mat-tab-label-active {
   background:linear-gradient(45deg, #0772ff, #04a6f6);
   opacity: 1;
@@ -630,3 +631,6 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(1){color: #21e289; font-size: 15px; font-weight: 700;}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(2){color: #6fc4dc; font-weight: 600;}
 .form2_wrapper .DataTable .searchbar .mat-form-field{ width:48%;}
+
+
+
