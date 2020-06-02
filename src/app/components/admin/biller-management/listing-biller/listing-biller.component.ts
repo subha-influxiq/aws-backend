@@ -46,7 +46,7 @@ export class ListingBillerComponent implements OnInit {
     //hideviewbutton:false,
     //hidestatustogglebutton:true,
     // hideaction:true,
-    tableheaders: ['firstname', 'lastname', 'email', 'parent_name', 'parent_type', 'phone', 'company_name', 'status', 'logincounts', 'last_login_datetime'], //not required
+    tableheaders: ['firstname', 'lastname', 'email', 'phone', 'company_name', 'status', 'logincounts', 'last_login_datetime'], //not required
   }
   public allUserData_modify_header: any = {
     "firstname": "First Name",
@@ -81,14 +81,14 @@ export class ListingBillerComponent implements OnInit {
   previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
-  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
+  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },{ val: "distributor", 'name': 'Distributors' },{ val: "doctor_group", 'name': 'Doctors Group Admin' }];
   public SearchingEndpoint: any = "datalist";
   public SearchingSourceName: any = "data_biller_list";
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }, { label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type }],
+      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
       textsearch: [{ label: "Search By Name", field: 'name_search' },
-      { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }]
+      { label: "Search By E-Mail", field: 'email' }, { label: "Search By Company Name", field: 'company_search' }]
 
     };
   public user_cookie: any;
@@ -113,6 +113,12 @@ export class ListingBillerComponent implements OnInit {
       this.editUrl = 'distributors/biller-management/edit';
       this.field = { 'parent_id': this.userData._id };
       this.data = this.userData._id;
+    }
+    if(this.userData.user_type == 'admin') {
+      this.search_settings.textsearch.push({ label: "Search By Parent Name", field: 'parent_name_search' });
+      this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type });
+      this.libdata.tableheaders.splice(3,0,"parent_name");
+      this.libdata.tableheaders.splice(4,0,"parent_type");
     }
 
     this.libdata.basecondition = this.field;

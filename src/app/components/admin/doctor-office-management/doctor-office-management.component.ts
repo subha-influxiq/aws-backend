@@ -36,7 +36,7 @@ export class DoctorOfficeManagementComponent implements OnInit {
   ];
   public editUrl: any = "admin/doctor-office-management/edit";
   public doctorOfficeAllData_modify_header: any = {
-    "center name": "Center Name",
+    "center_name": "Center Name",
     "firstname": "First Name",
     "lastname": "Last Name",
     "email": "Email",
@@ -59,7 +59,7 @@ export class DoctorOfficeManagementComponent implements OnInit {
   public userData: any={}
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
-  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },{ val: "distributors", 'name': 'Distributor' },{ val: "doctor_group", 'name': 'Doctor Group' }];
+  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },{ val: "distributor", 'name': 'Distributors' },{ val: "doctor_group", 'name': 'Doctors Group Admin' }];
   public SearchingEndpoint: any = "datalist";
   public SearchingSourceName: any = "data_doctor_office_list";
   public datacollection: any='getdoctorofficelistdata';
@@ -77,11 +77,22 @@ export class DoctorOfficeManagementComponent implements OnInit {
 
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status },{ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type }],
-      textsearch: [{ label: "Search By Center Name", field: 'name_search' },
-      { label: "Search By Parent Name", field: 'parent_search' },{ label: "Search By E-Mail", field: 'email' }],
+      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
+      textsearch: [{ label: "Search By Name", field: 'name_search' },{label: "Search By Center Name", field: 'center_search' },
+      { label: "Search By E-Mail", field: 'email' }],
 
     };
+  public  libdata: any = {
+      basecondition: {"parent_id":this.userData._id},
+      updateendpoint: 'statusupdate',
+      // hideeditbutton:true,// all these button options are optional not mandatory
+      //hidedeletebutton:true,
+      //hideviewbutton:false,
+      //hidestatustogglebutton:true,
+      // hideaction:true,
+      tableheaders: ['center_name','firstname', 'lastname', 'email', 'phone', 'company_name', 'status', 'logincounts', 'last_login_datetime'], //not required
+    }
+  
 
   constructor(public activatedRoute: ActivatedRoute,
     public cookie: CookieService, public http: HttpClient,
@@ -95,19 +106,15 @@ export class DoctorOfficeManagementComponent implements OnInit {
     if(this.userData.user_type == 'doctor') {
       this.editUrl = 'doctor/doctor-office-management/edit';
     }
+    if(this.userData.user_type == 'admin') {
+      this.search_settings.textsearch.push({ label: "Search By Parent Name", field: 'parent_name_search' });
+      this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type });
+      this.libdata.tableheaders.splice(3,0,"parent_name");
+      this.libdata.tableheaders.splice(4,0,"parent_type");
+    }
   }
 
-  libdata: any = {
-    basecondition: {"parent_id":this.userData._id},
-    updateendpoint: 'statusupdate',
-    // hideeditbutton:true,// all these button options are optional not mandatory
-    //hidedeletebutton:true,
-    //hideviewbutton:false,
-    //hidestatustogglebutton:true,
-    // hideaction:true,
-    tableheaders: ['firstname', 'lastname', 'email', 'parent_name', 'parent_type', 'phone', 'company_name', 'status', 'logincounts', 'last_login_datetime'], //not required
-  }
-
+  
   ngOnInit() {
     this.datasource = '';
     if(this.userData.user_type !="doctor") {

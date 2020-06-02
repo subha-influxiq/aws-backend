@@ -9,15 +9,15 @@
     <tr>
       <td> Patient Name <input type="text" value="{{ orginalReportDetails.patient_details[0].patient_name }}"></td>
       <td> Patient Gender
-        <label> <input type="radio" [(ngModel)]="orginalReportDetails.patient_details[0].gender" [ngModelOptions]="{standalone: 'male'}" value='Male'>M</label>
-        <label> <input type="radio" [(ngModel)]="orginalReportDetails.patient_details[0].gender" [ngModelOptions]="{standalone: 'female'}" value='Female'>F</label>
+        <label> <input type="radio" [checked]="orginalReportDetails.patient_details[0].gender_male_flag == true" [value]="true">M</label>
+        <label> <input type="radio" [checked]="orginalReportDetails.patient_details[0].gender_female_flag == true" [value]="true">F</label>
       </td>
 
     </tr>
 
     <tr>
       <td><label> D.O.B <input type="text" value="{{ orginalReportDetails.patient_details[0].dob | date }}"></label></td>
-      <td> Test Date <input type="text" value="{{ orginalReportDetails.patient_details[0].test_date }}"></td>
+      <td> Test Date <input type="text" value="{{ orginalReportDetails.patient_details[0].booking_date | date }}"></td>
     </tr>
 
 

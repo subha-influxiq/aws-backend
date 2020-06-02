@@ -4,8 +4,7 @@
 @media screen and (max-width: 1500px){
   .admin_wrapper, .table_list, .sales_person_db { width: 90%; }
   .action_bar .mat-form-field .mat-form-field-flex { width: 200px; }
-  .sales_person_db .shareLi .in_w { width: 40%; }
-  .admin_dashboard .DataTable .tablewrapper tr td .custombutton0 button { margin-bottom: 10px;}
+  .sales_person_db .shareLi .in_w { width: 40%; } 
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 4px; }
 }
 @media screen and (max-width: 1410px){
@@ -13,18 +12,22 @@
   .table_wrapper .action_bar .date-range { width: auto;}
 }
 @media screen and (max-width: 1400px){
-  .main_wrapper { background-size: 680px; padding-left: 727px; }
-  .admin_wrapper .content_wrapper .itemsection .counteer .dataCount { font-size: 38px; }
-}
+ .main_wrapper { background-size: 680px; padding-left: 727px; }
+ .admin_wrapper .content_wrapper .itemsection .counteer .dataCount { font-size: 38px; }
+ .admin_dashboard .DataTable .tablewrapper { display: block; overflow-x: scroll;}
+ .admin_dashboard .DataTable .tablewrapper .mat-table{ width: 1300px;}
+ .DataTable .mat-card .tablewrapper{ overflow-y: auto;}
+ .DataTable .mat-card .tablewrapper .mat-table { width: 1600px; }
+}  
 @media screen and (max-width: 1368px){
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 5px; }
   .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber { font-size: 16px;}
-  .tablewrapper{ overflow-x: scroll; display: block;}
-  .table_wrapper .mat-table{ width: 1600px;}
+  .overflowwrapper{ overflow-x: scroll; display: block;}
+  .overflowwrapper .mat-table{ width: 1600px;}
 }
 @media screen and (max-width: 1300px){
 .main_wrapper { background-size: 680px; padding-left: 665px; }
-
+      
 }
 @media screen and (max-width: 1240px){
 .main_wrapper .login_wrapper { width: 450px; }
@@ -162,17 +165,20 @@
 .calendar_data .table td{ max-width: inherit!important; height: inherit;} 
 .calendar_data .table td .btn-group { border: none; width: auto; } 
 .modal_view .table_wrapper .mat-table{ width:100%; min-width: inherit;}
-
+.admin_dashboard .DataTable .tablewrapper .mat-table { width: 100%; }
+.admin_dashboard .DataTable .tablewrapper {  overflow-x: inherit; }
+.admin_dashboard .DataTable .tablewrapper .mat-table .mat-cell:last-child { padding-left: 20%!important; }
+.admin_dashboard .DataTable .tablewrapper .mat-table .mat-cell:after { left: 14px; bottom: 14px; }
+.admin_dashboard .DataTable .tablewrapper .mat-table .mat-cell{ padding-right: 16px; padding-bottom: 16px;}
 }
 @media screen and (max-width: 900px){
   .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item,
-  .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item{ width: 100%; margin: 0;
-    margin-bottom: 16px;}
+  .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item{ width: 100%; margin: 0; margin-bottom: 16px;}
   .admin_wrapper .title_wrapper { font-size: 24px; }
   .book-appointment .mat-form-field { width: 31.6%; }
 }
 @media screen and (max-width: 840px){
-
+                      
 .quickRef .report_wrapper .items_w { width: 48%; margin: 1%;  }
 .quickRef .report_wrapper .items_w:nth-child(n+1) {  margin-left: 1%; }
 .quickRef .report_wrapper .items_w:nth-child(n+3) {  margin-right: 1%; }
@@ -208,7 +214,8 @@
   .mobile-label { width: 80px; display: inline-block; font-weight: bold; }
   .mat-header-row { display: none; }
   .mat-row { flex-direction: column; align-items: start; padding: 8px 24px;}
-
+  .admin_dashboard .DataTable .tablewrapper .mat-table .mat-cell::before,
+  .admin_dashboard .DataTable .tablewrapper .mat-table .mat-cell:after { left: 14px!important; }
 
 /* new modification */
 .mat-table .mat-cell:after, 
@@ -241,10 +248,8 @@
 align-items: center;}
 .custom-modalbox .example-card .mat-card-header::before{ display: none;}
 .table_wrapper .top_header .wrappp_R { width: auto; text-align: inherit; }
-.admin_wrapper .add_form .submit_form { display: flex; flex-direction: column; }
-
-.admin_wrapper .add_form .submit_form button { font-size: 18px; width: 100%;
-  margin: 0; margin-top: 16px; box-sizing: border-box; }
+.admin_wrapper .add_form .submit_form { display: flex; flex-direction: column; } 
+.admin_wrapper .add_form .submit_form button { font-size: 18px; width: 100%; margin: 0; margin-top: 16px; box-sizing: border-box; }
 .admin_wrapper .add_form .submit_form button:first-child { margin-right: 0; margin-top: 0; }
 .admin_wrapper .title_wrapper { font-size: 24px; }
 .lib-pager-class mat-label{ display: block; margin: 0; margin-bottom: 10px; font-family: 'AvenirBlack'; }
@@ -302,8 +307,7 @@ align-items: center;}
   .action_bar .mat-form-field .mat-form-field-flex { width: 100%; margin-right: 0;}
   .table_wrapper .action_bar .date-range { width: 100%;}
   .table_wrapper .action_bar .date-range .mat-form-field:last-child { margin-left: 0;}
-  .DataTable .mat-card mat-label { margin-right: 0; display: block; margin-bottom: 10px;
-}
+  .DataTable .mat-card mat-label { margin-right: 0; display: block; margin-bottom: 10px; }
  
 }
 @media screen and (max-width: 400px){
@@ -316,9 +320,7 @@ align-items: center;}
 .table_wrapper .top_header .wrappp_R { flex-direction: column; display: flex; align-items: center; }
 .top_header .wrappp_R .add_new{ margin-bottom: 10px;}
 .top_header .wrappp_R .add_new:last-child { margin-left: 0px; margin-bottom: 10px;}
-.admin_wrapper .title_wrapper {
-  font-size: 20px;
-}
+.admin_wrapper .title_wrapper { font-size: 20px; }
 }
 @media screen and (max-width: 350px){
 .main_wrapper .login_wrapper { width: 265px; }
@@ -326,8 +328,6 @@ align-items: center;}
 .adminTables .mat-cell { padding: 10px 0; padding-left: 44%;}
 .mat-table .mat-cell:before { font-size: 13px; }
 .adminTables td.mat-cell:last-of-type { padding-right: 10px;  }
-}
-
-
+}                                            
 
 

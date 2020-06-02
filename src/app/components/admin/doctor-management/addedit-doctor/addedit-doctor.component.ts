@@ -56,12 +56,12 @@ export class AddeditDoctorComponent implements OnInit {
     // this.getAllData();
     // this.f();
     
-    if(this.htmlText.user_details.user_type !='admin') {
+    if(this.htmlText.user_details.user_type !='admin'&& typeof(this.acivatedRoute.snapshot.params._id) == 'undefined') {
       this.getalldata(this.htmlText.user_details);
-    } else {
+    } else if(typeof(this.acivatedRoute.snapshot.params._id) == 'undefined'){
       this.getalldata();
     }
-
+    // console.log('type',typeof(this.acivatedRoute.snapshot.params._id))
     if (this.acivatedRoute.snapshot.params._id) {
       this.generateAddEditForm('edit');
 
@@ -140,11 +140,11 @@ export class AddeditDoctorComponent implements OnInit {
           this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
           this.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
           // this.getCity(doctorDetails[0].state);
-          // if(doctorDetails[0].parent_type == "admin") {
-          //   this.getalldata();  
-          // } else {
-          // this.getalldata(doctorDetails[0]);
-          // }
+          if(doctorDetails[0].parent_type == "admin") {
+            this.getalldataforedit();  
+          } else {
+          this.getalldataforedit(doctorDetails[0]);
+          }
           this.getParentData(doctorDetails[0].parent_type)
           //  this.getCity(doctorDetails[0].state);
           // this.getCityByName(doctorDetails[0].state);
@@ -157,7 +157,7 @@ export class AddeditDoctorComponent implements OnInit {
             console.log('doctorDetails[0].doctors_office_id', doctorDetails[0].doctors_office_id);
             console.log('doctorDetails[0].tech_id', doctorDetails[0].tech_id);
             console.log('doctorDetails[0].biller_id', doctorDetails[0].biller_id);
-          }, 2000);
+          }, 1000);
 
           // if (doctorDetails[0].parent_type != "admin") {
           this.doctorManagementAddEditForm.controls['parent_type'].patchValue(doctorDetails[0].parent_type);
@@ -278,6 +278,7 @@ export class AddeditDoctorComponent implements OnInit {
 
   /**getting all the technician data**/
   getalldata(id: any = '') {
+    // console.log('check',id);
     var data = {
       "token": this.htmlText.userData.jwtToken,
       "source": "data_pece",
@@ -320,6 +321,75 @@ export class AddeditDoctorComponent implements OnInit {
       data1.condition['parent_id_object'] = id._id;
       data1.condition['user_type'] = "biller"
       data2.condition['parent_id_object'] = id._id;
+      data2.condition['user_type'] = "doctor_office"
+    }
+
+    if (id == '') {
+      data.condition['user_type'] = "tech"
+      data.condition['parent_type'] = "admin"
+      data1.condition['user_type'] = "biller"
+      data1.condition['parent_type'] = "admin"
+      data2.condition['parent_type'] = "admin"
+      data2.condition['user_type'] = "doctor_office"
+    }
+
+    this.http.httpViaPost('datalist', data).subscribe(response => {
+      this.htmlText.techData = response.res;
+    });
+
+    this.http.httpViaPost('datalist', data1).subscribe(response => {
+      this.htmlText.billerData = response.res;
+    });
+
+    this.http.httpViaPost('datalist', data2).subscribe(response => {
+      this.htmlText.doctorOfficeData = response.res;
+    });
+  }
+
+  getalldataforedit(id: any = '') {
+    console.log('check',id);
+    var data = {
+      "token": this.htmlText.userData.jwtToken,
+      "source": "data_pece",
+      "condition": {}
+    };
+
+    var data1 = {
+      "token": this.htmlText.userData.jwtToken,
+      "source": "data_pece",
+      "condition": {}
+    };
+
+    var data2 = {
+      "token": this.htmlText.userData.jwtToken,
+      "source": "data_pece",
+      "condition": {}
+    };
+
+    if (id.parent_type == 'diagnostic_admin') {
+      data.condition['parent_id_object'] = id.parent_id;
+      data.condition['user_type'] = "tech"
+      data1.condition['parent_id_object'] = id.parent_id;
+      data1.condition['user_type'] = "biller"
+      data2.condition['parent_id_object'] = id.parent_id;
+      data2.condition['user_type'] = "doctor_office"
+    }
+
+    if (id.parent_type == 'doctor_group') {
+      data.condition['parent_id_object'] = id.parent_id;
+      data.condition['user_type'] = "tech"
+      data1.condition['parent_id_object'] = id.parent_id;
+      data1.condition['user_type'] = "biller"
+      data2.condition['parent_id_object'] = id.parent_id;
+      data2.condition['user_type'] = "doctor_office"
+    }
+
+    if (id.parent_type == 'distributor') {
+      data.condition['parent_id_object'] = id.parent_id;
+      data.condition['user_type'] = "tech"
+      data1.condition['parent_id_object'] = id.parent_id;
+      data1.condition['user_type'] = "biller"
+      data2.condition['parent_id_object'] = id.parent_id;
       data2.condition['user_type'] = "doctor_office"
     }
 

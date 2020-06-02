@@ -42,6 +42,26 @@ export class SystemSuperbillComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.orginalReportDetails.patient_details[0].insurance_details = {};
+    this.orginalReportDetails.patient_details[0].insurance_details.insurancename = '';
+    switch(this.orginalReportDetails.patient_details[0].gender) {
+      case 'male':
+        this.orginalReportDetails.patient_details[0].gender_male_flag = true;
+        this.orginalReportDetails.patient_details[0].gender_female_flag = false;
+        break;
+      case 'female':
+        this.orginalReportDetails.patient_details[0].gender_male_flag = false;
+        this.orginalReportDetails.patient_details[0].gender_female_flag = true;
+        break;
+    }
+    // console.log("additional_potential_health_risks: ", this.orginalReportDetails.additional_potential_health_risks);
+    // console.log("r00_description: ", this.orginalReportDetails.r00_description);
+    // console.log("icd_codes: ", this.orginalReportDetails.icd_codes);
+    // console.log("cpt_codes: ", this.orginalReportDetails.cpt_codes);
+
+    this.getInsuranceData('');
+
+
     if(typeof(this.reportDetails.reportData[0].BMI) != 'undefined') {
       this.reportDetails.reportData[0].BMI_flag = Math.round(this.reportDetails.reportData[0].BMI * 10);
       console.log(">>>>", this.reportDetails.reportData[0].BMI_flag);
@@ -110,6 +130,24 @@ export class SystemSuperbillComponent implements OnInit {
         this.reportDetails.reportData[0].BMI70 = true;
       }
     }
+  }
+
+  getInsuranceData(id: any) {
+    var data = {
+      "source": "data_pece",
+      "condition": {
+        "_id_object": this.orginalReportDetails.patient_details[0].insurance_id
+      },
+      "token": this.cookiesData.jwtToken
+    };
+
+    this.httpService.httpViaPost('datalist', data).subscribe((response) => {
+      if(response.status == true) {
+        this.orginalReportDetails.patient_details[0].insurance_details = response.res[0];
+      } else {
+        this.orginalReportDetails.patient_details[0].insurance_details = {};
+      }
+    });
   }
 
 
