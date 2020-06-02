@@ -432,9 +432,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
  .encounter_wrapper .second_table  .book-appointment .mat-horizontal-stepper-header-container { display: none; }
  .encounter_wrapper .second_table  .book-appointment .float-right { display: none; }
  .patient_report_wrapper .patient_item_section .mat-tab-label-active {
-  background:linear-gradient(45deg, #0772ff, #04a6f6);
-  opacity: 1;
-}
+  background:linear-gradient(45deg, #0772ff, #04a6f6); opacity: 1; }
 .mediaDoc_wrapper .media_inner_items{ background: #f8f3f3;  margin: 0; display: flex;
   flex-direction: column; border: 1px solid #b4b5b5; box-sizing: border-box; width:100%; }
 
