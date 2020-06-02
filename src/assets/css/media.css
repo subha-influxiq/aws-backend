@@ -1,6 +1,9 @@
 @media screen and (max-width: 1700px){
   .techdashboard_header .quotation .mat-nav-list .mat-list-item  .mat-list-item-content{ padding: 0 10px;}
 }
+@media screen and (max-width: 1540px){
+  .book-appointment .mat-form-field { width: 31.8%; }
+}
 @media screen and (max-width: 1500px){
   .admin_wrapper, .table_list, .sales_person_db { width: 90%; }
   .action_bar .mat-form-field .mat-form-field-flex { width: 200px; }
