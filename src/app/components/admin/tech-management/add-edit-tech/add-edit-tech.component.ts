@@ -47,14 +47,11 @@ export class AddEditTechComponent implements OnInit {
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService, public snackBar: MatSnackBar, public commonFunction: CommonFunction,
     public dialog: MatDialog) {
-    
     this.htmlText.userData = cookie.getAll();
     this.htmlText.userData.user_details = JSON.parse(this.htmlText.userData.user_details);
     this.allStateCityData();
-      console.log('1111111',this.activeRoute.snapshot);
     if (this.activeRoute.snapshot.params._id) {
       this.generateAddEditForm('edit');
-
       this.htmlText.message     = "Updated Successfully";
       this.htmlText.header      = 'Edit Tech Record';
       this.htmlText.nav         = 'Edit Tech';
@@ -91,14 +88,13 @@ export class AddEditTechComponent implements OnInit {
         delete validateRule.confirmpassword;
 
         this.TechManagementAddEditForm = this.fb.group(validateRule);
-        console.log('222222222222222',this.activeRoute.data);
         this.activeRoute.data.forEach((data) => {
           let billerDetails :any = data.techData.res;
           setTimeout(() => {
             this.getCity(billerDetails[0].state);
           }, 1000);
 
-          // this.TechManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
+          this.TechManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
           this.TechManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
           this.TechManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
           this.TechManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);

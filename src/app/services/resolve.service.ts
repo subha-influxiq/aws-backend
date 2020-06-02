@@ -92,7 +92,7 @@ export class ResolveService implements Resolve<any> {
     /* This one is for Diagnostic Admin Start */
     if(route.url[0].path == 'diagnostic-admin') {
       //requestData.condition['diagnostic_admin_id_object'] = userData._id;;
-      requestData.condition['diagnostic_admin_id_object'] = userData._id;;
+      // requestData.condition['diagnostic_admin_id_object'] = userData._id;;
     }
     /* This one is for Diagnostic Admin End */
     /////////////////////////////////////////////////////////////////////
