@@ -11,19 +11,19 @@
       <tr>
         <td> Patient Name <input type="text" value="{{ orginalReportDetails.patient_details[0].patient_name }}"></td>
         <td>
-          <label> <input type="radio" [(ngModel)]="reportDetails.reportData[0].gender" [ngModelOptions]="{standalone: 1}" value='Male'>M</label>
-          <label> <input type="radio" [(ngModel)]="reportDetails.reportData[0].gender" [ngModelOptions]="{standalone: 1}" value='Female'>F</label>
+          <label> <input type="radio" [checked]="orginalReportDetails.patient_details[0].gender_male_flag == true" [value]="true">M</label>
+          <label> <input type="radio" [checked]="orginalReportDetails.patient_details[0].gender_female_flag == true" [value]="true">F</label>
         </td>
-        <td> <label>Date <input type="text" value="{{ reportDetails.reportData[0].test_date | date }}"> </label></td>
+        <td> <label>Date <input type="text" value="{{ orginalReportDetails.patient_details[0].booking_date | date }}"> </label></td>
       </tr>
 
       <tr>
-        <td> Ordering Physician <input type="text" value="{{ reportDetails.reportData[0].doctor_name }}"></td>
-        <td colspan="2"><label> D.O.B <input type="text" value="{{ reportDetails.reportData[0].birth_date | date }}"></label></td>
+        <td> Ordering Physician <input type="text" value="{{ orginalReportDetails.patient_details[0].doctor_details[0].firstname }} {{ orginalReportDetails.patient_details[0].doctor_details[0].lastname }}"></td>
+        <td colspan="2"><label> D.O.B <input type="text" value="{{ orginalReportDetails.patient_details[0].dob | date }}"></label></td>
       </tr>
 
       <tr>
-        <td> Physician’s Signature <input class="signaturefont" type="text" value="{{ cookiesData.user_details.doctor_signature }}"></td>
+        <td> Physician’s Signature <input class="signaturefont" type="text" value="{{ orginalReportDetails.patient_details[0].doctor_details[0].doctor_signature }}"></td>
         <td colspan="2">
           <p class="suggest">Suggested billing amounts per CPT Code: </p>
           <span class="reportCheck">
@@ -37,7 +37,7 @@
       </tr>
 
       <tr>
-        <td> Patient’s Insurance Carrier (s) <input class="signaturefont" type="text"> </td>
+        <td> Patient’s Insurance Carrier (s) <input type="text" [(ngModel)]="orginalReportDetails.patient_details[0].insurance_details.insurancename" [ngModelOptions]="{standalone: true}"> </td>
         <td colspan="2">
           <label>
             <input type="checkbox" (change)="checkValue(orginalReportDetails.cpt_codes.no_diagnosis_detected?'1':'0', 'cpt_codes', 'no_diagnosis_detected')" [(ngModel)]="orginalReportDetails.cpt_codes.no_diagnosis_detected" [ngModelOptions]="{standalone: 1}">

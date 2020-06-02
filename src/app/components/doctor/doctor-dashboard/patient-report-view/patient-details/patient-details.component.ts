@@ -69,10 +69,19 @@ export class PatientDetailsComponent implements OnInit {
     //   }
     // });
 
+    //console.log("Patient details >>>", this.orginalReportDetails.patient_details[0].doctor_details[0].practice_name);
+
+    var practice_name: any = '';
+    if(this.orginalReportDetails.patient_details[0].doctor_details.length == 0) {
+      practice_name = 'Not Found';
+    } else {
+      practice_name = this.orginalReportDetails.patient_details[0].doctor_details[0].practice_name;
+    }
+
     let patientInfoFormFields: any = [
       {
         type: 'input', name: 'practice_name', placeholder: 'Practice Name',
-        label: 'Practice Name', value: this.orginalReportDetails.patient_details[0].practice_name,
+        label: 'Practice Name', value: practice_name,
         caption: 'Patient General Information', disabled: true
       },
       {

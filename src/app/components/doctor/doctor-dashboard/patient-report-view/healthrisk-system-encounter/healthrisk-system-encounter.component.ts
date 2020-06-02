@@ -44,24 +44,43 @@ export class HealthriskSystemEncounterComponent implements OnInit {
   }
 
   ngOnInit() {
-    // console.log("Print Data: ", this.orginalReportDetails);
+    this.orginalReportDetails.patient_details[0].insurance_details = {};
+    this.orginalReportDetails.patient_details[0].insurance_details.insurancename = '';
+    switch(this.orginalReportDetails.patient_details[0].gender) {
+      case 'male':
+        this.orginalReportDetails.patient_details[0].gender_male_flag = true;
+        this.orginalReportDetails.patient_details[0].gender_female_flag = false;
+        break;
+      case 'female':
+        this.orginalReportDetails.patient_details[0].gender_male_flag = false;
+        this.orginalReportDetails.patient_details[0].gender_female_flag = true;
+        break;
+    }
     // console.log("additional_potential_health_risks: ", this.orginalReportDetails.additional_potential_health_risks);
     // console.log("r00_description: ", this.orginalReportDetails.r00_description);
     // console.log("icd_codes: ", this.orginalReportDetails.icd_codes);
     // console.log("cpt_codes: ", this.orginalReportDetails.cpt_codes);
+
+    this.getInsuranceData('');
   }
 
-  getPatientData(id: any) {
+  getInsuranceData(id: any) {
     var data = {
       "source": "data_pece",
       "condition": {
-        "_id_object": id
+        "_id_object": this.orginalReportDetails.patient_details[0].insurance_id
       },
       "token": this.cookiesData.jwtToken
     };
 
     this.httpService.httpViaPost('datalist', data).subscribe((response) => {
-      this.htmlText.patientDetails = response.res[0];
+      if(response.status == true) {
+        this.orginalReportDetails.patient_details[0].insurance_details = response.res[0];
+
+        console.log(">>>", this.orginalReportDetails.patient_details[0].insurance_details.insurancename);
+      } else {
+        this.orginalReportDetails.patient_details[0].insurance_details = {};
+      }
     });
   }
 
@@ -71,6 +90,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
       "condition": {
         "_id": this.orginalReportDetails._id
       },
+      "_id": this.orginalReportDetails._id,
       "token": this.cookiesData.jwtToken,
       "field": fieldName,
       "code_type": codeFlag,

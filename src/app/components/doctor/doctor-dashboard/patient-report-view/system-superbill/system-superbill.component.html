@@ -11,32 +11,32 @@
             <tr>
                 <td>
                     <label>Patient Name
-                        <input type="text" value="{{ reportDetails.reportData[0].patient_name }}">
+                        <input type="text" value="{{ orginalReportDetails.patient_details[0].patient_name }}">
                     </label>
                 </td>
 
                 <td>
-                    <label><input type="radio" [(ngModel)]="reportDetails.reportData[0].gender" [ngModelOptions]="{standalone: true}" value='Male'>Male</label>
-                    <label><input type="radio" [(ngModel)]="reportDetails.reportData[0].gender" [ngModelOptions]="{standalone: true}" value='Female'>Female</label>
+                    <label><input type="radio" [checked]="orginalReportDetails.patient_details[0].gender_male_flag == true" [value]="true">Male</label>
+                    <label><input type="radio" [checked]="orginalReportDetails.patient_details[0].gender_female_flag == true" [value]="true">Female</label>
                 </td>
 
                 <td>
                     <label>Test Date:
-                        <input type="text" value="{{ reportDetails.reportData[0].test_date | date }}">
+                        <input type="text" value="{{ orginalReportDetails.patient_details[0].booking_date | date }}">
                     </label>
                 </td>
             </tr>
 
             <tr>
-                <td><label>Ordering Physician<input type="text" value="{{ reportDetails.reportData[0].doctor_name }}"></label></td>
+                <td><label>Ordering Physician<input type="text" value="{{ orginalReportDetails.patient_details[0].doctor_details[0].firstname }} {{ orginalReportDetails.patient_details[0].doctor_details[0].lastname }}"></label></td>
                 <td> </td>
-                <td><label>D.O.B <input type="text" value="{{ reportDetails.reportData[0].birth_date | date }}"></label></td>
+                <td><label>D.O.B <input type="text" value="{{ orginalReportDetails.patient_details[0].dob | date }}"></label></td>
             </tr>
 
             <tr>
                 <td class="fifty" colspan="2">
                     <label>Physician’s Signature
-                        <input class="signaturefont" type="text" value="{{ cookiesData.user_details.doctor_signature }}">
+                        <input class="signaturefont" type="text" value="{{ orginalReportDetails.patient_details[0].doctor_details[0].doctor_signature }}">
                     </label>
                 </td>
 

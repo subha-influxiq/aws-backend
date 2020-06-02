@@ -67,10 +67,12 @@ export class ReportConformationComponent implements OnInit {
 
     this.http.httpViaPost('datalist', data).subscribe(response => {
       if(response.status == true) {
+        console.log("Step 1: Get uploaded patient files.");
         /* Get name using file name start */
         this.htmlText.confirmSubmittedDataSource = response.res;
         var patientSearch = [];
         
+        console.log("Step 2: Get patient name using report file name and create an array to get the patient details from database.");
         for(let loop = 0; loop < this.htmlText.confirmSubmittedDataSource.length; loop++) {
           let patientNameArr = this.htmlText.confirmSubmittedDataSource[loop].file_original_name.split(' ');
           this.htmlText.confirmSubmittedDataSource[loop].patient_name = patientNameArr[0] + ' ' + patientNameArr[1];
@@ -91,11 +93,13 @@ export class ReportConformationComponent implements OnInit {
           "token": this.htmlText.userData.jwtToken
         };
   
+        console.log("Step 3: Http request for get all patient data and match patient data.");
         this.http.httpViaPost('bulk-upload-patient-match', data).subscribe(response => {
-          this.htmlText.options = response.data.all_patient;
-          this.htmlText.conflictingPatientRecordsDataSource = [];
-
           if(response.status == "success") {
+            this.htmlText.options = response.data.all_patient;
+            this.htmlText.conflictingPatientRecordsDataSource = [];
+
+            console.log("Step 4: Marge with patient details and conflict record.");
             for(let loop = 0; loop < this.htmlText.confirmSubmittedDataSource.length; loop++) {
               for(let loop2 = 0; loop2 < response.data.match_patient.length; loop2++) {
                 /* For find some patient */
@@ -111,6 +115,8 @@ export class ReportConformationComponent implements OnInit {
                       upload_status: 3,
                       upload_status_text: "File uploaded confirm"
                     });
+
+                    loop2 = response.data.match_patient.length;
                   } else {
                     this.htmlText.conflictingPatientRecordsDataSource.push(this.htmlText.confirmSubmittedDataSource[loop]);
                     this.htmlText.conflictingPatientRecordsDataSource[this.htmlText.conflictingPatientRecordsDataSource.length - 1].patient_details.push(response.data.match_patient[loop2]);
@@ -126,12 +132,17 @@ export class ReportConformationComponent implements OnInit {
               }
             }
 
+                console.log("Step 4: Marge with patient details and conflict record.");
+                console.log("Step 5: Delete conflict record from total patient report array.");
+
             /* Delete conflict data */
             for(let loop = 0; loop < this.htmlText.confirmSubmittedDataSource.length; loop++) {
               if(this.htmlText.confirmSubmittedDataSource[loop].patient_details.length > 1) {
                 this.htmlText.confirmSubmittedDataSource.splice(loop, 1);
               }
             }
+
+            console.log("Step 6: Checking report where patient name not found.");
 
             /* Add not find data */
             var deleteIndex = [];
@@ -149,9 +160,18 @@ export class ReportConformationComponent implements OnInit {
               }
             }
 
+            console.log("Step 7: Delete not patient find record from total patient report array.");
+
             for(let loop = 0; loop < deleteIndex.length; loop++) {
               this.htmlText.confirmSubmittedDataSource.splice(deleteIndex, 1);
             }
+
+            console.log("Step 8: Now we have 3 type of record."); 
+            console.log("          1) Confirm Submit: Find one patient name using file name.");
+            console.log("          2) Conflict Record: Find more then one patient name using file name.");
+            console.log("          3) Report which dose not match with any patient name using file name.");
+
+            console.log("Step 9: Push data into the mat table.");
 
             this.confirmSubmittedDataSource = new MatTableDataSource(this.htmlText.confirmSubmittedDataSource);
             this.conflictingPatientRecordsDataSource = new MatTableDataSource(this.htmlText.conflictingPatientRecordsDataSource);
