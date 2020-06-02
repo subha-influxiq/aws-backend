@@ -71,6 +71,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
       "condition": {
         "_id": this.orginalReportDetails._id
       },
+      "_id": this.orginalReportDetails._id,
       "token": this.cookiesData.jwtToken,
       "field": fieldName,
       "code_type": codeFlag,
