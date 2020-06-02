@@ -133,7 +133,7 @@
       text-transform: uppercase;
       font-weight: normal;
       position: absolute;
-      left: 18px;
+      left: 8px;
       font-family: "AvenirMedium";
     }
 
@@ -147,7 +147,7 @@
   text-transform: capitalize;
   font-weight: normal;
   position: absolute;
-  left: 0px;
+  left: 8px;
   font-size: 16px;
   font-family: "AvenirMedium";
 }
@@ -170,6 +170,8 @@
 .admin_dashboard .DataTable .tablewrapper .mat-table .mat-cell:last-child { padding-left: 20%!important; }
 .admin_dashboard .DataTable .tablewrapper .mat-table .mat-cell:after { left: 14px; bottom: 14px; }
 .admin_dashboard .DataTable .tablewrapper .mat-table .mat-cell{ padding-right: 16px; padding-bottom: 16px;}
+.DataTable .mat-card .tablewrapper { overflow-y: initial; }
+.DataTable .mat-card .tablewrapper .mat-table { width: 100%; }
 }
 @media screen and (max-width: 900px){
   .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item,
@@ -218,8 +220,7 @@
   .admin_dashboard .DataTable .tablewrapper .mat-table .mat-cell:after { left: 14px!important; }
 
 /* new modification */
-.mat-table .mat-cell:after, 
-.mat-table .mat-cell:before{ left: 0;}
+
 .table_wrapper .add_header { display: flex; flex-direction: column; }
 .table_wrapper .add_header button { margin-top: 16px; }
 .searchbar .mat-form-field { width: 47%; }
