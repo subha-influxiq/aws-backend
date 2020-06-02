@@ -601,7 +601,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
   /* new modification */
 
 .admin_dashboard .DataTable .searchbar .mat-form-field{ width: 23.5%;}
-.admin_dashboard .DataTable .tablewrapper table th.mat-header-cell:last-of-type { width: auto; width: 270px; }
+.admin_dashboard .DataTable .tablewrapper table th.mat-header-cell:last-of-type {width: 310px; }
 
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton0,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton1,
@@ -620,7 +620,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton4 button,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton5 button,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton6 button{
-   font-family: 'AvenirMedium'; background: var(--button-color3); box-shadow: none; margin-bottom: 6px; padding: 6px 10px; line-height: inherit; font-size: 12px;}
+   font-family: 'AvenirMedium'; background: var(--button-color3); box-shadow: none; margin-bottom: 6px; padding: 6px 10px; line-height: inherit; font-size: 12px; min-width: 140px;}
 
 
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton0 button {background: var(--button-color1);}
