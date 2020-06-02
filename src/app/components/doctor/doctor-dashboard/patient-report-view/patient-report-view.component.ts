@@ -83,12 +83,12 @@ export class PatientReportViewComponent implements OnInit {
       this.htmlText.allResolveData = data.data.data;
       this.htmlText.orginalData = data.data.data_2[0];
 
-      console.log("Patienr ID: ", data.data.data_2[0].patient_details[0]._id);
-
       if(typeof(this.htmlText.allResolveData.reportData[0].stressi) != 'undefined') {
         this.htmlText.allResolveData.reportData[0].stressI = this.htmlText.allResolveData.reportData[0].stressi;
       }
-      this.htmlText.allResolveData.reportData[0].BMI_flag = Math.round(this.htmlText.allResolveData.reportData[0].BMI);
+
+      var BMI_flag: number = this.htmlText.allResolveData.reportData[0].BMI * 10;
+      this.htmlText.allResolveData.reportData[0].BMI_flag = BMI_flag;
     });
 
     if(typeof(this.cookiesData.user_details.diagnostic_admin_id) != 'undefined') {

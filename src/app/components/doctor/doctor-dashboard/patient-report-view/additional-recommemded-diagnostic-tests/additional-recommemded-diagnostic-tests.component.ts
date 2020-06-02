@@ -59,7 +59,7 @@ export class AdditionalRecommemdedDiagnosticTestsComponent implements OnInit {
     // console.log("cpt_codes: ", this.orginalReportDetails.cpt_codes);
 
     if(this.orginalReportDetails.patient_details[0].doctor_details.length == 0) {
-      this.orginalReportDetails.patient_details[0].doctor_details[0] = {}
+      this.orginalReportDetails.patient_details[0].doctor_details[0] = {};
       this.orginalReportDetails.patient_details[0].doctor_details[0].firstname = 'Not';
       this.orginalReportDetails.patient_details[0].doctor_details[0].lastname = 'Found';
     }
@@ -78,8 +78,6 @@ export class AdditionalRecommemdedDiagnosticTestsComponent implements OnInit {
     this.httpService.httpViaPost('datalist', data).subscribe((response) => {
       if(response.status == true) {
         this.orginalReportDetails.patient_details[0].insurance_details = response.res[0];
-
-        console.log(">>>", this.orginalReportDetails.patient_details[0].insurance_details.insurancename);
       } else {
         this.orginalReportDetails.patient_details[0].insurance_details = {};
       }

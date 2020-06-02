@@ -88,8 +88,6 @@ export class HealthriskSystemEncounterComponent implements OnInit {
       "token": this.cookiesData.jwtToken
     };
 
-    console.log("Subha: ", data);
-
     this.httpService.httpViaPost('datalist', data).subscribe((response) => {
       if(response.status == true) {
         this.orginalReportDetails.patient_details[0].insurance_details = response.res[0];
