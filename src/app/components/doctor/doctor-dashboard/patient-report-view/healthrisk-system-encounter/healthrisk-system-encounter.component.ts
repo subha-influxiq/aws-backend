@@ -61,7 +61,22 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     // console.log("icd_codes: ", this.orginalReportDetails.icd_codes);
     // console.log("cpt_codes: ", this.orginalReportDetails.cpt_codes);
 
-    this.getInsuranceData('');
+    console.log("Patient details: ", this.orginalReportDetails.patient_details[0]);
+
+    if(this.orginalReportDetails.patient_details[0].doctor_details.length == 0) {
+      this.orginalReportDetails.patient_details[0].doctor_details[0] = {};
+      this.orginalReportDetails.patient_details[0].doctor_details[0].firstname = 'Not';
+      this.orginalReportDetails.patient_details[0].doctor_details[0].lastname = 'Found';
+    }
+
+    if(typeof(this.orginalReportDetails.patient_details[0].insurance_id) != 'undefined' && this.orginalReportDetails.patient_details[0].insurance_id != '') {
+      this.getInsuranceData('');
+    } else {
+      console.log("Insurance not found.");
+      this.orginalReportDetails.patient_details[0].insurance_details = {
+        insurancename: ''
+      };
+    }
   }
 
   getInsuranceData(id: any) {
@@ -73,11 +88,11 @@ export class HealthriskSystemEncounterComponent implements OnInit {
       "token": this.cookiesData.jwtToken
     };
 
+    console.log("Subha: ", data);
+
     this.httpService.httpViaPost('datalist', data).subscribe((response) => {
       if(response.status == true) {
         this.orginalReportDetails.patient_details[0].insurance_details = response.res[0];
-
-        console.log(">>>", this.orginalReportDetails.patient_details[0].insurance_details.insurancename);
       } else {
         this.orginalReportDetails.patient_details[0].insurance_details = {};
       }
@@ -94,7 +109,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
       "token": this.cookiesData.jwtToken,
       "field": fieldName,
       "code_type": codeFlag,
-      "value": value
+      "value": parseInt(value)
     };
 
     this.httpService.httpViaPost('update-patient-data-codes', postData).subscribe((response) => {

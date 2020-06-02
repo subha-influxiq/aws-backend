@@ -58,6 +58,11 @@ export class AdditionalRecommemdedDiagnosticTestsComponent implements OnInit {
     // console.log("icd_codes: ", this.orginalReportDetails.icd_codes);
     // console.log("cpt_codes: ", this.orginalReportDetails.cpt_codes);
 
+    if(this.orginalReportDetails.patient_details[0].doctor_details.length == 0) {
+      this.orginalReportDetails.patient_details[0].doctor_details[0] = {}
+      this.orginalReportDetails.patient_details[0].doctor_details[0].firstname = 'Not';
+      this.orginalReportDetails.patient_details[0].doctor_details[0].lastname = 'Found';
+    }
     // this.getInsuranceData('');
   }
 

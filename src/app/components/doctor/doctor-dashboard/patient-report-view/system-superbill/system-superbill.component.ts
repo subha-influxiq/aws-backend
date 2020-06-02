@@ -59,7 +59,21 @@ export class SystemSuperbillComponent implements OnInit {
     // console.log("icd_codes: ", this.orginalReportDetails.icd_codes);
     // console.log("cpt_codes: ", this.orginalReportDetails.cpt_codes);
 
-    this.getInsuranceData('');
+    if(this.orginalReportDetails.patient_details[0].doctor_details.length == 0) {
+      this.orginalReportDetails.patient_details[0].doctor_details.push({
+        firstname: 'Not',
+        lastname: 'Found'
+      });
+    }
+
+    if(typeof(this.orginalReportDetails.patient_details[0].insurance_id) != 'undefined' && this.orginalReportDetails.patient_details[0].insurance_id != '') {
+      this.getInsuranceData('');
+    } else {
+      console.log("Insurance not found.");
+      this.orginalReportDetails.patient_details[0].insurance_details = {
+        insurancename: ''
+      };
+    }
 
 
     if(typeof(this.reportDetails.reportData[0].BMI) != 'undefined') {

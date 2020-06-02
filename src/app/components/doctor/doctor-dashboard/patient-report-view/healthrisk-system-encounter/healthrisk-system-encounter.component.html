@@ -14,7 +14,7 @@
           <label> <input type="radio" [checked]="orginalReportDetails.patient_details[0].gender_male_flag == true" [value]="true">M</label>
           <label> <input type="radio" [checked]="orginalReportDetails.patient_details[0].gender_female_flag == true" [value]="true">F</label>
         </td>
-        <td> <label>Date <input type="text" value="{{ orginalReportDetails.patient_details[0].booking_date | date }}"> </label></td>
+        <td> <label>Date <input type="text" value="{{ orginalReportDetails.patient_details[0].test_date | date }}"> </label></td>
       </tr>
 
       <tr>
