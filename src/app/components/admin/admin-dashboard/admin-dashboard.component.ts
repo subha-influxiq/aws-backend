@@ -62,7 +62,7 @@ export class AdminDashboardComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: "",
+    basecondition: { status: { $gt:7 ,$lt:11 } },
     updateendpoint: 'status-update',
     custombuttons: [
       {
