@@ -47,14 +47,11 @@ export class AddEditTechComponent implements OnInit {
     public router: Router, public httpService: HttpServiceService, private datePipe: DatePipe,
     public cookie: CookieService, public snackBar: MatSnackBar, public commonFunction: CommonFunction,
     public dialog: MatDialog) {
-    
     this.htmlText.userData = cookie.getAll();
     this.htmlText.userData.user_details = JSON.parse(this.htmlText.userData.user_details);
     this.allStateCityData();
-
     if (this.activeRoute.snapshot.params._id) {
       this.generateAddEditForm('edit');
-
       this.htmlText.message     = "Updated Successfully";
       this.htmlText.header      = 'Edit Tech Record';
       this.htmlText.nav         = 'Edit Tech';
@@ -91,7 +88,6 @@ export class AddEditTechComponent implements OnInit {
         delete validateRule.confirmpassword;
 
         this.TechManagementAddEditForm = this.fb.group(validateRule);
-
         this.activeRoute.data.forEach((data) => {
           let billerDetails :any = data.techData.res;
           setTimeout(() => {
