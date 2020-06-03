@@ -409,7 +409,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .add_form .test_date_wrapper .mat-card-content .mat-form-field-flex{ background: #fff;  border: 1px solid #d0d0d0;
   padding: 0 5px; box-sizing: border-box; }
  .patients_info_wrapper .mat-card-content .mat-form-field .mat-form-field-flex{ background: #fff; border: 1px solid #e6e4e4; padding: 0 7px;}
- 
+ .add_form .form_wrapper .mat-form-field-appearance-fill .mat-form-field-flex { border-radius: 4px 4px 0 0;  background: #fff; }
  /* doctor dashboard new */
  .admin_wrapper  .testingDoc { background: linear-gradient(0deg, #07aaf5, #40bffa); font-size: 34px; text-transform: uppercase; color: #fff; padding: 8px 10px;
   font-family: 'AvenirMedium'; }
@@ -427,6 +427,13 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
  .admin_wrapper  .mediaDoc_wrapper .new_wrapper_left{ width: 73%; display: flex;}
  .admin_wrapper  .mediaDoc_wrapper .new_wrapper_right{  width: 26%; display: flex; flex-direction: column;}
  .admin_wrapper  .mediaDoc_wrapper .new_wrapper_right .media_inner_items:last-child { margin-top: 16px;}
+ 
+ .encounter_wrapper .second_table  .book-appointment .mat-card{ box-shadow: none; padding: 10px 8px; }
+ .encounter_wrapper .second_table  .book-appointment .mat-horizontal-stepper-header-container { display: none; }
+ .patient_report_wrapper .patient_item_section .mat-tab-label-active {
+  background:linear-gradient(45deg, #0772ff, #04a6f6);
+  opacity: 1;
+}
 .mediaDoc_wrapper .media_inner_items{ background: #f8f3f3;  margin: 0; display: flex;
   flex-direction: column; border: 1px solid #b4b5b5; box-sizing: border-box; width:100%; }
 
@@ -580,11 +587,11 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .book-event .mat-dialog-container .mat-stepper-horizontal .containerSpan { overflow: inherit; clear: none;}
 
 .book-appointment div>.mat-raised-button,
-.book-event .mat-dialog-container .mat-raised-button { background: linear-gradient(45deg, #21b9ff, #8bc348);
+.book-event .mat-dialog-container .mat-raised-button { background: linear-gradient(45deg, #0676fe, #05a2f7);
   margin-top: 16px; min-width: 120px; font-family: 'AvenirBlack'; border-radius: 0; text-transform: uppercase;}
 
 /* bulk-upload/report-conformation */
-.report_modal td button{  font-family: 'AvenirMedium'; background: linear-gradient(45deg, #048006, #77da00);
+.report_modal td button{  font-family: 'AvenirMedium'; background: linear-gradient(45deg, #0676fe, #05a2f7);
  border-radius: 0; text-transform: uppercase; color: #fff!important;}
 .modal_view .mat-form-field{ width:100%;}
 .modal_view .mat-form-field .mat-form-field-flex { padding: 0 7px 4px; border: 1px solid #dadada; }

@@ -58,7 +58,7 @@ export class ReportConformationComponent implements OnInit {
     this.htmlText.userData.user_details = JSON.parse(this.htmlText.userData.user_details);
 
     var data = {
-      "source": "data_pece",
+      "source": "data_bulk_upload",
       "condition": { 
         "upload_id": this.activatedRoute.snapshot.paramMap.get("upload_id")
       },
