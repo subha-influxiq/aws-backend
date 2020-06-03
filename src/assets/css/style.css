@@ -105,7 +105,8 @@
 .patient_report_section  .mat-form-field-appearance-outline .mat-form-field-wrapper { margin: 0!important; padding-bottom: 0; }
 .patient_report_section  .mat-form-field-appearance-outline .mat-form-field-infix { padding: 1em 0 1em 0; margin: 0; border: 0;}
 .table_wrapper h2{ font-size: 20px; color: #ff0000; font-family: 'AvenirMedium'; text-transform: capitalize; text-align: center;}
-.DataTable table th.mat-header-cell { text-align: left;  font-family: "AvenirMedium";  font-size: 16px; }
+.DataTable table th.mat-header-cell { text-align: left;  font-family: "AvenirMedium"; font-size: 12px;
+  text-transform: uppercase;}
 
 .tablewrapper tr td:first-child, .tablewrapper tr th:first-child{ padding-left: 14px!important; }
 
@@ -137,9 +138,9 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .custom-modalbox .mat-dialog-container .mat-card  { background: rgba(0,0,0, 0.1); border-radius: 0; display: flex; justify-content: center; align-items: end; margin-bottom: 16px;}
 .custom-modalbox .mat-dialog-container .mat-card  .mat-card-header-text { margin: 0; text-transform: capitalize; color: #000; font-family: "AvenirMedium";}
 /* .custom-modalbox .mat-dialog-container .mat-button-base { background: rgb(185, 125, 45); color: #fff; text-transform: uppercase; min-width: 120px; border-radius: 0;} */
-.custom-modalbox .example-card .mat-card-header { width: 280px; position: relative; }
+.custom-modalbox .example-card .mat-card-header { min-width: 280px; position: relative; }
 .custom-modalbox .example-card .mat-card-header .mat-card-title { margin-bottom: 0px; font-size: 18px; font-family: "AvenirLight"; }
-.custom-modalbox .example-card .mat-card-header::before { content: ':'; display: inline-block; font-size: 30px; position: absolute; right: 0; top: -5px; padding-right: 16px; }
+.custom-modalbox .example-card .mat-card-header::before { content: ':'; display: inline-block; font-size: 30px; position: absolute; right: 0; top: -5px; padding-right: 10px; }
 .custom-modalbox .example-card .mat-card-content { width: 100%; }
 
 /* modal for bulk upload container */
@@ -174,7 +175,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 /* manage listing  */
 .table_wrapper .add_header {display: flex; height: auto; justify-content: space-between; align-items: center; padding: 10px; background: #f9f9f9; }
 .table_wrapper .add_header button{ background:var(--button-color2); font-family: 'Avenirmedium'; font-size: 18px; color: #fff; text-transform: uppercase;}
-.tablewrapper tr td{ font-size: 14px; word-break: break-word;}
+.tablewrapper tr td{ font-size: 12px; word-break: break-word;}
 .table_wrapper .no_data{ font-family: 'AvenirBlack'; font-size: 18px; }
 .bradcrumb{ display: block; font-family: 'AvenirLight'; font-size: 16px;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
@@ -198,7 +199,7 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
                                         
 .admin_table table tr td:nth-child(4) span{
   background: linear-gradient(0deg, #d73a87, #ff7abb); text-align: center; display: inline;
-  padding: 8px; box-sizing: border-box; color: #fff; cursor: pointer; text-transform: uppercase; font-family: "RalewayBold"; }
+  padding: 8px; box-sizing: border-box; color: #fff; cursor: pointer; text-transform: uppercase; font-family: "AvenirBlack"; }
 
  td.mat-cell br, td.mat-footer-cell br, th.mat-header-cell br{ display: none; }
  .mat-bottom-sheet-container-large { border: 2px solid #ffbc36!important; }
@@ -213,8 +214,7 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 .patient_item_section .mat-tab-label { opacity: 1; background: #000; color: #ffff; font-size: 14px; text-transform: uppercase; font-family: "AvenirBlack"; padding: 5px 16px; }
 .patient_item_section .mat-tab-label:nth-child(2){ margin: 0 8px; }
 .patient_item_section .mat-tab-label:nth-child(4){ margin: 0 8px; }
-.admin_wrapper .mat-tab-label.mat-tab-label-active { background-color:var(--button-color3); opacity: 1!important;
-  color: #ffff; }
+.admin_wrapper .mat-tab-label.mat-tab-label-active { background-color:var(--button-color3); opacity: 1!important; color: #ffff; }
 .admin_wrapper .mat-tab-group.mat-primary .mat-ink-bar { background-color: #048007; }
 .patient_item_section .mat-tab-group.mat-primary .mat-ink-bar { background-color: transparent; }
 
@@ -395,7 +395,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
   background: var(--button-color2); color: #fff; margin-right: 16px;}
  .admin_wrapper .add_form .submit_form button:first-child{ margin-right: 16px; background: var(--button-color1);}
  .admin_wrapper .add_form .submit_form button:last-child{ margin-right: 0px; background: var(--button-color3);}
- .admin_wrapper .add_form{ width: 100%; margin: 20px auto; background:#fbfbfb ; padding: 16px 10px; padding-bottom: 50px; border: 1px solid #91e7ff; box-sizing: border-box;}
+ .admin_wrapper .add_form{ width: 100%; margin: 20px auto; background:#fbfbfb ; padding: 16px 10px; padding-bottom: 25px; border: 1px solid #91e7ff; box-sizing: border-box;}
  /* #f3f3f3 */
  .admin_wrapper .add_form .form_wrapper textarea{ resize: none;}
  .admin_wrapper .add_form .form_wrapper .mat-form-field{ width: 49%; margin: 0.5%; }
@@ -409,7 +409,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .add_form .test_date_wrapper .mat-card-content .mat-form-field-flex{ background: #fff;  border: 1px solid #d0d0d0;
   padding: 0 5px; box-sizing: border-box; }
  .patients_info_wrapper .mat-card-content .mat-form-field .mat-form-field-flex{ background: #fff; border: 1px solid #e6e4e4; padding: 0 7px;}
- .add_form .form_wrapper .mat-form-field-appearance-fill .mat-form-field-flex { border-radius: 4px 4px 0 0;  background: #fff; }
+ .add_form .form_wrapper .mat-form-field-appearance-fill .mat-form-field-flex { border-radius: 4px 4px 0 0;  background: #eee; }
  /* doctor dashboard new */
  .admin_wrapper  .testingDoc { background: linear-gradient(0deg, #07aaf5, #40bffa); font-size: 34px; text-transform: uppercase; color: #fff; padding: 8px 10px;
   font-family: 'AvenirMedium'; }
@@ -621,10 +621,8 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton5 button {background: var(--button-color6);}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton6 button {background: var(--button-color1);}
 
-.admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p{ margin:6px 0}
+.admin_dashboard .DataTable .tablewrapper tr  .mat-column-general_details p{ margin:6px 0}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(1){color: #21e289; font-size: 15px; font-weight: 700;}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(2){color: #6fc4dc; font-weight: 600;}
-.form2_wrapper .DataTable .searchbar .mat-form-field{ width:48%;}
-
-
-
+.form2_wrapper .DataTable .searchbar .mat-form-field{ width:48%; }
+ 

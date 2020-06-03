@@ -111,7 +111,7 @@
   text-align: right;
   /* font-weight: bold; */
   height:auto;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
   padding: 0 20px;
   position: relative;
   }
@@ -218,6 +218,7 @@
   .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper { width: 100%; align-items: center; justify-content: center; }
   .admin_superbillsection .biller_wrapper .super_bill_item span button{ margin: inherit;}
   .admin_superbillsection .biller_wrapper .super_bill_item span P br{ display: none;}
+  .admin_wrapper .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0%; }
 }
 
 @media screen and (max-width: 540px){
@@ -304,4 +305,3 @@
   .mat-table .mat-cell:before { font-size: 13px; }
   .adminTables td.mat-cell:last-of-type { padding-right: 10px;  }
 }                                            
- 
