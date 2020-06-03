@@ -61,7 +61,7 @@ export class ApprovedPatientReportsComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: "",
+    basecondition: {status:{ $gt:10 ,$lt:14 }},
     updateendpoint: '',
     custombuttons: [
       {

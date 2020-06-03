@@ -1656,8 +1656,8 @@ const routes: Routes = [
       requestcondition: {
         source: 'data_pece',
         condition: {
-          user_type: "tech",
-          diagnostic_admin_id: { $exists: false }
+          // user_type: "tech",
+          // diagnostic_admin_id: { $exists: false }
         }
       },
       endpoint: 'datalist'

@@ -304,11 +304,11 @@
 
          <!-- cpt Validate Amount Start  -->
         <mat-form-field class="parent_cat" appearance="fill" *ngIf = "htmlText.user_details.user_type == 'admin'">
-          <mat-label>Cpt Amount</mat-label>
+          <mat-label>CPT Validated Amount</mat-label>
 
           <mat-select formControlName="cpt_validate_amount">
-            <mat-option value="admin">Select Cpt Amount</mat-option>
-            <mat-option *ngFor="let cpt of htmlText.cpt_amount;" value="{{ cpt.value }}" >{{ cpt.value }}</mat-option>
+            <!-- <mat-option value="admin">Select Cpt Amount</mat-option> -->
+            <mat-option *ngFor="let cpt of htmlText.cpt_amount;" value="{{ cpt.value }}" >${{ cpt.value }}</mat-option>
           </mat-select>
         </mat-form-field>
         <!-- cpt Validate AmountStart  -->

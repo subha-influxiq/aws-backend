@@ -63,7 +63,7 @@ export class AdminDashboardComponent implements OnInit {
   public userData: any;
   public libdata: any = {
     basecondition: "",
-    updateendpoint: '',
+    updateendpoint: 'status-update',
     custombuttons: [
       {
         label: "View Report",
@@ -145,7 +145,7 @@ export class AdminDashboardComponent implements OnInit {
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
-    hidestatustogglebutton: true,
+    // hidestatustogglebutton: true,
     hideviewbutton: true,
     tableheaders: [
       "patient_name",
@@ -154,7 +154,7 @@ export class AdminDashboardComponent implements OnInit {
       "created_at_datetime",
       "cpt_addl",
       "general_details",
-      // "parent_type",
+      // "parent_type",`
       // "parent_id",
       // "doctors_office_id",
     ]
@@ -188,7 +188,7 @@ export class AdminDashboardComponent implements OnInit {
 
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
-  public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
+  public status: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"}];
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
   public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }];
   public SearchingEndpoint: any = "datalist";
