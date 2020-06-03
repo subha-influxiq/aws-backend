@@ -430,10 +430,9 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
  
  .encounter_wrapper .second_table  .book-appointment .mat-card{ box-shadow: none; padding: 10px 8px; }
  .encounter_wrapper .second_table  .book-appointment .mat-horizontal-stepper-header-container { display: none; }
+ .encounter_wrapper .second_table  .book-appointment .float-right { display: none; }
  .patient_report_wrapper .patient_item_section .mat-tab-label-active {
-  background:linear-gradient(45deg, #0772ff, #04a6f6);
-  opacity: 1;
-}
+  background:linear-gradient(45deg, #0772ff, #04a6f6); opacity: 1; }
 .mediaDoc_wrapper .media_inner_items{ background: #f8f3f3;  margin: 0; display: flex;
   flex-direction: column; border: 1px solid #b4b5b5; box-sizing: border-box; width:100%; }
 
@@ -441,8 +440,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
  .mediaDoc_wrapper .media_inner_items .image_wrapper img{ max-width: 100%; vertical-align: middle;}
  .mediaDoc_wrapper .media_inner_items .action_button { background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%); color: #000000; font-size: 22px; font-family: 'AvenirHeavy'; padding: 9px; margin: 0; text-align: center; text-transform: uppercase; width: 100%; border-radius: 0; margin-top: auto; box-sizing: border-box; }
 
-.report_wrapper .items_w  .icon_w{ background: #ffffff; padding: 10px; box-sizing: border-box; display: flex; flex-direction: column;
-align-items: center; justify-content: center; color: #fff; font-family: 'AvenirMedium'; text-transform: capitalize; font-size: 16px; height: 340px; }
+.report_wrapper .items_w  .icon_w{ background: #ffffff; padding: 10px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; font-family: 'AvenirMedium'; text-transform: capitalize; font-size: 16px; height: 340px; }
 .report_wrapper .items_w  .icon_w img{ height: 100%; max-width: 100%;}
 .quickRef .report_wrapper{ display: flex; justify-content: center; flex-wrap: wrap;}
 .quickRef .report_wrapper .items_w { width: 32.3%; margin: 0.5%; display: flex; flex-direction: column; padding: 10px; box-sizing: border-box; border: 1px solid #c3c3c3; border-radius: 5px;}
@@ -472,12 +470,9 @@ color: #fff; min-width: 100px; font-family: 'AvenirMedium'; font-size: 18px;}
 
 /* sales dashboard  */
 .sales_person_db{ width: 1440px; display: block; margin: 0 auto; }
-.sales_person_db .shareLi{ background: #cfaa1e url('../images/shareBanner.png') no-repeat; background-position: 10% bottom; padding:20px; height: 500px;
-  background-size: contain; position: relative; margin-bottom: 16px; }
-.sales_person_db .shareLi .in_w{ width:660px; background: #fff; margin-left: auto; padding: 16px; box-sizing: border-box; border-radius: 4px; top: 50%;
-  position: absolute; transform: translate(-50%, -50%); left: 70%; box-shadow: 0px 2px 8px 0px #404040;}
-.sales_person_db .shareLi .in_w h2{ margin: 0; color: #000; font-family: 'AvenirRoman'; font-size: 22px; text-transform: uppercase; margin-bottom: 10px;    margin-bottom: 10px;
-border-bottom: 2px solid; padding-bottom: 8px;}
+.sales_person_db .shareLi{ background: #cfaa1e url('../images/shareBanner.png') no-repeat; background-position: 10% bottom; padding:20px; height: 500px; background-size: contain; position: relative; margin-bottom: 16px; }
+.sales_person_db .shareLi .in_w{ width:660px; background: #fff; margin-left: auto; padding: 16px; box-sizing: border-box; border-radius: 4px; top: 50%; position: absolute; transform: translate(-50%, -50%); left: 70%; box-shadow: 0px 2px 8px 0px #404040;}
+.sales_person_db .shareLi .in_w h2{ margin: 0; color: #000; font-family: 'AvenirRoman'; font-size: 22px; text-transform: uppercase; margin-bottom: 10px; margin-bottom: 10px; border-bottom: 2px solid; padding-bottom: 8px;}
 .sales_person_db .shareLi .in_w .input_w { display: flex; justify-content: space-between; align-items: center;}
 .sales_person_db .shareLi .in_w .input_w .mat-form-field{ width: 100%; }
 .sales_person_db .shareLi .in_w .input_w button{color: var(--button-color3); padding: 0; min-width: 50px;}
@@ -524,8 +519,7 @@ color: #ffffff; text-align: inherit; display: inline-flex; align-items: center;}
 
 .multipledeleteandupdatebuttan button{ background: linear-gradient(40deg, #ff4081, #dc004b); color: #fff;
 margin: 0 5px;}
-.multipledeleteandupdatebuttan button:last-child{ background: linear-gradient(40deg, #21e289, #00c4fb);
- }
+.multipledeleteandupdatebuttan button:last-child{ background: linear-gradient(40deg, #21e289, #00c4fb); }
 .DataTable .mat-card br{ display: none;}
 .DataTable .mat-card mat-label{ margin-right: 10px;}
 .DataTable .mat-card .tablewrapper { margin-bottom: 16px;}
@@ -559,6 +553,7 @@ margin: 0 5px;}
 .app_list .mat-card .searchbar { padding: 0; }
 lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .book-appointment .mat-form-field{ width: 32%;}
+.book-appointment .mat-form-field-appearance-fill .mat-form-field-flex { background: #fbfbfb; }
 /* calendar management */
 .book-event .mat-dialog-container .mat-stepper-horizontal .mat-horizontal-content-container,
 .book-appointment .mat-stepper-horizontal .mat-horizontal-content-container{padding: 0;}
@@ -630,3 +625,6 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(1){color: #21e289; font-size: 15px; font-weight: 700;}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(2){color: #6fc4dc; font-weight: 600;}
 .form2_wrapper .DataTable .searchbar .mat-form-field{ width:48%;}
+
+
+
