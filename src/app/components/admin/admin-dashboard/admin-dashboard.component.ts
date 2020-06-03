@@ -63,7 +63,7 @@ export class AdminDashboardComponent implements OnInit {
   public userData: any;
   public libdata: any = {
     basecondition: { status: { $gt:7 ,$lt:11 } },
-    updateendpoint: 'status-update',
+    updateendpoint: 'statusupdate',
     custombuttons: [
       {
         label: "View Report",
@@ -269,24 +269,33 @@ export class AdminDashboardComponent implements OnInit {
       for(var i in response.res) {
         if(response.res[i].doc_name_search !="") {
           for(var j in this.authval) {
-            if(response.res[i].doc_name != this.authval[j].name) {
-              // start = true;
-              this.authval.push({name:response.res[i].doc_name,val:response.res[i].doc_name_search}); 
+            if(response.res[i].doc_name == this.authval[j].name) {
+              start = true;
             }
           }
-        //   count++;
-        //   if (count == 1 && start == false) { 
-        //     this.authval.push({name:response.res[i].doc_name,val:response.res[i].doc_name_search}); 
-        // } 
-        // start = false; 
-        // count = 0;
+          count++;
+          if (count == 1 && start == false) { 
+            this.authval.push({name:response.res[i].doc_name,val:response.res[i].doc_name_search}); 
+        } 
+        start = false; 
+        count = 0;
           
         }
       }
       for(var i in response.res) {
         if(response.res[i].tech_name_search !="") {
-        this.techval.push({name:response.res[i].tech_name,val:response.res[i].tech_name_search})
+          for(var j in this.techval) {
+          if(response.res[i].tech_namesearch == this.techval[j].name) {
+            start = true;
+          }
         }
+        count ++;
+        if(count == 1 && start ==false) {
+          this.techval.push({name:response.res[i].tech_namesearch,val:response.res[i].tech_name_search})
+        }
+        start = false;
+        count = 0;
+      }
       }
       for(var i in response.res) {
         if(response.res[i].parent_name_search !="") {

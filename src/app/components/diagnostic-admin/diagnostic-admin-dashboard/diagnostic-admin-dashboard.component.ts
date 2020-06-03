@@ -124,7 +124,7 @@ public libdata: any = {
   ]
 }
 public allUserData_modify_header: any = {
-  "doctor_name": "Doctor Name",
+  "doc_name": "Doctor Name",
   "tech_name": "Tech Name",
   "patient_name": "Patient Name",
   "status_text": "Status",
