@@ -20,26 +20,26 @@ input[type="text"]:focus{ outline: none;  }
 .line_link{ text-align: center; display: block; margin: 20px; color: #0808c3; font-family: "AvenirMedium";}
 input[type="checkbox"]:checked {
   /* box-shadow: 0 0 0 3px hotpink; */
-  position: relative;
+  position: relative; margin-right: 6px;
 }
 input[type="checkbox"]:checked::before{
   content: 'x';
-  /* content: '\2713'; checkmark */
   position: absolute;
   background: #fff;
   width: 100%;
   height: auto;
   color: #ff0707;
-  left: 0px;
+  left: -1px;
   display: flex;
+  -webkit-box-pack: center;
   justify-content: center;
   border: .5px solid #807f7f;
-  line-height: 12px;
+  line-height: 8px;
   box-sizing: border-box;
-  top: 0;
+  top: -1px;
   border-radius: 2px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   padding: 2px 7px 3px;
 }
 

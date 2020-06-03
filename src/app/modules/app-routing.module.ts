@@ -129,6 +129,7 @@ import { AddPatientManuallyComponent } from '../components/doctor-office/add-pat
 // import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component"
 import { EncounterFormComponent } from '../components/encounter-form/encounter-form.component'
 import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
+import { EncounterFormRulesComponent } from '../components/common/encounter-form-rules/encounter-form-rules.component';
 // import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
 
 const routes: Routes = [
@@ -1899,7 +1900,7 @@ const routes: Routes = [
     // }
   },
 
-
+  {path:'encounter-form-status', component:EncounterFormRulesComponent},
 
   /* Error Page Route Start */
   {
@@ -1911,6 +1912,7 @@ const routes: Routes = [
     component: NotFoundErrorComponent
   }
   /* Error Page Route End */
+  
 ];
 
 @NgModule({

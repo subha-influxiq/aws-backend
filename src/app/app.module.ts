@@ -173,6 +173,7 @@ import { ReportUploadSuccessModalComponent } from './components/tech/patient-man
 import { EncounterFormComponent } from './components/encounter-form/encounter-form.component';
 import {RescheduleAppointmentComponent} from "./components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
 import { PatientDetailsComponent } from './components/doctor/doctor-dashboard/patient-report-view/patient-details/patient-details.component';
+import { EncounterFormRulesComponent } from './components/common/encounter-form-rules/encounter-form-rules.component';
 import { ApprovedPatientReportsComponent } from './components/admin/admin-dashboard/approved-patient-reports/approved-patient-reports.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -333,6 +334,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     RescheduleAppointmentComponent,
     EncounterFormComponent,
     PatientDetailsComponent,
+    EncounterFormRulesComponent,
     ApprovedPatientReportsComponent
   ],
   imports: [
