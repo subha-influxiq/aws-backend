@@ -181,7 +181,8 @@ export class BulkUploadComponent implements OnInit {
         "upload_by_tech_id" : this.cookies_id,
         "upload_date"       : Date.now(),
         "upload_status"     : 2,
-        "upload_status_text": "File uploaded"
+        "upload_status_text": "File uploaded",
+        "status_text"       : "File uploaded"
       });
 
       var data = {

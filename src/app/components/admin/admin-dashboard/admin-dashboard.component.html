@@ -372,6 +372,8 @@
   <!-- All Data listing start here(default listing) -->
   <mat-card-content class="table_wrapper admin_dashboard">
 
+    <h1>Patient Reports Pending Approval</h1>
+
     <!-- table -->
     <lib-listing
       class="DataTable" 
@@ -399,6 +401,19 @@
 
   </mat-card-content>
   <!-- dashboard all listing end here -->
+
+
+  <!-- All Data listing start here(default listing) -->
+  <mat-card-content class="table_wrapper admin_dashboard">
+
+    <h1>Approved Patient Reports</h1>
+
+    <app-approved-patient-reports></app-approved-patient-reports>
+
+  </mat-card-content>
+  <!-- dashboard all listing end here -->  
+
+
 </mat-card>
 
 <app-admin-footer></app-admin-footer>
