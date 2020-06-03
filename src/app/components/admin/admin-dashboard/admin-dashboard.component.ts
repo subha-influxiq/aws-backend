@@ -173,7 +173,7 @@ export class AdminDashboardComponent implements OnInit {
   public deleteEndpoint: any = "deletesingledata";
   public apiUrl: any = environment.apiBaseUrl1;
   public tableName: any = "data_pece";
-  public datacollection: any = 'getPatientlistdata';
+  public datacollection: any = 'getPatientlistdata-pending-approval';
 
   public sortdata: any = {
     "type": 'desc',
@@ -230,8 +230,8 @@ export class AdminDashboardComponent implements OnInit {
 
 
     // lib list
-    let endpoint = 'getPatientlistdata';
-    let endpointc = 'getPatientlistdata-count';
+    let endpoint = 'getPatientlistdata-pending-approval';
+    let endpointc = 'getPatientlistdata-pending-approval-count';
     let data: any = {
       "condition": {
         "limit": 10,

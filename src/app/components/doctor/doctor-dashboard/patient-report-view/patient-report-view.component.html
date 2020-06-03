@@ -274,7 +274,7 @@
           </ng-template>
         </mat-tab>
 
-        <mat-tab label="Superbill For Obesity" *ngIf="htmlText.allResolveData.reportData[0].BMI_flag >= 29">
+        <mat-tab label="Superbill For Obesity" *ngIf="htmlText.allResolveData.reportData[0].BMI_flag >= 290">
           <ng-template matTabContent>
             <app-system-superbill [patientDetails]="htmlText.allResolveData" [orginalData]="htmlText.orginalData"></app-system-superbill>
           </ng-template>

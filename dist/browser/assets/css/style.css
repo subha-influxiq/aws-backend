@@ -430,9 +430,16 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
  
  .encounter_wrapper .second_table  .book-appointment .mat-card{ box-shadow: none; padding: 10px 8px; }
  .encounter_wrapper .second_table  .book-appointment .mat-horizontal-stepper-header-container { display: none; }
+<<<<<<< HEAD
  .encounter_wrapper .second_table  .book-appointment .float-right { display: none; }
  .patient_report_wrapper .patient_item_section .mat-tab-label-active {
   background:linear-gradient(45deg, #0772ff, #04a6f6); opacity: 1; }
+=======
+ .patient_report_wrapper .patient_item_section .mat-tab-label-active {
+  background:linear-gradient(45deg, #0772ff, #04a6f6);
+  opacity: 1;
+}
+>>>>>>> 9e98aadeb8412272764a4320320c685facfe2444
 .mediaDoc_wrapper .media_inner_items{ background: #f8f3f3;  margin: 0; display: flex;
   flex-direction: column; border: 1px solid #b4b5b5; box-sizing: border-box; width:100%; }
 

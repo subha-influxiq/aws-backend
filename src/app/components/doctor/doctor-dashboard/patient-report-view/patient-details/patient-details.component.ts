@@ -1098,7 +1098,7 @@ export class PatientDetailsComponent implements OnInit {
       },
       source: 'data_pece'
     }
-    console.log('this.orginalReportDetails.patient_details[0]', this.orginalReportDetails.patient_details[0]);
+    
     if (this.orginalReportDetails.patient_details[0].insurance_id != '') {
       this.httpService.postRequest('get-data', requestData).subscribe((response: any) => {
         let insurance_name = response.res[0].insurancename;
