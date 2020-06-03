@@ -110,10 +110,11 @@ export class ReportConformationComponent implements OnInit {
                     this.htmlText.confirmSubmittedDataSource[loop].patient_details.push(response.data.match_patient[loop2]);
                     this.htmlText.confirmSubmittedDataSource[loop].status = 3;
                     this.htmlText.confirmSubmittedDataSource[loop].report_life_circle.push({
-                      upload_by_tech_id: this.htmlText.userData.user_details._id,
-                      upload_date: Date.now(),
-                      upload_status: 3,
-                      upload_status_text: "File uploaded confirm"
+                      "upload_by_tech_id": this.htmlText.userData.user_details._id,
+                      "upload_date": Date.now(),
+                      "upload_status": 3,
+                      "upload_status_text": "File uploaded confirm",
+                      "File uploaded": "File uploaded confirm"
                     });
 
                     loop2 = response.data.match_patient.length;
@@ -122,10 +123,11 @@ export class ReportConformationComponent implements OnInit {
                     this.htmlText.conflictingPatientRecordsDataSource[this.htmlText.conflictingPatientRecordsDataSource.length - 1].patient_details.push(response.data.match_patient[loop2]);
                     this.htmlText.conflictingPatientRecordsDataSource[this.htmlText.conflictingPatientRecordsDataSource.length - 1].status = 3;
                     this.htmlText.conflictingPatientRecordsDataSource[this.htmlText.conflictingPatientRecordsDataSource.length - 1].report_life_circle.push({
-                      upload_by_tech_id: this.htmlText.userData.user_details._id,
-                      upload_date: Date.now(),
-                      upload_status: 3,
-                      upload_status_text: "File uploaded confirm"
+                      "upload_by_tech_id": this.htmlText.userData.user_details._id,
+                      "upload_date": Date.now(),
+                      "upload_status": 3,
+                      "upload_status_text": "File uploaded confirm",
+                      "File uploaded": "File uploaded confirm"
                     });
                   }
                 }
@@ -151,10 +153,11 @@ export class ReportConformationComponent implements OnInit {
                 this.htmlText.notFindDataSource.push(this.htmlText.confirmSubmittedDataSource[loop]);
                 this.htmlText.notFindDataSource[this.htmlText.notFindDataSource.length - 1].status = 3;
                 this.htmlText.notFindDataSource[this.htmlText.notFindDataSource.length - 1].report_life_circle.push({
-                  upload_by_tech_id: this.htmlText.userData.user_details._id,
-                  upload_date: Date.now(),
-                  upload_status: 3,
-                  upload_status_text: "File uploaded confirm"
+                  "upload_by_tech_id": this.htmlText.userData.user_details._id,
+                  "upload_date": Date.now(),
+                  "upload_status": 3,
+                  "upload_status_text": "File uploaded confirm",
+                  "File uploaded": "File uploaded confirm"
                 });
                 deleteIndex.push(loop);
               }
