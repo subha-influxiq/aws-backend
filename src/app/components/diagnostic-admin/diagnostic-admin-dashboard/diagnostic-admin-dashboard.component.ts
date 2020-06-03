@@ -97,7 +97,9 @@ public allUserData_skip: any = [
 public editUrl: any = "admin/biller-management/edit";
 public userData: any;
 public libdata: any = {
-  basecondition: "",
+  basecondition: { 
+    status: { "$gt": 10 }
+  },
   updateendpoint: '',
   custombuttons: [
     {
@@ -170,7 +172,10 @@ constructor(private router: Router, public cookieService: CookieService, private
 
   this.loginUserData["user_details"] = JSON.parse(cookieService.get('user_details'));
   this.loginUserData["jwtToken"] = cookieService.get('jwtToken');
-  console.log(this.loginUserData.user_details.user_type);
+
+    this.libdata.basecondition.parent_id = this.loginUserData.user_details._id;
+
+    console.log("New data: ", this.libdata.basecondition.parent_id);
 
   /* Get Auth Token */
   this.jwtToken = cookieService.get('jwtToken');
@@ -197,7 +202,9 @@ constructor(private router: Router, public cookieService: CookieService, private
     sort: {
       "type": 'desc',
       "field": 'patient_name'
-    }
+    },
+    status: { "$gt": 10 },
+    parent_id: this.loginUserData.user_details._id
   }
 
   this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
