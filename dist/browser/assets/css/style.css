@@ -332,7 +332,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle img{ max-width: 100%;}
 .superbillerContainer .biller_wrapper .super_bill_item span P{ font-size: 18px!important; line-height: 20px!important;}
 .superbillerContainer .biller_wrapper .super_bill_item span h2{ margin: 0;}
-.superbillerContainer .biller_wrapper .super_bill_item span button { line-height: 28px!important; width: 90px!important; }
+.superbillerContainer .biller_wrapper .super_bill_item span button { line-height: 28px!important; width: 90px!important; } 
 .superbillerContainer .biller_wrapper .super_bill_item {background-size: 90px!important; }
 
 .adminTables .viewButton{ background-color:var(--button-color2); width: auto; height: auto; line-height: initial; padding: 2px 10px; box-shadow: none; border-radius: 2px; font-family: "AvenirMedium"; color: #fff; min-width: inherit;}
@@ -404,17 +404,12 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .patient_preview .mat-form-field-appearance-legacy .mat-form-field-wrapper { padding: 0;}
 .patient_preview .mat-form-field-wrapper{ padding: 0; }
 .patient_preview .mat-form-field-underline {display: none;}
-.patient_preview .mat-form-field-appearance-legacy .mat-form-field-infix { padding: 10px;
-  border: 1px solid #1dbce9; box-sizing: border-box; margin-right: 5px;
-}
+.patient_preview .mat-form-field-appearance-legacy .mat-form-field-infix { padding: 10px; border: 1px solid #1dbce9; box-sizing: border-box; margin-right: 5px; }
 /* add edit form */
-.add_form .test_date_wrapper .mat-card-content .mat-form-field-flex{    background: #fff;
-  border: 1px solid #d0d0d0;
-  padding: 0 5px;
-  box-sizing: border-box;
-}
+.add_form .test_date_wrapper .mat-card-content .mat-form-field-flex{ background: #fff;  border: 1px solid #d0d0d0;
+  padding: 0 5px; box-sizing: border-box; }
  .patients_info_wrapper .mat-card-content .mat-form-field .mat-form-field-flex{ background: #fff; border: 1px solid #e6e4e4; padding: 0 7px;}
- 
+ .add_form .form_wrapper .mat-form-field-appearance-fill .mat-form-field-flex { border-radius: 4px 4px 0 0;  background: #fff; }
  /* doctor dashboard new */
  .admin_wrapper  .testingDoc { background: linear-gradient(0deg, #07aaf5, #40bffa); font-size: 34px; text-transform: uppercase; color: #fff; padding: 8px 10px;
   font-family: 'AvenirMedium'; }
@@ -424,7 +419,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .Admindmin_details .inner{ column-count: 2; column-gap: 20px; display: block; }
 .Admindmin_details .inner_er h3{ text-align: center; text-transform: uppercase; font-size: 28px;
   font-family: 'AvenirMedium'; border-bottom: 2px solid #c5c4c4; padding: 5px; margin: 0; background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%); color: #231c23; }
-.Admindmin_details .list_wrapper{ width: 100%; margin: 0 auto; border-radius: 10px; background: #fff; box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12); padding-top: 0!important; padding-bottom: 20px;}
+.Admindmin_details .list_wrapper{ width: 100%; margin: 0 auto; border-radius: 10px; background: #fff; box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12); padding-top: 0!important; padding-bottom: 20px;} 
 .Admindmin_details .inner_er .mat-list-item{ font-size: 18px; font-family: 'AvenirMedium'; height: inherit;
   padding: 5px; box-sizing: border-box; color: #545454; text-transform: capitalize; }
 .Admindmin_details .inner_er .mat-list-item .lg{ font-size: 18px; font-family: 'AvenirBlack'; }
@@ -432,6 +427,12 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
  .admin_wrapper  .mediaDoc_wrapper .new_wrapper_left{ width: 73%; display: flex;}
  .admin_wrapper  .mediaDoc_wrapper .new_wrapper_right{  width: 26%; display: flex; flex-direction: column;}
  .admin_wrapper  .mediaDoc_wrapper .new_wrapper_right .media_inner_items:last-child { margin-top: 16px;}
+ 
+ .encounter_wrapper .second_table  .book-appointment .mat-card{ box-shadow: none; padding: 10px 8px; }
+ .encounter_wrapper .second_table  .book-appointment .mat-horizontal-stepper-header-container { display: none; }
+ .encounter_wrapper .second_table  .book-appointment .float-right { display: none; }
+ .patient_report_wrapper .patient_item_section .mat-tab-label-active {
+  background:linear-gradient(45deg, #0772ff, #04a6f6); opacity: 1; }
 .mediaDoc_wrapper .media_inner_items{ background: #f8f3f3;  margin: 0; display: flex;
   flex-direction: column; border: 1px solid #b4b5b5; box-sizing: border-box; width:100%; }
 
@@ -439,18 +440,15 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
  .mediaDoc_wrapper .media_inner_items .image_wrapper img{ max-width: 100%; vertical-align: middle;}
  .mediaDoc_wrapper .media_inner_items .action_button { background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%); color: #000000; font-size: 22px; font-family: 'AvenirHeavy'; padding: 9px; margin: 0; text-align: center; text-transform: uppercase; width: 100%; border-radius: 0; margin-top: auto; box-sizing: border-box; }
 
-.report_wrapper .items_w  .icon_w{ background: #ffffff; padding: 10px; box-sizing: border-box; display: flex; flex-direction: column;
-align-items: center; justify-content: center; color: #fff; font-family: 'AvenirMedium'; text-transform: capitalize; font-size: 16px; height: 340px; }
+.report_wrapper .items_w  .icon_w{ background: #ffffff; padding: 10px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; font-family: 'AvenirMedium'; text-transform: capitalize; font-size: 16px; height: 340px; }
 .report_wrapper .items_w  .icon_w img{ height: 100%; max-width: 100%;}
 .quickRef .report_wrapper{ display: flex; justify-content: center; flex-wrap: wrap;}
-.quickRef .report_wrapper .items_w { width: 32.3%; margin: 0.5%; display: flex; flex-direction: column; padding: 10px; box-sizing: border-box;
-  border: 1px solid #c3c3c3; border-radius: 5px;}
+.quickRef .report_wrapper .items_w { width: 32.3%; margin: 0.5%; display: flex; flex-direction: column; padding: 10px; box-sizing: border-box; border: 1px solid #c3c3c3; border-radius: 5px;}
 .quickRef .report_wrapper .items_w:last-child{ margin-bottom: 0.5%;}
 .report_wrapper .items_w .name_wr{ display: flex; justify-content: space-between; align-items: center;}
 .report_wrapper .items_w .name_wr .reportName{ font-family: 'AvenirHeavy'; color: #272520; font-size: 20px; padding-right: 10px; line-height: 22px; box-sizing: border-box;}
 .report_wrapper .items_w .action_button{background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%);
-  color: #000000; font-size: 22px; font-family: 'AvenirHeavy'; padding: 4px; margin: 0; text-align: center; text-transform: uppercase; width: 100%;
-  border-radius: 0; margin-top: auto; box-sizing: border-box; }
+  color: #000000; font-size: 22px; font-family: 'AvenirHeavy'; padding: 4px; margin: 0; text-align: center; text-transform: uppercase; width: 100%; border-radius: 0; margin-top: auto; box-sizing: border-box; }
 .viewMore_w{ justify-content: center; background: transparent!important; height: auto!important; margin-bottom: 30px!important; padding: 0!important;}
 .viewMore_w button{ min-width: 444px; background: linear-gradient(0deg, #04aaf5, #32baf9); font-family: 'AvenirHeavy'; color: #fff; text-transform: uppercase; font-size: 28px; padding: 4px;}
 
@@ -459,7 +457,7 @@ align-items: center; justify-content: center; color: #fff; font-family: 'AvenirM
 .mat-dialog-container .mat-dialog-title {line-height: inherit;  text-align: center; margin: 0; display: block; background: var(--button-color3);
 color: #fff; padding:10px 6px; font-family: 'AvenirBlack'; text-transform: uppercase; }
 .mat-dialog-container .mat-dialog-content { display: block; margin: 0; padding: 16px; box-sizing: border-box; max-height: 90vh; overflow: auto; }
-
+                          
 .mat-dialog-container .mat-dialog-content .mat-form-field{ width:100%}
 .mat-dialog-container .mat-dialog-content .submit_form{  display: flex; justify-content: flex-end;}
 .mat-dialog-container .mat-dialog-content .submit_form button{ font-family: 'AvenirBlack'; text-transform: uppercase; color: #fff; background: var(--button-color2);}
@@ -472,12 +470,9 @@ color: #fff; min-width: 100px; font-family: 'AvenirMedium'; font-size: 18px;}
 
 /* sales dashboard  */
 .sales_person_db{ width: 1440px; display: block; margin: 0 auto; }
-.sales_person_db .shareLi{ background: #cfaa1e url('../images/shareBanner.png') no-repeat; background-position: 10% bottom; padding:20px; height: 500px;
-  background-size: contain; position: relative; margin-bottom: 16px; }
-.sales_person_db .shareLi .in_w{ width:660px; background: #fff; margin-left: auto; padding: 16px; box-sizing: border-box; border-radius: 4px; top: 50%;
-  position: absolute; transform: translate(-50%, -50%); left: 70%; box-shadow: 0px 2px 8px 0px #404040;}
-.sales_person_db .shareLi .in_w h2{ margin: 0; color: #000; font-family: 'AvenirRoman'; font-size: 22px; text-transform: uppercase; margin-bottom: 10px;    margin-bottom: 10px;
-border-bottom: 2px solid; padding-bottom: 8px;}
+.sales_person_db .shareLi{ background: #cfaa1e url('../images/shareBanner.png') no-repeat; background-position: 10% bottom; padding:20px; height: 500px; background-size: contain; position: relative; margin-bottom: 16px; }
+.sales_person_db .shareLi .in_w{ width:660px; background: #fff; margin-left: auto; padding: 16px; box-sizing: border-box; border-radius: 4px; top: 50%; position: absolute; transform: translate(-50%, -50%); left: 70%; box-shadow: 0px 2px 8px 0px #404040;}
+.sales_person_db .shareLi .in_w h2{ margin: 0; color: #000; font-family: 'AvenirRoman'; font-size: 22px; text-transform: uppercase; margin-bottom: 10px; margin-bottom: 10px; border-bottom: 2px solid; padding-bottom: 8px;}
 .sales_person_db .shareLi .in_w .input_w { display: flex; justify-content: space-between; align-items: center;}
 .sales_person_db .shareLi .in_w .input_w .mat-form-field{ width: 100%; }
 .sales_person_db .shareLi .in_w .input_w button{color: var(--button-color3); padding: 0; min-width: 50px;}
@@ -524,8 +519,7 @@ color: #ffffff; text-align: inherit; display: inline-flex; align-items: center;}
 
 .multipledeleteandupdatebuttan button{ background: linear-gradient(40deg, #ff4081, #dc004b); color: #fff;
 margin: 0 5px;}
-.multipledeleteandupdatebuttan button:last-child{ background: linear-gradient(40deg, #21e289, #00c4fb);
- }
+.multipledeleteandupdatebuttan button:last-child{ background: linear-gradient(40deg, #21e289, #00c4fb); }
 .DataTable .mat-card br{ display: none;}
 .DataTable .mat-card mat-label{ margin-right: 10px;}
 .DataTable .mat-card .tablewrapper { margin-bottom: 16px;}
@@ -559,6 +553,7 @@ margin: 0 5px;}
 .app_list .mat-card .searchbar { padding: 0; }
 lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .book-appointment .mat-form-field{ width: 32%;}
+.book-appointment .mat-form-field-appearance-fill .mat-form-field-flex { background: #fbfbfb; }
 /* calendar management */
 .book-event .mat-dialog-container .mat-stepper-horizontal .mat-horizontal-content-container,
 .book-appointment .mat-stepper-horizontal .mat-horizontal-content-container{padding: 0;}
@@ -584,22 +579,18 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
   font-size: 16px; color: #0ac3a2; text-align: left; word-break: break-word; }
 
 .book-appointment .mat-stepper-horizontal .containerSpan,  
-.book-event .mat-dialog-container .mat-stepper-horizontal .containerSpan { overflow: inherit;
-  clear: none;} 
-
+.book-event .mat-dialog-container .mat-stepper-horizontal .containerSpan { overflow: inherit; clear: none;}
 
 .book-appointment div>.mat-raised-button,
-.book-event .mat-dialog-container .mat-raised-button { background: linear-gradient(45deg, #21b9ff, #8bc348);
+.book-event .mat-dialog-container .mat-raised-button { background: linear-gradient(45deg, #0676fe, #05a2f7);
   margin-top: 16px; min-width: 120px; font-family: 'AvenirBlack'; border-radius: 0; text-transform: uppercase;}
 
 /* bulk-upload/report-conformation */
-.report_modal td button{  font-family: 'AvenirMedium'; background: linear-gradient(45deg, #048006, #77da00);
+.report_modal td button{  font-family: 'AvenirMedium'; background: linear-gradient(45deg, #0676fe, #05a2f7);
  border-radius: 0; text-transform: uppercase; color: #fff!important;}
 .modal_view .mat-form-field{ width:100%;}
 .modal_view .mat-form-field .mat-form-field-flex { padding: 0 7px 4px; border: 1px solid #dadada; }
-
-  /* new modification */
-
+/* new modification */
 .admin_dashboard .DataTable .searchbar .mat-form-field{ width: 23.5%;}
 .admin_dashboard .DataTable .tablewrapper table th.mat-header-cell:last-of-type {width: 310px; }
 
@@ -622,7 +613,6 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton6 button{
    font-family: 'AvenirMedium'; background: var(--button-color3); box-shadow: none; margin-bottom: 6px; padding: 6px 10px; line-height: inherit; font-size: 12px; min-width: 140px;}
 
-
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton0 button {background: var(--button-color1);}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton1 button {background: var(--button-color2);}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton2 button {background: var(--button-color3);}
@@ -635,3 +625,6 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(1){color: #21e289; font-size: 15px; font-weight: 700;}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(2){color: #6fc4dc; font-weight: 600;}
 .form2_wrapper .DataTable .searchbar .mat-form-field{ width:48%;}
+
+
+
