@@ -36,6 +36,7 @@ export class AddeditDoctorComponent implements OnInit {
       name: "Distributor",value:"distributor"
     }, { name: "DiagnosticAdmin",value:"diagnostic_admin" }, { name: "DoctorGroup",value:"doctor_group" }],
     parent_id: [],
+    cpt_amount : [{value:12},{value:13},{value:14},{value:15}],
     billerData: [],
     states: "",
     allCities: "",
@@ -96,6 +97,7 @@ export class AddeditDoctorComponent implements OnInit {
       user_type: ['doctor'],
       parent_type: ['admin'],
       parent_id: ['', []],
+      cpt_validate_amount:[12,[]],
       tech_id: [[]],
       biller_id: [[]],
       doctors_office_id: [[]],
@@ -105,6 +107,9 @@ export class AddeditDoctorComponent implements OnInit {
       confirmpassword: ['', [Validators.required]]
     };
     let passwordRule: any = { validators: this.matchpassword('password', 'confirmpassword') };
+    // if(typeof(validateRule.cpt_validate_amount) != 'undefined' || validateRule.cpt_validate_amount !=null || validateRule.cpt_validate_amount != "") {
+    //   validateRule.cpt_validate_amount = ['',[Validators.minLength(12),Validators.maxLength(15)]]
+    // }
 
     // diagnostic_admin
     if (this.htmlText.user_details.user_type == 'diagnostic_admin') {
@@ -482,6 +487,9 @@ export class AddeditDoctorComponent implements OnInit {
         this.doctorManagementAddEditForm.value.status = parseInt("1");
       } else {
         this.doctorManagementAddEditForm.value.status = parseInt("0");;
+      }
+      if(this.doctorManagementAddEditForm.value.cpt_validate_amount) {
+        this.doctorManagementAddEditForm.value.cpt_validate_amount = parseInt(this.doctorManagementAddEditForm.value.cpt_validate_amount)
       }
 
 

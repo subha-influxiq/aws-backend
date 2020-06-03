@@ -203,12 +203,13 @@ export class AdminDashboardComponent implements OnInit {
   public SearchingSourceName: any = "data_biller_list";
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type } , { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }],
-      // datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
+      
+      selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type } , { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },{label: "Search By Doctor", field: 'doc_name_search', values:this.authval },{label: "Search By Tech", field: 'tech_name_search', values:this.techval },{label: "Search By Doctor Office", field: 'author_search', values:this.docofficeval },{label: "Search By Parent Name", field: 'patient_name', values:this.parentnameval },{label: "Search By Doctor City", field: 'author_search', values:this.doctorcity },{label: "Search By Doctor State", field: 'author_search', values:this.doctorstate },{label: "Search By Parent City", field: 'author_search', values:this.patientcity },{label: "Search By Parent State", field: 'author_search', values:this.patientstate }],
+      datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
       // textsearch: [{ label: "Search By Name", field: 'name_search' },
       // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],
-      search:[{label: "Search By Doctor", field: 'doc_name_search', values:this.authval },
-      {label: "Search By Tech", field: 'tech_name_search', values:this.techval },{label: "Search By Doctor Office", field: 'author_search', values:this.docofficeval },{label: "Search By Parent Name", field: 'patient_name', values:this.parentnameval },{label: "Search By Doctor City", field: 'author_search', values:this.doctorcity },{label: "Search By Doctor State", field: 'author_search', values:this.doctorstate },{label: "Search By Parent City", field: 'author_search', values:this.patientcity },{label: "Search By Parent State", field: 'author_search', values:this.patientstate }]
+      // search:[,
+      // ]
     };
   // lib list end
 
@@ -251,36 +252,75 @@ export class AdminDashboardComponent implements OnInit {
     this.http.httpViaPostbyApi1(endpoint, data).subscribe((res: any) => {
       // console.log(res);
       this.allBillerData = res.results.res;
-      for(var i in res.results.res) {
-        this.authval.push({name:res.results.res[i].doc_name,val:res.results.res[i].doc_name_search})
-      }
-      for(var i in res.results.res) {
-        this.techval.push({name:res.results.res[i].tech_name,val:res.results.res[i].tech_name_search})
-      }
-      for(var i in res.results.res) {
-        this.parentnameval.push({name:res.results.res[i].parent_name,val:res.results.res[i].parent_name_search})
-      }
-      for(var i in res.results.res) {
-        this.doctorstate.push({name:res.results.res[i].doctor_state,val:res.results.res[i].doctor_state_search})
-      }
-      for(var i in res.results.res) {
-        this.doctorcity.push({name:res.results.res[i].doctor_city,val:res.results.res[i].doctor_city_search})
-      }
-      for(var i in res.results.res) {
-        this.patientcity.push({name:res.results.res[i].patient_city,val:res.results.res[i].patient_city_search})
-      }
-      for(var i in res.results.res) {
-        this.patientstate.push({name:res.results.res[i].patient_state,val:res.results.res[i].patient_state_search })
-      }
-      for(var i in res.results.res) {
-        this.docofficeval.push({name:res.results.res[i].doctor_ofiice_name,val:res.results.res[i].doctor_ofiice_name_search })
-      }
     }, error => {
       console.log('Oooops!');
     });
   }
 
   ngOnInit() {
+    let data:any= {
+      "source":"patient_data_desc_patient_name",
+      "condition":{},
+      "token":this.jwtToken
+    }
+    this.http.httpViaPost("datalist", data).subscribe((response: any) => {
+      var start = false;
+      var count = 0;
+      for(var i in response.res) {
+        if(response.res[i].doc_name_search !="") {
+          for(var j in this.authval) {
+            if(response.res[i].doc_name != this.authval[j].name) {
+              // start = true;
+              this.authval.push({name:response.res[i].doc_name,val:response.res[i].doc_name_search}); 
+            }
+          }
+        //   count++;
+        //   if (count == 1 && start == false) { 
+        //     this.authval.push({name:response.res[i].doc_name,val:response.res[i].doc_name_search}); 
+        // } 
+        // start = false; 
+        // count = 0;
+          
+        }
+      }
+      for(var i in response.res) {
+        if(response.res[i].tech_name_search !="") {
+        this.techval.push({name:response.res[i].tech_name,val:response.res[i].tech_name_search})
+        }
+      }
+      for(var i in response.res) {
+        if(response.res[i].parent_name_search !="") {
+        this.parentnameval.push({name:response.res[i].parent_name,val:response.res[i].parent_name_search})
+        }
+      }
+      for(var i in response.res) {
+        if(response.res[i].doctor_state_search !="") {
+        this.doctorstate.push({name:response.res[i].doctor_state,val:response.res[i].doctor_state_search})
+        }
+      }
+      for(var i in response.res) {
+        if(response.res[i].doctor_city_search !="") {
+        this.doctorcity.push({name:response.res[i].doctor_city,val:response.res[i].doctor_city_search})
+        }
+      }
+      for(var i in response.res) {
+        if(response.res[i].patient_city_search !="") {
+        this.patientcity.push({name:response.res[i].patient_city,val:response.res[i].patient_city_search})
+        }
+      }
+      for(var i in response.res) {
+        if(response.res[i].patient_state_search !="") {
+        this.patientstate.push({name:response.res[i].patient_state,val:response.res[i].patient_state_search })
+        }
+      }
+      for(var i in response.res) {
+        if(response.res[i].doctor_ofiice_name_search !="") {
+        this.docofficeval.push({name:response.res[i].doctor_ofiice_name,val:response.res[i].doctor_ofiice_name_search })
+        }
+      }
+    }, error => {
+      console.log('Oooops!');
+    });
   }
 
   ngAfterViewInit() {
