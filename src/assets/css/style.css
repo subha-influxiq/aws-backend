@@ -625,4 +625,34 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(1){color: #21e289; font-size: 15px; font-weight: 700;}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(2){color: #6fc4dc; font-weight: 600;}
 .form2_wrapper .DataTable .searchbar .mat-form-field{ width:48%; }
+
+.encounter_rules{padding: 16px!important;}
+.encounter_rules .admin_superbillsection table{
+  width: 100%; border-collapse: collapse; background: #fff;
+}
+
+.encounter_rules .admin_superbillsection table tr th,
+.encounter_rules .admin_superbillsection table tr td{
+  vertical-align: top; padding: 10px;
+  border: 1px solid #dadada; text-align: left; font-family: 'AvenirMedium';
+}
+.encounter_rules .admin_superbillsection table tr th{font-family: 'AvenirBlack'; background: #f9f9f9; font-size: 14px;}
+.encounter_rules .admin_superbillsection h1{ margin: 0; margin-bottom: 16px;}
+
  
+.encounter_rules .admin_superbillsection table .mat-column-SL{ width: 5%; }
+.encounter_rules .admin_superbillsection table .mat-column-Remarks{ width: 20%; }
+.encounter_rules .admin_superbillsection table .mat-column-Rules { width: 75%; }
+.encounter_rules .admin_superbillsection .tab table{ box-shadow: none;}
+.encounter_rules .admin_superbillsection .tab h3{
+  border: 1px solid #dadada; margin: 0;
+    border-bottom: 0;
+    background: #f9f9f9;
+    padding: 16px 8px;
+    font-family: 'AvenirBlack'; font-size:16px; color: #828282;
+}
+.encounter_rules .admin_superbillsection .tab table tr.mat-header-row{ font-family:'AvenirBlack'; }
+.encounter_rules .admin_superbillsection .tab table tr.mat-header-row, 
+.encounter_rules .admin_superbillsection .tab table tr.mat-row{
+  height: auto;
+}

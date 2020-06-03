@@ -1,0 +1,65 @@
+<app-admin-header></app-admin-header>
+<mat-card class="admin_wrapper encounter_rules">
+    <mat-card-content class="admin_superbillsection">
+        <h1> Encounter Form Rules </h1>
+        <mat-card-content class="tab">
+            <h3>ICD10 Code Rules</h3>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="SL">
+                    <th mat-header-cell *matHeaderCellDef> SL. </th>
+                    <td mat-cell *matCellDef="let element" title="SL."> {{element.SL}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="Rules">
+                    <th mat-header-cell *matHeaderCellDef> Rules </th>
+                    <td mat-cell *matCellDef="let element" title="Rules"> {{element.Rules}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="Remarks">
+                    <th mat-header-cell *matHeaderCellDef> Remarks </th>
+                    <td mat-cell *matCellDef="let element" title="Remarks"> {{element.Remarks}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="icdColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: icdColumns;"></tr>
+            </table>
+        </mat-card-content>
+        <br>
+        <mat-card-content class="tab">
+            <h3>CPT Code Rules</h3>
+
+            <table mat-table [dataSource]="dataSourceCPT" class="mat-elevation-z8">
+
+
+                <ng-container matColumnDef="SL">
+                    <th mat-header-cell *matHeaderCellDef> SL. </th>
+                    <td mat-cell *matCellDef="let element" title="SL."> {{element.SL}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Rules">
+                    <th mat-header-cell *matHeaderCellDef> Rules </th>
+                    <td mat-cell *matCellDef="let element" title="Rules"> {{element.Rules}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Remarks">
+                    <th mat-header-cell *matHeaderCellDef> Remarks </th>
+                    <td mat-cell *matCellDef="let element" title="Remarks"> {{element.Remarks}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="icdColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: icdColumns;"></tr>
+            </table>
+        </mat-card-content>
+
+    </mat-card-content>
+</mat-card>
+<app-admin-footer></app-admin-footer>
+

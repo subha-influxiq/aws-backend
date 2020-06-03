@@ -152,6 +152,11 @@
   .admin_dashboard .DataTable .tablewrapper .mat-table .mat-cell{ padding-right: 16px; padding-bottom: 16px;}
   .DataTable .mat-card .tablewrapper { overflow-y: initial; }
   .DataTable .mat-card .tablewrapper .mat-table { width: 100%; }
+  .encounter_rules .admin_superbillsection .tab h3{ border:none;}
+  .encounter_rules .admin_superbillsection table .mat-column-SL,
+  .encounter_rules .admin_superbillsection table .mat-column-Rules, 
+  .encounter_rules .admin_superbillsection table .mat-column-Remarks { width: auto; }
+  .encounter_rules .admin_superbillsection table tr td { text-align: right; border: none; padding-left: 80px; border-bottom: 1px solid #c5c4c4;}
 }
 @media screen and (max-width: 900px){
   .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item,
