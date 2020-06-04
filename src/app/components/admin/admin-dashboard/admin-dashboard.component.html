@@ -1,6 +1,27 @@
 <app-admin-header></app-admin-header>
 
 <mat-card class="admin_wrapper">
+  <mat-card-content class="shareLink_wrpr">
+    <h2>Doctor Signup through the following link:</h2>
+
+    <mat-toolbar class="link_field">
+      <input disabled  value="for expl: https://pece-doctor-signup.influxiq.com/">
+      <span class="shreWr">
+        <a mat-button>copy</a>
+
+      </span>
+    </mat-toolbar>
+    <mat-toolbar class="iconBar">
+      <p>Share To: </p>
+      <span class="icon_wr">
+        <button mat-button><i class="fab fa-facebook-f"></i></button>
+        <button mat-button><i class="fab fa-twitter"></i></button>
+        <button mat-button><i class="fab fa-linkedin-in"></i></button>
+        <button mat-button><i class="fab fa-tumblr"></i></button>
+      </span>
+    </mat-toolbar>
+
+  </mat-card-content>
   <mat-card-content class="content_wrapper">
 
     <mat-card-content class="itemsection">
@@ -375,28 +396,13 @@
     <h1>Patient Reports Pending Approval</h1>
 
     <!-- table -->
-    <lib-listing
-      class="DataTable" 
-      *ngIf="allBillerData.length>0" 
-      [datasource]="allBillerData" 
-      [skip]="allUserData_skip"
-      [modify_header_array]="allUserData_modify_header" 
-      [detail_skip_array]="previewModal_detail_skip" 
-      [apiurl]="apiUrl"
-      [sourcedata]="tableName" 
-      [editroute]="editUrl" 
-      [jwttoken]="jwtToken" 
-      [statusarr]="status"
-      [updateendpoint]="UpdateEndpoint" 
-      [deleteendpoint]="deleteEndpoint" 
-      [date_search_endpoint]="SearchingEndpoint"
-      [date_search_source]="SearchingSourceName" 
-      [search_settings]="search_settings" 
-      [sortdata]="sortdata" 
-      [datacollection]="datacollection" 
-      [libdata]="libdata" 
-      [date_search_source_count]="billerData_count" 
-      [limitcond]="limitcond" >
+    <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData" [skip]="allUserData_skip"
+      [modify_header_array]="allUserData_modify_header" [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl"
+      [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="jwtToken" [statusarr]="status"
+      [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
+      [date_search_source]="SearchingSourceName" [search_settings]="search_settings" [sortdata]="sortdata"
+      [datacollection]="datacollection" [libdata]="libdata" [date_search_source_count]="billerData_count"
+      [limitcond]="limitcond">
     </lib-listing>
 
   </mat-card-content>
@@ -411,7 +417,7 @@
     <app-approved-patient-reports></app-approved-patient-reports>
 
   </mat-card-content>
-  <!-- dashboard all listing end here -->  
+  <!-- dashboard all listing end here -->
 
 
 </mat-card>

@@ -180,6 +180,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .bradcrumb{ display: block; font-family: 'AvenirLight'; font-size: 16px;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
 .container .searchbar .search_class{ display: flex; justify-content: center; width: 100%; }
+.admin_dashboard .container .searchbar .search_class{ display: flex; justify-content: center; width: auto; }
 
 
 .container .searchbar .add_button { background: var(--button-color3); font-family: 'AvenirRoman'; font-size: 16px;
@@ -656,3 +657,45 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .encounter_rules .admin_superbillsection .tab table tr.mat-row{
   height: auto;
 }
+
+.encounter_rules .admin_superbillsection .greenbar{
+  background: url('../../assets/images/AWSLinkedINBanner.jpg') no-repeat;
+  background-position: center;
+  padding: 20px;
+  background-color: #21a6b7;
+  background-size: cover;
+  height: 340px;
+  position: relative;
+  margin-bottom: 16px;
+}
+.encounter_rules .admin_superbillsection .greenbar p{
+ top: 65%; position: absolute; font-family: 'AvenirBlack'; font-size: 60px;
+ margin: 0; text-transform: uppercase; color: #08ab7d; }
+
+.shareLink_wrpr { background: #fff; padding: 16px; margin: 14px 10px 16px!important; border-radius: 4px; }
+ 
+.shareLink_wrpr h2{ font-size: 24px; text-transform: uppercase; font-family: 'AvenirMedium';margin: 0; color: #37d32f; }
+.shareLink_wrpr input{ background: #fff; padding: 10px; width: 100%; border: none; box-shadow: 1px 1px 3px #504e4e;}
+.shareLink_wrpr .link_field{ background: none; padding: 0;}
+.shareLink_wrpr .link_field .shreWr a{     background: linear-gradient(45deg, #03a9f5, #0072a5);
+  font-family: 'AvenirMedium';
+  margin-left: 10px;
+  width: 120px;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 4px; }
+  .shareLink_wrpr .iconBar p{ margin:0; font-family: 'AvenirBlack'; color: seagreen;}
+  .shareLink_wrpr .iconBar .icon_wr button { width: 30px;
+    height: 30px;
+    min-width: inherit;
+    text-align: center;
+    padding: 0;
+    border-radius: 50%;
+    margin: 0 10px; line-height: inherit;
+  }
+  .shareLink_wrpr .iconBar{ height: inherit; padding: 0; background: none;}
+  .shareLink_wrpr .iconBar .icon_wr button i{ font-size: 20px; }
+  .shareLink_wrpr .iconBar .icon_wr button:nth-child(1) { background: #3b5998; color:#fff; }
+  .shareLink_wrpr .iconBar .icon_wr button:nth-child(2) { background: #00acee; color:#fff; }
+  .shareLink_wrpr .iconBar .icon_wr button:nth-child(3) { background: #0e76a8 ; color:#fff; }
+  .shareLink_wrpr .iconBar .icon_wr button:nth-child(4) { background: #34526f ; color:#fff; }
