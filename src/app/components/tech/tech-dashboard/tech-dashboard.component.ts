@@ -9,6 +9,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component';
 import * as momentImported from 'moment';
+import { environment } from '../../../../environments/environment';
 const moment = momentImported;
 
 
@@ -42,7 +43,11 @@ export interface DialogData {
 export class TechDashboardComponent implements OnInit {
 
   public jwtToken: any;
-  // Lib list
+  
+
+
+
+  // list *********
   public allBillerData: any = [];
   public billerData_count: any = 0;
   public datasource: any;
@@ -52,7 +57,6 @@ export class TechDashboardComponent implements OnInit {
     "_id",
     "report_file_type",
     "tech_id",
-    "tech_name",
     "tech_email",
     "batch_name",
     "report_type",
@@ -75,10 +79,17 @@ export class TechDashboardComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: {},
+    basecondition: { 
+      status: { "$gt": 10 }
+    },
     updateendpoint: '',
     custombuttons: [
-      
+      {
+        label: "View Report",
+        route: "admin/patient-record/",
+        type: 'internallink',
+        param: ['_id'],
+      },
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
@@ -86,6 +97,7 @@ export class TechDashboardComponent implements OnInit {
     hideviewbutton: true,
     tableheaders: [
       "doctor_name",
+      "tech_name",
       "patient_name",
       "status_text",
       "created_at_datetime",
@@ -95,6 +107,7 @@ export class TechDashboardComponent implements OnInit {
   }
   public allUserData_modify_header: any = {
     "doctor_name": "Doctor Name",
+    "tech_name": "Tech Name",
     "patient_name": "Patient Name",
     "status_text": "Status",
     "created_at_datetime": "Report Added",
@@ -104,9 +117,9 @@ export class TechDashboardComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any;
+  public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
-  public datacollection: any = 'getpatientlistdatatech';
+  public datacollection: any = 'getPatientlistdata';
 
   public sortdata: any = {
     "type": 'desc',
@@ -133,6 +146,9 @@ export class TechDashboardComponent implements OnInit {
 
     };
   // lib list end
+
+
+
 
   public commonArray: PeriodicElement[] = [];
   public searchJson: any = {
@@ -168,6 +184,8 @@ export class TechDashboardComponent implements OnInit {
     this.authData["userData"] = JSON.parse(allData.user_details);
     this.authData["jwtToken"] = cookie.get('jwtToken');
 
+    this.libdata.basecondition.tech_id = this.authData.userData._id;
+
     /* Get Auth Token */
     this.jwtToken = cookie.get('jwtToken');
 
@@ -180,9 +198,8 @@ export class TechDashboardComponent implements OnInit {
 
 
     // lib list
-    this.libdata.basecondition.tech_id = this.authData.userData._id;
-    let endpoint = 'getpatientlistdatatech';
-    let endpointc = 'getpatientlistdatatech-count';
+    let endpoint = 'getPatientlistdata';
+    let endpointc = 'getPatientlistdata-count';
     let data: any = {
       "condition": {
         "limit": 10,
@@ -192,10 +209,8 @@ export class TechDashboardComponent implements OnInit {
         "type": 'desc',
         "field": 'patient_name'
       },
-      searchcondition: {},
-      basecondition: {
-        "tech_id": this.authData.userData._id
-      }
+      status: { "$gt": 10 },
+      tech_id: this.authData.userData._id
     }
 
     this.httpService.httpViaPost(endpointc, data).subscribe((res: any) => {

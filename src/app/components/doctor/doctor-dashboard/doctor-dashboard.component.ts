@@ -56,7 +56,9 @@ export class DoctorDashboardComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: {},
+    basecondition: { 
+      status: { "$gt": 10 }
+    },
     updateendpoint: '',
     custombuttons: [
       {
@@ -170,7 +172,6 @@ export class DoctorDashboardComponent implements OnInit {
     this.allData = cookie.getAll();
     this.authData = JSON.parse(this.allData.user_details);
     this.authData["jwtToken"] = cookie.get('jwtToken');
-    console.log(this.authData._id,'aa');
 
     if(typeof(this.authData.diagnostic_admin_id) != 'undefined') {
       this.htmlText.signFlag = false;
@@ -211,7 +212,9 @@ export class DoctorDashboardComponent implements OnInit {
       searchcondition: {doc_id:this.authData._id},
       basecondition: {
         "doctor_id": this.authData._id
-      }
+      },
+      status: { "$gt": 10 },
+      doctor_id: this.authData._id
     }
 
     this.http.httpViaPostbyApi1(endpointc, data).subscribe((res: any) => {
