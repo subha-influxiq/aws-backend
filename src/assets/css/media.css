@@ -237,6 +237,8 @@ align-items: flex-start; }
   .admin_superbillsection .biller_wrapper .super_bill_item span button{ margin: inherit;}
   .admin_superbillsection .biller_wrapper .super_bill_item span P br{ display: none;}
   .admin_wrapper .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0%; }
+  .shareLink_wrpr h2{ font-size: 20px; text-align: center; }
+  .shareLink_wrpr .iconBar { justify-content: center; }
 }
 
 @media screen and (max-width: 540px){
@@ -288,7 +290,7 @@ align-items: flex-start; }
 
   .calenderView .filter .filter-box { width: 100%; }
   .calenderView .slotview .example-card { width: 100%; box-sizing: border-box;  margin: 0; margin-bottom: 16px; }
-
+  .shareLink_wrpr .link_field .shreWr a { width: 70px;}
 }
 
 @media screen and (max-width: 440px){
@@ -316,6 +318,8 @@ align-items: flex-start; }
   .top_header .wrappp_R .add_new{ margin-bottom: 10px;}
   .top_header .wrappp_R .add_new:last-child { margin-left: 0px; margin-bottom: 10px;}
   .admin_wrapper .title_wrapper { font-size: 20px; }
+  .shareLink_wrpr .link_field { flex-direction: column; height: auto; margin: 10px 0; }
+  .shareLink_wrpr .link_field .shreWr a { width: 100px; margin: 14px 0 0; }
 }
 @media screen and (max-width: 350px){
   .main_wrapper .login_wrapper { width: 265px; }
@@ -325,5 +329,5 @@ align-items: flex-start; }
   .adminTables td.mat-cell:last-of-type { padding-right: 10px;  }
   .encounter_rules .admin_superbillsection .greenbar p { font-size: 24px; }
 }                                            
-
+  
  
