@@ -1,9 +1,9 @@
 <app-doctor-office-header></app-doctor-office-header>
 
-<button mat-button (click)="openDialog()">Change Doctor</button>
+
 
 <mat-card class="admin_wrapper">
-
+  <button mat-button (click)="openDialog()" class="changeBTN">Change Doctor</button>
   <mat-label *ngIf="configData.responseData.length == 0 && !loading">No slot found for this tech</mat-label>
 
   <lib-view-slot-user class="calenderView" [configData]="configData"
