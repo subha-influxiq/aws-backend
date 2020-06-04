@@ -311,4 +311,8 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
   }
 
+  refreshDashboard(flag = null) {
+
+  }
+
 }

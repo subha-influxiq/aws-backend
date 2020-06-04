@@ -355,5 +355,8 @@ export class AdminbillerDashboardComponent implements OnInit {
     console.log(flag);
   }
 
+  refreshDashboard(flag = null) {
+
+  }
 
 }
