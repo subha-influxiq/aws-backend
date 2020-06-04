@@ -175,6 +175,7 @@ import {RescheduleAppointmentComponent} from "./components/booked-events-listing
 import { PatientDetailsComponent } from './components/doctor/doctor-dashboard/patient-report-view/patient-details/patient-details.component';
 import { EncounterFormRulesComponent } from './components/common/encounter-form-rules/encounter-form-rules.component';
 import { ApprovedPatientReportsComponent } from './components/admin/admin-dashboard/approved-patient-reports/approved-patient-reports.component';
+import { DoctorSignupShareComponent } from './components/common/doctor-signup-share/doctor-signup-share.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -335,7 +336,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     EncounterFormComponent,
     PatientDetailsComponent,
     EncounterFormRulesComponent,
-    ApprovedPatientReportsComponent
+    ApprovedPatientReportsComponent,
+    DoctorSignupShareComponent
   ],
   imports: [
     SatDatepickerModule,

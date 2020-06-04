@@ -27,6 +27,11 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
     headerText: "Patient Reports"
   };
 
+  public shareDetails: any = {
+    baseUrl: environment.doctorSignUpBaseUrl,
+    userId: ""
+  };
+
   public allResolveData: any = {
     "tableDataFlag": false,
     "total_reports": 0,
@@ -174,6 +179,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
     this.loginUserData["jwtToken"] = cookieService.get('jwtToken');
 
     this.libdata.basecondition.parent_id = this.loginUserData.user_details._id;
+    this.shareDetails.userId = this.loginUserData.user_details._id;
 
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');

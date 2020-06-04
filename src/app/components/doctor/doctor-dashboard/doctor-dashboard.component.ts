@@ -24,6 +24,12 @@ const moment = momentImported;
 export class DoctorDashboardComponent implements OnInit {
 
   public jwtToken: any;
+
+  public shareDetails: any = {
+    baseUrl: environment.doctorSignUpBaseUrl,
+    userId: ""
+  };
+
   // Lib list
   public allBillerData: any = [];
   public billerData_count: any = 0;

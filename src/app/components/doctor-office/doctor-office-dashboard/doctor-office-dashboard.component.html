@@ -52,6 +52,35 @@
     </mat-card-content>
   </mat-card-content>
 
+  <div class="tablewrapper">
+      
+    <!-- table -->
+    <lib-listing
+      class="DataTable" 
+      *ngIf="allBillerData.length>0" 
+      [datasource]="allBillerData" 
+      [skip]="allUserData_skip"
+      [modify_header_array]="allUserData_modify_header" 
+      [detail_skip_array]="previewModal_detail_skip" 
+      [apiurl]="apiUrl"
+      [sourcedata]="tableName" 
+      [editroute]="editUrl" 
+      [jwttoken]="jwtToken" 
+      [statusarr]="status"
+      [updateendpoint]="UpdateEndpoint" 
+      [deleteendpoint]="deleteEndpoint" 
+      [date_search_endpoint]="SearchingEndpoint"
+      [date_search_source]="SearchingSourceName" 
+      [search_settings]="search_settings" 
+      [sortdata]="sortdata" 
+      [datacollection]="datacollection" 
+      [libdata]="libdata" 
+      [date_search_source_count]="billerData_count" 
+      [limitcond]="limitcond" >
+    </lib-listing>
+
+  </div>
+
 <!--  <lib-booked-event-listing class="calendar_data" [configData]="configData"></lib-booked-event-listing>-->
   <!-- Booked Events Listing -->
   <mat-tab-group>

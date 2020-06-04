@@ -27,6 +27,11 @@ export class AdminbillerDashboardComponent implements OnInit {
     headerText: "Patient Reports"
   };
 
+  public shareDetails: any = {
+    baseUrl: environment.doctorSignUpBaseUrl,
+    userId: ""
+  };
+
   public allResolveData: any = {};
   public uploadedStatusArray: any = [];
   public processedStatusArray: any = [];

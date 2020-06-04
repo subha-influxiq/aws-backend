@@ -29,6 +29,10 @@ export class AdminDashboardComponent implements OnInit {
     headerText: "Patient Reports"
   };
   public allResolveData: any = {};
+  public shareDetails: any = {
+    baseUrl: environment.doctorSignUpBaseUrl,
+    userId: ""
+  };
 
   // Lib list
   public allBillerData: any = [];
@@ -217,6 +221,10 @@ export class AdminDashboardComponent implements OnInit {
     public dialog: MatDialog, public deviceService: DeviceDetectorService, private matSnackBar: MatSnackBar) {
 
     this.loginUserData["user_details"] = cookieService.getAll();
+    this.loginUserData.user_details.user_details = JSON.parse(this.loginUserData.user_details.user_details);
+    this.shareDetails.userId = this.loginUserData.user_details.user_details._id;
+    this.shareDetails.user_type = this.loginUserData.user_details.user_details.user_type;
+
     this.loginUserData["jwtToken"] = cookieService.get('jwtToken');
 
     /* Get Auth Token */

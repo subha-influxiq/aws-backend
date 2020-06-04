@@ -27,6 +27,11 @@ export class DistributorsDashboardComponent implements OnInit {
     headerText: "Patient Reports"
   };
 
+  public shareDetails: any = {
+    baseUrl: environment.doctorSignUpBaseUrl,
+    userId: ""
+  };
+
   public allResolveData: any = {};
   public uploadedStatusArray: any = [];
   public processedStatusArray: any = [];
@@ -160,6 +165,7 @@ export class DistributorsDashboardComponent implements OnInit {
     this.jwtToken = cookieService.get('jwtToken');
 
     this.libdata.basecondition.parent_id = this.loginUserData.user_details._id;
+    this.shareDetails.userId = this.loginUserData.user_details._id;
     
     /* Get resolve data */
     this.activatedRoute.data.subscribe(resolveData => {

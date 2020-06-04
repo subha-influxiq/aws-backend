@@ -1,26 +1,9 @@
 <app-admin-header></app-admin-header>
 
 <mat-card class="admin_wrapper">
-  <mat-card-content class="shareLink_wrpr">
-    <h2>Doctor Signup through the following link:</h2>
+  
+  <app-doctor-signup-share [shareDetails]="shareDetails"></app-doctor-signup-share>
 
-    <mat-toolbar class="link_field">
-      <input disabled value="for expl: https://pece-doctor-signup.influxiq.com/">
-      <span class="shreWr">
-        <a mat-button>Copy</a>
-      </span>
-    </mat-toolbar>
-    <mat-toolbar class="iconBar">
-      <p>Share To: </p>
-      <span class="icon_wr">
-        <button mat-button><i class="fab fa-facebook-f"></i></button>
-        <button mat-button><i class="fab fa-twitter"></i></button>
-        <button mat-button><i class="fab fa-linkedin-in"></i></button>
-        <button mat-button><i class="fab fa-tumblr"></i></button>
-      </span>
-    </mat-toolbar>
-
-  </mat-card-content>
   <mat-card-content class="content_wrapper">
 
     <mat-card-content class="itemsection">
