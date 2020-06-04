@@ -124,6 +124,9 @@ export class AddeditDoctorComponent implements OnInit {
       case 'edit':
         delete validateRule.password;
         delete validateRule.confirmpassword;
+        if(this.htmlText.user_details.user_type !='admin') {
+          delete validateRule.parent_id
+        }
 
         this.doctorManagementAddEditForm = this.formBuilder.group(validateRule);
 
@@ -144,6 +147,7 @@ export class AddeditDoctorComponent implements OnInit {
           this.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
           this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
           this.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
+          this.doctorManagementAddEditForm.controls['cpt_validate_amount'].patchValue(doctorDetails[0].cpt_validate_amount);
           // this.getCity(doctorDetails[0].state);
           if(doctorDetails[0].parent_type == "admin") {
             this.getalldataforedit();  
@@ -159,66 +163,20 @@ export class AddeditDoctorComponent implements OnInit {
             this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
             this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_id);
             this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_id);
-            console.log('doctorDetails[0].doctors_office_id', doctorDetails[0].doctors_office_id);
-            console.log('doctorDetails[0].tech_id', doctorDetails[0].tech_id);
-            console.log('doctorDetails[0].biller_id', doctorDetails[0].biller_id);
+            this.doctorManagementAddEditForm.controls['parent_type'].patchValue(doctorDetails[0].parent_type);
+          // }
+          // if (doctorDetails[0].parent_type != "admin") {
+            if(this.htmlText.user_details.user_type =='admin') {
+          this.doctorManagementAddEditForm.controls['parent_id'].patchValue(doctorDetails[0].parent_id);
+            }
           }, 1000);
 
           // if (doctorDetails[0].parent_type != "admin") {
-          this.doctorManagementAddEditForm.controls['parent_type'].patchValue(doctorDetails[0].parent_type);
-          // }
-          // if (doctorDetails[0].parent_type != "admin") {
-          this.doctorManagementAddEditForm.controls['parent_id'].patchValue(doctorDetails[0].parent_id);
+          
           // }
           // this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
           this.doctorManagementAddEditForm.controls['taxo_list'].patchValue(doctorDetails[0].taxo_list);
           this.doctorManagementAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
-          // this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_details);
-          // this.getalldata(doctorDetails[0].parent_id);
-          // return;
-          // setTimeout(() => {
-          //   this.getCity(doctorDetails[0].state);
-          // }, 1000);
-          // if (doctorDetails[0].parent_type == "admin") {
-          //   setTimeout(() => {
-          //     this.getalldata();
-          //   }, 1000);
-          // } else {
-          //   setTimeout(() => {
-          //     this.getalldata(doctorDetails[0].parent_id);
-          //   }, 1000);
-          // }
-          // if (doctorDetails[0].parent_type != "admin") {
-          //   setTimeout(() => {
-          //     this.getParentData(doctorDetails[0].parent_type);
-          //   }, 1000);
-          // }
-
-          // return
-
-
-
-          // this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
-          // this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_id);
-          // this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_id);
-
-          // // diagnostic_admin
-          // if (this.htmlText.user_details.user_type == 'diagnostic_admin') {
-          //   this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
-          // }
-
-          // if (this.htmlText.user_details.user_type == 'admin') {
-          //   this.doctorManagementAddEditForm.controls['parent_id'] = this.htmlText.user_details._id;
-          //   // this.doctorManagementAddEditForm.controls['parent_type'] = this.;
-          // }
-          // // doctor
-          // if (this.htmlText.user_details.user_type == 'doctor') {
-          //   this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
-          // }
-          //this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_details);
-          //this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_details);
-
-
         });
         break;
       case 'add':
@@ -475,6 +433,9 @@ export class AddeditDoctorComponent implements OnInit {
   }
 
   doctorManagementAddEditFormSubmit() {
+    var toSelect = this.htmlText.cpt_amount.find(c => c.value == 12);
+    console.log(toSelect);
+    this.doctorManagementAddEditForm.get('cpt_validate_amount').setValue(12);
     for (let x in this.doctorManagementAddEditForm.controls) {
       this.doctorManagementAddEditForm.controls[x].markAsTouched();
     }
@@ -505,23 +466,23 @@ export class AddeditDoctorComponent implements OnInit {
 
       if (this.htmlText.user_details.user_type == 'diagnostic_admin') {
         postData.data["parent_id"] = this.htmlText.user_details._id;
-        postData.data["parent_type"] = "diagnostic_dmin";
+        postData.data["parent_type"] = "diagnostic_admin";
         postData["sourceobj"] = ["parent_id"];
-        postData["sourceobjArray"] = ["tech_id"];
+        postData["sourceobjArray"] = ["tech_id","biller_id","doctors_office_id"];
       }
 
       if (this.htmlText.user_details.user_type == 'doctor_group') {
         postData.data["parent_id"] = this.htmlText.user_details._id;
-        postData.data["parent_type"] = "doctors_group_admin";
+        postData.data["parent_type"] = "doctor_group";
         postData["sourceobj"] = ["parent_id"];
-        postData["sourceobjArray"] = ["tech_id"];
+        postData["sourceobjArray"] = ["tech_id","biller_id","doctors_office_id"];
       }
 
       if (this.htmlText.user_details.user_type == 'distributors') {
         postData.data["parent_id"] = this.htmlText.user_details._id;
         postData.data["parent_type"] = "distributors";
         postData["sourceobj"] = ["parent_id"];
-        postData["sourceobjArray"] = ["tech_id"];
+        postData["sourceobjArray"] = ["tech_id","biller_id","doctors_office_id"];
       }
       this.http.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
         if (response.status == "success") {
@@ -555,6 +516,7 @@ export class AddeditDoctorComponent implements OnInit {
       });
     }
   }
+  
 }
 
 @Component({

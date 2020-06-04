@@ -97,6 +97,9 @@ export class AddEditDoctorOfcComponent implements OnInit {
       case 'edit':
         delete validateRule.password;
         delete validateRule.confirmpassword;
+        if(this.htmlText.user_details.user_type !='admin') {
+          delete validateRule.parent_id
+        }
 
         this.doctorOfficeAddEditForm = this.formBuilder.group(validateRule);
 
@@ -123,7 +126,9 @@ export class AddEditDoctorOfcComponent implements OnInit {
             // getCityByName
             
             this.doctorOfficeAddEditForm.controls['parent_type'].patchValue(doctorDetails[0].parent_type);
+            if(this.htmlText.user_details.user_type == 'admin') {
             this.doctorOfficeAddEditForm.controls['parent_id'].patchValue(doctorDetails[0].parent_id);
+            }
           }, 2000);
           this.doctorOfficeAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
           this.doctorOfficeAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
@@ -265,6 +270,7 @@ export class AddEditDoctorOfcComponent implements OnInit {
   }
 
   doctorOfficeAddEditFormFormSubmit() {
+    
     for (let x in this.doctorOfficeAddEditForm.controls) {
       this.doctorOfficeAddEditForm.controls[x].markAsTouched();
     }
@@ -296,20 +302,22 @@ export class AddEditDoctorOfcComponent implements OnInit {
       if(this.htmlText.user_details.user_type == 'diagnostic_admin') {
         postData.data["parent_id"] = this.htmlText.user_details._id;
         postData["sourceobj"] = ["parent_id"];
-        postData["parent_type"] = ["diagnostic_admin"];
+        postData.data["parent_type"] = "diagnostic_admin";
       }
 
       if(this.htmlText.user_details.user_type == 'doctor_group') {
         postData.data["parent_id"] = this.htmlText.user_details._id;
         postData["sourceobj"] = ["parent_id"];
-        postData["parent_type"] = ["doctor_group"];
+        postData.data["parent_type"] = "doctor_group";
       }
 
       if(this.htmlText.user_details.user_type == 'distributors') {
         postData.data["parent_id"] = this.htmlText.user_details._id;
         postData["sourceobj"] = ["parent_id"];
-        postData["parent_type"] = ["distributors"];
+        postData.data["parent_type"] = "distributors";
       }
+      console.log(this.doctorOfficeAddEditForm.value);
+    return;
       if(this.htmlText.user_details.user_type !='doctor') {
       this.httpService.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
         if (response.status == "success") {

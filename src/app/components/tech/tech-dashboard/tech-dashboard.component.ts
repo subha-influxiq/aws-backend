@@ -89,15 +89,71 @@ export class TechDashboardComponent implements OnInit {
         route: "admin/patient-record/",
         type: 'internallink',
         param: ['_id'],
+      },{
+        label: "Download Report",
+        link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
+        type: 'externallink',
+        paramtype: 'angular',
+        param: ['download_file_name']
       },
+    {
+      label:"View Codes",
+      type:'action',
+      datatype:'api',
+      endpoint:'get-codes-details',
+      datafields: ['additional_potential_health_risks','cpt_codes','icd_codes'],
+      // otherparam:["patient_name"],
+      //cond:'status',
+      //condval:0,
+      param:'id',
+      headermessage: 'Codes Info',
+      // refreshdata:true
+  } ,
+    {
+      label:"Doctor Details",
+      type:'action',
+      datatype:'api',
+      endpoint:'get-doctor-details',
+      datafields: ['firstname','lastname','email','fax','practice_name','npi','phone','address','city','state','zip'],
+      // otherparam:["patient_name"],
+      //cond:'status',
+      //condval:0,
+      param:'id',
+      headermessage: 'Doctor Info',
+      // refreshdata:true
+  } ,
+  {
+    label:"Doctor Office Details",
+    type:'action',
+    datatype:'api',
+    endpoint:'get-doctor-office-details',
+    datafields: ['centername','firstname','lastname','email','phone','address','city','state','zip'],
+    // otherparam:["patient_name"],
+    //cond:'status',
+    //condval:0,
+    param:'id',
+    headermessage: 'Doctor Office Info',
+    // refreshdata:true
+} ,
+{
+  label:"Parent Details",
+  type:'action',
+  datatype:'api',
+  endpoint:'get-parent-details',
+  // otherparam:["patient_name"],
+  cond:'parent_details_check',
+  condval:1,
+  param:'id',
+  headermessage: 'Parent Info',
+  // refreshdata:true
+} ,
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
     hidestatustogglebutton: true,
     hideviewbutton: true,
     tableheaders: [
-      "doctor_name",
-      "tech_name",
+      "doc_name",
       "patient_name",
       "status_text",
       "created_at_datetime",
@@ -106,7 +162,7 @@ export class TechDashboardComponent implements OnInit {
     ]
   }
   public allUserData_modify_header: any = {
-    "doctor_name": "Doctor Name",
+    "doc_name": "Doctor Name",
     "tech_name": "Tech Name",
     "patient_name": "Patient Name",
     "status_text": "Status",
@@ -117,7 +173,7 @@ export class TechDashboardComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any = environment.apiBaseUrl;
+  public apiUrl: any = environment.apiBaseUrl1;
   public tableName: any = "data_pece";
   public datacollection: any = 'getPatientlistdata';
 
