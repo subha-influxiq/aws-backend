@@ -44,12 +44,12 @@ export class AdminbillerDashboardComponent implements OnInit {
     dateRange: ""
   };
 
-  public userData: any;
-  public cookieUserallData: any = JSON.parse(this.cookieService.get('user_details'))
-  public patientData_count:any=0;
-  public  patientData: any = [];
+  public allBillerData: any = [];
+  public billerData_count: any = 0;
   public datasource: any;
-  public patientData_skip: any = [
+  public field: any;
+  public data: any;
+  public allUserData_skip: any = [
     "_id",
     "report_file_type",
     "tech_id",
@@ -70,137 +70,161 @@ export class AdminbillerDashboardComponent implements OnInit {
     "note",
     "additional_potential_health_risks",
     "cpt_codes",
-    "created_at"
+    "created_at","doctor_name"
   ];
-  public patientData_modify_header: any = {
-    "doctor_name": "Doctor Name",
-    "tech_name": "Tech Name",
+  public editUrl: any = "admin/biller-management/edit";
+  public userData: any;
+  public libdata: any = {
+    basecondition: { status: { $gt:7 ,$lt:11 } },
+    updateendpoint: 'statusupdate',
+    custombuttons: [
+      {
+        label: "View Report",
+        route: "admin/patient-record/",
+        type: 'internallink',
+        param: ['_id'],
+      },
+      {
+        label: "Download Report",
+        link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
+        type: 'externallink',
+        paramtype: 'angular',
+        param: ['download_file_name']
+      },
+      {
+        label:"Tech Details",
+        type:'action',
+        datatype:'api',
+        endpoint:'get-tech-details',
+        // otherparam:["patient_name"],
+        //cond:'status',
+        //condval:0,
+        datafields: ['firstname','lastname','email','phone','address','city','state','zip'],
+        param:'id',
+        headermessage: 'Tech Info',
+        // refreshdata:true
+    } ,
+    {
+      label:"View Codes",
+      type:'action',
+      datatype:'api',
+      endpoint:'get-codes-details',
+      datafields: ['additional_potential_health_risks','cpt_codes','icd_codes'],
+      // otherparam:["patient_name"],
+      //cond:'status',
+      //condval:0,
+      param:'id',
+      headermessage: 'Codes Info',
+      // refreshdata:true
+  } ,
+    {
+      label:"Doctor Details",
+      type:'action',
+      datatype:'api',
+      endpoint:'get-doctor-details',
+      datafields: ['firstname','lastname','email','fax','practice_name','npi','phone','address','city','state','zip'],
+      // otherparam:["patient_name"],
+      //cond:'status',
+      //condval:0,
+      param:'id',
+      headermessage: 'Doctor Info',
+      // refreshdata:true
+  } ,
+  {
+    label:"Doctor Office Details",
+    type:'action',
+    datatype:'api',
+    endpoint:'get-doctor-office-details',
+    datafields: ['centername','firstname','lastname','email','phone','address','city','state','zip'],
+    // otherparam:["patient_name"],
+    //cond:'status',
+    //condval:0,
+    param:'id',
+    headermessage: 'Doctor Office Info',
+    // refreshdata:true
+} ,
+{
+  label:"Parent Details",
+  type:'action',
+  datatype:'api',
+  endpoint:'get-parent-details',
+  // otherparam:["patient_name"],
+  cond:'parent_details_check',
+  condval:1,
+  param:'id',
+  headermessage: 'Parent Info',
+  // refreshdata:true
+} ,
+    ],
+    hideeditbutton: true,// all these button options are optional not mandatory
+    hidedeletebutton: true,
+    // hidestatustogglebutton: true,
+    hideviewbutton: true,
+    tableheaders: [
+      "patient_name",
+      // "tech_name",
+      "status_text",
+      "created_at_datetime",
+      "cpt_addl",
+      "general_details",
+      // "parent_type",`
+      // "parent_id",
+      // "doctors_office_id",
+    ]
+  }
+  public allUserData_modify_header: any = {
+    "general_details": "Related Info",
+    // "tech_name": "Tech Name",
     "patient_name": "Patient Name",
     "status_text": "Status",
     "created_at_datetime": "Report Added",
-    "cpt_code_count": "CPT Code Count",
-    "addl_hlth_risk": "Addl Hlth Risk"
+    "cpt_addl": "CPT/ Addl Hrisk C",
+    // "addl_hlth_risk": "Addl Hlth Risk"
   };
 
-  public previewModal_skip: any = [
-    "_id",
-    "user_type",
-    "tech_id",
-    "biller_id",
-    "doctors_office_id",
-    "taxo_list",
-    "password",
-    "created_at",
-    "id",
-    "name_search",
-    "updated_at"
-  ];
-  public tableName: any = 'data_pece';
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public user_cookie: any;
-  public searchingEndpoint:any="datalist";
-  public searchSourceName:any="data_doctor_list"
-  public editUrl:any = 'admin/doctor-management/edit';
-  public apiUrl: any = environment.apiBaseUrl;
-  public datacollection: any='getpatientlistdata';
-  public data:any;
-  public field:any;
-  public fetch:any;
-  public libdata:any={
-    // basecondition: {report_type:"file"},
-    updateendpoint:'statusupdate',
-    hideeditbutton:true,// all these button options are optional not mandatory
-    hidedeletebutton:true,
-    hideviewbutton:true,
-    //hidestatustogglebutton:true,
-    // hideaction:true,
-    tableheaders:[
-      "doctor_name",
-      "tech_name",
-      "patient_name",
-      "status_text",
-      "created_at_datetime",
-      "cpt_code_count",
-      "addl_hlth_risk"
-    ], //not required
-    custombuttons:[
-      {
-          label:"Patient Details",
-          type:'action',
-          datatype:'local',
-          datafields:['description','author','blogtitle','tags_array','image','video','created_date','created_datetime'],
-          cond:'status',
-          condval:0
-      } ,
-      {
-          label:"Patient Report",
-          route:"admin-biller/patient-record",
-          type:'internallink',
-          cond:'converted_image',
-          condval:true,
-          param:['_id'],
-      },
-      {
-          label:"Doctor Details",
-          type:'action',
-          datatype:'api',
-          endpoint:'getblogdatabyid',
-          //cond:'status',
-          //condval:0,
-          param:'blog_id',
-          refreshdata:true
-      } ,
-      {
-          label:"Tech Details",
-          type:'action',
-          datatype:'api',
-          endpoint:'gettechdatabyid',
-          otherparam:["patient_name"],
-          //cond:'status',
-          //condval:0,
-          param:'tech_id',
-          refreshdata:true
-      } ,
-      {
-        label:"Generate Pdf",
-        type:'action',
-        datatype:'api',
-        endpoint:'report-sign-send-to-biller',
-        otherparam:["status"],
-        //cond:'status',
-        //condval:0,
-        param:'report_id',
-        refreshdata:true
-      },
-      {
-        label:"Download",
-        link:"https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/html-pdf",
-        type:'externallink',
-        paramtype:'angular',
-        param:["file_name"]
-    },
-  ]
-}
-  public sortdata:any={
-    "type":'desc',
-    "field":'patient_name',
-    "options":['patient_name','test_time']
- };
- public limitcond:any={
-  "limit":10,
-  "skip":0,
-  "pagecount":1
-};
-  public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
-  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },{ val: "distributors", 'name': 'Distributor' },{ val: "doctor_group", 'name': 'Doctor Group' }];
+  public apiUrl: any = environment.apiBaseUrl1;
+  public tableName: any = "data_pece";
+  public datacollection: any = 'getPatientlistdata-pending-approval';
+
+  public sortdata: any = {
+    "type": 'desc',
+    "field": 'patient_name',
+    "options": ['patient_name', 'email', 'created_date']
+  };
+  public limitcond: any = {
+    "limit": 10,
+    "skip": 0,
+    "pagecount": 1
+  };
+
+  public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
+
+  public status: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"}];
+  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
+  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }];
+  public SearchingEndpoint: any = "datalist";
+  public authval: any = [];
+  public docofficeval: any = [];
+  public techval: any = [];
+  public parentnameval: any = [];
+  public doctorcity: any = [];
+  public doctorstate: any = [];
+  public patientcity: any = [];
+  public patientstate: any = [];
+  public SearchingSourceName: any = "data_biller_list";
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
-      textsearch: [{ label: "Search By Patient Name", field: 'patient_search' },
-      // {label:"Search by Taxonomy",field:'taxo_list'},
-      { label: "Search By  Diagnostic Admin", field: 'parent_search' },{ label: "Search By Distributor", field: 'parent_search' },{ label: "Search By  Doctors Group Admin", field: 'parent_search' }]
+      
+      selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type } , { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },{label: "Search By Doctor", field: 'doc_name_search', values:this.authval },{label: "Search By Tech", field: 'tech_name_search', values:this.techval },{label: "Search By Doctor Office", field: 'author_search', values:this.docofficeval },{label: "Search By Parent Name", field: 'patient_name', values:this.parentnameval },{label: "Search By Doctor City", field: 'author_search', values:this.doctorcity },{label: "Search By Doctor State", field: 'author_search', values:this.doctorstate },{label: "Search By Parent City", field: 'author_search', values:this.patientcity },{label: "Search By Parent State", field: 'author_search', values:this.patientstate }],
+      datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
+      // textsearch: [{ label: "Search By Name", field: 'name_search' },
+      // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],
+      // search:[,
+      // ]
     };
+  // lib list end
 
   public allDataList: any = [];
   @ViewChild(MatPaginator, { static: false }) paginatorAll: MatPaginator;
@@ -208,373 +232,131 @@ export class AdminbillerDashboardComponent implements OnInit {
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute,
     public dialog: MatDialog, public deviceService: DeviceDetectorService, private matSnackBar: MatSnackBar) {
 
-    this.loginUserData["user_details"] = JSON.parse(cookieService.get('user_details'));
+    this.loginUserData["user_details"] = cookieService.getAll();
     this.loginUserData["jwtToken"] = cookieService.get('jwtToken');
 
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
+
     /* Get resolve data */
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
-      this.viewReportProcessData(this.htmlText.headerText);
+      //this.viewReportProcessData(this.htmlText.headerText);
     });
-    this.apiUrl = http.baseUrl;
+
+
+    // lib list
+    let endpoint = 'getPatientlistdata-pending-approval';
+    let endpointc = 'getPatientlistdata-pending-approval-count';
+    let data: any = {
+      "condition": {
+        "limit": 10,
+        "skip": 0
+      },
+      sort: {
+        "type": 'desc',
+        "field": 'patient_name'
+      }
+    }
+
+    this.http.httpViaPostbyApi1(endpointc, data).subscribe((res: any) => {
+      this.billerData_count = res.count;
+    }, error => {
+      console.log('Oooops!');
+    });
+
+    this.http.httpViaPostbyApi1(endpoint, data).subscribe((res: any) => {
+      // console.log(res);
+      this.allBillerData = res.results.res;
+    }, error => {
+      console.log('Oooops!');
+    });
   }
 
   ngOnInit() {
-    this.datasource = '';
-    let endpoint='getpatientlistdata';
-    let endpointc='getpatientlistdata-count';
-    let data:any={
-        "condition":{
-            "limit":10,
-            "skip":0
-        },
-    sort:{
-        "type":'desc',
-        "field":'patient_name'
+    let data:any= {
+      "source":"patient_data_desc_patient_name",
+      "condition":{},
+      "token":this.jwtToken
     }
-    // report_type:"file"
-    }
-        this.http.httpViaPost(endpointc, data).subscribe((res:any) => {
-            this.patientData_count =res.count;
- 
-        }, error => {
-            console.log('Oooops!');
-        });
- 
-        this.http.httpViaPost(endpoint,data).subscribe((res:any) => {
-           
-            this.patientData =res.results.res;
- 
-        }, error => {
-            console.log('Oooops!');
-        });
+    this.http.httpViaPost("datalist", data).subscribe((response: any) => {
+      var start = false;
+      var count = 0;
+      for(var i in response.res) {
+        if(response.res[i].doc_name_search !="") {
+          for(var j in this.authval) {
+            if(response.res[i].doc_name == this.authval[j].name) {
+              start = true;
+            }
+          }
+          count++;
+          if (count == 1 && start == false) { 
+            this.authval.push({name:response.res[i].doc_name,val:response.res[i].doc_name_search}); 
+        } 
+        start = false; 
+        count = 0;
+          
+        }
+      }
+      for(var i in response.res) {
+        if(response.res[i].tech_name_search !="") {
+          for(var j in this.techval) {
+          if(response.res[i].tech_namesearch == this.techval[j].name) {
+            start = true;
+          }
+        }
+        count ++;
+        if(count == 1 && start ==false) {
+          this.techval.push({name:response.res[i].tech_namesearch,val:response.res[i].tech_name_search})
+        }
+        start = false;
+        count = 0;
+      }
+      }
+      for(var i in response.res) {
+        if(response.res[i].parent_name_search !="") {
+        this.parentnameval.push({name:response.res[i].parent_name,val:response.res[i].parent_name_search})
+        }
+      }
+      for(var i in response.res) {
+        if(response.res[i].doctor_state_search !="") {
+        this.doctorstate.push({name:response.res[i].doctor_state,val:response.res[i].doctor_state_search})
+        }
+      }
+      for(var i in response.res) {
+        if(response.res[i].doctor_city_search !="") {
+        this.doctorcity.push({name:response.res[i].doctor_city,val:response.res[i].doctor_city_search})
+        }
+      }
+      for(var i in response.res) {
+        if(response.res[i].patient_city_search !="") {
+        this.patientcity.push({name:response.res[i].patient_city,val:response.res[i].patient_city_search})
+        }
+      }
+      for(var i in response.res) {
+        if(response.res[i].patient_state_search !="") {
+        this.patientstate.push({name:response.res[i].patient_state,val:response.res[i].patient_state_search })
+        }
+      }
+      for(var i in response.res) {
+        if(response.res[i].doctor_ofiice_name_search !="") {
+        this.docofficeval.push({name:response.res[i].doctor_ofiice_name,val:response.res[i].doctor_ofiice_name_search })
+        }
+      }
+    }, error => {
+      console.log('Oooops!');
+    });
   }
 
   ngAfterViewInit() {
   }
 
-  refreshDashboard() {
-    let repostSignCond: any = {
-      "source":"data_pece",
-      "condition": {
-        "admin_id": this.loginUserData.user_details._id
-      },
-      "token": this.jwtToken
-    };
-    // get dashboard count
-    this.http.httpViaPost('admin-dashboard', repostSignCond).subscribe((response) => {
-      if(response.status == 'success') {
-        this.allResolveData = response.data.dashboardCount[0];
-        this.viewReportProcessData(this.htmlText.headerText);
-      } else {
-        this.router.navigateByUrl('logout');
-      }
-    });
-
-    // for listing
-    this.viewReportProcessData(this.htmlText.headerText);
+  viewReportProcessData(flag) {
+    console.log(flag);
   }
 
-  viewReportProcessData(flag: string = null) {
-    // Set Header Flag
-    this.htmlText.headerText = flag;
+  refreshDashboard(flag = null) {
 
-    // Date search
-    if(this.searchJson.dateRange != '') {
-      this.searchJson.dateRange.end = moment(this.searchJson.dateRange.end, "DD-MM-YYYY").add(1, 'days');
-    }
-
-    // search condition
-    var repostSignCond: any = {
-      "source": "data_pece",
-      "search": this.searchJson,
-      "token": this.jwtToken,
-      "pagination": {
-        "skip": 0,
-        "limit": 50
-      }
-    };
-
-    switch (flag) {
-      // Images Not Processed
-      case 'Images Not Processed':
-        repostSignCond.source = "data_image_not_process";
-        repostSignCond["condition"] = {};
-        break;
-      // Basic Details Not Processed
-      case 'Basic Details Not Processed':
-        this.allDataColumns = [ 'patientName', 'date_of_birth', 'gender', 'test_date', 'bmi'];
-
-        repostSignCond.source = "data_pece_page1_notexists";
-        repostSignCond["condition"] = {};
-        break;
-      // Risk Markers Not Processed
-      case 'Risk Markers Not Processed':
-        repostSignCond.source = "data_all_code_not_exists";
-        repostSignCond["condition"] = {};
-        break;
-      /* Report Status Section */
-      case 'Total Manual Reports':
-        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
-        
-        repostSignCond["condition"] = {
-          report_type: "manual"
-        };
-        break;
-      case 'Total File Reports':
-        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
-
-        repostSignCond["condition"] = {
-          report_type: "file"
-        };
-        break;
-      /* Report Status Section */
-      case 'Reports Uploaded':
-        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
-
-        repostSignCond["condition"] = {
-          report_type: { $exists: true }
-        };
-        break;
-      case 'Report Processed':
-        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
-
-        repostSignCond.source = "data_all_code_exists";
-        repostSignCond["condition"] = {};
-        break;
-      case 'Report Signed':
-        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'billerName', 'billGenerationDate', 'billSentDate', 'reportType', 'superBill', 'status', 'createdAt', 'editRecord'];
-
-        repostSignCond["condition"] = {
-          "report_type": { $exists: true },
-          "doctor_signature": { $exists: true }
-        };
-        break;
-      case 'Super Bill':
-        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'billerName', 'billGenerationDate', 'billSentDate', 'reportType', 'superBill', 'status', 'createdAt', 'editRecord'];
-
-        repostSignCond["condition"] = {
-          "report_type": { $exists: true },
-          "biller_name": { $exists: true },
-        };
-        break;
-      case 'Download Bill':
-        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'billerName', 'billGenerationDate', 'billSentDate', 'reportType', 'superBill', 'status', 'createdAt', 'editRecord'];
-
-        repostSignCond["condition"] = {
-          "report_type": { $exists: true },
-          "download_count": { $exists: true }
-        };
-        break;
-      case 'Reports Pending Sing':
-        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
-
-        repostSignCond["condition"] = {
-          "report_type": { $exists: true },
-          "biller_id": { $exists: false }
-        };
-        break;
-      default:
-        this.allDataColumns = ['no', 'patientName', 'doctorName', 'techName', 'reportType', 'status', 'createdAt', 'editRecord'];
-
-        repostSignCond["condition"] = {
-          "biller_id": { $exists: false },
-          "report_type": { $exists: true },
-        };
-        break;
-    }
-
-    this.http.httpViaPost('dashboard-datalist', repostSignCond).subscribe((response) => {
-      if(response.status == true) {
-        this.allResolveData.tableDataFlag = true;
-        this.allResolveData.tableData = response.data;
-
-        this.allDataSource = new MatTableDataSource(this.allResolveData.tableData);
-        this.allDataSource.paginator = this.paginatorAll;
-      } else {
-        this.router.navigateByUrl('logout');
-      }
-    });
   }
-
-  pagination(flag: string = null) {
-    switch(flag) {
-      case "prev":
-        if(this.allResolveData.tableDataPagination.skip > 0) {
-          this.allResolveData.tableDataPagination.skip = 0;
-          this.allResolveData.tableDataPaginationlimit = 50;
-        }
-        break;
-      case "next":
-        this.allResolveData.tableDataPagination.skip = 0;
-        this.allResolveData.tableDataPaginationlimit = 50;
-        break;
-      default:
-        break;
-    }
-    this.allResolveData.tableDataPagination = null;
-  }
-
-  myFunction() {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
-
-  /*Doctor's List*/
-  toDocList() {
-    this.router.navigateByUrl('admin/doctor-management/list');
-  }
-
-  downloadReport(report: any) {
-    if (typeof (report.download_count) == "undefined") {
-      report.download_count = 1;
-    } else {
-      report.download_count = report.download_count + 1;
-    }
-
-    /* Collect User Information for Download record */
-    let deviceInfo: any = this.deviceService.getDeviceInfo();
-    deviceInfo["isMobile"] = this.deviceService.isMobile();
-    deviceInfo["isTablet"] = this.deviceService.isTablet();
-    deviceInfo["isDesktop"] = this.deviceService.isDesktop();
-
-    /* Set downloader information */
-    var userDetails = {
-      id: this.loginUserData.user_details._id,
-      user_type: this.loginUserData.user_details.user_type
-    };
-
-    let postData: any = {
-      "source": "report_download",
-      "data": {
-        "report_id": report._id,
-        "biller_id": this.loginUserData.user_details._id,
-        "tech_id": report.tech_id,
-        "doctor_id": report.doctor_id,
-        "ip": this.htmlText.ip,
-        "download_attempt": 1,
-        "downloader_information": userDetails,
-        "device_information": deviceInfo
-      },
-      "sourceobj": ["report_id", "biller_id", "tech_id", "doctor_id"],
-      "download_count": report.download_count,
-      "token": this.loginUserData.jwtToken
-    };
-
-    this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
-      if (response.status == 'success') {
-        this.matSnackBar.open("Start downloading.", "Ok", {
-          duration: 3000
-        });
-        window.open(report.file_path, "_blank");
-
-        this.viewReportProcessData(this.htmlText.headerText);
-      } else {
-        this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
-          duration: 3000
-        });
-      }
-    });
-  }
-
-  /* Delete record Start */
-  deleteReport(pk_id: any, index: number) {
-    let data: any = {
-      width: '250px',
-      data: {
-        header: "Alert",
-        message: "Do you want to delete this record ?",
-        button1: { text: "No" },
-        button2: { text: "Yes" },
-      }
-    }
-
-    this.dialogRef = this.dialog.open(DialogBoxComponent, data);
-    this.dialogRef.afterClosed().subscribe(result => {
-      switch (result) {
-        case "No":
-          break;
-        case "Yes":
-          this.deleteProcess(pk_id, index);
-          break;
-      }
-    });
-  }
-
-  deleteProcess(pk_id: any, index: number) {
-    var repostSignCond = {
-      "source": "data_pece",
-      "id": pk_id,
-      "token": this.jwtToken,
-    };
-    
-    this.http.httpViaPost('deletesingledata', repostSignCond).subscribe((response) => {
-      if (response.status == 'success') {
-        this.allResolveData.tableData.splice(index, 1);
-        this.allDataSource = new MatTableDataSource(this.allResolveData.tableData);
-
-        let data: any = {
-          width: '250px',
-          data: {
-            header: "Success",
-            message: "Successfully delete.",
-            button1: { text: "OK" },
-            button2: { text: "" },
-          }
-        }
-
-        this.dialogRef = this.dialog.open(DialogBoxComponent, data);
-      } else {
-        let data: any = {
-          width: '250px',
-          data: {
-            header: "Error",
-            message: "An error occord. Please try again.",
-            button1: { text: "Re-Try" },
-            button2: { text: "Close" },
-          }
-        }
-
-        this.dialogRef = this.dialog.open(DialogBoxComponent, data);
-        this.dialogRef.afterClosed().subscribe(result => {
-          switch (result) {
-            case "Close":
-              break;
-            case "Re-Try":
-              this.deleteProcess(pk_id, index);
-              break;
-          }
-        });
-      }
-    });
-  }
-  /* Delete record End */
-
-  viewDownloadDetails(id: any) {
-    let data: any = {
-      width: '700px',
-      data: {
-        report_id: id
-      }
-    };
-    this.dialogRef = this.dialog.open(DownloadDetailsComponent, data);
-  }
-
-  resetSearch() {
-    this.searchJson = {
-      doctorName: "",
-      patientName: "",
-      status: "",
-      dateRange: ""
-    };
-    this.viewReportProcessData(this.htmlText.headerText);
-  }
-
 
 }
