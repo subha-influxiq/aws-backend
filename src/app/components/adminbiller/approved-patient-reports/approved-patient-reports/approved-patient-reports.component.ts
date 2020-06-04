@@ -6,14 +6,10 @@ import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.compon
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
-import { DownloadDetailsComponent } from '../download-details/download-details.component';
+// import { DownloadDetailsComponent } from '../download-details/download-details.component';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatSnackBar } from '@angular/material';
 import { environment } from '../../../../../environments/environment';
-
-import * as momentImported from 'moment';
-import { from } from 'rxjs';
-const moment = momentImported;
 
 @Component({
   selector: 'app-approved-patient-reports',
@@ -21,7 +17,6 @@ const moment = momentImported;
   styleUrls: ['./approved-patient-reports.component.css']
 })
 export class ApprovedPatientReportsComponent implements OnInit {
-
   public loginUserData: any = {};
   public jwtToken: string = "";
   public htmlText: any = {

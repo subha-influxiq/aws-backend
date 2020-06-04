@@ -320,34 +320,104 @@ export class AdminbillerDashboardComponent implements OnInit {
       }
       for(var i in response.res) {
         if(response.res[i].parent_name_search !="") {
-        this.parentnameval.push({name:response.res[i].parent_name,val:response.res[i].parent_name_search})
+          for(var j in this.parentnameval) {
+            if(response.res[i].parent_namesearch == this.parentnameval[j].name) {
+              start = true;
+            }
+          }
+          count ++;
+          if(count == 1 && start ==false) {
+            this.parentnameval.push({name:response.res[i].parent_namesearch,val:response.res[i].parent_name_search})
+          }
+          start = false;
+          count = 0;
+        
         }
       }
       for(var i in response.res) {
         if(response.res[i].doctor_state_search !="") {
-        this.doctorstate.push({name:response.res[i].doctor_state,val:response.res[i].doctor_state_search})
+          for(var j in this.doctorstate) {
+            if(response.res[i].doctor_state == this.doctorstate[j].name) {
+              start = true;
+            }
+          }
+          count ++;
+          if(count == 1 && start ==false) {
+            this.doctorstate.push({name:response.res[i].doctor_state,val:response.res[i].doctor_state_search})
+          }
+          start = false;
+          count = 0;
+        
+        
         }
       }
       for(var i in response.res) {
         if(response.res[i].doctor_city_search !="") {
-        this.doctorcity.push({name:response.res[i].doctor_city,val:response.res[i].doctor_city_search})
+          for(var j in this.doctorcity) {
+            if(response.res[i].doctor_city == this.doctorcity[j].name) {
+              start = true;
+            }
+          }
+          count ++;
+          if(count == 1 && start ==false) {
+            this.doctorcity.push({name:response.res[i].doctor_city,val:response.res[i].doctor_city_search})
+          }
+          start = false;
+          count = 0;
+        
+        
         }
       }
       for(var i in response.res) {
         if(response.res[i].patient_city_search !="") {
-        this.patientcity.push({name:response.res[i].patient_city,val:response.res[i].patient_city_search})
+          for(var j in this.patientcity) {
+            if(response.res[i].patient_city == this.patientcity[j].name) {
+              start = true;
+            }
+          }
+          count ++;
+          if(count == 1 && start ==false) {
+            this.patientcity.push({name:response.res[i].patient_city,val:response.res[i].patient_city_search})
+          }
+          start = false;
+          count = 0;
+        
+        
         }
       }
       for(var i in response.res) {
         if(response.res[i].patient_state_search !="") {
-        this.patientstate.push({name:response.res[i].patient_state,val:response.res[i].patient_state_search })
+          for(var j in this.patientstate) {
+            if(response.res[i].patient_state == this.patientstate[j].name) {
+              start = true;
+            }
+          }
+          count ++;
+          if(count == 1 && start ==false) {
+            this.patientstate.push({name:response.res[i].patient_state,val:response.res[i].patient_state_search })
+          }
+          start = false;
+          count = 0;
+        
+        
         }
       }
       for(var i in response.res) {
         if(response.res[i].doctor_ofiice_name_search !="") {
-        this.docofficeval.push({name:response.res[i].doctor_ofiice_name,val:response.res[i].doctor_ofiice_name_search })
+          for(var j in this.docofficeval) {
+            if(response.res[i].doctor_ofiice_namesearch == this.docofficeval[j].name) {
+              start = true;
+            }
+          }
+          count++;
+          if (count == 1 && start == false) { 
+            this.docofficeval.push({name:response.res[i].doctor_ofiice_namesearch,val:response.res[i].doctor_ofiice_name_search }) 
+        } 
+        start = false; 
+        count = 0;
         }
       }
+
     }, error => {
       console.log('Oooops!');
     });

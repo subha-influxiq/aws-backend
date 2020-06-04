@@ -161,13 +161,14 @@ export class DoctorOfficeDashboardComponent implements OnInit {
 
   public allData: any;
   public authData: any;
-
+  public jwtToken: any
   constructor(public cookieService: CookieService, public activatedRoute: ActivatedRoute,
     public snackBar: MatSnackBar,public http: HttpServiceService, public matSnackBar: MatSnackBar) {
 
       this.allData = cookieService.getAll();
     this.authData = JSON.parse(this.allData.user_details);
     this.authData["jwtToken"] = cookieService.get('jwtToken');
+    this.jwtToken = cookieService.get('jwtToken');
 
       // lib list
     let endpoint = 'getPatientlistdata';
