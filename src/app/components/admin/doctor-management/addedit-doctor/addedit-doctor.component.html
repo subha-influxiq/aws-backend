@@ -216,7 +216,7 @@
 
         <!-- Parent Type End -->
 
-
+        <ng-container *ngIf = "htmlText.user_details.user_type == 'admin'">
         <!-- Parent Name Start -->
         <mat-form-field appearance="fill" *ngIf = "(selectionChangeValue == 'DiagnosticAdmin')|| (selectionChangeValue == 'diagnostic_admin')">
           <mat-label>Select Parent Name</mat-label>
@@ -248,6 +248,7 @@
           </mat-select>
         </mat-form-field>
         <!-- Parent Name name -->
+        </ng-container>
 
 
         <!-- Parent Name Start -->
@@ -303,7 +304,7 @@
         <!-- City End -->
 
          <!-- cpt Validate Amount Start  -->
-        <mat-form-field class="parent_cat" appearance="fill" *ngIf = "htmlText.user_details.user_type == 'admin'">
+        <mat-form-field class="parent_cat" appearance="fill">
           <mat-label>CPT Validated Amount</mat-label>
 
           <mat-select formControlName="cpt_validate_amount">

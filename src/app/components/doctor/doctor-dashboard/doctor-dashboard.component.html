@@ -1,6 +1,10 @@
 <app-doctor-header></app-doctor-header>
 
 <mat-card class="admin_wrapper">
+
+  <app-doctor-signup-share [shareDetails]="shareDetails"></app-doctor-signup-share>
+
+
   <section class="mediaDoc" *ngIf="authData.parent_type != 'admin'">
     <mat-card-title class="testingDoc"> Media Deck of Testing Services </mat-card-title>
     <mat-card-content class="mediaDoc_wrapper">

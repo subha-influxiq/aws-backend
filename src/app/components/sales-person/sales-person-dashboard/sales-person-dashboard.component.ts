@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { environment } from '../../../../environments/environment';
 
 const ELEMENT_DATA:any = [
   {no:'1', doctors_name: 'binay', email: 'Hydrogen', phone: 1.0079, NPI: 'H', addon:'10/10/2020', address:'corona home'},
@@ -25,6 +26,11 @@ const ELEMENT_DATA:any = [
 })
 export class SalesPersonDashboardComponent implements OnInit {
   displayedColumns: string[] = [ 'no', 'doctors_name', 'email', 'phone', 'NPI', 'addon', 'address'];
+
+  public shareDetails: any = {
+    baseUrl: environment.doctorSignUpBaseUrl,
+    userId: "5daffd4aba196c6e298ef119"
+  };
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
