@@ -197,7 +197,7 @@
 
         <!-- Parent Type End -->
 
-
+        <ng-container *ngIf = "htmlText.userData.user_details.user_type == 'admin'">
         <!-- Parent Name Start -->
         <mat-form-field appearance="fill" *ngIf = "(selectionChangeValue == 'DiagnosticAdmin') ||(selectionChangeValue == 'diagnostic_admin')">
           <mat-label>Select Parent Name</mat-label>
@@ -229,6 +229,7 @@
           </mat-select>
         </mat-form-field>
         <!-- Parent Name name -->
+      </ng-container>
 
 
         <!-- State Start -->

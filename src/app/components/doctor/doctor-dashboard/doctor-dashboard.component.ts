@@ -38,7 +38,6 @@ export class DoctorDashboardComponent implements OnInit {
   public allUserData_skip: any = [
     "_id",
     "report_file_type",
-    "doctor_name",
     "tech_id",
     "tech_email",
     "batch_name",
@@ -69,49 +68,95 @@ export class DoctorDashboardComponent implements OnInit {
     custombuttons: [
       {
         label: "View Report",
-        route: "doctor/patient-record-report/",
+        route: "admin/patient-record/",
         type: 'internallink',
         param: ['_id'],
-      },
-      {
+      },{
         label: "Download Report",
         link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
         type: 'externallink',
         paramtype: 'angular',
         param: ['download_file_name']
-      }
+      },
+      {
+        label:"Tech Details",
+        type:'action',
+        datatype:'api',
+        endpoint:'get-tech-details',
+        // otherparam:["patient_name"],
+        //cond:'status',
+        //condval:0,
+        datafields: ['firstname','lastname','email','phone','address','city','state','zip'],
+        param:'id',
+        headermessage: 'Tech Info',
+        // refreshdata:true
+    } ,
+    {
+      label:"View Codes",
+      type:'action',
+      datatype:'api',
+      endpoint:'get-codes-details',
+      datafields: ['additional_potential_health_risks','cpt_codes','icd_codes'],
+      // otherparam:["patient_name"],
+      //cond:'status',
+      //condval:0,
+      param:'id',
+      headermessage: 'Codes Info',
+      // refreshdata:true
+  } ,
+  {
+    label:"Doctor Office Details",
+    type:'action',
+    datatype:'api',
+    endpoint:'get-doctor-office-details',
+    datafields: ['centername','firstname','lastname','email','phone','address','city','state','zip'],
+    // otherparam:["patient_name"],
+    //cond:'status',
+    //condval:0,
+    param:'id',
+    headermessage: 'Doctor Office Info',
+    // refreshdata:true
+} ,
+{
+  label:"Parent Details",
+  type:'action',
+  datatype:'api',
+  endpoint:'get-parent-details',
+  // otherparam:["patient_name"],
+  cond:'parent_details_check',
+  condval:1,
+  param:'id',
+  headermessage: 'Parent Info',
+  // refreshdata:true
+} ,
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
     hidestatustogglebutton: true,
     hideviewbutton: true,
     tableheaders: [
+      "tech_name",
       "patient_name",
-      // "tech_name",
       "status_text",
       "created_at_datetime",
-      "cpt_addl",
-      "general_details",
-      // "parent_type",
-      // "parent_id",
-      // "doctors_office_id",
+      "cpt_code_count",
+      "addl_hlth_risk"
     ]
   }
   public allUserData_modify_header: any = {
-    "general_details": "Related Info",
-    // "tech_name": "Tech Name",
+    "tech_name": "Tech Name",
     "patient_name": "Patient Name",
     "status_text": "Status",
     "created_at_datetime": "Report Added",
-    "cpt_addl": "CPT/ Addl Hrisk C", 
-    // "addl_hlth_risk": "Addl Hlth Risk"
+    "cpt_code_count": "CPT Code Count",
+    "addl_hlth_risk": "Addl Hlth Risk"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any = environment.apiBaseUrl;
+  public apiUrl: any = environment.apiBaseUrl1;
   public tableName: any = "data_pece";
-  public datacollection: any = 'getpatientlistdata';
+  public datacollection: any = 'getPatientlistdata';
 
   public sortdata: any = {
     "type": 'desc',
@@ -133,7 +178,6 @@ export class DoctorDashboardComponent implements OnInit {
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }, { label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type }],
-      datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
       textsearch: [{ label: "Search By Name", field: 'name_search' },
       { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }]
 
@@ -204,8 +248,8 @@ export class DoctorDashboardComponent implements OnInit {
     });
 
     // lib list
-    let endpoint = 'getpatientlistdata';
-    let endpointc = 'getpatientlistdata-count';
+    let endpoint = 'getPatientlistdata';
+    let endpointc = 'getPatientlistdata-count';
     let data: any = {
       "condition": {
         "limit": 10,
@@ -215,21 +259,17 @@ export class DoctorDashboardComponent implements OnInit {
         "type": 'desc',
         "field": 'patient_name'
       },
-      searchcondition: {doc_id:this.authData._id},
-      basecondition: {
-        "doctor_id": this.authData._id
-      },
       status: { "$gt": 10 },
       doctor_id: this.authData._id
     }
 
-    this.http.httpViaPostbyApi1(endpointc, data).subscribe((res: any) => {
+    this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
       this.billerData_count = res.count;
     }, error => {
       console.log('Oooops!');
     });
 
-    this.http.httpViaPostbyApi1(endpoint, data).subscribe((res: any) => {
+    this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
       this.allBillerData = res.results.res;
     }, error => {
       console.log('Oooops!');

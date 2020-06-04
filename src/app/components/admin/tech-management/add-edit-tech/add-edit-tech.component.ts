@@ -86,6 +86,9 @@ export class AddEditTechComponent implements OnInit {
       case 'edit':
         delete validateRule.password;
         delete validateRule.confirmpassword;
+        if(this.htmlText.userData.user_details.user_type =='admin') {
+          delete validateRule.parent_id;
+        }
 
         this.TechManagementAddEditForm = this.fb.group(validateRule);
         this.activeRoute.data.forEach((data) => {
@@ -108,7 +111,9 @@ export class AddEditTechComponent implements OnInit {
             // getCityByName
             
             this.TechManagementAddEditForm.controls['parent_type'].patchValue(billerDetails[0].parent_type);
+            if(this.htmlText.userData.user_details.user_type =='admin') {
             this.TechManagementAddEditForm.controls['parent_id'].patchValue(billerDetails[0].parent_id);
+            }
           }, 2000);
           this.TechManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
           this.TechManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
