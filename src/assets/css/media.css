@@ -78,6 +78,7 @@ align-items: flex-start; }
 .biller_Dashboard .patient_report_section .patient_top_search h1 { margin-bottom: 10px; }
 .encounter_rules .admin_superbillsection .greenbar p { font-size: 36px; }
 .encounter_rules .admin_superbillsection .greenbar { height: 230px; }
+
 }
 @media screen and (max-width: 1040px){
   .main_wrapper { background-size: 0; padding-left: 0; }
