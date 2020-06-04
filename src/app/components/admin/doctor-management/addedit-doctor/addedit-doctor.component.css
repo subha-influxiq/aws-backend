@@ -8,10 +8,7 @@
 .add_form .submit_form { display: flex; width: 100%; justify-content: center; text-align: center; margin-top: 30px; }
 
 
-.add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;}
-
-
-
+.add_form .return_button { background: #1dbce9; color: #fff; margin-bottom: 12px;} 
 
 @media screen and (max-width: 1460px){
   .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; line-height: 26px;}
@@ -22,14 +19,12 @@
   .add_form .submit_form button {  font-size: 16px; width: 200px; }
 
 }
-@media screen and (max-width: 1000px){
-  .add_form .submit_form button { width: 48%; }
-}
+ 
 @media screen and (max-width: 991px){
 .techdashboard_header .mat-toolbar-row { flex-direction: column; padding: 20px;}
 .techdashboard_header .mat-toolbar-row .quotation p { margin-top: 16px; }
-.add_form .submit_form { display: flex; flex-wrap: wrap; }
-.add_form .submit_form button { width: 47%; margin: 6px; }
+.add_form .submit_form { display: flex; flex-wrap: wrap; } 
+.add_form .submit_form button { width: auto; padding: 0 10px; min-width: 130px; }
 }
 @media screen and (max-width: 768px){
   .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0; }

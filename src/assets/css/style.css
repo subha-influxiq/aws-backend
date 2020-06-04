@@ -308,6 +308,9 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .admin_superbillsection h1{ font-size: 20px; font-family: 'AvenirMedium'; color: #535353;
   text-transform: capitalize; border-bottom: 1px solid #9c9c9c; padding: 10px 8px; background: #e0e5eb;
   margin: 0 6px 10px;}
+.headr_tagh{ font-size: 20px; font-family: 'AvenirMedium'; color: #535353;
+  text-transform: capitalize; border-bottom: 1px solid #9c9c9c; padding: 10px 8px; background: #e0e5eb;
+   }
 .admin_superbillsection .biller_wrapper  { display: flex; justify-content: center; margin-bottom: 0;}
 .admin_superbillsection .biller_wrapper .super_bill_item{ width: 100%; margin: .5%; padding:10px; display: flex;  padding-top: 2%; border-radius: 10px; }
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(1){ background: #4099ff url("../../../../assets/images/admincircle_icon1.png") no-repeat right top; background-size: 120px;}
