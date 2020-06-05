@@ -1,8 +1,7 @@
 <app-admin-header></app-admin-header>
 
 <mat-card class="admin_wrapper">
-  
-  <app-doctor-signup-share [shareDetails]="shareDetails"></app-doctor-signup-share>
+
 
   <mat-card-content class="content_wrapper">
 
@@ -370,6 +369,7 @@
     </mat-card-content>
   </mat-card-content>
 
+  <app-doctor-signup-share [shareDetails]="shareDetails"></app-doctor-signup-share>
 
 
   <!-- All Data listing start here(default listing) -->
@@ -394,7 +394,7 @@
   <!-- All Data listing start here(default listing) -->
   <mat-card-content class="table_wrapper admin_dashboard">
 
-    <h1>Approved Patient Reports</h1>
+    <h1 class="headr_tagh">Approved Patient Reports</h1>
 
     <app-approved-patient-reports></app-approved-patient-reports>
 
