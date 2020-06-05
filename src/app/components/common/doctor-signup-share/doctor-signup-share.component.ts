@@ -37,7 +37,7 @@ export class DoctorSignupShareComponent implements OnInit {
     document.execCommand('copy');
     inputElement.setSelectionRange(0, 0);
 
-    this.matSnackBar.open("Link copied.", "Ok", {
+    this.matSnackBar.open("Link copied.", "X", {
       duration: 3000,
       verticalPosition: 'top', 
       horizontalPosition: 'end', 

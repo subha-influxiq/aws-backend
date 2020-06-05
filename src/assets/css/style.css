@@ -522,7 +522,14 @@ color: #ffffff; text-align: inherit; display: inline-flex; align-items: center;}
 .calenderView .example-container .button_wrapper button{ background: var(--button-color2); font-family: "AvenirMedium"; font-size: 18px;}
 .calenderView .example-container .button_wrapper button:last-child{ background: var(--button-color3)}
  
-.searchbar .mat-form-field .mat-chip.mat-standard-chip { background: linear-gradient(40deg, #03a0c3 50%, #0ab3ff 50%); color: #ffff; font-family: 'AvenirLight'; }
+.searchbar .mat-form-field .mat-chip.mat-standard-chip { background: linear-gradient(40deg, #03a0c3 50%, #0ab3ff 50%); color: #ffff;
+  font-family: 'AvenirLight';
+  white-space: normal;
+  height: auto;
+  word-break: break-word;
+  font-size: 10px;
+}
+ .searchbar .mat-form-field .mat-chip.mat-standard-chip .mat-chip-remove.mat-icon { margin: 0; }
 
 .multipledeleteandupdatebuttan button{ background: linear-gradient(40deg, #ff4081, #dc004b); color: #fff;
 margin: 0 5px;}
