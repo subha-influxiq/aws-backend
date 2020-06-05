@@ -27,12 +27,14 @@ export class DoctorSignupShareComponent implements OnInit {
   constructor(public matSnackBar: MatSnackBar) { }
 
   ngOnInit() {
-    console.log("Data: ", this.shareDetailsData);
+    if(this.shareDetailsData.user_type == 'admin') {
+      this.shareDetailsData.link = this.shareDetailsData.baseUrl + '/home';
+    } else {
+      this.shareDetailsData.link = this.shareDetailsData.baseUrl + '/home/' + this.shareDetailsData.userId;
+    }
   }
 
   copyShareLink(inputElement) {
-    var link = this.shareDetailsData.baseUrl + '/' + this.shareDetailsData.userId;
-
     inputElement.select();
     document.execCommand('copy');
     inputElement.setSelectionRange(0, 0);

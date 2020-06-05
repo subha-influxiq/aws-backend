@@ -79,7 +79,7 @@ export class CommonFunction {
         }
 
         /* Set Meta Data */
-        this.meta.setTitle(title);
+        this.meta.setTitle('Welcome to AWS Backend');
         this.meta.setTag('og:description', 'Welcome to AWS Backend.');
         this.meta.setTag('og:title', 'Welcome to AWS Backend.');
         this.meta.setTag('og:type', 'website');

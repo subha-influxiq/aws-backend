@@ -2,7 +2,7 @@
     <h2>Doctor Signup through the following link:</h2>
 
     <mat-toolbar class="link_field">
-      <input type="text" value="{{ shareDetailsData.baseUrl }}/home/{{ shareDetailsData.userId }}" #shareLinkUrl>
+      <input type="text" [value]="shareDetailsData.link" #shareLinkUrl>
       <span class="shreWr">
         <a mat-button (click)="copyShareLink(shareLinkUrl);">Copy</a>
       </span>
