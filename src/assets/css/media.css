@@ -167,6 +167,8 @@ align-items: flex-start; }
   .encounter_rules .admin_superbillsection .tab table tr.mat-row { border-bottom: 6px solid #a9d6d3;}
   .encounter_rules .admin_superbillsection .greenbar { height: 210px; }
   .encounter_rules .admin_superbillsection .greenbar p { font-size: 32px; }
+  .shareLink_wrpr .link_field h2 { font-size: 20px; white-space: normal; line-height: 22px; width: 230px; }
+  
 }
 @media screen and (max-width: 900px){
   .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item,
@@ -174,14 +176,9 @@ align-items: flex-start; }
   .admin_wrapper .title_wrapper { font-size: 24px; }
   .book-appointment .mat-form-field { width: 31.6%; }
   .encounter_rules .admin_superbillsection .greenbar p { font-size: 38px; position: inherit;
-    background: #fff; padding: 16px 0px 0; }
-  .encounter_rules .admin_superbillsection .greenbar { height: auto;
-    background-size: 220%;
-    background-position: 100% top;
-    padding: 16px;
-    padding-top: 54%;
-    background-color: #fff;
-    text-align: center; }
+  background: #fff; padding: 16px 0px 0; }
+  .encounter_rules .admin_superbillsection .greenbar { height: auto; background-size: 220%;
+  background-position: 100% top; padding: 16px; padding-top: 54%; background-color: #fff; text-align: center; }
 }
 @media screen and (max-width: 840px){                      
   .quickRef .report_wrapper .items_w { width: 48%; margin: 1%;  }
@@ -196,6 +193,10 @@ align-items: flex-start; }
   .calenderView .filter .filter-box { width: 32%; }
   .calenderView .calender_first .mat-toolbar { padding: 10px; height: auto; }
 }
+@media screen and (max-width: 776px){
+  .shareLink_wrpr .link_field { flex-direction: column;}
+  .shareLink_wrpr .link_field h2 { width: 100%; margin: 0; margin-bottom: 8px; }
+}
 @media screen and (max-width: 740px){
   .mediaDoc_wrapper .media_inner_items .action_button { font-size: 20px; padding: 4px; }
   .calenderView .slotview .example-card { width: 47%; }
@@ -203,6 +204,7 @@ align-items: flex-start; }
   .admin_wrapper .add_form .submit_form button { font-size: 18px; width: 48%; margin: 1%; }
   .admin_wrapper .add_form .submit_form button:first-child { margin-right: 8px; }
   .admin_dashboard .DataTable .searchbar .mat-form-field{ width: 48.5%;}
+
 }
 @media screen and (max-width: 668px){
   .main_wrapper .login_wrapper { width: 450px; }
@@ -248,6 +250,8 @@ align-items: flex-start; }
   .shareLink_wrpr h2{ font-size: 20px; text-align: center; }
   .shareLink_wrpr .iconBar { justify-content: center; }
   .shareLink_wrpr { margin: 0px !important; }
+  .shareLink_wrpr .small_view { flex-direction: column; }
+  .shareLink_wrpr .small_view .icon_wr{ display: flex; justify-content: center; align-items: center; margin-top: 12px;}
 }
 
 @media screen and (max-width: 540px){
@@ -298,8 +302,7 @@ align-items: flex-start; }
     margin-top: 6px; }
 
   .calenderView .filter .filter-box { width: 100%; }
-  .calenderView .slotview .example-card { width: 100%; box-sizing: border-box;  margin: 0; margin-bottom: 16px; }
-  .shareLink_wrpr .link_field .shreWr a { width: 70px;}
+  .calenderView .slotview .example-card { width: 100%; box-sizing: border-box;  margin: 0; margin-bottom: 16px; } 
 }
 
 @media screen and (max-width: 440px){
@@ -326,9 +329,7 @@ align-items: flex-start; }
   .table_wrapper .top_header .wrappp_R { flex-direction: column; display: flex; align-items: center; }
   .top_header .wrappp_R .add_new{ margin-bottom: 10px;}
   .top_header .wrappp_R .add_new:last-child { margin-left: 0px; margin-bottom: 10px;}
-  .admin_wrapper .title_wrapper { font-size: 20px; }
-  .shareLink_wrpr .link_field { flex-direction: column; height: auto; margin: 10px 0; }
-  .shareLink_wrpr .link_field .shreWr a { width: 100px; margin: 14px 0 0; }
+  .admin_wrapper .title_wrapper { font-size: 20px; } 
 }
 @media screen and (max-width: 350px){
   .main_wrapper .login_wrapper { width: 265px; }
