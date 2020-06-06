@@ -1,20 +1,22 @@
 <mat-card-content class="shareLink_wrpr">
-    <h2>Doctor Signup through the following link:</h2>
 
-    <mat-toolbar class="link_field">
-      <input type="text" value="{{ shareDetailsData.baseUrl }}/home/{{ shareDetailsData.userId }}" #shareLinkUrl>
+
+  <mat-toolbar class="link_field">
+    <h2>Share link for Doctor Signup:</h2>
+    <span class="small_view">
       <span class="shreWr">
-        <a mat-button (click)="copyShareLink(shareLinkUrl);">Copy</a>
+        <input type="text" disabled [value]="shareDetailsData.link" #shareLinkUrl>
+        <a mat-button (click)="copyShareLink(shareLinkUrl);"><i class="material-icons">
+            link
+          </i></a>
       </span>
-    </mat-toolbar>
-    <mat-toolbar class="iconBar">
-      <p>Share To: </p>
       <span class="icon_wr">
         <button mat-button><i class="fab fa-facebook-f"></i></button>
         <button mat-button><i class="fab fa-twitter"></i></button>
         <button mat-button><i class="fab fa-linkedin-in"></i></button>
         <button mat-button><i class="fab fa-tumblr"></i></button>
       </span>
-    </mat-toolbar>
+    </span>
+  </mat-toolbar>
 
-  </mat-card-content>
+</mat-card-content>

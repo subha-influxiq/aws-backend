@@ -18,6 +18,7 @@ import { LogoutComponent } from '../components/auth/logout/logout.component';
 /****************** Admin *****************/
 import { ReportNotProcessComponent } from '../components/admin/report-not-process/report-not-process.component';
 import { AdminDashboardComponent } from '../components/admin/admin-dashboard/admin-dashboard.component';
+import { HoldReportJobTicketComponent } from '../components/admin/admin-dashboard/hold-report-job-ticket/hold-report-job-ticket.component';
 import { EditPatientRecordComponent } from '../components/admin/admin-dashboard/edit-patient-record/edit-patient-record.component';
 
 // Diagnostic Admin Management
@@ -215,6 +216,19 @@ const routes: Routes = [
   {
     path: 'admin/dashboard',
     component: AdminDashboardComponent,
+    canActivate: [AuthguardService],
+    resolve: { dataCount: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'admin-dashboard'
+    },
+  },
+  {
+    path: 'admin/create-jobticket/:_id',
+    component: HoldReportJobTicketComponent,
     canActivate: [AuthguardService],
     resolve: { dataCount: ResolveService },
     data: {
