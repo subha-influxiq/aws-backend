@@ -177,12 +177,10 @@ import { EncounterFormRulesComponent } from './components/common/encounter-form-
 import { ApprovedPatientReportsComponent } from './components/admin/admin-dashboard/approved-patient-reports/approved-patient-reports.component';
 import { DoctorSignupShareComponent } from './components/common/doctor-signup-share/doctor-signup-share.component';
 import { ApprovedPatientReportsBilleradminComponent } from './components/adminbiller/approved-patient-reports/approved-patient-reports-billeradmin/approved-patient-reports-billeradmin.component';
-<<<<<<< HEAD
-import { CptValidateReportsComponent } from './components/admin/cpt-validate-reports/cpt-validate-reports/cpt-validate-reports.component';
-import { ReportsDetailsComponent } from './components/admin/reports-details/reports-details/reports-details.component';
-=======
 import { HoldReportJobTicketComponent } from './components/admin/admin-dashboard/hold-report-job-ticket/hold-report-job-ticket.component';
->>>>>>> 4c4f253f7b0de95a5b4c37b6fa04becddcd670a7
+import {CptValidateReportsComponent} from './components/admin/cpt-validate-reports/cpt-validate-reports/cpt-validate-reports.component'
+import { ReportsDetailsComponent } from './components/admin/reports-details/reports-details/reports-details.component';
+
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -346,12 +344,9 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     ApprovedPatientReportsComponent,
     DoctorSignupShareComponent,
     ApprovedPatientReportsBilleradminComponent,
-<<<<<<< HEAD
+    HoldReportJobTicketComponent,
     CptValidateReportsComponent,
     ReportsDetailsComponent
-=======
-    HoldReportJobTicketComponent
->>>>>>> 4c4f253f7b0de95a5b4c37b6fa04becddcd670a7
   ],
   imports: [
     SatDatepickerModule,
