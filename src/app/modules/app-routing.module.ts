@@ -131,6 +131,8 @@ import { EncounterFormComponent } from '../components/encounter-form/encounter-f
 import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
 import { EncounterFormRulesComponent } from '../components/common/encounter-form-rules/encounter-form-rules.component';
 // import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
+import { CptValidateReportsComponent } from '../components/admin/cpt-validate-reports/cpt-validate-reports/cpt-validate-reports.component';
+import { ReportsDetailsComponent } from '../components/admin/reports-details/reports-details/reports-details.component';
 
 const routes: Routes = [
   /********** Auth Route Start **********/
@@ -163,8 +165,13 @@ const routes: Routes = [
     component: LogoutComponent
   },
   /********** Auth Route Start **********/
+/*=========Reports Details Routes======== */
 
-
+{
+  path: 'admin/reports-details/:_id',
+  component: ReportsDetailsComponent,
+  canActivate: [AuthguardService]
+},
 /*========Admin Biller Routes========== */
 
 {
@@ -197,6 +204,12 @@ const routes: Routes = [
   },
 },
 
+// Cpt Reports Routes----------------
+{
+  path: 'admin/cpt-reports',
+  component: CptValidateReportsComponent,
+  canActivate: [AuthguardService],
+},
 
   /********** Admin Routes Start **********/
   {

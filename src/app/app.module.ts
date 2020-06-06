@@ -177,6 +177,8 @@ import { EncounterFormRulesComponent } from './components/common/encounter-form-
 import { ApprovedPatientReportsComponent } from './components/admin/admin-dashboard/approved-patient-reports/approved-patient-reports.component';
 import { DoctorSignupShareComponent } from './components/common/doctor-signup-share/doctor-signup-share.component';
 import { ApprovedPatientReportsBilleradminComponent } from './components/adminbiller/approved-patient-reports/approved-patient-reports-billeradmin/approved-patient-reports-billeradmin.component';
+import { CptValidateReportsComponent } from './components/admin/cpt-validate-reports/cpt-validate-reports/cpt-validate-reports.component';
+import { ReportsDetailsComponent } from './components/admin/reports-details/reports-details/reports-details.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -339,7 +341,9 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     EncounterFormRulesComponent,
     ApprovedPatientReportsComponent,
     DoctorSignupShareComponent,
-    ApprovedPatientReportsBilleradminComponent
+    ApprovedPatientReportsBilleradminComponent,
+    CptValidateReportsComponent,
+    ReportsDetailsComponent
   ],
   imports: [
     SatDatepickerModule,
