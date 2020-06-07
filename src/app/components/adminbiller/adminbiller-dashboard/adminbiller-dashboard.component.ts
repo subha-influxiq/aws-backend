@@ -196,7 +196,7 @@ export class AdminbillerDashboardComponent implements OnInit {
   public sortdata: any = {
     "type": 'desc',
     "field": 'patient_name',
-    "options": ['patient_name', 'email', 'created_date']
+    "options": ['patient_name', 'created_at_datetime']
   };
   public limitcond: any = {
     "limit": 10,
@@ -209,6 +209,7 @@ export class AdminbillerDashboardComponent implements OnInit {
   public status: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"}];
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
   public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }];
+  // public report:any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"}]
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
   public docofficeval: any = [];
@@ -244,10 +245,10 @@ export class AdminbillerDashboardComponent implements OnInit {
     this.jwtToken = cookieService.get('jwtToken');
 
     /* Get resolve data */
-    this.activatedRoute.data.subscribe(resolveData => {
-      this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
+    // this.activatedRoute.data.subscribe(resolveData => {
+      // this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
       //this.viewReportProcessData(this.htmlText.headerText);
-    });
+    // });
 
 
     // lib list

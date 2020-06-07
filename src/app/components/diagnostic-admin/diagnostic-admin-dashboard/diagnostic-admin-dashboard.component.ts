@@ -202,7 +202,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
   public sortdata: any = {
     "type": 'desc',
     "field": 'firstname',
-    "options": ['firstname', 'email', 'created_date']
+    "options": ['patient_name','created_at_datetime']
   };
   public limitcond: any = {
     "limit": 10,
@@ -251,13 +251,6 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
 
-    /* Get resolve data */
-    this.activatedRoute.data.subscribe(resolveData => {
-      if (resolveData.dataCount.data.dashboardCount.length > 0) {
-        this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
-        this.allResolveData.tableDataFlag = true;
-      }
-    });
 
 
 

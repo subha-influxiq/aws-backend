@@ -146,6 +146,7 @@ export class ApprovedPatientReportsBilleradminComponent implements OnInit {
       // "tech_name",
       "status_text",
       "created_at_datetime",
+      "status_datetime",
       "cpt_addl",
       "general_details",
       // "parent_type",
@@ -159,6 +160,7 @@ export class ApprovedPatientReportsBilleradminComponent implements OnInit {
     "patient_name": "Patient Name",
     "status_text": "Status",
     "created_at_datetime": "Report Added",
+    "status_datetime" : "Last Status Time",
     "cpt_addl": "CPT/ Addl Hrisk C",
     // "addl_hlth_risk": "Addl Hlth Risk"
   };
@@ -172,7 +174,7 @@ export class ApprovedPatientReportsBilleradminComponent implements OnInit {
   public sortdata: any = {
     "type": 'desc',
     "field": 'patient_name',
-    "options": ['patient_name', 'email', 'created_date']
+    "options": ['patient_name', 'created_at_datetime']
   };
   public limitcond: any = {
     "limit": 10,
@@ -185,6 +187,7 @@ export class ApprovedPatientReportsBilleradminComponent implements OnInit {
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
   public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }];
+  public report:any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"}]
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
   public docofficeval: any = [];
@@ -197,12 +200,12 @@ export class ApprovedPatientReportsBilleradminComponent implements OnInit {
   public SearchingSourceName: any = "data_biller_list";
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type } , { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }],
+      selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type } , { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },{label: "Search By Reports", field: 'status_text', values:this.report },{label: "Search By Doctor", field: 'doc_name_search', values:this.authval },
+      {label: "Search By Tech", field: 'tech_name_search', values:this.techval },{label: "Search By Doctor Office", field: 'author_search', values:this.docofficeval },{label: "Search By Parent Name", field: 'patient_name', values:this.parentnameval },{label: "Search By Doctor City", field: 'author_search', values:this.doctorcity },{label: "Search By Doctor State", field: 'author_search', values:this.doctorstate },{label: "Search By Parent City", field: 'author_search', values:this.patientcity },{label: "Search By Parent State", field: 'author_search', values:this.patientstate }],
       // datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
       // textsearch: [{ label: "Search By Name", field: 'name_search' },
       // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],
-      search:[{label: "Search By Doctor", field: 'doc_name_search', values:this.authval },
-      {label: "Search By Tech", field: 'tech_name_search', values:this.techval },{label: "Search By Doctor Office", field: 'author_search', values:this.docofficeval },{label: "Search By Parent Name", field: 'patient_name', values:this.parentnameval },{label: "Search By Doctor City", field: 'author_search', values:this.doctorcity },{label: "Search By Doctor State", field: 'author_search', values:this.doctorstate },{label: "Search By Parent City", field: 'author_search', values:this.patientcity },{label: "Search By Parent State", field: 'author_search', values:this.patientstate }]
+      // search:[]
     };
   // lib list end
 
