@@ -385,7 +385,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .biller_Dashboard .mat-table .mat-column-Doctor-Name .doctor_name{ margin: 6px 0; }
 .biller_Dashboard .mat-table .mat-column-Doctor-Name .doctor_name span{ font-family: 'AvenirBlack'; color: #404242; }
 
-.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{width:auto!important; background:#fff; color: #1dbce9!important; font-family: 'AvenirMedium';}
+/* .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{width:auto!important; background:#fff; color: #1dbce9!important; font-family: 'AvenirMedium';} */
 
 /* searches */
 .admin_table .action_bar{ height: auto; justify-content: space-between;}
@@ -393,7 +393,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 
 /* booked appointment */
 .bookedAppointment .action_bar .date-range { display: flex; width: 66%; }
-.admin_wrapper .title_wrapper { color: #fff; text-transform: uppercase; padding: 14px; font-family: 'AvenirBlack'; font-size: 30px; width: auto; background: #26c6da; text-align: center; }
+.admin_wrapper .title_wrapper { color: #fff; text-transform: uppercase; padding: 12px; font-family: 'AvenirBlack'; font-size: 26px; width: auto; background: #26c6da; text-align: center; }
 .admin_wrapper .mat-tab-group .mat-tab-header{margin: 16px 0;}
 .admin_wrapper .add_form .submit_form button{ border-radius: 5px; text-transform: uppercase; font-family: "AvenirMedium"; font-size: 22px; padding: 4px 16px; min-width: 170px;
   background: var(--button-color2); color: #fff; margin-right: 16px;}
@@ -431,21 +431,20 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
   padding: 5px; box-sizing: border-box; color: #545454; text-transform: capitalize; }
 .Admindmin_details .inner_er .mat-list-item .lg{ font-size: 18px; font-family: 'AvenirBlack'; }
 .admin_wrapper  .mediaDoc_wrapper { display: flex; justify-content: space-between; }
- .admin_wrapper  .mediaDoc_wrapper .new_wrapper_left{ width: 73%; display: flex;}
- .admin_wrapper  .mediaDoc_wrapper .new_wrapper_right{  width: 26%; display: flex; flex-direction: column;}
- .admin_wrapper  .mediaDoc_wrapper .new_wrapper_right .media_inner_items:last-child { margin-top: 16px;}
+.admin_wrapper  .mediaDoc_wrapper .new_wrapper_left{ width: 73%; display: flex;}
+.admin_wrapper  .mediaDoc_wrapper .new_wrapper_right{  width: 26%; display: flex; flex-direction: column;}
+.admin_wrapper  .mediaDoc_wrapper .new_wrapper_right .media_inner_items:last-child { margin-top: 16px;}
  
- .encounter_wrapper .second_table  .book-appointment .mat-card{ box-shadow: none; padding: 10px 8px; }
- .encounter_wrapper .second_table  .book-appointment .mat-horizontal-stepper-header-container { display: none; }
- .encounter_wrapper .second_table  .book-appointment .float-right { display: none; }
- .patient_report_wrapper .patient_item_section .mat-tab-label-active {
-  background:linear-gradient(45deg, #0772ff, #04a6f6); opacity: 1; }
+.encounter_wrapper .second_table  .book-appointment .mat-card{ box-shadow: none; padding: 10px 8px; }
+.encounter_wrapper .second_table  .book-appointment .mat-horizontal-stepper-header-container { display: none; }
+.encounter_wrapper .second_table  .book-appointment .float-right { display: none; }
+.patient_report_wrapper .patient_item_section .mat-tab-label-active {
+background:linear-gradient(45deg, #0772ff, #04a6f6); opacity: 1; }
 .mediaDoc_wrapper .media_inner_items{ background: #f8f3f3;  margin: 0; display: flex;
-  flex-direction: column; border: 1px solid #b4b5b5; box-sizing: border-box; width:100%; }
-
- .mediaDoc_wrapper .media_inner_items .image_wrapper { width: 100%; margin: 0; box-sizing: border-box; text-align: center;  display: flex; align-items: center; justify-content: center;}
- .mediaDoc_wrapper .media_inner_items .image_wrapper img{ max-width: 100%; vertical-align: middle;}
- .mediaDoc_wrapper .media_inner_items .action_button { background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%); color: #000000; font-size: 22px; font-family: 'AvenirHeavy'; padding: 9px; margin: 0; text-align: center; text-transform: uppercase; width: 100%; border-radius: 0; margin-top: auto; box-sizing: border-box; }
+flex-direction: column; border: 1px solid #b4b5b5; box-sizing: border-box; width:100%; }
+.mediaDoc_wrapper .media_inner_items .image_wrapper { width: 100%; margin: 0; box-sizing: border-box; text-align: center;  display: flex; align-items: center; justify-content: center;}
+.mediaDoc_wrapper .media_inner_items .image_wrapper img{ max-width: 100%; vertical-align: middle;}
+.mediaDoc_wrapper .media_inner_items .action_button { background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%); color: #000000; font-size: 22px; font-family: 'AvenirHeavy'; padding: 9px; margin: 0; text-align: center; text-transform: uppercase; width: 100%; border-radius: 0; margin-top: auto; box-sizing: border-box; }
 
 .report_wrapper .items_w  .icon_w{ background: #ffffff; padding: 10px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; font-family: 'AvenirMedium'; text-transform: capitalize; font-size: 16px; height: 340px; }
 .report_wrapper .items_w  .icon_w img{ height: 100%; max-width: 100%;}
@@ -455,7 +454,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .report_wrapper .items_w .name_wr{ display: flex; justify-content: space-between; align-items: center;}
 .report_wrapper .items_w .name_wr .reportName{ font-family: 'AvenirHeavy'; color: #272520; font-size: 20px; padding-right: 10px; line-height: 22px; box-sizing: border-box;}
 .report_wrapper .items_w .action_button{background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%);
-  color: #000000; font-size: 22px; font-family: 'AvenirHeavy'; padding: 4px; margin: 0; text-align: center; text-transform: uppercase; width: 100%; border-radius: 0; margin-top: auto; box-sizing: border-box; }
+ color: #000000; font-size: 22px; font-family: 'AvenirHeavy'; padding: 4px; margin: 0; text-align: center; text-transform: uppercase; width: 100%; border-radius: 0; margin-top: auto; box-sizing: border-box; }
 .viewMore_w{ justify-content: center; background: transparent!important; height: auto!important; margin-bottom: 30px!important; padding: 0!important;}
 .viewMore_w button{ min-width: 444px; background: linear-gradient(0deg, #04aaf5, #32baf9); font-family: 'AvenirHeavy'; color: #fff; text-transform: uppercase; font-size: 28px; padding: 4px;}
 
@@ -703,3 +702,5 @@ font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radi
 .shareLink_wrpr .icon_wr button:nth-child(4) { background: #34526f ; color:#fff; }
 .success-snackbar{ background: #4cde45!important; color: #fff!important; font-family: 'AvenirMedium';  box-shadow: none!important;}
 .success-snackbar .mat-simple-snackbar-action button { color: #fff!important;}
+
+ 
