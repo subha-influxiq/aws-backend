@@ -215,6 +215,20 @@ const routes: Routes = [
   component: AdminbillerDashboardComponent,
   canActivate: [AuthguardService],
 },
+{
+  path: 'admin-biller/patient-record-report/:_id',
+  component: PatientReportViewComponent,
+  //canActivate: [AuthguardService],
+  resolve: { data: ResolveService },
+  data: {
+    requestcondition: {
+      source: 'data_pece',
+      condition: {}
+    },
+    endpoint: 'report-view'
+  },
+},
+
 // faq
 {
   path: 'admin-biller/faq',
@@ -1006,6 +1020,19 @@ const routes: Routes = [
         endpoint: 'diagnostic-admin-dashboard'
       },
     },
+    {
+      path: 'doctor-group/patient-record-report/:_id',
+      component: PatientReportViewComponent,
+      //canActivate: [AuthguardService],
+      resolve: { data: ResolveService },
+      data: {
+        requestcondition: {
+          source: 'data_pece',
+          condition: {}
+        },
+        endpoint: 'report-view'
+      },
+    },
 
 
     /* Distributors Admin Dashboard */
@@ -1020,6 +1047,19 @@ const routes: Routes = [
           condition: {}
         },
         endpoint: 'diagnostic-admin-dashboard'
+      },
+    },
+    {
+      path: 'distributors/patient-record-report/:_id',
+      component: PatientReportViewComponent,
+      //canActivate: [AuthguardService],
+      resolve: { data: ResolveService },
+      data: {
+        requestcondition: {
+          source: 'data_pece',
+          condition: {}
+        },
+        endpoint: 'report-view'
       },
     },
 
@@ -1037,6 +1077,19 @@ const routes: Routes = [
         condition: {}
       },
       endpoint: 'diagnostic-admin-dashboard'
+    },
+  },
+  {
+    path: 'diagnostic-admin/patient-record-report/:_id',
+    component: PatientReportViewComponent,
+    //canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'report-view'
     },
   },
 
@@ -1383,6 +1436,19 @@ const routes: Routes = [
         },
       },
       endpoint: 'tech-dashboard'
+    },
+  },
+  {
+    path: 'tech/patient-record-report/:_id',
+    component: PatientReportViewComponent,
+    //canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'report-view'
     },
   },
 
@@ -1831,6 +1897,19 @@ const routes: Routes = [
     //   },
     //   endpoint: 'doctor-office-booked-list-events'
     // }
+  },
+  {
+    path: 'doctor-office/patient-record-report/:_id',
+    component: PatientReportViewComponent,
+    //canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'report-view'
+    },
   },
 
   /*Doctor Office Dashboard*/

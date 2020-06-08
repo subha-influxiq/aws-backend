@@ -83,10 +83,10 @@ export class BulkUploadComponent implements OnInit {
     }
 
     this.httpService.httpViaPost('datalist', data).subscribe(response => {
-        let result: any = {};
-        result = response.res;
-        this.allDoctorDataArray = result;
-      });
+      let result: any = {};
+      result = response.res;
+      this.allDoctorDataArray = result;
+    });
   }
 
   cancelButton() {
