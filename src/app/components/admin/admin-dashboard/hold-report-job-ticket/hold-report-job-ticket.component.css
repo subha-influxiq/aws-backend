@@ -1,0 +1,8 @@
+.example-card {
+    max-width: 100%;
+  }
+  
+  .example-header-image {
+    background-image: url('../../../../../assets/images/account_circle-24px.svg');
+    background-size: cover;
+  }

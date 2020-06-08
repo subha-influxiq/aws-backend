@@ -1,6 +1,9 @@
 <app-biller-header *ngIf="cookiesData.user_details.user_type == 'biller'"></app-biller-header>
 <app-doctor-header *ngIf="cookiesData.user_details.user_type == 'doctor'"></app-doctor-header>
 <app-admin-header *ngIf="cookiesData.user_details.user_type == 'admin'"></app-admin-header>
+
+<app-doctor-group-header *ngIf="cookiesData.user_details.user_type == 'doctor_group'"></app-doctor-group-header>
+
 <app-diagnostic-admin-header *ngIf="cookiesData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
 
 <ng-container>
