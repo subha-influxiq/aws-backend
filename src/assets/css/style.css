@@ -644,6 +644,12 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr  .mat-column-general_details p{ margin:6px 0}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(1){color: #21e289; font-size: 15px; font-weight: 700;}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(2){color: #6fc4dc; font-weight: 600;}
+.admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details .tech_name,
+.admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details .doc_name,
+.admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details .parent_name,
+.admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details .parent_type,
+.admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details .doctor_office{ display: none;}
+
 .form2_wrapper .DataTable .searchbar .mat-form-field{ width:48%; }
 
 .encounter_rules{padding: 16px!important;}
