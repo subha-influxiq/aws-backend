@@ -1,1 +1,100 @@
-<p>adminbiller-header works!</p>
+<mat-toolbar class="techdashboard_header" [ngClass]="{'sticky' : isSticky}">
+    <mat-card-content class="header_wrapper">
+      <span class="logo_wrapper" [routerLink]="[ '/admin/dashboard' ]">
+        <img src="../../../assets/images/logo.png">
+      </span>
+  
+      <button mat-flat-button (click)="menuFunction()" class="togle_menu"><i class="material-icons"> menu </i></button>
+      <mat-card-content class="quotation" [ngClass]="status ? 'success' : 'danger'" >
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active" [routerLink]="['/admin/dashboard']"> Dashboard </a>
+  
+          <!-- Drop down menu -->
+          <a mat-list-item routerLinkActive="active" [matMenuTriggerFor]="userMenu"> Users Management
+            <i class="material-icons">keyboard_arrow_down</i>
+          </a>
+          <mat-menu #userMenu="matMenu">
+            <button mat-menu-item [routerLink]="['/admin/doctor-management']" routerLinkActive="active"> Manage Doctor
+            </button>
+            <button mat-menu-item [routerLink]="['/admin/biller-management']" routerLinkActive="active"> Manage Biller
+            </button>
+            <button mat-menu-item [routerLink]="['/admin/tech-management']" routerLinkActive="active"> Manage Tech
+            </button>
+            <button mat-menu-item [routerLink]="['/admin/admin-management']" routerLinkActive="active"> Manage Admin
+            </button>
+            <button mat-menu-item [routerLink]="['/admin/doctor-office-management']" routerLinkActive="active"> Doctors
+              Office </button>
+            <button mat-menu-item [routerLink]="['/admin/diagnostic-admin-management']" routerLinkActive="active">
+              Diagnostic Admin </button>
+            <button mat-menu-item [routerLink]="['/admin/sales-person-management']" routerLinkActive="active"> Sales
+              Person </button>
+            <button mat-menu-item [routerLink]="['/admin/doctor-management/group']" routerLinkActive="active"> Doctors
+              Group </button>
+            <button mat-menu-item [routerLink]="['/admin/adminbiller-management']" routerLinkActive="active">Biller
+              Admin</button>
+            <button mat-menu-item [routerLink]="['/admin/distributors-management']" routerLinkActive="active">Manage
+              Distributor</button>
+          </mat-menu>
+  
+  
+          <!-- Drop down menu -->
+          <a mat-list-item routerLinkActive="active" [matMenuTriggerFor]="insurance"> Insurance Management
+            <i class="material-icons">keyboard_arrow_down</i>
+          </a>
+          <mat-menu #insurance="matMenu">
+            <button mat-menu-item [routerLink]="['/admin/insurance-management']" routerLinkActive="active"> Manage
+              Insurance </button>
+            <button mat-menu-item [routerLink]="['/admin/insurance-type-management']" routerLinkActive="active"> Manage
+              Insurance Type </button>
+          </mat-menu>
+  
+  
+          <a mat-list-item [routerLink]="['/admin/booked-appoinments']" routerLinkActive="active">Appointments</a>
+  
+          <a mat-list-item [routerLink]="['/admin/patientinformation-management']" routerLinkActive="active">Patient
+            Information</a>
+          <a mat-list-item [matMenuTriggerFor]="FAQManagement"> FAQ Management <i
+              class="material-icons">keyboard_arrow_down</i></a>
+          <a mat-list-item [matMenuTriggerFor]="misc"> Miscellaneous <i class="material-icons">keyboard_arrow_down</i></a>
+  
+        </mat-nav-list>
+        <mat-menu #FAQManagement="matMenu">
+          <button mat-menu-item [routerLink]="['/admin/faq-management']" routerLinkActive="active"> Manage FAQ</button>
+          <button mat-menu-item [routerLink]="['/admin/faq']" routerLinkActive="active"> FAQ</button>
+        </mat-menu>
+  
+        <mat-menu #misc="matMenu">
+          <button mat-menu-item [routerLink]="['/encounter-form-status']" routerLinkActive="active"> Encounter Form
+            Rules</button>
+          <button mat-menu-item [routerLink]="['/admin/cpt-reports']" routerLinkActive="active"> CPT Validate Reports</button>  
+        </mat-menu>
+      </mat-card-content>
+  
+  
+      <mat-card-content class="profile_section">
+        <mat-menu #appMenu="matMenu">
+          <button mat-menu-item [routerLink]="['/admin/account-settings']">
+            <mat-icon>account_circle</mat-icon> Account Settings
+          </button>
+  
+          <button mat-menu-item [routerLink]="['/admin/account-settings/change-password']">
+            <mat-icon>vpn_key</mat-icon> Change Password
+          </button>
+  
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>power_settings_new</mat-icon> Logout
+          </button>
+        </mat-menu>
+        <span class="username">{{user_details.firstname}} {{user_details.lastname}}</span>
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+          <span class="user_profile">
+            <mat-icon>account_circle</mat-icon>
+            <i class="material-icons">
+              keyboard_arrow_down
+            </i>
+          </span>
+        </button>
+      </mat-card-content>
+    </mat-card-content>
+  </mat-toolbar>
+  <!-- end header -->
