@@ -566,7 +566,7 @@ margin: 0 5px;}
 .app_list .mat-card{ padding: 0!important; }
 .app_list .mat-card .searchbar { padding: 0; }
 lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
-.book-appointment .mat-form-field{ width: 32%;}
+.book-appointment .mat-form-field{ width: 32.5%;}
 .book-appointment .mat-form-field-appearance-fill .mat-form-field-flex { background: #fbfbfb; }
 /* calendar management */
 .book-event .mat-dialog-container .mat-stepper-horizontal .mat-horizontal-content-container,
@@ -614,7 +614,9 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton3,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton4,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton5,
-.admin_dashboard .DataTable .tablewrapper tr td .custombutton6{ display: inline; margin: 0 4px;}
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton6,
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton7,
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton8{ display: inline; margin: 0 4px;}
 .admin_dashboard .DataTable .container .searchbar .search_class:first-child { margin-left: 20px;}
 /* .admin_dashboard .DataTable .container .searchbar .search_class { width:auto;} */
 
@@ -624,7 +626,9 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton3 button,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton4 button,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton5 button,
-.admin_dashboard .DataTable .tablewrapper tr td .custombutton6 button{
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton6 button,
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton7 button,
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton8 button{
    font-family: 'AvenirMedium'; background: var(--button-color3); box-shadow: none; margin-bottom: 6px; padding: 6px 10px; line-height: inherit; font-size: 12px; min-width: 140px;}
 
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton0 button {background: var(--button-color1);}
@@ -634,6 +638,8 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton4 button {background: var(--button-color5);}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton5 button {background: var(--button-color6);}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton6 button {background: var(--button-color1);}
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton7 button {background: var(--button-color2);}
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton8 button {background: var(--button-color3);}
 
 .admin_dashboard .DataTable .tablewrapper tr  .mat-column-general_details p{ margin:6px 0}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(1){color: #21e289; font-size: 15px; font-weight: 700;}
