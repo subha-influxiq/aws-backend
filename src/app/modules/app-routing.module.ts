@@ -174,7 +174,32 @@ const routes: Routes = [
   canActivate: [AuthguardService]
 },
 {
-  path: 'admin/reports-details',
+  path: 'doctor/reports-details',
+  component: ReportsDetailsComponent,
+  canActivate: [AuthguardService]
+},
+{
+  path: 'doctor-office/reports-details',
+  component: ReportsDetailsComponent,
+  canActivate: [AuthguardService]
+},
+{
+  path: 'tech/reports-details',
+  component: ReportsDetailsComponent,
+  canActivate: [AuthguardService]
+},
+{
+  path: 'diagnostic_admin/reports-details',
+  component: ReportsDetailsComponent,
+  canActivate: [AuthguardService]
+},
+{
+  path: 'doctor-group/reports-details',
+  component: ReportsDetailsComponent,
+  canActivate: [AuthguardService]
+},
+{
+  path: 'distributors/reports-details',
   component: ReportsDetailsComponent,
   canActivate: [AuthguardService]
 },

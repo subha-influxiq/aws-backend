@@ -17,6 +17,7 @@ export class ReportsDetailsComponent implements OnInit {
 
   public loginUserData: any = {};
   public jwtToken: string = "";
+  public user:any = {};
   public htmlText: any = {
     headerText: "Patient Reports"
   };
@@ -58,7 +59,7 @@ export class ReportsDetailsComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: { parent_id: {$ne:"admin"} },
+    basecondition: "",
     updateendpoint: 'status-update',
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
@@ -190,7 +191,7 @@ export class ReportsDetailsComponent implements OnInit {
   public search_settings: any =
     {
       
-      selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type } , { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },{label: "Search By Doctor", field: 'doc_name_search', values:this.authval },{label: "Search By Tech", field: 'tech_name_search', values:this.techval },{label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values:this.docofficeval },{label: "Search By Doctor City", field: 'doctor_city_search', values:this.doctorcity },{label: "Search By Doctor State", field: 'doctor_state_search', values:this.doctorstate },{label: "Search By Patient City", field: 'patient_state_search', values:this.patientcity },{label: "Search By Patient State", field: 'patient_city_search', values:this.patientstate }],
+      selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type } ,{label: "Search By Patient City", field: 'patient_state_search', values:this.patientcity },{label: "Search By Doctor", field: 'doc_name_search', values:this.authval },{label: "Search By Tech", field: 'tech_name_search', values:this.techval },{label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values:this.docofficeval },{label: "Search By Parent Name", field: 'parent_name_search', values:this.parentnameval },{label: "Search By Doctor City", field: 'doctor_city_search', values:this.doctorcity },{label: "Search By Doctor State", field: 'doctor_state_search', values:this.doctorstate },{label: "Search By Patient State", field: 'patient_city_search', values:this.patientstate }],
       datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
       // textsearch: [{ label: "Search By Name", field: 'name_search' },
       // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],
@@ -211,14 +212,37 @@ export class ReportsDetailsComponent implements OnInit {
 
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
-
+    
+    if(this.loginUserData.user_details.user_details.user_type == "doctor") {
+      this.user = {doctor_id:this.loginUserData.user_details.user_details._id}
+      this.search_settings.selectsearch.splice(2,1);
+      this.search_settings.selectsearch.splice(6,1);
+      this.search_settings.selectsearch.splice(7,1);
+    } else if(this.loginUserData.user_details.user_details.user_type == "tech") {
+      this.search_settings.selectsearch.splice(3,1);
+      this.user = {tech_id:this.loginUserData.user_details.user_details._id}
+    } else if(this.loginUserData.user_details.user_details.user_type == "doctor_office") {
+      this.search_settings.selectsearch.splice(4,1);
+      this.user = {doctors_office_id:this.loginUserData.user_details.user_details._id}
+    } else if(this.loginUserData.user_details.user_details.user_type == "diagnostic_admin") {
+      this.search_settings.selectsearch.splice(5,1);
+      this.user = {parent_id:this.loginUserData.user_details.user_details._id}
+    } else if(this.loginUserData.user_details.user_details.user_type == "doctor_group") {
+      this.search_settings.selectsearch.splice(5,1);
+      this.user = {parent_id :this.loginUserData.user_details.user_details._id}
+    } else if(this.loginUserData.user_details.user_details.user_type == "distributors") {
+      this.search_settings.selectsearch.splice(5,1);
+      this.user = {parent_id:this.loginUserData.user_details.user_details._id}
+    } else {
+      this.user = {parent_id:this.activatedRoute.snapshot.params._id}
+    }
     /* Get resolve data */
     // this.activatedRoute.data.subscribe(resolveData => {
       // this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
       //this.viewReportProcessData(this.htmlText.headerText);
     // });
 
-
+    this.libdata.basecondition = this.user;
     // lib list
     let endpoint = 'getPatientreport';
     let endpointc = 'getPatientreport-count';
@@ -231,7 +255,7 @@ export class ReportsDetailsComponent implements OnInit {
         "type": 'desc',
         "field": 'patient_name'
       },
-      parent_id:this.activatedRoute.snapshot.params._id
+      data:this.user
     }
 
     this.http.httpViaPostbyApi1(endpointc, data).subscribe((res: any) => {
@@ -248,13 +272,13 @@ export class ReportsDetailsComponent implements OnInit {
     });
   }
 
+
   ngOnInit() {
     let data:any= {
-      "source":"patient_data_desc_patient_name",
-      "condition":{},
-      "token":this.jwtToken
+      "data":this.user
     }
-    this.http.httpViaPost("datalist", data).subscribe((response: any) => {
+    // data.condition = this.user;
+    this.http.httpViaPostbyApi1("datalist-report", data).subscribe((response: any) => {
       var start = false;
       var count = 0;
       for(var i in response.res) {
