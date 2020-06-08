@@ -94,7 +94,7 @@ export class DistributorsDashboardComponent implements OnInit {
     custombuttons: [
       {
         label: "View Report",
-        route: "admin/patient-record/",
+        route: "distributors/patient-record-report/",
         type: 'internallink',
         param: ['_id'],
       },{

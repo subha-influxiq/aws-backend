@@ -152,7 +152,7 @@ export class ReportsDetailsComponent implements OnInit {
     "status_text": "Status",
     "created_at_datetime": "Report Added",
     "cpt_addl": "CPT/ Addl Hrisk C",
-    "total_cpt_amount" : "Total Validate Amount"
+    "total_cpt_amount" : "Total Validate Amount($)"
     // "addl_hlth_risk": "Addl Hlth Risk"
   };
 

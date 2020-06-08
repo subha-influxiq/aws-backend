@@ -181,6 +181,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .bradcrumb a{ color: #32a9f5; text-decoration: none; }
 .container .searchbar .search_class{ display: flex; justify-content: center; width: 100%; }
 .admin_dashboard .container .searchbar .search_class{ display: flex; justify-content: center; width: auto; }
+.approveed_report .container .searchbar .search_class{width: 100%; }
 
 
 .container .searchbar .add_button { background: var(--button-color3); font-family: 'AvenirRoman'; font-size: 16px;
@@ -385,7 +386,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .biller_Dashboard .mat-table .mat-column-Doctor-Name .doctor_name{ margin: 6px 0; }
 .biller_Dashboard .mat-table .mat-column-Doctor-Name .doctor_name span{ font-family: 'AvenirBlack'; color: #404242; }
 
-.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{width:auto!important; background:#fff; color: #1dbce9!important; font-family: 'AvenirMedium';}
+/* .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{width:auto!important; background:#fff; color: #1dbce9!important; font-family: 'AvenirMedium';} */
 
 /* searches */
 .admin_table .action_bar{ height: auto; justify-content: space-between;}
@@ -393,7 +394,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 
 /* booked appointment */
 .bookedAppointment .action_bar .date-range { display: flex; width: 66%; }
-.admin_wrapper .title_wrapper { color: #fff; text-transform: uppercase; padding: 14px; font-family: 'AvenirBlack'; font-size: 30px; width: auto; background: #26c6da; text-align: center; }
+.admin_wrapper .title_wrapper { color: #fff; text-transform: uppercase; padding: 12px; font-family: 'AvenirBlack'; font-size: 26px; width: auto; background: #26c6da; text-align: center; }
 .admin_wrapper .mat-tab-group .mat-tab-header{margin: 16px 0;}
 .admin_wrapper .add_form .submit_form button{ border-radius: 5px; text-transform: uppercase; font-family: "AvenirMedium"; font-size: 22px; padding: 4px 16px; min-width: 170px;
   background: var(--button-color2); color: #fff; margin-right: 16px;}
@@ -419,7 +420,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
  .add_form .form_wrapper .mat-form-field-appearance-fill .mat-form-field-flex { border-radius: 4px 4px 0 0;  background: #eee; }
  /* doctor dashboard new */
  .admin_wrapper  .testingDoc { background: linear-gradient(0deg, #07aaf5, #40bffa); font-size: 34px; text-transform: uppercase; color: #fff; padding: 8px 10px;
-  font-family: 'AvenirMedium'; }
+  font-family: 'AvenirMedium'; margin: 6px!important; border-radius: 4px;}
 .Admindmin_details .inner_er{ background:url('../../assets/images/doctordbImage.jpg') no-repeat;
   background-size: cover; padding: 30px;}
 .Admindmin_details .inner_er h2{ text-align: center; margin: 0; color: var(--button-color3); font-family: 'AvenirBlack'; font-size: 24px; text-transform: uppercase; margin-top: 18px; }
@@ -431,21 +432,20 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
   padding: 5px; box-sizing: border-box; color: #545454; text-transform: capitalize; }
 .Admindmin_details .inner_er .mat-list-item .lg{ font-size: 18px; font-family: 'AvenirBlack'; }
 .admin_wrapper  .mediaDoc_wrapper { display: flex; justify-content: space-between; }
- .admin_wrapper  .mediaDoc_wrapper .new_wrapper_left{ width: 73%; display: flex;}
- .admin_wrapper  .mediaDoc_wrapper .new_wrapper_right{  width: 26%; display: flex; flex-direction: column;}
- .admin_wrapper  .mediaDoc_wrapper .new_wrapper_right .media_inner_items:last-child { margin-top: 16px;}
+.admin_wrapper  .mediaDoc_wrapper .new_wrapper_left{ width: 73%; display: flex;}
+.admin_wrapper  .mediaDoc_wrapper .new_wrapper_right{  width: 26%; display: flex; flex-direction: column;}
+.admin_wrapper  .mediaDoc_wrapper .new_wrapper_right .media_inner_items:last-child { margin-top: 16px;}
  
- .encounter_wrapper .second_table  .book-appointment .mat-card{ box-shadow: none; padding: 10px 8px; }
- .encounter_wrapper .second_table  .book-appointment .mat-horizontal-stepper-header-container { display: none; }
- .encounter_wrapper .second_table  .book-appointment .float-right { display: none; }
- .patient_report_wrapper .patient_item_section .mat-tab-label-active {
-  background:linear-gradient(45deg, #0772ff, #04a6f6); opacity: 1; }
+.encounter_wrapper .second_table  .book-appointment .mat-card{ box-shadow: none; padding: 10px 8px; }
+.encounter_wrapper .second_table  .book-appointment .mat-horizontal-stepper-header-container { display: none; }
+.encounter_wrapper .second_table  .book-appointment .float-right { display: none; }
+.patient_report_wrapper .patient_item_section .mat-tab-label-active {
+background:linear-gradient(45deg, #0772ff, #04a6f6); opacity: 1; }
 .mediaDoc_wrapper .media_inner_items{ background: #f8f3f3;  margin: 0; display: flex;
-  flex-direction: column; border: 1px solid #b4b5b5; box-sizing: border-box; width:100%; }
-
- .mediaDoc_wrapper .media_inner_items .image_wrapper { width: 100%; margin: 0; box-sizing: border-box; text-align: center;  display: flex; align-items: center; justify-content: center;}
- .mediaDoc_wrapper .media_inner_items .image_wrapper img{ max-width: 100%; vertical-align: middle;}
- .mediaDoc_wrapper .media_inner_items .action_button { background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%); color: #000000; font-size: 22px; font-family: 'AvenirHeavy'; padding: 9px; margin: 0; text-align: center; text-transform: uppercase; width: 100%; border-radius: 0; margin-top: auto; box-sizing: border-box; }
+flex-direction: column; border: 1px solid #b4b5b5; box-sizing: border-box; width:100%; }
+.mediaDoc_wrapper .media_inner_items .image_wrapper { width: 100%; margin: 0; box-sizing: border-box; text-align: center;  display: flex; align-items: center; justify-content: center;}
+.mediaDoc_wrapper .media_inner_items .image_wrapper img{ max-width: 100%; vertical-align: middle;}
+.mediaDoc_wrapper .media_inner_items .action_button { background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%); color: #000000; font-size: 22px; font-family: 'AvenirHeavy'; padding: 9px; margin: 0; text-align: center; text-transform: uppercase; width: 100%; border-radius: 0; margin-top: auto; box-sizing: border-box; }
 
 .report_wrapper .items_w  .icon_w{ background: #ffffff; padding: 10px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; font-family: 'AvenirMedium'; text-transform: capitalize; font-size: 16px; height: 340px; }
 .report_wrapper .items_w  .icon_w img{ height: 100%; max-width: 100%;}
@@ -455,7 +455,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .report_wrapper .items_w .name_wr{ display: flex; justify-content: space-between; align-items: center;}
 .report_wrapper .items_w .name_wr .reportName{ font-family: 'AvenirHeavy'; color: #272520; font-size: 20px; padding-right: 10px; line-height: 22px; box-sizing: border-box;}
 .report_wrapper .items_w .action_button{background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%);
-  color: #000000; font-size: 22px; font-family: 'AvenirHeavy'; padding: 4px; margin: 0; text-align: center; text-transform: uppercase; width: 100%; border-radius: 0; margin-top: auto; box-sizing: border-box; }
+ color: #000000; font-size: 22px; font-family: 'AvenirHeavy'; padding: 4px; margin: 0; text-align: center; text-transform: uppercase; width: 100%; border-radius: 0; margin-top: auto; box-sizing: border-box; }
 .viewMore_w{ justify-content: center; background: transparent!important; height: auto!important; margin-bottom: 30px!important; padding: 0!important;}
 .viewMore_w button{ min-width: 444px; background: linear-gradient(0deg, #04aaf5, #32baf9); font-family: 'AvenirHeavy'; color: #fff; text-transform: uppercase; font-size: 28px; padding: 4px;}
 
@@ -566,7 +566,7 @@ margin: 0 5px;}
 .app_list .mat-card{ padding: 0!important; }
 .app_list .mat-card .searchbar { padding: 0; }
 lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
-.book-appointment .mat-form-field{ width: 32%;}
+.book-appointment .mat-form-field{ width: 32.5%;}
 .book-appointment .mat-form-field-appearance-fill .mat-form-field-flex { background: #fbfbfb; }
 /* calendar management */
 .book-event .mat-dialog-container .mat-stepper-horizontal .mat-horizontal-content-container,
@@ -614,7 +614,9 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton3,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton4,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton5,
-.admin_dashboard .DataTable .tablewrapper tr td .custombutton6{ display: inline; margin: 0 4px;}
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton6,
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton7,
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton8{ display: inline; margin: 0 4px;}
 .admin_dashboard .DataTable .container .searchbar .search_class:first-child { margin-left: 20px;}
 /* .admin_dashboard .DataTable .container .searchbar .search_class { width:auto;} */
 
@@ -624,7 +626,9 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton3 button,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton4 button,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton5 button,
-.admin_dashboard .DataTable .tablewrapper tr td .custombutton6 button{
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton6 button,
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton7 button,
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton8 button{
    font-family: 'AvenirMedium'; background: var(--button-color3); box-shadow: none; margin-bottom: 6px; padding: 6px 10px; line-height: inherit; font-size: 12px; min-width: 140px;}
 
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton0 button {background: var(--button-color1);}
@@ -634,6 +638,8 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton4 button {background: var(--button-color5);}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton5 button {background: var(--button-color6);}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton6 button {background: var(--button-color1);}
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton7 button {background: var(--button-color2);}
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton8 button {background: var(--button-color3);}
 
 .admin_dashboard .DataTable .tablewrapper tr  .mat-column-general_details p{ margin:6px 0}
 .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(1){color: #21e289; font-size: 15px; font-weight: 700;}
@@ -685,7 +691,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
  top: 65%; position: absolute; font-family: 'AvenirBlack'; font-size: 60px;
  margin: 0; text-transform: uppercase; color: #08ab7d; }
 
-.shareLink_wrpr { background: #fff; padding: 16px; margin: 14px 10px 16px!important; border-radius: 4px; }
+.shareLink_wrpr { padding: 0px; margin: 14px 10px 16px!important; border-radius: 4px; }
 
 .shareLink_wrpr .link_field{ background: linear-gradient(45deg, #00aada, #83e2ff); height: auto; padding: 12px; justify-content: space-between;}  
 .shareLink_wrpr .link_field h2{ font-size: 20px; text-transform: uppercase; font-family: 'AvenirMedium';margin: 0; margin-right: 10px; color: #ffffff; }
@@ -694,7 +700,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .shareLink_wrpr .small_view .shreWr input{ background: #fff; padding: 10px; width: 100%; border: none; box-shadow: 0px 1px 4px #949494;}
   
 .shareLink_wrpr .link_field .shreWr a{ background: linear-gradient(45deg, #ff0000, #d60000);
-font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radius: 4px; }
+font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radius: 0 4px 4px 0;}
 .shareLink_wrpr .icon_wr button { width: 35px; height: auto; min-width: inherit; text-align: center; padding: 0; margin-left: 10px; } 
 .shareLink_wrpr .icon_wr button i{ font-size: 20px; }
 .shareLink_wrpr .icon_wr button:nth-child(1) { background: #3b5998; color:#fff; }
@@ -703,3 +709,5 @@ font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radi
 .shareLink_wrpr .icon_wr button:nth-child(4) { background: #34526f ; color:#fff; }
 .success-snackbar{ background: #4cde45!important; color: #fff!important; font-family: 'AvenirMedium';  box-shadow: none!important;}
 .success-snackbar .mat-simple-snackbar-action button { color: #fff!important;}
+
+ 

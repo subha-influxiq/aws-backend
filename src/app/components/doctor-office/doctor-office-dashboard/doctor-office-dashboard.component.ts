@@ -53,7 +53,7 @@ export class DoctorOfficeDashboardComponent implements OnInit {
     custombuttons: [
       {
         label: "View Report",
-        route: "admin/patient-record/",
+        route: "doctor-office/patient-record-report/",
         type: 'internallink',
         param: ['_id'],
       },{

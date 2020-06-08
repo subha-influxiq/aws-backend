@@ -158,7 +158,9 @@ export class CptValidateReportsComponent implements OnInit {
       // this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
       //this.viewReportProcessData(this.htmlText.headerText);
     // });
-
+      if(this.loginUserData.user_details.user_details.user_type == "admin_biller") {
+        this.libdata.custombuttons[0].route = "admin-biller/reports-details"
+      }
 
     // lib list
     let endpoint = 'getcptreports';
