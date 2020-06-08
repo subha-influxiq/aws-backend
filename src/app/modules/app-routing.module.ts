@@ -173,6 +173,11 @@ const routes: Routes = [
   component: ReportsDetailsComponent,
   canActivate: [AuthguardService]
 },
+{
+  path: 'admin/reports-details',
+  component: ReportsDetailsComponent,
+  canActivate: [AuthguardService]
+},
 /*========Admin Biller Routes========== */
 
 {
@@ -208,6 +213,11 @@ const routes: Routes = [
 // Cpt Reports Routes----------------
 {
   path: 'admin/cpt-reports',
+  component: CptValidateReportsComponent,
+  canActivate: [AuthguardService],
+},
+{
+  path: 'doctor/cpt-reports',
   component: CptValidateReportsComponent,
   canActivate: [AuthguardService],
 },
