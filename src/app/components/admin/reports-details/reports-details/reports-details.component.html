@@ -1,6 +1,9 @@
 <!-- Admin Header -->
 <app-admin-header *ngIf="loginUserData.user_details.user_details.user_typee == 'admin'"></app-admin-header>
 
+<!-- Admin Biller Header -->
+<app-adminbiller-header *ngIf="loginUserData.user_details.user_details.user_type == 'admin_biller'"></app-adminbiller-header>
+
 <!-- Diagnostic Admin Header -->
 <app-diagnostic-admin-header *ngIf="loginUserData.user_details.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
 
@@ -18,7 +21,7 @@
 <app-tech-header *ngIf="loginUserData.user_details.user_details.user_type == 'tech'"></app-tech-header>
 
 <!-- Doctor Office Header -->
-<app-doctor-office-header *ngIf="loginUserData.user_details.user_details.user_type == 'doctor-office'"></app-doctor-office-header>
+<app-doctor-office-header *ngIf="loginUserData.user_details.user_details.user_type == 'doctor_office'"></app-doctor-office-header>
 
 
 <mat-card-content class="table_wrapper admin_dashboard">
