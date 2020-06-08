@@ -1,0 +1,320 @@
+/* header css */
+
+.techdashboard_header { height: auto; padding: 0; background: #fff; box-shadow: 0px 2px 7px 2px #b7b7b7; margin: 20px 0; }
+.techdashboard_header .header_wrapper{ width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;}
+.techdashboard_header .logo_wrapper { max-width: 160px; display: block; cursor: pointer; flex: none; }
+.techdashboard_header .logo_wrapper:focus { outline: none; border: none; }
+.techdashboard_header .logo_wrapper img { max-width: 100%; vertical-align: middle; }
+.techdashboard_header .quotation { margin-bottom: 0px; }
+.techdashboard_header .quotation p { font-family: "RobotoMedium"; font-size: 30px; color: #002035; text-transform: uppercase; margin: 0; }
+.techdashboard_header .profile_section button { padding-top: 8px; }
+.techdashboard_header .profile_section { display: -webkit-box;  display: -ms-flexbox;  display: flex; padding-left: 5px;  margin-bottom: 0;
+  -webkit-box-pack: center;  -ms-flex-pack: center;  justify-content: center; position: relative;  -webkit-box-align: center;  -ms-flex-align: center;  align-items: center; }
+.techdashboard_header .profile_section::before{ content: ''; position: absolute; width: 1.5px; height: 20px; background: #908d8d;
+left: -1px;}
+.techdashboard_header .profile_section .username { padding-right: 10px; display: block; font-family: "AvenirRoman";
+font-size: 16px; color: #1f1f1f;}
+
+.techdashboard_header .quotation .mat-list-base { display: -webkit-box; display: -ms-flexbox; display: flex; padding-top: 0; }
+
+/* .techdashboard_header .quotation .mat-list-base .mat-list-item:before {
+  content: "";
+  left: -15px;
+  width: 2px;
+  height: 15px;
+  background: #1c1c1c;
+  display: inline-block;
+  position: absolute;
+  top: 35%;
+} */
+.techdashboard_header .quotation .mat-nav-list .mat-list-item { margin: 0; position: relative; font-family: "AvenirMedium"; font-size: 16px; color: #767676;}
+
+.active { color: #000000!important;  /* border-bottom: 3px solid #fecb00; position: relative; */}
+.active::before{ content: ''; width: 100%; height: 4px; background: #fecb00; position: absolute; bottom: -25px; }
+
+
+/*End header css */
+.togle_menu { display: none;}
+.sticky { position: fixed; top: 0; margin: 0; z-index: 1; }
+
+@media screen and (max-width: 1540px) {
+  .techdashboard_header .header_wrapper { width: 90%; }
+
+}
+@media screen and (max-width: 1500px) {
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item {
+    margin: 0px;
+    position: relative;
+  }
+  .techdashboard_header .quotation p {
+    font-size: 22px;
+  }
+  .content_wrapper .itemsection {
+    padding-bottom: 36px;
+  }
+  .techdashboard_header .logo_wrapper { max-width: 120px; }
+  .active::before { bottom: -13px; }
+}
+
+@media screen and (max-width: 1440px) {
+  .content_wrapper .itemsection p {
+    line-height: 26px;
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .techdashboard_header .header_wrapper {width: 95%; }
+}
+
+@media screen and (max-width: 1366px) {
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item { margin: 0; font-size: 14px; }
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item{ margin: 0; }
+  .techdashboard_header .profile_section .username { font-size: 14px; } 
+}
+
+@media screen and (max-width: 1280px) {
+  .techdashboard_header .profile_section { padding-left: 8px; }
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-base .mat-list-item .mat-list-item-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 10px;
+    position: relative;
+    height: inherit;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .doctor_content_wrapper { background: #012035; }
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item { font-size: 14px; }
+}
+
+@media screen and (max-width: 1199px) {
+  .doctor_content_wrapper .table_structure { width: 100%; }
+  .patient_report_section .button_action { width: 970px; }
+    .patient_report_section .button_action button { width: 475px; font-size: 20px;  padding: 8px; }
+  .content_wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .content_wrapper .itemsection {
+    width: 31%;
+    margin: 15px 12px;
+  }
+  .doctor_content_wrapper {
+    padding: 40px 30px;
+  }
+  .doctor_content_wrapper .mat-card-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .table_structure .mat-list-item .title_n {
+    font-size: 26px;
+  }
+  .table_structure .mat-list-item .title_a {
+    font-size: 22px;
+  }
+  .content_wrapper .itemsection p {
+    width: 100%;
+    font-size: 22px;
+  }
+  .techdashboard_header {
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .techdashboard_header .header_wrapper { flex-direction: column; }
+}
+
+@media screen and (max-width: 1100px) {
+  .techdashboard_header .header_wrapper { width: 100%; flex-direction: column;   box-sizing: border-box; }
+  .techdashboard_header .logo_wrapper { max-width: 160px; } 
+  .techdashboard_header .profile_section { padding-left: 0; border: none; }
+  .techdashboard_header .profile_section .username { font-size: 16px; }
+  .active {
+    color: #000000!important;
+    border-bottom: 3px solid #fecb00; position: relative;
+  }
+  .active::before{
+    content: ''; display: none;}
+}
+@media screen and (max-width: 1080px) { 
+  .doctor_content_wrapper { padding: 40px 20px; }
+  .doctor_content_wrapper .mat-card-title { font-size: 32px; margin-bottom: 20px; }
+  .table_structure .mat-list-item .title_n { font-size: 22px; }
+  .table_structure .mat-list-item .title_a { font-size: 20px; }
+}
+
+@media screen and (max-width: 1038px) {
+  .content_wrapper .itemsection { width: 30.9%; }
+}
+
+@media screen and (max-width: 991px) {
+  .doctor_content_wrapper { text-align: center; }
+  .patient_report_section .patient_top_search { display: -webkit-box; display: -ms-flexbox; display: flex;
+  -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-orient: vertical;
+  -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+  .patient_report_section .patient_top_search .search_bar { margin-bottom: 20px; }
+  .patient_report_section .button_action button { padding: 8px 30px; margin: 0 10px; width: 100%; }
+  .patient_report_section .button_action { width: auto; margin: 0 5px; display: -webkit-box;
+   display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+  }
+  .content_wrapper .itemsection { width: 30.8%; }
+  .table_structure .mat-list-item .title_a { font-size: 16px; }
+  .togle_menu { display: block; margin-top: 10px; background: #f8c655; color: #fff; position: absolute;
+  right: 20px; min-width: auto; padding: 0 6px; line-height: inherit; border-radius: 3px;}
+  .techdashboard_header .quotation { display: none; width: 100%; background: #ffd06f;}
+  .techdashboard_header .quotation .mat-list-base { display: block; }
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item { margin: 0; -webkit-box-align: center;   -ms-flex-align: center;
+  align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+  display: -webkit-box; display: -ms-flexbox; display: flex; background: #fff3da; margin: 1px 0; }
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item:nth-child(1) { margin-top: 0; }
+  .techdashboard_header .quotation .mat-list-base .mat-list-item:before {
+   content: ""; left: -15px; width: 2px; height: 15px; background: #1c1c1c; display: inline-block;
+   position: absolute; top: 35%; display: none; }
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item { font-size: 16px; }
+}
+
+@media screen and (max-width: 970px) {
+  .patient_report_section .button_action button {
+    width: auto;
+  }
+  .table_structure .mat-list-item .title_n {
+    font-size: 18px;
+  }
+  .one {
+    background: linear-gradient(100deg, #f9c856, #dd671d);
+  }
+  .two {
+    background: linear-gradient(100deg, #0973d1, #05335a);
+  }
+  .three {
+    background: linear-gradient(100deg, #44cf80, #26a555);
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .content_wrapper .itemsection {
+    width: 30.8%;
+  }
+  .content_wrapper .itemsection p {
+    font-size: 20px;
+  }
+  .table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+    margin-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .content_wrapper .itemsection {
+    width: 30.2%;
+  }
+  /* hiding searchbar */
+  .patient_report_section .patient_top_search .search_bar {
+    margin-bottom: 20px;
+    display: none;
+  }
+  .techdashboard_header {
+    padding: 0 16px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content_wrapper .itemsection {
+    width: 100%;
+    margin: 16px;
+    margin-bottom: 0;
+  }
+  .content_wrapper .itemsection:nth-last-child(1) {
+    margin-bottom: 16px;
+  }
+  .patient_report_section .button_action {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .patient_report_section .button_action button {
+    margin-bottom: 16px;
+    word-break: break-word;
+    white-space: normal;
+    line-height: 22px;
+  }
+  .techdashboard_header {
+    padding: 0 16px;
+  }
+  .techdashboard_header .quotation p {
+    margin: 16px 0;
+  }
+  .doctor_content_wrapper {
+    padding: 20px 0px;
+  }
+  .table_structure .mat-list-item .title_a {
+    font-size: 14px;
+  }
+  .doctor_content_wrapper .mat-card-title {
+    font-size: 28px;
+    margin-bottom: 5px;
+    text-align: left;
+    padding: 0 16px;
+  }
+  .table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+    margin-bottom: 16px;
+  }
+  .footer_section .footer_content {
+    width: auto;
+  }
+  .table_structure .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .doctor_content_wrapper .mat-card-title {
+    font-size: 24px;
+  }
+  .patient_report_section .patient_top_search h1 {
+    font-size: 24px;
+  }
+}
+
+.danger {
+  display: block!important;
+  margin-top: 20px;
+  transition: 5px ease-out;
+}

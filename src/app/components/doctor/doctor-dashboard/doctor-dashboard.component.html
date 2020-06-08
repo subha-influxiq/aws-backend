@@ -489,7 +489,7 @@
     </mat-toolbar>
 
     <span class="action_bar">
-      <mat-form-field>
+      <!-- <mat-form-field>
         <input matInput type="text" placeholder="Search By Patient" [(ngModel)]="searchJson.patientName" />
       </mat-form-field>
 
@@ -510,12 +510,12 @@
           [(ngModel)]="searchJson.dateRange" />
         <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
         <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
-      </mat-form-field>
+      </mat-form-field> -->
 
-      <button mat-button class="add_btn" (click)="viewReportProcessData(htmlText.headerText);">Date Search</button>
+      <!-- <button mat-button class="add_btn" (click)="viewReportProcessData(htmlText.headerText);">Date Search</button> -->
     </span>
 
-    <div class="tablewrapper">
+    <div class="tablewrapper admin_dashboard">
       
       <!-- table -->
       <lib-listing
@@ -549,3 +549,5 @@
 
 
 <app-admin-footer></app-admin-footer>
+
+

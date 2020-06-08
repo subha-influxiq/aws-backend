@@ -1,4 +1,25 @@
-<app-admin-header></app-admin-header>
+<!-- Admin Header -->
+<app-admin-header *ngIf="loginUserData.user_details.user_details.user_typee == 'admin'"></app-admin-header>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-header *ngIf="loginUserData.user_details.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+<!-- Doctor Group Admin Header -->
+<app-doctor-group-header *ngIf="loginUserData.user_details.user_details.user_type == 'doctor_group'"></app-doctor-group-header>
+
+<!-- Distributors Admin Header -->
+<app-distributors-header *ngIf="loginUserData.user_details.user_details.user_type == 'distributors'"></app-distributors-header>
+
+
+<!-- Doctor Header -->
+<app-doctor-header *ngIf="loginUserData.user_details.user_details.user_type == 'doctor'"></app-doctor-header>
+
+<!-- Tech Header -->
+<app-tech-header *ngIf="loginUserData.user_details.user_details.user_type == 'tech'"></app-tech-header>
+
+<!-- Doctor Office Header -->
+<app-doctor-office-header *ngIf="loginUserData.user_details.user_details.user_type == 'doctor-office'"></app-doctor-office-header>
+
 
 <mat-card-content class="table_wrapper admin_dashboard">
 

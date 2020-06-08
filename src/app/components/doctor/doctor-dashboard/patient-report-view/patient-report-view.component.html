@@ -1,10 +1,18 @@
 <app-biller-header *ngIf="cookiesData.user_details.user_type == 'biller'"></app-biller-header>
+
 <app-doctor-header *ngIf="cookiesData.user_details.user_type == 'doctor'"></app-doctor-header>
+
+<app-tech-header *ngIf="cookiesData.user_details.user_type == 'tech'"></app-tech-header>
+
 <app-admin-header *ngIf="cookiesData.user_details.user_type == 'admin'"></app-admin-header>
+
+<app-adminbiller-header *ngIf="cookiesData.user_details.user_type == 'admin_biller'"></app-adminbiller-header>
 
 <app-doctor-group-header *ngIf="cookiesData.user_details.user_type == 'doctor_group'"></app-doctor-group-header>
 
 <app-diagnostic-admin-header *ngIf="cookiesData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+<app-doctor-office-header *ngIf="cookiesData.user_details.user_type == 'doctor_office'"></app-doctor-office-header>
 
 <ng-container>
 

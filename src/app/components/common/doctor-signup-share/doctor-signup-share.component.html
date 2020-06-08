@@ -5,7 +5,7 @@
     <h2>Share link for Doctor Signup:</h2>
     <span class="small_view">
       <span class="shreWr">
-        <input type="text" disabled [value]="shareDetailsData.link" #shareLinkUrl>
+        <input type="text" [value]="shareDetailsData.link" #shareLinkUrl>
         <a mat-button (click)="copyShareLink(shareLinkUrl);"><i class="material-icons">
             link
           </i></a>

@@ -1,1 +1,48 @@
-<p>adminbiller-header works!</p>
+<mat-toolbar class="techdashboard_header" [ngClass]="{'sticky' : isSticky}">
+    <mat-card-content class="header_wrapper">
+      <span class="logo_wrapper" [routerLink]="[ '/admin/dashboard' ]">
+        <img src="../../../assets/images/logo.png">
+      </span>
+  
+      <button mat-flat-button (click)="menuFunction()" class="togle_menu"><i class="material-icons"> menu </i></button>
+      <mat-card-content class="quotation" [ngClass]="status ? 'success' : 'danger'" >
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active" [routerLink]="['/admin-biller/dashboard']"> Dashboard </a>
+   
+  
+          <a mat-list-item [routerLink]="['/admin-biller/cpt-reports']" routerLinkActive="active">CPT Validate Report</a>
+  
+          <a mat-list-item [routerLink]="['/admin-biller/faq-management']" routerLinkActive="active">FAQ </a>
+          
+        </mat-nav-list>
+       
+      </mat-card-content>
+  
+  
+      <mat-card-content class="profile_section">
+        <mat-menu #appMenu="matMenu">
+          <button mat-menu-item [routerLink]="['/admin/account-settings']">
+            <mat-icon>account_circle</mat-icon> Account Settings
+          </button>
+  
+          <button mat-menu-item [routerLink]="['/admin/account-settings/change-password']">
+            <mat-icon>vpn_key</mat-icon> Change Password
+          </button>
+  
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>power_settings_new</mat-icon> Logout
+          </button>
+        </mat-menu>
+        <span class="username">{{user_details.firstname}} {{user_details.lastname}}</span>
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+          <span class="user_profile">
+            <mat-icon>account_circle</mat-icon>
+            <i class="material-icons">
+              keyboard_arrow_down
+            </i>
+          </span>
+        </button>
+      </mat-card-content>
+    </mat-card-content>
+  </mat-toolbar>
+  <!-- end header -->
