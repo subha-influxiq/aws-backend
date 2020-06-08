@@ -174,6 +174,11 @@ const routes: Routes = [
   canActivate: [AuthguardService]
 },
 {
+  path: 'admin-biller/reports-details/:_id',
+  component: ReportsDetailsComponent,
+  canActivate: [AuthguardService]
+},
+{
   path: 'doctor/reports-details',
   component: ReportsDetailsComponent,
   canActivate: [AuthguardService]
@@ -209,14 +214,6 @@ const routes: Routes = [
   path: 'admin-biller/dashboard',
   component: AdminbillerDashboardComponent,
   canActivate: [AuthguardService],
-  resolve: { dataCount: ResolveService },
-  data: {
-    requestcondition: {
-      source: 'data_pece',
-      condition: {}
-    },
-    endpoint: 'admin-dashboard'
-  },
 },
 // faq
 {
@@ -242,7 +239,7 @@ const routes: Routes = [
   canActivate: [AuthguardService],
 },
 {
-  path: 'doctor/cpt-reports',
+  path: 'admin-biller/cpt-reports',
   component: CptValidateReportsComponent,
   canActivate: [AuthguardService],
 },
@@ -907,6 +904,19 @@ const routes: Routes = [
   /* FNQ Management */
   {
     path: 'admin/faq-management',
+    component: ListFaqComponent,
+    canActivate: [AuthguardService],
+    resolve: { techDashboardData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_faq',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+  {
+    path: 'admin-biller/faq-management',
     component: ListFaqComponent,
     canActivate: [AuthguardService],
     resolve: { techDashboardData: ResolveService },
