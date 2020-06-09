@@ -316,8 +316,8 @@ export class AddEditDoctorOfcComponent implements OnInit {
         postData["sourceobj"] = ["parent_id"];
         postData.data["parent_type"] = "distributors";
       }
-      console.log(this.doctorOfficeAddEditForm.value);
-    return;
+      
+      
       if(this.htmlText.user_details.user_type !='doctor') {
       this.httpService.httpViaPost('addorupdatedata', postData).subscribe((response: any) => {
         if (response.status == "success") {

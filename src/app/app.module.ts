@@ -180,6 +180,7 @@ import { ApprovedPatientReportsBilleradminComponent } from './components/adminbi
 import { HoldReportJobTicketComponent } from './components/admin/admin-dashboard/hold-report-job-ticket/hold-report-job-ticket.component';
 import {CptValidateReportsComponent} from './components/admin/cpt-validate-reports/cpt-validate-reports/cpt-validate-reports.component'
 import { ReportsDetailsComponent } from './components/admin/reports-details/reports-details/reports-details.component';
+import { CreateReplyJobTicketComponent } from './components/admin/admin-dashboard/hold-report-job-ticket/create-reply-job-ticket/create-reply-job-ticket.component';
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -346,7 +347,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     ApprovedPatientReportsBilleradminComponent,
     HoldReportJobTicketComponent,
     CptValidateReportsComponent,
-    ReportsDetailsComponent
+    ReportsDetailsComponent,
+    CreateReplyJobTicketComponent
   ],
   imports: [
     SatDatepickerModule,
@@ -425,7 +427,10 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 
     // Bulk Upload Modal
     PatientSelectModalComponent,
-    ReportUploadSuccessModalComponent
+    ReportUploadSuccessModalComponent,
+
+    // create and reply job tickets
+    CreateReplyJobTicketComponent,
   ]
 })
 
