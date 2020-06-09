@@ -576,8 +576,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .book-appointment .mat-stepper-horizontal .mat-horizontal-content-container{padding: 0;}
 
 .book-appointment .mat-stepper-horizontal h4,
-.book-event .mat-dialog-container .mat-stepper-horizontal h4{ font-family: 'AvenirMedium'; margin: 0; font-size: 20px;
-  color: #0ac3a2; text-transform: uppercase; margin-bottom: 14px; }  
+.book-event .mat-dialog-container .mat-stepper-horizontal h4{ font-family: 'AvenirMedium'; margin: 0; font-size: 20px; color: #0ac3a2; text-transform: uppercase; margin-bottom: 14px; }  
 
 .book-appointment .mat-stepper-horizontal .containerSpan mat-label,
 .book-event .mat-dialog-container .mat-stepper-horizontal .containerSpan mat-label{ color: #505050; }
