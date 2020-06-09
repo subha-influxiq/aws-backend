@@ -69,13 +69,17 @@ export class HoldReportJobTicketComponent implements OnInit {
       }
   
       this.httpService.httpViaPost('datalist', data).subscribe(response => {
-        this.htmlText.oldTickets = response.res[0].job_tickets_details;
+        if(typeof(response.res[0].job_tickets_details) != 'undefined') {
+          this.htmlText.oldTickets = response.res[0].job_tickets_details;
+        } else {
+          this.htmlText.oldTickets = [];
+        }
+        
         for(let loop1 = 0; loop1 < this.htmlText.oldTickets.length; loop1++) {
           this.htmlText.oldTickets[loop1].images = [];
 
           for(let loop2 = 0; loop2 < this.htmlText.oldTickets[loop1].files.length; loop2++) {
             var data: any = this.randomNumber(1, this.htmlText.oldTickets[loop1].files.length - 1);
-            console.log(">>>>", data);
 
             this.htmlText.oldTickets[loop1].images.push(
               { 
@@ -165,6 +169,10 @@ export class HoldReportJobTicketComponent implements OnInit {
     }; 
 
     return table;
-  } 
+  }
+
+  createJobTicket() {
+    
+  }
 
 }
