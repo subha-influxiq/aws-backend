@@ -498,7 +498,7 @@ color: #fff; min-width: 100px; font-family: 'AvenirMedium'; font-size: 18px;}
 
 
 /* calendar view */
-.calenderView .calender_first .mat-toolbar{ background: linear-gradient(10deg, #8bc348, #135e80); justify-content: space-between; }
+.calenderView .calender_first .mat-toolbar{ background: linear-gradient(10deg, #8bc348, #135e80); justify-content: space-between; margin-top:6px; }
 .calenderView .calender_first .mat-toolbar .google_calendar_status mat-label { float: none; line-height: inherit;
 color: #ffffff; text-align: inherit; display: inline-flex; align-items: center;}
 .calenderView .calender_first .mat-toolbar .headerSpan { font-family: 'AvenirMedium'; font-size: 28px; margin: inherit;}
