@@ -60,6 +60,14 @@ export class ApprovedPatientReportsBilleradminComponent implements OnInit {
     updateendpoint: '',
     custombuttons: [
       {
+        label: "View Jobticket",
+        route: "admin-biller/report-jobtickets/",
+        type: 'internallink',
+        param: ['_id'],
+        cond: 'status',
+        condval: 13
+      },
+      {
         label: "View Report",
         route: "admin/patient-record/",
         type: 'internallink',

@@ -24,7 +24,8 @@ export class CalendarService implements Resolve<any> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
     /* will come into play while editing otherwise no effect */
     let requestData: any = route.data.requestcondition;
-    requestData.condition = Object.assign(requestData.condition, route.params);
+    //requestData.condition = Object.assign(requestData.condition, route.params);
+    //requestData.condition = requestData.condition;
     return new Promise((resolve) => {
       if (typeof route.data.requestcondition.source != 'string') {
         let returnData: any = {};

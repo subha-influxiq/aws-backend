@@ -366,6 +366,19 @@
           <button mat-flat-button (click)="viewReportProcessData('Reports Pending Sing')">view all</button>
         </span>
       </mat-card-content>
+
+      <mat-card-content class="super_bill_item">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon4.png">
+          </mat-card-content>
+        </span>
+        <span class="container_wrapper">
+          <p> Job Tickets Created </p>
+          <h2> {{ allResolveData.total_job_tickets }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Job Tickets')">view all</button>
+        </span>
+      </mat-card-content>
     </mat-card-content>
   </mat-card-content>
 
@@ -397,6 +410,17 @@
     <h1 class="headr_tagh">Approved Patient Reports</h1>
 
     <app-approved-patient-reports></app-approved-patient-reports>
+
+  </mat-card-content>
+  <!-- dashboard all listing end here -->
+
+
+  <!-- All Data listing start here(default listing) -->
+  <mat-card-content id="jobTickets" class="table_wrapper admin_dashboard">
+
+    <h1 class="headr_tagh">Job Tickets</h1>
+
+    <app-job-ticket-patient-reports></app-job-ticket-patient-reports>
 
   </mat-card-content>
   <!-- dashboard all listing end here -->
