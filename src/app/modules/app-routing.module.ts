@@ -228,6 +228,19 @@ const routes: Routes = [
     endpoint: 'report-view'
   },
 },
+{
+  path: 'admin-biller/report-jobtickets/:_id',
+  component: HoldReportJobTicketComponent,
+  canActivate: [AuthguardService],
+  resolve: { dataCount: ResolveService },
+  data: {
+    requestcondition: {
+      source: 'data_pece',
+      condition: {}
+    },
+    endpoint: 'admin-dashboard'
+  },
+},
 
 // faq
 {
@@ -273,7 +286,7 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin/create-jobticket/:_id',
+    path: 'admin/report-jobtickets/:_id',
     component: HoldReportJobTicketComponent,
     canActivate: [AuthguardService],
     resolve: { dataCount: ResolveService },
@@ -1709,6 +1722,19 @@ const routes: Routes = [
         condition: {},
       },
       endpoint: 'doctor-dashboard'
+    },
+  },
+  {
+    path: 'doctor/report-jobtickets/:_id',
+    component: HoldReportJobTicketComponent,
+    canActivate: [AuthguardService],
+    resolve: { dataCount: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'admin-dashboard'
     },
   },
   {

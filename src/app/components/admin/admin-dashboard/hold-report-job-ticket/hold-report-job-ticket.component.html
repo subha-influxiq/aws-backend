@@ -1,6 +1,9 @@
 <!-- Admin Header -->
 <app-admin-header *ngIf="htmlText.user_details.user_type == 'admin'"></app-admin-header>
 
+<app-doctor-header *ngIf="htmlText.user_details.user_type == 'doctor'"></app-doctor-header>
+
+<app-adminbiller-header *ngIf="htmlText.user_details.user_type == 'admin_biller'"></app-adminbiller-header>
 
 <mat-card class="admin_wrapper">
     <mat-card-content class="title_wrapper">Conversation</mat-card-content>
@@ -39,7 +42,7 @@
 
 
 <!-- header with add button -->
-<mat-card class="admin_wrapper">
+<mat-card class="admin_wrapper" *ngIf="this.htmlText.oldTickets.length > 0 || htmlText.user_details.user_type != 'doctor'">
     <mat-card-content class="title_wrapper">
         {{ htmlText.header }}
     </mat-card-content>

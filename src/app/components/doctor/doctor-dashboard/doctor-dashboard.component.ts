@@ -67,6 +67,14 @@ export class DoctorDashboardComponent implements OnInit {
     updateendpoint: '',
     custombuttons: [
       {
+        label: "View Jobticket",
+        route: "doctor/report-jobtickets/",
+        type: 'internallink',
+        param: ['_id'],
+        cond: 'status',
+        condval: 13
+      },
+      {
         label: "View Report",
         route: "doctor/patient-record-report/",
         type: 'internallink',
