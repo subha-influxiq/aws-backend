@@ -320,8 +320,11 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(4){ background: #ff5370 url("../../../../assets/images/admincircle_icon4.png") no-repeat right top; background-size: 110px;;}
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(5){ background: #ea53c2 url("../../../../assets/images/admincircle_icon1.png") no-repeat right top; background-size: 110px;;}
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(6){ background: #45dc92 url("../../../../assets/images/admincircle_icon3.png") no-repeat right top; background-size: 110px;}
+
+.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(7){ background: #5c88b3 url("../../../../assets/images/admincircle_icon2.png") no-repeat right top; background-size: 110px;}
+
 .admin_superbillsection .biller_wrapper .super_bill_item .container_wrapper{ display: flex; flex-direction: column; align-items: self-end; width: 80%; box-sizing: border-box;  }
-.admin_superbillsection .biller_wrapper .super_bill_item span h2{ color: #fff; font-size: 40px; text-transform: uppercase; font-family: 'AvenirMedium'; margin: 10px 0; text-shadow: 1px 1px 0px #dadada; word-break: break-all;}
+.admin_superbillsection .biller_wrapper .super_bill_item span h2{ color: #fff; font-size: 36px; text-transform: uppercase; font-family: 'AvenirMedium'; margin: 10px 0; text-shadow: 1px 1px 0px #dadada; word-break: break-all;}
 .admin_superbillsection .biller_wrapper .super_bill_item span P{ color: #fff; font-size: 24px; font-family: 'AvenirMedium'; margin: 0; line-height: 26px; text-shadow: 1px 1px 0px #dadada;}
 .admin_superbillsection .biller_wrapper .super_bill_item:last-child{margin-bottom: 0.5%; }
 .admin_superbillsection .biller_wrapper .super_bill_item span button{ font-size: 16px; text-transform: capitalize; font-family: 'AvenirLight'; line-height: 32px; margin-top: auto;
@@ -498,7 +501,7 @@ color: #fff; min-width: 100px; font-family: 'AvenirMedium'; font-size: 18px;}
 
 
 /* calendar view */
-.calenderView .calender_first .mat-toolbar{ background: linear-gradient(10deg, #8bc348, #135e80); justify-content: space-between; }
+.calenderView .calender_first .mat-toolbar{ background: linear-gradient(10deg, #8bc348, #135e80); justify-content: space-between; margin-top:6px; }
 .calenderView .calender_first .mat-toolbar .google_calendar_status mat-label { float: none; line-height: inherit;
 color: #ffffff; text-align: inherit; display: inline-flex; align-items: center;}
 .calenderView .calender_first .mat-toolbar .headerSpan { font-family: 'AvenirMedium'; font-size: 28px; margin: inherit;}
@@ -573,24 +576,26 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .book-appointment .mat-stepper-horizontal .mat-horizontal-content-container{padding: 0;}
 
 .book-appointment .mat-stepper-horizontal h4,
-.book-event .mat-dialog-container .mat-stepper-horizontal h4{ font-family: 'AvenirMedium'; margin: 0; font-size: 20px;
-  color: #0ac3a2; text-transform: uppercase; margin-bottom: 14px; }  
+.book-event .mat-dialog-container .mat-stepper-horizontal h4{ font-family: 'AvenirMedium'; margin: 0; font-size: 20px; color: #0ac3a2; text-transform: uppercase; margin-bottom: 14px; }  
 
 .book-appointment .mat-stepper-horizontal .containerSpan mat-label,
 .book-event .mat-dialog-container .mat-stepper-horizontal .containerSpan mat-label{ color: #505050; }
 
 .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .header,
-.book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .header { font-family: 'AvenirMedium'; font-size: 18px; text-transform: uppercase; color: #036d6d;}
+.book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .header { font-family: 'AvenirMedium'; font-size: 18px; text-transform: uppercase; color: #ffffff;
+  background: linear-gradient(45deg, #12a0e5, #64ceff);
+  padding: 8px 6px;
+}
 
 .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .checbox_wrapper,
 .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .checbox_wrapper { min-width: 150px; margin-left: 10px; }
 
 .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type,
-.book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type {margin-bottom: 6px; font-family: 'AvenirMedium'; font-size: 14px; color: #5f5c5a;}
+.book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type {margin-bottom: 6px; font-family: 'AvenirMedium'; font-size: 14px; color: #243834;}
 
 .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .label_name,
 .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .label_name{
-  font-size: 16px; color: #0ac3a2; text-align: left; word-break: break-word; }
+  font-size: 16px; color: #243834; text-align: left; word-break: break-word; }
 
 .book-appointment .mat-stepper-horizontal .containerSpan,  
 .book-event .mat-dialog-container .mat-stepper-horizontal .containerSpan { overflow: inherit; clear: none;}

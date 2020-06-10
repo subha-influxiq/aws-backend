@@ -8,13 +8,14 @@
 .faq_wrapper .mat-expansion-panel-header.mat-expanded:focus .mat-expansion-panel-header-title {
     color: rgba(255, 255, 255, 0.87);
 }
-.active{background: #00baff!important;}
-.active .mat-expansion-panel-header-title { color: rgba(255, 255, 255, 0.87);
-}
+.active{ background: #00baff!important; }
+.active .mat-expansion-panel-header-title { color: rgba(255, 255, 255, 0.87); }
 .body_wrapper{ background:#f2f4f5 ; display: flex; justify-content: space-between; padding: 10px 20px;}
-.body_wrapper .content_wr p{ color: #6e6e6e; font-size: 16px; font-family: 'AvenirRoman'; margin: 6px 0;}
+.body_wrapper .content_wr p,
+.body_wrapper .content_wr p ol li{ color: #6e6e6e; font-size: 16px; font-family: 'AvenirRoman'; margin: 6px 0; line-height: 24px;}
+.body_wrapper .content_wr p strong{ font-size: 16px; font-family: 'AvenirBlack'; }
 .body_wrapper .content_wr{ width: 100%;}
-.body_wrapper .video_wr{width: 36%; margin-left: 14px;}
+.body_wrapper .video_wr{ width: 36%; margin-left: 14px; }
 
 .body_wrapper .video_wr .video-wrapper {
     position: relative;
@@ -34,3 +35,5 @@
   @media screen and (max-width: 1560px){
     .faq_wrapper{ width: 90%;}
   }
+/* hello youtube today i will disscuss about the of a popular javascript framework. it is angular. angular is javascript famewok
+crete and matained by google the tech giant. It's uses typescript language.   */

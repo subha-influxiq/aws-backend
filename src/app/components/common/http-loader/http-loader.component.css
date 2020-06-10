@@ -7,11 +7,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.9);
-    z-index: 2;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 2;  
     cursor: pointer;
     justify-content: center;
     align-items: center;
   }
   .mat_card_content{ width: 200px; align-items: center;  flex-direction: column;display: flex;
     justify-content: center;}
+
+ 

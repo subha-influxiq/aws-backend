@@ -40,7 +40,7 @@
 .main_wrapper { background-size: 680px; padding-left: 665px; }
 .encounter_rules .admin_superbillsection .greenbar { height: 275px; }
 .encounter_rules .admin_superbillsection .greenbar p { font-size: 40px; }   
-.book-appointment .mat-form-field { width: 32.4%; } 
+.book-appointment .mat-form-field { width: 32.2%; } 
 }
 @media screen and (max-width: 1240px){
 .main_wrapper .login_wrapper { width: 450px; }
@@ -276,7 +276,8 @@ align-items: flex-start; }
   .admin_wrapper .add_form .submit_form button:first-child { margin-right: 0; margin-top: 0; }
   .admin_wrapper .title_wrapper { font-size: 24px; }
   .lib-pager-class mat-label{ display: block; margin: 0; margin-bottom: 10px; font-family: 'AvenirBlack'; }
-
+  .book-event .mat-dialog-container .mat-stepper-horizontal .width-md,
+  .book-appointment .mat-form-field { width: 100%; }
 }
 @media screen and (max-width: 480px){
   .main_wrapper .login_wrapper { width: 360px; }
@@ -296,8 +297,7 @@ align-items: flex-start; }
     justify-content: center; }
   .admin_wrapper .add_form .submit_form button { font-size: 16px; }
   .admin_wrapper .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0; margin-bottom: 5px; }
-  .book-event .mat-dialog-container .mat-stepper-horizontal .width-md,
-  .book-appointment .mat-form-field { width: 100%; }
+ 
   .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type, 
   .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type { flex-direction: column;
     margin-bottom: 10px; border-bottom: 1px solid #eaeaea; padding-bottom: 12px; }
