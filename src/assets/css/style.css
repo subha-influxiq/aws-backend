@@ -582,17 +582,20 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .book-event .mat-dialog-container .mat-stepper-horizontal .containerSpan mat-label{ color: #505050; }
 
 .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .header,
-.book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .header { font-family: 'AvenirMedium'; font-size: 18px; text-transform: uppercase; color: #036d6d;}
+.book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .header { font-family: 'AvenirMedium'; font-size: 18px; text-transform: uppercase; color: #ffffff;
+  background: linear-gradient(45deg, #12a0e5, #64ceff);
+  padding: 8px 6px;
+}
 
 .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .checbox_wrapper,
 .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .checbox_wrapper { min-width: 150px; margin-left: 10px; }
 
 .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type,
-.book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type {margin-bottom: 6px; font-family: 'AvenirMedium'; font-size: 14px; color: #5f5c5a;}
+.book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type {margin-bottom: 6px; font-family: 'AvenirMedium'; font-size: 14px; color: #243834;}
 
 .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .label_name,
 .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .label_name{
-  font-size: 16px; color: #0ac3a2; text-align: left; word-break: break-word; }
+  font-size: 16px; color: #243834; text-align: left; word-break: break-word; }
 
 .book-appointment .mat-stepper-horizontal .containerSpan,  
 .book-event .mat-dialog-container .mat-stepper-horizontal .containerSpan { overflow: inherit; clear: none;}
