@@ -204,7 +204,7 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
   padding: 8px; box-sizing: border-box; color: #fff; cursor: pointer; text-transform: uppercase; font-family: "AvenirBlack"; }
 
  td.mat-cell br, td.mat-footer-cell br, th.mat-header-cell br{ display: none; }
- .mat-bottom-sheet-container-large { border: 2px solid #ffbc36!important; }
+ /* .mat-bottom-sheet-container-large { border: 2px solid #ffbc36!important; } */
  .mat-bottom-sheet-container-large .mat-nav-list .mat-list-item {  height: 46px!important;
   background: var(--button-color2); margin-bottom: 10px; color: #fff; font-family: 'AvenirMedium'; }
 .mat-bottom-sheet-container-large .mat-nav-list .mat-list-item:hover{ background: var(--button-color1)!important;}
@@ -420,7 +420,8 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .add_form .test_date_wrapper .mat-card-content .mat-form-field-flex{ background: #fff;  border: 1px solid #d0d0d0;
   padding: 0 5px; box-sizing: border-box; }
  .patients_info_wrapper .mat-card-content .mat-form-field .mat-form-field-flex{ background: #fff; border: 1px solid #e6e4e4; padding: 0 7px;}
- .add_form .form_wrapper .mat-form-field-appearance-fill .mat-form-field-flex { border-radius: 4px 4px 0 0;  background: #eee; }
+ .add_form .form_wrapper .mat-form-field-appearance-fill .mat-form-field-flex { border-radius: 4px 4px 0 0; background: #fff;
+  border: 1px solid #e0e0e0; border-bottom: 0;}
  /* doctor dashboard new */
  .admin_wrapper  .testingDoc { background: linear-gradient(0deg, #07aaf5, #40bffa); font-size: 34px; text-transform: uppercase; color: #fff; padding: 8px 10px;
   font-family: 'AvenirMedium'; margin: 6px!important; border-radius: 4px;}
@@ -434,14 +435,13 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .Admindmin_details .inner_er .mat-list-item{ font-size: 18px; font-family: 'AvenirMedium'; height: inherit;
   padding: 5px; box-sizing: border-box; color: #545454; text-transform: capitalize; }
 .Admindmin_details .inner_er .mat-list-item .lg{ font-size: 18px; font-family: 'AvenirBlack'; }
-.admin_wrapper  .mediaDoc_wrapper { display: flex; justify-content: space-between; }
-.admin_wrapper  .mediaDoc_wrapper .new_wrapper_left{ width: 73%; display: flex;}
-.admin_wrapper  .mediaDoc_wrapper .new_wrapper_right{  width: 26%; display: flex; flex-direction: column;}
-.admin_wrapper  .mediaDoc_wrapper .new_wrapper_right .media_inner_items:last-child { margin-top: 16px;}
- 
-.encounter_wrapper .second_table  .book-appointment .mat-card{ box-shadow: none; padding: 10px 8px; }
-.encounter_wrapper .second_table  .book-appointment .mat-horizontal-stepper-header-container { display: none; }
-.encounter_wrapper .second_table  .book-appointment .float-right { display: none; }
+.admin_wrapper .mediaDoc_wrapper { display: flex; justify-content: space-between; }
+.admin_wrapper .mediaDoc_wrapper .new_wrapper_left{ width: 73%; display: flex;}
+.admin_wrapper .mediaDoc_wrapper .new_wrapper_right{  width: 26%; display: flex; flex-direction: column;}
+.admin_wrapper .mediaDoc_wrapper .new_wrapper_right .media_inner_items:last-child { margin-top: 16px;}
+.encounter_wrapper .second_table .book-appointment .mat-card{ box-shadow: none; padding: 10px 8px; }
+.encounter_wrapper .second_table .book-appointment .mat-horizontal-stepper-header-container { display: none; }
+.encounter_wrapper .second_table .book-appointment .float-right { display: none; }
 .patient_report_wrapper .patient_item_section .mat-tab-label-active {
 background:linear-gradient(45deg, #0772ff, #04a6f6); opacity: 1; }
 .mediaDoc_wrapper .media_inner_items{ background: #f8f3f3;  margin: 0; display: flex;
@@ -526,13 +526,8 @@ color: #ffffff; text-align: inherit; display: inline-flex; align-items: center;}
 .calenderView .example-container .button_wrapper button:last-child{ background: var(--button-color3)}
  
 .searchbar .mat-form-field .mat-chip.mat-standard-chip { background: linear-gradient(40deg, #03a0c3 50%, #0ab3ff 50%); color: #ffff;
-  font-family: 'AvenirLight';
-  white-space: normal;
-  height: auto;
-  word-break: break-word;
-  font-size: 10px;
-}
- .searchbar .mat-form-field .mat-chip.mat-standard-chip .mat-chip-remove.mat-icon { margin: 0; }
+  font-family: 'AvenirLight'; white-space: normal; height: auto; word-break: break-word; font-size: 10px; }
+.searchbar .mat-form-field .mat-chip.mat-standard-chip .mat-chip-remove.mat-icon { margin: 0; }
 
 .multipledeleteandupdatebuttan button{ background: linear-gradient(40deg, #ff4081, #dc004b); color: #fff;
 margin: 0 5px;}
@@ -658,9 +653,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .form2_wrapper .DataTable .searchbar .mat-form-field{ width:48%; }
 
 .encounter_rules{padding: 16px!important;}
-.encounter_rules .admin_superbillsection table{
-  width: 100%; border-collapse: collapse; background: #fff;
-}
+.encounter_rules .admin_superbillsection table{ width: 100%; border-collapse: collapse; background: #fff; }
 
 .encounter_rules .admin_superbillsection table tr th,
 .encounter_rules .admin_superbillsection table tr td{
@@ -725,3 +718,7 @@ font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radi
 .encounter_wrapper .second_table .book-appointment .mat-form-field-appearance-fill .mat-form-field-flex {
     background: #f5f4f4;
 }
+  
+.tech{
+  background: currentColor; color: #1dbce9; font-size: 20px; 
+} 
