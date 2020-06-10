@@ -74,9 +74,9 @@ export class ReportConformationComponent implements OnInit {
         
         console.log("Step 2: Get patient name using report file name and create an array to get the patient details from database.");
         for(let loop = 0; loop < this.htmlText.confirmSubmittedDataSource.length; loop++) {
-          this.htmlText.confirmSubmittedDataSource[loop].file_original_name = this.htmlText.confirmSubmittedDataSource[loop].file_original_name.replace("PatientReport_", "");
-          this.htmlText.confirmSubmittedDataSource[loop].file_original_name = this.htmlText.confirmSubmittedDataSource[loop].file_original_name.replace(".pdf", "");
-          let patientNameArr = this.htmlText.confirmSubmittedDataSource[loop].file_original_name.split(' ');
+          let patientNameArr = this.htmlText.confirmSubmittedDataSource[loop].file_original_name.replace("PatientReport_", "");
+          patientNameArr = patientNameArr.replace(".pdf", "");
+          patientNameArr = patientNameArr.split(' ');
           console.log("Name: ", patientNameArr);
 
 
