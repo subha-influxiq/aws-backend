@@ -1,33 +1,48 @@
 <!-- Admin Header -->
 <app-admin-header *ngIf="htmlText.user_details.user_type == 'admin'"></app-admin-header>
 
+<app-doctor-header *ngIf="htmlText.user_details.user_type == 'doctor'"></app-doctor-header>
+
+<app-adminbiller-header *ngIf="htmlText.user_details.user_type == 'admin_biller'"></app-adminbiller-header>
 
 <mat-card class="admin_wrapper">
-    <ng-container *ngFor="let ticket of htmlText.oldTickets;">
+    <mat-card-content class="title_wrapper">Conversation</mat-card-content>
+
+    <ng-container *ngIf="this.htmlText.oldTickets.length > 0">
+        <ng-container *ngFor="let ticket of htmlText.oldTickets;">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>{{ ticket.user_name }}</mat-card-title>
+                    <mat-card-subtitle>{{ ticket.user_type }}, Posted on: {{ ticket.created_datetime | date }}</mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <p [innerHTML]="ticket.description"></p>
+                </mat-card-content>
+
+                <mat-grid-list cols="4" rowHeight="100px">
+                    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
+                        [style.background]="tile.color">
+                        {{tile.text}}
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </mat-card>
+        </ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="this.htmlText.oldTickets.length == 0">
         <mat-card class="example-card">
-            <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title>{{ ticket.user_name }}</mat-card-title>
-                <mat-card-subtitle>{{ ticket.user_type }}, Posted on: {{ ticket.created_datetime | date }}</mat-card-subtitle>
-            </mat-card-header>
-
             <mat-card-content>
-                <p [innerHTML]="ticket.description"></p>
+                <p> No record found. </p>
             </mat-card-content>
-
-            <mat-grid-list cols="4" rowHeight="100px">
-                <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
-                    [style.background]="tile.color">
-                    {{tile.text}}
-                </mat-grid-tile>
-            </mat-grid-list>
         </mat-card>
     </ng-container>
 </mat-card>
 
 
 <!-- header with add button -->
-<mat-card class="admin_wrapper">
+<mat-card class="admin_wrapper" *ngIf="this.htmlText.oldTickets.length > 0 || htmlText.user_details.user_type != 'doctor'">
     <mat-card-content class="title_wrapper">
         {{ htmlText.header }}
     </mat-card-content>

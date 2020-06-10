@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -415,6 +415,11 @@ export class AdminDashboardComponent implements OnInit {
 
   viewReportProcessData(flag) {
     console.log(flag);
+    switch(flag) {
+      case 'Job Tickets':
+        document.getElementById("jobTickets").scrollIntoView();  
+        break;
+    }
   }
 
 }

@@ -213,7 +213,7 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 .sub_menu{ background: linear-gradient(145deg, #2dbcce, #2ae6fd)!important}
 .sub_menu button{ color: #fff; border-bottom: 2px solid #ddd;}
 .sub_menu button:last-child{ border: none; }
-.patient_item_section .mat-tab-label { opacity: 1; background: #000; color: #ffff; font-size: 14px; text-transform: uppercase; font-family: "AvenirBlack"; padding: 5px 16px; }
+.patient_item_section .mat-tab-label { opacity: 1; background: linear-gradient(45deg, #ffc703, #ffe069); color: #ffff; font-size: 14px; text-transform: uppercase; font-family: "AvenirBlack"; padding: 5px 16px; }
 .patient_item_section .mat-tab-label:nth-child(2){ margin: 0 8px; }
 .patient_item_section .mat-tab-label:nth-child(4){ margin: 0 8px; }
 .admin_wrapper .mat-tab-label.mat-tab-label-active { background-color:var(--button-color3); opacity: 1!important; color: #ffff; }
@@ -320,8 +320,11 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(4){ background: #ff5370 url("../../../../assets/images/admincircle_icon4.png") no-repeat right top; background-size: 110px;;}
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(5){ background: #ea53c2 url("../../../../assets/images/admincircle_icon1.png") no-repeat right top; background-size: 110px;;}
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(6){ background: #45dc92 url("../../../../assets/images/admincircle_icon3.png") no-repeat right top; background-size: 110px;}
+
+.admin_superbillsection .biller_wrapper .super_bill_item:nth-child(7){ background: #5c88b3 url("../../../../assets/images/admincircle_icon2.png") no-repeat right top; background-size: 110px;}
+
 .admin_superbillsection .biller_wrapper .super_bill_item .container_wrapper{ display: flex; flex-direction: column; align-items: self-end; width: 80%; box-sizing: border-box;  }
-.admin_superbillsection .biller_wrapper .super_bill_item span h2{ color: #fff; font-size: 40px; text-transform: uppercase; font-family: 'AvenirMedium'; margin: 10px 0; text-shadow: 1px 1px 0px #dadada; word-break: break-all;}
+.admin_superbillsection .biller_wrapper .super_bill_item span h2{ color: #fff; font-size: 36px; text-transform: uppercase; font-family: 'AvenirMedium'; margin: 10px 0; text-shadow: 1px 1px 0px #dadada; word-break: break-all;}
 .admin_superbillsection .biller_wrapper .super_bill_item span P{ color: #fff; font-size: 24px; font-family: 'AvenirMedium'; margin: 0; line-height: 26px; text-shadow: 1px 1px 0px #dadada;}
 .admin_superbillsection .biller_wrapper .super_bill_item:last-child{margin-bottom: 0.5%; }
 .admin_superbillsection .biller_wrapper .super_bill_item span button{ font-size: 16px; text-transform: capitalize; font-family: 'AvenirLight'; line-height: 32px; margin-top: auto;
@@ -498,7 +501,7 @@ color: #fff; min-width: 100px; font-family: 'AvenirMedium'; font-size: 18px;}
 
 
 /* calendar view */
-.calenderView .calender_first .mat-toolbar{ background: linear-gradient(10deg, #8bc348, #135e80); justify-content: space-between; }
+.calenderView .calender_first .mat-toolbar{ background: linear-gradient(10deg, #8bc348, #135e80); justify-content: space-between; margin-top:6px; }
 .calenderView .calender_first .mat-toolbar .google_calendar_status mat-label { float: none; line-height: inherit;
 color: #ffffff; text-align: inherit; display: inline-flex; align-items: center;}
 .calenderView .calender_first .mat-toolbar .headerSpan { font-family: 'AvenirMedium'; font-size: 28px; margin: inherit;}
@@ -573,8 +576,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .book-appointment .mat-stepper-horizontal .mat-horizontal-content-container{padding: 0;}
 
 .book-appointment .mat-stepper-horizontal h4,
-.book-event .mat-dialog-container .mat-stepper-horizontal h4{ font-family: 'AvenirMedium'; margin: 0; font-size: 20px;
-  color: #0ac3a2; text-transform: uppercase; margin-bottom: 14px; }  
+.book-event .mat-dialog-container .mat-stepper-horizontal h4{ font-family: 'AvenirMedium'; margin: 0; font-size: 20px; color: #0ac3a2; text-transform: uppercase; margin-bottom: 14px; }  
 
 .book-appointment .mat-stepper-horizontal .containerSpan mat-label,
 .book-event .mat-dialog-container .mat-stepper-horizontal .containerSpan mat-label{ color: #505050; }
@@ -679,9 +681,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 }
 .encounter_rules .admin_superbillsection .tab table tr.mat-header-row{ font-family:'AvenirBlack'; }
 .encounter_rules .admin_superbillsection .tab table tr.mat-header-row, 
-.encounter_rules .admin_superbillsection .tab table tr.mat-row{
-  height: auto;
-}
+.encounter_rules .admin_superbillsection .tab table tr.mat-row{ height: auto; }
 
 .encounter_rules .admin_superbillsection .greenbar{
   background: url('../../assets/images/AWSLinkedINBanner.jpg') no-repeat;
@@ -716,4 +716,9 @@ font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radi
 .success-snackbar{ background: #4cde45!important; color: #fff!important; font-family: 'AvenirMedium';  box-shadow: none!important;}
 .success-snackbar .mat-simple-snackbar-action button { color: #fff!important;}
 
- 
+.encounter_wrapper .second_table .book-appointment .mat-form-field {
+  width: 32.2%;
+}
+.encounter_wrapper .second_table .book-appointment .mat-form-field-appearance-fill .mat-form-field-flex {
+    background: #f5f4f4;
+}

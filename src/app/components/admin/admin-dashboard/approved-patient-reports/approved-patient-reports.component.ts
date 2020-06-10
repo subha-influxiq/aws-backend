@@ -65,8 +65,8 @@ export class ApprovedPatientReportsComponent implements OnInit {
     updateendpoint: '',
     custombuttons: [
       {
-        label: "Create Jobticket",
-        route: "admin/create-jobticket/",
+        label: "View Jobticket",
+        route: "admin/report-jobtickets/",
         type: 'internallink',
         param: ['_id'],
         cond: 'status',

@@ -139,6 +139,7 @@ export class ReportsDetailsComponent implements OnInit {
       "created_at_datetime",
       "cpt_addl",
       "general_details",
+      "cpt_amount",
       "total_cpt_amount"
       // "parent_type",`
       // "parent_id",
@@ -152,6 +153,7 @@ export class ReportsDetailsComponent implements OnInit {
     "status_text": "Status",
     "created_at_datetime": "Report Added",
     "cpt_addl": "CPT/ Addl Hrisk C",
+    "cpt_amount" :"Per CPT Validate Amount($)",
     "total_cpt_amount" : "Total Validate Amount($)"
     // "addl_hlth_risk": "Addl Hlth Risk"
   };
