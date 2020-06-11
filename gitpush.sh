@@ -25,7 +25,7 @@ git pull origin master
 
 read -p 'Conflict record ?? Marge your Conflict file then press y.: ' conflictKey
 
-if [ "$conflictKey" == 'y' ] || [ "$conflictKey" == 'Y' ] 
+if [ "$conflictKey" -eq 'y' ] || [ "$conflictKey" -eq 'Y' ] 
 then
 	GitProcessStart
 else
