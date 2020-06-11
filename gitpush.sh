@@ -18,33 +18,18 @@ GitCommitMsg () {
 	fi
 }
 
-GitBranchName () {
-	read -p 'Enter git branch name: ' gitBranch
-
-	if [ $gitBranch ] 
-	then
-		$branchName = $gitBranch
-		git pull origin $gitBranch
-   		return $gitBranch
-	else
-   		echo "Error: Please enter your branch name."
-   		GitBranchName
-	fi
-}
-
 GitProcessStart
 GitCommitMsg
 
-branchName=''
-GitBranchName $branchName
+git pull origin master
 
-read -p 'Conflict record ?? (y/n): ' conflictKey
+read -p 'Conflict record ?? Marge your Conflict file then press y.: ' conflictKey
 
 if [ $conflictKey == 'y' ] || [ $conflictKey == 'Y' ] 
 then
 	GitProcessStart
 else
-	git push origin $branchName
+	git push origin master
 fi
 
 echo "Successfully done."
