@@ -182,6 +182,7 @@ import {CptValidateReportsComponent} from './components/admin/cpt-validate-repor
 import { ReportsDetailsComponent } from './components/admin/reports-details/reports-details/reports-details.component';
 import { CreateReplyJobTicketComponent } from './components/admin/admin-dashboard/hold-report-job-ticket/create-reply-job-ticket/create-reply-job-ticket.component';
 import { JobTicketPatientReportsComponent } from './components/admin/admin-dashboard/job-ticket-patient-reports/job-ticket-patient-reports.component';
+import { ViewJobTicketImageComponent } from './components/admin/admin-dashboard/hold-report-job-ticket/view-job-ticket-image/view-job-ticket-image.component';
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -350,7 +351,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CptValidateReportsComponent,
     ReportsDetailsComponent,
     CreateReplyJobTicketComponent,
-    JobTicketPatientReportsComponent
+    JobTicketPatientReportsComponent,
+    ViewJobTicketImageComponent
   ],
   imports: [
     SatDatepickerModule,
@@ -433,6 +435,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 
     // create and reply job tickets
     CreateReplyJobTicketComponent,
+    ViewJobTicketImageComponent,
   ]
 })
 

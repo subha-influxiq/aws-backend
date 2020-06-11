@@ -9,7 +9,7 @@
     <mat-card-content class="title_wrapper">Conversation</mat-card-content>
 
     <ng-container *ngIf="this.htmlText.oldTickets.length > 0">
-        <ng-container *ngFor="let ticket of htmlText.oldTickets;">
+        <ng-container *ngFor="let ticket of htmlText.oldTickets; let ticketIndex = index;">
             <mat-card class="example-card">
                 <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
@@ -21,11 +21,10 @@
                     <p [innerHTML]="ticket.description"></p>
                 </mat-card-content>
 
-                <mat-grid-list cols="2" rowHeight="2:1">
-                    <mat-grid-tile>1</mat-grid-tile>
-                    <mat-grid-tile>2</mat-grid-tile>
-                    <mat-grid-tile>3</mat-grid-tile>
-                    <mat-grid-tile>4</mat-grid-tile>
+                <mat-grid-list [cols]="ticket.files.length" rowHeight="2:1">
+                    <mat-grid-tile *ngFor="let file of ticket.files; let fileIndex = index;" (click)="viewImage(ticketIndex, fileIndex);">
+                        <img [src]="file.basepath + file.fileservername" />
+                    </mat-grid-tile>
                 </mat-grid-list>
             </mat-card>
         </ng-container>

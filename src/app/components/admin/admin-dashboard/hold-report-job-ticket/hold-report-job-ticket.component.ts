@@ -6,6 +6,7 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar, MatCalendarBody } from '@angular/material';
 import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
+import { ViewJobTicketImageComponent } from './view-job-ticket-image/view-job-ticket-image.component';
 import * as _ from "lodash";
 import { environment } from '../../../../../environments/environment';
 
@@ -167,6 +168,26 @@ export class HoldReportJobTicketComponent implements OnInit {
 
   createJobTicket() {
     
+  }
+
+  viewImage(ticketIndex, fileIndex) {
+    let data: any = {
+      width: '250px',
+      data: {
+        allImages: this.htmlText.oldTickets[ticketIndex].files,
+        selectImage: this.htmlText.oldTickets[ticketIndex].files[fileIndex],
+      }
+    };
+    this.dialogRef = this.dialog.open(ViewJobTicketImageComponent, data);
+    
+    this.dialogRef.afterClosed().subscribe(result => {
+      switch(result) {
+        case "Close":
+          break;
+        default:
+          break;
+      }
+    });
   }
 
 }
