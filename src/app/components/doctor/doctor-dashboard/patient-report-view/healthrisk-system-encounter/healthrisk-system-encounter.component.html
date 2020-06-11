@@ -14,7 +14,7 @@
           <label> <input type="radio" [checked]="orginalReportDetails.patient_details[0].gender_male_flag == true" [value]="true">M</label>
           <label> <input type="radio" [checked]="orginalReportDetails.patient_details[0].gender_female_flag == true" [value]="true">F</label>
         </td>
-        <td> <label>Date <input type="text" value="{{ orginalReportDetails.patient_details[0].test_date | date }}"> </label></td>
+        <td> <label>Date <input type="text" value="{{ orginalReportDetails.test_date | date }}"> </label></td>
       </tr>
 
       <tr>
@@ -192,7 +192,14 @@
           <td>
             <tr>
               <td> <input type="checkbox" (change)="checkValue('icd_codes', orginalReportDetails.icd_codes.R000?'1':'0', 'R000')" [ngModelOptions]="{standalone: 1}" [(ngModel)]="orginalReportDetails.icd_codes.R000"></td>
-              <td>R00.0 Tachycardia, unspecified {{ reportDetails.rooo_Description.R000_text_1 }}{{ reportDetails.rooo_Description.R000_text_2 }}{{ reportDetails.rooo_Description.R000_text_3 }}</td>
+              <td>R00.0 Tachycardia, unspecified 
+                <ng-container>
+                  
+                </ng-container>
+                {{ orginalReportDetails.r00_description.R000_text_1 }}
+                {{ orginalReportDetails.r00_description.R000_text_2 }}
+                {{ orginalReportDetails.r00_description.R000_text_3 }}
+              </td>
             </tr>
           </td>
         </tr>

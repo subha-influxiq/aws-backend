@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>View Screen Sort</h2>
+
+<mat-card class="modal_view">
+
+    <mat-card-content class="table_wrapper">
+        <img [src]="data.allImages[data.selectImageIndex].basepath + data.allImages[data.selectImageIndex].fileservername" />
+    </mat-card-content>
+    
+    <mat-dialog-actions align="end">
+        <button mat-button (click)="changeImage('previous');">Previous</button>
+        <button mat-button (click)="changeImage('next');">Next</button>
+        <button mat-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>
+
+</mat-card>
