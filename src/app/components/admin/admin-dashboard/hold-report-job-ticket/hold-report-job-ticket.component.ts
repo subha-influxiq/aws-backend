@@ -199,4 +199,76 @@ export class HoldReportJobTicketComponent implements OnInit {
     });
   }
 
+  changeStatus(action: string = '') {
+    var message: string = "Status change to ";
+    switch(action) {
+      case 'approved':
+        var data: any = {
+          "source" : "data_pece",
+          "data" : {
+            id: this.htmlText.reportId,
+            status: 11,
+            report_life_circle: {
+              date: 1591791772277,
+              status: 11,
+              status_text: "Approved Biller Admin"
+            }
+          },
+          "token" : this.htmlText.userData.jwtToken
+        };
+
+        message += "Approved.";
+        break;
+      case 'not approved':
+        var data: any = {
+          "source" : "data_pece",
+          "data" : {
+            id: this.htmlText.reportId,
+            status: 12,
+            report_life_circle: {
+              date: 1591791772277,
+              status: 12,
+              status_text: "Not Approved Biller Admin"
+            }
+          },
+          "token" : this.htmlText.userData.jwtToken
+        };
+
+        message += "Not Approved.";
+        break;
+      default:
+        break;
+    }
+
+    this.httpService.httpViaPost("job-tickets-status-change", data).subscribe(response => {
+      if (response.status == "success") {
+        let data: any = {
+          width: '250px',
+          data: {
+            header: "Success",
+            message: message,
+            button1: { text: "" },
+            button2: { text: "Close" },
+          }
+        };
+        this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+        
+        this.dialogRef.afterClosed().subscribe(result => {
+          switch(result) {
+            case "Close":
+              this.router.navigateByUrl('/admin/dashboard');
+              break;
+            default:
+              this.router.navigateByUrl('/admin/dashboard');
+              break;
+          }
+        });
+      } else {
+        this.snackBar.open(response.msg, '', {
+          duration: 2000,
+        });
+      }
+    });
+  }
+
 }

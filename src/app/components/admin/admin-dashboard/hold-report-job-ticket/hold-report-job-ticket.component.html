@@ -9,8 +9,10 @@
     <mat-card-content class="title_wrapper">Conversation</mat-card-content>
 
     <ng-container *ngIf="this.htmlText.oldTickets.length > 0">
-        <button style="margin: 4px;" mat-raised-button color="primary">Approved</button>
-        <button style="margin: 4px;" mat-raised-button color="primary">Not Approved</button>
+        <ng-container *ngIf="htmlText.user_details.user_type != 'doctor'">
+            <button style="margin: 4px;" mat-raised-button color="primary" (click)="changeStatus('approved');">Approved</button>
+            <button style="margin: 4px;" mat-raised-button color="primary" (click)="changeStatus('not approved');">Not Approved</button>
+        </ng-container>
         
         <ng-container *ngFor="let ticket of htmlText.oldTickets; let ticketIndex = index;">
             <mat-card style="margin: 6px;" class="example-card">
@@ -32,8 +34,10 @@
             </mat-card>
         </ng-container>
 
-        <button style="margin: 4px;" mat-raised-button color="primary">Approved</button>
-        <button style="margin: 4px;" mat-raised-button color="primary">Not Approved</button>
+        <ng-container *ngIf="htmlText.user_details.user_type != 'doctor'">
+            <button style="margin: 4px;" mat-raised-button color="primary" (click)="changeStatus('approved');">Approved</button>
+            <button style="margin: 4px;" mat-raised-button color="primary" (click)="changeStatus('not approved');">Not Approved</button>
+        </ng-container>
     </ng-container>
 
     <ng-container *ngIf="this.htmlText.oldTickets.length == 0">
