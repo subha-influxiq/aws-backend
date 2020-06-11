@@ -9,8 +9,11 @@
     <mat-card-content class="title_wrapper">Conversation</mat-card-content>
 
     <ng-container *ngIf="this.htmlText.oldTickets.length > 0">
+        <button style="margin: 4px;" mat-raised-button color="primary">Approved</button>
+        <button style="margin: 4px;" mat-raised-button color="primary">Not Approved</button>
+        
         <ng-container *ngFor="let ticket of htmlText.oldTickets; let ticketIndex = index;">
-            <mat-card class="example-card">
+            <mat-card style="margin: 6px;" class="example-card">
                 <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
                     <mat-card-title>{{ ticket.user_name }}</mat-card-title>
@@ -28,6 +31,9 @@
                 </mat-grid-list>
             </mat-card>
         </ng-container>
+
+        <button style="margin: 4px;" mat-raised-button color="primary">Approved</button>
+        <button style="margin: 4px;" mat-raised-button color="primary">Not Approved</button>
     </ng-container>
 
     <ng-container *ngIf="this.htmlText.oldTickets.length == 0">
@@ -49,7 +55,8 @@
 
     <mat-card class="add_form">
         <mat-card-content class="form_wrapper">
-            <ckeditor [(ngModel)]="htmlText.ckEditorValue" [ngModelOptions]="{standalone: true}"></ckeditor>
+            <ckeditor [(ngModel)]="htmlText.ckEditorValue"></ckeditor>
+            <span style="color: red;" *ngIf="htmlText.ckeditorError">Write your description.</span>
 
             <lib-file-upload [config]="configData" class="file_upload"></lib-file-upload>
 

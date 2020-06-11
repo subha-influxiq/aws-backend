@@ -27,7 +27,8 @@ export class HoldReportJobTicketComponent implements OnInit {
     message: "Submitted Successfully",
     oldTickets: [],
     reportId: '',
-    ckEditorValue: ''
+    ckEditorValue: '',
+    ckeditorError: false
   };
 
   public configData: any = {
@@ -91,6 +92,13 @@ export class HoldReportJobTicketComponent implements OnInit {
   }
 
   createJobTickets() {
+    if(this.htmlText.ckEditorValue.length == 0) {
+      this.htmlText.ckeditorError = true;
+      return;
+    } else {
+      this.htmlText.ckeditorError = false;
+    }
+
     if (typeof(this.configData.files) != 'undefined' && this.configData.files.length > 0) {
       var images_array: any = [];
       for (const loop in this.configData.files) {
@@ -131,8 +139,8 @@ export class HoldReportJobTicketComponent implements OnInit {
         let data: any = {
           width: '250px',
           data: {
-            header: "Successfully Submitted",
-            message: "Thank you for your interest. We will contact you soon.",
+            header: "Success",
+            message: "Your Job Ticket Added Successfully.",
             button1: { text: "" },
             button2: { text: "Close" },
           }
@@ -175,7 +183,7 @@ export class HoldReportJobTicketComponent implements OnInit {
       width: '250px',
       data: {
         allImages: this.htmlText.oldTickets[ticketIndex].files,
-        selectImage: this.htmlText.oldTickets[ticketIndex].files[fileIndex],
+        selectImageIndex: fileIndex
       }
     };
     this.dialogRef = this.dialog.open(ViewJobTicketImageComponent, data);
