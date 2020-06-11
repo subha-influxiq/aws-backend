@@ -28,7 +28,7 @@
 
                 <mat-grid-list [cols]="ticket.files.length" rowHeight="2:1">
                     <mat-grid-tile *ngFor="let file of ticket.files; let fileIndex = index;" (click)="viewImage(ticketIndex, fileIndex);">
-                        <img [src]="file.basepath + file.fileservername" />
+                        <img style="cursor: pointer;" [src]="file.basepath + file.fileservername" />
                     </mat-grid-tile>
                 </mat-grid-list>
             </mat-card>
