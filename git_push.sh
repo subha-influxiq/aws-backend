@@ -9,8 +9,11 @@ GitProcessStart() {
 GitCommitMsg () {
 	echo ""
 	echo ""
+	echo "==============================="
 	read -p 'Enter commit message: ' commitMsg
 	echo "==============================="
+	echo ""
+	echo ""
 
 	if [ $commitMsg ] 
 	then
@@ -18,8 +21,11 @@ GitCommitMsg () {
 	else
 		echo ""
 		echo ""
+		echo "========================================"
    		echo "Error: Please enter your commit message."
-   		echo "==========================="
+   		echo "========================================"
+   		echo ""
+		echo ""
    		GitCommitMsg
 	fi
 }
@@ -31,8 +37,11 @@ git pull origin master
 
 echo ""
 echo ""
+echo "================================================================"
 read -p 'Conflict record ?? Marge your Conflict file then press y.: ' conflictKey
-echo "=============================================================="
+echo "================================================================"
+echo ""
+echo ""
 
 if [ "$conflictKey" = 'y' ] || [ "$conflictKey" = 'Y' ] 
 then
@@ -43,6 +52,7 @@ fi
 
 echo ""
 echo ""
+echo "=================="
 echo "Successfully done."
 echo "=================="
 
