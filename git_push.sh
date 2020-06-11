@@ -110,7 +110,7 @@ git pull origin master
 echo ""
 echo ""
 echo "================================================================"
-read -p 'Conflict record ?? Marge your Conflict file then press y.: ' conflictKey
+read -p 'Any Conflict record ?? Marge your Conflict file then press y.: ' conflictKey
 echo "================================================================"
 echo ""
 echo ""

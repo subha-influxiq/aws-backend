@@ -66,6 +66,7 @@ export class HoldReportJobTicketComponent implements OnInit {
       this.httpService.httpViaPost('datalist', data).subscribe(response => {
         if(typeof(response.res[0].job_tickets_details) != 'undefined') {
           this.htmlText.header = 'Reply';
+          this.htmlText.buttonText = "Reply";
           this.htmlText.oldTickets = response.res[0].job_tickets_details;
         } else {
           this.htmlText.oldTickets = [];
