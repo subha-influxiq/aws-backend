@@ -30,6 +30,24 @@ GitCommitMsg () {
 	fi
 }
 
+buildUpload() {
+	echo ""
+	echo ""
+	echo "======================================="
+	echo "Execute: Build Angular Production Mode."
+	echo "======================================="
+	ng build --prod
+
+	cd dist/
+
+	echo ""
+	echo ""
+	echo "==========================================="
+	echo "Execute: Process to upload into the setver."
+	echo "==========================================="
+	aws --profile default s3 sync browser s3://testbedpece.influxiq.com --acl public-read  --cache-control max-age=0
+}
+
 GitProcessStart
 GitCommitMsg
 
@@ -49,6 +67,21 @@ then
 else
 	git push origin master
 fi
+
+
+echo ""
+echo ""
+echo "================================================================"
+read -p 'Do you want to build and upload into the server? (y/n): ' uploadKey
+echo "================================================================"
+echo ""
+echo ""
+
+if [ "$uploadKey" = 'y' ] || [ "$uploadKey" = 'Y' ] 
+then
+	buildUpload
+fi
+
 
 echo ""
 echo ""
