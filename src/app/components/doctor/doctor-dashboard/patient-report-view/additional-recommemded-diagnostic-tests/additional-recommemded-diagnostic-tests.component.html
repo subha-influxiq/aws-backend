@@ -54,7 +54,7 @@
 </mat-card> -->
 
 <span class="loop">
-  <mat-card-content class="content" *ngFor="let data of reportDetails.additional_recommemded_diagnostic_tests; let i = index;">
+  <mat-card-content class="content" *ngFor="let data of orginalReportDetails.additional_testing; let i = index;">
     <table>
       <tr>
         <th>Column</th>
@@ -64,10 +64,10 @@
         <th>Description</th>
         <td [innerHtml]="data.description"></td>
       </tr>
-      <tr>
+      <!-- <tr>
         <th>ICD -10</th>
         <td [innerHtml]="data.ICD10"></td>
-      </tr>
+      </tr> -->
       <tr>
         <th>ABI &/or Doppler</th>
         <td [innerHtml]="data.ABI_doppler"></td>
