@@ -1,8 +1,22 @@
 #!/bin/sh
 
 GitProcessStart() {
+	echo ""
+	echo ""
+	echo "=========="
+	echo "Git Status"
+	echo "=========="
+	echo ""
+	echo ""
 	git status
 
+	echo ""
+	echo ""
+	echo "======="
+	echo "Git Add"
+	echo "======="
+	echo ""
+	echo ""
 	git add .
 }
 
@@ -17,6 +31,13 @@ GitCommitMsg () {
 
 	if [ $commitMsg ] 
 	then
+		echo ""
+		echo ""
+		echo "=========="
+		echo "Git Commit"
+		echo "=========="
+		echo ""
+		echo ""
    		git commit -m $commitMsg
 	else
 		echo ""
@@ -77,6 +98,13 @@ serveAngular() {
 GitProcessStart
 GitCommitMsg
 
+echo ""
+echo ""
+echo "========"
+echo "Git Pull"
+echo "========"
+echo ""
+echo ""
 git pull origin master
 
 echo ""
@@ -91,6 +119,13 @@ if [ "$conflictKey" = 'y' ] || [ "$conflictKey" = 'Y' ]
 then
 	GitProcessStart
 else
+	echo ""
+	echo ""
+	echo "========"
+	echo "Git Push"
+	echo "========"
+	echo ""
+	echo ""
 	git push origin master
 fi
 
