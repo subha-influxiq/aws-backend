@@ -23,6 +23,7 @@ GitBranchName () {
 
 	if [ $gitBranch ] 
 	then
+		$branchName = $gitBranch
 		git pull origin $gitBranch
    		return $gitBranch
 	else
@@ -33,8 +34,9 @@ GitBranchName () {
 
 GitProcessStart
 GitCommitMsg
-GitBranchName
-gitBranch = $?
+
+branchName=''
+GitBranchName $branchName
 
 read -p 'Conflict record ?? (y/n): ' conflictKey
 
@@ -42,7 +44,7 @@ if [ $conflictKey == 'y' ] || [ $conflictKey == 'Y' ]
 then
 	GitProcessStart
 else
-	git push origin master
+	git push origin $branchName
 fi
 
 echo "Successfully done."
