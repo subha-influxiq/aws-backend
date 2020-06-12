@@ -69,7 +69,6 @@ export class SystemSuperbillComponent implements OnInit {
     if(typeof(this.orginalReportDetails.patient_details[0].insurance_id) != 'undefined' && this.orginalReportDetails.patient_details[0].insurance_id != '') {
       this.getInsuranceData('');
     } else {
-      console.log("Insurance not found.");
       this.orginalReportDetails.patient_details[0].insurance_details = {
         insurancename: ''
       };
@@ -78,8 +77,7 @@ export class SystemSuperbillComponent implements OnInit {
 
     if(typeof(this.reportDetails.reportData[0].BMI) != 'undefined') {
       this.reportDetails.reportData[0].BMI_flag = Math.round(this.reportDetails.reportData[0].BMI * 10);
-      console.log(">>>>", this.reportDetails.reportData[0].BMI_flag);
-
+      
       if(this.reportDetails.reportData[0].BMI_flag >= 290 && this.reportDetails.reportData[0].BMI_flag < 300) {
         this.reportDetails.reportData[0].BMI29 = true;
       }

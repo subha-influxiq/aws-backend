@@ -61,8 +61,6 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     // console.log("icd_codes: ", this.orginalReportDetails.icd_codes);
     // console.log("cpt_codes: ", this.orginalReportDetails.cpt_codes);
 
-    console.log("Patient details: ", this.orginalReportDetails.patient_details[0]);
-
     if(this.orginalReportDetails.patient_details[0].doctor_details.length == 0) {
       this.orginalReportDetails.patient_details[0].doctor_details[0] = {};
       this.orginalReportDetails.patient_details[0].doctor_details[0].firstname = 'Not';
@@ -72,7 +70,6 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     if(typeof(this.orginalReportDetails.patient_details[0].insurance_id) != 'undefined' && this.orginalReportDetails.patient_details[0].insurance_id != '') {
       this.getInsuranceData('');
     } else {
-      console.log("Insurance not found.");
       this.orginalReportDetails.patient_details[0].insurance_details = {
         insurancename: ''
       };
