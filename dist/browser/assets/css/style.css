@@ -140,7 +140,11 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 /* .custom-modalbox .mat-dialog-container .mat-button-base { background: rgb(185, 125, 45); color: #fff; text-transform: uppercase; min-width: 120px; border-radius: 0;} */
 .custom-modalbox .example-card .mat-card-header { min-width: 280px; position: relative; }
 .custom-modalbox .example-card .mat-card-header .mat-card-title { margin-bottom: 0px; font-size: 18px; font-family: "AvenirLight"; }
+<<<<<<< HEAD
 .custom-modalbox .example-card .mat-card-header::before { content: ':'; display: inline-block; font-size: 30px; position: absolute; right: 0; top: -5px; padding-right: 10px; }
+=======
+.custom-modalbox .example-card .mat-card-header::before { content: ':'; display: inline-block; font-size: 30px; position: absolute; right: -6px; top: -5px; padding-right: 10px; }
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 .custom-modalbox .example-card .mat-card-content { width: 100%; }
 
 /* modal for bulk upload container */
@@ -204,7 +208,11 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
   padding: 8px; box-sizing: border-box; color: #fff; cursor: pointer; text-transform: uppercase; font-family: "AvenirBlack"; }
 
  td.mat-cell br, td.mat-footer-cell br, th.mat-header-cell br{ display: none; }
+<<<<<<< HEAD
  .mat-bottom-sheet-container-large { border: 2px solid #ffbc36!important; }
+=======
+ /* .mat-bottom-sheet-container-large { border: 2px solid #ffbc36!important; } */
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
  .mat-bottom-sheet-container-large .mat-nav-list .mat-list-item {  height: 46px!important;
   background: var(--button-color2); margin-bottom: 10px; color: #fff; font-family: 'AvenirMedium'; }
 .mat-bottom-sheet-container-large .mat-nav-list .mat-list-item:hover{ background: var(--button-color1)!important;}
@@ -420,7 +428,12 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .add_form .test_date_wrapper .mat-card-content .mat-form-field-flex{ background: #fff;  border: 1px solid #d0d0d0;
   padding: 0 5px; box-sizing: border-box; }
  .patients_info_wrapper .mat-card-content .mat-form-field .mat-form-field-flex{ background: #fff; border: 1px solid #e6e4e4; padding: 0 7px;}
+<<<<<<< HEAD
  .add_form .form_wrapper .mat-form-field-appearance-fill .mat-form-field-flex { border-radius: 4px 4px 0 0;  background: #eee; }
+=======
+ .add_form .form_wrapper .mat-form-field-appearance-fill .mat-form-field-flex { border-radius: 4px 4px 0 0; background: #fff;
+  border: 1px solid #e0e0e0; border-bottom: 0;}
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
  /* doctor dashboard new */
  .admin_wrapper  .testingDoc { background: linear-gradient(0deg, #07aaf5, #40bffa); font-size: 34px; text-transform: uppercase; color: #fff; padding: 8px 10px;
   font-family: 'AvenirMedium'; margin: 6px!important; border-radius: 4px;}
@@ -434,6 +447,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .Admindmin_details .inner_er .mat-list-item{ font-size: 18px; font-family: 'AvenirMedium'; height: inherit;
   padding: 5px; box-sizing: border-box; color: #545454; text-transform: capitalize; }
 .Admindmin_details .inner_er .mat-list-item .lg{ font-size: 18px; font-family: 'AvenirBlack'; }
+<<<<<<< HEAD
 .admin_wrapper  .mediaDoc_wrapper { display: flex; justify-content: space-between; }
 .admin_wrapper  .mediaDoc_wrapper .new_wrapper_left{ width: 73%; display: flex;}
 .admin_wrapper  .mediaDoc_wrapper .new_wrapper_right{  width: 26%; display: flex; flex-direction: column;}
@@ -442,6 +456,15 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .encounter_wrapper .second_table  .book-appointment .mat-card{ box-shadow: none; padding: 10px 8px; }
 .encounter_wrapper .second_table  .book-appointment .mat-horizontal-stepper-header-container { display: none; }
 .encounter_wrapper .second_table  .book-appointment .float-right { display: none; }
+=======
+.admin_wrapper .mediaDoc_wrapper { display: flex; justify-content: space-between; }
+.admin_wrapper .mediaDoc_wrapper .new_wrapper_left{ width: 73%; display: flex;}
+.admin_wrapper .mediaDoc_wrapper .new_wrapper_right{  width: 26%; display: flex; flex-direction: column;}
+.admin_wrapper .mediaDoc_wrapper .new_wrapper_right .media_inner_items:last-child { margin-top: 16px;}
+.encounter_wrapper .second_table .book-appointment .mat-card{ box-shadow: none; padding: 10px 8px; }
+.encounter_wrapper .second_table .book-appointment .mat-horizontal-stepper-header-container { display: none; }
+.encounter_wrapper .second_table .book-appointment .float-right { display: none; }
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 .patient_report_wrapper .patient_item_section .mat-tab-label-active {
 background:linear-gradient(45deg, #0772ff, #04a6f6); opacity: 1; }
 .mediaDoc_wrapper .media_inner_items{ background: #f8f3f3;  margin: 0; display: flex;
@@ -501,16 +524,28 @@ color: #fff; min-width: 100px; font-family: 'AvenirMedium'; font-size: 18px;}
 
 
 /* calendar view */
+<<<<<<< HEAD
 .calenderView .calender_first .mat-toolbar{ background: linear-gradient(10deg, #8bc348, #135e80); justify-content: space-between; margin-top:6px; }
 .calenderView .calender_first .mat-toolbar .google_calendar_status mat-label { float: none; line-height: inherit;
 color: #ffffff; text-align: inherit; display: inline-flex; align-items: center;}
 .calenderView .calender_first .mat-toolbar .headerSpan { font-family: 'AvenirMedium'; font-size: 28px; margin: inherit;}
+=======
+.calenderView .calender_first .mat-toolbar{ background: linear-gradient(10deg, #0f729f, #03a9f5); justify-content: space-between; margin-top:6px; }
+.calenderView .calender_first .mat-toolbar .google_calendar_status mat-label { float: none; line-height: inherit;
+color: #ffffff; text-align: inherit; display: inline-flex; align-items: center;}
+.calenderView .calender_first .mat-toolbar .headerSpan { font-family: 'AvenirMedium'; font-size: 28px; margin: 0;}
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 .calenderView .calender_first{ padding: 0;}
 .calenderView .calender_first .buttonsetToolbar { background: #f9f9f9; padding: 10px; height: auto; flex-wrap: wrap;
   display: flex; justify-content: center; align-items: center;}
 .calenderView .calender_first .buttonsetToolbar .singleButton {font-family: 'AvenirRoman';
+<<<<<<< HEAD
     font-size: 16px; background: linear-gradient(45deg, #06b1ff, #75d403); box-shadow: none;}
 .calenderView .calender_first .buttonsetToolbar .singleButton:nth-child(5)  { background: linear-gradient(45deg, #ff220f, #da1f00);}
+=======
+    font-size: 16px; background: linear-gradient(45deg, #e2ab02, #fec106); box-shadow: none;}
+.calenderView .calender_first .buttonsetToolbar .singleButton:nth-child(5)  { background: linear-gradient(45deg, #dc2800, #fd390e)}
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 .calenderView .filter { display: flex; justify-content: space-between; align-items: center; margin: 0!important; }
 .calenderView .filter .pagination { float: none; font-size: 14px; font-family: 'AvenirMedium'; margin-left: 8px; }
 .calenderView .slotview{ padding: 8px 0px!important;}
@@ -526,6 +561,7 @@ color: #ffffff; text-align: inherit; display: inline-flex; align-items: center;}
 .calenderView .example-container .button_wrapper button:last-child{ background: var(--button-color3)}
  
 .searchbar .mat-form-field .mat-chip.mat-standard-chip { background: linear-gradient(40deg, #03a0c3 50%, #0ab3ff 50%); color: #ffff;
+<<<<<<< HEAD
   font-family: 'AvenirLight';
   white-space: normal;
   height: auto;
@@ -533,6 +569,10 @@ color: #ffffff; text-align: inherit; display: inline-flex; align-items: center;}
   font-size: 10px;
 }
  .searchbar .mat-form-field .mat-chip.mat-standard-chip .mat-chip-remove.mat-icon { margin: 0; }
+=======
+  font-family: 'AvenirLight'; white-space: normal; height: auto; word-break: break-word; font-size: 10px; }
+.searchbar .mat-form-field .mat-chip.mat-standard-chip .mat-chip-remove.mat-icon { margin: 0; }
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 
 .multipledeleteandupdatebuttan button{ background: linear-gradient(40deg, #ff4081, #dc004b); color: #fff;
 margin: 0 5px;}
@@ -583,9 +623,13 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 
 .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .header,
 .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .header { font-family: 'AvenirMedium'; font-size: 18px; text-transform: uppercase; color: #ffffff;
+<<<<<<< HEAD
   background: linear-gradient(45deg, #12a0e5, #64ceff);
   padding: 8px 6px;
 }
+=======
+  background: linear-gradient(45deg, #12a0e5, #64ceff); padding: 8px 6px; }
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 
 .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .checbox_wrapper,
 .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .checbox_wrapper { min-width: 150px; margin-left: 10px; }
@@ -610,7 +654,11 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .modal_view .mat-form-field{ width:100%;}
 .modal_view .mat-form-field .mat-form-field-flex { padding: 0 7px 4px; border: 1px solid #dadada; }
 /* new modification */
+<<<<<<< HEAD
 .admin_dashboard .DataTable .searchbar .mat-form-field{ width: 23.5%;}
+=======
+/* .admin_dashboard .DataTable .searchbar .mat-form-field{ width: 23.5%;} */
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 .admin_dashboard .DataTable .tablewrapper table th.mat-header-cell:last-of-type {width: 310px; }
 
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton0,
@@ -658,9 +706,13 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .form2_wrapper .DataTable .searchbar .mat-form-field{ width:48%; }
 
 .encounter_rules{padding: 16px!important;}
+<<<<<<< HEAD
 .encounter_rules .admin_superbillsection table{
   width: 100%; border-collapse: collapse; background: #fff;
 }
+=======
+.encounter_rules .admin_superbillsection table{ width: 100%; border-collapse: collapse; background: #fff; }
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 
 .encounter_rules .admin_superbillsection table tr th,
 .encounter_rules .admin_superbillsection table tr td{
@@ -669,12 +721,16 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 }
 .encounter_rules .admin_superbillsection table tr th{font-family: 'AvenirBlack'; background: #f9f9f9; font-size: 14px;}
 .encounter_rules .admin_superbillsection h1{ margin: 0; margin-bottom: 16px;}
+<<<<<<< HEAD
 
  
+=======
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 .encounter_rules .admin_superbillsection table .mat-column-SL{ width: 5%; }
 .encounter_rules .admin_superbillsection table .mat-column-Remarks{ width: 20%; }
 .encounter_rules .admin_superbillsection table .mat-column-Rules { width: 75%; }
 .encounter_rules .admin_superbillsection .tab table{ box-shadow: none;}
+<<<<<<< HEAD
 .encounter_rules .admin_superbillsection .tab h3{
   border: 1px solid #dadada; margin: 0;
     border-bottom: 0;
@@ -682,6 +738,10 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
     padding: 16px 8px;
     font-family: 'AvenirBlack'; font-size:16px; color: #828282;
 }
+=======
+.encounter_rules .admin_superbillsection .tab h3{ border: 1px solid #dadada; margin: 0; border-bottom: 0;
+background: #f9f9f9; padding: 16px 8px; font-family: 'AvenirBlack'; font-size:16px; color: #828282; }
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 .encounter_rules .admin_superbillsection .tab table tr.mat-header-row{ font-family:'AvenirBlack'; }
 .encounter_rules .admin_superbillsection .tab table tr.mat-header-row, 
 .encounter_rules .admin_superbillsection .tab table tr.mat-row{ height: auto; }
@@ -689,6 +749,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .encounter_rules .admin_superbillsection .greenbar{
   background: url('../../assets/images/AWSLinkedINBanner.jpg') no-repeat;
   background-position: center;
+<<<<<<< HEAD
   padding: 20px;
   background-color: #21a6b7;
   background-size: cover;
@@ -696,6 +757,10 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
   position: relative;
   margin-bottom: 16px;
 }
+=======
+  padding: 20px; background-color: #21a6b7; background-size: cover; height: 340px;
+  position: relative; margin-bottom: 16px; }
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 .encounter_rules .admin_superbillsection .greenbar p{
  top: 65%; position: absolute; font-family: 'AvenirBlack'; font-size: 60px;
  margin: 0; text-transform: uppercase; color: #08ab7d; }
@@ -708,7 +773,11 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .shareLink_wrpr .small_view .shreWr { width: 100%; display: flex;}
 .shareLink_wrpr .small_view .shreWr input{ background: #fff; padding: 10px; width: 100%; border: none; box-shadow: 0px 1px 4px #949494;}
   
+<<<<<<< HEAD
 .shareLink_wrpr .link_field .shreWr a{ background: linear-gradient(45deg, #ff0000, #d60000);
+=======
+.shareLink_wrpr .link_field .shreWr a{ background: linear-gradient(45deg, #fecb00, #ff0000);
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radius: 0 4px 4px 0;}
 .shareLink_wrpr .icon_wr button { width: 35px; height: auto; min-width: inherit; text-align: center; padding: 0; margin-left: 10px; } 
 .shareLink_wrpr .icon_wr button i{ font-size: 20px; }
@@ -716,6 +785,7 @@ font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radi
 .shareLink_wrpr .icon_wr button:nth-child(2) { background: #00acee; color:#fff; }
 .shareLink_wrpr .icon_wr button:nth-child(3) { background: #0e76a8 ; color:#fff; }
 .shareLink_wrpr .icon_wr button:nth-child(4) { background: #34526f ; color:#fff; }
+<<<<<<< HEAD
 .success-snackbar{ background: #4cde45!important; color: #fff!important; font-family: 'AvenirMedium';  box-shadow: none!important;}
 .success-snackbar .mat-simple-snackbar-action button { color: #fff!important;}
 
@@ -725,3 +795,23 @@ font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radi
 .encounter_wrapper .second_table .book-appointment .mat-form-field-appearance-fill .mat-form-field-flex {
     background: #f5f4f4;
 }
+=======
+.success-snackbar { background: #4cde45!important; color: #fff!important; font-family: 'AvenirMedium';  box-shadow: none!important;}
+.success-snackbar .mat-simple-snackbar-action button { color: #fff!important;} 
+.encounter_wrapper .second_table .book-appointment .mat-form-field { width: 32.2%; }
+
+.encounter_wrapper .second_table .book-appointment .mat-form-field-appearance-fill .mat-form-field-flex {  background: #f5f4f4; }
+.calenderView .calendar_wrapper { width: 65%!important; }
+.calenderView .calendar_wrapper .example-container { display: inherit;}
+.calenderView .calendar_wrapper .example-container h3 { font-size: 20px; font-family: 'AvenirBlack'; margin: 0px 0px 10px;
+  padding: 10px; background: #46b70d; color: #fff; width: auto;}
+.calenderView .calendar_wrapper .example-container .mat-checkbox{ display: inline-block; width: auto; margin-right: 12px;}
+.calenderView .calendar_wrapper .example-container .mat-checkbox:last-child{ margin-right: 0px!important;}
+
+/* .w-time{ max-height: inherit!important; min-height: inherit!important; height: auto!important;} */
+.w-timepicker-dialog { margin: 0!important; width: auto!important; }
+.w-time .w-timepicker-time-container.mat-toolbar-single-row { background: #16995d; }
+.w-clock-wrapper .w-clock { padding: 14px!important;}
+.w-clock .w-clock-container .mat-mini-fab.mat-primary,
+.w-clock .w-clock-container .w-pointer{ background-color: var(--button-color2)!important;}
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301

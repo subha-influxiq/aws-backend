@@ -146,6 +146,7 @@ font-size: 16px; color: #1f1f1f;}
     flex-direction: column;
   }
   .techdashboard_header .header_wrapper { flex-direction: column; }
+  .techdashboard_header .profile_section::before{ display: none;}
 }
 
 @media screen and (max-width: 1100px) {
@@ -318,3 +319,4 @@ font-size: 16px; color: #1f1f1f;}
   margin-top: 20px;
   transition: 5px ease-out;
 }
+  

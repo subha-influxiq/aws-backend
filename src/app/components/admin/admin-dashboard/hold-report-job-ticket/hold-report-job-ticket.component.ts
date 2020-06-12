@@ -6,6 +6,7 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar, MatCalendarBody } from '@angular/material';
 import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
+import { ViewJobTicketImageComponent } from './view-job-ticket-image/view-job-ticket-image.component';
 import * as _ from "lodash";
 import { environment } from '../../../../../environments/environment';
 
@@ -26,15 +27,9 @@ export class HoldReportJobTicketComponent implements OnInit {
     message: "Submitted Successfully",
     oldTickets: [],
     reportId: '',
-    ckEditorValue: ''
+    ckEditorValue: '',
+    ckeditorError: false
   };
-
-  public tiles: any = [
-    {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-  ];
 
   public configData: any = {
     baseUrl: environment.fileUploadUrl,
@@ -71,6 +66,7 @@ export class HoldReportJobTicketComponent implements OnInit {
       this.httpService.httpViaPost('datalist', data).subscribe(response => {
         if(typeof(response.res[0].job_tickets_details) != 'undefined') {
           this.htmlText.header = 'Reply';
+          this.htmlText.buttonText = "Reply";
           this.htmlText.oldTickets = response.res[0].job_tickets_details;
         } else {
           this.htmlText.oldTickets = [];
@@ -97,6 +93,13 @@ export class HoldReportJobTicketComponent implements OnInit {
   }
 
   createJobTickets() {
+    if(this.htmlText.ckEditorValue.length == 0) {
+      this.htmlText.ckeditorError = true;
+      return;
+    } else {
+      this.htmlText.ckeditorError = false;
+    }
+
     if (typeof(this.configData.files) != 'undefined' && this.configData.files.length > 0) {
       var images_array: any = [];
       for (const loop in this.configData.files) {
@@ -137,8 +140,8 @@ export class HoldReportJobTicketComponent implements OnInit {
         let data: any = {
           width: '250px',
           data: {
-            header: "Successfully Submitted",
-            message: "Thank you for your interest. We will contact you soon.",
+            header: "Success",
+            message: "Your Job Ticket Added Successfully.",
             button1: { text: "" },
             button2: { text: "Close" },
           }
@@ -174,6 +177,98 @@ export class HoldReportJobTicketComponent implements OnInit {
 
   createJobTicket() {
     
+  }
+
+  viewImage(ticketIndex, fileIndex) {
+    let data: any = {
+      width: '250px',
+      data: {
+        allImages: this.htmlText.oldTickets[ticketIndex].files,
+        selectImageIndex: fileIndex
+      }
+    };
+    this.dialogRef = this.dialog.open(ViewJobTicketImageComponent, data);
+    
+    this.dialogRef.afterClosed().subscribe(result => {
+      switch(result) {
+        case "Close":
+          break;
+        default:
+          break;
+      }
+    });
+  }
+
+  changeStatus(action: string = '') {
+    var message: string = "Status change to ";
+    switch(action) {
+      case 'approved':
+        var data: any = {
+          "source" : "data_pece",
+          "data" : {
+            id: this.htmlText.reportId,
+            status: 11,
+            report_life_circle: {
+              date: 1591791772277,
+              status: 11,
+              status_text: "Approved Biller Admin"
+            }
+          },
+          "token" : this.htmlText.userData.jwtToken
+        };
+
+        message += "Approved.";
+        break;
+      case 'not approved':
+        var data: any = {
+          "source" : "data_pece",
+          "data" : {
+            id: this.htmlText.reportId,
+            status: 12,
+            report_life_circle: {
+              date: 1591791772277,
+              status: 12,
+              status_text: "Not Approved Biller Admin"
+            }
+          },
+          "token" : this.htmlText.userData.jwtToken
+        };
+
+        message += "Not Approved.";
+        break;
+      default:
+        break;
+    }
+
+    this.httpService.httpViaPost("job-tickets-status-change", data).subscribe(response => {
+      if (response.status == "success") {
+        let data: any = {
+          width: '250px',
+          data: {
+            header: "Success",
+            message: message,
+            button1: { text: "" },
+            button2: { text: "Close" },
+          }
+        };
+        this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+        
+        this.dialogRef.afterClosed().subscribe(result => {
+          switch(result) {
+            case "Close":
+              this.router.navigateByUrl('/admin/dashboard');
+              break;
+            default:
+              this.router.navigateByUrl('/admin/dashboard');
+              break;
+          }
+        });
+      } else {
+        this.snackBar.open(response.msg, '', {
+          duration: 2000,
+        });
+      }
+    });
   }
 
 }
