@@ -79,7 +79,6 @@ else
 	echo "=========================="
 fi
 
-echo ""
 read -p 'Do you want to build and upload into the server? (y/n): ' uploadKey
 
 if [ "$uploadKey" = 'y' ] || [ "$uploadKey" = 'Y' ] 
