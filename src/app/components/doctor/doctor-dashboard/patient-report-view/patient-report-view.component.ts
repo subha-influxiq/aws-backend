@@ -88,7 +88,6 @@ export class PatientReportViewComponent implements OnInit {
       } else {
         this.htmlText.orginalData.doctor_signature = "";
       }
-      console.log(">>>>", this.htmlText.orginalData);
 
       if(typeof(this.htmlText.allResolveData.reportData[0].stressi) != 'undefined') {
         this.htmlText.allResolveData.reportData[0].stressI = this.htmlText.allResolveData.reportData[0].stressi;
@@ -169,7 +168,7 @@ export class PatientReportViewComponent implements OnInit {
               "data": { 
                 "bill_generation_date": new Date(),
                 "bill_sent_date": new Date(),
-                "doctor_signature": this.cookiesData.user_details.doctor_signature, 
+                "doctor_signature": this.cookiesData.doctor_signature, 
                 "biller_id": billerID,
                 "biller_name": billerName,
                 "biller_email": billerEmail,
