@@ -77,17 +77,16 @@ GitCommitMsg
 
 echo ">>---> Git Pull\n"
 git pull origin master
-echo "=============================="
 
-echo "\n\n================================================================"
+echo "\n================================================================"
 read -p 'Any Conflict record ?? Marge your Conflict file then press y.: ' conflictKey
-echo "================================================================\n\n"
 
 if [ "$conflictKey" = 'y' ] || [ "$conflictKey" = 'Y' ] 
 then
 	GitProcessStart
 else
-	echo "\n>>---> Git Push\n"
+	echo "=========================="
+	echo ">>---> Git Push\n"
 	git push origin master
 	echo "=========================="
 fi
