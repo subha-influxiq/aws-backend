@@ -1,67 +1,46 @@
 #!/bin/sh
 
 GitProcessStart() {
-	echo ""
-	echo ""
-	echo "=========="
-	echo "Git Status"
-	echo "=========="
-	echo ""
-	echo ""
+	echo "===================="
+	echo ">>---> Git Status\n"
 	git status
+	echo "======================"
 
-	echo ""
-	echo ""
-	echo "======="
-	echo "Git Add"
-	echo "======="
-	echo ""
-	echo ""
+	echo ">>---> Git Add All"
 	git add .
+	echo "======================"
 }
 
 GitCommitMsg () {
-	echo ""
-	echo ""
-	echo "==============================="
 	read -p 'Enter commit message: ' commitMsg
-	echo "==============================="
-	echo ""
-	echo ""
 
 	if [ $commitMsg ] 
 	then
-		echo ""
-		echo ""
-		echo "=========="
-		echo "Git Commit"
-		echo "=========="
-		echo ""
-		echo ""
+		echo "\n >>---> Apply Git Commit\n"
    		git commit -m $commitMsg
+   		echo "==============================="
 	else
 		echo ""
 		echo ""
 		echo "========================================"
    		echo "Error: Please enter your commit message."
    		echo "========================================"
-   		echo ""
-		echo ""
    		GitCommitMsg
 	fi
 }
 
 buildUpload() {
 	echo ""
-	echo ""
 	echo "======================================="
 	echo "Execute: Build Angular Production Mode."
-	echo "======================================="
+	echo ""
 	ng build --prod
+	echo ""
+	echo "Angular Production Build Complete."
+	echo "======================================="
 
 	cd dist/
 
-	echo ""
 	echo ""
 	echo "==========================================="
 	echo "Execute: Process to upload into the setver."
@@ -98,8 +77,6 @@ serveAngular() {
 GitProcessStart
 GitCommitMsg
 
-echo ""
-echo ""
 echo "========"
 echo "Git Pull"
 echo "========"
