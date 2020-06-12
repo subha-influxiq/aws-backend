@@ -11,10 +11,21 @@
           </i></a>
       </span>
       <span class="icon_wr">
-        <button mat-button><i class="fab fa-facebook-f"></i></button>
-        <button mat-button><i class="fab fa-twitter"></i></button>
-        <button mat-button><i class="fab fa-linkedin-in"></i></button>
-        <button mat-button><i class="fab fa-tumblr"></i></button>
+        <a [href]="shareDetailsData.facebookShareLink" target="_blank">
+          <button mat-button><i class="fab fa-facebook-f"></i></button>
+        </a>
+
+        <a [href]="shareDetailsData.twitterShareLink" target="_blank">
+          <button mat-button><i class="fab fa-twitter"></i></button>
+        </a>
+
+        <a [href]="shareDetailsData.linkedinShareLink" target="_blank">
+          <button mat-button><i class="fab fa-linkedin-in"></i></button>
+        </a>
+
+        <a [href]="shareDetailsData.tumblrShareLink" target="_blank">
+          <button mat-button><i class="fab fa-tumblr"></i></button>
+        </a>
       </span>
     </span>
   </mat-toolbar>
