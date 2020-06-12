@@ -37,7 +37,7 @@ buildUpload() {
 
 	cd dist/
 
-	echo "Execute: Process to upload into the setver."
+	echo "Execute: Process to upload into the setver.\n"
 	aws --profile default s3 sync browser s3://testbedpece.influxiq.com --acl public-read  --cache-control max-age=0
 	echo "==========================================="
 }
