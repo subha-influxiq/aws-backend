@@ -78,11 +78,11 @@ GitCommitMsg
 echo ">>---> Git Pull\n"
 git pull origin master
 
-echo "\n================================================================"
-read -p 'Any Conflict record ?? Marge your Conflict file then press y.: ' conflictKey
+read -p '\nAny Conflict record ?? Marge your Conflict file then press y.: ' conflictKey
 
 if [ "$conflictKey" = 'y' ] || [ "$conflictKey" = 'Y' ] 
 then
+	echo "\n=========================================="
 	GitProcessStart
 else
 	echo "=========================="
