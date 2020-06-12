@@ -16,7 +16,7 @@ GitCommitMsg () {
 
 	if [ $commitMsg ] 
 	then
-		echo "\n >>---> Apply Git Commit\n"
+		echo "\n>>---> Apply Git Commit\n"
    		git commit -m $commitMsg
    		echo "==============================="
 	else
@@ -77,7 +77,7 @@ serveAngular() {
 GitProcessStart
 GitCommitMsg
 
-echo "Git Pull\n"
+echo ">>---> Git Pull\n"
 git pull origin master
 echo "\n=============================="
 
