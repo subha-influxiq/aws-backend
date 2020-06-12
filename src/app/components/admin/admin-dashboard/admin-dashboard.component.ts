@@ -90,9 +90,9 @@ export class AdminDashboardComponent implements OnInit {
         // otherparam:["patient_name"],
         //cond:'status',
         //condval:0,
-        datafields: ['firstname','lastname','email','phone','address','city','state','zip'],
+        datafields: ['first name','last name','email','phone','address','city','state','zip'],
         param:'id',
-        headermessage: 'Tech Info',
+        headermessage: 'Tech Information',
         // refreshdata:true
     } ,
     {
@@ -105,7 +105,7 @@ export class AdminDashboardComponent implements OnInit {
       //cond:'status',
       //condval:0,
       param:'id',
-      headermessage: 'Codes Info',
+      headermessage: 'Associated Codes',
       // refreshdata:true
   } ,
     {
@@ -113,12 +113,12 @@ export class AdminDashboardComponent implements OnInit {
       type:'action',
       datatype:'api',
       endpoint:'get-doctor-details',
-      datafields: ['firstname','lastname','email','fax','practice_name','npi','phone','address','city','state','zip'],
+      datafields: ['firstname','lastname','email','fax','Practice Name','NPI','phone','address','city','state','zip'],
       // otherparam:["patient_name"],
       //cond:'status',
       //condval:0,
       param:'id',
-      headermessage: 'Doctor Info',
+      headermessage: 'Doctor Information',
       // refreshdata:true
   } ,
   {
@@ -143,7 +143,7 @@ export class AdminDashboardComponent implements OnInit {
   cond:'parent_details_check',
   condval:1,
   param:'id',
-  headermessage: 'Parent Info',
+  headermessage: 'Parent Information',
   // refreshdata:true
 } ,
     ],
