@@ -138,7 +138,7 @@ export class HoldReportJobTicketComponent implements OnInit {
     this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
       if (response.status == "success") {
         let data: any = {
-          width: '250px',
+          panelClass:'jobViewModal',
           data: {
             header: "Success",
             message: "Your Job Ticket Added Successfully.",
@@ -181,7 +181,7 @@ export class HoldReportJobTicketComponent implements OnInit {
 
   viewImage(ticketIndex, fileIndex) {
     let data: any = {
-      width: '250px',
+    panelClass:'jobViewModal',
       data: {
         allImages: this.htmlText.oldTickets[ticketIndex].files,
         selectImageIndex: fileIndex

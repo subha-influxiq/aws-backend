@@ -8,37 +8,50 @@
 <mat-card class="admin_wrapper">
     <mat-card-content class="title_wrapper">Conversation</mat-card-content>
 
-    <ng-container *ngIf="this.htmlText.oldTickets.length > 0">
-        <ng-container *ngIf="htmlText.user_details.user_type != 'doctor'">
-            <button style="margin: 4px;" mat-raised-button color="primary" (click)="changeStatus('approved');">Approved</button>
-            <button style="margin: 4px;" mat-raised-button color="primary" (click)="changeStatus('not approved');">Not Approved</button>
-        </ng-container>
-        
+    <mat-card-content class="job_reprt_wrapper" *ngIf="this.htmlText.oldTickets.length > 0">
+        <mat-toolbar class="job_reprt_action" *ngIf="htmlText.user_details.user_type != 'doctor'">
+            <button mat-raised-button color="primary" (click)="changeStatus('approved');">Approved</button>
+            <button mat-raised-button color="primary" (click)="changeStatus('not approved');">Not Approved</button>
+        </mat-toolbar>
+
         <ng-container *ngFor="let ticket of htmlText.oldTickets; let ticketIndex = index;">
-            <mat-card style="margin: 6px;" class="example-card">
+            <mat-card class="job_seeker_details">
                 <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
                     <mat-card-title>{{ ticket.user_name }}</mat-card-title>
-                    <mat-card-subtitle>{{ ticket.user_type }}, Posted on: {{ ticket.created_datetime | date }}</mat-card-subtitle>
+                    <mat-card-subtitle>{{ ticket.user_type }}, Posted on: {{ ticket.created_datetime | date }}
+                    </mat-card-subtitle>
                 </mat-card-header>
 
                 <mat-card-content>
                     <p [innerHTML]="ticket.description"></p>
                 </mat-card-content>
 
-                <mat-grid-list [cols]="ticket.files.length" rowHeight="2:1">
+                <!-- <mat-grid-list [cols]="ticket.files.length" rowHeight="2:1">
                     <mat-grid-tile *ngFor="let file of ticket.files; let fileIndex = index;" (click)="viewImage(ticketIndex, fileIndex);">
                         <img style="cursor: pointer;" [src]="file.basepath + file.fileservername" />
                     </mat-grid-tile>
-                </mat-grid-list>
+                </mat-grid-list> -->
+                <section class="itm">
+                    <h2 class="count_n"> Total Image: {{ticket.files.length}}</h2>
+                    <mat-toolbar class="report_image_w">
+                        <mat-card-content class="image_items" *ngFor="let file of ticket.files; let fileIndex = index;"
+                            (click)="viewImage(ticketIndex, fileIndex);">
+                            <img style="cursor: pointer;" [src]="file.basepath + file.fileservername" />
+                        </mat-card-content>
+                    </mat-toolbar>
+                </section>
             </mat-card>
         </ng-container>
 
-        <ng-container *ngIf="htmlText.user_details.user_type != 'doctor'">
-            <button style="margin: 4px;" mat-raised-button color="primary" (click)="changeStatus('approved');">Approved</button>
-            <button style="margin: 4px;" mat-raised-button color="primary" (click)="changeStatus('not approved');">Not Approved</button>
-        </ng-container>
-    </ng-container>
+         <mat-toolbar class="job_reprt_action" *ngIf="htmlText.user_details.user_type != 'doctor'">
+
+            <button style="margin: 4px;" mat-raised-button color="primary"
+                (click)="changeStatus('approved');">Approved</button>
+            <button style="margin: 4px;" mat-raised-button color="primary" (click)="changeStatus('not approved');">Not
+                Approved</button>
+            </mat-toolbar> 
+    </mat-card-content>
 
     <ng-container *ngIf="this.htmlText.oldTickets.length == 0">
         <mat-card class="example-card">
@@ -51,7 +64,8 @@
 
 
 <!-- header with add button -->
-<mat-card class="admin_wrapper" *ngIf="this.htmlText.oldTickets.length > 0 || htmlText.user_details.user_type != 'doctor'">
+<mat-card class="admin_wrapper"
+    *ngIf="this.htmlText.oldTickets.length > 0 || htmlText.user_details.user_type != 'doctor'">
     <mat-card-content class="title_wrapper">
         {{ htmlText.header }}
     </mat-card-content>

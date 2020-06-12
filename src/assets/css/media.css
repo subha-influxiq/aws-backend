@@ -28,6 +28,13 @@
  .DataTable .mat-card .tablewrapper .mat-table { width: 1600px; }
  .encounter_rules .admin_superbillsection .greenbar p { font-size: 46px; }
  .encounter_rules .admin_superbillsection .greenbar { height: 305px; }
+ .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .header, 
+ .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .header { 
+   font-size: 16px;
+  }
+ .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .label_name, 
+ .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .label_name {
+  font-size: 14px;}
 }  
 @media screen and (max-width: 1368px){
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 5px; }
@@ -243,6 +250,8 @@ align-items: flex-start; }
   .book-appointment .mat-form-field { width: 47.5%; }
   .calenderView .calender_first .mat-toolbar { flex-direction: column; }
   .calenderView .calender_first .buttonsetToolbar {flex-direction: row; }
+
+  .job_reprt_wrapper .itm .report_image_w .image_items { width: 32%;}
 }
  
  
@@ -318,6 +327,8 @@ align-items: flex-start; }
 
   .calenderView .filter .filter-box { width: 100%; }
   .calenderView .slotview .example-card { width: 100%; box-sizing: border-box;  margin: 0; margin-bottom: 16px; } 
+  .job_modal_wr  .mat-dialog-actions button{ min-width: inherit!important; line-height: inherit; padding: 4px 10px;}
+  .job_reprt_wrapper .itm .report_image_w .image_items { width: 48%; margin: 1%;}
 }
 
 @media screen and (max-width: 440px){
@@ -357,6 +368,8 @@ align-items: flex-start; }
   .adminTables td.mat-cell:last-of-type { padding-right: 10px;  }
   .encounter_rules .admin_superbillsection .greenbar p { font-size: 24px; }
   .calenderView .calendar_wrapper .example-container .mat-checkbox { width: 50%; margin-right: 0; }
+  .job_reprt_wrapper .itm .report_image_w .image_items { width: 100%; margin: 0; height: auto; margin-bottom: 16px;}
+  .job_reprt_wrapper .itm .report_image_w .image_items img { height: auto;}
 }                                            
-  
+
  

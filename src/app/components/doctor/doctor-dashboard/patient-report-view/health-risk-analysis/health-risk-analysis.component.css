@@ -1,76 +1,40 @@
 .health_risk_report {
-  width: 100%;
-  margin: 26px auto;
-  display: block;
-  background: #f3f3f3;
-  box-sizing: border-box;
+  width: 100%; margin: 26px auto; display: block; background: #f3f3f3; box-sizing: border-box;
 }
 
-.health_risk_report table {
-  width: 100%;
-  border-collapse: collapse;
+.health_risk_report table { 
+  width: 100%; border-collapse: collapse; 
 }
 
-.health_risk_report th {
-  height: 50px;
-}
-
+.health_risk_report th { height: 50px; }
 .health_risk_report table, th, td {
-  padding: 0 10px;
-  border: 1px solid #adadad;
+   padding: 0 10px; border: 1px solid #adadad; 
 }
-
-
-.health_risk_report table tr:nth-child(1) th {
-  border: none;
-}
-
+.health_risk_report table tr:nth-child(1) th { border: none; }
 
 .health_risk_report table input[type="text"], input[type="date"] {
-  height: 50px;
-  border: none;
-  padding: 0 10px; background: #e8e8e8;
-  width: 55px;
+
+  height: 50px; border: none; padding: 0 10px; background: #e8e8e8;
+  width: 55px; font-family: 'AvenirMedium';
+
 }
 
 .health_risk_report .patientName{ width: 52%!important}
-
 .health_risk_report table .order_input {
-  width: 300px!important;
-  box-sizing: border-box;
-  border-bottom: 1.4px solid #000!important;
+  width: 300px!important; box-sizing: border-box; border-bottom: 1.4px solid #000!important;
 }
 .health_risk_report table .patient_name{ width: 160px!important;}
-
-.area_header {
-  width: 100%;
-}
-
+.area_header { width: 100%; }
 .area_content {
-  width: 100%;
-  height: 150px;
-  box-sizing: border-box;
-  resize: none;
-  padding: 10px;
+  width: 100%; height: 150px; box-sizing: border-box; resize: none; padding: 10px; 
 }
-
-.gender_label {
-  display: flex;
+.gender_label { display: flex; }
+.health_risk_report .orderInput {
+   display: inline-flex; justify-content: center; align-items: center; width: 100%;
 }
-.health_risk_report .orderInput { display: inline-flex; justify-content: center; align-items: center; width: 100%;}
 .ordering_phy { font-weight: 500; display: inline-block; margin-right: 10px;}
-
-.rm_phy {
-  text-align: center;
-  font-weight: 500;
-}
-
-.fifty_width {
-  width: 50%;
-}
-
-.health_risk_report table input:focus, textarea:focus {
-  outline: none;
-}
+.rm_phy { text-align: center; font-weight: 500; }
+.fifty_width { width: 50%; }
+.health_risk_report table input:focus, textarea:focus { outline: none; }
 
 
