@@ -14,10 +14,10 @@ export class ListSalesPersonComponent implements OnInit {
 
   public allUserData: any = [];
   public datasource: any;
-  public field:any;
-  public data:any;
-  public fetch:any;
-  public salesData_count:any=0;
+  public field: any;
+  public data: any;
+  public fetch: any;
+  public salesData_count: any = 0;
   public allUserData_skip: any = [
     "_id",
     "address",
@@ -51,17 +51,17 @@ export class ListSalesPersonComponent implements OnInit {
     "updated_at",
     "diagnostic_admin_id"
   ];
-  
-  libdata:any={
+
+  libdata: any = {
     basecondition: "",
-    updateendpoint:'statusupdate',
+    updateendpoint: 'statusupdate',
     // hideeditbutton:true,// all these button options are optional not mandatory
     //hidedeletebutton:true,
     //hideviewbutton:false,
     //hidestatustogglebutton:true,
     // hideaction:true,
-    tableheaders:['firstname','lastname','email','parent_name','parent_type','phone','status','created_date',], //not required
-}
+    tableheaders: ['firstname', 'lastname', 'email', 'phone', 'status', 'created_date',], //not required
+  }
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
@@ -69,25 +69,25 @@ export class ListSalesPersonComponent implements OnInit {
   public tableName: any = "data_pece";
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
-  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },{ val: "distributors", 'name': 'Distributor' }];
+  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }];
   public SearchingEndpoint: any = "datalist";
   public SearchingSourceName: any = "data_sales_person_list";
-  public datacollection: any='getsaleslistdata';
-  public sortdata:any={
-    "type":'desc',
-    "field":'firstname',
-    "options":['firstname']
- };
- public limitcond:any={
-  "limit":10,
-  "skip":0,
-  "pagecount":1
-};
+  public datacollection: any = 'getsaleslistdata';
+  public sortdata: any = {
+    "type": 'desc',
+    "field": 'firstname',
+    "options": ['firstname']
+  };
+  public limitcond: any = {
+    "limit": 10,
+    "skip": 0,
+    "pagecount": 1
+  };
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status },{ label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }],
+      selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status },],
       textsearch: [{ label: "Search By Name", field: 'name_search' },
-      { label: "Search By E-Mail", field: 'email' },{ label: "Search By Parent Name", field: 'parent_search' }],
+      { label: "Search By E-Mail", field: 'email' }],
 
     };
   public user_cookie: any;
@@ -103,66 +103,69 @@ export class ListSalesPersonComponent implements OnInit {
     this.user_cookie = cookie.get('jwtToken');
     this.userData = JSON.parse(this.cookie.get('user_details'));
 
-    if(this.userData.user_type == 'diagnostic_admin') {
+    if (this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/sales-person-management/edit';
-      this.field = {'diagnostic_admin_id':this.userData._id};
+      this.field = { 'parent_id': this.userData._id };
       this.data = this.userData._id;
     }
-    if(this.userData.user_type == 'distributors') {
+    if (this.userData.user_type == 'distributors') {
       this.editUrl = 'distributors/sales-person-management/edit';
-      this.field = {'distributors_id':this.userData._id};
+      this.field = { 'parent_id': this.userData._id };
       this.data = this.userData._id;
     }
-
-    if(this.userData.user_type == 'doctor') {
-      this.editUrl = 'doctor/tech-management/edit';
+    if (this.userData.user_type == 'admin') {
+      this.search_settings.textsearch.push({ label: "Search By Parent Name", field: 'parent_name_search' });
+      this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type });
+      this.libdata.tableheaders.splice(3, 0, "parent_name");
+      this.libdata.tableheaders.splice(4, 0, "parent_type");
     }
 
     this.libdata.basecondition = this.field;
+
 
     this.apiUrl = httpService.baseUrl;
   }
 
   ngOnInit() {
     this.datasource = '';
-    let endpoint='getsaleslistdata';
-    let endpointc='getsaleslistdata-count';
-    let data:any={
-        "condition":{
-            "limit":10,
-            "skip":0
-        },
-    sort:{
-        "type":'desc',
-        "field":'firstname'
-    },
-    data:this.fetch
- 
+    let endpoint = 'getsaleslistdata';
+    let endpointc = 'getsaleslistdata-count';
+    let data: any = {
+      "condition": {
+        "limit": 10,
+        "skip": 0
+      },
+      sort: {
+        "type": 'desc',
+        "field": 'firstname'
+      },
+      data: this.fetch
+
     }
-    if(this.userData.user_type == 'diagnostic_admin') {
-      this.fetch={'diagnostic_admin_id':  this.data}
+    if (this.userData.user_type == 'diagnostic_admin') {
+      this.fetch = { 'parent_id': this.data }
     }
-    if(this.userData.user_type == 'distributors') {
-      this.fetch={'distributor_id':  this.data}
+    if (this.userData.user_type == 'distributors') {
+      this.fetch = { 'parent_id': this.data }
     }
     data.data = this.fetch;
-        this.httpService.httpViaPost(endpointc, data).subscribe((res:any) => {
-            // console.log('in constructor');
-            // console.log(result);
-            this.salesData_count =res.count;
-            //console.warn('blogData c',res);
- 
-        }, error => {
-            console.log('Oooops!');
-        });
- 
-        this.httpService.httpViaPost(endpoint,data).subscribe((res:any) => {
-           
-            this.salesPersonDashboardAllData =res.results.res;
- 
-        }, error => {
-            console.log('Oooops!');
-        });
+    this.httpService.httpViaPost(endpointc, data).subscribe((res: any) => {
+      // console.log('in constructor');
+      // console.log(result);
+      this.salesData_count = res.count;
+      //console.warn('blogData c',res);
+
+    }, error => {
+      console.log('Oooops!');
+    });
+
+    this.httpService.httpViaPost(endpoint, data).subscribe((res: any) => {
+
+      this.salesPersonDashboardAllData = res.results.res;
+
+    }, error => {
+      console.log('Oooops!');
+    });
   }
 
 }

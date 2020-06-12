@@ -70,8 +70,12 @@
 .sales_person_db .shareLi .in_w { width: 65%; left: 0; right: 0; transform: inherit; top: 0; }
 .sales_person_db .shareLi { background-position: 6% bottom; padding: 60px 20px; height: auto; background-size: contain; position: relative;}
 .sales_person_db .shareLi .in_w { width: 60%; left: 0; right: 0; transform: inherit; top: 0; position: inherit; display: block;}
+<<<<<<< HEAD
+.calenderView .calendar_wrapper { width: 70%; overflow: scroll; }
+=======
 .calenderView .calendar_wrapper .example-container{ max-height: inherit!important;
   min-width: inherit!important;}
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 .calenderView .button_wrapper{ margin-top: 20px; }
 .DataTable table th.mat-header-cell:last-of-type { width: auto; }
 .searchbar .mat-form-field { width: 32%; }
@@ -79,8 +83,11 @@
 .admin_dashboard .DataTable .container .searchbar{ justify-content: center!important;}
 .book-appointment .mat-form-field { width: 32.2%; }
 .encounter_wrapper .second_table .book-appointment .mat-form-field { width: 32%; }
+<<<<<<< HEAD
+=======
  
 
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 }
 @media screen and (max-width: 1100px){
 .biller_Dashboard .patient_report_section .patient_top_search { flex-direction: column; justify-content: flex-start;
@@ -154,7 +161,11 @@ align-items: flex-start; }
   .DataTable .searchbar { display: flex!important;   height: auto; }
   .custom-modalbox{ width: 90%;}
   .table_wrapper .action_bar .resetButton_w { display: flex; width: 100%; margin-top: 10px; }
+<<<<<<< HEAD
+  .table_wrapper .action_bar { flex-wrap: wrap; }
+=======
   .table_wrapper .action_bar { flex-wrap: wrap; } 
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
   .cdk-overlay-connected-position-bounding-box { left: 40%!important;}
   .calenderView .filter .filter-box { margin-right: 5px; } 
   .DataTable .mat-card .tablewrapper { margin-bottom: 16px; margin-top: 16px; }
@@ -162,7 +173,11 @@ align-items: flex-start; }
   .calendar_data .table td .btn-group { border: none; width: auto; } 
   .modal_view .table_wrapper .mat-table{ width:100%; min-width: inherit;}
   .admin_dashboard .DataTable .tablewrapper .mat-table { width: 100%; }
+<<<<<<< HEAD
+  .admin_dashboard .DataTable .tablewrapper {  overflow-x: inherit; }
+=======
   .admin_dashboard .DataTable .tablewrapper { overflow-x: inherit; }
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
   .admin_dashboard .DataTable .tablewrapper .mat-table .mat-cell:last-child { padding-left: 20%!important; }
   .admin_dashboard .DataTable .tablewrapper .mat-table .mat-cell:after { left: 14px; bottom: 14px; }
   .admin_dashboard .DataTable .tablewrapper .mat-table .mat-cell{ padding-right: 16px; padding-bottom: 16px;}
@@ -179,15 +194,23 @@ align-items: flex-start; }
   .encounter_rules .admin_superbillsection .greenbar p { font-size: 32px; }
   .shareLink_wrpr .link_field h2 { font-size: 20px; white-space: normal; line-height: 22px; width: 230px; }
   .book-appointment .mat-form-field { width: 32%; }
+<<<<<<< HEAD
+=======
   .calenderView .calendar_wrapper { width: 90%!important; }
 
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 }
 @media screen and (max-width: 900px){
   .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item,
   .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item{ width: 100%; margin: 0; margin-bottom: 16px;}
   .admin_wrapper .title_wrapper { font-size: 24px; }
   .book-appointment .mat-form-field { width: 31.6%; }
+<<<<<<< HEAD
+  .encounter_rules .admin_superbillsection .greenbar p { font-size: 38px; position: inherit;
+  background: #fff; padding: 16px 0px 0; }
+=======
   .encounter_rules .admin_superbillsection .greenbar p { font-size: 38px; position: inherit; background: #fff; padding: 16px 0px 0; }
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
   .encounter_rules .admin_superbillsection .greenbar { height: auto; background-size: 220%;
   background-position: 100% top; padding: 16px; padding-top: 54%; background-color: #fff; text-align: center; }
 }
@@ -282,10 +305,13 @@ align-items: flex-start; }
   .lib-pager-class mat-label{ display: block; margin: 0; margin-bottom: 10px; font-family: 'AvenirBlack'; }
   .book-event .mat-dialog-container .mat-stepper-horizontal .width-md,
   .book-appointment .mat-form-field { width: 100%; }
+<<<<<<< HEAD
+=======
   .time_picker{ flex-direction: column;}
   .time_picker .timer,
   .time_picker .timer .w-mat-timepicker{ width: 100%!important;}
   .calenderView .calendar_wrapper { width: 100%!important; }
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 }
 @media screen and (max-width: 480px){
   .main_wrapper .login_wrapper { width: 360px; }
@@ -333,14 +359,21 @@ align-items: flex-start; }
   .table_wrapper .action_bar .date-range .mat-form-field:last-child { margin-left: 0;}
   .DataTable .mat-card mat-label { margin-right: 0; display: block; margin-bottom: 10px; }
   .encounter_rules .admin_superbillsection .greenbar p { font-size: 30px; }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 }
 @media screen and (max-width: 400px){
   .calenderView .filter button{ width: 49%; margin: 0; }
   .calenderView .filter .pagination { width: 100%; margin: auto; text-align: center; margin-top: 16px; }
+<<<<<<< HEAD
+  .calenderView .calender_first .buttonsetToolbar .singleButton { font-size: 14px; }
+=======
   .calenderView .calender_first .buttonsetToolbar .singleButton { font-size: 14px; } 
   .google_calendar_status{ text-align: center!important; flex-direction: column; }
   .google_calendar_status:blank{ display: none; }
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 }
 @media screen and (max-width: 390px){
   .main_wrapper .login_wrapper { width: 280px; }
@@ -349,14 +382,21 @@ align-items: flex-start; }
   .top_header .wrappp_R .add_new:last-child { margin-left: 0px; margin-bottom: 10px;}
   .admin_wrapper .title_wrapper { font-size: 20px; } 
 }
+<<<<<<< HEAD
+@media screen and (max-width: 350px){
+=======
 @media screen and (max-width: 360px){
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
   .main_wrapper .login_wrapper { width: 265px; }
   .main_wrapper .login_wrapper .login_container .main-div .from button { font-size: 18px; }
   .adminTables .mat-cell { padding: 10px 0; padding-left: 44%;}
   .mat-table .mat-cell:before { font-size: 13px; }
   .adminTables td.mat-cell:last-of-type { padding-right: 10px;  }
   .encounter_rules .admin_superbillsection .greenbar p { font-size: 24px; }
+<<<<<<< HEAD
+=======
   .calenderView .calendar_wrapper .example-container .mat-checkbox { width: 50%; margin-right: 0; }
+>>>>>>> 105b43867ebf2af9046f151f7e00f236c91de301
 }                                            
   
  
