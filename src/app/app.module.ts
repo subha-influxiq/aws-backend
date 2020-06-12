@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { DeferLoadModule } from '@trademe/ng-defer-load';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadOutput, UploadInput, UploadFile, UploaderOptions } from 'ngx-uploader'
@@ -355,6 +356,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   imports: [
     SatDatepickerModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    DeferLoadModule,
     MetaModule.forRoot(),
     AppRoutingModule,
     CommonModule,

@@ -38,6 +38,7 @@
     "@nguniversal/express-engine": "0.0.0",
     "@nguniversal/module-map-ngfactory-loader": "0.0.0",
     "@ngx-meta/core": "^7.0.10",
+    "@trademe/ng-defer-load": "^8.0.0",
     "angular-material": "^1.1.20",
     "calendar-management-lib-influxiq": "latest",
     "ckeditor4-angular": "^1.1.0",

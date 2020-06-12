@@ -27,17 +27,15 @@
                     <p [innerHTML]="ticket.description"></p>
                 </mat-card-content>
 
-                <!-- <mat-grid-list [cols]="ticket.files.length" rowHeight="2:1">
-                    <mat-grid-tile *ngFor="let file of ticket.files; let fileIndex = index;" (click)="viewImage(ticketIndex, fileIndex);">
-                        <img style="cursor: pointer;" [src]="file.basepath + file.fileservername" />
-                    </mat-grid-tile>
-                </mat-grid-list> -->
                 <section class="itm">
-                    <h2 class="count_n"> Total Image: {{ticket.files.length}}</h2>
+                    <h2 class="count_n"> Total Attachment: {{ ticket.files.length }}</h2>
                     <mat-toolbar class="report_image_w">
                         <mat-card-content class="image_items" *ngFor="let file of ticket.files; let fileIndex = index;"
-                            (click)="viewImage(ticketIndex, fileIndex);">
-                            <img style="cursor: pointer;" [src]="file.basepath + file.fileservername" />
+                            (click)="viewImage(ticketIndex, fileIndex);" (deferLoad)="file.show = true">
+                            <ng-container *ngIf="file.show">
+                                <img style="cursor: pointer;" [src]="file.basepath + file.fileservername" />
+                            </ng-container>
+                            <mat-spinner *ngIf="!file.show"></mat-spinner>
                         </mat-card-content>
                     </mat-toolbar>
                 </section>

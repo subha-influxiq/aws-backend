@@ -13,6 +13,8 @@ export interface DialogData {
 })
 export class ViewJobTicketImageComponent {
 
+  public imageLoader: boolean;
+
   constructor(public dialogRef: MatDialogRef<ViewJobTicketImageComponent>, @Inject(MAT_DIALOG_DATA) public data: DialogData) {
   }
 

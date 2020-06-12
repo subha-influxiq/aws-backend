@@ -63,6 +63,7 @@
 
   /* background-image: linear-gradient(40deg, #feca00, #1dbce9); */
   /* .mat-form-field-appearance-legacy .mat-form-field-underline { height: 0!important;} */
+  .mat-form-field{ font-family: 'AvenirMedium'!important; }
 /* heder css */
 .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 12px; }
 .techdashboard_header .quotation .mat-nav-list .mat-list-item:first-child .mat-list-item-content { padding-left: 0px; }
@@ -713,3 +714,28 @@ font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radi
 .w-clock-wrapper .w-clock { padding: 14px!important;}
 .w-clock .w-clock-container .mat-mini-fab.mat-primary,
 .w-clock .w-clock-container .w-pointer{ background-color: var(--button-color2)!important;}
+
+/* job tickets */
+
+.job_reprt_wrapper .job_reprt_action {
+ padding: 10px; height: auto;
+}
+.job_reprt_wrapper .job_reprt_action button{
+  background: var(--button-color2); margin-right: 10px; box-shadow: none; font-family: 'AvenirMedium'; 
+}
+
+.job_reprt_wrapper .job_seeker_details{ background: #ffffff; margin-bottom: 16px;}
+.job_reprt_wrapper .job_seeker_details .mat-card-header{ font-family: 'AvenirMedium';}
+.job_reprt_wrapper .job_reprt_action button:last-child{ margin-right: 0; background: var(--button-color1);}
+.job_reprt_wrapper .report_image_w{ height: auto; padding: 0; justify-content: center; align-items: center; flex-wrap: wrap;}
+.job_reprt_wrapper .itm .count_n{ font-size: 18px; font-family: 'AvenirMedium'; color: #1dbce9;}
+.job_reprt_wrapper .itm .report_image_w .image_items{ width: 19%; margin: 0.5%;
+  height: 160px; box-sizing: border-box; box-shadow: 1px 1px 5px #d6d6d6; display: flex;
+  justify-content: center; align-items: center; background: #fff; border: 1px solid #808282; flex-grow: 1;}
+
+.job_reprt_wrapper .itm .report_image_w .image_items img{ max-width: 100%; vertical-align: middle;
+  height: 100%; object-fit: cover; object-position: center center;}
+
+  .job_modal_wr .content_jobview img{ max-width: 100%; }
+
+.jobViewModal .mat-dialog-container{ max-height: 90vh!important; height:auto!important;}

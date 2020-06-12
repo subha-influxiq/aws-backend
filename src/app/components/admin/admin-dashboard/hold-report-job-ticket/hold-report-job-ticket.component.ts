@@ -69,6 +69,14 @@ export class HoldReportJobTicketComponent implements OnInit {
           this.htmlText.buttonText = "Reply";
           this.htmlText.message = "Reply Submited Successfully.";
           this.htmlText.oldTickets = response.res[0].job_tickets_details;
+
+          for(let loop1 = 0; loop1 < this.htmlText.oldTickets.length; loop1++) {
+            for(let loop2 = 0; loop2 < this.htmlText.oldTickets[loop1].files.length; loop2++) {
+              this.htmlText.oldTickets[loop1].files[loop2].show = false;
+            }
+          }
+
+          console.log("New Data: ", this.htmlText.oldTickets);
           
           this.htmlText.oldTickets.reverse();
         } else {
