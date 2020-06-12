@@ -44,12 +44,12 @@ export class PatientReportViewComponent implements OnInit {
 
     this.cookiesData = this.cookie.getAll();
     this.cookiesData.user_details = JSON.parse(this.cookiesData.user_details);
-
+    
     if(this.cookiesData.user_details.user_type == 'doctor' || this.cookiesData.user_details.user_type == 'diagnostic_admin') {
       this.getBiller(this.cookiesData.user_details._id);
     }
 
-    if((typeof(this.cookiesData.user_details.doctor_signature) == 'undefined' || this.cookiesData.user_details.doctor_signature == '') && 
+    if((typeof(this.cookiesData.doctor_signature) == 'undefined' || this.cookiesData.doctor_signature == '') && 
     this.cookiesData.user_details.user_type == 'doctor' && typeof(this.cookiesData.user_details.diagnostic_admin_id) == 'undefined') {
       /* Open modal */
       let modalData: any = {
@@ -82,6 +82,13 @@ export class PatientReportViewComponent implements OnInit {
     this.activeRoute.data.forEach((data) => {
       this.htmlText.allResolveData = data.data.data;
       this.htmlText.orginalData = data.data.data_2[0];
+
+      if(typeof(this.cookiesData.doctor_signature) != 'undefined') {
+        this.htmlText.orginalData.doctor_signature = this.cookiesData.doctor_signature;
+      } else {
+        this.htmlText.orginalData.doctor_signature = "";
+      }
+      console.log(">>>>", this.htmlText.orginalData);
 
       if(typeof(this.htmlText.allResolveData.reportData[0].stressi) != 'undefined') {
         this.htmlText.allResolveData.reportData[0].stressI = this.htmlText.allResolveData.reportData[0].stressi;

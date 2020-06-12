@@ -24,7 +24,7 @@ export class HoldReportJobTicketComponent implements OnInit {
     header: 'Create a job tickets',
     nav: 'Add Doctor',
     buttonText: 'Create',
-    message: "Submitted Successfully",
+    message: "Your Job Ticket Added Successfully.",
     oldTickets: [],
     reportId: '',
     ckEditorValue: '',
@@ -67,6 +67,7 @@ export class HoldReportJobTicketComponent implements OnInit {
         if(typeof(response.res[0].job_tickets_details) != 'undefined') {
           this.htmlText.header = 'Reply';
           this.htmlText.buttonText = "Reply";
+          this.htmlText.message = "Reply Submited Successfully.";
           this.htmlText.oldTickets = response.res[0].job_tickets_details;
           
           this.htmlText.oldTickets.reverse();
@@ -126,7 +127,7 @@ export class HoldReportJobTicketComponent implements OnInit {
           width: '250px',
           data: {
             header: "Success",
-            message: "Your Job Ticket Added Successfully.",
+            message: this.htmlText.message,
             button1: { text: "" },
             button2: { text: "Close" },
           }

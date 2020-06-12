@@ -28,10 +28,11 @@ export class SignatureManagementComponent implements OnInit {
     let allcookies: any = cookie.getAll();
     this.authData["user_details"] = JSON.parse(cookie.get('user_details'));
     this.authData["jwtToken"] = cookie.get('jwtToken');
+    this.authData["doctorSignature"] = cookie.get('doctor_signature');
 
-    if(typeof this.authData.user_details.doctor_signature !== 'undefined') {
+    if(typeof this.authData.doctorSignature !== 'undefined') {
       this.htmlText.buttonText = "Update Signature";
-      this.htmlText.viewSign = this.authData.user_details.doctor_signature;
+      this.htmlText.viewSign = this.authData.doctorSignature;
     }
   }
 
@@ -50,12 +51,9 @@ export class SignatureManagementComponent implements OnInit {
       }
       this.http.httpViaPost('addorupdatedata', data).subscribe(response => {
           if(response.status == "success") {
-            this.cookie.delete('user_details');
-
-            this.authData.user_details.doctor_signature = this.htmlText.viewSign;
-            let str = JSON.stringify(this.authData.user_details);
-            this.cookie.set('user_details', str);
-
+            console.log("SIGN: ", this.htmlText.viewSign);
+            this.cookie.set('doctor_signature', this.htmlText.viewSign);
+            
             /* Open modal */
             let modalData: any = {
               panelClass: 'bulkupload-dialog',
