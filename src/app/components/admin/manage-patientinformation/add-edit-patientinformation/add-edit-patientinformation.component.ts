@@ -54,8 +54,8 @@ export class AddEditPatientinformationComponent implements OnInit {
       this.generateAddEditForm('edit');
 
       this.htmlText.message     = "Updated Successfully";
-      this.htmlText.header      = 'Edit PatientInformation Record';
-      this.htmlText.nav         = 'Edit PatientInformation';
+      this.htmlText.header      = 'Edit Patient Information Record';
+      this.htmlText.nav         = 'Edit Patient Information';
       this.htmlText.buttonText  = 'Update';
       this.params_id            = this.activeRoute.snapshot.params._id;
     } else {
