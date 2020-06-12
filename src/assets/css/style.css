@@ -728,7 +728,7 @@ font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radi
 .job_reprt_wrapper .job_seeker_details .mat-card-header{ font-family: 'AvenirMedium';}
 .job_reprt_wrapper .job_reprt_action button:last-child{ margin-right: 0; background: var(--button-color1);}
 .job_reprt_wrapper .report_image_w{ height: auto; padding: 0; justify-content: center; align-items: center; flex-wrap: wrap;}
-.job_reprt_wrapper .itm .count_n{ font-size: 18px; font-family: 'AvenirMedium'; color: #1dbce9;}
+.job_reprt_wrapper .itm .count_n{ font-size: 18px; font-family: 'AvenirMedium'; color: #1dbce9; margin: 0 0 10px;}
 .job_reprt_wrapper .itm .report_image_w .image_items{ width: 19%; margin: 0.5%;
   height: 160px; box-sizing: border-box; box-shadow: 1px 1px 5px #d6d6d6; display: flex;
   justify-content: center; align-items: center; background: #fff; border: 1px solid #808282; flex-grow: 1;}
