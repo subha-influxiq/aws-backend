@@ -46,7 +46,8 @@ export class ListingPatientinformationComponent implements OnInit {
     "created_at",
     "id",
     "updated_at",
-    "diagnostic_admin_id"
+    "diagnostic_admin_id",
+    "label_search"
   ];
 
   public UpdateEndpoint: any = "addorupdatedata";

@@ -90,9 +90,9 @@ export class AdminDashboardComponent implements OnInit {
         // otherparam:["patient_name"],
         //cond:'status',
         //condval:0,
-        datafields: ['firstname','lastname','email','phone','address','city','state','zip'],
+        datafields: ['first name','last name','email','phone','address','city','state','zip'],
         param:'id',
-        headermessage: 'Tech Info',
+        headermessage: 'Tech Information',
         // refreshdata:true
     } ,
     {
@@ -105,7 +105,7 @@ export class AdminDashboardComponent implements OnInit {
       //cond:'status',
       //condval:0,
       param:'id',
-      headermessage: 'Codes Info',
+      headermessage: 'Associated Codes',
       // refreshdata:true
   } ,
     {
@@ -113,12 +113,12 @@ export class AdminDashboardComponent implements OnInit {
       type:'action',
       datatype:'api',
       endpoint:'get-doctor-details',
-      datafields: ['firstname','lastname','email','fax','practice_name','npi','phone','address','city','state','zip'],
+      datafields: ['firstname','lastname','email','fax','Practice Name','NPI','phone','address','city','state','zip'],
       // otherparam:["patient_name"],
       //cond:'status',
       //condval:0,
       param:'id',
-      headermessage: 'Doctor Info',
+      headermessage: 'Doctor Information',
       // refreshdata:true
   } ,
   {
@@ -143,7 +143,7 @@ export class AdminDashboardComponent implements OnInit {
   cond:'parent_details_check',
   condval:1,
   param:'id',
-  headermessage: 'Parent Info',
+  headermessage: 'Parent Information',
   // refreshdata:true
 } ,
     ],
@@ -194,7 +194,7 @@ export class AdminDashboardComponent implements OnInit {
 
   public status: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"}];
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
-  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }];
+  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' },{ val: "CMAT with BP Cuffs", 'name': 'CMAT with BP Cuffs' }];
   public report:any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"}]
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];

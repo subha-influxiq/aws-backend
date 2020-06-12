@@ -44,13 +44,13 @@
             </mat-card>
         </ng-container>
 
-         <mat-toolbar class="job_reprt_action" *ngIf="htmlText.user_details.user_type != 'doctor'">
+        <mat-toolbar class="job_reprt_action" *ngIf="htmlText.user_details.user_type != 'doctor'">
 
             <button style="margin: 4px;" mat-raised-button color="primary"
                 (click)="changeStatus('approved');">Approved</button>
             <button style="margin: 4px;" mat-raised-button color="primary" (click)="changeStatus('not approved');">Not
                 Approved</button>
-            </mat-toolbar> 
+        </mat-toolbar>
     </mat-card-content>
 
     <ng-container *ngIf="this.htmlText.oldTickets.length == 0">

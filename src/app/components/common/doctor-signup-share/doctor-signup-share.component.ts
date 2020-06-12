@@ -32,6 +32,14 @@ export class DoctorSignupShareComponent implements OnInit {
     } else {
       this.shareDetailsData.link = this.shareDetailsData.baseUrl + '/home/' + this.shareDetailsData.userId;
     }
+
+    //share link
+    var url = "http://www.tumblr.com/share?v=3&u=https%3A%2F%2Fpece-doctor-signup.influxiq.com%2Fhome&t=AWS";
+    this.shareDetailsData.facebookShareLink = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(this.shareDetailsData.link);
+    this.shareDetailsData.twitterShareLink = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(this.shareDetailsData.link) + "&text=AWS";
+    this.shareDetailsData.linkedinShareLink = "https://www.linkedin.com/shareArticle?mini=true&url=" + encodeURIComponent(this.shareDetailsData.link) + "&title=&summary=&source=";
+    this.shareDetailsData.tumblrShareLink = "http://www.tumblr.com/share?v=3&u=" + encodeURIComponent(this.shareDetailsData.link) + "&t=AWS";
+
   }
 
   copyShareLink(inputElement) {

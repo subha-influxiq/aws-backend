@@ -370,6 +370,7 @@ align-items: flex-start; }
   .calenderView .calendar_wrapper .example-container .mat-checkbox { width: 50%; margin-right: 0; }
   .job_reprt_wrapper .itm .report_image_w .image_items { width: 100%; margin: 0; height: auto; margin-bottom: 16px;}
   .job_reprt_wrapper .itm .report_image_w .image_items img { height: auto;}
+  .job_modal_wr .mat-dialog-actions button { font-size: 14px; }
 }                                            
 
  
