@@ -30,9 +30,7 @@ GitCommitMsg () {
 }
 
 buildUpload() {
-	echo ""
-	echo "======================================="
-	echo "Execute: Build Angular Production Mode."
+	echo "\n Execute: Build Angular Production Mode."
 	echo ""
 	ng build --prod
 	echo ""
@@ -79,7 +77,7 @@ GitCommitMsg
 
 echo ">>---> Git Pull\n"
 git pull origin master
-echo "\n=============================="
+echo "=============================="
 
 echo "\n\n================================================================"
 read -p 'Any Conflict record ?? Marge your Conflict file then press y.: ' conflictKey
@@ -89,24 +87,13 @@ if [ "$conflictKey" = 'y' ] || [ "$conflictKey" = 'Y' ]
 then
 	GitProcessStart
 else
-	echo ""
-	echo ""
-	echo "========"
-	echo "Git Push"
-	echo "========"
-	echo ""
-	echo ""
+	echo "\n>>---> Git Push\n"
 	git push origin master
+	echo "=========================="
 fi
 
-
-echo ""
-echo ""
-echo "================================================================"
+echo "\n\n================================================================"
 read -p 'Do you want to build and upload into the server? (y/n): ' uploadKey
-echo "================================================================"
-echo ""
-echo ""
 
 if [ "$uploadKey" = 'y' ] || [ "$uploadKey" = 'Y' ] 
 then
