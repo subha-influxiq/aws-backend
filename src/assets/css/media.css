@@ -219,7 +219,8 @@ align-items: flex-start; }
   .mediaDoc_wrapper .media_inner_items .action_button { font-size: 20px; padding: 4px; }
   .calenderView .slotview .example-card { width: 47%; }
   .custom-modalbox, .mat-dialog-container { min-width: 90%;}
-  .admin_wrapper .add_form .submit_form button { font-size: 18px; width: 48%; margin: 1%; }
+  .admin_wrapper .add_form .submit_form button { font-size: 18px; padding: 2px 14px;
+    min-width: 120px;  margin: 1%; }
   .admin_wrapper .add_form .submit_form button:first-child { margin-right: 8px; }
   .admin_dashboard .DataTable .searchbar .mat-form-field{ width: 48.5%;}
 
