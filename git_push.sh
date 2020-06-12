@@ -30,38 +30,25 @@ GitCommitMsg () {
 }
 
 buildUpload() {
-	echo "\n Execute: Build Angular Production Mode."
-	echo ""
+	echo "\n Execute: Build Angular Production Mode.\n"
 	ng build --prod
-	echo ""
-	echo "Angular Production Build Complete."
+	echo "\nAngular Production Build Complete."
 	echo "======================================="
 
 	cd dist/
 
-	echo ""
-	echo "==========================================="
 	echo "Execute: Process to upload into the setver."
-	echo "==========================================="
 	aws --profile default s3 sync browser s3://testbedpece.influxiq.com --acl public-read  --cache-control max-age=0
+	echo "==========================================="
 }
 
 serveAngular() {
-	echo ""
-	echo ""
 	echo "================================================================"
 	read -p 'Do you want to serve angular? (y/n): ' serveKey
-	echo "================================================================"
-	echo ""
-	echo ""
-
+	
 	if [ "$serveKey" = 'y' ] || [ "$serveKey" = 'Y' ] 
 	then
-		echo ""
-		echo ""
-		echo "============================="
-		echo "Execute: Angular start serve."
-		echo "============================="
+		echo "\nExecute: Angular start serve."
 		ng serve --poll=2000
 	else
 		echo ""
@@ -92,7 +79,7 @@ else
 	echo "=========================="
 fi
 
-echo "\n\n================================================================"
+echo ""
 read -p 'Do you want to build and upload into the server? (y/n): ' uploadKey
 
 if [ "$uploadKey" = 'y' ] || [ "$uploadKey" = 'Y' ] 
