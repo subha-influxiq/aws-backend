@@ -11,7 +11,7 @@
     <ng-container *ngIf="this.htmlText.oldTickets.length > 0">
         <ng-container *ngIf="htmlText.user_details.user_type != 'doctor'">
             <button style="margin: 4px;" mat-raised-button color="primary" (click)="changeStatus('approved');">Approved</button>
-            <button style="margin: 4px;" mat-raised-button color="primary" (click)="changeStatus('not approved');">Not Approved</button>
+            <button style="margin: 4px;" mat-raised-button color="warn" (click)="changeStatus('not approved');">Not Approved</button>
         </ng-container>
         
         <ng-container *ngFor="let ticket of htmlText.oldTickets; let ticketIndex = index;">
@@ -36,7 +36,7 @@
 
         <ng-container *ngIf="htmlText.user_details.user_type != 'doctor'">
             <button style="margin: 4px;" mat-raised-button color="primary" (click)="changeStatus('approved');">Approved</button>
-            <button style="margin: 4px;" mat-raised-button color="primary" (click)="changeStatus('not approved');">Not Approved</button>
+            <button style="margin: 4px;" mat-raised-button color="warn" (click)="changeStatus('not approved');">Not Approved</button>
         </ng-container>
     </ng-container>
 

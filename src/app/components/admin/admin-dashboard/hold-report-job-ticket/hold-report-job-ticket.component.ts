@@ -68,25 +68,10 @@ export class HoldReportJobTicketComponent implements OnInit {
           this.htmlText.header = 'Reply';
           this.htmlText.buttonText = "Reply";
           this.htmlText.oldTickets = response.res[0].job_tickets_details;
+          
+          this.htmlText.oldTickets.reverse();
         } else {
           this.htmlText.oldTickets = [];
-        }
-        
-        for(let loop1 = 0; loop1 < this.htmlText.oldTickets.length; loop1++) {
-          this.htmlText.oldTickets[loop1].images = [];
-
-          for(let loop2 = 0; loop2 < this.htmlText.oldTickets[loop1].files.length; loop2++) {
-            var data: any = this.randomNumber(1, this.htmlText.oldTickets[loop1].files.length - 1);
-
-            this.htmlText.oldTickets[loop1].images.push(
-              { 
-                cols: data.cols, 
-                rows: data.rows, 
-                image: this.htmlText.oldTickets[loop1].files[loop2].basepath + this.htmlText.oldTickets[loop1].files[loop2].fileservername,
-                color: 'lightblue'
-              }
-            );
-          }
         }
       });
     });
@@ -175,10 +160,6 @@ export class HoldReportJobTicketComponent implements OnInit {
     return table;
   }
 
-  createJobTicket() {
-    
-  }
-
   viewImage(ticketIndex, fileIndex) {
     let data: any = {
       width: '250px',
@@ -200,73 +181,103 @@ export class HoldReportJobTicketComponent implements OnInit {
   }
 
   changeStatus(action: string = '') {
-    var message: string = "Status change to ";
-    switch(action) {
-      case 'approved':
-        var data: any = {
-          "source" : "data_pece",
-          "data" : {
-            id: this.htmlText.reportId,
-            status: 11,
-            report_life_circle: {
-              date: 1591791772277,
-              status: 11,
-              status_text: "Approved Biller Admin"
-            }
-          },
-          "token" : this.htmlText.userData.jwtToken
-        };
+    let letModalData: any = {
+      width: '250px',
+      data: {
+        header: "Alert !!",
+        message: "Do you want to change status to " + action + " ?",
+        button1: { text: "Yes" },
+        button2: { text: "No" },
+      }
+    };
+    this.dialogRef = this.dialog.open(DialogBoxComponent, letModalData);
+    
+    this.dialogRef.afterClosed().subscribe(result => {
+      switch(result) {
+        case "Yes":
+          var message: string = "Status change to ";
+          switch(action) {
+            case 'approved':
+              var data: any = {
+                "source" : "data_pece",
+                "data" : {
+                  id: this.htmlText.reportId,
+                  status: 11,
+                  report_life_circle: {
+                    date: 1591791772277,
+                    status: 11,
+                    status_text: "Approved Biller Admin"
+                  }
+                },
+                "token" : this.htmlText.userData.jwtToken
+              };
 
-        message += "Approved.";
-        break;
-      case 'not approved':
-        var data: any = {
-          "source" : "data_pece",
-          "data" : {
-            id: this.htmlText.reportId,
-            status: 12,
-            report_life_circle: {
-              date: 1591791772277,
-              status: 12,
-              status_text: "Not Approved Biller Admin"
-            }
-          },
-          "token" : this.htmlText.userData.jwtToken
-        };
+              message += "Approved.";
+              break;
+            case 'not approved':
+              var data: any = {
+                "source" : "data_pece",
+                "data" : {
+                  id: this.htmlText.reportId,
+                  status: 12,
+                  report_life_circle: {
+                    date: 1591791772277,
+                    status: 12,
+                    status_text: "Not Approved Biller Admin"
+                  }
+                },
+                "token" : this.htmlText.userData.jwtToken
+              };
 
-        message += "Not Approved.";
-        break;
-      default:
-        break;
-    }
-
-    this.httpService.httpViaPost("job-tickets-status-change", data).subscribe(response => {
-      if (response.status == "success") {
-        let data: any = {
-          width: '250px',
-          data: {
-            header: "Success",
-            message: message,
-            button1: { text: "" },
-            button2: { text: "Close" },
-          }
-        };
-        this.dialogRef = this.dialog.open(DialogBoxComponent, data);
-        
-        this.dialogRef.afterClosed().subscribe(result => {
-          switch(result) {
-            case "Close":
-              this.router.navigateByUrl('/admin/dashboard');
+              message += "Not Approved.";
               break;
             default:
-              this.router.navigateByUrl('/admin/dashboard');
               break;
           }
-        });
-      } else {
-        this.snackBar.open(response.msg, '', {
-          duration: 2000,
-        });
+
+          this.httpService.httpViaPost("job-tickets-status-change", data).subscribe(response => {
+            if (response.status == "success") {
+              let data: any = {
+                width: '250px',
+                data: {
+                  header: "Success",
+                  message: message,
+                  button1: { text: "" },
+                  button2: { text: "Close" },
+                }
+              };
+              this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+              
+              this.dialogRef.afterClosed().subscribe(result => {
+                switch(result) {
+                  case "Close":
+                    this.router.navigateByUrl('/admin/dashboard');
+                    break;
+                  default:
+                    this.router.navigateByUrl('/admin/dashboard');
+                    break;
+                }
+              });
+            } else {
+              this.snackBar.open(response.msg, '', {
+                duration: 2000,
+              });
+            }
+          });
+          break;
+        default:
+          break;
+      }
+    });
+  }
+
+  openDialog(data) {
+    this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+    this.dialogRef.afterClosed().subscribe(result => {
+      switch (result) {
+        case "Ok":
+          this.dialogRef.close();
+          break;
       }
     });
   }

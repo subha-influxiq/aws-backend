@@ -180,7 +180,6 @@ import { ApprovedPatientReportsBilleradminComponent } from './components/adminbi
 import { HoldReportJobTicketComponent } from './components/admin/admin-dashboard/hold-report-job-ticket/hold-report-job-ticket.component';
 import {CptValidateReportsComponent} from './components/admin/cpt-validate-reports/cpt-validate-reports/cpt-validate-reports.component'
 import { ReportsDetailsComponent } from './components/admin/reports-details/reports-details/reports-details.component';
-import { CreateReplyJobTicketComponent } from './components/admin/admin-dashboard/hold-report-job-ticket/create-reply-job-ticket/create-reply-job-ticket.component';
 import { JobTicketPatientReportsComponent } from './components/admin/admin-dashboard/job-ticket-patient-reports/job-ticket-patient-reports.component';
 import { ViewJobTicketImageComponent } from './components/admin/admin-dashboard/hold-report-job-ticket/view-job-ticket-image/view-job-ticket-image.component';
 
@@ -350,7 +349,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     HoldReportJobTicketComponent,
     CptValidateReportsComponent,
     ReportsDetailsComponent,
-    CreateReplyJobTicketComponent,
     JobTicketPatientReportsComponent,
     ViewJobTicketImageComponent
   ],
@@ -433,8 +431,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     PatientSelectModalComponent,
     ReportUploadSuccessModalComponent,
 
-    // create and reply job tickets
-    CreateReplyJobTicketComponent,
+    // View job tickets image
     ViewJobTicketImageComponent,
   ]
 })
