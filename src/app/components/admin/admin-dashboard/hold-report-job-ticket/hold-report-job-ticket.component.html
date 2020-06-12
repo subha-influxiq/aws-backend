@@ -35,7 +35,8 @@
                             <ng-container *ngIf="file.show">
                                 <img style="cursor: pointer;" [src]="file.basepath + file.fileservername" />
                             </ng-container>
-                            <mat-spinner *ngIf="!file.show"></mat-spinner>
+
+                            <ng-container *ngIf="!file.show">Loading...</ng-container>
                         </mat-card-content>
                     </mat-toolbar>
                 </section>
