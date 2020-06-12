@@ -77,20 +77,13 @@ serveAngular() {
 GitProcessStart
 GitCommitMsg
 
-echo "========"
-echo "Git Pull"
-echo "========"
-echo ""
-echo ""
+echo "Git Pull\n"
 git pull origin master
+echo "\n=============================="
 
-echo ""
-echo ""
-echo "================================================================"
+echo "\n\n================================================================"
 read -p 'Any Conflict record ?? Marge your Conflict file then press y.: ' conflictKey
-echo "================================================================"
-echo ""
-echo ""
+echo "================================================================\n\n"
 
 if [ "$conflictKey" = 'y' ] || [ "$conflictKey" = 'Y' ] 
 then
