@@ -729,27 +729,24 @@ font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radi
 
 .job_reprt_wrapper .job_seeker_details{ background: #ffffff; margin-bottom: 16px;}
 .job_reprt_wrapper .job_seeker_details .mat-card-header{ font-family: 'AvenirMedium';}
+.job_reprt_wrapper .job_seeker_details .report_desc p p{ margin:6px 0;}
 .job_reprt_wrapper .job_reprt_action button:last-child{ margin-right: 0; background: var(--button-color1);}
 .job_reprt_wrapper .report_image_w{ height: auto; padding: 0; justify-content: center; align-items: center; flex-wrap: wrap;}
 .job_reprt_wrapper .itm .count_n{ font-size: 18px; font-family: 'AvenirMedium'; color: #1dbce9; margin: 0 0 10px;}
 .job_reprt_wrapper .itm .report_image_w .image_items{ width: 19%; margin: 0.5%; position: relative;
   height: 180px; box-sizing: border-box; box-shadow: 1px 1px 5px #d6d6d6; display: flex;
   justify-content: center; align-items: center; background: #fff; border: 1px solid #808282; flex-grow: 1;}
-  .report_action_wrapper{ position: absolute; background-color: rgba(0,0,0, 0.7); width: 100%; height: 100%;
-  display: none; justify-content: center; align-items: center; transition: ease-in 2ms;}
 
-  .job_reprt_wrapper .itm .report_image_w .image_items:hover .report_action_wrapper{ display: flex;}
-  .report_action_wrapper button:hover{  color: var(--button-color2); border:1px solid var(--button-color2)}
-  .report_action_wrapper button{ background: transparent;
-    border: 1px solid #fff;
-    margin-right: 10px;
-    color: #d0d0d0;
-    text-transform: uppercase;
-    font-family: 'AvenirMedium';
-    width: 120px;
-    line-height: inherit; transition: ease-in 2ms;
-  }
-  .report_action_wrapper button:last-child{ margin: 0; }
+.report_action_wrapper{ position: absolute; background-color: rgba(0,0,0, 0.8); width: 100%; height: 100%;
+  display: none; justify-content: center; align-items: center; transition: ease-in 2ms; top: 0; left: 0;}
+
+.job_reprt_wrapper .itm .report_image_w .image_items:hover .report_action_wrapper{ display: flex;}
+.report_action_wrapper button:hover{  color: var(--button-color2); border:1px solid var(--button-color2)}
+.report_action_wrapper button{ background: transparent;
+ border: 1px solid #fff; margin-right: 10px; color: #d0d0d0; text-transform: uppercase;
+ font-family: 'AvenirMedium'; width: 120px; line-height: inherit; transition: ease-in 2ms;
+}
+.report_action_wrapper button:last-child{ margin: 0; }
   
 .job_reprt_wrapper .itm .report_image_w .image_items img{ max-width: 100%; vertical-align: middle;
   height: 100%; object-fit: cover; object-position: center center;}
