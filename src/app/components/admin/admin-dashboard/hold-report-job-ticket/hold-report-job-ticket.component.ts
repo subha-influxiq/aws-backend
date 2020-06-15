@@ -74,6 +74,7 @@ export class HoldReportJobTicketComponent implements OnInit {
           for(let loop1 = 0; loop1 < this.htmlText.oldTickets.length; loop1++) {
             for(let loop2 = 0; loop2 < this.htmlText.oldTickets[loop1].files.length; loop2++) {
               this.htmlText.oldTickets[loop1].files[loop2].show = false;
+              this.htmlText.oldTickets[loop1].files[loop2].image_path = this.htmlText.oldTickets[loop1].files[loop2].basepath + this.htmlText.oldTickets[loop1].files[loop2].fileservername;
             }
           }
 
