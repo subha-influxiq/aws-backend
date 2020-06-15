@@ -1,4 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { Location } from '@angular/common';
 import { FormGroup, FormBuilder, FormControl, Validators, FormArray } from "@angular/forms";
 import { HttpServiceService } from '../../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
@@ -35,7 +36,7 @@ export class HoldReportJobTicketComponent implements OnInit {
     baseUrl: environment.fileUploadUrl,
     endpoint: "uploads",
     size: "51200", // kb
-    format: ["jpg", "jpeg", "png", "gif", "bmp"], // use all small font
+    format: ["jpg", "jpeg", "png", "gif", "bmp", "pdf", "doc", "docx", "odt", "xls", "xlsx", "ppt", "pptx", "txt", "text"], // use all small font
     type: "patient-file",
     path: "patientFile",
     prefix: "patient-file",
@@ -46,7 +47,7 @@ export class HoldReportJobTicketComponent implements OnInit {
 
   public dialogRef: any;
 
-  constructor(private formBuilder: FormBuilder, private httpService: HttpServiceService, private cookieService: CookieService, private router: Router, public acivatedRoute: ActivatedRoute, public snackBar: MatSnackBar, public dialog: MatDialog) {
+  constructor(private formBuilder: FormBuilder, private httpService: HttpServiceService, private cookieService: CookieService, private router: Router, public acivatedRoute: ActivatedRoute, public snackBar: MatSnackBar, public dialog: MatDialog, private _location: Location) {
     this.htmlText.userData = this.cookieService.getAll();
     this.htmlText.user_details = JSON.parse(this.htmlText.userData.user_details);
   }
@@ -145,10 +146,10 @@ export class HoldReportJobTicketComponent implements OnInit {
         this.dialogRef.afterClosed().subscribe(result => {
           switch(result) {
             case "Close":
-              this.router.navigateByUrl('/admin/dashboard');
+              this.router.navigate(['/admin/dashboard'], { queryParams: { scroll_position: "Job Tickets" }});
               break;
             default:
-              this.router.navigateByUrl('/admin/dashboard');
+              this.router.navigate(['/admin/dashboard'], { queryParams: { scroll_position: "Job Tickets" }});
               break;
           }
         });

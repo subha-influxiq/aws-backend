@@ -6,8 +6,9 @@
     </div>
  
     <mat-dialog-actions align="end">
-        <button mat-button (click)="changeImage('previous');">Previous</button>
-        <button mat-button (click)="changeImage('next');">Next</button>
+        <button mat-button (click)="imageAction('previous');">Previous</button>
+        <button mat-button (click)="imageAction('next');">Next</button>
+        <button mat-button (click)="imageAction('download');">Download</button>
         <button mat-button mat-dialog-close>Close</button>
     </mat-dialog-actions>
 
