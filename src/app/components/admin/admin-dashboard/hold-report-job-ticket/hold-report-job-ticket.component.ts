@@ -24,7 +24,7 @@ export class HoldReportJobTicketComponent implements OnInit {
     header: 'Create a job tickets',
     nav: 'Add Doctor',
     buttonText: 'Create',
-    message: "Submitted Successfully",
+    message: "Your Job Ticket Added Successfully.",
     oldTickets: [],
     reportId: '',
     ckEditorValue: '',
@@ -67,7 +67,16 @@ export class HoldReportJobTicketComponent implements OnInit {
         if(typeof(response.res[0].job_tickets_details) != 'undefined') {
           this.htmlText.header = 'Reply';
           this.htmlText.buttonText = "Reply";
+          this.htmlText.message = "Reply Submited Successfully.";
           this.htmlText.oldTickets = response.res[0].job_tickets_details;
+
+          for(let loop1 = 0; loop1 < this.htmlText.oldTickets.length; loop1++) {
+            for(let loop2 = 0; loop2 < this.htmlText.oldTickets[loop1].files.length; loop2++) {
+              this.htmlText.oldTickets[loop1].files[loop2].show = false;
+            }
+          }
+
+          console.log("New Data: ", this.htmlText.oldTickets);
           
           this.htmlText.oldTickets.reverse();
         } else {
@@ -123,10 +132,10 @@ export class HoldReportJobTicketComponent implements OnInit {
     this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
       if (response.status == "success") {
         let data: any = {
-          width: '250px',
+          panelClass:'jobViewModal',
           data: {
             header: "Success",
-            message: "Your Job Ticket Added Successfully.",
+            message: this.htmlText.message,
             button1: { text: "" },
             button2: { text: "Close" },
           }
@@ -162,7 +171,7 @@ export class HoldReportJobTicketComponent implements OnInit {
 
   viewImage(ticketIndex, fileIndex) {
     let data: any = {
-      width: '250px',
+    panelClass:'jobViewModal',
       data: {
         allImages: this.htmlText.oldTickets[ticketIndex].files,
         selectImageIndex: fileIndex

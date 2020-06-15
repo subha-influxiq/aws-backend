@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { DeferLoadModule } from '@trademe/ng-defer-load';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadOutput, UploadInput, UploadFile, UploaderOptions } from 'ngx-uploader'
@@ -12,6 +13,7 @@ import { LoginModule } from 'login-lib-influxiq'; // login library
 import { ListingModule } from 'listing-angular7';
 import { FileUploadModule } from 'file-upload-lib-influxiq';
 import { DatePipe } from '@angular/common';
+import { TimeAgoPipe } from 'time-ago-pipe';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MetaModule } from '@ngx-meta/core';
 import { DeviceDetectorModule } from 'ngx-device-detector';
@@ -350,11 +352,14 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CptValidateReportsComponent,
     ReportsDetailsComponent,
     JobTicketPatientReportsComponent,
-    ViewJobTicketImageComponent
+    ViewJobTicketImageComponent,
+
+    TimeAgoPipe,
   ],
   imports: [
     SatDatepickerModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    DeferLoadModule,
     MetaModule.forRoot(),
     AppRoutingModule,
     CommonModule,
@@ -379,7 +384,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxUiLoaderHttpModule,
 
     //ckeditor
-    CKEditorModule
+    CKEditorModule,
   ],
   exports: [
     MatPaginatorModule
