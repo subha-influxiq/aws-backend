@@ -33,7 +33,7 @@
                         <mat-card-content class="image_items" *ngFor="let file of ticket.files; let fileIndex = index;"
                             (click)="viewImage(ticketIndex, fileIndex);" (deferLoad)="file.show = true">
                             <ng-container *ngIf="file.show">
-                                <img style="cursor: pointer;" [src]="file.basepath + file.fileservername" />
+                                <img style="cursor: pointer;" [src]="file.image_path" />
                             </ng-container>
 
                             <ng-container *ngIf="!file.show">Loading...</ng-container>
