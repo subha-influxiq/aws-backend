@@ -352,6 +352,19 @@ const routes: Routes = [
     },
   },
   {
+    path: 'doctor/patient-record/:_id',
+    component: PatientReportViewComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'report-view'
+    },
+  },
+  {
     path: 'admin/patient-record/encounter/:_id',
     component: EncounterFormComponent,
     canActivate: [AuthguardService],
