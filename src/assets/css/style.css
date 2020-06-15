@@ -190,7 +190,7 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 
 /* .container .searchbar i{margin-left: auto;} */
 .searchbar { height: auto!important; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; box-shadow: 0px 2px 2px #c5c5c5; padding-bottom: 16px!important; position: relative; background: #fbfbfb; }
-.searchbar .mat-form-field{ width: 32%; margin: 0 0.5%!important;}
+.searchbar .mat-form-field{ width: 32%; margin: 0 0.5%!important; flex-grow: 1;}
 .searchbar .cursor{ width: 35px; border-radius: 50%; background: var(--button-color2); height: 35px;
   margin: auto; display: flex; justify-content: center; align-items: center; color: #fff; margin:0 10px;}
 .pad-gap{ margin: inherit!important;}
@@ -692,10 +692,12 @@ background: #f9f9f9; padding: 16px 8px; font-family: 'AvenirBlack'; font-size:16
 font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radius: 0 4px 4px 0;}
 .shareLink_wrpr .icon_wr button { width: 35px; height: auto; min-width: inherit; text-align: center; padding: 0; margin-left: 10px; } 
 .shareLink_wrpr .icon_wr button i{ font-size: 20px; }
+
 .shareLink_wrpr .icon_wr button:nth-child(1) { background: #3b5998; color:#fff; }
 .shareLink_wrpr .icon_wr button:nth-child(2) { background: #00acee; color:#fff; }
 .shareLink_wrpr .icon_wr button:nth-child(3) { background: #0e76a8 ; color:#fff; }
 .shareLink_wrpr .icon_wr button:nth-child(4) { background: #34526f ; color:#fff; }
+
 .success-snackbar { background: #4cde45!important; color: #fff!important; font-family: 'AvenirMedium';  box-shadow: none!important;}
 .success-snackbar .mat-simple-snackbar-action button { color: #fff!important;} 
 .encounter_wrapper .second_table .book-appointment .mat-form-field { width: 32.2%; }
@@ -737,3 +739,4 @@ font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radi
   height: 100%; object-fit: cover; object-position: center center;}
 .job_modal_wr .content_jobview img{ max-width: 100%; }
 .jobViewModal .mat-dialog-container{ max-height: 90vh!important; height:auto!important;}
+ 
