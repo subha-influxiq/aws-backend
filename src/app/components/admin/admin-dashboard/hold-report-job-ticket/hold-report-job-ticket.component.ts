@@ -36,7 +36,7 @@ export class HoldReportJobTicketComponent implements OnInit {
     baseUrl: environment.fileUploadUrl,
     endpoint: "uploads",
     size: "51200", // kb
-    format: ["jpg", "jpeg", "png", "gif", "bmp"], // use all small font
+    format: ["jpg", "jpeg", "png", "gif", "bmp", "pdf", "doc", "docx", "odt", "xls", "xlsx", "ppt", "pptx", "txt", "text"], // use all small font
     type: "patient-file",
     path: "patientFile",
     prefix: "patient-file",
