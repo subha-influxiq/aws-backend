@@ -18,8 +18,8 @@
             <mat-card class="job_seeker_details">
                 <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>{{ ticket.user_name }}</mat-card-title>
-                    <mat-card-subtitle>{{ ticket.user_type }}, Posted on: {{ ticket.created_datetime | date }}
+                    <mat-card-title>{{ ticket.user_name | titlecase }}</mat-card-title>
+                    <mat-card-subtitle>{{ ticket.user_type | titlecase }}, Posted on: {{ ticket.created_datetime | date }} [{{ ticket.created_datetime | timeAgo }}]
                     </mat-card-subtitle>
                 </mat-card-header>
 
