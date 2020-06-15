@@ -251,8 +251,8 @@ align-items: flex-start; }
   .book-appointment .mat-form-field { width: 47.5%; }
   .calenderView .calender_first .mat-toolbar { flex-direction: column; }
   .calenderView .calender_first .buttonsetToolbar {flex-direction: row; }
-
   .job_reprt_wrapper .itm .report_image_w .image_items { width: 32%;}
+  .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber { font-size: 14px; }
 }
  
  
@@ -266,6 +266,7 @@ align-items: flex-start; }
   .admin_superbillsection .biller_wrapper .super_bill_item span button{ margin: inherit;}
   .admin_superbillsection .biller_wrapper .super_bill_item span P br{ display: none;}
   .admin_wrapper .add_form .form_wrapper .mat-form-field { width: 100%; margin: 0%; }
+  .DataTable .searchbar { padding: 4px; padding-top: 16px; }
   .admin_wrapper .content_wrapper .itemsection:nth-child(3n+1) { margin-left: inherit; }
   .admin_wrapper .content_wrapper .itemsection:nth-child(3n+3) { margin-right: inherit; }
   .shareLink_wrpr h2{ font-size: 20px; text-align: center; }
@@ -323,13 +324,13 @@ align-items: flex-start; }
   .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type:last-child { flex-direction: column;
     margin-bottom: 0px; border-bottom: none; padding-bottom: 0px; }
   .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .checbox_wrapper, 
-  .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .checbox_wrapper { margin-left: 0;
-    margin-top: 6px; }
-
+  .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr 
+  .lb_item .symptoms_type .checbox_wrapper { margin-left: 0; margin-top: 6px; }
   .calenderView .filter .filter-box { width: 100%; }
   .calenderView .slotview .example-card { width: 100%; box-sizing: border-box;  margin: 0; margin-bottom: 16px; } 
   .job_modal_wr  .mat-dialog-actions button{ min-width: inherit!important; line-height: inherit; padding: 4px 10px;}
   .job_reprt_wrapper .itm .report_image_w .image_items { width: 48%; margin: 1%;}
+  .DataTable .searchbar { padding: 10px; }
 }
 
 @media screen and (max-width: 440px){
