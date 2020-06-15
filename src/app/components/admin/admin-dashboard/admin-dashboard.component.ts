@@ -221,6 +221,13 @@ export class AdminDashboardComponent implements OnInit {
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute,
     public dialog: MatDialog, public deviceService: DeviceDetectorService, private matSnackBar: MatSnackBar) {
 
+    var scrollPosition = this.activatedRoute.snapshot.queryParams['scroll_position'] || '/';
+    if(scrollPosition != '/') {
+      setTimeout(() => {
+        this.viewReportProcessData(scrollPosition);
+      }, 3000);
+    }
+
     this.loginUserData["user_details"] = cookieService.getAll();
     this.loginUserData.user_details.user_details = JSON.parse(this.loginUserData.user_details.user_details);
     this.shareDetails.userId = this.loginUserData.user_details.user_details._id;
@@ -413,8 +420,7 @@ export class AdminDashboardComponent implements OnInit {
   ngAfterViewInit() {
   }
 
-  viewReportProcessData(flag) {
-    console.log(flag);
+  viewReportProcessData(flag = null) {
     switch(flag) {
       case 'Job Tickets':
         document.getElementById("jobTickets").scrollIntoView();  
