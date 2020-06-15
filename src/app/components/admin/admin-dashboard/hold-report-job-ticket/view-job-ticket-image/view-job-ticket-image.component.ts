@@ -23,7 +23,7 @@ export class ViewJobTicketImageComponent {
     this.dialogRef.close();
   }
 
-  changeImage(action = 'next') {
+  imageAction(action = 'next') {
     switch(action) {
       case 'previous':
         if(this.data.selectImageIndex == 0) {
@@ -38,6 +38,9 @@ export class ViewJobTicketImageComponent {
         } else {
           this.data.selectImageIndex++;
         }
+        break;
+      case 'download':
+        window.open(this.data.allImages[this.data.selectImageIndex].basepath + this.data.allImages[this.data.selectImageIndex].fileservername);
         break;
     }
   }

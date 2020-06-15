@@ -177,48 +177,6 @@
   </mat-card-content>
 
 
-  <!-- Report Status Section Start -->
-  <mat-card-content class="admin_superbillsection">
-    <h1>Physician Reports Status</h1>
-    <mat-card-content class="biller_wrapper">
-
-      <mat-card-content class="super_bill_item">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon1.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total No of <br>
-            Manual Records
-          </p>
-          <h2> {{ allResolveData.total_reports_type_manual }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total Manual Reports');">view all</button>
-        </span>
-      </mat-card-content>
-
-      <mat-card-content class="super_bill_item">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon2.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total No of <br>
-            File Records
-          </p>
-          <h2> {{ allResolveData.total_reports_type_file }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
-        </span>
-      </mat-card-content>
-
-    </mat-card-content>
-  </mat-card-content>
-  <!-- Report Status Section End -->
-
-
   <mat-card-content class="admin_superbillsection">
     <h1>Physician Report Process Status</h1>
     <mat-card-content class="biller_wrapper">
