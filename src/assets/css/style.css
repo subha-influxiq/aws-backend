@@ -566,6 +566,7 @@ margin: 0 5px;}
 .app_list .mat-card .searchbar { padding: 0; }
 lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .book-appointment .mat-form-field{ width: 32.5%;}
+.book-appointment textarea{ width:100%;}
 .book-appointment .mat-form-field-appearance-fill .mat-form-field-flex { background: #fbfbfb; }
 /* calendar management */
 .book-event .mat-dialog-container .mat-stepper-horizontal .mat-horizontal-content-container,
