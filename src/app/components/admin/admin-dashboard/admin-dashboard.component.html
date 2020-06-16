@@ -10,12 +10,28 @@
         <img src="../../../../assets/images/adminDoctoricon1.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+        <span class="counter_with_tool">
+          <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+          <span class="tolTip">
+            <a mat-raised-button #tooltip="matTooltip"
+              matTooltip="The total number of independent doctors registered under the Admin" matTooltipPosition="above"
+              aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="tooltip.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+
+        </span>
         <p class="doctorNumber">Total Number of <br> Major Doctors</p>
       </span>
       <span class="button_wrapper">
         <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
       </span>
+
+
+
+
     </mat-card-content>
 
     <mat-card-content class="itemsection">
@@ -23,12 +39,25 @@
         <img src="../../../../assets/images/adminDoctoricon2.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_biller }}</h4>
+        <span class="counter_with_tool">
+          <h4 class="dataCount"> {{ allResolveData.total_biller }}</h4>
+          <!-- tooltip -->
+          <span class="tolTip">
+            <a mat-raised-button #tooltip2="matTooltip"
+              matTooltip="The data listed for the total number of billers registered under Admin, Distributor, Doctor’s Group Admin, and Diagnostic Admin."
+              matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="tooltip2.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+        </span>
         <p class="doctorNumber">Total Number of<br> Billers</p>
       </span>
       <span class="button_wrapper">
         <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
       </span>
+
     </mat-card-content>
 
     <mat-card-content class="itemsection">
@@ -36,12 +65,26 @@
         <img src="../../../../assets/images/adminDoctoricon3.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_tech }}</h4>
+        <span class="counter_with_tool">
+          <h4 class="dataCount"> {{ allResolveData.total_tech }}</h4>
+          <!-- tool tip -->
+          <span class="tolTip">
+            <a mat-raised-button #tooltip3="matTooltip"
+              matTooltip="The data listed for the total number of registered techs under Admin, Distributor, Doctor’s Group Admin, and Diagnostic Admin."
+              matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="tooltip3.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+        </span>
         <p class="doctorNumber">Total Number of <br>Techs</p>
       </span>
       <span class="button_wrapper">
         <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
       </span>
+
+
     </mat-card-content>
 
   </mat-card-content>
@@ -54,12 +97,25 @@
         <img src="../../../../assets/images/adminDoctoricon1.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_distributor }}</h4>
+        <span class="counter_with_tool">
+          <h4 class="dataCount"> {{ allResolveData.total_distributor }}</h4>
+          <!-- tool tip -->
+          <span class="tolTip">
+            <a mat-raised-button #tooltip4="matTooltip"
+              matTooltip=" The data listed for the total number of doctor’s offices registered under Admin, Distributor, Doctor’s Group Admin, and Diagnostic Admin."
+              matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="tooltip4.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+        </span>
         <p class="doctorNumber">Total Number of <br> Distributor</p>
       </span>
       <span class="button_wrapper">
         <button mat-button [routerLink]="['/admin/distributors-management']">View Details</button>
       </span>
+
     </mat-card-content>
 
     <mat-card-content class="itemsection">
@@ -67,12 +123,26 @@
         <img src="../../../../assets/images/adminDoctoricon2.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctors_group_admin }}</h4>
+        <span class="counter_with_tool">
+          <h4 class="dataCount"> {{ allResolveData.total_doctors_group_admin }}</h4>
+          <!-- tool tip -->
+          <span class="tolTip">
+            <a mat-raised-button #tooltip5="matTooltip"
+              matTooltip="The data listed for the total number of Doctor’s Group Admin added by the Admin."
+              matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="tooltip5.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+        </span>
         <p class="doctorNumber">Total Number of<br> Doctors Group Admin</p>
       </span>
       <span class="button_wrapper">
         <button mat-flat-button [routerLink]="['/admin/doctor-management/group']">View Details</button>
       </span>
+
+
     </mat-card-content>
 
     <mat-card-content class="itemsection">
@@ -80,12 +150,26 @@
         <img src="../../../../assets/images/adminDoctoricon3.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_biller_admin }}</h4>
+        <span class="counter_with_tool">
+          <h4 class="dataCount"> {{ allResolveData.total_biller_admin }}</h4>
+          <!-- tool tip -->
+          <span class="tolTip">
+            <a mat-raised-button #tooltip6="matTooltip"
+              matTooltip="The data listed for the total number of billers added." matTooltipPosition="above"
+              aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="tooltip6.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+        </span>
         <p class="doctorNumber">Total Number of <br>Biller Admin</p>
       </span>
       <span class="button_wrapper">
         <button mat-flat-button [routerLink]="['/admin/adminbiller-management']">View Details</button>
       </span>
+
+
     </mat-card-content>
 
   </mat-card-content>
@@ -99,12 +183,25 @@
         <img src="../../../../assets/images/doctorOffice.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
+        <span class="counter_with_tool">
+          <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
+          <!-- tool tip -->
+          <span class="tolTip">
+            <a mat-raised-button #tooltip7="matTooltip"
+              matTooltip="The data listed for the total number of Doctor’s Office added by the Admin."
+              matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="tooltip7.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+        </span>
         <p class="doctorNumber">Total No of <br>Doctor's Office</p>
       </span>
       <span class="button_wrapper">
         <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
       </span>
+
     </mat-card-content>
 
     <mat-card-content class="itemsection">
@@ -112,24 +209,52 @@
         <img src="../../../../assets/images/billerNoteicon2.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
+        <span class="counter_with_tool">
+          <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
+          <!-- tool tip -->
+          <span class="tolTip">
+            <a mat-raised-button #tooltip8="matTooltip"
+              matTooltip="The data listed for the total number of Diagnostic Admin added by the Admin."
+              matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="tooltip8.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+
+        </span>
         <p class="doctorNumber">Total No of <br>Diagnostic Admin</p>
       </span>
       <span class="button_wrapper">
         <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
       </span>
+
     </mat-card-content>
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/billerNoteicon3.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
+        <span class="counter_with_tool">
+          <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
+          <!-- tool tip -->
+          <span class="tolTip">
+            <a mat-raised-button #tooltip9="matTooltip"
+              matTooltip=" The data listed for the total number of doctors registered under the Admin, Distributor, Doctor’s Group Admin, and Diagnostic Admin. "
+              matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="tooltip9.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+        </span>
         <p class="doctorNumber">Total No of <br>Doctors</p>
       </span>
       <span class="button_wrapper">
         <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
       </span>
+
+
     </mat-card-content>
   </mat-card-content>
 
@@ -140,24 +265,51 @@
         <img src="../../../../assets/images/salesPerson.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor }} </h4>
+        <span class="counter_with_tool">
+          <h4 class="dataCount"> {{ allResolveData.total_doctor }} </h4>
+          <!-- tool tip -->
+          <span class="tolTip">
+            <a mat-raised-button #tooltip10="matTooltip"
+              matTooltip=" The data listed for the total number of Sales Persons registered under the Admin, Distributor and Diagnostic Admin."
+              matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="tooltip10.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+        </span>
         <p class="doctorNumber">Total Number of<br> Sales Person</p>
       </span>
       <span class="button_wrapper">
         <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
       </span>
+
     </mat-card-content>
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/billerNoteicon1.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+        <span class="counter_with_tool">
+          <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+          <!-- tool tip -->
+          <span class="tolTip">
+            <a mat-raised-button #tooltip11="matTooltip"
+              matTooltip=" The data listed for the number of patient appointments pending." matTooltipPosition="above"
+              aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="tooltip11.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+        </span>
         <p class="doctorNumber">Total Appointments<br> Pending</p>
       </span>
       <span class="button_wrapper">
         <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
       </span>
+
+
     </mat-card-content>
 
 
@@ -166,12 +318,25 @@
         <img src="../../../../assets/images/calenderAppointment.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+        <span class="counter_with_tool">
+          <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+          <!-- tool tip -->
+          <span class="tolTip">
+            <a mat-raised-button #tooltip12="matTooltip"
+              matTooltip="The data listed for the total number of patient appointments completed by the doctor. "
+              matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="tooltip12.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+        </span>
         <p class="doctorNumber">Total Appointments<br> Completed</p>
       </span>
       <span class="button_wrapper">
         <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
       </span>
+
     </mat-card-content>
 
   </mat-card-content>
@@ -195,6 +360,8 @@
           <h2> {{ allResolveData.total_pdf_to_images_not_process }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Images Not Processed')">view all</button>
         </span>
+
+
       </mat-card-content>
 
       <mat-card-content class="super_bill_item">
@@ -248,9 +415,24 @@
           <p>Total No of <br>
             Reports Added
           </p>
-          <h2> {{ allResolveData.total_reports }} </h2>
+          <span class="counter_with_tool">
+            <h2> {{ allResolveData.total_reports }} </h2>
+
+            <!-- tool tip -->
+            <span class="tolTip">
+              <a mat-raised-button #ReportsAdded="matTooltip"
+                matTooltip="The data listed for the total number of reports added by the biller."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="ReportsAdded.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <button mat-flat-button (click)="viewReportProcessData('Reports Uploaded')">view all</button>
         </span>
+
+
       </mat-card-content>
 
       <mat-card-content class="super_bill_item">
@@ -264,9 +446,22 @@
           <p>Total No of <br>
             Report Processed
           </p>
-          <h2> {{ allResolveData.total_reports - allResolveData.total_pdf_to_images_not_process }} </h2>
+          <span class="counter_with_tool">
+            <h2> {{ allResolveData.total_reports - allResolveData.total_pdf_to_images_not_process }} </h2>
+            <!-- tool tip -->
+            <span class="tolTip">
+              <a mat-raised-button #reportsProcessed="matTooltip"
+                matTooltip="The data listed for the total number of reports processed by the system."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="reportsProcessed.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <button mat-flat-button (click)="viewReportProcessData('Report Processed')">view all</button>
         </span>
+
       </mat-card-content>
 
       <mat-card-content class="super_bill_item">
@@ -279,9 +474,23 @@
           <p>Total No of <br>
             Report Signed
           </p>
-          <h2> {{ allResolveData.total_sign_reports }} </h2>
+          <span class="counter_with_tool">
+            <h2> {{ allResolveData.total_sign_reports }} </h2>
+            <!-- tool tip -->
+            <span class="tolTip">
+              <a mat-raised-button #reportSigned="matTooltip"
+                matTooltip="The data listed for the total number of reports signed by the doctors."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="reportSigned.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
         </span>
+
+
       </mat-card-content>
 
       <mat-card-content class="super_bill_item">
@@ -294,9 +503,23 @@
           <p> Sent to <br>
             Biller
           </p>
-          <h2> {{ allResolveData.total_send_to_supar_biller_reports }} </h2>
+          <span class="counter_with_tool">
+            <h2> {{ allResolveData.total_send_to_supar_biller_reports }} </h2>
+            <!-- tool tip -->
+            <span class="tolTip">
+              <a mat-raised-button #sentBiller="matTooltip"
+                matTooltip="The data listed for the total no. of reports sent to the billers."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="sentBiller.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <button mat-flat-button (click)="viewReportProcessData('Super Bill')">view all</button>
         </span>
+
+
       </mat-card-content>
 
       <mat-card-content class="super_bill_item">
@@ -307,9 +530,24 @@
         </span>
         <span class="container_wrapper">
           <p> Reports Downloaded </p>
-          <h2> {{ allResolveData.total_reports_download }} </h2>
+          <span class="counter_with_tool">
+            <h2> {{ allResolveData.total_reports_download }} </h2>
+            <!-- tool tip -->
+            <span class="tolTip">
+              <a mat-raised-button #reportsDownloaded="matTooltip"
+                matTooltip=" The data listed for the no. of reports that are downloaded." matTooltipPosition="above"
+                aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="reportsDownloaded.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <button mat-flat-button (click)="viewReportProcessData('Download Bill')">view all</button>
         </span>
+
+
+
       </mat-card-content>
 
       <mat-card-content class="super_bill_item">
@@ -320,9 +558,24 @@
         </span>
         <span class="container_wrapper">
           <p> Reports Pending Sing </p>
-          <h2> {{ allResolveData.total_not_sign_reports }} </h2>
+          <span class="counter_with_tool">
+            <h2> {{ allResolveData.total_not_sign_reports }} </h2>
+            <!-- tool tip -->
+            <span class="tolTip">
+              <a mat-raised-button #reportsPending="matTooltip"
+                matTooltip="The data listed for the total no. of reports that are yet to be signed by the doctors."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="reportsPending.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <button mat-flat-button (click)="viewReportProcessData('Reports Pending Sing')">view all</button>
         </span>
+
+
+
       </mat-card-content>
 
       <mat-card-content class="super_bill_item">
@@ -333,9 +586,22 @@
         </span>
         <span class="container_wrapper">
           <p> Job Tickets Created </p>
-          <h2> {{ allResolveData.total_job_tickets }} </h2>
+          <span class="counter_with_tool">
+            <h2> {{ allResolveData.total_job_tickets }} </h2>
+            <!-- tool tip -->
+            <span class="tolTip">
+              <a mat-raised-button #JobTicketsCreated="matTooltip"
+                matTooltip="The data listed for the total no. of reports that have job tickets added."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="JobTicketsCreated.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <button mat-flat-button (click)="viewReportProcessData('Job Tickets')">view all</button>
         </span>
+
       </mat-card-content>
     </mat-card-content>
   </mat-card-content>
