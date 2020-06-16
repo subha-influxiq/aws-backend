@@ -190,7 +190,6 @@ export class HoldReportJobTicketComponent implements OnInit {
   }
 
   downloadAttachment(ticketIndex, fileIndex) {
-    console.log(this.htmlText.oldTickets[ticketIndex].files[fileIndex]);
     window.open(this.htmlText.oldTickets[ticketIndex].files[fileIndex].basepath + this.htmlText.oldTickets[ticketIndex].files[fileIndex].fileservername);
   }
 
