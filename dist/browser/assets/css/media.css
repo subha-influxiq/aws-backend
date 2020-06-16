@@ -187,7 +187,8 @@ align-items: flex-start; }
   .shareLink_wrpr .link_field h2 { font-size: 20px; white-space: normal; line-height: 22px; width: 230px; }
   .book-appointment .mat-form-field { width: 32%; }
   .calenderView .calendar_wrapper { width: 90%!important; }
-
+  .report_action_wrapper { flex-direction: column;}
+  .report_action_wrapper button { margin-right: 0px; margin-bottom: 10px;}
 }
 @media screen and (max-width: 900px){
   .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item,
@@ -374,5 +375,4 @@ align-items: flex-start; }
   .job_reprt_wrapper .itm .report_image_w .image_items img { height: auto;}
   .job_modal_wr .mat-dialog-actions button { font-size: 14px; }
 }                                            
-
  

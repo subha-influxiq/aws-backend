@@ -109,7 +109,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
     custombuttons: [
       {
         label: "View Report",
-        route: "admin/patient-record/",
+        route: "diagnostic-admin/patient-record/",
         type: 'internallink',
         param: ['_id'],
       },
@@ -201,7 +201,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
   public sortdata: any = {
     "type": 'desc',
-    "field": 'firstname',
+    "field": 'patient_name',
     "options": ['patient_name','created_at_datetime']
   };
   public limitcond: any = {

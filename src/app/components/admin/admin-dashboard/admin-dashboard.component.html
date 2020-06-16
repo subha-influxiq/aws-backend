@@ -346,7 +346,7 @@
   <!-- All Data listing start here(default listing) -->
   <mat-card-content class="table_wrapper admin_dashboard">
 
-    <h1 class="headr_tagh">Patient Reports Pending Approval</h1>
+    <h1 class="headr_tagh">Patient Reports Pending Actions</h1>
 
     <!-- table -->
     <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData" [skip]="allUserData_skip"
@@ -365,7 +365,7 @@
   <!-- All Data listing start here(default listing) -->
   <mat-card-content class="table_wrapper admin_dashboard">
 
-    <h1 class="headr_tagh">Approved Patient Reports</h1>
+    <h1 class="headr_tagh">Admin Processed Reports</h1>
 
     <app-approved-patient-reports></app-approved-patient-reports>
 
