@@ -77,8 +77,6 @@ export class HoldReportJobTicketComponent implements OnInit {
               this.htmlText.oldTickets[loop1].files[loop2].image_path = this.htmlText.oldTickets[loop1].files[loop2].basepath + this.htmlText.oldTickets[loop1].files[loop2].fileservername;
             }
           }
-
-          console.log("New Data: ", this.htmlText.oldTickets);
           
           this.htmlText.oldTickets.reverse();
         } else {
@@ -173,7 +171,7 @@ export class HoldReportJobTicketComponent implements OnInit {
 
   viewImage(ticketIndex, fileIndex) {
     let data: any = {
-    panelClass:'jobViewModal',
+      panelClass:'jobViewModal',
       data: {
         allImages: this.htmlText.oldTickets[ticketIndex].files,
         selectImageIndex: fileIndex
@@ -189,6 +187,10 @@ export class HoldReportJobTicketComponent implements OnInit {
           break;
       }
     });
+  }
+
+  downloadAttachment(ticketIndex, fileIndex) {
+    window.open(this.htmlText.oldTickets[ticketIndex].files[fileIndex].basepath + this.htmlText.oldTickets[ticketIndex].files[fileIndex].fileservername);
   }
 
   changeStatus(action: string = '') {

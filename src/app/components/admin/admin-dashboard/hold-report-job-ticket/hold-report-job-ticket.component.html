@@ -23,7 +23,7 @@
                     </mat-card-subtitle>
                 </mat-card-header>
 
-                <mat-card-content>
+                <mat-card-content class="report_desc">
                     <p [innerHTML]="ticket.description"></p>
                 </mat-card-content>
 
@@ -40,7 +40,7 @@
 
                             <span class="report_action_wrapper">
                                 <button mat-button (click)="viewImage(ticketIndex, fileIndex);">preview</button>
-                                <button mat-button>download</button>
+                                <button mat-button (click)="downloadAttachment(ticketIndex, fileIndex);">download</button>
                             </span>
 
 

@@ -4,20 +4,6 @@
 
   
   <mat-card-content class="content_wrapper">
-
-    <mat-card-content class="itemsection">
-      <span class="icon">
-        <img src="../../../../assets/images/adminDoctoricon1.png">
-      </span>
-      <span class="counteer">
-        <h4 class="dataCount">12 </h4>
-        <p class="doctorNumber">Total Number of <br> Major Doctors</p>
-      </span>
-      <span class="button_wrapper">
-        <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
-      </span>
-    </mat-card-content>
-
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/adminDoctoricon2.png">
@@ -44,12 +30,6 @@
       </span>
     </mat-card-content>
 
-  </mat-card-content>
-
-
-  <!-- Doctor occide related -->
-  <mat-card-content class="content_wrapper">
-
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/doctorOffice.png">
@@ -63,18 +43,11 @@
       </span>
     </mat-card-content>
 
-    <mat-card-content class="itemsection">
-      <span class="icon">
-        <img src="../../../../assets/images/billerNoteicon2.png">
-      </span>
-      <span class="counteer">
-        <h4 class="dataCount">14 </h4>
-        <p class="doctorNumber">Total No of <br>Diagnostic Admin</p>
-      </span>
-      <span class="button_wrapper">
-        <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
-      </span>
-    </mat-card-content>
+  </mat-card-content>
+
+
+  <!-- Doctor occide related -->
+  <mat-card-content class="content_wrapper">
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/billerNoteicon3.png">
@@ -87,22 +60,7 @@
         <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
       </span>
     </mat-card-content>
-  </mat-card-content>
 
-  <!-- Doctor other related -->
-  <mat-card-content class="content_wrapper">
-    <mat-card-content class="itemsection">
-      <span class="icon">
-        <img src="../../../../assets/images/salesPerson.png">
-      </span>
-      <span class="counteer">
-        <h4 class="dataCount">34 </h4>
-        <p class="doctorNumber">Total Number of<br> Sales Person</p>
-      </span>
-      <span class="button_wrapper">
-        <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
-      </span>
-    </mat-card-content>
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/billerNoteicon1.png">
@@ -116,7 +74,22 @@
       </span>
     </mat-card-content>
 
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/salesPerson.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount">34 </h4>
+        <p class="doctorNumber">Total Number of<br> Sales Person</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
+      </span>
+    </mat-card-content>
+  </mat-card-content>
 
+  <!-- Doctor other related -->
+  <mat-card-content class="content_wrapper">
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/calenderAppointment.png">
@@ -131,49 +104,6 @@
     </mat-card-content>
 
   </mat-card-content>
-
-
-  <!-- Report Status Section Start -->
-  <mat-card-content class="admin_superbillsection">
-    <h1>Physician Reports Status</h1>
-    <mat-card-content class="biller_wrapper">
-
-      <mat-card-content class="super_bill_item">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon1.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total No of <br>
-            Manual Records
-          </p>
-          <h2>324 </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total Manual Reports');">view all</button>
-        </span>
-      </mat-card-content>
-
-      <mat-card-content class="super_bill_item">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon2.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total No of <br>
-            File Records
-          </p>
-          <h2>78</h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
-        </span>
-      </mat-card-content>
-
-    </mat-card-content>
-  </mat-card-content>
-  <!-- Report Status Section End -->
-
 
   <mat-card-content class="admin_superbillsection">
     <h1>Physician Report Process Status</h1>
