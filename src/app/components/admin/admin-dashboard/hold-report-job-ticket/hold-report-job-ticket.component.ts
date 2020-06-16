@@ -77,8 +77,6 @@ export class HoldReportJobTicketComponent implements OnInit {
               this.htmlText.oldTickets[loop1].files[loop2].image_path = this.htmlText.oldTickets[loop1].files[loop2].basepath + this.htmlText.oldTickets[loop1].files[loop2].fileservername;
             }
           }
-
-          console.log("New Data: ", this.htmlText.oldTickets);
           
           this.htmlText.oldTickets.reverse();
         } else {
