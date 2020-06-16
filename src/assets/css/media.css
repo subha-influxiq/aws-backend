@@ -144,7 +144,7 @@ align-items: flex-start; }
   content: attr(aria-label);
   */
   content: attr(data-label); float: left; text-transform: uppercase; font-weight: normal;
-  position: absolute; left: 8px; font-family: "AvenirMedium"; 
+  position: absolute; left: 6px; font-family: "AvenirMedium"; 
 }
 
 .mat-table .mat-cell:after {
@@ -152,7 +152,7 @@ align-items: flex-start; }
   * aria-label has no advantage, it won't be read inside a table
   content: attr(aria-label);  */
     content: attr(title); float: left; text-transform: capitalize; font-weight: normal;
-    position: absolute; left: 8px; font-size: 16px; font-family: "AvenirMedium";
+    position: absolute; left: 6px; font-size: 16px; font-family: "AvenirMedium";
   }
 
   .adminTables .mat-cell {min-height: 36px; height: auto; margin-bottom: 1%; padding: 10px 20px; padding-left: 36%; }
@@ -187,7 +187,8 @@ align-items: flex-start; }
   .shareLink_wrpr .link_field h2 { font-size: 20px; white-space: normal; line-height: 22px; width: 230px; }
   .book-appointment .mat-form-field { width: 32%; }
   .calenderView .calendar_wrapper { width: 90%!important; }
-
+  .report_action_wrapper { flex-direction: column;}
+  .report_action_wrapper button { margin-right: 0px; margin-bottom: 10px;}
 }
 @media screen and (max-width: 900px){
   .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item,
@@ -251,7 +252,7 @@ align-items: flex-start; }
   .book-appointment .mat-form-field { width: 47.5%; }
   .calenderView .calender_first .mat-toolbar { flex-direction: column; }
   .calenderView .calender_first .buttonsetToolbar {flex-direction: row; }
-  .job_reprt_wrapper .itm .report_image_w .image_items { width: 32%;}
+  .job_reprt_wrapper .itm .report_image_w .image_items { width: 48%; margin: 1%;}
   .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber { font-size: 14px; }
 }
  
@@ -304,7 +305,7 @@ align-items: flex-start; }
   .main_wrapper .login_wrapper .login_container .main-div .from .signupfooter a { font-size: 12px; padding: 10px 0;}
   .main_wrapper .login_wrapper .login_container .main-div .from button { font-size: 20px; padding: 4px 16px 2px; }
   .DataTable .container .searchbar { width: 100%; }
-  .DataTable .container .searchbar span { display: flex; }
+  /* .DataTable .container .searchbar span { display: flex; } */
   .DataTable .container .searchbar .mat-form-field { width: 100%; margin: 0; }
   .add_header { display: flex; margin: 0 16px; flex-direction: column; justify-content: center; align-items: center; }
   .add_header button { margin: 10px 0 0 0; }
@@ -373,6 +374,6 @@ align-items: flex-start; }
   .job_reprt_wrapper .itm .report_image_w .image_items { width: 100%; margin: 0; height: auto; margin-bottom: 16px;}
   .job_reprt_wrapper .itm .report_image_w .image_items img { height: auto;}
   .job_modal_wr .mat-dialog-actions button { font-size: 14px; }
+  .job_reprt_wrapper .job_reprt_action { justify-content: center; }
 }                                            
-
  
