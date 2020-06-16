@@ -171,7 +171,7 @@ export class HoldReportJobTicketComponent implements OnInit {
 
   viewImage(ticketIndex, fileIndex) {
     let data: any = {
-    panelClass:'jobViewModal',
+      panelClass:'jobViewModal',
       data: {
         allImages: this.htmlText.oldTickets[ticketIndex].files,
         selectImageIndex: fileIndex
@@ -187,6 +187,11 @@ export class HoldReportJobTicketComponent implements OnInit {
           break;
       }
     });
+  }
+
+  downloadAttachment(ticketIndex, fileIndex) {
+    console.log(this.htmlText.oldTickets[ticketIndex].files[fileIndex]);
+    window.open(this.htmlText.oldTickets[ticketIndex].files[fileIndex].basepath + this.htmlText.oldTickets[ticketIndex].files[fileIndex].fileservername);
   }
 
   changeStatus(action: string = '') {
