@@ -10,7 +10,7 @@
         <img src="../../../../assets/images/adminDoctoricon1.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+        <h4 class="dataCount"> {{ allResolveData.total_major_doctor }}</h4>
         <p class="doctorNumber">Total Number of <br> Major Doctors</p>
       </span>
       <span class="button_wrapper">
@@ -112,7 +112,7 @@
         <img src="../../../../assets/images/billerNoteicon2.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
+        <h4 class="dataCount"> {{ allResolveData.total_diagnostic_admin }}</h4>
         <p class="doctorNumber">Total No of <br>Diagnostic Admin</p>
       </span>
       <span class="button_wrapper">
@@ -124,7 +124,7 @@
         <img src="../../../../assets/images/billerNoteicon3.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
+        <h4 class="dataCount"> {{ allResolveData.total_parent_doctor }}</h4>
         <p class="doctorNumber">Total No of <br>Doctors</p>
       </span>
       <span class="button_wrapper">
@@ -135,24 +135,26 @@
 
   <!-- Doctor other related -->
   <mat-card-content class="content_wrapper">
+
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/salesPerson.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor }} </h4>
+        <h4 class="dataCount"> {{ allResolveData.total_sales_person }} </h4>
         <p class="doctorNumber">Total Number of<br> Sales Person</p>
       </span>
       <span class="button_wrapper">
         <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
       </span>
     </mat-card-content>
+
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/billerNoteicon1.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+        <h4 class="dataCount"> {{ allResolveData.total_appointments_pending }}</h4>
         <p class="doctorNumber">Total Appointments<br> Pending</p>
       </span>
       <span class="button_wrapper">
@@ -160,13 +162,12 @@
       </span>
     </mat-card-content>
 
-
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/calenderAppointment.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+        <h4 class="dataCount"> {{ allResolveData.total_appointments_completed }}</h4>
         <p class="doctorNumber">Total Appointments<br> Completed</p>
       </span>
       <span class="button_wrapper">
