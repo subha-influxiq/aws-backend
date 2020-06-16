@@ -11,7 +11,7 @@
       </span>
       <span class="counteer">
         <span class="counter_with_tool">
-          <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+          <h4 class="dataCount"> {{ allResolveData.total_major_doctor }}</h4>
           <span class="tolTip">
             <a mat-raised-button #tooltip="matTooltip"
               matTooltip="The total number of independent doctors registered under the Admin" matTooltipPosition="above"
@@ -210,7 +210,7 @@
       </span>
       <span class="counteer">
         <span class="counter_with_tool">
-          <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
+          <h4 class="dataCount"> {{ allResolveData.total_diagnostic_admin }}</h4>
           <!-- tool tip -->
           <span class="tolTip">
             <a mat-raised-button #tooltip8="matTooltip"
@@ -236,7 +236,7 @@
       </span>
       <span class="counteer">
         <span class="counter_with_tool">
-          <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
+          <h4 class="dataCount"> {{ allResolveData.total_parent_doctor }}</h4>
           <!-- tool tip -->
           <span class="tolTip">
             <a mat-raised-button #tooltip9="matTooltip"
@@ -260,13 +260,14 @@
 
   <!-- Doctor other related -->
   <mat-card-content class="content_wrapper">
+
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/salesPerson.png">
       </span>
       <span class="counteer">
         <span class="counter_with_tool">
-          <h4 class="dataCount"> {{ allResolveData.total_doctor }} </h4>
+          <h4 class="dataCount"> {{ allResolveData.total_sales_person }} </h4>
           <!-- tool tip -->
           <span class="tolTip">
             <a mat-raised-button #tooltip10="matTooltip"
@@ -285,13 +286,14 @@
       </span>
 
     </mat-card-content>
+
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/billerNoteicon1.png">
       </span>
       <span class="counteer">
         <span class="counter_with_tool">
-          <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+          <h4 class="dataCount"> {{ allResolveData.total_appointments_pending }}</h4>
           <!-- tool tip -->
           <span class="tolTip">
             <a mat-raised-button #tooltip11="matTooltip"
@@ -312,14 +314,13 @@
 
     </mat-card-content>
 
-
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/calenderAppointment.png">
       </span>
       <span class="counteer">
         <span class="counter_with_tool">
-          <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+          <h4 class="dataCount"> {{ allResolveData.total_appointments_completed }}</h4>
           <!-- tool tip -->
           <span class="tolTip">
             <a mat-raised-button #tooltip12="matTooltip"
