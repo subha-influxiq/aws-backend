@@ -61,9 +61,7 @@ export class DoctorDashboardComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: {
-      status: { "$gt": 10 }
-    },
+    basecondition: "",
     updateendpoint: '',
     custombuttons: [
       {
@@ -160,7 +158,7 @@ export class DoctorDashboardComponent implements OnInit {
 
   public sortdata: any = {
     "type": 'desc',
-    "field": 'firstname',
+    "field": 'patient_name',
     "options": ['patient_name', 'created_at_datetime']
   };
   public limitcond: any = {
@@ -238,7 +236,10 @@ export class DoctorDashboardComponent implements OnInit {
     }
 
     this.authData["jwtToken"] = cookie.get('jwtToken');
-
+    this.jwtToken = this.authData.jwtToken;
+    this.libdata.basecondition = {
+      status: { "$gt": 10 },doctor_id:this.authData._id
+    };
     if (typeof (this.authData.diagnostic_admin_id) != 'undefined') {
       this.htmlText.signFlag = false;
       this.data = { _id_object: this.authData.diagnostic_admin_id };
@@ -257,11 +258,11 @@ export class DoctorDashboardComponent implements OnInit {
       this.header = { name: "Doctor Group Name" };
     }
 
-    this.activatedRoute.data.forEach(resolveData => {
-      this.allResolveData = resolveData.doctordata.data;
+    // this.activatedRoute.data.forEach(resolveData => {
+    //   this.allResolveData = resolveData.doctordata.data;
 
-      this.viewReportProcessData(this.htmlText.tableHeaderText);
-    });
+    //   this.viewReportProcessData(this.htmlText.tableHeaderText);
+    // });
 
     // lib list
     let endpoint = 'getPatientlistdata';
@@ -299,7 +300,7 @@ export class DoctorDashboardComponent implements OnInit {
         status: { "$gt": 10 },
         doctor_id_object: this.authData._id
       },
-      "token": this.jwtToken
+      "token": this.authData.jwtToken
     }
     this.http.httpViaPost("datalist", data).subscribe((response: any) => {
       var start = false;

@@ -179,8 +179,8 @@ export class ReportsDetailsComponent implements OnInit {
 
   public sortdata: any = {
     "type": 'desc',
-    "field": 'parent_name',
-    "options": ['parent_name',]
+    "field": 'patient_name',
+    "options": ['patient_name',]
   };
   public limitcond: any = {
     "limit": 10,
