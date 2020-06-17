@@ -105,19 +105,6 @@ export class ReportsDetailsComponent implements OnInit {
       headermessage: 'Associated Codes',
       // refreshdata:true
   } ,
-    {
-      label:"Doctor Details",
-      type:'action',
-      datatype:'api',
-      endpoint:'get-doctor-details',
-      datafields: ['firstname','lastname','email','fax','Practice Name','NPI','phone','address','city','state','zip'],
-      // otherparam:["patient_name"],
-      //cond:'status',
-      //condval:0,
-      param:'id',
-      headermessage: 'Doctor Information',
-      // refreshdata:true
-  } ,
   {
     label:"Doctor Office Details",
     type:'action',
@@ -229,7 +216,7 @@ export class ReportsDetailsComponent implements OnInit {
     this.jwtToken = cookieService.get('jwtToken');
     
     if(this.loginUserData.user_details.user_details.user_type == "doctor") {
-      this.user = {doctor_id:this.loginUserData.user_details.user_details._id}
+      this.user = {doctor_id:this.loginUserData.user_details.user_details._id,status:{$gt:10}}
       this.libdata.custombuttons[0].route = "doctor/patient-record/"
       this.search_settings.selectsearch.splice(2,1);
       this.search_settings.selectsearch.splice(6,1);
@@ -239,15 +226,19 @@ export class ReportsDetailsComponent implements OnInit {
       this.user = {tech_id:this.loginUserData.user_details.user_details._id}
     } else if(this.loginUserData.user_details.user_details.user_type == "doctor_office") {
       this.search_settings.selectsearch.splice(4,1);
+      this.libdata.custombuttons[0].route = "doctor-office/patient-record/"
       this.user = {doctors_office_id:this.loginUserData.user_details.user_details._id}
     } else if(this.loginUserData.user_details.user_details.user_type == "diagnostic_admin") {
       this.search_settings.selectsearch.splice(5,1);
+      this.libdata.custombuttons[0].route = "diagnostic-admin/patient-record/"
       this.user = {parent_id:this.loginUserData.user_details.user_details._id}
     } else if(this.loginUserData.user_details.user_details.user_type == "doctor_group") {
       this.search_settings.selectsearch.splice(5,1);
+      this.libdata.custombuttons[0].route = "doctor-group/patient-record/"
       this.user = {parent_id :this.loginUserData.user_details.user_details._id}
     } else if(this.loginUserData.user_details.user_details.user_type == "distributors") {
       this.search_settings.selectsearch.splice(5,1);
+      this.libdata.custombuttons[0].route = "distributors/patient-record/"
       this.user = {parent_id:this.loginUserData.user_details.user_details._id}
     } else {
       this.user = {parent_id:this.activatedRoute.snapshot.params._id}
