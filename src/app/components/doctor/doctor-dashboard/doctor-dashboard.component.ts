@@ -31,8 +31,8 @@ export class DoctorDashboardComponent implements OnInit {
   };
 
   // Lib list
-  public allBillerData: any = [];
-  public billerData_count: any = 0;
+  public allDocData: any = [];
+  public docData_count: any = 0;
   public datasource: any;
   public field: any;
   public allUserData_skip: any = [
@@ -61,14 +61,12 @@ export class DoctorDashboardComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: {
-      status: { "$gt": 10 }
-    },
+    basecondition: "",
     updateendpoint: '',
     custombuttons: [
       {
         label: "View Report",
-        route: "doctor/patient-record/",
+        route: "doctor/view-patient-record/",
         type: 'internallink',
         param: ['_id'],
       },
@@ -160,7 +158,7 @@ export class DoctorDashboardComponent implements OnInit {
 
   public sortdata: any = {
     "type": 'desc',
-    "field": 'firstname',
+    "field": 'patient_name',
     "options": ['patient_name', 'created_at_datetime']
   };
   public limitcond: any = {
@@ -173,7 +171,7 @@ export class DoctorDashboardComponent implements OnInit {
 
   public status: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, { val: "Biller Admin Hold", 'name': "Biller Admin Hold" }];
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
-  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }];
+  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' },{val:"CMAT with BP Cuffs", 'name' : "CMAT with BP Cuffs"}];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
   public docofficeval: any = [];
@@ -228,9 +226,7 @@ export class DoctorDashboardComponent implements OnInit {
   public header: any;
   public allData: any;
 
-  constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService,
-    public http: HttpServiceService, public activatedRoute: ActivatedRoute, public matSnackBar: MatSnackBar,
-    public deviceService: DeviceDetectorService) {
+  constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService,public http: HttpServiceService, public activatedRoute: ActivatedRoute, public matSnackBar: MatSnackBar,public deviceService: DeviceDetectorService) {
     this.allData = cookie.getAll();
     this.authData = JSON.parse(this.allData.user_details);
     if(typeof(this.allData.doctor_signature) == 'undefined' && typeof(this.authData.doctor_signature) != 'undefined') {
@@ -238,7 +234,10 @@ export class DoctorDashboardComponent implements OnInit {
     }
 
     this.authData["jwtToken"] = cookie.get('jwtToken');
-
+    this.jwtToken = this.authData.jwtToken;
+    this.libdata.basecondition = {
+      status: { "$gt": 10 },doctor_id:this.authData._id
+    };
     if (typeof (this.authData.diagnostic_admin_id) != 'undefined') {
       this.htmlText.signFlag = false;
       this.data = { _id_object: this.authData.diagnostic_admin_id };
@@ -257,11 +256,11 @@ export class DoctorDashboardComponent implements OnInit {
       this.header = { name: "Doctor Group Name" };
     }
 
-    this.activatedRoute.data.forEach(resolveData => {
-      this.allResolveData = resolveData.doctordata.data;
+    // this.activatedRoute.data.forEach(resolveData => {
+    //   this.allResolveData = resolveData.doctordata.data;
 
-      this.viewReportProcessData(this.htmlText.tableHeaderText);
-    });
+    //   this.viewReportProcessData(this.htmlText.tableHeaderText);
+    // });
 
     // lib list
     let endpoint = 'getPatientlistdata';
@@ -280,17 +279,18 @@ export class DoctorDashboardComponent implements OnInit {
     }
 
     this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
-      this.billerData_count = res.count;
+      this.docData_count = res.count;
     }, error => {
       console.log('Oooops!');
     });
 
     this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
-      this.allBillerData = res.results.res;
+      this.allDocData = res.results.res;
     }, error => {
       console.log('Oooops!');
     });
   }
+
 
   ngOnInit() {
     let data: any = {
@@ -299,7 +299,7 @@ export class DoctorDashboardComponent implements OnInit {
         status: { "$gt": 10 },
         doctor_id_object: this.authData._id
       },
-      "token": this.jwtToken
+      "token": this.authData.jwtToken
     }
     this.http.httpViaPost("datalist", data).subscribe((response: any) => {
       var start = false;

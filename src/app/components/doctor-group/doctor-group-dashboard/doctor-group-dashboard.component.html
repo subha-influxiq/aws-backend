@@ -131,49 +131,6 @@
 
   </mat-card-content>
 
-
-  <!-- Report Status Section Start -->
-  <mat-card-content class="admin_superbillsection">
-    <h1>Physician Reports Status</h1>
-    <mat-card-content class="biller_wrapper">
-
-      <mat-card-content class="super_bill_item">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon1.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total No of <br>
-            Manual Records
-          </p>
-          <h2>324 </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total Manual Reports');">view all</button>
-        </span>
-      </mat-card-content>
-
-      <mat-card-content class="super_bill_item">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon2.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total No of <br>
-            File Records
-          </p>
-          <h2>78</h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
-        </span>
-      </mat-card-content>
-
-    </mat-card-content>
-  </mat-card-content>
-  <!-- Report Status Section End -->
-
-
   <mat-card-content class="admin_superbillsection">
     <h1>Physician Report Process Status</h1>
     <mat-card-content class="biller_wrapper">
@@ -333,7 +290,7 @@
   <mat-card-content class="table_wrapper">
 
     <mat-toolbar class="top_header">
-      <h2> table name</h2>
+      <h2> Patient Record List</h2>
       <span class="wrappp_R">
         <button class="add_new tooltip" mat-button routerLink="/admin/patient-management/add" matTooltip="Add Report"
           matTooltipPosition="above">
@@ -348,9 +305,10 @@
         </button>
       </span>
     </mat-toolbar>
+ 
 
     <mat-toolbar class="action_bar">
-      <mat-form-field>
+      <!-- <mat-form-field>
         <input matInput placeholder="Search by Doctor">
       </mat-form-field>
 
@@ -367,7 +325,7 @@
           <mat-option value="error">Error</mat-option>
           <mat-option value="pending">Pending</mat-option>
         </mat-select>
-      </mat-form-field>
+      </mat-form-field> -->
 
       <!-- Filter by date -->
       <ng-container>
@@ -378,7 +336,7 @@
             <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
           </mat-form-field>
         </span> -->
-        <span class="resetButton_w">
+        <!-- <span class="resetButton_w">
           <button mat-raised-button type="button" class="add_button tooltip">
             <span class="tooltiptext"> Search </span>
             <i class="material-icons">search</i>
@@ -388,10 +346,11 @@
             <span class="tooltiptext"> Reset </span>
             <i class="material-icons">replay</i>
           </button>
-        </span>
+        </span> -->
       </ng-container>
 
     </mat-toolbar>
+ 
      
     <mat-card-content class="tablewrapper admin_dashboard">
         <!-- table -->
@@ -406,7 +365,7 @@
         </lib-listing>
     </mat-card-content>
  
-
+ 
   </mat-card-content>
 
 

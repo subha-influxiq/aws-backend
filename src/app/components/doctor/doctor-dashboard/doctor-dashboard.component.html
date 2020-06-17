@@ -518,32 +518,17 @@
     <div class="tablewrapper admin_dashboard">
       
       <!-- table -->
-      <lib-listing
-        class="DataTable" 
-        *ngIf="allBillerData.length>0" 
-        [datasource]="allBillerData" 
-        [skip]="allUserData_skip"
-        [modify_header_array]="allUserData_modify_header" 
-        [detail_skip_array]="previewModal_detail_skip" 
-        [apiurl]="apiUrl"
-        [sourcedata]="tableName" 
-        [editroute]="editUrl" 
-        [jwttoken]="jwtToken" 
-        [statusarr]="status"
-        [updateendpoint]="UpdateEndpoint" 
-        [deleteendpoint]="deleteEndpoint" 
-        [date_search_endpoint]="SearchingEndpoint"
-        [date_search_source]="SearchingSourceName" 
-        [search_settings]="search_settings" 
-        [sortdata]="sortdata" 
-        [datacollection]="datacollection" 
-        [libdata]="libdata" 
-        [date_search_source_count]="billerData_count" 
-        [limitcond]="limitcond" >
+      <lib-listing class="DataTable" *ngIf="allDocData.length>0" [datasource]="allDocData" [skip]="allUserData_skip"
+        [modify_header_array]="allUserData_modify_header" [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl"
+        [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="jwtToken" [statusarr]="status"
+        [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
+        [date_search_source]="SearchingSourceName" [search_settings]="search_settings" [sortdata]="sortdata"
+        [datacollection]="datacollection" [libdata]="libdata" [date_search_source_count]="docData_count"
+        [limitcond]="limitcond">
       </lib-listing>
 
     </div>
-    <mat-paginator [pageSizeOptions]="[50, 100, 200]"></mat-paginator>
+    <!-- <mat-paginator [pageSizeOptions]="[50, 100, 200]"></mat-paginator> -->
   </mat-card-content>
 </mat-card>
 

@@ -341,7 +341,7 @@ const routes: Routes = [
 
   /* Patient Management */
   {
-    path: 'admin/patient-record/:_id',
+    path: 'admin/view-patient-record/:_id',
     component: PatientReportViewComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
@@ -354,9 +354,9 @@ const routes: Routes = [
     },
   },
   {
-    path: 'doctor/patient-record/:_id',
+    path: 'doctor/view-patient-record/:_id',
     component: PatientReportViewComponent,
-    canActivate: [AuthguardService],
+    //canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -367,9 +367,9 @@ const routes: Routes = [
     },
   },
   {
-    path: 'distributors/patient-record/:_id',
+    path: 'distributors/view-patient-record/:_id',
     component: PatientReportViewComponent,
-    canActivate: [AuthguardService],
+    // canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -380,7 +380,7 @@ const routes: Routes = [
     },
   },
   {
-    path: 'doctor-group/patient-record/:_id',
+    path: 'doctor-group/view-patient-record/:_id',
     component: PatientReportViewComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
@@ -406,6 +406,19 @@ const routes: Routes = [
     },
   },
   {
+    path: 'doctor/patient-record/:_id',
+    component: PatientReportViewComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'report-view'
+    },
+  },
+  {
     path: 'admin/patient-record/encounter/:_id',
     component: EncounterFormComponent,
     canActivate: [AuthguardService],
@@ -419,7 +432,7 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin-biller/patient-record/:_id',
+    path: 'admin-biller/view-patient-record/:_id',
     component: PatientReportViewComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
@@ -438,6 +451,19 @@ const routes: Routes = [
   },
   {
     path: 'admin/patient-record/edit/:_id',
+    component: EditPatientRecordComponent,
+    canActivate: [AuthguardService],
+    resolve: { patientData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+  {
+    path: 'doctor/patient-record/edit/:_id',
     component: EditPatientRecordComponent,
     canActivate: [AuthguardService],
     resolve: { patientData: ResolveService },
@@ -1088,7 +1114,7 @@ const routes: Routes = [
       },
     },
     {
-      path: 'doctor-group/patient-record-report/:_id',
+      path: 'doctor-group/view-patient-record/:_id',
       component: PatientReportViewComponent,
       //canActivate: [AuthguardService],
       resolve: { data: ResolveService },
@@ -1184,7 +1210,7 @@ const routes: Routes = [
 
   /* Diagnostic Admin Patient Record View */
   {
-    path: 'diagnostic-admin/patient-record/:_id',
+    path: 'diagnostic-admin/view-patient-record/:_id',
     component: PatientReportViewComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
@@ -1506,7 +1532,7 @@ const routes: Routes = [
     },
   },
   {
-    path: 'tech/patient-record-report/:_id',
+    path: 'tech/view-patient-record/:_id',
     component: PatientReportViewComponent,
     //canActivate: [AuthguardService],
     resolve: { data: ResolveService },
@@ -1979,7 +2005,7 @@ const routes: Routes = [
     // }
   },
   {
-    path: 'doctor-office/patient-record-report/:_id',
+    path: 'doctor-office/view-patient-record/:_id',
     component: PatientReportViewComponent,
     //canActivate: [AuthguardService],
     resolve: { data: ResolveService },
