@@ -192,7 +192,8 @@ export class ApprovedPatientReportsComponent implements OnInit {
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
-  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }];
+  public cptcodes: any = [{ val: "95923", 'name': '95923' }, { val: "95943", 'name': '95943' }, {val:"95921" , 'name' :"95921"},{val:"93923" , 'name' :"93923"},{val:"93922" , 'name' :"93922"}];
+  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' },{ val: "CMAT with BP Cuffs", 'name': 'CMAT with BP Cuffs' }];
   public report: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, { val: "Biller Admin Hold", 'name': "Biller Admin Hold" }]
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
@@ -206,8 +207,8 @@ export class ApprovedPatientReportsComponent implements OnInit {
   public SearchingSourceName: any = "data_biller_list";
   public search_settings: any =
     {
-      selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type }, { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }, { label: "Search By Reports", field: 'status_text', values: this.report }, { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
-      { label: "Search By Tech", field: 'tech_name_search', values: this.techval }, { label: "Search By Doctor Office", field: 'author_search', values: this.docofficeval }, { label: "Search By Parent Name", field: 'patient_name', values: this.parentnameval }, { label: "Search By Doctor City", field: 'author_search', values: this.doctorcity }, { label: "Search By Doctor State", field: 'author_search', values: this.doctorstate }, { label: "Search By Parent City", field: 'author_search', values: this.patientcity }, { label: "Search By Parent State", field: 'author_search', values: this.patientstate }],
+      selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type } , { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },{ label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes },{label: "Search By Doctor", field: 'doc_name_search', values:this.authval },{label: "Search By Tech", field: 'tech_name_search', values:this.techval },{label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values:this.docofficeval },{label: "Search By Parent Name", field: 'parent_name_search', values:this.parentnameval },{label: "Search By Doctor City", field: 'doctor_city_search', values:this.doctorcity },{label: "Search By Doctor State", field: 'doctor_state_search', values:this.doctorstate },{label: "Search By Patient City", field: 'patient_state_search', values:this.patientcity },{label: "Search By Patient State", field: 'patient_city_search', values:this.patientstate }],
+      datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
       // datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
       // textsearch: [{ label: "Search By Name", field: 'name_search' },
       // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],

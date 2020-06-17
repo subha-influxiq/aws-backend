@@ -90,7 +90,7 @@ export class DoctorGroupDashboardComponent implements OnInit {
     custombuttons: [
       {
         label: "View Report",
-        route: "admin/patient-record/",
+        route: "doctor-group/patient-record/",
         type: 'internallink',
         param: ['_id'],
       },
@@ -182,8 +182,8 @@ export class DoctorGroupDashboardComponent implements OnInit {
 
   public sortdata: any = {
     "type": 'desc',
-    "field": 'firstname',
-    "options": ['firstname', 'email', 'created_date']
+    "field": 'patient_name',
+    "options": ['patient_name','created_at_datetime']
   };
   public limitcond: any = {
     "limit": 10,
