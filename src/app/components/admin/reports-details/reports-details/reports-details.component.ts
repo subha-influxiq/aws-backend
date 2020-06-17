@@ -68,7 +68,7 @@ export class ReportsDetailsComponent implements OnInit {
     custombuttons: [
       {
         label: "View Report",
-        route: "admin/patient-record/",
+        route: "doctor-group/view-patient-record/",
         type: 'internallink',
         param: ['_id'],
       },
