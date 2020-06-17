@@ -134,6 +134,7 @@ import { EncounterFormRulesComponent } from '../components/common/encounter-form
 // import {RescheduleAppointmentComponent} from "../components/booked-events-listing/reschedule-appointment/reschedule-appointment.component";
 import { CptValidateReportsComponent } from '../components/admin/cpt-validate-reports/cpt-validate-reports/cpt-validate-reports.component';
 import { ReportsDetailsComponent } from '../components/admin/reports-details/reports-details/reports-details.component';
+import {ApprovedPatientReportsComponent} from '../components/admin/admin-dashboard/approved-patient-reports/approved-patient-reports.component'
 
 const routes: Routes = [
   /********** Auth Route Start **********/
@@ -274,6 +275,7 @@ const routes: Routes = [
   /********** Admin Routes Start **********/
   {
     path: 'admin/dashboard',
+    // loadChildren: () => import('../components/admin/admin-dashboard/approved-patient-reports/approved-patient-reports.component').then(m => m.ApprovedPatientReportsComponent),
     component: AdminDashboardComponent,
     canActivate: [AuthguardService],
     resolve: { dataCount: ResolveService },
@@ -340,6 +342,58 @@ const routes: Routes = [
   /* Patient Management */
   {
     path: 'admin/patient-record/:_id',
+    component: PatientReportViewComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'report-view'
+    },
+  },
+  {
+    path: 'doctor/patient-record/:_id',
+    component: PatientReportViewComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'report-view'
+    },
+  },
+  {
+    path: 'distributors/patient-record/:_id',
+    component: PatientReportViewComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'report-view'
+    },
+  },
+  {
+    path: 'doctor-group/patient-record/:_id',
+    component: PatientReportViewComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'report-view'
+    },
+  },
+  {
+    path: 'diagnostic-admin/patient-record/:_id',
     component: PatientReportViewComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
@@ -875,17 +929,17 @@ const routes: Routes = [
   },
 
   {
-    path: 'distributors/sales-person-management',
+    path: 'diagnostic-admin/sales-person-management',
     component: ListSalesPersonComponent,
     canActivate: [AuthguardService]
   },
   {
-    path: 'distributors/sales-person-management/add',
+    path: 'diagnostic-admin/sales-person-management/add',
     component: AddEditSalesPersonComponent,
     canActivate: [AuthguardService]
   },
   {
-    path: 'distributors/sales-person-management/edit/:_id',
+    path: 'diagnostic-admin/sales-person-management/edit/:_id',
     component: AddEditSalesPersonComponent,
     canActivate: [AuthguardService],
     resolve: { techData: ResolveService },
