@@ -86,7 +86,7 @@ export class TechDashboardComponent implements OnInit {
     custombuttons: [
       {
         label: "View Report",
-        route: "admin/patient-record/",
+        route: "tech/view-patient-record/",
         type: 'internallink',
         param: ['_id'],
       },

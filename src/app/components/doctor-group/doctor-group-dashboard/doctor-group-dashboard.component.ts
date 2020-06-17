@@ -90,7 +90,7 @@ export class DoctorGroupDashboardComponent implements OnInit {
     custombuttons: [
       {
         label: "View Report",
-        route: "doctor-group/patient-record/",
+        route: "doctor-group/view-patient-record/",
         type: 'internallink',
         param: ['_id'],
       },

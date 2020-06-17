@@ -109,7 +109,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
     custombuttons: [
       {
         label: "View Report",
-        route: "diagnostic-admin/patient-record/",
+        route: "diagnostic-admin/view-patient-record/",
         type: 'internallink',
         param: ['_id'],
       },

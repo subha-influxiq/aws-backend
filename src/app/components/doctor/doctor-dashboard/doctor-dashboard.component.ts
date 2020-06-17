@@ -68,7 +68,7 @@ export class DoctorDashboardComponent implements OnInit {
     custombuttons: [
       {
         label: "View Report",
-        route: "doctor/patient-record/",
+        route: "doctor/view-patient-record/",
         type: 'internallink',
         param: ['_id'],
       },
