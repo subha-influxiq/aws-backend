@@ -71,7 +71,7 @@ export class AdminDashboardComponent implements OnInit {
     custombuttons: [
       {
         label: "View Report",
-        route: "admin/patient-record/",
+        route: "admin/view-patient-record/",
         type: 'internallink',
         param: ['_id'],
       },
