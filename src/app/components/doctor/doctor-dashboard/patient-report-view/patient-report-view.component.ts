@@ -30,7 +30,8 @@ export class PatientReportViewComponent implements OnInit {
     allResolveData: "",
     sliderCount: 0,
     sendToBiller: true,
-    sendButton: [ "Sign & Back", "Sign & Next" ]
+    sendButton: [ "Sign & Back", "Sign & Next" ],
+    defaultLoadingImage: "https://www.drupal.org/files/issues/throbber_12.gif"
   };
   public cookiesData: any = {};
 
@@ -81,6 +82,12 @@ export class PatientReportViewComponent implements OnInit {
   ngOnInit() {
     this.activeRoute.data.forEach((data) => {
       this.htmlText.allResolveData = data.data.data;
+      
+      for(let loopIndex in this.htmlText.allResolveData.reportData[0].images) {
+        this.htmlText.allResolveData.reportData[0].images[loopIndex].image_url = this.htmlText.allResolveData.reportData[0].file_basepath + this.htmlText.allResolveData.reportData[0].images[loopIndex].name;
+        this.htmlText.allResolveData.reportData[0].images[loopIndex].show = false;
+      }
+      
       this.htmlText.orginalData = data.data.data_2[0];
 
       if(typeof(this.cookiesData.doctor_signature) != 'undefined') {

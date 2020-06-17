@@ -263,7 +263,11 @@
       <section *ngIf="htmlText.allResolveData.reportData[0].report_type == 'file'">
         <mat-card-content class="document_wrapper">
           <span class="imageGallery">
-            <img src="{{ htmlText.allResolveData.reportData[0].file_basepath }}{{ htmlText.allResolveData.reportData[0].images[htmlText.sliderCount].name }}">
+            <ng-container *ngFor="let image of htmlText.allResolveData.reportData[0].images; let i = index;">
+              <ng-container *ngIf="htmlText.sliderCount == i">
+                <img [defaultImage]="'../../../../../assets/images/image-loader.svg'" [lazyLoad]="htmlText.allResolveData.reportData[0].images[i].image_url" />
+              </ng-container>
+            </ng-container>
           </span>
           <mat-card-content>
             <button mat-fab class="prev" type="button" (click)="playSlider('preview');">
