@@ -284,7 +284,7 @@
 
   <!-- Share doctor sign up link -->
   <app-doctor-signup-share [shareDetails]="shareDetails"></app-doctor-signup-share>
-  
+
 
   <!-- All Data listing start here(default listing) -->
   <mat-card-content class="table_wrapper">
@@ -305,7 +305,7 @@
         </button>
       </span>
     </mat-toolbar>
-<<<<<<< HEAD
+ 
 
     <mat-toolbar class="action_bar">
       <!-- <mat-form-field>
@@ -350,36 +350,22 @@
       </ng-container>
 
     </mat-toolbar>
-=======
->>>>>>> c62edbf573c1db312a17f78fff1307b28ca96a77
-    
-    <div class="tablewrapper">
-      <!-- table -->
-      <lib-listing
-      class="DataTable" 
-      *ngIf="allBillerData.length>0" 
-      [datasource]="allBillerData" 
-      [skip]="allUserData_skip"
-      [modify_header_array]="allUserData_modify_header" 
-      [detail_skip_array]="previewModal_detail_skip" 
-      [apiurl]="apiUrl"
-      [sourcedata]="tableName" 
-      [editroute]="editUrl" 
-      [jwttoken]="jwtToken" 
-      [statusarr]="status"
-      [updateendpoint]="UpdateEndpoint" 
-      [deleteendpoint]="deleteEndpoint" 
-      [date_search_endpoint]="SearchingEndpoint"
-      [date_search_source]="SearchingSourceName" 
-      [search_settings]="search_settings" 
-      [sortdata]="sortdata" 
-      [datacollection]="datacollection" 
-      [libdata]="libdata" 
-      [date_search_source_count]="billerData_count" 
-      [limitcond]="limitcond" >
-    </lib-listing>
-    </div>
-    
+ 
+     
+    <mat-card-content class="tablewrapper admin_dashboard">
+        <!-- table -->
+        <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData"
+          [skip]="allUserData_skip" [modify_header_array]="allUserData_modify_header"
+          [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl" [sourcedata]="tableName"
+          [editroute]="editUrl" [jwttoken]="jwtToken" [statusarr]="status" [updateendpoint]="UpdateEndpoint"
+          [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
+          [date_search_source]="SearchingSourceName" [search_settings]="search_settings" [sortdata]="sortdata"
+          [datacollection]="datacollection" [libdata]="libdata" [date_search_source_count]="billerData_count"
+          [limitcond]="limitcond">
+        </lib-listing>
+    </mat-card-content>
+ 
+ 
   </mat-card-content>
 
 
