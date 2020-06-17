@@ -198,6 +198,8 @@ align-items: flex-start; }
   .encounter_rules .admin_superbillsection .greenbar p { font-size: 38px; position: inherit; background: #fff; padding: 16px 0px 0; }
   .encounter_rules .admin_superbillsection .greenbar { height: auto; background-size: 220%;
   background-position: 100% top; padding: 16px; padding-top: 54%; background-color: #fff; text-align: center; }
+  .admin_wrapper .content_wrapper .itemsection .icon { height: 60px; }
+  .admin_wrapper .content_wrapper .itemsection .icon img{ height:100%;}
 }
 @media screen and (max-width: 840px){                      
   .quickRef .report_wrapper .items_w { width: 48%; margin: 1%;  }
@@ -375,5 +377,7 @@ align-items: flex-start; }
   .job_reprt_wrapper .itm .report_image_w .image_items img { height: auto;}
   .job_modal_wr .mat-dialog-actions button { font-size: 14px; }
   .job_reprt_wrapper .job_reprt_action { justify-content: center; }
+  .admin_dashboard .container .searchbar .search_class { margin-bottom: 0; }
+  .container .searchbar .add_button { margin: 0; margin-left: 20px; }
 }                                            
  
