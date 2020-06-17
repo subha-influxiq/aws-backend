@@ -189,6 +189,8 @@ align-items: flex-start; }
   .calenderView .calendar_wrapper { width: 90%!important; }
   .report_action_wrapper { flex-direction: column;}
   .report_action_wrapper button { margin-right: 0px; margin-bottom: 10px;}
+  .mat-bottom-sheet-container { max-width: 80vw!important; }
+
 }
 @media screen and (max-width: 900px){
   .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item,
