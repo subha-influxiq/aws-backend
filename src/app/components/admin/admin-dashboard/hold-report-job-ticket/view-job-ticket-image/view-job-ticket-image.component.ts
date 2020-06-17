@@ -15,6 +15,7 @@ export interface DialogData {
 export class ViewJobTicketImageComponent {
 
   public imageLoader: boolean;
+  public defaultLoadingImage: any = "https://www.drupal.org/files/issues/throbber_12.gif"
 
   constructor(public dialogRef: MatDialogRef<ViewJobTicketImageComponent>, @Inject(MAT_DIALOG_DATA) public data: DialogData) {
   }

@@ -29,7 +29,8 @@ export class HoldReportJobTicketComponent implements OnInit {
     oldTickets: [],
     reportId: '',
     ckEditorValue: '',
-    ckeditorError: false
+    ckeditorError: false,
+    defaultLoadingImage: "https://www.drupal.org/files/issues/throbber_12.gif"
   };
 
   public configData: any = {

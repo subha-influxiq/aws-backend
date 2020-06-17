@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { DeferLoadModule } from '@trademe/ng-defer-load';
+import { LazyLoadImageModule, ScrollHooks } from 'ng-lazyload-image';
+
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadOutput, UploadInput, UploadFile, UploaderOptions } from 'ngx-uploader'
@@ -180,7 +182,7 @@ import { ApprovedPatientReportsComponent } from './components/admin/admin-dashbo
 import { DoctorSignupShareComponent } from './components/common/doctor-signup-share/doctor-signup-share.component';
 import { ApprovedPatientReportsBilleradminComponent } from './components/adminbiller/approved-patient-reports/approved-patient-reports-billeradmin/approved-patient-reports-billeradmin.component';
 import { HoldReportJobTicketComponent } from './components/admin/admin-dashboard/hold-report-job-ticket/hold-report-job-ticket.component';
-import {CptValidateReportsComponent} from './components/admin/cpt-validate-reports/cpt-validate-reports/cpt-validate-reports.component'
+import { CptValidateReportsComponent } from './components/admin/cpt-validate-reports/cpt-validate-reports/cpt-validate-reports.component'
 import { ReportsDetailsComponent } from './components/admin/reports-details/reports-details/reports-details.component';
 import { JobTicketPatientReportsComponent } from './components/admin/admin-dashboard/job-ticket-patient-reports/job-ticket-patient-reports.component';
 import { ViewJobTicketImageComponent } from './components/admin/admin-dashboard/hold-report-job-ticket/view-job-ticket-image/view-job-ticket-image.component';
@@ -360,6 +362,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     SatDatepickerModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     DeferLoadModule,
+    LazyLoadImageModule,
     MetaModule.forRoot(),
     AppRoutingModule,
     CommonModule,

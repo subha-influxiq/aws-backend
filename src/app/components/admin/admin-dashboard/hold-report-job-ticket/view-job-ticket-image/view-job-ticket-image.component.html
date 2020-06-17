@@ -2,7 +2,7 @@
 
 <mat-card class="job_modal_wr">
     <div class="content_jobview">
-        <img [src]="data.allImages[data.selectImageIndex].basepath + data.allImages[data.selectImageIndex].fileservername" />
+        <img style="cursor: pointer;" [defaultImage]="'../../../../../../assets/images/image-loader.svg'" [lazyLoad]="data.allImages[data.selectImageIndex].basepath + data.allImages[data.selectImageIndex].fileservername" />
     </div>
  
     <mat-dialog-actions align="end">
