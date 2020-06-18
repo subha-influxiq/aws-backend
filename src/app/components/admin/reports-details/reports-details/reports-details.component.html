@@ -23,7 +23,7 @@
 <!-- Doctor Office Header -->
 <app-doctor-office-header *ngIf="loginUserData.user_details.user_details.user_type == 'doctor_office'"></app-doctor-office-header>
 
-
+<mat-card class="admin_wrapper">
 <mat-card-content class="table_wrapper admin_dashboard">
 
   <!-- table -->
@@ -39,5 +39,5 @@
 </mat-card-content>
 
   <h2 *ngIf="allBillerData.length == 0">No record found.</h2>
-
+</mat-card>
   <app-admin-footer></app-admin-footer>
