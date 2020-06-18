@@ -48,6 +48,15 @@
             Insurance Type </button>
         </mat-menu>
 
+        <a mat-list-item routerLinkActive="active" [matMenuTriggerFor]="reports"> Reports
+          <i class="material-icons">keyboard_arrow_down</i>
+        </a>
+        <mat-menu #reports="matMenu">
+          <button mat-menu-item [routerLink]="" routerLinkActive="active"> CPT Validated Reports for Rep </button>
+          <button mat-menu-item [routerLink]="['/admin/sales-person/doctor-management']" routerLinkActive="active"> Doctor Joined by Rep </button>
+        </mat-menu>
+
+
 
         <a mat-list-item [routerLink]="['/admin/booked-appoinments']" routerLinkActive="active">Appointments</a>
 
