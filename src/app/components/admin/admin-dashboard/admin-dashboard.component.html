@@ -355,9 +355,23 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total No of <br>
-            Images Not Processed
-          </p>
+
+
+          <span class="counter_with_tool">
+            <p>Total No of <br>
+              Images Not Processed
+            </p>
+            <!-- tool tip -->
+            <span class="tolTip">
+              <a mat-raised-button #ImagesNotProcessed="matTooltip"
+                matTooltip="Data listed for the total number of reports that the system yet to process."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="ImagesNotProcessed.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <h2> {{ allResolveData.total_pdf_to_images_not_process }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Images Not Processed')">view all</button>
         </span>
@@ -373,9 +387,22 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total No of <br>
-            Basic Details Not Processed
-          </p>
+
+          <span class="counter_with_tool">
+            <p>Total No of <br>
+              Basic Details Not Processed
+            </p>
+            <!-- tool tip -->
+            <span class="tolTip">
+              <a mat-raised-button #DetailsNotProcessed="matTooltip"
+                matTooltip="Data listed for the total number of the basic details for the uploaded patient’s reports that are yet to be processed by the system."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="DetailsNotProcessed.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <h2> {{ allResolveData.total_basic_details_not_process }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Basic Details Not Processed')">view all</button>
         </span>
@@ -389,9 +416,22 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total No of <br>
-            Risk Markers Not Processed
-          </p>
+
+          <span class="counter_with_tool">
+            <p>Total No of <br>
+              Risk Markers Not Processed
+            </p>
+            <!-- tool tip -->
+            <span class="tolTip">
+              <a mat-raised-button #riskMarkers="matTooltip"
+                matTooltip="Data listed for the total number of the risk markers for the uploaded patient’s reports that are yet to be processed by the system."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="riskMarkers.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <h2> {{ allResolveData.total_code_not_exists }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Risk Markers Not Processed')">view all</button>
         </span>
@@ -690,5 +730,3 @@
 </mat-card>
 
 <app-admin-footer></app-admin-footer>
-
- 
