@@ -90,64 +90,8 @@
   <mat-card-content class="table_wrapper">
 
     <mat-toolbar class="top_header">
-      <h2> Doctor's List</h2>
-      
-      <!-- <span class="wrappp_R">
-        <button class="add_new tooltip" mat-button (click)="refreshDashboard();" matTooltipPosition="above"
-          matTooltip="ReportRefresh Dashboard">
-          <i class="material-icons">cached</i>
-        </button>
-      </span> -->
+      <h2> Doctor Joining Report</h2>
     </mat-toolbar>
-
-    <!-- <mat-toolbar class="action_bar"> -->
-      <!-- <mat-form-field>
-        <input matInput placeholder="Search by Name">
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput placeholder="Search by Email">
-      </mat-form-field>
-
-      <mat-form-field class="parent_cat">
-        <mat-select>
-          <mat-option value="">Select a no:'1', doctors_name</mat-option>
-          <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
-          <mat-option value="doctor signed">Doctor Signed</mat-option>
-          <mat-option value="send to biller">Send To Biller</mat-option>
-          <mat-option value="error">Error</mat-option>
-          <mat-option value="pending">Pending</mat-option>
-        </mat-select>
-      </mat-form-field> -->
-
-      <!-- Filter by date -->
-      <!-- <ng-container>
-      <span class="date-range">
-        <mat-form-field>
-          <input matInput placeholder="Choose a date" [satDatepicker]="picker" [(ngModel)]="searchJson.dateRange" />
-          <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
-          <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
-        </mat-form-field>
-      </span>
-      <span class="resetButton_w">
-        <button mat-raised-button type="button" class="add_button tooltip"
-          (click)="viewReportProcessData(htmlText.headerText);">
-          <span class="tooltiptext"> Search </span>
-          <i class="material-icons">search</i>
-        </button>
-
-        <button mat-raised-button type="button" class="add_button tooltip" (click)="resetSearch();">
-          <span class="tooltiptext"> Reset </span>
-          <i class="material-icons">replay</i>
-        </button>
-      </span>
-    </ng-container> -->
- 
-      <!-- <span class="button_action">
-        <button mat-button>Search</button>
-        <button mat-button>Reset</button>
-      </span> -->
-    <!-- </mat-toolbar> -->
     <mat-card-content class="tablewrapper">
       <lib-listing class="DataTable manageDoctor" *ngIf="docData.length>0" [datasource]="docData" [skip]="docData_skip"
         [modify_header_array]="docData_modify_header" [sourcedata]="tableName" [detail_skip_array]="previewModal_skip"
@@ -158,6 +102,16 @@
       </lib-listing>
     </mat-card-content>
   </mat-card-content> 
+  <mat-card-content class="table_wrapper">
+
+    <mat-toolbar class="top_header">
+      <h2> CPT Validated Amount Report</h2>
+    </mat-toolbar>
+    <mat-card-content class="tablewrapper">
+      <app-cpt-validate-report-sales-person></app-cpt-validate-report-sales-person>
+    </mat-card-content>
+  </mat-card-content> 
+  
 </section>
 
 
