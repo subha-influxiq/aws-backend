@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { DeferLoadModule } from '@trademe/ng-defer-load';
-import { LazyLoadImageModule, ScrollHooks } from 'ng-lazyload-image';
 
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -365,8 +364,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     SatDatepickerModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     DeferLoadModule,
-    //LazyLoadImageModule,
-    LazyLoadImageModule.forRoot(ScrollHooks),
     MetaModule.forRoot(),
     AppRoutingModule,
     CommonModule,

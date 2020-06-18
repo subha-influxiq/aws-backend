@@ -296,4 +296,8 @@ export class HoldReportJobTicketComponent implements OnInit {
     });
   }
 
+  hideLoader() {
+    console.log("complete...");
+  }
+
 }
