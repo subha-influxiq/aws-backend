@@ -2,22 +2,24 @@
 
 <!-- Admin Biller Header -->
 
-<app-adminbiller-header *ngIf="loginUserData.user_details.user_details.user_type == 'admin_biller'"></app-adminbiller-header>
+<app-adminbiller-header *ngIf="loginUserData.user_details.user_details.user_type == 'admin_biller'">
+</app-adminbiller-header>
 
-<mat-card-content class="table_wrapper admin_dashboard">
+<mat-card class="admin_wrapper"> 
+  <mat-card-content class="table_wrapper admin_dashboard">
 
-  <!-- table -->
-  <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData" [skip]="allUserData_skip"
-    [modify_header_array]="allUserData_modify_header" [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl"
-    [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="jwtToken" [statusarr]="status"
-    [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
-    [date_search_source]="SearchingSourceName" [search_settings]="search_settings" [sortdata]="sortdata"
-    [datacollection]="datacollection" [libdata]="libdata" [date_search_source_count]="billerData_count"
-    [limitcond]="limitcond">
-  </lib-listing>
-  <h2 *ngIf="allBillerData.length == 0">No record found.</h2>
-</mat-card-content>
+    <!-- table -->
+    <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData" [skip]="allUserData_skip"
+      [modify_header_array]="allUserData_modify_header" [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl"
+      [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="jwtToken" [statusarr]="status"
+      [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
+      [date_search_source]="SearchingSourceName" [search_settings]="search_settings" [sortdata]="sortdata"
+      [datacollection]="datacollection" [libdata]="libdata" [date_search_source_count]="billerData_count"
+      [limitcond]="limitcond">
+    </lib-listing>
+    <h2 *ngIf="allBillerData.length == 0">No record found.</h2>
+  </mat-card-content>
 
-  
+</mat-card>
 
-  <app-admin-footer></app-admin-footer>
+<app-admin-footer></app-admin-footer>

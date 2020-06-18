@@ -141,8 +141,8 @@ export class AdminDashboardComponent implements OnInit {
   endpoint:'get-parent-details',
   datafields: ['Parent Name','Contact Person','email','phone','address','city','state','zip'],
   // otherparam:["patient_name"],
-  // cond:"parent_check_flag",
-  // condval:0,
+  cond:"parent_check_flag",
+  condval:1,
   param:'id',
   headermessage: 'Parent Information',
   // refreshdata:true

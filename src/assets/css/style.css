@@ -206,6 +206,7 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 
  td.mat-cell br, td.mat-footer-cell br, th.mat-header-cell br{ display: none; }
  /* .mat-bottom-sheet-container-large { border: 2px solid #ffbc36!important; } */
+ .mat-bottom-sheet-container { background: #ccf6ff!important;}
  .mat-bottom-sheet-container .mat-nav-list .mat-list-item {  height: 46px!important;
   background: var(--button-color2); margin-bottom: 10px; color: #fff; font-family: 'AvenirMedium'; }
 .mat-bottom-sheet-container .mat-nav-list .mat-list-item:hover{ background: var(--button-color1)!important;}
@@ -312,7 +313,15 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
   text-transform: capitalize; border-bottom: 1px solid #9c9c9c; padding: 10px 8px; background: #e0e5eb;
   margin: 0 6px 10px;}
 .headr_tagh{ font-size: 20px; font-family: 'AvenirMedium'; color: #535353;
-  text-transform: capitalize; border-bottom: 1px solid #9c9c9c; padding: 10px 8px; background: #e0e5eb;
+  text-transform: capitalize; border-bottom: 1px solid #9c9c9c; padding: 16px 8px; background: #e0e5eb;
+}
+
+.headr_tagh h1{
+  font-size: 20px;
+    font-family: 'AvenirMedium';
+    color: #535353;
+    text-transform: capitalize; 
+    margin: 0;
 }
 .admin_superbillsection .biller_wrapper  { display: flex; justify-content: center; margin-bottom: 0;}
 .admin_superbillsection .biller_wrapper .super_bill_item{ position: relative; width: 100%; margin: .5%; padding:10px; display: flex;  padding-top: 2%; border-radius: 10px; }
@@ -773,10 +782,19 @@ font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radi
   margin-left: 4px;
 }
 .tolTip a{
-  padding: 0; line-height: inherit; background: transparent; box-shadow: none!important; min-width: inherit; margin-top: 10px;
+  padding: 0; line-height: inherit; background: transparent; box-shadow: none!important; min-width: inherit;
 }
 
 .tolTip a.toggle_btn{ color: #313131;}
 .tolTip a.toggle_btn .material-icons{  font-size: 22px; color: #d83b28; }
+.superbillerContainer .tolTip{  margin-top: 8px;}
 .superbillerContainer .tolTip a.toggle_btn .material-icons{  font-size: 22px; color: #fff; }
-.tooltip_bg{  background: #b71c1c!important;} 
+.tooltip_bg{background:#fff!important; color: #000!important; font-size: 14px!important; position: relative;
+font-family: 'AvenirMedium'!important; opacity: 1!important; border: 1px solid rgb(177, 175, 175);} 
+ 
+/* modal close button */
+.maindialognew{ position: relative;}
+.maindialognew .close-btn-modal{ float: none!important;
+color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
+
+ 
