@@ -139,8 +139,8 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .custom-modalbox .mat-dialog-container .mat-card  { background: rgba(0,0,0, 0.1); border-radius: 0; display: flex; justify-content: center; align-items: end; margin-bottom: 16px;}
 .custom-modalbox .mat-dialog-container .mat-card  .mat-card-header-text { margin: 0; text-transform: capitalize; color: #000; font-family: "AvenirMedium";}
 /* .custom-modalbox .mat-dialog-container .mat-button-base { background: rgb(185, 125, 45); color: #fff; text-transform: uppercase; min-width: 120px; border-radius: 0;} */
-.custom-modalbox .example-card .mat-card-header { min-width: 280px; position: relative; }
-.custom-modalbox .example-card .mat-card-header .mat-card-title { margin-bottom: 0px; font-size: 18px; font-family: "AvenirLight"; }
+.custom-modalbox .example-card .mat-card-header { min-width: 280px; position: relative; padding-right: 14px; }
+.custom-modalbox .example-card .mat-card-header .mat-card-title { margin-bottom: 0px; font-size: 16px; font-family: "AvenirLight"; }
 .custom-modalbox .example-card .mat-card-header::before { content: ':'; display: inline-block; font-size: 30px; position: absolute; right: -6px; top: -5px; padding-right: 10px; }
 .custom-modalbox .example-card .mat-card-content { width: 100%; }
 
@@ -250,7 +250,7 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 
 .infomodal{ overflow: auto; width: 991px;}
 /* admin css */
-.admin_wrapper{ width: 1400px; margin: 20px auto; box-sizing: border-box; margin-bottom: 70px; padding: 5px!important; background: #f1f1f1!important;}
+.admin_wrapper{ width: 1400px; margin: 20px auto; box-sizing: border-box; margin-bottom: 70px; padding: 10px!important; background: #f1f1f1!important;}
 .searchcard { padding: 0; } 
 
 /* admin css */ 
@@ -346,7 +346,9 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(3) span button{ color: #066d7a;  }
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(4) span button{ color: #911228;  }
 
-.admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper{ width: 20%; position: relative; padding: 0; display: flex; padding-top: 4%; box-sizing: border-box; }
+.admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper{ width: 20%; position: relative; padding: 0; display: flex; box-sizing: border-box;
+  /* padding-top: 4%;  */
+}
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle{ margin: 0;}
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle img{ max-width: 100%;}
 .superbillerContainer .biller_wrapper .super_bill_item span P{ font-size: 18px!important; line-height: 20px!important;}
@@ -355,12 +357,11 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .superbillerContainer .biller_wrapper .super_bill_item {background-size: 90px!important; }
 
 .adminTables .viewButton{ background-color:var(--button-color2); width: auto; height: auto; line-height: initial; padding: 2px 10px; box-shadow: none; border-radius: 2px; font-family: "AvenirMedium"; color: #fff; min-width: inherit;}
-.adminTables .editButton{ background-color:var(--button-color1); width: auto; height: auto; line-height: initial; padding: 2px 10px; box-shadow: none; border-radius: 2px;
-  font-family: "AvenirMedium"; color: #fff; min-width: inherit;}
+.adminTables .editButton{ background-color:var(--button-color1); width: auto; height: auto; line-height: initial; padding: 2px 10px; box-shadow: none; border-radius: 2px; font-family: "AvenirMedium"; color: #fff; min-width: inherit;}
 .adminTables .downloadBtn,
 .adminTables .downloadBtn{ margin-left: 5px; background: #ff5370; }
 .admin_table .action_bar .date-range{ width: 36%; justify-content: space-between; display: flex;}
-.table_wrapper { margin:  0 6px;}
+/* .table_wrapper { margin:  0 6px;} */
 .table_wrapper .mat-table { width: 100%; box-shadow: none; }
 .table_wrapper .mat-table .mat-cell .mat-form-field-appearance-outline .mat-form-field-wrapper { margin: 0;  padding: 0; }
 .table_wrapper .button_action{ display: block; text-align: center; margin-top: 16px;}
@@ -489,6 +490,9 @@ color: #fff; padding:10px 6px; font-family: 'AvenirBlack'; text-transform: upper
 .mat-dialog-container .mat-dialog-content .submit_form button{ font-family: 'AvenirBlack'; text-transform: uppercase; color: #fff; background: var(--button-color2);}
 .mat-dialog-container .mat-dialog-content .submit_form button:last-child{ background: var(--button-color3);}
 .mat-dialog-container .mat-dialog-content p{ text-align: center; color: var(--button-color2); font-size: 18px; white-space: normal; word-break: break-all; font-family: 'AvenirMedium';}
+.mat-dialog-container .mat-dialog-content .innerhtml-content{ text-align: left;
+ color: #1f1e1e; font-size: 16px; white-space: normal; word-break: break-all; font-family: 'AvenirLight';}
+ 
 .mat-dialog-container .mat-dialog-actions { display: flex; flex-wrap: wrap; min-height: inherit; align-items: center; justify-content: center; margin-bottom: 0;}
 .mat-dialog-container .mat-dialog-actions button{ background: linear-gradient(45deg, var(--button-color1), #e2b400);
 color: #fff; min-width: 100px; font-family: 'AvenirMedium'; font-size: 18px;}
@@ -788,6 +792,7 @@ font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radi
 .tolTip a.toggle_btn{ color: #313131;}
 .tolTip a.toggle_btn .material-icons{  font-size: 22px; color: #d83b28; }
 .superbillerContainer .tolTip{  margin-top: 8px;}
+ .admin_superbillsection  .container_wrapper .tolTip a.toggle_btn .material-icons,
 .superbillerContainer .tolTip a.toggle_btn .material-icons{  font-size: 22px; color: #fff; }
 .tooltip_bg{background:#fff!important; color: #000!important; font-size: 14px!important; position: relative;
 font-family: 'AvenirMedium'!important; opacity: 1!important; border: 1px solid rgb(177, 175, 175);} 
