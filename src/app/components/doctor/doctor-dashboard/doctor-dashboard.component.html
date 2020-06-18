@@ -372,7 +372,18 @@
         </span>
 
         <span class="container_wrapper">
-          <p>MANAGE YOUR SIGNATURE</p>
+          <span class="counter_with_tool">
+            <p>MANAGE YOUR SIGNATURE</p>
+            <span class="tolTip">
+              <a mat-raised-button #manageSignature="matTooltip"
+                matTooltip="Here the doctor can manage their signature by updating their signature if required."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="manageSignature.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <button mat-flat-button [routerLink]="['/doctor/signature-management']">SIGN</button>
         </span>
       </mat-card-content>
@@ -412,7 +423,19 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total Numbers of <br> Reports Processed</p>
+          <span class="counter_with_tool">
+            <p>Total Numbers of <br> Reports Processed</p>
+            <span class="tolTip">
+              <a mat-raised-button #reportsProcessed="matTooltip"
+                matTooltip="Data listed for the total number of reports processed by the system."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="reportsProcessed.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
+
           <h2> 112 </h2>
           <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
         </span>
@@ -426,7 +449,18 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total Numbers of <br> Reports Pending Signature</p>
+          <span class="counter_with_tool">
+            <p>Total Numbers of <br> Reports Pending Signature</p>
+            <span class="tolTip">
+              <a mat-raised-button #reportsPending="matTooltip"
+                matTooltip="Data listed for the total number of reports yet to be signed by the doctor."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="reportsPending.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <h2> 212 </h2>
           <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
         </span>
@@ -435,49 +469,85 @@
 
     <mat-card-content class="admin_superbillsection">
       <mat-card-content class="biller_wrapper">
-      <mat-card-content class="super_bill_item sp_two">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon2.png">
-          </mat-card-content>
-        </span>
+        <mat-card-content class="super_bill_item sp_two">
+          <span class="border_wrapper">
+            <mat-card-content class="circle">
+              <img src="../../../../assets/images/reporticon2.png">
+            </mat-card-content>
+          </span>
 
-        <span class="container_wrapper">
-          <p> Total Numbers of <br> Reports Asked for Review</p>
-          <h2> 76 </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
-        </span>
+          <span class="container_wrapper">
+
+            <span class="counter_with_tool">
+              <p> Total Numbers of <br> Reports Asked for Review</p>
+              <span class="tolTip">
+                <a mat-raised-button #reportsReview="matTooltip"
+                  matTooltip="Data listed for the total of reports, that admins or biller admins asked for a review."
+                  matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+                </a>
+                <a mat-button (click)="reportsReview.toggle()" class="toggle_btn" aria-label=" toggle section">
+                  <span class="material-icons"> help_outline </span>
+                </a>
+              </span>
+            </span>
+            <h2> 76 </h2>
+            <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
+          </span>
+        </mat-card-content>
+
+        <mat-card-content class="super_bill_item sp_two">
+          <span class="border_wrapper">
+            <mat-card-content class="circle">
+              <img src="../../../../assets/images/reporticon2.png">
+            </mat-card-content>
+          </span>
+
+          <span class="container_wrapper">
+
+            <span class="counter_with_tool">
+              <p> Total Numbers of <br> Reports Sent to Biller</p>
+              <span class="tolTip">
+                <a mat-raised-button #reportsBiller="matTooltip"
+                  matTooltip="Data listed for the total numbers of reports signed by the doctor and sent to the biller."
+                  matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+                </a>
+                <a mat-button (click)="reportsBiller.toggle()" class="toggle_btn" aria-label=" toggle section">
+                  <span class="material-icons"> help_outline </span>
+                </a>
+              </span>
+            </span>
+            <h2> 92 </h2>
+            <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
+          </span>
+        </mat-card-content>
+
+        <mat-card-content class="super_bill_item sp_two">
+          <span class="border_wrapper">
+            <mat-card-content class="circle">
+              <img src="../../../../assets/images/reporticon2.png">
+            </mat-card-content>
+          </span>
+
+          <span class="container_wrapper">
+         
+            <span class="counter_with_tool">
+              <p>Total Numbers of <br> Reports Downloaded by Biller</p>
+              <span class="tolTip">
+                <a mat-raised-button #reportsDownloaded="matTooltip"
+                  matTooltip="The data available for the total of reports the biller downloaded."
+                  matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+                </a>
+                <a mat-button (click)="reportsDownloaded.toggle()" class="toggle_btn" aria-label=" toggle section">
+                  <span class="material-icons"> help_outline </span>
+                </a>
+              </span>
+            </span>
+            <h2> 155 </h2>
+            <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
+          </span>
+        </mat-card-content>
+
       </mat-card-content>
-
-      <mat-card-content class="super_bill_item sp_two">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon2.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p> Total Numbers of <br> Reports Sent to Biller</p>
-          <h2> 92 </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
-        </span>
-      </mat-card-content>
-
-      <mat-card-content class="super_bill_item sp_two">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon2.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total Numbers of <br> Reports Downloaded by Biller</p>
-          <h2> 155 </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
-        </span>
-      </mat-card-content>
-
-    </mat-card-content>
     </mat-card-content>
   </mat-card-content>
 
@@ -516,11 +586,11 @@
     </span>
 
     <div class="tablewrapper admin_dashboard">
-      
+
       <!-- table -->
       <lib-listing class="DataTable" *ngIf="allDocData.length>0" [datasource]="allDocData" [skip]="allUserData_skip"
-        [modify_header_array]="allUserData_modify_header" [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl"
-        [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="jwtToken" [statusarr]="status"
+        [modify_header_array]="allUserData_modify_header" [detail_skip_array]="previewModal_detail_skip"
+        [apiurl]="apiUrl" [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="jwtToken" [statusarr]="status"
         [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
         [date_search_source]="SearchingSourceName" [search_settings]="search_settings" [sortdata]="sortdata"
         [datacollection]="datacollection" [libdata]="libdata" [date_search_source_count]="docData_count"
@@ -534,5 +604,3 @@
 
 
 <app-admin-footer></app-admin-footer>
-
-
