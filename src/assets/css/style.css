@@ -346,7 +346,9 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(3) span button{ color: #066d7a;  }
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(4) span button{ color: #911228;  }
 
-.admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper{ width: 20%; position: relative; padding: 0; display: flex; padding-top: 4%; box-sizing: border-box; }
+.admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper{ width: 20%; position: relative; padding: 0; display: flex; box-sizing: border-box;
+  /* padding-top: 4%;  */
+}
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle{ margin: 0;}
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle img{ max-width: 100%;}
 .superbillerContainer .biller_wrapper .super_bill_item span P{ font-size: 18px!important; line-height: 20px!important;}
