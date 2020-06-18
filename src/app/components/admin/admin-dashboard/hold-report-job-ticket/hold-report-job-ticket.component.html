@@ -34,15 +34,13 @@
                         <mat-card-content class="image_items" *ngFor="let file of ticket.files; let fileIndex = index;"
                             (deferLoad)="file.show = true">
                             <ng-container *ngIf="file.show">
-                                <img style="cursor: pointer;"
+                                <!-- <img style="cursor: pointer;"
                                     [defaultImage]="'../../../../../assets/images/image-loader.svg'"
-                                    [lazyLoad]="file.image_path" />
-                                <!-- <img style="cursor: pointer;" [src]="file.image_path" /> -->
+                                    [lazyLoad]="file.image_path" /> -->
+                                <img style="cursor: pointer;" [src]="file.image_path" (load)="hideLoader();" />
                             </ng-container>
 
-                            <ng-container *ngIf="!file.show">
-                                <img [src]="'../../../../../assets/images/image-loader.svg'" />
-                            </ng-container>
+                            <mat-spinner *ngIf="!file.show"></mat-spinner>
 
                             <span class="report_action_wrapper">
                                 <button mat-button (click)="viewImage(ticketIndex, fileIndex);">preview</button>

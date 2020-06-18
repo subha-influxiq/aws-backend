@@ -343,7 +343,7 @@ const routes: Routes = [
   {
     path: 'admin/view-patient-record/:_id',
     component: PatientReportViewComponent,
-    canActivate: [AuthguardService],
+    //canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -382,7 +382,7 @@ const routes: Routes = [
   {
     path: 'doctor-group/view-patient-record/:_id',
     component: PatientReportViewComponent,
-    canActivate: [AuthguardService],
+    //canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -434,7 +434,7 @@ const routes: Routes = [
   {
     path: 'admin-biller/view-patient-record/:_id',
     component: PatientReportViewComponent,
-    canActivate: [AuthguardService],
+    //canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -1212,7 +1212,7 @@ const routes: Routes = [
   {
     path: 'diagnostic-admin/view-patient-record/:_id',
     component: PatientReportViewComponent,
-    canActivate: [AuthguardService],
+    //canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
