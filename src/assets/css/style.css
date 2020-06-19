@@ -130,7 +130,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .loader img{ max-width: 100%; }
 .DataTable .multipledeleteandupdatebuttan { display: block; margin-top: 16px; background: #e0e5eb; padding: 14px 8px;}
 .DataTable .multipledeleteandupdatebuttan button { background: var(--button-color1);
-  line-height: inherit; padding: 7px 10px; box-shadow: none; font-family: 'AvenirMedium';
+  line-height: inherit; padding: 4px 10px; box-shadow: none; font-family: 'AvenirMedium';
   font-size: 16px; min-width: 140px;}
 .DataTable .multipledeleteandupdatebuttan button:last-child{ background: var(--button-color2); margin-left: 5px; color: #fff; }
 
@@ -510,7 +510,7 @@ color: #fff; min-width: 100px; font-family: 'AvenirMedium'; font-size: 18px;}
 .sales_person_db .shareLi .in_w .social_media_wrapper{ display: flex; align-items: center; justify-content: center; }
 .sales_person_db .shareLi .in_w .social_media_wrapper button{ padding: 0; min-width: 36px; color: var(--button-color2);}
 .sales_person_db .shareLi .in_w  .social_media_wrapper button i{ font-size: 30px; }
-.table_list{ margin: 0px auto; width: auto;}
+.table_list{ margin: 0px auto; width: auto; margin-left: 5px; margin-right: 5px;}
 .sales_new_width .admin_wrapper{ width: auto; padding: 0!important; background: transparent!important; }
 
 .table_list .top_header { background:#f5f5f5}
@@ -553,8 +553,8 @@ color: #ffffff; text-align: inherit; display: inline-flex; align-items: center;}
 .searchbar .mat-form-field .mat-chip.mat-standard-chip .mat-chip-remove.mat-icon { margin: 0; }
 
 .multipledeleteandupdatebuttan button{ background: linear-gradient(40deg, #ff4081, #dc004b); color: #fff;
-margin: 0 5px;}
-.multipledeleteandupdatebuttan button:last-child{ background: linear-gradient(40deg, #21e289, #00c4fb); }
+  margin-right: 4px;}
+.multipledeleteandupdatebuttan button:last-child{ margin-right: 0; background: linear-gradient(40deg, #21e289, #00c4fb); }
 .DataTable .mat-card br{ display: none;}
 .DataTable .mat-card mat-label{ margin-right: 10px;}
 .DataTable .mat-card .tablewrapper { margin-bottom: 16px;}
