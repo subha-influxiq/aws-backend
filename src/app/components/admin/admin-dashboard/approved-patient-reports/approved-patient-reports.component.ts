@@ -153,6 +153,7 @@ export class ApprovedPatientReportsComponent implements OnInit {
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
+    hidedeletemany: true,
     hidestatustogglebutton: true,
     hideviewbutton: true,
     tableheaders: [

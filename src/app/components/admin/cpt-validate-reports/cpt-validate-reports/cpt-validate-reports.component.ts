@@ -18,7 +18,8 @@ export class CptValidateReportsComponent implements OnInit {
   public loginUserData: any = {};
   public jwtToken: string = "";
   public htmlText: any = {
-    headerText: "Patient Reports"
+    headerText: "Patient Reports",
+    path : {}
   };
   public allResolveData: any = {};
   public shareDetails: any = {
@@ -72,6 +73,7 @@ export class CptValidateReportsComponent implements OnInit {
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
+    hidedeletemany: true,
     hidestatustogglebutton: true,
     hideviewbutton: true,
     tableheaders: [
@@ -161,6 +163,9 @@ export class CptValidateReportsComponent implements OnInit {
       if(this.loginUserData.user_details.user_details.user_type == "admin_biller") {
         this.libdata.custombuttons[0].route = "admin-biller/reports-details"
       }
+      if(this.activatedRoute.snapshot.routeConfig.path == "admin/sales-person/cpt-reports") {
+        this.htmlText.path = {parent_user_type:"sales_person"}
+      }
 
     // lib list
     let endpoint = 'getcptreports';
@@ -173,7 +178,8 @@ export class CptValidateReportsComponent implements OnInit {
       sort: {
         "type": 'desc',
         "field": 'patient_name'
-      }
+      },
+      data:this.htmlText.path
     }
 
     this.http.httpViaPostbyApi1(endpointc, data).subscribe((res: any) => {

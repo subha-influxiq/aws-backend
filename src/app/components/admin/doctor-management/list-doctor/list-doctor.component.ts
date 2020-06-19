@@ -66,7 +66,7 @@ export class ListDoctorComponent implements OnInit {
     "name_search",
     "updated_at"
   ];
-  public tableName: any = 'users';
+  public tableName: any = 'data_pece';
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
   public user_cookie: any;
@@ -118,11 +118,16 @@ export class ListDoctorComponent implements OnInit {
 
     if(this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/doctor-management/edit';
-      this.field = {'parent_id':this.userData._id};
+      this.field = {'parent_id':this.userData._id,flag:0};
       this.data = this.userData._id;
     }
 
     if(this.userData.user_type == 'admin') {
+      if(this.activatedRoute.snapshot.routeConfig.path == "admin/sales-person/doctor-management") {
+        this.field = {parent_user_type:"sales_person"}
+      } else {
+      this.field = {flag:0}
+      }
       this.search_settings.textsearch.push({ label: "Search By Parent Name", field: 'parent_name_search' });
       this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type });
       this.libdata.tableheaders.splice(3,0,"parent_name");
@@ -131,17 +136,16 @@ export class ListDoctorComponent implements OnInit {
 
     if(this.userData.user_type == 'doctor_group') {
       this.editUrl = 'doctor-group/doctor-management/edit';
-      this.field = {'parent_id':this.userData._id};
+      this.field = {'parent_id':this.userData._id,flag:0};
       this.data = this.userData._id;
     }
     if(this.userData.user_type == 'distributors') {
       this.editUrl = 'distributors/doctor-management/edit';
-      this.field = {'parent_id':this.userData._id};
+      this.field = {'parent_id':this.userData._id,flag:0};
       this.data = this.userData._id;
     }
 
     this.libdata.basecondition = this.field;
-
     // console.log('libdata',this.libdata);
 
     this.apiUrl = http.baseUrl;
@@ -164,14 +168,21 @@ export class ListDoctorComponent implements OnInit {
     }
    
     if(this.userData.user_type == 'diagnostic_admin') {
-      this.fetch={'parent_id':  this.data}
+      this.fetch={'parent_id':  this.data ,flag:0}
     }
     if(this.userData.user_type == 'doctor_group') {
-      this.fetch={'parent_id':  this.data}
+      this.fetch={'parent_id':  this.data,flag:0}
     }
     if(this.userData.user_type == 'distributors') {
-      this.fetch={'parent_id':  this.data}
+      this.fetch={'parent_id':  this.data,flag:0}
     }
+    if(this.activatedRoute.snapshot.routeConfig.path == "admin/sales-person/doctor-management") {
+      this.fetch = {flag:1}
+    }
+    if(this.activatedRoute.snapshot.routeConfig.path == "admin/doctor-management") {
+      this.fetch = {flag:0}
+    }
+
     data.data = this.fetch;
     console.log('2222',data);
         this.http.httpViaPost(endpointc, data).subscribe((res:any) => {

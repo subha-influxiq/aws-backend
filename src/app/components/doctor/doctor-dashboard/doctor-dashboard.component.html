@@ -388,33 +388,6 @@
         </span>
       </mat-card-content>
 
-      <!-- <mat-card-content class="super_bill_item sp_two">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon2.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total Numbers of<br> Reports Uploaded</p>
-          <h2> {{ allResolveData.signReportCount }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
-        </span>
-      </mat-card-content>
-
-      <mat-card-content class="super_bill_item sp_three">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon1.png">
-          </mat-card-content>
-        </span>
-        <span class="container_wrapper">
-          <p>Total Numbers of<br> Reports Processed</p>
-          <h2> {{ allResolveData.pendingReportCount }}</h2>
-          <button mat-flat-button (click)="viewReportProcessData('Report unSigned')">view all</button>
-        </span>
-      </mat-card-content> -->
-
       <mat-card-content class="super_bill_item sp_two">
         <span class="border_wrapper">
           <mat-card-content class="circle">
@@ -436,7 +409,7 @@
             </span>
           </span>
 
-          <h2> 112 </h2>
+          <h2> {{ allResolveData.dashboardData.reportsProcessedCount }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
         </span>
       </mat-card-content>
@@ -461,7 +434,7 @@
               </a>
             </span>
           </span>
-          <h2> 212 </h2>
+          <h2> {{ allResolveData.dashboardData.reportsPendingSignatureCount }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
         </span>
       </mat-card-content>
@@ -490,7 +463,7 @@
                 </a>
               </span>
             </span>
-            <h2> 76 </h2>
+            <h2> {{ allResolveData.dashboardData.reportsAskedForReview }} </h2>
             <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
           </span>
         </mat-card-content>
@@ -516,7 +489,7 @@
                 </a>
               </span>
             </span>
-            <h2> 92 </h2>
+            <h2> {{ allResolveData.dashboardData.reportsSentToBillerCount }} </h2>
             <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
           </span>
         </mat-card-content>
@@ -542,7 +515,7 @@
                 </a>
               </span>
             </span>
-            <h2> 155 </h2>
+            <h2> {{ allResolveData.dashboardData.reportsDownloadedByBillerCount }} </h2>
             <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
           </span>
         </mat-card-content>

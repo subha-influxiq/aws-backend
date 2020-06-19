@@ -68,6 +68,7 @@ export class AdminDashboardComponent implements OnInit {
   public libdata: any = {
     basecondition: { status: { $gt: 7, $lt: 11 } },
     updateendpoint: 'status-update',
+    // updateendpointmany:'status-update',
     custombuttons: [
       {
         label: "View Report",
@@ -126,7 +127,7 @@ export class AdminDashboardComponent implements OnInit {
         type: 'action',
         datatype: 'api',
         endpoint: 'get-doctor-office-details',
-        datafields: ['centername', 'firstname', 'lastname', 'email', 'phone', 'address', 'city', 'state', 'zip'],
+        datafields: ['center name', 'first name', 'last name', 'email', 'phone', 'address', 'city', 'state', 'zip'],
         // otherparam:["patient_name"],
         //cond:'status',
         //condval:0,
@@ -158,6 +159,7 @@ export class AdminDashboardComponent implements OnInit {
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
+    hidedeletemany: true,
     // hidestatustogglebutton: true,
     hideviewbutton: true,
     tableheaders: [
