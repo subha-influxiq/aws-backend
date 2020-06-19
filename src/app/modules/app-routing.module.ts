@@ -267,6 +267,11 @@ const routes: Routes = [
   canActivate: [AuthguardService],
 },
 {
+  path: 'admin/sales-person/cpt-reports',
+  component: CptValidateReportsComponent,
+  canActivate: [AuthguardService],
+},
+{
   path: 'admin-biller/cpt-reports',
   component: CptValidateReportsComponent,
   canActivate: [AuthguardService],

@@ -63,12 +63,13 @@ export class ReportsDetailsComponent implements OnInit {
     updateendpoint: 'status-update',
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
+    hidedeletemany: true,
     hidestatustogglebutton: true,
     hideviewbutton: true,
     custombuttons: [
       {
         label: "View Report",
-        route: "admin/patient-record/",
+        route: "admin/view-patient-record/",
         type: 'internallink',
         param: ['_id'],
       },
@@ -110,7 +111,7 @@ export class ReportsDetailsComponent implements OnInit {
     type:'action',
     datatype:'api',
     endpoint:'get-doctor-office-details',
-    datafields: ['centername','firstname','lastname','email','phone','address','city','state','zip'],
+    datafields: ['center name','first name','last name','email','phone','address','city','state','zip'],
     // otherparam:["patient_name"],
     //cond:'status',
     //condval:0,
@@ -125,8 +126,8 @@ export class ReportsDetailsComponent implements OnInit {
   endpoint:'get-parent-details',
   datafields: ['Parent Name','Contact Person','email','phone','address','city','state','zip'],
   // otherparam:["patient_name"],
-  // cond:'parent_check',
-  // condval:"1",
+  cond:'parent_check_flag',
+  condval:1,
   param:'id',
   headermessage: 'Parent Information',
   // refreshdata:true
@@ -223,23 +224,23 @@ export class ReportsDetailsComponent implements OnInit {
       this.search_settings.selectsearch.splice(7,1);
     } else if(this.loginUserData.user_details.user_details.user_type == "tech") {
       this.search_settings.selectsearch.splice(3,1);
-      this.user = {tech_id:this.loginUserData.user_details.user_details._id}
+      this.user = {tech_id:this.loginUserData.user_details.user_details._id,status:11}
     } else if(this.loginUserData.user_details.user_details.user_type == "doctor_office") {
       this.search_settings.selectsearch.splice(4,1);
-      this.libdata.custombuttons[0].route = "doctor-office/patient-record/"
-      this.user = {doctors_office_id:this.loginUserData.user_details.user_details._id}
+      this.libdata.custombuttons[0].route = "doctor-office/view-patient-record/"
+      this.user = {doctors_office_id:this.loginUserData.user_details.user_details._id,status:11}
     } else if(this.loginUserData.user_details.user_details.user_type == "diagnostic_admin") {
       this.search_settings.selectsearch.splice(5,1);
       this.libdata.custombuttons[0].route = "diagnostic-admin/patient-record/"
-      this.user = {parent_id:this.loginUserData.user_details.user_details._id}
+      this.user = {parent_id:this.loginUserData.user_details.user_details._id,status:11}
     } else if(this.loginUserData.user_details.user_details.user_type == "doctor_group") {
       this.search_settings.selectsearch.splice(5,1);
-      this.libdata.custombuttons[0].route = "doctor-group/patient-record/"
-      this.user = {parent_id :this.loginUserData.user_details.user_details._id}
+      this.libdata.custombuttons[0].route = "doctor-group/view-patient-record/"
+      this.user = {parent_id :this.loginUserData.user_details.user_details._id,status:11}
     } else if(this.loginUserData.user_details.user_details.user_type == "distributors") {
       this.search_settings.selectsearch.splice(5,1);
-      this.libdata.custombuttons[0].route = "distributors/patient-record/"
-      this.user = {parent_id:this.loginUserData.user_details.user_details._id}
+      this.libdata.custombuttons[0].route = "distributors/view-patient-record/"
+      this.user = {parent_id:this.loginUserData.user_details.user_details._id,status:11}
     } else {
       this.user = {parent_id:this.activatedRoute.snapshot.params._id}
     }
@@ -251,6 +252,7 @@ export class ReportsDetailsComponent implements OnInit {
 
     this.libdata.basecondition = this.user;
     // lib list
+    console.log("+++",this.user);
     let endpoint = 'getPatientreport';
     let endpointc = 'getPatientreport-count';
     let data: any = {
