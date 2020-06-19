@@ -66,7 +66,7 @@ export class ListDoctorComponent implements OnInit {
     "name_search",
     "updated_at"
   ];
-  public tableName: any = 'users';
+  public tableName: any = 'data_pece';
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
   public user_cookie: any;

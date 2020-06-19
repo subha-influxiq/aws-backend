@@ -9,7 +9,7 @@
   .encounter_wrapper .second_table .book-appointment .mat-form-field { width: 31.6%; }
 }
 @media screen and (max-width: 1500px){
-  .admin_wrapper, .table_list, .sales_person_db { width: 90%; }
+  .admin_wrapper{ width: 90%; }
   .action_bar .mat-form-field .mat-form-field-flex { width: 200px; }
   .sales_person_db .shareLi .in_w { width: 40%; } 
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 4px; }
