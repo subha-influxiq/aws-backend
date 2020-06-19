@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { DeferLoadModule } from '@trademe/ng-defer-load';
-import { LazyLoadImageModule, ScrollHooks } from 'ng-lazyload-image';
 
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -186,6 +185,7 @@ import { CptValidateReportsComponent } from './components/admin/cpt-validate-rep
 import { ReportsDetailsComponent } from './components/admin/reports-details/reports-details/reports-details.component';
 import { JobTicketPatientReportsComponent } from './components/admin/admin-dashboard/job-ticket-patient-reports/job-ticket-patient-reports.component';
 import { ViewJobTicketImageComponent } from './components/admin/admin-dashboard/hold-report-job-ticket/view-job-ticket-image/view-job-ticket-image.component';
+import { CptValidateReportSalesPersonComponent } from './components/sales-person/cpt-validate-report-salesperson/cpt-validate-report-sales-person/cpt-validate-report-sales-person.component';
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -357,13 +357,13 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     ViewJobTicketImageComponent,
 
     TimeAgoPipe,
+
+    CptValidateReportSalesPersonComponent,
   ],
   imports: [
     SatDatepickerModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     DeferLoadModule,
-    //LazyLoadImageModule,
-    LazyLoadImageModule.forRoot(ScrollHooks),
     MetaModule.forRoot(),
     AppRoutingModule,
     CommonModule,

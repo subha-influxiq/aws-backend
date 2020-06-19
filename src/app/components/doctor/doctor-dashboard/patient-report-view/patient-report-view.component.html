@@ -265,7 +265,8 @@
           <span class="imageGallery">
             <ng-container *ngFor="let image of htmlText.allResolveData.reportData[0].images; let i = index;">
               <ng-container *ngIf="htmlText.sliderCount == i">
-                <img [defaultImage]="'../../../../../assets/images/image-loader.svg'" [lazyLoad]="htmlText.allResolveData.reportData[0].images[i].image_url" />
+                <!-- <img [defaultImage]="'../../../../../assets/images/image-loader.svg'" [lazyLoad]="htmlText.allResolveData.reportData[0].images[i].image_url" /> -->
+                <img [src]="htmlText.allResolveData.reportData[0].images[i].image_url" />
               </ng-container>
             </ng-container>
           </span>

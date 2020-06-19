@@ -9,11 +9,11 @@ import { MatSnackBar } from '@angular/material';
 import { environment } from '../../../../../environments/environment';
 
 @Component({
-  selector: 'app-reports-details',
-  templateUrl: './reports-details.component.html',
-  styleUrls: ['./reports-details.component.css']
+  selector: 'app-cpt-validate-report-sales-person',
+  templateUrl: './cpt-validate-report-sales-person.component.html',
+  styleUrls: ['./cpt-validate-report-sales-person.component.css']
 })
-export class ReportsDetailsComponent implements OnInit {
+export class CptValidateReportSalesPersonComponent implements OnInit {
 
   public loginUserData: any = {};
   public jwtToken: string = "";
@@ -68,7 +68,7 @@ export class ReportsDetailsComponent implements OnInit {
     custombuttons: [
       {
         label: "View Report",
-        route: "admin/patient-record/",
+        route: "sales-person/patient-record/",
         type: 'internallink',
         param: ['_id'],
       },
@@ -215,34 +215,9 @@ export class ReportsDetailsComponent implements OnInit {
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
     
-    if(this.loginUserData.user_details.user_details.user_type == "doctor") {
-      this.user = {doctor_id:this.loginUserData.user_details.user_details._id,status:11}
-      this.libdata.custombuttons[0].route = "doctor/patient-record/"
-      this.search_settings.selectsearch.splice(2,1);
-      this.search_settings.selectsearch.splice(6,1);
-      this.search_settings.selectsearch.splice(7,1);
-    } else if(this.loginUserData.user_details.user_details.user_type == "tech") {
-      this.search_settings.selectsearch.splice(3,1);
-      this.user = {tech_id:this.loginUserData.user_details.user_details._id}
-    } else if(this.loginUserData.user_details.user_details.user_type == "doctor_office") {
-      this.search_settings.selectsearch.splice(4,1);
-      this.libdata.custombuttons[0].route = "doctor-office/patient-record/"
-      this.user = {doctors_office_id:this.loginUserData.user_details.user_details._id}
-    } else if(this.loginUserData.user_details.user_details.user_type == "diagnostic_admin") {
-      this.search_settings.selectsearch.splice(5,1);
-      this.libdata.custombuttons[0].route = "diagnostic-admin/patient-record/"
-      this.user = {parent_id:this.loginUserData.user_details.user_details._id}
-    } else if(this.loginUserData.user_details.user_details.user_type == "doctor_group") {
-      this.search_settings.selectsearch.splice(5,1);
-      this.libdata.custombuttons[0].route = "doctor-group/patient-record/"
-      this.user = {parent_id :this.loginUserData.user_details.user_details._id}
-    } else if(this.loginUserData.user_details.user_details.user_type == "distributors") {
-      this.search_settings.selectsearch.splice(5,1);
-      this.libdata.custombuttons[0].route = "distributors/patient-record/"
-      this.user = {parent_id:this.loginUserData.user_details.user_details._id}
-    } else {
-      this.user = {parent_id:this.activatedRoute.snapshot.params._id}
-    }
+   
+    this.user = {parent_id:this.loginUserData.user_details.user_details._id}
+    
     /* Get resolve data */
     // this.activatedRoute.data.subscribe(resolveData => {
       // this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
@@ -429,6 +404,5 @@ export class ReportsDetailsComponent implements OnInit {
   viewReportProcessData(flag) {
     console.log(flag);
   }
-
 
 }
