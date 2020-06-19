@@ -118,15 +118,13 @@ export class ListDoctorComponent implements OnInit {
 
     if(this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/doctor-management/edit';
-      this.field = {'parent_id':this.userData._id,flag:0};
+      this.field = {'parent_id':this.userData._id};
       this.data = this.userData._id;
     }
 
     if(this.userData.user_type == 'admin') {
       if(this.activatedRoute.snapshot.routeConfig.path == "admin/sales-person/doctor-management") {
         this.field = {parent_user_type:"sales_person"}
-      } else {
-      this.field = {flag:0}
       }
       this.search_settings.textsearch.push({ label: "Search By Parent Name", field: 'parent_name_search' });
       this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type });
@@ -136,12 +134,12 @@ export class ListDoctorComponent implements OnInit {
 
     if(this.userData.user_type == 'doctor_group') {
       this.editUrl = 'doctor-group/doctor-management/edit';
-      this.field = {'parent_id':this.userData._id,flag:0};
+      this.field = {'parent_id':this.userData._id};
       this.data = this.userData._id;
     }
     if(this.userData.user_type == 'distributors') {
       this.editUrl = 'distributors/doctor-management/edit';
-      this.field = {'parent_id':this.userData._id,flag:0};
+      this.field = {'parent_id':this.userData._id};
       this.data = this.userData._id;
     }
 
