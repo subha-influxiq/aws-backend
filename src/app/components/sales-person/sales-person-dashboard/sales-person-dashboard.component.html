@@ -1,120 +1,123 @@
 <app-sales-person-header></app-sales-person-header>
 
-<app-doctor-signup-share [shareDetails]="shareDetails"></app-doctor-signup-share>
 
-<mat-card-content class="sales_person_db">
-  <section class="shareLi">
-    <span class="in_w">
-      <h2>SHARE LINK FOR DOCTOR SIGN UP</h2>
-      <mat-card-content class="input_w">
-        <mat-form-field>
-          <input matInput type="text" placeholder="Ex: www.abcd.com/025dghdk" readonly>
-        </mat-form-field>
-        <button mat-button><i class="fas fa-unlink"></i></button>
+<mat-card class="admin_wrapper">
+  <!-- <app-doctor-signup-share [shareDetails]="shareDetails"></app-doctor-signup-share> -->
+
+  <mat-card-content class="sales_person_db">
+    <!-- <section class="shareLi">
+      <span class="in_w">
+        <h2>SHARE LINK FOR DOCTOR SIGN UP</h2>
+        <mat-card-content class="input_w">
+          <mat-form-field>
+            <input matInput type="text" placeholder="Ex: www.abcd.com/025dghdk" readonly>
+          </mat-form-field>
+          <button mat-button><i class="fas fa-unlink"></i></button>
+        </mat-card-content>
+        <mat-card-content class="social_media_wrapper">
+          <button mat-button matTooltip="Share in Facebook" aria-label="Share links" matTooltipPosition="above"> <i
+              class="fab fa-facebook-square"></i></button>
+          <button mat-button matTooltip="Share in Twitter" aria-label="Share links" matTooltipPosition="above"> <i
+              class="fab fa-twitter-square"></i> </button>
+          <button mat-button matTooltip="Share in Linkedin" aria-label="Share links" matTooltipPosition="above"> <i
+              class="fab fa-linkedin"></i></button>
+          <button mat-button matTooltip="Share in Tumbler" aria-label="Share links" matTooltipPosition="above"><i
+              class="fab fa-tumblr-square"></i></button>
+        </mat-card-content>
+      </span>
+    </section> -->
+
+
+
+    <mat-card-content class="admin_superbillsection">
+      <h1>Encounter Form Status</h1>
+      <mat-card-content class="biller_wrapper">
+
+        <mat-card-content class="super_bill_item">
+          <span class="border_wrapper">
+            <mat-card-content class="circle">
+              <img src="../../../../assets/images/reporticon1.png">
+            </mat-card-content>
+          </span>
+
+          <span class="container_wrapper">
+            <p>Total No of <br>
+              Tests Done
+            </p>
+            <h2> 1</h2>
+            <button mat-flat-button>view all</button>
+          </span>
+        </mat-card-content>
+
+        <mat-card-content class="super_bill_item">
+          <span class="border_wrapper">
+            <mat-card-content class="circle">
+              <img src="../../../../assets/images/reporticon2.png">
+            </mat-card-content>
+          </span>
+
+          <span class="container_wrapper">
+            <p>Total No of <br>
+              CPT Codes Found
+            </p>
+            <h2> 23 </h2>
+            <button mat-flat-button>view all</button>
+          </span>
+        </mat-card-content>
+        <mat-card-content class="super_bill_item">
+          <span class="border_wrapper">
+            <mat-card-content class="circle">
+              <img src="../../../../assets/images/reporticon3.png">
+            </mat-card-content>
+          </span>
+
+          <span class="container_wrapper">
+            <p>Total No of <br>
+              CPT Codes Not Found
+            </p>
+            <h2> 12 </h2>
+            <button mat-flat-button>view all</button>
+          </span>
+        </mat-card-content>
       </mat-card-content>
-      <mat-card-content class="social_media_wrapper">
-        <button mat-button matTooltip="Share in Facebook" aria-label="Share links" matTooltipPosition="above"> <i
-            class="fab fa-facebook-square"></i></button>
-        <button mat-button matTooltip="Share in Twitter" aria-label="Share links" matTooltipPosition="above"> <i
-            class="fab fa-twitter-square"></i> </button>
-        <button mat-button matTooltip="Share in Linkedin" aria-label="Share links" matTooltipPosition="above"> <i
-            class="fab fa-linkedin"></i></button>
-        <button mat-button matTooltip="Share in Tumbler" aria-label="Share links" matTooltipPosition="above"><i
-            class="fab fa-tumblr-square"></i></button>
+    </mat-card-content>
+    <!-- Encounter Form Status Section End -->
+  </mat-card-content>
+
+  <!-- Share doctor sign up link -->
+  <app-doctor-signup-share [shareDetails]="shareDetails"></app-doctor-signup-share>
+
+  <section class="table_list">
+    <mat-card-content class="table_wrapper">
+
+      <mat-toolbar class="top_header">
+        <h2> Doctor Joining Report</h2>
+      </mat-toolbar>
+      <mat-card-content class="tablewrapper">
+        <lib-listing class="DataTable manageDoctor" *ngIf="docData.length>0" [datasource]="docData"
+          [skip]="docData_skip" [modify_header_array]="docData_modify_header" [sourcedata]="tableName"
+          [detail_skip_array]="previewModal_skip" [apiurl]="apiUrl" [editroute]="editUrl" [jwttoken]="user_cookie"
+          [statusarr]="status" [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint"
+          [date_search_endpoint]="searchingEndpoint" [date_search_source]="searchSourceName"
+          [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection"
+          [libdata]="libdata" [date_search_source_count]="docData_count" [limitcond]="limitcond">
+
+        </lib-listing>
       </mat-card-content>
-    </span>
+    </mat-card-content>
+    <mat-card-content class="table_wrapper">
+
+      <mat-toolbar class="top_header">
+        <h2> CPT Validated Amount Report</h2>
+      </mat-toolbar>
+      <mat-card-content class="tablewrapper sales_new_width">
+        <app-cpt-validate-report-sales-person></app-cpt-validate-report-sales-person>
+      </mat-card-content>
+    </mat-card-content>
+
   </section>
 
 
 
-  <!-- Encounter Form Status Section Start -->
-  <mat-card-content class="admin_superbillsection">
-    <h1>Encounter Form Status</h1>
-    <mat-card-content class="biller_wrapper">
-
-      <mat-card-content class="super_bill_item">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon1.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total No of <br>
-            Tests Done
-          </p>
-          <h2> 1</h2>
-          <button mat-flat-button>view all</button>
-        </span>
-      </mat-card-content>
-
-      <mat-card-content class="super_bill_item">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon2.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total No of <br>
-            CPT Codes Found
-          </p>
-          <h2> 23 </h2>
-          <button mat-flat-button>view all</button>
-        </span>
-      </mat-card-content>
-      <mat-card-content class="super_bill_item">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon3.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total No of <br>
-            CPT Codes Not Found
-          </p>
-          <h2> 12 </h2>
-          <button mat-flat-button>view all</button>
-        </span>
-      </mat-card-content>
-    </mat-card-content>
-  </mat-card-content>
-  <!-- Encounter Form Status Section End -->
-</mat-card-content>
-
-<!-- Share doctor sign up link -->
-<app-doctor-signup-share [shareDetails]="shareDetails"></app-doctor-signup-share>
-
-<section class="table_list">
-  <mat-card-content class="table_wrapper">
-
-    <mat-toolbar class="top_header">
-      <h2> Doctor Joining Report</h2>
-    </mat-toolbar>
-    <mat-card-content class="tablewrapper">
-      <lib-listing class="DataTable manageDoctor" *ngIf="docData.length>0" [datasource]="docData" [skip]="docData_skip"
-        [modify_header_array]="docData_modify_header" [sourcedata]="tableName" [detail_skip_array]="previewModal_skip"
-        [apiurl]="apiUrl" [editroute]="editUrl" [jwttoken]="user_cookie" [statusarr]="status"
-        [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="searchingEndpoint"
-        [date_search_source]="searchSourceName" [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection" [libdata]="libdata" [date_search_source_count]="docData_count" [limitcond]="limitcond">
-  
-      </lib-listing>
-    </mat-card-content>
-  </mat-card-content> 
-  <mat-card-content class="table_wrapper">
-
-    <mat-toolbar class="top_header">
-      <h2> CPT Validated Amount Report</h2>
-    </mat-toolbar>
-    <mat-card-content class="tablewrapper">
-      <app-cpt-validate-report-sales-person></app-cpt-validate-report-sales-person>
-    </mat-card-content>
-  </mat-card-content> 
-  
-</section>
-
-
-
-
+</mat-card>
 <app-sales-person-footer></app-sales-person-footer>

@@ -67,7 +67,7 @@ export class ListingAdminbillerComponent implements OnInit {
     tableheaders:['firstname','lastname','email','phone','status','logincounts','last_login_datetime'] //not required
    
 }
-  public tableName: any = 'users';
+  public tableName: any = 'data_pece';
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
   public user_cookie: any;

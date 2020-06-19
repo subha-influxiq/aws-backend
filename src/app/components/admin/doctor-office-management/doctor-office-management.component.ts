@@ -55,7 +55,7 @@ export class DoctorOfficeManagementComponent implements OnInit {
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
   public apiUrl: any;
-  public tableName: any = "users";
+  public tableName: any = "dat_pece";
   public userData: any={}
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];

@@ -78,57 +78,57 @@ export class DoctorDashboardComponent implements OnInit {
         param: ['download_file_name']
       },
       {
-        label:"Tech Details",
-        type:'action',
-        datatype:'api',
-        endpoint:'get-tech-details',
+        label: "Tech Details",
+        type: 'action',
+        datatype: 'api',
+        endpoint: 'get-tech-details',
         // otherparam:["patient_name"],
         //cond:'status',
         //condval:0,
-        datafields: ['first name','last name','email','phone','address','city','state','zip'],
-        param:'id',
+        datafields: ['first name', 'last name', 'email', 'phone', 'address', 'city', 'state', 'zip'],
+        param: 'id',
         headermessage: 'Tech Information',
         // refreshdata:true
-    } ,
-    {
-      label:"View Codes",
-      type:'action',
-      datatype:'api',
-      endpoint:'get-codes-details',
-      datafields: ['Additional Potential Health Risks','CPT Codes','ICD Codes'],
-      // otherparam:["patient_name"],
-      //cond:'status',
-      //condval:0,
-      param:'id',
-      headermessage: 'Associated Codes',
-      // refreshdata:true
-  } ,
-  {
-    label:"Doctor Office Details",
-    type:'action',
-    datatype:'api',
-    endpoint:'get-doctor-office-details',
-    datafields: ['centername','firstname','lastname','email','phone','address','city','state','zip'],
-    // otherparam:["patient_name"],
-    //cond:'status',
-    //condval:0,
-    param:'id',
-    headermessage: 'Doctor Office Info',
-    // refreshdata:true
-} ,
-{
-  label:"Parent Details",
-  type:'action',
-  datatype:'api',
-  endpoint:'get-parent-details',
-  datafields: ['Parent Name','Contact Person','email','phone','address','city','state','zip'],
-  // otherparam:["patient_name"],
-  // cond:'parent_check',
-  // condval:"1",
-  param:'id',
-  headermessage: 'Parent Information',
-  // refreshdata:true
-} ,
+      },
+      {
+        label: "View Codes",
+        type: 'action',
+        datatype: 'api',
+        endpoint: 'get-codes-details',
+        datafields: ['Additional Potential Health Risks', 'CPT Codes', 'ICD Codes'],
+        // otherparam:["patient_name"],
+        //cond:'status',
+        //condval:0,
+        param: 'id',
+        headermessage: 'Associated Codes',
+        // refreshdata:true
+      },
+      {
+        label: "Doctor Office Details",
+        type: 'action',
+        datatype: 'api',
+        endpoint: 'get-doctor-office-details',
+        datafields: ['centername', 'firstname', 'lastname', 'email', 'phone', 'address', 'city', 'state', 'zip'],
+        // otherparam:["patient_name"],
+        //cond:'status',
+        //condval:0,
+        param: 'id',
+        headermessage: 'Doctor Office Info',
+        // refreshdata:true
+      },
+      {
+        label: "Parent Details",
+        type: 'action',
+        datatype: 'api',
+        endpoint: 'get-parent-details',
+        datafields: ['Parent Name', 'Contact Person', 'email', 'phone', 'address', 'city', 'state', 'zip'],
+        // otherparam:["patient_name"],
+        // cond:'parent_check',
+        // condval:"1",
+        param: 'id',
+        headermessage: 'Parent Information',
+        // refreshdata:true
+      },
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
@@ -172,7 +172,7 @@ export class DoctorDashboardComponent implements OnInit {
 
   public status: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, { val: "Biller Admin Hold", 'name': "Biller Admin Hold" }];
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
-  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' },{val:"CMAT with BP Cuffs", 'name' : "CMAT with BP Cuffs"}];
+  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }, { val: "CMAT with BP Cuffs", 'name': "CMAT with BP Cuffs" }];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
   public docofficeval: any = [];
@@ -197,7 +197,7 @@ export class DoctorDashboardComponent implements OnInit {
 
   public authData: any = {
   };
-  public allResolveData: any;
+  public allResolveData: any = {};
   public htmlText: any = {
     buttonText: "Add One",
     headerText: "Patient Record Report",
@@ -227,17 +227,17 @@ export class DoctorDashboardComponent implements OnInit {
   public header: any;
   public allData: any;
 
-  constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService,public http: HttpServiceService, public activatedRoute: ActivatedRoute, public matSnackBar: MatSnackBar,public deviceService: DeviceDetectorService) {
+  constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService, public http: HttpServiceService, public activatedRoute: ActivatedRoute, public matSnackBar: MatSnackBar, public deviceService: DeviceDetectorService) {
     this.allData = cookie.getAll();
     this.authData = JSON.parse(this.allData.user_details);
-    if(typeof(this.allData.doctor_signature) == 'undefined' && typeof(this.authData.doctor_signature) != 'undefined') {
+    if (typeof (this.allData.doctor_signature) == 'undefined' && typeof (this.authData.doctor_signature) != 'undefined') {
       this.cookie.set('doctor_signature', this.authData.doctor_signature);
     }
 
     this.authData["jwtToken"] = cookie.get('jwtToken');
     this.jwtToken = this.authData.jwtToken;
     this.libdata.basecondition = {
-      status: { "$gt": 10 },doctor_id:this.authData._id
+      status: { "$gt": 10 }, doctor_id: this.authData._id
     };
     if (typeof (this.authData.diagnostic_admin_id) != 'undefined') {
       this.htmlText.signFlag = false;
@@ -257,11 +257,11 @@ export class DoctorDashboardComponent implements OnInit {
       this.header = { name: "Doctor Group Name" };
     }
 
-    // this.activatedRoute.data.forEach(resolveData => {
-    //   this.allResolveData = resolveData.doctordata.data;
+    this.activatedRoute.data.forEach(resolveData => {
+      this.allResolveData.dashboardData = resolveData.doctordata.data;
 
-    //   this.viewReportProcessData(this.htmlText.tableHeaderText);
-    // });
+      this.viewReportProcessData(this.htmlText.tableHeaderText);
+    });
 
     // lib list
     let endpoint = 'getPatientlistdata';
