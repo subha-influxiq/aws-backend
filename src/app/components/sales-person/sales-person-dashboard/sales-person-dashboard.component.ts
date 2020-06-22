@@ -85,11 +85,11 @@ export class SalesPersonDashboardComponent implements OnInit {
     basecondition: "",
     updateendpoint:'statusupdate',
     hidedeletemany: true,
-    // hideeditbutton:true,// all these button options are optional not mandatory
-    //hidedeletebutton:true,
-    //hideviewbutton:false,
-    //hidestatustogglebutton:true,
-    // hideaction:true,
+    hideeditbutton:true,// all these button options are optional not mandatory
+    hidedeletebutton:true,
+    hideviewbutton:false,
+    hidestatustogglebutton:true,
+    hideaction:true,
     tableheaders:['firstname','lastname','email','phone','practice_name','npi','status','created_date',], //not required
 }
   public sortdata:any={
