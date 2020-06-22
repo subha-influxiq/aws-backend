@@ -59,7 +59,7 @@ export class CptValidateReportsComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: { parent_id: {$ne:"admin"} },
+    basecondition: "",
     updateendpoint: 'status-update',
     custombuttons: [
       {
@@ -106,8 +106,8 @@ export class CptValidateReportsComponent implements OnInit {
 
   public sortdata: any = {
     "type": 'desc',
-    "field": 'parent_name',
-    "options": ['parent_name',]
+    "field": 'patient_name',
+    "options": ['patient_name',]
   };
   public limitcond: any = {
     "limit": 10,
@@ -118,8 +118,8 @@ export class CptValidateReportsComponent implements OnInit {
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
   public status: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"}];
-  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
-  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }];
+  public parent_type: any = [{ val: "MAJOR DOCTOR", 'name': 'MAJOR DOCTOR' }, { val: "DIAGNOSTIC ADMIN", 'name': 'DIAGNOSTIC ADMIN' }, { val: "DISTRIBUTOR", 'name': 'DISTRIBUTOR' }, { val: "DOCTOR GROUP", 'name': 'DOCTOR GROUP' }];
+  public sales_type: any = [{ val: "ADMIN", 'name': 'ADMIN' }, { val: "DIAGNOSTIC ADMIN", 'name': 'DIAGNOSTIC ADMIN' }, { val: "DISTRIBUTOR", 'name': 'DISTRIBUTOR' }];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
   public docofficeval: any = [];
@@ -133,9 +133,9 @@ export class CptValidateReportsComponent implements OnInit {
   public search_settings: any =
     {
       
-      // selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type } , { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },{label: "Search By Doctor", field: 'doc_name_search', values:this.authval },{label: "Search By Tech", field: 'tech_name_search', values:this.techval },{label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values:this.docofficeval },{label: "Search By Parent Name", field: 'parent_name_search', values:this.parentnameval },{label: "Search By Doctor City", field: 'doctor_city_search', values:this.doctorcity },{label: "Search By Doctor State", field: 'doctor_state_search', values:this.doctorstate },{label: "Search By Patient City", field: 'patient_state_search', values:this.patientcity },{label: "Search By Patient State", field: 'patient_city_search', values:this.patientstate }],
+      selectsearch: [{ label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }],
       datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
-      // textsearch: [{ label: "Search By Name", field: 'name_search' },
+      textsearch: [{label: "Search By Parent Name", field: 'parent_name_search', values:this.parentnameval}]
       // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],
       // search:[,
       // ]
@@ -164,7 +164,10 @@ export class CptValidateReportsComponent implements OnInit {
         this.libdata.custombuttons[0].route = "admin-biller/reports-details"
       }
       if(this.activatedRoute.snapshot.routeConfig.path == "admin/sales-person/cpt-reports") {
-        this.htmlText.path = {parent_user_type:"sales_person"}
+        this.htmlText.path = {parent_user_type:"sales_person"};
+        this.search_settings.selectsearch[0].values = this.sales_type;
+        this.libdata.basecondition = {parent_user_type:"sales_person"};
+        this.search_settings.textsearch[0].label = "Search By Sales Person Name"
       }
 
     // lib list

@@ -65,6 +65,8 @@ export class CptValidateReportSalesPersonComponent implements OnInit {
     hidedeletebutton: true,
     hidestatustogglebutton: true,
     hideviewbutton: true,
+    hidedeletemany: true,
+    hideupdatemany: true,
     custombuttons: [
       {
         label: "View Report",

@@ -179,6 +179,7 @@ export class ReportsDetailsComponent implements OnInit {
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
   public status: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"}];
+  public cptcodes: any = [{ val: "95923", 'name': '95923' }, { val: "95943", 'name': '95943' }, { val: "95921", 'name': "95921" }, { val: "93923", 'name': "93923" }, { val: "93922", 'name': "93922" }];
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
   public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' },{ val: "CMAT with BP Cuffs", 'name': 'CMAT with BP Cuffs' }];
   public SearchingEndpoint: any = "datalist";
@@ -198,8 +199,8 @@ export class ReportsDetailsComponent implements OnInit {
       datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
       // textsearch: [{ label: "Search By Name", field: 'name_search' },
       // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],
-      // search:[,
-      // ]
+      search:[{ label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes }
+      ]
     };
   // lib list end
 
