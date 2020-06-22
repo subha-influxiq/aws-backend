@@ -6,27 +6,14 @@
 
     <mat-card-content class="itemsection">
       <span class="icon">
-        <img src="../../../../assets/images/adminDoctoricon1.png">
-      </span>
-      <span class="counteer">
-        <h4 class="dataCount">12 </h4>
-        <p class="doctorNumber">Total Number of <br> Major Doctors</p>
-      </span>
-      <span class="button_wrapper">
-        <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
-      </span>
-    </mat-card-content>
-
-    <mat-card-content class="itemsection">
-      <span class="icon">
         <img src="../../../../assets/images/adminDoctoricon2.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount"> 3 </h4>
+        <h4 class="dataCount"> {{ allResolveData.billerCount }} </h4>
         <p class="doctorNumber">Total Number of<br> Billers</p>
       </span>
       <span class="button_wrapper">
-        <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
+        <button mat-flat-button [routerLink]="['/doctor-group/biller-management']">View Details</button>
       </span>
     </mat-card-content>
 
@@ -35,11 +22,24 @@
         <img src="../../../../assets/images/adminDoctoricon3.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount">4</h4>
+        <h4 class="dataCount">{{ allResolveData.techCount }}</h4>
         <p class="doctorNumber">Total Number of <br>Techs</p>
       </span>
       <span class="button_wrapper">
-        <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
+        <button mat-flat-button [routerLink]="['/doctor-group/tech-management']">View Details</button>
+      </span>
+    </mat-card-content>
+
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/doctorOffice.png">
+      </span>
+      <span class="counteer">
+        <h4 class="dataCount"> {{ allResolveData.doctorOfficeCount }} </h4>
+        <p class="doctorNumber">Total No of <br>Doctor's Office</p>
+      </span>
+      <span class="button_wrapper">
+        <button mat-button [routerLink]="['/doctor-group/doctor-office-management']">View Details</button>
       </span>
     </mat-card-content>
 
@@ -51,57 +51,30 @@
 
     <mat-card-content class="itemsection">
       <span class="icon">
-        <img src="../../../../assets/images/doctorOffice.png">
-      </span>
-      <span class="counteer">
-        <h4 class="dataCount">13 </h4>
-        <p class="doctorNumber">Total No of <br>Doctor's Office</p>
-      </span>
-      <span class="button_wrapper">
-        <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
-      </span>
-    </mat-card-content>
-
-    <mat-card-content class="itemsection">
-      <span class="icon">
-        <img src="../../../../assets/images/billerNoteicon2.png">
-      </span>
-      <span class="counteer">
-        <h4 class="dataCount">14 </h4>
-        <p class="doctorNumber">Total No of <br>Diagnostic Admin</p>
-      </span>
-      <span class="button_wrapper">
-        <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
-      </span>
-    </mat-card-content>
-    <mat-card-content class="itemsection">
-      <span class="icon">
         <img src="../../../../assets/images/billerNoteicon3.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount">15</h4>
+        <h4 class="dataCount"> {{ allResolveData.doctorsCount }} </h4>
         <p class="doctorNumber">Total No of <br>Doctors</p>
       </span>
       <span class="button_wrapper">
-        <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
+        <button mat-button [routerLink]="['/doctor-group/doctor-management']">View Details</button>
       </span>
     </mat-card-content>
-  </mat-card-content>
 
-  <!-- Doctor other related -->
-  <mat-card-content class="content_wrapper">
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/salesPerson.png">
       </span>
       <span class="counteer">
-        <h4 class="dataCount">34 </h4>
+        <h4 class="dataCount"> {{ allResolveData.salesPersonCount }} </h4>
         <p class="doctorNumber">Total Number of<br> Sales Person</p>
       </span>
       <span class="button_wrapper">
-        <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
+        <button mat-flat-button [routerLink]="['/doctor-group/sales-person-management']">View Details</button>
       </span>
     </mat-card-content>
+
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/billerNoteicon1.png">
@@ -111,11 +84,15 @@
         <p class="doctorNumber">Total Appointments<br> Pending</p>
       </span>
       <span class="button_wrapper">
-        <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
+        <button mat-flat-button [routerLink]="['/doctor-group/biller-management']">View Details</button>
       </span>
     </mat-card-content>
 
+  </mat-card-content>
 
+  <!-- Doctor other related -->
+  <mat-card-content class="content_wrapper">
+    
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/calenderAppointment.png">
@@ -125,11 +102,13 @@
         <p class="doctorNumber">Total Appointments<br> Completed</p>
       </span>
       <span class="button_wrapper">
-        <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
+        <button mat-flat-button [routerLink]="['/admin/appoinments-management']">View Details</button>
       </span>
     </mat-card-content>
 
   </mat-card-content>
+
+
 
   <mat-card-content class="admin_superbillsection">
     <h1>Physician Report Process Status</h1>
