@@ -166,13 +166,13 @@ export class ListDoctorComponent implements OnInit {
     }
    
     if(this.userData.user_type == 'diagnostic_admin') {
-      this.fetch={'parent_id':  this.data ,flag:0}
+      this.fetch={'parent_id':  this.data }
     }
     if(this.userData.user_type == 'doctor_group') {
-      this.fetch={'parent_id':  this.data,flag:0}
+      this.fetch={'parent_id':  this.data}
     }
     if(this.userData.user_type == 'distributors') {
-      this.fetch={'parent_id':  this.data,flag:0}
+      this.fetch={'parent_id':  this.data}
     }
     if(this.activatedRoute.snapshot.routeConfig.path == "admin/sales-person/doctor-management") {
       this.fetch = {flag:1}

@@ -30,7 +30,7 @@ export class ListingDistributorsComponent implements OnInit {
     "diagnostic_admin_id",
     "name_search"
   ];
-  public editUrl: any = "admin/tech-management/edit";
+  public editUrl: any = "admin/distributors-management/edit";
   public allUserData_modify_header: any = {
     "distributorname": "Distributor Name",
     "contactperson": "Contact Person",

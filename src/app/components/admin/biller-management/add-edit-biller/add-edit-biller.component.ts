@@ -49,8 +49,6 @@ export class AddEditBillerComponent implements OnInit {
     this.htmlText.userData.user_details = JSON.parse(this.htmlText.userData.user_details);
     this.allStateCityData();
 
-    console.log(">>>>>", this.htmlText.userData.user_details.user_type);
-
     if (this.activeRoute.snapshot.params._id) {
       this.generateAddEditForm('edit');
 
@@ -80,8 +78,8 @@ export class AddEditBillerComponent implements OnInit {
       city:           ['', [ Validators.required ]],
       state:          ['', [ Validators.required ]],
       user_type:      ['biller', []],
-      parent_type: ['admin'],
-      parent_id: ['', []],
+      parent_type:    ['admin'],
+      parent_id:      ['', []],
       status:         ['', []],
       password:       ['', [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
       confirmpassword: ['', []],

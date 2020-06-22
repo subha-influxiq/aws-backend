@@ -14,6 +14,7 @@
   .sales_person_db .shareLi .in_w { width: 40%; } 
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 4px; }
   .encounter_rules .admin_superbillsection .greenbar{ height: 320px; }
+  .admin_wrapper .content_wrapper .itemsection .button_wrapper .doctorNumber { font-size: 15px; }
 }
 @media screen and (max-width: 1410px){
   .action_bar .mat-form-field .mat-form-field-flex { width: 180px; }
@@ -41,7 +42,10 @@
   .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber { font-size: 16px;}
   .overflowwrapper{ overflow-x: scroll; display: block;}
   .overflowwrapper .mat-table{ width: 1600px;}
-  .encounter_rules .admin_superbillsection .greenbar { height: 290px; }
+  .encounter_rules .admin_superbillsection .greenbar { height: 290px; } 
+  .admin_wrapper .content_wrapper .itemsection .button_wrapper .doctorNumber { font-size: 14px; }
+  .admin_wrapper .content_wrapper .itemsection .counteer .dataCount { font-size: 28px; }
+  .admin_wrapper .content_wrapper .itemsection .counteer { min-width: 100px; } 
 }
 @media screen and (max-width: 1300px){
 .main_wrapper { background-size: 680px; padding-left: 665px; }

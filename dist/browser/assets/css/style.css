@@ -258,15 +258,64 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 
 /* admin css */ 
 .admin_wrapper .content_wrapper{ display: flex; justify-content: space-between;  align-items: center; width: 100%; margin: auto; text-align: center; margin-top: 10px!important; margin-bottom: 12px; }
-.admin_wrapper .content_wrapper .itemsection{width: 33%; margin: 0px 7px; box-sizing: border-box; display: flex; justify-content: center; position: relative; border-radius: 10px; border: 1px solid #e8e9ef;  overflow: hidden; background:#fff;  }
-.admin_wrapper .content_wrapper .itemsection .icon{  display: flex; align-items: center; justify-content: center; width: 20%; box-sizing: border-box;}
+.admin_wrapper .content_wrapper .itemsection{
+  /* width: 33%; margin: 0px 7px; box-sizing: border-box; display: flex; justify-content: center; position: relative; border-radius: 10px; border: 1px solid #e8e9ef;  overflow: hidden; background:#fff;  */
+  width: 33%;
+  margin: 0px 7px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid #e8e9ef;
+  overflow: hidden;
+  background: #fff;
+  padding: 6px;
+
+}
+.admin_wrapper .content_wrapper .itemsection .icon{     display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 20%;
+  box-sizing: border-box;
+  background: linear-gradient(0deg, #01adfa, #14c9fd);
+  border-radius: 8px;
+  min-width: 20%;}
 .admin_wrapper .content_wrapper .itemsection .icon img{ max-width: 100%; }
-.admin_wrapper .content_wrapper .itemsection .button_wrapper{ background: #4d545a; width: 25%; display: flex; align-items: center; justify-content: center; }
-.admin_wrapper .content_wrapper .itemsection .button_wrapper button{ width: auto; background: transparent; color: #fff; padding: 0; font-family: "AvenirMedium"; font-size: 15px; }
-.admin_wrapper .content_wrapper .itemsection .counteer { box-sizing: border-box; width: 55%; padding: 5px; text-align: left; }
-  .counter_with_tool { display: flex; align-items: center; }
-.admin_wrapper .content_wrapper .itemsection .counteer .dataCount{ font-size: 48px; font-family: "AvenirBlack";  color: #4d545a; margin: 0;}
+.admin_wrapper .content_wrapper .itemsection .button_wrapper{ 
+  /* background: #4d545a; width: 25%; display: flex; align-items: center; justify-content: center; */
+   
+  width:54%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.admin_wrapper .content_wrapper .itemsection .button_wrapper button{
+   /* width: auto; background: transparent; color: #fff; padding: 0; font-family: "AvenirMedium"; font-size: 15px; */
+
+   width: auto;
+   background: linear-gradient(0deg, #ea2b00, #fd6100);
+   color: #e0e2e4;
+   font-family: "AvenirMedium";
+   font-size: 14px;
+   border: 2px solid #d2cccc;
+   line-height: inherit;
+   padding: 4px 14px;
+   margin-left: auto;
+   }
+.admin_wrapper .content_wrapper .itemsection .counteer { box-sizing: border-box; 
+  width: auto; padding: 5px; min-width: 120px; text-align: left; background: #e2e8ec;
+  border-radius: 8px; display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 6px;}
+.counter_with_tool { display: flex; align-items: center; }
+.admin_wrapper .content_wrapper .itemsection .counteer .dataCount{ font-size: 38px; font-family: "AvenirBlack";  color: #4d545a; margin: 0; }
+.admin_wrapper .content_wrapper .itemsection .button_wrapper .doctorNumber{ font-family: 'AvenirBlack';
+  margin: 0 0 14px 0; font-size: 16px; width: 100%; text-align: left; color: #656262;} 
 .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber{ font-size: 18px; font-family: "AvenirMedium";  color: #4d545a; margin:0;}
+
 .admin_wrapper .content_wrapper .itemsection:nth-child(3n+1){ margin-left: 8px;}
 .admin_wrapper .content_wrapper .itemsection:nth-child(3n+3){ margin-right: 8px;}
 
@@ -789,7 +838,7 @@ display: none; justify-content: center; align-items: center; transition: ease-in
 .tooltip_bg{background:#fff!important; color: #000!important; font-size: 14px!important; position: relative;
 font-family: 'AvenirMedium'!important; opacity: 1!important; border: 1px solid rgb(177, 175, 175);} 
  
-/* modal close button */
+/* modal close button */ 
 .maindialognew{ position: relative;}
 .maindialognew .close-btn-modal{ float: none!important;
 color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
