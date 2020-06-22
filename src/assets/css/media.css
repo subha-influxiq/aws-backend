@@ -75,9 +75,8 @@
 /* tech dashboard */
 .report_wrapper .items_w .icon_w { height: 220px;}
 .report_wrapper .items_w .name_wr .reportName { font-size: 17px; line-height: 18px; }
-.admin_wrapper .content_wrapper .itemsection .button_wrapper { width: 30%; }
 .admin_wrapper .content_wrapper .itemsection .counteer .dataCount { font-size: 32px; }
-.admin_wrapper .content_wrapper .itemsection .icon { width: 16%; padding-left: 10px;}
+/* .admin_wrapper .content_wrapper .itemsection .icon { width: 16%; padding-left: 10px;} */
 .sales_person_db .shareLi .in_w { width: 65%; left: 0; right: 0; transform: inherit; top: 0; }
 .sales_person_db .shareLi { background-position: 6% bottom; padding: 60px 20px; height: auto; background-size: contain; position: relative;}
 .sales_person_db .shareLi .in_w { width: 60%; left: 0; right: 0; transform: inherit; top: 0; position: inherit; display: block;}
@@ -90,7 +89,7 @@
 .admin_dashboard .DataTable .container .searchbar{ justify-content: center!important;}
 .book-appointment .mat-form-field { width: 32.2%; }
 .encounter_wrapper .second_table .book-appointment .mat-form-field { width: 32%; }
- 
+.admin_wrapper .content_wrapper .itemsection .button_wrapper .doctorNumber br{ display: none;}
 
 }
 @media screen and (max-width: 1100px){
@@ -99,6 +98,7 @@ align-items: flex-start; }
 .biller_Dashboard .patient_report_section .patient_top_search h1 { margin-bottom: 10px; }
 .encounter_rules .admin_superbillsection .greenbar p { font-size: 36px; }
 .encounter_rules .admin_superbillsection .greenbar { height: 230px; }
+.admin_wrapper .content_wrapper .itemsection .counteer .dataCount { font-size: 28px; }
 
 }
 @media screen and (max-width: 1040px){
@@ -106,12 +106,17 @@ align-items: flex-start; }
   .admin_superbillsection .biller_wrapper { display: flex; flex-wrap: wrap;}
   .admin_superbillsection .biller_wrapper .super_bill_item { width: 49%; }
   .admin_wrapper .content_wrapper .itemsection{ flex-direction: column;}
-  .admin_wrapper .content_wrapper .itemsection .counteer { width: 100%; text-align: center; }
-  .admin_wrapper .content_wrapper .itemsection .icon { width: 100%; padding-top: 10px; }
+  .admin_wrapper .content_wrapper .itemsection .counteer { width: 100%; text-align: center; margin: 0px 0px 8px;
+    border-top-left-radius: 0; border-top-right-radius: 0; }
+  .admin_wrapper .content_wrapper .itemsection .icon { width: 100%;
+    padding: 4px; margin: auto; max-width: inherit; min-width: inherit;
+    border-bottom-left-radius: 0; border-bottom-right-radius: 0;} 
   .admin_wrapper .content_wrapper .itemsection .button_wrapper { width: 100%; }
+  .admin_wrapper .content_wrapper .itemsection .button_wrapper button{ margin: auto;}
   .calenderView .filter .filter-box { width: 26%; }
   .calenderView .filter { flex-wrap: wrap; padding: 10px 0; }
   .calenderView .filter .pagination { width: auto; margin: auto; }
+  .admin_wrapper .content_wrapper .itemsection .button_wrapper .doctorNumber{ text-align: center;}
 }
 @media screen and (max-width: 991px) {
   .biller_Dashboard .patient_report_section .patient_top_search .res_view { flex-direction: column; width: 100%;}
@@ -194,7 +199,7 @@ align-items: flex-start; }
   .report_action_wrapper { flex-direction: column;}
   .report_action_wrapper button { margin-right: 0px; margin-bottom: 10px;}
   .mat-bottom-sheet-container { max-width: 80vw!important; }
-
+  .admin_wrapper .content_wrapper .itemsection .button_wrapper .doctorNumber { font-size: 18px; }
 }
 @media screen and (max-width: 900px){
   .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item,
@@ -268,7 +273,7 @@ align-items: flex-start; }
 @media screen and (max-width: 576px){
   .admin_table table tr td:nth-child(4) span {display: inline-block;}
   .admin_wrapper .content_wrapper { flex-wrap: wrap; }
-  .admin_wrapper .content_wrapper .itemsection { flex-wrap: wrap; width: 100%; margin: 0; margin-bottom: 10px; }
+  .admin_wrapper .content_wrapper .itemsection { flex-wrap: wrap; width: 100%; margin: 0; margin-bottom: 10px; box-shadow: 0px 3px 4px #c7c7c7; }
   .admin_superbillsection .biller_wrapper .super_bill_item { width: 100%; margin-bottom: 10px;  flex-direction: column;}
   .admin_superbillsection .biller_wrapper .super_bill_item .container_wrapper { width: 100%; align-items: center; text-align: center;}
   .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper { width: 100%; align-items: center; justify-content: center; }
@@ -387,3 +392,7 @@ align-items: flex-start; }
   .container .searchbar .add_button { margin: 0; margin-left: 20px; }
 }                                            
  
+
+ 
+
+
