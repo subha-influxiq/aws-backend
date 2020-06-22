@@ -257,7 +257,7 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 .searchcard { padding: 0; } 
 
 /* admin css */ 
-.admin_wrapper .content_wrapper{ display: flex; justify-content: space-between;  align-items: center; width: 100%; margin: auto; text-align: center; margin-top: 10px!important; margin-bottom: 12px; }
+.admin_wrapper .content_wrapper{ display: flex; justify-content: center;  align-items: center; width: 100%; margin: auto; text-align: center; margin-top: 10px!important; margin-bottom: 12px; }
 .admin_wrapper .content_wrapper .itemsection{
   /* width: 33%; margin: 0px 7px; box-sizing: border-box; display: flex; justify-content: center; position: relative; border-radius: 10px; border: 1px solid #e8e9ef;  overflow: hidden; background:#fff;  */
   width: 33%;
@@ -273,7 +273,7 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
   padding: 6px;
 
 }
-.admin_wrapper .content_wrapper .itemsection .icon{     display: flex;
+.admin_wrapper .content_wrapper .itemsection .icon{ display: flex;
   align-items: center;
   justify-content: center;
   max-width: 20%;
@@ -446,8 +446,8 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .add_button{ background: #e5ae00; font-family: "AvenirMedium"; color: #fff; text-transform: capitalize; box-shadow: none; border-radius: 3px; font-size: 18px;}
 .table_wrapper .mat-table .buttons_ro{ display: inline-block; }
 .table_wrapper .mat-table .buttons_ro button{ margin: 0 2px; }
-.table_wrapper .mat-table .buttons_ro button:first-child{ margin-left: 0px;  }
-.table_wrapper .mat-table .buttons_ro button:last-child{ margin-right: 0px;   }
+.table_wrapper .mat-table .buttons_ro button:first-child{ margin-left: 0px; }
+.table_wrapper .mat-table .buttons_ro button:last-child{ margin-right: 0px; }
 .table_wrapper .mat-table .mat-column-doctorName .doctor_name{ margin: 6px 0; word-break: break-all; }
 .table_wrapper .mat-table .mat-column-doctorName .doctor_name span{ font-family: 'AvenirBlack'; color: #404242; }
 .table_wrapper .footer_action{ justify-content: center; height: auto; padding: 10px 0; margin-top: 10px;}
