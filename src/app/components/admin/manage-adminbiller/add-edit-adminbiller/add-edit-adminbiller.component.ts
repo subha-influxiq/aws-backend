@@ -117,7 +117,7 @@ export class AddEditAdminbillerComponent implements OnInit {
           //this.adminbillerManagementAddEditForm.controls['biller_id'].patchValue(adminbillerDetails[0].biller_details);
           //this.adminbillerManagementAddEditForm.controls['doctors_office_id'].patchValue(adminbillerDetails[0].doctors_office_details);
           this.adminbillerManagementAddEditForm.controls['state'].patchValue(adminbillerDetails[0].state);
-          this.adminbillerManagementAddEditForm.controls['taxo_list'].patchValue(adminbillerDetails[0].taxo_list);
+          // this.adminbillerManagementAddEditForm.controls['taxo_list'].patchValue(adminbillerDetails[0].taxo_list);
           this.adminbillerManagementAddEditForm.controls['status'].patchValue(adminbillerDetails[0].status);
         });
         break;

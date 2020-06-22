@@ -754,7 +754,7 @@ const routes: Routes = [
   },
   {
     path: 'admin/adminbiller-management/edit/:_id',
-    component: AddEditBillerComponent,
+    component: AddEditAdminbillerComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {

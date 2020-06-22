@@ -132,7 +132,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .DataTable .multipledeleteandupdatebuttan button { background: var(--button-color1);
   line-height: inherit; padding: 4px 10px; box-shadow: none; font-family: 'AvenirMedium';
   font-size: 16px; min-width: 140px;}
-.DataTable .multipledeleteandupdatebuttan button:last-child{ background: var(--button-color2); margin-left: 5px; color: #fff; }
+.DataTable .multipledeleteandupdatebuttan button:last-child{ background: var(--button-color2); color: #fff; }
 
 /* Styling modal */
 .custom-modalbox{ min-width: 500px;}
@@ -191,7 +191,9 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 
 /* .container .searchbar i{margin-left: auto;} */
 .searchbar { height: auto!important; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; box-shadow: 0px 2px 2px #c5c5c5; padding-bottom: 16px!important; position: relative; background: #fbfbfb; }
-.searchbar .mat-form-field{ width: 32%; margin: 0 0.5%!important; flex-grow: 1;}
+.searchbar .mat-form-field{ width: 32%; margin: 0 0.5%!important; 
+  /* flex-grow: 1; */
+}
 .searchbar .cursor{ width: 35px; border-radius: 50%; background: var(--button-color2); height: 35px;
   margin: auto; display: flex; justify-content: center; align-items: center; color: #fff; margin:0 10px;}
 .pad-gap{ margin: inherit!important;}
@@ -256,15 +258,64 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 
 /* admin css */ 
 .admin_wrapper .content_wrapper{ display: flex; justify-content: space-between;  align-items: center; width: 100%; margin: auto; text-align: center; margin-top: 10px!important; margin-bottom: 12px; }
-.admin_wrapper .content_wrapper .itemsection{width: 33%; margin: 0px 7px; box-sizing: border-box; display: flex; justify-content: center; position: relative; border-radius: 10px; border: 1px solid #e8e9ef;  overflow: hidden; background:#fff;  }
-.admin_wrapper .content_wrapper .itemsection .icon{  display: flex; align-items: center; justify-content: center; width: 20%; box-sizing: border-box;}
+.admin_wrapper .content_wrapper .itemsection{
+  /* width: 33%; margin: 0px 7px; box-sizing: border-box; display: flex; justify-content: center; position: relative; border-radius: 10px; border: 1px solid #e8e9ef;  overflow: hidden; background:#fff;  */
+  width: 33%;
+  margin: 0px 7px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid #e8e9ef;
+  overflow: hidden;
+  background: #fff;
+  padding: 6px;
+
+}
+.admin_wrapper .content_wrapper .itemsection .icon{     display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 20%;
+  box-sizing: border-box;
+  background: linear-gradient(0deg, #01adfa, #14c9fd);
+  border-radius: 8px;
+  min-width: 20%;}
 .admin_wrapper .content_wrapper .itemsection .icon img{ max-width: 100%; }
-.admin_wrapper .content_wrapper .itemsection .button_wrapper{ background: #4d545a; width: 25%; display: flex; align-items: center; justify-content: center; }
-.admin_wrapper .content_wrapper .itemsection .button_wrapper button{ width: auto; background: transparent; color: #fff; padding: 0; font-family: "AvenirMedium"; font-size: 15px; }
-.admin_wrapper .content_wrapper .itemsection .counteer { box-sizing: border-box; width: 55%; padding: 5px; text-align: left; }
-  .counter_with_tool { display: flex; }
-.admin_wrapper .content_wrapper .itemsection .counteer .dataCount{ font-size: 48px; font-family: "AvenirBlack";  color: #4d545a; margin: 0;}
+.admin_wrapper .content_wrapper .itemsection .button_wrapper{ 
+  /* background: #4d545a; width: 25%; display: flex; align-items: center; justify-content: center; */
+   
+  width:54%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.admin_wrapper .content_wrapper .itemsection .button_wrapper button{
+   /* width: auto; background: transparent; color: #fff; padding: 0; font-family: "AvenirMedium"; font-size: 15px; */
+
+   width: auto;
+   background: linear-gradient(0deg, #ea2b00, #fd6100);
+   color: #e0e2e4;
+   font-family: "AvenirMedium";
+   font-size: 14px;
+   border: 2px solid #d2cccc;
+   line-height: inherit;
+   padding: 4px 14px;
+   margin-left: auto;
+   }
+.admin_wrapper .content_wrapper .itemsection .counteer { box-sizing: border-box; 
+  width: auto; padding: 5px; min-width: 120px; text-align: left; background: #e2e8ec;
+  border-radius: 8px; display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 6px;}
+.counter_with_tool { display: flex; align-items: center; }
+.admin_wrapper .content_wrapper .itemsection .counteer .dataCount{ font-size: 38px; font-family: "AvenirBlack";  color: #4d545a; margin: 0; }
+.admin_wrapper .content_wrapper .itemsection .button_wrapper .doctorNumber{ font-family: 'AvenirBlack';
+  margin: 0 0 14px 0; font-size: 16px; width: 100%; text-align: left; color: #656262;} 
 .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber{ font-size: 18px; font-family: "AvenirMedium";  color: #4d545a; margin:0;}
+
 .admin_wrapper .content_wrapper .itemsection:nth-child(3n+1){ margin-left: 8px;}
 .admin_wrapper .content_wrapper .itemsection:nth-child(3n+3){ margin-right: 8px;}
 
@@ -326,6 +377,9 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 }
 .admin_superbillsection .biller_wrapper  { display: flex; justify-content: center; margin-bottom: 0;}
 .admin_superbillsection .biller_wrapper .super_bill_item{ position: relative; width: 100%; margin: .5%; padding:10px; display: flex;  padding-top: 2%; border-radius: 10px; }
+.superbillerContainer .biller_wrapper {  flex-wrap: wrap;}
+.superbillerContainer .super_bill_item{ width: 24%;}
+
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(1){ background: #4099ff url("../../../../assets/images/admincircle_icon1.png") no-repeat right top; background-size: 120px;}
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(2){ background: #ab8ce4 url("../../../../assets/images/admincircle_icon2.png") no-repeat right top; background-size: 120px;}
 .admin_superbillsection .biller_wrapper .super_bill_item:nth-child(3){ background: #26c6da url("../../../../assets/images/admincircle_icon3.png") no-repeat right top; background-size: 120px;}
@@ -355,7 +409,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .superbillerContainer .biller_wrapper .super_bill_item span P{ font-size: 18px!important; line-height: 20px!important;}
 .superbillerContainer .biller_wrapper .super_bill_item span h2{ margin: 0;}
 .superbillerContainer .biller_wrapper .super_bill_item span button { line-height: 28px!important; width: 90px!important; } 
-.superbillerContainer .biller_wrapper .super_bill_item {background-size: 90px!important; }
+.superbillerContainer .biller_wrapper .super_bill_item {background-size: 90px!important; width: 24% }
 
 .adminTables .viewButton{ background-color:var(--button-color2); width: auto; height: auto; line-height: initial; padding: 2px 10px; box-shadow: none; border-radius: 2px; font-family: "AvenirMedium"; color: #fff; min-width: inherit;}
 .adminTables .editButton{ background-color:var(--button-color1); width: auto; height: auto; line-height: initial; padding: 2px 10px; box-shadow: none; border-radius: 2px; font-family: "AvenirMedium"; color: #fff; min-width: inherit;}
@@ -553,7 +607,7 @@ color: #ffffff; text-align: inherit; display: inline-flex; align-items: center;}
 .searchbar .mat-form-field .mat-chip.mat-standard-chip .mat-chip-remove.mat-icon { margin: 0; }
 
 .multipledeleteandupdatebuttan button{ background: linear-gradient(40deg, #ff4081, #dc004b); color: #fff;
-  margin-right: 4px;}
+  margin-right: 10px;}
 .multipledeleteandupdatebuttan button:last-child{ margin-right: 0; background: linear-gradient(40deg, #21e289, #00c4fb); }
 .DataTable .mat-card br{ display: none;}
 .DataTable .mat-card mat-label{ margin-right: 10px;}
@@ -779,13 +833,12 @@ display: none; justify-content: center; align-items: center; transition: ease-in
 }
 .tolTip a.toggle_btn{ color: #313131;}
 .tolTip a.toggle_btn .material-icons{  font-size: 22px; color: #d83b28; }
-.superbillerContainer .tolTip{  margin-top: 8px;}
 .admin_superbillsection  .container_wrapper .tolTip a.toggle_btn .material-icons,
 .superbillerContainer .tolTip a.toggle_btn .material-icons{  font-size: 22px; color: #fff; }
 .tooltip_bg{background:#fff!important; color: #000!important; font-size: 14px!important; position: relative;
 font-family: 'AvenirMedium'!important; opacity: 1!important; border: 1px solid rgb(177, 175, 175);} 
  
-/* modal close button */
+/* modal close button */ 
 .maindialognew{ position: relative;}
 .maindialognew .close-btn-modal{ float: none!important;
 color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
