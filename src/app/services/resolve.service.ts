@@ -95,6 +95,16 @@ export class ResolveService implements Resolve<any> {
       // requestData.condition['diagnostic_admin_id_object'] = userData._id;;
     }
     /* This one is for Diagnostic Admin End */
+
+    /* This one is for Doctor Group Start */
+    if(route.url[0].path == 'doctor-group') {
+      switch(route.url[1].path) {
+        case 'dashboard':
+          requestData.condition['doctor_group_id'] = userData._id;
+          break;
+      }
+    }
+    /* This one is for Doctor Group End */
     /////////////////////////////////////////////////////////////////////
 
 

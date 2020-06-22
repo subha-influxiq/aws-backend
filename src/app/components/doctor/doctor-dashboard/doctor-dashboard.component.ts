@@ -62,7 +62,7 @@ export class DoctorDashboardComponent implements OnInit {
   public userData: any;
   public libdata: any = {
     basecondition: "",
-    updateendpoint: '',
+    updateendpoint: 'status-update-doctor',
     custombuttons: [
       {
         label: "View Report",
@@ -108,7 +108,7 @@ export class DoctorDashboardComponent implements OnInit {
         type: 'action',
         datatype: 'api',
         endpoint: 'get-doctor-office-details',
-        datafields: ['centername', 'firstname', 'lastname', 'email', 'phone', 'address', 'city', 'state', 'zip'],
+        datafields: ['center name', 'first name', 'last name', 'email', 'phone', 'address', 'city', 'state', 'zip'],
         // otherparam:["patient_name"],
         //cond:'status',
         //condval:0,
@@ -123,8 +123,8 @@ export class DoctorDashboardComponent implements OnInit {
         endpoint: 'get-parent-details',
         datafields: ['Parent Name', 'Contact Person', 'email', 'phone', 'address', 'city', 'state', 'zip'],
         // otherparam:["patient_name"],
-        // cond:'parent_check',
-        // condval:"1",
+        cond:'parent_check_flag',
+        condval:1,
         param: 'id',
         headermessage: 'Parent Information',
         // refreshdata:true
@@ -133,7 +133,7 @@ export class DoctorDashboardComponent implements OnInit {
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
     hidedeletemany: true,
-    hidestatustogglebutton: true,
+    // hidestatustogglebutton: true,
     hideviewbutton: true,
     tableheaders: [
       "patient_name",
@@ -170,7 +170,8 @@ export class DoctorDashboardComponent implements OnInit {
 
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
-  public status: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, { val: "Biller Admin Hold", 'name': "Biller Admin Hold" }];
+  public status: any = [{ val: "Doctor Sign and Send To Biller", 'name': 'Doctor Sign and Send To Biller' }];
+  public cptcodes: any = [{ val: "95923", 'name': '95923' }, { val: "95943", 'name': '95943' }, { val: "95921", 'name': "95921" }, { val: "93923", 'name': "93923" }, { val: "93922", 'name': "93922" }];
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
   public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }, { val: "CMAT with BP Cuffs", 'name': "CMAT with BP Cuffs" }];
   public SearchingEndpoint: any = "datalist";
@@ -188,10 +189,13 @@ export class DoctorDashboardComponent implements OnInit {
 
       selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type }, { label: "Search By Tech", field: 'tech_name_search', values: this.techval }, { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval }, { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity }, { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }],
       datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }],
+      textsearch: [{ label: "Search By Patient Name", field: 'patient_name_search' }],
       // textsearch: [{ label: "Search By Name", field: 'name_search' },
       // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],
       // search:[,
       // ]
+      search:[{ label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes }
+      ]
     };
   // lib list end
 
@@ -239,6 +243,15 @@ export class DoctorDashboardComponent implements OnInit {
     this.libdata.basecondition = {
       status: { "$gt": 10 }, doctor_id: this.authData._id
     };
+    if(this.authData.parent_type != "admin") {
+      this.status[0].val = "Doctor Signed";
+      this.status[0].name = "Doctor Signed";
+    }
+    if(this.authData.status_text == "Doctor Signed") {
+      this.status[0].val = "Send to Biller";
+      this.status[0].name = "Doctor Signed";
+
+    }
     if (typeof (this.authData.diagnostic_admin_id) != 'undefined') {
       this.htmlText.signFlag = false;
       this.data = { _id_object: this.authData.diagnostic_admin_id };
