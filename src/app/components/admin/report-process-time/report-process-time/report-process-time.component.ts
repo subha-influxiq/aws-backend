@@ -77,7 +77,7 @@ export class ReportProcessTimeComponent implements OnInit {
     "patient_name": "Report Name",
     "report_uploaded_datetime": "Report Uploaded",
     "report_process_datetime": "Report Process",
-    "processing_time": "Reports Processing Time"
+    "processing_time": "Reports Processing Time(Minutes)"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";
