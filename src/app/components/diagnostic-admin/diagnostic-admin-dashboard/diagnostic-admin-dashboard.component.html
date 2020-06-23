@@ -12,7 +12,7 @@
         <span class="counter_with_tool">
           <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
           <span class="tolTip">
-            <a mat-raised-button #TNDoctors="matTooltip" matTooltip="Comming .." matTooltipPosition="above"
+            <a mat-raised-button #TNDoctors="matTooltip" matTooltip="Data listed for the total number of doctors registered under the logged in Diagnostic Admin." matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="TNDoctors.toggle()" class="toggle_btn" aria-label=" toggle section">
@@ -37,7 +37,8 @@
         <span class="counter_with_tool">
           <h4 class="dataCount"> {{ allResolveData.total_biller }}</h4>
           <span class="tolTip">
-            <a mat-raised-button #TNBillers="matTooltip" matTooltip="Comming .." matTooltipPosition="above"
+            <a mat-raised-button #TNBillers="matTooltip" matTooltip="Data listed for the total number of billers registered under the logged in Diagnostic Admin.
+            " matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="TNBillers.toggle()" class="toggle_btn" aria-label=" toggle section">
@@ -61,7 +62,8 @@
         <span class="counter_with_tool">
           <h4 class="dataCount"> {{ allResolveData.total_tech }}</h4>
           <span class="tolTip">
-            <a mat-raised-button #TNTechs="matTooltip" matTooltip="Comming .." matTooltipPosition="above"
+            <a mat-raised-button #TNTechs="matTooltip" matTooltip="Data listed for the total number of techs registered under the logged in Diagnostic Admin.
+            " matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="TNTechs.toggle()" class="toggle_btn" aria-label=" toggle section">
