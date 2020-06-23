@@ -264,7 +264,7 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
   margin: 0px 7px;
   box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: relative;
   border-radius: 10px;
   border: 1px solid #e8e9ef;

@@ -4,11 +4,7 @@
 
   <mat-card-content class="content_wrapper">
 
-
   </mat-card-content>
-
-
-
 
   <!-- Report Status Section Start -->
   <mat-card-content class="admin_superbillsection">
@@ -88,7 +84,7 @@
     <h1>Last Month Patient Report Status</h1>
     <mat-card-content class="biller_wrapper">
 
-      
+
       <mat-card-content class="super_bill_item">
         <span class="border_wrapper">
           <mat-card-content class="circle">
@@ -161,7 +157,7 @@
     <h1>This Month Patient Report Status</h1>
     <mat-card-content class="biller_wrapper">
 
-      
+
       <mat-card-content class="super_bill_item">
         <span class="border_wrapper">
           <mat-card-content class="circle">
@@ -232,7 +228,7 @@
     <h1>Last Week Patient Report Status</h1>
     <mat-card-content class="biller_wrapper">
 
-      
+
       <mat-card-content class="super_bill_item">
         <span class="border_wrapper">
           <mat-card-content class="circle">
@@ -303,7 +299,7 @@
     <h1>This Week Patient Report Status</h1>
     <mat-card-content class="biller_wrapper">
 
-      
+
       <mat-card-content class="super_bill_item">
         <span class="border_wrapper">
           <mat-card-content class="circle">
@@ -394,43 +390,28 @@
     </mat-toolbar>
     <br>
     <mat-card-content class="admin_dashboard">
-    <h1  class="headr_tagh">Patient Reports Pending Approval</h1>
+      <h1 class="headr_tagh">Patient Reports Pending Approval</h1>
 
-    <!-- table -->
-    <lib-listing
-      class="DataTable" 
-      *ngIf="allBillerData.length>0" 
-      [datasource]="allBillerData" 
-      [skip]="allUserData_skip"
-      [modify_header_array]="allUserData_modify_header" 
-      [detail_skip_array]="previewModal_detail_skip" 
-      [apiurl]="apiUrl"
-      [sourcedata]="tableName" 
-      [editroute]="editUrl" 
-      [jwttoken]="jwtToken" 
-      [statusarr]="status"
-      [updateendpoint]="UpdateEndpoint" 
-      [deleteendpoint]="deleteEndpoint" 
-      [date_search_endpoint]="SearchingEndpoint"
-      [date_search_source]="SearchingSourceName" 
-      [search_settings]="search_settings" 
-      [sortdata]="sortdata" 
-      [datacollection]="datacollection" 
-      [libdata]="libdata" 
-      [date_search_source_count]="billerData_count" 
-      [limitcond]="limitcond" >
-    </lib-listing>
-    <!-- Listing ends here  -->
+      <!-- table -->
+      <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData"
+        [skip]="allUserData_skip" [modify_header_array]="allUserData_modify_header"
+        [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl" [sourcedata]="tableName" [editroute]="editUrl"
+        [jwttoken]="jwtToken" [statusarr]="status" [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint"
+        [date_search_endpoint]="SearchingEndpoint" [date_search_source]="SearchingSourceName"
+        [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection" [libdata]="libdata"
+        [date_search_source_count]="billerData_count" [limitcond]="limitcond">
+      </lib-listing>
+      <!-- Listing ends here  -->
     </mat-card-content>
   </mat-card-content>
   <!-- dashboard all listing end here -->
 
   <!-- All Data listing start here(default listing) -->
-  
-    <h1 class="headr_tagh">Approved Patient Reports</h1>
 
-    <app-approved-patient-reports-billeradmin></app-approved-patient-reports-billeradmin>
- 
+  <h1 class="headr_tagh">Approved Patient Reports</h1>
+
+  <app-approved-patient-reports-billeradmin></app-approved-patient-reports-billeradmin>
+
 </mat-card>
 
 <app-admin-footer></app-admin-footer>
