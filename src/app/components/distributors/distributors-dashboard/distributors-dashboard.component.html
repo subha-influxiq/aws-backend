@@ -6,6 +6,80 @@
   <mat-card-content class="content_wrapper">
     <mat-card-content class="itemsection">
       <span class="icon">
+        <img src="../../../../assets/images/loveHandshake.png">
+      </span>
+      <span class="counteer">
+        <span class="counter_with_tool">
+          <h4 class="dataCount">1</h4>
+          <span class="tolTip">
+            <a mat-raised-button #TNBillers="matTooltip"
+              matTooltip="comming.." matTooltipPosition="above"
+              aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="TNBillers.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+
+        </span>
+      </span>
+      <span class="button_wrapper">
+        <p class="doctorNumber">Total Number of<br> Billers</p>
+        <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
+      </span>
+    </mat-card-content>
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/loveHandshake.png">
+      </span>
+      <span class="counteer">
+        <span class="counter_with_tool">
+          <h4 class="dataCount">1</h4>
+          <span class="tolTip">
+            <a mat-raised-button #TNTechs="matTooltip"
+              matTooltip="comming.." matTooltipPosition="above"
+              aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="TNTechs.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+
+        </span>
+      </span>
+      <span class="button_wrapper">
+        <p class="doctorNumber">Total Number of <br>Techs</p>
+        <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
+      </span>
+    </mat-card-content>
+
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/loveHandshake.png">
+      </span>
+      <span class="counteer">
+        <span class="counter_with_tool">
+          <h4 class="dataCount">1</h4>
+          <span class="tolTip">
+            <a mat-raised-button #TNDOffice="matTooltip"
+              matTooltip="comming.." matTooltipPosition="above"
+              aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="TNDOffice.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+
+        </span>
+      </span>
+      <span class="button_wrapper">
+        <p class="doctorNumber">Total No of <br>Doctor's Office</p>
+        <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
+      </span>
+    </mat-card-content>
+    <!-- new modification -->
+    <!-- <mat-card-content class="itemsection">
+      <span class="icon">
         <img src="../../../../assets/images/adminDoctoricon2.png">
       </span>
       <span class="counteer">
@@ -15,9 +89,9 @@
       <span class="button_wrapper">
         <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
       </span>
-    </mat-card-content>
+    </mat-card-content> -->
 
-    <mat-card-content class="itemsection">
+    <!-- <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/adminDoctoricon3.png">
       </span>
@@ -28,9 +102,9 @@
       <span class="button_wrapper">
         <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
       </span>
-    </mat-card-content>
+    </mat-card-content> -->
 
-    <mat-card-content class="itemsection">
+    <!-- <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/doctorOffice.png">
       </span>
@@ -41,14 +115,88 @@
       <span class="button_wrapper">
         <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
       </span>
-    </mat-card-content>
+    </mat-card-content> -->
 
   </mat-card-content>
 
 
   <!-- Doctor occide related -->
   <mat-card-content class="content_wrapper">
+
     <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/loveHandshake.png">
+      </span>
+      <span class="counteer">
+        <span class="counter_with_tool">
+          <h4 class="dataCount">12</h4>
+          <span class="tolTip">
+            <a mat-raised-button #TNDrs="matTooltip"
+              matTooltip="comming.." matTooltipPosition="above"
+              aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="TNDrs.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+
+        </span>
+      </span>
+      <span class="button_wrapper">
+        <p class="doctorNumber">Total No of <br>Doctors</p>
+        <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
+      </span>
+    </mat-card-content>
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/loveHandshake.png">
+      </span>
+      <span class="counteer">
+        <span class="counter_with_tool">
+          <h4 class="dataCount">12</h4>
+          <span class="tolTip">
+            <a mat-raised-button #TAPending="matTooltip"
+              matTooltip="comming.." matTooltipPosition="above"
+              aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="TAPending.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+
+        </span>
+      </span>
+      <span class="button_wrapper">
+        <p class="doctorNumber">Total Appointments<br> Pending</p>
+        <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
+      </span>
+    </mat-card-content>
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/loveHandshake.png">
+      </span>
+      <span class="counteer">
+        <span class="counter_with_tool">
+          <h4 class="dataCount">34 </h4>
+          <span class="tolTip">
+            <a mat-raised-button #TNSPerson="matTooltip"
+              matTooltip="comming.." matTooltipPosition="above"
+              aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="TNSPerson.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+
+        </span>
+      </span>
+      <span class="button_wrapper">
+        <p class="doctorNumber">Total Number of<br> Sales Person</p>
+        <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
+      </span>
+    </mat-card-content>
+    <!-- new modification -->
+    <!-- <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/billerNoteicon3.png">
       </span>
@@ -59,9 +207,9 @@
       <span class="button_wrapper">
         <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
       </span>
-    </mat-card-content>
+    </mat-card-content> -->
 
-    <mat-card-content class="itemsection">
+    <!-- <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/billerNoteicon1.png">
       </span>
@@ -72,9 +220,9 @@
       <span class="button_wrapper">
         <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
       </span>
-    </mat-card-content>
+    </mat-card-content> -->
 
-    <mat-card-content class="itemsection">
+    <!-- <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/salesPerson.png">
       </span>
@@ -85,12 +233,90 @@
       <span class="button_wrapper">
         <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
       </span>
-    </mat-card-content>
+    </mat-card-content> -->
   </mat-card-content>
 
   <!-- Doctor other related -->
+
+
+
   <mat-card-content class="content_wrapper">
     <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/loveHandshake.png">
+      </span>
+      <span class="counteer">
+        <span class="counter_with_tool">
+          <h4 class="dataCount"> 34 </h4> 
+          <span class="tolTip">
+            <a mat-raised-button #TACompleted="matTooltip"
+              matTooltip="comming.." matTooltipPosition="above"
+              aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="TACompleted.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+  
+        </span>
+      </span>
+      <span class="button_wrapper">
+        <p class="doctorNumber">Total Appointments<br> Completed</p>
+        <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
+      </span>
+    </mat-card-content>
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/loveHandshake.png">
+      </span>
+      <span class="counteer">
+        <span class="counter_with_tool">
+          <h4 class="dataCount"> 34 </h4> 
+          <span class="tolTip">
+            <a mat-raised-button #TACompleted="matTooltip"
+              matTooltip="comming.." matTooltipPosition="above"
+              aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="TACompleted.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+  
+        </span>
+      </span>
+      <span class="button_wrapper">
+        <p class="doctorNumber">Total Appointments<br> Completed</p>
+        <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
+      </span>
+    </mat-card-content>
+  
+    <mat-card-content class="itemsection">
+      <span class="icon">
+        <img src="../../../../assets/images/loveHandshake.png">
+      </span>
+      <span class="counteer">
+        <span class="counter_with_tool">
+          <h4 class="dataCount"> 34 </h4> 
+          <span class="tolTip">
+            <a mat-raised-button #TACompleted="matTooltip"
+              matTooltip="comming.." matTooltipPosition="above"
+              aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+            </a>
+            <a mat-button (click)="TACompleted.toggle()" class="toggle_btn" aria-label=" toggle section">
+              <span class="material-icons"> help_outline </span>
+            </a>
+          </span>
+  
+        </span>
+      </span>
+      <span class="button_wrapper">
+        <p class="doctorNumber">Total Appointments<br> Completed</p>
+        <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
+      </span>
+    </mat-card-content>
+  
+    <!-- new edit -->
+    <!-- <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/calenderAppointment.png">
       </span>
@@ -101,7 +327,7 @@
       <span class="button_wrapper">
         <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
       </span>
-    </mat-card-content>
+    </mat-card-content> -->
 
   </mat-card-content>
 
