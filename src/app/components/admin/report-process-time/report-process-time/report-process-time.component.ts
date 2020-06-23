@@ -111,7 +111,7 @@ export class ReportProcessTimeComponent implements OnInit {
   public search_settings: any =
     {
       
-      textsearch: [{label: "Search By Patient Name", field: 'patient_name_search'}],
+      textsearch: [{label: "Search By Report Name", field: 'patient_name_search'}],
       datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
       // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],
       // search:[,
