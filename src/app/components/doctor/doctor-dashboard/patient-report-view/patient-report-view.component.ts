@@ -229,5 +229,11 @@ export class PatientReportViewComponent implements OnInit {
   openModal(data) {
     this.dialogRef = this.dialog.open(DialogBoxComponent, data);
   }
+// sticky scroll
+isSticky: boolean = false;
 
+@HostListener('window:scroll', ['$event'])
+checkScroll() {
+  this.isSticky = window.pageYOffset >= 250;
+}
 }
