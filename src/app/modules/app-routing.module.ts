@@ -135,6 +135,7 @@ import { EncounterFormRulesComponent } from '../components/common/encounter-form
 import { CptValidateReportsComponent } from '../components/admin/cpt-validate-reports/cpt-validate-reports/cpt-validate-reports.component';
 import { ReportsDetailsComponent } from '../components/admin/reports-details/reports-details/reports-details.component';
 import {ApprovedPatientReportsComponent} from '../components/admin/admin-dashboard/approved-patient-reports/approved-patient-reports.component'
+import { ReportProcessTimeComponent } from '../components/admin/report-process-time/report-process-time/report-process-time.component';
 
 const routes: Routes = [
   /********** Auth Route Start **********/
@@ -264,6 +265,11 @@ const routes: Routes = [
 {
   path: 'admin/cpt-reports',
   component: CptValidateReportsComponent,
+  canActivate: [AuthguardService],
+},
+{
+  path: 'admin/report-processing',
+  component: ReportProcessTimeComponent,
   canActivate: [AuthguardService],
 },
 {
