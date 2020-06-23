@@ -16,17 +16,31 @@
 
 
 
+
+
 <mat-card class="admin_wrapper">
 
   <mat-card-content class="table_wrapper">
+    <ng-container *ngIf="activatedRoute.snapshot.routeConfig.path != 'admin/sales-person/doctor-management'">
     <mat-toolbar class="top_header">
       <h2> Manage doctor</h2>
     </mat-toolbar>
+    </ng-container>
+
+    <ng-container *ngIf="activatedRoute.snapshot.routeConfig.path == 'admin/sales-person/doctor-management'">
+      <mat-toolbar class="top_header">
+        <h2> Doctor Joined by Sales Person</h2>
+      </mat-toolbar>
+      </ng-container>
 
     <mat-toolbar class="add_header">
-      <ng-container *ngIf="userData.user_type == 'admin'">
+      <ng-container *ngIf="userData.user_type == 'admin' && activatedRoute.snapshot.routeConfig.path != 'admin/sales-person/doctor-management'">
         <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Manage Doctor</span>
         <button mat-flat-button [routerLink]="['/admin/doctor-management/add']">Add Doctor</button>
+      </ng-container>
+
+      <ng-container *ngIf="userData.user_type == 'admin' && activatedRoute.snapshot.routeConfig.path == 'admin/sales-person/doctor-management'">
+        <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Doctor List</span>
       </ng-container>
 
       <ng-container *ngIf="userData.user_type == 'diagnostic_admin'">

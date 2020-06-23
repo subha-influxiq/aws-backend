@@ -91,7 +91,7 @@ export class CptValidateReportsComponent implements OnInit {
   public allUserData_modify_header: any = {
     "parent_name": "Name",
     // "tech_name": "Tech Name",
-    "parent_type": "Type",
+    "parent_type": "Parent",
     "total_cpt_amount": "Total Validate Amount($)",
     "cpt_code_count": "Total CPT Found",
     "total_approved_reports": "Total Approved Reports",

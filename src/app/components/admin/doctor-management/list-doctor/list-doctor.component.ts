@@ -125,8 +125,12 @@ export class ListDoctorComponent implements OnInit {
     if(this.userData.user_type == 'admin') {
       if(this.activatedRoute.snapshot.routeConfig.path == "admin/sales-person/doctor-management") {
         this.field = {parent_user_type:"sales_person"}
-      }
+        this.docData_modify_header.parent_name = "Sales Person Name";
+        this.docData_modify_header.parent_type = "Parent";
+        this.search_settings.textsearch.push({ label: "Search By Sales Person Name", field: 'parent_name_search' });
+      } else {
       this.search_settings.textsearch.push({ label: "Search By Parent Name", field: 'parent_name_search' });
+      }
       this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type });
       this.libdata.tableheaders.splice(3,0,"parent_name");
       this.libdata.tableheaders.splice(4,0,"parent_type");
