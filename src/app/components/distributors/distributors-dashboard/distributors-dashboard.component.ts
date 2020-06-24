@@ -24,7 +24,7 @@ export class DistributorsDashboardComponent implements OnInit {
   public loginUserData: any = {};
   public jwtToken: string = "";
   public htmlText: any = {
-    headerText: "Reports Uploaded"
+    headerText: "Report Processed"
   };
 
   public shareDetails: any = {
@@ -394,58 +394,6 @@ export class DistributorsDashboardComponent implements OnInit {
   ngAfterViewInit() {
   }
 
-  downloadReport(report: any) {
-    if (typeof (report.download_count) == "undefined") {
-      report.download_count = 1;
-    } else {
-      report.download_count = report.download_count + 1;
-    }
-
-    /* Collect User Information for Download record */
-    let deviceInfo: any = this.deviceService.getDeviceInfo();
-    deviceInfo["isMobile"] = this.deviceService.isMobile();
-    deviceInfo["isTablet"] = this.deviceService.isTablet();
-    deviceInfo["isDesktop"] = this.deviceService.isDesktop();
-
-    /* Set downloader information */
-    var userDetails = {
-      id: this.loginUserData.user_details._id,
-      user_type: this.loginUserData.user_details.user_type
-    };
-
-    let postData: any = {
-      "source": "report_download",
-      "data": {
-        "report_id": report._id,
-        "biller_id": this.loginUserData.user_details._id,
-        "tech_id": report.tech_id,
-        "doctor_id": report.doctor_id,
-        "ip": this.htmlText.ip,
-        "download_attempt": 1,
-        "downloader_information": userDetails,
-        "device_information": deviceInfo
-      },
-      "sourceobj": ["report_id", "biller_id", "tech_id", "doctor_id"],
-      "download_count": report.download_count,
-      "token": this.loginUserData.jwtToken
-    };
-
-    this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
-      if (response.status == 'success') {
-        this.matSnackBar.open("Start downloading.", "Ok", {
-          duration: 3000
-        });
-        window.open(report.file_path, "_blank");
-
-        this.viewReportProcessData(this.htmlText.headerText);
-      } else {
-        this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
-          duration: 3000
-        });
-      }
-    });
-  }
-
   viewReportProcessData(flag = null) {
     this.htmlText.headerText = flag;
     
@@ -510,6 +458,58 @@ export class DistributorsDashboardComponent implements OnInit {
       this.allBillerData = res.results.res;
     }, error => {
       console.log('Oooops!');
+    });
+  }
+
+  downloadReport(report: any) {
+    if (typeof (report.download_count) == "undefined") {
+      report.download_count = 1;
+    } else {
+      report.download_count = report.download_count + 1;
+    }
+
+    /* Collect User Information for Download record */
+    let deviceInfo: any = this.deviceService.getDeviceInfo();
+    deviceInfo["isMobile"] = this.deviceService.isMobile();
+    deviceInfo["isTablet"] = this.deviceService.isTablet();
+    deviceInfo["isDesktop"] = this.deviceService.isDesktop();
+
+    /* Set downloader information */
+    var userDetails = {
+      id: this.loginUserData.user_details._id,
+      user_type: this.loginUserData.user_details.user_type
+    };
+
+    let postData: any = {
+      "source": "report_download",
+      "data": {
+        "report_id": report._id,
+        "biller_id": this.loginUserData.user_details._id,
+        "tech_id": report.tech_id,
+        "doctor_id": report.doctor_id,
+        "ip": this.htmlText.ip,
+        "download_attempt": 1,
+        "downloader_information": userDetails,
+        "device_information": deviceInfo
+      },
+      "sourceobj": ["report_id", "biller_id", "tech_id", "doctor_id"],
+      "download_count": report.download_count,
+      "token": this.loginUserData.jwtToken
+    };
+
+    this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
+      if (response.status == 'success') {
+        this.matSnackBar.open("Start downloading.", "Ok", {
+          duration: 3000
+        });
+        window.open(report.file_path, "_blank");
+
+        this.viewReportProcessData(this.htmlText.headerText);
+      } else {
+        this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+          duration: 3000
+        });
+      }
     });
   }
 
