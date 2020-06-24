@@ -104,6 +104,8 @@
 
         </lib-listing>
       </mat-card-content>
+
+    <h2 *ngIf="docData.length == 0">No record found.</h2>
     </mat-card-content>
     <mat-card-content class="table_wrapper">
 
@@ -116,8 +118,6 @@
     </mat-card-content>
 
   </section>
-
-
 
 </mat-card>
 <app-sales-person-footer></app-sales-person-footer>
