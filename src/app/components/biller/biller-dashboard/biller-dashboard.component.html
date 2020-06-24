@@ -69,13 +69,24 @@
       </mat-card-content>
 
     </mat-card-content>
-  </mat-card-content>
+  </mat-card-content> 
 
   <!-- patainet report section -->
-  <mat-card-content class="patient_report_section">
-    <mat-card-content class="patient_top_search">
-      <h1> {{ htmlText.tableHeaderText }}</h1>
-      
+  <mat-card-content class="table_wrapper admin_dashboard">
+    <mat-card-content class="headr_tagh">
+      <span class="counter_with_tool">
+        <h1>Patient Reports Pending Actions</h1>
+        <span class="tolTip">
+          <a mat-raised-button #pendingActions="matTooltip"
+            matTooltip=" All the Reports listed here are processed by System but awaiting on Admin actions."
+            matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+          </a>
+          <a mat-button (click)="pendingActions.toggle()" class="toggle_btn" aria-label=" toggle section">
+            <span class="material-icons"> help_outline </span>
+          </a>
+        </span>
+
+      </span>
     </mat-card-content>
     <lib-listing
       class="DataTable" 
