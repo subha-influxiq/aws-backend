@@ -48,8 +48,7 @@
 .techdashboard_header .header_wrapper { display: flex; flex-direction: column; }
 .techdashboard_header .quotation p { margin: 10px 5px; }
 .techdashboard_header .profile_section{ border-left: 0;}
-.togle_menu { display: block; margin-top: 10px; background: #f8c655;
-color: #fff; position: absolute; right: 20px; min-width: auto;}
+.togle_menu { display: block; margin-top: 10px; background: #f8c655; color: #fff; position: absolute; right: 20px; min-width: auto;}
 .success{ display: block;}
 .danger{ display: none;}
 .techdashboard_header .quotation .mat-list-base { display: flex; flex-direction: column; }
