@@ -15,6 +15,8 @@
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 4px; }
   .encounter_rules .admin_superbillsection .greenbar{ height: 320px; }
   .admin_wrapper .content_wrapper .itemsection .button_wrapper .doctorNumber { font-size: 15px; }
+  .superbillerContainer .biller_wrapper .super_bill_item span P {
+    font-size: 16px!important;}
 }
 @media screen and (max-width: 1410px){
   .action_bar .mat-form-field .mat-form-field-flex { width: 180px; }
@@ -200,6 +202,9 @@ align-items: flex-start; }
   .report_action_wrapper button { margin-right: 0px; margin-bottom: 10px;}
   .mat-bottom-sheet-container { max-width: 80vw!important; }
   .admin_wrapper .content_wrapper .itemsection .button_wrapper .doctorNumber { font-size: 18px; }
+
+
+
 }
 @media screen and (max-width: 900px){
   .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item,
@@ -209,8 +214,12 @@ align-items: flex-start; }
   .encounter_rules .admin_superbillsection .greenbar p { font-size: 38px; position: inherit; background: #fff; padding: 16px 0px 0; }
   .encounter_rules .admin_superbillsection .greenbar { height: auto; background-size: 220%;
   background-position: 100% top; padding: 16px; padding-top: 54%; background-color: #fff; text-align: center; }
-  .admin_wrapper .content_wrapper .itemsection .icon { height: 60px; }
+  .admin_wrapper .content_wrapper .itemsection .icon { height: 60px; margin: 0; }
+  .admin_wrapper .content_wrapper .itemsection .button_wrapper { height: 100%; }
   .admin_wrapper .content_wrapper .itemsection .icon img{ height:100%;}
+  .admin_wrapper .content_wrapper .itemsection .button_wrapper button { margin: 0 auto; margin-top: auto; }
+
+  .admin_wrapper .content_wrapper{ align-items:inherit; }
 }
 @media screen and (max-width: 840px){                      
   .quickRef .report_wrapper .items_w { width: 48%; margin: 1%;  }
@@ -288,6 +297,7 @@ align-items: flex-start; }
   .shareLink_wrpr { margin: 0px !important; }
   .shareLink_wrpr .small_view { flex-direction: column; }
   .shareLink_wrpr .small_view .icon_wr{ display: flex; justify-content: center; align-items: center; margin-top: 12px;}
+  .admin_wrapper .content_wrapper .itemsection .button_wrapper { height: inherit; display: block; }
 }
 
 @media screen and (max-width: 540px){

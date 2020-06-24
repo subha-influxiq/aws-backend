@@ -137,13 +137,20 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 /* Styling modal */
 .custom-modalbox{ min-width: 500px;}
 /* .custom-modalbox .mat-dialog-container { border: 4px solid #ffbc36; background: linear-gradient(0deg, #ffdfab, #99dfff); } */
-.custom-modalbox .mat-dialog-container .mat-card  { background: rgba(0,0,0, 0.1); border-radius: 0; display: flex; justify-content: center; align-items: end; margin-bottom: 16px;}
+.custom-modalbox .mat-dialog-container .mat-card  { background:rgba(70, 70, 70, 0.1); border-radius: 0; display: flex; justify-content: center; align-items: end; margin-bottom: 16px;  padding: 0;}
 .custom-modalbox .mat-dialog-container .mat-card  .mat-card-header-text { margin: 0; text-transform: capitalize; color: #000; font-family: "AvenirMedium";}
-/* .custom-modalbox .mat-dialog-container .mat-button-base { background: rgb(185, 125, 45); color: #fff; text-transform: uppercase; min-width: 120px; border-radius: 0;} */
-.custom-modalbox .example-card .mat-card-header { min-width: 280px; position: relative; padding-right: 14px; }
+ 
+.custom-modalbox .example-card .mat-card-header { min-width: 50%; position: relative; padding: 16px; box-sizing: border-box; }
 .custom-modalbox .example-card .mat-card-header .mat-card-title { margin-bottom: 0px; font-size: 16px; font-family: "AvenirLight"; }
-.custom-modalbox .example-card .mat-card-header::before { content: ':'; display: inline-block; font-size: 30px; position: absolute; right: -6px; top: -5px; padding-right: 10px; }
-.custom-modalbox .example-card .mat-card-content { width: 100%; }
+.custom-modalbox .example-card .mat-card-header::before { content: ':';
+  display: inline-block;
+  position: absolute;
+  right: 12px;
+  top: 20%;
+  font-size: 20px;
+  font-family: 'AvenirBlack';
+}
+.custom-modalbox .example-card .mat-card-content {width: 100%; padding: 16px 16px 16px 0; box-sizing: border-box;}
 
 /* modal for bulk upload container */
 /* .bulkupload-dialog .mat-dialog-container{ background: linear-gradient(0deg, #fff1c6, #fffdf7); text-align: center;}
@@ -257,7 +264,7 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 .searchcard { padding: 0; } 
 
 /* admin css */ 
-.admin_wrapper .content_wrapper{ display: flex; justify-content: space-between;  align-items: center; width: 100%; margin: auto; text-align: center; margin-top: 10px!important; margin-bottom: 12px; }
+.admin_wrapper .content_wrapper{ display: flex; justify-content: center;  align-items: center; width: 100%; margin: auto; text-align: center; margin-top: 10px!important; margin-bottom: 12px; }
 .admin_wrapper .content_wrapper .itemsection{
   /* width: 33%; margin: 0px 7px; box-sizing: border-box; display: flex; justify-content: center; position: relative; border-radius: 10px; border: 1px solid #e8e9ef;  overflow: hidden; background:#fff;  */
   width: 33%;
@@ -271,16 +278,15 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
   overflow: hidden;
   background: #fff;
   padding: 6px;
-
 }
-.admin_wrapper .content_wrapper .itemsection .icon{     display: flex;
+.admin_wrapper .content_wrapper .itemsection .icon{ display: flex;
   align-items: center;
   justify-content: center;
   max-width: 20%;
   box-sizing: border-box;
   background: linear-gradient(0deg, #01adfa, #14c9fd);
   border-radius: 8px;
-  min-width: 20%;}
+  min-width: 20%; padding: 10px;}
 .admin_wrapper .content_wrapper .itemsection .icon img{ max-width: 100%; }
 .admin_wrapper .content_wrapper .itemsection .button_wrapper{ 
   /* background: #4d545a; width: 25%; display: flex; align-items: center; justify-content: center; */
@@ -407,6 +413,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle{ margin: 0;}
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle img{ max-width: 100%;}
 .superbillerContainer .biller_wrapper .super_bill_item span P{ font-size: 18px!important; line-height: 20px!important;}
+.superbillerContainer .biller_wrapper .super_bill_item span P br{ display: none;}
 .superbillerContainer .biller_wrapper .super_bill_item span h2{ margin: 0;}
 .superbillerContainer .biller_wrapper .super_bill_item span button { line-height: 28px!important; width: 90px!important; } 
 .superbillerContainer .biller_wrapper .super_bill_item {background-size: 90px!important; width: 24% }
@@ -446,8 +453,8 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .add_button{ background: #e5ae00; font-family: "AvenirMedium"; color: #fff; text-transform: capitalize; box-shadow: none; border-radius: 3px; font-size: 18px;}
 .table_wrapper .mat-table .buttons_ro{ display: inline-block; }
 .table_wrapper .mat-table .buttons_ro button{ margin: 0 2px; }
-.table_wrapper .mat-table .buttons_ro button:first-child{ margin-left: 0px;  }
-.table_wrapper .mat-table .buttons_ro button:last-child{ margin-right: 0px;   }
+.table_wrapper .mat-table .buttons_ro button:first-child{ margin-left: 0px; }
+.table_wrapper .mat-table .buttons_ro button:last-child{ margin-right: 0px; }
 .table_wrapper .mat-table .mat-column-doctorName .doctor_name{ margin: 6px 0; word-break: break-all; }
 .table_wrapper .mat-table .mat-column-doctorName .doctor_name span{ font-family: 'AvenirBlack'; color: #404242; }
 .table_wrapper .footer_action{ justify-content: center; height: auto; padding: 10px 0; margin-top: 10px;}
@@ -765,7 +772,7 @@ background: #f9f9f9; padding: 16px 8px; font-family: 'AvenirBlack'; font-size:16
 .shareLink_wrpr .small_view .shreWr { width: 100%; display: flex;}
 .shareLink_wrpr .small_view .shreWr input{ background: #fff; padding: 10px; width: 100%; border: none; box-shadow: 0px 1px 4px #949494;}
   
-.shareLink_wrpr .link_field .shreWr a{ background: linear-gradient(45deg, #fecb00, #ff0000);
+.shareLink_wrpr .link_field .shreWr a{ background: linear-gradient(50deg, #ff2a4e, #f3072f);
 font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radius: 0 4px 4px 0;}
 .shareLink_wrpr .icon_wr a { width: 35px; height: auto; min-width: inherit; text-align: center; padding: 0; margin-left: 10px; } 
 .shareLink_wrpr .icon_wr a i{ font-size: 20px; }
