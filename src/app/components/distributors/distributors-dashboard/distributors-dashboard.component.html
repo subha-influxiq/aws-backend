@@ -137,7 +137,6 @@
 
   <!-- Doctor other related -->
 
-<<<<<<< HEAD
 
 
   <mat-card-content class="content_wrapper">
@@ -214,81 +213,9 @@
         <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
       </span>
     </mat-card-content>
-  
-    <!-- new edit -->
-    <!-- <mat-card-content class="itemsection">
-      <span class="icon">
-        <img src="../../../../assets/images/calenderAppointment.png">
-      </span>
-      <span class="counteer">
-        <h4 class="dataCount"> 34 </h4>
-        <p class="doctorNumber">Total Appointments<br> Completed</p>
-      </span>
-      <span class="button_wrapper">
-        <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
-      </span>
-    </mat-card-content> -->
 
   </mat-card-content>
 
-  <!-- <mat-card-content class="admin_superbillsection">
-    <h1>Physician Report Process Status</h1>
-    <mat-card-content class="biller_wrapper">
-
-      <mat-card-content class="super_bill_item">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon1.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total No of <br>
-            Images Not Processed
-          </p>
-          <h2>54 </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Images Not Processed')">view all</button>
-        </span>
-      </mat-card-content>
-
-      <mat-card-content class="super_bill_item">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon2.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total No of <br>
-            Basic Details Not Processed
-          </p>
-          <h2> 54 </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Basic Details Not Processed')">view all</button>
-        </span>
-      </mat-card-content>
-
-      <mat-card-content class="super_bill_item ">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon2.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total No of <br>
-            Risk Markers Not Processed
-          </p>
-          <h2>54</h2>
-          <button mat-flat-button (click)="viewReportProcessData('Risk Markers Not Processed')">view all</button>
-        </span>
-      </mat-card-content>
-
-    </mat-card-content>
-  </mat-card-content> -->
-
-
-=======
->>>>>>> 0844ba22f24e5a97aa9ced7b455014b97f2aebba
   <mat-card-content class="admin_superbillsection superbillerContainer">
     <h1>Physician Report and Super Bills</h1>
     <mat-card-content class="biller_wrapper">
@@ -392,19 +319,8 @@
   <mat-card-content class="table_wrapper admin_dashboard">
 
     <mat-toolbar class="top_header">
-      <h2> Patient Report Listing</h2>
+      <h2> {{ htmlText.headerText }} </h2>
       <span class="wrappp_R">
-        <!-- <button class="add_new tooltip" mat-button routerLink="/admin/patient-management/add" matTooltip="Add Report"
-          matTooltipPosition="above"> -->
-          <!-- <span class="tooltiptext"> Add Report </span> -->
-          <!-- <i class="material-icons">add</i> Add Report Manually
-        </button> -->
-
-<!-- 
-        <button class="add_new tooltip" mat-button matTooltipPosition="above" matTooltip="ReportRefresh Dashboard"> -->
-          <!-- <span class="tooltiptext"> Refresh Dashboard </span> -->
-          <!-- <i class="material-icons">cached</i>
-        </button> -->
       </span>
     </mat-toolbar>
 

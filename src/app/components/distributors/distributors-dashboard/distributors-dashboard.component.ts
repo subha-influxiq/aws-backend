@@ -474,6 +474,7 @@ export class DistributorsDashboardComponent implements OnInit {
   }
 
   viewReportProcessData(flag = null) {
+    this.htmlText.headerText = flag;
     switch (flag) {
       case 'Reports Uploaded':
         break;
