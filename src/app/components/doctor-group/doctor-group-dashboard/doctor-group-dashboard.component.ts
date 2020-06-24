@@ -254,7 +254,7 @@ export class DoctorGroupDashboardComponent implements OnInit {
         "type": 'desc',
         "field": 'patient_name'
       },
-      status: 11,
+      status: {$gt:10},
       parent_id: this.loginUserData.user_details._id
     }
 
