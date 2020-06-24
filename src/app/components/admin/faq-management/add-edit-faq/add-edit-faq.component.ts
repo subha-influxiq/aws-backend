@@ -70,7 +70,7 @@ export class AddEditFaqComponent implements OnInit {
     let validateRule: any = {
       id:           ['', []],
       users:        ['', [Validators.required, Validators.maxLength(50)]],
-      question:     ['', [Validators.required, Validators.maxLength(50)]],
+      question:     ['', [Validators.required, Validators.maxLength(1000)]],
       answer:       ['', [Validators.required, Validators.maxLength(100000)]],
       youtube_link: ['', [Validators.maxLength(60)]],
       priority:     ['', [Validators.required, Validators.minLength(7), Validators.maxLength(16)]],

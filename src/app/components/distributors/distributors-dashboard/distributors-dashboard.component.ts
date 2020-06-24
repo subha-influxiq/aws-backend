@@ -24,7 +24,7 @@ export class DistributorsDashboardComponent implements OnInit {
   public loginUserData: any = {};
   public jwtToken: string = "";
   public htmlText: any = {
-    headerText: "Patient Reports"
+    headerText: "Reports Uploaded"
   };
 
   public shareDetails: any = {
@@ -241,34 +241,7 @@ export class DistributorsDashboardComponent implements OnInit {
     this.libdata.basecondition.parent_id = this.loginUserData.user_details._id;
     this.shareDetails.userId = this.loginUserData.user_details._id;
 
-
-    // lib list
-    let endpoint = 'getPatientlistdata';
-    let endpointc = 'getPatientlistdata-count';
-    let data: any = {
-      "condition": {
-        "limit": 10,
-        "skip": 0
-      },
-      sort: {
-        "type": 'desc',
-        "field": 'patient_name'
-      },
-      status: { "$gt": 10 },
-      parent_id: this.loginUserData.user_details._id
-    }
-
-    this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
-      this.billerData_count = res.count;
-    }, error => {
-      console.log('Oooops!');
-    });
-
-    this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
-      this.allBillerData = res.results.res;
-    }, error => {
-      console.log('Oooops!');
-    });
+    this.viewReportProcessData(this.htmlText.headerText);
   }
 
   ngOnInit() {
@@ -474,18 +447,70 @@ export class DistributorsDashboardComponent implements OnInit {
   }
 
   viewReportProcessData(flag = null) {
+    this.htmlText.headerText = flag;
+    
+    let endpoint = 'getPatientlistdata';
+    let endpointc = 'getPatientlistdata-count';
+    // lib list
+    let data: any = {
+      "condition": {
+        "limit": 10,
+        "skip": 0
+      },
+      sort: {
+        "type": 'desc',
+        "field": 'patient_name'
+      },
+      parent_id: this.loginUserData.user_details._id
+    }
+
     switch (flag) {
       case 'Reports Uploaded':
+        data.status = { 
+          "$in": [ 8, 9, 10 ] 
+        };
         break;
-      case '':
+      case 'Report Processed':
+        data.status = {
+          "$in": [ 11, 12, 13 ] 
+        };
         break;
-      case '':
+      case 'Report Signed':
+        data.status = { 
+          doctor_signature: { $exists: true }
+        };
         break;
-      case '':
+      case 'Super Bill':
+        data.status = { 
+          biller_id: { $exists: true }
+        };
         break;
-      case '':
+      case 'Download Bill':
+        data.status = {
+          status: 11,
+          download_count: { $exists: true },
+        };
+        break;
+      case 'Reports Pending Sing':
+        data.status = {
+          status: 11,
+          doctor_signature: { $exists: false }
+        };
         break;
     }
+
+    // API Hit
+    this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
+      this.billerData_count = res.count;
+    }, error => {
+      console.log('Oooops!');
+    });
+
+    this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
+      this.allBillerData = res.results.res;
+    }, error => {
+      console.log('Oooops!');
+    });
   }
 
 }
