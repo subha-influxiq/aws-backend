@@ -55,6 +55,7 @@ export class BookAppoinmentNowComponent implements OnInit {
       {text: 'Admin Meetings', value: 1}
     ],
     responseData: [],
+    bookingStep: ['Fill patient details'],
     patientInfoFormFields: {},
     calendarInfoFormFields: {},
     primaryCondition: {
