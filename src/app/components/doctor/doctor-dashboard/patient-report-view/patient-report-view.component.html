@@ -31,7 +31,7 @@
 <ng-container>
 
   <mat-card-content class="patient_report_wrapper ">
-    <mat-card-content class="patient_item_section mat-elevation-z8">
+    <mat-card-content class="patient_item_section" [ngClass]="{'mat-elevation-z5' : true, 'sticky' : isSticky}">
 
       <mat-card-content class="title_wrapper report_header">
         {{ htmlText.header }}
@@ -262,7 +262,7 @@
         </mat-card-content>
       </mat-card>
 
-      <section *ngIf="htmlText.allResolveData.reportData[0].report_type == 'file'">
+      <section *ngIf="htmlText.allResolveData.reportData[0].report_type == 'file'"  >
         <mat-card-content class="document_wrapper">
           <span class="imageGallery">
             <ng-container *ngFor="let image of htmlText.allResolveData.reportData[0].images; let i = index;">
@@ -273,8 +273,11 @@
             </ng-container>
           </span>
           <mat-card-content>
-            <button mat-fab class="prev" type="button" (click)="playSlider('preview');">
-              <<</button> <button mat-fab class="next" type="button" (click)="playSlider('next');"> >>
+            <button mat-icon-button class="prev" type="button" (click)="playSlider('preview');"> 
+              <mat-icon> keyboard_arrow_left</mat-icon> </button> 
+
+              <button mat-icon-button class="next" type="button" (click)="playSlider('next');">  
+                <mat-icon>keyboard_arrow_right</mat-icon> 
             </button>
             <!-- <button mat-fab (click)="playSlider('play');">PLAY</button> -->
           </mat-card-content>
@@ -283,7 +286,7 @@
       </section>
     </mat-card-content>
 
-    <mat-card-content class="patient_item_section mat-elevation-z8" id="fixedScroll">
+    <mat-card-content class="patient_item_section mat-elevation-z8" [ngClass]="{'mat-elevation-z5' : true, 'stickyRight' : isSticky}">
 
       <mat-tab-group class="previewTabs">
         <!-- <mat-tab label="Evaluation Worksheet" *ngIf="cookiesData.user_details.user_type == 'admin'">

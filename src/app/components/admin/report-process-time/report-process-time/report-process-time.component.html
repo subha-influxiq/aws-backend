@@ -6,17 +6,9 @@
 </app-adminbiller-header>
 
 <mat-card class="admin_wrapper"> 
-  <ng-container *ngIf="activatedRoute.snapshot.routeConfig.path == 'admin/cpt-reports'">
-    <mat-toolbar class="top_header">
-      <h2> CPT Validated Report</h2>
-    </mat-toolbar>
-    </ng-container>
-
-    <ng-container *ngIf="activatedRoute.snapshot.routeConfig.path == 'admin/sales-person/cpt-reports'">
       <mat-toolbar class="top_header">
-        <h2> CPT Validated Report for Sales Person</h2>
+        <h2> Reports Processing Time</h2>
       </mat-toolbar>
-      </ng-container>
   <mat-card-content class="table_wrapper admin_dashboard">
 
     <!-- table -->
