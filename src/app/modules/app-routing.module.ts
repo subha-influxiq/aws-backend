@@ -1011,7 +1011,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'diagnostic-admin/sales-person-management',
+    path: 'distributors/sales-person-management',
     component: ListSalesPersonComponent,
     canActivate: [AuthguardService]
   },
@@ -1181,7 +1181,7 @@ const routes: Routes = [
           source: 'data_pece',
           condition: {}
         },
-        endpoint: 'diagnostic-admin-dashboard'
+        endpoint: 'distributors-dashboard'
       },
     },
     {
