@@ -16,9 +16,7 @@
       <h2> manage appoinments </h2>
     </mat-toolbar>
 
-<!--    <lib-booked-event-listing [configData]="configData"></lib-booked-event-listing>-->
-    <!-- Booked Events Listing -->
-    <mat-tab-group>
+    <mat-tab-group [selectedIndex]="tabFlag">
       <!-- Upcoming events -->
       <mat-tab label="Upcoming Events">
         <app-upcoming-appoinments></app-upcoming-appoinments>

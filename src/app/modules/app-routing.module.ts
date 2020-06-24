@@ -1091,6 +1091,19 @@ const routes: Routes = [
       endpoint: 'list-booked-events'
     }
   },
+  {
+    path: 'admin/booked-appoinments/:tab_flag',
+    component: BookedAppoinmentsComponent,
+    canActivate: [AuthguardService],
+    // resolve: { bookedEventList: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'google-events',
+        condition: {}
+      },
+      endpoint: 'list-booked-events'
+    }
+  },
 
   /* Faq */
   {
@@ -1133,7 +1146,7 @@ const routes: Routes = [
           source: 'data_pece',
           condition: {}
         },
-        endpoint: 'diagnostic-admin-dashboard'
+        endpoint: 'doctor-group-dashboard'
       },
     },
     {
