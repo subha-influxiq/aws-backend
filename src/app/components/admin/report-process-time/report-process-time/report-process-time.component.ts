@@ -25,6 +25,7 @@ export class ReportProcessTimeComponent implements OnInit {
     baseUrl: environment.doctorSignUpBaseUrl,
     userId: ""
   };
+  public status: any = [];
 
   // Lib list
   public allBillerData: any = [];

@@ -46,7 +46,7 @@ export class ListingBillerComponent implements OnInit {
     //hideviewbutton:false,
     //hidestatustogglebutton:true,
     // hideaction:true,
-    tableheaders: ['firstname', 'lastname', 'email', 'phone', 'company_name', 'status', 'logincounts', 'last_login_datetime'], //not required
+    tableheaders: ['firstname', 'lastname', 'email', 'phone', 'company_name', 'status', 'created_date'], //not required
   }
   public allUserData_modify_header: any = {
     "firstname": "First Name",
@@ -57,8 +57,7 @@ export class ListingBillerComponent implements OnInit {
     "status": "Status",
     "parent_name": "Parent Name",
     "parent_type": "Parent Type",
-    "logincounts": "No Of Login",
-    "last_login_datetime": "Last Login"
+    "created_date" : "Created Date"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";

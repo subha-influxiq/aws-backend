@@ -43,7 +43,8 @@ export class DoctorOfficeManagementComponent implements OnInit {
     "phone": "Phone Number",
     "parent_name" : "Parent Name",
     "parent_type" : "Parent Type",
-    "status": "Status"
+    "status": "Status",
+    "created_date" : "Created Date"
   };
   public previewModal_skip: any = [
     "_id",
@@ -90,7 +91,7 @@ export class DoctorOfficeManagementComponent implements OnInit {
       //hideviewbutton:false,
       //hidestatustogglebutton:true,
       // hideaction:true,
-      tableheaders: ['center_name','firstname', 'lastname', 'email', 'phone', 'company_name', 'status', 'logincounts', 'last_login_datetime'], //not required
+      tableheaders: ['center_name','firstname', 'lastname', 'email', 'phone', 'status', 'created_date'], //not required
     }
   
 

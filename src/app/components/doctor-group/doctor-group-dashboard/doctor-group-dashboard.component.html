@@ -106,7 +106,7 @@
       </span>
     </mat-card-content>
 
-    <mat-card-content class="itemsection">
+    <!-- <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/loveHandshake.png">
       </span>
@@ -152,7 +152,7 @@
         <p class="doctorNumber">Total Appointments<br> Completed</p>
         <button mat-flat-button [routerLink]="['/admin/tech-management']">View Details</button>
       </span>
-    </mat-card-content>
+    </mat-card-content> -->
 
   </mat-card-content>
 
@@ -172,7 +172,7 @@
           <p>Total No of <br>
             Reports Added
           </p>
-          <h2>45</h2>
+          <h2>{{ allResolveData.reportsAddedCount }}</h2>
           <button mat-flat-button (click)="viewReportProcessData('Reports Uploaded')">view all</button>
         </span>
       </mat-card-content>
@@ -188,7 +188,7 @@
           <p>Total No of <br>
             Report Processed
           </p>
-          <h2>67</h2>
+          <h2>{{ allResolveData.reportProcessedCount }}</h2>
           <button mat-flat-button (click)="viewReportProcessData('Report Processed')">view all</button>
         </span>
       </mat-card-content>
@@ -203,7 +203,7 @@
           <p>Total No of <br>
             Report Signed
           </p>
-          <h2>3 </h2>
+          <h2> {{ allResolveData.reportSignedCount }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
         </span>
       </mat-card-content>
@@ -218,7 +218,7 @@
           <p> Sent to <br>
             Biller
           </p>
-          <h2> 759 </h2>
+          <h2> {{ allResolveData.sendTobBillerCount }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Super Bill')">view all</button>
         </span>
       </mat-card-content>
@@ -231,7 +231,7 @@
         </span>
         <span class="container_wrapper">
           <p> Reports Downloaded </p>
-          <h2>87</h2>
+          <h2> {{ allResolveData.sendTobBillerCount }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Download Bill')">view all</button>
         </span>
       </mat-card-content>
@@ -244,7 +244,7 @@
         </span>
         <span class="container_wrapper">
           <p> Reports Pending Sing </p>
-          <h2>67</h2>
+          <h2> {{ allResolveData.reportsPendingSingCount }} </h2>
           <button mat-flat-button (click)="viewReportProcessData('Reports Pending Sing')">view all</button>
         </span>
       </mat-card-content>

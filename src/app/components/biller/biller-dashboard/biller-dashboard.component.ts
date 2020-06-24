@@ -143,7 +143,8 @@ export class BillerDashboardComponent implements OnInit {
         this.matSnackBar.open("Start downloading.", "Ok", {
           duration: 3000
         });
-        window.open(report.file_path, "_blank");
+        console.log(">>>>>>>>>>>>>>>>", report);
+        window.open(report.file_basepath + report.file_name, "_blank");
 
         let postData: any = {
           "source": "data_pece",

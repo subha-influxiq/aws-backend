@@ -23,6 +23,14 @@ export interface DialogData {
 
 export class PatientReportViewComponent implements OnInit {
 
+  // sticky scroll
+  isSticky: boolean = false;
+
+  @HostListener('window:scroll')
+  checkScroll(): void {
+    this.isSticky = window.pageYOffset >= 250;
+  }
+
   @ViewChild(FormGroupDirective, { static: false }) formDirective: FormGroupDirective;
   public htmlText: any = { 
     nav: 'Add Patient', 
@@ -229,11 +237,4 @@ export class PatientReportViewComponent implements OnInit {
   openModal(data) {
     this.dialogRef = this.dialog.open(DialogBoxComponent, data);
   }
-// sticky scroll
-isSticky: boolean = false;
-
-@HostListener('window:scroll', ['$event'])
-checkScroll() {
-  this.isSticky = window.pageYOffset >= 250;
-}
 }

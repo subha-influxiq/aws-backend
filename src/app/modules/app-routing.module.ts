@@ -1011,7 +1011,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'diagnostic-admin/sales-person-management',
+    path: 'distributors/sales-person-management',
     component: ListSalesPersonComponent,
     canActivate: [AuthguardService]
   },
@@ -1097,6 +1097,19 @@ const routes: Routes = [
       endpoint: 'list-booked-events'
     }
   },
+  {
+    path: 'admin/booked-appoinments/:tab_flag',
+    component: BookedAppoinmentsComponent,
+    canActivate: [AuthguardService],
+    // resolve: { bookedEventList: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'google-events',
+        condition: {}
+      },
+      endpoint: 'list-booked-events'
+    }
+  },
 
   /* Faq */
   {
@@ -1139,7 +1152,7 @@ const routes: Routes = [
           source: 'data_pece',
           condition: {}
         },
-        endpoint: 'diagnostic-admin-dashboard'
+        endpoint: 'doctor-group-dashboard'
       },
     },
     {
@@ -1168,7 +1181,7 @@ const routes: Routes = [
           source: 'data_pece',
           condition: {}
         },
-        endpoint: 'diagnostic-admin-dashboard'
+        endpoint: 'distributors-dashboard'
       },
     },
     {
