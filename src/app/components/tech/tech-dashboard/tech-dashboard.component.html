@@ -62,8 +62,8 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total No of <br>
-            Reports This Week
+          <p>Total No of Reports<br>
+            Uploaded This Week
           </p>
           <h2> {{ allResolveData.totalreportthisweek }} </h2>
           <button mat-flat-button (click)="viewDetailsData('Reports Uploaded')">view all</button>
@@ -78,8 +78,8 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total No of <br>
-            Report Last Week
+          <p>Total No of Reports<br>
+            Processed Last Week
           </p>
           <h2> {{ allResolveData.totalreportpreviousweek }} </h2>
           <button mat-flat-button (click)="viewDetailsData('Reports Processed')">view all</button>
@@ -93,7 +93,8 @@
           </mat-card-content>
         </span>
         <span class="container_wrapper">
-          <p>Total Number of Reports This Month
+          <p>Total Number of Reports <br>
+            Uploaded Last Week
           </p>
           <h2> {{ allResolveData.totalreportthismonth }} </h2>
           <button mat-flat-button (click)="viewDetailsData('Remain Process')">view all</button>
@@ -103,6 +104,7 @@
     </mat-card-content>
 
     <mat-card-content class="biller_wrapper">
+
       <mat-card-content class="super_bill_item sp_one">
         <span class="border_wrapper">
           <mat-card-content class="circle">
@@ -111,15 +113,44 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total No of <br>
-            Reports Last Month
+          <p>Total No of Reports<br>
+            Processed Last Week </p>
+          <h2> {{ allResolveData.totalreportlastmonth }} </h2>
+          <button mat-flat-button (click)="viewDetailsData('Reports Uploaded')">view all</button>
+        </span>
+      </mat-card-content>
+      <mat-card-content class="super_bill_item sp_two">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total No of Reports<br>
+             Uploaded This Month
           </p>
           <h2> {{ allResolveData.totalreportlastmonth }} </h2>
           <button mat-flat-button (click)="viewDetailsData('Reports Uploaded')">view all</button>
         </span>
       </mat-card-content>
+      <mat-card-content class="super_bill_item sp_three">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
 
+        <span class="container_wrapper">
+          <p>Total No of Reports<br>
+            Uploaded Last Month
+          </p>
+          <h2> {{ allResolveData.totalreportlastmonth }} </h2>
+          <button mat-flat-button (click)="viewDetailsData('Reports Uploaded')">view all</button>
+        </span>
+      </mat-card-content>
     </mat-card-content>
+
   </mat-card-content>
 
 
@@ -204,31 +235,16 @@
     <!--all dashboard data table start here-->
     <div class="tablewrapper">
       <!-- table -->
-      <lib-listing
-      class="DataTable" 
-      *ngIf="allBillerData.length>0" 
-      [datasource]="allBillerData" 
-      [skip]="allUserData_skip"
-      [modify_header_array]="allUserData_modify_header" 
-      [detail_skip_array]="previewModal_detail_skip" 
-      [apiurl]="apiUrl"
-      [sourcedata]="tableName" 
-      [editroute]="editUrl" 
-      [jwttoken]="jwtToken" 
-      [statusarr]="status"
-      [updateendpoint]="UpdateEndpoint" 
-      [deleteendpoint]="deleteEndpoint" 
-      [date_search_endpoint]="SearchingEndpoint"
-      [date_search_source]="SearchingSourceName" 
-      [search_settings]="search_settings" 
-      [sortdata]="sortdata" 
-      [datacollection]="datacollection" 
-      [libdata]="libdata" 
-      [date_search_source_count]="billerData_count" 
-      [limitcond]="limitcond" >
-    </lib-listing>
+      <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData"
+        [skip]="allUserData_skip" [modify_header_array]="allUserData_modify_header"
+        [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl" [sourcedata]="tableName" [editroute]="editUrl"
+        [jwttoken]="jwtToken" [statusarr]="status" [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint"
+        [date_search_endpoint]="SearchingEndpoint" [date_search_source]="SearchingSourceName"
+        [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection" [libdata]="libdata"
+        [date_search_source_count]="billerData_count" [limitcond]="limitcond">
+      </lib-listing>
     </div>
-    
+
 
     <span class="button_action">
       <button mat-flat-button routerLink="/tech/patient-management/bulk-upload">upload bulk report</button>
