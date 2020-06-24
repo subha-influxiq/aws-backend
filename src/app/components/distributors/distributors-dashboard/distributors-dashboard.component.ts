@@ -57,6 +57,8 @@ export class DistributorsDashboardComponent implements OnInit {
 
   // Lib list
   public allBillerData: any = [];
+  public listFlag:boolean = true;
+  public updatetable: boolean = false;
   public billerData_count: any = 0;
   public datasource: any;
   public field: any;
@@ -202,6 +204,7 @@ export class DistributorsDashboardComponent implements OnInit {
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
   public cptcodes: any = [{ val: "95923", 'name': '95923' }, { val: "95943", 'name': '95943' }, { val: "95921", 'name': "95921" }, { val: "93923", 'name': "93923" }, { val: "93922", 'name': "93922" }];
   public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }, { val: "CMAT with BP Cuffs", 'name': "CMAT with BP Cuffs" }];
+  public status_search: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"},{val:"Doctor Sign" , 'name' :"Doctor Sign"},{val:"Send to Biller" , 'name' :"Send to Biller"}];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
   public docofficeval: any = [];
@@ -215,7 +218,7 @@ export class DistributorsDashboardComponent implements OnInit {
   public search_settings: any =
     {
 
-      selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type }, { label: "Search By Doctor", field: 'doc_name_search', values: this.authval }, { label: "Search By Tech", field: 'tech_name_search', values: this.techval }, { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval }, { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity }, { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate }, { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity }, { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }],
+      selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },{ label: "Search By Status", field: 'status_text', values: this.status_search }, { label: "Search By Doctor", field: 'doc_name_search', values: this.authval }, { label: "Search By Tech", field: 'tech_name_search', values: this.techval }, { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval }, { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity }, { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate }, { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity }, { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }],
       datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }],
       textsearch: [{ label: "Search By Patient Name", field: 'patient_name_search' }],
       // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],
@@ -420,7 +423,7 @@ export class DistributorsDashboardComponent implements OnInit {
         break;
       case 'Report Processed':
         data.status = {
-          "$in": [ 11, 12, 13 ] 
+          "$in": [ 11, 12, 13,14,15 ] 
         };
         break;
       case 'Report Signed':
@@ -455,10 +458,17 @@ export class DistributorsDashboardComponent implements OnInit {
     });
 
     this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
+      this.allBillerData = [];
+      // this.listFlag = false;
+      // setTimeout(() => {
+      // this.listFlag = true;  
       this.allBillerData = res.results.res;
+      // this.updatetable = !this.updatetable;
+      // }, 200);
     }, error => {
       console.log('Oooops!');
     });
+    console.log(this.allBillerData);
   }
 
   downloadReport(report: any) {

@@ -396,6 +396,7 @@
 
     <!-- Listing goes here  -->
     <!-- table -->
+    <!-- <ng-container *ngIf="listFlag == true"> -->
     <lib-listing
       class="DataTable" 
       *ngIf="allBillerData.length>0" 
@@ -417,9 +418,10 @@
       [datacollection]="datacollection" 
       [libdata]="libdata" 
       [date_search_source_count]="billerData_count" 
-      [limitcond]="limitcond" >
+      [limitcond]="limitcond"
+      [updatetable]="updatetable" >
     </lib-listing>
-
+  <!-- </ng-container> -->
   </mat-card-content>
 
 

@@ -128,7 +128,7 @@ export class TechDashboardComponent implements OnInit {
     type:'action',
     datatype:'api',
     endpoint:'get-doctor-office-details',
-    datafields: ['centername','firstname','lastname','email','phone','address','city','state','zip'],
+    datafields: ['center name','first name','last name','email','phone','address','city','state','zip'],
     // otherparam:["patient_name"],
     //cond:'status',
     //condval:0,
@@ -153,6 +153,8 @@ export class TechDashboardComponent implements OnInit {
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
     hidestatustogglebutton: true,
+    hidedeletemany:true,
+    hideupdatemany:true,
     hideviewbutton: true,
     tableheaders: [
       "patient_name",
