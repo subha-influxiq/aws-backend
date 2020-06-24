@@ -53,6 +53,8 @@ export class PatientReportViewComponent implements OnInit {
 
     this.cookiesData = this.cookie.getAll();
     this.cookiesData.user_details = JSON.parse(this.cookiesData.user_details);
+
+    console.log(">>>>", this.cookiesData.user_details);
     
     if(this.cookiesData.user_details.user_type == 'doctor' || this.cookiesData.user_details.user_type == 'diagnostic_admin') {
       this.getBiller(this.cookiesData.user_details._id);
