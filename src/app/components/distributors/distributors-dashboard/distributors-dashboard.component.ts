@@ -90,7 +90,7 @@ export class DistributorsDashboardComponent implements OnInit {
     basecondition: {
       status: { "$gt": 10 }
     },
-    updateendpoint: '',
+    updateendpoint: 'status-update-doctor',
     custombuttons: [
       {
         label: "View Report",
@@ -160,7 +160,7 @@ export class DistributorsDashboardComponent implements OnInit {
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
-    hidestatustogglebutton: true,
+    // hidestatustogglebutton: true,
     hidedeletemany:true,
     hideviewbutton: true,
     tableheaders: [
@@ -198,7 +198,7 @@ export class DistributorsDashboardComponent implements OnInit {
 
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
-  public status: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, { val: "Biller Admin Hold", 'name': "Biller Admin Hold" }];
+  public status: any = [{ val: "Send to Biller", 'name': 'Send to Biller' }];
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
   public cptcodes: any = [{ val: "95923", 'name': '95923' }, { val: "95943", 'name': '95943' }, { val: "95921", 'name': "95921" }, { val: "93923", 'name': "93923" }, { val: "93922", 'name': "93922" }];
   public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }, { val: "CMAT with BP Cuffs", 'name': "CMAT with BP Cuffs" }];
@@ -237,7 +237,7 @@ export class DistributorsDashboardComponent implements OnInit {
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData.dashboardCount = resolveData.dataCount.data;
     });
-
+    
     this.libdata.basecondition.parent_id = this.loginUserData.user_details._id;
     this.shareDetails.userId = this.loginUserData.user_details._id;
 

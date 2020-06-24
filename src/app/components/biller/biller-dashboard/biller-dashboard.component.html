@@ -75,120 +75,31 @@
   <mat-card-content class="patient_report_section">
     <mat-card-content class="patient_top_search">
       <h1> {{ htmlText.tableHeaderText }}</h1>
-      <span class="res_view">
-      <span class="search_bar">
-
-        <span class="form_wrapper">
-          <mat-form-field appearance="outline">
-            <input matInput type="text" placeholder="Search By Patient" [(ngModel)]="searchJson.patientName">
-          </mat-form-field>
-        </span>
-
-        <span class="form_wrapper">
-          <mat-form-field appearance="outline">
-            <input matInput type="text" placeholder="Choose a date" [satDatepicker]="picker"
-              [(ngModel)]="searchJson.dateRange" />
-            <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
-            <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
-          </mat-form-field>
-        </span>
-
-        <span class="form_wrapper">
-          <mat-form-field class="parent_cat" appearance="outline">
-            <mat-select placeholder="Search By Status" [(ngModel)]="searchJson.status">
-              <mat-option value="">Select a status</mat-option>
-              <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
-              <mat-option value="doctor signed">Doctor Signed</mat-option>
-              <mat-option value="send to biller">Send To Biller</mat-option>
-              <mat-option value="error">Error</mat-option>
-              <mat-option value="pending">Pending</mat-option>
-              this.viewReportProcessData(this.htmlText.headerText);
-            </mat-select>
-          </mat-form-field>
-        </span>
-      </span>
-      <span class="btn_action_wrapper">
-        <button mat-raised-button type="button" color="primary"
-          (click)="viewReportData(htmlText.tableHeaderText);">Search</button>
-        <button mat-raised-button type="button" color="primary" (click)="resetSearch();">
-          <i class="material-icons"> replay </i>
-        </button>
-      </span>
-    </span>
+      
     </mat-card-content>
-
-    <div class="mat-elevation-z8">
-      <!-- Default Biller table  -->
-      <table class="adminTables table_wrapper " mat-table [dataSource]="dataSource" matSort>
-        <!-- Serial No -->
-        <ng-container matColumnDef="no">
-          <th mat-header-cell *matHeaderCellDef> No. </th>
-          <td mat-cell data-label="No" *matCellDef="let element; let i = index;"> {{ i + 1 }}. </td>
-        </ng-container>
-
-        <!-- Patient Column -->
-        <ng-container matColumnDef="Patient Name">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Patient Name </th>
-          <td mat-cell data-label="Patient Name" *matCellDef="let element"> {{element.patient_name}} </td>
-        </ng-container>
-
-        <!-- Bill Sent Date Name Column -->
-        <ng-container matColumnDef="Tech Name">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Tech Name</th>
-          <td mat-cell data-label="Tech Name" *matCellDef="let element"> {{ element.tech_name }} </td>
-        </ng-container>
-
-        <!-- Doctor Name Column -->
-        <ng-container matColumnDef="Doctor Name">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Doctor Name </th>
-          <td mat-cell data-label="Doctor Name" *matCellDef="let element" innerHTML="{{ element.patient_details[0].doctor_details[0].firstname }} {{ element.patient_details[0].doctor_details[0].lastname }}"> </td>
-        </ng-container>
-
-        <!-- Bill Sent Date Name Column -->
-        <ng-container matColumnDef="Bill Sent Date">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Bill Sent Date </th>
-          <td mat-cell data-label="Bill Sent Date" *matCellDef="let element"> {{ element.bill_sent_date | date }} </td>
-        </ng-container>
-
-        <!-- Bill Generation Date Name Column -->
-        <ng-container matColumnDef="Bill Generation Date">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Bill Generation Date </th>
-          <td mat-cell data-label="Bill Generation Date" *matCellDef="let element"> {{ element.bill_generation_date | date }} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="report_type">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Record Type</th>
-          <td mat-cell data-label="Record Type" *matCellDef="let element"> {{ element.report_type }} </td>
-        </ng-container>
-
-        <!-- Status Name Column -->
-        <ng-container matColumnDef="Status">
-          <th mat-header-cell *matHeaderCellDef>Status</th>
-          <td mat-cell data-label="Status" *matCellDef="let element"> {{ element.status }} </td>
-        </ng-container>
-
-        <!-- Action Column -->
-        <ng-container matColumnDef="Action">
-          <th mat-header-cell *matHeaderCellDef>Action</th>
-          <td mat-cell data-label="Action" *matCellDef="let element"> <span>
-              <button  matTooltip="View"
-              aria-label="Button" matTooltipPosition="above" mat-button class="viewButton" [routerLink]="['/biller/patient-record-report', element._id]">
-                <i class="material-icons">
-                  remove_red_eye
-                </i></button>
-              <button matTooltip="Download"
-              aria-label="Button" matTooltipPosition="above" mat-button class="editButton downloadBtn" (click)="downloadReport(element);"> <i class="material-icons">
-                cloud_download
-                </i>
-              </button>
-            </span></td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-      </table>
-    </div>
+    <lib-listing
+      class="DataTable" 
+      *ngIf="allBillerData.length>0" 
+      [datasource]="allBillerData" 
+      [skip]="allUserData_skip"
+      [modify_header_array]="allUserData_modify_header" 
+      [detail_skip_array]="previewModal_detail_skip" 
+      [apiurl]="apiUrl"
+      [sourcedata]="tableName" 
+      [editroute]="editUrl" 
+      [jwttoken]="jwtToken" 
+      [statusarr]="status"
+      [updateendpoint]="UpdateEndpoint" 
+      [deleteendpoint]="deleteEndpoint" 
+      [date_search_endpoint]="SearchingEndpoint"
+      [date_search_source]="SearchingSourceName" 
+      [search_settings]="search_settings" 
+      [sortdata]="sortdata" 
+      [datacollection]="datacollection" 
+      [libdata]="libdata" 
+      [date_search_source_count]="billerData_count" 
+      [limitcond]="limitcond" >
+    </lib-listing>
 
   </mat-card-content>
 </mat-card>
