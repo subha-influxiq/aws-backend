@@ -233,6 +233,11 @@ export class DistributorsDashboardComponent implements OnInit {
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
 
+    /* Get resolve data */
+    this.activatedRoute.data.subscribe(resolveData => {
+      this.allResolveData.dashboardCount = resolveData.dataCount.data;
+    });
+
     this.libdata.basecondition.parent_id = this.loginUserData.user_details._id;
     this.shareDetails.userId = this.loginUserData.user_details._id;
 
@@ -416,26 +421,6 @@ export class DistributorsDashboardComponent implements OnInit {
   ngAfterViewInit() {
   }
 
-  refreshDashboard() {
-    let repostSignCond: any = {
-      "source": "data_pece",
-      "condition": {
-        "admin_id": this.loginUserData.user_details._id
-      },
-      "token": this.jwtToken
-    };
-    // get dashboard count
-    this.http.httpViaPost('admin-dashboard', repostSignCond).subscribe((response) => {
-      if (response.status == 'success') {
-        this.allResolveData = response.data;
-      } else {
-        this.router.navigateByUrl('logout');
-      }
-    });
-
-    // for listing
-  }
-
   downloadReport(report: any) {
     if (typeof (report.download_count) == "undefined") {
       report.download_count = 1;
@@ -489,7 +474,18 @@ export class DistributorsDashboardComponent implements OnInit {
   }
 
   viewReportProcessData(flag = null) {
-
+    switch (flag) {
+      case 'Reports Uploaded':
+        break;
+      case '':
+        break;
+      case '':
+        break;
+      case '':
+        break;
+      case '':
+        break;
+    }
   }
 
 }

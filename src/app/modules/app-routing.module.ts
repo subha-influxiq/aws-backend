@@ -1181,7 +1181,7 @@ const routes: Routes = [
           source: 'data_pece',
           condition: {}
         },
-        endpoint: 'diagnostic-admin-dashboard'
+        endpoint: 'distributors-dashboard'
       },
     },
     {

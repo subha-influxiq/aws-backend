@@ -105,6 +105,17 @@ export class ResolveService implements Resolve<any> {
       }
     }
     /* This one is for Doctor Group End */
+
+
+    /* This one is for Distributors Start */
+    if(route.url[0].path == 'distributors') {
+      switch(route.url[1].path) {
+        case 'dashboard':
+          requestData.condition['distributors_id'] = userData._id;
+          break;
+      }
+    }
+    /* This one is for Distributors End */
     /////////////////////////////////////////////////////////////////////
 
 
