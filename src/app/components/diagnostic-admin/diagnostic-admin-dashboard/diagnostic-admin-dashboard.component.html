@@ -1,7 +1,7 @@
 <app-diagnostic-admin-header></app-diagnostic-admin-header>
 
 <mat-card class="admin_wrapper">
-  
+
   <mat-card-content class="content_wrapper">
 
     <mat-card-content class="itemsection">
@@ -12,8 +12,7 @@
         <span class="counter_with_tool">
           <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
           <span class="tolTip">
-            <a mat-raised-button #TNDoctors="matTooltip"
-              matTooltip="Comming .." matTooltipPosition="above"
+            <a mat-raised-button #TNDoctors="matTooltip" matTooltip="Data listed for the total number of doctors registered under the logged in Diagnostic Admin." matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="TNDoctors.toggle()" class="toggle_btn" aria-label=" toggle section">
@@ -38,8 +37,8 @@
         <span class="counter_with_tool">
           <h4 class="dataCount"> {{ allResolveData.total_biller }}</h4>
           <span class="tolTip">
-            <a mat-raised-button #TNBillers="matTooltip"
-              matTooltip="Comming .." matTooltipPosition="above"
+            <a mat-raised-button #TNBillers="matTooltip" matTooltip="Data listed for the total number of billers registered under the logged in Diagnostic Admin.
+            " matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="TNBillers.toggle()" class="toggle_btn" aria-label=" toggle section">
@@ -63,8 +62,8 @@
         <span class="counter_with_tool">
           <h4 class="dataCount"> {{ allResolveData.total_tech }}</h4>
           <span class="tolTip">
-            <a mat-raised-button #TNTechs="matTooltip"
-              matTooltip="Comming .." matTooltipPosition="above"
+            <a mat-raised-button #TNTechs="matTooltip" matTooltip="Data listed for the total number of techs registered under the logged in Diagnostic Admin.
+            " matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="TNTechs.toggle()" class="toggle_btn" aria-label=" toggle section">
@@ -79,7 +78,7 @@
         <button mat-flat-button [routerLink]="['/diagnostic-admin/biller-management']">View Details</button>
       </span>
     </mat-card-content>
-<!-- new modification -->
+    <!-- new modification -->
 
     <!-- <mat-card-content class="itemsection">
       <span class="icon">
@@ -131,17 +130,16 @@
       </span>
       <span class="counteer">
         <span class="counter_with_tool">
-          <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4> 
+          <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
           <span class="tolTip">
-            <a mat-raised-button #TNdoctoroffice="matTooltip"
-              matTooltip="Comming .." matTooltipPosition="above"
+            <a mat-raised-button #TNdoctoroffice="matTooltip" matTooltip="Data listed for the total number of techs registered under the logged in Diagnostic Admin.
+            " matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="TNdoctoroffice.toggle()" class="toggle_btn" aria-label=" toggle section">
               <span class="material-icons"> help_outline </span>
             </a>
           </span>
-
         </span>
       </span>
       <span class="button_wrapper">
@@ -155,10 +153,9 @@
       </span>
       <span class="counteer">
         <span class="counter_with_tool">
-          <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4> 
+          <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
           <span class="tolTip">
-            <a mat-raised-button #AppPending="matTooltip"
-              matTooltip="Comming .." matTooltipPosition="above"
+            <a mat-raised-button #AppPending="matTooltip" matTooltip="Comming .." matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="AppPending.toggle()" class="toggle_btn" aria-label=" toggle section">
@@ -179,10 +176,9 @@
       </span>
       <span class="counteer">
         <span class="counter_with_tool">
-          <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4> 
+          <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
           <span class="tolTip">
-            <a mat-raised-button #TACompleted="matTooltip"
-              matTooltip="Comming .." matTooltipPosition="above"
+            <a mat-raised-button #TACompleted="matTooltip" matTooltip="Comming .." matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="TACompleted.toggle()" class="toggle_btn" aria-label=" toggle section">
@@ -419,34 +415,18 @@
       </span>
     </mat-toolbar>
     <mat-card-content class="admin_dashboard">
-    <!-- table -->
-    <lib-listing
-      class="DataTable" 
-      *ngIf="allBillerData.length>0" 
-      [datasource]="allBillerData" 
-      [skip]="allUserData_skip"
-      [modify_header_array]="allUserData_modify_header" 
-      [detail_skip_array]="previewModal_detail_skip" 
-      [apiurl]="apiUrl"
-      [sourcedata]="tableName" 
-      [editroute]="editUrl" 
-      [jwttoken]="jwtToken" 
-      [statusarr]="status"
-      [updateendpoint]="UpdateEndpoint" 
-      [deleteendpoint]="deleteEndpoint" 
-      [date_search_endpoint]="SearchingEndpoint"
-      [date_search_source]="SearchingSourceName" 
-      [search_settings]="search_settings" 
-      [sortdata]="sortdata" 
-      [datacollection]="datacollection" 
-      [libdata]="libdata" 
-      [date_search_source_count]="billerData_count" 
-      [limitcond]="limitcond" >
-    </lib-listing>
+      <!-- table -->
+      <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData"
+        [skip]="allUserData_skip" [modify_header_array]="allUserData_modify_header"
+        [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl" [sourcedata]="tableName" [editroute]="editUrl"
+        [jwttoken]="jwtToken" [statusarr]="status" [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint"
+        [date_search_endpoint]="SearchingEndpoint" [date_search_source]="SearchingSourceName"
+        [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection" [libdata]="libdata"
+        [date_search_source_count]="billerData_count" [limitcond]="limitcond">
+      </lib-listing>
     </mat-card-content>
   </mat-card-content>
   <!-- dashboard all listing end here -->
 </mat-card>
-  
-<app-admin-footer></app-admin-footer> 
- 
+
+<app-admin-footer></app-admin-footer>

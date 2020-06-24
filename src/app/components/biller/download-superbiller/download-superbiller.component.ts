@@ -34,9 +34,9 @@ export class DownloadSuperbillerComponent implements OnInit {
     public activatedRoute: ActivatedRoute, public dialog: MatDialog, public commonFunction: CommonFunction, 
     public deviceService: DeviceDetectorService, public matSnackBar: MatSnackBar) {
 
-    let loginCHeck: any = this.cookieService.getAll();
-    if(Object.keys(loginCHeck).length > 0) {
-      let userDetails = JSON.parse(loginCHeck.user_details);
+    let loginCheck: any = this.cookieService.getAll();
+    if(typeof(loginCheck.user_details) != 'undefined') {
+      let userDetails = JSON.parse(loginCheck.user_details);
     }
 
     /* Check Route ID */
@@ -68,7 +68,7 @@ export class DownloadSuperbillerComponent implements OnInit {
   }
 
   downloadPDF() {
-    if((this.htmlText.password == this.reportData.download_password && this.reportData.passwordAttemptsCount <= 3) ||
+    if(this.htmlText.password != '' && (this.htmlText.password == this.reportData.download_password && this.reportData.passwordAttemptsCount <= 3) ||
     (this.htmlText.password == this.reportData.download_password && this.htmlText.notBotText == this.htmlText.notBotInput)) {
       this.htmlText.passwordAttemptsCount++;
 
@@ -87,7 +87,7 @@ export class DownloadSuperbillerComponent implements OnInit {
       /* Set downloader information */
       var userDetails: any = {};
       let loginCheck: any = this.cookieService.getAll();
-      if(Object.keys(loginCheck).length > 0) {
+      if(typeof(loginCheck.user_details) != 'undefined') {
         let user_details = JSON.parse(loginCheck.user_details);
         userDetails["id"] = user_details._id;
         userDetails["type"] = user_details.type;
@@ -123,7 +123,9 @@ export class DownloadSuperbillerComponent implements OnInit {
         if(response.status == 'success') {
           this.htmlText.downloadFlug = true;
           this.htmlText.hraderText = "Thank you for downloading.";
-          window.open(this.reportData.file_path);
+          
+          // Open download link into the new tab
+          window.open(this.reportData.report_download_link);
 
           // Update Status
           let postData: any = {

@@ -141,7 +141,7 @@
         <!-- Doctor Name Column -->
         <ng-container matColumnDef="Doctor Name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Doctor Name </th>
-          <td mat-cell data-label="Doctor Name" *matCellDef="let element" innerHTML="{{ element.doctor_name }}"> </td>
+          <td mat-cell data-label="Doctor Name" *matCellDef="let element" innerHTML="{{ element.patient_details[0].doctor_details[0].firstname }} {{ element.patient_details[0].doctor_details[0].lastname }}"> </td>
         </ng-container>
 
         <!-- Bill Sent Date Name Column -->
