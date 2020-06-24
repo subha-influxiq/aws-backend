@@ -1011,7 +1011,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'diagnostic-admin/sales-person-management',
+    path: 'distributors/sales-person-management',
     component: ListSalesPersonComponent,
     canActivate: [AuthguardService]
   },
