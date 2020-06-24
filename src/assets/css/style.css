@@ -264,11 +264,11 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 .searchcard { padding: 0; } 
 
 /* admin css */ 
-.admin_wrapper .content_wrapper{ display: flex; justify-content: center;  align-items: center; width: 100%; margin: auto; text-align: center; margin-top: 10px!important; margin-bottom: 12px; }
+.admin_wrapper .content_wrapper{ display: flex; justify-content: center;  align-items: center; width: 100%; margin: auto; text-align: center; margin-top: 10px!important; margin-bottom: 12px; flex-wrap: wrap; }
 .admin_wrapper .content_wrapper .itemsection{
   /* width: 33%; margin: 0px 7px; box-sizing: border-box; display: flex; justify-content: center; position: relative; border-radius: 10px; border: 1px solid #e8e9ef;  overflow: hidden; background:#fff;  */
-  width: 33%;
-  margin: 0px 7px;
+  width: 32.2%;
+  margin: .5%;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-start;
