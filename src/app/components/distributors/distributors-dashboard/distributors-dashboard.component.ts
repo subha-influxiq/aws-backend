@@ -424,26 +424,18 @@ export class DistributorsDashboardComponent implements OnInit {
         };
         break;
       case 'Report Signed':
-        data.status = { 
-          doctor_signature: { $exists: true }
-        };
+        data.doctor_signature = { $exists: true };
         break;
       case 'Super Bill':
-        data.status = { 
-          biller_id: { $exists: true }
-        };
+        data.biller_id = { $exists: true };
         break;
       case 'Download Bill':
-        data.status = {
-          status: 11,
-          download_count: { $exists: true },
-        };
+        data.status = 11;
+        data.download_count = { $exists: true };
         break;
       case 'Reports Pending Sing':
-        data.status = {
-          status: 11,
-          doctor_signature: { $exists: false }
-        };
+        data.status = 11;
+        data.download_count = { $exists: false };
         break;
     }
 
