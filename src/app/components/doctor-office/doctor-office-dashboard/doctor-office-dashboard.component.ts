@@ -46,9 +46,7 @@ export class DoctorOfficeDashboardComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: { 
-      status: { "$gt": 10 }
-    },
+    basecondition:'',
     updateendpoint: '',
     custombuttons: [
       {
@@ -148,7 +146,7 @@ export class DoctorOfficeDashboardComponent implements OnInit {
 
   public sortdata: any = {
     "type": 'desc',
-    "field": 'firstname',
+    "field": 'patient_name',
     "options": ['patient_name','created_at_datetime']
   };
   public limitcond: any = {
@@ -159,9 +157,10 @@ export class DoctorOfficeDashboardComponent implements OnInit {
 
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
-  public status: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"}];
+  public status_search: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"},{val:"Doctor Sign" , 'name' :"Doctor Sign"},{val:"Send to Biller" , 'name' :"Send to Biller"}];
+  public cptcodes: any = [{ val: "95923", 'name': '95923' }, { val: "95943", 'name': '95943' }, { val: "95921", 'name': "95921" }, { val: "93923", 'name': "93923" }, { val: "93922", 'name': "93922" }];
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
-  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }];
+  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' },{ val: "CMAT with BP Cuffs", 'name': "CMAT with BP Cuffs" }];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
   public docofficeval: any = [];
@@ -175,12 +174,12 @@ export class DoctorOfficeDashboardComponent implements OnInit {
   public search_settings: any =
     {
       
-      selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type } ,{label: "Search By Doctor", field: 'doc_name_search', values:this.authval },{label: "Search By Tech", field: 'tech_name_search', values:this.techval },{label: "Search By Doctor City", field: 'doctor_city_search', values:this.doctorcity },{label: "Search By Doctor State", field: 'doctor_state_search', values:this.doctorstate },{label: "Search By Patient City", field: 'patient_state_search', values:this.patientcity },{label: "Search By Patient State", field: 'patient_city_search', values:this.patientstate }],
+      selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type } ,{ label: "Search By Status", field: 'status_text', values: this.status_search },{label: "Search By Doctor", field: 'doc_name_search', values:this.authval },{label: "Search By Tech", field: 'tech_name_search', values:this.techval },{label: "Search By Doctor City", field: 'doctor_city_search', values:this.doctorcity },{label: "Search By Doctor State", field: 'doctor_state_search', values:this.doctorstate },{label: "Search By Patient City", field: 'patient_state_search', values:this.patientcity },{label: "Search By Patient State", field: 'patient_city_search', values:this.patientstate }],
       datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
-      // textsearch: [{ label: "Search By Name", field: 'name_search' },
+      textsearch: [{ label: "Search By Patient Name", field: 'patient_name_search' }],
       // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],
-      // search:[,
-      // ]
+      search:[ {label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes }
+    ]
     };
   // lib list end
 
@@ -190,11 +189,11 @@ export class DoctorOfficeDashboardComponent implements OnInit {
   constructor(public cookieService: CookieService, public activatedRoute: ActivatedRoute,
     public snackBar: MatSnackBar,public http: HttpServiceService, public matSnackBar: MatSnackBar) {
 
-      this.allData = cookieService.getAll();
+    this.allData = cookieService.getAll();
     this.authData = JSON.parse(this.allData.user_details);
     this.authData["jwtToken"] = cookieService.get('jwtToken');
     this.jwtToken = cookieService.get('jwtToken');
-
+    this.libdata.basecondition = {doctors_office_id:this.authData._id,status:{$gt:10}}
       // lib list
     let endpoint = 'getPatientlistdata';
     let endpointc = 'getPatientlistdata-count';
