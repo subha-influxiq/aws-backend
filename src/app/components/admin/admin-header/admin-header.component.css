@@ -57,10 +57,7 @@ font-size: 16px; color: #1f1f1f;}
 }
 
 @media screen and (max-width: 1440px) {
-  .content_wrapper .itemsection p {
-    line-height: 26px;
-    font-size: 24px;
-  }
+  .content_wrapper .itemsection p { line-height: 26px; font-size: 24px; }
 }
 
 @media screen and (max-width: 1400px) {
@@ -68,9 +65,8 @@ font-size: 16px; color: #1f1f1f;}
 }
 
 @media screen and (max-width: 1366px) {
-  .techdashboard_header .quotation .mat-nav-list .mat-list-item { margin: 0; font-size: 14px; }
-  .techdashboard_header .quotation .mat-nav-list .mat-list-item{ margin: 0; }
-  .techdashboard_header .profile_section .username { font-size: 14px; } 
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item { margin: 0; font-size: 13px; } 
+  .techdashboard_header .profile_section .username { font-size: 13px; } 
 }
 
 @media screen and (max-width: 1280px) {
@@ -100,10 +96,10 @@ font-size: 16px; color: #1f1f1f;}
 }
 
 @media screen and (max-width: 1199px) {
-  .doctor_content_wrapper .table_structure { width: 100%; }
-  .patient_report_section .button_action { width: 970px; }
-    .patient_report_section .button_action button { width: 475px; font-size: 20px;  padding: 8px; }
-  .content_wrapper {
+.doctor_content_wrapper .table_structure { width: 100%; }
+.patient_report_section .button_action { width: 970px; }
+.patient_report_section .button_action button { width: 475px; font-size: 20px;  padding: 8px; }
+.content_wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -128,16 +124,11 @@ font-size: 16px; color: #1f1f1f;}
     font-size: 36px;
     margin-bottom: 20px;
   }
-  .table_structure .mat-list-item .title_n {
-    font-size: 26px;
-  }
+  .table_structure .mat-list-item .title_n { font-size: 26px; }
   .table_structure .mat-list-item .title_a {
     font-size: 22px;
   }
-  .content_wrapper .itemsection p {
-    width: 100%;
-    font-size: 22px;
-  }
+  .content_wrapper .itemsection p { width: 100%; font-size: 22px; }
   .techdashboard_header {
     height: auto;
     -webkit-box-orient: vertical;
@@ -182,6 +173,7 @@ font-size: 16px; color: #1f1f1f;}
   .patient_report_section .button_action { width: auto; margin: 0 5px; display: -webkit-box;
    display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
   }
+
   .content_wrapper .itemsection { width: 30.8%; }
   .table_structure .mat-list-item .title_a { font-size: 16px; }
   .togle_menu { display: block; margin-top: 10px; background: #f8c655; color: #fff; position: absolute;
@@ -319,4 +311,3 @@ font-size: 16px; color: #1f1f1f;}
   margin-top: 20px;
   transition: 5px ease-out;
 }
-  

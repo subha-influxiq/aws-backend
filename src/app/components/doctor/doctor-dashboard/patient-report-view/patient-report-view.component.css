@@ -1,4 +1,4 @@
-.patient_report_wrapper{ display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 150px; }
+.patient_report_wrapper{ display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 60px; }
 .patient_report_wrapper .patient_item_section{  padding: 16px; box-sizing: border-box; margin-bottom: 0; width: 50%; background: #fff; }
 
 
@@ -81,9 +81,9 @@ width: 390px; border: 3px solid #d59d01; }
 
 .sticky {
   position: fixed;
-  top: 10px;
-  max-height: 80vh;
-  overflow: auto;
+    top: 6px; 
+    max-height: 80%;
+    overflow: auto;
 }
 .stickyRight{ margin-left: 50%!important;}
 .document_wrapper{
@@ -122,12 +122,22 @@ width: 390px; border: 3px solid #d59d01; }
 
 
 /* media css */
+@media screen and (max-width: 1660px){
+  .patient_report_wrapper{ margin-bottom: 50px; } 
+}
+@media screen and (max-width: 1500px){
+  .patient_report_wrapper{ margin-bottom: 48px; }
+}
 @media screen and (max-width: 1460px){
   .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; line-height: 26px;}
 }
 
 @media screen and (max-width: 1366px){ 
 .document_wrapper.next{ left: 434px; }
+ .patient_report_wrapper{ margin-bottom: 40px; } 
+}
+@media screen and (max-width: 1340px){
+  .patient_report_wrapper { margin-bottom: 20px; }
 }
 @media screen and (max-width: 1199px){
   .patient_report_wrapper .patient_item_section {  width: 100%; }
