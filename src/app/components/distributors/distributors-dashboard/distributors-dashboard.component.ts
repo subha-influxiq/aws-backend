@@ -396,6 +396,8 @@ export class DistributorsDashboardComponent implements OnInit {
 
   viewReportProcessData(flag = null) {
     this.htmlText.headerText = flag;
+    this.billerData_count = 0;
+    this.allBillerData = [];
     
     let endpoint = 'getPatientlistdata';
     let endpointc = 'getPatientlistdata-count';
