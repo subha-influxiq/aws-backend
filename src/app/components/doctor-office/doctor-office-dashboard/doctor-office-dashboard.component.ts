@@ -121,6 +121,9 @@ export class DoctorOfficeDashboardComponent implements OnInit {
     hidedeletebutton: true,
     hidestatustogglebutton: true,
     hideviewbutton: true,
+    hidemultipleselectbutton: true,
+    hidedeletemany:true,
+    hideupdatemany:true,
     tableheaders: [
       "patient_name",
       "status_text",
