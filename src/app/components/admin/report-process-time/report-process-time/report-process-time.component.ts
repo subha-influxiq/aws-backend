@@ -63,12 +63,14 @@ export class ReportProcessTimeComponent implements OnInit {
     updateendpoint: '',
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
+    hidemultipleselectbutton: true,
     hidedeletemany: true,
+    hideaction: true,
     hidestatustogglebutton: true,
     hideviewbutton: true,
     tableheaders: [
       "patient_name",
-      // "tech_name",
+      "batch_name",
       "report_uploaded_datetime",
       "report_process_datetime",
       "processing_time",
@@ -76,6 +78,7 @@ export class ReportProcessTimeComponent implements OnInit {
   }
   public allUserData_modify_header: any = {
     "patient_name": "Report Name",
+    "batch_name" : "Batch Name",
     "report_uploaded_datetime": "Report Uploaded",
     "report_process_datetime": "Report Process",
     "processing_time": "Reports Processing Time(Minutes)"
@@ -90,7 +93,7 @@ export class ReportProcessTimeComponent implements OnInit {
   public sortdata: any = {
     "type": 'desc',
     "field": 'patient_name',
-    "options": ['patient_name',]
+    "options": ['patient_name']
   };
   public limitcond: any = {
     "limit": 10,
@@ -101,6 +104,7 @@ export class ReportProcessTimeComponent implements OnInit {
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
+  public batch: any = [];
   public docofficeval: any = [];
   public techval: any = [];
   public parentnameval: any = [];
@@ -113,10 +117,12 @@ export class ReportProcessTimeComponent implements OnInit {
     {
       
       textsearch: [{label: "Search By Report Name", field: 'patient_name_search'}],
-      datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
+      datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "report_uploaded_datetime" }], 
       // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],
-      // search:[,
-      // ]
+      search:[{label: "Search By Batch Name", field: 'batch_search',values:this.batch,
+      serversearchdata: { endpoint: 'batch-search' }
+      }
+      ]
     };
   // lib list end
 

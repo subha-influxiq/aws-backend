@@ -71,9 +71,7 @@ export class BillerDashboardComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: {
-      status: { "$gt": 10 }
-    },
+    basecondition: "",
     updateendpoint: 'status-update-doctor',
     custombuttons: [
       {
@@ -166,7 +164,7 @@ export class BillerDashboardComponent implements OnInit {
     this.httpService.httpViaGetExt("http://api.ipify.org/?format=json", {}).subscribe(response => {
       this.htmlText.ip = response.ip;
     });
-
+    this.libdata.basecondition = {biller_id:this.loginUserData.user_details._id,status: 15 }
     let endpoint = 'getPatientlistdata';
     let endpointc = 'getPatientlistdata-count';
     let data: any = {
