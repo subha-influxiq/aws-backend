@@ -327,7 +327,7 @@
 
   <ng-container *ngIf="htmlText.orginalData.status == 11">
     <mat-toolbar class="patient_preview" *ngIf="(cookiesData.user_details.user_type == 'diagnostic_admin' || cookiesData.user_details.user_type == 'doctor')">
-      <mat-form-field color="warn">
+      <mat-form-field color="warn" *ngIf="cookiesData.user_details.parent_type != 'distributor'">
         <mat-label>Select A Biller</mat-label>
         <mat-select [(ngModel)]="htmlText.billerArrayIndex" placeholder="Select A Biller">
           <mat-option *ngFor="let biller of htmlText.billers; let i = index;" [value]="i">

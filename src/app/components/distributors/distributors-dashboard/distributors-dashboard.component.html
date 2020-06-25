@@ -1,8 +1,8 @@
-<app-distributors-header></app-distributors-header> 
+<app-distributors-header></app-distributors-header>
 
 <mat-card class="admin_wrapper">
 
-  
+
   <mat-card-content class="content_wrapper">
     <mat-card-content class="itemsection">
       <span class="icon">
@@ -12,8 +12,7 @@
         <span class="counter_with_tool">
           <h4 class="dataCount"> {{ allResolveData.dashboardCount.billerCount }} </h4>
           <span class="tolTip">
-            <a mat-raised-button #TNBillers="matTooltip"
-              matTooltip="comming.." matTooltipPosition="above"
+            <a mat-raised-button #TNBillers="matTooltip" matTooltip="comming.." matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="TNBillers.toggle()" class="toggle_btn" aria-label=" toggle section">
@@ -37,8 +36,7 @@
         <span class="counter_with_tool">
           <h4 class="dataCount"> {{ allResolveData.dashboardCount.techCount }} </h4>
           <span class="tolTip">
-            <a mat-raised-button #TNTechs="matTooltip"
-              matTooltip="comming.." matTooltipPosition="above"
+            <a mat-raised-button #TNTechs="matTooltip" matTooltip="comming.." matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="TNTechs.toggle()" class="toggle_btn" aria-label=" toggle section">
@@ -62,8 +60,7 @@
         <span class="counter_with_tool">
           <h4 class="dataCount"> {{ allResolveData.dashboardCount.doctorOfficeCount }} </h4>
           <span class="tolTip">
-            <a mat-raised-button #TNDOffice="matTooltip"
-              matTooltip="comming.." matTooltipPosition="above"
+            <a mat-raised-button #TNDOffice="matTooltip" matTooltip="comming.." matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="TNDOffice.toggle()" class="toggle_btn" aria-label=" toggle section">
@@ -91,8 +88,7 @@
         <span class="counter_with_tool">
           <h4 class="dataCount"> {{ allResolveData.dashboardCount.doctorsCount }} </h4>
           <span class="tolTip">
-            <a mat-raised-button #TNDrs="matTooltip"
-              matTooltip="comming.." matTooltipPosition="above"
+            <a mat-raised-button #TNDrs="matTooltip" matTooltip="comming.." matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="TNDrs.toggle()" class="toggle_btn" aria-label=" toggle section">
@@ -107,7 +103,7 @@
         <button mat-button [routerLink]="['/distributors/doctor-management']">View Details</button>
       </span>
     </mat-card-content>
-    
+
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/totalDoctorIcon.png">
@@ -116,8 +112,7 @@
         <span class="counter_with_tool">
           <h4 class="dataCount"> {{ allResolveData.dashboardCount.salesPersonCount }} </h4>
           <span class="tolTip">
-            <a mat-raised-button #TNSPerson="matTooltip"
-              matTooltip="comming.." matTooltipPosition="above"
+            <a mat-raised-button #TNSPerson="matTooltip" matTooltip="comming.." matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="TNSPerson.toggle()" class="toggle_btn" aria-label=" toggle section">
@@ -136,15 +131,11 @@
   </mat-card-content>
 
   <!-- Doctor other related -->
-
- 
-
-
   <!-- <mat-card-content class="content_wrapper">
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/loveHandshake.png">
-      </span>
+      </span> 
       <span class="counteer">
         <span class="counter_with_tool">
           <h4 class="dataCount"> 34 </h4> 
@@ -215,8 +206,8 @@
       </span>
     </mat-card-content>
    -->
-    <!-- new edit -->
-    <!-- <mat-card-content class="itemsection">
+  <!-- new edit -->
+  <!-- <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/calenderAppointment.png">
       </span>
@@ -287,7 +278,7 @@
   </mat-card-content> -->
 
 
- 
+
   <mat-card-content class="admin_superbillsection superbillerContainer">
     <h1>Physician Report and Super Bills</h1>
     <mat-card-content class="biller_wrapper">
@@ -398,6 +389,7 @@
 
     <!-- Listing goes here  -->
     <!-- table -->
+<<<<<<< HEAD
     <!-- <ng-container *ngIf="listFlag == true"> -->
     <lib-listing
       class="DataTable" 
@@ -422,6 +414,15 @@
       [date_search_source_count]="billerData_count" 
       [limitcond]="limitcond"
       [updatetable]="updatetable" >
+=======
+    <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData" [skip]="allUserData_skip"
+      [modify_header_array]="allUserData_modify_header" [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl"
+      [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="jwtToken" [statusarr]="status"
+      [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
+      [date_search_source]="SearchingSourceName" [search_settings]="search_settings" [sortdata]="sortdata"
+      [datacollection]="datacollection" [libdata]="libdata" [date_search_source_count]="billerData_count"
+      [limitcond]="limitcond">
+>>>>>>> 7ff7836a039bb3dea73a680974019913d8a3e237
     </lib-listing>
   <!-- </ng-container> -->
   </mat-card-content>
@@ -429,5 +430,5 @@
 
 </mat-card>
 
- 
+
 <app-distributors-footer></app-distributors-footer>

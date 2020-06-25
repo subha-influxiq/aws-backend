@@ -54,8 +54,6 @@ export class PatientReportViewComponent implements OnInit {
     this.cookiesData = this.cookie.getAll();
     this.cookiesData.user_details = JSON.parse(this.cookiesData.user_details);
 
-    console.log(">>>>", this.cookiesData.user_details);
-    
     if(this.cookiesData.user_details.user_type == 'doctor' || this.cookiesData.user_details.user_type == 'diagnostic_admin') {
       this.getBiller(this.cookiesData.user_details._id);
     }
@@ -161,16 +159,20 @@ export class PatientReportViewComponent implements OnInit {
   }
 
   reportSign(flug: any = 'default') {
-    if(typeof this.htmlText.billers !== 'undefined' && this.htmlText.billers != '') {
-      var billerName = this.htmlText.billers[this.htmlText.billerArrayIndex].firstname + ' ' + this.htmlText.billers[this.htmlText.billerArrayIndex].lastname;
-      var billerEmail = this.htmlText.billers[this.htmlText.billerArrayIndex].email;
-      var billerID = this.htmlText.billers[this.htmlText.billerArrayIndex].biller_id;
+    if((typeof this.htmlText.billers !== 'undefined' && this.htmlText.billers != '') || this.cookiesData.user_details.parent_type != 'distributor') {
+      var confirmDialogMsg: string = "Do you want to sign this report ?";
+      if(this.cookiesData.user_details.parent_type != 'distributor') {
+        var billerName = this.htmlText.billers[this.htmlText.billerArrayIndex].firstname + ' ' + this.htmlText.billers[this.htmlText.billerArrayIndex].lastname;
+        var billerEmail = this.htmlText.billers[this.htmlText.billerArrayIndex].email;
+        var billerID = this.htmlText.billers[this.htmlText.billerArrayIndex].biller_id;
+        confirmDialogMsg = "Do you want to send this report to biller: " + billerName + " ?";
+      }
 
       let modalData: any = {
         panelClass: 'bulkupload-dialog',
         data: {
           header: "Message",
-          message: "Do you want to send this report to biller: " + billerName + " ?",
+          message: confirmDialogMsg,
           button1: { text: "Yes" },
           button2: { text: "No" },
         }
@@ -186,9 +188,9 @@ export class PatientReportViewComponent implements OnInit {
                 "bill_generation_date": new Date(),
                 "bill_sent_date": new Date(),
                 "doctor_signature": this.cookiesData.doctor_signature, 
-                "biller_id": billerID,
-                "biller_name": billerName,
-                "biller_email": billerEmail,
+                "biller_id": "",
+                "biller_name": "",
+                "biller_email": "",
                 "download_link" : environment.siteBaseUrl + 'download/super-bill/' + this.htmlText.allResolveData.reportData[0]._id,
                 "file_path": "",
                 "download_password": "",
@@ -198,6 +200,12 @@ export class PatientReportViewComponent implements OnInit {
               },
               "report_id": this.htmlText.allResolveData.reportData[0]._id
             };
+
+            if(this.cookiesData.user_details.parent_type != 'distributor') {
+              data.biller_id = billerID;
+              data.biller_name = billerName;
+              data.biller_email = billerEmail;
+            }
 
             data.data["id"] = this.activeRoute.snapshot.params._id;
             this.httpService.httpViaPost("report-sign-send-to-biller", data).subscribe((response) => {
