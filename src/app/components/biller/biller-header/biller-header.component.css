@@ -2,7 +2,7 @@
 /* header css */
 
 .techdashboard_header { height: auto; padding: 0; background: #fff; box-shadow: 0px 2px 7px 2px #b7b7b7; margin: 20px 0; }
-.techdashboard_header .header_wrapper{ width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;}
+.techdashboard_header .header_wrapper{ width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; position: relative;}
 .techdashboard_header .logo_wrapper { max-width: 160px; display: block; cursor: pointer; flex: none; }
 .techdashboard_header .logo_wrapper:focus { outline: none; border: none; }
 .techdashboard_header .logo_wrapper img { max-width: 100%; vertical-align: middle; }
@@ -48,7 +48,8 @@
 .techdashboard_header .header_wrapper { display: flex; flex-direction: column; }
 .techdashboard_header .quotation p { margin: 10px 5px; }
 .techdashboard_header .profile_section{ border-left: 0;}
-.togle_menu { display: block; margin-top: 10px; background: #f8c655; color: #fff; position: absolute; right: 20px; min-width: auto;}
+.togle_menu { display: block; margin-top: 0; background: #f8c655;
+  color: #fff; min-width: auto; margin-left: auto; position: absolute; right: 10px; top: 40px;}
 .success{ display: block;}
 .danger{ display: none;}
 .techdashboard_header .quotation .mat-list-base { display: flex; flex-direction: column; }
