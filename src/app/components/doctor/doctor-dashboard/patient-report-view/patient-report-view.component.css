@@ -134,10 +134,10 @@ width: 390px; border: 3px solid #d59d01; }
 
 @media screen and (max-width: 1366px){ 
 .document_wrapper.next{ left: 434px; }
- .patient_report_wrapper{ margin-bottom: 32px; } 
+ .patient_report_wrapper{ margin-bottom: 40px; } 
 }
 @media screen and (max-width: 1340px){
-  .patient_report_wrapper { margin-bottom: 13px; }
+  .patient_report_wrapper { margin-bottom: 20px; }
 }
 @media screen and (max-width: 1199px){
   .patient_report_wrapper .patient_item_section {  width: 100%; }
