@@ -154,6 +154,7 @@ export class TechDashboardComponent implements OnInit {
     hidedeletebutton: true,
     hidestatustogglebutton: true,
     hidedeletemany:true,
+    hidemultipleselectbutton: true,
     hideupdatemany:true,
     hideviewbutton: true,
     tableheaders: [
