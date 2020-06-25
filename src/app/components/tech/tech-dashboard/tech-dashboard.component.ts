@@ -191,7 +191,7 @@ export class TechDashboardComponent implements OnInit {
   };
 
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
-
+  public status:any =[];
   public status_search: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"},{val:"Doctor Sign" , 'name' :"Doctor Sign"},{val:"Send to Biller" , 'name' :"Send to Biller"}];
   public cptcodes: any = [{ val: "95923", 'name': '95923' }, { val: "95943", 'name': '95943' }, { val: "95921", 'name': "95921" }, { val: "93923", 'name': "93923" }, { val: "93922", 'name': "93922" }];
   public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
