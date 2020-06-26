@@ -187,6 +187,7 @@ import { JobTicketPatientReportsComponent } from './components/admin/admin-dashb
 import { ViewJobTicketImageComponent } from './components/admin/admin-dashboard/hold-report-job-ticket/view-job-ticket-image/view-job-ticket-image.component';
 import { CptValidateReportSalesPersonComponent } from './components/sales-person/cpt-validate-report-salesperson/cpt-validate-report-sales-person/cpt-validate-report-sales-person.component';
 import { ReportProcessTimeComponent } from './components/admin/report-process-time/report-process-time/report-process-time.component';
+import { DirectDownloadReportsComponent } from './components/biller/direct-download-reports/direct-download-reports.component';
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -362,6 +363,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CptValidateReportSalesPersonComponent,
 
     ReportProcessTimeComponent,
+
+    DirectDownloadReportsComponent,
   ],
   imports: [
     SatDatepickerModule,
