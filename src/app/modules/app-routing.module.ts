@@ -72,6 +72,7 @@ import { BulkUploadComponent } from '../components/tech/patient-management/bulk-
 import { ReportConformationComponent } from '../components/tech/patient-management/report-conformation/report-conformation.component';
 
 import { BillerDashboardComponent } from '../components/biller/biller-dashboard/biller-dashboard.component';
+import { DirectDownloadReportsComponent } from '../components/biller/direct-download-reports/direct-download-reports.component';
 
 /**Doctor Dashboard **/
 import { DoctorDashboardComponent } from '../components/doctor/doctor-dashboard/doctor-dashboard.component';
@@ -1783,6 +1784,13 @@ const routes: Routes = [
     path: 'download/super-bill/:_id',
     component: DownloadSuperbillerComponent
   },
+
+  /* Direct Download Reports */
+  {
+    path: 'direct-Download-Reports/super-bill/:_id',
+    component: DirectDownloadReportsComponent
+  },
+
   {
     path: 'biller/patient-record-report/:_id',
     component: PatientReportViewComponent,

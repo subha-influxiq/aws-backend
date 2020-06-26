@@ -384,7 +384,7 @@
               </a>
             </span>
           </span>
-          <button mat-flat-button [routerLink]="['/doctor/signature-management']">SIGN</button>
+          <button mat-flat-button [routerLink]="['/doctor/signature-management']">Manage</button>
         </span>
       </mat-card-content>
 
@@ -410,7 +410,7 @@
           </span>
 
           <h2> {{ allResolveData.dashboardData.reportsProcessedCount }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
+          <button mat-flat-button (click)="viewReportProcessData('Reports Processed')">view all</button>
         </span>
       </mat-card-content>
 
@@ -435,7 +435,7 @@
             </span>
           </span>
           <h2> {{ allResolveData.dashboardData.reportsPendingSignatureCount }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
+          <button mat-flat-button (click)="viewReportProcessData('Reports Pending Signature')">view all</button>
         </span>
       </mat-card-content>
     </mat-card-content>
@@ -464,7 +464,7 @@
               </span>
             </span>
             <h2> {{ allResolveData.dashboardData.reportsAskedForReview }} </h2>
-            <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
+            <button mat-flat-button (click)="viewReportProcessData('Reports Asked for Review')">view all</button>
           </span>
         </mat-card-content>
 
@@ -490,7 +490,7 @@
               </span>
             </span>
             <h2> {{ allResolveData.dashboardData.reportsSentToBillerCount }} </h2>
-            <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
+            <button mat-flat-button (click)="viewReportProcessData('Reports Sent to Biller')">view all</button>
           </span>
         </mat-card-content>
 
@@ -516,7 +516,7 @@
               </span>
             </span>
             <h2> {{ allResolveData.dashboardData.reportsDownloadedByBillerCount }} </h2>
-            <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
+            <button mat-flat-button (click)="viewReportProcessData('Reports Downloaded by Biller')">view all</button>
           </span>
         </mat-card-content>
 
@@ -530,33 +530,6 @@
     <mat-toolbar class="top_header">
       <h2> {{ htmlText.headerText }} </h2>
     </mat-toolbar>
-
-    <span class="action_bar">
-      <!-- <mat-form-field>
-        <input matInput type="text" placeholder="Search By Patient" [(ngModel)]="searchJson.patientName" />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-select [(ngModel)]="searchJson.status">
-          <mat-option value="">Select a status</mat-option>
-          <mat-option value="waiting for doctor sign">Waiting For Doctor Sign</mat-option>
-          <mat-option value="doctor signed">Doctor Signed</mat-option>
-          <mat-option value="send to biller">Send To Biller</mat-option>
-          <mat-option value="error">Error</mat-option>
-          <mat-option value="pending">Pending</mat-option>
-          this.viewReportProcessData(this.htmlText.headerText);
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput type="text" placeholder="Choose a date" [satDatepicker]="picker"
-          [(ngModel)]="searchJson.dateRange" />
-        <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
-        <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
-      </mat-form-field> -->
-
-      <!-- <button mat-button class="add_btn" (click)="viewReportProcessData(htmlText.headerText);">Date Search</button> -->
-    </span>
 
     <div class="tablewrapper admin_dashboard">
 

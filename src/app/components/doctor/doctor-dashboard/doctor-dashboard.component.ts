@@ -463,94 +463,58 @@ export class DoctorDashboardComponent implements OnInit {
   }
 
   viewReportProcessData(flag: string = null) {
-    this.allDataColumns = ['no', 'patient_name', 'tech_name', 'doctor_name', 'biller_name', 'bill_generation_date', 'bill_sent_date', 'report_type', 'status', 'super_bill', 'action'];
     this.htmlText.headerText = flag;
-    var data: any = {};
-    /* Open modal */
-    let modalData: any = {
-      panelClass: 'bulkupload-dialog',
-      data: {
-        header: "Message",
-        message: "No Records Found",
-        button1: { text: "" },
-        button2: { text: "Ok" },
-      }
-    };
+    this.allDocData = [];
+    this.docData_count = 0;
 
-    if (this.searchJson.dateRange != '') {
-      this.searchJson.dateRange.end = moment(this.searchJson.dateRange.end, "DD-MM-YYYY").add(1, 'days');
+    // lib list
+    let endpoint = 'getPatientlistdata';
+    let endpointc = 'getPatientlistdata-count';
+    let data: any = {
+      "condition": {
+        "limit": 10,
+        "skip": 0
+      },
+      sort: {
+        "type": 'desc',
+        "field": 'patient_name'
+      },
+      doctor_id: this.authData._id
     }
 
     switch (flag) {
-      case 'Report Signed':
-        data = {
-          "source": "data_pece",
-          "search": this.searchJson,
-          "condition": {
-            "report_type": { $exists: true },
-            "doctor_signature": { $exists: true },
-            "doctor_id": this.authData._id
-          },
-          "pagination": {
-            "skip": 0,
-            "limit": 50
-          },
-          "token": this.authData.jwtToken
+      case 'Reports Processed':
+        data.status = {
+          "$in": [ 11, 12, 13,14,15 ] 
         };
         break;
-      case 'Report unSigned':
-        this.allDataColumns = ['no', 'patient_name', 'tech_name', 'doctor_name', 'report_type', 'status', 'action'];
-        data = {
-          "source": "data_pece",
-          "search": this.searchJson,
-          "condition": {
-            "report_type": { $exists: true },
-            "doctor_signature": { $exists: false },
-            "doctor_id": this.authData._id
-          },
-          "pagination": {
-            "skip": 0,
-            "limit": 50
-          },
-          "token": this.authData.jwtToken
-        };
+      case 'Reports Pending Signature':
+        data.doctor_signature = { $exists: false };
+        break;
+      case 'Reports Asked for Review':
+        data.job_tickets_details = { $exists: true };
+        break;
+      case 'Reports Sent to Biller':
+        data.status = 15;
+        break;
+      case 'Reports Downloaded by Biller':
+        data.status = 16;
         break;
       default:
-        data = {
-          "source": "data_pece",
-          "search": this.searchJson,
-          "condition": {
-            "report_type": { $exists: true },
-            "doctor_id": this.authData._id
-          },
-          "pagination": {
-            "skip": 0,
-            "limit": 50
-          },
-          "token": this.authData.jwtToken
-        };
         break;
     }
-    this.http.httpViaPost('dashboard-datalist', data).subscribe(response => {
-      if (response.data.length > 0) {
-        this.allResolveData.recordData = response.data;
-        this.allDataSource = new MatTableDataSource(this.allResolveData.recordData);
-        this.allDataSource.paginator = this.paginator;
-      }
+    this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
+      this.docData_count = res.count;
+    }, error => {
+      console.log('Oooops!');
     });
 
-    let sectionData: any = {
-      "source": "data_pece",
-      "condition": this.data,
-      "token": this.authData.jwtToken
-    }
-    this.http.httpViaPost('datalist', sectionData).subscribe(response => {
-      // if (response.data.length > 0) {
-      this.otherData["all_details"] = response.res[0];
-      // }
+    this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
+      this.allDocData = res.results.res;
+    }, error => {
+      console.log('Oooops!');
     });
   }
-
 
   openModal(data) {
     this.dialogRef = this.dialog.open(DialogBoxComponent, data);
@@ -561,91 +525,6 @@ export class DoctorDashboardComponent implements OnInit {
           break;
       }
     });
-  }
-
-  downloadReport(report: any) {
-    if (typeof (report.download_count) == "undefined") {
-      report.download_count = 1;
-    } else {
-      report.download_count = report.download_count + 1;
-    }
-
-    /* Collect User Information for Download record */
-    let deviceInfo: any = this.deviceService.getDeviceInfo();
-    deviceInfo["isMobile"] = this.deviceService.isMobile();
-    deviceInfo["isTablet"] = this.deviceService.isTablet();
-    deviceInfo["isDesktop"] = this.deviceService.isDesktop();
-
-    /* Set downloader information */
-    var userDetails = {
-      id: this.authData._id,
-      type: this.authData.type
-    };
-
-    let postData: any = {
-      "source": "report_download",
-      "data": {
-        "report_id": report._id,
-        "biller_id": this.authData._id,
-        "tech_id": report.tech_id,
-        "doctor_id": report.doctor_id,
-        "ip": this.htmlText.ip,
-        "download_attempt": 1,
-        "downloader_information": userDetails,
-        "device_information": deviceInfo
-      },
-      "sourceobj": ["report_id", "biller_id", "tech_id", "doctor_id"],
-      "download_count": report.download_count,
-      "token": this.authData.jwtToken
-    };
-
-    this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
-      if (response.status == 'success') {
-        this.matSnackBar.open("Start downloading...", "", {
-          duration: 3000
-        });
-        window.open(report.file_path, "_blank");
-
-        this.refreshDashboard();
-      } else {
-        this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
-          duration: 3000
-        });
-      }
-    });
-  }
-
-  refreshDashboard() {
-    let postData: any = {
-      source: "data_pece",
-      condition: {
-        doctor_id: this.authData._id
-      }
-    };
-
-    this.http.httpViaPost("doctor-dashboard", postData).subscribe(response => {
-      if (response.status == 'success') {
-        this.allResolveData = response.data;
-        this.viewReportProcessData(this.htmlText.tableHeaderText);
-      } else {
-        this.matSnackBar.open("Please wait...", "", {
-          duration: 1000
-        });
-
-        setTimeout(() => {
-          this.refreshDashboard();
-        }, 1000);
-      }
-    });
-  }
-
-  resetSearch() {
-    this.searchJson = {
-      patientName: "",
-      status: "",
-      dateRange: ""
-    };
-    this.viewReportProcessData(this.htmlText.headerText);
   }
 
   viewMore() {
