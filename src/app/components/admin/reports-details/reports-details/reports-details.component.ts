@@ -230,25 +230,18 @@ export class ReportsDetailsComponent implements OnInit {
       this.search_settings.selectsearch.splice(2,1);
       this.search_settings.selectsearch.splice(6,1);
       this.search_settings.selectsearch.splice(7,1);
-    } else if(this.loginUserData.user_details.user_details.user_type == "tech") {
-      this.search_settings.selectsearch.splice(3,1);
-      this.user = {tech_id:this.loginUserData.user_details.user_details._id,status:11}
-    } else if(this.loginUserData.user_details.user_details.user_type == "doctor_office") {
-      this.search_settings.selectsearch.splice(4,1);
-      this.libdata.custombuttons[0].route = "doctor-office/view-patient-record/"
-      this.user = {doctors_office_id:this.loginUserData.user_details.user_details._id,status:11}
     } else if(this.loginUserData.user_details.user_details.user_type == "diagnostic_admin") {
       this.search_settings.selectsearch.splice(5,1);
       this.libdata.custombuttons[0].route = "diagnostic-admin/patient-record/"
-      this.user = {parent_id:this.loginUserData.user_details.user_details._id,status:11}
+      this.user = {parent_id:this.loginUserData.user_details.user_details._id,status:{"$in":[11,14,15]}}
     } else if(this.loginUserData.user_details.user_details.user_type == "doctor_group") {
       this.search_settings.selectsearch.splice(5,1);
       this.libdata.custombuttons[0].route = "doctor-group/view-patient-record/"
-      this.user = {parent_id :this.loginUserData.user_details.user_details._id,status:11}
+      this.user = {parent_id :this.loginUserData.user_details.user_details._id,status:{"$in":[11,14,15]}}
     } else if(this.loginUserData.user_details.user_details.user_type == "distributors") {
       this.search_settings.selectsearch.splice(5,1);
       this.libdata.custombuttons[0].route = "distributors/view-patient-record/"
-      this.user = {parent_id:this.loginUserData.user_details.user_details._id,status:11}
+      this.user = {parent_id:this.loginUserData.user_details.user_details._id,status:{"$in":[11,14,15]}}
     } else {
       this.user = {parent_id:this.activatedRoute.snapshot.params._id}
     }
