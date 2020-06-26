@@ -24,7 +24,7 @@ export class DoctorGroupDashboardComponent implements OnInit {
   public loginUserData: any = {};
   public jwtToken: string = "";
   public htmlText: any = {
-    headerText: "Patient Reports"
+    headerText: "Reports Uploaded"
   };
 
   public shareDetails: any = {
@@ -240,34 +240,8 @@ export class DoctorGroupDashboardComponent implements OnInit {
     /* Get resolve data */
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData = resolveData.dataCount.data;
-    });
 
-    // lib list
-    let endpoint = 'getPatientlistdata';
-    let endpointc = 'getPatientlistdata-count';
-    let data: any = {
-      "condition": {
-        "limit": 10,
-        "skip": 0
-      },
-      sort: {
-        "type": 'desc',
-        "field": 'patient_name'
-      },
-      status: {$gt:10},
-      parent_id: this.loginUserData.user_details._id
-    }
-
-    this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
-      this.billerData_count = res.count;
-    }, error => {
-      console.log('Oooops!');
-    });
-
-    this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
-      this.allBillerData = res.results.res;
-    }, error => {
-      console.log('Oooops!');
+      this.viewReportProcessData(this.htmlText.headerText);
     });
   }
 
@@ -415,60 +389,64 @@ export class DoctorGroupDashboardComponent implements OnInit {
   ngAfterViewInit() {
   }
 
-  downloadReport(report: any) {
-    if (typeof (report.download_count) == "undefined") {
-      report.download_count = 1;
-    } else {
-      report.download_count = report.download_count + 1;
+  viewReportProcessData(flag = null) {
+    this.htmlText.headerText = flag;
+    this.allBillerData = [];
+    this.billerData_count = 0;
+
+    // lib list
+    let endpoint = 'getPatientlistdata';
+    let endpointc = 'getPatientlistdata-count';
+    let data: any = {
+      "condition": {
+        "limit": 10,
+        "skip": 0
+      },
+      sort: {
+        "type": 'desc',
+        "field": 'patient_name'
+      },
+      parent_id: this.loginUserData.user_details._id
     }
 
-    /* Collect User Information for Download record */
-    let deviceInfo: any = this.deviceService.getDeviceInfo();
-    deviceInfo["isMobile"] = this.deviceService.isMobile();
-    deviceInfo["isTablet"] = this.deviceService.isTablet();
-    deviceInfo["isDesktop"] = this.deviceService.isDesktop();
+    switch (flag) {
+      case 'Reports Uploaded':
+        data.status = {
+          "$in": [ 8, 9, 10 ] 
+        };
+        break;
+      case 'Report Processed':
+        data.status = {
+          "$in": [ 11, 12, 13, 14, 15 ] 
+        };
+        break;
+      case 'Report Signed':
+        data.doctor_signature = { $exists: true };
+        break;
+      case 'Sent to Biller':
+        data.status = 15;
+        break;
+      case 'Reports Downloaded':
+        data.status = 15;
+        break;
+      case 'Reports Pending Sing':
+        data.doctor_signature = { $exists: false };
+        break;
+      default:
+        break;
+    }
 
-    /* Set downloader information */
-    var userDetails = {
-      id: this.loginUserData.user_details._id,
-      user_type: this.loginUserData.user_details.user_type
-    };
-
-    let postData: any = {
-      "source": "report_download",
-      "data": {
-        "report_id": report._id,
-        "biller_id": this.loginUserData.user_details._id,
-        "tech_id": report.tech_id,
-        "doctor_id": report.doctor_id,
-        "ip": this.htmlText.ip,
-        "download_attempt": 1,
-        "downloader_information": userDetails,
-        "device_information": deviceInfo
-      },
-      "sourceobj": ["report_id", "biller_id", "tech_id", "doctor_id"],
-      "download_count": report.download_count,
-      "token": this.loginUserData.jwtToken
-    };
-
-    this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
-      if (response.status == 'success') {
-        this.matSnackBar.open("Start downloading.", "Ok", {
-          duration: 3000
-        });
-        window.open(report.file_path, "_blank");
-
-        this.viewReportProcessData(this.htmlText.headerText);
-      } else {
-        this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
-          duration: 3000
-        });
-      }
+    this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
+      this.billerData_count = res.count;
+    }, error => {
+      console.log('Oooops!');
     });
-  }
 
-  viewReportProcessData(flag = null) {
-
+    this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
+      this.allBillerData = res.results.res;
+    }, error => {
+      console.log('Oooops!');
+    });
   }
 
 }
