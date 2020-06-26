@@ -129,6 +129,13 @@ export class DoctorDashboardComponent implements OnInit {
         headermessage: 'Parent Information',
         // refreshdata:true
       },
+      {
+        label: "Download Report",
+        link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
+        type: 'externallink',
+        paramtype: 'angular',
+        param: ['download_file_name']
+      },
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
@@ -204,7 +211,7 @@ export class DoctorDashboardComponent implements OnInit {
   public allResolveData: any = {};
   public htmlText: any = {
     buttonText: "Add One",
-    headerText: "Patient Record Report",
+    headerText: "Reports Processed",
     billerData: [],
     signFlag: true
   };
@@ -273,35 +280,7 @@ export class DoctorDashboardComponent implements OnInit {
     this.activatedRoute.data.forEach(resolveData => {
       this.allResolveData.dashboardData = resolveData.doctordata.data;
 
-      this.viewReportProcessData(this.htmlText.tableHeaderText);
-    });
-
-    // lib list
-    let endpoint = 'getPatientlistdata';
-    let endpointc = 'getPatientlistdata-count';
-    let data: any = {
-      "condition": {
-        "limit": 10,
-        "skip": 0
-      },
-      sort: {
-        "type": 'desc',
-        "field": 'patient_name'
-      },
-      status: { "$gt": 10 },
-      doctor_id: this.authData._id
-    }
-
-    this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
-      this.docData_count = res.count;
-    }, error => {
-      console.log('Oooops!');
-    });
-
-    this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
-      this.allDocData = res.results.res;
-    }, error => {
-      console.log('Oooops!');
+      this.viewReportProcessData(this.htmlText.headerText);
     });
   }
 
