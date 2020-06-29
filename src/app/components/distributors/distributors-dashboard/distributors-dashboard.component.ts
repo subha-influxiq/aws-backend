@@ -93,6 +93,7 @@ export class DistributorsDashboardComponent implements OnInit {
       status: { "$gt": 10 }
     },
     updateendpoint: 'status-update-doctor',
+    updateendpointmany: 'status-update-biller',
     custombuttons: [
       {
         label: "View Report",
@@ -159,10 +160,22 @@ export class DistributorsDashboardComponent implements OnInit {
         headermessage: 'Doctor Office Info',
         // refreshdata:true
       },
+      {
+        label: "Send to Biller",
+        type: 'action',
+        datatype: 'api',
+        endpoint: 'status-parent-signed',
+        // otherparam:["patient_name"],
+        cond:'status',
+        condval:14,
+        param: 'id',
+        headermessage: 'Status Update',
+        // refreshdata:true
+      },
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
-    // hidestatustogglebutton: true,
+    hidestatustogglebutton: true,
     hidedeletemany:true,
     hideviewbutton: true,
     tableheaders: [

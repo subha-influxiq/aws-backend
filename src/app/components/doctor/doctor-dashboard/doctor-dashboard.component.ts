@@ -63,6 +63,7 @@ export class DoctorDashboardComponent implements OnInit {
   public libdata: any = {
     basecondition: "",
     updateendpoint: 'status-update-doctor',
+    updateendpointmany: 'status-update-doctor',
     custombuttons: [
       {
         label: "View Report",
@@ -136,11 +137,23 @@ export class DoctorDashboardComponent implements OnInit {
         paramtype: 'angular',
         param: ['download_file_name']
       },
+      {
+        label: "Doctor Signed",
+        type: 'action',
+        datatype: 'api',
+        endpoint: 'status-doctor-signed',
+        otherparam:["patient_name"],
+        cond:'status',
+        condval:11,
+        param: 'id',
+        headermessage: 'Status Update',
+        // refreshdata:true
+      },
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
     hidedeletemany: true,
-    // hidestatustogglebutton: true,
+    hidestatustogglebutton: true,
     hideviewbutton: true,
     tableheaders: [
       "patient_name",
