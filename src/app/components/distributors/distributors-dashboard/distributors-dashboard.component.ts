@@ -24,7 +24,7 @@ export class DistributorsDashboardComponent implements OnInit {
   public loginUserData: any = {};
   public jwtToken: string = "";
   public htmlText: any = {
-    headerText: "Report Processed"
+    headerText: "Reports Uploaded"
   };
 
   public shareDetails: any = {
@@ -57,7 +57,7 @@ export class DistributorsDashboardComponent implements OnInit {
 
   // Lib list
   public allBillerData: any = [];
-  public listFlag:boolean = true;
+  public listFlag: boolean = true;
   public updatetable: boolean = false;
   public billerData_count: any = 0;
   public datasource: any;
@@ -113,13 +113,9 @@ export class DistributorsDashboardComponent implements OnInit {
         type: 'action',
         datatype: 'api',
         endpoint: 'get-tech-details',
-        // otherparam:["patient_name"],
-        //cond:'status',
-        //condval:0,
         datafields: ['first name', 'last name', 'email', 'phone', 'address', 'city', 'state', 'zip'],
         param: 'id',
         headermessage: 'Tech Information',
-        // refreshdata:true
       },
       {
         label: "View Codes",
@@ -127,12 +123,8 @@ export class DistributorsDashboardComponent implements OnInit {
         datatype: 'api',
         endpoint: 'get-codes-details',
         datafields: ['Additional Potential Health Risks', 'CPT Codes', 'ICD Codes'],
-        // otherparam:["patient_name"],
-        //cond:'status',
-        //condval:0,
         param: 'id',
         headermessage: 'Associated Codes',
-        // refreshdata:true
       },
       {
         label: "Doctor Details",
@@ -140,12 +132,8 @@ export class DistributorsDashboardComponent implements OnInit {
         datatype: 'api',
         endpoint: 'get-doctor-details',
         datafields: ['firstname', 'lastname', 'email', 'fax', 'Practice Name', 'NPI', 'phone', 'address', 'city', 'state', 'zip'],
-        // otherparam:["patient_name"],
-        //cond:'status',
-        //condval:0,
         param: 'id',
         headermessage: 'Doctor Information',
-        // refreshdata:true
       },
       {
         label: "Doctor Office Details",
@@ -153,30 +141,24 @@ export class DistributorsDashboardComponent implements OnInit {
         datatype: 'api',
         endpoint: 'get-doctor-office-details',
         datafields: ['center name', 'first name', 'last name', 'email', 'phone', 'address', 'city', 'state', 'zip'],
-        // otherparam:["patient_name"],
-        //cond:'status',
-        //condval:0,
         param: 'id',
         headermessage: 'Doctor Office Info',
-        // refreshdata:true
       },
       {
         label: "Send to Biller",
         type: 'action',
         datatype: 'api',
         endpoint: 'status-parent-signed',
-        // otherparam:["patient_name"],
-        cond:'status',
-        condval:14,
+        cond: 'status',
+        condval: 14,
         param: 'id',
         headermessage: 'Status Update',
-        // refreshdata:true
       },
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
     hidestatustogglebutton: true,
-    hidedeletemany:true,
+    hidedeletemany: true,
     hideviewbutton: true,
     tableheaders: [
       "patient_name",
@@ -213,11 +195,37 @@ export class DistributorsDashboardComponent implements OnInit {
 
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
-  public status: any = [{ val: "Send to Biller", 'name': 'Send to Biller' }];
-  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
-  public cptcodes: any = [{ val: "95923", 'name': '95923' }, { val: "95943", 'name': '95943' }, { val: "95921", 'name': "95921" }, { val: "93923", 'name': "93923" }, { val: "93922", 'name': "93922" }];
-  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' }, { val: "CMAT with BP Cuffs", 'name': "CMAT with BP Cuffs" }];
-  public status_search: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"},{val:"Doctor Sign" , 'name' :"Doctor Sign"},{val:"Send to Biller" , 'name' :"Send to Biller"}];
+  public status: any = [
+    { val: "Send to Biller", 'name': 'Send to Biller' },
+    { val: "Report Downloaded", "name": "Report Downloaded" }
+  ];
+  public parent_type: any = [
+    { val: "admin", 'name': 'Admin' },
+    { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },
+    { val: "distributors", 'name': 'Distributor' },
+    { val: "doctor_group", 'name': 'Doctor Group' }
+  ];
+  public cptcodes: any = [
+    { val: "95923", 'name': '95923' },
+    { val: "95943", 'name': '95943' },
+    { val: "95921", 'name': "95921" },
+    { val: "93923", 'name': "93923" },
+    { val: "93922", 'name': "93922" }
+  ];
+  public report_type: any = [
+    { val: "RM-3A", 'name': 'RM-3A' }, 
+    { val: "TM FLOW V3", 'name': 'TM FLOW V3' },
+    { val: "TM FLOW V4", 'name': 'TM FLOW V4' },
+    { val: "CMAT with BP Cuffs", 'name': "CMAT with BP Cuffs" }
+  ];
+  public status_search: any = [
+    { val: "Biller Admin Approved", 'name': 'Biller Admin Approved' },
+    { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' },
+    { val: "Biller Admin Hold", 'name': "Biller Admin Hold" },
+    { val: "Doctor Sign", 'name': "Doctor Sign" },
+    { val: "Send to Biller", 'name': "Send to Biller" },
+    { val: "Report Downloaded", "name": "Report Downloaded" }
+  ];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
   public docofficeval: any = [];
@@ -228,16 +236,28 @@ export class DistributorsDashboardComponent implements OnInit {
   public patientcity: any = [];
   public patientstate: any = [];
   public SearchingSourceName: any = "data_biller_list";
-  public search_settings: any =
-    {
-
-      selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },{ label: "Search By Status", field: 'status_text', values: this.status_search }, { label: "Search By Doctor", field: 'doc_name_search', values: this.authval }, { label: "Search By Tech", field: 'tech_name_search', values: this.techval }, { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval }, { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity }, { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate }, { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity }, { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }],
-      datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }],
-      textsearch: [{ label: "Search By Patient Name", field: 'patient_name_search' }],
-      // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],
-      search:[ {label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes }
-      ]
-    };
+  public search_settings: any = {
+    selectsearch: [
+      { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type }, 
+      { label: "Search By Status", field: 'status_text', values: this.status_search },
+      { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
+      { label: "Search By Tech", field: 'tech_name_search', values: this.techval },
+      { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval },
+      { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity },
+      { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate },
+      { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity },
+      { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }
+    ],
+    datesearch: [
+      { startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }
+    ],
+    textsearch: [
+      { label: "Search By Patient Name", field: 'patient_name_search' }
+    ],
+    search: [
+      { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes }
+    ]
+  };
   // lib list end
 
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute,
@@ -253,7 +273,7 @@ export class DistributorsDashboardComponent implements OnInit {
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData.dashboardCount = resolveData.dataCount.data;
     });
-    
+
     this.libdata.basecondition.parent_id = this.loginUserData.user_details._id;
     this.shareDetails.userId = this.loginUserData.user_details._id;
 
@@ -431,13 +451,13 @@ export class DistributorsDashboardComponent implements OnInit {
 
     switch (flag) {
       case 'Reports Uploaded':
-        data.status = { 
-          "$in": [ 8, 9, 10 ] 
+        data.status = {
+          "$in": [8, 9, 10]
         };
         break;
       case 'Report Processed':
         data.status = {
-          "$in": [ 11, 12, 13,14,15 ] 
+          "$in": [11, 12, 13, 14, 15]
         };
         break;
       case 'Report Signed':

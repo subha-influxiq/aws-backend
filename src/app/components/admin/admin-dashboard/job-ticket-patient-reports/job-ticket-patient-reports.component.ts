@@ -71,13 +71,6 @@ export class JobTicketPatientReportsComponent implements OnInit {
         param: ['_id'],
       },
       {
-        label: "Download Report",
-        link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
-        type: 'externallink',
-        paramtype: 'angular',
-        param: ['download_file_name']
-      },
-      {
         label: "Tech Details",
         type: 'action',
         datatype: 'api',
