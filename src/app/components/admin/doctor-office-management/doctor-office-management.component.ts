@@ -86,6 +86,15 @@ export class DoctorOfficeManagementComponent implements OnInit {
   public  libdata: any = {
       basecondition: {"parent_id":this.userData._id},
       updateendpoint: 'statusupdate',
+      notes: {
+        label: "Notes",
+        addendpoint: "addnotedata",
+        deleteendpoint: "deletenotedata",
+        listendpoint: "listnotedata",
+        user: "",
+        currentuserfullname: " ",
+        header: 'User',
+    },
       // hideeditbutton:true,// all these button options are optional not mandatory
       //hidedeletebutton:true,
       //hideviewbutton:false,
@@ -102,6 +111,8 @@ export class DoctorOfficeManagementComponent implements OnInit {
     this.user_cookie = cookie.get('jwtToken');
     let allData=cookie.getAll()
     this.userData = JSON.parse(allData.user_details);
+    this.libdata.notes.user = this.userData._id;
+    this.libdata.notes.currentuserfullname = this.userData.firstname +this.userData.lastname;
     this.apiUrl = httpService.baseUrl;
 
     if(this.userData.user_type == 'doctor') {
