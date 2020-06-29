@@ -30,6 +30,23 @@
 
 <ng-container>
 
+  <ng-container *ngIf="htmlText.orginalData.status == 11">
+    <mat-toolbar class="patient_preview" *ngIf="(cookiesData.user_details.user_type == 'diagnostic_admin' || cookiesData.user_details.user_type == 'doctor')">
+      <mat-form-field color="warn" *ngIf="cookiesData.user_details.parent_type != 'distributor'">
+        <mat-label>Select A Biller</mat-label>
+        <mat-select [(ngModel)]="htmlText.billerArrayIndex" placeholder="Select A Biller">
+          <mat-option *ngFor="let biller of htmlText.billers; let i = index;" [value]="i">
+            {{ biller.firstname }} {{ biller.lastname }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-button type="button" (click)="reportSign('back');">{{ htmlText.sendButton[0] }}</button>
+
+      <button mat-button type="button" (click)="reportSign('next');">{{ htmlText.sendButton[1] }}</button>
+    </mat-toolbar>
+  </ng-container>
+
   <mat-card-content class="patient_report_wrapper ">
     <mat-card-content class="patient_item_section" [ngClass]="{'mat-elevation-z5' : true, 'sticky' : isSticky}">
 

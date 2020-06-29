@@ -7,8 +7,8 @@
     </div>
  
     <mat-dialog-actions align="end">
-        <button mat-button (click)="imageAction('previous');">Previous</button>
-        <button mat-button (click)="imageAction('next');">Next</button>
+        <button mat-button *ngIf="data.allImages.length > 1" (click)="imageAction('previous');">Previous</button>
+        <button mat-button *ngIf="data.allImages.length > 1" (click)="imageAction('next');">Next</button>
         <button mat-button (click)="imageAction('download');">Download</button>
         <button mat-button mat-dialog-close>Close</button>
     </mat-dialog-actions>
