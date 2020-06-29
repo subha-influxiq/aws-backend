@@ -1,6 +1,6 @@
 .system_superbill_wrapper { display: block; width: 100%; margin: 20px auto; } 
 .table_one { border: 1px solid #333; width: 100%; padding: 12px; box-sizing: border-box; font-family: 'AvenirMedium'; }
-.top_header { text-align: center; font-family: "AvenirBlack"; font-size: 24px; margin: 5px; padding-bottom: 14px; display: block; }
+.top_header { text-align: center; font-family: "AvenirBlack"; font-size: 24px; line-height:24px; margin: 5px; padding-bottom: 14px; display: block; }
 
 .fifty { width: 50%; }
 .fifty p{ line-height: 22px; margin: 0;}
@@ -42,6 +42,7 @@ input[type="checkbox"]:checked::before{
   font-size: 16px;
   padding: 2px 7px 3px;
 }
+ 
 
 .signaturefont { font-family: "AmandaSignature"; font-size: 30px; line-height: 58px; height: 40px; padding: 10px 25px; box-sizing: border-box; background: #fff;
-  border-bottom: 1px solid #000; color: blue; }
+  border-bottom: 1px solid #000; color: rgb(7, 7, 253); }

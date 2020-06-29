@@ -54,6 +54,7 @@
 .encounter_rules .admin_superbillsection .greenbar { height: 275px; }
 .encounter_rules .admin_superbillsection .greenbar p { font-size: 40px; }   
 .book-appointment .mat-form-field { width: 32.2%; } 
+.report_wrapper .items_w .name_wr .reportName { font-size: 16px; line-height: 18px; }
 }
 @media screen and (max-width: 1240px){
 .main_wrapper .login_wrapper { width: 450px; }
@@ -75,8 +76,8 @@
 .mobile-label { display: none;}
 .DataTable .container .searchbar{ display: flex!important; flex-wrap: wrap; height: auto;}
 /* tech dashboard */
-.report_wrapper .items_w .icon_w { height: 220px;}
-.report_wrapper .items_w .name_wr .reportName { font-size: 17px; line-height: 18px; }
+.report_wrapper .items_w .icon_w { height: auto; max-height: 320px;}
+.report_wrapper .items_w .name_wr .reportName { font-size: 16px; line-height: 18px; }
 .admin_wrapper .content_wrapper .itemsection .counteer .dataCount { font-size: 32px; }
 /* .admin_wrapper .content_wrapper .itemsection .icon { width: 16%; padding-left: 10px;} */
 .sales_person_db .shareLi .in_w { width: 65%; left: 0; right: 0; transform: inherit; top: 0; }
@@ -92,7 +93,7 @@
 .book-appointment .mat-form-field { width: 32.2%; }
 .encounter_wrapper .second_table .book-appointment .mat-form-field { width: 32%; }
 .admin_wrapper .content_wrapper .itemsection .button_wrapper .doctorNumber br{ display: none;}
-
+.viewMore_w button { min-width: 320px; }
 }
 @media screen and (max-width: 1100px){
 .biller_Dashboard .patient_report_section .patient_top_search { flex-direction: column; justify-content: flex-start;
@@ -298,6 +299,7 @@ align-items: flex-start; }
   .shareLink_wrpr .small_view { flex-direction: column; }
   .shareLink_wrpr .small_view .icon_wr{ display: flex; justify-content: center; align-items: center; margin-top: 12px;}
   .admin_wrapper .content_wrapper .itemsection .button_wrapper { height: inherit; display: block; }
+  .admin_superbillsection .biller_wrapper .super_bill_item:last-child { margin-bottom: 14px; }
 }
 
 @media screen and (max-width: 540px){
@@ -390,7 +392,7 @@ align-items: flex-start; }
   .main_wrapper .login_wrapper { width: 265px; }
   .main_wrapper .login_wrapper .login_container .main-div .from button { font-size: 18px; }
   .adminTables .mat-cell { padding: 10px 0; padding-left: 44%;}
-  .mat-table .mat-cell:before { font-size: 13px; }
+  .mat-table .mat-cell:before { font-size: 14px; }
   .adminTables td.mat-cell:last-of-type { padding-right: 10px;  }
   .encounter_rules .admin_superbillsection .greenbar p { font-size: 24px; }
   .calenderView .calendar_wrapper .example-container .mat-checkbox { width: 50%; margin-right: 0; }
@@ -400,6 +402,8 @@ align-items: flex-start; }
   .job_reprt_wrapper .job_reprt_action { justify-content: center; }
   .admin_dashboard .container .searchbar .search_class { margin-bottom: 0; }
   .container .searchbar .add_button { margin: 0; margin-left: 20px; }
+  .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(1) {font-size: 14px; }
+  .mat-table .mat-cell:after { font-size: 14px;}
 }                                            
  
 
