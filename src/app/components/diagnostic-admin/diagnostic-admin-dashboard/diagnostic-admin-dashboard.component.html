@@ -80,46 +80,8 @@
     </mat-card-content>
     <!-- new modification -->
 
-    <!-- <mat-card-content class="itemsection">
-      <span class="icon">
-        <img src="../../../../assets/images/adminDoctoricon1.png">
-      </span>
-      <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
-        <p class="doctorNumber">Total Number of <br>Doctors</p>
-      </span>
-      <span class="button_wrapper">
-        <button mat-button [routerLink]="['/diagnostic-admin/doctor-management']">View Details</button>
-      </span>
-    </mat-card-content> -->
-
-    <!-- <mat-card-content class="itemsection">
-      <span class="icon">
-        <img src="../../../../assets/images/adminDoctoricon2.png">
-      </span>
-      <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_biller }}</h4>
-        <p class="doctorNumber">Total Number of<br> Billers</p>
-      </span>
-      <span class="button_wrapper">
-        <button mat-flat-button [routerLink]="['/diagnostic-admin/biller-management']">View Details</button>
-      </span>
-    </mat-card-content> -->
-
-    <!-- <mat-card-content class="itemsection">
-      <span class="icon">
-        <img src="../../../../assets/images/adminDoctoricon3.png">
-      </span>
-      <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_tech }}</h4>
-        <p class="doctorNumber">Total Number of <br>Techs</p>
-      </span>
-      <span class="button_wrapper">
-        <button mat-flat-button [routerLink]="['/diagnostic-admin/tech-management']">View Details</button>
-      </span>
-    </mat-card-content> -->
-
   </mat-card-content> 
+
   <mat-card-content class="content_wrapper">
     <mat-card-content class="itemsection">
       <span class="icon">
@@ -144,13 +106,14 @@
         <button mat-button [routerLink]="['/diagnostic-admin/doctor-management']">View Details</button>
       </span>
     </mat-card-content>
+
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/appointmentsPendingIcon.png">
       </span>
       <span class="counteer">
         <span class="counter_with_tool">
-          <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+          <h4 class="dataCount"> {{ allResolveData.total_appointments_pending }}</h4>
           <span class="tolTip">
             <a mat-raised-button #AppPending="matTooltip" matTooltip="Comming .." matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
@@ -167,13 +130,14 @@
         <button mat-flat-button [routerLink]="['/diagnostic-admin/biller-management']">View Details</button>
       </span>
     </mat-card-content>
+
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/appointmentsCompletedIcon.png">
       </span>
       <span class="counteer">
         <span class="counter_with_tool">
-          <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
+          <h4 class="dataCount"> {{ allResolveData.total_appointments_completed }}</h4>
           <span class="tolTip">
             <a mat-raised-button #TACompleted="matTooltip" matTooltip="Comming .." matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
@@ -192,104 +156,8 @@
     </mat-card-content>
 
 
-    <!-- new -->
-    <!-- <mat-card-content class="itemsection">
-      <span class="icon">
-        <img src="../../../../assets/images/billerNoteicon3.png">
-      </span>
-      <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor_office }}</h4>
-        <p class="doctorNumber">Total No of <br>Doctor's Office</p>
-      </span>
-      <span class="button_wrapper">
-        <button mat-button [routerLink]="['/diagnostic-admin/doctor-management']">View Details</button>
-      </span>
-    </mat-card-content> -->
-
-    <!-- <mat-card-content class="itemsection">
-      <span class="icon">
-        <img src="../../../../assets/images/billerNoteicon1.png">
-      </span>
-      <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
-        <p class="doctorNumber">Total Appointments<br> Pending</p>
-      </span>
-      <span class="button_wrapper">
-        <button mat-flat-button [routerLink]="['/diagnostic-admin/biller-management']">View Details</button>
-      </span>
-    </mat-card-content> -->
-
-    <!-- <mat-card-content class="itemsection">
-      <span class="icon">
-        <img src="../../../../assets/images/billerNoteicon2.png">
-      </span>
-      <span class="counteer">
-        <h4 class="dataCount"> {{ allResolveData.total_doctor }}</h4>
-        <p class="doctorNumber">Total Appointments<br> Completed</p>
-      </span>
-      <span class="button_wrapper">
-        <button mat-flat-button [routerLink]="['/diagnostic-admin/tech-management']">View Details</button>
-      </span>
-    </mat-card-content> -->
-
   </mat-card-content>
 
-
-
-  <mat-card-content class="admin_superbillsection">
-    <h1>Physician Report Process Status</h1>
-    <mat-card-content class="biller_wrapper">
-
-      <mat-card-content class="super_bill_item">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon1.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total No of <br>
-            Images Not Processed
-          </p>
-          <h2> {{ allResolveData.total_pdf_to_images_not_process }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Images Not Processed')">view all</button>
-        </span>
-      </mat-card-content>
-
-      <mat-card-content class="super_bill_item">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon2.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total No of <br>
-            Basic Details Not Processed
-          </p>
-          <h2> {{ allResolveData.total_basic_details_not_process }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Basic Details Not Processed')">view all</button>
-        </span>
-      </mat-card-content>
-
-      <mat-card-content class="super_bill_item ">
-        <span class="border_wrapper">
-          <mat-card-content class="circle">
-            <img src="../../../../assets/images/reporticon2.png">
-          </mat-card-content>
-        </span>
-
-        <span class="container_wrapper">
-          <p>Total No of <br>
-            Risk Markers Not Processed
-          </p>
-          <h2> {{ allResolveData.total_code_not_exists }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Risk Markers Not Processed')">view all</button>
-        </span>
-      </mat-card-content>
-
-    </mat-card-content>
-  </mat-card-content>
 
 
   <mat-card-content class="admin_superbillsection superbillerContainer">
@@ -396,21 +264,8 @@
 
     <mat-toolbar class="top_header">
       <h2> {{ htmlText.headerText }} </h2>
-      <span class="wrappp_R">
-        <button class="add_new tooltip" mat-button routerLink="/diagnostic-admin/patient-management/add"
-          matTooltip="Add Report" matTooltipPosition="above">
-          <!-- <span class="tooltiptext"> Add Report </span> -->
-          <i class="material-icons">add</i> Add Report Manually
-        </button>
-
-
-        <button class="add_new tooltip" mat-button (click)="refreshDashboard();" matTooltipPosition="above"
-          matTooltip="ReportRefresh Dashboard">
-          <!-- <span class="tooltiptext"> Refresh Dashboard </span> -->
-          <i class="material-icons">cached</i>
-        </button>
-      </span>
     </mat-toolbar>
+
     <mat-card-content class="admin_dashboard">
       <!-- table -->
       <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData"

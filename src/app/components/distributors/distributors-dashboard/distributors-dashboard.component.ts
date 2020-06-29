@@ -24,7 +24,7 @@ export class DistributorsDashboardComponent implements OnInit {
   public loginUserData: any = {};
   public jwtToken: string = "";
   public htmlText: any = {
-    headerText: "Report Processed"
+    headerText: "Reports Uploaded"
   };
 
   public shareDetails: any = {
@@ -197,7 +197,7 @@ export class DistributorsDashboardComponent implements OnInit {
 
   public status: any = [
     { val: "Send to Biller", 'name': 'Send to Biller' },
-    { val: "Downloaded", "name": "Report Downloaded" }
+    { val: "Report Downloaded", "name": "Report Downloaded" }
   ];
   public parent_type: any = [
     { val: "admin", 'name': 'Admin' },
@@ -224,7 +224,7 @@ export class DistributorsDashboardComponent implements OnInit {
     { val: "Biller Admin Hold", 'name': "Biller Admin Hold" },
     { val: "Doctor Sign", 'name': "Doctor Sign" },
     { val: "Send to Biller", 'name': "Send to Biller" },
-    { val: "Downloaded", "name": "Report Downloaded" }
+    { val: "Report Downloaded", "name": "Report Downloaded" }
   ];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
