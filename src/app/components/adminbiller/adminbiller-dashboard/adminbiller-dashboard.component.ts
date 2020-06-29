@@ -75,12 +75,12 @@ export class AdminbillerDashboardComponent implements OnInit {
     "note",
     "additional_potential_health_risks",
     "cpt_codes",
-    "created_at","doctor_name"
+    "created_at", "doctor_name"
   ];
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: { status: { $gt:7 ,$lt:11 } },
+    basecondition: { status: { $gt: 7, $lt: 11 } },
     updateendpoint: 'status-update',
     custombuttons: [
       {
@@ -97,95 +97,68 @@ export class AdminbillerDashboardComponent implements OnInit {
         param: ['download_file_name']
       },
       {
-        label:"Tech Details",
-        type:'action',
-        datatype:'api',
-        endpoint:'get-tech-details',
-        // otherparam:["patient_name"],
-        //cond:'status',
-        //condval:0,
-        datafields: ['first name','last name','email','phone','address','city','state','zip'],
-        param:'id',
+        label: "Tech Details",
+        type: 'action',
+        datatype: 'api',
+        endpoint: 'get-tech-details',
+        datafields: ['first name', 'last name', 'email', 'phone', 'address', 'city', 'state', 'zip'],
+        param: 'id',
         headermessage: 'Tech Information',
-        // refreshdata:true
-    } ,
-    {
-      label:"View Codes",
-      type:'action',
-      datatype:'api',
-      endpoint:'get-codes-details',
-      datafields: ['Additional Potential Health Risks','CPT Codes','ICD Codes'],
-      // otherparam:["patient_name"],
-      //cond:'status',
-      //condval:0,
-      param:'id',
-      headermessage: 'Associated Codes',
-      // refreshdata:true
-  } ,
-    {
-      label:"Doctor Details",
-      type:'action',
-      datatype:'api',
-      endpoint:'get-doctor-details',
-      datafields: ['firstname','lastname','email','fax','Practice Name','NPI','phone','address','city','state','zip'],
-      // otherparam:["patient_name"],
-      //cond:'status',
-      //condval:0,
-      param:'id',
-      headermessage: 'Doctor Information',
-      // refreshdata:true
-  } ,
-  {
-    label:"Doctor Office Details",
-    type:'action',
-    datatype:'api',
-    endpoint:'get-doctor-office-details',
-    datafields: ['centername','firstname','lastname','email','phone','address','city','state','zip'],
-    // otherparam:["patient_name"],
-    //cond:'status',
-    //condval:0,
-    param:'id',
-    headermessage: 'Doctor Office Info',
-    // refreshdata:true
-} ,
-{
-  label:"Parent Details",
-  type:'action',
-  datatype:'api',
-  endpoint:'get-parent-details',
-  datafields: ['Parent Name','Contact Person','email','phone','address','city','state','zip'],
-  // otherparam:["patient_name"],
-  // cond:'parent_check',
-  // condval:"1",
-  param:'id',
-  headermessage: 'Parent Information',
-  // refreshdata:true
-} ,
+      },
+      {
+        label: "View Codes",
+        type: 'action',
+        datatype: 'api',
+        endpoint: 'get-codes-details',
+        datafields: ['Additional Potential Health Risks', 'CPT Codes', 'ICD Codes'],
+        param: 'id',
+        headermessage: 'Associated Codes',
+      },
+      {
+        label: "Doctor Details",
+        type: 'action',
+        datatype: 'api',
+        endpoint: 'get-doctor-details',
+        datafields: ['firstname', 'lastname', 'email', 'fax', 'Practice Name', 'NPI', 'phone', 'address', 'city', 'state', 'zip'],
+        param: 'id',
+        headermessage: 'Doctor Information',
+      },
+      {
+        label: "Doctor Office Details",
+        type: 'action',
+        datatype: 'api',
+        endpoint: 'get-doctor-office-details',
+        datafields: ['centername', 'firstname', 'lastname', 'email', 'phone', 'address', 'city', 'state', 'zip'],
+        param: 'id',
+        headermessage: 'Doctor Office Info',
+      },
+      {
+        label: "Parent Details",
+        type: 'action',
+        datatype: 'api',
+        endpoint: 'get-parent-details',
+        datafields: ['Parent Name', 'Contact Person', 'email', 'phone', 'address', 'city', 'state', 'zip'],
+        param: 'id',
+        headermessage: 'Parent Information',
+      },
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
-    // hidestatustogglebutton: true,
     hideviewbutton: true,
     tableheaders: [
       "patient_name",
-      // "tech_name",
       "status_text",
       "created_at_datetime",
       "cpt_addl",
       "general_details",
-      // "parent_type",`
-      // "parent_id",
-      // "doctors_office_id",
     ]
   }
   public allUserData_modify_header: any = {
     "general_details": "Related Info",
-    // "tech_name": "Tech Name",
     "patient_name": "Patient Name",
     "status_text": "Status",
     "created_at_datetime": "Report Added",
     "cpt_addl": "CPT/ Addl Hrisk C",
-    // "addl_hlth_risk": "Addl Hlth Risk"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";
@@ -207,10 +180,24 @@ export class AdminbillerDashboardComponent implements OnInit {
 
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
-  public status: any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"}];
-  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, { val: "distributors", 'name': 'Distributor' }, { val: "doctor_group", 'name': 'Doctor Group' }];
-  public report_type: any = [{ val: "RM-3A", 'name': 'RM-3A' }, { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, { val: "TM FLOW V4", 'name': 'TM FLOW V4' },{ val: "CMAT with BP Cuffs", 'name': 'CMAT with BP Cuffs' }];
-  // public report:any = [{ val: "Biller Admin Approved", 'name': 'Biller Admin Approved' }, { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' }, {val:"Biller Admin Hold" , 'name' :"Biller Admin Hold"}]
+  public status: any = [
+    { val: "Biller Admin Approved", 'name': 'Biller Admin Approved' },
+    { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' },
+    { val: "Biller Admin Hold", 'name': "Biller Admin Hold" },
+    { val: "Downloaded", "name": "Report Downloaded" }
+  ];
+  public parent_type: any = [
+    { val: "admin", 'name': 'Admin' },
+    { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },
+    { val: "distributors", 'name': 'Distributor' },
+    { val: "doctor_group", 'name': 'Doctor Group' }
+  ];
+  public report_type: any = [
+    { val: "RM-3A", 'name': 'RM-3A' },
+    { val: "TM FLOW V3", 'name': 'TM FLOW V3' },
+    { val: "TM FLOW V4", 'name': 'TM FLOW V4' },
+    { val: "CMAT with BP Cuffs", 'name': 'CMAT with BP Cuffs' }
+  ];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
   public docofficeval: any = [];
@@ -221,15 +208,22 @@ export class AdminbillerDashboardComponent implements OnInit {
   public patientcity: any = [];
   public patientstate: any = [];
   public SearchingSourceName: any = "data_biller_list";
-  public search_settings: any =
-  {
-      
-    selectsearch: [{ label: 'Search By Report Type', field: 'report_file_type', values: this.report_type } , { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },{label: "Search By Doctor", field: 'doc_name_search', values:this.authval },{label: "Search By Tech", field: 'tech_name_search', values:this.techval },{label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values:this.docofficeval },{label: "Search By Parent Name", field: 'parent_name_search', values:this.parentnameval },{label: "Search By Doctor City", field: 'doctor_city_search', values:this.doctorcity },{label: "Search By Doctor State", field: 'doctor_state_search', values:this.doctorstate },{label: "Search By Patient City", field: 'patient_state_search', values:this.patientcity },{label: "Search By Patient State", field: 'patient_city_search', values:this.patientstate }],
-    datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }], 
-    // textsearch: [{ label: "Search By Name", field: 'name_search' },
-    // { label: "Search By E-Mail", field: 'email' }, { label: "Search By Parent Name", field: 'parent_search' }, { label: "Search By Company Name", field: 'company_search' }],
-    // search:[,
-    // ]
+  public search_settings: any = {
+    selectsearch: [
+      { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },
+      { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },
+      { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
+      { label: "Search By Tech", field: 'tech_name_search', values: this.techval },
+      { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval },
+      { label: "Search By Parent Name", field: 'parent_name_search', values: this.parentnameval },
+      { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity },
+      { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate },
+      { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity },
+      { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }
+    ],
+    datesearch: [
+      { startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }
+    ],
   };
   // lib list end
 
@@ -247,8 +241,8 @@ export class AdminbillerDashboardComponent implements OnInit {
 
     /* Get resolve data */
     // this.activatedRoute.data.subscribe(resolveData => {
-      // this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
-      //this.viewReportProcessData(this.htmlText.headerText);
+    // this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
+    //this.viewReportProcessData(this.htmlText.headerText);
     // });
 
 
@@ -281,142 +275,142 @@ export class AdminbillerDashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    let data:any= {
-      "source":"patient_data_desc_patient_name",
-      "condition":{},
-      "token":this.jwtToken
+    let data: any = {
+      "source": "patient_data_desc_patient_name",
+      "condition": {},
+      "token": this.jwtToken
     }
     this.http.httpViaPost("datalist", data).subscribe((response: any) => {
       var start = false;
       var count = 0;
-      for(var i in response.res) {
-        if(response.res[i].doc_name_search !="") {
-          for(var j in this.authval) {
-            if(response.res[i].doc_name == this.authval[j].name) {
+      for (var i in response.res) {
+        if (response.res[i].doc_name_search != "") {
+          for (var j in this.authval) {
+            if (response.res[i].doc_name == this.authval[j].name) {
               start = true;
             }
           }
           count++;
-          if (count == 1 && start == false) { 
-            this.authval.push({name:response.res[i].doc_name,val:response.res[i].doc_name_search}); 
-        } 
-        start = false; 
-        count = 0;
-          
-        }
-      }
-      for(var i in response.res) {
-        if(response.res[i].tech_name_search !="") {
-          for(var j in this.techval) {
-          if(response.res[i].tech_namesearch == this.techval[j].name) {
-            start = true;
-          }
-        }
-        count ++;
-        if(count == 1 && start ==false) {
-          this.techval.push({name:response.res[i].tech_namesearch,val:response.res[i].tech_name_search})
-        }
-        start = false;
-        count = 0;
-      }
-      }
-      for(var i in response.res) {
-        if(response.res[i].parent_name_search !="") {
-          for(var j in this.parentnameval) {
-            if(response.res[i].parent_namesearch == this.parentnameval[j].name) {
-              start = true;
-            }
-          }
-          count ++;
-          if(count == 1 && start ==false) {
-            this.parentnameval.push({name:response.res[i].parent_namesearch,val:response.res[i].parent_name_search})
+          if (count == 1 && start == false) {
+            this.authval.push({ name: response.res[i].doc_name, val: response.res[i].doc_name_search });
           }
           start = false;
           count = 0;
-        
+
         }
       }
-      for(var i in response.res) {
-        if(response.res[i].doctor_state_search !="") {
-          for(var j in this.doctorstate) {
-            if(response.res[i].doctor_state == this.doctorstate[j].name) {
-              start = true;
-            }
-          }
-          count ++;
-          if(count == 1 && start ==false) {
-            this.doctorstate.push({name:response.res[i].doctor_state,val:response.res[i].doctor_state_search})
-          }
-          start = false;
-          count = 0;
-        
-        
-        }
-      }
-      for(var i in response.res) {
-        if(response.res[i].doctor_city_search !="") {
-          for(var j in this.doctorcity) {
-            if(response.res[i].doctor_city == this.doctorcity[j].name) {
-              start = true;
-            }
-          }
-          count ++;
-          if(count == 1 && start ==false) {
-            this.doctorcity.push({name:response.res[i].doctor_city,val:response.res[i].doctor_city_search})
-          }
-          start = false;
-          count = 0;
-        
-        
-        }
-      }
-      for(var i in response.res) {
-        if(response.res[i].patient_city_search !="") {
-          for(var j in this.patientcity) {
-            if(response.res[i].patient_city == this.patientcity[j].name) {
-              start = true;
-            }
-          }
-          count ++;
-          if(count == 1 && start ==false) {
-            this.patientcity.push({name:response.res[i].patient_city,val:response.res[i].patient_city_search})
-          }
-          start = false;
-          count = 0;
-        
-        
-        }
-      }
-      for(var i in response.res) {
-        if(response.res[i].patient_state_search !="") {
-          for(var j in this.patientstate) {
-            if(response.res[i].patient_state == this.patientstate[j].name) {
-              start = true;
-            }
-          }
-          count ++;
-          if(count == 1 && start ==false) {
-            this.patientstate.push({name:response.res[i].patient_state,val:response.res[i].patient_state_search })
-          }
-          start = false;
-          count = 0;
-        
-        
-        }
-      }
-      for(var i in response.res) {
-        if(response.res[i].doctor_ofiice_name_search !="") {
-          for(var j in this.docofficeval) {
-            if(response.res[i].doctor_ofiice_namesearch == this.docofficeval[j].name) {
+      for (var i in response.res) {
+        if (response.res[i].tech_name_search != "") {
+          for (var j in this.techval) {
+            if (response.res[i].tech_namesearch == this.techval[j].name) {
               start = true;
             }
           }
           count++;
-          if (count == 1 && start == false) { 
-            this.docofficeval.push({name:response.res[i].doctor_ofiice_namesearch,val:response.res[i].doctor_ofiice_name_search }) 
-        } 
-        start = false; 
-        count = 0;
+          if (count == 1 && start == false) {
+            this.techval.push({ name: response.res[i].tech_namesearch, val: response.res[i].tech_name_search })
+          }
+          start = false;
+          count = 0;
+        }
+      }
+      for (var i in response.res) {
+        if (response.res[i].parent_name_search != "") {
+          for (var j in this.parentnameval) {
+            if (response.res[i].parent_namesearch == this.parentnameval[j].name) {
+              start = true;
+            }
+          }
+          count++;
+          if (count == 1 && start == false) {
+            this.parentnameval.push({ name: response.res[i].parent_namesearch, val: response.res[i].parent_name_search })
+          }
+          start = false;
+          count = 0;
+
+        }
+      }
+      for (var i in response.res) {
+        if (response.res[i].doctor_state_search != "") {
+          for (var j in this.doctorstate) {
+            if (response.res[i].doctor_state == this.doctorstate[j].name) {
+              start = true;
+            }
+          }
+          count++;
+          if (count == 1 && start == false) {
+            this.doctorstate.push({ name: response.res[i].doctor_state, val: response.res[i].doctor_state_search })
+          }
+          start = false;
+          count = 0;
+
+
+        }
+      }
+      for (var i in response.res) {
+        if (response.res[i].doctor_city_search != "") {
+          for (var j in this.doctorcity) {
+            if (response.res[i].doctor_city == this.doctorcity[j].name) {
+              start = true;
+            }
+          }
+          count++;
+          if (count == 1 && start == false) {
+            this.doctorcity.push({ name: response.res[i].doctor_city, val: response.res[i].doctor_city_search })
+          }
+          start = false;
+          count = 0;
+
+
+        }
+      }
+      for (var i in response.res) {
+        if (response.res[i].patient_city_search != "") {
+          for (var j in this.patientcity) {
+            if (response.res[i].patient_city == this.patientcity[j].name) {
+              start = true;
+            }
+          }
+          count++;
+          if (count == 1 && start == false) {
+            this.patientcity.push({ name: response.res[i].patient_city, val: response.res[i].patient_city_search })
+          }
+          start = false;
+          count = 0;
+
+
+        }
+      }
+      for (var i in response.res) {
+        if (response.res[i].patient_state_search != "") {
+          for (var j in this.patientstate) {
+            if (response.res[i].patient_state == this.patientstate[j].name) {
+              start = true;
+            }
+          }
+          count++;
+          if (count == 1 && start == false) {
+            this.patientstate.push({ name: response.res[i].patient_state, val: response.res[i].patient_state_search })
+          }
+          start = false;
+          count = 0;
+
+
+        }
+      }
+      for (var i in response.res) {
+        if (response.res[i].doctor_ofiice_name_search != "") {
+          for (var j in this.docofficeval) {
+            if (response.res[i].doctor_ofiice_namesearch == this.docofficeval[j].name) {
+              start = true;
+            }
+          }
+          count++;
+          if (count == 1 && start == false) {
+            this.docofficeval.push({ name: response.res[i].doctor_ofiice_namesearch, val: response.res[i].doctor_ofiice_name_search })
+          }
+          start = false;
+          count = 0;
         }
       }
 

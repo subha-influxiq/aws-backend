@@ -17,10 +17,6 @@ export class AuthguardService implements CanActivate {
     var getToken = this.cookie.get('jwtToken');
     if (getToken) {
       var allData: any = this.cookie.getAll();
-      // allData['user_details'] = JSON.stringify(allData);
-      console.log('////////',allData);
-      // var user_details = JSON.stringify(allData.user_details);
-      // console.log('++++++++++++++++',user_details);
       var userData: any = JSON.parse(allData.user_details);
       /* Login User */
       switch (next.url[0].path) {
