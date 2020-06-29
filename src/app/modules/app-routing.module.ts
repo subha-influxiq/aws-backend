@@ -2045,14 +2045,14 @@ const routes: Routes = [
     path: 'doctor-office/dashboard',
     component: DoctorOfficeDashboardComponent,
     canActivate: [AuthguardService],
-    // resolve: { bookedEventList: ResolveService },
-    // data: {
-    //   requestcondition: {
-    //     source: 'google-events',
-    //     condition: {}
-    //   },
-    //   endpoint: 'doctor-office-booked-list-events'
-    // }
+    resolve: { countData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'google-events',
+        condition: {}
+      },
+      endpoint: 'doctor-office-dashboard'
+    }
   },
   {
     path: 'doctor-office/view-patient-record/:_id',

@@ -78,8 +78,7 @@ export class ResolveService implements Resolve<any> {
     if(route.url[0].path == 'doctor-office') {
       switch(route.url[1].path) {
         case 'dashboard':
-          //requestData.condition['doctor_office_id'] = userData._id;;
-          requestData.condition['closeremail'] = userData.email;
+          requestData.condition['doctor_office_id'] = userData._id;;
           break;
         case 'manage-appointments':
           requestData.condition['tech_id'] = userData.tech_id;

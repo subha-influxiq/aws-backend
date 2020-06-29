@@ -15,8 +15,8 @@
 
         <span class="container_wrapper">
           <p> Total Appointments<br> Booked </p>
-          <h2> 20 </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Images Not Processed')">view all</button>
+          <h2> {{ htmlText.allResolveData.totalAppointmentsBookedCount }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total Appointments Booked')">view all</button>
         </span>
       </mat-card-content>
 
@@ -29,8 +29,8 @@
 
         <span class="container_wrapper">
           <p>Total Appointments <br> Completed </p>
-          <h2>30 </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Basic Details Not Processed')">view all</button>
+          <h2> {{ htmlText.allResolveData.totalAppointmentsCompletedCount }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total Appointments Completed')">view all</button>
         </span>
       </mat-card-content>
 
@@ -44,8 +44,8 @@
         <span class="container_wrapper">
           <p>Total Appointments<br> Pending
           </p>
-          <h2> 40 </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Risk Markers Not Processed')">view all</button>
+          <h2> {{ htmlText.allResolveData.totalAppointmentsPendingCount }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total Appointments Pending')">view all</button>
         </span>
       </mat-card-content>
 
@@ -54,7 +54,7 @@
 
   <div class="tablewrapper admin_dashboard">
     <mat-toolbar class="top_header">
-      <h2> Patient Reports</h2>
+      <h2> {{ htmlText.headerText }} </h2>
       <span class="wrappp_R">
       </span>
     </mat-toolbar>

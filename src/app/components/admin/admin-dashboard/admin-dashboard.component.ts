@@ -77,24 +77,13 @@ export class AdminDashboardComponent implements OnInit {
         param: ['_id'],
       },
       {
-        label: "Download Report",
-        link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
-        type: 'externallink',
-        paramtype: 'angular',
-        param: ['download_file_name']
-      },
-      {
         label: "Tech Details",
         type: 'action',
         datatype: 'api',
         endpoint: 'get-tech-details',
-        // otherparam:["patient_name"],
-        //cond:'status',
-        //condval:0,
         datafields: ['first name', 'last name', 'email', 'phone', 'address', 'city', 'state', 'zip'],
         param: 'id',
         headermessage: 'Tech Information',
-        // refreshdata:true
       },
       {
         label: "View Codes",
@@ -102,12 +91,8 @@ export class AdminDashboardComponent implements OnInit {
         datatype: 'api',
         endpoint: 'get-codes-details',
         datafields: ['Additional Potential Health Risks', 'CPT Codes', 'ICD Codes'],
-        // otherparam:["patient_name"],
-        //cond:'status',
-        //condval:0,
         param: 'id',
         headermessage: 'Associated Codes',
-        // refreshdata:true
       },
       {
         label: "Doctor Details",
@@ -115,12 +100,8 @@ export class AdminDashboardComponent implements OnInit {
         datatype: 'api',
         endpoint: 'get-doctor-details',
         datafields: ['firstname', 'lastname', 'email', 'fax', 'Practice Name', 'NPI', 'phone', 'address', 'city', 'state', 'zip'],
-        // otherparam:["patient_name"],
-        //cond:'status',
-        //condval:0,
         param: 'id',
         headermessage: 'Doctor Information',
-        // refreshdata:true
       },
       {
         label: "Doctor Office Details",
@@ -128,12 +109,8 @@ export class AdminDashboardComponent implements OnInit {
         datatype: 'api',
         endpoint: 'get-doctor-office-details',
         datafields: ['center name', 'first name', 'last name', 'email', 'phone', 'address', 'city', 'state', 'zip'],
-        // otherparam:["patient_name"],
-        //cond:'status',
-        //condval:0,
         param: 'id',
         headermessage: 'Doctor Office Info',
-        // refreshdata:true
       },
       {
         label: "Parent Details",
@@ -141,12 +118,10 @@ export class AdminDashboardComponent implements OnInit {
         datatype: 'api',
         endpoint: 'get-parent-details',
         datafields: ['Parent Name', 'Contact Person', 'email', 'phone', 'address', 'city', 'state', 'zip'],
-        // otherparam:["patient_name"],
         cond: "parent_check_flag",
         condval: 1,
         param: 'id',
         headermessage: 'Parent Information',
-        // refreshdata:true
       },
       {
         label: "View Jobticket",
@@ -164,24 +139,18 @@ export class AdminDashboardComponent implements OnInit {
     hideviewbutton: true,
     tableheaders: [
       "patient_name",
-      // "tech_name",
       "status_text",
       "created_at_datetime",
       "cpt_addl",
       "general_details",
-      // "parent_type",`
-      // "parent_id",
-      // "doctors_office_id",
     ]
   }
   public allUserData_modify_header: any = {
     "general_details": "Related Info",
-    // "tech_name": "Tech Name",
     "patient_name": "Patient Name",
     "status_text": "Status",
     "created_at_datetime": "Report Added",
     "cpt_addl": "CPT/ Addl Hrisk C",
-    // "addl_hlth_risk": "Addl Hlth Risk"
   };
 
   public UpdateEndpoint: any = "addorupdatedata";

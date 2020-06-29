@@ -56,13 +56,6 @@ export class DoctorOfficeDashboardComponent implements OnInit {
         param: ['_id'],
       },
       {
-        label: "Download Report",
-        link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
-        type: 'externallink',
-        paramtype: 'angular',
-        param: ['download_file_name']
-      },
-      {
         label: "Tech Details",
         type: 'action',
         datatype: 'api',
@@ -203,7 +196,11 @@ export class DoctorOfficeDashboardComponent implements OnInit {
 
   public allData: any;
   public authData: any;
-  public jwtToken: any
+  public jwtToken: any;
+  public htmlText: any = {
+    headerText: "Total Appointments Booked"
+  };
+
   constructor(public cookieService: CookieService, public activatedRoute: ActivatedRoute,
     public snackBar: MatSnackBar, public http: HttpServiceService, public matSnackBar: MatSnackBar) {
 
@@ -211,8 +208,16 @@ export class DoctorOfficeDashboardComponent implements OnInit {
     this.authData = JSON.parse(this.allData.user_details);
     this.authData["jwtToken"] = cookieService.get('jwtToken');
     this.jwtToken = cookieService.get('jwtToken');
-    this.libdata.basecondition = { doctors_office_id: this.authData._id, status: { $gt: 10 } }
+
+    /* Get resolve data */
+    this.activatedRoute.data.subscribe(resolveData => {
+      this.htmlText.allResolveData = resolveData.countData.data;
+
+      this.viewReportProcessData(this.htmlText.headerText);
+    });
+
     // lib list
+    this.libdata.basecondition = { doctors_office_id: this.authData._id, status: { $gt: 10 } }
     let endpoint = 'getPatientlistdata';
     let endpointc = 'getPatientlistdata-count';
     let data: any = {
@@ -395,8 +400,15 @@ export class DoctorOfficeDashboardComponent implements OnInit {
     });
   }
 
-  viewReportProcessData(string: any = null) {
-
+  viewReportProcessData(flag: any = null) {
+    switch(flag) {
+      case 'Total Appointments Booked':
+        break;
+      case 'Total Appointments Completed':
+        break;
+      case '':
+        break;
+    }
   }
 
 }

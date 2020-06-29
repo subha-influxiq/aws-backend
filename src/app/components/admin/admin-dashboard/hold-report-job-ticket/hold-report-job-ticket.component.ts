@@ -220,7 +220,7 @@ export class HoldReportJobTicketComponent implements OnInit {
                   report_life_circle: {
                     date: 1591791772277,
                     status: 11,
-                    status_text: "Approved Biller Admin"
+                    status_text: "Biller Admin Approved"
                   }
                 },
                 "token" : this.htmlText.userData.jwtToken
@@ -237,7 +237,7 @@ export class HoldReportJobTicketComponent implements OnInit {
                   report_life_circle: {
                     date: 1591791772277,
                     status: 12,
-                    status_text: "Not Approved Biller Admin"
+                    status_text: "Biller Admin Not Approved"
                   }
                 },
                 "token" : this.htmlText.userData.jwtToken
