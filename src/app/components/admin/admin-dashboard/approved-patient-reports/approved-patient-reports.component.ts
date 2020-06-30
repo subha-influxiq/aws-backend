@@ -200,7 +200,8 @@ export class ApprovedPatientReportsComponent implements OnInit {
     { val: "Biller Admin Approved", 'name': 'Biller Admin Approved' },
     { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' },
     { val: "Biller Admin Hold", 'name': "Biller Admin Hold" },
-    { val: "Downloaded", "name": "Report Downloaded" }
+    { val: "Report Downloaded", "name": "Report Downloaded" },
+    { val: "Send to Biller", "name": "Send to Biller" },
   ];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];

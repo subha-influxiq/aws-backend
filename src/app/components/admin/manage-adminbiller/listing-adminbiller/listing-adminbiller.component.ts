@@ -59,6 +59,15 @@ export class ListingAdminbillerComponent implements OnInit {
    public libdata:any={
     // basecondition: {report_type:"file"},
     updateendpoint:'statusupdate',
+    notes: {
+      label: "Notes",
+      addendpoint: "addnotedata",
+      deleteendpoint: "deletenotedata",
+      listendpoint: "listnotedata",
+      user: "",
+      currentuserfullname: " ",
+      header: 'User',
+  },
     // hideeditbutton:true,// all these button options are optional not mandatory
     // hidedeletebutton:true,
     // hideviewbutton:true,
@@ -102,7 +111,8 @@ export class ListingAdminbillerComponent implements OnInit {
     this.user_cookie = cookieService.get('jwtToken');
     let allData = cookieService.getAll();
     this.userData = JSON.parse(allData.user_details);
-
+    this.libdata.notes.user = this.userData._id;
+    this.libdata.notes.currentuserfullname = this.userData.firstname +this.userData.lastname;
     if(this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/doctor-management/edit';
     }

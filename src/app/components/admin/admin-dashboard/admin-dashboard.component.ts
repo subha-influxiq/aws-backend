@@ -219,7 +219,7 @@ export class AdminDashboardComponent implements OnInit {
   public search_settings: any = {
     selectsearch: [
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type }, 
-      { label: 'Search By Status', field: 'status_text', values: this.statussearch }, 
+      { label: 'Search By Status', field: 'status', values: this.statussearch }, 
       { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes }, 
       { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }, 
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval }, 
