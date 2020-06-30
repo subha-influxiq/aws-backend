@@ -845,5 +845,13 @@ font-family: 'AvenirMedium'!important; opacity: 1!important; border: 1px solid r
 .maindialognew{ position: relative;}
 .maindialognew .close-btn-modal{ float: none!important;
 color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
+.notes-modal .maindialognew .mat-dialog-content .mat-subheader{ background: var(--button-color2); color: #fff;
+  font-size: 18px; text-transform: uppercase; font-family: 'AvenirMedium'; }
+.notes-modal .maindialognew .close-btn-modal{ top:28px; right:20px; }
 
  
+.notes-modal .maindialognew .dialoghead .mat-dialog-content .ng-star-inserted textarea{
+  width: 100%; border: 1px solid #bbbbbb; box-shadow: none;
+    margin: 20px 0 14px; padding: 10px; box-sizing: border-box; resize: none;
+}
+.notes-modal .maindialognew .dialoghead .mat-dialog-content .ng-star-inserted button { background: var(--button-color1); color: #000; display: flex; margin-left: auto; }
