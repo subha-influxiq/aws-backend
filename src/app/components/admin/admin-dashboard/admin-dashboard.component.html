@@ -21,7 +21,6 @@
               <span class="material-icons"> help_outline </span>
             </a>
           </span>
-
         </span>
       </span>
       <span class="button_wrapper">
@@ -29,6 +28,7 @@
         <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
       </span>
     </mat-card-content>
+
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/billerIcon.png">
@@ -45,7 +45,6 @@
               <span class="material-icons"> help_outline </span>
             </a>
           </span>
-
         </span>
       </span>
       <span class="button_wrapper">
@@ -53,6 +52,7 @@
         <button mat-flat-button [routerLink]="['/admin/biller-management']">View Details</button>
       </span>
     </mat-card-content>
+
     <mat-card-content class="itemsection">
       <span class="icon">
         <img src="../../../../assets/images/techIcon.png">
@@ -69,7 +69,6 @@
               <span class="material-icons"> help_outline </span>
             </a>
           </span>
-
         </span>
       </span>
       <span class="button_wrapper">
@@ -78,7 +77,8 @@
       </span>
     </mat-card-content>
 
-  </mat-card-content> 
+  </mat-card-content>
+
   <mat-card-content class="content_wrapper">
 
     <mat-card-content class="itemsection">
@@ -97,7 +97,6 @@
               <span class="material-icons"> help_outline </span>
             </a>
           </span>
-
         </span>
       </span>
       <span class="button_wrapper">
@@ -122,7 +121,6 @@
               <span class="material-icons"> help_outline </span>
             </a>
           </span>
-
         </span>
       </span>
       <span class="button_wrapper">
@@ -147,7 +145,6 @@
               <span class="material-icons"> help_outline </span>
             </a>
           </span>
-
         </span>
       </span>
       <span class="button_wrapper">
@@ -157,6 +154,7 @@
     </mat-card-content>
 
   </mat-card-content> 
+  
   <mat-card-content class="content_wrapper">
     <mat-card-content class="itemsection">
       <span class="icon">
@@ -174,7 +172,6 @@
               <span class="material-icons"> help_outline </span>
             </a>
           </span>
-
         </span>
       </span>
       <span class="button_wrapper">
@@ -199,7 +196,6 @@
               <span class="material-icons"> help_outline </span>
             </a>
           </span>
-
         </span>
       </span>
       <span class="button_wrapper">
@@ -224,7 +220,6 @@
               <span class="material-icons"> help_outline </span>
             </a>
           </span>
-
         </span>
       </span>
       <span class="button_wrapper">
@@ -232,8 +227,8 @@
         <button mat-button [routerLink]="['/admin/doctor-management']">View Details</button>
       </span>
     </mat-card-content>
+  </mat-card-content>
 
-  </mat-card-content> 
   <mat-card-content class="content_wrapper">
 
     <mat-card-content class="itemsection">
@@ -252,7 +247,6 @@
               <span class="material-icons"> help_outline </span>
             </a>
           </span>
-
         </span>
       </span>
       <span class="button_wrapper">
@@ -301,7 +295,6 @@
               <span class="material-icons"> help_outline </span>
             </a>
           </span>
-
         </span>
       </span>
       <span class="button_wrapper">
@@ -315,8 +308,8 @@
 
   <mat-card-content class="admin_superbillsection superbillerContainer">
     <h1>Physician Report and Super Bills</h1>
-    <mat-card-content class="biller_wrapper">
 
+    <mat-card-content class="biller_wrapper">
       <mat-card-content class="super_bill_item">
         <span class="border_wrapper">
           <mat-card-content class="circle">
@@ -342,7 +335,7 @@
               </a>
             </span>
           </span>
-          <button mat-flat-button (click)="viewReportProcessData('Reports Uploaded')">view all</button>
+          <button mat-flat-button (click)="viewReportProcessData('Total Number of Reports Added')">view all</button>
         </span> 
       </mat-card-content>
 
@@ -358,7 +351,7 @@
             Report Processed
           </p>
           <span class="counter_with_tool">
-            <h2> {{ allResolveData.total_reports - allResolveData.total_pdf_to_images_not_process }} </h2>
+            <h2> {{ allResolveData.total_report_processed }} </h2>
             <!-- tool tip -->
             <span class="tolTip">
               <a mat-raised-button #reportsProcessed="matTooltip"
@@ -370,7 +363,7 @@
               </a>
             </span>
           </span>
-          <button mat-flat-button (click)="viewReportProcessData('Report Processed')">view all</button>
+          <button mat-flat-button (click)="viewReportProcessData('Total Number of Report Processed')">view all</button>
         </span>
 
       </mat-card-content>
@@ -398,7 +391,7 @@
               </a>
             </span>
           </span>
-          <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
+          <button mat-flat-button (click)="viewReportProcessData('Total Number of Report Signed')">view all</button>
         </span>
 
 
@@ -427,9 +420,8 @@
               </a>
             </span>
           </span>
-          <button mat-flat-button (click)="viewReportProcessData('Super Bill')">view all</button>
+          <button mat-flat-button (click)="viewReportProcessData('Sent to Biller')">view all</button>
         </span>
-
 
       </mat-card-content>
 
@@ -454,11 +446,8 @@
               </a>
             </span>
           </span>
-          <button mat-flat-button (click)="viewReportProcessData('Download Bill')">view all</button>
+          <button mat-flat-button (click)="viewReportProcessData('Reports Downloaded')">view all</button>
         </span>
-
-
-
       </mat-card-content>
 
       <mat-card-content class="super_bill_item">
@@ -519,8 +508,29 @@
 
   <app-doctor-signup-share [shareDetails]="shareDetails"></app-doctor-signup-share>
 
+                                                                                                                                                                          
+  <!-- View All button listing start here -->
+  <mat-card-content *ngIf="htmlText.viewAllButtonTable.headerText != ''" class="table_wrapper admin_dashboard">
+    <mat-card-content class="headr_tagh">
+      <span class="counter_with_tool">
+        <h1>{{ htmlText.viewAllButtonTable.headerText }}</h1>
+        <span class="tolTip">
+          <a mat-raised-button #processedReports="matTooltip"
+            matTooltip="All the Reports listed here are reviewed by Admin." matTooltipPosition="above"
+            aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+          </a>
+          <a mat-button (click)="processedReports.toggle()" class="toggle_btn" aria-label=" toggle section">
+            <span class="material-icons"> help_outline </span>
+          </a>
+        </span>
+      </span>
+    </mat-card-content>
+    <app-view-all-button-list [viewFlag]="htmlText.viewAllButtonTable.headerText"></app-view-all-button-list>
+  </mat-card-content>
+  <!-- View All button listing end here -->
 
-  <!-- All Data listing start here(default listing) -->
+
+  <!-- Patient Reports Pending Actions listing start here -->
   <mat-card-content class="table_wrapper admin_dashboard">
     <mat-card-content class="headr_tagh">
       <span class="counter_with_tool">
@@ -534,7 +544,6 @@
             <span class="material-icons"> help_outline </span>
           </a>
         </span>
-
       </span>
     </mat-card-content>
 
@@ -549,10 +558,10 @@
     </lib-listing>
 
   </mat-card-content>
-  <!-- dashboard all listing end here -->
+  <!-- Patient Reports Pending Actions listing end here -->
 
 
-  <!-- All Data listing start here(default listing) -->
+  <!-- Admin Processed Reports start here -->
   <mat-card-content class="table_wrapper admin_dashboard">
     <mat-card-content class="headr_tagh">
       <span class="counter_with_tool">
@@ -569,14 +578,12 @@
       </span>
     </mat-card-content>
     <app-approved-patient-reports></app-approved-patient-reports>
-
   </mat-card-content>
-  <!-- dashboard all listing end here -->
+  <!-- Admin Processed Reports end here -->
 
 
-  <!-- All Data listing start here(default listing) -->
+  <!-- Patient Reports with Job Tickets start here -->
   <mat-card-content id="jobTickets" class="table_wrapper admin_dashboard">
-
     <mat-card-content class="headr_tagh">
       <span class="counter_with_tool">
         <h1>Patient Reports with Job Tickets</h1>
@@ -595,6 +602,6 @@
     <app-job-ticket-patient-reports></app-job-ticket-patient-reports>
 
   </mat-card-content>
-  <!-- dashboard all listing end here -->
+  <!-- Patient Reports with Job Tickets end here -->
 
   <app-admin-footer></app-admin-footer>

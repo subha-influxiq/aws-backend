@@ -48,9 +48,7 @@ font-size: 16px; color: #1f1f1f;}
     margin: 0px;
     position: relative;
   }
-  .techdashboard_header .quotation p {
-    font-size: 22px;
-  }
+  .techdashboard_header .quotation p { font-size: 22px; }
   .content_wrapper .itemsection {
     padding-bottom: 36px;
   }

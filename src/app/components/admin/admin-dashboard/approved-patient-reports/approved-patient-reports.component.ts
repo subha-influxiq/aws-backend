@@ -197,11 +197,12 @@ export class ApprovedPatientReportsComponent implements OnInit {
     { val: "CMAT with BP Cuffs", 'name': 'CMAT with BP Cuffs' }
   ];
   public report: any = [
-    { val: "Biller Admin Approved", 'name': 'Biller Admin Approved' },
-    { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' },
-    { val: "Biller Admin Hold", 'name': "Biller Admin Hold" },
-    { val: "Report Downloaded", "name": "Report Downloaded" },
-    { val: "Send to Biller", "name": "Send to Biller" },
+    { val: 11, 'name': 'Biller Admin Approved' },
+    { val: 12, 'name': 'Biller Admin Not Approved' },
+    { val: 13, 'name': "Biller Admin Hold" },
+    { val: 14, 'name': "Doctor Sign" },
+    { val: 15, "name": "Send to Biller" },
+    { val: 16, "name": "Report Downloaded" },
   ];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
@@ -216,7 +217,7 @@ export class ApprovedPatientReportsComponent implements OnInit {
   public search_settings: any = {
     selectsearch: [
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },
-      { label: 'Search By Status', field: 'status_text', values: this.report },
+      { label: 'Search By Status', field: 'status', values: this.report },
       { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },
       { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes },
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
@@ -253,6 +254,8 @@ export class ApprovedPatientReportsComponent implements OnInit {
     // lib list
     let endpoint = 'getPatientlistdata-approved';
     let endpointc = 'getPatientlistdata-approved-count';
+
+    
     let data: any = {
       "condition": {
         "limit": 10,
