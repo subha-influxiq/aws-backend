@@ -29,7 +29,9 @@ font-size: 16px; color: #1f1f1f;}
 } */
 .techdashboard_header .quotation .mat-nav-list .mat-list-item { margin: 0; position: relative; font-family: "AvenirMedium"; font-size: 16px; color: #767676;}
 
-.active { color: #000000!important;  /* border-bottom: 3px solid #fecb00; position: relative; */}
+.active { color: #000000!important; 
+   /* border-bottom: 3px solid #fecb00; position: relative; */
+  }
 .active::before{ content: ''; width: 100%; height: 4px; background: #fecb00; position: absolute; bottom: -25px; }
 
 
@@ -100,42 +102,18 @@ font-size: 16px; color: #1f1f1f;}
 .patient_report_section .button_action { width: 970px; }
 .patient_report_section .button_action button { width: 475px; font-size: 20px;  padding: 8px; }
 .content_wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    text-align: center;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
-  .content_wrapper .itemsection {
-    width: 31%;
-    margin: 15px 12px;
-  }
-  .doctor_content_wrapper {
-    padding: 40px 30px;
-  }
-  .doctor_content_wrapper .mat-card-title {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
+    display: -webkit-box; display: -ms-flexbox; display: flex;
+    -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center;
+    -ms-flex-align: center; align-items: center; text-align: center; -ms-flex-wrap: wrap; flex-wrap: wrap;
+}
+  .content_wrapper .itemsection { width: 31%; margin: 15px 12px; }
+  .doctor_content_wrapper { padding: 40px 30px; }
+  .doctor_content_wrapper .mat-card-title { font-size: 36px; margin-bottom: 20px; }
   .table_structure .mat-list-item .title_n { font-size: 26px; }
-  .table_structure .mat-list-item .title_a {
-    font-size: 22px;
-  }
+  .table_structure .mat-list-item .title_a { font-size: 22px; }
   .content_wrapper .itemsection p { width: 100%; font-size: 22px; }
-  .techdashboard_header {
-    height: auto;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
+  .techdashboard_header { height: auto; -webkit-box-orient: vertical; -webkit-box-direction: normal;
+  -ms-flex-direction: column; flex-direction: column; }
   .techdashboard_header .header_wrapper { flex-direction: column; }
   .techdashboard_header .profile_section::before{ display: none;}
 }
@@ -145,12 +123,9 @@ font-size: 16px; color: #1f1f1f;}
   .techdashboard_header .logo_wrapper { max-width: 160px; } 
   .techdashboard_header .profile_section { padding-left: 0; border: none; }
   .techdashboard_header .profile_section .username { font-size: 16px; }
-  .active {
-    color: #000000!important;
-    border-bottom: 3px solid #fecb00; position: relative;
-  }
-  .active::before{
-    content: ''; display: none;}
+  .active { color: #000000!important; border-bottom: 3px solid #fecb00; position: relative; }
+  .active::before{ content: ''; display: none;}
+  .techdashboard_header .quotation .mat-nav-list .mat-list-item { font-size: 13px; }
 }
 @media screen and (max-width: 1080px) { 
   .doctor_content_wrapper { padding: 40px 20px; }
