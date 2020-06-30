@@ -88,7 +88,7 @@ export class ListDoctorComponent implements OnInit {
       listendpoint: "listnotedata",
       user: "",
       currentuserfullname: " ",
-      header: 'User',
+      header: 'firstname',
   },
     // hideeditbutton:true,// all these button options are optional not mandatory
     //hidedeletebutton:true,
