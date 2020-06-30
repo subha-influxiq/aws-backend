@@ -33,21 +33,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
   };
 
   public allResolveData: any = {
-    "tableDataFlag": false,
-    "total_reports": 0,
-    "total_coce_exists": 0,
-    "total_code_not_exists": 0,
-    "total_sign_reports": 0,
-    "total_not_sign_reports": 0,
-    "total_send_to_supar_biller_reports": 0,
-    "total_doctor": 0,
-    "total_biller": 0,
-    "total_tech": 0,
-    "total_doctor_office": 0,
-    "total_reports_download": 0,
-    "total_pdf_to_images_not_process": 0,
-    "total_basic_details_not_process": 0,
-    "total_reports_type_manual": 0
+    "tableDataFlag": false
   }
   public tableDataFlag: any = false;
   public uploadedStatusArray: any = [];
@@ -256,8 +242,10 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
 
-
-
+    /* Get resolve data */
+    this.activatedRoute.data.subscribe(resolveData => {
+      this.allResolveData = resolveData.dataCount.data;
+    });
 
     // lib list ****************************
     let endpoint = 'getPatientlistdata';
@@ -438,33 +426,6 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
   ngAfterViewInit() {
   }
 
-  pagination(flag: string = null) {
-    switch (flag) {
-      case "prev":
-        if (this.allResolveData.tableDataPagination.skip > 0) {
-          this.allResolveData.tableDataPagination.skip = 0;
-          this.allResolveData.tableDataPaginationlimit = 50;
-        }
-        break;
-      case "next":
-        this.allResolveData.tableDataPagination.skip = 0;
-        this.allResolveData.tableDataPaginationlimit = 50;
-        break;
-      default:
-        break;
-    }
-    this.allResolveData.tableDataPagination = null;
-  }
-
-  myFunction() {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
-
   /*Doctor's List*/
   toDocList() {
     this.router.navigateByUrl('admin/doctor-management/list');
@@ -523,10 +484,6 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
   }
 
   viewReportProcessData(flag = null) {
-
-  }
-
-  refreshDashboard(flag = null) {
 
   }
 
