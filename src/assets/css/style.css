@@ -486,7 +486,6 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .patient_preview .mat-form-field-appearance-legacy .mat-form-field-wrapper { padding: 0;}
 .admin_wrapper .changeBTN{ background: linear-gradient(45deg, #0492d2, #03a9f5);
   color: #fff; font-family: 'AvenirMedium'; text-transform: uppercase;}
-
 .patient_preview .mat-form-field-wrapper{ padding: 0; }
 .patient_preview .mat-form-field-underline {display: none;}
 .patient_preview .mat-form-field-appearance-legacy .mat-form-field-infix { padding: 10px; border: 1px solid #1dbce9; box-sizing: border-box; margin-right: 5px; }
@@ -500,7 +499,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
  .admin_wrapper  .testingDoc { background: linear-gradient(0deg, #07aaf5, #40bffa); font-size: 34px; text-transform: uppercase; color: #fff; padding: 8px 10px;
   font-family: 'AvenirMedium'; margin: 0px 0 8px!important;; border-radius: 4px;}
 .Admindmin_details .inner_er{ background:url('../../assets/images/doctordbImage.jpg') no-repeat;
-  background-size: cover; padding: 30px;}
+  background-size: cover; padding: 0px}
 .Admindmin_details .inner_er h2{ text-align: center; margin: 0; color: var(--button-color3); font-family: 'AvenirBlack'; font-size: 24px; text-transform: uppercase; margin-top: 18px; }
 .Admindmin_details .inner{ column-count: 2; column-gap: 20px; display: block; }
 .Admindmin_details .inner_er h3{ text-align: center; text-transform: uppercase; font-size: 28px;

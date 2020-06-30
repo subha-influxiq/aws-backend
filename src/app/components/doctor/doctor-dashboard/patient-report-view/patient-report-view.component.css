@@ -80,10 +80,10 @@ width: 390px; border: 3px solid #d59d01; }
 }
 
 .sticky {
-  position: fixed;
+  position: fixed; z-index: 9;
     top: 6px; 
     max-height: 80%;
-    overflow: auto;
+    overflow: auto; 
 }
 .stickyRight{ margin-left: 50%!important;}
 .document_wrapper{
