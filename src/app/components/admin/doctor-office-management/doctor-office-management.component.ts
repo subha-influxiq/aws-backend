@@ -93,7 +93,7 @@ export class DoctorOfficeManagementComponent implements OnInit {
         listendpoint: "listnotedata",
         user: "",
         currentuserfullname: " ",
-        header: 'User',
+        header: 'fullname',
     },
       // hideeditbutton:true,// all these button options are optional not mandatory
       //hidedeletebutton:true,
@@ -120,18 +120,26 @@ export class DoctorOfficeManagementComponent implements OnInit {
     }
     if(this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/doctor-office-management/edit';
+      this.libdata.notes.user = this.userData._id;
+      this.libdata.notes.currentuserfullname = this.userData.center_name;
     }
     if(this.userData.user_type == 'distributors') {
       this.editUrl = 'distributors/doctor-office-management/edit';
+      this.libdata.notes.user = this.userData._id;
+    this.libdata.notes.currentuserfullname = this.userData.distributorname;
     }
     if(this.userData.user_type == 'doctor_group') {
       this.editUrl = 'doctor-group/doctor-office-management/edit';
+      this.libdata.notes.user = this.userData._id;
+      this.libdata.notes.currentuserfullname = this.userData.groupname 
     }
     if(this.userData.user_type == 'admin') {
       this.search_settings.textsearch.push({ label: "Search By Parent Name", field: 'parent_name_search' });
       this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type });
       this.libdata.tableheaders.splice(3,0,"parent_name");
       this.libdata.tableheaders.splice(4,0,"parent_type");
+      this.libdata.notes.user = this.userData._id;
+      this.libdata.notes.currentuserfullname = this.userData.firstname +this.userData.lastname;
     }
   }
 

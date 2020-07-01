@@ -88,7 +88,7 @@ export class ListDoctorComponent implements OnInit {
       listendpoint: "listnotedata",
       user: "",
       currentuserfullname: " ",
-      header: 'firstname',
+      header: 'fullname',
   },
     // hideeditbutton:true,// all these button options are optional not mandatory
     //hidedeletebutton:true,
@@ -124,12 +124,12 @@ export class ListDoctorComponent implements OnInit {
     this.user_cookie = cookieService.get('jwtToken');
     let allData = cookieService.getAll();
     this.userData = JSON.parse(allData.user_details);
-    this.libdata.notes.user = this.userData._id;
-    this.libdata.notes.currentuserfullname = this.userData.firstname +this.userData.lastname;
     if(this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/doctor-management/edit';
       this.field = {'parent_id':this.userData._id};
       this.data = this.userData._id;
+      this.libdata.notes.user = this.userData._id;
+      this.libdata.notes.currentuserfullname = this.userData.center_name;
     }
 
     if(this.userData.user_type == 'admin') {
@@ -144,17 +144,23 @@ export class ListDoctorComponent implements OnInit {
       this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type });
       this.libdata.tableheaders.splice(3,0,"parent_name");
       this.libdata.tableheaders.splice(4,0,"parent_type");
+      this.libdata.notes.user = this.userData._id;
+      this.libdata.notes.currentuserfullname = this.userData.firstname +this.userData.lastname;
     }
 
     if(this.userData.user_type == 'doctor_group') {
       this.editUrl = 'doctor-group/doctor-management/edit';
       this.field = {'parent_id':this.userData._id};
       this.data = this.userData._id;
+      this.libdata.notes.user = this.userData._id;
+      this.libdata.notes.currentuserfullname = this.userData.groupname 
     }
     if(this.userData.user_type == 'distributors') {
       this.editUrl = 'distributors/doctor-management/edit';
       this.field = {'parent_id':this.userData._id};
       this.data = this.userData._id;
+      this.libdata.notes.user = this.userData._id;
+    this.libdata.notes.currentuserfullname = this.userData.distributorname;
     }
 
     this.libdata.basecondition = this.field;
