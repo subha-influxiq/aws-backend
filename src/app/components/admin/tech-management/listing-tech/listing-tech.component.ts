@@ -47,7 +47,7 @@ export class ListingTechComponent implements OnInit {
       listendpoint: "listnotedata",
       user: "",
       currentuserfullname: " ",
-      header: 'User',
+      header: 'fullname',
   },
     // hideeditbutton:true,// all these button options are optional not mandatory
     //hidedeletebutton:true,
@@ -120,22 +120,30 @@ export class ListingTechComponent implements OnInit {
       this.editUrl = 'diagnostic-admin/tech-management/edit';
       this.field = {'parent_id':this.userData._id};
       this.data = this.userData._id;
+      this.libdata.notes.user = this.userData._id;
+      this.libdata.notes.currentuserfullname = this.userData.center_name;
     }
     if(this.userData.user_type == 'doctor_group') {
       this.editUrl = 'doctor-group/tech-management/edit';
       this.field = {'parent_id':this.userData._id};
       this.data = this.userData._id;
+      this.libdata.notes.user = this.userData._id;
+      this.libdata.notes.currentuserfullname = this.userData.groupname 
     }
     if(this.userData.user_type == 'distributors') {
       this.editUrl = 'distributors/tech-management/edit';
       this.field = {'parent_id':this.userData._id};
       this.data = this.userData._id;
+      this.libdata.notes.user = this.userData._id;
+    this.libdata.notes.currentuserfullname = this.userData.distributorname;
     }
     if(this.userData.user_type == 'admin') {
       this.search_settings.textsearch.push({ label: "Search By Parent Name", field: 'parent_name_search' });
       this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type });
       this.libdata.tableheaders.splice(3,0,"parent_name");
       this.libdata.tableheaders.splice(4,0,"parent_type");
+      this.libdata.notes.user = this.userData._id;
+      this.libdata.notes.currentuserfullname = this.userData.firstname +this.userData.lastname;
     }
 
     this.libdata.basecondition = this.field;

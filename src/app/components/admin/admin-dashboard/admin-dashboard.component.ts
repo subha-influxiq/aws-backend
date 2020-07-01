@@ -178,9 +178,9 @@ export class AdminDashboardComponent implements OnInit {
     { val: "Biller Admin Hold", 'name': "Biller Admin Hold" }
   ];
   public statussearch: any = [
-    { val: "System Approved", 'name': 'System Approved' }, 
-    { val: "System Not Approved", 'name': 'System Not Approved' }, 
-    { val: "System Hold", 'name': "System Hold" }
+    { val: 8, 'name': 'System Approved' }, 
+    { val: 9, 'name': 'System Not Approved' }, 
+    { val: 10, 'name': "System Hold" }
   ];
   public cptcodes: any = [
     { val: "95923", 'name': '95923' }, 
@@ -219,7 +219,7 @@ export class AdminDashboardComponent implements OnInit {
   public search_settings: any = {
     selectsearch: [
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type }, 
-      { label: 'Search By Status', field: 'status', values: this.statussearch }, 
+      { label: 'Search By Status', field: 'status_search', values: this.statussearch }, 
       { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes }, 
       { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }, 
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval }, 
