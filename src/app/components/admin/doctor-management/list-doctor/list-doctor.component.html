@@ -18,7 +18,7 @@
 
 
 
-<mat-card class="admin_wrapper">
+<mat-card class="admin_wrapper ">
 
   <mat-card-content class="table_wrapper">
     <ng-container *ngIf="activatedRoute.snapshot.routeConfig.path != 'admin/sales-person/doctor-management'">
@@ -61,6 +61,7 @@
     <!-- End header with add button -->
 
     <!-- Listing goes here  -->
+    
     <lib-listing class="DataTable manageDoctor" *ngIf="docData.length>0" [datasource]="docData" [skip]="docData_skip"
       [modify_header_array]="docData_modify_header" [sourcedata]="tableName" [detail_skip_array]="previewModal_skip"
       [apiurl]="apiUrl" [editroute]="editUrl" [jwttoken]="user_cookie" [statusarr]="status"
@@ -68,7 +69,7 @@
       [date_search_source]="searchSourceName" [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection" [libdata]="libdata" [date_search_source_count]="docData_count" [limitcond]="limitcond">
 
     </lib-listing>
-
+ 
     <h2 *ngIf="docData.length == 0">No record found.</h2>
     <!-- Listing ends here  -->
   </mat-card-content>

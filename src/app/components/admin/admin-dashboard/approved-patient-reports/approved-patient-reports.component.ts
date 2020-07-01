@@ -174,34 +174,34 @@ export class ApprovedPatientReportsComponent implements OnInit {
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
   public status: any = [
-    { val: 1, 'name': 'Active' }, 
+    { val: 1, 'name': 'Active' },
     { val: 0, 'name': 'Inactive' }
   ];
   public parent_type: any = [
-    { val: "admin", 'name': 'Admin' }, 
-    { val: "diagnostic_admin", 'name': 'Diagnostic Admin' }, 
-    { val: "distributors", 'name': 'Distributor' }, 
+    { val: "admin", 'name': 'Admin' },
+    { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },
+    { val: "distributors", 'name': 'Distributor' },
     { val: "doctor_group", 'name': 'Doctor Group' },
   ];
   public cptcodes: any = [
-    { val: "95923", 'name': '95923' }, 
-    { val: "95943", 'name': '95943' }, 
-    { val: "95921", 'name': "95921" }, 
-    { val: "93923", 'name': "93923" }, 
+    { val: "95923", 'name': '95923' },
+    { val: "95943", 'name': '95943' },
+    { val: "95921", 'name': "95921" },
+    { val: "93923", 'name': "93923" },
     { val: "93922", 'name': "93922" }
   ];
   public report_type: any = [
-    { val: "RM-3A", 'name': 'RM-3A' }, 
-    { val: "TM FLOW V3", 'name': 'TM FLOW V3' }, 
+    { val: "RM-3A", 'name': 'RM-3A' },
+    { val: "TM FLOW V3", 'name': 'TM FLOW V3' },
     { val: "TM FLOW V4", 'name': 'TM FLOW V4' },
     { val: "CMAT with BP Cuffs", 'name': 'CMAT with BP Cuffs' }
   ];
   public report: any = [
-    { val: "Biller Admin Approved", 'name': 'Biller Admin Approved' },
-    { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' },
-    { val: "Biller Admin Hold", 'name': "Biller Admin Hold" },
-    { val: "Report Downloaded", "name": "Report Downloaded" },
-    { val: "Send to Biller", "name": "Send to Biller" },
+    { val: 11, 'name': 'Biller Admin Approved' },
+    { val: 12, 'name': 'Biller Admin Not Approved' },
+    { val: 13, 'name': "Biller Admin Hold" },
+    { val: 14, "name": "Report Downloaded" },
+    { val: 15, "name": "Send to Biller" },
   ];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
@@ -216,7 +216,7 @@ export class ApprovedPatientReportsComponent implements OnInit {
   public search_settings: any = {
     selectsearch: [
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },
-      { label: 'Search By Status', field: 'status_text', values: this.report },
+      { label: 'Search By Status', field: 'status_search', values: this.report },
       { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },
       { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes },
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
@@ -231,6 +231,9 @@ export class ApprovedPatientReportsComponent implements OnInit {
     datesearch: [
       { startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }
     ],
+    textsearch: [
+      { label: "Search By Patient Name", field: 'patient_name_search' }
+    ]
   };
   // lib list end
 
@@ -240,10 +243,10 @@ export class ApprovedPatientReportsComponent implements OnInit {
     this.loginUserData["user_details"] = cookieService.getAll();
     this.loginUserData["jwtToken"] = cookieService.get('jwtToken');
 
-    /* Get Auth Token */
+    / Get Auth Token /
     this.jwtToken = cookieService.get('jwtToken');
 
-    /* Get resolve data */
+    / Get resolve data /
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
       //this.viewReportProcessData(this.htmlText.headerText);
@@ -253,6 +256,8 @@ export class ApprovedPatientReportsComponent implements OnInit {
     // lib list
     let endpoint = 'getPatientlistdata-approved';
     let endpointc = 'getPatientlistdata-approved-count';
+
+
     let data: any = {
       "condition": {
         "limit": 10,

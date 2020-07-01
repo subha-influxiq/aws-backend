@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener, inject, Input } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -16,11 +16,20 @@ import { from } from 'rxjs';
 const moment = momentImported;
 
 @Component({
-  selector: 'app-job-ticket-patient-reports',
-  templateUrl: './job-ticket-patient-reports.component.html',
-  styleUrls: ['./job-ticket-patient-reports.component.css']
+  selector: 'app-view-all-button-list',
+  templateUrl: './view-all-button-list.component.html',
+  styleUrls: ['./view-all-button-list.component.css']
 })
-export class JobTicketPatientReportsComponent implements OnInit {
+
+export class ViewAllButtonListComponent implements OnInit {
+
+  public viewFlagData: string = "";
+  @Input()
+  set viewFlag(viewFlagData: any) {
+    this.viewFlagData = viewFlagData;
+
+    this.viewReportProcessData(this.viewFlagData);
+  }
 
   public loginUserData: any = {};
   public jwtToken: string = "";
@@ -138,7 +147,7 @@ export class JobTicketPatientReportsComponent implements OnInit {
       "cpt_addl",
       "general_details",
     ]
-  }
+  };
   public allUserData_modify_header: any = {
     "general_details": "Related Info",
     "patient_name": "Patient Name",
@@ -170,12 +179,13 @@ export class JobTicketPatientReportsComponent implements OnInit {
   public cptcodes: any = [
     { val: "95923", 'name': '95923' },
     { val: "95943", 'name': '95943' },
-    { val:"95921" , 'name': "95921" },
-    { val:"93923" , 'name': "93923" },
-    { val:"93922" , 'name': "93922" }
+    { val: "95921", 'name': "95921" },
+    { val: "93923", 'name': "93923" },
+    { val: "93922", 'name': "93922" }
   ];
   public status: any = [
-    { val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }
+    { val: 1, 'name': 'Active' },
+    { val: 0, 'name': 'Inactive' }
   ];
   public parent_type: any = [
     { val: "admin", 'name': 'Admin' },
@@ -190,9 +200,9 @@ export class JobTicketPatientReportsComponent implements OnInit {
     { val: "CMAT with BP Cuffs", 'name': 'CMAT with BP Cuffs' }
   ];
   public report: any = [
-    { val: 11, 'name': 'Biller Admin Approved' },
-    { val: 12, 'name': 'Biller Admin Not Approved' },
-    { val: 13, 'name': "Biller Admin Hold" }
+    { val: "Biller Admin Approved", 'name': 'Biller Admin Approved' },
+    { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' },
+    { val: "Biller Admin Hold", 'name': "Biller Admin Hold" }
   ];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
@@ -211,7 +221,7 @@ export class JobTicketPatientReportsComponent implements OnInit {
       { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes },
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
       { label: "Search By Tech", field: 'tech_name_search', values: this.techval },
-      { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values:this.docofficeval },
+      { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval },
       { label: "Search By Parent Name", field: 'parent_name_search', values: this.parentnameval },
       { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity },
       { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate },
@@ -220,7 +230,7 @@ export class JobTicketPatientReportsComponent implements OnInit {
     ],
     datesearch: [
       { startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }
-    ], 
+    ],
     textsearch: [
       { label: "Search By Patient Name", field: 'patient_name_search' }
     ]
@@ -235,43 +245,6 @@ export class JobTicketPatientReportsComponent implements OnInit {
 
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
-
-    /* Get resolve data */
-    this.activatedRoute.data.subscribe(resolveData => {
-      this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
-      //this.viewReportProcessData(this.htmlText.headerText);
-    });
-
-
-    // lib list
-    let endpoint = 'getPatientlistdata-approved';
-    let endpointc = 'getPatientlistdata-approved-count';
-    let data: any = {
-      "condition": {
-        "limit": 10,
-        "skip": 0
-      },
-      sort: {
-        "type": 'desc',
-        "field": 'patient_name'
-      },
-      "searchcondition": {
-        job_tickets_details: { $exists: true }
-      }
-    }
-
-    this.http.httpViaPostbyApi1(endpointc, data).subscribe((res: any) => {
-      this.billerData_count = res.count;
-    }, error => {
-      console.log('Oooops!');
-    });
-
-    this.http.httpViaPostbyApi1(endpoint, data).subscribe((res: any) => {
-      // console.log(res);
-      this.allBillerData = res.results.res;
-    }, error => {
-      console.log('Oooops!');
-    });
   }
 
   ngOnInit() {
@@ -422,8 +395,68 @@ export class JobTicketPatientReportsComponent implements OnInit {
   ngAfterViewInit() {
   }
 
-  viewReportProcessData(flag) {
-    console.log(flag);
+  viewReportProcessData(flag: string = "") {
+    this.allBillerData = [];
+    
+    // lib list
+    let endpoint = 'getPatientlistdata';
+    let endpointc = 'getPatientlistdata-count';
+    let data: any = {
+      "condition": {
+        "limit": 10,
+        "skip": 0
+      },
+      sort: {
+        "type": 'desc',
+        "field": 'patient_name'
+      },
+      "searchcondition": {
+      }
+    }
+
+    switch (flag) {
+      case 'Total Number of Reports Added':
+        break;
+      case 'Total Number of Report Processed':
+        data.status = {
+          "$gte": 8
+        };
+        break;
+      case 'Total Number of Report Signed':
+        data.status = { $eq: 14 };
+        break;
+      case 'Sent to Biller':
+        data.status = {
+          "$eq": 15
+        };
+        break;
+      case 'Reports Downloaded':
+        data.status = {
+          "$eq": 16
+        };
+        break;
+      case 'Reports Pending Sing':
+        data.status = {
+          "$eq": 11
+        };
+        break;
+      case 'Job Tickets':
+        document.getElementById("jobTickets").scrollIntoView();
+        break;
+    }
+
+    this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
+      this.billerData_count = res.count;
+    }, error => {
+      console.log('Oooops!');
+    });
+
+    this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
+      this.allBillerData = res.results.res;
+    }, error => {
+      console.log('Oooops!');
+    });
   }
 
 }
+
