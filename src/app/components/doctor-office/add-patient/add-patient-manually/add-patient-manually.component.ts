@@ -1244,6 +1244,7 @@ export class AddPatientManuallyComponent implements OnInit {
       {text: 'Admin Meetings', value: 1}
     ],
     responseData: '',
+    submitAnotherRecord: 'Add New Record',
     patientInfoFormFields: [],
     calendarInfoFormFields: {},
     primaryCondition: {}
