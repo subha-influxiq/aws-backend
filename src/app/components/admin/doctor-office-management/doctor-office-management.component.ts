@@ -117,6 +117,7 @@ export class DoctorOfficeManagementComponent implements OnInit {
 
     if(this.userData.user_type == 'doctor') {
       this.editUrl = 'doctor/doctor-office-management/edit';
+      this.libdata.basecondition = {_id:this.userData._id}
     }
     if(this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/doctor-office-management/edit';

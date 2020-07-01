@@ -181,15 +181,9 @@ export class AdminDashboardComponent implements OnInit {
     { val: "Biller Admin Hold", 'name': "Biller Admin Hold" }
   ];
   public statussearch: any = [
-<<<<<<< HEAD
     { val: 8, 'name': 'System Approved' }, 
     { val: 9, 'name': 'System Not Approved' }, 
     { val: 10, 'name': "System Hold" }
-=======
-    { val: "System Approved", 'name': 'System Approved' },
-    { val: "System Not Approved", 'name': 'System Not Approved' },
-    { val: "System Hold", 'name': "System Hold" }
->>>>>>> f97a5fe3fe93cd13cd93d0c0620472bc0e564267
   ];
   public cptcodes: any = [
     { val: "95923", 'name': '95923' },
@@ -227,7 +221,6 @@ export class AdminDashboardComponent implements OnInit {
   public SearchingSourceName: any = "data_biller_list";
   public search_settings: any = {
     selectsearch: [
-<<<<<<< HEAD
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type }, 
       { label: 'Search By Status', field: 'status_search', values: this.statussearch }, 
       { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes }, 
@@ -239,19 +232,6 @@ export class AdminDashboardComponent implements OnInit {
       { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity }, 
       { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate }, 
       { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity }, 
-=======
-      { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },
-      { label: 'Search By Status', field: 'status', values: this.statussearch },
-      { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes },
-      { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },
-      { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
-      { label: "Search By Tech", field: 'tech_name_search', values: this.techval },
-      { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval },
-      { label: "Search By Parent Name", field: 'parent_name_search', values: this.parentnameval },
-      { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity },
-      { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate },
-      { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity },
->>>>>>> f97a5fe3fe93cd13cd93d0c0620472bc0e564267
       { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }
     ],
     datesearch: [
