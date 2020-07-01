@@ -200,14 +200,9 @@ export class ApprovedPatientReportsComponent implements OnInit {
     { val: 11, 'name': 'Biller Admin Approved' },
     { val: 12, 'name': 'Biller Admin Not Approved' },
     { val: 13, 'name': "Biller Admin Hold" },
-<<<<<<< HEAD
-    { val: 14, "name": "Report Downloaded" },
-    { val: 15, "name": "Send to Biller" },
-=======
     { val: 14, 'name': "Doctor Sign" },
     { val: 15, "name": "Send to Biller" },
     { val: 16, "name": "Report Downloaded" },
->>>>>>> f97a5fe3fe93cd13cd93d0c0620472bc0e564267
   ];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
@@ -222,11 +217,7 @@ export class ApprovedPatientReportsComponent implements OnInit {
   public search_settings: any = {
     selectsearch: [
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },
-<<<<<<< HEAD
-      { label: 'Search By Status', field: 'status_search', values: this.report },
-=======
       { label: 'Search By Status', field: 'status', values: this.report },
->>>>>>> f97a5fe3fe93cd13cd93d0c0620472bc0e564267
       { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },
       { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes },
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
@@ -444,5 +435,4 @@ export class ApprovedPatientReportsComponent implements OnInit {
   viewReportProcessData(flag) {
     console.log(flag);
   }
-
 }
