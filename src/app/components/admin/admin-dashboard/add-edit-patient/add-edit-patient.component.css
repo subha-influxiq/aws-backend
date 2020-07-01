@@ -5,11 +5,8 @@
 .add_form .form_wrapper textarea{ resize: none;}
 .add_form h2{ font-family: "RobotoBlack"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }
 .add_form .submit_form { display: block; width: 100%; text-align: center; margin-top: 30px; }
-.add_form .submit_form button{ border-radius: 5px; text-transform: uppercase; font-family: "AvenirMedium"; font-size: 26px; padding: 6px 10px;
-  width: 200px; background: var(--button-color2); color: #fff;}
-.add_form .submit_form button:first-child{ margin-right: 16px;
-  background: var(--button-color1);}
-
+.add_form .submit_form button{ border-radius: 5px; text-transform: uppercase; font-family: "AvenirMedium"; font-size: 26px; padding: 6px 10px; width: 200px; background: var(--button-color2); color: #fff;}
+.add_form .submit_form button:first-child{ margin-right: 16px; background: var(--button-color1);}
 .add_form .example-form .field_setmodel{ border: 1px solid #6fa6bb;}
 .add_form .example-form .field_setmodel .legend_model{ font-family: "AvenirLight"; font-size: 20px; text-transform: uppercase; color: #03a9f5;}
 .add_form .example-form .patients_info_wrapper{ display: inline-flex; flex-wrap: wrap;}
@@ -21,40 +18,29 @@
 .add_form .test_date_wrapper .mat-card-actions,
 .add_form .test_date_wrapper .mat-card-content,
 .add_form .test_date_wrapper .mat-card-subtitle {
-  display: inline-flex;
-  margin: 0.5%;
-  vertical-align: middle;
-  justify-content: flex-start;
-  align-items: center;
-  width: 32%;
-}
-.add_form .mat-card-content label , .add_form .patient_diagnotes label{ font-family: "AvenirMedium"; color: #000; font-size: 14px;  line-height: 16px;
-  width: 125px;}
-  .add_form .test_date_wrapper .mat-card-content .subValue { margin-left: 5px; width: 24%; }
-  .add_form .test_date_wrapper{ display: flex; justify-content: flex-start; flex-wrap: wrap; }
-
+  display: inline-flex; margin: 0.5%; vertical-align: middle; justify-content: flex-start; align-items: center; width: 32%; }
+.add_form .mat-card-content label , .add_form .patient_diagnotes label{ font-family: "AvenirMedium"; color: #000; font-size: 14px; line-height: 16px; width: 125px;}
+.add_form .test_date_wrapper .mat-card-content .subValue { margin-left: 5px; width: 24%; }
+.add_form .test_date_wrapper{ display: flex; justify-content: flex-start; flex-wrap: wrap; }
 .add_form .mat-card-content .mat-checkbox { margin: 0 5px; }
 .add_form .mat-card-content ,
-.add_form .patient_diagnotes .mat-form-field {
-  position: relative;
-  text-align: left;
-
-}
+.add_form .patient_diagnotes .mat-form-field { position: relative; text-align: left; }
 .add_form .patient_diagnotes{ width: auto; flex-direction: column; display: flex; margin: 0; border: 1px solid #43cef5; background: #fff; box-sizing: border-box; padding: 10px;}
 .add_form .patient_diagnotes .example-full-width textarea{ resize: none; }
 
 .add_header button{ margin-left: auto;
   background: linear-gradient(180deg, #fac855, #e47e2a)!important;
-  text-transform: uppercase;
-  font-family: "RobotoBlack"; padding-top: 4px;
-}
-.add_form .patient_diagnotes label{ width: 100%!important; }
-
+  text-transform: uppercase; font-family: "RobotoBlack"; padding-top: 4px; }
+.add_form .patient_diagnotes label{ width: 100%!important; } 
 .auto_width{width: auto!important;}
+
 @media screen and (max-width: 1600px){
   .add_form{ width: 1320px;}
   .add_form .mat-card-content label { width: 95px; }
 
+}
+@media screen and (max-width: 1500px){
+  .add_form { width: 100%; }
 }
 @media screen and (max-width: 1460px){
   .techdashboard_header .mat-toolbar-row .quotation p { font-size: 24px; line-height: 26px;}
@@ -97,7 +83,6 @@
 }
 @media screen and (max-width: 576px){
 .add_form .submit_form button { font-size: 22px; padding: 2px; }
-
 .add_form .submit_form button { width: 100%; margin: 0; margin-top: 20px; }
 .add_form .submit_form { display: flex; flex-direction: column-reverse; text-align: center; margin-top: 0px; }
 .add_form .submit_form button:nth-child(1) { margin-right: 0; margin-top: 20px; }

@@ -1,41 +1,42 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener, inject, Input } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { HttpServiceService } from '../../../services/http-service.service';
+import { HttpServiceService } from '../../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component';
+import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material";
-import { DownloadDetailsComponent } from './download-details/download-details.component';
+import { DownloadDetailsComponent } from '../download-details/download-details.component';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatSnackBar } from '@angular/material';
-import { environment } from '../../../../environments/environment';
+import { environment } from '../../../../../environments/environment';
 
 import * as momentImported from 'moment';
 import { from } from 'rxjs';
 const moment = momentImported;
 
 @Component({
-  selector: 'app-admin-dashboard',
-  templateUrl: './admin-dashboard.component.html',
-  styleUrls: ['./admin-dashboard.component.css']
+  selector: 'app-view-all-button-list',
+  templateUrl: './view-all-button-list.component.html',
+  styleUrls: ['./view-all-button-list.component.css']
 })
 
-export class AdminDashboardComponent implements OnInit {
+export class ViewAllButtonListComponent implements OnInit {
+
+  public viewFlagData: string = "";
+  @Input()
+  set viewFlag(viewFlagData: any) {
+    this.viewFlagData = viewFlagData;
+
+    this.viewReportProcessData(this.viewFlagData);
+  }
 
   public loginUserData: any = {};
   public jwtToken: string = "";
   public htmlText: any = {
-    viewAllButtonTable: {
-      viewTable: false,
-      headerText: ""
-    }
+    headerText: "Patient Reports"
   };
   public allResolveData: any = {};
-  public shareDetails: any = {
-    baseUrl: environment.doctorSignUpBaseUrl,
-    userId: ""
-  };
 
   // Lib list
   public allBillerData: any = [];
@@ -69,9 +70,8 @@ export class AdminDashboardComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: { status: { $gt: 7, $lt: 11 } },
-    updateendpoint: 'status-update',
-    // updateendpointmany:'status-update',
+    basecondition: { status: { $gt: 10, $lt: 14 }, job_tickets_details: { $exists: true } },
+    updateendpoint: '',
     custombuttons: [
       {
         label: "View Report",
@@ -86,7 +86,7 @@ export class AdminDashboardComponent implements OnInit {
         endpoint: 'get-tech-details',
         datafields: ['first name', 'last name', 'email', 'phone', 'address', 'city', 'state', 'zip'],
         param: 'id',
-        headermessage: 'Tech Information',
+        headermessage: 'Tech Info',
       },
       {
         label: "View Codes",
@@ -102,9 +102,9 @@ export class AdminDashboardComponent implements OnInit {
         type: 'action',
         datatype: 'api',
         endpoint: 'get-doctor-details',
-        datafields: ['firstname', 'lastname', 'email', 'fax', 'Practice Name', 'NPI', 'phone', 'address', 'city', 'state', 'zip'],
+        datafields: ['firstname', 'lastname', 'email', 'fax', 'practice_name', 'npi', 'phone', 'address', 'city', 'state', 'zip'],
         param: 'id',
-        headermessage: 'Doctor Information',
+        headermessage: 'Doctor Info',
       },
       {
         label: "Doctor Office Details",
@@ -137,22 +137,23 @@ export class AdminDashboardComponent implements OnInit {
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
-    hidedeletemany: true,
-    // hidestatustogglebutton: true,
+    hidestatustogglebutton: true,
     hideviewbutton: true,
     tableheaders: [
       "patient_name",
       "status_text",
       "created_at_datetime",
+      "status_datetime",
       "cpt_addl",
       "general_details",
     ]
-  }
+  };
   public allUserData_modify_header: any = {
     "general_details": "Related Info",
     "patient_name": "Patient Name",
     "status_text": "Status",
     "created_at_datetime": "Report Added",
+    "status_datetime": "Last Status Time",
     "cpt_addl": "CPT/ Addl Hrisk C",
   };
 
@@ -160,7 +161,7 @@ export class AdminDashboardComponent implements OnInit {
   public deleteEndpoint: any = "deletesingledata";
   public apiUrl: any = environment.apiBaseUrl1;
   public tableName: any = "data_pece";
-  public datacollection: any = 'getPatientlistdata-pending-approval';
+  public datacollection: any = 'getPatientlistdata-approved';
 
   public sortdata: any = {
     "type": 'desc',
@@ -175,28 +176,16 @@ export class AdminDashboardComponent implements OnInit {
 
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
-  public status: any = [
-    { val: "Biller Admin Approved", 'name': 'Biller Admin Approved' },
-    { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' },
-    { val: "Biller Admin Hold", 'name': "Biller Admin Hold" }
-  ];
-  public statussearch: any = [
-<<<<<<< HEAD
-    { val: 8, 'name': 'System Approved' }, 
-    { val: 9, 'name': 'System Not Approved' }, 
-    { val: 10, 'name': "System Hold" }
-=======
-    { val: "System Approved", 'name': 'System Approved' },
-    { val: "System Not Approved", 'name': 'System Not Approved' },
-    { val: "System Hold", 'name': "System Hold" }
->>>>>>> f97a5fe3fe93cd13cd93d0c0620472bc0e564267
-  ];
   public cptcodes: any = [
     { val: "95923", 'name': '95923' },
     { val: "95943", 'name': '95943' },
     { val: "95921", 'name': "95921" },
     { val: "93923", 'name': "93923" },
     { val: "93922", 'name': "93922" }
+  ];
+  public status: any = [
+    { val: 1, 'name': 'Active' },
+    { val: 0, 'name': 'Inactive' }
   ];
   public parent_type: any = [
     { val: "admin", 'name': 'Admin' },
@@ -227,23 +216,9 @@ export class AdminDashboardComponent implements OnInit {
   public SearchingSourceName: any = "data_biller_list";
   public search_settings: any = {
     selectsearch: [
-<<<<<<< HEAD
-      { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type }, 
-      { label: 'Search By Status', field: 'status_search', values: this.statussearch }, 
-      { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes }, 
-      { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }, 
-      { label: "Search By Doctor", field: 'doc_name_search', values: this.authval }, 
-      { label: "Search By Tech", field: 'tech_name_search', values: this.techval }, 
-      { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval }, 
-      { label: "Search By Parent Name", field: 'parent_name_search', values: this.parentnameval }, 
-      { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity }, 
-      { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate }, 
-      { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity }, 
-=======
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },
-      { label: 'Search By Status', field: 'status', values: this.statussearch },
-      { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes },
       { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },
+      { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes },
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
       { label: "Search By Tech", field: 'tech_name_search', values: this.techval },
       { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval },
@@ -251,7 +226,6 @@ export class AdminDashboardComponent implements OnInit {
       { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity },
       { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate },
       { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity },
->>>>>>> f97a5fe3fe93cd13cd93d0c0620472bc0e564267
       { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }
     ],
     datesearch: [
@@ -267,54 +241,16 @@ export class AdminDashboardComponent implements OnInit {
     public dialog: MatDialog, public deviceService: DeviceDetectorService, private matSnackBar: MatSnackBar) {
 
     this.loginUserData["user_details"] = cookieService.getAll();
-    this.loginUserData.user_details.user_details = JSON.parse(this.loginUserData.user_details.user_details);
-    this.shareDetails.userId = this.loginUserData.user_details.user_details._id;
-    this.shareDetails.user_type = this.loginUserData.user_details.user_details.user_type;
-
     this.loginUserData["jwtToken"] = cookieService.get('jwtToken');
 
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
-
-    /* Get resolve data */
-    this.activatedRoute.data.subscribe(resolveData => {
-      this.allResolveData = resolveData.dataCount.data;
-      //this.viewReportProcessData(this.htmlText.headerText);
-    });
-
-
-    // lib list
-    let endpoint = 'getPatientlistdata-pending-approval';
-    let endpointc = 'getPatientlistdata-pending-approval-count';
-    let data: any = {
-      "condition": {
-        "limit": 10,
-        "skip": 0
-      },
-      sort: {
-        "type": 'desc',
-        "field": 'patient_name'
-      }
-    }
-
-    this.http.httpViaPostbyApi1(endpointc, data).subscribe((res: any) => {
-      this.billerData_count = res.count;
-    }, error => {
-      console.log('Oooops!');
-    });
-
-    this.http.httpViaPostbyApi1(endpoint, data).subscribe((res: any) => {
-      // console.log(res);
-      this.allBillerData = res.results.res;
-    }, error => {
-      console.log('Oooops!');
-    });
   }
 
   ngOnInit() {
     let data: any = {
       "source": "patient_data_desc_patient_name",
-      "condition": {},
+      "condition": { "status": { $gt: 10 }, job_tickets_details: { $exists: true } },
       "token": this.jwtToken
     }
     this.http.httpViaPost("datalist", data).subscribe((response: any) => {
@@ -333,6 +269,7 @@ export class AdminDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
+
         }
       }
       for (var i in response.res) {
@@ -363,6 +300,7 @@ export class AdminDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
+
         }
       }
       for (var i in response.res) {
@@ -378,6 +316,8 @@ export class AdminDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
+
+
         }
       }
       for (var i in response.res) {
@@ -393,6 +333,8 @@ export class AdminDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
+
+
         }
       }
       for (var i in response.res) {
@@ -408,6 +350,8 @@ export class AdminDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
+
+
         }
       }
       for (var i in response.res) {
@@ -423,6 +367,8 @@ export class AdminDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
+
+
         }
       }
       for (var i in response.res) {
@@ -440,6 +386,7 @@ export class AdminDashboardComponent implements OnInit {
           count = 0;
         }
       }
+
     }, error => {
       console.log('Oooops!');
     });
@@ -449,26 +396,67 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   viewReportProcessData(flag: string = "") {
-    if(flag != 'Job Tickets') {
-      this.htmlText.viewAllButtonTable.headerText = flag;
+    this.allBillerData = [];
+    
+    // lib list
+    let endpoint = 'getPatientlistdata';
+    let endpointc = 'getPatientlistdata-count';
+    let data: any = {
+      "condition": {
+        "limit": 10,
+        "skip": 0
+      },
+      sort: {
+        "type": 'desc',
+        "field": 'patient_name'
+      },
+      "searchcondition": {
+      }
     }
+
     switch (flag) {
       case 'Total Number of Reports Added':
         break;
       case 'Total Number of Report Processed':
+        data.status = {
+          "$gte": 8
+        };
         break;
       case 'Total Number of Report Signed':
+        data.status = { $eq: 14 };
         break;
       case 'Sent to Biller':
+        data.status = {
+          "$eq": 15
+        };
         break;
       case 'Reports Downloaded':
+        data.status = {
+          "$eq": 16
+        };
         break;
       case 'Reports Pending Sing':
+        data.status = {
+          "$eq": 11
+        };
         break;
       case 'Job Tickets':
         document.getElementById("jobTickets").scrollIntoView();
         break;
     }
+
+    this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
+      this.billerData_count = res.count;
+    }, error => {
+      console.log('Oooops!');
+    });
+
+    this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
+      this.allBillerData = res.results.res;
+    }, error => {
+      console.log('Oooops!');
+    });
   }
 
 }
+

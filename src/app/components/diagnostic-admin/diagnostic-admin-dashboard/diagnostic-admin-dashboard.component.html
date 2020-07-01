@@ -175,8 +175,8 @@
           <p>Total No of <br>
             Reports Added
           </p>
-          <h2> {{ allResolveData.total_reports }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Reports Uploaded')">view all</button>
+          <h2> {{ allResolveData.total_reports_added }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total No of Reports Added')">view all</button>
         </span>
       </mat-card-content>
 
@@ -191,8 +191,8 @@
           <p>Total No of <br>
             Report Processed
           </p>
-          <h2> {{ allResolveData.total_reports - allResolveData.total_pdf_to_images_not_process }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Report Processed')">view all</button>
+          <h2> {{ allResolveData.total_report_processed }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total No of Report Processed')">view all</button>
         </span>
       </mat-card-content>
 
@@ -206,8 +206,8 @@
           <p>Total No of <br>
             Report Signed
           </p>
-          <h2> {{ allResolveData.total_sign_reports }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
+          <h2> {{ allResolveData.total_report_signed }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Total No of Report Signed')">view all</button>
         </span>
       </mat-card-content>
 
@@ -221,8 +221,8 @@
           <p> Sent to <br>
             Biller
           </p>
-          <h2> {{ allResolveData.total_send_to_supar_biller_reports }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Super Bill')">view all</button>
+          <h2> {{ allResolveData.total_sent_to_biller }} </h2>
+          <button mat-flat-button (click)="viewReportProcessData('Sent to Biller')">view all</button>
         </span>
       </mat-card-content>
 
@@ -235,7 +235,7 @@
         <span class="container_wrapper">
           <p> Reports Downloaded </p>
           <h2> {{ allResolveData.total_reports_download }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Download Bill')">view all</button>
+          <button mat-flat-button (click)="viewReportProcessData('Reports Downloaded')">view all</button>
         </span>
       </mat-card-content>
 
