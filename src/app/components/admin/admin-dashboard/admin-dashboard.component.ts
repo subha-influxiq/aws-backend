@@ -195,7 +195,7 @@ export class AdminDashboardComponent implements OnInit {
   public parent_type: any = [
     { val: "admin", 'name': 'Admin' },
     { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },
-    { val: "distributors", 'name': 'Distributor' },
+    { val: "distributor", 'name': 'Distributor' },
     { val: "doctor_group", 'name': 'Doctor Group' }
   ];
   public report_type: any = [
@@ -205,9 +205,9 @@ export class AdminDashboardComponent implements OnInit {
     { val: "CMAT with BP Cuffs", 'name': 'CMAT with BP Cuffs' }
   ];
   public report: any = [
-    { val: "Biller Admin Approved", 'name': 'Biller Admin Approved' },
-    { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' },
-    { val: "Biller Admin Hold", 'name': "Biller Admin Hold" }
+    { val: 11, 'name': 'Biller Admin Approved' },
+    { val: 12, 'name': 'Biller Admin Not Approved' },
+    { val: 13, 'name': "Biller Admin Hold" }
   ];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];

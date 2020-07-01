@@ -115,6 +115,10 @@ export class ListingBillerComponent implements OnInit {
       this.libdata.notes.user = this.userData._id;
       this.libdata.notes.currentuserfullname = this.userData.center_name;
     }
+    if(this.userData.user_type == 'doctor') {
+      this.editUrl = 'doctor/biller-management/edit';
+      this.libdata.basecondition = {doctor_id:this.userData._id,type:"doctor"}
+    }
     if (this.userData.user_type == 'doctor_group') {
       this.editUrl = 'doctor-group/biller-management/edit';
       this.field = { 'parent_id': this.userData._id };
@@ -138,12 +142,7 @@ export class ListingBillerComponent implements OnInit {
       this.libdata.notes.currentuserfullname = this.userData.firstname +this.userData.lastname;
     }
 
-    this.libdata.basecondition = this.field;
-
-    if (this.userData.user_type == 'doctor') {
-      this.editUrl = 'doctor/biller-management/edit';
-    }
-
+    // this.libdata.basecondition = this.field;
     this.apiUrl = httpService.baseUrl;
   }
 

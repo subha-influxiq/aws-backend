@@ -108,7 +108,7 @@ export class ListDoctorComponent implements OnInit {
   "pagecount":1
 };
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
-  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },{ val: "distributor", 'name': 'Distributors' },{ val: "doctor_group", 'name': 'Doctors Group Admin' }];
+  public parent_type: any = [{ val: "admin", 'name': 'Admin' }, { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },{ val: "distributors", 'name': 'Distributors' },{ val: "doctor_group", 'name': 'Doctors Group Admin' }];
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
@@ -131,7 +131,6 @@ export class ListDoctorComponent implements OnInit {
       this.libdata.notes.user = this.userData._id;
       this.libdata.notes.currentuserfullname = this.userData.center_name;
     }
-
     if(this.userData.user_type == 'admin') {
       if(this.activatedRoute.snapshot.routeConfig.path == "admin/sales-person/doctor-management") {
         this.field = {parent_user_type:"sales_person"}
@@ -141,7 +140,7 @@ export class ListDoctorComponent implements OnInit {
       } else {
       this.search_settings.textsearch.push({ label: "Search By Parent Name", field: 'parent_name_search' });
       }
-      this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type });
+      this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_user_type', values: this.parent_type });
       this.libdata.tableheaders.splice(3,0,"parent_name");
       this.libdata.tableheaders.splice(4,0,"parent_type");
       this.libdata.notes.user = this.userData._id;
