@@ -180,7 +180,7 @@ export class ApprovedPatientReportsComponent implements OnInit {
   public parent_type: any = [
     { val: "admin", 'name': 'Admin' },
     { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },
-    { val: "distributors", 'name': 'Distributor' },
+    { val: "distributor", 'name': 'Distributor' },
     { val: "doctor_group", 'name': 'Doctor Group' },
   ];
   public cptcodes: any = [
@@ -243,10 +243,10 @@ export class ApprovedPatientReportsComponent implements OnInit {
     this.loginUserData["user_details"] = cookieService.getAll();
     this.loginUserData["jwtToken"] = cookieService.get('jwtToken');
 
-    / Get Auth Token /
+    /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
 
-    / Get resolve data /
+    /* Get resolve data */
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
       //this.viewReportProcessData(this.htmlText.headerText);
