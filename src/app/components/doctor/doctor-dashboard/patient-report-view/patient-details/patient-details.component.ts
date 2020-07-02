@@ -1197,57 +1197,108 @@ export class PatientDetailsComponent implements OnInit {
       }
     ];
 
-    console.log("Print Data: ", this.orginalReportDetails.patient_details[0]);
-    let keys = Object.keys(this.orginalReportDetails.patient_details[0]);
-    keys.splice(0, 1);
-    console.log('keys', keys);
+    // console.log("Print Data: ", this.orginalReportDetails.patient_details[0]);
+    // let keys = Object.keys(this.orginalReportDetails.patient_details[0]);
+    // keys.splice(0, 1);
+    //
+    // let extraFields = [];
+    // for (let i in patientInfoFormFields) {
+    //     extraFields.push(patientInfoFormFields[i].name)
+    // }
+    // for (let i in checkboxFields) {
+    //   for (let j in checkboxFields[i].checkItems) {
+    //       extraFields.push(checkboxFields[i].checkItems[j].name)
+    //   }
+    // }
+    // extraFields.push("booking_date", "insurance_id", "insurance_type", "insurance_name_input", "insurance_type_input", "parent_type", "startdate", "slot", "reqTimezone", "attendees", "additional_notes", "timezoneName", "status", "startdate_unix", "doctor_id", "doctors_office_id", "tech_id", "parent_id", "doctor_details", "doctor_office_details")
+    // extraFields = keys.filter(value => !extraFields.includes(value));
+    //
+    // // console.log('extraFields', extraFields);
+    //
+    // let otherFields: any = [];
+    // for (let i in extraFields) {
+    //   let label = extraFields[i].replace('_', ' ');
+    //   otherFields.push({
+    //     type: 'input', name: extraFields[i], label: label,
+    //     value: this.orginalReportDetails.patient_details[0][extraFields[i]], disabled: true
+    //   });
+    //   if (i == '0') {
+    //     otherFields[i] = Object.assign(otherFields[i], {caption: 'Other Information'})
+    //   }
+    // }
 
-    let extraFields = [];
-    for (let i in patientInfoFormFields) {
-      console.log('index', keys.indexOf(patientInfoFormFields[i].name))
-      if (keys.indexOf(patientInfoFormFields[i].name) == -1)
-        extraFields.push(patientInfoFormFields[i].name)
-    }
-    console.log(keys.indexOf('www'))
-
-    for (let i in checkboxFields) {
-      for (let j in checkboxFields[i].checkItems) {
-        console.log(keys.indexOf(checkboxFields[i].checkItems[j].name))
-        if (keys.indexOf(checkboxFields[i].checkItems[j].name) == -1)
-          extraFields.push(checkboxFields[i].checkItems[j].name)
-      }
-    }
-    console.log('extraFields', extraFields);
-
-
-    let requestData: any = {
-      token: this.configData.jwtToken,
-      condition: {
-        _id: this.orginalReportDetails.patient_details[0].insurance_id
-      },
+    let otherFields: any = [];
+    let data2: any = {
+      condition: {user_type: 'patient_information'},
       source: 'data_pece'
     }
+    this.httpService.postRequest('get-data', data2).subscribe((response: any) => {
+      // console.log('response', response);
+      for (let i in response.res) {
+        // let label = response.res[i].replace('_', ' ');
+        if (this.orginalReportDetails.patient_details[0][response.res[i].label] !== undefined) {
+          switch (response.res[i].type) {
 
-    if (this.orginalReportDetails.patient_details[0].insurance_id != '') {
-      this.httpService.postRequest('get-data', requestData).subscribe((response: any) => {
-        let insurance_name = response.res[0].insurancename;
-        patientInfoFormFields.push({
-          type: 'input', name: 'insurance_name', label: 'Insurance Name',
-          value: insurance_name, disabled: true
-        });
+            case 'checkbox':
+              otherFields.push({
+                type: 'checkbox',
+                label: response.res[i].description,
+                checkItems: [
+                  {
+                    name: response.res[i].label,
+                    value: this.orginalReportDetails.patient_details[0][response.res[i].label],
+                    label: '',
+                    labelPosition: 'before'
+                  }
+                ]
+              });
+              break;
+
+            case 'textfield':
+              otherFields.push({
+                type: 'input', name: response.res[i].label, label: response.res[i].description,
+                value: this.orginalReportDetails.patient_details[0][response.res[i].label], disabled: true
+              });
+              break;
+          }
+
+          if (otherFields.length == 0) {
+            otherFields[i] = Object.assign(otherFields[i], {caption: 'Other Information'})
+          }
+        }
+      }
+      // })
+
+      let requestData: any = {
+        token: this.configData.jwtToken,
+        condition: {
+          _id: this.orginalReportDetails.patient_details[0].insurance_id
+        },
+        source: 'data_pece'
+      }
+
+      if (this.orginalReportDetails.patient_details[0].insurance_id != '') {
+        this.httpService.postRequest('get-data', requestData).subscribe((response: any) => {
+          let insurance_name = response.res[0].insurancename;
+          patientInfoFormFields.push({
+            type: 'input', name: 'insurance_name', label: 'Insurance Name',
+            value: insurance_name, disabled: true
+          });
+          this.configData = Object.assign(this.configData,
+            {
+              patientInfoFormFields: patientInfoFormFields.concat(otherFields, checkboxFields)
+            }
+          );
+        })
+      } else {
+        console.log('otherFields', otherFields);
         this.configData = Object.assign(this.configData,
           {
-            patientInfoFormFields: patientInfoFormFields.concat(checkboxFields)
+            patientInfoFormFields: patientInfoFormFields.concat(otherFields, checkboxFields)
           }
         );
-      })
-    } else {
-      this.configData = Object.assign(this.configData,
-        {
-          patientInfoFormFields: patientInfoFormFields.concat(checkboxFields)
-        }
-      );
-    }
+      }
+    });
   }
 
 }

@@ -217,6 +217,14 @@ const routes: Routes = [
   path: 'admin-biller/dashboard',
   component: AdminbillerDashboardComponent,
   canActivate: [AuthguardService],
+    resolve: { dataCount: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'admin-biller-dashboard'
+    },
 },
 {
   path: 'admin-biller/patient-record-report/:_id',
@@ -1567,9 +1575,7 @@ const routes: Routes = [
     data: {
       requestcondition: {
         source: 'data_pece',
-        condition: {
-          "report_type": { $exists: true }
-        },
+        condition: {},
       },
       endpoint: 'tech-dashboard'
     },
@@ -2166,14 +2172,14 @@ const routes: Routes = [
     path: 'sales-person/dashboard',
     component: SalesPersonDashboardComponent,
     canActivate: [AuthguardService],
-    // resolve: { dataCount: ResolveService },
-    // data: {
-    //   requestcondition: {
-    //     source: 'data_pece',
-    //     condition: {}
-    //   },
-    //   endpoint: 'diagnostic-admin-dashboard'
-    // },
+    resolve: { dataCount: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'sales-person-dashboard'
+    },
   },
 
   /* Faq */

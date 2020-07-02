@@ -89,9 +89,7 @@ export class DistributorsDashboardComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: {
-      status: { "$gt": 10 }
-    },
+    basecondition: {},
     updateendpoint: 'status-update-doctor',
     updateendpointmany: 'status-update-biller',
     custombuttons: [
@@ -442,37 +440,41 @@ export class DistributorsDashboardComponent implements OnInit {
         "limit": 10,
         "skip": 0
       },
-      sort: {
+      "sort": {
         "type": 'desc',
         "field": 'patient_name'
       },
-      parent_id: this.loginUserData.user_details._id
+      "parent_id": this.loginUserData.user_details._id
     }
 
     switch (flag) {
       case 'Reports Uploaded':
-        data.status = {
-          "$in": [8, 9, 10]
-        };
+        this.libdata.basecondition.status = { "$in": [8, 9, 10] };
+        data.status = { "$in": [8, 9, 10] };
         break;
       case 'Report Processed':
-        data.status = {
-          "$in": [11, 12, 13, 14, 15]
-        };
+        this.libdata.basecondition.status = { "$in": [11, 12, 13] };
+        data.status = { "$in": [11, 12, 13] };
         break;
       case 'Report Signed':
+        this.libdata.basecondition.doctor_signature = { "$exists": true };
         data.doctor_signature = { $exists: true };
         break;
       case 'Super Bill':
-        data.biller_id = { $exists: true };
+        this.libdata.basecondition.biller_id = { "$exists": true };
+        data.biller_id = { "$exists": true };
         break;
       case 'Download Bill':
+        this.libdata.basecondition.status = 11;
+        this.libdata.basecondition.download_count = { "$exists": true };
         data.status = 11;
-        data.download_count = { $exists: true };
+        data.download_count = { "$exists": true };
         break;
       case 'Reports Pending Sing':
+        this.libdata.basecondition.status = 11;
+        this.libdata.basecondition.download_count = { "$exists": false };
         data.status = 11;
-        data.download_count = { $exists: false };
+        data.download_count = { "$exists": false };
         break;
     }
 

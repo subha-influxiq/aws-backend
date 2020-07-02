@@ -1860,7 +1860,8 @@ export class AddPatientManuallyComponent implements OnInit {
             label: 'Insurance name',
             value: '',
             options: insuranceData,
-            caption: 'Insurance Information'
+            caption: 'Insurance Information',
+            validators: [Validators.required]
           },
           {
             type: 'select',
@@ -1870,7 +1871,8 @@ export class AddPatientManuallyComponent implements OnInit {
             value: '',
             isDependent: true,
             dependentOn: 'insurance_id',
-            options: insuranceTypeData
+            options: insuranceTypeData,
+            validators: [Validators.required]
           },
           {
             type: 'input',
