@@ -240,10 +240,10 @@ export class AdminbillerDashboardComponent implements OnInit {
     this.jwtToken = cookieService.get('jwtToken');
 
     /* Get resolve data */
-    // this.activatedRoute.data.subscribe(resolveData => {
-    // this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
-    //this.viewReportProcessData(this.htmlText.headerText);
-    // });
+    this.activatedRoute.data.subscribe(resolveData => {
+      this.allResolveData = resolveData.dataCount.data;
+      //this.viewReportProcessData(this.htmlText.headerText);
+    });
 
 
     // lib list
