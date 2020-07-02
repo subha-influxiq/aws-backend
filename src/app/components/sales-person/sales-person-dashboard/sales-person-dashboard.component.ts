@@ -112,6 +112,9 @@ export class SalesPersonDashboardComponent implements OnInit {
     };
   // ====================================================================
 
+
+  public allResolveData: any = {};
+
   constructor(private http: HttpServiceService, private cookieService: CookieService, 
     private router: Router,public activatedRoute : ActivatedRoute) {
 
@@ -127,6 +130,12 @@ export class SalesPersonDashboardComponent implements OnInit {
     // console.log('libdata',this.libdata);
 
     this.apiUrl = http.baseUrl;
+
+
+    /* Get resolve data */
+    this.activatedRoute.data.subscribe(resolveData => {
+      this.allResolveData = resolveData.dataCount.data;
+    });
   }
 
   ngOnInit() {
