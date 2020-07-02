@@ -83,6 +83,9 @@ export class PastAppoinmentsComponent implements OnInit {
         {key: 'booking_date', val: 'Booking Date'},
         {key: 'additional_notes', val: 'Additional Notes'},
 
+        {key: 'insurance_name', val: 'Insurance Name'},
+        {key: 'insurance_type_name', val: 'Insurance Type'},
+
         {key: 'angina_six_months', val: 'Angina(6 Months)'},
         {key: 'angina_today', val: 'Angina(Today)'},
         {key: 'bv_six_months', val: 'Blurred Vision(6 Months)'},
@@ -124,8 +127,14 @@ export class PastAppoinmentsComponent implements OnInit {
 
         {key: 'up_six_months', val: 'Urinary Problems(6 Months)'},
         {key: 'up_today', val: 'Urinary Problems(Today)'},
-        {key: 'angina_six_months', val: 'Angina (severe chest pain, often spreading to shoulder, arm, back, neck, or jaw)(6 Months)'},
-        {key: 'angina_today', val: 'Angina (severe chest pain, often spreading to shoulder, arm, back, neck, or jaw)(Today)'},
+        {
+          key: 'angina_six_months',
+          val: 'Angina (severe chest pain, often spreading to shoulder, arm, back, neck, or jaw)(6 Months)'
+        },
+        {
+          key: 'angina_today',
+          val: 'Angina (severe chest pain, often spreading to shoulder, arm, back, neck, or jaw)(Today)'
+        },
         {key: 'cptgawr_six_months', val: 'Chest Pain that goes away with rest(6 Months)'},
         {key: 'cptgawr_today', val: 'Chest Pain that goes away with rest(Today)'},
         {key: 'hrtbn_six_months', val: 'Heartburn(6 Months)'},
@@ -227,20 +236,37 @@ export class PastAppoinmentsComponent implements OnInit {
       }],
 
       // this is use for  select search
-      selectsearch: [{
-        label: 'Search By Status',
-        field: 'status',
-        values: [{val: 0, 'name': 'Pending'}, {val: 1, 'name': 'Approved'}, {val: 2, 'name': 'Canceled'}]
-      }],
+      selectsearch: [
+        {
+          label: 'Search By Status',
+          field: 'status',
+          values: [{val: 0, 'name': 'Pending'}, {val: 1, 'name': 'Completed'}, {val: 2, 'name': 'Canceled'}]
+        },
+        {
+          label: 'Search By Parent Type',
+          field: 'parent_type',
+          values: [
+            {val: 'admin', name: 'Admin'},
+            {val: 'distributor', name: 'Distributor'},
+            {val: 'diagnostic_admin', name: 'Diagnostic Admin'},
+            {val: 'doctor_group', name: 'Doctor Group Admin'},
+          ]
+        },
+        {
+          label: 'Search By Booking Type',
+          field: 'is_google_event',
+          values: [{val: 'No', name: 'Manual'}, {val: 'Yes', name: 'Calendar'}]
+        }
+      ],
 
       // this is use for  text search
-      textsearch: [{label: "Search By Patient Name", field: 'patient_name'}],
+      textsearch: [{label: "Search By Patient Name", field: 'patient_name_search'}],
 
       // this is use for  Autocomplete search
       search: [this.searchByDoctor]
     },
-    statusarray: [{val: 0, 'name': 'Pending'}, {val: 1, 'name': 'Approved'}, {val: 2, 'name': 'Canceled'}],
-    detail_skip_array: ['_id', 'username', 'useremail', 'startdate_unix', 'can_reschedule', 'is_google_event', 'doctor_id', 'doctors_office_id', 'doctor_name', 'doctors_office_name', 'tech_id', 'tech_name', 'timezoneName', 'parent_id', 'parent_type', 'userid', 'username', 'start_datetime_unix']
+    statusarray: [{val: 0, 'name': 'Pending'}, {val: 1, 'name': 'Completed'}, {val: 2, 'name': 'Canceled'}],
+    detail_skip_array: ['_id', 'username', 'useremail', 'startdate_unix', 'can_reschedule', 'is_google_event', 'doctor_id', 'doctors_office_id', 'doctor_name', 'doctors_office_name', 'tech_id', 'tech_name', 'timezoneName', 'parent_id', 'parent_type', 'userid', 'username', 'start_datetime_unix', 'insurance_id', 'insurance_type', 'status']
   };
 
 
@@ -249,6 +275,22 @@ export class PastAppoinmentsComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    // set tech and doctors office search for admin
+    if (JSON.parse(this.cookie.get('user_details')).user_type === 'admin') {
+      this.configData.search_settings.search.push(
+        {
+          label: "Search By Tech", field: 'tech_id',
+          values: [],
+          serversearchdata: {endpoint: 'get-tech-for-autocomplete-search'}
+        },
+        {
+          label: "Search By Doctor Office", field: 'doctors_office_id',
+          values: [],
+          serversearchdata: {endpoint: 'get-doctor-office-for-autocomplete-search'}
+        }
+      );
+    }
     // load doctor search dynamically
     setTimeout(() => {
       this.httpService.postRequest('get-doctor-info', {condition: {doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id}}).subscribe((response: any) => {
