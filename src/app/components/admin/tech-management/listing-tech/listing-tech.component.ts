@@ -126,6 +126,8 @@ export class ListingTechComponent implements OnInit {
     if(this.userData.user_type == 'doctor') {
       this.editUrl = 'doctor/tech-management/edit';
       this.libdata.basecondition = {doctor_id:this.userData._id,type:"doctor"}
+      this.libdata.notes.user = this.userData._id;
+      this.libdata.notes.currentuserfullname = this.userData.firstname +this.userData.lastname;
     }
     if(this.userData.user_type == 'doctor_group') {
       this.editUrl = 'doctor-group/tech-management/edit';

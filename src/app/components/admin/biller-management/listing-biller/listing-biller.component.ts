@@ -48,7 +48,7 @@ export class ListingBillerComponent implements OnInit {
       listendpoint: "listnotedata",
       user: "",
       currentuserfullname: " ",
-      header: 'User',
+      header: 'fullname',
   },
     // hideeditbutton:true,// all these button options are optional not mandatory
     //hidedeletebutton:true,
@@ -117,7 +117,9 @@ export class ListingBillerComponent implements OnInit {
     }
     if(this.userData.user_type == 'doctor') {
       this.editUrl = 'doctor/biller-management/edit';
-      this.libdata.basecondition = {doctor_id:this.userData._id,type:"doctor"}
+      this.libdata.basecondition = {doctor_id:this.userData._id,type:"doctor"};
+      this.libdata.notes.user = this.userData._id;
+      this.libdata.notes.currentuserfullname = this.userData.firstname +this.userData.lastname;
     }
     if (this.userData.user_type == 'doctor_group') {
       this.editUrl = 'doctor-group/biller-management/edit';
@@ -144,6 +146,7 @@ export class ListingBillerComponent implements OnInit {
 
     // this.libdata.basecondition = this.field;
     this.apiUrl = httpService.baseUrl;
+    console.log("+++++",this.libdata.notes);
   }
 
   ngOnInit() {
