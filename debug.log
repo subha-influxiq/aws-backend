@@ -377,3 +377,9 @@
 [0605/135128.894:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
 [0615/230302.761:ERROR:file_io.cc(89)] ReadExactly: expected 36, observed 0
 [0618/210817.158:ERROR:http_transport_win.cc(349)] WinHttpWriteData: The operation completed successfully. (0x0)
+[0702/011334.910:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0702/011334.925:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0702/011334.800:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0702/011335.332:ERROR:exception_snapshot_win.cc(98)] thread ID 32 not found in process
+[0702/011335.332:ERROR:exception_snapshot_win.cc(98)] thread ID 516 not found in process
+[0702/011335.332:ERROR:exception_snapshot_win.cc(98)] thread ID 1384 not found in process

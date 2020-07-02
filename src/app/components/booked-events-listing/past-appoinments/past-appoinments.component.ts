@@ -247,16 +247,9 @@ export class PastAppoinmentsComponent implements OnInit {
           field: 'parent_type',
           values: [
             {val: 'admin', name: 'Admin'},
-            {val: 'admin_biller', name: 'Admin Biller'},
-            {val: 'biller', name: 'Biller'},
             {val: 'distributor', name: 'Distributor'},
             {val: 'diagnostic_admin', name: 'Diagnostic Admin'},
-            {val: 'doctor', name: 'Doctor'},
-            {val: 'doctor_office', name: 'Doctor Office'},
-            {val: 'doctor_group', name: 'Doctor Group'},
-            {val: 'doctors_group_admin', name: 'Doctor Group Admin'},
-            {val: 'sales_person', name: 'Sales Person'},
-            {val: 'tech', name: 'Tech'}
+            {val: 'doctor_group', name: 'Doctor Group Admin'},
           ]
         },
         {
@@ -285,7 +278,7 @@ export class PastAppoinmentsComponent implements OnInit {
 
     // set tech and doctors office search for admin
     if (JSON.parse(this.cookie.get('user_details')).user_type === 'admin') {
-      this.configData.libdata.search_settings.search.push(
+      this.configData.search_settings.search.push(
         {
           label: "Search By Tech", field: 'tech_id',
           values: [],

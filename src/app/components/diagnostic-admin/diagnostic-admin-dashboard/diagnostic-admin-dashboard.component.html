@@ -115,7 +115,7 @@
         <span class="counter_with_tool">
           <h4 class="dataCount"> {{ allResolveData.total_appointments_pending }}</h4>
           <span class="tolTip">
-            <a mat-raised-button #AppPending="matTooltip" matTooltip="Comming .." matTooltipPosition="above"
+            <a mat-raised-button #AppPending="matTooltip" matTooltip="Data listed for the total number of patient appointments pending. " matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="AppPending.toggle()" class="toggle_btn" aria-label=" toggle section">
@@ -131,31 +131,7 @@
       </span>
     </mat-card-content>
 
-    <mat-card-content class="itemsection">
-      <span class="icon">
-        <img src="../../../../assets/images/appointmentsCompletedIcon.png">
-      </span>
-      <span class="counteer">
-        <span class="counter_with_tool">
-          <h4 class="dataCount"> {{ allResolveData.total_appointments_completed }}</h4>
-          <span class="tolTip">
-            <a mat-raised-button #TACompleted="matTooltip" matTooltip="Comming .." matTooltipPosition="above"
-              aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
-            </a>
-            <a mat-button (click)="TACompleted.toggle()" class="toggle_btn" aria-label=" toggle section">
-              <span class="material-icons"> help_outline </span>
-            </a>
-          </span>
-
-        </span>
-      </span>
-      <span class="button_wrapper">
-        <p class="doctorNumber">Total Appointments<br> Completed</p>
-        <button mat-flat-button [routerLink]="['/diagnostic-admin/tech-management']">View Details</button>
-      </span>
-    </mat-card-content>
-
-
+  
   </mat-card-content>
 
 
@@ -174,8 +150,22 @@
         <span class="container_wrapper">
           <p>Total No of <br>
             Reports Added
-          </p>
-          <h2> {{ allResolveData.total_reports_added }} </h2>
+          </p> 
+
+          <span class="counter_with_tool">
+            <h2> {{ allResolveData.total_reports_added }} </h2>
+            <span class="tolTip">
+              <a mat-raised-button #total_biller="matTooltip"
+                matTooltip="The data listed for the total number of reports added by the biller.
+                "
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="total_biller.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
+          
           <button mat-flat-button (click)="viewReportProcessData('Total No of Reports Added')">view all</button>
         </span>
       </mat-card-content>
@@ -191,7 +181,19 @@
           <p>Total No of <br>
             Report Processed
           </p>
-          <h2> {{ allResolveData.total_report_processed }} </h2>
+         
+          <span class="counter_with_tool">
+            <h2> {{ allResolveData.total_report_processed }} </h2>
+            <span class="tolTip">
+              <a mat-raised-button #TNRProcess="matTooltip"
+                matTooltip="The data listed for the total number of reports processed by the system."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="TNRProcess.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <button mat-flat-button (click)="viewReportProcessData('Total No of Report Processed')">view all</button>
         </span>
       </mat-card-content>
@@ -203,10 +205,22 @@
           </mat-card-content>
         </span>
         <span class="container_wrapper">
-          <p>Total No of <br>
+          <p>Total Number of <br>
             Report Signed
           </p>
-          <h2> {{ allResolveData.total_report_signed }} </h2>
+         
+          <span class="counter_with_tool">
+            <h2> {{ allResolveData.total_report_signed }} </h2>
+            <span class="tolTip">
+              <a mat-raised-button #TNRsigned="matTooltip"
+                matTooltip="The data listed for the total number of reports signed by the doctors."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="TNRsigned.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <button mat-flat-button (click)="viewReportProcessData('Total No of Report Signed')">view all</button>
         </span>
       </mat-card-content>
@@ -221,7 +235,19 @@
           <p> Sent to <br>
             Biller
           </p>
-          <h2> {{ allResolveData.total_sent_to_biller }} </h2>
+          
+          <span class="counter_with_tool">
+            <h2> {{ allResolveData.total_sent_to_biller }} </h2>
+            <span class="tolTip">
+              <a mat-raised-button #SendTOBiller="matTooltip"
+                matTooltip="The data listed for the total no. of reports sent to the billers."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="SendTOBiller.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <button mat-flat-button (click)="viewReportProcessData('Sent to Biller')">view all</button>
         </span>
       </mat-card-content>
@@ -234,7 +260,19 @@
         </span>
         <span class="container_wrapper">
           <p> Reports Downloaded </p>
-          <h2> {{ allResolveData.total_reports_download }} </h2>
+         
+          <span class="counter_with_tool">
+            <h2> {{ allResolveData.total_reports_download }} </h2>
+            <span class="tolTip">
+              <a mat-raised-button #ReportsDownloaded="matTooltip"
+                matTooltip="The data listed for the number of reports that are downloaded."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)="ReportsDownloaded.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <button mat-flat-button (click)="viewReportProcessData('Reports Downloaded')">view all</button>
         </span>
       </mat-card-content>
@@ -247,7 +285,19 @@
         </span>
         <span class="container_wrapper">
           <p> Reports Pending Sing </p>
-          <h2> {{ allResolveData.total_not_sign_reports }} </h2>
+          
+          <span class="counter_with_tool">
+            <h2> {{ allResolveData.total_not_sign_reports }} </h2>
+            <span class="tolTip">
+              <a mat-raised-button #ReportsPendingSing="matTooltip"
+                matTooltip="The data listed for the total no. of reports that are yet to be signed by the doctors."
+                matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+              </a>
+              <a mat-button (click)=" ReportsPendingSing.toggle()" class="toggle_btn" aria-label=" toggle section">
+                <span class="material-icons"> help_outline </span>
+              </a>
+            </span>
+          </span>
           <button mat-flat-button (click)="viewReportProcessData('Reports Pending Sing')">view all</button>
         </span>
       </mat-card-content>
@@ -262,10 +312,23 @@
   <!-- All Data listing start here(default listing) -->
   <mat-card-content class="table_wrapper">
 
-    <mat-toolbar class="top_header">
+    <!-- <mat-toolbar class="top_header">
       <h2> {{ htmlText.headerText }} </h2>
-    </mat-toolbar>
-
+    </mat-toolbar> -->
+    <mat-card-content class="headr_tagh">
+      <span class="counter_with_tool">
+        <h1>Patient Reports</h1>
+        <span class="tolTip">
+          <a mat-raised-button #pendingActions="matTooltip"
+            matTooltip="The reports listed here are reviewed by Admin."
+            matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+          </a>
+          <a mat-button (click)="pendingActions.toggle()" class="toggle_btn" aria-label=" toggle section">
+            <span class="material-icons"> help_outline </span>
+          </a>
+        </span>
+      </span>
+    </mat-card-content>
     <mat-card-content class="admin_dashboard">
       <!-- table -->
       <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData"
