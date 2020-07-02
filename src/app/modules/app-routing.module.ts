@@ -217,6 +217,14 @@ const routes: Routes = [
   path: 'admin-biller/dashboard',
   component: AdminbillerDashboardComponent,
   canActivate: [AuthguardService],
+    resolve: { dataCount: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'admin-biller-dashboard'
+    },
 },
 {
   path: 'admin-biller/patient-record-report/:_id',

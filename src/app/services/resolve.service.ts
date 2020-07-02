@@ -129,6 +129,16 @@ export class ResolveService implements Resolve<any> {
       }
     }
     /* This one is for Sales Person End */
+
+    /* This one is for Admin Biller Start */
+    if(route.url[0].path == 'admin-biller') {
+      switch(route.url[1].path) {
+        case 'dashboard':
+          requestData.condition['admin_biller_id'] = userData._id;
+          break;
+      }
+    }
+    /* This one is for Admin Biller End */
     /////////////////////////////////////////////////////////////////////
 
 
