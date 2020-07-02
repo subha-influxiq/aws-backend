@@ -5,29 +5,6 @@
   <!-- <app-doctor-signup-share [shareDetails]="shareDetails"></app-doctor-signup-share> -->
 
   <mat-card-content class="sales_person_db">
-    <!-- <section class="shareLi">
-      <span class="in_w">
-        <h2>SHARE LINK FOR DOCTOR SIGN UP</h2>
-        <mat-card-content class="input_w">
-          <mat-form-field>
-            <input matInput type="text" placeholder="Ex: www.abcd.com/025dghdk" readonly>
-          </mat-form-field>
-          <button mat-button><i class="fas fa-unlink"></i></button>
-        </mat-card-content>
-        <mat-card-content class="social_media_wrapper">
-          <button mat-button matTooltip="Share in Facebook" aria-label="Share links" matTooltipPosition="above"> <i
-              class="fab fa-facebook-square"></i></button>
-          <button mat-button matTooltip="Share in Twitter" aria-label="Share links" matTooltipPosition="above"> <i
-              class="fab fa-twitter-square"></i> </button>
-          <button mat-button matTooltip="Share in Linkedin" aria-label="Share links" matTooltipPosition="above"> <i
-              class="fab fa-linkedin"></i></button>
-          <button mat-button matTooltip="Share in Tumbler" aria-label="Share links" matTooltipPosition="above"><i
-              class="fab fa-tumblr-square"></i></button>
-        </mat-card-content>
-      </span>
-    </section> -->
-
-
 
     <mat-card-content class="admin_superbillsection">
       <h1>Encounter Form Status</h1>
@@ -44,7 +21,7 @@
             <p>Total No of <br>
               Tests Done
             </p>
-            <h2> 1</h2>
+            <h2> {{ allResolveData.testsDoneCount }} </h2>
             <button mat-flat-button>view all</button>
           </span>
         </mat-card-content>
@@ -60,7 +37,7 @@
             <p>Total No of <br>
               CPT Codes Found
             </p>
-            <h2> 23 </h2>
+            <h2> {{ allResolveData.cptCodesFoundCount }} </h2>
             <button mat-flat-button>view all</button>
           </span>
         </mat-card-content>
@@ -75,7 +52,7 @@
             <p>Total No of <br>
               CPT Codes Not Found
             </p>
-            <h2> 12 </h2>
+            <h2> {{ allResolveData.cptCodesNotFoundCount }} </h2>
             <button mat-flat-button>view all</button>
           </span>
         </mat-card-content>

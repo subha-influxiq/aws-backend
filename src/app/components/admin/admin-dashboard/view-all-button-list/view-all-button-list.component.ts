@@ -70,7 +70,7 @@ export class ViewAllButtonListComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: { status: { $gt: 10, $lt: 14 }, job_tickets_details: { $exists: true } },
+    basecondition: {  },
     updateendpoint: '',
     custombuttons: [
       {
@@ -416,29 +416,28 @@ export class ViewAllButtonListComponent implements OnInit {
 
     switch (flag) {
       case 'Total Number of Reports Added':
+        this.libdata.basecondition.status = { "$gte": 3 };
+        data.status = { "$gte": 3 };
         break;
       case 'Total Number of Report Processed':
-        data.status = {
-          "$gte": 8
-        };
+        this.libdata.basecondition.status = { "$gte": 8 };
+        data.status = { "$gte": 8 };
         break;
       case 'Total Number of Report Signed':
+        this.libdata.basecondition.status = { $eq: 14 };
         data.status = { $eq: 14 };
         break;
       case 'Sent to Biller':
-        data.status = {
-          "$eq": 15
-        };
+        this.libdata.basecondition.status = { $eq: 15 };
+        data.status = { "$eq": 15 };
         break;
       case 'Reports Downloaded':
-        data.status = {
-          "$eq": 16
-        };
+        this.libdata.basecondition.status = { $eq: 16 };
+        data.status = { "$eq": 16 };
         break;
       case 'Reports Pending Sing':
-        data.status = {
-          "$eq": 11
-        };
+        this.libdata.basecondition.status = { $eq: 11 };
+        data.status = { "$eq": 11 };
         break;
       case 'Job Tickets':
         document.getElementById("jobTickets").scrollIntoView();

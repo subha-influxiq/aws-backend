@@ -140,7 +140,6 @@ export class AddEditDoctorOfcComponent implements OnInit {
         this.doctorOfficeAddEditForm = this.formBuilder.group(validateRule, passwordRule);
         break;
     }
-    console.log('2222222222',this.params_id)
   }
 
   ngOnInit() {
@@ -215,7 +214,6 @@ export class AddEditDoctorOfcComponent implements OnInit {
 
 
   getParentData(id: any = '') {
-    console.log('222222222222',id);
     var billerData = id;
     this.selectionChangeValue = billerData;
     console.log('1111', billerData);
