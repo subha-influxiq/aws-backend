@@ -51,7 +51,7 @@ export class PatientDetailsComponent implements OnInit {
 
   ngOnInit() {
     // console.log("Patient Details Start =============================================");
-    // console.log("Print Data: ", this.orginalReportDetails.patient_details[0]);
+
     // console.log("Patient Details End =============================================");
 
     var data = {
@@ -1196,6 +1196,29 @@ export class PatientDetailsComponent implements OnInit {
         isSymptomChecklist: true, block: 'PLETHYSMOGRAPHY CARDIOVASCULAR DISEASE (PTG CVD)'
       }
     ];
+
+    console.log("Print Data: ", this.orginalReportDetails.patient_details[0]);
+    let keys = Object.keys(this.orginalReportDetails.patient_details[0]);
+    keys.splice(0, 1);
+    console.log('keys', keys);
+
+    let extraFields = [];
+    for (let i in patientInfoFormFields) {
+      console.log('index', keys.indexOf(patientInfoFormFields[i].name))
+      if (keys.indexOf(patientInfoFormFields[i].name) == -1)
+        extraFields.push(patientInfoFormFields[i].name)
+    }
+    console.log(keys.indexOf('www'))
+
+    for (let i in checkboxFields) {
+      for (let j in checkboxFields[i].checkItems) {
+        console.log(keys.indexOf(checkboxFields[i].checkItems[j].name))
+        if (keys.indexOf(checkboxFields[i].checkItems[j].name) == -1)
+          extraFields.push(checkboxFields[i].checkItems[j].name)
+      }
+    }
+    console.log('extraFields', extraFields);
+
 
     let requestData: any = {
       token: this.configData.jwtToken,
