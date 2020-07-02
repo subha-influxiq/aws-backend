@@ -150,7 +150,7 @@ export class ListingTechComponent implements OnInit {
       this.libdata.notes.currentuserfullname = this.userData.firstname +this.userData.lastname;
     }
 
-    // this.libdata.basecondition = this.field;
+    this.libdata.basecondition = this.field;
 
     this.apiUrl = httpService.baseUrl;
   }
