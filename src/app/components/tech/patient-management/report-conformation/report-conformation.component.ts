@@ -116,9 +116,12 @@ export class ReportConformationComponent implements OnInit {
                     this.htmlText.confirmSubmittedDataSource[loop].status = 3;
                     this.htmlText.confirmSubmittedDataSource[loop].report_life_circle.push({
                       "upload_by_tech_id" : this.htmlText.userData.user_details._id,
-                      "date": Date.now(),
-                      "status": 3,
-                      "status_text": "File uploaded confirm"
+                      "date"              : Date.now(),
+                      "upload_date"       : Date.now(),
+                      "status"            : 3,
+                      "upload_status"     : 3,
+                      "upload_status_text": "File uploaded confirm",
+                      "status_text"       : "File uploaded confirm"
                     });
 
                     loop2 = response.data.match_patient.length;
