@@ -1061,14 +1061,16 @@ const routes: Routes = [
     },
   },
   {
-    path: 'admin-biller/faq-management',
-    component: ListFaqComponent,
+    path: 'admin-biller/faq',
+    component: FaqViewComponent,
     canActivate: [AuthguardService],
-    resolve: { techDashboardData: ResolveService },
+    resolve: { faqData: ResolveService },
     data: {
       requestcondition: {
         source: 'data_faq',
-        condition: {}
+        condition: {
+          users: "admin_biller"
+        }
       },
       endpoint: 'datalist'
     },
