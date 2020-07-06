@@ -49,7 +49,7 @@ export class ListingInsuranceComponent implements OnInit {
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
   public apiUrl: any;
-  public tableName: any = "users";
+  public tableName: any = "data_pece";
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public SearchingEndpoint: any = "datalist";
