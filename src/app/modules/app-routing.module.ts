@@ -137,6 +137,7 @@ import { CptValidateReportsComponent } from '../components/admin/cpt-validate-re
 import { ReportsDetailsComponent } from '../components/admin/reports-details/reports-details/reports-details.component';
 import {ApprovedPatientReportsComponent} from '../components/admin/admin-dashboard/approved-patient-reports/approved-patient-reports.component'
 import { ReportProcessTimeComponent } from '../components/admin/report-process-time/report-process-time/report-process-time.component';
+import { LoginDotorByAdminComponent } from '../components/admin/login-as-doctor/login-dotor-by-admin/login-dotor-by-admin.component';
 
 const routes: Routes = [
   /********** Auth Route Start **********/
@@ -170,6 +171,21 @@ const routes: Routes = [
   },
   /********** Auth Route Start **********/
 /*=========Reports Details Routes======== */
+
+// Login as doctor by admin Route-----------------
+
+{
+  path: 'admin/doctor-dashboard/:_id',
+  component: DoctorDashboardComponent,
+  resolve: { doctordata: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {},
+      },
+      endpoint: 'doctor-dashboard'
+    },
+},
 
 {
   path: 'admin/reports-details/:_id',

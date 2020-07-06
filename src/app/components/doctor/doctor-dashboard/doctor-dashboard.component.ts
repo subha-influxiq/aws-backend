@@ -259,7 +259,26 @@ export class DoctorDashboardComponent implements OnInit {
 
   constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService, public http: HttpServiceService, public activatedRoute: ActivatedRoute, public matSnackBar: MatSnackBar, public deviceService: DeviceDetectorService) {
     this.allData = cookie.getAll();
-    this.authData = JSON.parse(this.allData.user_details);
+    // this.authData = JSON.parse(this.allData.user_details);
+    if(this.activatedRoute.snapshot.params != {}) {
+      let data: any = {
+        "source": "data_pece",
+        "condition": {
+          _id_object: this.activatedRoute.snapshot.params._id
+        },
+        "token": cookie.get('jwtToken')
+      }
+      this.http.httpViaPost("datalist", data).subscribe((response: any) => {
+        // this.authData = response.res[0];
+        // console.log("++++",this.authData);
+        // this.cookie.delete;
+        // this.cookie.set('user_details',JSON.stringify(response.res));
+      })
+    }
+    // } else {
+      this.authData = JSON.parse(this.allData.user_details);
+    // }
+    console.log("******",this.activatedRoute,this.authData);
     if (typeof (this.allData.doctor_signature) == 'undefined' && typeof (this.authData.doctor_signature) != 'undefined') {
       this.cookie.set('doctor_signature', this.authData.doctor_signature);
     }
