@@ -15,7 +15,7 @@ export class PastAppoinmentsComponent implements OnInit {
 
   public configData: any = {
     appName: 'Calendar Management',
-    jwtToken: "",
+    jwtToken: this.cookie.get('jwtToken'),
     baseUrl: environment.calendarApi,
     endPoint: {
       add: 'add-or-update-event-data',
@@ -243,16 +243,6 @@ export class PastAppoinmentsComponent implements OnInit {
           values: [{val: 0, 'name': 'Pending'}, {val: 1, 'name': 'Completed'}, {val: 2, 'name': 'Canceled'}]
         },
         {
-          label: 'Search By Parent Type',
-          field: 'parent_type',
-          values: [
-            {val: 'admin', name: 'Admin'},
-            {val: 'distributor', name: 'Distributor'},
-            {val: 'diagnostic_admin', name: 'Diagnostic Admin'},
-            {val: 'doctor_group', name: 'Doctor Group Admin'},
-          ]
-        },
-        {
           label: 'Search By Booking Type',
           field: 'is_google_event',
           values: [{val: 'No', name: 'Manual'}, {val: 'Yes', name: 'Calendar'}]
@@ -290,10 +280,24 @@ export class PastAppoinmentsComponent implements OnInit {
           serversearchdata: {endpoint: 'get-doctor-office-for-autocomplete-search'}
         }
       );
+      this.configData.search_settings.selectsearch.push({
+        label: 'Search By Parent Type',
+        field: 'parent_type',
+        values: [
+          {val: 'admin', name: 'Admin'},
+          {val: 'distributor', name: 'Distributor'},
+          {val: 'diagnostic_admin', name: 'Diagnostic Admin'},
+          {val: 'doctor_group', name: 'Doctor Group Admin'}
+        ]
+      });
     }
     // load doctor search dynamically
+    const data1 = {
+      token: this.cookie.get('jwtToken'),
+      condition: {doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id}
+    };
     setTimeout(() => {
-      this.httpService.postRequest('get-doctor-info', {condition: {doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id}}).subscribe((response: any) => {
+      this.httpService.postRequest('get-doctor-info', data1).subscribe((response: any) => {
         for (let i = 0; i < response.data.length; i++) {
           let temp: any = {};
           temp['val'] = response.data[i]._id;
