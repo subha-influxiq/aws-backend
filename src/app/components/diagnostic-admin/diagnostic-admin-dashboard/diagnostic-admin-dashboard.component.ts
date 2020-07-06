@@ -24,7 +24,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
   public loginUserData: any = {};
   public jwtToken: string = "";
   public htmlText: any = {
-    headerText: "Patient Reports"
+    headerText: "Total No of Reports Added"
   };
 
   public shareDetails: any = {
@@ -228,7 +228,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
   public search_settings: any = {
     selectsearch: [
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },
-      { label: "Search By Status", field: 'status_search', values: this.status_search },
+      { label: "Search By Status", field: 'status', values: this.status_search },
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
       { label: "Search By Tech", field: 'tech_name_search', values: this.techval },
       { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval },
@@ -337,6 +337,8 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
   viewReportProcessData(flag = null) {
     this.htmlText.headerText = flag;
+    this.allBillerData = [];
+    this.billerData_count = 0;
 
     /* Config Data */
     let endpoint = 'diagnostic-admin-dashboard-report-data-list';
@@ -359,32 +361,26 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
       case 'Total No of Reports Added':
         data.searchcondition.report_type = { $exists: true };
         data.searchcondition.status = { $gte: 3 };
-        this.libdata.basecondition.status = { $gte: 3 };
         break;
       case 'Total No of Report Processed':
         data.searchcondition.report_type = { $exists: true };
         data.searchcondition.status = { $gte: 8 };
-        this.libdata.basecondition.status = { $gte: 8 };
         break;
       case 'Total No of Report Signed':
         data.searchcondition.report_type = { $exists: true };
-        data.searchcondition.status = { $gte: 14 };
-        this.libdata.basecondition.status = { $gte: 14 };
+        data.searchcondition.status = { $eq: 14 };
         break;
       case 'Sent to Biller':
         data.searchcondition.report_type = { $exists: true };
-        data.searchcondition.status = { $gte: 15 };
-        this.libdata.basecondition.status = { $gte: 15 };
+        data.searchcondition.status = { $eq: 15 };
         break;
       case 'Reports Downloaded':
         data.searchcondition.report_type = { $exists: true };
-        data.searchcondition.status = { $gte: 16 };
-        this.libdata.basecondition.status = { $gte: 16 };
+        data.searchcondition.status = { $eq: 16 };
         break;
       case 'Reports Pending Sing':
         data.searchcondition.report_type = { $exists: true };
-        data.searchcondition.status = { $gte: 11 };
-        this.libdata.basecondition.status = { $gte: 11 };
+        data.searchcondition.status = { $eq: 11 };
         break;
     }
 
