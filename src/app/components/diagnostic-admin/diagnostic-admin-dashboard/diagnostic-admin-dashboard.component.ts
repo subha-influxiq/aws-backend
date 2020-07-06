@@ -89,7 +89,6 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
   public userData: any;
   public libdata: any = {
     basecondition: {
-      status: { "$gt": 10 }
     },
     updateendpoint: '',
     custombuttons: [
@@ -166,9 +165,9 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any = environment.apiBaseUrl1;
+  public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
-  public datacollection: any = 'getPatientlistdata';
+  public datacollection: any = 'diagnostic-admin-dashboard-report-data-list';
 
   public sortdata: any = {
     "type": 'desc',
@@ -269,36 +268,136 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
       this.allResolveData = resolveData.dataCount.data;
     });
 
-    // lib list ****************************
-    let endpoint = 'getPatientlistdata';
-    let endpointc = 'getPatientlistdata-count';
+    this.viewReportProcessData(this.htmlText.headerText);
+  }
+
+  ngOnInit() {
+    this.getSearchData();
+  }
+
+  ngAfterViewInit() {
+  }
+
+  /*Doctor's List*/
+  toDocList() {
+    this.router.navigateByUrl('admin/doctor-management/list');
+  }
+
+  downloadReport(report: any) {
+    if (typeof (report.download_count) == "undefined") {
+      report.download_count = 1;
+    } else {
+      report.download_count = report.download_count + 1;
+    }
+
+    /* Collect User Information for Download record */
+    let deviceInfo: any = this.deviceService.getDeviceInfo();
+    deviceInfo["isMobile"] = this.deviceService.isMobile();
+    deviceInfo["isTablet"] = this.deviceService.isTablet();
+    deviceInfo["isDesktop"] = this.deviceService.isDesktop();
+
+    /* Set downloader information */
+    var userDetails = {
+      id: this.loginUserData.user_details._id,
+      user_type: this.loginUserData.user_details.user_type
+    };
+
+    let postData: any = {
+      "source": "report_download",
+      "data": {
+        "report_id": report._id,
+        "biller_id": this.loginUserData.user_details._id,
+        "tech_id": report.tech_id,
+        "doctor_id": report.doctor_id,
+        "ip": this.htmlText.ip,
+        "download_attempt": 1,
+        "downloader_information": userDetails,
+        "device_information": deviceInfo
+      },
+      "sourceobj": ["report_id", "biller_id", "tech_id", "doctor_id"],
+      "download_count": report.download_count,
+      "token": this.loginUserData.jwtToken
+    };
+
+    this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
+      if (response.status == 'success') {
+        this.matSnackBar.open("Start downloading.", "Ok", {
+          duration: 3000
+        });
+        window.open(report.file_path, "_blank");
+
+        this.viewReportProcessData(this.htmlText.headerText);
+      } else {
+        this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+          duration: 3000
+        });
+      }
+    });
+  }
+
+  viewReportProcessData(flag = null) {
+    this.htmlText.headerText = flag;
+
+    /* Config Data */
+    let endpoint = 'diagnostic-admin-dashboard-report-data-list';
     let data: any = {
       "condition": {
         "limit": 10,
         "skip": 0
       },
-      sort: {
-        "type": 'desc',
-        "field": 'patient_name'
+      "sort": {
+        "field": "patient_name",
+        "type": "desc"
       },
-      status: { "$gt": 10 },
-      parent_id: this.loginUserData.user_details._id
+      searchcondition: {
+        "parent_id": this.loginUserData.user_details._id,
+      },
+      "secretkey": "na"
+    };
+
+    switch(flag) {
+      case 'Total No of Reports Added':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $gte: 3 };
+        this.libdata.basecondition.status = { $gte: 3 };
+        break;
+      case 'Total No of Report Processed':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $gte: 8 };
+        this.libdata.basecondition.status = { $gte: 8 };
+        break;
+      case 'Total No of Report Signed':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $gte: 14 };
+        this.libdata.basecondition.status = { $gte: 14 };
+        break;
+      case 'Sent to Biller':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $gte: 15 };
+        this.libdata.basecondition.status = { $gte: 15 };
+        break;
+      case 'Reports Downloaded':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $gte: 16 };
+        this.libdata.basecondition.status = { $gte: 16 };
+        break;
+      case 'Reports Pending Sing':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $gte: 11 };
+        this.libdata.basecondition.status = { $gte: 11 };
+        break;
     }
 
-    this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
-      this.billerData_count = res.count;
-    }, error => {
-      console.log('An error occord.');
-    });
-
+    /* Endpoint call */
     this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
       this.allBillerData = res.results.res;
+      this.billerData_count = res.results.data_count;
     }, error => {
       console.log('An error occord.');
     });
   }
 
-  ngOnInit() {
+  getSearchData() {
     let data: any = {
       "source": "patient_data_desc_patient_name",
       "condition": {
@@ -443,70 +542,6 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
     }, error => {
       console.log('Oooops!');
     });
-  }
-
-  ngAfterViewInit() {
-  }
-
-  /*Doctor's List*/
-  toDocList() {
-    this.router.navigateByUrl('admin/doctor-management/list');
-  }
-
-  downloadReport(report: any) {
-    if (typeof (report.download_count) == "undefined") {
-      report.download_count = 1;
-    } else {
-      report.download_count = report.download_count + 1;
-    }
-
-    /* Collect User Information for Download record */
-    let deviceInfo: any = this.deviceService.getDeviceInfo();
-    deviceInfo["isMobile"] = this.deviceService.isMobile();
-    deviceInfo["isTablet"] = this.deviceService.isTablet();
-    deviceInfo["isDesktop"] = this.deviceService.isDesktop();
-
-    /* Set downloader information */
-    var userDetails = {
-      id: this.loginUserData.user_details._id,
-      user_type: this.loginUserData.user_details.user_type
-    };
-
-    let postData: any = {
-      "source": "report_download",
-      "data": {
-        "report_id": report._id,
-        "biller_id": this.loginUserData.user_details._id,
-        "tech_id": report.tech_id,
-        "doctor_id": report.doctor_id,
-        "ip": this.htmlText.ip,
-        "download_attempt": 1,
-        "downloader_information": userDetails,
-        "device_information": deviceInfo
-      },
-      "sourceobj": ["report_id", "biller_id", "tech_id", "doctor_id"],
-      "download_count": report.download_count,
-      "token": this.loginUserData.jwtToken
-    };
-
-    this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
-      if (response.status == 'success') {
-        this.matSnackBar.open("Start downloading.", "Ok", {
-          duration: 3000
-        });
-        window.open(report.file_path, "_blank");
-
-        this.viewReportProcessData(this.htmlText.headerText);
-      } else {
-        this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
-          duration: 3000
-        });
-      }
-    });
-  }
-
-  viewReportProcessData(flag = null) {
-
   }
 
 }

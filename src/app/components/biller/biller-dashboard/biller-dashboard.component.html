@@ -2,30 +2,12 @@
 
 <mat-card class="admin_wrapper biller_Dashboard">
 
-  <!-- <mat-card-content class="content_wrapper">
-  <mat-card-content class="itemsection three">
-    <span class="counteer"> {{ allResolveData.totalDownloadCount + this.allResolveData.totalNotDownloadCount }} </span>
-    <p>All Data</p>
-    <button mat-flat-button (click)="viewReportData();">View Details</button>
-  </mat-card-content>
-
-  <mat-card-content class="itemsection one">
-    <span class="counteer"> {{ allResolveData.totalDownloadCount }} </span>
-    <p>Total Downloaded</p>
-    <button mat-flat-button (click)="viewReportData('downloaded');">View Details</button>
-  </mat-card-content>
-
-  <mat-card-content class="itemsection two">
-    <span class="counteer"> {{ allResolveData.totalNotDownloadCount }} </span>
-    <p>Not Downloaded</p>
-    <button mat-flat-button (click)="viewReportData('not_downloaded');">View Details</button>
-  </mat-card-content>
-
-</mat-card-content> -->
   <!-- new stra -->
   <mat-card-content class="admin_superbillsection">
-    <!-- <h1>Physician Report Process Status</h1> -->
+    <h1>Physician Report Process Status</h1>
+    
     <mat-card-content class="biller_wrapper">
+      
       <mat-card-content class="super_bill_item sp_one">
         <span class="border_wrapper">
           <mat-card-content class="circle">
@@ -54,6 +36,7 @@
           <button mat-flat-button (click)="viewReportData('Total Downloaded');">view all</button>
         </span>
       </mat-card-content>
+      
       <mat-card-content class="super_bill_item sp_three">
         <span class="border_wrapper">
           <mat-card-content class="circle">
@@ -74,6 +57,7 @@
   <!-- patainet report section -->
   <mat-card-content class="table_wrapper admin_dashboard">
     <mat-card-content class="headr_tagh">
+      
       <span class="counter_with_tool">
         <h1>Patient Reports Pending Actions</h1>
         <span class="tolTip">
@@ -85,9 +69,10 @@
             <span class="material-icons"> help_outline </span>
           </a>
         </span>
-
       </span>
+
     </mat-card-content>
+    
     <lib-listing
       class="DataTable" 
       *ngIf="allBillerData.length>0" 

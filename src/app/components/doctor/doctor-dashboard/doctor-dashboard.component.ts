@@ -244,10 +244,6 @@ export class DoctorDashboardComponent implements OnInit {
     status: "",
     dateRange: ""
   };
-
-  public allDataColumns: string[] = ['no', 'patient_name', 'doctor_name', 'tech_name', 'biller_name', 'bill_generation_date', 'bill_sent_date', 'report_type', 'status', 'super_bill', 'action'];
-  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-
   public dialogRef: any;
   public allDataSource: any;
   public start_date: any;
