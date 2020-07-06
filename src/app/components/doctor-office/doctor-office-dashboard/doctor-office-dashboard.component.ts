@@ -135,12 +135,12 @@ export class DoctorOfficeDashboardComponent implements OnInit {
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
   public status: any = [];
   public status_search: any = [
-    { val: "Biller Admin Approved", 'name': 'Biller Admin Approved' },
-    { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' },
-    { val: "Biller Admin Hold", 'name': "Biller Admin Hold" },
-    { val: "Doctor Sign", 'name': "Doctor Sign" },
-    { val: "Send to Biller", 'name': "Send to Biller" },
-    { val: "Downloaded", "name": "Report Downloaded" }
+    { val: 11, 'name': 'Biller Admin Approved' },
+    { val: 12, 'name': 'Biller Admin Not Approved' },
+    { val: 13, 'name': "Biller Admin Hold" },
+    { val: 14, 'name': "Doctor Sign" },
+    { val: 15, 'name': "Send to Biller" },
+    { val: 16, "name": "Report Downloaded" }
   ];
   public cptcodes: any = [
     { val: "95923", 'name': '95923' },
@@ -174,7 +174,7 @@ export class DoctorOfficeDashboardComponent implements OnInit {
   public search_settings: any = {
     selectsearch: [
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },
-      { label: "Search By Status", field: 'status_text', values: this.status_search },
+      { label: "Search By Status", field: 'status_search', values: this.status_search },
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
       { label: "Search By Tech", field: 'tech_name_search', values: this.techval },
       { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity },

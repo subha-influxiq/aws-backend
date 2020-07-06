@@ -128,7 +128,7 @@ export class AdminbillerDashboardComponent implements OnInit {
         type: 'action',
         datatype: 'api',
         endpoint: 'get-doctor-office-details',
-        datafields: ['centername', 'firstname', 'lastname', 'email', 'phone', 'address', 'city', 'state', 'zip'],
+        datafields: ['center name', 'first name', 'last name', 'email', 'phone', 'address', 'city', 'state', 'zip'],
         param: 'id',
         headermessage: 'Doctor Office Info',
       },
@@ -198,6 +198,17 @@ export class AdminbillerDashboardComponent implements OnInit {
     { val: "TM FLOW V4", 'name': 'TM FLOW V4' },
     { val: "CMAT with BP Cuffs", 'name': 'CMAT with BP Cuffs' }
   ];
+  public cptcodes: any = [
+    { val: "95923", 'name': '95923' },
+    { val: "95943", 'name': '95943' },
+    { val: "95921", 'name': "95921" },
+    { val: "93923", 'name': "93923" },
+    { val: "93922", 'name': "93922" }
+  ];
+  public status_search: any = [
+    { val: 8, 'name': 'System Approved' },
+    { val: 9, 'name': 'System Not Approved' },
+    { val: 10, 'name': "System Hold" },]
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
   public docofficeval: any = [];
@@ -212,6 +223,8 @@ export class AdminbillerDashboardComponent implements OnInit {
     selectsearch: [
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },
       { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },
+      { label: 'Search By Status', field: 'status_search', values: this.status_search }, 
+      { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes }, 
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
       { label: "Search By Tech", field: 'tech_name_search', values: this.techval },
       { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval },
@@ -224,6 +237,9 @@ export class AdminbillerDashboardComponent implements OnInit {
     datesearch: [
       { startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }
     ],
+    textsearch: [
+      { label: "Search By Patient Name", field: 'patient_name_search' }
+    ]
   };
   // lib list end
 

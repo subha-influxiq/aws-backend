@@ -742,7 +742,9 @@ export class BookAppoinmentNowComponent implements OnInit {
             label: 'Insurance name',
             value: '',
             options: insuranceData,
-            caption: 'Insurance Information'
+            caption: 'Insurance Information',
+            validators: [Validators.required],
+            error: 'Please select insurance name'
           },
           {
             type: 'select',
@@ -752,7 +754,9 @@ export class BookAppoinmentNowComponent implements OnInit {
             value: '',
             isDependent: true,
             dependentOn: 'insurance_id',
-            options: insuranceTypeData
+            options: insuranceTypeData,
+            validators: [Validators.required],
+            error: 'Please select insurance type'
           },
           {
             type: 'input',

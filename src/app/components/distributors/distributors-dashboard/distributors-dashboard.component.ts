@@ -24,7 +24,7 @@ export class DistributorsDashboardComponent implements OnInit {
   public loginUserData: any = {};
   public jwtToken: string = "";
   public htmlText: any = {
-    headerText: "Reports Uploaded"
+    headerText: "Patient Reports"
   };
 
   public shareDetails: any = {
@@ -217,12 +217,12 @@ export class DistributorsDashboardComponent implements OnInit {
     { val: "CMAT with BP Cuffs", 'name': "CMAT with BP Cuffs" }
   ];
   public status_search: any = [
-    { val: "Biller Admin Approved", 'name': 'Biller Admin Approved' },
-    { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' },
-    { val: "Biller Admin Hold", 'name': "Biller Admin Hold" },
-    { val: "Doctor Sign", 'name': "Doctor Sign" },
-    { val: "Send to Biller", 'name': "Send to Biller" },
-    { val: "Report Downloaded", "name": "Report Downloaded" }
+    { val: 11, 'name': 'Biller Admin Approved' },
+    { val: 12, 'name': 'Biller Admin Not Approved' },
+    { val: 13, 'name': "Biller Admin Hold" },
+    { val: 14, 'name': "Doctor Signed" },
+    { val: 15, 'name': "Sent to Biller" },
+    { val: 16, "name": "Report Downloaded" }
   ];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
@@ -237,7 +237,7 @@ export class DistributorsDashboardComponent implements OnInit {
   public search_settings: any = {
     selectsearch: [
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type }, 
-      { label: "Search By Status", field: 'status_text', values: this.status_search },
+      { label: "Search By Status", field: 'status_search', values: this.status_search },
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
       { label: "Search By Tech", field: 'tech_name_search', values: this.techval },
       { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval },
@@ -452,9 +452,9 @@ export class DistributorsDashboardComponent implements OnInit {
         this.libdata.basecondition.status = { "$in": [8, 9, 10] };
         data.status = { "$in": [8, 9, 10] };
         break;
-      case 'Report Processed':
-        this.libdata.basecondition.status = { "$in": [11, 12, 13] };
-        data.status = { "$in": [11, 12, 13] };
+      case 'Patient Reports':
+        this.libdata.basecondition.status = { "$in": [11, 12, 13,14,15,16] };
+        data.status = { "$in": [11, 12, 13,14,15,16] };
         break;
       case 'Report Signed':
         this.libdata.basecondition.doctor_signature = { "$exists": true };
