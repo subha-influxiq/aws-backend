@@ -55,6 +55,15 @@ export class ListingTechComponent implements OnInit {
     //hidestatustogglebutton:true,
     // hideaction:true,
     tableheaders:['firstname','lastname','email','phone','status','created_date',], //not required
+    custombuttons: [
+      {
+        label: "Log Me",
+        route: "admin/tech-dashboard/",
+        type: 'internallink',
+        //cond:'status',
+        //condval:0,
+        param: ['_id'],
+    },]
 }
   public allUserData_modify_header: any = {
     "firstname": "First Name",

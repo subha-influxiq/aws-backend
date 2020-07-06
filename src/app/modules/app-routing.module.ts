@@ -187,6 +187,21 @@ const routes: Routes = [
     },
 },
 
+// Login as tech by admin Route-----------------
+
+{
+  path: 'admin/tech-dashboard/:_id',
+  component: TechDashboardComponent,
+  resolve: { techDashboardData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {},
+      },
+      endpoint: 'tech-dashboard'
+    },
+},
+
 {
   path: 'admin/reports-details/:_id',
   component: ReportsDetailsComponent,

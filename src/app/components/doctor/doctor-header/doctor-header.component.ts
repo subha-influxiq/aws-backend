@@ -16,15 +16,19 @@ export class DoctorHeaderComponent implements OnInit {
   };
 
   public loader: boolean = true;
+  public flag: any = 0;
   public user_cookie:any;
   status: boolean = true;
   isSticky: boolean = false;
 
-  constructor(public cookies: CookieService, public router: Router) {
+  constructor(public cookies: CookieService, public router: Router, public activate: ActivatedRoute) {
     let allData: any = cookies.getAll()
     this.user_data = JSON.parse(allData.user_details);
     this.user_cookie = cookies.get('jwtToken');
     this.user_data["headerFlag"] = typeof(this.user_data.diagnostic_admin_id);
+    if(this.activate.snapshot.routeConfig.path == "admin/doctor-dashboard/:_id") {
+      this.flag = 1;
+    }
    }
 
   ngOnInit() {

@@ -103,7 +103,7 @@ export class ListDoctorComponent implements OnInit {
         type: 'internallink',
         //cond:'status',
         //condval:0,
-        param: ['_id','parent_type'],
+        param: ['_id'],
     },
     ]
 }

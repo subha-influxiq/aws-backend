@@ -261,11 +261,12 @@ export class DoctorDashboardComponent implements OnInit {
     this.allData = cookie.getAll();
     // this.cookie.delete('user_details');
     // this.authData = JSON.parse(this.allData.user_details);
-    if(this.activatedRoute.snapshot.params != {}) {
+    if(this.activatedRoute.snapshot.params._id) {
       this.authData["_id"] = this.activatedRoute.snapshot.params._id;
-      this.authData["parent_type"] = this.activatedRoute.snapshot.params.parent_type;
+      // this.authData["parent_type"] = this.activatedRoute.snapshot.params.parent_type;
     }
     else {
+      console.log('************************')
       this.authData = JSON.parse(this.allData.user_details);
     }
     console.log("******",this.activatedRoute,this.authData);
@@ -510,6 +511,7 @@ export class DoctorDashboardComponent implements OnInit {
       default:
         break;
     }
+    console.log(data);
     this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
       this.docData_count = res.count;
     }, error => {
