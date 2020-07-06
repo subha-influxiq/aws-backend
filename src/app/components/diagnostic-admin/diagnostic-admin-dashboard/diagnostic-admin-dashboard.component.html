@@ -103,7 +103,7 @@
       </span>
       <span class="button_wrapper">
         <p class="doctorNumber">Total Number of <br>Doctor's Office</p>
-        <button mat-button [routerLink]="['/diagnostic-admin/doctor-management']">View Details</button>
+        <button mat-button [routerLink]="['/diagnostic-admin/doctor-office-management']">View Details</button>
       </span>
     </mat-card-content>
 
@@ -113,9 +113,9 @@
       </span>
       <span class="counteer">
         <span class="counter_with_tool">
-          <h4 class="dataCount"> {{ allResolveData.total_appointments_pending }}</h4>
+          <h4 class="dataCount"> {{ allResolveData.total_sales_person }}</h4>
           <span class="tolTip">
-            <a mat-raised-button #AppPending="matTooltip" matTooltip="Data listed for the total number of patient appointments pending. " matTooltipPosition="above"
+            <a mat-raised-button #AppPending="matTooltip" matTooltip="Data listed for the total number of techs registered under the logged in Sales Person." matTooltipPosition="above"
               aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
             </a>
             <a mat-button (click)="AppPending.toggle()" class="toggle_btn" aria-label=" toggle section">
@@ -126,8 +126,8 @@
         </span>
       </span>
       <span class="button_wrapper">
-        <p class="doctorNumber">Total Appointments<br> Pending</p>
-        <button mat-flat-button [routerLink]="['/diagnostic-admin/biller-management']">View Details</button>
+        <p class="doctorNumber">Total Number of<br> Sales Person</p>
+        <button mat-flat-button [routerLink]="['/diagnostic-admin/sales-person-management']">View Details</button>
       </span>
     </mat-card-content>
 

@@ -427,7 +427,6 @@ export class BillerDashboardComponent implements OnInit {
         this.matSnackBar.open("Start downloading.", "Ok", {
           duration: 3000
         });
-        console.log(">>>>>>>>>>>>>>>>", report);
         window.open(report.file_basepath + report.file_name, "_blank");
 
         let postData: any = {
@@ -440,7 +439,7 @@ export class BillerDashboardComponent implements OnInit {
         };
     
         this.httpService.httpViaPost("addorupdatedata", postData).subscribe(response => {
-          this.refreshDashboard();
+          // code here
         });
       } else {
         this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
@@ -448,39 +447,6 @@ export class BillerDashboardComponent implements OnInit {
         });
       }
     });
-  }
-
-  refreshDashboard() {
-    let postData: any = {
-      source: "data_pece",
-      condition: {
-        biller_id: this.loginUserData.user_details._id
-      }
-    };
-
-    this.httpService.httpViaPost("biller-dashboard", postData).subscribe(response => {
-      if(response.status == 'success') {
-        this.viewReportData(this.htmlText.tableHeaderText);
-        this.allResolveData = response.data;
-      } else {
-        this.matSnackBar.open("Please wait...", "", {
-          duration: 1000
-        });
-
-        setTimeout(() => {
-          this.refreshDashboard();
-        }, 1000);
-      }
-    });
-  }
-
-  resetSearch() {
-    this.searchJson = {
-      patientName: "",
-      status: "",
-      dateRange: ""
-    };
-    this.viewReportData(this.htmlText.tableHeaderText);
   }
 
 }
