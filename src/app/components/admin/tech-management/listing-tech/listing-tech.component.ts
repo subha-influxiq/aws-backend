@@ -168,7 +168,8 @@ export class ListingTechComponent implements OnInit {
 
   ngOnInit() {
     this.datasource = '';
-    if(this.userData.user_type !="doctor") {
+    if(this.userData.user_type !="doctor" || this.activatedRoute.snapshot.routeConfig.path != "admin/doctor-dashboard/tech-management") {
+      console.log("if");
     let endpoint='gettechlistdata';
     let endpointc='gettechlistdata-count';
     let data:any={
@@ -212,6 +213,7 @@ export class ListingTechComponent implements OnInit {
             console.log('Oooops!');
         });
   } else {
+    console.log("else");
     let endpoint='gettechlistdata';
     let endpointc='gettechlistdata-count';
     let data:any={
@@ -236,6 +238,9 @@ export class ListingTechComponent implements OnInit {
     }
     if(this.userData.user_type == 'distributors') {
       this.fetch={'parent_id':  this.data}
+    }
+    if(this.activatedRoute.snapshot.routeConfig.path == "admin/doctor-dashboard/tech-management") {
+      _id:JSON.parse(this.cookie.get('id'))
     }
     data.data = this.fetch;
         this.httpService.httpViaPost(endpointc, data).subscribe((res:any) => {

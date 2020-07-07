@@ -57,6 +57,15 @@ export class ListingBillerComponent implements OnInit {
     //hidestatustogglebutton:true,
     // hideaction:true,
     tableheaders: ['firstname', 'lastname', 'email', 'phone', 'company_name', 'status', 'created_date'], //not required
+    custombuttons: [
+      {
+        label: "Log Me",
+        route: "admin/biller-dashboard/",
+        type: 'internallink',
+        //cond:'status',
+        //condval:0,
+        param: ['_id'],
+    },]
   }
   public allUserData_modify_header: any = {
     "firstname": "First Name",

@@ -205,7 +205,15 @@ export class DoctorOfficeDashboardComponent implements OnInit {
     public snackBar: MatSnackBar, public http: HttpServiceService, public matSnackBar: MatSnackBar) {
 
     this.allData = cookieService.getAll();
-    this.authData = JSON.parse(this.allData.user_details);
+    // this.authData = JSON.parse(this.allData.user_details);
+    if(this.activatedRoute.snapshot.params._id) {
+      this.authData = {_id:this.activatedRoute.snapshot.params._id};
+      // this.authData["parent_type"] = this.activatedRoute.snapshot.params.parent_type;
+    }
+    else {
+      console.log('************************')
+      this.authData = JSON.parse(this.allData.user_details);
+    }
     this.authData["jwtToken"] = cookieService.get('jwtToken');
     this.jwtToken = cookieService.get('jwtToken');
 
@@ -216,7 +224,7 @@ export class DoctorOfficeDashboardComponent implements OnInit {
       this.viewReportProcessData(this.htmlText.headerText);
     });
 
-    // lib list
+    // lib list ----------------
     this.libdata.basecondition = { doctors_office_id: this.authData._id, status: { $gt: 10 } }
     let endpoint = 'getPatientlistdata';
     let endpointc = 'getPatientlistdata-count';

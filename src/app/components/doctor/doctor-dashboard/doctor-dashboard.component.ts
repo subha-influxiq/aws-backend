@@ -264,6 +264,7 @@ export class DoctorDashboardComponent implements OnInit {
     if(this.activatedRoute.snapshot.params._id) {
       this.authData["_id"] = this.activatedRoute.snapshot.params._id;
       // this.authData["parent_type"] = this.activatedRoute.snapshot.params.parent_type;
+      this.cookie.set('id',JSON.stringify(this.activatedRoute.snapshot.params._id));
     }
     else {
       console.log('************************')

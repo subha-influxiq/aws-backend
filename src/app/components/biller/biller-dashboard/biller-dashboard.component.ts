@@ -157,7 +157,15 @@ export class BillerDashboardComponent implements OnInit {
     public matSnackBar: MatSnackBar) {
     
       /* Get and set login User Data */
-    this.loginUserData["user_details"] = JSON.parse(this.cookieService.get('user_details'));
+    // this.loginUserData["user_details"] = JSON.parse(this.cookieService.get('user_details'));
+    if(this.activatedRoute.snapshot.params._id) {
+      this.loginUserData["user_details"] = {_id:this.activatedRoute.snapshot.params._id};
+      // this.authData["parent_type"] = this.activatedRoute.snapshot.params.parent_type;
+    }
+    else {
+      console.log('************************')
+      this.loginUserData["user_details"] = JSON.parse(this.cookieService.get('user_details'));
+    }
     this.loginUserData["jwtToken"] = this.cookieService.get('jwtToken');
 
     /* Get Auth Token */
