@@ -24,6 +24,7 @@
              [libdata]="configData.libdata"
              [updatetable]="configData.updatetable"
              [detail_skip_array]="configData.detail_skip_array"
-             [limitcond]="configData.limitcond">
+             [limitcond]="configData.limitcond"
+             (onLiblistingChange)="listenLiblistingChange($event)">
 </lib-listing>
 </div>

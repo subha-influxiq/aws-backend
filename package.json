@@ -40,7 +40,7 @@
     "@ngx-meta/core": "^7.0.10",
     "@trademe/ng-defer-load": "^8.2.1",
     "angular-material": "^1.1.24",
-    "calendar-management-lib-influxiq": "^0.4.4",
+    "calendar-management-lib-influxiq": "latest",
     "ckeditor4-angular": "^1.2.2",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.6.11",
