@@ -169,10 +169,7 @@ import { AdminbillerDashboardComponent } from './components/adminbiller/adminbil
 import { AdminbillerHeaderComponent } from './components/adminbiller/adminbiller-header/adminbiller-header.component';
 import { AdminbillerFooterComponent } from './components/adminbiller/adminbiller-footer/adminbiller-footer.component';
 import { AddPatientManuallyComponent } from './components/doctor-office/add-patient/add-patient-manually/add-patient-manually.component';
-import {
-  DialogCancelAlert,
-  UpcomingAppoinmentsComponent
-} from "./components/booked-events-listing/upcoming-appoinments/upcoming-appoinments.component";
+import {UpcomingAppoinmentsComponent} from "./components/booked-events-listing/upcoming-appoinments/upcoming-appoinments.component";
 import {PastAppoinmentsComponent} from "./components/booked-events-listing/past-appoinments/past-appoinments.component";
 import { PatientSelectModalComponent } from './components/tech/patient-management/patient-select-modal/patient-select-modal.component';
 import { ReportUploadSuccessModalComponent } from './components/tech/patient-management/report-upload-success-modal/report-upload-success-modal.component';
@@ -192,6 +189,7 @@ import { CptValidateReportSalesPersonComponent } from './components/sales-person
 import { ReportProcessTimeComponent } from './components/admin/report-process-time/report-process-time/report-process-time.component';
 import { DirectDownloadReportsComponent } from './components/biller/direct-download-reports/direct-download-reports.component';
 import { ViewAllButtonListComponent } from './components/admin/admin-dashboard/view-all-button-list/view-all-button-list.component';
+import { LoginDotorByAdminComponent } from './components/admin/login-as-doctor/login-dotor-by-admin/login-dotor-by-admin.component';
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -371,7 +369,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     DirectDownloadReportsComponent,
 
     ViewAllButtonListComponent,
-    DialogCancelAlert
+
+    LoginDotorByAdminComponent,
   ],
   imports: [
     SatDatepickerModule,
@@ -455,7 +454,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 
     // View job tickets image
     ViewJobTicketImageComponent,
-    DialogCancelAlert
   ]
 })
 

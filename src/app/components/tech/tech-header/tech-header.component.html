@@ -32,9 +32,16 @@
         <button mat-menu-item [routerLink]="['/tech/account-settings/change-password']">
           <mat-icon>vpn_key</mat-icon> Change Password
         </button>
-        <button mat-menu-item (click)="logout()">
-          <mat-icon>power_settings_new</mat-icon> Logout
-        </button>
+        <ng-container *ngIf = "flag == 0">
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>power_settings_new</mat-icon> Logout
+          </button>
+        </ng-container>
+        <ng-container *ngIf = "flag == 1">
+          <button mat-menu-item [routerLink]="['/admin/dashboard']">
+            <mat-icon>vpn_key</mat-icon> Return to My Account
+          </button>
+        </ng-container>
       </mat-menu>
       <span class="username">{{user_data.firstname}} {{user_data.lastname}}</span>
       <button mat-icon-button [matMenuTriggerFor]="appMenu">

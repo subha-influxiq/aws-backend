@@ -124,6 +124,14 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
   background: #70b51d;
   font-family: 'AvenirMedium'; border-radius: 2px; margin: 2px; display: inline-block; box-shadow: none; vertical-align: bottom;
 }
+.DataTable table td .custombutton0 { display: inline-block;}
+.DataTable table td .custombutton0 button{
+  min-width: inherit;
+  padding: 3px 4px;
+  line-height: inherit;
+  background: #1db59c;
+  font-family: 'AvenirMedium'; border-radius: 2px; margin:0 2px; display: inline-block; box-shadow: none; vertical-align: bottom;
+}
 .DataTable table td .notebtncls .notebracket1{ margin-left: 4px;}
 .tablewrapper table td span .cursor .material-icons,
 .DataTable table td span .cursor .material-icons{ font-size: 18px;}
@@ -404,7 +412,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 
 .admin_superbillsection .biller_wrapper .super_bill_item .container_wrapper{ display: flex; flex-direction: column; align-items: self-end; width: 80%; box-sizing: border-box;  }
 .admin_superbillsection .biller_wrapper .super_bill_item span h2{ color: #fff; font-size: 36px; text-transform: uppercase; font-family: 'AvenirMedium'; margin: 10px 0; text-shadow: 1px 1px 0px #dadada; word-break: break-all;}
-.admin_superbillsection .biller_wrapper .super_bill_item span P{ color: #fff; font-size: 24px; font-family: 'AvenirMedium'; margin: 0; line-height: 26px; text-shadow: 1px 1px 0px #dadada;}
+.admin_superbillsection .biller_wrapper .super_bill_item span P{ color: #fff; font-size: 22px; font-family: 'AvenirMedium'; margin: 0; line-height: 26px; text-shadow: 1px 1px 0px #dadada;}
 .admin_superbillsection .biller_wrapper .super_bill_item:last-child{margin-bottom: 0.5%; }
 .admin_superbillsection .biller_wrapper .super_bill_item span button{ font-size: 16px; text-transform: capitalize; font-family: 'AvenirLight'; line-height: 32px; margin-top: auto;
   width: 105px; border-radius: 5px; margin-left: auto;}
@@ -419,7 +427,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 }
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle{ margin: 0;}
 .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper .circle img{ max-width: 100%;}
-.superbillerContainer .biller_wrapper .super_bill_item span P{ font-size: 18px!important; line-height: 20px!important;}
+/* .superbillerContainer .biller_wrapper .super_bill_item span P{ font-size: 18px!important; line-height: 20px!important;} */
 .superbillerContainer .biller_wrapper .super_bill_item span P br{ display: none;}
 .superbillerContainer .biller_wrapper .super_bill_item span h2{ margin: 0;}
 .superbillerContainer .biller_wrapper .super_bill_item span button { line-height: 28px!important; width: 90px!important; }
@@ -829,7 +837,7 @@ display: none; justify-content: center; align-items: center; transition: ease-in
  font-family: 'AvenirMedium'; width: 120px; line-height: inherit; transition: ease-in 2ms; }
 .report_action_wrapper button:last-child{ margin: 0; }
 .job_reprt_wrapper .itm .report_image_w .image_items img{ max-width: 100%; vertical-align: middle;
-  height: 100%; object-fit: cover; object-position: center center;}
+  height: 100%; object-fit: cover; object-position: center center;} 
 .job_modal_wr .content_jobview img{ max-width: 100%; }
 .jobViewModal .mat-dialog-container{ max-height: 90vh!important; height:auto!important;}
 

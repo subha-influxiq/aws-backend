@@ -272,6 +272,14 @@ export class TechDashboardComponent implements OnInit {
     let allData: any = cookie.getAll();
     this.authData["userData"] = JSON.parse(allData.user_details);
     this.authData["jwtToken"] = cookie.get('jwtToken');
+    if(this.activatedRoute.snapshot.params._id) {
+      this.authData["userData"] = {_id:this.activatedRoute.snapshot.params._id};
+      // this.authData["parent_type"] = this.activatedRoute.snapshot.params.parent_type;
+    }
+    else {
+      console.log('************************')
+      this.authData = JSON.parse(allData.user_details);
+    }
 
     this.libdata.basecondition.tech_id = this.authData.userData._id;
 

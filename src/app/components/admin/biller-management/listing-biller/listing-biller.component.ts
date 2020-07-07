@@ -50,6 +50,7 @@ export class ListingBillerComponent implements OnInit {
       currentuserfullname: " ",
       header: 'fullname',
   },
+  
     // hideeditbutton:true,// all these button options are optional not mandatory
     //hidedeletebutton:true,
     //hideviewbutton:false,
