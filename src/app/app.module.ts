@@ -189,6 +189,7 @@ import { CptValidateReportSalesPersonComponent } from './components/sales-person
 import { ReportProcessTimeComponent } from './components/admin/report-process-time/report-process-time/report-process-time.component';
 import { DirectDownloadReportsComponent } from './components/biller/direct-download-reports/direct-download-reports.component';
 import { ViewAllButtonListComponent } from './components/admin/admin-dashboard/view-all-button-list/view-all-button-list.component';
+import { LoginDotorByAdminComponent } from './components/admin/login-as-doctor/login-dotor-by-admin/login-dotor-by-admin.component';
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -368,6 +369,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     DirectDownloadReportsComponent,
 
     ViewAllButtonListComponent,
+
+    LoginDotorByAdminComponent,
   ],
   imports: [
     SatDatepickerModule,

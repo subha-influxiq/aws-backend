@@ -96,6 +96,16 @@ export class ListDoctorComponent implements OnInit {
     //hidestatustogglebutton:true,
     // hideaction:true,
     tableheaders:['firstname','lastname','email','phone','practice_name','npi','status','created_date',], //not required
+    custombuttons: [
+      {
+        label: "Log Me",
+        route: "admin/doctor-dashboard/",
+        type: 'internallink',
+        //cond:'status',
+        //condval:0,
+        param: ['_id'],
+    },
+    ]
 }
   public sortdata:any={
     "type":'desc',

@@ -188,14 +188,6 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
     { val: "Biller Admin Hold", 'name': "Biller Admin Hold" },
     { val: "Downloaded", "name": "Report Downloaded" }
   ];
-  public status_search: any = [
-    { val: 11, 'name': 'Biller Admin Approved' },
-    { val: 12, 'name': 'Biller Admin Not Approved' },
-    { val: 13, 'name': "Biller Admin Hold" },
-    { val: 14, 'name': "Doctor Sign" },
-    { val: 15, 'name': "Send to Biller" },
-    { val: 16, "name": "Report Downloaded" }
-  ];
   public cptcodes: any = [
     { val: "95923", 'name': '95923' },
     { val: "95943", 'name': '95943' },
@@ -228,7 +220,6 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
   public search_settings: any = {
     selectsearch: [
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },
-      { label: "Search By Status", field: 'status_search', values: this.status_search },
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
       { label: "Search By Tech", field: 'tech_name_search', values: this.techval },
       { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval },
@@ -316,6 +307,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
       },
       "sourceobj": ["report_id", "biller_id", "tech_id", "doctor_id"],
       "download_count": report.download_count,
+      // this.libdata.basecondition.status = { $eq: 11 };
       "token": this.loginUserData.jwtToken
     };
 
@@ -337,6 +329,8 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
   viewReportProcessData(flag = null) {
     this.htmlText.headerText = flag;
+    this.allBillerData = [];
+    this.billerData_count = 0;
 
     /* Config Data */
     let endpoint = 'diagnostic-admin-dashboard-report-data-list';
@@ -351,6 +345,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
       },
       searchcondition: {
         "parent_id": this.loginUserData.user_details._id,
+        // this.libdata.basecondition.status = { $eq: 11 };
       },
       "secretkey": "na"
     };
@@ -368,23 +363,23 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
         break;
       case 'Total No of Report Signed':
         data.searchcondition.report_type = { $exists: true };
-        data.searchcondition.status = { $gte: 14 };
-        this.libdata.basecondition.status = { $gte: 14 };
+        data.searchcondition.status = { $eq: 14 };
+        this.libdata.basecondition.status = { $eq: 14 };
         break;
       case 'Sent to Biller':
         data.searchcondition.report_type = { $exists: true };
-        data.searchcondition.status = { $gte: 15 };
-        this.libdata.basecondition.status = { $gte: 15 };
+        data.searchcondition.status = { $eq: 15 };
+        this.libdata.basecondition.status = { $eq: 15 };
         break;
       case 'Reports Downloaded':
         data.searchcondition.report_type = { $exists: true };
-        data.searchcondition.status = { $gte: 16 };
-        this.libdata.basecondition.status = { $gte: 16 };
+        data.searchcondition.status = { $eq: 16 };
+        this.libdata.basecondition.status = { $eq: 16 };
         break;
       case 'Reports Pending Sing':
         data.searchcondition.report_type = { $exists: true };
-        data.searchcondition.status = { $gte: 11 };
-        this.libdata.basecondition.status = { $gte: 11 };
+        data.searchcondition.status = { $eq: 11 };
+        this.libdata.basecondition.status = { $eq: 11 };
         break;
     }
 

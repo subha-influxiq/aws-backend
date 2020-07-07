@@ -179,7 +179,9 @@ export class BulkUploadComponent implements OnInit {
       formData.report_life_circle = [];
       formData.report_life_circle.push({
         "upload_by_tech_id" : this.cookies_id,
+        "date"              : Date.now(),
         "upload_date"       : Date.now(),
+        "status"            : 2,
         "upload_status"     : 2,
         "upload_status_text": "File uploaded",
         "status_text"       : "File uploaded"

@@ -166,7 +166,7 @@
             </span>
           </span>
           
-          <button mat-flat-button (click)="viewReportProcessData('Total No of Reports Added')">view all</button>
+          <!-- <button mat-flat-button (click)="viewReportProcessData('Total No of Reports Added')">view all</button> -->
         </span>
       </mat-card-content>
 
@@ -317,7 +317,7 @@
     </mat-toolbar> -->
     <mat-card-content class="headr_tagh">
       <span class="counter_with_tool">
-        <h1>Patient Reports</h1>
+        <h1> {{ htmlText.headerText }} </h1>
         <span class="tolTip">
           <a mat-raised-button #pendingActions="matTooltip"
             matTooltip="The reports listed here are reviewed by Admin."
