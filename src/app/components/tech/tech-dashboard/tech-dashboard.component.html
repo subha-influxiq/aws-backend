@@ -14,7 +14,7 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total No of <br>
+          <p>Total Number of <br>
             Reports Uploaded
           </p>
           <h2> {{ allResolveData.totalReportCount }} </h2>
@@ -30,10 +30,10 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total No of <br>
-            Report Processed
+          <p>Total Number of <br>
+            Reports Processed
           </p>
-          <h2> {{ allResolveData.processedReportCount }}6 </h2>
+          <h2> {{ allResolveData.processedReportCount }} </h2>
           <button mat-flat-button (click)="viewDetailsData('Reports Processed')">view all</button>
         </span>
       </mat-card-content>
@@ -62,7 +62,7 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total No of Reports<br>
+          <p>Total Number of Reports<br>
             Uploaded This Week
           </p>
           <h2> {{ allResolveData.totalreportthisweek }} </h2>
@@ -78,8 +78,7 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total No of Reports<br>
-            Processed Last Week
+          <p>Total Number Of Reports <br> Remain To Process This Week
           </p>
           <h2> {{ allResolveData.totalreportpreviousweek }} </h2>
           <button mat-flat-button (click)="viewDetailsData('Reports Processed')">view all</button>
@@ -93,8 +92,9 @@
           </mat-card-content>
         </span>
         <span class="container_wrapper">
-          <p>Total Number of Reports <br>
-            Uploaded Last Week
+          <p>
+            <!-- Total Number of Reports <br> Uploaded Last Week -->
+            Total Number Of Reports <br>Remain To Process This Week
           </p>
           <h2> {{ allResolveData.totalreportthismonth }} </h2>
           <button mat-flat-button (click)="viewDetailsData('Remain Process')">view all</button>
@@ -113,9 +113,9 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total No of Reports<br>
-            Processed Last Week </p>
-          <h2> {{ allResolveData.totalreportlastmonth }}7</h2>
+          <p>Total Number Of Reports Uploaded Last Week</p>
+            
+          <h2> {{ allResolveData.totalreportlastmonth }}</h2>
           <button mat-flat-button (click)="viewDetailsData('Reports Uploaded')">view all</button>
         </span>
       </mat-card-content>
@@ -127,10 +127,10 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total No of Reports<br>
-             Uploaded This Month
+          <p>Total Number Of Reports Remain 
+            To Process Last Week
           </p>
-          <h2> {{ allResolveData.totalreportlastmonth }}6 </h2>
+          <h2> {{ allResolveData.totalreportlastmonth }} </h2>
           <button mat-flat-button (click)="viewDetailsData('Reports Uploaded')">view all</button>
         </span>
       </mat-card-content>
@@ -142,15 +142,60 @@
         </span>
 
         <span class="container_wrapper">
-          <p>Total No of Reports<br>
-            Uploaded Last Month
+          <p>Total Number Of Reports Remain 
+            To Process Last Week
           </p>
-          <h2> {{ allResolveData.totalreportlastmonth }}4 </h2>
+          <h2> {{ allResolveData.totalreportlastmonth }}</h2>
           <button mat-flat-button (click)="viewDetailsData('Reports Uploaded')">view all</button>
         </span>
       </mat-card-content>
     </mat-card-content>
 
+    <mat-card-content class="biller_wrapper">
+
+      <mat-card-content class="super_bill_item sp_one">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total Number Of Reports Uploaded Last Month</p>
+            
+          <h2> {{ allResolveData.totalreportlastmonth }}</h2>
+          <button mat-flat-button (click)="viewDetailsData('Reports Uploaded')">view all</button>
+        </span>
+      </mat-card-content>
+      <mat-card-content class="super_bill_item sp_two">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total Number Of Reports Remain To Process Last Month
+          </p>
+          <h2> {{ allResolveData.totalreportlastmonth }} </h2>
+          <button mat-flat-button (click)="viewDetailsData('Reports Uploaded')">view all</button>
+        </span>
+      </mat-card-content>
+      <mat-card-content class="super_bill_item sp_three">
+        <span class="border_wrapper">
+          <mat-card-content class="circle">
+            <img src="../../../../assets/images/reporticon1.png">
+          </mat-card-content>
+        </span>
+
+        <span class="container_wrapper">
+          <p>Total Number Of Reports Remain To Process Last Month
+          </p>
+          <h2> {{ allResolveData.totalreportlastmonth }}</h2>
+          <button mat-flat-button (click)="viewDetailsData('Reports Uploaded')">view all</button>
+        </span>
+      </mat-card-content>
+    </mat-card-content>
   </mat-card-content>
 
 
