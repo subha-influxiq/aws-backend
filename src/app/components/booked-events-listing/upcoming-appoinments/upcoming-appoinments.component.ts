@@ -3,6 +3,7 @@ import {environment} from "../../../../environments/environment";
 import {CookieService} from "ngx-cookie-service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {HttpServiceService} from "../../../services/http-service.service";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-upcoming-appoinments',
@@ -10,6 +11,12 @@ import {HttpServiceService} from "../../../services/http-service.service";
   styleUrls: ['./upcoming-appoinments.component.css']
 })
 export class UpcomingAppoinmentsComponent implements OnInit {
+  doctors: any;
+  @Input()
+  set searchByDoctorValues(searchByDoctorValues: any) {
+    this.doctors = searchByDoctorValues;
+    console.log('this.doctors', this.doctors);
+  }
 
   public searchByDoctor: any = {label: "Search By Doctor", field: 'doctor_id', values: []};
 
@@ -211,11 +218,18 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       hideeditbutton: true,// all these button options are optional not mandatory
       tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'tech_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'is_google_event', 'status'],
       custombuttons: [
+        // {
+        //   label: "Cancel", type: 'action', datatype: 'api',
+        //   endpoint: 'delete-booked-event', otherparam: [],
+        //   cond: 'status', condval: 0,
+        //   param: '_id', refreshdata: true,
+        // },
         {
-          label: "Cancel", type: 'action', datatype: 'api',
-          endpoint: 'delete-booked-event', otherparam: [],
+          label: "Cancel",
+          type: 'listner',
+          id: 'btn_cancel',
           cond: 'status', condval: 0,
-          param: '_id', refreshdata: true,
+          refreshdata: true
         },
         {
           label: "Reschedule",
@@ -282,7 +296,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
   };
 
   constructor(public cookie: CookieService, public snackBar: MatSnackBar,
-              public httpService: HttpServiceService) {
+              public httpService: HttpServiceService, public dialog: MatDialog) {
 
   }
 
@@ -314,19 +328,21 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       });
     }
     // load doctor search dynamically
-    const data1 = {
-      token: this.cookie.get('jwtToken'),
-      condition: {doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id}
-    };
-    this.httpService.postRequest('get-doctor-info', data1).subscribe((response: any) => {
-      for (let i = 0; i < response.data.length; i++) {
-        let temp: any = {};
-        temp['val'] = response.data[i]._id;
-        temp['name'] = response.data[i].firstname + ' ' + response.data[i].lastname;
-        this.searchByDoctor.values.push(temp);
-      }
-    });
+    // const data1 = {
+    //   token: this.cookie.get('jwtToken'),
+    //   condition: {doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id}
+    // };
+    // this.httpService.postRequest('get-doctor-info', data1).subscribe((response: any) => {
+    //   for (let i = 0; i < response.data.length; i++) {
+    //     let temp: any = {};
+    //     temp['val'] = response.data[i]._id;
+    //     temp['name'] = response.data[i].firstname + ' ' + response.data[i].lastname;
+    //     this.searchByDoctor.values.push(this.doctors);
+    //   }
+    // });
 
+    this.searchByDoctor.values = this.doctors;
+    console.log('this.searchByDoctor', this.searchByDoctor);
 
     if (this.cookie.check('jwtToken')) {
       this.configData.jwtToken = this.cookie.get('jwtToken');
@@ -412,9 +428,12 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       // this.configData = Object.assign(this.configData, userDetails);
 
       /* ****************** Get total booked events count ****************** */
-      this.httpService.postRequest(this.configData.endPoint.listUpcomingBookedEventsCount, data).subscribe((response: any) => {
-        this.configData.date_search_source_count = response.count;
-      });
+      setTimeout(() => {
+
+        this.httpService.postRequest(this.configData.endPoint.listUpcomingBookedEventsCount, data).subscribe((response: any) => {
+          this.configData.date_search_source_count = response.count;
+        });
+      }, 2000);
       /* ******************************************************************* */
 
     } else {
@@ -428,4 +447,34 @@ export class UpcomingAppoinmentsComponent implements OnInit {
     });
   }
 
+  listenLiblistingChange(event: any) {
+    console.log('event', event);
+    // endpoint: 'delete-booked-event'
+    if (event.custombuttonclick != undefined) {
+      if (event.custombuttonclick.btninfo.id === 'btn_cancel') {
+        const dialogRef = this.dialog.open(DialogCancelAlert);
+
+        dialogRef.afterClosed().subscribe(result => {
+          console.log(`Dialog result: ${result}`);
+          const data: any = {
+            token: this.configData.jwtToken,
+            _id: event.custombuttonclick.data._id
+          }
+          if (result == 'true') {
+            this.httpService.postRequest('delete-booked-event', data).subscribe((response: any) => {
+              console.log('response', response);
+              this.configData.updatetable = !this.configData.updatetable;
+            })
+          }
+        });
+      }
+    }
+  }
 }
+
+
+@Component({
+  selector: 'cancel-alert-dialog',
+  templateUrl: 'cancel-alert.html',
+})
+export class DialogCancelAlert {}

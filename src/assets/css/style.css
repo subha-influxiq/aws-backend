@@ -2,7 +2,7 @@
 *{
   box-sizing: border-box;
 }
- 
+
 @font-face {
   font-family: 'AmandaSignature';
   src: url('../fonts/AmandaSignatureRegular.woff2') format('woff2'),
@@ -149,7 +149,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 /* .custom-modalbox .mat-dialog-container { border: 4px solid #ffbc36; background: linear-gradient(0deg, #ffdfab, #99dfff); } */
 .custom-modalbox .mat-dialog-container .mat-card  { background:rgba(70, 70, 70, 0.1); border-radius: 0; display: flex; justify-content: center; align-items: end; margin-bottom: 16px;  padding: 0;}
 .custom-modalbox .mat-dialog-container .mat-card  .mat-card-header-text { margin: 0; text-transform: capitalize; color: #000; font-family: "AvenirMedium";}
- 
+
 .custom-modalbox .example-card .mat-card-header { min-width: 50%; position: relative; padding: 16px; box-sizing: border-box; }
 .custom-modalbox .example-card .mat-card-header .mat-card-title { margin-bottom: 0px; font-size: 16px; font-family: "AvenirLight"; }
 .custom-modalbox .example-card .mat-card-header::before { content: ':';
@@ -183,7 +183,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 .file_upload .files-view .viewUrlcontent .mat-card-header-text .mat-card-title { font-family: 'AvenirMedium';}
 .file_upload .files-view .viewUrlcontent .mat-card-header-text .fileDescription { margin-top: 0; font-family: 'AvenirMedium';}
 .file_upload .files-view .viewUrlcontent .mat-card-actions button:last-child,
-.file_upload .button-group button:last-child{ background:rgb(255, 0, 0); margin:0; } 
+.file_upload .button-group button:last-child{ background:rgb(255, 0, 0); margin:0; }
 
 .admin_wrapper  .con-report-lebel { margin-top: 16px;}
 .admin_wrapper  .con-report-lebel p { font-family: 'AvenirMedium'; color: #f54400;
@@ -208,7 +208,7 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 
 /* .container .searchbar i{margin-left: auto;} */
 .searchbar { height: auto!important; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; box-shadow: 0px 2px 2px #c5c5c5; padding-bottom: 16px!important; position: relative; background: #fbfbfb; }
-.searchbar .mat-form-field{ width: 32%; margin: 0 0.5%!important; 
+.searchbar .mat-form-field{ width: 32%; margin: 0 0.5%!important;
   /* flex-grow: 1; */
 }
 .searchbar .cursor{ width: 35px; border-radius: 50%; background: var(--button-color2); height: 35px;
@@ -219,7 +219,7 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 .add_form .file_upload .uploadfilecontainer { width: 100%; box-sizing: border-box;}
 .admin_table{ width: 100%; margin: 20px auto; display: block;}
 .admin_table table{ width: 100%; }
-                                        
+
 .admin_table table tr td:nth-child(4) span{
   background: linear-gradient(0deg, #d73a87, #ff7abb); text-align: center; display: inline;
   padding: 8px; box-sizing: border-box; color: #fff; cursor: pointer; text-transform: uppercase; font-family: "AvenirBlack"; }
@@ -264,16 +264,16 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
    border-radius: 10px;
    box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 } */
- 
+
 
 .action_bar .mat-form-field-appearance-legacy .mat-form-field-label { font-size: 16px;  font-family: "AvenirLight"; width: auto; padding-left: 10px; }
 
 .infomodal{ overflow: auto; width: 991px;}
 /* admin css */
 .admin_wrapper{ width: 1400px; margin: 20px auto; box-sizing: border-box; margin-bottom: 70px; padding: 10px!important; background: #f1f1f1!important;}
-.searchcard { padding: 0; } 
+.searchcard { padding: 0; }
 
-/* admin css */ 
+/* admin css */
 .admin_wrapper .content_wrapper{ display: flex; justify-content: center;  align-items: center; width: 100%; margin: auto; text-align: center; margin-top: 10px!important; margin-bottom: 12px; }
 .admin_wrapper .content_wrapper .itemsection{
   /* width: 33%; margin: 0px 7px; box-sizing: border-box; display: flex; justify-content: center; position: relative; border-radius: 10px; border: 1px solid #e8e9ef;  overflow: hidden; background:#fff;  */
@@ -298,9 +298,9 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
   border-radius: 8px;
   min-width: 20%; padding: 10px;}
 .admin_wrapper .content_wrapper .itemsection .icon img{ max-width: 100%; }
-.admin_wrapper .content_wrapper .itemsection .button_wrapper{ 
+.admin_wrapper .content_wrapper .itemsection .button_wrapper{
   /* background: #4d545a; width: 25%; display: flex; align-items: center; justify-content: center; */
-   
+
   width:54%;
   display: flex;
   align-items: flex-start;
@@ -320,7 +320,7 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
    padding: 4px 14px;
    margin-left: auto;
    }
-.admin_wrapper .content_wrapper .itemsection .counteer { box-sizing: border-box; 
+.admin_wrapper .content_wrapper .itemsection .counteer { box-sizing: border-box;
   width: auto; padding: 5px; min-width: 120px; text-align: left; background: #e2e8ec;
   border-radius: 8px; display: flex;
   align-items: center;
@@ -329,7 +329,7 @@ color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 .counter_with_tool { display: flex; align-items: center; }
 .admin_wrapper .content_wrapper .itemsection .counteer .dataCount{ font-size: 38px; font-family: "AvenirBlack";  color: #4d545a; margin: 0; }
 .admin_wrapper .content_wrapper .itemsection .button_wrapper .doctorNumber{ font-family: 'AvenirBlack';
-  margin: 0 0 14px 0; font-size: 16px; width: 100%; text-align: left; color: #656262;} 
+  margin: 0 0 14px 0; font-size: 16px; width: 100%; text-align: left; color: #656262;}
 .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber{ font-size: 18px; font-family: "AvenirMedium";  color: #4d545a; margin:0;}
 
 .admin_wrapper .content_wrapper .itemsection:nth-child(3n+1){ margin-left: 8px;}
@@ -388,7 +388,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
   font-size: 20px;
     font-family: 'AvenirMedium';
     color: #535353;
-    text-transform: capitalize; 
+    text-transform: capitalize;
     margin: 0;
 }
 .admin_superbillsection .biller_wrapper  { display: flex; justify-content: center; margin-bottom: 0;}
@@ -425,7 +425,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 /* .superbillerContainer .biller_wrapper .super_bill_item span P{ font-size: 18px!important; line-height: 20px!important;} */
 .superbillerContainer .biller_wrapper .super_bill_item span P br{ display: none;}
 .superbillerContainer .biller_wrapper .super_bill_item span h2{ margin: 0;}
-.superbillerContainer .biller_wrapper .super_bill_item span button { line-height: 28px!important; width: 90px!important; } 
+.superbillerContainer .biller_wrapper .super_bill_item span button { line-height: 28px!important; width: 90px!important; }
 .superbillerContainer .biller_wrapper .super_bill_item {background-size: 90px!important; width: 24% }
 
 .adminTables .viewButton{ background-color:var(--button-color2); width: auto; height: auto; line-height: initial; padding: 2px 10px; box-shadow: none; border-radius: 2px; font-family: "AvenirMedium"; color: #fff; min-width: inherit;}
@@ -453,7 +453,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
   background: var(--button-color2); color: #fff; margin-left: auto; }
 .table_wrapper .action_bar .mat-form-field-label-wrapper { position: absolute; left: 0px; box-sizing: content-box; width: 100%; height: 100%; overflow: hidden; pointer-events: none; top: -10px; padding-top: 20px; }
 .table_wrapper .action_bar .date-range{ display: flex; width: 43%; }
- 
+
 .table_wrapper .action_bar .mat-form-field-appearance-legacy .mat-form-field-wrapper { padding-bottom: 0; }
 .table_wrapper .action_bar .mat-form-field-suffix::before { content: ''; position: absolute; height: 26px; width: 1px; background: #545454; right:30px; display: inline-block; }
 .action_bar .mat-form-field .mat-form-field-flex { display: inline-flex; align-items: baseline; box-sizing: border-box; width: 220px; background: #fbfbfb; border: 1px solid #545454; border-radius: 5px; }
@@ -469,7 +469,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .table_wrapper .mat-table .mat-column-doctorName .doctor_name span{ font-family: 'AvenirBlack'; color: #404242; }
 .table_wrapper .footer_action{ justify-content: center; height: auto; padding: 10px 0; margin-top: 10px;}
 .table_wrapper .footer_action button{ background: var(--button-color2); font-family: 'AvenirRoman';}
-.table_wrapper .footer_action button:last-child{ margin-left: 10px; background: var(--button-color3);} 
+.table_wrapper .footer_action button:last-child{ margin-left: 10px; background: var(--button-color3);}
 .biller_Dashboard .mat-table .mat-column-Doctor-Name .doctor_name{ margin: 6px 0; }
 .biller_Dashboard .mat-table .mat-column-Doctor-Name .doctor_name span{ font-family: 'AvenirBlack'; color: #404242; }
 
@@ -514,7 +514,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .Admindmin_details .inner{ column-count: 2; column-gap: 20px; display: block; }
 .Admindmin_details .inner_er h3{ text-align: center; text-transform: uppercase; font-size: 28px;
   font-family: 'AvenirMedium'; border-bottom: 2px solid #c5c4c4; padding: 5px; margin: 0; background: linear-gradient(-5deg, #2df6fd 45%, #09cef5 52%); color: #231c23; }
-.Admindmin_details .list_wrapper{ width: 100%; margin: 0 auto; border-radius: 10px; background: #fff; box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12); padding-top: 0!important; padding-bottom: 20px;} 
+.Admindmin_details .list_wrapper{ width: 100%; margin: 0 auto; border-radius: 10px; background: #fff; box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12); padding-top: 0!important; padding-bottom: 20px;}
 .Admindmin_details .inner_er .mat-list-item{ font-size: 18px; font-family: 'AvenirMedium'; height: inherit;
   padding: 5px; box-sizing: border-box; color: #545454; text-transform: capitalize; }
 .Admindmin_details .inner_er .mat-list-item .lg{ font-size: 18px; font-family: 'AvenirBlack'; }
@@ -552,7 +552,7 @@ flex-direction: column; border: 1px solid #b4b5b5; box-sizing: border-box; width
 .mat-dialog-container .mat-dialog-title {line-height: inherit;  text-align: center; margin: 0; display: block; background: linear-gradient(45deg, #00c56a, var(--button-color3));
 color: #fff; padding:10px 6px; font-family: 'AvenirBlack'; text-transform: uppercase; }
 .mat-dialog-container .mat-dialog-content { display: block; margin: 0; padding: 16px; box-sizing: border-box; }
-                          
+
 .mat-dialog-container .mat-dialog-content .mat-form-field{ width:100%}
 .mat-dialog-container .mat-dialog-content .submit_form{  display: flex; justify-content: flex-end;}
 .mat-dialog-container .mat-dialog-content .submit_form button{ font-family: 'AvenirBlack'; text-transform: uppercase; color: #fff; background: var(--button-color2);}
@@ -560,7 +560,7 @@ color: #fff; padding:10px 6px; font-family: 'AvenirBlack'; text-transform: upper
 .mat-dialog-container .mat-dialog-content p{ text-align: center; color: var(--button-color2); font-size: 18px; white-space: normal; word-break: break-all; font-family: 'AvenirMedium';}
 .mat-dialog-container .mat-dialog-content .innerhtml-content{ text-align: left;
  color: #1f1e1e; font-size: 16px; white-space: normal; word-break: break-all; font-family: 'AvenirLight';}
- 
+
 .mat-dialog-container .mat-dialog-actions { display: flex; flex-wrap: wrap; min-height: inherit; align-items: center; justify-content: center; margin-bottom: 0;}
 .mat-dialog-container .mat-dialog-actions button{ background: linear-gradient(45deg, var(--button-color1), #e2b400);
 color: #fff; min-width: 100px; font-family: 'AvenirMedium'; font-size: 18px;}
@@ -614,7 +614,7 @@ color: #ffffff; text-align: inherit; display: inline-flex; align-items: center;}
 .calenderView .slotview .example-card .mat-card-actions button:hover {transition: 200ms all; border:1px solid var(--button-color3); color: var(--button-color3); background: #fff!important; }
 .calenderView .example-container .button_wrapper button{ background: var(--button-color2); font-family: "AvenirMedium"; font-size: 18px;}
 .calenderView .example-container .button_wrapper button:last-child{ background: var(--button-color3)}
- 
+
 .searchbar .mat-form-field .mat-chip.mat-standard-chip { background: linear-gradient(40deg, #03a0c3 50%, #0ab3ff 50%); color: #ffff;
   font-family: 'AvenirLight'; white-space: normal; height: auto; word-break: break-word; font-size: 10px; }
 .searchbar .mat-form-field .mat-chip.mat-standard-chip .mat-chip-remove.mat-icon { margin: 0; }
@@ -662,7 +662,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .book-appointment .mat-stepper-horizontal .mat-horizontal-content-container{padding: 0;}
 
 .book-appointment .mat-stepper-horizontal h4,
-.book-event .mat-dialog-container .mat-stepper-horizontal h4{ font-family: 'AvenirMedium'; margin: 0; font-size: 20px; color: #0ac3a2; text-transform: uppercase; margin-bottom: 14px; }  
+.book-event .mat-dialog-container .mat-stepper-horizontal h4{ font-family: 'AvenirMedium'; margin: 0; font-size: 20px; color: #0ac3a2; text-transform: uppercase; margin-bottom: 14px; }
 
 .book-appointment .mat-stepper-horizontal .containerSpan mat-label,
 .book-event .mat-dialog-container .mat-stepper-horizontal .containerSpan mat-label{ color: #505050; }
@@ -681,7 +681,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .label_name{
   font-size: 16px; color: #243834; text-align: left; word-break: break-word; }
 
-.book-appointment .mat-stepper-horizontal .containerSpan,  
+.book-appointment .mat-stepper-horizontal .containerSpan,
 .book-event .mat-dialog-container .mat-stepper-horizontal .containerSpan { overflow: inherit; clear: none;}
 
 .book-appointment div>.mat-raised-button,
@@ -758,7 +758,7 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .encounter_rules .admin_superbillsection .tab h3{ border: 1px solid #dadada; margin: 0; border-bottom: 0;
 background: #f9f9f9; padding: 16px 8px; font-family: 'AvenirBlack'; font-size:16px; color: #828282; }
 .encounter_rules .admin_superbillsection .tab table tr.mat-header-row{ font-family:'AvenirBlack'; }
-.encounter_rules .admin_superbillsection .tab table tr.mat-header-row, 
+.encounter_rules .admin_superbillsection .tab table tr.mat-header-row,
 .encounter_rules .admin_superbillsection .tab table tr.mat-row{ height: auto; }
 
 .encounter_rules .admin_superbillsection .greenbar{
@@ -772,15 +772,15 @@ background: #f9f9f9; padding: 16px 8px; font-family: 'AvenirBlack'; font-size:16
 
 .shareLink_wrpr { padding: 0px; margin: 14px 10px 16px!important; border-radius: 4px; }
 
-.shareLink_wrpr .link_field{ background: linear-gradient(45deg, #00aada, #83e2ff); height: auto; padding: 12px; justify-content: space-between; border-radius: 4px;}  
+.shareLink_wrpr .link_field{ background: linear-gradient(45deg, #00aada, #83e2ff); height: auto; padding: 12px; justify-content: space-between; border-radius: 4px;}
 .shareLink_wrpr .link_field h2{ font-size: 20px; text-transform: uppercase; font-family: 'AvenirMedium';margin: 0; margin-right: 10px; color: #ffffff; }
 .shareLink_wrpr .small_view { width: 100%; display: flex;}
 .shareLink_wrpr .small_view .shreWr { width: 100%; display: flex;}
 .shareLink_wrpr .small_view .shreWr input{ background: #fff; padding: 10px; width: 100%; border: none; box-shadow: 0px 1px 4px #949494;}
-  
+
 .shareLink_wrpr .link_field .shreWr a{ background: linear-gradient(50deg, #ff2a4e, #f3072f);
 font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radius: 0 4px 4px 0;}
-.shareLink_wrpr .icon_wr a { width: 35px; height: auto; min-width: inherit; text-align: center; padding: 0; margin-left: 10px; } 
+.shareLink_wrpr .icon_wr a { width: 35px; height: auto; min-width: inherit; text-align: center; padding: 0; margin-left: 10px; }
 .shareLink_wrpr .icon_wr a i{ font-size: 20px; }
 
 .shareLink_wrpr .icon_wr a:nth-child(1) { background: #3b5998; color:#fff; }
@@ -789,7 +789,7 @@ font-family: 'AvenirMedium'; color: #fff; text-transform: uppercase; border-radi
 .shareLink_wrpr .icon_wr a:nth-child(4) { background: #34526f ; color:#fff; }
 
 .success-snackbar { background: #4cde45!important; color: #fff!important; font-family: 'AvenirMedium';  box-shadow: none!important;}
-.success-snackbar .mat-simple-snackbar-action button { color: #fff!important;} 
+.success-snackbar .mat-simple-snackbar-action button { color: #fff!important;}
 .encounter_wrapper .second_table .book-appointment .mat-form-field { width: 32.2%; }
 .encounter_wrapper .second_table .book-appointment .mat-form-field-appearance-fill .mat-form-field-flex { background: #f5f4f4; }
 .calenderView .calendar_wrapper { width: 65%!important; }
@@ -809,7 +809,7 @@ padding: 10px; background: #46b70d; color: #fff; width: auto;}
 /* job tickets */
 .job_reprt_wrapper .job_reprt_action { padding: 10px; height: auto; }
 .job_reprt_wrapper .job_reprt_action button{
-  background: var(--button-color2); margin-right: 10px; box-shadow: none; font-family: 'AvenirMedium'; 
+  background: var(--button-color2); margin-right: 10px; box-shadow: none; font-family: 'AvenirMedium';
 }
 
 .job_reprt_wrapper .job_seeker_details{ background: #ffffff; margin-bottom: 16px;}
@@ -830,7 +830,7 @@ display: none; justify-content: center; align-items: center; transition: ease-in
 .report_action_wrapper button{ background: transparent;
  border: 1px solid #fff; margin-right: 10px; color: #d0d0d0; text-transform: uppercase;
  font-family: 'AvenirMedium'; width: 120px; line-height: inherit; transition: ease-in 2ms; }
-.report_action_wrapper button:last-child{ margin: 0; }  
+.report_action_wrapper button:last-child{ margin: 0; }
 .job_reprt_wrapper .itm .report_image_w .image_items img{ max-width: 100%; vertical-align: middle;
   height: 100%; object-fit: cover; object-position: center center;} 
 .job_modal_wr .content_jobview img{ max-width: 100%; }
@@ -849,9 +849,9 @@ display: none; justify-content: center; align-items: center; transition: ease-in
 .admin_superbillsection  .container_wrapper .tolTip a.toggle_btn .material-icons,
 .superbillerContainer .tolTip a.toggle_btn .material-icons{  font-size: 22px; color: #fff; }
 .tooltip_bg{background:#fff!important; color: #000!important; font-size: 14px!important; position: relative;
-font-family: 'AvenirMedium'!important; opacity: 1!important; border: 1px solid rgb(177, 175, 175);} 
- 
-/* modal close button */ 
+font-family: 'AvenirMedium'!important; opacity: 1!important; border: 1px solid rgb(177, 175, 175);}
+
+/* modal close button */
 .maindialognew{ position: relative;}
 .maindialognew .close-btn-modal{ float: none!important;
 color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
@@ -860,7 +860,7 @@ color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
   font-size: 18px; text-transform: uppercase; font-family: 'AvenirMedium'; }
 .notes-modal .maindialognew .close-btn-modal{ top:28px; right: 6%; }
 
- 
+
 .notes-modal .maindialognew .dialoghead .mat-dialog-content .ng-star-inserted textarea{
   width: 100%; border: 1px solid #bbbbbb; box-shadow: none;
   margin: 20px 0 14px; padding: 10px; box-sizing: border-box; resize: none;
@@ -870,8 +870,8 @@ color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
 
 .notes-modal .maindialognew .dialoghead .mat-dialog-content .mat-list-base .mat-list-item  .mat-line{ font-size: 15px;
   font-family: 'AvenirMedium'; word-break: break-word; white-space: normal; color: #1d1f1e;}
-.notes-modal .maindialognew .dialoghead .mat-dialog-content .mat-list-base .mat-list-item  .line-user, 
+.notes-modal .maindialognew .dialoghead .mat-dialog-content .mat-list-base .mat-list-item  .line-user,
 .notes-modal .maindialognew .dialoghead .mat-dialog-content .mat-list-base .mat-list-item .line-datetime{  font-size: 14px; font-family: 'AvenirMedium'; color: #7f8280; padding: 4px 0;}
- 
+
 .notes-modal .maindialognew .dialoghead .mat-list .mat-list-item{ height: auto; padding: 10px 0;}
 .notes-modal .maindialognew .dialoghead .mat-dialog-content .mat-list-base .mat-list-item .mat-list-item-content .material-icons { color:#f7032d; }
