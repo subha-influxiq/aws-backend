@@ -37,7 +37,7 @@ export class AppoinmentsListingComponent implements OnInit {
   public authData: any = {};
   public dialogRef: any;
 
-
+  doctors: any = [];
 
   constructor(public cookie: CookieService, public http: HttpClient, public snackBar: MatSnackBar,
               public httpService: HttpServiceService, public activatedRoute: ActivatedRoute,
@@ -49,7 +49,18 @@ export class AppoinmentsListingComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    const data1 = {
+      token: this.cookie.get('jwtToken'),
+      condition: {doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id}
+    };
+    this.httpService.postRequest('get-doctor-info', data1).subscribe((response: any) => {
+      for (let i = 0; i < response.data.length; i++) {
+        let temp: any = {};
+        temp['val'] = response.data[i]._id;
+        temp['name'] = response.data[i].firstname + ' ' + response.data[i].lastname;
+        this.doctors.push(temp);
+      }
+    })
   }
 
   openSnackBar(message: string, action: string) {

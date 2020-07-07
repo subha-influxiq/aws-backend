@@ -15,9 +15,9 @@
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 4px; }
   .encounter_rules .admin_superbillsection .greenbar{ height: 320px; }
   .admin_wrapper .content_wrapper .itemsection .button_wrapper .doctorNumber { font-size: 15px; }
-  .superbillerContainer .biller_wrapper .super_bill_item span P {
-    font-size: 16px!important;}
-}
+  /* .superbillerContainer .biller_wrapper .super_bill_item span P { font-size: 16px!important;} */
+  .admin_superbillsection .biller_wrapper .super_bill_item .border_wrapper { width: 15%; }
+} 
 @media screen and (max-width: 1410px){
   .action_bar .mat-form-field .mat-form-field-flex { width: 180px; }
   .table_wrapper .action_bar .date-range { width: auto;}
@@ -122,9 +122,8 @@ align-items: flex-start; }
   .admin_wrapper .content_wrapper .itemsection .button_wrapper .doctorNumber{ text-align: center;}
 }
 @media screen and (max-width: 991px) {
-  .biller_Dashboard .patient_report_section .patient_top_search .res_view { flex-direction: column; width: 100%;}
-  .biller_Dashboard .patient_report_section .patient_top_search .res_view .btn_action_wrapper { margin-left: auto; }
-
+.biller_Dashboard .patient_report_section .patient_top_search .res_view { flex-direction: column; width: 100%;}
+.biller_Dashboard .patient_report_section .patient_top_search .res_view .btn_action_wrapper { margin-left: auto; }
 .DataTable .container .searchbar { flex-wrap: wrap; height: auto; width: 100%; margin: auto; position: relative; } 
 .table_wrapper .mat-table { width: 100%; }
 .mat-table {border: 0; vertical-align: middle;}
@@ -203,7 +202,7 @@ align-items: flex-start; }
   .report_action_wrapper button { margin-right: 0px; margin-bottom: 10px;}
   .mat-bottom-sheet-container { max-width: 80vw!important; }
   .admin_wrapper .content_wrapper .itemsection .button_wrapper .doctorNumber { font-size: 18px; }
-
+  .admin_superbillsection .biller_wrapper .super_bill_item { width: 100%; }
 
 
 }
@@ -277,6 +276,7 @@ align-items: flex-start; }
   .calenderView .calender_first .buttonsetToolbar {flex-direction: row; }
   .job_reprt_wrapper .itm .report_image_w .image_items { width: 48%; margin: 1%;}
   .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber { font-size: 14px; }
+  .notes-modal .maindialognew .close-btn-modal { right: 10%; }
 }
  
  
@@ -404,6 +404,8 @@ align-items: flex-start; }
   .container .searchbar .add_button { margin: 0; margin-left: 20px; }
   .admin_dashboard .DataTable .tablewrapper tr .mat-column-general_details p:nth-child(1) {font-size: 14px; }
   .mat-table .mat-cell:after { font-size: 14px;}
+  .notes-modal .maindialognew .close-btn-modal { right: 8%; }
+  .notes-modal .maindialognew .mat-dialog-content .mat-subheader { font-size: 14px; padding: 0 6px; }
 }                                            
  
 

@@ -296,7 +296,7 @@ export class PastAppoinmentsComponent implements OnInit {
       token: this.cookie.get('jwtToken'),
       condition: {doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id}
     };
-    setTimeout(() => {
+    // setTimeout(() => {
       this.httpService.postRequest('get-doctor-info', data1).subscribe((response: any) => {
         for (let i = 0; i < response.data.length; i++) {
           let temp: any = {};
@@ -305,7 +305,7 @@ export class PastAppoinmentsComponent implements OnInit {
           this.searchByDoctor.values.push(temp);
         }
       })
-    }, 3000);
+    // }, 3000);
 
     if (this.cookie.check('jwtToken')) {
       this.configData.jwtToken = this.cookie.get('jwtToken');
@@ -391,9 +391,12 @@ export class PastAppoinmentsComponent implements OnInit {
       // this.configData = Object.assign(this.configData, userDetails);
 
       /* ****************** Get total booked events count ****************** */
-      this.httpService.postRequest(this.configData.endPoint.listBookedEventsCount, data).subscribe((response: any) => {
-        this.configData.date_search_source_count = response.count;
-      });
+      setTimeout(() => {
+
+        this.httpService.postRequest(this.configData.endPoint.listBookedEventsCount, data).subscribe((response: any) => {
+          this.configData.date_search_source_count = response.count;
+        });
+      }, 3000);
       /* ******************************************************************* */
 
     } else {

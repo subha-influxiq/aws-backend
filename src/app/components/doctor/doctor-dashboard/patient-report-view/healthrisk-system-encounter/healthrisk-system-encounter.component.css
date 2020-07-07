@@ -4,9 +4,11 @@
     display: block;
 }
 
-.header { text-align: center; margin: 0;
-    font-size: 30px;
-    font-family: "AvenirBlack";
+.header { text-align: center; margin: 0; font-size: 28px; font-family: "AvenirMedium";
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #d20e89;
+  padding: 8px 0;
 }
 
 .encounter_wrapper table { width: 100%;}

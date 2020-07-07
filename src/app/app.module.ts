@@ -169,7 +169,10 @@ import { AdminbillerDashboardComponent } from './components/adminbiller/adminbil
 import { AdminbillerHeaderComponent } from './components/adminbiller/adminbiller-header/adminbiller-header.component';
 import { AdminbillerFooterComponent } from './components/adminbiller/adminbiller-footer/adminbiller-footer.component';
 import { AddPatientManuallyComponent } from './components/doctor-office/add-patient/add-patient-manually/add-patient-manually.component';
-import {UpcomingAppoinmentsComponent} from "./components/booked-events-listing/upcoming-appoinments/upcoming-appoinments.component";
+import {
+  DialogCancelAlert,
+  UpcomingAppoinmentsComponent
+} from "./components/booked-events-listing/upcoming-appoinments/upcoming-appoinments.component";
 import {PastAppoinmentsComponent} from "./components/booked-events-listing/past-appoinments/past-appoinments.component";
 import { PatientSelectModalComponent } from './components/tech/patient-management/patient-select-modal/patient-select-modal.component';
 import { ReportUploadSuccessModalComponent } from './components/tech/patient-management/report-upload-success-modal/report-upload-success-modal.component';
@@ -373,10 +376,14 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     ViewAllButtonListComponent,
 
     LoginDotorByAdminComponent,
+<<<<<<< HEAD
 
     ReportTimeSettingComponent,
 
     AddSettingTimeComponent,
+=======
+    DialogCancelAlert
+>>>>>>> b1909e3f4919139caf18274a0735b896027d8cbb
   ],
   imports: [
     SatDatepickerModule,
@@ -460,6 +467,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 
     // View job tickets image
     ViewJobTicketImageComponent,
+    DialogCancelAlert
   ]
 })
 
