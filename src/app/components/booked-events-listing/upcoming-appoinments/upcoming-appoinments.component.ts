@@ -292,7 +292,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       ]
     },
     statusarray: [{val: 0, 'name': 'Pending'}, {val: 1, 'name': 'Completed'}, {val: 2, 'name': 'Canceled'}],
-    detail_skip_array: ['_id', 'username', 'useremail', 'startdate_unix', 'can_reschedule', 'is_google_event', 'doctor_id', 'doctors_office_id', 'doctor_name', 'doctors_office_name', 'tech_id', 'tech_name', 'timezoneName', 'parent_id', 'parent_type', 'userid', 'username', 'start_datetime_unix', 'insurance_id', 'insurance_type', 'status']
+    detail_skip_array: ['_id', 'username', 'useremail', 'startdate_unix', 'can_reschedule', 'is_google_event', 'doctor_id', 'doctors_office_id', 'doctor_name', 'doctors_office_name', 'tech_id', 'tech_name', 'timezoneName', 'parent_id', 'parent_type', 'userid', 'username', 'start_datetime_unix', 'insurance_id', 'insurance_type', 'status', 'patient_name_search']
   };
 
   constructor(public cookie: CookieService, public snackBar: MatSnackBar,
@@ -328,8 +328,8 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       });
     }
     // load doctor search dynamically
-    let user_details = JSON.parse(this.cookie.get('user_details'));
-    if (user_details.user_type === 'admin') {
+    // let user_details = JSON.parse(this.cookie.get('user_details'));
+    if (JSON.parse(this.cookie.get('user_details')).user_type === 'admin') {
       this.configData.search_settings.search.push({
         label: "Search By Doctor ", field: 'doctor_id',
         values: [],
@@ -339,7 +339,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       this.configData.search_settings.search.push({
         label: "Search By Doctor ", field: 'doctor_id',
         values: this.doctors,
-      })
+      });
     }
 
     // console.log('this.searchByDoctor', this.searchByDoctor);

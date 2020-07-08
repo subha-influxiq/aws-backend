@@ -18,7 +18,7 @@ export class PastAppoinmentsComponent implements OnInit {
     console.log('this.doctors', this.doctors);
   }
 
-  public searchByDoctor: any = {label: "Search By Doctor", field: 'doctor_id', values: []};
+  // public searchByDoctor: any = {label: "Search By Doctor", field: 'doctor_id', values: []};
 
   public configData: any = {
     appName: 'Calendar Management',
@@ -260,10 +260,10 @@ export class PastAppoinmentsComponent implements OnInit {
       textsearch: [{label: "Search By Patient Name", field: 'patient_name_search'}],
 
       // this is use for  Autocomplete search
-      search: [this.searchByDoctor]
+      search: []
     },
     statusarray: [{val: 0, 'name': 'Pending'}, {val: 1, 'name': 'Completed'}, {val: 2, 'name': 'Canceled'}],
-    detail_skip_array: ['_id', 'username', 'useremail', 'startdate_unix', 'can_reschedule', 'is_google_event', 'doctor_id', 'doctors_office_id', 'doctor_name', 'doctors_office_name', 'tech_id', 'tech_name', 'timezoneName', 'parent_id', 'parent_type', 'userid', 'username', 'start_datetime_unix', 'insurance_id', 'insurance_type', 'status']
+    detail_skip_array: ['_id', 'username', 'useremail', 'startdate_unix', 'can_reschedule', 'is_google_event', 'doctor_id', 'doctors_office_id', 'doctor_name', 'doctors_office_name', 'tech_id', 'tech_name', 'timezoneName', 'parent_id', 'parent_type', 'userid', 'username', 'start_datetime_unix', 'insurance_id', 'insurance_type', 'status', 'patient_name_search']
   };
 
 
@@ -299,7 +299,19 @@ export class PastAppoinmentsComponent implements OnInit {
       });
     }
     // load doctor search dynamically
-    this.searchByDoctor.values = this.doctors;
+    // let user_details = JSON.parse(this.cookie.get('user_details'));
+    if (JSON.parse(this.cookie.get('user_details')).user_type === 'admin') {
+      this.configData.search_settings.search.push({
+        label: "Search By Doctor ", field: 'doctor_id',
+        values: [],
+        serversearchdata: { endpoint: 'get-doctor-for-autocomplete-search' }
+      });
+    } else {
+      this.configData.search_settings.search.push({
+        label: "Search By Doctor ", field: 'doctor_id',
+        values: this.doctors,
+      })
+    }
 
     if (this.cookie.check('jwtToken')) {
       this.configData.jwtToken = this.cookie.get('jwtToken');
