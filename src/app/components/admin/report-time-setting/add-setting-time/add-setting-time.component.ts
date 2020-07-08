@@ -48,8 +48,8 @@ export class AddSettingTimeComponent implements OnInit {
       this.generateAddEditForm('edit');
 
       this.htmlText.message     = "Updated Successfully";
-      this.htmlText.header      = 'Edit Report Setting';
-      this.htmlText.nav         = 'Edit Report Setting';
+      this.htmlText.header      = 'Configure Approval Settings';
+      this.htmlText.nav         = 'Configure Approval Settings';
       this.htmlText.buttonText  = 'Update';
       this.params_id            = this.activeRoute.snapshot.params._id;
     } else {
@@ -60,13 +60,11 @@ export class AddSettingTimeComponent implements OnInit {
   generateAddEditForm(flag: string = null) {
     let validateRule: any = {
       id:               ['', []],
-      time_setting_percentage:        ['', [ Validators.required, Validators.maxLength(2) ]]
+      time_setting_percentage:        ['', [ Validators.required, Validators.maxLength(100),Validators.minLength(0) ]]
     };
 
     switch(flag) {
       case 'edit':
-        delete validateRule.password;
-        delete validateRule.confirmpassword;
 
         this.SalesPersonManagementAddEditForm = this.fb.group(validateRule);
 
@@ -121,7 +119,7 @@ export class AddSettingTimeComponent implements OnInit {
           setTimeout(() => {
             switch(this.htmlText.userData.user_details.user_type) {
               case 'admin':
-                this.router.navigateByUrl("admin/setting-management");
+                this.router.navigateByUrl("admin/dashboard");
                 break;
               case 'diagnostic_admin':
                 this.router.navigateByUrl("diagnostic-admin/sales-person-management");

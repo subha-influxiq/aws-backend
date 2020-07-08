@@ -122,7 +122,11 @@ export class ListingTechComponent implements OnInit {
     this.commonFunction.setTitleMetaTags();
 
     this.user_cookie = cookie.get('jwtToken');
+    if(this.activatedRoute.snapshot.routeConfig.path == "admin/doctor/tech-management") {
+      this.userData = {user_type:"doctor",_id:JSON.parse(this.cookie.get('id'))};
+    } else {
     this.userData = JSON.parse(this.cookie.get('user_details'));
+    }
     this.libdata.notes.user = this.userData._id;
     this.libdata.notes.currentuserfullname = this.userData.firstname +this.userData.lastname;
     if(this.userData.user_type == 'diagnostic_admin') {
@@ -168,7 +172,7 @@ export class ListingTechComponent implements OnInit {
 
   ngOnInit() {
     this.datasource = '';
-    if(this.userData.user_type !="doctor" || this.activatedRoute.snapshot.routeConfig.path != "admin/doctor-dashboard/tech-management") {
+    if(this.userData.user_type !="doctor") {
       console.log("if");
     let endpoint='gettechlistdata';
     let endpointc='gettechlistdata-count';
@@ -238,9 +242,6 @@ export class ListingTechComponent implements OnInit {
     }
     if(this.userData.user_type == 'distributors') {
       this.fetch={'parent_id':  this.data}
-    }
-    if(this.activatedRoute.snapshot.routeConfig.path == "admin/doctor-dashboard/tech-management") {
-      _id:JSON.parse(this.cookie.get('id'))
     }
     data.data = this.fetch;
         this.httpService.httpViaPost(endpointc, data).subscribe((res:any) => {

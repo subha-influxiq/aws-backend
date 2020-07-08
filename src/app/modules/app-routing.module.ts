@@ -189,7 +189,7 @@ const routes: Routes = [
     },
 },
 {
-  path: 'admin/doctor-dashboard/tech-management',
+  path: 'admin/doctor/tech-management',
   canActivate: [AuthguardService],
   component: ListingTechComponent,
 },
@@ -1042,7 +1042,7 @@ const routes: Routes = [
   canActivate: [AuthguardService]
 },
 {
-  path: 'admin/setting-management/edit/:_id',
+  path: 'admin/setting-management/:_id',
   component: AddSettingTimeComponent,
   canActivate: [AuthguardService],
   resolve: { techData: ResolveService },
