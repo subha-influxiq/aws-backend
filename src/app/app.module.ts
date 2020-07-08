@@ -374,16 +374,11 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     DirectDownloadReportsComponent,
 
     ViewAllButtonListComponent,
-
     LoginDotorByAdminComponent,
-<<<<<<< HEAD
-
     ReportTimeSettingComponent,
-
     AddSettingTimeComponent,
-=======
+
     DialogCancelAlert
->>>>>>> b1909e3f4919139caf18274a0735b896027d8cbb
   ],
   imports: [
     SatDatepickerModule,
