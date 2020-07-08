@@ -165,7 +165,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any = environment.apiBaseUrl;
+  public apiUrl: any = environment.apiBaseUrl1;
   public tableName: any = "data_pece";
   public datacollection: any = 'diagnostic-admin-dashboard-report-data-list';
 

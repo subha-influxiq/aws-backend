@@ -71,6 +71,7 @@ export class ReportProcessTimeComponent implements OnInit {
     tableheaders: [
       "patient_name",
       "batch_name",
+      "processed_by",
       "report_uploaded_datetime",
       "report_process_datetime",
       "processing_time",
@@ -79,6 +80,7 @@ export class ReportProcessTimeComponent implements OnInit {
   public allUserData_modify_header: any = {
     "patient_name": "Report Name",
     "batch_name" : "Batch Name",
+    "processed_by" :"Processed By",
     "report_uploaded_datetime": "Report Uploaded",
     "report_process_datetime": "Report Process",
     "processing_time": "Reports Processing Time(Minutes)"

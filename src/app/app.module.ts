@@ -378,7 +378,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     LoginDotorByAdminComponent,
     ReportTimeSettingComponent,
     AddSettingTimeComponent,
-
     DialogCancelAlert,
 
     ApprovalSettingsUpdateComponent,

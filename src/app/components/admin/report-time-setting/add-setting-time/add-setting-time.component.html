@@ -17,11 +17,11 @@
 
   <span class="add_header">
     <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
-      <span class="bradcrumb">
+      <!-- <span class="bradcrumb">
         <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
         <a [routerLink]="['/admin/sales-person-management']">Manage Time &nbsp;/</a> &nbsp;
         {{ htmlText.nav }}
-      </span>
+      </span> -->
     </ng-container>
 
     <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
@@ -49,19 +49,19 @@
 
         <!-- Time Percentage Start -->
         <mat-form-field appearance="fill">
-          <mat-label>Time Percentage</mat-label>
+          <mat-label>Default Value for System Approval (%)</mat-label>
 
-          <input matInput placeholder="Time Percentage" [formControl]="SalesPersonManagementAddEditForm.controls['time_setting_percentage']"
+          <input matInput placeholder="Default Value for System Approval (%)" [formControl]="SalesPersonManagementAddEditForm.controls['time_setting_percentage']"
             (blur)="inputUntouch(SalesPersonManagementAddEditForm,'time_setting_percentage')">
 
           <mat-error
             *ngIf="SalesPersonManagementAddEditForm.controls['time_setting_percentage'].touched && !SalesPersonManagementAddEditForm.controls['time_setting_percentage'].valid && SalesPersonManagementAddEditForm.controls['time_setting_percentage'].errors.required">
-            Time Percentage required.
+             Percentage required.
           </mat-error>
 
           <mat-error
             *ngIf="SalesPersonManagementAddEditForm.controls['time_setting_percentage'].touched && !SalesPersonManagementAddEditForm.controls['time_setting_percentage'].valid && SalesPersonManagementAddEditForm.controls['time_setting_percentage'].errors.maxlength">
-            Time Percentage is not valid.
+             Percentage is not valid.
           </mat-error>
         </mat-form-field>
         <!-- Time Percentage End -->
@@ -69,7 +69,7 @@
         <!-- end here -->
         <span class="submit_form">
           <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
-            <button mat-flat-button type="button" [routerLink]="['/admin/sales-person-management']">Back </button>
+            <!-- <button mat-flat-button type="button" [routerLink]="['/admin/sales-person-management']">Back </button> -->
           </ng-container>
 
           <!-- <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
