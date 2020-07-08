@@ -49,6 +49,7 @@ export class AppoinmentsListingComponent implements OnInit {
   }
 
   ngOnInit() {
+    // load doctor search data
     const data1 = {
       token: this.cookie.get('jwtToken'),
       condition: {doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id}
@@ -60,7 +61,7 @@ export class AppoinmentsListingComponent implements OnInit {
         temp['name'] = response.data[i].firstname + ' ' + response.data[i].lastname;
         this.doctors.push(temp);
       }
-    })
+    });
   }
 
   openSnackBar(message: string, action: string) {

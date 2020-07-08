@@ -19,11 +19,11 @@
     <mat-tab-group [selectedIndex]="tabFlag">
       <!-- Upcoming events -->
       <mat-tab label="Upcoming Events">
-        <app-upcoming-appoinments></app-upcoming-appoinments>
+        <app-upcoming-appoinments [searchByDoctorValues]="doctors"></app-upcoming-appoinments>
       </mat-tab>
       <!-- Past events -->
       <mat-tab label="Past Events">
-        <app-past-appoinments></app-past-appoinments>
+        <app-past-appoinments [searchByDoctorValues]="doctors"></app-past-appoinments>
       </mat-tab>
     </mat-tab-group>
 

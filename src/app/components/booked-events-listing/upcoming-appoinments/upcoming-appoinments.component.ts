@@ -18,7 +18,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
     console.log('this.doctors', this.doctors);
   }
 
-  public searchByDoctor: any = {label: "Search By Doctor", field: 'doctor_id', values: []};
+  // public searchByDoctor: any = {label: "Search By Doctor", field: 'doctor_id', values: []};
 
   public configData: any = {
     appName: 'Calendar Management',
@@ -288,11 +288,11 @@ export class UpcomingAppoinmentsComponent implements OnInit {
         //     {val: 'Jessica', name: 'A Jessica'}
         //   ]
         // },
-        this.searchByDoctor
+        // this.searchByDoctor
       ]
     },
     statusarray: [{val: 0, 'name': 'Pending'}, {val: 1, 'name': 'Completed'}, {val: 2, 'name': 'Canceled'}],
-    detail_skip_array: ['_id', 'username', 'useremail', 'startdate_unix', 'can_reschedule', 'is_google_event', 'doctor_id', 'doctors_office_id', 'doctor_name', 'doctors_office_name', 'tech_id', 'tech_name', 'timezoneName', 'parent_id', 'parent_type', 'userid', 'username', 'start_datetime_unix', 'insurance_id', 'insurance_type', 'status']
+    detail_skip_array: ['_id', 'username', 'useremail', 'startdate_unix', 'can_reschedule', 'is_google_event', 'doctor_id', 'doctors_office_id', 'doctor_name', 'doctors_office_name', 'tech_id', 'tech_name', 'timezoneName', 'parent_id', 'parent_type', 'userid', 'username', 'start_datetime_unix', 'insurance_id', 'insurance_type', 'status', 'patient_name_search']
   };
 
   constructor(public cookie: CookieService, public snackBar: MatSnackBar,
@@ -328,21 +328,21 @@ export class UpcomingAppoinmentsComponent implements OnInit {
       });
     }
     // load doctor search dynamically
-    // const data1 = {
-    //   token: this.cookie.get('jwtToken'),
-    //   condition: {doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id}
-    // };
-    // this.httpService.postRequest('get-doctor-info', data1).subscribe((response: any) => {
-    //   for (let i = 0; i < response.data.length; i++) {
-    //     let temp: any = {};
-    //     temp['val'] = response.data[i]._id;
-    //     temp['name'] = response.data[i].firstname + ' ' + response.data[i].lastname;
-    //     this.searchByDoctor.values.push(this.doctors);
-    //   }
-    // });
+    // let user_details = JSON.parse(this.cookie.get('user_details'));
+    if (JSON.parse(this.cookie.get('user_details')).user_type === 'admin') {
+      this.configData.search_settings.search.push({
+        label: "Search By Doctor ", field: 'doctor_id',
+        values: [],
+        serversearchdata: { endpoint: 'get-doctor-for-autocomplete-search' }
+      });
+    } else {
+      this.configData.search_settings.search.push({
+        label: "Search By Doctor ", field: 'doctor_id',
+        values: this.doctors,
+      });
+    }
 
-    this.searchByDoctor.values = this.doctors;
-    console.log('this.searchByDoctor', this.searchByDoctor);
+    // console.log('this.searchByDoctor', this.searchByDoctor);
 
     if (this.cookie.check('jwtToken')) {
       this.configData.jwtToken = this.cookie.get('jwtToken');
@@ -433,7 +433,7 @@ export class UpcomingAppoinmentsComponent implements OnInit {
         this.httpService.postRequest(this.configData.endPoint.listUpcomingBookedEventsCount, data).subscribe((response: any) => {
           this.configData.date_search_source_count = response.count;
         });
-      }, 2000);
+      }, 500);
       /* ******************************************************************* */
 
     } else {

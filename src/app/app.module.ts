@@ -375,11 +375,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     DirectDownloadReportsComponent,
 
     ViewAllButtonListComponent,
-
     LoginDotorByAdminComponent,
-
     ReportTimeSettingComponent,
-
     AddSettingTimeComponent,
 
     DialogCancelAlert,
