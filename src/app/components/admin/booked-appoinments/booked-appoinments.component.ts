@@ -19,7 +19,10 @@ export class BookedAppoinmentsComponent implements OnInit {
 
   public tabFlag: number = 0;
 
-  constructor(public cookieService: CookieService, public activatedRoute: ActivatedRoute, public snackBar: MatSnackBar) {
+  doctors: any = [];
+
+  constructor(public cookieService: CookieService, public activatedRoute: ActivatedRoute,
+              public snackBar: MatSnackBar, public httpService: HttpServiceService, public cookie: CookieService) {
   }
 
   ngOnInit() {
@@ -32,6 +35,20 @@ export class BookedAppoinmentsComponent implements OnInit {
           break;
       }
     }
+
+    // load doctor search data
+    // const data1 = {
+    //   token: this.cookie.get('jwtToken'),
+    //   condition: {}
+    // };
+    // this.httpService.postRequest('get-doctor-info', data1).subscribe((response: any) => {
+    //   for (let i = 0; i < response.data.length; i++) {
+    //     let temp: any = {};
+    //     temp['val'] = response.data[i]._id;
+    //     temp['name'] = response.data[i].firstname + ' ' + response.data[i].lastname;
+    //     this.doctors.push(temp);
+    //   }
+    // });
   }
 
   openSnackBar(message: string, action: string) {
