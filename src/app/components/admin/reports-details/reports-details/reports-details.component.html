@@ -2,16 +2,20 @@
 <app-admin-header *ngIf="loginUserData.user_details.user_details.user_type == 'admin'"></app-admin-header>
 
 <!-- Admin Biller Header -->
-<app-adminbiller-header *ngIf="loginUserData.user_details.user_details.user_type == 'admin_biller'"></app-adminbiller-header>
+<app-adminbiller-header *ngIf="loginUserData.user_details.user_details.user_type == 'admin_biller'">
+</app-adminbiller-header>
 
 <!-- Diagnostic Admin Header -->
-<app-diagnostic-admin-header *ngIf="loginUserData.user_details.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+<app-diagnostic-admin-header *ngIf="loginUserData.user_details.user_details.user_type == 'diagnostic_admin'">
+</app-diagnostic-admin-header>
 
 <!-- Doctor Group Admin Header -->
-<app-doctor-group-header *ngIf="loginUserData.user_details.user_details.user_type == 'doctor_group'"></app-doctor-group-header>
+<app-doctor-group-header *ngIf="loginUserData.user_details.user_details.user_type == 'doctor_group'">
+</app-doctor-group-header>
 
 <!-- Distributors Admin Header -->
-<app-distributors-header *ngIf="loginUserData.user_details.user_details.user_type == 'distributors'"></app-distributors-header>
+<app-distributors-header *ngIf="loginUserData.user_details.user_details.user_type == 'distributors'">
+</app-distributors-header>
 
 
 <!-- Doctor Header -->
@@ -21,26 +25,27 @@
 <app-tech-header *ngIf="loginUserData.user_details.user_details.user_type == 'tech'"></app-tech-header>
 
 <!-- Doctor Office Header -->
-<app-doctor-office-header *ngIf="loginUserData.user_details.user_details.user_type == 'doctor_office'"></app-doctor-office-header>
+<app-doctor-office-header *ngIf="loginUserData.user_details.user_details.user_type == 'doctor_office'">
+</app-doctor-office-header>
 
 <mat-card class="admin_wrapper">
-    <mat-toolbar class="top_header">
-      <h2> CPT Validated Detail View</h2>
-    </mat-toolbar>
-<mat-card-content class="table_wrapper admin_dashboard">
+  <mat-toolbar class="top_header">
+    <h2> CPT Validated Detail View</h2>
+  </mat-toolbar>
+  <mat-card-content class="table_wrapper admin_dashboard">
 
-  <!-- table -->
-  <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData" [skip]="allUserData_skip"
-    [modify_header_array]="allUserData_modify_header" [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl"
-    [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="jwtToken" [statusarr]="status"
-    [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
-    [date_search_source]="SearchingSourceName" [search_settings]="search_settings" [sortdata]="sortdata"
-    [datacollection]="datacollection" [libdata]="libdata" [date_search_source_count]="billerData_count"
-    [limitcond]="limitcond">
-  </lib-listing>
+    <!-- table -->
+    <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData" [skip]="allUserData_skip"
+      [modify_header_array]="allUserData_modify_header" [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl"
+      [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="jwtToken" [statusarr]="status"
+      [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
+      [date_search_source]="SearchingSourceName" [search_settings]="search_settings" [sortdata]="sortdata"
+      [datacollection]="datacollection" [libdata]="libdata" [date_search_source_count]="billerData_count"
+      [limitcond]="limitcond">
+    </lib-listing>
+    <h2 *ngIf="allBillerData.length == 0">No record found.</h2>
+  </mat-card-content>
 
-</mat-card-content>
 
-  <h2 *ngIf="allBillerData.length == 0">No record found.</h2>
 </mat-card>
-  <app-admin-footer></app-admin-footer>
+<app-admin-footer></app-admin-footer>

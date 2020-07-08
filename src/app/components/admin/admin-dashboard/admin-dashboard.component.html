@@ -2,7 +2,6 @@
 
 <mat-card class="admin_wrapper">
 
-
   <mat-card-content class="content_wrapper">
 
     <mat-card-content class="itemsection">
@@ -153,8 +152,8 @@
       </span>
     </mat-card-content>
 
-  </mat-card-content> 
-  
+  </mat-card-content>
+
   <mat-card-content class="content_wrapper">
     <mat-card-content class="itemsection">
       <span class="icon">
@@ -305,7 +304,6 @@
 
   </mat-card-content>
 
-
   <mat-card-content class="admin_superbillsection superbillerContainer">
     <h1>Physician Report and Super Bills</h1>
 
@@ -336,7 +334,7 @@
             </span>
           </span>
           <button mat-flat-button (click)="viewReportProcessData('Total Number of Reports Added')">view all</button>
-        </span> 
+        </span>
       </mat-card-content>
 
       <mat-card-content class="super_bill_item">
@@ -508,7 +506,7 @@
 
   <app-doctor-signup-share [shareDetails]="shareDetails"></app-doctor-signup-share>
 
-                                                                                                                                                                          
+
   <!-- View All button listing start here -->
   <mat-card-content *ngIf="htmlText.viewAllButtonTable.headerText != ''" class="table_wrapper admin_dashboard">
     <mat-card-content class="headr_tagh">
@@ -598,10 +596,10 @@
         </span>
       </span>
     </mat-card-content>
-    
+
     <app-job-ticket-patient-reports></app-job-ticket-patient-reports>
 
   </mat-card-content>
   <!-- Patient Reports with Job Tickets end here -->
-
-  <app-admin-footer></app-admin-footer>
+</mat-card>
+<app-admin-footer></app-admin-footer>
