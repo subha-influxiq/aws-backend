@@ -24,7 +24,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
   public loginUserData: any = {};
   public jwtToken: string = "";
   public htmlText: any = {
-    headerText: "Patient Reports"
+    headerText: "Total No of Report Processed"
   };
 
   public shareDetails: any = {
@@ -182,12 +182,15 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
+  // Status filter array
   public status: any = [
-    { val: "Biller Admin Approved", 'name': 'Biller Admin Approved' },
-    { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' },
-    { val: "Biller Admin Hold", 'name': "Biller Admin Hold" },
-    { val: "Downloaded", "name": "Report Downloaded" }
+    { val: 11, 'name': 'Biller Admin Approved' },
+    { val: 12, 'name': 'Biller Admin Not Approved' },
+    { val: 13, 'name': "Biller Admin Hold" },
+    { val: 16, "name": "Report Downloaded" }
   ];
+
+  // CPT code filter array
   public cptcodes: any = [
     { val: "95923", 'name': '95923' },
     { val: "95943", 'name': '95943' },
@@ -195,18 +198,23 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
     { val: "93923", 'name': "93923" },
     { val: "93922", 'name': "93922" }
   ];
+
+  // Parent type filter array
   public parent_type: any = [
     { val: "admin", 'name': 'Admin' },
     { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },
     { val: "distributors", 'name': 'Distributor' },
     { val: "doctor_group", 'name': 'Doctor Group' }
   ];
+
+  // Report type filter array
   public report_type: any = [
     { val: "RM-3A", 'name': 'RM-3A' },
     { val: "TM FLOW V3", 'name': 'TM FLOW V3' },
     { val: "TM FLOW V4", 'name': 'TM FLOW V4' },
     { val: "CMAT with BP Cuffs", 'name': "CMAT with BP Cuffs" }
   ];
+
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
   public docofficeval: any = [];
@@ -220,6 +228,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
   public search_settings: any = {
     selectsearch: [
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },
+      { label: 'Search By Status', field: 'status', values: this.status },
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
       { label: "Search By Tech", field: 'tech_name_search', values: this.techval },
       { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval },
@@ -355,31 +364,52 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
         data.searchcondition.report_type = { $exists: true };
         data.searchcondition.status = { $gte: 3 };
         this.libdata.basecondition.status = { $gte: 3 };
+
+        // Add status search filed
+        var searchData: any = this.search_settings.selectsearch;
+        searchData.push({ label: 'Search By Status', field: 'status', values: this.status });
+        this.search_settings.selectsearch = [];
+        this.search_settings.selectsearch = searchData;
         break;
       case 'Total No of Report Processed':
         data.searchcondition.report_type = { $exists: true };
-        data.searchcondition.status = { $gte: 8 };
-        this.libdata.basecondition.status = { $gte: 8 };
+        data.searchcondition.status = { $gte: 11 };
+        this.libdata.basecondition.status = { $gte: 11 };
+
+        // delete status filter
+        this.deleteStatusSearchField();
         break;
       case 'Total No of Report Signed':
         data.searchcondition.report_type = { $exists: true };
         data.searchcondition.status = { $eq: 14 };
         this.libdata.basecondition.status = { $eq: 14 };
+
+        // delete status filter
+        this.deleteStatusSearchField();
         break;
       case 'Sent to Biller':
         data.searchcondition.report_type = { $exists: true };
         data.searchcondition.status = { $eq: 15 };
         this.libdata.basecondition.status = { $eq: 15 };
+
+        // delete status filter
+        this.deleteStatusSearchField();
         break;
       case 'Reports Downloaded':
         data.searchcondition.report_type = { $exists: true };
         data.searchcondition.status = { $eq: 16 };
         this.libdata.basecondition.status = { $eq: 16 };
+
+        // delete status filter
+        this.deleteStatusSearchField();
         break;
       case 'Reports Pending Sing':
         data.searchcondition.report_type = { $exists: true };
         data.searchcondition.status = { $eq: 11 };
         this.libdata.basecondition.status = { $eq: 11 };
+
+        // delete status filter
+        this.deleteStatusSearchField();
         break;
     }
 
@@ -390,6 +420,18 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
     }, error => {
       console.log('An error occord.');
     });
+  }
+
+  deleteStatusSearchField() {
+    // Delete Status Filter Field
+    var searchData: any = this.search_settings.selectsearch;
+    for (const loop in searchData) {
+      if(searchData[loop].label == 'Search By Status') {
+        searchData.splice(loop, 1);
+      }
+    }
+    this.search_settings.selectsearch = [];
+    this.search_settings.selectsearch = searchData;
   }
 
   getSearchData() {
@@ -448,7 +490,6 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
         }
       }
       for (var i in response.res) {
@@ -464,8 +505,6 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
-
         }
       }
       for (var i in response.res) {
@@ -481,8 +520,6 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
-
         }
       }
       for (var i in response.res) {
@@ -498,8 +535,6 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
-
         }
       }
       for (var i in response.res) {
@@ -515,8 +550,6 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
-
         }
       }
       for (var i in response.res) {

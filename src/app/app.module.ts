@@ -195,6 +195,7 @@ import { ViewAllButtonListComponent } from './components/admin/admin-dashboard/v
 import { LoginDotorByAdminComponent } from './components/admin/login-as-doctor/login-dotor-by-admin/login-dotor-by-admin.component';
 import { ReportTimeSettingComponent } from './components/admin/report-time-setting/report-time-setting/report-time-setting.component';
 import { AddSettingTimeComponent } from './components/admin/report-time-setting/add-setting-time/add-setting-time.component';
+import { ApprovalSettingsUpdateComponent } from './components/common/approval-settings-update/approval-settings-update.component';
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -374,13 +375,12 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     DirectDownloadReportsComponent,
 
     ViewAllButtonListComponent,
-
     LoginDotorByAdminComponent,
-
     ReportTimeSettingComponent,
-
     AddSettingTimeComponent,
-    DialogCancelAlert
+    DialogCancelAlert,
+
+    ApprovalSettingsUpdateComponent,
   ],
   imports: [
     SatDatepickerModule,
@@ -464,7 +464,10 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 
     // View job tickets image
     ViewJobTicketImageComponent,
-    DialogCancelAlert
+    DialogCancelAlert,
+
+    // Update setting
+    ApprovalSettingsUpdateComponent,
   ]
 })
 
