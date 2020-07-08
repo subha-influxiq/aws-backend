@@ -138,6 +138,8 @@ import { ReportsDetailsComponent } from '../components/admin/reports-details/rep
 import {ApprovedPatientReportsComponent} from '../components/admin/admin-dashboard/approved-patient-reports/approved-patient-reports.component'
 import { ReportProcessTimeComponent } from '../components/admin/report-process-time/report-process-time/report-process-time.component';
 import { LoginDotorByAdminComponent } from '../components/admin/login-as-doctor/login-dotor-by-admin/login-dotor-by-admin.component';
+import { AddSettingTimeComponent } from '../components/admin/report-time-setting/add-setting-time/add-setting-time.component';
+import { ReportTimeSettingComponent } from '../components/admin/report-time-setting/report-time-setting/report-time-setting.component';
 
 const routes: Routes = [
   /********** Auth Route Start **********/
@@ -185,6 +187,11 @@ const routes: Routes = [
       },
       endpoint: 'doctor-dashboard'
     },
+},
+{
+  path: 'admin/doctor-dashboard/tech-management',
+  canActivate: [AuthguardService],
+  component: ListingTechComponent,
 },
 
 // Login as tech by admin Route-----------------
@@ -1022,6 +1029,34 @@ const routes: Routes = [
       endpoint: 'datalist'
     },
   },
+/* ----------------Time Setting Management================ */
+
+{
+  path: 'admin/setting-management',
+  component: ReportTimeSettingComponent,
+  canActivate: [AuthguardService]
+},
+{
+  path: 'admin/setting-management/add',
+  component: AddSettingTimeComponent,
+  canActivate: [AuthguardService]
+},
+{
+  path: 'admin/setting-management/edit/:_id',
+  component: AddSettingTimeComponent,
+  canActivate: [AuthguardService],
+  resolve: { techData: ResolveService },
+  data: {
+    requestcondition: {
+      source: 'data_pece',
+      condition: {
+
+      }
+    },
+    endpoint: 'datalist'
+  },
+},
+
 
   {
     path: 'diagnostic-admin/sales-person-management',

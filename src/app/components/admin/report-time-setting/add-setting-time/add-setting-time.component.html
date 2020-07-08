@@ -1,0 +1,91 @@
+<!-- Admin Header -->
+<app-admin-header *ngIf="htmlText.userData.user_details.user_type == 'admin'"></app-admin-header>
+
+<!-- Diagnostic Admin Header -->
+<app-diagnostic-admin-header *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'"></app-diagnostic-admin-header>
+
+<!-- Doctor Group Header -->
+<app-doctor-group-header *ngIf="htmlText.userData.user_details.user_type == 'distributors'"></app-doctor-group-header>
+
+
+<mat-card class="admin_wrapper">
+  <!-- header with add button -->
+  <mat-card-content class="title_wrapper">
+    {{ htmlText.header }}
+  </mat-card-content>
+
+
+  <span class="add_header">
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/admin/sales-person-management']">Manage Time &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'diagnostic_admin'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/diagnostic-admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/diagnostic-admin/sales-person-management']"> Manage Sales Person &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+
+
+    <ng-container *ngIf="htmlText.userData.user_details.user_type == 'distributors`'">
+      <span class="bradcrumb">
+        <a [routerLink]="['/distributors/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+        <a [routerLink]="['/distributors/sales-person-management']">Manage Sales Person &nbsp;/</a> &nbsp;
+        {{ htmlText.nav }}
+      </span>
+    </ng-container>
+  </span>
+  <!-- End header with add button -->
+
+  <mat-card class="add_form">
+    <mat-card-content class="form_wrapper">
+      <form class="example-form" autocomplete="off" name="SalesPersonManagementAddEditForm" [formGroup]="SalesPersonManagementAddEditForm" (ngSubmit)="TechManagementAddFormFormSubmit()">
+
+        <!-- Time Percentage Start -->
+        <mat-form-field appearance="fill">
+          <mat-label>Time Percentage</mat-label>
+
+          <input matInput placeholder="Time Percentage" [formControl]="SalesPersonManagementAddEditForm.controls['time_setting_percentage']"
+            (blur)="inputUntouch(SalesPersonManagementAddEditForm,'time_setting_percentage')">
+
+          <mat-error
+            *ngIf="SalesPersonManagementAddEditForm.controls['time_setting_percentage'].touched && !SalesPersonManagementAddEditForm.controls['time_setting_percentage'].valid && SalesPersonManagementAddEditForm.controls['time_setting_percentage'].errors.required">
+            Time Percentage required.
+          </mat-error>
+
+          <mat-error
+            *ngIf="SalesPersonManagementAddEditForm.controls['time_setting_percentage'].touched && !SalesPersonManagementAddEditForm.controls['time_setting_percentage'].valid && SalesPersonManagementAddEditForm.controls['time_setting_percentage'].errors.maxlength">
+            Time Percentage is not valid.
+          </mat-error>
+        </mat-form-field>
+        <!-- Time Percentage End -->
+
+        <!-- end here -->
+        <span class="submit_form">
+          <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+            <button mat-flat-button type="button" [routerLink]="['/admin/sales-person-management']">Back </button>
+          </ng-container>
+
+          <!-- <ng-container *ngIf="htmlText.userData.user_details.user_type == 'admin'">
+            <button mat-flat-button type="button" [routerLink]="['/admin/sales-person-management']">Back </button>
+          </ng-container> -->
+          <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset </button>
+          <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
+        </span>
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+
+</mat-card>
+
+
+
+<!-- Admin Footer -->
+<app-admin-footer></app-admin-footer>

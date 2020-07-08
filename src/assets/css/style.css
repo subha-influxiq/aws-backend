@@ -118,19 +118,14 @@
 .tablewrapper table td span .cursor,
 .DataTable table td span .cursor{cursor: pointer; display: inline-block; background: var(--button-color2);
 margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
-.DataTable table td .notebtncls{min-width: inherit;
-  padding: 3px 4px;
-  line-height: inherit;
-  background: #70b51d;
-  font-family: 'AvenirMedium'; border-radius: 2px; margin: 2px; display: inline-block; box-shadow: none; vertical-align: bottom;
+.DataTable table td .notebtncls{ min-width: inherit;
+  padding: 3px 4px; line-height: inherit; background: #1d76b5;
+  font-family: 'AvenirMedium'; border-radius: 2px; margin: 2px 2px 3px; display: inline-block; box-shadow: none; vertical-align: bottom;
 }
 .DataTable table td .custombutton0 { display: inline-block;}
 .DataTable table td .custombutton0 button{
-  min-width: inherit;
-  padding: 3px 4px;
-  line-height: inherit;
-  background: #1db59c;
-  font-family: 'AvenirMedium'; border-radius: 2px; margin:0 2px; display: inline-block; box-shadow: none; vertical-align: bottom;
+  min-width: inherit; padding: 3px 4px; line-height: inherit;
+  background: #1db59c; font-family: 'AvenirMedium'; border-radius: 2px; margin:0 2px; display: inline-block; box-shadow: none; vertical-align: bottom;
 }
 .DataTable table td .notebtncls .notebracket1{ margin-left: 4px;}
 .tablewrapper table td span .cursor .material-icons,

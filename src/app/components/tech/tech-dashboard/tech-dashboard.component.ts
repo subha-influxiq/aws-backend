@@ -278,7 +278,7 @@ export class TechDashboardComponent implements OnInit {
     }
     else {
       console.log('************************')
-      this.authData = JSON.parse(allData.user_details);
+      this.authData["userData"] = JSON.parse(allData.user_details);
     }
 
     this.libdata.basecondition.tech_id = this.authData.userData._id;

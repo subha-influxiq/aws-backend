@@ -193,6 +193,8 @@ import { ReportProcessTimeComponent } from './components/admin/report-process-ti
 import { DirectDownloadReportsComponent } from './components/biller/direct-download-reports/direct-download-reports.component';
 import { ViewAllButtonListComponent } from './components/admin/admin-dashboard/view-all-button-list/view-all-button-list.component';
 import { LoginDotorByAdminComponent } from './components/admin/login-as-doctor/login-dotor-by-admin/login-dotor-by-admin.component';
+import { ReportTimeSettingComponent } from './components/admin/report-time-setting/report-time-setting/report-time-setting.component';
+import { AddSettingTimeComponent } from './components/admin/report-time-setting/add-setting-time/add-setting-time.component';
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -374,7 +376,14 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     ViewAllButtonListComponent,
 
     LoginDotorByAdminComponent,
+<<<<<<< HEAD
+
+    ReportTimeSettingComponent,
+
+    AddSettingTimeComponent,
+=======
     DialogCancelAlert
+>>>>>>> b1909e3f4919139caf18274a0735b896027d8cbb
   ],
   imports: [
     SatDatepickerModule,
