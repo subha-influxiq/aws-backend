@@ -901,13 +901,17 @@ export class ChooseDoctorDialog implements OnInit {
   loadingTech = false;
 
   constructor(public dialogRef: MatDialogRef<ChooseDoctorDialog>, public snackBar: MatSnackBar,
-              @Inject(MAT_DIALOG_DATA) public data: any, public httpRequestService: HttpServiceService) {
+              @Inject(MAT_DIALOG_DATA) public data: any, public httpRequestService: HttpServiceService,
+              public cookieService: CookieService) {
 
   }
 
   ngOnInit(): void {
-    // throw new Error("Method not implemented.");
-    this.httpRequestService.postRequest('get-doctor-info', {condition: {doctors_office_id: this.data._id}}).subscribe((response: any) => {
+    let data1: any = {
+      token: this.cookieService.get('jwtToken'),
+      condition: {doctors_office_id: this.data._id}
+    }
+    this.httpRequestService.postRequest('get-doctor-info', data1).subscribe((response: any) => {
       this.doctorList = response.data
     });
   }
@@ -915,7 +919,11 @@ export class ChooseDoctorDialog implements OnInit {
   onChangeDoctor(doctor: any) {
     console.log('doctor', doctor);
     this.loadingTech = true;
-    this.httpRequestService.postRequest('get-tech-info', {condition: {_id: doctor.doctor_id}}).subscribe((response: any) => {
+    let data1: any = {
+      token: this.cookieService.get('jwtToken'),
+      condition: {_id: doctor.doctor_id}
+    }
+    this.httpRequestService.postRequest('get-tech-info', data1).subscribe((response: any) => {
       if (response._dropdown.length > 0)
         this.techList = response._dropdown;
       else

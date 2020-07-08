@@ -14,15 +14,19 @@ export class DoctorOfficeHeaderComponent implements OnInit {
   public toggleStatus:boolean = false;
   isSticky: boolean = false;
   public user_data: any = {};
+  public flag:any =0;
 
   public loader: boolean = true;
   public user_cookie:any;
   
-  constructor(public cookies: CookieService, public router: Router, public commonFunction: CommonFunction) {
+  constructor(public cookies: CookieService, public router: Router, public commonFunction: CommonFunction,public activate: ActivatedRoute) {
     let allData: any = {};
     allData = cookies.getAll()
     this.user_data = JSON.parse(allData.user_details);
     this.user_cookie = cookies.get('jwtToken');
+    if(this.activate.snapshot.routeConfig.path == "admin/biller-dashboard/:_id") {
+      this.flag = 1;
+    }
 
     console.log(">>>", this.user_data);
    }

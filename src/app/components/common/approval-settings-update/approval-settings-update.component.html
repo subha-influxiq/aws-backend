@@ -1,0 +1,50 @@
+<mat-card class="admin_wrapper">
+    <!-- header with add button -->
+    <mat-card-content class="title_wrapper">
+        Update Approval Settings
+    </mat-card-content>
+    <!-- End header with add button -->
+
+    <mat-card class="add_form">
+        <mat-card-content class="form_wrapper">
+            <form class="example-form" autocomplete="off" name="ApprovalSettingsUpdateForm"
+                [formGroup]="ApprovalSettingsUpdateForm" (ngSubmit)="TechManagementAddFormFormSubmit()">
+
+                <!-- Question Start -->
+                <label>Default Value Percentage: </label>
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="Enter Value (0 to 100)" [formControl]="ApprovalSettingsUpdateForm.controls['default_value_percentage']"
+                        (blur)="inputUntouch(ApprovalSettingsUpdateForm, 'default_value_percentage')">
+
+                    <mat-error
+                        *ngIf="ApprovalSettingsUpdateForm.controls['default_value_percentage'].touched && !ApprovalSettingsUpdateForm.controls['default_value_percentage'].valid && ApprovalSettingsUpdateForm.controls['default_value_percentage'].errors.required">
+                        Required Field.
+                    </mat-error>
+
+                    <mat-error
+                        *ngIf="ApprovalSettingsUpdateForm.controls['default_value_percentage'].touched && !ApprovalSettingsUpdateForm.controls['default_value_percentage'].valid && ApprovalSettingsUpdateForm.controls['default_value_percentage'].errors.max">
+                        Not valid.
+                    </mat-error>
+
+                    <mat-error
+                        *ngIf="ApprovalSettingsUpdateForm.controls['default_value_percentage'].touched && !ApprovalSettingsUpdateForm.controls['default_value_percentage'].valid && ApprovalSettingsUpdateForm.controls['default_value_percentage'].errors.min">
+                        Not valid.
+                    </mat-error>
+                </mat-form-field>
+                <!-- Question End -->
+
+                <section class="example-section">
+                    <mat-checkbox class="example-margin" [formControl]="ApprovalSettingsUpdateForm.controls['default_value']">Default Value</mat-checkbox>
+                </section>
+
+                <!-- end here -->
+                <span class="submit_form">
+                    <button mat-flat-button type="button" (click)="closeModal();">Close</button>
+                    <button mat-flat-button type="submit"> Update </button>
+                </span>
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+
+</mat-card>

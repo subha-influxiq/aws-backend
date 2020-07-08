@@ -453,28 +453,24 @@ export class DistributorsDashboardComponent implements OnInit {
         data.status = { "$in": [8, 9, 10] };
         break;
       case 'Patient Reports':
-        this.libdata.basecondition.status = { "$in": [11, 12, 13,14,15,16] };
-        data.status = { "$in": [11, 12, 13,14,15,16] };
+        this.libdata.basecondition.status = { "$gte": 11 };
+        data.status = { "$gte": 11 };
         break;
       case 'Report Signed':
-        this.libdata.basecondition.doctor_signature = { "$exists": true };
-        data.doctor_signature = { $exists: true };
+        this.libdata.basecondition.status = { "$eq": 14 };
+        data.status = { "$eq": 14 };
         break;
       case 'Super Bill':
-        this.libdata.basecondition.biller_id = { "$exists": true };
-        data.biller_id = { "$exists": true };
+        this.libdata.basecondition.status = { "$eq": 15 };
+        data.status = { "$eq": 15 };
         break;
       case 'Download Bill':
-        this.libdata.basecondition.status = 11;
-        this.libdata.basecondition.download_count = { "$exists": true };
-        data.status = 11;
-        data.download_count = { "$exists": true };
+        this.libdata.basecondition.status = { "$eq": 16 };
+        data.status = { "$eq": 16 };
         break;
       case 'Reports Pending Sing':
-        this.libdata.basecondition.status = 11;
-        this.libdata.basecondition.download_count = { "$exists": false };
-        data.status = 11;
-        data.download_count = { "$exists": false };
+        this.libdata.basecondition.status = { "$eq": 11 };
+        data.status = { "$eq": 11 };
         break;
     }
 
@@ -487,12 +483,8 @@ export class DistributorsDashboardComponent implements OnInit {
 
     this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
       this.allBillerData = [];
-      // this.listFlag = false;
-      // setTimeout(() => {
-      // this.listFlag = true;  
+
       this.allBillerData = res.results.res;
-      // this.updatetable = !this.updatetable;
-      // }, 200);
     }, error => {
       console.log('Oooops!');
     });

@@ -1950,7 +1950,11 @@ export class AddPatientManuallyComponent implements OnInit {
         ];
 
 
-        this.httpRequestService.postRequest('get-doctor-info', {condition: {doctors_office_id: this.userDetails._id}}).subscribe((response: any) => {
+        let data1: any = {
+          token: this.cookieService.get('jwtToken'),
+          condition: {doctors_office_id: this.userDetails._id}
+        }
+        this.httpRequestService.postRequest('get-doctor-info', data1).subscribe((response: any) => {
           let doctorArray = [];
           for (let i = 0; i < response.data.length; i++) {
             let temp = {};
@@ -1968,7 +1972,7 @@ export class AddPatientManuallyComponent implements OnInit {
               value: '', options: doctorArray, hasChildWithDynamicLoading: true,
               hasAdditionalFieldsWithValue: true,
               additionalFields: ['parent_id', 'parent_type'], // must have additionalFields if hasAdditionalFieldsWithValue is true
-              childField: 'tech_id', endpoint: 'get-tech-info', caption: 'Select doctor and tech',
+                childField: 'tech_id', endpoint: 'get-tech-info', caption: 'Select doctor and tech',
               validators: [Validators.required], error: 'Select doctor'
             },
             {

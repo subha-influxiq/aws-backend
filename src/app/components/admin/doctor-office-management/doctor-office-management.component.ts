@@ -101,6 +101,15 @@ export class DoctorOfficeManagementComponent implements OnInit {
       //hidestatustogglebutton:true,
       // hideaction:true,
       tableheaders: ['center_name','firstname', 'lastname', 'email', 'phone', 'status', 'created_date'], //not required
+      custombuttons: [
+        {
+          label: "Log Me",
+          route: "admin/doctor-office-dashboard/",
+          type: 'internallink',
+          //cond:'status',
+          //condval:0,
+          param: ['_id'],
+      },]
     }
   
 

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {environment} from "../../../../environments/environment";
 import {CookieService} from "ngx-cookie-service";
 import {MatSnackBar} from "@angular/material/snack-bar";
@@ -11,7 +11,14 @@ import {HttpServiceService} from "../../../services/http-service.service";
 })
 export class PastAppoinmentsComponent implements OnInit {
 
-  public searchByDoctor: any = {label: "Search By Doctor", field: 'doctor_id', values: []};
+  doctors: any;
+  @Input()
+  set searchByDoctorValues(searchByDoctorValues: any) {
+    this.doctors = searchByDoctorValues;
+    console.log('this.doctors', this.doctors);
+  }
+
+  // public searchByDoctor: any = {label: "Search By Doctor", field: 'doctor_id', values: []};
 
   public configData: any = {
     appName: 'Calendar Management',
@@ -253,10 +260,10 @@ export class PastAppoinmentsComponent implements OnInit {
       textsearch: [{label: "Search By Patient Name", field: 'patient_name_search'}],
 
       // this is use for  Autocomplete search
-      search: [this.searchByDoctor]
+      search: []
     },
     statusarray: [{val: 0, 'name': 'Pending'}, {val: 1, 'name': 'Completed'}, {val: 2, 'name': 'Canceled'}],
-    detail_skip_array: ['_id', 'username', 'useremail', 'startdate_unix', 'can_reschedule', 'is_google_event', 'doctor_id', 'doctors_office_id', 'doctor_name', 'doctors_office_name', 'tech_id', 'tech_name', 'timezoneName', 'parent_id', 'parent_type', 'userid', 'username', 'start_datetime_unix', 'insurance_id', 'insurance_type', 'status']
+    detail_skip_array: ['_id', 'username', 'useremail', 'startdate_unix', 'can_reschedule', 'is_google_event', 'doctor_id', 'doctors_office_id', 'doctor_name', 'doctors_office_name', 'tech_id', 'tech_name', 'timezoneName', 'parent_id', 'parent_type', 'userid', 'username', 'start_datetime_unix', 'insurance_id', 'insurance_type', 'status', 'patient_name_search']
   };
 
 
@@ -292,20 +299,19 @@ export class PastAppoinmentsComponent implements OnInit {
       });
     }
     // load doctor search dynamically
-    const data1 = {
-      token: this.cookie.get('jwtToken'),
-      condition: {doctors_office_id: JSON.parse(this.cookie.get('user_details'))._id}
-    };
-    // setTimeout(() => {
-      this.httpService.postRequest('get-doctor-info', data1).subscribe((response: any) => {
-        for (let i = 0; i < response.data.length; i++) {
-          let temp: any = {};
-          temp['val'] = response.data[i]._id;
-          temp['name'] = response.data[i].firstname + ' ' + response.data[i].lastname;
-          this.searchByDoctor.values.push(temp);
-        }
+    // let user_details = JSON.parse(this.cookie.get('user_details'));
+    if (JSON.parse(this.cookie.get('user_details')).user_type === 'admin') {
+      this.configData.search_settings.search.push({
+        label: "Search By Doctor ", field: 'doctor_id',
+        values: [],
+        serversearchdata: { endpoint: 'get-doctor-for-autocomplete-search' }
+      });
+    } else {
+      this.configData.search_settings.search.push({
+        label: "Search By Doctor ", field: 'doctor_id',
+        values: this.doctors,
       })
-    // }, 3000);
+    }
 
     if (this.cookie.check('jwtToken')) {
       this.configData.jwtToken = this.cookie.get('jwtToken');
@@ -363,28 +369,31 @@ export class PastAppoinmentsComponent implements OnInit {
         }
       }
 
-      this.httpService.postRequest(this.configData.endPoint.listBookedEvents, data).subscribe((response: any) => {
-        // Set dataset in responseData
-        this.configData.responseData = response.results.res;
+      setTimeout(() => {
 
-        // Create skipFields array(first save all the keys from the dataset)
-        if (response.results.res > 0)
-          this.configData.skipFields = Object.keys(response.results.res[0]);
-        let requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'tech_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'];
+        this.httpService.postRequest(this.configData.endPoint.listBookedEvents, data).subscribe((response: any) => {
+          // Set dataset in responseData
+          this.configData.responseData = response.results.res;
 
-        // Check user_type === 'doctor_office'
-        if (JSON.parse(this.cookie.get('user_details')).user_type === 'doctor_office') {
-          requiredFields.splice(requiredFields.indexOf('doctors_office_name'), 1);
-          this.configData.libdata.tableheaders.splice(
-            this.configData.libdata.tableheaders.indexOf('doctors_office_name'), 1
-          );
-        }
+          // Create skipFields array(first save all the keys from the dataset)
+          if (response.results.res > 0)
+            this.configData.skipFields = Object.keys(response.results.res[0]);
+          let requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'tech_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'];
 
-        // Modify the skipFields array(splicing the keys which is in the requiredFields)
-        for (let i = 0; i < requiredFields.length; i++) {
-          this.configData.skipFields.splice(this.configData.skipFields.indexOf(requiredFields[i]), 1)
-        }
-      });
+          // Check user_type === 'doctor_office'
+          if (JSON.parse(this.cookie.get('user_details')).user_type === 'doctor_office') {
+            requiredFields.splice(requiredFields.indexOf('doctors_office_name'), 1);
+            this.configData.libdata.tableheaders.splice(
+              this.configData.libdata.tableheaders.indexOf('doctors_office_name'), 1
+            );
+          }
+
+          // Modify the skipFields array(splicing the keys which is in the requiredFields)
+          for (let i = 0; i < requiredFields.length; i++) {
+            this.configData.skipFields.splice(this.configData.skipFields.indexOf(requiredFields[i]), 1)
+          }
+        });
+      }, 1000);
 
       // Merge logged in user details with the config data
       // let userDetails: any = JSON.parse(this.cookie.get('user_details'));
@@ -396,7 +405,7 @@ export class PastAppoinmentsComponent implements OnInit {
         this.httpService.postRequest(this.configData.endPoint.listBookedEventsCount, data).subscribe((response: any) => {
           this.configData.date_search_source_count = response.count;
         });
-      }, 3000);
+      }, 1500);
       /* ******************************************************************* */
 
     } else {

@@ -1229,6 +1229,7 @@ export class PatientDetailsComponent implements OnInit {
 
     let otherFields: any = [];
     let data2: any = {
+      token: this.cookie.get('jwtToken'),
       condition: {user_type: 'patient_information'},
       source: 'data_pece'
     }
@@ -1270,7 +1271,7 @@ export class PatientDetailsComponent implements OnInit {
       // })
 
       let requestData: any = {
-        token: this.configData.jwtToken,
+        token: this.cookie.get('jwtToken'),
         condition: {
           _id: this.orginalReportDetails.patient_details[0].insurance_id
         },
