@@ -122,10 +122,15 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
   padding: 3px 4px; line-height: inherit; background: #1d76b5;
   font-family: 'AvenirMedium'; border-radius: 2px; margin: 2px 2px 3px; display: inline-block; box-shadow: none; vertical-align: bottom;
 }
-.DataTable table td .custombutton0 { display: inline-block;}
+.DataTable table td .custombutton0,
+.DataTable table td .custombutton1 { display: inline-block;}   
 .DataTable table td .custombutton0 button{
   min-width: inherit; padding: 3px 4px; line-height: inherit;
   background: #1db59c; font-family: 'AvenirMedium'; border-radius: 2px; margin:0 2px; display: inline-block; box-shadow: none; vertical-align: bottom;
+}
+.DataTable table td .custombutton1 button{
+  min-width: inherit; padding: 3px 4px; line-height: inherit;
+  background: #6ace0f; font-family: 'AvenirMedium'; border-radius: 2px; margin:0 2px; display: inline-block; box-shadow: none; vertical-align: bottom;
 }
 .DataTable table td .notebtncls .notebracket1{ margin-left: 4px;}
 .tablewrapper table td span .cursor .material-icons,
