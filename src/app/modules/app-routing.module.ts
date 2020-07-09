@@ -193,6 +193,16 @@ const routes: Routes = [
   canActivate: [AuthguardService],
   component: ListingTechComponent,
 },
+{
+  path: 'admin/doctor/biller-management',
+  canActivate: [AuthguardService],
+  component: ListingBillerComponent,
+},
+{
+  path: 'admin/doctor/doctor-office-management',
+  canActivate: [AuthguardService],
+  component: DoctorOfficeManagementComponent,
+},
 
 // Login as tech by admin Route-----------------
 

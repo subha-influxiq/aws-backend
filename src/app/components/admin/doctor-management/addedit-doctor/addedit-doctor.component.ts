@@ -347,7 +347,7 @@ export class AddeditDoctorComponent implements OnInit {
       data2.condition['user_type'] = "doctor_office"
     }
 
-    if (id.parent_type == 'distributor') {
+    if (id.parent_type == 'distributors') {
       data.condition['parent_id_object'] = id.parent_id;
       data.condition['user_type'] = "tech"
       data1.condition['parent_id_object'] = id.parent_id;
@@ -397,7 +397,7 @@ export class AddeditDoctorComponent implements OnInit {
       }
     }
 
-    if ((billerData == 'Distributor') || (billerData == 'distributor')) {
+    if ((billerData == 'Distributor') || (billerData == 'distributors')) {
       // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
       var data = {
         "source": "data_pece",
@@ -433,9 +433,6 @@ export class AddeditDoctorComponent implements OnInit {
   }
 
   doctorManagementAddEditFormSubmit() {
-    var toSelect = this.htmlText.cpt_amount.find(c => c.value == 12);
-    console.log(toSelect);
-    this.doctorManagementAddEditForm.get('cpt_validate_amount').setValue(12);
     for (let x in this.doctorManagementAddEditForm.controls) {
       this.doctorManagementAddEditForm.controls[x].markAsTouched();
     }

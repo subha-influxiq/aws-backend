@@ -119,6 +119,11 @@ export class DoctorOfficeManagementComponent implements OnInit {
 
     this.user_cookie = cookie.get('jwtToken');
     let allData=cookie.getAll()
+    if(this.activatedRoute.snapshot.routeConfig.path == "admin/doctor/tech-management") {
+      this.userData = {user_type:"doctor",_id:JSON.parse(this.cookie.get('id'))};
+    } else {
+    this.userData = JSON.parse(this.cookie.get('user_details'));
+    }
     this.userData = JSON.parse(allData.user_details);
     this.libdata.notes.user = this.userData._id;
     this.libdata.notes.currentuserfullname = this.userData.firstname +this.userData.lastname;

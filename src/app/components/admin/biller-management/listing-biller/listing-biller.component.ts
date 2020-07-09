@@ -114,6 +114,11 @@ export class ListingBillerComponent implements OnInit {
     public httpService: HttpServiceService) {
 
     this.user_cookie = cookie.get('jwtToken');
+    if(this.activeRoute.snapshot.routeConfig.path == "admin/doctor/tech-management") {
+      this.userData = {user_type:"doctor",_id:JSON.parse(this.cookie.get('id'))};
+    } else {
+    this.userData = JSON.parse(this.cookie.get('user_details'));
+    }
     this.userData = JSON.parse(this.cookie.get('user_details'));
     this.libdata.notes.user = this.userData._id;
     this.libdata.notes.currentuserfullname = this.userData.firstname +this.userData.lastname;
