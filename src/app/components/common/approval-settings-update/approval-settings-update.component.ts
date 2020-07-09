@@ -66,9 +66,6 @@ export class ApprovalSettingsUpdateComponent implements OnInit {
 
       data.data.default_value_percentage = parseInt(data.data.default_value_percentage);
 
-      console.log("Data: ", data);
-      return;
-
       this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
         if (response.status == "success") {
           this.dialogRef.close(response);
