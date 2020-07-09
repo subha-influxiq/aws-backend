@@ -165,7 +165,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any = environment.apiBaseUrl1;
+  public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
   public datacollection: any = 'diagnostic-admin-dashboard-report-data-list';
 
@@ -228,14 +228,14 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
   public search_settings: any = {
     selectsearch: [
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },
-      { label: 'Search By Status', field: 'status', values: this.status },
+      // { label: 'Search By Status', field: 'status', values: this.status },
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
       { label: "Search By Tech", field: 'tech_name_search', values: this.techval },
       { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval },
       { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity },
       { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate },
-      { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity },
-      { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }
+      { label: "Search By Patient City", field: 'patient_city_search', values: this.patientcity },
+      { label: "Search By Patient State", field: 'patient_state_search', values: this.patientstate }
     ],
     datesearch: [
       { startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }
@@ -374,10 +374,13 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
       case 'Total No of Report Processed':
         data.searchcondition.report_type = { $exists: true };
         data.searchcondition.status = { $gte: 11 };
-        this.libdata.basecondition.status = { $gte: 11 };
+        // this.libdata.basecondition.status = { $gte: 11 };
 
-        // delete status filter
-        this.deleteStatusSearchField();
+        // Add status search filed
+        var searchData: any = this.search_settings.selectsearch;
+        searchData.push({ label: 'Search By Status', field: 'status', values: this.status });
+        this.search_settings.selectsearch = [];
+        this.search_settings.selectsearch = searchData;
         break;
       case 'Total No of Report Signed':
         data.searchcondition.report_type = { $exists: true };
