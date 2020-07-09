@@ -357,6 +357,7 @@ align-items: flex-start; }
   .job_modal_wr  .mat-dialog-actions button{ min-width: inherit!important; line-height: inherit; padding: 4px 10px;}
   .job_reprt_wrapper .itm .report_image_w .image_items { width: 48%; margin: 1%;}
   .DataTable .searchbar { padding: 10px; }
+  .table_wrapper .add_header button { font-size: 16px; }
 }
 
 @media screen and (max-width: 440px){
@@ -365,13 +366,15 @@ align-items: flex-start; }
 }
 @media screen and (max-width: 420px){
   .mat-table .mat-row { padding: 0; }
-  .mat-table .mat-cell:before { font-size: 15px; }
+  .mat-table .mat-cell:before { font-size: 13px; }
+  .mat-table .mat-cell:after { font-size: 14px;}
   .table_wrapper .action_bar .mat-form-field,
   .action_bar .mat-form-field .mat-form-field-flex { width: 100%; margin-right: 0;}
   .table_wrapper .action_bar .date-range { width: 100%;}
   .table_wrapper .action_bar .date-range .mat-form-field:last-child { margin-left: 0;}
   .DataTable .mat-card mat-label { margin-right: 0; display: block; margin-bottom: 10px; }
-  .encounter_rules .admin_superbillsection .greenbar p { font-size: 30px; }
+  .encounter_rules .admin_superbillsection .greenbar p { font-size: 30px; } 
+  .DataTable table td.mat-cell { font-size: 14px; word-break: break-all; padding-right: 8px!important; }
 
 }
 @media screen and (max-width: 400px){

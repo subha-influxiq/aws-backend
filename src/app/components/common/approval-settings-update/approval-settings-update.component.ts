@@ -22,6 +22,7 @@ export class ApprovalSettingsUpdateComponent implements OnInit {
   public htmlText: any = {
     userData: "",
     message: "Submitted Successfully",
+    defaultButtonText: "Change to Default"
   };
 
   constructor(public httpService: HttpServiceService, public cookie: CookieService, public formBuilder: FormBuilder, public dialogRef: MatDialogRef<ApprovalSettingsUpdateComponent>,
@@ -32,15 +33,13 @@ export class ApprovalSettingsUpdateComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("Input Data: ", this.allReceivedData);
-    
     this.generateAddEditForm();
   }
 
   generateAddEditForm(flag: string = null) {
     let validateRule: any = {
       id:             [ this.allReceivedData.doctorData._id, [] ],
-      default_value:  [ this.allReceivedData.doctorData.default_value, [] ],
+      default_value:  [ 0, [] ],
       default_value_percentage:  [ this.allReceivedData.doctorData.default_value_percentage, [ Validators.required, Validators.min(0), Validators.max(100) ] ],
     };
 
@@ -59,8 +58,6 @@ export class ApprovalSettingsUpdateComponent implements OnInit {
     }
 
     if (this.ApprovalSettingsUpdateForm.valid) {
-      console.log("Form Data: ", this.ApprovalSettingsUpdateForm.value);
-
       var data: any = {
         "source": "data_pece",
         "data": this.ApprovalSettingsUpdateForm.value,
@@ -68,7 +65,6 @@ export class ApprovalSettingsUpdateComponent implements OnInit {
       };
 
       data.data.default_value_percentage = parseInt(data.data.default_value_percentage);
-      data.data.default_value = 0;
 
       this.httpService.httpViaPost("addorupdatedata", data).subscribe(response => {
         if (response.status == "success") {
@@ -76,6 +72,26 @@ export class ApprovalSettingsUpdateComponent implements OnInit {
         }
       });
     }
+  }
+
+  chnageToDefault() {
+    this.htmlText.defaultButtonText = "Please Wait";
+    var intervalId = setInterval(() => {
+      this.htmlText.defaultButtonText += '.';
+    }, 400);
+
+    this.httpService.httpViaPost("get-default-approval-settings", {}).subscribe(response => {
+      if (response.status == "success") {
+        this.ApprovalSettingsUpdateForm.patchValue({ default_value_percentage: response.data[0].default_value_percentage });
+        this.ApprovalSettingsUpdateForm.patchValue({ default_value: 1 });
+        clearInterval(intervalId);
+        this.htmlText.defaultButtonText = "Change to Default";
+      }
+    });
+  }
+
+  changeDefaultValuePercentage() {
+    this.ApprovalSettingsUpdateForm.patchValue({ default_value: 0 });
   }
 
   closeModal() {

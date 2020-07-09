@@ -12,7 +12,7 @@
 .active .mat-expansion-panel-header-title { color: rgba(255, 255, 255, 0.87); }
 .body_wrapper{ background:#f2f4f5 ; display: flex; justify-content: space-between; padding: 10px 20px;}
 .body_wrapper .content_wr p,
-.body_wrapper .content_wr p ol li{ color: #6e6e6e; font-size: 16px; font-family: 'AvenirRoman'; margin: 6px 0; line-height: 24px;}
+.body_wrapper .content_wr p ol li{ color: #000; font-size: 16px; font-family: 'AvenirRoman'; margin: 6px 0; line-height: 24px;}
 .body_wrapper .content_wr p strong{ font-size: 16px; font-family: 'AvenirBlack'; }
 .body_wrapper .content_wr{ width: 100%;}
 .body_wrapper .video_wr{ width: 36%; margin-left: 14px; }

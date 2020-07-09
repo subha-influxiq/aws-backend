@@ -122,10 +122,15 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
   padding: 3px 4px; line-height: inherit; background: #1d76b5;
   font-family: 'AvenirMedium'; border-radius: 2px; margin: 2px 2px 3px; display: inline-block; box-shadow: none; vertical-align: bottom;
 }
-.DataTable table td .custombutton0 { display: inline-block;}
+.DataTable table td .custombutton0,
+.DataTable table td .custombutton1 { display: inline-block;}   
 .DataTable table td .custombutton0 button{
   min-width: inherit; padding: 3px 4px; line-height: inherit;
   background: #1db59c; font-family: 'AvenirMedium'; border-radius: 2px; margin:0 2px; display: inline-block; box-shadow: none; vertical-align: bottom;
+}
+.DataTable table td .custombutton1 button{
+  min-width: inherit; padding: 3px 4px; line-height: inherit;
+  background: #6ace0f; font-family: 'AvenirMedium'; border-radius: 2px; margin:0 2px; display: inline-block; box-shadow: none; vertical-align: bottom;
 }
 .DataTable table td .notebtncls .notebracket1{ margin-left: 4px;}
 .tablewrapper table td span .cursor .material-icons,
@@ -875,3 +880,14 @@ color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
 
 .notes-modal .maindialognew .dialoghead .mat-list .mat-list-item{ height: auto; padding: 10px 0;}
 .notes-modal .maindialognew .dialoghead .mat-dialog-content .mat-list-base .mat-list-item .mat-list-item-content .material-icons { color:#f7032d; }
+
+/* approval setting */
+.bulkupload-dialog .mat-dialog-container .admin_wrapper{ width: 100%; margin:auto; padding: 0!important;}
+.bulkupload-dialog .mat-dialog-container .admin_wrapper .add_form { border: none;}
+.bulkupload-dialog .mat-dialog-container .admin_wrapper .title_wrapper{ background: #6bd010;
+  font-size: 20px; padding: 12px; color: #f9f6f6;}
+
+.bulkupload-dialog .mat-dialog-container .admin_wrapper .example-form label{ font-size: 18px; font-family: 'AvenirMedium'; color: rgb(14, 13, 13)} 
+.bulkupload-dialog .admin_wrapper .add_form .submit_form button { font-size: 18px; padding: 1px 16px; min-width: 120px;}
+.bulkupload-dialog .admin_wrapper .add_form .submit_form button:first-child { background: #2f3638; }
+.bulkupload-dialog .admin_wrapper .add_form .submit_form button:last-child { background: #60c306; }

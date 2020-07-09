@@ -75,16 +75,10 @@ width: 390px; border: 3px solid #d59d01; }
 .patient_preview button:last-child{ margin-right: o; background: var(--button-color3);}
 /*left part css end here*/
 
-.mat-elevation-z5 {
-  position: relative;
-}
+.mat-elevation-z5 { position: relative; }
 
 .sticky {
-  position: fixed; z-index: 9;
-    top: 6px; 
-    max-height: 80%;
-    overflow: auto; 
-}
+  position: fixed; z-index: 1; top: 6px; max-height: 80%; overflow: auto; }
 .stickyRight{ margin-left: 50%!important;}
 .document_wrapper{
   width: 100%;

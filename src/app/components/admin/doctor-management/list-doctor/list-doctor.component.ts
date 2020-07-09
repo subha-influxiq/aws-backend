@@ -95,16 +95,13 @@ export class ListDoctorComponent implements OnInit {
     custombuttons: [
       {
         label: "Log Me",
-        route: "admin/doctor-dashboard/",
-        type: 'internallink',
-        param: ['_id'],
+        type: 'listner',
+        id: 'i1'
       },
       {
         label: "Approval Settings",
         type: 'listner',
-        id: 'i1',
-        // cond: 'status',
-        // condval: 1
+        id: 'i1'
       },
     ]
   }
@@ -225,41 +222,85 @@ export class ListDoctorComponent implements OnInit {
   }
 
   listenLiblistingChange(data: any = null) {
-    let modalData: any = {
-      panelClass: 'bulkupload-dialog',
-      data: {
-        doctorData: data.custombuttonclick.data,
-      },
-      width: '500px'
-    };
-    const dialogRef = this.dialog.open(ApprovalSettingsUpdateComponent, modalData);
-
-    dialogRef.afterClosed().subscribe(result => {
-      switch(result.status) {
-        case 'success':
-          let modalData: any = {
+    if(data != null) {
+      switch(data.custombuttonclick.btninfo.label) {
+        case "Log Me":
+          let modalData1: any = {
             panelClass: 'bulkupload-dialog',
             data: {
               header: "Alert",
-              message: "Successfully Updated.",
-              button1: { text: "" },
-              button2: { text: "OK" },
+              message: "Do you want to login as doctor : " + data.custombuttonclick.data.firstname + " " + data.custombuttonclick.data.lastname + "?",
+              button1: { text: "Yes" },
+              button2: { text: "No" },
             }
           }
-          const dialogRef = this.dialog.open(DialogBoxComponent, modalData);
+          var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData1);
 
-          dialogRef.afterClosed().subscribe(result => {
-            this.docData = [];
-            this.docData_count = 0;
-            this.ngOnInit();
+          dialogRef1.afterClosed().subscribe(result => {
+            switch(result) {
+              case "Yes":
+                // Delete Cookie
+                this.cookieService.delete('user_details');
+                this.cookieService.delete('main_user');
+                this.cookieService.delete('jwtToken');
+                this.cookieService.deleteAll('/');
+
+                setTimeout(() => {
+                  // Reset again Cookie
+                  this.cookieService.set('jwtToken', this.user_cookie);
+                  this.cookieService.set('user_details', JSON.stringify(data.custombuttonclick.data));
+                  this.cookieService.set('main_user', JSON.stringify(this.userData));
+
+                  // Redirect to page
+                  this.router.navigateByUrl("doctor/dashboard");
+                }, 500);
+                break;
+              case "No":
+                dialogRef1.close();
+                break;
+            }
           });
           break;
-        case 'close':
-          break;
-        default:
+        case "Approval Settings":
+          console.log("Settings");
+          let modalData: any = {
+            panelClass: 'bulkupload-dialog',
+            data: {
+              doctorData: data.custombuttonclick.data,
+            },
+            width: '500px'
+          };
+          const dialogRef = this.dialog.open(ApprovalSettingsUpdateComponent, modalData);
+      
+          dialogRef.afterClosed().subscribe(result => {
+            switch(result.status) {
+              case 'success':
+                let modalData: any = {
+                  panelClass: 'bulkupload-dialog',
+                  data: {
+                    header: "Alert",
+                    message: "Successfully Updated.",
+                    button1: { text: "" },
+                    button2: { text: "OK" },
+                  }
+                }
+                const dialogRef = this.dialog.open(DialogBoxComponent, modalData);
+      
+                dialogRef.afterClosed().subscribe(result => {
+                  this.docData = [];
+                  this.docData_count = 0;
+                  this.ngOnInit();
+                });
+                break;
+              case 'close':
+                break;
+              default:
+                break;
+            }
+          });
           break;
       }
-    });
+    }
   }
 
 
