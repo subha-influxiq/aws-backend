@@ -229,7 +229,7 @@ export class ListDoctorComponent implements OnInit {
             panelClass: 'bulkupload-dialog',
             data: {
               header: "Alert",
-              message: "Do you want to login using this doctor ?",
+              message: "Do you want to login as doctor : " + data.custombuttonclick.data.firstname + " " + data.custombuttonclick.data.lastname + "?",
               button1: { text: "Yes" },
               button2: { text: "No" },
             }

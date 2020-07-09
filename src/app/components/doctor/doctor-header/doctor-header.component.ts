@@ -69,7 +69,7 @@ export class DoctorHeaderComponent implements OnInit {
       panelClass: 'bulkupload-dialog',
       data: {
         header: "Alert",
-        message: "Do you want to logout from doctor ?",
+        message: "Do you want to return to admin?",
         button1: { text: "Yes" },
         button2: { text: "No" },
       }
