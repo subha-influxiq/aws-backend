@@ -880,3 +880,14 @@ color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
 
 .notes-modal .maindialognew .dialoghead .mat-list .mat-list-item{ height: auto; padding: 10px 0;}
 .notes-modal .maindialognew .dialoghead .mat-dialog-content .mat-list-base .mat-list-item .mat-list-item-content .material-icons { color:#f7032d; }
+
+/* approval setting */
+.bulkupload-dialog .mat-dialog-container .admin_wrapper{ width: 100%; margin:auto; padding: 0!important;}
+.bulkupload-dialog .mat-dialog-container .admin_wrapper .add_form { border: none;}
+.bulkupload-dialog .mat-dialog-container .admin_wrapper .title_wrapper{ background: #6bd010;
+  font-size: 20px; padding: 12px; color: #f9f6f6;}
+
+.bulkupload-dialog .mat-dialog-container .admin_wrapper .example-form label{ font-size: 18px; font-family: 'AvenirMedium'; color: rgb(14, 13, 13)} 
+.bulkupload-dialog .admin_wrapper .add_form .submit_form button { font-size: 18px; padding: 1px 16px; min-width: 120px;}
+.bulkupload-dialog .admin_wrapper .add_form .submit_form button:first-child { background: #2f3638; }
+.bulkupload-dialog .admin_wrapper .add_form .submit_form button:last-child { background: #60c306; }
