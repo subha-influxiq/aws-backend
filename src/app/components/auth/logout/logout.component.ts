@@ -20,7 +20,7 @@ export class LogoutComponent implements OnInit {
     this.cookies.delete('jwtToken');
     this.cookies.delete('user_details');
     this.cookies.deleteAll();
-    this.cookies.deleteAll('/');  
+    this.cookies.deleteAll('/');
   }
 
   ngOnInit() {
