@@ -178,7 +178,7 @@ export class DistributorsDashboardComponent implements OnInit {
   public deleteEndpoint: any = "deletesingledata";
   public apiUrl: any = environment.apiBaseUrl1;
   public tableName: any = "data_pece";
-  public datacollection: any = 'getPatientlistdata';
+  public datacollection: any = 'distributors-dashboard-report-data-list';
 
   public sortdata: any = {
     "type": 'desc',
@@ -432,8 +432,7 @@ export class DistributorsDashboardComponent implements OnInit {
     this.htmlText.headerText = flag;
     this.billerData_count = 0;
     this.allBillerData = [];
-    let endpoint = 'getPatientlistdata';
-    let endpointc = 'getPatientlistdata-count';
+
     // lib list
     let data: any = {
       "condition": {
@@ -445,7 +444,7 @@ export class DistributorsDashboardComponent implements OnInit {
         "field": 'patient_name'
       },
       "parent_id": this.loginUserData.user_details._id
-    }
+    };
 
     switch (flag) {
       case 'Reports Uploaded':
@@ -475,20 +474,12 @@ export class DistributorsDashboardComponent implements OnInit {
     }
 
     // API Hit
-    this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
-      this.billerData_count = res.count;
-    }, error => {
-      console.log('Oooops!');
-    });
-
-    this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
-      this.allBillerData = [];
-
+    this.http.httpViaPost('distributors-dashboard-report-data-list', data).subscribe((res: any) => {
       this.allBillerData = res.results.res;
+      this.billerData_count = res.data_count;
     }, error => {
       console.log('Oooops!');
     });
-    console.log(this.allBillerData);
   }
 
   downloadReport(report: any) {
