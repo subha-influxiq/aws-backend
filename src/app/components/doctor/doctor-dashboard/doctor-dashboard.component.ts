@@ -260,23 +260,16 @@ export class DoctorDashboardComponent implements OnInit {
   constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService, public http: HttpServiceService, public activatedRoute: ActivatedRoute, public matSnackBar: MatSnackBar, public deviceService: DeviceDetectorService) {
     this.allData = cookie.getAll();
     // this.cookie.delete('user_details');
-    // this.authData = JSON.parse(this.allData.user_details);
-    if(this.activatedRoute.snapshot.params._id) {
-      this.authData["_id"] = this.activatedRoute.snapshot.params._id;
-      // this.authData["parent_type"] = this.activatedRoute.snapshot.params.parent_type;
-      this.cookie.set('id',JSON.stringify(this.activatedRoute.snapshot.params._id));
-    }
-    else {
-      console.log('************************')
-      this.authData = JSON.parse(this.allData.user_details);
-    }
-    console.log("******",this.activatedRoute,this.authData);
+    this.authData = JSON.parse(this.allData.user_details);
+    console.log("Cookie",this.allData);
     if (typeof (this.allData.doctor_signature) == 'undefined' && typeof (this.authData.doctor_signature) != 'undefined') {
       this.cookie.set('doctor_signature', this.authData.doctor_signature);
     }
 
     this.authData["jwtToken"] = cookie.get('jwtToken');
     this.jwtToken = this.authData.jwtToken;
+    console.log("authData",this.authData);
+    this.authData.parent_type = this.authData.parent_type.toLowerCase();
     this.libdata.basecondition = {
       status: { "$gt": 10 }, doctor_id: this.authData._id
     };
