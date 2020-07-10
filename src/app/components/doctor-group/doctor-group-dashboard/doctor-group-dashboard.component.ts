@@ -135,6 +135,16 @@ export class DoctorGroupDashboardComponent implements OnInit {
         param: 'id',
         headermessage: 'Doctor Office Info',
       },
+      {
+        label: "Send to Biller",
+        type: 'action',
+        datatype: 'api',
+        endpoint: 'status-parent-signed',
+        cond: 'status',
+        condval: 14,
+        param: 'id',
+        headermessage: 'Status Update',
+      },
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
