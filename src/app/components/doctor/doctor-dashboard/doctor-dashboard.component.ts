@@ -117,7 +117,7 @@ export class DoctorDashboardComponent implements OnInit {
         param: ['download_file_name']
       },
       {
-        label: "Doctor Signed",
+        label: "Sign",
         type: 'action',
         datatype: 'api',
         endpoint: 'status-doctor-signed',
@@ -276,6 +276,7 @@ export class DoctorDashboardComponent implements OnInit {
     if (this.authData.parent_type != "admin") {
       this.status[0].val = "Doctor Signed";
       this.status[0].name = "Doctor Signed";
+      this.status.splice(1,1);
     }
     if (this.authData.status_text == "Doctor Signed") {
       this.status[0].val = "Send to Biller";
