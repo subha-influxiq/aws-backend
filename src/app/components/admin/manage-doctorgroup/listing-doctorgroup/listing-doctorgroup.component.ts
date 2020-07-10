@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { HttpServiceService } from '../../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router,ActivatedRoute } from '@angular/router';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ApprovalSettingsUpdateComponent } from '../../../common/approval-settings-update/approval-settings-update.component';
+import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
+
 
 @Component({
   selector: 'app-listing-doctorgroup',
@@ -75,6 +79,18 @@ export class ListingDoctorgroupComponent implements OnInit {
   "skip":0,
   "pagecount":1
 };
+public libdata: any = {
+  basecondition: "",
+  updateendpoint: 'statusupdate',
+  // tableheaders: ['firstname', 'lastname', 'email', 'phone', 'practice_name', 'npi', 'status', 'created_date',], //not required
+  custombuttons: [
+    {
+      label: "Log Me",
+      type: 'listner',
+      id: 'i1'
+    },
+  ]
+}
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
   public search_settings: any =
     {
@@ -86,7 +102,7 @@ export class ListingDoctorgroupComponent implements OnInit {
   // ====================================================================
 
   constructor(private http: HttpServiceService, private cookieService: CookieService, 
-    private router: Router,public activatedRoute : ActivatedRoute) {
+    private router: Router,public activatedRoute : ActivatedRoute,public dialog: MatDialog) {
 
     this.user_cookie = cookieService.get('jwtToken');
     this.userData = JSON.parse(this.cookieService.get('user_details'));
@@ -131,6 +147,50 @@ export class ListingDoctorgroupComponent implements OnInit {
         }, error => {
             console.log('Oooops!');
         });
+  }
+
+  listenLiblistingChange(data: any = null) {
+    if(data != null) {
+      switch(data.custombuttonclick.btninfo.label) {
+        case "Log Me":
+          let modalData1: any = {
+            panelClass: 'bulkupload-dialog',
+            data: {
+              header: "Alert",
+              message: "Do you want to login as Doctor Group Admin : " + data.custombuttonclick.data.groupname +"?",
+              button1: { text: "Yes" },
+              button2: { text: "No" },
+            }
+          }
+          var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData1);
+
+          dialogRef1.afterClosed().subscribe(result => {
+            switch(result) {
+              case "Yes":
+                // Delete Cookie
+                this.cookieService.delete('user_details');
+                this.cookieService.delete('main_user');
+                this.cookieService.delete('jwtToken');
+                this.cookieService.deleteAll('/');
+
+                setTimeout(() => {
+                  // Reset again Cookie
+                  this.cookieService.set('jwtToken', this.user_cookie);
+                  this.cookieService.set('user_details', JSON.stringify(data.custombuttonclick.data));
+                  this.cookieService.set('main_user', JSON.stringify(this.userData));
+
+                  // Redirect to page
+                  this.router.navigateByUrl("doctor-group/dashboard");
+                }, 500);
+                break;
+              case "No":
+                dialogRef1.close();
+                break;
+            }
+          });
+          break;
+      }
+    }
   }
  
 

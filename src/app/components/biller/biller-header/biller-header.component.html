@@ -1,3 +1,8 @@
+<ng-container *ngIf="main_user.flag == true">
+  <button mat-menu-item (click)="returnToAdmin()">
+    <mat-icon>power_settings_new</mat-icon> {{ main_user.buttonText }}
+  </button>
+</ng-container>
 <mat-toolbar class="techdashboard_header" [ngClass]="{'sticky' : isSticky}">
  
   <mat-card-content class="header_wrapper">

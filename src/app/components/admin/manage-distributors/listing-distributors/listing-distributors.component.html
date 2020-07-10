@@ -37,6 +37,7 @@
 
 
 <lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0"
+  (onLiblistingChange)="listenLiblistingChange($event)"
   [datasource]="TechDashboardAllData"
   [skip]="allUserData_skip"
   [detail_skip_array]="previewModal_detail_skip"
@@ -46,6 +47,7 @@
   [editroute]="editUrl"
   [jwttoken]="user_cookie"
   [statusarr]="status"
+  [libdata]="libdata"
   [updateendpoint]="UpdateEndpoint"
   [deleteendpoint]="deleteEndpoint"
   [date_search_endpoint]="SearchingEndpoint"

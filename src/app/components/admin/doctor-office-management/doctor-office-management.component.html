@@ -61,7 +61,7 @@
     </ng-container>
 
 
-    <lib-listing class="DataTable" *ngIf="doctorOfficeAllData.length>0" [datasource]="doctorOfficeAllData"
+    <lib-listing class="DataTable" *ngIf="doctorOfficeAllData.length>0" (onLiblistingChange)="listenLiblistingChange($event)" [datasource]="doctorOfficeAllData"
       [skip]="doctorOfficeAllData_skip" [detail_skip_array]="previewModal_skip"
       [modify_header_array]="doctorOfficeAllData_modify_header" [apiurl]="apiUrl" [sourcedata]="tableName"
       [editroute]="editUrl" [jwttoken]="user_cookie" [statusarr]="status" [updateendpoint]="UpdateEndpoint"
