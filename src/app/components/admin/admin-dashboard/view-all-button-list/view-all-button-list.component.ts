@@ -70,7 +70,7 @@ export class ViewAllButtonListComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: {  },
+    basecondition: {},
     updateendpoint: '',
     custombuttons: [
       {
@@ -159,9 +159,9 @@ export class ViewAllButtonListComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any = environment.apiBaseUrl1;
+  public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
-  public datacollection: any = 'getPatientlistdata-approved';
+  public datacollection: any = 'dashboard-report-data-list';
 
   public sortdata: any = {
     "type": 'desc',
@@ -184,8 +184,12 @@ export class ViewAllButtonListComponent implements OnInit {
     { val: "93922", 'name': "93922" }
   ];
   public status: any = [
-    { val: 1, 'name': 'Active' },
-    { val: 0, 'name': 'Inactive' }
+    { val: 11, 'name': 'Biller Admin Approved' },
+    { val: 12, 'name': 'Biller Admin Not Approved' },
+    { val: 13, 'name': "Biller Admin Hold" },
+    { val: 14, 'name': "Doctor Signed" },
+    { val: 15, 'name': "Sent to Biller" },
+    { val: 16, "name": "Report Downloaded" }
   ];
   public parent_type: any = [
     { val: "admin", 'name': 'Admin' },
@@ -225,8 +229,8 @@ export class ViewAllButtonListComponent implements OnInit {
       { label: "Search By Parent Name", field: 'parent_name_search', values: this.parentnameval },
       { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity },
       { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate },
-      { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity },
-      { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }
+      { label: "Search By Patient City", field: 'patient_city_search', values: this.patientcity },
+      { label: "Search By Patient State", field: 'patient_state_search', values: this.patientstate }
     ],
     datesearch: [
       { startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }
@@ -248,6 +252,112 @@ export class ViewAllButtonListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getSearchData();
+  }
+
+  ngAfterViewInit() {
+  }
+
+  viewReportProcessData(flag: string = "") {
+    this.billerData_count = 0;
+    this.allBillerData = [];
+
+    // lib list
+    let data: any = {
+      "condition": {
+        "limit": 10,
+        "skip": 0
+      },
+      "sort": {
+        "field": "patient_name",
+        "type": "desc"
+      },
+      "searchcondition": {
+        "parent_id": this.loginUserData.user_details._id,
+      },
+      "secretkey": "na"
+    };
+
+    switch (flag) {
+      case 'Total Number of Reports Added':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $gte: 3 };
+        this.libdata.basecondition.status = { $gte: 3 };
+
+        // Add status search filed
+        this.deleteStatusSearchField();
+        var searchData: any = this.search_settings.selectsearch;
+        searchData.push({ label: 'Search By Status', field: 'status', values: this.status });
+        this.search_settings.selectsearch = [];
+        this.search_settings.selectsearch = searchData;
+        break;
+      case 'Total Number of Report Processed':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $gte: 11 };
+        // this.libdata.basecondition.status = { $gte: 11 };
+
+        // Add status search filed
+        this.deleteStatusSearchField();
+        var searchData: any = this.search_settings.selectsearch;
+        searchData.push({ label: 'Search By Status', field: 'status', values: this.status });
+        this.search_settings.selectsearch = [];
+        this.search_settings.selectsearch = searchData;
+        break;
+      case 'Total Number of Report Signed':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $eq: 14 };
+        this.libdata.basecondition.status = { $eq: 14 };
+
+        // delete status filter
+        this.deleteStatusSearchField();
+        break;
+      case 'Sent to Biller':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $eq: 15 };
+        this.libdata.basecondition.status = { $eq: 15 };
+
+        // delete status filter
+        this.deleteStatusSearchField();
+        break;
+      case 'Reports Downloaded':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $eq: 16 };
+        this.libdata.basecondition.status = { $eq: 16 };
+
+        // delete status filter
+        this.deleteStatusSearchField();
+        break;
+      case 'Reports Pending Sing':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $eq: 11 };
+        this.libdata.basecondition.status = { $eq: 11 };
+
+        this.deleteStatusSearchField();
+        break;
+    }
+
+    // API Hit
+    this.http.httpViaPost('dashboard-report-data-list', data).subscribe((res: any) => {
+      this.allBillerData = res.results.res;
+      this.billerData_count = res.results.data_count;
+    }, error => {
+      console.log('Oooops!');
+    });
+  }
+
+  deleteStatusSearchField() {
+    // Delete Status Filter Field
+    var searchData: any = this.search_settings.selectsearch;
+    for (const loop in searchData) {
+      if(searchData[loop].label == 'Search By Status') {
+        searchData.splice(loop, 1);
+      }
+    }
+    this.search_settings.selectsearch = [];
+    this.search_settings.selectsearch = searchData;
+  }
+
+  getSearchData() {
     let data: any = {
       "source": "patient_data_desc_patient_name",
       "condition": { "status": { $gt: 10 }, job_tickets_details: { $exists: true } },
@@ -387,71 +497,6 @@ export class ViewAllButtonListComponent implements OnInit {
         }
       }
 
-    }, error => {
-      console.log('Oooops!');
-    });
-  }
-
-  ngAfterViewInit() {
-  }
-
-  viewReportProcessData(flag: string = "") {
-    this.allBillerData = [];
-    
-    // lib list
-    let endpoint = 'getPatientlistdata';
-    let endpointc = 'getPatientlistdata-count';
-    let data: any = {
-      "condition": {
-        "limit": 10,
-        "skip": 0
-      },
-      sort: {
-        "type": 'desc',
-        "field": 'patient_name'
-      },
-      "searchcondition": {
-      }
-    }
-
-    switch (flag) {
-      case 'Total Number of Reports Added':
-        this.libdata.basecondition.status = { "$gte": 3 };
-        data.status = { "$gte": 3 };
-        break;
-      case 'Total Number of Report Processed':
-        this.libdata.basecondition.status = { "$gte": 8 };
-        data.status = { "$gte": 8 };
-        break;
-      case 'Total Number of Report Signed':
-        this.libdata.basecondition.status = { $eq: 14 };
-        data.status = { $eq: 14 };
-        break;
-      case 'Sent to Biller':
-        this.libdata.basecondition.status = { $eq: 15 };
-        data.status = { "$eq": 15 };
-        break;
-      case 'Reports Downloaded':
-        this.libdata.basecondition.status = { $eq: 16 };
-        data.status = { "$eq": 16 };
-        break;
-      case 'Reports Pending Sing':
-        this.libdata.basecondition.status = { $eq: 11 };
-        data.status = { "$eq": 11 };
-        break;
-      case 'Job Tickets':
-        document.getElementById("jobTickets").scrollIntoView();
-        break;
-    }
-
-    this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
-      this.billerData_count = res.count;
-    }, error => {
-      console.log('Oooops!');
-    });
-
-    this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
-      this.allBillerData = res.results.res;
     }, error => {
       console.log('Oooops!');
     });
