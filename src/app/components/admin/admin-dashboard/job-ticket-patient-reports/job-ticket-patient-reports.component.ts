@@ -189,11 +189,6 @@ export class JobTicketPatientReportsComponent implements OnInit {
     { val: "TM FLOW V4", 'name': 'TM FLOW V4' },
     { val: "CMAT with BP Cuffs", 'name': 'CMAT with BP Cuffs' }
   ];
-  public report: any = [
-    { val: 11, 'name': 'Biller Admin Approved' },
-    { val: 12, 'name': 'Biller Admin Not Approved' },
-    { val: 13, 'name': "Biller Admin Hold" }
-  ];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
   public docofficeval: any = [];
@@ -236,45 +231,51 @@ export class JobTicketPatientReportsComponent implements OnInit {
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
 
-    /* Get resolve data */
-    this.activatedRoute.data.subscribe(resolveData => {
-      this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
-      //this.viewReportProcessData(this.htmlText.headerText);
-    });
+    // Get report datalist
+    this.getReportData();
+  }
 
+  ngOnInit() {
+    this.getSearchData();
+  }
+
+  ngAfterViewInit() {
+  }
+
+  getReportData() {
+    this.billerData_count = 0;
+    this.allBillerData = [];
 
     // lib list
-    let endpoint = 'getPatientlistdata-approved';
-    let endpointc = 'getPatientlistdata-approved-count';
     let data: any = {
       "condition": {
         "limit": 10,
         "skip": 0
       },
-      sort: {
-        "type": 'desc',
-        "field": 'patient_name'
+      "sort": {
+        "field": "patient_name",
+        "type": "desc"
       },
       "searchcondition": {
-        job_tickets_details: { $exists: true }
-      }
-    }
+        "parent_id": this.loginUserData.user_details._id,
+      },
+      "secretkey": "na"
+    };
 
-    this.http.httpViaPostbyApi1(endpointc, data).subscribe((res: any) => {
-      this.billerData_count = res.count;
-    }, error => {
-      console.log('Oooops!');
-    });
+    data.searchcondition.report_type = { $exists: true };
+    data.searchcondition.job_tickets_details = { $exists: true };
+    this.libdata.basecondition.job_tickets_details = { $exists: true };
 
-    this.http.httpViaPostbyApi1(endpoint, data).subscribe((res: any) => {
-      // console.log(res);
+    // API Hit
+    this.http.httpViaPost('dashboard-report-data-list', data).subscribe((res: any) => {
       this.allBillerData = res.results.res;
+      this.billerData_count = res.results.data_count;
     }, error => {
       console.log('Oooops!');
     });
   }
 
-  ngOnInit() {
+  getSearchData() {
     let data: any = {
       "source": "patient_data_desc_patient_name",
       "condition": { "status": { $gt: 10 }, job_tickets_details: { $exists: true } },
@@ -417,13 +418,6 @@ export class JobTicketPatientReportsComponent implements OnInit {
     }, error => {
       console.log('Oooops!');
     });
-  }
-
-  ngAfterViewInit() {
-  }
-
-  viewReportProcessData(flag) {
-    console.log(flag);
   }
 
 }

@@ -125,7 +125,7 @@
             Reports Added
           </p>
           <h2>{{ allResolveData.reportsAddedCount }}</h2>
-          <button mat-flat-button (click)="viewReportProcessData('Reports Uploaded')">view all</button>
+          <!-- <button mat-flat-button (click)="viewReportProcessData('Total Number of Reports Added')">view all</button> -->
         </span>
       </mat-card-content>
 
@@ -141,7 +141,7 @@
             Report Processed
           </p>
           <h2>{{ allResolveData.reportProcessedCount }}</h2>
-          <button mat-flat-button (click)="viewReportProcessData('Report Processed')">view all</button>
+          <button mat-flat-button (click)="viewReportProcessData('Total Number of Report Processed')">view all</button>
         </span>
       </mat-card-content>
 
@@ -156,7 +156,7 @@
             Report Signed
           </p>
           <h2> {{ allResolveData.reportSignedCount }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Report Signed')">view all</button>
+          <button mat-flat-button (click)="viewReportProcessData('Total Number of Report Signed')">view all</button>
         </span>
       </mat-card-content>
 
@@ -212,7 +212,7 @@
   <mat-card-content class="table_wrapper">
 
     <mat-toolbar class="top_header">
-      <h2> Patient Record List </h2>
+      <h2> {{ htmlText.headerText }} </h2>
       <span class="wrappp_R">
         <button class="add_new tooltip" mat-button routerLink="/admin/patient-management/add" matTooltip="Add Report"
           matTooltipPosition="above">
