@@ -8,7 +8,7 @@
 <app-doctor-group-header *ngIf="htmlText.userData.user_details.user_type == 'distributors'"></app-doctor-group-header>
 
 
-<mat-card class="admin_wrapper">
+<mat-card class="admin_wrapper percentage_counter">
   <!-- header with add button -->
   <mat-card-content class="title_wrapper">
     {{ htmlText.header }}
@@ -48,6 +48,9 @@
       <form class="example-form" autocomplete="off" name="SalesPersonManagementAddEditForm" [formGroup]="SalesPersonManagementAddEditForm" (ngSubmit)="TechManagementAddFormFormSubmit()">
 
         <!-- Time Percentage Start -->
+
+        <span class="label_text">
+        <label class="label_tag">Default Value for System Approval</label>
         <mat-form-field appearance="fill">
           <mat-label>Default Value for System Approval (%)</mat-label>
 
@@ -64,6 +67,7 @@
              Percentage is not valid.
           </mat-error>
         </mat-form-field>
+      </span>
         <!-- Time Percentage End -->
 
         <!-- end here -->

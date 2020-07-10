@@ -412,7 +412,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 
 .admin_superbillsection .biller_wrapper .super_bill_item .container_wrapper{ display: flex; flex-direction: column; align-items: self-end; width: 80%; box-sizing: border-box;  }
 .admin_superbillsection .biller_wrapper .super_bill_item span h2{ color: #fff; font-size: 36px; text-transform: uppercase; font-family: 'AvenirMedium'; margin: 10px 0; text-shadow: 1px 1px 0px #dadada; word-break: break-all;}
-.admin_superbillsection .biller_wrapper .super_bill_item span P{ color: #fff; font-size: 22px; font-family: 'AvenirMedium'; margin: 0; line-height: 26px; text-shadow: 1px 1px 0px #dadada;}
+.admin_superbillsection .biller_wrapper .super_bill_item span P{ color: #fff; font-size: 20px; font-family: 'AvenirMedium'; margin: 0; line-height: 26px; text-shadow: 1px 1px 0px #dadada;}
 .admin_superbillsection .biller_wrapper .super_bill_item:last-child{margin-bottom: 0.5%; }
 .admin_superbillsection .biller_wrapper .super_bill_item span button{ font-size: 16px; text-transform: capitalize; font-family: 'AvenirLight'; line-height: 32px; margin-top: auto;
   width: 105px; border-radius: 5px; margin-left: auto;}
@@ -488,6 +488,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .bookedAppointment .action_bar .date-range { display: flex; width: 66%; }
 .admin_wrapper .title_wrapper { color: #fff; text-transform: uppercase; padding: 12px; font-family: 'AvenirBlack'; font-size: 26px; width: auto; background: #26c6da; text-align: center; }
 .admin_wrapper .mat-tab-group .mat-tab-header{margin: 16px 0;}
+.admin_wrapper .mat-tab-group .mat-tab-header .mat-tab-label-container{ background: #fff;}
 .admin_wrapper .add_form .submit_form button{ border-radius: 5px; text-transform: uppercase; font-family: "AvenirMedium"; font-size: 22px; padding: 4px 16px; min-width: 170px;
   background: var(--button-color2); color: #fff; margin-right: 16px;}
  .admin_wrapper .add_form .submit_form button:first-child{ margin-right: 16px; background: var(--button-color1);}
@@ -496,6 +497,9 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
  /* #f3f3f3 */
  .admin_wrapper .add_form .form_wrapper textarea{ resize: none;}
  .admin_wrapper .add_form .form_wrapper .mat-form-field{ width: 49%; margin: 0.5%; }
+ .percentage_counter{ width: 700px!important;}
+ .admin_wrapper .add_form .form_wrapper .label_text{ display: flex;}
+ .admin_wrapper .add_form .form_wrapper .label_tag{ font-size: 20px; font-family: 'AvenirMedium'; width: 49%;}
  .admin_wrapper .add_form h2{ font-family: "AvenirBlack"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }
  .admin_wrapper .add_form .submit_form{ display: flex; width: 100%; text-align: center; margin-top: 30px; justify-content: center; }
 .patient_preview .mat-form-field-appearance-legacy .mat-form-field-wrapper { padding: 0;}
@@ -505,6 +509,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .patient_preview .mat-form-field-underline {display: none;}
 .patient_preview .mat-form-field-appearance-legacy .mat-form-field-infix { padding: 10px; border: 1px solid #1dbce9; box-sizing: border-box; margin-right: 5px; }
 /* add edit form */
+
 .add_form .test_date_wrapper .mat-card-content .mat-form-field-flex{ background: #fff;  border: 1px solid #d0d0d0;
   padding: 0 5px; box-sizing: border-box; }
  .patients_info_wrapper .mat-card-content .mat-form-field .mat-form-field-flex{ background: #fff; border: 1px solid #e6e4e4; padding: 0 7px;}
@@ -533,6 +538,7 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
 .patient_report_wrapper .patient_item_section .mat-tab-label-active {
 background:linear-gradient(45deg, #0772ff, #04a6f6); opacity: 1; }
 .mediaDoc_wrapper .media_inner_items{ background: #f8f3f3;  margin: 0; display: flex;
+  
 flex-direction: column; border: 1px solid #b4b5b5; box-sizing: border-box; width:100%; }
 .mediaDoc_wrapper .media_inner_items .image_wrapper { width: 100%; margin: 0; box-sizing: border-box; text-align: center;  display: flex; align-items: center; justify-content: center;}
 .mediaDoc_wrapper .media_inner_items .image_wrapper img{ max-width: 100%; vertical-align: middle;}
@@ -710,9 +716,8 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton5,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton6,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton7,
-.admin_dashboard .DataTable .tablewrapper tr td .custombutton8{ display: inline; margin: 0 4px;}
+.admin_dashboard .DataTable .tablewrapper tr td .custombutton8{ display: inline-block; margin: 2px;}
 .admin_dashboard .DataTable .container .searchbar .search_class:first-child { margin-left: 20px;}
-/* .admin_dashboard .DataTable .container .searchbar .search_class { width:auto;} */
 
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton0 button,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton1 button,
@@ -723,7 +728,8 @@ lib-listing .container .mat-card{ padding: 0; box-shadow: none;}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton6 button,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton7 button,
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton8 button{
-   font-family: 'AvenirMedium'; background: var(--button-color3); box-shadow: none; margin-bottom: 6px; padding: 6px 10px; line-height: inherit; font-size: 12px; min-width: 140px;}
+ font-family: 'AvenirMedium'; background: var(--button-color3); box-shadow: none;
+ padding: 6px 10px; line-height: inherit; font-size: 12px; min-width: 140px; margin: 0;}
 
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton0 button {background: var(--button-color1);}
 .admin_dashboard .DataTable .tablewrapper tr td .custombutton1 button {background: var(--button-color2);}
@@ -886,8 +892,11 @@ color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
 .bulkupload-dialog .mat-dialog-container .admin_wrapper .add_form { border: none;}
 .bulkupload-dialog .mat-dialog-container .admin_wrapper .title_wrapper{ background: #6bd010;
   font-size: 20px; padding: 12px; color: #f9f6f6;}
-
 .bulkupload-dialog .mat-dialog-container .admin_wrapper .example-form label{ font-size: 18px; font-family: 'AvenirMedium'; color: rgb(14, 13, 13)} 
-.bulkupload-dialog .admin_wrapper .add_form .submit_form button { font-size: 18px; padding: 1px 16px; min-width: 120px;}
-.bulkupload-dialog .admin_wrapper .add_form .submit_form button:first-child { background: #2f3638; }
+.bulkupload-dialog .admin_wrapper .add_form .submit_form button { font-size: 14px;
+  padding: 0px 12px;
+  min-width: 90px;
+}
+.bulkupload-dialog .admin_wrapper .add_form .submit_form button:nth-child(2) { background: #2f3638; }
 .bulkupload-dialog .admin_wrapper .add_form .submit_form button:last-child { background: #60c306; }
+.bulkupload-dialog .admin_wrapper .add_form .submit_form .resetBtn { background: #0a9648; }
