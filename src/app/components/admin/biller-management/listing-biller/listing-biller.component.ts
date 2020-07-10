@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../../services/http-service.service';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ApprovalSettingsUpdateComponent } from '../../../common/approval-settings-update/approval-settings-update.component';
+import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-listing-biller',
@@ -60,12 +63,9 @@ export class ListingBillerComponent implements OnInit {
     custombuttons: [
       {
         label: "Log Me",
-        route: "admin/biller-dashboard/",
-        type: 'internallink',
-        //cond:'status',
-        //condval:0,
-        param: ['_id'],
-    },]
+        type: 'listner',
+        id: 'i1'
+      },]
   }
   public allUserData_modify_header: any = {
     "firstname": "First Name",
@@ -110,8 +110,8 @@ export class ListingBillerComponent implements OnInit {
 
     };
   public user_cookie: any;
-  constructor(public activeRoute: ActivatedRoute, public cookie: CookieService,
-    public httpService: HttpServiceService) {
+  constructor(public dialog: MatDialog,public activeRoute: ActivatedRoute, public cookie: CookieService,
+    public httpService: HttpServiceService,private router: Router) {
 
     this.user_cookie = cookie.get('jwtToken');
     if(this.activeRoute.snapshot.routeConfig.path == "admin/doctor/tech-management") {
@@ -259,5 +259,49 @@ export class ListingBillerComponent implements OnInit {
     this.activeRoute.data.forEach((data) => {
       this.allBillerData = data.Billerdata.res;
     })
+  }
+
+  listenLiblistingChange(data: any = null) {
+    if(data != null) {
+      switch(data.custombuttonclick.btninfo.label) {
+        case "Log Me":
+          let modalData1: any = {
+            panelClass: 'bulkupload-dialog',
+            data: {
+              header: "Alert",
+              message: "Do you want to login as biller : " + data.custombuttonclick.data.firstname + " " + data.custombuttonclick.data.lastname + "?",
+              button1: { text: "Yes" },
+              button2: { text: "No" },
+            }
+          }
+          var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData1);
+
+          dialogRef1.afterClosed().subscribe(result => {
+            switch(result) {
+              case "Yes":
+                // Delete Cookie
+                this.cookie.delete('user_details');
+                this.cookie.delete('main_user');
+                this.cookie.delete('jwtToken');
+                this.cookie.deleteAll('/');
+
+                setTimeout(() => {
+                  // Reset again Cookie
+                  this.cookie.set('jwtToken', this.user_cookie);
+                  this.cookie.set('user_details', JSON.stringify(data.custombuttonclick.data));
+                  this.cookie.set('main_user', JSON.stringify(this.userData));
+
+                  // Redirect to page
+                  this.router.navigateByUrl("doctor/dashboard");
+                }, 500);
+                break;
+              case "No":
+                dialogRef1.close();
+                break;
+            }
+          });
+          break;
+      }
+    }
   }
 }

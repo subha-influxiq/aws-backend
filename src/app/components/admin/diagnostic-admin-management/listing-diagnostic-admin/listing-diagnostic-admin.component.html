@@ -17,12 +17,12 @@
     <!-- End header with add button -->
 
     <mat-card-content class="admin_dashboard">
-      <lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0" [datasource]="TechDashboardAllData"
+      <lib-listing class="DataTable" *ngIf="TechDashboardAllData.length>0" (onLiblistingChange)="listenLiblistingChange($event)" [datasource]="TechDashboardAllData"
         [skip]="allUserData_skip" [detail_skip_array]="previewModal_detail_skip"
         [modify_header_array]="allUserData_modify_header" [apiurl]="apiUrl" [sourcedata]="tableName"
         [editroute]="editUrl" [jwttoken]="user_cookie" [statusarr]="status" [updateendpoint]="UpdateEndpoint"
         [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
-        [date_search_source]="SearchingSourceName" [search_settings]="search_settings" [sortdata]="sortdata"
+        [date_search_source]="SearchingSourceName" [search_settings]="search_settings" [sortdata]="sortdata" [libdata]="libdata"
         [datacollection]="datacollection" [date_search_source_count]="diagnosticadminData_count"
         [limitcond]="limitcond">
       </lib-listing>

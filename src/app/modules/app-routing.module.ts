@@ -173,52 +173,6 @@ const routes: Routes = [
   },
   /********** Auth Route Start **********/
 /*=========Reports Details Routes======== */
-
-// Login as doctor by admin Route-----------------
-
-{
-  path: 'admin/doctor-dashboard/:_id',
-  component: DoctorDashboardComponent,
-  resolve: { doctordata: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {},
-      },
-      endpoint: 'doctor-dashboard'
-    },
-},
-{
-  path: 'admin/doctor/tech-management',
-  canActivate: [AuthguardService],
-  component: ListingTechComponent,
-},
-{
-  path: 'admin/doctor/biller-management',
-  canActivate: [AuthguardService],
-  component: ListingBillerComponent,
-},
-{
-  path: 'admin/doctor/doctor-office-management',
-  canActivate: [AuthguardService],
-  component: DoctorOfficeManagementComponent,
-},
-
-// Login as tech by admin Route-----------------
-
-{
-  path: 'admin/tech-dashboard/:_id',
-  component: TechDashboardComponent,
-  resolve: { techDashboardData: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {},
-      },
-      endpoint: 'tech-dashboard'
-    },
-},
-
 {
   path: 'admin/reports-details/:_id',
   component: ReportsDetailsComponent,
