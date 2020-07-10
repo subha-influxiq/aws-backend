@@ -51,7 +51,7 @@
     "i": "^0.3.6",
     "jasmine-console-reporter": "^3.1.0",
     "listing-angular7": "latest",
-    "login-lib-influxiq": "^0.1.12",
+    "login-lib-influxiq": "latest",
     "moment": "^2.27.0",
     "moment-es6": "^1.0.0",
     "ng2-ckeditor": "^1.2.7",
