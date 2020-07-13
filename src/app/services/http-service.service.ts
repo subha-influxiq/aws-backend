@@ -15,6 +15,7 @@ export class HttpServiceService {
   public baseUrl1: any = environment.apiBaseUrl1;
   public calendarApiUrl: any = environment.calendarApi;
   public jwtToken: any = "";
+  public training_url:any=environment.training_url;
 
   constructor(private http: HttpClient, public CookieService: CookieService) {
     this.jwtToken = this.CookieService.get('jwtToken');
@@ -139,6 +140,17 @@ export class HttpServiceService {
 
   get(url) {
     return this.http.get(url);
+  }
+
+  CustomRequest(requestdata: any, endpoint: any) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.jwtToken
+      })
+    };
+    var result = this.http.post(this.training_url + endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
+    return result;
   }
 
 }

@@ -13,5 +13,7 @@ export const environment = {
   googleSyncApi: "https://gapi.betoparedes.com/connect-calendar-pece-live.php",
   calendarApi: "https://m9mkuic6o9.execute-api.us-east-1.amazonaws.com/dev/api/",
 
-  doctorSignUpBaseUrl: "https://pece-doctor-signup.influxiq.com"
+  doctorSignUpBaseUrl: "https://pece-doctor-signup.influxiq.com",
+  
+  training_url: "https://obq0e0nxhk.execute-api.us-east-1.amazonaws.com/production/api1/"
 };
