@@ -66,7 +66,7 @@ echo ">>---> Git Pull\n"
 git pull origin master
 echo ""
 
-echo "Any Conflict record ??\n If Conflict marge your Conflict file then press y or press other key to push code."
+echo " >>---> Any Conflict record ??\nIf Conflict marge your Conflict file then press y or press other key to push code."
 read -p "Enter your choise: " conflictKey
 
 if [ "$conflictKey" = 'y' ] || [ "$conflictKey" = 'Y' ] 
