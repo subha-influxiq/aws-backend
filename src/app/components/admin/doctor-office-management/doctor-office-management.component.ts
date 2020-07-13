@@ -60,7 +60,7 @@ export class DoctorOfficeManagementComponent implements OnInit {
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
   public apiUrl: any;
-  public tableName: any = "dat_pece";
+  public tableName: any = "data_pece";
   public userData: any={}
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
@@ -105,12 +105,7 @@ export class DoctorOfficeManagementComponent implements OnInit {
       //hidestatustogglebutton:true,
       // hideaction:true,
       tableheaders: ['center_name','firstname', 'lastname', 'email', 'phone', 'status', 'created_date'], //not required
-      custombuttons: [
-        {
-          label: "Log Me",
-          type: 'listner',
-          id: 'i1'
-        },]
+      custombuttons: []
     }
   
 
@@ -138,20 +133,24 @@ export class DoctorOfficeManagementComponent implements OnInit {
     }
     if(this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/doctor-office-management/edit';
+      this.libdata.basecondition = { 'parent_id': this.userData._id };
       this.libdata.notes.user = this.userData._id;
       this.libdata.notes.currentuserfullname = this.userData.center_name;
     }
     if(this.userData.user_type == 'distributors') {
       this.editUrl = 'distributors/doctor-office-management/edit';
+      this.libdata.basecondition = { 'parent_id': this.userData._id };
       this.libdata.notes.user = this.userData._id;
     this.libdata.notes.currentuserfullname = this.userData.distributorname;
     }
     if(this.userData.user_type == 'doctor_group') {
       this.editUrl = 'doctor-group/doctor-office-management/edit';
+      this.libdata.basecondition = { 'parent_id': this.userData._id };
       this.libdata.notes.user = this.userData._id;
       this.libdata.notes.currentuserfullname = this.userData.groupname 
     }
     if(this.userData.user_type == 'admin') {
+      this.libdata.custombuttons = {label: "Log Me",type: 'listner',id: 'i1'};
       this.search_settings.textsearch.push({ label: "Search By Parent Name", field: 'parent_name_search' });
       this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type });
       this.libdata.tableheaders.splice(3,0,"parent_name");
