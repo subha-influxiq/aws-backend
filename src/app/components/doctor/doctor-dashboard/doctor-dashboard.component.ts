@@ -117,7 +117,7 @@ export class DoctorDashboardComponent implements OnInit {
         param: ['download_file_name']
       },
       {
-        label: "Doctor Signed",
+        label: "Sign",
         type: 'action',
         datatype: 'api',
         endpoint: 'status-doctor-signed',
@@ -260,29 +260,23 @@ export class DoctorDashboardComponent implements OnInit {
   constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService, public http: HttpServiceService, public activatedRoute: ActivatedRoute, public matSnackBar: MatSnackBar, public deviceService: DeviceDetectorService) {
     this.allData = cookie.getAll();
     // this.cookie.delete('user_details');
-    // this.authData = JSON.parse(this.allData.user_details);
-    if(this.activatedRoute.snapshot.params._id) {
-      this.authData["_id"] = this.activatedRoute.snapshot.params._id;
-      // this.authData["parent_type"] = this.activatedRoute.snapshot.params.parent_type;
-      this.cookie.set('id',JSON.stringify(this.activatedRoute.snapshot.params._id));
-    }
-    else {
-      console.log('************************')
-      this.authData = JSON.parse(this.allData.user_details);
-    }
-    console.log("******",this.activatedRoute,this.authData);
+    this.authData = JSON.parse(this.allData.user_details);
+    console.log("Cookie",this.allData);
     if (typeof (this.allData.doctor_signature) == 'undefined' && typeof (this.authData.doctor_signature) != 'undefined') {
       this.cookie.set('doctor_signature', this.authData.doctor_signature);
     }
 
     this.authData["jwtToken"] = cookie.get('jwtToken');
     this.jwtToken = this.authData.jwtToken;
+    console.log("authData",this.authData);
+    this.authData.parent_type = this.authData.parent_type.toLowerCase();
     this.libdata.basecondition = {
       status: { "$gt": 10 }, doctor_id: this.authData._id
     };
     if (this.authData.parent_type != "admin") {
       this.status[0].val = "Doctor Signed";
       this.status[0].name = "Doctor Signed";
+      this.status.splice(1,1);
     }
     if (this.authData.status_text == "Doctor Signed") {
       this.status[0].val = "Send to Biller";

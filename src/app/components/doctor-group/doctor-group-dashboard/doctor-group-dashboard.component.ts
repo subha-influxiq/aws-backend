@@ -24,7 +24,7 @@ export class DoctorGroupDashboardComponent implements OnInit {
   public loginUserData: any = {};
   public jwtToken: string = "";
   public htmlText: any = {
-    headerText: "Reports Uploaded"
+    headerText: "Total Number of Report Processed"
   };
 
   public shareDetails: any = {
@@ -83,9 +83,7 @@ export class DoctorGroupDashboardComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: {
-      status: 11
-    },
+    basecondition: {},
     updateendpoint: '',
     custombuttons: [
       {
@@ -137,6 +135,16 @@ export class DoctorGroupDashboardComponent implements OnInit {
         param: 'id',
         headermessage: 'Doctor Office Info',
       },
+      {
+        label: "Send to Biller",
+        type: 'action',
+        datatype: 'api',
+        endpoint: 'status-parent-signed',
+        cond: 'status',
+        condval: 14,
+        param: 'id',
+        headermessage: 'Status Update',
+      },
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
@@ -160,9 +168,9 @@ export class DoctorGroupDashboardComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any = environment.apiBaseUrl1;
+  public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
-  public datacollection: any = 'getPatientlistdata';
+  public datacollection: any = 'dashboard-report-data-list';
 
   public sortdata: any = {
     "type": 'desc',
@@ -178,10 +186,12 @@ export class DoctorGroupDashboardComponent implements OnInit {
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
   public status: any = [
-    { val: "Biller Admin Approved", 'name': 'Biller Admin Approved' },
-    { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' },
-    { val: "Biller Admin Hold", 'name': "Biller Admin Hold" },
-    { val: "Downloaded", "name": "Report Downloaded" }
+    { val: 11, 'name': 'Biller Admin Approved' },
+    { val: 12, 'name': 'Biller Admin Not Approved' },
+    { val: 13, 'name': "Biller Admin Hold" },
+    { val: 14, 'name': "Doctor Signed" },
+    { val: 15, 'name': "Sent to Biller" },
+    { val: 16, "name": "Report Downloaded" }
   ];
   public cptcodes: any = [
     { val: "95923", 'name': '95923' },
@@ -223,8 +233,8 @@ export class DoctorGroupDashboardComponent implements OnInit {
       { label: "Search By Parent Name", field: 'parent_name_search', values: this.parentnameval },
       { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity },
       { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate },
-      { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity },
-      { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }
+      { label: "Search By Patient City", field: 'patient_city_search', values: this.patientcity },
+      { label: "Search By Patient State", field: 'patient_state_search', values: this.patientstate }
     ],
     datesearch: [
       { startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }
@@ -265,6 +275,113 @@ export class DoctorGroupDashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getSearchData();
+  }
+
+  ngAfterViewInit() {
+  }
+
+  viewReportProcessData(flag = null) {
+    this.htmlText.headerText = flag;
+    this.billerData_count = 0;
+    this.allBillerData = [];
+
+    // lib list
+    let data: any = {
+      "condition": {
+        "limit": 10,
+        "skip": 0
+      },
+      "sort": {
+        "field": "patient_name",
+        "type": "desc"
+      },
+      "searchcondition": {
+        "parent_id": this.loginUserData.user_details._id,
+      },
+      "secretkey": "na"
+    };
+
+    switch (flag) {
+      case 'Total Number of Reports Added':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $gte: 3 };
+        this.libdata.basecondition.status = { $gte: 3 };
+
+        // Add status search filed
+        this.deleteStatusSearchField();
+        var searchData: any = this.search_settings.selectsearch;
+        searchData.push({ label: 'Search By Status', field: 'status', values: this.status });
+        this.search_settings.selectsearch = [];
+        this.search_settings.selectsearch = searchData;
+        break;
+      case 'Total Number of Report Processed':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $gte: 11 };
+        // this.libdata.basecondition.status = { $gte: 11 };
+
+        // Add status search filed
+        this.deleteStatusSearchField();
+        var searchData: any = this.search_settings.selectsearch;
+        searchData.push({ label: 'Search By Status', field: 'status', values: this.status });
+        this.search_settings.selectsearch = [];
+        this.search_settings.selectsearch = searchData;
+        break;
+      case 'Total Number of Report Signed':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $eq: 14 };
+        this.libdata.basecondition.status = { $eq: 14 };
+
+        // delete status filter
+        this.deleteStatusSearchField();
+        break;
+      case 'Sent to Biller':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $eq: 15 };
+        this.libdata.basecondition.status = { $eq: 15 };
+
+        // delete status filter
+        this.deleteStatusSearchField();
+        break;
+      case 'Reports Downloaded':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $eq: 16 };
+        this.libdata.basecondition.status = { $eq: 16 };
+
+        // delete status filter
+        this.deleteStatusSearchField();
+        break;
+      case 'Reports Pending Sing':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $eq: 11 };
+        this.libdata.basecondition.status = { $eq: 11 };
+
+        this.deleteStatusSearchField();
+        break;
+    }
+
+    // API Hit
+    this.http.httpViaPost('dashboard-report-data-list', data).subscribe((res: any) => {
+      this.allBillerData = res.results.res;
+      this.billerData_count = res.results.data_count;
+    }, error => {
+      console.log('Oooops!');
+    });
+  }
+
+  deleteStatusSearchField() {
+    // Delete Status Filter Field
+    var searchData: any = this.search_settings.selectsearch;
+    for (const loop in searchData) {
+      if(searchData[loop].label == 'Search By Status') {
+        searchData.splice(loop, 1);
+      }
+    }
+    this.search_settings.selectsearch = [];
+    this.search_settings.selectsearch = searchData;
+  }
+
+  getSearchData() {
     let data: any = {
       "source": "patient_data_desc_patient_name",
       "condition": {
@@ -320,7 +437,6 @@ export class DoctorGroupDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
         }
       }
       for (var i in response.res) {
@@ -336,8 +452,6 @@ export class DoctorGroupDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
-
         }
       }
       for (var i in response.res) {
@@ -400,69 +514,6 @@ export class DoctorGroupDashboardComponent implements OnInit {
           count = 0;
         }
       }
-    }, error => {
-      console.log('Oooops!');
-    });
-  }
-
-  ngAfterViewInit() {
-  }
-
-  viewReportProcessData(flag = null) {
-    this.htmlText.headerText = flag;
-    this.allBillerData = [];
-    this.billerData_count = 0;
-
-    // lib list
-    let endpoint = 'getPatientlistdata';
-    let endpointc = 'getPatientlistdata-count';
-    let data: any = {
-      "condition": {
-        "limit": 10,
-        "skip": 0
-      },
-      sort: {
-        "type": 'desc',
-        "field": 'patient_name'
-      },
-      parent_id: this.loginUserData.user_details._id
-    }
-
-    switch (flag) {
-      case 'Reports Uploaded':
-        data.status = {
-          "$in": [8, 9, 10]
-        };
-        break;
-      case 'Report Processed':
-        data.status = {
-          "$in": [11, 12, 13, 14, 15]
-        };
-        break;
-      case 'Report Signed':
-        data.doctor_signature = { $exists: true };
-        break;
-      case 'Sent to Biller':
-        data.status = 15;
-        break;
-      case 'Reports Downloaded':
-        data.status = 15;
-        break;
-      case 'Reports Pending Sing':
-        data.doctor_signature = { $exists: false };
-        break;
-      default:
-        break;
-    }
-
-    this.http.httpViaPost(endpointc, data).subscribe((res: any) => {
-      this.billerData_count = res.count;
-    }, error => {
-      console.log('Oooops!');
-    });
-
-    this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
-      this.allBillerData = res.results.res;
     }, error => {
       console.log('Oooops!');
     });

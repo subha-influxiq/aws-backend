@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  siteBaseUrl: "http://localhost:4200/",
+  siteBaseUrl: "https://testbedpece.influxiq.com",
   s3bucket: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/",
   apiBaseUrl: "https://trtss4n5ff.execute-api.us-east-1.amazonaws.com/dev/api/",
   apiBaseUrl1: "https://trtss4n5ff.execute-api.us-east-1.amazonaws.com/dev/api1/",

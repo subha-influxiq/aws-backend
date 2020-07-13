@@ -156,9 +156,9 @@ export class ApprovedPatientReportsComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any = environment.apiBaseUrl1;
+  public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
-  public datacollection: any = 'getPatientlistdata-approved';
+  public datacollection: any = 'dashboard-report-data-list';
 
   public sortdata: any = {
     "type": 'desc',
@@ -173,10 +173,6 @@ export class ApprovedPatientReportsComponent implements OnInit {
 
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
-  public status: any = [
-    { val: 1, 'name': 'Active' },
-    { val: 0, 'name': 'Inactive' }
-  ];
   public parent_type: any = [
     { val: "admin", 'name': 'Admin' },
     { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },
@@ -196,7 +192,7 @@ export class ApprovedPatientReportsComponent implements OnInit {
     { val: "TM FLOW V4", 'name': 'TM FLOW V4' },
     { val: "CMAT with BP Cuffs", 'name': 'CMAT with BP Cuffs' }
   ];
-  public report: any = [
+  public status: any = [
     { val: 11, 'name': 'Biller Admin Approved' },
     { val: 12, 'name': 'Biller Admin Not Approved' },
     { val: 13, 'name': "Biller Admin Hold" },
@@ -216,7 +212,7 @@ export class ApprovedPatientReportsComponent implements OnInit {
   public search_settings: any = {
     selectsearch: [
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },
-      { label: 'Search By Status', field: 'status_search', values: this.report },
+      { label: 'Search By Status', field: 'status_search', values: this.status },
       { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },
       { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes },
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
@@ -225,8 +221,8 @@ export class ApprovedPatientReportsComponent implements OnInit {
       { label: "Search By Parent Name", field: 'parent_name_search', values: this.parentnameval },
       { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity },
       { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate },
-      { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity },
-      { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }
+      { label: "Search By Patient City", field: 'patient_city_search', values: this.patientcity },
+      { label: "Search By Patient State", field: 'patient_state_search', values: this.patientstate }
     ],
     datesearch: [
       { startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }
@@ -246,44 +242,50 @@ export class ApprovedPatientReportsComponent implements OnInit {
     /* Get Auth Token */
     this.jwtToken = cookieService.get('jwtToken');
 
-    /* Get resolve data */
-    this.activatedRoute.data.subscribe(resolveData => {
-      this.allResolveData = resolveData.dataCount.data.dashboardCount[0];
-      //this.viewReportProcessData(this.htmlText.headerText);
-    });
+    this.getReportData();
+  }
 
+  ngOnInit() {
+    this.getSearchData();
+  }
+
+  ngAfterViewInit() {
+  }
+
+  getReportData() {
+    this.billerData_count = 0;
+    this.allBillerData = [];
 
     // lib list
-    let endpoint = 'getPatientlistdata-approved';
-    let endpointc = 'getPatientlistdata-approved-count';
-
-
     let data: any = {
       "condition": {
         "limit": 10,
         "skip": 0
       },
-      sort: {
-        "type": 'desc',
-        "field": 'patient_name'
-      }
-    }
+      "sort": {
+        "field": "patient_name",
+        "type": "desc"
+      },
+      "searchcondition": {
+        "parent_id": this.loginUserData.user_details._id,
+      },
+      "secretkey": "na"
+    };
 
-    this.http.httpViaPostbyApi1(endpointc, data).subscribe((res: any) => {
-      this.billerData_count = res.count;
-    }, error => {
-      console.log('Oooops!');
-    });
+    data.searchcondition.report_type = { $exists: true };
+    data.searchcondition.status = { $in: [11, 12, 13] };
+    this.libdata.basecondition.status = { $in: [11, 12, 13] };
 
-    this.http.httpViaPostbyApi1(endpoint, data).subscribe((res: any) => {
-      // console.log(res);
+    // API Hit
+    this.http.httpViaPost('dashboard-report-data-list', data).subscribe((res: any) => {
       this.allBillerData = res.results.res;
+      this.billerData_count = res.results.data_count;
     }, error => {
       console.log('Oooops!');
     });
   }
 
-  ngOnInit() {
+  getSearchData() {
     let data: any = {
       "source": "patient_data_desc_patient_name",
       "condition": { "status": { $gt: 10 } },
@@ -426,13 +428,6 @@ export class ApprovedPatientReportsComponent implements OnInit {
     }, error => {
       console.log('Oooops!');
     });
-  }
-
-  ngAfterViewInit() {
-  }
-
-  viewReportProcessData(flag) {
-    console.log(flag);
   }
 
 }

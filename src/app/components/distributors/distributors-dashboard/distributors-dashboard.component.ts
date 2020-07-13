@@ -178,7 +178,7 @@ export class DistributorsDashboardComponent implements OnInit {
   public deleteEndpoint: any = "deletesingledata";
   public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
-  public datacollection: any = 'distributors-dashboard-report-data-list';
+  public datacollection: any = 'dashboard-report-data-list';
 
   public sortdata: any = {
     "type": 'desc',
@@ -238,8 +238,8 @@ export class DistributorsDashboardComponent implements OnInit {
       { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval },
       { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity },
       { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate },
-      { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity },
-      { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }
+      { label: "Search By Patient City", field: 'patient_city_search', values: this.patientcity },
+      { label: "Search By Patient State", field: 'patient_state_search', values: this.patientstate }
     ],
     datesearch: [
       { startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }
@@ -311,6 +311,7 @@ export class DistributorsDashboardComponent implements OnInit {
         this.libdata.basecondition.status = { $gte: 3 };
 
         // Add status search filed
+        this.deleteStatusSearchField();
         var searchData: any = this.search_settings.selectsearch;
         searchData.push({ label: 'Search By Status', field: 'status', values: this.status });
         this.search_settings.selectsearch = [];
@@ -322,6 +323,7 @@ export class DistributorsDashboardComponent implements OnInit {
         // this.libdata.basecondition.status = { $gte: 11 };
 
         // Add status search filed
+        this.deleteStatusSearchField();
         var searchData: any = this.search_settings.selectsearch;
         searchData.push({ label: 'Search By Status', field: 'status', values: this.status });
         this.search_settings.selectsearch = [];
@@ -356,15 +358,14 @@ export class DistributorsDashboardComponent implements OnInit {
         data.searchcondition.status = { $eq: 11 };
         this.libdata.basecondition.status = { $eq: 11 };
 
-        // delete status filter
         this.deleteStatusSearchField();
         break;
     }
 
     // API Hit
-    this.http.httpViaPost('distributors-dashboard-report-data-list', data).subscribe((res: any) => {
+    this.http.httpViaPost('dashboard-report-data-list', data).subscribe((res: any) => {
       this.allBillerData = res.results.res;
-      this.billerData_count = res.resultsresults.data_count;
+      this.billerData_count = res.results.data_count;
     }, error => {
       console.log('Oooops!');
     });
