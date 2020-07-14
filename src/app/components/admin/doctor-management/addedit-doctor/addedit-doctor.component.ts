@@ -235,7 +235,6 @@ export class AddeditDoctorComponent implements OnInit {
 
   getCityByName(stateName) {
     this.htmlText.cities = this.htmlText.allCities[stateName];
-    console.log(stateName,this.htmlText.allCities[stateName],'cc');
   }
 
   /**getting all the technician data**/
@@ -381,7 +380,6 @@ export class AddeditDoctorComponent implements OnInit {
 
 
   getParentData(id: any = '') {
-    console.log('222222222222',id);
     var billerData = id;
     this.selectionChangeValue = billerData;
     console.log('1111', billerData);

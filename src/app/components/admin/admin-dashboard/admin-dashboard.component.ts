@@ -305,25 +305,13 @@ export class AdminDashboardComponent implements OnInit {
     });
   }
 
-  viewReportProcessData(flag: string = "") {
-    if(flag != 'Job Tickets') {
-      this.htmlText.viewAllButtonTable.headerText = flag;
-    }
+  viewAllButton(flag: string = "") {
     switch (flag) {
-      case 'Total Number of Reports Added':
-        break;
-      case 'Total Number of Report Processed':
-        break;
-      case 'Total Number of Report Signed':
-        break;
-      case 'Sent to Biller':
-        break;
-      case 'Reports Downloaded':
-        break;
-      case 'Reports Pending Sing':
-        break;
       case 'Job Tickets':
         document.getElementById("jobTickets").scrollIntoView();
+        break;
+      default:
+        this.htmlText.viewAllButtonTable.headerText = flag;
         break;
     }
   }
