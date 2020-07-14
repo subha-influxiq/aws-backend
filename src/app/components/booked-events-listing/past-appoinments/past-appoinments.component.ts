@@ -217,6 +217,7 @@ export class PastAppoinmentsComponent implements OnInit {
       updateendpoint: 'statusupdate',
       hidestatustogglebutton: true,
       hidedeletebutton: true,
+      hideviewbutton: true,
       hideeditbutton: true,// all these button options are optional not mandatory
       tableheaders: ['patient_name', 'doctor_name', 'doctors_office_name', 'tech_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status'], //not required
       custombuttons: []
@@ -312,6 +313,18 @@ export class PastAppoinmentsComponent implements OnInit {
         values: this.doctors,
       })
     }
+
+
+    /* ********************* Set custom button ********************* */
+    const datafields = this.configData.libdata.detailview_override.map(item => item.key);
+    this.configData.libdata.custombuttons.push({
+      label: 'View Details', type: 'action',
+      datatype: 'local', datafields: datafields,
+      headermessage: 'View Details',
+      // cond:'status',
+      // condval:0
+    })
+    /* *************************************************************** */
 
     if (this.cookie.check('jwtToken')) {
       this.configData.jwtToken = this.cookie.get('jwtToken');
