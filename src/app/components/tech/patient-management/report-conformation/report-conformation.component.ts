@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { HttpServiceService } from '../../../../services/http-service.service';
 import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
 import { CookieService } from 'ngx-cookie-service';
@@ -255,7 +255,7 @@ export class ReportConformationComponent implements OnInit {
             this.router.navigateByUrl('/tech/dashboard');
           });
         } else {
-          this.snackBar.open(response.msg + " Error code: F-AEA-TS-164.", "Ok", {
+          this.snackBar.open(response.msg + " Error code: F-AEA-TS-258.", "Ok", {
             duration: 2000,
           });
         }
@@ -267,15 +267,13 @@ export class ReportConformationComponent implements OnInit {
           header: "Alert",
           message: "Please check confirm box before submit.",
           button1: { text: "" },
-          button2: { text: "Okay" },
+          button2: { text: "Ok" },
         }
       };
       this.dialogRef = this.dialog.open(DialogBoxComponent, data);
       this.dialogRef.afterClosed().subscribe(result => {
         switch (result) {
-          case "No":
-            break;
-          case "Yes":
+          case "oK":
             break;
         }
       });

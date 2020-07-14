@@ -75,7 +75,7 @@ export class SalesPersonDashboardComponent implements OnInit {
   public user_cookie: any;
   public searchingEndpoint:any="datalist";
   public searchSourceName:any="data_doctor_list"
-  public editUrl:any = 'sales-person/doctor-management/edit';
+  public editUrl:any = 'sales-person/edit-doctor';
   public apiUrl:any;
   public datacollection: any='getdoctorlistdata';
   public data:any;
@@ -85,8 +85,8 @@ export class SalesPersonDashboardComponent implements OnInit {
     basecondition: "",
     updateendpoint:'statusupdate',
     hidedeletemany: true,
-    hideeditbutton:true,// all these button options are optional not mandatory
-    hidedeletebutton:true,
+    hideeditbutton: false,// all these button options are optional not mandatory
+    hidedeletebutton: true,
     hideviewbutton:false,
     hidestatustogglebutton:true,
     hideaction:true,

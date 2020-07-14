@@ -89,6 +89,7 @@ import { NotFoundErrorComponent } from '../components/common/not-found-error/not
 
 /* Sales Person */
 import { SalesPersonDashboardComponent } from '../components/sales-person/sales-person-dashboard/sales-person-dashboard.component';
+import { AddNewDoctorComponent } from '../components/sales-person/add-new-doctor/add-new-doctor.component';
 
 
 /* Test Component */
@@ -2211,6 +2212,35 @@ const routes: Routes = [
         condition: {}
       },
       endpoint: 'sales-person-dashboard'
+    },
+  },
+
+  /* Add New Doctor */
+  {
+    path: 'sales-person/add-doctor',
+    component: AddNewDoctorComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'sales-person/add-doctor-required-data'
+    },
+  },
+  /* Edit Doctor */
+  {
+    path: 'sales-person/edit-doctor',
+    component: AddNewDoctorComponent,
+    canActivate: [AuthguardService],
+    resolve: { dataCount: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'sales-person/add-doctor'
     },
   },
 

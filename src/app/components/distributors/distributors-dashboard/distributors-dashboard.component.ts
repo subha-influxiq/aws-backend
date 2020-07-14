@@ -272,7 +272,7 @@ export class DistributorsDashboardComponent implements OnInit {
     this.shareDetails.userId = this.loginUserData.user_details._id;
 
     // call to load datalist
-    this.viewReportProcessData(this.htmlText.headerText);
+    this.viewAllButton(this.htmlText.headerText);
   }
 
   ngOnInit() {
@@ -283,7 +283,7 @@ export class DistributorsDashboardComponent implements OnInit {
   ngAfterViewInit() {
   }
 
-  viewReportProcessData(flag = null) {
+  viewAllButton(flag = null) {
     this.htmlText.headerText = flag;
     this.billerData_count = 0;
     this.allBillerData = [];
@@ -414,7 +414,7 @@ export class DistributorsDashboardComponent implements OnInit {
         });
         window.open(report.file_path, "_blank");
 
-        this.viewReportProcessData(this.htmlText.headerText);
+        this.viewAllButton(this.htmlText.headerText);
       } else {
         this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
           duration: 3000
