@@ -5744,6 +5744,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             type: 'internallink',
             param: ['_id']
           }, {
+            label: "Download Report",
+            link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
+            type: 'externallink',
+            paramtype: 'angular',
+            param: ['download_file_name']
+          }, {
             label: "Tech Details",
             type: 'action',
             datatype: 'api',
@@ -5824,23 +5830,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
         this.previewModal_detail_skip = ['_id', 'user_type', 'status', 'password', 'created_at'];
         this.status = [{
-          val: 11,
+          val: "Biller Admin Approved",
           'name': 'Biller Admin Approved'
         }, {
-          val: 12,
+          val: "Biller Admin Not Approved",
           'name': 'Biller Admin Not Approved'
         }, {
-          val: 13,
+          val: "Biller Admin Hold",
           'name': "Biller Admin Hold"
-        }, {
-          val: 14,
-          'name': "Doctor Signed"
-        }, {
-          val: 15,
-          'name': "Sent to Biller"
-        }, {
-          val: 16,
-          "name": "Report Downloaded"
         }];
         this.cptcodes = [{
           val: "95923",
@@ -11110,11 +11107,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           //hidestatustogglebutton:true,
           // hideaction:true,
           tableheaders: ['firstname', 'lastname', 'email', 'phone', 'company_name', 'status', 'created_date'],
-          custombuttons: [{
-            label: "Log Me",
-            type: 'listner',
-            id: 'i1'
-          }]
+          custombuttons: []
         };
         this.allUserData_modify_header = {
           "firstname": "First Name",
@@ -11198,6 +11191,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         if (this.userData.user_type == 'diagnostic_admin') {
           this.editUrl = 'diagnostic-admin/biller-management/edit';
+          this.libdata.basecondition = {
+            'parent_id': this.userData._id
+          };
           this.field = {
             'parent_id': this.userData._id
           };
@@ -11221,6 +11217,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.field = {
             'parent_id': this.userData._id
           };
+          this.libdata.basecondition = {
+            'parent_id': this.userData._id
+          };
           this.data = this.userData._id;
           this.libdata.notes.user = this.userData._id;
           this.libdata.notes.currentuserfullname = this.userData.groupname;
@@ -11231,12 +11230,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.field = {
             'parent_id': this.userData._id
           };
+          this.libdata.basecondition = {
+            'parent_id': this.userData._id
+          };
           this.data = this.userData._id;
           this.libdata.notes.user = this.userData._id;
           this.libdata.notes.currentuserfullname = this.userData.distributorname;
         }
 
         if (this.userData.user_type == 'admin') {
+          this.libdata.custombuttons = {
+            label: "Log Me",
+            type: 'listner',
+            id: 'i1'
+          };
           this.search_settings.textsearch.push({
             label: "Search By Parent Name",
             field: 'parent_name_search'
@@ -13145,8 +13152,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                 _this47.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
 
-                _this47.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
-
                 _this47.doctorManagementAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
 
                 _this47.doctorManagementAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
@@ -13167,9 +13172,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                 _this47.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
 
-                _this47.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
-
-                _this47.doctorManagementAddEditForm.controls['cpt_validate_amount'].patchValue(doctorDetails[0].cpt_validate_amount); // this.getCity(doctorDetails[0].state);
+                _this47.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city); // this.getCity(doctorDetails[0].state);
 
 
                 if (doctorDetails[0].parent_type == "admin") {
@@ -13200,6 +13203,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 }, 1000); // if (doctorDetails[0].parent_type != "admin") {
                 // }
                 // this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
+
+                _this47.doctorManagementAddEditForm.controls['cpt_validate_amount'].patchValue(String(doctorDetails[0].cpt_validate_amount));
 
                 _this47.doctorManagementAddEditForm.controls['taxo_list'].patchValue(doctorDetails[0].taxo_list);
 
@@ -13392,7 +13397,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             data2.condition['user_type'] = "doctor_office";
           }
 
-          if (id.parent_type == 'distributors') {
+          if (id.parent_type == 'distributor') {
             data.condition['parent_id_object'] = id.parent_id;
             data.condition['user_type'] = "tech";
             data1.condition['parent_id_object'] = id.parent_id;
@@ -13444,7 +13449,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
           }
 
-          if (billerData == 'Distributor' || billerData == 'distributors') {
+          if (billerData == 'Distributor' || billerData == 'distributor') {
             // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
             var data = {
               "source": "data_pece",
@@ -13829,10 +13834,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           },
           tableheaders: ['firstname', 'lastname', 'email', 'phone', 'practice_name', 'npi', 'status', 'created_date'],
           custombuttons: [{
-            label: "Log Me",
-            type: 'listner',
-            id: 'i1'
-          }, {
             label: "Approval Settings",
             type: 'listner',
             id: 'i1'
@@ -13900,6 +13901,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         if (this.userData.user_type == 'admin') {
+          this.libdata.custombuttons = {
+            label: "Log Me",
+            type: 'listner',
+            id: 'i1'
+          };
+
           if (this.activatedRoute.snapshot.routeConfig.path == "admin/sales-person/doctor-management") {
             this.field = {
               parent_user_type: "sales_person"
@@ -14917,7 +14924,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.previewModal_skip = ["_id", "tech_id", "state", "user_type"];
         this.UpdateEndpoint = "addorupdatedata";
         this.deleteEndpoint = "deletesingledata";
-        this.tableName = "dat_pece";
+        this.tableName = "data_pece";
         this.userData = {};
         this.status = [{
           val: 1,
@@ -14989,11 +14996,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           //hidestatustogglebutton:true,
           // hideaction:true,
           tableheaders: ['center_name', 'firstname', 'lastname', 'email', 'phone', 'status', 'created_date'],
-          custombuttons: [{
-            label: "Log Me",
-            type: 'listner',
-            id: 'i1'
-          }]
+          custombuttons: []
         };
         this.user_cookie = cookie.get('jwtToken');
         var allData = cookie.getAll();
@@ -15024,23 +15027,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         if (this.userData.user_type == 'diagnostic_admin') {
           this.editUrl = 'diagnostic-admin/doctor-office-management/edit';
+          this.libdata.basecondition = {
+            'parent_id': this.userData._id
+          };
           this.libdata.notes.user = this.userData._id;
           this.libdata.notes.currentuserfullname = this.userData.center_name;
         }
 
         if (this.userData.user_type == 'distributors') {
           this.editUrl = 'distributors/doctor-office-management/edit';
+          this.libdata.basecondition = {
+            'parent_id': this.userData._id
+          };
           this.libdata.notes.user = this.userData._id;
           this.libdata.notes.currentuserfullname = this.userData.distributorname;
         }
 
         if (this.userData.user_type == 'doctor_group') {
           this.editUrl = 'doctor-group/doctor-office-management/edit';
+          this.libdata.basecondition = {
+            'parent_id': this.userData._id
+          };
           this.libdata.notes.user = this.userData._id;
           this.libdata.notes.currentuserfullname = this.userData.groupname;
         }
 
         if (this.userData.user_type == 'admin') {
+          this.libdata.custombuttons = {
+            label: "Log Me",
+            type: 'listner',
+            id: 'i1'
+          };
           this.search_settings.textsearch.push({
             label: "Search By Parent Name",
             field: 'parent_name_search'
@@ -22672,11 +22689,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           //hidestatustogglebutton:true,
           // hideaction:true,
           tableheaders: ['firstname', 'lastname', 'email', 'phone', 'status', 'created_date'],
-          custombuttons: [{
-            label: "Log Me",
-            type: 'listner',
-            id: 'i1'
-          }]
+          custombuttons: []
         };
         this.allUserData_modify_header = {
           "firstname": "First Name",
@@ -22797,6 +22810,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         if (this.userData.user_type == 'admin') {
+          this.libdata.custombuttons = {
+            label: "Log Me",
+            type: 'listner',
+            id: 'i1'
+          };
           this.search_settings.textsearch.push({
             label: "Search By Parent Name",
             field: 'parent_name_search'
@@ -22813,6 +22831,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         this.libdata.basecondition = this.field;
+        console.log('libdata', this.libdata);
         this.apiUrl = httpService.baseUrl;
       }
 

@@ -2231,7 +2231,7 @@ const routes: Routes = [
   },
   /* Edit Doctor */
   {
-    path: 'sales-person/edit-doctor',
+    path: 'sales-person/edit-doctor/:_id',
     component: AddNewDoctorComponent,
     canActivate: [AuthguardService],
     resolve: { data: ResolveService },
@@ -2240,7 +2240,7 @@ const routes: Routes = [
         source: 'data_pece',
         condition: {}
       },
-      endpoint: 'sales-person/add-doctor'
+      endpoint: 'sales-person/add-doctor-required-data'
     },
   },
 
