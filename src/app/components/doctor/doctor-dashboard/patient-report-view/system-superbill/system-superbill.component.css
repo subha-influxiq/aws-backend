@@ -13,7 +13,7 @@ input[type="text"]{
   padding: 2px 10px;
   border: none;
   border-bottom: 1px solid #000;
-  background: #e8e8e8; 
+  background: #ececec; 
 }
 input[type="text"]:focus{ outline: none;  }
 
@@ -46,3 +46,78 @@ input[type="checkbox"]:checked::before{
 
 .signaturefont { font-family: "AmandaSignature"; font-size: 30px; line-height: 58px; height: 40px; padding: 10px 25px; box-sizing: border-box; background: #fff;
   border-bottom: 1px solid #000; color: rgb(7, 7, 253); }
+
+  /* responsive table */
+
+/* 
+Generic Styling, for Desktops/Laptops 
+*/
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+}
+
+
+.gender{ width: 135px;}
+
+
+
+
+ 
+ 
+@media screen and (max-width: 700px) {
+ .fifty{ width: 100%;}
+  table { order: 0; }
+  td label span{ display: none;}
+  .gender{ width: auto; }
+  input[type="text"] { width: 50%; }
+  table caption { font-size: 1.3em; }    
+  table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+    
+    table td::before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+
+.table_two tr td{
+  display: inline-block;
+}
+
+  }

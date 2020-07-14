@@ -9,33 +9,50 @@
             </tr>
 
             <tr>
-                <td>
-                    <label>Patient Name
+                <td data-label="Patient Name">
+                    <label>
+                        <span>Patient Name</span>
                         <input type="text" value="{{ orginalReportDetails.patient_details[0].patient_name }}">
                     </label>
                 </td>
 
-                <td style="width: 130px;">
-                    <label><input type="radio" [checked]="orginalReportDetails.patient_details[0].gender_male_flag == true" [value]="true">Male</label>
-                    <label><input type="radio" [checked]="orginalReportDetails.patient_details[0].gender_female_flag == true" [value]="true">Female</label>
+                <td class="gender" data-label="Gendar">
+                    <label><input type="radio"
+                            [checked]="orginalReportDetails.patient_details[0].gender_male_flag == true"
+                            [value]="true">Male</label>
+                    <label><input type="radio"
+                            [checked]="orginalReportDetails.patient_details[0].gender_female_flag == true"
+                            [value]="true">Female</label>
                 </td>
 
-                <td>
-                    <label>Test Date:
+                <td data-label="Test Date">
+                    <label>
+                        <span>Test Date:</span>
                         <input type="text" value="{{ orginalReportDetails.test_date | date }}">
                     </label>
                 </td>
             </tr>
 
             <tr>
-                <td><label>Ordering Physician<input type="text" value="{{ orginalReportDetails.patient_details[0].doctor_details[0].firstname }} {{ orginalReportDetails.patient_details[0].doctor_details[0].lastname }}"></label></td>
+                <td data-label="Ordering Physician">
+                    <label>
+                        <span> Ordering Physician </span>
+                        <input type="text"
+                            value="{{ orginalReportDetails.patient_details[0].doctor_details[0].firstname }} {{ orginalReportDetails.patient_details[0].doctor_details[0].lastname }}"></label>
+                </td>
                 <td> </td>
-                <td><label>D.O.B <input type="text" value="{{ orginalReportDetails.patient_details[0].dob | date }}"></label></td>
+                <td data-label="D.O.B">
+                    <label>
+                        <span> D.O.B </span>
+                        <input type="text" value="{{ orginalReportDetails.patient_details[0].dob | date }}">
+                    </label>
+                </td>
             </tr>
 
             <tr>
-                <td class="fifty" colspan="2">
-                    <label>Physician’s Signature
+                <td class="fifty" colspan="2" data-label="Physician’s Signature">
+                    <label>
+                        <span> Physician’s Signature </span>
                         <input class="signaturefont" type="text" value="{{ orginalReportDetails.doctor_signature }}">
                     </label>
                 </td>
@@ -73,76 +90,92 @@
 
             <tr>
                 <td>
-                    <label> <input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI29" [ngModelOptions]="{standalone: true}">
+                    <label> <input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI29"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.29 <span> BMI 29 to 29.9</span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI33" [ngModelOptions]="{standalone: true}">
+                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI33"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.33 <span> BMI 33 to 33.9</span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI37" [ngModelOptions]="{standalone: true}">
+                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI37"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.37<span> BMI 37 to 37.9</span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI45" [ngModelOptions]="{standalone: true}">
+                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI45"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.42 <span>BMI 45 to 49.9 </span> </label>
                 </td>
             </tr>
 
             <tr>
                 <td>
-                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI30" [ngModelOptions]="{standalone: true}">
+                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI30"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.30 <span>BMI 30 to 30.9 </span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI34" [ngModelOptions]="{standalone: true}">
+                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI34"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.34 <span> BMI 34 to 34.9 </span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI38" [ngModelOptions]="{standalone: true}">
+                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI38"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.38 <span>BMI 38 to 38.9</span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI50" [ngModelOptions]="{standalone: true}">
+                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI50"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.43 <span>BMI 50 to 59.9</span> </label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI31" [ngModelOptions]="{standalone: true}">
+                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI31"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.31 <span>BMI 31 to 31.9</span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI35" [ngModelOptions]="{standalone: true}">
+                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI35"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.35 <span> BMI 35 to 35.9 </span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI39" [ngModelOptions]="{standalone: true}">
+                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI39"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.39 <span>BMI 39 to 39.9</span> </label>
                 </td>
                 <td>
-                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI60" [ngModelOptions]="{standalone: true}">
+                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI60"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.44 <span>BMI 60 to 69.9</span> </label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI32" [ngModelOptions]="{standalone: true}">
+                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI32"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.32 <span>BMI 32 to 32.9</span> </label>
-                    </td>
+                </td>
                 <td>
-                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI36" [ngModelOptions]="{standalone: true}">
+                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI36"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.36 <span>BMI 36 to 36.9 </span> </label>
-                    </td>
+                </td>
                 <td>
-                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI40" [ngModelOptions]="{standalone: true}">
+                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI40"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.41 <span>BMI 40 to 44.9</span> </label>
-                    </td>
+                </td>
                 <td>
-                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI70" [ngModelOptions]="{standalone: true}">
+                    <label><input type="checkbox" [(ngModel)]="reportDetails.reportData[0].BMI70"
+                            [ngModelOptions]="{standalone: true}">
                         Z68.45 <span>BMI 70 and over</span> </label>
-                    </td>
+                </td>
             </tr>
 
             <tr>
@@ -154,4 +187,34 @@
             </tr>
         </table>
     </form>
+
+    <hr>
+    <table>
+        <caption>For Intensive Behavioral Therapy Obesity Counseling</caption>
+        <!-- <thead>
+      <tr>
+        <th scope="col">Account</th>
+        <th scope="col">Due Date</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Period</th>
+      </tr>
+    </thead> -->
+        <tbody>
+            <tr>
+                <td data-label="Patient Name">Visa - 3412</td>
+                <td data-label="Gender">04/01/2016</td>
+                <td data-label="Amount">$1,190</td>
+                <td data-label="Period">03/01/2016 - 03/31/2016</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
 </mat-card-content>
