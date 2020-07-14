@@ -196,6 +196,7 @@ import { LoginDotorByAdminComponent } from './components/admin/login-as-doctor/l
 import { ReportTimeSettingComponent } from './components/admin/report-time-setting/report-time-setting/report-time-setting.component';
 import { AddSettingTimeComponent } from './components/admin/report-time-setting/add-setting-time/add-setting-time.component';
 import { ApprovalSettingsUpdateComponent } from './components/common/approval-settings-update/approval-settings-update.component';
+import { AddNewDoctorComponent } from './components/sales-person/add-new-doctor/add-new-doctor.component';
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -381,6 +382,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     DialogCancelAlert,
 
     ApprovalSettingsUpdateComponent,
+
+    AddNewDoctorComponent,
   ],
   imports: [
     SatDatepickerModule,
