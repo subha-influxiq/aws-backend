@@ -22,7 +22,7 @@
 .second_table .header { text-align: center; }
 .additionalnotes { width: 100%; height: 120px; resize: none; padding: 10px; box-sizing: border-box; }
 .additionalnotes3 { height: 238px; }
-.red_para { color: #bd1818; font-size: 20px; font-weight: normal; text-align: center; font-family: "AvenirMedium"; line-height: 22px; margin: 10px; }
+.red_para { color: #e40e0e; font-size: 20px; font-weight: normal; text-align: center; font-family: "AvenirMedium"; line-height: 22px; margin: 10px; }
 table input[type="text"] {
     height: 40px;
     border: none;
@@ -79,7 +79,6 @@ border-bottom: 1px solid #000; color: rgb(5, 5, 253); }
   .reportCheck label { width: 50%;}
 }
 @media screen and (max-width: 600px){ 
-  .encounter_wrapper{ width: 700px; }
   .header { font-size: 20px; padding: 6px 0; }
   .encounter_wrapperh table, 
   .encounter_wrapperh table th, 
@@ -88,3 +87,67 @@ border-bottom: 1px solid #000; color: rgb(5, 5, 253); }
   .red_para { font-size: 16px; line-height: inherit; margin: 0; }
   .encounter_wrapper table td tr td { font-size: 12px; }
 }
+
+
+ 
+@media screen and (max-width: 700px) {
+   
+   td label span{ display: none;}      
+   .tableone thead {
+       border: none;
+       clip: rect(0 0 0 0);
+       height: 1px;
+       margin: -1px;
+       overflow: hidden;
+       padding: 0;
+       position: absolute;
+       width: 1px;
+     }
+     
+     .tableone tr {
+       border-bottom: 1px solid #ddd;
+       display: block;
+       margin-bottom: .625em;
+     }
+     
+     .tableone td {
+       border-bottom: 1px solid #ddd;
+       display: block;
+       font-size: .8em;
+       text-align: right; position: relative;
+     }
+     
+.tableone td::before {
+
+  content: attr(data-label);
+  /* float: left; */
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  left: 8px;
+  top: 46%;
+
+}
+     
+ .tableone td:last-child { border-bottom: 0; }
+ .tableone  input[type="text"] { width: 50%;}
+ .suggest { font-size: 16px; text-align: center; }
+ .reportCheck{ text-align: center; display: block; }
+ .reportCheck label{ width: auto;}
+ .red_para { font-size: 18px; line-height: inherit; margin: 0; }
+ }
+ 
+ 
+ @media screen and (max-width: 420px) {
+ 
+   .top_header { font-size: 18px; line-height: inherit; margin: 0; padding-bottom: 0; border-bottom: none; }
+   .table2_header { font-size: 16px; }
+   .table_two tr td { width: 50%; }
+   .line_link { margin: 10px 0 0; }
+ }
+
+ @media screen and (max-width: 360px) {
+
+ .tableone td::before { top: 25%; width: 43%; text-align: left; }
+ 
+ }
