@@ -2234,7 +2234,7 @@ const routes: Routes = [
     path: 'sales-person/edit-doctor',
     component: AddNewDoctorComponent,
     canActivate: [AuthguardService],
-    resolve: { dataCount: ResolveService },
+    resolve: { data: ResolveService },
     data: {
       requestcondition: {
         source: 'data_pece',
