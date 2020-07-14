@@ -76,3 +76,62 @@ padding: 10px; box-sizing: border-box; vertical-align: top;}
 @media screen and (max-width: 600px){
 .reportCheck label { width: 100%; }
 }
+
+
+
+
+@media screen and (max-width: 700px) {
+  
+   td label span{ display: none;} 
+   input[type="text"] { width: 50%; }
+   .tableone caption { font-size: 1.3em; }    
+   .tableone thead {
+       border: none;
+       clip: rect(0 0 0 0);
+       height: 1px;
+       margin: -1px;
+       overflow: hidden;
+       padding: 0;
+       position: absolute;
+       width: 1px;
+     }
+     
+    .tableone tr {
+       border-bottom: 3px solid #ddd;
+       display: block;
+       margin-bottom: .625em;
+     }
+     
+  .tableone td {
+       border-bottom: 1px solid #ddd;
+       display: block;
+       font-size: .8em;
+       text-align: right;
+     }
+     
+.tableone td::before {
+       /*
+       * aria-label has no advantage, it won't be read inside a table
+       content: attr(aria-label);
+       */
+       content: attr(data-label);
+       float: left;
+       font-weight: bold;
+       text-transform: uppercase;
+     }
+     
+ .tableone td:last-child {
+   border-bottom: 0;
+ }
+ 
+ }
+ 
+ 
+ @media screen and (max-width: 420px) {
+ 
+   .top_header { font-size: 18px; line-height: inherit; margin: 0;
+     padding-bottom: 0; border-bottom: none; }
+   .table2_header { font-size: 16px; }
+   .table_two tr td { width: 50%; }
+   .line_link { margin: 10px 0 0; }
+ }
