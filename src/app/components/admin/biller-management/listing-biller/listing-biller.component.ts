@@ -60,12 +60,7 @@ export class ListingBillerComponent implements OnInit {
     //hidestatustogglebutton:true,
     // hideaction:true,
     tableheaders: ['firstname', 'lastname', 'email', 'phone', 'company_name', 'status', 'created_date'], //not required
-    custombuttons: [
-      {
-        label: "Log Me",
-        type: 'listner',
-        id: 'i1'
-      },]
+    custombuttons: []
   }
   public allUserData_modify_header: any = {
     "firstname": "First Name",
@@ -125,6 +120,7 @@ export class ListingBillerComponent implements OnInit {
 
     if (this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/biller-management/edit';
+      this.libdata.basecondition = { 'parent_id': this.userData._id };
       this.field = { 'parent_id': this.userData._id };
       this.data = this.userData._id;
       this.libdata.notes.user = this.userData._id;
@@ -139,6 +135,7 @@ export class ListingBillerComponent implements OnInit {
     if (this.userData.user_type == 'doctor_group') {
       this.editUrl = 'doctor-group/biller-management/edit';
       this.field = { 'parent_id': this.userData._id };
+      this.libdata.basecondition = { 'parent_id': this.userData._id };
       this.data = this.userData._id;
       this.libdata.notes.user = this.userData._id;
       this.libdata.notes.currentuserfullname = this.userData.groupname 
@@ -146,11 +143,13 @@ export class ListingBillerComponent implements OnInit {
     if (this.userData.user_type == 'distributors') {
       this.editUrl = 'distributors/biller-management/edit';
       this.field = { 'parent_id': this.userData._id };
+      this.libdata.basecondition = { 'parent_id': this.userData._id };
       this.data = this.userData._id;
       this.libdata.notes.user = this.userData._id;
-    this.libdata.notes.currentuserfullname = this.userData.distributorname;
+      this.libdata.notes.currentuserfullname = this.userData.distributorname;
     }
     if(this.userData.user_type == 'admin') {
+      this.libdata.custombuttons = {label: "Log Me",type: 'listner',id: 'i1'};
       this.search_settings.textsearch.push({ label: "Search By Parent Name", field: 'parent_name_search' });
       this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type });
       this.libdata.tableheaders.splice(3,0,"parent_name");

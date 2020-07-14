@@ -135,7 +135,6 @@ export class AddeditDoctorComponent implements OnInit {
           console.log('=======', doctorDetails[0]);
           this.doctorManagementAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
           this.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
-          this.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
           this.doctorManagementAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
           this.doctorManagementAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
           this.doctorManagementAddEditForm.controls['phone'].patchValue(doctorDetails[0].phone);
@@ -147,7 +146,6 @@ export class AddeditDoctorComponent implements OnInit {
           this.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
           this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
           this.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
-          this.doctorManagementAddEditForm.controls['cpt_validate_amount'].patchValue(doctorDetails[0].cpt_validate_amount);
           // this.getCity(doctorDetails[0].state);
           if(doctorDetails[0].parent_type == "admin") {
             this.getalldataforedit();  
@@ -175,6 +173,7 @@ export class AddeditDoctorComponent implements OnInit {
           
           // }
           // this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
+          this.doctorManagementAddEditForm.controls['cpt_validate_amount'].patchValue(String(doctorDetails[0].cpt_validate_amount));
           this.doctorManagementAddEditForm.controls['taxo_list'].patchValue(doctorDetails[0].taxo_list);
           this.doctorManagementAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
         });
@@ -347,7 +346,7 @@ export class AddeditDoctorComponent implements OnInit {
       data2.condition['user_type'] = "doctor_office"
     }
 
-    if (id.parent_type == 'distributors') {
+    if (id.parent_type == 'distributor') {
       data.condition['parent_id_object'] = id.parent_id;
       data.condition['user_type'] = "tech"
       data1.condition['parent_id_object'] = id.parent_id;
@@ -397,7 +396,7 @@ export class AddeditDoctorComponent implements OnInit {
       }
     }
 
-    if ((billerData == 'Distributor') || (billerData == 'distributors')) {
+    if ((billerData == 'Distributor') || (billerData == 'distributor')) {
       // data['diagnostic_admin_id_object'] = this.htmlText.userData.user_details._id;
       var data = {
         "source": "data_pece",

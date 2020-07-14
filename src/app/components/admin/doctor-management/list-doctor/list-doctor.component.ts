@@ -94,11 +94,6 @@ export class ListDoctorComponent implements OnInit {
     tableheaders: ['firstname', 'lastname', 'email', 'phone', 'practice_name', 'npi', 'status', 'created_date',], //not required
     custombuttons: [
       {
-        label: "Log Me",
-        type: 'listner',
-        id: 'i1'
-      },
-      {
         label: "Approval Settings",
         type: 'listner',
         id: 'i1'
@@ -141,6 +136,7 @@ export class ListDoctorComponent implements OnInit {
     }
     
     if (this.userData.user_type == 'admin') {
+      this.libdata.custombuttons = {label: "Log Me",type: 'listner',id: 'i1'};
       if (this.activatedRoute.snapshot.routeConfig.path == "admin/sales-person/doctor-management") {
         this.field = { parent_user_type: "sales_person" }
         this.docData_modify_header.parent_name = "Sales Person Name";

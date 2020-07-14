@@ -80,6 +80,13 @@ export class AdminDashboardComponent implements OnInit {
         param: ['_id'],
       },
       {
+        label: "Download Report",
+        link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
+        type: 'externallink',
+        paramtype: 'angular',
+        param: ['download_file_name']
+      },
+      {
         label: "Tech Details",
         type: 'action',
         datatype: 'api',
@@ -176,12 +183,9 @@ export class AdminDashboardComponent implements OnInit {
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
   public status: any = [
-    { val: 11, 'name': 'Biller Admin Approved' },
-    { val: 12, 'name': 'Biller Admin Not Approved' },
-    { val: 13, 'name': "Biller Admin Hold" },
-    { val: 14, 'name': "Doctor Signed" },
-    { val: 15, 'name': "Sent to Biller" },
-    { val: 16, "name": "Report Downloaded" }
+    { val: "Biller Admin Approved", 'name': 'Biller Admin Approved' },
+    { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' },
+    { val: "Biller Admin Hold", 'name': "Biller Admin Hold" }
   ];
   public cptcodes: any = [
     { val: "95923", 'name': '95923' },
