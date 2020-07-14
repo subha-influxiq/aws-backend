@@ -89,7 +89,7 @@ export class SalesPersonDashboardComponent implements OnInit {
     hidedeletebutton: true,
     hideviewbutton:false,
     hidestatustogglebutton:true,
-    hideaction:true,
+    hideaction:false,
     tableheaders:['firstname','lastname','email','phone','practice_name','npi','status','created_date',], //not required
 }
   public sortdata:any={
