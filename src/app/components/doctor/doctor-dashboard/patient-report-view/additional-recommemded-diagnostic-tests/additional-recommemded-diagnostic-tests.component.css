@@ -123,7 +123,7 @@ padding: 10px; box-sizing: border-box; vertical-align: top;}
  .tableone td:last-child {
    border-bottom: 0;
  }
- 
+ .header {font-size: 20px;}
  }
  
  
