@@ -30,7 +30,7 @@
 
 <ng-container>
 
-  <ng-container *ngIf="htmlText.orginalData.status == 11">
+  <ng-container *ngIf="htmlText.orginalData.status == 11 || htmlText.orginalData.status == 14">
     <mat-toolbar class="patient_preview" *ngIf="(cookiesData.user_details.user_type == 'diagnostic_admin' || cookiesData.user_details.user_type == 'doctor')">
       <mat-form-field color="warn" *ngIf="cookiesData.user_details.parent_type != 'distributor'">
         <mat-label>Select A Biller</mat-label>
@@ -342,7 +342,7 @@
 
   </mat-card-content>
 
-  <ng-container *ngIf="htmlText.orginalData.status == 11">
+  <ng-container *ngIf="htmlText.orginalData.status == 11 || htmlText.orginalData.status == 14">
     <mat-toolbar class="patient_preview" *ngIf="(cookiesData.user_details.user_type == 'diagnostic_admin' || cookiesData.user_details.user_type == 'doctor')">
       <mat-form-field color="warn" *ngIf="cookiesData.user_details.parent_type != 'distributor'">
         <mat-label>Select A Biller</mat-label>

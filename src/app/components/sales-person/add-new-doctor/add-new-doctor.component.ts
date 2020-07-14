@@ -136,7 +136,6 @@ export class AddNewDoctorComponent implements OnInit {
           this.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
           this.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_id);
           this.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_id);
-          this.doctorManagementAddEditForm.controls['parent_type'].patchValue(doctorDetails[0].parent_type);
           this.doctorManagementAddEditForm.controls['taxo_list'].patchValue(doctorDetails[0].taxo_list);
           this.doctorManagementAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
         });
@@ -196,10 +195,10 @@ export class AddNewDoctorComponent implements OnInit {
 
   getCityByName(stateName) {
     this.htmlText.cities = this.htmlText.allCities[stateName];
-    console.log(stateName,this.htmlText.allCities[stateName],'cc');
   }
 
   doctorManagementAddEditFormSubmit() {
+    console.log("Data: ", this.htmlText.user_details);
     for (let x in this.doctorManagementAddEditForm.controls) {
       this.doctorManagementAddEditForm.controls[x].markAsTouched();
     }
@@ -233,8 +232,13 @@ export class AddNewDoctorComponent implements OnInit {
         "token": this.cookieService.get('jwtToken')
       };
 
-      postData.data.parent_id = this.htmlText.user_details._id;
-      postData.data.parent_type = this.htmlText.user_details.parent_type;
+      if(this.htmlText.user_details.parent_type != 'admin') {
+        postData.data.parent_id = this.htmlText.user_details.parent_id;
+        postData.data.parent_type = this.htmlText.user_details.parent_type;
+      } else {
+        postData.data.parent_id = this.htmlText.user_details._id;
+        postData.data.parent_type = this.htmlText.user_details.parent_type;
+      }
 
       this.http.httpViaPostbyApi1('addorupdatedata', postData).subscribe((response: any) => {
         if (response.status == "success") {

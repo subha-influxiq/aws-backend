@@ -125,8 +125,15 @@ export class ResolveService implements Resolve<any> {
       switch(route.url[1].path) {
         case 'dashboard':
           requestData.condition['sales_person_id'] = userData._id;
+          requestData.condition['parent_type'] = userData.parent_type;
+          requestData.condition['parent_id'] = userData.parent_id;
           break;
         case 'add-doctor':
+          requestData.condition['sales_person_id'] = userData._id;
+          requestData.condition['parent_type'] = userData.parent_type;
+          requestData.condition['parent_id'] = userData.parent_id;
+          break;
+        case 'edit-doctor':
           requestData.condition['sales_person_id'] = userData._id;
           requestData.condition['parent_type'] = userData.parent_type;
           requestData.condition['parent_id'] = userData.parent_id;
