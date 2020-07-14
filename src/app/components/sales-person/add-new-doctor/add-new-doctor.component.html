@@ -1,0 +1,324 @@
+<app-sales-person-header></app-sales-person-header>
+
+
+<!-- header with add button -->
+<mat-card class="admin_wrapper">
+    <mat-card-content class="title_wrapper">
+        {{ htmlText.header }}
+    </mat-card-content>
+
+    <span class="add_header">
+        <span class="bradcrumb">
+            <a [routerLink]="['/sales-person/dashboard']">Dashboard &nbsp;/</a> &nbsp;
+            Add Doctor
+        </span>
+    </span>
+    <!-- End header with add button -->
+
+    <mat-card class="add_form">
+        <mat-card-content class="form_wrapper">
+            <form class="example-form" autocomplete="off" [formGroup]="doctorManagementAddEditForm"
+                (ngSubmit)="doctorManagementAddEditFormSubmit()">
+
+                <!-- First Name Start -->
+                <mat-form-field appearance="fill">
+                    <mat-label>First Name</mat-label>
+
+                    <input matInput placeholder="First Name"
+                        [formControl]="doctorManagementAddEditForm.controls['firstname']"
+                        (blur)="inputUntouch(doctorManagementAddEditForm,'firstname')">
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['firstname'].touched && !doctorManagementAddEditForm.controls['firstname'].valid && doctorManagementAddEditForm.controls['firstname'].errors.required">
+                        First Name required.
+                    </mat-error>
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['firstname'].touched && !doctorManagementAddEditForm.controls['firstname'].valid && doctorManagementAddEditForm.controls['firstname'].errors.maxlength">
+                        First Name is not valid.
+                    </mat-error>
+                </mat-form-field>
+                <!-- First Name End -->
+
+                <!-- Last Name Start -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Last Name</mat-label>
+
+                    <input matInput placeholder="Last Name"
+                        [formControl]="doctorManagementAddEditForm.controls['lastname']"
+                        (blur)="inputUntouch(doctorManagementAddEditForm,'lastname')">
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['lastname'].touched && !doctorManagementAddEditForm.controls['lastname'].valid && doctorManagementAddEditForm.controls['lastname'].errors.required">
+                        Last Name required.
+                    </mat-error>
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['lastname'].touched && !doctorManagementAddEditForm.controls['lastname'].valid && doctorManagementAddEditForm.controls['lastname'].errors.maxlength">
+                        Last Name is not valid.
+                    </mat-error>
+                </mat-form-field>
+                <!-- Last Name End -->
+
+                <!-- Email Start -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Email Address</mat-label>
+
+                    <input matInput placeholder="Email Address"
+                        [formControl]="doctorManagementAddEditForm.controls['email']"
+                        (blur)="inputUntouch(doctorManagementAddEditForm,'email')">
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['email'].touched && !doctorManagementAddEditForm.controls['email'].valid && doctorManagementAddEditForm.controls['email'].errors.required">
+                        Email required.
+                    </mat-error>
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['email'].touched && !doctorManagementAddEditForm.controls['email'].valid && doctorManagementAddEditForm.controls['email'].errors.email">
+                        Email is not valid.
+                    </mat-error>
+                </mat-form-field>
+                <!-- Email End -->
+
+
+                <!-- Phone Number Start -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Phone Number</mat-label>
+
+                    <input matInput placeholder="Phone" [formControl]="doctorManagementAddEditForm.controls['phone']"
+                        (blur)="inputUntouch(doctorManagementAddEditForm,'phone')">
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['phone'].touched && !doctorManagementAddEditForm.controls['phone'].valid && doctorManagementAddEditForm.controls['phone'].errors.required">
+                        Phone Number required.
+                    </mat-error>
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['phone'].touched && !doctorManagementAddEditForm.controls['phone'].valid && doctorManagementAddEditForm.controls['phone'].errors.maxlength">
+                        Phone Number is not valid.
+                    </mat-error>
+                </mat-form-field>
+                <!-- Phone Number End -->
+
+                <!-- FAX Start -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Fax</mat-label>
+
+                    <input matInput placeholder="Fax Number" formControlName="fax"
+                        (blur)="inputUntouch(doctorManagementAddEditForm,'fax')">
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['fax'].touched && !doctorManagementAddEditForm.controls['fax'].valid && doctorManagementAddEditForm.controls['fax'].errors.required">
+                        Fax required.
+                    </mat-error>
+                </mat-form-field>
+                <!-- FAX End -->
+
+                <!-- Practice Name Start  -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Practice Name</mat-label>
+
+                    <input matInput placeholder="Practice Name" formControlName="practice_name"
+                        (blur)="inputUntouch(doctorManagementAddEditForm, 'practice_name')">
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['practice_name'].touched && !doctorManagementAddEditForm.controls['practice_name'].valid && doctorManagementAddEditForm.controls['practice_name'].errors.required">
+                        Practice Name required.
+                    </mat-error>
+                </mat-form-field>
+                <!-- Practice Name Start  -->
+
+                <!-- Taxonomies Start -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Taxonomies</mat-label>
+                    <mat-select formControlName="taxo_list" multiple>
+                        <mat-option [value]="">Select Tech</mat-option>
+                        <mat-option *ngFor="let taxonomie of htmlText.taxonomies;" value="{{ taxonomie.name }}">
+                            {{ taxonomie.name }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- Taxonomies End -->
+
+                <!-- NPI Start  -->
+                <mat-form-field appearance="fill">
+                    <mat-label>#NPI</mat-label>
+
+                    <input matInput placeholder="#NPI Number" formControlName="npi"
+                        (blur)="inputUntouch(doctorManagementAddEditForm,'npi')">
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['npi'].touched && !doctorManagementAddEditForm.controls['npi'].valid && doctorManagementAddEditForm.controls['npi'].errors.required">
+                        #NPI required.
+                    </mat-error>
+                </mat-form-field>
+                <!-- NPI End  -->
+
+                <!-- Address Start -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Address</mat-label>
+
+                    <input matInput placeholder="Address"
+                        [formControl]="doctorManagementAddEditForm.controls['address']"
+                        (blur)="inputUntouch(doctorManagementAddEditForm,'address')">
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['address'].touched && !doctorManagementAddEditForm.controls['address'].valid && doctorManagementAddEditForm.controls['address'].errors.required">
+                        Address required.
+                    </mat-error>
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['address'].touched && !doctorManagementAddEditForm.controls['address'].valid && doctorManagementAddEditForm.controls['address'].errors.maxlength">
+                        Address is not valid.
+                    </mat-error>
+                </mat-form-field>
+                <!-- Address End -->
+
+
+                <!-- parent type Start -->
+                <mat-form-field class="parent_cat" appearance="fill" *ngIf="htmlText.user_details.user_type == 'admin'">
+                    <mat-label>Parent Type</mat-label>
+
+                    <mat-select formControlName="parent_type">
+                        <mat-option value="admin">Select Parent Type</mat-option>
+                        <mat-option *ngFor="let parent of htmlText.parent_type;" value="{{ parent.value }}"
+                            (click)="getParentData(parent.name)">{{ parent.name }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- Parent Type End -->
+
+                <!-- State Start -->
+                <mat-form-field class="parent_cat" appearance="fill">
+                    <mat-label>State</mat-label>
+
+                    <!-- <mat-select formControlName="state" (selectionChange)="getCity($event.value);"> -->
+                    <mat-select formControlName="state">
+                        <mat-option [value]="">Select State</mat-option>
+                        <mat-option *ngFor="let state of htmlText.states;" value="{{ state.name }}">{{ state.name }}
+                        </mat-option>
+                    </mat-select>
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['state'].touched && !doctorManagementAddEditForm.controls['state'].valid && doctorManagementAddEditForm.controls['state'].errors.required">
+                        State required.
+                    </mat-error>
+                </mat-form-field>
+                <!-- State End -->
+
+                <!-- City Start -->
+                <mat-form-field appearance="fill">
+                    <mat-label>City</mat-label>
+
+                    <input matInput placeholder="City" formControlName="city"
+                        (blur)="inputUntouch(doctorManagementAddEditForm,'city')">
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['npi'].touched && !doctorManagementAddEditForm.controls['city'].valid && doctorManagementAddEditForm.controls['city'].errors.required">
+                        City required.
+                    </mat-error>
+                </mat-form-field>
+                <!-- City End -->
+
+                <!-- Zip Start -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Zip</mat-label>
+
+                    <input type="number" matInput placeholder="ZIP"
+                        [formControl]="doctorManagementAddEditForm.controls['zip']"
+                        (blur)="inputUntouch(doctorManagementAddEditForm,'zip')">
+
+                    <mat-error
+                        *ngIf="doctorManagementAddEditForm.controls['zip'].touched && !doctorManagementAddEditForm.controls['zip'].valid && doctorManagementAddEditForm.controls['zip'].errors.required">
+                        Zip required.
+                    </mat-error>
+                </mat-form-field>
+                <!-- Zip Start -->
+
+                <!-- CPT Validate Amount Start  -->
+                <mat-form-field class="parent_cat" appearance="fill">
+                    <mat-label>CPT Validated Amount</mat-label>
+
+                    <mat-select formControlName="cpt_validate_amount">
+                        <!-- <mat-option value="admin">Select Cpt Amount</mat-option> -->
+                        <mat-option *ngFor="let cpt of htmlText.cpt_amount;" value="{{ cpt.value }}">${{ cpt.value }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- CPT Validate AmountStart  -->
+
+                <!-- Tech Details Start -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Tech</mat-label>
+                    <mat-select formControlName="tech_id" multiple>
+                        <mat-option [value]="">Select Tech</mat-option>
+                        <mat-option *ngFor="let tech of htmlText.techData;" value="{{ tech._id }}">{{ tech.firstname }}
+                            {{tech.lastname}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- Tech Details name -->
+
+                <!-- Biller Details Start -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Biiler</mat-label>
+                    <mat-select formControlName="biller_id" multiple>
+                        <mat-option [value]="">Select a biiler</mat-option>
+                        <mat-option *ngFor="let biller of htmlText.billerData;" value="{{ biller._id }}">
+                            {{ biller.firstname }} {{ biller.lastname }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- Biller Details End -->
+
+                <!-- Doctor's Office Start -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Doctor's Office</mat-label>
+                    <mat-select formControlName="doctors_office_id" multiple>
+                        <mat-option [value]="">Select Doctor's Office</mat-option>
+                        <mat-option *ngFor="let doctorOfficeData of htmlText.doctorOfficeData;"
+                            value="{{ doctorOfficeData._id }}">{{ doctorOfficeData.firstname }}
+                            {{ doctorOfficeData.lastname }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- Doctor's Office End -->
+
+                <!-- Password Start -->
+                <ng-container *ngIf="!params_id">
+                    <mat-form-field class="form-group" appearance="fill">
+        
+                    <input matInput placeholder="Password" type="password"
+                        [formControl]="doctorManagementAddEditForm.controls['password']">
+        
+                    <mat-error *ngIf="!doctorManagementAddEditForm.controls['password'].valid && doctorManagementAddEditForm.controls['password'].touched">
+                        Password required.
+                    </mat-error>
+                    </mat-form-field>
+        
+                    <mat-form-field class="form-group" appearance="fill">
+                    <input matInput placeholder="Confirm Password" type="password"
+                        [formControl]="doctorManagementAddEditForm.controls['confirmpassword']">
+        
+                    <mat-error *ngIf="!doctorManagementAddEditForm.controls['confirmpassword'].valid && doctorManagementAddEditForm.controls['confirmpassword'].touched">
+                        Password does not match
+                    </mat-error>
+                    </mat-form-field>
+                </ng-container>
+                <!-- Password End -->
+
+                <!-- Status -->
+                <span class="status_wrapper">
+                    <mat-checkbox formControlName="status">Active</mat-checkbox>
+                </span>
+
+                <span class="submit_form">
+                    <button mat-flat-button type="button" [routerLink]="['/admin/doctor-management']"> Back</button>
+
+                    <button mat-flat-button type="reset" *ngIf="params_id == ''">Reset</button>
+                    <button mat-flat-button type="submit"> {{ htmlText.buttonText }} </button>
+                </span>
+            </form>
+        </mat-card-content>
+    </mat-card>
+
+</mat-card>
+
+
+<app-sales-person-footer></app-sales-person-footer>

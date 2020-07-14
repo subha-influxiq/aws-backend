@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -24,31 +24,18 @@ export class AdminbillerDashboardComponent implements OnInit {
   public loginUserData: any = {};
   public jwtToken: string = "";
   public htmlText: any = {
-    headerText: "Patient Reports"
+    viewAllButtonTable: {
+      viewTable: false,
+      headerText: ""
+    }
   };
-
+  public allResolveData: any = {};
   public shareDetails: any = {
     baseUrl: environment.doctorSignUpBaseUrl,
     userId: ""
   };
 
-  public allResolveData: any = {};
-  public uploadedStatusArray: any = [];
-  public processedStatusArray: any = [];
-  public signedStatusArray: any = [];
-  public billerStatusArray: any = [];
-  public allDataColumns: string[];
-  public dialogRef: any;
-
-  allDataSource: MatTableDataSource<any>;
-
-  public searchJson: any = {
-    doctorName: "",
-    patientName: "",
-    status: "",
-    dateRange: ""
-  };
-
+  // Lib list
   public allBillerData: any = [];
   public billerData_count: any = 0;
   public datasource: any;
@@ -80,21 +67,15 @@ export class AdminbillerDashboardComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: { status: { $gt: 7, $lt: 11 } },
+    basecondition: {},
     updateendpoint: 'status-update',
+    // updateendpointmany:'status-update',
     custombuttons: [
       {
         label: "View Report",
-        route: "admin-biller/view-patient-record/",
+        route: "admin/view-patient-record/",
         type: 'internallink',
         param: ['_id'],
-      },
-      {
-        label: "Download Report",
-        link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
-        type: 'externallink',
-        paramtype: 'angular',
-        param: ['download_file_name']
       },
       {
         label: "Tech Details",
@@ -138,12 +119,24 @@ export class AdminbillerDashboardComponent implements OnInit {
         datatype: 'api',
         endpoint: 'get-parent-details',
         datafields: ['Parent Name', 'Contact Person', 'email', 'phone', 'address', 'city', 'state', 'zip'],
+        cond: "parent_check_flag",
+        condval: 1,
         param: 'id',
         headermessage: 'Parent Information',
+      },
+      {
+        label: "View Jobticket",
+        route: "admin/report-jobtickets/",
+        type: 'internallink',
+        param: ['_id'],
+        cond: 'status',
+        condval: 13
       },
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
+    hidedeletemany: true,
+    // hidestatustogglebutton: true,
     hideviewbutton: true,
     tableheaders: [
       "patient_name",
@@ -163,9 +156,9 @@ export class AdminbillerDashboardComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any = environment.apiBaseUrl1;
+  public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
-  public datacollection: any = 'getPatientlistdata-pending-approval';
+  public datacollection: any = 'dashboard-report-data-list';
 
   public sortdata: any = {
     "type": 'desc',
@@ -181,22 +174,12 @@ export class AdminbillerDashboardComponent implements OnInit {
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
   public status: any = [
-    { val: "Biller Admin Approved", 'name': 'Biller Admin Approved' },
-    { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' },
-    { val: "Biller Admin Hold", 'name': "Biller Admin Hold" },
-    { val: "Downloaded", "name": "Report Downloaded" }
-  ];
-  public parent_type: any = [
-    { val: "admin", 'name': 'Admin' },
-    { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },
-    { val: "distributors", 'name': 'Distributor' },
-    { val: "doctor_group", 'name': 'Doctor Group' }
-  ];
-  public report_type: any = [
-    { val: "RM-3A", 'name': 'RM-3A' },
-    { val: "TM FLOW V3", 'name': 'TM FLOW V3' },
-    { val: "TM FLOW V4", 'name': 'TM FLOW V4' },
-    { val: "CMAT with BP Cuffs", 'name': 'CMAT with BP Cuffs' }
+    { val: 11, 'name': 'Biller Admin Approved' },
+    { val: 12, 'name': 'Biller Admin Not Approved' },
+    { val: 13, 'name': "Biller Admin Hold" },
+    { val: 14, 'name': "Doctor Signed" },
+    { val: 15, 'name': "Sent to Biller" },
+    { val: 16, "name": "Report Downloaded" }
   ];
   public cptcodes: any = [
     { val: "95923", 'name': '95923' },
@@ -205,10 +188,23 @@ export class AdminbillerDashboardComponent implements OnInit {
     { val: "93923", 'name': "93923" },
     { val: "93922", 'name': "93922" }
   ];
-  public status_search: any = [
-    { val: 8, 'name': 'System Approved' },
-    { val: 9, 'name': 'System Not Approved' },
-    { val: 10, 'name': "System Hold" },]
+  public parent_type: any = [
+    { val: "admin", 'name': 'Admin' },
+    { val: "diagnostic_admin", 'name': 'Diagnostic Admin' },
+    { val: "distributor", 'name': 'Distributor' },
+    { val: "doctor_group", 'name': 'Doctor Group' }
+  ];
+  public report_type: any = [
+    { val: "RM-3A", 'name': 'RM-3A' },
+    { val: "TM FLOW V3", 'name': 'TM FLOW V3' },
+    { val: "TM FLOW V4", 'name': 'TM FLOW V4' },
+    { val: "CMAT with BP Cuffs", 'name': 'CMAT with BP Cuffs' }
+  ];
+  public report: any = [
+    { val: 11, 'name': 'Biller Admin Approved' },
+    { val: 12, 'name': 'Biller Admin Not Approved' },
+    { val: 13, 'name': "Biller Admin Hold" }
+  ];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
   public docofficeval: any = [];
@@ -222,17 +218,16 @@ export class AdminbillerDashboardComponent implements OnInit {
   public search_settings: any = {
     selectsearch: [
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },
+      { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes },
       { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type },
-      { label: 'Search By Status', field: 'status_search', values: this.status_search }, 
-      { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes }, 
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
       { label: "Search By Tech", field: 'tech_name_search', values: this.techval },
       { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval },
       { label: "Search By Parent Name", field: 'parent_name_search', values: this.parentnameval },
       { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity },
       { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate },
-      { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity },
-      { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }
+      { label: "Search By Patient City", field: 'patient_city_search', values: this.patientcity },
+      { label: "Search By Patient State", field: 'patient_state_search', values: this.patientstate }
     ],
     datesearch: [
       { startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }
@@ -243,13 +238,14 @@ export class AdminbillerDashboardComponent implements OnInit {
   };
   // lib list end
 
-  public allDataList: any = [];
-  @ViewChild(MatPaginator, { static: false }) paginatorAll: MatPaginator;
-
   constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService, public activatedRoute: ActivatedRoute,
     public dialog: MatDialog, public deviceService: DeviceDetectorService, private matSnackBar: MatSnackBar) {
 
     this.loginUserData["user_details"] = cookieService.getAll();
+    this.loginUserData.user_details.user_details = JSON.parse(this.loginUserData.user_details.user_details);
+    this.shareDetails.userId = this.loginUserData.user_details.user_details._id;
+    this.shareDetails.user_type = this.loginUserData.user_details.user_details.user_type;
+
     this.loginUserData["jwtToken"] = cookieService.get('jwtToken');
 
     /* Get Auth Token */
@@ -258,39 +254,92 @@ export class AdminbillerDashboardComponent implements OnInit {
     /* Get resolve data */
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData = resolveData.dataCount.data;
-      //this.viewReportProcessData(this.htmlText.headerText);
     });
+  }
 
+  ngOnInit() {
+    this.getSearchData();
+  }
+
+  ngAfterViewInit() {
+  }
+
+  viewAllButton(flag: string = "", period: string = "") {
+    this.billerData_count = 0;
+    this.allBillerData = [];
+    document.getElementById("viewAllButtonList").scrollIntoView();
+    this.htmlText.viewAllButtonTable.headerText = flag;
+    if (period != '') {
+      this.htmlText.viewAllButtonTable.headerText += ' (' + period + ')';
+    }
 
     // lib list
-    let endpoint = 'getPatientlistdata-pending-approval';
-    let endpointc = 'getPatientlistdata-pending-approval-count';
     let data: any = {
       "condition": {
         "limit": 10,
         "skip": 0
       },
-      sort: {
-        "type": 'desc',
-        "field": 'patient_name'
-      }
+      "sort": {
+        "field": "patient_name",
+        "type": "desc"
+      },
+      "searchcondition": {
+        "parent_id": this.loginUserData.user_details._id,
+      },
+      "secretkey": "na"
+    };
+
+    switch (flag) {
+      case 'Total Number of Reports Processed':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { "$gte": 8 };
+        this.libdata.basecondition.status = { "$gte": 8 };
+        break;
+      case 'Total Number of Reports Approved':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { "$eq": 11 };
+        this.libdata.basecondition.status = { "$eq": 11 };
+        break;
+      case 'Total Number of Reports Not Approved':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { "$eq": 12 };
+        this.libdata.basecondition.status = { "$eq": 12 };
+        break;
+      case 'Total Number of Reports in Hold':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { "$eq": 10 };
+        this.libdata.basecondition.status = { "$eq": 10 };
+        break;
+      default:
+        document.getElementById("viewAllButtonList").scrollIntoView();
+        break;
     }
 
-    this.http.httpViaPostbyApi1(endpointc, data).subscribe((res: any) => {
-      this.billerData_count = res.count;
-    }, error => {
-      console.log('Oooops!');
-    });
+    switch (period) {
+      case "Last Month":
+        data.searchcondition.period = "Last Month";
+        break;
+      case "This Month":
+        data.searchcondition.period = "This Month";
+        break;
+      case "Last Week":
+        data.searchcondition.period = "Last Week";
+        break;
+      case "This Week":
+        data.searchcondition.period = "This Week";
+        break;
+    }
 
-    this.http.httpViaPostbyApi1(endpoint, data).subscribe((res: any) => {
-      // console.log(res);
+    // API Hit
+    this.http.httpViaPost('dashboard-report-data-list', data).subscribe((res: any) => {
       this.allBillerData = res.results.res;
+      this.billerData_count = res.results.data_count;
     }, error => {
       console.log('Oooops!');
     });
   }
 
-  ngOnInit() {
+  getSearchData() {
     let data: any = {
       "source": "patient_data_desc_patient_name",
       "condition": {},
@@ -312,7 +361,6 @@ export class AdminbillerDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
         }
       }
       for (var i in response.res) {
@@ -343,7 +391,6 @@ export class AdminbillerDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
         }
       }
       for (var i in response.res) {
@@ -359,8 +406,6 @@ export class AdminbillerDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
-
         }
       }
       for (var i in response.res) {
@@ -376,8 +421,6 @@ export class AdminbillerDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
-
         }
       }
       for (var i in response.res) {
@@ -393,8 +436,6 @@ export class AdminbillerDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
-
         }
       }
       for (var i in response.res) {
@@ -410,8 +451,6 @@ export class AdminbillerDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
-
         }
       }
       for (var i in response.res) {
@@ -429,21 +468,9 @@ export class AdminbillerDashboardComponent implements OnInit {
           count = 0;
         }
       }
-
     }, error => {
       console.log('Oooops!');
     });
-  }
-
-  ngAfterViewInit() {
-  }
-
-  viewReportProcessData(flag) {
-    console.log(flag);
-  }
-
-  refreshDashboard(flag = null) {
-
   }
 
 }

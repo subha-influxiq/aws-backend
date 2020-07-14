@@ -270,7 +270,7 @@ export class DoctorGroupDashboardComponent implements OnInit {
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData = resolveData.dataCount.data;
 
-      this.viewReportProcessData(this.htmlText.headerText);
+      this.viewAllButton(this.htmlText.headerText);
     });
   }
 
@@ -281,7 +281,7 @@ export class DoctorGroupDashboardComponent implements OnInit {
   ngAfterViewInit() {
   }
 
-  viewReportProcessData(flag = null) {
+  viewAllButton(flag = null) {
     this.htmlText.headerText = flag;
     this.billerData_count = 0;
     this.allBillerData = [];

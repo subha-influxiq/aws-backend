@@ -126,6 +126,11 @@ export class ResolveService implements Resolve<any> {
         case 'dashboard':
           requestData.condition['sales_person_id'] = userData._id;
           break;
+        case 'add-doctor':
+          requestData.condition['sales_person_id'] = userData._id;
+          requestData.condition['parent_type'] = userData.parent_type;
+          requestData.condition['parent_id'] = userData.parent_id;
+          break;
       }
     }
     /* This one is for Sales Person End */
