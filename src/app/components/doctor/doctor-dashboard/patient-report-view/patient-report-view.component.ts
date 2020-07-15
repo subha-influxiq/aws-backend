@@ -127,7 +127,8 @@ export class PatientReportViewComponent implements OnInit {
     };
 
     if(this.cookiesData.user_details.user_type == 'diagnostic_admin') {
-      data.condition["diagnostic_admin_id_object"] = this.cookiesData.user_details._id;
+      data.source = "data_pece";
+      data.condition["parent_id_object"] = this.cookiesData.user_details._id;
       delete data.condition._id_object;
 
       this.htmlText.sendButton[0] = "Send & Back";

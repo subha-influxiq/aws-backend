@@ -23,7 +23,7 @@
             Reports Processed
           </p>
           <h2> {{ allResolveData.total_report_processed_count }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total Manual Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports Processed', '');">view all</button>
         </span>
       </mat-card-content>
 
@@ -39,7 +39,7 @@
             Reports Approved
           </p>
           <h2> {{ allResolveData.total_report_approved_count }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports Approved', '');">view all</button>
         </span>
       </mat-card-content>
 
@@ -55,7 +55,7 @@
             Reports Not Approved
           </p>
           <h2> {{ allResolveData.total_report_not_approved_count }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports Not Approved', '');">view all</button>
         </span>
       </mat-card-content>
 
@@ -71,7 +71,7 @@
             Reports in Hold
           </p>
           <h2> {{ allResolveData.total_report_hold_count }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports in Hold', '');">view all</button>
         </span>
       </mat-card-content>
 
@@ -96,7 +96,7 @@
             Reports Processed
           </p>
           <h2> {{ allResolveData.total_report_processed_count_by_week_month.last_month }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total Manual Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports Processed', 'Last Month');">view all</button>
         </span>
       </mat-card-content>
 
@@ -112,7 +112,7 @@
             Reports Approved
           </p>
           <h2> {{ allResolveData.total_report_approved_count_by_week_month.last_month }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports Approved', 'Last Month');">view all</button>
         </span>
       </mat-card-content>
 
@@ -128,7 +128,7 @@
             Reports Not Approved
           </p>
           <h2> {{ allResolveData.total_report_not_approved_count_by_week_month.last_month }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports Not Approved', 'Last Month');">view all</button>
         </span>
       </mat-card-content>
 
@@ -144,7 +144,7 @@
             Reports in Hold
           </p>
           <h2> {{ allResolveData.total_report_hold_count_by_week_month.last_month }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports in Hold', 'Last Month');">view all</button>
         </span>
       </mat-card-content>
 
@@ -168,7 +168,7 @@
             Reports Processed
           </p>
           <h2> {{ allResolveData.total_report_processed_count_by_week_month.this_month }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total Manual Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports Processed', 'This Month');">view all</button>
         </span>
       </mat-card-content>
 
@@ -184,7 +184,7 @@
             Reports Approved
           </p>
           <h2> {{ allResolveData.total_report_approved_count_by_week_month.this_month }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports Approved', 'This Month');">view all</button>
         </span>
       </mat-card-content>
 
@@ -200,7 +200,7 @@
             Reports Not Approved
           </p>
           <h2> {{ allResolveData.total_report_not_approved_count_by_week_month.this_month }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports Not Approved', 'This Month');">view all</button>
         </span>
       </mat-card-content>
 
@@ -216,7 +216,7 @@
             Reports in Hold
           </p>
           <h2> {{ allResolveData.total_report_hold_count_by_week_month.this_month }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports in Hold', 'This Month');">view all</button>
         </span>
       </mat-card-content>
 
@@ -239,7 +239,7 @@
             Reports Processed
           </p>
           <h2> {{ allResolveData.total_report_processed_count_by_week_month.last_week }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total Manual Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports Processed', 'Last Week');">view all</button>
         </span>
       </mat-card-content>
 
@@ -255,7 +255,7 @@
             Reports Approved
           </p>
           <h2> {{ allResolveData.total_report_approved_count_by_week_month.last_week }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports Approved', 'Last Week');">view all</button>
         </span>
       </mat-card-content>
 
@@ -271,7 +271,7 @@
             Reports Not Approved
           </p>
           <h2> {{ allResolveData.total_report_not_approved_count_by_week_month.last_week }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports Not Approved', 'Last Week');">view all</button>
         </span>
       </mat-card-content>
 
@@ -287,7 +287,7 @@
             Reports in Hold
           </p>
           <h2> {{ allResolveData.total_report_hold_count_by_week_month.last_week }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports in Hold', 'Last Week');">view all</button>
         </span>
       </mat-card-content>
     </mat-card-content>
@@ -309,7 +309,7 @@
             Reports Processed
           </p>
           <h2> {{ allResolveData.total_report_processed_count_by_week_month.this_week }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total Manual Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports Processed', 'This Week');">view all</button>
         </span>
       </mat-card-content>
 
@@ -325,7 +325,7 @@
             Reports Approved
           </p>
           <h2> {{ allResolveData.total_report_approved_count_by_week_month.this_week }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports Approved', 'This Week');">view all</button>
         </span>
       </mat-card-content>
 
@@ -341,7 +341,7 @@
             Reports Not Approved
           </p>
           <h2> {{ allResolveData.total_report_not_approved_count_by_week_month.this_week }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports Not Approved', 'This Week');">view all</button>
         </span>
       </mat-card-content>
 
@@ -357,41 +357,110 @@
             Reports in Hold
           </p>
           <h2> {{ allResolveData.total_report_hold_count_by_week_month.this_week }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total File Reports');">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Reports in Hold', 'This Week');">view all</button>
         </span>
       </mat-card-content>
     </mat-card-content>
   </mat-card-content>
 
 
-
-  <!-- All Data listing start here(default listing) -->
-  <mat-card-content class="table_wrapper">
-
-    <br>
-    
-    <mat-card-content class="admin_dashboard">
-      <h1 class="headr_tagh">Patient Reports Pending Approval</h1>
-
-      <!-- table -->
-      <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData"
-        [skip]="allUserData_skip" [modify_header_array]="allUserData_modify_header"
-        [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl" [sourcedata]="tableName" [editroute]="editUrl"
-        [jwttoken]="jwtToken" [statusarr]="status" [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint"
-        [date_search_endpoint]="SearchingEndpoint" [date_search_source]="SearchingSourceName"
-        [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection" [libdata]="libdata"
-        [date_search_source_count]="billerData_count" [limitcond]="limitcond">
-      </lib-listing>
-      <!-- Listing ends here  -->
+  <!-- 1st List Hide on load, Click on View All button then view this -->
+  <!-- View All button listing start here -->
+  <mat-card-content id="viewAllButtonList" class="table_wrapper admin_dashboard">
+    <mat-card-content class="headr_tagh" *ngIf="htmlText.viewAllButtonTable.headerText != ''">
+      <span class="counter_with_tool">
+        <h1>{{ htmlText.viewAllButtonTable.headerText }}</h1>
+        <span class="tolTip">
+          <a mat-raised-button #processedReports="matTooltip"
+            matTooltip="All the Reports listed here are reviewed by Admin." matTooltipPosition="above"
+            aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+          </a>
+          <a mat-button (click)="processedReports.toggle()" class="toggle_btn" aria-label=" toggle section">
+            <span class="material-icons"> help_outline </span>
+          </a>
+        </span>
+      </span>
     </mat-card-content>
+    <app-view-all-button-list [viewFlag]="htmlText.viewAllButtonTable.headerText"></app-view-all-button-list>
   </mat-card-content>
-  <!-- dashboard all listing end here -->
+  <!-- View All button listing end here -->
 
-  <!-- All Data listing start here(default listing) -->
 
-  <h1 class="headr_tagh">Approved Patient Reports</h1>
+  <!-- 2nd List -->
+  <!-- Patient Reports Pending Actions listing start here -->
+  <mat-card-content class="table_wrapper admin_dashboard">
+    <mat-card-content class="headr_tagh">
+      <span class="counter_with_tool">
+        <h1>Patient Reports Pending Actions</h1>
+        <span class="tolTip">
+          <a mat-raised-button #pendingActions="matTooltip"
+            matTooltip=" All the Reports listed here are processed by System but awaiting on Admin actions."
+            matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+          </a>
+          <a mat-button (click)="pendingActions.toggle()" class="toggle_btn" aria-label=" toggle section">
+            <span class="material-icons"> help_outline </span>
+          </a>
+        </span>
+      </span>
+    </mat-card-content>
 
-  <app-approved-patient-reports-billeradmin></app-approved-patient-reports-billeradmin>
+    <!-- table -->
+    <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData" [skip]="allUserData_skip"
+      [modify_header_array]="allUserData_modify_header" [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl"
+      [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="jwtToken" [statusarr]="status"
+      [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
+      [date_search_source]="SearchingSourceName" [search_settings]="search_settings" [sortdata]="sortdata"
+      [datacollection]="datacollection" [libdata]="libdata" [date_search_source_count]="billerData_count"
+      [limitcond]="limitcond">
+    </lib-listing>
+
+  </mat-card-content>
+  <!-- Patient Reports Pending Actions listing end here -->
+  
+  <!-- 3rd List -->
+  <!-- Admin Processed Reports start here -->
+  <mat-card-content class="table_wrapper admin_dashboard">
+    <mat-card-content class="headr_tagh">
+      <span class="counter_with_tool">
+        <h1>Admin Processed Reports</h1>
+        <span class="tolTip">
+          <a mat-raised-button #processedReports="matTooltip"
+            matTooltip="All the Reports listed here are reviewed by Admin." matTooltipPosition="above"
+            aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+          </a>
+          <a mat-button (click)="processedReports.toggle()" class="toggle_btn" aria-label=" toggle section">
+            <span class="material-icons"> help_outline </span>
+          </a>
+        </span>
+      </span>
+    </mat-card-content>
+    <app-approved-patient-reports></app-approved-patient-reports>
+  </mat-card-content>
+  <!-- Admin Processed Reports end here -->
+
+  <!-- 4th List -->
+  <!-- Patient Reports with Job Tickets start here -->
+  <mat-card-content id="jobTickets" class="table_wrapper admin_dashboard">
+    <mat-card-content class="headr_tagh">
+      <span class="counter_with_tool">
+        <h1>Patient Reports with Job Tickets</h1>
+        <span class="tolTip">
+          <a mat-raised-button #JobTickets="matTooltip"
+            matTooltip="All the Reports listed here are on Hold for further clarification from Doctor through job tickets."
+            matTooltipPosition="above" aria-tooltip=" tooltip area" matTooltipClass="tooltip_bg">
+          </a>
+          <a mat-button (click)="JobTickets.toggle()" class="toggle_btn" aria-label=" toggle section">
+            <span class="material-icons"> help_outline </span>
+          </a>
+        </span>
+      </span>
+    </mat-card-content>
+
+    <app-job-ticket-patient-reports></app-job-ticket-patient-reports>
+
+  </mat-card-content>
+  <!-- Patient Reports with Job Tickets end here -->
+
 
 </mat-card>
 

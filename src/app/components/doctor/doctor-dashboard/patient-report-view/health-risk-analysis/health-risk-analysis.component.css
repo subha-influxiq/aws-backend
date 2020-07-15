@@ -25,9 +25,7 @@
 }
 .health_risk_report table .patient_name{ width: 160px!important;}
 .area_header { width: 100%; }
-.area_content {
-  width: 100%; height: 150px; box-sizing: border-box; resize: none; padding: 10px; 
-}
+.area_content { width: 100%; height: 150px; box-sizing: border-box; resize: none; padding: 10px; }
 .gender_label { display: flex; }
 .health_risk_report .orderInput {
    display: inline-flex; justify-content: center; align-items: center; width: 100%;

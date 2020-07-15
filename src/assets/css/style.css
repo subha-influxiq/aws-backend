@@ -112,7 +112,7 @@
 .tablewrapper tr td:first-child, .tablewrapper tr th:first-child{ padding-left: 14px!important; }
 
  table th.mat-header-cell span { display: flex; justify-content: space-between; align-items: center;}
-.DataTable table th.mat-header-cell:last-of-type{ width: auto; min-width: 150px;}
+.DataTable table th.mat-header-cell:last-of-type{ width: 22%; min-width: 150px;}
 
 .DataTable table td.mat-cell{  font-family: "AvenirRoman"; padding-right: 8px; }
 .tablewrapper table td span .cursor,
@@ -123,13 +123,13 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
   font-family: 'AvenirMedium'; border-radius: 2px; margin: 2px 2px 3px; display: inline-block; box-shadow: none; vertical-align: bottom;
 }
 .DataTable table td .custombutton0,
-.DataTable table td .custombutton1 { display: inline-block;}   
+.DataTable table td .custombutton1 { display: inline-block; margin:3px 0; }   
 .DataTable table td .custombutton0 button{
-  min-width: inherit; padding: 3px 4px; line-height: inherit;
+  min-width: inherit; padding:4px; line-height: inherit;
   background: #1db59c; font-family: 'AvenirMedium'; border-radius: 2px; margin:0 2px; display: inline-block; box-shadow: none; vertical-align: bottom;
 }
 .DataTable table td .custombutton1 button{
-  min-width: inherit; padding: 3px 4px; line-height: inherit;
+  min-width: inherit; padding: 4px; line-height: inherit;
   background: #6ace0f; font-family: 'AvenirMedium'; border-radius: 2px; margin:0 2px; display: inline-block; box-shadow: none; vertical-align: bottom;
 }
 .DataTable table td .notebtncls .notebracket1{ margin-left: 4px;}
@@ -498,8 +498,8 @@ margin-right: 10px; box-shadow: none; min-width: 80px; }
  .admin_wrapper .add_form .form_wrapper textarea{ resize: none;}
  .admin_wrapper .add_form .form_wrapper .mat-form-field{ width: 49%; margin: 0.5%; }
  .percentage_counter{ width: 700px!important;}
- .admin_wrapper .add_form .form_wrapper .label_text{ display: flex;}
- .admin_wrapper .add_form .form_wrapper .label_tag{ font-size: 20px; font-family: 'AvenirMedium'; width: 49%;}
+ .admin_wrapper .add_form .form_wrapper .label_text{ display: flex; align-items: center;}
+ .admin_wrapper .add_form .form_wrapper .label_tag{ font-size: 20px; font-family: 'AvenirMedium'; width: 49%; margin-bottom: 16px;}
  .admin_wrapper .add_form h2{ font-family: "AvenirBlack"; text-transform: uppercase; font-size: 24px; padding: 0 6px; color: #1dbce9; }
  .admin_wrapper .add_form .submit_form{ display: flex; width: 100%; text-align: center; margin-top: 30px; justify-content: center; }
 .patient_preview .mat-form-field-appearance-legacy .mat-form-field-wrapper { padding: 0;}

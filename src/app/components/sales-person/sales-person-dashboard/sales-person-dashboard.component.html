@@ -69,6 +69,8 @@
 
       <mat-toolbar class="top_header">
         <h2> Doctor Joining Report</h2>
+
+        <button mat-raised-button color="primary" style="float: right;" [routerLink]="['/sales-person/add-doctor']">Add Doctor</button>
       </mat-toolbar>
       <mat-card-content class="tablewrapper">
         <lib-listing class="DataTable manageDoctor" *ngIf="docData.length>0" [datasource]="docData"

@@ -236,7 +236,7 @@
             Images Not Processed
           </p>
           <h2>54 </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Images Not Processed')">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Images Not Processed')">view all</button>
         </span>
       </mat-card-content>
 
@@ -252,7 +252,7 @@
             Basic Details Not Processed
           </p>
           <h2> 54 </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Basic Details Not Processed')">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Basic Details Not Processed')">view all</button>
         </span>
       </mat-card-content>
 
@@ -268,7 +268,7 @@
             Risk Markers Not Processed
           </p>
           <h2>54</h2>
-          <button mat-flat-button (click)="viewReportProcessData('Risk Markers Not Processed')">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Risk Markers Not Processed')">view all</button>
         </span>
       </mat-card-content>
 
@@ -293,7 +293,7 @@
             Reports Added
           </p>
           <h2> {{ allResolveData.dashboardCount.reportsAddedCount }} </h2>
-          <!-- <button mat-flat-button (click)="viewReportProcessData('Total Number of Reports Added')">view all</button> -->
+          <!-- <button mat-flat-button (click)="viewAllButton('Total Number of Reports Added')">view all</button> -->
         </span>
       </mat-card-content>
 
@@ -309,7 +309,7 @@
             Report Processed
           </p>
           <h2> {{ allResolveData.dashboardCount.reportProcessedCount }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total Number of Report Processed')">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Report Processed')">view all</button>
         </span>
       </mat-card-content>
 
@@ -324,7 +324,7 @@
             Report Signed
           </p>
           <h2> {{ allResolveData.dashboardCount.reportSignedCount }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Total Number of Report Signed')">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Report Signed')">view all</button>
         </span>
       </mat-card-content>
 
@@ -339,7 +339,7 @@
             Biller
           </p>
           <h2> {{ allResolveData.dashboardCount.sendTobBillerCount }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Sent to Biller')">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Sent to Biller')">view all</button>
         </span>
       </mat-card-content>
 
@@ -352,7 +352,7 @@
         <span class="container_wrapper">
           <p> Reports Downloaded </p>
           <h2> {{ allResolveData.dashboardCount.reportsDownloadedCount }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Reports Downloaded')">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Reports Downloaded')">view all</button>
         </span>
       </mat-card-content>
 
@@ -365,7 +365,7 @@
         <span class="container_wrapper">
           <p> Reports Pending Sing </p>
           <h2> {{ allResolveData.dashboardCount.reportsPendingSingCount }} </h2>
-          <button mat-flat-button (click)="viewReportProcessData('Reports Pending Sing')">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Reports Pending Sing')">view all</button>
         </span>
       </mat-card-content>
     </mat-card-content>

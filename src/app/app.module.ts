@@ -202,6 +202,7 @@ import { ApprovalSettingsUpdateComponent } from './components/common/approval-se
 // import { AddEditLessonComponent } from './components/lazyload-training/training-management/manage-lesson/add-edit-lesson/add-edit-lesson.component';
 // import { ListLessonComponent } from './components/lazyload-training/training-management/manage-lesson/list-lesson/list-lesson.component';
 import { TrainingModule } from './components/lazyload-training/training.module';
+import { AddNewDoctorComponent } from './components/sales-person/add-new-doctor/add-new-doctor.component';
 
 import { CommonTemplateModule } from './common-template/common-template.module';
 import { TrainingApiService } from './services/training-api.service';
@@ -390,13 +391,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 
     ApprovalSettingsUpdateComponent,
 
-    // AddEditTrainingComponent,
-
-    // ListingTrainingComponent,
-
-    // AddEditLessonComponent,
-
-    // ListLessonComponent,
+    AddNewDoctorComponent,
   ],
   imports: [
     SatDatepickerModule,
