@@ -6,8 +6,8 @@
 <!-- Doctor Group Header -->
 <app-doctor-group-header *ngIf="htmlText.userData.user_details.user_type == 'doctor_group'"></app-doctor-group-header>
 
-<!-- Doctor Group Header -->
-<app-doctor-group-header *ngIf="htmlText.userData.user_details.user_type == 'distributors'"></app-doctor-group-header>
+<!-- Distributors Admin Header -->
+<app-distributors-header *ngIf="htmlText.userData.user_details.user_type == 'distributors'"></app-distributors-header>
 
 <!-- Doctor Header -->
 <app-doctor-header *ngIf="htmlText.userData.user_details.user_type == 'doctor'"></app-doctor-header>

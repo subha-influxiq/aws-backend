@@ -1,7 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserModule } from '@angular/platform-browser';
 import { DeferLoadModule } from '@trademe/ng-defer-load';
+// import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadOutput, UploadInput, UploadFile, UploaderOptions } from 'ngx-uploader'
 import { AppRoutingModule } from './modules/app-routing.module';
@@ -56,7 +57,7 @@ import { PasswordDialogBoxComponent } from './components/common/password-dialog-
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 import { AddEditComponent,ChangePasswordAdminModal } from './components/admin/admin-management/add-edit/add-edit.component';
 import { ManageAdminListComponent } from './components/admin/admin-management/manage-admin-list/manage-admin-list.component';
-import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
+// import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
 import { AddeditDoctorComponent, ChangePasswordDoctorModal,  } from './components/admin/doctor-management/addedit-doctor/addedit-doctor.component';
 import { ListDoctorComponent } from './components/admin/doctor-management/list-doctor/list-doctor.component';
 import { AddEditBillerComponent ,ChangePasswordModal}from './components/admin/biller-management/add-edit-biller/add-edit-biller.component';
@@ -93,7 +94,7 @@ import { SystemSuperbillComponent } from './components/doctor/doctor-dashboard/p
 import { HealthRiskAnalysisComponent } from './components/doctor/doctor-dashboard/patient-report-view/health-risk-analysis/health-risk-analysis.component';
 import { ReportDetailsComponent } from './components/tech/report-details/report-details.component';
 import { NotFoundErrorComponent } from './components/common/not-found-error/not-found-error.component';
-import { AdminFooterComponent } from './components/admin/admin-footer/admin-footer.component';
+// import { AdminFooterComponent } from './components/admin/admin-footer/admin-footer.component';
 import { BillerFooterComponent } from './components/biller/biller-footer/biller-footer.component';
 import { TechFooterComponent } from './components/tech/tech-footer/tech-footer.component';
 import { DoctorFooterComponent } from './components/doctor/doctor-footer/doctor-footer.component';
@@ -196,8 +197,16 @@ import { LoginDotorByAdminComponent } from './components/admin/login-as-doctor/l
 import { ReportTimeSettingComponent } from './components/admin/report-time-setting/report-time-setting/report-time-setting.component';
 import { AddSettingTimeComponent } from './components/admin/report-time-setting/add-setting-time/add-setting-time.component';
 import { ApprovalSettingsUpdateComponent } from './components/common/approval-settings-update/approval-settings-update.component';
+// import { AddEditTrainingComponent } from './components/lazyload-training/training-management/manage-training/add-edit-training/add-edit-training.component';
+// import { ListingTrainingComponent } from './components/lazyload-training/training-management/manage-training/listing-training/listing-training.component';
+// import { AddEditLessonComponent } from './components/lazyload-training/training-management/manage-lesson/add-edit-lesson/add-edit-lesson.component';
+// import { ListLessonComponent } from './components/lazyload-training/training-management/manage-lesson/list-lesson/list-lesson.component';
+import { TrainingModule } from './components/lazyload-training/training.module';
+import { TraningModule } from 'traning-lib-influxiq';
 import { AddNewDoctorComponent } from './components/sales-person/add-new-doctor/add-new-doctor.component';
 
+import { CommonTemplateModule } from './common-template/common-template.module';
+import { TrainingApiService } from './services/training-api.service';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -249,7 +258,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     TestComponent,
     AddEditComponent,
     ManageAdminListComponent,
-    AdminHeaderComponent,
+    // AdminHeaderComponent,
     AddeditDoctorComponent,
     ListDoctorComponent,
     ChangePasswordDoctorModal,
@@ -276,7 +285,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     ReportDetailsComponent,
     HttpLoaderComponent,
     NotFoundErrorComponent,
-    AdminFooterComponent,
+    // AdminFooterComponent,
     BillerFooterComponent,
     TechFooterComponent,
     DoctorFooterComponent,
@@ -387,7 +396,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   ],
   imports: [
     SatDatepickerModule,
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    // BrowserModule.withServerTransition({ appId: 'serverApp' }),
     DeferLoadModule,
     MetaModule.forRoot(),
     AppRoutingModule,
@@ -411,9 +420,14 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderRouterModule, // import this module for showing loader automatically when navigating between app routes
     NgxUiLoaderHttpModule,
-
+    CommonTemplateModule,
     //ckeditor
     CKEditorModule,
+    // TraningModule,
+    TrainingModule,
+    TraningModule
+    // TraningModule
+    // BrowserAnimationsModule
   ],
   exports: [
     MatPaginatorModule
@@ -428,6 +442,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CookieService,
     AuthguardService,
     HttpServiceService,
+    TrainingApiService,
     DatePipe,
     CommonFunction,
     {
@@ -471,7 +486,10 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 
     // Update setting
     ApprovalSettingsUpdateComponent,
-  ]
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA
+],
 })
 
 export class AppModule {

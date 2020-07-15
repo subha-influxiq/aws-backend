@@ -1,0 +1,41 @@
+<!-- Admin Header -->
+<app-admin-header *ngIf="userData.user_type == 'admin'"></app-admin-header>
+
+
+<mat-card class="admin_wrapper">
+    <!-- header with add button -->
+    <mat-card-content class="table_wrapper">
+        <mat-toolbar class="top_header">
+            <h2> Manage Lesson </h2>
+        </mat-toolbar>
+
+        <span class="add_header">
+
+            <ng-container *ngIf="userData.user_type == 'admin'">
+                <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; List
+                    Lesson</span>
+                <!-- <button mat-flat-button [routerLink]="['/admin/faq-management/add']">Add FAQ</button> -->
+            </ng-container>
+        </span>
+        <!-- End header with add button -->
+
+        <div class="form2_wrapper">
+
+            <lib-list-lession 
+            [allDataList]="manageLessionList"
+            [serverDetails]="serverDetails"
+            [formSource]="formSource"
+            [EditPageRoute]="editPageRoute"
+            [AddPageRoute]="addPageRoute"
+            [SearchSourceName]="searchSourceName"
+            [ManageQuizRoute]="manageQuizRoute"
+            [IsItDna]="isitdna"></lib-list-lession>
+
+            <h2 *ngIf="manageLessionList.length == 0">No record found.</h2>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+
+<!-- Admin Footer -->
+<app-admin-footer *ngIf="userData.user_type == 'admin'"></app-admin-footer>

@@ -80,7 +80,7 @@ export class HealthriskSystemEncounterComponent implements OnInit {
     var data = {
       "source": "data_pece",
       "condition": {
-        "_id_object": this.orginalReportDetails.patient_details[0].insurance_id
+        "_id": this.orginalReportDetails.patient_details[0].insurance_id
       },
       "token": this.cookiesData.jwtToken
     };
