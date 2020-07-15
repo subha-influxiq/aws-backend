@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router, Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { HttpServiceService } from './http-service.service';
+import { TrainingApiService } from './training-api.service';
 import { CookieService } from 'ngx-cookie-service';
 
 export interface EndpointComponent {
@@ -24,7 +24,7 @@ export class TrainingService implements Resolve<any> {
   public user_details: any;
 
 
-  constructor(private _apiService: HttpServiceService, private router: Router, public cookiesService: CookieService) {
+  constructor(private _apiService: TrainingApiService, private router: Router, public cookiesService: CookieService) {
     // this.allCookiesData = cookiesService.getAll();
     //   this.cookiesData = JSON.parse(this.allCookiesData.user_details);
     //   this.userType=this.cookiesData.type;

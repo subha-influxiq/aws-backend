@@ -15,7 +15,7 @@ export class AddEditTrainingComponent implements OnInit {
   public isDna: any = "no"
   public formdataval: any;
   public recid: any;
-  public listingPageRoute: any = "/admin/manage-training/list";
+  public listingPageRoute: any = "/admin/training/manage-training/list";
   public serverDetails: any = {
     "serverUrl": "https://obq0e0nxhk.execute-api.us-east-1.amazonaws.com/production/api1/",
     "jwttoken": ""

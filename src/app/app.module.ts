@@ -204,6 +204,7 @@ import { ApprovalSettingsUpdateComponent } from './components/common/approval-se
 import { TrainingModule } from './components/lazyload-training/training.module';
 
 import { CommonTemplateModule } from './common-template/common-template.module';
+import { TrainingApiService } from './services/training-api.service';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -444,6 +445,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CookieService,
     AuthguardService,
     HttpServiceService,
+    TrainingApiService,
     DatePipe,
     CommonFunction,
     {

@@ -12,7 +12,7 @@
   <span class="add_header">
 
   <ng-container *ngIf="userData.user_type == 'admin'">
-    <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;  Manage Training</span>
+    <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp;  List Training</span>
     <!-- <button mat-flat-button [routerLink]="['/admin/faq-management/add']">Add FAQ</button> -->
   </ng-container>
 </span>
@@ -20,16 +20,16 @@
 
 <div class="form2_wrapper">
 
-<lib-listing-training
-[allDataList]="manageTrainingList"
-[serverDetails]="serverDetails"
-[formSource]="formSource"
-[EditPageRoute]="editPageRoute"
-[AddPageRoute]="addPageRoute"
-[SearchSourceName]="searchSourceName"
-></lib-listing-training>
+  <lib-listing-training
+  [allDataList]="manageTrainingList"
+  [serverDetails]="serverDetails"
+  [formSource]="formSource"
+  [EditPageRoute]="editPageRoute"
+  [AddPageRoute]="addPageRoute"
+  [SearchSourceName]="searchSourceName"
+  ></lib-listing-training>
 
-<h2 *ngIf="manageTrainingList.length == 0">No record found.</h2>
+<!-- <h2 *ngIf="manageTrainingList.length == 0">No record found.</h2> -->
 </div>
 </mat-card-content>
 </mat-card>

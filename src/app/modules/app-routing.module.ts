@@ -2308,6 +2308,7 @@ const routes: Routes = [
   /*Training Management end*/
 
 
+  
   /* test component route start here */
   {
     path: 'test', component: TestComponent,

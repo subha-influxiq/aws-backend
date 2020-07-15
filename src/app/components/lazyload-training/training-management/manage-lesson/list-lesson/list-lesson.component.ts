@@ -13,9 +13,9 @@ export class ListLessonComponent implements OnInit {
   public userData:any;
   public isitdna:any=false;
   public manageTrainingList : any = [];
-  public editPageRoute : any="/admin/manage-lesson/edit/";
-  public addPageRoute : any="/admin/manage-lesson/add";
-  public manageQuizRoute:any="/admin/manage-quiz/list/";
+  public editPageRoute : any="/admin/training/manage-lesson/edit/";
+  public addPageRoute : any="/admin/training/manage-lesson/add";
+  public manageQuizRoute:any="/admin/training/manage-quiz/list/";
   public serverDetails: any = {
     "serverUrl": "https://obq0e0nxhk.execute-api.us-east-1.amazonaws.com/production/api1/",
     "jwttoken": ""

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+
 @Component({
   selector: 'app-listing-training',
   templateUrl: './listing-training.component.html',
@@ -11,32 +12,32 @@ export class ListingTrainingComponent implements OnInit {
   public jwtToken: any;
   public userData:any;
   public manageTrainingList: any = [];
-  public editPageRoute: any = "/admin/manage-training/edit/";
-  public addPageRoute: any = "/admin/manage-training/add";
+  public editPageRoute: any = "/admin/training/manage-training/edit/";
+  public addPageRoute: any = "/admin/training/manage-training/add";
   public searchSourceName: any = "training_category_management_view";
   public serverDetails: any = {
     "serverUrl": "https://obq0e0nxhk.execute-api.us-east-1.amazonaws.com/production/api1/",
     "jwttoken": ""
   };
-  public formSource: any = {
-    "source": 'training_category_management',
+  public formSource: Object = {
+    "source":'training_category_management',
     "endpoint": "trainingcatdelete",
-    "deleteManyEndpoint": "trainingcatdeletemany",
-    "searchEndpoint": "gettrainingcategorydata",
-    "statusUpdateEndpoint": "trainingcatstatusupdate",
-    "statusUpdateManyEndpoint": "trainingcatstatusupdate",
-    "statusUpdateSourceName": "training_category_management",
-    "trashDataSource": "training_category_management_view",
-    "retriveTrashDataEndpoint": "trainingcatrestoredata",
-    "retriveTrashDataSourceName": "training_category_management",
-    "trainingCountEndpoint": "trainingcounts"
+    "deleteManyEndpoint":"trainingcatdeletemany",
+    "searchEndpoint":"gettrainingcategorydata",
+    "statusUpdateEndpoint":"trainingcatstatusupdate",
+    "statusUpdateManyEndpoint":"trainingcatstatusupdate",
+    "statusUpdateSourceName":"training_category_management",
+    "trashDataSource":"training_category_management_view",
+    "retriveTrashDataEndpoint":"trainingcatrestoredata",
+    "retriveTrashDataSourceName":"training_category_management",
+    "trainingCountEndpoint" : "trainingcounts"
   }
+  
 
   constructor(public activatedRoute: ActivatedRoute, public cookie: CookieService) {
-    this.serverDetails.jwttoken = this.jwtToken;
     this.userData=JSON.parse(cookie.get('user_details'));
-    this.jwtToken = cookie.get('jwtToken');
-
+    this.jwtToken =cookie.get('jwtToken');
+    this.serverDetails.jwttoken = this.jwtToken;
   }
 
   ngOnInit() {
@@ -45,8 +46,7 @@ export class ListingTrainingComponent implements OnInit {
       let result: any;
       result = data.trainingdata.res;
       this.manageTrainingList = result;
-      console.log('///')
-
+      // console.log('///')
     })
   }
 

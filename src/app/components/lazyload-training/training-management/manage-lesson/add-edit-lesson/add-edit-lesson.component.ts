@@ -55,12 +55,12 @@ export class AddEditLessonComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-    this.header_txt = 'Edit Lesson';
-
       this.recid = params['id'];
       console.log(params['id'])
       if (this.recid != null && this.recid != '' && this.recid != undefined) {
         // this.geteditdata()
+      this.header_txt = 'Edit Lesson';
+
       }
     });
 

@@ -47,7 +47,7 @@
     "core-js": "^2.6.11",
     "domino": "^2.1.5",
     "express": "^4.15.2",
-    "file-upload-lib-influxiq": "0.0.16",
+    "file-upload-lib-influxiq": "0.0.21",
     "hammerjs": "^2.0.8",
     "i": "^0.3.6",
     "jasmine-console-reporter": "^3.1.0",
@@ -67,7 +67,7 @@
     "rxjs": "~6.4.0",
     "saturn-datepicker": "^8.0.5",
     "time-ago-pipe": "^1.3.2",
-    "traning-lib-influxiq": "0.0.84",
+    "traning-lib-influxiq": "0.0.89",
     "tslib": "^1.13.0",
     "zone.js": "~0.9.1"
   },

@@ -8,6 +8,10 @@ import { ListLessonComponent } from './training-management/manage-lesson/list-le
 import { AddEditLessonComponent } from './training-management/manage-lesson/add-edit-lesson/add-edit-lesson.component';
 import { CommonTemplateModule } from '../../common-template/common-template.module';
 import { TraningModule } from 'traning-lib-influxiq';
+import { AddEditQuizComponent } from './training-management/manage-quiz/add-edit-quiz/add-edit-quiz.component';
+import { ListQuizComponent } from './training-management/manage-quiz/list-quiz/list-quiz.component';
+import { AddEditAnswerComponent } from './training-management/manage-quiz/add-edit-answer/add-edit-answer.component';
+import { ListAnswerComponent } from './training-management/manage-quiz/list-answer/list-answer.component';
 
 
 @NgModule({
@@ -18,7 +22,15 @@ import { TraningModule } from 'traning-lib-influxiq';
 
     AddEditLessonComponent,
 
-    ListLessonComponent,],
+    ListLessonComponent,
+
+    AddEditQuizComponent,
+
+    ListQuizComponent,
+
+    AddEditAnswerComponent,
+
+    ListAnswerComponent,],
   imports: [
     CommonModule,
     TrainingRoutingModule,
