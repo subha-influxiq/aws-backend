@@ -9,7 +9,6 @@
       <mat-nav-list>
         <a mat-list-item routerLinkActive="active" [routerLink]="['/admin/dashboard']"> Dashboard </a>
 
-        <!-- Drop down menu -->
         <a mat-list-item routerLinkActive="active" [matMenuTriggerFor]="userMenu"> Users Management
           <i class="material-icons">keyboard_arrow_down</i>
         </a>
@@ -37,7 +36,6 @@
         </mat-menu>
 
 
-        <!-- Drop down menu -->
         <a mat-list-item routerLinkActive="active" [matMenuTriggerFor]="insurance"> Insurance Management
           <i class="material-icons">keyboard_arrow_down</i>
         </a>
@@ -65,12 +63,22 @@
           Information</a>
         <a mat-list-item [matMenuTriggerFor]="FAQManagement"> FAQ Management <i
             class="material-icons">keyboard_arrow_down</i></a>
+
+            <a mat-list-item [matMenuTriggerFor]="TrainingManagement"> Training Management <i
+              class="material-icons">keyboard_arrow_down</i></a>
+
         <a mat-list-item [matMenuTriggerFor]="misc"> Miscellaneous <i class="material-icons">keyboard_arrow_down</i></a>
 
       </mat-nav-list>
       <mat-menu #FAQManagement="matMenu">
         <button mat-menu-item [routerLink]="['/admin/faq-management']" routerLinkActive="active"> Manage FAQ</button>
         <button mat-menu-item [routerLink]="['/admin/faq']" routerLinkActive="active"> FAQ</button>
+      </mat-menu>
+
+      <mat-menu #TrainingManagement="matMenu">
+        <button mat-menu-item [routerLink]="['/admin/training/manage-training/list']" routerLinkActive="active"> Manage Training</button>
+
+        <button mat-menu-item [routerLink]="['/admin/training/manage-lesson/list']" routerLinkActive="active"> Manage Lesson</button>
       </mat-menu>
 
       <mat-menu #misc="matMenu">
@@ -108,4 +116,3 @@
     </mat-card-content>
   </mat-card-content>
 </mat-toolbar>
-<!-- end header -->
