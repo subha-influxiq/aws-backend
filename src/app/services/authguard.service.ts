@@ -18,6 +18,7 @@ export class AuthguardService implements CanActivate {
     if (getToken) {
       var allData: any = this.cookie.getAll();
       var userData: any = JSON.parse(allData.user_details);
+      
       /* Login User */
       switch (next.url[0].path) {
         case 'login':
@@ -65,4 +66,5 @@ export class AuthguardService implements CanActivate {
       }
     }
   }
+
 }

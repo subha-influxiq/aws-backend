@@ -122,8 +122,6 @@ export class SalesPersonDashboardComponent implements OnInit {
     let allData = cookieService.getAll();
     this.userData = JSON.parse(allData.user_details);
 
-    console.log("Data: ", this.userData);
-
     this.libdata.basecondition = { parent_id: this.userData._id };
     this.shareDetails = {
       baseUrl: environment.doctorSignUpBaseUrl,

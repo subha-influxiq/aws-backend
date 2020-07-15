@@ -293,7 +293,7 @@ export class ViewAllButtonListComponent implements OnInit {
         break;
       case 'Total Number of Report Processed':
         data.searchcondition.report_type = { $exists: true };
-        data.searchcondition.status = { $gte: 11 };
+        data.searchcondition.status = { $gte: 8 };
         // this.libdata.basecondition.status = { $gte: 11 };
 
         // Add status search filed
