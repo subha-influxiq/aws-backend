@@ -15,7 +15,6 @@ export class HttpServiceService {
   public baseUrl1: any = environment.apiBaseUrl1;
   public calendarApiUrl: any = environment.calendarApi;
   public jwtToken: any = "";
-  public training_url:any=environment.training_url;
 
   constructor(private http: HttpClient, public CookieService: CookieService) {
     this.jwtToken = this.CookieService.get('jwtToken');
@@ -37,7 +36,7 @@ export class HttpServiceService {
         'Authorization': this.jwtToken
       })
     };
-    return this.http.post(this.baseUrl + endpoint, jsonData);
+    return this.http.post(this.baseUrl + endpoint, jsonData, httpOptions);
   }
 
   /* call api via post method */
@@ -51,7 +50,7 @@ export class HttpServiceService {
         'Authorization': this.jwtToken
       })
     };
-    return this.http.post(this.baseUrl1 + endpoint, jsonData);
+    return this.http.post(this.baseUrl1 + endpoint, jsonData, httpOptions);
   }
 
   //ip track api function
@@ -86,7 +85,7 @@ export class HttpServiceService {
         'Authorization': this.jwtToken
       })
     };
-    return this.http.post(this.calendarApiUrl + endpoint, jsonData);
+    return this.http.post(this.calendarApiUrl + endpoint, jsonData, httpOptions);
   }
 
   /* Resolve service */
@@ -142,18 +141,5 @@ export class HttpServiceService {
     return this.http.get(url);
   }
 
-
-  CustomRequest(requestdata: any, endpoint: any) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': this.jwtToken
-      })
-    };
-    var result = this.http.post(this.training_url + endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
-    return result;
-  }
-
 }
-
 

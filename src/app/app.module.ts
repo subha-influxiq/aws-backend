@@ -202,6 +202,7 @@ import { ApprovalSettingsUpdateComponent } from './components/common/approval-se
 // import { AddEditLessonComponent } from './components/lazyload-training/training-management/manage-lesson/add-edit-lesson/add-edit-lesson.component';
 // import { ListLessonComponent } from './components/lazyload-training/training-management/manage-lesson/list-lesson/list-lesson.component';
 import { TrainingModule } from './components/lazyload-training/training.module';
+import { TraningModule } from 'traning-lib-influxiq';
 import { AddNewDoctorComponent } from './components/sales-person/add-new-doctor/add-new-doctor.component';
 
 import { CommonTemplateModule } from './common-template/common-template.module';
@@ -424,6 +425,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CKEditorModule,
     // TraningModule,
     TrainingModule,
+    TraningModule
     // TraningModule
     // BrowserAnimationsModule
   ],
