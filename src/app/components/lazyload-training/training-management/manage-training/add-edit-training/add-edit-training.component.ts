@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from '../../../../../../environments/environment';
+
 @Component({
   selector: 'app-add-edit-training',
   templateUrl: './add-edit-training.component.html',
@@ -17,7 +19,7 @@ export class AddEditTrainingComponent implements OnInit {
   public recid: any;
   public listingPageRoute: any = "/admin/training/manage-training/list";
   public serverDetails: any = {
-    "serverUrl": "https://obq0e0nxhk.execute-api.us-east-1.amazonaws.com/production/api1/",
+    "serverUrl": environment.training_url,
     "jwttoken": ""
   };
   public formSource: any = {

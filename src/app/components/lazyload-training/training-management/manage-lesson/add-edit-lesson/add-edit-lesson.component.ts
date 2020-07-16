@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from '../../../../../../environments/environment';
 
 @Component({
   selector: 'app-add-edit-lesson',
@@ -17,7 +18,7 @@ export class AddEditLessonComponent implements OnInit {
   public isitdna:any=false;
   public userData:any;
   public serverDetails: any = {
-    "serverUrl": "https://obq0e0nxhk.execute-api.us-east-1.amazonaws.com/production/api1/",
+    "serverUrl": environment.training_url,
     "jwttoken": ""
   };
   public formSource: any = {
@@ -33,7 +34,7 @@ export class AddEditLessonComponent implements OnInit {
     "objectId2": "prerequisite_lession"
   };
   public configFileUpload:any={
-    baseUrl: "https://fileupload.influxhostserver.com/",
+    baseUrl: environment.fileUploadUrl,
     endpoint: "uploads",
     size: "51200", // kb
     format:["jpg", "jpeg", "png", "bmp", "zip", 'html','mp4','mp3','doc','ppt','pptx','pdf','msword'],  // use all small font

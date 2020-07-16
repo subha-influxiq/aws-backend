@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from '../../../../../../environments/environment';
 
 @Component({
   selector: 'app-listing-training',
@@ -16,7 +17,7 @@ export class ListingTrainingComponent implements OnInit {
   public addPageRoute: any = "/admin/training/manage-training/add";
   public searchSourceName: any = "training_category_management_view";
   public serverDetails: any = {
-    "serverUrl": "https://obq0e0nxhk.execute-api.us-east-1.amazonaws.com/production/api1/",
+    "serverUrl": environment.training_url,
     "jwttoken": ""
   };
   public formSource: Object = {
