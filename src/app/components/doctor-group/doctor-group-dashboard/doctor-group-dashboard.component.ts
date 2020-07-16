@@ -94,7 +94,7 @@ export class DoctorGroupDashboardComponent implements OnInit {
       },
       {
         label: "Download Report",
-        link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
+        link: environment.s3bucket + "reports",
         type: 'externallink',
         paramtype: 'angular',
         param: ['download_file_name']

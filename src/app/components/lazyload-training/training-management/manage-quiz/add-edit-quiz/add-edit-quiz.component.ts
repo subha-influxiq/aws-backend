@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from '../../../../../../environments/environment';
 
 @Component({
   selector: 'app-add-edit-quiz',
@@ -14,7 +15,7 @@ export class AddEditQuizComponent implements OnInit {
   public lessonId:any;
   public header_txt:any='Add Quiz';
   public serverDetails: any = {
-    "serverUrl": "https://obq0e0nxhk.execute-api.us-east-1.amazonaws.com/production/api1/",
+    "serverUrl": environment.training_url,
     "jwttoken": ""
   };
   
