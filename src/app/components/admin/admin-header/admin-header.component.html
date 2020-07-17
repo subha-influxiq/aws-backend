@@ -57,10 +57,10 @@
 
 
 
-        <a mat-list-item [routerLink]="['/admin/booked-appoinments']" routerLinkActive="active">Appointments</a>
+        <!-- <a mat-list-item [routerLink]="['/admin/booked-appoinments']" routerLinkActive="active">Appointments</a>
 
         <a mat-list-item [routerLink]="['/admin/patientinformation-management']" routerLinkActive="active">Patient
-          Information</a>
+          Information</a> -->
         <a mat-list-item [matMenuTriggerFor]="FAQManagement"> FAQ Management <i
             class="material-icons">keyboard_arrow_down</i></a>
 
@@ -80,8 +80,12 @@
 
         <button mat-menu-item [routerLink]="['/admin/training/manage-lesson/list']" routerLinkActive="active"> Manage Lesson</button>
       </mat-menu>
-
       <mat-menu #misc="matMenu">
+        <button mat-menu-item [routerLink]="['/admin/booked-appoinments']" routerLinkActive="active">Appointments</button>
+
+          <button mat-menu-item [routerLink]="['/admin/patientinformation-management']" routerLinkActive="active">Patient
+          Information</button>
+
         <button mat-menu-item [routerLink]="['/encounter-form-status']" routerLinkActive="active"> Encounter Form
           Rules</button>
         <button mat-menu-item [routerLink]="['/admin/cpt-reports']" routerLinkActive="active"> CPT Validate Reports</button>
