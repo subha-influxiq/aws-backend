@@ -1,36 +1,57 @@
 <h2 mat-dialog-title>Select Patient</h2>
+
 <mat-card class="modal_view">
-<mat-form-field>
-    <mat-label>Select patient</mat-label>
-    <mat-select (selectionChange)="selectPatient($event.value);">
-        <mat-option *ngFor="let patient of data.allPatient; let i = index;" [value]="i">
-            {{ patient.patient_name }}
-        </mat-option>
-    </mat-select>
-</mat-form-field>
+    <mat-form-field *ngIf="selectDoctor.data == ''">
+        <mat-label>Select patient</mat-label>
+        <mat-select (selectionChange)="onChnagePatient($event.value);" [(ngModel)]="selectPatient.model">
+            <mat-option *ngFor="let patient of data.allPatient; let i = index;" [value]="i">
+                {{ patient.patient_name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <span *ngIf="selectPatientError" style="color: red;">Please a patient.</span>
 
-<mat-list *ngIf="selectPatientData != ''">
-    <mat-list-item>Patient Name: {{ selectPatientData.patient_name }} </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>DOB: {{ selectPatientData.dob | date }} </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>Gender: {{ selectPatientData.gender }} </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>Height: {{ selectPatientData.height }} </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>Email: {{ selectPatientData.email }} </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>Booking date: {{ selectPatientData.booking_date | date }} </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item *ngIf="selectPatientData.doctor_details.length > 0">Related Doctor: {{ selectPatientData.doctor_details[0].firstname }} {{ selectPatientData.doctor_details[0].lastname }} </mat-list-item>
-    <mat-divider *ngIf="selectPatientData.doctor_details.length > 0"></mat-divider>
-    <mat-list-item *ngIf="selectPatientData.doctor_office_details.length > 0">Doctor Office: {{ selectPatientData.doctor_office_details[0].firstname }} {{ selectPatientData.doctor_office_details[0].lastname }} </mat-list-item>
-    <mat-divider *ngIf="selectPatientData.doctor_office_details.length > 0"></mat-divider>
-</mat-list>
+    <h3 *ngIf="selectPatient.data == ''">OR</h3>
+
+    <mat-form-field *ngIf="selectPatient.data == ''">
+        <mat-label>Select Doctor</mat-label>
+        <mat-select (selectionChange)="onChnageDoctor($event.value);">
+            <mat-option *ngFor="let doctor of htmlText.doctorList; let i = index;" [value]="i">
+                {{ doctor.firstname }} {{ doctor.lastname }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <span *ngIf="selectPatientError" style="color: red;">Please a doctor.</span>
 
 
-<mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button [mat-dialog-close]="selectPatientData" cdkFocusInitial>Confirm</button>
-</mat-dialog-actions>
+
+    <mat-list *ngIf="selectPatient.data != ''">
+        <mat-list-item>Patient Name: {{ selectPatient.data.patient_name }} </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>DOB: {{ selectPatient.data.dob | date }} </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Gender: {{ selectPatient.data.gender }} </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Height: {{ selectPatient.data.height }} </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Email: {{ selectPatient.data.email }} </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Booking date: {{ selectPatient.data.booking_date | date }} </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngIf="selectPatient.data.doctor_details.length > 0">Related Doctor:
+            {{ selectPatient.data.doctor_details[0].firstname }} {{ selectPatient.data.doctor_details[0].lastname }}
+        </mat-list-item>
+        <mat-divider *ngIf="selectPatient.data.doctor_details.length > 0"></mat-divider>
+        <mat-list-item *ngIf="selectPatient.data.doctor_office_details.length > 0">Doctor Office:
+            {{ selectPatient.data.doctor_office_details[0].firstname }}
+            {{ selectPatient.data.doctor_office_details[0].lastname }} </mat-list-item>
+        <mat-divider *ngIf="selectPatient.data.doctor_office_details.length > 0"></mat-divider>
+    </mat-list>
+
+
+    <mat-dialog-actions align="end">
+        <button mat-button (click)="closeModal();">Confirm</button>
+        <button mat-button (click)="resetAllField();">Reset</button>
+        <button mat-button mat-dialog-close>Cancel</button>
+    </mat-dialog-actions>
 </mat-card>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { type } from 'os';
 
 @Component({
   selector: 'app-not-found-error',
@@ -8,22 +9,29 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./not-found-error.component.css']
 })
 export class NotFoundErrorComponent implements OnInit {
-public cookiesData : any;
-public userToken : any;
+
+  public userData: any = {};
+  public jwtToken: any = '';
+  public htmlData: any = {};
+  
   constructor(public cookie : CookieService, public activatedRoute: ActivatedRoute, public router: Router) { 
-    this.userToken = cookie.get('jwtToken');
-    let allcookies: any;
-    allcookies = cookie.getAll();
-    allcookies['user_details'] = JSON.stringify(allcookies);
-    this.cookiesData = JSON.parse(allcookies.user_details);
-    console.log("token data",this.cookiesData.type);
+    this.htmlData["year"] = new Date().getFullYear();
+    let allcookies: any = cookie.getAll();
+
+    if(typeof allcookies.user_details != 'undefined') {
+      this.userData = JSON.parse(allcookies.user_details);
+      this.jwtToken = allcookies.jwtToken;
+    } else {
+      this.userData = { user_type: "" };
+      this.jwtToken = "";
+    }
   }
 
   ngOnInit() {
   }
 
   gotoHome() {
-    this.router.navigateByUrl('/' + JSON.parse(this.cookiesData.user_type) + '/dashboard');
+    this.router.navigateByUrl('/login');
   }
 
 }
