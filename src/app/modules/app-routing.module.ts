@@ -2279,7 +2279,9 @@ const routes: Routes = [
 
   {
     path:'admin/training',
-    loadChildren:()=>import('../components/lazyload-training/training.module').then(t=>t.TrainingModule)
+    loadChildren: () => import('../components/lazyload-training/training.module').then(t => 
+      t.TrainingModule
+    )
   },
 
   //---------lazy load training module-----------//
