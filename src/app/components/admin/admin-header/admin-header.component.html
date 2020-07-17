@@ -1,11 +1,12 @@
-<mat-toolbar class="techdashboard_header" [ngClass]="{'sticky' : isSticky}">
+<mat-toolbar class="techdashboard_header" >
   <mat-card-content class="header_wrapper">
     <span class="logo_wrapper" [routerLink]="[ '/admin/dashboard' ]">
       <img src="../../../assets/images/logo.png">
     </span>
 
     <button mat-flat-button (click)="menuFunction()" class="togle_menu"><i class="material-icons"> menu </i></button>
-    <mat-card-content class="quotation" [ngClass]="status ? 'success' : 'danger'" >
+   
+    <mat-card-content class="quotation" [ngClass]="toggleStatus ? 'success' : 'danger'">
       <mat-nav-list>
         <a mat-list-item routerLinkActive="active" [routerLink]="['/admin/dashboard']"> Dashboard </a>
 
@@ -57,10 +58,10 @@
 
 
 
-        <!-- <a mat-list-item [routerLink]="['/admin/booked-appoinments']" routerLinkActive="active">Appointments</a>
+        <a mat-list-item [routerLink]="['/admin/booked-appoinments']" routerLinkActive="active">Appointments</a>
 
         <a mat-list-item [routerLink]="['/admin/patientinformation-management']" routerLinkActive="active">Patient
-          Information</a> -->
+          Information</a>
         <a mat-list-item [matMenuTriggerFor]="FAQManagement"> FAQ Management <i
             class="material-icons">keyboard_arrow_down</i></a>
 
@@ -80,12 +81,8 @@
 
         <button mat-menu-item [routerLink]="['/admin/training/manage-lesson/list']" routerLinkActive="active"> Manage Lesson</button>
       </mat-menu>
+
       <mat-menu #misc="matMenu">
-        <button mat-menu-item [routerLink]="['/admin/booked-appoinments']" routerLinkActive="active">Appointments</button>
-
-          <button mat-menu-item [routerLink]="['/admin/patientinformation-management']" routerLinkActive="active">Patient
-          Information</button>
-
         <button mat-menu-item [routerLink]="['/encounter-form-status']" routerLinkActive="active"> Encounter Form
           Rules</button>
         <button mat-menu-item [routerLink]="['/admin/cpt-reports']" routerLinkActive="active"> CPT Validate Reports</button>
