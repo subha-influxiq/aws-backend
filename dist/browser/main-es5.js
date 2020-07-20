@@ -395,7 +395,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-admin-header></app-admin-header>\n\n<mat-card class=\"admin_wrapper\">\n\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/majorDC_icon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\"> {{ allResolveData.total_major_doctor }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #major_doctor=\"matTooltip\"\n              matTooltip=\"The total number of independent doctors registered under the Admin\" matTooltipPosition=\"above\"\n              aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"major_doctor.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br> Major Doctors</p>\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.total_biller }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #total_biller=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of billers registered under Admin, Distributor, Doctor’s Group Admin, and Diagnostic Admin.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"total_biller.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of<br> Billers</p>\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/techIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.total_tech }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #TotalTechsS=\"matTooltip\"\n              matTooltip=\" The data listed for the total number of registered techs under Admin, Distributor, Doctor’s Group Admin, and Diagnostic Admin. \"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"TotalTechsS.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Techs</p>\n        <button mat-flat-button [routerLink]=\"['/admin/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/distributorIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.total_distributor }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #TotalDistributor=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of doctor’s offices registered under Admin, Distributor, Doctor’s Group Admin, and Diagnostic Admin.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"TotalDistributor.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br> Distributor</p>\n        <button mat-button [routerLink]=\"['/admin/distributors-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/groupadminIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.total_doctors_group_admin }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #DoctorsGroupAdmin=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of Doctor’s Group Admin added by the Admin.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"DoctorsGroupAdmin.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of<br> Doctors Group Admin</p>\n        <button mat-flat-button [routerLink]=\"['/admin/doctor-management/group']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerAdminIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\"> {{ allResolveData.total_biller_admin }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #BillerAdmin=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of billers added\" matTooltipPosition=\"above\"\n              aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"BillerAdmin.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Biller Admin</p>\n        <button mat-flat-button [routerLink]=\"['/admin/adminbiller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n  <mat-card-content class=\"content_wrapper\">\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/doctorOfficeIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.total_doctor_office }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #TotalDoctorOffice=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of Doctor’s Office added by the Admin.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"TotalDoctorOffice.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Doctor's Office</p>\n        <button mat-button [routerLink]=\"['/admin/doctor-office-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/diagnosticAdminIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\"> {{ allResolveData.total_diagnostic_admin }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #DiagnosticAdmin=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of Diagnostic Admin added by the Admin.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"DiagnosticAdmin.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Diagnostic Admin</p>\n        <button mat-button [routerLink]=\"['/admin/diagnostic-admin-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/totalDoctorIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\"> {{ allResolveData.total_parent_doctor }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #TotalNoDoctors=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of doctors registered under the Admin, Distributor, Doctor’s Group Admin, and Diagnostic Admin.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"TotalNoDoctors.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Doctors</p>\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n  </mat-card-content>\n\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/salesPersonIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\"> {{ allResolveData.total_sales_person }} </h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #TotalSalesPerson=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of Sales Persons registered under the Admin, Distributor, and Diagnostic Admin.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"TotalSalesPerson.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of<br> Sales Person</p>\n        <button mat-flat-button [routerLink]=\"['/admin/sales-person-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/appointmentsPendingIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\"> {{ allResolveData.total_appointments_pending }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #AppointmentsPending=\"matTooltip\"\n              matTooltip=\"The data listed for the number of patient appointments pending\" matTooltipPosition=\"above\"\n              aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"AppointmentsPending.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Appointments<br> Pending</p>\n        <button mat-flat-button [routerLink]=\"['/admin/booked-appoinments/pending']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/appointmentsCompletedIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\"> {{ allResolveData.total_appointments_completed }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #AppointmentsCompleted=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of patient appointments completed by the doctor.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"AppointmentsCompleted.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Appointments<br> Completed</p>\n        <button mat-flat-button [routerLink]=\"['/admin/booked-appoinments/completed']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n  <mat-card-content class=\"admin_superbillsection superbillerContainer\">\n    <h1>Physician Report and Super Bills</h1>\n\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Number of <br>\n            Reports Added\n          </p>\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.total_reports }} </h2>\n\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #ReportsAdded=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of reports added by the biller.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"ReportsAdded.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <!-- <button mat-flat-button (click)=\"viewAllButton('Total Number of Reports Added')\">view all</button> -->\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Number of <br>\n            Report Processed\n          </p>\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.total_report_processed }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #reportsProcessed=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of reports processed by the system.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"reportsProcessed.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Total Number of Report Processed')\">view all</button>\n        </span>\n\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Number of <br>\n            Report Signed\n          </p>\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.total_sign_reports }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #reportSigned=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of reports signed by the doctors.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"reportSigned.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Total Number of Report Signed')\">view all</button>\n        </span>\n\n\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Sent to <br>\n            Biller\n          </p>\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.total_send_to_supar_biller_reports }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #sentBiller=\"matTooltip\"\n                matTooltip=\"The data listed for the total no. of reports sent to the billers.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"sentBiller.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Sent to Biller')\">view all</button>\n        </span>\n\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Downloaded </p>\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.total_reports_download }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #reportsDownloaded=\"matTooltip\"\n                matTooltip=\" The data listed for the no. of reports that are downloaded.\" matTooltipPosition=\"above\"\n                aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"reportsDownloaded.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Reports Downloaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Pending Sign </p>\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.total_not_sign_reports }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #reportsPending=\"matTooltip\"\n                matTooltip=\"The data listed for the total no. of reports that are yet to be signed by the doctors.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"reportsPending.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Reports Pending Sing')\">view all</button>\n        </span>\n\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Job Tickets Created </p>\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.total_job_tickets }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #JobTicketsCreated=\"matTooltip\"\n                matTooltip=\"The data listed for the total no. of reports that have job tickets added.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"JobTicketsCreated.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Job Tickets')\">view all</button>\n        </span>\n\n      </mat-card-content>\n    </mat-card-content>\n  </mat-card-content>\n\n  <app-doctor-signup-share [shareDetails]=\"shareDetails\"></app-doctor-signup-share>\n\n\n  <!-- 1st List Hide on load, Click on View All button then view this -->\n  <!-- View All button listing start here -->\n  <mat-card-content *ngIf=\"htmlText.viewAllButtonTable.headerText != ''\" class=\"table_wrapper admin_dashboard\">\n    <mat-card-content class=\"headr_tagh\">\n      <span class=\"counter_with_tool\">\n        <h1>{{ htmlText.viewAllButtonTable.headerText }}</h1>\n        <span class=\"tolTip\">\n          <a mat-raised-button #processedReports=\"matTooltip\"\n            matTooltip=\"All the Reports listed here are reviewed by Admin.\" matTooltipPosition=\"above\"\n            aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n          </a>\n          <a mat-button (click)=\"processedReports.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n            <span class=\"material-icons\"> help_outline </span>\n          </a>\n        </span>\n      </span>\n    </mat-card-content>\n    <app-view-all-button-list [viewFlag]=\"htmlText.viewAllButtonTable.headerText\"></app-view-all-button-list>\n  </mat-card-content>\n  <!-- View All button listing end here -->\n\n\n  <!-- 2nd List -->\n  <!-- Patient Reports Pending Actions listing start here -->\n  <mat-card-content class=\"table_wrapper admin_dashboard\">\n    <mat-card-content class=\"headr_tagh\">\n      <span class=\"counter_with_tool\">\n        <h1>Patient Reports Pending Actions</h1>\n        <span class=\"tolTip\">\n          <a mat-raised-button #pendingActions=\"matTooltip\"\n            matTooltip=\" All the Reports listed here are processed by System but awaiting on Admin actions.\"\n            matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n          </a>\n          <a mat-button (click)=\"pendingActions.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n            <span class=\"material-icons\"> help_outline </span>\n          </a>\n        </span>\n      </span>\n    </mat-card-content>\n\n    <!-- table -->\n    <lib-listing class=\"DataTable\" *ngIf=\"allBillerData.length>0\" [datasource]=\"allBillerData\" [skip]=\"allUserData_skip\"\n      [modify_header_array]=\"allUserData_modify_header\" [detail_skip_array]=\"previewModal_detail_skip\" [apiurl]=\"apiUrl\"\n      [sourcedata]=\"tableName\" [editroute]=\"editUrl\" [jwttoken]=\"jwtToken\" [statusarr]=\"status\"\n      [updateendpoint]=\"UpdateEndpoint\" [deleteendpoint]=\"deleteEndpoint\" [date_search_endpoint]=\"SearchingEndpoint\"\n      [date_search_source]=\"SearchingSourceName\" [search_settings]=\"search_settings\" [sortdata]=\"sortdata\"\n      [datacollection]=\"datacollection\" [libdata]=\"libdata\" [date_search_source_count]=\"billerData_count\"\n      [limitcond]=\"limitcond\">\n    </lib-listing>\n\n  </mat-card-content>\n  <!-- Patient Reports Pending Actions listing end here -->\n  \n  <!-- 3rd List -->\n  <!-- Admin Processed Reports start here -->\n  <mat-card-content class=\"table_wrapper admin_dashboard\">\n    <mat-card-content class=\"headr_tagh\">\n      <span class=\"counter_with_tool\">\n        <h1>Admin Processed Reports</h1>\n        <span class=\"tolTip\">\n          <a mat-raised-button #processedReports=\"matTooltip\"\n            matTooltip=\"All the Reports listed here are reviewed by Admin.\" matTooltipPosition=\"above\"\n            aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n          </a>\n          <a mat-button (click)=\"processedReports.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n            <span class=\"material-icons\"> help_outline </span>\n          </a>\n        </span>\n      </span>\n    </mat-card-content>\n    <app-approved-patient-reports></app-approved-patient-reports>\n  </mat-card-content>\n  <!-- Admin Processed Reports end here -->\n\n  <!-- 4th List -->\n  <!-- Patient Reports with Job Tickets start here -->\n  <mat-card-content id=\"jobTickets\" class=\"table_wrapper admin_dashboard\">\n    <mat-card-content class=\"headr_tagh\">\n      <span class=\"counter_with_tool\">\n        <h1>Patient Reports with Job Tickets</h1>\n        <span class=\"tolTip\">\n          <a mat-raised-button #JobTickets=\"matTooltip\"\n            matTooltip=\"All the Reports listed here are on Hold for further clarification from Doctor through job tickets.\"\n            matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n          </a>\n          <a mat-button (click)=\"JobTickets.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n            <span class=\"material-icons\"> help_outline </span>\n          </a>\n        </span>\n      </span>\n    </mat-card-content>\n\n    <app-job-ticket-patient-reports></app-job-ticket-patient-reports>\n\n  </mat-card-content>\n  <!-- Patient Reports with Job Tickets end here -->\n\n</mat-card>\n\n<app-admin-footer></app-admin-footer>";
+    __webpack_exports__["default"] = "<app-admin-header></app-admin-header>\n\n<mat-card class=\"admin_wrapper\">\n\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/majorDC_icon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\"> {{ allResolveData.total_major_doctor }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #major_doctor=\"matTooltip\"\n              matTooltip=\"The total number of independent doctors registered under the Admin\" matTooltipPosition=\"above\"\n              aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"major_doctor.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br> Major Doctors</p>\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.total_biller }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #total_biller=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of billers registered under Admin, Distributor, Doctor’s Group Admin, and Diagnostic Admin.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"total_biller.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of<br> Billers</p>\n        <button mat-flat-button [routerLink]=\"['/admin/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/techIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.total_tech }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #TotalTechsS=\"matTooltip\"\n              matTooltip=\" The data listed for the total number of registered techs under Admin, Distributor, Doctor’s Group Admin, and Diagnostic Admin. \"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"TotalTechsS.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Techs</p>\n        <button mat-flat-button [routerLink]=\"['/admin/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/distributorIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.total_distributor }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #TotalDistributor=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of doctor’s offices registered under Admin, Distributor, Doctor’s Group Admin, and Diagnostic Admin.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"TotalDistributor.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br> Distributor</p>\n        <button mat-button [routerLink]=\"['/admin/distributors-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/groupadminIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.total_doctors_group_admin }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #DoctorsGroupAdmin=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of Doctor’s Group Admin added by the Admin.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"DoctorsGroupAdmin.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of<br> Doctors Group Admin</p>\n        <button mat-flat-button [routerLink]=\"['/admin/doctor-management/group']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerAdminIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\"> {{ allResolveData.total_biller_admin }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #BillerAdmin=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of billers added\" matTooltipPosition=\"above\"\n              aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"BillerAdmin.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Biller Admin</p>\n        <button mat-flat-button [routerLink]=\"['/admin/adminbiller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n  <mat-card-content class=\"content_wrapper\">\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/doctorOfficeIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.total_doctor_office }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #TotalDoctorOffice=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of Doctor’s Office added by the Admin.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"TotalDoctorOffice.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Doctor's Office</p>\n        <button mat-button [routerLink]=\"['/admin/doctor-office-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/diagnosticAdminIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\"> {{ allResolveData.total_diagnostic_admin }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #DiagnosticAdmin=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of Diagnostic Admin added by the Admin.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"DiagnosticAdmin.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Diagnostic Admin</p>\n        <button mat-button [routerLink]=\"['/admin/diagnostic-admin-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/totalDoctorIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\"> {{ allResolveData.total_parent_doctor }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #TotalNoDoctors=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of doctors registered under the Admin, Distributor, Doctor’s Group Admin, and Diagnostic Admin.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"TotalNoDoctors.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Doctors</p>\n        <button mat-button [routerLink]=\"['/admin/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n  </mat-card-content>\n\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/salesPersonIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\"> {{ allResolveData.total_sales_person }} </h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #TotalSalesPerson=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of Sales Persons registered under the Admin, Distributor, and Diagnostic Admin.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"TotalSalesPerson.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of<br> Sales Person</p>\n        <button mat-flat-button [routerLink]=\"['/admin/sales-person-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/appointmentsPendingIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\"> {{ allResolveData.total_appointments_pending }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #AppointmentsPending=\"matTooltip\"\n              matTooltip=\"The data listed for the number of patient appointments pending\" matTooltipPosition=\"above\"\n              aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"AppointmentsPending.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Appointments<br> Pending</p>\n        <button mat-flat-button [routerLink]=\"['/admin/booked-appoinments/pending']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/appointmentsCompletedIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\"> {{ allResolveData.total_appointments_completed }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #AppointmentsCompleted=\"matTooltip\"\n              matTooltip=\"The data listed for the total number of patient appointments completed by the doctor.\"\n              matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"AppointmentsCompleted.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Appointments<br> Completed</p>\n        <button mat-flat-button [routerLink]=\"['/admin/booked-appoinments/completed']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n  <mat-card-content class=\"admin_superbillsection superbillerContainer\">\n    <h1>Physician Report and Super Bills</h1>\n\n    <mat-card-content class=\"biller_wrapper\">\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Number of <br>\n            Reports Added\n          </p>\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.total_reports }} </h2>\n\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #ReportsAdded=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of reports added by the biller.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"ReportsAdded.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <!-- <button mat-flat-button (click)=\"viewAllButton('Total Number of Reports Added')\">view all</button> -->\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Number of <br>\n            Report Processed\n          </p>\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.total_report_processed }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #reportsProcessed=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of reports processed by the system.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"reportsProcessed.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Total Number of Report Processed')\">view all</button>\n        </span>\n\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Number of <br>\n            Report Signed\n          </p>\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.total_sign_reports }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #reportSigned=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of reports signed by the doctors.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"reportSigned.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Total Number of Report Signed')\">view all</button>\n        </span>\n\n\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Sent to <br>\n            Biller\n          </p>\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.total_send_to_supar_biller_reports }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #sentBiller=\"matTooltip\"\n                matTooltip=\"The data listed for the total no. of reports sent to the billers.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"sentBiller.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Sent to Biller')\">view all</button>\n        </span>\n\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Downloaded </p>\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.total_reports_download }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #reportsDownloaded=\"matTooltip\"\n                matTooltip=\" The data listed for the no. of reports that are downloaded.\" matTooltipPosition=\"above\"\n                aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"reportsDownloaded.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Reports Downloaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Pending Sign </p>\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.total_not_sign_reports }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #reportsPending=\"matTooltip\"\n                matTooltip=\"The data listed for the total no. of reports that are yet to be signed by the doctors.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"reportsPending.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Reports Pending Sing')\">view all</button>\n        </span>\n\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Job Tickets Created </p>\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.total_job_tickets }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #JobTicketsCreated=\"matTooltip\"\n                matTooltip=\"The data listed for the total no. of reports that have job tickets added.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"JobTicketsCreated.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Job Tickets')\">view all</button>\n        </span>\n\n      </mat-card-content>\n    </mat-card-content>\n  </mat-card-content>\n\n  <app-doctor-signup-share [shareDetails]=\"shareDetails\"></app-doctor-signup-share>\n\n\n  <!-- 1st List Hide on load, Click on View All button then view this -->\n  <!-- View All button listing start here -->\n  <mat-card-content *ngIf=\"htmlText.viewAllButtonTable.headerText != ''\" class=\"table_wrapper admin_dashboard\">\n    <mat-card-content class=\"headr_tagh\">\n      <span class=\"counter_with_tool\">\n        <h1>{{ htmlText.viewAllButtonTable.headerText }}</h1>\n        <span class=\"tolTip\">\n          <a mat-raised-button #processedReports=\"matTooltip\"\n            matTooltip=\"All the Reports listed here are reviewed by Admin.\" matTooltipPosition=\"above\"\n            aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n          </a>\n          <a mat-button (click)=\"processedReports.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n            <span class=\"material-icons\"> help_outline </span>\n          </a>\n        </span>\n      </span>\n    </mat-card-content>\n    <app-view-all-button-list [viewFlag]=\"htmlText.viewAllButtonTable.headerText\"></app-view-all-button-list>\n  </mat-card-content>\n  <!-- View All button listing end here -->\n\n\n  <!-- 2nd List -->\n  <!-- Patient Reports Pending Actions listing start here -->\n  <mat-card-content class=\"table_wrapper admin_dashboard\">\n    <mat-card-content class=\"headr_tagh\">\n      <span class=\"counter_with_tool\">\n        <h1>Patient Reports Pending Actions</h1>\n        <span class=\"tolTip\">\n          <a mat-raised-button #pendingActions=\"matTooltip\"\n            matTooltip=\" All the Reports listed here are processed by System but awaiting on Admin actions.\"\n            matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n          </a>\n          <a mat-button (click)=\"pendingActions.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n            <span class=\"material-icons\"> help_outline </span>\n          </a>\n        </span>\n      </span>\n    </mat-card-content>\n\n    <!-- table -->\n    <lib-listing class=\"DataTable\" *ngIf=\"allBillerData.length>0\" (onLiblistingChange)=\"listenLiblistingChange($event)\" [datasource]=\"allBillerData\" [skip]=\"allUserData_skip\"\n      [modify_header_array]=\"allUserData_modify_header\" [detail_skip_array]=\"previewModal_detail_skip\" [apiurl]=\"apiUrl\"\n      [sourcedata]=\"tableName\" [editroute]=\"editUrl\" [jwttoken]=\"jwtToken\" [statusarr]=\"status\"\n      [updateendpoint]=\"UpdateEndpoint\" [deleteendpoint]=\"deleteEndpoint\" [date_search_endpoint]=\"SearchingEndpoint\"\n      [date_search_source]=\"SearchingSourceName\" [search_settings]=\"search_settings\" [sortdata]=\"sortdata\"\n      [datacollection]=\"datacollection\" [libdata]=\"libdata\" [date_search_source_count]=\"billerData_count\"\n      [limitcond]=\"limitcond\">\n    </lib-listing>\n\n  </mat-card-content>\n  <!-- Patient Reports Pending Actions listing end here -->\n  \n  <!-- 3rd List -->\n  <!-- Admin Processed Reports start here -->\n  <mat-card-content class=\"table_wrapper admin_dashboard\">\n    <mat-card-content class=\"headr_tagh\">\n      <span class=\"counter_with_tool\">\n        <h1>Admin Processed Reports</h1>\n        <span class=\"tolTip\">\n          <a mat-raised-button #processedReports=\"matTooltip\"\n            matTooltip=\"All the Reports listed here are reviewed by Admin.\" matTooltipPosition=\"above\"\n            aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n          </a>\n          <a mat-button (click)=\"processedReports.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n            <span class=\"material-icons\"> help_outline </span>\n          </a>\n        </span>\n      </span>\n    </mat-card-content>\n    <app-approved-patient-reports></app-approved-patient-reports>\n  </mat-card-content>\n  <!-- Admin Processed Reports end here -->\n\n  <!-- 4th List -->\n  <!-- Patient Reports with Job Tickets start here -->\n  <mat-card-content id=\"jobTickets\" class=\"table_wrapper admin_dashboard\">\n    <mat-card-content class=\"headr_tagh\">\n      <span class=\"counter_with_tool\">\n        <h1>Patient Reports with Job Tickets</h1>\n        <span class=\"tolTip\">\n          <a mat-raised-button #JobTickets=\"matTooltip\"\n            matTooltip=\"All the Reports listed here are on Hold for further clarification from Doctor through job tickets.\"\n            matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n          </a>\n          <a mat-button (click)=\"JobTickets.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n            <span class=\"material-icons\"> help_outline </span>\n          </a>\n        </span>\n      </span>\n    </mat-card-content>\n\n    <app-job-ticket-patient-reports></app-job-ticket-patient-reports>\n\n  </mat-card-content>\n  <!-- Patient Reports with Job Tickets end here -->\n\n</mat-card>\n\n<app-admin-footer></app-admin-footer>";
     /***/
   },
 
@@ -575,7 +575,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n  <mat-card-content class=\"header_wrapper\">\n    <span class=\"logo_wrapper\" [routerLink]=\"[ '/admin/dashboard' ]\">\n      <img src=\"../../../assets/images/logo.png\">\n    </span>\n\n    <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n    <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\" >\n      <mat-nav-list>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/admin/dashboard']\"> Dashboard </a>\n\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"userMenu\"> Users Management\n          <i class=\"material-icons\">keyboard_arrow_down</i>\n        </a>\n        <mat-menu #userMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/admin/doctor-management']\" routerLinkActive=\"active\"> Manage Doctor\n          </button>\n          <button mat-menu-item [routerLink]=\"['/admin/biller-management']\" routerLinkActive=\"active\"> Manage Biller\n          </button>\n          <button mat-menu-item [routerLink]=\"['/admin/tech-management']\" routerLinkActive=\"active\"> Manage Tech\n          </button>\n          <button mat-menu-item [routerLink]=\"['/admin/admin-management']\" routerLinkActive=\"active\"> Manage Admin\n          </button>\n          <button mat-menu-item [routerLink]=\"['/admin/doctor-office-management']\" routerLinkActive=\"active\"> Doctor's\n            Office </button>\n          <button mat-menu-item [routerLink]=\"['/admin/diagnostic-admin-management']\" routerLinkActive=\"active\">\n            Diagnostic Admin </button>\n          <button mat-menu-item [routerLink]=\"['/admin/sales-person-management']\" routerLinkActive=\"active\"> Sales\n            Person </button>\n          <button mat-menu-item [routerLink]=\"['/admin/doctor-management/group']\" routerLinkActive=\"active\"> Doctor's\n            Group </button>\n          <button mat-menu-item [routerLink]=\"['/admin/adminbiller-management']\" routerLinkActive=\"active\">Biller\n            Admin</button>\n          <button mat-menu-item [routerLink]=\"['/admin/distributors-management']\" routerLinkActive=\"active\">Manage\n            Distributor</button>\n        </mat-menu>\n\n\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"insurance\"> Insurance Management\n          <i class=\"material-icons\">keyboard_arrow_down</i>\n        </a>\n        <mat-menu #insurance=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/admin/insurance-management']\" routerLinkActive=\"active\"> Manage\n            Insurance </button>\n          <button mat-menu-item [routerLink]=\"['/admin/insurance-type-management']\" routerLinkActive=\"active\"> Manage\n            Insurance Type </button>\n        </mat-menu>\n\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"reports\"> Reports\n          <i class=\"material-icons\">keyboard_arrow_down</i>\n        </a>\n        <mat-menu #reports=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/admin/sales-person/cpt-reports']\" routerLinkActive=\"active\"> CPT Validated Reports for Rep </button>\n          <button mat-menu-item [routerLink]=\"['/admin/sales-person/doctor-management']\" routerLinkActive=\"active\"> Doctor Joined by Rep </button>\n          <button mat-menu-item [routerLink]=\"['/admin/report-processing']\" routerLinkActive=\"active\"> Reports Processing Time </button>\n        </mat-menu>\n\n\n\n        <a mat-list-item [routerLink]=\"['/admin/booked-appoinments']\" routerLinkActive=\"active\">Appointments</a>\n\n        <a mat-list-item [routerLink]=\"['/admin/patientinformation-management']\" routerLinkActive=\"active\">Patient\n          Information</a>\n        <a mat-list-item [matMenuTriggerFor]=\"FAQManagement\"> FAQ Management <i\n            class=\"material-icons\">keyboard_arrow_down</i></a>\n\n            <a mat-list-item [matMenuTriggerFor]=\"TrainingManagement\"> Training Management <i\n              class=\"material-icons\">keyboard_arrow_down</i></a>\n\n        <a mat-list-item [matMenuTriggerFor]=\"misc\"> Miscellaneous <i class=\"material-icons\">keyboard_arrow_down</i></a>\n\n      </mat-nav-list>\n      <mat-menu #FAQManagement=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/admin/faq-management']\" routerLinkActive=\"active\"> Manage FAQ</button>\n        <button mat-menu-item [routerLink]=\"['/admin/faq']\" routerLinkActive=\"active\"> FAQ</button>\n      </mat-menu>\n\n      <mat-menu #TrainingManagement=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/admin/training/manage-training/list']\" routerLinkActive=\"active\"> Manage Training</button>\n\n        <button mat-menu-item [routerLink]=\"['/admin/training/manage-lesson/list']\" routerLinkActive=\"active\"> Manage Lesson</button>\n      </mat-menu>\n\n      <mat-menu #misc=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/encounter-form-status']\" routerLinkActive=\"active\"> Encounter Form\n          Rules</button>\n        <button mat-menu-item [routerLink]=\"['/admin/cpt-reports']\" routerLinkActive=\"active\"> CPT Validate Reports</button>\n        <button mat-menu-item [routerLink]=\"['/admin/setting-management/5f0461821e1e370009f197c8']\" routerLinkActive=\"active\"> Report Time Setting</button>    \n      </mat-menu>\n    </mat-card-content>\n\n\n    <mat-card-content class=\"profile_section\">\n      <mat-menu #appMenu=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/admin/account-settings']\">\n          <mat-icon>account_circle</mat-icon> Account Settings\n        </button>\n\n        <button mat-menu-item [routerLink]=\"['/admin/account-settings/change-password']\">\n          <mat-icon>vpn_key</mat-icon> Change Password\n        </button>\n\n        <button mat-menu-item (click)=\"logout()\">\n          <mat-icon>power_settings_new</mat-icon> Logout\n        </button>\n      </mat-menu>\n      <span class=\"username\">{{user_details.firstname}} {{user_details.lastname}}</span>\n      <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n        <span class=\"user_profile\">\n          <mat-icon>account_circle</mat-icon>\n          <i class=\"material-icons\">\n            keyboard_arrow_down\n          </i>\n        </span>\n      </button>\n    </mat-card-content>\n  </mat-card-content>\n</mat-toolbar>";
+    __webpack_exports__["default"] = "<mat-toolbar class=\"techdashboard_header\" [ngClass]=\"{'sticky' : isSticky}\">\n  <mat-card-content class=\"header_wrapper\">\n    <span class=\"logo_wrapper\" [routerLink]=\"[ '/admin/dashboard' ]\">\n      <img src=\"../../../assets/images/logo.png\">\n    </span>\n\n    <button mat-flat-button (click)=\"menuFunction()\" class=\"togle_menu\"><i class=\"material-icons\"> menu </i></button>\n    <mat-card-content class=\"quotation\" [ngClass]=\"status ? 'success' : 'danger'\" >\n      <mat-nav-list>\n        <a mat-list-item routerLinkActive=\"active\" [routerLink]=\"['/admin/dashboard']\"> Dashboard </a>\n\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"userMenu\"> Users Management\n          <i class=\"material-icons\">keyboard_arrow_down</i>\n        </a>\n        <mat-menu #userMenu=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/admin/doctor-management']\" routerLinkActive=\"active\"> Manage Doctor\n          </button>\n          <button mat-menu-item [routerLink]=\"['/admin/biller-management']\" routerLinkActive=\"active\"> Manage Biller\n          </button>\n          <button mat-menu-item [routerLink]=\"['/admin/tech-management']\" routerLinkActive=\"active\"> Manage Tech\n          </button>\n          <button mat-menu-item [routerLink]=\"['/admin/admin-management']\" routerLinkActive=\"active\"> Manage Admin\n          </button>\n          <button mat-menu-item [routerLink]=\"['/admin/doctor-office-management']\" routerLinkActive=\"active\"> Doctor's\n            Office </button>\n          <button mat-menu-item [routerLink]=\"['/admin/diagnostic-admin-management']\" routerLinkActive=\"active\">\n            Diagnostic Admin </button>\n          <button mat-menu-item [routerLink]=\"['/admin/sales-person-management']\" routerLinkActive=\"active\"> Sales\n            Person </button>\n          <button mat-menu-item [routerLink]=\"['/admin/doctor-management/group']\" routerLinkActive=\"active\"> Doctor's\n            Group </button>\n          <button mat-menu-item [routerLink]=\"['/admin/adminbiller-management']\" routerLinkActive=\"active\">Biller\n            Admin</button>\n          <button mat-menu-item [routerLink]=\"['/admin/distributors-management']\" routerLinkActive=\"active\">Manage\n            Distributor</button>\n        </mat-menu>\n\n\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"insurance\"> Insurance Management\n          <i class=\"material-icons\">keyboard_arrow_down</i>\n        </a>\n        <mat-menu #insurance=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/admin/insurance-management']\" routerLinkActive=\"active\"> Manage\n            Insurance </button>\n          <button mat-menu-item [routerLink]=\"['/admin/insurance-type-management']\" routerLinkActive=\"active\"> Manage\n            Insurance Type </button>\n        </mat-menu>\n\n        <a mat-list-item routerLinkActive=\"active\" [matMenuTriggerFor]=\"reports\"> Reports\n          <i class=\"material-icons\">keyboard_arrow_down</i>\n        </a>\n        <mat-menu #reports=\"matMenu\">\n          <button mat-menu-item [routerLink]=\"['/admin/sales-person/cpt-reports']\" routerLinkActive=\"active\"> CPT Validated Reports for Rep </button>\n          <button mat-menu-item [routerLink]=\"['/admin/sales-person/doctor-management']\" routerLinkActive=\"active\"> Doctor Joined by Rep </button>\n          <button mat-menu-item [routerLink]=\"['/admin/report-processing']\" routerLinkActive=\"active\"> Reports Processing Time </button>\n        </mat-menu>\n\n\n\n        <!-- <a mat-list-item [routerLink]=\"['/admin/booked-appoinments']\" routerLinkActive=\"active\">Appointments</a>\n\n        <a mat-list-item [routerLink]=\"['/admin/patientinformation-management']\" routerLinkActive=\"active\">Patient\n          Information</a> -->\n        <a mat-list-item [matMenuTriggerFor]=\"FAQManagement\"> FAQ Management <i\n            class=\"material-icons\">keyboard_arrow_down</i></a>\n\n            <a mat-list-item [matMenuTriggerFor]=\"TrainingManagement\"> Training Management <i\n              class=\"material-icons\">keyboard_arrow_down</i></a>\n\n        <a mat-list-item [matMenuTriggerFor]=\"misc\"> Miscellaneous <i class=\"material-icons\">keyboard_arrow_down</i></a>\n\n      </mat-nav-list>\n      <mat-menu #FAQManagement=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/admin/faq-management']\" routerLinkActive=\"active\"> Manage FAQ</button>\n        <button mat-menu-item [routerLink]=\"['/admin/faq']\" routerLinkActive=\"active\"> FAQ</button>\n      </mat-menu>\n\n      <mat-menu #TrainingManagement=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/admin/training/manage-training/list']\" routerLinkActive=\"active\"> Manage Training</button>\n\n        <button mat-menu-item [routerLink]=\"['/admin/training/manage-lesson/list']\" routerLinkActive=\"active\"> Manage Lesson</button>\n      </mat-menu>\n      <mat-menu #misc=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/admin/booked-appoinments']\" routerLinkActive=\"active\">Appointments</button>\n\n          <button mat-menu-item [routerLink]=\"['/admin/patientinformation-management']\" routerLinkActive=\"active\">Patient\n          Information</button>\n\n        <button mat-menu-item [routerLink]=\"['/encounter-form-status']\" routerLinkActive=\"active\"> Encounter Form\n          Rules</button>\n        <button mat-menu-item [routerLink]=\"['/admin/cpt-reports']\" routerLinkActive=\"active\"> CPT Validate Reports</button>\n        <button mat-menu-item [routerLink]=\"['/admin/setting-management/5f0461821e1e370009f197c8']\" routerLinkActive=\"active\"> Report Time Setting</button>    \n      </mat-menu>\n    </mat-card-content>\n\n\n    <mat-card-content class=\"profile_section\">\n      <mat-menu #appMenu=\"matMenu\">\n        <button mat-menu-item [routerLink]=\"['/admin/account-settings']\">\n          <mat-icon>account_circle</mat-icon> Account Settings\n        </button>\n\n        <button mat-menu-item [routerLink]=\"['/admin/account-settings/change-password']\">\n          <mat-icon>vpn_key</mat-icon> Change Password\n        </button>\n\n        <button mat-menu-item (click)=\"logout()\">\n          <mat-icon>power_settings_new</mat-icon> Logout\n        </button>\n      </mat-menu>\n      <span class=\"username\">{{user_details.firstname}} {{user_details.lastname}}</span>\n      <button mat-icon-button [matMenuTriggerFor]=\"appMenu\">\n        <span class=\"user_profile\">\n          <mat-icon>account_circle</mat-icon>\n          <i class=\"material-icons\">\n            keyboard_arrow_down\n          </i>\n        </span>\n      </button>\n    </mat-card-content>\n  </mat-card-content>\n</mat-toolbar>";
     /***/
   },
 
@@ -655,7 +655,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\"></app-admin-header>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Distributor Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'distributors'\"></app-doctor-group-header>\n\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n\n\n  <span class=\"add_header\">\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\"> Dashboard &nbsp;/</a> &nbsp;\n      <a [routerLink]=\"['/admin/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n      {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/biller-management']\">Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'distributors`'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/biller-management']\">Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n  </span>\n  <!-- End header with add button -->\n\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"billerManagementAddEditForm\" [formGroup]=\"billerManagementAddEditForm\" (ngSubmit)=\"BillerManagementAddFormSubmit()\">\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"billerManagementAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['firstname'].touched && !billerManagementAddEditForm.controls['firstname'].valid && billerManagementAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['firstname'].touched && !billerManagementAddEditForm.controls['firstname'].valid && billerManagementAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"billerManagementAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['lastname'].touched && !billerManagementAddEditForm.controls['lastname'].valid && billerManagementAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['lastname'].touched && !billerManagementAddEditForm.controls['lastname'].valid && billerManagementAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"billerManagementAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid && billerManagementAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid && billerManagementAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"billerManagementAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid && billerManagementAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid && billerManagementAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Company Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Company Name </mat-label>\n\n          <input matInput placeholder=\"Company Name\"\n            [formControl]=\"billerManagementAddEditForm.controls['company_name']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'company_name')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['company_name'].touched && !billerManagementAddEditForm.controls['company_name'].valid && billerManagementAddEditForm.controls['company_name'].errors.required\">\n            Company Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['company_name'].touched && !billerManagementAddEditForm.controls['company_name'].valid && billerManagementAddEditForm.controls['company_name'].errors.maxlength\">\n            Company Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Company Name End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"billerManagementAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['address'].touched && !billerManagementAddEditForm.controls['address'].valid && billerManagementAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['address'].touched && !billerManagementAddEditForm.controls['address'].valid && billerManagementAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- parent type Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\" *ngIf = \"htmlText.userData.user_details.user_type == 'admin'\">\n          <mat-label>Parent Type</mat-label>\n\n          <mat-select formControlName=\"parent_type\">\n            <mat-option value=\"admin\">Select Parent Type</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_type;\" value=\"{{ parent.value }}\" (click)=\"getParentData(parent.name)\">{{ parent.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- Parent Type End -->\n\n        <ng-container *ngIf = \"htmlText.userData.user_details.user_type == 'admin'\">\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"(selectionChangeValue == 'DiagnosticAdmin') ||(selectionChangeValue == 'diagnostic_admin')\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.center_name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"(selectionChangeValue == 'DoctorGroup') || (selectionChangeValue == 'doctor_group')\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.groupname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"(selectionChangeValue == 'Distributor') || (selectionChangeValue == 'distributor')\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\" >\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n      </ng-container>\n\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select State</mat-option>\n            <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['state'].touched && !billerManagementAddEditForm.controls['state'].valid && billerManagementAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=\"\">Select City</mat-option>\n            <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['city'].touched && !billerManagementAddEditForm.controls['city'].valid && billerManagementAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"billerManagementAddEditForm.controls['zip']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['zip'].touched && !billerManagementAddEditForm.controls['zip'].valid && billerManagementAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"billerManagementAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!billerManagementAddEditForm.controls['password'].valid && billerManagementAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"billerManagementAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!billerManagementAddEditForm.controls['confirmpassword'].valid && billerManagementAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"billerManagementAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n        <span class=\"submit_form\">\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/biller-management']\">Back </button>\n          </ng-container>\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/diagnostic-admin/biller-management']\">Back </button>\n          </ng-container>\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\"> Reset</button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }}</button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n\n      </form>\n    </mat-card-content>\n\n  </mat-card>\n</mat-card>\n\n\n\n\n<!-- Admin Footer -->\n<app-admin-footer></app-admin-footer>";
+    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\"></app-admin-header>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Distributor Header -->\n<app-distributors-header *ngIf=\"htmlText.userData.user_details.user_type == 'distributors'\"></app-distributors-header>\n\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n\n\n  <span class=\"add_header\">\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\"> Dashboard &nbsp;/</a> &nbsp;\n      <a [routerLink]=\"['/admin/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n      {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/biller-management']\">Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'distributors`'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/biller-management']\">Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor/biller-management']\"> Manage Biller &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n  </span>\n  <!-- End header with add button -->\n\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"billerManagementAddEditForm\" [formGroup]=\"billerManagementAddEditForm\" (ngSubmit)=\"BillerManagementAddFormSubmit()\">\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"billerManagementAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['firstname'].touched && !billerManagementAddEditForm.controls['firstname'].valid && billerManagementAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['firstname'].touched && !billerManagementAddEditForm.controls['firstname'].valid && billerManagementAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"billerManagementAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['lastname'].touched && !billerManagementAddEditForm.controls['lastname'].valid && billerManagementAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['lastname'].touched && !billerManagementAddEditForm.controls['lastname'].valid && billerManagementAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"billerManagementAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid && billerManagementAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['email'].touched && !billerManagementAddEditForm.controls['email'].valid && billerManagementAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"billerManagementAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid && billerManagementAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['phone'].touched && !billerManagementAddEditForm.controls['phone'].valid && billerManagementAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Company Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Company Name </mat-label>\n\n          <input matInput placeholder=\"Company Name\"\n            [formControl]=\"billerManagementAddEditForm.controls['company_name']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'company_name')\">\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['company_name'].touched && !billerManagementAddEditForm.controls['company_name'].valid && billerManagementAddEditForm.controls['company_name'].errors.required\">\n            Company Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"billerManagementAddEditForm.controls['company_name'].touched && !billerManagementAddEditForm.controls['company_name'].valid && billerManagementAddEditForm.controls['company_name'].errors.maxlength\">\n            Company Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Company Name End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"billerManagementAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['address'].touched && !billerManagementAddEditForm.controls['address'].valid && billerManagementAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['address'].touched && !billerManagementAddEditForm.controls['address'].valid && billerManagementAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- parent type Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\" *ngIf = \"htmlText.userData.user_details.user_type == 'admin'\">\n          <mat-label>Parent Type</mat-label>\n\n          <mat-select formControlName=\"parent_type\">\n            <mat-option value=\"admin\">Select Parent Type</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_type;\" value=\"{{ parent.value }}\" (click)=\"getParentData(parent.name)\">{{ parent.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- Parent Type End -->\n\n        <ng-container *ngIf = \"htmlText.userData.user_details.user_type == 'admin'\">\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"(selectionChangeValue == 'DiagnosticAdmin') ||(selectionChangeValue == 'diagnostic_admin')\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.center_name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"(selectionChangeValue == 'DoctorGroup') || (selectionChangeValue == 'doctor_group')\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.groupname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"(selectionChangeValue == 'Distributor') || (selectionChangeValue == 'distributor')\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\" >\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n      </ng-container>\n\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select State</mat-option>\n            <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['state'].touched && !billerManagementAddEditForm.controls['state'].valid && billerManagementAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=\"\">Select City</mat-option>\n            <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['city'].touched && !billerManagementAddEditForm.controls['city'].valid && billerManagementAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"billerManagementAddEditForm.controls['zip']\"\n            (blur)=\"inputUntouch(billerManagementAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"billerManagementAddEditForm.controls['zip'].touched && !billerManagementAddEditForm.controls['zip'].valid && billerManagementAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"billerManagementAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!billerManagementAddEditForm.controls['password'].valid && billerManagementAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"billerManagementAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!billerManagementAddEditForm.controls['confirmpassword'].valid && billerManagementAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"billerManagementAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n        <span class=\"submit_form\">\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/admin/biller-management']\">Back </button>\n          </ng-container>\n          <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'diagnostic_admin'\">\n            <button mat-flat-button type=\"button\" [routerLink]=\"['/diagnostic-admin/biller-management']\">Back </button>\n          </ng-container>\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\"> Reset</button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }}</button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n\n      </form>\n    </mat-card-content>\n\n  </mat-card>\n</mat-card>\n\n\n\n\n<!-- Admin Footer -->\n<app-admin-footer></app-admin-footer>";
     /***/
   },
 
@@ -875,7 +875,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.user_details.user_type == 'admin'\"></app-admin-header>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Distributor Header -->\n<app-doctor-group-header *ngIf=\"htmlText.user_details.user_type == 'distributors'\"></app-doctor-group-header>\n\n\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n  <span class=\"add_header\">\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\"> Dashboard &nbsp;/</a> &nbsp;\n      <a [routerLink]=\"['/admin/doctor-office-management']\"> Manage Doctor's Office &nbsp;/</a> &nbsp;\n      {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/doctor-office-management']\"> Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/doctor-office-management']\">Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'distributors`'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/doctor-office-management']\">Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'doctor'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor/doctor-office-management']\"> Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n  </span>\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"doctorOfficeAddEditForm\" [formGroup]=\"doctorOfficeAddEditForm\" (ngSubmit)=\"doctorOfficeAddEditFormFormSubmit()\">\n\n        <!-- Center Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Center Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"doctorOfficeAddEditForm.controls['center_name']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'center_name')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['center_name'].touched && !doctorOfficeAddEditForm.controls['center_name'].valid && doctorOfficeAddEditForm.controls['center_name'].errors.required\">\n            Center Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['center_name'].touched && !doctorOfficeAddEditForm.controls['center_name'].valid && doctorOfficeAddEditForm.controls['center_name'].errors.maxlength\">\n            Center Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Center Name End -->\n\n        <!-- Tech Details Start -->\n        <!-- <mat-form-field appearance=\"fill\">\n          <mat-label>Select Tech</mat-label>\n          <mat-select formControlName=\"tech_id\" multiple>\n            <mat-option *ngFor=\"let tech of htmlText.techData;\" value=\"{{ tech._id }}\">{{ tech.firstname }} {{tech.lastname}}</mat-option>\n          </mat-select>\n        </mat-form-field> -->\n        <!-- Tech Details name -->\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"doctorOfficeAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['firstname'].touched && !doctorOfficeAddEditForm.controls['firstname'].valid && doctorOfficeAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['firstname'].touched && !doctorOfficeAddEditForm.controls['firstname'].valid && doctorOfficeAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"doctorOfficeAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['lastname'].touched && !doctorOfficeAddEditForm.controls['lastname'].valid && doctorOfficeAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['lastname'].touched && !doctorOfficeAddEditForm.controls['lastname'].valid && doctorOfficeAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"doctorOfficeAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid && doctorOfficeAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid && doctorOfficeAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"doctorOfficeAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid && doctorOfficeAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid && doctorOfficeAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"doctorOfficeAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid && doctorOfficeAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid && doctorOfficeAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- parent type Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\" *ngIf = \"htmlText.user_details.user_type == 'admin'\">\n          <mat-label>Parent Type</mat-label>\n\n          <mat-select formControlName=\"parent_type\">\n            <mat-option value=\"admin\">Select Parent Type</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_type;\" value=\"{{ parent.value }}\" (click)=\"getParentData(parent.name)\">{{ parent.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- Parent Type End -->\n\n          <ng-container *ngIf = \"htmlText.user_details.user_type == 'admin'\">\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"(selectionChangeValue == 'DiagnosticAdmin')|| (selectionChangeValue == 'diagnostic_admin')\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.center_name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"(selectionChangeValue == 'DoctorGroup') || (selectionChangeValue == 'doctor_group')\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.groupname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"(selectionChangeValue == 'Distributor') || (selectionChangeValue == 'distributor')\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\" >\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n        </ng-container>\n\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select State</mat-option>\n            <mat-option *ngFor=\"let state of htmlText.states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['state'].touched && !doctorOfficeAddEditForm.controls['state'].valid && doctorOfficeAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=\"\">Select City</mat-option>\n            <mat-option *ngFor=\"let city of htmlText.cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['city'].touched && !doctorOfficeAddEditForm.controls['city'].valid && doctorOfficeAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"doctorOfficeAddEditForm.controls['zip']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['zip'].touched && !doctorOfficeAddEditForm.controls['zip'].valid && doctorOfficeAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"doctorOfficeAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!doctorOfficeAddEditForm.controls['password'].valid && doctorOfficeAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"doctorOfficeAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!doctorOfficeAddEditForm.controls['confirmpassword'].valid && doctorOfficeAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"doctorOfficeAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n\n        <span class=\"submit_form\">\n          <button mat-flat-button type=\"button\" *ngIf=\"htmlText.user_details.user_type == 'doctor'\" [routerLink]=\"['/doctor/doctor-office-management']\"> Back</button>\n          <button mat-flat-button type=\"button\" *ngIf=\"htmlText.user_details.user_type == 'admin'\" [routerLink]=\"['/admin/doctor-office-management']\"> Back</button>\n\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\">Reset </button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }} </button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n        \n      </form>\n    </mat-card-content>\n  </mat-card>\n</mat-card>\n<app-admin-footer></app-admin-footer>\n";
+    __webpack_exports__["default"] = "<!-- Admin Header -->\n<app-admin-header *ngIf=\"htmlText.user_details.user_type == 'admin'\"></app-admin-header>\n\n<!-- Diagnostic Admin Header -->\n<app-diagnostic-admin-header *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\"></app-diagnostic-admin-header>\n\n<!-- Doctor Header -->\n<app-doctor-header *ngIf=\"htmlText.user_details.user_type == 'doctor'\"></app-doctor-header>\n\n<!-- Doctor Group Header -->\n<app-doctor-group-header *ngIf=\"htmlText.user_details.user_type == 'doctor_group'\"></app-doctor-group-header>\n\n<!-- Distributor Header -->\n<app-distributors-header *ngIf=\"htmlText.user_details.user_type == 'distributors'\"></app-distributors-header>\n\n\n\n\n<mat-card class=\"admin_wrapper\">\n  <!-- header with add button -->\n  <mat-card-content class=\"title_wrapper\">\n    {{ htmlText.header }}\n  </mat-card-content>\n  <span class=\"add_header\">\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/admin/dashboard']\"> Dashboard &nbsp;/</a> &nbsp;\n      <a [routerLink]=\"['/admin/doctor-office-management']\"> Manage Doctor's Office &nbsp;/</a> &nbsp;\n      {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'diagnostic_admin'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/diagnostic-admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/diagnostic-admin/doctor-office-management']\"> Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n\n    <ng-container *ngIf=\"htmlText.userData.user_details.user_type == 'doctor_group'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor-group/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor-group/doctor-office-management']\">Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'distributors`'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/distributors/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/distributors/doctor-office-management']\">Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n\n    <ng-container *ngIf=\"htmlText.user_details.user_type == 'doctor'\">\n      <span class=\"bradcrumb\">\n        <a [routerLink]=\"['/doctor/dashboard']\">Dashboard &nbsp;/</a> &nbsp;\n        <a [routerLink]=\"['/doctor/doctor-office-management']\"> Manage Doctor's Office &nbsp;/</a> &nbsp;\n        {{ htmlText.nav }}\n      </span>\n    </ng-container>\n  </span>\n\n  <mat-card class=\"add_form\">\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"doctorOfficeAddEditForm\" [formGroup]=\"doctorOfficeAddEditForm\" (ngSubmit)=\"doctorOfficeAddEditFormFormSubmit()\">\n\n        <!-- Center Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Center Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"doctorOfficeAddEditForm.controls['center_name']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'center_name')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['center_name'].touched && !doctorOfficeAddEditForm.controls['center_name'].valid && doctorOfficeAddEditForm.controls['center_name'].errors.required\">\n            Center Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['center_name'].touched && !doctorOfficeAddEditForm.controls['center_name'].valid && doctorOfficeAddEditForm.controls['center_name'].errors.maxlength\">\n            Center Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Center Name End -->\n\n        <!-- Tech Details Start -->\n        <!-- <mat-form-field appearance=\"fill\">\n          <mat-label>Select Tech</mat-label>\n          <mat-select formControlName=\"tech_id\" multiple>\n            <mat-option *ngFor=\"let tech of htmlText.techData;\" value=\"{{ tech._id }}\">{{ tech.firstname }} {{tech.lastname}}</mat-option>\n          </mat-select>\n        </mat-form-field> -->\n        <!-- Tech Details name -->\n\n        <!-- First Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>First Name</mat-label>\n\n          <input matInput placeholder=\"First Name\" [formControl]=\"doctorOfficeAddEditForm.controls['firstname']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'firstname')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['firstname'].touched && !doctorOfficeAddEditForm.controls['firstname'].valid && doctorOfficeAddEditForm.controls['firstname'].errors.required\">\n            First Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['firstname'].touched && !doctorOfficeAddEditForm.controls['firstname'].valid && doctorOfficeAddEditForm.controls['firstname'].errors.maxlength\">\n            First Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- First Name End -->\n\n        <!-- Last Name Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Last Name</mat-label>\n\n          <input matInput placeholder=\"Last Name\" [formControl]=\"doctorOfficeAddEditForm.controls['lastname']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'lastname')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['lastname'].touched && !doctorOfficeAddEditForm.controls['lastname'].valid && doctorOfficeAddEditForm.controls['lastname'].errors.required\">\n            Last Name required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['lastname'].touched && !doctorOfficeAddEditForm.controls['lastname'].valid && doctorOfficeAddEditForm.controls['lastname'].errors.maxlength\">\n            Last Name is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Last Name End -->\n\n        <!-- Email Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n\n          <input matInput placeholder=\"Email Address\" [formControl]=\"doctorOfficeAddEditForm.controls['email']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'email')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid && doctorOfficeAddEditForm.controls['email'].errors.required\">\n            Email required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['email'].touched && !doctorOfficeAddEditForm.controls['email'].valid && doctorOfficeAddEditForm.controls['email'].errors.email\">\n            Email is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Email End -->\n\n        <!-- Phone Number Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone Number</mat-label>\n\n          <input matInput placeholder=\"Phone\" [formControl]=\"doctorOfficeAddEditForm.controls['phone']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'phone')\">\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid && doctorOfficeAddEditForm.controls['phone'].errors.required\">\n            Phone Number required.\n          </mat-error>\n\n          <mat-error\n            *ngIf=\"doctorOfficeAddEditForm.controls['phone'].touched && !doctorOfficeAddEditForm.controls['phone'].valid && doctorOfficeAddEditForm.controls['phone'].errors.maxlength\">\n            Phone Number is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Phone Number End -->\n\n        <!-- Address Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n\n          <input matInput placeholder=\"Address\" [formControl]=\"doctorOfficeAddEditForm.controls['address']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'address')\">\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid && doctorOfficeAddEditForm.controls['address'].errors.required\">\n            Address required.\n          </mat-error>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['address'].touched && !doctorOfficeAddEditForm.controls['address'].valid && doctorOfficeAddEditForm.controls['address'].errors.maxlength\">\n            Address is not valid.\n          </mat-error>\n        </mat-form-field>\n        <!-- Address End -->\n\n        <!-- parent type Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\" *ngIf = \"htmlText.user_details.user_type == 'admin'\">\n          <mat-label>Parent Type</mat-label>\n\n          <mat-select formControlName=\"parent_type\">\n            <mat-option value=\"admin\">Select Parent Type</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_type;\" value=\"{{ parent.value }}\" (click)=\"getParentData(parent.name)\">{{ parent.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <!-- Parent Type End -->\n\n          <ng-container *ngIf = \"htmlText.user_details.user_type == 'admin'\">\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"(selectionChangeValue == 'DiagnosticAdmin')|| (selectionChangeValue == 'diagnostic_admin')\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.center_name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"(selectionChangeValue == 'DoctorGroup') || (selectionChangeValue == 'doctor_group')\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\">\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.groupname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n\n\n        <!-- Parent Name Start -->\n        <mat-form-field appearance=\"fill\" *ngIf = \"(selectionChangeValue == 'Distributor') || (selectionChangeValue == 'distributor')\">\n          <mat-label>Select Parent Name</mat-label>\n          <mat-select formControlName=\"parent_id\" >\n            <mat-option [value]=\"\">Select Parent Name</mat-option>\n            <mat-option *ngFor=\"let parent of htmlText.parent_id;\" value=\"{{ parent._id }}\" >{{ parent.distributorname }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <!-- Parent Name name -->\n        </ng-container>\n\n\n        <!-- State Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=\"\">Select State</mat-option>\n            <mat-option *ngFor=\"let state of htmlText.states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['state'].touched && !doctorOfficeAddEditForm.controls['state'].valid && doctorOfficeAddEditForm.controls['state'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- State End -->\n\n        <!-- City Start -->\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n\n          <mat-select formControlName=\"city\">\n            <mat-option value=\"\">Select City</mat-option>\n            <mat-option *ngFor=\"let city of htmlText.cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['city'].touched && !doctorOfficeAddEditForm.controls['city'].valid && doctorOfficeAddEditForm.controls['city'].errors.required\">\n            State required.\n          </mat-error>\n        </mat-form-field>\n        <!-- City End -->\n\n        <!-- Zip Start -->\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"doctorOfficeAddEditForm.controls['zip']\"\n            (blur)=\"inputUntouch(doctorOfficeAddEditForm,'zip')\">\n\n          <mat-error *ngIf=\"doctorOfficeAddEditForm.controls['zip'].touched && !doctorOfficeAddEditForm.controls['zip'].valid && doctorOfficeAddEditForm.controls['zip'].errors.required\">\n            Zip required.\n          </mat-error>\n        </mat-form-field>\n        <!-- Zip Start -->\n\n        <ng-container *ngIf=\"!params_id\">\n          <!-- Password Start -->\n          <ng-container *ngIf=\"!params_id\">\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n\n              <input matInput placeholder=\"Password\" type=\"password\"\n                [formControl]=\"doctorOfficeAddEditForm.controls['password']\">\n\n              <mat-error *ngIf=\"!doctorOfficeAddEditForm.controls['password'].valid && doctorOfficeAddEditForm.controls['password'].touched\">\n                Password required.\n              </mat-error>\n            </mat-form-field>\n\n            <mat-form-field class=\"form-group\" appearance=\"fill\">\n              <input matInput placeholder=\"Confirm Password\" type=\"password\"\n                [formControl]=\"doctorOfficeAddEditForm.controls['confirmpassword']\">\n\n              <mat-error *ngIf=\"!doctorOfficeAddEditForm.controls['confirmpassword'].valid && doctorOfficeAddEditForm.controls['confirmpassword'].touched\">\n                Password does not match\n              </mat-error>\n            </mat-form-field>\n          </ng-container>\n          <!-- Password End -->\n        </ng-container>\n\n        <mat-checkbox [formControl]=\"doctorOfficeAddEditForm.controls['status']\" checked>Active</mat-checkbox>\n\n\n        <span class=\"submit_form\">\n          <button mat-flat-button type=\"button\" *ngIf=\"htmlText.user_details.user_type == 'doctor'\" [routerLink]=\"['/doctor/doctor-office-management']\"> Back</button>\n          <button mat-flat-button type=\"button\" *ngIf=\"htmlText.user_details.user_type == 'admin'\" [routerLink]=\"['/admin/doctor-office-management']\"> Back</button>\n\n\n          <button mat-flat-button type=\"reset\" *ngIf=\"params_id == ''\">Reset </button>\n          <button mat-flat-button type=\"submit\"> {{ htmlText.buttonText }} </button>\n          <button mat-flat-button type=\"button\" *ngIf=\"params_id != ''\" (click)=\"openDialog('')\"> Change Password </button>\n        </span>\n        \n      </form>\n    </mat-card-content>\n  </mat-card>\n</mat-card>\n<app-admin-footer></app-admin-footer>\n";
     /***/
   },
 
@@ -1815,7 +1815,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Header Start -->\n<app-admin-header *ngIf=\"headerFlag == 'admin'\"></app-admin-header>\n<app-biller-header *ngIf=\"headerFlag == 'biller'\"></app-biller-header>\n<app-tech-header *ngIf=\"headerFlag == 'tech'\"></app-tech-header>\n<app-doctor-header *ngIf=\"headerFlag == 'doctor'\"></app-doctor-header>\n<app-doctor-office-header *ngIf=\"headerFlag == 'doctor-office'\"></app-doctor-office-header>\n\n\n<!-- Header End -->\n<mat-card class=\"admin_wrapper\">\n  <mat-progress-bar *ngIf=\"loader\" mode=\"indeterminate\"></mat-progress-bar>\n\n  <mat-card-content class=\"title_wrapper\">\n    Account Setting\n  </mat-card-content>\n\n\n  <span class=\"add_header\" *ngIf=\"cookiesData.type == 'tech'\">\n    <span class=\"bradcrumb\"><a [routerLink]=\"['/tech/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>\n  </span>\n  <span class=\"add_header\" *ngIf=\"cookiesData.type == 'admin'\">\n    <span class=\"bradcrumb\"><a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>\n  </span>\n  <span class=\"add_header\" *ngIf=\"cookiesData.type == 'biller'\">\n    <span class=\"bradcrumb\"><a [routerLink]=\"['/biller/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>\n  </span>\n  <span class=\"add_header\" *ngIf=\"cookiesData.type == 'doctor'\">\n    <span class=\"bradcrumb\"><a [routerLink]=\"['/biller/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>\n  </span>\n  <!-- End header with add button -->\n\n  <mat-card class=\"add_form\">\n    <h2 class=\"t_head\">Account Information</h2>\n    <mat-card-content class=\"form_wrapper\">\n      <form class=\"example-form\" autocomplete=\"off\" name=\"AccountSettingsForm\" [formGroup]=\"AccountSettingsForm\"\n        (ngSubmit)=\"AccountSettingsFormSubmit()\">\n\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Enter First Name</mat-label>\n          <input matInput placeholder=\"First Name\" [formControl]=\"AccountSettingsForm.controls['firstname']\"\n            (blur)=\"inputUntouch(AccountSettingsForm,'firstname')\">\n          <mat-error *ngIf=\"AccountSettingsForm.controls['firstname'].touched && !AccountSettingsForm.controls['firstname'].valid\n           && AccountSettingsForm.controls['firstname'].errors.required\">\n            First Name field can not be blank</mat-error>\n        </mat-form-field>\n\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Enter Last Name</mat-label>\n          <input matInput placeholder=\"Last Name\" [formControl]=\"AccountSettingsForm.controls['lastname']\"\n            (blur)=\"inputUntouch(AccountSettingsForm,'lastname')\">\n          <mat-error *ngIf=\"AccountSettingsForm.controls['lastname'].touched && !AccountSettingsForm.controls['lastname'].valid\n           && AccountSettingsForm.controls['lastname'].errors.required\">\n            Last Name field can not be blank</mat-error>\n        </mat-form-field>\n\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n          <input matInput placeholder=\"Email Address\" [disabled]=\"true\" value=\"{{ cookiesData.email }}\" />\n        </mat-form-field>\n\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone </mat-label>\n          <input type=\"number\" matInput placeholder=\"Phone\" [formControl]=\"AccountSettingsForm.controls['phoneno']\"\n            (blur)=\"inputUntouch(AccountSettingsForm,'phoneno')\">\n          <mat-error *ngIf=\"AccountSettingsForm.controls['phoneno'].touched && !AccountSettingsForm.controls['phoneno'].valid\n            && AccountSettingsForm.controls['phoneno'].errors.required\">\n            Phone Number field can not be blank</mat-error>\n        </mat-form-field>\n\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Date</mat-label>\n          <input [value]=\"date.value\" matInput [matDatepicker]=\"myPicker\" placeholder=\"date\">\n          <mat-datepicker-toggle matSuffix [for]=\"myPicker\" disabled></mat-datepicker-toggle>\n          <mat-datepicker #myPicker></mat-datepicker>\n        </mat-form-field>\n\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"AccountSettingsForm.controls['zip']\"\n            (blur)=\"inputUntouch(AccountSettingsForm,'zip')\">\n          <mat-error *ngIf=\"AccountSettingsForm.controls['zip'].touched && !AccountSettingsForm.controls['zip'].valid\n          && AccountSettingsForm.controls['zip'].errors.required\">\n            Zip field can not be blank. </mat-error>\n        </mat-form-field>\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n          <input matInput placeholder=\"Address\" [formControl]=\"AccountSettingsForm.controls['address']\"\n            (blur)=\"inputUntouch(AccountSettingsForm,'address')\" />\n          <mat-error *ngIf=\"AccountSettingsForm.controls['address'].touched && !AccountSettingsForm.controls['address'].valid\n            && AccountSettingsForm.controls['address'].errors.required\">\n            Address field can not be blank</mat-error>\n        </mat-form-field>\n\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=0>Select a category</mat-option>\n            <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n          <mat-select formControlName=\"city\">\n            <mat-option value=0>Select a category</mat-option>\n            <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <span class=\"submit_form\">\n          <button mat-flat-button type=\"button\" (click)=\"CancelRedirectToDashboard()\"> Cancel </button>\n          <button mat-flat-button type=\"submit\" [disabled]=\"!AccountSettingsForm.valid\"> Update </button>\n        </span>\n      </form>\n    </mat-card-content>\n  </mat-card>\n</mat-card>\n\n<app-admin-footer></app-admin-footer>";
+    __webpack_exports__["default"] = "<!-- Header Start -->\n<app-admin-header *ngIf=\"headerFlag == 'admin'\"></app-admin-header>\n<app-biller-header *ngIf=\"headerFlag == 'biller'\"></app-biller-header>\n<app-tech-header *ngIf=\"headerFlag == 'tech'\"></app-tech-header>\n<app-doctor-header *ngIf=\"headerFlag == 'doctor'\"></app-doctor-header>\n<app-doctor-office-header *ngIf=\"headerFlag == 'doctor-office'\"></app-doctor-office-header>\n\n\n<!-- Header End -->\n<mat-card class=\"admin_wrapper\">\n  <mat-progress-bar *ngIf=\"loader\" mode=\"indeterminate\"></mat-progress-bar>\n\n  <mat-card-content class=\"title_wrapper\">Account Setting</mat-card-content>\n\n  <span class=\"add_header\" *ngIf=\"cookiesData.type == 'tech'\">\n    <span class=\"bradcrumb\"><a [routerLink]=\"['/tech/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>\n  </span>\n\n  <span class=\"add_header\" *ngIf=\"cookiesData.type == 'admin'\">\n    <span class=\"bradcrumb\"><a [routerLink]=\"['/admin/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>\n  </span>\n\n  <span class=\"add_header\" *ngIf=\"cookiesData.type == 'biller'\">\n    <span class=\"bradcrumb\"><a [routerLink]=\"['/biller/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>\n  </span>\n\n  <span class=\"add_header\" *ngIf=\"cookiesData.type == 'doctor'\">\n    <span class=\"bradcrumb\"><a [routerLink]=\"['/biller/dashboard']\">Dashboard &nbsp;/</a> &nbsp; Account Setting</span>\n  </span>\n  <!-- End header with add button -->\n\n  <mat-card class=\"add_form\">\n    <h2 class=\"t_head\">Account Information</h2>\n    <mat-card-content class=\"form_wrapper\">\n\n      <form class=\"example-form\" autocomplete=\"off\" name=\"AccountSettingsForm\" [formGroup]=\"AccountSettingsForm\" (ngSubmit)=\"AccountSettingsFormSubmit()\">\n\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Enter First Name</mat-label>\n          <input matInput placeholder=\"First Name\" [formControl]=\"AccountSettingsForm.controls['firstname']\" (blur)=\"inputUntouch(AccountSettingsForm,'firstname')\">\n          <mat-error *ngIf=\"AccountSettingsForm.controls['firstname'].touched && !AccountSettingsForm.controls['firstname'].valid && AccountSettingsForm.controls['firstname'].errors.required\">First Name field can not be blank</mat-error>\n        </mat-form-field>\n\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Enter Last Name</mat-label>\n          <input matInput placeholder=\"Last Name\" [formControl]=\"AccountSettingsForm.controls['lastname']\" (blur)=\"inputUntouch(AccountSettingsForm,'lastname')\">\n          <mat-error *ngIf=\"AccountSettingsForm.controls['lastname'].touched && !AccountSettingsForm.controls['lastname'].valid && AccountSettingsForm.controls['lastname'].errors.required\">Last Name field can not be blank</mat-error>\n        </mat-form-field>\n\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Email Address</mat-label>\n          <input matInput placeholder=\"Email Address\" [disabled]=\"true\" value=\"{{ cookiesData.email }}\" />\n        </mat-form-field>\n\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Phone </mat-label>\n          <input type=\"number\" matInput placeholder=\"Phone\" [formControl]=\"AccountSettingsForm.controls['phoneno']\" (blur)=\"inputUntouch(AccountSettingsForm,'phoneno')\">\n          <mat-error *ngIf=\"AccountSettingsForm.controls['phoneno'].touched && !AccountSettingsForm.controls['phoneno'].valid && AccountSettingsForm.controls['phoneno'].errors.required\">Phone Number field can not be blank</mat-error>\n        </mat-form-field>\n\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Date</mat-label>\n          <input [value]=\"date.value\" matInput [matDatepicker]=\"myPicker\" placeholder=\"date\">\n          <mat-datepicker-toggle matSuffix [for]=\"myPicker\" disabled></mat-datepicker-toggle>\n          <mat-datepicker #myPicker></mat-datepicker>\n        </mat-form-field>\n\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Zip</mat-label>\n          <input type=\"number\" matInput placeholder=\"ZIP\" [formControl]=\"AccountSettingsForm.controls['zip']\" (blur)=\"inputUntouch(AccountSettingsForm,'zip')\">\n          <mat-error *ngIf=\"AccountSettingsForm.controls['zip'].touched && !AccountSettingsForm.controls['zip'].valid && AccountSettingsForm.controls['zip'].errors.required\">Zip field can not be blank. </mat-error>\n        </mat-form-field>\n\n        <mat-form-field appearance=\"fill\">\n          <mat-label>Address</mat-label>\n          <input matInput placeholder=\"Address\" [formControl]=\"AccountSettingsForm.controls['address']\" (blur)=\"inputUntouch(AccountSettingsForm,'address')\" />\n          <mat-error *ngIf=\"AccountSettingsForm.controls['address'].touched && !AccountSettingsForm.controls['address'].valid && AccountSettingsForm.controls['address'].errors.required\">Address field can not be blank</mat-error>\n        </mat-form-field>\n\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>State</mat-label>\n          <mat-select formControlName=\"state\" (selectionChange)=\"getCity($event.value);\">\n            <mat-option [value]=0>Select a category</mat-option>\n            <mat-option *ngFor=\"let state of states;\" value=\"{{ state.name }}\">{{ state.name }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <mat-form-field class=\"parent_cat\" appearance=\"fill\">\n          <mat-label>City</mat-label>\n          <mat-select formControlName=\"city\">\n            <mat-option value=0>Select a category</mat-option>\n            <mat-option *ngFor=\"let city of cities;\" value=\"{{ city }}\">{{ city }}</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <span class=\"submit_form\">\n          <button mat-flat-button type=\"button\" (click)=\"CancelRedirectToDashboard()\"> Cancel </button>\n          <button mat-flat-button type=\"submit\" [disabled]=\"!AccountSettingsForm.valid\"> Update </button>\n        </span>\n\n      </form>\n\n    </mat-card-content>\n  </mat-card>\n</mat-card>\n\n<app-admin-footer></app-admin-footer>";
     /***/
   },
 
@@ -2155,7 +2155,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-doctor-group-header></app-doctor-group-header>\n\n<mat-card class=\"admin_wrapper\">\n\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.billerCount }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #NumberofBillers=\"matTooltip\" matTooltip=\"Data listed for the total number of billers registered under the doctor group admin.\" matTooltipPosition=\"above\"\n              aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"NumberofBillers.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of<br> Billers</p>\n        <button mat-button [routerLink]=\"['/doctor-group/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/techIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.techCount }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #NumberofTechs=\"matTooltip\" matTooltip=\"Data listed for the total number of technicians registered under the doctor group admin.\n            \" matTooltipPosition=\"above\"\n              aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"NumberofTechs.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Techs</p>\n        <button mat-flat-button [routerLink]=\"['/doctor-group/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/doctorOfficeIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.doctorOfficeCount }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #NoDoctorsOffice=\"matTooltip\" matTooltip=\"Data listed for the total number of doctor’s office registered under the doctor group admin.\" matTooltipPosition=\"above\"\n              aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"NoDoctorsOffice.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Doctor's Office</p>\n        <button mat-flat-button [routerLink]=\"['/doctor-group/doctor-office-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <!-- Doctor occide related -->\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/totalDoctorIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.doctorsCount }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #TotalDrs=\"matTooltip\" matTooltip=\"Data listed for the total number of doctors registered under the doctor group admin.\" matTooltipPosition=\"above\"\n              aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"TotalDrs.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Doctors</p>\n        <button mat-flat-button [routerLink]=\"['/doctor-group/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <mat-card-content class=\"admin_superbillsection superbillerContainer\">\n    <h1>Physician Report and Super Bills</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Number of <br>\n            Reports Added\n          </p>\n          <span class=\"counter_with_tool\">\n            <h2>{{ allResolveData.reportsAddedCount }}</h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #tnrAdded=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of reports added by the biller\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"tnrAdded.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          \n         \n          <button mat-flat-button (click)=\"viewAllButton('Total Number of Reports Added')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          \n          <p>Total Number of <br>\n            Report Processed\n          </p>\n          \n          <span class=\"counter_with_tool\">\n            <h2>{{ allResolveData.reportProcessedCount }}</h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #tnrProcessed=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of reports processed by the system.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"tnrProcessed.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Total Number of Report Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Number of <br>\n            Report Signed\n          </p>\n\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.reportSignedCount }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #tnrReportsign=\"matTooltip\"\n                matTooltip=\"the data listed for the total number of reports signed by the doctor.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"tnrReportsign.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n\n        \n          <button mat-flat-button (click)=\"viewAllButton('Total Number of Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Sent to <br>\n            Biller\n          </p> \n        \n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.sendTobBillerCount }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #sentTobiller=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of reports signed by the doctor and sent to the biller.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"sentTobiller.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Sent to Biller')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Downloaded </p>\n          \n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.sendTobBillerCount }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #reportsDownloaded=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of reports downloaded by the biller.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"reportsDownloaded.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n\n          <button mat-flat-button (click)=\"viewAllButton('Reports Downloaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Pending Sign </p>\n          \n\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.reportsPendingSingCount }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #reportsPending=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of p[atient reports that are yet to be signed by the doctor.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"reportsPending.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Reports Pending Sing')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n  </mat-card-content>\n\n\n  <!-- Share doctor sign up link -->\n  <app-doctor-signup-share [shareDetails]=\"shareDetails\"></app-doctor-signup-share>\n\n\n  <!-- All Data listing start here(default listing) -->\n  <mat-card-content class=\"table_wrapper\">\n\n    <mat-toolbar class=\"top_header\">\n      <h2> {{ htmlText.headerText }} </h2>\n      <!-- <span class=\"wrappp_R\">\n        <button class=\"add_new tooltip\" mat-button routerLink=\"/admin/patient-management/add\" matTooltip=\"Add Report\"\n          matTooltipPosition=\"above\">\n          <span class=\"tooltiptext\"> Add Report </span>\n          <i class=\"material-icons\">add</i> Add Report Manually\n        </button>\n\n\n        <button class=\"add_new tooltip\" mat-button matTooltipPosition=\"above\" matTooltip=\"ReportRefresh Dashboard\">\n          <span class=\"tooltiptext\"> Refresh Dashboard </span> \n          <i class=\"material-icons\">cached</i>\n        </button>\n      </span> -->\n    </mat-toolbar>\n\n\n    <mat-card-content class=\"tablewrapper admin_dashboard\">\n      <!-- table -->\n      <lib-listing class=\"DataTable\" *ngIf=\"allBillerData.length>0\" [datasource]=\"allBillerData\"\n        [skip]=\"allUserData_skip\" [modify_header_array]=\"allUserData_modify_header\"\n        [detail_skip_array]=\"previewModal_detail_skip\" [apiurl]=\"apiUrl\" [sourcedata]=\"tableName\" [editroute]=\"editUrl\"\n        [jwttoken]=\"jwtToken\" [statusarr]=\"status\" [updateendpoint]=\"UpdateEndpoint\" [deleteendpoint]=\"deleteEndpoint\"\n        [date_search_endpoint]=\"SearchingEndpoint\" [date_search_source]=\"SearchingSourceName\"\n        [search_settings]=\"search_settings\" [sortdata]=\"sortdata\" [datacollection]=\"datacollection\" [libdata]=\"libdata\"\n        [date_search_source_count]=\"billerData_count\" [limitcond]=\"limitcond\">\n      </lib-listing>\n    </mat-card-content>\n\n\n  </mat-card-content>\n\n\n</mat-card>\n\n<app-doctor-group-footer></app-doctor-group-footer>";
+    __webpack_exports__["default"] = "<app-doctor-group-header></app-doctor-group-header>\n\n<mat-card class=\"admin_wrapper\">\n\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/billerIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.billerCount }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #NumberofBillers=\"matTooltip\" matTooltip=\"Data listed for the total number of billers registered under the doctor group admin.\" matTooltipPosition=\"above\"\n              aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"NumberofBillers.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of<br> Billers</p>\n        <button mat-button [routerLink]=\"['/doctor-group/biller-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/techIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.techCount }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #NumberofTechs=\"matTooltip\" matTooltip=\"Data listed for the total number of technicians registered under the doctor group admin.\n            \" matTooltipPosition=\"above\"\n              aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"NumberofTechs.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Techs</p>\n        <button mat-flat-button [routerLink]=\"['/doctor-group/tech-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/doctorOfficeIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.doctorOfficeCount }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #NoDoctorsOffice=\"matTooltip\" matTooltip=\"Data listed for the total number of doctor’s office registered under the doctor group admin.\" matTooltipPosition=\"above\"\n              aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"NoDoctorsOffice.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Doctor's Office</p>\n        <button mat-flat-button [routerLink]=\"['/doctor-group/doctor-office-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <!-- Doctor occide related -->\n  <mat-card-content class=\"content_wrapper\">\n\n    <mat-card-content class=\"itemsection\">\n      <span class=\"icon\">\n        <img src=\"../../../../assets/images/totalDoctorIcon.png\">\n      </span>\n      <span class=\"counteer\">\n        <span class=\"counter_with_tool\">\n          <h4 class=\"dataCount\">{{ allResolveData.doctorsCount }}</h4>\n          <span class=\"tolTip\">\n            <a mat-raised-button #TotalDrs=\"matTooltip\" matTooltip=\"Data listed for the total number of doctors registered under the doctor group admin.\" matTooltipPosition=\"above\"\n              aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n            </a>\n            <a mat-button (click)=\"TotalDrs.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n              <span class=\"material-icons\"> help_outline </span>\n            </a>\n          </span>\n\n        </span>\n      </span>\n      <span class=\"button_wrapper\">\n        <p class=\"doctorNumber\">Total Number of <br>Doctors</p>\n        <button mat-flat-button [routerLink]=\"['/doctor-group/doctor-management']\">View Details</button>\n      </span>\n    </mat-card-content>\n\n  </mat-card-content>\n\n\n  <mat-card-content class=\"admin_superbillsection superbillerContainer\">\n    <h1>Physician Report and Super Bills</h1>\n    <mat-card-content class=\"biller_wrapper\">\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon1.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          <p>Total Number of <br>\n            Reports Added\n          </p>\n          <span class=\"counter_with_tool\">\n            <h2>{{ allResolveData.reportsAddedCount }}</h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #tnrAdded=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of reports added by the biller\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"tnrAdded.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          \n         \n          <button mat-flat-button (click)=\"viewAllButton('Total Number of Reports Added')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon2.png\">\n          </mat-card-content>\n        </span>\n\n        <span class=\"container_wrapper\">\n          \n          <p>Total Number of <br>\n            Report Processed\n          </p>\n          \n          <span class=\"counter_with_tool\">\n            <h2>{{ allResolveData.reportProcessedCount }}</h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #tnrProcessed=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of reports processed by the system.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"tnrProcessed.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Total Number of Report Processed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon3.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p>Total Number of <br>\n            Report Signed\n          </p>\n\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.reportSignedCount }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #tnrReportsign=\"matTooltip\"\n                matTooltip=\"the data listed for the total number of reports signed by the doctor.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"tnrReportsign.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n\n        \n          <button mat-flat-button (click)=\"viewAllButton('Total Number of Report Signed')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Sent to <br>\n            Biller\n          </p> \n        \n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.sendTobBillerCount }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #sentTobiller=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of reports signed by the doctor and sent to the biller.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"sentTobiller.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Sent to Biller')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Downloaded </p>\n          \n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.sendTobBillerCount }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #reportsDownloaded=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of reports downloaded by the biller.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"reportsDownloaded.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n\n          <button mat-flat-button (click)=\"viewAllButton('Reports Downloaded')\">view all</button>\n        </span>\n      </mat-card-content>\n\n      <mat-card-content class=\"super_bill_item\">\n        <span class=\"border_wrapper\">\n          <mat-card-content class=\"circle\">\n            <img src=\"../../../../assets/images/reporticon4.png\">\n          </mat-card-content>\n        </span>\n        <span class=\"container_wrapper\">\n          <p> Reports Pending Sign </p>\n          \n\n          <span class=\"counter_with_tool\">\n            <h2> {{ allResolveData.reportsPendingSingCount }} </h2>\n            <!-- tool tip -->\n            <span class=\"tolTip\">\n              <a mat-raised-button #reportsPending=\"matTooltip\"\n                matTooltip=\"The data listed for the total number of p[atient reports that are yet to be signed by the doctor.\"\n                matTooltipPosition=\"above\" aria-tooltip=\" tooltip area\" matTooltipClass=\"tooltip_bg\">\n              </a>\n              <a mat-button (click)=\"reportsPending.toggle()\" class=\"toggle_btn\" aria-label=\" toggle section\">\n                <span class=\"material-icons\"> help_outline </span>\n              </a>\n            </span>\n          </span>\n          <button mat-flat-button (click)=\"viewAllButton('Reports Pending Sing')\">view all</button>\n        </span>\n      </mat-card-content>\n    </mat-card-content>\n  </mat-card-content>\n\n\n  <!-- Share doctor sign up link -->\n  <app-doctor-signup-share [shareDetails]=\"shareDetails\"></app-doctor-signup-share>\n\n\n  <!-- All Data listing start here(default listing) -->\n  <mat-card-content class=\"table_wrapper\">\n\n    <mat-toolbar class=\"top_header\">\n      <h2> {{ htmlText.headerText }} </h2>\n      <!-- <span class=\"wrappp_R\">\n        <button class=\"add_new tooltip\" mat-button routerLink=\"/admin/patient-management/add\" matTooltip=\"Add Report\"\n          matTooltipPosition=\"above\">\n          <span class=\"tooltiptext\"> Add Report </span>\n          <i class=\"material-icons\">add</i> Add Report Manually\n        </button>\n\n\n        <button class=\"add_new tooltip\" mat-button matTooltipPosition=\"above\" matTooltip=\"ReportRefresh Dashboard\">\n          <span class=\"tooltiptext\"> Refresh Dashboard </span> \n          <i class=\"material-icons\">cached</i>\n        </button>\n      </span> -->\n    </mat-toolbar>\n\n\n    <mat-card-content class=\"tablewrapper admin_dashboard\">\n      <!-- table -->\n      <lib-listing class=\"DataTable\" *ngIf=\"allBillerData.length>0\" [datasource]=\"allBillerData\"\n        [skip]=\"allUserData_skip\" [modify_header_array]=\"allUserData_modify_header\"\n        [detail_skip_array]=\"previewModal_detail_skip\" [apiurl]=\"apiUrl\" [sourcedata]=\"tableName\" [editroute]=\"editUrl\"\n        [jwttoken]=\"jwtToken\" [statusarr]=\"status\" [updateendpoint]=\"UpdateEndpoint\" [deleteendpoint]=\"deleteEndpoint\"\n        [date_search_endpoint]=\"SearchingEndpoint\" [date_search_source]=\"SearchingSourceName\"\n        [search_settings]=\"search_settings\" [sortdata]=\"sortdata\" [datacollection]=\"datacollection\" [libdata]=\"libdata\"\n        [date_search_source_count]=\"billerData_count\" [limitcond]=\"limitcond\">\n      </lib-listing>\n    </mat-card-content>\n\n\n  </mat-card-content>\n</mat-card>\n\n<app-doctor-group-footer></app-doctor-group-footer>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
     /***/
   },
 
@@ -2455,7 +2455,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-card-content class=\"encounter_wrapper\">\n  <form class=\"example-form\" autocomplete=\"off\">\n\n    <table class=\"tableone\">\n      <tr>\n        <td colspan=\"3\">\n          <h2 class=\"header\"> Health Risk Analysis System</h2>\n        </td>\n      </tr>\n\n      <tr>\n        <td data-label=\"Patient Name\">\n          <label>\n            <span>Patient Name</span>\n          </label>\n          <input type=\"text\" value=\"{{ orginalReportDetails.patient_details[0].patient_name }}\"></td>\n        <td data-label=\"Gender\">\n          <label> <input type=\"radio\" [checked]=\"orginalReportDetails.patient_details[0].gender_male_flag == true\"\n              [value]=\"true\">M</label>\n          <label> <input type=\"radio\" [checked]=\"orginalReportDetails.patient_details[0].gender_female_flag == true\"\n              [value]=\"true\">F</label>\n        </td>\n        <td data-label=\"Date\">\n          <label>\n            <span> Date </span>\n            <input type=\"text\" value=\"{{ orginalReportDetails.test_date | date }}\"> </label></td>\n      </tr>\n\n      <tr>\n        <td data-label=\"Ordering Physician\">\n          <label> <span> Ordering Physician </span></label>\n          <input type=\"text\"\n            value=\"{{ orginalReportDetails.patient_details[0].doctor_details[0].firstname }} {{ orginalReportDetails.patient_details[0].doctor_details[0].lastname }}\">\n        </td>\n        <td colspan=\"2\" data-label=\"D.O.B\"><label><span> D.O.B </span></label>\n          <input type=\"text\" value=\"{{ orginalReportDetails.patient_details[0].dob | date }}\"></td>\n      </tr>\n\n      <tr>\n        <td data-label=\"Physician’s Signature\"><label><span>Physician’s Signature</span></label> <input\n            class=\"signaturefont\" type=\"text\" value=\"{{ orginalReportDetails.doctor_signature }}\"></td>\n        <td colspan=\"2\">\n          <p class=\"suggest\">Suggested billing amounts per CPT Code: </p>\n          <span class=\"reportCheck\">\n            <label><input type=\"checkbox\"\n                (change)=\"checkValue('cpt_codes', orginalReportDetails.cpt_codes.v95923?'1':'0', 'v95923')\"\n                [(ngModel)]=\"orginalReportDetails.cpt_codes.v95923\" [ngModelOptions]=\"{standalone: 1}\"> 95923: $410\n            </label>\n            <label><input type=\"checkbox\"\n                (change)=\"checkValue('cpt_codes', orginalReportDetails.cpt_codes.v95943?'1':'0', 'v95943')\"\n                [(ngModel)]=\"orginalReportDetails.cpt_codes.v95943\" [ngModelOptions]=\"{standalone: 1}\"> 95943: $440\n            </label>\n            <label><input type=\"checkbox\"\n                (change)=\"checkValue('cpt_codes', orginalReportDetails.cpt_codes.v95921?'1':'0', 'v95921')\"\n                [(ngModel)]=\"orginalReportDetails.cpt_codes.v95921\" [ngModelOptions]=\"{standalone: 1}\"> 95921: $280\n            </label>\n            <label><input type=\"checkbox\"\n                (change)=\"checkValue('cpt_codes', orginalReportDetails.cpt_codes.v93923?'1':'0', 'v93923')\"\n                [(ngModel)]=\"orginalReportDetails.cpt_codes.v93923\" [ngModelOptions]=\"{standalone: 1}\"> 93923: $250\n            </label>\n            <label><input type=\"checkbox\"\n                (change)=\"checkValue('cpt_codes', orginalReportDetails.cpt_codes.v93922?'1':'0', 'v93922')\"\n                [(ngModel)]=\"orginalReportDetails.cpt_codes.v93922\" [ngModelOptions]=\"{standalone: 1}\"> 93922: $280\n            </label>\n          </span>\n        </td>\n      </tr>\n\n      <tr>\n        <td data-label=\"Patient’s Insurance Carrier (s)\">\n          <label><span>Patient’s Insurance Carrier (s)</span></label>\n\n          <input type=\"text\" [(ngModel)]=\"orginalReportDetails.patient_details[0].insurance_details.insurancename\"\n            [ngModelOptions]=\"{standalone: true}\"> </td>\n        <td colspan=\"2\">\n          <label>\n            <input type=\"checkbox\"\n              (change)=\"checkValue(orginalReportDetails.cpt_codes.no_diagnosis_detected?'1':'0', 'cpt_codes', 'no_diagnosis_detected')\"\n              [(ngModel)]=\"orginalReportDetails.cpt_codes.no_diagnosis_detected\" [ngModelOptions]=\"{standalone: 1}\">\n            No Diagnoses Established\n          </label>\n        </td>\n      </tr>\n    </table>\n\n    <mat-card-content class=\"second_table\">\n      <table class=\"tabletwo\">\n        <tr>\n          <td colspan=\"2\">\n            <h2 class=\"red_para\">ICD 10 DIAGNOSTIC CODES TO BE USED WITH CPT CODE: 95921 (where 95943 is less or not\n              allowed), and 95923 </h2>\n          </td>\n        </tr>\n\n        <tr>\n          <td class=\"widther\">\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E0840?'1':'0', 'E0840')\"\n              [(ngModel)]=\"orginalReportDetails.icd_codes.E0840\" [ngModelOptions]=\"{standalone: 1}\"> </td>\n          <td> E08.40 Type 1 Diabetes W/ Neurological Manifestations, Not Stated as Uncontrolled</td>\n        </tr>\n        </td>\n        <td class=\"widther\">\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G603?'1':'0', 'G603')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G603\"></td>\n            <td> G60.3 Idiopathic progressive neuropathy</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1041?'1':'0', 'E1041')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1041\"></td>\n          <td>E10.41 Type 1 Diabetes Mellitus W/ Diabetic Mononeuropathy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G608?'1':'0', 'G608')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G608\"></td>\n            <td>G60.8 Other hereditary and idiopathic neuropathies</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1042?'1':'0', 'E1042')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1042\"></td>\n          <td> E10.42 Type 1 Diabetes Mellitus W/ Diabetic Polyneuropathy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G629?'1':'0', 'G629')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G629\"></td>\n            <td>G62.9 Polyneuropathy, unspecified</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td> </td>\n          <td> </td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G609?'1':'0', 'G609')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G609\"></td>\n            <td>G60.9 Hereditary and idiopathic neuropathy, unspecified</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1043?'1':'0', 'E1043')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1043\"></td>\n          <td>E10.43 Type 1 Diabetes Mellitus W/ Diabetic Autonomic (Poly) Neuropathy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G9009?'1':'0', 'G9009')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G9009\"></td>\n            <td>G90.09 Other idiopathic peripheral autonomic neuropathy</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1044?'1':'0', 'E1044')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1044\"></td>\n          <td>E10.44 Type 1 Diabetes Mellitus W/ Diabetic Amyotrophy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G903?'1':'0', 'G903')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G903\"></td>\n            <td>G90.3 Multi-system degeneration of the autonomic nervous system</td>\n          </tr>\n          <tr>\n            <td></td>\n            <td></td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1049?'1':'0', 'E1049')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1049\"></td>\n          <td>E10.49 Type 1 Diabetes Mellitus W/ Other Diabetic Neurological Complications</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G9050?'1':'0', 'G9050')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G9050\"></td>\n            <td>G90.50 Complex regional pain syndrome I, unspecified</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E10610?'1':'0', 'E10610')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E10610\"></td>\n          <td>E10.610 Type 1 Diabetes (Juvenile) W/ diabetic Neuropathic Arthropathy</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G9059?'1':'0', 'G9059')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G9059\"></td>\n            <td>G90.59 Complex regional pain syndrome I of other specified site</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E119?'1':'0', 'E119')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E119\"></td>\n          <td>E11.9 Type 2 Diabetes Without Complications (non-Medicare)</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.R000?'1':'0', 'R000')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.R000\"></td>\n            <td>R00.0 Tachycardia, unspecified\n              <ng-container>\n\n              </ng-container>\n              {{ orginalReportDetails.r00_description.R000_text_1 }}\n              {{ orginalReportDetails.r00_description.R000_text_2 }}\n              {{ orginalReportDetails.r00_description.R000_text_3 }}\n            </td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1141?'1':'0', 'E1141')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1141\"></td>\n          <td>E11.41 Type 2 Diabetes Mellitus W/ Diabetic Mononeuropathy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.R55?'1':'0', 'R55')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.R55\"></td>\n            <td>R55 Vasovagal Syndrome/Syncope and collapse</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1142?'1':'0', 'E1142')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1142\"></td>\n          <td>E11.42 Type 2 Diabetes Mellitus W/ Diabetic Polyneuropathy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.R7301?'1':'0', 'R7301')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.R7301\"></td>\n            <td>R73.01 Impaired fasting glucose (Non-Medicare)</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1143?'1':'0', 'E1143')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1143\"></td>\n          <td>E11.43 Type 2 Diabetes W/ Autonomic Neuropathy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.R733?'1':'0', 'R733')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.R733\"></td>\n            <td>R73.03 Prediabetes (Non-Medicare)</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1144?'1':'0', 'E1144')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1144\"></td>\n          <td>E11.44 Type 2 Diabetes Mellitus W/Diabetic Amyotrophy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G9050?'1':'0', 'G9050')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G9050\"></td>\n            <td>G90.50 Complex regional pain syndrome I, unspecified</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1149?'1':'0', 'E1149')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1149\"></td>\n          <td>E11.49 Type 2 Diabetes Mellitus W/ Other Diabetic Neurological Complications</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G90511?'1':'0', 'G90511')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G90511\"></td>\n            <td>G90.511 Complex regional pain syndrome I of right upper limb</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E850?'1':'0', 'E850')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E850\"></td>\n          <td>E85.0 Mediterranean Fever</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G90512?'1':'0', 'G90512')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G90512\"></td>\n            <td>G90.512 Complex regional pain syndrome I of left upper limb</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E851?'1':'0', 'E851')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E851\"></td>\n          <td>E85.1 Neuropathic Heredofamilial Amyloidosis</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G90513?'1':'0', 'G90513')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G90513\"></td>\n            <td>G90.513 Complex regional pain syndrome I of upper limb, bilateral</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E853?'1':'0', 'E853')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E853\"></td>\n          <td>E85.3 Secondary Systemic Amyloidosis</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G90512?'1':'0', 'G90512')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G90512\"></td>\n            <td>G90.521 Complex regional pain syndrome I of right lower limb</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E854?'1':'0', 'E854')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E854\"></td>\n          <td>E85.4 Organ – Limited Amyloidosis</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G90522?'1':'0', 'G90522')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G90522\"> </td>\n            <td>G90.522 Complex regional pain syndrome I of left lower limb</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G200?'1':'0', 'G200')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G200\"></td>\n          <td>G20.0 Parkinson’s Disease</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G90523?'1':'0', 'G90523')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G90523\"></td>\n            <td> G90.523 Complex regional pain syndrome I of lower limb, bilateral </td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G230?'1':'0', 'G230')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G230\"></td>\n          <td>G23.0 Hallervorden – Spatz Disease</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G9059?'1':'0', 'G9059')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G9059\"></td>\n            <td> G90.59 Complex regional pain syndrome I of other specified site</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G231?'1':'0', 'G231')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G231\"></td>\n          <td>G23.1 Progressive supranuclear ophthalmoplegia [Steele-Richardson\n            Olszewski]</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I951?'1':'0', 'I951')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I951\"></td>\n            <td>I95.1 Orthostatic Hypotension</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G232?'1':'0', 'field_name')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G232\"></td>\n          <td>G23.2 Striatonigral degeneration </td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.R61?'1':'0', 'field_name')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.R61\"></td>\n            <td>R61 Generalized hyperhidrosis </td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G238?'1':'0', 'field_name')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G238\"></td>\n          <td>G23.8 Other specified degenerative diseases of basal ganglia</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td></td>\n            <td></td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td colspan=\"2\">\n            <p class=\"red_para\">ICD 10 DIAGNOSTIC CODES TO BE USED WITH CPT CODE: 93922 or 93923 (93923 1\n              UNIT FOR UPPER AND 1\n              UNIT FOR LOWER EXTREMITY) REQUIRED ANSILLARY TESTING: ABI, WAVE FORM DOPPLER OR PULSE WAVE\n              /PHOTO PLETHYSMOGRAPHY DEVICE\n            </p>\n          </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1059?'1':'0', 'E1059')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1059\"></td>\n          <td>E10.59 Type 1 Diabetes W/ Other Circulatory Complications</td>\n        </tr>\n        </td>\n\n        <td>\n\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70222?'1':'0', 'I70222')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70222\"></td>\n            <td>I70.222 Atherosclerosis of native arteries of extremities with rest pain, left\n              leg</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1159?'1':'0', 'E1159')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1159\"></td>\n          <td>E11.59 Type 2 Diabetes W/ Other Circulatory Complications</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70223?'1':'0', 'I70223')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70223\"></td>\n            <td>I70.223 Atherosclerosis of native arteries of extremities with rest pain,\n              Bilateral legs</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G458?'1':'0', 'G458')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G458\"></td>\n          <td>G45.8 Other Transient Cerebral Ischemic Attacks and Related Syndrome</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70228?'1':'0', 'I70228')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70228\"></td>\n            <td>I70.228 Atherosclerosis of native arteries of extremities with rest pain,\n              other extremity</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I10?'1':'0', 'I10')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I10\"></td>\n          <td>I10 Hypertension Unspecified (Non-Medicare)\n            <b>{{ reportDetails.reportData[0].systolic_value }}/{{ reportDetails.reportData[0].diastolic_value }}</b>\n          </td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70268?'1':'0', 'I70268')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70268\"></td>\n            <td>I70.268 Atherosclerosis of native arteries of extremities with gangrene, Other extremity</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I2510?'1':'0', 'I2510')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I2510\"></td>\n          <td>I25.10 Atherosclerotic heart disease of native coronary artery w/o angina pectoris</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I7025?'1':'0', 'I7025')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I7025\"></td>\n            <td>I70.25 Atherosclerosis of native arteries of other extremities with Ulceration</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I519?'1':'0', 'I519')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I519\"></td>\n          <td>I51.9 Heart disease, unspecified (Non-Medicare)</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I721?'1':'0', 'I721')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I721\"></td>\n            <td>I72.1 Aneurysm of artery of upper extremity</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70209?'1':'0', 'I70209')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70209\"></td>\n          <td>I70.209 Atherosclerosis Native Arteries Extremities Unspecified (non-Medicare)</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I724?'1':'0', 'I724')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I724\"></td>\n            <td>I72.4 Aneurysm of artery of lower extremity </td>\n          </tr>\n        </td>\n        </tr>\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70221?'1':'0', 'I70221')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70221\"></td>\n          <td>I70.211 Atherosclerosis of native arteries of extremities with intermittent\n            Claudication, right leg</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I7389?'1':'0', 'I7389')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I7389\"></td>\n            <td>I73.89 Other specified peripheral vascular diseases</td>\n          </tr>\n        </td>\n        </tr>\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70212?'1':'0', 'I70212')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70212\"></td>\n          <td>I70.212 Atherosclerosis of native arteries of extremities with intermittent\n            Claudication, left leg</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I739?'1':'0', 'I739')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I739\"></td>\n            <td>I73.9 Peripheral vascular disease, unspecified</td>\n          </tr>\n        </td>\n        </tr>\n        <tr>\n          <td>\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70213?'1':'0', 'I70213')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70213\"> </td>\n          <td> I70.213 Atherosclerosis of native arteries of extremities with intermittent\n            Claudication, bilateral legs</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.R088?'1':'0', 'R088')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.R088\"></td>\n            <td>R08.8 9 Other Specific Signs & Symptoms of Circulatory &\n              Respiratory Systems</td>\n          </tr>\n        </td>\n        </tr>\n        <tr>\n          <td rowspan=\"2\">\n            <p>ADDITIONAL POTENTIAL HEALTH RISKS</p>\n            <!-- <textarea class=\"additionalnotes additionalnotes3\" [(ngModel)]=\"\"> -->\n            <ng-container *ngFor=\"let data of orginalReportDetails.additional_potential_health_risks\">\n              <p>{{ data }}</p>\n            </ng-container>\n            <!-- </textarea> -->\n          </td>\n\n          <td>\n            <p>Pre-Existing Diagnoses: </p>\n            <textarea class=\"additionalnotes\"></textarea>\n            <br>\n            <p>Additional Physician’s Chart Notes:</p>\n            <textarea class=\"additionalnotes\"></textarea>\n          </td>\n        </tr>\n      </table>\n\n    </mat-card-content>\n  </form>\n</mat-card-content>";
+    __webpack_exports__["default"] = "<mat-card-content class=\"encounter_wrapper\">\n  <form class=\"example-form\" autocomplete=\"off\">\n\n    <table class=\"tableone\">\n      <tr>\n        <td colspan=\"3\">\n          <h2 class=\"header\"> Health Risk Analysis System</h2>\n        </td>\n      </tr>\n\n      <tr>\n        <td data-label=\"Patient Name\">\n          <label>\n            <span>Patient Name</span>\n          </label>\n          <input type=\"text\" value=\"{{ orginalReportDetails.patient_details[0].patient_name }}\"></td>\n        <td data-label=\"Gender\">\n          <label> <input type=\"radio\" [checked]=\"orginalReportDetails.patient_details[0].gender_male_flag == true\"\n              [value]=\"true\">M</label>\n          <label> <input type=\"radio\" [checked]=\"orginalReportDetails.patient_details[0].gender_female_flag == true\"\n              [value]=\"true\">F</label>\n        </td>\n        <td data-label=\"Date\">\n          <label>\n            <span> Date </span>\n            <input type=\"text\" value=\"{{ orginalReportDetails.test_date | date }}\"> </label></td>\n      </tr>\n\n      <tr>\n        <td data-label=\"Ordering Physician\">\n          <label> <span> Ordering Physician </span></label>\n          <input type=\"text\"\n            value=\"{{ orginalReportDetails.patient_details[0].doctor_details[0].firstname }} {{ orginalReportDetails.patient_details[0].doctor_details[0].lastname }}\">\n        </td>\n        <td colspan=\"2\" data-label=\"D.O.B\"><label><span> D.O.B </span></label>\n          <input type=\"text\" value=\"{{ orginalReportDetails.patient_details[0].dob | date }}\"></td>\n      </tr>\n\n      <tr>\n        <td data-label=\"Physician’s Signature\"><label><span>Physician’s Signature</span></label> <input\n            class=\"signaturefont\" type=\"text\" value=\"{{ orginalReportDetails.doctor_signature }}\"></td>\n        <td colspan=\"2\">\n          <p class=\"suggest\">Suggested billing amounts per CPT Code: </p>\n          <span class=\"reportCheck\">\n            <label><input type=\"checkbox\"\n                (change)=\"checkValue('cpt_codes', orginalReportDetails.cpt_codes.v95923?'1':'0', 'v95923')\"\n                [(ngModel)]=\"orginalReportDetails.cpt_codes.v95923\" [ngModelOptions]=\"{standalone: 1}\"> 95923: $410\n            </label>\n            <label><input type=\"checkbox\"\n                (change)=\"checkValue('cpt_codes', orginalReportDetails.cpt_codes.v95943?'1':'0', 'v95943')\"\n                [(ngModel)]=\"orginalReportDetails.cpt_codes.v95943\" [ngModelOptions]=\"{standalone: 1}\"> 95943: $440\n            </label>\n            <label><input type=\"checkbox\"\n                (change)=\"checkValue('cpt_codes', orginalReportDetails.cpt_codes.v95921?'1':'0', 'v95921')\"\n                [(ngModel)]=\"orginalReportDetails.cpt_codes.v95921\" [ngModelOptions]=\"{standalone: 1}\"> 95921: $280\n            </label>\n            <label><input type=\"checkbox\"\n                (change)=\"checkValue('cpt_codes', orginalReportDetails.cpt_codes.v93923?'1':'0', 'v93923')\"\n                [(ngModel)]=\"orginalReportDetails.cpt_codes.v93923\" [ngModelOptions]=\"{standalone: 1}\"> 93923: $250\n            </label>\n            <label><input type=\"checkbox\"\n                (change)=\"checkValue('cpt_codes', orginalReportDetails.cpt_codes.v93922?'1':'0', 'v93922')\"\n                [(ngModel)]=\"orginalReportDetails.cpt_codes.v93922\" [ngModelOptions]=\"{standalone: 1}\"> 93922: $280\n            </label>\n          </span>\n        </td>\n      </tr>\n\n      <tr>\n        <td data-label=\"Patient’s Insurance Carrier (s)\">\n          <label><span>Patient’s Insurance Carrier (s)</span></label>\n\n          <input type=\"text\" [(ngModel)]=\"orginalReportDetails.patient_details[0].insurance_details.insurancename\"\n            [ngModelOptions]=\"{standalone: true}\"> </td>\n        <td colspan=\"2\">\n          <label>\n            <input type=\"checkbox\"\n              (change)=\"checkValue(orginalReportDetails.cpt_codes.no_diagnosis_detected?'1':'0', 'cpt_codes', 'no_diagnosis_detected')\"\n              [(ngModel)]=\"orginalReportDetails.cpt_codes.no_diagnosis_detected\" [ngModelOptions]=\"{standalone: 1}\">\n            No Diagnoses Established\n          </label>\n        </td>\n      </tr>\n    </table>\n\n    <mat-card-content class=\"second_table\">\n      <table class=\"tabletwo\">\n        <tr>\n          <td colspan=\"2\">\n            <h2 class=\"red_para\">ICD 10 DIAGNOSTIC CODES TO BE USED WITH CPT CODE: 95921 (where 95943 is less or not\n              allowed), and 95923 </h2>\n          </td>\n        </tr>\n\n        <tr>\n          <td class=\"widther\">\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E0840?'1':'0', 'E0840')\"\n              [(ngModel)]=\"orginalReportDetails.icd_codes.E0840\" [ngModelOptions]=\"{standalone: 1}\"> </td>\n          <td> E08.40 Type 1 Diabetes W/ Neurological Manifestations, Not Stated as Uncontrolled</td>\n        </tr>\n        </td>\n        <td class=\"widther\">\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G603?'1':'0', 'G603')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G603\"></td>\n            <td> G60.3 Idiopathic progressive neuropathy</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1041?'1':'0', 'E1041')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1041\"></td>\n          <td>E10.41 Type 1 Diabetes Mellitus W/ Diabetic Mononeuropathy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G608?'1':'0', 'G608')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G608\"></td>\n            <td>G60.8 Other hereditary and idiopathic neuropathies</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1042?'1':'0', 'E1042')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1042\"></td>\n          <td> E10.42 Type 1 Diabetes Mellitus W/ Diabetic Polyneuropathy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G629?'1':'0', 'G629')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G629\"></td>\n            <td>G62.9 Polyneuropathy, unspecified</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td> </td>\n          <td> </td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G609?'1':'0', 'G609')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G609\"></td>\n            <td>G60.9 Hereditary and idiopathic neuropathy, unspecified</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1043?'1':'0', 'E1043')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1043\"></td>\n          <td>E10.43 Type 1 Diabetes Mellitus W/ Diabetic Autonomic (Poly) Neuropathy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G9009?'1':'0', 'G9009')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G9009\"></td>\n            <td>G90.09 Other idiopathic peripheral autonomic neuropathy</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1044?'1':'0', 'E1044')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1044\"></td>\n          <td>E10.44 Type 1 Diabetes Mellitus W/ Diabetic Amyotrophy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G903?'1':'0', 'G903')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G903\"></td>\n            <td>G90.3 Multi-system degeneration of the autonomic nervous system</td>\n          </tr>\n          <tr>\n            <td></td>\n            <td></td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1049?'1':'0', 'E1049')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1049\"></td>\n          <td>E10.49 Type 1 Diabetes Mellitus W/ Other Diabetic Neurological Complications</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G9050?'1':'0', 'G9050')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G9050\"></td>\n            <td>G90.50 Complex regional pain syndrome I, unspecified</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E10610?'1':'0', 'E10610')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E10610\"></td>\n          <td>E10.610 Type 1 Diabetes (Juvenile) W/ diabetic Neuropathic Arthropathy</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G9059?'1':'0', 'G9059')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G9059\"></td>\n            <td>G90.59 Complex regional pain syndrome I of other specified site</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E119?'1':'0', 'E119')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E119\"></td>\n          <td>E11.9 Type 2 Diabetes Without Complications (non-Medicare)</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.R000?'1':'0', 'R000')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.R000\"></td>\n            <td>R00.0 Tachycardia, unspecified\n              <ng-container>\n\n              </ng-container>\n              {{ orginalReportDetails.r00_description.R000_text_1 }}\n              {{ orginalReportDetails.r00_description.R000_text_2 }}\n              {{ orginalReportDetails.r00_description.R000_text_3 }}\n            </td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1141?'1':'0', 'E1141')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1141\"></td>\n          <td>E11.41 Type 2 Diabetes Mellitus W/ Diabetic Mononeuropathy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.R55?'1':'0', 'R55')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.R55\"></td>\n            <td>R55 Vasovagal Syndrome/Syncope and collapse</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1142?'1':'0', 'E1142')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1142\"></td>\n          <td>E11.42 Type 2 Diabetes Mellitus W/ Diabetic Polyneuropathy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.R7301?'1':'0', 'R7301')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.R7301\"></td>\n            <td>R73.01 Impaired fasting glucose (Non-Medicare)</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1143?'1':'0', 'E1143')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1143\"></td>\n          <td>E11.43 Type 2 Diabetes W/ Autonomic Neuropathy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.R733?'1':'0', 'R733')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.R733\"></td>\n            <td>R73.03 Prediabetes (Non-Medicare)</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1144?'1':'0', 'E1144')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1144\"></td>\n          <td>E11.44 Type 2 Diabetes Mellitus W/Diabetic Amyotrophy</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G9050?'1':'0', 'G9050')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G9050\"></td>\n            <td>G90.50 Complex regional pain syndrome I, unspecified</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1149?'1':'0', 'E1149')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1149\"></td>\n          <td>E11.49 Type 2 Diabetes Mellitus W/ Other Diabetic Neurological Complications</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G90511?'1':'0', 'G90511')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G90511\"></td>\n            <td>G90.511 Complex regional pain syndrome I of right upper limb</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E850?'1':'0', 'E850')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E850\"></td>\n          <td>E85.0 Mediterranean Fever</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G90512?'1':'0', 'G90512')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G90512\"></td>\n            <td>G90.512 Complex regional pain syndrome I of left upper limb</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E851?'1':'0', 'E851')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E851\"></td>\n          <td>E85.1 Neuropathic Heredofamilial Amyloidosis</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G90513?'1':'0', 'G90513')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G90513\"></td>\n            <td>G90.513 Complex regional pain syndrome I of upper limb, bilateral</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E853?'1':'0', 'E853')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E853\"></td>\n          <td>E85.3 Secondary Systemic Amyloidosis</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G90512?'1':'0', 'G90512')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G90512\"></td>\n            <td>G90.521 Complex regional pain syndrome I of right lower limb</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E854?'1':'0', 'E854')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E854\"></td>\n          <td>E85.4 Organ – Limited Amyloidosis</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G90522?'1':'0', 'G90522')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G90522\"> </td>\n            <td>G90.522 Complex regional pain syndrome I of left lower limb</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G200?'1':'0', 'G200')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G200\"></td>\n          <td>G20.0 Parkinson’s Disease</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G90523?'1':'0', 'G90523')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G90523\"></td>\n            <td> G90.523 Complex regional pain syndrome I of lower limb, bilateral </td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G230?'1':'0', 'G230')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G230\"></td>\n          <td>G23.0 Hallervorden – Spatz Disease</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G9059?'1':'0', 'G9059')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G9059\"></td>\n            <td> G90.59 Complex regional pain syndrome I of other specified site</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G231?'1':'0', 'G231')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G231\"></td>\n          <td>G23.1 Progressive supranuclear ophthalmoplegia [Steele-Richardson\n            Olszewski]</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I951?'1':'0', 'I951')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I951\"></td>\n            <td>I95.1 Orthostatic Hypotension</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G232?'1':'0', 'field_name')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G232\"></td>\n          <td>G23.2 Striatonigral degeneration </td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.R61?'1':'0', 'field_name')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.R61\"></td>\n            <td>R61 Generalized hyperhidrosis </td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G238?'1':'0', 'field_name')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G238\"></td>\n          <td>G23.8 Other specified degenerative diseases of basal ganglia</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td></td>\n            <td></td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td colspan=\"2\">\n            <p class=\"red_para\">ICD 10 DIAGNOSTIC CODES TO BE USED WITH CPT CODE: 93922 or 93923 (93923 1\n              UNIT FOR UPPER AND 1\n              UNIT FOR LOWER EXTREMITY) REQUIRED ANSILLARY TESTING: ABI, WAVE FORM DOPPLER OR PULSE WAVE\n              /PHOTO PLETHYSMOGRAPHY DEVICE\n            </p>\n          </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1059?'1':'0', 'E1059')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1059\"></td>\n          <td>E10.59 Type 1 Diabetes W/ Other Circulatory Complications</td>\n        </tr>\n        </td>\n\n        <td>\n\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70222?'1':'0', 'I70222')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70222\"></td>\n            <td>I70.222 Atherosclerosis of native arteries of extremities with rest pain, left\n              leg</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.E1159?'1':'0', 'E1159')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.E1159\"></td>\n          <td>E11.59 Type 2 Diabetes W/ Other Circulatory Complications</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70223?'1':'0', 'I70223')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70223\"></td>\n            <td>I70.223 Atherosclerosis of native arteries of extremities with rest pain,\n              Bilateral legs</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.G458?'1':'0', 'G458')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.G458\"></td>\n          <td>G45.8 Other Transient Cerebral Ischemic Attacks and Related Syndrome</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70228?'1':'0', 'I70228')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70228\"></td>\n            <td>I70.228 Atherosclerosis of native arteries of extremities with rest pain,\n              other extremity</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I10?'1':'0', 'I10')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I10\"></td>\n          <td>I10 Hypertension Unspecified (Non-Medicare)\n            <b>{{ reportDetails.reportData[0].systolic_value }}/{{ reportDetails.reportData[0].diastolic_value }}</b>\n          </td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70268?'1':'0', 'I70268')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70268\"></td>\n            <td>I70.268 Atherosclerosis of native arteries of extremities with gangrene, Other extremity</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I2510?'1':'0', 'I2510')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I2510\"></td>\n          <td>I25.10 Atherosclerotic heart disease of native coronary artery w/o angina pectoris</td>\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I7025?'1':'0', 'I7025')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I7025\"></td>\n            <td>I70.25 Atherosclerosis of native arteries of other extremities with Ulceration</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I519?'1':'0', 'I519')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I519\"></td>\n          <td>I70.0 Atherosclerosis of aorta (Non-Medicate)</td>\n\n\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n\n            <td><input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I721?'1':'0', 'I721')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I721\"></td>\n            <td>I72.1 Aneurysm of artery of upper extremity</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I519?'1':'0', 'I519')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I519\"></td>\n          <td>I51.9 Heart disease, unspecified (Non-Medicare)</td>\n\n        </tr>\n        </td>\n\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I724?'1':'0', 'I724')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I724\"></td>\n            <td>I72.4 Aneurysm of artery of lower extremity </td>\n          </tr>\n        </td>\n        </tr>\n        <tr>\n          <td>\n        <tr>\n\n\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70209?'1':'0', 'I70209')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70209\"></td>\n          <td>I70.209 Atherosclerosis Native Arteries Extremities Unspecified (non-Medicare)</td>\n\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I7389?'1':'0', 'I7389')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I7389\"></td>\n            <td>I73.89 Other specified peripheral vascular diseases</td>\n          </tr>\n        </td>\n        </tr>\n        <tr>\n          <td>\n        <tr>\n\n\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70221?'1':'0', 'I70221')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70221\"></td>\n          <td>I70.211 Atherosclerosis of native arteries of extremities with intermittent\n            Claudication, right leg</td>\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I739?'1':'0', 'I739')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I739\"></td>\n            <td>I73.9 Peripheral vascular disease, unspecified</td>\n          </tr>\n        </td>\n        </tr>\n        <tr>\n          <td>\n        <tr>\n          <td><input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70212?'1':'0', 'I70212')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70212\"></td>\n          <td>I70.212 Atherosclerosis of native arteries of extremities with intermittent\n            Claudication, left leg</td>\n\n        </tr>\n        </td>\n        <td>\n          <tr>\n            <td> <input type=\"checkbox\"\n                (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.R088?'1':'0', 'R088')\"\n                [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.R088\"></td>\n            <td>R08.8 9 Other Specific Signs & Symptoms of Circulatory &\n              Respiratory Systems</td>\n          </tr>\n        </td>\n        </tr>\n\n        <tr>\n          <td>\n        <tr>\n          <td> <input type=\"checkbox\"\n              (change)=\"checkValue('icd_codes', orginalReportDetails.icd_codes.I70213?'1':'0', 'I70213')\"\n              [ngModelOptions]=\"{standalone: 1}\" [(ngModel)]=\"orginalReportDetails.icd_codes.I70213\"> </td>\n          <td> I70.213 Atherosclerosis of native arteries of extremities with intermittent\n            Claudication, bilateral legs</td>\n\n\n        </tr>\n        </td>\n        <td>\n          <p>ADDITIONAL POTENTIAL HEALTH RISKS</p>\n        </td>\n        </tr>\n\n\n        <tr>\n          <td rowspan=\"2\">\n            <p>ADDITIONAL POTENTIAL HEALTH RISKS</p>\n            <!-- <textarea class=\"additionalnotes additionalnotes3\" [(ngModel)]=\"\"> -->\n            <ng-container *ngFor=\"let data of orginalReportDetails.additional_potential_health_risks\">\n              <p>{{ data }}</p>\n            </ng-container>\n            <!-- </textarea> -->\n          </td>\n\n          <td>\n            <p>Pre-Existing Diagnoses: </p>\n            <textarea class=\"additionalnotes\"></textarea>\n            <br>\n            <p>Additional Physician’s Chart Notes:</p>\n            <textarea class=\"additionalnotes\"></textarea>\n          </td>\n        </tr>\n      </table>\n\n    </mat-card-content>\n  </form>\n</mat-card-content>";
     /***/
   },
 
@@ -5954,33 +5954,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ../../common/dialog-box/dialog-box.component */
+    "./src/app/components/common/dialog-box/dialog-box.component.ts");
+    /* harmony import */
+
+
+    var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @angular/material */
     "./node_modules/@angular/material/esm2015/material.js");
     /* harmony import */
 
 
-    var ngx_device_detector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var ngx_device_detector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ngx-device-detector */
     "./node_modules/ngx-device-detector/fesm2015/ngx-device-detector.js");
     /* harmony import */
 
 
-    var _environments_environment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ../../../../environments/environment */
     "./src/environments/environment.ts");
     /* harmony import */
 
 
-    var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! moment */
     "./node_modules/moment/moment.js");
     /* harmony import */
 
 
-    var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
+    var moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_9__);
 
-    var moment = moment__WEBPACK_IMPORTED_MODULE_8__;
+    var moment = moment__WEBPACK_IMPORTED_MODULE_9__;
 
     var AdminDashboardComponent = /*#__PURE__*/function () {
       // lib list end
@@ -6006,7 +6012,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
         this.allResolveData = {};
         this.shareDetails = {
-          baseUrl: _environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].doctorSignUpBaseUrl,
+          baseUrl: _environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].doctorSignUpBaseUrl,
           userId: ""
         }; // Lib list
 
@@ -6025,7 +6031,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             param: ['_id']
           }, {
             label: "Download Report",
-            link: _environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].s3bucket + "reports",
+            link: _environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].s3bucket + "reports",
             type: 'externallink',
             paramtype: 'angular',
             param: ['download_file_name']
@@ -6078,6 +6084,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             param: ['_id'],
             cond: 'status',
             condval: 13
+          }, {
+            label: "Generate Pdf",
+            type: 'listner',
+            id: 'i1'
           }],
           hideeditbutton: true,
           hidedeletebutton: true,
@@ -6095,7 +6105,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
         this.UpdateEndpoint = "addorupdatedata";
         this.deleteEndpoint = "deletesingledata";
-        this.apiUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].apiBaseUrl;
+        this.apiUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].apiBaseUrl;
         this.tableName = "data_pece";
         this.datacollection = 'dashboard-report-data-list';
         this.sortdata = {
@@ -6264,9 +6274,63 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "ngAfterViewInit",
         value: function ngAfterViewInit() {}
       }, {
+        key: "listenLiblistingChange",
+        value: function listenLiblistingChange() {
+          var _this8 = this;
+
+          var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+          console.log(data);
+          var modalData1 = {
+            panelClass: 'bulkupload-dialog',
+            data: {
+              header: "Alert",
+              message: "Do you want to Generate the Pdf",
+              button1: {
+                text: "Yes"
+              },
+              button2: {
+                text: "No"
+              }
+            }
+          };
+          var dialogRef1 = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], modalData1);
+          dialogRef1.afterClosed().subscribe(function (result) {
+            switch (result) {
+              case "Yes":
+                var requestData = {
+                  _id: data.custombuttonclick.data._id
+                };
+
+                _this8.http.httpViaPost("get-html-data", requestData).subscribe(function (response) {
+                  var modalData = {
+                    panelClass: 'bulkupload-dialog',
+                    data: {
+                      header: "Alert",
+                      message: "Pdf Generated Successfully",
+                      button1: {
+                        text: ""
+                      },
+                      button2: {
+                        text: "OK"
+                      }
+                    }
+                  };
+
+                  var dialogRef = _this8.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_5__["DialogBoxComponent"], modalData);
+                });
+
+                break;
+
+              case "No":
+                dialogRef1.close();
+                break;
+            }
+          });
+        }
+      }, {
         key: "getReportData",
         value: function getReportData() {
-          var _this8 = this;
+          var _this9 = this;
 
           this.billerData_count = 0;
           this.allBillerData = []; // lib list
@@ -6296,8 +6360,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }; // API Hit
 
           this.http.httpViaPost('dashboard-report-data-list', data).subscribe(function (res) {
-            _this8.allBillerData = res.results.res;
-            _this8.billerData_count = res.results.data_count;
+            _this9.allBillerData = res.results.res;
+            _this9.billerData_count = res.results.data_count;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -6320,7 +6384,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getSearchData",
         value: function getSearchData() {
-          var _this9 = this;
+          var _this10 = this;
 
           var data = {
             "source": "patient_data_desc_patient_name",
@@ -6333,8 +6397,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this9.authval) {
-                  if (response.res[i].doc_name == _this9.authval[j].name) {
+                for (var j in _this10.authval) {
+                  if (response.res[i].doc_name == _this10.authval[j].name) {
                     start = true;
                   }
                 }
@@ -6342,7 +6406,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this9.authval.push({
+                  _this10.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -6355,8 +6419,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this9.techval) {
-                  if (response.res[i].tech_namesearch == _this9.techval[j].name) {
+                for (var j in _this10.techval) {
+                  if (response.res[i].tech_namesearch == _this10.techval[j].name) {
                     start = true;
                   }
                 }
@@ -6364,7 +6428,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this9.techval.push({
+                  _this10.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -6377,8 +6441,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this9.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this9.parentnameval[j].name) {
+                for (var j in _this10.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this10.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -6386,7 +6450,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this9.parentnameval.push({
+                  _this10.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -6399,8 +6463,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this9.doctorstate) {
-                  if (response.res[i].doctor_state == _this9.doctorstate[j].name) {
+                for (var j in _this10.doctorstate) {
+                  if (response.res[i].doctor_state == _this10.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -6408,7 +6472,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this9.doctorstate.push({
+                  _this10.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -6421,8 +6485,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this9.doctorcity) {
-                  if (response.res[i].doctor_city == _this9.doctorcity[j].name) {
+                for (var j in _this10.doctorcity) {
+                  if (response.res[i].doctor_city == _this10.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -6430,7 +6494,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this9.doctorcity.push({
+                  _this10.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -6443,8 +6507,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this9.patientcity) {
-                  if (response.res[i].patient_city == _this9.patientcity[j].name) {
+                for (var j in _this10.patientcity) {
+                  if (response.res[i].patient_city == _this10.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -6452,7 +6516,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this9.patientcity.push({
+                  _this10.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -6465,8 +6529,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this9.patientstate) {
-                  if (response.res[i].patient_state == _this9.patientstate[j].name) {
+                for (var j in _this10.patientstate) {
+                  if (response.res[i].patient_state == _this10.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -6474,7 +6538,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this9.patientstate.push({
+                  _this10.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -6487,8 +6551,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this9.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this9.docofficeval[j].name) {
+                for (var j in _this10.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this10.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -6496,7 +6560,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this9.docofficeval.push({
+                  _this10.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -6525,11 +6589,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]
       }, {
-        type: _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"]
+        type: _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]
       }, {
-        type: ngx_device_detector__WEBPACK_IMPORTED_MODULE_6__["DeviceDetectorService"]
+        type: ngx_device_detector__WEBPACK_IMPORTED_MODULE_7__["DeviceDetectorService"]
       }, {
-        type: _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatSnackBar"]
+        type: _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSnackBar"]
       }];
     };
 
@@ -6914,7 +6978,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getReportData",
         value: function getReportData() {
-          var _this10 = this;
+          var _this11 = this;
 
           this.billerData_count = 0;
           this.allBillerData = []; // lib list
@@ -6944,8 +7008,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }; // API Hit
 
           this.http.httpViaPost('dashboard-report-data-list', data).subscribe(function (res) {
-            _this10.allBillerData = res.results.res;
-            _this10.billerData_count = res.results.data_count;
+            _this11.allBillerData = res.results.res;
+            _this11.billerData_count = res.results.data_count;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -6953,7 +7017,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getSearchData",
         value: function getSearchData() {
-          var _this11 = this;
+          var _this12 = this;
 
           var data = {
             "source": "patient_data_desc_patient_name",
@@ -6970,8 +7034,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this11.authval) {
-                  if (response.res[i].doc_name == _this11.authval[j].name) {
+                for (var j in _this12.authval) {
+                  if (response.res[i].doc_name == _this12.authval[j].name) {
                     start = true;
                   }
                 }
@@ -6979,7 +7043,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this11.authval.push({
+                  _this12.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -6992,8 +7056,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this11.techval) {
-                  if (response.res[i].tech_namesearch == _this11.techval[j].name) {
+                for (var j in _this12.techval) {
+                  if (response.res[i].tech_namesearch == _this12.techval[j].name) {
                     start = true;
                   }
                 }
@@ -7001,7 +7065,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this11.techval.push({
+                  _this12.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -7014,8 +7078,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this11.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this11.parentnameval[j].name) {
+                for (var j in _this12.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this12.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -7023,7 +7087,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this11.parentnameval.push({
+                  _this12.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -7036,8 +7100,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this11.doctorstate) {
-                  if (response.res[i].doctor_state == _this11.doctorstate[j].name) {
+                for (var j in _this12.doctorstate) {
+                  if (response.res[i].doctor_state == _this12.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -7045,7 +7109,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this11.doctorstate.push({
+                  _this12.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -7058,8 +7122,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this11.doctorcity) {
-                  if (response.res[i].doctor_city == _this11.doctorcity[j].name) {
+                for (var j in _this12.doctorcity) {
+                  if (response.res[i].doctor_city == _this12.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -7067,7 +7131,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this11.doctorcity.push({
+                  _this12.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -7080,8 +7144,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this11.patientcity) {
-                  if (response.res[i].patient_city == _this11.patientcity[j].name) {
+                for (var j in _this12.patientcity) {
+                  if (response.res[i].patient_city == _this12.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -7089,7 +7153,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this11.patientcity.push({
+                  _this12.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -7102,8 +7166,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this11.patientstate) {
-                  if (response.res[i].patient_state == _this11.patientstate[j].name) {
+                for (var j in _this12.patientstate) {
+                  if (response.res[i].patient_state == _this12.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -7111,7 +7175,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this11.patientstate.push({
+                  _this12.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -7124,8 +7188,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this11.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this11.docofficeval[j].name) {
+                for (var j in _this12.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this12.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -7133,7 +7197,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this11.docofficeval.push({
+                  _this12.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -7285,7 +7349,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getDownloadReportDetails",
         value: function getDownloadReportDetails(reportID) {
-          var _this12 = this;
+          var _this13 = this;
 
           var jwtToken = this.cookieService.get('jwtToken');
           var data = {
@@ -7296,8 +7360,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "token": jwtToken
           };
           this.http.httpViaPost('datalist', data).subscribe(function (response) {
-            _this12.loader = false;
-            _this12.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_5__["MatTableDataSource"](response.res);
+            _this13.loader = false;
+            _this13.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_5__["MatTableDataSource"](response.res);
           });
         }
       }]);
@@ -7536,7 +7600,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllDoctorData",
         value: function getAllDoctorData() {
-          var _this13 = this;
+          var _this14 = this;
 
           var data = {
             source: "data_pece",
@@ -7547,13 +7611,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             token: this.allCookies.jwtToken
           };
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this13.htmlText.allDoctor = response.res;
+            _this14.htmlText.allDoctor = response.res;
           });
         }
       }, {
         key: "getTechList",
         value: function getTechList(index) {
-          var _this14 = this;
+          var _this15 = this;
 
           var details = '<p class="doctor_name">';
           details += this.htmlText.allDoctor[index].firstname + ' ' + this.htmlText.allDoctor[index].lastname;
@@ -7577,13 +7641,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "token": this.allCookies.jwtToken
           };
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this14.htmlText.allTech = response.res;
+            _this15.htmlText.allTech = response.res;
           });
         }
       }, {
         key: "getTechListByID",
         value: function getTechListByID(ID) {
-          var _this15 = this;
+          var _this16 = this;
 
           var data = {
             "source": "tech_by_doctor_id",
@@ -7594,7 +7658,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "token": this.allCookies.jwtToken
           };
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this15.htmlText.allTech = response.res;
+            _this16.htmlText.allTech = response.res;
           });
         }
       }, {
@@ -7612,82 +7676,82 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllPatientData",
         value: function getAllPatientData() {
-          var _this16 = this;
+          var _this17 = this;
 
           this.activeRoute.data.forEach(function (data) {
-            _this16.allPatientDataArray = data.patientData.res;
-            _this16.ImageData = _this16.allPatientDataArray[0].images;
+            _this17.allPatientDataArray = data.patientData.res;
+            _this17.ImageData = _this17.allPatientDataArray[0].images;
             /* Date format */
 
-            _this16.allPatientDataArray[0].birth_date = new Date(_this16.allPatientDataArray[0].birth_date);
-            _this16.allPatientDataArray[0].test_date = new Date(_this16.allPatientDataArray[0].test_date);
-            _this16.allPatientDataArray[0].test_completed_date = new Date(_this16.allPatientDataArray[0].test_completed_date);
+            _this17.allPatientDataArray[0].birth_date = new Date(_this17.allPatientDataArray[0].birth_date);
+            _this17.allPatientDataArray[0].test_date = new Date(_this17.allPatientDataArray[0].test_date);
+            _this17.allPatientDataArray[0].test_completed_date = new Date(_this17.allPatientDataArray[0].test_completed_date);
             setTimeout(function () {
-              _this16.getTechListByID(_this16.allPatientDataArray[0].doctor_id);
+              _this17.getTechListByID(_this17.allPatientDataArray[0].doctor_id);
             }, 2000);
 
-            _this16.patientAddEditForm.patchValue({
-              id: _this16.allPatientDataArray[0]._id,
-              patient_name: _this16.allPatientDataArray[0].patient_name,
-              gender: _this16.allPatientDataArray[0].gender,
-              birth_date: _this16.allPatientDataArray[0].birth_date,
-              doctor_id: _this16.allPatientDataArray[0].doctor_id,
-              doctor_name: _this16.allPatientDataArray[0].doctor_name,
-              doctor_details: _this16.allPatientDataArray[0].doctor_details,
-              tech_id: _this16.allPatientDataArray[0].tech_id,
-              tech_name: _this16.allPatientDataArray[0].tech_name,
-              test_date: _this16.allPatientDataArray[0].test_date,
-              test_completed_date: _this16.allPatientDataArray[0].test_completed_date,
-              PTGTP: _this16.allPatientDataArray[0].PTGTP,
-              PTGTP_value: _this16.allPatientDataArray[0].PTGTP_value,
-              PTGVLFI: _this16.allPatientDataArray[0].PTGVLFI,
-              PTGVLFI_value: _this16.allPatientDataArray[0].PTGVLFI_value,
-              IR: _this16.allPatientDataArray[0].IR,
-              IR_value: _this16.allPatientDataArray[0].IR_value,
-              ESRNO: _this16.allPatientDataArray[0].ESRNO,
-              ESRNO_value: _this16.allPatientDataArray[0].ESRNO_value,
-              ESRL: _this16.allPatientDataArray[0].ESRL,
-              ESRL_value: _this16.allPatientDataArray[0].ESRL_value,
-              peakC: _this16.allPatientDataArray[0].peakC,
-              peakC_value: _this16.allPatientDataArray[0].peakC_value,
-              PTGtype: _this16.allPatientDataArray[0].PTGtype,
-              PTGtype_value: _this16.allPatientDataArray[0].PTGtype_value,
-              PTGCVD: _this16.allPatientDataArray[0].PTGCVD,
-              PTGCVD_value: _this16.allPatientDataArray[0].PTGCVD_value,
-              stressI: _this16.allPatientDataArray[0].stressI,
-              stressI_value: _this16.allPatientDataArray[0].stressI_value,
-              RI: _this16.allPatientDataArray[0].RI,
-              RI_value: _this16.allPatientDataArray[0].RI_value,
-              AIPTG: _this16.allPatientDataArray[0].AIPTG,
-              AIPTG_value: _this16.allPatientDataArray[0].AIPTG_value,
-              CIsCI: _this16.allPatientDataArray[0].CIsCI,
-              CIsCI_value: _this16.allPatientDataArray[0].CIsCI_value,
-              pNN50: _this16.allPatientDataArray[0].pNN50,
-              pNN50_value: _this16.allPatientDataArray[0].pNN50_value,
-              RMSSD: _this16.allPatientDataArray[0].RMSSD,
-              RMSSD_value: _this16.allPatientDataArray[0].RMSSD_value,
-              SDba: _this16.allPatientDataArray[0].SDba,
-              SDba_value: _this16.allPatientDataArray[0].SDba_value,
-              SDda: _this16.allPatientDataArray[0].SDda,
-              SDda_value: _this16.allPatientDataArray[0].SDda_value,
-              DPRS: _this16.allPatientDataArray[0].DPRS,
-              DPRS_value: _this16.allPatientDataArray[0].DPRS_value,
-              ValsR: _this16.allPatientDataArray[0].ValsR,
-              ValsR_value: _this16.allPatientDataArray[0].ValsR_value,
-              BMI: _this16.allPatientDataArray[0].BMI,
-              BMI_value: _this16.allPatientDataArray[0].BMI_value,
-              blood_pressure: _this16.allPatientDataArray[0].blood_pressure,
-              systolic_value: _this16.allPatientDataArray[0].systolic_value,
-              diastolic_value: _this16.allPatientDataArray[0].diastolic_value,
-              leave_notes: _this16.allPatientDataArray[0].leave_notes,
-              report_type: _this16.allPatientDataArray[0].report_type
+            _this17.patientAddEditForm.patchValue({
+              id: _this17.allPatientDataArray[0]._id,
+              patient_name: _this17.allPatientDataArray[0].patient_name,
+              gender: _this17.allPatientDataArray[0].gender,
+              birth_date: _this17.allPatientDataArray[0].birth_date,
+              doctor_id: _this17.allPatientDataArray[0].doctor_id,
+              doctor_name: _this17.allPatientDataArray[0].doctor_name,
+              doctor_details: _this17.allPatientDataArray[0].doctor_details,
+              tech_id: _this17.allPatientDataArray[0].tech_id,
+              tech_name: _this17.allPatientDataArray[0].tech_name,
+              test_date: _this17.allPatientDataArray[0].test_date,
+              test_completed_date: _this17.allPatientDataArray[0].test_completed_date,
+              PTGTP: _this17.allPatientDataArray[0].PTGTP,
+              PTGTP_value: _this17.allPatientDataArray[0].PTGTP_value,
+              PTGVLFI: _this17.allPatientDataArray[0].PTGVLFI,
+              PTGVLFI_value: _this17.allPatientDataArray[0].PTGVLFI_value,
+              IR: _this17.allPatientDataArray[0].IR,
+              IR_value: _this17.allPatientDataArray[0].IR_value,
+              ESRNO: _this17.allPatientDataArray[0].ESRNO,
+              ESRNO_value: _this17.allPatientDataArray[0].ESRNO_value,
+              ESRL: _this17.allPatientDataArray[0].ESRL,
+              ESRL_value: _this17.allPatientDataArray[0].ESRL_value,
+              peakC: _this17.allPatientDataArray[0].peakC,
+              peakC_value: _this17.allPatientDataArray[0].peakC_value,
+              PTGtype: _this17.allPatientDataArray[0].PTGtype,
+              PTGtype_value: _this17.allPatientDataArray[0].PTGtype_value,
+              PTGCVD: _this17.allPatientDataArray[0].PTGCVD,
+              PTGCVD_value: _this17.allPatientDataArray[0].PTGCVD_value,
+              stressI: _this17.allPatientDataArray[0].stressI,
+              stressI_value: _this17.allPatientDataArray[0].stressI_value,
+              RI: _this17.allPatientDataArray[0].RI,
+              RI_value: _this17.allPatientDataArray[0].RI_value,
+              AIPTG: _this17.allPatientDataArray[0].AIPTG,
+              AIPTG_value: _this17.allPatientDataArray[0].AIPTG_value,
+              CIsCI: _this17.allPatientDataArray[0].CIsCI,
+              CIsCI_value: _this17.allPatientDataArray[0].CIsCI_value,
+              pNN50: _this17.allPatientDataArray[0].pNN50,
+              pNN50_value: _this17.allPatientDataArray[0].pNN50_value,
+              RMSSD: _this17.allPatientDataArray[0].RMSSD,
+              RMSSD_value: _this17.allPatientDataArray[0].RMSSD_value,
+              SDba: _this17.allPatientDataArray[0].SDba,
+              SDba_value: _this17.allPatientDataArray[0].SDba_value,
+              SDda: _this17.allPatientDataArray[0].SDda,
+              SDda_value: _this17.allPatientDataArray[0].SDda_value,
+              DPRS: _this17.allPatientDataArray[0].DPRS,
+              DPRS_value: _this17.allPatientDataArray[0].DPRS_value,
+              ValsR: _this17.allPatientDataArray[0].ValsR,
+              ValsR_value: _this17.allPatientDataArray[0].ValsR_value,
+              BMI: _this17.allPatientDataArray[0].BMI,
+              BMI_value: _this17.allPatientDataArray[0].BMI_value,
+              blood_pressure: _this17.allPatientDataArray[0].blood_pressure,
+              systolic_value: _this17.allPatientDataArray[0].systolic_value,
+              diastolic_value: _this17.allPatientDataArray[0].diastolic_value,
+              leave_notes: _this17.allPatientDataArray[0].leave_notes,
+              report_type: _this17.allPatientDataArray[0].report_type
             });
           });
         }
       }, {
         key: "patientAddEditFormSubmit",
         value: function patientAddEditFormSubmit() {
-          var _this17 = this;
+          var _this18 = this;
 
           for (var x in this.patientAddEditForm.controls) {
             this.patientAddEditForm.controls[x].markAsTouched();
@@ -7705,7 +7769,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status = "success") {
-                _this17.formDirective.resetForm();
+                _this18.formDirective.resetForm();
                 /* Open modal */
 
 
@@ -7723,7 +7787,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 };
 
-                _this17.openDialog(_data2);
+                _this18.openDialog(_data2);
               }
             });
           }
@@ -7731,13 +7795,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "openDialog",
         value: function openDialog(data) {
-          var _this18 = this;
+          var _this19 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_8__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "OK":
-                _this18.router.navigateByUrl('/admin/dashboard');
+                _this19.router.navigateByUrl('/admin/dashboard');
 
                 break;
             }
@@ -7963,35 +8027,35 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(HoldReportJobTicketComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this19 = this;
+          var _this20 = this;
 
           this.acivatedRoute.paramMap.subscribe(function (params) {
-            _this19.htmlText.reportId = params.get('_id');
+            _this20.htmlText.reportId = params.get('_id');
             var data = {
               "source": "data_pece",
               "condition": {
-                "_id_object": _this19.htmlText.reportId
+                "_id_object": _this20.htmlText.reportId
               },
-              "token": _this19.htmlText.userData.jwtToken
+              "token": _this20.htmlText.userData.jwtToken
             };
 
-            _this19.httpService.httpViaPost('datalist', data).subscribe(function (response) {
+            _this20.httpService.httpViaPost('datalist', data).subscribe(function (response) {
               if (typeof response.res[0].job_tickets_details != 'undefined') {
-                _this19.htmlText.header = 'Reply';
-                _this19.htmlText.buttonText = "Reply";
-                _this19.htmlText.message = "Reply Submited Successfully.";
-                _this19.htmlText.oldTickets = response.res[0].job_tickets_details;
+                _this20.htmlText.header = 'Reply';
+                _this20.htmlText.buttonText = "Reply";
+                _this20.htmlText.message = "Reply Submited Successfully.";
+                _this20.htmlText.oldTickets = response.res[0].job_tickets_details;
 
-                for (var loop1 = 0; loop1 < _this19.htmlText.oldTickets.length; loop1++) {
-                  for (var loop2 = 0; loop2 < _this19.htmlText.oldTickets[loop1].files.length; loop2++) {
-                    _this19.htmlText.oldTickets[loop1].files[loop2].show = false;
-                    _this19.htmlText.oldTickets[loop1].files[loop2].image_path = _this19.htmlText.oldTickets[loop1].files[loop2].basepath + _this19.htmlText.oldTickets[loop1].files[loop2].fileservername;
+                for (var loop1 = 0; loop1 < _this20.htmlText.oldTickets.length; loop1++) {
+                  for (var loop2 = 0; loop2 < _this20.htmlText.oldTickets[loop1].files.length; loop2++) {
+                    _this20.htmlText.oldTickets[loop1].files[loop2].show = false;
+                    _this20.htmlText.oldTickets[loop1].files[loop2].image_path = _this20.htmlText.oldTickets[loop1].files[loop2].basepath + _this20.htmlText.oldTickets[loop1].files[loop2].fileservername;
                   }
                 }
 
-                _this19.htmlText.oldTickets.reverse();
+                _this20.htmlText.oldTickets.reverse();
               } else {
-                _this19.htmlText.oldTickets = [];
+                _this20.htmlText.oldTickets = [];
               }
             });
           });
@@ -7999,7 +8063,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createJobTickets",
         value: function createJobTickets() {
-          var _this20 = this;
+          var _this21 = this;
 
           if (this.htmlText.ckEditorValue.length == 0) {
             this.htmlText.ckeditorError = true;
@@ -8049,7 +8113,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 panelClass: 'jobViewModal',
                 data: {
                   header: "Success",
-                  message: _this20.htmlText.message,
+                  message: _this21.htmlText.message,
                   button1: {
                     text: ""
                   },
@@ -8058,12 +8122,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 }
               };
-              _this20.dialogRef = _this20.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_8__["DialogBoxComponent"], _data3);
+              _this21.dialogRef = _this21.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_8__["DialogBoxComponent"], _data3);
 
-              _this20.dialogRef.afterClosed().subscribe(function (result) {
+              _this21.dialogRef.afterClosed().subscribe(function (result) {
                 switch (result) {
                   case "Close":
-                    _this20.router.navigate(['/admin/dashboard'], {
+                    _this21.router.navigate(['/admin/dashboard'], {
                       queryParams: {
                         scroll_position: "Job Tickets"
                       }
@@ -8072,7 +8136,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     break;
 
                   default:
-                    _this20.router.navigate(['/admin/dashboard'], {
+                    _this21.router.navigate(['/admin/dashboard'], {
                       queryParams: {
                         scroll_position: "Job Tickets"
                       }
@@ -8082,7 +8146,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 }
               });
             } else {
-              _this20.snackBar.open(response.msg, '', {
+              _this21.snackBar.open(response.msg, '', {
                 duration: 2000
               });
             }
@@ -8126,7 +8190,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "changeStatus",
         value: function changeStatus() {
-          var _this21 = this;
+          var _this22 = this;
 
           var action = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
           var letModalData = {
@@ -8153,7 +8217,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     var data = {
                       "source": "data_pece",
                       "data": {
-                        id: _this21.htmlText.reportId,
+                        id: _this22.htmlText.reportId,
                         status: 11,
                         report_life_circle: {
                           date: 1591791772277,
@@ -8161,7 +8225,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                           status_text: "Biller Admin Approved"
                         }
                       },
-                      "token": _this21.htmlText.userData.jwtToken
+                      "token": _this22.htmlText.userData.jwtToken
                     };
                     message += "Approved.";
                     break;
@@ -8170,7 +8234,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     var data = {
                       "source": "data_pece",
                       "data": {
-                        id: _this21.htmlText.reportId,
+                        id: _this22.htmlText.reportId,
                         status: 12,
                         report_life_circle: {
                           date: 1591791772277,
@@ -8178,7 +8242,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                           status_text: "Biller Admin Not Approved"
                         }
                       },
-                      "token": _this21.htmlText.userData.jwtToken
+                      "token": _this22.htmlText.userData.jwtToken
                     };
                     message += "Not Approved.";
                     break;
@@ -8187,7 +8251,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     break;
                 }
 
-                _this21.httpService.httpViaPost("job-tickets-status-change", data).subscribe(function (response) {
+                _this22.httpService.httpViaPost("job-tickets-status-change", data).subscribe(function (response) {
                   if (response.status == "success") {
                     var _data4 = {
                       width: '250px',
@@ -8202,23 +8266,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                         }
                       }
                     };
-                    _this21.dialogRef = _this21.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_8__["DialogBoxComponent"], _data4);
+                    _this22.dialogRef = _this22.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_8__["DialogBoxComponent"], _data4);
 
-                    _this21.dialogRef.afterClosed().subscribe(function (result) {
+                    _this22.dialogRef.afterClosed().subscribe(function (result) {
                       switch (result) {
                         case "Close":
-                          _this21.router.navigateByUrl('/admin/dashboard');
+                          _this22.router.navigateByUrl('/admin/dashboard');
 
                           break;
 
                         default:
-                          _this21.router.navigateByUrl('/admin/dashboard');
+                          _this22.router.navigateByUrl('/admin/dashboard');
 
                           break;
                       }
                     });
                   } else {
-                    _this21.snackBar.open(response.msg, '', {
+                    _this22.snackBar.open(response.msg, '', {
                       duration: 2000
                     });
                   }
@@ -8234,13 +8298,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "openDialog",
         value: function openDialog(data) {
-          var _this22 = this;
+          var _this23 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_8__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this22.dialogRef.close();
+                _this23.dialogRef.close();
 
                 break;
             }
@@ -8773,7 +8837,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getReportData",
         value: function getReportData() {
-          var _this23 = this;
+          var _this24 = this;
 
           this.billerData_count = 0;
           this.allBillerData = []; // lib list
@@ -8803,8 +8867,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }; // API Hit
 
           this.http.httpViaPost('dashboard-report-data-list', data).subscribe(function (res) {
-            _this23.allBillerData = res.results.res;
-            _this23.billerData_count = res.results.data_count;
+            _this24.allBillerData = res.results.res;
+            _this24.billerData_count = res.results.data_count;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -8812,7 +8876,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getSearchData",
         value: function getSearchData() {
-          var _this24 = this;
+          var _this25 = this;
 
           var data = {
             "source": "patient_data_desc_patient_name",
@@ -8832,8 +8896,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this24.authval) {
-                  if (response.res[i].doc_name == _this24.authval[j].name) {
+                for (var j in _this25.authval) {
+                  if (response.res[i].doc_name == _this25.authval[j].name) {
                     start = true;
                   }
                 }
@@ -8841,7 +8905,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this24.authval.push({
+                  _this25.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -8854,8 +8918,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this24.techval) {
-                  if (response.res[i].tech_namesearch == _this24.techval[j].name) {
+                for (var j in _this25.techval) {
+                  if (response.res[i].tech_namesearch == _this25.techval[j].name) {
                     start = true;
                   }
                 }
@@ -8863,7 +8927,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this24.techval.push({
+                  _this25.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -8876,8 +8940,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this24.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this24.parentnameval[j].name) {
+                for (var j in _this25.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this25.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -8885,7 +8949,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this24.parentnameval.push({
+                  _this25.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -8898,8 +8962,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this24.doctorstate) {
-                  if (response.res[i].doctor_state == _this24.doctorstate[j].name) {
+                for (var j in _this25.doctorstate) {
+                  if (response.res[i].doctor_state == _this25.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -8907,7 +8971,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this24.doctorstate.push({
+                  _this25.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -8920,8 +8984,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this24.doctorcity) {
-                  if (response.res[i].doctor_city == _this24.doctorcity[j].name) {
+                for (var j in _this25.doctorcity) {
+                  if (response.res[i].doctor_city == _this25.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -8929,7 +8993,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this24.doctorcity.push({
+                  _this25.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -8942,8 +9006,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this24.patientcity) {
-                  if (response.res[i].patient_city == _this24.patientcity[j].name) {
+                for (var j in _this25.patientcity) {
+                  if (response.res[i].patient_city == _this25.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -8951,7 +9015,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this24.patientcity.push({
+                  _this25.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -8964,8 +9028,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this24.patientstate) {
-                  if (response.res[i].patient_state == _this24.patientstate[j].name) {
+                for (var j in _this25.patientstate) {
+                  if (response.res[i].patient_state == _this25.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -8973,7 +9037,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this24.patientstate.push({
+                  _this25.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -8986,8 +9050,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this24.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this24.docofficeval[j].name) {
+                for (var j in _this25.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this25.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -8995,7 +9059,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this24.docofficeval.push({
+                  _this25.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -9412,7 +9476,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this25 = this;
+          var _this26 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
           this.billerData_count = 0;
@@ -9534,8 +9598,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
           this.http.httpViaPost('dashboard-report-data-list', data).subscribe(function (res) {
-            _this25.allBillerData = res.results.res;
-            _this25.billerData_count = res.results.data_count;
+            _this26.allBillerData = res.results.res;
+            _this26.billerData_count = res.results.data_count;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -9558,7 +9622,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getSearchData",
         value: function getSearchData() {
-          var _this26 = this;
+          var _this27 = this;
 
           var data = {
             "source": "patient_data_desc_patient_name",
@@ -9578,8 +9642,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this26.authval) {
-                  if (response.res[i].doc_name == _this26.authval[j].name) {
+                for (var j in _this27.authval) {
+                  if (response.res[i].doc_name == _this27.authval[j].name) {
                     start = true;
                   }
                 }
@@ -9587,7 +9651,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this26.authval.push({
+                  _this27.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -9600,8 +9664,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this26.techval) {
-                  if (response.res[i].tech_namesearch == _this26.techval[j].name) {
+                for (var j in _this27.techval) {
+                  if (response.res[i].tech_namesearch == _this27.techval[j].name) {
                     start = true;
                   }
                 }
@@ -9609,7 +9673,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this26.techval.push({
+                  _this27.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -9622,8 +9686,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this26.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this26.parentnameval[j].name) {
+                for (var j in _this27.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this27.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -9631,7 +9695,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this26.parentnameval.push({
+                  _this27.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -9644,8 +9708,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this26.doctorstate) {
-                  if (response.res[i].doctor_state == _this26.doctorstate[j].name) {
+                for (var j in _this27.doctorstate) {
+                  if (response.res[i].doctor_state == _this27.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -9653,7 +9717,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this26.doctorstate.push({
+                  _this27.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -9666,8 +9730,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this26.doctorcity) {
-                  if (response.res[i].doctor_city == _this26.doctorcity[j].name) {
+                for (var j in _this27.doctorcity) {
+                  if (response.res[i].doctor_city == _this27.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -9675,7 +9739,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this26.doctorcity.push({
+                  _this27.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -9688,8 +9752,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this26.patientcity) {
-                  if (response.res[i].patient_city == _this26.patientcity[j].name) {
+                for (var j in _this27.patientcity) {
+                  if (response.res[i].patient_city == _this27.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -9697,7 +9761,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this26.patientcity.push({
+                  _this27.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -9710,8 +9774,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this26.patientstate) {
-                  if (response.res[i].patient_state == _this26.patientstate[j].name) {
+                for (var j in _this27.patientstate) {
+                  if (response.res[i].patient_state == _this27.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -9719,7 +9783,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this26.patientstate.push({
+                  _this27.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -9732,8 +9796,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this26.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this26.docofficeval[j].name) {
+                for (var j in _this27.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this27.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -9741,7 +9805,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this26.docofficeval.push({
+                  _this27.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -9977,13 +10041,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          var _this27 = this;
+          var _this28 = this;
 
           this.cookies["delete"]('jwtToken');
           this.cookies["delete"]('user_details');
           this.cookies.deleteAll();
           setTimeout(function () {
-            _this27.router.navigateByUrl('logout');
+            _this28.router.navigateByUrl('logout');
           }, 1000);
         }
         /**logout function end here**/
@@ -10162,7 +10226,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this28 = this;
+          var _this29 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -10188,17 +10252,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var AdminSingleData = data.adminsingleData.res;
 
-                _this28.adminManagementAddEditForm.controls['id'].patchValue(AdminSingleData[0]._id);
+                _this29.adminManagementAddEditForm.controls['id'].patchValue(AdminSingleData[0]._id);
 
-                _this28.adminManagementAddEditForm.controls['firstname'].patchValue(AdminSingleData[0].firstname);
+                _this29.adminManagementAddEditForm.controls['firstname'].patchValue(AdminSingleData[0].firstname);
 
-                _this28.adminManagementAddEditForm.controls['lastname'].patchValue(AdminSingleData[0].lastname);
+                _this29.adminManagementAddEditForm.controls['lastname'].patchValue(AdminSingleData[0].lastname);
 
-                _this28.adminManagementAddEditForm.controls['email'].patchValue(AdminSingleData[0].email);
+                _this29.adminManagementAddEditForm.controls['email'].patchValue(AdminSingleData[0].email);
 
-                _this28.adminManagementAddEditForm.controls['phone'].patchValue(AdminSingleData[0].phone);
+                _this29.adminManagementAddEditForm.controls['phone'].patchValue(AdminSingleData[0].phone);
 
-                _this28.adminManagementAddEditForm.controls['status'].patchValue(AdminSingleData[0].status);
+                _this29.adminManagementAddEditForm.controls['status'].patchValue(AdminSingleData[0].status);
               });
               break;
 
@@ -10211,10 +10275,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "validateEmailNotTaken",
         value: function validateEmailNotTaken(control) {
-          var _this29 = this;
+          var _this30 = this;
 
           return function (control) {
-            return _this29.httpService.checkingDuplicateEmail(control.value).subscribe(function (res) {
+            return _this30.httpService.checkingDuplicateEmail(control.value).subscribe(function (res) {
               if (res.data.length == 0) {
                 return {
                   emailTaken: false
@@ -10264,7 +10328,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "AdminManagementAddFormSubmit",
         value: function AdminManagementAddFormSubmit() {
-          var _this30 = this;
+          var _this31 = this;
 
           for (var x in this.adminManagementAddEditForm.controls) {
             this.adminManagementAddEditForm.controls[x].markAsTouched();
@@ -10287,17 +10351,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == 'success') {
-                _this30.snackBar.open(_this30.htmlText.message, "Ok", {
+                _this31.snackBar.open(_this31.htmlText.message, "Ok", {
                   duration: 2000
                 });
 
-                _this30.formDirective.resetForm();
+                _this31.formDirective.resetForm();
 
                 setTimeout(function () {
-                  _this30.router.navigateByUrl('/admin/admin-management');
+                  _this31.router.navigateByUrl('/admin/admin-management');
                 }, 1000);
               } else {
-                _this30.snackBar.open("An error occoed. Error code: F-AEA-TS-164.", "Ok", {
+                _this31.snackBar.open("An error occoed. Error code: F-AEA-TS-164.", "Ok", {
                   duration: 2000
                 });
               }
@@ -10567,7 +10631,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ManageAdminListComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this31 = this;
+          var _this32 = this;
 
           this.datasource = '';
           var endpoint = 'getadminlistdata';
@@ -10585,12 +10649,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this31.adminData_count = res.count; //console.warn('blogData c',res);
+            _this32.adminData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this31.TechDashboardAllData = res.results.res;
+            _this32.TechDashboardAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -10775,7 +10839,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "generateAddEditForm",
         value: function generateAddEditForm(flag) {
-          var _this32 = this;
+          var _this33 = this;
 
           var validateRule = {
             id: ['', []],
@@ -10812,44 +10876,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var billerDetails = data.billersingleData.res;
                 setTimeout(function () {
-                  _this32.getCity(billerDetails[0].state);
+                  _this33.getCity(billerDetails[0].state);
                 }, 1000);
 
-                _this32.billerManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
+                _this33.billerManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
 
-                _this32.billerManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
+                _this33.billerManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
 
-                _this32.billerManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
+                _this33.billerManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
 
-                _this32.billerManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
+                _this33.billerManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
 
-                _this32.billerManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
+                _this33.billerManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
 
-                _this32.billerManagementAddEditForm.controls['company_name'].patchValue(billerDetails[0].company_name);
+                _this33.billerManagementAddEditForm.controls['company_name'].patchValue(billerDetails[0].company_name);
 
-                _this32.billerManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address); // this.getCity(doctorDetails[0].state);
+                _this33.billerManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address); // this.getCity(doctorDetails[0].state);
 
 
-                _this32.getParentData(billerDetails[0].parent_type); //  this.getCity(doctorDetails[0].state);
+                _this33.getParentData(billerDetails[0].parent_type); //  this.getCity(doctorDetails[0].state);
                 // this.getCityByName(doctorDetails[0].state);
 
 
                 setTimeout(function () {
                   // getCityByName
-                  _this32.billerManagementAddEditForm.controls['parent_type'].patchValue(billerDetails[0].parent_type);
+                  _this33.billerManagementAddEditForm.controls['parent_type'].patchValue(billerDetails[0].parent_type);
 
-                  if (_this32.htmlText.userData.user_details.user_type == 'admin') {
-                    _this32.billerManagementAddEditForm.controls['parent_id'].patchValue(billerDetails[0].parent_id);
+                  if (_this33.htmlText.userData.user_details.user_type == 'admin') {
+                    _this33.billerManagementAddEditForm.controls['parent_id'].patchValue(billerDetails[0].parent_id);
                   }
                 }, 2000);
 
-                _this32.billerManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
+                _this33.billerManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
 
-                _this32.billerManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
+                _this33.billerManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
 
-                _this32.billerManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
+                _this33.billerManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
 
-                _this32.billerManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
+                _this33.billerManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
               });
               break;
 
@@ -10889,13 +10953,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this33 = this;
+          var _this34 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this33.states = response;
+            _this34.states = response;
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this33.allCities = response;
+            _this34.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -10916,7 +10980,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getParentData",
         value: function getParentData() {
-          var _this34 = this;
+          var _this35 = this;
 
           var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
           console.log('222222222222', id);
@@ -10962,7 +11026,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
             // console.log('+++++++++',response);
-            _this34.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
+            _this35.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
             // this.htmlText.doctorOfficeData = response.data.doctor_office_data;
             // this.htmlText.billerData = response.data.biller_data;
           });
@@ -10981,7 +11045,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "BillerManagementAddFormSubmit",
         value: function BillerManagementAddFormSubmit() {
-          var _this35 = this;
+          var _this36 = this;
 
           for (var x in this.billerManagementAddEditForm.controls) {
             this.billerManagementAddEditForm.controls[x].markAsTouched();
@@ -11030,37 +11094,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             if (this.htmlText.userData.user_details.user_type != 'doctor') {
               this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
                 if (response.status == 'success') {
-                  _this35.snackBar.open(_this35.message, 'Ok', {
+                  _this36.snackBar.open(_this36.message, 'Ok', {
                     duration: 2000
                   });
 
-                  _this35.formDirective.resetForm();
+                  _this36.formDirective.resetForm();
 
                   setTimeout(function () {
-                    switch (_this35.htmlText.userData.user_details.user_type) {
+                    switch (_this36.htmlText.userData.user_details.user_type) {
                       case 'admin':
-                        _this35.router.navigateByUrl("admin/biller-management");
+                        _this36.router.navigateByUrl("admin/biller-management");
 
                         break;
 
                       case 'diagnostic_admin':
-                        _this35.router.navigateByUrl("diagnostic-admin/biller-management");
+                        _this36.router.navigateByUrl("diagnostic-admin/biller-management");
 
                         break;
 
                       case 'doctor_group':
-                        _this35.router.navigateByUrl("doctor-group/biller-management");
+                        _this36.router.navigateByUrl("doctor-group/biller-management");
 
                         break;
 
                       case 'distributors':
-                        _this35.router.navigateByUrl("distributors/biller-management");
+                        _this36.router.navigateByUrl("distributors/biller-management");
 
                         break;
                     }
                   }, 1000);
                 } else {
-                  _this35.snackBar.open(response.msg, '', {
+                  _this36.snackBar.open(response.msg, '', {
                     duration: 2000
                   });
                 }
@@ -11072,42 +11136,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               data["doctorid"] = this.htmlText.userData.user_details._id;
               this.httpService.httpViaPost("add-biller-data", data).subscribe(function (response) {
                 if (response.status == 'success') {
-                  _this35.snackBar.open(_this35.message, 'Ok', {
+                  _this36.snackBar.open(_this36.message, 'Ok', {
                     duration: 2000
                   });
 
-                  _this35.formDirective.resetForm();
+                  _this36.formDirective.resetForm();
 
                   setTimeout(function () {
-                    switch (_this35.htmlText.userData.user_details.user_type) {
+                    switch (_this36.htmlText.userData.user_details.user_type) {
                       case 'admin':
-                        _this35.router.navigateByUrl("admin/biller-management");
+                        _this36.router.navigateByUrl("admin/biller-management");
 
                         break;
 
                       case 'diagnostic_admin':
-                        _this35.router.navigateByUrl("diagnostic-admin/biller-management");
+                        _this36.router.navigateByUrl("diagnostic-admin/biller-management");
 
                         break;
 
                       case 'doctor_group':
-                        _this35.router.navigateByUrl("doctor-group/biller-management");
+                        _this36.router.navigateByUrl("doctor-group/biller-management");
 
                         break;
 
                       case 'distributors':
-                        _this35.router.navigateByUrl("distributors/biller-management");
+                        _this36.router.navigateByUrl("distributors/biller-management");
 
                         break;
 
                       case 'doctor':
-                        _this35.router.navigateByUrl("doctor/biller-management");
+                        _this36.router.navigateByUrl("doctor/biller-management");
 
                         break;
                     }
                   }, 1000);
                 } else {
-                  _this35.snackBar.open(response.msg, '', {
+                  _this36.snackBar.open(response.msg, '', {
                     duration: 2000
                   });
                 }
@@ -11194,7 +11258,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "changePasswordFormSubmit",
         value: function changePasswordFormSubmit() {
-          var _this36 = this;
+          var _this37 = this;
 
           for (var x in this.changePwdForm.controls) {
             this.changePwdForm.controls[x].markAsTouched();
@@ -11209,11 +11273,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost('changepassword', data).subscribe(function (response) {
               if (response.status == true) {
-                _this36.snackBar.open('Successfully changed.', '', {
+                _this37.snackBar.open('Successfully changed.', '', {
                   duration: 2000
                 });
               } else {
-                _this36.snackBar.open(response.message, '', {
+                _this37.snackBar.open(response.message, '', {
                   duration: 2000
                 });
               }
@@ -11529,7 +11593,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingBillerComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this37 = this;
+          var _this38 = this;
 
           this.datasource = '';
 
@@ -11570,12 +11634,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
               // console.log('in constructor');
               // console.log(result);
-              _this37.billerData_count = res.count; //console.warn('blogData c',res);
+              _this38.billerData_count = res.count; //console.warn('blogData c',res);
             }, function (error) {
               console.log('Oooops!');
             });
             this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-              _this37.allBillerData = res.results.res;
+              _this38.allBillerData = res.results.res;
             }, function (error) {
               console.log('Oooops!');
             });
@@ -11617,12 +11681,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.httpService.httpViaPost(_endpointc, _data5).subscribe(function (res) {
               // console.log('in constructor');
               // console.log(result);
-              _this37.billerData_count = res.count; //console.warn('blogData c',res);
+              _this38.billerData_count = res.count; //console.warn('blogData c',res);
             }, function (error) {
               console.log('Oooops!');
             });
             this.httpService.httpViaPost(_endpoint, _data5).subscribe(function (res) {
-              _this37.allBillerData = res.results.res;
+              _this38.allBillerData = res.results.res;
             }, function (error) {
               console.log('Oooops!');
             });
@@ -11631,16 +11695,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllBillerData",
         value: function getAllBillerData() {
-          var _this38 = this;
+          var _this39 = this;
 
           this.activeRoute.data.forEach(function (data) {
-            _this38.allBillerData = data.Billerdata.res;
+            _this39.allBillerData = data.Billerdata.res;
           });
         }
       }, {
         key: "listenLiblistingChange",
         value: function listenLiblistingChange() {
-          var _this39 = this;
+          var _this40 = this;
 
           var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
@@ -11665,24 +11729,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   switch (result) {
                     case "Yes":
                       // Delete Cookie
-                      _this39.cookie["delete"]('user_details');
+                      _this40.cookie["delete"]('user_details');
 
-                      _this39.cookie["delete"]('main_user');
+                      _this40.cookie["delete"]('main_user');
 
-                      _this39.cookie["delete"]('jwtToken');
+                      _this40.cookie["delete"]('jwtToken');
 
-                      _this39.cookie.deleteAll('/');
+                      _this40.cookie.deleteAll('/');
 
                       setTimeout(function () {
                         // Reset again Cookie
-                        _this39.cookie.set('jwtToken', _this39.user_cookie);
+                        _this40.cookie.set('jwtToken', _this40.user_cookie);
 
-                        _this39.cookie.set('user_details', JSON.stringify(data.custombuttonclick.data));
+                        _this40.cookie.set('user_details', JSON.stringify(data.custombuttonclick.data));
 
-                        _this39.cookie.set('main_user', JSON.stringify(_this39.userData)); // Redirect to page
+                        _this40.cookie.set('main_user', JSON.stringify(_this40.userData)); // Redirect to page
 
 
-                        _this39.router.navigateByUrl("doctor/dashboard");
+                        _this40.router.navigateByUrl("doctor/dashboard");
                       }, 500);
                       break;
 
@@ -11972,7 +12036,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var CptValidateReportsComponent = /*#__PURE__*/function () {
       // lib list end
       function CptValidateReportsComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this40 = this;
+        var _this41 = this;
 
         _classCallCheck(this, CptValidateReportsComponent);
 
@@ -12150,13 +12214,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           data: this.htmlText.path
         };
         this.http.httpViaPostbyApi1(endpointc, data).subscribe(function (res) {
-          _this40.billerData_count = res.count;
+          _this41.billerData_count = res.count;
         }, function (error) {
           console.log('Oooops!');
         });
         this.http.httpViaPostbyApi1(endpoint, data).subscribe(function (res) {
           // console.log(res);
-          _this40.allBillerData = res.results.res;
+          _this41.allBillerData = res.results.res;
         }, function (error) {
           console.log('Oooops!');
         });
@@ -12165,7 +12229,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CptValidateReportsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this41 = this;
+          var _this42 = this;
 
           var data = {
             "source": "patient_data_desc_patient_name",
@@ -12178,8 +12242,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this41.authval) {
-                  if (response.res[i].doc_name == _this41.authval[j].name) {
+                for (var j in _this42.authval) {
+                  if (response.res[i].doc_name == _this42.authval[j].name) {
                     start = true;
                   }
                 }
@@ -12187,7 +12251,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this41.authval.push({
+                  _this42.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -12200,8 +12264,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this41.techval) {
-                  if (response.res[i].tech_namesearch == _this41.techval[j].name) {
+                for (var j in _this42.techval) {
+                  if (response.res[i].tech_namesearch == _this42.techval[j].name) {
                     start = true;
                   }
                 }
@@ -12209,7 +12273,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this41.techval.push({
+                  _this42.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -12222,8 +12286,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this41.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this41.parentnameval[j].name) {
+                for (var j in _this42.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this42.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -12231,7 +12295,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this41.parentnameval.push({
+                  _this42.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -12244,8 +12308,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this41.doctorstate) {
-                  if (response.res[i].doctor_state == _this41.doctorstate[j].name) {
+                for (var j in _this42.doctorstate) {
+                  if (response.res[i].doctor_state == _this42.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -12253,7 +12317,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this41.doctorstate.push({
+                  _this42.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -12266,8 +12330,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this41.doctorcity) {
-                  if (response.res[i].doctor_city == _this41.doctorcity[j].name) {
+                for (var j in _this42.doctorcity) {
+                  if (response.res[i].doctor_city == _this42.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -12275,7 +12339,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this41.doctorcity.push({
+                  _this42.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -12288,8 +12352,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this41.patientcity) {
-                  if (response.res[i].patient_city == _this41.patientcity[j].name) {
+                for (var j in _this42.patientcity) {
+                  if (response.res[i].patient_city == _this42.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -12297,7 +12361,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this41.patientcity.push({
+                  _this42.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -12310,8 +12374,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this41.patientstate) {
-                  if (response.res[i].patient_state == _this41.patientstate[j].name) {
+                for (var j in _this42.patientstate) {
+                  if (response.res[i].patient_state == _this42.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -12319,7 +12383,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this41.patientstate.push({
+                  _this42.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -12332,8 +12396,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this41.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this41.docofficeval[j].name) {
+                for (var j in _this42.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this42.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -12341,7 +12405,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this41.docofficeval.push({
+                  _this42.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -12546,7 +12610,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditDiagnosticAdminComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this42 = this;
+          var _this43 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -12584,40 +12648,40 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 console.log(data);
                 var diagnosticAdmin = data.data.res[0];
                 setTimeout(function () {
-                  _this42.getCity(diagnosticAdmin.state);
+                  _this43.getCity(diagnosticAdmin.state);
                 }, 1000);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['id'].patchValue(diagnosticAdmin._id);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['id'].patchValue(diagnosticAdmin._id);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['center_name'].patchValue(diagnosticAdmin.center_name);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['center_name'].patchValue(diagnosticAdmin.center_name);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['email'].patchValue(diagnosticAdmin.email);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['email'].patchValue(diagnosticAdmin.email);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['phone'].patchValue(diagnosticAdmin.phone);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['phone'].patchValue(diagnosticAdmin.phone);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['fax'].patchValue(diagnosticAdmin.phone);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['fax'].patchValue(diagnosticAdmin.phone);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['address'].patchValue(diagnosticAdmin.address);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['address'].patchValue(diagnosticAdmin.address);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['zip'].patchValue(diagnosticAdmin.zip);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['zip'].patchValue(diagnosticAdmin.zip);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['city'].patchValue(diagnosticAdmin.city);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['city'].patchValue(diagnosticAdmin.city);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['state'].patchValue(diagnosticAdmin.state);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['state'].patchValue(diagnosticAdmin.state);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['status'].patchValue(diagnosticAdmin.status);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['status'].patchValue(diagnosticAdmin.status);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['contact_person_1_name'].patchValue(diagnosticAdmin.contact_person[0].name);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['contact_person_1_name'].patchValue(diagnosticAdmin.contact_person[0].name);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['contact_person_1_email'].patchValue(diagnosticAdmin.contact_person[0].email);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['contact_person_1_email'].patchValue(diagnosticAdmin.contact_person[0].email);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['contact_person_1_phone'].patchValue(diagnosticAdmin.contact_person[0].phone);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['contact_person_1_phone'].patchValue(diagnosticAdmin.contact_person[0].phone);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['contact_person_2_name'].patchValue(diagnosticAdmin.contact_person[1].name);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['contact_person_2_name'].patchValue(diagnosticAdmin.contact_person[1].name);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['contact_person_2_email'].patchValue(diagnosticAdmin.contact_person[1].email);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['contact_person_2_email'].patchValue(diagnosticAdmin.contact_person[1].email);
 
-                _this42.DiagnosticAdminManagementAddEditForm.controls['contact_person_2_phone'].patchValue(diagnosticAdmin.contact_person[1].phone);
+                _this43.DiagnosticAdminManagementAddEditForm.controls['contact_person_2_phone'].patchValue(diagnosticAdmin.contact_person[1].phone);
               });
               break;
 
@@ -12671,13 +12735,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this43 = this;
+          var _this44 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this43.htmlText.states = response; // this.getResolveData();
+            _this44.htmlText.states = response; // this.getResolveData();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this43.htmlText.allCities = response;
+            _this44.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -12696,7 +12760,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "TechManagementAddFormFormSubmit",
         value: function TechManagementAddFormFormSubmit() {
-          var _this44 = this;
+          var _this45 = this;
 
           for (var x in this.DiagnosticAdminManagementAddEditForm.controls) {
             this.DiagnosticAdminManagementAddEditForm.controls[x].markAsTouched();
@@ -12735,17 +12799,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this44.snackBar.open(_this44.htmlText.message, 'Ok', {
+                _this45.snackBar.open(_this45.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this44.formDirective.resetForm();
+                _this45.formDirective.resetForm();
 
                 setTimeout(function () {
-                  _this44.router.navigateByUrl("admin/diagnostic-admin-management");
+                  _this45.router.navigateByUrl("admin/diagnostic-admin-management");
                 }, 2000);
               } else {
-                _this44.snackBar.open(response.msg, '', {
+                _this45.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -13061,7 +13125,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingDiagnosticAdminComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this45 = this;
+          var _this46 = this;
 
           this.datasource = '';
           var endpoint = 'getdiagnosticadminlistdata';
@@ -13079,12 +13143,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this45.diagnosticadminData_count = res.count; //console.warn('blogData c',res);
+            _this46.diagnosticadminData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this45.TechDashboardAllData = res.results.res;
+            _this46.TechDashboardAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -13092,7 +13156,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "listenLiblistingChange",
         value: function listenLiblistingChange() {
-          var _this46 = this;
+          var _this47 = this;
 
           var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
@@ -13117,24 +13181,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   switch (result) {
                     case "Yes":
                       // Delete Cookie
-                      _this46.cookie["delete"]('user_details');
+                      _this47.cookie["delete"]('user_details');
 
-                      _this46.cookie["delete"]('main_user');
+                      _this47.cookie["delete"]('main_user');
 
-                      _this46.cookie["delete"]('jwtToken');
+                      _this47.cookie["delete"]('jwtToken');
 
-                      _this46.cookie.deleteAll('/');
+                      _this47.cookie.deleteAll('/');
 
                       setTimeout(function () {
                         // Reset again Cookie
-                        _this46.cookie.set('jwtToken', _this46.user_cookie);
+                        _this47.cookie.set('jwtToken', _this47.user_cookie);
 
-                        _this46.cookie.set('user_details', JSON.stringify(data.custombuttonclick.data));
+                        _this47.cookie.set('user_details', JSON.stringify(data.custombuttonclick.data));
 
-                        _this46.cookie.set('main_user', JSON.stringify(_this46.userData)); // Redirect to page
+                        _this47.cookie.set('main_user', JSON.stringify(_this47.userData)); // Redirect to page
 
 
-                        _this46.router.navigateByUrl("diagnostic-admin/dashboard");
+                        _this47.router.navigateByUrl("diagnostic-admin/dashboard");
                       }, 500);
                       break;
 
@@ -13353,7 +13417,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this47 = this;
+          var _this48 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -13410,67 +13474,67 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 var doctorDetails = data.data.res;
                 console.log('=======', doctorDetails[0]);
 
-                _this47.doctorManagementAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
+                _this48.doctorManagementAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
 
-                _this47.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
+                _this48.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
 
-                _this47.doctorManagementAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
+                _this48.doctorManagementAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
 
-                _this47.doctorManagementAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
+                _this48.doctorManagementAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
 
-                _this47.doctorManagementAddEditForm.controls['phone'].patchValue(doctorDetails[0].phone);
+                _this48.doctorManagementAddEditForm.controls['phone'].patchValue(doctorDetails[0].phone);
 
-                _this47.doctorManagementAddEditForm.controls['fax'].patchValue(doctorDetails[0].fax);
+                _this48.doctorManagementAddEditForm.controls['fax'].patchValue(doctorDetails[0].fax);
 
-                _this47.doctorManagementAddEditForm.controls['practice_name'].patchValue(doctorDetails[0].practice_name);
+                _this48.doctorManagementAddEditForm.controls['practice_name'].patchValue(doctorDetails[0].practice_name);
 
-                _this47.doctorManagementAddEditForm.controls['npi'].patchValue(doctorDetails[0].npi);
+                _this48.doctorManagementAddEditForm.controls['npi'].patchValue(doctorDetails[0].npi);
 
-                _this47.doctorManagementAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
+                _this48.doctorManagementAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
 
-                _this47.doctorManagementAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
+                _this48.doctorManagementAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
 
-                _this47.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
+                _this48.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
 
-                _this47.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
+                _this48.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
 
-                _this47.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city); // this.getCity(doctorDetails[0].state);
+                _this48.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city); // this.getCity(doctorDetails[0].state);
 
 
                 if (doctorDetails[0].parent_type == "admin") {
-                  _this47.getalldataforedit();
+                  _this48.getalldataforedit();
                 } else {
-                  _this47.getalldataforedit(doctorDetails[0]);
+                  _this48.getalldataforedit(doctorDetails[0]);
                 }
 
-                _this47.getParentData(doctorDetails[0].parent_type); //  this.getCity(doctorDetails[0].state);
+                _this48.getParentData(doctorDetails[0].parent_type); //  this.getCity(doctorDetails[0].state);
                 // this.getCityByName(doctorDetails[0].state);
 
 
                 setTimeout(function () {
                   // getCityByName
-                  _this47.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
+                  _this48.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
 
-                  _this47.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_id);
+                  _this48.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_id);
 
-                  _this47.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_id);
+                  _this48.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_id);
 
-                  _this47.doctorManagementAddEditForm.controls['parent_type'].patchValue(doctorDetails[0].parent_type); // }
+                  _this48.doctorManagementAddEditForm.controls['parent_type'].patchValue(doctorDetails[0].parent_type); // }
                   // if (doctorDetails[0].parent_type != "admin") {
 
 
-                  if (_this47.htmlText.user_details.user_type == 'admin') {
-                    _this47.doctorManagementAddEditForm.controls['parent_id'].patchValue(doctorDetails[0].parent_id);
+                  if (_this48.htmlText.user_details.user_type == 'admin') {
+                    _this48.doctorManagementAddEditForm.controls['parent_id'].patchValue(doctorDetails[0].parent_id);
                   }
                 }, 1000); // if (doctorDetails[0].parent_type != "admin") {
                 // }
                 // this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
 
-                _this47.doctorManagementAddEditForm.controls['cpt_validate_amount'].patchValue(String(doctorDetails[0].cpt_validate_amount));
+                _this48.doctorManagementAddEditForm.controls['cpt_validate_amount'].patchValue(String(doctorDetails[0].cpt_validate_amount));
 
-                _this47.doctorManagementAddEditForm.controls['taxo_list'].patchValue(doctorDetails[0].taxo_list);
+                _this48.doctorManagementAddEditForm.controls['taxo_list'].patchValue(doctorDetails[0].taxo_list);
 
-                _this47.doctorManagementAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
+                _this48.doctorManagementAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
               });
               break;
 
@@ -13521,16 +13585,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this48 = this;
+          var _this49 = this;
 
           this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this48.htmlText.states = response;
+            _this49.htmlText.states = response;
           });
           this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this48.htmlText.allCities = response;
+            _this49.htmlText.allCities = response;
           });
           this.http.getSiteSettingData("./assets/data-set/taxonomies.json").subscribe(function (response) {
-            _this48.htmlText.taxonomies = response;
+            _this49.htmlText.taxonomies = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -13551,7 +13615,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getalldata",
         value: function getalldata() {
-          var _this49 = this;
+          var _this50 = this;
 
           var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
           // console.log('check',id);
@@ -13608,19 +13672,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.http.httpViaPost('datalist', data).subscribe(function (response) {
-            _this49.htmlText.techData = response.res;
+            _this50.htmlText.techData = response.res;
           });
           this.http.httpViaPost('datalist', data1).subscribe(function (response) {
-            _this49.htmlText.billerData = response.res;
+            _this50.htmlText.billerData = response.res;
           });
           this.http.httpViaPost('datalist', data2).subscribe(function (response) {
-            _this49.htmlText.doctorOfficeData = response.res;
+            _this50.htmlText.doctorOfficeData = response.res;
           });
         }
       }, {
         key: "getalldataforedit",
         value: function getalldataforedit() {
-          var _this50 = this;
+          var _this51 = this;
 
           var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
           console.log('check', id);
@@ -13677,13 +13741,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.http.httpViaPost('datalist', data).subscribe(function (response) {
-            _this50.htmlText.techData = response.res;
+            _this51.htmlText.techData = response.res;
           });
           this.http.httpViaPost('datalist', data1).subscribe(function (response) {
-            _this50.htmlText.billerData = response.res;
+            _this51.htmlText.billerData = response.res;
           });
           this.http.httpViaPost('datalist', data2).subscribe(function (response) {
-            _this50.htmlText.doctorOfficeData = response.res;
+            _this51.htmlText.doctorOfficeData = response.res;
           });
         }
         /**getting all the Parent data**/
@@ -13691,7 +13755,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getParentData",
         value: function getParentData() {
-          var _this51 = this;
+          var _this52 = this;
 
           var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
           var billerData = id;
@@ -13736,7 +13800,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.httpViaPost('datalist', data).subscribe(function (response) {
             // console.log('+++++++++',response);
-            _this51.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
+            _this52.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
             // this.htmlText.doctorOfficeData = response.data.doctor_office_data;
             // this.htmlText.billerData = response.data.biller_data;
           });
@@ -13744,7 +13808,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "doctorManagementAddEditFormSubmit",
         value: function doctorManagementAddEditFormSubmit() {
-          var _this52 = this;
+          var _this53 = this;
 
           for (var x in this.doctorManagementAddEditForm.controls) {
             this.doctorManagementAddEditForm.controls[x].markAsTouched();
@@ -13799,35 +13863,35 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.http.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == "success") {
-                _this52.snackBar.open(_this52.htmlText.message, 'Ok', {
+                _this53.snackBar.open(_this53.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  switch (_this52.htmlText.user_details.user_type) {
+                  switch (_this53.htmlText.user_details.user_type) {
                     case 'admin':
-                      _this52.router.navigateByUrl("admin/doctor-management");
+                      _this53.router.navigateByUrl("admin/doctor-management");
 
                       break;
 
                     case 'diagnostic_admin':
-                      _this52.router.navigateByUrl("diagnostic-admin/doctor-management");
+                      _this53.router.navigateByUrl("diagnostic-admin/doctor-management");
 
                       break;
 
                     case 'distributors':
-                      _this52.router.navigateByUrl("distributors/doctor-management");
+                      _this53.router.navigateByUrl("distributors/doctor-management");
 
                       break;
 
                     case 'doctor_group':
-                      _this52.router.navigateByUrl("doctor-group/doctor-management");
+                      _this53.router.navigateByUrl("doctor-group/doctor-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this52.snackBar.open(response.msg, '', {
+                _this53.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -14222,7 +14286,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListDoctorComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this53 = this;
+          var _this54 = this;
 
           this.datasource = '';
           var endpoint = 'getdoctorlistdata';
@@ -14271,12 +14335,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           data.data = this.fetch;
           this.http.httpViaPost(endpointc, data).subscribe(function (res) {
-            _this53.docData_count = res.count;
+            _this54.docData_count = res.count;
           }, function (error) {
             console.log('Oooops!');
           });
           this.http.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this53.docData = res.results.res;
+            _this54.docData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -14284,7 +14348,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "listenLiblistingChange",
         value: function listenLiblistingChange() {
-          var _this54 = this;
+          var _this55 = this;
 
           var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
@@ -14309,24 +14373,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   switch (result) {
                     case "Yes":
                       // Delete Cookie
-                      _this54.cookieService["delete"]('user_details');
+                      _this55.cookieService["delete"]('user_details');
 
-                      _this54.cookieService["delete"]('main_user');
+                      _this55.cookieService["delete"]('main_user');
 
-                      _this54.cookieService["delete"]('jwtToken');
+                      _this55.cookieService["delete"]('jwtToken');
 
-                      _this54.cookieService.deleteAll('/');
+                      _this55.cookieService.deleteAll('/');
 
                       setTimeout(function () {
                         // Reset again Cookie
-                        _this54.cookieService.set('jwtToken', _this54.user_cookie);
+                        _this55.cookieService.set('jwtToken', _this55.user_cookie);
 
-                        _this54.cookieService.set('user_details', JSON.stringify(data.custombuttonclick.data));
+                        _this55.cookieService.set('user_details', JSON.stringify(data.custombuttonclick.data));
 
-                        _this54.cookieService.set('main_user', JSON.stringify(_this54.userData)); // Redirect to page
+                        _this55.cookieService.set('main_user', JSON.stringify(_this55.userData)); // Redirect to page
 
 
-                        _this54.router.navigateByUrl("doctor/dashboard");
+                        _this55.router.navigateByUrl("doctor/dashboard");
                       }, 500);
                       break;
 
@@ -14364,13 +14428,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                         }
                       };
 
-                      var _dialogRef = _this54.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_7__["DialogBoxComponent"], _modalData);
+                      var _dialogRef = _this55.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_7__["DialogBoxComponent"], _modalData);
 
                       _dialogRef.afterClosed().subscribe(function (result) {
-                        _this54.docData = [];
-                        _this54.docData_count = 0;
+                        _this55.docData = [];
+                        _this55.docData_count = 0;
 
-                        _this54.ngOnInit();
+                        _this55.ngOnInit();
                       });
 
                       break;
@@ -14582,7 +14646,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditDoctorOfcComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this55 = this;
+          var _this56 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -14620,44 +14684,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.acivatedRoute.data.forEach(function (data) {
                 var doctorDetails = data.data.res;
                 setTimeout(function () {
-                  _this55.getCity(doctorDetails[0].state);
+                  _this56.getCity(doctorDetails[0].state);
                 }, 1000);
 
-                _this55.doctorOfficeAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
+                _this56.doctorOfficeAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
 
-                _this55.doctorOfficeAddEditForm.controls['center_name'].patchValue(doctorDetails[0].center_name);
+                _this56.doctorOfficeAddEditForm.controls['center_name'].patchValue(doctorDetails[0].center_name);
 
-                _this55.doctorOfficeAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
+                _this56.doctorOfficeAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
 
-                _this55.doctorOfficeAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
+                _this56.doctorOfficeAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
 
-                _this55.doctorOfficeAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
+                _this56.doctorOfficeAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
 
-                _this55.doctorOfficeAddEditForm.controls['phone'].patchValue(doctorDetails[0].phone);
+                _this56.doctorOfficeAddEditForm.controls['phone'].patchValue(doctorDetails[0].phone);
 
-                _this55.doctorOfficeAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
+                _this56.doctorOfficeAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
 
-                _this55.doctorOfficeAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
+                _this56.doctorOfficeAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
 
-                _this55.doctorOfficeAddEditForm.controls['city'].patchValue(doctorDetails[0].city); // this.doctorOfficeAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);// this.getCity(doctorDetails[0].state);
+                _this56.doctorOfficeAddEditForm.controls['city'].patchValue(doctorDetails[0].city); // this.doctorOfficeAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);// this.getCity(doctorDetails[0].state);
 
 
-                _this55.getParentData(doctorDetails[0].parent_type); //  this.getCity(doctorDetails[0].state);
+                _this56.getParentData(doctorDetails[0].parent_type); //  this.getCity(doctorDetails[0].state);
                 // this.getCityByName(doctorDetails[0].state);
 
 
                 setTimeout(function () {
                   // getCityByName
-                  _this55.doctorOfficeAddEditForm.controls['parent_type'].patchValue(doctorDetails[0].parent_type);
+                  _this56.doctorOfficeAddEditForm.controls['parent_type'].patchValue(doctorDetails[0].parent_type);
 
-                  if (_this55.htmlText.user_details.user_type == 'admin') {
-                    _this55.doctorOfficeAddEditForm.controls['parent_id'].patchValue(doctorDetails[0].parent_id);
+                  if (_this56.htmlText.user_details.user_type == 'admin') {
+                    _this56.doctorOfficeAddEditForm.controls['parent_id'].patchValue(doctorDetails[0].parent_id);
                   }
                 }, 2000);
 
-                _this55.doctorOfficeAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
+                _this56.doctorOfficeAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
 
-                _this55.doctorOfficeAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
+                _this56.doctorOfficeAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
               });
               break;
 
@@ -14711,13 +14775,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this56 = this;
+          var _this57 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this56.htmlText.states = response;
+            _this57.htmlText.states = response;
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this56.htmlText.allCities = response;
+            _this57.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -14752,7 +14816,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getParentData",
         value: function getParentData() {
-          var _this57 = this;
+          var _this58 = this;
 
           var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
           var billerData = id;
@@ -14797,7 +14861,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
             // console.log('+++++++++',response);
-            _this57.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
+            _this58.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
             // this.htmlText.doctorOfficeData = response.data.doctor_office_data;
             // this.htmlText.billerData = response.data.biller_data;
           });
@@ -14810,7 +14874,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "doctorOfficeAddEditFormFormSubmit",
         value: function doctorOfficeAddEditFormFormSubmit() {
-          var _this58 = this;
+          var _this59 = this;
 
           for (var x in this.doctorOfficeAddEditForm.controls) {
             this.doctorOfficeAddEditForm.controls[x].markAsTouched();
@@ -14864,27 +14928,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             if (this.htmlText.user_details.user_type != 'doctor') {
               this.httpService.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
                 if (response.status == "success") {
-                  _this58.formDirective.resetForm();
+                  _this59.formDirective.resetForm();
 
-                  _this58.snackBar.open(_this58.htmlText.message, 'Ok', {
+                  _this59.snackBar.open(_this59.htmlText.message, 'Ok', {
                     duration: 2000
                   });
 
                   setTimeout(function () {
-                    switch (_this58.htmlText.user_details.user_type) {
+                    switch (_this59.htmlText.user_details.user_type) {
                       case 'doctor':
-                        _this58.router.navigateByUrl("doctor/doctor-office-management");
+                        _this59.router.navigateByUrl("doctor/doctor-office-management");
 
                         break;
 
                       case 'admin':
-                        _this58.router.navigateByUrl("admin/doctor-office-management");
+                        _this59.router.navigateByUrl("admin/doctor-office-management");
 
                         break;
                     }
                   }, 2000);
                 } else {
-                  _this58.snackBar.open(response.msg, '', {
+                  _this59.snackBar.open(response.msg, '', {
                     duration: 2000
                   });
                 }
@@ -14898,37 +14962,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               postData["doctorid"] = this.htmlText.userData.user_details._id;
               this.httpService.httpViaPost('add-doctor-office-data', postData).subscribe(function (response) {
                 if (response.status == "success") {
-                  _this58.formDirective.resetForm();
+                  _this59.formDirective.resetForm();
 
-                  _this58.snackBar.open(_this58.htmlText.message, 'Ok', {
+                  _this59.snackBar.open(_this59.htmlText.message, 'Ok', {
                     duration: 2000
                   });
 
                   setTimeout(function () {
-                    switch (_this58.htmlText.user_details.user_type) {
+                    switch (_this59.htmlText.user_details.user_type) {
                       case 'doctor':
-                        _this58.router.navigateByUrl("doctor/doctor-office-management");
+                        _this59.router.navigateByUrl("doctor/doctor-office-management");
 
                         break;
 
                       case 'diagnostic_admin':
-                        _this58.router.navigateByUrl("diagnostic-admin/doctor-office-management");
+                        _this59.router.navigateByUrl("diagnostic-admin/doctor-office-management");
 
                         break;
 
                       case 'doctor_group':
-                        _this58.router.navigateByUrl("doctor-group/doctor-office-management");
+                        _this59.router.navigateByUrl("doctor-group/doctor-office-management");
 
                         break;
 
                       case 'distributors':
-                        _this58.router.navigateByUrl("distributors/doctor-office-management");
+                        _this59.router.navigateByUrl("distributors/doctor-office-management");
 
                         break;
                     }
                   }, 2000);
                 } else {
-                  _this58.snackBar.open(response.msg, '', {
+                  _this59.snackBar.open(response.msg, '', {
                     duration: 2000
                   });
                 }
@@ -15337,7 +15401,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(DoctorOfficeManagementComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this59 = this;
+          var _this60 = this;
 
           this.datasource = '';
 
@@ -15366,12 +15430,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
               // console.log('in constructor');
               // console.log(result);
-              _this59.doctorOfficeData_count = res.count; //console.warn('blogData c',res);
+              _this60.doctorOfficeData_count = res.count; //console.warn('blogData c',res);
             }, function (error) {
               console.log('Oooops!');
             });
             this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-              _this59.doctorOfficeAllData = res.results.res;
+              _this60.doctorOfficeAllData = res.results.res;
             }, function (error) {
               console.log('Oooops!');
             });
@@ -15393,12 +15457,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.httpService.httpViaPost(_endpointc2, _data6).subscribe(function (res) {
               // console.log('in constructor');
               // console.log(result);
-              _this59.doctorOfficeData_count = res.count; //console.warn('blogData c',res);
+              _this60.doctorOfficeData_count = res.count; //console.warn('blogData c',res);
             }, function (error) {
               console.log('Oooops!');
             });
             this.httpService.httpViaPost(_endpoint2, _data6).subscribe(function (res) {
-              _this59.doctorOfficeAllData = res.results.res;
+              _this60.doctorOfficeAllData = res.results.res;
             }, function (error) {
               console.log('Oooops!');
             });
@@ -15407,7 +15471,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "listenLiblistingChange",
         value: function listenLiblistingChange() {
-          var _this60 = this;
+          var _this61 = this;
 
           var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
@@ -15432,24 +15496,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   switch (result) {
                     case "Yes":
                       // Delete Cookie
-                      _this60.cookie["delete"]('user_details');
+                      _this61.cookie["delete"]('user_details');
 
-                      _this60.cookie["delete"]('main_user');
+                      _this61.cookie["delete"]('main_user');
 
-                      _this60.cookie["delete"]('jwtToken');
+                      _this61.cookie["delete"]('jwtToken');
 
-                      _this60.cookie.deleteAll('/');
+                      _this61.cookie.deleteAll('/');
 
                       setTimeout(function () {
                         // Reset again Cookie
-                        _this60.cookie.set('jwtToken', _this60.user_cookie);
+                        _this61.cookie.set('jwtToken', _this61.user_cookie);
 
-                        _this60.cookie.set('user_details', JSON.stringify(data.custombuttonclick.data));
+                        _this61.cookie.set('user_details', JSON.stringify(data.custombuttonclick.data));
 
-                        _this60.cookie.set('main_user', JSON.stringify(_this60.userData)); // Redirect to page
+                        _this61.cookie.set('main_user', JSON.stringify(_this61.userData)); // Redirect to page
 
 
-                        _this60.router.navigateByUrl("doctor/dashboard");
+                        _this61.router.navigateByUrl("doctor/dashboard");
                       }, 500);
                       break;
 
@@ -15643,7 +15707,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditFaqComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this61 = this;
+          var _this62 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -15662,21 +15726,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var billerDetails = data.techData.res;
 
-                _this61.FaqManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
+                _this62.FaqManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
 
-                _this61.FaqManagementAddEditForm.controls['users'].patchValue(billerDetails[0].users);
+                _this62.FaqManagementAddEditForm.controls['users'].patchValue(billerDetails[0].users);
 
-                _this61.FaqManagementAddEditForm.controls['question'].patchValue(billerDetails[0].question);
+                _this62.FaqManagementAddEditForm.controls['question'].patchValue(billerDetails[0].question);
 
-                _this61.htmlText.ckEditorValue = billerDetails[0].answer;
+                _this62.htmlText.ckEditorValue = billerDetails[0].answer;
 
-                _this61.FaqManagementAddEditForm.controls['youtube_link'].patchValue(billerDetails[0].youtube_link);
+                _this62.FaqManagementAddEditForm.controls['youtube_link'].patchValue(billerDetails[0].youtube_link);
 
-                _this61.FaqManagementAddEditForm.controls['priority'].patchValue(billerDetails[0].priority);
+                _this62.FaqManagementAddEditForm.controls['priority'].patchValue(billerDetails[0].priority);
 
-                _this61.FaqManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
+                _this62.FaqManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
 
-                _this61.getVideo();
+                _this62.getVideo();
               });
               break;
 
@@ -15701,7 +15765,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "TechManagementAddFormFormSubmit",
         value: function TechManagementAddFormFormSubmit() {
-          var _this62 = this;
+          var _this63 = this;
 
           this.FaqManagementAddEditForm.controls['answer'].patchValue(this.htmlText.ckEditorValue);
 
@@ -15737,17 +15801,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this62.snackBar.open(_this62.htmlText.message, 'Ok', {
+                _this63.snackBar.open(_this63.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this62.formDirective.resetForm();
+                _this63.formDirective.resetForm();
 
                 setTimeout(function () {
-                  _this62.router.navigateByUrl("admin/faq-management");
+                  _this63.router.navigateByUrl("admin/faq-management");
                 }, 1000);
               } else {
-                _this62.snackBar.open(response.msg, '', {
+                _this63.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -15971,7 +16035,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListFaqComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this63 = this;
+          var _this64 = this;
 
           this.datasource = '';
           var endpoint = 'getfaqlistdata';
@@ -15989,12 +16053,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this63.faqData_count = res.count; //console.warn('blogData c',res);
+            _this64.faqData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this63.FaqManagementAddEditForm = res.results.res;
+            _this64.FaqManagementAddEditForm = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -16248,7 +16312,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this64 = this;
+          var _this65 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -16285,38 +16349,38 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.acivatedRoute.data.forEach(function (data) {
                 var adminbillerDetails = data.data.res;
                 setTimeout(function () {
-                  _this64.getCity(adminbillerDetails[0].state);
+                  _this65.getCity(adminbillerDetails[0].state);
                 }, 1000);
 
-                _this64.adminbillerManagementAddEditForm.controls['id'].patchValue(adminbillerDetails[0]._id);
+                _this65.adminbillerManagementAddEditForm.controls['id'].patchValue(adminbillerDetails[0]._id);
 
-                _this64.adminbillerManagementAddEditForm.controls['firstname'].patchValue(adminbillerDetails[0].firstname);
+                _this65.adminbillerManagementAddEditForm.controls['firstname'].patchValue(adminbillerDetails[0].firstname);
 
-                _this64.adminbillerManagementAddEditForm.controls['lastname'].patchValue(adminbillerDetails[0].lastname);
+                _this65.adminbillerManagementAddEditForm.controls['lastname'].patchValue(adminbillerDetails[0].lastname);
 
-                _this64.adminbillerManagementAddEditForm.controls['email'].patchValue(adminbillerDetails[0].email);
+                _this65.adminbillerManagementAddEditForm.controls['email'].patchValue(adminbillerDetails[0].email);
 
-                _this64.adminbillerManagementAddEditForm.controls['phone'].patchValue(adminbillerDetails[0].phone);
+                _this65.adminbillerManagementAddEditForm.controls['phone'].patchValue(adminbillerDetails[0].phone);
 
-                _this64.adminbillerManagementAddEditForm.controls['address'].patchValue(adminbillerDetails[0].address);
+                _this65.adminbillerManagementAddEditForm.controls['address'].patchValue(adminbillerDetails[0].address);
 
-                _this64.adminbillerManagementAddEditForm.controls['zip'].patchValue(adminbillerDetails[0].zip);
+                _this65.adminbillerManagementAddEditForm.controls['zip'].patchValue(adminbillerDetails[0].zip);
 
-                _this64.adminbillerManagementAddEditForm.controls['city'].patchValue(adminbillerDetails[0].city);
+                _this65.adminbillerManagementAddEditForm.controls['city'].patchValue(adminbillerDetails[0].city);
 
-                _this64.adminbillerManagementAddEditForm.controls['state'].patchValue(adminbillerDetails[0].state); // diagnostic_admin
+                _this65.adminbillerManagementAddEditForm.controls['state'].patchValue(adminbillerDetails[0].state); // diagnostic_admin
 
 
-                if (_this64.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
-                  _this64.adminbillerManagementAddEditForm.controls['tech_id'].patchValue(adminbillerDetails[0].tech_id);
+                if (_this65.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
+                  _this65.adminbillerManagementAddEditForm.controls['tech_id'].patchValue(adminbillerDetails[0].tech_id);
                 } //this.adminbillerManagementAddEditForm.controls['biller_id'].patchValue(adminbillerDetails[0].biller_details);
                 //this.adminbillerManagementAddEditForm.controls['doctors_office_id'].patchValue(adminbillerDetails[0].doctors_office_details);
 
 
-                _this64.adminbillerManagementAddEditForm.controls['state'].patchValue(adminbillerDetails[0].state); // this.adminbillerManagementAddEditForm.controls['taxo_list'].patchValue(adminbillerDetails[0].taxo_list);
+                _this65.adminbillerManagementAddEditForm.controls['state'].patchValue(adminbillerDetails[0].state); // this.adminbillerManagementAddEditForm.controls['taxo_list'].patchValue(adminbillerDetails[0].taxo_list);
 
 
-                _this64.adminbillerManagementAddEditForm.controls['status'].patchValue(adminbillerDetails[0].status);
+                _this65.adminbillerManagementAddEditForm.controls['status'].patchValue(adminbillerDetails[0].status);
               });
               break;
 
@@ -16356,16 +16420,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this65 = this;
+          var _this66 = this;
 
           this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this65.htmlText.states = response;
+            _this66.htmlText.states = response;
           });
           this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this65.htmlText.allCities = response;
+            _this66.htmlText.allCities = response;
           });
           this.http.getSiteSettingData("./assets/data-set/taxonomies.json").subscribe(function (response) {
-            _this65.htmlText.taxonomies = response;
+            _this66.htmlText.taxonomies = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -16384,7 +16448,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "adminbillerManagementAddEditFormSubmit",
         value: function adminbillerManagementAddEditFormSubmit() {
-          var _this66 = this;
+          var _this67 = this;
 
           for (var x in this.adminbillerManagementAddEditForm.controls) {
             this.adminbillerManagementAddEditForm.controls[x].markAsTouched();
@@ -16420,25 +16484,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.http.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == "success") {
-                _this66.snackBar.open(_this66.htmlText.message, 'Ok', {
+                _this67.snackBar.open(_this67.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  switch (_this66.htmlText.userData.user_details.user_type) {
+                  switch (_this67.htmlText.userData.user_details.user_type) {
                     case 'diagnostic_admin':
-                      _this66.router.navigateByUrl("admin/adminbiller-management");
+                      _this67.router.navigateByUrl("admin/adminbiller-management");
 
                       break;
 
                     case 'admin':
-                      _this66.router.navigateByUrl("admin/adminbiller-management");
+                      _this67.router.navigateByUrl("admin/adminbiller-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this66.snackBar.open(response.msg, '', {
+                _this67.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -16654,7 +16718,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingAdminbillerComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this67 = this;
+          var _this68 = this;
 
           this.datasource = '';
           var endpoint = 'getbilleradminlistdata';
@@ -16672,12 +16736,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.http.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this67.docData_count = res.count; //console.warn('blogData c',res);
+            _this68.docData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.http.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this67.docData = res.results.res;
+            _this68.docData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -16853,7 +16917,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditDistributorsComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this68 = this;
+          var _this69 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -16883,28 +16947,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var distributorsDetails = data.distributorsData.res;
                 setTimeout(function () {
-                  _this68.getCity(distributorsDetails[0].state);
+                  _this69.getCity(distributorsDetails[0].state);
                 }, 1000);
 
-                _this68.DistributorsManagementAddEditForm.controls['id'].patchValue(distributorsDetails[0]._id);
+                _this69.DistributorsManagementAddEditForm.controls['id'].patchValue(distributorsDetails[0]._id);
 
-                _this68.DistributorsManagementAddEditForm.controls['distributorname'].patchValue(distributorsDetails[0].distributorname);
+                _this69.DistributorsManagementAddEditForm.controls['distributorname'].patchValue(distributorsDetails[0].distributorname);
 
-                _this68.DistributorsManagementAddEditForm.controls['contactperson'].patchValue(distributorsDetails[0].contactperson);
+                _this69.DistributorsManagementAddEditForm.controls['contactperson'].patchValue(distributorsDetails[0].contactperson);
 
-                _this68.DistributorsManagementAddEditForm.controls['email'].patchValue(distributorsDetails[0].email);
+                _this69.DistributorsManagementAddEditForm.controls['email'].patchValue(distributorsDetails[0].email);
 
-                _this68.DistributorsManagementAddEditForm.controls['phone'].patchValue(distributorsDetails[0].phone);
+                _this69.DistributorsManagementAddEditForm.controls['phone'].patchValue(distributorsDetails[0].phone);
 
-                _this68.DistributorsManagementAddEditForm.controls['address'].patchValue(distributorsDetails[0].address);
+                _this69.DistributorsManagementAddEditForm.controls['address'].patchValue(distributorsDetails[0].address);
 
-                _this68.DistributorsManagementAddEditForm.controls['zip'].patchValue(distributorsDetails[0].zip);
+                _this69.DistributorsManagementAddEditForm.controls['zip'].patchValue(distributorsDetails[0].zip);
 
-                _this68.DistributorsManagementAddEditForm.controls['city'].patchValue(distributorsDetails[0].city);
+                _this69.DistributorsManagementAddEditForm.controls['city'].patchValue(distributorsDetails[0].city);
 
-                _this68.DistributorsManagementAddEditForm.controls['state'].patchValue(distributorsDetails[0].state);
+                _this69.DistributorsManagementAddEditForm.controls['state'].patchValue(distributorsDetails[0].state);
 
-                _this68.DistributorsManagementAddEditForm.controls['status'].patchValue(distributorsDetails[0].status);
+                _this69.DistributorsManagementAddEditForm.controls['status'].patchValue(distributorsDetails[0].status);
               });
               break;
 
@@ -16947,13 +17011,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this69 = this;
+          var _this70 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this69.htmlText.states = response; // this.getResolveData();
+            _this70.htmlText.states = response; // this.getResolveData();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this69.htmlText.allCities = response;
+            _this70.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -16972,7 +17036,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "DistributorsManagementAddEditFormSubmit",
         value: function DistributorsManagementAddEditFormSubmit() {
-          var _this70 = this;
+          var _this71 = this;
 
           for (var x in this.DistributorsManagementAddEditForm.controls) {
             this.DistributorsManagementAddEditForm.controls[x].markAsTouched();
@@ -17006,27 +17070,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this70.snackBar.open(_this70.htmlText.message, 'Ok', {
+                _this71.snackBar.open(_this71.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this70.formDirective.resetForm();
+                _this71.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this70.htmlText.userData.user_details.user_type) {
+                  switch (_this71.htmlText.userData.user_details.user_type) {
                     case 'diagnostic_admin':
-                      _this70.router.navigateByUrl("admin/distributors-management");
+                      _this71.router.navigateByUrl("admin/distributors-management");
 
                       break;
 
                     case 'admin':
-                      _this70.router.navigateByUrl("admin/distributors-management");
+                      _this71.router.navigateByUrl("admin/distributors-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this70.snackBar.open(response.msg, '', {
+                _this71.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -17263,7 +17327,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingDistributorsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this71 = this;
+          var _this72 = this;
 
           this.datasource = '';
           var endpoint = 'getdistributorslistdata';
@@ -17281,12 +17345,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this71.techData_count = res.count; //console.warn('blogData c',res);
+            _this72.techData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this71.TechDashboardAllData = res.results.res;
+            _this72.TechDashboardAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -17294,7 +17358,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "listenLiblistingChange",
         value: function listenLiblistingChange() {
-          var _this72 = this;
+          var _this73 = this;
 
           var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
@@ -17319,24 +17383,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   switch (result) {
                     case "Yes":
                       // Delete Cookie
-                      _this72.cookie["delete"]('user_details');
+                      _this73.cookie["delete"]('user_details');
 
-                      _this72.cookie["delete"]('main_user');
+                      _this73.cookie["delete"]('main_user');
 
-                      _this72.cookie["delete"]('jwtToken');
+                      _this73.cookie["delete"]('jwtToken');
 
-                      _this72.cookie.deleteAll('/');
+                      _this73.cookie.deleteAll('/');
 
                       setTimeout(function () {
                         // Reset again Cookie
-                        _this72.cookie.set('jwtToken', _this72.user_cookie);
+                        _this73.cookie.set('jwtToken', _this73.user_cookie);
 
-                        _this72.cookie.set('user_details', JSON.stringify(data.custombuttonclick.data));
+                        _this73.cookie.set('user_details', JSON.stringify(data.custombuttonclick.data));
 
-                        _this72.cookie.set('main_user', JSON.stringify(_this72.userData)); // Redirect to page
+                        _this73.cookie.set('main_user', JSON.stringify(_this73.userData)); // Redirect to page
 
 
-                        _this72.router.navigateByUrl("distributors/dashboard");
+                        _this73.router.navigateByUrl("distributors/dashboard");
                       }, 500);
                       break;
 
@@ -17526,7 +17590,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this73 = this;
+          var _this74 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -17559,34 +17623,34 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.doctorgroupManagementAddEditForm = this.formBuilder.group(validateRule);
               this.acivatedRoute.data.forEach(function (data) {
                 setTimeout(function () {
-                  _this73.getCity(doctorgrouoDetails[0].state);
+                  _this74.getCity(doctorgrouoDetails[0].state);
                 }, 1000);
                 var doctorgrouoDetails = data.data.res;
 
-                _this73.doctorgroupManagementAddEditForm.controls['id'].patchValue(doctorgrouoDetails[0]._id);
+                _this74.doctorgroupManagementAddEditForm.controls['id'].patchValue(doctorgrouoDetails[0]._id);
 
-                _this73.doctorgroupManagementAddEditForm.controls['groupname'].patchValue(doctorgrouoDetails[0].groupname);
+                _this74.doctorgroupManagementAddEditForm.controls['groupname'].patchValue(doctorgrouoDetails[0].groupname);
 
-                _this73.doctorgroupManagementAddEditForm.controls['email'].patchValue(doctorgrouoDetails[0].email);
+                _this74.doctorgroupManagementAddEditForm.controls['email'].patchValue(doctorgrouoDetails[0].email);
 
-                _this73.doctorgroupManagementAddEditForm.controls['phone'].patchValue(doctorgrouoDetails[0].phone);
+                _this74.doctorgroupManagementAddEditForm.controls['phone'].patchValue(doctorgrouoDetails[0].phone);
 
-                _this73.doctorgroupManagementAddEditForm.controls['address'].patchValue(doctorgrouoDetails[0].address);
+                _this74.doctorgroupManagementAddEditForm.controls['address'].patchValue(doctorgrouoDetails[0].address);
 
-                _this73.doctorgroupManagementAddEditForm.controls['zip'].patchValue(doctorgrouoDetails[0].zip);
+                _this74.doctorgroupManagementAddEditForm.controls['zip'].patchValue(doctorgrouoDetails[0].zip);
 
-                _this73.doctorgroupManagementAddEditForm.controls['city'].patchValue(doctorgrouoDetails[0].city);
+                _this74.doctorgroupManagementAddEditForm.controls['city'].patchValue(doctorgrouoDetails[0].city);
 
-                _this73.doctorgroupManagementAddEditForm.controls['state'].patchValue(doctorgrouoDetails[0].state); // diagnostic_admin
+                _this74.doctorgroupManagementAddEditForm.controls['state'].patchValue(doctorgrouoDetails[0].state); // diagnostic_admin
 
 
-                if (_this73.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
-                  _this73.doctorgroupManagementAddEditForm.controls['tech_id'].patchValue(doctorgrouoDetails[0].tech_id);
+                if (_this74.htmlText.userData.user_details.user_type == 'diagnostic_admin') {
+                  _this74.doctorgroupManagementAddEditForm.controls['tech_id'].patchValue(doctorgrouoDetails[0].tech_id);
                 } //this.doctorgroupManagementAddEditForm.controls['biller_id'].patchValue(doctorgrouoDetails[0].biller_details);
                 //this.doctorgroupManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorgrouoDetails[0].doctors_office_details);
 
 
-                _this73.doctorgroupManagementAddEditForm.controls['status'].patchValue(doctorgrouoDetails[0].status);
+                _this74.doctorgroupManagementAddEditForm.controls['status'].patchValue(doctorgrouoDetails[0].status);
               });
               break;
 
@@ -17624,13 +17688,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this74 = this;
+          var _this75 = this;
 
           this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this74.htmlText.states = response;
+            _this75.htmlText.states = response;
           });
           this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this74.htmlText.allCities = response;
+            _this75.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -17649,7 +17713,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "doctorgroupManagementAddEditFormSubmit",
         value: function doctorgroupManagementAddEditFormSubmit() {
-          var _this75 = this;
+          var _this76 = this;
 
           for (var x in this.doctorgroupManagementAddEditForm.controls) {
             this.doctorgroupManagementAddEditForm.controls[x].markAsTouched();
@@ -17685,25 +17749,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.http.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == "success") {
-                _this75.snackBar.open(_this75.htmlText.message, 'Ok', {
+                _this76.snackBar.open(_this76.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  switch (_this75.htmlText.userData.user_details.user_type) {
+                  switch (_this76.htmlText.userData.user_details.user_type) {
                     case 'diagnostic_admin':
-                      _this75.router.navigateByUrl("admin/doctor-management/group");
+                      _this76.router.navigateByUrl("admin/doctor-management/group");
 
                       break;
 
                     case 'admin':
-                      _this75.router.navigateByUrl("admin/doctor-management/group");
+                      _this76.router.navigateByUrl("admin/doctor-management/group");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this75.snackBar.open(response.msg, '', {
+                _this76.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -17912,7 +17976,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingDoctorgroupComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this76 = this;
+          var _this77 = this;
 
           this.datasource = '';
           var endpoint = 'getdoctorgrouplistdata';
@@ -17930,12 +17994,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.http.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this76.docData_count = res.count; //console.warn('blogData c',res);
+            _this77.docData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.http.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this76.docData = res.results.res;
+            _this77.docData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -17943,7 +18007,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "listenLiblistingChange",
         value: function listenLiblistingChange() {
-          var _this77 = this;
+          var _this78 = this;
 
           var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
@@ -17968,24 +18032,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   switch (result) {
                     case "Yes":
                       // Delete Cookie
-                      _this77.cookieService["delete"]('user_details');
+                      _this78.cookieService["delete"]('user_details');
 
-                      _this77.cookieService["delete"]('main_user');
+                      _this78.cookieService["delete"]('main_user');
 
-                      _this77.cookieService["delete"]('jwtToken');
+                      _this78.cookieService["delete"]('jwtToken');
 
-                      _this77.cookieService.deleteAll('/');
+                      _this78.cookieService.deleteAll('/');
 
                       setTimeout(function () {
                         // Reset again Cookie
-                        _this77.cookieService.set('jwtToken', _this77.user_cookie);
+                        _this78.cookieService.set('jwtToken', _this78.user_cookie);
 
-                        _this77.cookieService.set('user_details', JSON.stringify(data.custombuttonclick.data));
+                        _this78.cookieService.set('user_details', JSON.stringify(data.custombuttonclick.data));
 
-                        _this77.cookieService.set('main_user', JSON.stringify(_this77.userData)); // Redirect to page
+                        _this78.cookieService.set('main_user', JSON.stringify(_this78.userData)); // Redirect to page
 
 
-                        _this77.router.navigateByUrl("doctor-group/dashboard");
+                        _this78.router.navigateByUrl("doctor-group/dashboard");
                       }, 500);
                       break;
 
@@ -18167,7 +18231,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditInsuranceComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this78 = this;
+          var _this79 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -18185,15 +18249,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var insuranceDetails = data.insuranceData.res;
 
-                _this78.InsuranceAddEditForm.controls['id'].patchValue(insuranceDetails[0]._id);
+                _this79.InsuranceAddEditForm.controls['id'].patchValue(insuranceDetails[0]._id);
 
-                _this78.InsuranceAddEditForm.controls['insurancename'].patchValue(insuranceDetails[0].insurancename);
+                _this79.InsuranceAddEditForm.controls['insurancename'].patchValue(insuranceDetails[0].insurancename);
 
-                _this78.InsuranceAddEditForm.controls['description'].patchValue(insuranceDetails[0].description);
+                _this79.InsuranceAddEditForm.controls['description'].patchValue(insuranceDetails[0].description);
 
-                _this78.InsuranceAddEditForm.controls['priority'].patchValue(insuranceDetails[0].priority);
+                _this79.InsuranceAddEditForm.controls['priority'].patchValue(insuranceDetails[0].priority);
 
-                _this78.InsuranceAddEditForm.controls['status'].patchValue(insuranceDetails[0].status);
+                _this79.InsuranceAddEditForm.controls['status'].patchValue(insuranceDetails[0].status);
               });
               break;
 
@@ -18216,7 +18280,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "InsuranceManagementAddFormFormSubmit",
         value: function InsuranceManagementAddFormFormSubmit() {
-          var _this79 = this;
+          var _this80 = this;
 
           for (var x in this.InsuranceAddEditForm.controls) {
             this.InsuranceAddEditForm.controls[x].markAsTouched();
@@ -18250,27 +18314,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this79.snackBar.open(_this79.htmlText.message, 'Ok', {
+                _this80.snackBar.open(_this80.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this79.formDirective.resetForm();
+                _this80.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this79.htmlText.userData.user_details.user_type) {
+                  switch (_this80.htmlText.userData.user_details.user_type) {
                     case 'diagnostic_admin':
-                      _this79.router.navigateByUrl("admin/insurance-management");
+                      _this80.router.navigateByUrl("admin/insurance-management");
 
                       break;
 
                     case 'admin':
-                      _this79.router.navigateByUrl("admin/insurance-management");
+                      _this80.router.navigateByUrl("admin/insurance-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this79.snackBar.open(response.msg, '', {
+                _this80.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -18476,7 +18540,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingInsuranceComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this80 = this;
+          var _this81 = this;
 
           this.datasource = '';
           var endpoint = 'getinsurancelistdata';
@@ -18494,12 +18558,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this80.insuranceData_count = res.count; //console.warn('blogData c',res);
+            _this81.insuranceData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this80.InsuranceAllData = res.results.res;
+            _this81.InsuranceAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -18669,7 +18733,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditInsurancetypeComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this81 = this;
+          var _this82 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -18688,17 +18752,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.acivatedRoute.data.forEach(function (data) {
                 var doctorDetails = data.data.res;
 
-                _this81.insuranceTypeAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
+                _this82.insuranceTypeAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
 
-                _this81.insuranceTypeAddEditForm.controls['insurancetype_name'].patchValue(doctorDetails[0].insurancetype_name);
+                _this82.insuranceTypeAddEditForm.controls['insurancetype_name'].patchValue(doctorDetails[0].insurancetype_name);
 
-                _this81.insuranceTypeAddEditForm.controls['description'].patchValue(doctorDetails[0].description);
+                _this82.insuranceTypeAddEditForm.controls['description'].patchValue(doctorDetails[0].description);
 
-                _this81.insuranceTypeAddEditForm.controls['priority'].patchValue(doctorDetails[0].priority);
+                _this82.insuranceTypeAddEditForm.controls['priority'].patchValue(doctorDetails[0].priority);
 
-                _this81.insuranceTypeAddEditForm.controls['insurance_id'].patchValue(doctorDetails[0].insurance_id);
+                _this82.insuranceTypeAddEditForm.controls['insurance_id'].patchValue(doctorDetails[0].insurance_id);
 
-                _this81.insuranceTypeAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
+                _this82.insuranceTypeAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
               });
               break;
 
@@ -18725,7 +18789,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllinsuranceData",
         value: function getAllinsuranceData() {
-          var _this82 = this;
+          var _this83 = this;
 
           var data = {
             "source": "data_pece",
@@ -18735,13 +18799,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "token": this.htmlText.userData.jwtToken
           };
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this82.htmlText.insuranceData = response.res;
+            _this83.htmlText.insuranceData = response.res;
           });
         }
       }, {
         key: "insuranceTypeAddEditFormFormSubmit",
         value: function insuranceTypeAddEditFormFormSubmit() {
-          var _this83 = this;
+          var _this84 = this;
 
           for (var x in this.insuranceTypeAddEditForm.controls) {
             this.insuranceTypeAddEditForm.controls[x].markAsTouched();
@@ -18776,27 +18840,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == "success") {
-                _this83.formDirective.resetForm();
+                _this84.formDirective.resetForm();
 
-                _this83.snackBar.open(_this83.htmlText.message, 'Ok', {
+                _this84.snackBar.open(_this84.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
                 setTimeout(function () {
-                  switch (_this83.htmlText.userData.user_details.user_type) {
+                  switch (_this84.htmlText.userData.user_details.user_type) {
                     case 'doctor':
-                      _this83.router.navigateByUrl("doctor/doctor-office-management");
+                      _this84.router.navigateByUrl("doctor/doctor-office-management");
 
                       break;
 
                     case 'admin':
-                      _this83.router.navigateByUrl("admin/insurance-type-management");
+                      _this84.router.navigateByUrl("admin/insurance-type-management");
 
                       break;
                   }
                 }, 2000);
               } else {
-                _this83.snackBar.open(response.msg, '', {
+                _this84.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -19003,7 +19067,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingInsurancetypeComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this84 = this;
+          var _this85 = this;
 
           this.datasource = '';
           var endpoint = 'getinsurancetypelistdata';
@@ -19021,12 +19085,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this84.insuranceData_count = res.count; //console.warn('blogData c',res);
+            _this85.insuranceData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this84.InsuranceAllData = res.results.res;
+            _this85.InsuranceAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -19212,7 +19276,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditPatientinformationComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this85 = this;
+          var _this86 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -19231,17 +19295,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var patientinformationDetails = data.patientinformationData.res;
 
-                _this85.patientinformationAddEditForm.controls['id'].patchValue(patientinformationDetails[0]._id);
+                _this86.patientinformationAddEditForm.controls['id'].patchValue(patientinformationDetails[0]._id);
 
-                _this85.patientinformationAddEditForm.controls['type'].patchValue(patientinformationDetails[0].type);
+                _this86.patientinformationAddEditForm.controls['type'].patchValue(patientinformationDetails[0].type);
 
-                _this85.patientinformationAddEditForm.controls['addfield'].patchValue(patientinformationDetails[0].addfield);
+                _this86.patientinformationAddEditForm.controls['addfield'].patchValue(patientinformationDetails[0].addfield);
 
-                _this85.patientinformationAddEditForm.controls['label'].patchValue(patientinformationDetails[0].label);
+                _this86.patientinformationAddEditForm.controls['label'].patchValue(patientinformationDetails[0].label);
 
-                _this85.patientinformationAddEditForm.controls['description'].patchValue(patientinformationDetails[0].description);
+                _this86.patientinformationAddEditForm.controls['description'].patchValue(patientinformationDetails[0].description);
 
-                _this85.patientinformationAddEditForm.controls['status'].patchValue(patientinformationDetails[0].status);
+                _this86.patientinformationAddEditForm.controls['status'].patchValue(patientinformationDetails[0].status);
               });
               break;
 
@@ -19292,7 +19356,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "patientinformationAddEditFormSubmit",
         value: function patientinformationAddEditFormSubmit() {
-          var _this86 = this;
+          var _this87 = this;
 
           for (var x in this.patientinformationAddEditForm.controls) {
             this.patientinformationAddEditForm.controls[x].markAsTouched();
@@ -19327,27 +19391,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this86.snackBar.open(_this86.htmlText.message, 'Ok', {
+                _this87.snackBar.open(_this87.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this86.formDirective.resetForm();
+                _this87.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this86.htmlText.userData.user_details.user_type) {
+                  switch (_this87.htmlText.userData.user_details.user_type) {
                     case 'diagnostic_admin':
-                      _this86.router.navigateByUrl("admin/patientinformation-management");
+                      _this87.router.navigateByUrl("admin/patientinformation-management");
 
                       break;
 
                     case 'admin':
-                      _this86.router.navigateByUrl("admin/patientinformation-management");
+                      _this87.router.navigateByUrl("admin/patientinformation-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this86.snackBar.open(response.msg, '', {
+                _this87.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -19570,7 +19634,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingPatientinformationComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this87 = this;
+          var _this88 = this;
 
           this.datasource = '';
           var endpoint = 'getpatientinformationlistdata';
@@ -19588,12 +19652,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this87.insuranceData_count = res.count; //console.warn('blogData c',res);
+            _this88.insuranceData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this87.InsuranceAllData = res.results.res;
+            _this88.InsuranceAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -19776,30 +19840,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ReportNotProcessComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this88 = this;
+          var _this89 = this;
 
           this.activatedRoute.data.forEach(function (resolveData) {
             //console.log("Data: ", resolveData.data);
-            _this88.allResloveData = resolveData.data.res;
-            console.log(">>", _this88.allResloveData);
+            _this89.allResloveData = resolveData.data.res;
+            console.log(">>", _this89.allResloveData);
           });
           this.onPopulate();
         }
       }, {
         key: "onPopulate",
         value: function onPopulate() {
-          var _this89 = this;
+          var _this90 = this;
 
           this.activatedRoute.data.forEach(function (resolveData) {
             console.log("Data on populate: ", resolveData);
-            _this89.reportData = resolveData.data.res;
-            _this89.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableDataSource"](_this89.reportData);
+            _this90.reportData = resolveData.data.res;
+            _this90.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableDataSource"](_this90.reportData);
           });
         }
       }, {
         key: "action",
         value: function action(_action, id, index) {
-          var _this90 = this;
+          var _this91 = this;
 
           switch (_action) {
             case 'delete':
@@ -19808,13 +19872,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 id: id
               }, "deletesingledata").subscribe(function (response) {
                 if (response.status == 'success') {
-                  _this90.openSnackBar("Successfully delete.", "");
+                  _this91.openSnackBar("Successfully delete.", "");
 
-                  _this90.allResloveData.splice(index, 1);
+                  _this91.allResloveData.splice(index, 1);
 
-                  _this90.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableDataSource"](_this90.allResloveData);
+                  _this91.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableDataSource"](_this91.allResloveData);
                 } else {
-                  _this90.openSnackBar("An error occord.", "");
+                  _this91.openSnackBar("An error occord.", "");
                 }
               });
               break;
@@ -19824,9 +19888,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 id: id
               }).subscribe(function (response) {
                 if (response.status == 'success') {
-                  _this90.openSnackBar("Successfully reprocess.", "");
+                  _this91.openSnackBar("Successfully reprocess.", "");
                 } else {
-                  _this90.openSnackBar("An error occord.", "");
+                  _this91.openSnackBar("An error occord.", "");
                 }
               });
               break;
@@ -19846,10 +19910,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "masterToggle",
         value: function masterToggle() {
-          var _this91 = this;
+          var _this92 = this;
 
           this.isAllSelected() ? this.selection.clear() : this.dataSource.data.forEach(function (row) {
-            return _this91.selection.select(row);
+            return _this92.selection.select(row);
           });
         }
         /** The label for the checkbox on the passed row */
@@ -19992,7 +20056,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ReportProcessTimeComponent = /*#__PURE__*/function () {
       // lib list end
       function ReportProcessTimeComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this92 = this;
+        var _this93 = this;
 
         _classCallCheck(this, ReportProcessTimeComponent);
 
@@ -20117,13 +20181,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           data: this.htmlText.path
         };
         this.http.httpViaPostbyApi1(endpointc, data).subscribe(function (res) {
-          _this92.billerData_count = res.count;
+          _this93.billerData_count = res.count;
         }, function (error) {
           console.log('Oooops!');
         });
         this.http.httpViaPostbyApi1(endpoint, data).subscribe(function (res) {
           // console.log(res);
-          _this92.allBillerData = res.results.res;
+          _this93.allBillerData = res.results.res;
         }, function (error) {
           console.log('Oooops!');
         });
@@ -20324,7 +20388,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddSettingTimeComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this93 = this;
+          var _this94 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -20338,9 +20402,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var billerDetails = data.techData.res;
 
-                _this93.SalesPersonManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
+                _this94.SalesPersonManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
 
-                _this93.SalesPersonManagementAddEditForm.controls['time_setting_percentage'].patchValue(billerDetails[0].time_setting_percentage);
+                _this94.SalesPersonManagementAddEditForm.controls['time_setting_percentage'].patchValue(billerDetails[0].time_setting_percentage);
               });
               break;
 
@@ -20365,7 +20429,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "TechManagementAddFormFormSubmit",
         value: function TechManagementAddFormFormSubmit() {
-          var _this94 = this;
+          var _this95 = this;
 
           for (var x in this.SalesPersonManagementAddEditForm.controls) {
             this.SalesPersonManagementAddEditForm.controls[x].markAsTouched();
@@ -20382,32 +20446,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this94.snackBar.open(_this94.htmlText.message, 'Ok', {
+                _this95.snackBar.open(_this95.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this94.formDirective.resetForm();
+                _this95.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this94.htmlText.userData.user_details.user_type) {
+                  switch (_this95.htmlText.userData.user_details.user_type) {
                     case 'admin':
-                      _this94.router.navigateByUrl("admin/dashboard");
+                      _this95.router.navigateByUrl("admin/dashboard");
 
                       break;
 
                     case 'diagnostic_admin':
-                      _this94.router.navigateByUrl("diagnostic-admin/sales-person-management");
+                      _this95.router.navigateByUrl("diagnostic-admin/sales-person-management");
 
                       break;
 
                     case 'distributors':
-                      _this94.router.navigateByUrl("distributors/sales-person-management");
+                      _this95.router.navigateByUrl("distributors/sales-person-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this94.snackBar.open(response.msg, '', {
+                _this95.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -20615,7 +20679,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ReportTimeSettingComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this95 = this;
+          var _this96 = this;
 
           this.datasource = '';
           var endpoint = 'getreportsettinglistdata';
@@ -20633,12 +20697,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this95.salesData_count = res.count; //console.warn('blogData c',res);
+            _this96.salesData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this95.salesPersonDashboardAllData = res.results.res;
+            _this96.salesPersonDashboardAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -20766,7 +20830,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ReportsDetailsComponent = /*#__PURE__*/function () {
       // lib list end
       function ReportsDetailsComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this96 = this;
+        var _this97 = this;
 
         _classCallCheck(this, ReportsDetailsComponent);
 
@@ -21102,13 +21166,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           data: this.user
         };
         this.http.httpViaPostbyApi1(endpointc, data).subscribe(function (res) {
-          _this96.billerData_count = res.count;
+          _this97.billerData_count = res.count;
         }, function (error) {
           console.log('Oooops!');
         });
         this.http.httpViaPostbyApi1(endpoint, data).subscribe(function (res) {
           // console.log(res.amount);
-          _this96.allBillerData = res.results.res; // this.libdata.footersettings[2].data = 'Total:'+res.amount+'';
+          _this97.allBillerData = res.results.res; // this.libdata.footersettings[2].data = 'Total:'+res.amount+'';
           // this.libdata.footersettings[4].data = 'Total:'+res.total+'';
         }, function (error) {
           console.log('Oooops!');
@@ -21118,7 +21182,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ReportsDetailsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this97 = this;
+          var _this98 = this;
 
           var data = {
             "data": this.user
@@ -21127,13 +21191,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.http.httpViaPostbyApi1("datalist-report", data).subscribe(function (response) {
             var start = false;
             var count = 0;
-            _this97.libdata.footersettings[2].data = 'Total:' + response.amount + '';
-            _this97.libdata.footersettings[4].data = 'Total:' + response.total + '';
+            _this98.libdata.footersettings[2].data = 'Total:' + response.amount + '';
+            _this98.libdata.footersettings[4].data = 'Total:' + response.total + '';
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this97.authval) {
-                  if (response.res[i].doc_name == _this97.authval[j].name) {
+                for (var j in _this98.authval) {
+                  if (response.res[i].doc_name == _this98.authval[j].name) {
                     start = true;
                   }
                 }
@@ -21141,7 +21205,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this97.authval.push({
+                  _this98.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -21154,8 +21218,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this97.techval) {
-                  if (response.res[i].tech_namesearch == _this97.techval[j].name) {
+                for (var j in _this98.techval) {
+                  if (response.res[i].tech_namesearch == _this98.techval[j].name) {
                     start = true;
                   }
                 }
@@ -21163,7 +21227,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this97.techval.push({
+                  _this98.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -21176,8 +21240,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this97.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this97.parentnameval[j].name) {
+                for (var j in _this98.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this98.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -21185,7 +21249,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this97.parentnameval.push({
+                  _this98.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -21198,8 +21262,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this97.doctorstate) {
-                  if (response.res[i].doctor_state == _this97.doctorstate[j].name) {
+                for (var j in _this98.doctorstate) {
+                  if (response.res[i].doctor_state == _this98.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -21207,7 +21271,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this97.doctorstate.push({
+                  _this98.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -21220,8 +21284,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this97.doctorcity) {
-                  if (response.res[i].doctor_city == _this97.doctorcity[j].name) {
+                for (var j in _this98.doctorcity) {
+                  if (response.res[i].doctor_city == _this98.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -21229,7 +21293,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this97.doctorcity.push({
+                  _this98.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -21242,8 +21306,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this97.patientcity) {
-                  if (response.res[i].patient_city == _this97.patientcity[j].name) {
+                for (var j in _this98.patientcity) {
+                  if (response.res[i].patient_city == _this98.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -21251,7 +21315,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this97.patientcity.push({
+                  _this98.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -21264,8 +21328,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this97.patientstate) {
-                  if (response.res[i].patient_state == _this97.patientstate[j].name) {
+                for (var j in _this98.patientstate) {
+                  if (response.res[i].patient_state == _this98.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -21273,7 +21337,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this97.patientstate.push({
+                  _this98.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -21286,8 +21350,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this97.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this97.docofficeval[j].name) {
+                for (var j in _this98.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this98.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -21295,7 +21359,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this97.docofficeval.push({
+                  _this98.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -21508,7 +21572,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditSalesPersonComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this98 = this;
+          var _this99 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -21540,41 +21604,41 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var billerDetails = data.techData.res;
                 setTimeout(function () {
-                  _this98.getCity(billerDetails[0].state);
+                  _this99.getCity(billerDetails[0].state);
                 }, 1000);
 
-                _this98.SalesPersonManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
+                _this99.SalesPersonManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
 
-                _this98.SalesPersonManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
+                _this99.SalesPersonManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
 
-                _this98.SalesPersonManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
+                _this99.SalesPersonManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
 
-                _this98.SalesPersonManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
+                _this99.SalesPersonManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
 
-                _this98.getParentData(billerDetails[0].parent_type); //  this.getCity(doctorDetails[0].state);
+                _this99.getParentData(billerDetails[0].parent_type); //  this.getCity(doctorDetails[0].state);
                 // this.getCityByName(doctorDetails[0].state);
 
 
                 setTimeout(function () {
                   // getCityByName
-                  _this98.SalesPersonManagementAddEditForm.controls['parent_type'].patchValue(billerDetails[0].parent_type);
+                  _this99.SalesPersonManagementAddEditForm.controls['parent_type'].patchValue(billerDetails[0].parent_type);
 
-                  if (_this98.htmlText.userData.user_details.user_type == 'admin') {
-                    _this98.SalesPersonManagementAddEditForm.controls['parent_id'].patchValue(billerDetails[0].parent_id);
+                  if (_this99.htmlText.userData.user_details.user_type == 'admin') {
+                    _this99.SalesPersonManagementAddEditForm.controls['parent_id'].patchValue(billerDetails[0].parent_id);
                   }
                 }, 2000);
 
-                _this98.SalesPersonManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
+                _this99.SalesPersonManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
 
-                _this98.SalesPersonManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address);
+                _this99.SalesPersonManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address);
 
-                _this98.SalesPersonManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
+                _this99.SalesPersonManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
 
-                _this98.SalesPersonManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
+                _this99.SalesPersonManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
 
-                _this98.SalesPersonManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
+                _this99.SalesPersonManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
 
-                _this98.SalesPersonManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
+                _this99.SalesPersonManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
               });
               break;
 
@@ -21628,13 +21692,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this99 = this;
+          var _this100 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this99.htmlText.states = response; // this.getResolveData();
+            _this100.htmlText.states = response; // this.getResolveData();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this99.htmlText.allCities = response;
+            _this100.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -21653,7 +21717,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getParentData",
         value: function getParentData() {
-          var _this100 = this;
+          var _this101 = this;
 
           var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
           console.log('222222222222', id);
@@ -21699,7 +21763,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
             // console.log('+++++++++',response);
-            _this100.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
+            _this101.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
             // this.htmlText.doctorOfficeData = response.data.doctor_office_data;
             // this.htmlText.billerData = response.data.biller_data;
           });
@@ -21707,7 +21771,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "TechManagementAddFormFormSubmit",
         value: function TechManagementAddFormFormSubmit() {
-          var _this101 = this;
+          var _this102 = this;
 
           for (var x in this.SalesPersonManagementAddEditForm.controls) {
             this.SalesPersonManagementAddEditForm.controls[x].markAsTouched();
@@ -21744,32 +21808,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this101.snackBar.open(_this101.htmlText.message, 'Ok', {
+                _this102.snackBar.open(_this102.htmlText.message, 'Ok', {
                   duration: 2000
                 });
 
-                _this101.formDirective.resetForm();
+                _this102.formDirective.resetForm();
 
                 setTimeout(function () {
-                  switch (_this101.htmlText.userData.user_details.user_type) {
+                  switch (_this102.htmlText.userData.user_details.user_type) {
                     case 'admin':
-                      _this101.router.navigateByUrl("admin/sales-person-management");
+                      _this102.router.navigateByUrl("admin/sales-person-management");
 
                       break;
 
                     case 'diagnostic_admin':
-                      _this101.router.navigateByUrl("diagnostic-admin/sales-person-management");
+                      _this102.router.navigateByUrl("diagnostic-admin/sales-person-management");
 
                       break;
 
                     case 'distributors':
-                      _this101.router.navigateByUrl("distributors/sales-person-management");
+                      _this102.router.navigateByUrl("distributors/sales-person-management");
 
                       break;
                   }
                 }, 1000);
               } else {
-                _this101.snackBar.open(response.msg, '', {
+                _this102.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
@@ -22124,7 +22188,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListSalesPersonComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this102 = this;
+          var _this103 = this;
 
           this.datasource = '';
           var endpoint = 'getsaleslistdata';
@@ -22157,12 +22221,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this102.salesData_count = res.count; //console.warn('blogData c',res);
+            _this103.salesData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this102.salesPersonDashboardAllData = res.results.res;
+            _this103.salesPersonDashboardAllData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -22351,7 +22415,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditTechComponent, [{
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this103 = this;
+          var _this104 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -22388,42 +22452,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               this.activeRoute.data.forEach(function (data) {
                 var billerDetails = data.techData.res;
                 setTimeout(function () {
-                  _this103.getCity(billerDetails[0].state);
+                  _this104.getCity(billerDetails[0].state);
                 }, 1000);
 
-                _this103.TechManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
+                _this104.TechManagementAddEditForm.controls['id'].patchValue(billerDetails[0]._id);
 
-                _this103.TechManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
+                _this104.TechManagementAddEditForm.controls['firstname'].patchValue(billerDetails[0].firstname);
 
-                _this103.TechManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
+                _this104.TechManagementAddEditForm.controls['lastname'].patchValue(billerDetails[0].lastname);
 
-                _this103.TechManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
+                _this104.TechManagementAddEditForm.controls['email'].patchValue(billerDetails[0].email);
 
-                _this103.TechManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
+                _this104.TechManagementAddEditForm.controls['phone'].patchValue(billerDetails[0].phone);
 
-                _this103.TechManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address); // this.getCity(doctorDetails[0].state);
+                _this104.TechManagementAddEditForm.controls['address'].patchValue(billerDetails[0].address); // this.getCity(doctorDetails[0].state);
 
 
-                _this103.getParentData(billerDetails[0].parent_type); //  this.getCity(doctorDetails[0].state);
+                _this104.getParentData(billerDetails[0].parent_type); //  this.getCity(doctorDetails[0].state);
                 // this.getCityByName(doctorDetails[0].state);
 
 
                 setTimeout(function () {
                   // getCityByName
-                  _this103.TechManagementAddEditForm.controls['parent_type'].patchValue(billerDetails[0].parent_type);
+                  _this104.TechManagementAddEditForm.controls['parent_type'].patchValue(billerDetails[0].parent_type);
 
-                  if (_this103.htmlText.userData.user_details.user_type == 'admin') {
-                    _this103.TechManagementAddEditForm.controls['parent_id'].patchValue(billerDetails[0].parent_id);
+                  if (_this104.htmlText.userData.user_details.user_type == 'admin') {
+                    _this104.TechManagementAddEditForm.controls['parent_id'].patchValue(billerDetails[0].parent_id);
                   }
                 }, 2000);
 
-                _this103.TechManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
+                _this104.TechManagementAddEditForm.controls['zip'].patchValue(billerDetails[0].zip);
 
-                _this103.TechManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
+                _this104.TechManagementAddEditForm.controls['city'].patchValue(billerDetails[0].city);
 
-                _this103.TechManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
+                _this104.TechManagementAddEditForm.controls['state'].patchValue(billerDetails[0].state);
 
-                _this103.TechManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
+                _this104.TechManagementAddEditForm.controls['status'].patchValue(billerDetails[0].status);
               });
               break;
 
@@ -22477,13 +22541,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this104 = this;
+          var _this105 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this104.htmlText.states = response; // this.getResolveData();
+            _this105.htmlText.states = response; // this.getResolveData();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this104.htmlText.allCities = response;
+            _this105.htmlText.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -22502,7 +22566,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getParentData",
         value: function getParentData() {
-          var _this105 = this;
+          var _this106 = this;
 
           var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
           console.log('222222222222', id);
@@ -22548,7 +22612,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
             // console.log('+++++++++',response);
-            _this105.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
+            _this106.htmlText.parent_id = response.res; // this.htmlText.parent_id = response;
             // this.htmlText.doctorOfficeData = response.data.doctor_office_data;
             // this.htmlText.billerData = response.data.biller_data;
           });
@@ -22556,7 +22620,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "TechManagementAddFormFormSubmit",
         value: function TechManagementAddFormFormSubmit() {
-          var _this106 = this;
+          var _this107 = this;
 
           for (var x in this.TechManagementAddEditForm.controls) {
             this.TechManagementAddEditForm.controls[x].markAsTouched();
@@ -22604,37 +22668,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             if (this.htmlText.userData.user_details.user_type != 'doctor') {
               this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
                 if (response.status == "success") {
-                  _this106.snackBar.open(_this106.htmlText.message, 'Ok', {
+                  _this107.snackBar.open(_this107.htmlText.message, 'Ok', {
                     duration: 2000
                   });
 
-                  _this106.formDirective.resetForm();
+                  _this107.formDirective.resetForm();
 
                   setTimeout(function () {
-                    switch (_this106.htmlText.userData.user_details.user_type) {
+                    switch (_this107.htmlText.userData.user_details.user_type) {
                       case 'admin':
-                        _this106.router.navigateByUrl("admin/tech-management");
+                        _this107.router.navigateByUrl("admin/tech-management");
 
                         break;
 
                       case 'diagnostic_admin':
-                        _this106.router.navigateByUrl("diagnostic-admin/tech-management");
+                        _this107.router.navigateByUrl("diagnostic-admin/tech-management");
 
                         break;
 
                       case 'doctor_group':
-                        _this106.router.navigateByUrl("doctor-group/tech-management");
+                        _this107.router.navigateByUrl("doctor-group/tech-management");
 
                         break;
 
                       case 'distributors':
-                        _this106.router.navigateByUrl("distributors/tech-management");
+                        _this107.router.navigateByUrl("distributors/tech-management");
 
                         break;
                     }
                   }, 1000);
                 } else {
-                  _this106.snackBar.open(response.msg, '', {
+                  _this107.snackBar.open(response.msg, '', {
                     duration: 2000
                   });
                 }
@@ -22646,42 +22710,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               data["doctorid"] = this.htmlText.userData.user_details._id;
               this.httpService.httpViaPost("add-tech-data", data).subscribe(function (response) {
                 if (response.status == "success") {
-                  _this106.snackBar.open(_this106.htmlText.message, 'Ok', {
+                  _this107.snackBar.open(_this107.htmlText.message, 'Ok', {
                     duration: 2000
                   });
 
-                  _this106.formDirective.resetForm();
+                  _this107.formDirective.resetForm();
 
                   setTimeout(function () {
-                    switch (_this106.htmlText.userData.user_details.user_type) {
+                    switch (_this107.htmlText.userData.user_details.user_type) {
                       case 'admin':
-                        _this106.router.navigateByUrl("admin/tech-management");
+                        _this107.router.navigateByUrl("admin/tech-management");
 
                         break;
 
                       case 'diagnostic_admin':
-                        _this106.router.navigateByUrl("diagnostic-admin/tech-management");
+                        _this107.router.navigateByUrl("diagnostic-admin/tech-management");
 
                         break;
 
                       case 'doctor_group':
-                        _this106.router.navigateByUrl("doctor-group/tech-management");
+                        _this107.router.navigateByUrl("doctor-group/tech-management");
 
                         break;
 
                       case 'distributors':
-                        _this106.router.navigateByUrl("distributors/tech-management");
+                        _this107.router.navigateByUrl("distributors/tech-management");
 
                         break;
 
                       case 'doctor':
-                        _this106.router.navigateByUrl("doctor/tech-management");
+                        _this107.router.navigateByUrl("doctor/tech-management");
 
                         break;
                     }
                   }, 1000);
                 } else {
-                  _this106.snackBar.open(response.msg, '', {
+                  _this107.snackBar.open(response.msg, '', {
                     duration: 2000
                   });
                 }
@@ -23098,7 +23162,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingTechComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this107 = this;
+          var _this108 = this;
 
           this.datasource = '';
 
@@ -23140,12 +23204,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
               // console.log('in constructor');
               // console.log(result);
-              _this107.techData_count = res.count; //console.warn('blogData c',res);
+              _this108.techData_count = res.count; //console.warn('blogData c',res);
             }, function (error) {
               console.log('Oooops!');
             });
             this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-              _this107.TechDashboardAllData = res.results.res;
+              _this108.TechDashboardAllData = res.results.res;
             }, function (error) {
               console.log('Oooops!');
             });
@@ -23188,12 +23252,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.httpService.httpViaPost(_endpointc3, _data7).subscribe(function (res) {
               // console.log('in constructor');
               // console.log(result);
-              _this107.techData_count = res.count; //console.warn('blogData c',res);
+              _this108.techData_count = res.count; //console.warn('blogData c',res);
             }, function (error) {
               console.log('Oooops!');
             });
             this.httpService.httpViaPost(_endpoint3, _data7).subscribe(function (res) {
-              _this107.TechDashboardAllData = res.results.res;
+              _this108.TechDashboardAllData = res.results.res;
             }, function (error) {
               console.log('Oooops!');
             });
@@ -23202,7 +23266,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "listenLiblistingChange",
         value: function listenLiblistingChange() {
-          var _this108 = this;
+          var _this109 = this;
 
           var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
@@ -23227,24 +23291,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   switch (result) {
                     case "Yes":
                       // Delete Cookie
-                      _this108.cookie["delete"]('user_details');
+                      _this109.cookie["delete"]('user_details');
 
-                      _this108.cookie["delete"]('main_user');
+                      _this109.cookie["delete"]('main_user');
 
-                      _this108.cookie["delete"]('jwtToken');
+                      _this109.cookie["delete"]('jwtToken');
 
-                      _this108.cookie.deleteAll('/');
+                      _this109.cookie.deleteAll('/');
 
                       setTimeout(function () {
                         // Reset again Cookie
-                        _this108.cookie.set('jwtToken', _this108.user_cookie);
+                        _this109.cookie.set('jwtToken', _this109.user_cookie);
 
-                        _this108.cookie.set('user_details', JSON.stringify(data.custombuttonclick.data));
+                        _this109.cookie.set('user_details', JSON.stringify(data.custombuttonclick.data));
 
-                        _this108.cookie.set('main_user', JSON.stringify(_this108.userData)); // Redirect to page
+                        _this109.cookie.set('main_user', JSON.stringify(_this109.userData)); // Redirect to page
 
 
-                        _this108.router.navigateByUrl("tech/dashboard");
+                        _this109.router.navigateByUrl("tech/dashboard");
                       }, 500);
                       break;
 
@@ -23420,30 +23484,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getResolveData",
         value: function getResolveData() {
-          var _this109 = this;
+          var _this110 = this;
 
           this.activeRoute.data.forEach(function (data) {
-            _this109.usersData = data.UserData.res;
+            _this110.usersData = data.UserData.res;
             var userDetails;
             userDetails = data.UserData.res;
 
-            _this109.UserManagementAddEditForm.controls['firstname'].patchValue(userDetails[0].firstname);
+            _this110.UserManagementAddEditForm.controls['firstname'].patchValue(userDetails[0].firstname);
 
-            _this109.UserManagementAddEditForm.controls['lastname'].patchValue(userDetails[0].lastname);
+            _this110.UserManagementAddEditForm.controls['lastname'].patchValue(userDetails[0].lastname);
 
-            _this109.UserManagementAddEditForm.controls['email'].patchValue(userDetails[0].email);
+            _this110.UserManagementAddEditForm.controls['email'].patchValue(userDetails[0].email);
 
-            _this109.UserManagementAddEditForm.controls['phoneno'].patchValue(userDetails[0].phoneno);
+            _this110.UserManagementAddEditForm.controls['phoneno'].patchValue(userDetails[0].phoneno);
 
-            _this109.UserManagementAddEditForm.controls['address'].patchValue(userDetails[0].address);
+            _this110.UserManagementAddEditForm.controls['address'].patchValue(userDetails[0].address);
 
-            _this109.UserManagementAddEditForm.controls['city'].patchValue(userDetails[0].city);
+            _this110.UserManagementAddEditForm.controls['city'].patchValue(userDetails[0].city);
 
-            _this109.UserManagementAddEditForm.controls['state'].patchValue(userDetails[0].state);
+            _this110.UserManagementAddEditForm.controls['state'].patchValue(userDetails[0].state);
 
-            _this109.UserManagementAddEditForm.controls['zip'].patchValue(userDetails[0].zip);
+            _this110.UserManagementAddEditForm.controls['zip'].patchValue(userDetails[0].zip);
 
-            _this109.UserManagementAddEditForm.controls['status'].patchValue(userDetails[0].status);
+            _this110.UserManagementAddEditForm.controls['status'].patchValue(userDetails[0].status);
           });
         }
         /**for validation purpose**/
@@ -23469,17 +23533,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this110 = this;
+          var _this111 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this110.states = response;
+            _this111.states = response;
 
-            _this110.getResolveData();
+            _this111.getResolveData();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this110.allCities = response;
+            _this111.allCities = response;
 
-            _this110.getResolveData();
+            _this111.getResolveData();
           });
         }
         /**for getting all states & cities  function end here**/
@@ -23493,7 +23557,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "UserManagementAddFormFormSubmit",
         value: function UserManagementAddFormFormSubmit() {
-          var _this111 = this;
+          var _this112 = this;
 
           var x;
 
@@ -23532,10 +23596,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (res) {
-            _this111.ResetAddForm();
+            _this112.ResetAddForm();
 
             setTimeout(function () {
-              _this111.router.navigateByUrl('/dashboard/tech');
+              _this112.router.navigateByUrl('/dashboard/tech');
             }, 100);
           });
         }
@@ -23675,7 +23739,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var AdminbillerDashboardComponent = /*#__PURE__*/function () {
       // lib list end
       function AdminbillerDashboardComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this112 = this;
+        var _this113 = this;
 
         _classCallCheck(this, AdminbillerDashboardComponent);
 
@@ -23942,7 +24006,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this112.allResolveData = resolveData.dataCount.data;
+          _this113.allResolveData = resolveData.dataCount.data;
         });
       }
 
@@ -23957,7 +24021,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewAllButton",
         value: function viewAllButton() {
-          var _this113 = this;
+          var _this114 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
           var period = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
@@ -24060,8 +24124,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
           this.http.httpViaPost('dashboard-report-data-list', data).subscribe(function (res) {
-            _this113.allBillerData = res.results.res;
-            _this113.billerData_count = res.results.data_count;
+            _this114.allBillerData = res.results.res;
+            _this114.billerData_count = res.results.data_count;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -24069,7 +24133,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getSearchData",
         value: function getSearchData() {
-          var _this114 = this;
+          var _this115 = this;
 
           var data = {
             "source": "patient_data_desc_patient_name",
@@ -24082,8 +24146,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this114.authval) {
-                  if (response.res[i].doc_name == _this114.authval[j].name) {
+                for (var j in _this115.authval) {
+                  if (response.res[i].doc_name == _this115.authval[j].name) {
                     start = true;
                   }
                 }
@@ -24091,7 +24155,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this114.authval.push({
+                  _this115.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -24104,8 +24168,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this114.techval) {
-                  if (response.res[i].tech_namesearch == _this114.techval[j].name) {
+                for (var j in _this115.techval) {
+                  if (response.res[i].tech_namesearch == _this115.techval[j].name) {
                     start = true;
                   }
                 }
@@ -24113,7 +24177,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this114.techval.push({
+                  _this115.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -24126,8 +24190,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this114.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this114.parentnameval[j].name) {
+                for (var j in _this115.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this115.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -24135,7 +24199,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this114.parentnameval.push({
+                  _this115.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -24148,8 +24212,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this114.doctorstate) {
-                  if (response.res[i].doctor_state == _this114.doctorstate[j].name) {
+                for (var j in _this115.doctorstate) {
+                  if (response.res[i].doctor_state == _this115.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -24157,7 +24221,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this114.doctorstate.push({
+                  _this115.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -24170,8 +24234,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this114.doctorcity) {
-                  if (response.res[i].doctor_city == _this114.doctorcity[j].name) {
+                for (var j in _this115.doctorcity) {
+                  if (response.res[i].doctor_city == _this115.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -24179,7 +24243,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this114.doctorcity.push({
+                  _this115.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -24192,8 +24256,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this114.patientcity) {
-                  if (response.res[i].patient_city == _this114.patientcity[j].name) {
+                for (var j in _this115.patientcity) {
+                  if (response.res[i].patient_city == _this115.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -24201,7 +24265,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this114.patientcity.push({
+                  _this115.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -24214,8 +24278,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this114.patientstate) {
-                  if (response.res[i].patient_state == _this114.patientstate[j].name) {
+                for (var j in _this115.patientstate) {
+                  if (response.res[i].patient_state == _this115.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -24223,7 +24287,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this114.patientstate.push({
+                  _this115.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -24236,8 +24300,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this114.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this114.docofficeval[j].name) {
+                for (var j in _this115.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this115.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -24245,7 +24309,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this114.docofficeval.push({
+                  _this115.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -24471,13 +24535,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          var _this115 = this;
+          var _this116 = this;
 
           this.cookies["delete"]('jwtToken');
           this.cookies["delete"]('user_details');
           this.cookies.deleteAll();
           setTimeout(function () {
-            _this115.router.navigateByUrl('logout');
+            _this116.router.navigateByUrl('logout');
           }, 1000);
         }
         /**logout function end here**/
@@ -24607,7 +24671,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ApprovedPatientReportsBilleradminComponent = /*#__PURE__*/function () {
       // lib list end
       function ApprovedPatientReportsBilleradminComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this116 = this;
+        var _this117 = this;
 
         _classCallCheck(this, ApprovedPatientReportsBilleradminComponent);
 
@@ -24881,13 +24945,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
         };
         this.http.httpViaPostbyApi1(endpointc, data).subscribe(function (res) {
-          _this116.billerData_count = res.count;
+          _this117.billerData_count = res.count;
         }, function (error) {
           console.log('Oooops!');
         });
         this.http.httpViaPostbyApi1(endpoint, data).subscribe(function (res) {
           // console.log(res);
-          _this116.allBillerData = res.results.res;
+          _this117.allBillerData = res.results.res;
         }, function (error) {
           console.log('Oooops!');
         });
@@ -24896,7 +24960,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ApprovedPatientReportsBilleradminComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this117 = this;
+          var _this118 = this;
 
           var data = {
             "source": "patient_data_desc_patient_name",
@@ -24909,8 +24973,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this117.authval) {
-                  if (response.res[i].doc_name == _this117.authval[j].name) {
+                for (var j in _this118.authval) {
+                  if (response.res[i].doc_name == _this118.authval[j].name) {
                     start = true;
                   }
                 }
@@ -24918,7 +24982,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this117.authval.push({
+                  _this118.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -24931,8 +24995,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this117.techval) {
-                  if (response.res[i].tech_namesearch == _this117.techval[j].name) {
+                for (var j in _this118.techval) {
+                  if (response.res[i].tech_namesearch == _this118.techval[j].name) {
                     start = true;
                   }
                 }
@@ -24940,7 +25004,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this117.techval.push({
+                  _this118.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -24953,8 +25017,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this117.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this117.parentnameval[j].name) {
+                for (var j in _this118.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this118.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -24962,7 +25026,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this117.parentnameval.push({
+                  _this118.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -24975,8 +25039,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this117.doctorstate) {
-                  if (response.res[i].doctor_state == _this117.doctorstate[j].name) {
+                for (var j in _this118.doctorstate) {
+                  if (response.res[i].doctor_state == _this118.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -24984,7 +25048,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this117.doctorstate.push({
+                  _this118.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -24997,8 +25061,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this117.doctorcity) {
-                  if (response.res[i].doctor_city == _this117.doctorcity[j].name) {
+                for (var j in _this118.doctorcity) {
+                  if (response.res[i].doctor_city == _this118.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -25006,7 +25070,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this117.doctorcity.push({
+                  _this118.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -25019,8 +25083,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this117.patientcity) {
-                  if (response.res[i].patient_city == _this117.patientcity[j].name) {
+                for (var j in _this118.patientcity) {
+                  if (response.res[i].patient_city == _this118.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -25028,7 +25092,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this117.patientcity.push({
+                  _this118.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -25041,8 +25105,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this117.patientstate) {
-                  if (response.res[i].patient_state == _this117.patientstate[j].name) {
+                for (var j in _this118.patientstate) {
+                  if (response.res[i].patient_state == _this118.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -25050,7 +25114,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this117.patientstate.push({
+                  _this118.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -25063,8 +25127,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this117.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this117.docofficeval[j].name) {
+                for (var j in _this118.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this118.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -25072,7 +25136,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this117.docofficeval.push({
+                  _this118.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -25585,14 +25649,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LogoutComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this118 = this;
+          var _this119 = this;
 
           this.cookies["delete"]('jwtToken');
           this.cookies["delete"]('user_details');
           this.cookies.deleteAll();
           this.cookies.deleteAll('/');
           setTimeout(function () {
-            _this118.router.navigateByUrl('login');
+            _this119.router.navigateByUrl('login');
 
             window.location.href = '/';
           }, 1500);
@@ -25852,7 +25916,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var BillerDashboardComponent = /*#__PURE__*/function () {
       // lib list end
       function BillerDashboardComponent(http, commonFunction, activatedRoute, cookieService, httpService, deviceService, matSnackBar) {
-        var _this119 = this;
+        var _this120 = this;
 
         _classCallCheck(this, BillerDashboardComponent);
 
@@ -26038,7 +26102,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get IP Address */
 
         this.httpService.httpViaGetExt("http://api.ipify.org/?format=json", {}).subscribe(function (response) {
-          _this119.htmlText.ip = response.ip;
+          _this120.htmlText.ip = response.ip;
         });
         this.libdata.basecondition = {
           biller_id: this.loginUserData.user_details._id,
@@ -26063,12 +26127,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           biller_id: this.loginUserData.user_details._id
         };
         this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
-          _this119.billerData_count = res.count;
+          _this120.billerData_count = res.count;
         }, function (error) {
           console.log('Oooops!');
         });
         this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-          _this119.allBillerData = res.results.res;
+          _this120.allBillerData = res.results.res;
         }, function (error) {
           console.log('Oooops!');
         });
@@ -26077,12 +26141,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(BillerDashboardComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this120 = this;
+          var _this121 = this;
 
           this.activatedRoute.data.subscribe(function (resolveData) {
-            _this120.allResolveData = resolveData.billerData.data;
+            _this121.allResolveData = resolveData.billerData.data;
 
-            _this120.viewReportData();
+            _this121.viewReportData();
           });
           var data = {
             "source": "patient_data_desc_patient_name",
@@ -26100,8 +26164,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this120.authval) {
-                  if (response.res[i].doc_name == _this120.authval[j].name) {
+                for (var j in _this121.authval) {
+                  if (response.res[i].doc_name == _this121.authval[j].name) {
                     start = true;
                   }
                 }
@@ -26109,7 +26173,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this120.authval.push({
+                  _this121.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -26122,8 +26186,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this120.techval) {
-                  if (response.res[i].tech_namesearch == _this120.techval[j].name) {
+                for (var j in _this121.techval) {
+                  if (response.res[i].tech_namesearch == _this121.techval[j].name) {
                     start = true;
                   }
                 }
@@ -26131,7 +26195,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this120.techval.push({
+                  _this121.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -26144,8 +26208,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this120.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this120.parentnameval[j].name) {
+                for (var j in _this121.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this121.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -26153,7 +26217,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this120.parentnameval.push({
+                  _this121.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -26166,8 +26230,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this120.doctorstate) {
-                  if (response.res[i].doctor_state == _this120.doctorstate[j].name) {
+                for (var j in _this121.doctorstate) {
+                  if (response.res[i].doctor_state == _this121.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -26175,7 +26239,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this120.doctorstate.push({
+                  _this121.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -26188,8 +26252,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this120.doctorcity) {
-                  if (response.res[i].doctor_city == _this120.doctorcity[j].name) {
+                for (var j in _this121.doctorcity) {
+                  if (response.res[i].doctor_city == _this121.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -26197,7 +26261,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this120.doctorcity.push({
+                  _this121.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -26210,8 +26274,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this120.patientcity) {
-                  if (response.res[i].patient_city == _this120.patientcity[j].name) {
+                for (var j in _this121.patientcity) {
+                  if (response.res[i].patient_city == _this121.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -26219,7 +26283,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this120.patientcity.push({
+                  _this121.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -26232,8 +26296,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this120.patientstate) {
-                  if (response.res[i].patient_state == _this120.patientstate[j].name) {
+                for (var j in _this121.patientstate) {
+                  if (response.res[i].patient_state == _this121.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -26241,7 +26305,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this120.patientstate.push({
+                  _this121.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -26254,8 +26318,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this120.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this120.docofficeval[j].name) {
+                for (var j in _this121.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this121.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -26263,7 +26327,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this120.docofficeval.push({
+                  _this121.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -26280,7 +26344,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportData",
         value: function viewReportData() {
-          var _this121 = this;
+          var _this122 = this;
 
           var flug = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "Patient Reports";
           var paginationOption = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
@@ -26326,17 +26390,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpService.httpViaPost('dashboard-datalist', repostSignCond).subscribe(function (response) {
             /* Fetching the data into table */
-            _this121.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](response.data);
+            _this122.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](response.data);
             /* Adding the paginator options */
 
-            _this121.dataSource.paginator = _this121.paginator;
-            _this121.dataSource.sort = _this121.sort;
+            _this122.dataSource.paginator = _this122.paginator;
+            _this122.dataSource.sort = _this122.sort;
           });
         }
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this122 = this;
+          var _this123 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -26374,7 +26438,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.httpService.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this122.matSnackBar.open("Start downloading.", "Ok", {
+              _this123.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
@@ -26385,13 +26449,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   "id": report._id,
                   "download_count": report.download_count
                 },
-                "token": _this122.loginUserData.jwtToken
+                "token": _this123.loginUserData.jwtToken
               };
 
-              _this122.httpService.httpViaPost("addorupdatedata", _postData).subscribe(function (response) {// code here
+              _this123.httpService.httpViaPost("addorupdatedata", _postData).subscribe(function (response) {// code here
               });
             } else {
-              _this122.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this123.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -26652,7 +26716,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "returnToAdmin",
         value: function returnToAdmin() {
-          var _this123 = this;
+          var _this124 = this;
 
           var modalData = {
             panelClass: 'bulkupload-dialog',
@@ -26671,42 +26735,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Yes":
-                var jwtToken = _this123.cookies.get('jwtToken');
+                var jwtToken = _this124.cookies.get('jwtToken');
 
-                var allData = _this123.cookies.getAll();
+                var allData = _this124.cookies.getAll();
 
                 var main_user = JSON.parse(allData.main_user);
 
-                var secret = _this123.cookies.get('secret'); // Delete Cookie
+                var secret = _this124.cookies.get('secret'); // Delete Cookie
 
 
-                _this123.cookies["delete"]('user_details');
+                _this124.cookies["delete"]('user_details');
 
-                _this123.cookies["delete"]('main_user');
+                _this124.cookies["delete"]('main_user');
 
-                _this123.cookies["delete"]('doctor_signature');
+                _this124.cookies["delete"]('doctor_signature');
 
-                _this123.cookies["delete"]('secret');
+                _this124.cookies["delete"]('secret');
 
-                _this123.cookies["delete"]('jwtToken');
+                _this124.cookies["delete"]('jwtToken');
 
-                _this123.cookies.deleteAll('/biller');
+                _this124.cookies.deleteAll('/biller');
 
                 setTimeout(function () {
                   // Reset again Cookie
-                  _this123.cookies.set('jwtToken', jwtToken);
+                  _this124.cookies.set('jwtToken', jwtToken);
 
-                  _this123.cookies.set('user_details', JSON.stringify(main_user));
+                  _this124.cookies.set('user_details', JSON.stringify(main_user));
 
-                  _this123.cookies.set('secret', JSON.stringify(secret)); // Redirect to page
+                  _this124.cookies.set('secret', JSON.stringify(secret)); // Redirect to page
 
 
-                  _this123.router.navigateByUrl("admin/dashboard");
+                  _this124.router.navigateByUrl("admin/dashboard");
                 }, 500);
                 break;
 
               case "No":
-                _this123.dialogRef.close();
+                _this124.dialogRef.close();
 
                 break;
             }
@@ -26836,7 +26900,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var DirectDownloadReportsComponent = /*#__PURE__*/function () {
       function DirectDownloadReportsComponent(router, cookieService, http, activatedRoute, dialog, commonFunction, deviceService, matSnackBar) {
-        var _this124 = this;
+        var _this125 = this;
 
         _classCallCheck(this, DirectDownloadReportsComponent);
 
@@ -26877,7 +26941,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
         this.http.httpViaGetExt("http://api.ipify.org/?format=json", {}).subscribe(function (response) {
-          _this124.htmlText.ip = response.ip;
+          _this125.htmlText.ip = response.ip;
         });
       }
 
@@ -26887,7 +26951,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadPDF",
         value: function downloadPDF() {
-          var _this125 = this;
+          var _this126 = this;
 
           /* Collect User Information for Download record */
           var deviceInfo = this.deviceService.getDeviceInfo();
@@ -26935,26 +26999,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               // Update Status
               var _postData2 = {
                 "source": "data_pece",
-                "report_id": _this125.activatedRoute.snapshot.params._id,
-                "token": _this125.htmlText.tempToken
+                "report_id": _this126.activatedRoute.snapshot.params._id,
+                "token": _this126.htmlText.tempToken
               };
 
-              _this125.http.httpViaPost("direct-download-report", _postData2).subscribe(function (response) {
+              _this126.http.httpViaPost("direct-download-report", _postData2).subscribe(function (response) {
                 if (response.status == true) {
-                  _this125.matSnackBar.open("Downloading...", "", {
+                  _this126.matSnackBar.open("Downloading...", "", {
                     duration: 2000
                   });
 
-                  console.log("Link: ", _this125.reportData.report_download_link); // Open download link into the new tab
+                  console.log("Link: ", _this126.reportData.report_download_link); // Open download link into the new tab
 
-                  window.open(_this125.reportData.report_download_link);
+                  window.open(_this126.reportData.report_download_link);
                   setTimeout(function () {
-                    _this125.router.navigateByUrl('/biller/dashboard');
+                    _this126.router.navigateByUrl('/biller/dashboard');
                   }, 100);
                 }
               });
             } else {
-              _this125.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this126.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -26965,7 +27029,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getData",
         value: function getData(reportID) {
-          var _this126 = this;
+          var _this127 = this;
 
           var data = {
             "source": "data_pece",
@@ -26975,11 +27039,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("datalistwithouttoken", data).subscribe(function (response) {
             if (response.res.length > 0) {
-              _this126.reportData = response.res[0]; // Process Download
+              _this127.reportData = response.res[0]; // Process Download
 
-              _this126.downloadPDF();
+              _this127.downloadPDF();
             } else {
-              _this126.router.navigateByUrl('/login');
+              _this127.router.navigateByUrl('/login');
             }
           });
         }
@@ -27110,7 +27174,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var DownloadSuperbillerComponent = /*#__PURE__*/function () {
       function DownloadSuperbillerComponent(router, cookieService, http, activatedRoute, dialog, commonFunction, deviceService, matSnackBar) {
-        var _this127 = this;
+        var _this128 = this;
 
         _classCallCheck(this, DownloadSuperbillerComponent);
 
@@ -27159,12 +27223,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
         this.http.httpViaGetExt("http://api.ipify.org/?format=json", {}).subscribe(function (response) {
-          _this127.htmlText.ip = response.ip;
+          _this128.htmlText.ip = response.ip;
         });
         /* Get Temp Token */
 
         this.http.httpViaGet("gettemptoken", {}).subscribe(function (response) {
-          _this127.htmlText.tempToken = response.token;
+          _this128.htmlText.tempToken = response.token;
         });
       }
 
@@ -27174,7 +27238,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadPDF",
         value: function downloadPDF() {
-          var _this128 = this;
+          var _this129 = this;
 
           if (this.htmlText.password != '' && this.htmlText.password == this.reportData.download_password && this.reportData.passwordAttemptsCount <= 3 || this.htmlText.password == this.reportData.download_password && this.htmlText.notBotText == this.htmlText.notBotInput) {
             this.htmlText.passwordAttemptsCount++;
@@ -27228,24 +27292,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
               if (response.status == 'success') {
-                _this128.htmlText.downloadFlug = true;
-                _this128.htmlText.hraderText = "Thank you for downloading."; // Open download link into the new tab
+                _this129.htmlText.downloadFlug = true;
+                _this129.htmlText.hraderText = "Thank you for downloading."; // Open download link into the new tab
 
-                window.open(_this128.reportData.report_download_link); // Update Status
+                window.open(_this129.reportData.report_download_link); // Update Status
 
                 var _postData3 = {
                   "source": "data_pece",
                   "data": {
-                    "id": _this128.activatedRoute.snapshot.params._id,
+                    "id": _this129.activatedRoute.snapshot.params._id,
                     "status": "Downloaded",
-                    "download_count": _this128.reportData.download_count
+                    "download_count": _this129.reportData.download_count
                   },
-                  "token": _this128.htmlText.tempToken
+                  "token": _this129.htmlText.tempToken
                 };
 
-                _this128.http.httpViaPost("addorupdatedata", _postData3).subscribe(function (response) {});
+                _this129.http.httpViaPost("addorupdatedata", _postData3).subscribe(function (response) {});
               } else {
-                _this128.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+                _this129.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                   duration: 3000
                 });
               }
@@ -27284,7 +27348,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getData",
         value: function getData(reportID) {
-          var _this129 = this;
+          var _this130 = this;
 
           var data = {
             "source": "data_pece",
@@ -27294,9 +27358,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("datalistwithouttoken", data).subscribe(function (response) {
             if (response.res.length > 0) {
-              _this129.reportData = response.res[0];
+              _this130.reportData = response.res[0];
             } else {
-              _this129.router.navigateByUrl('/login');
+              _this130.router.navigateByUrl('/login');
             }
           });
         }
@@ -27936,7 +28000,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PastAppoinmentsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this130 = this;
+          var _this131 = this;
 
           // set tech and doctors office search for admin
           if (JSON.parse(this.cookie.get('user_details')).user_type === 'admin') {
@@ -28075,22 +28139,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
 
             setTimeout(function () {
-              _this130.httpService.postRequest(_this130.configData.endPoint.listBookedEvents, data).subscribe(function (response) {
+              _this131.httpService.postRequest(_this131.configData.endPoint.listBookedEvents, data).subscribe(function (response) {
                 // Set dataset in responseData
-                _this130.configData.responseData = response.results.res; // Create skipFields array(first save all the keys from the dataset)
+                _this131.configData.responseData = response.results.res; // Create skipFields array(first save all the keys from the dataset)
 
-                if (response.results.res > 0) _this130.configData.skipFields = Object.keys(response.results.res[0]);
+                if (response.results.res > 0) _this131.configData.skipFields = Object.keys(response.results.res[0]);
                 var requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'tech_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'status']; // Check user_type === 'doctor_office'
 
-                if (JSON.parse(_this130.cookie.get('user_details')).user_type === 'doctor_office') {
+                if (JSON.parse(_this131.cookie.get('user_details')).user_type === 'doctor_office') {
                   requiredFields.splice(requiredFields.indexOf('doctors_office_name'), 1);
 
-                  _this130.configData.libdata.tableheaders.splice(_this130.configData.libdata.tableheaders.indexOf('doctors_office_name'), 1);
+                  _this131.configData.libdata.tableheaders.splice(_this131.configData.libdata.tableheaders.indexOf('doctors_office_name'), 1);
                 } // Modify the skipFields array(splicing the keys which is in the requiredFields)
 
 
                 for (var i = 0; i < requiredFields.length; i++) {
-                  _this130.configData.skipFields.splice(_this130.configData.skipFields.indexOf(requiredFields[i]), 1);
+                  _this131.configData.skipFields.splice(_this131.configData.skipFields.indexOf(requiredFields[i]), 1);
                 }
               });
             }, 1000); // Merge logged in user details with the config data
@@ -28100,8 +28164,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /* ****************** Get total booked events count ****************** */
 
             setTimeout(function () {
-              _this130.httpService.postRequest(_this130.configData.endPoint.listBookedEventsCount, data).subscribe(function (response) {
-                _this130.configData.date_search_source_count = response.count;
+              _this131.httpService.postRequest(_this131.configData.endPoint.listBookedEventsCount, data).subscribe(function (response) {
+                _this131.configData.date_search_source_count = response.count;
               });
             }, 1500);
             /* ******************************************************************* */
@@ -28332,7 +28396,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(RescheduleAppointmentComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this131 = this;
+          var _this132 = this;
 
           if (this.cookieService.check('jwtToken')) {
             if (this.cookieService.check('timezone')) {
@@ -28352,7 +28416,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               source: 'google_events'
             };
             this.httpRequest.postRequest('get-data', data).subscribe(function (response) {
-              _this131.bookingDetails = response.res[0];
+              _this132.bookingDetails = response.res[0];
             });
             var data2 = {
               token: this.configData.jwtToken,
@@ -28364,15 +28428,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               var arrTech = response.data.map(function (tech) {
                 return tech._id;
               });
-              _this131.configData.primaryCondition = {
+              _this132.configData.primaryCondition = {
                 userid: {
                   $in: arrTech
                 }
               };
 
-              _this131.loadAvailableSlots();
+              _this132.loadAvailableSlots();
 
-              _this131.getPageCount();
+              _this132.getPageCount();
             });
           } else {
             this.openSnackBar('Token not found', 'Ok');
@@ -28385,7 +28449,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getPageCount",
         value: function getPageCount() {
-          var _this132 = this;
+          var _this133 = this;
 
           var data;
 
@@ -28407,20 +28471,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpRequest.postRequest(this.configData.endPoint.countSlot, data).subscribe(function (response) {
             if (response.status == 'success') {
               /* Update value of this.page */
-              _this132.page.total_record = response.data;
+              _this133.page.total_record = response.data;
 
-              if (_this132.page.total_record < _this132.page.page_count) {
-                _this132.page.end = _this132.page.total_record;
+              if (_this133.page.total_record < _this133.page.page_count) {
+                _this133.page.end = _this133.page.total_record;
               } else {
-                _this132.page.end = _this132.page.page_count;
+                _this133.page.end = _this133.page.page_count;
               }
               /* Create page array */
 
 
-              _this132.arrPage = [];
+              _this133.arrPage = [];
 
-              for (var i = 0; i < _this132.page.total_record / _this132.page.page_count; i++) {
-                _this132.arrPage.push(i + 1);
+              for (var i = 0; i < _this133.page.total_record / _this133.page.page_count; i++) {
+                _this133.arrPage.push(i + 1);
               }
             } else {// console.log(response);
             }
@@ -28434,7 +28498,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "pageStep",
         value: function pageStep() {
-          var _this133 = this;
+          var _this134 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var data;
@@ -28478,13 +28542,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe(function (response) {
               if (response.status == 'success') {
-                _this133.availableSlots = response.data;
+                _this134.availableSlots = response.data;
 
-                _this133.changePage(flag);
+                _this134.changePage(flag);
               } else {// console.log('response', response);
               }
 
-              _this133.loading = false;
+              _this134.loading = false;
             });
           }
         }
@@ -28527,7 +28591,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onChangePageCount",
         value: function onChangePageCount() {
-          var _this134 = this;
+          var _this135 = this;
 
           this.loading = true;
           var data = {
@@ -28553,30 +28617,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe(function (response) {
             if (response.status == 'success') {
               // this.ngOnInit();
-              _this134.availableSlots = response.data;
-              _this134.page.start = 1;
+              _this135.availableSlots = response.data;
+              _this135.page.start = 1;
 
-              if (parseInt(_this134.itemCount) < _this134.page.total_record) {
-                _this134.page.end = parseInt(_this134.itemCount);
+              if (parseInt(_this135.itemCount) < _this135.page.total_record) {
+                _this135.page.end = parseInt(_this135.itemCount);
               } else {
-                _this134.page.end = _this134.page.total_record;
+                _this135.page.end = _this135.page.total_record;
               }
 
-              _this134.page.page_count = parseInt(_this134.itemCount);
-              _this134.page.page_no = 1;
-              _this134.jumpToPageNumber = 0;
+              _this135.page.page_count = parseInt(_this135.itemCount);
+              _this135.page.page_no = 1;
+              _this135.jumpToPageNumber = 0;
               /* Create page array */
 
-              _this134.arrPage = [];
+              _this135.arrPage = [];
 
-              for (var i = 0; i <= _this134.page.total_record / _this134.page.page_count; i++) {
-                _this134.arrPage.push(i + 1);
+              for (var i = 0; i <= _this135.page.total_record / _this135.page.page_count; i++) {
+                _this135.arrPage.push(i + 1);
               }
             } else {
               console.log('response', response);
             }
 
-            _this134.loading = false;
+            _this135.loading = false;
           });
         }
         /*
@@ -28586,7 +28650,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "jumpToPage",
         value: function jumpToPage() {
-          var _this135 = this;
+          var _this136 = this;
 
           this.loading = true;
           var data = {
@@ -28610,25 +28674,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe(function (response) {
             if (response.status == 'success') {
-              _this135.availableSlots = response.data;
-              _this135.page.page_no = _this135.jumpToPageNumber + 1;
-              _this135.page.start = _this135.page.page_count * _this135.jumpToPageNumber + 1;
+              _this136.availableSlots = response.data;
+              _this136.page.page_no = _this136.jumpToPageNumber + 1;
+              _this136.page.start = _this136.page.page_count * _this136.jumpToPageNumber + 1;
 
-              if (_this135.page.page_count * _this135.jumpToPageNumber + _this135.page.page_count < _this135.page.total_record) {
-                _this135.page.end = _this135.page.page_count * _this135.jumpToPageNumber + _this135.page.page_count;
+              if (_this136.page.page_count * _this136.jumpToPageNumber + _this136.page.page_count < _this136.page.total_record) {
+                _this136.page.end = _this136.page.page_count * _this136.jumpToPageNumber + _this136.page.page_count;
               } else {
-                _this135.page.end = _this135.page.total_record;
+                _this136.page.end = _this136.page.total_record;
               }
             } else {// console.log('response', response);
             }
 
-            _this135.loading = false;
+            _this136.loading = false;
           });
         }
       }, {
         key: "search",
         value: function search() {
-          var _this136 = this;
+          var _this137 = this;
 
           // const primaryCondition = this.data.libConfigData.primaryCondition;
           //let searchd:any=this.data.libConfigData.primaryCondition;
@@ -28670,24 +28734,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.loading = true;
           this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, this.searchData).subscribe(function (response) {
             if (response.data.length == 0) {
-              _this136.openSnackBar('No event found', null);
+              _this137.openSnackBar('No event found', null);
             }
 
             if (response.status == 'success') {
-              _this136.page.start = 1;
+              _this137.page.start = 1;
 
-              if (response.data.length > _this136.page.page_count) {
-                _this136.page.end = _this136.page.page_count;
+              if (response.data.length > _this137.page.page_count) {
+                _this137.page.end = _this137.page.page_count;
               } else {
-                _this136.page.end = response.data.length;
+                _this137.page.end = response.data.length;
               }
 
-              _this136.page.page_no = 1;
-              _this136.jumpToPageNumber = 0;
+              _this137.page.page_no = 1;
+              _this137.jumpToPageNumber = 0;
             }
 
-            _this136.availableSlots = response.data;
-            _this136.loading = false;
+            _this137.availableSlots = response.data;
+            _this137.loading = false;
           });
           this.getPageCount();
         }
@@ -28698,7 +28762,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "resetFilter",
         value: function resetFilter() {
-          var _this137 = this;
+          var _this138 = this;
 
           this.loading = true;
           /* Reset searchData value to 'null' and filterOptions value to blank('')*/
@@ -28722,20 +28786,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe(function (response) {
             if (response.status == 'success') {
-              _this137.page.start = 1;
+              _this138.page.start = 1;
 
-              if (response.data.length > _this137.page.page_count) {
-                _this137.page.end = _this137.page.page_count;
+              if (response.data.length > _this138.page.page_count) {
+                _this138.page.end = _this138.page.page_count;
               } else {
-                _this137.page.end = response.data.length;
+                _this138.page.end = response.data.length;
               }
 
-              _this137.page.page_no = 1;
-              _this137.jumpToPageNumber = 0;
-              _this137.availableSlots = response.data;
-              _this137.loading = false;
+              _this138.page.page_no = 1;
+              _this138.jumpToPageNumber = 0;
+              _this138.availableSlots = response.data;
+              _this138.loading = false;
             } else {
-              _this137.openSnackBar('Something went wrong. Please try again.', null);
+              _this138.openSnackBar('Something went wrong. Please try again.', null);
             }
           });
           this.getPageCount();
@@ -28743,7 +28807,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onChangeTimezone",
         value: function onChangeTimezone(event) {
-          var _this138 = this;
+          var _this139 = this;
 
           this.loading = true;
           this.cookieService.set('timezone', this.filterOptions.timezone);
@@ -28769,17 +28833,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe(function (response) {
             if (response.status == 'success') {
-              _this138.availableSlots = response.data;
-              _this138.loading = false;
+              _this139.availableSlots = response.data;
+              _this139.loading = false;
             } else {
-              _this138.openSnackBar('Something went wrong. Please try again.', null);
+              _this139.openSnackBar('Something went wrong. Please try again.', null);
             }
           });
         }
       }, {
         key: "loadAvailableSlots",
         value: function loadAvailableSlots() {
-          var _this139 = this;
+          var _this140 = this;
 
           /* ********************* Loader ****************** */
           this.progressSpinner.loading = true;
@@ -28787,8 +28851,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           var _loop = function _loop(i) {
             setTimeout(function () {
-              if (_this139.progressSpinner.loading) {
-                _this139.progressSpinner.bookingStatus = 'Finding available slots ' + dot[i % 3];
+              if (_this140.progressSpinner.loading) {
+                _this140.progressSpinner.bookingStatus = 'Finding available slots ' + dot[i % 3];
               }
             }, 500 * (i + 1));
           };
@@ -28814,17 +28878,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpRequest.postRequest(this.configData.endPoint.viewEventSlots, data).subscribe(function (response) {
             if (response.status == 'success') {
               // console.log('response', response);
-              _this139.availableSlots = response.data;
-              _this139.progressSpinner.loading = false;
+              _this140.availableSlots = response.data;
+              _this140.progressSpinner.loading = false;
             } else {
-              _this139.openSnackBar('Something went wrong. Please try again.', null);
+              _this140.openSnackBar('Something went wrong. Please try again.', null);
             }
           });
         }
       }, {
         key: "rebook",
         value: function rebook(item) {
-          var _this140 = this;
+          var _this141 = this;
 
           var data = {
             booked_slot_data: this.bookingDetails,
@@ -28844,13 +28908,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpRequest.postRequest(this.configData.endPoint.rescheduleBookedEvent, data).subscribe(function (response) {
             if (response.status == 'success') {
               console.log('response', response);
-              _this140.progressSpinner.loading = false; // this.dialogRef.close(true);
+              _this141.progressSpinner.loading = false; // this.dialogRef.close(true);
 
-              _this140.openSnackBar('Rescheduled successfully', 'Ok');
+              _this141.openSnackBar('Rescheduled successfully', 'Ok');
 
-              _this140.router.navigateByUrl('doctor-office/dashboard');
+              _this141.router.navigateByUrl('doctor-office/dashboard');
             } else {
-              _this140.openSnackBar('Something went wrong. Please try again.', null);
+              _this141.openSnackBar('Something went wrong. Please try again.', null);
             }
           });
         }
@@ -29523,7 +29587,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(UpcomingAppoinmentsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this141 = this;
+          var _this142 = this;
 
           // set tech and doctors office search for admin
           if (JSON.parse(this.cookie.get('user_details')).user_type === 'admin') {
@@ -29664,20 +29728,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             this.httpService.postRequest(this.configData.endPoint.listUpcomingBookedEvents, data).subscribe(function (response) {
               // Set dataset in responseData
-              _this141.configData.responseData = response.results.res; // Create skipFields array(first save all the keys from the dataset)
+              _this142.configData.responseData = response.results.res; // Create skipFields array(first save all the keys from the dataset)
 
-              if (response.results.res > 0) _this141.configData.skipFields = Object.keys(response.results.res[0]);
+              if (response.results.res > 0) _this142.configData.skipFields = Object.keys(response.results.res[0]);
               var requiredFields = ['patient_name', 'doctor_name', 'doctors_office_name', 'tech_name', 'booking_date', 'startdate', 'slot', 'slot_end_time', 'timezoneName', 'is_google_event', 'status']; // Check user_type === 'doctor_office'
 
-              if (JSON.parse(_this141.cookie.get('user_details')).user_type === 'doctor_office') {
+              if (JSON.parse(_this142.cookie.get('user_details')).user_type === 'doctor_office') {
                 requiredFields.splice(requiredFields.indexOf('doctors_office_name'), 1);
 
-                _this141.configData.libdata.tableheaders.splice(_this141.configData.libdata.tableheaders.indexOf('doctors_office_name'), 1);
+                _this142.configData.libdata.tableheaders.splice(_this142.configData.libdata.tableheaders.indexOf('doctors_office_name'), 1);
               } // Modify the skipFields array(splicing the keys which is in the requiredFields)
 
 
               for (var i = 0; i < requiredFields.length; i++) {
-                _this141.configData.skipFields.splice(_this141.configData.skipFields.indexOf(requiredFields[i]), 1);
+                _this142.configData.skipFields.splice(_this142.configData.skipFields.indexOf(requiredFields[i]), 1);
               }
             }); // Merge logged in user details with the config data
             // let userDetails: any = JSON.parse(this.cookie.get('user_details'));
@@ -29686,8 +29750,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /* ****************** Get total booked events count ****************** */
 
             setTimeout(function () {
-              _this141.httpService.postRequest(_this141.configData.endPoint.listUpcomingBookedEventsCount, data).subscribe(function (response) {
-                _this141.configData.date_search_source_count = response.count;
+              _this142.httpService.postRequest(_this142.configData.endPoint.listUpcomingBookedEventsCount, data).subscribe(function (response) {
+                _this142.configData.date_search_source_count = response.count;
               });
             }, 500);
             /* ******************************************************************* */
@@ -29705,7 +29769,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "listenLiblistingChange",
         value: function listenLiblistingChange(event) {
-          var _this142 = this;
+          var _this143 = this;
 
           console.log('event', event); // endpoint: 'delete-booked-event'
 
@@ -29715,14 +29779,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               dialogRef.afterClosed().subscribe(function (result) {
                 console.log("Dialog result: ".concat(result));
                 var data = {
-                  token: _this142.configData.jwtToken,
+                  token: _this143.configData.jwtToken,
                   _id: event.custombuttonclick.data._id
                 };
 
                 if (result == 'true') {
-                  _this142.httpService.postRequest('delete-booked-event', data).subscribe(function (response) {
+                  _this143.httpService.postRequest('delete-booked-event', data).subscribe(function (response) {
                     console.log('response', response);
-                    _this142.configData.updatetable = !_this142.configData.updatetable;
+                    _this143.configData.updatetable = !_this143.configData.updatetable;
                   });
                 }
               });
@@ -29929,10 +29993,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "SetValueForm",
         value: function SetValueForm() {
-          var _this143 = this;
+          var _this144 = this;
 
           setTimeout(function () {
-            _this143.getCityByName(_this143.cookiesData.state);
+            _this144.getCityByName(_this144.cookiesData.state);
           }, 400);
           this.AccountSettingsForm.controls['firstname'].patchValue(this.cookiesData.firstname);
           this.AccountSettingsForm.controls['lastname'].patchValue(this.cookiesData.lastname);
@@ -29947,17 +30011,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this144 = this;
+          var _this145 = this;
 
           this.httpService.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this144.states = response;
+            _this145.states = response;
 
-            _this144.SetValueForm();
+            _this145.SetValueForm();
           });
           this.httpService.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this144.allCities = response;
+            _this145.allCities = response;
 
-            _this144.SetValueForm();
+            _this145.SetValueForm();
           });
         }
         /**for getting all states & cities  function end here**/
@@ -29981,7 +30045,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "AccountSettingsFormSubmit",
         value: function AccountSettingsFormSubmit() {
-          var _this145 = this;
+          var _this146 = this;
 
           this.loader = true;
           var x;
@@ -30008,26 +30072,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "token": this.user_token
             };
             this.httpService.httpViaPost('addorupdatedata', data).subscribe(function (response) {
-              var userDetailsCookie = JSON.parse(_this145.cookie.get('user_details'));
+              var userDetailsCookie = JSON.parse(_this146.cookie.get('user_details'));
               var type = userDetailsCookie.type;
 
-              _this145.cookie["delete"]('user_details');
+              _this146.cookie["delete"]('user_details');
 
-              userDetailsCookie.firstname = _this145.AccountSettingsForm.value.firstname;
-              userDetailsCookie.lastname = _this145.AccountSettingsForm.value.lastname;
+              userDetailsCookie.firstname = _this146.AccountSettingsForm.value.firstname;
+              userDetailsCookie.lastname = _this146.AccountSettingsForm.value.lastname;
               userDetailsCookie = JSON.stringify(userDetailsCookie);
-              _this145.loader = false;
+              _this146.loader = false;
               var action = "Ok";
 
-              _this145.snackBar.open(_this145.message, action, {
+              _this146.snackBar.open(_this146.message, action, {
                 duration: 1000
               });
 
               setTimeout(function () {
-                _this145.cookie.set('user_details', userDetailsCookie);
+                _this146.cookie.set('user_details', userDetailsCookie);
               }, 1000);
               setTimeout(function () {
-                _this145.router.navigateByUrl(type + '/dashboard');
+                _this146.router.navigateByUrl(type + '/dashboard');
               }, 3000);
             });
           }
@@ -30227,7 +30291,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ChangePasswordFormSubmit",
         value: function ChangePasswordFormSubmit() {
-          var _this146 = this;
+          var _this147 = this;
 
           this.loader = true;
           var x;
@@ -30245,25 +30309,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               newPassword: this.ChangePasswordForm.value.newPassword
             };
             this.httpService.httpViaPost('changepassword', data).subscribe(function (response) {
-              _this146.formDirective.resetForm();
+              _this147.formDirective.resetForm();
 
-              _this146.loader = false;
+              _this147.loader = false;
 
               if (response.status == true) {
-                _this146.snackBar.open(response.message, "OK", {
+                _this147.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
 
                 setTimeout(function () {
-                  _this146.router.navigateByUrl('/admin/dashboard');
+                  _this147.router.navigateByUrl('/admin/dashboard');
                 }, 1550);
               } else {
-                _this146.snackBar.open(response.message, "OK", {
+                _this147.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
               }
             }, function (error) {
-              _this146.loader = false;
+              _this147.loader = false;
               alert("Some error occord. Please try later.");
             });
           }
@@ -30436,7 +30500,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "TechManagementAddFormFormSubmit",
         value: function TechManagementAddFormFormSubmit() {
-          var _this147 = this;
+          var _this148 = this;
 
           for (var x in this.ApprovalSettingsUpdateForm.controls) {
             this.ApprovalSettingsUpdateForm.controls[x].markAsTouched();
@@ -30451,7 +30515,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             data.data.default_value_percentage = parseInt(data.data.default_value_percentage);
             this.httpService.httpViaPost("addorupdatedata", data).subscribe(function (response) {
               if (response.status == "success") {
-                _this147.dialogRef.close(response);
+                _this148.dialogRef.close(response);
               }
             });
           }
@@ -30459,24 +30523,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "chnageToDefault",
         value: function chnageToDefault() {
-          var _this148 = this;
+          var _this149 = this;
 
           this.htmlText.defaultButtonText = "Please Wait";
           var intervalId = setInterval(function () {
-            _this148.htmlText.defaultButtonText += '.';
+            _this149.htmlText.defaultButtonText += '.';
           }, 400);
           this.httpService.httpViaPost("get-default-approval-settings", {}).subscribe(function (response) {
             if (response.status == "success") {
-              _this148.ApprovalSettingsUpdateForm.patchValue({
+              _this149.ApprovalSettingsUpdateForm.patchValue({
                 default_value_percentage: response.data[0].default_value_percentage
               });
 
-              _this148.ApprovalSettingsUpdateForm.patchValue({
+              _this149.ApprovalSettingsUpdateForm.patchValue({
                 default_value: 1
               });
 
               clearInterval(intervalId);
-              _this148.htmlText.defaultButtonText = "Change to Default";
+              _this149.htmlText.defaultButtonText = "Change to Default";
             }
           });
         }
@@ -31010,13 +31074,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(FaqViewComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this149 = this;
+          var _this150 = this;
 
           this.activatedRoute.data.subscribe(function (resolveData) {
-            _this149.allResolveData = resolveData.faqData.res;
+            _this150.allResolveData = resolveData.faqData.res;
 
-            for (var loop = 0; loop < _this149.allResolveData.length; loop++) {
-              _this149.allResolveData[loop].youtube_link_save = _this149.sanitizer.bypassSecurityTrustResourceUrl(_this149.allResolveData[loop].youtube_link);
+            for (var loop = 0; loop < _this150.allResolveData.length; loop++) {
+              _this150.allResolveData[loop].youtube_link_save = _this150.sanitizer.bypassSecurityTrustResourceUrl(_this150.allResolveData[loop].youtube_link);
             }
           });
         }
@@ -31123,7 +31187,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var HttpLoaderComponent = /*#__PURE__*/function () {
       function HttpLoaderComponent(loaderService, activatedRoute, router) {
-        var _this150 = this;
+        var _this151 = this;
 
         _classCallCheck(this, HttpLoaderComponent);
 
@@ -31133,7 +31197,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var urlArr = this.router.url.split("/"); // if(urlArr[3] == 'bulk-upload') {
 
         this.loaderService.isLoading.subscribe(function (v) {
-          _this150.httpLoading = v;
+          _this151.httpLoading = v;
         }); // }
       }
 
@@ -31497,7 +31561,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getSignatureData",
         value: function getSignatureData() {
-          var _this151 = this;
+          var _this152 = this;
 
           var data = {
             "source": "doctor_signature",
@@ -31507,9 +31571,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "token": this.user_token
           };
           this.http.httpViaPost('datalist', data).subscribe(function (response) {
-            _this151.result = response.res[0]._id;
+            _this152.result = response.res[0]._id;
 
-            _this151.techUploadForm.controls['sign'].patchValue(response.res[0].sign);
+            _this152.techUploadForm.controls['sign'].patchValue(response.res[0].sign);
           });
         }
       }, {
@@ -31697,7 +31761,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DiagnosticAdminDashboardComponent = /*#__PURE__*/function () {
       // lib list end
       function DiagnosticAdminDashboardComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this152 = this;
+        var _this153 = this;
 
         _classCallCheck(this, DiagnosticAdminDashboardComponent);
 
@@ -31944,7 +32008,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this152.allResolveData = resolveData.dataCount.data;
+          _this153.allResolveData = resolveData.dataCount.data;
         });
         this.viewReportProcessData(this.htmlText.headerText);
       }
@@ -31967,7 +32031,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this153 = this;
+          var _this154 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -32006,15 +32070,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this153.matSnackBar.open("Start downloading.", "Ok", {
+              _this154.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this153.viewReportProcessData(_this153.htmlText.headerText);
+              _this154.viewReportProcessData(_this154.htmlText.headerText);
             } else {
-              _this153.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this154.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -32023,7 +32087,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this154 = this;
+          var _this155 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           this.htmlText.headerText = flag;
@@ -32149,8 +32213,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
           this.http.httpViaPost('dashboard-report-data-list', data).subscribe(function (res) {
-            _this154.allBillerData = res.results.res;
-            _this154.billerData_count = res.results.data_count;
+            _this155.allBillerData = res.results.res;
+            _this155.billerData_count = res.results.data_count;
           }, function (error) {
             console.log('An error occord.');
           });
@@ -32173,7 +32237,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getSearchData",
         value: function getSearchData() {
-          var _this155 = this;
+          var _this156 = this;
 
           var data = {
             "source": "patient_data_desc_patient_name",
@@ -32191,8 +32255,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this155.authval) {
-                  if (response.res[i].doc_name == _this155.authval[j].name) {
+                for (var j in _this156.authval) {
+                  if (response.res[i].doc_name == _this156.authval[j].name) {
                     start = true;
                   }
                 }
@@ -32200,7 +32264,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this155.authval.push({
+                  _this156.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -32213,8 +32277,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this155.techval) {
-                  if (response.res[i].tech_namesearch == _this155.techval[j].name) {
+                for (var j in _this156.techval) {
+                  if (response.res[i].tech_namesearch == _this156.techval[j].name) {
                     start = true;
                   }
                 }
@@ -32222,7 +32286,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this155.techval.push({
+                  _this156.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -32235,8 +32299,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this155.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this155.parentnameval[j].name) {
+                for (var j in _this156.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this156.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -32244,7 +32308,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this155.parentnameval.push({
+                  _this156.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -32257,8 +32321,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this155.doctorstate) {
-                  if (response.res[i].doctor_state == _this155.doctorstate[j].name) {
+                for (var j in _this156.doctorstate) {
+                  if (response.res[i].doctor_state == _this156.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -32266,7 +32330,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this155.doctorstate.push({
+                  _this156.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -32279,8 +32343,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this155.doctorcity) {
-                  if (response.res[i].doctor_city == _this155.doctorcity[j].name) {
+                for (var j in _this156.doctorcity) {
+                  if (response.res[i].doctor_city == _this156.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -32288,7 +32352,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this155.doctorcity.push({
+                  _this156.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -32301,8 +32365,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this155.patientcity) {
-                  if (response.res[i].patient_city == _this155.patientcity[j].name) {
+                for (var j in _this156.patientcity) {
+                  if (response.res[i].patient_city == _this156.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -32310,7 +32374,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this155.patientcity.push({
+                  _this156.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -32323,8 +32387,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this155.patientstate) {
-                  if (response.res[i].patient_state == _this155.patientstate[j].name) {
+                for (var j in _this156.patientstate) {
+                  if (response.res[i].patient_state == _this156.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -32332,7 +32396,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this155.patientstate.push({
+                  _this156.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -32345,8 +32409,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this155.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this155.docofficeval[j].name) {
+                for (var j in _this156.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this156.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -32354,7 +32418,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this155.docofficeval.push({
+                  _this156.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -32610,13 +32674,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          var _this156 = this;
+          var _this157 = this;
 
           this.cookies["delete"]('jwtToken');
           this.cookies["delete"]('user_details');
           this.cookies.deleteAll();
           setTimeout(function () {
-            _this156.router.navigateByUrl('logout');
+            _this157.router.navigateByUrl('logout');
           }, 1000);
         }
         /**logout function end here**/
@@ -32634,7 +32698,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "returnToAdmin",
         value: function returnToAdmin() {
-          var _this157 = this;
+          var _this158 = this;
 
           var modalData = {
             panelClass: 'bulkupload-dialog',
@@ -32653,42 +32717,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Yes":
-                var jwtToken = _this157.cookies.get('jwtToken');
+                var jwtToken = _this158.cookies.get('jwtToken');
 
-                var allData = _this157.cookies.getAll();
+                var allData = _this158.cookies.getAll();
 
                 var main_user = JSON.parse(allData.main_user);
 
-                var secret = _this157.cookies.get('secret'); // Delete Cookie
+                var secret = _this158.cookies.get('secret'); // Delete Cookie
 
 
-                _this157.cookies["delete"]('user_details');
+                _this158.cookies["delete"]('user_details');
 
-                _this157.cookies["delete"]('main_user');
+                _this158.cookies["delete"]('main_user');
 
-                _this157.cookies["delete"]('doctor_signature');
+                _this158.cookies["delete"]('doctor_signature');
 
-                _this157.cookies["delete"]('secret');
+                _this158.cookies["delete"]('secret');
 
-                _this157.cookies["delete"]('jwtToken');
+                _this158.cookies["delete"]('jwtToken');
 
-                _this157.cookies.deleteAll('/diagnostic_admin');
+                _this158.cookies.deleteAll('/diagnostic_admin');
 
                 setTimeout(function () {
                   // Reset again Cookie
-                  _this157.cookies.set('jwtToken', jwtToken);
+                  _this158.cookies.set('jwtToken', jwtToken);
 
-                  _this157.cookies.set('user_details', JSON.stringify(main_user));
+                  _this158.cookies.set('user_details', JSON.stringify(main_user));
 
-                  _this157.cookies.set('secret', JSON.stringify(secret)); // Redirect to page
+                  _this158.cookies.set('secret', JSON.stringify(secret)); // Redirect to page
 
 
-                  _this157.router.navigateByUrl("admin/dashboard");
+                  _this158.router.navigateByUrl("admin/dashboard");
                 }, 500);
                 break;
 
               case "No":
-                _this157.dialogRef.close();
+                _this158.dialogRef.close();
 
                 break;
             }
@@ -32837,7 +32901,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DistributorsDashboardComponent = /*#__PURE__*/function () {
       // lib list end
       function DistributorsDashboardComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this158 = this;
+        var _this159 = this;
 
         _classCallCheck(this, DistributorsDashboardComponent);
 
@@ -33092,7 +33156,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this158.allResolveData.dashboardCount = resolveData.dataCount.data;
+          _this159.allResolveData.dashboardCount = resolveData.dataCount.data;
         }); // set liblist base condition
 
         this.libdata.basecondition.parent_id = this.loginUserData.user_details._id;
@@ -33113,7 +33177,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewAllButton",
         value: function viewAllButton() {
-          var _this159 = this;
+          var _this160 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           this.htmlText.headerText = flag;
@@ -33236,8 +33300,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
           this.http.httpViaPost('dashboard-report-data-list', data).subscribe(function (res) {
-            _this159.allBillerData = res.results.res;
-            _this159.billerData_count = res.results.data_count;
+            _this160.allBillerData = res.results.res;
+            _this160.billerData_count = res.results.data_count;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -33245,7 +33309,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "downloadReport",
         value: function downloadReport(report) {
-          var _this160 = this;
+          var _this161 = this;
 
           if (typeof report.download_count == "undefined") {
             report.download_count = 1;
@@ -33283,15 +33347,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.http.httpViaPost("addorupdatedata", postData).subscribe(function (response) {
             if (response.status == 'success') {
-              _this160.matSnackBar.open("Start downloading.", "Ok", {
+              _this161.matSnackBar.open("Start downloading.", "Ok", {
                 duration: 3000
               });
 
               window.open(report.file_path, "_blank");
 
-              _this160.viewAllButton(_this160.htmlText.headerText);
+              _this161.viewAllButton(_this161.htmlText.headerText);
             } else {
-              _this160.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+              _this161.matSnackBar.open("Some error occord. Please try again.", "Ok", {
                 duration: 3000
               });
             }
@@ -33315,7 +33379,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getSearchData",
         value: function getSearchData() {
-          var _this161 = this;
+          var _this162 = this;
 
           var data = {
             "source": "patient_data_desc_patient_name",
@@ -33333,8 +33397,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this161.authval) {
-                  if (response.res[i].doc_name == _this161.authval[j].name) {
+                for (var j in _this162.authval) {
+                  if (response.res[i].doc_name == _this162.authval[j].name) {
                     start = true;
                   }
                 }
@@ -33342,7 +33406,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this161.authval.push({
+                  _this162.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -33355,8 +33419,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this161.techval) {
-                  if (response.res[i].tech_namesearch == _this161.techval[j].name) {
+                for (var j in _this162.techval) {
+                  if (response.res[i].tech_namesearch == _this162.techval[j].name) {
                     start = true;
                   }
                 }
@@ -33364,7 +33428,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this161.techval.push({
+                  _this162.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -33377,8 +33441,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this161.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this161.parentnameval[j].name) {
+                for (var j in _this162.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this162.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -33386,7 +33450,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this161.parentnameval.push({
+                  _this162.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -33399,8 +33463,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this161.doctorstate) {
-                  if (response.res[i].doctor_state == _this161.doctorstate[j].name) {
+                for (var j in _this162.doctorstate) {
+                  if (response.res[i].doctor_state == _this162.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -33408,7 +33472,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this161.doctorstate.push({
+                  _this162.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -33421,8 +33485,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this161.doctorcity) {
-                  if (response.res[i].doctor_city == _this161.doctorcity[j].name) {
+                for (var j in _this162.doctorcity) {
+                  if (response.res[i].doctor_city == _this162.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -33430,7 +33494,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this161.doctorcity.push({
+                  _this162.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -33443,8 +33507,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this161.patientcity) {
-                  if (response.res[i].patient_city == _this161.patientcity[j].name) {
+                for (var j in _this162.patientcity) {
+                  if (response.res[i].patient_city == _this162.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -33452,7 +33516,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this161.patientcity.push({
+                  _this162.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -33465,8 +33529,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this161.patientstate) {
-                  if (response.res[i].patient_state == _this161.patientstate[j].name) {
+                for (var j in _this162.patientstate) {
+                  if (response.res[i].patient_state == _this162.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -33474,7 +33538,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this161.patientstate.push({
+                  _this162.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -33487,8 +33551,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this161.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this161.docofficeval[j].name) {
+                for (var j in _this162.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this162.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -33496,7 +33560,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this161.docofficeval.push({
+                  _this162.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -33752,13 +33816,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          var _this162 = this;
+          var _this163 = this;
 
           this.cookies["delete"]('jwtToken');
           this.cookies["delete"]('user_details');
           this.cookies.deleteAll();
           setTimeout(function () {
-            _this162.router.navigateByUrl('logout');
+            _this163.router.navigateByUrl('logout');
           }, 1000);
         }
         /**logout function end here**/
@@ -33776,7 +33840,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "returnToAdmin",
         value: function returnToAdmin() {
-          var _this163 = this;
+          var _this164 = this;
 
           var modalData = {
             panelClass: 'bulkupload-dialog',
@@ -33795,42 +33859,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Yes":
-                var jwtToken = _this163.cookies.get('jwtToken');
+                var jwtToken = _this164.cookies.get('jwtToken');
 
-                var allData = _this163.cookies.getAll();
+                var allData = _this164.cookies.getAll();
 
                 var main_user = JSON.parse(allData.main_user);
 
-                var secret = _this163.cookies.get('secret'); // Delete Cookie
+                var secret = _this164.cookies.get('secret'); // Delete Cookie
 
 
-                _this163.cookies["delete"]('user_details');
+                _this164.cookies["delete"]('user_details');
 
-                _this163.cookies["delete"]('main_user');
+                _this164.cookies["delete"]('main_user');
 
-                _this163.cookies["delete"]('doctor_signature');
+                _this164.cookies["delete"]('doctor_signature');
 
-                _this163.cookies["delete"]('secret');
+                _this164.cookies["delete"]('secret');
 
-                _this163.cookies["delete"]('jwtToken');
+                _this164.cookies["delete"]('jwtToken');
 
-                _this163.cookies.deleteAll('/distributors');
+                _this164.cookies.deleteAll('/distributors');
 
                 setTimeout(function () {
                   // Reset again Cookie
-                  _this163.cookies.set('jwtToken', jwtToken);
+                  _this164.cookies.set('jwtToken', jwtToken);
 
-                  _this163.cookies.set('user_details', JSON.stringify(main_user));
+                  _this164.cookies.set('user_details', JSON.stringify(main_user));
 
-                  _this163.cookies.set('secret', JSON.stringify(secret)); // Redirect to page
+                  _this164.cookies.set('secret', JSON.stringify(secret)); // Redirect to page
 
 
-                  _this163.router.navigateByUrl("admin/dashboard");
+                  _this164.router.navigateByUrl("admin/dashboard");
                 }, 500);
                 break;
 
               case "No":
-                _this163.dialogRef.close();
+                _this164.dialogRef.close();
 
                 break;
             }
@@ -33978,7 +34042,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var DoctorGroupDashboardComponent = /*#__PURE__*/function () {
       function DoctorGroupDashboardComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this164 = this;
+        var _this165 = this;
 
         _classCallCheck(this, DoctorGroupDashboardComponent);
 
@@ -34243,9 +34307,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this164.allResolveData = resolveData.dataCount.data;
+          _this165.allResolveData = resolveData.dataCount.data;
 
-          _this164.viewAllButton(_this164.htmlText.headerText);
+          _this165.viewAllButton(_this165.htmlText.headerText);
         });
       }
 
@@ -34260,7 +34324,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewAllButton",
         value: function viewAllButton() {
-          var _this165 = this;
+          var _this166 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           this.htmlText.headerText = flag;
@@ -34383,8 +34447,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
           this.http.httpViaPost('dashboard-report-data-list', data).subscribe(function (res) {
-            _this165.allBillerData = res.results.res;
-            _this165.billerData_count = res.results.data_count;
+            _this166.allBillerData = res.results.res;
+            _this166.billerData_count = res.results.data_count;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -34407,7 +34471,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getSearchData",
         value: function getSearchData() {
-          var _this166 = this;
+          var _this167 = this;
 
           var data = {
             "source": "patient_data_desc_patient_name",
@@ -34425,8 +34489,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this166.authval) {
-                  if (response.res[i].doc_name == _this166.authval[j].name) {
+                for (var j in _this167.authval) {
+                  if (response.res[i].doc_name == _this167.authval[j].name) {
                     start = true;
                   }
                 }
@@ -34434,7 +34498,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this166.authval.push({
+                  _this167.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -34447,8 +34511,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this166.techval) {
-                  if (response.res[i].tech_namesearch == _this166.techval[j].name) {
+                for (var j in _this167.techval) {
+                  if (response.res[i].tech_namesearch == _this167.techval[j].name) {
                     start = true;
                   }
                 }
@@ -34456,7 +34520,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this166.techval.push({
+                  _this167.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -34469,8 +34533,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this166.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this166.parentnameval[j].name) {
+                for (var j in _this167.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this167.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -34478,7 +34542,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this166.parentnameval.push({
+                  _this167.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -34491,8 +34555,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this166.doctorstate) {
-                  if (response.res[i].doctor_state == _this166.doctorstate[j].name) {
+                for (var j in _this167.doctorstate) {
+                  if (response.res[i].doctor_state == _this167.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -34500,7 +34564,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this166.doctorstate.push({
+                  _this167.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -34513,8 +34577,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this166.doctorcity) {
-                  if (response.res[i].doctor_city == _this166.doctorcity[j].name) {
+                for (var j in _this167.doctorcity) {
+                  if (response.res[i].doctor_city == _this167.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -34522,7 +34586,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this166.doctorcity.push({
+                  _this167.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -34535,8 +34599,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this166.patientcity) {
-                  if (response.res[i].patient_city == _this166.patientcity[j].name) {
+                for (var j in _this167.patientcity) {
+                  if (response.res[i].patient_city == _this167.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -34544,7 +34608,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this166.patientcity.push({
+                  _this167.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -34557,8 +34621,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this166.patientstate) {
-                  if (response.res[i].patient_state == _this166.patientstate[j].name) {
+                for (var j in _this167.patientstate) {
+                  if (response.res[i].patient_state == _this167.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -34566,7 +34630,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this166.patientstate.push({
+                  _this167.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -34579,8 +34643,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this166.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this166.docofficeval[j].name) {
+                for (var j in _this167.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this167.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -34588,7 +34652,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this166.docofficeval.push({
+                  _this167.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -34844,13 +34908,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          var _this167 = this;
+          var _this168 = this;
 
           this.cookies["delete"]('jwtToken');
           this.cookies["delete"]('user_details');
           this.cookies.deleteAll();
           setTimeout(function () {
-            _this167.router.navigateByUrl('logout');
+            _this168.router.navigateByUrl('logout');
           }, 1000);
         }
         /**logout function end here**/
@@ -34868,7 +34932,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "returnToAdmin",
         value: function returnToAdmin() {
-          var _this168 = this;
+          var _this169 = this;
 
           var modalData = {
             panelClass: 'bulkupload-dialog',
@@ -34887,42 +34951,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Yes":
-                var jwtToken = _this168.cookies.get('jwtToken');
+                var jwtToken = _this169.cookies.get('jwtToken');
 
-                var allData = _this168.cookies.getAll();
+                var allData = _this169.cookies.getAll();
 
                 var main_user = JSON.parse(allData.main_user);
 
-                var secret = _this168.cookies.get('secret'); // Delete Cookie
+                var secret = _this169.cookies.get('secret'); // Delete Cookie
 
 
-                _this168.cookies["delete"]('user_details');
+                _this169.cookies["delete"]('user_details');
 
-                _this168.cookies["delete"]('main_user');
+                _this169.cookies["delete"]('main_user');
 
-                _this168.cookies["delete"]('doctor_signature');
+                _this169.cookies["delete"]('doctor_signature');
 
-                _this168.cookies["delete"]('secret');
+                _this169.cookies["delete"]('secret');
 
-                _this168.cookies["delete"]('jwtToken');
+                _this169.cookies["delete"]('jwtToken');
 
-                _this168.cookies.deleteAll('/doctor_group');
+                _this169.cookies.deleteAll('/doctor_group');
 
                 setTimeout(function () {
                   // Reset again Cookie
-                  _this168.cookies.set('jwtToken', jwtToken);
+                  _this169.cookies.set('jwtToken', jwtToken);
 
-                  _this168.cookies.set('user_details', JSON.stringify(main_user));
+                  _this169.cookies.set('user_details', JSON.stringify(main_user));
 
-                  _this168.cookies.set('secret', JSON.stringify(secret)); // Redirect to page
+                  _this169.cookies.set('secret', JSON.stringify(secret)); // Redirect to page
 
 
-                  _this168.router.navigateByUrl("admin/dashboard");
+                  _this169.router.navigateByUrl("admin/dashboard");
                 }, 500);
                 break;
 
               case "No":
-                _this168.dialogRef.close();
+                _this169.dialogRef.close();
 
                 break;
             }
@@ -36314,7 +36378,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddPatientManuallyComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this169 = this;
+          var _this170 = this;
 
           /******* Get user details from cookies ******/
           this.userDetails = JSON.parse(this.cookieService.get('user_details'));
@@ -36325,8 +36389,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this169.resolveData = data.eventdayarrData;
-              _this169.configData.responseData = data.eventdayarrData.data;
+              _this170.resolveData = data.eventdayarrData;
+              _this170.configData.responseData = data.eventdayarrData.data;
             });
           } else {
             this.openSnackBar('Token not found');
@@ -36336,17 +36400,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "populateFormFields",
         value: function populateFormFields() {
-          var _this170 = this;
+          var _this171 = this;
 
           /* ****************** Get states value from assets/states.json ****************** */
           this.httpRequestService.get('assets/data/states.json').subscribe(function (res) {
-            _this170.states = res;
+            _this171.states = res;
             var insuranceData = [];
 
-            for (var i = 0; i < _this170.resolveData.others.insurance.length; i++) {
+            for (var i = 0; i < _this171.resolveData.others.insurance.length; i++) {
               var temp = {};
-              temp['text'] = _this170.resolveData.others.insurance[i].insurancename;
-              temp['value'] = _this170.resolveData.others.insurance[i]._id;
+              temp['text'] = _this171.resolveData.others.insurance[i].insurancename;
+              temp['value'] = _this171.resolveData.others.insurance[i]._id;
               insuranceData.push(temp);
             }
 
@@ -36356,27 +36420,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
             var insuranceTypeData = [];
 
-            for (var _i = 0; _i < _this170.resolveData.others.insurance_type.length; _i++) {
+            for (var _i = 0; _i < _this171.resolveData.others.insurance_type.length; _i++) {
               var _temp = {};
-              _temp['text'] = _this170.resolveData.others.insurance_type[_i].insurancetype_name;
-              _temp['value'] = _this170.resolveData.others.insurance_type[_i]._id;
-              _temp['child_of'] = _this170.resolveData.others.insurance_type[_i].insurance_id;
+              _temp['text'] = _this171.resolveData.others.insurance_type[_i].insurancetype_name;
+              _temp['value'] = _this171.resolveData.others.insurance_type[_i]._id;
+              _temp['child_of'] = _this171.resolveData.others.insurance_type[_i].insurance_id;
               insuranceTypeData.push(_temp);
             } // console.log('insuranceTypeData', insuranceTypeData);
 
 
             var otherFieldsData = [];
 
-            for (var _i2 = 0; _i2 < _this170.resolveData.others.patient_information.length; _i2++) {
+            for (var _i2 = 0; _i2 < _this171.resolveData.others.patient_information.length; _i2++) {
               var fieldData = void 0;
 
-              switch (_this170.resolveData.others.patient_information[_i2].type) {
+              switch (_this171.resolveData.others.patient_information[_i2].type) {
                 case 'checkbox':
                   fieldData = {
                     type: 'checkbox',
-                    label: _this170.resolveData.others.patient_information[_i2].description,
+                    label: _this171.resolveData.others.patient_information[_i2].description,
                     checkItems: [{
-                      name: _this170.resolveData.others.patient_information[_i2].label,
+                      name: _this171.resolveData.others.patient_information[_i2].label,
                       value: false,
                       label: '',
                       labelPosition: 'before'
@@ -36387,27 +36451,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 case 'textfield':
                   fieldData = {
                     type: 'input',
-                    name: _this170.resolveData.others.patient_information[_i2].label,
-                    placeholder: _this170.resolveData.others.patient_information[_i2].description,
-                    label: _this170.resolveData.others.patient_information[_i2].description,
+                    name: _this171.resolveData.others.patient_information[_i2].label,
+                    placeholder: _this171.resolveData.others.patient_information[_i2].description,
+                    label: _this171.resolveData.others.patient_information[_i2].description,
                     value: ''
                   };
                   break;
 
                 case 'dropdown':
-                  for (var j = 0; j < _this170.resolveData.others.patient_information[_i2].addfield.length; j++) {
-                    _this170.resolveData.others.patient_information[_i2].addfield[j] = {
-                      text: _this170.resolveData.others.patient_information[_i2].addfield[j],
-                      value: _this170.resolveData.others.patient_information[_i2].addfield[j]
+                  for (var j = 0; j < _this171.resolveData.others.patient_information[_i2].addfield.length; j++) {
+                    _this171.resolveData.others.patient_information[_i2].addfield[j] = {
+                      text: _this171.resolveData.others.patient_information[_i2].addfield[j],
+                      value: _this171.resolveData.others.patient_information[_i2].addfield[j]
                     };
                   }
 
                   fieldData = {
                     type: 'select',
-                    name: _this170.resolveData.others.patient_information[_i2].label,
-                    placeholder: _this170.resolveData.others.patient_information[_i2].description,
-                    label: _this170.resolveData.others.patient_information[_i2].description,
-                    options: _this170.resolveData.others.patient_information[_i2].addfield
+                    name: _this171.resolveData.others.patient_information[_i2].label,
+                    placeholder: _this171.resolveData.others.patient_information[_i2].description,
+                    label: _this171.resolveData.others.patient_information[_i2].description,
+                    options: _this171.resolveData.others.patient_information[_i2].addfield
                   };
                   break;
               }
@@ -36442,7 +36506,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'state',
               placeholder: 'Select State',
               label: 'State',
-              options: _this170.states,
+              options: _this171.states,
               validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
               error: 'Select state'
             }, {
@@ -36508,7 +36572,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'booking_date',
               placeholder: 'Date',
               label: 'Booking date',
-              value: _this170.today,
+              value: _this171.today,
               disabled: true
             }, {
               type: 'date',
@@ -37488,13 +37552,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               value: ''
             }];
             var data1 = {
-              token: _this170.cookieService.get('jwtToken'),
+              token: _this171.cookieService.get('jwtToken'),
               condition: {
-                doctors_office_id: _this170.userDetails._id
+                doctors_office_id: _this171.userDetails._id
               }
             };
 
-            _this170.httpRequestService.postRequest('get-doctor-info', data1).subscribe(function (response) {
+            _this171.httpRequestService.postRequest('get-doctor-info', data1).subscribe(function (response) {
               var doctorArray = [];
 
               for (var _i3 = 0; _i3 < response.data.length; _i3++) {
@@ -37537,7 +37601,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               var hiddenFields = [{
                 type: 'input',
                 name: 'doctors_office_id',
-                value: _this170.userDetails._id,
+                value: _this171.userDetails._id,
                 hidden: true
               }, {
                 type: 'input',
@@ -37553,10 +37617,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               // {type: 'input', name: 'username', value: this.userDetails.center_name, hidden: true},
               // {type: 'input', name: 'useremail', value: this.userDetails.email, hidden: true}
               ];
-              _this170.configData = Object.assign(_this170.configData, {
+              _this171.configData = Object.assign(_this171.configData, {
                 patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields, calendarInfoFormFields)
               });
-              console.log('this.configData', _this170.configData);
+              console.log('this.configData', _this171.configData);
             });
           }, function (error) {
             console.log('Oooops! Cannot get states.');
@@ -37702,7 +37766,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(DoctorOfficeAccountSettingsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this171 = this;
+          var _this172 = this;
 
           //generating the form
           this.generateForm(); //setting the default value
@@ -37711,7 +37775,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.allStateCityData();
           setTimeout(function () {
-            _this171.getCityByName(_this171.userData.state);
+            _this172.getCityByName(_this172.userData.state);
           }, 2000);
         }
       }, {
@@ -37750,7 +37814,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onSubmit",
         value: function onSubmit() {
-          var _this172 = this;
+          var _this173 = this;
 
           this.loader = true;
           if (this.accountForm.invalid) return;else {
@@ -37761,30 +37825,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost('addorupdatedata', postData).subscribe(function (response) {
               if (response.status == 'success') {
-                var userDetailsCookie = JSON.parse(_this172.cookieService.get('user_details'));
+                var userDetailsCookie = JSON.parse(_this173.cookieService.get('user_details'));
                 var type = userDetailsCookie.type;
 
-                _this172.cookieService["delete"]('user_details'); // -------------------------------------
+                _this173.cookieService["delete"]('user_details'); // -------------------------------------
 
 
-                userDetailsCookie.address = _this172.accountForm.value.address; // -------------------------------------
+                userDetailsCookie.address = _this173.accountForm.value.address; // -------------------------------------
 
                 userDetailsCookie = JSON.stringify(userDetailsCookie);
                 console.log("-->", userDetailsCookie);
-                _this172.loader = false;
+                _this173.loader = false;
                 var action = "Ok";
 
-                _this172.snackBar.open(_this172.message, action, {
+                _this173.snackBar.open(_this173.message, action, {
                   duration: 1000
                 });
 
                 setTimeout(function () {// this.cookieService.set('user_details', userDetailsCookie);
                 }, 1000);
                 setTimeout(function () {
-                  _this172.router.navigateByUrl('/doctor-office/dashboard');
+                  _this173.router.navigateByUrl('/doctor-office/dashboard');
                 }, 3000);
               } else {
-                _this172.snackBar.open(response.status, "OK", {
+                _this173.snackBar.open(response.status, "OK", {
                   duration: 1500
                 });
               }
@@ -37801,13 +37865,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this173 = this;
+          var _this174 = this;
 
           this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this173.states = response;
+            _this174.states = response;
           });
           this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this173.allCities = response;
+            _this174.allCities = response;
           });
         }
         /**for getting all states & cities  function end here**/
@@ -38003,7 +38067,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "changePassword",
         value: function changePassword() {
-          var _this174 = this;
+          var _this175 = this;
 
           this.loader = true;
 
@@ -38017,21 +38081,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost('changepassword', data).subscribe(function (response) {
               // this.formDirective.resetForm();
-              _this174.loader = false;
+              _this175.loader = false;
 
               if (response.Status == true) {
-                _this174.snackBar.open(response.message, "OK", {
+                _this175.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
 
-                _this174.router.navigateByUrl('doctor-office/dashboard');
+                _this175.router.navigateByUrl('doctor-office/dashboard');
               } else {
-                _this174.snackBar.open(response.message, "OK", {
+                _this175.snackBar.open(response.message, "OK", {
                   duration: 1500
                 });
               }
             }, function (error) {
-              _this174.loader = false;
+              _this175.loader = false;
               alert("Some error occurred. Please try later.");
             });
           }
@@ -38155,7 +38219,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var DoctorOfficeDashboardComponent = /*#__PURE__*/function () {
       function DoctorOfficeDashboardComponent(cookieService, activatedRoute, snackBar, http, matSnackBar) {
-        var _this175 = this;
+        var _this176 = this;
 
         _classCallCheck(this, DoctorOfficeDashboardComponent);
 
@@ -38383,9 +38447,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this175.htmlText.allResolveData = resolveData.countData.data;
+          _this176.htmlText.allResolveData = resolveData.countData.data;
 
-          _this175.viewReportProcessData(_this175.htmlText.headerText);
+          _this176.viewReportProcessData(_this176.htmlText.headerText);
         }); // lib list ----------------
 
         this.libdata.basecondition = {
@@ -38411,12 +38475,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           doctors_office_id: this.authData._id
         };
         this.http.httpViaPost(endpointc, data).subscribe(function (res) {
-          _this175.billerData_count = res.count;
+          _this176.billerData_count = res.count;
         }, function (error) {
           console.log('Oooops!');
         });
         this.http.httpViaPost(endpoint, data).subscribe(function (res) {
-          _this175.allBillerData = res.results.res;
+          _this176.allBillerData = res.results.res;
         }, function (error) {
           console.log('Oooops!');
         });
@@ -38425,7 +38489,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(DoctorOfficeDashboardComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this176 = this;
+          var _this177 = this;
 
           var data = {
             "source": "patient_data_desc_patient_name",
@@ -38443,8 +38507,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this176.authval) {
-                  if (response.res[i].doc_name == _this176.authval[j].name) {
+                for (var j in _this177.authval) {
+                  if (response.res[i].doc_name == _this177.authval[j].name) {
                     start = true;
                   }
                 }
@@ -38452,7 +38516,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this176.authval.push({
+                  _this177.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -38465,8 +38529,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this176.techval) {
-                  if (response.res[i].tech_namesearch == _this176.techval[j].name) {
+                for (var j in _this177.techval) {
+                  if (response.res[i].tech_namesearch == _this177.techval[j].name) {
                     start = true;
                   }
                 }
@@ -38474,7 +38538,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this176.techval.push({
+                  _this177.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -38487,8 +38551,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this176.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this176.parentnameval[j].name) {
+                for (var j in _this177.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this177.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -38496,7 +38560,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this176.parentnameval.push({
+                  _this177.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -38509,8 +38573,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this176.doctorstate) {
-                  if (response.res[i].doctor_state == _this176.doctorstate[j].name) {
+                for (var j in _this177.doctorstate) {
+                  if (response.res[i].doctor_state == _this177.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -38518,7 +38582,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this176.doctorstate.push({
+                  _this177.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -38531,8 +38595,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this176.doctorcity) {
-                  if (response.res[i].doctor_city == _this176.doctorcity[j].name) {
+                for (var j in _this177.doctorcity) {
+                  if (response.res[i].doctor_city == _this177.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -38540,7 +38604,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this176.doctorcity.push({
+                  _this177.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -38553,8 +38617,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this176.patientcity) {
-                  if (response.res[i].patient_city == _this176.patientcity[j].name) {
+                for (var j in _this177.patientcity) {
+                  if (response.res[i].patient_city == _this177.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -38562,7 +38626,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this176.patientcity.push({
+                  _this177.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -38575,8 +38639,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this176.patientstate) {
-                  if (response.res[i].patient_state == _this176.patientstate[j].name) {
+                for (var j in _this177.patientstate) {
+                  if (response.res[i].patient_state == _this177.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -38584,7 +38648,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this176.patientstate.push({
+                  _this177.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -38597,8 +38661,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this176.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this176.docofficeval[j].name) {
+                for (var j in _this177.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this177.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -38606,7 +38670,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this176.docofficeval.push({
+                  _this177.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -38906,7 +38970,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "returnToAdmin",
         value: function returnToAdmin() {
-          var _this177 = this;
+          var _this178 = this;
 
           var modalData = {
             panelClass: 'bulkupload-dialog',
@@ -38925,42 +38989,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Yes":
-                var jwtToken = _this177.cookies.get('jwtToken');
+                var jwtToken = _this178.cookies.get('jwtToken');
 
-                var allData = _this177.cookies.getAll();
+                var allData = _this178.cookies.getAll();
 
                 var main_user = JSON.parse(allData.main_user);
 
-                var secret = _this177.cookies.get('secret'); // Delete Cookie
+                var secret = _this178.cookies.get('secret'); // Delete Cookie
 
 
-                _this177.cookies["delete"]('user_details');
+                _this178.cookies["delete"]('user_details');
 
-                _this177.cookies["delete"]('main_user');
+                _this178.cookies["delete"]('main_user');
 
-                _this177.cookies["delete"]('doctor_signature');
+                _this178.cookies["delete"]('doctor_signature');
 
-                _this177.cookies["delete"]('secret');
+                _this178.cookies["delete"]('secret');
 
-                _this177.cookies["delete"]('jwtToken');
+                _this178.cookies["delete"]('jwtToken');
 
-                _this177.cookies.deleteAll('/doctor_office');
+                _this178.cookies.deleteAll('/doctor_office');
 
                 setTimeout(function () {
                   // Reset again Cookie
-                  _this177.cookies.set('jwtToken', jwtToken);
+                  _this178.cookies.set('jwtToken', jwtToken);
 
-                  _this177.cookies.set('user_details', JSON.stringify(main_user));
+                  _this178.cookies.set('user_details', JSON.stringify(main_user));
 
-                  _this177.cookies.set('secret', JSON.stringify(secret)); // Redirect to page
+                  _this178.cookies.set('secret', JSON.stringify(secret)); // Redirect to page
 
 
-                  _this177.router.navigateByUrl("admin/dashboard");
+                  _this178.router.navigateByUrl("admin/dashboard");
                 }, 500);
                 break;
 
               case "No":
-                _this177.dialogRef.close();
+                _this178.dialogRef.close();
 
                 break;
             }
@@ -39139,7 +39203,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AppoinmentsListingComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this178 = this;
+          var _this179 = this;
 
           // load doctor search data
           var data1 = {
@@ -39154,7 +39218,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               temp['val'] = response.data[i]._id;
               temp['name'] = response.data[i].firstname + ' ' + response.data[i].lastname;
 
-              _this178.doctors.push(temp);
+              _this179.doctors.push(temp);
             }
           });
         }
@@ -39403,7 +39467,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateUser",
         value: function updateUser() {
-          var _this179 = this;
+          var _this180 = this;
 
           // let userDetails: any = JSON.parse(this.cookieService.get('user_details'));
           if (this.activatedRoute.snapshot.params.refresh && this.cookieService.check('user_details')) {
@@ -39418,14 +39482,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.httpRequestService.postRequest('update-user', data).subscribe(function (response) {
               // console.log('response', response);
               if (response.status == 'success') {
-                _this179.openSnackBar('Calendar added successfully...');
+                _this180.openSnackBar('Calendar added successfully...');
               }
             });
             var urlSendEmail = this.configData.baseUrl + 'send-confirmation-email?id=' + this.userDetails._id;
             this.httpRequestService.getRequest(urlSendEmail, {}).subscribe(function (response) {
               if (response.status == 'success') {
                 // console.log('Mail sent ', response.msg_id);
-                _this179.openSnackBar('Confirmation email sent to your email - ' + _this179.userDetails.email, 'Ok');
+                _this180.openSnackBar('Confirmation email sent to your email - ' + _this180.userDetails.email, 'Ok');
               }
             }); // Update user_details in cookie
 
@@ -39435,17 +39499,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "populateFormFields",
         value: function populateFormFields(doctor_id, parent_id, parent_type) {
-          var _this180 = this;
+          var _this181 = this;
 
           /* ****************** Get states value from assets/states.json ****************** */
           this.httpRequestService.get('assets/data/states.json').subscribe(function (res) {
-            _this180.states = res;
+            _this181.states = res;
             var insuranceData = [];
 
-            for (var i = 0; i < _this180.resolveData.others.insurance.length; i++) {
+            for (var i = 0; i < _this181.resolveData.others.insurance.length; i++) {
               var temp = {};
-              temp['text'] = _this180.resolveData.others.insurance[i].insurancename;
-              temp['value'] = _this180.resolveData.others.insurance[i]._id;
+              temp['text'] = _this181.resolveData.others.insurance[i].insurancename;
+              temp['value'] = _this181.resolveData.others.insurance[i]._id;
               insuranceData.push(temp);
             }
 
@@ -39455,27 +39519,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
             var insuranceTypeData = [];
 
-            for (var _i4 = 0; _i4 < _this180.resolveData.others.insurance_type.length; _i4++) {
+            for (var _i4 = 0; _i4 < _this181.resolveData.others.insurance_type.length; _i4++) {
               var _temp3 = {};
-              _temp3['text'] = _this180.resolveData.others.insurance_type[_i4].insurancetype_name;
-              _temp3['value'] = _this180.resolveData.others.insurance_type[_i4]._id;
-              _temp3['child_of'] = _this180.resolveData.others.insurance_type[_i4].insurance_id;
+              _temp3['text'] = _this181.resolveData.others.insurance_type[_i4].insurancetype_name;
+              _temp3['value'] = _this181.resolveData.others.insurance_type[_i4]._id;
+              _temp3['child_of'] = _this181.resolveData.others.insurance_type[_i4].insurance_id;
               insuranceTypeData.push(_temp3);
             } // console.log('insuranceTypeData', insuranceTypeData);
 
 
             var otherFieldsData = [];
 
-            for (var _i5 = 0; _i5 < _this180.resolveData.others.patient_information.length; _i5++) {
+            for (var _i5 = 0; _i5 < _this181.resolveData.others.patient_information.length; _i5++) {
               var fieldData = void 0;
 
-              switch (_this180.resolveData.others.patient_information[_i5].type) {
+              switch (_this181.resolveData.others.patient_information[_i5].type) {
                 case 'checkbox':
                   fieldData = {
                     type: 'checkbox',
-                    label: _this180.resolveData.others.patient_information[_i5].description,
+                    label: _this181.resolveData.others.patient_information[_i5].description,
                     checkItems: [{
-                      name: _this180.resolveData.others.patient_information[_i5].label,
+                      name: _this181.resolveData.others.patient_information[_i5].label,
                       value: false,
                       label: '',
                       labelPosition: 'before'
@@ -39486,27 +39550,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 case 'textfield':
                   fieldData = {
                     type: 'input',
-                    name: _this180.resolveData.others.patient_information[_i5].label,
-                    placeholder: _this180.resolveData.others.patient_information[_i5].description,
-                    label: _this180.resolveData.others.patient_information[_i5].description,
+                    name: _this181.resolveData.others.patient_information[_i5].label,
+                    placeholder: _this181.resolveData.others.patient_information[_i5].description,
+                    label: _this181.resolveData.others.patient_information[_i5].description,
                     value: ''
                   };
                   break;
 
                 case 'dropdown':
-                  for (var j = 0; j < _this180.resolveData.others.patient_information[_i5].addfield.length; j++) {
-                    _this180.resolveData.others.patient_information[_i5].addfield[j] = {
-                      text: _this180.resolveData.others.patient_information[_i5].addfield[j],
-                      value: _this180.resolveData.others.patient_information[_i5].addfield[j]
+                  for (var j = 0; j < _this181.resolveData.others.patient_information[_i5].addfield.length; j++) {
+                    _this181.resolveData.others.patient_information[_i5].addfield[j] = {
+                      text: _this181.resolveData.others.patient_information[_i5].addfield[j],
+                      value: _this181.resolveData.others.patient_information[_i5].addfield[j]
                     };
                   }
 
                   fieldData = {
                     type: 'select',
-                    name: _this180.resolveData.others.patient_information[_i5].label,
-                    placeholder: _this180.resolveData.others.patient_information[_i5].description,
-                    label: _this180.resolveData.others.patient_information[_i5].description,
-                    options: _this180.resolveData.others.patient_information[_i5].addfield
+                    name: _this181.resolveData.others.patient_information[_i5].label,
+                    placeholder: _this181.resolveData.others.patient_information[_i5].description,
+                    label: _this181.resolveData.others.patient_information[_i5].description,
+                    options: _this181.resolveData.others.patient_information[_i5].addfield
                   };
                   break;
               }
@@ -39542,7 +39606,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'state',
               placeholder: 'Select State',
               label: 'State',
-              options: _this180.states,
+              options: _this181.states,
               validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__["Validators"].required],
               error: 'Select state'
             }, {
@@ -39616,7 +39680,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               name: 'booking_date',
               placeholder: 'Date',
               label: 'Booking date',
-              value: _this180.today,
+              value: _this181.today,
               disabled: true
             }];
             var checkboxFields = [{
@@ -40609,7 +40673,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }, {
               type: 'input',
               name: 'doctors_office_id',
-              value: _this180.userDetails._id,
+              value: _this181.userDetails._id,
               hidden: true
             }, // {type: 'input', name: 'tech_id', value: response.data.tech_id, hidden: true},
             {
@@ -40623,7 +40687,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               value: parent_id,
               hidden: true
             }];
-            _this180.configData = Object.assign(_this180.configData, {
+            _this181.configData = Object.assign(_this181.configData, {
               patientInfoFormFields: patientInfoFormFields.concat(autocompleteFields, otherFieldsData, checkboxFields, hiddenFields)
             }, {
               calendarInfoFormFields: calendarInfoFormFields
@@ -40643,7 +40707,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "openDialog",
         value: function openDialog() {
-          var _this181 = this;
+          var _this182 = this;
 
           var dialogRef = this.dialog.open(ChooseDoctorDialog, {
             width: '500px',
@@ -40651,23 +40715,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           dialogRef.afterClosed().subscribe(function (result) {
             console.log('The dialog was closed', result);
-            _this181.configData.responseData = [];
-            _this181.configData.primaryCondition = {
+            _this182.configData.responseData = [];
+            _this182.configData.primaryCondition = {
               userid: {
                 $in: result.tech_id
               }
             };
 
-            _this181.httpRequestService.postRequest(_this181.configData.endPoint.viewEventSlots, {
-              token: _this181.configData.jwtToken,
-              condition: _this181.configData.primaryCondition
+            _this182.httpRequestService.postRequest(_this182.configData.endPoint.viewEventSlots, {
+              token: _this182.configData.jwtToken,
+              condition: _this182.configData.primaryCondition
             }).subscribe(function (response) {
-              _this181.configData.responseData = response.data;
-              _this181.resolveData = response;
+              _this182.configData.responseData = response.data;
+              _this182.resolveData = response;
 
-              _this181.populateFormFields(result.doctor_id, result.parent_id, result.parent_type);
+              _this182.populateFormFields(result.doctor_id, result.parent_id, result.parent_type);
 
-              _this181.loading = false;
+              _this182.loading = false;
             });
           });
         }
@@ -40721,7 +40785,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ChooseDoctorDialog, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this182 = this;
+          var _this183 = this;
 
           var data1 = {
             token: this.cookieService.get('jwtToken'),
@@ -40730,13 +40794,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           };
           this.httpRequestService.postRequest('get-doctor-info', data1).subscribe(function (response) {
-            _this182.doctorList = response.data;
+            _this183.doctorList = response.data;
           });
         }
       }, {
         key: "onChangeDoctor",
         value: function onChangeDoctor(doctor) {
-          var _this183 = this;
+          var _this184 = this;
 
           console.log('doctor', doctor);
           this.loadingTech = true;
@@ -40747,11 +40811,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           };
           this.httpRequestService.postRequest('get-tech-info', data1).subscribe(function (response) {
-            if (response._dropdown.length > 0) _this183.techList = response._dropdown;else _this183.openSnackBar('No tech found for this doctor', 'Ok');
-            _this183.selectedIds.tech_id = response._dropdown.map(function (tech) {
+            if (response._dropdown.length > 0) _this184.techList = response._dropdown;else _this184.openSnackBar('No tech found for this doctor', 'Ok');
+            _this184.selectedIds.tech_id = response._dropdown.map(function (tech) {
               return tech.value;
             });
-            _this183.loadingTech = false;
+            _this184.loadingTech = false;
           });
           this.selectedIds.doctor_id = doctor.doctor_id;
           this.selectedIds.parent_id = doctor.parent_id;
@@ -40928,7 +40992,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var DoctorDashboardComponent = /*#__PURE__*/function () {
       function DoctorDashboardComponent(dialog, commonFunction, cookie, http, activatedRoute, matSnackBar, deviceService) {
-        var _this184 = this;
+        var _this185 = this;
 
         _classCallCheck(this, DoctorDashboardComponent);
 
@@ -41226,16 +41290,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         this.activatedRoute.data.forEach(function (resolveData) {
-          _this184.allResolveData.dashboardData = resolveData.doctordata.data;
+          _this185.allResolveData.dashboardData = resolveData.doctordata.data;
 
-          _this184.viewReportProcessData(_this184.htmlText.headerText);
+          _this185.viewReportProcessData(_this185.htmlText.headerText);
         });
       }
 
       _createClass(DoctorDashboardComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this185 = this;
+          var _this186 = this;
 
           var data = {
             "source": "patient_data_desc_patient_name",
@@ -41253,8 +41317,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this185.authval) {
-                  if (response.res[i].doc_name == _this185.authval[j].name) {
+                for (var j in _this186.authval) {
+                  if (response.res[i].doc_name == _this186.authval[j].name) {
                     start = true;
                   }
                 }
@@ -41262,7 +41326,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this185.authval.push({
+                  _this186.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -41275,8 +41339,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this185.techval) {
-                  if (response.res[i].tech_namesearch == _this185.techval[j].name) {
+                for (var j in _this186.techval) {
+                  if (response.res[i].tech_namesearch == _this186.techval[j].name) {
                     start = true;
                   }
                 }
@@ -41284,7 +41348,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this185.techval.push({
+                  _this186.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -41297,8 +41361,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this185.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this185.parentnameval[j].name) {
+                for (var j in _this186.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this186.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -41306,7 +41370,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this185.parentnameval.push({
+                  _this186.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -41319,8 +41383,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this185.doctorstate) {
-                  if (response.res[i].doctor_state == _this185.doctorstate[j].name) {
+                for (var j in _this186.doctorstate) {
+                  if (response.res[i].doctor_state == _this186.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -41328,7 +41392,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this185.doctorstate.push({
+                  _this186.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -41341,8 +41405,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this185.doctorcity) {
-                  if (response.res[i].doctor_city == _this185.doctorcity[j].name) {
+                for (var j in _this186.doctorcity) {
+                  if (response.res[i].doctor_city == _this186.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -41350,7 +41414,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this185.doctorcity.push({
+                  _this186.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -41363,8 +41427,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this185.patientcity) {
-                  if (response.res[i].patient_city == _this185.patientcity[j].name) {
+                for (var j in _this186.patientcity) {
+                  if (response.res[i].patient_city == _this186.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -41372,7 +41436,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this185.patientcity.push({
+                  _this186.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -41385,8 +41449,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this185.patientstate) {
-                  if (response.res[i].patient_state == _this185.patientstate[j].name) {
+                for (var j in _this186.patientstate) {
+                  if (response.res[i].patient_state == _this186.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -41394,7 +41458,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this185.patientstate.push({
+                  _this186.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -41407,8 +41471,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this185.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this185.docofficeval[j].name) {
+                for (var j in _this186.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this186.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -41416,7 +41480,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this185.docofficeval.push({
+                  _this186.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -41441,7 +41505,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewReportProcessData",
         value: function viewReportProcessData() {
-          var _this186 = this;
+          var _this187 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           this.htmlText.headerText = flag;
@@ -41495,12 +41559,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           console.log(data);
           this.http.httpViaPost(endpointc, data).subscribe(function (res) {
-            _this186.docData_count = res.count;
+            _this187.docData_count = res.count;
           }, function (error) {
             console.log('Oooops!');
           });
           this.http.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this186.allDocData = res.results.res;
+            _this187.allDocData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -41508,13 +41572,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "openModal",
         value: function openModal(data) {
-          var _this187 = this;
+          var _this188 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_10__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this187.dialogRef.close();
+                _this188.dialogRef.close();
 
                 break;
             }
@@ -41690,7 +41754,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getInsuranceData",
         value: function getInsuranceData(id) {
-          var _this188 = this;
+          var _this189 = this;
 
           var data = {
             "source": "data_pece",
@@ -41701,9 +41765,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
             if (response.status == true) {
-              _this188.orginalReportDetails.patient_details[0].insurance_details = response.res[0];
+              _this189.orginalReportDetails.patient_details[0].insurance_details = response.res[0];
             } else {
-              _this188.orginalReportDetails.patient_details[0].insurance_details = {};
+              _this189.orginalReportDetails.patient_details[0].insurance_details = {};
             }
           });
         }
@@ -42096,7 +42160,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getInsuranceData",
         value: function getInsuranceData(id) {
-          var _this189 = this;
+          var _this190 = this;
 
           var data = {
             "source": "data_pece",
@@ -42107,16 +42171,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
             if (response.status == true) {
-              _this189.orginalReportDetails.patient_details[0].insurance_details = response.res[0];
+              _this190.orginalReportDetails.patient_details[0].insurance_details = response.res[0];
             } else {
-              _this189.orginalReportDetails.patient_details[0].insurance_details = {};
+              _this190.orginalReportDetails.patient_details[0].insurance_details = {};
             }
           });
         }
       }, {
         key: "checkValue",
         value: function checkValue() {
-          var _this190 = this;
+          var _this191 = this;
 
           var codeFlag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "icd_codes";
           var value = arguments.length > 1 ? arguments[1] : undefined;
@@ -42134,11 +42198,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.httpService.httpViaPost('update-patient-data-codes', postData).subscribe(function (response) {
             if (response.status == true) {
-              _this190.matSnackBar.open("Successfully updated.", "Ok", {
+              _this191.matSnackBar.open("Successfully updated.", "Ok", {
                 duration: 4000
               });
             } else {
-              _this190.matSnackBar.open("An error occord.", "Ok", {
+              _this191.matSnackBar.open("An error occord.", "Ok", {
                 duration: 4000
               });
             }
@@ -42302,7 +42366,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PatientDetailsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this191 = this;
+          var _this192 = this;
 
           // console.log("Patient Details Start =============================================");
           // console.log("Patient Details End =============================================");
@@ -43406,7 +43470,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             // console.log('response', response);
             for (var i in response.res) {
               // let label = response.res[i].replace('_', ' ');
-              if (_this191.orginalReportDetails.patient_details[0][response.res[i].label] !== undefined) {
+              if (_this192.orginalReportDetails.patient_details[0][response.res[i].label] !== undefined) {
                 switch (response.res[i].type) {
                   case 'checkbox':
                     otherFields.push({
@@ -43414,7 +43478,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       label: response.res[i].description,
                       checkItems: [{
                         name: response.res[i].label,
-                        value: _this191.orginalReportDetails.patient_details[0][response.res[i].label],
+                        value: _this192.orginalReportDetails.patient_details[0][response.res[i].label],
                         label: '',
                         labelPosition: 'before'
                       }]
@@ -43426,7 +43490,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       type: 'input',
                       name: response.res[i].label,
                       label: response.res[i].description,
-                      value: _this191.orginalReportDetails.patient_details[0][response.res[i].label],
+                      value: _this192.orginalReportDetails.patient_details[0][response.res[i].label],
                       disabled: true
                     });
                     break;
@@ -43442,15 +43506,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
             var requestData = {
-              token: _this191.cookie.get('jwtToken'),
+              token: _this192.cookie.get('jwtToken'),
               condition: {
-                _id: _this191.orginalReportDetails.patient_details[0].insurance_id
+                _id: _this192.orginalReportDetails.patient_details[0].insurance_id
               },
               source: 'data_pece'
             };
 
-            if (_this191.orginalReportDetails.patient_details[0].insurance_id != '') {
-              _this191.httpService.postRequest('get-data', requestData).subscribe(function (response) {
+            if (_this192.orginalReportDetails.patient_details[0].insurance_id != '') {
+              _this192.httpService.postRequest('get-data', requestData).subscribe(function (response) {
                 var insurance_name = response.res[0].insurancename;
                 patientInfoFormFields.push({
                   type: 'input',
@@ -43459,13 +43523,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   value: insurance_name,
                   disabled: true
                 });
-                _this191.configData = Object.assign(_this191.configData, {
+                _this192.configData = Object.assign(_this192.configData, {
                   patientInfoFormFields: patientInfoFormFields.concat(otherFields, checkboxFields)
                 });
               });
             } else {
               console.log('otherFields', otherFields);
-              _this191.configData = Object.assign(_this191.configData, {
+              _this192.configData = Object.assign(_this192.configData, {
                 patientInfoFormFields: patientInfoFormFields.concat(otherFields, checkboxFields)
               });
             }
@@ -43624,7 +43688,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var PatientReportViewComponent = /*#__PURE__*/function () {
       function PatientReportViewComponent(fb, activeRoute, router, httpService, datePipe, cookie, snakBar, dialog, commonFunction) {
-        var _this192 = this;
+        var _this193 = this;
 
         _classCallCheck(this, PatientReportViewComponent);
 
@@ -43675,16 +43739,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Upload":
-                _this192.dialogRef.close();
+                _this193.dialogRef.close();
 
-                _this192.router.navigateByUrl('/doctor/signature-management?view=' + activeRoute.snapshot.params._id);
+                _this193.router.navigateByUrl('/doctor/signature-management?view=' + activeRoute.snapshot.params._id);
 
                 break;
 
               case "Close":
-                _this192.dialogRef.close();
+                _this193.dialogRef.close();
 
-                _this192.router.navigateByUrl('/doctor/dashboard');
+                _this193.router.navigateByUrl('/doctor/dashboard');
 
                 break;
             }
@@ -43700,30 +43764,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this193 = this;
+          var _this194 = this;
 
           this.activeRoute.data.forEach(function (data) {
-            _this193.htmlText.allResolveData = data.data.data;
+            _this194.htmlText.allResolveData = data.data.data;
 
-            for (var loopIndex in _this193.htmlText.allResolveData.reportData[0].images) {
-              _this193.htmlText.allResolveData.reportData[0].images[loopIndex].image_url = _this193.htmlText.allResolveData.reportData[0].file_basepath + _this193.htmlText.allResolveData.reportData[0].images[loopIndex].name;
-              _this193.htmlText.allResolveData.reportData[0].images[loopIndex].show = false;
+            for (var loopIndex in _this194.htmlText.allResolveData.reportData[0].images) {
+              _this194.htmlText.allResolveData.reportData[0].images[loopIndex].image_url = _this194.htmlText.allResolveData.reportData[0].file_basepath + _this194.htmlText.allResolveData.reportData[0].images[loopIndex].name;
+              _this194.htmlText.allResolveData.reportData[0].images[loopIndex].show = false;
             }
 
-            _this193.htmlText.orginalData = data.data.data_2[0];
+            _this194.htmlText.orginalData = data.data.data_2[0];
 
-            if (typeof _this193.cookiesData.doctor_signature != 'undefined') {
-              _this193.htmlText.orginalData.doctor_signature = _this193.cookiesData.doctor_signature;
+            if (typeof _this194.cookiesData.doctor_signature != 'undefined') {
+              _this194.htmlText.orginalData.doctor_signature = _this194.cookiesData.doctor_signature;
             } else {
-              _this193.htmlText.orginalData.doctor_signature = "";
+              _this194.htmlText.orginalData.doctor_signature = "";
             }
 
-            if (typeof _this193.htmlText.allResolveData.reportData[0].stressi != 'undefined') {
-              _this193.htmlText.allResolveData.reportData[0].stressI = _this193.htmlText.allResolveData.reportData[0].stressi;
+            if (typeof _this194.htmlText.allResolveData.reportData[0].stressi != 'undefined') {
+              _this194.htmlText.allResolveData.reportData[0].stressI = _this194.htmlText.allResolveData.reportData[0].stressi;
             }
 
-            var BMI_flag = _this193.htmlText.allResolveData.reportData[0].BMI * 10;
-            _this193.htmlText.allResolveData.reportData[0].BMI_flag = BMI_flag;
+            var BMI_flag = _this194.htmlText.allResolveData.reportData[0].BMI * 10;
+            _this194.htmlText.allResolveData.reportData[0].BMI_flag = BMI_flag;
           });
 
           if (typeof this.cookiesData.user_details.diagnostic_admin_id != 'undefined') {
@@ -43733,7 +43797,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getBiller",
         value: function getBiller(id) {
-          var _this194 = this;
+          var _this195 = this;
 
           var data = {
             "source": "biller_by_doctor_id",
@@ -43752,7 +43816,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
-            _this194.htmlText.billers = response.res;
+            _this195.htmlText.billers = response.res;
           });
         }
       }, {
@@ -43781,7 +43845,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "reportSign",
         value: function reportSign() {
-          var _this195 = this;
+          var _this196 = this;
 
           var flug = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'default';
 
@@ -43817,39 +43881,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     "data": {
                       "bill_generation_date": new Date(),
                       "bill_sent_date": new Date(),
-                      "doctor_signature": _this195.cookiesData.doctor_signature,
-                      "download_link": _environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].siteBaseUrl + 'download/super-bill/' + _this195.htmlText.allResolveData.reportData[0]._id,
+                      "doctor_signature": _this196.cookiesData.doctor_signature,
+                      "download_link": _environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].siteBaseUrl + 'download/super-bill/' + _this196.htmlText.allResolveData.reportData[0]._id,
                       "file_path": "",
                       "download_password": "",
-                      "details": _this195.htmlText.allResolveData.details,
-                      "provide_description": _this195.htmlText.allResolveData.provide_description,
+                      "details": _this196.htmlText.allResolveData.details,
+                      "provide_description": _this196.htmlText.allResolveData.provide_description,
                       "status": "Send to Biller"
                     },
-                    "report_id": _this195.htmlText.allResolveData.reportData[0]._id
+                    "report_id": _this196.htmlText.allResolveData.reportData[0]._id
                   };
 
-                  if (_this195.cookiesData.user_details.parent_type != 'distributor') {
+                  if (_this196.cookiesData.user_details.parent_type != 'distributor') {
                     data.biller_id = billerID;
                     data.biller_name = billerName;
                     data.biller_email = billerEmail;
                   }
 
-                  data.data["id"] = _this195.activeRoute.snapshot.params._id;
+                  data.data["id"] = _this196.activeRoute.snapshot.params._id;
 
-                  _this195.httpService.httpViaPost("report-sign-send-to-biller", data).subscribe(function (response) {
+                  _this196.httpService.httpViaPost("report-sign-send-to-biller", data).subscribe(function (response) {
                     if (response.status = "success") {
                       switch (flug) {
                         case 'back':
-                          _this195.dialogRef.close();
+                          _this196.dialogRef.close();
 
-                          _this195.router.navigateByUrl('/doctor/dashboard');
+                          _this196.router.navigateByUrl('/doctor/dashboard');
 
                           break;
 
                         case 'next':
-                          _this195.dialogRef.close();
+                          _this196.dialogRef.close();
 
-                          _this195.router.navigateByUrl('/doctor/dashboard');
+                          _this196.router.navigateByUrl('/doctor/dashboard');
 
                           break;
 
@@ -43862,7 +43926,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   break;
 
                 case "No":
-                  _this195.dialogRef.close();
+                  _this196.dialogRef.close();
 
                   break;
               }
@@ -44141,7 +44205,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getInsuranceData",
         value: function getInsuranceData(id) {
-          var _this196 = this;
+          var _this197 = this;
 
           var data = {
             "source": "data_pece",
@@ -44152,9 +44216,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
             if (response.status == true) {
-              _this196.orginalReportDetails.patient_details[0].insurance_details = response.res[0];
+              _this197.orginalReportDetails.patient_details[0].insurance_details = response.res[0];
             } else {
-              _this196.orginalReportDetails.patient_details[0].insurance_details = {};
+              _this197.orginalReportDetails.patient_details[0].insurance_details = {};
             }
           });
         }
@@ -44417,7 +44481,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "returnToAdmin",
         value: function returnToAdmin() {
-          var _this197 = this;
+          var _this198 = this;
 
           var modalData = {
             panelClass: 'bulkupload-dialog',
@@ -44436,42 +44500,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Yes":
-                var jwtToken = _this197.cookies.get('jwtToken');
+                var jwtToken = _this198.cookies.get('jwtToken');
 
-                var allData = _this197.cookies.getAll();
+                var allData = _this198.cookies.getAll();
 
                 var main_user = JSON.parse(allData.main_user);
 
-                var secret = _this197.cookies.get('secret'); // Delete Cookie
+                var secret = _this198.cookies.get('secret'); // Delete Cookie
 
 
-                _this197.cookies["delete"]('user_details');
+                _this198.cookies["delete"]('user_details');
 
-                _this197.cookies["delete"]('main_user');
+                _this198.cookies["delete"]('main_user');
 
-                _this197.cookies["delete"]('doctor_signature');
+                _this198.cookies["delete"]('doctor_signature');
 
-                _this197.cookies["delete"]('secret');
+                _this198.cookies["delete"]('secret');
 
-                _this197.cookies["delete"]('jwtToken');
+                _this198.cookies["delete"]('jwtToken');
 
-                _this197.cookies.deleteAll('/doctor');
+                _this198.cookies.deleteAll('/doctor');
 
                 setTimeout(function () {
                   // Reset again Cookie
-                  _this197.cookies.set('jwtToken', jwtToken);
+                  _this198.cookies.set('jwtToken', jwtToken);
 
-                  _this197.cookies.set('user_details', JSON.stringify(main_user));
+                  _this198.cookies.set('user_details', JSON.stringify(main_user));
 
-                  _this197.cookies.set('secret', JSON.stringify(secret)); // Redirect to page
+                  _this198.cookies.set('secret', JSON.stringify(secret)); // Redirect to page
 
 
-                  _this197.router.navigateByUrl("admin/dashboard");
+                  _this198.router.navigateByUrl("admin/dashboard");
                 }, 500);
                 break;
 
               case "No":
-                _this197.dialogRef.close();
+                _this198.dialogRef.close();
 
                 break;
             }
@@ -44631,7 +44695,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateSignature",
         value: function updateSignature() {
-          var _this198 = this;
+          var _this199 = this;
 
           if (typeof this.htmlText.viewSign !== 'undefined' && this.htmlText.viewSign != '') {
             var data = {
@@ -44644,9 +44708,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost('addorupdatedata', data).subscribe(function (response) {
               if (response.status == "success") {
-                console.log("SIGN: ", _this198.htmlText.viewSign);
+                console.log("SIGN: ", _this199.htmlText.viewSign);
 
-                _this198.cookie.set('doctor_signature', _this198.htmlText.viewSign);
+                _this199.cookie.set('doctor_signature', _this199.htmlText.viewSign);
                 /* Open modal */
 
 
@@ -44664,7 +44728,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 };
 
-                _this198.openModal(modalData);
+                _this199.openModal(modalData);
               }
             });
           } else {
@@ -44683,16 +44747,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "openModal",
         value: function openModal(data) {
-          var _this199 = this;
+          var _this200 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_6__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this199.dialogRef.close();
+                _this200.dialogRef.close();
 
-                _this199.activatedRoute.queryParams.subscribe(function (getData) {
-                  _this199.router.navigateByUrl('/doctor/dashboard');
+                _this200.activatedRoute.queryParams.subscribe(function (getData) {
+                  _this200.router.navigateByUrl('/doctor/dashboard');
                 });
 
                 break;
@@ -44792,7 +44856,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var EncounterFormComponent = /*#__PURE__*/function () {
       function EncounterFormComponent(http) {
-        var _this200 = this;
+        var _this201 = this;
 
         _classCallCheck(this, EncounterFormComponent);
 
@@ -44803,7 +44867,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
         this.http.httpViaPost("get-report-data", data).subscribe(function (response) {
           // console.log('7777',response);
-          _this200.html_body = response.res;
+          _this201.html_body = response.res;
         });
       }
 
@@ -44950,15 +45014,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditLessonComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this201 = this;
+          var _this202 = this;
 
           this.route.params.subscribe(function (params) {
-            _this201.recid = params['id'];
+            _this202.recid = params['id'];
             console.log(params['id']);
 
-            if (_this201.recid != null && _this201.recid != '' && _this201.recid != undefined) {
+            if (_this202.recid != null && _this202.recid != '' && _this202.recid != undefined) {
               // this.geteditdata()
-              _this201.header_txt = 'Edit Lesson';
+              _this202.header_txt = 'Edit Lesson';
             }
           });
           this.formdataval = [{
@@ -45167,12 +45231,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListLessonComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this202 = this;
+          var _this203 = this;
 
           this.activatedRoute.data.forEach(function (data) {
             var result;
             result = data.lessionData.res;
-            _this202.manageLessionList = result;
+            _this203.manageLessionList = result;
           });
         }
       }]);
@@ -45426,14 +45490,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditQuizComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this203 = this;
+          var _this204 = this;
 
           if (this.activatedRoute.snapshot.params._id) {
             this.header_txt = 'Edit Quiz';
             this.activatedRoute.data.forEach(function (data) {
               var result;
               result = data.quizQuestionData.res;
-              _this203.quizQuestionSingleDataList = result;
+              _this204.quizQuestionSingleDataList = result;
             });
           }
         }
@@ -45558,12 +45622,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListAnswerComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this204 = this;
+          var _this205 = this;
 
           this.activatedRoute.data.forEach(function (data) {
             var result;
             result = data.quizQuestionData.res;
-            _this204.quizAnswerList = result;
+            _this205.quizAnswerList = result;
           });
         }
       }]);
@@ -45697,12 +45761,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListQuizComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this205 = this;
+          var _this206 = this;
 
           this.activatedRoute.data.forEach(function (data) {
             var result;
             result = data.trainingdata.res;
-            _this205.quizQuestionList = result;
+            _this206.quizQuestionList = result;
           });
         }
       }]);
@@ -45833,15 +45897,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AddEditTrainingComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this206 = this;
+          var _this207 = this;
 
           this.route.params.subscribe(function (params) {
-            _this206.recid = params['id'];
+            _this207.recid = params['id'];
             console.log(params['id']);
 
-            if (_this206.recid != null && _this206.recid != '' && _this206.recid != undefined) {
+            if (_this207.recid != null && _this207.recid != '' && _this207.recid != undefined) {
               // this.geteditdata()
-              _this206.header_txt = 'Edit Training';
+              _this207.header_txt = 'Edit Training';
             }
           });
           this.formdataval = [{
@@ -46033,13 +46097,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ListingTrainingComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this207 = this;
+          var _this208 = this;
 
           this.activatedRoute.data.forEach(function (data) {
             console.log(data);
             var result;
             result = data.trainingdata.res;
-            _this207.manageTrainingList = result; // console.log('///')
+            _this208.manageTrainingList = result; // console.log('///')
           });
         }
       }]);
@@ -46558,7 +46622,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "generateAddEditForm",
         value: function generateAddEditForm() {
-          var _this208 = this;
+          var _this209 = this;
 
           var flag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
           var validateRule = {
@@ -46596,59 +46660,59 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               delete validateRule.confirmpassword;
               this.doctorManagementAddEditForm = this.formBuilder.group(validateRule);
               this.acivatedRoute.data.subscribe(function (resolveData) {
-                _this208.htmlText.techData = resolveData.data.data.tech_data;
-                _this208.htmlText.billerData = resolveData.data.data.biller_data;
-                _this208.htmlText.doctorOfficeData = resolveData.data.data.doctor_office_data;
+                _this209.htmlText.techData = resolveData.data.data.tech_data;
+                _this209.htmlText.billerData = resolveData.data.data.biller_data;
+                _this209.htmlText.doctorOfficeData = resolveData.data.data.doctor_office_data;
                 var doctorDetails = resolveData.data.data.doctor_data;
 
-                _this208.doctorManagementAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
+                _this209.doctorManagementAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
 
-                _this208.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
+                _this209.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
 
-                _this208.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
+                _this209.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
 
-                _this208.doctorManagementAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
+                _this209.doctorManagementAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
 
-                _this208.doctorManagementAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
+                _this209.doctorManagementAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
 
-                _this208.doctorManagementAddEditForm.controls['phone'].patchValue(doctorDetails[0].phone);
+                _this209.doctorManagementAddEditForm.controls['phone'].patchValue(doctorDetails[0].phone);
 
-                _this208.doctorManagementAddEditForm.controls['fax'].patchValue(doctorDetails[0].fax);
+                _this209.doctorManagementAddEditForm.controls['fax'].patchValue(doctorDetails[0].fax);
 
-                _this208.doctorManagementAddEditForm.controls['practice_name'].patchValue(doctorDetails[0].practice_name);
+                _this209.doctorManagementAddEditForm.controls['practice_name'].patchValue(doctorDetails[0].practice_name);
 
-                _this208.doctorManagementAddEditForm.controls['npi'].patchValue(doctorDetails[0].npi);
+                _this209.doctorManagementAddEditForm.controls['npi'].patchValue(doctorDetails[0].npi);
 
-                _this208.doctorManagementAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
+                _this209.doctorManagementAddEditForm.controls['address'].patchValue(doctorDetails[0].address);
 
-                _this208.doctorManagementAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
+                _this209.doctorManagementAddEditForm.controls['zip'].patchValue(doctorDetails[0].zip);
 
-                _this208.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
+                _this209.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
 
-                _this208.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
+                _this209.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
 
-                _this208.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
+                _this209.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
 
-                _this208.doctorManagementAddEditForm.controls['cpt_validate_amount'].patchValue(doctorDetails[0].cpt_validate_amount);
+                _this209.doctorManagementAddEditForm.controls['cpt_validate_amount'].patchValue(doctorDetails[0].cpt_validate_amount);
 
-                _this208.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
+                _this209.doctorManagementAddEditForm.controls['tech_id'].patchValue(doctorDetails[0].tech_id);
 
-                _this208.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_id);
+                _this209.doctorManagementAddEditForm.controls['biller_id'].patchValue(doctorDetails[0].biller_id);
 
-                _this208.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_id);
+                _this209.doctorManagementAddEditForm.controls['doctors_office_id'].patchValue(doctorDetails[0].doctors_office_id);
 
-                _this208.doctorManagementAddEditForm.controls['taxo_list'].patchValue(doctorDetails[0].taxo_list);
+                _this209.doctorManagementAddEditForm.controls['taxo_list'].patchValue(doctorDetails[0].taxo_list);
 
-                _this208.doctorManagementAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
+                _this209.doctorManagementAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
               });
               break;
 
             case 'add':
               delete validateRule.id;
               this.acivatedRoute.data.subscribe(function (resolveData) {
-                _this208.htmlText.techData = resolveData.data.data.tech_data;
-                _this208.htmlText.billerData = resolveData.data.data.biller_data;
-                _this208.htmlText.doctorOfficeData = resolveData.data.data.doctor_office_data;
+                _this209.htmlText.techData = resolveData.data.data.tech_data;
+                _this209.htmlText.billerData = resolveData.data.data.biller_data;
+                _this209.htmlText.doctorOfficeData = resolveData.data.data.doctor_office_data;
               });
               this.doctorManagementAddEditForm = this.formBuilder.group(validateRule, passwordRule);
               break;
@@ -46661,16 +46725,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "allStateCityData",
         value: function allStateCityData() {
-          var _this209 = this;
+          var _this210 = this;
 
           this.http.getSiteSettingData("./assets/data-set/state.json").subscribe(function (response) {
-            _this209.htmlText.states = response;
+            _this210.htmlText.states = response;
           });
           this.http.getSiteSettingData("./assets/data-set/city.json").subscribe(function (response) {
-            _this209.htmlText.allCities = response;
+            _this210.htmlText.allCities = response;
           });
           this.http.getSiteSettingData("./assets/data-set/taxonomies.json").subscribe(function (response) {
-            _this209.htmlText.taxonomies = response;
+            _this210.htmlText.taxonomies = response;
           });
         } // Confirm Password match function
 
@@ -46708,7 +46772,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "doctorManagementAddEditFormSubmit",
         value: function doctorManagementAddEditFormSubmit() {
-          var _this210 = this;
+          var _this211 = this;
 
           console.log("Data: ", this.htmlText.user_details);
 
@@ -46765,25 +46829,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
                 };
 
-                var dialogRef = _this210.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_8__["DialogBoxComponent"], modalData1);
+                var dialogRef = _this211.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_8__["DialogBoxComponent"], modalData1);
 
                 dialogRef.afterClosed().subscribe(function (result) {
                   switch (result) {
                     case "OK":
                       dialogRef.close();
 
-                      _this210.router.navigateByUrl("sales-person/dashboard");
+                      _this211.router.navigateByUrl("sales-person/dashboard");
 
                       break;
                   }
                 });
               } else {
-                _this210.snackBar.open(response.msg, '', {
+                _this211.snackBar.open(response.msg, '', {
                   duration: 2000
                 });
               }
             }, function (error) {
-              _this210.snackBar.open("An error occurred. Please try again.", '', {
+              _this211.snackBar.open("An error occurred. Please try again.", '', {
                 duration: 2000
               });
             });
@@ -46792,7 +46856,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getParentData",
         value: function getParentData() {
-          var _this211 = this;
+          var _this212 = this;
 
           var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
           var billerData = id;
@@ -46829,7 +46893,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.http.httpViaPost('datalist', data).subscribe(function (response) {
-            _this211.htmlText.parent_id = response.res;
+            _this212.htmlText.parent_id = response.res;
           });
         }
       }]);
@@ -46959,7 +47023,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var CptValidateReportSalesPersonComponent = /*#__PURE__*/function () {
       // lib list end
       function CptValidateReportSalesPersonComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this212 = this;
+        var _this213 = this;
 
         _classCallCheck(this, CptValidateReportSalesPersonComponent);
 
@@ -47234,13 +47298,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           data: this.user
         };
         this.http.httpViaPostbyApi1(endpointc, data).subscribe(function (res) {
-          _this212.billerData_count = res.count;
+          _this213.billerData_count = res.count;
         }, function (error) {
           console.log('Oooops!');
         });
         this.http.httpViaPostbyApi1(endpoint, data).subscribe(function (res) {
           // console.log(res);
-          _this212.allBillerData = res.results.res;
+          _this213.allBillerData = res.results.res;
         }, function (error) {
           console.log('Oooops!');
         });
@@ -47249,7 +47313,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CptValidateReportSalesPersonComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this213 = this;
+          var _this214 = this;
 
           var data = {
             "data": this.user
@@ -47261,8 +47325,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this213.authval) {
-                  if (response.res[i].doc_name == _this213.authval[j].name) {
+                for (var j in _this214.authval) {
+                  if (response.res[i].doc_name == _this214.authval[j].name) {
                     start = true;
                   }
                 }
@@ -47270,7 +47334,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this213.authval.push({
+                  _this214.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -47283,8 +47347,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this213.techval) {
-                  if (response.res[i].tech_namesearch == _this213.techval[j].name) {
+                for (var j in _this214.techval) {
+                  if (response.res[i].tech_namesearch == _this214.techval[j].name) {
                     start = true;
                   }
                 }
@@ -47292,7 +47356,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this213.techval.push({
+                  _this214.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -47305,8 +47369,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this213.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this213.parentnameval[j].name) {
+                for (var j in _this214.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this214.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -47314,7 +47378,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this213.parentnameval.push({
+                  _this214.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -47327,8 +47391,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this213.doctorstate) {
-                  if (response.res[i].doctor_state == _this213.doctorstate[j].name) {
+                for (var j in _this214.doctorstate) {
+                  if (response.res[i].doctor_state == _this214.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -47336,7 +47400,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this213.doctorstate.push({
+                  _this214.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -47349,8 +47413,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this213.doctorcity) {
-                  if (response.res[i].doctor_city == _this213.doctorcity[j].name) {
+                for (var j in _this214.doctorcity) {
+                  if (response.res[i].doctor_city == _this214.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -47358,7 +47422,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this213.doctorcity.push({
+                  _this214.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -47371,8 +47435,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this213.patientcity) {
-                  if (response.res[i].patient_city == _this213.patientcity[j].name) {
+                for (var j in _this214.patientcity) {
+                  if (response.res[i].patient_city == _this214.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -47380,7 +47444,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this213.patientcity.push({
+                  _this214.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -47393,8 +47457,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this213.patientstate) {
-                  if (response.res[i].patient_state == _this213.patientstate[j].name) {
+                for (var j in _this214.patientstate) {
+                  if (response.res[i].patient_state == _this214.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -47402,7 +47466,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this213.patientstate.push({
+                  _this214.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -47415,8 +47479,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this213.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this213.docofficeval[j].name) {
+                for (var j in _this214.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this214.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -47424,7 +47488,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this213.docofficeval.push({
+                  _this214.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -47559,7 +47623,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var SalesPersonDashboardComponent = /*#__PURE__*/function () {
       function SalesPersonDashboardComponent(http, cookieService, router, activatedRoute) {
-        var _this214 = this;
+        var _this215 = this;
 
         _classCallCheck(this, SalesPersonDashboardComponent);
 
@@ -47657,14 +47721,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this214.allResolveData = resolveData.dataCount.data;
+          _this215.allResolveData = resolveData.dataCount.data;
         });
       }
 
       _createClass(SalesPersonDashboardComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this215 = this;
+          var _this216 = this;
 
           this.datasource = '';
           var endpoint = 'getdoctorlistdata';
@@ -47692,12 +47756,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.http.httpViaPost(endpointc, data).subscribe(function (res) {
             // console.log('in constructor');
             // console.log(result);
-            _this215.docData_count = res.count; //console.warn('blogData c',res);
+            _this216.docData_count = res.count; //console.warn('blogData c',res);
           }, function (error) {
             console.log('Oooops!');
           });
           this.http.httpViaPost(endpoint, data).subscribe(function (res) {
-            _this215.docData = res.results.res;
+            _this216.docData = res.results.res;
           }, function (error) {
             console.log('Oooops!');
           });
@@ -48666,10 +48730,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getEvents",
         value: function getEvents() {
-          var _this216 = this;
+          var _this217 = this;
 
           this.activatedRoute.data.forEach(function (data) {
-            _this216.configData.responseData = data.eventListData.data;
+            _this217.configData.responseData = data.eventListData.data;
           });
         }
       }, {
@@ -48891,12 +48955,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalHomeComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this217 = this;
+          var _this218 = this;
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this217.configData.responseData = data.eventdayarrData.data;
+              _this218.configData.responseData = data.eventdayarrData.data;
             }); // Merge logged in user details with the config data
 
             var userDetails = JSON.parse(this.cookieService.get('user_details'));
@@ -49058,7 +49122,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalSyncWithGoogleComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this218 = this;
+          var _this219 = this;
 
           this.userDetails = JSON.parse(this.cookieService.get('user_details'));
 
@@ -49066,53 +49130,53 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var url = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_6__["environment"].calendarApi + 'getauthorization-pece-getuserdata' + '?access_token=' + this.activatedRoute.snapshot.params.access_token;
             this.httpRequestService.get(url).subscribe(function (response) {
               var data = {
-                token: _this218.cookieService.get('jwtToken'),
-                id: _this218.userDetails._id,
+                token: _this219.cookieService.get('jwtToken'),
+                id: _this219.userDetails._id,
                 data: {
-                  access_token: _this218.activatedRoute.snapshot.params.access_token,
-                  refresh_token: _this218.activatedRoute.snapshot.params.refresh,
+                  access_token: _this219.activatedRoute.snapshot.params.access_token,
+                  refresh_token: _this219.activatedRoute.snapshot.params.refresh,
                   connected_gmail: response.id
                 }
               }; // Update user details in database
 
-              _this218.httpRequestService.postRequest('update-user', data).subscribe(function (response) {
+              _this219.httpRequestService.postRequest('update-user', data).subscribe(function (response) {
                 console.log('response', response);
 
                 if (response.status == 'success') {
-                  _this218.openSnackBar('Calendar added successfully...');
+                  _this219.openSnackBar('Calendar added successfully...');
 
                   setInterval(function () {
-                    _this218.secCount = _this218.secCount - 1;
-                    _this218.displayMessage = "Synchronize Complete. You will be redirected in " + _this218.secCount + " sec.";
+                    _this219.secCount = _this219.secCount - 1;
+                    _this219.displayMessage = "Synchronize Complete. You will be redirected in " + _this219.secCount + " sec.";
 
-                    if (_this218.secCount == 0) {
-                      _this218.secCount = 1;
+                    if (_this219.secCount == 0) {
+                      _this219.secCount = 1;
 
-                      _this218.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
+                      _this219.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
                     }
                   }, 1000);
                 } else {
-                  _this218.openSnackBar("An error occurs. Please try again.", "Ok");
+                  _this219.openSnackBar("An error occurs. Please try again.", "Ok");
 
                   setTimeout(function () {
-                    _this218.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
+                    _this219.router.navigateByUrl('/tech/manage-calender/manage-sehedule');
                   }, 4000);
                 }
               }); // Send email to the logged in user
 
 
-              var urlSendEmail = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_6__["environment"].calendarApi + 'send-confirmation-email?id=' + _this218.userDetails._id;
+              var urlSendEmail = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_6__["environment"].calendarApi + 'send-confirmation-email?id=' + _this219.userDetails._id;
 
-              _this218.httpRequestService.get(urlSendEmail).subscribe(function (response) {
+              _this219.httpRequestService.get(urlSendEmail).subscribe(function (response) {
                 if (response.status == 'success') {
                   console.log('Mail sent ', response.msg_id);
 
-                  _this218.openSnackBar('Confirmation email sent to your email - ' + _this218.userDetails.email, 'Ok');
+                  _this219.openSnackBar('Confirmation email sent to your email - ' + _this219.userDetails.email, 'Ok');
                 }
               }); // Update user_details in cookie
 
 
-              _this218.cookieService.set('user_details', JSON.stringify(Object.assign(_this218.userDetails, data.data)));
+              _this219.cookieService.set('user_details', JSON.stringify(Object.assign(_this219.userDetails, data.data)));
             });
             /* **********************************************************************************
             this.httpRequestService.httpViaPost('cal-update-user', data).subscribe((response) => {
@@ -49672,13 +49736,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalViewSlotComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this219 = this;
+          var _this220 = this;
 
           if (this.cookieService.check('jwtToken')) {
             this.configData.jwtToken = this.cookieService.get('jwtToken');
             this.activatedRoute.data.forEach(function (data) {
-              _this219.configData.responseData = data.eventdayarrData.data;
-              console.log('responseData', _this219.configData.responseData);
+              _this220.configData.responseData = data.eventdayarrData.data;
+              console.log('responseData', _this220.configData.responseData);
             });
           } else {
             this.openSnackBar('Token not found');
@@ -50022,7 +50086,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllDoctorData",
         value: function getAllDoctorData() {
-          var _this220 = this;
+          var _this221 = this;
 
           var data = {
             "source": "doctors_by_tech_id",
@@ -50034,7 +50098,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.httpService.httpViaPost('datalist', data).subscribe(function (response) {
             var result = {};
             result = response.res;
-            _this220.allDoctorDataArray = result;
+            _this221.allDoctorDataArray = result;
           });
         }
       }, {
@@ -50103,7 +50167,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "bulkUploaddataSubmit",
         value: function bulkUploaddataSubmit() {
-          var _this221 = this;
+          var _this222 = this;
 
           if (this.configData.files.length > 0) {
             for (var loop in this.configData.files) {
@@ -50150,12 +50214,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.httpService.httpViaPost("upload-bulk-report", data).subscribe(function (response) {
               if (response.status = "success") {
-                _this221.snakBar.open("Successfully Submitted", "OK", {
+                _this222.snakBar.open("Successfully Submitted", "OK", {
                   duration: 1000
                 });
 
                 setTimeout(function () {
-                  _this221.router.navigateByUrl('/tech/patient-management/bulk-upload/report-conformation/' + response.upload_id);
+                  _this222.router.navigateByUrl('/tech/patient-management/bulk-upload/report-conformation/' + response.upload_id);
                 }, 2000);
               }
             });
@@ -50433,7 +50497,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var ReportConformationComponent = /*#__PURE__*/function () {
       function ReportConformationComponent(snackBar, dialog, http, cookieService, router, activatedRoute) {
-        var _this222 = this;
+        var _this223 = this;
 
         _classCallCheck(this, ReportConformationComponent);
 
@@ -50484,20 +50548,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             console.log("Step 1: Get uploaded patient files.");
             /* Get name using file name start */
 
-            _this222.htmlText.confirmSubmittedDataSource = response.res;
+            _this223.htmlText.confirmSubmittedDataSource = response.res;
             var patientSearch = [];
             console.log("Step 2: Get patient name using report file name and create an array to get the patient details from database.");
 
-            for (var loop = 0; loop < _this222.htmlText.confirmSubmittedDataSource.length; loop++) {
-              var patientNameArr = _this222.htmlText.confirmSubmittedDataSource[loop].file_original_name.replace("PatientReport_", "");
+            for (var loop = 0; loop < _this223.htmlText.confirmSubmittedDataSource.length; loop++) {
+              var patientNameArr = _this223.htmlText.confirmSubmittedDataSource[loop].file_original_name.replace("PatientReport_", "");
 
               patientNameArr = patientNameArr.replace(".pdf", "");
               patientNameArr = patientNameArr.split(' ');
               console.log("Name: ", patientNameArr);
-              _this222.htmlText.confirmSubmittedDataSource[loop].patient_name = patientNameArr[0] + ' ' + patientNameArr[1];
-              _this222.htmlText.confirmSubmittedDataSource[loop].patient_name_search = patientNameArr[0];
+              _this223.htmlText.confirmSubmittedDataSource[loop].patient_name = patientNameArr[0] + ' ' + patientNameArr[1];
+              _this223.htmlText.confirmSubmittedDataSource[loop].patient_name_search = patientNameArr[0];
               patientSearch.push(patientNameArr[0]);
-              _this222.htmlText.confirmSubmittedDataSource[loop].patient_details = [];
+              _this223.htmlText.confirmSubmittedDataSource[loop].patient_details = [];
             }
             /* Get name using file name end */
 
@@ -50508,32 +50572,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "source": "view_google_event_with_all_data",
               "condition": {
                 "patient_name": patientSearch,
-                "tech_id": _this222.htmlText.userData.user_details._id
+                "tech_id": _this223.htmlText.userData.user_details._id
               },
-              "token": _this222.htmlText.userData.jwtToken
+              "token": _this223.htmlText.userData.jwtToken
             };
             console.log("Step 3: Http request for get all patient data and match patient data.");
 
-            _this222.http.httpViaPost('bulk-upload-patient-match', _data8).subscribe(function (response) {
+            _this223.http.httpViaPost('bulk-upload-patient-match', _data8).subscribe(function (response) {
               if (response.status == "success") {
-                _this222.htmlText.options = response.data.all_patient;
-                _this222.htmlText.conflictingPatientRecordsDataSource = [];
+                _this223.htmlText.options = response.data.all_patient;
+                _this223.htmlText.conflictingPatientRecordsDataSource = [];
                 console.log("Step 4: Marge with patient details and conflict record.");
 
-                for (var _loop2 = 0; _loop2 < _this222.htmlText.confirmSubmittedDataSource.length; _loop2++) {
+                for (var _loop2 = 0; _loop2 < _this223.htmlText.confirmSubmittedDataSource.length; _loop2++) {
                   for (var loop2 = 0; loop2 < response.data.match_patient.length; loop2++) {
                     /* For find some patient */
-                    if (_this222.htmlText.confirmSubmittedDataSource[_loop2].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
+                    if (_this223.htmlText.confirmSubmittedDataSource[_loop2].patient_name.toLowerCase() == response.data.match_patient[loop2].patient_name.toLowerCase()) {
                       /* checking duplicate */
-                      if (typeof _this222.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag == 'undefined') {
-                        _this222.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag = true;
+                      if (typeof _this223.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag == 'undefined') {
+                        _this223.htmlText.confirmSubmittedDataSource[_loop2].patient_find_flag = true;
 
-                        _this222.htmlText.confirmSubmittedDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
+                        _this223.htmlText.confirmSubmittedDataSource[_loop2].patient_details.push(response.data.match_patient[loop2]);
 
-                        _this222.htmlText.confirmSubmittedDataSource[_loop2].status = 3;
+                        _this223.htmlText.confirmSubmittedDataSource[_loop2].status = 3;
 
-                        _this222.htmlText.confirmSubmittedDataSource[_loop2].report_life_circle.push({
-                          "upload_by_tech_id": _this222.htmlText.userData.user_details._id,
+                        _this223.htmlText.confirmSubmittedDataSource[_loop2].report_life_circle.push({
+                          "upload_by_tech_id": _this223.htmlText.userData.user_details._id,
                           "date": Date.now(),
                           "upload_date": Date.now(),
                           "status": 3,
@@ -50544,14 +50608,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                         loop2 = response.data.match_patient.length;
                       } else {
-                        _this222.htmlText.conflictingPatientRecordsDataSource.push(_this222.htmlText.confirmSubmittedDataSource[_loop2]);
+                        _this223.htmlText.conflictingPatientRecordsDataSource.push(_this223.htmlText.confirmSubmittedDataSource[_loop2]);
 
-                        _this222.htmlText.conflictingPatientRecordsDataSource[_this222.htmlText.conflictingPatientRecordsDataSource.length - 1].patient_details.push(response.data.match_patient[loop2]);
+                        _this223.htmlText.conflictingPatientRecordsDataSource[_this223.htmlText.conflictingPatientRecordsDataSource.length - 1].patient_details.push(response.data.match_patient[loop2]);
 
-                        _this222.htmlText.conflictingPatientRecordsDataSource[_this222.htmlText.conflictingPatientRecordsDataSource.length - 1].status = 3;
+                        _this223.htmlText.conflictingPatientRecordsDataSource[_this223.htmlText.conflictingPatientRecordsDataSource.length - 1].status = 3;
 
-                        _this222.htmlText.conflictingPatientRecordsDataSource[_this222.htmlText.conflictingPatientRecordsDataSource.length - 1].report_life_circle.push({
-                          "upload_by_tech_id": _this222.htmlText.userData.user_details._id,
+                        _this223.htmlText.conflictingPatientRecordsDataSource[_this223.htmlText.conflictingPatientRecordsDataSource.length - 1].report_life_circle.push({
+                          "upload_by_tech_id": _this223.htmlText.userData.user_details._id,
                           "upload_date": Date.now(),
                           "upload_status": 3,
                           "upload_status_text": "File uploaded confirm",
@@ -50566,9 +50630,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 console.log("Step 5: Delete conflict record from total patient report array.");
                 /* Delete conflict data */
 
-                for (var _loop3 = 0; _loop3 < _this222.htmlText.confirmSubmittedDataSource.length; _loop3++) {
-                  if (_this222.htmlText.confirmSubmittedDataSource[_loop3].patient_details.length > 1) {
-                    _this222.htmlText.confirmSubmittedDataSource.splice(_loop3, 1);
+                for (var _loop3 = 0; _loop3 < _this223.htmlText.confirmSubmittedDataSource.length; _loop3++) {
+                  if (_this223.htmlText.confirmSubmittedDataSource[_loop3].patient_details.length > 1) {
+                    _this223.htmlText.confirmSubmittedDataSource.splice(_loop3, 1);
                   }
                 }
 
@@ -50577,14 +50641,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                 var deleteIndex = [];
 
-                for (var _loop4 = 0; _loop4 < _this222.htmlText.confirmSubmittedDataSource.length; _loop4++) {
-                  if (typeof _this222.htmlText.confirmSubmittedDataSource[_loop4].patient_find_flag == 'undefined') {
-                    _this222.htmlText.notFindDataSource.push(_this222.htmlText.confirmSubmittedDataSource[_loop4]);
+                for (var _loop4 = 0; _loop4 < _this223.htmlText.confirmSubmittedDataSource.length; _loop4++) {
+                  if (typeof _this223.htmlText.confirmSubmittedDataSource[_loop4].patient_find_flag == 'undefined') {
+                    _this223.htmlText.notFindDataSource.push(_this223.htmlText.confirmSubmittedDataSource[_loop4]);
 
-                    _this222.htmlText.notFindDataSource[_this222.htmlText.notFindDataSource.length - 1].status = 3;
+                    _this223.htmlText.notFindDataSource[_this223.htmlText.notFindDataSource.length - 1].status = 3;
 
-                    _this222.htmlText.notFindDataSource[_this222.htmlText.notFindDataSource.length - 1].report_life_circle.push({
-                      "upload_by_tech_id": _this222.htmlText.userData.user_details._id,
+                    _this223.htmlText.notFindDataSource[_this223.htmlText.notFindDataSource.length - 1].report_life_circle.push({
+                      "upload_by_tech_id": _this223.htmlText.userData.user_details._id,
                       "upload_date": Date.now(),
                       "upload_status": 3,
                       "upload_status_text": "File uploaded confirm",
@@ -50598,7 +50662,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 console.log("Step 7: Delete not patient find record from total patient report array.");
 
                 for (var _loop5 = 0; _loop5 < deleteIndex.length; _loop5++) {
-                  _this222.htmlText.confirmSubmittedDataSource.splice(deleteIndex, 1);
+                  _this223.htmlText.confirmSubmittedDataSource.splice(deleteIndex, 1);
                 }
 
                 console.log("Step 8: Now we have 3 type of record.");
@@ -50606,9 +50670,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 console.log("          2) Conflict Record: Find more then one patient name using file name.");
                 console.log("          3) Report which dose not match with any patient name using file name.");
                 console.log("Step 9: Push data into the mat table.");
-                _this222.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this222.htmlText.confirmSubmittedDataSource);
-                _this222.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this222.htmlText.conflictingPatientRecordsDataSource);
-                _this222.notFindPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this222.htmlText.notFindDataSource);
+                _this223.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this223.htmlText.confirmSubmittedDataSource);
+                _this223.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this223.htmlText.conflictingPatientRecordsDataSource);
+                _this223.notFindPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this223.htmlText.notFindDataSource);
               }
             });
           }
@@ -50627,7 +50691,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "selectConflictingRecord",
         value: function selectConflictingRecord(flag, conflictIndex, selectIndex) {
-          var _this223 = this;
+          var _this224 = this;
 
           if (flag == 'conflicting') {
             var data = {
@@ -50650,18 +50714,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   break;
 
                 case "Yes":
-                  var patientDetails = _this223.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details[selectIndex];
+                  var patientDetails = _this224.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details[selectIndex];
 
-                  _this223.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.splice(0, _this223.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.length);
+                  _this224.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.splice(0, _this224.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.length);
 
-                  _this223.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.push(patientDetails);
+                  _this224.htmlText.conflictingPatientRecordsDataSource[conflictIndex].patient_details.push(patientDetails);
 
-                  _this223.htmlText.confirmSubmittedDataSource.push(_this223.htmlText.conflictingPatientRecordsDataSource[conflictIndex]);
+                  _this224.htmlText.confirmSubmittedDataSource.push(_this224.htmlText.conflictingPatientRecordsDataSource[conflictIndex]);
 
-                  _this223.htmlText.conflictingPatientRecordsDataSource.splice(conflictIndex, 1);
+                  _this224.htmlText.conflictingPatientRecordsDataSource.splice(conflictIndex, 1);
 
-                  _this223.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this223.htmlText.confirmSubmittedDataSource);
-                  _this223.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this223.htmlText.conflictingPatientRecordsDataSource);
+                  _this224.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this224.htmlText.confirmSubmittedDataSource);
+                  _this224.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this224.htmlText.conflictingPatientRecordsDataSource);
                   break;
               }
             });
@@ -50670,7 +50734,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateRecord",
         value: function updateRecord() {
-          var _this224 = this;
+          var _this225 = this;
 
           if (this.checkboxData.checkbox1 == true && this.checkboxData.checkbox2 == true) {
             var data = {
@@ -50680,20 +50744,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.http.httpViaPost("update-upload-file", data).subscribe(function (response) {
               if (response.status == 'success') {
-                var dialogRef = _this224.dialog.open(_report_upload_success_modal_report_upload_success_modal_component__WEBPACK_IMPORTED_MODULE_9__["ReportUploadSuccessModalComponent"], {
+                var dialogRef = _this225.dialog.open(_report_upload_success_modal_report_upload_success_modal_component__WEBPACK_IMPORTED_MODULE_9__["ReportUploadSuccessModalComponent"], {
                   panelClass: 'patient-confirm-report',
                   data: {
-                    confirmSubmittedDataSource: _this224.htmlText.confirmSubmittedDataSource,
-                    conflictingPatientRecordsDataSource: _this224.htmlText.conflictingPatientRecordsDataSource,
-                    notFindDataSource: _this224.htmlText.notFindDataSource
+                    confirmSubmittedDataSource: _this225.htmlText.confirmSubmittedDataSource,
+                    conflictingPatientRecordsDataSource: _this225.htmlText.conflictingPatientRecordsDataSource,
+                    notFindDataSource: _this225.htmlText.notFindDataSource
                   }
                 });
 
                 dialogRef.afterClosed().subscribe(function (result) {
-                  _this224.router.navigateByUrl('/tech/dashboard');
+                  _this225.router.navigateByUrl('/tech/dashboard');
                 });
               } else {
-                _this224.snackBar.open(response.msg + " Error code: F-AEA-TS-258.", "Ok", {
+                _this225.snackBar.open(response.msg + " Error code: F-AEA-TS-258.", "Ok", {
                   duration: 2000
                 });
               }
@@ -50724,7 +50788,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "changePatientDialog",
         value: function changePatientDialog(sectionFlag, tableIndex) {
-          var _this225 = this;
+          var _this226 = this;
 
           var dialogRef = this.dialog.open(_patient_select_modal_patient_select_modal_component__WEBPACK_IMPORTED_MODULE_8__["PatientSelectModalComponent"], {
             panelClass: 'patient-confirm-report',
@@ -50736,30 +50800,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             if (result != '') {
               switch (sectionFlag) {
                 case 'submitted':
-                  _this225.htmlText.confirmSubmittedDataSource[tableIndex].patient_details.splice(0, 1);
+                  _this226.htmlText.confirmSubmittedDataSource[tableIndex].patient_details.splice(0, 1);
 
-                  _this225.htmlText.confirmSubmittedDataSource[tableIndex].patient_details.push(result);
+                  _this226.htmlText.confirmSubmittedDataSource[tableIndex].patient_details.push(result);
 
-                  _this225.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this225.htmlText.confirmSubmittedDataSource);
+                  _this226.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this226.htmlText.confirmSubmittedDataSource);
                   break;
 
                 case 'conflicting':
-                  _this225.htmlText.conflictingPatientRecordsDataSource[tableIndex].patient_details = [];
+                  _this226.htmlText.conflictingPatientRecordsDataSource[tableIndex].patient_details = [];
 
-                  _this225.htmlText.conflictingPatientRecordsDataSource[tableIndex].patient_details.push(result);
+                  _this226.htmlText.conflictingPatientRecordsDataSource[tableIndex].patient_details.push(result);
 
-                  _this225.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this225.htmlText.conflictingPatientRecordsDataSource);
+                  _this226.conflictingPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this226.htmlText.conflictingPatientRecordsDataSource);
                   break;
 
                 case 'not found':
-                  _this225.htmlText.confirmSubmittedDataSource.push(_this225.htmlText.notFindDataSource[tableIndex]);
+                  _this226.htmlText.confirmSubmittedDataSource.push(_this226.htmlText.notFindDataSource[tableIndex]);
 
-                  _this225.htmlText.confirmSubmittedDataSource[_this225.htmlText.confirmSubmittedDataSource.length - 1].patient_details.push(result);
+                  _this226.htmlText.confirmSubmittedDataSource[_this226.htmlText.confirmSubmittedDataSource.length - 1].patient_details.push(result);
 
-                  _this225.htmlText.notFindDataSource.splice(tableIndex, 1);
+                  _this226.htmlText.notFindDataSource.splice(tableIndex, 1);
 
-                  _this225.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this225.htmlText.confirmSubmittedDataSource);
-                  _this225.notFindPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this225.htmlText.notFindDataSource);
+                  _this226.confirmSubmittedDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this226.htmlText.confirmSubmittedDataSource);
+                  _this226.notFindPatientRecordsDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](_this226.htmlText.notFindDataSource);
                   break;
 
                 default:
@@ -51150,7 +51214,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var TechDashboardComponent = /*#__PURE__*/function () {
       function TechDashboardComponent(cookie, http, httpService, activatedRoute, commonFunction, dialog) {
-        var _this226 = this;
+        var _this227 = this;
 
         _classCallCheck(this, TechDashboardComponent);
 
@@ -51402,10 +51466,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.jwtToken = cookie.get('jwtToken');
         this.activatedRoute.data.forEach(function (data) {
-          _this226.allResolveData = data.techDashboardData.data;
-          _this226.allResolveData["totalRemainToProcessCount"] = _this226.allResolveData.totalReportCount - _this226.allResolveData.processedReportCount;
-          var allDashboardData = _this226.allResolveData.totalReportData;
-          _this226.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
+          _this227.allResolveData = data.techDashboardData.data;
+          _this227.allResolveData["totalRemainToProcessCount"] = _this227.allResolveData.totalReportCount - _this227.allResolveData.processedReportCount;
+          var allDashboardData = _this227.allResolveData.totalReportData;
+          _this227.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
         }); // lib list
 
         var endpoint = 'getPatientlistdata';
@@ -51425,12 +51489,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           tech_id: this.authData.userData._id
         };
         this.httpService.httpViaPost(endpointc, data).subscribe(function (res) {
-          _this226.billerData_count = res.count;
+          _this227.billerData_count = res.count;
         }, function (error) {
           console.log('Oooops!');
         });
         this.httpService.httpViaPost(endpoint, data).subscribe(function (res) {
-          _this226.allBillerData = res.results.res;
+          _this227.allBillerData = res.results.res;
         }, function (error) {
           console.log('Oooops!');
         });
@@ -51439,7 +51503,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TechDashboardComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this227 = this;
+          var _this228 = this;
 
           var data = {
             "source": "patient_data_desc_patient_name",
@@ -51457,8 +51521,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doc_name_search != "") {
-                for (var j in _this227.authval) {
-                  if (response.res[i].doc_name == _this227.authval[j].name) {
+                for (var j in _this228.authval) {
+                  if (response.res[i].doc_name == _this228.authval[j].name) {
                     start = true;
                   }
                 }
@@ -51466,7 +51530,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this227.authval.push({
+                  _this228.authval.push({
                     name: response.res[i].doc_name,
                     val: response.res[i].doc_name_search
                   });
@@ -51479,8 +51543,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].tech_name_search != "") {
-                for (var j in _this227.techval) {
-                  if (response.res[i].tech_namesearch == _this227.techval[j].name) {
+                for (var j in _this228.techval) {
+                  if (response.res[i].tech_namesearch == _this228.techval[j].name) {
                     start = true;
                   }
                 }
@@ -51488,7 +51552,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this227.techval.push({
+                  _this228.techval.push({
                     name: response.res[i].tech_namesearch,
                     val: response.res[i].tech_name_search
                   });
@@ -51501,8 +51565,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].parent_name_search != "") {
-                for (var j in _this227.parentnameval) {
-                  if (response.res[i].parent_namesearch == _this227.parentnameval[j].name) {
+                for (var j in _this228.parentnameval) {
+                  if (response.res[i].parent_namesearch == _this228.parentnameval[j].name) {
                     start = true;
                   }
                 }
@@ -51510,7 +51574,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this227.parentnameval.push({
+                  _this228.parentnameval.push({
                     name: response.res[i].parent_namesearch,
                     val: response.res[i].parent_name_search
                   });
@@ -51523,8 +51587,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_state_search != "") {
-                for (var j in _this227.doctorstate) {
-                  if (response.res[i].doctor_state == _this227.doctorstate[j].name) {
+                for (var j in _this228.doctorstate) {
+                  if (response.res[i].doctor_state == _this228.doctorstate[j].name) {
                     start = true;
                   }
                 }
@@ -51532,7 +51596,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this227.doctorstate.push({
+                  _this228.doctorstate.push({
                     name: response.res[i].doctor_state,
                     val: response.res[i].doctor_state_search
                   });
@@ -51545,8 +51609,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_city_search != "") {
-                for (var j in _this227.doctorcity) {
-                  if (response.res[i].doctor_city == _this227.doctorcity[j].name) {
+                for (var j in _this228.doctorcity) {
+                  if (response.res[i].doctor_city == _this228.doctorcity[j].name) {
                     start = true;
                   }
                 }
@@ -51554,7 +51618,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this227.doctorcity.push({
+                  _this228.doctorcity.push({
                     name: response.res[i].doctor_city,
                     val: response.res[i].doctor_city_search
                   });
@@ -51567,8 +51631,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_city_search != "") {
-                for (var j in _this227.patientcity) {
-                  if (response.res[i].patient_city == _this227.patientcity[j].name) {
+                for (var j in _this228.patientcity) {
+                  if (response.res[i].patient_city == _this228.patientcity[j].name) {
                     start = true;
                   }
                 }
@@ -51576,7 +51640,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this227.patientcity.push({
+                  _this228.patientcity.push({
                     name: response.res[i].patient_city,
                     val: response.res[i].patient_city_search
                   });
@@ -51589,8 +51653,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].patient_state_search != "") {
-                for (var j in _this227.patientstate) {
-                  if (response.res[i].patient_state == _this227.patientstate[j].name) {
+                for (var j in _this228.patientstate) {
+                  if (response.res[i].patient_state == _this228.patientstate[j].name) {
                     start = true;
                   }
                 }
@@ -51598,7 +51662,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this227.patientstate.push({
+                  _this228.patientstate.push({
                     name: response.res[i].patient_state,
                     val: response.res[i].patient_state_search
                   });
@@ -51611,8 +51675,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             for (var i in response.res) {
               if (response.res[i].doctor_ofiice_name_search != "") {
-                for (var j in _this227.docofficeval) {
-                  if (response.res[i].doctor_ofiice_namesearch == _this227.docofficeval[j].name) {
+                for (var j in _this228.docofficeval) {
+                  if (response.res[i].doctor_ofiice_namesearch == _this228.docofficeval[j].name) {
                     start = true;
                   }
                 }
@@ -51620,7 +51684,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 count++;
 
                 if (count == 1 && start == false) {
-                  _this227.docofficeval.push({
+                  _this228.docofficeval.push({
                     name: response.res[i].doctor_ofiice_namesearch,
                     val: response.res[i].doctor_ofiice_name_search
                   });
@@ -51642,7 +51706,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "viewDetailsData",
         value: function viewDetailsData(flag) {
-          var _this228 = this;
+          var _this229 = this;
 
           var condition = {};
           this.htmlText.headerText = flag;
@@ -51749,21 +51813,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.httpService.httpViaPost('dashboard-datalist', condition).subscribe(function (response) {
             var allDashboardData = response.data;
-            _this228.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
-            _this228.allDataSource.paginator = _this228.paginator;
-            _this228.allDataSource.sort = _this228.sortAll;
+            _this229.allDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"](allDashboardData);
+            _this229.allDataSource.paginator = _this229.paginator;
+            _this229.allDataSource.sort = _this229.sortAll;
           });
         }
       }, {
         key: "openDialog",
         value: function openDialog(data) {
-          var _this229 = this;
+          var _this230 = this;
 
           this.dialogRef = this.dialog.open(_common_dialog_box_dialog_box_component__WEBPACK_IMPORTED_MODULE_10__["DialogBoxComponent"], data);
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Ok":
-                _this229.dialogRef.close();
+                _this230.dialogRef.close();
 
                 break;
             }
@@ -51838,7 +51902,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var DoctorViewDialogComponent = /*#__PURE__*/function () {
       function DoctorViewDialogComponent(dialogRef, data, cookie, http, httpService) {
-        var _this230 = this;
+        var _this231 = this;
 
         _classCallCheck(this, DoctorViewDialogComponent);
 
@@ -51863,8 +51927,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var result = response.res;
 
           if (response.resc > 0) {
-            _this230.loader = false;
-            _this230.allDoctorData = response.res;
+            _this231.loader = false;
+            _this231.allDoctorData = response.res;
           }
         });
       }
@@ -52117,7 +52181,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "returnToAdmin",
         value: function returnToAdmin() {
-          var _this231 = this;
+          var _this232 = this;
 
           var modalData = {
             panelClass: 'bulkupload-dialog',
@@ -52136,42 +52200,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.dialogRef.afterClosed().subscribe(function (result) {
             switch (result) {
               case "Yes":
-                var jwtToken = _this231.cookies.get('jwtToken');
+                var jwtToken = _this232.cookies.get('jwtToken');
 
-                var allData = _this231.cookies.getAll();
+                var allData = _this232.cookies.getAll();
 
                 var main_user = JSON.parse(allData.main_user);
 
-                var secret = _this231.cookies.get('secret'); // Delete Cookie
+                var secret = _this232.cookies.get('secret'); // Delete Cookie
 
 
-                _this231.cookies["delete"]('user_details');
+                _this232.cookies["delete"]('user_details');
 
-                _this231.cookies["delete"]('main_user');
+                _this232.cookies["delete"]('main_user');
 
-                _this231.cookies["delete"]('doctor_signature');
+                _this232.cookies["delete"]('doctor_signature');
 
-                _this231.cookies["delete"]('secret');
+                _this232.cookies["delete"]('secret');
 
-                _this231.cookies["delete"]('jwtToken');
+                _this232.cookies["delete"]('jwtToken');
 
-                _this231.cookies.deleteAll('/tech');
+                _this232.cookies.deleteAll('/tech');
 
                 setTimeout(function () {
                   // Reset again Cookie
-                  _this231.cookies.set('jwtToken', jwtToken);
+                  _this232.cookies.set('jwtToken', jwtToken);
 
-                  _this231.cookies.set('user_details', JSON.stringify(main_user));
+                  _this232.cookies.set('user_details', JSON.stringify(main_user));
 
-                  _this231.cookies.set('secret', JSON.stringify(secret)); // Redirect to page
+                  _this232.cookies.set('secret', JSON.stringify(secret)); // Redirect to page
 
 
-                  _this231.router.navigateByUrl("admin/dashboard");
+                  _this232.router.navigateByUrl("admin/dashboard");
                 }, 500);
                 break;
 
               case "No":
-                _this231.dialogRef.close();
+                _this232.dialogRef.close();
 
                 break;
             }
@@ -52319,7 +52383,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var TestComponent = /*#__PURE__*/function () {
       // lib list end
       function TestComponent(router, cookieService, http, activatedRoute, dialog, deviceService, matSnackBar) {
-        var _this232 = this;
+        var _this233 = this;
 
         _classCallCheck(this, TestComponent);
 
@@ -52536,7 +52600,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /* Get resolve data */
 
         this.activatedRoute.data.subscribe(function (resolveData) {
-          _this232.allResolveData = resolveData.dataCount.data.dashboardCount[0]; //this.viewReportProcessData(this.htmlText.headerText);
+          _this233.allResolveData = resolveData.dataCount.data.dashboardCount[0]; //this.viewReportProcessData(this.htmlText.headerText);
         }); // lib list
 
         var endpoint = 'getPatientlistdata';
@@ -52552,65 +52616,65 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
         };
         this.http.httpViaPostbyApi1(endpointc, data).subscribe(function (res) {
-          _this232.billerData_count = res.count;
+          _this233.billerData_count = res.count;
         }, function (error) {
           console.log('Oooops!');
         });
         this.http.httpViaPostbyApi1(endpoint, data).subscribe(function (res) {
           // console.log(res);
-          _this232.allBillerData = res.results.res;
+          _this233.allBillerData = res.results.res;
 
           for (var i in res.results.res) {
-            _this232.authval.push({
+            _this233.authval.push({
               name: res.results.res[i].doc_name,
               val: res.results.res[i].doc_name_search
             });
           }
 
           for (var i in res.results.res) {
-            _this232.techval.push({
+            _this233.techval.push({
               name: res.results.res[i].tech_name,
               val: res.results.res[i].tech_name_search
             });
           }
 
           for (var i in res.results.res) {
-            _this232.parentnameval.push({
+            _this233.parentnameval.push({
               name: res.results.res[i].parent_name,
               val: res.results.res[i].parent_name_search
             });
           }
 
           for (var i in res.results.res) {
-            _this232.doctorstate.push({
+            _this233.doctorstate.push({
               name: res.results.res[i].doctor_state,
               val: res.results.res[i].doctor_state_search
             });
           }
 
           for (var i in res.results.res) {
-            _this232.doctorcity.push({
+            _this233.doctorcity.push({
               name: res.results.res[i].doctor_city,
               val: res.results.res[i].doctor_city_search
             });
           }
 
           for (var i in res.results.res) {
-            _this232.patientcity.push({
+            _this233.patientcity.push({
               name: res.results.res[i].patient_city,
               val: res.results.res[i].patient_city_search
             });
           }
 
           for (var i in res.results.res) {
-            _this232.patientstate.push({
+            _this233.patientstate.push({
               name: res.results.res[i].patient_state,
               val: res.results.res[i].patient_state_search
             });
           }
 
           for (var i in res.results.res) {
-            _this232.docofficeval.push({
+            _this233.docofficeval.push({
               name: res.results.res[i].doctor_ofiice_name,
               val: res.results.res[i].doctor_ofiice_name_search
             });
@@ -55937,7 +56001,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CalendarService, [{
         key: "resolve",
         value: function resolve(route, state) {
-          var _this233 = this;
+          var _this234 = this;
 
           /* will come into play while editing otherwise no effect */
           var requestData = route.data.requestcondition; //requestData.condition = Object.assign(requestData.condition, route.params);
@@ -55957,17 +56021,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   };
                   /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
 
-                  if (route.data.endpoint == 'view-event-eventdayarr' && _this233.cookieService.check('timezone')) {
-                    data.timezone = _this233.cookieService.get('timezone');
+                  if (route.data.endpoint == 'view-event-eventdayarr' && _this234.cookieService.check('timezone')) {
+                    data.timezone = _this234.cookieService.get('timezone');
                   }
                   /* If endpoint is 'view-event-eventdayarr' and user is not an admin */
 
 
-                  if (route.data.endpoint == 'view-event-eventdayarr' && _this233.cookieService.check('user_details')) {
-                    data.condition = JSON.parse(_this233.cookieService.get('user_details')).email;
+                  if (route.data.endpoint == 'view-event-eventdayarr' && _this234.cookieService.check('user_details')) {
+                    data.condition = JSON.parse(_this234.cookieService.get('user_details')).email;
                   }
 
-                  _this233.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
+                  _this234.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
                     if (api_object) {
                       returnData[route.data.requestcondition.source[i]] = api_object;
                     } else {
@@ -55987,27 +56051,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               })();
             } else {
               /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
-              if (route.data.endpoint == 'view-event-eventdayarr' && _this233.cookieService.check('timezone')) {
-                route.data.requestcondition.timezone = _this233.cookieService.get('timezone');
+              if (route.data.endpoint == 'view-event-eventdayarr' && _this234.cookieService.check('timezone')) {
+                route.data.requestcondition.timezone = _this234.cookieService.get('timezone');
               }
               /* If user is not an admin */
 
 
-              if (_this233.cookieService.check('user_details') && JSON.parse(_this233.cookieService.get('user_details')).user_type == 'tech') {
+              if (_this234.cookieService.check('user_details') && JSON.parse(_this234.cookieService.get('user_details')).user_type == 'tech') {
                 route.data.requestcondition.condition = Object.assign(route.data.requestcondition.condition, {
                   userid: {
-                    $in: [JSON.parse(_this233.cookieService.get('user_details'))._id]
+                    $in: [JSON.parse(_this234.cookieService.get('user_details'))._id]
                   }
                 }); // route.data.requestcondition.condition.$or.push({userid: JSON.parse(this.cookieService.get('user_details'))._id});
               } else {
                 route.data.requestcondition.condition = Object.assign(route.data.requestcondition.condition, {
                   userid: {
-                    $in: JSON.parse(_this233.cookieService.get('user_details')).tech_id
+                    $in: JSON.parse(_this234.cookieService.get('user_details')).tech_id
                   }
                 });
               }
 
-              _this233.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
+              _this234.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
                 if (api_object) {
                   return resolve(api_object);
                 } else {
@@ -56403,7 +56467,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ResolveService, [{
         key: "resolve",
         value: function resolve(route, state) {
-          var _this234 = this;
+          var _this235 = this;
 
           /* will come into play while editing otherwise no effect */
           var requestData = route.data.requestcondition;
@@ -56577,7 +56641,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   condition: {}
                 };
 
-                _this234._apiService.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
+                _this235._apiService.ResolveViaPost(data, route.data.endpoint).subscribe(function (api_object) {
                   if (api_object) {
                     returnData[route.data.requestcondition.source[i]] = api_object;
                     return resolve(returnData);
@@ -56593,8 +56657,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
             } else {
               /* If endpoint is 'view-event-eventdayarr' then include 'timezone' with data */
-              if (route.data.endpoint == 'view-event-eventdayarr' && _this234.cookies.check('timezone')) {
-                route.data.requestcondition.timezone = _this234.cookies.get('timezone');
+              if (route.data.endpoint == 'view-event-eventdayarr' && _this235.cookies.check('timezone')) {
+                route.data.requestcondition.timezone = _this235.cookies.get('timezone');
               }
               /* If user is not an admin */
               // if (this.cookies.check('user_details') &&
@@ -56605,7 +56669,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               // }
 
 
-              _this234._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
+              _this235._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
                 if (api_object) {
                   return resolve(api_object);
                 } else {
@@ -56946,7 +57010,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TrainingService, [{
         key: "resolve",
         value: function resolve(route, state) {
-          var _this235 = this;
+          var _this236 = this;
 
           /* will come into play while editing otherwise no effect */
           var requestData = route.data.requestcondition;
@@ -56984,7 +57048,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           return new Promise(function (resolve) {
-            _this235._apiService.CustomRequest(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
+            _this236._apiService.CustomRequest(route.data.requestcondition, route.data.endpoint).subscribe(function (api_object) {
               if (api_object) {
                 return resolve(api_object);
               } else {
