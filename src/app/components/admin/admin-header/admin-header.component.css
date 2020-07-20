@@ -152,6 +152,8 @@ font-size: 16px; color: #1f1f1f;}
   .togle_menu { display: block; margin-top: 10px; background: #f8c655; color: #fff; position: absolute;
   right: 20px; min-width: auto; padding: 0 6px; line-height: inherit; border-radius: 3px;}
   .techdashboard_header .quotation { display: none; width: 100%; background: #ffd06f;}
+  .success{ display: block!important;}
+.danger{ display: none;}
   .techdashboard_header .quotation .mat-list-base { display: block; }
   .techdashboard_header .quotation .mat-nav-list .mat-list-item { margin: 0; -webkit-box-align: center;   -ms-flex-align: center;
   align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
@@ -279,8 +281,10 @@ font-size: 16px; color: #1f1f1f;}
   }
 }
 
-.danger {
+/* .danger {
   display: block!important;
   margin-top: 20px;
   transition: 5px ease-out;
-}
+} */
+
+ 

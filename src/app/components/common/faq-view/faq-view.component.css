@@ -1,8 +1,6 @@
 .faq_wrapper{ width: 1440px; margin: 50px auto;}
 
 .faq_wrapper .header{ font-size: 24px; font-family: 'AvenirMedium'; color: #767676; background: #f2f4f5; padding: 8px;}
-
-
 .faq_wrapper .mat-expansion-panel-header.mat-expanded:focus{ background: #00baff;}
  /* .mat-expansion-panel-header-title{color: #f2f4f5;} */
 .faq_wrapper .mat-expansion-panel-header.mat-expanded:focus .mat-expansion-panel-header-title {
@@ -32,8 +30,23 @@
   }
   .faq_wrapper .mat-expansion-panel:not(.mat-expansion-panel-spacing) { margin-bottom: 10px;}
 
-  @media screen and (max-width: 1560px){
-    .faq_wrapper{ width: 90%;}
-  }
-/* hello youtube today i will disscuss about the of a popular javascript framework. it is angular. angular is javascript famewok
-crete and matained by google the tech giant. It's uses typescript language.   */
+@media screen and (max-width: 1560px){
+  .faq_wrapper{ width: 90%;}
+}
+@media screen and (max-width: 1199px){
+  .body_wrapper .video_wr { width: 50%;}
+  .body_wrapper .video_wr iframe{ width: 100%; height: 60vh;}
+  .faq_wrapper { padding: 0; }
+}
+  @media screen and (max-width: 700px){
+  .body_wrapper{ flex-direction: column-reverse; padding: 10px;}
+  .body_wrapper .video_wr { width: 100%; margin: 0; }
+  .body_wrapper .video_wr iframe{ width: 100%; min-height: 290px; height: auto;}
+}
+@media screen and (max-width: 480px){
+.body_wrapper .video_wr iframe { min-height: inherit; }
+.body_wrapper .content_wr p ol { padding-left: 16px;}
+.body_wrapper .content_wr p ol li{ font-size: 14px; line-height: initial; margin-bottom: 8px; }
+.faq_wrapper .header { font-size: 20px;
+  padding: 14px 8px;}
+}
