@@ -45,13 +45,13 @@ export class AdminHeaderComponent implements OnInit {
   /**logout function end here**/
 
   // don't remove it's for menu toggleing
-  menuFunction(){
+  toggleMenu(){
     this.toggleStatus = !this.toggleStatus;
 
   }
 
    // sticky section
-   isSticky: boolean = false;
+  //  isSticky: boolean = false;
 
   //  @HostListener('window:scroll', ['$event'])
   //  checkScroll() {

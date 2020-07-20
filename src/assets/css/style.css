@@ -117,7 +117,7 @@
 .DataTable table td.mat-cell{  font-family: "AvenirRoman"; padding-right: 8px; }
 .tablewrapper table td span .cursor,
 .DataTable table td span .cursor{cursor: pointer; display: inline-block; background: var(--button-color2);
-margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
+margin: 2px; color: #fff; padding: 2px 6px; border-radius: 2px;}
 .DataTable table td .notebtncls{ min-width: inherit;
   padding: 3px 4px; line-height: inherit; background: #1d76b5;
   font-family: 'AvenirMedium'; border-radius: 2px; margin: 2px 2px 3px; display: inline-block; box-shadow: none; vertical-align: bottom;
