@@ -2,6 +2,8 @@
 
 <mat-card class="admin_wrapper">
 
+  <mat-progress-bar mode="indeterminate" *ngIf="htmlText.progressBar"></mat-progress-bar>
+
   <ng-container *ngIf="htmlText.confirmSubmittedDataSource.length > 0">
     <mat-card-content class="table_wrapper">
       <mat-toolbar class="top_header">
@@ -47,7 +49,15 @@
         <ng-container matColumnDef="choose_other_patient">
           <th mat-header-cell *matHeaderCellDef> Choose Other Patient </th>
           <td mat-cell *matCellDef="let element; let i = index;">
-            <button mat-button color="primary" (click)="changePatientDialog('submitted', i);">Select Patient</button>
+            <p>
+              <button mat-button color="primary" (click)="changePatientDialog('submitted', i);">Select Patient</button>
+            </p>
+            <p>
+              <button mat-button color="primary" (click)="movePatientData('submitted', i);">Move to "System Can't Map"</button>
+            </p>
+            <p>
+              <button mat-button color="primary" (click)="deleteRecord('submitted', i);">Delete</button>
+            </p>
           </td>
         </ng-container>
 
