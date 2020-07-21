@@ -971,6 +971,15 @@ color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
   .training_management .form2_wrapper .mat-elevation-z8 .mat-paginator-container{ justify-content: center;}
 
   /* add edit */
+  .addedit_management .form2_wrapper .admingeneralcls .header{
+    font-family: "AvenirBlack"; font-size: 30px;
+    background: var(--button-color2);
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    text-transform: uppercase;
+  }
   .addedit_management .form2_wrapper .admingeneralcls .formclass .mat-form-field-appearance-legacy .mat-form-field-infix {
     padding: 8px;
     background: #fff; }
