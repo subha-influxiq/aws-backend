@@ -278,7 +278,7 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   listenLiblistingChange(data: any = null) {
-    console.log(data);
+    if(data.action == "custombuttonclick") {
     let modalData1: any = {
       panelClass: 'bulkupload-dialog',
       data: {
@@ -306,7 +306,7 @@ export class AdminDashboardComponent implements OnInit {
                 button2: { text: "OK" },
               }
             }
-            const dialogRef = this.dialog.open(DialogBoxComponent, modalData);
+            var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData);
           })
           break;
         case "No":
@@ -314,7 +314,8 @@ export class AdminDashboardComponent implements OnInit {
           break;
       }
     });
-  }
+}
+}
 
   getReportData() {
     this.billerData_count = 0;

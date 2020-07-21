@@ -9,7 +9,7 @@
             </mat-option>
         </mat-select>
     </mat-form-field>
-    <span *ngIf="selectPatientError" style="color: red;">Please a patient.</span>
+    <span *ngIf="selectPatient.error" style="color: red;">Please a patient.</span>
 
     <h3 *ngIf="selectPatient.data == ''">OR</h3>
 
@@ -21,7 +21,7 @@
             </mat-option>
         </mat-select>
     </mat-form-field>
-    <span *ngIf="selectPatientError" style="color: red;">Please a doctor.</span>
+    <span *ngIf="selectPatient.error" style="color: red;">Please a doctor.</span>
 
 
 
