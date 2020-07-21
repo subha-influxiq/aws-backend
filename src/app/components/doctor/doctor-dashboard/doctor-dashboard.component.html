@@ -539,7 +539,7 @@
     <div class="tablewrapper admin_dashboard">
 
       <!-- table -->
-      <lib-listing class="DataTable" *ngIf="allDocData.length>0" [datasource]="allDocData" [skip]="allUserData_skip"
+      <lib-listing class="DataTable" *ngIf="allDocData.length>0" (onLiblistingChange)="listenLiblistingChange($event)" [datasource]="allDocData" [skip]="allUserData_skip"
         [modify_header_array]="allUserData_modify_header" [detail_skip_array]="previewModal_detail_skip"
         [apiurl]="apiUrl" [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="jwtToken" [statusarr]="status"
         [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"

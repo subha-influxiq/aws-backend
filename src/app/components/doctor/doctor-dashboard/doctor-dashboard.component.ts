@@ -117,15 +117,11 @@ export class DoctorDashboardComponent implements OnInit {
         param: ['download_file_name']
       },
       {
-        label: "Sign",
-        type: 'action',
-        datatype: 'api',
-        endpoint: 'status-doctor-signed',
-        otherparam: ["patient_name"],
+        label: "Sign & Send",
+        type: 'listner',
+        id: 'i1',
         cond: 'status',
-        condval: 11,
-        param: 'id',
-        headermessage: 'Status Update',
+        condval: 11
       },
       {
         label: "View Jobticket",
@@ -177,8 +173,7 @@ export class DoctorDashboardComponent implements OnInit {
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
   public status: any = [
-    { val: "Doctor Sign and Send To Biller", 'name': 'Doctor Sign and Send To Biller' },
-    { val: "Downloaded", "name": "Report Downloaded" }
+    { val: "Sign and Send To Biller", 'name': 'Sign and Send To Biller' }
   ];
   public cptcodes: any = [
     { val: "95923", 'name': '95923' },
@@ -455,6 +450,46 @@ export class DoctorDashboardComponent implements OnInit {
       console.log('Oooops!');
     });
   }
+
+  listenLiblistingChange(data: any = null) {
+    if(data.action == "custombuttonclick") {
+    let modalData1: any = {
+      panelClass: 'bulkupload-dialog',
+      data: {
+        header: "Alert",
+        message: "Do you want to sign and send this record to biller?",
+        button1: { text: "Yes" },
+        button2: { text: "No" },
+      }
+    }
+    var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData1);
+
+    dialogRef1.afterClosed().subscribe(result => {
+      switch(result) {
+        case "Yes":
+          let requestData: any = {
+            id: data.custombuttonclick.data._id
+          }
+          this.http.httpViaPostbyApi1("status-major-doctor-signed", requestData).subscribe((response: any) => {
+            let modalData: any = {
+              panelClass: 'bulkupload-dialog',
+              data: {
+                header: "Alert",
+                message: "Successfully Signed and Sent to Biller.",
+                button1: { text: "" },
+                button2: { text: "OK" },
+              }
+            }
+            var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData);
+          })
+          break;
+        case "No":
+          dialogRef1.close();
+          break;
+      }
+    });
+}
+}
 
   openDialog() {
     const dialogRef = this.dialog.open(UploadDialogBoxComponent, {
