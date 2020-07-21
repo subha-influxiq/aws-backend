@@ -971,15 +971,15 @@ color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
   .training_management .form2_wrapper .mat-elevation-z8 .mat-paginator-container{ justify-content: center;}
 
   /* add edit */
-  .addedit_management .form2_wrapper .admingeneralcls .header{
-    font-family: "AvenirBlack"; font-size: 30px;
-    background: var(--button-color2);
-    padding: 10px;
-    text-align: center;
-    margin: 0;
-    color: #fff;
-    text-transform: uppercase;
-  }
-  .addedit_management .form2_wrapper .admingeneralcls .formclass .mat-form-field-appearance-legacy .mat-form-field-infix {
-    padding: 8px;
-    background: #fff; }
+.addedit_management .form2_wrapper .admingeneralcls .header{
+ font-family: "AvenirBlack"; font-size: 26px; background: var(--button-color2); padding: 10px; text-align: center;
+  margin: 0; color: #fff; text-transform: uppercase; }
+.addedit_management .form2_wrapper .admingeneralcls .formclass .mat-form-field-flex {
+padding:0 8px 8px; background: #fff; border-left: 2px solid var(--button-color2)}
+.addedit_management .form2_wrapper .admingeneralcls .formclass textarea{ min-height: 110px; resize: none; }
+.addedit_management .form2_wrapper .admingeneralcls .formclass{ justify-content: center; }
+
+.addedit_management .form2_wrapper .admingeneralcls .formclass .trainingsubbtn { font-family: "AvenirMedium"; background: var(--button-color2); margin-right: 10px; }
+.addedit_management .form2_wrapper .admingeneralcls .formclass .trainingsubbtn:last-child { background: var(--button-color5); margin: 0;}
+.addedit_management .form2_wrapper .admingeneralcls .formclass .checkboxnew mat-label { font-family: "AvenirMedium"; font-size: 18px; color:#671717; padding: 0; display: inline-block; margin-bottom: 6px;} 
+
