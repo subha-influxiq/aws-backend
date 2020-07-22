@@ -212,7 +212,7 @@ margin: 2px; color: #fff; padding: 2px 6px; border-radius: 2px;}
 color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 
 /* .container .searchbar i{margin-left: auto;} */
-.searchbar { height: auto!important; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; box-shadow: 0px 2px 2px #c5c5c5; padding-bottom: 16px!important; position: relative; background: #fbfbfb; }
+.searchbar { height: auto!important; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; box-shadow: 0px 2px 2px #c5c5c5; padding: 16px 4px!important; position: relative; background: #fbfbfb; }
 .searchbar .mat-form-field{ width: 32%; margin: 0 0.5%!important;
   /* flex-grow: 1; */
 }
@@ -900,7 +900,7 @@ color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
 .bulkupload-dialog .admin_wrapper .add_form .submit_form .resetBtn { background: #0a9648; }
 
 /* training block */
-.training_management .form2_wrapper .searchblockwrapper .mat-toolbar{ background: var(--button-color2); }
+.training_management .form2_wrapper .searchblockwrapper .mat-toolbar{ background: var(--button-color2); margin-bottom:16px; }
 .training_management .form2_wrapper .searchblockwrapper .buttonsetToolbar { background: #daf0f7;
   margin: 12px 0;
   text-align: right;
@@ -914,33 +914,47 @@ color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
     margin: 0;
     float: none;
 }
-.training_management .form2_wrapper .searchblockwrapper .mat-toolbar .headerSpan{ color: #fff;}
-.training_management .form2_wrapper .searchbar{ display: flex; }
+.training_management .form2_wrapper .searchblockwrapper .mat-toolbar .headerSpan{ color: #fff; font-size: 30px;
+  font-family: "AvenirMedium";}
+.training_management .form2_wrapper .searchbar{ display: flex; align-items: center; }
 .training_management .form2_wrapper .searchbar .submitbtn{ margin-right: 10px; font-family: 'AvenirMedium'; background: var(--button-color3);}
 
-.training_management .form2_wrapper .searchbar .submitbtn:first-child{ background: var(--button-color1);}
-.training_management .form2_wrapper .searchbar .submitbtn:nth-child(2){ background: red;}
-.training_management .form2_wrapper .searchbar .submitbtn:last-child{ background: var(--button-color2);}
+.training_management .form2_wrapper .searchbar .submitbtn:first-child{ background: var(--button-color1);} 
+.training_management .form2_wrapper .searchbar .submitbtn:last-child{ background: var(--button-color5); margin: 0;}
 
 .training_management .form2_wrapper .searchblockwrapper span .countSection { background: #ffffff!important;
-  box-shadow: 0px 2px 4px 0px #908c8c; margin: 5px; border: none!important; padding: 10px!important; }
+  box-shadow: 0px 2px 4px 0px #b3b3b3; margin: 5px; border: none!important; padding: 10px!important; }
 
 .training_management .form2_wrapper .searchblockwrapper span .countSection h2{
-    margin-bottom: 0; flex: initial!important; background: #FF5722;
-    border-radius: 50%; color: #fff; font-size: 20px; font-family: "AvenirMedium";
-    padding: 6px; display: flex; width: 30px; height: 30px; align-items: center;
-    justify-content: center; margin-right: 6px;
+  flex: initial!important;
+  border-radius: 0%;
+  border-bottom-left-radius: 20px;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "AvenirMedium";
+  padding: 6px;
+  display: flex;
+  min-width: 35px;
+  min-height: 35px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 6px;
+  box-shadow: 0px 2px 3px 0px #ffffff;
+  background: #08de7b;
+  border: 2px solid #03c11f;
 }
   
 .training_management .form2_wrapper .searchblockwrapper span { font-family: "AvenirMedium"; }
-.training_management .form2_wrapper .searchbar .mat-form-field{  font-size: 14px;
-  width: 32%; margin: 0 0.5%!important; }
+.training_management .form2_wrapper .searchbar .mat-form-field{  font-size: 14px; width: 32%; margin: 0 0.5%!important; }
+.list-lesson .form2_wrapper .searchbar .mat-form-field{  font-size: 14px; width: 24%; margin: 0 0.5%!important; }
 .training_management .form2_wrapper .mat-elevation-z8 .mat-table  { font-family: "AvenirMedium";}
 .training_management .form2_wrapper .mat-elevation-z8 .mat-table .buttons_ro{ display:flex; }
 .training_management .form2_wrapper .mat-elevation-z8 .mat-table .buttons_ro .pointer{ 
   display: flex; align-items: center; justify-content: center;
-  margin: 2px; color: #fff; padding: 4px; border-radius: 2px;}
+  margin: 2px; color: #fff; padding: 2px 3px; border-radius: 2px;}
 
+  .training_management .form2_wrapper .multipledeleteandupdatebuttan { display: flex;
+    margin-bottom: 16px;}
   .training_management .form2_wrapper .mat-elevation-z8 .mat-table .buttons_ro .pointer:nth-child(1){
     background: var(--button-color2);
   }
@@ -955,3 +969,17 @@ color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
   }
 
   .training_management .form2_wrapper .mat-elevation-z8 .mat-paginator-container{ justify-content: center;}
+
+  /* add edit */
+.addedit_management .form2_wrapper .admingeneralcls .header{
+ font-family: "AvenirBlack"; font-size: 26px; background: var(--button-color2); padding: 10px; text-align: center;
+  margin: 0; color: #fff; text-transform: uppercase; }
+.addedit_management .form2_wrapper .admingeneralcls .formclass .mat-form-field-flex {
+padding:0 8px 8px; background: #fff; border-left: 2px solid var(--button-color2)}
+.addedit_management .form2_wrapper .admingeneralcls .formclass textarea{ min-height: 110px; resize: none; }
+.addedit_management .form2_wrapper .admingeneralcls .formclass{ justify-content: center; }
+
+.addedit_management .form2_wrapper .admingeneralcls .formclass .trainingsubbtn { font-family: "AvenirMedium"; background: var(--button-color2); margin-right: 10px; }
+.addedit_management .form2_wrapper .admingeneralcls .formclass .trainingsubbtn:last-child { background: var(--button-color5); margin: 0;}
+.addedit_management .form2_wrapper .admingeneralcls .formclass .checkboxnew mat-label { font-family: "AvenirMedium"; font-size: 18px; color:#671717; padding: 0; display: inline-block; margin-bottom: 6px;} 
+

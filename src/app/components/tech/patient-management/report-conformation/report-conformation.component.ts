@@ -236,8 +236,8 @@ export class ReportConformationComponent implements OnInit {
   }
 
   updateRecord() {
-    console.log("Data: ", this.htmlText.confirmSubmittedDataSource);
-    return;
+    // console.log("Data: ", this.htmlText.confirmSubmittedDataSource);
+    // return;
 
     if(this.checkboxData.checkbox1 == true && this.checkboxData.checkbox2 == true) {
       var data: any = {
