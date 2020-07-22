@@ -16,7 +16,7 @@ export const environment = {
   production: true,
   floatPattern: "(^[0-9]{1,9})+(\.[0-9]{1,4})?$",
   googleSyncApi: "https://gapi.betoparedes.com/connect-calendar-pece-live.php",
-  calendarApi: "https://o5rne6oej2.execute-api.us-east-1.amazonaws.com/production/api/",
+  calendarApi: "https://28sl0h3e38.execute-api.us-east-1.amazonaws.com/dev/api/",
 
   doctorSignUpBaseUrl: "https://pece-doctor-signup.influxiq.com",
   
