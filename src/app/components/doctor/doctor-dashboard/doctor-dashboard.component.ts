@@ -124,6 +124,11 @@ export class DoctorDashboardComponent implements OnInit {
         condval: 11
       },
       {
+        label: "Generate Report",
+        type: 'listner',
+        id: 'i1'
+      },
+      {
         label: "View Jobticket",
         route: "doctor/report-jobtickets/",
         type: 'internallink',
