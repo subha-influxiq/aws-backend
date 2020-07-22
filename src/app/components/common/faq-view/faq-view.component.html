@@ -1,7 +1,8 @@
 <!-- Header Start -->
 
 <!-- Admin -->
-<app-admin-header *ngIf="loginUserData.user_details.user_type == 'admin'"></app-admin-header>
+<app-admin-header *ngIf="loginUserData.user_details.user_type == 'admin'"
+></app-admin-header>
 
 <!-- Biller -->
 <app-biller-header *ngIf="loginUserData.user_details.user_type == 'biller'"></app-biller-header>
@@ -36,6 +37,7 @@
 
 <mat-card class="faq_wrapper">
     <h2 class="header"> Frequently Asked Questions (FAQs) </h2>
+    <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; FAQ</span>
     <mat-accordion>
         
         <mat-expansion-panel *ngFor="let data of allResolveData; let i = index;">
