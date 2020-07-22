@@ -280,6 +280,8 @@ align-items: flex-start; }
   .notes-modal .maindialognew .close-btn-modal { right: 10%; }
   .encounter_wrapper .second_table .book-appointment .mat-form-field { width: 48%; }
   .DataTable table td.mat-cell { padding-left: 110px!important; }
+ 
+
 }
  
  
@@ -327,6 +329,10 @@ align-items: flex-start; }
   .time_picker .timer,
   .time_picker .timer .w-mat-timepicker{ width: 100%!important;}
   .calenderView .calendar_wrapper { width: 100%!important; }
+  .training_management .form2_wrapper .searchblockwrapper .buttonsetToolbar {  display: flex; flex-direction: column; }
+  .training_management .form2_wrapper .searchblockwrapper .singleButton {  width: 100%; margin: 0; margin-bottom: 14px; }
+  .training_management .form2_wrapper .searchblockwrapper .singleButton:last-child {margin-bottom: 0px; }
+  .training_management .form2_wrapper .searchblockwrapper .mat-toolbar .headerSpan { font-size: 24px; }
 }
 @media screen and (max-width: 500px){  
   .encounter_wrapper .second_table .book-appointment .mat-form-field { width: 100%; }
