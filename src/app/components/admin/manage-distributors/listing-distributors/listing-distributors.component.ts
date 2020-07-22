@@ -4,6 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { HttpServiceService } from '../../../../services/http-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonFunction } from '../../../../class/common/common-function';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ApprovalSettingsUpdateComponent } from '../../../common/approval-settings-update/approval-settings-update.component';
+import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
 
 
 @Component({
@@ -67,6 +70,18 @@ export class ListingDistributorsComponent implements OnInit {
   "skip":0,
   "pagecount":1
 };
+public libdata: any = {
+  basecondition: "",
+  updateendpoint: 'statusupdate',
+  // tableheaders: ['firstname', 'lastname', 'email', 'phone', 'practice_name', 'npi', 'status', 'created_date',], //not required
+  custombuttons: [
+    {
+      label: "Log Me",
+      type: 'listner',
+      id: 'i1'
+    },
+  ]
+}
   public search_settings: any =
     {
       selectsearch: [{ label: 'Search By Status', field: 'status', values: this.status }],
@@ -79,7 +94,7 @@ export class ListingDistributorsComponent implements OnInit {
   public TechDashboardAllData: any = [];
   constructor(public cookie: CookieService, public http: HttpClient,
     public httpService: HttpServiceService, public activatedRoute: ActivatedRoute,
-    public commonFunction: CommonFunction) {
+    public commonFunction: CommonFunction ,public dialog: MatDialog,public router: Router) {
 
     /* Set Meta Data */
     this.commonFunction.setTitleMetaTags();
@@ -132,5 +147,48 @@ export class ListingDistributorsComponent implements OnInit {
         });
   }
 
+  listenLiblistingChange(data: any = null) {
+    if(data != null) {
+      switch(data.custombuttonclick.btninfo.label) {
+        case "Log Me":
+          let modalData1: any = {
+            panelClass: 'bulkupload-dialog',
+            data: {
+              header: "Alert",
+              message: "Do you want to login as Distributor : " + data.custombuttonclick.data.distributorname +"?",
+              button1: { text: "Yes" },
+              button2: { text: "No" },
+            }
+          }
+          var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData1);
+
+          dialogRef1.afterClosed().subscribe(result => {
+            switch(result) {
+              case "Yes":
+                // Delete Cookie
+                this.cookie.delete('user_details');
+                this.cookie.delete('main_user');
+                this.cookie.delete('jwtToken');
+                this.cookie.deleteAll('/');
+
+                setTimeout(() => {
+                  // Reset again Cookie
+                  this.cookie.set('jwtToken', this.user_cookie);
+                  this.cookie.set('user_details', JSON.stringify(data.custombuttonclick.data));
+                  this.cookie.set('main_user', JSON.stringify(this.userData));
+
+                  // Redirect to page
+                  this.router.navigateByUrl("distributors/dashboard");
+                }, 500);
+                break;
+              case "No":
+                dialogRef1.close();
+                break;
+            }
+          });
+          break;
+      }
+    }
+  }
 
 }

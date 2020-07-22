@@ -69,7 +69,7 @@ export class AdminDashboardComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
-    basecondition: { status: { $gt: 7, $lt: 11 } },
+    basecondition: {},
     updateendpoint: 'status-update',
     // updateendpointmany:'status-update',
     custombuttons: [
@@ -78,6 +78,13 @@ export class AdminDashboardComponent implements OnInit {
         route: "admin/view-patient-record/",
         type: 'internallink',
         param: ['_id'],
+      },
+      {
+        label: "Download Report",
+        link: environment.s3bucket + "reports",
+        type: 'externallink',
+        paramtype: 'angular',
+        param: ['download_file_name']
       },
       {
         label: "Tech Details",
@@ -134,6 +141,11 @@ export class AdminDashboardComponent implements OnInit {
         cond: 'status',
         condval: 13
       },
+      {
+        label: "Generate Pdf",
+        type: 'listner',
+        id: 'i1'
+      },
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
@@ -158,9 +170,9 @@ export class AdminDashboardComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any = environment.apiBaseUrl1;
+  public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
-  public datacollection: any = 'getPatientlistdata-pending-approval';
+  public datacollection: any = 'dashboard-report-data-list';
 
   public sortdata: any = {
     "type": 'desc',
@@ -179,11 +191,6 @@ export class AdminDashboardComponent implements OnInit {
     { val: "Biller Admin Approved", 'name': 'Biller Admin Approved' },
     { val: "Biller Admin Not Approved", 'name': 'Biller Admin Not Approved' },
     { val: "Biller Admin Hold", 'name': "Biller Admin Hold" }
-  ];
-  public statussearch: any = [
-    { val: 8, 'name': 'System Approved' }, 
-    { val: 9, 'name': 'System Not Approved' }, 
-    { val: 10, 'name': "System Hold" }
   ];
   public cptcodes: any = [
     { val: "95923", 'name': '95923' },
@@ -221,8 +228,7 @@ export class AdminDashboardComponent implements OnInit {
   public SearchingSourceName: any = "data_biller_list";
   public search_settings: any = {
     selectsearch: [
-      { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type }, 
-      { label: 'Search By Status', field: 'status_search', values: this.statussearch }, 
+      { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type },
       { label: 'Search By CPT Codes', field: 'cpt_codes_search', values: this.cptcodes }, 
       { label: 'Search By Parent Type', field: 'parent_type', values: this.parent_type }, 
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval }, 
@@ -231,8 +237,8 @@ export class AdminDashboardComponent implements OnInit {
       { label: "Search By Parent Name", field: 'parent_name_search', values: this.parentnameval }, 
       { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity }, 
       { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate }, 
-      { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity }, 
-      { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }
+      { label: "Search By Patient City", field: 'patient_city_search', values: this.patientcity }, 
+      { label: "Search By Patient State", field: 'patient_state_search', values: this.patientstate }
     ],
     datesearch: [
       { startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }
@@ -259,39 +265,103 @@ export class AdminDashboardComponent implements OnInit {
     /* Get resolve data */
     this.activatedRoute.data.subscribe(resolveData => {
       this.allResolveData = resolveData.dataCount.data;
-      //this.viewReportProcessData(this.htmlText.headerText);
-    });
 
+      this.getReportData();
+    });
+  }
+
+  ngOnInit() {
+    this.getSearchData();
+  }
+
+  ngAfterViewInit() {
+  }
+
+  listenLiblistingChange(data: any = null) {
+    if(data.action == "custombuttonclick") {
+    let modalData1: any = {
+      panelClass: 'bulkupload-dialog',
+      data: {
+        header: "Alert",
+        message: "Do you want to Generate the Pdf",
+        button1: { text: "Yes" },
+        button2: { text: "No" },
+      }
+    }
+    var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData1);
+
+    dialogRef1.afterClosed().subscribe(result => {
+      switch(result) {
+        case "Yes":
+          let requestData: any = {
+             _id: data.custombuttonclick.data._id
+          }
+          this.http.httpViaPost("get-html-data", requestData).subscribe((response: any) => {
+            let modalData: any = {
+              panelClass: 'bulkupload-dialog',
+              data: {
+                header: "Alert",
+                message: "Pdf Generated Successfully",
+                button1: { text: "" },
+                button2: { text: "OK" },
+              }
+            }
+            var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData);
+          })
+          break;
+        case "No":
+          dialogRef1.close();
+          break;
+      }
+    });
+}
+}
+
+  getReportData() {
+    this.billerData_count = 0;
+    this.allBillerData = [];
 
     // lib list
-    let endpoint = 'getPatientlistdata-pending-approval';
-    let endpointc = 'getPatientlistdata-pending-approval-count';
     let data: any = {
       "condition": {
         "limit": 10,
         "skip": 0
       },
-      sort: {
-        "type": 'desc',
-        "field": 'patient_name'
-      }
-    }
+      "sort": {
+        "field": "patient_name",
+        "type": "desc"
+      },
+      "searchcondition": {
+        "parent_id": this.loginUserData.user_details._id,
+      },
+      "secretkey": "na"
+    };
 
-    this.http.httpViaPostbyApi1(endpointc, data).subscribe((res: any) => {
-      this.billerData_count = res.count;
-    }, error => {
-      console.log('Oooops!');
-    });
+    data.searchcondition.report_type = { $exists: true };
+    data.searchcondition.status = { $in: [8, 9, 10] };
+    this.libdata.basecondition.status = { $in: [8, 9, 10] };
 
-    this.http.httpViaPostbyApi1(endpoint, data).subscribe((res: any) => {
-      // console.log(res);
+    // API Hit
+    this.http.httpViaPost('dashboard-report-data-list', data).subscribe((res: any) => {
       this.allBillerData = res.results.res;
+      this.billerData_count = res.results.data_count;
     }, error => {
       console.log('Oooops!');
     });
   }
 
-  ngOnInit() {
+  viewAllButton(flag: string = "") {
+    switch (flag) {
+      case 'Job Tickets':
+        document.getElementById("jobTickets").scrollIntoView();
+        break;
+      default:
+        this.htmlText.viewAllButtonTable.headerText = flag;
+        break;
+    }
+  }
+
+  getSearchData() {
     let data: any = {
       "source": "patient_data_desc_patient_name",
       "condition": {},
@@ -423,32 +493,6 @@ export class AdminDashboardComponent implements OnInit {
     }, error => {
       console.log('Oooops!');
     });
-  }
-
-  ngAfterViewInit() {
-  }
-
-  viewReportProcessData(flag: string = "") {
-    if(flag != 'Job Tickets') {
-      this.htmlText.viewAllButtonTable.headerText = flag;
-    }
-    switch (flag) {
-      case 'Total Number of Reports Added':
-        break;
-      case 'Total Number of Report Processed':
-        break;
-      case 'Total Number of Report Signed':
-        break;
-      case 'Sent to Biller':
-        break;
-      case 'Reports Downloaded':
-        break;
-      case 'Reports Pending Sing':
-        break;
-      case 'Job Tickets':
-        document.getElementById("jobTickets").scrollIntoView();
-        break;
-    }
   }
 
 }

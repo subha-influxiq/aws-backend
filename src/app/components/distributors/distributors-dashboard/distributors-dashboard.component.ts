@@ -24,7 +24,7 @@ export class DistributorsDashboardComponent implements OnInit {
   public loginUserData: any = {};
   public jwtToken: string = "";
   public htmlText: any = {
-    headerText: "Patient Reports"
+    headerText: "Total Number of Report Processed"
   };
 
   public shareDetails: any = {
@@ -101,7 +101,7 @@ export class DistributorsDashboardComponent implements OnInit {
       },
       {
         label: "Download Report",
-        link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
+        link: environment.s3bucket + "reports",
         type: 'externallink',
         paramtype: 'angular',
         param: ['download_file_name']
@@ -176,9 +176,9 @@ export class DistributorsDashboardComponent implements OnInit {
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
-  public apiUrl: any = environment.apiBaseUrl1;
+  public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
-  public datacollection: any = 'distributors-dashboard-report-data-list';
+  public datacollection: any = 'dashboard-report-data-list';
 
   public sortdata: any = {
     "type": 'desc',
@@ -194,8 +194,12 @@ export class DistributorsDashboardComponent implements OnInit {
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
   public status: any = [
-    { val: "Send to Biller", 'name': 'Send to Biller' },
-    { val: "Report Downloaded", "name": "Report Downloaded" }
+    { val: 11, 'name': 'Biller Admin Approved' },
+    { val: 12, 'name': 'Biller Admin Not Approved' },
+    { val: 13, 'name': "Biller Admin Hold" },
+    { val: 14, 'name': "Doctor Signed" },
+    { val: 15, 'name': "Sent to Biller" },
+    { val: 16, "name": "Report Downloaded" }
   ];
   public parent_type: any = [
     { val: "admin", 'name': 'Admin' },
@@ -216,14 +220,6 @@ export class DistributorsDashboardComponent implements OnInit {
     { val: "TM FLOW V4", 'name': 'TM FLOW V4' },
     { val: "CMAT with BP Cuffs", 'name': "CMAT with BP Cuffs" }
   ];
-  public status_search: any = [
-    { val: 11, 'name': 'Biller Admin Approved' },
-    { val: 12, 'name': 'Biller Admin Not Approved' },
-    { val: 13, 'name': "Biller Admin Hold" },
-    { val: 14, 'name': "Doctor Signed" },
-    { val: 15, 'name': "Sent to Biller" },
-    { val: 16, "name": "Report Downloaded" }
-  ];
   public SearchingEndpoint: any = "datalist";
   public authval: any = [];
   public docofficeval: any = [];
@@ -237,14 +233,13 @@ export class DistributorsDashboardComponent implements OnInit {
   public search_settings: any = {
     selectsearch: [
       { label: 'Search By Report Type', field: 'report_file_type', values: this.report_type }, 
-      { label: "Search By Status", field: 'status_search', values: this.status_search },
       { label: "Search By Doctor", field: 'doc_name_search', values: this.authval },
       { label: "Search By Tech", field: 'tech_name_search', values: this.techval },
       { label: "Search By Doctor Office", field: 'doctor_ofiice_name_search', values: this.docofficeval },
       { label: "Search By Doctor City", field: 'doctor_city_search', values: this.doctorcity },
       { label: "Search By Doctor State", field: 'doctor_state_search', values: this.doctorstate },
-      { label: "Search By Patient City", field: 'patient_state_search', values: this.patientcity },
-      { label: "Search By Patient State", field: 'patient_city_search', values: this.patientstate }
+      { label: "Search By Patient City", field: 'patient_city_search', values: this.patientcity },
+      { label: "Search By Patient State", field: 'patient_state_search', values: this.patientstate }
     ],
     datesearch: [
       { startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "created_at_datetime" }
@@ -272,13 +267,175 @@ export class DistributorsDashboardComponent implements OnInit {
       this.allResolveData.dashboardCount = resolveData.dataCount.data;
     });
 
+    // set liblist base condition
     this.libdata.basecondition.parent_id = this.loginUserData.user_details._id;
     this.shareDetails.userId = this.loginUserData.user_details._id;
 
-    this.viewReportProcessData(this.htmlText.headerText);
+    // call to load datalist
+    this.viewAllButton(this.htmlText.headerText);
   }
 
   ngOnInit() {
+    // load data for search filter
+    this.getSearchData();
+  }
+
+  ngAfterViewInit() {
+  }
+
+  viewAllButton(flag = null) {
+    this.htmlText.headerText = flag;
+    this.billerData_count = 0;
+    this.allBillerData = [];
+
+    // lib list
+    let data: any = {
+      "condition": {
+        "limit": 10,
+        "skip": 0
+      },
+      "sort": {
+        "field": "patient_name",
+        "type": "desc"
+      },
+      "searchcondition": {
+        "parent_id": this.loginUserData.user_details._id,
+      },
+      "secretkey": "na"
+    };
+
+    switch (flag) {
+      case 'Total Number of Reports Added':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $gte: 3 };
+        this.libdata.basecondition.status = { $gte: 3 };
+
+        // Add status search filed
+        this.deleteStatusSearchField();
+        var searchData: any = this.search_settings.selectsearch;
+        searchData.push({ label: 'Search By Status', field: 'status', values: this.status });
+        this.search_settings.selectsearch = [];
+        this.search_settings.selectsearch = searchData;
+        break;
+      case 'Total Number of Report Processed':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $gte: 11 };
+        // this.libdata.basecondition.status = { $gte: 11 };
+
+        // Add status search filed
+        this.deleteStatusSearchField();
+        var searchData: any = this.search_settings.selectsearch;
+        searchData.push({ label: 'Search By Status', field: 'status', values: this.status });
+        this.search_settings.selectsearch = [];
+        this.search_settings.selectsearch = searchData;
+        break;
+      case 'Total Number of Report Signed':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $eq: 14 };
+        this.libdata.basecondition.status = { $eq: 14 };
+
+        // delete status filter
+        this.deleteStatusSearchField();
+        break;
+      case 'Sent to Biller':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $eq: 15 };
+        this.libdata.basecondition.status = { $eq: 15 };
+
+        // delete status filter
+        this.deleteStatusSearchField();
+        break;
+      case 'Reports Downloaded':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $eq: 16 };
+        this.libdata.basecondition.status = { $eq: 16 };
+
+        // delete status filter
+        this.deleteStatusSearchField();
+        break;
+      case 'Reports Pending Sing':
+        data.searchcondition.report_type = { $exists: true };
+        data.searchcondition.status = { $eq: 11 };
+        this.libdata.basecondition.status = { $eq: 11 };
+
+        this.deleteStatusSearchField();
+        break;
+    }
+
+    // API Hit
+    this.http.httpViaPost('dashboard-report-data-list', data).subscribe((res: any) => {
+      this.allBillerData = res.results.res;
+      this.billerData_count = res.results.data_count;
+    }, error => {
+      console.log('Oooops!');
+    });
+  }
+
+  downloadReport(report: any) {
+    if (typeof (report.download_count) == "undefined") {
+      report.download_count = 1;
+    } else {
+      report.download_count = report.download_count + 1;
+    }
+
+    /* Collect User Information for Download record */
+    let deviceInfo: any = this.deviceService.getDeviceInfo();
+    deviceInfo["isMobile"] = this.deviceService.isMobile();
+    deviceInfo["isTablet"] = this.deviceService.isTablet();
+    deviceInfo["isDesktop"] = this.deviceService.isDesktop();
+
+    /* Set downloader information */
+    var userDetails = {
+      id: this.loginUserData.user_details._id,
+      user_type: this.loginUserData.user_details.user_type
+    };
+
+    let postData: any = {
+      "source": "report_download",
+      "data": {
+        "report_id": report._id,
+        "biller_id": this.loginUserData.user_details._id,
+        "tech_id": report.tech_id,
+        "doctor_id": report.doctor_id,
+        "ip": this.htmlText.ip,
+        "download_attempt": 1,
+        "downloader_information": userDetails,
+        "device_information": deviceInfo
+      },
+      "sourceobj": ["report_id", "biller_id", "tech_id", "doctor_id"],
+      "download_count": report.download_count,
+      "token": this.loginUserData.jwtToken
+    };
+
+    this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
+      if (response.status == 'success') {
+        this.matSnackBar.open("Start downloading.", "Ok", {
+          duration: 3000
+        });
+        window.open(report.file_path, "_blank");
+
+        this.viewAllButton(this.htmlText.headerText);
+      } else {
+        this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
+          duration: 3000
+        });
+      }
+    });
+  }
+
+  deleteStatusSearchField() {
+    // Delete Status Filter Field
+    var searchData: any = this.search_settings.selectsearch;
+    for (const loop in searchData) {
+      if(searchData[loop].label == 'Search By Status') {
+        searchData.splice(loop, 1);
+      }
+    }
+    this.search_settings.selectsearch = [];
+    this.search_settings.selectsearch = searchData;
+  }
+
+  getSearchData() {
     let data: any = {
       "source": "patient_data_desc_patient_name",
       "condition": {
@@ -334,7 +491,6 @@ export class DistributorsDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
         }
       }
       for (var i in response.res) {
@@ -350,8 +506,6 @@ export class DistributorsDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
-
         }
       }
       for (var i in response.res) {
@@ -367,8 +521,6 @@ export class DistributorsDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
-
         }
       }
       for (var i in response.res) {
@@ -384,8 +536,6 @@ export class DistributorsDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
-
         }
       }
       for (var i in response.res) {
@@ -401,8 +551,6 @@ export class DistributorsDashboardComponent implements OnInit {
           }
           start = false;
           count = 0;
-
-
         }
       }
       for (var i in response.res) {
@@ -422,115 +570,6 @@ export class DistributorsDashboardComponent implements OnInit {
       }
     }, error => {
       console.log('Oooops!');
-    });
-  }
-
-  ngAfterViewInit() {
-  }
-
-  viewReportProcessData(flag = null) {
-    this.htmlText.headerText = flag;
-    this.billerData_count = 0;
-    this.allBillerData = [];
-
-    // lib list
-    let data: any = {
-      "condition": {
-        "limit": 10,
-        "skip": 0
-      },
-      "sort": {
-        "type": 'desc',
-        "field": 'patient_name'
-      },
-      "parent_id": this.loginUserData.user_details._id
-    };
-
-    switch (flag) {
-      case 'Reports Uploaded':
-        this.libdata.basecondition.status = { "$in": [8, 9, 10] };
-        data.status = { "$in": [8, 9, 10] };
-        break;
-      case 'Patient Reports':
-        this.libdata.basecondition.status = { "$gte": 11 };
-        data.status = { "$gte": 11 };
-        break;
-      case 'Report Signed':
-        this.libdata.basecondition.status = { "$eq": 14 };
-        data.status = { "$eq": 14 };
-        break;
-      case 'Super Bill':
-        this.libdata.basecondition.status = { "$eq": 15 };
-        data.status = { "$eq": 15 };
-        break;
-      case 'Download Bill':
-        this.libdata.basecondition.status = { "$eq": 16 };
-        data.status = { "$eq": 16 };
-        break;
-      case 'Reports Pending Sing':
-        this.libdata.basecondition.status = { "$eq": 11 };
-        data.status = { "$eq": 11 };
-        break;
-    }
-
-    // API Hit
-    this.http.httpViaPost('distributors-dashboard-report-data-list', data).subscribe((res: any) => {
-      this.allBillerData = res.results.res;
-      this.billerData_count = res.data_count;
-    }, error => {
-      console.log('Oooops!');
-    });
-  }
-
-  downloadReport(report: any) {
-    if (typeof (report.download_count) == "undefined") {
-      report.download_count = 1;
-    } else {
-      report.download_count = report.download_count + 1;
-    }
-
-    /* Collect User Information for Download record */
-    let deviceInfo: any = this.deviceService.getDeviceInfo();
-    deviceInfo["isMobile"] = this.deviceService.isMobile();
-    deviceInfo["isTablet"] = this.deviceService.isTablet();
-    deviceInfo["isDesktop"] = this.deviceService.isDesktop();
-
-    /* Set downloader information */
-    var userDetails = {
-      id: this.loginUserData.user_details._id,
-      user_type: this.loginUserData.user_details.user_type
-    };
-
-    let postData: any = {
-      "source": "report_download",
-      "data": {
-        "report_id": report._id,
-        "biller_id": this.loginUserData.user_details._id,
-        "tech_id": report.tech_id,
-        "doctor_id": report.doctor_id,
-        "ip": this.htmlText.ip,
-        "download_attempt": 1,
-        "downloader_information": userDetails,
-        "device_information": deviceInfo
-      },
-      "sourceobj": ["report_id", "biller_id", "tech_id", "doctor_id"],
-      "download_count": report.download_count,
-      "token": this.loginUserData.jwtToken
-    };
-
-    this.http.httpViaPost("addorupdatedata", postData).subscribe(response => {
-      if (response.status == 'success') {
-        this.matSnackBar.open("Start downloading.", "Ok", {
-          duration: 3000
-        });
-        window.open(report.file_path, "_blank");
-
-        this.viewReportProcessData(this.htmlText.headerText);
-      } else {
-        this.matSnackBar.open("Some error occord. Please try again.", "Ok", {
-          duration: 3000
-        });
-      }
     });
   }
 

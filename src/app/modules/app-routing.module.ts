@@ -8,6 +8,8 @@ import { from } from 'rxjs';
 /* Resolve Service */
 import { ResolveService } from '../services/resolve.service';
 import { CalendarService } from '../services/calendar.service';
+import { TrainingService } from '../services/training.service';
+
 
 /* Auth Component */
 import { LoginComponent } from '../components/auth/login/login.component';
@@ -89,6 +91,7 @@ import { NotFoundErrorComponent } from '../components/common/not-found-error/not
 
 /* Sales Person */
 import { SalesPersonDashboardComponent } from '../components/sales-person/sales-person-dashboard/sales-person-dashboard.component';
+import { AddNewDoctorComponent } from '../components/sales-person/add-new-doctor/add-new-doctor.component';
 
 
 /* Test Component */
@@ -140,6 +143,13 @@ import { ReportProcessTimeComponent } from '../components/admin/report-process-t
 import { LoginDotorByAdminComponent } from '../components/admin/login-as-doctor/login-dotor-by-admin/login-dotor-by-admin.component';
 import { AddSettingTimeComponent } from '../components/admin/report-time-setting/add-setting-time/add-setting-time.component';
 import { ReportTimeSettingComponent } from '../components/admin/report-time-setting/report-time-setting/report-time-setting.component';
+// import { AddEditTrainingComponent } from '../components/lazyload-training/training-management/manage-training/add-edit-training/add-edit-training.component';
+// import { ListingTrainingComponent } from '../components/lazyload-training/training-management/manage-training/listing-training/listing-training.component';
+// import { AddEditLessionsComponent } from 'traning-lib-influxiq/lib/manage-lessions/add-edit-lessions/add-edit-lessions.component';
+// import { ListLessionComponent } from 'traning-lib-influxiq/lib/manage-lessions/list-lession/list-lession.component';
+// import { AddEditLessonComponent } from '../components/lazyload-training/training-management/manage-lesson/add-edit-lesson/add-edit-lesson.component';
+// import { ListLessonComponent } from '../components/lazyload-training/training-management/manage-lesson/list-lesson/list-lesson.component';
+
 
 const routes: Routes = [
   /********** Auth Route Start **********/
@@ -173,42 +183,6 @@ const routes: Routes = [
   },
   /********** Auth Route Start **********/
 /*=========Reports Details Routes======== */
-
-// Login as doctor by admin Route-----------------
-
-{
-  path: 'admin/doctor-dashboard/:_id',
-  component: DoctorDashboardComponent,
-  resolve: { doctordata: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {},
-      },
-      endpoint: 'doctor-dashboard'
-    },
-},
-{
-  path: 'admin/doctor/tech-management',
-  canActivate: [AuthguardService],
-  component: ListingTechComponent,
-},
-
-// Login as tech by admin Route-----------------
-
-{
-  path: 'admin/tech-dashboard/:_id',
-  component: TechDashboardComponent,
-  resolve: { techDashboardData: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {},
-      },
-      endpoint: 'tech-dashboard'
-    },
-},
-
 {
   path: 'admin/reports-details/:_id',
   component: ReportsDetailsComponent,
@@ -401,7 +375,7 @@ const routes: Routes = [
   {
     path: 'admin/view-patient-record/:_id',
     component: PatientReportViewComponent,
-    //canActivate: [AuthguardService],
+    canActivate: [AuthguardService],
     resolve: { data: ResolveService },
     data: {
       requestcondition: {
@@ -424,45 +398,45 @@ const routes: Routes = [
       endpoint: 'report-view'
     },
   },
-  {
-    path: 'distributors/view-patient-record/:_id',
-    component: PatientReportViewComponent,
-    // canActivate: [AuthguardService],
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {}
-      },
-      endpoint: 'report-view'
-    },
-  },
-  {
-    path: 'doctor-group/view-patient-record/:_id',
-    component: PatientReportViewComponent,
-    //canActivate: [AuthguardService],
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {}
-      },
-      endpoint: 'report-view'
-    },
-  },
-  {
-    path: 'diagnostic-admin/patient-record/:_id',
-    component: PatientReportViewComponent,
-    canActivate: [AuthguardService],
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {}
-      },
-      endpoint: 'report-view'
-    },
-  },
+  // {
+  //   path: 'distributors/view-patient-record/:_id',
+  //   component: PatientReportViewComponent,
+  //   // canActivate: [AuthguardService],
+  //   resolve: { data: ResolveService },
+  //   data: {
+  //     requestcondition: {
+  //       source: 'data_pece',
+  //       condition: {}
+  //     },
+  //     endpoint: 'report-view'
+  //   },
+  // },
+  // {
+  //   path: 'doctor-group/view-patient-record/:_id',
+  //   component: PatientReportViewComponent,
+  //   //canActivate: [AuthguardService],
+  //   resolve: { data: ResolveService },
+  //   data: {
+  //     requestcondition: {
+  //       source: 'data_pece',
+  //       condition: {}
+  //     },
+  //     endpoint: 'report-view'
+  //   },
+  // },
+  // {
+  //   path: 'diagnostic-admin/patient-record/:_id',
+  //   component: PatientReportViewComponent,
+  //   canActivate: [AuthguardService],
+  //   resolve: { data: ResolveService },
+  //   data: {
+  //     requestcondition: {
+  //       source: 'data_pece',
+  //       condition: {}
+  //     },
+  //     endpoint: 'report-view'
+  //   },
+  // },
   {
     path: 'doctor/patient-record/:_id',
     component: PatientReportViewComponent,
@@ -476,19 +450,19 @@ const routes: Routes = [
       endpoint: 'report-view'
     },
   },
-  {
-    path: 'sales-person/patient-record/:_id',
-    component: PatientReportViewComponent,
-    canActivate: [AuthguardService],
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {}
-      },
-      endpoint: 'report-view'
-    },
-  },
+  // {
+  //   path: 'sales-person/patient-record/:_id',
+  //   component: PatientReportViewComponent,
+  //   canActivate: [AuthguardService],
+  //   resolve: { data: ResolveService },
+  //   data: {
+  //     requestcondition: {
+  //       source: 'data_pece',
+  //       condition: {}
+  //     },
+  //     endpoint: 'report-view'
+  //   },
+  // },
   {
     path: 'admin/patient-record/encounter/:_id',
     component: EncounterFormComponent,
@@ -1232,19 +1206,19 @@ const routes: Routes = [
         endpoint: 'doctor-group-dashboard'
       },
     },
-    {
-      path: 'doctor-group/view-patient-record/:_id',
-      component: PatientReportViewComponent,
-      //canActivate: [AuthguardService],
-      resolve: { data: ResolveService },
-      data: {
-        requestcondition: {
-          source: 'data_pece',
-          condition: {}
-        },
-        endpoint: 'report-view'
-      },
-    },
+    // {
+    //   path: 'doctor-group/view-patient-record/:_id',
+    //   component: PatientReportViewComponent,
+    //   //canActivate: [AuthguardService],
+    //   resolve: { data: ResolveService },
+    //   data: {
+    //     requestcondition: {
+    //       source: 'data_pece',
+    //       condition: {}
+    //     },
+    //     endpoint: 'report-view'
+    //   },
+    // },
 
 
     /* Distributors Admin Dashboard */
@@ -1261,19 +1235,19 @@ const routes: Routes = [
         endpoint: 'distributors-dashboard'
       },
     },
-    {
-      path: 'distributors/patient-record-report/:_id',
-      component: PatientReportViewComponent,
-      //canActivate: [AuthguardService],
-      resolve: { data: ResolveService },
-      data: {
-        requestcondition: {
-          source: 'data_pece',
-          condition: {}
-        },
-        endpoint: 'report-view'
-      },
-    },
+    // {
+    //   path: 'distributors/patient-record-report/:_id',
+    //   component: PatientReportViewComponent,
+    //   //canActivate: [AuthguardService],
+    //   resolve: { data: ResolveService },
+    //   data: {
+    //     requestcondition: {
+    //       source: 'data_pece',
+    //       condition: {}
+    //     },
+    //     endpoint: 'report-view'
+    //   },
+    // },
 
 
   /****************** Diagnostic Admin Routes Start *****************/
@@ -1291,19 +1265,19 @@ const routes: Routes = [
       endpoint: 'diagnostic-admin-dashboard'
     },
   },
-  {
-    path: 'diagnostic-admin/patient-record-report/:_id',
-    component: PatientReportViewComponent,
-    //canActivate: [AuthguardService],
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {}
-      },
-      endpoint: 'report-view'
-    },
-  },
+  // {
+  //   path: 'diagnostic-admin/patient-record-report/:_id',
+  //   component: PatientReportViewComponent,
+  //   //canActivate: [AuthguardService],
+  //   resolve: { data: ResolveService },
+  //   data: {
+  //     requestcondition: {
+  //       source: 'data_pece',
+  //       condition: {}
+  //     },
+  //     endpoint: 'report-view'
+  //   },
+  // },
 
   /* Add Patient Record Mannual */
   {
@@ -1328,19 +1302,19 @@ const routes: Routes = [
   },
 
   /* Diagnostic Admin Patient Record View */
-  {
-    path: 'diagnostic-admin/view-patient-record/:_id',
-    component: PatientReportViewComponent,
-    //canActivate: [AuthguardService],
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {}
-      },
-      endpoint: 'report-view'
-    },
-  },
+  // {
+  //   path: 'diagnostic-admin/view-patient-record/:_id',
+  //   component: PatientReportViewComponent,
+  //   //canActivate: [AuthguardService],
+  //   resolve: { data: ResolveService },
+  //   data: {
+  //     requestcondition: {
+  //       source: 'data_pece',
+  //       condition: {}
+  //     },
+  //     endpoint: 'report-view'
+  //   },
+  // },
 
   /* Account Settings */
   {
@@ -1865,19 +1839,19 @@ const routes: Routes = [
     component: DirectDownloadReportsComponent
   },
 
-  {
-    path: 'biller/patient-record-report/:_id',
-    component: PatientReportViewComponent,
-    canActivate: [AuthguardService],
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {}
-      },
-      endpoint: 'report-view'
-    },
-  },
+  // {
+  //   path: 'biller/patient-record-report/:_id',
+  //   component: PatientReportViewComponent,
+  //   canActivate: [AuthguardService],
+  //   resolve: { data: ResolveService },
+  //   data: {
+  //     requestcondition: {
+  //       source: 'data_pece',
+  //       condition: {}
+  //     },
+  //     endpoint: 'report-view'
+  //   },
+  // },
 
   /* Faq */
   {
@@ -2128,19 +2102,19 @@ const routes: Routes = [
       endpoint: 'doctor-office-dashboard'
     }
   },
-  {
-    path: 'doctor-office/view-patient-record/:_id',
-    component: PatientReportViewComponent,
-    //canActivate: [AuthguardService],
-    resolve: { data: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_pece',
-        condition: {}
-      },
-      endpoint: 'report-view'
-    },
-  },
+  // {
+  //   path: 'doctor-office/view-patient-record/:_id',
+  //   component: PatientReportViewComponent,
+  //   //canActivate: [AuthguardService],
+  //   resolve: { data: ResolveService },
+  //   data: {
+  //     requestcondition: {
+  //       source: 'data_pece',
+  //       condition: {}
+  //     },
+  //     endpoint: 'report-view'
+  //   },
+  // },
 
   /*Doctor Office Dashboard*/
   {
@@ -2250,6 +2224,35 @@ const routes: Routes = [
     },
   },
 
+  /* Add New Doctor */
+  {
+    path: 'sales-person/add-doctor',
+    component: AddNewDoctorComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'sales-person/add-doctor-required-data'
+    },
+  },
+  /* Edit Doctor */
+  {
+    path: 'sales-person/edit-doctor/:_id',
+    component: AddNewDoctorComponent,
+    canActivate: [AuthguardService],
+    resolve: { data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_pece',
+        condition: {}
+      },
+      endpoint: 'sales-person/add-doctor-required-data'
+    },
+  },
+
   /* Faq */
   {
     path: 'sales-person/faq',
@@ -2268,6 +2271,76 @@ const routes: Routes = [
   },
 
 
+  /*Training Management start*/
+
+
+  //---------lazy load training module-----------//
+
+
+  {
+    path:'admin/training',
+    loadChildren: () => import('../components/lazyload-training/training.module').then(t => 
+      t.TrainingModule
+    )
+  },
+
+  //---------lazy load training module-----------//
+
+
+  // {
+  //   path:'admin/manage-training/add',
+  //   component:AddEditTrainingComponent
+  // },
+
+  // {
+  //   path:'admin/manage-training/edit/:id',
+  //   component:AddEditTrainingComponent
+  // },
+
+  // {
+  //   path:'admin/manage-training/list',
+  //   component:ListingTrainingComponent,
+  //   canActivate: [AuthguardService],
+  //   resolve: { trainingdata: TrainingService },
+  //   data: {
+  //     requestcondition: {
+  //       source: '',
+  //       condition: {'is_trash':{$ne:1}}
+  //     },
+  //     endpoint: 'gettrainingcategorydata'
+  //   },
+  // },
+
+
+  // {
+  //   path:'admin/manage-lesson/add',
+  //   component:AddEditLessonComponent
+  // },
+
+  // {
+  //   path:'admin/manage-lesson/edit/:id',
+  //   component:AddEditLessonComponent
+  // },
+
+  // {
+  //   path:'admin/manage-lesson/list',
+  //   component:ListLessonComponent,
+  //   canActivate: [AuthguardService],
+  //   resolve: { lessionData: TrainingService },
+  //   data: {
+  //     requestcondition: {
+  //       source: '',
+  //       condition: {'is_trash':{$ne:1}}
+  //     },
+  //     endpoint: 'getlessondata'
+  //   },
+  // },
+
+
+  /*Training Management end*/
+
+
+  
   /* test component route start here */
   {
     path: 'test', component: TestComponent,

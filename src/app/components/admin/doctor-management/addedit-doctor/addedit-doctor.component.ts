@@ -135,7 +135,6 @@ export class AddeditDoctorComponent implements OnInit {
           console.log('=======', doctorDetails[0]);
           this.doctorManagementAddEditForm.controls['id'].patchValue(doctorDetails[0]._id);
           this.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
-          this.doctorManagementAddEditForm.controls['firstname'].patchValue(doctorDetails[0].firstname);
           this.doctorManagementAddEditForm.controls['lastname'].patchValue(doctorDetails[0].lastname);
           this.doctorManagementAddEditForm.controls['email'].patchValue(doctorDetails[0].email);
           this.doctorManagementAddEditForm.controls['phone'].patchValue(doctorDetails[0].phone);
@@ -147,7 +146,6 @@ export class AddeditDoctorComponent implements OnInit {
           this.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
           this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
           this.doctorManagementAddEditForm.controls['city'].patchValue(doctorDetails[0].city);
-          this.doctorManagementAddEditForm.controls['cpt_validate_amount'].patchValue(doctorDetails[0].cpt_validate_amount);
           // this.getCity(doctorDetails[0].state);
           if(doctorDetails[0].parent_type == "admin") {
             this.getalldataforedit();  
@@ -175,6 +173,7 @@ export class AddeditDoctorComponent implements OnInit {
           
           // }
           // this.doctorManagementAddEditForm.controls['state'].patchValue(doctorDetails[0].state);
+          this.doctorManagementAddEditForm.controls['cpt_validate_amount'].patchValue(String(doctorDetails[0].cpt_validate_amount));
           this.doctorManagementAddEditForm.controls['taxo_list'].patchValue(doctorDetails[0].taxo_list);
           this.doctorManagementAddEditForm.controls['status'].patchValue(doctorDetails[0].status);
         });
@@ -236,7 +235,6 @@ export class AddeditDoctorComponent implements OnInit {
 
   getCityByName(stateName) {
     this.htmlText.cities = this.htmlText.allCities[stateName];
-    console.log(stateName,this.htmlText.allCities[stateName],'cc');
   }
 
   /**getting all the technician data**/
@@ -382,7 +380,6 @@ export class AddeditDoctorComponent implements OnInit {
 
 
   getParentData(id: any = '') {
-    console.log('222222222222',id);
     var billerData = id;
     this.selectionChangeValue = billerData;
     console.log('1111', billerData);
@@ -433,9 +430,6 @@ export class AddeditDoctorComponent implements OnInit {
   }
 
   doctorManagementAddEditFormSubmit() {
-    var toSelect = this.htmlText.cpt_amount.find(c => c.value == 12);
-    console.log(toSelect);
-    this.doctorManagementAddEditForm.get('cpt_validate_amount').setValue(12);
     for (let x in this.doctorManagementAddEditForm.controls) {
       this.doctorManagementAddEditForm.controls[x].markAsTouched();
     }

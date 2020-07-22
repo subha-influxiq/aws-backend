@@ -333,7 +333,7 @@
               </a>
             </span>
           </span>
-          <button mat-flat-button (click)="viewReportProcessData('Total Number of Reports Added')">view all</button>
+          <!-- <button mat-flat-button (click)="viewAllButton('Total Number of Reports Added')">view all</button> -->
         </span>
       </mat-card-content>
 
@@ -361,7 +361,7 @@
               </a>
             </span>
           </span>
-          <button mat-flat-button (click)="viewReportProcessData('Total Number of Report Processed')">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Report Processed')">view all</button>
         </span>
 
       </mat-card-content>
@@ -389,7 +389,7 @@
               </a>
             </span>
           </span>
-          <button mat-flat-button (click)="viewReportProcessData('Total Number of Report Signed')">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Total Number of Report Signed')">view all</button>
         </span>
 
 
@@ -418,7 +418,7 @@
               </a>
             </span>
           </span>
-          <button mat-flat-button (click)="viewReportProcessData('Sent to Biller')">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Sent to Biller')">view all</button>
         </span>
 
       </mat-card-content>
@@ -444,7 +444,7 @@
               </a>
             </span>
           </span>
-          <button mat-flat-button (click)="viewReportProcessData('Reports Downloaded')">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Reports Downloaded')">view all</button>
         </span>
       </mat-card-content>
 
@@ -455,7 +455,7 @@
           </mat-card-content>
         </span>
         <span class="container_wrapper">
-          <p> Reports Pending Sing </p>
+          <p> Reports Pending Sign </p>
           <span class="counter_with_tool">
             <h2> {{ allResolveData.total_not_sign_reports }} </h2>
             <!-- tool tip -->
@@ -469,10 +469,8 @@
               </a>
             </span>
           </span>
-          <button mat-flat-button (click)="viewReportProcessData('Reports Pending Sing')">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Reports Pending Sing')">view all</button>
         </span>
-
-
 
       </mat-card-content>
 
@@ -497,7 +495,7 @@
               </a>
             </span>
           </span>
-          <button mat-flat-button (click)="viewReportProcessData('Job Tickets')">view all</button>
+          <button mat-flat-button (click)="viewAllButton('Job Tickets')">view all</button>
         </span>
 
       </mat-card-content>
@@ -507,6 +505,7 @@
   <app-doctor-signup-share [shareDetails]="shareDetails"></app-doctor-signup-share>
 
 
+  <!-- 1st List Hide on load, Click on View All button then view this -->
   <!-- View All button listing start here -->
   <mat-card-content *ngIf="htmlText.viewAllButtonTable.headerText != ''" class="table_wrapper admin_dashboard">
     <mat-card-content class="headr_tagh">
@@ -528,6 +527,7 @@
   <!-- View All button listing end here -->
 
 
+  <!-- 2nd List -->
   <!-- Patient Reports Pending Actions listing start here -->
   <mat-card-content class="table_wrapper admin_dashboard">
     <mat-card-content class="headr_tagh">
@@ -546,7 +546,7 @@
     </mat-card-content>
 
     <!-- table -->
-    <lib-listing class="DataTable" *ngIf="allBillerData.length>0" [datasource]="allBillerData" [skip]="allUserData_skip"
+    <lib-listing class="DataTable" *ngIf="allBillerData.length>0" (onLiblistingChange)="listenLiblistingChange($event)" [datasource]="allBillerData" [skip]="allUserData_skip"
       [modify_header_array]="allUserData_modify_header" [detail_skip_array]="previewModal_detail_skip" [apiurl]="apiUrl"
       [sourcedata]="tableName" [editroute]="editUrl" [jwttoken]="jwtToken" [statusarr]="status"
       [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="SearchingEndpoint"
@@ -557,8 +557,8 @@
 
   </mat-card-content>
   <!-- Patient Reports Pending Actions listing end here -->
-
-
+  
+  <!-- 3rd List -->
   <!-- Admin Processed Reports start here -->
   <mat-card-content class="table_wrapper admin_dashboard">
     <mat-card-content class="headr_tagh">
@@ -579,7 +579,7 @@
   </mat-card-content>
   <!-- Admin Processed Reports end here -->
 
-
+  <!-- 4th List -->
   <!-- Patient Reports with Job Tickets start here -->
   <mat-card-content id="jobTickets" class="table_wrapper admin_dashboard">
     <mat-card-content class="headr_tagh">
@@ -601,5 +601,7 @@
 
   </mat-card-content>
   <!-- Patient Reports with Job Tickets end here -->
+
 </mat-card>
+
 <app-admin-footer></app-admin-footer>

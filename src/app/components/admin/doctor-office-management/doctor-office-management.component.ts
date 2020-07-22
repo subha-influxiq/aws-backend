@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
 import { HttpServiceService } from '../../../services/http-service.service';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ApprovalSettingsUpdateComponent } from '../../common/approval-settings-update/approval-settings-update.component';
+import { DialogBoxComponent } from '../../common/dialog-box/dialog-box.component';
+
 
 @Component({
   selector: 'app-doctor-office-management',
@@ -56,7 +60,7 @@ export class DoctorOfficeManagementComponent implements OnInit {
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";
   public apiUrl: any;
-  public tableName: any = "dat_pece";
+  public tableName: any = "data_pece";
   public userData: any={}
 
   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
@@ -101,24 +105,21 @@ export class DoctorOfficeManagementComponent implements OnInit {
       //hidestatustogglebutton:true,
       // hideaction:true,
       tableheaders: ['center_name','firstname', 'lastname', 'email', 'phone', 'status', 'created_date'], //not required
-      custombuttons: [
-        {
-          label: "Log Me",
-          route: "admin/doctor-office-dashboard/",
-          type: 'internallink',
-          //cond:'status',
-          //condval:0,
-          param: ['_id'],
-      },]
+      custombuttons: []
     }
   
 
-  constructor(public activatedRoute: ActivatedRoute,
+  constructor(public dialog: MatDialog,public activatedRoute: ActivatedRoute,
     public cookie: CookieService, public http: HttpClient,
-    public httpService: HttpServiceService) {
+    public httpService: HttpServiceService, private router: Router) {
 
     this.user_cookie = cookie.get('jwtToken');
     let allData=cookie.getAll()
+    if(this.activatedRoute.snapshot.routeConfig.path == "admin/doctor/tech-management") {
+      this.userData = {user_type:"doctor",_id:JSON.parse(this.cookie.get('id'))};
+    } else {
+    this.userData = JSON.parse(this.cookie.get('user_details'));
+    }
     this.userData = JSON.parse(allData.user_details);
     this.libdata.notes.user = this.userData._id;
     this.libdata.notes.currentuserfullname = this.userData.firstname +this.userData.lastname;
@@ -132,20 +133,24 @@ export class DoctorOfficeManagementComponent implements OnInit {
     }
     if(this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/doctor-office-management/edit';
+      this.libdata.basecondition = { 'parent_id': this.userData._id };
       this.libdata.notes.user = this.userData._id;
       this.libdata.notes.currentuserfullname = this.userData.center_name;
     }
     if(this.userData.user_type == 'distributors') {
       this.editUrl = 'distributors/doctor-office-management/edit';
+      this.libdata.basecondition = { 'parent_id': this.userData._id };
       this.libdata.notes.user = this.userData._id;
     this.libdata.notes.currentuserfullname = this.userData.distributorname;
     }
     if(this.userData.user_type == 'doctor_group') {
       this.editUrl = 'doctor-group/doctor-office-management/edit';
+      this.libdata.basecondition = { 'parent_id': this.userData._id };
       this.libdata.notes.user = this.userData._id;
       this.libdata.notes.currentuserfullname = this.userData.groupname 
     }
     if(this.userData.user_type == 'admin') {
+      this.libdata.custombuttons = {label: "Log Me",type: 'listner',id: 'i1'};
       this.search_settings.textsearch.push({ label: "Search By Parent Name", field: 'parent_name_search' });
       this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type });
       this.libdata.tableheaders.splice(3,0,"parent_name");
@@ -228,6 +233,50 @@ export class DoctorOfficeManagementComponent implements OnInit {
         }, error => {
             console.log('Oooops!');
         });
+  }
+}
+
+listenLiblistingChange(data: any = null) {
+  if(data != null) {
+    switch(data.custombuttonclick.btninfo.label) {
+      case "Log Me":
+        let modalData1: any = {
+          panelClass: 'bulkupload-dialog',
+          data: {
+            header: "Alert",
+            message: "Do you want to login as doctor Office : " + data.custombuttonclick.data.firstname + " " + data.custombuttonclick.data.lastname + "?",
+            button1: { text: "Yes" },
+            button2: { text: "No" },
+          }
+        }
+        var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData1);
+
+        dialogRef1.afterClosed().subscribe(result => {
+          switch(result) {
+            case "Yes":
+              // Delete Cookie
+              this.cookie.delete('user_details');
+              this.cookie.delete('main_user');
+              this.cookie.delete('jwtToken');
+              this.cookie.deleteAll('/');
+
+              setTimeout(() => {
+                // Reset again Cookie
+                this.cookie.set('jwtToken', this.user_cookie);
+                this.cookie.set('user_details', JSON.stringify(data.custombuttonclick.data));
+                this.cookie.set('main_user', JSON.stringify(this.userData));
+
+                // Redirect to page
+                this.router.navigateByUrl("doctor/dashboard");
+              }, 500);
+              break;
+            case "No":
+              dialogRef1.close();
+              break;
+          }
+        });
+        break;
+    }
   }
 }
 

@@ -100,7 +100,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
       },
       {
         label: "Download Report",
-        link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
+        link: environment.s3bucket + "reports",
         type: 'externallink',
         paramtype: 'angular',
         param: ['download_file_name']
@@ -167,7 +167,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
   public deleteEndpoint: any = "deletesingledata";
   public apiUrl: any = environment.apiBaseUrl;
   public tableName: any = "data_pece";
-  public datacollection: any = 'diagnostic-admin-dashboard-report-data-list';
+  public datacollection: any = 'dashboard-report-data-list';
 
   public sortdata: any = {
     "type": 'desc',
@@ -342,7 +342,6 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
     this.billerData_count = 0;
 
     /* Config Data */
-    let endpoint = 'diagnostic-admin-dashboard-report-data-list';
     let data: any = {
       "condition": {
         "limit": 10,
@@ -366,6 +365,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
         this.libdata.basecondition.status = { $gte: 3 };
 
         // Add status search filed
+        this.deleteStatusSearchField();
         var searchData: any = this.search_settings.selectsearch;
         searchData.push({ label: 'Search By Status', field: 'status', values: this.status });
         this.search_settings.selectsearch = [];
@@ -377,6 +377,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
         // this.libdata.basecondition.status = { $gte: 11 };
 
         // Add status search filed
+        this.deleteStatusSearchField();
         var searchData: any = this.search_settings.selectsearch;
         searchData.push({ label: 'Search By Status', field: 'status', values: this.status });
         this.search_settings.selectsearch = [];
@@ -417,7 +418,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
     }
 
     /* Endpoint call */
-    this.http.httpViaPost(endpoint, data).subscribe((res: any) => {
+    this.http.httpViaPost('dashboard-report-data-list', data).subscribe((res: any) => {
       this.allBillerData = res.results.res;
       this.billerData_count = res.results.data_count;
     }, error => {

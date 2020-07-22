@@ -38,6 +38,7 @@
  .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .label_name, 
  .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .label_name {
   font-size: 14px;}
+  .DataTable table th.mat-header-cell:last-of-type { width: 18%;}
 }  
 @media screen and (max-width: 1368px){
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 5px; }
@@ -86,7 +87,7 @@
 .calenderView .calendar_wrapper .example-container{ max-height: inherit!important;
   min-width: inherit!important;}
 .calenderView .button_wrapper{ margin-top: 20px; }
-.DataTable table th.mat-header-cell:last-of-type { width: auto; }
+/* .DataTable table th.mat-header-cell:last-of-type { width: auto; } */
 .searchbar .mat-form-field { width: 32%; }
 .book-event .mat-dialog-container .mat-stepper-horizontal .width-md { width: 31%; }
 .admin_dashboard .DataTable .container .searchbar{ justify-content: center!important;}
@@ -218,7 +219,7 @@ align-items: flex-start; }
   .admin_wrapper .content_wrapper .itemsection .button_wrapper { height: 100%; }
   .admin_wrapper .content_wrapper .itemsection .icon img{ height:100%;}
   .admin_wrapper .content_wrapper .itemsection .button_wrapper button { margin: 0 auto; margin-top: auto; }
-
+  .percentage_counter{ width: 90%!important;}
   .admin_wrapper .content_wrapper{ align-items:inherit; }
 }
 @media screen and (max-width: 840px){                      
@@ -277,6 +278,8 @@ align-items: flex-start; }
   .job_reprt_wrapper .itm .report_image_w .image_items { width: 48%; margin: 1%;}
   .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber { font-size: 14px; }
   .notes-modal .maindialognew .close-btn-modal { right: 10%; }
+  .encounter_wrapper .second_table .book-appointment .mat-form-field { width: 48%; }
+  .DataTable table td.mat-cell { padding-left: 110px!important; }
 }
  
  
@@ -310,6 +313,7 @@ align-items: flex-start; }
   .custom-modalbox .example-card .mat-card-header { width: 100%; text-align: center; display: block; }
   .custom-modalbox .mat-dialog-container .mat-card { display: flex; justify-content: center; flex-direction: column;
   align-items: center;}
+  .mat-dialog-container .mat-dialog-content .innerhtml-content{ text-align: center;}
   .custom-modalbox .example-card .mat-card-header::before{ display: none;}
   .table_wrapper .top_header .wrappp_R { width: auto; text-align: inherit; }
   .admin_wrapper .add_form .submit_form { display: flex; flex-direction: column; } 
@@ -323,6 +327,9 @@ align-items: flex-start; }
   .time_picker .timer,
   .time_picker .timer .w-mat-timepicker{ width: 100%!important;}
   .calenderView .calendar_wrapper { width: 100%!important; }
+}
+@media screen and (max-width: 500px){  
+  .encounter_wrapper .second_table .book-appointment .mat-form-field { width: 100%; }
 }
 @media screen and (max-width: 480px){
   .main_wrapper .login_wrapper { width: 360px; }
@@ -357,6 +364,7 @@ align-items: flex-start; }
   .job_modal_wr  .mat-dialog-actions button{ min-width: inherit!important; line-height: inherit; padding: 4px 10px;}
   .job_reprt_wrapper .itm .report_image_w .image_items { width: 48%; margin: 1%;}
   .DataTable .searchbar { padding: 10px; }
+  .table_wrapper .add_header button { font-size: 16px; }
 }
 
 @media screen and (max-width: 440px){
@@ -365,13 +373,15 @@ align-items: flex-start; }
 }
 @media screen and (max-width: 420px){
   .mat-table .mat-row { padding: 0; }
-  .mat-table .mat-cell:before { font-size: 15px; }
+  .mat-table .mat-cell:before { font-size: 13px; }
+  .mat-table .mat-cell:after { font-size: 14px;}
   .table_wrapper .action_bar .mat-form-field,
   .action_bar .mat-form-field .mat-form-field-flex { width: 100%; margin-right: 0;}
   .table_wrapper .action_bar .date-range { width: 100%;}
   .table_wrapper .action_bar .date-range .mat-form-field:last-child { margin-left: 0;}
   .DataTable .mat-card mat-label { margin-right: 0; display: block; margin-bottom: 10px; }
-  .encounter_rules .admin_superbillsection .greenbar p { font-size: 30px; }
+  .encounter_rules .admin_superbillsection .greenbar p { font-size: 30px; } 
+  .DataTable table td.mat-cell { font-size: 14px; word-break: break-all; padding-right: 8px!important; }
 
 }
 @media screen and (max-width: 400px){
@@ -406,6 +416,7 @@ align-items: flex-start; }
   .mat-table .mat-cell:after { font-size: 14px;}
   .notes-modal .maindialognew .close-btn-modal { right: 8%; }
   .notes-modal .maindialognew .mat-dialog-content .mat-subheader { font-size: 14px; padding: 0 6px; }
+  .DataTable table td.mat-cell { padding-left: 95px!important; }
 }                                            
  
 

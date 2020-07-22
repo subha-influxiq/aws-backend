@@ -7,8 +7,12 @@
     </tr>
 
     <tr>
-      <td> Patient Name <input type="text" value="{{ orginalReportDetails.patient_details[0].patient_name }}"></td>
-      <td> Patient Gender
+      <td data-label="Patient Name"> 
+        <label><span>Patient Name</span></label>
+        
+         <input type="text" value="{{ orginalReportDetails.patient_details[0].patient_name }}"></td>
+      <td data-label="Patient Gender">       
+        <label><span>Patient Gender</span></label>
         <label> <input type="radio" [checked]="orginalReportDetails.patient_details[0].gender_male_flag == true" [value]="true">M</label>
         <label> <input type="radio" [checked]="orginalReportDetails.patient_details[0].gender_female_flag == true" [value]="true">F</label>
       </td>
@@ -16,8 +20,8 @@
     </tr>
 
     <tr>
-      <td><label> D.O.B <input type="text" value="{{ orginalReportDetails.patient_details[0].dob | date }}"></label></td>
-      <td> Test Date <input type="text" value="{{ orginalReportDetails.test_date | date }}"></td>
+      <td data-label="D.O.B"><label><span> D.O.B </span><input type="text" value="{{ orginalReportDetails.patient_details[0].dob | date }}"></label></td>
+      <td data-label="Test Date "><label><span>Test Date </span></label> <input type="text" value="{{ orginalReportDetails.test_date | date }}"></td>
     </tr>
 
 

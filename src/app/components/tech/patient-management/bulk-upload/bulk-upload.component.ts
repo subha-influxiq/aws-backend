@@ -193,7 +193,11 @@ export class BulkUploadComponent implements OnInit {
         //"doctor_details": this.doctorDetails,
         "tech_details": this.cookiesData,
         "login_url": environment.siteBaseUrl + "login",
-        "sourceobj": ["tech_id", "doctor_id", "diagnostic_admin_id"],
+        "sourceobj": [
+          "tech_id",
+          "doctor_id",
+          "diagnostic_admin_id"
+        ],
         "token": this.user_token
       };
 

@@ -1,15 +1,15 @@
-<mat-toolbar class="techdashboard_header" [ngClass]="{'sticky' : isSticky}">
+<mat-toolbar class="techdashboard_header">
   <mat-card-content class="header_wrapper">
     <span class="logo_wrapper" [routerLink]="[ '/admin/dashboard' ]">
       <img src="../../../assets/images/logo.png">
     </span>
 
-    <button mat-flat-button (click)="menuFunction()" class="togle_menu"><i class="material-icons"> menu </i></button>
-    <mat-card-content class="quotation" [ngClass]="status ? 'success' : 'danger'" >
+    <button mat-flat-button (click)="toggleMenu()" class="togle_menu"><i class="material-icons"> menu </i></button>
+
+    <mat-card-content class="quotation" >
       <mat-nav-list>
         <a mat-list-item routerLinkActive="active" [routerLink]="['/admin/dashboard']"> Dashboard </a>
 
-        <!-- Drop down menu -->
         <a mat-list-item routerLinkActive="active" [matMenuTriggerFor]="userMenu"> Users Management
           <i class="material-icons">keyboard_arrow_down</i>
         </a>
@@ -37,7 +37,6 @@
         </mat-menu>
 
 
-        <!-- Drop down menu -->
         <a mat-list-item routerLinkActive="active" [matMenuTriggerFor]="insurance"> Insurance Management
           <i class="material-icons">keyboard_arrow_down</i>
         </a>
@@ -52,19 +51,23 @@
           <i class="material-icons">keyboard_arrow_down</i>
         </a>
         <mat-menu #reports="matMenu">
-          <button mat-menu-item [routerLink]="['/admin/sales-person/cpt-reports']" routerLinkActive="active"> CPT Validated Reports for Rep </button>
-          <button mat-menu-item [routerLink]="['/admin/sales-person/doctor-management']" routerLinkActive="active"> Doctor Joined by Rep </button>
-          <button mat-menu-item [routerLink]="['/admin/report-processing']" routerLinkActive="active"> Reports Processing Time </button>
+          <button mat-menu-item [routerLink]="['/admin/sales-person/cpt-reports']" routerLinkActive="active"> CPT
+            Validated Reports for Rep </button>
+          <button mat-menu-item [routerLink]="['/admin/sales-person/doctor-management']" routerLinkActive="active">
+            Doctor Joined by Rep </button>
+          <button mat-menu-item [routerLink]="['/admin/report-processing']" routerLinkActive="active"> Reports
+            Processing Time </button>
         </mat-menu>
 
 
 
-        <a mat-list-item [routerLink]="['/admin/booked-appoinments']" routerLinkActive="active">Appointments</a>
 
-        <a mat-list-item [routerLink]="['/admin/patientinformation-management']" routerLinkActive="active">Patient
-          Information</a>
         <a mat-list-item [matMenuTriggerFor]="FAQManagement"> FAQ Management <i
             class="material-icons">keyboard_arrow_down</i></a>
+
+        <a mat-list-item [matMenuTriggerFor]="TrainingManagement"> Training Management <i
+            class="material-icons">keyboard_arrow_down</i></a>
+
         <a mat-list-item [matMenuTriggerFor]="misc"> Miscellaneous <i class="material-icons">keyboard_arrow_down</i></a>
 
       </mat-nav-list>
@@ -73,11 +76,26 @@
         <button mat-menu-item [routerLink]="['/admin/faq']" routerLinkActive="active"> FAQ</button>
       </mat-menu>
 
+      <mat-menu #TrainingManagement="matMenu">
+        <button mat-menu-item [routerLink]="['/admin/training/manage-training/list']" routerLinkActive="active"> Manage
+          Training</button>
+
+        <button mat-menu-item [routerLink]="['/admin/training/manage-lesson/list']" routerLinkActive="active"> Manage
+          Lesson</button>
+      </mat-menu>
+
       <mat-menu #misc="matMenu">
+        <button mat-menu-item [routerLink]="['/admin/booked-appoinments']"
+          routerLinkActive="active">Appointments</button>
+
+        <button mat-menu-item [routerLink]="['/admin/patientinformation-management']" routerLinkActive="active">Patient
+          Information</button>
         <button mat-menu-item [routerLink]="['/encounter-form-status']" routerLinkActive="active"> Encounter Form
           Rules</button>
-        <button mat-menu-item [routerLink]="['/admin/cpt-reports']" routerLinkActive="active"> CPT Validate Reports</button>
-        <button mat-menu-item [routerLink]="['/admin/setting-management/5f0461821e1e370009f197c8']" routerLinkActive="active"> Report Time Setting</button>    
+        <button mat-menu-item [routerLink]="['/admin/cpt-reports']" routerLinkActive="active"> CPT Validate
+          Reports</button>
+        <button mat-menu-item [routerLink]="['/admin/setting-management/5f0461821e1e370009f197c8']"
+          routerLinkActive="active"> Report Time Setting</button>
       </mat-menu>
     </mat-card-content>
 
@@ -108,4 +126,7 @@
     </mat-card-content>
   </mat-card-content>
 </mat-toolbar>
-<!-- end header -->
+
+
+
+

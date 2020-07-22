@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../../../services/http-service.service';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ApprovalSettingsUpdateComponent } from '../../../common/approval-settings-update/approval-settings-update.component';
+import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-listing-biller',
@@ -57,15 +60,7 @@ export class ListingBillerComponent implements OnInit {
     //hidestatustogglebutton:true,
     // hideaction:true,
     tableheaders: ['firstname', 'lastname', 'email', 'phone', 'company_name', 'status', 'created_date'], //not required
-    custombuttons: [
-      {
-        label: "Log Me",
-        route: "admin/biller-dashboard/",
-        type: 'internallink',
-        //cond:'status',
-        //condval:0,
-        param: ['_id'],
-    },]
+    custombuttons: []
   }
   public allUserData_modify_header: any = {
     "firstname": "First Name",
@@ -110,16 +105,22 @@ export class ListingBillerComponent implements OnInit {
 
     };
   public user_cookie: any;
-  constructor(public activeRoute: ActivatedRoute, public cookie: CookieService,
-    public httpService: HttpServiceService) {
+  constructor(public dialog: MatDialog,public activeRoute: ActivatedRoute, public cookie: CookieService,
+    public httpService: HttpServiceService,private router: Router) {
 
     this.user_cookie = cookie.get('jwtToken');
+    if(this.activeRoute.snapshot.routeConfig.path == "admin/doctor/tech-management") {
+      this.userData = {user_type:"doctor",_id:JSON.parse(this.cookie.get('id'))};
+    } else {
+    this.userData = JSON.parse(this.cookie.get('user_details'));
+    }
     this.userData = JSON.parse(this.cookie.get('user_details'));
     this.libdata.notes.user = this.userData._id;
     this.libdata.notes.currentuserfullname = this.userData.firstname +this.userData.lastname;
 
     if (this.userData.user_type == 'diagnostic_admin') {
       this.editUrl = 'diagnostic-admin/biller-management/edit';
+      this.libdata.basecondition = { 'parent_id': this.userData._id };
       this.field = { 'parent_id': this.userData._id };
       this.data = this.userData._id;
       this.libdata.notes.user = this.userData._id;
@@ -134,6 +135,7 @@ export class ListingBillerComponent implements OnInit {
     if (this.userData.user_type == 'doctor_group') {
       this.editUrl = 'doctor-group/biller-management/edit';
       this.field = { 'parent_id': this.userData._id };
+      this.libdata.basecondition = { 'parent_id': this.userData._id };
       this.data = this.userData._id;
       this.libdata.notes.user = this.userData._id;
       this.libdata.notes.currentuserfullname = this.userData.groupname 
@@ -141,11 +143,13 @@ export class ListingBillerComponent implements OnInit {
     if (this.userData.user_type == 'distributors') {
       this.editUrl = 'distributors/biller-management/edit';
       this.field = { 'parent_id': this.userData._id };
+      this.libdata.basecondition = { 'parent_id': this.userData._id };
       this.data = this.userData._id;
       this.libdata.notes.user = this.userData._id;
-    this.libdata.notes.currentuserfullname = this.userData.distributorname;
+      this.libdata.notes.currentuserfullname = this.userData.distributorname;
     }
     if(this.userData.user_type == 'admin') {
+      this.libdata.custombuttons = {label: "Log Me",type: 'listner',id: 'i1'};
       this.search_settings.textsearch.push({ label: "Search By Parent Name", field: 'parent_name_search' });
       this.search_settings.selectsearch.push({ label: 'Search By Parent Type', field: 'parent_type_search', values: this.parent_type });
       this.libdata.tableheaders.splice(3,0,"parent_name");
@@ -254,5 +258,49 @@ export class ListingBillerComponent implements OnInit {
     this.activeRoute.data.forEach((data) => {
       this.allBillerData = data.Billerdata.res;
     })
+  }
+
+  listenLiblistingChange(data: any = null) {
+    if(data != null) {
+      switch(data.custombuttonclick.btninfo.label) {
+        case "Log Me":
+          let modalData1: any = {
+            panelClass: 'bulkupload-dialog',
+            data: {
+              header: "Alert",
+              message: "Do you want to login as biller : " + data.custombuttonclick.data.firstname + " " + data.custombuttonclick.data.lastname + "?",
+              button1: { text: "Yes" },
+              button2: { text: "No" },
+            }
+          }
+          var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData1);
+
+          dialogRef1.afterClosed().subscribe(result => {
+            switch(result) {
+              case "Yes":
+                // Delete Cookie
+                this.cookie.delete('user_details');
+                this.cookie.delete('main_user');
+                this.cookie.delete('jwtToken');
+                this.cookie.deleteAll('/');
+
+                setTimeout(() => {
+                  // Reset again Cookie
+                  this.cookie.set('jwtToken', this.user_cookie);
+                  this.cookie.set('user_details', JSON.stringify(data.custombuttonclick.data));
+                  this.cookie.set('main_user', JSON.stringify(this.userData));
+
+                  // Redirect to page
+                  this.router.navigateByUrl("doctor/dashboard");
+                }, 500);
+                break;
+              case "No":
+                dialogRef1.close();
+                break;
+            }
+          });
+          break;
+      }
+    }
   }
 }

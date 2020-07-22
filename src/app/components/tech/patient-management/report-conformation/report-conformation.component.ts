@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { HttpServiceService } from '../../../../services/http-service.service';
 import { DialogBoxComponent } from '../../../common/dialog-box/dialog-box.component';
 import { CookieService } from 'ngx-cookie-service';
@@ -34,10 +34,12 @@ export class ReportConformationComponent implements OnInit {
   public notFindPatientRecordsDisplayedColumns: string[] = ["no", "patient_report", "choose_other_patient"];
   public notFindPatientRecordsDataSource: any = [];
 
+  /* Html dynamic value */
   public htmlText: any = {
     confirmSubmittedDataSource: [],
     conflictingPatientRecordsDataSource: [],
-    notFindDataSource: []
+    notFindDataSource: [],
+    progressBar: false
   };
 
   /* Auto Complete */
@@ -50,6 +52,7 @@ export class ReportConformationComponent implements OnInit {
     checkbox1: false,
     checkbox2: false
   };
+
   public dialogRef: any;
 
   constructor(public snackBar: MatSnackBar, public dialog: MatDialog, private http: HttpServiceService, private cookieService: CookieService, private router: Router,public activatedRoute : ActivatedRoute) {
@@ -233,6 +236,9 @@ export class ReportConformationComponent implements OnInit {
   }
 
   updateRecord() {
+    console.log("Data: ", this.htmlText.confirmSubmittedDataSource);
+    return;
+
     if(this.checkboxData.checkbox1 == true && this.checkboxData.checkbox2 == true) {
       var data: any = {
         "source": "data_pece",
@@ -255,7 +261,7 @@ export class ReportConformationComponent implements OnInit {
             this.router.navigateByUrl('/tech/dashboard');
           });
         } else {
-          this.snackBar.open(response.msg + " Error code: F-AEA-TS-164.", "Ok", {
+          this.snackBar.open(response.msg + " Error code: F-AEA-TS-258.", "Ok", {
             duration: 2000,
           });
         }
@@ -267,15 +273,13 @@ export class ReportConformationComponent implements OnInit {
           header: "Alert",
           message: "Please check confirm box before submit.",
           button1: { text: "" },
-          button2: { text: "Okay" },
+          button2: { text: "Ok" },
         }
       };
       this.dialogRef = this.dialog.open(DialogBoxComponent, data);
       this.dialogRef.afterClosed().subscribe(result => {
         switch (result) {
-          case "No":
-            break;
-          case "Yes":
+          case "oK":
             break;
         }
       });
@@ -285,7 +289,9 @@ export class ReportConformationComponent implements OnInit {
   changePatientDialog(sectionFlag, tableIndex) {
     const dialogRef = this.dialog.open(PatientSelectModalComponent, {
      panelClass:'patient-confirm-report',
-      data: { allPatient: this.htmlText.options }
+      data: { 
+        allPatient: this.htmlText.options
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -312,6 +318,83 @@ export class ReportConformationComponent implements OnInit {
           default:
             break;
         }
+      }
+    });
+  }
+
+  movePatientData(sectionFlag, tableIndex) {
+    let data: any = {
+      width: '250px',
+      data: {
+        header: "Alert",
+        message: "Do you want to move this report ??",
+        button1: { text: "Yes" },
+        button2: { text: "No" },
+      }
+    };
+    this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+    this.dialogRef.afterClosed().subscribe(result => {
+      switch (result) {
+        case "Yes":
+          switch(sectionFlag) {
+            case 'submitted':
+              this.htmlText.notFindDataSource.push(this.htmlText.confirmSubmittedDataSource[tableIndex]);
+              this.htmlText.confirmSubmittedDataSource.splice(tableIndex, 1);
+              this.confirmSubmittedDataSource = new MatTableDataSource(this.htmlText.confirmSubmittedDataSource);
+              break;
+            case 'conflicting':
+              this.htmlText.notFindDataSource.push(this.htmlText.conflictingPatientRecordsDataSource[tableIndex]);
+              this.htmlText.conflictingPatientRecordsDataSource.splice(tableIndex, 1);
+              this.conflictingPatientRecordsDataSource = new MatTableDataSource(this.htmlText.conflictingPatientRecordsDataSource);
+              break;
+            case 'not found':
+              this.htmlText.confirmSubmittedDataSource.splice(tableIndex, 1);
+              this.notFindPatientRecordsDataSource = new MatTableDataSource(this.htmlText.notFindDataSource);
+              break;
+            default:
+              break;
+          }
+          this.notFindPatientRecordsDataSource = new MatTableDataSource(this.htmlText.notFindDataSource);
+          break;
+        case "No":
+          break;
+      }
+    });
+  }
+
+  deleteRecord(sectionFlag, tableIndex) {
+    let data: any = {
+      width: '250px',
+      data: {
+        header: "Alert",
+        message: "Do you want to delete this report ??",
+        button1: { text: "Yes" },
+        button2: { text: "No" },
+      }
+    };
+    this.dialogRef = this.dialog.open(DialogBoxComponent, data);
+    this.dialogRef.afterClosed().subscribe(result => {
+      switch (result) {
+        case "Yes":
+          switch(sectionFlag) {
+            case 'submitted':
+              this.htmlText.confirmSubmittedDataSource.splice(tableIndex, 1);
+              this.confirmSubmittedDataSource = new MatTableDataSource(this.htmlText.confirmSubmittedDataSource);
+              break;
+            case 'conflicting':
+              this.htmlText.conflictingPatientRecordsDataSource.splice(tableIndex, 1);
+              this.conflictingPatientRecordsDataSource = new MatTableDataSource(this.htmlText.conflictingPatientRecordsDataSource);
+              break;
+            case 'not found':
+              this.htmlText.confirmSubmittedDataSource.splice(tableIndex, 1);
+              this.notFindPatientRecordsDataSource = new MatTableDataSource(this.htmlText.notFindDataSource);
+              break;
+            default:
+              break;
+          }
+          break;
+        case "No":
+          break;
       }
     });
   }

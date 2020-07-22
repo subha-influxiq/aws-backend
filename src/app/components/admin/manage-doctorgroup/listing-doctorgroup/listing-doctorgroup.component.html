@@ -30,10 +30,10 @@
     <!-- End header with add button -->
 
     <!-- Listing goes here  -->
-    <lib-listing class="DataTable" *ngIf="docData.length>0" [datasource]="docData" [skip]="docData_skip"
+    <lib-listing class="DataTable" *ngIf="docData.length>0" (onLiblistingChange)="listenLiblistingChange($event)" [datasource]="docData" [skip]="docData_skip"
       [modify_header_array]="docData_modify_header" [sourcedata]="tableName" [detail_skip_array]="previewModal_skip"
       [apiurl]="apiUrl" [editroute]="editUrl" [jwttoken]="user_cookie" [statusarr]="status"
-      [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="searchingEndpoint"
+      [updateendpoint]="UpdateEndpoint" [deleteendpoint]="deleteEndpoint" [date_search_endpoint]="searchingEndpoint" [libdata]="libdata"
       [date_search_source]="searchSourceName" [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection" [date_search_source_count]="docData_count" [limitcond]="limitcond">
 
     </lib-listing>

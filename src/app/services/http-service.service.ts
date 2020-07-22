@@ -36,7 +36,7 @@ export class HttpServiceService {
         'Authorization': this.jwtToken
       })
     };
-    return this.http.post(this.baseUrl + endpoint, jsonData);
+    return this.http.post(this.baseUrl + endpoint, jsonData, httpOptions);
   }
 
   /* call api via post method */
@@ -50,7 +50,7 @@ export class HttpServiceService {
         'Authorization': this.jwtToken
       })
     };
-    return this.http.post(this.baseUrl1 + endpoint, jsonData);
+    return this.http.post(this.baseUrl1 + endpoint, jsonData, httpOptions);
   }
 
   //ip track api function
@@ -85,7 +85,7 @@ export class HttpServiceService {
         'Authorization': this.jwtToken
       })
     };
-    return this.http.post(this.calendarApiUrl + endpoint, jsonData);
+    return this.http.post(this.calendarApiUrl + endpoint, jsonData, httpOptions);
   }
 
   /* Resolve service */
@@ -142,5 +142,4 @@ export class HttpServiceService {
   }
 
 }
-
 

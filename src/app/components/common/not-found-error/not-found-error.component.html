@@ -1,17 +1,29 @@
-<ng-container *ngIf="cookiesData.type == 'admin'">
+<ng-container *ngIf="userData.user_type == 'admin'">
   <app-admin-header></app-admin-header>
 </ng-container>
 
-<ng-container *ngIf="cookiesData.type == 'tech'">
+<ng-container *ngIf="userData.user_type == 'tech'">
   <app-tech-header></app-tech-header>
 </ng-container>
 
-<ng-container *ngIf="cookiesData.type == 'biller'">
+<ng-container *ngIf="userData.user_type == 'biller'">
   <app-biller-header></app-biller-header>
 </ng-container>
 
-<ng-container *ngIf="cookiesData.type == 'doctor'">
+<ng-container *ngIf="userData.user_type == 'doctor'">
   <app-doctor-header></app-doctor-header>
+</ng-container>
+
+<ng-container *ngIf="userData.user_type == ''">
+  <!-- <mat-toolbar class="techdashboard_header" [ngClass]="{'sticky' : isSticky}">
+    
+    <mat-card-content class="header_wrapper">
+      <span class="logo_wrapper" [routerLink]="[ '/admin/dashboard' ]">
+        <img src="../../../assets/images/logo.png">
+      </span>
+    </mat-card-content>
+
+  </mat-toolbar> -->
 </ng-container>
 
 <mat-card-content class="error_banner">
@@ -20,7 +32,6 @@
   </span>
   <mat-card-content class="error_page_content">
     <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-
     <h1> 404 Error </h1>
     <h3> ooops! Page Not Found </h3>
     <button class="goto_home" mat-button type="button" (click)="gotoHome();">Back to home</button>
@@ -36,6 +47,6 @@
       <a href="">Privacy Policy</a>
       <a href=""> Terms & conditions</a>
     </mat-card-content>
-    <p>© Copyright 2018 Advanced Wellness Solutions- All Rights Reserved</p>
+    <p>© Copyright {{ htmlData.year }} Advanced Wellness Solutions- All Rights Reserved</p>
   </span>
 </mat-card-content>

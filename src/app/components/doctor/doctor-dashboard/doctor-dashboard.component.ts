@@ -111,21 +111,17 @@ export class DoctorDashboardComponent implements OnInit {
       },
       {
         label: "Download Report",
-        link: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/reports",
+        link: environment.s3bucket + "reports",
         type: 'externallink',
         paramtype: 'angular',
         param: ['download_file_name']
       },
       {
-        label: "Doctor Signed",
-        type: 'action',
-        datatype: 'api',
-        endpoint: 'status-doctor-signed',
-        otherparam: ["patient_name"],
+        label: "Sign & Send",
+        type: 'listner',
+        id: 'i1',
         cond: 'status',
-        condval: 11,
-        param: 'id',
-        headermessage: 'Status Update',
+        condval: 11
       },
       {
         label: "View Jobticket",
@@ -177,8 +173,7 @@ export class DoctorDashboardComponent implements OnInit {
   public previewModal_detail_skip: any = ['_id', 'user_type', 'status', 'password', 'created_at'];
 
   public status: any = [
-    { val: "Doctor Sign and Send To Biller", 'name': 'Doctor Sign and Send To Biller' },
-    { val: "Downloaded", "name": "Report Downloaded" }
+    { val: "Sign and Send To Biller", 'name': 'Sign and Send To Biller' }
   ];
   public cptcodes: any = [
     { val: "95923", 'name': '95923' },
@@ -260,29 +255,23 @@ export class DoctorDashboardComponent implements OnInit {
   constructor(public dialog: MatDialog, public commonFunction: CommonFunction, public cookie: CookieService, public http: HttpServiceService, public activatedRoute: ActivatedRoute, public matSnackBar: MatSnackBar, public deviceService: DeviceDetectorService) {
     this.allData = cookie.getAll();
     // this.cookie.delete('user_details');
-    // this.authData = JSON.parse(this.allData.user_details);
-    if(this.activatedRoute.snapshot.params._id) {
-      this.authData["_id"] = this.activatedRoute.snapshot.params._id;
-      // this.authData["parent_type"] = this.activatedRoute.snapshot.params.parent_type;
-      this.cookie.set('id',JSON.stringify(this.activatedRoute.snapshot.params._id));
-    }
-    else {
-      console.log('************************')
-      this.authData = JSON.parse(this.allData.user_details);
-    }
-    console.log("******",this.activatedRoute,this.authData);
+    this.authData = JSON.parse(this.allData.user_details);
+    console.log("Cookie",this.allData);
     if (typeof (this.allData.doctor_signature) == 'undefined' && typeof (this.authData.doctor_signature) != 'undefined') {
       this.cookie.set('doctor_signature', this.authData.doctor_signature);
     }
 
     this.authData["jwtToken"] = cookie.get('jwtToken');
     this.jwtToken = this.authData.jwtToken;
+    console.log("authData",this.authData);
+    this.authData.parent_type = this.authData.parent_type.toLowerCase();
     this.libdata.basecondition = {
       status: { "$gt": 10 }, doctor_id: this.authData._id
     };
     if (this.authData.parent_type != "admin") {
       this.status[0].val = "Doctor Signed";
       this.status[0].name = "Doctor Signed";
+      this.status.splice(1,1);
     }
     if (this.authData.status_text == "Doctor Signed") {
       this.status[0].val = "Send to Biller";
@@ -461,6 +450,46 @@ export class DoctorDashboardComponent implements OnInit {
       console.log('Oooops!');
     });
   }
+
+  listenLiblistingChange(data: any = null) {
+    if(data.action == "custombuttonclick") {
+    let modalData1: any = {
+      panelClass: 'bulkupload-dialog',
+      data: {
+        header: "Alert",
+        message: "Do you want to sign and send this record to biller?",
+        button1: { text: "Yes" },
+        button2: { text: "No" },
+      }
+    }
+    var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData1);
+
+    dialogRef1.afterClosed().subscribe(result => {
+      switch(result) {
+        case "Yes":
+          let requestData: any = {
+            id: data.custombuttonclick.data._id
+          }
+          this.http.httpViaPostbyApi1("status-major-doctor-signed", requestData).subscribe((response: any) => {
+            let modalData: any = {
+              panelClass: 'bulkupload-dialog',
+              data: {
+                header: "Alert",
+                message: "Successfully Signed and Sent to Biller.",
+                button1: { text: "" },
+                button2: { text: "OK" },
+              }
+            }
+            var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData);
+          })
+          break;
+        case "No":
+          dialogRef1.close();
+          break;
+      }
+    });
+}
+}
 
   openDialog() {
     const dialogRef = this.dialog.open(UploadDialogBoxComponent, {

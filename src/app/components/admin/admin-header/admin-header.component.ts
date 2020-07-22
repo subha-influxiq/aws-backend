@@ -13,7 +13,8 @@ import { J } from '@angular/cdk/keycodes';
 
 export class AdminHeaderComponent implements OnInit {
 
-  status: boolean = true;
+  public toggleStatus:boolean = false;
+
   public user_data: any = {};
   public loader: boolean = true;
   public user_cookie:any;
@@ -44,13 +45,13 @@ export class AdminHeaderComponent implements OnInit {
   /**logout function end here**/
 
   // don't remove it's for menu toggleing
-  menuFunction(){
-    this.status = !this.status;
+  toggleMenu(){
+    this.toggleStatus = !this.toggleStatus;
 
   }
 
    // sticky section
-   isSticky: boolean = false;
+  //  isSticky: boolean = false;
 
   //  @HostListener('window:scroll', ['$event'])
   //  checkScroll() {

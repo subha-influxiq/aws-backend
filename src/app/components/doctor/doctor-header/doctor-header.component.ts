@@ -82,17 +82,21 @@ export class DoctorHeaderComponent implements OnInit {
           let jwtToken = this.cookies.get('jwtToken');
           let allData = this.cookies.getAll();
           let main_user = JSON.parse(allData.main_user);
+          let secret = this.cookies.get('secret');
 
           // Delete Cookie
           this.cookies.delete('user_details');
           this.cookies.delete('main_user');
+          this.cookies.delete('doctor_signature');
+          this.cookies.delete('secret');
           this.cookies.delete('jwtToken');
-          this.cookies.deleteAll('/');
+          this.cookies.deleteAll('/doctor');
 
           setTimeout(() => {
             // Reset again Cookie
             this.cookies.set('jwtToken', jwtToken);
             this.cookies.set('user_details', JSON.stringify(main_user));
+            this.cookies.set('secret', JSON.stringify(secret));
 
             // Redirect to page
             this.router.navigateByUrl("admin/dashboard");
