@@ -902,22 +902,23 @@ color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
 /* training block */
 .training_management .form2_wrapper .searchblockwrapper .mat-toolbar{ background: var(--button-color2); margin-bottom:16px; }
 .training_management .form2_wrapper .searchblockwrapper .buttonsetToolbar { background: #daf0f7;
-  margin: 12px 0;
-  text-align: right;
-  height: auto;
-  padding: 10px;}
+  margin: 12px 0; text-align: right; height: auto; padding: 10px;}
 .training_management .form2_wrapper .searchblockwrapper .singleButton{ 
-  background: var(--button-color3);
-    font-size: 18px;
-    text-transform: uppercase;
-    color: #fff;
-    margin: 0;
-    float: none;
+  background: var(--button-color3); font-size: 16px; text-transform: uppercase;
+  color: #fff; margin: 0; float: none; margin-right: 10px;
+}
+.training_management .form2_wrapper .searchblockwrapper .singleButton:last-child{
+background: var(--button-color1); margin: 0;
 }
 .training_management .form2_wrapper .searchblockwrapper .mat-toolbar .headerSpan{ color: #fff; font-size: 30px;
   font-family: "AvenirMedium";}
 .training_management .form2_wrapper .searchbar{ display: flex; align-items: center; }
-.training_management .form2_wrapper .searchbar .submitbtn{ margin-right: 10px; font-family: 'AvenirMedium'; background: var(--button-color3);}
+.training_management .form2_wrapper .searchbar .submitbtn{ font-family: "AvenirMedium";
+  background: var(--button-color2);
+  margin-right: 10px;
+  min-width: 120px;
+  text-transform: uppercase;
+  box-shadow: none;}
 
 .training_management .form2_wrapper .searchbar .submitbtn:first-child{ background: var(--button-color1);} 
 .training_management .form2_wrapper .searchbar .submitbtn:last-child{ background: var(--button-color5); margin: 0;}
@@ -971,15 +972,36 @@ color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
   .training_management .form2_wrapper .mat-elevation-z8 .mat-paginator-container{ justify-content: center;}
 
   /* add edit */
-.addedit_management .form2_wrapper .admingeneralcls .header{
+
+.addedit_management .form2_wrapper .searchblock .searchblockwrapper .header {
  font-family: "AvenirBlack"; font-size: 26px; background: var(--button-color2); padding: 10px; text-align: center;
   margin: 0; color: #fff; text-transform: uppercase; }
-.addedit_management .form2_wrapper .admingeneralcls .formclass .mat-form-field-flex {
+
+
+.addedit_management .form2_wrapper .formclass .mat-form-field-flex {
 padding:0 8px 8px; background: #fff; border-left: 2px solid var(--button-color2)}
-.addedit_management .form2_wrapper .admingeneralcls .formclass textarea{ min-height: 110px; resize: none; }
-.addedit_management .form2_wrapper .admingeneralcls .formclass{ justify-content: center; }
+.addedit_management .form2_wrapper .formclass textarea{ min-height: 110px; resize: none; }
+.addedit_management .form2_wrapper .formclass{ justify-content: center; }
 
-.addedit_management .form2_wrapper .admingeneralcls .formclass .trainingsubbtn { font-family: "AvenirMedium"; background: var(--button-color2); margin-right: 10px; }
-.addedit_management .form2_wrapper .admingeneralcls .formclass .trainingsubbtn:last-child { background: var(--button-color5); margin: 0;}
-.addedit_management .form2_wrapper .admingeneralcls .formclass .checkboxnew mat-label { font-family: "AvenirMedium"; font-size: 18px; color:#671717; padding: 0; display: inline-block; margin-bottom: 6px;} 
+.addedit_management .form2_wrapper .formclass .trainingsubbtn { font-family: "AvenirMedium";
+  background: var(--button-color2);
+  margin-right: 10px;
+  min-width: 120px;
+  text-transform: uppercase;
+  box-shadow: none; }
+.addedit_management .form2_wrapper .formclass .trainingsubbtn:last-child { background: var(--button-color5); margin: 0;}
+.addedit_management .form2_wrapper .formclass .checkboxnew mat-label { font-family: "AvenirMedium"; font-size: 18px; color:#671717; padding: 0; display: inline-block; margin-bottom: 6px;} 
 
+/* quiz */
+.quiz_addedit_management .form2_wrapper .mat-card{ background: #f3f3f3; }
+.quiz_addedit_management .form2_wrapper .searchblock .searchblockwrapper .mat-toolbar{ background: var(--button-color2); margin-bottom: 20px; }
+.quiz_addedit_management .form2_wrapper .searchblock .searchblockwrapper .mat-toolbar .headerSpan{
+  font-family: "AvenirBlack";
+  margin: 0; color: #fff; text-transform: uppercase; font-size: 30px;
+}
+
+.quiz_addedit_management .form2_wrapper .example-form .mat-form-field-flex {
+  padding:0 8px 8px; background: #fff; border-left: 2px solid var(--button-color2)}
+.quiz_addedit_management .form2_wrapper .example-form .trainingsubbtn { font-family: "AvenirMedium";
+  background: var(--button-color2); min-width: 120px; text-transform: uppercase; box-shadow: none; margin-top: 20px; }
+.quiz_addedit_management .form2_wrapper .example-form .cke_1{ margin-bottom: 16px; }
