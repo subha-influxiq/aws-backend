@@ -92,19 +92,19 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
     },
     updateendpoint: '',
     custombuttons: [
-      {
-        label: "View Report",
-        route: "diagnostic-admin/view-patient-record/",
-        type: 'internallink',
-        param: ['_id'],
-      },
-      {
-        label: "Download Report",
-        link: environment.s3bucket + "reports",
-        type: 'externallink',
-        paramtype: 'angular',
-        param: ['download_file_name']
-      },
+      // {
+      //   label: "View Report",
+      //   route: "diagnostic-admin/view-patient-record/",
+      //   type: 'internallink',
+      //   param: ['_id'],
+      // },
+      // {
+      //   label: "Download Report",
+      //   link: environment.s3bucket + "reports",
+      //   type: 'externallink',
+      //   paramtype: 'angular',
+      //   param: ['download_file_name']
+      // },
       {
         label: "Tech Details",
         type: 'action',

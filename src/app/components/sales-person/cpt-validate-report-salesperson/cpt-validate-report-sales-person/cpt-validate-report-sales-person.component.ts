@@ -59,6 +59,13 @@ export class CptValidateReportSalesPersonComponent implements OnInit {
   public editUrl: any = "admin/biller-management/edit";
   public userData: any;
   public libdata: any = {
+    footersettings: [
+      { key: 'f0', data: '', colspan: 1 },
+      { key: 'f1', data: '', colspan: 4 },
+      { key: 'f2', data: 'Total:', colspan: 1 },
+      { key: 'f4', data: '', colspan: 2 },
+      { key: 'f3', data: 'Total:', colspan: 2 }
+  ],
     basecondition: "",
     updateendpoint: 'status-update',
     hideeditbutton: true,// all these button options are optional not mandatory
@@ -266,6 +273,8 @@ export class CptValidateReportSalesPersonComponent implements OnInit {
     this.http.httpViaPostbyApi1("datalist-report", data).subscribe((response: any) => {
       var start = false;
       var count = 0;
+      this.libdata.footersettings[2].data = 'Total:'+response.amount+'';
+      this.libdata.footersettings[4].data = 'Total:'+response.total+'';
       for(var i in response.res) {
         if(response.res[i].doc_name_search !="") {
           for(var j in this.authval) {

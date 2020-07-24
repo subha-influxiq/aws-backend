@@ -109,7 +109,7 @@ export class ViewAllButtonListComponent implements OnInit {
         type: 'action',
         datatype: 'api',
         endpoint: 'get-doctor-details',
-        datafields: ['firstname', 'lastname', 'email', 'fax', 'practice_name', 'npi', 'phone', 'address', 'city', 'state', 'zip'],
+        datafields: ['firstname', 'lastname', 'email', 'fax', 'Practice Name', 'NPI', 'phone', 'address', 'city', 'state', 'zip'],
         param: 'id',
         headermessage: 'Doctor Info',
       },
