@@ -207,6 +207,7 @@ import { AddNewDoctorComponent } from './components/sales-person/add-new-doctor/
 
 import { CommonTemplateModule } from './common-template/common-template.module';
 import { TrainingApiService } from './services/training-api.service';
+import { JobTicketModule } from './components/job-ticket/job-ticket.module';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -425,7 +426,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CKEditorModule,
     // TraningModule,
     TrainingModule,
-    TraningModule
+    TraningModule,
+    JobTicketModule
     // TraningModule
     // BrowserAnimationsModule
   ],

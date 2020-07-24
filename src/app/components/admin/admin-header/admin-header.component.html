@@ -68,6 +68,9 @@
         <a mat-list-item [matMenuTriggerFor]="TrainingManagement"> Training Management <i
             class="material-icons">keyboard_arrow_down</i></a>
 
+            <a mat-list-item [matMenuTriggerFor]="ManageJobtickets"> Manage Jobtickets<i
+              class="material-icons">keyboard_arrow_down</i></a>
+
         <a mat-list-item [matMenuTriggerFor]="misc"> Miscellaneous <i class="material-icons">keyboard_arrow_down</i></a>
 
       </mat-nav-list>
@@ -82,6 +85,13 @@
 
         <button mat-menu-item [routerLink]="['/admin/training/manage-lesson/list']" routerLinkActive="active"> Manage
           Lesson</button>
+      </mat-menu>
+
+      <mat-menu #ManageJobtickets="matMenu">
+        <button mat-menu-item [routerLink]="['/admin/jobticket/add-jobticket-category']" routerLinkActive="active"> Add Jobticket Category</button>
+
+        <button mat-menu-item [routerLink]="['/admin/jobticket/list-jobticket-category']" routerLinkActive="active">List
+          Jobticket Category</button>
       </mat-menu>
 
       <mat-menu #misc="matMenu">

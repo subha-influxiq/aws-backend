@@ -14,7 +14,6 @@ export interface EndpointComponent {
 })
 
 export class ResolveService implements Resolve<any> {
-
   constructor(public cookies: CookieService, private _apiService: HttpServiceService, private router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
@@ -191,7 +190,6 @@ export class ResolveService implements Resolve<any> {
         //   );
 
         // }
-
         this._apiService.ResolveViaPost(route.data.requestcondition, route.data.endpoint).subscribe(api_object => {
           if (api_object) {
             return resolve(api_object);

@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+import { ActivatedRouteSnapshot } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -91,7 +92,6 @@ export class HttpServiceService {
   /* Resolve service */
   ResolveViaPost(requestdata: any, endpoint: any): Observable<any> {
     this.jwtToken = this.CookieService.get('jwtToken');
-
     /* set common header */
     const httpOptions = {
       headers: new HttpHeaders({
@@ -103,6 +103,7 @@ export class HttpServiceService {
 
     return this.http.post(this.baseUrl + endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
   }
+
 
   checkingDuplicateEmail(requestdata: any): Observable<any> {
     this.jwtToken = this.CookieService.get('jwtToken');
