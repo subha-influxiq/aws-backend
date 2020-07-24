@@ -80,6 +80,13 @@ export class ViewAllButtonListComponent implements OnInit {
         param: ['_id'],
       },
       {
+        label: "Download Report",
+        link: environment.s3bucket + "reports",
+        type: 'externallink',
+        paramtype: 'angular',
+        param: ['download_file_name']
+      },
+      {
         label: "Tech Details",
         type: 'action',
         datatype: 'api',

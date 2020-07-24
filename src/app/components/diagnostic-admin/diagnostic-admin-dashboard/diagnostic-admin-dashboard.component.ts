@@ -184,10 +184,7 @@ export class DiagnosticAdminDashboardComponent implements OnInit {
 
   // Status filter array
   public status: any = [
-    { val: 11, 'name': 'Biller Admin Approved' },
-    { val: 12, 'name': 'Biller Admin Not Approved' },
-    { val: 13, 'name': "Biller Admin Hold" },
-    { val: 16, "name": "Report Downloaded" }
+    { val: "Send to Biller", 'name': 'Send to Biller' }
   ];
 
   // CPT code filter array

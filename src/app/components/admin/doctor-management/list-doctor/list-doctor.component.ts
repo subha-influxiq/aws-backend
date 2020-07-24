@@ -65,7 +65,20 @@ export class ListDoctorComponent implements OnInit {
     "created_at",
     "id",
     "name_search",
-    "updated_at"
+    "updated_at",
+    "status",
+    "created_date",
+    "doctor_signature",
+    "default_value",
+    "default_value_percentage",
+    "name_search",
+    "parent_name",
+    "parent_name_search",
+    "parent_type",
+    "parent_type_search",
+    "fullname",
+    "notescount"
+
   ];
   public tableName: any = 'data_pece';
   public UpdateEndpoint: any = "addorupdatedata";

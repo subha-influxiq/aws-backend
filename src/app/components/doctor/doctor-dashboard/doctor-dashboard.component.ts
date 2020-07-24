@@ -458,7 +458,9 @@ export class DoctorDashboardComponent implements OnInit {
 
   listenLiblistingChange(data: any = null) {
     if(data.action == "custombuttonclick") {
-    let modalData1: any = {
+      switch(data.custombuttonclick.btninfo.label) {
+        case "Sign & Send":
+    let modalData: any = {
       panelClass: 'bulkupload-dialog',
       data: {
         header: "Alert",
@@ -467,7 +469,7 @@ export class DoctorDashboardComponent implements OnInit {
         button2: { text: "No" },
       }
     }
-    var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData1);
+    var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData);
 
     dialogRef1.afterClosed().subscribe(result => {
       switch(result) {
@@ -493,6 +495,45 @@ export class DoctorDashboardComponent implements OnInit {
           break;
       }
     });
+    break;
+    case "Generate Report" :
+      let modalData1: any = {
+        panelClass: 'bulkupload-dialog',
+        data: {
+          header: "Alert",
+          message: "Do you want to Generate the Pdf",
+          button1: { text: "Yes" },
+          button2: { text: "No" },
+        }
+      }
+      var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData1);
+  
+      dialogRef1.afterClosed().subscribe(result => {
+        switch(result) {
+          case "Yes":
+            let requestData: any = {
+               _id: data.custombuttonclick.data._id
+            }
+            this.http.httpViaPost("get-html-data", requestData).subscribe((response: any) => {
+              let modalData: any = {
+                panelClass: 'bulkupload-dialog',
+                data: {
+                  header: "Alert",
+                  message: "Pdf Generated Successfully",
+                  button1: { text: "" },
+                  button2: { text: "OK" },
+                }
+              }
+              var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData);
+            })
+            break;
+          case "No":
+            dialogRef1.close();
+            break;
+        }
+      });
+    break;
+  }
 }
 }
 

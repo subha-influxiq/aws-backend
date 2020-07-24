@@ -132,6 +132,12 @@ export class AdminbillerDashboardComponent implements OnInit {
         cond: 'status',
         condval: 13
       },
+      {
+        label: "Generate Pdf",
+        type: 'listner',
+        id: 'i1'
+      },
+      
     ],
     hideeditbutton: true,// all these button options are optional not mandatory
     hidedeletebutton: true,
@@ -264,6 +270,45 @@ export class AdminbillerDashboardComponent implements OnInit {
   ngAfterViewInit() {
   }
 
+  listenLiblistingChange(data: any = null) {
+    if(data.action == "custombuttonclick") {
+    let modalData1: any = {
+      panelClass: 'bulkupload-dialog',
+      data: {
+        header: "Alert",
+        message: "Do you want to Generate the Pdf",
+        button1: { text: "Yes" },
+        button2: { text: "No" },
+      }
+    }
+    var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData1);
+
+    dialogRef1.afterClosed().subscribe(result => {
+      switch(result) {
+        case "Yes":
+          let requestData: any = {
+             _id: data.custombuttonclick.data._id
+          }
+          this.http.httpViaPost("get-html-data", requestData).subscribe((response: any) => {
+            let modalData: any = {
+              panelClass: 'bulkupload-dialog',
+              data: {
+                header: "Alert",
+                message: "Pdf Generated Successfully",
+                button1: { text: "" },
+                button2: { text: "OK" },
+              }
+            }
+            var dialogRef1 = this.dialog.open(DialogBoxComponent, modalData);
+          })
+          break;
+        case "No":
+          dialogRef1.close();
+          break;
+      }
+    });
+}
+}
   viewAllButton(flag: string = "", period: string = "") {
     this.billerData_count = 0;
     this.allBillerData = [];
