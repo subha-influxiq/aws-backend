@@ -86,19 +86,19 @@ export class DoctorGroupDashboardComponent implements OnInit {
     basecondition: {},
     updateendpoint: '',
     custombuttons: [
-      {
-        label: "View Report",
-        route: "doctor-group/view-patient-record/",
-        type: 'internallink',
-        param: ['_id'],
-      },
-      {
-        label: "Download Report",
-        link: environment.s3bucket + "reports",
-        type: 'externallink',
-        paramtype: 'angular',
-        param: ['download_file_name']
-      },
+      // {
+      //   label: "View Report",
+      //   route: "doctor-group/view-patient-record/",
+      //   type: 'internallink',
+      //   param: ['_id'],
+      // },
+      // {
+      //   label: "Download Report",
+      //   link: environment.s3bucket + "reports",
+      //   type: 'externallink',
+      //   paramtype: 'angular',
+      //   param: ['download_file_name']
+      // },
       {
         label: "Tech Details",
         type: 'action',

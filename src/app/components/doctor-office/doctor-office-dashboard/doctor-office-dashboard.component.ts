@@ -49,12 +49,12 @@ export class DoctorOfficeDashboardComponent implements OnInit {
     basecondition: '',
     updateendpoint: '',
     custombuttons: [
-      {
-        label: "View Report",
-        route: "doctor-office/view-patient-record/",
-        type: 'internallink',
-        param: ['_id'],
-      },
+      // {
+      //   label: "View Report",
+      //   route: "doctor-office/view-patient-record/",
+      //   type: 'internallink',
+      //   param: ['_id'],
+      // },
       {
         label: "Tech Details",
         type: 'action',

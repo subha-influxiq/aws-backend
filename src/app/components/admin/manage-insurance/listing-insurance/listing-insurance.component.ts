@@ -43,7 +43,9 @@ export class ListingInsuranceComponent implements OnInit {
     "created_at",
     "id",
     "updated_at",
-    "diagnostic_admin_id"
+    "diagnostic_admin_id",
+    "name_search",
+    "status"
   ];
 
   libdata:any={

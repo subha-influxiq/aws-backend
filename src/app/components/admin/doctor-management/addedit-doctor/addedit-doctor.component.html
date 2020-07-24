@@ -169,7 +169,6 @@
         <mat-form-field appearance="fill">
           <mat-label>Select Taxonomies</mat-label>
           <mat-select formControlName="taxo_list" multiple>
-            <mat-option [value]="">Select Tech</mat-option>
             <mat-option *ngFor="let taxonomie of htmlText.taxonomies;" value="{{ taxonomie.name }}">{{ taxonomie.name }}</mat-option>
           </mat-select>
         </mat-form-field>
