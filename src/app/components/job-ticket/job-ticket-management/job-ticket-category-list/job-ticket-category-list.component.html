@@ -1,0 +1,17 @@
+<app-admin-header></app-admin-header>
+
+<div class="blog_managementbody">
+    <lib-listing class="managementpage jobticketclslist" *ngIf="jobTicketscatList!=null && jobTicketscatList.length>0"
+      [datasource]="jobTicketscatList" [skip]="jobtickets_details_header_skip"
+      [modify_header_array]="modify_header_array" [apiurl]="apiService.api_url" [deleteendpoint]="deleteendpoint"
+      [editroute]="editroute" [updateendpoint]="updateendpoint" [jwttoken]="apiService.jwtToken"
+      [date_search_source]="date_search_source" [date_search_endpoint]="date_search_endpoint"
+      [sourcedata]="tablename" [statusarr]="statusarray" [detail_datatype]="jobtickets_details_detail_datatype"
+      [detail_skip_array]="jobtickets_details_detail_skip" [search_settings]="search_settings"
+      [searchendpoint]="searchendpoint" [sortdata]="sortdata" [datacollection]="datacollection"
+      [date_search_source_count]="date_search_source_count" [libdata]="libdata" [limitcond]="limitcond">
+    </lib-listing>
+  </div>
+
+
+<app-admin-footer></app-admin-footer>

@@ -43,8 +43,20 @@ export class ListingInsuranceComponent implements OnInit {
     "created_at",
     "id",
     "updated_at",
-    "diagnostic_admin_id"
+    "diagnostic_admin_id",
+    "name_search",
+    "status"
   ];
+
+  libdata:any={
+    basecondition: "",
+    updateendpoint:'statusupdate',
+    // hideeditbutton:true,// all these button options are optional not mandatory
+    //hidedeletebutton:true,
+    //hideviewbutton:false,
+    //hidestatustogglebutton:true,
+    // hideaction:true,
+}
 
   public UpdateEndpoint: any = "addorupdatedata";
   public deleteEndpoint: any = "deletesingledata";

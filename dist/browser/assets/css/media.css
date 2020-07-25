@@ -38,6 +38,7 @@
  .book-appointment .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .label_name, 
  .book-event .mat-dialog-container .mat-stepper-horizontal .lib_wrpr .lb_item .symptoms_type .label_name {
   font-size: 14px;}
+  .DataTable table th.mat-header-cell:last-of-type { width: 18%;}
 }  
 @media screen and (max-width: 1368px){
   .techdashboard_header .quotation .mat-nav-list .mat-list-item .mat-list-item-content { padding: 0 5px; }
@@ -86,7 +87,7 @@
 .calenderView .calendar_wrapper .example-container{ max-height: inherit!important;
   min-width: inherit!important;}
 .calenderView .button_wrapper{ margin-top: 20px; }
-.DataTable table th.mat-header-cell:last-of-type { width: auto; }
+/* .DataTable table th.mat-header-cell:last-of-type { width: auto; } */
 .searchbar .mat-form-field { width: 32%; }
 .book-event .mat-dialog-container .mat-stepper-horizontal .width-md { width: 31%; }
 .admin_dashboard .DataTable .container .searchbar{ justify-content: center!important;}
@@ -242,11 +243,10 @@ align-items: flex-start; }
   .mediaDoc_wrapper .media_inner_items .action_button { font-size: 20px; padding: 4px; }
   .calenderView .slotview .example-card { width: 47%; }
   .custom-modalbox, .mat-dialog-container { min-width: 90%;}
-  .admin_wrapper .add_form .submit_form button { font-size: 18px; padding: 2px 14px;
-    min-width: 120px;  margin: 1%; }
+  .admin_wrapper .add_form .submit_form button { font-size: 18px; padding: 2px 14px; min-width: 120px;  margin: 1%; }
   .admin_wrapper .add_form .submit_form button:first-child { margin-right: 8px; }
   .admin_dashboard .DataTable .searchbar .mat-form-field{ width: 48.5%;}
-
+  .list-lesson .form2_wrapper .searchbar .mat-form-field { width: 49%;}
 }
 @media screen and (max-width: 668px){
   .main_wrapper .login_wrapper { width: 450px; }
@@ -257,6 +257,7 @@ align-items: flex-start; }
   .admin_superbillsection .biller_wrapper { display: flex; flex-wrap: wrap;}
   .searchbar .mat-form-field { width: 48%; }
   .calenderView .calender_first .mat-toolbar .headerSpan { font-size: 22px; }
+  
 }
 @media screen and (max-width: 600px){
   .quickRef .report_wrapper .items_w { width: 100%; }
@@ -277,6 +278,10 @@ align-items: flex-start; }
   .job_reprt_wrapper .itm .report_image_w .image_items { width: 48%; margin: 1%;}
   .admin_wrapper .content_wrapper .itemsection .counteer .doctorNumber { font-size: 14px; }
   .notes-modal .maindialognew .close-btn-modal { right: 10%; }
+  .encounter_wrapper .second_table .book-appointment .mat-form-field { width: 48%; }
+  .DataTable table td.mat-cell { padding-left: 110px!important; }
+ 
+
 }
  
  
@@ -310,6 +315,7 @@ align-items: flex-start; }
   .custom-modalbox .example-card .mat-card-header { width: 100%; text-align: center; display: block; }
   .custom-modalbox .mat-dialog-container .mat-card { display: flex; justify-content: center; flex-direction: column;
   align-items: center;}
+  .mat-dialog-container .mat-dialog-content .innerhtml-content{ text-align: center;}
   .custom-modalbox .example-card .mat-card-header::before{ display: none;}
   .table_wrapper .top_header .wrappp_R { width: auto; text-align: inherit; }
   .admin_wrapper .add_form .submit_form { display: flex; flex-direction: column; } 
@@ -323,6 +329,13 @@ align-items: flex-start; }
   .time_picker .timer,
   .time_picker .timer .w-mat-timepicker{ width: 100%!important;}
   .calenderView .calendar_wrapper { width: 100%!important; }
+  .training_management .form2_wrapper .searchblockwrapper .buttonsetToolbar {  display: flex; flex-direction: column; }
+  .training_management .form2_wrapper .searchblockwrapper .singleButton {  width: 100%; margin: 0; margin-bottom: 14px; }
+  .training_management .form2_wrapper .searchblockwrapper .singleButton:last-child {margin-bottom: 0px; }
+  .training_management .form2_wrapper .searchblockwrapper .mat-toolbar .headerSpan { font-size: 24px; }
+}
+@media screen and (max-width: 500px){  
+  .encounter_wrapper .second_table .book-appointment .mat-form-field { width: 100%; }
 }
 @media screen and (max-width: 480px){
   .main_wrapper .login_wrapper { width: 360px; }
@@ -409,6 +422,7 @@ align-items: flex-start; }
   .mat-table .mat-cell:after { font-size: 14px;}
   .notes-modal .maindialognew .close-btn-modal { right: 8%; }
   .notes-modal .maindialognew .mat-dialog-content .mat-subheader { font-size: 14px; padding: 0 6px; }
+  .DataTable table td.mat-cell { padding-left: 95px!important; }
 }                                            
  
 

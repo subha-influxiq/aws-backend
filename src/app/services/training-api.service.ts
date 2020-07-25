@@ -4,6 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 // for setting observables to get serverurl and endpointurl from app
 import { Observable, Subject, Subscription } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from '../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +19,7 @@ export class TrainingApiService {
   public uploaderror: any = '';
   public accesstoken: any = "";
   public fileservername: any = [];
-  public serverUrl: any = 'https://obq0e0nxhk.execute-api.us-east-1.amazonaws.com/production/api1/';
+  public serverUrl: any = environment.training_url;
   public addendpointUrl: any;
   public updateendpointUrl: any;
   public deletesingle_endpointUrl: any;

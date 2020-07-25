@@ -1216,7 +1216,7 @@ export class AddPatientManuallyComponent implements OnInit {
   public configData: any = {
     appName: 'Calendar-Management',
     jwtToken: '',
-    baseUrl: 'https://m9mkuic6o9.execute-api.us-east-1.amazonaws.com/dev/api/',
+    baseUrl: environment.calendarApi,
     endPoint: {
       add: 'add-or-update-event-data',
       datalist: 'datalist',

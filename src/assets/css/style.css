@@ -117,7 +117,7 @@
 .DataTable table td.mat-cell{  font-family: "AvenirRoman"; padding-right: 8px; }
 .tablewrapper table td span .cursor,
 .DataTable table td span .cursor{cursor: pointer; display: inline-block; background: var(--button-color2);
-margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
+margin: 2px; color: #fff; padding: 2px 6px; border-radius: 2px;}
 .DataTable table td .notebtncls{ min-width: inherit;
   padding: 3px 4px; line-height: inherit; background: #1d76b5;
   font-family: 'AvenirMedium'; border-radius: 2px; margin: 2px 2px 3px; display: inline-block; box-shadow: none; vertical-align: bottom;
@@ -212,7 +212,7 @@ margin: 2px; color: #fff; padding: 1px 6px; border-radius: 2px;}
 color: #fff; text-transform: uppercase; width: 150px; margin: 0 30px;}
 
 /* .container .searchbar i{margin-left: auto;} */
-.searchbar { height: auto!important; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; box-shadow: 0px 2px 2px #c5c5c5; padding-bottom: 16px!important; position: relative; background: #fbfbfb; }
+.searchbar { height: auto!important; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; box-shadow: 0px 2px 2px #c5c5c5; padding: 16px 4px!important; position: relative; background: #fbfbfb; }
 .searchbar .mat-form-field{ width: 32%; margin: 0 0.5%!important;
   /* flex-grow: 1; */
 }
@@ -893,10 +893,115 @@ color: #fff; position: absolute; right: 10px; cursor: pointer; top: 10px;}
 .bulkupload-dialog .mat-dialog-container .admin_wrapper .title_wrapper{ background: #6bd010;
   font-size: 20px; padding: 12px; color: #f9f6f6;}
 .bulkupload-dialog .mat-dialog-container .admin_wrapper .example-form label{ font-size: 18px; font-family: 'AvenirMedium'; color: rgb(14, 13, 13)} 
-.bulkupload-dialog .admin_wrapper .add_form .submit_form button { font-size: 14px;
-  padding: 0px 12px;
-  min-width: 90px;
-}
+.bulkupload-dialog .admin_wrapper .add_form .submit_form button { font-size: 14px; padding: 0px 12px;
+  min-width: 90px; }
 .bulkupload-dialog .admin_wrapper .add_form .submit_form button:nth-child(2) { background: #2f3638; }
 .bulkupload-dialog .admin_wrapper .add_form .submit_form button:last-child { background: #60c306; }
 .bulkupload-dialog .admin_wrapper .add_form .submit_form .resetBtn { background: #0a9648; }
+
+/* training block */
+.training_management .form2_wrapper .searchblockwrapper .mat-toolbar{ background: var(--button-color2); margin-bottom:16px; }
+.training_management .form2_wrapper .searchblockwrapper .buttonsetToolbar { background: #daf0f7;
+  margin: 12px 0; text-align: right; height: auto; padding: 10px;}
+.training_management .form2_wrapper .searchblockwrapper .singleButton{ 
+  background: var(--button-color3); font-size: 16px; text-transform: uppercase;
+  color: #fff; margin: 0; float: none; margin-right: 10px;
+}
+.training_management .form2_wrapper .searchblockwrapper .singleButton:last-child{
+background: var(--button-color1); margin: 0;
+}
+.training_management .form2_wrapper .searchblockwrapper .mat-toolbar .headerSpan{ color: #fff; font-size: 30px;
+  font-family: "AvenirMedium";}
+.training_management .form2_wrapper .searchbar{ display: flex; align-items: center; }
+.training_management .form2_wrapper .searchbar .submitbtn{ font-family: "AvenirMedium";
+  background: var(--button-color2);
+  margin-right: 10px;
+  min-width: 120px;
+  text-transform: uppercase;
+  box-shadow: none;}
+
+.training_management .form2_wrapper .searchbar .submitbtn:first-child{ background: var(--button-color1);} 
+.training_management .form2_wrapper .searchbar .submitbtn:last-child{ background: var(--button-color5); margin: 0;}
+
+.training_management .form2_wrapper .searchblockwrapper span .countSection { background: #ffffff!important;
+  box-shadow: 0px 2px 4px 0px #b3b3b3; margin: 5px; border: none!important; padding: 10px!important; }
+
+.training_management .form2_wrapper .searchblockwrapper span .countSection h2{
+  flex: initial!important;
+  border-radius: 0%;
+  border-bottom-left-radius: 20px;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "AvenirMedium";
+  padding: 6px;
+  display: flex;
+  min-width: 35px;
+  min-height: 35px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 6px;
+  box-shadow: 0px 2px 3px 0px #ffffff;
+  background: #08de7b;
+  border: 2px solid #03c11f;
+}
+  
+.training_management .form2_wrapper .searchblockwrapper span { font-family: "AvenirMedium"; }
+.training_management .form2_wrapper .searchbar .mat-form-field{  font-size: 14px; width: 32%; margin: 0 0.5%!important; }
+.list-lesson .form2_wrapper .searchbar .mat-form-field{  font-size: 14px; width: 24%; margin: 0 0.5%!important; }
+.training_management .form2_wrapper .mat-elevation-z8 .mat-table  { font-family: "AvenirMedium";}
+.training_management .form2_wrapper .mat-elevation-z8 .mat-table .buttons_ro{ display:flex; }
+.training_management .form2_wrapper .mat-elevation-z8 .mat-table .buttons_ro .pointer{ 
+  display: flex; align-items: center; justify-content: center;
+  margin: 2px; color: #fff; padding: 2px 3px; border-radius: 2px;}
+
+  .training_management .form2_wrapper .multipledeleteandupdatebuttan { display: flex;
+    margin-bottom: 16px;}
+  .training_management .form2_wrapper .mat-elevation-z8 .mat-table .buttons_ro .pointer:nth-child(1){
+    background: var(--button-color2);
+  }
+  .training_management .form2_wrapper .mat-elevation-z8 .mat-table .buttons_ro .pointer:nth-child(2){
+    background: #ff5370;
+  }
+  .training_management .form2_wrapper .mat-elevation-z8 .mat-table .buttons_ro .pointer:nth-child(3){
+    background: var(--button-color1);
+  }
+  .training_management .form2_wrapper .mat-elevation-z8 .mat-table .buttons_ro .pointer:nth-child(4){
+    background: var(--button-color3);
+  }
+
+  .training_management .form2_wrapper .mat-elevation-z8 .mat-paginator-container{ justify-content: center;}
+
+  /* add edit */
+
+.addedit_management .form2_wrapper .searchblock .searchblockwrapper .header {
+ font-family: "AvenirBlack"; font-size: 26px; background: var(--button-color2); padding: 10px; text-align: center;
+  margin: 0; color: #fff; text-transform: uppercase; }
+
+
+.addedit_management .form2_wrapper .formclass .mat-form-field-flex {
+padding:0 8px 8px; background: #fff; border-left: 2px solid var(--button-color2)}
+.addedit_management .form2_wrapper .formclass textarea{ min-height: 110px; resize: none; }
+.addedit_management .form2_wrapper .formclass{ justify-content: center; }
+
+.addedit_management .form2_wrapper .formclass .trainingsubbtn { font-family: "AvenirMedium";
+  background: var(--button-color2);
+  margin-right: 10px;
+  min-width: 120px;
+  text-transform: uppercase;
+  box-shadow: none; }
+.addedit_management .form2_wrapper .formclass .trainingsubbtn:last-child { background: var(--button-color5); margin: 0;}
+.addedit_management .form2_wrapper .formclass .checkboxnew mat-label { font-family: "AvenirMedium"; font-size: 18px; color:#671717; padding: 0; display: inline-block; margin-bottom: 6px;} 
+
+/* quiz */
+.quiz_addedit_management .form2_wrapper .mat-card{ background: #f3f3f3; }
+.quiz_addedit_management .form2_wrapper .searchblock .searchblockwrapper .mat-toolbar{ background: var(--button-color2); margin-bottom: 20px; }
+.quiz_addedit_management .form2_wrapper .searchblock .searchblockwrapper .mat-toolbar .headerSpan{
+  font-family: "AvenirBlack";
+  margin: 0; color: #fff; text-transform: uppercase; font-size: 30px;
+}
+
+.quiz_addedit_management .form2_wrapper .example-form .mat-form-field-flex {
+  padding:0 8px 8px; background: #fff; border-left: 2px solid var(--button-color2)}
+.quiz_addedit_management .form2_wrapper .example-form .trainingsubbtn { font-family: "AvenirMedium";
+  background: var(--button-color2); min-width: 120px; text-transform: uppercase; box-shadow: none; margin-top: 20px; }
+.quiz_addedit_management .form2_wrapper .example-form .cke_1{ margin-bottom: 16px; }

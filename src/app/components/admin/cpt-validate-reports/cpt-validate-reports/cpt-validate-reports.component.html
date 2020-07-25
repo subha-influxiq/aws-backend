@@ -10,12 +10,14 @@
     <mat-toolbar class="top_header">
       <h2> CPT Validated Report</h2>
     </mat-toolbar>
+    <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Report list</span>
     </ng-container>
 
     <ng-container *ngIf="activatedRoute.snapshot.routeConfig.path == 'admin/sales-person/cpt-reports'">
       <mat-toolbar class="top_header">
         <h2> CPT Validated Report for Sales Person</h2>
       </mat-toolbar>
+      <span class="bradcrumb"><a [routerLink]="['/admin/dashboard']">Dashboard &nbsp;/</a> &nbsp; Report list</span>
       </ng-container>
   <mat-card-content class="table_wrapper admin_dashboard">
 

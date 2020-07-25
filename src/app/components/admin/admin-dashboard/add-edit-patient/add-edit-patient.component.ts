@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject, ViewChild, HostListener} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators ,FormGroupDirective } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpServiceService } from '../../../../services/http-service.service'
+import { HttpServiceService } from '../../../../services/http-service.service';
 import { DatePipe } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material';

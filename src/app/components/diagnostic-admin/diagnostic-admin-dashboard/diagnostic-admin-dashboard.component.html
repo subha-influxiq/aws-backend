@@ -339,6 +339,7 @@
         [search_settings]="search_settings" [sortdata]="sortdata" [datacollection]="datacollection" [libdata]="libdata"
         [date_search_source_count]="billerData_count" [limitcond]="limitcond">
       </lib-listing>
+      <h2 *ngIf="allBillerData.length == 0">No record found.</h2>
     </mat-card-content>
   </mat-card-content>
   <!-- dashboard all listing end here -->

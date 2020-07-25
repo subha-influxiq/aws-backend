@@ -150,6 +150,9 @@ import { ReportTimeSettingComponent } from '../components/admin/report-time-sett
 // import { AddEditLessonComponent } from '../components/lazyload-training/training-management/manage-lesson/add-edit-lesson/add-edit-lesson.component';
 // import { ListLessonComponent } from '../components/lazyload-training/training-management/manage-lesson/list-lesson/list-lesson.component';
 
+//job-ticket-management
+ 
+
 
 const routes: Routes = [
   /********** Auth Route Start **********/
@@ -2279,7 +2282,9 @@ const routes: Routes = [
 
   {
     path:'admin/training',
-    loadChildren:()=>import('../components/lazyload-training/training.module').then(t=>t.TrainingModule)
+    loadChildren: () => import('../components/lazyload-training/training.module').then(t => 
+      t.TrainingModule
+    )
   },
 
   //---------lazy load training module-----------//
@@ -2350,6 +2355,31 @@ const routes: Routes = [
     //   },
     //   endpoint: 'view-event-eventdayarr'
     // }
+  },
+  // {
+  //  path : 'admin/add-jobticket-category',component : AddTicketCategoryComponent
+  // },
+  // {
+  //   path : 'admin/list-jobticket-category',component : JobTicketCategoryListComponent,
+  //   resolve: { data: ResolveService },
+  //   data: {
+  //     requestcondition: {
+  //       'condition': {
+  //         'limit': 10, 'skip': 0
+  //       },
+  //       sort: {
+  //         'type': 'desc', 'field': '_id'
+  //       }
+  //     },
+  //     api_url:"https://wfr9bu9th2.execute-api.us-east-1.amazonaws.com/dev/",
+  //     endpoint: 'api1/getjobticketcategorylistdata'
+  //   },
+  //  },
+   {
+    path:'admin/jobticket',
+    loadChildren: () => import('../components/job-ticket/job-ticket.module').then(t => 
+      t.JobTicketModule
+    )
   },
 
   {path:'encounter-form-status', component:EncounterFormRulesComponent},

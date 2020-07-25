@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from "../../../../../../environments/environment";
 
 @Component({
   selector: 'app-list-lesson',
@@ -17,7 +18,7 @@ export class ListLessonComponent implements OnInit {
   public addPageRoute : any="/admin/training/manage-lesson/add";
   public manageQuizRoute:any="/admin/training/manage-quiz/list/";
   public serverDetails: any = {
-    "serverUrl": "https://obq0e0nxhk.execute-api.us-east-1.amazonaws.com/production/api1/",
+    "serverUrl": environment.training_url,
     "jwttoken": ""
   };
   public formSource: any = {

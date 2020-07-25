@@ -274,4 +274,42 @@ export class AddNewDoctorComponent implements OnInit {
     }
   }
 
+  getParentData(id: any = '') {
+    var billerData = id;
+    this.selectionChangeValue = billerData;
+    if ((billerData == 'DiagnosticAdmin') || (billerData == "diagnostic_admin")) {
+      var data = {
+        "source": "data_pece",
+        "condition": {
+          "user_type": "diagnostic_admin"
+        },
+        "token": this.htmlText.userData.jwtToken,
+      }
+    }
+
+    if ((billerData == 'Distributor') || (billerData == 'distributor')) {
+      var data = {
+        "source": "data_pece",
+        "condition": {
+          "user_type": "distributors"
+        },
+        "token": this.htmlText.userData.jwtToken,
+      }
+    }
+
+    if ((billerData == 'DoctorGroup') || (billerData == "doctor_group")) {
+      var data = {
+        "source": "data_pece",
+        "condition": {
+          "user_type": "doctor_group"
+        },
+        "token": this.htmlText.userData.jwtToken,
+      }
+    }
+
+    this.http.httpViaPost('datalist', data).subscribe(response => {
+      this.htmlText.parent_id = response.res;
+    });
+  }
+
 }
