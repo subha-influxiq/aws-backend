@@ -53,7 +53,7 @@
     "jasmine-console-reporter": "^3.1.0",
     "listing-angular7": "latest",
     "login-lib-influxiq": "latest",
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "moment-es6": "^1.0.0",
     "ng2-ckeditor": "^1.2.7",
     "ngx-ckeditor": "^8.0.0",
